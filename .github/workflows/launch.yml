@@ -1,0 +1,65 @@
+name: Launch posts (one-off)
+
+# Pushing a branch named launch/* renders the top-scoring ready Shorts and schedules them on
+# Buffer at the times in LAUNCH_SLOTS today (New York), then marks them delivered on main.
+# Used for the Oct 26 2026 launch test: 3 Shorts at 7, 8 and 9 PM.
+on:
+  push:
+    branches: ["launch/**"]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: make-shorts
+  cancel-in-progress: false
+
+jobs:
+  launch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      UPLOAD_MODE: buffer
+      POST_START: "2026-10-26"
+      POST_SLOTS: "19:00,20:00,21:00"
+      MIN_LEAD_MIN: "12"
+      BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+      AUDIO_CHECK: warn
+      KOKORO_VOICE: am_fenrir
+      KOKORO_SPEED: "1.25"
+      GH_TOKEN: ${{ github.token }}
+      HTMM_CACHE: ${{ github.workspace }}/.cache
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg espeak-ng
+      - run: pip install -r requirements.txt
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/huggingface
+            .cache
+          key: htmm-models-v1-${{ hashFiles('requirements.txt') }}
+          restore-keys: htmm-models-v1-
+      - name: Render and schedule
+        run: python -m pipeline.run --count 3 2>&1 | tee launch.log
+      - name: Mark delivered on main
+        run: |
+          git config user.name "shorts-bot"
+          git config user.email "shorts-bot@users.noreply.github.com"
+          git add content/scripts
+          git diff --cached --quiet || git commit -m "Launch: delivered Shorts $(date -u +%F)"
+          git pull --rebase --quiet origin main && git push origin HEAD:main
+      - name: Save log to the launch branch
+        if: always()
+        run: |
+          git fetch -q origin "${GITHUB_REF_NAME}"
+          git switch -q -C logbranch "origin/${GITHUB_REF_NAME}"
+          cp launch.log launch-result.log 2>/dev/null || echo "no log" > launch-result.log
+          git add -f launch-result.log
+          git commit -qm "Launch log" && git push -q origin "HEAD:${GITHUB_REF_NAME}"

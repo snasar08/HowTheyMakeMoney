@@ -42,14 +42,15 @@ def posting_started(now: dt.datetime | None = None) -> bool:
 
 
 def publish_slots(n: int, now: dt.datetime | None = None) -> list[dt.datetime]:
-    """Next n posting times, never sooner than 1 hour from now."""
+    """Next n posting times, never sooner than MIN_LEAD_MIN (default 60) minutes from now."""
     now = now or dt.datetime.now(TZ)
+    lead = dt.timedelta(minutes=int(os.environ.get("MIN_LEAD_MIN", "60")))
     out, day = [], max(now.date(), POST_START)
     while len(out) < n:
         for s in SLOTS:
             hh, mm = map(int, s.split(":"))
             t = dt.datetime.combine(day, dt.time(hh, mm), TZ)
-            if t > now + dt.timedelta(hours=1) and len(out) < n:
+            if t > now + lead and len(out) < n:
                 out.append(t)
         day += dt.timedelta(days=1)
     return out
