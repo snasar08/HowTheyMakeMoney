@@ -15,8 +15,9 @@ import numpy as np
 BREATH_MAX = float(os.environ.get("BREATH_MAX", "6.0"))  # longest speech run without a pause (s)
 PAUSE_MIN = 0.12        # a gap this long counts as a breath
 JOIN_MIN = 0.12         # the beat before the CTA must really be silent
-SPS_MIN, SPS_MAX = 3.0, 7.5  # syllables/s; calibrated on 001-costco at speed 1.35, which Sam approved
+SPS_MIN, SPS_MAX = 3.0, 7.5  # syllables/s; ~6 at speed 1.35, ~5.5 at Sam's current 1.25
 SHORT_WORD = 0.06       # a 3+ letter word shorter than this is probably garbled/swallowed
+MELODY_MIN = 2.5        # semitones of pitch movement per scene; below this reads as monotone
 
 
 def syllables(word: str) -> int:
@@ -46,6 +47,43 @@ def _runs(mask: np.ndarray, value: bool) -> list[tuple[int, int]]:
             out.append((start, i))
             start = None
     return out
+
+
+def pitch(voice: np.ndarray, sr: int, hop: float = 0.01) -> np.ndarray:
+    """F0 in Hz every `hop` s (0 = unvoiced). Plain autocorrelation, 70–300 Hz (male voice)."""
+    n, h = int(0.04 * sr), int(hop * sr)
+    lo, hi = int(sr / 300), int(sr / 70)
+    out = np.zeros(max(0, (len(voice) - n) // h), np.float32)
+    for k in range(len(out)):
+        x = voice[k * h: k * h + n]
+        x = x - x.mean()
+        e = float(np.dot(x, x))
+        if e < n * 1e-4:
+            continue
+        ac = np.correlate(x, x, "full")[n - 1 + lo: n - 1 + hi]
+        lag = int(np.argmax(ac))
+        if ac[lag] / e > 0.45:  # clearly periodic = voiced
+            out[k] = sr / (lag + lo)
+    return out
+
+
+def melody(scenes, starts, voice: np.ndarray, sr: int) -> tuple[list[str], dict]:
+    """Flat pitch = robotic. Measures how much the voice moves per scene (semitones, std over
+    voiced frames). No question-rise test: "Why…?" questions fall at the end in real speech too.
+    Calibration (Oct 26, speed 1.25, one sentence per call): am_fenrir 4.9, am_puck 4.1,
+    am_eric 4.0, blends 3.9–4.2."""
+    issues, spreads = [], []
+    f0 = pitch(voice, sr)
+    for i, sc in enumerate(scenes):
+        seg = f0[int(starts[i] / 0.01): int((starts[i] + sc.duration) / 0.01)]
+        v = seg[seg > 0]
+        if len(v) < 30:
+            continue
+        s = float(np.std(12 * np.log2(v / np.median(v))))
+        spreads.append(round(s, 2))
+        if s < MELODY_MIN:
+            issues.append(f"scene {i + 1}: voice sounds flat (pitch moves {s:.1f} semitones, want ≥ {MELODY_MIN})")
+    return issues, {"pitch_spread_st": spreads}
 
 
 def check(scenes, starts, joins, voice: np.ndarray, mix: np.ndarray, sr: int) -> tuple[list[str], dict]:
@@ -95,5 +133,7 @@ def check(scenes, starts, joins, voice: np.ndarray, mix: np.ndarray, sr: int) ->
     if clipped > 0.0005:
         issues.append(f"{clipped * 100:.2f}% of samples clip — lower MUSIC_GAIN or voice level")
 
+    mel_issues, mel = melody(scenes, starts, voice, sr)
+    issues += mel_issues
     return issues, {"longest_breath": round(longest, 2), "clipped_pct": round(clipped * 100, 3),
-                    "syllables_per_s": rates}
+                    "syllables_per_s": rates, **mel}

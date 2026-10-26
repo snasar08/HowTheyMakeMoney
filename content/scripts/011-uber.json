@@ -4,8 +4,8 @@
   "company": "Uber",
   "theme": "bold_bright",
   "status": "ready",
-  "title": "How Much of Your Uber Ride Uber Keeps",
-  "description": "How Much of Your Uber Ride Uber Keeps.\n\nSources:\n- Uber 2025 Form 10-K (SEC): https://www.sec.gov/Archives/edgar/data/1543151/000154315126000015/uber-20251231.htm\n- Uber 2025 gross bookings and take rates (SQ Magazine): https://sqmagazine.co.uk/uber-statistics/\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "title": "How Much of Your Uber Ride Does Uber Keep?",
+  "description": "How Much of Your Uber Ride Does Uber Keep?.\n\nSources:\n- Uber 2025 Form 10-K (SEC): https://www.sec.gov/Archives/edgar/data/1543151/000154315126000015/uber-20251231.htm\n- Uber 2025 gross bookings and take rates (SQ Magazine): https://sqmagazine.co.uk/uber-statistics/\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
     "uber",
     "rideshare",
@@ -35,7 +35,7 @@
   },
   "scenes": [
     {
-      "narration": "When you pay for an Uber ride, how much does Uber actually keep?",
+      "narration": "When you pay for an Uber, how much do you think Uber actually keeps?",
       "visual": {
         "type": "image",
         "image": "hook",

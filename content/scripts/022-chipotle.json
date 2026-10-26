@@ -4,8 +4,8 @@
   "company": "Chipotle",
   "theme": "bold_bright",
   "status": "ready",
-  "title": "Where Your Chipotle Dollar Goes",
-  "description": "Where Your Chipotle Dollar Goes.\n\nSources:\n- Chipotle Q4 and full-year 2025 results (press release): https://ir.chipotle.com/2026-02-03-CHIPOTLE-ANNOUNCES-FOURTH-QUARTER-AND-FULL-YEAR-2025-RESULTS\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "title": "Where Does Your Chipotle Money Go?",
+  "description": "Where Does Your Chipotle Money Go?.\n\nSources:\n- Chipotle Q4 and full-year 2025 results (press release): https://ir.chipotle.com/2026-02-03-CHIPOTLE-ANNOUNCES-FOURTH-QUARTER-AND-FULL-YEAR-2025-RESULTS\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
     "chipotle",
     "burrito",
@@ -36,12 +36,12 @@
   },
   "scenes": [
     {
-      "narration": "Out of every dollar spent at Chipotle, about 30 cents goes just to the food.",
+      "narration": "You spend a dollar at Chipotle. Guess how much of it is the actual food?",
       "visual": {
         "type": "image",
         "image": "hook",
-        "overlay": "30 CENTS",
-        "overlay_sub": "goes to food"
+        "overlay": "GUESS",
+        "overlay_sub": "how much is food?"
       }
     },
     {

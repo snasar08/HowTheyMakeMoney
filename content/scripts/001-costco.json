@@ -4,8 +4,8 @@
   "company": "Costco",
   "theme": "bold_bright",
   "status": "ready",
-  "title": "Costco Barely Makes Money Selling You Stuff",
-  "description": "Costco Barely Makes Money Selling You Stuff.\n\nSources:\n- Costco FY2026 results (Pulse 2.0): https://pulse2.com/costco-reports-93-9-billion-in-q4-sales-and-297-2-billion-in-fiscal-2026-sales-as-net-income-reaches-9-2-billion/\n- Costco Q2 FY2026 members: https://finder.techleap.nl/news/feed/costco-s-q2-net-income-rises-14-to-2b-as-digital-sales-jump-22-6\n- Costco hot dog price since 1985 (ABC News): https://abcnews.go.com/food/story/costco-hot-dog-soda-combo-150-price-possibly-90579135\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "title": "How Is Costco's Hot Dog Still $1.50?",
+  "description": "How Is Costco's Hot Dog Still $1.50?.\n\nSources:\n- Costco FY2026 results (Pulse 2.0): https://pulse2.com/costco-reports-93-9-billion-in-q4-sales-and-297-2-billion-in-fiscal-2026-sales-as-net-income-reaches-9-2-billion/\n- Costco Q2 FY2026 members: https://finder.techleap.nl/news/feed/costco-s-q2-net-income-rises-14-to-2b-as-digital-sales-jump-22-6\n- Costco hot dog price since 1985 (ABC News): https://abcnews.go.com/food/story/costco-hot-dog-soda-combo-150-price-possibly-90579135\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
     "costco",
     "business",
@@ -35,12 +35,12 @@
   },
   "scenes": [
     {
-      "narration": "Costco sold almost 300 billion dollars of stuff last year. But selling stuff isn't really how it makes money.",
+      "narration": "Costco sold almost 300 billion dollars of stuff last year. So why does it barely make money selling it?",
       "visual": {
         "type": "image",
         "image": "hook",
         "overlay": "$297 BILLION",
-        "overlay_sub": "in sales last year"
+        "overlay_sub": "and barely any profit?"
       }
     },
     {

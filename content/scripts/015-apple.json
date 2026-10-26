@@ -4,8 +4,8 @@
   "company": "Apple",
   "theme": "dark_neon",
   "status": "ready",
-  "title": "Apple Makes Its Best Profit Outside the iPhone",
-  "description": "Apple Makes Its Best Profit Outside the iPhone.\n\nSources:\n- Apple fiscal 2025 Q4 results (press release): https://www.apple.com/newsroom/2025/10/apple-reports-fourth-quarter-results/\n- Apple fiscal 2025 Q4 consolidated financial statements (PDF): https://www.apple.com/newsroom/pdfs/fy2025-q4/FY25_Q4_Consolidated_Financial_Statements.pdf\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "title": "Is the iPhone Really Apple's Best Money Maker?",
+  "description": "Is the iPhone Really Apple's Best Money Maker?.\n\nSources:\n- Apple fiscal 2025 Q4 results (press release): https://www.apple.com/newsroom/2025/10/apple-reports-fourth-quarter-results/\n- Apple fiscal 2025 Q4 consolidated financial statements (PDF): https://www.apple.com/newsroom/pdfs/fy2025-q4/FY25_Q4_Consolidated_Financial_Statements.pdf\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
     "apple",
     "iphone",
@@ -36,12 +36,12 @@
   },
   "scenes": [
     {
-      "narration": "Services are only about a quarter of Apple's sales. But they bring in over 40 percent of its gross profit.",
+      "narration": "The iPhone isn't where Apple makes its best profit. So what is?",
       "visual": {
         "type": "image",
         "image": "hook",
-        "overlay": "26% OF SALES",
-        "overlay_sub": "42% OF GROSS PROFIT"
+        "overlay": "NOT",
+        "overlay_sub": "the iPhone?"
       }
     },
     {

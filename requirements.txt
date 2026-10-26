@@ -4,6 +4,7 @@ kokoro>=0.9.4
 soundfile
 numpy
 pillow>=10
+openai-whisper  # clarity_check: speech recognition on each render
 google-api-python-client
 google-auth
 google-auth-oauthlib

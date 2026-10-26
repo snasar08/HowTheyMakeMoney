@@ -11,7 +11,7 @@ and **free beyond his Higgsfield Pro plan** — never add a paid service or ask 
   renders the next `SHORTS_PER_RUN` (default 2) ready scripts, delivers them, marks them delivered
   and commits. Budget: private repos get 2,000 free minutes/month; a run takes ~5–8 minutes.
 - `pipeline/render.py` draws every frame with Pillow and pipes to ffmpeg (1080x1920, 30 fps).
-- `pipeline/tts.py` — voice. Default Kokoro-82M (`am_fenrir`, speed 1.35 — Sam's pick; 1.3 felt slow, 1.4 too fast), CPU. Optional Ming-3.0-tts.
+- `pipeline/tts.py` — voice. Default Kokoro-82M (`am_fenrir`, speed 1.25 — Sam's pick Oct 26; earlier 1.35 was hard to follow; one Kokoro call per sentence, questions 7% slower + 0.5 s beat before the answer so they sound like questions), CPU. Optional Ming-3.0-tts.
 - `pipeline/music.py` — background music synthesized in numpy (original, nothing to license),
   seeded per script, ducked under the voice. `MUSIC_GAIN` env var (default 0.12, 0 = off).
   Sam disliked the whoosh sound on cuts, so it was removed — don't add cut SFX back.
@@ -23,6 +23,14 @@ and **free beyond his Higgsfield Pro plan** — never add a paid service or ask 
 - `pipeline/audio_check.py` runs after every render: one-breath runs (>6 s), syllables/s per
   scene, swallowed words, silent CTA beat, clipping. Prints `::warning`s; `AUDIO_CHECK=strict`
   blocks delivery.
+- `pipeline/clarity_check.py` runs Whisper (`base.en`, CPU) on the final mix and compares it
+  with the script: clarity % plus each word it couldn't hear (min 95%, `CLARITY_MIN`). Sam said
+  some words weren't clear. Found and fixed: Kokoro swallowed weak first syllables ("Across" →
+  "cross"; fixed by a leading "..." in `tts.kokoro`) and music masked line openings (duck now
+  starts 0.2 s early). If a line keeps failing, reword it — don't slow the voice.
+- Hooks: every Short opens with a question in the first line + on-screen overlay, and the title
+  is a question (Sam: hooks matter most). Aim for topics/hooks that score ~90/100 for virality.
+- Shots change every ~1.4 s (max 2 s, Sam wants something new at least every 2 s).
 - Chart scenes also get code-drawn "alt" shots (ticker / waffle / columns) on a drifting grid.
 - **Posting via Buffer (default since Oct 26 2026):** `UPLOAD_MODE` defaults to `buffer` in
   `nightly.yml`. Each Short is attached to a GitHub Release (the public video URL) and scheduled
@@ -50,7 +58,7 @@ and **free beyond his Higgsfield Pro plan** — never add a paid service or ask 
   dislikes am_michael**; needed more shot changes. Done since: shot change every ~2 s (`make_beats`),
   key-number pop-ups over B-roll, chart punch-ins, flash + whoosh on cuts, Kokoro speed 1.2, captions
   from Kokoro's real word timestamps (`align_words`). Not yet rendered with real voice — test it.
-- **Voice:** done — Sam picked `am_fenrir` at 1.35 (now the default in code and workflow). To
+- **Voice:** done — Sam picked `am_fenrir` at 1.25 (now the default in code and workflow). To
   revisit, run `python -m pipeline.voice_samples out/voice-samples.mp4`. `.github/workflows/voice-test.yml`
   also tries Ming-3.0 on CPU (experimental; upstream only tested on GPUs).
 - **B-roll:** every script has `images.broll1/broll2` prompts (from `content/broll_prompts.json`).

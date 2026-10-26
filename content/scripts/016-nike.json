@@ -4,8 +4,8 @@
   "company": "Nike",
   "theme": "bold_bright",
   "status": "ready",
-  "title": "Nike Makes More Money Selling to Other Stores",
-  "description": "Nike Makes More Money Selling to Other Stores.\n\nSources:\n- NIKE, Inc. fiscal 2026 Q4 and full-year results: https://about.nike.com/en/newsroom/releases/nike-inc-reports-fiscal-2026-fourth-quarter-and-full-year-results\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "title": "Where Does Nike Really Sell Its Shoes?",
+  "description": "Where Does Nike Really Sell Its Shoes?.\n\nSources:\n- NIKE, Inc. fiscal 2026 Q4 and full-year results: https://about.nike.com/en/newsroom/releases/nike-inc-reports-fiscal-2026-fourth-quarter-and-full-year-results\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
     "nike",
     "sneakers",
@@ -36,12 +36,12 @@
   },
   "scenes": [
     {
-      "narration": "Nike sold 27.5 billion dollars of shoes and gear to other stores in fiscal 2026. That is more than its own shops and app.",
+      "narration": "Nike has its own stores and its own app. So why does most of its money come from other stores?",
       "visual": {
         "type": "image",
         "image": "hook",
-        "overlay": "$27.5 BILLION",
-        "overlay_sub": "sold to other stores"
+        "overlay": "OTHER STORES?",
+        "overlay_sub": "not Nike's?"
       }
     },
     {

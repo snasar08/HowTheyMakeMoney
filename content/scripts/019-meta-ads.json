@@ -4,8 +4,8 @@
   "company": "Meta",
   "theme": "dark_neon",
   "status": "ready",
-  "title": "Instagram and Facebook Are Free Because of Ads",
-  "description": "Instagram and Facebook Are Free Because of Ads.\n\nSources:\n- Meta Q4 and full-year 2025 results (press release): https://s21.q4cdn.com/399680738/files/doc_financials/2025/q4/Meta-12-31-2025-Exhibit-99-1-FINAL.pdf\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "title": "Who Pays for Your Instagram?",
+  "description": "Who Pays for Your Instagram?.\n\nSources:\n- Meta Q4 and full-year 2025 results (press release): https://s21.q4cdn.com/399680738/files/doc_financials/2025/q4/Meta-12-31-2025-Exhibit-99-1-FINAL.pdf\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
     "meta",
     "instagram",
@@ -36,12 +36,12 @@
   },
   "scenes": [
     {
-      "narration": "Instagram and Facebook are free. That is because you are not the customer. Advertisers are.",
+      "narration": "You've never paid for Instagram. So who's paying for it?",
       "visual": {
         "type": "image",
         "image": "hook",
-        "overlay": "FREE?",
-        "overlay_sub": "advertisers pay"
+        "overlay": "WHO PAYS",
+        "overlay_sub": "for Instagram?"
       }
     },
     {

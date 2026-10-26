@@ -4,8 +4,8 @@
   "company": "Movie theaters",
   "theme": "bold_bright",
   "status": "ready",
-  "title": "Movie Theaters Are Really Popcorn Stores",
-  "description": "Movie Theaters Are Really Popcorn Stores.\n\nSources:\n- AMC Q2 2025 results (Motley Fool): https://www.fool.com/data-news/2025/08/11/amc-posts-36-percent-revenue-jump-in-q2\n- Theater ticket split and AMC concession margin (Motley Fool via Webull): https://www.webull.ca/news-detail/13963708595160064\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "title": "Why Is Movie Popcorn So Expensive?",
+  "description": "Why Is Movie Popcorn So Expensive?.\n\nSources:\n- AMC Q2 2025 results (Motley Fool): https://www.fool.com/data-news/2025/08/11/amc-posts-36-percent-revenue-jump-in-q2\n- Theater ticket split and AMC concession margin (Motley Fool via Webull): https://www.webull.ca/news-detail/13963708595160064\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
     "movie theaters",
     "amc",
@@ -35,12 +35,12 @@
   },
   "scenes": [
     {
-      "narration": "Movie theaters aren't really in the movie business. They're in the popcorn business.",
+      "narration": "Ever wonder why movie popcorn costs so much? It's paying for the whole theater.",
       "visual": {
         "type": "image",
         "image": "hook",
-        "overlay": "THE POPCORN",
-        "overlay_sub": "business"
+        "overlay": "WHY SO",
+        "overlay_sub": "expensive?"
       }
     },
     {

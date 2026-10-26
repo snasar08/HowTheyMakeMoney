@@ -4,8 +4,8 @@
   "company": "Delta",
   "theme": "clean_navy",
   "status": "ready",
-  "title": "Delta's Best Product Isn't a Plane Ticket",
-  "description": "Delta's Best Product Isn't a Plane Ticket.\n\nSources:\n- Delta 2025 results: Amex remuneration $8.2B (AltexSoft): https://www.altexsoft.com/travel-industry-news/premium-strategy-works-deltas-2025-revenue-hits-63b/\n- Delta cards ~13% of Amex billed business (View from the Wing): https://viewfromthewing.com/amex-pays-delta-3-8-cents-per-dollar-charged-why-banks-pay-more-for-miles-than-you-do/\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "title": "Why Is Delta's Best Product Not a Seat?",
+  "description": "Why Is Delta's Best Product Not a Seat?.\n\nSources:\n- Delta 2025 results: Amex remuneration $8.2B (AltexSoft): https://www.altexsoft.com/travel-industry-news/premium-strategy-works-deltas-2025-revenue-hits-63b/\n- Delta cards ~13% of Amex billed business (View from the Wing): https://viewfromthewing.com/amex-pays-delta-3-8-cents-per-dollar-charged-why-banks-pay-more-for-miles-than-you-do/\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
     "delta",
     "airlines",
@@ -36,12 +36,12 @@
   },
   "scenes": [
     {
-      "narration": "Delta's most valuable product might not be a plane ticket.",
+      "narration": "What's the most valuable thing Delta sells? It's not a plane ticket.",
       "visual": {
         "type": "image",
         "image": "hook",
-        "overlay": "NOT THE",
-        "overlay_sub": "plane ticket"
+        "overlay": "NOT A",
+        "overlay_sub": "plane ticket?"
       }
     },
     {

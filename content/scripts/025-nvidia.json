@@ -4,8 +4,8 @@
   "company": "Nvidia",
   "theme": "dark_neon",
   "status": "ready",
-  "title": "Nvidia's Gamers Are Now a Small Slice",
-  "description": "Nvidia's Gamers Are Now a Small Slice.\n\nSources:\n- NVIDIA Q4 and fiscal 2026 results (press release): https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Fourth-Quarter-and-Fiscal-2026/default.aspx\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "title": "Does Nvidia Even Need Gamers Anymore?",
+  "description": "Does Nvidia Even Need Gamers Anymore?.\n\nSources:\n- NVIDIA Q4 and fiscal 2026 results (press release): https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Fourth-Quarter-and-Fiscal-2026/default.aspx\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
     "nvidia",
     "ai chips",
@@ -36,12 +36,12 @@
   },
   "scenes": [
     {
-      "narration": "Nvidia's chips for gamers are now only about 7 percent of its sales.",
+      "narration": "Nvidia started with gamers. So why are gamers now only about 7 percent of its sales?",
       "visual": {
         "type": "image",
         "image": "hook",
         "overlay": "ONLY 7%",
-        "overlay_sub": "comes from gaming"
+        "overlay_sub": "from gamers?"
       }
     },
     {

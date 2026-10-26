@@ -4,8 +4,8 @@
   "company": "Gas stations",
   "theme": "bold_bright",
   "status": "ready",
-  "title": "Gas Stations Don't Make Their Money on Gas",
-  "description": "Gas Stations Don't Make Their Money on Gas.\n\nSources:\n- NACS State of the Industry, 2025 data: https://www.convenience.org/stay-current/news/2026/april/15/u-s-convenience-in-store-sales-top-%24340-billion\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "title": "Why Do Gas Stations Want You Inside?",
+  "description": "Why Do Gas Stations Want You Inside?.\n\nSources:\n- NACS State of the Industry, 2025 data: https://www.convenience.org/stay-current/news/2026/april/15/u-s-convenience-in-store-sales-top-%24340-billion\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
     "gas stations",
     "convenience stores",
@@ -35,11 +35,12 @@
   },
   "scenes": [
     {
-      "narration": "Gas stations don't make most of their money from gas.",
+      "narration": "Why does every gas station want you to come inside? Because gas isn't the money.",
       "visual": {
         "type": "image",
         "image": "hook",
-        "overlay": "NOT FROM GAS"
+        "overlay": "NOT",
+        "overlay_sub": "the gas?"
       }
     },
     {

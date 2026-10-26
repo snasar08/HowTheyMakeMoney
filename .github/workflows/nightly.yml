@@ -35,7 +35,7 @@ jobs:
       AUDIO_CHECK: ${{ vars.AUDIO_CHECK || 'warn' }}
       VOICE_ENGINE: ${{ vars.VOICE_ENGINE || 'kokoro' }}
       KOKORO_VOICE: ${{ vars.KOKORO_VOICE || 'am_fenrir' }}
-      KOKORO_SPEED: ${{ vars.KOKORO_SPEED || '1.35' }}
+      KOKORO_SPEED: ${{ vars.KOKORO_SPEED || '1.25' }}
       POST_SLOTS: ${{ vars.POST_SLOTS || '12:00,18:00' }}
       GH_TOKEN: ${{ github.token }}
       YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}

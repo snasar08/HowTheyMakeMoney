@@ -28,7 +28,7 @@ import numpy as np
 import soundfile as sf
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
-from . import audio_check, music, tts
+from . import audio_check, clarity_check, music, tts
 from .themes import get_theme
 
 W, H = 1080, 1920
@@ -38,10 +38,11 @@ FONT_DIR = ROOT / "assets" / "fonts"
 CACHE = Path(os.environ.get("HTMM_CACHE", ROOT / ".cache"))
 SAFE_X0, SAFE_X1 = 70, 950          # keep clear of Shorts' right-side buttons
 CAPTION_Y = 1330                     # above the Shorts title/channel overlay
+ZONE_TOP = CAPTION_Y - 100           # caption dead zone: charts/figures stay above this line
 SCENE_GAP = 0.06                     # seconds of silence between scenes
 END_HOLD = 0.7
-BEAT_TARGET = float(os.environ.get("BEAT_TARGET", "2.0"))  # seconds per shot
-BEAT_MAX = 2.8
+BEAT_TARGET = float(os.environ.get("BEAT_TARGET", "1.4"))  # seconds per shot
+BEAT_MAX = 2.0  # Sam: something new on screen at least every 2 s
 # Spoken + on-screen like/subscribe/comment ask, added after the middle scene as its own clip
 # (sentences "|"-separated, voiced together so Kokoro breathes at the periods). Each on-screen
 # piece pops in on its own word. A script can replace the line with "cta"; CTA_LINE="" turns
@@ -272,7 +273,7 @@ def make_beats(words: list[Word], dur: float) -> list[float]:
         el = w.end - last
         punct = re.search(r"[.,!?;:]$", w.text)
         if (el >= BEAT_TARGET and punct) or el >= BEAT_MAX:
-            if dur - w.end > 0.9:
+            if dur - w.end > 0.6:
                 beats.append(w.end)
                 last = w.end
     return beats
@@ -356,11 +357,11 @@ class Renderer:
                 else:  # stat / bars / donut
                     if b == 0:
                         shots.append(("chart", None, 0, False))
-                    elif b % 2 == 1 and self._pool:
-                        shots.append(("figure", self._next_broll(), (v_i % 5) + 1, False))
-                    elif b % 4 == 2:  # code-drawn alternate: ticker / waffle / columns
+                    elif b % 3 == 1:  # code-drawn alternate: ticker / waffle / columns
                         alt_key = self._next_broll() if typ == "stat" else None
                         shots.append(("alt", alt_key, (v_i % 5) + 1, False))
+                    elif b % 3 == 2 and self._pool:
+                        shots.append(("figure", self._next_broll(), (v_i % 5) + 1, False))
                     else:
                         shots.append(("chartzoom", None, b, False))
                 if shots[-1][1]:
@@ -441,9 +442,8 @@ class Renderer:
             self._base[ck] = drawer(sc, 99.0, 0)
         full = self._base[ck]
         z = 1.1 + 0.06 * p
-        cy = 760 if sc.visual["type"] != "bars" else 860
         cw, ch = W / z, H / z
-        top = min(max(cy - ch / 2, 0), H - ch)
+        top = ZONE_TOP - ZONE_TOP / z  # zoom anchored on the dead-zone line, so nothing grows into it
         return full.resize((W, H), Image.BILINEAR, box=((W - cw) / 2, top, (W + cw) / 2, top + ch))
 
     def shot_textbg(self, sc: Scene, key, variant, t, p):
@@ -514,9 +514,9 @@ class Renderer:
         d = ImageDraw.Draw(frame, "RGBA")
         val = float(v["value"])
         n = int(round(val))
-        cell, gap = 70, 12
+        cell, gap = 48, 10
         x0 = (W - (10 * cell + 9 * gap)) // 2
-        y0 = 430
+        y0 = 380
         track = self.theme["track"]
         track = track if len(track) == 4 else (*track, 255)
         shown = int(n * min(1.0, ease_out(t / 1.1)))
@@ -534,11 +534,11 @@ class Renderer:
         pct = val * min(1.0, ease_out(t / 1.1))
         txt = f"{fmt_number(pct, 0 if val.is_integer() else 1)}%"
         cx = W / 2
-        fy = y0 + 10 * (cell + gap) + 30
-        draw_centered(d, cx, fy, txt, font(BLACK, 130), self.theme["text"])
-        fl = font(SEMI, 52)
+        fy = y0 + 10 * (cell + gap) + 20
+        draw_centered(d, cx, fy, txt, font(BLACK, 120), self.theme["text"])
+        fl = font(SEMI, 44)
         for i, line in enumerate(wrap(v.get("label", ""), fl, SAFE_X1 - SAFE_X0)[:2]):
-            draw_centered(d, cx, fy + 160 + i * 64, line, fl, self.theme["text"])
+            draw_centered(d, cx, fy + 130 + i * 54, line, fl, self.theme["text"])
         return frame
 
     def shot_columns(self, sc: Scene, key, variant, t, p):
@@ -548,7 +548,7 @@ class Renderer:
         frame = self.live_bg(t)
         d = ImageDraw.Draw(frame, "RGBA")
         vmax = max(float(i["value"]) for i in items) or 1.0
-        base_y, max_h = 1180, 600
+        base_y, max_h = ZONE_TOP - 140, 520  # leaves room for the labels under the columns
         span = SAFE_X1 - SAFE_X0
         gap = 40
         cw = (span - gap * (len(items) - 1)) / len(items)
@@ -596,19 +596,22 @@ class Renderer:
         frame = self.live_bg(t)
         d = ImageDraw.Draw(frame, "RGBA")
         vmax = max(float(i["value"]) for i in items) or 1.0
-        y = 520
+        y = 470
         if v.get("title"):
             d.text((SAFE_X0, y), v["title"].upper(), font=font(BOLD, 50), fill=self.theme["muted"])
-            y += 110
-        fl, fv = font(BOLD, 56), font(BLACK, 64)
+            y += 100
+        # shrink rows so the last bar ends above the caption dead zone
+        s = min(1.0, (ZONE_TOP - y) / (len(items) * 272 - 94))
+        fl, fv = font(BOLD, int(56 * s)), font(BLACK, int(64 * s))
+        lab_h, bar_h, step = int(82 * s), int(96 * s), int(190 * s)
         bw = SAFE_X1 - SAFE_X0
         track = self.theme["track"]
         track = track if len(track) == 4 else (*track, 255)
         for k, it in enumerate(items):
             p = ease_out((t - 0.1 - 0.25 * k) / 0.8)
             d.text((SAFE_X0, y), it["label"], font=fl, fill=self.theme["text"])
-            y += 82
-            d.rounded_rectangle((SAFE_X0, y, SAFE_X1, y + 96), 48, fill=track)
+            y += lab_h
+            d.rounded_rectangle((SAFE_X0, y, SAFE_X1, y + bar_h), bar_h // 2, fill=track)
             frac = float(it["value"]) / vmax * p
             last = k == len(items) - 1
             if self.s.get("theme") == "bold_bright":
@@ -616,7 +619,7 @@ class Renderer:
             else:
                 col = self.theme["accent"] if last else self.theme["accent2"]
             if frac > 0:
-                d.rounded_rectangle((SAFE_X0, y, SAFE_X0 + max(96, bw * frac), y + 96), 48, fill=col)
+                d.rounded_rectangle((SAFE_X0, y, SAFE_X0 + max(bar_h, bw * frac), y + bar_h), bar_h // 2, fill=col)
             val = float(it["value"])
             label = f'{v.get("prefix", "")}{fmt_number(val * p, None if val.is_integer() else 1)}{v.get("suffix", "")}'
             lw = fv.getlength(label)
@@ -625,10 +628,10 @@ class Renderer:
                 inside = (20, 20, 20) if self.s.get("theme") != "clean_navy" or not last else (255, 255, 255)
                 if self.s.get("theme") == "clean_navy":
                     inside = (255, 255, 255)
-                d.text((bar_end - lw - 30, y + 12), label, font=fv, fill=inside)
+                d.text((bar_end - lw - 30, y + bar_h // 8), label, font=fv, fill=inside)
             else:
-                d.text((min(bar_end + 20, SAFE_X1 - lw), y + 12), label, font=fv, fill=self.theme["text"])
-            y += 190
+                d.text((min(bar_end + 20, SAFE_X1 - lw), y + bar_h // 8), label, font=fv, fill=self.theme["text"])
+            y += step
         return frame
 
     def frame_donut(self, sc: Scene, t: float, idx: int) -> Image.Image:
@@ -785,6 +788,9 @@ class Renderer:
             bed = np.pad(bed, (0, max(0, len(audio) - len(bed))))[: len(audio)]
             audio = audio + music.duck(bed, audio, sr) * music.MUSIC_GAIN
         audio_issues, audio_stats = audio_check.check(scenes, starts, self.joins, voice, audio, sr)
+        clear_issues, clear_stats = clarity_check.check(scenes, starts, audio, sr)
+        audio_issues += clear_issues
+        audio_stats.update(clear_stats)
         audio = np.clip(audio, -1, 1)
         out_path.parent.mkdir(parents=True, exist_ok=True)
         with tempfile.TemporaryDirectory() as tmp:

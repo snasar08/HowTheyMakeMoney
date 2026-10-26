@@ -4,8 +4,8 @@
   "company": "McDonald's",
   "theme": "bold_bright",
   "status": "ready",
-  "title": "McDonald's Is Secretly a Landlord",
-  "description": "McDonald's Is Secretly a Landlord.\n\nSources:\n- McDonald's 2025 Form 10-K (SEC): https://www.sec.gov/Archives/edgar/data/63908/000006390826000035/mcd-20251231.htm\n- McDonald's 2025 systemwide sales: https://komo.ai/directory/mcdonalds\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "title": "Is McDonald's Even a Burger Company?",
+  "description": "Is McDonald's Even a Burger Company?.\n\nSources:\n- McDonald's 2025 Form 10-K (SEC): https://www.sec.gov/Archives/edgar/data/63908/000006390826000035/mcd-20251231.htm\n- McDonald's 2025 systemwide sales: https://komo.ai/directory/mcdonalds\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
     "mcdonalds",
     "franchise",
@@ -35,12 +35,12 @@
   },
   "scenes": [
     {
-      "narration": "McDonald's sells billions of burgers. But the company itself barely sells any of them.",
+      "narration": "What if I told you McDonald's barely sells any burgers itself?",
       "visual": {
         "type": "image",
         "image": "hook",
-        "overlay": "WHO SELLS",
-        "overlay_sub": "the burgers?"
+        "overlay": "NOT A",
+        "overlay_sub": "burger company?"
       }
     },
     {

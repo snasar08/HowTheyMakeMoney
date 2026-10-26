@@ -4,8 +4,8 @@
   "company": "Starbucks",
   "theme": "bold_bright",
   "status": "ready",
-  "title": "Starbucks Is Basically a Bank",
-  "description": "Starbucks Is Basically a Bank.\n\nSources:\n- Starbucks Form 10-Q, stored value card balance (SEC): https://www.sec.gov/Archives/edgar/data/829224/000082922426000011/sbux-20251228.htm\n- Starbucks breakage revenue (MarketWatch via Tiger): https://www.itiger.com/news/2531706822\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "title": "Is Starbucks Secretly a Bank?",
+  "description": "Is Starbucks Secretly a Bank?.\n\nSources:\n- Starbucks Form 10-Q, stored value card balance (SEC): https://www.sec.gov/Archives/edgar/data/829224/000082922426000011/sbux-20251228.htm\n- Starbucks breakage revenue (MarketWatch via Tiger): https://www.itiger.com/news/2531706822\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
     "starbucks",
     "gift cards",
@@ -35,12 +35,12 @@
   },
   "scenes": [
     {
-      "narration": "Starbucks might be holding some of your money right now.",
+      "narration": "Is Starbucks holding your money right now? It might be.",
       "visual": {
         "type": "image",
         "image": "hook",
-        "overlay": "YOUR MONEY",
-        "overlay_sub": "is at Starbucks"
+        "overlay": "IS STARBUCKS",
+        "overlay_sub": "a bank?"
       }
     },
     {

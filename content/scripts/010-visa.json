@@ -4,8 +4,8 @@
   "company": "Visa",
   "theme": "dark_neon",
   "status": "ready",
-  "title": "Visa Never Lends You a Dime. It Made $40B.",
-  "description": "Visa Never Lends You a Dime. It Made $40B..\n\nSources:\n- Visa fiscal 2025 results (SEC 8-K): https://www.sec.gov/Archives/edgar/data/1403161/000140316125000077/q42025earningsrelease.htm\n- Visa FY2025 Form 10-K (SEC): https://www.sec.gov/Archives/edgar/data/1403161/000140316125000089/v-20250930.htm\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "title": "Visa Never Lends You a Dime. How Did It Make $40B?",
+  "description": "Visa Never Lends You a Dime. How Did It Make $40B?.\n\nSources:\n- Visa fiscal 2025 results (SEC 8-K): https://www.sec.gov/Archives/edgar/data/1403161/000140316125000077/q42025earningsrelease.htm\n- Visa FY2025 Form 10-K (SEC): https://www.sec.gov/Archives/edgar/data/1403161/000140316125000089/v-20250930.htm\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
     "visa",
     "payments",
@@ -36,12 +36,12 @@
   },
   "scenes": [
     {
-      "narration": "Visa doesn't lend you money. It doesn't even issue your card.",
+      "narration": "Visa doesn't lend you money. It doesn't even make your card. So how does it make billions?",
       "visual": {
         "type": "image",
         "image": "hook",
-        "overlay": "NO LOANS.",
-        "overlay_sub": "No cards."
+        "overlay": "NO LOANS?",
+        "overlay_sub": "No cards?"
       }
     },
     {

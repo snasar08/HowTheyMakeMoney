@@ -4,8 +4,8 @@
   "company": "Live Nation",
   "theme": "dark_neon",
   "status": "ready",
-  "title": "Why Concerts Make Little Profit",
-  "description": "Why Concerts Make Little Profit.\n\nSources:\n- Live Nation Entertainment full-year and Q4 2025 results: https://news.livenationentertainment.com/news/live-nation-entertainment-full-year-and-fourth-quarter-2025-results\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "title": "Why Don't Concerts Make Money?",
+  "description": "Why Don't Concerts Make Money?.\n\nSources:\n- Live Nation Entertainment full-year and Q4 2025 results: https://news.livenationentertainment.com/news/live-nation-entertainment-full-year-and-fourth-quarter-2025-results\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
     "live nation",
     "ticketmaster",
@@ -36,12 +36,12 @@
   },
   "scenes": [
     {
-      "narration": "Live Nation took in 20.9 billion dollars from concerts in 2025. It kept almost none of it.",
+      "narration": "Concerts brought in 20.9 billion dollars. So why did Live Nation keep almost none of it?",
       "visual": {
         "type": "image",
         "image": "hook",
         "overlay": "$20.9 BILLION",
-        "overlay_sub": "from concerts"
+        "overlay_sub": "kept almost none?"
       }
     },
     {

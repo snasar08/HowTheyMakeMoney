@@ -4,8 +4,8 @@
   "company": "NBA players",
   "theme": "clean_navy",
   "status": "ready",
-  "title": "How NBA Players Get Paid",
-  "description": "How NBA Players Get Paid.\n\nSources:\n- NBA salary cap (Wikipedia, citing the NBA and the CBA): https://en.wikipedia.org/wiki/NBA_salary_cap\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "title": "How Do NBA Players Actually Get Paid?",
+  "description": "How Do NBA Players Actually Get Paid?.\n\nSources:\n- NBA salary cap (Wikipedia, citing the NBA and the CBA): https://en.wikipedia.org/wiki/NBA_salary_cap\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
     "nba",
     "salary cap",
@@ -36,12 +36,12 @@
   },
   "scenes": [
     {
-      "narration": "NBA players are paid from a share of what the league earns, not a fixed amount.",
+      "narration": "How do NBA players really get paid? It's not a fixed amount.",
       "visual": {
         "type": "image",
         "image": "hook",
-        "overlay": "A SHARE",
-        "overlay_sub": "of league revenue"
+        "overlay": "HOW ARE THEY",
+        "overlay_sub": "paid?"
       }
     },
     {

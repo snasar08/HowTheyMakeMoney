@@ -36,12 +36,12 @@
   },
   "scenes": [
     {
-      "narration": "Robinhood charges zero commission on stock trades. So how did it make 4.5 billion dollars last year?",
+      "narration": "Robinhood charges you nothing to trade. So how did it make 4.5 billion dollars last year?",
       "visual": {
         "type": "image",
         "image": "hook",
-        "overlay": "$0 COMMISSION",
-        "overlay_sub": "$4.5B revenue"
+        "overlay": "$0 TO TRADE",
+        "overlay_sub": "$4.5B revenue?"
       }
     },
     {

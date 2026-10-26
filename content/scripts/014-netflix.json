@@ -4,8 +4,8 @@
   "company": "Netflix",
   "theme": "clean_navy",
   "status": "ready",
-  "title": "How Netflix Made $45 Billion Last Year",
-  "description": "How Netflix Made $45 Billion Last Year.\n\nSources:\n- Netflix 2025 Form 10-K (SEC): https://www.sec.gov/Archives/edgar/data/1065280/000106528026000034/nflx-20251231.htm\n- Netflix 2025 results and 2026 outlook (CSI Magazine): https://www.csimagazine.com/csi/netflix-fullyear-results.php\n- Netflix ad revenue $1.5B (AdNews): https://www.adnews.com.au/news/netflix-ad-revenue-hits-1-5-billion\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "title": "How Did Netflix Make $45 Billion?",
+  "description": "How Did Netflix Make $45 Billion?.\n\nSources:\n- Netflix 2025 Form 10-K (SEC): https://www.sec.gov/Archives/edgar/data/1065280/000106528026000034/nflx-20251231.htm\n- Netflix 2025 results and 2026 outlook (CSI Magazine): https://www.csimagazine.com/csi/netflix-fullyear-results.php\n- Netflix ad revenue $1.5B (AdNews): https://www.adnews.com.au/news/netflix-ad-revenue-hits-1-5-billion\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
     "netflix",
     "streaming",
@@ -35,12 +35,12 @@
   },
   "scenes": [
     {
-      "narration": "Netflix made 45 billion dollars last year. Here's where it comes from.",
+      "narration": "Netflix made 45 billion dollars last year. How much of it did it actually keep?",
       "visual": {
         "type": "image",
         "image": "hook",
         "overlay": "$45 BILLION",
-        "overlay_sub": "in one year"
+        "overlay_sub": "how much kept?"
       }
     },
     {

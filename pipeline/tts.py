@@ -19,7 +19,11 @@ SAMPLE_RATE = 24000
 
 VOICE_ENGINE = os.environ.get("VOICE_ENGINE", "kokoro")
 KOKORO_VOICE = os.environ.get("KOKORO_VOICE", "am_fenrir")
-KOKORO_SPEED = float(os.environ.get("KOKORO_SPEED", "1.35"))
+KOKORO_SPEED = float(os.environ.get("KOKORO_SPEED", "1.25"))  # Sam: 1.35 too fast to follow
+QUESTION_SPEED = 0.93   # questions slightly slower so they land as questions
+QUESTION_BEAT = 0.5     # Sam: half-second beat after a question, then the answer
+LEAD_KEEP, TAIL_KEEP = 0.06, 0.14  # silence kept before/after each sentence
+SENTENCE = re.compile(r"(?<=[.?!])\s+(?=[A-Z\"'$0-9])")
 MING_VOICE = os.environ.get("MING_VOICE", "US_James")
 
 _kokoro = {}
@@ -41,21 +45,40 @@ def kokoro(text: str, voice: str | None = None, speed: float | None = None):
 
         _kokoro[lang] = KPipeline(lang_code=lang)
     chunks, words, offset = [], [], 0.0
-    for res in _kokoro[lang](text, voice=voice, speed=speed):
-        audio = getattr(res, "audio", None)
-        if audio is None and isinstance(res, tuple):
-            audio = res[2]
-        if audio is None:
+    # One sentence per call: read as one block, Kokoro flattens the melody and a question
+    # comes out sounding like a statement (Sam: "you don't realize it's a question").
+    # Questions are read a touch slower, with a short beat after them.
+    for sent in SENTENCE.split(text):
+        if not sent.strip():
             continue
-        a = audio.detach().cpu().numpy() if hasattr(audio, "detach") else np.asarray(audio)
-        a = a.astype(np.float32).reshape(-1)
-        for tok in getattr(res, "tokens", None) or []:
-            st, en = getattr(tok, "start_ts", None), getattr(tok, "end_ts", None)
-            txt = getattr(tok, "text", "")
-            if st is not None and en is not None and re.search(r"\w", txt or ""):
-                words.append((txt, offset + float(st), offset + float(en)))
-        chunks.append(a)
-        offset += len(a) / SAMPLE_RATE
+        q = sent.rstrip().endswith("?")
+        # Kokoro swallows a weak first syllable ("Across" -> "cross", "The rest" -> "rest",
+        # per clarity_check). A leading "..." gives it a run-up and fixes it.
+        for res in _kokoro[lang]("... " + sent, voice=voice, speed=speed * (QUESTION_SPEED if q else 1.0)):
+            audio = getattr(res, "audio", None)
+            if audio is None and isinstance(res, tuple):
+                audio = res[2]
+            if audio is None:
+                continue
+            a = audio.detach().cpu().numpy() if hasattr(audio, "detach") else np.asarray(audio)
+            a = a.astype(np.float32).reshape(-1)
+            # the "..." run-up leaves silence; keep only a natural gap between sentences
+            loud = np.flatnonzero(np.abs(a) > 0.02)
+            cut0 = max(0, int(loud[0]) - int(LEAD_KEEP * SAMPLE_RATE)) if len(loud) else 0
+            cut1 = min(len(a), int(loud[-1]) + int(TAIL_KEEP * SAMPLE_RATE)) if len(loud) else len(a)
+            a = a[cut0:cut1]
+            shift = cut0 / SAMPLE_RATE
+            for tok in getattr(res, "tokens", None) or []:
+                st, en = getattr(tok, "start_ts", None), getattr(tok, "end_ts", None)
+                txt = getattr(tok, "text", "")
+                if st is not None and en is not None and re.search(r"\w", txt or ""):
+                    words.append((txt, offset + max(0.0, float(st) - shift),
+                                  offset + min(len(a) / SAMPLE_RATE, float(en) - shift)))
+            chunks.append(a)
+            offset += len(a) / SAMPLE_RATE
+        if q:
+            chunks.append(np.zeros(int(QUESTION_BEAT * SAMPLE_RATE), np.float32))
+            offset += QUESTION_BEAT
     if not chunks:
         raise RuntimeError("Kokoro returned no audio")
     return np.concatenate(chunks), (words or None)

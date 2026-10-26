@@ -4,8 +4,8 @@
   "company": "Walmart",
   "theme": "clean_navy",
   "status": "ready",
-  "title": "Walmart Keeps 4 Cents a Dollar, So It Sells Ads",
-  "description": "Walmart Keeps 4 Cents a Dollar, So It Sells Ads.\n\nSources:\n- Walmart Q4 and fiscal 2026 earnings release: https://stock.walmart.com/sec-filings/all-sec-filings/content/0000104169-26-000032/earningsreleasefy26q4.htm\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "title": "Walmart Keeps 4 Cents a Dollar. Then What?",
+  "description": "Walmart Keeps 4 Cents a Dollar. Then What?.\n\nSources:\n- Walmart Q4 and fiscal 2026 earnings release: https://stock.walmart.com/sec-filings/all-sec-filings/content/0000104169-26-000032/earningsreleasefy26q4.htm\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
     "walmart",
     "advertising",
@@ -36,12 +36,12 @@
   },
   "scenes": [
     {
-      "narration": "Walmart keeps only about 4 cents of profit on every dollar it takes in. So it is growing something else.",
+      "narration": "Walmart keeps only about 4 cents of every dollar you spend. So how does it make more?",
       "visual": {
         "type": "image",
         "image": "hook",
-        "overlay": "4 CENTS",
-        "overlay_sub": "profit per dollar"
+        "overlay": "ONLY 4 CENTS?",
+        "overlay_sub": "per dollar"
       }
     },
     {

@@ -4,8 +4,8 @@
   "company": "Spotify",
   "theme": "dark_neon",
   "status": "ready",
-  "title": "Where Your Spotify Money Actually Goes",
-  "description": "Where Your Spotify Money Actually Goes.\n\nSources:\n- Spotify paid $11B+ in 2025 (Storyboard18): https://www.storyboard18.com/brand-marketing/spotify-payouts-cross-11-billion-as-independent-artists-take-larger-share-88427.htm\n- Spotify royalties and revenue share (Mezha): https://mezha.ua/en/news/spotify-11b-royaltie-308105/\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "title": "Where Does Your Spotify Money Really Go?",
+  "description": "Where Does Your Spotify Money Really Go?.\n\nSources:\n- Spotify paid $11B+ in 2025 (Storyboard18): https://www.storyboard18.com/brand-marketing/spotify-payouts-cross-11-billion-as-independent-artists-take-larger-share-88427.htm\n- Spotify royalties and revenue share (Mezha): https://mezha.ua/en/news/spotify-11b-royaltie-308105/\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
     "spotify",
     "music industry",
@@ -35,12 +35,12 @@
   },
   "scenes": [
     {
-      "narration": "Spotify brought in billions last year. Most of it wasn't Spotify's to keep.",
+      "narration": "You pay Spotify every month. So why does Spotify keep so little of it?",
       "visual": {
         "type": "image",
         "image": "hook",
-        "overlay": "NOT THEIRS",
-        "overlay_sub": "to keep"
+        "overlay": "WHERE DOES",
+        "overlay_sub": "your money go?"
       }
     },
     {

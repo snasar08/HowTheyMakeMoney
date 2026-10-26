@@ -4,8 +4,8 @@
   "company": "Google & Apple",
   "theme": "dark_neon",
   "status": "ready",
-  "title": "Google Pays Apple $20 Billion for One Setting",
-  "description": "Google Pays Apple $20 Billion for One Setting.\n\nSources:\n- Google paid Apple $20B in 2022 (Business Today): https://www.businesstoday.in/amp/technology/news/story/google-paid-apple-a-staggering-20-billion-in-2022-for-default-search-engine-status-427909-2024-05-02\n- Google spent $26.3B on defaults in 2021 (PhoneArena): https://www.phonearena.com/news/google-pays-big-bucks-to-be-default-search-engine_id152057\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "title": "Why Does Google Pay Apple $20 Billion?",
+  "description": "Why Does Google Pay Apple $20 Billion?.\n\nSources:\n- Google paid Apple $20B in 2022 (Business Today): https://www.businesstoday.in/amp/technology/news/story/google-paid-apple-a-staggering-20-billion-in-2022-for-default-search-engine-status-427909-2024-05-02\n- Google spent $26.3B on defaults in 2021 (PhoneArena): https://www.phonearena.com/news/google-pays-big-bucks-to-be-default-search-engine_id152057\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
     "google",
     "apple",
@@ -36,12 +36,12 @@
   },
   "scenes": [
     {
-      "narration": "Google pays Apple around 20 billion dollars a year. For one setting.",
+      "narration": "Why would Google pay Apple 20 billion dollars a year, for one setting on your phone?",
       "visual": {
         "type": "image",
         "image": "hook",
         "overlay": "$20 BILLION",
-        "overlay_sub": "for one setting"
+        "overlay_sub": "for ONE setting?"
       }
     },
     {
@@ -65,7 +65,7 @@
       }
     },
     {
-      "narration": "Across all its partners, Google spent 26.3 billion dollars on default deals like this in 2021.",
+      "narration": "And that's just Apple. In 2021, Google spent 26.3 billion dollars on deals like this.",
       "visual": {
         "type": "stat",
         "value": 26.3,
@@ -76,7 +76,7 @@
       }
     },
     {
-      "narration": "Why pay so much? Because most people never change the default, and every search is a chance to show ads. Follow for more.",
+      "narration": "Why pay so much? Most people never change the default. And every single search means more ads. Follow for more.",
       "visual": {
         "type": "text",
         "text": "Defaults are worth",

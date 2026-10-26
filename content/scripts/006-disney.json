@@ -4,8 +4,8 @@
   "company": "Disney",
   "theme": "bold_bright",
   "status": "ready",
-  "title": "Disney's Real Money Machine Isn't Movies",
-  "description": "Disney's Real Money Machine Isn't Movies.\n\nSources:\n- Disney FY2025 Form 10-K (SEC): https://www.sec.gov/Archives/edgar/data/1744489/000174448925000155/dis-20250927.htm\n- Disney FY2025 segment operating income (Market Chameleon): https://marketchameleon.com/articles/b/2025/11/13/disney-earnings-streaming-parks-growth-2025\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "title": "Does Disney Really Make Money From Movies?",
+  "description": "Does Disney Really Make Money From Movies?.\n\nSources:\n- Disney FY2025 Form 10-K (SEC): https://www.sec.gov/Archives/edgar/data/1744489/000174448925000155/dis-20250927.htm\n- Disney FY2025 segment operating income (Market Chameleon): https://marketchameleon.com/articles/b/2025/11/13/disney-earnings-streaming-parks-growth-2025\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
     "disney",
     "theme parks",
@@ -35,12 +35,12 @@
   },
   "scenes": [
     {
-      "narration": "Disney's movies get all the attention. The theme parks pay the bills.",
+      "narration": "Disney makes the biggest movies on Earth. So why aren't movies its money machine?",
       "visual": {
         "type": "image",
         "image": "hook",
-        "overlay": "THE PARKS",
-        "overlay_sub": "pay the bills"
+        "overlay": "NOT",
+        "overlay_sub": "the movies?"
       }
     },
     {

@@ -4,8 +4,8 @@
   "company": "Planet Fitness",
   "theme": "bold_bright",
   "status": "ready",
-  "title": "Planet Fitness Also Sells Treadmills",
-  "description": "Planet Fitness Also Sells Treadmills.\n\nSources:\n- Planet Fitness Q4 and year-end 2025 results (press release): https://investor.planetfitness.com/investors/press-releases/press-release-details/2026/Planet-Fitness-Inc--Announces-Fourth-Quarter-and-Year-End-2025-Results/default.aspx\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "title": "Why Does Planet Fitness Sell Treadmills?",
+  "description": "Why Does Planet Fitness Sell Treadmills?.\n\nSources:\n- Planet Fitness Q4 and year-end 2025 results (press release): https://investor.planetfitness.com/investors/press-releases/press-release-details/2026/Planet-Fitness-Inc--Announces-Fourth-Quarter-and-Year-End-2025-Results/default.aspx\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
     "planet fitness",
     "gym",
@@ -36,12 +36,12 @@
   },
   "scenes": [
     {
-      "narration": "Planet Fitness sells gym memberships. It also sells treadmills, to its own franchise owners.",
+      "narration": "Planet Fitness sells gym memberships. So why is it selling treadmills too?",
       "visual": {
         "type": "image",
         "image": "hook",
-        "overlay": "TREADMILLS",
-        "overlay_sub": "sold to owners"
+        "overlay": "WHY",
+        "overlay_sub": "treadmills?"
       }
     },
     {

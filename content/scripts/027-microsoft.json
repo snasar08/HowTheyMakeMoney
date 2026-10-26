@@ -4,8 +4,8 @@
   "company": "Microsoft",
   "theme": "clean_navy",
   "status": "ready",
-  "title": "Microsoft Keeps 47 Cents of Every Dollar",
-  "description": "Microsoft Keeps 47 Cents of Every Dollar.\n\nSources:\n- Microsoft fiscal 2026 Q4 earnings press release: https://www.microsoft.com/en-us/investor/earnings/fy-2026-q4/press-release-webcast\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "title": "How Does Microsoft Keep 47 Cents a Dollar?",
+  "description": "How Does Microsoft Keep 47 Cents a Dollar?.\n\nSources:\n- Microsoft fiscal 2026 Q4 earnings press release: https://www.microsoft.com/en-us/investor/earnings/fy-2026-q4/press-release-webcast\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
     "microsoft",
     "azure",
@@ -36,12 +36,12 @@
   },
   "scenes": [
     {
-      "narration": "Microsoft keeps about 47 cents of operating profit from every dollar it takes in.",
+      "narration": "Most companies keep a few cents per dollar. How does Microsoft keep about 47?",
       "visual": {
         "type": "image",
         "image": "hook",
         "overlay": "47 CENTS",
-        "overlay_sub": "kept per dollar"
+        "overlay_sub": "kept per dollar?"
       }
     },
     {

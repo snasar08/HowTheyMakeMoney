@@ -4,8 +4,8 @@
   "company": "Amazon",
   "theme": "clean_navy",
   "status": "ready",
-  "title": "Amazon's Profit Doesn't Come From Its Store",
-  "description": "Amazon's Profit Doesn't Come From Its Store.\n\nSources:\n- Amazon Q4 and full year 2025 results (TED): https://tedmag.com/amazon-announces-4q-results/\n- Amazon FY2025 segment analysis (Beancount): https://beancount.io/blog/2026/07/13/amazon-fy2025-earnings-analysis\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "title": "Where Does Amazon Really Make Its Money?",
+  "description": "Where Does Amazon Really Make Its Money?.\n\nSources:\n- Amazon Q4 and full year 2025 results (TED): https://tedmag.com/amazon-announces-4q-results/\n- Amazon FY2025 segment analysis (Beancount): https://beancount.io/blog/2026/07/13/amazon-fy2025-earnings-analysis\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
     "amazon",
     "aws",
@@ -35,11 +35,12 @@
   },
   "scenes": [
     {
-      "narration": "Amazon's online store isn't where most of its profit comes from.",
+      "narration": "You think Amazon makes its money selling you stuff? Not really.",
       "visual": {
         "type": "image",
         "image": "hook",
-        "overlay": "NOT THE STORE"
+        "overlay": "NOT",
+        "overlay_sub": "the store?"
       }
     },
     {

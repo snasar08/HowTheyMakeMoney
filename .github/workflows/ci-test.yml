@@ -23,7 +23,7 @@ jobs:
     env:
       VOICE_ENGINE: kokoro
       KOKORO_VOICE: ${{ vars.KOKORO_VOICE || 'am_fenrir' }}
-      KOKORO_SPEED: ${{ vars.KOKORO_SPEED || '1.35' }}
+      KOKORO_SPEED: ${{ vars.KOKORO_SPEED || '1.25' }}
       BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
       GH_TOKEN: ${{ github.token }}
       HTMM_CACHE: ${{ github.workspace }}/.cache

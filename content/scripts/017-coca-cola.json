@@ -4,8 +4,8 @@
   "company": "Coca-Cola",
   "theme": "clean_navy",
   "status": "ready",
-  "title": "Coca-Cola's Secret Is Selling the Syrup",
-  "description": "Coca-Cola's Secret Is Selling the Syrup.\n\nSources:\n- Coca-Cola Q4 and full-year 2025 results (press release): https://investors.coca-colacompany.com/news-events/press-releases/detail/1151/coca-cola-reports-fourth-quarter-and-full-year-2025-results\n- Coca-Cola Q4 2025 earnings release (full PDF with segment tables): https://www.coca-colacompany.com/content/dam/company/us/en/media-center/Coca-Cola%20Q4%202025%20Earnings%20Release_Full%20Release_2.10.26.pdf\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "title": "What Does Coca-Cola Actually Sell?",
+  "description": "What Does Coca-Cola Actually Sell?.\n\nSources:\n- Coca-Cola Q4 and full-year 2025 results (press release): https://investors.coca-colacompany.com/news-events/press-releases/detail/1151/coca-cola-reports-fourth-quarter-and-full-year-2025-results\n- Coca-Cola Q4 2025 earnings release (full PDF with segment tables): https://www.coca-colacompany.com/content/dam/company/us/en/media-center/Coca-Cola%20Q4%202025%20Earnings%20Release_Full%20Release_2.10.26.pdf\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
     "coca-cola",
     "soda",
@@ -36,12 +36,12 @@
   },
   "scenes": [
     {
-      "narration": "Coca-Cola made 47.9 billion dollars in 2025. A big part of that starts as concentrate sold to bottling partners.",
+      "narration": "Coca-Cola made 47.9 billion dollars in 2025. But does it even make the bottles?",
       "visual": {
         "type": "image",
         "image": "hook",
-        "overlay": "47.9 BILLION",
-        "overlay_sub": "in revenue, 2025"
+        "overlay": "WHO MAKES",
+        "overlay_sub": "the bottles?"
       }
     },
     {

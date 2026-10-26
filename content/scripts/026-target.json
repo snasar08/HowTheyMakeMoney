@@ -4,8 +4,8 @@
   "company": "Target",
   "theme": "bold_bright",
   "status": "ready",
-  "title": "Target Sells Ad Space Too",
-  "description": "Target Sells Ad Space Too.\n\nSources:\n- Target Q4 and full-year 2025 earnings release: https://corporate.target.com/press/release/2026/03/target-corporation-reports-fourth-quarter-and-full-year-2025-earnings\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "title": "Why Is Target Selling Ads?",
+  "description": "Why Is Target Selling Ads?.\n\nSources:\n- Target Q4 and full-year 2025 earnings release: https://corporate.target.com/press/release/2026/03/target-corporation-reports-fourth-quarter-and-full-year-2025-earnings\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
     "target",
     "roundel",
@@ -36,12 +36,12 @@
   },
   "scenes": [
     {
-      "narration": "Target sold 104.8 billion dollars of stuff in 2025. But it also earns money from ads and credit cards.",
+      "narration": "Target sells you stuff. So why is it also selling ads?",
       "visual": {
         "type": "image",
         "image": "hook",
-        "overlay": "BEYOND SALES",
-        "overlay_sub": "ads and cards"
+        "overlay": "WHY IS TARGET",
+        "overlay_sub": "selling ads?"
       }
     },
     {

@@ -123,6 +123,10 @@ def duck(music: np.ndarray, voice: np.ndarray, sr: int, depth: float = 0.45) -> 
     win = int(0.05 * sr)
     energy = np.sqrt(np.convolve(voice[: len(music)] ** 2, np.ones(win) / win, mode="same"))
     active = (energy > 0.02).astype(np.float32)
-    smooth = np.convolve(active, np.ones(int(0.25 * sr)) / int(0.25 * sr), mode="same")
+    # widen speech by 0.2 s each side so the music is already down when a word starts —
+    # otherwise the first consonant of a line gets masked ("Food" heard as "ood")
+    pad = int(0.2 * sr)
+    active = (np.convolve(active, np.ones(2 * pad + 1), mode="same") > 0).astype(np.float32)
+    smooth = np.convolve(active, np.ones(int(0.15 * sr)) / int(0.15 * sr), mode="same")
     gain = 1.0 - (1.0 - depth) * np.clip(smooth, 0, 1)
     return music * gain.astype(np.float32)

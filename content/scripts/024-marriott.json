@@ -4,8 +4,8 @@
   "company": "Marriott",
   "theme": "clean_navy",
   "status": "ready",
-  "title": "Marriott's Business Is Mostly Fees",
-  "description": "Marriott's Business Is Mostly Fees.\n\nSources:\n- Marriott Q4 and full-year 2025 results (press release): https://fortune.com/company-assets/729/quartr/earnings-release-8-k-909ff-2026-02-10-12-08-01.pdf\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "title": "Does Marriott Even Own Its Hotels?",
+  "description": "Does Marriott Even Own Its Hotels?.\n\nSources:\n- Marriott Q4 and full-year 2025 results (press release): https://fortune.com/company-assets/729/quartr/earnings-release-8-k-909ff-2026-02-10-12-08-01.pdf\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
     "marriott",
     "hotels",
@@ -36,12 +36,12 @@
   },
   "scenes": [
     {
-      "narration": "Marriott collected 5.4 billion dollars in fees in 2025. It calls its business fee-driven and asset-light.",
+      "narration": "Marriott collected 5.4 billion dollars in fees. So does it even own its hotels?",
       "visual": {
         "type": "image",
         "image": "hook",
-        "overlay": "$5.4 BILLION",
-        "overlay_sub": "in fees"
+        "overlay": "DOES IT",
+        "overlay_sub": "own the hotels?"
       }
     },
     {
