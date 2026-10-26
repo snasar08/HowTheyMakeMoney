@@ -13,6 +13,7 @@ from pathlib import Path
 
 from . import publish as P
 
+SAMPLE_VIDEO = "https://download.samplelib.com/mp4/sample-5s.mp4"
 ENUMS = ["YoutubePrivacy", "ShareMode", "SchedulingType", "PostStatus", "Service"]
 
 
@@ -39,7 +40,14 @@ def main(video_url: str, out: Path) -> int:
         step("find YouTube channel", False, error=str(exc)[:300])
         return finish(rep, out)
 
-    step("video URL public", P.public_ok(video_url), url=video_url)
+    public = P.public_ok(video_url)
+    step("video URL public", public, url=video_url)
+    if not public:
+        # repo still private: prove schedule/confirm/delete with a small public sample clip
+        # (privacy private, deleted right away) so the rest of the path is still tested
+        video_url = SAMPLE_VIDEO
+        rep["sample_video_used"] = SAMPLE_VIDEO
+        step("fallback sample video public", P.public_ok(video_url), url=video_url)
 
     privacy = "private" if "private" in rep.get("enums", {}).get("YoutubePrivacy", []) else None
     when = (dt.datetime.now(dt.timezone.utc) + dt.timedelta(hours=1)).replace(second=0, microsecond=0)
