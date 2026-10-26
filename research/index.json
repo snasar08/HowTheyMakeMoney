@@ -1,0 +1,182 @@
+{
+  "https://www.apple.com/newsroom/2025/10/apple-reports-fourth-quarter-results/": {
+    "file": "pages/69ce4cc2efdc.txt",
+    "fetched_at": "2026-10-26T11:47:42.051020+00:00",
+    "ok": true,
+    "chars": 7556,
+    "status": 200,
+    "final_url": "https://www.apple.com/newsroom/2025/10/apple-reports-fourth-quarter-results/",
+    "content_type": "text/html;charset=utf-8"
+  },
+  "https://about.nike.com/en/newsroom/releases/nike-inc-reports-fiscal-2026-fourth-quarter-and-full-year-results": {
+    "file": "pages/7dd2acc13c86.txt",
+    "fetched_at": "2026-10-26T11:47:43.042862+00:00",
+    "ok": true,
+    "chars": 8510,
+    "status": 200,
+    "final_url": "https://about.nike.com/en/newsroom/releases/nike-inc-reports-fiscal-2026-fourth-quarter-and-full-year-results",
+    "content_type": "text/html; charset=utf-8"
+  },
+  "https://investors.coca-colacompany.com/news-events/press-releases/detail/1151/coca-cola-reports-fourth-quarter-and-full-year-2025-results": {
+    "file": "pages/ba49f678b228.txt",
+    "fetched_at": "2026-10-26T11:47:44.085548+00:00",
+    "ok": true,
+    "chars": 29276,
+    "status": 200,
+    "final_url": "https://investors.coca-colacompany.com/news-events/press-releases/detail/1151/coca-cola-reports-fourth-quarter-and-full-year-2025-results",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://stock.walmart.com/sec-filings/all-sec-filings/content/0000104169-26-000032/earningsreleasefy26q4.htm": {
+    "file": "pages/61bd88275d92.txt",
+    "fetched_at": "2026-10-26T11:47:44.771924+00:00",
+    "ok": true,
+    "chars": 60169,
+    "status": 200,
+    "final_url": "https://stock.walmart.com/sec-filings/all-sec-filings/content/0000104169-26-000032/earningsreleasefy26q4.htm",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://s21.q4cdn.com/399680738/files/doc_financials/2025/q4/Meta-12-31-2025-Exhibit-99-1-FINAL.pdf": {
+    "file": "pages/167464c70efd.txt",
+    "fetched_at": "2026-10-26T11:47:45.379175+00:00",
+    "ok": true,
+    "chars": 30723,
+    "status": 200,
+    "final_url": "https://s21.q4cdn.com/399680738/files/doc_financials/2025/q4/Meta-12-31-2025-Exhibit-99-1-FINAL.pdf",
+    "content_type": "application/pdf"
+  },
+  "https://www.nintendo.co.jp/ir/pdf/2026/260203_2e.pdf": {
+    "file": "pages/d766f18d033b.txt",
+    "fetched_at": "2026-10-26T11:47:45.981414+00:00",
+    "ok": true,
+    "chars": 43949,
+    "status": 200,
+    "final_url": "https://www.nintendo.co.jp/ir/pdf/2026/260203_2e.pdf",
+    "content_type": "application/pdf"
+  },
+  "https://investor.planetfitness.com/investors/press-releases/press-release-details/2026/Planet-Fitness-Inc--Announces-Fourth-Quarter-and-Year-End-2025-Results/default.aspx": {
+    "file": "pages/64665d9861ec.txt",
+    "fetched_at": "2026-10-26T11:47:46.919413+00:00",
+    "ok": true,
+    "chars": 49415,
+    "status": 200,
+    "final_url": "https://investor.planetfitness.com/investors/press-releases/press-release-details/2026/Planet-Fitness-Inc--Announces-Fourth-Quarter-and-Year-End-2025-Results/default.aspx",
+    "content_type": "text/html; charset=utf-8"
+  },
+  "https://ir.chipotle.com/2026-02-03-CHIPOTLE-ANNOUNCES-FOURTH-QUARTER-AND-FULL-YEAR-2025-RESULTS": {
+    "file": "pages/dede42998fb3.txt",
+    "fetched_at": "2026-10-26T11:47:47.493075+00:00",
+    "ok": true,
+    "chars": 42894,
+    "status": 200,
+    "final_url": "https://ir.chipotle.com/2026-02-03-CHIPOTLE-ANNOUNCES-FOURTH-QUARTER-AND-FULL-YEAR-2025-RESULTS",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://news.livenationentertainment.com/news/live-nation-entertainment-full-year-and-fourth-quarter-2025-results": {
+    "file": "pages/495344e85025.txt",
+    "fetched_at": "2026-10-26T11:47:48.271995+00:00",
+    "ok": true,
+    "chars": 37415,
+    "status": 200,
+    "final_url": "https://news.livenationentertainment.com/news/live-nation-entertainment-full-year-and-fourth-quarter-2025-results",
+    "content_type": "text/html; charset=utf-8"
+  },
+  "https://investors.duolingo.com/node/10656/pdf": {
+    "file": "pages/262eefd59d6f.txt",
+    "fetched_at": "2026-10-26T11:47:48.725506+00:00",
+    "ok": false,
+    "error": "HTTP 403"
+  },
+  "https://s2.q4cdn.com/945805771/files/doc_news/Planet-Fitness-Inc--Announces-Fourth-Quarter-and-Year-End-2025-Results-2026.pdf": {
+    "file": "pages/bc8016944418.txt",
+    "fetched_at": "2026-10-26T11:47:49.321833+00:00",
+    "ok": true,
+    "chars": 62117,
+    "status": 200,
+    "final_url": "https://s2.q4cdn.com/945805771/files/doc_news/Planet-Fitness-Inc--Announces-Fourth-Quarter-and-Year-End-2025-Results-2026.pdf",
+    "content_type": "application/pdf"
+  },
+  "https://www.coca-colacompany.com/content/dam/company/us/en/media-center/Coca-Cola%20Q4%202025%20Earnings%20Release_Full%20Release_2.10.26.pdf": {
+    "file": "pages/42ac2b944b7d.txt",
+    "fetched_at": "2026-10-26T11:47:50.055111+00:00",
+    "ok": true,
+    "chars": 133444,
+    "status": 200,
+    "final_url": "https://www.coca-colacompany.com:443/content/dam/corporate/us/en/media-center/Coca-Cola%20Q4%202025%20Earnings%20Release_Full%20Release_2.10.26.pdf",
+    "content_type": "application/pdf"
+  },
+  "https://s1.q4cdn.com/806093406/files/doc_financials/2026/q4/Q4-FY26_Press-Release_FINAL.pdf": {
+    "file": "pages/5e9d6caefc84.txt",
+    "fetched_at": "2026-10-26T11:47:50.748296+00:00",
+    "ok": true,
+    "chars": 26386,
+    "status": 200,
+    "final_url": "https://s1.q4cdn.com/806093406/files/doc_financials/2026/q4/Q4-FY26_Press-Release_FINAL.pdf",
+    "content_type": "application/pdf"
+  },
+  "https://fortune.com/company-assets/729/quartr/earnings-release-8-k-909ff-2026-02-10-12-08-01.pdf": {
+    "file": "pages/75a60104e970.txt",
+    "fetched_at": "2026-10-26T11:47:51.301437+00:00",
+    "ok": true,
+    "chars": 123135,
+    "status": 200,
+    "final_url": "https://fortune.com/company-assets/729/quartr/earnings-release-8-k-909ff-2026-02-10-12-08-01.pdf",
+    "content_type": "application/pdf"
+  },
+  "https://documents.millistream.com/74ee10fe-3b37-4efd-a61e-8765999e1ca9": {
+    "file": "pages/2f5b7721b5ee.txt",
+    "fetched_at": "2026-10-26T11:47:52.027623+00:00",
+    "ok": true,
+    "chars": 39052,
+    "status": 200,
+    "final_url": "https://documents.millistream.com/74ee10fe-3b37-4efd-a61e-8765999e1ca9",
+    "content_type": "application/pdf"
+  },
+  "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Fourth-Quarter-and-Fiscal-2026/default.aspx": {
+    "file": "pages/31f799ac21ab.txt",
+    "fetched_at": "2026-10-26T11:47:53.323394+00:00",
+    "ok": true,
+    "chars": 37249,
+    "status": 200,
+    "final_url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Fourth-Quarter-and-Fiscal-2026/default.aspx",
+    "content_type": "text/html; charset=utf-8"
+  },
+  "https://www.businesswire.com/news/home/20251030333927/en/Apple-reports-fourth-quarter-results": {
+    "file": "pages/8c3fcba71ce9.txt",
+    "fetched_at": "2026-10-26T11:47:55.068426+00:00",
+    "ok": false,
+    "error": "TimeoutError('The read operation timed out')"
+  },
+  "https://investors.airbnb.com/news-releases/news-release-details/airbnb-reports-fourth-quarter-and-full-year-2025-financial": {
+    "file": "pages/e23a5eb1a6ef.txt",
+    "fetched_at": "2026-10-26T11:48:55.561809+00:00",
+    "ok": false,
+    "error": "HTTP 404"
+  },
+  "https://en.wikipedia.org/wiki/Airbnb": {
+    "file": "pages/056d1628ceb0.txt",
+    "fetched_at": "2026-10-26T11:48:56.987620+00:00",
+    "ok": true,
+    "chars": 76228,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Airbnb",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Ferrari": {
+    "file": "pages/e20bf0739a17.txt",
+    "fetched_at": "2026-10-26T11:48:57.515283+00:00",
+    "ok": true,
+    "chars": 80500,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Ferrari",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://fortune.com/company-assets/1548/quartr/earnings-release-8-k-dd197-2026-01-28-09-57-04.pdf": {
+    "file": "pages/e0a212ff3a1a.txt",
+    "fetched_at": "2026-10-26T11:48:57.973843+00:00",
+    "ok": true,
+    "chars": 31511,
+    "status": 200,
+    "final_url": "https://fortune.com/company-assets/1548/quartr/earnings-release-8-k-dd197-2026-01-28-09-57-04.pdf",
+    "content_type": "application/pdf"
+  }
+}
