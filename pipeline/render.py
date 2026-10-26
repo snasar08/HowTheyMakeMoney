@@ -466,7 +466,11 @@ class Renderer:
             proc.stdin.close()
             if proc.wait() != 0:
                 raise RuntimeError("ffmpeg failed")
-        return {"path": str(out_path), "seconds": round(len(audio) / sr, 2), "scenes": len(scenes)}
+        mids = [round(float(starts[i] + scenes[i].duration * 0.6), 2) for i in range(len(scenes))]
+        return {"path": str(out_path), "seconds": round(len(audio) / sr, 2), "scenes": len(scenes),
+                "scene_mids": mids, "voice": tts.VOICE_ENGINE,
+                "images_ok": {k: v is not None for k, v in self.images.items()},
+                "scene_seconds": [round(sc.duration, 2) for sc in scenes]}
 
     def _caption(self, frame: Image.Image, chunks: list[list[Word]], t: float):
         for ch in chunks:

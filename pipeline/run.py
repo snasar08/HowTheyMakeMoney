@@ -33,6 +33,24 @@ def ready_scripts() -> list[Path]:
     return items
 
 
+def contact_sheet(video: Path, times: list[float], out: Path):
+    """Real frames from the finished MP4, side by side (for quick review)."""
+    import subprocess
+    import tempfile
+
+    out.parent.mkdir(parents=True, exist_ok=True)
+    with tempfile.TemporaryDirectory() as tmp:
+        frames = []
+        for i, t in enumerate(times):
+            f = Path(tmp) / f"{i}.png"
+            subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", str(t), "-i", str(video),
+                            "-frames:v", "1", "-vf", "scale=360:640", str(f)], check=True)
+            frames.append(f)
+        inputs = sum((["-i", str(f)] for f in frames), [])
+        subprocess.run(["ffmpeg", "-v", "error", "-y", *inputs, "-filter_complex",
+                        f"hstack=inputs={len(frames)}", "-q:v", "4", str(out)], check=True)
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--count", type=int, default=int(os.environ.get("SHORTS_PER_RUN", "2")))
@@ -58,7 +76,9 @@ def main() -> int:
         try:
             info = render_script(path, video)
             print(f"[run] rendered {video.name}: {info['seconds']}s")
+            print(f"::notice title={path.stem}::{json.dumps({k: v for k, v in info.items() if k != 'path'})}")
             if args.dry:
+                contact_sheet(video, info["scene_mids"], ROOT / "previews" / f"{path.stem}.jpg")
                 continue
             result = deliver(video, script, when)
             script["status"] = "delivered"

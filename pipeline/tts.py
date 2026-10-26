@@ -96,7 +96,7 @@ def synthesize(text: str) -> np.ndarray:
         try:
             return _normalize(_ming(text))
         except Exception as exc:  # fall back so a night is never lost
-            print(f"[tts] Ming failed ({exc!r}); falling back to Kokoro")
+            print(f"::warning::[tts] Ming failed ({exc!r}); falling back to Kokoro")
             engine = "kokoro"
     if engine == "kokoro":
         return _normalize(_kokoro(text))
