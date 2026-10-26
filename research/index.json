@@ -1,0 +1,59 @@
+{
+  "https://www.sec.gov/Archives/edgar/data/320187/000032018725000047/nke-20250531.htm": {
+    "file": "pages/c2ad945f5679.txt",
+    "fetched_at": "2026-10-26T11:39:41.201662+00:00",
+    "ok": false,
+    "error": "HTTP 403"
+  },
+  "https://www.bls.gov/ooh/transportation-and-material-moving/airline-and-commercial-pilots.htm": {
+    "file": "pages/d92511e5dad3.txt",
+    "fetched_at": "2026-10-26T11:39:41.883611+00:00",
+    "ok": false,
+    "error": "HTTP 403"
+  },
+  "https://www.bls.gov/ooh/sales/real-estate-brokers-and-sales-agents.htm": {
+    "file": "pages/67a479424696.txt",
+    "fetched_at": "2026-10-26T11:39:42.334895+00:00",
+    "ok": false,
+    "error": "HTTP 403"
+  },
+  "https://investor.apple.com/investor-relations/default.aspx": {
+    "file": "pages/33e2512a49dc.txt",
+    "fetched_at": "2026-10-26T11:39:42.733305+00:00",
+    "ok": true,
+    "chars": 1668,
+    "status": 200,
+    "final_url": "https://investor.apple.com/investor-relations/default.aspx",
+    "content_type": "text/html; charset=utf-8"
+  },
+  "https://www.nintendo.co.jp/ir/pdf/2026/260203_2e.pdf": {
+    "file": "pages/d766f18d033b.txt",
+    "fetched_at": "2026-10-26T11:39:43.240308+00:00",
+    "ok": true,
+    "chars": 43949,
+    "status": 200,
+    "final_url": "https://www.nintendo.co.jp/ir/pdf/2026/260203_2e.pdf",
+    "content_type": "application/pdf"
+  },
+  "https://ir.dominos.com/node/24181": {
+    "file": "pages/de9a8dca45ab.txt",
+    "fetched_at": "2026-10-26T11:39:44.690450+00:00",
+    "ok": false,
+    "error": "HTTP 403"
+  },
+  "https://en.wikipedia.org/wiki/Costco": {
+    "file": "pages/ef4abc9806ae.txt",
+    "fetched_at": "2026-10-26T11:39:45.262256+00:00",
+    "ok": true,
+    "chars": 123211,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Costco",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://www.nasdaq.com/articles/walmart-q4-earnings-top-estimates-e-commerce-and-ad-growth": {
+    "file": "pages/25ce0f3ed602.txt",
+    "fetched_at": "2026-10-26T11:39:45.769742+00:00",
+    "ok": false,
+    "error": "TimeoutError('The read operation timed out')"
+  }
+}
