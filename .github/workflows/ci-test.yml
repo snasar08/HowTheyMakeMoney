@@ -7,6 +7,7 @@ name: CI test (render + Buffer)
 on:
   push:
     branches: [ci-test]
+  workflow_dispatch:   # Actions -> "CI test (render + Buffer)" -> Run workflow
 
 permissions:
   contents: write

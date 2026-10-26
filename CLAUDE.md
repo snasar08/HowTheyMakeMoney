@@ -24,6 +24,19 @@ and **free beyond his Higgsfield Pro plan** — never add a paid service or ask 
   scene, swallowed words, silent CTA beat, clipping. Prints `::warning`s; `AUDIO_CHECK=strict`
   blocks delivery.
 - Chart scenes also get code-drawn "alt" shots (ticker / waffle / columns) on a drifting grid.
+- **Posting via Buffer (default since Oct 26 2026):** `UPLOAD_MODE` defaults to `buffer` in
+  `nightly.yml`. Each Short is attached to a GitHub Release (the public video URL) and scheduled
+  on the YouTube channel through Buffer's GraphQL API (`createPost`, `customScheduled`, `dueAt` =
+  its POST_SLOTS time, `metadata.youtube` title/categoryId 27/isAiGenerated; no tags field, so
+  tags go in as hashtags). Channel "How They Make Money" = Buffer id `6adeccfa2f1f5ed648d31e71`
+  (looked up through the API each run). **Needs the repo to be public** — Buffer fetches the
+  video at publish time and private release assets aren't reachable. Any Buffer failure falls
+  back to the release with a `::warning::`. `POST_START` (2026-10-27): nightly does nothing before.
+  Free plan: 1 key, 100 req/15 min, 250/day, 3,000/30 days; a run uses ~4 requests per Short.
+- `.github/workflows/ci-test.yml` (push to `ci-test` or Run workflow): renders 001 with the real
+  voice + audio check, and schedules → confirms → deletes one private test post on Buffer.
+  Results land on the `ci-test-results` branch (`buffer-test.json`, `out-render.log`).
+- Rendering frames runs in a thread pool (`RENDER_THREADS`, default min(4, cores)); same output.
 - `pipeline/publish.py` — `UPLOAD_MODE` repo variable:
   - `release` (default): MP4 attached to a GitHub Release with title/description to paste. Sam
     uploads from the YouTube app. Required until YouTube approves the API audit, because uploads
