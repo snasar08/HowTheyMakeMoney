@@ -10,6 +10,7 @@ Captions (word-highlighted) run over every scene.
 """
 from __future__ import annotations
 
+import bisect
 import hashlib
 import json
 import math
@@ -36,8 +37,10 @@ FONT_DIR = ROOT / "assets" / "fonts"
 CACHE = Path(os.environ.get("HTMM_CACHE", ROOT / ".cache"))
 SAFE_X0, SAFE_X1 = 70, 950          # keep clear of Shorts' right-side buttons
 CAPTION_Y = 1330                     # above the Shorts title/channel overlay
-SCENE_GAP = 0.18                     # seconds of silence between scenes
-END_HOLD = 0.6
+SCENE_GAP = 0.06                     # seconds of silence between scenes
+END_HOLD = 0.7
+BEAT_TARGET = float(os.environ.get("BEAT_TARGET", "2.0"))  # seconds per shot
+BEAT_MAX = 2.8
 
 _font_cache: dict = {}
 
@@ -223,6 +226,53 @@ class CaptionRenderer:
 
 # ---------------------------------------------------------------- scenes
 
+def align_words(narration: str, timings, dur: float) -> list[Word]:
+    """Map TTS word timestamps onto the script's words (keeps punctuation for captions)."""
+    words = narration.split()
+    if not timings:
+        return time_words(narration, dur)
+    norm = lambda x: re.sub(r"[^a-z0-9]", "", x.lower())  # noqa: E731
+    toks = [(norm(t), s, e) for t, s, e in timings if norm(t)]
+    out, j = [], 0
+    for w in words:
+        target = norm(w)
+        if not target:
+            continue
+        if j >= len(toks):
+            break
+        buf, start, end = "", toks[j][1], toks[j][2]
+        k = j
+        while k < len(toks) and len(buf) < len(target):
+            buf += toks[k][0]
+            end = toks[k][2]
+            k += 1
+        if not buf.startswith(target[: max(1, min(len(target), 3))]):
+            return time_words(narration, dur)  # text and speech diverged; use estimate
+        out.append(Word(w, start, end))
+        j = k
+    if len(out) < len(words) * 0.8:
+        return time_words(narration, dur)
+    return out
+
+
+def make_beats(words: list[Word], dur: float) -> list[float]:
+    """Shot change points inside a scene, on word boundaries, every ~2 s."""
+    beats, last = [0.0], 0.0
+    for w in words:
+        el = w.end - last
+        punct = re.search(r"[.,!?;:]$", w.text)
+        if (el >= BEAT_TARGET and punct) or el >= BEAT_MAX:
+            if dur - w.end > 0.9:
+                beats.append(w.end)
+                last = w.end
+    return beats
+
+
+# (center x, center y, zoom start, zoom end) — zoom is relative to the full image
+VARIANTS = [(0.5, 0.5, 1.0, 1.12), (0.4, 0.42, 1.45, 1.33), (0.6, 0.6, 1.28, 1.45),
+            (0.5, 0.33, 1.22, 1.36), (0.44, 0.63, 1.5, 1.38), (0.56, 0.46, 1.12, 1.3)]
+
+
 @dataclass
 class Scene:
     narration: str
@@ -230,6 +280,21 @@ class Scene:
     audio: np.ndarray = field(default=None)
     duration: float = 0.0
     words: list = field(default_factory=list)
+    beats: list = field(default_factory=lambda: [0.0])
+    shots: list = field(default_factory=list)
+
+
+def whoosh(sr: int, seconds: float = 0.24, gain: float = 0.10) -> np.ndarray:
+    n = int(sr * seconds)
+    rng = np.random.default_rng(7)
+    noise = rng.standard_normal(n).astype(np.float32)
+    # crude band-pass: smooth (low-pass) then remove the slowest part
+    lp = np.convolve(noise, np.ones(12) / 12, mode="same")
+    bp = lp - np.convolve(lp, np.ones(120) / 120, mode="same")
+    t = np.linspace(0, 1, n)
+    env = np.sin(np.pi * t) ** 2 * np.exp(-2.5 * t)
+    out = bp * env
+    return (out / (np.max(np.abs(out)) or 1) * gain).astype(np.float32)
 
 
 class Renderer:
@@ -239,14 +304,20 @@ class Renderer:
         self.captions = CaptionRenderer(self.theme)
         imgs = script.get("images", {})
         self.images = {k: fetch_image((v or {}).get("url")) for k, v in imgs.items()}
+        self.images = {k: v for k, v in self.images.items() if v is not None}
         self.bg = gradient(self.theme["bg_top"], self.theme["bg_bottom"])
         hook = self.images.get("hook")
-        if hook is not None:  # faint blurred hook image keeps chart scenes on-topic
+        if hook is not None:
             ghost = cover(hook, W, H).filter(ImageFilter.GaussianBlur(28))
             self.bg = Image.blend(self.bg, ghost, 0.16 if script.get("theme") != "clean_navy" else 0.08)
         self._draw_tag(self.bg)
         self.shade = shade_overlay(self.theme["image_tint"])
-        self._kb_cache: dict = {}
+        self.dim = Image.new("RGBA", (W, H), (0, 0, 0, 120))
+        self._base: dict = {}
+        self._pool = [k for k in self.images if k.startswith("broll")] + \
+                     [k for k in ("mid", "hook") if k in self.images]
+        self._pool_i = 0
+        self._last_key = None
 
     def _draw_tag(self, img: Image.Image):
         d = ImageDraw.Draw(img, "RGBA")
@@ -257,48 +328,135 @@ class Renderer:
                             fill=(*self.theme["accent"][:3], 235))
         d.text((SAFE_X0 + 22, 229), label, font=f, fill=self.theme.get("tag_text", (10, 10, 10)))
 
-    # ---- per-type frame drawers. p = seconds into scene, dur = scene length
-    def frame_image(self, sc: Scene, t: float, idx: int) -> Image.Image:
-        key = sc.visual.get("image", "hook")
+    # ---- shot planning
+    def _next_broll(self, avoid=None) -> str | None:
+        if not self._pool:
+            return None
+        for _ in range(len(self._pool)):
+            k = self._pool[self._pool_i % len(self._pool)]
+            self._pool_i += 1
+            if k != avoid and k != self._last_key:
+                return k
+        return self._pool[0]
+
+    def plan(self, scenes: list[Scene]):
+        v_i = 0
+        for si, sc in enumerate(scenes):
+            typ = sc.visual.get("type")
+            shots = []
+            for b in range(len(sc.beats)):
+                if typ == "image":
+                    primary = sc.visual.get("image", "hook")
+                    if b % 2 == 0 or not self._pool:
+                        key = primary
+                    else:
+                        key = self._next_broll(avoid=primary) or primary
+                    var = 0 if (si == 0 and b == 0) else (v_i % (len(VARIANTS) - 1)) + 1
+                    shots.append(("image", key, var, b == 0))
+                elif typ == "text":
+                    shots.append(("text", None, 0, False) if b % 2 == 0 else
+                                 ("textbg", self._next_broll(), (v_i % 5) + 1, False))
+                else:  # stat / bars / donut
+                    if b == 0:
+                        shots.append(("chart", None, 0, False))
+                    elif b % 2 == 1 and self._pool:
+                        shots.append(("figure", self._next_broll(), (v_i % 5) + 1, False))
+                    else:
+                        shots.append(("chartzoom", None, b, False))
+                if shots[-1][1]:
+                    self._last_key = shots[-1][1]
+                v_i += 1
+            sc.shots = shots
+
+    # ---- building blocks
+    def crop(self, key: str, variant: int, p: float) -> Image.Image:
         src = self.images.get(key)
         if src is None:
-            frame = self.bg.copy()
-        else:
-            if key not in self._kb_cache:
-                self._kb_cache[key] = cover(src, int(W * 1.14), int(H * 1.14))
-            base = self._kb_cache[key]
-            p = t / max(sc.duration, 0.1)
-            z = 1.0 + 0.14 * (p if idx % 2 == 0 else 1 - p)  # alternate zoom in / out
-            cw, ch = base.width / z, base.height / z
-            cx = base.width / 2 + (0.03 * base.width * (p - 0.5) * (1 if idx % 2 else -1))
-            cy = base.height / 2 - 0.02 * base.height * p
-            cx = min(max(cx, cw / 2), base.width - cw / 2)
-            cy = min(max(cy, ch / 2), base.height - ch / 2)
-            box = (cx - cw / 2, cy - ch / 2, cx + cw / 2, cy + ch / 2)
-            frame = base.resize((W, H), Image.BILINEAR, box=box)
-            frame.paste(self.shade, (0, 0), self.shade)
-            self._draw_tag(frame)
-        big = sc.visual.get("overlay")
-        sub = sc.visual.get("overlay_sub")
-        if big:
+            return self.bg.copy()
+        if key not in self._base:
+            self._base[key] = cover(src, int(W * 1.4), int(H * 1.4))
+        base = self._base[key]
+        fx, fy, z0, z1 = VARIANTS[variant % len(VARIANTS)]
+        z = z0 + (z1 - z0) * p
+        cw, ch = base.width / z, base.height / z
+        cx = min(max(fx * base.width, cw / 2), base.width - cw / 2)
+        cy = min(max(fy * base.height, ch / 2), base.height - ch / 2)
+        return base.resize((W, H), Image.BILINEAR, box=(cx - cw / 2, cy - ch / 2, cx + cw / 2, cy + ch / 2))
+
+    def key_figure(self, v: dict) -> tuple[str, str]:
+        typ = v.get("type")
+        if typ == "stat":
+            return (f'{v.get("prefix", "")}{fmt_number(float(v["value"]), v.get("decimals"))}{v.get("suffix", "")}',
+                    v.get("label", ""))
+        if typ == "donut":
+            val = float(v["value"])
+            return f"{fmt_number(val, 0 if val.is_integer() else 1)}%", v.get("label", "")
+        if typ == "bars":
+            it = v["items"][-1]
+            val = float(it["value"])
+            return (f'{v.get("prefix", "")}{fmt_number(val, None if val.is_integer() else 1)}{v.get("suffix", "")}',
+                    it["label"])
+        return "", ""
+
+    # ---- shot drawers (t = seconds into this shot, p = 0..1 progress)
+    def shot_image(self, sc: Scene, key, variant, first, t, p):
+        frame = self.crop(key, variant, p)
+        frame.paste(self.shade, (0, 0), self.shade)
+        self._draw_tag(frame)
+        big, sub = sc.visual.get("overlay"), sc.visual.get("overlay_sub")
+        if big and first:
             d = ImageDraw.Draw(frame)
-            pop = ease_out_back(t / 0.35)
+            pop = ease_out_back(t / 0.3)
             f = fit_font(big, BLACK, SAFE_X1 - SAFE_X0, 150, 70)
             if pop < 1.0:
                 f = font(BLACK, max(20, int(f.size * (0.6 + 0.4 * pop))))
             col = self.theme["accent"] if self.s.get("theme") != "clean_navy" else (255, 255, 255)
             draw_centered(d, (SAFE_X0 + SAFE_X1) / 2, 380, big, f, col, 6, (0, 0, 0))
-            if sub and t > 0.25:
+            if sub and t > 0.2:
                 fs = fit_font(sub, SEMI, SAFE_X1 - SAFE_X0, 58, 36)
-                draw_centered(d, (SAFE_X0 + SAFE_X1) / 2, 380 + f.size + 26, sub, fs,
-                              (255, 255, 255), 4, (0, 0, 0))
+                draw_centered(d, (SAFE_X0 + SAFE_X1) / 2, 380 + f.size + 26, sub, fs, (255, 255, 255), 4, (0, 0, 0))
         return frame
 
+    def shot_figure(self, sc: Scene, key, variant, t, p):
+        frame = self.crop(key, variant, p)
+        frame.paste(self.shade, (0, 0), self.shade)
+        frame.paste(self.dim, (0, 0), self.dim)
+        self._draw_tag(frame)
+        fig, label = self.key_figure(sc.visual)
+        d = ImageDraw.Draw(frame)
+        cx = (SAFE_X0 + SAFE_X1) / 2
+        f = fit_font(fig, BLACK, SAFE_X1 - SAFE_X0, 260, 110)
+        pop = ease_out_back(t / 0.3)
+        ff = font(BLACK, max(20, int(f.size * (0.55 + 0.45 * min(pop, 1.08)))))
+        draw_centered(d, cx, 700 + (f.size - ff.size) / 2, fig, ff, self.theme["accent"], 8, (0, 0, 0))
+        fl = font(SEMI, 54)
+        for i, line in enumerate(wrap(label, fl, SAFE_X1 - SAFE_X0)[:2]):
+            draw_centered(d, cx, 700 + f.size + 50 + i * 68, line, fl, (255, 255, 255), 4, (0, 0, 0))
+        return frame
+
+    def shot_chartzoom(self, sc: Scene, variant, p):
+        drawer = {"stat": self.frame_stat, "bars": self.frame_bars, "donut": self.frame_donut}[sc.visual["type"]]
+        full = drawer(sc, 99.0, 0)
+        z = 1.1 + 0.06 * p
+        cy = 760 if sc.visual["type"] != "bars" else 860
+        cw, ch = W / z, H / z
+        top = min(max(cy - ch / 2, 0), H - ch)
+        return full.resize((W, H), Image.BILINEAR, box=((W - cw) / 2, top, (W + cw) / 2, top + ch))
+
+    def shot_textbg(self, sc: Scene, key, variant, t, p):
+        frame = self.crop(key, variant, p)
+        frame.paste(self.shade, (0, 0), self.shade)
+        frame.paste(self.dim, (0, 0), self.dim)
+        self._draw_tag(frame)
+        txt = self.frame_text(sc, 99.0, 0, base=frame)
+        return txt
+
+    # ---- the original full-scene drawers (used for chart/text shots)
     def frame_stat(self, sc: Scene, t: float, idx: int) -> Image.Image:
         v = sc.visual
         frame = self.bg.copy()
         d = ImageDraw.Draw(frame)
-        p = ease_out(t / 1.1)
+        p = ease_out(t / 1.0)
         val = float(v["value"]) * p
         txt = f'{v.get("prefix", "")}{fmt_number(val, v.get("decimals"))}{v.get("suffix", "")}'
         final = f'{v.get("prefix", "")}{fmt_number(float(v["value"]), v.get("decimals"))}{v.get("suffix", "")}'
@@ -318,33 +476,36 @@ class Renderer:
         vmax = max(float(i["value"]) for i in items) or 1.0
         y = 520
         if v.get("title"):
-            ft = font(BOLD, 50)
-            d.text((SAFE_X0, y), v["title"].upper(), font=ft, fill=self.theme["muted"])
+            d.text((SAFE_X0, y), v["title"].upper(), font=font(BOLD, 50), fill=self.theme["muted"])
             y += 110
         fl, fv = font(BOLD, 56), font(BLACK, 64)
         bw = SAFE_X1 - SAFE_X0
         track = self.theme["track"]
+        track = track if len(track) == 4 else (*track, 255)
         for k, it in enumerate(items):
-            p = ease_out((t - 0.15 - 0.3 * k) / 0.9)
+            p = ease_out((t - 0.1 - 0.25 * k) / 0.8)
             d.text((SAFE_X0, y), it["label"], font=fl, fill=self.theme["text"])
             y += 82
-            d.rounded_rectangle((SAFE_X0, y, SAFE_X1, y + 96), 48,
-                                fill=track if len(track) == 4 else (*track, 255))
+            d.rounded_rectangle((SAFE_X0, y, SAFE_X1, y + 96), 48, fill=track)
             frac = float(it["value"]) / vmax * p
+            last = k == len(items) - 1
+            if self.s.get("theme") == "bold_bright":
+                col = self.theme["accent"] if last else (255, 255, 255)
+            else:
+                col = self.theme["accent"] if last else self.theme["accent2"]
             if frac > 0:
-                x1 = SAFE_X0 + max(96, bw * frac)
-                col = self.theme["accent"] if k == len(items) - 1 or len(items) == 1 else self.theme["accent2"]
-                if k == 0 and len(items) > 1:
-                    col = self.theme["accent2"] if self.s.get("theme") != "bold_bright" else (255, 255, 255)
-                d.rounded_rectangle((SAFE_X0, y, x1, y + 96), 48, fill=col)
-            label = f'{v.get("prefix", "")}{fmt_number(float(it["value"]) * p, None if float(it["value"]).is_integer() else 1)}{v.get("suffix", "")}'
+                d.rounded_rectangle((SAFE_X0, y, SAFE_X0 + max(96, bw * frac), y + 96), 48, fill=col)
+            val = float(it["value"])
+            label = f'{v.get("prefix", "")}{fmt_number(val * p, None if val.is_integer() else 1)}{v.get("suffix", "")}'
             lw = fv.getlength(label)
-            lx = min(SAFE_X0 + bw * max(frac, 0.0) + 20, SAFE_X1 - lw)
-            on_bar = lx < SAFE_X0 + bw * frac
-            fill = (20, 20, 20) if on_bar and self.s.get("theme") != "clean_navy" else self.theme["text"]
-            if on_bar and self.s.get("theme") == "clean_navy":
-                fill = (255, 255, 255)
-            d.text((lx - (lw + 40 if on_bar else 0), y + 12), label, font=fv, fill=fill)
+            bar_end = SAFE_X0 + bw * frac
+            if bar_end - SAFE_X0 > lw + 60:  # label inside the bar
+                inside = (20, 20, 20) if self.s.get("theme") != "clean_navy" or not last else (255, 255, 255)
+                if self.s.get("theme") == "clean_navy":
+                    inside = (255, 255, 255)
+                d.text((bar_end - lw - 30, y + 12), label, font=fv, fill=inside)
+            else:
+                d.text((min(bar_end + 20, SAFE_X1 - lw), y + 12), label, font=fv, fill=self.theme["text"])
             y += 190
         return frame
 
@@ -356,25 +517,25 @@ class Renderer:
         box = (cx - r, cy - r, cx + r, cy + r)
         track = self.theme["track"]
         d.ellipse(box, outline=track if len(track) == 4 else (*track, 255), width=w)
-        p = ease_out((t - 0.1) / 1.2)
+        p = ease_out((t - 0.05) / 1.0)
         pct = float(v["value"]) * p
         if pct > 0.2:
             d.arc(box, -90, -90 + 360 * pct / 100, fill=self.theme["accent"], width=w)
         txt = f"{fmt_number(pct, 0 if float(v['value']).is_integer() else 1)}%"
         f = font(BLACK, 150)
-        tw = f.getlength(txt)
-        d.text((cx - tw / 2, cy - 98), txt, font=f, fill=self.theme["text"])
+        d.text((cx - f.getlength(txt) / 2, cy - 98), txt, font=f, fill=self.theme["text"])
         fl = font(SEMI, 56)
         for i, line in enumerate(wrap(v.get("label", ""), fl, SAFE_X1 - SAFE_X0)):
             draw_centered(d, cx, cy + r + 50 + i * 68, line, fl, self.theme["text"])
         return frame
 
-    def frame_text(self, sc: Scene, t: float, idx: int) -> Image.Image:
+    def frame_text(self, sc: Scene, t: float, idx: int, base: Image.Image | None = None) -> Image.Image:
         v = sc.visual
-        frame = self.bg.copy()
+        frame = base if base is not None else self.bg.copy()
         d = ImageDraw.Draw(frame)
         cx = (SAFE_X0 + SAFE_X1) / 2
         maxw = SAFE_X1 - SAFE_X0
+        on_image = base is not None
 
         def block(txt, start, max_lines):
             size = start
@@ -392,27 +553,50 @@ class Renderer:
         h1 = len(l1) * (f1.size + 14)
         h2 = (len(l2) * (f2.size + 12) + 40) if l2 else 0
         y = 840 - (h1 + h2) / 2
-        p1 = ease_out_back(t / 0.4)
+        col1 = (255, 255, 255) if on_image else self.theme["text"]
+        stroke = 6 if on_image else 0
+        p1 = ease_out_back(t / 0.35)
         if p1 > 0.05:
             ff = font(BLACK, max(20, int(f1.size * (0.75 + 0.25 * min(p1, 1.0)))))
             for line in l1:
-                draw_centered(d, cx, y + (f1.size - ff.size) / 2, line, ff, self.theme["text"])
+                draw_centered(d, cx, y + (f1.size - ff.size) / 2, line, ff, col1, stroke, (0, 0, 0))
                 y += f1.size + 14
-        if l2 and t > 0.7:
-            p2 = ease_out_back((t - 0.7) / 0.4)
+        if l2 and t > 0.55:
+            p2 = ease_out_back((t - 0.55) / 0.35)
             ff = font(BLACK, max(20, int(f2.size * (0.75 + 0.25 * min(p2, 1.0)))))
             y += 40
             for line in l2:
-                draw_centered(d, cx, y + (f2.size - ff.size) / 2, line, ff, self.theme["accent"])
+                draw_centered(d, cx, y + (f2.size - ff.size) / 2, line, ff, self.theme["accent"], stroke, (0, 0, 0))
                 y += f2.size + 12
         return frame
 
+    # ---- per frame
+    def draw(self, sc: Scene, si: int, t: float) -> tuple[Image.Image, float]:
+        b = max(0, bisect.bisect_right(sc.beats, t) - 1)
+        b0 = sc.beats[b]
+        b1 = sc.beats[b + 1] if b + 1 < len(sc.beats) else sc.duration
+        tb, pb = t - b0, (t - b0) / max(b1 - b0, 0.1)
+        kind, key, variant, first = sc.shots[b]
+        if kind == "image":
+            frame = self.shot_image(sc, key, variant, first, tb, pb)
+        elif kind == "figure":
+            frame = self.shot_figure(sc, key, variant, tb, pb)
+        elif kind == "chartzoom":
+            frame = self.shot_chartzoom(sc, variant, pb)
+        elif kind == "textbg":
+            frame = self.shot_textbg(sc, key, variant, tb, pb)
+        elif kind == "text":
+            frame = self.frame_text(sc, t if b == 0 else 99.0, si)
+        else:
+            drawer = {"stat": self.frame_stat, "bars": self.frame_bars, "donut": self.frame_donut}
+            frame = drawer[sc.visual["type"]](sc, tb, si)
+        return frame, tb
+
     def still(self, scene_index: int, t: float, scenes: list) -> Image.Image:
-        """Single frame for previews (no audio needed)."""
-        drawers = {"image": self.frame_image, "stat": self.frame_stat, "bars": self.frame_bars,
-                   "donut": self.frame_donut, "text": self.frame_text}
+        if not scenes[0].shots:
+            self.plan(scenes)
         sc = scenes[scene_index]
-        frame = drawers.get(sc.visual.get("type"), self.frame_text)(sc, t, scene_index)
+        frame, _ = self.draw(sc, scene_index, t)
         self._caption(frame, chunk_words(sc.words), min(t, sc.words[-1].end if sc.words else t))
         return frame
 
@@ -421,11 +605,15 @@ class Renderer:
         scenes = []
         for raw in self.s["scenes"]:
             sc = Scene(raw["narration"], raw["visual"])
-            sc.audio = tts.synthesize(sc.narration)
-            sc.duration = len(sc.audio) / tts.SAMPLE_RATE + SCENE_GAP
-            sc.words = time_words(sc.narration, len(sc.audio) / tts.SAMPLE_RATE)
+            sc.audio, timings = tts.synthesize(sc.narration)
+            speech = len(sc.audio) / tts.SAMPLE_RATE
+            sc.duration = speech + SCENE_GAP
+            sc.words = align_words(sc.narration, timings, speech)
             scenes.append(sc)
         scenes[-1].duration += END_HOLD
+        for sc in scenes:
+            sc.beats = make_beats(sc.words, sc.duration)
+        self.plan(scenes)
         return scenes
 
     def render(self, out_path: Path) -> dict:
@@ -433,6 +621,14 @@ class Renderer:
         sr = tts.SAMPLE_RATE
         audio = np.concatenate([np.pad(sc.audio, (0, int(round(sc.duration * sr)) - len(sc.audio)))
                                 for sc in scenes])
+        starts = np.cumsum([0] + [sc.duration for sc in scenes])
+        cuts = sorted({float(starts[i] + b) for i, sc in enumerate(scenes) for b in sc.beats} - {0.0})
+        sfx = whoosh(sr)
+        for c in cuts:  # whoosh lands just before each cut
+            i0 = max(0, int((c - 0.12) * sr))
+            seg = sfx[: max(0, min(len(sfx), len(audio) - i0))]
+            audio[i0:i0 + len(seg)] += seg
+        audio = np.clip(audio, -1, 1)
         out_path.parent.mkdir(parents=True, exist_ok=True)
         with tempfile.TemporaryDirectory() as tmp:
             wav = Path(tmp) / "voice.wav"
@@ -442,35 +638,35 @@ class Renderer:
                    "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}", "-r", str(FPS), "-i", "-",
                    "-i", str(wav),
                    "-c:v", "libx264", "-preset", os.environ.get("X264_PRESET", "veryfast"),
-                   "-crf", "19", "-pix_fmt", "yuv420p", "-movflags", "+faststart",
-                   "-c:a", "aac", "-b:a", "192k", "-ar", "48000",
+                   "-crf", "20", "-pix_fmt", "yuv420p", "-movflags", "+faststart",
+                   "-c:a", "aac", "-b:a", "160k", "-ar", "48000",
                    "-shortest", str(out_path)]
             proc = subprocess.Popen(cmd, stdin=subprocess.PIPE)
-            drawers = {"image": self.frame_image, "stat": self.frame_stat, "bars": self.frame_bars,
-                       "donut": self.frame_donut, "text": self.frame_text}
-            starts = np.cumsum([0] + [sc.duration for sc in scenes])
             chunks = [chunk_words(sc.words) for sc in scenes]
+            flash = Image.new("RGB", (W, H), (255, 255, 255))
             for n in range(total_frames):
                 gt = n / FPS
-                si = int(np.searchsorted(starts, gt, side="right") - 1)
-                si = min(si, len(scenes) - 1)
+                si = min(int(np.searchsorted(starts, gt, side="right") - 1), len(scenes) - 1)
                 sc, t = scenes[si], gt - starts[si]
-                frame = drawers.get(sc.visual.get("type"), self.frame_text)(sc, t, si)
+                frame, tb = self.draw(sc, si, t)
                 self._caption(frame, chunks[si], t)
-                if t < 0.13 and si > 0:  # small punch-in on each cut
-                    z = 1.035 - 0.035 * (t / 0.13)
+                if gt > 0.05 and tb < 0.14:  # punch-in + light flash on every cut
+                    z = 1.07 - 0.07 * ease_out(tb / 0.14)
                     cw, ch = W / z, H / z
                     frame = frame.resize((W, H), Image.BILINEAR,
                                          box=((W - cw) / 2, (H - ch) / 2, (W + cw) / 2, (H + ch) / 2))
+                    if tb < 0.07:
+                        frame = Image.blend(frame, flash, 0.22 * (1 - tb / 0.07))
                 proc.stdin.write(frame.tobytes())
             proc.stdin.close()
             if proc.wait() != 0:
                 raise RuntimeError("ffmpeg failed")
-        mids = [round(float(starts[i] + scenes[i].duration * 0.6), 2) for i in range(len(scenes))]
+        mids = [round(float(starts[i] + sc.beats[min(1, len(sc.beats) - 1)] + 0.6), 2) for i, sc in enumerate(scenes)]
         return {"path": str(out_path), "seconds": round(len(audio) / sr, 2), "scenes": len(scenes),
+                "cuts": len(cuts), "avg_shot": round(len(audio) / sr / (len(cuts) + 1), 2),
                 "scene_mids": mids, "voice": tts.VOICE_ENGINE,
-                "images_ok": {k: v is not None for k, v in self.images.items()},
-                "scene_seconds": [round(sc.duration, 2) for sc in scenes]}
+                "timed_words": all(sc.words for sc in scenes),
+                "images_ok": sorted(self.images)}
 
     def _caption(self, frame: Image.Image, chunks: list[list[Word]], t: float):
         for ch in chunks:
