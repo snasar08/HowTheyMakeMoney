@@ -24,6 +24,14 @@
     "mid": {
       "prompt": "Cinematic product photo, vertical: a premium metal credit card standing on a dark glossy surface, a tiny airplane silhouette reflected in its surface, rim lighting, luxury mood, photorealistic, blank card with no text, no numbers, no logos",
       "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_020607_4e132d46-2e0f-4067-8973-53953eca74d5.png"
+    },
+    "broll1": {
+      "prompt": "Cinematic photo, vertical: inside an airliner cabin aisle at golden hour, passengers seated, warm window light, faces not detailed, photorealistic, no text, no logos, no brand names",
+      "url": null
+    },
+    "broll2": {
+      "prompt": "Cinematic photo, vertical: a hand tapping a blank metal credit card at a grocery store checkout terminal, blurred shopper behind, photorealistic, no text, no logos, no brand names",
+      "url": null
     }
   },
   "scenes": [

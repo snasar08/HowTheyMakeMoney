@@ -20,6 +20,20 @@ and **free beyond his Higgsfield Pro plan** — never add a paid service or ask 
     `containsSyntheticMedia: true`). Needs `YT_CLIENT_ID`, `YT_CLIENT_SECRET`, `YT_REFRESH_TOKEN`
     secrets (see `pipeline/youtube_auth.py`).
 
+## Status / next steps (handoff, Oct 25 2026)
+- Sam watched the first test (001-costco). Feedback: opening is great; **voice too slow and he
+  dislikes am_michael**; needed more shot changes. Done since: shot change every ~2 s (`make_beats`),
+  key-number pop-ups over B-roll, chart punch-ins, flash + whoosh on cuts, Kokoro speed 1.2, captions
+  from Kokoro's real word timestamps (`align_words`). Not yet rendered with real voice — test it.
+- **Voice:** run `python -m pipeline.voice_samples out/voice-samples.mp4`, let Sam pick, then set the
+  repo variable `KOKORO_VOICE` (and `KOKORO_SPEED` if he wants). `.github/workflows/voice-test.yml`
+  also tries Ming-3.0 on CPU (experimental; upstream only tested on GPUs).
+- **B-roll:** every script has `images.broll1/broll2` prompts (from `content/broll_prompts.json`).
+  Only 001 and 002 have URLs. Generate the rest with Higgsfield (settings below), 4 at a time.
+- Posting: `UPLOAD_MODE=release` until the YouTube API audit is approved. Free connectors checked
+  and ruled out for 2/day: Make free (100 MB/month transfer), Zapier free (no webhooks),
+  Upload-Post free (10 posts/month). Modal was dropped (wanted a card).
+
 ## First-time setup (run from Claude Code on Sam's computer)
 1. `pip install -r requirements.txt` (Python 3.11 — Kokoro does not support 3.13+), plus ffmpeg
    and espeak-ng.
@@ -46,7 +60,7 @@ Goal: keep at least 14 `ready` scripts in the queue.
 5. Images: Higgsfield connector, `generate_image_batch`, model `gpt_image_2_5`,
    `aspect_ratio: "9:16"`, `quality: "medium"`, `resolution: "2k"`, `use_unlim: false`
    (1 credit each). Pro plan allows only **4 images at a time** — submit groups of 4, wait with
-   `jobs_wait`, then the next 4. Put each `result_url` into `images.hook.url` / `images.mid.url`.
+   `jobs_wait`, then the next 4. Put each `result_url` into `images.hook.url`, `images.mid.url`, `images.broll1.url`, `images.broll2.url` (4 images per Short).
    Check `balance` first; if under 60 credits, write the scripts but stop before images and leave
    a note in the commit message.
 6. Validate every file parses as JSON and has 5–6 scenes, then commit and push to `main`.

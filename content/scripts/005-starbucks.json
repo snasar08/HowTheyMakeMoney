@@ -23,6 +23,14 @@
     "mid": {
       "prompt": "Cinematic photo, vertical: inside a bank vault, a towering pile of plastic gift cards instead of cash, dramatic spotlight, steel vault door open in the background, photorealistic, blank cards with no text, no logos",
       "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_020932_3628efe7-d38b-417a-8297-f89a5023ddcd.png"
+    },
+    "broll1": {
+      "prompt": "Cinematic photo, vertical: a long line of customers at a busy coffee shop counter in the morning, baristas working, faces blurred, photorealistic, no text, no logos, no brand names",
+      "url": null
+    },
+    "broll2": {
+      "prompt": "Cinematic photo, vertical: a cluttered kitchen junk drawer full of forgotten plastic gift cards, keys and receipts, warm light, photorealistic, no text, no logos, no brand names",
+      "url": null
     }
   },
   "scenes": [

@@ -23,6 +23,14 @@
     "mid": {
       "prompt": "Cinematic photo, vertical: inside a huge fulfillment warehouse with conveyor belts carrying thousands of plain cardboard boxes, high ceilings, warm industrial lighting, photorealistic, no text, no logos, plain boxes",
       "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_021838_9feb310f-ca11-4ecd-95b7-b55fc8d0bf38.png"
+    },
+    "broll1": {
+      "prompt": "Cinematic photo, vertical: a cardboard delivery box sitting on a suburban front porch at dusk, delivery van driving away blurred, photorealistic, no text, no logos, no brand names",
+      "url": null
+    },
+    "broll2": {
+      "prompt": "Cinematic photo, vertical: an engineer walking between towering glowing server racks in a data center, wide shot, face not visible, photorealistic, no text, no logos, no brand names",
+      "url": null
     }
   },
   "scenes": [

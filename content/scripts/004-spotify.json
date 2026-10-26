@@ -23,6 +23,14 @@
     "mid": {
       "prompt": "Cinematic photo, vertical: a wall of framed gold and platinum records in a dark music label office, one spotlight, vinyl records on a shelf below, rich gold tones, photorealistic, no readable text, no logos, no artist names",
       "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_020607_d2cc3e49-8bc9-458d-884b-0bf1cf2b521a.png"
+    },
+    "broll1": {
+      "prompt": "Cinematic photo, vertical: a singer recording vocals into a studio microphone in a dark recording booth, moody colored lights, face in shadow, photorealistic, no text, no logos, no brand names",
+      "url": null
+    },
+    "broll2": {
+      "prompt": "Cinematic photo, vertical: a person on a subway train wearing headphones looking at a phone, city lights blurring past the window, face not detailed, photorealistic, no text, no logos, no brand names",
+      "url": null
     }
   },
   "scenes": [

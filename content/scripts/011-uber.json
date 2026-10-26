@@ -23,6 +23,14 @@
     "mid": {
       "prompt": "Cinematic photo, vertical: a food delivery courier on an electric scooter with an insulated backpack riding through a neon-lit city street at night, motion blur, face not visible, photorealistic, no logos, no brand names",
       "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_021838_c5041587-d5f8-45d1-b59d-a09c8d689280.png"
+    },
+    "broll1": {
+      "prompt": "Cinematic photo, vertical: a driver's hands on a steering wheel at night with a glowing phone in a dashboard mount, city lights through the windshield, photorealistic, no text, no logos, no brand names",
+      "url": null
+    },
+    "broll2": {
+      "prompt": "Cinematic photo, vertical: a restaurant kitchen at night with cooks bagging takeout orders on a pickup shelf, steam, warm light, photorealistic, no text, no logos, no brand names",
+      "url": null
     }
   },
   "scenes": [

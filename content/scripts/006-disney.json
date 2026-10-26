@@ -23,6 +23,14 @@
     "mid": {
       "prompt": "Cinematic wide photo, vertical: crowded theme park entrance turnstiles at sunrise with long lines of families waiting, souvenir shops glowing, golden light, photorealistic, faces not detailed, no text, no logos, no characters",
       "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_020932_c72f2bee-cfe1-4f1e-9c2d-39efccdde837.png"
+    },
+    "broll1": {
+      "prompt": "Cinematic photo, vertical: a luxury theme park resort hotel lobby at night with a family checking in, grand chandelier, faces not detailed, photorealistic, no text, no logos, no brand names",
+      "url": null
+    },
+    "broll2": {
+      "prompt": "Cinematic photo, vertical: a souvenir shop in a theme park overflowing with plush toys and merchandise, colorful lights, no characters, photorealistic, no text, no logos, no brand names",
+      "url": null
     }
   },
   "scenes": [

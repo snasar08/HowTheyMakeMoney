@@ -24,6 +24,14 @@
     "mid": {
       "prompt": "Cinematic photo, vertical: a dark trading server room with streams of glowing green data flowing between racks of servers, dollar sign shaped light particles, futuristic finance mood, photorealistic, no text, no logos",
       "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_021414_c28afe52-6a3e-48fb-a64a-a7aed59d03e3.png"
+    },
+    "broll1": {
+      "prompt": "Cinematic photo, vertical: a young person lying in bed at night trading stocks on a phone, screen glow lighting the face from below, face not detailed, photorealistic, no text, no logos, no brand names",
+      "url": null
+    },
+    "broll2": {
+      "prompt": "Cinematic photo, vertical: shiny gold cryptocurrency coins stacked on dark glass with green stock chart light reflections, photorealistic, no text, no logos, no brand names",
+      "url": null
     }
   },
   "scenes": [

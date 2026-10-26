@@ -23,6 +23,14 @@
     "mid": {
       "prompt": "Cinematic photo, vertical: a wrapped burger sitting on top of a stack of property deeds and a ring of building keys on a dark wooden desk, single warm desk lamp, shallow depth of field, photorealistic, no text visible on papers, no logos",
       "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_020607_46edc478-05a2-478d-bb8b-139d9cddccab.png"
+    },
+    "broll1": {
+      "prompt": "Cinematic photo, vertical: aerial view of a suburban city at night with dozens of glowing fast food restaurants on corner lots, generic buildings, photorealistic, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_023535_751ff821-23a8-410d-bb4e-cccdd30080c3.png"
+    },
+    "broll2": {
+      "prompt": "Cinematic photo, vertical: a stack of hundred dollar bills next to a paper french fry carton on a restaurant counter, warm light, photorealistic, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_023536_f7cf9b36-8651-4b97-b2c5-957c302329ab.png"
     }
   },
   "scenes": [

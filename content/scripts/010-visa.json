@@ -24,6 +24,14 @@
     "mid": {
       "prompt": "Cinematic image, vertical: Earth at night seen from space with glowing golden network lines connecting cities across continents like payment routes, deep blue and gold, photorealistic, no text, no logos",
       "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_021626_91154f03-5cc9-4fed-8f67-2ea1a2ce5836.png"
+    },
+    "broll1": {
+      "prompt": "Cinematic photo, vertical: a busy city shopping street at night with glowing store windows and shoppers, motion blur, faces not detailed, photorealistic, no text, no logos, no brand names",
+      "url": null
+    },
+    "broll2": {
+      "prompt": "Cinematic photo, vertical: close-up of contactless payment at a coffee shop counter with a phone, light trails, photorealistic, no text, no logos, no brand names",
+      "url": null
     }
   },
   "scenes": [

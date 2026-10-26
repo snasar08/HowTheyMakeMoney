@@ -23,6 +23,14 @@
     "mid": {
       "prompt": "Cinematic photo, vertical: a glowing movie theater concession stand with popcorn machines, candy displays and soda fountains, warm neon lights, empty lobby carpet, photorealistic, no readable text, no logos, no brand names",
       "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_021414_5300c07c-6d1d-4d6f-a15a-60200c07aaa6.png"
+    },
+    "broll1": {
+      "prompt": "Cinematic photo, vertical: an audience in a dark cinema lit only by the glow of the screen, silhouettes holding popcorn, photorealistic, no text, no logos, no brand names",
+      "url": null
+    },
+    "broll2": {
+      "prompt": "Cinematic photo, vertical: a vintage film reel and two paper movie tickets on a dark wooden table under a spotlight, photorealistic, no text, no logos, no brand names",
+      "url": null
     }
   },
   "scenes": [

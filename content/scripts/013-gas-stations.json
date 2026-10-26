@@ -23,6 +23,14 @@
     "mid": {
       "prompt": "Cinematic photo, vertical: convenience store hot food counter with a roller grill of hot dogs, a coffee station with steam, and a case of snacks, warm glowing light, late night, photorealistic, no readable text, no logos, no brand names",
       "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_021921_1dcd15af-df5f-429d-93b7-7a3f21633315.png"
+    },
+    "broll1": {
+      "prompt": "Cinematic photo, vertical: close-up of a hand holding a fuel nozzle filling a car at night, canopy lights reflecting on the car, photorealistic, no text, no logos, no brand names",
+      "url": null
+    },
+    "broll2": {
+      "prompt": "Cinematic photo, vertical: a convenience store wall of glowing refrigerated drink coolers at night, colorful bottles, no readable labels, photorealistic, no text, no logos, no brand names",
+      "url": null
     }
   },
   "scenes": [

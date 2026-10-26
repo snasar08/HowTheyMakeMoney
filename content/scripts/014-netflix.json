@@ -23,6 +23,14 @@
     "mid": {
       "prompt": "Cinematic photo, vertical: a busy film production set with cinema cameras, lighting rigs and a crew in silhouette, dramatic red and amber light, haze, photorealistic, faces not visible, no text, no logos",
       "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_021922_a48d808e-b63b-4c20-8bb9-bcbbf3f87384.png"
+    },
+    "broll1": {
+      "prompt": "Cinematic photo, vertical: a person on a couch at night watching TV with a bowl of popcorn, lit by screen glow, silhouette, photorealistic, no text, no logos, no brand names",
+      "url": null
+    },
+    "broll2": {
+      "prompt": "Cinematic photo, vertical: a stack of cash in front of a large glowing TV screen in a dark living room, photorealistic, no text, no logos, no brand names",
+      "url": null
     }
   },
   "scenes": [

@@ -24,6 +24,14 @@
     "mid": {
       "prompt": "Cinematic photo, vertical: two futuristic glass tech headquarters buildings facing each other across a road at night, a glowing stream of light flowing from one building to the other, photorealistic, generic architecture, no text, no logos",
       "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_021627_73a2a594-36f3-4f3b-9efa-107511827208.png"
+    },
+    "broll1": {
+      "prompt": "Cinematic photo, vertical: an empty grand federal courtroom with a judge's bench, dramatic window light, solemn mood, photorealistic, no text, no logos, no brand names",
+      "url": null
+    },
+    "broll2": {
+      "prompt": "Cinematic photo, vertical: close-up of a thumb typing on a glowing smartphone keyboard in the dark, photorealistic, no text, no logos, no brand names",
+      "url": null
     }
   },
   "scenes": [

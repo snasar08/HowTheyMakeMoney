@@ -1,0 +1,16 @@
+{
+ "costco": ["a forklift lifting a pallet of bulk goods high up in a giant warehouse store aisle, dramatic lighting", "close-up of a hand holding a plain blank membership card at a warehouse store entrance, shallow depth of field"],
+ "mcdonalds": ["aerial view of a suburban city at night with dozens of glowing fast food restaurants on corner lots, generic buildings", "a stack of hundred dollar bills next to a paper french fry carton on a restaurant counter, warm light"],
+ "delta": ["inside an airliner cabin aisle at golden hour, passengers seated, warm window light, faces not detailed", "a hand tapping a blank metal credit card at a grocery store checkout terminal, blurred shopper behind"],
+ "spotify": ["a singer recording vocals into a studio microphone in a dark recording booth, moody colored lights, face in shadow", "a person on a subway train wearing headphones looking at a phone, city lights blurring past the window, face not detailed"],
+ "starbucks": ["a long line of customers at a busy coffee shop counter in the morning, baristas working, faces blurred", "a cluttered kitchen junk drawer full of forgotten plastic gift cards, keys and receipts, warm light"],
+ "disney": ["a luxury theme park resort hotel lobby at night with a family checking in, grand chandelier, faces not detailed", "a souvenir shop in a theme park overflowing with plush toys and merchandise, colorful lights, no characters"],
+ "robinhood": ["a young person lying in bed at night trading stocks on a phone, screen glow lighting the face from below, face not detailed", "shiny gold cryptocurrency coins stacked on dark glass with green stock chart light reflections"],
+ "movie-theaters": ["an audience in a dark cinema lit only by the glow of the screen, silhouettes holding popcorn", "a vintage film reel and two paper movie tickets on a dark wooden table under a spotlight"],
+ "google-apple": ["an empty grand federal courtroom with a judge's bench, dramatic window light, solemn mood", "close-up of a thumb typing on a glowing smartphone keyboard in the dark"],
+ "visa": ["a busy city shopping street at night with glowing store windows and shoppers, motion blur, faces not detailed", "close-up of contactless payment at a coffee shop counter with a phone, light trails"],
+ "uber": ["a driver's hands on a steering wheel at night with a glowing phone in a dashboard mount, city lights through the windshield", "a restaurant kitchen at night with cooks bagging takeout orders on a pickup shelf, steam, warm light"],
+ "amazon": ["a cardboard delivery box sitting on a suburban front porch at dusk, delivery van driving away blurred", "an engineer walking between towering glowing server racks in a data center, wide shot, face not visible"],
+ "gas-stations": ["close-up of a hand holding a fuel nozzle filling a car at night, canopy lights reflecting on the car", "a convenience store wall of glowing refrigerated drink coolers at night, colorful bottles, no readable labels"],
+ "netflix": ["a person on a couch at night watching TV with a bowl of popcorn, lit by screen glow, silhouette", "a stack of cash in front of a large glowing TV screen in a dark living room"]
+}
