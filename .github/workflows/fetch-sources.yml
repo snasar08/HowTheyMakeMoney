@@ -6,7 +6,7 @@ name: Fetch sources for script writer
 # don't trigger workflows, so this never loops.
 on:
   push:
-    branches: ["research/**"]
+    branches: ["research/**", "claude/research-**"]
     paths: ["research/requests.txt"]
 
 permissions:

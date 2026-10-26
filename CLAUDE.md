@@ -87,6 +87,24 @@ Posting uses 14 Shorts/week (2/day). Goal: build a buffer, capped so credits are
    Move used topics to the Used list.
 3. Research each with web search. Use only figures from sources you opened (filings first).
    Put every source in `sources` and in the description (see existing scripts' format).
+   **Opening pages from the cloud routine:** its sandbox can search but can't open pages, so use
+   the GitHub fetcher (`pipeline/fetch_sources.py`, `.github/workflows/fetch-sources.yml`):
+   ```bash
+   B=research/$(date -u +%Y%m%d-%H%M)        # if that push is refused, use claude/research-<same>
+   git switch -c "$B" origin/main
+   mkdir -p research && printf '%s\n' URL1 URL2 ... > research/requests.txt   # up to ~60 URLs
+   git add research/requests.txt && git commit -m "Source request" && git push -u origin "$B"
+   # wait ~2 min, then poll until research/index.json appears (it lists ok/error per URL)
+   for i in $(seq 1 20); do git pull -q origin "$B"; [ -f research/index.json ] && break; sleep 30; done
+   ```
+   Read `research/pages/*.txt` (first lines give URL/FINAL_URL). Need more URLs? Append to
+   requests.txt, push again, poll again (already-fetched URLs are skipped). Then `git switch main`
+   and write scripts there — never merge the research branch into main.
+   What works from GitHub's machines (tested Oct 26 2026): company investor-relations sites and
+   their PDF results/10-K copies (e.g. investor.apple.com, investors.coca-colacompany.com,
+   stock.walmart.com, nintendo.co.jp/ir), Wikipedia, `api.bls.gov` (BLS data API). Blocked (403):
+   **sec.gov and data.sec.gov**, bls.gov web pages, some IR sites (ir.dominos.com); nasdaq.com
+   times out. So use the company's own IR press release / annual report PDF instead of EDGAR.
 4. Next ids continue from the highest existing `NNN`. Same JSON shape as existing scripts.
 5. Images: Higgsfield connector, `generate_image_batch`, model `gpt_image_2_5`,
    `aspect_ratio: "9:16"`, `quality: "medium"`, `resolution: "2k"`, `use_unlim: false`
