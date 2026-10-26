@@ -1,0 +1,530 @@
+URL: https://redmondmag.com/articles/2026/07/30/microsoft-tops-90b-quarterly-revenue.aspx
+FINAL_URL: https://redmondmag.com/articles/2026/07/30/microsoft-tops-90b-quarterly-revenue.aspx
+FETCHED: 2026-10-26T11:51:26.658815+00:00
+
+Skip to main content
+
+Home
+
+News
+
+Features
+
+Redmond Dispatch
+
+Advertise
+
+Training
+
+Resources
+Papers
+
+Webcasts
+
+Newsletters
+
+Summits
+
+Decoding AI and Security for the Microsoft Stack
+
+ Add as a preferred source on Google 
+
+Copilot
+
+Security
+
+Azure
+
+Microsoft 365
+
+Entra/AD
+
+SQL Server
+
+Windows Server
+
+PowerShell
+
+News
+
+Microsoft Tops $90B Quarterly Revenue as Azure Hits $100B Annual Milestone
+
+By Sean Parker
+
+07/30/2026
+
+Key Takeaways
+
+Microsoft quarterly revenue reached $90 billion, rising 18% year over year.
+
+Azure surpassed $100 billion annually as cloud services revenue grew 43%.
+
+Microsoft 365 Copilot exceeded 30 million paid seats amid enterprise AI adoption.
+
+Microsoft reported record fourth-quarter and full-year fiscal 2026 results on Wednesday, July 29, driven by continued strength in Azure and growing enterprise adoption of its AI offerings.
+
+For the quarter ended June 30, Microsoft posted revenue of $90 billion, up 18% year over year. Net income increased 31% to $35.8 billion, while diluted earnings per share rose 32% to $4.81.
+
+For the full fiscal year, revenue climbed 18% to $331.8 billion.
+
+[Click on image for larger view.]  
+Figure 1. By the numbers: Microsoft's fourth-quarter and yearly financial figures.
+
+Microsoft Cloud revenue reached $59.3 billion during the quarter, a 27% increase, while Azure and other cloud services revenue grew 43%. The company also revealed that Azure generated more than $100 billion in annual revenue for the first time.
+
+"We are advancing the frontier on the cost-to-outcome curve, ensuring every customer can turn tokens into business results," Microsoft CEO Satya Nadella said. 
+
+"This year, Azure revenue surpassed $100 billion for the first time, and Microsoft 365 Copilot reached over 30 million paid seats, reflecting the confidence customers are placing in us to power their AI transformation."
+
+Microsoft's Intelligent Cloud business generated $39.3 billion in quarterly revenue, up 32 %, while Productivity and Business Processes grew 14% to $37.8 billion. 
+
+Revenue in More Personal Computing declined 4% to $12.9 billion.
+
+The company also said commercial remaining performance obligation grew 84% to $678 billion and returned $10.2 billion to shareholders through dividends and share repurchases during the quarter.
+
+"We delivered results that exceeded expectations across revenue, operating income, and earnings per share driven by strong demand and execution," said Microsoft CFO Amy Hood. 
+
+Featured
+
+Why Your 4K Video Keeps Buffering -- and How to Find the Bottleneck, Part 1
+
+ When a 4K video keeps buffering, a few simple tests can help narrow down the problem and determine whether network bandwidth or storage performance is to blame.
+
+Microsoft Strengthens Digital Sovereignty Push with New Cloud and AI Protections
+
+ Microsoft is expanding its sovereign cloud offerings with new tools designed to give orgs tighter control over where their data resides, who can access it and how critical systems operate, especially in light of AI becoming a bigger part of enterprise infrastructure.
+
+SignIn Problems Account for Help Desk Tickets
+
+ Sign-in problems account for up to 53% of help desk tickets at individual enterprises, but network issues can take significantly longer to resolve, according to a new ControlUp study.
+
+Report: IT Leaders Embrace AI but Remain Wary of Giving It Control
+
+ Artificial intelligence is becoming a bigger part of day-to-day IT operations, but organizations aren't quite ready to let it take the wheel. According to a new Grafana Labs survey, 85 percent of IT leaders are comfortable letting AI investigate problems, but only half trust it to make changes to production systems.
+
+Hackers Used AI to Speed Up ConnectWise Cloud Backup Attack
+
+ A China state-aligned hacking group used AI agents to speed up attacks against organizations worldwide, including a supply chain compromise involving ConnectWise Cloud Backup, Microsoft said Wednesday.
+
+ comments powered by Disqus 
+
+Most Popular
+
+Most Popular Articles
+
+Most Emailed Articles
+
+The 5 Microsoft Ignite 2026 Sessions That Matter Most
+
+Microsoft Strengthens Digital Sovereignty Push with New Cloud and AI Protections
+
+Report: IT Leaders Embrace AI but Remain Wary of Giving It Control
+
+Microsoft Brings Sentinel and Defender Together for 'Agentic' Security Operations
+
+Hackers Used AI to Speed Up ConnectWise Cloud Backup Attack
+
+Subscribe on YouTube
+
+Office 365 Watch
+
+Sign up for our newsletter.
+
+Email Address*Country*
+
+ United States of America
+ Afghanistan
+ Åland Islands
+ Albania
+ Algeria
+ American Samoa
+ Andorra
+ Angola
+ Anguilla
+ Antarctica
+ Antigua and Barbuda
+ Argentina
+ Armenia
+ Aruba
+ Australia
+ Azerbaijan
+ Austria
+ Bahamas
+ Bahrain
+ Bangladesh
+ Barbados
+ Belarus
+ Belgium
+ Belize
+ Benin
+ Bermuda
+ Bhutan
+ Bolivia, Plurinational State of
+ Bonaire, Sint Eustatius and Saba
+ Bosnia and Herzegovina
+ Botswana
+ Bouvet Island
+ Brazil
+ British Indian Ocean Territory
+ Brunei Darussalam
+ Bulgaria
+ Burkina Faso
+ Burundi
+ Cambodia
+ Cameroon
+ Canada
+ Cape Verde (Cabo Verde)
+ Cayman Islands
+ Curaçao
+ Central African Republic
+ Chad
+ Chile
+ China
+ Christmas Island
+ Cocos (Keeling) Islands
+ Colombia
+ Comoros
+ Congo
+ Congo, the Democratic Republic of the
+ Cook Islands
+ Costa Rica
+ Côte d'Ivoire
+ Croatia
+ Cuba
+ Cyprus
+ Czech Republic
+ Denmark
+ Djibouti
+ Dominica
+ Dominican Republic
+ Ecuador
+ Egypt
+ El Salvador
+ Equatorial Guinea
+ Eritrea
+ Estonia
+ Ethiopia
+ Falkland Islands (Malvinas)
+ Faroe Islands
+ Fiji
+ Finland
+ France
+ French Guiana
+ French Polynesia
+ French Southern Territories
+ Gabon
+ Gambia
+ Georgia
+ Germany
+ Ghana
+ Gibraltar
+ Greece
+ Greenland
+ Grenada
+ Guadeloupe
+ Guam
+ Guatemala
+ Guernsey
+ Guinea
+ Guinea-Bissau
+ Guyana
+ Haiti
+ Heard Island and McDonald Islands
+ Holy See (Vatican City State)
+ Honduras
+ Hong Kong
+ Hungary
+ Iceland
+ India
+ Indonesia
+ Iran, Islamic Republic of
+ Iraq
+ Ireland
+ Isle of Man
+ Israel
+ Italy
+ Jamaica
+ Japan
+ Jersey
+ Jordan
+ Kazakhstan
+ Kenya
+ Kiribati
+ Korea, Democratic People's Republic of
+ Korea, Republic of
+ Kuwait
+ Kyrgyzstan
+ Lao People's Democratic Republic
+ Latvia
+ Lebanon
+ Lesotho
+ Liberia
+ Libya
+ Liechtenstein
+ Lithuania
+ Luxembourg
+ Macao
+ Macedonia, the former Yugoslav Republic of
+ Madagascar
+ Malawi
+ Malaysia
+ Maldives
+ Mali
+ Malta
+ Marshall Islands
+ Martinique
+ Mauritania
+ Mauritius
+ Mayotte
+ Mexico
+ Micronesia, Federated States of
+ Moldova, Republic of
+ Monaco
+ Mongolia
+ Montenegro
+ Montserrat
+ Morocco
+ Mozambique
+ Myanmar
+ Namibia
+ Nauru
+ Nepal
+ Netherlands
+ New Caledonia
+ New Zealand
+ Nicaragua
+ Niger
+ Nigeria
+ Niue
+ Norfolk Island
+ Northern Mariana Islands
+ Norway
+ Pakistan
+ Oman
+ Palau
+ Palestinian Territory, Occupied
+ Panama
+ Paraguay
+ Papua New Guinea
+ Peru
+ Philippines
+ Pitcairn
+ Poland
+ Portugal
+ Puerto Rico
+ Qatar
+ Réunion
+ Romania
+ Russian Federation
+ Rwanda
+ Saint Barthélemy
+ Saint Helena, Ascension and Tristan da Cunha
+ Saint Kitts and Nevis
+ Saint Lucia
+ Saint Martin (French part)
+ Saint Pierre and Miquelon
+ Saint Vincent and the Grenadines
+ Samoa
+ San Marino
+ Sao Tome and Principe
+ Saudi Arabia
+ Senegal
+ Serbia
+ Seychelles
+ Sierra Leone
+ Singapore
+ Sint Maarten (Dutch part)
+ Slovakia
+ Slovenia
+ Solomon Islands
+ Somalia
+ South Africa
+ South Georgia and the South Sandwich Islands
+ South Sudan
+ Spain
+ Sri Lanka
+ Sudan
+ Suriname
+ Svalbard and Jan Mayen
+ Eswatini (Swaziland)
+ Sweden
+ Switzerland
+ Syrian Arab Republic
+ Taiwan, Province of China
+ Tajikistan
+ Tanzania, United Republic of
+ Thailand
+ Timor-Leste
+ Togo
+ Tokelau
+ Tonga
+ Trinidad and Tobago
+ Tunisia
+ Turkey
+ Turkmenistan
+ Turks and Caicos Islands
+ Tuvalu
+ Uganda
+ Ukraine
+ United Arab Emirates
+ United Kingdom
+ United States Minor Outlying Islands
+ Uruguay
+ Uzbekistan
+ Vanuatu
+ Viet Nam
+ Venezuela, Bolivarian Republic of
+ Virgin Islands, British
+ Virgin Islands, U.S.
+ Wallis and Futuna
+ Western Sahara
+ Yemen
+ Zambia
+ Zimbabwe
+
+I agree to this site's Privacy Policy
+
+ Please type the letters/numbers you see above.
+
+Most Popular Articles
+
+Most Emailed Articles
+
+The 5 Microsoft Ignite 2026 Sessions That Matter Most
+
+Microsoft Strengthens Digital Sovereignty Push with New Cloud and AI Protections
+
+Report: IT Leaders Embrace AI but Remain Wary of Giving It Control
+
+Microsoft Brings Sentinel and Defender Together for 'Agentic' Security Operations
+
+Hackers Used AI to Speed Up ConnectWise Cloud Backup Attack
+
+Upcoming Training Events
+
+ 0
+
+ AM
+
+ Live! 360 6-Week Training & Certification Course: Mastering the Microsoft AI Framework: Building Enterprise-Ready AI Agents with Microsoft Foundry
+October 6–November 10, 2026
+
+ Live! 360 Orlando
+November 15-20, 2026
+
+ Artificial Intelligence Live! Orlando
+November 15-20, 2026
+
+ AI Enterprise Architecture Live! Orlando
+November 15-20, 2026
+
+ Cybersecurity & Ransomware Live! Orlando
+November 15-20, 2026
+
+ Data Platform Live! Orlando
+November 15-20, 2026
+
+ TechMentor Orlando
+November 15-20, 2026
+
+ Live! 360 2-Day Hands-On Seminar: AI-Powered .NET Development with Claude & Claude Code
+December 8-9, 2026
+
+ Pure AI 3-Hour Virtual Training Workshop: AI Agents for Everyday Business - Automate Your Work Without Coding
+December 9, 2026
+
+ Virtual Hands-on Training Seminar: AI-Powered PowerShell and Infrastructure Automation with Claude Code
+December 10-11, 2026
+
+ TechMentor & Cybersecurity Live! @ Microsoft HQ
+August 9-13, 2027
+
+Webcasts
+
+ What every IT team should know about managing Microsoft environments
+
+ Tech Spotlight | What AI Means for Identity Security
+
+ Tech Talk | When Agents Go Rogue: Building a Recovery Plan for the AI Age
+
+ Beyond the Cluster: What It Really Takes to Run Kubernetes Successfully in the Public Cloud
+
+More Webcasts
+
+Whitepapers
+
+ Tame AI Agent Sprawl: Okta for AI Agents + Amazon Bedrock for Identity Security and Governance
+
+ More than SSO and MFA: How identity secures the modern enterprise and accelerates growth
+
+ A field guide to securing AI agents 
+
+ Application Note - SQL Server Best Practices for Data Quality
+
+More Tech Library
+
+Contact Us
+
+Advertise
+
+Training
+
+Free Newsletters
+
+Reprints
+
+List Rental
+
+Glossary
+
+AI Boardroom
+
+ADTmag
+
+AWS Insider
+
+Campus Security Today
+
+Campus Technology
+
+Environmental Protection
+
+Live! 360 Events
+
+MCPmag
+
+MedCloudInsider
+
+Occupational Health & Safety
+
+Pure AI
+
+Pure Robotics
+
+Redmond 
+
+Redmond Channel Partner
+
+Security Today
+
+Spaces 4 Learning
+
+TechMentor
+
+Tech Tactics in Education
+
+The AI Pivot
+
+THE Journal
+
+Virtualization & Cloud Review
+
+Visual Studio Magazine
+
+Visual Studio Live!
+
+© 
+
+1105 Media Inc. See our Privacy Policy, Cookie Policy and Terms of Use. CA: Do Not Sell My Personal Info | 
+
+Problems? Questions? Feedback? E-mail us.

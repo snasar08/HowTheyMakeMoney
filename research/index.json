@@ -82,7 +82,7 @@
   },
   "https://investors.duolingo.com/node/10656/pdf": {
     "file": "pages/262eefd59d6f.txt",
-    "fetched_at": "2026-10-26T11:47:48.725506+00:00",
+    "fetched_at": "2026-10-26T11:50:19.025474+00:00",
     "ok": false,
     "error": "HTTP 403"
   },
@@ -142,13 +142,13 @@
   },
   "https://www.businesswire.com/news/home/20251030333927/en/Apple-reports-fourth-quarter-results": {
     "file": "pages/8c3fcba71ce9.txt",
-    "fetched_at": "2026-10-26T11:47:55.068426+00:00",
+    "fetched_at": "2026-10-26T11:50:19.572828+00:00",
     "ok": false,
     "error": "TimeoutError('The read operation timed out')"
   },
   "https://investors.airbnb.com/news-releases/news-release-details/airbnb-reports-fourth-quarter-and-full-year-2025-financial": {
     "file": "pages/e23a5eb1a6ef.txt",
-    "fetched_at": "2026-10-26T11:48:55.561809+00:00",
+    "fetched_at": "2026-10-26T11:51:20.040986+00:00",
     "ok": false,
     "error": "HTTP 404"
   },
@@ -178,5 +178,77 @@
     "status": 200,
     "final_url": "https://fortune.com/company-assets/1548/quartr/earnings-release-8-k-dd197-2026-01-28-09-57-04.pdf",
     "content_type": "application/pdf"
+  },
+  "https://corporate.target.com/press/release/2026/03/target-corporation-reports-fourth-quarter-and-full-year-2025-earnings": {
+    "file": "pages/8593a067e17e.txt",
+    "fetched_at": "2026-10-26T11:51:21.143879+00:00",
+    "ok": true,
+    "chars": 37946,
+    "status": 200,
+    "final_url": "https://corporate.target.com/press/release/2026/03/target-corporation-reports-fourth-quarter-and-full-year-2025-earnings",
+    "content_type": "text/html; charset=utf-8"
+  },
+  "https://duolingo.gcs-web.com/node/11556/pdf": {
+    "file": "pages/3d0a8209abc6.txt",
+    "fetched_at": "2026-10-26T11:51:21.719305+00:00",
+    "ok": false,
+    "error": "HTTP 403"
+  },
+  "https://investingnews.com/duolingo-reports-fourth-quarter-and-full-year-2025-results/": {
+    "file": "pages/44b996a5157a.txt",
+    "fetched_at": "2026-10-26T11:51:22.166542+00:00",
+    "ok": true,
+    "chars": 9151,
+    "status": 200,
+    "final_url": "https://investingnews.com/duolingo-reports-fourth-quarter-and-full-year-2025-results/",
+    "content_type": "text/html; charset=utf-8"
+  },
+  "https://www.microsoft.com/en-us/investor/earnings/fy-2026-q4/press-release-webcast": {
+    "file": "pages/e7406b0692ba.txt",
+    "fetched_at": "2026-10-26T11:51:22.645980+00:00",
+    "ok": true,
+    "chars": 36019,
+    "status": 200,
+    "final_url": "https://www.microsoft.com/en-us/investor/earnings/fy-2026-q4/press-release-webcast",
+    "content_type": "text/html; charset=utf-8"
+  },
+  "https://ir.roblox.com/news/news-details/2026/Roblox-Reports-Fourth-Quarter-and-Full-Year-2025-Financial-Results/default.aspx": {
+    "file": "pages/e6abd9267a0c.txt",
+    "fetched_at": "2026-10-26T11:51:23.462603+00:00",
+    "ok": false,
+    "error": "HTTP 403"
+  },
+  "https://corporate.ferrari.com/en/ferrari-reports-fourth-quarter-and-full-year-2025-results": {
+    "file": "pages/5cdddb2f778c.txt",
+    "fetched_at": "2026-10-26T11:51:24.037345+00:00",
+    "ok": false,
+    "error": "HTTP 403"
+  },
+  "https://en.wikipedia.org/wiki/NBA_salary_cap": {
+    "file": "pages/607a722ff5bc.txt",
+    "fetched_at": "2026-10-26T11:51:25.043160+00:00",
+    "ok": true,
+    "chars": 82188,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/NBA_salary_cap",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://shorttermrentalz.com/features/airbnb-q4-2025-earnings-call/": {
+    "file": "pages/a73241ef8d7b.txt",
+    "fetched_at": "2026-10-26T11:51:25.676356+00:00",
+    "ok": true,
+    "chars": 14420,
+    "status": 200,
+    "final_url": "https://shorttermrentalz.com/features/airbnb-q4-2025-earnings-call/",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://redmondmag.com/articles/2026/07/30/microsoft-tops-90b-quarterly-revenue.aspx": {
+    "file": "pages/f41b2d6e7e84.txt",
+    "fetched_at": "2026-10-26T11:51:26.658815+00:00",
+    "ok": true,
+    "chars": 10891,
+    "status": 200,
+    "final_url": "https://redmondmag.com/articles/2026/07/30/microsoft-tops-90b-quarterly-revenue.aspx",
+    "content_type": "text/html; charset=utf-8"
   }
 }
