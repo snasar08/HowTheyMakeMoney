@@ -82,7 +82,7 @@
   },
   "https://investors.duolingo.com/node/10656/pdf": {
     "file": "pages/262eefd59d6f.txt",
-    "fetched_at": "2026-10-26T11:50:19.025474+00:00",
+    "fetched_at": "2026-10-26T11:53:24.347896+00:00",
     "ok": false,
     "error": "HTTP 403"
   },
@@ -142,13 +142,13 @@
   },
   "https://www.businesswire.com/news/home/20251030333927/en/Apple-reports-fourth-quarter-results": {
     "file": "pages/8c3fcba71ce9.txt",
-    "fetched_at": "2026-10-26T11:50:19.572828+00:00",
+    "fetched_at": "2026-10-26T11:53:24.762038+00:00",
     "ok": false,
     "error": "TimeoutError('The read operation timed out')"
   },
   "https://investors.airbnb.com/news-releases/news-release-details/airbnb-reports-fourth-quarter-and-full-year-2025-financial": {
     "file": "pages/e23a5eb1a6ef.txt",
-    "fetched_at": "2026-10-26T11:51:20.040986+00:00",
+    "fetched_at": "2026-10-26T11:54:25.180930+00:00",
     "ok": false,
     "error": "HTTP 404"
   },
@@ -190,7 +190,7 @@
   },
   "https://duolingo.gcs-web.com/node/11556/pdf": {
     "file": "pages/3d0a8209abc6.txt",
-    "fetched_at": "2026-10-26T11:51:21.719305+00:00",
+    "fetched_at": "2026-10-26T11:54:25.875216+00:00",
     "ok": false,
     "error": "HTTP 403"
   },
@@ -214,13 +214,13 @@
   },
   "https://ir.roblox.com/news/news-details/2026/Roblox-Reports-Fourth-Quarter-and-Full-Year-2025-Financial-Results/default.aspx": {
     "file": "pages/e6abd9267a0c.txt",
-    "fetched_at": "2026-10-26T11:51:23.462603+00:00",
+    "fetched_at": "2026-10-26T11:54:26.224024+00:00",
     "ok": false,
     "error": "HTTP 403"
   },
   "https://corporate.ferrari.com/en/ferrari-reports-fourth-quarter-and-full-year-2025-results": {
     "file": "pages/5cdddb2f778c.txt",
-    "fetched_at": "2026-10-26T11:51:24.037345+00:00",
+    "fetched_at": "2026-10-26T11:54:26.727731+00:00",
     "ok": false,
     "error": "HTTP 403"
   },
@@ -250,5 +250,20 @@
     "status": 200,
     "final_url": "https://redmondmag.com/articles/2026/07/30/microsoft-tops-90b-quarterly-revenue.aspx",
     "content_type": "text/html; charset=utf-8"
+  },
+  "https://www.apple.com/newsroom/pdfs/fy2025-q4/FY25_Q4_Consolidated_Financial_Statements.pdf": {
+    "file": "pages/a1dfb9e9a357.txt",
+    "fetched_at": "2026-10-26T11:54:27.685685+00:00",
+    "ok": true,
+    "chars": 17744,
+    "status": 200,
+    "final_url": "https://www.apple.com/newsroom/pdfs/fy2025-q4/FY25_Q4_Consolidated_Financial_Statements.pdf",
+    "content_type": "application/pdf"
+  },
+  "https://mms.businesswire.com/media/20260203608464/en/2711121/1/Yum_4Q25_Earnings_Release.pdf?download=1": {
+    "file": "pages/74e1b6a587e9.txt",
+    "fetched_at": "2026-10-26T11:54:29.334388+00:00",
+    "ok": false,
+    "error": "TimeoutError('The read operation timed out')"
   }
 }
