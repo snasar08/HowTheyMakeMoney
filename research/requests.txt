@@ -1,0 +1,9 @@
+# test: filings, government data, IR pages, PDFs, news, encyclopedia
+https://www.sec.gov/Archives/edgar/data/320187/000032018725000047/nke-20250531.htm
+https://www.bls.gov/ooh/transportation-and-material-moving/airline-and-commercial-pilots.htm
+https://www.bls.gov/ooh/sales/real-estate-brokers-and-sales-agents.htm
+https://investor.apple.com/investor-relations/default.aspx
+https://www.nintendo.co.jp/ir/pdf/2026/260203_2e.pdf
+https://ir.dominos.com/node/24181
+https://en.wikipedia.org/wiki/Costco
+https://www.nasdaq.com/articles/walmart-q4-earnings-top-estimates-e-commerce-and-ad-growth
