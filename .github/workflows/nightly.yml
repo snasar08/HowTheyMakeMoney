@@ -1,0 +1,86 @@
+name: Make Shorts
+
+on:
+  schedule:
+    - cron: "17 10 * * *"   # every day ~6:17 AM New York time (10:17 UTC)
+  workflow_dispatch:
+    inputs:
+      count:
+        description: "How many Shorts to make"
+        default: "2"
+      script_id:
+        description: "Only this script id (e.g. 001). Leave blank for next in queue."
+        default: ""
+      dry_run:
+        description: "Render only (no delivery, no status change)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: make-shorts
+  cancel-in-progress: false
+
+jobs:
+  make:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      SHORTS_PER_RUN: ${{ vars.SHORTS_PER_RUN || '2' }}
+      UPLOAD_MODE: ${{ vars.UPLOAD_MODE || 'release' }}
+      VOICE_ENGINE: ${{ vars.VOICE_ENGINE || 'kokoro' }}
+      KOKORO_VOICE: ${{ vars.KOKORO_VOICE || 'am_michael' }}
+      POST_SLOTS: ${{ vars.POST_SLOTS || '12:00,18:00' }}
+      GH_TOKEN: ${{ github.token }}
+      YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+      YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+      YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+      HTMM_CACHE: ${{ github.workspace }}/.cache
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: System packages
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg espeak-ng
+
+      - name: Python packages
+        run: pip install -r requirements.txt
+
+      - name: Cache voice model and images
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/huggingface
+            .cache
+          key: htmm-models-v1-${{ hashFiles('requirements.txt') }}
+          restore-keys: htmm-models-v1-
+
+      - name: Make Shorts
+        run: |
+          ARGS="--count ${{ inputs.count || env.SHORTS_PER_RUN }}"
+          if [ -n "${{ inputs.script_id }}" ]; then ARGS="$ARGS --id ${{ inputs.script_id }}"; fi
+          if [ "${{ inputs.dry_run }}" = "true" ]; then ARGS="$ARGS --dry"; fi
+          python -m pipeline.run $ARGS
+
+      - name: Save test videos (dry run)
+        if: ${{ inputs.dry_run }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-shorts
+          path: out/*.mp4
+          retention-days: 7
+
+      - name: Mark scripts as delivered
+        if: ${{ !inputs.dry_run }}
+        run: |
+          git config user.name "shorts-bot"
+          git config user.email "shorts-bot@users.noreply.github.com"
+          git add content/scripts
+          git diff --cached --quiet || git commit -m "Delivered Shorts $(date -u +%F)"
+          git pull --rebase --quiet && git push

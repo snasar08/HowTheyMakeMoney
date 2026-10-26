@@ -1,0 +1,85 @@
+{
+  "id": "008",
+  "slug": "movie-theaters",
+  "company": "Movie theaters",
+  "theme": "bold_bright",
+  "status": "ready",
+  "title": "Movie Theaters Are Really Popcorn Stores",
+  "description": "Movie Theaters Are Really Popcorn Stores.\n\nSources:\n- AMC Q2 2025 results (Motley Fool): https://www.fool.com/data-news/2025/08/11/amc-posts-36-percent-revenue-jump-in-q2\n- Theater ticket split and AMC concession margin (Motley Fool via Webull): https://www.webull.ca/news-detail/13963708595160064\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "tags": [
+    "movie theaters",
+    "amc",
+    "popcorn",
+    "business",
+    "how they make money",
+    "business explained",
+    "shorts"
+  ],
+  "images": {
+    "hook": {
+      "prompt": "Cinematic photo, vertical: an overflowing striped bucket of buttery popcorn in a dark movie theater, lit by the projector beam from behind, kernels spilling, dust in the light, photorealistic, no text, no logos",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_021413_ab05e9a0-a528-40bf-a5c7-cf8496221712.png"
+    },
+    "mid": {
+      "prompt": "Cinematic photo, vertical: a glowing movie theater concession stand with popcorn machines, candy displays and soda fountains, warm neon lights, empty lobby carpet, photorealistic, no readable text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_021414_5300c07c-6d1d-4d6f-a15a-60200c07aaa6.png"
+    }
+  },
+  "scenes": [
+    {
+      "narration": "Movie theaters aren't really in the movie business. They're in the popcorn business.",
+      "visual": {
+        "type": "image",
+        "image": "hook",
+        "overlay": "THE POPCORN",
+        "overlay_sub": "business"
+      }
+    },
+    {
+      "narration": "Theaters send roughly half of every ticket sold back to the studio that made the film.",
+      "visual": {
+        "type": "donut",
+        "value": 50,
+        "label": "of ticket sales go back to the studios"
+      }
+    },
+    {
+      "narration": "But they keep all of the snack money. At AMC, guests spent a record 7.95 dollars each on food and drinks in one 2025 quarter.",
+      "visual": {
+        "type": "stat",
+        "value": 7.95,
+        "label": "AMC food & drink spend per guest, Q2 2025",
+        "prefix": "$",
+        "suffix": "",
+        "decimals": 2
+      }
+    },
+    {
+      "narration": "And snacks are cheap to make. AMC's gross margin on food and drinks is around 80 percent.",
+      "visual": {
+        "type": "image",
+        "image": "mid",
+        "overlay": "~80% MARGIN",
+        "overlay_sub": "on snacks"
+      }
+    },
+    {
+      "narration": "So the movie gets you through the door, and the popcorn pays the rent. Follow for more.",
+      "visual": {
+        "type": "text",
+        "text": "The movie gets you in.",
+        "sub": "The popcorn pays the rent."
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "AMC Q2 2025 results (Motley Fool)",
+      "url": "https://www.fool.com/data-news/2025/08/11/amc-posts-36-percent-revenue-jump-in-q2"
+    },
+    {
+      "title": "Theater ticket split and AMC concession margin (Motley Fool via Webull)",
+      "url": "https://www.webull.ca/news-detail/13963708595160064"
+    }
+  ]
+}

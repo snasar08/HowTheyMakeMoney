@@ -1,0 +1,88 @@
+{
+  "id": "005",
+  "slug": "starbucks",
+  "company": "Starbucks",
+  "theme": "bold_bright",
+  "status": "ready",
+  "title": "Starbucks Is Basically a Bank",
+  "description": "Starbucks Is Basically a Bank.\n\nSources:\n- Starbucks Form 10-Q, stored value card balance (SEC): https://www.sec.gov/Archives/edgar/data/829224/000082922426000011/sbux-20251228.htm\n- Starbucks breakage revenue (MarketWatch via Tiger): https://www.itiger.com/news/2531706822\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "tags": [
+    "starbucks",
+    "gift cards",
+    "business",
+    "money",
+    "how they make money",
+    "business explained",
+    "shorts"
+  ],
+  "images": {
+    "hook": {
+      "prompt": "Cinematic photo, vertical: a paper coffee cup with steam on a cafe counter at sunrise, a smartphone beside it showing a generic payment app screen with a glowing balance, warm morning light, shallow depth of field, photorealistic, no logos, no brand names, plain cup",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_020932_13859196-47e9-4b5f-97cd-2ffeec6a7a83.png"
+    },
+    "mid": {
+      "prompt": "Cinematic photo, vertical: inside a bank vault, a towering pile of plastic gift cards instead of cash, dramatic spotlight, steel vault door open in the background, photorealistic, blank cards with no text, no logos",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_020932_3628efe7-d38b-417a-8297-f89a5023ddcd.png"
+    }
+  },
+  "scenes": [
+    {
+      "narration": "Starbucks might be holding some of your money right now.",
+      "visual": {
+        "type": "image",
+        "image": "hook",
+        "overlay": "YOUR MONEY",
+        "overlay_sub": "is at Starbucks"
+      }
+    },
+    {
+      "narration": "At the end of 2025, customers had about 2 billion dollars sitting on Starbucks cards and in its rewards program.",
+      "visual": {
+        "type": "stat",
+        "value": 2.07,
+        "label": "on Starbucks cards and rewards, Dec 2025",
+        "prefix": "$",
+        "suffix": "B",
+        "decimals": 2
+      }
+    },
+    {
+      "narration": "That's money Starbucks gets up front, before you order anything. It's basically an interest free loan from its customers.",
+      "visual": {
+        "type": "image",
+        "image": "mid",
+        "overlay": "INTEREST FREE",
+        "overlay_sub": "loan from you"
+      }
+    },
+    {
+      "narration": "And some of it never gets spent. In one recent year, Starbucks counted about 200 million dollars from card balances it expects nobody will ever use.",
+      "visual": {
+        "type": "stat",
+        "value": 207,
+        "label": "from card money never spent, in one year",
+        "prefix": "$",
+        "suffix": "M",
+        "decimals": 0
+      }
+    },
+    {
+      "narration": "So that forgotten gift card in your drawer is quietly Starbucks profit. Follow for more.",
+      "visual": {
+        "type": "text",
+        "text": "Forgotten gift card",
+        "sub": "= Starbucks profit"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "Starbucks Form 10-Q, stored value card balance (SEC)",
+      "url": "https://www.sec.gov/Archives/edgar/data/829224/000082922426000011/sbux-20251228.htm"
+    },
+    {
+      "title": "Starbucks breakage revenue (MarketWatch via Tiger)",
+      "url": "https://www.itiger.com/news/2531706822"
+    }
+  ]
+}

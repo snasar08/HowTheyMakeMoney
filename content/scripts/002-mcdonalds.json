@@ -1,0 +1,112 @@
+{
+  "id": "002",
+  "slug": "mcdonalds",
+  "company": "McDonald's",
+  "theme": "bold_bright",
+  "status": "ready",
+  "title": "McDonald's Is Secretly a Landlord",
+  "description": "McDonald's Is Secretly a Landlord.\n\nSources:\n- McDonald's 2025 Form 10-K (SEC): https://www.sec.gov/Archives/edgar/data/63908/000006390826000035/mcd-20251231.htm\n- McDonald's 2025 systemwide sales: https://komo.ai/directory/mcdonalds\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "tags": [
+    "mcdonalds",
+    "franchise",
+    "real estate",
+    "business",
+    "how they make money",
+    "business explained",
+    "shorts"
+  ],
+  "images": {
+    "hook": {
+      "prompt": "Cinematic aerial photo, vertical: a fast food restaurant on a busy suburban corner lot at dusk, glowing drive-thru line of cars wrapping around the building, the land parcel and parking lot clearly visible, warm and blue tones, photorealistic, no text, no logos, no brand signage, generic building",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_020745_7dda3b6a-4191-4514-a5fc-db16b66db713.png"
+    },
+    "mid": {
+      "prompt": "Cinematic photo, vertical: a wrapped burger sitting on top of a stack of property deeds and a ring of building keys on a dark wooden desk, single warm desk lamp, shallow depth of field, photorealistic, no text visible on papers, no logos",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_020607_46edc478-05a2-478d-bb8b-139d9cddccab.png"
+    }
+  },
+  "scenes": [
+    {
+      "narration": "McDonald's sells billions of burgers. But the company itself barely sells any of them.",
+      "visual": {
+        "type": "image",
+        "image": "hook",
+        "overlay": "WHO SELLS",
+        "overlay_sub": "the burgers?"
+      }
+    },
+    {
+      "narration": "About 95 percent of McDonald's restaurants are owned and run by franchisees, not the company.",
+      "visual": {
+        "type": "donut",
+        "value": 95,
+        "label": "of McDonald's restaurants are franchised"
+      }
+    },
+    {
+      "narration": "In 2025, customers spent 139 billion dollars at McDonald's restaurants. McDonald's corporate revenue was only 26.9 billion.",
+      "visual": {
+        "type": "bars",
+        "items": [
+          {
+            "label": "Spent at the restaurants",
+            "value": 139.4
+          },
+          {
+            "label": "McDonald's revenue",
+            "value": 26.9
+          }
+        ],
+        "prefix": "$",
+        "suffix": "B",
+        "title": "2025"
+      }
+    },
+    {
+      "narration": "So where does McDonald's money come from? Rent. It often owns the land and the building, and franchisees pay rent based on their sales.",
+      "visual": {
+        "type": "image",
+        "image": "mid",
+        "overlay": "RENT",
+        "overlay_sub": "based on sales"
+      }
+    },
+    {
+      "narration": "In 2025, franchisees paid McDonald's 10.4 billion dollars in rent and 6 billion in royalties.",
+      "visual": {
+        "type": "bars",
+        "items": [
+          {
+            "label": "Rent",
+            "value": 10.44
+          },
+          {
+            "label": "Royalties",
+            "value": 6.02
+          }
+        ],
+        "prefix": "$",
+        "suffix": "B",
+        "title": "Paid by franchisees, 2025"
+      }
+    },
+    {
+      "narration": "That's why people call McDonald's a real estate company that happens to sell burgers. Follow for more.",
+      "visual": {
+        "type": "text",
+        "text": "A landlord",
+        "sub": "that sells burgers."
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "McDonald's 2025 Form 10-K (SEC)",
+      "url": "https://www.sec.gov/Archives/edgar/data/63908/000006390826000035/mcd-20251231.htm"
+    },
+    {
+      "title": "McDonald's 2025 systemwide sales",
+      "url": "https://komo.ai/directory/mcdonalds"
+    }
+  ]
+}

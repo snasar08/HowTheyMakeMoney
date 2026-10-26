@@ -1,0 +1,92 @@
+{
+  "id": "014",
+  "slug": "netflix",
+  "company": "Netflix",
+  "theme": "clean_navy",
+  "status": "ready",
+  "title": "How Netflix Made $45 Billion Last Year",
+  "description": "How Netflix Made $45 Billion Last Year.\n\nSources:\n- Netflix 2025 Form 10-K (SEC): https://www.sec.gov/Archives/edgar/data/1065280/000106528026000034/nflx-20251231.htm\n- Netflix 2025 results and 2026 outlook (CSI Magazine): https://www.csimagazine.com/csi/netflix-fullyear-results.php\n- Netflix ad revenue $1.5B (AdNews): https://www.adnews.com.au/news/netflix-ad-revenue-hits-1-5-billion\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "tags": [
+    "netflix",
+    "streaming",
+    "advertising",
+    "business",
+    "how they make money",
+    "business explained",
+    "shorts"
+  ],
+  "images": {
+    "hook": {
+      "prompt": "Cinematic photo, vertical: a dark living room at night lit only by a large TV screen glowing red, silhouette of a couch, a remote control on the coffee table, cozy, photorealistic, blank screen glow, no text, no logos",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_021922_2904ad4b-a63d-4131-a784-0c63606b8301.png"
+    },
+    "mid": {
+      "prompt": "Cinematic photo, vertical: a busy film production set with cinema cameras, lighting rigs and a crew in silhouette, dramatic red and amber light, haze, photorealistic, faces not visible, no text, no logos",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_021922_a48d808e-b63b-4c20-8bb9-bcbbf3f87384.png"
+    }
+  },
+  "scenes": [
+    {
+      "narration": "Netflix made 45 billion dollars last year. Here's where it comes from.",
+      "visual": {
+        "type": "image",
+        "image": "hook",
+        "overlay": "$45 BILLION",
+        "overlay_sub": "in one year"
+      }
+    },
+    {
+      "narration": "More than 325 million paid memberships, paying anywhere from about 1 to 37 dollars a month, depending on the country and plan.",
+      "visual": {
+        "type": "stat",
+        "value": 325,
+        "label": "Netflix paid memberships",
+        "prefix": "",
+        "suffix": "M+",
+        "decimals": 0
+      }
+    },
+    {
+      "narration": "Its cheaper plan with ads is growing fast. Ad revenue hit 1.5 billion dollars in 2025, about two and a half times the year before.",
+      "visual": {
+        "type": "stat",
+        "value": 1.5,
+        "label": "Netflix ad revenue, 2025",
+        "prefix": "$",
+        "suffix": "B",
+        "decimals": 1
+      }
+    },
+    {
+      "narration": "And Netflix expects ad revenue to roughly double again in 2026.",
+      "visual": {
+        "type": "image",
+        "image": "mid",
+        "overlay": "ADS",
+        "overlay_sub": "doubling again"
+      }
+    },
+    {
+      "narration": "After paying for all those shows, Netflix kept about 30 cents of operating profit on every dollar. Follow for more.",
+      "visual": {
+        "type": "donut",
+        "value": 29.5,
+        "label": "Netflix operating margin, 2025"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "Netflix 2025 Form 10-K (SEC)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1065280/000106528026000034/nflx-20251231.htm"
+    },
+    {
+      "title": "Netflix 2025 results and 2026 outlook (CSI Magazine)",
+      "url": "https://www.csimagazine.com/csi/netflix-fullyear-results.php"
+    },
+    {
+      "title": "Netflix ad revenue $1.5B (AdNews)",
+      "url": "https://www.adnews.com.au/news/netflix-ad-revenue-hits-1-5-billion"
+    }
+  ]
+}

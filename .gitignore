@@ -1,0 +1,7 @@
+out/
+.cache/
+__pycache__/
+*.pyc
+client_secret*.json
+.env
+Ming-3.0-tts/

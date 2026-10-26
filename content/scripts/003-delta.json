@@ -1,0 +1,86 @@
+{
+  "id": "003",
+  "slug": "delta",
+  "company": "Delta",
+  "theme": "clean_navy",
+  "status": "ready",
+  "title": "Delta's Best Product Isn't a Plane Ticket",
+  "description": "Delta's Best Product Isn't a Plane Ticket.\n\nSources:\n- Delta 2025 results: Amex remuneration $8.2B (AltexSoft): https://www.altexsoft.com/travel-industry-news/premium-strategy-works-deltas-2025-revenue-hits-63b/\n- Delta cards ~13% of Amex billed business (View from the Wing): https://viewfromthewing.com/amex-pays-delta-3-8-cents-per-dollar-charged-why-banks-pay-more-for-miles-than-you-do/\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "tags": [
+    "delta",
+    "airlines",
+    "credit cards",
+    "american express",
+    "business",
+    "how they make money",
+    "business explained",
+    "shorts"
+  ],
+  "images": {
+    "hook": {
+      "prompt": "Cinematic photo, vertical: commercial jet airliner taking off at golden hour, shot from below the runway, sun flare behind the wing, dramatic sky, photorealistic, generic plain white livery, no text, no logos, no airline markings",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_020745_4a995e93-45f2-4837-8a26-ce525d448d61.png"
+    },
+    "mid": {
+      "prompt": "Cinematic product photo, vertical: a premium metal credit card standing on a dark glossy surface, a tiny airplane silhouette reflected in its surface, rim lighting, luxury mood, photorealistic, blank card with no text, no numbers, no logos",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_020607_4e132d46-2e0f-4067-8973-53953eca74d5.png"
+    }
+  },
+  "scenes": [
+    {
+      "narration": "Delta's most valuable product might not be a plane ticket.",
+      "visual": {
+        "type": "image",
+        "image": "hook",
+        "overlay": "NOT THE",
+        "overlay_sub": "plane ticket"
+      }
+    },
+    {
+      "narration": "In 2025, American Express paid Delta 8.2 billion dollars.",
+      "visual": {
+        "type": "stat",
+        "value": 8.2,
+        "label": "paid to Delta by American Express, 2025",
+        "prefix": "$",
+        "suffix": "B",
+        "decimals": 1
+      }
+    },
+    {
+      "narration": "Every time someone uses a Delta Amex card, at the grocery store, for gas, anywhere, Amex buys SkyMiles from Delta to reward them.",
+      "visual": {
+        "type": "image",
+        "image": "mid",
+        "overlay": "EVERY SWIPE",
+        "overlay_sub": "buys Delta miles"
+      }
+    },
+    {
+      "narration": "Delta cards make up about 13 percent of all the spending on American Express cards worldwide.",
+      "visual": {
+        "type": "donut",
+        "value": 13,
+        "label": "of Amex's worldwide spending is on Delta cards"
+      }
+    },
+    {
+      "narration": "And selling miles doesn't need fuel, pilots, or planes. It's some of the highest margin money an airline can make. Follow for more.",
+      "visual": {
+        "type": "text",
+        "text": "No fuel. No pilots.",
+        "sub": "Just miles."
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "Delta 2025 results: Amex remuneration $8.2B (AltexSoft)",
+      "url": "https://www.altexsoft.com/travel-industry-news/premium-strategy-works-deltas-2025-revenue-hits-63b/"
+    },
+    {
+      "title": "Delta cards ~13% of Amex billed business (View from the Wing)",
+      "url": "https://viewfromthewing.com/amex-pays-delta-3-8-cents-per-dollar-charged-why-banks-pay-more-for-miles-than-you-do/"
+    }
+  ]
+}

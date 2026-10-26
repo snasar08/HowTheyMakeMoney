@@ -1,0 +1,86 @@
+{
+  "id": "010",
+  "slug": "visa",
+  "company": "Visa",
+  "theme": "dark_neon",
+  "status": "ready",
+  "title": "Visa Never Lends You a Dime. It Made $40B.",
+  "description": "Visa Never Lends You a Dime. It Made $40B..\n\nSources:\n- Visa fiscal 2025 results (SEC 8-K): https://www.sec.gov/Archives/edgar/data/1403161/000140316125000077/q42025earningsrelease.htm\n- Visa FY2025 Form 10-K (SEC): https://www.sec.gov/Archives/edgar/data/1403161/000140316125000089/v-20250930.htm\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "tags": [
+    "visa",
+    "payments",
+    "credit cards",
+    "fintech",
+    "business",
+    "how they make money",
+    "business explained",
+    "shorts"
+  ],
+  "images": {
+    "hook": {
+      "prompt": "Cinematic photo, vertical: a hand tapping a blank credit card on a payment terminal, glowing light trails shooting out of the terminal like data, dark background, photorealistic, no numbers, no logos, no readable text",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_021627_31366a0a-3888-4acf-b68b-f5c60b96e2ac.png"
+    },
+    "mid": {
+      "prompt": "Cinematic image, vertical: Earth at night seen from space with glowing golden network lines connecting cities across continents like payment routes, deep blue and gold, photorealistic, no text, no logos",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_021626_91154f03-5cc9-4fed-8f67-2ea1a2ce5836.png"
+    }
+  },
+  "scenes": [
+    {
+      "narration": "Visa doesn't lend you money. It doesn't even issue your card.",
+      "visual": {
+        "type": "image",
+        "image": "hook",
+        "overlay": "NO LOANS.",
+        "overlay_sub": "No cards."
+      }
+    },
+    {
+      "narration": "So how did it bring in 40 billion dollars in fiscal 2025?",
+      "visual": {
+        "type": "stat",
+        "value": 40.0,
+        "label": "Visa net revenue, fiscal 2025",
+        "prefix": "$",
+        "suffix": "B",
+        "decimals": 1
+      }
+    },
+    {
+      "narration": "Visa runs the network in the middle. Every time a card is tapped, Visa earns a small fee for moving that payment, billions of times a year.",
+      "visual": {
+        "type": "image",
+        "image": "mid",
+        "overlay": "THE NETWORK",
+        "overlay_sub": "in the middle"
+      }
+    },
+    {
+      "narration": "And because it's mostly software, about half of that revenue became profit: 20.1 billion dollars.",
+      "visual": {
+        "type": "donut",
+        "value": 50,
+        "label": "of Visa's revenue became profit"
+      }
+    },
+    {
+      "narration": "Visa is a toll booth on the world's spending. No loans, no credit risk, just fees. Follow for more.",
+      "visual": {
+        "type": "text",
+        "text": "A toll booth",
+        "sub": "on the world's spending"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "Visa fiscal 2025 results (SEC 8-K)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1403161/000140316125000077/q42025earningsrelease.htm"
+    },
+    {
+      "title": "Visa FY2025 Form 10-K (SEC)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1403161/000140316125000089/v-20250930.htm"
+    }
+  ]
+}

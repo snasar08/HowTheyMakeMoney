@@ -1,0 +1,89 @@
+{
+  "id": "009",
+  "slug": "google-apple",
+  "company": "Google & Apple",
+  "theme": "dark_neon",
+  "status": "ready",
+  "title": "Google Pays Apple $20 Billion for One Setting",
+  "description": "Google Pays Apple $20 Billion for One Setting.\n\nSources:\n- Google paid Apple $20B in 2022 (Business Today): https://www.businesstoday.in/amp/technology/news/story/google-paid-apple-a-staggering-20-billion-in-2022-for-default-search-engine-status-427909-2024-05-02\n- Google spent $26.3B on defaults in 2021 (PhoneArena): https://www.phonearena.com/news/google-pays-big-bucks-to-be-default-search-engine_id152057\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "tags": [
+    "google",
+    "apple",
+    "search",
+    "antitrust",
+    "business",
+    "how they make money",
+    "business explained",
+    "shorts"
+  ],
+  "images": {
+    "hook": {
+      "prompt": "Cinematic photo, vertical: a smartphone lying on a dark desk showing an empty glowing search bar, surrounded by tall stacks of hundred dollar bills, dramatic rim light, photorealistic, generic phone with no logos, no readable text",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_021628_ede677e7-aa88-4f28-8521-b5e9584747fe.png"
+    },
+    "mid": {
+      "prompt": "Cinematic photo, vertical: two futuristic glass tech headquarters buildings facing each other across a road at night, a glowing stream of light flowing from one building to the other, photorealistic, generic architecture, no text, no logos",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_021627_73a2a594-36f3-4f3b-9efa-107511827208.png"
+    }
+  },
+  "scenes": [
+    {
+      "narration": "Google pays Apple around 20 billion dollars a year. For one setting.",
+      "visual": {
+        "type": "image",
+        "image": "hook",
+        "overlay": "$20 BILLION",
+        "overlay_sub": "for one setting"
+      }
+    },
+    {
+      "narration": "Records from the U.S. antitrust trial showed Google paid Apple 20 billion dollars in 2022, to be the default search engine in Safari.",
+      "visual": {
+        "type": "stat",
+        "value": 20,
+        "label": "Google paid Apple in 2022",
+        "prefix": "$",
+        "suffix": "B",
+        "decimals": 0
+      }
+    },
+    {
+      "narration": "That's the search bar you use without thinking on every iPhone, iPad and Mac.",
+      "visual": {
+        "type": "image",
+        "image": "mid",
+        "overlay": "THE DEFAULT",
+        "overlay_sub": "search bar"
+      }
+    },
+    {
+      "narration": "Across all its partners, Google spent 26.3 billion dollars on default deals like this in 2021.",
+      "visual": {
+        "type": "stat",
+        "value": 26.3,
+        "label": "Google's default deals, all partners, 2021",
+        "prefix": "$",
+        "suffix": "B",
+        "decimals": 1
+      }
+    },
+    {
+      "narration": "Why pay so much? Because most people never change the default, and every search is a chance to show ads. Follow for more.",
+      "visual": {
+        "type": "text",
+        "text": "Defaults are worth",
+        "sub": "billions."
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "Google paid Apple $20B in 2022 (Business Today)",
+      "url": "https://www.businesstoday.in/amp/technology/news/story/google-paid-apple-a-staggering-20-billion-in-2022-for-default-search-engine-status-427909-2024-05-02"
+    },
+    {
+      "title": "Google spent $26.3B on defaults in 2021 (PhoneArena)",
+      "url": "https://www.phonearena.com/news/google-pays-big-bucks-to-be-default-search-engine_id152057"
+    }
+  ]
+}

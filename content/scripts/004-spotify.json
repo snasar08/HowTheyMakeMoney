@@ -1,0 +1,85 @@
+{
+  "id": "004",
+  "slug": "spotify",
+  "company": "Spotify",
+  "theme": "dark_neon",
+  "status": "ready",
+  "title": "Where Your Spotify Money Actually Goes",
+  "description": "Where Your Spotify Money Actually Goes.\n\nSources:\n- Spotify paid $11B+ in 2025 (Storyboard18): https://www.storyboard18.com/brand-marketing/spotify-payouts-cross-11-billion-as-independent-artists-take-larger-share-88427.htm\n- Spotify royalties and revenue share (Mezha): https://mezha.ua/en/news/spotify-11b-royaltie-308105/\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "tags": [
+    "spotify",
+    "music industry",
+    "streaming",
+    "business",
+    "how they make money",
+    "business explained",
+    "shorts"
+  ],
+  "images": {
+    "hook": {
+      "prompt": "Cinematic photo, vertical: a pair of wireless earbuds in an open case on a dark surface, glowing ribbons of colorful light flowing out like sound waves, moody, photorealistic, no text, no logos",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_020745_fa8b599c-ca26-47a9-826e-c7ce113d586c.png"
+    },
+    "mid": {
+      "prompt": "Cinematic photo, vertical: a wall of framed gold and platinum records in a dark music label office, one spotlight, vinyl records on a shelf below, rich gold tones, photorealistic, no readable text, no logos, no artist names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_020607_d2cc3e49-8bc9-458d-884b-0bf1cf2b521a.png"
+    }
+  },
+  "scenes": [
+    {
+      "narration": "Spotify brought in billions last year. Most of it wasn't Spotify's to keep.",
+      "visual": {
+        "type": "image",
+        "image": "hook",
+        "overlay": "NOT THEIRS",
+        "overlay_sub": "to keep"
+      }
+    },
+    {
+      "narration": "In 2025, Spotify paid more than 11 billion dollars to the music industry, the biggest yearly payout of any music service ever.",
+      "visual": {
+        "type": "stat",
+        "value": 11,
+        "label": "paid to the music industry in 2025",
+        "prefix": "$",
+        "suffix": "B+",
+        "decimals": 0
+      }
+    },
+    {
+      "narration": "That's roughly 70 cents of every music dollar going to labels, publishers and distributors.",
+      "visual": {
+        "type": "donut",
+        "value": 70,
+        "label": "of music revenue goes to rights holders"
+      }
+    },
+    {
+      "narration": "And it goes to rights holders, not straight to artists. Their record deals decide how much artists actually see.",
+      "visual": {
+        "type": "image",
+        "image": "mid",
+        "overlay": "LABELS FIRST",
+        "overlay_sub": "artists after"
+      }
+    },
+    {
+      "narration": "Spotify keeps about 30 cents, and uses it to build podcasts, audiobooks and video. Follow for more.",
+      "visual": {
+        "type": "text",
+        "text": "Spotify keeps ~30¢",
+        "sub": "of every music dollar"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "Spotify paid $11B+ in 2025 (Storyboard18)",
+      "url": "https://www.storyboard18.com/brand-marketing/spotify-payouts-cross-11-billion-as-independent-artists-take-larger-share-88427.htm"
+    },
+    {
+      "title": "Spotify royalties and revenue share (Mezha)",
+      "url": "https://mezha.ua/en/news/spotify-11b-royaltie-308105/"
+    }
+  ]
+}

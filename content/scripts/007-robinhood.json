@@ -1,0 +1,97 @@
+{
+  "id": "007",
+  "slug": "robinhood",
+  "company": "Robinhood",
+  "theme": "dark_neon",
+  "status": "ready",
+  "title": "Robinhood Is Free. So How Did It Make $4.5B?",
+  "description": "Robinhood Is Free. So How Did It Make $4.5B?.\n\nSources:\n- Robinhood Q4 and full year 2025 results: https://investors.robinhood.com/news-releases/news-release-details/robinhood-reports-fourth-quarter-and-full-year-2025-results\n- Robinhood FY2025 revenue breakdown (Beancount): https://beancount.io/blog/2026/02/12/robinhood-q4-fy2025-earnings-analysis\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "tags": [
+    "robinhood",
+    "stocks",
+    "investing",
+    "fintech",
+    "business",
+    "how they make money",
+    "business explained",
+    "shorts"
+  ],
+  "images": {
+    "hook": {
+      "prompt": "Cinematic photo, vertical: a smartphone on a dark desk showing a bright green rising stock chart with confetti particles bursting from the screen, neon green glow, moody room, photorealistic, generic app with no logos, no readable text",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_021413_c8c0809e-f875-484b-9bb0-73484efca978.png"
+    },
+    "mid": {
+      "prompt": "Cinematic photo, vertical: a dark trading server room with streams of glowing green data flowing between racks of servers, dollar sign shaped light particles, futuristic finance mood, photorealistic, no text, no logos",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_021414_c28afe52-6a3e-48fb-a64a-a7aed59d03e3.png"
+    }
+  },
+  "scenes": [
+    {
+      "narration": "Robinhood charges zero commission on stock trades. So how did it make 4.5 billion dollars last year?",
+      "visual": {
+        "type": "image",
+        "image": "hook",
+        "overlay": "$0 COMMISSION",
+        "overlay_sub": "$4.5B revenue"
+      }
+    },
+    {
+      "narration": "In 2025, Robinhood's revenue jumped 52 percent to 4.5 billion dollars.",
+      "visual": {
+        "type": "stat",
+        "value": 4.5,
+        "label": "Robinhood revenue, 2025",
+        "prefix": "$",
+        "suffix": "B",
+        "decimals": 1
+      }
+    },
+    {
+      "narration": "About 2.6 billion came from trading, mostly options and crypto, where trading firms pay Robinhood to fill its customers' orders.",
+      "visual": {
+        "type": "bars",
+        "items": [
+          {
+            "label": "Trading activity",
+            "value": 2.63
+          },
+          {
+            "label": "Interest",
+            "value": 1.51
+          }
+        ],
+        "prefix": "$",
+        "suffix": "B",
+        "title": "Robinhood revenue, 2025"
+      }
+    },
+    {
+      "narration": "Another 1.5 billion came from interest, on cash sitting in customer accounts and on money customers borrow to trade.",
+      "visual": {
+        "type": "image",
+        "image": "mid",
+        "overlay": "$1.5 BILLION",
+        "overlay_sub": "from interest"
+      }
+    },
+    {
+      "narration": "So when an app is free, look at what it earns from you using it. Follow for more.",
+      "visual": {
+        "type": "text",
+        "text": "Free app?",
+        "sub": "Your trades are the product."
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "Robinhood Q4 and full year 2025 results",
+      "url": "https://investors.robinhood.com/news-releases/news-release-details/robinhood-reports-fourth-quarter-and-full-year-2025-results"
+    },
+    {
+      "title": "Robinhood FY2025 revenue breakdown (Beancount)",
+      "url": "https://beancount.io/blog/2026/02/12/robinhood-q4-fy2025-earnings-analysis"
+    }
+  ]
+}

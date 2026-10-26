@@ -1,0 +1,95 @@
+{
+  "id": "012",
+  "slug": "amazon",
+  "company": "Amazon",
+  "theme": "clean_navy",
+  "status": "ready",
+  "title": "Amazon's Profit Doesn't Come From Its Store",
+  "description": "Amazon's Profit Doesn't Come From Its Store.\n\nSources:\n- Amazon Q4 and full year 2025 results (TED): https://tedmag.com/amazon-announces-4q-results/\n- Amazon FY2025 segment analysis (Beancount): https://beancount.io/blog/2026/07/13/amazon-fy2025-earnings-analysis\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "tags": [
+    "amazon",
+    "aws",
+    "cloud computing",
+    "business",
+    "how they make money",
+    "business explained",
+    "shorts"
+  ],
+  "images": {
+    "hook": {
+      "prompt": "Cinematic photo, vertical: endless corridor of server racks in a massive cloud data center, blinking blue and orange lights, cool fog, symmetrical perspective, photorealistic, no text, no logos",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_021837_304dfed5-78ae-430b-8961-ae3a28b28b19.png"
+    },
+    "mid": {
+      "prompt": "Cinematic photo, vertical: inside a huge fulfillment warehouse with conveyor belts carrying thousands of plain cardboard boxes, high ceilings, warm industrial lighting, photorealistic, no text, no logos, plain boxes",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_021838_9feb310f-ca11-4ecd-95b7-b55fc8d0bf38.png"
+    }
+  },
+  "scenes": [
+    {
+      "narration": "Amazon's online store isn't where most of its profit comes from.",
+      "visual": {
+        "type": "image",
+        "image": "hook",
+        "overlay": "NOT THE STORE"
+      }
+    },
+    {
+      "narration": "Amazon Web Services, its cloud business, was only 18 percent of Amazon's sales in 2025, but it made 57 percent of its operating profit.",
+      "visual": {
+        "type": "bars",
+        "items": [
+          {
+            "label": "AWS share of sales",
+            "value": 18
+          },
+          {
+            "label": "AWS share of profit",
+            "value": 57
+          }
+        ],
+        "prefix": "",
+        "suffix": "%",
+        "title": "Amazon, 2025"
+      }
+    },
+    {
+      "narration": "That's 45.6 billion dollars, from renting computer power to businesses and AI companies.",
+      "visual": {
+        "type": "stat",
+        "value": 45.6,
+        "label": "AWS operating income, 2025",
+        "prefix": "$",
+        "suffix": "B",
+        "decimals": 1
+      }
+    },
+    {
+      "narration": "The warehouses and delivery vans are huge, but they run on much thinner margins.",
+      "visual": {
+        "type": "image",
+        "image": "mid",
+        "overlay": "HUGE STORE",
+        "overlay_sub": "thin margins"
+      }
+    },
+    {
+      "narration": "So the boxes on your doorstep get the attention, but the servers pay the bills. Follow for more.",
+      "visual": {
+        "type": "text",
+        "text": "You see the boxes.",
+        "sub": "The servers pay the bills."
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "Amazon Q4 and full year 2025 results (TED)",
+      "url": "https://tedmag.com/amazon-announces-4q-results/"
+    },
+    {
+      "title": "Amazon FY2025 segment analysis (Beancount)",
+      "url": "https://beancount.io/blog/2026/07/13/amazon-fy2025-earnings-analysis"
+    }
+  ]
+}

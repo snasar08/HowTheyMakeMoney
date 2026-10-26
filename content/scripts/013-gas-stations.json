@@ -1,0 +1,88 @@
+{
+  "id": "013",
+  "slug": "gas-stations",
+  "company": "Gas stations",
+  "theme": "bold_bright",
+  "status": "ready",
+  "title": "Gas Stations Don't Make Their Money on Gas",
+  "description": "Gas Stations Don't Make Their Money on Gas.\n\nSources:\n- NACS State of the Industry, 2025 data: https://www.convenience.org/stay-current/news/2026/april/15/u-s-convenience-in-store-sales-top-%24340-billion\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "tags": [
+    "gas stations",
+    "convenience stores",
+    "retail",
+    "business",
+    "how they make money",
+    "business explained",
+    "shorts"
+  ],
+  "images": {
+    "hook": {
+      "prompt": "Cinematic photo, vertical: a gas station at night glowing under bright canopy lights next to an empty highway, misty air, lonely atmosphere, photorealistic, generic station, no text, no logos, no brand signage, blank price sign",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_021921_fee58e7d-613a-45a0-9ded-253f17944c22.png"
+    },
+    "mid": {
+      "prompt": "Cinematic photo, vertical: convenience store hot food counter with a roller grill of hot dogs, a coffee station with steam, and a case of snacks, warm glowing light, late night, photorealistic, no readable text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_021921_1dcd15af-df5f-429d-93b7-7a3f21633315.png"
+    }
+  },
+  "scenes": [
+    {
+      "narration": "Gas stations don't make most of their money from gas.",
+      "visual": {
+        "type": "image",
+        "image": "hook",
+        "overlay": "NOT FROM GAS"
+      }
+    },
+    {
+      "narration": "At U.S. convenience stores in 2025, fuel was 65 percent of sales, but less than 39 percent of gross profit.",
+      "visual": {
+        "type": "bars",
+        "items": [
+          {
+            "label": "Fuel share of sales",
+            "value": 65
+          },
+          {
+            "label": "Fuel share of profit",
+            "value": 38.8
+          }
+        ],
+        "prefix": "",
+        "suffix": "%",
+        "title": "U.S. convenience stores, 2025"
+      }
+    },
+    {
+      "narration": "The real money is inside. Coffee, hot food, drinks and snacks.",
+      "visual": {
+        "type": "image",
+        "image": "mid",
+        "overlay": "THE REAL MONEY",
+        "overlay_sub": "is inside"
+      }
+    },
+    {
+      "narration": "Prepared food alone brought in almost 39 percent of in store gross profit.",
+      "visual": {
+        "type": "donut",
+        "value": 39,
+        "label": "of in-store gross profit came from food service"
+      }
+    },
+    {
+      "narration": "So the gas price sign is the ad. The snack aisle is the business. Follow for more.",
+      "visual": {
+        "type": "text",
+        "text": "The gas gets you to stop.",
+        "sub": "The snacks make the money."
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "NACS State of the Industry, 2025 data",
+      "url": "https://www.convenience.org/stay-current/news/2026/april/15/u-s-convenience-in-store-sales-top-%24340-billion"
+    }
+  ]
+}

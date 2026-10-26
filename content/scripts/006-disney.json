@@ -1,0 +1,85 @@
+{
+  "id": "006",
+  "slug": "disney",
+  "company": "Disney",
+  "theme": "bold_bright",
+  "status": "ready",
+  "title": "Disney's Real Money Machine Isn't Movies",
+  "description": "Disney's Real Money Machine Isn't Movies.\n\nSources:\n- Disney FY2025 Form 10-K (SEC): https://www.sec.gov/Archives/edgar/data/1744489/000174448925000155/dis-20250927.htm\n- Disney FY2025 segment operating income (Market Chameleon): https://marketchameleon.com/articles/b/2025/11/13/disney-earnings-streaming-parks-growth-2025\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "tags": [
+    "disney",
+    "theme parks",
+    "business",
+    "entertainment",
+    "how they make money",
+    "business explained",
+    "shorts"
+  ],
+  "images": {
+    "hook": {
+      "prompt": "Cinematic photo, vertical: an original whimsical fantasy castle at the center of a theme park at night with colorful fireworks bursting above, crowds silhouetted below, magical glow, photorealistic, original design not resembling any real park, no text, no logos, no characters",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_020932_1d7d5a1b-1672-4dab-a3d5-24c9b38f1f44.png"
+    },
+    "mid": {
+      "prompt": "Cinematic wide photo, vertical: crowded theme park entrance turnstiles at sunrise with long lines of families waiting, souvenir shops glowing, golden light, photorealistic, faces not detailed, no text, no logos, no characters",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_020932_c72f2bee-cfe1-4f1e-9c2d-39efccdde837.png"
+    }
+  },
+  "scenes": [
+    {
+      "narration": "Disney's movies get all the attention. The theme parks pay the bills.",
+      "visual": {
+        "type": "image",
+        "image": "hook",
+        "overlay": "THE PARKS",
+        "overlay_sub": "pay the bills"
+      }
+    },
+    {
+      "narration": "In fiscal 2025, Disney's parks, cruises and products division made a record 10 billion dollars in operating income.",
+      "visual": {
+        "type": "stat",
+        "value": 9.99,
+        "label": "Disney Experiences operating income, FY2025",
+        "prefix": "$",
+        "suffix": "B",
+        "decimals": 2
+      }
+    },
+    {
+      "narration": "That's about 57 percent of all the operating income Disney's businesses brought in.",
+      "visual": {
+        "type": "donut",
+        "value": 57,
+        "label": "of Disney's segment operating income"
+      }
+    },
+    {
+      "narration": "Once you're through the gates, Disney earns on tickets, hotels, food and merch, all in one trip.",
+      "visual": {
+        "type": "image",
+        "image": "mid",
+        "overlay": "ONE TRIP",
+        "overlay_sub": "four ways to pay"
+      }
+    },
+    {
+      "narration": "The movies create the characters. The parks turn them into money. Follow for more.",
+      "visual": {
+        "type": "text",
+        "text": "Movies make the fans.",
+        "sub": "Parks make the money."
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "Disney FY2025 Form 10-K (SEC)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1744489/000174448925000155/dis-20250927.htm"
+    },
+    {
+      "title": "Disney FY2025 segment operating income (Market Chameleon)",
+      "url": "https://marketchameleon.com/articles/b/2025/11/13/disney-earnings-streaming-parks-growth-2025"
+    }
+  ]
+}

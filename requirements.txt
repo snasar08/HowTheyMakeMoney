@@ -1,0 +1,9 @@
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch
+kokoro>=0.9.4
+soundfile
+numpy
+pillow>=10
+google-api-python-client
+google-auth
+google-auth-oauthlib

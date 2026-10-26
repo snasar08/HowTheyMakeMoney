@@ -1,0 +1,111 @@
+{
+  "id": "001",
+  "slug": "costco",
+  "company": "Costco",
+  "theme": "bold_bright",
+  "status": "ready",
+  "title": "Costco Barely Makes Money Selling You Stuff",
+  "description": "Costco Barely Makes Money Selling You Stuff.\n\nSources:\n- Costco FY2026 results (Pulse 2.0): https://pulse2.com/costco-reports-93-9-billion-in-q4-sales-and-297-2-billion-in-fiscal-2026-sales-as-net-income-reaches-9-2-billion/\n- Costco Q2 FY2026 members: https://finder.techleap.nl/news/feed/costco-s-q2-net-income-rises-14-to-2b-as-digital-sales-jump-22-6\n- Costco hot dog price since 1985 (ABC News): https://abcnews.go.com/food/story/costco-hot-dog-soda-combo-150-price-possibly-90579135\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "tags": [
+    "costco",
+    "business",
+    "how companies make money",
+    "membership",
+    "how they make money",
+    "business explained",
+    "shorts"
+  ],
+  "images": {
+    "hook": {
+      "prompt": "Cinematic photo, vertical: endless aisle of a giant warehouse club store at night, towering steel pallet racks stacked to the ceiling with bulk goods, one empty shopping cart in the center of the aisle, dramatic overhead lighting, deep perspective, moody contrast, photorealistic, no text, no logos, no brand names, no people",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_020745_857a067f-da08-49a1-a34f-895b4edd7037.png"
+    },
+    "mid": {
+      "prompt": "Cinematic photo, vertical: a single hot dog in a paper wrapper next to a paper soda cup on a food court table, warm spotlight from above, dark blurred background, appetizing, shallow depth of field, photorealistic, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_020607_caa4c3d0-aa81-460d-84b4-1fe392e8e7fc.png"
+    }
+  },
+  "scenes": [
+    {
+      "narration": "Costco sold almost 300 billion dollars of stuff last year. But selling stuff isn't really how it makes money.",
+      "visual": {
+        "type": "image",
+        "image": "hook",
+        "overlay": "$297 BILLION",
+        "overlay_sub": "in sales last year"
+      }
+    },
+    {
+      "narration": "Costco keeps its prices barely above cost, so the store itself runs on razor thin margins.",
+      "visual": {
+        "type": "stat",
+        "value": 297.2,
+        "label": "Costco net sales, fiscal 2026",
+        "prefix": "$",
+        "suffix": "B",
+        "decimals": 1
+      }
+    },
+    {
+      "narration": "The real engine is the membership card. Last year, membership fees brought in 5.9 billion dollars, compared with 9.2 billion in total profit.",
+      "visual": {
+        "type": "bars",
+        "items": [
+          {
+            "label": "Membership fees",
+            "value": 5.91
+          },
+          {
+            "label": "Total net profit",
+            "value": 9.23
+          }
+        ],
+        "prefix": "$",
+        "suffix": "B",
+        "title": "Fiscal 2026"
+      }
+    },
+    {
+      "narration": "It's why the hot dog and soda still cost a dollar fifty, the same price since 1985. Cheap deals keep you renewing.",
+      "visual": {
+        "type": "image",
+        "image": "mid",
+        "overlay": "$1.50",
+        "overlay_sub": "since 1985"
+      }
+    },
+    {
+      "narration": "With over 80 million paid members, Costco gets paid before you even grab a cart.",
+      "visual": {
+        "type": "stat",
+        "value": 82,
+        "label": "paid Costco members",
+        "prefix": "",
+        "suffix": "M+",
+        "decimals": 0
+      }
+    },
+    {
+      "narration": "So Costco isn't really a store. It's a membership club that happens to sell groceries. Follow for more.",
+      "visual": {
+        "type": "text",
+        "text": "It sells memberships.",
+        "sub": "The groceries are the bonus."
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "Costco FY2026 results (Pulse 2.0)",
+      "url": "https://pulse2.com/costco-reports-93-9-billion-in-q4-sales-and-297-2-billion-in-fiscal-2026-sales-as-net-income-reaches-9-2-billion/"
+    },
+    {
+      "title": "Costco Q2 FY2026 members",
+      "url": "https://finder.techleap.nl/news/feed/costco-s-q2-net-income-rises-14-to-2b-as-digital-sales-jump-22-6"
+    },
+    {
+      "title": "Costco hot dog price since 1985 (ABC News)",
+      "url": "https://abcnews.go.com/food/story/costco-hot-dog-soda-combo-150-price-possibly-90579135"
+    }
+  ]
+}
