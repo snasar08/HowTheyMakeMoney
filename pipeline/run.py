@@ -14,7 +14,7 @@ import sys
 import traceback
 from pathlib import Path
 
-from .publish import deliver, publish_slots
+from .publish import POST_START, deliver, posting_started, publish_slots
 from .render import render_script
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -57,6 +57,9 @@ def main() -> int:
     ap.add_argument("--id", default=None)
     ap.add_argument("--dry", action="store_true")
     args = ap.parse_args()
+    if not args.dry and not args.id and not posting_started():
+        print(f"[run] posting starts {POST_START} (New York); nothing to do yet")
+        return 0
 
     queue = ready_scripts()
     if args.id:

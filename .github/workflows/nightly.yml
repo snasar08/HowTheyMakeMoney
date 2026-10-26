@@ -29,7 +29,10 @@ jobs:
     timeout-minutes: 45
     env:
       SHORTS_PER_RUN: ${{ vars.SHORTS_PER_RUN || '2' }}
-      UPLOAD_MODE: ${{ vars.UPLOAD_MODE || 'release' }}
+      UPLOAD_MODE: ${{ vars.UPLOAD_MODE || 'buffer' }}
+      POST_START: ${{ vars.POST_START || '2026-10-27' }}
+      BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+      AUDIO_CHECK: ${{ vars.AUDIO_CHECK || 'warn' }}
       VOICE_ENGINE: ${{ vars.VOICE_ENGINE || 'kokoro' }}
       KOKORO_VOICE: ${{ vars.KOKORO_VOICE || 'am_fenrir' }}
       KOKORO_SPEED: ${{ vars.KOKORO_SPEED || '1.35' }}
