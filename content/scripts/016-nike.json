@@ -1,0 +1,101 @@
+{
+  "id": "016",
+  "slug": "nike",
+  "company": "Nike",
+  "theme": "bold_bright",
+  "status": "ready",
+  "title": "Nike Makes More Money Selling to Other Stores",
+  "description": "Nike Makes More Money Selling to Other Stores.\n\nSources:\n- NIKE, Inc. fiscal 2026 Q4 and full-year results: https://about.nike.com/en/newsroom/releases/nike-inc-reports-fiscal-2026-fourth-quarter-and-full-year-results\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "tags": [
+    "nike",
+    "sneakers",
+    "wholesale",
+    "retail",
+    "business",
+    "how they make money",
+    "business explained",
+    "shorts"
+  ],
+  "images": {
+    "hook": {
+      "prompt": "Cinematic photo, vertical: a wall of colorful unbranded running shoes on shelves in a bright sneaker store, dramatic lighting, photorealistic, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_115913_36235df6-9ebe-45fd-ae1f-d76f0e33dd9c.png"
+    },
+    "mid": {
+      "prompt": "Cinematic photo, vertical: a lone runner's silhouette on an empty track at sunrise, orange light, motion blur, photorealistic, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_115913_2e4b472f-0ab4-41a6-ac7a-2eea3d16f027.png"
+    },
+    "broll1": {
+      "prompt": "Cinematic photo, vertical: a stack of shoe boxes in a warehouse aisle, plain brown cardboard, forklift in the distance, photorealistic, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_115912_54c110fe-3f55-4146-9de1-499d52193faa.png"
+    },
+    "broll2": {
+      "prompt": "Cinematic photo, vertical: a smartphone showing a blank shopping screen next to a pair of plain white sneakers on a table, photorealistic, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_115913_a1f31be7-a6eb-4566-8217-e5761dc85cef.png"
+    }
+  },
+  "scenes": [
+    {
+      "narration": "Nike sold 27.5 billion dollars of shoes and gear to other stores in fiscal 2026. That is more than its own shops and app.",
+      "visual": {
+        "type": "image",
+        "image": "hook",
+        "overlay": "$27.5 BILLION",
+        "overlay_sub": "sold to other stores"
+      }
+    },
+    {
+      "narration": "Nike Direct, its own stores and website, brought in 17.7 billion. That fell 6 percent, while selling to other stores grew 6.",
+      "visual": {
+        "type": "bars",
+        "items": [
+          {
+            "label": "Wholesale",
+            "value": 27.5
+          },
+          {
+            "label": "Nike Direct",
+            "value": 17.7
+          }
+        ],
+        "prefix": "$",
+        "suffix": "B",
+        "title": "Fiscal 2026"
+      }
+    },
+    {
+      "narration": "Total revenue was 46.4 billion dollars, flat from the year before.",
+      "visual": {
+        "type": "stat",
+        "value": 46.4,
+        "label": "Nike revenue, fiscal 2026",
+        "prefix": "$",
+        "suffix": "B",
+        "decimals": 1
+      }
+    },
+    {
+      "narration": "In the last quarter, wholesale grew 4 percent, while Nike Direct fell 7.",
+      "visual": {
+        "type": "image",
+        "image": "mid",
+        "overlay": "STORES BACK",
+        "overlay_sub": "wholesale grew"
+      }
+    },
+    {
+      "narration": "About 59 percent of Nike's revenue comes from selling to other retailers. Follow for more.",
+      "visual": {
+        "type": "donut",
+        "value": 59,
+        "label": "Share of Nike revenue from wholesale"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "NIKE, Inc. fiscal 2026 Q4 and full-year results",
+      "url": "https://about.nike.com/en/newsroom/releases/nike-inc-reports-fiscal-2026-fourth-quarter-and-full-year-results"
+    }
+  ]
+}

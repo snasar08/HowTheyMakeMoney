@@ -7,6 +7,9 @@ Mix big brands people use every day with a few "hidden" businesses.
 Costco, McDonald's, Delta + Amex, Spotify, Starbucks, Disney, Robinhood, movie theaters,
 Google pays Apple, Visa, Uber, Amazon / AWS, gas stations, Netflix
 
+## Used (second batch, Oct 26 2026)
+Apple (Services), Nike, Coca-Cola, Walmart (ads + membership), Meta, Nintendo, Planet Fitness, Chipotle, Live Nation, Marriott, Nvidia, Target, Microsoft, Duolingo, NBA players
+
 ## Next up
 - Apple (App Store and Services vs. iPhone)
 - Nike (wholesale vs. direct-to-consumer)

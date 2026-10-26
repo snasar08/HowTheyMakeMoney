@@ -1,0 +1,105 @@
+{
+  "id": "021",
+  "slug": "planet-fitness",
+  "company": "Planet Fitness",
+  "theme": "bold_bright",
+  "status": "ready",
+  "title": "Planet Fitness Also Sells Treadmills",
+  "description": "Planet Fitness Also Sells Treadmills.\n\nSources:\n- Planet Fitness Q4 and year-end 2025 results (press release): https://investor.planetfitness.com/investors/press-releases/press-release-details/2026/Planet-Fitness-Inc--Announces-Fourth-Quarter-and-Year-End-2025-Results/default.aspx\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "tags": [
+    "planet fitness",
+    "gym",
+    "franchise",
+    "fitness",
+    "business",
+    "how they make money",
+    "business explained",
+    "shorts"
+  ],
+  "images": {
+    "hook": {
+      "prompt": "Cinematic photo, vertical: a bright empty gym with rows of treadmills and purple and yellow lighting, wide shot, clean, photorealistic, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_120205_9282a3ee-c84f-4c4c-b45a-68df5a0a17a3.png"
+    },
+    "mid": {
+      "prompt": "Cinematic photo, vertical: close up of a stack of weight plates and dumbbells on a rack, dramatic light, photorealistic, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_120204_cee3e390-b090-4e75-ab44-0b9a7892cf4f.png"
+    },
+    "broll1": {
+      "prompt": "Cinematic photo, vertical: a row of exercise bikes in a spotless gym, morning light through big windows, photorealistic, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_120203_0a7ccfd7-68fa-4cf9-8571-f3e84d2a9167.png"
+    },
+    "broll2": {
+      "prompt": "Cinematic photo, vertical: a delivery truck unloading boxed exercise machines at a loading dock, generic, photorealistic, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_120204_60d7908e-eb1f-4e8f-91d8-5d14a0c25aab.png"
+    }
+  },
+  "scenes": [
+    {
+      "narration": "Planet Fitness sells gym memberships. It also sells treadmills, to its own franchise owners.",
+      "visual": {
+        "type": "image",
+        "image": "hook",
+        "overlay": "TREADMILLS",
+        "overlay_sub": "sold to owners"
+      }
+    },
+    {
+      "narration": "It ended 2025 with about 20.8 million members in nearly 2,900 clubs.",
+      "visual": {
+        "type": "stat",
+        "value": 20.8,
+        "label": "Planet Fitness members, end of 2025",
+        "prefix": "",
+        "suffix": "M",
+        "decimals": 1
+      }
+    },
+    {
+      "narration": "Total revenue was 1.3 billion dollars. Franchise fees, its own clubs, and equipment each bring in a big piece.",
+      "visual": {
+        "type": "bars",
+        "items": [
+          {
+            "label": "Franchise",
+            "value": 468.0
+          },
+          {
+            "label": "Own clubs",
+            "value": 546.1
+          },
+          {
+            "label": "Equipment",
+            "value": 310.1
+          }
+        ],
+        "prefix": "$",
+        "suffix": "M",
+        "title": "2025 revenue by segment"
+      }
+    },
+    {
+      "narration": "Equipment sales rose 21 percent, because owners buy machines for both old and new clubs.",
+      "visual": {
+        "type": "image",
+        "image": "mid",
+        "overlay": "EQUIPMENT",
+        "overlay_sub": "up 21 percent"
+      }
+    },
+    {
+      "narration": "Members pay monthly. Owners pay for the machines. Follow for more.",
+      "visual": {
+        "type": "text",
+        "text": "Members pay monthly.",
+        "sub": "Owners buy the machines."
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "Planet Fitness Q4 and year-end 2025 results (press release)",
+      "url": "https://investor.planetfitness.com/investors/press-releases/press-release-details/2026/Planet-Fitness-Inc--Announces-Fourth-Quarter-and-Year-End-2025-Results/default.aspx"
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "id": "024",
+  "slug": "marriott",
+  "company": "Marriott",
+  "theme": "clean_navy",
+  "status": "ready",
+  "title": "Marriott's Business Is Mostly Fees",
+  "description": "Marriott's Business Is Mostly Fees.\n\nSources:\n- Marriott Q4 and full-year 2025 results (press release): https://fortune.com/company-assets/729/quartr/earnings-release-8-k-909ff-2026-02-10-12-08-01.pdf\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "tags": [
+    "marriott",
+    "hotels",
+    "franchise",
+    "fees",
+    "business",
+    "how they make money",
+    "business explained",
+    "shorts"
+  ],
+  "images": {
+    "hook": {
+      "prompt": "Cinematic photo, vertical: a grand hotel lobby with marble floors and a glowing chandelier, empty and elegant, blue hour light, photorealistic, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_120346_29939ff8-e5ff-48c2-b6a8-84052e671056.png"
+    },
+    "mid": {
+      "prompt": "Cinematic photo, vertical: a row of identical hotel room doors in a long carpeted hallway, perspective, warm light, photorealistic, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_120346_5abf348a-fdd5-4f1c-bbfa-faf103d8b78f.png"
+    },
+    "broll1": {
+      "prompt": "Cinematic photo, vertical: a bellhop's luggage cart with suitcases in a hotel entrance, no people visible, photorealistic, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_120345_492b6fcf-aae1-47ab-a5b9-6309dc6acc48.png"
+    },
+    "broll2": {
+      "prompt": "Cinematic photo, vertical: a hotel rooftop pool at dusk with city skyline and warm lights, empty, photorealistic, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_120346_8547ce04-162f-4201-afc7-466fc1e02cbe.png"
+    }
+  },
+  "scenes": [
+    {
+      "narration": "Marriott collected 5.4 billion dollars in fees in 2025. It calls its business fee-driven and asset-light.",
+      "visual": {
+        "type": "image",
+        "image": "hook",
+        "overlay": "$5.4 BILLION",
+        "overlay_sub": "in fees"
+      }
+    },
+    {
+      "narration": "Hotel owners pay Marriott for the name, for running the hotel, and for bonuses when profits are high.",
+      "visual": {
+        "type": "bars",
+        "items": [
+          {
+            "label": "Franchise fees",
+            "value": 3.3
+          },
+          {
+            "label": "Base management",
+            "value": 1.3
+          },
+          {
+            "label": "Incentive",
+            "value": 0.8
+          }
+        ],
+        "prefix": "$",
+        "suffix": "B",
+        "title": "Fee revenue, 2025"
+      }
+    },
+    {
+      "narration": "Marriott's total revenue was 26.2 billion dollars, but 19.2 billion of that is cost reimbursements from hotel owners.",
+      "visual": {
+        "type": "stat",
+        "value": 26.2,
+        "label": "Marriott total revenue, 2025",
+        "prefix": "$",
+        "suffix": "B",
+        "decimals": 1
+      }
+    },
+    {
+      "narration": "Fees were about 21 percent of revenue, and net income was 2.6 billion dollars.",
+      "visual": {
+        "type": "donut",
+        "value": 21,
+        "label": "Fees as share of revenue"
+      }
+    },
+    {
+      "narration": "Other people's hotels. Marriott's fees. Follow for more.",
+      "visual": {
+        "type": "text",
+        "text": "Other people's hotels.",
+        "sub": "Marriott's fees."
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "Marriott Q4 and full-year 2025 results (press release)",
+      "url": "https://fortune.com/company-assets/729/quartr/earnings-release-8-k-909ff-2026-02-10-12-08-01.pdf"
+    }
+  ]
+}

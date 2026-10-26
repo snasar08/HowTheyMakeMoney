@@ -1,0 +1,100 @@
+{
+  "id": "019",
+  "slug": "meta-ads",
+  "company": "Meta",
+  "theme": "dark_neon",
+  "status": "ready",
+  "title": "Instagram and Facebook Are Free Because of Ads",
+  "description": "Instagram and Facebook Are Free Because of Ads.\n\nSources:\n- Meta Q4 and full-year 2025 results (press release): https://s21.q4cdn.com/399680738/files/doc_financials/2025/q4/Meta-12-31-2025-Exhibit-99-1-FINAL.pdf\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "tags": [
+    "meta",
+    "instagram",
+    "facebook",
+    "advertising",
+    "business",
+    "how they make money",
+    "business explained",
+    "shorts"
+  ],
+  "images": {
+    "hook": {
+      "prompt": "Cinematic photo, vertical: a crowd of silhouettes on a dark city street each lit by a glowing phone screen, blue and magenta neon, top view, photorealistic, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_120053_5f790ea1-6094-4b2e-a161-9d312a321653.png"
+    },
+    "mid": {
+      "prompt": "Cinematic photo, vertical: a billboard-sized blank glowing screen over a night city, abstract colorful shapes only, photorealistic, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_120053_7bbe5119-e3dc-4dd2-b2c7-76ce93a25ee8.png"
+    },
+    "broll1": {
+      "prompt": "Cinematic photo, vertical: a teenager's silhouette scrolling a phone in bed under blankets, screen glow, blurred, photorealistic, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_120053_d1b5638f-8d8b-4e60-b076-203a95921de4.png"
+    },
+    "broll2": {
+      "prompt": "Cinematic photo, vertical: a futuristic pair of smart glasses on a dark table with soft violet light, photorealistic, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_120054_dbcf3412-9055-442f-b9d9-856cedb0bb9f.png"
+    }
+  },
+  "scenes": [
+    {
+      "narration": "Instagram and Facebook are free. That is because you are not the customer. Advertisers are.",
+      "visual": {
+        "type": "image",
+        "image": "hook",
+        "overlay": "FREE?",
+        "overlay_sub": "advertisers pay"
+      }
+    },
+    {
+      "narration": "In 2025, Meta earned 196 billion dollars from advertising. About 3.6 billion people use its apps every day.",
+      "visual": {
+        "type": "stat",
+        "value": 196.2,
+        "label": "Meta advertising revenue, 2025",
+        "prefix": "$",
+        "suffix": "B",
+        "decimals": 1
+      }
+    },
+    {
+      "narration": "Ads make up about 98 percent of Meta's 201 billion dollars in revenue.",
+      "visual": {
+        "type": "donut",
+        "value": 98,
+        "label": "Share of Meta revenue from ads"
+      }
+    },
+    {
+      "narration": "Its headset and glasses division, Reality Labs, brought in 2.2 billion dollars but lost 19.2 billion.",
+      "visual": {
+        "type": "bars",
+        "items": [
+          {
+            "label": "Revenue",
+            "value": 2.2
+          },
+          {
+            "label": "Operating loss",
+            "value": 19.2
+          }
+        ],
+        "prefix": "$",
+        "suffix": "B",
+        "title": "Reality Labs, 2025"
+      }
+    },
+    {
+      "narration": "The apps pay for everything else. Follow for more.",
+      "visual": {
+        "type": "text",
+        "text": "Free apps.",
+        "sub": "Paid for by ads."
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "Meta Q4 and full-year 2025 results (press release)",
+      "url": "https://s21.q4cdn.com/399680738/files/doc_financials/2025/q4/Meta-12-31-2025-Exhibit-99-1-FINAL.pdf"
+    }
+  ]
+}

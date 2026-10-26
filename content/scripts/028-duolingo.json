@@ -1,0 +1,93 @@
+{
+  "id": "028",
+  "slug": "duolingo",
+  "company": "Duolingo",
+  "theme": "bold_bright",
+  "status": "ready",
+  "title": "How Duolingo Makes Money With a Free App",
+  "description": "How Duolingo Makes Money With a Free App.\n\nSources:\n- Duolingo Q4 and full-year 2025 results (press release via Investing News Network): https://investingnews.com/duolingo-reports-fourth-quarter-and-full-year-2025-results/\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "tags": [
+    "duolingo",
+    "language learning",
+    "apps",
+    "subscriptions",
+    "business",
+    "how they make money",
+    "business explained",
+    "shorts"
+  ],
+  "images": {
+    "hook": {
+      "prompt": "Cinematic photo, vertical: a bright green smartphone floating on a green background surrounded by blank colorful speech bubbles, playful paper-craft style, photorealistic, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_120554_333c9849-5976-44f4-ab16-973fcaa02365.png"
+    },
+    "mid": {
+      "prompt": "Cinematic photo, vertical: a smartphone on a desk next to a notebook and a globe, warm study light, blank screen, photorealistic, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_120553_80c586bf-a0a7-4273-8dc7-4a0e4617a34c.png"
+    },
+    "broll1": {
+      "prompt": "Cinematic photo, vertical: a student's hands writing in a notebook near a phone, close-up, morning light, photorealistic, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_120555_1302ba7c-fb06-482d-a4fe-24856f7eb0d5.png"
+    },
+    "broll2": {
+      "prompt": "Cinematic photo, vertical: a world map with colorful pins, shallow depth of field, no readable text, photorealistic, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_120553_c4b76fe1-cb86-40a1-bad3-c95177f12183.png"
+    }
+  },
+  "scenes": [
+    {
+      "narration": "Duolingo is free to use. Yet in 2025, it made more than a billion dollars in bookings for the first time.",
+      "visual": {
+        "type": "image",
+        "image": "hook",
+        "overlay": "FREE APP",
+        "overlay_sub": "$1B+ bookings"
+      }
+    },
+    {
+      "narration": "Bookings passed 1 billion dollars in 2025.",
+      "visual": {
+        "type": "stat",
+        "value": 1,
+        "label": "Duolingo bookings, 2025",
+        "prefix": "$",
+        "suffix": "B+",
+        "decimals": 0
+      }
+    },
+    {
+      "narration": "It also passed 50 million daily active users, and it is the top-grossing education app on both major app stores.",
+      "visual": {
+        "type": "stat",
+        "value": 50,
+        "label": "Duolingo daily active users",
+        "prefix": "",
+        "suffix": "M+",
+        "decimals": 0
+      }
+    },
+    {
+      "narration": "In 2026, it is focusing on the free experience and new subjects like chess, math and music.",
+      "visual": {
+        "type": "image",
+        "image": "mid",
+        "overlay": "FREE FIRST",
+        "overlay_sub": "chess, math, music"
+      }
+    },
+    {
+      "narration": "Its goal is 100 million daily users. Follow for more.",
+      "visual": {
+        "type": "text",
+        "text": "Free comes first.",
+        "sub": "Growth is the goal."
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "Duolingo Q4 and full-year 2025 results (press release via Investing News Network)",
+      "url": "https://investingnews.com/duolingo-reports-fourth-quarter-and-full-year-2025-results/"
+    }
+  ]
+}

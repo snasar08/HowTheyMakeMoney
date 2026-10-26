@@ -1,0 +1,98 @@
+{
+  "id": "029",
+  "slug": "nba-players",
+  "company": "NBA players",
+  "theme": "clean_navy",
+  "status": "ready",
+  "title": "How NBA Players Get Paid",
+  "description": "How NBA Players Get Paid.\n\nSources:\n- NBA salary cap (Wikipedia, citing the NBA and the CBA): https://en.wikipedia.org/wiki/NBA_salary_cap\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "tags": [
+    "nba",
+    "salary cap",
+    "basketball",
+    "careers",
+    "business",
+    "how they make money",
+    "business explained",
+    "shorts"
+  ],
+  "images": {
+    "hook": {
+      "prompt": "Cinematic photo, vertical: an empty basketball arena with a polished wooden court under bright spotlights, wide shot, no logos on court, photorealistic, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_120632_6cf501cb-f630-4cdb-9513-8fce03a54f36.png"
+    },
+    "mid": {
+      "prompt": "Cinematic photo, vertical: a basketball resting on a hardwood court floor with dramatic side light, closeup, photorealistic, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_120632_ed46bab8-3193-4a3c-ada3-144f00b273d2.png"
+    },
+    "broll1": {
+      "prompt": "Cinematic photo, vertical: a packed arena crowd silhouettes from behind with bright lights, blurred, photorealistic, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_120632_6eab22b5-4182-4005-8a76-a945130654a7.png"
+    },
+    "broll2": {
+      "prompt": "Cinematic photo, vertical: a clean modern office desk with a calculator and stacks of coins, soft light, photorealistic, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_120631_607412e4-14c4-484a-a8c9-bbbe6c08112e.png"
+    }
+  },
+  "scenes": [
+    {
+      "narration": "NBA players are paid from a share of what the league earns, not a fixed amount.",
+      "visual": {
+        "type": "image",
+        "image": "hook",
+        "overlay": "A SHARE",
+        "overlay_sub": "of league revenue"
+      }
+    },
+    {
+      "narration": "The league's labor deal ties a salary cap to basketball-related income. In 2011-12, players' share was 51.2 percent.",
+      "visual": {
+        "type": "donut",
+        "value": 51.2,
+        "label": "Players' share of basketball income, 2011-12"
+      }
+    },
+    {
+      "narration": "When revenue grows, the cap grows. In 1984-85, teams could pay 4.6 million dollars total. In 2025-26, the cap is 154.6 million.",
+      "visual": {
+        "type": "bars",
+        "items": [
+          {
+            "label": "1984-85",
+            "value": 4.6
+          },
+          {
+            "label": "2025-26",
+            "value": 154.6
+          }
+        ],
+        "prefix": "$",
+        "suffix": "M",
+        "title": "Team salary cap"
+      }
+    },
+    {
+      "narration": "Teams must also spend at least 90 percent of the cap on players.",
+      "visual": {
+        "type": "image",
+        "image": "mid",
+        "overlay": "90% FLOOR",
+        "overlay_sub": "minimum team pay"
+      }
+    },
+    {
+      "narration": "More revenue, bigger paychecks. Follow for more.",
+      "visual": {
+        "type": "text",
+        "text": "More league revenue,",
+        "sub": "bigger paychecks."
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "NBA salary cap (Wikipedia, citing the NBA and the CBA)",
+      "url": "https://en.wikipedia.org/wiki/NBA_salary_cap"
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "id": "015",
+  "slug": "apple",
+  "company": "Apple",
+  "theme": "dark_neon",
+  "status": "ready",
+  "title": "Apple Makes Its Best Profit Outside the iPhone",
+  "description": "Apple Makes Its Best Profit Outside the iPhone.\n\nSources:\n- Apple fiscal 2025 Q4 results (press release): https://www.apple.com/newsroom/2025/10/apple-reports-fourth-quarter-results/\n- Apple fiscal 2025 Q4 consolidated financial statements (PDF): https://www.apple.com/newsroom/pdfs/fy2025-q4/FY25_Q4_Consolidated_Financial_Statements.pdf\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "tags": [
+    "apple",
+    "iphone",
+    "services",
+    "app store",
+    "business",
+    "how they make money",
+    "business explained",
+    "shorts"
+  ],
+  "images": {
+    "hook": {
+      "prompt": "Cinematic photo, vertical: a glowing smartphone floating in a dark studio with neon blue and purple rim light, blank screen, sleek and minimal, photorealistic, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_115840_4ab8cdd1-1242-4ef6-9c3f-05287261e46b.png"
+    },
+    "mid": {
+      "prompt": "Cinematic photo, vertical: rows of colorful abstract app icons made of plain glowing shapes floating in dark space, no letters, photorealistic, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_115841_b36370a1-691a-400d-9f08-adfccea0d2c3.png"
+    },
+    "broll1": {
+      "prompt": "Cinematic photo, vertical: a person's hands holding a smartphone in a dim room, screen glow lighting the face area out of focus, shallow depth of field, photorealistic, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_115842_7fcd25f8-51fb-40f1-9aba-3ea77bfb0f58.png"
+    },
+    "broll2": {
+      "prompt": "Cinematic photo, vertical: a minimalist glass storefront at night with a glowing interior and neat wooden tables, empty, no signage, photorealistic, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_115842_8e8a42e1-74aa-4f24-98e7-33dc3fc0af1f.png"
+    }
+  },
+  "scenes": [
+    {
+      "narration": "Services are only about a quarter of Apple's sales. But they bring in over 40 percent of its gross profit.",
+      "visual": {
+        "type": "image",
+        "image": "hook",
+        "overlay": "26% OF SALES",
+        "overlay_sub": "42% OF GROSS PROFIT"
+      }
+    },
+    {
+      "narration": "In fiscal 2025, Apple sold 416 billion dollars of products and services. The iPhone alone brought in about 210 billion.",
+      "visual": {
+        "type": "stat",
+        "value": 416.2,
+        "label": "Apple net sales, fiscal 2025",
+        "prefix": "$",
+        "suffix": "B",
+        "decimals": 1
+      }
+    },
+    {
+      "narration": "After the cost of making them, products keep about 37 cents per dollar. Services, like the App Store and iCloud, keep about 75.",
+      "visual": {
+        "type": "bars",
+        "items": [
+          {
+            "label": "Products",
+            "value": 36.8
+          },
+          {
+            "label": "Services",
+            "value": 75.4
+          }
+        ],
+        "prefix": "",
+        "suffix": "%",
+        "title": "Gross margin, fiscal 2025"
+      }
+    },
+    {
+      "narration": "That is about 82 billion dollars of gross profit from Services alone.",
+      "visual": {
+        "type": "image",
+        "image": "mid",
+        "overlay": "$82 BILLION",
+        "overlay_sub": "from Services"
+      }
+    },
+    {
+      "narration": "Phones get you in the door. Services keep paying. Follow for more.",
+      "visual": {
+        "type": "text",
+        "text": "Phones get you in.",
+        "sub": "Services keep paying."
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "Apple fiscal 2025 Q4 results (press release)",
+      "url": "https://www.apple.com/newsroom/2025/10/apple-reports-fourth-quarter-results/"
+    },
+    {
+      "title": "Apple fiscal 2025 Q4 consolidated financial statements (PDF)",
+      "url": "https://www.apple.com/newsroom/pdfs/fy2025-q4/FY25_Q4_Consolidated_Financial_Statements.pdf"
+    }
+  ]
+}

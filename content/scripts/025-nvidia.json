@@ -1,0 +1,100 @@
+{
+  "id": "025",
+  "slug": "nvidia",
+  "company": "Nvidia",
+  "theme": "dark_neon",
+  "status": "ready",
+  "title": "Nvidia's Gamers Are Now a Small Slice",
+  "description": "Nvidia's Gamers Are Now a Small Slice.\n\nSources:\n- NVIDIA Q4 and fiscal 2026 results (press release): https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Fourth-Quarter-and-Fiscal-2026/default.aspx\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "tags": [
+    "nvidia",
+    "ai chips",
+    "gaming",
+    "data center",
+    "business",
+    "how they make money",
+    "business explained",
+    "shorts"
+  ],
+  "images": {
+    "hook": {
+      "prompt": "Cinematic photo, vertical: a glowing computer graphics chip on a dark circuit board with green light and macro depth of field, photorealistic, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_120417_d9755bcb-e816-4e9e-a0bb-624384a8222f.png"
+    },
+    "mid": {
+      "prompt": "Cinematic photo, vertical: rows of server racks in a huge dark data center with green indicator lights, long corridor, photorealistic, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_120416_096ecefa-9495-463b-abd7-a0b6c4583319.png"
+    },
+    "broll1": {
+      "prompt": "Cinematic photo, vertical: a gaming PC with colorful glass side panel and glowing fans in a dark room, no logos, photorealistic, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_120417_526997fe-9956-4d65-9cd4-0383d5096b7d.png"
+    },
+    "broll2": {
+      "prompt": "Cinematic photo, vertical: an engineer's hands holding a silicon wafer under cool light, clean room, no faces, photorealistic, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_120418_235718b7-5a0c-416c-afec-ebde256ec11e.png"
+    }
+  },
+  "scenes": [
+    {
+      "narration": "Nvidia's chips for gamers are now only about 7 percent of its sales.",
+      "visual": {
+        "type": "image",
+        "image": "hook",
+        "overlay": "ONLY 7%",
+        "overlay_sub": "comes from gaming"
+      }
+    },
+    {
+      "narration": "In fiscal 2026, Nvidia's revenue was 215.9 billion dollars, up 65 percent. In the last quarter alone, data centers made 62.3 billion.",
+      "visual": {
+        "type": "stat",
+        "value": 215.9,
+        "label": "Nvidia revenue, fiscal 2026",
+        "prefix": "$",
+        "suffix": "B",
+        "decimals": 1
+      }
+    },
+    {
+      "narration": "Data centers brought in 193.7 billion. Gaming brought in 16 billion.",
+      "visual": {
+        "type": "bars",
+        "items": [
+          {
+            "label": "Data center",
+            "value": 193.7
+          },
+          {
+            "label": "Gaming",
+            "value": 16.0
+          }
+        ],
+        "prefix": "$",
+        "suffix": "B",
+        "title": "Fiscal 2026"
+      }
+    },
+    {
+      "narration": "After the cost of making its chips, Nvidia kept about 71 cents of every dollar.",
+      "visual": {
+        "type": "donut",
+        "value": 71,
+        "label": "Nvidia gross margin, fiscal 2026"
+      }
+    },
+    {
+      "narration": "Gaming is small now. Data centers lead. Follow for more.",
+      "visual": {
+        "type": "text",
+        "text": "Gaming is small now.",
+        "sub": "Data centers lead."
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "NVIDIA Q4 and fiscal 2026 results (press release)",
+      "url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Fourth-Quarter-and-Fiscal-2026/default.aspx"
+    }
+  ]
+}

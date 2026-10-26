@@ -1,0 +1,104 @@
+{
+  "id": "027",
+  "slug": "microsoft",
+  "company": "Microsoft",
+  "theme": "clean_navy",
+  "status": "ready",
+  "title": "Microsoft Keeps 47 Cents of Every Dollar",
+  "description": "Microsoft Keeps 47 Cents of Every Dollar.\n\nSources:\n- Microsoft fiscal 2026 Q4 earnings press release: https://www.microsoft.com/en-us/investor/earnings/fy-2026-q4/press-release-webcast\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "tags": [
+    "microsoft",
+    "azure",
+    "cloud",
+    "copilot",
+    "business",
+    "how they make money",
+    "business explained",
+    "shorts"
+  ],
+  "images": {
+    "hook": {
+      "prompt": "Cinematic photo, vertical: a vast glass office tower at blue hour with reflections of clouds, upward angle, clean and futuristic, photorealistic, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_120518_285fa769-4243-4ab1-abfd-b3ac84edcacf.png"
+    },
+    "mid": {
+      "prompt": "Cinematic photo, vertical: an abstract cloud made of glowing blue data lines above a city skyline at night, photorealistic, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_120518_8af4020f-b254-4d73-b66c-958949280a1a.png"
+    },
+    "broll1": {
+      "prompt": "Cinematic photo, vertical: a laptop open on a desk in a bright office with a blank document on screen, shallow depth of field, photorealistic, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_120519_c7b00dbe-2ee1-48e1-a03a-f64fd50576e8.png"
+    },
+    "broll2": {
+      "prompt": "Cinematic photo, vertical: a long aisle of servers in a data center with cool blue light, photorealistic, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_120518_1e4b0e3a-d040-415c-801c-ddfb5c99be47.png"
+    }
+  },
+  "scenes": [
+    {
+      "narration": "Microsoft keeps about 47 cents of operating profit from every dollar it takes in.",
+      "visual": {
+        "type": "image",
+        "image": "hook",
+        "overlay": "47 CENTS",
+        "overlay_sub": "kept per dollar"
+      }
+    },
+    {
+      "narration": "In fiscal 2026, its revenue was 331.8 billion dollars, with 155.2 billion of operating income.",
+      "visual": {
+        "type": "stat",
+        "value": 331.8,
+        "label": "Microsoft revenue, fiscal 2026",
+        "prefix": "$",
+        "suffix": "B",
+        "decimals": 1
+      }
+    },
+    {
+      "narration": "That is an operating margin of about 47 percent.",
+      "visual": {
+        "type": "donut",
+        "value": 47,
+        "label": "Microsoft operating margin, fiscal 2026"
+      }
+    },
+    {
+      "narration": "Its cloud business leads, followed by Office and business software, and then Windows and gaming.",
+      "visual": {
+        "type": "bars",
+        "items": [
+          {
+            "label": "Cloud",
+            "value": 39.3
+          },
+          {
+            "label": "Office + software",
+            "value": 37.8
+          },
+          {
+            "label": "PC + gaming",
+            "value": 12.9
+          }
+        ],
+        "prefix": "$",
+        "suffix": "B",
+        "title": "Last quarter revenue"
+      }
+    },
+    {
+      "narration": "Azure passed 100 billion dollars in a year for the first time, and Copilot has over 30 million paid seats. Follow for more.",
+      "visual": {
+        "type": "text",
+        "text": "Cloud and AI",
+        "sub": "are the engine."
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "Microsoft fiscal 2026 Q4 earnings press release",
+      "url": "https://www.microsoft.com/en-us/investor/earnings/fy-2026-q4/press-release-webcast"
+    }
+  ]
+}

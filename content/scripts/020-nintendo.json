@@ -1,0 +1,100 @@
+{
+  "id": "020",
+  "slug": "nintendo",
+  "company": "Nintendo",
+  "theme": "bold_bright",
+  "status": "ready",
+  "title": "Nintendo Sells the Console and the Games",
+  "description": "Nintendo Sells the Console and the Games.\n\nSources:\n- Nintendo financial results explanatory material, Q3 fiscal year ending March 2026: https://www.nintendo.co.jp/ir/pdf/2026/260203_2e.pdf\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "tags": [
+    "nintendo",
+    "switch 2",
+    "video games",
+    "gaming",
+    "business",
+    "how they make money",
+    "business explained",
+    "shorts"
+  ],
+  "images": {
+    "hook": {
+      "prompt": "Cinematic photo, vertical: a glowing handheld game console with a blank bright screen held by two hands, colorful red and blue light, playful, photorealistic, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_120124_2290020a-b8a6-4054-ab6d-0d148e83f265.png"
+    },
+    "mid": {
+      "prompt": "Cinematic photo, vertical: a wall of colorful plain game cartridges and cases, no artwork, warm light, photorealistic, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_120125_9f132a21-38da-4972-96ec-f5ec03ac6beb.png"
+    },
+    "broll1": {
+      "prompt": "Cinematic photo, vertical: friends silhouettes laughing on a couch in front of a TV, controller in hand, cozy room, photorealistic, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_120124_fddc7025-faf9-47ee-acb2-436a3ab3dc7f.png"
+    },
+    "broll2": {
+      "prompt": "Cinematic photo, vertical: a cash register drawer open with coins and a handheld console on the counter, photorealistic, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_120125_fc9ec366-e60a-4a9b-8a00-9655d9a712ff.png"
+    }
+  },
+  "scenes": [
+    {
+      "narration": "Nintendo makes the console and the games you play on it. In nine months, sales nearly doubled.",
+      "visual": {
+        "type": "image",
+        "image": "hook",
+        "overlay": "SALES x2",
+        "overlay_sub": "in nine months"
+      }
+    },
+    {
+      "narration": "From April to December 2025, Nintendo's sales were 1.9 trillion yen, up 99 percent.",
+      "visual": {
+        "type": "stat",
+        "value": 1.9,
+        "label": "trillion yen in nine months",
+        "prefix": "",
+        "suffix": "T",
+        "decimals": 1
+      }
+    },
+    {
+      "narration": "About 77 percent of its sales came from outside Japan. It shipped 17.4 million Switch 2 consoles, plus 37.9 million Switch 2 games.",
+      "visual": {
+        "type": "bars",
+        "items": [
+          {
+            "label": "Consoles",
+            "value": 17.37
+          },
+          {
+            "label": "Games",
+            "value": 37.93
+          }
+        ],
+        "prefix": "",
+        "suffix": "M",
+        "title": "Switch 2 units shipped, millions"
+      }
+    },
+    {
+      "narration": "About half of its game sales were digital downloads.",
+      "visual": {
+        "type": "donut",
+        "value": 50,
+        "label": "Digital share of game sales"
+      }
+    },
+    {
+      "narration": "Sell the console, then sell the games. Follow for more.",
+      "visual": {
+        "type": "text",
+        "text": "Sell the console.",
+        "sub": "Then sell the games."
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "Nintendo financial results explanatory material, Q3 fiscal year ending March 2026",
+      "url": "https://www.nintendo.co.jp/ir/pdf/2026/260203_2e.pdf"
+    }
+  ]
+}

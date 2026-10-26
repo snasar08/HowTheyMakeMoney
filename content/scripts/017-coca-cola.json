@@ -1,0 +1,105 @@
+{
+  "id": "017",
+  "slug": "coca-cola",
+  "company": "Coca-Cola",
+  "theme": "clean_navy",
+  "status": "ready",
+  "title": "Coca-Cola's Secret Is Selling the Syrup",
+  "description": "Coca-Cola's Secret Is Selling the Syrup.\n\nSources:\n- Coca-Cola Q4 and full-year 2025 results (press release): https://investors.coca-colacompany.com/news-events/press-releases/detail/1151/coca-cola-reports-fourth-quarter-and-full-year-2025-results\n- Coca-Cola Q4 2025 earnings release (full PDF with segment tables): https://www.coca-colacompany.com/content/dam/company/us/en/media-center/Coca-Cola%20Q4%202025%20Earnings%20Release_Full%20Release_2.10.26.pdf\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "tags": [
+    "coca-cola",
+    "soda",
+    "concentrate",
+    "bottling",
+    "business",
+    "how they make money",
+    "business explained",
+    "shorts"
+  ],
+  "images": {
+    "hook": {
+      "prompt": "Cinematic photo, vertical: a glass bottle of dark fizzy soda with ice and bubbles on a red background, plain unlabeled glass, dramatic splash, photorealistic, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_115946_7cc5df07-28f6-469a-a573-6a87999dfaa6.png"
+    },
+    "mid": {
+      "prompt": "Cinematic photo, vertical: a huge steel mixing tank in a clean factory with pipes and gauges, blue light, photorealistic, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_115945_7d5bfff2-7cf3-4b34-bead-746bc556c5ff.png"
+    },
+    "broll1": {
+      "prompt": "Cinematic photo, vertical: a long conveyor line of plain empty glass bottles in a bright bottling plant, photorealistic, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_115946_ffb05952-60b2-4910-9185-6afda8ef2110.png"
+    },
+    "broll2": {
+      "prompt": "Cinematic photo, vertical: a cold vending machine glowing in a dark hallway, blank panels, no labels, photorealistic, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_115946_705ac1f1-f834-4235-9524-7ad3a108a038.png"
+    }
+  },
+  "scenes": [
+    {
+      "narration": "Coca-Cola made 47.9 billion dollars in 2025. A big part of that starts as concentrate sold to bottling partners.",
+      "visual": {
+        "type": "image",
+        "image": "hook",
+        "overlay": "47.9 BILLION",
+        "overlay_sub": "in revenue, 2025"
+      }
+    },
+    {
+      "narration": "After all its costs, Coca-Cola kept 13.8 billion dollars of operating income.",
+      "visual": {
+        "type": "stat",
+        "value": 13.8,
+        "label": "Coca-Cola operating income, 2025",
+        "prefix": "$",
+        "suffix": "B",
+        "decimals": 1
+      }
+    },
+    {
+      "narration": "Its own bottling arm kept only about 7 cents of every dollar it sold. The whole company kept almost 29.",
+      "visual": {
+        "type": "bars",
+        "items": [
+          {
+            "label": "Whole company",
+            "value": 28.7
+          },
+          {
+            "label": "Bottling arm",
+            "value": 7.4
+          }
+        ],
+        "prefix": "",
+        "suffix": "%",
+        "title": "Operating margin, 2025"
+      }
+    },
+    {
+      "narration": "Coke has been handing more bottling to partners, and that arm's revenue fell 8 percent in 2025.",
+      "visual": {
+        "type": "image",
+        "image": "mid",
+        "overlay": "HANDING OFF",
+        "overlay_sub": "bottling to partners"
+      }
+    },
+    {
+      "narration": "Sell the syrup, and let partners handle the bottles. Follow for more.",
+      "visual": {
+        "type": "text",
+        "text": "Sell the syrup.",
+        "sub": "Partners do the bottles."
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "Coca-Cola Q4 and full-year 2025 results (press release)",
+      "url": "https://investors.coca-colacompany.com/news-events/press-releases/detail/1151/coca-cola-reports-fourth-quarter-and-full-year-2025-results"
+    },
+    {
+      "title": "Coca-Cola Q4 2025 earnings release (full PDF with segment tables)",
+      "url": "https://www.coca-colacompany.com/content/dam/company/us/en/media-center/Coca-Cola%20Q4%202025%20Earnings%20Release_Full%20Release_2.10.26.pdf"
+    }
+  ]
+}

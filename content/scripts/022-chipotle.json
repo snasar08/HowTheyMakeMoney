@@ -1,0 +1,105 @@
+{
+  "id": "022",
+  "slug": "chipotle",
+  "company": "Chipotle",
+  "theme": "bold_bright",
+  "status": "ready",
+  "title": "Where Your Chipotle Dollar Goes",
+  "description": "Where Your Chipotle Dollar Goes.\n\nSources:\n- Chipotle Q4 and full-year 2025 results (press release): https://ir.chipotle.com/2026-02-03-CHIPOTLE-ANNOUNCES-FOURTH-QUARTER-AND-FULL-YEAR-2025-RESULTS\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "tags": [
+    "chipotle",
+    "burrito",
+    "restaurants",
+    "food costs",
+    "business",
+    "how they make money",
+    "business explained",
+    "shorts"
+  ],
+  "images": {
+    "hook": {
+      "prompt": "Cinematic photo, vertical: a burrito bowl being assembled on a restaurant line with fresh ingredients, steam, warm light, unbranded, photorealistic, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_120244_dd49446e-0ce0-4da4-be05-2ca07b0292a6.png"
+    },
+    "mid": {
+      "prompt": "Cinematic photo, vertical: fresh produce on a wooden table, limes tomatoes peppers and cilantro, bright natural light, photorealistic, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_120244_111bf4ed-392f-4d9b-9e3a-ffd160ba5a4d.png"
+    },
+    "broll1": {
+      "prompt": "Cinematic photo, vertical: a restaurant kitchen worker's hands chopping vegetables on a board, close-up, no face, photorealistic, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_120243_0fa596a2-4b54-43f7-a8b8-1d1c5dd767b8.png"
+    },
+    "broll2": {
+      "prompt": "Cinematic photo, vertical: a drive-through lane at dusk with a glowing pickup window, no signs or logos, photorealistic, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_120244_a321a2ef-84a3-4c31-b373-1c16534ff139.png"
+    }
+  },
+  "scenes": [
+    {
+      "narration": "Out of every dollar spent at Chipotle, about 30 cents goes just to the food.",
+      "visual": {
+        "type": "image",
+        "image": "hook",
+        "overlay": "30 CENTS",
+        "overlay_sub": "goes to food"
+      }
+    },
+    {
+      "narration": "Workers take about 25 cents. The restaurant keeps about 25 cents as restaurant-level profit.",
+      "visual": {
+        "type": "bars",
+        "items": [
+          {
+            "label": "Food",
+            "value": 29.6
+          },
+          {
+            "label": "Labor",
+            "value": 25.1
+          },
+          {
+            "label": "Restaurant profit",
+            "value": 25.4
+          }
+        ],
+        "prefix": "",
+        "suffix": "%",
+        "title": "Share of each sales dollar, 2025"
+      }
+    },
+    {
+      "narration": "Chipotle's sales hit 11.9 billion dollars in 2025, and it opened a record 334 company-owned restaurants.",
+      "visual": {
+        "type": "stat",
+        "value": 11.9,
+        "label": "Chipotle revenue, 2025",
+        "prefix": "$",
+        "suffix": "B",
+        "decimals": 1
+      }
+    },
+    {
+      "narration": "The rest, about 20 cents, covers other costs like rent and supplies.",
+      "visual": {
+        "type": "image",
+        "image": "mid",
+        "overlay": "THE REST",
+        "overlay_sub": "rent and supplies"
+      }
+    },
+    {
+      "narration": "Food and workers take more than half of every dollar. Follow for more.",
+      "visual": {
+        "type": "text",
+        "text": "Food and workers",
+        "sub": "take over half."
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "Chipotle Q4 and full-year 2025 results (press release)",
+      "url": "https://ir.chipotle.com/2026-02-03-CHIPOTLE-ANNOUNCES-FOURTH-QUARTER-AND-FULL-YEAR-2025-RESULTS"
+    }
+  ]
+}

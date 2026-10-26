@@ -1,0 +1,112 @@
+{
+  "id": "023",
+  "slug": "live-nation",
+  "company": "Live Nation",
+  "theme": "dark_neon",
+  "status": "ready",
+  "title": "Why Concerts Make Little Profit",
+  "description": "Why Concerts Make Little Profit.\n\nSources:\n- Live Nation Entertainment full-year and Q4 2025 results: https://news.livenationentertainment.com/news/live-nation-entertainment-full-year-and-fourth-quarter-2025-results\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "tags": [
+    "live nation",
+    "ticketmaster",
+    "concerts",
+    "tickets",
+    "business",
+    "how they make money",
+    "business explained",
+    "shorts"
+  ],
+  "images": {
+    "hook": {
+      "prompt": "Cinematic photo, vertical: a massive stadium concert from behind the crowd with laser lights and a glowing stage, silhouettes, no performer visible, photorealistic, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_120314_4b1709e1-4870-43e0-a905-89a03faaea37.png"
+    },
+    "mid": {
+      "prompt": "Cinematic photo, vertical: a gloved hand-held pair of blank paper tickets in front of a bright gate at night, photorealistic, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_120313_e467c222-c6e9-4438-8eb6-0ab8a4630763.png"
+    },
+    "broll1": {
+      "prompt": "Cinematic photo, vertical: a crowd of silhouettes with raised hands and light sticks, purple stage haze, photorealistic, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_120312_a89a5bad-5027-4a70-b199-c34f2d4f099a.png"
+    },
+    "broll2": {
+      "prompt": "Cinematic photo, vertical: a large outdoor festival stage under a sunset sky, empty stage, string lights, photorealistic, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_120313_2b52554a-0663-4cd2-a853-9148595ca09a.png"
+    }
+  },
+  "scenes": [
+    {
+      "narration": "Live Nation took in 20.9 billion dollars from concerts in 2025. It kept almost none of it.",
+      "visual": {
+        "type": "image",
+        "image": "hook",
+        "overlay": "$20.9 BILLION",
+        "overlay_sub": "from concerts"
+      }
+    },
+    {
+      "narration": "It hosted 159 million fans across 55 thousand shows.",
+      "visual": {
+        "type": "stat",
+        "value": 159,
+        "label": "fans at Live Nation shows, 2025",
+        "prefix": "",
+        "suffix": "M",
+        "decimals": 0
+      }
+    },
+    {
+      "narration": "But concerts had an adjusted profit margin of just 3.3 percent.",
+      "visual": {
+        "type": "donut",
+        "value": 3.3,
+        "label": "Concerts adjusted profit margin"
+      }
+    },
+    {
+      "narration": "Ticketing is the opposite, with a margin of 37 percent.",
+      "visual": {
+        "type": "donut",
+        "value": 37,
+        "label": "Ticketing adjusted profit margin"
+      }
+    },
+    {
+      "narration": "Concerts earned 0.7 billion dollars of adjusted profit, ticketing 1.1 billion, and sponsorships 0.8 billion.",
+      "visual": {
+        "type": "bars",
+        "items": [
+          {
+            "label": "Concerts",
+            "value": 0.687
+          },
+          {
+            "label": "Ticketing",
+            "value": 1.1
+          },
+          {
+            "label": "Sponsors",
+            "value": 0.845
+          }
+        ],
+        "prefix": "$",
+        "suffix": "B",
+        "title": "Adjusted operating income, 2025"
+      }
+    },
+    {
+      "narration": "Shows bring the crowd. Tickets and sponsors bring the profit. Follow for more.",
+      "visual": {
+        "type": "text",
+        "text": "Shows bring the crowd.",
+        "sub": "Tickets bring the profit."
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "Live Nation Entertainment full-year and Q4 2025 results",
+      "url": "https://news.livenationentertainment.com/news/live-nation-entertainment-full-year-and-fourth-quarter-2025-results"
+    }
+  ]
+}

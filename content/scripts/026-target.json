@@ -1,0 +1,103 @@
+{
+  "id": "026",
+  "slug": "target",
+  "company": "Target",
+  "theme": "bold_bright",
+  "status": "ready",
+  "title": "Target Sells Ad Space Too",
+  "description": "Target Sells Ad Space Too.\n\nSources:\n- Target Q4 and full-year 2025 earnings release: https://corporate.target.com/press/release/2026/03/target-corporation-reports-fourth-quarter-and-full-year-2025-earnings\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "tags": [
+    "target",
+    "roundel",
+    "advertising",
+    "credit card",
+    "business",
+    "how they make money",
+    "business explained",
+    "shorts"
+  ],
+  "images": {
+    "hook": {
+      "prompt": "Cinematic photo, vertical: a bright store aisle with shopping carts and shelves of generic colorful products, wide angle, red accents, photorealistic, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_120447_5dcfcf55-59dc-4809-9f95-12e6f919caf3.png"
+    },
+    "mid": {
+      "prompt": "Cinematic photo, vertical: a digital advertising screen in a mall with abstract swirling colors, no text, photorealistic, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_120447_63047c10-9139-4878-b153-047ed8737827.png"
+    },
+    "broll1": {
+      "prompt": "Cinematic photo, vertical: a shopper's hands holding a plastic card over a checkout terminal, close up, blank card, photorealistic, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_120446_bed0df0a-7eab-4986-8585-3dae56cad420.png"
+    },
+    "broll2": {
+      "prompt": "Cinematic photo, vertical: a pile of shopping bags and a small gift in a cart in a parking lot at golden hour, photorealistic, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261026_120447_b7bf32d4-3fff-4552-a975-efec6ebcadf9.png"
+    }
+  },
+  "scenes": [
+    {
+      "narration": "Target sold 104.8 billion dollars of stuff in 2025. But it also earns money from ads and credit cards.",
+      "visual": {
+        "type": "image",
+        "image": "hook",
+        "overlay": "BEYOND SALES",
+        "overlay_sub": "ads and cards"
+      }
+    },
+    {
+      "narration": "Net sales were 104.8 billion dollars.",
+      "visual": {
+        "type": "stat",
+        "value": 104.8,
+        "label": "Target net sales, 2025",
+        "prefix": "$",
+        "suffix": "B",
+        "decimals": 1
+      }
+    },
+    {
+      "narration": "Brands pay Target for ads, through a business called Roundel. Advertising revenue rose from 649 million dollars to 915 million.",
+      "visual": {
+        "type": "bars",
+        "items": [
+          {
+            "label": "2024",
+            "value": 649
+          },
+          {
+            "label": "2025",
+            "value": 915
+          }
+        ],
+        "prefix": "$",
+        "suffix": "M",
+        "title": "Advertising revenue"
+      }
+    },
+    {
+      "narration": "Target also shares profits from its store credit cards, 522 million dollars in 2025.",
+      "visual": {
+        "type": "stat",
+        "value": 522,
+        "label": "credit card profit sharing, 2025",
+        "prefix": "$",
+        "suffix": "M",
+        "decimals": 0
+      }
+    },
+    {
+      "narration": "The shelves bring you in. The side businesses add up. Follow for more.",
+      "visual": {
+        "type": "text",
+        "text": "Shelves bring you in.",
+        "sub": "Side businesses add up."
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "Target Q4 and full-year 2025 earnings release",
+      "url": "https://corporate.target.com/press/release/2026/03/target-corporation-reports-fourth-quarter-and-full-year-2025-earnings"
+    }
+  ]
+}
