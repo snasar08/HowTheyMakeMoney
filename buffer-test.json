@@ -1,0 +1,124 @@
+{
+  "video_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/ci-test-video/001-costco.mp4",
+  "steps": [
+    {
+      "step": "introspect enums",
+      "ok": true,
+      "YoutubePrivacy": [
+        "private",
+        "public",
+        "unlisted"
+      ],
+      "ShareMode": [
+        "addToQueue",
+        "customScheduled",
+        "shareNext",
+        "shareNow"
+      ],
+      "SchedulingType": [
+        "automatic",
+        "notification"
+      ],
+      "PostStatus": [
+        "draft",
+        "error",
+        "needs_approval",
+        "scheduled",
+        "sending",
+        "sent"
+      ],
+      "Service": [
+        "bluesky",
+        "facebook",
+        "googlebusiness",
+        "instagram",
+        "linkedin",
+        "mastodon",
+        "pinterest",
+        "startPage",
+        "substack",
+        "threads",
+        "tiktok",
+        "twitter",
+        "whatsapp",
+        "youtube"
+      ]
+    },
+    {
+      "step": "find YouTube channel",
+      "ok": true,
+      "channel": "6adeccfa2f1f5ed648d31e71",
+      "channel_name": "How They Make Money"
+    },
+    {
+      "step": "video URL public",
+      "ok": true,
+      "url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/ci-test-video/001-costco.mp4"
+    },
+    {
+      "step": "schedule test post",
+      "ok": true,
+      "post": "6adf376fb347bedfc1d99e68",
+      "dueAt": "2026-10-26T12:20:00.000Z",
+      "privacy": "private"
+    },
+    {
+      "step": "confirm queued",
+      "ok": true,
+      "status": "scheduled",
+      "dueAt": "2026-10-26T12:20:00.000Z"
+    },
+    {
+      "step": "delete test post",
+      "ok": true,
+      "post": "6adf376fb347bedfc1d99e68"
+    },
+    {
+      "step": "confirm deleted",
+      "ok": true,
+      "detail": "GraphQL errors: [{\"message\": \"Post not found for id: 6adf376fb347bedfc1d99e68\", \"path\": [\"post\"], \"extensions\": {\"code\": \"NOT_FOUND\"}}]"
+    }
+  ],
+  "enums": {
+    "YoutubePrivacy": [
+      "private",
+      "public",
+      "unlisted"
+    ],
+    "ShareMode": [
+      "addToQueue",
+      "customScheduled",
+      "shareNext",
+      "shareNow"
+    ],
+    "SchedulingType": [
+      "automatic",
+      "notification"
+    ],
+    "PostStatus": [
+      "draft",
+      "error",
+      "needs_approval",
+      "scheduled",
+      "sending",
+      "sent"
+    ],
+    "Service": [
+      "bluesky",
+      "facebook",
+      "googlebusiness",
+      "instagram",
+      "linkedin",
+      "mastodon",
+      "pinterest",
+      "startPage",
+      "substack",
+      "threads",
+      "tiktok",
+      "twitter",
+      "whatsapp",
+      "youtube"
+    ]
+  },
+  "ok": true
+}
