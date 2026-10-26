@@ -27,7 +27,7 @@ import numpy as np
 import soundfile as sf
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
-from . import tts
+from . import audio_check, music, tts
 from .themes import get_theme
 
 W, H = 1080, 1920
@@ -41,6 +41,15 @@ SCENE_GAP = 0.06                     # seconds of silence between scenes
 END_HOLD = 0.7
 BEAT_TARGET = float(os.environ.get("BEAT_TARGET", "2.0"))  # seconds per shot
 BEAT_MAX = 2.8
+# Spoken + on-screen like/subscribe/comment ask, added after the middle scene as its own clip
+# (sentences "|"-separated, voiced together so Kokoro breathes at the periods). Each on-screen
+# piece pops in on its own word. A script can replace the line with "cta"; CTA_LINE="" turns
+# it off. Keep it kid-safe: Shorts viewers skew young.
+CTA_LINE = os.environ.get("CTA_LINE", "Like if that surprised you.|Subscribe for a new breakdown every day."
+                                      "|And comment which company we should break down next!")
+CTA_QUESTION = "Which company should we break down next?"
+CTA_Y = 430
+CTA_PAUSE = 0.15                     # short beat before the CTA (longer sounded awkward)
 
 _font_cache: dict = {}
 
@@ -284,19 +293,6 @@ class Scene:
     shots: list = field(default_factory=list)
 
 
-def whoosh(sr: int, seconds: float = 0.24, gain: float = 0.10) -> np.ndarray:
-    n = int(sr * seconds)
-    rng = np.random.default_rng(7)
-    noise = rng.standard_normal(n).astype(np.float32)
-    # crude band-pass: smooth (low-pass) then remove the slowest part
-    lp = np.convolve(noise, np.ones(12) / 12, mode="same")
-    bp = lp - np.convolve(lp, np.ones(120) / 120, mode="same")
-    t = np.linspace(0, 1, n)
-    env = np.sin(np.pi * t) ** 2 * np.exp(-2.5 * t)
-    out = bp * env
-    return (out / (np.max(np.abs(out)) or 1) * gain).astype(np.float32)
-
-
 class Renderer:
     def __init__(self, script: dict):
         self.s = script
@@ -361,6 +357,9 @@ class Renderer:
                         shots.append(("chart", None, 0, False))
                     elif b % 2 == 1 and self._pool:
                         shots.append(("figure", self._next_broll(), (v_i % 5) + 1, False))
+                    elif b % 4 == 2:  # code-drawn alternate: ticker / waffle / columns
+                        alt_key = self._next_broll() if typ == "stat" else None
+                        shots.append(("alt", alt_key, (v_i % 5) + 1, False))
                     else:
                         shots.append(("chartzoom", None, b, False))
                 if shots[-1][1]:
@@ -451,10 +450,129 @@ class Renderer:
         txt = self.frame_text(sc, 99.0, 0, base=frame)
         return txt
 
+    # ---- code-drawn "action" shots (only use numbers already in the script)
+    def live_bg(self, t: float) -> Image.Image:
+        """Chart background with a slowly drifting grid so chart shots never sit still."""
+        step = 90
+        if getattr(self, "_grid", None) is None:
+            g = Image.new("RGBA", (W + step, H + step), (0, 0, 0, 0))
+            d = ImageDraw.Draw(g)
+            col = (*self.theme["accent"][:3], 26)
+            for x in range(0, W + step + 1, step):
+                d.line((x, 0, x, H + step), fill=col, width=2)
+            for y in range(0, H + step + 1, step):
+                d.line((0, y, W + step, y), fill=col, width=2)
+            self._grid = g
+        off = int((t * 45) % step) if t < 50 else 0
+        frame = self.bg.copy()
+        layer = self._grid.crop((off, off, off + W, off + H))
+        frame.paste(layer, (0, 0), layer)
+        return frame
+
+    def shot_ticker(self, sc: Scene, key, variant, t, p):
+        """Slot-machine digits that roll and lock in one by one."""
+        if key:
+            frame = self.crop(key, variant, p)
+            frame.paste(self.shade, (0, 0), self.shade)
+            frame.paste(self.dim, (0, 0), self.dim)
+            self._draw_tag(frame)
+        else:
+            frame = self.live_bg(t)
+        fig, label = self.key_figure(sc.visual)
+        d = ImageDraw.Draw(frame)
+        f = fit_font(fig, BLACK, SAFE_X1 - SAFE_X0, 280, 110)
+        cx = (SAFE_X0 + SAFE_X1) / 2
+        x = cx - f.getlength(fig) / 2
+        digits = [i for i, c in enumerate(fig) if c.isdigit()]
+        for i, c in enumerate(fig):
+            y = 680
+            ch = c
+            if c.isdigit():
+                lock = 0.15 + 0.09 * digits.index(i)
+                if t < lock:
+                    ch = str((int(t * 40) + i * 3) % 10)
+                    y += int(18 * math.sin(t * 60 + i))
+                else:
+                    y -= int(26 * max(0.0, 1 - (t - lock) / 0.15))  # little bounce on lock
+            col = self.theme["accent"] if (not c.isdigit() or t >= 0.15 + 0.09 * digits.index(i)) else (255, 255, 255)
+            d.text((x, y), ch, font=f, fill=col, stroke_width=8, stroke_fill=(0, 0, 0))
+            x += f.getlength(c)
+        fl = font(SEMI, 54)
+        if t > 0.3:
+            for i, line in enumerate(wrap(label, fl, SAFE_X1 - SAFE_X0)[:2]):
+                draw_centered(d, cx, 680 + f.size + 60 + i * 68, line, fl, (255, 255, 255), 4, (0, 0, 0))
+        return frame
+
+    def shot_waffle(self, sc: Scene, key, variant, t, p):
+        """10x10 grid of squares filling to the percentage."""
+        v = sc.visual
+        frame = self.live_bg(t)
+        d = ImageDraw.Draw(frame, "RGBA")
+        val = float(v["value"])
+        n = int(round(val))
+        cell, gap = 70, 12
+        x0 = (W - (10 * cell + 9 * gap)) // 2
+        y0 = 430
+        track = self.theme["track"]
+        track = track if len(track) == 4 else (*track, 255)
+        shown = int(n * min(1.0, ease_out(t / 1.1)))
+        for k in range(100):
+            r, c = divmod(k, 10)
+            r = 9 - r  # fill from the bottom up
+            bx, by = x0 + c * (cell + gap), y0 + r * (cell + gap)
+            if k < shown:
+                pop = min(1.0, (shown - k) / 6)
+                s = int(cell * (0.6 + 0.4 * pop))
+                o = (cell - s) // 2
+                d.rounded_rectangle((bx + o, by + o, bx + o + s, by + o + s), 14, fill=self.theme["accent"])
+            else:
+                d.rounded_rectangle((bx, by, bx + cell, by + cell), 14, fill=track)
+        pct = val * min(1.0, ease_out(t / 1.1))
+        txt = f"{fmt_number(pct, 0 if val.is_integer() else 1)}%"
+        cx = W / 2
+        fy = y0 + 10 * (cell + gap) + 30
+        draw_centered(d, cx, fy, txt, font(BLACK, 130), self.theme["text"])
+        fl = font(SEMI, 52)
+        for i, line in enumerate(wrap(v.get("label", ""), fl, SAFE_X1 - SAFE_X0)[:2]):
+            draw_centered(d, cx, fy + 160 + i * 64, line, fl, self.theme["text"])
+        return frame
+
+    def shot_columns(self, sc: Scene, key, variant, t, p):
+        """Vertical columns racing up, values counting with them."""
+        v = sc.visual
+        items = v["items"][:4]
+        frame = self.live_bg(t)
+        d = ImageDraw.Draw(frame, "RGBA")
+        vmax = max(float(i["value"]) for i in items) or 1.0
+        base_y, max_h = 1180, 600
+        span = SAFE_X1 - SAFE_X0
+        gap = 40
+        cw = (span - gap * (len(items) - 1)) / len(items)
+        fv, fl = font(BLACK, 58 if len(items) > 2 else 72), font(BOLD, 40 if len(items) > 2 else 48)
+        for k, it in enumerate(items):
+            pk = ease_out_back(min(1.0, max(0.0, (t - 0.08 * k) / 0.8)))
+            val = float(it["value"])
+            h = max(12, max_h * val / vmax * pk)
+            x = SAFE_X0 + k * (cw + gap)
+            last = k == len(items) - 1
+            col = self.theme["accent"] if last else self.theme["accent2"]
+            if self.s.get("theme") == "bold_bright" and not last:
+                col = (255, 255, 255)
+            d.rounded_rectangle((x, base_y - h, x + cw, base_y), 28, fill=col)
+            label = f'{v.get("prefix", "")}{fmt_number(val * min(pk, 1.0), None if val.is_integer() else 1)}{v.get("suffix", "")}'
+            f2 = fv if fv.getlength(label) <= cw + 30 else font(BLACK, 44)
+            draw_centered(d, x + cw / 2, base_y - h - f2.size - 18, label, f2, self.theme["text"])
+            for i, line in enumerate(wrap(it["label"], fl, cw + 20)[:2]):
+                draw_centered(d, x + cw / 2, base_y + 24 + i * (fl.size + 8), line, fl, self.theme["muted"])
+        if v.get("title"):
+            draw_centered(d, W / 2, 400, v["title"].upper(), fit_font(v["title"].upper(), BOLD, span, 54, 34),
+                          self.theme["muted"])
+        return frame
+
     # ---- the original full-scene drawers (used for chart/text shots)
     def frame_stat(self, sc: Scene, t: float, idx: int) -> Image.Image:
         v = sc.visual
-        frame = self.bg.copy()
+        frame = self.live_bg(t)
         d = ImageDraw.Draw(frame)
         p = ease_out(t / 1.0)
         val = float(v["value"]) * p
@@ -470,9 +588,9 @@ class Renderer:
 
     def frame_bars(self, sc: Scene, t: float, idx: int) -> Image.Image:
         v = sc.visual
-        frame = self.bg.copy()
-        d = ImageDraw.Draw(frame, "RGBA")
         items = v["items"]
+        frame = self.live_bg(t)
+        d = ImageDraw.Draw(frame, "RGBA")
         vmax = max(float(i["value"]) for i in items) or 1.0
         y = 520
         if v.get("title"):
@@ -511,7 +629,7 @@ class Renderer:
 
     def frame_donut(self, sc: Scene, t: float, idx: int) -> Image.Image:
         v = sc.visual
-        frame = self.bg.copy()
+        frame = self.live_bg(t)
         d = ImageDraw.Draw(frame, "RGBA")
         cx, cy, r, w = (SAFE_X0 + SAFE_X1) // 2, 740, 270, 60
         box = (cx - r, cy - r, cx + r, cy + r)
@@ -583,6 +701,9 @@ class Renderer:
             frame = self.shot_figure(sc, key, variant, tb, pb)
         elif kind == "chartzoom":
             frame = self.shot_chartzoom(sc, variant, pb)
+        elif kind == "alt":
+            alt = {"stat": self.shot_ticker, "donut": self.shot_waffle, "bars": self.shot_columns}
+            frame = alt[sc.visual["type"]](sc, key, variant, tb, pb)
         elif kind == "textbg":
             frame = self.shot_textbg(sc, key, variant, tb, pb)
         elif kind == "text":
@@ -603,12 +724,43 @@ class Renderer:
     # ---- assemble
     def prepare(self) -> list[Scene]:
         scenes = []
-        for raw in self.s["scenes"]:
+        self.cta_q = CTA_QUESTION
+        cta_parts = [p.strip() for p in self.s.get("cta", CTA_LINE).split("|") if p.strip()]
+        cta_si = len(self.s["scenes"]) // 2 - 1 if cta_parts else -1
+        self.joins = []  # (scene, start, end) silences that must stay silent — for the checker
+        self.cta = None
+        for i, raw in enumerate(self.s["scenes"]):
             sc = Scene(raw["narration"], raw["visual"])
             sc.audio, timings = tts.synthesize(sc.narration)
             speech = len(sc.audio) / tts.SAMPLE_RATE
-            sc.duration = speech + SCENE_GAP
             sc.words = align_words(sc.narration, timings, speech)
+            if i == cta_si:
+                # each CTA sentence is its own clip with silence around it; gluing it onto the
+                # scene's sentence made Kokoro run everything together in one breath
+                # one clip with periods between sentences reads naturally (Kokoro breathes at
+                # the periods); padding silence between separate clips sounded stilted
+                sr = tts.SAMPLE_RATE
+                line = " ".join(cta_parts)
+                c_audio, c_timings = tts.synthesize(line)
+                c_speech = len(c_audio) / sr
+                self.joins.append((i, speech, speech + CTA_PAUSE))
+                off = speech + CTA_PAUSE
+                tail = [Word(w.text, w.start + off, w.end + off) for w in align_words(line, c_timings, c_speech)]
+                sc.audio = np.concatenate([sc.audio, np.zeros(int(CTA_PAUSE * sr), np.float32), c_audio])
+                sc.narration = sc.narration.rstrip() + " " + line
+                sc.words = sc.words + tail
+                speech = off + c_speech
+            sc.duration = speech + SCENE_GAP
+            if i == cta_si and sc.words:
+
+                def at(word, default):
+                    for w in tail:
+                        if re.sub(r"\W", "", w.text.lower()).startswith(word):
+                            return w.start
+                    return default
+                t0 = tail[0].start
+                self.cta = {"si": i, "start": t0, "end": sc.duration, "like": at("like", t0),
+                            "sub": at("subscribe", t0 + 0.8), "com": at("comment", t0 + 2.0)}
             scenes.append(sc)
         scenes[-1].duration += END_HOLD
         for sc in scenes:
@@ -623,11 +775,12 @@ class Renderer:
                                 for sc in scenes])
         starts = np.cumsum([0] + [sc.duration for sc in scenes])
         cuts = sorted({float(starts[i] + b) for i, sc in enumerate(scenes) for b in sc.beats} - {0.0})
-        sfx = whoosh(sr)
-        for c in cuts:  # whoosh lands just before each cut
-            i0 = max(0, int((c - 0.12) * sr))
-            seg = sfx[: max(0, min(len(sfx), len(audio) - i0))]
-            audio[i0:i0 + len(seg)] += seg
+        voice = audio.copy()
+        if music.MUSIC_GAIN > 0:  # original synthesized bed, ducked under the voice
+            bed = music.bed(len(audio) / sr, sr, seed=self.s.get("slug") or self.s.get("company", ""))
+            bed = np.pad(bed, (0, max(0, len(audio) - len(bed))))[: len(audio)]
+            audio = audio + music.duck(bed, audio, sr) * music.MUSIC_GAIN
+        audio_issues, audio_stats = audio_check.check(scenes, starts, self.joins, voice, audio, sr)
         audio = np.clip(audio, -1, 1)
         out_path.parent.mkdir(parents=True, exist_ok=True)
         with tempfile.TemporaryDirectory() as tmp:
@@ -657,6 +810,7 @@ class Renderer:
                                          box=((W - cw) / 2, (H - ch) / 2, (W + cw) / 2, (H + ch) / 2))
                     if tb < 0.07:
                         frame = Image.blend(frame, flash, 0.22 * (1 - tb / 0.07))
+                self._cta(frame, si, t)
                 proc.stdin.write(frame.tobytes())
             proc.stdin.close()
             if proc.wait() != 0:
@@ -666,7 +820,97 @@ class Renderer:
                 "cuts": len(cuts), "avg_shot": round(len(audio) / sr / (len(cuts) + 1), 2),
                 "scene_mids": mids, "voice": tts.VOICE_ENGINE,
                 "timed_words": all(sc.words for sc in scenes),
-                "images_ok": sorted(self.images)}
+                "images_ok": sorted(self.images), **audio_stats, "audio_issues": audio_issues}
+
+    # ---- like / subscribe / comment call to action
+    def _pill(self, label: str, bg, fg, icon: str | None) -> Image.Image:
+        f = font(BLACK, 50)
+        ph, pad = 100, 34
+        iw = 56 if icon else 0
+        w = int(f.getlength(label) + 2 * pad + iw)
+        img = Image.new("RGBA", (w + 8, ph + 10), (0, 0, 0, 0))
+        d = ImageDraw.Draw(img)
+        d.rounded_rectangle((6, 10, w + 6, ph + 8), ph // 2, fill=(0, 0, 0, 120))  # shadow
+        d.rounded_rectangle((0, 2, w, ph + 2), ph // 2, fill=(*bg, 255))
+        x, cy = pad, ph // 2 + 2
+        if icon == "heart":
+            c = (230, 33, 23)
+            d.ellipse((x, cy - 18, x + 24, cy + 4), fill=c)
+            d.ellipse((x + 18, cy - 18, x + 42, cy + 4), fill=c)
+            d.polygon([(x + 1, cy - 4), (x + 41, cy - 4), (x + 21, cy + 20)], fill=c)
+        elif icon == "check":
+            d.line([(x + 2, cy), (x + 15, cy + 13), (x + 38, cy - 14)], fill=fg, width=8, joint="curve")
+        d.text((x + iw, cy - 32), label, font=f, fill=fg)
+        return img
+
+    def _bubble(self, text: str) -> Image.Image:
+        f, fh = font(BOLD, 34), font(BLACK, 48)
+        maxw = SAFE_X1 - SAFE_X0 - 80
+        lines = wrap(text[:1].upper() + text[1:], fh, maxw)[:3]
+        bw = int(max(f.getlength("COMMENT BELOW"), *(fh.getlength(l) for l in lines)) + 80)
+        bh = 40 + 44 + len(lines) * 60 + 26
+        img = Image.new("RGBA", (bw + 8, bh + 46), (0, 0, 0, 0))
+        d = ImageDraw.Draw(img)
+        d.rounded_rectangle((6, 8, bw + 6, bh + 6), 36, fill=(0, 0, 0, 120))
+        d.rounded_rectangle((0, 0, bw, bh), 36, fill=(255, 255, 255, 255))
+        d.polygon([(60, bh - 2), (110, bh - 2), (52, bh + 40)], fill=(255, 255, 255, 255))  # tail
+        d.text((40, 36), "COMMENT BELOW", font=f, fill=self.theme["accent2"] if self.s.get("theme") == "bold_bright"
+               else (230, 33, 23))
+        for i, l in enumerate(lines):
+            d.text((40, 84 + i * 60), l, font=fh, fill=(15, 15, 15))
+        return img
+
+    @staticmethod
+    def _pop(frame: Image.Image, img: Image.Image, cx: float, cy: float, p: float):
+        z = max(0.05, ease_out_back(min(1.0, p)))
+        im = img if abs(z - 1) < 0.01 else img.resize((max(1, int(img.width * z)), max(1, int(img.height * z))),
+                                                       Image.BILINEAR)
+        frame.paste(im, (int(cx - im.width / 2), int(cy - im.height / 2)), im)
+
+    def _cta(self, frame: Image.Image, si: int, t: float):
+        c = self.cta
+        if not c or si != c["si"] or not (c["like"] - 0.1 <= t <= c["end"]):
+            return
+        if not hasattr(self, "_cta_parts"):
+            self._cta_parts = {
+                "like": self._pill("LIKE", (255, 255, 255), (15, 15, 15), "heart"),
+                "sub": self._pill("SUBSCRIBE", (230, 33, 23), (255, 255, 255), None),
+                "subbed": self._pill("SUBSCRIBED", (70, 70, 70), (235, 235, 235), "check"),
+                "bubble": self._bubble(self.cta_q),
+            }
+        P = self._cta_parts
+        # dim the frame a little so the CTA reads over busy charts/b-roll
+        fade = min(1.0, (t - c["like"] + 0.1) / 0.25)
+        dim = Image.new("RGBA", (W, H), (0, 0, 0, int(110 * fade)))
+        frame.paste(dim, (0, 0), dim)
+        click = c["sub"] + 0.6
+        sub_img = P["subbed"] if t >= click else P["sub"]
+        gap = 26
+        row_w = P["like"].width + gap + max(P["sub"].width, P["subbed"].width)
+        x0 = (W - row_w) / 2
+        lx = x0 + P["like"].width / 2
+        sx = x0 + P["like"].width + gap + sub_img.width / 2
+        self._pop(frame, P["like"], lx, CTA_Y, (t - c["like"] + 0.1) / 0.3)
+        if t >= c["sub"] - 0.1:
+            p = (t - c["sub"] + 0.1) / 0.3
+            if click <= t < click + 0.25:  # button bounce on click
+                p = 1.0
+                sub_img = sub_img.resize((int(sub_img.width * 0.94), int(sub_img.height * 0.94)), Image.BILINEAR)
+            self._pop(frame, sub_img, sx, CTA_Y, p)
+            # cursor glides in and taps the button
+            if t < click + 0.5:
+                k = ease_out(min(1.0, max(0.0, (t - c["sub"] - 0.05) / 0.5)))
+                ax = sx + 40 + (1 - k) * 260
+                ay = CTA_Y + 20 + (1 - k) * 320
+                s = 0.85 if click <= t < click + 0.15 else 1.0
+                arrow = [(0, 0), (0, 62), (16, 48), (28, 76), (40, 70), (28, 44), (50, 44)]
+                pts = [(ax + x * s, ay + y * s) for x, y in arrow]
+                d = ImageDraw.Draw(frame)
+                d.polygon(pts, fill=(255, 255, 255), outline=(0, 0, 0))
+                d.line(pts + [pts[0]], fill=(0, 0, 0), width=4)
+        if t >= c["com"] - 0.1:
+            b = P["bubble"]
+            self._pop(frame, b, W / 2, CTA_Y + 90 + b.height / 2, (t - c["com"] + 0.1) / 0.3)
 
     def _caption(self, frame: Image.Image, chunks: list[list[Word]], t: float):
         for ch in chunks:

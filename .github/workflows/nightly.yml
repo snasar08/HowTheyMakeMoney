@@ -31,8 +31,8 @@ jobs:
       SHORTS_PER_RUN: ${{ vars.SHORTS_PER_RUN || '2' }}
       UPLOAD_MODE: ${{ vars.UPLOAD_MODE || 'release' }}
       VOICE_ENGINE: ${{ vars.VOICE_ENGINE || 'kokoro' }}
-      KOKORO_VOICE: ${{ vars.KOKORO_VOICE || 'am_michael' }}
-      KOKORO_SPEED: ${{ vars.KOKORO_SPEED || '1.2' }}
+      KOKORO_VOICE: ${{ vars.KOKORO_VOICE || 'am_fenrir' }}
+      KOKORO_SPEED: ${{ vars.KOKORO_SPEED || '1.35' }}
       POST_SLOTS: ${{ vars.POST_SLOTS || '12:00,18:00' }}
       GH_TOKEN: ${{ github.token }}
       YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}

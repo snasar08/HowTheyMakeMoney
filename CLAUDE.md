@@ -11,7 +11,19 @@ and **free beyond his Higgsfield Pro plan** — never add a paid service or ask 
   renders the next `SHORTS_PER_RUN` (default 2) ready scripts, delivers them, marks them delivered
   and commits. Budget: private repos get 2,000 free minutes/month; a run takes ~5–8 minutes.
 - `pipeline/render.py` draws every frame with Pillow and pipes to ffmpeg (1080x1920, 30 fps).
-- `pipeline/tts.py` — voice. Default Kokoro-82M (`am_michael`), CPU. Optional Ming-3.0-tts.
+- `pipeline/tts.py` — voice. Default Kokoro-82M (`am_fenrir`, speed 1.35 — Sam's pick; 1.3 felt slow, 1.4 too fast), CPU. Optional Ming-3.0-tts.
+- `pipeline/music.py` — background music synthesized in numpy (original, nothing to license),
+  seeded per script, ducked under the voice. `MUSIC_GAIN` env var (default 0.12, 0 = off).
+  Sam disliked the whoosh sound on cuts, so it was removed — don't add cut SFX back.
+- Mid-video CTA (`CTA_LINE` in `render.py`): "Like if that surprised you. Subscribe… And comment
+  which company we should break down next!" voiced as ONE clip after a 0.15 s beat — gluing it onto
+  the scene's sentence garbled it, and long pauses between sentences sounded stilted. Animated
+  LIKE / SUBSCRIBE→SUBSCRIBED / comment bubble pop in on their words. Keep prompts kid-safe
+  (Shorts audience is young) — no per-company opinion questions.
+- `pipeline/audio_check.py` runs after every render: one-breath runs (>6 s), syllables/s per
+  scene, swallowed words, silent CTA beat, clipping. Prints `::warning`s; `AUDIO_CHECK=strict`
+  blocks delivery.
+- Chart scenes also get code-drawn "alt" shots (ticker / waffle / columns) on a drifting grid.
 - `pipeline/publish.py` — `UPLOAD_MODE` repo variable:
   - `release` (default): MP4 attached to a GitHub Release with title/description to paste. Sam
     uploads from the YouTube app. Required until YouTube approves the API audit, because uploads
@@ -25,11 +37,11 @@ and **free beyond his Higgsfield Pro plan** — never add a paid service or ask 
   dislikes am_michael**; needed more shot changes. Done since: shot change every ~2 s (`make_beats`),
   key-number pop-ups over B-roll, chart punch-ins, flash + whoosh on cuts, Kokoro speed 1.2, captions
   from Kokoro's real word timestamps (`align_words`). Not yet rendered with real voice — test it.
-- **Voice:** run `python -m pipeline.voice_samples out/voice-samples.mp4`, let Sam pick, then set the
-  repo variable `KOKORO_VOICE` (and `KOKORO_SPEED` if he wants). `.github/workflows/voice-test.yml`
+- **Voice:** done — Sam picked `am_fenrir` at 1.35 (now the default in code and workflow). To
+  revisit, run `python -m pipeline.voice_samples out/voice-samples.mp4`. `.github/workflows/voice-test.yml`
   also tries Ming-3.0 on CPU (experimental; upstream only tested on GPUs).
 - **B-roll:** every script has `images.broll1/broll2` prompts (from `content/broll_prompts.json`).
-  Only 001 and 002 have URLs. Generate the rest with Higgsfield (settings below), 4 at a time.
+  001–014 all have URLs (Oct 25 2026). New scripts: generate with Higgsfield (settings below), 4 at a time.
 - Posting: `UPLOAD_MODE=release` until the YouTube API audit is approved. Free connectors checked
   and ruled out for 2/day: Make free (100 MB/month transfer), Zapier free (no webhooks),
   Upload-Post free (10 posts/month). Modal was dropped (wanted a card).

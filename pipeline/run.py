@@ -76,7 +76,13 @@ def main() -> int:
         try:
             info = render_script(path, video)
             print(f"[run] rendered {video.name}: {info['seconds']}s")
-            print(f"::notice title={path.stem}::{json.dumps({k: v for k, v in info.items() if k != 'path'})}")
+            print(f"::notice title={path.stem}::{json.dumps({k: v for k, v in info.items() if k not in ('path', 'audio_issues')})}")
+            for issue in info.get("audio_issues", []):
+                print(f"::warning title={path.stem} audio::{issue}")
+            if not info.get("audio_issues"):
+                print(f"[check] {path.stem}: audio OK (longest breath {info.get('longest_breath')}s)")
+            elif os.environ.get("AUDIO_CHECK") == "strict" and not args.dry:
+                raise RuntimeError(f"audio check failed: {len(info['audio_issues'])} issue(s)")
             if args.dry:
                 contact_sheet(video, info["scene_mids"], ROOT / "previews" / f"{path.stem}.jpg")
                 continue

@@ -18,8 +18,8 @@ import numpy as np
 SAMPLE_RATE = 24000
 
 VOICE_ENGINE = os.environ.get("VOICE_ENGINE", "kokoro")
-KOKORO_VOICE = os.environ.get("KOKORO_VOICE", "am_michael")
-KOKORO_SPEED = float(os.environ.get("KOKORO_SPEED", "1.2"))
+KOKORO_VOICE = os.environ.get("KOKORO_VOICE", "am_fenrir")
+KOKORO_SPEED = float(os.environ.get("KOKORO_SPEED", "1.35"))
 MING_VOICE = os.environ.get("MING_VOICE", "US_James")
 
 _kokoro = {}
