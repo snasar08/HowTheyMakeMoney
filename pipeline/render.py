@@ -20,6 +20,7 @@ import subprocess
 import tempfile
 import time
 import urllib.request
+from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass, field
 from pathlib import Path
 
@@ -435,7 +436,10 @@ class Renderer:
 
     def shot_chartzoom(self, sc: Scene, variant, p):
         drawer = {"stat": self.frame_stat, "bars": self.frame_bars, "donut": self.frame_donut}[sc.visual["type"]]
-        full = drawer(sc, 99.0, 0)
+        ck = ("chartfull", id(sc))
+        if ck not in self._base:  # the settled chart never changes; draw it once per scene
+            self._base[ck] = drawer(sc, 99.0, 0)
+        full = self._base[ck]
         z = 1.1 + 0.06 * p
         cy = 760 if sc.visual["type"] != "bars" else 860
         cw, ch = W / z, H / z
@@ -797,7 +801,8 @@ class Renderer:
             proc = subprocess.Popen(cmd, stdin=subprocess.PIPE)
             chunks = [chunk_words(sc.words) for sc in scenes]
             flash = Image.new("RGB", (W, H), (255, 255, 255))
-            for n in range(total_frames):
+
+            def make(n: int) -> bytes:
                 gt = n / FPS
                 si = min(int(np.searchsorted(starts, gt, side="right") - 1), len(scenes) - 1)
                 sc, t = scenes[si], gt - starts[si]
@@ -811,7 +816,16 @@ class Renderer:
                     if tb < 0.07:
                         frame = Image.blend(frame, flash, 0.22 * (1 - tb / 0.07))
                 self._cta(frame, si, t)
-                proc.stdin.write(frame.tobytes())
+                return frame.tobytes()
+
+            make(0)  # warm the shared caches before going parallel
+            # Pillow's resize/paste release the GIL, so frames render in parallel threads;
+            # map() keeps them in order for ffmpeg. RENDER_THREADS=1 renders serially.
+            workers = int(os.environ.get("RENDER_THREADS", min(4, os.cpu_count() or 1)))
+            with ThreadPoolExecutor(max_workers=max(1, workers)) as pool:
+                for start in range(0, total_frames, 48):  # bounded batches keep memory flat
+                    for buf in pool.map(make, range(start, min(start + 48, total_frames))):
+                        proc.stdin.write(buf)
             proc.stdin.close()
             if proc.wait() != 0:
                 raise RuntimeError("ffmpeg failed")
@@ -881,7 +895,10 @@ class Renderer:
         P = self._cta_parts
         # dim the frame a little so the CTA reads over busy charts/b-roll
         fade = min(1.0, (t - c["like"] + 0.1) / 0.25)
-        dim = Image.new("RGBA", (W, H), (0, 0, 0, int(110 * fade)))
+        a = int(110 * fade) // 10 * 10  # few distinct levels so the overlay can be cached
+        if ("ctadim", a) not in self._base:
+            self._base[("ctadim", a)] = Image.new("RGBA", (W, H), (0, 0, 0, a))
+        dim = self._base[("ctadim", a)]
         frame.paste(dim, (0, 0), dim)
         click = c["sub"] + 0.6
         sub_img = P["subbed"] if t >= click else P["sub"]

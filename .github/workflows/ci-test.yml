@@ -68,7 +68,7 @@ jobs:
           echo "{\"run\": \"${GITHUB_RUN_ID}\", \"sha\": \"${GITHUB_SHA}\", \"at\": \"$(date -u +%FT%TZ)\"}" > /tmp/res/meta.json
           git config user.name "shorts-bot"
           git config user.email "shorts-bot@users.noreply.github.com"
-          git checkout --orphan ci-test-results
-          git rm -rq --cached . && rm -rf ./* .github 2>/dev/null || true
-          cp /tmp/res/* . && git add -A && git commit -qm "CI test results ${GITHUB_RUN_ID}"
-          git push -f origin ci-test-results
+          cd /tmp/res && git init -q -b ci-test-results && git add -A
+          git -c user.name=shorts-bot -c user.email=shorts-bot@users.noreply.github.com \
+            commit -qm "CI test results ${GITHUB_RUN_ID}"
+          git push -f "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" ci-test-results

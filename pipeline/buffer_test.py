@@ -19,9 +19,9 @@ ENUMS = ["YoutubePrivacy", "ShareMode", "SchedulingType", "PostStatus", "Service
 def main(video_url: str, out: Path) -> int:
     rep: dict = {"video_url": video_url, "steps": []}
 
-    def step(name, ok, **info):
-        rep["steps"].append({"step": name, "ok": ok, **info})
-        print(f"[buffer-test] {'OK ' if ok else 'BAD'} {name} {info}")
+    def step(label, ok, **info):
+        rep["steps"].append({"step": label, "ok": ok, **info})
+        print(f"[buffer-test] {'OK ' if ok else 'BAD'} {label} {info}")
 
     try:
         q = " ".join(f'{e}: __type(name: "{e}") {{ enumValues {{ name }} }}' for e in ENUMS)
@@ -34,7 +34,7 @@ def main(video_url: str, out: Path) -> int:
 
     try:
         org, chan = P.buffer_channel()
-        step("find YouTube channel", True, channel=chan, name=P._channel_cache.get("name"))
+        step("find YouTube channel", True, channel=chan, channel_name=P._channel_cache.get("name"))
     except Exception as exc:
         step("find YouTube channel", False, error=str(exc)[:300])
         return finish(rep, out)
