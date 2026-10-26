@@ -3,7 +3,7 @@
   "slug": "mcdonalds",
   "company": "McDonald's",
   "theme": "bold_bright",
-  "status": "ready",
+  "status": "delivered",
   "title": "Is McDonald's Even a Burger Company?",
   "description": "Is McDonald's Even a Burger Company?.\n\nSources:\n- McDonald's 2025 Form 10-K (SEC): https://www.sec.gov/Archives/edgar/data/63908/000006390826000035/mcd-20251231.htm\n- McDonald's 2025 systemwide sales: https://komo.ai/directory/mcdonalds\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
@@ -118,5 +118,15 @@
     }
   ],
   "loop": "So next time you walk into a McDonald's, remember:",
-  "score": 90
+  "score": 90,
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-002-mcdonalds",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-002-mcdonalds/002-mcdonalds.mp4",
+    "post_at": "2026-10-26T21:00:00-04:00",
+    "buffer_post": "6adfd3fb5d20d74bbd9e20b9",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-10-26T22:28:11.812602+00:00",
+    "seconds": 42.63
+  }
 }

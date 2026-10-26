@@ -3,7 +3,7 @@
   "slug": "meta-ads",
   "company": "Meta",
   "theme": "dark_neon",
-  "status": "ready",
+  "status": "delivered",
   "title": "Who Pays for Your Instagram?",
   "description": "Who Pays for Your Instagram?.\n\nSources:\n- Meta Q4 and full-year 2025 results (press release): https://s21.q4cdn.com/399680738/files/doc_financials/2025/q4/Meta-12-31-2025-Exhibit-99-1-FINAL.pdf\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
@@ -98,5 +98,15 @@
     }
   ],
   "loop": "So next time you open Instagram, ask yourself:",
-  "score": 92
+  "score": 92,
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-019-meta-ads",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-019-meta-ads/019-meta-ads.mp4",
+    "post_at": "2026-10-26T20:00:00-04:00",
+    "buffer_post": "6adfd3c05d20d74bbd9e128e",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-10-26T22:27:12.329349+00:00",
+    "seconds": 29.02
+  }
 }

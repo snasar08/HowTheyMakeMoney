@@ -3,7 +3,7 @@
   "slug": "google-apple",
   "company": "Google & Apple",
   "theme": "dark_neon",
-  "status": "ready",
+  "status": "delivered",
   "title": "Why Does Google Pay Apple $20 Billion?",
   "description": "Why Does Google Pay Apple $20 Billion?.\n\nSources:\n- Google paid Apple $20B in 2022 (Business Today): https://www.businesstoday.in/amp/technology/news/story/google-paid-apple-a-staggering-20-billion-in-2022-for-default-search-engine-status-427909-2024-05-02\n- Google spent $26.3B on defaults in 2021 (PhoneArena): https://www.phonearena.com/news/google-pays-big-bucks-to-be-default-search-engine_id152057\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
@@ -95,5 +95,15 @@
     }
   ],
   "loop": "So next time you search something on your phone, ask yourself:",
-  "score": 95
+  "score": 95,
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-009-google-apple",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-009-google-apple/009-google-apple.mp4",
+    "post_at": "2026-10-26T19:00:00-04:00",
+    "buffer_post": "6adfd3949a87effac428f648",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-10-26T22:26:29.061438+00:00",
+    "seconds": 34.37
+  }
 }
