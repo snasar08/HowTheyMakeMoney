@@ -55,5 +55,71 @@
     "fetched_at": "2026-10-26T11:39:45.769742+00:00",
     "ok": false,
     "error": "TimeoutError('The read operation timed out')"
+  },
+  "https://data.sec.gov/submissions/CIK0000320187.json": {
+    "file": "pages/80a2fd34afb3.txt",
+    "fetched_at": "2026-10-26T11:43:21.193860+00:00",
+    "ok": false,
+    "error": "HTTP 403"
+  },
+  "https://data.sec.gov/api/xbrl/companyconcept/CIK0000320187/us-gaap/Revenues.json": {
+    "file": "pages/6cb5e989d428.txt",
+    "fetched_at": "2026-10-26T11:43:21.639316+00:00",
+    "ok": false,
+    "error": "HTTP 403"
+  },
+  "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000320187&type=10-K&dateb=&owner=include&count=5": {
+    "file": "pages/856d1b8de8c2.txt",
+    "fetched_at": "2026-10-26T11:43:21.981371+00:00",
+    "ok": false,
+    "error": "HTTP 403"
+  },
+  "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000053201104": {
+    "file": "pages/95e66c838663.txt",
+    "fetched_at": "2026-10-26T11:43:22.468674+00:00",
+    "ok": true,
+    "chars": 375,
+    "status": 200,
+    "final_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000053201104",
+    "content_type": "application/json"
+  },
+  "https://investors.coca-colacompany.com/": {
+    "file": "pages/131f67f41432.txt",
+    "fetched_at": "2026-10-26T11:43:23.020326+00:00",
+    "ok": true,
+    "chars": 3690,
+    "status": 200,
+    "final_url": "https://investors.coca-colacompany.com/",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://www.walmart.com/": {
+    "file": "pages/c8869eb0c4df.txt",
+    "fetched_at": "2026-10-26T11:43:23.430954+00:00",
+    "ok": true,
+    "chars": 3768,
+    "status": 200,
+    "final_url": "https://www.walmart.com/",
+    "content_type": "text/html; charset=utf-8"
+  },
+  "https://news.walmart.com/": {
+    "file": "pages/7bf3e7fecbe2.txt",
+    "fetched_at": "2026-10-26T11:43:23.847140+00:00",
+    "ok": false,
+    "error": "URLError(TimeoutError('timed out'))"
+  },
+  "https://stock.walmart.com/investors/financial-information/quarterly-results/default.aspx": {
+    "file": "pages/ce624083046f.txt",
+    "fetched_at": "2026-10-26T11:44:24.364384+00:00",
+    "ok": true,
+    "chars": 21269,
+    "status": 200,
+    "final_url": "https://stock.walmart.com/financial-information/financial-results",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://s2.q4cdn.com/470004039/files/doc_financials/2025/q4/_10-K-2025-As-Filed.pdf": {
+    "file": "pages/d3f493af05c3.txt",
+    "fetched_at": "2026-10-26T11:44:24.910957+00:00",
+    "ok": false,
+    "error": "HTTP 404"
   }
 }

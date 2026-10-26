@@ -1,0 +1,8 @@
+URL: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000053201104
+FINAL_URL: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000053201104
+FETCHED: 2026-10-26T11:43:22.468674+00:00
+
+{"status":"REQUEST_SUCCEEDED","responseTime":98,"message":["No Data Available for Series OEUN000000000000053201104 Year: 2023","No Data Available for Series OEUN000000000000053201104 Year: 2024"],"Results":{
+"series":
+[{"seriesID":"OEUN000000000000053201104","data":[{"year":"2025","period":"A01","periodName":"Annual","latest":"true","value":"288650","footnotes":[{}]}]}]
+}}
