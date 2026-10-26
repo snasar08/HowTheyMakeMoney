@@ -12,6 +12,20 @@ Every Short answers one question: **how does this company (or industry) actually
 - Use each visual type at most twice per Short, and vary the order from Short to Short so
   videos don't feel templated.
 
+## Topics (who we cover)
+- **Household names only** — companies nearly everyone has heard of and uses or sees.
+- **Jobs and careers people are curious about** — how YouTubers, streamers, pilots, NBA players,
+  real estate agents, dentists, Uber drivers, etc. make money. Use industry/official data
+  (BLS, league CBAs, platform payout docs), never one real person's private finances.
+- Viewers skew young: keep every hook, CTA and comment prompt kid-safe.
+
+## Repeats (YouTube demonetizes repetitive content)
+- A company may come back only with a **clearly different angle and new information**: a new
+  hook, new B-roll prompts/images, and a different scene structure (different visual-type order
+  and different key figures). Never a near-copy of an earlier script.
+- Before writing, read `content/angles.md`. After writing, add one line per new script:
+  `NNN | company | angle in one sentence | key figures used`.
+
 ## Facts (non-negotiable)
 - Every number must come from a source you actually opened: company filings (SEC 10-K/10-Q/8-K,
   annual reports, earnings releases) first, then reputable reporting. List them in `sources`.

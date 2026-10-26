@@ -61,11 +61,17 @@ and **free beyond his Higgsfield Pro plan** — never add a paid service or ask 
    `test-shorts` artifact and confirm it works on GitHub's machines.
 5. Ask Sam to Watch the repo (Watch → Custom → Releases) so release notifications reach his phone.
 
-## Weekly script batch (scheduled task, Sundays)
-Goal: keep at least 14 `ready` scripts in the queue.
-1. Count ready scripts. Write enough new ones to bring the queue to 21 (max 14 per run).
-2. Read `content/STYLE.md` and a few existing scripts. Pick topics from `content/topics.md` not
-   already in `content/scripts/` (check `company`/`slug`). Move used topics to the Used list.
+## Weekly script batch (cloud routines, Saturdays — two parts so one session never runs too long)
+Posting uses 14 Shorts/week (2/day). Goal: build a buffer, capped so credits aren't wasted.
+1. Count `ready` scripts. **If 45 or more are ready, write nothing** (still do step 8). Otherwise
+   write `min(15, 45 - ready)` new scripts in this part (part 1 ~12:30 ET, part 2 ~4:30 PM ET,
+   so up to 30/week).
+2. Read `content/STYLE.md`, `content/angles.md` and a few existing scripts. Topics: household-name
+   companies, plus jobs/careers people are curious about (YouTubers, streamers, pilots, NBA
+   players, real estate agents…). Pick from `content/topics.md` or add new ones. A repeat company
+   needs a clearly different angle, new figures, new hook, new B-roll and a different structure —
+   never a near-copy (YouTube demonetizes repetitive content). Log each angle in `angles.md`.
+   Move used topics to the Used list.
 3. Research each with web search. Use only figures from sources you opened (filings first).
    Put every source in `sources` and in the description (see existing scripts' format).
 4. Next ids continue from the highest existing `NNN`. Same JSON shape as existing scripts.
@@ -74,8 +80,14 @@ Goal: keep at least 14 `ready` scripts in the queue.
    (1 credit each). Pro plan allows only **4 images at a time** — submit groups of 4, wait with
    `jobs_wait`, then the next 4. Put each `result_url` into `images.hook.url`, `images.mid.url`, `images.broll1.url`, `images.broll2.url` (4 images per Short).
    Check `balance` first; if under 60 credits, write the scripts but stop before images and leave
-   a note in the commit message.
+   a note in the commit message. No real people or logos in prompts.
 6. Validate every file parses as JSON and has 5–6 scenes, then commit and push to `main`.
+7. Never leave a script with `status: "ready"` and missing image URLs — set `status: "draft"` if
+   images couldn't be made, so the nightly run skips it.
+8. On the first Saturday of the month (part 1 only), open a GitHub issue "Monthly report YYYY-MM":
+   Shorts delivered last month (count `delivered` with dates), queue size, Higgsfield credits left,
+   failures / `::warning` audio or Buffer issues from the last month's Actions runs, and anything
+   that needs Sam.
 
 ## Rules
 - Never invent numbers. Never use real logos or people in image prompts.
