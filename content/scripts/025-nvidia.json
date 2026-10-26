@@ -83,7 +83,7 @@
       }
     },
     {
-      "narration": "Gaming is small now. Data centers lead. Follow for more.",
+      "narration": "Gaming is small now. Data centers lead.",
       "visual": {
         "type": "text",
         "text": "Gaming is small now.",
@@ -96,5 +96,7 @@
       "title": "NVIDIA Q4 and fiscal 2026 results (press release)",
       "url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Fourth-Quarter-and-Fiscal-2026/default.aspx"
     }
-  ]
+  ],
+  "loop": "So next time you game on a new graphics card, ask yourself:",
+  "score": 76
 }

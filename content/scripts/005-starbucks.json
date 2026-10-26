@@ -75,7 +75,7 @@
       }
     },
     {
-      "narration": "So that forgotten gift card in your drawer is quietly Starbucks profit. Follow for more.",
+      "narration": "So that forgotten gift card in your drawer is quietly Starbucks profit.",
       "visual": {
         "type": "text",
         "text": "Forgotten gift card",
@@ -92,5 +92,7 @@
       "title": "Starbucks breakage revenue (MarketWatch via Tiger)",
       "url": "https://www.itiger.com/news/2531706822"
     }
-  ]
+  ],
+  "loop": "So check that gift card in your drawer, and ask yourself:",
+  "score": 84
 }

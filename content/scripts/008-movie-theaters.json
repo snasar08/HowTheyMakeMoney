@@ -72,7 +72,7 @@
       }
     },
     {
-      "narration": "So the movie gets you through the door, and the popcorn pays the rent. Follow for more.",
+      "narration": "So the movie gets you through the door, and the popcorn pays the rent.",
       "visual": {
         "type": "text",
         "text": "The movie gets you in.",
@@ -89,5 +89,7 @@
       "title": "Theater ticket split and AMC concession margin (Motley Fool via Webull)",
       "url": "https://www.webull.ca/news-detail/13963708595160064"
     }
-  ]
+  ],
+  "loop": "So next time you buy that bucket, ask yourself:",
+  "score": 88
 }

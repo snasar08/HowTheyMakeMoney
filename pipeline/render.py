@@ -43,14 +43,14 @@ SCENE_GAP = 0.06                     # seconds of silence between scenes
 END_HOLD = 0.7
 BEAT_TARGET = float(os.environ.get("BEAT_TARGET", "1.4"))  # seconds per shot
 BEAT_MAX = 2.0  # Sam: something new on screen at least every 2 s
-# Spoken + on-screen like/subscribe/comment ask, added after the middle scene as its own clip
-# (sentences "|"-separated, voiced together so Kokoro breathes at the periods). Each on-screen
-# piece pops in on its own word. A script can replace the line with "cta"; CTA_LINE="" turns
-# it off. Keep it kid-safe: Shorts viewers skew young.
-CTA_LINE = os.environ.get("CTA_LINE", "Like if that surprised you.|Subscribe for a new breakdown every day."
-                                      "|And comment which company we should break down next!")
-CTA_QUESTION = "Which company should we break down next?"
+# Spoken + on-screen comment/subscribe ask at the END of the last scene (Sam: the mid-video
+# like/subscribe ask broke the flow). Then the script's "loop" line, which leads back into the
+# hook so the Short replays seamlessly. Each on-screen piece pops in on its own word. A script
+# can replace the line with "cta"; CTA_LINE="" turns it off. Keep it kid-safe.
+CTA_LINE = os.environ.get("CTA_LINE", "Comment which brand we should do next, and subscribe.")
+CTA_QUESTION = "Which brand should we do next?"
 CTA_Y = 430
+PROGRESS_H = 9                       # px, progress bar at the top edge
 CTA_PAUSE = 0.15                     # short beat before the CTA (longer sounded awkward)
 
 _font_cache: dict = {}
@@ -296,11 +296,11 @@ class Scene:
 
 
 class Renderer:
-    def __init__(self, script: dict):
+    def __init__(self, script: dict, load_images: bool = True):
         self.s = script
         self.theme = get_theme(script.get("theme", "dark_neon"))
         self.captions = CaptionRenderer(self.theme)
-        imgs = script.get("images", {})
+        imgs = script.get("images", {}) if load_images else {}
         self.images = {k: fetch_image((v or {}).get("url")) for k, v in imgs.items()}
         self.images = {k: v for k, v in self.images.items() if v is not None}
         self.bg = gradient(self.theme["bg_top"], self.theme["bg_bottom"])
@@ -407,13 +407,15 @@ class Renderer:
         big, sub = sc.visual.get("overlay"), sc.visual.get("overlay_sub")
         if big and first:
             d = ImageDraw.Draw(frame)
-            pop = ease_out_back(t / 0.3)
+            # the very first frame already shows the hook in full: viewers decide in ~1 s
+            opener = sc.visual is self.s["scenes"][0]["visual"]
+            pop = 1.0 if opener else ease_out_back(t / 0.3)
             f = fit_font(big, BLACK, SAFE_X1 - SAFE_X0, 150, 70)
             if pop < 1.0:
                 f = font(BLACK, max(20, int(f.size * (0.6 + 0.4 * pop))))
             col = self.theme["accent"] if self.s.get("theme") != "clean_navy" else (255, 255, 255)
             draw_centered(d, (SAFE_X0 + SAFE_X1) / 2, 380, big, f, col, 6, (0, 0, 0))
-            if sub and t > 0.2:
+            if sub and (opener or t > 0.2):
                 fs = fit_font(sub, SEMI, SAFE_X1 - SAFE_X0, 58, 36)
                 draw_centered(d, (SAFE_X0 + SAFE_X1) / 2, 380 + f.size + 26, sub, fs, (255, 255, 255), 4, (0, 0, 0))
         return frame
@@ -732,33 +734,37 @@ class Renderer:
     def prepare(self) -> list[Scene]:
         scenes = []
         self.cta_q = CTA_QUESTION
-        cta_parts = [p.strip() for p in self.s.get("cta", CTA_LINE).split("|") if p.strip()]
-        cta_si = len(self.s["scenes"]) // 2 - 1 if cta_parts else -1
+        cta_line = " ".join(p.strip() for p in self.s.get("cta", CTA_LINE).split("|") if p.strip())
+        loop = (self.s.get("loop") or "").strip()
+        last = len(self.s["scenes"]) - 1
         self.joins = []  # (scene, start, end) silences that must stay silent — for the checker
         self.cta = None
+        sr = tts.SAMPLE_RATE
         for i, raw in enumerate(self.s["scenes"]):
             sc = Scene(raw["narration"], raw["visual"])
             sc.audio, timings = tts.synthesize(sc.narration)
-            speech = len(sc.audio) / tts.SAMPLE_RATE
+            speech = len(sc.audio) / sr
             sc.words = align_words(sc.narration, timings, speech)
-            if i == cta_si:
-                # each CTA sentence is its own clip with silence around it; gluing it onto the
-                # scene's sentence made Kokoro run everything together in one breath
-                # one clip with periods between sentences reads naturally (Kokoro breathes at
-                # the periods); padding silence between separate clips sounded stilted
-                sr = tts.SAMPLE_RATE
-                line = " ".join(cta_parts)
-                c_audio, c_timings = tts.synthesize(line)
-                c_speech = len(c_audio) / sr
-                self.joins.append((i, speech, speech + CTA_PAUSE))
-                off = speech + CTA_PAUSE
-                tail = [Word(w.text, w.start + off, w.end + off) for w in align_words(line, c_timings, c_speech)]
-                sc.audio = np.concatenate([sc.audio, np.zeros(int(CTA_PAUSE * sr), np.float32), c_audio])
-                sc.narration = sc.narration.rstrip() + " " + line
-                sc.words = sc.words + tail
-                speech = off + c_speech
+            tails = {}
+            if i == last:
+                # the CTA, then the loop line, each its own clip after a short beat; gluing them
+                # onto the scene's sentence made Kokoro run everything together in one breath
+                for name, line in (("cta", cta_line), ("loop", loop)):
+                    if not line:
+                        continue
+                    c_audio, c_timings = tts.synthesize(line)
+                    c_speech = len(c_audio) / sr
+                    self.joins.append((i, speech, speech + CTA_PAUSE))
+                    off = speech + CTA_PAUSE
+                    tails[name] = [Word(w.text, w.start + off, w.end + off)
+                                   for w in align_words(line, c_timings, c_speech)]
+                    sc.audio = np.concatenate([sc.audio, np.zeros(int(CTA_PAUSE * sr), np.float32), c_audio])
+                    sc.narration = sc.narration.rstrip() + " " + line
+                    sc.words = sc.words + tails[name]
+                    speech = off + c_speech
             sc.duration = speech + SCENE_GAP
-            if i == cta_si and sc.words:
+            if tails.get("cta"):
+                tail = tails["cta"]
 
                 def at(word, default):
                     for w in tail:
@@ -766,8 +772,10 @@ class Renderer:
                             return w.start
                     return default
                 t0 = tail[0].start
-                self.cta = {"si": i, "start": t0, "end": sc.duration, "like": at("like", t0),
-                            "sub": at("subscribe", t0 + 0.8), "com": at("comment", t0 + 2.0)}
+                # overlay clears when the loop line starts, so the replay seam is clean
+                end = tails["loop"][0].start - 0.1 if tails.get("loop") else sc.duration
+                self.cta = {"si": i, "start": t0, "end": end, "like": at("like", None),
+                            "sub": at("subscribe", t0 + 0.8), "com": at("comment", t0)}
             scenes.append(sc)
         scenes[-1].duration += END_HOLD
         for sc in scenes:
@@ -797,6 +805,7 @@ class Renderer:
             wav = Path(tmp) / "voice.wav"
             sf.write(wav, audio, sr)
             total_frames = int(math.ceil(len(audio) / sr * FPS))
+            total_s = len(audio) / sr
             cmd = ["ffmpeg", "-y", "-loglevel", "error",
                    "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}", "-r", str(FPS), "-i", "-",
                    "-i", str(wav),
@@ -813,7 +822,6 @@ class Renderer:
                 si = min(int(np.searchsorted(starts, gt, side="right") - 1), len(scenes) - 1)
                 sc, t = scenes[si], gt - starts[si]
                 frame, tb = self.draw(sc, si, t)
-                self._caption(frame, chunks[si], t)
                 if gt > 0.05 and tb < 0.14:  # punch-in + light flash on every cut
                     z = 1.07 - 0.07 * ease_out(tb / 0.14)
                     cw, ch = W / z, H / z
@@ -822,6 +830,10 @@ class Renderer:
                     if tb < 0.07:
                         frame = Image.blend(frame, flash, 0.22 * (1 - tb / 0.07))
                 self._cta(frame, si, t)
+                self._caption(frame, chunks[si], t)  # after the CTA dim, so captions stay bright
+                # thin progress bar along the top edge keeps people watching to the end
+                ImageDraw.Draw(frame).rectangle((0, 0, int(W * min(1.0, gt / total_s)), PROGRESS_H),
+                                                fill=self.theme["accent"])
                 return frame.tobytes()
 
             make(0)  # warm the shared caches before going parallel
@@ -889,7 +901,10 @@ class Renderer:
 
     def _cta(self, frame: Image.Image, si: int, t: float):
         c = self.cta
-        if not c or si != c["si"] or not (c["like"] - 0.1 <= t <= c["end"]):
+        if not c or si != c["si"] or not (c["start"] - 0.1 <= t <= c["end"]):
+            return
+        if c["like"] is None:  # comment + subscribe only (the default end-of-video ask)
+            self._cta_end(frame, c, t)
             return
         if not hasattr(self, "_cta_parts"):
             self._cta_parts = {
@@ -934,6 +949,46 @@ class Renderer:
         if t >= c["com"] - 0.1:
             b = P["bubble"]
             self._pop(frame, b, W / 2, CTA_Y + 90 + b.height / 2, (t - c["com"] + 0.1) / 0.3)
+
+    def _cta_end(self, frame: Image.Image, c: dict, t: float):
+        """Comment bubble pops on "comment", then SUBSCRIBE gets clicked → SUBSCRIBED."""
+        if not hasattr(self, "_cta_parts"):
+            self._cta_parts = {
+                "sub": self._pill("SUBSCRIBE", (230, 33, 23), (255, 255, 255), None),
+                "subbed": self._pill("SUBSCRIBED", (70, 70, 70), (235, 235, 235), "check"),
+                "bubble": self._bubble(self.cta_q),
+            }
+        P = self._cta_parts
+        fade = min(1.0, (t - c["start"] + 0.1) / 0.25)
+        out = min(1.0, max(0.0, (c["end"] - t) / 0.2))  # fade out before the loop line
+        a = int(110 * fade * out) // 10 * 10
+        if ("ctadim", a) not in self._base:
+            self._base[("ctadim", a)] = Image.new("RGBA", (W, H), (0, 0, 0, a))
+        dim = self._base[("ctadim", a)]
+        frame.paste(dim, (0, 0), dim)
+        if out < 1.0:
+            return
+        b = P["bubble"]
+        self._pop(frame, b, W / 2, CTA_Y + b.height / 2, (t - c["com"] + 0.1) / 0.3)
+        if t >= c["sub"] - 0.1:
+            click = c["sub"] + 0.5
+            sub_img = P["subbed"] if t >= click else P["sub"]
+            sy = ZONE_TOP - 80  # low and clear of the scene's own text/chart, above captions
+            p = (t - c["sub"] + 0.1) / 0.3
+            if click <= t < click + 0.25:
+                p = 1.0
+                sub_img = sub_img.resize((int(sub_img.width * 0.94), int(sub_img.height * 0.94)), Image.BILINEAR)
+            self._pop(frame, sub_img, W / 2, sy, p)
+            if t < click + 0.5:  # cursor glides in and taps the button
+                k = ease_out(min(1.0, max(0.0, (t - c["sub"] - 0.05) / 0.45)))
+                ax = W / 2 + 40 + (1 - k) * 260
+                ay = sy + 20 + (1 - k) * 320
+                s = 0.85 if click <= t < click + 0.15 else 1.0
+                arrow = [(0, 0), (0, 62), (16, 48), (28, 76), (40, 70), (28, 44), (50, 44)]
+                pts = [(ax + x * s, ay + y * s) for x, y in arrow]
+                d = ImageDraw.Draw(frame)
+                d.polygon(pts, fill=(255, 255, 255), outline=(0, 0, 0))
+                d.line(pts + [pts[0]], fill=(0, 0, 0), width=4)
 
     def _caption(self, frame: Image.Image, chunks: list[list[Word]], t: float):
         for ch in chunks:

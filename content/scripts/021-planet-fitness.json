@@ -88,7 +88,7 @@
       }
     },
     {
-      "narration": "Members pay monthly. Owners pay for the machines. Follow for more.",
+      "narration": "Members pay monthly. Owners pay for the machines.",
       "visual": {
         "type": "text",
         "text": "Members pay monthly.",
@@ -101,5 +101,7 @@
       "title": "Planet Fitness Q4 and year-end 2025 results (press release)",
       "url": "https://investor.planetfitness.com/investors/press-releases/press-release-details/2026/Planet-Fitness-Inc--Announces-Fourth-Quarter-and-Year-End-2025-Results/default.aspx"
     }
-  ]
+  ],
+  "loop": "So next time you hit the gym, ask yourself:",
+  "score": 63
 }

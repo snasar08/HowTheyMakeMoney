@@ -72,7 +72,7 @@
       }
     },
     {
-      "narration": "Spotify keeps about 30 cents, and uses it to build podcasts, audiobooks and video. Follow for more.",
+      "narration": "Spotify keeps about 30 cents, and uses it to build podcasts, audiobooks and video.",
       "visual": {
         "type": "text",
         "text": "Spotify keeps ~30¢",
@@ -89,5 +89,7 @@
       "title": "Spotify royalties and revenue share (Mezha)",
       "url": "https://mezha.ua/en/news/spotify-11b-royaltie-308105/"
     }
-  ]
+  ],
+  "loop": "So next time your Spotify bill hits, ask yourself:",
+  "score": 83
 }

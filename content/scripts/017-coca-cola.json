@@ -84,7 +84,7 @@
       }
     },
     {
-      "narration": "Sell the syrup, and let partners handle the bottles. Follow for more.",
+      "narration": "Sell the syrup, and let partners handle the bottles.",
       "visual": {
         "type": "text",
         "text": "Sell the syrup.",
@@ -101,5 +101,7 @@
       "title": "Coca-Cola Q4 2025 earnings release (full PDF with segment tables)",
       "url": "https://www.coca-colacompany.com/content/dam/company/us/en/media-center/Coca-Cola%20Q4%202025%20Earnings%20Release_Full%20Release_2.10.26.pdf"
     }
-  ]
+  ],
+  "loop": "So next time you crack open a Coke, ask yourself:",
+  "score": 71
 }

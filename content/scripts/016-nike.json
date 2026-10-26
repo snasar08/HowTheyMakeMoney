@@ -84,7 +84,7 @@
       }
     },
     {
-      "narration": "About 59 percent of Nike's revenue comes from selling to other retailers. Follow for more.",
+      "narration": "About 59 percent of Nike's revenue comes from selling to other retailers.",
       "visual": {
         "type": "donut",
         "value": 59,
@@ -97,5 +97,7 @@
       "title": "NIKE, Inc. fiscal 2026 Q4 and full-year results",
       "url": "https://about.nike.com/en/newsroom/releases/nike-inc-reports-fiscal-2026-fourth-quarter-and-full-year-results"
     }
-  ]
+  ],
+  "loop": "So next time you buy new sneakers, ask yourself:",
+  "score": 58
 }

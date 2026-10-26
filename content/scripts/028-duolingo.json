@@ -76,7 +76,7 @@
       }
     },
     {
-      "narration": "Its goal is 100 million daily users. Follow for more.",
+      "narration": "Its goal is 100 million daily users.",
       "visual": {
         "type": "text",
         "text": "Free comes first.",
@@ -89,5 +89,7 @@
       "title": "Duolingo Q4 and full-year 2025 results (press release via Investing News Network)",
       "url": "https://investingnews.com/duolingo-reports-fourth-quarter-and-full-year-2025-results/"
     }
-  ]
+  ],
+  "loop": "So next time that owl reminds you, ask yourself:",
+  "score": 79
 }

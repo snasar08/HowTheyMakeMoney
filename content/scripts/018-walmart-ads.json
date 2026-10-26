@@ -86,7 +86,7 @@
       }
     },
     {
-      "narration": "Groceries bring people in. Ads and memberships pay extra. Follow for more.",
+      "narration": "Groceries bring people in. Ads and memberships pay extra.",
       "visual": {
         "type": "text",
         "text": "Groceries bring you in.",
@@ -99,5 +99,7 @@
       "title": "Walmart Q4 and fiscal 2026 earnings release",
       "url": "https://stock.walmart.com/sec-filings/all-sec-filings/content/0000104169-26-000032/earningsreleasefy26q4.htm"
     }
-  ]
+  ],
+  "loop": "So next time you shop at Walmart, ask yourself:",
+  "score": 62
 }

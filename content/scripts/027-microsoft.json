@@ -87,7 +87,7 @@
       }
     },
     {
-      "narration": "Azure passed 100 billion dollars in a year for the first time, and Copilot has over 30 million paid seats. Follow for more.",
+      "narration": "Azure passed 100 billion dollars in a year for the first time, and Copilot has over 30 million paid seats.",
       "visual": {
         "type": "text",
         "text": "Cloud and AI",
@@ -100,5 +100,7 @@
       "title": "Microsoft fiscal 2026 Q4 earnings press release",
       "url": "https://www.microsoft.com/en-us/investor/earnings/fy-2026-q4/press-release-webcast"
     }
-  ]
+  ],
+  "loop": "So next time you open Word or Xbox, ask yourself:",
+  "score": 55
 }

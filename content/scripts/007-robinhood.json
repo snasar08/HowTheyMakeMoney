@@ -84,7 +84,7 @@
       }
     },
     {
-      "narration": "So when an app is free, look at what it earns from you using it. Follow for more.",
+      "narration": "So when an app is free, look at what it earns from you using it.",
       "visual": {
         "type": "text",
         "text": "Free app?",
@@ -101,5 +101,7 @@
       "title": "Robinhood FY2025 revenue breakdown (Beancount)",
       "url": "https://beancount.io/blog/2026/02/12/robinhood-q4-fy2025-earnings-analysis"
     }
-  ]
+  ],
+  "loop": "So next time an app says free, ask yourself:",
+  "score": 77
 }

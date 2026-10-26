@@ -15,11 +15,19 @@ and **free beyond his Higgsfield Pro plan** — never add a paid service or ask 
 - `pipeline/music.py` — background music synthesized in numpy (original, nothing to license),
   seeded per script, ducked under the voice. `MUSIC_GAIN` env var (default 0.12, 0 = off).
   Sam disliked the whoosh sound on cuts, so it was removed — don't add cut SFX back.
-- Mid-video CTA (`CTA_LINE` in `render.py`): "Like if that surprised you. Subscribe… And comment
-  which company we should break down next!" voiced as ONE clip after a 0.15 s beat — gluing it onto
-  the scene's sentence garbled it, and long pauses between sentences sounded stilted. Animated
-  LIKE / SUBSCRIBE→SUBSCRIBED / comment bubble pop in on their words. Keep prompts kid-safe
-  (Shorts audience is young) — no per-company opinion questions.
+- End-of-video CTA (`CTA_LINE` in `render.py`): "Comment which brand we should do next, and
+  subscribe." after the last scene's answer (Sam removed the mid-video like/subscribe ask — it
+  broke the flow). Comment bubble + SUBSCRIBE→SUBSCRIBED pop in on their words. Then the script's
+  `loop` line ("So next time you … ask yourself:") which leads straight back into the opening
+  question, so the replay is seamless. No "Follow for more". Keep prompts kid-safe.
+- First frame shows the hook overlay fully (no pop-in); thin progress bar along the top edge.
+- Quality gate (`gate()` in `run.py`): a Short is NOT posted if clarity < 90%, a breath run
+  > 8 s, clipping, untimed captions, failed images, or a chart in the caption zone. It's marked
+  `status: "needs_fix"` with reasons and the next ready script takes its slot.
+- Posting order: `score` (0–100 virality estimate) — nightly posts the highest-scoring ready
+  Short first, then by id.
+- `.github/workflows/stats.yml` (Fridays) → `content/performance.json`: public views/likes/
+  comments per Short via the YouTube Data API. Needs secret `YT_API_KEY`; skips without it.
 - `pipeline/audio_check.py` runs after every render: one-breath runs (>6 s), syllables/s per
   scene, swallowed words, silent CTA beat, clipping. Prints `::warning`s; `AUDIO_CHECK=strict`
   blocks delivery.
@@ -87,6 +95,19 @@ Posting uses 14 Shorts/week (2/day). Goal: build a buffer, capped so credits are
 1. Count `ready` scripts. **If 45 or more are ready, write nothing** (still do step 8). Otherwise
    write `min(15, 45 - ready)` new scripts in this part (part 1 ~12:30 ET, part 2 ~4:30 PM ET,
    so up to 30/week).
+   First, fix any `status: "needs_fix"` scripts (reasons are in `needs_fix`; e.g. reword lines
+   with unclear words, shorten long sentences), then set them back to `ready` and drop the field.
+   If `content/performance.json` exists, read it: lean toward the topics and hook styles of the
+   most-viewed Shorts and away from the least-viewed.
+   **Score gate (Sam wants ~90/100 virality):** give every idea a `score` 0–100 (would a
+   13–18-year-old stop scrolling? topic they use/love × question hook × surprising number) and
+   only write ideas scoring **85+**. Gaming, phones, apps teens use, food/snacks, sneakers,
+   sports, YouTubers/streamers rank high; hotels, B2B, software for offices rank low. Store the
+   number in the script's `score` field (the nightly run posts the highest first).
+   Every script also needs: a question as the first line, the overlay and the title, and a
+   `loop` field — one short line spoken last ("So next time you …, ask yourself:") that leads
+   back into the opening question. The last scene must not say "Follow for more" (the CTA is
+   added automatically).
 2. Read `content/STYLE.md`, `content/angles.md` and a few existing scripts. Topics: household-name
    companies, plus jobs/careers people are curious about (YouTubers, streamers, pilots, NBA
    players, real estate agents…). Pick from `content/topics.md` or add new ones. A repeat company

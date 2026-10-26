@@ -88,7 +88,7 @@
       }
     },
     {
-      "narration": "Food and workers take more than half of every dollar. Follow for more.",
+      "narration": "Food and workers take more than half of every dollar.",
       "visual": {
         "type": "text",
         "text": "Food and workers",
@@ -101,5 +101,7 @@
       "title": "Chipotle Q4 and full-year 2025 results (press release)",
       "url": "https://ir.chipotle.com/2026-02-03-CHIPOTLE-ANNOUNCES-FOURTH-QUARTER-AND-FULL-YEAR-2025-RESULTS"
     }
-  ]
+  ],
+  "loop": "So next time you order a burrito bowl, ask yourself:",
+  "score": 64
 }

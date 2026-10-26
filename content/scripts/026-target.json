@@ -86,7 +86,7 @@
       }
     },
     {
-      "narration": "The shelves bring you in. The side businesses add up. Follow for more.",
+      "narration": "The shelves bring you in. The side businesses add up.",
       "visual": {
         "type": "text",
         "text": "Shelves bring you in.",
@@ -99,5 +99,7 @@
       "title": "Target Q4 and full-year 2025 earnings release",
       "url": "https://corporate.target.com/press/release/2026/03/target-corporation-reports-fourth-quarter-and-full-year-2025-earnings"
     }
-  ]
+  ],
+  "loop": "So next time you see an ad on Target's app, ask yourself:",
+  "score": 50
 }

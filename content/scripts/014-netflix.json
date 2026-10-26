@@ -75,7 +75,7 @@
       }
     },
     {
-      "narration": "After paying for all those shows, Netflix kept about 30 cents of operating profit on every dollar. Follow for more.",
+      "narration": "After paying for all those shows, Netflix kept about 30 cents of operating profit on every dollar.",
       "visual": {
         "type": "donut",
         "value": 29.5,
@@ -96,5 +96,7 @@
       "title": "Netflix ad revenue $1.5B (AdNews)",
       "url": "https://www.adnews.com.au/news/netflix-ad-revenue-hits-1-5-billion"
     }
-  ]
+  ],
+  "loop": "So next time you binge a show, ask yourself:",
+  "score": 72
 }

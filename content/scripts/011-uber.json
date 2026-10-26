@@ -80,7 +80,7 @@
       }
     },
     {
-      "narration": "Uber doesn't own the cars or the restaurants. It owns the app in the middle. Follow for more.",
+      "narration": "Uber doesn't own the cars or the restaurants. It owns the app in the middle.",
       "visual": {
         "type": "text",
         "text": "No cars. No kitchens.",
@@ -97,5 +97,7 @@
       "title": "Uber 2025 gross bookings and take rates (SQ Magazine)",
       "url": "https://sqmagazine.co.uk/uber-statistics/"
     }
-  ]
+  ],
+  "loop": "So next time you call a ride, ask yourself:",
+  "score": 67
 }

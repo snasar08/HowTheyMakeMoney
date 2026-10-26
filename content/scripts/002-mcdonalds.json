@@ -99,7 +99,7 @@
       }
     },
     {
-      "narration": "That's why people call McDonald's a real estate company that happens to sell burgers. Follow for more.",
+      "narration": "That's why people call McDonald's a real estate company that happens to sell burgers.",
       "visual": {
         "type": "text",
         "text": "A landlord",
@@ -116,5 +116,7 @@
       "title": "McDonald's 2025 systemwide sales",
       "url": "https://komo.ai/directory/mcdonalds"
     }
-  ]
+  ],
+  "loop": "So next time you walk into a McDonald's, remember:",
+  "score": 90
 }

@@ -51,7 +51,9 @@ def fix_dollars(toks: list) -> list:
     res, i = [], 0
     while i < len(out):
         t, p = out[i]
-        if t.startswith("$"):
+        if re.fullmatch(r"\$0\.\d\d", t):  # Whisper writes "25 cents" as "$0.25"
+            res += [(str(int(t[3:])), p), ("cents", p)]
+        elif t.startswith("$"):
             res.append((t[1:], p))
             if i + 1 < len(out) and out[i + 1][0] in ("million", "billion", "trillion", "thousand"):
                 res.append(out[i + 1])

@@ -72,7 +72,7 @@
       }
     },
     {
-      "narration": "The movies create the characters. The parks turn them into money. Follow for more.",
+      "narration": "The movies create the characters. The parks turn them into money.",
       "visual": {
         "type": "text",
         "text": "Movies make the fans.",
@@ -89,5 +89,7 @@
       "title": "Disney FY2025 segment operating income (Market Chameleon)",
       "url": "https://marketchameleon.com/articles/b/2025/11/13/disney-earnings-streaming-parks-growth-2025"
     }
-  ]
+  ],
+  "loop": "So next time you watch a Disney movie, ask yourself:",
+  "score": 68
 }

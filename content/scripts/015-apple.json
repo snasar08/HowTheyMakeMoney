@@ -84,7 +84,7 @@
       }
     },
     {
-      "narration": "Phones get you in the door. Services keep paying. Follow for more.",
+      "narration": "Phones get you in the door. Services keep paying.",
       "visual": {
         "type": "text",
         "text": "Phones get you in.",
@@ -101,5 +101,7 @@
       "title": "Apple fiscal 2025 Q4 consolidated financial statements (PDF)",
       "url": "https://www.apple.com/newsroom/pdfs/fy2025-q4/FY25_Q4_Consolidated_Financial_Statements.pdf"
     }
-  ]
+  ],
+  "loop": "So next time you buy a new iPhone, ask yourself:",
+  "score": 74
 }

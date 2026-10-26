@@ -83,7 +83,7 @@
       }
     },
     {
-      "narration": "So the boxes on your doorstep get the attention, but the servers pay the bills. Follow for more.",
+      "narration": "So the boxes on your doorstep get the attention, but the servers pay the bills.",
       "visual": {
         "type": "text",
         "text": "You see the boxes.",
@@ -100,5 +100,7 @@
       "title": "Amazon FY2025 segment analysis (Beancount)",
       "url": "https://beancount.io/blog/2026/07/13/amazon-fy2025-earnings-analysis"
     }
-  ]
+  ],
+  "loop": "So next time a package shows up, ask yourself:",
+  "score": 66
 }

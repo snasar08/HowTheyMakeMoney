@@ -73,7 +73,7 @@
       }
     },
     {
-      "narration": "And selling miles doesn't need fuel, pilots, or planes. It's some of the highest margin money an airline can make. Follow for more.",
+      "narration": "And selling miles doesn't need fuel, pilots, or planes. It's some of the highest margin money an airline can make.",
       "visual": {
         "type": "text",
         "text": "No fuel. No pilots.",
@@ -90,5 +90,7 @@
       "title": "Delta cards ~13% of Amex billed business (View from the Wing)",
       "url": "https://viewfromthewing.com/amex-pays-delta-3-8-cents-per-dollar-charged-why-banks-pay-more-for-miles-than-you-do/"
     }
-  ]
+  ],
+  "loop": "So next time you board a Delta flight, ask yourself:",
+  "score": 60
 }

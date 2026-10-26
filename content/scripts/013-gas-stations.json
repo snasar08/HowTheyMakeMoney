@@ -80,7 +80,7 @@
       }
     },
     {
-      "narration": "So the gas price sign is the ad. The snack aisle is the business. Follow for more.",
+      "narration": "So the gas price sign is the ad. The snack aisle is the business.",
       "visual": {
         "type": "text",
         "text": "The gas gets you to stop.",
@@ -93,5 +93,7 @@
       "title": "NACS State of the Industry, 2025 data",
       "url": "https://www.convenience.org/stay-current/news/2026/april/15/u-s-convenience-in-store-sales-top-%24340-billion"
     }
-  ]
+  ],
+  "loop": "So next time you fill up, ask yourself:",
+  "score": 78
 }

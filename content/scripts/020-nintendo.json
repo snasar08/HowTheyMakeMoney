@@ -83,7 +83,7 @@
       }
     },
     {
-      "narration": "Sell the console, then sell the games. Follow for more.",
+      "narration": "Sell the console, then sell the games.",
       "visual": {
         "type": "text",
         "text": "Sell the console.",
@@ -96,5 +96,7 @@
       "title": "Nintendo financial results explanatory material, Q3 fiscal year ending March 2026",
       "url": "https://www.nintendo.co.jp/ir/pdf/2026/260203_2e.pdf"
     }
-  ]
+  ],
+  "loop": "So next time you play your Switch, ask yourself:",
+  "score": 87
 }

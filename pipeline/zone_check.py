@@ -23,31 +23,37 @@ def overlaps(img, bg) -> int:
     return int((np.abs(a - b).max(axis=2) > 24).any(axis=1).sum())  # rows with chart pixels
 
 
+def script_overlaps(s: dict) -> list[str]:
+    """Problems for one script, e.g. ['scene 3 bars/zoom: 17 rows in caption zone']."""
+    out = []
+    r = Renderer(s, load_images=False)  # charts only; skips downloads
+    for i, v in enumerate(sc["visual"] for sc in s["scenes"]):
+        typ = v.get("type")
+        if typ not in ("stat", "bars", "donut"):
+            continue
+        sc = Scene(narration="", visual=v)
+        t = 60.0  # grid offset is 0 at t >= 50, so the background matches exactly
+        alt = {"stat": r.shot_ticker, "donut": r.shot_waffle, "bars": r.shot_columns}[typ]
+        shots = {"chart": {"stat": r.frame_stat, "bars": r.frame_bars, "donut": r.frame_donut}[typ](sc, t, 0),
+                 "zoom": r.shot_chartzoom(sc, 0, 1.0),
+                 "alt": alt(sc, None, 1, t, 1.0)}
+        bg = r.live_bg(t)
+        z = 1.16  # chartzoom at p=1 scales the background too; compare like with like
+        zbg = bg.resize(bg.size, box=(bg.width * (1 - 1 / z) / 2, ZONE_TOP - ZONE_TOP / z,
+                                      bg.width * (1 + 1 / z) / 2, ZONE_TOP - ZONE_TOP / z + bg.height / z))
+        for name, img in shots.items():
+            n = overlaps(img, zbg if name == "zoom" else bg)
+            if n:
+                out.append(f"scene {i + 1} {typ}/{name}: {n} rows in caption zone")
+    return out
+
+
 def main() -> int:
     bad = 0
     for p in sorted(Path("content/scripts").glob("0*.json")):
-        s = json.loads(p.read_text(encoding="utf-8"))
-        r = Renderer(s)
-        r.images = {}  # charts only; skips downloads
-        for i, v in enumerate(sc["visual"] for sc in s["scenes"]):
-            typ = v.get("type")
-            if typ not in ("stat", "bars", "donut"):
-                continue
-            sc = Scene(narration="", visual=v)
-            t = 60.0  # grid offset is 0 at t >= 50, so the background matches exactly
-            alt = {"stat": r.shot_ticker, "donut": r.shot_waffle, "bars": r.shot_columns}[typ]
-            shots = {"chart": {"stat": r.frame_stat, "bars": r.frame_bars, "donut": r.frame_donut}[typ](sc, t, 0),
-                     "zoom": r.shot_chartzoom(sc, 0, 1.0),
-                     "alt": alt(sc, None, 1, t, 1.0)}
-            bg = r.live_bg(t)
-            z = 1.16  # chartzoom at p=1 scales the background too; compare like with like
-            zbg = bg.resize(bg.size, box=(bg.width * (1 - 1 / z) / 2, ZONE_TOP - ZONE_TOP / z,
-                                          bg.width * (1 + 1 / z) / 2, ZONE_TOP - ZONE_TOP / z + bg.height / z))
-            for name, img in shots.items():
-                n = overlaps(img, zbg if name == "zoom" else bg)
-                if n:
-                    bad += 1
-                    print(f"{p.stem} scene {i + 1} {typ}/{name}: {n} rows in caption zone")
+        for problem in script_overlaps(json.loads(p.read_text(encoding="utf-8"))):
+            bad += 1
+            print(f"{p.stem} {problem}")
     print("zone check:", "OK" if not bad else f"{bad} overlaps")
     return 1 if bad else 0
 

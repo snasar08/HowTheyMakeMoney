@@ -73,7 +73,7 @@
       }
     },
     {
-      "narration": "Visa is a toll booth on the world's spending. No loans, no credit risk, just fees. Follow for more.",
+      "narration": "Visa is a toll booth on the world's spending. No loans, no credit risk, just fees.",
       "visual": {
         "type": "text",
         "text": "A toll booth",
@@ -90,5 +90,7 @@
       "title": "Visa FY2025 Form 10-K (SEC)",
       "url": "https://www.sec.gov/Archives/edgar/data/1403161/000140316125000089/v-20250930.htm"
     }
-  ]
+  ],
+  "loop": "So next time you tap your card, ask yourself:",
+  "score": 68
 }

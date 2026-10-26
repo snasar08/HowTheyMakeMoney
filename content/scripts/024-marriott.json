@@ -87,7 +87,7 @@
       }
     },
     {
-      "narration": "Other people's hotels. Marriott's fees. Follow for more.",
+      "narration": "Other people's hotels. Marriott's fees.",
       "visual": {
         "type": "text",
         "text": "Other people's hotels.",
@@ -100,5 +100,7 @@
       "title": "Marriott Q4 and full-year 2025 results (press release)",
       "url": "https://fortune.com/company-assets/729/quartr/earnings-release-8-k-909ff-2026-02-10-12-08-01.pdf"
     }
-  ]
+  ],
+  "loop": "So next time you check into a hotel, ask yourself:",
+  "score": 50
 }

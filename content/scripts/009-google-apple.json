@@ -76,7 +76,7 @@
       }
     },
     {
-      "narration": "Why pay so much? Most people never change the default. And every single search means more ads. Follow for more.",
+      "narration": "Why pay so much? Most people never change the default. And every single search means more ads.",
       "visual": {
         "type": "text",
         "text": "Defaults are worth",
@@ -93,5 +93,7 @@
       "title": "Google spent $26.3B on defaults in 2021 (PhoneArena)",
       "url": "https://www.phonearena.com/news/google-pays-big-bucks-to-be-default-search-engine_id152057"
     }
-  ]
+  ],
+  "loop": "So next time you search something on your phone, ask yourself:",
+  "score": 95
 }

@@ -94,7 +94,7 @@
       }
     },
     {
-      "narration": "So Costco isn't really a store. It's a membership club that happens to sell groceries. Follow for more.",
+      "narration": "So Costco isn't really a store. It's a membership club that happens to sell groceries.",
       "visual": {
         "type": "text",
         "text": "It sells memberships.",
@@ -115,5 +115,7 @@
       "title": "Costco hot dog price since 1985 (ABC News)",
       "url": "https://abcnews.go.com/food/story/costco-hot-dog-soda-combo-150-price-possibly-90579135"
     }
-  ]
+  ],
+  "loop": "So next time you grab that hot dog, ask yourself:",
+  "score": 87
 }

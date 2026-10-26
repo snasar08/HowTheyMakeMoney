@@ -95,7 +95,7 @@
       }
     },
     {
-      "narration": "Shows bring the crowd. Tickets and sponsors bring the profit. Follow for more.",
+      "narration": "Shows bring the crowd. Tickets and sponsors bring the profit.",
       "visual": {
         "type": "text",
         "text": "Shows bring the crowd.",
@@ -108,5 +108,7 @@
       "title": "Live Nation Entertainment full-year and Q4 2025 results",
       "url": "https://news.livenationentertainment.com/news/live-nation-entertainment-full-year-and-fourth-quarter-2025-results"
     }
-  ]
+  ],
+  "loop": "So next time you buy concert tickets, ask yourself:",
+  "score": 65
 }

@@ -83,7 +83,7 @@
       }
     },
     {
-      "narration": "The apps pay for everything else. Follow for more.",
+      "narration": "The apps pay for everything else.",
       "visual": {
         "type": "text",
         "text": "Free apps.",
@@ -96,5 +96,7 @@
       "title": "Meta Q4 and full-year 2025 results (press release)",
       "url": "https://s21.q4cdn.com/399680738/files/doc_financials/2025/q4/Meta-12-31-2025-Exhibit-99-1-FINAL.pdf"
     }
-  ]
+  ],
+  "loop": "So next time you open Instagram, ask yourself:",
+  "score": 92
 }

@@ -81,7 +81,7 @@
       }
     },
     {
-      "narration": "More revenue, bigger paychecks. Follow for more.",
+      "narration": "More revenue, bigger paychecks.",
       "visual": {
         "type": "text",
         "text": "More league revenue,",
@@ -94,5 +94,7 @@
       "title": "NBA salary cap (Wikipedia, citing the NBA and the CBA)",
       "url": "https://en.wikipedia.org/wiki/NBA_salary_cap"
     }
-  ]
+  ],
+  "loop": "So next time you watch a game, ask yourself:",
+  "score": 85
 }
