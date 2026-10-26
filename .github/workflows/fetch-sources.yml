@@ -1,0 +1,38 @@
+name: Fetch sources for script writer
+
+# The cloud script writer can't open web pages. It pushes research/requests.txt to a
+# research/** branch; this downloads every URL as plain text (research/pages/*.txt +
+# research/index.json) and pushes it back to the same branch. Pushes made with GITHUB_TOKEN
+# don't trigger workflows, so this never loops.
+on:
+  push:
+    branches: ["research/**"]
+    paths: ["research/requests.txt"]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fetch-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: PDF tools
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils
+      - name: Fetch pages
+        run: python -m pipeline.fetch_sources research/requests.txt research
+      - name: Push pages back
+        run: |
+          git config user.name "shorts-bot"
+          git config user.email "shorts-bot@users.noreply.github.com"
+          git add research
+          git diff --cached --quiet || git commit -qm "Fetched sources ($(jq '[.[]|select(.ok)]|length' research/index.json) ok)"
+          git pull --rebase --quiet origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}"
