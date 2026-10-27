@@ -3,7 +3,7 @@
   "slug": "costco",
   "company": "Costco",
   "theme": "bold_bright",
-  "status": "ready",
+  "status": "delivered",
   "title": "How Is Costco's Hot Dog Still $1.50?",
   "description": "How Is Costco's Hot Dog Still $1.50?.\n\nSources:\n- Costco FY2026 results (Pulse 2.0): https://pulse2.com/costco-reports-93-9-billion-in-q4-sales-and-297-2-billion-in-fiscal-2026-sales-as-net-income-reaches-9-2-billion/\n- Costco Q2 FY2026 members: https://finder.techleap.nl/news/feed/costco-s-q2-net-income-rises-14-to-2b-as-digital-sales-jump-22-6\n- Costco hot dog price since 1985 (ABC News): https://abcnews.go.com/food/story/costco-hot-dog-soda-combo-150-price-possibly-90579135\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
@@ -117,5 +117,15 @@
     }
   ],
   "loop": "So next time you grab that hot dog, ask yourself:",
-  "score": 87
+  "score": 87,
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-001-costco",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-001-costco/001-costco.mp4",
+    "post_at": "2026-10-28T12:00:00-04:00",
+    "buffer_post": "6ae0ca09c6c7681ac9a25e29",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-10-27T15:58:01.492989+00:00",
+    "seconds": 40.12
+  }
 }
