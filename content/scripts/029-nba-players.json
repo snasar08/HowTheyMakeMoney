@@ -3,7 +3,7 @@
   "slug": "nba-players",
   "company": "NBA players",
   "theme": "clean_navy",
-  "status": "ready",
+  "status": "delivered",
   "title": "How Do NBA Players Actually Get Paid?",
   "description": "How Do NBA Players Actually Get Paid?.\n\nSources:\n- NBA salary cap (Wikipedia, citing the NBA and the CBA): https://en.wikipedia.org/wiki/NBA_salary_cap\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
@@ -96,5 +96,15 @@
     }
   ],
   "loop": "So next time you watch a game, ask yourself:",
-  "score": 85
+  "score": 85,
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-029-nba-players",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-029-nba-players/029-nba-players.mp4",
+    "post_at": "2026-10-29T12:00:00-04:00",
+    "buffer_post": "6ae226ad296935229999f88e",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-10-28T16:45:33.989483+00:00",
+    "seconds": 31.51
+  }
 }

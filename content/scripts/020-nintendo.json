@@ -3,7 +3,7 @@
   "slug": "nintendo",
   "company": "Nintendo",
   "theme": "bold_bright",
-  "status": "ready",
+  "status": "delivered",
   "title": "How Many Switch 2s Has Nintendo Sold?",
   "description": "How Many Switch 2s Has Nintendo Sold?.\n\nSources:\n- Nintendo financial results explanatory material, Q3 fiscal year ending March 2026: https://www.nintendo.co.jp/ir/pdf/2026/260203_2e.pdf\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
@@ -98,5 +98,15 @@
     }
   ],
   "loop": "So next time you play your Switch, ask yourself:",
-  "score": 87
+  "score": 87,
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-020-nintendo",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-020-nintendo/020-nintendo.mp4",
+    "post_at": "2026-10-28T18:00:00-04:00",
+    "buffer_post": "6ae22678a557fadd2168f71c",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-10-28T16:44:41.162452+00:00",
+    "seconds": 29.37
+  }
 }
