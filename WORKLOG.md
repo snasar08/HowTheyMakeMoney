@@ -61,7 +61,22 @@ passes and the 3D version is clearly better. Free tools only; ≤100 Higgsfield 
 - Phase 3 batch merged to main c94ca62: cash-rain 3D shot, ranked topics.md top 20 (casinos
   dropped), Whisper model cache (e2e: 82/75/56 s per Short).
 
+- **Sam's correction (Oct 29):** "people" = 3D-rendered CGI characters (smooth, stylized-realistic,
+  soft studio light, clean backgrounds), not photos. STYLE.md/CLAUDE.md/lint updated (≥2 of 4
+  images; never name a creator). Redid the 4 test images for 001/002 in that style (4 credits,
+  ledger now 8/100, balance 487.5 → 483.5). **Don't regenerate the 27 queued Shorts until Sam
+  approves the look.**
+- Photo parallax: `pipeline/depth.py` (Depth Anything V2 Small, Apache-2.0, cached per image) +
+  `gl3d.parallax` (photo as a depth-displaced mesh, slow camera drift, 6 paths). `PARALLAX=off`
+  turns it off. Local 001 render 132 s incl. first model load.
+- out/compare/{001,002}-*-live-vs-3dchars.mp4 (left live, right 3D-character images + parallax).
+- Sam also asked: code-rendered animated CC0 characters. Using Quaternius "Animated Human"
+  (CC0, OpenGameArt; credited in assets/characters/CREDITS.md). `pipeline/character.py` (GLB
+  reader + numpy skinning), `pipeline/scenes_chars.py` (shopper + cart, cashier + belt, warehouse
+  worker). FBX→GLB via `convert-chars.yml` (Blender on GitHub) → branch 3d-assets.
+
 ## In progress
+- Character GLB conversion, then the out/compare/001-costco-code-characters.mp4 sample.
 - Watch the first 3D nightly (10:17 UTC Oct 29): check "Delivered Shorts" commit + no failure issue.
 
 ## Next
