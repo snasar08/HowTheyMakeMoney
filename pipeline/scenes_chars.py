@@ -18,6 +18,7 @@ from .gl3d import Engine, Scene, run3d, trs
 from .scene3d import look_for
 
 CHAR = "quaternius-animated-human"
+SKIN = "{}"  # assets/characters/skins/<name>.png: LightSkin, DarkSkin, LightSkin1, ...
 BOX_COLS = [(0.85, 0.62, 0.38), (0.78, 0.55, 0.32), (0.92, 0.88, 0.80), (0.35, 0.55, 0.85), (0.85, 0.3, 0.3),
             (0.95, 0.8, 0.3), (0.4, 0.7, 0.45)]
 
@@ -65,12 +66,12 @@ def shopper(theme, tname, t, p):
     ch = character.load(CHAR)
     walk = ch.find_clip("walk")
     z = -1.5 + t * 1.25  # walking toward camera
-    sc = Scene(L, (2.8 - 0.6 * p, 2.3, z + 7.5), (0, 1.3, z), fov=40, aperture=0.6)
+    sc = Scene(L, (1.1 - 0.5 * p, 1.9, z + 5.2), (0, 1.0, z), fov=42, aperture=0.5)
     sc.shift = 0.08
     rng = np.random.default_rng(3)
     _shelf(sc, -2.6, -14, 10, rng)
     _shelf(sc, 2.9, -14, 10, rng)
-    character.draw(sc, ch, walk, t, pos=(0, 0, z), ry=0.0, scale=1.0, key="shopper")
+    character.draw(sc, ch, walk, t, pos=(0, 0, z), ry=0.0, scale=1.0, key="shopper", skin=SKIN.format("LightSkin1"))
     _cart(sc, (0, 0, z + 1.05), 0.0, np.random.default_rng(5).random((8, 3)))
     return Image.fromarray(sc.render())
 
@@ -80,7 +81,7 @@ def cashier(theme, tname, t, p):
          "fog_near": 12, "fog_far": 36}
     ch = character.load(CHAR)
     work = ch.find_clip("work", "idle")
-    sc = Scene(L, (3.4 - 1.0 * p, 2.6, 5.8 - 0.6 * p), (0, 1.2, 0), fov=38, aperture=0.6)
+    sc = Scene(L, (2.2 - 0.8 * p, 1.9, 4.6 - 0.4 * p), (0.2, 1.1, 0.6), fov=40, aperture=0.5)
     sc.shift = 0.08
     _box(sc, (0, 0, 0.9), (3.6, 0.95, 0.8), (0.3, 0.32, 0.36), shadow=True)       # checkout counter
     _box(sc, (0, 0.95, 0.9), (3.4, 0.03, 0.6), (0.12, 0.12, 0.12))                 # conveyor belt
@@ -89,8 +90,8 @@ def cashier(theme, tname, t, p):
         _box(sc, (x, 0.98, 0.9), (0.3, 0.25 + 0.1 * (k % 2), 0.3), BOX_COLS[k], ry=k)
     _box(sc, (1.25, 0.98, 0.5), (0.45, 0.3, 0.35), (0.85, 0.85, 0.88))             # register
     _box(sc, (1.25, 1.3, 0.48), (0.4, 0.28, 0.04), (0.2, 0.55, 0.9), spec=0.9)     # screen
-    character.draw(sc, ch, work, t, pos=(0.6, 0, 0.0), ry=0.0, key="cashier", tint=None)
-    character.draw(sc, ch, ch.find_clip("idle"), t + 0.7, pos=(-0.6, 0, 2.1), ry=math.pi, key="customer")
+    character.draw(sc, ch, ch.find_clip("idle"), t, pos=(0.6, 0, 0.0), ry=0.0, key="cashier", skin=SKIN.format("DarkSkin2"))
+    character.draw(sc, ch, ch.find_clip("idle"), t + 0.7, pos=(-0.9, 0, 1.75), ry=math.pi * 0.85, key="customer", skin=SKIN.format("LightSkin"))
     return Image.fromarray(sc.render())
 
 
@@ -100,7 +101,7 @@ def worker(theme, tname, t, p):
     ch = character.load(CHAR)
     work = ch.find_clip("work", "punch", "idle")
     ang = -0.5 + 0.6 * p
-    sc = Scene(L, (math.sin(ang) * 7, 2.6, math.cos(ang) * 7), (0, 1.4, 0), fov=40, aperture=0.6)
+    sc = Scene(L, (math.sin(ang) * 4.2, 1.7, math.cos(ang) * 4.2), (0, 0.8, 0), fov=40, aperture=0.5)
     sc.shift = 0.08
     rng = np.random.default_rng(11)
     for px, pz in ((-1.8, -1.0), (1.7, -1.4), (-0.4, -3.0)):                       # pallets stacked high
@@ -109,7 +110,7 @@ def worker(theme, tname, t, p):
             _box(sc, (px, 0.15 + lv * 0.6, pz), (1.2, 0.58, 1.2), BOX_COLS[(lv + int(px * 3)) % 3])
     lift = 0.4 + 0.25 * math.sin(t * 3.2)                                          # the box being moved
     _box(sc, (0.55, lift, 0.55), (0.6, 0.5, 0.6), BOX_COLS[0], shadow=True)
-    character.draw(sc, ch, work, t, pos=(0, 0, 0.1), ry=0.4, key="worker")
+    character.draw(sc, ch, work, t, pos=(0, 0, 0.1), ry=0.4, key="worker", skin=SKIN.format("DarkSkin1"))
     return Image.fromarray(sc.render())
 
 

@@ -7,6 +7,7 @@ in numpy, drawn through gl3d. Low-poly packs have a few thousand vertices, so sk
 from __future__ import annotations
 
 import json
+import os
 import struct
 from functools import lru_cache
 from pathlib import Path
@@ -87,6 +88,9 @@ class Character:
                 chans.append((ch["target"]["node"], ch["target"]["path"], self._acc(smp["input"]).ravel(),
                               self._acc(smp["output"])))
             self.clips[an["name"].split("|")[-1].lower()] = (chans, max(c[2][-1] for c in chans))
+        # normalize to meters: packs come in arbitrary units
+        ys = np.concatenate([pp[:, 1] for pp, _ in self.pose(None, 0.0)])
+        self.base_y, self.height = float(ys.min()), float(ys.max() - ys.min()) or 1.0
 
     def _acc(self, i):
         a = self.g["accessors"][i]
@@ -160,7 +164,7 @@ def load(name: str) -> Character:
     return Character(CHAR_DIR / f"{name}.glb")
 
 
-def draw(sc, ch: Character, clip, t, pos=(0, 0, 0), ry=0.0, scale=1.0, tint=None, key="c"):
+def draw(sc, ch: Character, clip, t, pos=(0, 0, 0), ry=0.0, scale=1.0, tint=None, key="c", skin=None):
     """Add a posed character to a gl3d Scene (per-frame vertex upload)."""
     from .gl3d import Engine, trs
     e = Engine.get()
@@ -177,8 +181,15 @@ def draw(sc, ch: Character, clip, t, pos=(0, 0, 0), ry=0.0, scale=1.0, tint=None
         buf, vao = e.char_vaos[k]
         buf.write(verts.tobytes())
         tex = None
-        if p["image"] is not None:
+        if skin:  # palette texture from the pack: LightSkin, DarkSkin, LightSkin1, ...
+            from PIL import Image
+            # skins live in assets/characters/skins/ (short path: Windows' 260-char limit)
+            f = CHAR_DIR / "skins" / f"{skin}.png"
+            tex = e.texture(("charskin", skin), Image.open(f).resize((256, 256), Image.NEAREST))
+        elif p["image"] is not None:
             tex = e.texture(("charimg", id(ch), p["image"]), ch.image(p["image"]))
-        col = tint if tint is not None else p["color"]
-        sc.add(vao, trs(pos, (scale, scale, scale), ry=ry), col, tex=tex, spec=0.15, gloss=16,
+        col = tint if tint is not None else ((1, 1, 1) if tex is not None else p["color"])
+        k = scale * 1.75 / ch.height  # scale=1 -> a 1.75 m adult standing on the floor
+        p_ = (pos[0], pos[1] - ch.base_y * k, pos[2])
+        sc.add(vao, trs(p_, (k, k, k), ry=ry), col, tex=tex, spec=0.15, gloss=16,
                shadow=(pos[0], pos[2], 0.55 * scale, 0.4 * scale) if pi == 0 else None)
