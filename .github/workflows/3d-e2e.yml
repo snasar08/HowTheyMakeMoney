@@ -29,7 +29,8 @@ jobs:
       EGL_PLATFORM: surfaceless
       BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
       HTMM_CACHE: ${{ github.workspace }}/.cache
-      E2E_IDS: "001 002 022"
+      E2E_IDS: "${{ vars.E2E_IDS }}"
+      E2E_NIGHTLY: "1"
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -53,6 +54,10 @@ jobs:
           mkdir -p e2e
           nproc | tee e2e/nproc.txt
           python -m pipeline.zone_check 2>&1 | tail -3 | tee e2e/zone.txt
+          if [ -n "$E2E_NIGHTLY" ]; then  # the real nightly path: slot-aware, Buffer dry run
+            python -m pipeline.run 2>&1 | grep -v "Warning\|warn(" | tee e2e/run-nightly.log
+            echo "now $(TZ=America/New_York date)" >> e2e/run-nightly.log
+          fi
           for id in $E2E_IDS; do
             start=$(date +%s)
             python -m pipeline.run --id $id 2>&1 | grep -v "Warning\|warn(" | tee e2e/run-$id.log
