@@ -103,5 +103,7 @@
     }
   ],
   "loop": "So next time you crack open a Coke, ask yourself:",
-  "score": 71
+  "score": 71,
+  "format": "how",
+  "visual_style": "charts3d"
 }

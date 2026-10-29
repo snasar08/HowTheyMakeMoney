@@ -22,18 +22,49 @@ SCRIPTS = ROOT / "content" / "scripts"
 OUT = ROOT / "out"
 
 
-def ready_scripts() -> list[Path]:
-    """Ready scripts, highest virality `score` first (a new channel's first posts matter most),
-    then by id."""
+FORMATS = ("how", "whatif", "careers", "famous")
+WEIGHTS = ROOT / "analytics" / "format_weights.json"  # written by pipeline/insights.py
+
+
+def _weights() -> dict:
+    try:
+        return json.loads(WEIGHTS.read_text())
+    except Exception:  # no data yet: all formats equal
+        return {}
+
+
+def ready_scripts(recent: list[str] | None = None) -> list[Path]:
+    """Ready scripts in posting order. Priority = virality `score` × the format's performance
+    weight (analytics/format_weights.json, 1.0 until there's enough data); then greedily pick so
+    the format differs from the previous post (formats alternate day to day)."""
     items = []
+    w = _weights()
     for p in sorted(SCRIPTS.glob("*.json")):
         try:
             s = json.loads(p.read_text(encoding="utf-8"))
             if s.get("status") == "ready":
-                items.append((-float(s.get("score", 0)), p.name, p))
+                fmt = s.get("format", "how")
+                items.append([float(s.get("score", 0)) * float(w.get(fmt, 1.0)), p.name, p, fmt])
         except json.JSONDecodeError:
             print(f"[run] skipping invalid JSON: {p.name}")
-    return [p for *_, p in sorted(items)]
+    items.sort(key=lambda x: (-x[0], x[1]))
+    out, last = [], (recent or [None])[-1]
+    while items:
+        pick = next((it for it in items if it[3] != last), items[0])
+        items.remove(pick)
+        out.append(pick[2])
+        last = pick[3]
+    return out
+
+
+def recent_formats(n: int = 2) -> list[str]:
+    """Formats of the last n scheduled posts (to alternate against)."""
+    rows = []
+    for p in SCRIPTS.glob("*.json"):
+        s = json.loads(p.read_text(encoding="utf-8"))
+        if (s.get("delivered") or {}).get("post_at"):
+            rows.append((s["delivered"]["post_at"], s.get("format", "how")))
+    return [f for _, f in sorted(rows)[-n:]]
 
 
 GATE_CLARITY = float(os.environ.get("GATE_CLARITY", "0.90"))
@@ -88,7 +119,7 @@ def main() -> int:
         print(f"[run] posting starts {POST_START} (New York); nothing to do yet")
         return 0
 
-    queue = ready_scripts()
+    queue = ready_scripts(recent_formats())
     if args.id:
         queue = [p for p in SCRIPTS.glob(f"{args.id}*.json")]
     # only as many Shorts as there are open slots soon (no double posts, max 2/day); a second

@@ -103,5 +103,7 @@
     }
   ],
   "loop": "So next time you hit the gym, ask yourself:",
-  "score": 63
+  "score": 63,
+  "format": "how",
+  "visual_style": "charts3d"
 }

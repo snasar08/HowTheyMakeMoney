@@ -102,5 +102,7 @@
     }
   ],
   "loop": "So next time you check into a hotel, ask yourself:",
-  "score": 50
+  "score": 50,
+  "format": "how",
+  "visual_style": "charts3d"
 }

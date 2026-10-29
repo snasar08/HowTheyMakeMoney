@@ -102,5 +102,7 @@
     }
   ],
   "loop": "So next time you open Word or Xbox, ask yourself:",
-  "score": 55
+  "score": 55,
+  "format": "how",
+  "visual_style": "charts3d"
 }

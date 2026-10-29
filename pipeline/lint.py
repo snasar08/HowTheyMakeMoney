@@ -14,9 +14,14 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 # kid-safe + monetization-safe: no hype, no money promises, no shock words, no engagement bait
+# image prompts must never ask for a real person's likeness or brand marks
+LIKENESS = re.compile(r"(look(s|ing)? like|resembl\w*|lookalike|look-alike|portrait of|face of|in the style of|"
+                      r"jersey|team uniform|logo of)", re.I)
+FAKE_QUOTE = re.compile(r"(said|says|told|tweeted|thinks)[^.]*[\"“]", re.I)
 BANNED = ["guaranteed", "get rich", "invest now", "you should buy", "buy the stock", "financial advice",
           "click the link", "link in bio", "smash that like", "follow for more", "insane", "crazy",
           "kill", "dead", "die ", "hate", "stupid", "scam", "damn", "hell", "sexy", "drunk", "gambl"]
+LOWPOLY_LIVE = False  # flip when Sam approves the low-poly look
 WPS = 2.55        # spoken words per second at KOKORO_SPEED 1.25 (measured: 009 ≈ 34 s for 88 words)
 LEN_MIN, LEN_MAX = 25, 45
 TITLE_MAX = 50    # Shorts titles get cut on mobile beyond ~50 chars
@@ -30,6 +35,12 @@ def lint(s: dict) -> tuple[list[str], list[str]]:
     narr = " ".join(sc.get("narration", "") for sc in scenes)
     spoken = narr + " " + s.get("loop", "") + " Comment which brand we should do next, and subscribe."
     first = scenes[0]["narration"] if scenes else ""
+    if s.get("format") not in ("how", "whatif", "careers", "famous"):
+        err.append(f"format must be how / whatif / careers / famous (got {s.get('format')!r})")
+    if s.get("visual_style", "charts3d") not in ("charts3d", "lowpoly"):
+        err.append(f"visual_style must be charts3d or lowpoly (got {s.get('visual_style')!r})")
+    if s.get("visual_style") == "lowpoly" and s.get("status") == "ready" and not LOWPOLY_LIVE:
+        err.append("low-poly style isn't approved for the daily pipeline yet (Sam)")
     if not 5 <= len(scenes) <= 6:
         err.append(f"{len(scenes)} scenes (want 5–6)")
     if "?" not in first.split(".")[0] + first[:140]:
@@ -43,6 +54,8 @@ def lint(s: dict) -> tuple[list[str], list[str]]:
         warn.append("title has no number or question")
     if not s.get("loop"):
         err.append("no loop line")
+    if FAKE_QUOTE.search(narr) and not s.get("quotes_sourced"):
+        err.append("narration quotes a person — only real, sourced quotes (set quotes_sourced: true + source)")
     low = " " + spoken.lower() + " " + s.get("title", "").lower()
     for b in BANNED:
         if b in low:
@@ -63,6 +76,9 @@ def lint(s: dict) -> tuple[list[str], list[str]]:
         prompts = [(imgs.get(k) or {}).get("prompt", "") for k in imgs]
         if sum(bool(PEOPLE.search(p)) and "3d" in p.lower() for p in prompts) < 2:
             warn.append("fewer than 2 images with 3D-rendered characters (STYLE.md: 3D characters)")
+        for p in prompts:
+            if p and LIKENESS.search(p):
+                err.append(f"image prompt asks for a likeness/brand mark: '{LIKENESS.search(p).group(0)}'")
         for p in prompts:
             if p and "no logos" not in p.lower():
                 warn.append("image prompt missing 'no logos'")

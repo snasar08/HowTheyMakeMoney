@@ -103,5 +103,7 @@
     }
   ],
   "loop": "So next time you buy a new iPhone, ask yourself:",
-  "score": 74
+  "score": 74,
+  "format": "how",
+  "visual_style": "charts3d"
 }

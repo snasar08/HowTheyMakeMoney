@@ -1,4 +1,24 @@
-# WORKLOG — 3D upgrade (branch `3d-upgrade`)
+# WORKLOG
+
+## CURRENT TASK — branch `variety-upgrade` (started Oct 29 2026)
+Resume: `git switch variety-upgrade`, read this section + TODO.md, continue from "In progress".
+Scope (Sam, Oct 29): (1) 4 rotating formats [how / what-if / careers / famous], 20+ sourced ideas
+each; (2) low-poly animated 3D style — BRANCH ONLY until Sam approves; (3) rules for real people
+and brands; (4) daily free stats → analytics/stats.json → insights.md → writer + queue order;
+(5) GitHub e2e, merge 1+3+4, report. Never break daily posting; never change post times,
+posts/day, voice or upload mode without asking.
+
+### Done
+- (start) branch from main 1a925e6.
+
+### In progress
+- Part 3 rules, then part 1.
+
+### Needs Sam
+- (tbd) YT_API_KEY: stats.yml has never run; unknown whether the secret exists.
+
+---
+# Earlier: 3D upgrade (branch `3d-upgrade`)
 
 On restart: read this file and TODO.md, `git switch 3d-upgrade`, continue from "In progress".
 Rules: the live channel posts from `main` untouched; merge only after a full GitHub end-to-end test

@@ -32,6 +32,7 @@ Every Short answers one question: **how does this company (or industry) actually
 - Use the most recent full-year figures available. Say the year ("in 2025", "fiscal 2026").
 - If a figure is an estimate or rounded, say "about" / "roughly".
 - No predictions about stock prices, no investment advice, no claims about private people.
+  (Public figures: see "Real people and brands" below.)
 - Don't put real logos, trademarks or real people in image prompts. End every image prompt with
   "no text, no logos, no brand names".
 - **3D characters (Sam, Oct 29):** at least 2 of the 4 images per Short show people as
@@ -45,6 +46,19 @@ Every Short answers one question: **how does this company (or industry) actually
   no brand names". Example: "... vertical: a smiling couple pushing an overflowing shopping cart
   past tall shelves of bulk boxes in a warehouse store, no text, no logos, no brand names".
   The other images (objects, places) may use the same 3D style so the Short looks consistent.
+
+## Real people and brands (Sam, Oct 29 2026)
+- Real names of people and companies are fine in the voiceover, captions and titles — with
+  sourced facts only (net worth, salary, revenue, records). No rumors, no private life.
+- Never model a character (image or 3D) on a real person's face, hair, body or signature look,
+  and never use look-alikes. Characters are always generic made-up people.
+- Never put words in a real person's mouth: no fake quotes, no "he said", no imagined thoughts.
+  Only quote something they really said, with the source.
+- Hint at who it is with props and setting instead: rocket + electric car for a tech
+  billionaire, mountains of boxes for an online-store founder, giant checks for a giveaway
+  YouTuber, a basketball court for an NBA star.
+- No real logos, team uniforms, jerseys, product designs or brand marks anywhere.
+- Don't copy another creator's look, characters, catchphrases or video concepts.
 
 ## Themes
 - `dark_neon` — finance, fintech, tech platforms, crypto, banks.

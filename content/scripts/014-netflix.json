@@ -98,5 +98,7 @@
     }
   ],
   "loop": "So next time you binge a show, ask yourself:",
-  "score": 72
+  "score": 72,
+  "format": "how",
+  "visual_style": "charts3d"
 }
