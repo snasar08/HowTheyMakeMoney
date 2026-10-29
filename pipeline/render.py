@@ -357,6 +357,8 @@ class Renderer:
 
     def plan(self, scenes: list[Scene]):
         v_i = 0
+        # per-Short camera offset so two Shorts never share the same sequence of moves
+        self._vseed = int(hashlib.sha1(self.s.get("slug", "").encode()).hexdigest(), 16) % 5
         for si, sc in enumerate(scenes):
             typ = sc.visual.get("type")
             shots = []
@@ -377,7 +379,7 @@ class Renderer:
                     if b % 3 == 2 and self._pool and typ != "globe":
                         shots.append(("figure", self._next_broll(), (v_i % 5) + 1, False))
                     else:
-                        shots.append(("3d", None, b + si, False))
+                        shots.append(("3d", None, b + si + self._vseed, False))
                 else:  # stat / bars / donut
                     if b == 0:
                         shots.append(("chart", None, 0, False))
