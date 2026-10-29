@@ -53,8 +53,13 @@ passes and the 3D version is clearly better. Free tools only; ≤100 Higgsfield 
   4 s 480p = 12. At 2/day that's ~450–720 credits/month on top of ~243–332 → over the 600
   plan. Not adopted; no credits spent on it.
 
+- e2e #3 (248acf3) sharp frames confirmed; e2e #4 (b72cf52) passed: 128/127/90 s, clarity
+  98/100/100%, zone OK, gate OK, Buffer dry run OK.
+- **MERGED to main 76e5799** (Oct 29 ~07:05 UTC). Off switch: repo variable RENDER_3D=off.
+- out/REPORT.md written (local, out/ is gitignored).
+
 ## In progress
-- e2e run #3 (248acf3) to confirm sharp 3D frames on llvmpipe.
+- Watch the first 3D nightly (10:17 UTC Oct 29): check "Delivered Shorts" commit + no failure issue.
 
 ## Next
 - Read e2e results; fix; check render minutes vs 8-min budget.

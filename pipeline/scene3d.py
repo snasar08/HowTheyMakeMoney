@@ -184,6 +184,27 @@ def _coin_stacks(sc, L, x0, z0, coins, cols=3, money=True):
                        shadow=(cx + 0.2, cz + 0.2, 0.75, 0.6) if k == 0 else None)
 
 
+def _cash_rain(sc, L, t, n=46):
+    """Bills tumble down from above and settle into a growing pile (deterministic per frame)."""
+    box = Engine.get().meshes["box"]
+    rng = np.random.default_rng(7)
+    xs, zs = rng.uniform(-2.2, 2.2, n), rng.uniform(-0.9, 1.0, n)
+    delays, spins = rng.uniform(0, 1.6, n), rng.uniform(-3, 3, (n, 3))
+    for k in range(n):
+        q = (t - delays[k]) / 0.9
+        if q <= 0:
+            continue
+        land = min(1.0, q)
+        r = math.hypot(xs[k], zs[k] * 1.6)
+        rest_y = max(0.0, 0.9 - 0.4 * r) + (k % 7) * 0.06   # pile peaks in the middle
+        y = rest_y + (1 - land ** 2) * 7.0
+        tumble = (1 - land) * 4
+        sc.add(box, trs((xs[k] * (0.6 + 0.4 * land), y, zs[k]), (1.0, 0.03, 0.45), ry=spins[k, 0] * tumble + k,
+                        rx=spins[k, 1] * tumble * 0.6, rz=spins[k, 2] * tumble * 0.3 + (0.12 if land >= 1 else 0)),
+               (0.42, 0.74, 0.46) if k % 3 else (0.35, 0.66, 0.40), spec=0.15, gloss=10,
+               shadow=(xs[k], zs[k], 0.6, 0.35) if land >= 1 and k % 2 == 0 else None)
+
+
 def stat(theme, tname, v, t, p, variant):
     L = look_for(theme, tname)
     val = float(v["value"])
@@ -192,8 +213,11 @@ def stat(theme, tname, v, t, p, variant):
     money = prefix == "$" or "dollar" in v.get("label", "").lower()
     eye, tgt = _orbit(p, variant, 18.0, 2.8, 2.6, spread=0.35)
     sc = Scene(L, eye, tgt, fov=36, aperture=0.8, focus=None)
-    coins = int(round(36 * min(1.0, ease_back(t / 1.3))))
-    _coin_stacks(sc, L, 0, 0.3, coins, cols=3, money=money)
+    if money and variant % 2 == 1:
+        _cash_rain(sc, L, t)
+    else:
+        coins = int(round(36 * min(1.0, ease_back(t / 1.3))))
+        _coin_stacks(sc, L, 0, 0.3, coins, cols=3, money=money)
     num = _fmt(val * k, prefix, suffix, v.get("decimals"))
     bob = 0.08 * math.sin(t * 2.2)
     sc.add  # noqa

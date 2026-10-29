@@ -64,9 +64,10 @@ jobs:
         with:
           path: |
             ~/.cache/huggingface
+            ~/.cache/whisper
             .cache
-          key: htmm-models-v1-${{ hashFiles('requirements.txt') }}
-          restore-keys: htmm-models-v1-
+          key: htmm-models-v2-${{ hashFiles('requirements.txt') }}
+          restore-keys: htmm-models-v2-
 
       - name: Lint scripts (warnings only)
         run: python -m pipeline.lint || true
