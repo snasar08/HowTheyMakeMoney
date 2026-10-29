@@ -44,26 +44,29 @@ def ready_scripts(recent: list[str] | None = None) -> list[Path]:
             s = json.loads(p.read_text(encoding="utf-8"))
             if s.get("status") == "ready":
                 fmt = s.get("format", "how")
-                items.append([float(s.get("score", 0)) * float(w.get(fmt, 1.0)), p.name, p, fmt])
+                items.append([float(s.get("score", 0)) * float(w.get(fmt, 1.0)), p.name, p, fmt,
+                              s.get("visual_style", "charts3d")])
         except json.JSONDecodeError:
             print(f"[run] skipping invalid JSON: {p.name}")
     items.sort(key=lambda x: (-x[0], x[1]))
-    out, last = [], (recent or [None])[-1]
-    while items:
-        pick = next((it for it in items if it[3] != last), items[0])
+    last = (recent or [(None, None)])[-1]
+    out = []
+    while items:  # differ from the previous post in format AND look if possible, else format only
+        pick = (next((it for it in items if it[3] != last[0] and it[4] != last[1]), None)
+                or next((it for it in items if it[3] != last[0]), items[0]))
         items.remove(pick)
         out.append(pick[2])
-        last = pick[3]
+        last = (pick[3], pick[4])
     return out
 
 
-def recent_formats(n: int = 2) -> list[str]:
-    """Formats of the last n scheduled posts (to alternate against)."""
+def recent_formats(n: int = 2) -> list[tuple[str, str]]:
+    """(format, visual_style) of the last n scheduled posts (to alternate against)."""
     rows = []
     for p in SCRIPTS.glob("*.json"):
         s = json.loads(p.read_text(encoding="utf-8"))
         if (s.get("delivered") or {}).get("post_at"):
-            rows.append((s["delivered"]["post_at"], s.get("format", "how")))
+            rows.append((s["delivered"]["post_at"], (s.get("format", "how"), s.get("visual_style", "charts3d"))))
     return [f for _, f in sorted(rows)[-n:]]
 
 
