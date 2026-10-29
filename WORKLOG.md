@@ -75,8 +75,20 @@ passes and the 3D version is clearly better. Free tools only; ≤100 Higgsfield 
   reader + numpy skinning), `pipeline/scenes_chars.py` (shopper + cart, cashier + belt, warehouse
   worker). FBX→GLB via `convert-chars.yml` (Blender on GitHub) → branch 3d-assets.
 
+- Code characters done: Quaternius GLB has 9 clips (Idle, Walk, Run, Working, Jump, Punch,
+  Death + 2 tiny), 791-vertex mesh, 6 palette skins (now in assets/characters/skins/ — short
+  path, Windows 260-char limit). Auto-scaled to 1.75 m. Scenes: shopper pushing a loaded cart
+  down an aisle, cashier at a register with items on the belt (+ customer), warehouse worker
+  crouching/lifting by pallets. 58–63 ms/frame locally (GPU); llvmpipe on GitHub estimated
+  ~2x slower, still far inside the 8-min budget (only a few beats per Short would use them).
+  Look: clean but obviously low-poly/game-like — less polished than the Higgsfield 3D style.
+- Samples (local, out/compare/): 001-costco-code-characters.mp4 (9 s: 3 scenes),
+  001-costco-higgsfield3d-vs-codechars.mp4 (left Higgsfield 3D-style + parallax, right code),
+  {001,002}-*-live-vs-3dchars.mp4 (left live main, right 3D-style images + parallax).
+
 ## In progress
-- Character GLB conversion, then the out/compare/001-costco-code-characters.mp4 sample.
+- WAITING FOR SAM: pick a look (Higgsfield 3D-style characters + parallax vs code characters).
+  Nothing from this round is merged; main still posts the merged 3D-chart version.
 - Watch the first 3D nightly (10:17 UTC Oct 29): check "Delivered Shorts" commit + no failure issue.
 
 ## Next
@@ -92,4 +104,6 @@ passes and the 3D version is clearly better. Free tools only; ≤100 Higgsfield 
   people, not 3D figures.
 
 ## Needs Sam
+- Pick the character look (see In progress). Then: regenerate the 27 queued Shorts' B-roll
+  (~54 credits) only after approval.
 - Confirm the "people" reading above (realistic made-up people in the photos).
