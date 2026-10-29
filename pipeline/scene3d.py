@@ -93,6 +93,19 @@ def text3d(sc: Scene, text, pos, height, color, side, font_name=None, layers=10,
         sc.add(quad, off, col, tex=tex, unlit=unlit, alpha=alpha if k == 0 else min(1.0, alpha))
 
 
+def label3d(sc: Scene, text, pos, height, color, side, max_chars=22, line_gap=1.25, **kw):
+    """Small label text; long labels wrap onto two lines instead of shrinking to unreadable."""
+    words, lines = text.split(), []
+    if len(text) > max_chars and len(words) > 1:
+        best = min(range(1, len(words)), key=lambda k: abs(len(" ".join(words[:k])) - len(text) / 2))
+        lines = [" ".join(words[:best]), " ".join(words[best:])]
+    else:
+        lines = [text]
+    x, y, z = pos
+    for i, line in enumerate(lines):
+        text3d(sc, line, (x, y - i * height * line_gap, z), height, color, side, **kw)
+
+
 def _orbit(p, variant, radius, height, target_y, spread=0.5):
     """Camera paths: each variant is a different slow move so shots never look identical."""
     paths = [(-0.35, 0.35, 1.0, 0.92), (0.45, -0.1, 0.95, 0.85), (-0.1, 0.25, 0.80, 0.80),
@@ -132,13 +145,15 @@ def bars(theme, tname, v, t, p, variant):
                shadow=(x + 0.35, 0.35, 1.0, 0.9))
         shown = val * min(1.0, ease((t - 0.15 - 0.22 * k) / 0.9))
         dec = None if val.is_integer() else 1
-        text3d(sc, _fmt(shown, v.get("prefix", ""), v.get("suffix", ""), dec), (x, h + 0.95, 0.2), 0.66,
+        text3d(sc, _fmt(shown, v.get("prefix", ""), v.get("suffix", ""), dec), (x, h + 0.95 + (0.45 if len(it['label']) > 12 else 0), 0.2), 0.66,
                L["text"], L["side"], billboard=True, layers=6, depth=0.12, max_w=span * 0.95)
         lab_w = span * 0.98
-        text3d(sc, it["label"].upper(), (x, h + 0.3, 0.2), 0.36, L["text"], L["side"], billboard=True,
-               layers=2, depth=0.03, font_name="Inter-Bold.otf", max_w=lab_w)
+        label3d(sc, it["label"].upper(), (x, h + 0.3 + (0.45 if len(it["label"]) > 12 else 0), 0.2), 0.36,
+                L["text"], L["side"], max_chars=12, billboard=True, layers=2, depth=0.03,
+                font_name="Inter-Bold.otf", max_w=lab_w)
     if v.get("title"):
-        text3d(sc, v["title"].upper()[:28], (0, hmax + 1.7, -0.6), 0.42, L["text"], L["side"], billboard=True,
+        wrapped = any(len(i["label"]) > 12 for i in items)
+        text3d(sc, v["title"].upper()[:28], (0, hmax + 2.35 + (0.45 if wrapped else 0), -0.6), 0.42, L["text"], L["side"], billboard=True,
                layers=4, depth=0.08, font_name="Inter-Bold.otf", max_w=span * n)
     return Image.fromarray(sc.render())
 
@@ -183,8 +198,8 @@ def stat(theme, tname, v, t, p, variant):
     text3d(sc, num, (0, 4.6 + bob, 0.4), 1.15, L["primary"], L["side"], billboard=True, layers=12, depth=0.35, max_w=5.6)
     lab = v.get("label", "")
     if lab:
-        text3d(sc, lab, (0, 3.8 + bob, 0.4), 0.36, L["text"], L["side"], billboard=True, layers=3,
-               depth=0.05, font_name="Inter-SemiBold.otf", max_w=5.6)
+        label3d(sc, lab, (0, 3.85 + bob, 0.4), 0.42, L["text"], L["side"], billboard=True, layers=3,
+                depth=0.05, font_name="Inter-SemiBold.otf")
     return Image.fromarray(sc.render())
 
 
@@ -211,11 +226,11 @@ def donut(theme, tname, v, t, p, variant):
                spec=0.3, gloss=30, shadow=(0, 0, 2.5, 2.5))
     from .render import fmt_number
     txt = f"{fmt_number(pct * grow, 0 if pct.is_integer() else 1)}%"
-    text3d(sc, txt, (0, 3.2 + 0.06 * math.sin(t * 2), 0.6), 1.3, L["primary"] if tname != "bold_bright" else (1, 1, 1),
+    text3d(sc, txt, (0, 3.9 + 0.06 * math.sin(t * 2), 0.6), 1.3, L["primary"] if tname != "bold_bright" else (1, 1, 1),
            L["side"], billboard=True, layers=12, depth=0.32, max_w=5.0)
     if v.get("label"):
-        text3d(sc, v["label"], (0, 2.35, 0.6), 0.36, L["text"], L["side"], billboard=True, layers=3,
-               depth=0.05, font_name="Inter-SemiBold.otf", max_w=5.6)
+        label3d(sc, v["label"], (0, 3.05, 0.6), 0.46, L["text"], L["side"], billboard=True, layers=3,
+                depth=0.05, font_name="Inter-SemiBold.otf")
     return Image.fromarray(sc.render())
 
 
