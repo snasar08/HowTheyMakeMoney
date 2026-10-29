@@ -243,7 +243,7 @@ class CaptionRenderer:
             total = sum(f.getlength(t) for t in texts) + space * (len(texts) - 1)
         img = Image.new("RGBA", (W, size + 40), (0, 0, 0, 0))
         d = ImageDraw.Draw(img)
-        x = (W - total) / 2
+        x = (SAFE_X0 + SAFE_X1 - total) / 2  # centered in the safe area, clear of the like/share column
         for i, t in enumerate(texts):
             fill = self.theme["caption_hi"] if i == hi else self.theme["caption_fill"]
             d.text((x, 14), t, font=f, fill=fill, stroke_width=8,
