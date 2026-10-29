@@ -39,8 +39,10 @@ jobs:
           blender -b -P bench/bench_blender.py 2>&1 | tail -5 | tee -a bench/blender.txt
       - name: Push results
         if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
-          git config user.name "shorts-bot"
-          git config user.email "shorts-bot@users.noreply.github.com"
-          git add -f bench
-          git commit -qm "3D bench results ${GITHUB_SHA::7}" && git push -qf origin HEAD:refs/heads/3d-bench-results
+          rm -rf /tmp/res && mkdir -p /tmp/res && cp -r bench /tmp/res/ 2>/dev/null || true
+          cd /tmp/res && git init -q -b 3d-bench-results && git add -A
+          git -c user.name=shorts-bot -c user.email=shorts-bot@users.noreply.github.com commit -qm "results ${GITHUB_SHA::7}"
+          git push -f "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" 3d-bench-results
