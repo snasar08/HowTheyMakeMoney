@@ -151,7 +151,7 @@ mutation($input: CreatePostInput!) {
 }"""
 
 
-def buffer_schedule(video_url: str, script: dict, when: dt.datetime, privacy: str | None = None) -> dict:
+def post_input(video_url: str, script: dict, when: dt.datetime, privacy: str | None = None) -> dict:
     _, channel = buffer_channel()
     youtube = {"title": script["title"][:100], "categoryId": "27",  # Education
                "madeForKids": False, "isAiGenerated": True, "notifySubscribers": True}
@@ -166,6 +166,11 @@ def buffer_schedule(video_url: str, script: dict, when: dt.datetime, privacy: st
         "assets": [{"video": {"url": video_url, "metadata": {"title": script["title"][:100]}}}],
         "metadata": {"youtube": youtube},
     }
+    return inp
+
+
+def buffer_schedule(video_url: str, script: dict, when: dt.datetime, privacy: str | None = None) -> dict:
+    inp = post_input(video_url, script, when, privacy)
     res = buffer_gql(CREATE_POST, {"input": inp})["createPost"]
     if "post" not in res:
         raise BufferError(f"createPost: {res.get('message')}")
@@ -250,6 +255,18 @@ def deliver(video: Path, script: dict, when: dt.datetime) -> dict:
     mode = os.environ.get("UPLOAD_MODE", "release")
     if mode == "buffer":
         return _buffer(video, script, when)
+    if mode == "buffer_dry":  # full check, nothing posted: read-only channel lookup + the exact payload
+        url = f"https://github.com/{REPO}/releases/download/short-{script['id']}-{script['slug']}/{video.name}"
+        inp = post_input(url, script, when)
+        size = video.stat().st_size
+        problems = [p for p, bad in (("title over 100 chars", len(script["title"]) > 100),
+                                     ("video over 256 MB", size > 256e6),
+                                     ("no channel", not inp["channelId"])) if bad]
+        out = {"mode": "buffer_dry", "channel": _channel_cache.get("name"), "post_at": when.isoformat(),
+               "title": script["title"], "bytes": size, "problems": problems}
+        if problems:
+            raise BufferError(f"buffer dry run: {problems}")
+        return out
     if mode == "youtube":
         try:
             return _youtube(video, script, when)

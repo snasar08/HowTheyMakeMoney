@@ -34,7 +34,7 @@ jobs:
           python-version: "3.11"
           cache: pip
       - name: System packages
-        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg espeak-ng
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg espeak-ng libegl1 libgl1-mesa-dri libegl-mesa0
       - name: Python packages
         run: pip install -r requirements.txt
       - name: Cache voice model and images

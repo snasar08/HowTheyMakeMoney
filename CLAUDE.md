@@ -140,7 +140,8 @@ Posting uses 14 Shorts/week (2/day). Goal: build a buffer, capped so credits are
    (1 credit each). Pro plan allows only **4 images at a time** — submit groups of 4, wait with
    `jobs_wait`, then the next 4. Put each `result_url` into `images.hook.url`, `images.mid.url`, `images.broll1.url`, `images.broll2.url` (4 images per Short).
    Check `balance` first; if under 60 credits, write the scripts but stop before images and leave
-   a note in the commit message. No real people or logos in prompts.
+   a note in the commit message. No real people or logos in prompts — but DO show realistic
+   made-up people in at least 2 of the 4 images (see STYLE.md "Show people").
 6. Validate every file parses as JSON and has 5–6 scenes, then commit and push to `main`.
 7. Never leave a script with `status: "ready"` and missing image URLs — set `status: "draft"` if
    images couldn't be made, so the nightly run skips it.
