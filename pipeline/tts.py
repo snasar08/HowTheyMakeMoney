@@ -30,8 +30,17 @@ _kokoro = {}
 _ming_model = None
 
 
+# words Kokoro tends to misread; whole-word, case-sensitive
+SAY = {"vs.": "versus", "vs": "versus", "e.g.": "for example", "i.e.": "that is",
+       "Inc.": "Inc", "approx.": "about", "No.": "number", "AI": "A.I.", "CEO": "C.E.O.", "NBA": "N.B.A.",
+       "NFL": "N.F.L.", "IPO": "I.P.O.", "Q1": "the first quarter", "Q2": "the second quarter",
+       "Q3": "the third quarter", "Q4": "the fourth quarter", "FY": "fiscal year", "YouTube": "YouTube"}
+_SAY = re.compile(r"(?<![\w.])(" + "|".join(re.escape(k) for k in sorted(SAY, key=len, reverse=True)) + r")(?![\w])")
+
+
 def speakable(text: str) -> str:
-    t = text.replace("%", " percent").replace("&", " and ").replace("~", "about ")
+    t = _SAY.sub(lambda m: SAY[m.group(1)], text)
+    t = t.replace("%", " percent").replace("&", " and ").replace("~", "about ")
     t = re.sub(r"\$(\d[\d,.]*)\s*(billion|million|trillion)", r"\1 \2 dollars", t)
     return re.sub(r"\s+", " ", t).strip()
 
