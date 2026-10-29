@@ -18,6 +18,7 @@ on:
 
 permissions:
   contents: write
+  issues: write
 
 concurrency:
   group: make-shorts
@@ -42,6 +43,8 @@ jobs:
       YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
       YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
       HTMM_CACHE: ${{ github.workspace }}/.cache
+      RENDER_3D: ${{ vars.RENDER_3D || 'on' }}   # repo variable RENDER_3D=off -> old 2D charts
+      EGL_PLATFORM: surfaceless
     steps:
       - uses: actions/checkout@v4
 
@@ -51,7 +54,7 @@ jobs:
           cache: pip
 
       - name: System packages
-        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg espeak-ng
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg espeak-ng libegl1 libgl1-mesa-dri libegl-mesa0
 
       - name: Python packages
         run: pip install -r requirements.txt
@@ -64,6 +67,9 @@ jobs:
             .cache
           key: htmm-models-v1-${{ hashFiles('requirements.txt') }}
           restore-keys: htmm-models-v1-
+
+      - name: Lint scripts (warnings only)
+        run: python -m pipeline.lint || true
 
       - name: Make Shorts
         run: |
@@ -97,3 +103,14 @@ jobs:
           git add content/scripts
           git diff --cached --quiet || git commit -m "Delivered Shorts $(date -u +%F)"
           git pull --rebase --quiet && git push
+
+      - name: Alert on failure (opens or comments on one issue)
+        if: failure()
+        run: |
+          url="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+          n=$(gh issue list --state open --label nightly-failure --json number -q '.[0].number' 2>/dev/null || true)
+          if [ -n "$n" ]; then gh issue comment "$n" --body "Failed again: $url"
+          else
+            gh label create nightly-failure --color d73a4a 2>/dev/null || true
+            gh issue create --label nightly-failure --title "Nightly Shorts run failed"               --body "The daily run failed: $url. Nothing is lost; the scripts stay ready and retry tomorrow."
+          fi

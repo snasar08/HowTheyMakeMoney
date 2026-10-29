@@ -34,6 +34,14 @@ Every Short answers one question: **how does this company (or industry) actually
 - No predictions about stock prices, no investment advice, no claims about private people.
 - Don't put real logos, trademarks or real people in image prompts. End every image prompt with
   "no text, no logos, no brand names".
+- **Show people (Sam, Oct 29):** at least 2 of the 4 images per Short should have realistic,
+  made-up people doing the thing the Short is about (shoppers pushing a cart, a cashier, a
+  family at the movies, a driver, a gamer). Photo-real, natural, candid, never 3D/cartoon
+  figures. Not real or famous people, no celebrity look-alikes, no kids shown alone, no
+  uniforms or name tags with brand marks. Adults or families; faces fine but not close-up
+  portraits. Example: "Cinematic candid photo, vertical: a young couple laughing while pushing
+  an overflowing shopping cart down a huge warehouse aisle, warm light, shallow depth of field,
+  photorealistic, generic store, no text, no logos, no brand names".
 
 ## Themes
 - `dark_neon` — finance, fintech, tech platforms, crypto, banks.

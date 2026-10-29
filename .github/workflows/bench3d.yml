@@ -1,0 +1,48 @@
+name: 3D renderer benchmark
+
+# Branch 3d-upgrade only: times the candidate CPU 3D renderers on GitHub's 2-core runner and
+# force-pushes the numbers (bench/gl.jsonl, bench/blender.txt, sample frames) to branch 3d-bench-results.
+on:
+  push:
+    branches: ["3d-upgrade"]
+    paths: ["bench/**", "pipeline/gl3d.py", "pipeline/scene3d.py", ".github/workflows/bench3d.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  bench:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Mesa software GL
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq libegl1 libgl1-mesa-dri libegl-mesa0 blender
+      - run: pip install -q moderngl pillow numpy soundfile
+      - name: moderngl / llvmpipe
+        env:
+          EGL_PLATFORM: surfaceless
+        run: |
+          nproc
+          for cfg in "1080 1920 4" "1080 1920 2" "1080 1920 0" "720 1280 4"; do
+            set -- $cfg
+            W3D=$1 H3D=$2 MSAA_3D=$3 python bench/bench_gl.py 2>&1 | tee -a bench/gl.log
+          done
+      - name: Blender Cycles
+        continue-on-error: true
+        run: |
+          blender --version | head -1 | tee bench/blender.txt
+          blender -b -P bench/bench_blender.py 2>&1 | tail -5 | tee -a bench/blender.txt
+      - name: Push results
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          rm -rf /tmp/res && mkdir -p /tmp/res && cp -r bench /tmp/res/ 2>/dev/null || true
+          cd /tmp/res && git init -q -b 3d-bench-results && git add -A
+          git -c user.name=shorts-bot -c user.email=shorts-bot@users.noreply.github.com commit -qm "results ${GITHUB_SHA::7}"
+          git push -f "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" 3d-bench-results

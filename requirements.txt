@@ -5,6 +5,7 @@ soundfile
 numpy
 pillow>=10
 openai-whisper  # clarity_check: speech recognition on each render
+moderngl>=5.8  # 3D chart scenes (pipeline/gl3d.py); Mesa llvmpipe on CI
 google-api-python-client
 google-auth
 google-auth-oauthlib
