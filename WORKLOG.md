@@ -41,8 +41,20 @@ passes and the 3D version is clearly better. Free tools only; ≤100 Higgsfield 
 - Local comparison videos: out/compare/{001,002}-*-before-after.mp4 (left = current main,
   right = 3D), plus the individual files.
 
+- e2e run #2 on GitHub (15e2e04): PASSED. Per Short incl. real voice, Whisper clarity check
+  and 3D on llvmpipe: 001 148 s, 002 133 s, 022 97 s (budget 8 min). zone check OK, quality gate
+  passed, Buffer dry run found "How They Make Money" and built valid posts (nothing posted).
+  BUT every 3D frame was blurred on GitHub only: Mesa doesn't resolve multisampled depth
+  reliably, so depth of field treated everything as out of focus. Fix (248acf3): separate
+  half-res depth pass into a float texture. Results publishing fixed the ci-test way.
+- Linter, failure-alert issue, safe-area centering, pronunciation fixes, per-Short camera
+  variety, analytics/PLAN.md (see TODO.md).
+- Higgsfield image-to-video hook priced: Grok Video 1.5 3 s 480p = 7.5 credits, Seedance 2.5
+  4 s 480p = 12. At 2/day that's ~450–720 credits/month on top of ~243–332 → over the 600
+  plan. Not adopted; no credits spent on it.
+
 ## In progress
-- First e2e run on GitHub (commit d0ab458).
+- e2e run #3 (248acf3) to confirm sharp 3D frames on llvmpipe.
 
 ## Next
 - Read e2e results; fix; check render minutes vs 8-min budget.
