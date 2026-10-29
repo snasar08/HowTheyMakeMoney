@@ -119,7 +119,7 @@ def bars(theme, tname, v, t, p, variant):
     span = 2.1
     xs = [(k - (n - 1) / 2) * span for k in range(n)]
     hmax = 3.8
-    eye, tgt = _orbit(p, variant, 15.5 + n * 1.3, 3.2, 2.6)
+    eye, tgt = _orbit(p, variant, 12.5 + n * 3.8, 3.4, 2.4)
     sc = Scene(L, eye, tgt, fov=36, aperture=0.9)
     box = Engine.get().meshes["box"]
     for k, (it, x) in enumerate(zip(items, xs)):
@@ -173,7 +173,7 @@ def stat(theme, tname, v, t, p, variant):
     k = ease(t / 1.1)
     prefix, suffix = v.get("prefix", ""), v.get("suffix", "")
     money = prefix == "$" or "dollar" in v.get("label", "").lower()
-    eye, tgt = _orbit(p, variant, 14.5, 2.6, 2.9, spread=0.35)
+    eye, tgt = _orbit(p, variant, 18.0, 2.8, 2.6, spread=0.35)
     sc = Scene(L, eye, tgt, fov=36, aperture=0.8, focus=None)
     coins = int(round(36 * min(1.0, ease_back(t / 1.3))))
     _coin_stacks(sc, L, 0, 0.3, coins, cols=3, money=money)
@@ -193,7 +193,7 @@ def donut(theme, tname, v, t, p, variant):
     L = look_for(theme, tname)
     e = Engine.get()
     pct = float(v["value"])
-    eye, tgt = _orbit(p, variant, 15.0, 8.5, 1.4, spread=0.3)
+    eye, tgt = _orbit(p, variant, 19.0, 10.5, 1.2, spread=0.3)
     sc = Scene(L, eye, tgt, fov=38, aperture=0.6)
     grow = ease(t / 1.0)
     a_hi = 2 * math.pi * pct / 100 * grow
@@ -224,7 +224,7 @@ def globe(theme, tname, v, t, p, variant):
     """v = {"type": "globe", "points": [{"lat": .., "lon": .., "label": ..}], "label": ".."}"""
     L = look_for(theme, tname)
     e = Engine.get()
-    sc = Scene(L, (0, 1.9, 13.5 - 1.0 * p), (0, 1.6, 0), fov=34, aperture=0.4)
+    sc = Scene(L, (0, 1.9, 16.5 - 1.0 * p), (0, 1.3, 0), fov=34, aperture=0.4)
     sc.look = {**L, "floor": None}
     spin = -0.6 + 0.5 * t
     tex = e.texture(("earth", tname), _earth_texture(L))

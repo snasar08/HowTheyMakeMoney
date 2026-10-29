@@ -97,7 +97,7 @@ _POST_FS = """
 #version 330
 uniform sampler2D color; uniform sampler2D depth;
 uniform float near; uniform float far; uniform float focus; uniform float aperture;
-uniform vec2 px;
+uniform vec2 px; uniform float vig_amt;
 in vec2 uv; out vec4 f;
 float lin(float z) { z = z * 2.0 - 1.0; return 2.0 * near * far / (far + near - z * (far - near)); }
 void main() {
@@ -111,7 +111,7 @@ void main() {
     }
     vec3 c = acc / wsum;
     float vig = smoothstep(1.15, 0.35, length((uv - 0.5) * vec2(0.9, 1.0)));
-    f = vec4(c * mix(0.78, 1.0, vig), 1.0);
+    f = vec4(c * mix(1.0 - vig_amt, 1.0, vig), 1.0);
 }"""
 
 
@@ -239,6 +239,19 @@ def quad_mesh():
 
 
 # ----------------------------------------------------------------- engine
+_gl_thread = None
+
+
+def run3d(fn, *args, **kw):
+    """Run fn on the one thread that owns the GL context (frames render in a thread pool, and
+    a GL context can't hop between threads). Blocks until done; returns fn's result."""
+    global _gl_thread
+    if _gl_thread is None:
+        from concurrent.futures import ThreadPoolExecutor
+        _gl_thread = ThreadPoolExecutor(max_workers=1, thread_name_prefix="gl3d")
+    return _gl_thread.submit(fn, *args, **kw).result()
+
+
 class Engine:
     """One GL context + reusable meshes. Not thread-safe: callers hold `lock`."""
     lock = threading.Lock()
@@ -313,6 +326,10 @@ class Scene:
         self.focus = focus if focus is not None else float(np.linalg.norm(self.eye - self.target))
         self.items, self.blobs = [], []
         self.near, self.far = 0.1, 80.0
+        self.vignette = 0.22
+        # lens shift (NDC): moves the picture up so 3D content sits between the channel tag and
+        # the caption dead zone, without tilting the camera
+        self.shift = 0.15
 
     def add(self, mesh, model, color, tex=None, spec=0.35, gloss=40.0, emissive=0.0, alpha=1.0,
             unlit=False, shadow=None):
@@ -326,6 +343,7 @@ class Scene:
         L, ctx = self.look, e.ctx
         view = look_at(self.eye, self.target)
         proj = perspective(self.fov, W3D / H3D, self.near, self.far)
+        proj[1, 2] = -self.shift
         vp = proj @ view
         e.msaa.use()
         bg = np.asarray(L["fog"], np.float32)
@@ -385,6 +403,32 @@ class Scene:
         q["near"].value, q["far"].value = self.near, self.far
         q["focus"].value, q["aperture"].value = float(self.focus), float(self.aperture)
         q["px"].value = (1.0 / W3D, 1.0 / H3D)
+        q["vig_amt"].value = float(self.vignette)
         e.post_vao.render()
         raw = e.out_fbo.read(components=3)
         return np.frombuffer(raw, np.uint8).reshape(H3D, W3D, 3)[::-1]
+
+
+def card(img, q, side, bg_rgb) -> np.ndarray:
+    """Transition: the frame as a card swinging in (q 0->1) around a vertical edge, with a
+    slight push. Rendered at full size so the settled card lines up pixel-exact at q=1."""
+    e = Engine.get()
+    k = 1 - (1 - min(max(q, 0.0), 1.0)) ** 3
+    if not hasattr(e, "card_tex"):
+        e.card_tex = e.ctx.texture((W3D, H3D), 3)
+    from PIL import Image
+    e.card_tex.write(img.convert("RGB").transpose(Image.FLIP_TOP_BOTTOM).resize((W3D, H3D)).tobytes())
+    fov = 40.0
+    dist = (1.0 / math.tan(math.radians(fov) / 2))  # quad height 2 fills the view exactly
+    bg = tuple(c / 255 for c in bg_rgb[:3])
+    look = dict(fog=bg, floor=None, sky=(1, 1, 1), ground=(1, 1, 1), rim=(0, 0, 0), key_dir=(0, 0, -1),
+                fog_near=50, fog_far=60)
+    sc = Scene(look, (0, 0, dist), (0, 0, 0), fov=fov, aperture=0.0)
+    sc.vignette = 0.0
+    sc.shift = 0.0
+    sgn = 1 if side else -1
+    ang = sgn * (1 - k) * 0.55
+    push = (1 - k) * -0.6
+    m = trs((0, 0, push), ry=ang) @ trs((0, 0, 0), (2 * W3D / H3D, 2, 1))
+    sc.add(e.meshes["quad"], m, (1, 1, 1), tex=e.card_tex, unlit=True)
+    return sc.render()

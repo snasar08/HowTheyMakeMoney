@@ -50,7 +50,25 @@ BEAT_MAX = 2.0  # Sam: something new on screen at least every 2 s
 CTA_LINE = os.environ.get("CTA_LINE", "Comment which brand we should do next, and subscribe.")
 CTA_QUESTION = "Which brand should we do next?"
 CTA_Y = 430
-PROGRESS_H = 9                       # px, progress bar at the top edge
+PROGRESS_H = 9
+# 3D chart scenes (pipeline/scene3d.py). Falls back to the 2D drawings if moderngl / GL is missing.
+RENDER_3D = os.environ.get("RENDER_3D", "on") == "on"
+TRANSITION_3D = os.environ.get("TRANSITION_3D", "on") == "on"
+_3d_ok = None
+
+
+def three_d_ok() -> bool:
+    global _3d_ok
+    if _3d_ok is None:
+        _3d_ok = False
+        if RENDER_3D:
+            try:
+                from .gl3d import Engine, run3d
+                print(f"[render] 3D on: {run3d(lambda: Engine.get().renderer)}")
+                _3d_ok = True
+            except Exception as exc:  # noqa: BLE001 — never lose a night over 3D
+                print(f"::warning::[render] 3D unavailable ({exc!r}); using 2D charts")
+    return _3d_ok                       # px, progress bar at the top edge
 CTA_PAUSE = 0.15                     # short beat before the CTA (longer sounded awkward)
 
 _font_cache: dict = {}
@@ -354,6 +372,12 @@ class Renderer:
                 elif typ == "text":
                     shots.append(("text", None, 0, False) if b % 2 == 0 else
                                  ("textbg", self._next_broll(), (v_i % 5) + 1, False))
+                elif three_d_ok() and typ in ("stat", "bars", "donut", "globe"):
+                    # 3D: every beat is a new camera move; every third beat cuts to B-roll + figure
+                    if b % 3 == 2 and self._pool and typ != "globe":
+                        shots.append(("figure", self._next_broll(), (v_i % 5) + 1, False))
+                    else:
+                        shots.append(("3d", None, b + si, False))
                 else:  # stat / bars / donut
                     if b == 0:
                         shots.append(("chart", None, 0, False))
@@ -704,7 +728,13 @@ class Renderer:
         b1 = sc.beats[b + 1] if b + 1 < len(sc.beats) else sc.duration
         tb, pb = t - b0, (t - b0) / max(b1 - b0, 0.1)
         kind, key, variant, first = sc.shots[b]
-        if kind == "image":
+        if kind == "3d":
+            from . import scene3d
+            from .gl3d import run3d
+            frame = run3d(scene3d.RENDERERS[sc.visual["type"]], self.theme, self.s.get("theme", "dark_neon"),
+                          sc.visual, t, pb, variant)
+            self._draw_tag(frame)
+        elif kind == "image":
             frame = self.shot_image(sc, key, variant, first, tb, pb)
         elif kind == "figure":
             frame = self.shot_figure(sc, key, variant, tb, pb)
@@ -822,7 +852,12 @@ class Renderer:
                 si = min(int(np.searchsorted(starts, gt, side="right") - 1), len(scenes) - 1)
                 sc, t = scenes[si], gt - starts[si]
                 frame, tb = self.draw(sc, si, t)
-                if gt > 0.05 and tb < 0.14:  # punch-in + light flash on every cut
+                if TRANSITION_3D and three_d_ok() and gt > 0.05 and tb < 0.26:
+                    # 3D swing: the new shot arrives as a card turning in from the side
+                    from .gl3d import card, run3d
+                    frame = Image.fromarray(run3d(card, frame, tb / 0.26, (si * 7 + int(t * 3)) % 2,
+                                                  self.theme["bg_top"]))
+                elif gt > 0.05 and tb < 0.14:  # punch-in + light flash on every cut
                     z = 1.07 - 0.07 * ease_out(tb / 0.14)
                     cw, ch = W / z, H / z
                     frame = frame.resize((W, H), Image.BILINEAR,
