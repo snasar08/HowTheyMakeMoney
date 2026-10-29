@@ -22,7 +22,7 @@ jobs:
           python-version: "3.11"
       - name: Mesa software GL
         run: sudo apt-get update -qq && sudo apt-get install -y -qq libegl1 libgl1-mesa-dri libegl-mesa0 blender
-      - run: pip install -q moderngl pillow numpy
+      - run: pip install -q moderngl pillow numpy soundfile
       - name: moderngl / llvmpipe
         env:
           EGL_PLATFORM: surfaceless
