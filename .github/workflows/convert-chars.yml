@@ -1,0 +1,35 @@
+name: Convert character FBX to GLB
+
+# Branch 3d-upgrade: converts assets/characters/src/**/*.fbx to GLB with Blender (headless) and
+# force-pushes the GLBs + log to branch 3d-assets (fetch them from there).
+on:
+  push:
+    branches: ["3d-upgrade"]
+    paths: ["assets/characters/src/**", "bench/convert_fbx.py", ".github/workflows/convert-chars.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  convert:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq blender python3-numpy
+      - name: Convert
+        run: |
+          mkdir -p /tmp/res
+          for f in assets/characters/src/*/*.fbx; do
+            n=$(basename "$(dirname "$f")")
+            blender -b -P bench/convert_fbx.py -- "$f" "/tmp/res/$n.glb" 2>&1 | grep -E "CLIPS|MESHES|WROTE|Error|rror" | tee -a /tmp/res/convert.log
+          done
+      - name: Publish
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cd /tmp/res && git init -q -b 3d-assets && git add -A
+          git -c user.name=shorts-bot -c user.email=shorts-bot@users.noreply.github.com commit -qm "converted ${GITHUB_SHA::7}"
+          git push -f "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" 3d-assets

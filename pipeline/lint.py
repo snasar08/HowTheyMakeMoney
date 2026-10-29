@@ -21,7 +21,7 @@ WPS = 2.55        # spoken words per second at KOKORO_SPEED 1.25 (measured: 009 
 LEN_MIN, LEN_MAX = 25, 45
 TITLE_MAX = 50    # Shorts titles get cut on mobile beyond ~50 chars
 PEOPLE = re.compile(r"\b(person|people|man|woman|couple|family|shopper|worker|cashier|driver|owner|"
-                    r"customer|customers|crowd|fans|player|gamer|chef|pilot|student|friends|parent)s?\b", re.I)
+                    r"customer|customers|crowd|fan|player|gamer|chef|pilot|student|friend|parent|teenager|kid|traveler|barista|technician|engineer|runner|clerk|singer|crew|rider|employee|adult)s?\b", re.I)
 
 
 def lint(s: dict) -> tuple[list[str], list[str]]:
@@ -61,8 +61,8 @@ def lint(s: dict) -> tuple[list[str], list[str]]:
         if missing:
             err.append(f"ready but images missing: {', '.join(missing)}")
         prompts = [(imgs.get(k) or {}).get("prompt", "") for k in imgs]
-        if sum(bool(PEOPLE.search(p)) for p in prompts) < 2:
-            warn.append("fewer than 2 images with people (STYLE.md: show realistic made-up people)")
+        if sum(bool(PEOPLE.search(p)) and "3d" in p.lower() for p in prompts) < 2:
+            warn.append("fewer than 2 images with 3D-rendered characters (STYLE.md: 3D characters)")
         for p in prompts:
             if p and "no logos" not in p.lower():
                 warn.append("image prompt missing 'no logos'")

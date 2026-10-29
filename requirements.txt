@@ -6,6 +6,7 @@ numpy
 pillow>=10
 openai-whisper  # clarity_check: speech recognition on each render
 moderngl>=5.8  # 3D chart scenes (pipeline/gl3d.py); Mesa llvmpipe on CI
+transformers>=4.45  # depth maps for photo parallax (Depth Anything V2 Small, Apache-2.0)
 google-api-python-client
 google-auth
 google-auth-oauthlib

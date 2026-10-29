@@ -148,8 +148,10 @@ Posting uses 14 Shorts/week (2/day). Goal: build a buffer, capped so credits are
    (1 credit each). Pro plan allows only **4 images at a time** — submit groups of 4, wait with
    `jobs_wait`, then the next 4. Put each `result_url` into `images.hook.url`, `images.mid.url`, `images.broll1.url`, `images.broll2.url` (4 images per Short).
    Check `balance` first; if under 60 credits, write the scripts but stop before images and leave
-   a note in the commit message. No real people or logos in prompts — but DO show realistic
-   made-up people in at least 2 of the 4 images (see STYLE.md "Show people").
+   a note in the commit message. No real people or logos in prompts. At least 2 of the 4 images show
+   made-up people as 3D-rendered CGI characters (smooth, stylized-realistic, soft studio light,
+   clean backgrounds) — see STYLE.md "3D characters"; never name a creator in a prompt.
+   (Pending Sam's approval of the look, Oct 29: don't regenerate already-queued Shorts.)
 6. Validate every file parses as JSON and has 5–6 scenes, and run `python -m pipeline.lint <files>`
    (fix every error, most warnings), then commit and push to `main`.
 7. Never leave a script with `status: "ready"` and missing image URLs — set `status: "draft"` if

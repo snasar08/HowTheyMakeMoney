@@ -34,14 +34,17 @@ Every Short answers one question: **how does this company (or industry) actually
 - No predictions about stock prices, no investment advice, no claims about private people.
 - Don't put real logos, trademarks or real people in image prompts. End every image prompt with
   "no text, no logos, no brand names".
-- **Show people (Sam, Oct 29):** at least 2 of the 4 images per Short should have realistic,
-  made-up people doing the thing the Short is about (shoppers pushing a cart, a cashier, a
-  family at the movies, a driver, a gamer). Photo-real, natural, candid, never 3D/cartoon
-  figures. Not real or famous people, no celebrity look-alikes, no kids shown alone, no
-  uniforms or name tags with brand marks. Adults or families; faces fine but not close-up
-  portraits. Example: "Cinematic candid photo, vertical: a young couple laughing while pushing
-  an overflowing shopping cart down a huge warehouse aisle, warm light, shallow depth of field,
-  photorealistic, generic store, no text, no logos, no brand names".
+- **3D characters (Sam, Oct 29):** at least 2 of the 4 images per Short show people as
+  3D-rendered CGI characters: smooth, slightly stylized but realistic proportions, soft studio
+  lighting, clean simple backgrounds, gentle depth of field — the look of a polished animated
+  explainer. Not photos, not cartoons, not toys. Characters are made up: no real or famous
+  people, no look-alikes, no kids shown alone, no logos or brand marks on clothes/products.
+  Never name a creator or studio in a prompt; describe the style. Start such prompts with:
+  "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting,
+  clean simple background, shallow depth of field, vertical:" and end with "no text, no logos,
+  no brand names". Example: "... vertical: a smiling couple pushing an overflowing shopping cart
+  past tall shelves of bulk boxes in a warehouse store, no text, no logos, no brand names".
+  The other images (objects, places) may use the same 3D style so the Short looks consistent.
 
 ## Themes
 - `dark_neon` — finance, fintech, tech platforms, crypto, banks.
