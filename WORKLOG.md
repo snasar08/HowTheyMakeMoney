@@ -58,6 +58,9 @@ passes and the 3D version is clearly better. Free tools only; ≤100 Higgsfield 
 - **MERGED to main 76e5799** (Oct 29 ~07:05 UTC). Off switch: repo variable RENDER_3D=off.
 - out/REPORT.md written (local, out/ is gitignored).
 
+- Phase 3 batch merged to main c94ca62: cash-rain 3D shot, ranked topics.md top 20 (casinos
+  dropped), Whisper model cache (e2e: 82/75/56 s per Short).
+
 ## In progress
 - Watch the first 3D nightly (10:17 UTC Oct 29): check "Delivered Shorts" commit + no failure issue.
 
