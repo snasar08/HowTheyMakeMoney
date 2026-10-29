@@ -42,6 +42,8 @@ def speakable(text: str) -> str:
     t = _SAY.sub(lambda m: SAY[m.group(1)], text)
     t = t.replace("%", " percent").replace("&", " and ").replace("~", "about ")
     t = re.sub(r"\$(\d[\d,.]*)\s*(billion|million|trillion)", r"\1 \2 dollars", t)
+    t = re.sub(r"\$(\d[\d,.]*)([BMK])\b",
+               lambda m: f"{m.group(1)} {dict(B='billion', M='million', K='thousand')[m.group(2)]} dollars", t)
     return re.sub(r"\s+", " ", t).strip()
 
 
