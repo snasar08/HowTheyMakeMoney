@@ -39,6 +39,14 @@ and **free beyond his Higgsfield Pro plan** — never add a paid service or ask 
 - Hooks: every Short opens with a question in the first line + on-screen overlay, and the title
   is a question (Sam: hooks matter most). Aim for topics/hooks that score ~90/100 for virality.
 - Shots change every ~1.4 s (max 2 s, Sam wants something new at least every 2 s).
+- **3D charts (since Oct 29 2026):** `pipeline/gl3d.py` (moderngl engine; Mesa llvmpipe via EGL on
+  GitHub, ~0.1 s/frame) + `pipeline/scene3d.py` (bars from a floor, coin/cash stacks with a counting
+  number, pie slice-out, globe, extruded text) + a 3D card swing on cuts. All GL calls go through
+  `run3d` (one GL thread). Off switch: repo variable `RENDER_3D=off` → old 2D charts; automatic
+  2D fallback if GL fails. A Short renders in ~1.5–2.5 min on the runner. `globe` visual type:
+  `{"type": "globe", "points": [{"lat": .., "lon": ..}], "label": ".."}` (real coordinates only).
+  Test: push branch `3d-e2e` (real voice, checks, gate, Buffer dry run; results on
+  `3d-e2e-results`). Benchmarks: `bench3d.yml` on `3d-upgrade`.
 - Chart scenes also get code-drawn "alt" shots (ticker / waffle / columns) on a drifting grid.
 - **Posting via Buffer (default since Oct 26 2026):** `UPLOAD_MODE` defaults to `buffer` in
   `nightly.yml`. Each Short is attached to a GitHub Release (the public video URL) and scheduled
