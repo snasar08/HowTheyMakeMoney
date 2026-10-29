@@ -142,7 +142,8 @@ Posting uses 14 Shorts/week (2/day). Goal: build a buffer, capped so credits are
    Check `balance` first; if under 60 credits, write the scripts but stop before images and leave
    a note in the commit message. No real people or logos in prompts — but DO show realistic
    made-up people in at least 2 of the 4 images (see STYLE.md "Show people").
-6. Validate every file parses as JSON and has 5–6 scenes, then commit and push to `main`.
+6. Validate every file parses as JSON and has 5–6 scenes, and run `python -m pipeline.lint <files>`
+   (fix every error, most warnings), then commit and push to `main`.
 7. Never leave a script with `status: "ready"` and missing image URLs — set `status: "draft"` if
    images couldn't be made, so the nightly run skips it.
 8. On the first Saturday of the month (part 1 only), open a GitHub issue "Monthly report YYYY-MM":

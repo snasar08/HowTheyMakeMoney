@@ -65,6 +65,9 @@ jobs:
           key: htmm-models-v1-${{ hashFiles('requirements.txt') }}
           restore-keys: htmm-models-v1-
 
+      - name: Lint scripts (warnings only)
+        run: python -m pipeline.lint || true
+
       - name: Make Shorts
         run: |
           ARGS="--count ${{ inputs.count || env.SHORTS_PER_RUN }}"
