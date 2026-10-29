@@ -63,7 +63,7 @@ def build_set(sc, name, rng):
         for z in np.arange(-40, 30, 10):          # field lines
             _box(sc, (0, 0.005, z), (40, 0.01, 0.25), (0.95, 0.95, 0.95), shadow=False)
     elif name in ("store", "warehouse"):
-        for x in (-12, -6.5, 6.5, 12):
+        for x in (-16, -9, 9, 16):
             for z in np.arange(-60, 8, 4.5):
                 _box(sc, (x, 0, z), (1.6, 3.6 if name == "store" else 6.0, 4.2), (0.92, 0.45, 0.12) if name == "warehouse" else (0.85, 0.85, 0.88))
                 for lv in range(3 if name == "store" else 4):
@@ -92,7 +92,7 @@ def add_props(sc, props, t, rng):
     for name in props or []:
         if name == "boxes":                       # mountains of parcels
             for k in range(70):
-                x, z = rng.uniform(-10, 10), rng.uniform(-28, -6)
+                x, z = rng.choice([-1, 1]) * rng.uniform(2.5, 7.5), rng.uniform(-28, -4)
                 stack = int(rng.integers(1, 7))
                 for lv in range(stack):
                     _box(sc, (x, lv * 0.75, z), (0.9, 0.72, 0.9), (0.8, 0.6, 0.38), ry=float(rng.uniform(0, 1)), shadow=lv == 0)
@@ -147,7 +147,8 @@ def _crowd(key, v, ch):
         cheer = ch.find_clip("jump")
         c = Crowd(ch, skin=None)
         if n:
-            pos = grid_crowd(n, -16, 16, -40, -6, rng)
+            wide = v.get("set") in ("field", "city", "stage")
+            pos = grid_crowd(n, -16 if wide else -6, 16 if wide else 6, -40, -6, rng)
             clips = [clip if (i % 4 or act != "cheer") else cheer for i in range(n)]
             c.place(pos, rng.uniform(-0.3, 0.3, n) + (0 if act in ("run", "push", "carry") else math.pi * 0),
                     rng.uniform(0.92, 1.08, n), [PALETTE[int(rng.integers(8))] for _ in range(n)], clips,
@@ -178,7 +179,8 @@ def render(v, t, p, variant):
     act = v.get("action", "run")
     key = (v.get("set"), act, int(v.get("crowd", 0)), id(v))
     crowd, hero = _crowd(key, v, ch)
-    shot = v.get("shot") or SHOTS[variant % len(SHOTS)]
+    shots = SHOTS if v.get("set") in ("field", "city", "stage") else ("wide", "hero_low", "close", "top")
+    shot = v.get("shot") or shots[variant % len(shots)]
     eye, tgt, fov = _camera(shot, p, t, act)
     sc = Scene(look(v.get("set", "field")), eye, tgt, fov=fov, aperture=0.0)
     sc.size, sc.vignette, sc.shift, sc.shift_x = SIZE, 0.12, 0.0, 0.0
