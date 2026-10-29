@@ -54,6 +54,7 @@ PROGRESS_H = 9
 # 3D chart scenes (pipeline/scene3d.py). Falls back to the 2D drawings if moderngl / GL is missing.
 RENDER_3D = os.environ.get("RENDER_3D", "on") == "on"
 TRANSITION_3D = os.environ.get("TRANSITION_3D", "on") == "on"
+PARALLAX = os.environ.get("PARALLAX", "on") == "on"  # depth-map parallax on the photos (pipeline/depth.py)
 _3d_ok = None
 
 
@@ -330,6 +331,7 @@ class Renderer:
         self.shade = shade_overlay(self.theme["image_tint"])
         self.dim = Image.new("RGBA", (W, H), (0, 0, 0, 120))
         self._base: dict = {}
+        self._depth: dict = {}
         self._pool = [k for k in self.images if k.startswith("broll")] + \
                      [k for k in ("mid", "hook") if k in self.images]
         self._pool_i = 0
@@ -400,6 +402,16 @@ class Renderer:
         src = self.images.get(key)
         if src is None:
             return self.bg.copy()
+        if PARALLAX and three_d_ok():
+            if key not in self._depth:
+                from .depth import depth_for
+                cov = cover(src, W, H)
+                d = depth_for((self.s.get("images", {}).get(key) or {}).get("url") or key, cov)
+                self._depth[key] = (cov, d)
+            cov, d = self._depth[key]
+            if d is not None:  # real parallax: camera drifts through the depth-displaced photo
+                from .gl3d import parallax, run3d
+                return Image.fromarray(run3d(parallax, key, cov, d, p, variant))
         if key not in self._base:
             self._base[key] = cover(src, int(W * 1.4), int(H * 1.4))
         base = self._base[key]

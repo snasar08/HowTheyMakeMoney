@@ -478,3 +478,61 @@ def card(img, q, side, bg_rgb) -> np.ndarray:
     m = trs((0, 0, push), ry=ang) @ trs((0, 0, 0), (2 * W3D / H3D, 2, 1))
     sc.add(e.meshes["quad"], m, (1, 1, 1), tex=e.card_tex, unlit=True)
     return sc.render()
+
+
+# ----------------------------------------------------------------- 2.5D parallax for photos
+_PARALLAX_PATHS = [  # (x0, x1, y0, y1, dolly0, dolly1): small camera drifts, all different
+    (-1, 1, 0.2, -0.2, 0.0, 0.25), (1, -1, -0.3, 0.3, 0.2, 0.0), (0.2, -0.2, -1, 1, 0.0, 0.2),
+    (-0.6, 0.8, 0.8, -0.4, 0.25, 0.05), (0.0, 0.0, 0.0, 0.0, 0.0, 0.32), (0.9, -0.5, 0.5, -0.7, 0.1, 0.25)]
+
+
+def parallax(key, img, depth, p, variant, amount=0.55, drift=0.11, grid=(96, 170)):
+    """The photo as a mesh pushed forward by its depth map; a slow camera drift then gives real
+    parallax (near things slide past far things). img: PIL RGB already cropped to 9:16 cover."""
+    e = Engine.get()
+    if not hasattr(e, "par_cache"):
+        e.par_cache = {}
+    if key not in e.par_cache:
+        if len(e.par_cache) > 8:
+            for _, (vao, tex) in list(e.par_cache.items())[:4]:
+                vao.release()
+                tex.release()
+            e.par_cache = dict(list(e.par_cache.items())[4:])
+        gx, gy = grid
+        aspect = W3D / H3D
+        dz = np.asarray(depth, np.float32)
+        ys, xs = np.mgrid[0:gy + 1, 0:gx + 1]
+        u, v = xs / gx, ys / gy
+        di = dz[np.clip((v * (dz.shape[0] - 1)).astype(int), 0, dz.shape[0] - 1),
+                np.clip((u * (dz.shape[1] - 1)).astype(int), 0, dz.shape[1] - 1)]
+        pos = np.stack([(u - 0.5) * 2 * aspect, (0.5 - v) * 2, (di - 0.5) * amount], -1)
+        verts = np.concatenate([pos, np.zeros_like(pos) + [0, 0, 1], np.stack([u, 1 - v], -1)], -1)
+        verts = verts.reshape(-1, 8).astype(np.float32)
+        idx = []
+        for j in range(gy):
+            r0, r1 = j * (gx + 1), (j + 1) * (gx + 1)
+            a = np.arange(gx)
+            idx.append(np.stack([r0 + a, r1 + a, r0 + a + 1, r0 + a + 1, r1 + a, r1 + a + 1], -1))
+        idx = np.concatenate(idx).astype(np.int32).ravel()
+        c = e.ctx
+        vao = c.vertex_array(e.prog, [(c.buffer(verts.tobytes()), "3f 3f 2f", "in_pos", "in_norm", "in_uv")],
+                             index_buffer=c.buffer(idx.tobytes()))
+        from PIL import Image
+        im = img.convert("RGB").transpose(Image.FLIP_TOP_BOTTOM)
+        tex = c.texture(im.size, 3, im.tobytes())
+        tex.build_mipmaps()
+        e.par_cache[key] = (vao, tex)
+    vao, tex = e.par_cache[key]
+    x0, x1, y0, y1, d0, d1 = _PARALLAX_PATHS[variant % len(_PARALLAX_PATHS)]
+    k = p * p * (3 - 2 * p)  # smoothstep
+    fov = 40.0
+    dist = 1.0 / math.tan(math.radians(fov) / 2)
+    cx, cy = (x0 + (x1 - x0) * k) * drift, (y0 + (y1 - y0) * k) * drift
+    eye = (cx, cy, dist + 0.04 - (d0 + (d1 - d0) * k) * 0.55)
+    look = dict(fog=(0, 0, 0), floor=None, sky=(1, 1, 1), ground=(1, 1, 1), rim=(0, 0, 0), key_dir=(0, 0, -1),
+                fog_near=50, fog_far=60)
+    sc = Scene(look, eye, (cx * 0.35, cy * 0.35, 0), fov=fov, aperture=0.0)
+    sc.vignette, sc.shift, sc.shift_x = 0.0, 0.0, 0.0
+    # overscan so the drifting camera never sees past the picture's edges
+    sc.add(vao, trs((0, 0, 0), (1.16, 1.16, 1)), (1, 1, 1), tex=tex, unlit=True)
+    return sc.render()
