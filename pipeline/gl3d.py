@@ -87,6 +87,17 @@ void main() {
     f = vec4(mix(c, fog_col, max(fg * fg, edge)), 1.0);
 }"""
 
+# depth pass: eye distance into a float texture (Mesa can't resolve multisampled depth reliably)
+_DEPTH_FS = """
+#version 330
+uniform vec3 eye; uniform sampler2D tex; uniform int use_tex;
+in vec3 v_pos; in vec3 v_norm; in vec2 v_uv;
+out vec4 f;
+void main() {
+    if (use_tex == 1 && texture(tex, v_uv).a < 0.5) discard;
+    f = vec4(length(eye - v_pos), 0.0, 0.0, 1.0);
+}"""
+
 _POST_VS = """
 #version 330
 in vec2 in_pos; out vec2 uv;
@@ -96,12 +107,11 @@ void main() { uv = in_pos * 0.5 + 0.5; gl_Position = vec4(in_pos, 0.0, 1.0); }""
 _POST_FS = """
 #version 330
 uniform sampler2D color; uniform sampler2D depth;
-uniform float near; uniform float far; uniform float focus; uniform float aperture;
+uniform float focus; uniform float aperture;
 uniform vec2 px; uniform float vig_amt;
 in vec2 uv; out vec4 f;
-float lin(float z) { z = z * 2.0 - 1.0; return 2.0 * near * far / (far + near - z * (far - near)); }
 void main() {
-    float d = lin(texture(depth, uv).r);
+    float d = texture(depth, uv).r;
     float coc = clamp(abs(d - focus) / d * aperture, 0.0, 1.0);
     vec3 acc = texture(color, uv).rgb; float wsum = 1.0;
     if (coc > 0.02) {
@@ -269,6 +279,7 @@ class Engine:
         self.ctx = moderngl.create_standalone_context(**({"backend": backend} if backend else {}))
         self.renderer = self.ctx.info.get("GL_RENDERER", "?")
         c = self.ctx
+        self._buf_of, self.depth_vaos = {}, {}
         self.prog = c.program(vertex_shader=_VS, fragment_shader=_FS)
         self.floor_prog = c.program(vertex_shader=_VS, fragment_shader=_FLOOR_FS)
         self.post = c.program(vertex_shader=_POST_VS, fragment_shader=_POST_FS)
@@ -282,18 +293,30 @@ class Engine:
         self.msaa = c.framebuffer(c.renderbuffer((W3D, H3D), 4, samples=SAMPLES),
                                   c.depth_renderbuffer((W3D, H3D), samples=SAMPLES))
         self.col_tex = c.texture((W3D, H3D), 4)
-        self.dep_tex = c.depth_texture((W3D, H3D))
-        self.resolve = c.framebuffer([self.col_tex], self.dep_tex)
+        self.resolve = c.framebuffer([self.col_tex])
+        self.depth_prog = c.program(vertex_shader=_VS, fragment_shader=_DEPTH_FS)
+        dw, dh = W3D // 2, H3D // 2
+        self.dep_tex = c.texture((dw, dh), 1, dtype="f4")
+        self.dep_fbo = c.framebuffer([self.dep_tex], c.depth_renderbuffer((dw, dh)))
         self.out_tex = c.texture((W3D, H3D), 3)
         self.out_fbo = c.framebuffer([self.out_tex])
         self.textures = {}
 
-    def _vao(self, prog, data):
-        buf = self.ctx.buffer(data.tobytes())
+    def _vao(self, prog, data=None, buf=None):
+        buf = buf or self.ctx.buffer(data.tobytes())
         names = [n for n in ("in_pos", "in_norm", "in_uv") if n in prog]
         fmt = " ".join({"in_pos": "3f", "in_norm": "3f", "in_uv": "2f"}[n] if n in names else
                        {"in_pos": "12x", "in_norm": "12x", "in_uv": "8x"}[n] for n in ("in_pos", "in_norm", "in_uv"))
-        return self.ctx.vertex_array(prog, [(buf, fmt, *names)])
+        vao = self.ctx.vertex_array(prog, [(buf, fmt, *names)])
+        self._buf_of[id(vao)] = buf
+        return vao
+
+    def depth_vao(self, vao):
+        """Same mesh, bound to the depth-pass program."""
+        k = id(vao)
+        if k not in self.depth_vaos:
+            self.depth_vaos[k] = self._vao(self.depth_prog, buf=self._buf_of[k])
+        return self.depth_vaos[k]
 
     def mesh(self, key, builder):
         if key not in self.meshes:
@@ -395,6 +418,27 @@ class Scene:
                 mesh.render()
             ctx.disable(ctx.BLEND)
         ctx.copy_framebuffer(e.resolve, e.msaa)
+        # depth pass (half res, no MSAA) for depth of field; skipped when there's no blur
+        if self.aperture > 0:
+            e.dep_fbo.use()
+            ctx.clear(self.far, 0, 0, 1)
+            ctx.enable(ctx.DEPTH_TEST)
+            dp = e.depth_prog
+            dp["eye"].value = tuple(float(x) for x in self.eye)
+            if L.get("floor") is not None:
+                m = trs((0, 0, 0), (60, 60, 1), rx=-math.pi / 2)
+                dp["mvp"].write((vp @ m).T.tobytes())
+                dp["model"].write(m.T.tobytes())
+                dp["use_tex"].value = 0
+                e.depth_vao(e.floor_vao).render()
+            for mesh, model, color, tex, *_ in self.items:
+                dp["mvp"].write((vp @ model).T.tobytes())
+                dp["model"].write(model.T.tobytes())
+                dp["use_tex"].value = int(tex is not None)
+                if tex is not None:
+                    tex.use(0)
+                    dp["tex"].value = 0
+                e.depth_vao(mesh).render()
         # post: depth of field + vignette
         e.out_fbo.use()
         ctx.disable(ctx.DEPTH_TEST)
@@ -402,7 +446,6 @@ class Scene:
         e.dep_tex.use(1)
         q = e.post
         q["color"].value, q["depth"].value = 0, 1
-        q["near"].value, q["far"].value = self.near, self.far
         q["focus"].value, q["aperture"].value = float(self.focus), float(self.aperture)
         q["px"].value = (1.0 / W3D, 1.0 / H3D)
         q["vig_amt"].value = float(self.vignette)

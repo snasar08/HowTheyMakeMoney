@@ -228,10 +228,10 @@ def donut(theme, tname, v, t, p, variant):
                spec=0.3, gloss=30, shadow=(0, 0, 2.5, 2.5))
     from .render import fmt_number
     txt = f"{fmt_number(pct * grow, 0 if pct.is_integer() else 1)}%"
-    text3d(sc, txt, (0, 3.9 + 0.06 * math.sin(t * 2), 0.6), 1.3, L["primary"] if tname != "bold_bright" else (1, 1, 1),
+    text3d(sc, txt, (0, 4.15 + 0.06 * math.sin(t * 2), 0.6), 1.3, L["primary"] if tname != "bold_bright" else (1, 1, 1),
            L["side"], billboard=True, layers=12, depth=0.32, max_w=5.0)
     if v.get("label"):
-        label3d(sc, v["label"], (0, 3.05, 0.6), 0.46, L["text"], L["side"], billboard=True, layers=3,
+        label3d(sc, v["label"], (0, 3.25, 0.9), 0.46, L["text"], L["side"], billboard=True, layers=3,
                 depth=0.05, font_name="Inter-SemiBold.otf")
     return Image.fromarray(sc.render())
 
