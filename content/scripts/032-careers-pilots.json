@@ -1,0 +1,95 @@
+{
+  "id": "032",
+  "slug": "careers-pilots",
+  "company": "Airline pilots",
+  "format": "careers",
+  "visual_style": "charts3d",
+  "hook_style": "question",
+  "title_style": "question",
+  "theme": "clean_navy",
+  "status": "draft",
+  "score": 90,
+  "title": "How Much Do Airline Pilots Really Make?",
+  "description": "How much do airline pilots really make?\n\nSources:\n- U.S. Bureau of Labor Statistics, Occupational Outlook Handbook: Airline and Commercial Pilots (median pay, May 2024): https://www.bls.gov/ooh/transportation-and-material-moving/airline-and-commercial-pilots.htm\n\nMedian = half earn more, half earn less. Not financial advice.\n\n#shorts #pilot #careers #howtheymakemoney",
+  "tags": [
+    "pilot",
+    "careers",
+    "salary",
+    "airline",
+    "shorts"
+  ],
+  "images": {
+    "hook": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: a confident airline pilot in a plain dark uniform with no insignia walking through an airport terminal pulling a small suitcase, big windows with a parked airplane behind, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261029_152719_b9b37997-ce7f-47fc-b727-661338db4f4a.png"
+    },
+    "mid": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: two pilots in a bright airplane cockpit smiling at each other at sunrise, glowing instrument panels, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261029_152721_34f7adf0-5c5a-44df-ad89-4c91d927e6c9.png"
+    }
+  },
+  "loop": "So next time you board a flight, ask yourself:",
+  "scenes": [
+    {
+      "narration": "How much do airline pilots really make?",
+      "visual": {
+        "type": "image",
+        "image": "hook",
+        "overlay": "PILOT PAY",
+        "overlay_sub": "how much?"
+      }
+    },
+    {
+      "narration": "According to the U.S. Bureau of Labor Statistics, the median airline pilot earned 226,600 dollars in May 2024.",
+      "visual": {
+        "type": "stat",
+        "value": 226600,
+        "prefix": "$",
+        "suffix": "",
+        "decimals": 0,
+        "label": "median airline pilot pay, May 2024"
+      }
+    },
+    {
+      "narration": "Commercial pilots, who fly things like charters and tours, had a median of 122,670 dollars.",
+      "visual": {
+        "type": "bars",
+        "items": [
+          {
+            "label": "Commercial pilots",
+            "value": 122670
+          },
+          {
+            "label": "Airline pilots",
+            "value": 226600
+          }
+        ],
+        "prefix": "$",
+        "suffix": ""
+      }
+    },
+    {
+      "narration": "Median means half earn more and half earn less. Senior captains at big airlines are usually at the top.",
+      "visual": {
+        "type": "image",
+        "image": "mid",
+        "overlay": "SENIORITY",
+        "overlay_sub": "pays the most"
+      }
+    },
+    {
+      "narration": "Getting there takes years of training and flight hours. That's a big reason the pay is so high.",
+      "visual": {
+        "type": "text",
+        "text": "Hours in the air",
+        "sub": "= pay on the ground"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "BLS Occupational Outlook Handbook: Airline and Commercial Pilots",
+      "url": "https://www.bls.gov/ooh/transportation-and-material-moving/airline-and-commercial-pilots.htm"
+    }
+  ]
+}
