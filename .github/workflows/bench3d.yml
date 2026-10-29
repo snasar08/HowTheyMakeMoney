@@ -1,7 +1,7 @@
 name: 3D renderer benchmark
 
 # Branch 3d-upgrade only: times the candidate CPU 3D renderers on GitHub's 2-core runner and
-# pushes the numbers to bench/results.json on the same branch.
+# force-pushes the numbers (bench/gl.jsonl, bench/blender.txt, sample frames) to branch 3d-bench-results.
 on:
   push:
     branches: ["3d-upgrade"]
@@ -43,4 +43,4 @@ jobs:
           git config user.name "shorts-bot"
           git config user.email "shorts-bot@users.noreply.github.com"
           git add -f bench/gl.jsonl bench/blender.txt bench/frame_*.png 2>/dev/null
-          git commit -qm "3D bench results" && git pull --rebase -q origin 3d-upgrade && git push -q origin HEAD:3d-upgrade
+          git commit -qm "3D bench results ${GITHUB_SHA::7}" && git push -qf origin HEAD:refs/heads/3d-bench-results
