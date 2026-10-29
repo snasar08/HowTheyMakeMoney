@@ -1,0 +1,53 @@
+name: Buffer slot audit
+
+# Push branch slot-audit  -> report what's scheduled (read-only Buffer queries)
+# Push branch slot-fix    -> also delete double posts / >2 per day in Buffer, put those scripts
+#                            back to "ready" and commit that to main
+# Runs against main's delivered records. Results on branch slot-audit-results.
+on:
+  push:
+    branches: ["slot-audit", "slot-fix"]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: make-shorts
+  cancel-in-progress: false
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Audit
+        run: |
+          mkdir -p out
+          if [ "$GITHUB_REF_NAME" = "slot-fix" ]; then FIX=--fix; fi
+          git fetch -q origin "$GITHUB_REF_NAME" && git checkout -q "origin/$GITHUB_REF_NAME" -- pipeline/slot_audit.py pipeline/publish.py
+          python -m pipeline.slot_audit $FIX 2>&1 | tee out/slot-audit.log
+      - name: Commit script changes to main (fix only)
+        if: github.ref_name == 'slot-fix'
+        run: |
+          git config user.name "shorts-bot"
+          git config user.email "shorts-bot@users.noreply.github.com"
+          git restore --staged pipeline 2>/dev/null; git checkout -q HEAD -- pipeline
+          git add content/scripts
+          git diff --cached --quiet || git commit -qm "Slot fix: removed double posts, scripts back to ready"
+          git pull --rebase -q origin main && git push -q origin HEAD:main
+      - name: Publish results
+        if: always()
+        run: |
+          rm -rf /tmp/res && mkdir -p /tmp/res && cp out/slot-audit.* /tmp/res/ 2>/dev/null || true
+          cd /tmp/res && git init -q -b slot-audit-results && git add -A
+          git -c user.name=shorts-bot -c user.email=shorts-bot@users.noreply.github.com commit -qm "audit ${GITHUB_SHA::7}"
+          git push -f "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" slot-audit-results

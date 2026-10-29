@@ -1,8 +1,12 @@
 name: Make Shorts
 
 on:
+  # GitHub starts scheduled runs late (Oct 26-28: 5.5-6.5 h late), so render the EVENING BEFORE
+  # and keep a morning backup. Both only fill open slots (pipeline/publish.py), so extra runs —
+  # backup, late or manual — never double-post.
   schedule:
-    - cron: "17 10 * * *"   # every day ~6:17 AM New York time (10:17 UTC)
+    - cron: "23 1 * * *"    # ~9:23 PM New York (EDT; 8:23 PM after Nov 1) — fills tomorrow's slots
+    - cron: "41 13 * * *"   # ~9:41 AM New York backup — fills anything still open today
   workflow_dispatch:
     inputs:
       count:
