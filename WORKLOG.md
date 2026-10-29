@@ -31,8 +31,13 @@ posts/day, voice or upload mode without asking.
 - e2e of the 4 tests on GitHub (798b428) PASSED: 030 105 s, 031 71 s, 032 93 s, 005 106 s; clarity
   100/98/96/100%; zone, gate, Buffer dry run OK. Credits this task: 2 (balance 437.5).
 
+- **Sam approved low-poly (Oct 29).** LOWPOLY_LIVE=True; 030/031/032 ready (pilots got broll1/2, 2 more
+  credits → 4 this task, balance 435.5); queue alternates format AND visual style. Final e2e 206d2c5
+  (real nightly path, Buffer dry run) booked Fri 12:00 031 famous (low-poly) + Fri 18:00 032 careers.
+  Merged to main.
+
 ### In progress
-- Nothing. Waiting for Sam to approve the low-poly look.
+- Nothing.
 
 ---
 # Earlier: 3D upgrade (branch `3d-upgrade`)
