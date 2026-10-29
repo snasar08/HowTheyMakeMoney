@@ -56,6 +56,13 @@ and **free beyond his Higgsfield Pro plan** — never add a paid service or ask 
   `{"type": "globe", "points": [{"lat": .., "lon": ..}], "label": ".."}` (real coordinates only).
   Test: push branch `3d-e2e` (real voice, checks, gate, Buffer dry run; results on
   `3d-e2e-results`). Benchmarks: `bench3d.yml` on `3d-upgrade`.
+- **Low-poly style (branch `variety-upgrade` only, waiting for Sam's approval):** visual type
+  `lowpoly` (`pipeline/lowpoly.py`: code-built sets field/store/warehouse/city/office/stage, props,
+  a gold hero + instanced crowds of up to ~400 via `pipeline/crowd.py` GPU skinning, 5 camera
+  shots cut every beat, 540x960 upscaled) with big yellow outlined stats and lowercase one-word
+  yellow captions. CC0 characters: `assets/characters/CREDITS.md`. Meant for `whatif` + `famous`.
+  `lint.LOWPOLY_LIVE = False` keeps it out of the daily queue. Renderer choice (GitHub, 1080x1920):
+  moderngl 123/207 ms per frame for 100/300 characters vs three.js+SwiftShader 1262/3270 ms.
 - Chart scenes also get code-drawn "alt" shots (ticker / waffle / columns) on a drifting grid.
 - **Posting via Buffer (default since Oct 26 2026):** `UPLOAD_MODE` defaults to `buffer` in
   `nightly.yml`. Each Short is attached to a GitHub Release (the public video URL) and scheduled

@@ -28,8 +28,11 @@ posts/day, voice or upload mode without asking.
   pilots (3D-character images, 2 credits), + 005 Starbucks for "how". Local renders in
   out/compare/formats/.
 
+- e2e of the 4 tests on GitHub (798b428) PASSED: 030 105 s, 031 71 s, 032 93 s, 005 106 s; clarity
+  100/98/96/100%; zone, gate, Buffer dry run OK. Credits this task: 2 (balance 437.5).
+
 ### In progress
-- e2e of the 4 tests on GitHub (798b428) for render times.
+- Nothing. Waiting for Sam to approve the low-poly look.
 
 ---
 # Earlier: 3D upgrade (branch `3d-upgrade`)
