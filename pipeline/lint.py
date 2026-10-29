@@ -14,6 +14,10 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 # kid-safe + monetization-safe: no hype, no money promises, no shock words, no engagement bait
+# image prompts must never ask for a real person's likeness or brand marks
+LIKENESS = re.compile(r"(look(s|ing)? like|resembl\w*|lookalike|look-alike|portrait of|face of|in the style of|"
+                      r"jersey|team uniform|logo of)", re.I)
+FAKE_QUOTE = re.compile(r"(said|says|told|tweeted|thinks)[^.]*[\"“]", re.I)
 BANNED = ["guaranteed", "get rich", "invest now", "you should buy", "buy the stock", "financial advice",
           "click the link", "link in bio", "smash that like", "follow for more", "insane", "crazy",
           "kill", "dead", "die ", "hate", "stupid", "scam", "damn", "hell", "sexy", "drunk", "gambl"]
@@ -43,6 +47,8 @@ def lint(s: dict) -> tuple[list[str], list[str]]:
         warn.append("title has no number or question")
     if not s.get("loop"):
         err.append("no loop line")
+    if FAKE_QUOTE.search(narr) and not s.get("quotes_sourced"):
+        err.append("narration quotes a person — only real, sourced quotes (set quotes_sourced: true + source)")
     low = " " + spoken.lower() + " " + s.get("title", "").lower()
     for b in BANNED:
         if b in low:
@@ -63,6 +69,9 @@ def lint(s: dict) -> tuple[list[str], list[str]]:
         prompts = [(imgs.get(k) or {}).get("prompt", "") for k in imgs]
         if sum(bool(PEOPLE.search(p)) and "3d" in p.lower() for p in prompts) < 2:
             warn.append("fewer than 2 images with 3D-rendered characters (STYLE.md: 3D characters)")
+        for p in prompts:
+            if p and LIKENESS.search(p):
+                err.append(f"image prompt asks for a likeness/brand mark: '{LIKENESS.search(p).group(0)}'")
         for p in prompts:
             if p and "no logos" not in p.lower():
                 warn.append("image prompt missing 'no logos'")

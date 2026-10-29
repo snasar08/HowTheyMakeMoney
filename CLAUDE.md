@@ -166,5 +166,8 @@ Posting uses 14 Shorts/week (2/day). Goal: build a buffer, capped so credits are
 
 ## Rules
 - Never invent numbers. Never use real logos or people in image prompts.
+- Real people/brands (STYLE.md "Real people and brands"): names OK in voiceover/captions/titles
+  with sourced facts; never a character modeled on a real person's look; no fake quotes; hint
+  with props/setting; no logos, uniforms or brand marks; don't copy other creators.
 - Don't change the posting schedule, upload mode or voice without Sam asking.
 - Keep everything inside the free tiers.
