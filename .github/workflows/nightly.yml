@@ -18,6 +18,7 @@ on:
 
 permissions:
   contents: write
+  issues: write
 
 concurrency:
   group: make-shorts
@@ -100,3 +101,14 @@ jobs:
           git add content/scripts
           git diff --cached --quiet || git commit -m "Delivered Shorts $(date -u +%F)"
           git pull --rebase --quiet && git push
+
+      - name: Alert on failure (opens or comments on one issue)
+        if: failure()
+        run: |
+          url="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+          n=$(gh issue list --state open --label nightly-failure --json number -q '.[0].number' 2>/dev/null || true)
+          if [ -n "$n" ]; then gh issue comment "$n" --body "Failed again: $url"
+          else
+            gh label create nightly-failure --color d73a4a 2>/dev/null || true
+            gh issue create --label nightly-failure --title "Nightly Shorts run failed"               --body "The daily run failed: $url. Nothing is lost; the scripts stay ready and retry tomorrow."
+          fi
