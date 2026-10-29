@@ -14,7 +14,7 @@ import sys
 import traceback
 from pathlib import Path
 
-from .publish import POST_START, deliver, posting_started, publish_slots
+from .publish import HORIZON_H, POST_START, deliver, posting_started, publish_slots, taken_slots
 from .render import render_script
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -91,14 +91,25 @@ def main() -> int:
     queue = ready_scripts()
     if args.id:
         queue = [p for p in SCRIPTS.glob(f"{args.id}*.json")]
-    queue = queue[: args.count]
+    # only as many Shorts as there are open slots soon (no double posts, max 2/day); a second
+    # run the same day (backup cron or a manual run) finds the slots taken and does nothing
+    taken = taken_slots([json.loads(p.read_text(encoding="utf-8")) for p in SCRIPTS.glob("*.json")])
+    want = min(args.count, len(queue))
+    slots = publish_slots(want, taken=taken, horizon_h=None if (args.id or args.dry) else HORIZON_H)
+    upcoming = sorted(t for t in taken if t > dt.datetime.now(slots[0].tzinfo if slots else dt.timezone.utc))
+    print(f"[run] already scheduled: {[f'{t:%a %d %H:%M} ({taken[t]})' for t in upcoming]}")
+    print(f"[run] open slots to fill: {[f'{t:%a %d %H:%M}' for t in slots]}")
+    if not args.dry and not slots:
+        print("[run] every slot in the next hours already has a post; nothing to do")
+        return 0
+    queue = queue[: len(slots)] if not args.dry else queue[: args.count]
     left = len(ready_scripts()) - len(queue)
     print(f"[run] rendering {len(queue)} script(s); {left} ready after this run")
     if not queue:
         print("[run] queue is empty — the weekly script writer needs to add more")
         return 1
-
-    slots = publish_slots(len(queue))
+    if args.dry:
+        slots = publish_slots(len(queue), taken=taken)
     # scripts that fail the quality gate are skipped, and the next ready one takes their slot
     spares = [p for p in ready_scripts() if p not in queue] if not (args.id or args.dry) else []
     failures = 0

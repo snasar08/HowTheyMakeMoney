@@ -92,8 +92,11 @@ passes and the 3D version is clearly better. Free tools only; ≤100 Higgsfield 
   repo (pipeline/character.py, scenes_chars.py) but isn't used by the renderer.
 - Credits: experiments 8 + queued regeneration 44 = 52 this session; balance ~439.5.
 
+- Final e2e 703160d PASSED (001 122 s, 002 115 s, 022 83 s; depth model OK on the runner).
+  **MERGED to main c2b10b7.** Off switch for parallax: PARALLAX=off (env / repo var).
+
 ## In progress
-- Final e2e (703160d: parallax + new images on GitHub) → merge to main if green.
+- Nothing. Next nightly (~16:00 UTC Oct 29) is the first with 3D-character B-roll + parallax.
 - Watch the first 3D nightly (10:17 UTC Oct 29): check "Delivered Shorts" commit + no failure issue.
 
 ## Next

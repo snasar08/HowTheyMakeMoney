@@ -41,17 +41,47 @@ def posting_started(now: dt.datetime | None = None) -> bool:
     return (now or dt.datetime.now(TZ)).date() >= POST_START
 
 
-def publish_slots(n: int, now: dt.datetime | None = None) -> list[dt.datetime]:
-    """Next n posting times, never sooner than MIN_LEAD_MIN (default 60) minutes from now."""
+MAX_PER_DAY = int(os.environ.get("MAX_PER_DAY", "2"))
+# render only for open slots this far ahead; the evening run fills tomorrow, the backup run tops up
+HORIZON_H = float(os.environ.get("SLOT_HORIZON_H", "36"))
+
+
+def taken_slots(scripts: list[dict]) -> dict[dt.datetime, str]:
+    """Slots already holding a post: {local time: script id}, from the delivered records the
+    nightly commits (each carries its Buffer post id and post_at)."""
+    out = {}
+    for s in scripts:
+        d = s.get("delivered") or {}
+        if d.get("post_at") and d.get("buffer_status") != "deleted":
+            out[dt.datetime.fromisoformat(d["post_at"]).astimezone(TZ)] = s.get("id", "?")
+    return out
+
+
+def publish_slots(n: int, now: dt.datetime | None = None, taken=None, horizon_h: float | None = None
+                  ) -> list[dt.datetime]:
+    """Up to n free posting times: never sooner than MIN_LEAD_MIN (default 20) minutes from now,
+    never a slot that already has a post, never more than MAX_PER_DAY posts on one day. A slot
+    that has passed (late run) simply isn't offered; the next free slot is used instead."""
     now = now or dt.datetime.now(TZ)
-    lead = dt.timedelta(minutes=int(os.environ.get("MIN_LEAD_MIN", "60")))
+    taken = taken or {}
+    lead = dt.timedelta(minutes=int(os.environ.get("MIN_LEAD_MIN", "20")))
+    end = now + dt.timedelta(hours=horizon_h) if horizon_h else None
+    per_day: dict[dt.date, int] = {}
+    for t in taken:
+        per_day[t.date()] = per_day.get(t.date(), 0) + 1
     out, day = [], max(now.date(), POST_START)
     while len(out) < n:
+        if end and dt.datetime.combine(day, dt.time(0, 0), TZ) > end:
+            break
         for s in SLOTS:
             hh, mm = map(int, s.split(":"))
             t = dt.datetime.combine(day, dt.time(hh, mm), TZ)
-            if t > now + lead and len(out) < n:
-                out.append(t)
+            if len(out) >= n or t <= now + lead or t in taken or (end and t > end):
+                continue
+            if per_day.get(day, 0) >= MAX_PER_DAY:
+                break
+            out.append(t)
+            per_day[day] = per_day.get(day, 0) + 1
         day += dt.timedelta(days=1)
     return out
 
@@ -279,4 +309,4 @@ def deliver(video: Path, script: dict, when: dt.datetime) -> dict:
 
 
 if __name__ == "__main__":
-    print(json.dumps([t.isoformat() for t in publish_slots(4)], indent=2))
+    print(json.dumps([t.isoformat() for t in publish_slots(4)], indent=2))  # noqa
