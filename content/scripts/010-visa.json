@@ -92,5 +92,7 @@
     }
   ],
   "loop": "So next time you tap your card, ask yourself:",
-  "score": 68
+  "score": 68,
+  "format": "how",
+  "visual_style": "charts3d"
 }

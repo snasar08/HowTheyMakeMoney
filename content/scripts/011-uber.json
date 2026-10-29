@@ -99,5 +99,7 @@
     }
   ],
   "loop": "So next time you call a ride, ask yourself:",
-  "score": 67
+  "score": 67,
+  "format": "how",
+  "visual_style": "charts3d"
 }

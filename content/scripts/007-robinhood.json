@@ -103,5 +103,7 @@
     }
   ],
   "loop": "So next time an app says free, ask yourself:",
-  "score": 77
+  "score": 77,
+  "format": "how",
+  "visual_style": "charts3d"
 }

@@ -92,5 +92,7 @@
     }
   ],
   "loop": "So next time you board a Delta flight, ask yourself:",
-  "score": 60
+  "score": 60,
+  "format": "how",
+  "visual_style": "charts3d"
 }

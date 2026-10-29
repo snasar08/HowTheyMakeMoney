@@ -102,5 +102,7 @@
     }
   ],
   "loop": "So next time a package shows up, ask yourself:",
-  "score": 66
+  "score": 66,
+  "format": "how",
+  "visual_style": "charts3d"
 }

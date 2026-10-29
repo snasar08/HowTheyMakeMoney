@@ -91,5 +91,7 @@
     }
   ],
   "loop": "So next time that owl reminds you, ask yourself:",
-  "score": 79
+  "score": 79,
+  "format": "how",
+  "visual_style": "charts3d"
 }

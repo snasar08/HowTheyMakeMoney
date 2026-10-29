@@ -98,5 +98,7 @@
     }
   ],
   "loop": "So next time you game on a new graphics card, ask yourself:",
-  "score": 76
+  "score": 76,
+  "format": "how",
+  "visual_style": "charts3d"
 }

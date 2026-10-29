@@ -119,6 +119,18 @@ Posting uses 14 Shorts/week (2/day). Goal: build a buffer, capped so credits are
    `loop` field — one short line spoken last ("So next time you …, ask yourself:") that leads
    back into the opening question. The last scene must not say "Follow for more" (the CTA is
    added automatically).
+   **Formats (Sam, Oct 29 2026) — rotate 4:** `format` = `how` (how X makes money), `whatif`
+   (absurd scenario on ONE real stat, e.g. "What if one person delivered every Amazon package in
+   a day?"), `careers` (how pilots/streamers/NBA players make money), `famous` (a famous person's
+   real, dated net worth/earnings). Ideas + sources: `content/topics.md` "Formats". Mix per batch:
+   start ~25% each, then follow `analytics/insights.md` (more of what wins, fewer losers) but keep
+   ~20% experimental and NEVER drop a format entirely without asking Sam. Variety: no two Shorts
+   in a row (by posting order) share format + theme + hook style; vary length (25–45 s), hook
+   style and title style. Every script sets `format`, `visual_style` (`charts3d` — `lowpoly` only
+   after Sam approves it), `hook_style` (question / number / whatif / challenge / surprise),
+   `title_style` (question / number / statement / whatif). Real people: STYLE.md
+   "Real people and brands".
+   **Before writing, read `analytics/insights.md`** (updated by stats.yml before Saturday).
 2. Read `content/STYLE.md`, `content/angles.md` and a few existing scripts. Topics: household-name
    companies, plus jobs/careers people are curious about (YouTubers, streamers, pilots, NBA
    players, real estate agents…). Pick from `content/topics.md` or add new ones. A repeat company

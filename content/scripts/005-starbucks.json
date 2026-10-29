@@ -94,5 +94,7 @@
     }
   ],
   "loop": "So check that gift card in your drawer, and ask yourself:",
-  "score": 84
+  "score": 84,
+  "format": "how",
+  "visual_style": "charts3d"
 }

@@ -21,6 +21,7 @@ FAKE_QUOTE = re.compile(r"(said|says|told|tweeted|thinks)[^.]*[\"“]", re.I)
 BANNED = ["guaranteed", "get rich", "invest now", "you should buy", "buy the stock", "financial advice",
           "click the link", "link in bio", "smash that like", "follow for more", "insane", "crazy",
           "kill", "dead", "die ", "hate", "stupid", "scam", "damn", "hell", "sexy", "drunk", "gambl"]
+LOWPOLY_LIVE = False  # flip when Sam approves the low-poly look
 WPS = 2.55        # spoken words per second at KOKORO_SPEED 1.25 (measured: 009 ≈ 34 s for 88 words)
 LEN_MIN, LEN_MAX = 25, 45
 TITLE_MAX = 50    # Shorts titles get cut on mobile beyond ~50 chars
@@ -34,6 +35,12 @@ def lint(s: dict) -> tuple[list[str], list[str]]:
     narr = " ".join(sc.get("narration", "") for sc in scenes)
     spoken = narr + " " + s.get("loop", "") + " Comment which brand we should do next, and subscribe."
     first = scenes[0]["narration"] if scenes else ""
+    if s.get("format") not in ("how", "whatif", "careers", "famous"):
+        err.append(f"format must be how / whatif / careers / famous (got {s.get('format')!r})")
+    if s.get("visual_style", "charts3d") not in ("charts3d", "lowpoly"):
+        err.append(f"visual_style must be charts3d or lowpoly (got {s.get('visual_style')!r})")
+    if s.get("visual_style") == "lowpoly" and s.get("status") == "ready" and not LOWPOLY_LIVE:
+        err.append("low-poly style isn't approved for the daily pipeline yet (Sam)")
     if not 5 <= len(scenes) <= 6:
         err.append(f"{len(scenes)} scenes (want 5–6)")
     if "?" not in first.split(".")[0] + first[:140]:

@@ -99,5 +99,7 @@
     }
   ],
   "loop": "So next time you buy new sneakers, ask yourself:",
-  "score": 58
+  "score": 58,
+  "format": "how",
+  "visual_style": "charts3d"
 }
