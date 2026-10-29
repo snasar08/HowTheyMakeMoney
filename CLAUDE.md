@@ -56,6 +56,14 @@ and **free beyond his Higgsfield Pro plan** — never add a paid service or ask 
   `{"type": "globe", "points": [{"lat": .., "lon": ..}], "label": ".."}` (real coordinates only).
   Test: push branch `3d-e2e` (real voice, checks, gate, Buffer dry run; results on
   `3d-e2e-results`). Benchmarks: `bench3d.yml` on `3d-upgrade`.
+- **Low-poly style (approved by Sam Oct 29 2026, live):** visual type
+  `lowpoly` (`pipeline/lowpoly.py`: code-built sets field/store/warehouse/city/office/stage, props,
+  a gold hero + instanced crowds of up to ~400 via `pipeline/crowd.py` GPU skinning, 5 camera
+  shots cut every beat, 540x960 upscaled) with big yellow outlined stats and lowercase one-word
+  yellow captions. CC0 characters: `assets/characters/CREDITS.md`. Meant for `whatif` + `famous`.
+  Use it for most `whatif` and `famous` Shorts (no Higgsfield images needed, saves credits); keep
+  Higgsfield 3D characters + 3D charts for `how` and `careers`. Renderer choice (GitHub, 1080x1920):
+  moderngl 123/207 ms per frame for 100/300 characters vs three.js+SwiftShader 1262/3270 ms.
 - Chart scenes also get code-drawn "alt" shots (ticker / waffle / columns) on a drifting grid.
 - **Posting via Buffer (default since Oct 26 2026):** `UPLOAD_MODE` defaults to `buffer` in
   `nightly.yml`. Each Short is attached to a GitHub Release (the public video URL) and scheduled
@@ -132,8 +140,8 @@ Posting uses 14 Shorts/week (2/day). Goal: build a buffer, capped so credits are
    start ~25% each, then follow `analytics/insights.md` (more of what wins, fewer losers) but keep
    ~20% experimental and NEVER drop a format entirely without asking Sam. Variety: no two Shorts
    in a row (by posting order) share format + theme + hook style; vary length (25–45 s), hook
-   style and title style. Every script sets `format`, `visual_style` (`charts3d` — `lowpoly` only
-   after Sam approves it), `hook_style` (question / number / whatif / challenge / surprise),
+   style and title style. Every script sets `format`, `visual_style` (`charts3d`, or `lowpoly`
+   for most whatif/famous — see existing 030/031 for the lowpoly scene JSON), `hook_style` (question / number / whatif / challenge / surprise),
    `title_style` (question / number / statement / whatif). Real people: STYLE.md
    "Real people and brands".
    **Before writing, read `analytics/insights.md`** (updated by stats.yml before Saturday).

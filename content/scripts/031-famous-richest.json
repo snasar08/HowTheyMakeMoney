@@ -1,0 +1,103 @@
+{
+  "id": "031",
+  "slug": "famous-richest",
+  "company": "Elon Musk",
+  "format": "famous",
+  "visual_style": "lowpoly",
+  "hook_style": "challenge",
+  "title_style": "question",
+  "theme": "dark_neon",
+  "status": "ready",
+  "score": 93,
+  "title": "Could You Spend the Richest Person's Fortune?",
+  "description": "Could you spend the world's richest person's money if you spent a million dollars every day?\n\nSources:\n- Forbes 400 (September 2026): Elon Musk about $908 billion, top of Forbes' real-time billionaires list (CNN, syndicated): https://www.wafb.com/2026/09/19/elon-musk-jeff-bezos-among-richest-americans-forbes-2026-list-heres-how-much-theyre-worth/\n\nNet worth changes daily with stock prices; figure as reported September 19, 2026. 908,000 days divided by 365 = about 2,487 years. Not financial advice.\n\n#shorts #billionaire #elonmusk #howtheymakemoney",
+  "tags": [
+    "elon musk",
+    "billionaire",
+    "net worth",
+    "shorts"
+  ],
+  "images": {},
+  "loop": "So, still think you could spend it all? Ask yourself:",
+  "scenes": [
+    {
+      "narration": "Could you spend the richest person's fortune if you blew a million dollars every single day?",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "cheer",
+        "crowd": 0,
+        "props": [
+          "cash",
+          "car"
+        ],
+        "stat": "$1 MILLION",
+        "stat_sub": "every day"
+      }
+    },
+    {
+      "narration": "In September 2026, Forbes put Elon Musk's net worth at about 908 billion dollars.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "field",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "rocket",
+          "car"
+        ],
+        "stat": "$908 BILLION",
+        "stat_sub": "Forbes, Sept 2026"
+      }
+    },
+    {
+      "narration": "Most of it isn't cash. It's his shares in companies like Tesla and SpaceX.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "field",
+        "action": "work",
+        "crowd": 0,
+        "props": [
+          "rocket"
+        ],
+        "stat": "",
+        "stat_sub": ""
+      }
+    },
+    {
+      "narration": "At a million dollars a day, you'd need about 2,500 years to spend it all.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "stage",
+        "action": "cheer",
+        "crowd": 260,
+        "props": [
+          "cash",
+          "check"
+        ],
+        "stat": "2,487 YEARS",
+        "stat_sub": "at $1 million a day"
+      }
+    },
+    {
+      "narration": "And that's if the number stood still. When the stocks rise, the fortune grows faster than you could spend it.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "fall",
+        "crowd": 0,
+        "props": [
+          "cash"
+        ],
+        "stat": "",
+        "stat_sub": ""
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "Forbes 400 2026 (CNN, syndicated, Sept 19 2026)",
+      "url": "https://www.wafb.com/2026/09/19/elon-musk-jeff-bezos-among-richest-americans-forbes-2026-list-heres-how-much-theyre-worth/"
+    }
+  ]
+}

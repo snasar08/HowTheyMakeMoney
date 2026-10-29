@@ -1,0 +1,65 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>three.js crowd bench</title></head>
+<body style="margin:0">
+<script type="importmap">
+{"imports": {"three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+             "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"}}
+</script>
+<script type="module">
+import * as THREE from "three";
+import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
+import * as SkeletonUtils from "three/addons/utils/SkeletonUtils.js";
+
+const N = Number(new URLSearchParams(location.search).get("n") || 300);
+const W = 1080, H = 1920;
+const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
+renderer.setSize(W, H, false);
+document.body.appendChild(renderer.domElement);
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x9ecbf5);
+scene.fog = new THREE.Fog(0x9ecbf5, 30, 90);
+const cam = new THREE.PerspectiveCamera(45, W / H, 0.1, 200);
+scene.add(new THREE.HemisphereLight(0xe6f0ff, 0x594d40, 1.2));
+const sun = new THREE.DirectionalLight(0xffffff, 1.4); sun.position.set(4, 10, 5); scene.add(sun);
+const floor = new THREE.Mesh(new THREE.PlaneGeometry(200, 200), new THREE.MeshLambertMaterial({ color: 0x5c9e4c }));
+floor.rotation.x = -Math.PI / 2; scene.add(floor);
+
+new GLTFLoader().load("/assets/characters/quaternius-animated-human.glb", (g) => {
+  const clip = g.animations.find((a) => /run/i.test(a.name)) || g.animations[0];
+  const box = new THREE.Box3().setFromObject(g.scene);
+  const k = 1.75 / (box.max.y - box.min.y);
+  const mixers = [];
+  const cols = Math.ceil(Math.sqrt(N * 36 / 38));
+  for (let i = 0; i < N; i++) {
+    const m = SkeletonUtils.clone(g.scene);
+    m.scale.setScalar(k);
+    m.position.set(-18 + ((i % cols) + 0.5) * 36 / cols, 0, -30 + (Math.floor(i / cols) + 0.5) * 38 / Math.ceil(N / cols));
+    m.rotation.y = Math.PI;
+    scene.add(m);
+    const mx = new THREE.AnimationMixer(m);
+    mx.clipAction(clip).play();
+    mx.setTime((i % 8) * 0.13);
+    mixers.push(mx);
+  }
+  const gl = renderer.getContext();
+  const px = new Uint8Array(W * H * 4);
+  function frame(t, readback) {
+    cam.position.set(Math.sin(t * 0.4) * 6, 4, 22 - t);
+    cam.lookAt(0, 1.2, 0);
+    for (const mx of mixers) mx.setTime(t);
+    renderer.render(scene, cam);
+    if (readback) gl.readPixels(0, 0, W, H, gl.RGBA, gl.UNSIGNED_BYTE, px);
+    else gl.finish();
+  }
+  frame(0, true);
+  let t0 = performance.now();
+  for (let f = 0; f < 15; f++) frame(f / 30, false);
+  const render_ms = (performance.now() - t0) / 15;
+  t0 = performance.now();
+  for (let f = 0; f < 15; f++) frame(f / 30, true);
+  const readback_ms = (performance.now() - t0) / 15;
+  window.RESULT = { engine: "three.js", renderer: gl.getParameter(gl.getExtension("WEBGL_debug_renderer_info")?.UNMASKED_RENDERER_WEBGL || gl.RENDERER),
+                    crowd: N, render_ms: +render_ms.toFixed(1), with_readback_ms: +readback_ms.toFixed(1) };
+});
+</script>
+</body></html>

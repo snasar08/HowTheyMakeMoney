@@ -376,6 +376,8 @@ class Renderer:
                 elif typ == "text":
                     shots.append(("text", None, 0, False) if b % 2 == 0 else
                                  ("textbg", self._next_broll(), (v_i % 5) + 1, False))
+                elif typ == "lowpoly" and three_d_ok():
+                    shots.append(("lowpoly", None, b + si * 2 + self._vseed, b == 0))
                 elif three_d_ok() and typ in ("stat", "bars", "donut", "globe"):
                     # 3D: every beat is a new camera move; every third beat cuts to B-roll + figure
                     if b % 3 == 2 and self._pool and typ != "globe":
@@ -742,6 +744,12 @@ class Renderer:
         b1 = sc.beats[b + 1] if b + 1 < len(sc.beats) else sc.duration
         tb, pb = t - b0, (t - b0) / max(b1 - b0, 0.1)
         kind, key, variant, first = sc.shots[b]
+        if kind == "lowpoly":
+            from . import lowpoly
+            from .gl3d import run3d
+            frame = run3d(lowpoly.render, sc.visual, t, pb, variant)
+            self._lp_stat(frame, sc.visual, tb, b)
+            return frame, tb
         if kind == "3d":
             from . import scene3d
             from .gl3d import run3d
@@ -866,7 +874,9 @@ class Renderer:
                 si = min(int(np.searchsorted(starts, gt, side="right") - 1), len(scenes) - 1)
                 sc, t = scenes[si], gt - starts[si]
                 frame, tb = self.draw(sc, si, t)
-                if TRANSITION_3D and three_d_ok() and gt > 0.05 and tb < 0.18:
+                if self.s.get("visual_style") == "lowpoly":
+                    pass  # hard cuts every beat: the camera move is the transition
+                elif TRANSITION_3D and three_d_ok() and gt > 0.05 and tb < 0.18:
                     # 3D swing: the new shot arrives as a card turning in from the side
                     from .gl3d import card, run3d
                     frame = Image.fromarray(run3d(card, frame, tb / 0.18, (si * 7 + int(t * 3)) % 2,
@@ -1039,7 +1049,39 @@ class Renderer:
                 d.polygon(pts, fill=(255, 255, 255), outline=(0, 0, 0))
                 d.line(pts + [pts[0]], fill=(0, 0, 0), width=4)
 
+    def _lp_stat(self, frame, v, tb, b):
+        """Big yellow outlined number with a pop, on the first beat and every other beat."""
+        if not v.get("stat") or b % 2:
+            return
+        d = ImageDraw.Draw(frame)
+        pop = ease_out_back(min(1.0, tb / 0.25))
+        f = fit_font(v["stat"], BLACK, SAFE_X1 - SAFE_X0, 210, 90)
+        f = font(BLACK, max(20, int(f.size * (0.5 + 0.5 * pop))))
+        cx = (SAFE_X0 + SAFE_X1) / 2
+        draw_centered(d, cx, 430, v["stat"], f, (255, 221, 0), 14, (0, 0, 0))
+        if v.get("stat_sub") and tb > 0.15:
+            fs = fit_font(v["stat_sub"].lower(), BOLD, SAFE_X1 - SAFE_X0, 64, 40)
+            draw_centered(d, cx, 430 + f.size + 24, v["stat_sub"].lower(), fs, (255, 255, 255), 8, (0, 0, 0))
+
+    def _caption_lp(self, frame, words, t):
+        """Low-poly captions: one lowercase yellow word at a time, thick black outline."""
+        cur = None
+        for w in words:
+            if w.start - 0.03 <= t <= w.end + 0.08:
+                cur = w
+        if cur is None:
+            return
+        txt = re.sub(r"[^\w$%'.\-]", "", cur.text).lower().rstrip(".") or cur.text.lower()
+        f = fit_font(txt, BLACK, SAFE_X1 - SAFE_X0, 120, 60)
+        k = min(1.0, (t - cur.start + 0.03) / 0.08)
+        f = font(BLACK, max(20, int(f.size * (0.85 + 0.15 * k))))
+        draw_centered(ImageDraw.Draw(frame), (SAFE_X0 + SAFE_X1) / 2, CAPTION_Y - f.size // 2, txt, f,
+                      (255, 221, 0), 12, (0, 0, 0))
+
     def _caption(self, frame: Image.Image, chunks: list[list[Word]], t: float):
+        if self.s.get("visual_style") == "lowpoly":
+            self._caption_lp(frame, [w for ch in chunks for w in ch], t)
+            return
         for ch in chunks:
             if ch[0].start - 0.05 <= t <= ch[-1].end + 0.05:
                 hi = 0

@@ -9,13 +9,35 @@ and brands; (4) daily free stats → analytics/stats.json → insights.md → wr
 posts/day, voice or upload mode without asking.
 
 ### Done
-- (start) branch from main 1a925e6.
+- Part 3 rules (b648379): STYLE.md "Real people and brands", CLAUDE.md, lint blocks likeness/brand-mark
+  prompts and unsourced quotes.
+- Part 1 formats (07863d9): `format` (how/whatif/careers/famous) + `visual_style` on every script; queue
+  alternates formats, priority = score × format weight; 64 new sourced-stat ideas in topics.md (22 whatif,
+  21 careers, 21 famous) + the 20 ranked "how" topics; writer variety rules in CLAUDE.md.
+- Part 4 learning loop (ce0fff8): stats.yml daily 11:07 UTC → analytics/stats.json (snapshots, tagged),
+  insights.md + format_weights.json (min 10 per group). Writer + monthly report read them.
+- e2e PASSED on ce0fff8 → **merged to main 58ec5e3** (parts 1, 3, 4 only).
+- YT_API_KEY works: first stats run 15:25 UTC Oct 29 → 6 videos, 1 subscriber, all matched to scripts.
+  Views so far 0–2 per Short (public; brand-new channel).
+- Part 2 low-poly (branch only): pipeline/crowd.py (GPU skinning + instancing), pipeline/lowpoly.py
+  (sets field/store/warehouse/city/office/stage, props, hero + crowds, 5 shot types, 540x960), render.py
+  (lowpoly shots, big yellow stat, lowercase one-word captions, hard cuts), lint keeps lowpoly out of
+  the daily queue (LOWPOLY_LIVE=False). Bench on GitHub 1080x1920: moderngl 123 ms (100 chars) /
+  207 ms (300); three.js+SwiftShader 1262 / 3270 ms with frame readback → moderngl.
+- Test scripts (draft): 030 whatif Amazon (lowpoly), 031 famous richest person (lowpoly), 032 careers
+  pilots (3D-character images, 2 credits), + 005 Starbucks for "how". Local renders in
+  out/compare/formats/.
+
+- e2e of the 4 tests on GitHub (798b428) PASSED: 030 105 s, 031 71 s, 032 93 s, 005 106 s; clarity
+  100/98/96/100%; zone, gate, Buffer dry run OK. Credits this task: 2 (balance 437.5).
+
+- **Sam approved low-poly (Oct 29).** LOWPOLY_LIVE=True; 030/031/032 ready (pilots got broll1/2, 2 more
+  credits → 4 this task, balance 435.5); queue alternates format AND visual style. Final e2e 206d2c5
+  (real nightly path, Buffer dry run) booked Fri 12:00 031 famous (low-poly) + Fri 18:00 032 careers.
+  Merged to main.
 
 ### In progress
-- Part 3 rules, then part 1.
-
-### Needs Sam
-- (tbd) YT_API_KEY: stats.yml has never run; unknown whether the secret exists.
+- Nothing.
 
 ---
 # Earlier: 3D upgrade (branch `3d-upgrade`)

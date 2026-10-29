@@ -21,7 +21,7 @@ FAKE_QUOTE = re.compile(r"(said|says|told|tweeted|thinks)[^.]*[\"“]", re.I)
 BANNED = ["guaranteed", "get rich", "invest now", "you should buy", "buy the stock", "financial advice",
           "click the link", "link in bio", "smash that like", "follow for more", "insane", "crazy",
           "kill", "dead", "die ", "hate", "stupid", "scam", "damn", "hell", "sexy", "drunk", "gambl"]
-LOWPOLY_LIVE = False  # flip when Sam approves the low-poly look
+LOWPOLY_LIVE = True  # Sam approved the low-poly look (Oct 29 2026)
 WPS = 2.55        # spoken words per second at KOKORO_SPEED 1.25 (measured: 009 ≈ 34 s for 88 words)
 LEN_MIN, LEN_MAX = 25, 45
 TITLE_MAX = 50    # Shorts titles get cut on mobile beyond ~50 chars
@@ -68,7 +68,9 @@ def lint(s: dict) -> tuple[list[str], list[str]]:
             warn.append(f"long scene ({len(sc['narration'].split())} words): split it for pacing")
     if len(s.get("sources", [])) < 1 or any(not str(x.get("url", "")).startswith("http") for x in s.get("sources", [])):
         err.append("needs at least one source with a URL")
-    if s.get("status") == "ready":
+    if s.get("visual_style") == "lowpoly" and s.get("format") not in ("whatif", "famous"):
+        warn.append("low-poly is meant for whatif / famous Shorts")
+    if s.get("status") == "ready" and s.get("visual_style") != "lowpoly":
         imgs = s.get("images", {})
         missing = [k for k in ("hook", "mid", "broll1", "broll2") if not (imgs.get(k) or {}).get("url")]
         if missing:
