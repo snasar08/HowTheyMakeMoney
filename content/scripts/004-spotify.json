@@ -3,7 +3,7 @@
   "slug": "spotify",
   "company": "Spotify",
   "theme": "dark_neon",
-  "status": "ready",
+  "status": "delivered",
   "title": "Where Does Your Spotify Money Really Go?",
   "description": "Where Does Your Spotify Money Really Go?.\n\nSources:\n- Spotify paid $11B+ in 2025 (Storyboard18): https://www.storyboard18.com/brand-marketing/spotify-payouts-cross-11-billion-as-independent-artists-take-larger-share-88427.htm\n- Spotify royalties and revenue share (Mezha): https://mezha.ua/en/news/spotify-11b-royaltie-308105/\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
@@ -91,5 +91,15 @@
     }
   ],
   "loop": "So next time your Spotify bill hits, ask yourself:",
-  "score": 83
+  "score": 83,
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-004-spotify",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-004-spotify/004-spotify.mp4",
+    "post_at": "2026-10-29T18:00:00-04:00",
+    "buffer_post": "6ae35f9d25e7fa4a8db259e8",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-10-29T15:00:45.396417+00:00",
+    "seconds": 32.62
+  }
 }
