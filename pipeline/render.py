@@ -854,10 +854,10 @@ class Renderer:
                 si = min(int(np.searchsorted(starts, gt, side="right") - 1), len(scenes) - 1)
                 sc, t = scenes[si], gt - starts[si]
                 frame, tb = self.draw(sc, si, t)
-                if TRANSITION_3D and three_d_ok() and gt > 0.05 and tb < 0.26:
+                if TRANSITION_3D and three_d_ok() and gt > 0.05 and tb < 0.18:
                     # 3D swing: the new shot arrives as a card turning in from the side
                     from .gl3d import card, run3d
-                    frame = Image.fromarray(run3d(card, frame, tb / 0.26, (si * 7 + int(t * 3)) % 2,
+                    frame = Image.fromarray(run3d(card, frame, tb / 0.18, (si * 7 + int(t * 3)) % 2,
                                                   self.theme["bg_top"]))
                 elif gt > 0.05 and tb < 0.14:  # punch-in + light flash on every cut
                     z = 1.07 - 0.07 * ease_out(tb / 0.14)

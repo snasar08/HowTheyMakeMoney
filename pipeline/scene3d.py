@@ -133,7 +133,7 @@ def bars(theme, tname, v, t, p, variant):
     vmax = max(float(i["value"]) for i in items) or 1.0
     span = 2.1
     xs = [(k - (n - 1) / 2) * span for k in range(n)]
-    hmax = 3.8
+    hmax = 3.3
     eye, tgt = _orbit(p, variant, 12.5 + n * 3.8, 3.4, 2.4)
     sc = Scene(L, eye, tgt, fov=36, aperture=0.9)
     box = Engine.get().meshes["box"]

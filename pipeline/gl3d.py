@@ -473,8 +473,8 @@ def card(img, q, side, bg_rgb) -> np.ndarray:
     sc.shift = 0.0
     sc.shift_x = 0.0
     sgn = 1 if side else -1
-    ang = sgn * (1 - k) * 0.55
-    push = (1 - k) * -0.6
+    ang = sgn * (1 - k) * 0.4
+    push = (1 - k) * -0.4
     m = trs((0, 0, push), ry=ang) @ trs((0, 0, 0), (2 * W3D / H3D, 2, 1))
     sc.add(e.meshes["quad"], m, (1, 1, 1), tex=e.card_tex, unlit=True)
     return sc.render()
