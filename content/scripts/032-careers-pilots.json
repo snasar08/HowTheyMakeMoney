@@ -7,7 +7,7 @@
   "hook_style": "question",
   "title_style": "question",
   "theme": "clean_navy",
-  "status": "draft",
+  "status": "ready",
   "score": 90,
   "title": "How Much Do Airline Pilots Really Make?",
   "description": "How much do airline pilots really make?\n\nSources:\n- U.S. Bureau of Labor Statistics, Occupational Outlook Handbook: Airline and Commercial Pilots (median pay, May 2024): https://www.bls.gov/ooh/transportation-and-material-moving/airline-and-commercial-pilots.htm\n\nMedian = half earn more, half earn less. Not financial advice.\n\n#shorts #pilot #careers #howtheymakemoney",
@@ -26,6 +26,14 @@
     "mid": {
       "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: two pilots in a bright airplane cockpit smiling at each other at sunrise, glowing instrument panels, no text, no logos, no brand names",
       "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261029_152721_34f7adf0-5c5a-44df-ad89-4c91d927e6c9.png"
+    },
+    "broll1": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: a flight student studying with a flight instructor inside a small training airplane on a sunny airfield, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261029_154311_a5a0581d-b910-4bd3-a3bb-8ec170c34cae.png"
+    },
+    "broll2": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: a happy airline captain in a plain uniform with no insignia waving from the cockpit window of a big jet at the gate, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261029_154311_22ccea48-dca7-455a-8ac5-f6b312c5bd4c.png"
     }
   },
   "loop": "So next time you board a flight, ask yourself:",

@@ -7,42 +7,100 @@
   "hook_style": "whatif",
   "title_style": "whatif",
   "theme": "bold_bright",
-  "status": "draft",
+  "status": "ready",
   "score": 92,
   "title": "What If One Person Delivered Every Amazon Package?",
   "description": "What if one person had to deliver every fast Amazon package in a day?\n\nSources:\n- Amazon: over 9 billion items delivered same day or next day worldwide in 2024 (PYMNTS, reporting Amazon's announcement): https://www.pymnts.com/?p=2438049\n- Amazon 2023 delivery speeds (About Amazon): https://www.aboutamazon.com/md/news/operations/doug-herrington-amazon-prime-delivery-speed-2024-updates\n\nPer-day and per-second figures are 9 billion divided by 365 days and 86,400 seconds. Not financial advice.\n\n#shorts #amazon #whatif #howtheymakemoney",
-  "tags": ["amazon", "what if", "delivery", "shorts"],
+  "tags": [
+    "amazon",
+    "what if",
+    "delivery",
+    "shorts"
+  ],
   "images": {},
   "loop": "So next time a package shows up, ask yourself:",
   "scenes": [
     {
       "narration": "What if one person had to deliver every fast Amazon package in a single day?",
-      "visual": {"type": "lowpoly", "set": "warehouse", "action": "carry", "crowd": 0, "props": ["boxes", "truck"],
-                 "stat": "1 PERSON", "stat_sub": "every package"}
+      "visual": {
+        "type": "lowpoly",
+        "set": "warehouse",
+        "action": "carry",
+        "crowd": 0,
+        "props": [
+          "boxes",
+          "truck"
+        ],
+        "stat": "1 PERSON",
+        "stat_sub": "every package"
+      }
     },
     {
       "narration": "In 2024, Amazon said more than 9 billion items arrived the same day or the next day.",
-      "visual": {"type": "lowpoly", "set": "warehouse", "action": "work", "crowd": 160, "props": ["boxes"],
-                 "stat": "9 BILLION", "stat_sub": "same or next day, 2024"}
+      "visual": {
+        "type": "lowpoly",
+        "set": "warehouse",
+        "action": "work",
+        "crowd": 160,
+        "props": [
+          "boxes"
+        ],
+        "stat": "9 BILLION",
+        "stat_sub": "same or next day, 2024"
+      }
     },
     {
       "narration": "That's about 25 million packages every single day.",
-      "visual": {"type": "lowpoly", "set": "city", "action": "run", "crowd": 300, "props": ["car"],
-                 "stat": "25 MILLION", "stat_sub": "packages a day"}
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "run",
+        "crowd": 300,
+        "props": [
+          "car"
+        ],
+        "stat": "25 MILLION",
+        "stat_sub": "packages a day"
+      }
     },
     {
       "narration": "Our one driver would need to drop off nearly 300 packages every second. No breaks. No sleep.",
-      "visual": {"type": "lowpoly", "set": "city", "action": "carry", "crowd": 0, "props": ["boxes", "truck"],
-                 "stat": "~285", "stat_sub": "packages per second"}
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "carry",
+        "crowd": 0,
+        "props": [
+          "boxes",
+          "truck"
+        ],
+        "stat": "~285",
+        "stat_sub": "packages per second"
+      }
     },
     {
       "narration": "Instead, Amazon spreads that load across a huge network of warehouses, vans and drivers. That speed is what keeps Prime members paying.",
-      "visual": {"type": "lowpoly", "set": "field", "action": "fall", "crowd": 0, "props": ["boxes"],
-                 "stat": "", "stat_sub": ""}
+      "visual": {
+        "type": "lowpoly",
+        "set": "field",
+        "action": "fall",
+        "crowd": 0,
+        "props": [
+          "boxes"
+        ],
+        "stat": "",
+        "stat_sub": ""
+      }
     }
   ],
   "sources": [
-    {"title": "Amazon reports 9 billion next-day or same-day deliveries for 2024 (PYMNTS)", "url": "https://www.pymnts.com/?p=2438049"},
-    {"title": "Amazon delivery speed updates (About Amazon)", "url": "https://www.aboutamazon.com/md/news/operations/doug-herrington-amazon-prime-delivery-speed-2024-updates"}
+    {
+      "title": "Amazon reports 9 billion next-day or same-day deliveries for 2024 (PYMNTS)",
+      "url": "https://www.pymnts.com/?p=2438049"
+    },
+    {
+      "title": "Amazon delivery speed updates (About Amazon)",
+      "url": "https://www.aboutamazon.com/md/news/operations/doug-herrington-amazon-prime-delivery-speed-2024-updates"
+    }
   ]
 }
