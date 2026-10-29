@@ -1,0 +1,168 @@
+{
+ "videos": {
+  "JlqiWwaNp8I": {
+   "title": "How Many Switch 2s Has Nintendo Sold?",
+   "published": "2026-10-28T22:01:06Z",
+   "snapshots": [
+    {
+     "t": "2026-10-29T15:25:31+00:00",
+     "views": 0,
+     "likes": 0,
+     "comments": 0
+    }
+   ],
+   "tags": {
+    "script": "020",
+    "slug": "nintendo",
+    "topic": "Nintendo",
+    "format": "how",
+    "visual_style": "charts3d",
+    "theme": "bold_bright",
+    "hook_style": "question",
+    "title_style": "question",
+    "length_s": 29.37,
+    "length_bucket": "<30",
+    "post_at": "2026-10-28T18:00:00-04:00",
+    "post_slot": "18:00",
+    "score": 87
+   }
+  },
+  "6QvQEoAwFbE": {
+   "title": "How Is Costco's Hot Dog Still $1.50?",
+   "published": "2026-10-28T16:03:00Z",
+   "snapshots": [
+    {
+     "t": "2026-10-29T15:25:31+00:00",
+     "views": 0,
+     "likes": 0,
+     "comments": 0
+    }
+   ],
+   "tags": {
+    "script": "001",
+    "slug": "costco",
+    "topic": "Costco",
+    "format": "how",
+    "visual_style": "charts3d",
+    "theme": "bold_bright",
+    "hook_style": "question",
+    "title_style": "question",
+    "length_s": 40.12,
+    "length_bucket": "38+",
+    "post_at": "2026-10-28T12:00:00-04:00",
+    "post_slot": "12:00",
+    "score": 87
+   }
+  },
+  "M_dlK2dz_mg": {
+   "title": "Why Is Movie Popcorn So Expensive?",
+   "published": "2026-10-27T22:01:10Z",
+   "snapshots": [
+    {
+     "t": "2026-10-29T15:25:31+00:00",
+     "views": 2,
+     "likes": 0,
+     "comments": 0
+    }
+   ],
+   "tags": {
+    "script": "008",
+    "slug": "movie-theaters",
+    "topic": "Movie theaters",
+    "format": "how",
+    "visual_style": "charts3d",
+    "theme": "bold_bright",
+    "hook_style": "question",
+    "title_style": "question",
+    "length_s": 30.45,
+    "length_bucket": "30-38",
+    "post_at": "2026-10-27T18:00:00-04:00",
+    "post_slot": "18:00",
+    "score": 88
+   }
+  },
+  "V0j2pFMClAg": {
+   "title": "Is McDonald's Even a Burger Company?",
+   "published": "2026-10-27T01:00:58Z",
+   "snapshots": [
+    {
+     "t": "2026-10-29T15:25:31+00:00",
+     "views": 0,
+     "likes": 0,
+     "comments": 0
+    }
+   ],
+   "tags": {
+    "script": "002",
+    "slug": "mcdonalds",
+    "topic": "McDonald's",
+    "format": "how",
+    "visual_style": "charts3d",
+    "theme": "bold_bright",
+    "hook_style": "whatif",
+    "title_style": "question",
+    "length_s": 42.63,
+    "length_bucket": "38+",
+    "post_at": "2026-10-26T21:00:00-04:00",
+    "post_slot": "21:00",
+    "score": 90
+   }
+  },
+  "3RPzz5w97iU": {
+   "title": "Who Pays for Your Instagram?",
+   "published": "2026-10-27T00:00:48Z",
+   "snapshots": [
+    {
+     "t": "2026-10-29T15:25:31+00:00",
+     "views": 1,
+     "likes": 1,
+     "comments": 0
+    }
+   ],
+   "tags": {
+    "script": "019",
+    "slug": "meta-ads",
+    "topic": "Meta",
+    "format": "how",
+    "visual_style": "charts3d",
+    "theme": "dark_neon",
+    "hook_style": "question",
+    "title_style": "question",
+    "length_s": 29.02,
+    "length_bucket": "<30",
+    "post_at": "2026-10-26T20:00:00-04:00",
+    "post_slot": "20:00",
+    "score": 92
+   }
+  },
+  "pF8AnVShMbA": {
+   "title": "Why Does Google Pay Apple $20 Billion?",
+   "published": "2026-10-26T22:30:46Z",
+   "snapshots": [
+    {
+     "t": "2026-10-29T15:25:31+00:00",
+     "views": 1,
+     "likes": 0,
+     "comments": 0
+    }
+   ],
+   "tags": {
+    "script": "009",
+    "slug": "google-apple",
+    "topic": "Google & Apple",
+    "format": "how",
+    "visual_style": "charts3d",
+    "theme": "dark_neon",
+    "hook_style": "question",
+    "title_style": "question",
+    "length_s": 34.37,
+    "length_bucket": "30-38",
+    "post_at": "2026-10-26T19:00:00-04:00",
+    "post_slot": "19:00",
+    "score": 95
+   }
+  }
+ },
+ "updated": "2026-10-29T15:25:31+00:00",
+ "subscribers": 1
+}
