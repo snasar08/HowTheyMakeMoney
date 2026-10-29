@@ -95,8 +95,18 @@ passes and the 3D version is clearly better. Free tools only; ≤100 Higgsfield 
 - Final e2e 703160d PASSED (001 122 s, 002 115 s, 022 83 s; depth model OK on the runner).
   **MERGED to main c2b10b7.** Off switch for parallax: PARALLAX=off (env / repo var).
 
+- **Posting timing fix (Oct 29, merged 5ca7c6b):** scheduled nightlies started 16:49/15:54/16:41 UTC
+  (cron 10:17). Old rule "slot ≥ 60 min ahead" then skipped noon and booked 18:00 + next noon —
+  nothing went late or failed, but Oct 27 got only 1 post (18:00). Sam's manual run (10:54 ET
+  Oct 29) double-booked noon (005 on top of 029). Now: slot-aware scheduling (open slots only,
+  max 2/day, 36 h horizon, 20 min lead), crons 01:23 UTC (evening) + 13:41 UTC (backup),
+  `pipeline/slot_audit.py` + `slot-audit.yml`. Offline test bench/test_slots.py: no doubles.
+- Slot fix ran: deleted Buffer post 6ae35f13… (005 at noon Oct 29), 005 back to ready (b2358a6).
+  Audit after: Thu 12:00 029, Thu 18:00 004 — clean.
+
 ## In progress
-- Nothing. Next nightly (~16:00 UTC Oct 29) is the first with 3D-character B-roll + parallax.
+- Nothing. e2e 2c9f6ec (real nightly path, Buffer dry run, 11:10 ET): saw Thu 12:00 029 + Thu 18:00 004,
+  filled only Fri 12:00 (005) + Fri 18:00 (028) — tonight's evening run should do the same for real.
 - Watch the first 3D nightly (10:17 UTC Oct 29): check "Delivered Shorts" commit + no failure issue.
 
 ## Next

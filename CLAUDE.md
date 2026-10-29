@@ -7,9 +7,12 @@ and **free beyond his Higgsfield Pro plan** — never add a paid service or ask 
 
 ## How it runs
 - `content/scripts/NNN-slug.json` — the queue. `status: "ready"` → waiting; `"delivered"` → done.
-- `.github/workflows/nightly.yml` — GitHub Actions (free tier, no GPU) runs daily at ~6:17 AM ET,
-  renders the next `SHORTS_PER_RUN` (default 2) ready scripts, delivers them, marks them delivered
-  and commits. Budget: private repos get 2,000 free minutes/month; a run takes ~5–8 minutes.
+- `.github/workflows/nightly.yml` — GitHub Actions (free tier, no GPU). **Slot-aware** (Oct 29):
+  runs ~9:23 PM ET (fills tomorrow) + ~9:41 AM ET backup; each run renders only for OPEN slots
+  in the next 36 h (`publish.taken_slots` from the delivered records; never a taken slot, max
+  `MAX_PER_DAY`=2/day, a passed slot rolls to the next free one), so late/backup/manual runs
+  never double-post. GitHub starts scheduled runs late (Oct 26–28: 5.5–6.5 h). Check Buffer:
+  push branch `slot-audit` (report) / `slot-fix` (delete extras, scripts back to ready). Budget: private repos get 2,000 free minutes/month; a run takes ~5–8 minutes.
 - `pipeline/render.py` draws every frame with Pillow and pipes to ffmpeg (1080x1920, 30 fps).
 - `pipeline/tts.py` — voice. Default Kokoro-82M (`am_fenrir`, speed 1.25 — Sam's pick Oct 26; earlier 1.35 was hard to follow; one Kokoro call per sentence, questions 7% slower + 0.5 s beat before the answer so they sound like questions), CPU. Optional Ming-3.0-tts.
 - `pipeline/music.py` — background music synthesized in numpy (original, nothing to license),
