@@ -21,7 +21,7 @@ WPS = 2.55        # spoken words per second at KOKORO_SPEED 1.25 (measured: 009 
 LEN_MIN, LEN_MAX = 25, 45
 TITLE_MAX = 50    # Shorts titles get cut on mobile beyond ~50 chars
 PEOPLE = re.compile(r"\b(person|people|man|woman|couple|family|shopper|worker|cashier|driver|owner|"
-                    r"customer|customers|crowd|fans|player|gamer|chef|pilot|student|friends|parent)s?\b", re.I)
+                    r"customer|customers|crowd|fan|player|gamer|chef|pilot|student|friend|parent|teenager|kid|traveler|barista|technician|engineer|runner|clerk|singer|crew|rider|employee)s?\b", re.I)
 
 
 def lint(s: dict) -> tuple[list[str], list[str]]:
