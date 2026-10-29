@@ -290,17 +290,25 @@ class Engine:
         self.floor_vao = self._vao(self.floor_prog, quad_mesh())
         full = np.array([-1, -1, 1, -1, 1, 1, -1, -1, 1, 1, -1, 1], np.float32)
         self.post_vao = c.vertex_array(self.post, [(c.buffer(full), "2f", "in_pos")])
-        self.msaa = c.framebuffer(c.renderbuffer((W3D, H3D), 4, samples=SAMPLES),
-                                  c.depth_renderbuffer((W3D, H3D), samples=SAMPLES))
-        self.col_tex = c.texture((W3D, H3D), 4)
-        self.resolve = c.framebuffer([self.col_tex])
+        self._rts = {}
         self.depth_prog = c.program(vertex_shader=_VS, fragment_shader=_DEPTH_FS)
-        dw, dh = W3D // 2, H3D // 2
-        self.dep_tex = c.texture((dw, dh), 1, dtype="f4")
-        self.dep_fbo = c.framebuffer([self.dep_tex], c.depth_renderbuffer((dw, dh)))
-        self.out_tex = c.texture((W3D, H3D), 3)
-        self.out_fbo = c.framebuffer([self.out_tex])
         self.textures = {}
+
+    def rt(self, size):
+        """Render targets for one output size (charts render full-size, low-poly at half)."""
+        if size not in self._rts:
+            c, (w, h) = self.ctx, size
+            r = type("RT", (), {})()
+            r.msaa = c.framebuffer(c.renderbuffer((w, h), 4, samples=SAMPLES),
+                                   c.depth_renderbuffer((w, h), samples=SAMPLES))
+            r.col_tex = c.texture((w, h), 4)
+            r.resolve = c.framebuffer([r.col_tex])
+            r.dep_tex = c.texture((w // 2, h // 2), 1, dtype="f4")
+            r.dep_fbo = c.framebuffer([r.dep_tex], c.depth_renderbuffer((w // 2, h // 2)))
+            r.out_tex = c.texture((w, h), 3)
+            r.out_fbo = c.framebuffer([r.out_tex])
+            self._rts[size] = r
+        return self._rts[size]
 
     def _vao(self, prog, data=None, buf=None):
         buf = buf or self.ctx.buffer(data.tobytes())
@@ -351,6 +359,7 @@ class Scene:
         self.customs = []  # callables(engine, vp, scene) drawn in the opaque pass (skinned crowds)
         self.near, self.far = 0.1, 80.0
         self.vignette = 0.22
+        self.size = (W3D, H3D)  # output size; low-poly uses (540, 960)
         # lens shift (NDC): moves the picture up so 3D content sits between the channel tag and
         # the caption dead zone, without tilting the camera
         self.shift = 0.15
@@ -367,11 +376,13 @@ class Scene:
         e = Engine.get()
         L, ctx = self.look, e.ctx
         view = look_at(self.eye, self.target)
-        proj = perspective(self.fov, W3D / H3D, self.near, self.far)
+        w3, h3 = self.size
+        R = e.rt(self.size)
+        proj = perspective(self.fov, w3 / h3, self.near, self.far)
         proj[1, 2] = -self.shift
         proj[0, 2] = self.shift_x
         vp = proj @ view
-        e.msaa.use()
+        R.msaa.use()
         bg = np.asarray(L["fog"], np.float32)
         ctx.clear(*bg, 1.0)
         ctx.enable(ctx.DEPTH_TEST)
@@ -420,10 +431,10 @@ class Scene:
                     p["tex"].value = 0
                 mesh.render()
             ctx.disable(ctx.BLEND)
-        ctx.copy_framebuffer(e.resolve, e.msaa)
+        ctx.copy_framebuffer(R.resolve, R.msaa)
         # depth pass (half res, no MSAA) for depth of field; skipped when there's no blur
         if self.aperture > 0:
-            e.dep_fbo.use()
+            R.dep_fbo.use()
             ctx.clear(self.far, 0, 0, 1)
             ctx.enable(ctx.DEPTH_TEST)
             dp = e.depth_prog
@@ -443,18 +454,18 @@ class Scene:
                     dp["tex"].value = 0
                 e.depth_vao(mesh).render()
         # post: depth of field + vignette
-        e.out_fbo.use()
+        R.out_fbo.use()
         ctx.disable(ctx.DEPTH_TEST)
-        e.col_tex.use(0)
-        e.dep_tex.use(1)
+        R.col_tex.use(0)
+        R.dep_tex.use(1)
         q = e.post
         q["color"].value, q["depth"].value = 0, 1
         q["focus"].value, q["aperture"].value = float(self.focus), float(self.aperture)
-        q["px"].value = (1.0 / W3D, 1.0 / H3D)
+        q["px"].value = (1.0 / w3, 1.0 / h3)
         q["vig_amt"].value = float(self.vignette)
         e.post_vao.render()
-        raw = e.out_fbo.read(components=3)
-        return np.frombuffer(raw, np.uint8).reshape(H3D, W3D, 3)[::-1]
+        raw = R.out_fbo.read(components=3)
+        return np.frombuffer(raw, np.uint8).reshape(h3, w3, 3)[::-1]
 
 
 def card(img, q, side, bg_rgb) -> np.ndarray:
