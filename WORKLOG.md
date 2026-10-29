@@ -86,9 +86,14 @@ passes and the 3D version is clearly better. Free tools only; ≤100 Higgsfield 
   001-costco-higgsfield3d-vs-codechars.mp4 (left Higgsfield 3D-style + parallax, right code),
   {001,002}-*-live-vs-3dchars.mp4 (left live main, right 3D-style images + parallax).
 
+- **Sam picked the Higgsfield 3D style (Oct 29).** Made 2 new 3D-character B-roll images for each
+  of the 22 queued Shorts (44 credits; prompts in bench/broll3d_prompts.json, results in
+  bench/broll3d_results.txt). All 44 URLs load; lint 0 errors. Code-character work stays in the
+  repo (pipeline/character.py, scenes_chars.py) but isn't used by the renderer.
+- Credits: experiments 8 + queued regeneration 44 = 52 this session; balance ~439.5.
+
 ## In progress
-- WAITING FOR SAM: pick a look (Higgsfield 3D-style characters + parallax vs code characters).
-  Nothing from this round is merged; main still posts the merged 3D-chart version.
+- Final e2e (703160d: parallax + new images on GitHub) → merge to main if green.
 - Watch the first 3D nightly (10:17 UTC Oct 29): check "Delivered Shorts" commit + no failure issue.
 
 ## Next
@@ -104,6 +109,4 @@ passes and the 3D version is clearly better. Free tools only; ≤100 Higgsfield 
   people, not 3D figures.
 
 ## Needs Sam
-- Pick the character look (see In progress). Then: regenerate the 27 queued Shorts' B-roll
-  (~54 credits) only after approval.
 - Confirm the "people" reading above (realistic made-up people in the photos).
