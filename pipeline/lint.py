@@ -61,8 +61,8 @@ def lint(s: dict) -> tuple[list[str], list[str]]:
         if missing:
             err.append(f"ready but images missing: {', '.join(missing)}")
         prompts = [(imgs.get(k) or {}).get("prompt", "") for k in imgs]
-        if sum(bool(PEOPLE.search(p)) for p in prompts) < 2:
-            warn.append("fewer than 2 images with people (STYLE.md: show realistic made-up people)")
+        if sum(bool(PEOPLE.search(p)) and "3d" in p.lower() for p in prompts) < 2:
+            warn.append("fewer than 2 images with 3D-rendered characters (STYLE.md: 3D characters)")
         for p in prompts:
             if p and "no logos" not in p.lower():
                 warn.append("image prompt missing 'no logos'")
