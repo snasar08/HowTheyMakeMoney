@@ -19,6 +19,8 @@ from PIL import Image, ImageDraw
 from . import gl3d
 from .gl3d import Engine, Scene, trs
 
+BAR_TITLES = False
+
 
 def _c(rgb):
     return tuple(c / 255 for c in rgb[:3])
@@ -151,7 +153,7 @@ def bars(theme, tname, v, t, p, variant):
         label3d(sc, it["label"].upper(), (x, h + 0.3 + (0.45 if len(it["label"]) > 12 else 0), 0.2), 0.36,
                 L["text"], L["side"], max_chars=12, billboard=True, layers=2, depth=0.03,
                 font_name="Inter-Bold.otf", max_w=lab_w)
-    if v.get("title"):
+    if v.get("title") and BAR_TITLES:  # off: the top band belongs to the channel tag / YouTube UI
         wrapped = any(len(i["label"]) > 12 for i in items)
         text3d(sc, v["title"].upper()[:28], (0, hmax + 2.35 + (0.45 if wrapped else 0), -0.6), 0.42, L["text"], L["side"], billboard=True,
                layers=4, depth=0.08, font_name="Inter-Bold.otf", max_w=span * n)
