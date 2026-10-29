@@ -330,6 +330,7 @@ class Scene:
         # lens shift (NDC): moves the picture up so 3D content sits between the channel tag and
         # the caption dead zone, without tilting the camera
         self.shift = 0.15
+        self.shift_x = 0.055  # ~30 px left: centered on the safe area, away from the like/share column
 
     def add(self, mesh, model, color, tex=None, spec=0.35, gloss=40.0, emissive=0.0, alpha=1.0,
             unlit=False, shadow=None):
@@ -344,6 +345,7 @@ class Scene:
         view = look_at(self.eye, self.target)
         proj = perspective(self.fov, W3D / H3D, self.near, self.far)
         proj[1, 2] = -self.shift
+        proj[0, 2] = self.shift_x
         vp = proj @ view
         e.msaa.use()
         bg = np.asarray(L["fog"], np.float32)
@@ -426,6 +428,7 @@ def card(img, q, side, bg_rgb) -> np.ndarray:
     sc = Scene(look, (0, 0, dist), (0, 0, 0), fov=fov, aperture=0.0)
     sc.vignette = 0.0
     sc.shift = 0.0
+    sc.shift_x = 0.0
     sgn = 1 if side else -1
     ang = sgn * (1 - k) * 0.55
     push = (1 - k) * -0.6
