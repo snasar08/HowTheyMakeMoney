@@ -17,7 +17,7 @@ jobs:
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
-      - run: sudo apt-get update -qq && sudo apt-get install -y -qq blender
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq blender python3-numpy
       - name: Convert
         run: |
           mkdir -p /tmp/res
