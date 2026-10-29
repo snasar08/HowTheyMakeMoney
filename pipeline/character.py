@@ -124,7 +124,19 @@ class Character:
         return next(iter(self.clips), None)
 
     def pose(self, clip: str | None, t: float) -> list[np.ndarray]:
-        """Skinned (pos, normal) per primitive at time t (clip loops)."""
+        """Skinned (pos, normal) per primitive at time t (clip loops) -- CPU skinning."""
+        J = self.joint_mats(clip, t)
+        out = []
+        for p in self.prims:
+            M = np.einsum("vk,vkij->vij", p["w"], J[p["jnt"]])  # blended matrix per vertex
+            pos = np.einsum("vij,vj->vi", M[:, :3, :3], p["pos"]) + M[:, :3, 3]
+            nrm = np.einsum("vij,vj->vi", M[:, :3, :3], p["norm"])
+            nrm /= np.linalg.norm(nrm, axis=1, keepdims=True) + 1e-8
+            out.append((pos, nrm))
+        return out
+
+    def joint_mats(self, clip: str | None, t: float) -> np.ndarray:
+        """(joints, 4, 4) skinning matrices at time t (for GPU skinning)."""
         local = [list(r) for r in self.rest]
         if clip and clip in self.clips:
             chans, dur = self.clips[clip]
@@ -148,15 +160,7 @@ class Character:
                 m = _trs(*local[i])
                 world[i] = wm(self.parent[i]) @ m if i in self.parent else m
             return world[i]
-        J = np.stack([wm(j) @ self.ibm[k] for k, j in enumerate(self.joints)])
-        out = []
-        for p in self.prims:
-            M = np.einsum("vk,vkij->vij", p["w"], J[p["jnt"]])  # blended matrix per vertex
-            pos = np.einsum("vij,vj->vi", M[:, :3, :3], p["pos"]) + M[:, :3, 3]
-            nrm = np.einsum("vij,vj->vi", M[:, :3, :3], p["norm"])
-            nrm /= np.linalg.norm(nrm, axis=1, keepdims=True) + 1e-8
-            out.append((pos, nrm))
-        return out
+        return np.stack([wm(j) @ self.ibm[k] for k, j in enumerate(self.joints)]).astype(np.float32)
 
 
 @lru_cache(maxsize=4)

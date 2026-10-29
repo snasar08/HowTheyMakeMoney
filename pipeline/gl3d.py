@@ -348,6 +348,7 @@ class Scene:
         self.fov, self.aperture = fov, aperture
         self.focus = focus if focus is not None else float(np.linalg.norm(self.eye - self.target))
         self.items, self.blobs = [], []
+        self.customs = []  # callables(engine, vp, scene) drawn in the opaque pass (skinned crowds)
         self.near, self.far = 0.1, 80.0
         self.vignette = 0.22
         # lens shift (NDC): moves the picture up so 3D content sits between the channel tag and
@@ -399,6 +400,8 @@ class Scene:
                      ("ground", L["ground"]), ("fog_col", L["fog"])):
             p[k].value = tuple(float(x) for x in v)
         p["fog_near"].value, p["fog_far"].value = L.get("fog_near", 8.0), L.get("fog_far", 26.0)
+        for fn in self.customs:
+            fn(e, vp, self)
         opaque = [i for i in self.items if i[7] >= 0.999]
         clear = [i for i in self.items if i[7] < 0.999]
         for batch, blend in ((opaque, False), (clear, True)):
