@@ -29,8 +29,14 @@ and **free beyond his Higgsfield Pro plan** — never add a paid service or ask 
   `status: "needs_fix"` with reasons and the next ready script takes its slot.
 - Posting order: `score` (0–100 virality estimate) — nightly posts the highest-scoring ready
   Short first, then by id.
-- `.github/workflows/stats.yml` (Fridays) → `content/performance.json`: public views/likes/
-  comments per Short via the YouTube Data API. Needs secret `YT_API_KEY`; skips without it.
+- **Learning loop (Oct 29):** `stats.yml` runs daily (~7 AM ET): `pipeline/stats.py` appends public
+  views/likes/comments per Short (YouTube Data API, read-only key secret `YT_API_KEY`) to
+  `analytics/stats.json`, tagged with format, topic, visual style, theme, hook style, title style,
+  length and post time; `pipeline/insights.py` writes `analytics/insights.md` (best vs worst, views
+  at 48 h / 7 d, like and comment rates by group; < 10 Shorts per group = early signal only) and
+  `analytics/format_weights.json` (0.7–1.4, only once a format has ≥ 10 Shorts), which the queue
+  uses: priority = score × format weight, formats alternate post to post. `analytics/status.json`
+  says whether the key works. Never change post times, posts/day, voice or upload mode for this.
 - `pipeline/audio_check.py` runs after every render: one-breath runs (>6 s), syllables/s per
   scene, swallowed words, silent CTA beat, clipping. Prints `::warning`s; `AUDIO_CHECK=strict`
   blocks delivery.
@@ -173,8 +179,10 @@ Posting uses 14 Shorts/week (2/day). Goal: build a buffer, capped so credits are
    images couldn't be made, so the nightly run skips it.
 8. On the first Saturday of the month (part 1 only), open a GitHub issue "Monthly report YYYY-MM":
    Shorts delivered last month (count `delivered` with dates), queue size, Higgsfield credits left,
-   failures / `::warning` audio or Buffer issues from the last month's Actions runs, and anything
-   that needs Sam.
+   failures / `::warning` audio or Buffer issues from the last month's Actions runs, a short
+   **insights summary** (top/bottom 3 Shorts, which formats/hooks/titles/lengths lead, and whether
+   each is a finding or an early signal — copy from `analytics/insights.md`), and anything that
+   needs Sam.
 
 ## Rules
 - Never invent numbers. Never use real logos or people in image prompts.
