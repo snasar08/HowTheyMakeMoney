@@ -1,0 +1,3 @@
+CLIPS ['ArmatureAction.001', 'ArmatureAction.002', 'Death', 'Idle', 'Jump', 'Punch', 'Run', 'Walk', 'Working']
+MESHES [('Human_Mesh', 791)]
+WROTE /tmp/res/quaternius-animated-human.glb
