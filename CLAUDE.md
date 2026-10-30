@@ -51,6 +51,11 @@ and **free beyond his Higgsfield Pro plan** — never add a paid service or ask 
   small punch. Music mood per format (`music.MOODS`: whatif faster/bouncy, famous steady, careers
   warm, how lo-fi). Buffer delivery retries the public-URL check ~90 s; if a Short still falls
   back to a release, push branch `reschedule/<id>` to put it on Buffer.
+- **Visual FX (Oct 30, `pipeline/fx.py`, `FX=off` disables):** stats count up from 0, coin/sparkle
+  burst on billion+ numbers, big title punch-in over the first 0.75 s of low-poly Shorts, zoom-blur
+  into each new low-poly scene, slow drift on 2D shots, light grade (contrast, vignette, static grain —
+  moving grain tripled file size), and small Pillow-drawn icons (coin/truck/plane/house/box) above
+  matching caption words.
 - Shots change every ~1.4 s (max 2 s, Sam wants something new at least every 2 s).
 - **3D charts (since Oct 29 2026):** `pipeline/gl3d.py` (moderngl engine; Mesa llvmpipe via EGL on
   GitHub, ~0.1 s/frame) + `pipeline/scene3d.py` (bars from a floor, coin/cash stacks with a counting

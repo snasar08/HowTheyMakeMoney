@@ -1116,7 +1116,7 @@ class Renderer:
         for w in (w for ch in chunks for w in ch):
             kind = fx.icon_for(w.text)
             if kind and w.start - 0.03 <= t <= w.end + 0.35:
-                y = CAPTION_Y - (190 if lp else 200)
+                y = CAPTION_Y - (215 if lp else 225)
                 fx.draw_icon(frame, kind, (SAFE_X0 + SAFE_X1) / 2, y, (t - w.start + 0.03) / 0.15)
                 return
 

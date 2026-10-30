@@ -149,9 +149,9 @@ def grade(frame: Image.Image, n: int) -> Image.Image:
         r = np.sqrt(((xx - W / 2) / (W * 0.75)) ** 2 + ((yy - H / 2) / (H * 0.75)) ** 2)
         _vig = (1 - 0.28 * np.clip(r - 0.35, 0, 1) ** 1.6)[..., None].astype(np.float32)
         rng = np.random.default_rng(7)
-        _grain = [rng.normal(0, 4.0, (H, W, 1)).astype(np.float32) for _ in range(6)]
+        _grain = rng.normal(0, 3.0, (H, W, 1)).astype(np.float32)  # static: moving grain tripled file size
     a = np.asarray(frame, np.float32)
-    a = ((a - 128) * 1.06 + 128) * _vig + _grain[n % 6]
+    a = ((a - 128) * 1.06 + 128) * _vig + _grain
     return Image.fromarray(np.clip(a, 0, 255).astype(np.uint8))
 
 
@@ -175,7 +175,7 @@ def draw_icon(frame: Image.Image, kind: str, cx: float, cy: float, p: float):
     """p: 0..1 pop-in progress."""
     if not ON:
         return
-    s = 70 * (0.6 + 0.4 * min(1.0, p * 1.4 if p < 0.7 else 1.0))
+    s = 95 * (0.6 + 0.4 * min(1.0, p * 1.4 if p < 0.7 else 1.0))
     d = ImageDraw.Draw(frame)
     K, O = (0, 0, 0), 7
 
