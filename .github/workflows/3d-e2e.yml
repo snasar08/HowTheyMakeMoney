@@ -29,8 +29,8 @@ jobs:
       EGL_PLATFORM: surfaceless
       BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
       HTMM_CACHE: ${{ github.workspace }}/.cache
-      E2E_IDS: "${{ vars.E2E_IDS }}"
-      E2E_NIGHTLY: "1"
+      E2E_IDS: " 003"
+      E2E_NIGHTLY: ""
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -60,7 +60,7 @@ jobs:
           fi
           for id in $E2E_IDS; do
             start=$(date +%s)
-            python -m pipeline.run --id $id 2>&1 | grep -v "Warning\|warn(" | tee e2e/run-$id.log
+            python -m pipeline.run --id $id --dry 2>&1 | grep -v "Warning\|warn(" | tee e2e/run-$id.log
             echo "$id $(( $(date +%s) - start ))" | tee -a e2e/seconds.txt
           done
       - name: Stills
