@@ -39,7 +39,7 @@ jobs:
       BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
       AUDIO_CHECK: ${{ vars.AUDIO_CHECK || 'warn' }}
       VOICE_ENGINE: ${{ vars.VOICE_ENGINE || 'kokoro' }}
-      KOKORO_VOICE: af_bella   # Oct 30: Sam asked for the best-rated free voice
+      KOKORO_VOICE: am_puck   # Oct 30: Sam wants a male voice; am_puck = top-rated male (C+), most expressive
       KOKORO_SPEED: "1.2"
       POST_SLOTS: ${{ vars.POST_SLOTS || '12:00,18:00' }}
       GH_TOKEN: ${{ github.token }}

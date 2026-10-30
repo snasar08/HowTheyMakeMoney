@@ -14,7 +14,7 @@ and **free beyond his Higgsfield Pro plan** — never add a paid service or ask 
   never double-post. GitHub starts scheduled runs late (Oct 26–28: 5.5–6.5 h). Check Buffer:
   push branch `slot-audit` (report) / `slot-fix` (delete extras, scripts back to ready). Budget: private repos get 2,000 free minutes/month; a run takes ~5–8 minutes.
 - `pipeline/render.py` draws every frame with Pillow and pipes to ffmpeg (1080x1920, 30 fps).
-- `pipeline/tts.py` — voice. Default Kokoro-82M **`af_bella` at 1.2** (Oct 30: Sam disliked am_fenrir and asked for the best-rated free voice; af_bella has Kokoro's top grade, A−; bigger open models like Fish Audio S2 Pro are non-commercial and ~30x slower than real time without a GPU). One Kokoro call per sentence, questions 7% slower + 0.5 s beat. Audio is loudness-normalized to −14 LUFS (YouTube's target). CPU. Optional Ming-3.0-tts.
+- `pipeline/tts.py` — voice. Default Kokoro-82M **`am_puck` at 1.2** (Oct 30: Sam disliked am_fenrir, then af_bella — wants a MALE voice, speed 1.2 is right. am_puck ties for Kokoro's top male grade, C+, and moves most in pitch; Sam also rejected am_michael on day 1; bigger open models like Fish Audio S2 Pro are non-commercial and ~30x slower than real time without a GPU). One Kokoro call per sentence, questions 7% slower + 0.5 s beat. Audio is loudness-normalized to −14 LUFS (YouTube's target). CPU. Optional Ming-3.0-tts.
 - `pipeline/music.py` — background music synthesized in numpy (original, nothing to license),
   seeded per script, ducked under the voice. `MUSIC_GAIN` env var (default 0.12, 0 = off).
   Sam disliked the whoosh sound on cuts, so it was removed — don't add cut SFX back.
