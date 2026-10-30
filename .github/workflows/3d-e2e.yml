@@ -29,7 +29,7 @@ jobs:
       EGL_PLATFORM: surfaceless
       BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
       HTMM_CACHE: ${{ github.workspace }}/.cache
-      E2E_IDS: " 003"
+      E2E_IDS: "030 003"
       E2E_NIGHTLY: ""
     steps:
       - uses: actions/checkout@v4
