@@ -84,7 +84,8 @@ def hook(frame: Image.Image, title: str, gt: float, font_fn, black: str, dur: fl
     if not ON or not title or gt >= dur:
         return
     txt = title.upper()
-    pop = 1.35 - 0.35 * ease_out(gt / 0.25)
+    # frame 0 shows the title in full: it's the frame YouTube tends to use as the Short's cover
+    pop = 1.0 if gt < 0.04 else 1.35 - 0.35 * ease_out((gt - 0.04) / 0.25)
     alpha = 1.0 if gt < dur - 0.15 else (dur - gt) / 0.15
     for size in (92, 80, 70, 60):  # biggest size that fits in 3 lines
         f = font_fn(black, size)
@@ -113,6 +114,21 @@ def hook(frame: Image.Image, title: str, gt: float, font_fn, black: str, dur: fl
     if alpha < 1:
         lay.putalpha(lay.getchannel("A").point(lambda a: int(a * alpha)))
     frame.paste(lay, (0, 150), lay)
+
+
+# ---- loop seam
+def loop_blend(frame: Image.Image, first: Image.Image | None, left: float, dur: float = 0.35) -> Image.Image:
+    """Fade the last `dur` seconds into the first frame so the replay looks continuous."""
+    if not ON or first is None or left >= dur:
+        return frame
+    return Image.blend(frame, first, ease_out(1 - left / dur) * 0.85)
+
+
+# ---- visual check
+def blank(frame: Image.Image) -> bool:
+    """A frame that is (almost) one flat color: a render that failed silently."""
+    a = np.asarray(frame.resize((108, 192)), np.float32)
+    return float(a.std()) < 3.0
 
 
 # ---- camera

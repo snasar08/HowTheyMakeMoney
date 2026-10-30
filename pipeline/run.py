@@ -91,6 +91,8 @@ def gate(script: dict, info: dict) -> list[str]:
     if missing := sorted(want - set(info.get("images_ok", []))):
         out.append(f"images failed to load: {', '.join(missing)}")
     out += [f"chart covers captions ({p})" for p in script_overlaps(script)]
+    if len(info.get("blank_frames") or []) > 2:
+        out.append(f"blank frames at {info['blank_frames'][:5]} s")
     return out
 
 

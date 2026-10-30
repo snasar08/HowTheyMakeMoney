@@ -64,6 +64,9 @@ def lint(s: dict) -> tuple[list[str], list[str]]:
     if not LEN_MIN <= est <= LEN_MAX:
         warn.append(f"estimated length {est:.0f}s (sweet spot {LEN_MIN}–{LEN_MAX}s)")
     for sc in scenes:
+        for sent in re.split(r"(?<=[.!?])\s+", sc.get("narration", "")):
+            if len(sent.split()) > 18:
+                warn.append(f"long sentence ({len(sent.split())} words) — add a comma or split it: {sent[:50]}...")
         if len(sc.get("narration", "").split()) > 34:
             warn.append(f"long scene ({len(sc['narration'].split())} words): split it for pacing")
     if len(s.get("sources", [])) < 1 or any(not str(x.get("url", "")).startswith("http") for x in s.get("sources", [])):
