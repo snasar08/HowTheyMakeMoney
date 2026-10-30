@@ -1,0 +1,17 @@
+  super().__init__("LSTM", *args, **kwargs)
+  WeightNorm.apply(module, name, dim)
+Collecting en-core-web-sm==3.8.0
+  Downloading en_core_web_sm-3.8.0-py3-none-any.whl (12.8 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.8/12.8 MB 97.2 MB/s  0:00:00
+Installing collected packages: en-core-web-sm
+Successfully installed en-core-web-sm-3.8.0
+[run] already scheduled: ['Fri 30 18:00 (032)', 'Sat 31 12:00 (005)', 'Sat 31 18:00 (028)']
+[run] open slots to fill: ['Sun 01 12:00']
+[run] rendering 1 script(s); 18 ready after this run
+WARNING: Defaulting repo_id to hexgrad/Kokoro-82M. Pass repo_id='hexgrad/Kokoro-82M' to suppress this warning.
+[38;5;2m✔ Download and installation successful[0m
+You can now load the package via spacy.load('en_core_web_sm')
+[render] 3D on: llvmpipe (LLVM 20.1.2, 256 bits)
+[run] rendered 030-whatif-amazon.mp4: 31.91s
+::notice title=030-whatif-amazon::{"seconds": 31.91, "scenes": 5, "cuts": 16, "avg_shot": 1.88, "scene_mids": [2.73, 7.75, 13.3, 16.32, 21.99], "voice": "kokoro", "timed_words": true, "images_ok": [], "blank_frames": [], "longest_breath": 5.1, "clipped_pct": 0.0, "syllables_per_s": [5.4, 4.94, 5.3, 4.6, 4.57], "pitch_spread_st": [4.72, 4.47, 4.18, 4.33, 3.98], "clarity": 1.0, "unclear_words": []}
+[check] 030-whatif-amazon: audio OK (longest breath 5.1s)

@@ -1,0 +1,11 @@
+  super().__init__("LSTM", *args, **kwargs)
+  WeightNorm.apply(module, name, dim)
+[run] already scheduled: ['Fri 30 18:00 (032)', 'Sat 31 12:00 (005)', 'Sat 31 18:00 (028)']
+[run] open slots to fill: ['Sun 01 12:00']
+[run] rendering 1 script(s); 18 ready after this run
+WARNING: Defaulting repo_id to hexgrad/Kokoro-82M. Pass repo_id='hexgrad/Kokoro-82M' to suppress this warning.
+[render] 3D on: llvmpipe (LLVM 20.1.2, 256 bits)
+Loading weights:   0%|          | 0/287 [00:00<?, ?it/s]Loading weights: 100%|██████████| 287/287 [00:00<00:00, 5612.69it/s]
+[run] rendered 003-delta.mp4: 31.69s
+::notice title=003-delta::{"seconds": 31.69, "scenes": 5, "cuts": 16, "avg_shot": 1.86, "scene_mids": [2.8, 6.76, 10.85, 17.98, 22.72], "voice": "kokoro", "timed_words": true, "images_ok": ["broll1", "broll2", "hook", "mid"], "blank_frames": [], "longest_breath": 4.08, "clipped_pct": 0.0, "syllables_per_s": [4.21, 4.73, 5.49, 5.01, 4.89], "pitch_spread_st": [2.54, 5.2, 3.92, 4.68, 3.66], "clarity": 0.96, "unclear_words": ["'plane' at 3.1s", "'Amex' at 9.8s", "'Amex' at 12.6s", "'SkyMiles' at 13.3s", "So"]}
+::warning title=003-delta audio::'So' at 28.7s heard but unclear (low confidence)
