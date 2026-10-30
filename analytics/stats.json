@@ -9,6 +9,12 @@
      "views": 0,
      "likes": 0,
      "comments": 0
+    },
+    {
+     "t": "2026-10-30T16:59:56+00:00",
+     "views": 0,
+     "likes": 0,
+     "comments": 0
     }
    ],
    "tags": {
@@ -33,6 +39,12 @@
    "snapshots": [
     {
      "t": "2026-10-29T15:25:31+00:00",
+     "views": 0,
+     "likes": 0,
+     "comments": 0
+    },
+    {
+     "t": "2026-10-30T16:59:56+00:00",
      "views": 0,
      "likes": 0,
      "comments": 0
@@ -63,6 +75,12 @@
      "views": 2,
      "likes": 0,
      "comments": 0
+    },
+    {
+     "t": "2026-10-30T16:59:56+00:00",
+     "views": 2,
+     "likes": 0,
+     "comments": 0
     }
    ],
    "tags": {
@@ -87,6 +105,12 @@
    "snapshots": [
     {
      "t": "2026-10-29T15:25:31+00:00",
+     "views": 0,
+     "likes": 0,
+     "comments": 0
+    },
+    {
+     "t": "2026-10-30T16:59:56+00:00",
      "views": 0,
      "likes": 0,
      "comments": 0
@@ -117,6 +141,12 @@
      "views": 1,
      "likes": 1,
      "comments": 0
+    },
+    {
+     "t": "2026-10-30T16:59:56+00:00",
+     "views": 1,
+     "likes": 1,
+     "comments": 0
     }
    ],
    "tags": {
@@ -144,6 +174,12 @@
      "views": 1,
      "likes": 0,
      "comments": 0
+    },
+    {
+     "t": "2026-10-30T16:59:56+00:00",
+     "views": 1,
+     "likes": 0,
+     "comments": 0
     }
    ],
    "tags": {
@@ -161,8 +197,89 @@
     "post_slot": "19:00",
     "score": 95
    }
+  },
+  "lnwZ57yKtC8": {
+   "title": "Could You Spend the Richest Person's Fortune?",
+   "published": "2026-10-30T16:02:08Z",
+   "snapshots": [
+    {
+     "t": "2026-10-30T16:59:56+00:00",
+     "views": 0,
+     "likes": 0,
+     "comments": 0
+    }
+   ],
+   "tags": {
+    "script": "031",
+    "slug": "famous-richest",
+    "topic": "Elon Musk",
+    "format": "famous",
+    "visual_style": "lowpoly",
+    "theme": "dark_neon",
+    "hook_style": "challenge",
+    "title_style": "question",
+    "length_s": 30.08,
+    "length_bucket": "30-38",
+    "post_at": "2026-10-30T12:00:00-04:00",
+    "post_slot": "12:00",
+    "score": 93
+   }
+  },
+  "FkB9G3xqyQA": {
+   "title": "Where Does Your Spotify Money Really Go?",
+   "published": "2026-10-29T22:01:12Z",
+   "snapshots": [
+    {
+     "t": "2026-10-30T16:59:56+00:00",
+     "views": 1,
+     "likes": 0,
+     "comments": 0
+    }
+   ],
+   "tags": {
+    "script": "004",
+    "slug": "spotify",
+    "topic": "Spotify",
+    "format": "how",
+    "visual_style": "charts3d",
+    "theme": "dark_neon",
+    "hook_style": "question",
+    "title_style": "question",
+    "length_s": 32.62,
+    "length_bucket": "30-38",
+    "post_at": "2026-10-29T18:00:00-04:00",
+    "post_slot": "18:00",
+    "score": 83
+   }
+  },
+  "Y0dzSer10Gc": {
+   "title": "How Do NBA Players Actually Get Paid?",
+   "published": "2026-10-29T16:03:13Z",
+   "snapshots": [
+    {
+     "t": "2026-10-30T16:59:56+00:00",
+     "views": 1,
+     "likes": 0,
+     "comments": 0
+    }
+   ],
+   "tags": {
+    "script": "029",
+    "slug": "nba-players",
+    "topic": "NBA players",
+    "format": "careers",
+    "visual_style": "charts3d",
+    "theme": "clean_navy",
+    "hook_style": "question",
+    "title_style": "question",
+    "length_s": 31.51,
+    "length_bucket": "30-38",
+    "post_at": "2026-10-29T12:00:00-04:00",
+    "post_slot": "12:00",
+    "score": 85
+   }
   }
  },
- "updated": "2026-10-29T15:25:31+00:00",
+ "updated": "2026-10-30T16:59:56+00:00",
  "subscribers": 1
 }
