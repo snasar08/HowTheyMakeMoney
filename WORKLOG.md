@@ -1,3 +1,9 @@
+## Oct 30 2026 — visual FX (merged)
+- New `pipeline/fx.py`: count-up stats, coin bursts on huge numbers, hook title punch-in (low-poly),
+  zoom-blur scene changes, 2D drift, color grade + vignette + static grain, keyword icons.
+- Tested: 3d-e2e (005, 028: clarity 100%/96%, zone OK, Buffer dry run OK) + local low-poly render of 030.
+  Moving grain made a 33 s Short 89 MB, so grain is static now (030: 22 MB).
+
 # WORKLOG
 
 ## Oct 30 2026 — voice + features (merged)
