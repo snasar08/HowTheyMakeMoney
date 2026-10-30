@@ -47,6 +47,10 @@ and **free beyond his Higgsfield Pro plan** — never add a paid service or ask 
   starts 0.2 s early). If a line keeps failing, reword it — don't slow the voice.
 - Hooks: every Short opens with a question in the first line + on-screen overlay, and the title
   is a question (Sam: hooks matter most). Aim for topics/hooks that score ~90/100 for virality.
+- Captions: numbers always pop (highlight color, 18% bigger, commas kept); the spoken word gets a
+  small punch. Music mood per format (`music.MOODS`: whatif faster/bouncy, famous steady, careers
+  warm, how lo-fi). Buffer delivery retries the public-URL check ~90 s; if a Short still falls
+  back to a release, push branch `reschedule/<id>` to put it on Buffer.
 - Shots change every ~1.4 s (max 2 s, Sam wants something new at least every 2 s).
 - **3D charts (since Oct 29 2026):** `pipeline/gl3d.py` (moderngl engine; Mesa llvmpipe via EGL on
   GitHub, ~0.1 s/frame) + `pipeline/scene3d.py` (bars from a floor, coin/cash stacks with a counting

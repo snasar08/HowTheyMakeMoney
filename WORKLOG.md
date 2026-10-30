@@ -1,5 +1,14 @@
 # WORKLOG
 
+## Oct 30 2026 — voice + features (merged)
+- Voice: Sam disliked am_fenrir, then af_bella → **am_puck** at 1.2 (top-rated Kokoro male tier, most
+  expressive; Fish Audio S2 Pro / other top open models are non-commercial or ~30x real-time on CPU).
+- Loudness normalized to -14 LUFS (measured -15.0). Numbers pop in captions; music mood per format.
+- 1 PM extra post (Sam's request): 030 what-if Amazon. First launch crashed (launch.yml lacked Mesa/EGL)
+  → fixed + low-poly stat-card fallback; second launch fell back to a release (fresh asset 404 for a
+  few seconds) → public_ok now retries ~90 s; `reschedule/030` put it on Buffer for Fri 13:00
+  (post 6ae4b5eb…, scheduled). Today: 12:00 031, 13:00 030, 18:00 032.
+
 ## CURRENT TASK — branch `variety-upgrade` (started Oct 29 2026)
 Resume: `git switch variety-upgrade`, read this section + TODO.md, continue from "In progress".
 Scope (Sam, Oct 29): (1) 4 rotating formats [how / what-if / careers / famous], 20+ sourced ideas
