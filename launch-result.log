@@ -1,0 +1,26 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/torch/nn/modules/rnn.py:1012: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.2 and num_layers=1
+  super().__init__("LSTM", *args, **kwargs)
+/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/torch/nn/utils/weight_norm.py:145: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.
+  WeightNorm.apply(module, name, dim)
+Collecting en-core-web-sm==3.8.0
+  Downloading en_core_web_sm-3.8.0-py3-none-any.whl (12.8 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.8/12.8 MB 185.2 MB/s  0:00:00
+Installing collected packages: en-core-web-sm
+Successfully installed en-core-web-sm-3.8.0
+/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+[run] already scheduled: ['Fri 30 12:00 (031)', 'Fri 30 18:00 (032)']
+[run] open slots to fill: ['Fri 30 13:00']
+[run] rendering 1 script(s); 21 ready after this run
+WARNING: Defaulting repo_id to hexgrad/Kokoro-82M. Pass repo_id='hexgrad/Kokoro-82M' to suppress this warning.
+[38;5;2m✔ Download and installation successful[0m
+You can now load the package via spacy.load('en_core_web_sm')
+[render] 3D on: llvmpipe (LLVM 20.1.2, 256 bits)
+  0%|                                               | 0.00/139M [00:00<?, ?iB/s]  9%|███▋                                   | 12.9M/139M [00:00<00:00, 135MiB/s] 19%|███████▎                               | 25.8M/139M [00:00<00:00, 132MiB/s] 30%|███████████▌                           | 41.0M/139M [00:00<00:00, 144MiB/s] 40%|███████████████▍                       | 54.8M/139M [00:00<00:00, 143MiB/s] 49%|███████████████████▏                   | 68.4M/139M [00:00<00:00, 130MiB/s] 58%|██████████████████████▊                | 80.9M/139M [00:00<00:00, 130MiB/s] 67%|██████████████████████████▎            | 93.4M/139M [00:00<00:00, 129MiB/s] 76%|██████████████████████████████▌         | 106M/139M [00:00<00:00, 125MiB/s] 87%|██████████████████████████████████▊     | 120M/139M [00:00<00:00, 133MiB/s] 98%|███████████████████████████████████████▎| 136M/139M [00:01<00:00, 140MiB/s]100%|████████████████████████████████████████| 139M/139M [00:01<00:00, 132MiB/s]
+https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-030-whatif-amazon
+[run] rendered 030-whatif-amazon.mp4: 31.92s
+::notice title=030-whatif-amazon::{"seconds": 31.92, "scenes": 5, "cuts": 16, "avg_shot": 1.88, "scene_mids": [2.73, 7.75, 13.3, 16.32, 21.99], "voice": "kokoro", "timed_words": true, "images_ok": [], "longest_breath": 5.1, "clipped_pct": 0.0, "syllables_per_s": [5.4, 4.94, 5.3, 4.6, 4.57], "pitch_spread_st": [4.62, 4.46, 4.19, 4.31, 4.05], "clarity": 1.0, "unclear_words": []}
+[check] 030-whatif-amazon: audio OK (longest breath 5.1s)
+::warning title=Buffer failed for 030::video URL isn't public (https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-030-whatif-amazon/030-whatif-amazon.mp4) — is the repo public? — left as a GitHub Release to post by hand
+[run] delivered 030-whatif-amazon: {'mode': 'release', 'release': 'https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-030-whatif-amazon', 'asset_url': 'https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-030-whatif-amazon/030-whatif-amazon.mp4', 'post_at': '2026-10-30T13:00:00-04:00'}
