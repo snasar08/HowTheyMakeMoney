@@ -1,3 +1,7 @@
+## Oct 30 2026 — cover frame, loop seam, breath split, title test, blank-frame gate
+- fx.hook full on frame 0; fx.loop_blend; tts.breath_split (>14 words); lint long-sentence warning;
+  gate on blank frames; CLAUDE.md weekly batch rotates title_style as an ongoing test.
+
 ## Oct 30 2026 — visual FX (merged)
 - New `pipeline/fx.py`: count-up stats, coin bursts on huge numbers, hook title punch-in (low-poly),
   zoom-blur scene changes, 2D drift, color grade + vignette + static grain, keyword icons.

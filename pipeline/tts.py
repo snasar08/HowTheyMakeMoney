@@ -47,6 +47,26 @@ def speakable(text: str) -> str:
     return re.sub(r"\s+", " ", t).strip()
 
 
+BREATH_MAX = 14  # words; longer sentences get split so no line runs past ~6 s in one breath
+_JOIN = re.compile(r",\s+|\s+(?=(?:and|but|so|because|which|while)\s)")
+
+
+def breath_split(sent: str) -> list[str]:
+    """Split a long sentence at the comma/conjunction nearest its middle (both halves >= 5 words).
+    Each half is its own Kokoro call, so it gets a natural breath; the words don't change."""
+    words = sent.split()
+    if len(words) <= BREATH_MAX:
+        return [sent]
+    mid, best = len(sent) / 2, None
+    for m in _JOIN.finditer(sent):
+        a, b = sent[:m.start()].rstrip(), sent[m.end():].lstrip()
+        if len(a.split()) >= 5 and len(b.split()) >= 5 and (best is None or abs(m.start() - mid) < abs(best[0] - mid)):
+            best = (m.start(), a + ",", b)
+    if best is None:
+        return [sent]
+    return breath_split(best[1]) + breath_split(best[2])
+
+
 def kokoro(text: str, voice: str | None = None, speed: float | None = None):
     voice = voice or KOKORO_VOICE
     speed = speed or KOKORO_SPEED
@@ -59,7 +79,7 @@ def kokoro(text: str, voice: str | None = None, speed: float | None = None):
     # One sentence per call: read as one block, Kokoro flattens the melody and a question
     # comes out sounding like a statement (Sam: "you don't realize it's a question").
     # Questions are read a touch slower, with a short beat after them.
-    for sent in SENTENCE.split(text):
+    for sent in (p for s in SENTENCE.split(text) for p in (breath_split(s.strip()) if s.strip() else [s])):
         if not sent.strip():
             continue
         q = sent.rstrip().endswith("?")

@@ -56,6 +56,10 @@ and **free beyond his Higgsfield Pro plan** — never add a paid service or ask 
   into each new low-poly scene, slow drift on 2D shots, light grade (contrast, vignette, static grain —
   moving grain tripled file size), and small Pillow-drawn icons (coin/truck/plane/house/box) above
   matching caption words.
+- Also (Oct 30): frame 0 shows the full hook title (YouTube's usual cover frame); the last 0.35 s
+  fades into frame 0 so the replay loops seamlessly; Kokoro sentences over 14 words are split at the
+  comma/conjunction nearest the middle (`tts.breath_split`) so no line runs out of breath; lint warns
+  on sentences > 18 words; the gate blocks a Short with > 2 blank (flat-color) frames.
 - Shots change every ~1.4 s (max 2 s, Sam wants something new at least every 2 s).
 - **3D charts (since Oct 29 2026):** `pipeline/gl3d.py` (moderngl engine; Mesa llvmpipe via EGL on
   GitHub, ~0.1 s/frame) + `pipeline/scene3d.py` (bars from a floor, coin/cash stacks with a counting
@@ -149,7 +153,9 @@ Posting uses 14 Shorts/week (2/day). Goal: build a buffer, capped so credits are
    start ~25% each, then follow `analytics/insights.md` (more of what wins, fewer losers) but keep
    ~20% experimental and NEVER drop a format entirely without asking Sam. Variety: no two Shorts
    in a row (by posting order) share format + theme + hook style; vary length (25–45 s), hook
-   style and title style. Every script sets `format`, `visual_style` (`charts3d`, or `lowpoly`
+   style and title style. **Title test (Oct 30):** rotate `title_style` evenly (question / number /
+   statement / whatif) until each has ≥ 10 posted Shorts in `analytics/insights.md`; after that,
+   ~60% the winning style, the rest spread over the others so the test keeps running. Every script sets `format`, `visual_style` (`charts3d`, or `lowpoly`
    for most whatif/famous — see existing 030/031 for the lowpoly scene JSON), `hook_style` (question / number / whatif / challenge / surprise),
    `title_style` (question / number / statement / whatif). Real people: STYLE.md
    "Real people and brands".

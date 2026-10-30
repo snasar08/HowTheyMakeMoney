@@ -886,6 +886,7 @@ class Renderer:
             proc = subprocess.Popen(cmd, stdin=subprocess.PIPE)
             chunks = [chunk_words(sc.words) for sc in scenes]
             flash = Image.new("RGB", (W, H), (255, 255, 255))
+            blanks = []
 
             def make(n: int) -> bytes:
                 gt = n / FPS
@@ -919,6 +920,11 @@ class Renderer:
                 # thin progress bar along the top edge keeps people watching to the end
                 ImageDraw.Draw(frame).rectangle((0, 0, int(W * min(1.0, gt / total_s)), PROGRESS_H),
                                                 fill=self.theme["accent"])
+                if n == 0:
+                    self._first = frame.copy()
+                frame = fx.loop_blend(frame, getattr(self, "_first", None), total_s - gt)
+                if n % 15 == 0 and fx.blank(frame):
+                    blanks.append(round(gt, 1))
                 return frame.tobytes()
 
             make(0)  # warm the shared caches before going parallel
@@ -937,7 +943,7 @@ class Renderer:
                 "cuts": len(cuts), "avg_shot": round(len(audio) / sr / (len(cuts) + 1), 2),
                 "scene_mids": mids, "voice": tts.VOICE_ENGINE,
                 "timed_words": all(sc.words for sc in scenes),
-                "images_ok": sorted(self.images), **audio_stats, "audio_issues": audio_issues}
+                "images_ok": sorted(self.images), "blank_frames": blanks, **audio_stats, "audio_issues": audio_issues}
 
     # ---- like / subscribe / comment call to action
     def _pill(self, label: str, bg, fg, icon: str | None) -> Image.Image:
