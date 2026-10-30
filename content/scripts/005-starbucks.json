@@ -3,7 +3,7 @@
   "slug": "starbucks",
   "company": "Starbucks",
   "theme": "bold_bright",
-  "status": "ready",
+  "status": "delivered",
   "title": "Is Starbucks Secretly a Bank?",
   "description": "Is Starbucks Secretly a Bank?.\n\nSources:\n- Starbucks Form 10-Q, stored value card balance (SEC): https://www.sec.gov/Archives/edgar/data/829224/000082922426000011/sbux-20251228.htm\n- Starbucks breakage revenue (MarketWatch via Tiger): https://www.itiger.com/news/2531706822\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
@@ -96,5 +96,15 @@
   "loop": "So check that gift card in your drawer, and ask yourself:",
   "score": 84,
   "format": "how",
-  "visual_style": "charts3d"
+  "visual_style": "charts3d",
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-005-starbucks",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-005-starbucks/005-starbucks.mp4",
+    "post_at": "2026-10-31T12:00:00-04:00",
+    "buffer_post": "6ae4e876cd8290b9b908e054",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-10-30T18:56:54.702397+00:00",
+    "seconds": 32.96
+  }
 }

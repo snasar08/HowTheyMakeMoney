@@ -3,7 +3,7 @@
   "slug": "duolingo",
   "company": "Duolingo",
   "theme": "bold_bright",
-  "status": "ready",
+  "status": "delivered",
   "title": "How Does a Free App Make $1 Billion?",
   "description": "How Does a Free App Make $1 Billion?.\n\nSources:\n- Duolingo Q4 and full-year 2025 results (press release via Investing News Network): https://investingnews.com/duolingo-reports-fourth-quarter-and-full-year-2025-results/\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
@@ -93,5 +93,15 @@
   "loop": "So next time that owl reminds you, ask yourself:",
   "score": 79,
   "format": "how",
-  "visual_style": "charts3d"
+  "visual_style": "charts3d",
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-028-duolingo",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-028-duolingo/028-duolingo.mp4",
+    "post_at": "2026-10-31T18:00:00-04:00",
+    "buffer_post": "6ae4e8e8cd8290b9b908faed",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-10-30T18:58:48.759038+00:00",
+    "seconds": 26.15
+  }
 }
