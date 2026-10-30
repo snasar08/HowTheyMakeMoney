@@ -232,22 +232,29 @@ class CaptionRenderer:
         key = (" ".join(w.text for w in chunk), hi)
         if key in self.cache:
             return self.cache[key]
-        texts = [re.sub(r"[^\w$%'.\-]", "", w.text).upper().rstrip(".") or w.text.upper() for w in chunk]
+        texts = [re.sub(r"[^\w$%'.,\-]", "", w.text).upper().rstrip(".,") or w.text.upper() for w in chunk]
+        # numbers always pop (highlight color, 18% bigger); the spoken word gets a small punch too
+        scale = [1.18 if re.search(r"\d", t) else (1.08 if i == hi else 1.0) for i, t in enumerate(texts)]
         size = 82
-        f = font(XBOLD, size)
-        space = f.getlength(" ")
-        total = sum(f.getlength(t) for t in texts) + space * (len(texts) - 1)
+
+        def fonts(sz):
+            return [font(XBOLD, int(sz * k)) for k in scale]
+        fs = fonts(size)
+        space = font(XBOLD, size).getlength(" ")
+        total = sum(f.getlength(t) for f, t in zip(fs, texts)) + space * (len(texts) - 1)
         while total > (SAFE_X1 - SAFE_X0) and size > 48:
             size -= 4
-            f = font(XBOLD, size)
-            space = f.getlength(" ")
-            total = sum(f.getlength(t) for t in texts) + space * (len(texts) - 1)
-        img = Image.new("RGBA", (W, size + 40), (0, 0, 0, 0))
+            fs = fonts(size)
+            space = font(XBOLD, size).getlength(" ")
+            total = sum(f.getlength(t) for f, t in zip(fs, texts)) + space * (len(texts) - 1)
+        tall = max(f.size for f in fs)
+        img = Image.new("RGBA", (W, tall + 40), (0, 0, 0, 0))
         d = ImageDraw.Draw(img)
         x = (SAFE_X0 + SAFE_X1 - total) / 2  # centered in the safe area, clear of the like/share column
-        for i, t in enumerate(texts):
-            fill = self.theme["caption_hi"] if i == hi else self.theme["caption_fill"]
-            d.text((x, 14), t, font=f, fill=fill, stroke_width=8,
+        for i, (t, f) in enumerate(zip(texts, fs)):
+            num = scale[i] > 1.1
+            fill = self.theme["caption_hi"] if (i == hi or num) else self.theme["caption_fill"]
+            d.text((x, 14 + (tall - f.size) * 0.75), t, font=f, fill=fill, stroke_width=8 if not num else 10,
                    stroke_fill=self.theme["caption_stroke"])
             x += f.getlength(t) + space
         self.cache[key] = img
@@ -844,7 +851,8 @@ class Renderer:
         cuts = sorted({float(starts[i] + b) for i, sc in enumerate(scenes) for b in sc.beats} - {0.0})
         voice = audio.copy()
         if music.MUSIC_GAIN > 0:  # original synthesized bed, ducked under the voice
-            bed = music.bed(len(audio) / sr, sr, seed=self.s.get("slug") or self.s.get("company", ""))
+            bed = music.bed(len(audio) / sr, sr, seed=self.s.get("slug") or self.s.get("company", ""),
+                            mood=self.s.get("format"))
             bed = np.pad(bed, (0, max(0, len(audio) - len(bed))))[: len(audio)]
             audio = audio + music.duck(bed, audio, sr) * music.MUSIC_GAIN
         audio_issues, audio_stats = audio_check.check(scenes, starts, self.joins, voice, audio, sr)

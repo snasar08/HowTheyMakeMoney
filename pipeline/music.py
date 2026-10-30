@@ -53,12 +53,23 @@ def _env(n: int, sr: int, attack: float, release: float) -> np.ndarray:
     return e
 
 
-def bed(seconds: float, sr: int, seed: str = "") -> np.ndarray:
+# per-format feel: (bpm low, bpm span, allowed progressions). Same instruments, different energy,
+# so the four formats don't all sound alike.
+MOODS = {
+    "how": (84, 14, (0, 1, 2, 3)),       # lo-fi, the original
+    "whatif": (104, 12, (1, 3)),         # quicker, bouncy, major-leaning (I V vi IV / I vi IV V)
+    "famous": (94, 8, (0, 3)),           # steady "luxury" groove
+    "careers": (88, 10, (1, 2)),         # warm mid-tempo
+}
+
+
+def bed(seconds: float, sr: int, seed: str = "", mood: str | None = None) -> np.ndarray:
     h = int(hashlib.md5(seed.encode()).hexdigest(), 16)
     rng = np.random.default_rng(h % 2**32)
     key = 57 + h % 7                       # tonic between A3 and D#4
-    prog = PROGRESSIONS[(h >> 8) % len(PROGRESSIONS)]
-    bpm = 84 + (h >> 16) % 14              # 84-97 bpm, lo-fi range
+    lo, span, progs = MOODS.get(mood or "how", MOODS["how"])
+    prog = PROGRESSIONS[progs[(h >> 8) % len(progs)]]
+    bpm = lo + (h >> 16) % span
     beat = 60.0 / bpm
     bar = 4 * beat
     total = int(seconds * sr) + sr
