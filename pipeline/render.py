@@ -776,6 +776,11 @@ class Renderer:
             frame = self.shot_textbg(sc, key, variant, tb, pb)
         elif kind == "text":
             frame = self.frame_text(sc, t if b == 0 else 99.0, si)
+        elif sc.visual.get("type") == "lowpoly":  # 3D unavailable: show the scene's stat as a text card
+            v = sc.visual
+            fake = Scene(sc.narration, {"type": "text", "text": v.get("stat") or self.s.get("title", ""),
+                                        "sub": v.get("stat_sub", "")})
+            frame = self.frame_text(fake, tb, si)
         else:
             drawer = {"stat": self.frame_stat, "bars": self.frame_bars, "donut": self.frame_donut}
             frame = drawer[sc.visual["type"]](sc, tb, si)
