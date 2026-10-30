@@ -155,14 +155,20 @@ def buffer_channel() -> tuple[str, str]:
     return _channel_cache["org"], _channel_cache["channel"]
 
 
-def public_ok(url: str) -> bool:
-    """Buffer needs an unauthenticated URL (it fetches at publish time)."""
-    try:
-        req = urllib.request.Request(url, method="HEAD", headers={"User-Agent": "curl/8"})
-        with urllib.request.urlopen(req, timeout=30) as r:
-            return r.status == 200
-    except Exception:
-        return False
+def public_ok(url: str, tries: int = 7) -> bool:
+    """Buffer needs an unauthenticated URL (it fetches at publish time). A just-uploaded release
+    asset can 404 for a few seconds (Oct 30: the 1 PM launch failed on exactly that), so retry
+    for ~90 s before giving up."""
+    for k in range(tries):
+        try:
+            req = urllib.request.Request(url, method="HEAD", headers={"User-Agent": "curl/8"})
+            with urllib.request.urlopen(req, timeout=30) as r:
+                if r.status == 200:
+                    return True
+        except Exception:
+            pass
+        time.sleep(5 + 5 * k)
+    return False
 
 
 def youtube_text(script: dict) -> str:

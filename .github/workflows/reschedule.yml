@@ -1,0 +1,41 @@
+name: Reschedule a Short on Buffer
+
+# Push branch reschedule/<id> (e.g. reschedule/030): schedules that delivered-as-release Short on
+# Buffer at its post_at using the existing release asset, then commits the record to main.
+on:
+  push:
+    branches: ["reschedule/**"]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: make-shorts
+  cancel-in-progress: false
+
+jobs:
+  reschedule:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Schedule
+        run: |
+          git fetch -q origin "$GITHUB_REF_NAME"
+          git checkout -q "origin/$GITHUB_REF_NAME" -- pipeline/reschedule.py pipeline/publish.py
+          python -m pipeline.reschedule "${GITHUB_REF_NAME#reschedule/}" 2>&1 | tee reschedule.log
+      - name: Commit record to main
+        run: |
+          git config user.name "shorts-bot"
+          git config user.email "shorts-bot@users.noreply.github.com"
+          git checkout -q HEAD -- pipeline
+          git add content/scripts
+          git diff --cached --quiet || git commit -qm "Rescheduled on Buffer: ${GITHUB_REF_NAME#reschedule/}"
+          git pull --rebase -q origin main && git push -q origin HEAD:main
