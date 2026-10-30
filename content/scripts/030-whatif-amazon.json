@@ -104,11 +104,13 @@
     }
   ],
   "delivered": {
-    "mode": "release",
+    "mode": "buffer",
     "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-030-whatif-amazon",
     "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-030-whatif-amazon/030-whatif-amazon.mp4",
     "post_at": "2026-10-30T13:00:00-04:00",
     "rendered_at": "2026-10-30T15:19:23.148423+00:00",
-    "seconds": 31.92
+    "seconds": 31.92,
+    "buffer_post": "6ae4b5eb3faa32d978237d53",
+    "buffer_status": "scheduled"
   }
 }
