@@ -24,8 +24,8 @@ jobs:
       UPLOAD_MODE: buffer_dry
       POST_START: "2026-10-01"
       AUDIO_CHECK: warn
-      KOKORO_VOICE: am_fenrir
-      KOKORO_SPEED: "1.25"
+      KOKORO_VOICE: am_puck
+      KOKORO_SPEED: "1.2"
       EGL_PLATFORM: surfaceless
       BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
       HTMM_CACHE: ${{ github.workspace }}/.cache

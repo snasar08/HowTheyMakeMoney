@@ -863,6 +863,8 @@ class Renderer:
                    "-i", str(wav),
                    "-c:v", "libx264", "-preset", os.environ.get("X264_PRESET", "veryfast"),
                    "-crf", "20", "-pix_fmt", "yuv420p", "-movflags", "+faststart",
+                   # YouTube plays Shorts at about -14 LUFS: normalize so ours aren't quieter than the rest
+                   "-af", os.environ.get("LOUDNORM", "loudnorm=I=-14:TP=-1.5:LRA=11"),
                    "-c:a", "aac", "-b:a", "160k", "-ar", "48000",
                    "-shortest", str(out_path)]
             proc = subprocess.Popen(cmd, stdin=subprocess.PIPE)

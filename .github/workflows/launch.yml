@@ -2,7 +2,7 @@ name: Launch posts (one-off)
 
 # Pushing a branch named launch/* renders the top-scoring ready Shorts and schedules them on
 # Buffer at the times in LAUNCH_SLOTS today (New York), then marks them delivered on main.
-# Used for the Oct 26 2026 launch test: 3 Shorts at 7, 8 and 9 PM.
+# Oct 26 2026: 3 Shorts at 7/8/9 PM. Oct 30 2026: 1 extra Short at 1 PM with the new voice.
 on:
   push:
     branches: ["launch/**"]
@@ -20,13 +20,14 @@ jobs:
     timeout-minutes: 45
     env:
       UPLOAD_MODE: buffer
-      POST_START: "2026-10-26"
-      POST_SLOTS: "19:00,20:00,21:00"
+      POST_START: "2026-10-30"
+      POST_SLOTS: "13:00"
+      MAX_PER_DAY: "3"   # one-off: Sam asked for an extra 1 PM post on Oct 30 (normal cap is 2)
       MIN_LEAD_MIN: "12"
       BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
       AUDIO_CHECK: warn
-      KOKORO_VOICE: am_fenrir
-      KOKORO_SPEED: "1.25"
+      KOKORO_VOICE: am_puck
+      KOKORO_SPEED: "1.2"
       GH_TOKEN: ${{ github.token }}
       HTMM_CACHE: ${{ github.workspace }}/.cache
     steps:
@@ -47,7 +48,7 @@ jobs:
           key: htmm-models-v1-${{ hashFiles('requirements.txt') }}
           restore-keys: htmm-models-v1-
       - name: Render and schedule
-        run: python -m pipeline.run --count 3 2>&1 | tee launch.log
+        run: python -m pipeline.run --count 1 2>&1 | tee launch.log
       - name: Mark delivered on main
         run: |
           git config user.name "shorts-bot"
