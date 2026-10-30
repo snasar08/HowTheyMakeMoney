@@ -39,8 +39,8 @@ jobs:
       BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
       AUDIO_CHECK: ${{ vars.AUDIO_CHECK || 'warn' }}
       VOICE_ENGINE: ${{ vars.VOICE_ENGINE || 'kokoro' }}
-      KOKORO_VOICE: ${{ vars.KOKORO_VOICE || 'am_fenrir' }}
-      KOKORO_SPEED: ${{ vars.KOKORO_SPEED || '1.25' }}
+      KOKORO_VOICE: af_bella   # Oct 30: Sam asked for the best-rated free voice
+      KOKORO_SPEED: "1.2"
       POST_SLOTS: ${{ vars.POST_SLOTS || '12:00,18:00' }}
       GH_TOKEN: ${{ github.token }}
       YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}

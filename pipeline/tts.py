@@ -18,8 +18,8 @@ import numpy as np
 SAMPLE_RATE = 24000
 
 VOICE_ENGINE = os.environ.get("VOICE_ENGINE", "kokoro")
-KOKORO_VOICE = os.environ.get("KOKORO_VOICE", "am_fenrir")
-KOKORO_SPEED = float(os.environ.get("KOKORO_SPEED", "1.25"))  # Sam: 1.35 too fast to follow
+KOKORO_VOICE = os.environ.get("KOKORO_VOICE", "af_bella")  # Oct 30: highest-rated Kokoro voice (A-)
+KOKORO_SPEED = float(os.environ.get("KOKORO_SPEED", "1.2"))  # af_bella paces ~4.8 syllables/s at 1.2
 QUESTION_SPEED = 0.93   # questions slightly slower so they land as questions
 QUESTION_BEAT = 0.5     # Sam: half-second beat after a question, then the answer
 LEAD_KEEP, TAIL_KEEP = 0.06, 0.14  # silence kept before/after each sentence
