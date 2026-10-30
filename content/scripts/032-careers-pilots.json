@@ -7,7 +7,7 @@
   "hook_style": "question",
   "title_style": "question",
   "theme": "clean_navy",
-  "status": "ready",
+  "status": "delivered",
   "score": 90,
   "title": "How Much Do Airline Pilots Really Make?",
   "description": "How much do airline pilots really make?\n\nSources:\n- U.S. Bureau of Labor Statistics, Occupational Outlook Handbook: Airline and Commercial Pilots (median pay, May 2024): https://www.bls.gov/ooh/transportation-and-material-moving/airline-and-commercial-pilots.htm\n\nMedian = half earn more, half earn less. Not financial advice.\n\n#shorts #pilot #careers #howtheymakemoney",
@@ -99,5 +99,15 @@
       "title": "BLS Occupational Outlook Handbook: Airline and Commercial Pilots",
       "url": "https://www.bls.gov/ooh/transportation-and-material-moving/airline-and-commercial-pilots.htm"
     }
-  ]
+  ],
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-032-careers-pilots",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-032-careers-pilots/032-careers-pilots.mp4",
+    "post_at": "2026-10-30T18:00:00-04:00",
+    "buffer_post": "6ae444ffba1ca51fd3fef829",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-10-30T07:19:27.958563+00:00",
+    "seconds": 31.14
+  }
 }

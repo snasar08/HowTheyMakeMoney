@@ -7,7 +7,7 @@
   "hook_style": "challenge",
   "title_style": "question",
   "theme": "dark_neon",
-  "status": "ready",
+  "status": "delivered",
   "score": 93,
   "title": "Could You Spend the Richest Person's Fortune?",
   "description": "Could you spend the world's richest person's money if you spent a million dollars every day?\n\nSources:\n- Forbes 400 (September 2026): Elon Musk about $908 billion, top of Forbes' real-time billionaires list (CNN, syndicated): https://www.wafb.com/2026/09/19/elon-musk-jeff-bezos-among-richest-americans-forbes-2026-list-heres-how-much-theyre-worth/\n\nNet worth changes daily with stock prices; figure as reported September 19, 2026. 908,000 days divided by 365 = about 2,487 years. Not financial advice.\n\n#shorts #billionaire #elonmusk #howtheymakemoney",
@@ -99,5 +99,15 @@
       "title": "Forbes 400 2026 (CNN, syndicated, Sept 19 2026)",
       "url": "https://www.wafb.com/2026/09/19/elon-musk-jeff-bezos-among-richest-americans-forbes-2026-list-heres-how-much-theyre-worth/"
     }
-  ]
+  ],
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-031-famous-richest",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-031-famous-richest/031-famous-richest.mp4",
+    "post_at": "2026-10-30T12:00:00-04:00",
+    "buffer_post": "6ae4448bba1ca51fd3fedeb0",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-10-30T07:17:31.957878+00:00",
+    "seconds": 30.08
+  }
 }
