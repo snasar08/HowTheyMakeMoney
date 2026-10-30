@@ -28,7 +28,7 @@ import numpy as np
 import soundfile as sf
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
-from . import audio_check, clarity_check, music, tts
+from . import audio_check, clarity_check, fx, music, tts
 from .themes import get_theme
 
 W, H = 1080, 1920
@@ -634,6 +634,9 @@ class Renderer:
         f = fit_font(final, BLACK, SAFE_X1 - SAFE_X0, 300, 120)
         cx = (SAFE_X0 + SAFE_X1) / 2
         draw_centered(d, cx, 640, txt, f, self.theme["accent"], 0)
+        if fx.is_huge(final):
+            fx.burst(frame, cx, 640 + f.size / 2, t - 1.0, seed=idx)
+            d = ImageDraw.Draw(frame)
         fl = font(SEMI, 56)
         for i, line in enumerate(wrap(v.get("label", ""), fl, SAFE_X1 - SAFE_X0)):
             draw_centered(d, cx, 640 + f.size + 60 + i * 72, line, fl, self.theme["text"])
@@ -755,7 +758,7 @@ class Renderer:
             from . import lowpoly
             from .gl3d import run3d
             frame = run3d(lowpoly.render, sc.visual, t, pb, variant)
-            self._lp_stat(frame, sc.visual, tb, b)
+            self._lp_stat(frame, sc.visual, tb - (0.75 if si == 0 and b == 0 else 0), b, si)
             return frame, tb
         if kind == "3d":
             from . import scene3d
@@ -889,8 +892,12 @@ class Renderer:
                 si = min(int(np.searchsorted(starts, gt, side="right") - 1), len(scenes) - 1)
                 sc, t = scenes[si], gt - starts[si]
                 frame, tb = self.draw(sc, si, t)
-                if self.s.get("visual_style") == "lowpoly":
-                    pass  # hard cuts every beat: the camera move is the transition
+                lp = self.s.get("visual_style") == "lowpoly"
+                if not lp and sc.shots[max(0, bisect.bisect_right(sc.beats, t) - 1)][0] != "image":
+                    frame = fx.drift(frame, tb)  # images already zoom; everything else drifts in
+                if lp:
+                    if si > 0:  # camera cuts every beat; a zoom-blur marks each new scene
+                        frame = fx.zoom_blur(frame, t)
                 elif TRANSITION_3D and three_d_ok() and gt > 0.05 and tb < 0.18:
                     # 3D swing: the new shot arrives as a card turning in from the side
                     from .gl3d import card, run3d
@@ -903,7 +910,11 @@ class Renderer:
                                          box=((W - cw) / 2, (H - ch) / 2, (W + cw) / 2, (H + ch) / 2))
                     if tb < 0.07:
                         frame = Image.blend(frame, flash, 0.22 * (1 - tb / 0.07))
+                frame = fx.grade(frame, n)
+                if lp:
+                    fx.hook(frame, self.s.get("title", ""), gt, font, BLACK)
                 self._cta(frame, si, t)
+                self._icon(frame, chunks[si], t, lp)
                 self._caption(frame, chunks[si], t)  # after the CTA dim, so captions stay bright
                 # thin progress bar along the top edge keeps people watching to the end
                 ImageDraw.Draw(frame).rectangle((0, 0, int(W * min(1.0, gt / total_s)), PROGRESS_H),
@@ -1064,16 +1075,21 @@ class Renderer:
                 d.polygon(pts, fill=(255, 255, 255), outline=(0, 0, 0))
                 d.line(pts + [pts[0]], fill=(0, 0, 0), width=4)
 
-    def _lp_stat(self, frame, v, tb, b):
-        """Big yellow outlined number with a pop, on the first beat and every other beat."""
-        if not v.get("stat") or b % 2:
+    def _lp_stat(self, frame, v, tb, b, si=0):
+        """Big yellow outlined number with a pop, on the first beat and every other beat. On the
+        first beat the number counts up from 0; a billion+ number lands with a coin burst."""
+        if not v.get("stat") or b % 2 or tb < 0:
             return
         d = ImageDraw.Draw(frame)
         pop = ease_out_back(min(1.0, tb / 0.25))
         f = fit_font(v["stat"], BLACK, SAFE_X1 - SAFE_X0, 210, 90)
         f = font(BLACK, max(20, int(f.size * (0.5 + 0.5 * pop))))
         cx = (SAFE_X0 + SAFE_X1) / 2
-        draw_centered(d, cx, 430, v["stat"], f, (255, 221, 0), 14, (0, 0, 0))
+        shown = fx.count_up(v["stat"], tb / 0.5) if b == 0 and fx.ON else v["stat"]
+        draw_centered(d, cx, 430, shown, f, (255, 221, 0), 14, (0, 0, 0))
+        if b == 0 and fx.is_huge(v["stat"]):
+            fx.burst(frame, cx, 430 + f.size / 2, tb - 0.45, seed=si)
+            d = ImageDraw.Draw(frame)
         if v.get("stat_sub") and tb > 0.15:
             fs = fit_font(v["stat_sub"].lower(), BOLD, SAFE_X1 - SAFE_X0, 64, 40)
             draw_centered(d, cx, 430 + f.size + 24, v["stat_sub"].lower(), fs, (255, 255, 255), 8, (0, 0, 0))
@@ -1092,6 +1108,17 @@ class Renderer:
         f = font(BLACK, max(20, int(f.size * (0.85 + 0.15 * k))))
         draw_centered(ImageDraw.Draw(frame), (SAFE_X0 + SAFE_X1) / 2, CAPTION_Y - f.size // 2, txt, f,
                       (255, 221, 0), 12, (0, 0, 0))
+
+    def _icon(self, frame, chunks, t, lp):
+        """Small drawn icon above the captions while a matching word (money, truck, plane...) is said."""
+        if not fx.ON:
+            return
+        for w in (w for ch in chunks for w in ch):
+            kind = fx.icon_for(w.text)
+            if kind and w.start - 0.03 <= t <= w.end + 0.35:
+                y = CAPTION_Y - (190 if lp else 200)
+                fx.draw_icon(frame, kind, (SAFE_X0 + SAFE_X1) / 2, y, (t - w.start + 0.03) / 0.15)
+                return
 
     def _caption(self, frame: Image.Image, chunks: list[list[Word]], t: float):
         if self.s.get("visual_style") == "lowpoly":
