@@ -15,6 +15,12 @@
      "views": 0,
      "likes": 0,
      "comments": 0
+    },
+    {
+     "t": "2026-10-31T16:03:40+00:00",
+     "views": 0,
+     "likes": 0,
+     "comments": 0
     }
    ],
    "tags": {
@@ -45,6 +51,12 @@
     },
     {
      "t": "2026-10-30T16:59:56+00:00",
+     "views": 0,
+     "likes": 0,
+     "comments": 0
+    },
+    {
+     "t": "2026-10-31T16:03:40+00:00",
      "views": 0,
      "likes": 0,
      "comments": 0
@@ -81,6 +93,12 @@
      "views": 2,
      "likes": 0,
      "comments": 0
+    },
+    {
+     "t": "2026-10-31T16:03:40+00:00",
+     "views": 2,
+     "likes": 0,
+     "comments": 0
     }
    ],
    "tags": {
@@ -111,6 +129,12 @@
     },
     {
      "t": "2026-10-30T16:59:56+00:00",
+     "views": 0,
+     "likes": 0,
+     "comments": 0
+    },
+    {
+     "t": "2026-10-31T16:03:40+00:00",
      "views": 0,
      "likes": 0,
      "comments": 0
@@ -147,6 +171,12 @@
      "views": 1,
      "likes": 1,
      "comments": 0
+    },
+    {
+     "t": "2026-10-31T16:03:40+00:00",
+     "views": 1,
+     "likes": 1,
+     "comments": 0
     }
    ],
    "tags": {
@@ -180,6 +210,12 @@
      "views": 1,
      "likes": 0,
      "comments": 0
+    },
+    {
+     "t": "2026-10-31T16:03:40+00:00",
+     "views": 1,
+     "likes": 0,
+     "comments": 0
     }
    ],
    "tags": {
@@ -207,6 +243,12 @@
      "views": 0,
      "likes": 0,
      "comments": 0
+    },
+    {
+     "t": "2026-10-31T16:03:40+00:00",
+     "views": 1,
+     "likes": 0,
+     "comments": 0
     }
    ],
    "tags": {
@@ -231,6 +273,12 @@
    "snapshots": [
     {
      "t": "2026-10-30T16:59:56+00:00",
+     "views": 1,
+     "likes": 0,
+     "comments": 0
+    },
+    {
+     "t": "2026-10-31T16:03:40+00:00",
      "views": 1,
      "likes": 0,
      "comments": 0
@@ -261,6 +309,12 @@
      "views": 1,
      "likes": 0,
      "comments": 0
+    },
+    {
+     "t": "2026-10-31T16:03:40+00:00",
+     "views": 1,
+     "likes": 0,
+     "comments": 0
     }
    ],
    "tags": {
@@ -278,8 +332,89 @@
     "post_slot": "12:00",
     "score": 85
    }
+  },
+  "EEw5Hm9n4PU": {
+   "title": "Is Starbucks Secretly a Bank?",
+   "published": "2026-10-31T16:02:46Z",
+   "snapshots": [
+    {
+     "t": "2026-10-31T16:03:40+00:00",
+     "views": 0,
+     "likes": 0,
+     "comments": 0
+    }
+   ],
+   "tags": {
+    "script": "005",
+    "slug": "starbucks",
+    "topic": "Starbucks",
+    "format": "how",
+    "visual_style": "charts3d",
+    "theme": "bold_bright",
+    "hook_style": "question",
+    "title_style": "question",
+    "length_s": 32.96,
+    "length_bucket": "30-38",
+    "post_at": "2026-10-31T12:00:00-04:00",
+    "post_slot": "12:00",
+    "score": 84
+   }
+  },
+  "zh8iHXUVodM": {
+   "title": "How Much Do Airline Pilots Really Make?",
+   "published": "2026-10-30T22:01:21Z",
+   "snapshots": [
+    {
+     "t": "2026-10-31T16:03:40+00:00",
+     "views": 20,
+     "likes": 0,
+     "comments": 0
+    }
+   ],
+   "tags": {
+    "script": "032",
+    "slug": "careers-pilots",
+    "topic": "Airline pilots",
+    "format": "careers",
+    "visual_style": "charts3d",
+    "theme": "clean_navy",
+    "hook_style": "question",
+    "title_style": "question",
+    "length_s": 31.14,
+    "length_bucket": "30-38",
+    "post_at": "2026-10-30T18:00:00-04:00",
+    "post_slot": "18:00",
+    "score": 90
+   }
+  },
+  "j0Os3j43cns": {
+   "title": "What If One Person Delivered Every Amazon Package?",
+   "published": "2026-10-30T17:01:12Z",
+   "snapshots": [
+    {
+     "t": "2026-10-31T16:03:40+00:00",
+     "views": 1,
+     "likes": 0,
+     "comments": 0
+    }
+   ],
+   "tags": {
+    "script": "030",
+    "slug": "whatif-amazon",
+    "topic": "Amazon",
+    "format": "whatif",
+    "visual_style": "lowpoly",
+    "theme": "bold_bright",
+    "hook_style": "whatif",
+    "title_style": "whatif",
+    "length_s": 31.92,
+    "length_bucket": "30-38",
+    "post_at": "2026-10-30T13:00:00-04:00",
+    "post_slot": "13:00",
+    "score": 92
+   }
   }
  },
- "updated": "2026-10-30T16:59:56+00:00",
+ "updated": "2026-10-31T16:03:40+00:00",
  "subscribers": 1
 }
