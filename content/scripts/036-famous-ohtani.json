@@ -1,0 +1,114 @@
+{
+  "id": "036",
+  "slug": "famous-ohtani",
+  "company": "Shohei Ohtani",
+  "format": "famous",
+  "visual_style": "lowpoly",
+  "hook_style": "surprise",
+  "title_style": "question",
+  "theme": "clean_navy",
+  "status": "ready",
+  "score": 90,
+  "title": "Why Does Ohtani Earn Just $2.6M Playing?",
+  "description": "Why does one of baseball's biggest stars earn only 2.6 million dollars from playing?\n\nSources:\n- Forbes: The World's 10 Highest-Paid Athletes 2026 (Forbes Australia): https://www.forbes.com.au/news/sport/the-worlds-10-highest-paid-athletes-2026/\n\nForbes estimate for May 1, 2025 to May 1, 2026: $127.6M total, $2.6M on-field, $125M off-field. Not financial advice.\n\n#shorts #ohtani #baseball #howtheymakemoney",
+  "tags": [
+    "ohtani",
+    "baseball",
+    "athletes",
+    "forbes",
+    "shorts"
+  ],
+  "images": {},
+  "loop": "So next time you watch a baseball game, ask yourself:",
+  "scenes": [
+    {
+      "narration": "Why does one of baseball's biggest stars earn only 2.6 million dollars from playing?",
+      "visual": {
+        "type": "lowpoly",
+        "set": "field",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "trophy"
+        ],
+        "stat": "$2.6 MILLION",
+        "stat_sub": "from playing?"
+      }
+    },
+    {
+      "narration": "Shohei Ohtani signed a 700 million dollar, ten-year deal in December 2023.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "stage",
+        "action": "cheer",
+        "crowd": 300,
+        "props": [
+          "check"
+        ],
+        "stat": "$700 MILLION",
+        "stat_sub": "10-year deal, 2023"
+      }
+    },
+    {
+      "narration": "But most of that money is pushed to yearly payments that start in 2034.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "office",
+        "action": "work",
+        "crowd": 0,
+        "props": [
+          "check"
+        ],
+        "stat": "2034",
+        "stat_sub": "when most of it gets paid"
+      }
+    },
+    {
+      "narration": "So in Forbes' latest count, his baseball pay was about 2.6 million, bonuses included.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "field",
+        "action": "run",
+        "crowd": 0,
+        "props": [],
+        "stat": "$2.6M",
+        "stat_sub": "on the field, Forbes 2026"
+      }
+    },
+    {
+      "narration": "Off the field, he made about 125 million dollars from more than 20 sponsors.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "cheer",
+        "crowd": 200,
+        "props": [
+          "cash",
+          "phone"
+        ],
+        "stat": "$125 MILLION",
+        "stat_sub": "off the field"
+      }
+    },
+    {
+      "narration": "Forbes says nobody on its list earned more off the field.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "stage",
+        "action": "cheer",
+        "crowd": 400,
+        "props": [
+          "trophy"
+        ],
+        "stat": "#1",
+        "stat_sub": "off-field earnings, Forbes"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "Forbes: The World's 10 Highest-Paid Athletes 2026 (Forbes Australia)",
+      "url": "https://www.forbes.com.au/news/sport/the-worlds-10-highest-paid-athletes-2026/"
+    }
+  ]
+}

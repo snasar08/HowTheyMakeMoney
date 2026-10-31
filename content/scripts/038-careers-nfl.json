@@ -1,0 +1,123 @@
+{
+  "id": "038",
+  "slug": "careers-nfl",
+  "company": "NFL players",
+  "format": "careers",
+  "visual_style": "charts3d",
+  "hook_style": "challenge",
+  "title_style": "number",
+  "theme": "clean_navy",
+  "status": "ready",
+  "score": 88,
+  "title": "$885,000: The Lowest NFL Salary in 2026",
+  "description": "Can you guess the lowest salary an NFL player can earn in 2026?\n\nSources:\n- Legion Report: NFL minimum salary 2026 by experience: https://legionreport.com/nfl-minimum-salary/\n- Salarysport: NFL minimum salaries: https://salarysport.com/american-football/minimum-salaries/\n- Pro Football Rumors: NFL sets 2026 salary cap at $301.2M: https://www.profootballrumors.com/collective-bargaining-agreement\n\nMinimum salaries per the NFL-NFLPA CBA as reported by the cited sources; weekly figure = $885,000 / 18. Not financial advice.\n\n#shorts #nfl #football #howtheymakemoney",
+  "tags": [
+    "nfl",
+    "football",
+    "salary",
+    "careers",
+    "shorts"
+  ],
+  "images": {
+    "hook": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: a young adult football player in a plain unbranded practice uniform holding a helmet, standing on a bright stadium field at sunset, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261031_200149_242790d4-7a7d-4145-a4f6-9f3602e0b269.png"
+    },
+    "mid": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: a smiling football player in a plain unbranded team hoodie holding a paycheck envelope on the sideline of a sunny practice field, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261031_200217_98379e40-70c1-4643-908a-34afff3995ca.png"
+    },
+    "broll1": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: a football team in plain unbranded uniforms huddled on the field under stadium lights, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261031_200150_76d10b92-a369-408d-a2f5-d57876cd511c.png"
+    },
+    "broll2": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: a rookie football player in a plain unbranded uniform running a drill past orange cones on a practice field, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261031_200150_5fa1d2f3-9f5d-4283-9bd2-fe2b69417b16.png"
+    }
+  },
+  "loop": "So next time you watch an NFL game, ask yourself:",
+  "scenes": [
+    {
+      "narration": "Can you guess the lowest salary an NFL player can earn in 2026?",
+      "visual": {
+        "type": "image",
+        "image": "hook",
+        "overlay": "LOWEST NFL PAY",
+        "overlay_sub": "guess?"
+      }
+    },
+    {
+      "narration": "885,000 dollars. That's the league minimum for a rookie.",
+      "visual": {
+        "type": "stat",
+        "value": 885000,
+        "label": "NFL rookie minimum salary, 2026",
+        "prefix": "$",
+        "suffix": "",
+        "decimals": 0
+      }
+    },
+    {
+      "narration": "It's paid in 18 equal weekly checks across the regular season.",
+      "visual": {
+        "type": "image",
+        "image": "mid",
+        "overlay": "18 CHECKS",
+        "overlay_sub": "one a week"
+      }
+    },
+    {
+      "narration": "So even the lowest-paid player gets about 49 thousand dollars a week.",
+      "visual": {
+        "type": "stat",
+        "value": 49167,
+        "label": "per week, 885,000 ÷ 18",
+        "prefix": "$",
+        "suffix": "",
+        "decimals": 0
+      }
+    },
+    {
+      "narration": "The minimum climbs with experience. Players with seven or more seasons get at least 1.3 million.",
+      "visual": {
+        "type": "bars",
+        "items": [
+          {
+            "label": "Rookie",
+            "value": 0.885
+          },
+          {
+            "label": "7+ seasons",
+            "value": 1.3
+          }
+        ],
+        "prefix": "$",
+        "suffix": "M",
+        "title": "2026 minimum salary"
+      }
+    },
+    {
+      "narration": "And each team can spend up to 301.2 million dollars on players this year.",
+      "visual": {
+        "type": "text",
+        "text": "$301.2 million",
+        "sub": "2026 salary cap, per team"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "Legion Report: NFL minimum salary 2026 by experience",
+      "url": "https://legionreport.com/nfl-minimum-salary/"
+    },
+    {
+      "title": "Salarysport: NFL minimum salaries",
+      "url": "https://salarysport.com/american-football/minimum-salaries/"
+    },
+    {
+      "title": "Pro Football Rumors: NFL sets 2026 salary cap at $301.2M",
+      "url": "https://www.profootballrumors.com/collective-bargaining-agreement"
+    }
+  ]
+}

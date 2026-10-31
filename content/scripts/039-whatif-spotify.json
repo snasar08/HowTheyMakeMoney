@@ -1,0 +1,114 @@
+{
+  "id": "039",
+  "slug": "whatif-spotify",
+  "company": "Spotify",
+  "format": "whatif",
+  "visual_style": "lowpoly",
+  "hook_style": "whatif",
+  "title_style": "whatif",
+  "theme": "dark_neon",
+  "status": "ready",
+  "score": 86,
+  "title": "What If Spotify Listeners Were a Country?",
+  "description": "What if every Spotify listener moved into one country?\n\nSources:\n- Hypebot: Spotify Q3 2026 - 788M users and 306M subscribers: https://www.hypebot.com/spotify-q3-2026-788m-users-and-306m-subscribers/\n- Wikipedia: List of countries and dependencies by population: https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population\n\nPopulation comparison: India 1.43 billion, China 1.40 billion, United States 342 million (official estimates listed on Wikipedia). Not financial advice.\n\n#shorts #spotify #whatif #howtheymakemoney",
+  "tags": [
+    "spotify",
+    "what if",
+    "music",
+    "streaming",
+    "shorts"
+  ],
+  "images": {},
+  "loop": "So next time you press play, ask yourself:",
+  "scenes": [
+    {
+      "narration": "What if every Spotify listener moved into one country?",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "phone"
+        ],
+        "stat": "1 COUNTRY",
+        "stat_sub": "every listener"
+      }
+    },
+    {
+      "narration": "In the third quarter of 2026, Spotify had 788 million monthly users.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "stage",
+        "action": "cheer",
+        "crowd": 400,
+        "props": [],
+        "stat": "788 MILLION",
+        "stat_sub": "monthly users, Q3 2026"
+      }
+    },
+    {
+      "narration": "That country would be the third biggest on Earth. Only India and China have more people.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "run",
+        "crowd": 400,
+        "props": [],
+        "stat": "#3",
+        "stat_sub": "biggest country on Earth"
+      }
+    },
+    {
+      "narration": "It would have more than twice as many people as the United States.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "field",
+        "action": "run",
+        "crowd": 300,
+        "props": [],
+        "stat": "2X",
+        "stat_sub": "the U.S. population"
+      }
+    },
+    {
+      "narration": "But only 306 million of them pay for Premium. The other 499 million listen with ads.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "stage",
+        "action": "cheer",
+        "crowd": 200,
+        "props": [
+          "phone"
+        ],
+        "stat": "306 MILLION",
+        "stat_sub": "pay for Premium"
+      }
+    },
+    {
+      "narration": "So Spotify gets paid both ways: by subscribers, and by advertisers.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "office",
+        "action": "work",
+        "crowd": 0,
+        "props": [
+          "cash",
+          "phone"
+        ],
+        "stat": "",
+        "stat_sub": ""
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "Hypebot: Spotify Q3 2026 - 788M users and 306M subscribers",
+      "url": "https://www.hypebot.com/spotify-q3-2026-788m-users-and-306m-subscribers/"
+    },
+    {
+      "title": "Wikipedia: List of countries and dependencies by population",
+      "url": "https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population"
+    }
+  ]
+}

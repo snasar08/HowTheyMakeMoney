@@ -1,0 +1,117 @@
+{
+  "id": "035",
+  "slug": "careers-twitch",
+  "company": "Twitch streamers",
+  "format": "careers",
+  "visual_style": "charts3d",
+  "hook_style": "number",
+  "title_style": "number",
+  "theme": "bold_bright",
+  "status": "ready",
+  "score": 92,
+  "title": "$4.99 Twitch Sub: The Streamer Gets $2.50",
+  "description": "When you sub to a streamer for 4.99, how much do they actually get?\n\nSources:\n- Wikipedia: Twitch (service) - subscriptions, Partner Plus / Plus Program: https://en.wikipedia.org/wiki/Twitch_(service)\n- Variety: Twitch Partner Plus 70% revenue split (2023): https://variety.com/2023/digital/news/twitch-partner-plus-70-percent-revenue-split-streamers-1235645488\n- Shacknews: Twitch Partner Plus program 70/30 split: https://www.shacknews.com/article/135982/twitch-partner-plus-program-70-30-split\n\nSplit and point thresholds as described in the cited coverage of Twitch's programs; a tier 1 sub = 1 point. Not financial advice.\n\n#shorts #twitch #streamer #howtheymakemoney",
+  "tags": [
+    "twitch",
+    "streamers",
+    "streaming",
+    "careers",
+    "shorts"
+  ],
+  "images": {
+    "hook": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: a happy young adult streamer in a gaming chair with headphones and a microphone, colorful LED lights, chat bubbles floating on a big monitor, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261031_200117_c220397a-5dea-4217-a640-9aea863dbbff.png"
+    },
+    "mid": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: a young adult streamer cheering at the camera as glowing coins and hearts pop out of the monitor, neon gaming room, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261031_200117_f2e27224-d182-438d-b01f-2a635bb3eb01.png"
+    },
+    "broll1": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: close-up of hands on a glowing keyboard and mouse during a live stream, soft neon background, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261031_200116_5e0ad2f7-7cc5-4a32-bf5c-756d68c6c795.png"
+    },
+    "broll2": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: a smiling young adult watching a live stream on a tablet on a couch, sending a chat message, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261031_200116_d8eadd90-76a5-475a-8f00-75051b8f9821.png"
+    }
+  },
+  "loop": "So next time you sub to a streamer, ask yourself:",
+  "scenes": [
+    {
+      "narration": "When you sub to a streamer for 4.99, how much do they actually get?",
+      "visual": {
+        "type": "image",
+        "image": "hook",
+        "overlay": "$4.99 SUB",
+        "overlay_sub": "who gets what?"
+      }
+    },
+    {
+      "narration": "For most streamers, about half. The streamer gets 2.50, and Twitch keeps 2.49.",
+      "visual": {
+        "type": "bars",
+        "items": [
+          {
+            "label": "Streamer",
+            "value": 2.5
+          },
+          {
+            "label": "Twitch",
+            "value": 2.49
+          }
+        ],
+        "prefix": "$",
+        "suffix": "",
+        "title": "Standard $4.99 sub"
+      }
+    },
+    {
+      "narration": "Bigger streamers can earn more through Twitch's Plus Program.",
+      "visual": {
+        "type": "image",
+        "image": "mid",
+        "overlay": "PLUS PROGRAM",
+        "overlay_sub": "a bigger cut"
+      }
+    },
+    {
+      "narration": "Each sub counts as points. Hold 100 points for three months, and the split becomes 60 to 40.",
+      "visual": {
+        "type": "donut",
+        "value": 60,
+        "label": "streamer's share at 100 Plus Points"
+      }
+    },
+    {
+      "narration": "Hold 300 points, and the streamer keeps 70 percent.",
+      "visual": {
+        "type": "donut",
+        "value": 70,
+        "label": "streamer's share at 300 Plus Points"
+      }
+    },
+    {
+      "narration": "And subs are just one way to get paid. Bits and ads pay too.",
+      "visual": {
+        "type": "text",
+        "text": "Subs. Bits. Ads.",
+        "sub": "three ways to get paid"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Twitch (service) - subscriptions, Partner Plus / Plus Program",
+      "url": "https://en.wikipedia.org/wiki/Twitch_(service)"
+    },
+    {
+      "title": "Variety: Twitch Partner Plus 70% revenue split (2023)",
+      "url": "https://variety.com/2023/digital/news/twitch-partner-plus-70-percent-revenue-split-streamers-1235645488"
+    },
+    {
+      "title": "Shacknews: Twitch Partner Plus program 70/30 split",
+      "url": "https://www.shacknews.com/article/135982/twitch-partner-plus-program-70-30-split"
+    }
+  ]
+}

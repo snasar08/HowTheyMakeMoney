@@ -32,3 +32,13 @@ clearly different angle, new figures, a new hook, new B-roll and a different sce
 027 | Microsoft | operating margin ~47 cents per dollar; cloud leads segments | $331.8B revenue, $155.2B operating income, Azure >$100B, 30M+ Copilot seats
 028 | Duolingo | free app, over $1B bookings, prioritizing free users in 2026 | $1B+ bookings, 50M+ DAU, 100M DAU goal
 029 | NBA players | players paid from a share of league income under the salary cap | 51.2% BRI share (2011-12), $4.6M cap 1984-85 vs $154.647M cap 2025-26, 90% floor
+033 | YouTubers (careers) | how YouTube ad pay works: entry bar, 55% long-form vs 45% Shorts share, YouTube's own $405-per-million example | 1,000 subs, 4,000 hours / 10M Shorts views, 55%, 45%, $405
+034 | McDonald's (whatif) | one cashier serving every customer in a day | 68M customers/day, ~787/second, 45,356 restaurants, ~1,500 per restaurant, ~95% franchised
+035 | Twitch streamers (careers) | where a $4.99 sub goes and how the Plus Program raises the cut | $2.50 vs $2.49, 60/40 at 100 points, 70/30 at 300 points
+036 | Shohei Ohtani (famous) | $700M deal mostly deferred, so off-field money dwarfs on-field pay | $700M, 2034, $2.6M on-field, $125M off-field, 20+ sponsors
+037 | Roblox | free game where players buy Robux and creators cash out via DevEx | $923M (2024) -> $1.5B+ (2025) creator earnings, 30,000 Robux minimum, 42,000+ DevEx creators, ~$1,500 median, $1.5B Q2 2026 revenue
+038 | NFL players (careers) | the lowest possible NFL salary and how it's paid | $885,000 rookie minimum 2026, 18 weekly checks (~$49,167), $1.3M for 7+ seasons, $301.2M cap
+039 | Spotify (whatif) | if every listener were one country (third biggest on Earth) | 788M MAU Q3 2026, 306M Premium, 499M ad-supported, India/China/US populations
+040 | Cristiano Ronaldo (famous) | top-paid athlete's earnings per day and per minute | $300M (Forbes 2026), $235M on-field, $65M off-field, ~$822K/day, ~$571/minute
+041 | Pro gamers / esports (careers) | the biggest esports prize ever and who paid for it | $40.0M TI 2021 pool, 25% of battle pass sales, $18.2M first place, ~$3.6M per player
+042 | PlayStation (Sony) | record profit while selling fewer consoles; network services drive it | ¥463.3B record G&NS operating income, ¥4,685.7B flat sales, 125M MAU, FY26 forecast

@@ -10,6 +10,9 @@ Google pays Apple, Visa, Uber, Amazon / AWS, gas stations, Netflix
 ## Used (second batch, Oct 26 2026)
 Apple (Services), Nike, Coca-Cola, Walmart (ads + membership), Meta, Nintendo, Planet Fitness, Chipotle, Live Nation, Marriott, Nvidia, Target, Microsoft, Duolingo, NBA players
 
+## Used (Oct 31 2026 one-off batch)
+Roblox, PlayStation, YouTubers (careers), Twitch streamers (careers), NFL players (careers), pro gamers / esports (careers), McDonald's (whatif: one cashier), Spotify (whatif: listeners as a country), Cristiano Ronaldo (famous: highest-paid athlete), Shohei Ohtani (famous: off-field earnings)
+
 ## Ranked for the next batches (Oct 29 2026 — teen appeal × curiosity gap × surprising number)
 Write from the top. Casinos dropped (not kid-safe). Skip anything already used above.
 | # | Topic | Angle / hook seed | Est. score |

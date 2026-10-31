@@ -1,0 +1,127 @@
+{
+  "id": "037",
+  "slug": "how-roblox",
+  "company": "Roblox",
+  "format": "how",
+  "visual_style": "charts3d",
+  "hook_style": "number",
+  "title_style": "statement",
+  "theme": "bold_bright",
+  "status": "ready",
+  "score": 93,
+  "title": "Roblox Creators Earned $1.5 Billion in 2025",
+  "description": "How did Roblox creators earn over 1.5 billion dollars in 2025, from a free game?\n\nSources:\n- Roblox Newsroom: How Roblox impacts the global economy (Dec 5 2025): https://corp.roblox.com/newsroom/2025/12/how-roblox-impacts-the-global-economy\n- Net Influencer: Roblox creators earned over $1.5B in 2025; 42,000+ DevEx participants, median ~$1,500: https://www.netinfluencer.com/roblox-creator-activity-generated-752m-in-us-gdp-in-2025-up-69-percent-from-2024-study-finds/\n- Outlook Respawn: Roblox Q2 2026 revenue up 36% to $1.5B, 123M daily users: https://respawn.outlookindia.com/gaming/gaming-news/roblox-q2-2026-revenue-soars-36-to-15b-despite-bookings-miss\n- Wikipedia: Roblox (Robux and the Developer Exchange, 30,000 Robux minimum): https://en.wikipedia.org/wiki/Roblox\n\nThe $1.5B creator total is Roblox's figure as reported by Net Influencer; Roblox's own Dec 2025 post gave over $1B as of September 2025 and $923M for 2024. Median = half of DevEx participants got less. Not financial advice.\n\n#shorts #roblox #gaming #howtheymakemoney",
+  "tags": [
+    "roblox",
+    "robux",
+    "game creators",
+    "gaming",
+    "shorts"
+  ],
+  "images": {
+    "hook": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: a young adult game creator at a computer building a colorful blocky game world that pops out of the screen, gold coins floating around, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261031_200404_f4da5198-a0a5-4e6c-ac1d-c4cecd71199c.png"
+    },
+    "mid": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: hands holding a phone as glowing gold coins fly from it into a colorful blocky game world full of tiny players, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261031_200404_9fe8daed-6739-4777-80a0-93881ccaaa06.png"
+    },
+    "broll1": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: a group of young adult friends laughing while playing a colorful blocky game together on laptops at a table, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261031_200403_b3223587-45f4-4ece-a08d-a224606134f1.png"
+    },
+    "broll2": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: a young adult game developer celebrating at a desk as a stream of gold coins pours out of the monitor, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261031_200435_0a4dedcc-e26e-4032-ac5e-de160b0d3352.png"
+    }
+  },
+  "loop": "So next time you buy Robux, ask yourself:",
+  "scenes": [
+    {
+      "narration": "How did Roblox creators earn over 1.5 billion dollars in 2025, from a free game?",
+      "visual": {
+        "type": "image",
+        "image": "hook",
+        "overlay": "$1.5 BILLION",
+        "overlay_sub": "from a free game?"
+      }
+    },
+    {
+      "narration": "Players buy Robux with real money, then spend them in games other players built.",
+      "visual": {
+        "type": "image",
+        "image": "mid",
+        "overlay": "ROBUX",
+        "overlay_sub": "real money in"
+      }
+    },
+    {
+      "narration": "Creators can trade earned Robux back into cash, once they have 30,000.",
+      "visual": {
+        "type": "text",
+        "text": "30,000 Robux",
+        "sub": "to cash out"
+      }
+    },
+    {
+      "narration": "Creator earnings jumped from 923 million dollars in 2024 to over 1.5 billion in 2025.",
+      "visual": {
+        "type": "bars",
+        "items": [
+          {
+            "label": "2024",
+            "value": 0.923
+          },
+          {
+            "label": "2025",
+            "value": 1.5
+          }
+        ],
+        "prefix": "$",
+        "suffix": "B",
+        "title": "Roblox creator earnings"
+      }
+    },
+    {
+      "narration": "But most earn far less. Over 42,000 creators cashed out, and the median got about 1,500 dollars.",
+      "visual": {
+        "type": "stat",
+        "value": 1500,
+        "label": "median DevEx payout, 12 months to June 2026",
+        "prefix": "$",
+        "suffix": "",
+        "decimals": 0
+      }
+    },
+    {
+      "narration": "And Roblox itself made 1.5 billion dollars in just one quarter of 2026.",
+      "visual": {
+        "type": "stat",
+        "value": 1.5,
+        "label": "Roblox revenue, Q2 2026",
+        "prefix": "$",
+        "suffix": "B",
+        "decimals": 1
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "Roblox Newsroom: How Roblox impacts the global economy (Dec 5 2025)",
+      "url": "https://corp.roblox.com/newsroom/2025/12/how-roblox-impacts-the-global-economy"
+    },
+    {
+      "title": "Net Influencer: Roblox creators earned over $1.5B in 2025; 42,000+ DevEx participants, median ~$1,500",
+      "url": "https://www.netinfluencer.com/roblox-creator-activity-generated-752m-in-us-gdp-in-2025-up-69-percent-from-2024-study-finds/"
+    },
+    {
+      "title": "Outlook Respawn: Roblox Q2 2026 revenue up 36% to $1.5B, 123M daily users",
+      "url": "https://respawn.outlookindia.com/gaming/gaming-news/roblox-q2-2026-revenue-soars-36-to-15b-despite-bookings-miss"
+    },
+    {
+      "title": "Wikipedia: Roblox (Robux and the Developer Exchange, 30,000 Robux minimum)",
+      "url": "https://en.wikipedia.org/wiki/Roblox"
+    }
+  ]
+}

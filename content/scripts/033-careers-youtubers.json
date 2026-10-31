@@ -1,0 +1,120 @@
+{
+  "id": "033",
+  "slug": "careers-youtubers",
+  "company": "YouTubers",
+  "format": "careers",
+  "visual_style": "charts3d",
+  "hook_style": "question",
+  "title_style": "statement",
+  "theme": "dark_neon",
+  "status": "ready",
+  "score": 94,
+  "title": "Shorts Creators Keep Just 45% of Ad Money",
+  "description": "How much does a YouTuber get paid for a million views?\n\nSources:\n- YouTube Blog: YouTube Partner Program, Explained (Feb 2025): https://blog.youtube/creator-and-artist-stories/youtube-partner-program-explained/\n- YouTube Help: YouTube Partner Program overview and eligibility: https://support.google.com/youtube/answer/72857\n- YouTube Help: Shorts monetization policies and Creator Pool example: https://support.google.com/youtube/answer/12504220\n\nShare percentages and requirements are from YouTube's own pages; the $405 figure is YouTube's hypothetical Creator Pool example, not a guaranteed rate. Not financial advice.\n\n#shorts #youtube #creators #howtheymakemoney",
+  "tags": [
+    "youtube",
+    "youtubers",
+    "creators",
+    "careers",
+    "shorts"
+  ],
+  "images": {
+    "hook": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: a cheerful young adult video creator sitting at a desk with a ring light and a camera, giving a thumbs up at a big glowing play-button shaped screen, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261031_200041_7984ac1b-3ea1-497d-87c8-8045086ff822.png"
+    },
+    "mid": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: a young adult creator watching a laptop where a view counter climbs, gold coins floating up from the screen, cozy bedroom studio, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261031_200041_90f7db1d-13f5-46b3-a0a9-0aeb4e039c54.png"
+    },
+    "broll1": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: two young adult friends filming a fun video outdoors with a phone on a small tripod, sunny park, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261031_200042_43333e94-5c79-4140-86b0-5d92a31898ea.png"
+    },
+    "broll2": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: a focused video editor at a big monitor cutting a video timeline, headphones on, warm desk lamp, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261031_200041_28eff193-1f76-42aa-8ab5-76307dea6d24.png"
+    }
+  },
+  "loop": "So next time you watch a Short, ask yourself:",
+  "scenes": [
+    {
+      "narration": "How much does a YouTuber get paid for a million views?",
+      "visual": {
+        "type": "image",
+        "image": "hook",
+        "overlay": "1M VIEWS",
+        "overlay_sub": "how much?"
+      }
+    },
+    {
+      "narration": "First, you have to get in. YouTube's Partner Program needs 1,000 subscribers.",
+      "visual": {
+        "type": "stat",
+        "value": 1000,
+        "label": "subscribers to join YouTube's Partner Program",
+        "prefix": "",
+        "suffix": "",
+        "decimals": 0
+      }
+    },
+    {
+      "narration": "Plus 4,000 watch hours in a year, or 10 million Shorts views in 90 days.",
+      "visual": {
+        "type": "image",
+        "image": "mid",
+        "overlay": "10 MILLION",
+        "overlay_sub": "Shorts views to join"
+      }
+    },
+    {
+      "narration": "Then the ads pay. On long videos, creators keep 55 percent of the ad money.",
+      "visual": {
+        "type": "donut",
+        "value": 55,
+        "label": "creators' share of ad revenue, long videos"
+      }
+    },
+    {
+      "narration": "On Shorts, ad money is pooled, and creators keep 45 percent of their share.",
+      "visual": {
+        "type": "bars",
+        "items": [
+          {
+            "label": "Long videos",
+            "value": 55
+          },
+          {
+            "label": "Shorts",
+            "value": 45
+          }
+        ],
+        "prefix": "",
+        "suffix": "%",
+        "title": "Creator share of ad revenue"
+      }
+    },
+    {
+      "narration": "In a made-up example from YouTube, a Short with 1 million views earned 405 dollars.",
+      "visual": {
+        "type": "text",
+        "text": "1 million views",
+        "sub": "= $405 in YouTube's example"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "YouTube Blog: YouTube Partner Program, Explained (Feb 2025)",
+      "url": "https://blog.youtube/creator-and-artist-stories/youtube-partner-program-explained/"
+    },
+    {
+      "title": "YouTube Help: YouTube Partner Program overview and eligibility",
+      "url": "https://support.google.com/youtube/answer/72857"
+    },
+    {
+      "title": "YouTube Help: Shorts monetization policies and Creator Pool example",
+      "url": "https://support.google.com/youtube/answer/12504220"
+    }
+  ]
+}

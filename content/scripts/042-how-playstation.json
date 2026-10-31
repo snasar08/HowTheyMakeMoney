@@ -1,0 +1,119 @@
+{
+  "id": "042",
+  "slug": "how-playstation",
+  "company": "PlayStation",
+  "format": "how",
+  "visual_style": "charts3d",
+  "hook_style": "question",
+  "title_style": "question",
+  "theme": "dark_neon",
+  "status": "ready",
+  "score": 87,
+  "title": "How Did PlayStation Make Record Profit?",
+  "description": "How did PlayStation make record profit while selling fewer consoles?\n\nSources:\n- Sony FY2025 consolidated results presentation, May 8 2026 (mirror): https://investgame.net/wp-content/uploads/2026/05/2026-05-08-25q4_sony_earnings_clean_wp.pdf\n- Inven Global: Sony posts record gaming operating profit: https://www.invenglobal.com/articles/21682/sony-posts-record-gaming-operating-profit-though-bungie-impairment-casts-a-shadow\n\nSony's fiscal 2025 = year ended March 31, 2026. Operating income includes a 120.1 billion yen Bungie impairment; FY2026 forecast: sales down 6%, operating income 600 billion yen. Not financial advice.\n\n#shorts #playstation #gaming #howtheymakemoney",
+  "tags": [
+    "playstation",
+    "sony",
+    "gaming",
+    "consoles",
+    "shorts"
+  ],
+  "images": {
+    "hook": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: a young adult gamer on a cozy couch holding a plain unbranded game controller, big TV glowing with a colorful game world, gold coins floating up, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261031_200255_fd44b0ba-1079-4e09-ad3e-5312c2b26873.png"
+    },
+    "mid": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: a glowing online network of game worlds connected by light beams around a plain unbranded game console, people playing together from different homes, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261031_200255_b175a95d-ecd4-45f3-9f5f-30ac9122d02d.png"
+    },
+    "broll1": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: two friends laughing while playing a video game together on a couch, plain unbranded controllers, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261031_200255_f4ab4c59-1e2d-4038-a92e-992da7d1e293.png"
+    },
+    "broll2": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: a young adult browsing a wall of glowing game covers in a digital store on a TV screen, plain unbranded controller, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261031_200403_a0606259-74e8-4c39-8e48-73669c3aea47.png"
+    }
+  },
+  "loop": "So next time you buy a game on PlayStation, ask yourself:",
+  "scenes": [
+    {
+      "narration": "How did PlayStation make record profit while selling fewer consoles?",
+      "visual": {
+        "type": "image",
+        "image": "hook",
+        "overlay": "RECORD PROFIT",
+        "overlay_sub": "fewer consoles?"
+      }
+    },
+    {
+      "narration": "Sony's game business just had its best year. Operating income hit a record 463 billion yen.",
+      "visual": {
+        "type": "stat",
+        "value": 463.3,
+        "label": "Game & Network Services operating income, FY2025 (yen)",
+        "prefix": "¥",
+        "suffix": "B",
+        "decimals": 1
+      }
+    },
+    {
+      "narration": "But sales stayed flat, at about 4.7 trillion yen. And fewer consoles were sold.",
+      "visual": {
+        "type": "bars",
+        "items": [
+          {
+            "label": "FY2024",
+            "value": 4670.0
+          },
+          {
+            "label": "FY2025",
+            "value": 4685.7
+          }
+        ],
+        "prefix": "¥",
+        "suffix": "B",
+        "title": "Game sales, billion yen"
+      }
+    },
+    {
+      "narration": "The growth came from network services, and from games made by other studios.",
+      "visual": {
+        "type": "image",
+        "image": "mid",
+        "overlay": "ONLINE",
+        "overlay_sub": "services grew"
+      }
+    },
+    {
+      "narration": "And 125 million accounts played in March, a record for that time of year.",
+      "visual": {
+        "type": "stat",
+        "value": 125,
+        "label": "PlayStation monthly active users, March 2026",
+        "prefix": "",
+        "suffix": "M",
+        "decimals": 0
+      }
+    },
+    {
+      "narration": "Sony even expects profit to rise next year, while selling fewer consoles again.",
+      "visual": {
+        "type": "text",
+        "text": "Fewer consoles.",
+        "sub": "More profit."
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "Sony FY2025 consolidated results presentation, May 8 2026 (mirror)",
+      "url": "https://investgame.net/wp-content/uploads/2026/05/2026-05-08-25q4_sony_earnings_clean_wp.pdf"
+    },
+    {
+      "title": "Inven Global: Sony posts record gaming operating profit",
+      "url": "https://www.invenglobal.com/articles/21682/sony-posts-record-gaming-operating-profit-though-bungie-impairment-casts-a-shadow"
+    }
+  ]
+}

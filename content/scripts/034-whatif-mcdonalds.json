@@ -1,0 +1,106 @@
+{
+  "id": "034",
+  "slug": "whatif-mcdonalds",
+  "company": "McDonald's",
+  "format": "whatif",
+  "visual_style": "lowpoly",
+  "hook_style": "whatif",
+  "title_style": "whatif",
+  "theme": "bold_bright",
+  "status": "ready",
+  "score": 88,
+  "title": "What If One Cashier Served All of McDonald's?",
+  "description": "What if one cashier had to serve every McDonald's customer in a single day?\n\nSources:\n- Wikipedia: McDonald's (68 million customers daily; 45,356 restaurants at end of 2025): https://en.wikipedia.org/wiki/McDonald%27s\n\nPer-second = 68 million / 86,400 seconds; per-restaurant = 68 million / 45,356. Not financial advice.\n\n#shorts #mcdonalds #whatif #howtheymakemoney",
+  "tags": [
+    "mcdonalds",
+    "what if",
+    "fast food",
+    "shorts"
+  ],
+  "images": {},
+  "loop": "So next time you're in a McDonald's line, ask yourself:",
+  "scenes": [
+    {
+      "narration": "What if one cashier had to serve every McDonald's customer in a single day?",
+      "visual": {
+        "type": "lowpoly",
+        "set": "store",
+        "action": "work",
+        "crowd": 0,
+        "props": [],
+        "stat": "1 CASHIER",
+        "stat_sub": "every customer"
+      }
+    },
+    {
+      "narration": "McDonald's serves about 68 million customers every day.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "store",
+        "action": "run",
+        "crowd": 300,
+        "props": [],
+        "stat": "68 MILLION",
+        "stat_sub": "customers a day"
+      }
+    },
+    {
+      "narration": "Our cashier would need to serve about 787 people every second. No breaks.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "run",
+        "crowd": 400,
+        "props": [],
+        "stat": "~787",
+        "stat_sub": "customers per second"
+      }
+    },
+    {
+      "narration": "Instead, McDonald's spreads them across 45,356 restaurants in more than 100 countries.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "cheer",
+        "crowd": 200,
+        "props": [],
+        "stat": "45,356",
+        "stat_sub": "restaurants, end of 2025"
+      }
+    },
+    {
+      "narration": "That's about 1,500 customers per restaurant, every single day.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "store",
+        "action": "work",
+        "crowd": 150,
+        "props": [
+          "boxes"
+        ],
+        "stat": "~1,500",
+        "stat_sub": "per restaurant, per day"
+      }
+    },
+    {
+      "narration": "And about 95 percent of those restaurants are run by franchisees, not McDonald's itself.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "office",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "cash"
+        ],
+        "stat": "95%",
+        "stat_sub": "run by franchisees"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: McDonald's (68 million customers daily; 45,356 restaurants at end of 2025)",
+      "url": "https://en.wikipedia.org/wiki/McDonald%27s"
+    }
+  ]
+}

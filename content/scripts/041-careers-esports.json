@@ -1,0 +1,120 @@
+{
+  "id": "041",
+  "slug": "careers-esports",
+  "company": "Pro gamers",
+  "format": "careers",
+  "visual_style": "charts3d",
+  "hook_style": "whatif",
+  "title_style": "whatif",
+  "theme": "dark_neon",
+  "status": "ready",
+  "score": 91,
+  "title": "What If You Won the Biggest Esports Prize?",
+  "description": "What if you won the biggest prize in esports history?\n\nSources:\n- Wikipedia: The International 2021: https://en.wikipedia.org/wiki/The_International_2021\n- Guinness World Records: Largest esports prize pool for a single tournament: https://www.guinnessworldrecords.com/world-records/111053-largest-esports-prize-pool-for-a-single-tournament.html\n\nPrize figures from the cited pages ($40,018,195 pool, $18,208,300 first place); per-player figure assumes an even five-way split. Not financial advice.\n\n#shorts #esports #gaming #howtheymakemoney",
+  "tags": [
+    "esports",
+    "pro gamers",
+    "gaming",
+    "careers",
+    "shorts"
+  ],
+  "images": {
+    "hook": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: five young adult pro gamers in matching plain unbranded jerseys lifting a giant golden trophy on a big arena stage with confetti, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261031_200217_6280eca6-4cb9-4008-8d89-09e63fa76b9a.png"
+    },
+    "mid": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: a huge glowing prize pool counter made of stacked gold coins rising in the middle of a dark gaming arena, a cheering crowd around it, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261031_200217_3010cb89-eee1-4552-b693-2fb2c7489a89.png"
+    },
+    "broll1": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: young adult esports players at a row of glowing computers on a stage, headsets on, focused faces, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261031_200217_485bc765-e0fc-4657-91f0-6215b60a5cae.png"
+    },
+    "broll2": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: a packed esports arena crowd cheering under blue and purple stage lights, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261031_200255_c6a6a236-ea58-44f7-98e5-41218b823479.png"
+    }
+  },
+  "loop": "So next time you play ranked, ask yourself:",
+  "scenes": [
+    {
+      "narration": "What if you won the biggest prize in esports history?",
+      "visual": {
+        "type": "image",
+        "image": "hook",
+        "overlay": "BIGGEST PRIZE",
+        "overlay_sub": "in esports?"
+      }
+    },
+    {
+      "narration": "That was The International 2021, a Dota 2 tournament. Its prize pool was 40 million dollars.",
+      "visual": {
+        "type": "stat",
+        "value": 40.0,
+        "label": "The International 2021 prize pool",
+        "prefix": "$",
+        "suffix": "M",
+        "decimals": 1
+      }
+    },
+    {
+      "narration": "And players paid for it. A quarter of the game's battle pass sales went into the pot.",
+      "visual": {
+        "type": "image",
+        "image": "mid",
+        "overlay": "PLAYERS PAID",
+        "overlay_sub": "a quarter of sales"
+      }
+    },
+    {
+      "narration": "The winners, Team Spirit, took home 18.2 million dollars.",
+      "visual": {
+        "type": "bars",
+        "items": [
+          {
+            "label": "1st",
+            "value": 18.2
+          },
+          {
+            "label": "2nd",
+            "value": 5.2
+          },
+          {
+            "label": "3rd",
+            "value": 3.6
+          }
+        ],
+        "prefix": "$",
+        "suffix": "M",
+        "title": "Prize money, TI 2021"
+      }
+    },
+    {
+      "narration": "A Dota team has five players. Split evenly, that's about 3.6 million each.",
+      "visual": {
+        "type": "text",
+        "text": "5 players",
+        "sub": "about $3.6M each, split evenly"
+      }
+    },
+    {
+      "narration": "It's still a Guinness world record for an esports prize pool.",
+      "visual": {
+        "type": "text",
+        "text": "World record",
+        "sub": "largest esports prize pool"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: The International 2021",
+      "url": "https://en.wikipedia.org/wiki/The_International_2021"
+    },
+    {
+      "title": "Guinness World Records: Largest esports prize pool for a single tournament",
+      "url": "https://www.guinnessworldrecords.com/world-records/111053-largest-esports-prize-pool-for-a-single-tournament.html"
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "id": "040",
+  "slug": "famous-ronaldo",
+  "company": "Cristiano Ronaldo",
+  "format": "famous",
+  "visual_style": "lowpoly",
+  "hook_style": "question",
+  "title_style": "statement",
+  "theme": "bold_bright",
+  "status": "ready",
+  "score": 90,
+  "title": "Ronaldo Made $300 Million in One Year",
+  "description": "How much does the world's highest-paid athlete earn every minute?\n\nSources:\n- Forbes: The World's 10 Highest-Paid Athletes 2026 (Forbes Australia): https://www.forbes.com.au/news/sport/the-worlds-10-highest-paid-athletes-2026/\n\nForbes estimate for May 1, 2025 to May 1, 2026, before taxes and agent fees. Per day = $300M / 365; per minute = per day / 1,440. Not financial advice.\n\n#shorts #ronaldo #soccer #howtheymakemoney",
+  "tags": [
+    "ronaldo",
+    "soccer",
+    "athletes",
+    "forbes",
+    "shorts"
+  ],
+  "images": {},
+  "loop": "So next time you kick a ball around, ask yourself:",
+  "scenes": [
+    {
+      "narration": "How much does the world's highest-paid athlete earn every minute?",
+      "visual": {
+        "type": "lowpoly",
+        "set": "field",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "trophy"
+        ],
+        "stat": "PER MINUTE?",
+        "stat_sub": "top-paid athlete"
+      }
+    },
+    {
+      "narration": "Forbes says Cristiano Ronaldo earned about 300 million dollars in the year to May 2026.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "stage",
+        "action": "cheer",
+        "crowd": 300,
+        "props": [
+          "trophy"
+        ],
+        "stat": "$300 MILLION",
+        "stat_sub": "Forbes, May 2026"
+      }
+    },
+    {
+      "narration": "About 235 million came from playing soccer. 65 million came from sponsors and other deals.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "field",
+        "action": "run",
+        "crowd": 200,
+        "props": [
+          "cash"
+        ],
+        "stat": "$235M + $65M",
+        "stat_sub": "playing + off the field"
+      }
+    },
+    {
+      "narration": "That's about 822 thousand dollars a day.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "work",
+        "crowd": 0,
+        "props": [
+          "cash",
+          "check"
+        ],
+        "stat": "~$822,000",
+        "stat_sub": "per day"
+      }
+    },
+    {
+      "narration": "Or about 571 dollars every minute, even while he's asleep.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "cash"
+        ],
+        "stat": "~$571",
+        "stat_sub": "every minute"
+      }
+    },
+    {
+      "narration": "It ties the biggest athlete payday Forbes has measured since 1990.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "stage",
+        "action": "cheer",
+        "crowd": 400,
+        "props": [
+          "trophy"
+        ],
+        "stat": "RECORD",
+        "stat_sub": "tied, Forbes since 1990"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "Forbes: The World's 10 Highest-Paid Athletes 2026 (Forbes Australia)",
+      "url": "https://www.forbes.com.au/news/sport/the-worlds-10-highest-paid-athletes-2026/"
+    }
+  ]
+}
