@@ -3,7 +3,7 @@
   "slug": "robinhood",
   "company": "Robinhood",
   "theme": "dark_neon",
-  "status": "ready",
+  "status": "delivered",
   "title": "Robinhood Is Free. So How Did It Make $4.5B?",
   "description": "Robinhood Is Free. So How Did It Make $4.5B?.\n\nSources:\n- Robinhood Q4 and full year 2025 results: https://investors.robinhood.com/news-releases/news-release-details/robinhood-reports-fourth-quarter-and-full-year-2025-results\n- Robinhood FY2025 revenue breakdown (Beancount): https://beancount.io/blog/2026/02/12/robinhood-q4-fy2025-earnings-analysis\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
@@ -105,5 +105,15 @@
   "loop": "So next time an app says free, ask yourself:",
   "score": 77,
   "format": "how",
-  "visual_style": "charts3d"
+  "visual_style": "charts3d",
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-007-robinhood",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-007-robinhood/007-robinhood.mp4",
+    "post_at": "2026-11-01T18:00:00-05:00",
+    "buffer_post": "6ae62cc4cf3a3112f3b744a1",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-10-31T18:00:36.927591+00:00",
+    "seconds": 32.34
+  }
 }
