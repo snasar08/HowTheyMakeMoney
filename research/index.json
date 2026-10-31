@@ -1,13 +1,13 @@
 {
   "https://ir.roblox.com/financials/quarterly-results/default.aspx": {
     "file": "pages/fac3919316c7.txt",
-    "fetched_at": "2026-10-31T19:53:15.013357+00:00",
+    "fetched_at": "2026-10-31T19:58:25.635020+00:00",
     "ok": false,
     "error": "HTTP 403"
   },
   "https://ir.roblox.com/news/default.aspx": {
     "file": "pages/4cb6357dc05e.txt",
-    "fetched_at": "2026-10-31T19:53:15.512398+00:00",
+    "fetched_at": "2026-10-31T19:58:26.238669+00:00",
     "ok": false,
     "error": "HTTP 403"
   },
@@ -49,7 +49,7 @@
   },
   "https://create.roblox.com/docs/production/earn-on-roblox/developer-exchange": {
     "file": "pages/23e5a296a8ab.txt",
-    "fetched_at": "2026-10-31T19:53:18.089008+00:00",
+    "fetched_at": "2026-10-31T19:58:26.579859+00:00",
     "ok": false,
     "error": "HTTP 404"
   },
@@ -64,13 +64,13 @@
   },
   "https://www.sony.com/en/SonyInfo/IR/library/presen/er/": {
     "file": "pages/56c5ba5a2b65.txt",
-    "fetched_at": "2026-10-31T19:53:21.274537+00:00",
+    "fetched_at": "2026-10-31T19:58:27.909521+00:00",
     "ok": false,
     "error": "HTTP 403"
   },
   "https://tech-insider.org/ps5-93-million-sony-record-profit-2026/": {
     "file": "pages/8224e38b1435.txt",
-    "fetched_at": "2026-10-31T19:53:21.702414+00:00",
+    "fetched_at": "2026-10-31T19:58:28.327427+00:00",
     "ok": false,
     "error": "HTTP 403"
   },
@@ -130,13 +130,13 @@
   },
   "https://help.twitch.tv/s/article/partner-plus-program": {
     "file": "pages/2dec3d5339cf.txt",
-    "fetched_at": "2026-10-31T19:53:27.458196+00:00",
+    "fetched_at": "2026-10-31T19:58:28.699786+00:00",
     "ok": false,
     "error": "HTTP 404"
   },
   "https://help.twitch.tv/s/article/subscription-guide": {
     "file": "pages/fc9767add8b7.txt",
-    "fetched_at": "2026-10-31T19:53:28.158185+00:00",
+    "fetched_at": "2026-10-31T19:58:29.350078+00:00",
     "ok": false,
     "error": "HTTP 404"
   },
@@ -223,13 +223,13 @@
   },
   "https://gamespot.com/articles/team-spirit-wins-dota-2s-the-international-claiming-18-million-prize/1100-6497140/": {
     "file": "pages/a75601abbd3f.txt",
-    "fetched_at": "2026-10-31T19:53:35.594098+00:00",
+    "fetched_at": "2026-10-31T19:58:29.943305+00:00",
     "ok": false,
     "error": "HTTP 403"
   },
   "https://en.wikipedia.org/wiki/2019_Fortnite_World_Cup": {
     "file": "pages/949ef20b56a2.txt",
-    "fetched_at": "2026-10-31T19:53:36.207334+00:00",
+    "fetched_at": "2026-10-31T19:58:30.479371+00:00",
     "ok": false,
     "error": "HTTP 404"
   },
@@ -262,13 +262,13 @@
   },
   "https://corporate.mcdonalds.com/corpmcd/our-company/who-we-are.html": {
     "file": "pages/51d291cbab14.txt",
-    "fetched_at": "2026-10-31T19:53:38.479171+00:00",
+    "fetched_at": "2026-10-31T19:58:31.124123+00:00",
     "ok": false,
     "error": "HTTP 403"
   },
   "https://corporate.mcdonalds.com/llms.txt": {
     "file": "pages/301f5f1dea66.txt",
-    "fetched_at": "2026-10-31T19:53:38.923525+00:00",
+    "fetched_at": "2026-10-31T19:58:31.521703+00:00",
     "ok": false,
     "error": "HTTP 403"
   },
@@ -342,6 +342,66 @@
     "chars": 170570,
     "status": 200,
     "final_url": "https://en.wikipedia.org/wiki/Minecraft",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://corp.roblox.com/newsroom/2025/12/how-roblox-impacts-the-global-economy": {
+    "file": "pages/d70716380c86.txt",
+    "fetched_at": "2026-10-31T19:58:31.890743+00:00",
+    "ok": true,
+    "chars": 7007,
+    "status": 200,
+    "final_url": "https://about.roblox.com/newsroom/2025/12/how-roblox-impacts-the-global-economy",
+    "content_type": "text/html; charset=utf-8"
+  },
+  "https://about.roblox.com/en-au/newsroom/2025/12/how-roblox-impacts-the-global-economy": {
+    "file": "pages/e54ce16019c7.txt",
+    "fetched_at": "2026-10-31T19:58:35.029342+00:00",
+    "ok": true,
+    "chars": 7004,
+    "status": 200,
+    "final_url": "https://about.roblox.com/en-au/newsroom/2025/12/how-roblox-impacts-the-global-economy",
+    "content_type": "text/html; charset=utf-8"
+  },
+  "https://www.businesswire.com/news/home/20250904568045/en": {
+    "file": "pages/4ddc5d0005a5.txt",
+    "fetched_at": "2026-10-31T19:58:35.645659+00:00",
+    "ok": false,
+    "error": "TimeoutError('The read operation timed out')"
+  },
+  "https://s27.q4cdn.com/984876518/files/doc_financials/2026/q2/Roblox-Q2-2026-Supplemental-Materials.pdf": {
+    "file": "pages/aea270eea1bd.txt",
+    "fetched_at": "2026-10-31T19:59:36.126116+00:00",
+    "ok": true,
+    "chars": 53682,
+    "status": 200,
+    "final_url": "https://s27.q4cdn.com/984876518/files/doc_financials/2026/q2/Roblox-Q2-2026-Supplemental-Materials.pdf",
+    "content_type": "application/pdf"
+  },
+  "https://rallies.ai/news/roblox-shares-fall-10-while-q3-users-rise-70-and-free-cash-flow-doubles": {
+    "file": "pages/a2dc5246fa9c.txt",
+    "fetched_at": "2026-10-31T19:59:36.712154+00:00",
+    "ok": true,
+    "chars": 3714,
+    "status": 200,
+    "final_url": "https://rallies.ai/news/roblox-shares-fall-10-while-q3-users-rise-70-and-free-cash-flow-doubles",
+    "content_type": "text/html; charset=utf-8"
+  },
+  "https://www.netinfluencer.com/roblox-creator-activity-generated-752m-in-us-gdp-in-2025-up-69-percent-from-2024-study-finds/": {
+    "file": "pages/217b837876b5.txt",
+    "fetched_at": "2026-10-31T19:59:37.345934+00:00",
+    "ok": true,
+    "chars": 10905,
+    "status": 200,
+    "final_url": "https://www.netinfluencer.com/roblox-creator-activity-generated-752m-in-us-gdp-in-2025-up-69-percent-from-2024-study-finds/",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Shohei_Ohtani": {
+    "file": "pages/8547e83e2992.txt",
+    "fetched_at": "2026-10-31T19:59:38.137700+00:00",
+    "ok": true,
+    "chars": 195995,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Shohei_Ohtani",
     "content_type": "text/html; charset=UTF-8"
   }
 }

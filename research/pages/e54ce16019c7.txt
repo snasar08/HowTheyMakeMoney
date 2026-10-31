@@ -1,0 +1,202 @@
+URL: https://about.roblox.com/en-au/newsroom/2025/12/how-roblox-impacts-the-global-economy
+FINAL_URL: https://about.roblox.com/en-au/newsroom/2025/12/how-roblox-impacts-the-global-economy
+FETCHED: 2026-10-31T19:58:35.029342+00:00
+
+Skip to content
+
+Home
+
+About Us
+What is Roblox?
+
+Impact
+
+Leadership
+
+Our Builder Framework
+
+Podcast
+
+Education
+
+Contact
+
+Press Kit
+
+Subscriptions
+
+Safety
+Overview
+
+Parental Controls
+
+Safety by Age
+
+Safety Innovation
+
+Age Estimation
+
+Online Well-Being
+
+Community Standards
+
+Safety Tools & Policies
+
+Safety Partners
+
+Safety FAQ
+
+Report an Issue
+
+Transparency
+
+News
+
+Engineering
+Overview
+
+Infrastructure
+
+AI + ML
+
+Security
+
+Cube AI
+
+Research
+
+Explore
+
+Join Now
+
+Latest
+
+More results
+
+Share
+
+NewsProduct
+
+How Roblox Impacts the Global Economy 
+
+New Reports Detail Impact in Indonesia, Japan, and Korea 
+
+By Nick Tornow, Senior Vice President of Engineering
+
+Published 5 Dec 2025
+
+Roblox creators, who design experiences, avatars, and accessories on the platform, live all around the world. Through Roblox Studio and our Roblox Developer Exchange (DevEx) Program, Roblox creators develop and monetize the digital assets they create. This year, as of September 2025, developers had earned over $1 billion1, compared with $923 million for the full year in 2024. This underscores the growing economic opportunity provided by the platform, where millions of creators have the opportunity to build a thriving business. 
+
+Earlier this year, we shared our 2024 U.S. Economic Impact Report, which showcased Roblox’s impact on the U.S. economy, and globally in several other regions. Since then, we’ve released additional reports to highlight Roblox’s impact on the economies of Indonesia, Japan, and Korea.
+
+Along with powerful creation tools, analytics, and monetization features, our recently increased DevEx rate is part of our broader efforts to give creators more ways to grow and sustain their businesses. Between Q4 2022 and Q4 2025, the percentage of creators eligible to receive DevEx payouts has increased 176% in Indonesia, 415% in Japan, and 303% in Korea, underscoring the tremendous growth in these countries. 
+
+Impact In Indonesia
+
+In 2024, Indonesia's gaming market grew 12.1% year-on-year, outpacing the global average of 2.1%. Local creators benefit from this growing gaming ecosystem as they leverage gaming platforms such as Roblox to develop and disseminate their games to large, global audiences. From 2019 to 2024, Roblox’s GDP impact in Indonesia was $8.2 million (IDR 126.7 billion).
+
+One example is Roblox developer Zaky (known as Kimonoxx), who began his career in game development and content creation in 2017. He attributes much of his learning to hands-on experience, supported by Roblox’s user-friendly tools and AI integration, which make the development process more approachable for newcomers. With about 95% of the users in his team’s experiences coming from areas outside of Indonesia, their titles and designs are crafted with international audiences in mind. For instance, in Rohangan, a horror game inspired by Indonesian folklore, the team preserved the cultural core while tailoring the experience to overseas players.
+
+“Given the large number of international players, we developed games that allow us to share our creations with players outside of Indonesia. This allows more local games to be enjoyed globally. This global reach gives Roblox a clear edge over other platforms, as it can connect with a wide user base without being limited by the developer’s geographic location.” —Zaky (Kimonoxx) 
+
+The number of Indonesian creators eligible to receive DevEx payouts increased 176% between Q4 2002 and Q4 2024.
+
+Impact In Korea
+
+Versework has rapidly become one of South Korea’s largest user-generated content studios, reaching millions of people worldwide with their content. While the company produces content on several platforms, it’s found its strongest growth on Roblox, where creator tools, global reach, and a community-driven model have made it possible to scale their operations and audience. Altogether Versework’s Roblox experiences reach a global audience with key markets in the U.S., the UK, and Southeast Asia. Beyond developing their own titles, Versework also collaborates with brands such as YouTube Korea, JYP Entertainment, and Adidas. 
+
+“We traveled across South Korea to discover ‘Roblox natives’—young creators who have been playing and developing on the platform since as early as age 8. Roblox’s community-driven features, such as Connections, have also enabled explosive growth. We deeply believe in the power of community, and by leveraging it more actively than most teams, we were able to build a global creator and player base at the highest level.” —Young-gun Yun, CEO, Versework
+
+In South Korea, Roblox has acted as a career incubator and recruitment system.
+
+Impact In Japan
+
+Japan is home to iconic gaming franchises and one of the world's largest markets. Exports from the gaming sector have grown nearly five-fold between 2010 and 2022, and strategic government initiatives support future growth. A new generation of self-taught Japanese creators are using gaming platforms to develop and distribute their games to players worldwide.
+
+One example is Roblox developer inutata, who created the popular Japanese-style horror game Peta Peta. As a solo developer, inutata says he was drawn to Roblox’s accessibility—a platform where anyone with an idea could start building. Roblox also connects experiences to a large international audience, enabling Japanese creators like inutata to reach users in other countries with ease. 
+
+“Roblox’s localization tools have been incredibly helpful,” said inutata. “The auto-translation feature makes it easy to reach players who don’t speak Japanese, and the recent improvements have really helped me connect with audiences in different markets.” 
+
+We continue to provide creators, from individuals to game studios, with the resources they need to build anything they can imagine. Roblox helps support entrepreneurial growth around the globe, and we’re proud to share our tools and features with our vibrant, global creator community.
+
+1 Our creator ecosystem includes many hobbyists. Of the millions of creators monetizing on Roblox, over 29,000 are part of our DevEx Program, with the median creator participating in the DevEx Program receiving $1,440 USD during the 12 months ended June 30, 2025. 
+
+Related News
+
+Community
+
+14 Oct 2026
+
+Roblox Expands Live Creator Tournament Series to Brazil
+
+Read More
+
+Engineering
+
+8 Oct 2026
+
+How Roblox Evaluates Build Game Creation
+
+Read More
+
+Safety + Civility
+
+15 Sept 2026
+
+Parent Guide to Back-to-School Screen-Time Discussions
+
+Read More
+
+View All News
+
+About Us
+
+About
+
+Impact
+
+Leadership
+
+Our Builder Framework
+
+News
+
+Podcast
+
+Careers
+
+Investor Relations
+
+Resources
+
+Safety
+
+Help Center
+
+Contact
+
+Press Kit
+
+Explore
+
+Brands
+
+Research
+
+Education
+
+Creator Hub
+
+Join Now
+
+© ™ 2026 Roblox Corporation. All rights reserved.
+
+Terms
+
+Privacy
+
+Accessibility
+
+Job Applicant Privacy
+
+العربية日本語বাংলা한국어简体中文मराठी繁體中文PolskiNederlandsPortuguêsEnglishEnglish (Australia)English (New Zealand)EspañolFrançaisதமிழ்Deutschతెలుగుहिन्दीไทยIndonesiaTürkçeItalianoTiếng Việt
