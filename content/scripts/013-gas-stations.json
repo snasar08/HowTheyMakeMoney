@@ -3,7 +3,7 @@
   "slug": "gas-stations",
   "company": "Gas stations",
   "theme": "bold_bright",
-  "status": "ready",
+  "status": "delivered",
   "title": "Why Do Gas Stations Want You Inside?",
   "description": "Why Do Gas Stations Want You Inside?.\n\nSources:\n- NACS State of the Industry, 2025 data: https://www.convenience.org/stay-current/news/2026/april/15/u-s-convenience-in-store-sales-top-%24340-billion\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
@@ -97,5 +97,15 @@
   "loop": "So next time you fill up, ask yourself:",
   "score": 78,
   "format": "how",
-  "visual_style": "charts3d"
+  "visual_style": "charts3d",
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-013-gas-stations",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-013-gas-stations/013-gas-stations.mp4",
+    "post_at": "2026-11-01T12:00:00-05:00",
+    "buffer_post": "6ae5936c1891472093bb76c0",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-10-31T07:06:20.838168+00:00",
+    "seconds": 26.65
+  }
 }
