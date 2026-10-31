@@ -4,8 +4,8 @@
   "company": "Walmart",
   "theme": "clean_navy",
   "status": "ready",
-  "title": "Walmart Keeps 4 Cents a Dollar. Then What?",
-  "description": "Walmart Keeps 4 Cents a Dollar. Then What?.\n\nSources:\n- Walmart Q4 and fiscal 2026 earnings release: https://stock.walmart.com/sec-filings/all-sec-filings/content/0000104169-26-000032/earningsreleasefy26q4.htm\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "title": "Walmart's $6.4 Billion Side Business",
+  "description": "Why does Walmart, with 713 billion dollars in revenue, need to sell ads?\n\nSources:\n- Walmart Q4 and fiscal 2026 earnings release: https://stock.walmart.com/sec-filings/all-sec-filings/content/0000104169-26-000032/earningsreleasefy26q4.htm\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
     "walmart",
     "advertising",
@@ -36,27 +36,33 @@
   },
   "scenes": [
     {
-      "narration": "Walmart keeps only about 4 cents of every dollar you spend. So how does it make more?",
+      "narration": "Why does Walmart, with 713 billion dollars in revenue, need to sell ads?",
       "visual": {
         "type": "image",
         "image": "hook",
-        "overlay": "ONLY 4 CENTS?",
-        "overlay_sub": "per dollar"
+        "overlay": "$713 BILLION",
+        "overlay_sub": "why sell ads?"
       }
     },
     {
-      "narration": "In fiscal 2026, Walmart took in 713 billion dollars. Operating income was 29.8 billion. About 280 million people visit each week.",
+      "narration": "Because it keeps only about 4 cents of every dollar as operating income.",
       "visual": {
-        "type": "stat",
-        "value": 713.2,
-        "label": "Walmart revenue, fiscal 2026",
-        "prefix": "$",
-        "suffix": "B",
-        "decimals": 1
+        "type": "donut",
+        "value": 4.2,
+        "label": "Walmart operating margin, fiscal 2026"
       }
     },
     {
-      "narration": "Its advertising business grew 46 percent to nearly 6.4 billion dollars.",
+      "narration": "About 280 million people visit each week. Brands pay to be seen by them.",
+      "visual": {
+        "type": "image",
+        "image": "mid",
+        "overlay": "280 MILLION",
+        "overlay_sub": "visits a week"
+      }
+    },
+    {
+      "narration": "In fiscal 2026, Walmart's ad business grew 46 percent to nearly 6.4 billion dollars.",
       "visual": {
         "type": "stat",
         "value": 6.4,
@@ -67,7 +73,7 @@
       }
     },
     {
-      "narration": "Membership and other income added about 6.8 billion more.",
+      "narration": "Memberships and other income added about 6.8 billion more.",
       "visual": {
         "type": "bars",
         "items": [
@@ -84,14 +90,6 @@
         "suffix": "B",
         "title": "Fiscal 2026"
       }
-    },
-    {
-      "narration": "Groceries bring people in. Ads and memberships pay extra.",
-      "visual": {
-        "type": "text",
-        "text": "Groceries bring you in.",
-        "sub": "Ads and memberships pay extra."
-      }
     }
   ],
   "sources": [
@@ -101,7 +99,9 @@
     }
   ],
   "loop": "So next time you shop at Walmart, ask yourself:",
-  "score": 62,
+  "score": 74,
   "format": "how",
-  "visual_style": "charts3d"
+  "visual_style": "charts3d",
+  "title_style": "number",
+  "hook_style": "number"
 }

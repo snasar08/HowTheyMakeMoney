@@ -4,8 +4,8 @@
   "company": "Amazon",
   "theme": "clean_navy",
   "status": "ready",
-  "title": "Where Does Amazon Really Make Its Money?",
-  "description": "Where Does Amazon Really Make Its Money?.\n\nSources:\n- Amazon Q4 and full year 2025 results (TED): https://tedmag.com/amazon-announces-4q-results/\n- Amazon FY2025 segment analysis (Beancount): https://beancount.io/blog/2026/07/13/amazon-fy2025-earnings-analysis\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "title": "57% of Amazon's Profit Isn't the Store",
+  "description": "What earns Amazon more profit than every package it ships combined?\n\nSources:\n- Amazon Q4 and full year 2025 results (TED): https://tedmag.com/amazon-announces-4q-results/\n- Amazon FY2025 segment analysis (Beancount): https://beancount.io/blog/2026/07/13/amazon-fy2025-earnings-analysis\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
     "amazon",
     "aws",
@@ -35,16 +35,25 @@
   },
   "scenes": [
     {
-      "narration": "You think Amazon makes its money selling you stuff? Not really.",
+      "narration": "What earns Amazon more profit than every package it ships combined?",
       "visual": {
         "type": "image",
         "image": "hook",
         "overlay": "NOT",
-        "overlay_sub": "the store?"
+        "overlay_sub": "the boxes?"
       }
     },
     {
-      "narration": "Amazon Web Services, its cloud business, was only 18 percent of Amazon's sales in 2025, but it made 57 percent of its operating profit.",
+      "narration": "Its cloud business, Amazon Web Services. It rents computer power to apps and AI companies.",
+      "visual": {
+        "type": "image",
+        "image": "mid",
+        "overlay": "THE CLOUD",
+        "overlay_sub": "computer power for rent"
+      }
+    },
+    {
+      "narration": "In 2025, AWS was just 18 percent of Amazon's sales. But it made 57 percent of the operating profit.",
       "visual": {
         "type": "bars",
         "items": [
@@ -63,7 +72,7 @@
       }
     },
     {
-      "narration": "That's 45.6 billion dollars, from renting computer power to businesses and AI companies.",
+      "narration": "That's 45.6 billion dollars of operating income from the cloud.",
       "visual": {
         "type": "stat",
         "value": 45.6,
@@ -74,16 +83,7 @@
       }
     },
     {
-      "narration": "The warehouses and delivery vans are huge, but they run on much thinner margins.",
-      "visual": {
-        "type": "image",
-        "image": "mid",
-        "overlay": "HUGE STORE",
-        "overlay_sub": "thin margins"
-      }
-    },
-    {
-      "narration": "So the boxes on your doorstep get the attention, but the servers pay the bills.",
+      "narration": "So the boxes get the attention. The servers pay the bills.",
       "visual": {
         "type": "text",
         "text": "You see the boxes.",
@@ -101,8 +101,10 @@
       "url": "https://beancount.io/blog/2026/07/13/amazon-fy2025-earnings-analysis"
     }
   ],
-  "loop": "So next time a package shows up, ask yourself:",
-  "score": 66,
+  "loop": "So next time an Amazon box hits your doorstep, ask yourself:",
+  "score": 82,
   "format": "how",
-  "visual_style": "charts3d"
+  "visual_style": "charts3d",
+  "title_style": "number",
+  "hook_style": "surprise"
 }

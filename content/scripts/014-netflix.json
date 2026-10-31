@@ -4,8 +4,8 @@
   "company": "Netflix",
   "theme": "clean_navy",
   "status": "ready",
-  "title": "How Did Netflix Make $45 Billion?",
-  "description": "How Did Netflix Make $45 Billion?.\n\nSources:\n- Netflix 2025 Form 10-K (SEC): https://www.sec.gov/Archives/edgar/data/1065280/000106528026000034/nflx-20251231.htm\n- Netflix 2025 results and 2026 outlook (CSI Magazine): https://www.csimagazine.com/csi/netflix-fullyear-results.php\n- Netflix ad revenue $1.5B (AdNews): https://www.adnews.com.au/news/netflix-ad-revenue-hits-1-5-billion\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "title": "How Much of Your Netflix Bill Is Profit?",
+  "description": "Out of every dollar you pay Netflix, how much does it keep as profit?\n\nSources:\n- Netflix 2025 Form 10-K (SEC): https://www.sec.gov/Archives/edgar/data/1065280/000106528026000034/nflx-20251231.htm\n- Netflix 2025 results and 2026 outlook (CSI Magazine): https://www.csimagazine.com/csi/netflix-fullyear-results.php\n- Netflix ad revenue $1.5B (AdNews): https://www.adnews.com.au/news/netflix-ad-revenue-hits-1-5-billion\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
     "netflix",
     "streaming",
@@ -35,16 +35,16 @@
   },
   "scenes": [
     {
-      "narration": "Netflix made 45 billion dollars last year. How much of it did it actually keep?",
+      "narration": "Out of every dollar you pay Netflix, how much does it keep as profit?",
       "visual": {
         "type": "image",
         "image": "hook",
-        "overlay": "$45 BILLION",
+        "overlay": "PER DOLLAR",
         "overlay_sub": "how much kept?"
       }
     },
     {
-      "narration": "More than 325 million paid memberships, paying anywhere from about 1 to 37 dollars a month, depending on the country and plan.",
+      "narration": "First, the scale. In 2025, more than 325 million paid memberships brought in 45 billion dollars.",
       "visual": {
         "type": "stat",
         "value": 325,
@@ -55,7 +55,24 @@
       }
     },
     {
-      "narration": "Its cheaper plan with ads is growing fast. Ad revenue hit 1.5 billion dollars in 2025, about two and a half times the year before.",
+      "narration": "Then Netflix pays for all those shows.",
+      "visual": {
+        "type": "image",
+        "image": "mid",
+        "overlay": "THEN",
+        "overlay_sub": "pay for the shows"
+      }
+    },
+    {
+      "narration": "What's left? About 30 cents of operating profit on every dollar.",
+      "visual": {
+        "type": "donut",
+        "value": 29.5,
+        "label": "Netflix operating margin, 2025"
+      }
+    },
+    {
+      "narration": "And the cheaper plan with ads is growing. Ad revenue hit 1.5 billion dollars in 2025.",
       "visual": {
         "type": "stat",
         "value": 1.5,
@@ -66,20 +83,11 @@
       }
     },
     {
-      "narration": "And Netflix expects ad revenue to roughly double again in 2026.",
+      "narration": "Netflix expects that to roughly double again in 2026.",
       "visual": {
-        "type": "image",
-        "image": "mid",
-        "overlay": "ADS",
-        "overlay_sub": "doubling again"
-      }
-    },
-    {
-      "narration": "After paying for all those shows, Netflix kept about 30 cents of operating profit on every dollar.",
-      "visual": {
-        "type": "donut",
-        "value": 29.5,
-        "label": "Netflix operating margin, 2025"
+        "type": "text",
+        "text": "Ads: 1.5 billion",
+        "sub": "expected to double in 2026"
       }
     }
   ],
@@ -97,8 +105,10 @@
       "url": "https://www.adnews.com.au/news/netflix-ad-revenue-hits-1-5-billion"
     }
   ],
-  "loop": "So next time you binge a show, ask yourself:",
-  "score": 72,
+  "loop": "So next time you pay for Netflix, ask yourself:",
+  "score": 83,
   "format": "how",
-  "visual_style": "charts3d"
+  "visual_style": "charts3d",
+  "title_style": "question",
+  "hook_style": "question"
 }

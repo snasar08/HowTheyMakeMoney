@@ -4,8 +4,8 @@
   "company": "Live Nation",
   "theme": "dark_neon",
   "status": "ready",
-  "title": "Why Don't Concerts Make Money?",
-  "description": "Why Don't Concerts Make Money?.\n\nSources:\n- Live Nation Entertainment full-year and Q4 2025 results: https://news.livenationentertainment.com/news/live-nation-entertainment-full-year-and-fourth-quarter-2025-results\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "title": "Live Nation Keeps 3 Cents Per Concert Dollar",
+  "description": "Which makes Live Nation more profit, the concert, or the ticket?\n\nSources:\n- Live Nation Entertainment full-year and Q4 2025 results: https://news.livenationentertainment.com/news/live-nation-entertainment-full-year-and-fourth-quarter-2025-results\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
     "live nation",
     "ticketmaster",
@@ -36,16 +36,16 @@
   },
   "scenes": [
     {
-      "narration": "Concerts brought in 20.9 billion dollars. So why did Live Nation keep almost none of it?",
+      "narration": "Which makes Live Nation more profit, the concert, or the ticket?",
       "visual": {
         "type": "image",
         "image": "hook",
-        "overlay": "$20.9 BILLION",
-        "overlay_sub": "kept almost none?"
+        "overlay": "SHOW OR TICKET?",
+        "overlay_sub": "which pays more?"
       }
     },
     {
-      "narration": "It hosted 159 million fans across 55 thousand shows.",
+      "narration": "In 2025, Live Nation put on 55 thousand shows for 159 million fans.",
       "visual": {
         "type": "stat",
         "value": 159,
@@ -56,7 +56,7 @@
       }
     },
     {
-      "narration": "But concerts had an adjusted profit margin of just 3.3 percent.",
+      "narration": "Concerts brought in 20.9 billion dollars. But the profit margin was just 3.3 percent.",
       "visual": {
         "type": "donut",
         "value": 3.3,
@@ -64,7 +64,7 @@
       }
     },
     {
-      "narration": "Ticketing is the opposite, with a margin of 37 percent.",
+      "narration": "Ticketing is the opposite, with a margin of about 37 percent.",
       "visual": {
         "type": "donut",
         "value": 37,
@@ -72,7 +72,7 @@
       }
     },
     {
-      "narration": "Concerts earned 0.7 billion dollars of adjusted profit, ticketing 1.1 billion, and sponsorships 0.8 billion.",
+      "narration": "So ticketing made 1.1 billion of adjusted profit, more than concerts' 0.7 billion. Sponsors added 0.8 billion.",
       "visual": {
         "type": "bars",
         "items": [
@@ -95,7 +95,7 @@
       }
     },
     {
-      "narration": "Shows bring the crowd. Tickets and sponsors bring the profit.",
+      "narration": "Shows bring the crowd. Tickets bring the profit.",
       "visual": {
         "type": "text",
         "text": "Shows bring the crowd.",
@@ -110,7 +110,9 @@
     }
   ],
   "loop": "So next time you buy concert tickets, ask yourself:",
-  "score": 65,
+  "score": 82,
   "format": "how",
-  "visual_style": "charts3d"
+  "visual_style": "charts3d",
+  "title_style": "number",
+  "hook_style": "challenge"
 }

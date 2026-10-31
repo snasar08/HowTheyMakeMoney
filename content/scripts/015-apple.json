@@ -4,8 +4,8 @@
   "company": "Apple",
   "theme": "dark_neon",
   "status": "ready",
-  "title": "Is the iPhone Really Apple's Best Money Maker?",
-  "description": "Is the iPhone Really Apple's Best Money Maker?.\n\nSources:\n- Apple fiscal 2025 Q4 results (press release): https://www.apple.com/newsroom/2025/10/apple-reports-fourth-quarter-results/\n- Apple fiscal 2025 Q4 consolidated financial statements (PDF): https://www.apple.com/newsroom/pdfs/fy2025-q4/FY25_Q4_Consolidated_Financial_Statements.pdf\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "title": "Apple Services Keep 75 Cents of Every Dollar",
+  "description": "What does Apple keep earning after you've already bought your iPhone?\n\nSources:\n- Apple fiscal 2025 Q4 results (press release): https://www.apple.com/newsroom/2025/10/apple-reports-fourth-quarter-results/\n- Apple fiscal 2025 Q4 consolidated financial statements (PDF): https://www.apple.com/newsroom/pdfs/fy2025-q4/FY25_Q4_Consolidated_Financial_Statements.pdf\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
     "apple",
     "iphone",
@@ -36,16 +36,24 @@
   },
   "scenes": [
     {
-      "narration": "The iPhone isn't where Apple makes its best profit. So what is?",
+      "narration": "What does Apple keep earning after you've already bought your iPhone?",
       "visual": {
         "type": "image",
         "image": "hook",
-        "overlay": "NOT",
-        "overlay_sub": "the iPhone?"
+        "overlay": "AFTER",
+        "overlay_sub": "you buy?"
       }
     },
     {
-      "narration": "In fiscal 2025, Apple sold 416 billion dollars of products and services. The iPhone alone brought in about 210 billion.",
+      "narration": "Services. The App Store, iCloud, music and more.",
+      "visual": {
+        "type": "text",
+        "text": "Services.",
+        "sub": "App Store, iCloud, music"
+      }
+    },
+    {
+      "narration": "In fiscal 2025, Apple sold 416 billion dollars of products and services. The iPhone was about 210 billion.",
       "visual": {
         "type": "stat",
         "value": 416.2,
@@ -56,7 +64,7 @@
       }
     },
     {
-      "narration": "After the cost of making them, products keep about 37 cents per dollar. Services, like the App Store and iCloud, keep about 75.",
+      "narration": "But after costs, products keep about 37 cents per dollar. Services keep about 75.",
       "visual": {
         "type": "bars",
         "items": [
@@ -75,7 +83,7 @@
       }
     },
     {
-      "narration": "That is about 82 billion dollars of gross profit from Services alone.",
+      "narration": "That's about 82 billion dollars of gross profit from Services alone.",
       "visual": {
         "type": "image",
         "image": "mid",
@@ -84,7 +92,7 @@
       }
     },
     {
-      "narration": "Phones get you in the door. Services keep paying.",
+      "narration": "The phone gets you in. Services keep paying.",
       "visual": {
         "type": "text",
         "text": "Phones get you in.",
@@ -102,8 +110,10 @@
       "url": "https://www.apple.com/newsroom/pdfs/fy2025-q4/FY25_Q4_Consolidated_Financial_Statements.pdf"
     }
   ],
-  "loop": "So next time you buy a new iPhone, ask yourself:",
-  "score": 74,
+  "loop": "So next time you buy an app, ask yourself:",
+  "score": 84,
   "format": "how",
-  "visual_style": "charts3d"
+  "visual_style": "charts3d",
+  "title_style": "statement",
+  "hook_style": "surprise"
 }

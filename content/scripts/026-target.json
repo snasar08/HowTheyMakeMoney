@@ -4,8 +4,8 @@
   "company": "Target",
   "theme": "bold_bright",
   "status": "ready",
-  "title": "Why Is Target Selling Ads?",
-  "description": "Why Is Target Selling Ads?.\n\nSources:\n- Target Q4 and full-year 2025 earnings release: https://corporate.target.com/press/release/2026/03/target-corporation-reports-fourth-quarter-and-full-year-2025-earnings\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "title": "What If Brands Pay Target to Reach You?",
+  "description": "What if the ads in the Target app were worth almost a billion dollars?\n\nSources:\n- Target Q4 and full-year 2025 earnings release: https://corporate.target.com/press/release/2026/03/target-corporation-reports-fourth-quarter-and-full-year-2025-earnings\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
     "target",
     "roundel",
@@ -36,27 +36,25 @@
   },
   "scenes": [
     {
-      "narration": "Target sells you stuff. So why is it also selling ads?",
+      "narration": "What if the ads in the Target app were worth almost a billion dollars?",
       "visual": {
         "type": "image",
         "image": "hook",
-        "overlay": "WHY IS TARGET",
-        "overlay_sub": "selling ads?"
+        "overlay": "WHAT IF",
+        "overlay_sub": "ads pay Target?"
       }
     },
     {
-      "narration": "Net sales were 104.8 billion dollars.",
+      "narration": "They are. Brands pay Target to advertise through a business called Roundel.",
       "visual": {
-        "type": "stat",
-        "value": 104.8,
-        "label": "Target net sales, 2025",
-        "prefix": "$",
-        "suffix": "B",
-        "decimals": 1
+        "type": "image",
+        "image": "mid",
+        "overlay": "ROUNDEL",
+        "overlay_sub": "Target's ad business"
       }
     },
     {
-      "narration": "Brands pay Target for ads, through a business called Roundel. Advertising revenue rose from 649 million dollars to 915 million.",
+      "narration": "Its ad revenue jumped from 649 million dollars to 915 million in 2025.",
       "visual": {
         "type": "bars",
         "items": [
@@ -75,7 +73,7 @@
       }
     },
     {
-      "narration": "Target also shares profits from its store credit cards, 522 million dollars in 2025.",
+      "narration": "Target also gets a share of the profits from its store credit cards: 522 million.",
       "visual": {
         "type": "stat",
         "value": 522,
@@ -86,7 +84,7 @@
       }
     },
     {
-      "narration": "The shelves bring you in. The side businesses add up.",
+      "narration": "Next to 104.8 billion in sales, that's small. But the side businesses keep adding up.",
       "visual": {
         "type": "text",
         "text": "Shelves bring you in.",
@@ -101,7 +99,9 @@
     }
   ],
   "loop": "So next time you see an ad on Target's app, ask yourself:",
-  "score": 50,
+  "score": 70,
   "format": "how",
-  "visual_style": "charts3d"
+  "visual_style": "charts3d",
+  "title_style": "whatif",
+  "hook_style": "whatif"
 }

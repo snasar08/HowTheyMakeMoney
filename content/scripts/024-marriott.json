@@ -4,8 +4,8 @@
   "company": "Marriott",
   "theme": "clean_navy",
   "status": "ready",
-  "title": "Does Marriott Even Own Its Hotels?",
-  "description": "Does Marriott Even Own Its Hotels?.\n\nSources:\n- Marriott Q4 and full-year 2025 results (press release): https://fortune.com/company-assets/729/quartr/earnings-release-8-k-909ff-2026-02-10-12-08-01.pdf\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "title": "Marriott Earns $5.4 Billion in Hotel Fees",
+  "description": "How did Marriott collect 5.4 billion dollars in fees from other people's hotels?\n\nSources:\n- Marriott Q4 and full-year 2025 results (press release): https://fortune.com/company-assets/729/quartr/earnings-release-8-k-909ff-2026-02-10-12-08-01.pdf\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
     "marriott",
     "hotels",
@@ -36,16 +36,16 @@
   },
   "scenes": [
     {
-      "narration": "Marriott collected 5.4 billion dollars in fees. So does it even own its hotels?",
+      "narration": "How did Marriott collect 5.4 billion dollars in fees from other people's hotels?",
       "visual": {
         "type": "image",
         "image": "hook",
-        "overlay": "DOES IT",
-        "overlay_sub": "own the hotels?"
+        "overlay": "$5.4 BILLION",
+        "overlay_sub": "in fees?"
       }
     },
     {
-      "narration": "Hotel owners pay Marriott for the name, for running the hotel, and for bonuses when profits are high.",
+      "narration": "Owners pay Marriott for its name, for running the hotel, and bonuses when profits rise.",
       "visual": {
         "type": "bars",
         "items": [
@@ -68,7 +68,7 @@
       }
     },
     {
-      "narration": "Marriott's total revenue was 26.2 billion dollars, but 19.2 billion of that is cost reimbursements from hotel owners.",
+      "narration": "Its total revenue looks much bigger: 26.2 billion dollars.",
       "visual": {
         "type": "stat",
         "value": 26.2,
@@ -79,7 +79,16 @@
       }
     },
     {
-      "narration": "Fees were about 21 percent of revenue, and net income was 2.6 billion dollars.",
+      "narration": "But 19.2 billion of that is owners paying Marriott back for costs.",
+      "visual": {
+        "type": "image",
+        "image": "mid",
+        "overlay": "PAID BACK",
+        "overlay_sub": "not profit"
+      }
+    },
+    {
+      "narration": "Fees were about 21 percent of revenue. Net income was 2.6 billion dollars.",
       "visual": {
         "type": "donut",
         "value": 21,
@@ -102,7 +111,9 @@
     }
   ],
   "loop": "So next time you check into a hotel, ask yourself:",
-  "score": 50,
+  "score": 62,
   "format": "how",
-  "visual_style": "charts3d"
+  "visual_style": "charts3d",
+  "title_style": "statement",
+  "hook_style": "number"
 }

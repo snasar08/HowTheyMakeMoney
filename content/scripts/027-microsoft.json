@@ -4,8 +4,8 @@
   "company": "Microsoft",
   "theme": "clean_navy",
   "status": "ready",
-  "title": "How Does Microsoft Keep 47 Cents a Dollar?",
-  "description": "How Does Microsoft Keep 47 Cents a Dollar?.\n\nSources:\n- Microsoft fiscal 2026 Q4 earnings press release: https://www.microsoft.com/en-us/investor/earnings/fy-2026-q4/press-release-webcast\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "title": "Microsoft Keeps 47 Cents of Every Dollar",
+  "description": "How does Microsoft keep about 47 cents of every dollar it makes?\n\nSources:\n- Microsoft fiscal 2026 Q4 earnings press release: https://www.microsoft.com/en-us/investor/earnings/fy-2026-q4/press-release-webcast\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
     "microsoft",
     "azure",
@@ -36,16 +36,16 @@
   },
   "scenes": [
     {
-      "narration": "Most companies keep a few cents per dollar. How does Microsoft keep about 47?",
+      "narration": "How does Microsoft keep about 47 cents of every dollar it makes?",
       "visual": {
         "type": "image",
         "image": "hook",
         "overlay": "47 CENTS",
-        "overlay_sub": "kept per dollar?"
+        "overlay_sub": "of every dollar?"
       }
     },
     {
-      "narration": "In fiscal 2026, its revenue was 331.8 billion dollars, with 155.2 billion of operating income.",
+      "narration": "In fiscal 2026, it made 331.8 billion dollars. 155.2 billion of that was operating income.",
       "visual": {
         "type": "stat",
         "value": 331.8,
@@ -56,7 +56,7 @@
       }
     },
     {
-      "narration": "That is an operating margin of about 47 percent.",
+      "narration": "That's an operating margin of about 47 percent.",
       "visual": {
         "type": "donut",
         "value": 47,
@@ -64,7 +64,7 @@
       }
     },
     {
-      "narration": "Its cloud business leads, followed by Office and business software, and then Windows and gaming.",
+      "narration": "The cloud leads. Then Office and business software. Windows and Xbox come third.",
       "visual": {
         "type": "bars",
         "items": [
@@ -87,7 +87,7 @@
       }
     },
     {
-      "narration": "Azure passed 100 billion dollars in a year for the first time, and Copilot has over 30 million paid seats.",
+      "narration": "Azure passed 100 billion dollars in a year. Copilot has over 30 million paid seats.",
       "visual": {
         "type": "text",
         "text": "Cloud and AI",
@@ -102,7 +102,9 @@
     }
   ],
   "loop": "So next time you open Word or Xbox, ask yourself:",
-  "score": 55,
+  "score": 74,
   "format": "how",
-  "visual_style": "charts3d"
+  "visual_style": "charts3d",
+  "title_style": "number",
+  "hook_style": "number"
 }

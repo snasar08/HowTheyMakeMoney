@@ -4,8 +4,8 @@
   "company": "Delta",
   "theme": "clean_navy",
   "status": "ready",
-  "title": "Why Is Delta's Best Product Not a Seat?",
-  "description": "Why Is Delta's Best Product Not a Seat?.\n\nSources:\n- Delta 2025 results: Amex remuneration $8.2B (AltexSoft): https://www.altexsoft.com/travel-industry-news/premium-strategy-works-deltas-2025-revenue-hits-63b/\n- Delta cards ~13% of Amex billed business (View from the Wing): https://viewfromthewing.com/amex-pays-delta-3-8-cents-per-dollar-charged-why-banks-pay-more-for-miles-than-you-do/\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "title": "$8.2 Billion From a Card, Not a Seat",
+  "description": "How did Delta get 8.2 billion dollars from a credit card?\n\nSources:\n- Delta 2025 results: Amex remuneration $8.2B (AltexSoft): https://www.altexsoft.com/travel-industry-news/premium-strategy-works-deltas-2025-revenue-hits-63b/\n- Delta cards ~13% of Amex billed business (View from the Wing): https://viewfromthewing.com/amex-pays-delta-3-8-cents-per-dollar-charged-why-banks-pay-more-for-miles-than-you-do/\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
     "delta",
     "airlines",
@@ -36,16 +36,16 @@
   },
   "scenes": [
     {
-      "narration": "What's the most valuable thing Delta sells? It's not a plane ticket.",
+      "narration": "How did Delta get 8.2 billion dollars from a credit card?",
       "visual": {
         "type": "image",
         "image": "hook",
-        "overlay": "NOT A",
-        "overlay_sub": "plane ticket?"
+        "overlay": "$8.2 BILLION",
+        "overlay_sub": "from a card?"
       }
     },
     {
-      "narration": "In 2025, American Express paid Delta 8.2 billion dollars.",
+      "narration": "Not from tickets. It came from American Express, in 2025.",
       "visual": {
         "type": "stat",
         "value": 8.2,
@@ -56,7 +56,7 @@
       }
     },
     {
-      "narration": "Every time someone uses a Delta Amex card, at the grocery store, for gas, anywhere, Amex buys SkyMiles from Delta to reward them.",
+      "narration": "Every swipe of a Delta Amex card earns SkyMiles. Amex buys those miles from Delta.",
       "visual": {
         "type": "image",
         "image": "mid",
@@ -65,7 +65,7 @@
       }
     },
     {
-      "narration": "Delta cards make up about 13 percent of all the spending on American Express cards worldwide.",
+      "narration": "Groceries, gas, anything. Delta cards are about 13 percent of all Amex spending worldwide.",
       "visual": {
         "type": "donut",
         "value": 13,
@@ -73,7 +73,7 @@
       }
     },
     {
-      "narration": "And selling miles doesn't need fuel, pilots, or planes. It's some of the highest margin money an airline can make.",
+      "narration": "And miles don't need fuel, pilots, or planes. That's what makes them such good business.",
       "visual": {
         "type": "text",
         "text": "No fuel. No pilots.",
@@ -91,8 +91,10 @@
       "url": "https://viewfromthewing.com/amex-pays-delta-3-8-cents-per-dollar-charged-why-banks-pay-more-for-miles-than-you-do/"
     }
   ],
-  "loop": "So next time you board a Delta flight, ask yourself:",
-  "score": 60,
+  "loop": "So next time you swipe a Delta card, ask yourself:",
+  "score": 78,
   "format": "how",
-  "visual_style": "charts3d"
+  "visual_style": "charts3d",
+  "title_style": "number",
+  "hook_style": "number"
 }

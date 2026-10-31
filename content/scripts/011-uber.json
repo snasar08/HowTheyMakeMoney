@@ -4,8 +4,8 @@
   "company": "Uber",
   "theme": "bold_bright",
   "status": "ready",
-  "title": "How Much of Your Uber Ride Does Uber Keep?",
-  "description": "How Much of Your Uber Ride Does Uber Keep?.\n\nSources:\n- Uber 2025 Form 10-K (SEC): https://www.sec.gov/Archives/edgar/data/1543151/000154315126000015/uber-20251231.htm\n- Uber 2025 gross bookings and take rates (SQ Magazine): https://sqmagazine.co.uk/uber-statistics/\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "title": "How Much of Your Uber Fare Does Uber Keep?",
+  "description": "When you pay 10 dollars for an Uber ride, how much does Uber keep?\n\nSources:\n- Uber 2025 Form 10-K (SEC): https://www.sec.gov/Archives/edgar/data/1543151/000154315126000015/uber-20251231.htm\n- Uber 2025 gross bookings and take rates (SQ Magazine): https://sqmagazine.co.uk/uber-statistics/\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
     "uber",
     "rideshare",
@@ -35,16 +35,16 @@
   },
   "scenes": [
     {
-      "narration": "When you pay for an Uber, how much do you think Uber actually keeps?",
+      "narration": "When you pay 10 dollars for an Uber ride, how much does Uber keep?",
       "visual": {
         "type": "image",
         "image": "hook",
-        "overlay": "HOW MUCH",
-        "overlay_sub": "does Uber keep?"
+        "overlay": "$10 RIDE",
+        "overlay_sub": "how much to Uber?"
       }
     },
     {
-      "narration": "About 30 percent. That was Uber's average cut of ride bookings at the end of 2025.",
+      "narration": "About 3 dollars. Uber's average cut of ride bookings was about 30 percent in late 2025.",
       "visual": {
         "type": "donut",
         "value": 30,
@@ -52,7 +52,7 @@
       }
     },
     {
-      "narration": "On food delivery, its cut is lower, around 19 percent. But restaurants also pay Uber to advertise inside the app.",
+      "narration": "On food delivery, it keeps less, around 19 percent. But restaurants also pay for ads in the app.",
       "visual": {
         "type": "image",
         "image": "mid",
@@ -61,7 +61,7 @@
       }
     },
     {
-      "narration": "In 2025, people booked 193 billion dollars of rides and deliveries on Uber. Uber turned that into 52 billion in revenue.",
+      "narration": "In 2025, people booked 193 billion dollars on Uber. Uber kept 52 billion as revenue.",
       "visual": {
         "type": "bars",
         "items": [
@@ -80,7 +80,7 @@
       }
     },
     {
-      "narration": "Uber doesn't own the cars or the restaurants. It owns the app in the middle.",
+      "narration": "No cars. No kitchens. Uber just owns the app in the middle.",
       "visual": {
         "type": "text",
         "text": "No cars. No kitchens.",
@@ -99,7 +99,9 @@
     }
   ],
   "loop": "So next time you call a ride, ask yourself:",
-  "score": 67,
+  "score": 82,
   "format": "how",
-  "visual_style": "charts3d"
+  "visual_style": "charts3d",
+  "title_style": "question",
+  "hook_style": "question"
 }

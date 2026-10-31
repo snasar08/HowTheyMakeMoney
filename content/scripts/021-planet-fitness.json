@@ -4,8 +4,8 @@
   "company": "Planet Fitness",
   "theme": "bold_bright",
   "status": "ready",
-  "title": "Why Does Planet Fitness Sell Treadmills?",
-  "description": "Why Does Planet Fitness Sell Treadmills?.\n\nSources:\n- Planet Fitness Q4 and year-end 2025 results (press release): https://investor.planetfitness.com/investors/press-releases/press-release-details/2026/Planet-Fitness-Inc--Announces-Fourth-Quarter-and-Year-End-2025-Results/default.aspx\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "title": "Planet Fitness Made $310 Million on Machines",
+  "description": "Can you guess who buys all the treadmills at Planet Fitness?\n\nSources:\n- Planet Fitness Q4 and year-end 2025 results (press release): https://investor.planetfitness.com/investors/press-releases/press-release-details/2026/Planet-Fitness-Inc--Announces-Fourth-Quarter-and-Year-End-2025-Results/default.aspx\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
     "planet fitness",
     "gym",
@@ -36,27 +36,36 @@
   },
   "scenes": [
     {
-      "narration": "Planet Fitness sells gym memberships. So why is it selling treadmills too?",
+      "narration": "Can you guess who buys all the treadmills at Planet Fitness?",
       "visual": {
         "type": "image",
         "image": "hook",
-        "overlay": "WHY",
-        "overlay_sub": "treadmills?"
+        "overlay": "WHO BUYS",
+        "overlay_sub": "the treadmills?"
       }
     },
     {
-      "narration": "It ended 2025 with about 20.8 million members in nearly 2,900 clubs.",
+      "narration": "Many clubs are run by franchise owners. They buy their machines from Planet Fitness itself.",
+      "visual": {
+        "type": "image",
+        "image": "mid",
+        "overlay": "OWNERS BUY",
+        "overlay_sub": "the machines"
+      }
+    },
+    {
+      "narration": "In 2025, that equipment business brought in 310 million dollars, up 21 percent.",
       "visual": {
         "type": "stat",
-        "value": 20.8,
-        "label": "Planet Fitness members, end of 2025",
-        "prefix": "",
+        "value": 310.1,
+        "label": "Planet Fitness equipment revenue, 2025",
+        "prefix": "$",
         "suffix": "M",
         "decimals": 1
       }
     },
     {
-      "narration": "Total revenue was 1.3 billion dollars. Franchise fees, its own clubs, and equipment each bring in a big piece.",
+      "narration": "Next to franchise fees and its own clubs, that's a big slice of 1.3 billion dollars.",
       "visual": {
         "type": "bars",
         "items": [
@@ -79,16 +88,18 @@
       }
     },
     {
-      "narration": "Equipment sales rose 21 percent, because owners buy machines for both old and new clubs.",
+      "narration": "It all runs on 20.8 million members in nearly 2,900 clubs.",
       "visual": {
-        "type": "image",
-        "image": "mid",
-        "overlay": "EQUIPMENT",
-        "overlay_sub": "up 21 percent"
+        "type": "stat",
+        "value": 20.8,
+        "label": "Planet Fitness members, end of 2025",
+        "prefix": "",
+        "suffix": "M",
+        "decimals": 1
       }
     },
     {
-      "narration": "Members pay monthly. Owners pay for the machines.",
+      "narration": "Members pay monthly. Owners buy the machines.",
       "visual": {
         "type": "text",
         "text": "Members pay monthly.",
@@ -103,7 +114,9 @@
     }
   ],
   "loop": "So next time you hit the gym, ask yourself:",
-  "score": 63,
+  "score": 76,
   "format": "how",
-  "visual_style": "charts3d"
+  "visual_style": "charts3d",
+  "title_style": "statement",
+  "hook_style": "challenge"
 }

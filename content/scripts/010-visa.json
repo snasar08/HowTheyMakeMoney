@@ -4,8 +4,8 @@
   "company": "Visa",
   "theme": "dark_neon",
   "status": "ready",
-  "title": "Visa Never Lends You a Dime. How Did It Make $40B?",
-  "description": "Visa Never Lends You a Dime. How Did It Make $40B?.\n\nSources:\n- Visa fiscal 2025 results (SEC 8-K): https://www.sec.gov/Archives/edgar/data/1403161/000140316125000077/q42025earningsrelease.htm\n- Visa FY2025 Form 10-K (SEC): https://www.sec.gov/Archives/edgar/data/1403161/000140316125000089/v-20250930.htm\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "title": "Visa Kept $20 Billion Without Lending a Dime",
+  "description": "How does Visa make billions without ever lending you a dollar?\n\nSources:\n- Visa fiscal 2025 results (SEC 8-K): https://www.sec.gov/Archives/edgar/data/1403161/000140316125000077/q42025earningsrelease.htm\n- Visa FY2025 Form 10-K (SEC): https://www.sec.gov/Archives/edgar/data/1403161/000140316125000089/v-20250930.htm\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
     "visa",
     "payments",
@@ -36,16 +36,33 @@
   },
   "scenes": [
     {
-      "narration": "Visa doesn't lend you money. It doesn't even make your card. So how does it make billions?",
+      "narration": "How does Visa make billions without ever lending you a dollar?",
       "visual": {
         "type": "image",
         "image": "hook",
         "overlay": "NO LOANS?",
-        "overlay_sub": "No cards?"
+        "overlay_sub": "still billions"
       }
     },
     {
-      "narration": "So how did it bring in 40 billion dollars in fiscal 2025?",
+      "narration": "Banks issue the cards and lend the money. Visa runs the network in the middle.",
+      "visual": {
+        "type": "image",
+        "image": "mid",
+        "overlay": "THE NETWORK",
+        "overlay_sub": "in the middle"
+      }
+    },
+    {
+      "narration": "Every time a card is tapped, Visa earns a small fee for moving that payment.",
+      "visual": {
+        "type": "text",
+        "text": "Tap.",
+        "sub": "Visa gets a fee."
+      }
+    },
+    {
+      "narration": "In fiscal 2025, those fees added up to 40 billion dollars of revenue.",
       "visual": {
         "type": "stat",
         "value": 40.0,
@@ -56,24 +73,15 @@
       }
     },
     {
-      "narration": "Visa runs the network in the middle. Every time a card is tapped, Visa earns a small fee for moving that payment, billions of times a year.",
-      "visual": {
-        "type": "image",
-        "image": "mid",
-        "overlay": "THE NETWORK",
-        "overlay_sub": "in the middle"
-      }
-    },
-    {
-      "narration": "And because it's mostly software, about half of that revenue became profit: 20.1 billion dollars.",
+      "narration": "About half became profit: 20.1 billion dollars.",
       "visual": {
         "type": "donut",
         "value": 50,
-        "label": "of Visa's revenue became profit"
+        "label": "of Visa's revenue became profit, FY2025"
       }
     },
     {
-      "narration": "Visa is a toll booth on the world's spending. No loans, no credit risk, just fees.",
+      "narration": "No loans, no credit risk. Just a toll on the world's spending.",
       "visual": {
         "type": "text",
         "text": "A toll booth",
@@ -92,7 +100,9 @@
     }
   ],
   "loop": "So next time you tap your card, ask yourself:",
-  "score": 68,
+  "score": 76,
   "format": "how",
-  "visual_style": "charts3d"
+  "visual_style": "charts3d",
+  "title_style": "statement",
+  "hook_style": "question"
 }

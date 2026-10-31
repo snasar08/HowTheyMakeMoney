@@ -4,8 +4,8 @@
   "company": "Coca-Cola",
   "theme": "clean_navy",
   "status": "ready",
-  "title": "What Does Coca-Cola Actually Sell?",
-  "description": "What Does Coca-Cola Actually Sell?.\n\nSources:\n- Coca-Cola Q4 and full-year 2025 results (press release): https://investors.coca-colacompany.com/news-events/press-releases/detail/1151/coca-cola-reports-fourth-quarter-and-full-year-2025-results\n- Coca-Cola Q4 2025 earnings release (full PDF with segment tables): https://www.coca-colacompany.com/content/dam/company/us/en/media-center/Coca-Cola%20Q4%202025%20Earnings%20Release_Full%20Release_2.10.26.pdf\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "title": "What If Coca-Cola Stopped Making Bottles?",
+  "description": "What if Coca-Cola stopped making most of its own bottles?\n\nSources:\n- Coca-Cola Q4 and full-year 2025 results (press release): https://investors.coca-colacompany.com/news-events/press-releases/detail/1151/coca-cola-reports-fourth-quarter-and-full-year-2025-results\n- Coca-Cola Q4 2025 earnings release (full PDF with segment tables): https://www.coca-colacompany.com/content/dam/company/us/en/media-center/Coca-Cola%20Q4%202025%20Earnings%20Release_Full%20Release_2.10.26.pdf\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
     "coca-cola",
     "soda",
@@ -36,7 +36,7 @@
   },
   "scenes": [
     {
-      "narration": "Coca-Cola made 47.9 billion dollars in 2025. But does it even make the bottles?",
+      "narration": "What if Coca-Cola stopped making most of its own bottles?",
       "visual": {
         "type": "image",
         "image": "hook",
@@ -45,7 +45,15 @@
       }
     },
     {
-      "narration": "After all its costs, Coca-Cola kept 13.8 billion dollars of operating income.",
+      "narration": "It mostly already has. Coke sells the syrup, and partner companies do the bottling.",
+      "visual": {
+        "type": "text",
+        "text": "Sell the syrup.",
+        "sub": "Partners do the bottles."
+      }
+    },
+    {
+      "narration": "In 2025, Coca-Cola made 47.9 billion dollars and kept 13.8 billion as operating income.",
       "visual": {
         "type": "stat",
         "value": 13.8,
@@ -56,7 +64,7 @@
       }
     },
     {
-      "narration": "Its own bottling arm kept only about 7 cents of every dollar it sold. The whole company kept almost 29.",
+      "narration": "That's almost 29 cents per dollar. Its own bottling arm kept only about 7.",
       "visual": {
         "type": "bars",
         "items": [
@@ -75,20 +83,12 @@
       }
     },
     {
-      "narration": "Coke has been handing more bottling to partners, and that arm's revenue fell 8 percent in 2025.",
+      "narration": "So Coke keeps handing bottling to partners. That arm's revenue fell 8 percent in 2025.",
       "visual": {
         "type": "image",
         "image": "mid",
         "overlay": "HANDING OFF",
         "overlay_sub": "bottling to partners"
-      }
-    },
-    {
-      "narration": "Sell the syrup, and let partners handle the bottles.",
-      "visual": {
-        "type": "text",
-        "text": "Sell the syrup.",
-        "sub": "Partners do the bottles."
       }
     }
   ],
@@ -103,7 +103,9 @@
     }
   ],
   "loop": "So next time you crack open a Coke, ask yourself:",
-  "score": 71,
+  "score": 80,
   "format": "how",
-  "visual_style": "charts3d"
+  "visual_style": "charts3d",
+  "title_style": "whatif",
+  "hook_style": "whatif"
 }
