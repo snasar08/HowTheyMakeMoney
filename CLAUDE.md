@@ -160,7 +160,8 @@ Posting uses 14 Shorts/week (2/day). Goal: build a buffer, capped so credits are
    `title_style` (question / number / statement / whatif). Real people: STYLE.md
    "Real people and brands".
    **Before writing, read `analytics/insights.md`** (updated by stats.yml before Saturday).
-2. Read `content/STYLE.md`, `content/angles.md` and a few existing scripts. Topics: household-name
+2. Read `content/STYLE.md`, `content/angles.md`, a few existing scripts, and the project skill
+   `.claude/skills/shorts-craft/SKILL.md` (hook variants, retention, loop guides; project rules win). Topics: household-name
    companies, plus jobs/careers people are curious about (YouTubers, streamers, pilots, NBA
    players, real estate agents…). Pick from `content/topics.md` or add new ones. A repeat company
    needs a clearly different angle, new figures, new hook, new B-roll and a different structure —

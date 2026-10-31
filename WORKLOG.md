@@ -1,3 +1,9 @@
+## Oct 31 2026 — shorts-craft skill
+- Added project skill `.claude/skills/shorts-craft` with MIT guides from github.com/agricidaniel/claude-youtube
+  (hook, shorts, shorts-playbook, retention-scripting, algorithm). Excluded its API/OAuth scripts and
+  paid DataForSEO parts. Weekly batch step 2 now reads it. Directory plugins (Social Media Skills,
+  ffmpeg-llm) need a one-tap Add by Sam; not installed.
+
 ## Oct 30 2026 — cover frame, loop seam, breath split, title test, blank-frame gate
 - fx.hook full on frame 0; fx.loop_blend; tts.breath_split (>14 words); lint long-sentence warning;
   gate on blank frames; CLAUDE.md weekly batch rotates title_style as an ongoing test.
