@@ -1,0 +1,347 @@
+{
+  "https://ir.roblox.com/financials/quarterly-results/default.aspx": {
+    "file": "pages/fac3919316c7.txt",
+    "fetched_at": "2026-10-31T19:53:15.013357+00:00",
+    "ok": false,
+    "error": "HTTP 403"
+  },
+  "https://ir.roblox.com/news/default.aspx": {
+    "file": "pages/4cb6357dc05e.txt",
+    "fetched_at": "2026-10-31T19:53:15.512398+00:00",
+    "ok": false,
+    "error": "HTTP 403"
+  },
+  "https://en.wikipedia.org/wiki/Roblox_Corporation": {
+    "file": "pages/b331791ca3ef.txt",
+    "fetched_at": "2026-10-31T19:53:15.880238+00:00",
+    "ok": true,
+    "chars": 28979,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Roblox_Corporation",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Roblox": {
+    "file": "pages/fe7a611e416c.txt",
+    "fetched_at": "2026-10-31T19:53:16.348775+00:00",
+    "ok": true,
+    "chars": 79784,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Roblox",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://gameindustrylibrary.com/documents/roblox-fy2026-q2-earnings-release/read": {
+    "file": "pages/90c7d0c0600d.txt",
+    "fetched_at": "2026-10-31T19:53:16.846619+00:00",
+    "ok": true,
+    "chars": 579,
+    "status": 200,
+    "final_url": "https://gameindustrylibrary.com/documents/roblox-fy2026-q2-earnings-release/read",
+    "content_type": "text/html; charset=utf-8"
+  },
+  "https://respawn.outlookindia.com/gaming/gaming-news/roblox-q2-2026-revenue-soars-36-to-15b-despite-bookings-miss": {
+    "file": "pages/6ea04101f8a0.txt",
+    "fetched_at": "2026-10-31T19:53:17.492675+00:00",
+    "ok": true,
+    "chars": 7566,
+    "status": 200,
+    "final_url": "https://respawn.outlookindia.com/gaming/gaming-news/roblox-q2-2026-revenue-soars-36-to-15b-despite-bookings-miss",
+    "content_type": "text/html; charset=utf-8"
+  },
+  "https://create.roblox.com/docs/production/earn-on-roblox/developer-exchange": {
+    "file": "pages/23e5a296a8ab.txt",
+    "fetched_at": "2026-10-31T19:53:18.089008+00:00",
+    "ok": false,
+    "error": "HTTP 404"
+  },
+  "https://investgame.net/wp-content/uploads/2026/05/2026-05-08-25q4_sony_earnings_clean_wp.pdf": {
+    "file": "pages/9ca2e56758b8.txt",
+    "fetched_at": "2026-10-31T19:53:19.563535+00:00",
+    "ok": true,
+    "chars": 81596,
+    "status": 200,
+    "final_url": "https://investgame.net/wp-content/uploads/2026/05/2026-05-08-25q4_sony_earnings_clean_wp.pdf",
+    "content_type": "application/pdf"
+  },
+  "https://www.sony.com/en/SonyInfo/IR/library/presen/er/": {
+    "file": "pages/56c5ba5a2b65.txt",
+    "fetched_at": "2026-10-31T19:53:21.274537+00:00",
+    "ok": false,
+    "error": "HTTP 403"
+  },
+  "https://tech-insider.org/ps5-93-million-sony-record-profit-2026/": {
+    "file": "pages/8224e38b1435.txt",
+    "fetched_at": "2026-10-31T19:53:21.702414+00:00",
+    "ok": false,
+    "error": "HTTP 403"
+  },
+  "https://www.invenglobal.com/articles/21682/sony-posts-record-gaming-operating-profit-though-bungie-impairment-casts-a-shadow": {
+    "file": "pages/d6132f662d37.txt",
+    "fetched_at": "2026-10-31T19:53:22.104945+00:00",
+    "ok": true,
+    "chars": 5589,
+    "status": 200,
+    "final_url": "https://www.invenglobal.com/articles/21682/sony-posts-record-gaming-operating-profit-though-bungie-impairment-casts-a-shadow",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/PlayStation_5": {
+    "file": "pages/7934d55c442c.txt",
+    "fetched_at": "2026-10-31T19:53:23.142891+00:00",
+    "ok": true,
+    "chars": 95760,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/PlayStation_5",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://blog.youtube/creator-and-artist-stories/youtube-partner-program-explained/": {
+    "file": "pages/9c390052df9a.txt",
+    "fetched_at": "2026-10-31T19:53:23.712871+00:00",
+    "ok": true,
+    "chars": 4056,
+    "status": 200,
+    "final_url": "https://blog.youtube/creator-and-artist-stories/youtube-partner-program-explained/",
+    "content_type": "text/html; charset=utf-8"
+  },
+  "https://support.google.com/youtube/answer/72857": {
+    "file": "pages/5bd024c3fa9a.txt",
+    "fetched_at": "2026-10-31T19:53:24.254618+00:00",
+    "ok": true,
+    "chars": 9020,
+    "status": 200,
+    "final_url": "https://support.google.com/youtube/answer/72857",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://support.google.com/youtube/answer/12504220": {
+    "file": "pages/ac2ace28cf74.txt",
+    "fetched_at": "2026-10-31T19:53:25.160143+00:00",
+    "ok": true,
+    "chars": 17054,
+    "status": 200,
+    "final_url": "https://support.google.com/youtube/answer/12504220",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://tubefilter.com/2023/01/10/youtube-shorts-ad-revenue-sharing-begin-new-partner-program/": {
+    "file": "pages/2341c00f434f.txt",
+    "fetched_at": "2026-10-31T19:53:26.173824+00:00",
+    "ok": true,
+    "chars": 5255,
+    "status": 200,
+    "final_url": "https://www.tubefilter.com/2023/01/10/youtube-shorts-ad-revenue-sharing-begin-new-partner-program/",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://help.twitch.tv/s/article/partner-plus-program": {
+    "file": "pages/2dec3d5339cf.txt",
+    "fetched_at": "2026-10-31T19:53:27.458196+00:00",
+    "ok": false,
+    "error": "HTTP 404"
+  },
+  "https://help.twitch.tv/s/article/subscription-guide": {
+    "file": "pages/fc9767add8b7.txt",
+    "fetched_at": "2026-10-31T19:53:28.158185+00:00",
+    "ok": false,
+    "error": "HTTP 404"
+  },
+  "https://variety.com/2023/digital/news/twitch-partner-plus-70-percent-revenue-split-streamers-1235645488": {
+    "file": "pages/2c3c715c1c76.txt",
+    "fetched_at": "2026-10-31T19:53:28.788085+00:00",
+    "ok": true,
+    "chars": 8318,
+    "status": 200,
+    "final_url": "https://variety.com/2023/digital/news/twitch-partner-plus-70-percent-revenue-split-streamers-1235645488/",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://www.shacknews.com/article/135982/twitch-partner-plus-program-70-30-split": {
+    "file": "pages/635aac162226.txt",
+    "fetched_at": "2026-10-31T19:53:30.059659+00:00",
+    "ok": true,
+    "chars": 3993,
+    "status": 200,
+    "final_url": "https://www.shacknews.com/article/135982/twitch-partner-plus-program-70-30-split",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Twitch_(service)": {
+    "file": "pages/578e0fe776b3.txt",
+    "fetched_at": "2026-10-31T19:53:30.722158+00:00",
+    "ok": true,
+    "chars": 147772,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Twitch_(service)",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://legionreport.com/nfl-minimum-salary/": {
+    "file": "pages/7d0e9f52c536.txt",
+    "fetched_at": "2026-10-31T19:53:31.351334+00:00",
+    "ok": true,
+    "chars": 7349,
+    "status": 200,
+    "final_url": "https://legionreport.com/nfl-minimum-salary/",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://salarysport.com/american-football/minimum-salaries/": {
+    "file": "pages/738a50110f4a.txt",
+    "fetched_at": "2026-10-31T19:53:32.370074+00:00",
+    "ok": true,
+    "chars": 8482,
+    "status": 200,
+    "final_url": "https://salarysport.com/american-football/minimum-salaries/",
+    "content_type": "text/html"
+  },
+  "https://www.profootballrumors.com/collective-bargaining-agreement": {
+    "file": "pages/9073372119da.txt",
+    "fetched_at": "2026-10-31T19:53:33.227927+00:00",
+    "ok": true,
+    "chars": 32665,
+    "status": 200,
+    "final_url": "https://www.profootballrumors.com/collective-bargaining-agreement",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/National_Football_League": {
+    "file": "pages/32e82783178e.txt",
+    "fetched_at": "2026-10-31T19:53:33.743295+00:00",
+    "ok": true,
+    "chars": 106590,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/National_Football_League",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/The_International_2021": {
+    "file": "pages/b5948877e7fe.txt",
+    "fetched_at": "2026-10-31T19:53:34.264127+00:00",
+    "ok": true,
+    "chars": 14787,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/The_International_2021",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://www.guinnessworldrecords.com/world-records/111053-largest-esports-prize-pool-for-a-single-tournament.html": {
+    "file": "pages/99aa31236fc4.txt",
+    "fetched_at": "2026-10-31T19:53:34.686420+00:00",
+    "ok": true,
+    "chars": 2622,
+    "status": 200,
+    "final_url": "https://www.guinnessworldrecords.com/world-records/111053-largest-esports-prize-pool-for-a-single-tournament",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://gamespot.com/articles/team-spirit-wins-dota-2s-the-international-claiming-18-million-prize/1100-6497140/": {
+    "file": "pages/a75601abbd3f.txt",
+    "fetched_at": "2026-10-31T19:53:35.594098+00:00",
+    "ok": false,
+    "error": "HTTP 403"
+  },
+  "https://en.wikipedia.org/wiki/2019_Fortnite_World_Cup": {
+    "file": "pages/949ef20b56a2.txt",
+    "fetched_at": "2026-10-31T19:53:36.207334+00:00",
+    "ok": false,
+    "error": "HTTP 404"
+  },
+  "https://newsroom.spotify.com/company-info/": {
+    "file": "pages/a8d24d228a8e.txt",
+    "fetched_at": "2026-10-31T19:53:36.791319+00:00",
+    "ok": true,
+    "chars": 3456,
+    "status": 200,
+    "final_url": "https://newsroom.spotify.com/company-info/",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://www.hypebot.com/spotify-q3-2026-788m-users-and-306m-subscribers/": {
+    "file": "pages/a8c3a92e0f21.txt",
+    "fetched_at": "2026-10-31T19:53:37.358029+00:00",
+    "ok": true,
+    "chars": 4697,
+    "status": 200,
+    "final_url": "https://www.hypebot.com/spotify-q3-2026-788m-users-and-306m-subscribers/",
+    "content_type": "text/html; charset=utf-8"
+  },
+  "https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population": {
+    "file": "pages/24af58fdefb2.txt",
+    "fetched_at": "2026-10-31T19:53:37.939472+00:00",
+    "ok": true,
+    "chars": 70259,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://corporate.mcdonalds.com/corpmcd/our-company/who-we-are.html": {
+    "file": "pages/51d291cbab14.txt",
+    "fetched_at": "2026-10-31T19:53:38.479171+00:00",
+    "ok": false,
+    "error": "HTTP 403"
+  },
+  "https://corporate.mcdonalds.com/llms.txt": {
+    "file": "pages/301f5f1dea66.txt",
+    "fetched_at": "2026-10-31T19:53:38.923525+00:00",
+    "ok": false,
+    "error": "HTTP 403"
+  },
+  "https://en.wikipedia.org/wiki/McDonald%27s": {
+    "file": "pages/59abf19d0a29.txt",
+    "fetched_at": "2026-10-31T19:53:39.291425+00:00",
+    "ok": true,
+    "chars": 134743,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/McDonald%27s",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Forbes_list_of_the_world%27s_highest-paid_athletes": {
+    "file": "pages/d45abcb77f35.txt",
+    "fetched_at": "2026-10-31T19:53:39.847636+00:00",
+    "ok": true,
+    "chars": 25922,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Forbes_list_of_the_world%27s_highest-paid_athletes",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://www.forbes.com.au/news/sport/the-worlds-10-highest-paid-athletes-2026/": {
+    "file": "pages/4b57e702da43.txt",
+    "fetched_at": "2026-10-31T19:53:40.295921+00:00",
+    "ok": true,
+    "chars": 17870,
+    "status": 200,
+    "final_url": "https://www.forbes.com.au/news/sport/the-worlds-10-highest-paid-athletes-2026/",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://www.espn.com/mlb/story/_/id/48846143": {
+    "file": "pages/733d3810a268.txt",
+    "fetched_at": "2026-10-31T19:53:41.116485+00:00",
+    "ok": true,
+    "chars": 0,
+    "status": 202,
+    "final_url": "https://www.espn.com/mlb/story/_/id/48846143",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Markus_Persson": {
+    "file": "pages/5fb1a6ea6806.txt",
+    "fetched_at": "2026-10-31T19:53:41.452676+00:00",
+    "ok": true,
+    "chars": 41182,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Markus_Persson",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Mojang_Studios": {
+    "file": "pages/1ee0a089aff6.txt",
+    "fetched_at": "2026-10-31T19:53:41.913505+00:00",
+    "ok": true,
+    "chars": 50743,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Mojang_Studios",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://news.microsoft.com/2014/09/15/minecraft-to-join-microsoft/": {
+    "file": "pages/4dc865bac3c9.txt",
+    "fetched_at": "2026-10-31T19:53:42.385549+00:00",
+    "ok": true,
+    "chars": 5736,
+    "status": 200,
+    "final_url": "https://news.microsoft.com/source/2014/09/15/minecraft-to-join-microsoft/",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Minecraft": {
+    "file": "pages/a32730c8de57.txt",
+    "fetched_at": "2026-10-31T19:53:43.011189+00:00",
+    "ok": true,
+    "chars": 170570,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Minecraft",
+    "content_type": "text/html; charset=UTF-8"
+  }
+}

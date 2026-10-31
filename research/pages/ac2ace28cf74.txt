@@ -1,0 +1,331 @@
+URL: https://support.google.com/youtube/answer/12504220
+FINAL_URL: https://support.google.com/youtube/answer/12504220
+FETCHED: 2026-10-31T19:53:25.160143+00:00
+
+Skip to main content 
+
+YouTube Help
+
+Sign in
+
+Google Help
+
+Help Center
+
+Fix a problem
+
+Watch videos
+
+Manage your account & settings
+
+Supervised experiences on YouTube
+
+YouTube Premium
+
+Create & grow your channel
+
+Monetize your content
+
+Policy, safety, & copyright
+
+Community
+
+YouTube
+
+Privacy Policy
+
+YouTube Terms of Service
+
+Submit feedback
+
+Send feedback on...
+
+This help content & information
+
+General Help Center experience
+
+CloseNext
+
+Help Center
+
+Community
+
+Creator Tips
+
+YouTube
+
+Fix a problem
+Troubleshoot problems playing videosTroubleshoot account issuesFix upload problemsGet help with the YouTube Partner ProgramLearn about recent updates on YouTubeGet help with YouTube
+
+Watch videos
+Find videos to watchChange video settingsWatch videos on different devicesComment, subscribe, & connect with creatorsSave or share videos & playlistsTroubleshoot problems playing videosPurchase & manage movies, TV shows & products on YouTube
+
+Manage your account & settings
+Sign up and manage your accountManage account settingsManage privacy settingsManage ad settingsManage accessibility settingsTroubleshoot account issuesYouTube updates
+
+Supervised experiences on YouTube
+Supervised accounts for kidsSupervised accounts for teens
+
+YouTube Premium
+Join YouTube PremiumYouTube Premium benefitsManage your Premium membershipManage Premium billing & paymentsFix YouTube Premium issues
+
+Create & grow your channel
+Upload videosEdit videos & video settingsCreate ShortsEdit videos with YouTube CreateCustomize & manage your channelAnalyze performance with analyticsTranslate videos, subtitles, & captionsManage your posts & commentsLive stream on YouTubeYouTube Creator CommunityBecome a podcast creator on YouTubeCreator and Studio App updates
+
+Monetize your content
+YouTube Partner ProgramMake money on YouTubeGet paidUnderstand ads and related policiesGet help with the YouTube Partner ProgramYouTube for Content Managers
+
+Policy, safety, & copyright
+YouTube policiesReporting and enforcementPrivacy and safety centerCopyright and rights management
+
+YouTube Shorts monetization policies
+
+Monetizing partners can earn money from ads that are viewed between videos in the Shorts Feed.
+
+What you'll find in this article
+
+This article explains:
+
+Policies that apply to YouTube Shorts monetization
+
+Ad formats eligible for Shorts revenue sharing
+
+How ad revenue sharing works for Shorts
+
+Where to see your Shorts Feed ad revenue
+
+Learn more about YouTube Shorts monetization
+
+Policies that apply to YouTube Shorts monetization
+
+If you’re monetizing on YouTube, it’s important your channel follows the YouTube channel monetization policies, including our policies on repetitious and reused content. This also includes YouTube’s Community Guidelines, Terms of Service, Copyright, and Google AdSense program policies.
+
+Turning on Shorts ad revenue sharing
+
+To start sharing in Shorts ad revenue, monetizing partners will need to accept the Shorts Monetization Module—terms that let you earn from ads and YouTube Premium in the Shorts Feed. Shorts ad revenue sharing will apply to your channel’s eligible Shorts views starting on the date you accept. Shorts views accrued prior to accepting the Shorts Monetization Module are not eligible for Shorts ad revenue sharing.
+
+Starting February 1, 2027, to be eligible to earn a share of Shorts ad revenue from the Creator Pool and YouTube Premium revenue for each month, you will need to have at least 10 million qualified Shorts views in the last 90 days. Total views will be measured against this threshold over the 90 day period ending on the 15th day of the calendar month preceding the month for which earnings are being calculated.
+
+Content suitable for ads
+
+All content monetizing with ads must follow our advertiser-friendly content guidelines. On Shorts, only views of content that follow our advertiser-friendly guidelines will be eligible for revenue sharing.
+
+Ineligible Shorts views
+
+For the purposes of calculating payments, YouTube uses eligible “Engaged views”. This means YouTube won’t count engaged views that are ineligible. Examples where ineligible Shorts views may occur:
+
+Non-original Shorts, such as unedited clips from others' movies or TV shows, reuploading other creators' content from YouTube or other platform, or compilations with no original content added
+
+Artificial or fake views of Shorts, such as from automated click or scroll bots
+
+Views of Shorts that are inconsistent with our advertiser-friendly content guidelines
+
+Blocked Shorts
+
+Shorts over one minute in length that contain claimed content are blocked and not eligible for monetization. Learn about three-minutes Shorts and music eligibility for Shorts.
+
+Ads eligible for Shorts revenue sharing
+
+NEW: Shorts Ad Revenue, New Paths to YPP & Shorts Super Thanks!
+
+Revenue is shared on ads that are viewed between videos in the Shorts Feed. Shorts views exclusively receive ad revenue sharing from the Shorts Feed, which is separate from long-form video monetization on the Watch Page.
+
+How ad revenue sharing works for Shorts
+
+NEW: Shorts Ad Revenue Sharing
+
+Only monetizing partners who’ve accepted the Shorts Monetization Module can earn ad revenue from Shorts.
+
+To be eligible for Shorts ad and YouTube Premium revenue for each month, you will need to have at least 10 million qualified Shorts views in the last 90 days.
+
+There are four steps to how Shorts ad revenue sharing works:
+
+Pool Shorts Feed ad revenue. Each month, revenue from ads running between videos in the Shorts Feed gets added together and used to both reward creators and help cover costs of music licensing.
+
+Calculate the Creator Pool. Shorts Feed ad revenue is then allocated into the Creator Pool based on engaged views and music usage across Shorts uploaded by monetizing creators.
+
+If a monetizing creator uploads a Short without any music, all of the revenue associated with it goes into the Creator Pool.
+
+If a monetizing creator uploads a Short with music in it, then YouTube will split the revenue associated with its views between the Creator Pool and music partners based on the number of tracks used.
+
+For example, if a monetizing creator uploads a Short with 1 track, half of the revenue associated with its engaged views would be allocated to the Creator Pool, and the other half used to cover the costs of music licensing. If the Short features 2 music tracks, then one third of the revenue associated with its engaged views would be allocated to the Creator Pool, and the other two thirds used to cover the costs of music licensing.
+
+Allocate the Creator Pool. From the overall amount in the Creator Pool, revenue is distributed to monetizing creators based on their share of total engaged views from monetizing creators’ Shorts in each country. For example, if a creator gets 5% of all eligible engaged Shorts views uploaded by monetizing creators, they’ll be allocated 5% of the revenue in the Creator Pool.
+
+Apply revenue share. Monetizing creators will keep 45% of their allocated revenue, regardless if music was used or not.
+
+What’s not included in the Creator Pool:
+
+Revenue associated with views of Shorts uploaded by creators who haven’t yet accepted the Shorts Monetization Module, or aren’t yet eligible to monetize their Shorts. This revenue will be used to cover the costs of music licensing and/or be retained by YouTube.
+
+Revenue associated with views of Shorts uploaded by music partners.
+
+Revenue associated with views of Shorts that are determined to be ineligible.
+
+Revenue associated with any ads shown upon opening the Shorts Feed before a Short is viewed (e.g. the YouTube Shorts Masthead).
+
+Revenue associated with any ads shown on navigational pages within the Shorts player.
+
+Revenue associated with Image Posts appearing in the Shorts Feed
+
+Understand Creator Pool with an example
+
+Let’s review a hypothetical example to better understand how this works.
+
+This example assumes that you have met the eligibility requirement for monthly Shorts ad and YouTube Premium revenue of 10 million qualified Shorts views in the last 90 days.
+
+Hypothetical example
+
+As a monetizing creator, let’s say you upload a Short that uses 1 music track. Here’s how we’d calculate what your Short earns in Country A this month.
+
+There are 100 million total engaged Shorts views in Country A, and all are on Shorts uploaded by monetizing creators.
+
+$100,000 is earned from ads that play between Shorts in the Shorts Feed.
+
+20% of these Shorts use 1 music track, so the Creator Pool is $90,000 and $10,000 is used to cover the costs of music licensing.
+
+Your Short has 1 million engaged views, so you are allocated 1% of the Creator Pool, or $900. Your allocation from the Creator Pool is not affected by your use of a music track.
+
+The 45% revenue share is then applied to your allocation, and you earn $405 for your Shorts views in Country A.
+
+Understand Targeted Shorts ads 
+
+Starting February 1, 2027, Shorts ads targeted to specific channels in small groups of 5 or fewer channels will be eligible to earn direct revenue. For these targeted Shorts ads, creators will keep 45% of the net revenue from the specific ad. This allows monetizing creators to earn direct revenue from these placements, in addition to the Creator Pool which distributes revenue from the Shorts Feed based on overall views.
+
+Use of third-party content in Shorts
+
+In certain circumstances, when a Short features third-party content or remixed content, the views allocated to the Short will be divided between the uploader and any third-party rightsholders (owners of other content used in a Short) for the purposes of calculating the Creator Pool and revenue share to monetizing creators. The following policies describe how this will occur. We may update these policies and will inform you of any changes.
+
+How use of third-party content affects the Creator Pool. When the amount of the Creator Pool is calculated, only music content made available by YouTube's music industry partners or generated by Dream Track will be credited as making a contribution to a Short. This means that only when music content is used in a Short will it reduce the amount of engaged views and associated revenue allocated to the Creator Pool. No other category of third-party content will be credited as making a contribution to a Short at this time, even when a Content ID monetize policy is set on that content. However, we are in the early stages of developing our monetization model for other categories of content.
+
+The examples above show how engaged views and associated revenue are split to calculate the Creator Pool when music content is used in a Short.
+
+How use of third-party content affects allocations from the Creator Pool. When paying monetizing creators their share from the Creator Pool, each monetizing creator will be allocated 100% of the total number of engaged views on their Shorts, regardless of whether any music (including music generated by Dream Track) is used in the Short. As a result, using music in a Short won't affect a creator’s allocation from the Creator Pool or their revenue share rate.
+
+YouTube Premium and Premium Lite subscription revenue sharing for Shorts
+
+YouTube Premium is a paid subscription option which enables users to enjoy ad-free content, background playback, downloads, and premium access to the YouTube Music app. This offering also applies to engaged views on Shorts.
+
+YouTube will pay 45% of the net revenue from YouTube Premium (including Premium Lite) that is allocated to monetizing creators for Shorts. A portion of YouTube Premium revenues are allocated to help cover costs of music licensing. Payments to each creator are based on their share of subscription Shorts views within each country.
+
+Where to see your Shorts Feed ad revenue
+
+YouTube Analytics will start displaying estimated daily Shorts Feed ad revenue along with other performance metrics when available, or from the day you start monetizing with Shorts ads. Learn more about how to check your YouTube revenue.
+
+Existing timelines for payment thresholds and other AdSense for YouTube details apply—learn more about AdSense for YouTube.
+
+Studio Content Manager
+
+For Studio Content Manager users, downloadable reports will be available for non-music partners only. These reports will include revenue details segmented by date and country/region for any monetizing Shorts uploaded by relevant partners.
+
+Want to learn more about your Shorts performance? Check out our Creator Tips for YouTube Analytics!
+
+Learn more about YouTube Shorts monetization 
+
+Why is Shorts ad revenue being pooled?
+
+Shorts uses an ad format different from long-form video, requiring us to take a unique approach to revenue sharing. By pooling revenue and then distributing it based on share of engaged views, we aim to reward all monetizing creators who make up the Shorts experience, not just those who have an ad next to their video. As an additional benefit, this model also simplifies the complexities of music licensing, enabling creators to achieve their creative vision without worrying about earning less due to music use.
+
+Do creators actually get to keep 45% of Shorts revenue?
+
+Each month, revenue from ads appearing between videos in the Shorts Feed is pooled together and used to reward Shorts creators and cover the costs of music licensing. From the overall amount allocated to creators (also known as the Creator Pool), they keep 45% of the revenue, regardless of whether they use music in their Shorts.
+
+What do you mean by "music" specifically?
+
+“Music” in the context of Shorts refers to content made available or claimed by YouTube's music industry partners. This may include actual music audio or tracks, music videos, or other music content like artist interviews. It also includes music content generated by Dream Track.
+
+Why is my 1-3 minute Short not eligible for the Shorts revenue sharing model?
+
+If you uploaded a three-minute video before October 15, 2024 and want to monetize it as a Short, make sure there is an active first-party claim on a video. Three-minute Shorts uploaded after October 15, 2024 can monetize in the Shorts revenue sharing model. Learn more about three-minute Shorts.
+
+Your video is not eligible for monetization. Please review what content isn't eligible for Shorts monetization and find your claimed videos.
+
+My Shorts are in the Shorts Feed, but I'm not earning revenue. Can I earn money from those ads without being in YPP?
+
+No. Only monetizing partners who’ve accepted the Shorts Monetization Module can earn ad and subscription revenue from Shorts. The remaining revenue will be used to cover the costs of music licensing or be retained by YouTube.
+
+ How will I know if my Shorts are earning ad revenue? What if I want to stop earning Shorts ad revenue?
+
+From the date you accept the Shorts Monetization Module, engaged views of any Short on your channel will be considered for Shorts ad revenue sharing. Shorts views accrued prior to accepting the Shorts Monetization Module are not eligible for Shorts ad revenue sharing.
+
+After uploading your Short, you can see its monetization status in the Content section of YouTube Studio. Shorts with views being considered for Shorts ad revenue sharing will not have a “No ad earnings” notice on them. Learn more about the different notices that could impact your content.
+
+YouTube Analytics will also start displaying estimated daily Shorts Feed ad revenue along with other performance metrics on the date you start monetizing with Shorts ads. Learn more about how to check your YouTube revenue.
+
+ If you no longer want to monetize your channel’s Shorts views with ads, you can opt out of the Shorts Monetization Module by contacting Creator Support.
+
+Was this helpful?
+
+How can we improve it?
+
+YesNo
+
+Submit
+
+Need more help?
+
+Try these next steps:
+
+ Post to the help community Get answers from community members 
+
+true
+
+Shorts
+
+1 of 2
+YouTube Shorts monetization policies
+
+2 of 2
+Brand Partnerships: External Links on Shorts
+
+ ©2026 Google 
+ Privacy Policy 
+
+ YouTube Terms of Service 
+
+ Language Afrikaans‎azərbaycan‎bosanski‎català‎dansk‎Deutsch‎eesti‎English (United Kingdom)‎español‎español (Latinoamérica)‎euskara‎Filipino‎français‎français (Canada)‎Gaeilge‎galego‎hrvatski‎Indonesia‎isiZulu‎italiano‎Kiswahili‎latviešu‎lietuvių‎magyar‎Malti‎Melayu‎Nederlands‎norsk‎o‘zbek‎polski‎português‎português (Brasil)‎română‎shqip‎slovenčina‎slovenščina‎suomi‎svenska‎Tiếng Việt‎Türkçe‎íslenska‎čeština‎Ελληνικά‎беларуская‎български‎кыргызча‎македонски‎монгол‎русский‎српски‎українська‎қазақ тілі‎հայերեն‎‏עברית‏اردو‏العربية‏فارسیनेपाली‎मराठी‎हिन्दी‎অসমীয়া‎বাংলা‎ਪੰਜਾਬੀ‎ગુજરાતી‎ଓଡ଼ିଆ‎தமிழ்‎తెలుగు‎ಕನ್ನಡ‎മലയാളം‎සිංහල‎ไทย‎ລາວ‎မြန်မာ‎ქართული‎አማርኛ‎ខ្មែរ‎中文（简体）‎中文（繁體）‎中文（香港）‎日本語‎한국어‎ English‎ 
+
+Enable Dark Mode
+
+Send feedback on...
+ This help content & information General Help Center experience 
+
+Search
+
+Clear search
+
+Close search
+
+Google apps
+
+Main menu
+
+839862611357155532
+
+true
+
+Search Help Center
+
+false
+
+true
+
+true
+
+true
+
+true
+
+true
+
+59
+
+false
+
+false
+
+false
+
+false
+
+false

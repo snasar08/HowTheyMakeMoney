@@ -1,0 +1,314 @@
+URL: https://support.google.com/youtube/answer/72857
+FINAL_URL: https://support.google.com/youtube/answer/72857
+FETCHED: 2026-10-31T19:53:24.254618+00:00
+
+Skip to main content 
+
+YouTube Help
+
+Sign in
+
+Google Help
+
+Help Center
+
+Fix a problem
+
+Watch videos
+
+Manage your account & settings
+
+Supervised experiences on YouTube
+
+YouTube Premium
+
+Create & grow your channel
+
+Monetize your content
+
+Policy, safety, & copyright
+
+Community
+
+YouTube
+
+Privacy Policy
+
+YouTube Terms of Service
+
+Submit feedback
+
+Send feedback on...
+
+This help content & information
+
+General Help Center experience
+
+CloseNext
+
+Help Center
+
+Community
+
+Creator Tips
+
+YouTube
+
+Fix a problem
+Troubleshoot problems playing videosTroubleshoot account issuesFix upload problemsGet help with the YouTube Partner ProgramLearn about recent updates on YouTubeGet help with YouTube
+
+Watch videos
+Find videos to watchChange video settingsWatch videos on different devicesComment, subscribe, & connect with creatorsSave or share videos & playlistsTroubleshoot problems playing videosPurchase & manage movies, TV shows & products on YouTube
+
+Manage your account & settings
+Sign up and manage your accountManage account settingsManage privacy settingsManage ad settingsManage accessibility settingsTroubleshoot account issuesYouTube updates
+
+Supervised experiences on YouTube
+Supervised accounts for kidsSupervised accounts for teens
+
+YouTube Premium
+Join YouTube PremiumYouTube Premium benefitsManage your Premium membershipManage Premium billing & paymentsFix YouTube Premium issues
+
+Create & grow your channel
+Upload videosEdit videos & video settingsCreate ShortsEdit videos with YouTube CreateCustomize & manage your channelAnalyze performance with analyticsTranslate videos, subtitles, & captionsManage your posts & commentsLive stream on YouTubeYouTube Creator CommunityBecome a podcast creator on YouTubeCreator and Studio App updates
+
+Monetize your content
+YouTube Partner ProgramMake money on YouTubeGet paidUnderstand ads and related policiesGet help with the YouTube Partner ProgramYouTube for Content Managers
+
+Policy, safety, & copyright
+YouTube policiesReporting and enforcementPrivacy and safety centerCopyright and rights management
+
+How to earn money on YouTube
+
+Starting February 1, 2027, we are introducing updates to the YouTube Partner Program (YPP). To continue fully monetizing your content, review and accept the updated terms in YouTube Studio by January 31, 2027.
+
+Due to the ongoing war in Ukraine, we will be temporarily pausing Google and YouTube ads from serving to users located in Russia. Learn more.
+
+You can earn money on YouTube by applying for and being accepted to the YouTube Partner Program. Only channels that follow our YouTube channel monetization policies may be able to monetize.
+
+Intro to Making Money on YouTube
+
+Subscribe to the YouTube Creators channel for the latest news, updates, and tips.
+
+A few notes
+
+We won’t tell you what you can create on YouTube, but we do have a responsibility to do right by our viewers, creators and advertisers. If you’re in the YouTube Partner Program, you can earn money through YouTube. When in the YouTube Partner Program, we hold you to a higher standard.
+
+To make sure we’re rewarding good creators, we review your channel before you’re accepted in the YouTube Partner Program. We also constantly review channels to make sure you’re meeting all our policies and guidelines.
+
+You may be liable to pay taxes on your earnings from YouTube; find out more below.
+
+Ways to make money in the YouTube Partner Program
+
+You can make money on YouTube through the following features:
+
+ | 
+
+Advertising revenue: Earn revenue from Watch Page ads and Shorts Feed ads.
+
+Shopping: Your fans can browse and buy products from your store, or products you tag from other brands through the YouTube Shopping affiliate program.
+
+YouTube Premium revenue: Get part of a YouTube Premium subscriber’s subscription fee when they watch your content.
+
+ | 
+
+Channel memberships: Your members make recurring monthly payments in exchange for access to special perks.
+
+Super Chat & Super Stickers: Your fans pay to get their messages or animated images highlighted in live chat streams.
+
+Super Thanks: Your fans pay to view a fun animation and get their message highlighted in your video or Short’s comments section.
+
+Each feature has its own set of eligibility requirements on top of subscriber and view count requirements. If our reviewers believe that your channel or video is not eligible, specific features may not be available. These extra thresholds exist for two main reasons. The most important one is that we have to meet legal requirements in every area where the feature is available. Then, because we want to reward good creators, we need to make sure we have enough context on your channel. Generally, this context means we need more content to review.
+
+Keep in mind that we constantly review channels to make sure your content is in line with our policies.
+
+Minimum eligibility requirements to turn on monetization features
+
+Keep in mind that each feature has its own requirements. Some features may not be available to you due to local legal requirements.
+
+Once you've been accepted in the YouTube Partner Program, you may get access to these monetization features:
+
+ | 
+ | Channel Thresholds
+ | Minimum Requirements
+
+ | 
+
+Channel memberships
+
+ | 
+
+​​​​​​500 subscribers
+
+3 public uploads in the last 90 days
+
+Either:
+
+3,000 qualified watch hours on long form videos in the last 365 days
+
+3 million qualified Shorts views in the last 90 days
+
+ | 
+
+Be at least 18 years old
+
+Live in a country where channel memberships is available
+
+Have accepted the Commerce Product Module or formerly available Commerce Product Addendum
+
+Channel isn’t set as Made for Kids and doesn’t have a significant number of videos set as made for kids or ineligible
+
+Not a music channel under SRAV
+
+Full requirements can be found here
+
+ | 
+
+Shopping (your own products and products from other brands)
+
+ | 
+
+Meet subscriber threshold or be an Official Artist Channel
+
+Channel isn’t set as Made for Kids and doesn’t have a significant number of videos set as made for kids
+
+Channel doesn’t have a significant number of videos that violate our Channel Monetization Policies
+
+Your channel hasn’t received any Hate Speech Community Guideline Strikes
+
+Full requirements can be found here
+
+ | 
+
+Super Chat & Super Stickers
+
+ | 
+
+Be at least 18 years old
+
+Live in a country/region where Super Chat and Super Stickers are available
+
+Have accepted the Commerce Product Module or formerly available Commerce Product Addendum
+
+Full requirements can be found here
+
+ | 
+
+Super Thanks
+
+ | 
+
+Be at least 18 years old
+
+Live in a country/region where Super Thanks is available
+
+Have accepted the Commerce Product Module or formerly available Commerce Product Addendum
+
+Channel is not a music channel under SRAV
+
+Full requirements can be found here
+
+ | 
+
+Ad revenue
+
+ | 
+
+1,000 subscribers
+
+Either:
+
+4,000 qualified watch hours on long form videos in the last 365 days
+
+10 million qualified Shorts views in the last 90 days
+
+ | 
+
+Be at least 18 years old, or have a legal guardian older than 18 years of age who can handle your payments via AdSense for YouTube
+
+Live in a country/region where YPP is available
+
+Accept the relevant contract Modules
+
+Create content that meets our advertiser-friendly content guidelines
+
+ | YouTube Premium revenue
+ | 
+
+Accept the relevant contract modules
+
+Create content watched by a viewer who is a YouTube Premium subscriber
+
+Get creator tips on how to make money on YouTube.
+
+Your YouTube earnings and tax liability
+
+Earning money on YouTube or receiving Shorts bonuses are a great way to be rewarded for good, engaging content on the platform. Keep in mind that you may be liable to pay taxes to your country of residence on any income earned from your monetized videos on YouTube. Check with your local tax authorities for detailed guidance.
+
+Was this helpful?
+
+How can we improve it?
+
+YesNo
+
+Submit
+
+Need more help?
+
+Try these next steps:
+
+ Post to the help community Get answers from community members 
+
+false
+
+ ©2026 Google 
+ Privacy Policy 
+
+ YouTube Terms of Service 
+
+ Language Afrikaans‎azərbaycan‎bosanski‎català‎dansk‎Deutsch‎eesti‎English (United Kingdom)‎español‎español (Latinoamérica)‎euskara‎Filipino‎français‎français (Canada)‎Gaeilge‎galego‎hrvatski‎Indonesia‎isiZulu‎italiano‎Kiswahili‎latviešu‎lietuvių‎magyar‎Malti‎Melayu‎Nederlands‎norsk‎o‘zbek‎polski‎português‎português (Brasil)‎română‎shqip‎slovenčina‎slovenščina‎suomi‎svenska‎Tiếng Việt‎Türkçe‎íslenska‎čeština‎Ελληνικά‎беларуская‎български‎кыргызча‎македонски‎монгол‎русский‎српски‎українська‎қазақ тілі‎հայերեն‎‏עברית‏اردو‏العربية‏فارسیनेपाली‎मराठी‎हिन्दी‎অসমীয়া‎বাংলা‎ਪੰਜਾਬੀ‎ગુજરાતી‎ଓଡ଼ିଆ‎தமிழ்‎తెలుగు‎ಕನ್ನಡ‎മലയാളം‎සිංහල‎ไทย‎ລາວ‎မြန်မာ‎ქართული‎አማርኛ‎ខ្មែរ‎中文（简体）‎中文（繁體）‎中文（香港）‎日本語‎한국어‎ English‎ 
+
+Enable Dark Mode
+
+Send feedback on...
+ This help content & information General Help Center experience 
+
+Search
+
+Clear search
+
+Close search
+
+Google apps
+
+Main menu
+
+2255499524251032936
+
+true
+
+Search Help Center
+
+false
+
+true
+
+true
+
+true
+
+true
+
+true
+
+59
+
+false
+
+false
+
+false
+
+false
+
+false

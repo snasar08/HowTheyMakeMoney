@@ -1,0 +1,1908 @@
+URL: https://en.wikipedia.org/wiki/Mojang_Studios
+FINAL_URL: https://en.wikipedia.org/wiki/Mojang_Studios
+FETCHED: 2026-10-31T19:53:41.913505+00:00
+
+Jump to content
+
+Main menu
+
+Main menu
+
+ move to sidebar
+ hide
+
+ Navigation
+
+Main page
+
+Contents
+
+Current events
+
+Random article
+
+About Wikipedia
+
+Contact us
+
+ Contribute
+
+Help
+
+Learn to edit
+
+Community portal
+
+Recent changes
+
+Upload file
+
+Special pages
+
+Search
+
+ Search
+
+Appearance
+
+Donate
+
+Create account
+
+Log in
+
+Personal tools
+
+Donate
+
+Create account
+
+Log in
+
+Contents
+
+ move to sidebar
+ hide
+
+(Top)
+
+ 1
+ History
+
+ Toggle History subsection
+
+ 1.1
+ Background and formation (2009–2010)
+
+ 1.2
+ Continued growth (2011–2013)
+
+ 1.3
+ Microsoft subsidiary (2014–present)
+
+ 2
+ Games developed
+
+ Toggle Games developed subsection
+
+ 2.1
+ Game jam games
+
+ 2.2
+ Unreleased games
+
+ 3
+ Games published
+
+ 4
+ Legal disputes
+
+ Toggle Legal disputes subsection
+
+ 4.1
+ Scrolls naming dispute
+
+ 4.2
+ Uniloc USA, Inc. et al v. Mojang AB
+
+ 4.3
+ Putt-Putt cease and desist
+
+ 5
+ References
+
+ 6
+ External links
+
+Toggle the table of contents
+
+Mojang Studios
+
+52 languages
+
+العربية
+
+مصرى
+
+Asturianu
+
+Azərbaycanca
+
+تۆرکجه
+
+Беларуская
+
+বাংলা
+
+Català
+
+کوردی
+
+Čeština
+
+Dansk
+
+Deutsch
+
+Ελληνικά
+
+Español
+
+فارسی
+
+Suomi
+
+Français
+
+עברית
+
+हिन्दी
+
+Hrvatski
+
+Magyar
+
+Հայերեն
+
+Bahasa Indonesia
+
+Italiano
+
+日本語
+
+ქართული
+
+Қазақша
+
+한국어
+
+Lietuvių
+
+Latviešu
+
+Bahasa Melayu
+
+မြန်မာဘာသာ
+
+Nederlands
+
+Norsk bokmål
+
+Polski
+
+Português
+
+Română
+
+Русский
+
+Simple English
+
+Slovenčina
+
+Српски / srpski
+
+Svenska
+
+ไทย
+
+Toki pona
+
+Türkçe
+
+Українська
+
+اردو
+
+Tiếng Việt
+
+吴语
+
+文言
+
+粵語
+
+中文
+
+Edit links
+
+Article
+
+Talk
+
+ English
+
+Read
+
+View source
+
+View history
+
+Tools
+
+Tools
+
+ move to sidebar
+ hide
+
+ Actions
+
+Read
+
+View source
+
+View history
+
+ General
+
+What links here
+
+Related changes
+
+Upload file
+
+Permanent link
+
+Page information
+
+Cite this page
+
+Get shortened URL
+
+Switch to legacy parser
+
+ Print/export
+
+Download as PDF
+
+Printable version
+
+ In other projects
+
+Wikimedia Commons
+
+Wikidata item
+
+Appearance
+
+ move to sidebar
+ hide
+
+Coordinates: 59°19′14.6″N 18°3′5.3″E﻿ / ﻿59.320722°N 18.051472°E﻿ / 59.320722; 18.051472
+
+From Wikipedia, the free encyclopedia
+
+Swedish video game developer
+
+"Mojang Specifications" redirects here. For the earlier company formerly named "Mojang Specifications AB", see Code Club AB.
+
+"Mojang" redirects here; not to be confused with Mahjong.
+
+ | Mojang AB
+
+ | 
+Logo used since 2020
+
+ | 
+Headquarters on Söder Mälarstrand 43, Stockholm (pictured in 2022)
+
+ | 
+Trade name
+ | Mojang Studios (2020–present)
+
+ | Formerly | Mojang Specifications (2009–2010)
+
+ | Type | Subsidiary
+
+ | Industry | Video games
+
+ | Founded | 18 June 2009; 17 years ago (2009-06-18)
+
+ | Founder | Markus Persson
+
+ | Headquarters | 
+ Stockholm
+, 
+ Sweden
+
+ | 
+Number of locations
+ | 5 (2021)
+
+ | Key people | Maria Angelidou-Smith (CEO)
+
+ | Products | Minecraft series
+
+ | 
+Number of employees
+ | ≈600 (2021)
+
+ | Parent | 
+
+Xbox Game Studios (2014–2026)
+
+Xbox (2026–present)
+
+Mojang AB,[1] trading as Mojang Studios, is a Swedish video game developer and a studio of Xbox based in Stockholm. The studio is best known for developing the sandbox and survival game Minecraft, the best-selling video game of all time.
+
+Mojang Studios was founded by the independent video game designer Markus Persson in 2009 as Mojang Specifications for Minecraft's development. The studio inherited its name from another video game venture Persson had left two years prior. Following the game's initial release, Persson, in conjunction with Jakob Porsér, incorporated the business in late 2010, and they hired Carl Manneh as the company's chief executive officer. Other early hires included Daniel Kaplan and Jens Bergensten. Minecraft became highly successful, giving Mojang sustained growth. With a desire to move on from the game, Persson offered to sell his share in Mojang, and the company was acquired by Microsoft for its Microsoft Studios (later Xbox Game Studios) unit in November 2014. Persson, Porsér, and Manneh subsequently left Mojang. The company was rebranded as Mojang Studios in May 2020 and changed to reporting to Microsoft's Xbox division in July 2026.
+
+As of 2021, Mojang Studios employs approximately 600 people and has additional locations in London, Shanghai, Tokyo, and Redmond, Washington, where Microsoft is headquartered.[2][3] Maria Angelidou-Smith is the chief executive officer. Apart from Minecraft, Mojang Studios has developed Caller's Bane, Crown and Council, and further games in the Minecraft franchise: Minecraft Dungeons, Minecraft Legends, and the cancelled Minecraft Earth. It also released smaller games as part of game jams organised by Humble Bundle and published the externally developed Cobalt and Cobalt WASD.
+
+History
+
+Background and formation (2009–2010)
+
+Markus Persson founded Mojang Studios in 2009.
+
+Mojang Studios was founded by Markus Persson, a Swedish independent video game designer and programmer, in 2009.[4][5] He had gained interest in video games at an early age, playing The Bard's Tale and several pirated games on his father's Commodore 128 home computer, and learned to programme at age eight with help from his sister. Because he was a "loner" in school, he spent most of his spare time with games and programming at home.[6] Following his graduation and a few years of working as a web developer, Persson created Wurm Online, a massively multiplayer online role-playing game, with his colleague Rolf Jansson in 2003. They used the name "Mojang Specifications" during the development and, as the game started turning a profit, incorporated the company Mojang Specifications AB (an aktiebolag) in 2007.[6][7] The name is derived from the Swedish word mojäng (Swedish pronunciation: [mʊˈjɛŋː]; lit. 'gadget').[8][9] Persson left the project in the same year and wished to reuse the name, so Jansson renamed the company Onetoofree AB and later Code Club AB.[7][10] Meanwhile, Persson had joined Midas, later known as King.com, where he developed 25–30 games. He departed the company when he was barred from creating games in his free time.[6]
+
+In May 2009, Persson began working on a clone of Infiniminer, a game developed by Zachtronics and released earlier that year. Persson reused assets and parts of the engine code from an earlier personal project and released the first alpha version of the game, now titled Minecraft, on 17 May 2009, followed by the first commercial version on 13 June.[11][12] He reused the name "Mojang Specifications" for this release, registering a sole proprietorship with this name on 18 June.[11][13] In less than a month, Minecraft had generated enough revenue for Persson to take time off his day job, which he was able to quit entirely by May 2010.[11] As all sales were processed through the game's website, he did not have to split income with third parties.[14] The payment services provider PayPal temporarily disabled his account when it suspected fraud.[6]
+
+In September 2010, Persson travelled to Bellevue, Washington, to the offices of video game company Valve, where he took part in a programming exercise and met with Gabe Newell, before being offered a job at the company.[15] He turned down the offer and instead contacted Jakob Porsér, a former colleague from King.com, to ask for aid in establishing a business out of Mojang Specifications.[5][6] Porsér quickly quit his job, and the pair incorporated Mojang AB on 17 September.[11][16] While Persson continued working on Minecraft, Porsér would develop Scrolls, a digital collectible card game.[17][18] Wishing to focus on game development, they hired Carl Manneh, a manager at jAlbum, Persson's former employer, as chief executive officer. Other significant early hires included Daniel Kaplan as business developer, Markus Toivonen as art director, and Jens Bergensten as lead programmer.[11]
+
+Continued growth (2011–2013)
+
+Mojang's offices were formerly located on Maria Skolgata 83, Stockholm.
+
+In January 2011, Minecraft reached 1 million registered accounts and 20 million six months thereafter. The continued success led Mojang to start the development of a new version for mobile devices. Due to the incompatibility of the game's Java-based framework with mobile devices, this version was programmed in C++. Another version, initially developed for Xbox 360, was outsourced to Scotland-based developer 4J Studios, which also used C++.[11] Scrolls was announced by Mojang in March 2011.[18] The studio's attempt to trademark the game's name resulted in a dispute with ZeniMax Media, which cited similarities between the game's name and that of the ZeniMax-owned The Elder Scrolls series.[19] Kaplan stated in May 2011 that, due to many such requests in the past, Mojang was planning to publish or co-publish games from other indie game studios.[20] Its first, Cobalt from Oxeye Game Studio, was announced in August.[21] An early version of the game was made available in December 2011, with the full game released in February 2016 for Xbox 360, Xbox One, and Windows.[22][23] A multiplayer-focused spin-off, Cobalt WASD, was also developed by Oxeye Game Studio and released by Mojang for Windows in November 2017 after some time in early access.[24][25]
+
+For the full release of Minecraft, Mojang held Minecon, a dedicated convention, in Las Vegas on 18–19 November 2011, with Minecraft formally being released during a presentation on the first day.[11][26] Thereafter, Minecon was turned into an annual event.[27] Following Minecraft's full release, Persson transferred his role as lead designer for the game to Bergensten in December 2011.[17]
+
+Around this time, Manneh had discussions with a plethora of venture capital firms, including Sequoia Capital and Accel Partners, but turned all of them down as the company did not require any funds.[28] Sean Parker, the co-founder of Napster and former president of Facebook, Inc., offered to privately invest in Mojang in 2011 but was turned down as well.[6][29] At the time, the studio ruled out being sold or becoming a public company to maintain its independence, which was said to have heavily contributed to Minecraft's success.[5][9] By March 2012, Minecraft had sold 5 million copies, amounting to US$80 million in revenue.[29] In November, Mojang had 25 employees, and total revenues of $237.7 million in 2012.[5][30] In 2013, it released an education-focused version of Minecraft for Raspberry Pi devices, and—after the exclusivity clause penned with Microsoft over the availability of the game's console edition on Microsoft's platforms had expired—announced editions of the game for PlayStation 3, PlayStation 4, and PlayStation Vita.[11] In October 2013, Jonas Mårtensson, formerly of gambling company Betsson, was hired as Mojang's vice-president.[31] That year, Mojang recorded revenues of $330 million, of which $129 million were profit.[14]
+
+Microsoft subsidiary (2014–present)
+
+Persson, exhausted from the pressure of being the owner of Minecraft, tweeted in June 2014 asking whether anyone would be willing to purchase his share in Mojang. Several parties expressed interest in this offer, including Activision Blizzard, Electronic Arts, and Microsoft.[11] Phil Spencer, the head of Microsoft's Xbox division, urged Microsoft's newly appointed chief executive Satya Nadella to purchase Mojang to set out "a pretty bold vision" for Microsoft's gaming business.[32] Furthermore, the company had $2.5 billion in offshore bank accounts that it could not bring back to the United States without paying repatriation taxes.[28] Nadella separately stated the possible use of Minecraft with the HoloLens, Microsoft's mixed reality device, to have been a major factor in pursuing the acquisition.[33] The company first approached Mojang regarding a potential acquisition in June 2014, making its first offer shortly thereafter. Mojang subsequently hired advisers from JPMorgan Chase.[34][35]
+
+Microsoft announced its agreement to purchase Mojang for $2.5 billion on 15 September 2014.[36] The acquisition was finalised on 6 November, and Mojang became part of the Microsoft Studios (later Xbox Game Studios) branch.[37][38] Persson, Porsér, and Manneh were the only shareholders at this time, with Persson owning 71% of shares.[28][37] Persson received $1.8 billion, while Porsér and Manneh got $300 million and $100 million, respectively.[28][34] All three subsequently left Mojang, and Mårtensson succeeded Manneh.[11][39] Bergensten said the change in ownership went against the studio's indie culture. Many employees were wary about the uncertainties they could face after the acquisition, and some staffers cried at the offices.[40][41] Everyone who remained with the company for six months thereafter was awarded a bonus of roughly $300,000 (after taxes), deducted from Persson's share.[28][42] Under the oversight of Microsoft's Matt Booty, Mojang's integration was minimal, leaving its operations independent but backed by Microsoft's financial and technical capabilities. This approach shaped how Microsoft would acquire other gaming companies.[43]
+
+Scrolls was released out-of-beta in December 2014 and development of further content ceased in 2015.[44][45] Also in December 2014, Mojang and Telltale Games jointly announced a partnership in which the latter would develop Minecraft: Story Mode, an episodic, narrative-driven game set in the Minecraft universe.[46] In April 2016, Mojang released Crown and Council, a turn-based strategy game entirely developed by artist Henrik Pettersson (who had been hired in August 2011), for free for Windows.[47][48] An update in January 2017 introduced Linux and macOS versions.[49] Mojang discontinued the online services for Scrolls in February 2018 and re-released the game under a free-to-play model and with the name Caller's Bane in June.[45][50] Aiming to expand the Minecraft franchise with further games, Mojang developed two spin-offs: Minecraft Dungeons, a dungeon crawler, and Minecraft Earth, an augmented reality mobile game in the vein of Pokémon Go.[51][52]
+
+Minecraft Classic, a browser-based version of Minecraft's first public alpha release, was released for free on its ten-year anniversary in May 2019.[53] By this time, Minecraft had sold 147 million copies, making it the best-selling video game of all time.[54] Persson was explicitly excluded from the festivities due to his controversial tweets starting in 2016, regarding gender, feminism, race, and expressing support for the Pizzagate and QAnon conspiracy theories.[55][56] An update for Minecraft removed references to Persson.[55] On 17 May 2020, Minecraft's eleventh anniversary, Mojang announced its rebranding to Mojang Studios, aiming to reflect its multi-studio structure, and introduced a new logo.[57][58] The design was created at the agency Bold under the creative direction of Oliver Helfrich.[59] Minecraft Dungeons was released later that month for Windows, Nintendo Switch, PlayStation 4, and Xbox One.[60] In June 2022, the studio announced the action-strategy game Minecraft Legends.[61]
+
+Helen Chiang, the six-year head of studio for Mojang Studios, acceded to Xbox Game Studios in December 2023 and was replaced by Åsa Bredin in the same role.[62] When Bredin stepped down in February 2025 to focus on personal goals outside the company, Kayleen Walters was appointed in her place, in addition to Amy Stillion as chief of staff.[63] Mojang Studios developed Minecraft Dungeons II, again with Double Eleven, which is slated for release in 2026.[64] The studio worked with Merlin Entertainment to design the Minecraft World theme park, which is set to open at Chessington World of Adventures in 2027.[65] In July 2026, as part of a major restructuring within Microsoft's gaming business, Mojang Studios was made to report directly to Asha Sharma of the Xbox division.[66] In October, Xbox opened its XP transmedia division and appointed Walters as its president. In her place, Reddit's chief product officer, Maria Angelidou-Smith, was hired as the chief executive officer of Mojang Studios.[67]
+
+Games developed
+
+List of games developed by Mojang Studios
+
+ | Year
+ | Title
+ | Platform(s)
+ | Notes
+ | Ref.
+
+ | 2011
+ | Minecraft
+ | Android, Fire OS, iOS, Linux, macOS, Raspberry Pi, tvOS, Windows, Windows Phone
+ | 
+ | [68]
+
+ | 2014
+ | Caller's Bane
+ | Android, macOS, Windows
+ | Originally titled Scrolls
+ | [44][50]
+
+ | 2016
+ | Crown and Council
+ | Linux, macOS, Windows
+ | 
+ | [48][49]
+
+ | 2020
+ | Minecraft Dungeons
+ | Nintendo Switch, PlayStation 4, Windows, Xbox One
+ | Co-developed with Double Eleven
+ | [60]
+
+ | 2023
+ | Minecraft Legends
+ | Nintendo Switch, PlayStation 4, PlayStation 5, Windows, Xbox One, Xbox Series X/S
+ | Co-developed with Blackbird Interactive
+ | [61]
+
+ | 2026
+ | Minecraft Dungeons II
+ | Nintendo Switch, Nintendo Switch 2, PlayStation 5, Windows, Xbox Series X/S
+ | Co-developed with Double Eleven
+ | [64]
+
+ | TBA
+ | Minecraft Blast
+ | iOS
+ | Co-developed with King
+ | [69]
+
+Game jam games
+
+Mojang partnered with Humble Bundle in 2012 to launch Mojam, a game jam event to raise money for charity, as part of which Mojang developed the shoot 'em up mini-game Catacomb Snatch. The resulting bundle was sold 81,575 times, raising $458,248.99.[70] The following year, Mojang developed three mini-games for Mojam 2.[71] The studio also participated in Humble Bundle's Games Against Ebola game jam in 2014 with three further mini-games.[72]
+
+List of game jam games developed by Mojang Studios
+
+ | Year
+ | Title
+ | Event
+ | Ref.
+
+ | 2012
+ | Catacomb Snatch
+ | Mojam
+ | [73][74]
+
+ | 2013
+ | Nuclear Pizza War
+ | Mojam 2
+ | [75]
+
+ | Endless Nuclear Kittens
+
+ | Battle Frogs
+
+ | 2014
+ | Docktor
+ | Games Against Ebola
+ | [72][76]
+
+ | Healthcore Evolved
+
+ | Snake Oil Stanley
+
+Unreleased games
+
+In 2011, Persson and Kaplan envisioned a hybrid of Minecraft and Lego bricks and agreed with the Lego Group to develop the game as Brickcraft, codenamed Rex Kwon Do (in reference to the film Napoleon Dynamite).[77] The game has also been described as a first-person shooter.[78][79] Mojang hired two new programmers to work on the game, while a prototype was created by Persson. However, Mojang cancelled the project after six months.[77] Upon announcing the cancellation in July 2012, Persson stated that the move was performed so that Mojang could focus on the games it wholly owned.[79] Daniel Mathiasen, a Lego Group employee at the time, later blamed the cancellation on a series of legal hurdles that the Lego Group had put in place to protect the product's family-friendly image. Kaplan lamented that the staff at Mojang had felt more like consultants on the project, rather than its designers. The Lego Group also considered acquiring Mojang at this point but later decided against doing so as they had not foreseen that Minecraft would become as popular as it would at one point be.[77]
+
+In March 2012, Persson revealed that he would be designing a sandbox space trading and combat simulator in the vein of Elite.[80] Titled 0x10c, it was to be set in the year 281,474,976,712,644 AD in a parallel universe.[81][82] The project was shelved by August 2013, with Persson citing a lack of interest and a creative block.[17][83]
+
+Minecraft Earth was made available as an early-access game in November 2019 for Android and iOS.[84] In January 2021, it was announced that the game would be withdrawn from sale in June that year, with all player data deleted in July. Mojang Studios cited the ongoing COVID-19 pandemic as the primary reason for the game's closure, as its effects conflicted with the game's concept.[85]
+
+Games published
+
+List of games published by Mojang Studios
+
+ | Year
+ | Title
+ | Platform(s)
+ | Developer(s)
+ | Ref.
+
+ | 2016
+ | Cobalt
+ | Windows, Xbox 360, Xbox One
+ | Oxeye Game Studio
+ | [23]
+
+ | 2017
+ | Cobalt WASD
+ | Windows
+ | [24]
+
+Legal disputes
+
+Scrolls naming dispute
+
+In August 2011, after Mojang had attempted to trademark the word "Scrolls" for their game, ZeniMax Media, the parent company of The Elder Scrolls publisher Bethesda Softworks, issued a cease and desist letter, claiming that Scrolls infringed on ZeniMax's "The Elder Scrolls" trademark, that Mojang could not use the name, and that ZeniMax would sue the studio over the word's usage.[19][86] Persson offered to give up the trademark and give Scrolls a subtitle. However, as Mojang ignored the cease and desist letter, ZeniMax filed the lawsuit in September.[19][87][88] Bethesda's Pete Hines stated that Bethesda was not responsible for the lawsuit, rather the issue was centred around "lawyers who understand it".[89][90] Mojang won an interim injunction in October, the ruling being that Scrolls and The Elder Scrolls were too easy to differentiate, though ZeniMax could still appeal the ruling.[91][92] In March 2012, Mojang and ZeniMax settled, with all "Scrolls" trademarks and trademark applications being transferred to ZeniMax, who would in turn licence the name to Mojang for use with Scrolls and add-on content, but not for sequels or any other games with similar names.[93][94]
+
+Uniloc USA, Inc. et al v. Mojang AB
+
+On 20 July 2012, Uniloc, a company specialising in digital rights management technologies, filed a lawsuit against Mojang, stating that the licence verification system in Minecraft's Android version infringed on one of Uniloc's patents.[95][96] The case was Uniloc USA, Inc. et al v. Mojang AB and was filed with the United States District Court for the Eastern District of Texas.[97] In response to hate mail, Uniloc founder Ric Richardson denied his involvement, claiming to have only filed the patent.[98] The patent was invalidated in March 2016.[99]
+
+Putt-Putt cease and desist
+
+In July 2013, the minigolf chain Putt-Putt issued a cease and desist letter against Mojang and Don Mattrick (who was previously affiliated with Minecraft's Xbox 360 version but had since joined Zynga), alleging that they infringed on its "Putt-Putt" trademark. Attached to the letter, which Persson shared on Twitter, was a Google Search screenshot showing videos of user-created maps using the name. Alex Chapman, Mojang's lawyer, stated "I think there is clearly a misunderstanding here as to what Minecraft actually is. It's a game that, among other things, allows people to build things. Mojang doesn't control what users build and Mojang doesn't control the content of the videos users make. Suing Mojang for what people do using Minecraft is like suing Microsoft for what people do using Word."[100][101]
+
+References
+
+↑ "Minecraft End(er)-User License Agreement ("EULA")". Mojang Studios. Archived from the original on 23 March 2025. Retrieved 23 March 2025 – via Minecraft.net.
+
+↑ Boddy, Zachary (13 April 2021). "Despite Minecraft's massive success, Mojang Studios still feels like an underfunded indie studio". Windows Central. Archived from the original on 9 December 2024. Retrieved 11 January 2025.
+
+↑ Phillips, Tom (18 May 2020). "Minecraft maker Mojang has a new name, kind of". Eurogamer. Archived from the original on 21 May 2024. Retrieved 11 January 2025.
+
+↑ Statt, Nick (7 November 2013). "Markus 'Notch' Persson: The mind behind Minecraft (Q&A)". CNET. Archived from the original on 20 July 2025. Retrieved 20 July 2025.
+
+1 2 3 4 "Mojang uncovered". MCV/Develop. 23 November 2012. Archived from the original on 23 May 2020. Retrieved 23 May 2020.
+
+1 2 3 4 5 6 Cheshire, Tom (15 September 2014). "Changing the game: how Notch made Minecraft a cult hit". Wired UK. Archived from the original on 18 November 2018. Retrieved 8 May 2020.
+
+1 2 Chung, Ernest (22 April 2015). "Interview with CEO of Code Club AB: Developer of Sandbox MMO – Wurm Online". Xsolla. Archived from the original on 24 January 2018. Retrieved 17 January 2019.
+
+↑ Klepek, Patrick (15 June 2015). "Wait, It's Pronounced Mo-Yang?". Kotaku. Archived from the original on 19 January 2019. Retrieved 17 January 2019.
+
+1 2 Shanley, Mia (4 February 2013). "Hit game Minecraft to stay private". Reuters. Archived from the original on 19 January 2019. Retrieved 17 January 2019.
+
+↑ O'Connor, Alice (4 December 2012). "Wurm Online hitting version 1.0 after almost a decade". Shacknews. Archived from the original on 19 January 2019. Retrieved 18 January 2019.
+
+1 2 3 4 5 6 7 8 9 10 Cox, Alex (13 June 2018). "The history of Minecraft". TechRadar. Archived from the original on 9 August 2018. Retrieved 17 January 2019.
+
+↑ Smith, Graham (6 February 2012). "The First Moments of Minecraft". PC Gamer. Archived from the original on 16 November 2018. Retrieved 7 June 2020.
+
+↑ "Mojang Specifications 19790601-0173" (in Swedish). Swedish Companies Registration Office. Archived from the original on 26 March 2025. Retrieved 25 June 2026.
+
+1 2 Luckerson, Victor (18 March 2014). "Minecraft Is Still Generating Insane Amounts of Cash for Developer Mojang". Time. Archived from the original on 16 October 2018. Retrieved 17 January 2019.
+
+↑ Hinkle, David (10 December 2013). "Notch turned down job offer at Valve to create Mojang". Engadget. Archived from the original on 19 January 2019. Retrieved 17 January 2019.
+
+↑ "Mojang AB 556819-2388" (in Swedish). Swedish Companies Registration Office. Archived from the original on 26 March 2025. Retrieved 25 June 2026.
+
+1 2 3 Crecente, Berian (5 April 2013). "Minecraft, Scrolls, 0x10c: The past, present and future of Mojang as seen through Notch's eyes". Polygon. Archived from the original on 12 June 2020. Retrieved 17 June 2020.
+
+1 2 Martin, Joe (2 March 2011). "Minecraft developer announces Scrolls". Bit-Tech. Archived from the original on 19 January 2019. Retrieved 17 January 2019.
+
+1 2 3 Pitts, Russ (3 October 2011). "Mojang v. Bethesda, or: I Hate it When Mommy and Daddy Fight [UPDATE]". Kotaku. Archived from the original on 17 April 2019. Retrieved 17 May 2019.
+
+↑ Senior, Tom (17 May 2011). "Minecraft creators planning to co-publish other indie games". PC Gamer. Archived from the original on 17 June 2020. Retrieved 17 June 2020.
+
+↑ Cobbett, Richard (25 August 2011). "Cobalt: a gorgeous 2D blaster published by Minecraft creators, Mojang". PC Gamer. Archived from the original on 9 November 2016. Retrieved 1 December 2019.
+
+↑ Lahti, Evan (16 December 2011). "Mojang releases Cobalt alpha, you can buy it". PC Gamer. Archived from the original on 23 January 2018. Retrieved 1 December 2019.
+
+1 2 Good, Owen S. (17 January 2016). "Mojang-published Cobalt set to launch Feb. 2". Polygon. Archived from the original on 19 January 2019. Retrieved 17 January 2019.
+
+1 2 Alexandra, Heather (30 November 2017). "Cobalt WASD Is 2-D Counter-Strike With Time Grenades And Super Suits". Kotaku. Archived from the original on 19 January 2019. Retrieved 17 January 2019.
+
+↑ Tarason, Dominic (2 December 2017). "Cobalt WASD gives the quirky platformer a competitive second lease of life". Rock Paper Shotgun. Archived from the original on 20 July 2019. Retrieved 1 December 2019.
+
+↑ Purchese, Robert (3 August 2011). "Minecraft convention Minecon announced". Eurogamer. Archived from the original on 17 June 2020. Retrieved 17 June 2020.
+
+↑ Fletcher, JC (2 August 2012). "MineCon 2012 going to Disneyland Paris this November". Engadget. Archived from the original on 17 June 2020. Retrieved 17 June 2020.
+
+1 2 3 4 5 Mac, Ryan; Ewalt, David M.; Jedeur-Palmgren, Max (3 March 2015). "Inside The Post-Minecraft Life Of Billionaire Gamer God Markus Persson". Forbes. Archived from the original on 9 December 2021. Retrieved 21 January 2022.
+
+1 2 Reilly, Jim (26 March 2012). "Minecraft Rakes In $80 Million". Game Informer. Archived from the original on 12 June 2018. Retrieved 17 January 2019.
+
+↑ Sarkar, Samit (1 February 2013). "Mojang tallied 2012 revenue of nearly $240M, looking to expand Minecraft to new markets". Polygon. Archived from the original on 19 January 2019. Retrieved 17 January 2019.
+
+↑ Peel, Jeremy (3 October 2010). "Mojang has a new vice president with a familiar face". PCGamesN. Archived from the original on 19 January 2019. Retrieved 17 January 2019.
+
+↑ Browning, Kellen (10 June 2021). "How Microsoft Is Ditching the Video Game Console Wars". The New York Times. Archived from the original on 10 January 2022. Retrieved 21 January 2022.
+
+↑ Wingfield, Nick (30 April 2015). "Microsoft (Yes, Microsoft) Has a Far-Out Vision". The New York Times. Archived from the original on 29 January 2017. Retrieved 30 March 2017.
+
+1 2 de la Merced, Michael J.; Wingfield, Nick (15 September 2014). "Microsoft Says It Will Pay $2.5 Billion for Company That Created Minecraft". The New York Times. Archived from the original on 18 January 2022. Retrieved 21 January 2022.
+
+↑ Wingfield, Nick; de la Merced, Michael J. (9 September 2014). "Minecraft Is Expected to Be Acquired by Microsoft". The New York Times. Archived from the original on 11 January 2022. Retrieved 21 January 2022.
+
+↑ Molina, Brett (15 September 2014). "Microsoft to acquire 'Minecraft' maker Mojang for $2.5B". USA Today. Archived from the original on 7 September 2017. Retrieved 5 September 2017.
+
+1 2 Goldberg, Daniel; Larsson, Linus (2 June 2015). "The Unlikely Story of Microsoft's Surprise Minecraft Buyout". Wired. Archived from the original on 9 June 2020. Retrieved 9 June 2020.
+
+↑ Sarkar, Samit (6 November 2014). "Microsoft officially owns Minecraft and developer Mojang now". Polygon. Archived from the original on 13 July 2018. Retrieved 17 January 2019.
+
+↑ Leijonhufvud, Jonas (13 February 2018). "Mojang-miljardärerna in i ny investerargrupp – satsar på casinobolag" [Mojang billionaires into new investor group – investing in casino companies]. Di Digital (in Swedish). Archived from the original on 22 April 2019. Retrieved 17 January 2019.
+
+↑ "Sommarprogram i text 9/8" [Summer program transcript 9/8]. Sveriges Radio (in Swedish). 9 August 2024. Archived from the original on 9 August 2024. Retrieved 9 August 2024.
+
+↑ Widenheim, Caroline (9 August 2024). "Recension: Sommar i P1 – Jens Bergensten" [Review: Sommar i P1 – Jens Bergensten]. Göteborgs-Posten (in Swedish). Archived from the original on 9 August 2024. Retrieved 9 August 2024.
+
+↑ Makuch, Eddie (4 June 2015). "Everyone Who Stayed at Mojang After Microsoft Buyout Got a Big Bonus". GameSpot. Archived from the original on 19 January 2019. Retrieved 17 January 2019.
+
+↑ Dring, Christopher (9 July 2020). "How Minecraft and Mojang taught Xbox how to buy studios". GamesIndustry.biz. Archived from the original on 2 July 2021. Retrieved 2 July 2021.
+
+1 2 McWhertor, Michael (10 December 2014). "Minecraft developer Mojang is finally releasing Scrolls". Polygon. Archived from the original on 19 January 2019. Retrieved 17 January 2019.
+
+1 2 Fogel, Stefanie (20 June 2018). "Mojang's Card Game 'Scrolls' Gets New Name, Is Now Free-To-Play". Variety. Archived from the original on 19 January 2019. Retrieved 17 January 2019.
+
+↑ Williams, Mike (18 December 2014). "Minecraft Story Mode Is a Chance for Minecraft and Telltale to Expand". USgamer. Archived from the original on 17 June 2020. Retrieved 17 June 2020.
+
+↑ "Mojang hires art guru Henrik Pettersson". MCV/Develop. 8 August 2011. Archived from the original on 23 May 2020. Retrieved 23 May 2020.
+
+1 2 O'Connor, Alice (22 April 2016). "Minecraft Devs Release Crown And Council Free". Rock Paper Shotgun. Archived from the original on 17 January 2019. Retrieved 17 January 2019.
+
+1 2 Caldwell, Brendan (31 January 2017). "Crown and Council gets royally updated, still free". Rock Paper Shotgun. Archived from the original on 12 August 2017. Retrieved 17 January 2019.
+
+1 2 Bailey, Dustin (20 June 2018). "Free games: Mojang's Scrolls is now Caller's Bane, and it's out right now". PCGamesN. Archived from the original on 20 June 2018. Retrieved 29 September 2018.
+
+↑ Dring, Christopher (14 May 2020). "Mojang returns to its indie roots with Minecraft Dungeons". GamesIndustry.biz. Archived from the original on 17 June 2020. Retrieved 17 June 2020.
+
+↑ Conditt, Jessica (29 September 2018). "Meet 'Minecraft: Dungeons,' an adventure game with online co-op". Engadget. Archived from the original on 19 January 2019. Retrieved 17 January 2019.
+
+↑ Jones, Ali (8 May 2019). "Minecraft Classic is now available to play for free in your browser". PCGamesN. Archived from the original on 8 May 2019. Retrieved 17 May 2019.
+
+↑ Valentine, Rebekah (17 May 2019). "Minecraft has sold 176 million copies worldwide". GamesIndustry.biz. Archived from the original on 24 January 2021. Retrieved 18 May 2019.
+
+1 2 Crecente, Brian (29 April 2019). "'Minecraft' Creator Excluded From Anniversary Due to 'Comments and Opinions' (EXCLUSIVE)". Variety. Archived from the original on 17 June 2020. Retrieved 17 June 2020.
+
+↑ Moore, Jack (1 December 2017). "The Creator of Minecraft Tweeted Some Dumb Stuff About Race". GQ. Archived from the original on 25 July 2019. Retrieved 2 March 2026.
+
+↑ Kerr, Chris (18 May 2020). "Minecraft developer Mojang rebrands as Mojang Studios". Gamasutra. Archived from the original on 18 May 2020. Retrieved 18 May 2020.
+
+↑ Gurwin, Gabe (17 May 2020). "Minecraft Developer Mojang Has Changed Its Name". GameSpot. Archived from the original on 17 May 2020. Retrieved 17 May 2020.
+
+↑ Törner, Amanda (19 March 2021). "Mojangs lekfulla identitet ger guld till Bold" [Mojang's playful identity brings gold to Bold]. Resumé (in Swedish). Archived from the original on 22 November 2023. Retrieved 22 November 2023.
+
+1 2 Brown, Matt (25 May 2020). "Minecraft Dungeons launch time, release date – and how to preorder". Windows Central. Archived from the original on 3 June 2020. Retrieved 5 June 2020.
+
+1 2 Romano, Sal (12 June 2022). "Action strategy game Minecraft Legends announced for PS5, Xbox Series, PS4, Xbox One, Switch, and PC". Gematsu. Archived from the original on 13 June 2022. Retrieved 13 June 2022.
+
+↑ Boddy, Zachary (2 December 2023). "Leadership changes at Mojang Studios see Helen Chiang take an expanded role, Åsa Bredin take over as studio head". Windows Central. Archived from the original on 2 December 2023. Retrieved 2 December 2023.
+
+↑ Maas, Jennifer (12 February 2025). "Microsoft Gaming Names Kayleen Walters Head of 'Minecraft' Maker Mojang Studios as Åsa Bredin Exits". Variety. Archived from the original on 13 February 2025. Retrieved 13 February 2025.
+
+1 2 Blake, Vikki (21 March 2026). "Surprise! Minecraft Dungeons 2 is coming later this year". Eurogamer. Archived from the original on 22 March 2026. Retrieved 22 March 2026.
+
+↑ Blake, Vikki (23 March 2026). "Mojang partners with Merlin Entertainments for the world's first Minecraft theme park, Minecraft World". GamesIndustry.biz. Archived from the original on 24 March 2026. Retrieved 24 March 2026.
+
+↑ Robinson, Andy (6 July 2026). "Xbox confirms plans to cut 5 studios and thousands of jobs". Video Games Chronicle. Archived from the original on 6 July 2026. Retrieved 6 July 2026.
+
+↑ Maas, Jennifer (8 October 2026). "Xbox Sets New Division for Film and TV, Consumer Products and Experiences Led by 'Minecraft' Studio Chief Kayleen Walters". Variety. Archived from the original on 9 October 2026. Retrieved 9 October 2026.
+
+↑ Fulton, Michael (21 March 2019). "Overview of Platforms Minecraft Is Available On". Lifewire. Archived from the original on 19 January 2019. Retrieved 17 January 2019.
+
+↑ Astle, Aaron (13 November 2025). "Mojang and King launch Minecraft Blast playtest in Malaysia". Pocket Gamer.biz. Archived from the original on 28 December 2025. Retrieved 28 December 2025.
+
+↑ Good, Owen (19 February 2012). "Mojam Raises $440,000, but Notch's Beard Appears to be Safe". Kotaku. Archived from the original on 22 April 2021. Retrieved 17 May 2019.
+
+↑ Conditt, Jessica (20 February 2013). "Humble Bundle Mojam 2: The Mojammening live stream up now". Engadget. Archived from the original on 19 January 2019. Retrieved 17 January 2019.
+
+1 2 Wawro, Alex (26 November 2014). "Devs team up with Humble Bundle for anti-Ebola charity game jam". Gamasutra. Archived from the original on 19 January 2019. Retrieved 17 January 2019.
+
+↑ Khaw, Cassandra (20 February 2012). "Humble Bundle Mojam Creation: Catacomb Snatch (Mojang)". Indie Games Plus. Archived from the original on 24 January 2021. Retrieved 17 May 2019.
+
+↑ Pearson, Craig (22 February 2012). "Ubering Catacomb Snatch". Rock Paper Shotgun. Archived from the original on 19 January 2019. Retrieved 17 January 2019.
+
+↑ Savage, Phil (25 February 2013). "Mojam comes to an end – get nine new games from Mojang and friends". PC Gamer. Archived from the original on 9 July 2015. Retrieved 17 January 2019.
+
+↑ "Games Against Ebola – System Requirements". Humble Bundle. Archived from the original on 19 January 2019. Retrieved 17 January 2019.
+
+1 2 3 Stanton, Rich (9 December 2020). "A Lego Minecraft game called 'Brickcraft' was prototyped and greenlit – here's why it never happened". PC Gamer. Archived from the original on 9 December 2020. Retrieved 5 January 2021.
+
+↑ Helgeson, Matt (26 July 2012). "Minecraft Creator Notch Cancels FPS Project". Game Informer. Archived from the original on 19 January 2019. Retrieved 17 January 2019.
+
+1 2 Carmichael, Stephanie (27 July 2012). "Minecraft dev Mojang cans FPS project". GameZone. Archived from the original on 19 January 2019. Retrieved 17 January 2019.
+
+↑ O'Connor, Alice (23 March 2012). "Notch plans Elite-meets-Firefly space trading sim". Shacknews. Archived from the original on 19 January 2019. Retrieved 17 January 2019.
+
+↑ Keefer, John (3 April 2012). "Mojang, Notch tease next game, grab domains". Shacknews. Archived from the original on 19 January 2019. Retrieved 17 January 2019.
+
+↑ O'Connor, Alice (4 April 2012). "Mojang details space sim '0x10c'". Shacknews. Archived from the original on 19 January 2019. Retrieved 17 January 2019.
+
+↑ Khaw, Cassandra (16 August 2013). "Notch Puts 0x10c On Ice, Community Picks Up Torch". USgamer. Archived from the original on 17 January 2019. Retrieved 17 January 2019.
+
+↑ Peters, Jay (12 November 2019). "Minecraft Earth is now available in early access in the US". The Verge. Archived from the original on 26 April 2020. Retrieved 5 June 2020.
+
+↑ Walker, Ian (5 January 2021). "Minecraft Earth Ends This Summer". Kotaku. Archived from the original on 5 January 2021. Retrieved 5 January 2021.
+
+↑ Webster, Andrew (10 August 2011). "Elder Scrolls vs. Minecraft dev: "scrolls" is our word". Ars Technica. Archived from the original on 29 August 2018. Retrieved 17 January 2019.
+
+↑ Hamilton, Kirk (3 October 2017). "Notch Offered to Give Up "Scrolls" Trademark, Bethesda Sued Anyway". Kotaku. Archived from the original on 24 January 2021. Retrieved 17 May 2019.
+
+↑ Rose, Mike (27 September 2011). "Mojang: 'Really Silly' Bethesda Scrolls Case Heads To Court". Gamasutra. Archived from the original on 19 January 2019. Retrieved 17 January 2019.
+
+↑ Pitts, Russ (6 October 2011). "Mojang v. Bethesda Part 2: The Attorneys (and Notch & Pete) Weigh In". Kotaku. Archived from the original on 17 April 2019. Retrieved 17 May 2019.
+
+↑ Watts, Steve (7 October 2011). "Bethesda VP says company 'forced' into Scrolls dispute". Shacknews. Archived from the original on 19 January 2019. Retrieved 17 January 2019.
+
+↑ O'Connor, Alice (18 October 2011). "Scrolls defeats interim injunction in trademark case". Shacknews. Archived from the original on 19 January 2019. Retrieved 17 January 2019.
+
+↑ Purchese, Robert (18 October 2011). "Mojang's Scrolls legal victory explained". Eurogamer. Archived from the original on 19 January 2019. Retrieved 17 January 2019.
+
+↑ Purchese, Robert (12 March 2012). "Bethesda and Mojang settle: Scrolls will be Scrolls". Eurogamer. Archived from the original on 19 January 2019. Retrieved 17 January 2019.
+
+↑ Orland, Kyle (13 March 2012). "Mojang can't use "Scrolls" name for potential sequels". Ars Technica. Archived from the original on 19 January 2019. Retrieved 17 January 2019.
+
+↑ Paul, Ryan (21 July 2012). "Minecraft developer sued by aggressive litigator over DRM patent". Ars Technica. Archived from the original on 19 January 2019. Retrieved 17 January 2019.
+
+↑ Rose, Mike (23 July 2012). "DRM firm Uniloc files infringement suit against Mojang's 'Mindcraft'". Gamasutra. Archived from the original on 19 January 2019. Retrieved 17 January 2019.
+
+↑ "New Case: Uniloc USA, Inc. et al v. Mojang AB". Patent Arcade. 9 August 2012. Archived from the original on 19 January 2019. Retrieved 17 January 2019.
+
+↑ Yin-Poole, Wesley (23 July 2012). "Uniloc founder hits back after Minecraft fans vent fury in "disgusting" emails". Eurogamer. Archived from the original on 19 January 2019. Retrieved 17 January 2019.
+
+↑ Mullin, Joe (25 March 2016). "Patent that cost Microsoft millions gets invalidated". Ars Technica. Archived from the original on 19 January 2019. Retrieved 17 January 2019.
+
+↑ Matulef, Jeffrey (10 July 2013). "Putt-Putt sues Mojang over user-generated maps". Eurogamer. Archived from the original on 23 May 2020. Retrieved 23 May 2020.
+
+↑ Cook, Dave (10 July 2013). "Mojang & Don Mattrick receive cease and desist letters from Putt-Putt mini golf chain". VG247. Archived from the original on 23 May 2020. Retrieved 23 May 2020.
+
+External links
+
+ Media related to Mojang Studios at Wikimedia Commons
+
+Official website at the Wayback Machine (archived 24 September 2020)
+
+ | 
+
+v
+
+t
+
+e
+
+Mojang Studios
+
+ | Video games | 
+
+ | Minecraft | 
+
+Minecraft
+
+Story Mode
+
+Dungeons
+
+Earth
+
+Legends
+
+Dungeons II
+
+ | Other | 
+
+0x10c
+
+Cobalt
+
+Crown and Council
+
+Cobalt WASD
+
+ | Films | 
+
+A Minecraft Movie
+
+Squared
+
+ | People | 
+
+Markus Persson
+
+Jens Bergensten
+
+C418
+
+Hayden Scott-Baron
+
+Lena Raine
+
+Kumi Tanioka
+
+Kristoffer Zetterstrand
+
+ | 
+Parent company: Xbox Game Studios (Microsoft)
+
+ | 
+
+v
+
+t
+
+e
+
+Markus Persson
+
+ | Games designed | 
+
+Wurm Online (2006)
+
+Minecraft (2011)
+
+Minicraft (2011)
+
+0x10c (cancelled)
+
+ | Companies | 
+
+Code Club AB
+
+Mojang Studios
+
+ | In culture | 
+
+Minecraft: The Story of Mojang (2012 documentary film)
+
+Minecraft (2013 book)
+
+ | 
+
+v
+
+t
+
+e
+
+Microsoft
+
+ | 
+
+History
+
+Outline
+
+ | People | 
+
+ | Founders | 
+
+Bill Gates
+
+Paul Allen
+
+ | Board of directors | 
+
+Satya Nadella (Chairman and CEO)
+
+Reid Hoffman
+
+Hugh Johnston
+
+Teri List
+
+Catherine MacGregor
+
+Mark Mason
+
+Sandi Peterson
+
+Penny Pritzker
+
+Carlos A. Rodriguez
+
+Charles Scharf
+
+John W. Stanton
+
+Emma Walmsley
+
+ | Senior leadership team | 
+
+Satya Nadella (CEO)
+
+Takeshi Numoto (CMO)
+
+Scott Guthrie
+
+Carolina Dybeck Happe (COO)
+
+Amy Hood (CFO)
+
+Kevin Scott (CTO)
+
+Brad Smith (CLO)
+
+Harry Shum
+
+Phil Spencer
+
+Kathleen Hogan (CPO)
+
+ | Corporate VPs | 
+
+Joe Belfiore
+
+Richard Rashid (SVP)
+
+César Cernuda
+
+ | Employee groups | 
+
+Global LGBTQIA+ Employee & Allies at Microsoft
+
+Microsoft and unions
+
+ | Products | 
+
+ | Hardware | 
+
+Azure Kinect
+
+HoloLens
+
+LifeCam
+
+Surface
+
+Duo
+
+Go
+
+Hub
+
+Laptop
+
+Laptop Go
+
+Neo
+
+Pro
+
+Studio
+
+Xbox
+
+ | Software | 
+
+Clipchamp
+
+Dynamics 365
+
+Havok
+
+Microsoft 365
+
+Office
+
+Teams
+
+Open source software
+
+Power Platform
+
+Servers
+
+Start
+
+Tay
+
+List of video games
+
+Visual Studio
+
+Visual Studio Code
+
+Windows
+
+Xbox OS
+
+ | Programming
+
+languages | 
+
+BASIC
+
+VB.NET
+
+VBA
+
+VBScript
+
+Visual Basic
+
+C#
+
+C/AL a.k.a. Navision Attain
+
+F#
+
+MVPL
+
+Power Fx
+
+PowerShell
+
+Q#
+
+Transact-SQL
+
+TypeScript
+
+Visual J++
+
+Visual J#
+
+ | Web properties | 
+
+Azure
+
+Bing
+
+Copilot
+
+GitHub
+
+Learn
+
+Channel 9
+
+Developer Network
+
+TechNet
+
+LinkedIn
+
+LinkedIn Learning
+
+MSN
+
+Outlook.com
+
+Store
+
+Translator
+
+ | Company | 
+
+ | Conferences | 
+
+Build
+
+Ignite
+
+Inspire
+
+MIX
+
+PDC
+
+WinHEC
+
+ | Divisions | 
+
+.NET Foundation
+
+AI
+
+Digital Crimes Unit
+
+Engineering groups
+
+Mobile
+
+Skype unit
+
+Xbox
+
+Activision Blizzard
+
+Xbox Game Studios
+
+ZeniMax Media
+
+Garage
+
+Outercurve Foundation
+
+Press
+
+Research
+
+Retail stores
+
+ | Estates | 
+
+Microsoft campus
+
+Microsoft India
+
+Microsoft Japan
+
+ | Campaigns | 
+
+"Where do you want to go today?" (1994)
+
+"Champagne" (2002)
+
+"Mojave Experiment" (2008)
+
+"I'm a PC" (2008)
+
+"Scroogled" (2012)
+
+ | Criticism | 
+
+Bundling of Microsoft Windows
+
+Clippy
+
+iLoo
+
+Internet Explorer
+
+Microsoft Bob
+
+_NSAKEY
+
+Windows
+
+XP
+
+Vista
+
+10
+
+ | Litigation | 
+
+Apple v. Microsoft (1994)
+
+United States v. Microsoft (2001)
+
+Microsoft v. Lindows (2004)
+
+Microsoft v. MikeRoweSoft (2004)
+
+Microsoft v. Commission (2007)
+
+Alcatel-Lucent v. Microsoft (2009)
+
+Microsoft v. Shah (2011)
+
+Microsoft v. United States (2018)
+
+FTC v. Microsoft (2022)
+
+ | Acquisitions | 
+
+6Wunderkinder
+
+Access Software
+
+Acompli
+
+Activision Blizzard
+
+acquisition
+
+Altamira Software
+
+AltspaceVR
+
+aQuantive
+
+Azyxxi
+
+Beam
+
+The Blue Ribbon SoundWorks
+
+Bungie
+
+Clipchamp
+
+Colloquis
+
+Compulsion Games
+
+Connectix
+
+Consumers Software
+
+Danger
+
+Double Fine
+
+Farecast
+
+FASA Studio
+
+Fast Search & Transfer
+
+Firefly
+
+Forethought
+
+GIANT Company Software
+
+GitHub
+
+Great Plains Software
+
+GreenButton
+
+Groove Networks
+
+Havok Group
+
+High Heat Major League Baseball
+
+Hotmail
+
+inXile Entertainment
+
+Jellyfish.com
+
+LinkedIn
+
+LinkExchange
+
+Lionhead Studios
+
+Maluuba
+
+Massive Incorporated
+
+Metaswitch
+
+Mobile Data Labs
+
+Mojang Studios
+
+Ninja Theory
+
+Nokia Devices and Services
+
+npm
+
+Nuance Communications
+
+Obsidian Entertainment
+
+Onfolio
+
+Pando Networks
+
+Perceptive Pixel
+
+PlaceWare
+
+Playground Games
+
+Powerset
+
+Press Play
+
+ProClarity
+
+Rare
+
+Revolution Analytics
+
+RiskIQ
+
+Simplygon
+
+Skype
+
+Sunrise Atelier
+
+SwiftKey
+
+TakeLessons
+
+Tellme Networks
+
+Twisted Pixel Games
+
+Undead Labs
+
+Vermeer Technologies
+
+Visio Corporation
+
+Vivaty
+
+VoloMetrix
+
+VXtreme
+
+WebTV Networks
+
+Winternals Software
+
+Xamarin
+
+Xandr
+
+AppNexus
+
+Yammer
+
+Yupi
+
+ZeniMax Media
+
+ | 
+
+ Category
+
+ | 
+
+v
+
+t
+
+e
+
+Xbox
+
+ | 
+A division of Microsoft
+
+ | Xbox series | 
+
+ | Xbox | 
+
+Controller
+
+Games
+
+Best
+
+World Collection
+
+Technical specifications
+
+ | Xbox 360 | 
+
+Launch
+
+Technical problems
+
+Applications
+
+Controller
+
+Accessories
+
+HD DVD Player
+
+Wireless Headset
+
+Wireless Racing Wheel
+
+Xbox Live Vision
+
+Games
+
+Backward compatible
+
+Best
+
+Kinect Fun Labs
+
+Technical specifications
+
+ | Xbox One | 
+
+Applications
+
+Xbox Wireless Controller
+
+special editions
+
+Accessories
+
+Games
+
+Best-selling
+
+Xbox One X enhanced
+
+Backward compatible
+
+ | Xbox Series X/S | 
+
+Applications
+
+Xbox Wireless Controller
+
+special editions
+
+Accessories
+
+Games
+
+Backward compatible
+
+ | Others | 
+
+System software
+
+Kinect
+
+Adaptive Controller
+
+Xbox app
+
+games
+
+Platinum Hits
+
+ROG Xbox Ally
+
+ | Windows | 
+
+Games
+
+Windows 3.x
+
+MS-DOS
+
+Games for Windows
+
+games
+
+GFWL
+
+games
+
+Microsoft SideWinder
+
+Games included with Windows
+
+ | Other platforms | 
+
+Xbox on Windows Phone
+
+Zune games
+
+ | Online services | 
+
+Avatars
+
+Games Store
+
+Xbox network/Xbox Live 
+
+Arcade
+
+Indie Games
+
+Anywhere
+
+Xbox Game Pass
+
+Xbox Cloud Gaming
+
+Windows Games on Demand games
+
+Mixer
+
+MSN Games
+
+Game Room
+
+ | Promotions | 
+
+OurColony
+
+Official Xbox Magazine
+
+Xbox Exhibition
+
+"X" Show
+
+Summer of Arcade
+
+ | Developer tools | 
+
+DirectX
+
+Xbox Development Kit
+
+XNA
+
+Game Studio
+
+ID@Xbox
+
+ | Games | 
+
+Xbox
+
+Activision
+
+ZeniMax Media
+
+Blizzard Entertainment
+
+King
+
+Xbox Game Studios
+
+ | Developers
+
+and 
+
+publishers | 
+
+ | Directly owned | 
+
+King
+
+Mojang Studios
+
+ | Xbox Game 
+
+Studios | 
+
+The Coalition
+
+Halo Studios
+
+InXile Entertainment
+
+Playground Games
+
+ | ZeniMax Media | 
+
+Arkane Studios
+
+Bethesda Softworks
+
+Bethesda Game Studios
+
+id Software
+
+MachineGames
+
+Obsidian Entertainment
+
+ZeniMax Online Studios
+
+ | Activision Blizzard | 
+
+Activision
+
+Activision Shanghai Studio
+
+Beenox
+
+Demonware
+
+Digital Legends Entertainment
+
+Elsewhere Entertainment
+
+High Moon Studios
+
+Infinity Ward
+
+Rare
+
+Raven Software
+
+Sledgehammer Games
+
+Solid State Studios
+
+Treyarch
+
+World's Edge
+
+Blizzard Entertainment
+
+Blizzard Albany
+
+Blizzard Boston
+
+ | Former studios | 
+
+Alpha Dog Games
+
+Arkane Austin
+
+Compulsion Games
+
+Double Fine
+
+Ninja Theory
+
+Roundhouse Studios
+
+Tango Gameworks
+
+The Initiative
+
+Toys for Bob
+
+Turn 10 Studios
+
+Undead Labs
+
+ | Unionising efforts | 
+
+Worker organization
+
+Microsoft and unions § United States
+
+ | 
+
+v
+
+t
+
+e
+
+Xbox Game Studios
+
+ | 
+Xbox
+
+ | Franchises | 
+
+Age of Empires
+
+Banjo-Kazooie
+
+The Bard's Tale
+
+Battletoads
+
+Blinx
+
+Blue Dragon
+
+Conker
+
+Crackdown
+
+Crimson Skies
+
+Fable
+
+Forza
+
+Gears of War
+
+Halo
+
+Killer Instinct
+
+Links
+
+Lips
+
+Microsoft Flight Simulator
+
+Minecraft
+
+NBA Inside Drive
+
+NFL Fever
+
+Ninety-Nine Nights
+
+Ori
+
+Perfect Dark
+
+Pillars of Eternity
+
+Project Gotham Racing
+
+Sabreman
+
+Viva Piñata
+
+Wasteland
+
+XSN Sports
+
+Zoo Tycoon
+
+ | Subsidiaries | 
+
+ | 
+
+The Coalition
+
+Halo Studios
+
+inXile Entertainment
+
+Playground Games
+
+ | Former 
+
+subsidiaries | 
+
+Aces Game Studio
+
+BigPark
+
+Bungie
+
+Compulsion Games
+
+Digital Anvil
+
+Double Fine
+
+Ensemble Studios
+
+FASA Studio
+
+The Initiative
+
+Lift London
+
+Lionhead Studios
+
+Mojang Studios
+
+Ninja Theory
+
+Obsidian Entertainment
+
+Press Play
+
+Rare
+
+Turn 10 Studios
+
+Twisted Pixel Games
+
+Undead Labs
+
+World's Edge
+
+Xbox Entertainment Studios
+
+ | People | 
+
+Phil Spencer
+
+Brian Fargo
+
+Larry Hryb
+
+Bonnie Ross
+
+Tim Schafer
+
+Joseph Staten
+
+Feargus Urquhart
+
+ | Related | 
+
+List of developed games
+
+Games included with Windows
+
+MSN Games
+
+Activision Blizzard
+
+ZeniMax Media
+
+Portals:
+ Sweden
+
+ Companies
+
+ Video games
+
+ | 
+Authority control databases 
+
+ | International | 
+
+VIAF
+
+GND
+
+ | National | 
+
+United States
+
+France
+
+BnF data
+
+Czech Republic
+2
+
+Korea
+
+ | Other | 
+
+Open Library
+
+MusicBrainz label
+
+59°19′14.6″N 18°3′5.3″E﻿ / ﻿59.320722°N 18.051472°E﻿ / 59.320722; 18.051472
+
+Retrieved from "https://en.wikipedia.org/w/index.php?title=Mojang_Studios&oldid=1379384945"
+
+Categories: 
+Mojang Studios
+
+2014 mergers and acquisitions
+
+21st-century establishments in Stockholm
+
+Companies based in Stockholm
+
+First-party video game developers
+
+Markus Persson
+
+Microsoft acquisitions
+
+Microsoft subsidiaries
+
+Swedish companies established in 2009
+
+Swedish subsidiaries of foreign companies
+
+Video game companies established in 2009
+
+Video game companies of Sweden
+
+Video game development companies
+
+Video game publishers
+
+Xbox Game Studios
+
+Hidden categories: 
+Articles with short description
+
+Short description matches Wikidata
+
+Good articles
+
+Wikipedia pages semi-protected against vandalism
+
+Use British English from June 2020
+
+All Wikipedia articles written in British English
+
+Use dmy dates from June 2020
+
+Articles containing Swedish-language text
+
+Pages with Swedish IPA
+
+Pages with non-numeric formatnum arguments
+
+CS1 Swedish-language sources (sv)
+
+Commons category link from Wikidata
+
+Webarchive template wayback links
+
+Pages using gadget WikiMiniAtlas
+
+Coordinates not on Wikidata
+
+ This page was last edited on 9 October 2026, at 17:39 (UTC).
+
+Page was rendered with Parsoid.
+
+Text is available under the Creative Commons Attribution-ShareAlike 4.0 License;
+additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+Privacy policy
+
+About Wikipedia
+
+Disclaimers
+
+Contact Wikipedia
+
+Legal & safety contacts
+
+Code of Conduct
+
+Developers
+
+Statistics
+
+Cookie statement
+
+Mobile view
+
+Search
+
+ Search
+
+Toggle the table of contents
+
+Mojang Studios
+
+52 languages
+
+Add topic

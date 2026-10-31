@@ -1,0 +1,861 @@
+URL: https://en.wikipedia.org/wiki/The_International_2021
+FINAL_URL: https://en.wikipedia.org/wiki/The_International_2021
+FETCHED: 2026-10-31T19:53:34.264127+00:00
+
+Jump to content
+
+Main menu
+
+Main menu
+
+ move to sidebar
+ hide
+
+ Navigation
+
+Main page
+
+Contents
+
+Current events
+
+Random article
+
+About Wikipedia
+
+Contact us
+
+ Contribute
+
+Help
+
+Learn to edit
+
+Community portal
+
+Recent changes
+
+Upload file
+
+Special pages
+
+Search
+
+ Search
+
+Appearance
+
+Donate
+
+Create account
+
+Log in
+
+Personal tools
+
+Donate
+
+Create account
+
+Log in
+
+Contents
+
+ move to sidebar
+ hide
+
+(Top)
+
+ 1
+ Background
+
+ 2
+ Format
+
+ Toggle Format subsection
+
+ 2.1
+ Teams
+
+ 3
+ Results
+
+ Toggle Results subsection
+
+ 3.1
+ Group stage
+
+ 3.2
+ Main event
+
+ 3.2.1
+ Bracket
+
+ 3.3
+ Winnings
+
+ 4
+ References
+
+ 5
+ External links
+
+Toggle the table of contents
+
+The International 2021
+
+5 languages
+
+Беларуская
+
+Русский
+
+Svenska
+
+Українська
+
+中文
+
+Edit links
+
+Article
+
+Talk
+
+ English
+
+Read
+
+Edit
+
+View history
+
+Tools
+
+Tools
+
+ move to sidebar
+ hide
+
+ Actions
+
+Read
+
+Edit
+
+View history
+
+ General
+
+What links here
+
+Related changes
+
+Upload file
+
+Permanent link
+
+Page information
+
+Cite this page
+
+Get shortened URL
+
+Switch to legacy parser
+
+ Print/export
+
+Download as PDF
+
+Printable version
+
+ In other projects
+
+Wikidata item
+
+Appearance
+
+ move to sidebar
+ hide
+
+From Wikipedia, the free encyclopedia
+
+2021 esports tournament
+
+The International 2021
+ | Tournament information
+
+ | Game | Dota 2
+
+ | Location | Bucharest, Romania
+
+ | Dates | October 7–17, 2021
+
+ | Administrator | Valve
+
+ | 
+Tournament
+
+formats
+ | 
+
+Group stage
+
+Round robin
+
+Main event
+
+Double elimination
+
+ | Venue | Arena Națională
+
+ | Participants | 18 teams
+
+ | Purse | US$40,018,195
+
+ | Final positions
+
+ | Champions | Team Spirit
+
+ | 1st runner-up | PSG.LGD
+
+ | 2nd runner-up | Team Secret
+
+ | 
+
+← The International 2019
+
+The International 2022 →
+
+The International 2021, also known as The International 10 (TI10), was the tenth iteration of The International, an annual Dota 2 world championship esports tournament. Hosted by Valve, the game's developer, the tournament followed a year-long series of tournaments awarding qualifying points, known as the Dota Pro Circuit (DPC), with the top 12 ranking teams being directly invited to the tournament. In addition, six more teams earned invites through regional qualifiers held earlier in 2021. The tournament took place in Bucharest, Romania, with the main event held behind closed doors at the Arena Națională due to restrictions on gatherings in the city.
+
+As with every International from 2013 onwards, the prize pool was crowdfunded by the Dota 2 community via its battle pass feature with the total reaching US$40 million, making it the largest esports prize pool in history. The event was also the first International held since 2019, as the 2020 iteration was cancelled due to the COVID-19 pandemic. The Grand Finals were held between PSG.LGD and Team Spirit, with the latter winning 3–2 in a best-of-five series.
+
+Background
+[edit]
+
+Dota 2 is a 2013 multiplayer online battle arena (MOBA) video game developed by Valve. In it, two teams of five players compete by selecting characters known as "heroes", each with a variety of innate skills and abilities, and cooperate together to be the first to destroy the base of the other team, which ends the match. The game is played from a top-down perspective, and the player sees a segment of the game's map near their character as well as a mini-map that shows their allies, with any enemies revealed outside the fog of war. The game's map has three roughly symmetric "lanes" between each base, with a number of defensive towers protecting each side. Periodically, the team's base spawns a group of weak CPU-controlled creatures, called "creeps", that march down each of the three lanes towards the opponents' base, fighting any enemy hero, creep, or structure they encounter. If a hero character is killed, that character respawns back at their base after a delay period, which gets progressively longer the farther into the match.[1][2]
+
+As with previous years of the tournament, a corresponding battle pass for Dota 2 was released in June 2021, allowing the prize pool to be crowdfunded by players of the game,[3][4] who purchase the pass both to support the tournament and to access the rewards within it.[5] A quarter of all revenue made by it was added directly towards the prize pool, which finalized at US$40,018,195.[6] At the time of event, Dota 2 featured 121 playable characters, called "heroes". Prior to each game in the tournament, a draft is held between the opposing team captains to select which heroes their teams use, going back and forth until each side has banned seven and selected five heroes. Once a hero is picked it can no longer be selected by any other player that match, so teams used the draft to strategically plan ahead and deny the opponents' heroes that may be good counters or would be able to take advantage of weaknesses to their current lineup.[1]
+
+Format
+[edit]
+
+The main event was hosted at the Arena Națională in Bucharest
+
+The event follows the postponement of The International 2020, which was originally set to be held at the Avicii Arena in Stockholm, Sweden, that year before being pushed back indefinitely due to the COVID-19 pandemic. Valve attempted to restart the event there in 2021 before the Swedish Sports Confederation voted to not recognize esports under its body, a move that would deny visas for most attempting to enter the country due to their COVID-19 restrictions at the time.[7] Valve made repeated requests for the Swedish government to intervene before deciding to move the event to Romania.[7] The event was originally scheduled to include a live audience who were required to wear face masks and show proof of COVID-19 vaccination to attend.[7] However, Valve announced a week prior to the event that only teams, production staff, and other essential personnel would be allowed to attend due to rising COVID cases in the region and newly implemented restrictions set by the Bucharest government, with them refunding all ticket sales.[8]
+
+The International 2021 featured a series of pre-qualifying tournaments running throughout the first half of 2021, known as the Dota Pro Circuit (DPC), with the top 12 ranking teams receiving direct invitations.[9] Six more teams received invites following the conclusion of double-elimination tournaments held in June and July 2021 for the China, Eastern Europe, Western Europe, North America, South America, and Southeast Asia regions, bringing the total number of participating teams up to 18.[9] To seed the elimination bracket for the main event, round robin group stages featuring two groups of nine teams were played from October 7–10, 2021.[10] In it, each of the teams played each other within their group in a two-game series. The top four placing teams of each group advanced to the upper bracket of the main event, while fifth through eighth advanced to the lower bracket. The lowest placed team from both groups were eliminated from the competition. The main event is being held at the Arena Națională in Bucharest from October 12–17.[10]
+
+Teams
+[edit]
+
+ | 
+Direct invitation (DPC)
+
+ Evil Geniuses
+
+ PSG.LGD
+
+ Virtus.pro
+
+ Quincy Crew
+
+ Invictus Gaming
+
+ T1
+
+ Vici Gaming
+
+ Team Secret
+
+ Team Aster
+
+ Alliance
+
+ Beastcoast
+
+ Thunder Predator
+
+ | 
+Regional qualifier winners
+
+China: Elephant
+
+Eastern Europe: Team Spirit
+
+Western Europe: OG
+
+North America: Team Undying
+
+South America: SG esports
+
+Southeast Asia: Fnatic
+
+Results
+[edit]
+
+Group stage
+[edit]
+
+Group A
+
+ | Pos
+ | Team
+ | W
+ | L
+ | 
+
+ | 1
+ | Invictus Gaming
+ | 14
+ | 2
+ | Advanced to the upper bracket
+
+ | 2
+ | Virtus.pro
+ | 11
+ | 5
+
+ | 3
+ | OG
+ | 10
+ | 6
+
+ | 4
+ | T1
+ | 10
+ | 6
+
+ | 5
+ | Team Undying
+ | 9
+ | 7
+ | Advanced to the lower bracket
+
+ | 6
+ | Evil Geniuses
+ | 9
+ | 7
+
+ | 7
+ | Team Aster
+ | 5
+ | 11
+
+ | 8
+ | Alliance
+ | 4
+ | 12
+
+ | 9
+ | Thunder Predator
+ | 0
+ | 16
+ | Eliminated
+
+Source: [11]
+
+Group B
+
+ | Pos
+ | Team
+ | W
+ | L
+ | 
+
+ | 1
+ | PSG.LGD
+ | 15
+ | 1
+ | Advanced to the upper bracket
+
+ | 2
+ | Team Secret
+ | 10
+ | 6
+
+ | 3
+ | Vici Gaming
+ | 10
+ | 6
+
+ | 4
+ | Team Spirit
+ | 10
+ | 6
+
+ | 5
+ | Beastcoast
+ | 7
+ | 9
+ | Advanced to the lower bracket
+
+ | 6
+ | Quincy Crew
+ | 6
+ | 10
+
+ | 7
+ | Fnatic
+ | 6
+ | 10
+
+ | 8
+ | Elephant
+ | 6
+ | 10
+
+ | 9
+ | SG esports
+ | 2
+ | 14
+ | Eliminated
+
+Source: [11]
+
+Main event
+[edit]
+
+Bracket
+[edit]
+
+ | | | | | | | | | | | | | | | | | | | | | | | | | | | 
+
+ | | | | | Upper round 1 | | | Upper round 2 | | | Upper final | | | | | | | | | Grand Finals
+
+ | 
+
+ | | | | | 
+
+ | 
+
+ | | Invictus Gaming | 2
+
+ | | | | 
+
+ | | Team Spirit | 1 | | 
+
+ | | | | Invictus Gaming | 0
+
+ | | | | | | 
+
+ | | | | Team Secret | 2 | | 
+
+ | | | | | Team Secret | 2 | | | | 
+
+ | | | | | 
+
+ | | OG | 0 | | 
+
+ | | | | Team Secret | 0 | | 
+
+ | | | | | | | | | | 
+
+ | | | | PSG.LGD | 2 | | | | | | | | 
+
+ | | | | | PSG.LGD | 2 | | | | | | | | | | | 
+
+ | | | | | | | 
+
+ | | T1 | 1 | | 
+
+ | | | | PSG.LGD | 2
+
+ | | | | | | 
+
+ | | | | Virtus.pro | 0 | | 
+
+ | | | | | Virtus.pro | 2 | | | | 
+
+ | | | | | 
+
+ | | Vici Gaming | 1 | | 
+
+ | | | | PSG.LGD | 2
+
+ | | | | 
+
+ | | | | Team Spirit | 3
+
+ | | Lower round 1 | | | Lower round 2 | | | Lower round 3 | | | Lower round 4 | | | Lower round 5 | | | Lower final | | 
+
+ | | 
+
+ | | | | | | | 
+
+ | | 
+
+ | | | Team Spirit | 2
+
+ | | | | | Virtus.pro | 1
+
+ | | Team Undying | 0 | | | Fnatic | 0 | | | | 
+
+ | | | | | | Team Spirit | 2 | | | Team Spirit | 2 | | | 
+
+ | | Fnatic | 1 | | | | | | | | | 
+
+ | | | | | | OG | 0 | | | | | Team Secret | 1
+
+ | | | OG | 2 | | | | | | 
+
+ | | | | | Team Spirit | 2 | | | Team Spirit | 2 | | 
+
+ | | Quincy Crew | 1 | | | Quincy Crew | 0 | | | | | | | | | 
+
+ | | | | | | | | Invictus Gaming | 0 | | | 
+
+ | | Team Aster | 0 | | | | | | | | | | | 
+
+ | | | | | 
+
+ | | | T1 | 2
+
+ | | | | | Invictus Gaming | 2
+
+ | | Beastcoast | 0 | | | Alliance | 0 | | | | 
+
+ | | | | | | T1 | 1 | | | Vici Gaming | 0 | | 
+
+ | | Alliance | 1 | | | | | | | | | 
+
+ | | | | | | Vici Gaming | 2 | | | 
+
+ | | | Vici Gaming | 2 | | | | 
+
+ | | | | 
+
+ | | Evil Geniuses | 1 | | | Evil Geniuses | 1 | | 
+
+ | | | | | 
+
+ | | Elephant | 0 | | | 
+
+ | | | | | | | | | | | | | 
+
+Winnings
+[edit]
+
+Note: Prizes are in USD[12]
+
+ | Place
+ | Team
+ | Prize money
+
+ | 1st
+ | 
+Team Spirit
+
+ | $18,208,300
+
+ | 2nd
+ | 
+PSG.LGD
+
+ | $5,202,400
+
+ | 3rd
+ | 
+Team Secret
+
+ | $3,601,600
+
+ | 4th
+ | 
+Invictus Gaming
+
+ | $2,401,100
+
+ | 5th–6th
+ | 
+Vici Gaming
+
+ | $1,400,600
+
+ | 
+Virtus.pro
+
+ | 7th–8th
+ | 
+OG
+
+ | $1,000,500
+
+ | 
+T1
+
+ | 9th–12th
+ | 
+Alliance
+
+ | $800,400
+
+ | 
+Evil Geniuses
+
+ | 
+Fnatic
+
+ | 
+Quincy Crew
+
+ | 13th–16th
+ | 
+Beastcoast
+
+ | $600,300
+
+ | 
+Elephant
+
+ | 
+Team Aster
+
+ | 
+Team Undying
+
+ | 17th–18th
+ | 
+SG esports
+
+ | $100,000
+
+ | 
+Thunder Predator
+
+References
+[edit]
+
+1 2 Gies, Arthur (August 2, 2017). "The Normal Person's Guide to Watching Competitive Dota 2 (2017 Edition)". Polygon. Archived from the original on August 3, 2017. Retrieved August 16, 2017.
+
+↑ Kim, Ben (July 9, 2013). "A comprehensive comparison of Dota 2 and League of Legends". PC Gamer. Archived from the original on August 1, 2016. Retrieved August 3, 2016.
+
+↑ Michael, Cale (June 23, 2021). "Valve releases 2021 Dota 2 Battle Pass, includes Spectre Arcana, Davion Dragon Knight Persona, and Nemestice event". Dot Esports. Archived from the original on October 2, 2021. Retrieved October 2, 2021.
+
+↑ Van Allen, Eric (July 13, 2017). "How Exactly Does Dota 2 Come Up With Over $20 Million In Prizes For Its Biggest Event?". Kotaku. Archived from the original on July 14, 2017. Retrieved July 14, 2017.
+
+↑ Minotti, Mike (October 16, 2014). "The dangers of crowdfunding those gigantic e-sports prize pools". VentureBeat. Archived from the original on October 10, 2021. Retrieved October 15, 2021.
+
+↑ Shaw, Luke (July 8, 2021). "'Dota 2' tournament to be held in Bucharest with £29million prize pool". NME. Archived from the original on October 2, 2021. Retrieved October 2, 2021.
+
+1 2 3 Haske, Steve (September 17, 2021). "Valve moves Dota 2 International to Romania, adds mask-and-vax rules". Ars Technica. Archived from the original on October 2, 2021. Retrieved October 2, 2021.
+
+↑ Michael, Cale (October 3, 2021). "Valve has canceled in-person audience for The International 10". Dot Esports. Archived from the original on October 3, 2021. Retrieved October 3, 2021.
+
+1 2 Michael, Cale (July 12, 2021). "Every team qualified for Dota 2's The International 10". Dot Esports. Archived from the original on October 2, 2021. Retrieved October 2, 2021.
+
+1 2 Bailey, Dustin (July 7, 2021). "Dota 2's The International gets new dates after Sweden says no to esports". PCGamesN. Archived from the original on July 7, 2021. Retrieved July 8, 2021.
+
+1 2 Lozano, Kurt (October 10, 2021). "Dota 2 TI10 Day 4 recap: Wild Group Stage comes to a close". Yahoo News. Archived from the original on October 11, 2021. Retrieved October 12, 2021.
+
+↑ "Dota 2 Esports". dota2.com. Archived from the original on October 10, 2021. Retrieved October 12, 2021.
+
+External links
+[edit]
+
+Official website
+
+ | 
+
+v
+
+t
+
+e
+
+Dota
+
+ | 
+Valve
+
+ | Games | 
+
+Defense of the Ancients
+
+Dota 2
+
+Artifact
+
+Dota Underlords
+
+ | Esports | 
+
+ | The International | 
+
+2014
+
+2015
+
+2016
+
+2017
+
+2018
+
+2019
+
+2021
+
+2022
+
+2023
+
+2024
+
+2025
+
+ | Notable teams | 
+
+Alliance
+
+Aurora Gaming
+
+CDEC Gaming
+
+Evil Geniuses
+
+Invictus Gaming
+
+Mineski
+
+Newbee
+
+Natus Vincere
+
+OG
+
+PSG.LGD
+
+Team Falcons
+
+Team Liquid
+
+Team Secret
+
+Team Spirit
+
+TNC Pro Team
+
+Vici Gaming
+
+Virtus.pro
+
+Wings Gaming
+
+ | Notable players | 
+
+AdmiralBulldog
+
+ana
+
+Arteezy
+
+Aui_2000
+
+Ceb
+
+Dendi
+
+Fear
+
+Ferrari_430
+
+Fly
+
+Hao
+
+KuroKy
+
+Miracle-
+
+N0tail
+
+ppd
+
+Puppey
+
+s4
+
+Sumail
+
+Topson
+
+Universe
+
+ | Related | 
+
+Dota Auto Chess
+
+Dota: Dragon's Blood
+
+Dota Pro Circuit
+
+Free to Play
+
+OpenAI Five
+
+"Vi sitter i Ventrilo och spelar DotA"
+
+ | 
+
+ Category
+
+Retrieved from "https://en.wikipedia.org/w/index.php?title=The_International_2021&oldid=1296874342"
+
+Categories: 
+The International (esports)
+
+2021 in Romanian sport
+
+2021 multiplayer online battle arena tournaments
+
+October 2021 sports events in Romania
+
+Sports events postponed due to the COVID-19 pandemic
+
+Hidden categories: 
+Articles with short description
+
+Short description matches Wikidata
+
+Use mdy dates from October 2021
+
+ This page was last edited on 22 June 2025, at 21:17 (UTC).
+
+Page was rendered with Parsoid.
+
+Text is available under the Creative Commons Attribution-ShareAlike 4.0 License;
+additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+Privacy policy
+
+About Wikipedia
+
+Disclaimers
+
+Contact Wikipedia
+
+Legal & safety contacts
+
+Code of Conduct
+
+Developers
+
+Statistics
+
+Cookie statement
+
+Mobile view
+
+Search
+
+ Search
+
+Toggle the table of contents
+
+The International 2021
+
+5 languages
+
+Add topic
