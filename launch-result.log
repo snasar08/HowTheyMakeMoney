@@ -1,0 +1,27 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/torch/nn/modules/rnn.py:1012: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.2 and num_layers=1
+  super().__init__("LSTM", *args, **kwargs)
+/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/torch/nn/utils/weight_norm.py:145: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.
+  WeightNorm.apply(module, name, dim)
+Collecting en-core-web-sm==3.8.0
+  Downloading en_core_web_sm-3.8.0-py3-none-any.whl (12.8 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.8/12.8 MB 240.5 MB/s  0:00:00
+Installing collected packages: en-core-web-sm
+Successfully installed en-core-web-sm-3.8.0
+/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+[run] already scheduled: ['Sun 01 12:00 (013)', 'Sun 01 18:00 (007)']
+[run] open slots to fill: ['Sun 01 13:00']
+[run] rendering 1 script(s); 26 ready after this run
+WARNING: Defaulting repo_id to hexgrad/Kokoro-82M. Pass repo_id='hexgrad/Kokoro-82M' to suppress this warning.
+[38;5;2m✔ Download and installation successful[0m
+You can now load the package via spacy.load('en_core_web_sm')
+[render] 3D on: llvmpipe (LLVM 20.1.2, 256 bits)
+  0%|                                               | 0.00/139M [00:00<?, ?iB/s] 25%|█████████▉                             | 35.3M/139M [00:00<00:00, 370MiB/s] 51%|███████████████████▊                   | 70.6M/139M [00:00<00:00, 361MiB/s] 76%|██████████████████████████████▎         | 105M/139M [00:00<00:00, 338MiB/s]100%|████████████████████████████████████████| 139M/139M [00:00<00:00, 366MiB/s]
+https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-034-whatif-mcdonalds
+[run] rendered 034-whatif-mcdonalds.mp4: 38.58s
+::notice title=034-whatif-mcdonalds::{"seconds": 38.58, "scenes": 6, "cuts": 18, "avg_shot": 2.03, "scene_mids": [2.7, 7.74, 13.69, 17.31, 24.35, 29.19], "voice": "kokoro", "timed_words": true, "images_ok": [], "blank_frames": [], "longest_breath": 4.4, "clipped_pct": 0.0, "syllables_per_s": [4.97, 3.46, 5.38, 4.36, 3.57, 4.16], "pitch_spread_st": [3.96, 3.66, 3.29, 2.9, 4.05, 3.09], "clarity": 0.948, "unclear_words": ["'47,000' at 12.1s", "'45,356' at 21.6s", "'1,500' at 25.0s", "'Cashier' at 32.1s", "'you'd' at 34.7s", "or"]}
+::warning title=034-whatif-mcdonalds audio::clarity 95% (min 95%) — hard to hear: '47,000' at 12.1s; '45,356' at 21.6s; '1,500' at 25.0s; 'Cashier' at 32.1s; 'you'd' at 34.7s
+::warning title=034-whatif-mcdonalds audio::'or' at 32.5s heard but unclear (low confidence)
+[publish] Buffer scheduled 034 for Sun 13:00 EST: post 6ae6d935ab019b908744000f status=scheduled
+[run] delivered 034-whatif-mcdonalds: {'mode': 'buffer', 'release': 'https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-034-whatif-mcdonalds', 'asset_url': 'https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-034-whatif-mcdonalds/034-whatif-mcdonalds.mp4', 'post_at': '2026-11-01T13:00:00-05:00', 'buffer_post': '6ae6d935ab019b908744000f', 'buffer_status': 'scheduled'}
