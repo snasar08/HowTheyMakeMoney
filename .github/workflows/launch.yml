@@ -48,10 +48,6 @@ jobs:
             .cache
           key: htmm-models-v1-${{ hashFiles('requirements.txt') }}
           restore-keys: htmm-models-v1-
-      - name: Replace the earlier 034 post (one-off, Nov 1)
-        run: |
-          python -c "from pipeline.publish import buffer_delete; buffer_delete('6ae6d4591ee172cd6ddf56eb'); print('deleted old 034 Buffer post')" || echo "::warning::old post not deleted"
-          gh release delete short-034-whatif-mcdonalds --yes --cleanup-tag || true
       - name: Render and schedule
         run: python -m pipeline.run --id 034 --count 1 2>&1 | tee launch.log
       - name: Mark delivered on main

@@ -1,3 +1,10 @@
+## Nov 1 2026 — new-format 034 posted early
+- 034 McDonald's rewritten in the REELS.md format (time jumps, counter, one B: line, choice CTA). First launch
+  rendered main's old script (launch checks out main) -> deleted, re-launched for 1 PM, then Sam wanted it now.
+- reschedule.py: POST_IN_MIN moves a booked Short to N min from now (books first, removes old after; logs to
+  the branch; pipefail). Bug found: local wall-clock math in the repeated DST hour -> compute in UTC.
+- Final: Buffer post 6ae6dcd7f0984eef334eecae, Sun Nov 1 01:46 EST.
+
 ## Nov 1 2026 — optional second voice + lint fix
 - `B:` sentences use KOKORO_VOICE2 (am_puck+am_michael blend, Sam's pick); main voice unchanged. Local test clarity 97.9%.
 - lint.py: LIKENESS / FAKE_QUOTE regexes had control chars instead of  and never matched; fixed (+ skip "not resembling").

@@ -19,7 +19,7 @@ jobs:
     timeout-minutes: 10
     env:
       BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
-      POST_IN_MIN: "15"  # one-off Nov 1: Sam wants the new-format 034 out now
+      POST_IN_MIN: ""  # set to e.g. "15" for a one-off "post this booked Short N min from now"
     steps:
       - uses: actions/checkout@v4
         with:
