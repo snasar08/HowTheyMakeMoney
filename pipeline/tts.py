@@ -25,6 +25,15 @@ QUESTION_BEAT = 0.5     # Sam: half-second beat after a question, then the answe
 LEAD_KEEP, TAIL_KEEP = 0.06, 0.14  # silence kept before/after each sentence
 SENTENCE = re.compile(r"(?<=[.?!])\s+(?=[A-Z\"'$0-9])")
 MING_VOICE = os.environ.get("MING_VOICE", "US_James")
+# Optional second speaker for back-and-forth lines (Nov 1, Sam picked sample #5: am_puck blended with
+# am_michael). A sentence starting with "B:" is read in this voice; everything else stays KOKORO_VOICE.
+KOKORO_VOICE2 = os.environ.get("KOKORO_VOICE2", "am_puck,am_michael")
+SPEAKER_B = re.compile(r"^\s*B:\s*")
+
+
+def strip_speakers(text: str) -> str:
+    """Narration as shown in captions / checked by Whisper: speaker tags removed."""
+    return re.sub(r"(?<![A-Za-z])B:\s*", "", text)
 
 _kokoro = {}
 _ming_model = None
@@ -83,9 +92,12 @@ def kokoro(text: str, voice: str | None = None, speed: float | None = None):
         if not sent.strip():
             continue
         q = sent.rstrip().endswith("?")
+        v = voice
+        if SPEAKER_B.match(sent):
+            sent, v = SPEAKER_B.sub("", sent), KOKORO_VOICE2
         # Kokoro swallows a weak first syllable ("Across" -> "cross", "The rest" -> "rest",
         # per clarity_check). A leading "..." gives it a run-up and fixes it.
-        for res in _kokoro[lang]("... " + sent, voice=voice, speed=speed * (QUESTION_SPEED if q else 1.0)):
+        for res in _kokoro[lang]("... " + sent, voice=v, speed=speed * (QUESTION_SPEED if q else 1.0)):
             audio = getattr(res, "audio", None)
             if audio is None and isinstance(res, tuple):
                 audio = res[2]

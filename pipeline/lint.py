@@ -15,9 +15,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 # kid-safe + monetization-safe: no hype, no money promises, no shock words, no engagement bait
 # image prompts must never ask for a real person's likeness or brand marks
-LIKENESS = re.compile(r"(look(s|ing)? like|resembl\w*|lookalike|look-alike|portrait of|face of|in the style of|"
-                      r"jersey|team uniform|logo of)", re.I)
-FAKE_QUOTE = re.compile(r"(said|says|told|tweeted|thinks)[^.]*[\"“]", re.I)
+LIKENESS = re.compile(r"(?<!not )(?<!no )\b(look(s|ing)? like|resembl\w*|lookalike|look-alike|portrait of|face of|in the style of|"
+                      r"jersey|team uniform|logo of)\b", re.I)
+FAKE_QUOTE = re.compile(r"\b(said|says|told|tweeted|thinks)\b[^.]*[\"“]", re.I)
 BANNED = ["guaranteed", "get rich", "invest now", "you should buy", "buy the stock", "financial advice",
           "click the link", "link in bio", "smash that like", "follow for more", "insane", "crazy",
           "kill", "dead", "die ", "hate", "stupid", "scam", "damn", "hell", "sexy", "drunk", "gambl"]
@@ -32,7 +32,7 @@ PEOPLE = re.compile(r"\b(person|people|man|woman|couple|family|shopper|worker|ca
 def lint(s: dict) -> tuple[list[str], list[str]]:
     err, warn = [], []
     scenes = s.get("scenes", [])
-    narr = " ".join(sc.get("narration", "") for sc in scenes)
+    narr = re.sub(r"(?<![A-Za-z])B:\s*", "", " ".join(sc.get("narration", "") for sc in scenes))
     spoken = narr + " " + s.get("loop", "") + " Comment which brand we should do next, and subscribe."
     first = scenes[0]["narration"] if scenes else ""
     if s.get("format") not in ("how", "whatif", "careers", "famous"):
