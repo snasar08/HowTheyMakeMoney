@@ -7,7 +7,7 @@
   "hook_style": "whatif",
   "title_style": "whatif",
   "theme": "bold_bright",
-  "status": "ready",
+  "status": "delivered",
   "score": 88,
   "title": "What If One Cashier Served All of McDonald's?",
   "description": "What if one cashier had to serve every McDonald's customer in a single day?\n\nSources:\n- Wikipedia: McDonald's (68 million customers daily; 45,356 restaurants at end of 2025): https://en.wikipedia.org/wiki/McDonald%27s\n\nPer-second = 68 million / 86,400 seconds; per-restaurant = 68 million / 45,356. Not financial advice.\n\n#shorts #mcdonalds #whatif #howtheymakemoney",
@@ -102,5 +102,15 @@
       "title": "Wikipedia: McDonald's (68 million customers daily; 45,356 restaurants at end of 2025)",
       "url": "https://en.wikipedia.org/wiki/McDonald%27s"
     }
-  ]
+  ],
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-034-whatif-mcdonalds",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-034-whatif-mcdonalds/034-whatif-mcdonalds.mp4",
+    "post_at": "2026-11-01T13:00:00-05:00",
+    "buffer_post": "6ae6d4591ee172cd6ddf56eb",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-01T05:55:37.389113+00:00",
+    "seconds": 35.05
+  }
 }
