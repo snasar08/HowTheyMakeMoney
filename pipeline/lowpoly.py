@@ -17,7 +17,7 @@ from __future__ import annotations
 import math
 
 import numpy as np
-from PIL import Image
+from PIL import Image, ImageFilter
 
 from . import character
 from .crowd import Crowd, grid_crowd
@@ -159,7 +159,12 @@ def _crowd(key, v, ch):
     return e.lp_crowds[key]
 
 
+def _ease(p):
+    return p * p * (3 - 2 * p)
+
+
 def _camera(shot, p, t, act):
+    p = _ease(p)
     z = t * (3.2 if act == "run" else 1.4 if act in ("push", "carry") else 0.0)  # hero moves toward -z? no: +z
     hz = z
     if shot == "wide":
@@ -182,6 +187,8 @@ def render(v, t, p, variant):
     shots = SHOTS if v.get("set") in ("field", "city", "stage") else ("wide", "hero_low", "close", "top")
     shot = v.get("shot") or shots[variant % len(shots)]
     eye, tgt, fov = _camera(shot, p, t, act)
+    # slight handheld sway so held shots never look frozen
+    eye = (eye[0] + 0.06 * math.sin(t * 1.7), eye[1] + 0.04 * math.sin(t * 2.3 + 1), eye[2])
     sc = Scene(look(v.get("set", "field")), eye, tgt, fov=fov, aperture=0.0)
     sc.size, sc.vignette, sc.shift, sc.shift_x = SIZE, 0.12, 0.0, 0.0
     rng = np.random.default_rng(7)
@@ -196,8 +203,8 @@ def render(v, t, p, variant):
         _box(sc, (0, 0.5, dz + 0.9), (0.9, 0.7, 1.1), (0.75, 0.78, 0.82))
     if act == "carry":
         _box(sc, (0, 1.05, dz + 0.45), (0.6, 0.45, 0.45), (0.8, 0.6, 0.38), shadow=False)
-    img = Image.fromarray(sc.render()).resize((1080, 1920), Image.BILINEAR)
-    return img
+    img = Image.fromarray(sc.render()).resize((1080, 1920), Image.LANCZOS)
+    return img.filter(ImageFilter.UnsharpMask(radius=2, percent=60, threshold=2))
 
 
 def _shifted(crowd, t, m):
