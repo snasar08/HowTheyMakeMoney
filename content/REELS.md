@@ -24,7 +24,7 @@ kid-safe and never OK for this channel.)
 6. **Close-up reactions.** The character's face changes on the punchline; the camera pushes in.
 7. **A specific comment question, not "subscribe".** "Maya or the gum guy? Comment who's in."
    "What should his punishment be? Wrong answers only." A this-or-that choice gets comments.
-8. **Second person / a character.** "You pick black." or a naive character asking a mascot. The
+8. **Second person.** "You pick black." (Sam said no to a second voice, so no two-character dialogue.) The
    viewer is inside the story instead of being lectured.
 9. **Captions:** 1–3 words, bottom-center, one key word in color. (We already do this.)
 10. **Length 45–69 s** for stories; the dialogue never stalls, so long still holds.
