@@ -75,7 +75,7 @@ and **free beyond his Higgsfield Pro plan** — never add a paid service or ask 
   `3d-e2e-results`). Benchmarks: `bench3d.yml` on `3d-upgrade`.
 - **Low-poly style (approved by Sam Oct 29 2026, live):** visual type
   `lowpoly` (`pipeline/lowpoly.py`: code-built sets field/store/warehouse/city/office/stage, props,
-  a gold hero + instanced crowds of up to ~400 via `pipeline/crowd.py` GPU skinning, 5 camera
+  people in the pack's clothed CC0 textures (6 skin tones; Nov 1, Sam wanted them to look like people), eased camera moves with slight handheld sway, Lanczos upscale + light sharpen, a hero + instanced crowds of up to ~400 via `pipeline/crowd.py` GPU skinning, 5 camera
   shots cut every beat, 540x960 upscaled) with big yellow outlined stats and lowercase one-word
   yellow captions. CC0 characters: `assets/characters/CREDITS.md`. Meant for `whatif` + `famous`.
   Use it for most `whatif` and `famous` Shorts (no Higgsfield images needed, saves credits); keep

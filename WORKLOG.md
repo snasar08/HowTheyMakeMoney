@@ -205,3 +205,9 @@ passes and the 3D version is clearly better. Free tools only; ≤100 Higgsfield 
 
 ## Needs Sam
 - Confirm the "people" reading above (realistic made-up people in the photos).
+
+## 2026-11-01 — Low-poly upgrade
+- Characters now use the pack's clothed CC0 textures (skin tones, hair, shirts, jeans) instead of flat solid colors; hero no longer gold.
+- Eased camera moves, slight handheld sway, Lanczos upscale + unsharp mask (crisper).
+- Tried and dropped: sky gradient (left an arch seam) and depth-of-field (depth pass skips GPU crowds, so it blurred the hero).
+- e2e on 030 passed both times (no blank frames, ~4 min).
