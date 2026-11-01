@@ -29,9 +29,11 @@ def main(ids: list[str]) -> int:
         when = dt.datetime.fromisoformat(d["post_at"]).astimezone(P.TZ)
         old = d.get("buffer_post") if soon else None
         if soon:  # book the new time first; the old post is removed only once that worked
-            when = (dt.datetime.now(P.TZ) + dt.timedelta(minutes=int(soon))).replace(second=0, microsecond=0)
+            # add in UTC: local wall-clock math breaks in the repeated hour when DST ends
+            when = (dt.datetime.now(dt.timezone.utc) + dt.timedelta(minutes=int(soon))).replace(
+                second=0, microsecond=0).astimezone(P.TZ)
             d["post_at"] = when.isoformat()
-        if when <= dt.datetime.now(P.TZ) + dt.timedelta(minutes=10):
+        if when <= dt.datetime.now(dt.timezone.utc) + dt.timedelta(minutes=10):
             raise SystemExit(f"{sid}: its slot {when} has passed; pick a new time")
         if not P.public_ok(url):
             raise SystemExit(f"{sid}: asset still not public: {url}")
