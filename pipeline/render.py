@@ -915,6 +915,7 @@ class Renderer:
                 if lp:
                     fx.hook(frame, self.s.get("title", ""), gt, font, BLACK)
                 self._hud(frame, scenes, si, t)
+                self._name(frame, gt)
                 self._cta(frame, si, t)
                 self._icon(frame, chunks[si], t, lp)
                 self._caption(frame, chunks[si], t)  # after the CTA dim, so captions stay bright
@@ -1132,6 +1133,28 @@ class Renderer:
         fv = font(BLACK, max(20, int(64 * (0.6 + 0.4 * pop))))
         d.text((SAFE_X0, 60), label.upper(), font=fl, fill=(255, 255, 255), stroke_width=5, stroke_fill=(0, 0, 0))
         d.text((SAFE_X0, 98), val, font=fv, fill=(255, 221, 0), stroke_width=8, stroke_fill=(0, 0, 0))
+
+    def _name(self, frame, gt):
+        """Who this Short is about (famous format): name banner slides in after the title punch-in
+        and stays ~3 s. Script: "name_card": "CRISTIANO RONALDO", optional "name_sub": "soccer player".
+        The name does the identifying; characters never copy a real person's look (STYLE.md)."""
+        name = self.s.get("name_card")
+        if not name or not 0.8 <= gt <= 4.2:
+            return
+        k = ease_out_back(min(1.0, (gt - 0.8) / 0.3)) * min(1.0, (4.2 - gt) / 0.2)
+        d = ImageDraw.Draw(frame)
+        f = fit_font(name.upper(), BLACK, SAFE_X1 - SAFE_X0 - 60, 76, 40)
+        tw = d.textlength(name.upper(), font=f)
+        x0 = SAFE_X0 - (1 - k) * (tw + 120)
+        y0 = 205
+        d.rectangle((x0, y0, x0 + tw + 50, y0 + f.size + 30), fill=(255, 221, 0))
+        d.text((x0 + 25, y0 + 12), name.upper(), font=f, fill=(0, 0, 0))
+        sub = self.s.get("name_sub")
+        if sub:
+            fs = font(BOLD, 36)
+            sw = d.textlength(sub.upper(), font=fs)
+            d.rectangle((x0, y0 + f.size + 30, x0 + sw + 40, y0 + f.size + 82), fill=(0, 0, 0))
+            d.text((x0 + 20, y0 + f.size + 36), sub.upper(), font=fs, fill=(255, 255, 255))
 
     def _icon(self, frame, chunks, t, lp):
         """Small drawn icon above the captions while a matching word (money, truck, plane...) is said."""
