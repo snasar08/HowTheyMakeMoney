@@ -7,7 +7,7 @@
   "hook_style": "question",
   "title_style": "statement",
   "theme": "dark_neon",
-  "status": "ready",
+  "status": "delivered",
   "score": 94,
   "title": "Shorts Creators Keep Just 45% of Ad Money",
   "description": "How much does a YouTuber get paid for a million views?\n\nSources:\n- YouTube Blog: YouTube Partner Program, Explained (Feb 2025): https://blog.youtube/creator-and-artist-stories/youtube-partner-program-explained/\n- YouTube Help: YouTube Partner Program overview and eligibility: https://support.google.com/youtube/answer/72857\n- YouTube Help: Shorts monetization policies and Creator Pool example: https://support.google.com/youtube/answer/12504220\n\nShare percentages and requirements are from YouTube's own pages; the $405 figure is YouTube's hypothetical Creator Pool example, not a guaranteed rate. Not financial advice.\n\n#shorts #youtube #creators #howtheymakemoney",
@@ -116,5 +116,15 @@
       "title": "YouTube Help: Shorts monetization policies and Creator Pool example",
       "url": "https://support.google.com/youtube/answer/12504220"
     }
-  ]
+  ],
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-033-careers-youtubers",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-033-careers-youtubers/033-careers-youtubers.mp4",
+    "post_at": "2026-11-02T18:00:00-05:00",
+    "buffer_post": "6ae787535604f9d85b8082b1",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-01T18:39:16.240312+00:00",
+    "seconds": 29.98
+  }
 }
