@@ -1,3 +1,7 @@
+## Nov 1 2026 — learned from Sam's liked reels
+- Analyzed 4 reels in Downloads/reels i like (frames, Whisper transcripts, cut counts) -> content/REELS.md.
+- New: on-screen counter (`hud_label` + per-scene `hud`), per-script `cta_question` bubble, lint length 25-55 s.
+
 ## Oct 31 2026 — shorts-craft skill
 - Added project skill `.claude/skills/shorts-craft` with MIT guides from github.com/agricidaniel/claude-youtube
   (hook, shorts, shorts-playbook, retention-scripting, algorithm). Excluded its API/OAuth scripts and

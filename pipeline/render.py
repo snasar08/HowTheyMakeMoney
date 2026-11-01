@@ -800,7 +800,7 @@ class Renderer:
     # ---- assemble
     def prepare(self) -> list[Scene]:
         scenes = []
-        self.cta_q = CTA_QUESTION
+        self.cta_q = self.s.get("cta_question") or CTA_QUESTION  # e.g. a this-or-that choice
         cta_line = " ".join(p.strip() for p in self.s.get("cta", CTA_LINE).split("|") if p.strip())
         loop = (self.s.get("loop") or "").strip()
         last = len(self.s["scenes"]) - 1
@@ -914,6 +914,7 @@ class Renderer:
                 frame = fx.grade(frame, n)
                 if lp:
                     fx.hook(frame, self.s.get("title", ""), gt, font, BLACK)
+                self._hud(frame, scenes, si, t)
                 self._cta(frame, si, t)
                 self._icon(frame, chunks[si], t, lp)
                 self._caption(frame, chunks[si], t)  # after the CTA dim, so captions stay bright
@@ -1114,6 +1115,23 @@ class Renderer:
         f = font(BLACK, max(20, int(f.size * (0.85 + 0.15 * k))))
         draw_centered(ImageDraw.Draw(frame), (SAFE_X0 + SAFE_X1) / 2, CAPTION_Y - f.size // 2, txt, f,
                       (255, 221, 0), 12, (0, 0, 0))
+
+    def _hud(self, frame, scenes, si, t):
+        """Running counter in the top-left corner (Sam's liked reels: "TIME SINCE HE WOKE UP",
+        "$2,001 + HOUSE"). Script: "hud_label": "MONEY LEFT", each scene's visual "hud": "$2,001".
+        The value pops when it changes and carries over scenes that don't set one."""
+        label = self.s.get("hud_label")
+        vals = [sc.visual.get("hud") for sc in scenes[: si + 1]]
+        val = next((v for v in reversed(vals) if v), None)
+        if not label or not val:
+            return
+        changed = scenes[si].visual.get("hud") and (si == 0 or val != next((v for v in reversed(vals[:-1]) if v), None))
+        pop = ease_out_back(min(1.0, t / 0.3)) if changed else 1.0
+        d = ImageDraw.Draw(frame)
+        fl = font(BOLD, 30)
+        fv = font(BLACK, max(20, int(64 * (0.6 + 0.4 * pop))))
+        d.text((SAFE_X0, 60), label.upper(), font=fl, fill=(255, 255, 255), stroke_width=5, stroke_fill=(0, 0, 0))
+        d.text((SAFE_X0, 98), val, font=fv, fill=(255, 221, 0), stroke_width=8, stroke_fill=(0, 0, 0))
 
     def _icon(self, frame, chunks, t, lp):
         """Small drawn icon above the captions while a matching word (money, truck, plane...) is said."""

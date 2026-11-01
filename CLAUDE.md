@@ -152,7 +152,7 @@ Posting uses 14 Shorts/week (2/day). Goal: build a buffer, capped so credits are
    real, dated net worth/earnings). Ideas + sources: `content/topics.md` "Formats". Mix per batch:
    start ~25% each, then follow `analytics/insights.md` (more of what wins, fewer losers) but keep
    ~20% experimental and NEVER drop a format entirely without asking Sam. Variety: no two Shorts
-   in a row (by posting order) share format + theme + hook style; vary length (25–45 s), hook
+   in a row (by posting order) share format + theme + hook style; vary length (25–55 s; stories may run longer, Nov 1), hook
    style and title style. **Title test (Oct 30):** rotate `title_style` evenly (question / number /
    statement / whatif) until each has ≥ 10 posted Shorts in `analytics/insights.md`; after that,
    ~60% the winning style, the rest spread over the others so the test keeps running. Every script sets `format`, `visual_style` (`charts3d`, or `lowpoly`
@@ -161,7 +161,9 @@ Posting uses 14 Shorts/week (2/day). Goal: build a buffer, capped so credits are
    "Real people and brands".
    **Before writing, read `analytics/insights.md`** (updated by stats.yml before Saturday).
 2. Read `content/STYLE.md`, `content/angles.md`, a few existing scripts, and the project skill
-   `.claude/skills/shorts-craft/SKILL.md` (hook variants, retention, loop guides; project rules win). Topics: household-name
+   `.claude/skills/shorts-craft/SKILL.md` (hook variants, retention, loop guides; project rules win), and
+   **`content/REELS.md`** (what Sam's favorite reels do: fragments, a flip every 3–5 s, time-jumps,
+   on-screen counter `hud`, this-or-that comment question via `cta` + `cta_question`). Topics: household-name
    companies, plus jobs/careers people are curious about (YouTubers, streamers, pilots, NBA
    players, real estate agents…). Pick from `content/topics.md` or add new ones. A repeat company
    needs a clearly different angle, new figures, new hook, new B-roll and a different structure —
