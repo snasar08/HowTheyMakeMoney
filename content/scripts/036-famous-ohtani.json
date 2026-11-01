@@ -7,7 +7,7 @@
   "hook_style": "surprise",
   "title_style": "question",
   "theme": "clean_navy",
-  "status": "ready",
+  "status": "delivered",
   "score": 90,
   "title": "Why Does Ohtani Earn Just $2.6M Playing?",
   "description": "Why does one of baseball's biggest stars earn only 2.6 million dollars from playing?\n\nSources:\n- Forbes: The World's 10 Highest-Paid Athletes 2026 (Forbes Australia): https://www.forbes.com.au/news/sport/the-worlds-10-highest-paid-athletes-2026/\n\nForbes estimate for May 1, 2025 to May 1, 2026: $127.6M total, $2.6M on-field, $125M off-field. Not financial advice.\n\n#shorts #ohtani #baseball #howtheymakemoney",
@@ -110,5 +110,15 @@
       "title": "Forbes: The World's 10 Highest-Paid Athletes 2026 (Forbes Australia)",
       "url": "https://www.forbes.com.au/news/sport/the-worlds-10-highest-paid-athletes-2026/"
     }
-  ]
+  ],
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-036-famous-ohtani",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-036-famous-ohtani/036-famous-ohtani.mp4",
+    "post_at": "2026-11-02T12:00:00-05:00",
+    "buffer_post": "6ae6ed5021c807e9d5a8b81e",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-01T07:42:08.828671+00:00",
+    "seconds": 33.0
+  }
 }
