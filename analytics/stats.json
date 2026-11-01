@@ -21,6 +21,12 @@
      "views": 0,
      "likes": 0,
      "comments": 0
+    },
+    {
+     "t": "2026-11-01T17:06:02+00:00",
+     "views": 0,
+     "likes": 0,
+     "comments": 0
     }
    ],
    "tags": {
@@ -57,6 +63,12 @@
     },
     {
      "t": "2026-10-31T16:03:40+00:00",
+     "views": 0,
+     "likes": 0,
+     "comments": 0
+    },
+    {
+     "t": "2026-11-01T17:06:02+00:00",
      "views": 0,
      "likes": 0,
      "comments": 0
@@ -99,6 +111,12 @@
      "views": 2,
      "likes": 0,
      "comments": 0
+    },
+    {
+     "t": "2026-11-01T17:06:02+00:00",
+     "views": 2,
+     "likes": 0,
+     "comments": 0
     }
    ],
    "tags": {
@@ -135,6 +153,12 @@
     },
     {
      "t": "2026-10-31T16:03:40+00:00",
+     "views": 0,
+     "likes": 0,
+     "comments": 0
+    },
+    {
+     "t": "2026-11-01T17:06:02+00:00",
      "views": 0,
      "likes": 0,
      "comments": 0
@@ -177,6 +201,12 @@
      "views": 1,
      "likes": 1,
      "comments": 0
+    },
+    {
+     "t": "2026-11-01T17:06:02+00:00",
+     "views": 1,
+     "likes": 1,
+     "comments": 0
     }
    ],
    "tags": {
@@ -216,6 +246,12 @@
      "views": 1,
      "likes": 0,
      "comments": 0
+    },
+    {
+     "t": "2026-11-01T17:06:02+00:00",
+     "views": 1,
+     "likes": 0,
+     "comments": 0
     }
    ],
    "tags": {
@@ -246,6 +282,12 @@
     },
     {
      "t": "2026-10-31T16:03:40+00:00",
+     "views": 1,
+     "likes": 0,
+     "comments": 0
+    },
+    {
+     "t": "2026-11-01T17:06:02+00:00",
      "views": 1,
      "likes": 0,
      "comments": 0
@@ -282,6 +324,12 @@
      "views": 1,
      "likes": 0,
      "comments": 0
+    },
+    {
+     "t": "2026-11-01T17:06:02+00:00",
+     "views": 1,
+     "likes": 0,
+     "comments": 0
     }
    ],
    "tags": {
@@ -315,6 +363,12 @@
      "views": 1,
      "likes": 0,
      "comments": 0
+    },
+    {
+     "t": "2026-11-01T17:06:02+00:00",
+     "views": 1,
+     "likes": 0,
+     "comments": 0
     }
    ],
    "tags": {
@@ -339,6 +393,12 @@
    "snapshots": [
     {
      "t": "2026-10-31T16:03:40+00:00",
+     "views": 0,
+     "likes": 0,
+     "comments": 0
+    },
+    {
+     "t": "2026-11-01T17:06:02+00:00",
      "views": 0,
      "likes": 0,
      "comments": 0
@@ -369,6 +429,12 @@
      "views": 20,
      "likes": 0,
      "comments": 0
+    },
+    {
+     "t": "2026-11-01T17:06:02+00:00",
+     "views": 55,
+     "likes": 0,
+     "comments": 0
     }
    ],
    "tags": {
@@ -396,6 +462,12 @@
      "views": 1,
      "likes": 0,
      "comments": 0
+    },
+    {
+     "t": "2026-11-01T17:06:02+00:00",
+     "views": 3,
+     "likes": 0,
+     "comments": 0
     }
    ],
    "tags": {
@@ -413,8 +485,89 @@
     "post_slot": "13:00",
     "score": 92
    }
+  },
+  "O5kd32nBRpQ": {
+   "title": "Why Do Gas Stations Want You Inside?",
+   "published": "2026-11-01T17:02:04Z",
+   "snapshots": [
+    {
+     "t": "2026-11-01T17:06:02+00:00",
+     "views": 0,
+     "likes": 0,
+     "comments": 0
+    }
+   ],
+   "tags": {
+    "script": "013",
+    "slug": "gas-stations",
+    "topic": "Gas stations",
+    "format": "how",
+    "visual_style": "charts3d",
+    "theme": "bold_bright",
+    "hook_style": "question",
+    "title_style": "question",
+    "length_s": 26.65,
+    "length_bucket": "<30",
+    "post_at": "2026-11-01T12:00:00-05:00",
+    "post_slot": "12:00",
+    "score": 78
+   }
+  },
+  "cGLTzVo-lyc": {
+   "title": "What If One Cashier Served All of McDonald's?",
+   "published": "2026-11-01T06:46:30Z",
+   "snapshots": [
+    {
+     "t": "2026-11-01T17:06:02+00:00",
+     "views": 4,
+     "likes": 0,
+     "comments": 0
+    }
+   ],
+   "tags": {
+    "script": "034",
+    "slug": "whatif-mcdonalds",
+    "topic": "McDonald's",
+    "format": "whatif",
+    "visual_style": "lowpoly",
+    "theme": "bold_bright",
+    "hook_style": "whatif",
+    "title_style": "whatif",
+    "length_s": 38.58,
+    "length_bucket": "38+",
+    "post_at": "2026-11-01T01:46:00-05:00",
+    "post_slot": "01:46",
+    "score": 88
+   }
+  },
+  "2VO-nLuo7xU": {
+   "title": "How Does a Free App Make $1 Billion?",
+   "published": "2026-10-31T22:01:19Z",
+   "snapshots": [
+    {
+     "t": "2026-11-01T17:06:02+00:00",
+     "views": 7,
+     "likes": 0,
+     "comments": 0
+    }
+   ],
+   "tags": {
+    "script": "028",
+    "slug": "duolingo",
+    "topic": "Duolingo",
+    "format": "how",
+    "visual_style": "charts3d",
+    "theme": "bold_bright",
+    "hook_style": "question",
+    "title_style": "question",
+    "length_s": 26.15,
+    "length_bucket": "<30",
+    "post_at": "2026-10-31T18:00:00-04:00",
+    "post_slot": "18:00",
+    "score": 79
+   }
   }
  },
- "updated": "2026-10-31T16:03:40+00:00",
+ "updated": "2026-11-01T17:06:02+00:00",
  "subscribers": 1
 }
