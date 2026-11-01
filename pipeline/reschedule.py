@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import datetime as dt
 import json
+import os
 import sys
 from pathlib import Path
 
@@ -20,11 +21,18 @@ def main(ids: list[str]) -> int:
         path = next((ROOT / "content" / "scripts").glob(f"{sid}*.json"))
         s = json.loads(path.read_text(encoding="utf-8"))
         d = s.get("delivered") or {}
-        if d.get("mode") == "buffer":
+        soon = os.environ.get("POST_IN_MIN")  # move an already-booked Short to N minutes from now
+        if d.get("mode") == "buffer" and not soon:
             print(f"[reschedule] {sid} is already on Buffer ({d.get('buffer_post')})")
             continue
         url = d["asset_url"]
         when = dt.datetime.fromisoformat(d["post_at"]).astimezone(P.TZ)
+        if soon:
+            if d.get("buffer_post"):
+                P.buffer_delete(d["buffer_post"])
+                print(f"[reschedule] {sid}: removed post {d['buffer_post']} ({when:%a %H:%M})")
+            when = (dt.datetime.now(P.TZ) + dt.timedelta(minutes=int(soon))).replace(second=0, microsecond=0)
+            d["post_at"] = when.isoformat()
         if when <= dt.datetime.now(P.TZ) + dt.timedelta(minutes=10):
             raise SystemExit(f"{sid}: its slot {when} has passed; pick a new time")
         if not P.public_ok(url):

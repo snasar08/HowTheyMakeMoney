@@ -19,6 +19,7 @@ jobs:
     timeout-minutes: 10
     env:
       BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+      POST_IN_MIN: "15"  # one-off Nov 1: Sam wants the new-format 034 out now
     steps:
       - uses: actions/checkout@v4
         with:
@@ -26,6 +27,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+      - name: Remove the old 034 post if still there (one-off, Nov 1)
+        run: python -c "from pipeline.publish import buffer_delete; buffer_delete('6ae6d4591ee172cd6ddf56eb'); print('deleted old post')" || echo "old post already gone"
       - name: Schedule
         run: |
           git fetch -q origin "$GITHUB_REF_NAME"
