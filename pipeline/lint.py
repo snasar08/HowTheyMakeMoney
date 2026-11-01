@@ -23,7 +23,7 @@ BANNED = ["guaranteed", "get rich", "invest now", "you should buy", "buy the sto
           "kill", "dead", "die ", "hate", "stupid", "scam", "damn", "hell", "sexy", "drunk", "gambl"]
 LOWPOLY_LIVE = True  # Sam approved the low-poly look (Oct 29 2026)
 WPS = 2.55        # spoken words per second at KOKORO_SPEED 1.25 (measured: 009 ≈ 34 s for 88 words)
-LEN_MIN, LEN_MAX = 25, 45
+LEN_MIN, LEN_MAX = 25, 55  # Oct 31: Sam's liked reels run 45-69 s; story/what-if Shorts may run longer
 TITLE_MAX = 50    # Shorts titles get cut on mobile beyond ~50 chars
 PEOPLE = re.compile(r"\b(person|people|man|woman|couple|family|shopper|worker|cashier|driver|owner|"
                     r"customer|customers|crowd|fan|player|gamer|chef|pilot|student|friend|parent|teenager|kid|traveler|barista|technician|engineer|runner|clerk|singer|crew|rider|employee|adult)s?\b", re.I)
