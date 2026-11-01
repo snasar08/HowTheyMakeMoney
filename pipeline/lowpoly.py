@@ -36,6 +36,7 @@ SETS = {
 }
 PALETTE = [(0.95, 0.35, 0.3), (0.3, 0.55, 0.95), (0.98, 0.8, 0.25), (0.35, 0.75, 0.45), (0.8, 0.45, 0.85),
            (0.95, 0.6, 0.3), (0.3, 0.8, 0.85), (0.92, 0.92, 0.92)]
+SKINS = ("LightSkin", "LightSkin1", "LightSkin2", "DarkSkin", "DarkSkin1", "DarkSkin2")
 SHOTS = ("wide", "hero_low", "close", "track", "top")
 
 
@@ -145,17 +146,25 @@ def _crowd(key, v, ch):
         act = v.get("action", "run")
         clip = ch.find_clip(CLIP.get(act, "idle"))
         cheer = ch.find_clip("jump")
-        c = Crowd(ch, skin=None)
+        # the pack's clothed textures: skin tones, hair, shirts and pants, so they read as people
+        skins = list(SKINS)
+        rng.shuffle(skins)
+        cs = []
         if n:
             wide = v.get("set") in ("field", "city", "stage")
             pos = grid_crowd(n, -16 if wide else -6, 16 if wide else 6, -40, -6, rng)
             clips = [clip if (i % 4 or act != "cheer") else cheer for i in range(n)]
-            c.place(pos, rng.uniform(-0.3, 0.3, n) + (0 if act in ("run", "push", "carry") else math.pi * 0),
-                    rng.uniform(0.92, 1.08, n), [PALETTE[int(rng.integers(8))] for _ in range(n)], clips,
-                    (np.arange(n) % 8) * 0.137)
-        hero = Crowd(ch, skin=None)
-        hero.place([(0, 0, 0)], [0.0], [1.0], [(0.98, 0.78, 0.2)], [clip], [0.0])
-        e.lp_crowds[key] = (c, hero)
+            yaw, scl, ph = rng.uniform(-0.3, 0.3, n), rng.uniform(0.92, 1.08, n), (np.arange(n) % 8) * 0.137
+            for k, sk in enumerate(skins):
+                ids = [i for i in range(n) if i % len(skins) == k]
+                if ids:
+                    c = Crowd(ch, skin=sk)
+                    c.place([pos[i] for i in ids], yaw[ids], scl[ids], [(1, 1, 1)] * len(ids),
+                            [clips[i] for i in ids], ph[ids])
+                    cs.append(c)
+        hero = Crowd(ch, skin=skins[0])
+        hero.place([(0, 0, 0)], [0.0], [1.0], [(1, 1, 1)], [clip], [0.0])
+        e.lp_crowds[key] = (cs, hero)
     return e.lp_crowds[key]
 
 
@@ -197,7 +206,8 @@ def render(v, t, p, variant):
     # the crowd and hero move together (crowd behind); one draw per animation phase group
     dz = t * (3.2 if act == "run" else 1.4 if act in ("push", "carry") else 0.0)
     m = trs((0, 0, dz))
-    sc.customs.append(_shifted(crowd, t, m))
+    for c in crowd:
+        sc.customs.append(_shifted(c, t, m))
     sc.customs.append(_shifted(hero, t, m))
     if act == "push":
         _box(sc, (0, 0.5, dz + 0.9), (0.9, 0.7, 1.1), (0.75, 0.78, 0.82))
