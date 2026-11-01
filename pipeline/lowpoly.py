@@ -6,9 +6,9 @@ every beat (~1.4–2 s): wide, low hero angle, close-up, tracking, overhead. Ren
 is upscaled (the slightly low-res look is intended, and it's 4x fewer pixels for llvmpipe).
 
 Scene JSON:
-  {"type": "lowpoly", "set": "field|store|warehouse|city|office|stage",
+  {"type": "lowpoly", "set": "field|store|warehouse|city|office|stage|court|pitch|studio|gaming|launch",
    "action": "run|push|carry|cheer|fall|work|idle", "crowd": 0..400,
-   "props": ["boxes", "truck", "rocket", "car", "check", "cash", "phone", "trophy"],
+   "props": ["boxes", "truck", "rocket", "car", "check", "cash", "phone", "trophy", "ball", "mic", "headset"],
    "stat": "$9.6B", "stat_sub": "packages a year"}
 People are always generic: never a real person's face, hair, body or signature look (STYLE.md).
 """
@@ -33,6 +33,12 @@ SETS = {
     "city": dict(sky=(0.98, 0.72, 0.5), floor=(0.42, 0.44, 0.48)),
     "office": dict(sky=(0.88, 0.92, 0.98), floor=(0.7, 0.62, 0.52)),
     "stage": dict(sky=(0.12, 0.1, 0.22), floor=(0.18, 0.16, 0.24)),
+    # famous-people worlds (Nov 1): hint who it is with the setting, never their look
+    "court": dict(sky=(0.16, 0.18, 0.26), floor=(0.78, 0.55, 0.32)),
+    "pitch": dict(sky=(0.1, 0.14, 0.24), floor=(0.24, 0.55, 0.26)),
+    "studio": dict(sky=(0.08, 0.07, 0.1), floor=(0.2, 0.18, 0.2)),
+    "gaming": dict(sky=(0.1, 0.06, 0.18), floor=(0.16, 0.14, 0.2)),
+    "launch": dict(sky=(0.95, 0.68, 0.45), floor=(0.62, 0.56, 0.48)),
 }
 PALETTE = [(0.95, 0.35, 0.3), (0.3, 0.55, 0.95), (0.98, 0.8, 0.25), (0.35, 0.75, 0.45), (0.8, 0.45, 0.85),
            (0.95, 0.6, 0.3), (0.3, 0.8, 0.85), (0.92, 0.92, 0.92)]
@@ -83,10 +89,60 @@ def build_set(sc, name, rng):
             for z in np.arange(-24, 6, 4):
                 _box(sc, (x, 0, z), (2.4, 0.9, 1.2), (0.85, 0.75, 0.6))
                 _box(sc, (x, 0.9, z - 0.3), (0.9, 0.6, 0.06), (0.15, 0.18, 0.22), shadow=False)
+    elif name == "court":                         # basketball: lines, hoops, arena seats
+        for z in (-30,):
+            _box(sc, (0, 0, z), (0.25, 4.2, 0.25), (0.3, 0.3, 0.32), shadow=False)
+            _box(sc, (0, 4.2, z + (0.4 if z < 0 else -0.4)), (2.2, 1.4, 0.08), (0.96, 0.96, 0.96), shadow=False)
+            sc.add(Engine.get().meshes["cyl"], trs((0, 3.8, z + (0.9 if z < 0 else -0.9)), (0.45, 0.05, 0.45)), (0.95, 0.4, 0.1))
+        _box(sc, (0, 0.004, -14), (15, 0.01, 0.15), (0.97, 0.97, 0.97), shadow=False)
+        for x in (-7.5, 7.5):
+            _box(sc, (x, 0.004, -14), (0.15, 0.01, 32), (0.97, 0.97, 0.97), shadow=False)
+        _stands(sc, 11, rng)
+    elif name == "pitch":                         # soccer: night stadium, goals, floodlights
+        for z in (-40, 6):
+            for x in (-3.6, 3.6):
+                _box(sc, (x, 0, z), (0.18, 2.4, 0.18), (0.97, 0.97, 0.97), shadow=False)
+            _box(sc, (0, 2.4, z), (7.4, 0.18, 0.18), (0.97, 0.97, 0.97), shadow=False)
+        _box(sc, (0, 0.004, -17), (40, 0.01, 0.2), (0.95, 0.95, 0.95), shadow=False)
+        _stands(sc, 22, rng)
+        for x in (-26, 26):
+            _box(sc, (x, 0, -30), (0.5, 20, 0.5), (0.4, 0.4, 0.45), shadow=False)
+            sc.add(Engine.get().meshes["box"], trs((x, 20, -30), (3, 1.4, 0.3)), (1, 1, 0.9), unlit=True)
+    elif name == "studio":                        # music: mic stand, speakers, glowing panels
+        _box(sc, (0, 0, -6), (12, 0.5, 6), (0.15, 0.13, 0.16))
+        for x in (-5, 5):
+            _box(sc, (x, 0.5, -7), (1.4, 3.0, 1.2), (0.08, 0.08, 0.09))
+            _cyl(sc, (x, 2.6, -6.38), 0.45, 0.04, (0.3, 0.3, 0.34))
+        for k in range(7):
+            sc.add(Engine.get().meshes["box"], trs((-6 + k * 2, 3 + (k % 3), -12), (1.2, 4, 0.1)),
+                   PALETTE[(k * 3) % 8], unlit=True)
+    elif name == "gaming":                        # streaming: desk, glowing monitors, LED strips
+        for x in (-5, 0, 5):
+            _box(sc, (x, 0, -6), (3.6, 1.0, 1.6), (0.12, 0.12, 0.14))
+            for dx in (-0.85, 0.85):
+                sc.add(Engine.get().meshes["box"], trs((x + dx, 1.2, -6.4), (1.5, 0.9, 0.06)),
+                       (0.35, 0.6, 1.0) if dx < 0 else (0.75, 0.35, 0.95), unlit=True)
+        for z in np.arange(-30, 0, 6):
+            sc.add(Engine.get().meshes["box"], trs((-9, 2.5, z), (0.1, 0.12, 5)), (0.9, 0.2, 0.9), unlit=True)
+            sc.add(Engine.get().meshes["box"], trs((9, 2.5, z), (0.1, 0.12, 5)), (0.2, 0.9, 0.95), unlit=True)
+    elif name == "launch":                        # space: pad, tower, desert
+        _box(sc, (-8, 0, -20), (8, 0.6, 8), (0.5, 0.5, 0.52))
+        _box(sc, (-11, 0, -20), (1.2, 16, 1.2), (0.75, 0.3, 0.2))
     elif name == "stage":
         _box(sc, (0, 0, -6), (16, 1.0, 8), (0.25, 0.22, 0.3))
         for x in (-7, 7):
             _box(sc, (x, 1, -9), (0.6, 9, 0.6), (0.4, 0.4, 0.45), shadow=False)
+
+
+def _stands(sc, half, rng):
+    """Tiered seats both sides with a scatter of colored fans (boxes, cheap)."""
+    for side in (-1, 1):
+        for k in range(6):
+            x = side * (half + 2 + k * 1.3)
+            _box(sc, (x, k * 0.8, -16), (1.3, 0.8, 70), (0.3, 0.3, 0.36), shadow=False)
+            for z in np.arange(-48, 18, 1.6):
+                if rng.random() < 0.7:
+                    _box(sc, (x, k * 0.8 + 0.8, z), (0.45, 0.6, 0.45), PALETTE[int(rng.integers(8))], shadow=False)
 
 
 def add_props(sc, props, t, rng):
@@ -129,6 +185,16 @@ def add_props(sc, props, t, rng):
         elif name == "phone":
             _box(sc, (0, 3.0 + 0.1 * math.sin(t * 2), -4), (1.8, 3.6, 0.2), (0.1, 0.1, 0.12), shadow=False)
             _box(sc, (0, 3.15 + 0.1 * math.sin(t * 2), -3.89), (1.6, 3.2, 0.02), (0.3, 0.6, 0.95), shadow=False)
+        elif name == "ball":                      # bouncing ball at the hero's feet
+            sc.add(Engine.get().meshes["sphere"], trs((0.7, 0.25 + abs(math.sin(t * 5)) * 0.8, -1.2), (0.25, 0.25, 0.25)),
+                   (0.95, 0.5, 0.15), spec=0.2, gloss=20)
+        elif name == "mic":
+            _cyl(sc, (1.2, 0, -1.5), 0.04, 1.6, (0.2, 0.2, 0.22))
+            sc.add(Engine.get().meshes["sphere"], trs((1.2, 1.7, -1.5), (0.12, 0.16, 0.12)), (0.25, 0.25, 0.28), spec=0.6, gloss=40)
+        elif name == "headset":                   # gaming headset floating over the desk
+            sc.add(Engine.get().meshes["box"], trs((0, 2.2 + 0.1 * math.sin(t * 2), -4), (1.2, 0.15, 0.3)), (0.9, 0.2, 0.9))
+            for dx in (-0.6, 0.6):
+                _cyl(sc, (dx, 1.6 + 0.1 * math.sin(t * 2), -4), 0.3, 0.6, (0.12, 0.12, 0.14))
         elif name == "trophy":
             _cyl(sc, (2, 0, -3), 0.5, 0.3, (0.4, 0.3, 0.2))
             _cyl(sc, (2, 0.3, -3), 0.25, 1.0, (0.95, 0.75, 0.2))
@@ -151,7 +217,7 @@ def _crowd(key, v, ch):
         rng.shuffle(skins)
         cs = []
         if n:
-            wide = v.get("set") in ("field", "city", "stage")
+            wide = v.get("set") in ("field", "city", "stage", "court", "pitch")
             pos = grid_crowd(n, -16 if wide else -6, 16 if wide else 6, -40, -6, rng)
             clips = [clip if (i % 4 or act != "cheer") else cheer for i in range(n)]
             yaw, scl, ph = rng.uniform(-0.3, 0.3, n), rng.uniform(0.92, 1.08, n), (np.arange(n) % 8) * 0.137
@@ -193,7 +259,7 @@ def render(v, t, p, variant):
     act = v.get("action", "run")
     key = (v.get("set"), act, int(v.get("crowd", 0)), id(v))
     crowd, hero = _crowd(key, v, ch)
-    shots = SHOTS if v.get("set") in ("field", "city", "stage") else ("wide", "hero_low", "close", "top")
+    shots = SHOTS if v.get("set") in ("field", "city", "stage", "court", "pitch") else ("wide", "hero_low", "close", "top")
     shot = v.get("shot") or shots[variant % len(shots)]
     eye, tgt, fov = _camera(shot, p, t, act)
     # slight handheld sway so held shots never look frozen

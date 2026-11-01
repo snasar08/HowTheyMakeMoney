@@ -25,11 +25,12 @@
       "narration": "How much does the world's highest-paid athlete earn every minute?",
       "visual": {
         "type": "lowpoly",
-        "set": "field",
+        "set": "pitch",
         "action": "idle",
         "crowd": 0,
         "props": [
-          "trophy"
+          "trophy",
+          "ball"
         ],
         "stat": "PER MINUTE?",
         "stat_sub": "top-paid athlete"
@@ -53,11 +54,12 @@
       "narration": "About 235 million came from playing soccer. 65 million came from sponsors and other deals.",
       "visual": {
         "type": "lowpoly",
-        "set": "field",
+        "set": "pitch",
         "action": "run",
         "crowd": 200,
         "props": [
-          "cash"
+          "cash",
+          "ball"
         ],
         "stat": "$235M + $65M",
         "stat_sub": "playing + off the field"
@@ -112,5 +114,7 @@
       "title": "Forbes: The World's 10 Highest-Paid Athletes 2026 (Forbes Australia)",
       "url": "https://www.forbes.com.au/news/sport/the-worlds-10-highest-paid-athletes-2026/"
     }
-  ]
+  ],
+  "name_card": "Cristiano Ronaldo",
+  "name_sub": "soccer player"
 }
