@@ -1,3 +1,7 @@
+## Nov 1 2026 — optional second voice + lint fix
+- `B:` sentences use KOKORO_VOICE2 (am_puck+am_michael blend, Sam's pick); main voice unchanged. Local test clarity 97.9%.
+- lint.py: LIKENESS / FAKE_QUOTE regexes had control chars instead of  and never matched; fixed (+ skip "not resembling").
+
 ## Nov 1 2026 — learned from Sam's liked reels
 - Analyzed 4 reels in Downloads/reels i like (frames, Whisper transcripts, cut counts) -> content/REELS.md.
 - New: on-screen counter (`hud_label` + per-scene `hud`), per-script `cta_question` bubble, lint length 25-55 s.

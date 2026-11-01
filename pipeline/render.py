@@ -808,8 +808,8 @@ class Renderer:
         self.cta = None
         sr = tts.SAMPLE_RATE
         for i, raw in enumerate(self.s["scenes"]):
-            sc = Scene(raw["narration"], raw["visual"])
-            sc.audio, timings = tts.synthesize(sc.narration)
+            sc = Scene(tts.strip_speakers(raw["narration"]), raw["visual"])
+            sc.audio, timings = tts.synthesize(raw["narration"])  # "B:" lines use the second voice
             speech = len(sc.audio) / sr
             sc.words = align_words(sc.narration, timings, speech)
             tails = {}
