@@ -77,7 +77,7 @@ and **free beyond his Higgsfield Pro plan** — never add a paid service or ask 
   `lowpoly` (`pipeline/lowpoly.py`: code-built sets field/store/warehouse/city/office/stage, props,
   people in the pack's clothed CC0 textures (6 skin tones; Nov 1, Sam wanted them to look like people), eased camera moves with slight handheld sway, Lanczos upscale + light sharpen, a hero + instanced crowds of up to ~400 via `pipeline/crowd.py` GPU skinning, 5 camera
   shots cut every beat, 540x960 upscaled) with big yellow outlined stats and lowercase one-word
-  yellow captions. CC0 characters: `assets/characters/CREDITS.md`. Meant for `whatif` + `famous`.
+  yellow captions. CC0 characters: `assets/characters/CREDITS.md`. Meant for `whatif` + `famous`. **Famous worlds (Nov 1):** sets `court` (basketball), `pitch` (soccer night stadium), `studio` (music), `gaming` (streamer desk), `launch` (rockets); props `ball` (dribbled beside the hero), `mic`, `headset`; script fields `name_card` ("Cristiano Ronaldo") + `name_sub` ("soccer player") show a yellow name banner ~0.8–4.2 s. Sam wanted celebrities to look similar: we identify them by name, setting and real numbers only, never their face/hair/outfit (YouTube synthetic-media + publicity risk).
   Use it for most `whatif` and `famous` Shorts (no Higgsfield images needed, saves credits); keep
   Higgsfield 3D characters + 3D charts for `how` and `careers`. Renderer choice (GitHub, 1080x1920):
   moderngl 123/207 ms per frame for 100/300 characters vs three.js+SwiftShader 1262/3270 ms.

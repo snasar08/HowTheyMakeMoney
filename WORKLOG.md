@@ -211,3 +211,8 @@ passes and the 3D version is clearly better. Free tools only; ≤100 Higgsfield 
 - Eased camera moves, slight handheld sway, Lanczos upscale + unsharp mask (crisper).
 - Tried and dropped: sky gradient (left an arch seam) and depth-of-field (depth pass skips GPU crowds, so it blurred the hero).
 - e2e on 030 passed both times (no blank frames, ~4 min).
+
+## 2026-11-01 — Famous-people worlds
+- Name banner (`name_card`/`name_sub`), sets court/pitch/studio/gaming/launch, props ball/mic/headset.
+- 040 Ronaldo now uses the pitch + ball + name card. e2e on 040 passed (clarity 98.9%, no blank frames). Ball later shrunk to stay in frame (checked locally).
+- Sam asked for look-alike celebrities; declined (YouTube altered-content rules, publicity rights, our STYLE.md rule) in favor of name + setting + numbers.

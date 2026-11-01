@@ -185,9 +185,6 @@ def add_props(sc, props, t, rng):
         elif name == "phone":
             _box(sc, (0, 3.0 + 0.1 * math.sin(t * 2), -4), (1.8, 3.6, 0.2), (0.1, 0.1, 0.12), shadow=False)
             _box(sc, (0, 3.15 + 0.1 * math.sin(t * 2), -3.89), (1.6, 3.2, 0.02), (0.3, 0.6, 0.95), shadow=False)
-        elif name == "ball":                      # bouncing ball at the hero's feet
-            sc.add(Engine.get().meshes["sphere"], trs((0.7, 0.25 + abs(math.sin(t * 5)) * 0.8, -1.2), (0.25, 0.25, 0.25)),
-                   (0.95, 0.5, 0.15), spec=0.2, gloss=20)
         elif name == "mic":
             _cyl(sc, (1.2, 0, -1.5), 0.04, 1.6, (0.2, 0.2, 0.22))
             sc.add(Engine.get().meshes["sphere"], trs((1.2, 1.7, -1.5), (0.12, 0.16, 0.12)), (0.25, 0.25, 0.28), spec=0.6, gloss=40)
@@ -277,6 +274,9 @@ def render(v, t, p, variant):
     sc.customs.append(_shifted(hero, t, m))
     if act == "push":
         _box(sc, (0, 0.5, dz + 0.9), (0.9, 0.7, 1.1), (0.75, 0.78, 0.82))
+    if "ball" in (v.get("props") or []):          # dribbled at the hero's side, moves with them
+        sc.add(Engine.get().meshes["sphere"], trs((0.45, 0.12 + abs(math.sin(t * 5)) * 0.4, dz + 0.35), (0.12, 0.12, 0.12)),
+               (0.95, 0.95, 0.95) if v.get("set") == "pitch" else (0.95, 0.5, 0.15), spec=0.2, gloss=20)
     if act == "carry":
         _box(sc, (0, 1.05, dz + 0.45), (0.6, 0.45, 0.45), (0.8, 0.6, 0.38), shadow=False)
     img = Image.fromarray(sc.render()).resize((1080, 1920), Image.LANCZOS)
