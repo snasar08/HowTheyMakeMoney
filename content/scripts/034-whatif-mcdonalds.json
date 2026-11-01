@@ -7,10 +7,10 @@
   "hook_style": "whatif",
   "title_style": "whatif",
   "theme": "bold_bright",
-  "status": "delivered",
+  "status": "ready",
   "score": 88,
   "title": "What If One Cashier Served All of McDonald's?",
-  "description": "What if one cashier had to serve every McDonald's customer in a single day?\n\nSources:\n- Wikipedia: McDonald's (68 million customers daily; 45,356 restaurants at end of 2025): https://en.wikipedia.org/wiki/McDonald%27s\n\nPer-second = 68 million / 86,400 seconds; per-restaurant = 68 million / 45,356. Not financial advice.\n\n#shorts #mcdonalds #whatif #howtheymakemoney",
+  "description": "What if one cashier had to serve every McDonald's customer in a single day?\n\nSources:\n- Wikipedia: McDonald's (68 million customers daily; 45,356 restaurants at end of 2025): https://en.wikipedia.org/wiki/McDonald%27s\n\nPer-second = 68 million / 86,400 seconds; per-minute = 787 x 60; per-hour = 68 million / 24; ~95% franchised (same source); per-restaurant = 68 million / 45,356. Not financial advice.\n\n#shorts #mcdonalds #whatif #howtheymakemoney",
   "tags": [
     "mcdonalds",
     "what if",
@@ -24,76 +24,78 @@
       "narration": "What if one cashier had to serve every McDonald's customer in a single day?",
       "visual": {
         "type": "lowpoly",
+        "props": [],
         "set": "store",
         "action": "work",
         "crowd": 0,
-        "props": [],
         "stat": "1 CASHIER",
-        "stat_sub": "every customer"
+        "stat_sub": "every customer",
+        "hud": "0"
       }
     },
     {
-      "narration": "McDonald's serves about 68 million customers every day.",
+      "narration": "After one second, that's 787 customers. B: Wait, every second? Yep. No breaks.",
       "visual": {
         "type": "lowpoly",
+        "props": [],
         "set": "store",
+        "action": "run",
+        "crowd": 120,
+        "stat": "+1 SECOND",
+        "stat_sub": "787 customers",
+        "hud": "787"
+      }
+    },
+    {
+      "narration": "After one minute, about 47,000 people. The line wraps around the block.",
+      "visual": {
+        "type": "lowpoly",
+        "props": [],
+        "set": "city",
         "action": "run",
         "crowd": 300,
-        "props": [],
-        "stat": "68 MILLION",
-        "stat_sub": "customers a day"
+        "stat": "+1 MINUTE",
+        "stat_sub": "about 47,000",
+        "hud": "47,000"
       }
     },
     {
-      "narration": "Our cashier would need to serve about 787 people every second. No breaks.",
+      "narration": "After one hour, 2.8 million. By the end of the day? 68 million customers.",
       "visual": {
         "type": "lowpoly",
-        "set": "city",
-        "action": "run",
-        "crowd": 400,
         "props": [],
-        "stat": "~787",
-        "stat_sub": "customers per second"
-      }
-    },
-    {
-      "narration": "Instead, McDonald's spreads them across 45,356 restaurants in more than 100 countries.",
-      "visual": {
-        "type": "lowpoly",
         "set": "city",
         "action": "cheer",
-        "crowd": 200,
-        "props": [],
-        "stat": "45,356",
-        "stat_sub": "restaurants, end of 2025"
+        "crowd": 400,
+        "stat": "+1 DAY",
+        "stat_sub": "68 million customers",
+        "hud": "68,000,000"
       }
     },
     {
-      "narration": "That's about 1,500 customers per restaurant, every single day.",
+      "narration": "So McDonald's spreads them across 45,356 restaurants. That's about 1,500 each.",
       "visual": {
         "type": "lowpoly",
+        "props": [],
         "set": "store",
         "action": "work",
-        "crowd": 150,
-        "props": [
-          "boxes"
-        ],
-        "stat": "~1,500",
-        "stat_sub": "per restaurant, per day"
+        "crowd": 60,
+        "stat": "45,356",
+        "stat_sub": "restaurants",
+        "hud": "68,000,000"
       }
     },
     {
-      "narration": "And about 95 percent of those restaurants are run by franchisees, not McDonald's itself.",
+      "narration": "The twist? About 95 percent are run by franchisees. McDonald's is mostly the landlord.",
       "visual": {
         "type": "lowpoly",
+        "props": [],
         "set": "office",
         "action": "idle",
         "crowd": 0,
-        "props": [
-          "cash"
-        ],
         "stat": "95%",
-        "stat_sub": "run by franchisees"
+        "stat_sub": "run by franchisees",
+        "hud": "68,000,000"
       }
     }
   ],
@@ -103,14 +105,7 @@
       "url": "https://en.wikipedia.org/wiki/McDonald%27s"
     }
   ],
-  "delivered": {
-    "mode": "buffer",
-    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-034-whatif-mcdonalds",
-    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-034-whatif-mcdonalds/034-whatif-mcdonalds.mp4",
-    "post_at": "2026-11-01T13:00:00-05:00",
-    "buffer_post": "6ae6d4591ee172cd6ddf56eb",
-    "buffer_status": "scheduled",
-    "rendered_at": "2026-11-01T05:55:37.389113+00:00",
-    "seconds": 35.05
-  }
+  "hud_label": "Customers served",
+  "cta": "Cashier or franchise owner? Comment which job you'd pick.",
+  "cta_question": "Cashier or franchise owner?"
 }

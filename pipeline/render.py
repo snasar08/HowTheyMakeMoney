@@ -1109,7 +1109,7 @@ class Renderer:
                 cur = w
         if cur is None:
             return
-        txt = re.sub(r"[^\w$%'.\-]", "", cur.text).lower().rstrip(".") or cur.text.lower()
+        txt = re.sub(r"[^\w$%'.,\-]", "", cur.text).lower().rstrip(".,") or cur.text.lower()  # keep "47,000"
         f = fit_font(txt, BLACK, SAFE_X1 - SAFE_X0, 120, 60)
         k = min(1.0, (t - cur.start + 0.03) / 0.08)
         f = font(BLACK, max(20, int(f.size * (0.85 + 0.15 * k))))
