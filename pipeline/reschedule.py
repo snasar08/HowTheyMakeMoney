@@ -27,10 +27,8 @@ def main(ids: list[str]) -> int:
             continue
         url = d["asset_url"]
         when = dt.datetime.fromisoformat(d["post_at"]).astimezone(P.TZ)
-        if soon:
-            if d.get("buffer_post"):
-                P.buffer_delete(d["buffer_post"])
-                print(f"[reschedule] {sid}: removed post {d['buffer_post']} ({when:%a %H:%M})")
+        old = d.get("buffer_post") if soon else None
+        if soon:  # book the new time first; the old post is removed only once that worked
             when = (dt.datetime.now(P.TZ) + dt.timedelta(minutes=int(soon))).replace(second=0, microsecond=0)
             d["post_at"] = when.isoformat()
         if when <= dt.datetime.now(P.TZ) + dt.timedelta(minutes=10):
@@ -39,6 +37,12 @@ def main(ids: list[str]) -> int:
             raise SystemExit(f"{sid}: asset still not public: {url}")
         post = P.buffer_schedule(url, s, when)
         check = P.buffer_post(post["id"])
+        if old:
+            try:
+                P.buffer_delete(old)
+                print(f"[reschedule] {sid}: removed the earlier post {old}")
+            except Exception as exc:  # already gone is fine
+                print(f"[reschedule] {sid}: earlier post {old} not removed ({exc})")
         s["delivered"] = {**d, "mode": "buffer", "buffer_post": post["id"], "buffer_status": check.get("status")}
         path.write_text(json.dumps(s, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
         print(f"[reschedule] {sid} scheduled for {when:%a %H:%M %Z}: post {post['id']} status={check.get('status')}")

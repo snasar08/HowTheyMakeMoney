@@ -27,12 +27,11 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - name: Remove the old 034 post if still there (one-off, Nov 1)
-        run: python -c "from pipeline.publish import buffer_delete; buffer_delete('6ae6d4591ee172cd6ddf56eb'); print('deleted old post')" || echo "old post already gone"
       - name: Schedule
         run: |
           git fetch -q origin "$GITHUB_REF_NAME"
           git checkout -q "origin/$GITHUB_REF_NAME" -- pipeline/reschedule.py pipeline/publish.py
+          set -o pipefail  # a failure must fail the run, not hide behind tee
           python -m pipeline.reschedule "${GITHUB_REF_NAME#reschedule/}" 2>&1 | tee reschedule.log
       - name: Commit record to main
         run: |
@@ -42,3 +41,10 @@ jobs:
           git add content/scripts
           git diff --cached --quiet || git commit -qm "Rescheduled on Buffer: ${GITHUB_REF_NAME#reschedule/}"
           git pull --rebase -q origin main && git push -q origin HEAD:main
+      - name: Save log to the branch
+        if: always()
+        run: |
+          cp reschedule.log /tmp/r.log 2>/dev/null || echo "no log" > /tmp/r.log
+          git fetch -q origin "$GITHUB_REF_NAME" && git switch -q -C logb "origin/$GITHUB_REF_NAME"
+          cp /tmp/r.log reschedule-result.log && git add -f reschedule-result.log
+          git -c user.name=shorts-bot -c user.email=shorts-bot@users.noreply.github.com commit -qm "reschedule log" && git push -q origin "HEAD:$GITHUB_REF_NAME"
