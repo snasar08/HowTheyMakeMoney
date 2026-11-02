@@ -7,7 +7,7 @@
   "hook_style": "question",
   "title_style": "statement",
   "theme": "bold_bright",
-  "status": "ready",
+  "status": "delivered",
   "score": 90,
   "title": "Ronaldo Made $300 Million in One Year",
   "description": "How much does the world's highest-paid athlete earn every minute?\n\nSources:\n- Forbes: The World's 10 Highest-Paid Athletes 2026 (Forbes Australia): https://www.forbes.com.au/news/sport/the-worlds-10-highest-paid-athletes-2026/\n\nForbes estimate for May 1, 2025 to May 1, 2026, before taxes and agent fees. Per day = $300M / 365; per minute = per day / 1,440. Not financial advice.\n\n#shorts #ronaldo #soccer #howtheymakemoney",
@@ -116,5 +116,15 @@
     }
   ],
   "name_card": "Cristiano Ronaldo",
-  "name_sub": "soccer player"
+  "name_sub": "soccer player",
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-040-famous-ronaldo",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-040-famous-ronaldo/040-famous-ronaldo.mp4",
+    "post_at": "2026-11-03T12:00:00-05:00",
+    "buffer_post": "6ae840917817c41d1a4f0421",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-02T07:49:37.469302+00:00",
+    "seconds": 31.11
+  }
 }
