@@ -12,7 +12,7 @@ and **free beyond his Higgsfield Pro plan** — never add a paid service or ask 
   in the next 36 h (`publish.taken_slots` from the delivered records; never a taken slot, max
   `MAX_PER_DAY`=2/day, a passed slot rolls to the next free one), so late/backup/manual runs
   never double-post. GitHub starts scheduled runs late (Oct 26–28: 5.5–6.5 h). Check Buffer:
-  push branch `slot-audit` (report) / `slot-fix` (delete extras, scripts back to ready). Budget: private repos get 2,000 free minutes/month; a run takes ~5–8 minutes.
+  push branch `slot-audit` (report) / `slot-fix` (delete extras, scripts back to ready). Minutes: the repo is public, so standard GitHub runners are free and unlimited (6 h max per job, ~20 jobs at once); a run takes ~5–8 minutes.
 - `pipeline/render.py` draws every frame with Pillow and pipes to ffmpeg (1080x1920, 30 fps).
 - `pipeline/tts.py` — voice. Default Kokoro-82M **`am_puck` at 1.2** (Oct 30: Sam disliked am_fenrir, then af_bella — wants a MALE voice, speed 1.2 is right. am_puck ties for Kokoro's top male grade, C+, and moves most in pitch; Sam also rejected am_michael on day 1; bigger open models like Fish Audio S2 Pro are non-commercial and ~30x slower than real time without a GPU). One Kokoro call per sentence, questions 7% slower + 0.5 s beat. Audio is loudness-normalized to −14 LUFS (YouTube's target). CPU. Optional Ming-3.0-tts.
 - **Second voice (Nov 1, optional):** Sam's main voice stays am_puck 1.2 (his favorite). For back-and-forth

@@ -1,0 +1,38 @@
+name: Blender bench
+
+# Push branch blender-bench: renders 3 Cycles frames (CPU) at two sample counts and times them.
+# Results (PNGs + log) go to branch blender-bench-results. Doesn't touch posting.
+on:
+  push:
+    branches: ["blender-bench"]
+
+permissions:
+  contents: write
+
+jobs:
+  bench:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - name: Blender 4.2 LTS (official build)
+        run: |
+          curl -sSL https://download.blender.org/release/Blender4.2/blender-4.2.3-linux-x64.tar.xz | tar -xJ -C /opt
+          /opt/blender-4.2.3-linux-x64/blender --version | head -1
+      - name: Render
+        run: |
+          mkdir -p /tmp/res
+          nproc | tee /tmp/res/nproc.txt
+          for s in 16 64; do
+            mkdir -p /tmp/res/s$s
+            /opt/blender-4.2.3-linux-x64/blender -b -P bench/blender_bench.py -- \
+              assets/characters/quaternius-animated-human.glb /tmp/res/s$s $s 2>&1 | grep -E "BENCH|Error|rror" | tee -a /tmp/res/bench.log
+          done
+      - name: Publish
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cd /tmp/res && git init -q -b blender-bench-results && git add -A
+          git -c user.name=shorts-bot -c user.email=shorts-bot@users.noreply.github.com commit -qm "bench ${GITHUB_SHA::7}"
+          git push -f "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" blender-bench-results
