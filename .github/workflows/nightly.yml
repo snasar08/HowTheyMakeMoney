@@ -105,6 +105,7 @@ jobs:
       HTMM_CACHE: ${{ github.workspace }}/.cache
       UPLOAD_MODE: buffer_dry
       AUDIO_CHECK: warn
+      IDS: ${{ needs.plan.outputs.ids }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -132,10 +133,10 @@ jobs:
           mkdir -p plans
           H=$(TZ=America/New_York date +%-H)
           if [ "${{ github.ref }}" != "refs/heads/nightly-test" ] && [ "$H" -ge 8 ] && [ "$H" -lt 20 ]; then echo "late start ($H h ET): no Blender tonight"; echo "any=0" >> "$GITHUB_OUTPUT"; exit 0; fi
-          for id in $(python -c "import json;print(' '.join(json.loads('${{ needs.plan.outputs.ids }}')))"); do
+          for id in $(python -c "import json,os;print(' '.join(json.loads(os.environ['IDS'])))"); do
             f=$(ls content/scripts/${id}*.json | head -1)
             if python -c "import json,sys;sys.exit(0 if json.load(open('$f',encoding='utf-8')).get('visual_style')=='lowpoly' else 1)"; then
-              LP_RECORD=plans timeout 1200 python -m pipeline.run --id $id --dry > /dev/null 2>&1 || true
+              LP_RECORD=plans timeout 1500 python -m pipeline.run --id $id --dry 2>&1 | grep -E "^\[run\]|Error|Traceback" || true
             fi
           done
           ls plans
