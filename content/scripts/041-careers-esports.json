@@ -7,7 +7,7 @@
   "hook_style": "whatif",
   "title_style": "whatif",
   "theme": "dark_neon",
-  "status": "ready",
+  "status": "delivered",
   "score": 91,
   "title": "What If You Won the Biggest Esports Prize?",
   "description": "What if you won the biggest prize in esports history?\n\nSources:\n- Wikipedia: The International 2021: https://en.wikipedia.org/wiki/The_International_2021\n- Guinness World Records: Largest esports prize pool for a single tournament: https://www.guinnessworldrecords.com/world-records/111053-largest-esports-prize-pool-for-a-single-tournament.html\n\nPrize figures from the cited pages ($40,018,195 pool, $18,208,300 first place); per-player figure assumes an even five-way split. Not financial advice.\n\n#shorts #esports #gaming #howtheymakemoney",
@@ -116,5 +116,15 @@
       "title": "Guinness World Records: Largest esports prize pool for a single tournament",
       "url": "https://www.guinnessworldrecords.com/world-records/111053-largest-esports-prize-pool-for-a-single-tournament.html"
     }
-  ]
+  ],
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-041-careers-esports",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-041-careers-esports/041-careers-esports.mp4",
+    "post_at": "2026-11-04T18:00:00-05:00",
+    "buffer_post": "6aea49261ee1ad0996cc17a4",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-03T20:50:46.652211+00:00",
+    "seconds": 28.55
+  }
 }

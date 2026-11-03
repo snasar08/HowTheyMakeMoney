@@ -7,7 +7,7 @@
   "hook_style": "number",
   "title_style": "statement",
   "theme": "bold_bright",
-  "status": "ready",
+  "status": "delivered",
   "score": 93,
   "title": "Roblox Creators Earned $1.5 Billion in 2025",
   "description": "How did Roblox creators earn over 1.5 billion dollars in 2025, from a free game?\n\nSources:\n- Roblox Newsroom: How Roblox impacts the global economy (Dec 5 2025): https://corp.roblox.com/newsroom/2025/12/how-roblox-impacts-the-global-economy\n- Net Influencer: Roblox creators earned over $1.5B in 2025; 42,000+ DevEx participants, median ~$1,500: https://www.netinfluencer.com/roblox-creator-activity-generated-752m-in-us-gdp-in-2025-up-69-percent-from-2024-study-finds/\n- Outlook Respawn: Roblox Q2 2026 revenue up 36% to $1.5B, 123M daily users: https://respawn.outlookindia.com/gaming/gaming-news/roblox-q2-2026-revenue-soars-36-to-15b-despite-bookings-miss\n- Wikipedia: Roblox (Robux and the Developer Exchange, 30,000 Robux minimum): https://en.wikipedia.org/wiki/Roblox\n\nThe $1.5B creator total is Roblox's figure as reported by Net Influencer; Roblox's own Dec 2025 post gave over $1B as of September 2025 and $923M for 2024. Median = half of DevEx participants got less. Not financial advice.\n\n#shorts #roblox #gaming #howtheymakemoney",
@@ -123,5 +123,15 @@
       "title": "Wikipedia: Roblox (Robux and the Developer Exchange, 30,000 Robux minimum)",
       "url": "https://en.wikipedia.org/wiki/Roblox"
     }
-  ]
+  ],
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-037-how-roblox",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-037-how-roblox/037-how-roblox.mp4",
+    "post_at": "2026-11-04T15:00:00-05:00",
+    "buffer_post": "6aea48ae1ee1ad0996cbf15a",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-03T20:48:46.916976+00:00",
+    "seconds": 38.5
+  }
 }
