@@ -758,7 +758,7 @@ class Renderer:
         kind, key, variant, first = sc.shots[b]
         if kind == "editorial":
             from . import editorial
-            return editorial.render(self.s, sc.visual, t), tb
+            return editorial.render(self.s, sc.visual, t, b, tb), tb
         if kind == "lowpoly":
             from . import lowpoly
             from .gl3d import run3d
