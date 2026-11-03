@@ -368,6 +368,7 @@ class Renderer:
         v_i = 0
         # per-Short camera offset so two Shorts never share the same sequence of moves
         self._vseed = int(hashlib.sha1(self.s.get("slug", "").encode()).hexdigest(), 16) % 5
+        ed_slot = 0  # editorial: every photo beat gets the next unused picture (Sam: no repeats)
         for si, sc in enumerate(scenes):
             typ = sc.visual.get("type")
             shots = []
@@ -384,7 +385,10 @@ class Renderer:
                     shots.append(("text", None, 0, False) if b % 2 == 0 else
                                  ("textbg", self._next_broll(), (v_i % 5) + 1, False))
                 elif typ == "editorial":  # backstory page: one layout per scene, animated in place
-                    shots.append(("editorial", None, b, b == 0))
+                    slot = None
+                    if b % 4 in (1, 3):
+                        slot, ed_slot = ed_slot, ed_slot + 1
+                    shots.append(("editorial", slot, b, b == 0))
                 elif typ == "lowpoly" and three_d_ok():
                     shots.append(("lowpoly", None, b + si * 2 + self._vseed, b == 0))
                 elif three_d_ok() and typ in ("stat", "bars", "donut", "globe"):
@@ -758,7 +762,7 @@ class Renderer:
         kind, key, variant, first = sc.shots[b]
         if kind == "editorial":
             from . import editorial
-            return editorial.render(self.s, sc.visual, t, b, tb), tb
+            return editorial.render(self.s, sc.visual, t, b, tb, key), tb
         if kind == "lowpoly":
             from . import lowpoly
             from .gl3d import run3d

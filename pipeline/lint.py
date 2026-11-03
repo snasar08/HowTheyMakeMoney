@@ -71,6 +71,12 @@ def lint(s: dict) -> tuple[list[str], list[str]]:
             warn.append(f"long scene ({len(sc['narration'].split())} words): split it for pacing")
     if len(s.get("sources", [])) < 1 or any(not str(x.get("url", "")).startswith("http") for x in s.get("sources", [])):
         err.append("needs at least one source with a URL")
+    if s.get("visual_style") == "editorial":
+        pics = {p.get("photo") for sc in scenes for p in sc.get("visual", {}).get("people", []) if p.get("photo")}
+        pics |= {p.get("photo") for p in s.get("photos", []) if p.get("photo")}
+        need = min(10, int(est / 1.4 / 2))  # photo beats past the pool become slam cards, never repeats
+        if len(pics) < need:
+            warn.append(f"only {len(pics)} photos for ~{need} photo beats (add to `photos`; no repeats)")
     if s.get("visual_style") == "lowpoly" and s.get("format") not in ("whatif", "famous"):
         warn.append("low-poly is meant for whatif / famous Shorts")
     if s.get("status") == "ready" and s.get("visual_style") not in ("lowpoly", "editorial"):

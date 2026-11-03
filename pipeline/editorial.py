@@ -208,26 +208,30 @@ def _punch(v, tb):
     return _zoom(img, 1.0 + 0.03 * min(1.0, tb / 1.5), W / 2, H / 2)
 
 
-def _pool(script, v):
-    """Every usable picture for this scene: its people first, then the script's B-roll photos."""
-    out = [p for p in (v.get("people") or []) if _photo(p) is not None]
-    out += [p for p in _people(script) if p not in out and _photo(p) is not None]
-    out += [{"name": p.get("caption", ""), "photo": p["photo"]} for p in script.get("photos", [])
-            if _photo({"name": p.get("caption", ""), "photo": p["photo"]}) is not None]
+def pictures(script):
+    """Every usable picture in the Short, each once: the people (scene order), then the script's
+    "photos" list. Photo beats take these in order, so no picture is ever shown twice."""
+    out, seen = [], set()
+    cands = [p for sc in script.get("scenes", []) for p in sc.get("visual", {}).get("people", [])]
+    cands += [{"name": p.get("caption", ""), "photo": p["photo"]} for p in script.get("photos", [])]
+    for p in cands:
+        if p.get("photo") and p["photo"] not in seen and _photo(p) is not None:
+            seen.add(p["photo"])
+            out.append(p)
     return out
 
 
-def render(script: dict, v: dict, t: float, b: int = 0, tb: float = 0.0) -> Image.Image:
-    """One frame. Every beat (~1.4 s) switches the view (Sam, Nov 3: more switches, more pictures):
-    the layout, a full-screen photo, a punch-in on the layout, another photo. Photos rotate through
-    the scene's people, everyone in the story and the script's "photos" list, so they don't repeat."""
+def render(script: dict, v: dict, t: float, b: int = 0, tb: float = 0.0, slot: int | None = None) -> Image.Image:
+    """One frame. Every beat (~1.4 s) switches the view (Sam, Nov 3: more switches, more pictures,
+    and no picture twice): the layout, a full-screen photo, a punch-in on the layout, the next photo.
+    `slot` is this beat's place in the Short's photo order (render.plan); once the pictures run
+    out, photo beats become a gold slam card or an off-center framing instead of a repeat."""
     step = b % 4
     if step == 0:
         return _main(script, v, t)
     if step in (1, 3):
-        pics = _pool(script, v)
-        if pics:
-            si = next((i for i, sc in enumerate(script.get("scenes", [])) if sc.get("visual") is v), 0)
-            return _portrait(pics[(si * 2 + b // 2) % len(pics)], tb)
+        pics = pictures(script)
+        if slot is not None and slot < len(pics):
+            return _portrait(pics[slot], tb)
         return _punch(v, tb) if step == 1 else _zoom(_main(script, v, t + 5), 1.1, W * 0.42, 700)
     return _zoom(_main(script, v, t + 5), 1.22 + 0.04 * min(1.0, tb / 1.4), W / 2, 640)
