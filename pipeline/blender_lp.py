@@ -21,6 +21,9 @@ ROOT_DIR = Path(__file__).resolve().parent.parent
 CHAR = ROOT_DIR / "assets" / "characters" / "quaternius-animated-human.glb"
 SKINS = ROOT_DIR / "assets" / "characters" / "skins"
 FPS = 30
+PH_DIR = ROOT_DIR / "assets" / "polyhaven"   # filled by `python -m pipeline.polyhaven` (CC0 skies + floors)
+sys.path.insert(0, str(ROOT_DIR))
+from pipeline.polyhaven import LOOKS  # noqa: E402  (stdlib-only module)
 
 args = sys.argv[sys.argv.index("--") + 1:]
 plan_path, out_dir, shard, shards = args[0], Path(args[1]), int(args[2]), int(args[3])
@@ -65,11 +68,61 @@ def mat(color, emit=False):
         b = m.node_tree.nodes["Principled BSDF"]
         b.inputs["Base Color"].default_value = (*lin(color), 1)
         b.inputs["Roughness"].default_value = 0.55
+        bev = m.node_tree.nodes.new("ShaderNodeBevel")  # rounded edges that catch the light (Cycles only)
+        bev.inputs["Radius"].default_value = 0.035
+        m.node_tree.links.new(bev.outputs["Normal"], b.inputs["Normal"])
         if emit:
             b.inputs["Emission Color"].default_value = (*lin(color), 1)
             b.inputs["Emission Strength"].default_value = 2.5
         _mats[k] = m
     return _mats[k]
+
+
+def floor_mat(tex, tint):
+    """Tiled Poly Haven floor (color x scene tint, normal, roughness), 4 m per tile in world space."""
+    k = ("floor", tex, tuple(round(x, 3) for x in tint))
+    if k in _mats:
+        return _mats[k]
+    if not (PH_DIR / f"{tex}_diff.jpg").exists():
+        return mat(tint)
+    m = bpy.data.materials.new(f"floor-{tex}")
+    m.use_nodes = True
+    nt, L = m.node_tree, m.node_tree.links
+    b = nt.nodes["Principled BSDF"]
+    geo, mp = nt.nodes.new("ShaderNodeNewGeometry"), nt.nodes.new("ShaderNodeMapping")
+    mp.inputs["Scale"].default_value = (0.25, 0.25, 0.25)
+    L.new(geo.outputs["Position"], mp.inputs["Vector"])
+
+    def img(suffix, color=True):
+        t = nt.nodes.new("ShaderNodeTexImage")
+        t.image = bpy.data.images.load(str(PH_DIR / f"{tex}_{suffix}.jpg"))
+        if not color:
+            t.image.colorspace_settings.name = "Non-Color"
+        L.new(mp.outputs["Vector"], t.inputs["Vector"])
+        return t
+    tint_n = nt.nodes.new("ShaderNodeMixRGB")
+    tint_n.blend_type, tint_n.inputs[0].default_value = "MULTIPLY", 0.6
+    L.new(img("diff").outputs["Color"], tint_n.inputs[1])
+    tint_n.inputs[2].default_value = (*[min(1.0, 1.6 * c) for c in lin(tint)], 1)
+    L.new(tint_n.outputs[0], b.inputs["Base Color"])
+    if (PH_DIR / f"{tex}_rough.jpg").exists():
+        L.new(img("rough", False).outputs["Color"], b.inputs["Roughness"])
+    if (PH_DIR / f"{tex}_nor.jpg").exists():
+        nm = nt.nodes.new("ShaderNodeNormalMap")
+        L.new(img("nor", False).outputs["Color"], nm.inputs["Color"])
+        L.new(nm.outputs["Normal"], b.inputs["Normal"])
+    _mats[k] = m
+    return m
+
+
+_hdr = {}
+
+
+def hdri(name):
+    if name not in _hdr:
+        f = PH_DIR / f"{name}.hdr"
+        _hdr[name] = bpy.data.images.load(str(f)) if f.exists() else None
+    return _hdr[name]
 
 
 def skin_mat(name):
@@ -198,6 +251,13 @@ wl.new(bg_cam.outputs[0], mix.inputs[2])
 wl.new(lp_node.outputs["Is Camera Ray"], mix.inputs[0])
 wl.new(mix.outputs[0], wn["World Output"].inputs[0])
 bg_amb.inputs["Strength"].default_value = 0.55
+env = wn.new("ShaderNodeTexEnvironment")
+sky_mix = wn.new("ShaderNodeMixRGB")    # camera background: fog color (0) or the real sky (1)
+wl.new(env.outputs["Color"], sky_mix.inputs[2])
+wl.new(sky_mix.outputs[0], bg_cam.inputs["Color"])
+amb_mix = wn.new("ShaderNodeMixRGB")    # lighting: flat sky/ground color (0) or the HDRI (1)
+wl.new(env.outputs["Color"], amb_mix.inputs[2])
+wl.new(amb_mix.outputs[0], bg_amb.inputs["Color"])
 
 sun = bpy.data.objects.new("sun", bpy.data.lights.new("sun", "SUN"))
 sc.collection.objects.link(sun)
@@ -211,6 +271,11 @@ cam.parent = root
 sc.camera = cam
 cam.data.sensor_fit = "VERTICAL"
 cam.data.clip_start, cam.data.clip_end = 0.1, 600
+fill = bpy.data.objects.new("fill", bpy.data.lights.new("fill", "AREA"))
+sc.collection.objects.link(fill)
+fill.parent = cam
+fill.location = (1.2, 0.8, 0.5)   # camera space: up-right of the lens, facing the subject
+fill.data.energy, fill.data.size = 120, 3
 
 sc.view_layers[0].use_pass_mist = True
 sc.use_nodes = True
@@ -221,20 +286,31 @@ rl, fogmix = ct.nodes.new("CompositorNodeRLayers"), ct.nodes.new("CompositorNode
 glare, comp = ct.nodes.new("CompositorNodeGlare"), ct.nodes.new("CompositorNodeComposite")
 glare.glare_type, glare.threshold, glare.size, glare.mix = "FOG_GLOW", 1.2, 7, -0.6
 ct.links.new(rl.outputs["Image"], fogmix.inputs[1])
-ct.links.new(rl.outputs["Mist"], fogmix.inputs[0])
+fog_amt = ct.nodes.new("CompositorNodeMath")
+fog_amt.operation = "MULTIPLY"
+ct.links.new(rl.outputs["Mist"], fog_amt.inputs[0])
+ct.links.new(fog_amt.outputs[0], fogmix.inputs[0])
 ct.links.new(fogmix.outputs[0], glare.inputs[0])
 ct.links.new(glare.outputs[0], comp.inputs[0])
 
 
-def set_look(L):
+def set_look(L, set_name):
     fog = lin(L["fog"])
-    bg_cam.inputs["Color"].default_value = (*fog, 1)
-    bg_amb.inputs["Color"].default_value = (*[0.5 * (a + b) for a, b in zip(lin(L["sky"]), lin(L["ground"]))], 1)
+    h_name, tex, sky_visible = LOOKS.get(set_name, LOOKS["field"])
+    img = hdri(h_name)
+    env.image = img
+    has = img is not None
+    sky_mix.inputs[1].default_value = (*fog, 1)
+    sky_mix.inputs[0].default_value = 1.0 if (has and sky_visible) else 0.0
+    amb_mix.inputs[1].default_value = (*[0.5 * (a + b) for a, b in zip(lin(L["sky"]), lin(L["ground"]))], 1)
+    amb_mix.inputs[0].default_value = 1.0 if has else 0.0
+    bg_amb.inputs["Strength"].default_value = 0.9 if has else 0.55
     fogmix.inputs[2].default_value = (*fog, 1)
+    fog_amt.inputs[1].default_value = 0.0 if (has and sky_visible) else 1.0  # real sky: no flat fog wall
     sc.world.mist_settings.start = L.get("fog_near", 35)
     sc.world.mist_settings.depth = L.get("fog_far", 110) - L.get("fog_near", 35)
     sc.world.mist_settings.falloff = "QUADRATIC"
-    paint(floor, mat(L["floor"]))
+    paint(floor, floor_mat(tex, L["floor"]))
     d = Vector(L["key_dir"]).normalized()  # light travels along key_dir (pipeline coords)
     sun.matrix_world = (root.matrix_world.to_3x3() @ d).to_track_quat("-Z", "Y").to_matrix().to_4x4()
 
@@ -257,7 +333,7 @@ frame_objs = []
 for n, key in enumerate(keys):
     t0 = time.time()
     f = plan["frames"][key]
-    set_look(f["look"])
+    set_look(f["look"], f.get("set", "field"))
     set_camera(f)
     want = set(f["items"])
     for i in want - item_objs.keys():

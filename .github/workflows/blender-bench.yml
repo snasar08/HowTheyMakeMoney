@@ -19,6 +19,8 @@ jobs:
         run: |
           curl -sSL https://download.blender.org/release/Blender4.2/blender-4.2.3-linux-x64.tar.xz | tar -xJ -C /opt
           /opt/blender-4.2.3-linux-x64/blender --version | head -1
+      - name: Poly Haven skies and floors
+        run: python3 -m pipeline.polyhaven assets/polyhaven
       - name: Render
         run: |
           mkdir -p /tmp/res
