@@ -187,7 +187,7 @@ def _portrait(p, tb):
         shade.putpixel((0, y), int(230 * max(0.0, (y - 110) / 146) ** 1.4))
     img.paste(Image.new("RGB", (W, H), BG), (0, 0), shade.resize((W, H)))
     d = ImageDraw.Draw(img)
-    f = fit_font(p["name"].upper(), BLACK, SAFE_X1 - SAFE_X0, 96, 50)
+    f = fit_font(p["name"].upper(), BLACK, SAFE_X1 - SAFE_X0, 96 if len(p["name"]) < 18 else 64, 40)
     d.text((SAFE_X0, 1040), p["name"].upper(), font=f, fill=INK)
     if p.get("role"):
         d.text((SAFE_X0, 1040 + f.size + 14), p["role"].upper(), font=font(BOLD, 34), fill=GOLD)
@@ -208,20 +208,26 @@ def _punch(v, tb):
     return _zoom(img, 1.0 + 0.03 * min(1.0, tb / 1.5), W / 2, H / 2)
 
 
+def _pool(script, v):
+    """Every usable picture for this scene: its people first, then the script's B-roll photos."""
+    out = [p for p in (v.get("people") or []) if _photo(p) is not None]
+    out += [p for p in _people(script) if p not in out and _photo(p) is not None]
+    out += [{"name": p.get("caption", ""), "photo": p["photo"]} for p in script.get("photos", [])
+            if _photo({"name": p.get("caption", ""), "photo": p["photo"]}) is not None]
+    return out
+
+
 def render(script: dict, v: dict, t: float, b: int = 0, tb: float = 0.0) -> Image.Image:
-    """One frame. Every beat (~1.4 s) switches the view so nothing sits still for long (Sam, Nov 3):
-    the layout itself, a punch-in on it, a full-screen photo of someone in the story (or a gold slam
-    card of the key line), then a wider off-center framing."""
+    """One frame. Every beat (~1.4 s) switches the view (Sam, Nov 3: more switches, more pictures):
+    the layout, a full-screen photo, a punch-in on the layout, another photo. Photos rotate through
+    the scene's people, everyone in the story and the script's "photos" list, so they don't repeat."""
     step = b % 4
     if step == 0:
         return _main(script, v, t)
-    settled = _main(script, v, t + 5)
-    if step == 1:
-        return _zoom(settled, 1.22 + 0.04 * min(1.0, tb / 1.4), W / 2, 640)
-    if step == 2:
-        people = [p for p in (v.get("people") or _people(script)) if _photo(p) is not None]
-        if people:
+    if step in (1, 3):
+        pics = _pool(script, v)
+        if pics:
             si = next((i for i, sc in enumerate(script.get("scenes", [])) if sc.get("visual") is v), 0)
-            return _portrait(people[(b // 4 + si) % len(people)], tb)  # a different face each scene
-        return _punch(v, tb)
-    return _zoom(settled, 1.1, W * 0.42 + 40 * min(1.0, tb / 1.4), 700)
+            return _portrait(pics[(si * 2 + b // 2) % len(pics)], tb)
+        return _punch(v, tb) if step == 1 else _zoom(_main(script, v, t + 5), 1.1, W * 0.42, 700)
+    return _zoom(_main(script, v, t + 5), 1.22 + 0.04 * min(1.0, tb / 1.4), W / 2, 640)
