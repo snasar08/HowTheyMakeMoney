@@ -351,9 +351,9 @@ for n, key in enumerate(keys):
         if me.users == 0:
             bpy.data.meshes.remove(me)
     frame_objs = []
-    gm = mat4(f["m"])
     k = 1.75 / f["height"]
-    for cid in f["crowds"]:
+    for cid, cm in f["crowds"]:
+        gm = mat4(cm)
         c = plan["crowds"][cid]
         sm = skin_mat(c["skin"] or "LightSkin")
         for clip, ph, rows in c["groups"]:

@@ -62,7 +62,7 @@ def _cyl(sc, pos, r, h, col):
 
 
 # ----------------------------------------------------------------- sets + props (all code-built)
-def build_set(sc, name, rng):
+def build_set(sc, name, rng, fans=True):
     if name == "field":
         for x in (-34, 34):                       # bleachers on both sides
             for k in range(5):
@@ -97,14 +97,14 @@ def build_set(sc, name, rng):
         _box(sc, (0, 0.004, -14), (15, 0.01, 0.15), (0.97, 0.97, 0.97), shadow=False)
         for x in (-7.5, 7.5):
             _box(sc, (x, 0.004, -14), (0.15, 0.01, 32), (0.97, 0.97, 0.97), shadow=False)
-        _stands(sc, 11, rng)
+        _stands(sc, 11, rng, fans)
     elif name == "pitch":                         # soccer: night stadium, goals, floodlights
-        for z in (-40, 6):
+        for z in (-40,):
             for x in (-3.6, 3.6):
                 _box(sc, (x, 0, z), (0.18, 2.4, 0.18), (0.97, 0.97, 0.97), shadow=False)
             _box(sc, (0, 2.4, z), (7.4, 0.18, 0.18), (0.97, 0.97, 0.97), shadow=False)
         _box(sc, (0, 0.004, -17), (40, 0.01, 0.2), (0.95, 0.95, 0.95), shadow=False)
-        _stands(sc, 22, rng)
+        _stands(sc, 16, rng, fans)
         for x in (-26, 26):
             _box(sc, (x, 0, -30), (0.5, 20, 0.5), (0.4, 0.4, 0.45), shadow=False)
             sc.add(Engine.get().meshes["box"], trs((x, 20, -30), (3, 1.4, 0.3)), (1, 1, 0.9), unlit=True)
@@ -134,14 +134,14 @@ def build_set(sc, name, rng):
             _box(sc, (x, 1, -9), (0.6, 9, 0.6), (0.4, 0.4, 0.45), shadow=False)
 
 
-def _stands(sc, half, rng):
+def _stands(sc, half, rng, fans=True):
     """Tiered seats both sides with a scatter of colored fans (boxes, cheap)."""
     for side in (-1, 1):
         for k in range(6):
             x = side * (half + 2 + k * 1.3)
             _box(sc, (x, k * 0.8, -16), (1.3, 0.8, 70), (0.3, 0.3, 0.36), shadow=False)
             for z in np.arange(-48, 18, 1.6):
-                if rng.random() < 0.7:
+                if fans and rng.random() < 0.7:
                     _box(sc, (x, k * 0.8 + 0.8, z), (0.45, 0.6, 0.45), PALETTE[int(rng.integers(8))], shadow=False)
 
 
@@ -199,7 +199,75 @@ def add_props(sc, props, t, rng):
 
 
 # ----------------------------------------------------------------- characters
+# what the background people do, by set (Nov 3, Sam: "the 3D models need to make sense with the
+# video"): fans in the stands, a line at the counter, people at desks, sidewalks, warehouse aisles.
+# A scene can override with visual "crowd_mode"; "runners" is the old run-at-the-camera pack.
+MODE_BY_SET = {"court": "audience", "pitch": "audience", "stage": "concert", "studio": "concert",
+               "launch": "watch", "store": "queue", "office": "workers", "gaming": "workers",
+               "city": "street", "warehouse": "aisles", "field": "runners"}
+STANDS = {"court": 11, "pitch": 16}
+
+
+def crowd_mode(v):
+    return v.get("crowd_mode") or MODE_BY_SET.get(v.get("set"), "runners")
+
+
+def _face(x, z, tx, tz):
+    return math.atan2(tx - x, tz - z)  # characters face +z at yaw 0
+
+
+def _layout(mode, v, n, rng, act):
+    """[((x, y, z), yaw, clip, speed m/s along z or None = follow the hero)] for n background people."""
+    out = []
+    if mode == "audience":
+        half = STANDS.get(v.get("set"), 11)
+        seats = [(side * (half + 2 + k * 1.3), k * 0.8 + 0.8, z) for side in (-1, 1) for k in range(6)
+                 for z in np.arange(-34, 12, 0.95)]
+        for i in rng.permutation(len(seats))[:n]:
+            x, y, z = seats[i]
+            out.append(((x + rng.uniform(-0.15, 0.15), y, z), _face(x, z, 0, -10),
+                        "jump" if rng.random() < 0.45 else "idle", 0.0))
+    elif mode in ("concert", "watch"):
+        tx, tz = (0, -6) if mode == "concert" else (-8, -20)
+        x0, x1, z0, z1 = (-8, 8, 3, 14) if mode == "concert" else (-2, 12, -4, 8)
+        for (x, _y, z) in grid_crowd(n, x0, x1, z0, z1, rng):
+            out.append(((x, 0, z), _face(x, z, tx, tz), "jump" if rng.random() < 0.5 else "idle", 0.0))
+    elif mode == "queue":
+        line = min(n, 14)
+        for k in range(line):  # a line at the counter, everyone facing it
+            out.append(((-2.6 + rng.uniform(-0.1, 0.1), 0, -3.5 - k * 0.95), math.pi, "idle", 0.0))
+        for k in range(n - line):  # shoppers walking the aisles both ways
+            d = 1 if k % 2 else -1
+            out.append(((float(rng.choice([-12.5, 12.5])) + rng.uniform(-1, 1), 0, rng.uniform(-60, 6)),
+                        0.0 if d > 0 else math.pi, "walk", 1.2 * d))
+    elif mode == "workers":
+        if v.get("set") == "office":
+            desks = [(x, z + 1.0) for x in (-6, -2, 2, 6) for z in np.arange(-24, 6, 4)]
+        else:
+            desks = [(x + dx, -4.9) for x in (-5, 0, 5) for dx in (-0.9, 0.9)]
+        for x, z in desks[:n]:  # one person at each desk, facing the screen
+            out.append(((x, 0, z), math.pi, "working" if rng.random() < 0.4 else "idle", 0.0))
+    elif mode == "street":
+        for k in range(n):
+            d = 1 if k % 2 else -1
+            side = float(rng.choice([-1, 1]))
+            out.append(((side * rng.uniform(4.5, 7.5), 0, rng.uniform(-60, 10)),
+                        0.0 if d > 0 else math.pi, "walk", 1.4 * d))
+    elif mode == "aisles":
+        for k in range(n):
+            d = 1 if k % 2 else -1
+            out.append(((float(rng.choice([-12.5, -4.0, 4.0, 12.5])) + rng.uniform(-0.6, 0.6), 0, rng.uniform(-55, 5)),
+                        0.0 if d > 0 else math.pi, "walk" if rng.random() < 0.8 else "working", 1.1 * d))
+    else:  # runners: the pack behind the hero, moving with them
+        wide = v.get("set") in ("field", "city", "stage", "court", "pitch")
+        for k, (x, y, z) in enumerate(grid_crowd(n, -16 if wide else -6, 16 if wide else 6, -40, -6, rng)):
+            c = CLIP.get(act, "idle") if (k % 4 or act != "cheer") else "jump"
+            out.append(((x, y, z), float(rng.uniform(-0.3, 0.3)), c, None))
+    return out
+
+
 def _crowd(key, v, ch):
+    """([(Crowd, speed or None)], hero). speed None = moves with the hero."""
     e = Engine.get()
     if not hasattr(e, "lp_crowds"):
         e.lp_crowds = {}
@@ -208,23 +276,18 @@ def _crowd(key, v, ch):
         n = int(v.get("crowd", 0))
         act = v.get("action", "run")
         clip = ch.find_clip(CLIP.get(act, "idle"))
-        cheer = ch.find_clip("jump")
         # the pack's clothed textures: skin tones, hair, shirts and pants, so they read as people
         skins = list(SKINS)
         rng.shuffle(skins)
+        buckets = {}
+        for i, (pos, yaw, c, speed) in enumerate(_layout(crowd_mode(v), v, n, rng, act)):
+            buckets.setdefault((i % len(skins), speed), []).append((pos, yaw, ch.find_clip(c), (i % 8) * 0.137))
         cs = []
-        if n:
-            wide = v.get("set") in ("field", "city", "stage", "court", "pitch")
-            pos = grid_crowd(n, -16 if wide else -6, 16 if wide else 6, -40, -6, rng)
-            clips = [clip if (i % 4 or act != "cheer") else cheer for i in range(n)]
-            yaw, scl, ph = rng.uniform(-0.3, 0.3, n), rng.uniform(0.92, 1.08, n), (np.arange(n) % 8) * 0.137
-            for k, sk in enumerate(skins):
-                ids = [i for i in range(n) if i % len(skins) == k]
-                if ids:
-                    c = Crowd(ch, skin=sk)
-                    c.place([pos[i] for i in ids], yaw[ids], scl[ids], [(1, 1, 1)] * len(ids),
-                            [clips[i] for i in ids], ph[ids])
-                    cs.append(c)
+        for (k, speed), rows in buckets.items():
+            c = Crowd(ch, skin=skins[k])
+            c.place([r[0] for r in rows], [r[1] for r in rows], rng.uniform(0.92, 1.08, len(rows)),
+                    [(1, 1, 1)] * len(rows), [r[2] for r in rows], [r[3] for r in rows])
+            cs.append((c, speed))
         hero = Crowd(ch, skin=skins[0])
         hero.place([(0, 0, 0)], [0.0], [1.0], [(1, 1, 1)], [clip], [0.0])
         e.lp_crowds[key] = (cs, hero)
@@ -261,7 +324,7 @@ CROWDS: list = []   # each crowd's instances once; frames point at them
 _CROWD_IDS: dict = {}
 
 
-def _record(key, sc, crowds, m, t, set_name):
+def _record(key, sc, placed, t, set_name):
     names = {id(v): k for k, v in Engine.get().meshes.items()}
     ids = []
     for mesh, model, color, _tex, _spec, _gloss, emis, _alpha, unlit in sc.items:
@@ -272,15 +335,15 @@ def _record(key, sc, crowds, m, t, set_name):
             ITEMS.append(it)
         ids.append(_ITEM_IDS[it])
     cids = []
-    for c in crowds:
+    for c, cm in placed:
         if id(c) not in _CROWD_IDS:
             _CROWD_IDS[id(c)] = len(CROWDS)
             CROWDS.append(dict(skin=c.skin, groups=[[clip, ph, rows] for clip, ph, rows in c.rows]))
-        cids.append(_CROWD_IDS[id(c)])
+        cids.append([_CROWD_IDS[id(c)], np.asarray(cm).ravel().tolist()])
     ch = character.load(CHAR)
     PLAN[key] = dict(eye=[float(x) for x in sc.eye], target=[float(x) for x in sc.target], fov=sc.fov,
                      set=set_name, look={k: list(v) if isinstance(v, tuple) else v for k, v in sc.look.items()},
-                     items=ids, m=np.asarray(m).ravel().tolist(), t=t, base_y=ch.base_y, height=ch.height,
+                     items=ids, t=t, base_y=ch.base_y, height=ch.height,
                      crowds=cids)
 
 
@@ -307,14 +370,14 @@ def render(v, t, p, variant, rec=None):
     sc = Scene(look(v.get("set", "field")), eye, tgt, fov=fov, aperture=0.0)
     sc.size, sc.vignette, sc.shift, sc.shift_x = SIZE, 0.12, 0.0, 0.0
     rng = np.random.default_rng(7)
-    build_set(sc, v.get("set", "field"), rng)
+    build_set(sc, v.get("set", "field"), rng, fans=not (crowd_mode(v) == "audience" and v.get("crowd")))
     add_props(sc, v.get("props"), t, np.random.default_rng(11))
     # the crowd and hero move together (crowd behind); one draw per animation phase group
     dz = t * (3.2 if act == "run" else 1.4 if act in ("push", "carry") else 0.0)
     m = trs((0, 0, dz))
-    for c in crowd:
-        sc.customs.append(_shifted(c, t, m))
-    sc.customs.append(_shifted(hero, t, m))
+    placed = [(c, m if speed is None else trs((0, 0, speed * t))) for c, speed in crowd] + [(hero, m)]
+    for c, cm in placed:
+        sc.customs.append(_shifted(c, t, cm))
     if act == "push":
         _box(sc, (0, 0.5, dz + 0.9), (0.9, 0.7, 1.1), (0.75, 0.78, 0.82))
     if "ball" in (v.get("props") or []):          # dribbled at the hero's side, moves with them
@@ -323,7 +386,7 @@ def render(v, t, p, variant, rec=None):
     if act == "carry":
         _box(sc, (0, 1.05, dz + 0.45), (0.6, 0.45, 0.45), (0.8, 0.6, 0.38), shadow=False)
     if rec is not None:
-        _record(rec, sc, list(crowd) + [hero], m, t, v.get("set", "field"))
+        _record(rec, sc, placed, t, v.get("set", "field"))
     img = Image.fromarray(sc.render()).resize((1080, 1920), Image.LANCZOS)
     return img.filter(ImageFilter.UnsharpMask(radius=2, percent=60, threshold=2))
 
