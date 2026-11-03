@@ -70,9 +70,20 @@ def photo(title: str, name: str = ""):
             print(f"::warning::[photos] {title}: not a free license, skipped")
             return None, None
         f = CACHE / (hashlib.sha1(d["url"].encode()).hexdigest()[:16] + ".jpg")
-        if not f.exists():
-            f.write_bytes(_get(d["url"]))
-        img = Image.open(io.BytesIO(f.read_bytes())).convert("RGB")
+        img = None
+        for k in range(3):  # a throttled download can come back as an error page: check, retry
+            if not f.exists():
+                if k:
+                    import time
+                    time.sleep(4 * k)
+                f.write_bytes(_get(d["url"]))
+            try:
+                img = Image.open(io.BytesIO(f.read_bytes())).convert("RGB")
+                break
+            except Exception:
+                f.unlink(missing_ok=True)
+        if img is None:
+            raise RuntimeError("download wasn't an image after 3 tries")
         who = f"{name} — " if name else ""
         return img, f"{who}{d['artist']}, {d['license']}, via Wikimedia Commons ({d['page']})"
     except Exception as exc:  # never lose a night over a photo
