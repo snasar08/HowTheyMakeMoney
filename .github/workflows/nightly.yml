@@ -29,7 +29,63 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  # New voice (Nov 3): decide tonight's Shorts, voice each one with Qwen3-TTS on its own machine in
+  # parallel, then `make` renders with those lines. Any failure here only means Kokoro for that Short.
+  plan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    outputs:
+      ids: ${{ steps.ids.outputs.ids }}
+    env:
+      POST_START: ${{ vars.POST_START || '2026-10-27' }}
+      POST_SLOTS: "12:00,15:00,18:00"
+      MAX_PER_DAY: "3"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: pip install -q -r requirements.txt
+      - id: ids
+        run: |
+          ARGS="--count ${{ inputs.count || '3' }}"
+          if [ -n "${{ inputs.script_id }}" ]; then ARGS="$ARGS --id ${{ inputs.script_id }}"; fi
+          if [ "${{ inputs.dry_run }}" = "true" ]; then ARGS="$ARGS --dry"; fi
+          python -m pipeline.run $ARGS --plan-ids ids.txt || true
+          echo "ids=$(python -c "import json;print(json.dumps([l.strip() for l in open('ids.txt') if l.strip()] if __import__('os').path.exists('ids.txt') else []))")" >> "$GITHUB_OUTPUT"
+  voice:
+    needs: plan
+    if: ${{ needs.plan.outputs.ids != '[]' && needs.plan.outputs.ids != '' && (vars.VOICE_ENGINE || 'qwen') == 'qwen' }}
+    strategy:
+      fail-fast: false
+      matrix:
+        id: ${{ fromJSON(needs.plan.outputs.ids) }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      HTMM_CACHE: ${{ github.workspace }}/.cache
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: qwen-models-v1
+      - run: |
+          pip install -q torch torchaudio --index-url https://download.pytorch.org/whl/cpu
+          pip install -q -U qwen-tts openai-whisper soundfile numpy
+      - run: python -m pipeline.voice_prepass ${{ matrix.id }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: voice-${{ matrix.id }}
+          path: .cache/voice/
+          retention-days: 2
   make:
+    needs: [plan, voice]
+    if: ${{ always() }}
     runs-on: ubuntu-latest
     timeout-minutes: 45
     env:
@@ -38,7 +94,8 @@ jobs:
       POST_START: ${{ vars.POST_START || '2026-10-27' }}
       BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
       AUDIO_CHECK: ${{ vars.AUDIO_CHECK || 'warn' }}
-      VOICE_ENGINE: ${{ vars.VOICE_ENGINE || 'kokoro' }}
+      VOICE_ENGINE: ${{ vars.VOICE_ENGINE || 'qwen' }}   # Nov 3: Qwen3-TTS clone (falls back to Kokoro per Short)
+      QWEN_VOICE: narrator
       KOKORO_VOICE: am_puck   # Oct 30: Sam wants a male voice; am_puck = top-rated male (C+), most expressive
       KOKORO_SPEED: "1.2"
       POST_SLOTS: "12:00,15:00,18:00"
@@ -73,6 +130,14 @@ jobs:
             .cache
           key: htmm-models-v2-${{ hashFiles('requirements.txt') }}
           restore-keys: htmm-models-v2-
+
+      - name: New-voice lines from the voice jobs
+        uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          pattern: voice-*
+          path: .cache/voice
+          merge-multiple: true
 
       - name: Lint scripts (warnings only)
         run: python -m pipeline.lint || true

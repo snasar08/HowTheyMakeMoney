@@ -119,6 +119,7 @@ def main() -> int:
     ap.add_argument("--count", type=int, default=int(os.environ.get("SHORTS_PER_RUN", "2")))
     ap.add_argument("--id", default=None)
     ap.add_argument("--dry", action="store_true")
+    ap.add_argument("--plan-ids", default=None, help="write the ids this run would render (+2 spares) and exit")
     args = ap.parse_args()
     if not args.dry and not args.id and not posting_started():
         print(f"[run] posting starts {POST_START} (New York); nothing to do yet")
@@ -144,6 +145,11 @@ def main() -> int:
     if not queue:
         print("[run] queue is empty — the weekly script writer needs to add more")
         return 1
+    if args.plan_ids:  # for the voice pre-pass: what tonight renders, plus spares for gate failures
+        extra = [p for p in ready_scripts() if p not in queue][:2]
+        Path(args.plan_ids).write_text("\n".join(p.stem.split("-")[0] for p in queue + extra) + "\n")
+        print(f"[run] plan: {[p.stem for p in queue + extra]}")
+        return 0
     if args.dry:
         slots = publish_slots(len(queue), taken=taken)
     # scripts that fail the quality gate are skipped, and the next ready one takes their slot

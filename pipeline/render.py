@@ -816,6 +816,7 @@ class Renderer:
         self.joins = []  # (scene, start, end) silences that must stay silent — for the checker
         self.cta = None
         sr = tts.SAMPLE_RATE
+        tts.use_engine_for([raw["narration"] for raw in self.s["scenes"]] + [cta_line, loop])
         for i, raw in enumerate(self.s["scenes"]):
             sc = Scene(tts.strip_speakers(raw["narration"]), raw["visual"])
             sc.audio, timings = tts.synthesize(raw["narration"])  # "B:" lines use the second voice

@@ -5,6 +5,10 @@ Engines (VOICE_ENGINE env var):
   kokoro  - default. Kokoro-82M, Apache-2.0, fast on CPU, gives word timestamps.
   ming    - Ming-3.0-tts-0.5b (MIT). Only GPU-tested upstream; experimental on CPU.
             Needs the Ming-3.0-tts repo on the path (MING_REPO). Falls back to Kokoro.
+  qwen    - Qwen3-TTS (Apache-2.0) voice clone, far more human than Kokoro (Nov 3). Too heavy for
+            the pipeline venv, so pipeline/voice_prepass.py voices every sentence ahead of time on
+            separate GitHub machines into VOICE_CACHE (wav + Whisper word timings). A Short only
+            uses it when EVERY sentence is cached (one voice per Short); otherwise Kokoro.
   silent  - placeholder audio for layout tests.
 """
 from __future__ import annotations
@@ -37,6 +41,76 @@ def strip_speakers(text: str) -> str:
 
 _kokoro = {}
 _ming_model = None
+VOICE_CACHE = os.path.join(os.environ.get("HTMM_CACHE", ".cache"), "voice")
+QWEN_VOICE = os.environ.get("QWEN_VOICE", "narrator")  # assets/voice/<name>.wav + .txt = the cloned voice
+_engine_now = None  # set per Short by use_engine_for(); None = VOICE_ENGINE
+
+
+def sentences(text: str) -> list[tuple[str, bool, bool]]:
+    """(sentence, is_question, is_speaker_b) exactly as the engines split a line."""
+    out = []
+    for sent in (p for s_ in SENTENCE.split(text) for p in (breath_split(s_.strip()) if s_.strip() else [s_])):
+        if not sent.strip():
+            continue
+        b = bool(SPEAKER_B.match(sent))
+        sent = SPEAKER_B.sub("", sent).strip()
+        out.append((sent, sent.endswith("?"), b))
+    return out
+
+
+def cache_path(sent: str) -> str:
+    import hashlib
+    return os.path.join(VOICE_CACHE, hashlib.sha1(f"{QWEN_VOICE}|{sent}".encode()).hexdigest()[:20])
+
+
+def qwen_ready(texts) -> bool:
+    return all(os.path.exists(cache_path(s) + ".wav") for t in texts for s, _, b in sentences(speakable(t)) if not b)
+
+
+def use_engine_for(texts):
+    """Pick one engine for a whole Short so the voice never changes mid-video."""
+    global _engine_now
+    _engine_now = None
+    if VOICE_ENGINE == "qwen":
+        if qwen_ready(texts):
+            _engine_now = "qwen"
+        else:
+            print("::warning::[tts] new voice not ready for every line of this Short; using Kokoro")
+            _engine_now = "kokoro"
+    return _engine_now or VOICE_ENGINE
+
+
+def qwen(text: str):
+    """Assemble cached Qwen sentences like kokoro() does: trimmed gaps, a beat after questions,
+    word timings shifted into place. Speaker-B lines use Kokoro's second voice."""
+    import json
+
+    import soundfile as sf
+    chunks, words, offset = [], [], 0.0
+    for sent, q, b in sentences(text):
+        if b:
+            a, w = kokoro(sent, voice=KOKORO_VOICE2)
+            ws = w or []
+        else:
+            a, sr = sf.read(cache_path(sent) + ".wav", dtype="float32")
+            if a.ndim > 1:
+                a = a.mean(axis=1)
+            if sr != SAMPLE_RATE:
+                idx = np.linspace(0, len(a) - 1, int(len(a) * SAMPLE_RATE / sr))
+                a = np.interp(idx, np.arange(len(a)), a).astype(np.float32)
+            loud = np.flatnonzero(np.abs(a) > 0.02)
+            c0 = max(0, int(loud[0]) - int(LEAD_KEEP * SAMPLE_RATE)) if len(loud) else 0
+            c1 = min(len(a), int(loud[-1]) + int(TAIL_KEEP * SAMPLE_RATE)) if len(loud) else len(a)
+            a, shift = a[c0:c1], c0 / SAMPLE_RATE
+            ws = [(t, max(0.0, st - shift), min(len(a) / SAMPLE_RATE, en - shift))
+                  for t, st, en in json.load(open(cache_path(sent) + ".json", encoding="utf-8"))]
+        words += [(t, offset + st, offset + en) for t, st, en in ws]
+        chunks.append(np.asarray(a, np.float32))
+        offset += len(a) / SAMPLE_RATE
+        if q:
+            chunks.append(np.zeros(int(QUESTION_BEAT * SAMPLE_RATE), np.float32))
+            offset += QUESTION_BEAT
+    return np.concatenate(chunks), (words or None)
 
 
 # words Kokoro tends to misread; whole-word, case-sensitive
@@ -174,7 +248,14 @@ def silent(text: str):
 
 def synthesize(text: str):
     text = speakable(text)
-    engine = VOICE_ENGINE
+    engine = _engine_now or VOICE_ENGINE
+    if engine == "qwen":
+        try:
+            a, w = qwen(text)
+            return normalize(a), w
+        except Exception as exc:  # never lose a night
+            print(f"::warning::[tts] cached voice failed ({exc!r}); falling back to Kokoro")
+            engine = "kokoro"
     if engine == "ming":
         try:
             a, w = ming(text)
