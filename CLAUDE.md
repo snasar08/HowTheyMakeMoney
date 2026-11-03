@@ -14,7 +14,14 @@ and **free beyond his Higgsfield Pro plan** — never add a paid service or ask 
   never double-post. GitHub starts scheduled runs late (Oct 26–28: 5.5–6.5 h). Check Buffer:
   push branch `slot-audit` (report) / `slot-fix` (delete extras, scripts back to ready). Minutes: the repo is public, so standard GitHub runners are free and unlimited (6 h max per job, ~20 jobs at once); a run takes ~5–8 minutes.
 - `pipeline/render.py` draws every frame with Pillow and pipes to ffmpeg (1080x1920, 30 fps).
-- `pipeline/tts.py` — voice. Default Kokoro-82M **`am_puck` at 1.2** (Oct 30: Sam disliked am_fenrir, then af_bella — wants a MALE voice, speed 1.2 is right. am_puck ties for Kokoro's top male grade, C+, and moves most in pitch; Sam also rejected am_michael on day 1; bigger open models like Fish Audio S2 Pro are non-commercial and ~30x slower than real time without a GPU). One Kokoro call per sentence, questions 7% slower + 0.5 s beat. Audio is loudness-normalized to −14 LUFS (YouTube's target). CPU. Optional Ming-3.0-tts.
+- **Channel voice since Nov 3: Qwen3-TTS clone** (Apache-2.0) of `assets/voice/narrator.wav` (one designed narrator;
+  Sam said every Kokoro/Chatterbox read sounded robotic; picked on measured UTMOS 4.50 / same-voice 0.86 / pitch
+  movement 5.3 st vs Kokoro 4.43 / 0.81 / 3.6, see assets/voice/README.md). Nightly: `plan` job decides tonight's
+  Shorts (`run.py --plan-ids`), one `voice` job per Short runs `pipeline/voice_prepass.py` in a Python 3.12 venv
+  (~5–8 min each, parallel) into `.cache/voice` (wav + Whisper word timings), and `make` renders with
+  VOICE_ENGINE=qwen. A Short uses it only if EVERY line is cached (`tts.use_engine_for`), else Kokoro am_puck below.
+  Repo variable VOICE_ENGINE=kokoro switches back.
+- `pipeline/tts.py` — voice (Kokoro = fallback since Nov 3). Default Kokoro-82M **`am_puck` at 1.2** (Oct 30: Sam disliked am_fenrir, then af_bella — wants a MALE voice, speed 1.2 is right. am_puck ties for Kokoro's top male grade, C+, and moves most in pitch; Sam also rejected am_michael on day 1; bigger open models like Fish Audio S2 Pro are non-commercial and ~30x slower than real time without a GPU). One Kokoro call per sentence, questions 7% slower + 0.5 s beat. Audio is loudness-normalized to −14 LUFS (YouTube's target). CPU. Optional Ming-3.0-tts.
 - **Second voice (Nov 1, optional):** Sam's main voice stays am_puck 1.2 (his favorite). For back-and-forth
   lines, start a sentence with `B:` in a scene's narration and it's read by `KOKORO_VOICE2` = `am_puck,am_michael`
   (a blend; Sam's pick "#5"). Tags are stripped from captions/clarity. Use sparingly (a viewer-style question,
@@ -81,6 +88,11 @@ and **free beyond his Higgsfield Pro plan** — never add a paid service or ask 
   Use it for most `whatif` and `famous` Shorts (no Higgsfield images needed, saves credits); keep
   Higgsfield 3D characters + 3D charts for `how` and `careers`. Renderer choice (GitHub, 1080x1920):
   moderngl 123/207 ms per frame for 100/300 characters vs three.js+SwiftShader 1262/3270 ms.
+- **Blender stage (Nov 3, nightly):** low-poly Shorts are re-rendered in Cycles: `lpplan` records every 3D frame
+  (LP_RECORD; `lowpoly._record`), 20 `blender` machines render `pipeline/blender_lp.py` shards at 540x960 with
+  Poly Haven lighting (`pipeline/polyhaven.py`), `make` uses them only if ALL frames of a Short arrived (LP_PLATES),
+  else the GL look. Skipped when the run starts after 8 AM ET. Repo variable BLENDER=off disables it.
+  Test the whole nightly file as a dry run on script 040: push branch `nightly-test`.
 - **Editorial style (Nov 3):** `visual_style: "editorial"` (`pipeline/editorial.py`): dark backstory page, HTMM mark + `tag`, per-scene `layout` cards (real people, free-license Wikimedia Commons photos only via `pipeline/photos.py`: CC0/PD/CC BY/CC BY-SA, credits auto-added to the description) / stat / headline / timeline. Use the REELS.md Reel 5 arc; ~1 in 3 should be an "almost went bankrupt" story (Sam's favorite, REELS.md). Add 4–8 more Commons photos in the script's `photos` list ([{photo, caption}]) so a new picture shows every other beat. Example: 043-how-prime. No Higgsfield images needed.
 - Chart scenes also get code-drawn "alt" shots (ticker / waffle / columns) on a drifting grid.
 - **Posting via Buffer (default since Oct 26 2026):** `UPLOAD_MODE` defaults to `buffer` in

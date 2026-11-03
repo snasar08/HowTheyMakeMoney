@@ -223,3 +223,8 @@ passes and the 3D version is clearly better. Free tools only; ≤100 Higgsfield 
 - Blender Cycles replay (`pipeline/blender_lp.py`, Poly Haven skies/floors via `pipeline/polyhaven.py`) tested on branch blender-bench (30–65 s/frame); NOT wired into nightly yet.
 - New `editorial` visual style (from the Whoop backstory reel Sam liked): `pipeline/editorial.py` + free-license Commons photos with credits in the description (`pipeline/photos.py`). 043 Prime: e2e 44 s, clarity 100%, set ready.
 - Voice emotion test (Chatterbox cloned from am_puck) on branch voice-emotion; results pending Sam's pick.
+
+## 2026-11-03 (evening) — New voice + Blender in nightly
+- Sam rejected Kokoro and Chatterbox. Tested Qwen3-TTS (custom/design/clone) and VoxCPM2 on GitHub CPU; scored all with UTMOS + Resemblyzer + pitch spread (`bench/voice_score.py`). Winner: one designed Qwen narrator, cloned for every line (UTMOS 4.50, consistency 0.86, pitch 5.3 st).
+- Nightly now: plan -> parallel Qwen voice jobs -> (Blender plan -> 20 Cycles shards) -> make. Kokoro / GL look are automatic per-Short fallbacks.
+- Editorial style: photo every other beat, no repeated pictures, Commons pacing + standard thumb width.
