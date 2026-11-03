@@ -1,0 +1,160 @@
+"""Editorial "company backstory" look (visual type "editorial"; Nov 3, from the Whoop reel Sam liked).
+
+Near-black page, our small HTMM mark + a section tag top-left, one idea per scene in the middle,
+captions at the bottom (render.py). Layouts, set per scene in `visual`:
+  {"type": "editorial", "layout": "cards", "people": [{"name": "Cristiano Ronaldo",
+     "photo": "File:Cristiano Ronaldo 2018.jpg", "role": "investor"}], "label": "ON THE WRISTS THAT MATTER"}
+  {"type": "editorial", "layout": "stat", "stat": "$10.1B", "stat_sub": "valuation, March 2026"}
+  {"type": "editorial", "layout": "headline", "headline": "100+ investors said no", "accent": "no"}
+  {"type": "editorial", "layout": "timeline", "points": [["2012", "founded"], ["2018", "strap goes free"]]}
+Script: "tag": "COMPANY BACKSTORY" (default). Photos are free-license Commons files only
+(pipeline/photos.py); a missing photo becomes a name tile. Every number is still sourced.
+"""
+from __future__ import annotations
+
+import math
+
+from PIL import Image, ImageDraw, ImageFilter, ImageOps
+
+from . import fx, photos
+from .render import (BLACK, BOLD, H, SAFE_X0, SAFE_X1, W, draw_centered, ease_out, ease_out_back,
+                     fit_font, font, wrap)
+
+BG = (11, 11, 14)
+INK = (240, 240, 236)
+DIM = (150, 150, 158)
+ACCENT = (226, 66, 50)
+GOLD = (244, 196, 48)
+_photo_cache: dict = {}
+
+
+def _page(tag: str) -> Image.Image:
+    img = Image.new("RGB", (W, H), BG)
+    d = ImageDraw.Draw(img)
+    # faint vertical gradient so the page isn't flat
+    for y in range(0, H, 8):
+        k = int(10 * (1 - y / H))
+        d.rectangle((0, y, W, y + 8), fill=(BG[0] + k, BG[1] + k, BG[2] + k + 2))
+    d.text((SAFE_X0, 190), "H T M M", font=font(BLACK, 34), fill=INK)
+    ft = font(BOLD, 24)
+    d.text((SAFE_X1 - ft.getlength(tag.upper()), 198), tag.upper(), font=ft, fill=ACCENT)
+    d.line((SAFE_X0, 248, SAFE_X1, 248), fill=(40, 40, 46), width=2)
+    return img
+
+
+def _photo(p):
+    key = p.get("photo") or p.get("name")
+    if key not in _photo_cache:
+        img, _ = photos.photo(p["photo"], p.get("name", "")) if p.get("photo") else (None, None)
+        _photo_cache[key] = img
+    return _photo_cache[key]
+
+
+def _card(p, w, h):
+    """Rounded photo card with the name under it (name tile if no free photo)."""
+    card = Image.new("RGBA", (w, h + 110), (0, 0, 0, 0))
+    img = _photo(p)
+    if img is not None:
+        ph = ImageOps.fit(img, (w, h), Image.LANCZOS, centering=(0.5, 0.3))
+    else:
+        ph = Image.new("RGB", (w, h), (34, 34, 40))
+        dd = ImageDraw.Draw(ph)
+        initials = "".join(x[0] for x in p.get("name", "?").split()[:2]).upper()
+        draw_centered(dd, w / 2, h / 2 - 60, initials, font(BLACK, 110), DIM)
+    mask = Image.new("L", (w, h), 0)
+    ImageDraw.Draw(mask).rounded_rectangle((0, 0, w - 1, h - 1), 26, fill=255)
+    card.paste(ph, (0, 0), mask)
+    d = ImageDraw.Draw(card)
+    d.rounded_rectangle((0, 0, w - 1, h - 1), 26, outline=(70, 70, 78), width=2)
+    f = fit_font(p.get("name", ""), BOLD, w, 34, 22)
+    draw_centered(d, w / 2, h + 12, p.get("name", ""), f, INK)
+    if p.get("role"):
+        fr = font(BOLD, 22)
+        draw_centered(d, w / 2, h + 12 + f.size + 6, p["role"].upper(), fr, DIM)
+    return card
+
+
+def _cards(img, v, t):
+    people = v.get("people", [])[:6]
+    if not people:
+        return
+    d = ImageDraw.Draw(img)
+    if v.get("label"):
+        d.text((SAFE_X0, 300), v["label"].upper(), font=font(BOLD, 28), fill=ACCENT)
+    cols = 3 if len(people) > 4 else 2 if len(people) > 1 else 1
+    gap = 28
+    cw = int((SAFE_X1 - SAFE_X0 - gap * (cols - 1)) / cols)
+    ch = int(cw * 1.25)
+    rows = math.ceil(len(people) / cols)
+    y0 = 360 if rows > 1 else 480
+    for i, p in enumerate(people):
+        r, c = divmod(i, cols)
+        n_row = min(cols, len(people) - r * cols)  # center a short last row
+        x = SAFE_X0 + (SAFE_X1 - SAFE_X0 - (n_row * cw + (n_row - 1) * gap)) / 2 + c * (cw + gap)
+        y = y0 + r * (ch + 110)
+        k = ease_out_back(min(1.0, max(0.0, (t - 0.12 * i) / 0.35)))  # staggered pop-in
+        if k <= 0:
+            continue
+        cd = _card(p, cw, ch)
+        if k < 1:
+            cd = cd.resize((max(1, int(cd.width * k)), max(1, int(cd.height * k))), Image.LANCZOS)
+        img.paste(cd, (int(x + (cw - cd.width) / 2), int(y + (ch - cd.height * (ch / (ch + 110))) / 2)), cd)
+
+
+def _stat(img, v, t):
+    d = ImageDraw.Draw(img)
+    shown = fx.count_up(v["stat"], t / 0.6) if fx.ON else v["stat"]
+    f = fit_font(v["stat"], BLACK, SAFE_X1 - SAFE_X0, 230, 90)
+    cx = (SAFE_X0 + SAFE_X1) / 2
+    draw_centered(d, cx, 620, shown, f, GOLD)
+    if v.get("stat_sub") and t > 0.2:
+        fs = fit_font(v["stat_sub"].upper(), BOLD, SAFE_X1 - SAFE_X0, 44, 28)
+        draw_centered(d, cx, 620 + f.size + 40, v["stat_sub"].upper(), fs, DIM)
+    if v.get("label"):
+        d.text((SAFE_X0, 300), v["label"].upper(), font=font(BOLD, 28), fill=ACCENT)
+
+
+def _headline(img, v, t):
+    d = ImageDraw.Draw(img)
+    text, accent = v.get("headline", ""), (v.get("accent") or "").lower()
+    f = font(BLACK, 104)
+    lines = wrap(text, f, SAFE_X1 - SAFE_X0)
+    y = 820 - len(lines) * (f.size + 18) / 2
+    shown = int(len(text.split()) * min(1.0, t / 0.6)) + 1  # words land one by one
+    n = 0
+    for line in lines:
+        x = SAFE_X0
+        for w in line.split():
+            n += 1
+            if n > shown:
+                return
+            col = ACCENT if accent and w.lower().strip(".,!?") == accent else INK
+            d.text((x, y), w, font=f, fill=col)
+            x += f.getlength(w + " ")
+        y += f.size + 18
+
+
+def _timeline(img, v, t):
+    d = ImageDraw.Draw(img)
+    pts = v.get("points", [])[:5]
+    x = SAFE_X0 + 40
+    y0, step = 420, 190
+    d.line((x, y0, x, y0 + step * (len(pts) - 1) * min(1.0, t / 0.8)), fill=(70, 70, 78), width=4)
+    for i, (year, what) in enumerate(pts):
+        k = min(1.0, max(0.0, (t - 0.18 * i) / 0.3))
+        if k <= 0:
+            continue
+        y = y0 + i * step
+        r = 14 * ease_out(k)
+        d.ellipse((x - r, y - r, x + r, y + r), fill=GOLD if i == len(pts) - 1 else ACCENT)
+        d.text((x + 50, y - 46), str(year), font=font(BLACK, 64), fill=INK)
+        d.text((x + 50, y + 26), what, font=font(BOLD, 38), fill=DIM)
+
+
+LAYOUTS = {"cards": _cards, "stat": _stat, "headline": _headline, "timeline": _timeline}
+
+
+def render(script: dict, v: dict, t: float) -> Image.Image:
+    img = _page(v.get("tag") or script.get("tag") or "Company backstory")
+    LAYOUTS.get(v.get("layout", "headline"), _headline)(img, v, t)
+    return img

@@ -24,6 +24,17 @@ FPS = 30
 PH_DIR = ROOT_DIR / "assets" / "polyhaven"   # filled by `python -m pipeline.polyhaven` (CC0 skies + floors)
 sys.path.insert(0, str(ROOT_DIR))
 from pipeline.polyhaven import LOOKS  # noqa: E402  (stdlib-only module)
+SHIRTS = {(115, 167, 196), (100, 215, 105)}   # palette colors, as in pipeline.character
+SHORTS = {(21, 96, 189), (200, 148, 89)}
+
+
+def kit_colors(name):
+    base, _, kit = name.partition("@")
+    if not kit:
+        return base, None, None
+    a, _, b = kit.partition("-")
+    rgb = lambda h: tuple(int(h[i:i + 2], 16) for i in (0, 2, 4)) if len(h) == 6 else None
+    return base, rgb(a), rgb(b)
 
 args = sys.argv[sys.argv.index("--") + 1:]
 plan_path, out_dir, shard, shards = args[0], Path(args[1]), int(args[2]), int(args[3])
@@ -134,7 +145,18 @@ def skin_mat(name):
         b = nt.nodes["Principled BSDF"]
         b.inputs["Roughness"].default_value = 0.7
         tex = nt.nodes.new("ShaderNodeTexImage")
-        tex.image = bpy.data.images.load(str(SKINS / f"{name}.png"))
+        base, shirt, shorts = kit_colors(name)
+        tex.image = bpy.data.images.load(str(SKINS / f"{base}.png"))
+        if shirt or shorts:  # same recolor as pipeline.character.skin_image
+            img = tex.image.copy()
+            px = list(img.pixels)
+            for i in range(0, len(px), 4):
+                c = tuple(round(v * 255) for v in px[i:i + 3])
+                new = shirt if (shirt and c in SHIRTS) else shorts if (shorts and c in SHORTS) else None
+                if new:
+                    px[i:i + 3] = [v / 255 for v in new]
+            img.pixels = px
+            tex.image = img
         tex.interpolation = "Closest"  # palette texture: keep flat color blocks
         nt.links.new(tex.outputs["Color"], b.inputs["Base Color"])
         _mats[k] = m

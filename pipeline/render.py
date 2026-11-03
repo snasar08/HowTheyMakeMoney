@@ -383,6 +383,8 @@ class Renderer:
                 elif typ == "text":
                     shots.append(("text", None, 0, False) if b % 2 == 0 else
                                  ("textbg", self._next_broll(), (v_i % 5) + 1, False))
+                elif typ == "editorial":  # backstory page: one layout per scene, animated in place
+                    shots.append(("editorial", None, b, b == 0))
                 elif typ == "lowpoly" and three_d_ok():
                     shots.append(("lowpoly", None, b + si * 2 + self._vseed, b == 0))
                 elif three_d_ok() and typ in ("stat", "bars", "donut", "globe"):
@@ -754,6 +756,9 @@ class Renderer:
         b1 = sc.beats[b + 1] if b + 1 < len(sc.beats) else sc.duration
         tb, pb = t - b0, (t - b0) / max(b1 - b0, 0.1)
         kind, key, variant, first = sc.shots[b]
+        if kind == "editorial":
+            from . import editorial
+            return editorial.render(self.s, sc.visual, t), tb
         if kind == "lowpoly":
             from . import lowpoly
             from .gl3d import run3d
@@ -1139,9 +1144,9 @@ class Renderer:
         and stays ~3 s. Script: "name_card": "CRISTIANO RONALDO", optional "name_sub": "soccer player".
         The name does the identifying; characters never copy a real person's look (STYLE.md)."""
         name = self.s.get("name_card")
-        if not name or not 0.8 <= gt <= 4.2:
+        if not name or gt > 4.2:  # Sam, Nov 3: name from the very first frame
             return
-        k = ease_out_back(min(1.0, (gt - 0.8) / 0.3)) * min(1.0, (4.2 - gt) / 0.2)
+        k = min(1.0, (4.2 - gt) / 0.2)
         d = ImageDraw.Draw(frame)
         f = fit_font(name.upper(), BLACK, SAFE_X1 - SAFE_X0 - 60, 76, 40)
         tw = d.textlength(name.upper(), font=f)

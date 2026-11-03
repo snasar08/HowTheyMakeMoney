@@ -288,7 +288,8 @@ def _crowd(key, v, ch):
             c.place([r[0] for r in rows], [r[1] for r in rows], rng.uniform(0.92, 1.08, len(rows)),
                     [(1, 1, 1)] * len(rows), [r[2] for r in rows], [r[3] for r in rows])
             cs.append((c, speed))
-        hero = Crowd(ch, skin=skins[0])
+        kit = v.get("kit")  # {"shirt": "f5c400", "shorts": "1d3f8f"}: plain team colors on the hero
+        hero = Crowd(ch, skin=f"{skins[0]}@{kit.get('shirt', '')}-{kit.get('shorts', '')}" if kit else skins[0])
         hero.place([(0, 0, 0)], [0.0], [1.0], [(1, 1, 1)], [clip], [0.0])
         e.lp_crowds[key] = (cs, hero)
     return e.lp_crowds[key]
