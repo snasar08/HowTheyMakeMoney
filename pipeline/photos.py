@@ -22,6 +22,8 @@ from pathlib import Path
 CACHE = Path(os.environ.get("HTMM_CACHE", ".cache")) / "commons"
 API = "https://commons.wikimedia.org/w/api.php"
 UA = {"User-Agent": "HowTheyMakeMoney-pipeline (github.com/snasar08/HowTheyMakeMoney)"}
+THUMB = 960  # Wikimedia only serves standard thumbnail widths (https://w.wiki/GHai); others get 429
+_done: dict = {}  # title -> (image, credit) for this run, failures included, so nothing is re-fetched
 OK = re.compile(r"^(cc0|public domain|pd\b|cc by(-sa)? \d)", re.I)
 
 
@@ -41,12 +43,12 @@ def info(title: str) -> dict | None:
     """Commons metadata for a file: url, license, artist. None if it isn't free to reuse."""
     CACHE.mkdir(parents=True, exist_ok=True)
     title = title if title.startswith("File:") else f"File:{title}"
-    meta = CACHE / (hashlib.sha1(title.encode()).hexdigest()[:16] + ".json")
+    meta = CACHE / (hashlib.sha1(f"{title}|{THUMB}".encode()).hexdigest()[:16] + ".json")
     if meta.exists():
         d = json.loads(meta.read_text())
     else:
         q = urllib.parse.urlencode({"action": "query", "titles": title, "prop": "imageinfo", "format": "json",
-                                    "iiprop": "url|extmetadata", "iiurlwidth": 900})
+                                    "iiprop": "url|extmetadata", "iiurlwidth": THUMB})
         pages = json.loads(_get(f"{API}?{q}"))["query"]["pages"]
         ii = next(iter(pages.values())).get("imageinfo", [{}])[0]
         em = ii.get("extmetadata", {})
@@ -62,7 +64,13 @@ def info(title: str) -> dict | None:
 
 
 def photo(title: str, name: str = ""):
-    """(PIL RGB image, credit line) or (None, None)."""
+    """(PIL RGB image, credit line) or (None, None). One attempt per file per run."""
+    if title not in _done:
+        _done[title] = _photo(title, name)
+    return _done[title]
+
+
+def _photo(title: str, name: str):
     from PIL import Image
     try:
         d = info(title)
