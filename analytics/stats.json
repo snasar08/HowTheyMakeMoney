@@ -33,6 +33,12 @@
      "views": 0,
      "likes": 0,
      "comments": 0
+    },
+    {
+     "t": "2026-11-03T18:24:28+00:00",
+     "views": 0,
+     "likes": 0,
+     "comments": 0
     }
    ],
    "tags": {
@@ -81,6 +87,12 @@
     },
     {
      "t": "2026-11-02T20:44:08+00:00",
+     "views": 0,
+     "likes": 0,
+     "comments": 0
+    },
+    {
+     "t": "2026-11-03T18:24:28+00:00",
      "views": 0,
      "likes": 0,
      "comments": 0
@@ -135,6 +147,12 @@
      "views": 2,
      "likes": 0,
      "comments": 0
+    },
+    {
+     "t": "2026-11-03T18:24:28+00:00",
+     "views": 2,
+     "likes": 0,
+     "comments": 0
     }
    ],
    "tags": {
@@ -183,6 +201,12 @@
     },
     {
      "t": "2026-11-02T20:44:08+00:00",
+     "views": 0,
+     "likes": 0,
+     "comments": 0
+    },
+    {
+     "t": "2026-11-03T18:24:28+00:00",
      "views": 0,
      "likes": 0,
      "comments": 0
@@ -237,6 +261,12 @@
      "views": 1,
      "likes": 1,
      "comments": 0
+    },
+    {
+     "t": "2026-11-03T18:24:28+00:00",
+     "views": 1,
+     "likes": 1,
+     "comments": 0
     }
    ],
    "tags": {
@@ -288,6 +318,12 @@
      "views": 1,
      "likes": 0,
      "comments": 0
+    },
+    {
+     "t": "2026-11-03T18:24:28+00:00",
+     "views": 1,
+     "likes": 0,
+     "comments": 0
     }
    ],
    "tags": {
@@ -330,6 +366,12 @@
     },
     {
      "t": "2026-11-02T20:44:08+00:00",
+     "views": 1,
+     "likes": 0,
+     "comments": 0
+    },
+    {
+     "t": "2026-11-03T18:24:28+00:00",
      "views": 1,
      "likes": 0,
      "comments": 0
@@ -378,6 +420,12 @@
      "views": 1,
      "likes": 0,
      "comments": 0
+    },
+    {
+     "t": "2026-11-03T18:24:28+00:00",
+     "views": 1,
+     "likes": 0,
+     "comments": 0
     }
    ],
    "tags": {
@@ -423,6 +471,12 @@
      "views": 2,
      "likes": 0,
      "comments": 0
+    },
+    {
+     "t": "2026-11-03T18:24:28+00:00",
+     "views": 4,
+     "likes": 0,
+     "comments": 0
     }
    ],
    "tags": {
@@ -459,6 +513,12 @@
     },
     {
      "t": "2026-11-02T20:44:08+00:00",
+     "views": 0,
+     "likes": 0,
+     "comments": 0
+    },
+    {
+     "t": "2026-11-03T18:24:28+00:00",
      "views": 0,
      "likes": 0,
      "comments": 0
@@ -501,6 +561,12 @@
      "views": 55,
      "likes": 0,
      "comments": 0
+    },
+    {
+     "t": "2026-11-03T18:24:28+00:00",
+     "views": 55,
+     "likes": 0,
+     "comments": 0
     }
    ],
    "tags": {
@@ -540,6 +606,12 @@
      "views": 5,
      "likes": 0,
      "comments": 0
+    },
+    {
+     "t": "2026-11-03T18:24:28+00:00",
+     "views": 7,
+     "likes": 0,
+     "comments": 0
     }
    ],
    "tags": {
@@ -570,6 +642,12 @@
     },
     {
      "t": "2026-11-02T20:44:08+00:00",
+     "views": 4,
+     "likes": 1,
+     "comments": 0
+    },
+    {
+     "t": "2026-11-03T18:24:28+00:00",
      "views": 4,
      "likes": 1,
      "comments": 0
@@ -606,6 +684,12 @@
      "views": 11,
      "likes": 1,
      "comments": 0
+    },
+    {
+     "t": "2026-11-03T18:24:28+00:00",
+     "views": 20,
+     "likes": 1,
+     "comments": 0
     }
    ],
    "tags": {
@@ -639,6 +723,12 @@
      "views": 18,
      "likes": 0,
      "comments": 0
+    },
+    {
+     "t": "2026-11-03T18:24:28+00:00",
+     "views": 21,
+     "likes": 0,
+     "comments": 0
     }
    ],
    "tags": {
@@ -664,6 +754,12 @@
     {
      "t": "2026-11-02T20:44:08+00:00",
      "views": 0,
+     "likes": 0,
+     "comments": 0
+    },
+    {
+     "t": "2026-11-03T18:24:28+00:00",
+     "views": 4,
      "likes": 0,
      "comments": 0
     }
@@ -693,6 +789,12 @@
      "views": 40,
      "likes": 0,
      "comments": 0
+    },
+    {
+     "t": "2026-11-03T18:24:28+00:00",
+     "views": 57,
+     "likes": 1,
+     "comments": 0
     }
    ],
    "tags": {
@@ -710,8 +812,62 @@
     "post_slot": "18:00",
     "score": 77
    }
+  },
+  "03kZkFBnyl0": {
+   "title": "Ronaldo Made $300 Million in One Year",
+   "published": "2026-11-03T17:04:39Z",
+   "snapshots": [
+    {
+     "t": "2026-11-03T18:24:28+00:00",
+     "views": 0,
+     "likes": 0,
+     "comments": 0
+    }
+   ],
+   "tags": {
+    "script": "040",
+    "slug": "famous-ronaldo",
+    "topic": "Cristiano Ronaldo",
+    "format": "famous",
+    "visual_style": "lowpoly",
+    "theme": "bold_bright",
+    "hook_style": "question",
+    "title_style": "statement",
+    "length_s": 31.11,
+    "length_bucket": "30-38",
+    "post_at": "2026-11-03T12:00:00-05:00",
+    "post_slot": "12:00",
+    "score": 90
+   }
+  },
+  "VUuUEcESMGM": {
+   "title": "Shorts Creators Keep Just 45% of Ad Money",
+   "published": "2026-11-02T23:01:55Z",
+   "snapshots": [
+    {
+     "t": "2026-11-03T18:24:28+00:00",
+     "views": 9,
+     "likes": 0,
+     "comments": 0
+    }
+   ],
+   "tags": {
+    "script": "033",
+    "slug": "careers-youtubers",
+    "topic": "YouTubers",
+    "format": "careers",
+    "visual_style": "charts3d",
+    "theme": "dark_neon",
+    "hook_style": "question",
+    "title_style": "statement",
+    "length_s": 29.98,
+    "length_bucket": "<30",
+    "post_at": "2026-11-02T18:00:00-05:00",
+    "post_slot": "18:00",
+    "score": 94
+   }
   }
  },
- "updated": "2026-11-02T20:44:08+00:00",
+ "updated": "2026-11-03T18:24:28+00:00",
  "subscribers": 1
 }
