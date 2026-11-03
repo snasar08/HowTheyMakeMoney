@@ -216,3 +216,10 @@ passes and the 3D version is clearly better. Free tools only; ≤100 Higgsfield 
 - Name banner (`name_card`/`name_sub`), sets court/pitch/studio/gaming/launch, props ball/mic/headset.
 - 040 Ronaldo now uses the pitch + ball + name card. e2e on 040 passed (clarity 98.9%, no blank frames). Ball later shrunk to stay in frame (checked locally).
 - Sam asked for look-alike celebrities; declined (YouTube altered-content rules, publicity rights, our STYLE.md rule) in favor of name + setting + numbers.
+
+## 2026-11-03 — Big day
+- 3 posts/day (12:00, 15:00, 18:00) and a 3 AM render run (Sam asked).
+- Low-poly: people fit each set (fans in stands, queue, desks, sidewalks, aisles); name banner from frame 0; plain team-color kits (`visual.kit`), 040 Ronaldo in yellow/blue, name in the first line.
+- Blender Cycles replay (`pipeline/blender_lp.py`, Poly Haven skies/floors via `pipeline/polyhaven.py`) tested on branch blender-bench (30–65 s/frame); NOT wired into nightly yet.
+- New `editorial` visual style (from the Whoop backstory reel Sam liked): `pipeline/editorial.py` + free-license Commons photos with credits in the description (`pipeline/photos.py`). 043 Prime: e2e 44 s, clarity 100%, set ready.
+- Voice emotion test (Chatterbox cloned from am_puck) on branch voice-emotion; results pending Sam's pick.

@@ -35,10 +35,10 @@ def _page(tag: str) -> Image.Image:
     for y in range(0, H, 8):
         k = int(10 * (1 - y / H))
         d.rectangle((0, y, W, y + 8), fill=(BG[0] + k, BG[1] + k, BG[2] + k + 2))
-    d.text((SAFE_X0, 190), "H T M M", font=font(BLACK, 34), fill=INK)
+    d.text((SAFE_X0, 215), "H T M M", font=font(BLACK, 34), fill=INK)
     ft = font(BOLD, 24)
-    d.text((SAFE_X1 - ft.getlength(tag.upper()), 198), tag.upper(), font=ft, fill=ACCENT)
-    d.line((SAFE_X0, 248, SAFE_X1, 248), fill=(40, 40, 46), width=2)
+    d.text((SAFE_X1 - ft.getlength(tag.upper()), 223), tag.upper(), font=ft, fill=ACCENT)
+    d.line((SAFE_X0, 272, SAFE_X1, 272), fill=(40, 40, 46), width=2)
     return img
 
 

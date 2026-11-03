@@ -81,6 +81,7 @@ and **free beyond his Higgsfield Pro plan** — never add a paid service or ask 
   Use it for most `whatif` and `famous` Shorts (no Higgsfield images needed, saves credits); keep
   Higgsfield 3D characters + 3D charts for `how` and `careers`. Renderer choice (GitHub, 1080x1920):
   moderngl 123/207 ms per frame for 100/300 characters vs three.js+SwiftShader 1262/3270 ms.
+- **Editorial style (Nov 3):** `visual_style: "editorial"` (`pipeline/editorial.py`): dark backstory page, HTMM mark + `tag`, per-scene `layout` cards (real people, free-license Wikimedia Commons photos only via `pipeline/photos.py`: CC0/PD/CC BY/CC BY-SA, credits auto-added to the description) / stat / headline / timeline. Use the REELS.md Reel 5 arc. Example: 043-how-prime. No images needed.
 - Chart scenes also get code-drawn "alt" shots (ticker / waffle / columns) on a drifting grid.
 - **Posting via Buffer (default since Oct 26 2026):** `UPLOAD_MODE` defaults to `buffer` in
   `nightly.yml`. Each Short is attached to a GitHub Release (the public video URL) and scheduled
