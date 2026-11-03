@@ -49,6 +49,8 @@ def info(title: str) -> dict | None:
     else:
         q = urllib.parse.urlencode({"action": "query", "titles": title, "prop": "imageinfo", "format": "json",
                                     "iiprop": "url|extmetadata", "iiurlwidth": THUMB})
+        import time
+        time.sleep(1.0)  # be gentle: Commons throttles bursts from shared CI IPs
         pages = json.loads(_get(f"{API}?{q}"))["query"]["pages"]
         ii = next(iter(pages.values())).get("imageinfo", [{}])[0]
         em = ii.get("extmetadata", {})
@@ -81,6 +83,8 @@ def _photo(title: str, name: str):
         img = None
         for k in range(3):  # a throttled download can come back as an error page: check, retry
             if not f.exists():
+                import time
+                time.sleep(1.0)
                 if k:
                     import time
                     time.sleep(4 * k)
