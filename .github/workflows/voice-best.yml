@@ -1,0 +1,55 @@
+name: Best free voice test
+
+# Push branch voice-best: Qwen3-TTS and VoxCPM2 (both Apache-2.0) read the Prime lines with a
+# delivery note per line, on CPU, in parallel jobs. Results go to the "voice-best" release.
+on:
+  push:
+    branches: ["voice-best"]
+
+permissions:
+  contents: write
+
+jobs:
+  voice:
+    strategy:
+      fail-fast: false
+      matrix:
+        model: [qwen, voxcpm]
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg sox libsox-dev
+      - name: Install
+        run: |
+          pip install -q torch torchaudio --index-url https://download.pytorch.org/whl/cpu
+          if [ "${{ matrix.model }}" = qwen ]; then pip install -q -U qwen-tts soundfile; else pip install -q voxcpm soundfile; fi
+      - name: Speak
+        run: python bench/voice_best.py ${{ matrix.model }} out || true
+      - name: Upload
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: voices-${{ matrix.model }}
+          path: out/
+  publish:
+    needs: voice
+    if: always()
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: v
+          merge-multiple: true
+      - run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+          cd v && for f in *.wav; do [ -f "$f" ] && ffmpeg -loglevel error -y -i "$f" -b:a 160k "${f%.wav}.mp3"; done
+          cat *.log || true
+          gh release delete voice-best --repo "$GITHUB_REPOSITORY" --yes --cleanup-tag 2>/dev/null || true
+          gh release create voice-best --repo "$GITHUB_REPOSITORY" *.mp3 *.log --title "Best free voice test" \
+            --notes "Prime lines, each with a delivery note. Qwen3-TTS and VoxCPM2 (Apache-2.0, free)."
