@@ -1139,9 +1139,9 @@ class Renderer:
         and stays ~3 s. Script: "name_card": "CRISTIANO RONALDO", optional "name_sub": "soccer player".
         The name does the identifying; characters never copy a real person's look (STYLE.md)."""
         name = self.s.get("name_card")
-        if not name or not 0.8 <= gt <= 4.2:
+        if not name or gt > 4.2:  # Sam, Nov 3: name from the very first frame
             return
-        k = ease_out_back(min(1.0, (gt - 0.8) / 0.3)) * min(1.0, (4.2 - gt) / 0.2)
+        k = min(1.0, (4.2 - gt) / 0.2)
         d = ImageDraw.Draw(frame)
         f = fit_font(name.upper(), BLACK, SAFE_X1 - SAFE_X0 - 60, 76, 40)
         tw = d.textlength(name.upper(), font=f)
