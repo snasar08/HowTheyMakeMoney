@@ -17,11 +17,11 @@ log = open(out / "voice.log", "a")
 
 def run(tag, make, **kw):
     t0 = time.time()
+    sr = kw.pop("_sr", None) or 24000
     parts = []
     for line in LINES:
         parts.append(make(line, **kw))
     import torch
-    sr = kw.pop("_sr", None) or 24000
     wav = torch.cat([torch.cat([p, torch.zeros(1, int(0.25 * sr))], 1) for p in parts], 1)
     ta.save(str(out / f"{tag}.wav"), wav, sr)
     msg = f"{tag}: {time.time() - t0:.0f}s for {wav.shape[1] / sr:.1f}s of audio"
