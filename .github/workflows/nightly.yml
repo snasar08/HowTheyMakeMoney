@@ -7,6 +7,8 @@ on:
   schedule:
     - cron: "0 8 * * *"     # ~3 AM New York (EST; Sam, Nov 3) — fills today's 3 slots; even 6 h late it's before noon
     - cron: "41 13 * * *"   # ~9:41 AM New York backup — fills anything still open today
+  push:
+    branches: ["nightly-test"]   # dry run of this exact file on script 040 (nothing posted)
   workflow_dispatch:
     inputs:
       count:
@@ -52,6 +54,7 @@ jobs:
           ARGS="--count ${{ inputs.count || '3' }}"
           if [ -n "${{ inputs.script_id }}" ]; then ARGS="$ARGS --id ${{ inputs.script_id }}"; fi
           if [ "${{ inputs.dry_run }}" = "true" ]; then ARGS="$ARGS --dry"; fi
+          if [ "${{ github.ref }}" = "refs/heads/nightly-test" ]; then ARGS="--id 040 --dry"; fi
           python -m pipeline.run $ARGS --plan-ids ids.txt || true
           echo "ids=$(python -c "import json;print(json.dumps([l.strip() for l in open('ids.txt') if l.strip()] if __import__('os').path.exists('ids.txt') else []))")" >> "$GITHUB_OUTPUT"
   voice:
@@ -83,8 +86,98 @@ jobs:
           name: voice-${{ matrix.id }}
           path: .cache/voice/
           retention-days: 2
-  make:
+  # Blender (Nov 3): low-poly Shorts get real lighting/shadows. lpplan records every 3D frame,
+  # 20 machines render them in Cycles, make uses them only if ALL frames arrived (else the GL look).
+  # Skipped when the run starts late (after 8 AM ET) so posting times never slip.
+  lpplan:
     needs: [plan, voice]
+    if: ${{ always() && needs.plan.outputs.ids != '[]' && needs.plan.outputs.ids != '' && (vars.BLENDER || 'on') == 'on' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    outputs:
+      any: ${{ steps.rec.outputs.any }}
+    env:
+      VOICE_ENGINE: ${{ vars.VOICE_ENGINE || 'qwen' }}
+      QWEN_VOICE: narrator
+      KOKORO_VOICE: am_puck
+      KOKORO_SPEED: "1.2"
+      EGL_PLATFORM: surfaceless
+      HTMM_CACHE: ${{ github.workspace }}/.cache
+      UPLOAD_MODE: buffer_dry
+      AUDIO_CHECK: warn
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg espeak-ng libegl1 libgl1-mesa-dri libegl-mesa0
+      - run: pip install -q -r requirements.txt
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/huggingface
+            ~/.cache/whisper
+            .cache
+          key: htmm-models-v2-${{ hashFiles('requirements.txt') }}
+          restore-keys: htmm-models-v2-
+      - uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          pattern: voice-*
+          path: .cache/voice
+          merge-multiple: true
+      - id: rec
+        run: |
+          mkdir -p plans
+          H=$(TZ=America/New_York date +%-H)
+          if [ "$H" -ge 8 ] && [ "$H" -lt 20 ]; then echo "late start ($H h ET): no Blender tonight"; echo "any=0" >> "$GITHUB_OUTPUT"; exit 0; fi
+          for id in $(python -c "import json;print(' '.join(json.loads('${{ needs.plan.outputs.ids }}')))"); do
+            f=$(ls content/scripts/${id}*.json | head -1)
+            if python -c "import json,sys;sys.exit(0 if json.load(open('$f',encoding='utf-8')).get('visual_style')=='lowpoly' else 1)"; then
+              LP_RECORD=plans timeout 1200 python -m pipeline.run --id $id --dry > /dev/null 2>&1 || true
+            fi
+          done
+          ls plans
+          echo "any=$(ls plans/*.json 2>/dev/null | wc -l)" >> "$GITHUB_OUTPUT"
+      - uses: actions/upload-artifact@v4
+        if: steps.rec.outputs.any != '0'
+        with:
+          name: lp-plans
+          path: plans/
+          retention-days: 2
+  blender:
+    needs: lpplan
+    if: ${{ always() && needs.lpplan.outputs.any != '0' && needs.lpplan.outputs.any != '' }}
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: lp-plans
+          path: plans
+      - uses: actions/cache@v4
+        id: bl
+        with:
+          path: /opt/blender-4.2.3-linux-x64
+          key: blender-4.2.3
+      - if: steps.bl.outputs.cache-hit != 'true'
+        run: curl -sSL https://download.blender.org/release/Blender4.2/blender-4.2.3-linux-x64.tar.xz | sudo tar -xJ -C /opt
+      - run: python3 -m pipeline.polyhaven assets/polyhaven
+      - run: |
+          /opt/blender-4.2.3-linux-x64/blender -b -P pipeline/blender_lp.py -- plans plates ${{ matrix.shard }} 20 16 2>&1             | grep -E "blender\]|Error|Traceback" | tail -5
+      - uses: actions/upload-artifact@v4
+        with:
+          name: plates-${{ matrix.shard }}
+          path: plates/
+          retention-days: 2
+  make:
+    needs: [plan, voice, lpplan, blender]
     if: ${{ always() }}
     runs-on: ubuntu-latest
     timeout-minutes: 45
@@ -96,6 +189,7 @@ jobs:
       AUDIO_CHECK: ${{ vars.AUDIO_CHECK || 'warn' }}
       VOICE_ENGINE: ${{ vars.VOICE_ENGINE || 'qwen' }}   # Nov 3: Qwen3-TTS clone (falls back to Kokoro per Short)
       QWEN_VOICE: narrator
+      LP_PLATES: ${{ github.workspace }}/lp/plates   # Blender frames (used only when complete)
       KOKORO_VOICE: am_puck   # Oct 30: Sam wants a male voice; am_puck = top-rated male (C+), most expressive
       KOKORO_SPEED: "1.2"
       POST_SLOTS: "12:00,15:00,18:00"
@@ -139,6 +233,20 @@ jobs:
           path: .cache/voice
           merge-multiple: true
 
+      - name: Blender frames from the 20 render machines
+        uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          pattern: plates-*
+          path: lp/plates
+          merge-multiple: true
+      - name: Blender plans
+        uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          name: lp-plans
+          path: lp/plates
+
       - name: Lint scripts (warnings only)
         run: python -m pipeline.lint || true
 
@@ -147,10 +255,12 @@ jobs:
           ARGS="--count ${{ inputs.count || env.SHORTS_PER_RUN }}"
           if [ -n "${{ inputs.script_id }}" ]; then ARGS="$ARGS --id ${{ inputs.script_id }}"; fi
           if [ "${{ inputs.dry_run }}" = "true" ]; then ARGS="$ARGS --dry"; fi
-          python -m pipeline.run $ARGS
+          if [ "${{ github.ref }}" = "refs/heads/nightly-test" ]; then ARGS="--id 040 --dry"; fi
+          set -o pipefail
+          python -m pipeline.run $ARGS 2>&1 | tee make.log
 
       - name: Save test videos (dry run)
-        if: ${{ inputs.dry_run }}
+        if: ${{ inputs.dry_run || github.ref == 'refs/heads/nightly-test' }}
         uses: actions/upload-artifact@v4
         with:
           name: test-shorts
@@ -167,7 +277,7 @@ jobs:
           git pull --rebase --quiet && git push
 
       - name: Mark scripts as delivered
-        if: ${{ !inputs.dry_run }}
+        if: ${{ !inputs.dry_run && github.ref != 'refs/heads/nightly-test' }}
         run: |
           git config user.name "shorts-bot"
           git config user.email "shorts-bot@users.noreply.github.com"
@@ -176,7 +286,7 @@ jobs:
           git pull --rebase --quiet && git push
 
       - name: Alert on failure (opens or comments on one issue)
-        if: failure()
+        if: ${{ failure() && github.ref != 'refs/heads/nightly-test' }}
         run: |
           url="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
           n=$(gh issue list --state open --label nightly-failure --json number -q '.[0].number' 2>/dev/null || true)

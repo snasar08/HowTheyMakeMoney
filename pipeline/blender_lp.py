@@ -10,6 +10,7 @@ in the pipeline's Y-up space under one root empty turned +90° about X (Blender 
 """
 import json
 import math
+import os
 import sys
 import time
 from pathlib import Path
@@ -39,8 +40,10 @@ def kit_colors(name):
 args = sys.argv[sys.argv.index("--") + 1:]
 plan_path, out_dir, shard, shards = args[0], Path(args[1]), int(args[2]), int(args[3])
 samples = int(args[4]) if len(args) > 4 else 16
-plan = json.loads(Path(plan_path).read_text())
-keys = sorted(plan["frames"])[shard::shards]
+pp = Path(plan_path)
+PLANS = [json.loads(f.read_text()) | {"_slug": f.stem} for f in (sorted(pp.glob("*.json")) if pp.is_dir() else [pp])]
+JOBS = [(pl, k) for pl in PLANS for k in sorted(pl["frames"])][shard::shards]
+plan = PLANS[0]
 out_dir.mkdir(parents=True, exist_ok=True)
 
 bpy.ops.wm.read_factory_settings(use_empty=True)
@@ -50,7 +53,8 @@ sc.cycles.device = "CPU"
 sc.cycles.samples = samples
 sc.cycles.use_denoising = True
 sc.cycles.max_bounces = 4
-sc.render.resolution_x, sc.render.resolution_y = 1080, 1920
+# same 540x960 the GL renderer uses (render.py upscales + sharpens): ~4x faster per frame
+sc.render.resolution_x, sc.render.resolution_y = (int(x) for x in os.environ.get("BL_RES", "540x960").split("x"))
 sc.render.fps = FPS
 sc.render.image_settings.file_format = "JPEG"
 sc.render.image_settings.quality = 93
@@ -323,6 +327,7 @@ def set_look(L, set_name):
     env.image = img
     has = img is not None
     sky_mix.inputs[1].default_value = (*fog, 1)
+    sky_visible = sky_visible and os.environ.get("BL_PHOTO_SKY") == "1"
     sky_mix.inputs[0].default_value = 1.0 if (has and sky_visible) else 0.0
     amb_mix.inputs[1].default_value = (*[0.5 * (a + b) for a, b in zip(lin(L["sky"]), lin(L["ground"]))], 1)
     amb_mix.inputs[0].default_value = 1.0 if has else 0.0
@@ -352,8 +357,13 @@ def set_camera(f):
 item_objs = {}
 frame_objs = []
 
-for n, key in enumerate(keys):
+item_objs_by_plan = {}
+for n, (plan, key) in enumerate(JOBS):
     t0 = time.time()
+    if plan["_slug"] not in item_objs_by_plan:  # a new Short: drop the last one's set pieces
+        for o in item_objs.values():
+            bpy.data.objects.remove(o)
+        item_objs = item_objs_by_plan[plan["_slug"]] = {}
     f = plan["frames"][key]
     set_look(f["look"], f.get("set", "field"))
     set_camera(f)
@@ -388,6 +398,7 @@ for n, key in enumerate(keys):
                 m = (gm @ Matrix.Translation((r[0], feet, r[2])) @ ry(r[3])
                      @ Matrix.Scale(1.75 / B_HEIGHT * s, 4) @ Matrix.Translation((0, -B_BASE, 0)))
                 frame_objs.append(obj("p", me, m))
-    sc.render.filepath = str(out_dir / f"{key}.jpg")
+    (out_dir / plan["_slug"]).mkdir(parents=True, exist_ok=True)
+    sc.render.filepath = str(out_dir / plan["_slug"] / f"{key}.jpg")
     bpy.ops.render.render(write_still=True)
-    print(f"[blender] {n + 1}/{len(keys)} {key} {time.time() - t0:.1f}s", flush=True)
+    print(f"[blender] {n + 1}/{len(JOBS)} {plan['_slug']}/{key} {time.time() - t0:.1f}s", flush=True)

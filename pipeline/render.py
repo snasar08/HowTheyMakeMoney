@@ -330,6 +330,19 @@ class Renderer:
         self.images = {k: fetch_image((v or {}).get("url")) for k, v in imgs.items()}
         self.images = {k: v for k, v in self.images.items() if v is not None}
         self.bg = gradient(self.theme["bg_top"], self.theme["bg_bottom"])
+        # Blender frames (nightly, Nov 3): LP_PLATES/<slug>/<scene>_<frame>.jpg from 20 machines.
+        # Used only if every frame of the Short's plan arrived; else the GL renderer, as before.
+        self.plates = None
+        pd = os.environ.get("LP_PLATES")
+        slug = f"{script.get('id', '')}-{script.get('slug', '')}"
+        if pd and (Path(pd) / f"{slug}.json").exists():
+            keys = json.loads((Path(pd) / f"{slug}.json").read_text())["frames"].keys()
+            if keys and all((Path(pd) / slug / f"{k}.jpg").exists() for k in keys):
+                self.plates = Path(pd) / slug
+                print(f"[render] Blender frames: {len(keys)}")
+            else:
+                print(f"::warning::[render] Blender frames incomplete for {slug}; using the GL look")
+        self.lp_record = bool(os.environ.get("LP_RECORD"))
         hook = self.images.get("hook")
         if hook is not None:
             ghost = cover(hook, W, H).filter(ImageFilter.GaussianBlur(28))
@@ -766,7 +779,12 @@ class Renderer:
         if kind == "lowpoly":
             from . import lowpoly
             from .gl3d import run3d
-            frame = run3d(lowpoly.render, sc.visual, t, pb, variant)
+            key = f"{scenes_index(self, sc)}_{int(round(t * FPS))}"
+            if self.plates is not None:
+                frame = Image.open(self.plates / f"{key}.jpg").convert("RGB").resize((W, H), Image.LANCZOS)
+                frame = frame.filter(ImageFilter.UnsharpMask(radius=2, percent=60, threshold=2))
+            else:
+                frame = run3d(lowpoly.render, sc.visual, t, pb, variant, key if self.lp_record else None)
             self._lp_stat(frame, sc.visual, tb - (0.75 if si == 0 and b == 0 else 0), b, si)
             return frame, tb
         if kind == "3d":
@@ -862,6 +880,7 @@ class Renderer:
 
     def render(self, out_path: Path) -> dict:
         scenes = self.prepare()
+        self._scenes = scenes
         sr = tts.SAMPLE_RATE
         audio = np.concatenate([np.pad(sc.audio, (0, int(round(sc.duration * sr)) - len(sc.audio)))
                                 for sc in scenes])
@@ -1190,6 +1209,10 @@ class Renderer:
                 img = self.captions.render(ch, hi)
                 frame.paste(img, (0, CAPTION_Y - img.height // 2), img)
                 return
+
+
+def scenes_index(r, sc) -> int:
+    return next(i for i, x in enumerate(r._scenes) if x is sc)
 
 
 def render_script(script_path: Path, out_path: Path) -> dict:

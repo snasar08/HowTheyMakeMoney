@@ -162,6 +162,10 @@ def main() -> int:
         video = OUT / f"{path.stem}.mp4"
         try:
             info = render_script(path, video)
+            if os.environ.get("LP_RECORD"):  # Blender plan for the 20-machine render (nightly)
+                from . import lowpoly
+                if lowpoly.PLAN:
+                    lowpoly.dump_plan(Path(os.environ["LP_RECORD"]) / f"{path.stem}.json")
             print(f"[run] rendered {video.name}: {info['seconds']}s")
             print(f"::notice title={path.stem}::{json.dumps({k: v for k, v in info.items() if k not in ('path', 'audio_issues', 'heard')})}")
             for issue in info.get("audio_issues", []):
