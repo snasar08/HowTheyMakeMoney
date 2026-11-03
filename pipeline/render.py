@@ -336,12 +336,15 @@ class Renderer:
         pd = os.environ.get("LP_PLATES")
         slug = f"{script.get('id', '')}-{script.get('slug', '')}"
         if pd and (Path(pd) / f"{slug}.json").exists():
-            keys = json.loads((Path(pd) / f"{slug}.json").read_text())["frames"].keys()
-            if keys and all((Path(pd) / slug / f"{k}.jpg").exists() for k in keys):
+            keys = list(json.loads((Path(pd) / f"{slug}.json").read_text())["frames"].keys())
+            missing = [k for k in keys if not (Path(pd) / slug / f"{k}.jpg").exists()]
+            if keys and len(missing) <= len(keys) // 100:  # neighbors cover a stray frame or two
                 self.plates = Path(pd) / slug
-                print(f"[render] Blender frames: {len(keys)}")
+                print(f"[render] Blender frames: {len(keys) - len(missing)}/{len(keys)}")
             else:
-                print(f"::warning::[render] Blender frames incomplete for {slug}; using the GL look")
+                have = sorted(p.name for p in (Path(pd) / slug).glob("*.jpg"))[:3] if (Path(pd) / slug).exists() else []
+                print(f"::warning::[render] Blender frames incomplete for {slug} ({len(missing)}/{len(keys)} missing, "
+                      f"e.g. {missing[:3]}; have {have}; dirs {sorted(x.name for x in Path(pd).iterdir())[:5]}); using the GL look")
         self.lp_record = bool(os.environ.get("LP_RECORD"))
         hook = self.images.get("hook")
         if hook is not None:
