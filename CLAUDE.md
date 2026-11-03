@@ -8,9 +8,9 @@ and **free beyond his Higgsfield Pro plan** — never add a paid service or ask 
 ## How it runs
 - `content/scripts/NNN-slug.json` — the queue. `status: "ready"` → waiting; `"delivered"` → done.
 - `.github/workflows/nightly.yml` — GitHub Actions (free tier, no GPU). **Slot-aware** (Oct 29):
-  runs ~9:23 PM ET (fills tomorrow) + ~9:41 AM ET backup; each run renders only for OPEN slots
+  runs ~3 AM ET (fills today's 12:00/15:00/18:00 slots; Sam, Nov 3: 3 posts/day) + ~9:41 AM ET backup; each run renders only for OPEN slots
   in the next 36 h (`publish.taken_slots` from the delivered records; never a taken slot, max
-  `MAX_PER_DAY`=2/day, a passed slot rolls to the next free one), so late/backup/manual runs
+  `MAX_PER_DAY`=3/day, a passed slot rolls to the next free one), so late/backup/manual runs
   never double-post. GitHub starts scheduled runs late (Oct 26–28: 5.5–6.5 h). Check Buffer:
   push branch `slot-audit` (report) / `slot-fix` (delete extras, scripts back to ready). Minutes: the repo is public, so standard GitHub runners are free and unlimited (6 h max per job, ~20 jobs at once); a run takes ~5–8 minutes.
 - `pipeline/render.py` draws every frame with Pillow and pipes to ffmpeg (1080x1920, 30 fps).
@@ -133,7 +133,7 @@ and **free beyond his Higgsfield Pro plan** — never add a paid service or ask 
 5. Ask Sam to Watch the repo (Watch → Custom → Releases) so release notifications reach his phone.
 
 ## Weekly script batch (cloud routines, Saturdays — two parts so one session never runs too long)
-Posting uses 14 Shorts/week (2/day). Goal: build a buffer, capped so credits aren't wasted.
+Posting uses 21 Shorts/week (3/day since Nov 3). Goal: build a buffer, capped so credits aren't wasted.
 1. Count `ready` scripts. **If 45 or more are ready, write nothing** (still do step 8). Otherwise
    write `min(15, 45 - ready)` new scripts in this part (part 1 ~12:30 ET, part 2 ~4:30 PM ET,
    so up to 30/week).

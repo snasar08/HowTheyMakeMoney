@@ -5,13 +5,13 @@ on:
   # and keep a morning backup. Both only fill open slots (pipeline/publish.py), so extra runs —
   # backup, late or manual — never double-post.
   schedule:
-    - cron: "23 1 * * *"    # ~9:23 PM New York (EDT; 8:23 PM after Nov 1) — fills tomorrow's slots
+    - cron: "0 8 * * *"     # ~3 AM New York (EST; Sam, Nov 3) — fills today's 3 slots; even 6 h late it's before noon
     - cron: "41 13 * * *"   # ~9:41 AM New York backup — fills anything still open today
   workflow_dispatch:
     inputs:
       count:
         description: "How many Shorts to make"
-        default: "2"
+        default: "3"
       script_id:
         description: "Only this script id (e.g. 001). Leave blank for next in queue."
         default: ""
@@ -33,7 +33,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 45
     env:
-      SHORTS_PER_RUN: ${{ vars.SHORTS_PER_RUN || '2' }}
+      SHORTS_PER_RUN: "3"   # Sam, Nov 3: 3 posts a day
       UPLOAD_MODE: ${{ vars.UPLOAD_MODE || 'buffer' }}
       POST_START: ${{ vars.POST_START || '2026-10-27' }}
       BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
@@ -41,7 +41,8 @@ jobs:
       VOICE_ENGINE: ${{ vars.VOICE_ENGINE || 'kokoro' }}
       KOKORO_VOICE: am_puck   # Oct 30: Sam wants a male voice; am_puck = top-rated male (C+), most expressive
       KOKORO_SPEED: "1.2"
-      POST_SLOTS: ${{ vars.POST_SLOTS || '12:00,18:00' }}
+      POST_SLOTS: "12:00,15:00,18:00"
+      MAX_PER_DAY: "3"
       GH_TOKEN: ${{ github.token }}
       YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
       YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}

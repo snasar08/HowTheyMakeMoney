@@ -30,7 +30,7 @@ from zoneinfo import ZoneInfo
 
 TZ = ZoneInfo(os.environ.get("CHANNEL_TZ", "America/New_York"))
 # Daily posting times (local). One slot per video rendered in a run.
-SLOTS = [s.strip() for s in os.environ.get("POST_SLOTS", "12:00,18:00").split(",") if s.strip()]
+SLOTS = [s.strip() for s in os.environ.get("POST_SLOTS", "12:00,15:00,18:00").split(",") if s.strip()]
 # Nothing is rendered or delivered by the nightly run before this date (New York).
 POST_START = dt.date.fromisoformat(os.environ.get("POST_START") or "2026-10-27")
 BUFFER_API = "https://api.buffer.com"
@@ -41,7 +41,7 @@ def posting_started(now: dt.datetime | None = None) -> bool:
     return (now or dt.datetime.now(TZ)).date() >= POST_START
 
 
-MAX_PER_DAY = int(os.environ.get("MAX_PER_DAY", "2"))
+MAX_PER_DAY = int(os.environ.get("MAX_PER_DAY", "3"))
 # render only for open slots this far ahead; the evening run fills tomorrow, the backup run tops up
 HORIZON_H = float(os.environ.get("SLOT_HORIZON_H", "36"))
 
