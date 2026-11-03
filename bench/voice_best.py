@@ -20,6 +20,8 @@ LINES = [  # (text, delivery)
 ]
 NARRATOR = "A young American male YouTube narrator, energetic and clear, confident, warm, natural conversational pace"
 log = open(out / f"{which}.log", "w")
+if which == "clone":
+    pass  # handled at the end
 
 
 def save(tag, parts, sr, t0):
@@ -58,7 +60,7 @@ if which == "qwen":
         save("qwen-design", parts, sr, t0)
     except Exception as exc:
         log.write(f"voice design failed: {exc!r}\n")
-else:
+elif which == "voxcpm":
     from voxcpm import VoxCPM
     try:
         t0 = time.time()
@@ -68,3 +70,31 @@ else:
         save("voxcpm2-design", parts, m.tts_model.sample_rate, t0)
     except Exception as exc:
         log.write(f"voxcpm failed: {exc!r}\n")
+
+if which == "clone":  # Sam, Nov 3: keep a voice consistent the whole Short
+    import torch
+    from qwen_tts import Qwen3TTSModel
+    torch.set_num_threads(4)
+    base = Qwen3TTSModel.from_pretrained("Qwen/Qwen3-TTS-12Hz-1.7B-Base", device_map="cpu", dtype=torch.float32)
+    texts = [t for t, _ in LINES]
+    # A) today's voice (Kokoro am_puck) re-spoken by Qwen, so it keeps its sound but reads like a person
+    ref_text = Path("out/ref.txt").read_text(encoding="utf-8").strip()
+    try:
+        t0 = time.time()
+        pr = base.create_voice_clone_prompt(ref_audio="out/ref.wav", ref_text=ref_text, x_vector_only_mode=False)
+        w, sr = base.generate_voice_clone(text=texts, language=["English"] * len(texts), voice_clone_prompt=pr)
+        save("A-old-voice-human", list(w), sr, t0)
+    except Exception as exc:
+        log.write(f"clone A failed: {exc!r}\n")
+    # B) the new designed narrator, designed ONCE, then that one voice reads every line
+    try:
+        t0 = time.time()
+        des = Qwen3TTSModel.from_pretrained("Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign", device_map="cpu", dtype=torch.float32)
+        rt = "Okay, so here's something wild. Nobody saw this coming, and the numbers are honestly crazy good."
+        rw, rsr = des.generate_voice_design(text=rt, language="English", instruct=NARRATOR + ", expressive, upbeat")
+        del des
+        pr = base.create_voice_clone_prompt(ref_audio=(rw[0], rsr), ref_text=rt)
+        w, sr = base.generate_voice_clone(text=texts, language=["English"] * len(texts), voice_clone_prompt=pr)
+        save("B-new-voice-consistent", list(w), sr, t0)
+    except Exception as exc:
+        log.write(f"clone B failed: {exc!r}\n")
