@@ -780,8 +780,12 @@ class Renderer:
             from . import lowpoly
             from .gl3d import run3d
             key = f"{scenes_index(self, sc)}_{int(round(t * FPS))}"
-            if self.plates is not None:
-                frame = Image.open(self.plates / f"{key}.jpg").convert("RGB").resize((W, H), Image.LANCZOS)
+            plate = None
+            if self.plates is not None:  # a frame can land one tick off a scene edge: take a neighbor
+                si_, fr = key.split("_")
+                plate = next((f for d in (0, 1, -1, 2, -2) if (f := self.plates / f"{si_}_{int(fr) + d}.jpg").exists()), None)
+            if plate is not None:
+                frame = Image.open(plate).convert("RGB").resize((W, H), Image.LANCZOS)
                 frame = frame.filter(ImageFilter.UnsharpMask(radius=2, percent=60, threshold=2))
             else:
                 frame = run3d(lowpoly.render, sc.visual, t, pb, variant, key if self.lp_record else None)
