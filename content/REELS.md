@@ -41,3 +41,24 @@ kid-safe and never OK for this channel.)
   you'd pick."`, `"cta_question": "Pilot or NBA player?"`. Still kid-safe, still no "Follow for more".
 - Length may run to ~55 s when the story keeps moving (lint now warns above 55 s).
 - Every number is still sourced; the counter shows only real figures or plain math from them.
+
+## Reel 5 — Whoop "company backstory" (longevitydotcom, seen Nov 3 2026)
+Dark editorial look, small brand mark and a "COMPANY BACKSTORY" tag top-left, a grid of cards with
+famous people tied to the company, one caption line at the bottom, a trending song (not usable
+for us: Instagram-library music gets Content ID claims on YouTube).
+**The story arc (use this for `how` and `famous` Shorts):**
+1. **Founder + the personal problem.** Who started it and the itch they had (he overtrained in
+   college sport with no way to measure it).
+2. **The different idea.** What it did that others didn't (no screen; tracks recovery, not steps).
+3. **Nobody believed.** A sourced rejection number ("more than 100 investors passed").
+4. **The money flip.** The business-model switch that made it work (strap free, everyone on a paid
+   membership). This is the "how they make money" beat: say it plainly.
+5. **Famous names attached.** Athletes who wear it or invested, each a real, sourced fact.
+6. **The scoreboard.** Dated valuation, members, yearly revenue: the payoff number last.
+7. **Comment prompt** tied to the topic.
+**What to copy:** the arc, one fact per beat, dates on every number ("In May 2018…"), famous names
+as proof instead of hype, a calm confident tone (no "insane"), the money flip as the twist.
+**What not to copy:** the song, the photos (only free-license, credited photos — see STYLE.md),
+their layout or wording. Never a near-copy of another creator's video.
+**On screen for us:** a running `hud` scoreboard (e.g. "VALUATION" $1.2B → $10.1B), a
+`name_card` for each famous person when named, dated stat chips.

@@ -167,7 +167,7 @@ Posting uses 21 Shorts/week (3/day since Nov 3). Goal: build a buffer, capped so
 2. Read `content/STYLE.md`, `content/angles.md`, a few existing scripts, and the project skill
    `.claude/skills/shorts-craft/SKILL.md` (hook variants, retention, loop guides; project rules win), and
    **`content/REELS.md`** (what Sam's favorite reels do: fragments, a flip every 3–5 s, time-jumps,
-   on-screen counter `hud`, this-or-that comment question via `cta` + `cta_question`). Topics: household-name
+   on-screen counter `hud`, this-or-that comment question via `cta` + `cta_question`; Reel 5 = the founder → problem → nobody believed → money flip → famous backers → dated scoreboard arc for `how`/`famous`). Topics: household-name
    companies, plus jobs/careers people are curious about (YouTubers, streamers, pilots, NBA
    players, real estate agents…). Pick from `content/topics.md` or add new ones. A repeat company
    needs a clearly different angle, new figures, new hook, new B-roll and a different structure —
