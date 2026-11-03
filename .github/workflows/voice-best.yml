@@ -50,6 +50,4 @@ jobs:
           sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
           cd v && for f in *.wav; do [ -f "$f" ] && ffmpeg -loglevel error -y -i "$f" -b:a 160k "${f%.wav}.mp3"; done
           cat *.log || true
-          gh release delete voice-best --repo "$GITHUB_REPOSITORY" --yes --cleanup-tag 2>/dev/null || true
-          gh release create voice-best --repo "$GITHUB_REPOSITORY" *.mp3 *.log --title "Best free voice test" \
-            --notes "Prime lines, each with a delivery note. Qwen3-TTS and VoxCPM2 (Apache-2.0, free)."
+          gh release upload voice-best --repo "$GITHUB_REPOSITORY" *.mp3 *.log --clobber

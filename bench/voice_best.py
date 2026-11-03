@@ -35,7 +35,7 @@ if which == "qwen":
     import torch
     from qwen_tts import Qwen3TTSModel
     torch.set_num_threads(4)
-    for name, spk in (("Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice", "Ryan"), ("Qwen/Qwen3-TTS-12Hz-0.6B-CustomVoice", "Ryan")):
+    for name, spk in (("Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice", "Ryan"),):
         try:
             t0 = time.time()
             m = Qwen3TTSModel.from_pretrained(name, device_map="cpu", dtype=torch.float32)
@@ -43,11 +43,12 @@ if which == "qwen":
             for text, how in LINES:
                 w, sr = m.generate_custom_voice(text=text, language="English", speaker=spk, instruct=how)
                 parts.append(w[0])
-            save(f"qwen-{name.split('-')[2]}-{spk}", parts, sr, t0)
+            save(f"qwen-{name.split('-')[3]}-{spk}", parts, sr, t0)
             del m
         except Exception as exc:
             log.write(f"{name} failed: {exc!r}\n")
     try:
+        assert False, "design already done in run 1"
         t0 = time.time()
         m = Qwen3TTSModel.from_pretrained("Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign", device_map="cpu", dtype=torch.float32)
         parts, sr = [], 24000
@@ -62,7 +63,7 @@ else:
     try:
         t0 = time.time()
         m = VoxCPM.from_pretrained("openbmb/VoxCPM2", load_denoiser=False)
-        parts = [m.generate(text=f"({NARRATOR}; {how}){text}", cfg_value=2.0, inference_timesteps=10, seed=42)
+        parts = [m.generate(text=f"({NARRATOR}; {how}){text}", cfg_value=2.0, inference_timesteps=10)
                  for text, how in LINES]
         save("voxcpm2-design", parts, m.tts_model.sample_rate, t0)
     except Exception as exc:
