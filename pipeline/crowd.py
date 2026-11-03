@@ -64,6 +64,7 @@ class Crowd:
                                 p["jnt"].astype(np.float32), p["w"]], 1)[idx].astype(np.float32)
         self.vbo = e.ctx.buffer(verts.tobytes())
         self.groups = []  # (clip, phase, instance buffer, count, vao)
+        self.rows = []    # (clip, phase, [[x, y, z, yaw, r, g, b, scale], ...]) for the Blender plan
 
     def place(self, pos, yaw, scale, tint, clips, phases):
         """Arrays of length n. Instances sharing (clip, phase) animate together (one draw call)."""
@@ -75,6 +76,7 @@ class Crowd:
         for (clip, ph), ids in keys.items():
             inst = np.array([[pos[i][0], pos[i][1] - self.ch.base_y * k * scale[i], pos[i][2], yaw[i],
                               *tint[i], k * scale[i]] for i in ids], np.float32)
+            self.rows.append((clip, ph, inst.tolist()))
             ib = e.ctx.buffer(inst.tobytes())
             vao = e.ctx.vertex_array(e.crowd_prog, [
                 (self.vbo, "3f 3f 2f 4f 4f", "in_pos", "in_norm", "in_uv", "in_j", "in_w"),
