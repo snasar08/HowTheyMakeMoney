@@ -1,0 +1,56 @@
+name: Voice emotion test
+
+# Push branch voice-emotion: renders the same McDonald's lines with today's Kokoro voice and with
+# Chatterbox (MIT, emotion control) cloned from that Kokoro voice, and posts them as the
+# "voice-emotion" release so Sam can listen on his phone. Doesn't touch posting.
+on:
+  push:
+    branches: ["voice-emotion"]
+
+permissions:
+  contents: write
+
+jobs:
+  voices:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      GH_TOKEN: ${{ github.token }}
+      KOKORO_VOICE: am_puck
+      KOKORO_SPEED: "1.2"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg espeak-ng
+      - run: pip install -r requirements.txt
+      - name: Kokoro (today's voice) + reference clip
+        run: |
+          mkdir -p out/voices
+          python - <<'PY'
+          import numpy as np, soundfile as sf
+          from pipeline import tts
+          lines = open("bench/voice_lines.txt", encoding="utf-8").read().split("\n")
+          parts = [np.concatenate([tts.synthesize(l)[0], np.zeros(int(0.25 * tts.SAMPLE_RATE), np.float32)]) for l in lines if l.strip()]
+          a = np.concatenate(parts)
+          sf.write("out/voices/1-kokoro-today.wav", a, tts.SAMPLE_RATE)
+          sf.write("out/voices/ref.wav", a[: tts.SAMPLE_RATE * 12], tts.SAMPLE_RATE)
+          PY
+      - name: Chatterbox (own venv)
+        run: |
+          python -m venv /tmp/cb
+          /tmp/cb/bin/pip install -q chatterbox-tts
+          /tmp/cb/bin/python bench/voice_emotion.py out/voices/ref.wav out/voices || true
+          cat out/voices/voice.log || true
+      - name: Publish
+        if: always()
+        run: |
+          cd out/voices && rm -f ref.wav
+          n=2; for f in chatterbox-ex0.6 chatterbox-ex0.9 chatterbox-turbo; do
+            [ -f $f.wav ] && ffmpeg -loglevel error -y -i $f.wav -b:a 160k "$n-$f.mp3" && n=$((n+1)); done
+          ffmpeg -loglevel error -y -i 1-kokoro-today.wav -b:a 160k 1-kokoro-today.mp3
+          gh release delete voice-emotion --yes --cleanup-tag 2>/dev/null || true
+          gh release create voice-emotion *.mp3 voice.log --title "Voice test: more emotion" \
+            --notes "Same McDonald's lines. 1 = today's voice. The others = Chatterbox copying that voice with more expression."
