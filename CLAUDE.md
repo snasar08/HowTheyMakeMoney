@@ -216,6 +216,7 @@ Posting uses 21 Shorts/week (3/day since Nov 3). Goal: build a buffer, capped so
    needs Sam.
 
 ## Rules
+- **No picture repeats within a Short (Sam, Nov 3).** Editorial Shorts take each photo once (`editorial.pictures` + photo slots in `render.plan`); give them 8–12+ Commons photos. Image-style (`charts3d`) Shorts still reuse their 4 Higgsfield images — more images per Short costs credits, ask Sam before changing.
 - Never invent numbers. Never use real logos or people in image prompts.
 - Real people/brands (STYLE.md "Real people and brands"): names OK in voiceover/captions/titles
   with sourced facts; never a character modeled on a real person's look; no fake quotes; hint
