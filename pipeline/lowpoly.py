@@ -250,8 +250,51 @@ def _camera(shot, p, t, act):
     return (0.5, 22 - 4 * p, hz + 6), (0, 0, hz - 6), 50  # top
 
 
-def render(v, t, p, variant):
-    """One low-poly frame (RGB PIL, 1080x1920, upscaled from 540x960)."""
+# ----------------------------------------------------------------- Blender plan (nightly, Nov 3)
+# With a key, render() also records the frame's scene: camera, every box/cylinder/sphere (deduped
+# into ITEMS), and each crowd group's instances. pipeline/blender_lp.py replays it in Cycles on 20
+# GitHub machines; render.py then uses those frames and falls back to this renderer if any are missing.
+PLAN: dict = {}
+ITEMS: list = []
+_ITEM_IDS: dict = {}
+CROWDS: list = []   # each crowd's instances once; frames point at them
+_CROWD_IDS: dict = {}
+
+
+def _record(key, sc, crowds, m, t, set_name):
+    names = {id(v): k for k, v in Engine.get().meshes.items()}
+    ids = []
+    for mesh, model, color, _tex, _spec, _gloss, emis, _alpha, unlit in sc.items:
+        it = (names.get(id(mesh), "box"), tuple(round(float(x), 4) for x in np.asarray(model).ravel()),
+              tuple(round(float(c), 3) for c in color), bool(unlit) or emis > 0)
+        if it not in _ITEM_IDS:
+            _ITEM_IDS[it] = len(ITEMS)
+            ITEMS.append(it)
+        ids.append(_ITEM_IDS[it])
+    cids = []
+    for c in crowds:
+        if id(c) not in _CROWD_IDS:
+            _CROWD_IDS[id(c)] = len(CROWDS)
+            CROWDS.append(dict(skin=c.skin, groups=[[clip, ph, rows] for clip, ph, rows in c.rows]))
+        cids.append(_CROWD_IDS[id(c)])
+    ch = character.load(CHAR)
+    PLAN[key] = dict(eye=[float(x) for x in sc.eye], target=[float(x) for x in sc.target], fov=sc.fov,
+                     set=set_name, look={k: list(v) if isinstance(v, tuple) else v for k, v in sc.look.items()},
+                     items=ids, m=np.asarray(m).ravel().tolist(), t=t, base_y=ch.base_y, height=ch.height,
+                     crowds=cids)
+
+
+def dump_plan(path):
+    import json
+    from pathlib import Path
+    Path(path).parent.mkdir(parents=True, exist_ok=True)
+    Path(path).write_text(json.dumps({"frames": PLAN, "items": ITEMS, "crowds": CROWDS}))
+    for d in (PLAN, ITEMS, _ITEM_IDS, CROWDS, _CROWD_IDS):
+        d.clear()
+
+
+def render(v, t, p, variant, rec=None):
+    """One low-poly frame (RGB PIL, 1080x1920, upscaled from 540x960). rec (a frame key) records it for Blender."""
     ch = character.load(CHAR)
     act = v.get("action", "run")
     key = (v.get("set"), act, int(v.get("crowd", 0)), id(v))
@@ -279,6 +322,8 @@ def render(v, t, p, variant):
                (0.95, 0.95, 0.95) if v.get("set") == "pitch" else (0.95, 0.5, 0.15), spec=0.2, gloss=20)
     if act == "carry":
         _box(sc, (0, 1.05, dz + 0.45), (0.6, 0.45, 0.45), (0.8, 0.6, 0.38), shadow=False)
+    if rec is not None:
+        _record(rec, sc, list(crowd) + [hero], m, t, v.get("set", "field"))
     img = Image.fromarray(sc.render()).resize((1080, 1920), Image.LANCZOS)
     return img.filter(ImageFilter.UnsharpMask(radius=2, percent=60, threshold=2))
 
