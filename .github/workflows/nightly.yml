@@ -131,7 +131,7 @@ jobs:
         run: |
           mkdir -p plans
           H=$(TZ=America/New_York date +%-H)
-          if [ "$H" -ge 8 ] && [ "$H" -lt 20 ]; then echo "late start ($H h ET): no Blender tonight"; echo "any=0" >> "$GITHUB_OUTPUT"; exit 0; fi
+          if [ "${{ github.ref }}" != "refs/heads/nightly-test" ] && [ "$H" -ge 8 ] && [ "$H" -lt 20 ]; then echo "late start ($H h ET): no Blender tonight"; echo "any=0" >> "$GITHUB_OUTPUT"; exit 0; fi
           for id in $(python -c "import json;print(' '.join(json.loads('${{ needs.plan.outputs.ids }}')))"); do
             f=$(ls content/scripts/${id}*.json | head -1)
             if python -c "import json,sys;sys.exit(0 if json.load(open('$f',encoding='utf-8')).get('visual_style')=='lowpoly' else 1)"; then
