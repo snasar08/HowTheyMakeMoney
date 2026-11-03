@@ -383,6 +383,8 @@ class Renderer:
                 elif typ == "text":
                     shots.append(("text", None, 0, False) if b % 2 == 0 else
                                  ("textbg", self._next_broll(), (v_i % 5) + 1, False))
+                elif typ == "editorial":  # backstory page: one layout per scene, animated in place
+                    shots.append(("editorial", None, b, b == 0))
                 elif typ == "lowpoly" and three_d_ok():
                     shots.append(("lowpoly", None, b + si * 2 + self._vseed, b == 0))
                 elif three_d_ok() and typ in ("stat", "bars", "donut", "globe"):
@@ -754,6 +756,9 @@ class Renderer:
         b1 = sc.beats[b + 1] if b + 1 < len(sc.beats) else sc.duration
         tb, pb = t - b0, (t - b0) / max(b1 - b0, 0.1)
         kind, key, variant, first = sc.shots[b]
+        if kind == "editorial":
+            from . import editorial
+            return editorial.render(self.s, sc.visual, t), tb
         if kind == "lowpoly":
             from . import lowpoly
             from .gl3d import run3d

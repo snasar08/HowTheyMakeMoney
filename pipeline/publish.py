@@ -175,6 +175,13 @@ def youtube_text(script: dict) -> str:
     """Buffer's YouTube input has no tags field, so tags ride along as hashtags."""
     tags = " ".join("#" + "".join(ch for ch in t.title() if ch.isalnum()) for t in script.get("tags", [])[:5])
     desc = script["description"].strip()
+    try:  # free-license photos of real people need their credit line (pipeline/photos.py)
+        from .photos import credits
+        cr = credits(script)
+    except Exception:
+        cr = []
+    if cr and "Wikimedia Commons" not in desc:
+        desc += "\n\nPhotos: " + "; ".join(cr)
     return (desc + ("\n\n" + tags if tags and tags not in desc else ""))[:4900]
 
 

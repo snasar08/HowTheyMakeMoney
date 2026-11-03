@@ -1,0 +1,53 @@
+{
+  "id": "043",
+  "slug": "how-prime",
+  "company": "Prime Hydration",
+  "format": "how",
+  "visual_style": "editorial",
+  "hook_style": "question",
+  "title_style": "question",
+  "theme": "dark_neon",
+  "status": "draft",
+  "score": 90,
+  "tag": "Company backstory",
+  "title": "How Did Two YouTubers Sell $1.2B of Drinks?",
+  "description": "How did Logan Paul and KSI sell $1.2 billion of drinks in one year?\n\nSources:\n- Wikipedia: Prime (drink) (launch January 4 2022; 40 million+ combined YouTube subscribers; owned with Congo; bottled by Refresco; 12 bottles listed for £400 on eBay per the Evening Standard; sales $250 million in 2022 and $1.2 billion in 2023 per Bloomberg; UK sales down 71% reported June 2025): https://en.wikipedia.org/wiki/Prime_(drink)\n\nNot financial advice.\n\n#shorts #prime #loganpaul #ksi #howtheymakemoney",
+  "tags": ["prime", "logan paul", "ksi", "business", "shorts"],
+  "images": {},
+  "hud_label": "Prime sales",
+  "loop": "So next time you see a famous face on a bottle, ask yourself:",
+  "cta": "Would you buy a drink just because a YouTuber made it? Comment yes or no.",
+  "cta_question": "Buy it because a YouTuber made it?",
+  "sources": [
+    {"title": "Wikipedia: Prime (drink)", "url": "https://en.wikipedia.org/wiki/Prime_(drink)"}
+  ],
+  "scenes": [
+    {
+      "narration": "How did two YouTubers sell over a billion dollars of drinks in one year? Logan Paul and KSI.",
+      "visual": {"type": "editorial", "layout": "cards", "label": "The founders",
+                 "people": [{"name": "Logan Paul", "photo": "File:Logan Paul (48086619418).jpg", "role": "YouTuber"},
+                            {"name": "KSI", "photo": "File:JJ Olatunji (KSI) 3.jpg", "role": "YouTuber"}]}
+    },
+    {
+      "narration": "January 2022. Two old rivals. Over 40 million YouTube subscribers between them. One Instagram live, and Prime was born.",
+      "visual": {"type": "editorial", "layout": "timeline",
+                 "points": [["Jan 2022", "announced on Instagram live"], ["Jun 2022", "first bottles ship"], ["2023", "$1.2B in sales"]]}
+    },
+    {
+      "narration": "Here's the flip. They didn't build a factory. A drinks company called Congo runs the business, and Refresco bottles it. Their real job? The audience.",
+      "visual": {"type": "editorial", "layout": "headline", "headline": "Their audience was the ad.", "accent": "ad."}
+    },
+    {
+      "narration": "Kids lined up at supermarkets. One eBay listing asked 400 pounds for twelve bottles.",
+      "visual": {"type": "editorial", "layout": "stat", "stat": "£400", "stat_sub": "for 12 bottles on eBay", "hud": "$250M"}
+    },
+    {
+      "narration": "Sales hit 250 million dollars in 2022. Then 1.2 billion in 2023.",
+      "visual": {"type": "editorial", "layout": "stat", "stat": "$1.2B", "stat_sub": "sales in 2023 (Bloomberg)", "hud": "$1.2B"}
+    },
+    {
+      "narration": "But hype fades. By June 2025, UK sales were down 71 percent.",
+      "visual": {"type": "editorial", "layout": "stat", "stat": "-71%", "stat_sub": "UK sales, reported June 2025", "label": "The twist"}
+    }
+  ]
+}

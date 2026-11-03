@@ -37,8 +37,8 @@ def lint(s: dict) -> tuple[list[str], list[str]]:
     first = scenes[0]["narration"] if scenes else ""
     if s.get("format") not in ("how", "whatif", "careers", "famous"):
         err.append(f"format must be how / whatif / careers / famous (got {s.get('format')!r})")
-    if s.get("visual_style", "charts3d") not in ("charts3d", "lowpoly"):
-        err.append(f"visual_style must be charts3d or lowpoly (got {s.get('visual_style')!r})")
+    if s.get("visual_style", "charts3d") not in ("charts3d", "lowpoly", "editorial"):
+        err.append(f"visual_style must be charts3d, lowpoly or editorial (got {s.get('visual_style')!r})")
     if s.get("visual_style") == "lowpoly" and s.get("status") == "ready" and not LOWPOLY_LIVE:
         err.append("low-poly style isn't approved for the daily pipeline yet (Sam)")
     if not 5 <= len(scenes) <= 6:
@@ -73,7 +73,7 @@ def lint(s: dict) -> tuple[list[str], list[str]]:
         err.append("needs at least one source with a URL")
     if s.get("visual_style") == "lowpoly" and s.get("format") not in ("whatif", "famous"):
         warn.append("low-poly is meant for whatif / famous Shorts")
-    if s.get("status") == "ready" and s.get("visual_style") != "lowpoly":
+    if s.get("status") == "ready" and s.get("visual_style") not in ("lowpoly", "editorial"):
         imgs = s.get("images", {})
         missing = [k for k in ("hook", "mid", "broll1", "broll2") if not (imgs.get(k) or {}).get("url")]
         if missing:
