@@ -33,7 +33,11 @@
           "ball"
         ],
         "stat": "PER MINUTE?",
-        "stat_sub": "top-paid athlete"
+        "stat_sub": "top-paid athlete",
+        "kit": {
+          "shirt": "f5c400",
+          "shorts": "1d3f8f"
+        }
       }
     },
     {
@@ -47,7 +51,11 @@
           "trophy"
         ],
         "stat": "$300 MILLION",
-        "stat_sub": "Forbes, May 2026"
+        "stat_sub": "Forbes, May 2026",
+        "kit": {
+          "shirt": "f5c400",
+          "shorts": "1d3f8f"
+        }
       }
     },
     {
@@ -62,7 +70,11 @@
           "ball"
         ],
         "stat": "$235M + $65M",
-        "stat_sub": "playing + off the field"
+        "stat_sub": "playing + off the field",
+        "kit": {
+          "shirt": "f5c400",
+          "shorts": "1d3f8f"
+        }
       }
     },
     {
@@ -77,7 +89,11 @@
           "check"
         ],
         "stat": "~$822,000",
-        "stat_sub": "per day"
+        "stat_sub": "per day",
+        "kit": {
+          "shirt": "f5c400",
+          "shorts": "1d3f8f"
+        }
       }
     },
     {
@@ -91,7 +107,11 @@
           "cash"
         ],
         "stat": "~$571",
-        "stat_sub": "every minute"
+        "stat_sub": "every minute",
+        "kit": {
+          "shirt": "f5c400",
+          "shorts": "1d3f8f"
+        }
       }
     },
     {
@@ -105,7 +125,11 @@
           "trophy"
         ],
         "stat": "RECORD",
-        "stat_sub": "tied, Forbes since 1990"
+        "stat_sub": "tied, Forbes since 1990",
+        "kit": {
+          "shirt": "f5c400",
+          "shorts": "1d3f8f"
+        }
       }
     }
   ],

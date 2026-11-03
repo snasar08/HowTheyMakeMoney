@@ -96,8 +96,8 @@ class Crowd:
             if self.skin:
                 from PIL import Image
                 from .character import CHAR_DIR
-                tex = e.texture(("charskin", self.skin),
-                                Image.open(CHAR_DIR / "skins" / f"{self.skin}.png").resize((256, 256), Image.NEAREST))
+                from .character import skin_image
+                tex = e.texture(("charskin", self.skin), skin_image(self.skin).resize((256, 256), Image.NEAREST))
                 tex.use(0)
                 pr["tex"].value = 0
                 use = 1

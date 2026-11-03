@@ -188,8 +188,7 @@ def draw(sc, ch: Character, clip, t, pos=(0, 0, 0), ry=0.0, scale=1.0, tint=None
         if skin:  # palette texture from the pack: LightSkin, DarkSkin, LightSkin1, ...
             from PIL import Image
             # skins live in assets/characters/skins/ (short path: Windows' 260-char limit)
-            f = CHAR_DIR / "skins" / f"{skin}.png"
-            tex = e.texture(("charskin", skin), Image.open(f).resize((256, 256), Image.NEAREST))
+            tex = e.texture(("charskin", skin), skin_image(skin).resize((256, 256), Image.NEAREST))
         elif p["image"] is not None:
             tex = e.texture(("charimg", id(ch), p["image"]), ch.image(p["image"]))
         col = tint if tint is not None else ((1, 1, 1) if tex is not None else p["color"])
@@ -197,3 +196,35 @@ def draw(sc, ch: Character, clip, t, pos=(0, 0, 0), ry=0.0, scale=1.0, tint=None
         p_ = (pos[0], pos[1] - ch.base_y * k, pos[2])
         sc.add(vao, trs(p_, (k, k, k), ry=ry), col, tex=tex, spec=0.15, gloss=16,
                shadow=(pos[0], pos[2], 0.55 * scale, 0.4 * scale) if pi == 0 else None)
+
+
+# team-color kits (Nov 3, Sam): skin "LightSkin@f5c400-1d3f8f" = that skin with a yellow shirt and
+# blue shorts. Plain colors only: never a crest, sponsor, logo or a real player's look (STYLE.md).
+SHIRTS = {(115, 167, 196), (100, 215, 105)}
+SHORTS = {(21, 96, 189), (200, 148, 89)}
+
+
+def kit_colors(name):
+    base, _, kit = name.partition("@")
+    if not kit:
+        return base, None, None
+    shirt, _, shorts = kit.partition("-")
+    rgb = lambda h: tuple(int(h[i:i + 2], 16) for i in (0, 2, 4)) if len(h) == 6 else None
+    return base, rgb(shirt), rgb(shorts)
+
+
+def skin_image(name):
+    """The pack's palette texture for a skin name, recolored for a kit if it has one."""
+    from PIL import Image
+    base, shirt, shorts = kit_colors(name)
+    im = Image.open(CHAR_DIR / "skins" / f"{base}.png").convert("RGB")
+    if shirt or shorts:
+        px = im.load()
+        for y in range(im.height):
+            for x in range(im.width):
+                c = px[x, y]
+                if shirt and c in SHIRTS:
+                    px[x, y] = shirt
+                elif shorts and c in SHORTS:
+                    px[x, y] = shorts
+    return im
