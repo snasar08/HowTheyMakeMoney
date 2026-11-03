@@ -154,7 +154,74 @@ def _timeline(img, v, t):
 LAYOUTS = {"cards": _cards, "stat": _stat, "headline": _headline, "timeline": _timeline}
 
 
-def render(script: dict, v: dict, t: float) -> Image.Image:
+def _main(script, v, t):
     img = _page(v.get("tag") or script.get("tag") or "Company backstory")
     LAYOUTS.get(v.get("layout", "headline"), _headline)(img, v, t)
     return img
+
+
+def _zoom(img, k, cx, cy):
+    w, h = W / k, H / k
+    x0 = min(max(0, cx - w / 2), W - w)
+    y0 = min(max(0, cy - h / 2), H - h)
+    return img.resize((W, H), Image.LANCZOS, box=(x0, y0, x0 + w, y0 + h))
+
+
+def _people(script):
+    seen, out = set(), []
+    for sc in script.get("scenes", []):
+        for p in sc.get("visual", {}).get("people", []):
+            if p.get("photo") and p["name"] not in seen:
+                seen.add(p["name"])
+                out.append(p)
+    return out
+
+
+def _portrait(p, tb):
+    """Full-screen photo with a slow push and a name lower-third."""
+    src = _photo(p)
+    img = ImageOps.fit(src, (W, H), Image.LANCZOS, centering=(0.5, 0.3))
+    img = _zoom(img, 1.04 + 0.05 * min(1.0, tb / 2.0), W / 2, H * 0.4)
+    shade = Image.new("L", (1, 256))
+    for y in range(256):
+        shade.putpixel((0, y), int(230 * max(0.0, (y - 110) / 146) ** 1.4))
+    img.paste(Image.new("RGB", (W, H), BG), (0, 0), shade.resize((W, H)))
+    d = ImageDraw.Draw(img)
+    f = fit_font(p["name"].upper(), BLACK, SAFE_X1 - SAFE_X0, 96, 50)
+    d.text((SAFE_X0, 1040), p["name"].upper(), font=f, fill=INK)
+    if p.get("role"):
+        d.text((SAFE_X0, 1040 + f.size + 14), p["role"].upper(), font=font(BOLD, 34), fill=GOLD)
+    return img
+
+
+def _punch(v, tb):
+    """The scene's key line as a full-color slam card (gold page, black type)."""
+    text = v.get("stat") or v.get("headline") or (v.get("points") or [[""]])[-1][0]
+    img = Image.new("RGB", (W, H), GOLD)
+    d = ImageDraw.Draw(img)
+    f = fit_font(text, BLACK, SAFE_X1 - SAFE_X0, 220, 80)
+    lines = wrap(text, f, SAFE_X1 - SAFE_X0)
+    y = 760 - len(lines) * (f.size + 10) / 2
+    for line in lines:
+        draw_centered(d, (SAFE_X0 + SAFE_X1) / 2, y, line, f, BG)
+        y += f.size + 10
+    return _zoom(img, 1.0 + 0.03 * min(1.0, tb / 1.5), W / 2, H / 2)
+
+
+def render(script: dict, v: dict, t: float, b: int = 0, tb: float = 0.0) -> Image.Image:
+    """One frame. Every beat (~1.4 s) switches the view so nothing sits still for long (Sam, Nov 3):
+    the layout itself, a punch-in on it, a full-screen photo of someone in the story (or a gold slam
+    card of the key line), then a wider off-center framing."""
+    step = b % 4
+    if step == 0:
+        return _main(script, v, t)
+    settled = _main(script, v, t + 5)
+    if step == 1:
+        return _zoom(settled, 1.22 + 0.04 * min(1.0, tb / 1.4), W / 2, 640)
+    if step == 2:
+        people = [p for p in (v.get("people") or _people(script)) if _photo(p) is not None]
+        if people:
+            si = next((i for i, sc in enumerate(script.get("scenes", [])) if sc.get("visual") is v), 0)
+            return _portrait(people[(b // 4 + si) % len(people)], tb)  # a different face each scene
+        return _punch(v, tb)
+    return _zoom(settled, 1.1, W * 0.42 + 40 * min(1.0, tb / 1.4), 700)
