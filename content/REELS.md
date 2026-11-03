@@ -62,3 +62,12 @@ as proof instead of hype, a calm confident tone (no "insane"), the money flip as
 their layout or wording. Never a near-copy of another creator's video.
 **On screen for us:** a running `hud` scoreboard (e.g. "VALUATION" $1.2B → $10.1B), a
 `name_card` for each famous person when named, dated stat chips.
+
+## Sam's favorite story type (Nov 3): "almost went bankrupt"
+Sam: these feel nice and personal. Use the Reel 5 arc with the low point in the middle:
+founder → the dream → **the near-death moment** (a real, sourced low: days of cash left, a bank
+refusing, a last-chance bet) → the move that saved it → the dated scoreboard today. Good real cases
+to research (verify every figure from a source before writing): Nintendo before the Wii era,
+Marvel's 1996 bankruptcy, Apple in 1997, Airbnb's cereal boxes, FedEx's blackjack story (only if a
+source confirms it), Lego in 2003, Tesla in 2008, Starbucks / Crocs comebacks. Write ~1 in 3
+`editorial` scripts this way. Keep it kind: no mocking people who failed.
