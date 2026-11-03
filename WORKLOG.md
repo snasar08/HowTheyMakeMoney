@@ -228,3 +228,4 @@ passes and the 3D version is clearly better. Free tools only; ≤100 Higgsfield 
 - Sam rejected Kokoro and Chatterbox. Tested Qwen3-TTS (custom/design/clone) and VoxCPM2 on GitHub CPU; scored all with UTMOS + Resemblyzer + pitch spread (`bench/voice_score.py`). Winner: one designed Qwen narrator, cloned for every line (UTMOS 4.50, consistency 0.86, pitch 5.3 st).
 - Nightly now: plan -> parallel Qwen voice jobs -> (Blender plan -> 20 Cycles shards) -> make. Kokoro / GL look are automatic per-Short fallbacks.
 - Editorial style: photo every other beat, no repeated pictures, Commons pacing + standard thumb width.
+- Blender nightly stage works end to end (20 shards, frames used) but the look isn't better yet (kit colors lost, a camera-in-box shot, darker/muddier). Default OFF; voice stays ON.

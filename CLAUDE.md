@@ -91,7 +91,7 @@ and **free beyond his Higgsfield Pro plan** — never add a paid service or ask 
 - **Blender stage (Nov 3, nightly):** low-poly Shorts are re-rendered in Cycles: `lpplan` records every 3D frame
   (LP_RECORD; `lowpoly._record`), 20 `blender` machines render `pipeline/blender_lp.py` shards at 540x960 with
   Poly Haven lighting (`pipeline/polyhaven.py`), `make` uses them only if ALL frames of a Short arrived (LP_PLATES),
-  else the GL look. Skipped when the run starts after 8 AM ET. Repo variable BLENDER=off disables it.
+  else the GL look. Skipped when the run starts after 8 AM ET. **OFF by default (Nov 3 review):** the first full test lost the hero's `kit` colors, one hero_low shot had the camera inside a box, and frames came out darker/muddier than the GL look. Fix those, compare stills side by side on branch nightly-test, then set repo variable BLENDER=on (or flip the default).
   Test the whole nightly file as a dry run on script 040: push branch `nightly-test`.
 - **Editorial style (Nov 3):** `visual_style: "editorial"` (`pipeline/editorial.py`): dark backstory page, HTMM mark + `tag`, per-scene `layout` cards (real people, free-license Wikimedia Commons photos only via `pipeline/photos.py`: CC0/PD/CC BY/CC BY-SA, credits auto-added to the description) / stat / headline / timeline. Use the REELS.md Reel 5 arc; ~1 in 3 should be an "almost went bankrupt" story (Sam's favorite, REELS.md). Add 4–8 more Commons photos in the script's `photos` list ([{photo, caption}]) so a new picture shows every other beat. Example: 043-how-prime. No Higgsfield images needed.
 - Chart scenes also get code-drawn "alt" shots (ticker / waffle / columns) on a drifting grid.
