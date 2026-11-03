@@ -24,8 +24,11 @@ jobs:
       - name: Render
         run: |
           mkdir -p /tmp/res
-          nproc | tee /tmp/res/nproc.txt
-          /opt/blender-4.2.3-linux-x64/blender -b -P pipeline/blender_lp.py -- bench/lp_plan.json /tmp/res 0 1 16 2>&1             | grep -E "blender\]|Error|rror|Traceback|line [0-9]" | tee /tmp/res/bench.log
+          /opt/blender-4.2.3-linux-x64/blender -b -P pipeline/blender_lp.py -- bench/lp_plans /tmp/res/plates 0 20 16 > /tmp/res/bench.log 2>&1 || true
+          grep -E "blender\]|Error|Traceback" /tmp/res/bench.log | tail -20
+          find /tmp/res/plates -name "*.jpg" | wc -l | tee /tmp/res/count.txt
+          python3 -c "import json;k=json.load(open('bench/lp_plans/040-famous-ronaldo.json'))['frames'];print('expected', len(sorted(k)[0::20]))" | tee -a /tmp/res/count.txt
+          ls /tmp/res/plates/*/ | head -3 > /tmp/res/sample.txt
       - name: Publish
         if: always()
         env:
