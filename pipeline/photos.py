@@ -14,6 +14,7 @@ import io
 import json
 import os
 import re
+import urllib.error
 import urllib.parse
 import urllib.request
 from pathlib import Path
@@ -25,8 +26,15 @@ OK = re.compile(r"^(cc0|public domain|pd\b|cc by(-sa)? \d)", re.I)
 
 
 def _get(url: str) -> bytes:
-    with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=30) as r:
-        return r.read()
+    import time
+    for k in range(4):  # Commons rate-limits bursts (429): back off and retry
+        try:
+            with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=30) as r:
+                return r.read()
+        except urllib.error.HTTPError as exc:
+            if exc.code != 429 or k == 3:
+                raise
+            time.sleep(5 * (k + 1))
 
 
 def info(title: str) -> dict | None:
@@ -75,6 +83,10 @@ def photo(title: str, name: str = ""):
 def credits(script: dict) -> list[str]:
     """Credit lines for every person photo in a script (for the description)."""
     out = []
+    for p in script.get("photos", []):  # extra B-roll photos (products, events, places)
+        _, c = photo(p["photo"], p.get("caption", ""))
+        if c and c not in out:
+            out.append(c)
     for sc in script.get("scenes", []):
         for p in sc.get("visual", {}).get("people", []):
             if p.get("photo"):
