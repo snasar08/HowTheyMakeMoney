@@ -42,6 +42,8 @@ def problems(sent: str, heard: list[dict]) -> list[str]:
         for t, p in clarity_check.fix_dollars([(t, p) for text, p in pairs for t in clarity_check.tokens(text)]):
             if out and out[-1][0].isdigit() and t in ("thousand", "000"):
                 out[-1] = (out[-1][0] + "000", out[-1][1])
+            elif t == "000" and len(out) > 1 and out[-1][0] == "dollars" and out[-2][0].isdigit():
+                out[-2] = (out[-2][0] + "000", out[-2][1])
             else:
                 out.append((t, p))
         return out

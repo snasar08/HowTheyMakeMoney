@@ -235,3 +235,6 @@ Posting uses 21 Shorts/week (3/day since Nov 3). Goal: build a buffer, capped so
   with props/setting; no logos, uniforms or brand marks; don't copy other creators.
 - Don't change the posting schedule, upload mode or voice without Sam asking.
 - Keep everything inside the free tiers.
+
+## Repeat check (Nov 4)
+Run annotations list shots that still repeat. A photo Short needs about one picture per shot, or it can't meet Sam's no-repeat rule.

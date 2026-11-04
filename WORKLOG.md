@@ -230,3 +230,9 @@ passes and the 3D version is clearly better. Free tools only; ≤100 Higgsfield 
 - Editorial style: photo every other beat, no repeated pictures, Commons pacing + standard thumb width.
 - Blender nightly stage works end to end (20 shards, frames used) but the look isn't better yet (kit colors lost, a camera-in-box shot, darker/muddier). Default OFF; voice stays ON.
 - Blender look fixed (kit colors, Standard view, rim light, depth of field, clear lens, mirrors for download) and full nightly test passed on 040; Blender ON by default.
+
+## Nov 4: Blender time check, voice retakes, picture check
+- Blender is skipped only when the next open post is under 3 h away (`pipeline/blender_gate.py`), not by clock time.
+- `voice_prepass` re-records flagged lines up to twice and keeps the clearest take.
+- `render.py` gives a repeated picture an unused one, then compares shots and warns about what remains.
+- Tested on 040 (low-poly) and 042 (photos). Known limit: 042 has 4 pictures for 17 shots, so pictures still repeat; such scripts need more `images`.
