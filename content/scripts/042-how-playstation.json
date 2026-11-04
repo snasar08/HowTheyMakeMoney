@@ -7,7 +7,7 @@
   "hook_style": "question",
   "title_style": "question",
   "theme": "dark_neon",
-  "status": "ready",
+  "status": "delivered",
   "score": 87,
   "title": "How Did PlayStation Make Record Profit?",
   "description": "How did PlayStation make record profit while selling fewer consoles?\n\nSources:\n- Sony FY2025 consolidated results presentation, May 8 2026 (mirror): https://investgame.net/wp-content/uploads/2026/05/2026-05-08-25q4_sony_earnings_clean_wp.pdf\n- Inven Global: Sony posts record gaming operating profit: https://www.invenglobal.com/articles/21682/sony-posts-record-gaming-operating-profit-though-bungie-impairment-casts-a-shadow\n\nSony's fiscal 2025 = year ended March 31, 2026. Operating income includes a 120.1 billion yen Bungie impairment; FY2026 forecast: sales down 6%, operating income 600 billion yen. Not financial advice.\n\n#shorts #playstation #gaming #howtheymakemoney",
@@ -115,5 +115,15 @@
       "title": "Inven Global: Sony posts record gaming operating profit",
       "url": "https://www.invenglobal.com/articles/21682/sony-posts-record-gaming-operating-profit-though-bungie-impairment-casts-a-shadow"
     }
-  ]
+  ],
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-042-how-playstation",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-042-how-playstation/042-how-playstation.mp4",
+    "post_at": "2026-11-05T18:00:00-05:00",
+    "buffer_post": "6aeb5c65491f63648ce6fac7",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-04T16:25:09.686117+00:00",
+    "seconds": 34.92
+  }
 }

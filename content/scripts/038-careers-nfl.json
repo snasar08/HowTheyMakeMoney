@@ -7,7 +7,7 @@
   "hook_style": "challenge",
   "title_style": "number",
   "theme": "clean_navy",
-  "status": "ready",
+  "status": "delivered",
   "score": 88,
   "title": "$885,000: The Lowest NFL Salary in 2026",
   "description": "Can you guess the lowest salary an NFL player can earn in 2026?\n\nSources:\n- Legion Report: NFL minimum salary 2026 by experience: https://legionreport.com/nfl-minimum-salary/\n- Salarysport: NFL minimum salaries: https://salarysport.com/american-football/minimum-salaries/\n- Pro Football Rumors: NFL sets 2026 salary cap at $301.2M: https://www.profootballrumors.com/collective-bargaining-agreement\n\nMinimum salaries per the NFL-NFLPA CBA as reported by the cited sources; weekly figure = $885,000 / 18. Not financial advice.\n\n#shorts #nfl #football #howtheymakemoney",
@@ -119,5 +119,15 @@
       "title": "Pro Football Rumors: NFL sets 2026 salary cap at $301.2M",
       "url": "https://www.profootballrumors.com/collective-bargaining-agreement"
     }
-  ]
+  ],
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-038-careers-nfl",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-038-careers-nfl/038-careers-nfl.mp4",
+    "post_at": "2026-11-05T15:00:00-05:00",
+    "buffer_post": "6aeb5bb127467506b87b2dbc",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-04T16:22:09.858167+00:00",
+    "seconds": 32.35
+  }
 }

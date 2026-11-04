@@ -7,7 +7,7 @@
   "hook_style": "question",
   "title_style": "question",
   "theme": "dark_neon",
-  "status": "ready",
+  "status": "delivered",
   "score": 90,
   "tag": "Company backstory",
   "title": "How Did Two YouTubers Sell $1.2B of Drinks?",
@@ -153,5 +153,15 @@
       "photo": "File:Prime Hydration Flavours 2.jpg",
       "caption": "Five flavors at launch"
     }
-  ]
+  ],
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-043-how-prime",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-043-how-prime/043-how-prime.mp4",
+    "post_at": "2026-11-05T12:00:00-05:00",
+    "buffer_post": "6aeb5b09a6e828d63150a0ba",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-04T16:19:21.689536+00:00",
+    "seconds": 47.02
+  }
 }
