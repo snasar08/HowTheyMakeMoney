@@ -38,7 +38,13 @@ def lines_for(script: dict) -> list[str]:
 def problems(sent: str, heard: list[dict]) -> list[str]:
     """What a listener would trip on in one take: missed, barely heard or rushed words."""
     def norm(pairs):
-        return clarity_check.fix_dollars([(t, p) for text, p in pairs for t in clarity_check.tokens(text)])
+        out = []  # "49 thousand", "$49,000" and "885 ,000" must all compare equal
+        for t, p in clarity_check.fix_dollars([(t, p) for text, p in pairs for t in clarity_check.tokens(text)]):
+            if out and out[-1][0].isdigit() and t in ("thousand", "000"):
+                out[-1] = (out[-1][0] + "000", out[-1][1])
+            else:
+                out.append((t, p))
+        return out
     exp = [t for t, _ in norm([(sent, None)])]
     got = norm([(tts.speakable(x["word"]), x) for x in heard])
     words = [t for t, _ in got]

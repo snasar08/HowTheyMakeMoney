@@ -948,7 +948,7 @@ class Renderer:
             print(f"::warning::[render] {self.s.get('id')}: ran out of pictures, '{k}' repeats")
         for r in repeats:
             print(f"::warning::[render] {self.s.get('id')}: {r}")
-        print(f"[render] repeat check: {len(repeats)} near-copies, {len(getattr(self, 'repeated_pictures', []))} reused pictures")
+        print(f"::notice::[render] repeat check:{len(repeats)} near-copies, {len(getattr(self, 'repeated_pictures', []))} reused pictures")
         sr = tts.SAMPLE_RATE
         audio = np.concatenate([np.pad(sc.audio, (0, int(round(sc.duration * sr)) - len(sc.audio)))
                                 for sc in scenes])
