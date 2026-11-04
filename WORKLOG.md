@@ -229,3 +229,4 @@ passes and the 3D version is clearly better. Free tools only; ≤100 Higgsfield 
 - Nightly now: plan -> parallel Qwen voice jobs -> (Blender plan -> 20 Cycles shards) -> make. Kokoro / GL look are automatic per-Short fallbacks.
 - Editorial style: photo every other beat, no repeated pictures, Commons pacing + standard thumb width.
 - Blender nightly stage works end to end (20 shards, frames used) but the look isn't better yet (kit colors lost, a camera-in-box shot, darker/muddier). Default OFF; voice stays ON.
+- Blender look fixed (kit colors, Standard view, rim light, depth of field, clear lens, mirrors for download) and full nightly test passed on 040; Blender ON by default.
