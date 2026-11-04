@@ -61,7 +61,7 @@ sc.render.image_settings.quality = 93
 try:
     sc.view_settings.view_transform = "Standard"
     sc.view_settings.look = "None"
-    sc.view_settings.exposure = 0.25
+    sc.view_settings.exposure = -0.1
 except TypeError:
     pass
 root = bpy.data.objects.new("root", None)
@@ -304,13 +304,13 @@ fill = bpy.data.objects.new("fill", bpy.data.lights.new("fill", "AREA"))
 sc.collection.objects.link(fill)
 fill.parent = cam
 fill.location = (1.2, 0.8, 0.5)   # camera space: up-right of the lens, facing the subject
-fill.data.energy, fill.data.size = 90, 3
+fill.data.energy, fill.data.size = 55, 3
 rim = bpy.data.objects.new("rim", bpy.data.lights.new("rim", "AREA"))  # edge light separates people from the set
 sc.collection.objects.link(rim)
 rim.parent = cam
 rim.location = (-2.5, 2.5, -7)
 rim.rotation_euler = (math.radians(-160), math.radians(-20), 0)
-rim.data.energy, rim.data.size = 260, 4
+rim.data.energy, rim.data.size = 170, 4
 
 sc.view_layers[0].use_pass_mist = True
 sc.use_nodes = True
@@ -340,7 +340,7 @@ def set_look(L, set_name):
     sky_mix.inputs[0].default_value = 1.0 if (has and sky_visible) else 0.0
     amb_mix.inputs[1].default_value = (*[0.5 * (a + b) for a, b in zip(lin(L["sky"]), lin(L["ground"]))], 1)
     amb_mix.inputs[0].default_value = 1.0 if has else 0.0
-    bg_amb.inputs["Strength"].default_value = 1.1 if has else 0.8
+    bg_amb.inputs["Strength"].default_value = 0.85 if has else 0.7
     fogmix.inputs[2].default_value = (*fog, 1)
     fog_amt.inputs[1].default_value = 0.0 if (has and sky_visible) else 1.0  # real sky: no flat fog wall
     sc.world.mist_settings.start = L.get("fog_near", 35)
@@ -406,7 +406,7 @@ for n, (plan, key) in enumerate(JOBS):
             me.materials.clear()
             me.materials.append(sm)
             for r in rows:
-                if (gm @ Vector((r[0], r[1] + 1, r[2])) - Vector(f["eye"])).length < 2.2 and cid != f["crowds"][-1][0]:
+                if (gm @ Vector((r[0], r[1] + 1, r[2])) - Vector(f["eye"])).length < 4.0 and cid != f["crowds"][-1][0]:
                     continue  # never let a background person block the lens
                 s = r[7] / k                                   # the instance's own size factor
                 feet = r[1] + f["base_y"] * r[7]               # rows store y already lowered by base_y
