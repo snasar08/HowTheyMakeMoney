@@ -17,7 +17,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Blender 4.2 LTS (official build)
         run: |
-          curl -sSL https://download.blender.org/release/Blender4.2/blender-4.2.3-linux-x64.tar.xz | tar -xJ -C /opt
+          { curl -fsSL https://mirrors.ocf.berkeley.edu/blender/release/Blender4.2/blender-4.2.3-linux-x64.tar.xz || curl -fsSL https://mirror.clarkson.edu/blender/release/Blender4.2/blender-4.2.3-linux-x64.tar.xz; } | sudo tar -xJ -C /opt
           /opt/blender-4.2.3-linux-x64/blender --version | head -1
       - name: Poly Haven skies and floors
         run: python3 -m pipeline.polyhaven assets/polyhaven
@@ -27,7 +27,6 @@ jobs:
           /opt/blender-4.2.3-linux-x64/blender -b -P pipeline/blender_lp.py -- bench/lp_plans /tmp/res/plates 0 1 16 > /tmp/res/bench.log 2>&1 || true
           grep -E "blender\]|Error|Traceback" /tmp/res/bench.log | tail -20
           find /tmp/res/plates -name "*.jpg" | wc -l | tee /tmp/res/count.txt
-          python3 -c "import json;k=json.load(open('bench/lp_plans/040-famous-ronaldo.json'))['frames'];print('expected', len(sorted(k)[0::20]))" | tee -a /tmp/res/count.txt
           ls /tmp/res/plates/*/ | head -3 > /tmp/res/sample.txt
       - name: Publish
         if: always()
