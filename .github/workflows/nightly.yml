@@ -168,7 +168,8 @@ jobs:
           path: /opt/blender-4.2.3-linux-x64
           key: blender-4.2.3
       - if: steps.bl.outputs.cache-hit != 'true'
-        run: { curl -fsSL https://mirrors.ocf.berkeley.edu/blender/release/Blender4.2/blender-4.2.3-linux-x64.tar.xz || curl -fsSL https://mirror.clarkson.edu/blender/release/Blender4.2/blender-4.2.3-linux-x64.tar.xz; } | sudo tar -xJ -C /opt
+        run: |
+          { curl -fsSL https://mirrors.ocf.berkeley.edu/blender/release/Blender4.2/blender-4.2.3-linux-x64.tar.xz || curl -fsSL https://mirror.clarkson.edu/blender/release/Blender4.2/blender-4.2.3-linux-x64.tar.xz; } | sudo tar -xJ -C /opt
       - run: python3 -m pipeline.polyhaven assets/polyhaven
       - run: |
           /opt/blender-4.2.3-linux-x64/blender -b -P pipeline/blender_lp.py -- plans plates ${{ matrix.shard }} 20 16 2>&1             | grep -E "blender\]|Error|Traceback" | tail -5
