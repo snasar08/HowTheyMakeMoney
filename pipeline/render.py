@@ -441,12 +441,25 @@ class Renderer:
                 if key in seen:
                     spare = next((k for k in self.images if k not in used), None)
                     if spare is None:
-                        self.repeated_pictures.append(key)
+                        text = self._beat_words(sc, i)
+                        if text:  # out of pictures: a bold card of what's being said, never a repeat
+                            sc.shots[i] = ("wordcard", text, shot[2], False)
+                        else:
+                            self.repeated_pictures.append(key)
                         continue
                     sc.shots[i] = (shot[0], spare, *shot[2:])
                     used.add(spare)
                     key = spare
                 seen.add(key)
+
+    @staticmethod
+    def _beat_words(sc: Scene, b: int) -> str:
+        """The punch of this beat, from the narration only: its number, else its last three words."""
+        end = sc.beats[b + 1] if b + 1 < len(sc.beats) else sc.duration
+        words = [w.text for w in sc.words if sc.beats[b] <= w.start < end]
+        hit = next((i for i, w in enumerate(words) if any(c.isdigit() for c in w)), None)
+        picked = words[hit:hit + 2] if hit is not None else words[-3:]
+        return " ".join(picked).upper().rstrip(".,!?")
 
     def _check_repeats(self, scenes: list[Scene]) -> list[str]:
         """Compare what each shot actually shows. A near-copy gets a different camera move; any
@@ -827,6 +840,8 @@ class Renderer:
         b1 = sc.beats[b + 1] if b + 1 < len(sc.beats) else sc.duration
         tb, pb = t - b0, (t - b0) / max(b1 - b0, 0.1)
         kind, key, variant, first = sc.shots[b]
+        if kind == "wordcard":
+            return self.frame_text(Scene(sc.narration, {"type": "text", "text": key}), tb, si), tb
         if kind == "editorial":
             from . import editorial
             return editorial.render(self.s, sc.visual, t, b, tb, key), tb

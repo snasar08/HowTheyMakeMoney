@@ -96,6 +96,11 @@ def lint(s: dict) -> tuple[list[str], list[str]]:
                 break
     if "score" in s and float(s["score"]) < 85 and s.get("status") == "ready" and int(s.get("id", "0")) > 29:
         warn.append(f"score {s['score']} < 85")
+    if any(sc.get("visual", {}).get("type") == "image" for sc in s.get("scenes", [])):
+        spoken = sum(len(sc.get("narration", "").split()) for sc in s["scenes"])
+        need = int(spoken / 2.6 / 3)  # about one new picture every 3 s; word cards fill the rest
+        if len(s.get("images", {})) < need:
+            warn.append(f"only {len(s.get('images', {}))} images for ~{need} needed (no picture twice in a Short)")
     return err, warn
 
 
