@@ -59,8 +59,9 @@ sc.render.fps = FPS
 sc.render.image_settings.file_format = "JPEG"
 sc.render.image_settings.quality = 93
 try:
-    sc.view_settings.view_transform = "AgX"
-    sc.view_settings.look = "AgX - Punchy"
+    sc.view_settings.view_transform = "Standard"
+    sc.view_settings.look = "None"
+    sc.view_settings.exposure = 0.25
 except TypeError:
     pass
 root = bpy.data.objects.new("root", None)
@@ -116,9 +117,9 @@ def floor_mat(tex, tint):
         L.new(mp.outputs["Vector"], t.inputs["Vector"])
         return t
     tint_n = nt.nodes.new("ShaderNodeMixRGB")
-    tint_n.blend_type, tint_n.inputs[0].default_value = "MULTIPLY", 0.6
-    L.new(img("diff").outputs["Color"], tint_n.inputs[1])
-    tint_n.inputs[2].default_value = (*[min(1.0, 1.6 * c) for c in lin(tint)], 1)
+    tint_n.blend_type, tint_n.inputs[0].default_value = "MULTIPLY", 0.35
+    L.new(img("diff").outputs["Color"], tint_n.inputs[2])
+    tint_n.inputs[1].default_value = (*[min(1.0, 1.15 * c) for c in lin(tint)], 1)
     L.new(tint_n.outputs[0], b.inputs["Base Color"])
     if (PH_DIR / f"{tex}_rough.jpg").exists():
         L.new(img("rough", False).outputs["Color"], b.inputs["Roughness"])
@@ -152,14 +153,16 @@ def skin_mat(name):
         base, shirt, shorts = kit_colors(name)
         tex.image = bpy.data.images.load(str(SKINS / f"{base}.png"))
         if shirt or shorts:  # same recolor as pipeline.character.skin_image
-            img = tex.image.copy()
-            px = list(img.pixels)
+            src = tex.image
+            img = bpy.data.images.new(name, src.size[0], src.size[1])
+            px = list(src.pixels)
             for i in range(0, len(px), 4):
                 c = tuple(round(v * 255) for v in px[i:i + 3])
                 new = shirt if (shirt and c in SHIRTS) else shorts if (shorts and c in SHORTS) else None
                 if new:
                     px[i:i + 3] = [v / 255 for v in new]
             img.pixels = px
+            img.pack()
             tex.image = img
         tex.interpolation = "Closest"  # palette texture: keep flat color blocks
         nt.links.new(tex.outputs["Color"], b.inputs["Base Color"])
@@ -301,7 +304,13 @@ fill = bpy.data.objects.new("fill", bpy.data.lights.new("fill", "AREA"))
 sc.collection.objects.link(fill)
 fill.parent = cam
 fill.location = (1.2, 0.8, 0.5)   # camera space: up-right of the lens, facing the subject
-fill.data.energy, fill.data.size = 120, 3
+fill.data.energy, fill.data.size = 90, 3
+rim = bpy.data.objects.new("rim", bpy.data.lights.new("rim", "AREA"))  # edge light separates people from the set
+sc.collection.objects.link(rim)
+rim.parent = cam
+rim.location = (-2.5, 2.5, -7)
+rim.rotation_euler = (math.radians(-160), math.radians(-20), 0)
+rim.data.energy, rim.data.size = 260, 4
 
 sc.view_layers[0].use_pass_mist = True
 sc.use_nodes = True
@@ -331,7 +340,7 @@ def set_look(L, set_name):
     sky_mix.inputs[0].default_value = 1.0 if (has and sky_visible) else 0.0
     amb_mix.inputs[1].default_value = (*[0.5 * (a + b) for a, b in zip(lin(L["sky"]), lin(L["ground"]))], 1)
     amb_mix.inputs[0].default_value = 1.0 if has else 0.0
-    bg_amb.inputs["Strength"].default_value = 0.9 if has else 0.55
+    bg_amb.inputs["Strength"].default_value = 1.1 if has else 0.8
     fogmix.inputs[2].default_value = (*fog, 1)
     fog_amt.inputs[1].default_value = 0.0 if (has and sky_visible) else 1.0  # real sky: no flat fog wall
     sc.world.mist_settings.start = L.get("fog_near", 35)
@@ -351,6 +360,10 @@ def set_camera(f):
     m.translation = eye
     cam.matrix_basis = m
     cam.data.angle = math.radians(f["fov"])
+    dist = (eye - tgt).length  # background blur on close shots, sharp on wide ones
+    cam.data.dof.use_dof = dist < 7
+    cam.data.dof.focus_distance = dist
+    cam.data.dof.aperture_fstop = 2.2
 
 
 # ---------------------------------------------------------------- per frame
@@ -393,6 +406,8 @@ for n, (plan, key) in enumerate(JOBS):
             me.materials.clear()
             me.materials.append(sm)
             for r in rows:
+                if (gm @ Vector((r[0], r[1] + 1, r[2])) - Vector(f["eye"])).length < 2.2 and cid != f["crowds"][-1][0]:
+                    continue  # never let a background person block the lens
                 s = r[7] / k                                   # the instance's own size factor
                 feet = r[1] + f["base_y"] * r[7]               # rows store y already lowered by base_y
                 m = (gm @ Matrix.Translation((r[0], feet, r[2])) @ ry(r[3])

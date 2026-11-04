@@ -231,6 +231,8 @@ def _layout(mode, v, n, rng, act):
         tx, tz = (0, -6) if mode == "concert" else (-8, -20)
         x0, x1, z0, z1 = (-8, 8, 3, 14) if mode == "concert" else (-2, 12, -4, 8)
         for (x, _y, z) in grid_crowd(n, x0, x1, z0, z1, rng):
+            if abs(x) < 3.5:  # keep the camera's lane clear
+                x += 7.0 if x >= 0 else -7.0
             out.append(((x, 0, z), _face(x, z, tx, tz), "jump" if rng.random() < 0.5 else "idle", 0.0))
     elif mode == "queue":
         line = min(n, 14)
