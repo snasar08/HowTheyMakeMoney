@@ -88,7 +88,7 @@ jobs:
           retention-days: 2
   # Blender (Nov 3): low-poly Shorts get real lighting/shadows. lpplan records every 3D frame,
   # 20 machines render them in Cycles, make uses them only if ALL frames arrived (else the GL look).
-  # Skipped when the run starts late (after 8 AM ET) so posting times never slip.
+  # Skipped only when the next open post is under 3 h away (the worst case for the remaining jobs).
   lpplan:
     needs: [plan, voice]
     if: ${{ always() && needs.plan.outputs.ids != '[]' && needs.plan.outputs.ids != '' && (vars.BLENDER || 'on') == 'on' }}
@@ -105,6 +105,9 @@ jobs:
       HTMM_CACHE: ${{ github.workspace }}/.cache
       UPLOAD_MODE: buffer_dry
       AUDIO_CHECK: warn
+      POST_START: ${{ vars.POST_START || '2026-10-27' }}
+      POST_SLOTS: "12:00,15:00,18:00"
+      MAX_PER_DAY: "3"
       IDS: ${{ needs.plan.outputs.ids }}
     steps:
       - uses: actions/checkout@v4
@@ -131,8 +134,9 @@ jobs:
       - id: rec
         run: |
           mkdir -p plans
-          H=$(TZ=America/New_York date +%-H)
-          if [ "${{ github.ref }}" != "refs/heads/nightly-test" ] && [ "$H" -ge 8 ] && [ "$H" -lt 20 ]; then echo "late start ($H h ET): no Blender tonight"; echo "any=0" >> "$GITHUB_OUTPUT"; exit 0; fi
+          LEFT=$(python -m pipeline.blender_gate || echo 0)
+          echo "next open post in $LEFT min"
+          if [ "${{ github.ref }}" != "refs/heads/nightly-test" ] && [ "$LEFT" -lt 180 ]; then echo "no time for Blender: using the current look"; echo "any=0" >> "$GITHUB_OUTPUT"; exit 0; fi
           for id in $(python -c "import json,os;print(' '.join(json.loads(os.environ['IDS'])))"); do
             f=$(ls content/scripts/${id}*.json | head -1)
             if python -c "import json,sys;sys.exit(0 if json.load(open('$f',encoding='utf-8')).get('visual_style')=='lowpoly' else 1)"; then

@@ -8,6 +8,7 @@ Sentences already cached are skipped, so reruns are cheap. Only needs numpy from
 """
 from __future__ import annotations
 
+import difflib
 import json
 import os
 import re
@@ -17,10 +18,13 @@ from pathlib import Path
 
 import numpy as np
 
-from . import tts
+from . import clarity_check, tts
 
 ROOT = Path(__file__).resolve().parent.parent
 REF = ROOT / "assets" / "voice"
+MAX_TAKES = 3  # a flagged line gets up to two more takes; the clearest one is kept
+RETAKE_UNTIL_S = 40 * 60  # no new retakes after this, so the job stays well inside its time limit
+SHORT_WORD_S = 0.06
 
 
 def lines_for(script: dict) -> list[str]:
@@ -29,6 +33,27 @@ def lines_for(script: dict) -> list[str]:
     m = re.search(r'CTA_LINE = os\.environ\.get\("CTA_LINE", "([^"]+)"\)', src)
     cta = " ".join(p.strip() for p in script.get("cta", os.environ.get("CTA_LINE", m.group(1))).split("|") if p.strip())
     return [sc["narration"] for sc in script["scenes"]] + [cta, (script.get("loop") or "").strip()]
+
+
+def problems(sent: str, heard: list[dict]) -> list[str]:
+    """What a listener would trip on in one take: missed, barely heard or rushed words."""
+    def norm(pairs):
+        return clarity_check.fix_dollars([(t, p) for text, p in pairs for t in clarity_check.tokens(text)])
+    exp = [t for t, _ in norm([(sent, None)])]
+    got = norm([(tts.speakable(x["word"]), x) for x in heard])
+    words = [t for t, _ in got]
+    out, ok = [], [False] * len(exp)
+    for a, b, n in difflib.SequenceMatcher(None, exp, words, autojunk=False).get_matching_blocks():
+        for k in range(n):
+            ok[a + k] = True
+            x = got[b + k][1]
+            if x.get("probability", 1.0) < clarity_check.PROB_MIN:
+                out.append(f"unclear:{exp[a + k]}")
+    out += [f"missed:{t}" for t, hit in zip(exp, ok) if not hit]
+    for x in heard:
+        if sum(c.isalpha() for c in x["word"]) >= 3 and x["end"] - x["start"] < SHORT_WORD_S:
+            out.append(f"rushed:{x['word'].strip()}")
+    return out
 
 
 def main(ids: list[str]) -> int:
@@ -55,17 +80,32 @@ def main(ids: list[str]) -> int:
     prompt = model.create_voice_clone_prompt(ref_audio=str(REF / f"{tts.QWEN_VOICE}.wav"),
                                              ref_text=(REF / f"{tts.QWEN_VOICE}.txt").read_text(encoding="utf-8").strip())
     asr = whisper.load_model("base.en")
-    for i in range(0, len(todo), 4):
-        batch = todo[i:i + 4]
-        wavs, sr = model.generate_voice_clone(text=batch, language=["English"] * len(batch), voice_clone_prompt=prompt)
-        for sent, w in zip(batch, wavs):
-            w = np.asarray(w, np.float32).ravel()
-            sf.write(tts.cache_path(sent) + ".wav", w, sr)
-            a16 = np.interp(np.linspace(0, len(w) - 1, int(len(w) * 16000 / sr)), np.arange(len(w)), w).astype(np.float32)
-            res = asr.transcribe(a16, language="en", word_timestamps=True, fp16=False)
-            words = [(x["word"].strip(), float(x["start"]), float(x["end"])) for seg in res["segments"] for x in seg.get("words", [])]
-            Path(tts.cache_path(sent) + ".json").write_text(json.dumps(words), encoding="utf-8")
-        print(f"[prepass] {min(i + 4, len(todo))}/{len(todo)} ({time.time() - t0:.0f}s)", flush=True)
+    best: dict[str, tuple] = {}  # sentence -> (problems, audio, sample rate, word timings)
+    pending = list(todo)
+    for take in range(1, MAX_TAKES + 1):
+        for i in range(0, len(pending), 4):
+            batch = pending[i:i + 4]
+            wavs, sr = model.generate_voice_clone(text=batch, language=["English"] * len(batch), voice_clone_prompt=prompt)
+            for sent, w in zip(batch, wavs):
+                w = np.asarray(w, np.float32).ravel()
+                a16 = np.interp(np.linspace(0, len(w) - 1, int(len(w) * 16000 / sr)), np.arange(len(w)), w).astype(np.float32)
+                res = asr.transcribe(a16, language="en", word_timestamps=True, fp16=False)
+                heard = [x for seg in res["segments"] for x in seg.get("words", [])]
+                bad = problems(sent, heard)
+                if sent not in best or len(bad) < len(best[sent][0]):
+                    words = [(x["word"].strip(), float(x["start"]), float(x["end"])) for x in heard]
+                    best[sent] = (bad, w, sr, words)
+            print(f"[prepass] take {take}: {min(i + 4, len(pending))}/{len(pending)} ({time.time() - t0:.0f}s)", flush=True)
+        pending = [s for s in pending if best[s][0]]
+        if not pending or time.time() - t0 > RETAKE_UNTIL_S:
+            break
+        print(f"[prepass] re-recording {len(pending)} flagged line(s): "
+              + "; ".join(f"{best[s][0][:3]}" for s in pending), flush=True)
+    for sent, (bad, w, sr, words) in best.items():
+        sf.write(tts.cache_path(sent) + ".wav", w, sr)
+        Path(tts.cache_path(sent) + ".json").write_text(json.dumps(words), encoding="utf-8")
+        if bad:
+            print(f"::warning::[prepass] best take still flagged {bad[:3]}: {sent[:70]}", flush=True)
     return 0
 
 

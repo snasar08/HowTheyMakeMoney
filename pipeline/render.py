@@ -427,6 +427,57 @@ class Renderer:
                     self._last_key = shots[-1][1]
                 v_i += 1
             sc.shots = shots
+        self._unique_pictures(scenes)
+
+    def _unique_pictures(self, scenes: list[Scene]):
+        """Sam's rule: no picture twice in a Short. A repeat takes an unused picture when one exists."""
+        used = {s[1] for sc in scenes for s in sc.shots if s[1] in self.images}
+        seen, self.repeated_pictures = set(), []
+        for sc in scenes:
+            for i, shot in enumerate(sc.shots):
+                key = shot[1]
+                if key not in self.images:
+                    continue
+                if key in seen:
+                    spare = next((k for k in self.images if k not in used), None)
+                    if spare is None:
+                        self.repeated_pictures.append(key)
+                        continue
+                    sc.shots[i] = (shot[0], spare, *shot[2:])
+                    used.add(spare)
+                    key = spare
+                seen.add(key)
+
+    def _check_repeats(self, scenes: list[Scene]) -> list[str]:
+        """Compare what each shot actually shows. A near-copy gets a different camera move; any
+        copy that remains is reported. Never stops a render."""
+        def sig(frame):
+            a = np.asarray(frame.convert("L").resize((17, 16), Image.BILINEAR), np.int16)
+            return (a[:, 1:] > a[:, :-1]).ravel()
+
+        def sample(sc, si, b):
+            end = sc.beats[b + 1] if b + 1 < len(sc.beats) else sc.duration
+            return sig(self.draw(sc, si, (sc.beats[b] + end) / 2)[0])
+
+        def twin(h, seen):
+            return next((name for name, o in seen if int((h != o).sum()) <= 20), None)
+
+        seen, found = [], []
+        for si, sc in enumerate(scenes):
+            for b, shot in enumerate(sc.shots):
+                if shot[0] == "lowpoly" and self.plates is None:
+                    continue  # still being recorded or GL: camera moves every beat anyway
+                h = sample(sc, si, b)
+                name = f"scene {si + 1} shot {b + 1}"
+                other = twin(h, seen)
+                if other and shot[0] in ("image", "figure", "textbg", "alt", "3d", "chartzoom"):
+                    sc.shots[b] = (shot[0], shot[1], shot[2] + 2, shot[3])
+                    h = sample(sc, si, b)
+                    other = twin(h, seen)
+                if other:
+                    found.append(f"{name} looks like {other}")
+                seen.append((name, h))
+        return found
 
     # ---- building blocks
     def crop(self, key: str, variant: int, p: float) -> Image.Image:
@@ -888,6 +939,16 @@ class Renderer:
     def render(self, out_path: Path) -> dict:
         scenes = self.prepare()
         self._scenes = scenes
+        try:
+            repeats = self._check_repeats(scenes)
+        except Exception as e:  # a check must never cost a post
+            repeats = []
+            print(f"::warning::[render] repeat check skipped: {e}")
+        for k in getattr(self, "repeated_pictures", []):
+            print(f"::warning::[render] {self.s.get('id')}: ran out of pictures, '{k}' repeats")
+        for r in repeats:
+            print(f"::warning::[render] {self.s.get('id')}: {r}")
+        print(f"[render] repeat check: {len(repeats)} near-copies, {len(getattr(self, 'repeated_pictures', []))} reused pictures")
         sr = tts.SAMPLE_RATE
         audio = np.concatenate([np.pad(sc.audio, (0, int(round(sc.duration * sr)) - len(sc.audio)))
                                 for sc in scenes])
