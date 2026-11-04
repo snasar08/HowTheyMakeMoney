@@ -312,7 +312,7 @@ def _camera(shot, p, t, act):
     if shot == "close":
         return (0.6, 1.55, hz + 3.0 - 0.4 * p), (0, 1.25, hz), 40
     if shot == "track":
-        return (2.6, 1.3, hz + 1.2 - 1.2 * p), (0, 1.0, hz - 1.5), 46
+        return (2.6, 1.3, hz + 2.6 - 1.2 * p), (0, 1.0, hz - 0.3), 46
     return (0.5, 22 - 4 * p, hz + 6), (0, 0, hz - 6), 50  # top
 
 
