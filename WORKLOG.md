@@ -236,3 +236,6 @@ passes and the 3D version is clearly better. Free tools only; ≤100 Higgsfield 
 - `voice_prepass` re-records flagged lines up to twice and keeps the clearest take.
 - `render.py` gives a repeated picture an unused one, then compares shots and warns about what remains.
 - Tested on 040 (low-poly) and 042 (photos). Known limit: 042 has 4 pictures for 17 shots, so pictures still repeat; such scripts need more `images`.
+
+## Nov 4: word cards
+When a Short runs out of pictures, a repeat shot becomes a bold card of the words being spoken (`wordcard` in `render.py`). Lint warns when a script has too few images. Tested on 042. The repeat check also flags word cards because they share a background; their words differ. One reused picture remains there, on a shot with no speech.
