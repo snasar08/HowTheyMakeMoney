@@ -5,7 +5,7 @@
   "theme": "dark_neon",
   "status": "ready",
   "title": "Apple Services Keep 75 Cents of Every Dollar",
-  "description": "What does Apple keep earning after you've already bought your iPhone?\n\nSources:\n- Apple fiscal 2025 Q4 results (press release): https://www.apple.com/newsroom/2025/10/apple-reports-fourth-quarter-results/\n- Apple fiscal 2025 Q4 consolidated financial statements (PDF): https://www.apple.com/newsroom/pdfs/fy2025-q4/FY25_Q4_Consolidated_Financial_Statements.pdf\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "description": "You already paid for your iPhone. So why does Apple keep earning?\n\nSources:\n- Apple fiscal 2025 Q4 results (press release): https://www.apple.com/newsroom/2025/10/apple-reports-fourth-quarter-results/\n- Apple fiscal 2025 Q4 consolidated financial statements (PDF): https://www.apple.com/newsroom/pdfs/fy2025-q4/FY25_Q4_Consolidated_Financial_Statements.pdf\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
     "apple",
     "iphone",
@@ -36,7 +36,7 @@
   },
   "scenes": [
     {
-      "narration": "What does Apple keep earning after you've already bought your iPhone?",
+      "narration": "You already paid for your iPhone. So why does Apple keep earning?",
       "visual": {
         "type": "image",
         "image": "hook",
@@ -45,7 +45,7 @@
       }
     },
     {
-      "narration": "Services. The App Store, iCloud, music and more.",
+      "narration": "Services. App Store. iCloud. Music.",
       "visual": {
         "type": "text",
         "text": "Services.",
@@ -53,18 +53,7 @@
       }
     },
     {
-      "narration": "In fiscal 2025, Apple sold 416 billion dollars of products and services. The iPhone was about 210 billion.",
-      "visual": {
-        "type": "stat",
-        "value": 416.2,
-        "label": "Apple net sales, fiscal 2025",
-        "prefix": "$",
-        "suffix": "B",
-        "decimals": 1
-      }
-    },
-    {
-      "narration": "But after costs, products keep about 37 cents per dollar. Services keep about 75.",
+      "narration": "On products, Apple keeps about 37 cents a dollar after costs. But services? About 75.",
       "visual": {
         "type": "bars",
         "items": [
@@ -83,7 +72,7 @@
       }
     },
     {
-      "narration": "That's about 82 billion dollars of gross profit from Services alone.",
+      "narration": "That's about 82 billion dollars, just from Services.",
       "visual": {
         "type": "image",
         "image": "mid",
@@ -111,9 +100,11 @@
     }
   ],
   "loop": "So next time you buy an app, ask yourself:",
-  "score": 84,
+  "score": 94,
   "format": "how",
   "visual_style": "charts3d",
   "title_style": "statement",
-  "hook_style": "surprise"
+  "hook_style": "surprise",
+  "cta": "Apps or iCloud? Comment what you pay Apple for.",
+  "cta_question": "Apps or iCloud?"
 }
