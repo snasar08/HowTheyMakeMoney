@@ -5,7 +5,7 @@
   "theme": "bold_bright",
   "status": "ready",
   "title": "How Much of Your Chipotle Bowl Is Food?",
-  "description": "When you spend 10 dollars at Chipotle, how much of it pays for the food?\n\nSources:\n- Chipotle Q4 and full-year 2025 results (press release): https://ir.chipotle.com/2026-02-03-CHIPOTLE-ANNOUNCES-FOURTH-QUARTER-AND-FULL-YEAR-2025-RESULTS\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "description": "You spend 10 dollars at Chipotle. Guess how much pays for the food?\n\nSources:\n- Chipotle Q4 and full-year 2025 results (press release): https://ir.chipotle.com/2026-02-03-CHIPOTLE-ANNOUNCES-FOURTH-QUARTER-AND-FULL-YEAR-2025-RESULTS\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
     "chipotle",
     "burrito",
@@ -36,7 +36,7 @@
   },
   "scenes": [
     {
-      "narration": "When you spend 10 dollars at Chipotle, how much of it pays for the food?",
+      "narration": "You spend 10 dollars at Chipotle. Guess how much pays for the food?",
       "visual": {
         "type": "image",
         "image": "hook",
@@ -45,7 +45,7 @@
       }
     },
     {
-      "narration": "About 3 dollars. Food, drinks and packaging were 29.6 percent of sales in 2025.",
+      "narration": "Just about 3 dollars.",
       "visual": {
         "type": "donut",
         "value": 29.6,
@@ -53,7 +53,7 @@
       }
     },
     {
-      "narration": "Another 2 dollars and 50 cents pays the crew. Labor was about 25 percent.",
+      "narration": "Another 2 dollars and 50 cents pays the crew.",
       "visual": {
         "type": "image",
         "image": "mid",
@@ -62,7 +62,7 @@
       }
     },
     {
-      "narration": "About 2 dollars covers rent and other costs. The last 2 dollars and 50 cents is restaurant profit.",
+      "narration": "About 2 covers rent and other costs. But the last 2 dollars and 50 cents? Restaurant profit.",
       "visual": {
         "type": "bars",
         "items": [
@@ -85,7 +85,7 @@
       }
     },
     {
-      "narration": "That math ran across 11.9 billion dollars of sales, plus a record 334 new restaurants.",
+      "narration": "Then multiply that by 11.9 billion dollars of sales.",
       "visual": {
         "type": "stat",
         "value": 11.9,
@@ -103,9 +103,11 @@
     }
   ],
   "loop": "So next time you order a burrito bowl, ask yourself:",
-  "score": 84,
+  "score": 85,
   "format": "how",
   "visual_style": "charts3d",
   "title_style": "question",
-  "hook_style": "number"
+  "hook_style": "number",
+  "cta": "Bowl or burrito? Comment your order.",
+  "cta_question": "Bowl or burrito?"
 }

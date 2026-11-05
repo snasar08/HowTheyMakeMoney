@@ -5,7 +5,7 @@
   "theme": "bold_bright",
   "status": "ready",
   "title": "What If Brands Pay Target to Reach You?",
-  "description": "What if the ads in the Target app were worth almost a billion dollars?\n\nSources:\n- Target Q4 and full-year 2025 earnings release: https://corporate.target.com/press/release/2026/03/target-corporation-reports-fourth-quarter-and-full-year-2025-earnings\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "description": "What if your Target app's ads were worth almost a billion dollars?\n\nSources:\n- Target Q4 and full-year 2025 earnings release: https://corporate.target.com/press/release/2026/03/target-corporation-reports-fourth-quarter-and-full-year-2025-earnings\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
     "target",
     "roundel",
@@ -36,7 +36,7 @@
   },
   "scenes": [
     {
-      "narration": "What if the ads in the Target app were worth almost a billion dollars?",
+      "narration": "What if your Target app's ads were worth almost a billion dollars?",
       "visual": {
         "type": "image",
         "image": "hook",
@@ -45,7 +45,7 @@
       }
     },
     {
-      "narration": "They are. Brands pay Target to advertise through a business called Roundel.",
+      "narration": "They actually are. Brands pay Target to reach you, through Roundel.",
       "visual": {
         "type": "image",
         "image": "mid",
@@ -54,7 +54,7 @@
       }
     },
     {
-      "narration": "Its ad revenue jumped from 649 million dollars to 915 million in 2025.",
+      "narration": "Its ad revenue jumped from 649 million dollars to 915 million.",
       "visual": {
         "type": "bars",
         "items": [
@@ -73,7 +73,7 @@
       }
     },
     {
-      "narration": "Target also gets a share of the profits from its store credit cards: 522 million.",
+      "narration": "But store credit cards? Another 522 million in shared profits.",
       "visual": {
         "type": "stat",
         "value": 522,
@@ -84,7 +84,7 @@
       }
     },
     {
-      "narration": "Next to 104.8 billion in sales, that's small. But the side businesses keep adding up.",
+      "narration": "Shelves bring you in. But the side businesses keep adding up.",
       "visual": {
         "type": "text",
         "text": "Shelves bring you in.",
@@ -99,9 +99,11 @@
     }
   ],
   "loop": "So next time you see an ad on Target's app, ask yourself:",
-  "score": 70,
+  "score": 85,
   "format": "how",
   "visual_style": "charts3d",
   "title_style": "whatif",
-  "hook_style": "whatif"
+  "hook_style": "whatif",
+  "cta": "App or in store? Comment how you shop.",
+  "cta_question": "App or in store?"
 }

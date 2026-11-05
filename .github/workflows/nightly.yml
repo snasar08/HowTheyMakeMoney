@@ -216,7 +216,13 @@ jobs:
           cache: pip
 
       - name: System packages
-        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg espeak-ng libegl1 libgl1-mesa-dri libegl-mesa0
+        run: |
+          # Nov 4: apt hung for 55 min on a test run. Give up on a stuck try and retry.
+          for i in 1 2 3; do
+            sudo timeout 240 apt-get update -qq && sudo timeout 300 apt-get install -y -qq ffmpeg espeak-ng libegl1 libgl1-mesa-dri libegl-mesa0 && exit 0
+            echo "::warning::apt try $i failed"; sleep 20
+          done
+          exit 1
 
       - name: Python packages
         run: pip install -r requirements.txt

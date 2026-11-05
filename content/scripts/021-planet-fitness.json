@@ -5,7 +5,7 @@
   "theme": "bold_bright",
   "status": "ready",
   "title": "Planet Fitness Made $310 Million on Machines",
-  "description": "Can you guess who buys all the treadmills at Planet Fitness?\n\nSources:\n- Planet Fitness Q4 and year-end 2025 results (press release): https://investor.planetfitness.com/investors/press-releases/press-release-details/2026/Planet-Fitness-Inc--Announces-Fourth-Quarter-and-Year-End-2025-Results/default.aspx\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "description": "Who do you think buys all the treadmills at Planet Fitness?\n\nSources:\n- Planet Fitness Q4 and year-end 2025 results (press release): https://investor.planetfitness.com/investors/press-releases/press-release-details/2026/Planet-Fitness-Inc--Announces-Fourth-Quarter-and-Year-End-2025-Results/default.aspx\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
     "planet fitness",
     "gym",
@@ -36,7 +36,7 @@
   },
   "scenes": [
     {
-      "narration": "Can you guess who buys all the treadmills at Planet Fitness?",
+      "narration": "Who do you think buys all the treadmills at Planet Fitness?",
       "visual": {
         "type": "image",
         "image": "hook",
@@ -45,7 +45,7 @@
       }
     },
     {
-      "narration": "Many clubs are run by franchise owners. They buy their machines from Planet Fitness itself.",
+      "narration": "Not you. Franchise owners. And they buy them from Planet Fitness itself.",
       "visual": {
         "type": "image",
         "image": "mid",
@@ -54,7 +54,7 @@
       }
     },
     {
-      "narration": "In 2025, that equipment business brought in 310 million dollars, up 21 percent.",
+      "narration": "Just that equipment business made 310 million dollars.",
       "visual": {
         "type": "stat",
         "value": 310.1,
@@ -65,7 +65,7 @@
       }
     },
     {
-      "narration": "Next to franchise fees and its own clubs, that's a big slice of 1.3 billion dollars.",
+      "narration": "It sits right next to franchise fees and its own clubs.",
       "visual": {
         "type": "bars",
         "items": [
@@ -88,7 +88,7 @@
       }
     },
     {
-      "narration": "It all runs on 20.8 million members in nearly 2,900 clubs.",
+      "narration": "And it still all runs on 20.8 million members.",
       "visual": {
         "type": "stat",
         "value": 20.8,
@@ -99,7 +99,7 @@
       }
     },
     {
-      "narration": "Members pay monthly. Owners buy the machines.",
+      "narration": "Members pay monthly. But owners buy the machines.",
       "visual": {
         "type": "text",
         "text": "Members pay monthly.",
@@ -114,9 +114,11 @@
     }
   ],
   "loop": "So next time you hit the gym, ask yourself:",
-  "score": 76,
+  "score": 88,
   "format": "how",
   "visual_style": "charts3d",
   "title_style": "statement",
-  "hook_style": "challenge"
+  "hook_style": "challenge",
+  "cta": "Treadmill or weights? Comment your pick.",
+  "cta_question": "Treadmill or weights?"
 }

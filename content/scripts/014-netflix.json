@@ -5,7 +5,7 @@
   "theme": "clean_navy",
   "status": "ready",
   "title": "How Much of Your Netflix Bill Is Profit?",
-  "description": "Out of every dollar you pay Netflix, how much does it keep as profit?\n\nSources:\n- Netflix 2025 Form 10-K (SEC): https://www.sec.gov/Archives/edgar/data/1065280/000106528026000034/nflx-20251231.htm\n- Netflix 2025 results and 2026 outlook (CSI Magazine): https://www.csimagazine.com/csi/netflix-fullyear-results.php\n- Netflix ad revenue $1.5B (AdNews): https://www.adnews.com.au/news/netflix-ad-revenue-hits-1-5-billion\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "description": "You pay Netflix every month. Guess how much it keeps as profit?\n\nSources:\n- Netflix 2025 Form 10-K (SEC): https://www.sec.gov/Archives/edgar/data/1065280/000106528026000034/nflx-20251231.htm\n- Netflix 2025 results and 2026 outlook (CSI Magazine): https://www.csimagazine.com/csi/netflix-fullyear-results.php\n- Netflix ad revenue $1.5B (AdNews): https://www.adnews.com.au/news/netflix-ad-revenue-hits-1-5-billion\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
     "netflix",
     "streaming",
@@ -35,7 +35,7 @@
   },
   "scenes": [
     {
-      "narration": "Out of every dollar you pay Netflix, how much does it keep as profit?",
+      "narration": "You pay Netflix every month. Guess how much it keeps as profit?",
       "visual": {
         "type": "image",
         "image": "hook",
@@ -44,7 +44,24 @@
       }
     },
     {
-      "narration": "First, the scale. In 2025, more than 325 million paid memberships brought in 45 billion dollars.",
+      "narration": "But first, it has to pay for all those shows.",
+      "visual": {
+        "type": "image",
+        "image": "mid",
+        "overlay": "THEN",
+        "overlay_sub": "pay for the shows"
+      }
+    },
+    {
+      "narration": "What's left? About 30 cents of every dollar.",
+      "visual": {
+        "type": "donut",
+        "value": 29.5,
+        "label": "Netflix operating margin, 2025"
+      }
+    },
+    {
+      "narration": "And that's across more than 325 million paid memberships.",
       "visual": {
         "type": "stat",
         "value": 325,
@@ -55,24 +72,7 @@
       }
     },
     {
-      "narration": "Then Netflix pays for all those shows.",
-      "visual": {
-        "type": "image",
-        "image": "mid",
-        "overlay": "THEN",
-        "overlay_sub": "pay for the shows"
-      }
-    },
-    {
-      "narration": "What's left? About 30 cents of operating profit on every dollar.",
-      "visual": {
-        "type": "donut",
-        "value": 29.5,
-        "label": "Netflix operating margin, 2025"
-      }
-    },
-    {
-      "narration": "And the cheaper plan with ads is growing. Ad revenue hit 1.5 billion dollars in 2025.",
+      "narration": "But the cheaper plan with ads? 1.5 billion dollars.",
       "visual": {
         "type": "stat",
         "value": 1.5,
@@ -83,7 +83,7 @@
       }
     },
     {
-      "narration": "Netflix expects that to roughly double again in 2026.",
+      "narration": "Then Netflix expects that to roughly double again.",
       "visual": {
         "type": "text",
         "text": "Ads: 1.5 billion",
@@ -106,9 +106,11 @@
     }
   ],
   "loop": "So next time you pay for Netflix, ask yourself:",
-  "score": 83,
+  "score": 88,
   "format": "how",
   "visual_style": "charts3d",
   "title_style": "question",
-  "hook_style": "question"
+  "hook_style": "question",
+  "cta": "Ads or no ads? Comment which plan you'd pick.",
+  "cta_question": "Ads or no ads?"
 }

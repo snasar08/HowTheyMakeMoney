@@ -5,7 +5,7 @@
   "theme": "dark_neon",
   "status": "ready",
   "title": "Live Nation Keeps 3 Cents Per Concert Dollar",
-  "description": "Which makes Live Nation more profit, the concert, or the ticket?\n\nSources:\n- Live Nation Entertainment full-year and Q4 2025 results: https://news.livenationentertainment.com/news/live-nation-entertainment-full-year-and-fourth-quarter-2025-results\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "description": "Which makes Live Nation more profit, the concert or your ticket?\n\nSources:\n- Live Nation Entertainment full-year and Q4 2025 results: https://news.livenationentertainment.com/news/live-nation-entertainment-full-year-and-fourth-quarter-2025-results\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
     "live nation",
     "ticketmaster",
@@ -36,7 +36,7 @@
   },
   "scenes": [
     {
-      "narration": "Which makes Live Nation more profit, the concert, or the ticket?",
+      "narration": "Which makes Live Nation more profit, the concert or your ticket?",
       "visual": {
         "type": "image",
         "image": "hook",
@@ -45,18 +45,7 @@
       }
     },
     {
-      "narration": "In 2025, Live Nation put on 55 thousand shows for 159 million fans.",
-      "visual": {
-        "type": "stat",
-        "value": 159,
-        "label": "fans at Live Nation shows, 2025",
-        "prefix": "",
-        "suffix": "M",
-        "decimals": 0
-      }
-    },
-    {
-      "narration": "Concerts brought in 20.9 billion dollars. But the profit margin was just 3.3 percent.",
+      "narration": "Concerts look huge. But the margin? Just 3.3 percent.",
       "visual": {
         "type": "donut",
         "value": 3.3,
@@ -64,7 +53,7 @@
       }
     },
     {
-      "narration": "Ticketing is the opposite, with a margin of about 37 percent.",
+      "narration": "Ticketing is the opposite. About 37 percent.",
       "visual": {
         "type": "donut",
         "value": 37,
@@ -72,7 +61,7 @@
       }
     },
     {
-      "narration": "So ticketing made 1.1 billion of adjusted profit, more than concerts' 0.7 billion. Sponsors added 0.8 billion.",
+      "narration": "So tickets made 1.1 billion in adjusted profit. Concerts? 0.7.",
       "visual": {
         "type": "bars",
         "items": [
@@ -95,7 +84,7 @@
       }
     },
     {
-      "narration": "Shows bring the crowd. Tickets bring the profit.",
+      "narration": "Shows bring the crowd. But tickets bring the profit.",
       "visual": {
         "type": "text",
         "text": "Shows bring the crowd.",
@@ -110,9 +99,11 @@
     }
   ],
   "loop": "So next time you buy concert tickets, ask yourself:",
-  "score": 82,
+  "score": 87,
   "format": "how",
   "visual_style": "charts3d",
   "title_style": "number",
-  "hook_style": "challenge"
+  "hook_style": "challenge",
+  "cta": "Front row or cheap seats? Comment your pick.",
+  "cta_question": "Front row or cheap seats?"
 }

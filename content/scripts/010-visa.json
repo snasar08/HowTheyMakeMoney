@@ -45,7 +45,7 @@
       }
     },
     {
-      "narration": "Banks issue the cards and lend the money. Visa runs the network in the middle.",
+      "narration": "Banks lend the money. Visa just runs the network.",
       "visual": {
         "type": "image",
         "image": "mid",
@@ -54,7 +54,7 @@
       }
     },
     {
-      "narration": "Every time a card is tapped, Visa earns a small fee for moving that payment.",
+      "narration": "Every tap? Visa gets a small fee.",
       "visual": {
         "type": "text",
         "text": "Tap.",
@@ -62,7 +62,7 @@
       }
     },
     {
-      "narration": "In fiscal 2025, those fees added up to 40 billion dollars of revenue.",
+      "narration": "But those fees added up to 40 billion dollars.",
       "visual": {
         "type": "stat",
         "value": 40.0,
@@ -73,7 +73,7 @@
       }
     },
     {
-      "narration": "About half became profit: 20.1 billion dollars.",
+      "narration": "And about half became profit. 20.1 billion.",
       "visual": {
         "type": "donut",
         "value": 50,
@@ -81,7 +81,7 @@
       }
     },
     {
-      "narration": "No loans, no credit risk. Just a toll on the world's spending.",
+      "narration": "No loans. Just a toll on the world's spending.",
       "visual": {
         "type": "text",
         "text": "A toll booth",
@@ -100,9 +100,11 @@
     }
   ],
   "loop": "So next time you tap your card, ask yourself:",
-  "score": 76,
+  "score": 88,
   "format": "how",
   "visual_style": "charts3d",
   "title_style": "statement",
-  "hook_style": "question"
+  "hook_style": "question",
+  "cta": "Tap or cash? Comment how you pay.",
+  "cta_question": "Tap or cash?"
 }

@@ -5,7 +5,7 @@
   "theme": "clean_navy",
   "status": "ready",
   "title": "Microsoft Keeps 47 Cents of Every Dollar",
-  "description": "How does Microsoft keep about 47 cents of every dollar it makes?\n\nSources:\n- Microsoft fiscal 2026 Q4 earnings press release: https://www.microsoft.com/en-us/investor/earnings/fy-2026-q4/press-release-webcast\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "description": "How does Microsoft keep about 47 cents of every dollar you'd spend?\n\nSources:\n- Microsoft fiscal 2026 Q4 earnings press release: https://www.microsoft.com/en-us/investor/earnings/fy-2026-q4/press-release-webcast\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
     "microsoft",
     "azure",
@@ -36,7 +36,7 @@
   },
   "scenes": [
     {
-      "narration": "How does Microsoft keep about 47 cents of every dollar it makes?",
+      "narration": "How does Microsoft keep about 47 cents of every dollar you'd spend?",
       "visual": {
         "type": "image",
         "image": "hook",
@@ -45,7 +45,7 @@
       }
     },
     {
-      "narration": "In fiscal 2026, it made 331.8 billion dollars. 155.2 billion of that was operating income.",
+      "narration": "It made 331.8 billion dollars in a year.",
       "visual": {
         "type": "stat",
         "value": 331.8,
@@ -56,7 +56,7 @@
       }
     },
     {
-      "narration": "That's an operating margin of about 47 percent.",
+      "narration": "Then about 47 percent was left as operating income.",
       "visual": {
         "type": "donut",
         "value": 47,
@@ -64,7 +64,7 @@
       }
     },
     {
-      "narration": "The cloud leads. Then Office and business software. Windows and Xbox come third.",
+      "narration": "You'd guess Windows. But the cloud leads. Then Office. Windows and Xbox come third.",
       "visual": {
         "type": "bars",
         "items": [
@@ -87,7 +87,7 @@
       }
     },
     {
-      "narration": "Azure passed 100 billion dollars in a year. Copilot has over 30 million paid seats.",
+      "narration": "Just Azure passed 100 billion dollars in a year.",
       "visual": {
         "type": "text",
         "text": "Cloud and AI",
@@ -102,9 +102,11 @@
     }
   ],
   "loop": "So next time you open Word or Xbox, ask yourself:",
-  "score": 74,
+  "score": 92,
   "format": "how",
   "visual_style": "charts3d",
   "title_style": "number",
-  "hook_style": "number"
+  "hook_style": "number",
+  "cta": "PC or Xbox? Comment your pick.",
+  "cta_question": "PC or Xbox?"
 }
