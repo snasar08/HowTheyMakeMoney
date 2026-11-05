@@ -53,7 +53,7 @@
       }
     },
     {
-      "narration": "Another 2 dollars and 50 cents pays the crew.",
+      "narration": "Another quarter pays the crew.",
       "visual": {
         "type": "image",
         "image": "mid",
@@ -62,7 +62,7 @@
       }
     },
     {
-      "narration": "About 2 covers rent and other costs. But the last 2 dollars and 50 cents? Restaurant profit.",
+      "narration": "About 2 covers rent and other costs. But the last quarter? Restaurant profit.",
       "visual": {
         "type": "bars",
         "items": [
@@ -103,7 +103,7 @@
     }
   ],
   "loop": "So next time you order a burrito bowl, ask yourself:",
-  "score": 85,
+  "score": 95,
   "format": "how",
   "visual_style": "charts3d",
   "title_style": "question",

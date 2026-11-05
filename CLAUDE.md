@@ -217,7 +217,9 @@ Posting uses 21 Shorts/week (3/day since Nov 3). Goal: build a buffer, capped so
    clean backgrounds) — see STYLE.md "3D characters"; never name a creator in a prompt.
    (Pending Sam's approval of the look, Oct 29: don't regenerate already-queued Shorts.)
 6. Validate every file parses as JSON and has 5–6 scenes, and run `python -m pipeline.lint <files>`
-   (fix every error, most warnings), then commit and push to `main`.
+   (fix every error, most warnings). Follow `.claude/skills/punchy-story/SKILL.md` (Sam, Nov 4: stories
+   felt bland) and run `python -m pipeline.story_score <files>`: rewrite anything under 80. It checks
+   structure only, and doesn't replace the idea `score` above. Then commit and push to `main`.
 7. Never leave a script with `status: "ready"` and missing image URLs — set `status: "draft"` if
    images couldn't be made, so the nightly run skips it.
 8. On the first Saturday of the month (part 1 only), open a GitHub issue "Monthly report YYYY-MM":
