@@ -242,3 +242,6 @@ When a Short runs out of pictures, a repeat shot becomes a bold card of the word
 
 ## Nov 4: punchier stories
 Sam rated test Shorts 6-7/10 and called the stories bland. Rewrote all 17 ready scripts around one surprise, about 22-32 s, using numbers already in each script (`.claude/skills/punchy-story`). Added `pipeline/story_score.py`, a free structure check: queue was 28-59, now 82-100. It doesn't predict views, and rewritten scripts now store it in `score`, which sets posting order; real views are the test. Dry runs passed on 015, 022 and 025; the other 14 had lint and score only. Chipotle's "2 dollars and 50 cents" failed the clarity gate, so it now says "quarter". Added retries after apt hung for 55 minutes on one test.
+
+## Nov 5: stress test
+Rendered all ready rewrites in dry runs on a temporary workflow. No crashes or gate blocks. Fixed: silent shots now get word cards (reused pictures 012, 017, 023 went to 0), reworded lines the voice check kept missing, and Nike's static ending. Round 2 on the 10 changed Shorts passed: no clarity warnings, no reused pictures. "Near-copy" warnings remain; word cards share a background, so these are mostly false flags. Word-card endings are plainer than pictures; more images per script would need credits.
