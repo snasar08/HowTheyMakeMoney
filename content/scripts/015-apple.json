@@ -3,7 +3,7 @@
   "slug": "apple",
   "company": "Apple",
   "theme": "dark_neon",
-  "status": "ready",
+  "status": "delivered",
   "title": "Apple Services Keep 75 Cents of Every Dollar",
   "description": "You already paid for your iPhone. So why does Apple keep earning?\n\nSources:\n- Apple fiscal 2025 Q4 results (press release): https://www.apple.com/newsroom/2025/10/apple-reports-fourth-quarter-results/\n- Apple fiscal 2025 Q4 consolidated financial statements (PDF): https://www.apple.com/newsroom/pdfs/fy2025-q4/FY25_Q4_Consolidated_Financial_Statements.pdf\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
@@ -106,5 +106,15 @@
   "title_style": "statement",
   "hook_style": "surprise",
   "cta": "Apps or iCloud? Comment what you pay Apple for.",
-  "cta_question": "Apps or iCloud?"
+  "cta_question": "Apps or iCloud?",
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-015-apple",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-015-apple/015-apple.mp4",
+    "post_at": "2026-11-06T18:00:00-05:00",
+    "buffer_post": "6aecafd360a369bcd77a4b1b",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-05T16:33:23.228464+00:00",
+    "seconds": 25.37
+  }
 }

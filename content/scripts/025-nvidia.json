@@ -3,7 +3,7 @@
   "slug": "nvidia",
   "company": "Nvidia",
   "theme": "dark_neon",
-  "status": "ready",
+  "status": "delivered",
   "title": "Why Are Gamers Only 7% of Nvidia Now?",
   "description": "Why are gamers worth just 7 cents of every Nvidia dollar?\n\nSources:\n- NVIDIA Q4 and fiscal 2026 results (press release): https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Fourth-Quarter-and-Fiscal-2026/default.aspx\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
@@ -105,5 +105,15 @@
   "title_style": "question",
   "hook_style": "number",
   "cta": "Gamers or data centers? Comment who Nvidia should pick.",
-  "cta_question": "Gamers or data centers?"
+  "cta_question": "Gamers or data centers?",
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-025-nvidia",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-025-nvidia/025-nvidia.mp4",
+    "post_at": "2026-11-06T12:00:00-05:00",
+    "buffer_post": "6aecaf09edcdac2ffd68e002",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-05T16:30:02.252629+00:00",
+    "seconds": 25.79
+  }
 }

@@ -3,7 +3,7 @@
   "slug": "chipotle",
   "company": "Chipotle",
   "theme": "bold_bright",
-  "status": "ready",
+  "status": "delivered",
   "title": "How Much of Your Chipotle Bowl Is Food?",
   "description": "You spend 10 dollars at Chipotle. Guess how much pays for the food?\n\nSources:\n- Chipotle Q4 and full-year 2025 results (press release): https://ir.chipotle.com/2026-02-03-CHIPOTLE-ANNOUNCES-FOURTH-QUARTER-AND-FULL-YEAR-2025-RESULTS\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
@@ -109,5 +109,15 @@
   "title_style": "question",
   "hook_style": "number",
   "cta": "Bowl or burrito? Comment your order.",
-  "cta_question": "Bowl or burrito?"
+  "cta_question": "Bowl or burrito?",
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-022-chipotle",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-022-chipotle/022-chipotle.mp4",
+    "post_at": "2026-11-06T15:00:00-05:00",
+    "buffer_post": "6aecaf7e371bed9cfa755101",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-05T16:31:58.314438+00:00",
+    "seconds": 22.1
+  }
 }
