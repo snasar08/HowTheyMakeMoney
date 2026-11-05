@@ -441,7 +441,7 @@ class Renderer:
                 if key in seen:
                     spare = next((k for k in self.images if k not in used), None)
                     if spare is None:
-                        text = self._beat_words(sc, i)
+                        text = self._beat_words(sc, i) or " ".join(w.text for w in sc.words[-3:]).upper().rstrip(".,!?")
                         if text:  # out of pictures: a bold card of what's being said, never a repeat
                             sc.shots[i] = ("wordcard", text, shot[2], False)
                         else:

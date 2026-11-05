@@ -83,9 +83,10 @@
     {
       "narration": "Nike's best store? Everyone else's.",
       "visual": {
-        "type": "text",
-        "text": "Nike's best store?",
-        "sub": "Everyone else's."
+        "type": "image",
+        "image": "broll1",
+        "overlay": "EVERYONE ELSE'S",
+        "overlay_sub": "Nike's best store"
       }
     }
   ],

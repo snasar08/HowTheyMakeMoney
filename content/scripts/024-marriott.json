@@ -45,7 +45,7 @@
       }
     },
     {
-      "narration": "Sounds small? Its total revenue is 26.2 billion.",
+      "narration": "Its total revenue looks huge. 26.2 billion.",
       "visual": {
         "type": "stat",
         "value": 26.2,
@@ -88,11 +88,11 @@
       }
     },
     {
-      "narration": "Other people's hotels. Marriott's fees.",
+      "narration": "Other people's hotels. But Marriott gets the fees.",
       "visual": {
         "type": "text",
         "text": "Other people's hotels.",
-        "sub": "Marriott's fees."
+        "sub": "Marriott gets the fees."
       }
     }
   ],

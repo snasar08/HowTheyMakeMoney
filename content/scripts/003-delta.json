@@ -56,7 +56,7 @@
       }
     },
     {
-      "narration": "Every swipe earns SkyMiles. And Amex buys those miles from Delta.",
+      "narration": "Every swipe earns miles. And American Express buys those miles from Delta.",
       "visual": {
         "type": "image",
         "image": "mid",
@@ -65,7 +65,7 @@
       }
     },
     {
-      "narration": "But Delta cards are about 13 percent of all Amex spending.",
+      "narration": "But Delta cards are about 13 percent of all American Express spending.",
       "visual": {
         "type": "donut",
         "value": 13,
@@ -92,11 +92,11 @@
     }
   ],
   "loop": "So next time you swipe a Delta card, ask yourself:",
-  "score": 90,
+  "score": 87,
   "format": "how",
   "visual_style": "charts3d",
   "title_style": "number",
   "hook_style": "number",
-  "cta": "Miles or cash back? Comment which you'd pick.",
-  "cta_question": "Miles or cash back?"
+  "cta": "Cash back or miles? Comment which you'd pick.",
+  "cta_question": "Cash back or miles?"
 }

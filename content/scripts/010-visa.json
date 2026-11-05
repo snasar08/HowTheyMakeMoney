@@ -105,6 +105,6 @@
   "visual_style": "charts3d",
   "title_style": "statement",
   "hook_style": "question",
-  "cta": "Tap or cash? Comment how you pay.",
-  "cta_question": "Tap or cash?"
+  "cta": "Card or cash? Comment how you pay.",
+  "cta_question": "Card or cash?"
 }
