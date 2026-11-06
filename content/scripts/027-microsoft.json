@@ -3,7 +3,7 @@
   "slug": "microsoft",
   "company": "Microsoft",
   "theme": "clean_navy",
-  "status": "ready",
+  "status": "delivered",
   "title": "Microsoft Keeps 47 Cents of Every Dollar",
   "description": "How does Microsoft keep about 47 cents of every dollar you'd spend?\n\nSources:\n- Microsoft fiscal 2026 Q4 earnings press release: https://www.microsoft.com/en-us/investor/earnings/fy-2026-q4/press-release-webcast\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
@@ -108,5 +108,15 @@
   "title_style": "number",
   "hook_style": "number",
   "cta": "PC or Xbox? Comment your pick.",
-  "cta_question": "PC or Xbox?"
+  "cta_question": "PC or Xbox?",
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-027-microsoft",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-027-microsoft/027-microsoft.mp4",
+    "post_at": "2026-11-07T12:00:00-05:00",
+    "buffer_post": "6aedf97a76f34a827279c801",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-06T15:59:55.400299+00:00",
+    "seconds": 25.69
+  }
 }

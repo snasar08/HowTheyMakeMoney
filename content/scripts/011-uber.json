@@ -3,7 +3,7 @@
   "slug": "uber",
   "company": "Uber",
   "theme": "bold_bright",
-  "status": "ready",
+  "status": "delivered",
   "title": "How Much of Your Uber Fare Does Uber Keep?",
   "description": "You pay 10 dollars for an Uber. Guess how much Uber keeps?\n\nSources:\n- Uber 2025 Form 10-K (SEC): https://www.sec.gov/Archives/edgar/data/1543151/000154315126000015/uber-20251231.htm\n- Uber 2025 gross bookings and take rates (SQ Magazine): https://sqmagazine.co.uk/uber-statistics/\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
@@ -105,5 +105,15 @@
   "title_style": "question",
   "hook_style": "question",
   "cta": "Rider, driver or Uber? Comment who wins.",
-  "cta_question": "Rider, driver or Uber?"
+  "cta_question": "Rider, driver or Uber?",
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-011-uber",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-011-uber/011-uber.mp4",
+    "post_at": "2026-11-07T15:00:00-05:00",
+    "buffer_post": "6aedf9f04525bf695e6cff6a",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-06T16:01:52.661765+00:00",
+    "seconds": 25.95
+  }
 }

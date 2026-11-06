@@ -3,7 +3,7 @@
   "slug": "nike",
   "company": "Nike",
   "theme": "bold_bright",
-  "status": "ready",
+  "status": "delivered",
   "title": "What If Nike's Best Store Isn't Nike's?",
   "description": "What if Nike's best store isn't even a Nike store?\n\nSources:\n- NIKE, Inc. fiscal 2026 Q4 and full-year results: https://about.nike.com/en/newsroom/releases/nike-inc-reports-fiscal-2026-fourth-quarter-and-full-year-results\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
@@ -103,5 +103,15 @@
   "title_style": "whatif",
   "hook_style": "whatif",
   "cta": "Nike app or the mall? Comment where you buy.",
-  "cta_question": "Nike app or the mall?"
+  "cta_question": "Nike app or the mall?",
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-016-nike",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-016-nike/016-nike.mp4",
+    "post_at": "2026-11-07T18:00:00-05:00",
+    "buffer_post": "6aedfa634525bf695e6d392f",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-06T16:03:47.487162+00:00",
+    "seconds": 26.19
+  }
 }
