@@ -66,3 +66,10 @@ https://commons.wikimedia.org/w/api.php?action=query&list=search&srnamespace=6&s
 https://commons.wikimedia.org/w/api.php?action=query&list=search&srnamespace=6&srlimit=8&format=json&srsearch=Iron%20Man%20cosplay
 https://commons.wikimedia.org/w/api.php?action=query&list=search&srnamespace=6&srlimit=8&format=json&srsearch=El%20Capitan%20Theatre%20Marvel
 https://commons.wikimedia.org/w/api.php?action=query&list=search&srnamespace=6&srlimit=8&format=json&srsearch=Disney%20Burbank%20headquarters
+https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000013101113
+https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000013101111
+https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000013101115
+https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000013101101
+https://en.wikipedia.org/wiki/Sports_agent
+https://en.wikipedia.org/wiki/Stephen_Curry
+https://en.wikipedia.org/wiki/Curry_Brand
