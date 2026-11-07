@@ -3,7 +3,7 @@
   "slug": "planet-fitness",
   "company": "Planet Fitness",
   "theme": "bold_bright",
-  "status": "ready",
+  "status": "delivered",
   "title": "Planet Fitness Made $310 Million on Machines",
   "description": "Who do you think buys all the treadmills at Planet Fitness?\n\nSources:\n- Planet Fitness Q4 and year-end 2025 results (press release): https://investor.planetfitness.com/investors/press-releases/press-release-details/2026/Planet-Fitness-Inc--Announces-Fourth-Quarter-and-Year-End-2025-Results/default.aspx\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
@@ -120,5 +120,15 @@
   "title_style": "statement",
   "hook_style": "challenge",
   "cta": "Treadmill or weights? Comment your pick.",
-  "cta_question": "Treadmill or weights?"
+  "cta_question": "Treadmill or weights?",
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-021-planet-fitness",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-021-planet-fitness/021-planet-fitness.mp4",
+    "post_at": "2026-11-08T18:00:00-05:00",
+    "buffer_post": "6aef3cb3004e4879a761e82d",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-07T14:59:00.200079+00:00",
+    "seconds": 24.67
+  }
 }
