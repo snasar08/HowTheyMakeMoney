@@ -1,0 +1,106 @@
+{
+  "id": "067",
+  "slug": "whatif-reels",
+  "company": "Instagram",
+  "format": "whatif",
+  "visual_style": "lowpoly",
+  "hook_style": "whatif",
+  "title_style": "statement",
+  "theme": "dark_neon",
+  "status": "ready",
+  "score": 88,
+  "title": "One Day of Reels Would Take 4,400 Years",
+  "description": "What if you watched one day of Reels views yourself?\n\nSources:\n- Wikipedia: Instagram: https://en.wikipedia.org/wiki/Instagram\n\nWikipedia (Instagram): in September 2022, Instagram Reels generated over 140 billion views daily. Our math: 140 billion / 86,400 seconds = about 1.6 million views a second; one second per view = 140 billion seconds, about 4,400 years; starting in 2026, you'd finish after the year 6400. Not financial advice.\n\n#shorts #instagram #reels #howtheymakemoney",
+  "tags": [
+    "instagram",
+    "reels",
+    "what if",
+    "shorts"
+  ],
+  "images": {},
+  "hud_label": "VIEWS",
+  "loop": "So next time you swipe to the next Reel, ask yourself:",
+  "cta": "Reels or Shorts? Comment your pick.",
+  "cta_question": "Reels or Shorts?",
+  "scenes": [
+    {
+      "narration": "What if you watched one day of Reels views yourself?",
+      "visual": {
+        "type": "lowpoly",
+        "set": "gaming",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "phone"
+        ],
+        "stat": "ONE DAY",
+        "stat_sub": "of Reels views"
+      }
+    },
+    {
+      "narration": "Sounds easy. But in 2022, Reels got over 140 billion views a day.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "run",
+        "crowd": 400,
+        "props": [
+          "phone"
+        ],
+        "stat": "140 BILLION",
+        "stat_sub": "views a day, 2022",
+        "hud": "140B"
+      }
+    },
+    {
+      "narration": "Then picture it. Over a million views. Every single second.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "cheer",
+        "crowd": 300,
+        "props": [
+          "phone"
+        ],
+        "stat": "1.6 MILLION",
+        "stat_sub": "views every second"
+      }
+    },
+    {
+      "narration": "Just one second per view? That's 4,400 years.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "gaming",
+        "action": "work",
+        "crowd": 0,
+        "props": [
+          "phone",
+          "headset"
+        ],
+        "stat": "~4,400 YEARS",
+        "stat_sub": "of nonstop watching"
+      }
+    },
+    {
+      "narration": "Start today, and you'd still be watching in the year 6400.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "launch",
+        "action": "cheer",
+        "crowd": 0,
+        "props": [
+          "rocket"
+        ],
+        "stat": "YEAR 6400+",
+        "stat_sub": "when you'd finish",
+        "hud": "YEAR 6400"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Instagram",
+      "url": "https://en.wikipedia.org/wiki/Instagram"
+    }
+  ]
+}

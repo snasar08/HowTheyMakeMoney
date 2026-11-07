@@ -57,3 +57,18 @@ clearly different angle, new figures, a new hook, new B-roll and a different sce
 056 | Red Bull (editorial) | a marketing/stunt company that sells drinks | 1982 Thailand, $500K each, two F1 teams, 13.969B cans, EUR 12.2B turnover 2025
 057 | NBA (whatif) | paying a team's salary cap in $1 bills | $154.647M cap 2025-26, ~155 tonnes, ~5 years to count, ~500 km stack for 30 teams
 058 | Software developers (careers) | median pay and the wide range for people who build apps | 1.69M employed, $135,980 median, $82,460 10th pct, $214,670 90th pct (May 2025)
+059 | Firefighters (careers) | over half of US firefighters are volunteers; paid ones' pay range | 54% volunteers (NFPA), 95% of volunteers in towns <25,000, $59,280 median, $34,910 / $101,040 (May 2025)
+060 | Uber (whatif) | one driver doing every Uber trip | 4.1B trips Q3 2026, ~516/second, ~85 years per day of trips at one a minute, 83B trips since 2010 (~158,000 years)
+061 | Michael Jordan (famous) | 1984 Nike deal with royalties made a retired player a billionaire | $2.5M six-year deal (1984), ~$110M income 2015, first NBA billionaire 2014, $4.7B net worth (Forbes 2026)
+062 | HP | ink and toner out-sell printers; printing out-earns PCs | $10.9B supplies, ~$5.8B printer hardware, $3.1B printing vs $2.1B PC earnings (fiscal 2025), ink pricier than champagne (Which?)
+063 | Pro athletes (careers) | most pro athletes earn far less than superstars | 15,070 jobs, $66,710 median, $26,500 / $742,310 (May 2025), Ronaldo $300M (Forbes 2026)
+064 | Visa (whatif) | every swipe as a beep; Visa runs the network, doesn't lend | 281.3B transactions FY2026, ~8,900/second, ~8,900 years at one a second, $45.9B net revenue
+065 | Marvel (editorial, almost broke) | 1996 bankruptcy to Disney's $4B purchase via self-made films | Chapter 11 Dec 1996, Toy Biz merger 1998, $525M loan backed by 10 characters (2005), Iron Man $585.8M, ~$4B Disney deal 2009
+066 | Veterinarians (careers) | hard to get in, well paid | 33 US vet schools (2021), 8-hour 360-question exam, $130,100 median, $73,920 / $215,700, 83,900 jobs (May 2025)
+067 | Instagram Reels (whatif) | watching one day of Reels views yourself | 140B views/day (Sept 2022), ~1.6M/second, ~4,400 years, finish after year 6400
+068 | Animators (careers) | what animators and effects artists earn | 19,970 jobs, $102,030 median, $58,600 / $177,110 (May 2025)
+069 | Airbnb | air mattress and cereal-box start, then a cut of every booking | 2007 start, $30,000 cereal, 15.5% single host fee (3% + 14.1-16.5% split), 5.5M+ hosts, 2.5B+ guest arrivals
+070 | Lionel Messi (famous) | growth treatment, napkin contract at 13, billionaire in 2026 | age 10 diagnosis, napkin Dec 2000, first past EUR 100M in a year (2018, EUR 126M), $1.1B net worth 2026, $140M Forbes 2026
+071 | Minecraft (whatif) | selling every copy one per second | 400M+ copies, ~12.7 years, 1M sales early 2011 with no ads, $2.5B Microsoft deal 2014
+072 | Sports agents (careers) | soccer agents' cut of transfers; most US agents aren't rich | $1.37B agent fees vs $13.08B transfers (FIFA 2025), $82,890 median, $284,570 top 10% (May 2025)
+073 | Stephen Curry (famous) | walk-on offer to first $200M+ NBA deal and $100M of sponsors | 160 lb, $201M 2017 extension, 4,000 threes, $156M 2025 ($100M endorsements)

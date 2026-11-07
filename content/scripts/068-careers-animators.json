@@ -1,0 +1,121 @@
+{
+  "id": "068",
+  "slug": "careers-animators",
+  "company": "Animators",
+  "format": "careers",
+  "visual_style": "charts3d",
+  "hook_style": "challenge",
+  "title_style": "number",
+  "theme": "bold_bright",
+  "status": "ready",
+  "score": 86,
+  "title": "$102,030 a Year to Make Cartoons?",
+  "description": "Guess what the people who animate movies and games earn?\n\nSources:\n- BLS OEWS via api.bls.gov: Special effects artists and animators 27-1014, annual median wage, May 2025: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000027101413\n- BLS OEWS via api.bls.gov: Special effects artists and animators, 10th percentile: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000027101411\n- BLS OEWS via api.bls.gov: Special effects artists and animators, 90th percentile: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000027101415\n- BLS OEWS via api.bls.gov: Special effects artists and animators, employment: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000027101401\n\nBLS May 2025 (OEWS), special effects artists and animators (27-1014): 19,970 jobs on payrolls (OEWS does not count the self-employed); median $102,030; 10th percentile $58,600; 90th percentile $177,110. Median = half earn more, half earn less. Not financial advice.\n\n#shorts #animator #careers #howtheymakemoney",
+  "tags": [
+    "animator",
+    "careers",
+    "animation",
+    "shorts"
+  ],
+  "images": {
+    "hook": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: a young adult animator at a desk with two glowing monitors showing a cute cartoon dragon mid-flight, sketches pinned on the wall, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261107_210919_e5feeeb2-ea45-4d31-9f89-f025b2bfa28c.png"
+    },
+    "mid": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: a young adult artist drawing a character on a pen tablet in a cozy studio at night, coffee mug beside the keyboard, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261107_210919_aae96eb6-7ce4-496b-83aa-c6e0e9b5bad7.png"
+    },
+    "broll1": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: a wall of colorful character sketches and storyboards pinned in neat rows in an animation studio, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261107_210919_a8d869bb-85e2-438d-aa59-95ba8a496a99.png"
+    },
+    "broll2": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: a small team of adult animators laughing while reviewing a cartoon scene on a big screen in a meeting room, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261107_210920_f7ca715f-19de-438e-9162-7cd0b300e7a6.png"
+    }
+  },
+  "loop": "So next time you watch a cartoon, ask yourself:",
+  "cta": "Movies or video games? Comment where you'd animate.",
+  "cta_question": "Movies or video games?",
+  "scenes": [
+    {
+      "narration": "Guess what the people who animate movies and games earn?",
+      "visual": {
+        "type": "image",
+        "image": "hook",
+        "overlay": "GUESS THE PAY",
+        "overlay_sub": "animators"
+      }
+    },
+    {
+      "narration": "It's a small club. About 19,970 jobs on US payrolls.",
+      "visual": {
+        "type": "text",
+        "text": "19,970 jobs",
+        "sub": "animators and effects artists, May 2025"
+      }
+    },
+    {
+      "narration": "Starting out? The bottom ten percent earn under 58,600.",
+      "visual": {
+        "type": "image",
+        "image": "mid",
+        "overlay": "UNDER $58,600",
+        "overlay_sub": "bottom 10%"
+      }
+    },
+    {
+      "narration": "But the median? 102,030 dollars a year.",
+      "visual": {
+        "type": "stat",
+        "value": 102030,
+        "prefix": "$",
+        "suffix": "",
+        "decimals": 0,
+        "label": "Animator median pay, May 2025"
+      }
+    },
+    {
+      "narration": "And the top ten percent pass 177,000. For drawing dragons.",
+      "visual": {
+        "type": "bars",
+        "items": [
+          {
+            "label": "Low 10%",
+            "value": 58.6
+          },
+          {
+            "label": "Median",
+            "value": 102.0
+          },
+          {
+            "label": "Top 10%",
+            "value": 177.1
+          }
+        ],
+        "prefix": "$",
+        "suffix": "K",
+        "title": "Animator pay, May 2025"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "BLS OEWS via api.bls.gov: Special effects artists and animators 27-1014, annual median wage, May 2025",
+      "url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000027101413"
+    },
+    {
+      "title": "BLS OEWS via api.bls.gov: Special effects artists and animators, 10th percentile",
+      "url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000027101411"
+    },
+    {
+      "title": "BLS OEWS via api.bls.gov: Special effects artists and animators, 90th percentile",
+      "url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000027101415"
+    },
+    {
+      "title": "BLS OEWS via api.bls.gov: Special effects artists and animators, employment",
+      "url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000027101401"
+    }
+  ]
+}

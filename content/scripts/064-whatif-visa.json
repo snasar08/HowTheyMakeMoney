@@ -1,0 +1,110 @@
+{
+  "id": "064",
+  "slug": "whatif-visa",
+  "company": "Visa",
+  "format": "whatif",
+  "visual_style": "lowpoly",
+  "hook_style": "whatif",
+  "title_style": "whatif",
+  "theme": "dark_neon",
+  "status": "ready",
+  "score": 87,
+  "title": "What If Every Visa Swipe Made a Beep?",
+  "description": "What if every Visa card swipe made one beep?\n\nSources:\n- Visa: Fiscal fourth quarter and full-year 2026 results (PDF): https://s1.q4cdn.com/050606653/files/content_files/4Q26-Earnings-Release_vFINAL.pdf\n- Wikipedia: Visa Inc.: https://en.wikipedia.org/wiki/Visa_Inc.\n\nVisa fiscal 2026 (year ended Sept 30 2026), earnings release: 281.3 billion processed transactions, up 9%; net revenue $45.9 billion. Wikipedia: Visa does not issue cards, extend credit or set consumer rates. Our math: 281.3 billion / 31.5 million seconds in a year = about 8,900 a second; one beep a second = about 8,900 years. Not financial advice.\n\n#shorts #visa #whatif #howtheymakemoney",
+  "tags": [
+    "visa",
+    "what if",
+    "payments",
+    "shorts"
+  ],
+  "images": {},
+  "hud_label": "SWIPES",
+  "loop": "So next time you tap your card, ask yourself:",
+  "cta": "Card or cash? Comment your pick.",
+  "cta_question": "Card or cash?",
+  "scenes": [
+    {
+      "narration": "What if every Visa card swipe made one beep?",
+      "visual": {
+        "type": "lowpoly",
+        "set": "store",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "phone"
+        ],
+        "stat": "BEEP",
+        "stat_sub": "every single swipe"
+      }
+    },
+    {
+      "narration": "Sounds quiet? Visa handled 281.3 billion payments last year.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "store",
+        "action": "push",
+        "crowd": 200,
+        "props": [
+          "phone",
+          "boxes"
+        ],
+        "stat": "281.3 BILLION",
+        "stat_sub": "transactions, fiscal 2026",
+        "hud": "281.3B"
+      }
+    },
+    {
+      "narration": "Then do the math. About 8,900 beeps every second.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "run",
+        "crowd": 400,
+        "props": [
+          "phone"
+        ],
+        "stat": "8,900 / SECOND",
+        "stat_sub": "all day, all year"
+      }
+    },
+    {
+      "narration": "Now hear them one per second. Still 8,900 years.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "office",
+        "action": "work",
+        "crowd": 0,
+        "props": [
+          "phone"
+        ],
+        "stat": "~8,900 YEARS",
+        "stat_sub": "of beeping, one a second"
+      }
+    },
+    {
+      "narration": "But Visa doesn't lend you money. It earns fees for running the network. 45.9 billion dollars.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "office",
+        "action": "cheer",
+        "crowd": 100,
+        "props": [
+          "cash"
+        ],
+        "stat": "$45.9 BILLION",
+        "stat_sub": "net revenue, fiscal 2026",
+        "hud": "$45.9B"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "Visa: Fiscal fourth quarter and full-year 2026 results (PDF)",
+      "url": "https://s1.q4cdn.com/050606653/files/content_files/4Q26-Earnings-Release_vFINAL.pdf"
+    },
+    {
+      "title": "Wikipedia: Visa Inc.",
+      "url": "https://en.wikipedia.org/wiki/Visa_Inc."
+    }
+  ]
+}

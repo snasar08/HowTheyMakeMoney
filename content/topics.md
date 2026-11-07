@@ -16,6 +16,9 @@ Roblox, PlayStation, YouTubers (careers), Twitch streamers (careers), NFL player
 ## Used (Nov 7 2026 batch, part 1)
 Chick-fil-A, DoorDash, LEGO (editorial), Red Bull (editorial), Netflix (whatif: watch it all), YouTube (whatif: one minute of uploads), Roblox (whatif: every hour), NBA (whatif: salary cap in $1 bills), NASA astronauts (careers), MLB players (careers), air traffic controllers (careers), software developers (careers), MrBeast (famous), LeBron James (famous), Taylor Swift (famous: Eras Tour)
 
+## Used (Nov 7 2026 batch, part 2)
+HP (printer ink), Airbnb, Marvel (editorial), Uber (whatif: one driver), Visa (whatif: swipe beeps), Instagram Reels (whatif: one day of views), Minecraft (whatif: sell every copy), firefighters (careers), pro athletes (careers), veterinarians (careers), animators (careers), sports agents (careers), Michael Jordan (famous), Lionel Messi (famous), Stephen Curry (famous)
+
 ## Ranked for the next batches (Oct 29 2026 — teen appeal × curiosity gap × surprising number)
 Write from the top. Casinos dropped (not kid-safe). Skip anything already used above.
 | # | Topic | Angle / hook seed | Est. score |

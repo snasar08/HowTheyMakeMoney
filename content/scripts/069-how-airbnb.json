@@ -1,0 +1,102 @@
+{
+  "id": "069",
+  "slug": "how-airbnb",
+  "company": "Airbnb",
+  "format": "how",
+  "visual_style": "charts3d",
+  "hook_style": "surprise",
+  "title_style": "whatif",
+  "theme": "bold_bright",
+  "status": "ready",
+  "score": 88,
+  "title": "What If Your Air Mattress Became a Business?",
+  "description": "How did one air mattress turn into 2.5 billion guest stays?\n\nSources:\n- Wikipedia: Airbnb: https://en.wikipedia.org/wiki/Airbnb\n- Airbnb Help Center: Airbnb service fees: https://www.airbnb.com/help/article/1857\n- Airbnb Newsroom: About us: https://news.airbnb.com/about-us/\n\nWikipedia (Airbnb): October 2007, roommates Brian Chesky and Joe Gebbia put an air mattress in their San Francisco living room to help pay rent; the founders raised $30,000 selling cereal named after the 2008 presidential candidates; Airbnb acts as a broker and charges a commission on each booking. Airbnb Help Center: under the single-fee structure most hosts pay 15.5%; under the older split fee, most hosts pay 3% and guests 14.1% to 16.5%. Airbnb newsroom: over 5.5 million hosts and over 2.5 billion guest arrivals. Not financial advice.\n\n#shorts #airbnb #travel #howtheymakemoney",
+  "tags": [
+    "airbnb",
+    "travel",
+    "business",
+    "shorts"
+  ],
+  "images": {
+    "hook": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: a cozy small apartment living room at night with one inflated air mattress on the floor, a laptop glowing beside it and a city skyline in the window, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261107_211003_6b533bf9-90bc-4e41-b64e-80d3e0df8485.png"
+    },
+    "mid": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: two young adult roommates in casual clothes blowing up an air mattress in a small living room, laughing, boxes of supplies nearby, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261107_211003_0da360d4-8b97-4e32-acd2-73dd1f720612.png"
+    },
+    "broll1": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: a smiling adult host handing a house key to an adult traveler with a rolling suitcase at a bright front door, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261107_211004_61fba085-93c7-44f2-b814-755297bd3302.png"
+    },
+    "broll2": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: plain unbranded cereal boxes stacked in a tall colorful tower on a kitchen table, morning light, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261107_211003_231e1556-6e8c-4a03-b376-c291146f4698.png"
+    }
+  },
+  "loop": "So next time you book a trip, ask yourself:",
+  "cta": "Hotel or Airbnb? Comment your pick.",
+  "cta_question": "Hotel or Airbnb?",
+  "scenes": [
+    {
+      "narration": "How did one air mattress turn into 2.5 billion guest stays?",
+      "visual": {
+        "type": "image",
+        "image": "hook",
+        "overlay": "ONE AIR MATTRESS?",
+        "overlay_sub": "2.5 billion stays later"
+      }
+    },
+    {
+      "narration": "Just two roommates, short on rent. So they rented out an air mattress.",
+      "visual": {
+        "type": "image",
+        "image": "mid",
+        "overlay": "RENT MONEY",
+        "overlay_sub": "San Francisco, 2007"
+      }
+    },
+    {
+      "narration": "Then, to keep going, they sold cereal. 30,000 dollars.",
+      "visual": {
+        "type": "stat",
+        "value": 30000,
+        "prefix": "$",
+        "suffix": "",
+        "decimals": 0,
+        "label": "Raised selling cereal, 2008"
+      }
+    },
+    {
+      "narration": "But here's the money flip. Airbnb keeps a cut of every booking. Most hosts pay 15.5 percent.",
+      "visual": {
+        "type": "donut",
+        "value": 15.5,
+        "label": "Host service fee, single-fee plan"
+      }
+    },
+    {
+      "narration": "Today? Over 5.5 million hosts. Over 2.5 billion arrivals.",
+      "visual": {
+        "type": "text",
+        "text": "2.5 billion+ guest arrivals",
+        "sub": "5.5 million+ hosts"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Airbnb",
+      "url": "https://en.wikipedia.org/wiki/Airbnb"
+    },
+    {
+      "title": "Airbnb Help Center: Airbnb service fees",
+      "url": "https://www.airbnb.com/help/article/1857"
+    },
+    {
+      "title": "Airbnb Newsroom: About us",
+      "url": "https://news.airbnb.com/about-us/"
+    }
+  ]
+}

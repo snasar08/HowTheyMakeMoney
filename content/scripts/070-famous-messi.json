@@ -1,0 +1,112 @@
+{
+  "id": "070",
+  "slug": "famous-messi",
+  "company": "Lionel Messi",
+  "format": "famous",
+  "visual_style": "lowpoly",
+  "hook_style": "surprise",
+  "title_style": "statement",
+  "theme": "bold_bright",
+  "status": "ready",
+  "score": 92,
+  "title": "From a Napkin Contract to $1.1 Billion",
+  "name_card": "Lionel Messi",
+  "name_sub": "soccer player",
+  "description": "Why was a soccer star's first contract written on a napkin?\n\nSources:\n- Wikipedia: Lionel Messi: https://en.wikipedia.org/wiki/Lionel_Messi\n- Wikipedia: Forbes list of the world's highest-paid athletes: https://en.wikipedia.org/wiki/Forbes_list_of_the_world%27s_highest-paid_athletes\n\nFrom Wikipedia (Lionel Messi): at 10 he was diagnosed with a growth hormone deficiency; at 13, in December 2000, Barcelona's first-team director wrote a contract on a paper napkin; in 2018 he was the first footballer to pass EUR 100 million in a year (EUR 126 million); in 2026 he appeared on the World's Billionaires list with a $1.1 billion net worth. Forbes 2026 (Wikipedia: highest-paid athletes): $140 million, $70 million salary and $70 million endorsements. Not financial advice.\n\n#shorts #messi #soccer #howtheymakemoney",
+  "tags": [
+    "messi",
+    "soccer",
+    "famous",
+    "shorts"
+  ],
+  "images": {},
+  "hud_label": "HIS MONEY",
+  "loop": "So next time you grab a napkin, ask yourself:",
+  "cta": "Messi or Ronaldo? Comment your pick.",
+  "cta_question": "Messi or Ronaldo?",
+  "scenes": [
+    {
+      "narration": "Why was a soccer star's first contract written on a napkin?",
+      "visual": {
+        "type": "lowpoly",
+        "set": "pitch",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "ball"
+        ],
+        "stat": "A NAPKIN?",
+        "stat_sub": "his first contract"
+      }
+    },
+    {
+      "narration": "But at ten, doctors found a growth problem. Treatment cost money every month.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "office",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": "AGE 10",
+        "stat_sub": "a growth problem"
+      }
+    },
+    {
+      "narration": "Then, at thirteen, Barcelona wanted him. No paper nearby. So, a napkin.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "pitch",
+        "action": "run",
+        "crowd": 0,
+        "props": [
+          "ball"
+        ],
+        "stat": "AGE 13",
+        "stat_sub": "deal on a napkin, 2000",
+        "hud": "AGE 13"
+      }
+    },
+    {
+      "narration": "Then by 2018, he made history. The first player past 100 million euros a year.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "pitch",
+        "action": "cheer",
+        "crowd": 400,
+        "props": [
+          "ball",
+          "trophy"
+        ],
+        "stat": "€126 MILLION",
+        "stat_sub": "earned in 2018",
+        "hud": "€126M"
+      }
+    },
+    {
+      "narration": "Just this year, he joined the billionaires list. 1.1 billion dollars.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "pitch",
+        "action": "cheer",
+        "crowd": 400,
+        "props": [
+          "trophy",
+          "cash"
+        ],
+        "stat": "$1.1 BILLION",
+        "stat_sub": "net worth, 2026",
+        "hud": "$1.1B"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Lionel Messi",
+      "url": "https://en.wikipedia.org/wiki/Lionel_Messi"
+    },
+    {
+      "title": "Wikipedia: Forbes list of the world's highest-paid athletes",
+      "url": "https://en.wikipedia.org/wiki/Forbes_list_of_the_world%27s_highest-paid_athletes"
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "id": "073",
+  "slug": "famous-curry",
+  "company": "Stephen Curry",
+  "format": "famous",
+  "visual_style": "lowpoly",
+  "hook_style": "challenge",
+  "title_style": "question",
+  "theme": "bold_bright",
+  "status": "ready",
+  "score": 90,
+  "title": "How Did a Walk-On Offer Become $156 Million?",
+  "name_card": "Stephen Curry",
+  "name_sub": "basketball player",
+  "description": "His dream college offered him only a walk-on spot. Guess what happened?\n\nSources:\n- Wikipedia: Stephen Curry: https://en.wikipedia.org/wiki/Stephen_Curry\n- Wikipedia: Forbes list of the world's highest-paid athletes: https://en.wikipedia.org/wiki/Forbes_list_of_the_world%27s_highest-paid_athletes\n\nFrom Wikipedia (Stephen Curry): Virginia Tech offered him only a walk-on spot, partly due to his 160-pound frame, so he chose Davidson; in July 2017 he signed a five-year, $201 million extension, the first NBA supermax over $200 million; in March 2025 he became the first player with 4,000 career three-pointers. Forbes (Wikipedia: highest-paid athletes): 2025, $156 million ($56M salary, $100M endorsements); 2026, $124.7 million. Not financial advice.\n\n#shorts #stephencurry #nba #howtheymakemoney",
+  "tags": [
+    "stephen curry",
+    "nba",
+    "famous",
+    "shorts"
+  ],
+  "images": {},
+  "hud_label": "HIS MONEY",
+  "loop": "So next time you shoot a three, ask yourself:",
+  "cta": "Curry or LeBron? Comment your pick.",
+  "cta_question": "Curry or LeBron?",
+  "scenes": [
+    {
+      "narration": "His dream college offered him only a walk-on spot. Guess what happened?",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "ball"
+        ],
+        "stat": "WALK-ON ONLY",
+        "stat_sub": "no scholarship offer"
+      }
+    },
+    {
+      "narration": "Too skinny, they thought. About 160 pounds. So he went to Davidson instead.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "run",
+        "crowd": 0,
+        "props": [
+          "ball"
+        ],
+        "stat": "160 POUNDS",
+        "stat_sub": "too small, they thought"
+      }
+    },
+    {
+      "narration": "Then he signed the first NBA deal over 200 million dollars.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "cheer",
+        "crowd": 300,
+        "props": [
+          "ball",
+          "check"
+        ],
+        "stat": "$201 MILLION",
+        "stat_sub": "5-year deal, 2017",
+        "hud": "$201M"
+      }
+    },
+    {
+      "narration": "Then came 4,000 career threes. The first player ever.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "cheer",
+        "crowd": 400,
+        "props": [
+          "ball",
+          "trophy"
+        ],
+        "stat": "4,000 THREES",
+        "stat_sub": "first in NBA history"
+      }
+    },
+    {
+      "narration": "But the real money? In 2025, sponsors paid him 100 million dollars.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "store",
+        "action": "push",
+        "crowd": 100,
+        "props": [
+          "boxes",
+          "cash"
+        ],
+        "stat": "$156 MILLION",
+        "stat_sub": "2025: $100M off the court",
+        "hud": "$156M"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Stephen Curry",
+      "url": "https://en.wikipedia.org/wiki/Stephen_Curry"
+    },
+    {
+      "title": "Wikipedia: Forbes list of the world's highest-paid athletes",
+      "url": "https://en.wikipedia.org/wiki/Forbes_list_of_the_world%27s_highest-paid_athletes"
+    }
+  ]
+}

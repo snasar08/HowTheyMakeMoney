@@ -1,0 +1,113 @@
+{
+  "id": "061",
+  "slug": "famous-jordan",
+  "company": "Michael Jordan",
+  "format": "famous",
+  "visual_style": "lowpoly",
+  "hook_style": "number",
+  "title_style": "number",
+  "theme": "bold_bright",
+  "status": "ready",
+  "score": 91,
+  "title": "From a $2.5M Shoe Deal to $4.7 Billion",
+  "name_card": "Michael Jordan",
+  "name_sub": "basketball legend",
+  "description": "Why is a retired player still getting richer?\n\nSources:\n- Wikipedia: Air Jordan: https://en.wikipedia.org/wiki/Air_Jordan\n- Wikipedia: Michael Jordan: https://en.wikipedia.org/wiki/Michael_Jordan\n\nFrom Wikipedia (Air Jordan; Michael Jordan): October 26, 1984, Jordan signed a six-year, $2.5 million deal with Nike, plus royalties on products with his name. In June 2014 he became the first NBA player to become a billionaire. His 2015 income from Jordan Brand and endorsements was an estimated $110 million, the most of any retired athlete. Forbes (2026) estimates his net worth at $4.7 billion. Not financial advice.\n\n#shorts #michaeljordan #sneakers #howtheymakemoney",
+  "tags": [
+    "michael jordan",
+    "sneakers",
+    "nba",
+    "shorts"
+  ],
+  "images": {},
+  "hud_label": "HIS MONEY",
+  "loop": "So next time you lace up your sneakers, ask yourself:",
+  "cta": "Retro sneakers or new ones? Comment your pick.",
+  "cta_question": "Retro or new sneakers?",
+  "scenes": [
+    {
+      "narration": "Why is a retired player still getting richer?",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "ball"
+        ],
+        "stat": "STILL GROWING?",
+        "stat_sub": "long after his last game"
+      }
+    },
+    {
+      "narration": "Back in his rookie year, Nike paid 2.5 million dollars. For six years.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "run",
+        "crowd": 0,
+        "props": [
+          "ball"
+        ],
+        "stat": "$2.5 MILLION",
+        "stat_sub": "6-year Nike deal, 1984",
+        "hud": "$2.5M"
+      }
+    },
+    {
+      "narration": "Sounds small now. But the twist? Royalties. A cut of shoes with his name.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "store",
+        "action": "push",
+        "crowd": 100,
+        "props": [
+          "boxes"
+        ],
+        "stat": "ROYALTIES",
+        "stat_sub": "a cut of every pair"
+      }
+    },
+    {
+      "narration": "Then, long retired, he still made about 110 million in one year.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "store",
+        "action": "carry",
+        "crowd": 200,
+        "props": [
+          "boxes",
+          "cash"
+        ],
+        "stat": "$110 MILLION",
+        "stat_sub": "income in 2015, retired"
+      }
+    },
+    {
+      "narration": "Today? Forbes says 4.7 billion dollars. Still growing.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "cheer",
+        "crowd": 400,
+        "props": [
+          "trophy",
+          "cash"
+        ],
+        "stat": "$4.7 BILLION",
+        "stat_sub": "net worth, Forbes 2026",
+        "hud": "$4.7B"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Air Jordan",
+      "url": "https://en.wikipedia.org/wiki/Air_Jordan"
+    },
+    {
+      "title": "Wikipedia: Michael Jordan",
+      "url": "https://en.wikipedia.org/wiki/Michael_Jordan"
+    }
+  ]
+}

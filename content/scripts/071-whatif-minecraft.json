@@ -1,0 +1,115 @@
+{
+  "id": "071",
+  "slug": "whatif-minecraft",
+  "company": "Minecraft",
+  "format": "whatif",
+  "visual_style": "lowpoly",
+  "hook_style": "whatif",
+  "title_style": "whatif",
+  "theme": "bold_bright",
+  "status": "ready",
+  "score": 90,
+  "title": "What If You Sold Every Minecraft Copy Yourself?",
+  "description": "What if you had to sell every Minecraft copy, one by one?\n\nSources:\n- Wikipedia: Minecraft: https://en.wikipedia.org/wiki/Minecraft\n- Wikipedia: Mojang Studios: https://en.wikipedia.org/wiki/Mojang_Studios\n- Wikipedia: Markus Persson: https://en.wikipedia.org/wiki/Markus_Persson\n\nWikipedia (Minecraft): the best-selling video game of all time, over 400 million copies sold; it passed one million purchases less than a month into its beta in early 2011, with no publisher and no ads beyond word of mouth. Wikipedia (Mojang Studios / Markus Persson): Microsoft agreed to buy Mojang for $2.5 billion in September 2014. Our math: 400 million seconds = about 12.7 years. Not financial advice.\n\n#shorts #minecraft #gaming #howtheymakemoney",
+  "tags": [
+    "minecraft",
+    "gaming",
+    "what if",
+    "shorts"
+  ],
+  "images": {},
+  "hud_label": "COPIES",
+  "loop": "So next time you place a block, ask yourself:",
+  "cta": "Survival or creative? Comment your pick.",
+  "cta_question": "Survival or creative?",
+  "scenes": [
+    {
+      "narration": "What if you had to sell every Minecraft copy, one by one?",
+      "visual": {
+        "type": "lowpoly",
+        "set": "gaming",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "headset"
+        ],
+        "stat": "EVERY COPY?",
+        "stat_sub": "sold by you"
+      }
+    },
+    {
+      "narration": "But it's the best-selling game ever. Over 400 million copies.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "store",
+        "action": "push",
+        "crowd": 200,
+        "props": [
+          "boxes"
+        ],
+        "stat": "400 MILLION",
+        "stat_sub": "copies sold",
+        "hud": "400M"
+      }
+    },
+    {
+      "narration": "One sale every second? That still takes 12.7 years.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "store",
+        "action": "carry",
+        "crowd": 0,
+        "props": [
+          "boxes"
+        ],
+        "stat": "12.7 YEARS",
+        "stat_sub": "one sale a second"
+      }
+    },
+    {
+      "narration": "It started tiny, though. Just word of mouth, no ads. Then a million sales.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "gaming",
+        "action": "work",
+        "crowd": 0,
+        "props": [
+          "headset"
+        ],
+        "stat": "1 MILLION",
+        "stat_sub": "sales by early 2011, no ads",
+        "hud": "1M"
+      }
+    },
+    {
+      "narration": "Then Microsoft bought its maker for 2.5 billion dollars.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "office",
+        "action": "cheer",
+        "crowd": 100,
+        "props": [
+          "check",
+          "cash"
+        ],
+        "stat": "$2.5 BILLION",
+        "stat_sub": "Microsoft buys Mojang, 2014",
+        "hud": "$2.5B"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Minecraft",
+      "url": "https://en.wikipedia.org/wiki/Minecraft"
+    },
+    {
+      "title": "Wikipedia: Mojang Studios",
+      "url": "https://en.wikipedia.org/wiki/Mojang_Studios"
+    },
+    {
+      "title": "Wikipedia: Markus Persson",
+      "url": "https://en.wikipedia.org/wiki/Markus_Persson"
+    }
+  ]
+}

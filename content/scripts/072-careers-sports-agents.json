@@ -1,0 +1,121 @@
+{
+  "id": "072",
+  "slug": "careers-sports-agents",
+  "company": "Sports agents",
+  "format": "careers",
+  "visual_style": "charts3d",
+  "hook_style": "question",
+  "title_style": "statement",
+  "theme": "clean_navy",
+  "status": "ready",
+  "score": 87,
+  "title": "Soccer Agents Made $1.37 Billion in 2025",
+  "description": "Your favorite star switches teams. Guess who else gets paid?\n\nSources:\n- Wikipedia: Sports agent: https://en.wikipedia.org/wiki/Sports_agent\n- BLS OEWS via api.bls.gov: Agents and business managers of artists, performers, and athletes 13-1011, annual median wage, May 2025: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000013101113\n- BLS OEWS via api.bls.gov: Agents and business managers of artists, performers, and athletes, 10th percentile: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000013101111\n- BLS OEWS via api.bls.gov: Agents and business managers of artists, performers, and athletes, 90th percentile: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000013101115\n- BLS OEWS via api.bls.gov: Agents and business managers of artists, performers, and athletes, employment: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000013101101\n\nWikipedia (Sports agent), citing FIFA's Annual Report on Football Agents: men's professional football agent fees reached $1.37 billion in 2025, against $13.08 billion in global men's transfer fees. Most US states require agents to register, disclose fees and use written contracts (Uniform Athlete Agents Act). BLS May 2025 (OEWS), agents and business managers of artists, performers and athletes (13-1011): 12,620 jobs; median $82,890; 10th percentile $48,010; 90th percentile $284,570. Our math: $1.37B / $13.08B = about 10 cents per transfer dollar. Not financial advice.\n\n#shorts #sportsagent #careers #howtheymakemoney",
+  "tags": [
+    "sports agent",
+    "careers",
+    "soccer",
+    "shorts"
+  ],
+  "images": {
+    "hook": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: an adult soccer player in a plain white kit without any badges shaking hands across a desk with an adult agent in a suit, a stadium visible through the window, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261107_211045_3f2f8c17-8bfc-4866-94b4-8d572ad2c1c2.png"
+    },
+    "mid": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: an adult sports agent in a modern office talking on a phone, a contract and a soccer ball on the desk, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261107_211046_f584e31f-09cf-4710-ac94-398248b5176b.png"
+    },
+    "broll1": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: a contract on a glass table with a pen and a plain soccer ball beside it, warm office light, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261107_211047_3dd545e0-b785-4f19-a9bc-3928c7a57acd.png"
+    },
+    "broll2": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: an empty soccer stadium at night with bright floodlights and green grass, seen from the tunnel, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261107_211045_364414d6-1079-4347-b464-a0f6d2f9d63c.png"
+    }
+  },
+  "loop": "So next time your favorite player switches teams, ask yourself:",
+  "cta": "Agent or player? Comment your pick.",
+  "cta_question": "Agent or player?",
+  "scenes": [
+    {
+      "narration": "Your favorite star switches teams. Guess who else gets paid?",
+      "visual": {
+        "type": "image",
+        "image": "hook",
+        "overlay": "WHO ELSE GETS PAID?",
+        "overlay_sub": "when a star moves"
+      }
+    },
+    {
+      "narration": "The agent. In 2025, soccer agents earned 1.37 billion dollars in fees.",
+      "visual": {
+        "type": "stat",
+        "value": 1.37,
+        "prefix": "$",
+        "suffix": "B",
+        "decimals": 2,
+        "label": "Men's soccer agent fees, 2025 (FIFA)"
+      }
+    },
+    {
+      "narration": "Sounds like a lot? Clubs spent 13.08 billion on transfers.",
+      "visual": {
+        "type": "bars",
+        "items": [
+          {
+            "label": "Transfer fees",
+            "value": 13.08
+          },
+          {
+            "label": "Agent fees",
+            "value": 1.37
+          }
+        ],
+        "prefix": "$",
+        "suffix": "B",
+        "title": "Men's soccer transfers, 2025"
+      }
+    },
+    {
+      "narration": "But most agents aren't rich. The US median is 82,890 dollars.",
+      "visual": {
+        "type": "image",
+        "image": "mid",
+        "overlay": "$82,890",
+        "overlay_sub": "US median, May 2025"
+      }
+    },
+    {
+      "narration": "Only the top ten percent pass 284,000. Their clients are the stars.",
+      "visual": {
+        "type": "text",
+        "text": "Top 10%: $284,570+",
+        "sub": "agents for athletes and performers"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Sports agent",
+      "url": "https://en.wikipedia.org/wiki/Sports_agent"
+    },
+    {
+      "title": "BLS OEWS via api.bls.gov: Agents and business managers of artists, performers, and athletes 13-1011, annual median wage, May 2025",
+      "url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000013101113"
+    },
+    {
+      "title": "BLS OEWS via api.bls.gov: Agents and business managers of artists, performers, and athletes, 10th percentile",
+      "url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000013101111"
+    },
+    {
+      "title": "BLS OEWS via api.bls.gov: Agents and business managers of artists, performers, and athletes, 90th percentile",
+      "url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000013101115"
+    },
+    {
+      "title": "BLS OEWS via api.bls.gov: Agents and business managers of artists, performers, and athletes, employment",
+      "url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000013101101"
+    }
+  ]
+}

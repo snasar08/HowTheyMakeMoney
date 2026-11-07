@@ -1,0 +1,188 @@
+{
+  "id": "065",
+  "slug": "how-marvel",
+  "company": "Marvel",
+  "format": "how",
+  "visual_style": "editorial",
+  "hook_style": "question",
+  "title_style": "question",
+  "theme": "bold_bright",
+  "status": "ready",
+  "score": 92,
+  "title": "How Did Bankrupt Marvel Become a $4B Deal?",
+  "tag": "Company backstory",
+  "description": "Marvel went bankrupt. So why did Disney still pay 4 billion?\n\nSources:\n- Wikipedia: Marvel Entertainment: https://en.wikipedia.org/wiki/Marvel_Entertainment\n- Wikipedia: Marvel Studios: https://en.wikipedia.org/wiki/Marvel_Studios\n- Wikipedia: Iron Man (2008 film): https://en.wikipedia.org/wiki/Iron_Man_(2008_film)\n- Wikipedia: Marvel Cinematic Universe: https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe\n\nFrom the cited Wikipedia pages: December 27 1996, the Marvel group of companies filed for Chapter 11 bankruptcy; June 2 1998, Toy Biz and Marvel Entertainment Group merged into Marvel Enterprises to bring it out of bankruptcy; September 2005, Marvel announced a $525 million Merrill Lynch financing deal backed by the film rights to ten characters, to make its own films; Iron Man (2008) grossed $585.8 million worldwide; December 31 2009, Disney completed its purchase of Marvel Entertainment for about $4 billion. Photos: Wikimedia Commons (credits below). Not financial advice.\n\n#shorts #marvel #movies #howtheymakemoney",
+  "tags": [
+    "marvel",
+    "movies",
+    "comeback",
+    "shorts"
+  ],
+  "images": {},
+  "hud_label": "MARVEL MONEY",
+  "loop": "So next time a superhero movie comes out, ask yourself:",
+  "cta": "Iron Man or Spider-Man? Comment your pick.",
+  "cta_question": "Iron Man or Spider-Man?",
+  "scenes": [
+    {
+      "narration": "Marvel went bankrupt. So why did Disney still pay 4 billion?",
+      "visual": {
+        "type": "editorial",
+        "layout": "cards",
+        "label": "The comic legends",
+        "people": [
+          {
+            "name": "Stan Lee",
+            "photo": "File:Stan Lee by Gage Skidmore 3.jpg",
+            "role": "Marvel writer, editor"
+          },
+          {
+            "name": "Jack Kirby",
+            "photo": "File:Jack Kirby 1949.jpg",
+            "role": "Marvel artist"
+          }
+        ]
+      }
+    },
+    {
+      "narration": "It's 1996. Marvel files for bankruptcy.",
+      "visual": {
+        "type": "editorial",
+        "layout": "headline",
+        "headline": "Marvel goes bankrupt.",
+        "accent": "bankrupt"
+      }
+    },
+    {
+      "narration": "Then a toy company stepped in, and saved it.",
+      "visual": {
+        "type": "editorial",
+        "layout": "timeline",
+        "points": [
+          [
+            "1996",
+            "bankruptcy filing"
+          ],
+          [
+            "1998",
+            "merges with Toy Biz"
+          ],
+          [
+            "2005",
+            "the big loan"
+          ]
+        ]
+      }
+    },
+    {
+      "narration": "The big bet? Borrow 525 million. But its own heroes were the collateral.",
+      "visual": {
+        "type": "editorial",
+        "layout": "stat",
+        "stat": "$525M",
+        "stat_sub": "film loan, 2005, backed by 10 heroes",
+        "label": "The bet",
+        "hud": "$525M"
+      }
+    },
+    {
+      "narration": "Instead of licensing heroes, Marvel made its own movies. First? Iron Man.",
+      "visual": {
+        "type": "editorial",
+        "layout": "cards",
+        "label": "The first film, 2008",
+        "people": [
+          {
+            "name": "Robert Downey Jr.",
+            "photo": "File:Robert Downey Jr 2014 Comic Con (cropped).jpg",
+            "role": "Iron Man, 2008"
+          },
+          {
+            "name": "Kevin Feige",
+            "photo": "File:Kevin Feige by Gage Skidmore.jpg",
+            "role": "Marvel Studios president"
+          }
+        ]
+      }
+    },
+    {
+      "narration": "It was a hit. Then Disney bought Marvel. About 4 billion dollars.",
+      "visual": {
+        "type": "editorial",
+        "layout": "stat",
+        "stat": "$4B",
+        "stat_sub": "Disney buys Marvel, December 2009",
+        "label": "The payoff",
+        "hud": "$4B"
+      }
+    }
+  ],
+  "photos": [
+    {
+      "photo": "File:Stan Lee December 2016.jpg",
+      "caption": "Stan Lee"
+    },
+    {
+      "photo": "File:Stan Lee 1975.jpg",
+      "caption": "Stan Lee, 1975"
+    },
+    {
+      "photo": "File:Jack Kirby 1947.jpg",
+      "caption": "Jack Kirby, 1947"
+    },
+    {
+      "photo": "File:1976 San Diego Comic book convention.jpg",
+      "caption": "Comic fans, 1976"
+    },
+    {
+      "photo": "File:Avi Arad by Gage Skidmore.jpg",
+      "caption": "Avi Arad, Toy Biz and Marvel Studios"
+    },
+    {
+      "photo": "File:Marvel booth (28387873471).jpg",
+      "caption": "A Marvel booth"
+    },
+    {
+      "photo": "File:Robert Downey Jr-2008.JPG",
+      "caption": "Robert Downey Jr., 2008"
+    },
+    {
+      "photo": "File:Iron Man Cosplay at 2013 Phoenix Comicon.jpg",
+      "caption": "Iron Man fans"
+    },
+    {
+      "photo": "File:WonderCon 2014 - Iron Man Cosplay (13955026033).jpg",
+      "caption": "Iron Man at WonderCon"
+    },
+    {
+      "photo": "File:Kevin Feige (48462887397) (cropped).jpg",
+      "caption": "Kevin Feige"
+    },
+    {
+      "photo": "File:Bob Iger crop.jpg",
+      "caption": "Bob Iger, Disney"
+    },
+    {
+      "photo": "File:Walt Disney Studios Alameda Entrance.jpg",
+      "caption": "Walt Disney Studios"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Marvel Entertainment",
+      "url": "https://en.wikipedia.org/wiki/Marvel_Entertainment"
+    },
+    {
+      "title": "Wikipedia: Marvel Studios",
+      "url": "https://en.wikipedia.org/wiki/Marvel_Studios"
+    },
+    {
+      "title": "Wikipedia: Iron Man (2008 film)",
+      "url": "https://en.wikipedia.org/wiki/Iron_Man_(2008_film)"
+    },
+    {
+      "title": "Wikipedia: Marvel Cinematic Universe",
+      "url": "https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe"
+    }
+  ]
+}

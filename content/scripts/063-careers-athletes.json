@@ -1,0 +1,125 @@
+{
+  "id": "063",
+  "slug": "careers-athletes",
+  "company": "Pro athletes",
+  "format": "careers",
+  "visual_style": "charts3d",
+  "hook_style": "number",
+  "title_style": "number",
+  "theme": "bold_bright",
+  "status": "ready",
+  "score": 90,
+  "title": "Pro Athletes' Median Pay: $66,710",
+  "description": "Think every pro athlete is a millionaire? Most aren't close.\n\nSources:\n- BLS OEWS via api.bls.gov: Athletes and sports competitors 27-2021, annual median wage, May 2025: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000027202113\n- BLS OEWS via api.bls.gov: Athletes and sports competitors, 10th percentile: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000027202111\n- BLS OEWS via api.bls.gov: Athletes and sports competitors, 90th percentile: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000027202115\n- BLS OEWS via api.bls.gov: Athletes and sports competitors, employment: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000027202101\n- Wikipedia: Forbes list of the world's highest-paid athletes: https://en.wikipedia.org/wiki/Forbes_list_of_the_world%27s_highest-paid_athletes\n\nBLS May 2025 (OEWS), athletes and sports competitors (27-2021): 15,070 jobs; median $66,710; 10th percentile $26,500; 90th percentile $742,310. OEWS counts wage-and-salary jobs. Forbes 2026 (cited on Wikipedia): Cristiano Ronaldo earned $300 million, the most of any athlete. Median = half earn more, half earn less. Not financial advice.\n\n#shorts #athletes #careers #howtheymakemoney",
+  "tags": [
+    "athletes",
+    "careers",
+    "sports",
+    "shorts"
+  ],
+  "images": {
+    "hook": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: a young adult minor-league baseball player in a plain gray uniform sitting alone on a dugout bench in a small stadium, thoughtful look, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261107_210808_d1d9cc9a-9363-4022-a916-361cdbf72ee4.png"
+    },
+    "mid": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: a huge sold-out stadium at night under bright lights, confetti falling over the field, seen from high in the stands, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261107_210807_309a5c99-892b-4360-9ed7-0ccba8e2b8ed.png"
+    },
+    "broll1": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: an adult athlete packing plain sports gear into an old car in a motel parking lot at dawn, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261107_210807_17bfd548-5fee-4bd0-9d6e-24b35aaf31be.png"
+    },
+    "broll2": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: an adult runner in plain athletic clothes stretching alone on an empty track at sunrise, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261107_210807_406f8668-5af7-4a17-9374-bbce8953b38d.png"
+    }
+  },
+  "loop": "So next time you watch a game, ask yourself:",
+  "cta": "Pro athlete or coach? Comment your pick.",
+  "cta_question": "Athlete or coach?",
+  "scenes": [
+    {
+      "narration": "Think every pro athlete is a millionaire? Most aren't close.",
+      "visual": {
+        "type": "image",
+        "image": "hook",
+        "overlay": "ALL MILLIONAIRES?",
+        "overlay_sub": "not even close"
+      }
+    },
+    {
+      "narration": "Turns out, the US counts just 15,070 paid athlete jobs.",
+      "visual": {
+        "type": "text",
+        "text": "15,070 athlete jobs",
+        "sub": "on US payrolls, May 2025"
+      }
+    },
+    {
+      "narration": "Their median pay? Just 66,710 dollars.",
+      "visual": {
+        "type": "stat",
+        "value": 66710,
+        "prefix": "$",
+        "suffix": "",
+        "decimals": 0,
+        "label": "Athlete median pay, May 2025"
+      }
+    },
+    {
+      "narration": "The bottom ten percent? Under 26,500.",
+      "visual": {
+        "type": "bars",
+        "items": [
+          {
+            "label": "Low 10%",
+            "value": 26.5
+          },
+          {
+            "label": "Median",
+            "value": 66.7
+          },
+          {
+            "label": "Top 10%",
+            "value": 742.3
+          }
+        ],
+        "prefix": "$",
+        "suffix": "K",
+        "title": "Athlete pay, May 2025"
+      }
+    },
+    {
+      "narration": "But the top? Ronaldo made 300 million in one year.",
+      "visual": {
+        "type": "image",
+        "image": "mid",
+        "overlay": "$300 MILLION",
+        "overlay_sub": "the very top, Forbes 2026"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "BLS OEWS via api.bls.gov: Athletes and sports competitors 27-2021, annual median wage, May 2025",
+      "url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000027202113"
+    },
+    {
+      "title": "BLS OEWS via api.bls.gov: Athletes and sports competitors, 10th percentile",
+      "url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000027202111"
+    },
+    {
+      "title": "BLS OEWS via api.bls.gov: Athletes and sports competitors, 90th percentile",
+      "url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000027202115"
+    },
+    {
+      "title": "BLS OEWS via api.bls.gov: Athletes and sports competitors, employment",
+      "url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000027202101"
+    },
+    {
+      "title": "Wikipedia: Forbes list of the world's highest-paid athletes",
+      "url": "https://en.wikipedia.org/wiki/Forbes_list_of_the_world%27s_highest-paid_athletes"
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "id": "059",
+  "slug": "careers-firefighters",
+  "company": "Firefighters",
+  "format": "careers",
+  "visual_style": "charts3d",
+  "hook_style": "surprise",
+  "title_style": "number",
+  "theme": "clean_navy",
+  "status": "ready",
+  "score": 87,
+  "title": "54% of US Firefighters Are Volunteers",
+  "description": "Who fights the fires in your town? Maybe a volunteer.\n\nSources:\n- BLS OEWS via api.bls.gov: Firefighters 33-2011, annual median wage, May 2025: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000033201113\n- BLS OEWS via api.bls.gov: Firefighters, 10th percentile: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000033201111\n- BLS OEWS via api.bls.gov: Firefighters, 90th percentile: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000033201115\n- BLS OEWS via api.bls.gov: Firefighters, employment: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000033201101\n- Wikipedia: Volunteer fire department: https://en.wikipedia.org/wiki/Volunteer_fire_department\n- Wikipedia: Firefighting in the United States: https://en.wikipedia.org/wiki/Firefighting_in_the_United_States\n\nNFPA (cited on Wikipedia): 54 percent of US firefighters are volunteers. US Department of Labor: volunteers get no pay or nominal fees up to 20% of a full-time firefighter's pay (Wikipedia). 95% of volunteer firefighters serve departments protecting fewer than 25,000 people (Wikipedia). BLS May 2025 (OEWS), paid firefighters: 345,990 jobs; median $59,280; 10th percentile $34,910; 90th percentile $101,040. Median = half earn more, half earn less. Not financial advice.\n\n#shorts #firefighter #careers #howtheymakemoney",
+  "tags": [
+    "firefighter",
+    "careers",
+    "fire department",
+    "shorts"
+  ],
+  "images": {
+    "hook": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: a friendly adult volunteer firefighter in plain tan turnout gear standing beside a red fire truck outside a small-town fire station at sunset, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261107_210648_916189b4-0b0a-49a4-9a68-88a615e39883.png"
+    },
+    "mid": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: a group of adult volunteers in plain turnout gear training with a fire hose in a small parking lot, a fire station behind them, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261107_210647_2d2fd812-46f7-4165-bd06-dbfdd2459629.png"
+    },
+    "broll1": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: a small brick fire station with its garage door open and a red fire engine inside, quiet main street at dusk, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261107_210647_7bd9a610-9c3f-418d-8a7b-3c9df321f840.png"
+    },
+    "broll2": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: a firefighter helmet and gloves resting on a wooden bench inside a fire station, soft light from a window, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261107_210647_025284ea-b07e-435e-b88c-d9d9ca607c08.png"
+    }
+  },
+  "loop": "So next time you hear a siren, ask yourself:",
+  "cta": "Fire truck or ambulance? Comment your pick.",
+  "cta_question": "Fire truck or ambulance?",
+  "scenes": [
+    {
+      "narration": "Who fights the fires in your town? Maybe a volunteer.",
+      "visual": {
+        "type": "image",
+        "image": "hook",
+        "overlay": "A VOLUNTEER?",
+        "overlay_sub": "who fights your fires"
+      }
+    },
+    {
+      "narration": "Turns out, 54 percent of US firefighters are volunteers.",
+      "visual": {
+        "type": "donut",
+        "value": 54,
+        "label": "US firefighters who are volunteers (NFPA)"
+      }
+    },
+    {
+      "narration": "Their pay? Often nothing. Or just a small fee.",
+      "visual": {
+        "type": "image",
+        "image": "mid",
+        "overlay": "NO PAYCHECK",
+        "overlay_sub": "or a small fee"
+      }
+    },
+    {
+      "narration": "Most serve small towns. Still, they show up.",
+      "visual": {
+        "type": "text",
+        "text": "95% in small towns",
+        "sub": "towns under 25,000 people"
+      }
+    },
+    {
+      "narration": "Only the paid ones get a salary. A median of 59,280 dollars.",
+      "visual": {
+        "type": "bars",
+        "items": [
+          {
+            "label": "Low 10%",
+            "value": 34.9
+          },
+          {
+            "label": "Median",
+            "value": 59.3
+          },
+          {
+            "label": "Top 10%",
+            "value": 101.0
+          }
+        ],
+        "prefix": "$",
+        "suffix": "K",
+        "title": "Paid firefighter pay, May 2025"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "BLS OEWS via api.bls.gov: Firefighters 33-2011, annual median wage, May 2025",
+      "url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000033201113"
+    },
+    {
+      "title": "BLS OEWS via api.bls.gov: Firefighters, 10th percentile",
+      "url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000033201111"
+    },
+    {
+      "title": "BLS OEWS via api.bls.gov: Firefighters, 90th percentile",
+      "url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000033201115"
+    },
+    {
+      "title": "BLS OEWS via api.bls.gov: Firefighters, employment",
+      "url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000033201101"
+    },
+    {
+      "title": "Wikipedia: Volunteer fire department",
+      "url": "https://en.wikipedia.org/wiki/Volunteer_fire_department"
+    },
+    {
+      "title": "Wikipedia: Firefighting in the United States",
+      "url": "https://en.wikipedia.org/wiki/Firefighting_in_the_United_States"
+    }
+  ]
+}

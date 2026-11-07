@@ -1,0 +1,124 @@
+{
+  "id": "062",
+  "slug": "how-hp-ink",
+  "company": "HP",
+  "format": "how",
+  "visual_style": "charts3d",
+  "hook_style": "surprise",
+  "title_style": "statement",
+  "theme": "dark_neon",
+  "status": "ready",
+  "score": 88,
+  "title": "HP Sold $10.9 Billion of Ink and Toner",
+  "description": "Your printer was cheap. So why does HP love it?\n\nSources:\n- HP Inc.: Fiscal 2025 full year and fourth quarter results (PDF): https://s203.q4cdn.com/918857832/files/doc_financials/2025/q4/Q425_HP-Inc-Earnings-Press-Release.pdf\n- HP newsroom: HP Inc. reports fiscal 2025 results: https://www.hp.com/us-en/newsroom/press-releases/2025/hp-inc-reports-fiscal-2025-full-year-and-fourth-quarter-results.html\n- Wikipedia: Ink cartridge: https://en.wikipedia.org/wiki/Ink_cartridge\n\nHP Inc. fiscal 2025 (year ended Oct 31 2025), from its earnings release: Supplies net revenue $10,916 million; Commercial Printing $4,633 million and Consumer Printing $1,153 million (printer hardware, about $5.8 billion together); Printing segment earnings from operations $3,118 million vs Personal Systems (PCs) $2,054 million on $38,532 million of revenue. Wikipedia (Ink cartridge): a study by the UK consumer group Which? found some manufacturers' ink can cost more than champagne; printer makers use a razor-and-blades model. Not financial advice.\n\n#shorts #hp #printers #howtheymakemoney",
+  "tags": [
+    "hp",
+    "printers",
+    "business",
+    "shorts"
+  ],
+  "images": {
+    "hook": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: a teenager at a desk at home staring at a small white printer blinking a low-ink light, a stack of homework pages beside it, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261107_210724_992afc7b-1b24-45bb-9544-6e2fe5b53199.png"
+    },
+    "mid": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: a person at a store shelf comparing a tiny ink cartridge in one hand and a fancy bottle of sparkling cider in the other, surprised face, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261107_210724_c5c33c69-01a7-443d-aa34-8cfcfa5a41eb.png"
+    },
+    "broll1": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: rows of small blank ink cartridges glowing in cyan, magenta, yellow and black on a dark reflective surface, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261107_210724_2e39c726-4bc5-4819-81e2-b168e1124f0a.png"
+    },
+    "broll2": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: an office worker pulling freshly printed colorful pages from a printer tray in a bright modern office, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261107_210728_e5e6358f-a6d2-467d-b8de-412b44a8258f.png"
+    }
+  },
+  "loop": "So next time your printer says low ink, ask yourself:",
+  "cta": "Print at home or at school? Comment your pick.",
+  "cta_question": "Home or school printer?",
+  "scenes": [
+    {
+      "narration": "Your printer was cheap. So why does HP love it?",
+      "visual": {
+        "type": "image",
+        "image": "hook",
+        "overlay": "CHEAP PRINTER?",
+        "overlay_sub": "here's the catch"
+      }
+    },
+    {
+      "narration": "But the ink is the business. Ink and toner sales? 10.9 billion dollars.",
+      "visual": {
+        "type": "stat",
+        "value": 10.9,
+        "prefix": "$",
+        "suffix": "B",
+        "decimals": 1,
+        "label": "HP supplies revenue, fiscal 2025"
+      }
+    },
+    {
+      "narration": "The printers themselves? Only about 5.8 billion.",
+      "visual": {
+        "type": "bars",
+        "items": [
+          {
+            "label": "Ink & toner",
+            "value": 10.9
+          },
+          {
+            "label": "Printers",
+            "value": 5.8
+          }
+        ],
+        "prefix": "$",
+        "suffix": "B",
+        "title": "HP printing sales, fiscal 2025"
+      }
+    },
+    {
+      "narration": "Actually, one study found some ink costs more than champagne.",
+      "visual": {
+        "type": "image",
+        "image": "mid",
+        "overlay": "PRICIER THAN CHAMPAGNE",
+        "overlay_sub": "Which? study"
+      }
+    },
+    {
+      "narration": "Then the flip. Printing earned 3.1 billion. PCs, just 2.1 billion.",
+      "visual": {
+        "type": "bars",
+        "items": [
+          {
+            "label": "Printing",
+            "value": 3.1
+          },
+          {
+            "label": "PCs",
+            "value": 2.1
+          }
+        ],
+        "prefix": "$",
+        "suffix": "B",
+        "title": "HP segment earnings, fiscal 2025"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "HP Inc.: Fiscal 2025 full year and fourth quarter results (PDF)",
+      "url": "https://s203.q4cdn.com/918857832/files/doc_financials/2025/q4/Q425_HP-Inc-Earnings-Press-Release.pdf"
+    },
+    {
+      "title": "HP newsroom: HP Inc. reports fiscal 2025 results",
+      "url": "https://www.hp.com/us-en/newsroom/press-releases/2025/hp-inc-reports-fiscal-2025-full-year-and-fourth-quarter-results.html"
+    },
+    {
+      "title": "Wikipedia: Ink cartridge",
+      "url": "https://en.wikipedia.org/wiki/Ink_cartridge"
+    }
+  ]
+}
