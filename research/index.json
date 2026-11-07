@@ -610,5 +610,68 @@
     "status": 200,
     "final_url": "https://commons.wikimedia.org/w/api.php?action=query&list=search&srnamespace=6&srlimit=8&format=json&srsearch=Disney%20Burbank%20headquarters",
     "content_type": "application/json; charset=utf-8"
+  },
+  "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000013101113": {
+    "file": "pages/a7e2c7cd7a22.txt",
+    "fetched_at": "2026-11-07T20:52:30.392954+00:00",
+    "ok": true,
+    "chars": 374,
+    "status": 200,
+    "final_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000013101113",
+    "content_type": "application/json"
+  },
+  "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000013101111": {
+    "file": "pages/e71171378a45.txt",
+    "fetched_at": "2026-11-07T20:52:31.207199+00:00",
+    "ok": true,
+    "chars": 374,
+    "status": 200,
+    "final_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000013101111",
+    "content_type": "application/json"
+  },
+  "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000013101115": {
+    "file": "pages/892b0f555c23.txt",
+    "fetched_at": "2026-11-07T20:52:31.683700+00:00",
+    "ok": true,
+    "chars": 375,
+    "status": 200,
+    "final_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000013101115",
+    "content_type": "application/json"
+  },
+  "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000013101101": {
+    "file": "pages/5e8801a77c37.txt",
+    "fetched_at": "2026-11-07T20:52:32.138505+00:00",
+    "ok": true,
+    "chars": 374,
+    "status": 200,
+    "final_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000013101101",
+    "content_type": "application/json"
+  },
+  "https://en.wikipedia.org/wiki/Sports_agent": {
+    "file": "pages/a76c479291f0.txt",
+    "fetched_at": "2026-11-07T20:52:32.585462+00:00",
+    "ok": true,
+    "chars": 34215,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Sports_agent",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Stephen_Curry": {
+    "file": "pages/13ad7e65ea93.txt",
+    "fetched_at": "2026-11-07T20:52:33.300139+00:00",
+    "ok": true,
+    "chars": 220601,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Stephen_Curry",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Curry_Brand": {
+    "file": "pages/e1d9105ef106.txt",
+    "fetched_at": "2026-11-07T20:52:33.932693+00:00",
+    "ok": true,
+    "chars": 11409,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Curry_Brand",
+    "content_type": "text/html; charset=UTF-8"
   }
 }
