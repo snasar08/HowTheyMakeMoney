@@ -543,6 +543,8 @@ class Renderer:
             # the very first frame already shows the hook in full: viewers decide in ~1 s
             opener = sc.visual is self.s["scenes"][0]["visual"]
             pop = 1.0 if opener else ease_out_back(t / 0.3)
+            if opener:  # Nov 7: frame 0 is the cover, so it reads like a thumbnail even when tiny
+                return self._cover_text(frame, big, sub)
             f = fit_font(big, BLACK, SAFE_X1 - SAFE_X0, 150, 70)
             if pop < 1.0:
                 f = font(BLACK, max(20, int(f.size * (0.6 + 0.4 * pop))))
@@ -551,6 +553,33 @@ class Renderer:
             if sub and (opener or t > 0.2):
                 fs = fit_font(sub, SEMI, SAFE_X1 - SAFE_X0, 58, 36)
                 draw_centered(d, (SAFE_X0 + SAFE_X1) / 2, 380 + f.size + 26, sub, fs, (255, 255, 255), 4, (0, 0, 0))
+        return frame
+
+    def _cover_text(self, frame, big, sub):
+        """Cover frame: dark band, the overlay in up to 2 huge lines, the question under it."""
+        if getattr(self, "_band", None) is None:
+            a = np.zeros((H, 1), np.float32)
+            y = np.arange(H)
+            a[:, 0] = np.clip(1 - np.abs(y - 760) / 520, 0, 1) ** 0.8 * 190
+            self._band = Image.fromarray(np.repeat(a, W, 1).astype(np.uint8), "L")
+        frame.paste((0, 0, 0), (0, 0), self._band)
+        d = ImageDraw.Draw(frame)
+        cx, wmax = (SAFE_X0 + SAFE_X1) / 2, SAFE_X1 - SAFE_X0
+        words = big.split()
+        lines = [big]
+        if len(words) > 1 and fit_font(big, BLACK, wmax, 220, 60).size < 170:
+            cut = min(range(1, len(words)), key=lambda i: abs(len(" ".join(words[:i])) - len(" ".join(words[i:]))))
+            lines = [" ".join(words[:cut]), " ".join(words[cut:])]
+        size = min(fit_font(x, BLACK, wmax, 220, 60).size for x in lines)
+        f = font(BLACK, size)
+        col = self.theme["accent"] if self.s.get("theme") != "clean_navy" else (255, 255, 255)
+        y = 760 - (len(lines) * size * 1.05 + (90 if sub else 0)) / 2
+        for line in lines:
+            draw_centered(d, cx, y, line, f, col, 9, (0, 0, 0))
+            y += size * 1.05
+        if sub:
+            fs = fit_font(sub, SEMI, wmax, 74, 40)
+            draw_centered(d, cx, y + 24, sub, fs, (255, 255, 255), 5, (0, 0, 0))
         return frame
 
     def shot_figure(self, sc: Scene, key, variant, t, p):
