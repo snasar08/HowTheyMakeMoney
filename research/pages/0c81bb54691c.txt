@@ -1,0 +1,1550 @@
+URL: https://en.wikipedia.org/wiki/Fortnite
+FINAL_URL: https://en.wikipedia.org/wiki/Fortnite
+FETCHED: 2026-11-07T20:48:31.117751+00:00
+
+Jump to content
+
+Main menu
+
+Main menu
+
+ move to sidebar
+ hide
+
+ Navigation
+
+Main page
+
+Contents
+
+Current events
+
+Random article
+
+About Wikipedia
+
+Contact us
+
+ Contribute
+
+Help
+
+Learn to edit
+
+Community portal
+
+Recent changes
+
+Upload file
+
+Special pages
+
+Search
+
+ Search
+
+Appearance
+
+Donate
+
+Create account
+
+Log in
+
+Personal tools
+
+Donate
+
+Create account
+
+Log in
+
+Contents
+
+ move to sidebar
+ hide
+
+(Top)
+
+ 1
+ Game modes
+
+ Toggle Game modes subsection
+
+ 1.1
+ V-Bucks
+
+ 2
+ Development history
+
+ Toggle Development history subsection
+
+ 2.1
+ Fortnite: Save the World (2011–2017)
+
+ 2.2
+ Fortnite Battle Royale (2017–2018)
+
+ 2.3
+ Fortnite Creative (2018–2023)
+
+ 2.4
+ Fortnite Experiences (2023–present)
+
+ 3
+ Reception
+
+ Toggle Reception subsection
+
+ 3.1
+ Awards
+
+ 4
+ Notes
+
+ 5
+ References
+
+ 6
+ External links
+
+Toggle the table of contents
+
+Fortnite
+
+69 languages
+
+አማርኛ
+
+Aragonés
+
+العربية
+
+مصرى
+
+অসমীয়া
+
+Asturianu
+
+Български
+
+বাংলা
+
+Brezhoneg
+
+Bosanski
+
+Català
+
+کوردی
+
+Čeština
+
+Cymraeg
+
+Dansk
+
+Deutsch
+
+Ελληνικά
+
+Esperanto
+
+Español
+
+Eesti
+
+Euskara
+
+فارسی
+
+Suomi
+
+Français
+
+Gaeilge
+
+Galego
+
+עברית
+
+हिन्दी
+
+Hrvatski
+
+Magyar
+
+Հայերեն
+
+Bahasa Indonesia
+
+Íslenska
+
+Italiano
+
+日本語
+
+한국어
+
+Ladin
+
+Lietuvių
+
+Latviešu
+
+Македонски
+
+Bahasa Melayu
+
+Nedersaksies
+
+Nederlands
+
+Norsk nynorsk
+
+Norsk bokmål
+
+Polski
+
+Português
+
+Runa Simi
+
+Română
+
+Русский
+
+Саха тыла
+
+Srpskohrvatski / српскохрватски
+
+Simple English
+
+Slovenčina
+
+Slovenščina
+
+Shqip
+
+Српски / srpski
+
+Svenska
+
+Kiswahili
+
+ไทย
+
+Türkçe
+
+ChiTumbuka
+
+Українська
+
+Tiếng Việt
+
+吴语
+
+IsiXhosa
+
+粵語
+
+中文
+
+IsiZulu
+
+Edit links
+
+Article
+
+Talk
+
+ English
+
+Read
+
+View source
+
+View history
+
+Save
+
+Tools
+
+Tools
+
+ move to sidebar
+ hide
+
+ Actions
+
+Read
+
+View source
+
+View history
+
+Save
+
+ General
+
+What links here
+
+Related changes
+
+Upload file
+
+Permanent link
+
+Page information
+
+Cite this page
+
+Get shortened URL
+
+Switch to legacy parser
+
+ Print/export
+
+Download as PDF
+
+Printable version
+
+ In other projects
+
+Wikimedia Commons
+
+Wikidata item
+
+Appearance
+
+ move to sidebar
+ hide
+
+From Wikipedia, the free encyclopedia
+
+2017 video game
+
+Not to be confused with Fortinet or Fortnight.
+
+For the competitive game mode of Fortnite, see Fortnite Battle Royale.
+
+Video game series
+
+ | Fortnite
+
+ | 
+The logo of Fortnite since 2019
+
+ | Genres | Survival, battle royale, sandbox
+
+ | Developer | Epic Games[a]
+
+ | Publisher | 
+
+Epic Games[b]
+
+ | Platforms | 
+
+macOS[c]
+
+Windows
+
+PlayStation 4
+
+Xbox One
+
+iOS[c]
+
+Nintendo Switch
+
+Android[c]
+
+Xbox Series X/S
+
+PlayStation 5
+
+Nintendo Switch 2
+
+ | First release | Fortnite Save the World
+
+July 25, 2017 (early access)
+
+ | Latest release | Fortnite Ballistic
+
+December 11, 2024 (early access)
+
+Fortnite is a 2017 online video game and game platform developed and released by Epic Games. It is available in seven distinct game mode versions that otherwise share the same general gameplay and game engine: Fortnite Battle Royale, a battle royale game in which up to 100 players fight to be the last person standing; Fortnite Save the World, a cooperative hybrid tower defense-shooter and survival game in which up to four players fight off zombie-like creatures and defend objects with traps and fortifications they can build; Fortnite Creative, in which players are given complete freedom to create worlds and battle arenas; Lego Fortnite, an open world game collection divided between survival game Lego Fortnite Odyssey and social game Lego Fortnite Brick Life; Fortnite Festival, a rhythm game; Rocket Racing (2023–2026), a racing game; Fortnite Ballistic (2024–2026), a tactical first-person shooter. All game modes are free-to-play.
+
+Save the World and Battle Royale were released in 2017 as early access titles, while Creative was released on December 6, 2018. While Save the World and Creative versions have been successful for Epic Games, Fortnite Battle Royale in particular became an overwhelming success and a cultural phenomenon, drawing more than 125 million players in less than a year and earning hundreds of millions of dollars per month. Fortnite as a whole generated $9 billion in gross revenue up until December 2019, making it one of the highest-grossing media franchises of all time. Since its release, Fortnite has been listed among the greatest video games of all time.
+
+Save the World is available for macOS,[c] PlayStation 4, Windows, and Xbox One, while Battle Royale and Creative were released for all those platforms as well as Android and iOS devices[c] and Nintendo Switch. The game also launched with the release of the ninth-generation PlayStation 5, Xbox Series X/S, and Nintendo Switch 2 consoles. Furthermore, Lego Fortnite, Rocket Racing, Fortnite Festival, and Fortnite Ballistic are available on all platforms. Most game modes support cross-platform play between the various supported devices.
+
+Battle Royale has had 42 continuous seasons and 7 "Chapters" in its lifetime as of November 2026 and is currently in Chapter 7: Mini-Season.
+
+Game modes
+
+Fortnite has multiple game modes, using the same engine; each has similar graphics and art assets. Five of these modes are directly created and managed by Epic Games and its subsidiaries:
+
+Fortnite: Save the World is a player-versus-environment cooperative game, with four players collaborating towards a common objective on various missions while avoiding the effects of an encroaching cataclysmic storm. The players take the role of commanders of home base shelters, collecting resources, saving survivors, and defending equipment that helps to either collect data on the storm or push back the storm. From missions, players are awarded several in-game items, which include hero characters, weapon and trap schematics, and survivors, all of which can be leveled up through gained experience to improve their attributes.
+
+Fortnite Battle Royale is a player-versus-player game for up to 100 players, allowing one to play alone, in a duo, or in a squad (usually comprising three or four players). Weaponless players airdrop from a "Battle Bus" that crosses the game's map, and then scavenge for weapons, items, and resources while trying to stay alive and to attack and eliminate other players. Over the course of a round, the safe area of the map shrinks in size due to an incoming storm; players outside that threshold take damage and can be eliminated if they fail to quickly evacuate. This forces remaining players into tighter spaces and encourages player encounters until the last player or team is alive. Players can also select Zero Build, a mode that removes building. Alongside these are Ranked options and other modes such as Reload, a 40-player mode which allows players to respawn after dying for a set amount of time on a smaller map, OG, which reintroduces the Chapter 1 map and weapons, and Blitz Royale, a tightly paced, 32-player mode that usually lasts five minutes. Furthermore, "Party Royale" serves as a social space, which hosts various concert events.
+
+Lego Fortnite is a platform for Lego-based games. The platform originally included four games, however, it now features only two primary games. Odyssey is a survival sandbox game where players play as Lego Minifig versions of characters, as they collect materials, build various buildings, craft various weapons and tools and fight against monsters. Brick Life is a social-based game designed as an age-appropriate Grand Theft Auto game.[9] Lastly, Lego Expeditions was a co-operation action-adventure mode where up to four players can select characters from different hero classes and customize tools and weapons to defeat enemies or complete puzzles. LEGO Fortnite: Expeditions was removed and merged into Lego Fortnite: Odyssey on November 1, 2025.[10] There was also LEGO Fortnite, which was a normal version that released on December 7th, 2023 and got merged with LEGO Fortnite: Expeditions on June 18th, 2025.
+
+Rocket Racing was a racing game developed by Psyonix and serving as a spin-off title to Rocket League. Players race vehicles, gaining speed boosts from special lane sections or by drifting, as well as the ability to jump and race on vertical and inverted surfaces, while avoiding obstacles on the course. It was removed on October 1, 2026.
+
+Fortnite Festival is a rhythm game developed by Harmonix, comprising three modes. In the "Main Stage", players play popular hit songs and original tracks created by Harmonix and the Epic Games Sound Team, hitting notes to the rhythm in the Main Stage on one of the four unique parts: Lead, Guitar/Bass, Drums and Vocals, like Harmonix's Rock Band games, while the "Battle Stage" pits sixteen players to get the highest score and survive each round until one player remains.[11] In the "Jam Stage", players cooperate to make remixes, similar to Harmonix's Dropmix and Fuser, using any part of any song within Festival mode, which is also usable in Save the World, Battle Royale, Creative, and Unreal Editor for Fortnite (UEFN). The "Battle Stage" mode was removed on April 16, 2026.
+
+Fortnite Ballistic was a five-on-five, round-based tactical shooter, comparable to Counter-Strike and Valorant, launched in early access on December 11, 2024. One team must plant and protect a rift device while it is charging from the opposing team that seeks to eliminate them and disarm the device. Between rounds, players can buy in-game weapons and gear with currency earned in previous rounds. Ballistic is the first Epic-developed game on the Fortnite platform to directly support a first-person view.[12] It was removed on April 16, 2026.
+
+Besides these modes, Fortnite offers the sandbox mode, Fortnite Creative. Within this mode, players are given complete freedom to spawn any item from the Battle Royale game mode on a custom island, and can create games such as battle arenas, race courses, platforming challenges, and more. Furthermore, it also supports Unreal Editor for Fortnite (UEFN), which allows players to edit worlds using Fortnite assets. Creative and UEFN also allow players to create custom Fall Guys and Teenage Mutant Ninja Turtles games, which can be accessible within the Fortnite launcher.
+
+All modes of Fortnite are cross-platform play compatible, requiring users to use an Epic Games account for cross-saving between platforms.[13]
+
+V-Bucks
+
+All modes are free-to-play; Save the World was pay-to-play until April 2026.[14] The games are monetized through the use of V-Bucks, in-game currency that can be purchased with real-world funds, but also earned through completing missions and other achievements in Save the World.[15] In other modes, V-Bucks can be used to buy cosmetic items such as character models, emotes, or the game's battle pass, a tiered progression of customization rewards for gaining experience and completing certain objectives during a Battle Royale season.[16][17] The battle pass originally was aimed to support Fortnite Battle Royale, and with the expansion of game modes in 2023, two additional passes were added: the Festival Pass for Fortnite Festival and the Lego Pass for Lego Fortnite, each of which required progression in those modes to receive rewards. In November and December 2024, Epic changed these mechanics, allowing both passes to be progressed through experience points earned in any Fortnite game mode, as well as renaming the Festival Pass to Music Pass. Similarly, the Fortnite Crew, a monthly subscription that paid for the cost of the main battle pass and additional cosmetics, was expanded during the same time to encompass the Music and Lego passes.
+
+At launch, the cost for V-Bucks was about 1000 V-Bucks for US$10, though they are discounted in larger V-Buck bundles. The battle pass, when first introduced, also cost 1000 V-Bucks, and included the ability to reclaim the V-Buck cost along with a smaller amount of V-Bucks.[18] In 2020, Epic reduced the cost of V-Bucks purchases directly in-game or via Epic's website by 20% ($7.99 for 1000 V-Bucks), while still charging $10 for 1000 V-Bucks to both the Google Play Store and Apple App Store, as Epic argued the 30% revenue cut both Google and Apple took from such purchases was excessive. These changes led to two lawsuits, Epic Games v. Google and Epic Games v. Apple, both challenging the respective app store policies and revenue cut.[19] In the case of the Apple suit, Epic was able to secure a ruling requiring Apple to allow in-app steering of users to make purchases through third-party storefronts, like Epic's,[20] while in the Google suit, Epic reached a settlement to reduce the 30% revenue cut on the Play Store.[21]
+
+Epic has since raised the price of V-Bucks twice. The price was increased by about 12.5% in 2023 to offset inflation, with 1000 V-Bucks now costing $8.99 when purchased through Epic's storefront.[22] The second increase in March 2026 was about a 20% increase in cost, with 800 V-Bucks now costing $10. Battle pass costs were also changed to remain at 800 V-Bucks, but contained only just enough V-Buck rewards to recover its cost. Epic claimed these increases were needed because operating costs for Fortnite had increased, and "frees up our teams to continue driving stories and building stuff you love".[23][24] A large number of players stated they would boycott Fortnite as a result of this increase.[24]
+
+Development history
+
+Fortnite: Save the World (2011–2017)
+
+Main article: Fortnite: Save the World § Development
+
+Fortnite began from an internal game jam at Epic Games following the publishing of Gears of War 3 around 2011. Though it was not initially one of the developed titles during the jam, the concept of merging the construction game genre, representing games like Minecraft and Terraria, and shooter games arose, leading to the foundation of Fortnite.[25][26] Development of Fortnite slowed due to several issues, including switching from Unreal Engine 3 to Unreal Engine 4, a deeper role-playing game approach to extend the life of the game, and a switch of art style from a dark theme to a more cartoonish style. Further, Epic was looking to get into the games as a service model, and brought in Chinese publisher Tencent to help; Tencent took a large stake in Epic as part of this, leading to the departure of several executives, including Cliff Bleszinski, who had been a key part of Fortnite's development. Fortnite's approach was changed to be Epic's testbed for games as a service, and further slowed the development.[27][26][28]
+
+Epic prepared to release Fortnite as a paid early access title in July 2017, with plans to release it as free-to-play in 2019 while gaining feedback from players to improve the game.[29][30][31][32] With the release of Fortnite Battle Royale, the player-versus-environment mode was distinguished as "Save the World". Ultimately, Epic opted to release Save the World as a premium title, bringing it out of early access on June 29, 2020.[33] Later, Epic announced that Save the World would become free-to-play for most console and computer versions in April 2026.[34]
+
+Fortnite Battle Royale (2017–2018)
+
+Main article: Fortnite Battle Royale § Development
+
+Near the same time that Epic released Fortnite into early access, PlayerUnknown's Battlegrounds had become a worldwide phenomenon, having sold over 5 million copies three months from its March 2017 release and drawing strong interest in the battle royale genre. Epic recognized that with the Fortnite base game, they could also do a battle royale mode, and rapidly developed their own version atop Fortnite in about two months.[35] By September 2017, Epic was ready to release this as a second mode from "Save the World" in the paid-for early access but then later released it as a free game, Fortnite Battle Royale, supported with microtransactions. This version quickly gained players, with over 10 million players during its first two weeks of release, and led Epic to create separate teams to continue the Fortnite Battle Royale development apart from the Save the World version, outside of common engine elements and art assets.[36][37] This allowed Fortnite Battle Royale to expand to other platforms otherwise not supported by Save the World, including iOS, Android mobile devices, Nintendo Switch, and Nintendo Switch 2.[38][39]
+
+Fortnite Creative (2018–2023)
+
+Main article: Fortnite Creative § Development
+
+A creative sandbox mode launched on December 6, 2018, synchronized with the start of season 7 of Fortnite Battle Royale. Each player has access to a private, persistent island on which they construct buildings and add and manipulate objects as desired. Players can invite friends to this island and take part in unofficial games such as race tracks or jumping courses.[40] Only players who purchased the battle pass initially received their own island, but a week later, on December 13, players who did not purchase it received access to the game mode for free.[41]
+
+Fortnite Experiences (2023–present)
+
+In March 2023, Epic released the Unreal Editor for Fortnite (UEFN), a standalone editor for Windows. UEFN allows creators to use the Unreal Editor with features of Unreal Engine 5 and Fortnite assets in developing new modes within the Fortnite Creative mode; this mode was called "Creative 2.0".[42]
+
+In October 2023, Epic redesigned the main Fortnite client to present Epic's own various modes as well as the many creative modes as part of Fortnite Experiences, comparable to Roblox in presentation.[43] This was followed by introducing three new Epic-developed modes for the game in December 2023: Lego Fortnite, a survival game developed with The Lego Group, Rocket Racing, an arcade-style driving game developed by Psyonix, and Fortnite Festival, a rhythm game developed by Harmonix. Each mode was introduced as free-to-play, interfacing with the game's battle pass system and offering new rewards associated with those modes.[44] One recent Epic experience features music by Daft Punk.[45]
+
+Many improvements in UEFN were announced in March 2024, including the addition of Unreal Engine's MetaHuman character rendering technology, and more assets from Lego, Rocket Racing, and Fall Guys. Epic also stated their intent to have future Fortnite Battle Royale seasons starting in late 2025 to be developed in UEFN.[46]
+
+As part of releasing a beta for the Epic Games Launcher in October 2026, Epic said that a native Linux version of Fortnite, including the Easy Anti-cheat protection, is being developed.[47]
+
+Reception
+
+See also: Fortnite: Save the World § Reception, Fortnite Battle Royale § Reception and legacy, and Fortnite Creative § Reception
+
+The Fortnite Pro-Am event at E3 2018
+
+The Save the World mode achieved over one million players by August 2017, just before the release of Battle Royale.[48]
+
+Fortnite Battle Royale became a significant financial success for Epic Games, leading them to separate the teams between Save the World and Battle Royale to provide better support for both modes. Within two weeks of release, over 10 million players had played the mode,[49] and by June 2018, just after the Nintendo Switch release, had reached 125 million players.[50] Revenue from Fortnite Battle Royale during the first half of 2018 had been estimated in the hundreds of millions of dollars per month,[51][52] with total 2018 revenue estimated at $2.4 billion by analysis firm SuperData Research.[53] Total revenue for Fortnite reached more than $9 billion by the end of 2019.[54]
+
+Fortnite Battle Royale has also become a cultural phenomenon,[55] with several celebrities reporting they play the game, and athletes using Fortnite emotes as victory celebrations.[56] A notable streaming event in March 2018, with streamer Ninja playing Fortnite Battle Royale alongside Drake, Travis Scott, Kim DotCom, and Pittsburgh Steelers wide receiver JuJu Smith-Schuster, broke viewership records for Twitch to date, and led to Epic arranging a Fortnite Battle Royale pro–am with 50 pairs of streamers and professional players matched with celebrities at E3 2018 in June 2018.[57][58][59] Epic Games has developed organized esports competitions around Fortnite Battle Royale, such as the inaugural US$30 million Fortnite World Cup tournament that took place in July 2019[60][61] and the Fortnite Championship Series (FNCS), the latter of which would be organized by Epic Games in 2020 and 2021 before being organized by Blast ApS from 2022 onwards.
+
+See also: Fortnite Battle Royale § Parental concerns
+
+There has also been growing concern over Fortnite Battle Royale's draw toward young children, emphasized with the release of the mobile client. Parents and teachers had expressed concern that students are being distracted and drawn away from schoolwork due to playing Fortnite.[62] Concerns have also been raised about the impact that playing a game involving repeated depictions of gun violence may have on young children.[63][64]
+
+Awards
+
+In 2017, the game was nominated for "Best Co-op Game" by PC Gamer,[65] and for "Best Spectator Game" by IGN.[66] In 2018, the game won the award for Best Ongoing Game by PC Gamer[67] and IGN,[68] the latter of which nominated it for "Best Nintendo Switch Game", "Best Mobile Game", and "Best Action Game".[69][70][71]
+
+ | Year
+ | Award
+ | Category
+ | Result
+ | Ref(s).
+
+ | 2017
+ | The Game Awards 2017
+ | Best Multiplayer
+ | Nominated
+ | [72]
+
+ | 2018
+ | 16th Visual Effects Society Awards
+ | Outstanding Visual Effects in a Real-Time Project (A Hard Day's Night)
+ | Nominated
+ | [73][74]
+
+ | 21st Annual D.I.C.E. Awards
+ | Outstanding Achievement in Online Gameplay
+ | Nominated
+ | [75][76]
+
+ | SXSW Gaming Awards 2018
+ | Excellence in Multiplayer
+ | Nominated
+ | [77][78]
+
+ | Excellence in Gameplay
+ | Nominated
+
+ | 14th British Academy Games Awards
+ | Evolving Game
+ | Nominated
+ | [79][80]
+
+ | Multiplayer
+ | Nominated
+
+ | 2018 Webby Awards
+ | People's Voice Award for Best Multiplayer/Competitive Game
+ | Won
+ | [81]
+
+ | Game Critics Awards 2018
+ | Best Ongoing Game
+ | Won
+ | [82][83]
+
+ | Develop Awards
+ | Best Animation
+ | Nominated
+ | [84][85]
+
+ | Teen Choice Awards
+ | Choice Videogame
+ | Won
+ | [86][87]
+
+ | BBC Radio 1's Teen Awards
+ | Best Game (Fortnite Battle Royale)
+ | Won
+ | [88]
+
+ | Golden Joystick Awards 2018
+ | Best Competitive Game
+ | Won
+ | [89][90][91]
+
+ | Mobile Game of the Year
+ | Nominated
+
+ | Ultimate Game of the Year (Fortnite Battle Royale)
+ | Won
+
+ | The Game Awards 2018
+ | Best Multiplayer Game
+ | Won
+ | [92][93]
+
+ | Best Mobile Game
+ | Nominated
+
+ | Best Ongoing Game
+ | Won
+
+ | Best Esports Game
+ | Nominated
+
+ | Gamers' Choice Awards
+ | Fan Favorite Game
+ | Won
+ | [94]
+
+ | Fan Favorite Multiplayer Game
+ | Won
+
+ | Fan Favorite eSports Game
+ | Won
+
+ | Fan Favorite Battle Royale Game
+ | Won
+
+ | Fan Favorite eSports League Format (Community Skirmishes)
+ | Won
+
+ | 2019
+ | 22nd Annual D.I.C.E. Awards
+ | Online Game of the Year
+ | Won
+ | [95][96]
+
+ | 15th British Academy Games Awards
+ | Evolving Game
+ | Won
+ | [97][98]
+
+ | Mobile Game
+ | Nominated
+
+ | Famitsu Awards
+ | Excellence Prize
+ | Won
+ | [99]
+
+ | 2019 Webby Awards
+ | Best Multiplayer/Competitive Game
+ | Won
+ | [100]
+
+ | Game Critics Awards 2019
+ | Best Ongoing Game
+ | Nominated
+ | [101]
+
+ | Golden Joystick Awards 2019
+ | Still Playing
+ | Nominated
+ | [102][103]
+
+ | eSports Game of the Year
+ | Won
+
+ | The Game Awards 2019
+ | Best Ongoing Game
+ | Won
+ | [104][105]
+
+ | Best Community Support
+ | Nominated
+
+ | Best eSports Game
+ | Nominated
+
+ | Best eSports Event (Fortnite World Cup)
+ | Nominated
+
+ | 2020
+ | 16th British Academy Games Awards
+ | Evolving Game
+ | Nominated
+ | [106][107]
+
+ | 2020 Kids' Choice Awards
+ | Favorite Video Game
+ | Nominated
+ | [108]
+
+ | The Game Awards 2020
+ | Best Ongoing Game
+ | Nominated
+ | [109]
+
+ | Best Community Support
+ | Nominated
+
+ | Best eSports Game
+ | Nominated
+
+ | Best of Galaxy Store Awards
+ | Game of the Year 2020
+ | Won
+ | [110]
+
+ | 2021
+ | 2021 Kids' Choice Awards
+ | Favorite Video Game
+ | Nominated
+ | [111]
+
+ | 11th Streamy Awards
+ | Brand Engagement
+ | Won
+ | [112]
+
+ | 2022
+ | The Game Awards 2022
+ | Best Community Support
+ | Nominated
+ | [113]
+
+ | Best Ongoing Game
+ | Nominated
+
+ | 2023
+ | The Game Awards 2023
+ | Best Ongoing Game
+ | Nominated
+ | [114]
+
+ | 2024
+ | 20th British Academy Games Awards
+ | Evolving Game
+ | Nominated
+ | [115][116]
+
+ | EE Game of the Year
+ | Nominated
+
+ | Equinox Latam Game Awards
+ | Battle Royale
+ | Won
+ | [117][118]
+
+ | Ongoing Game
+ | Nominated
+
+ | The Game Awards 2024
+ | Best Ongoing Game
+ | Nominated
+ | [119]
+
+ | Best Community Support
+ | Nominated
+
+ | 2025
+ | The Game Awards 2025
+ | Best Ongoing Game
+ | Nominated
+ | [120]
+
+ | Best Community Support
+ | Nominated
+
+ | Golden Joystick Awards
+ | Still Playing Award - PC and Console
+ | Nominated
+ | [121]
+
+ | 2026
+ | The Streamer Awards 2026
+ | Stream Game of the Year
+ | Pending
+ | [122]
+
+Notes
+
+↑ Iron Galaxy co-developed the Xbox One and PlayStation 4 versions in Fortnite: Save the World. Psyonix developed Rocket Racing. Harmonix developed Fortnite Festival.
+
+↑ Gearbox Software published retail copies of Fortnite: Save the World for Xbox One and PlayStation 4 when the game was first released in July 2017. After the introduction of Battle Royale, Warner Bros. Games published retail copies for PlayStation, Xbox and Nintendo Switch consoles.[1]
+
+1 2 3 4 5 The iOS and Android clients of Fortnite Battle Royale were removed by Apple and Google respectively on August 13, 2020, as Epic had changed how one could buy V-bucks with the client, leading Epic to file a lawsuit against Apple. In subsequent actions, the courts ruled in April 2025 that Apple cannot block third-party storefronts or take fees from them, and Epic said that they plan to bring Fortnite back to iOS shortly after this ruling.[2][3] It was returned to the US storefront on May 20, 2025.[4] The iOS version returned for European users via the Epic Game Store following its launch in Europe on August 16, 2024, and it will be available in Brazil in July 2025 and in Japan and the United Kingdom, it is planned for launch in 2025 as well.[5][6] The macOS client of both Battle Royale and Save the World, while downloadable, will not be able to be updated as well due to app signing restrictions. See Epic Games v. Apple. The game remained playable if one had already downloaded it. On Android, while it is no longer available on Google Play, it remains available via the Samsung Galaxy Store on Samsung Galaxy devices as well as directly from the Epic Games App on all other Android devices. Since May 5, 2022, the game can also be played via Xbox Cloud Gaming and GeForce Now on Android, macOS, iOS and iPadOS devices.[7][8]
+
+References
+
+↑ Orland, Kyle (June 26, 2018). "Players paying up to $450 for disc-based copies of Fortnite". Ars Technica. Archived from the original on July 22, 2020. Retrieved July 22, 2020.
+
+↑ Peters, Jay (April 30, 2025). "A judge just blew up Apple's control of the App Store". The Verge. Retrieved April 30, 2025.
+
+↑ Leswing, Kif (April 30, 2025). "Court finds Apple, executive lied under oath in Epic Games trial". CNBC. Retrieved April 30, 2025.
+
+↑ Peters, Jay (May 20, 2025). "Fortnite is finally back on US iPhones". The Verge. Retrieved May 23, 2025.
+
+↑ Peters, Jay (March 10, 2025). "Fortnite is set to return to Brazilian iPhones / Apple may appeal last week's ruling that gave the company 90 days to allow side loading in Brazil". The Verge. Vox Media.
+
+↑ Chapple, Craig (May 28, 2024). "Epic Games Store coming to iOS in the UK in 2025". www.pocketgamer.biz. Retrieved April 8, 2025.
+
+↑ Lawler, Richard; Hollister, Sean (May 5, 2022). "Now you can play Fortnite on your iPhone or Android for free with Xbox Cloud Gaming". The Verge. Vox Media.
+
+↑ "System Requirements for Cloud Gaming". Nvidia. May 11, 2023.
+
+↑ Webster, Andrew (December 9, 2024). "Lego Fortnite is getting a big expansion with a GTA-style roleplaying city". The Verge. Retrieved January 29, 2025.
+
+↑ Owen, Phil (June 17, 2025). "Lego Fortnite Expeditions Is The Co-Op Action-Adventure Mode You've Been Waiting For". GameSpot. Retrieved June 17, 2025.
+
+↑ Webster, Andrew (December 9, 2023). "Fortnite Festival is Rock Band without the plastic instruments". The Verge. Retrieved December 9, 2023.
+
+↑ Peters, Jay (December 7, 2024). "Fortnite's new mode is an FPS that's a lot like Counter-Strike". The Verge. Retrieved December 7, 2024.
+
+↑ Wilson, Lian (February 19, 2024). "How to enable cross-platform Fortnite matches on all formats". GamesRadar. Retrieved February 24, 2024.
+
+↑ The Fortnite Team. "Fortnite Save the World Update State of Development". Epic Games. Archived from the original on June 30, 2020. Retrieved June 30, 2020.
+
+↑ "Fortnite V-Bucks to USD Calculator: Online Free Converter". WebToolApps. October 30, 2023.
+
+↑ Kim, Matt (March 1, 2018). "Fortnite's V-Bucks Currency is Another Battleground for a Community at Odds". USGamer. Archived from the original on March 23, 2018. Retrieved March 22, 2018.
+
+↑ Frushtick, Russ (March 16, 2018). "Should you spend money on Fortnite?". Polygon. Archived from the original on March 20, 2018. Retrieved March 20, 2018.
+
+↑ Kuchera, Ben (July 11, 2018). "Fortnite's Battle Pass lets you earn more currency than you spend on it". Polygon. Retrieved March 15, 2026.
+
+↑ "Fortnite: Epic Games sues Google and Apple over app store bans". BBC News. August 14, 2020. Retrieved March 15, 2026.
+
+↑ Allyn, Bobby (September 10, 2021). "What The Ruling In The Epic Games V. Apple Lawsuit Means For iPhone Users". NPR. Archived from the original on September 11, 2021. Retrieved September 11, 2021.
+
+↑ Whitwam, Ryan (March 4, 2026). "Google and Epic announce settlement to end app store antitrust case". Ars Technica. Retrieved March 13, 2026.
+
+↑ Webster, Andrew (September 27, 2023). "Fortnite V-bucks are about to get more expensive". The Verge. Retrieved March 15, 2026.
+
+↑ Peters, Jay (March 12, 2026). "Epic says its Fortnite V-bucks price hike is a 'direct correlation' to operating costs". The Verge. Retrieved March 15, 2026.
+
+1 2 Wolens, Joshua (March 13, 2026). "Fortnite players revolt over V-Bucks changes as Epic devs appeal for calm: 'Paying the bills frees up our teams to continue driving stories and building stuff you love'". PC Gamer. Retrieved March 15, 2026.
+
+↑ McWhertor, Michael (March 26, 2014). "What's the future of games at Epic Games?". Polygon. Archived from the original on June 27, 2017. Retrieved June 9, 2017.
+
+1 2 Inside the Development History of Fortnite. Game Informer. YouTube. April 25, 2014. Retrieved June 29, 2018.
+
+↑ Peel, Jeremy (June 8, 2017). "Why has Fortnite taken so long?". PCGamesN. Archived from the original on December 1, 2017. Retrieved November 29, 2017.
+
+↑ Robinson, Martin (August 11, 2017). "The big Cliff Bleszinski interview". Eurogamer. Archived from the original on December 1, 2017. Retrieved November 29, 2017.
+
+↑ Valdes, Giancarlo (March 22, 2018). "The Story Behind 'Fortnite's' Less Popular Mode". Glixel. Archived from the original on March 22, 2018. Retrieved March 22, 2018.
+
+↑ Hall, Charlie (June 8, 2017). "Fortnite announces early access release, hands-on the unfinished game". Polygon. Archived from the original on November 23, 2017. Retrieved June 8, 2017.
+
+↑ Nunneley, Stephany (July 21, 2017). "Fortnite Early Access has started for those who pre-ordered Founder's Packs". VG247. Archived from the original on August 2, 2017. Retrieved July 29, 2017.
+
+↑ Arif, Shabana (October 22, 2018). "Fortnite's Save the World free-to-play launch pushed back to next year at the earliest". VG247. Archived from the original on October 22, 2018. Retrieved October 22, 2018.
+
+↑ Fahey, Mike (June 30, 2020). "Fortnite Is Finally Out Of Early Access". Kotaku. Archived from the original on July 1, 2020. Retrieved June 30, 2020.
+
+↑ McWhertor, Michael (March 11, 2026). "Fortnite's long-forgotten original mode finally goes free to play". Polygon. Retrieved March 16, 2026.
+
+↑ Crecente, Brian (January 15, 2018). "'Fortnite: Battle Royale': The Evolution of World's Largest Battle Royale Game". Glixel. Archived from the original on January 27, 2018. Retrieved January 26, 2018.
+
+↑ Duggan, James (April 17, 2018). "How Fortnite Became the Biggest Game in the World". IGN (video). Archived from the original on April 18, 2018. Retrieved April 17, 2018.
+
+↑ Davenport, James (March 22, 2018). "Fortnite Battle Royale was developed in just two months, wasn't originally free-to-play". PC Gamer. Archived from the original on March 22, 2018. Retrieved March 22, 2018.
+
+↑ Hall, Charlie (April 2, 2018). "Fortnite now available for everyone on iOS". Polygon. Archived from the original on April 2, 2018. Retrieved April 2, 2018.
+
+↑ Kuchera, Ben (June 12, 2018). "Fortnite for Nintendo Switch is out today". Polygon. Archived from the original on June 14, 2018. Retrieved June 12, 2018.
+
+↑ Webster, Andrew (December 5, 2018). "Fortnite's Minecraft-like creative mode launches tomorrow". The Verge. Archived from the original on December 5, 2018. Retrieved December 5, 2018.
+
+↑ Crecente, Brian (December 5, 2018). "'Fortnite' Creative Mode Officially Detailed, Hits Dec. 6, Dec. 13". Variety. Archived from the original on November 8, 2020. Retrieved January 18, 2021.
+
+↑ Peters, Jay (March 16, 2023). "Epic's Unreal Editor for Fortnite is finally launching on March 22nd". The Verge. Retrieved March 23, 2024.
+
+↑ Peters, Jay (October 11, 2023). "Fortnite is pushing creator-made maps with a YouTube-like redesign". The Verge. Retrieved January 5, 2024.
+
+↑ Phillips, Tom (December 2, 2023). "Fortnite's The Big Bang event was a blast of marketing for the game's multi-genre future". Eurogamer. Retrieved January 5, 2024.
+
+↑ "Daft Punk Experience by Epic - Fortnite". Archived from the original on January 31, 2026. Retrieved September 29, 2025.
+
+↑ Kerr, Chris (March 20, 2024). "Unreal Engine blockbusters and UEFN tools take center stage at State of Unreal". Game Developer. Retrieved March 23, 2024.
+
+↑ Lee, Alexander (October 14, 2026). "Epic Games releases new launcher with a streamlined user experience and future Fortnite Linux compatibility". GamesBeat. Retrieved November 1, 2026.
+
+↑ Boyd, Jordan (August 19, 2017). "Fortnite Celebrates One Million Players; New Survival Mode Announced". Dualshockers. Archived from the original on August 19, 2017. Retrieved August 19, 2017.
+
+↑ Makuch, Eddie (October 12, 2017). "Fortnite: Battle Royale Has Hit 10 Million Players In Two Weeks". GameSpot. Archived from the original on February 6, 2018. Retrieved October 16, 2017.
+
+↑ Statt, Nick (June 12, 2018). "Fortnite now has 125 million players just one year after launch". The Verge. Archived from the original on June 13, 2018. Retrieved June 12, 2018.
+
+↑ Thier, Dave (May 24, 2018). "Report: 'Fortnite: Battle Royale' Made Nearly $300 Million Last Month". Forbes. Archived from the original on May 28, 2018. Retrieved June 4, 2018.
+
+↑ Molla, Rani (June 26, 2018). "Fortnite is generating more revenue than any other free game ever". Recode. Archived from the original on July 6, 2018. Retrieved July 5, 2018.
+
+↑ Handrahan, Matthew (January 16, 2019). "Fortnite tops SuperData's 2018 chart with $2.4 billion digital revenue". GamesIndustry.biz. Archived from the original on January 17, 2019. Retrieved January 16, 2019.
+
+↑ Clark, Mitchell (May 3, 2021). "Fortnite made more than $9 billion in revenue in its first two years". The Verge. Archived from the original on May 3, 2021. Retrieved May 3, 2021.
+
+↑ Park, Gene. "Fortnite was the biggest pop culture phenomenon of 2018". The Washington Post. ISSN 0190-8286. Archived from the original on May 3, 2019. Retrieved December 4, 2020.
+
+↑ "Celebrities Who Play Fortnite - Drake, Chance the Rapper and More!". Twin Galaxies. Archived from the original on March 18, 2018. Retrieved April 25, 2018.
+
+↑ Gill, Patrick; Grant, Christopher; Miller, Ross; Alexander, Julia (March 15, 2018). "Drake sets records with his Fortnite: Battle Royale Twitch debut". Polygon. Archived from the original on March 15, 2018. Retrieved March 15, 2018.
+
+↑ "'Fortnite' streamer breaks Twitch records with help from Drake". Engadget. Archived from the original on March 15, 2018. Retrieved March 16, 2018.
+
+↑ Davenport, James (June 13, 2018). "Fortnite Celebrity Pro-Am Twitch channel breaks 700,000 concurrent viewers". PC Gamer. Archived from the original on June 14, 2018. Retrieved June 13, 2018.
+
+↑ Goslin, Austen (June 12, 2018). "Epic announces the 2019 Fortnite World Cup event". Polygon. Archived from the original on June 13, 2018. Retrieved June 12, 2018.
+
+↑ Vincent, Brittany (July 16, 2019). "The next World Cup? Fortnite. Here's everything you need to know". NBC News. Archived from the original on July 17, 2019. Retrieved July 17, 2019.
+
+↑ Stewart, Keith (March 7, 2018). "Fortnite: a parents' guide to the most popular video game in schools". The Guardian. Archived from the original on June 30, 2018. Retrieved July 6, 2018.
+
+↑ "What should I know about Fortnite – is it ok for kids to play?". Center on Media and Child Health. May 22, 2018. Archived from the original on September 2, 2018. Retrieved September 2, 2018.
+
+↑ Griffin, Andrew (May 3, 2018). "Fortnite Could Endanger Children And Expose Them To Violence, NSPCC Claims". The Independent. Archived from the original on September 3, 2018. Retrieved September 2, 2018.
+
+↑ PC Gamer staff (December 8, 2017). "Games of the Year 2017: The nominees". PC Gamer. Archived from the original on January 6, 2018. Retrieved January 22, 2018.
+
+↑ "Best of 2017 Awards: Best Spectator Game". IGN. December 20, 2017. Archived from the original on December 26, 2017. Retrieved January 22, 2018.
+
+↑ PC Gamer staff (December 28, 2018). "Game of the Year Awards 2018". PC Gamer. Archived from the original on December 26, 2018. Retrieved December 23, 2018.
+
+↑ IGN staff (December 10, 2018). "Best Ongoing Game of 2018". IGN. Archived from the original on December 24, 2018. Retrieved December 24, 2018.
+
+↑ IGN staff (December 10, 2018). "Best Nintendo Switch Game of 2018". IGN. Archived from the original on December 24, 2018. Retrieved December 24, 2018.
+
+↑ IGN staff (December 10, 2018). "Best Mobile Game of 2018". IGN. Archived from the original on December 24, 2018. Retrieved December 24, 2018.
+
+↑ IGN staff (December 10, 2018). "Best Action Game (Including Shooter) of 2018". IGN. Archived from the original on December 24, 2018. Retrieved December 24, 2018.
+
+↑ Makuch, Eddie (December 8, 2017). "The Game Awards 2017 Winners Headlined By Zelda: Breath Of The Wild's Game Of The Year". GameSpot. Archived from the original on December 9, 2017. Retrieved January 22, 2018.
+
+↑ Giardina, Carolyn (January 16, 2018). "Visual Effects Society Awards: 'Apes,' 'Blade Runner 2049' Lead Feature Nominees". The Hollywood Reporter. Archived from the original on January 16, 2018. Retrieved January 22, 2018.
+
+↑ Giardina, Carolyn (February 13, 2018). "Visual Effects Society Awards: 'War for the Planet of the Apes' Wins Big". The Hollywood Reporter. Archived from the original on February 14, 2018. Retrieved February 13, 2018.
+
+↑ Makuch, Eddie (January 14, 2018). "Game Of The Year Nominees Announced For DICE Awards". GameSpot. Archived from the original on January 17, 2018. Retrieved January 17, 2018.
+
+↑ Makuch, Eddie (February 22, 2018). "Legend Of Zelda: Breath Of The Wild Wins Game Of The Year At DICE Awards". GameSpot. Archived from the original on February 23, 2018. Retrieved February 23, 2018.
+
+↑ McNeill, Andrew (January 31, 2018). "Here Are Your 2018 SXSW Gaming Awards Finalists!". SXSW. Archived from the original on February 1, 2018. Retrieved February 1, 2018.
+
+↑ "2018 SXSW Gaming Awards Winners Revealed". IGN. March 17, 2018. Archived from the original on March 18, 2018. Retrieved March 18, 2018.
+
+↑ deAlessandri, Marie (March 15, 2018). "Hellblade: Senua's Sacrifice at forefront of BAFTA Games Awards nominations". MCV. Archived from the original on March 16, 2018. Retrieved March 16, 2018.
+
+↑ Makedonski, Brett (April 12, 2018). "BAFTA names What Remains of Edith Finch its best game of 2017". Destructoid. Archived from the original on April 25, 2018. Retrieved April 13, 2018.
+
+↑ Kaufman, Gil (April 24, 2018). "JAY-Z, RuPaul, Lady Gaga, Katy Perry & Kourtney Kardashian Among 2018 Webby Award Winners: See the Full List". Billboard. Archived from the original on April 25, 2018. Retrieved April 24, 2018.
+
+↑ Faller, Patrick (June 28, 2018). "E3 2018: Game Critics Awards Nominations Revealed: Anthem, Super Smash Bros. Ultimate Top The List". GameSpot. Archived from the original on June 29, 2018. Retrieved June 29, 2018.
+
+↑ Shanley, Patrick (July 2, 2018). "Game Critics Awards: Best of E3 2018 Winners Revealed". The Hollywood Reporter. Archived from the original on July 2, 2018. Retrieved July 2, 2018.
+
+↑ MCV staff (May 21, 2018). "Announcing the Develop Awards 2018 nominations shortlist". MCV. Archived from the original on June 16, 2021. Retrieved September 4, 2018.
+
+↑ Barton, Seth (July 12, 2018). "The Develop Awards 2018: All the winners!". MCV. Archived from the original on February 13, 2021. Retrieved September 5, 2018.
+
+↑ Cohen, Jess (June 22, 2018). "Teen Choice Awards 2018: Avengers: Infinity War, Black Panther and Riverdale Among Top Nominees". E!. Archived from the original on June 13, 2018. Retrieved June 25, 2018.
+
+↑ Ramos, Dino-Ray (August 12, 2018). "Teen Choice Awards: 'Riverdale', 'Infinity War', 'Black Panther' Among Top Honorees – Full Winners List". Deadline Hollywood. Archived from the original on August 13, 2018. Retrieved August 13, 2018.
+
+↑ BBC staff (October 21, 2018). "Teen Awards: Little Mix, BTS and Cardi B winners at Radio 1 awards". BBC. Archived from the original on August 7, 2019. Retrieved August 7, 2019.
+
+↑ Hoggins, Tom (September 24, 2018). "Golden Joysticks 2018 nominees announced, voting open now". The Daily Telegraph. Archived from the original on October 11, 2018. Retrieved October 7, 2018.
+
+↑ Andronico, Michael (October 26, 2018). "Golden Joystick Awards: Vote for Ultimate Game of the Year". Tom's Guide. Archived from the original on October 26, 2018. Retrieved November 14, 2018.
+
+↑ Sheridan, Connor (November 16, 2018). "Golden Joystick Awards 2018 winners: God of War wins big but Fortnite gets Victory Royale". GamesRadar+. Archived from the original on November 16, 2018. Retrieved November 16, 2018.
+
+↑ Crecente, Brian (November 13, 2018). "'God of War,' 'Red Dead Redemption II' Tie For Most Game Awards Noms". Variety. Archived from the original on November 13, 2018. Retrieved November 13, 2018.
+
+↑ Crowd, Dan (December 6, 2018). "The Game Awards 2018: All The Winners". IGN. Archived from the original on December 7, 2018. Retrieved December 6, 2018.
+
+↑ Favis, Elise (December 9, 2018). "Here Are The Winners Of The First Gamers' Choice Awards". Game Informer. ISSN 1067-6392. Archived from the original on February 24, 2026. Retrieved February 24, 2026.
+
+↑ Makuch, Eddie (January 10, 2019). "God Of War, Spider-Man Lead DICE Awards; Here's All The Nominees". GameSpot. Archived from the original on January 11, 2019. Retrieved January 14, 2019.
+
+↑ Nunneley, Stephany (February 14, 2019). "God of War takes home Game of the Year, eight other awards at 2019 D.I.C.E. Awards". VG247. Archived from the original on February 14, 2019. Retrieved February 14, 2019.
+
+↑ Fogel, Stefanie (March 14, 2019). "'God of War,' 'Red Dead 2' Lead BAFTA Game Awards Nominations". Variety. Archived from the original on March 15, 2019. Retrieved March 15, 2019.
+
+↑ Fox, Chris; Kleinman, Zoe (April 4, 2019). "God of War wins best game at Bafta Awards". BBC. Archived from the original on August 28, 2019. Retrieved April 4, 2019.
+
+↑ 【速報】ファミ通アワード2018 ゲーム・オブ・ザ・イヤーは『モンスターハンター：ワールド』と『大乱闘スマッシュブラザーズ SPECIAL』がダブル受賞！（大賞受賞画像・コメント追加） [Famitsu Awards 2018, Game of the Year goes to Monster Hunter: World and Super Smash Bros. Ultimate! (Grand Prize winning images and comments added)] (in Japanese). Famitsu. April 5, 2019. Archived from the original on April 9, 2019. Retrieved May 25, 2019.
+
+↑ Liao, Shannon (April 23, 2019). "Here are all the winners of the 2019 Webby Awards". The Verge. Archived from the original on April 23, 2019. Retrieved April 25, 2019.
+
+↑ Nunneley, Stephany (June 27, 2019). "E3 2019 Game Critics Awards – Final Fantasy 7 Remake wins Best of Show". VG247. Archived from the original on August 28, 2019. Retrieved July 2, 2019.
+
+↑ Tailby, Stephen (September 20, 2019). "Days Gone Rides Off with Three Nominations in This Year's Golden Joystick Awards". Push Square. Archived from the original on September 20, 2019. Retrieved September 21, 2019.
+
+↑ GamesRadar staff (November 15, 2019). "Here's every winner from this year's Golden Joystick Awards, including the Ultimate Game of the Year". GamesRadar+. Archived from the original on November 15, 2019. Retrieved November 16, 2019.
+
+↑ Winslow, Jeremy (November 19, 2019). "The Game Awards 2019 Nominees Full List". GameSpot. Archived from the original on November 23, 2019. Retrieved November 20, 2019.
+
+↑ Makuch, Eddie (December 13, 2019). "The Game Awards 2019 Winners: Sekiro Takes Game Of The Year". GameSpot. Archived from the original on December 13, 2019. Retrieved December 13, 2019.
+
+↑ Stuart, Keith (March 3, 2020). "Death Stranding and Control dominate Bafta games awards nominations". The Guardian. Archived from the original on October 23, 2020. Retrieved March 5, 2020.
+
+↑ Chilton, Louis (April 2, 2020). "Bafta Games Awards 2020: The results in full". The Independent. Archived from the original on April 4, 2020. Retrieved April 3, 2020.
+
+↑ Willis, Jackie (February 13, 2020). "Kids' Choice Awards 2020 Nominations: Taylor Swift, Angelina Jolie and More". Entertainment Tonight. Archived from the original on May 5, 2020. Retrieved May 3, 2020.
+
+↑ Stedman, Alex (December 10, 2020). "The Game Awards 2020: Complete Winners List". Variety. Archived from the original on December 11, 2020. Retrieved December 12, 2020.
+
+↑ "Samsung Celebrates Excellence in App Design and Innovation with the 2020 Best of Galaxy Store Awards".
+
+↑ Calvario, Liz (March 13, 2021). "2021 Kids' Choice Awards: The Complete Winners List". Entertainment Tonight. Archived from the original on April 15, 2021. Retrieved March 15, 2021.
+
+↑ Grobar, Matt (December 12, 2021). "Bretman Rock, Bailey Sarian, Mark Rober & MrBeast Among Repeat Winners At 2021 YouTube Streamy Awards – Complete Winners List". Deadline. Retrieved August 16, 2025.
+
+↑ Crecente, Brian (December 10, 2022). "The Game Awards 2022: the Winners, the News, the Games". Epic Games. Retrieved December 11, 2023.
+
+↑ Crecente, Brian (December 9, 2023). "The Game Awards 2023: the Winners, the News, the Games". Epic Games. Retrieved December 11, 2023.
+
+↑ "Bafta Games Awards 2024: Baldur's Gate 3 and Spider-Man lead nods". BBC News. March 7, 2024. Retrieved March 7, 2024.
+
+↑ "20th BAFTA Games Awards: The Nominations". BAFTA. March 7, 2024. Retrieved March 7, 2024.
+
+↑ "Ganadores 2024". Equinox Latam Game Awards (in European Spanish). Archived from the original on December 15, 2024.
+
+↑ Pitão, Maria Eduarda (November 29, 2024). "Black Myth: Wukong, Balatro e mais: confira os vencedores do Equinox Latam Game Awards 2024". IGN Brasil (in Brazilian Portuguese). Archived from the original on December 15, 2024.
+
+↑ Maas, Jennifer (December 13, 2024). "'Astro Bot' Takes Top Honors at the Game Awards: Full Winners List". Variety. Retrieved December 13, 2024.
+
+↑ Lewis, Claire (December 11, 2025). "Here are all The Game Awards 2025 winners". Polygon. Retrieved December 11, 2025.
+
+↑ Bevan, Rhiannon (November 20, 2025). "All Of The Winners At The Golden Joystick Awards 2025". TheGamer. Retrieved November 22, 2025.
+
+↑ "Streamer Awards 2026: Full list of nominees across 37 categories". Geo News. October 17, 2026. Retrieved October 18, 2026.
+
+External links
+
+Wikimedia Commons has media related to Fortnite.
+
+Official website
+
+Fortnite at IMDb
+
+ | 
+
+v
+
+t
+
+e
+
+Fortnite
+
+ | 
+
+Variations
+
+Save the World (2017)
+
+Battle Royale (2017)
+
+Creative (2018)
+
+Lego (2023)
+
+Rocket Racing (2023)
+
+Festival (2023)
+
+Ballistic (2024)
+
+Unreal Editor
+
+ | 
+Developers
+ | 
+
+Epic Games 
+
+Tim Sweeney
+
+Harmonix
+
+Mediatonic
+
+Psyonix
+
+ | 
+In-game
+ | 
+
+ | Playable skins/NPCs | 
+
+Meowscles
+
+Peely
+
+ | 
+Emotes
+ | 
+
+Orange Justice
+
+ | 
+Locations
+ | 
+
+Tilted Towers
+
+ | 
+Seasonal events
+ | 
+
+Marshmello concert (2019)
+
+Astronomical (2020)
+
+Rift Tour (2021)
+
+Chapter 2 Remix (2024)
+
+ | 
+Community
+ | 
+
+Fortnite Friday
+
+Gamefam
+
+ | Players | 
+
+Ali-A
+
+Benjyfishy
+
+Bugha
+
+Clix
+
+dakotaz
+
+DrLupo
+
+grumpygran1948
+
+Kami and Setty
+
+ImperialHal
+
+Lachlan
+
+LazarBeam
+
+Loserfruit
+
+MarkiLokuras
+
+MrSavage
+
+Mongraal
+
+Myth
+
+Nick Eh 30
+
+Nickmercs
+
+Ninja
+
+Peterbot
+
+Pollo
+
+SypherPK
+
+Tfue
+
+TheGrefg
+
+Typical Gamer
+
+ | Islands | 
+
+Voices of the Forgotten (2023)
+
+Freedom Town, USA (2024)
+
+ | Esports | 
+
+Fortnite Championship Series
+
+Global Championship
+
+Fortnite World Cup (2019)
+
+Esports World Cup (2024)
+
+ | 
+Other media
+ | 
+
+Fortnite Monopoly
+
+Marshmello Fortnite Extended Set
+
+ | 
+Related
+ articles/topics | 
+
+Disney Horizons Live from D23
+
+Epic Games v. Apple
+
+v. Google
+
+YouTube Rewind 2018: Everyone Controls Rewind
+
+ | 
+
+v
+
+t
+
+e
+
+Epic Games
+
+ | 
+List of games
+
+ | Games 
+
+ developed | 
+
+ | Unreal | 
+
+Unreal
+
+Tournament
+
+2003
+
+2004
+
+3
+
+Facing Worlds
+
+Championship
+
+2
+
+Tournament§
+
+ | Gears of War | 
+
+Gears of War
+
+Gears of War 2
+
+Gears of War 3
+
+Gears of War: Judgment
+
+ | Infinity Blade | 
+
+Infinity Blade
+
+Infinity Blade II
+
+Infinity Blade III
+
+ | Fortnite | 
+
+Save the World
+
+Battle Royale
+
+Creative
+
+Lego
+
+Rocket Racing
+
+Festival
+
+Ballistic
+
+ | Other | 
+
+ZZT
+
+Jazz Jackrabbit
+
+2
+
+Jill of the Jungle
+
+Kiloblaster
+
+Silverball
+
+Xargon
+
+Extreme Pinball
+
+7th Legion
+
+Age of Wonders
+
+Shadow Complex
+
+Bulletstorm
+
+Robo Recall
+
+Paragon§
+
+The Matrix Awakens
+
+ | Third-party 
+
+ publishing | 
+
+ | Epic 
+
+ MegaGames | 
+
+Castle of the Winds
+
+Brix
+
+Electro Man
+
+Ken's Labyrinth
+
+Ancients 1: Death Watch
+
+Solar Winds
+
+Zone 66
+
+The Adventures of Robbo
+
+Epic Pinball
+
+Heartlight
+
+Highway Hunter
+
+One Must Fall: 2097
+
+Traffic Department 2192
+
+Radix: Beyond the Void
+
+Tyrian
+
+Seek and Destroy
+
+ | Epic Games 
+
+ Publishing | 
+
+Fall Guys
+
+Kid A Mnesia Exhibition
+
+PC Building Simulator 2
+
+Rumbleverse
+
+Alan Wake II
+
+Gen Atlas
+
+ | Technology | 
+
+Unreal Engine
+
+1
+
+2
+
+3
+
+4
+
+5
+
+6
+
+UEFN
+
+Verse
+
+Epic Citadel
+
+Epic Games Store
+
+Easy Anti-Cheat
+
+Houseparty
+
+Sketchfab
+
+Bink Video
+
+ | Subsidiaries | 
+
+ | Current | 
+
+Chair Entertainment
+
+Cloudgine
+
+Harmonix
+
+Kids Web Services
+
+Psyonix
+
+Mediatonic
+
+ | Former | 
+
+Impossible Studios
+
+Titan Studios
+
+Pitbull Studio
+
+People Can Fly
+
+Bandcamp
+
+ | People | 
+
+ | Current | 
+
+Tim Sweeney
+
+Mark Rein
+
+Steve Polge
+
+Sjoerd De Jong
+
+ | Former | 
+
+Cliff Bleszinski
+
+Mike Capps
+
+Rod Fergusson
+
+Donald Mustard
+
+ | Related | 
+
+Make Something Unreal
+
+Fortnite World Cup
+
+Epic Games v. Apple
+
+Apple v. Epic Games
+
+Epic Games v. Google
+
+Coalition for App Fairness
+
+ | 
+
+§ Cancelled games
+
+ Category
+
+ | 
+Authority control databases 
+
+ | National | 
+
+United States
+
+Czech Republic
+
+ | Other | 
+
+MusicBrainz series
+
+Retrieved from "https://en.wikipedia.org/w/index.php?title=Fortnite&oldid=1383461546"
+
+Categories: 
+Fortnite
+
+2010s fads and trends
+
+2017 video games
+
+2020s fads and trends
+
+BAFTA winners (video games)
+
+Crossover video games
+
+Delisted applications
+
+Epic Games
+
+Free-to-play video games
+
+IOS games
+
+MacOS games
+
+Nintendo Switch games
+
+Nintendo Switch 2 games
+
+Online games
+
+PlayStation 4 games
+
+PlayStation 4 Pro enhanced games
+
+PlayStation 5 games
+
+PlayStation 5 Pro enhanced games
+
+Streamy Award winners
+
+The Game Awards winners
+
+Unreal Engine 4 games
+
+Unreal Engine 5 games
+
+Video games adapted into comics
+
+Video games developed in the United States
+
+Windows games
+
+Xbox One games
+
+Xbox Series X and Series S games
+
+Hidden categories: 
+Articles with short description
+
+Short description is different from Wikidata
+
+Wikipedia pages semi-protected against vandalism
+
+Use American English from April 2021
+
+All Wikipedia articles written in American English
+
+Use mdy dates from April 2021
+
+Pages with non-numeric formatnum arguments
+
+CS1 uses Japanese-language script (ja)
+
+CS1 Japanese-language sources (ja)
+
+CS1 European Spanish-language sources (es-es)
+
+CS1 Brazilian Portuguese-language sources (pt-br)
+
+Commons category link is on Wikidata
+
+Official website different in Wikidata and Wikipedia
+
+ This page was last edited on 2 November 2026, at 20:28 (UTC).
+
+Page was rendered with Parsoid.
+
+Text is available under the Creative Commons Attribution-ShareAlike 4.0 License;
+additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+Privacy policy
+
+About Wikipedia
+
+Disclaimers
+
+Contact Wikipedia
+
+Legal & safety contacts
+
+Code of Conduct
+
+Developers
+
+Statistics
+
+Cookie statement
+
+Mobile view
+
+Search
+
+ Search
+
+Toggle the table of contents
+
+Fortnite
+
+69 languages
+
+Add topic

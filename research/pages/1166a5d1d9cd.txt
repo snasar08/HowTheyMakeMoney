@@ -1,0 +1,204 @@
+URL: https://www.airbnb.com/help/article/1857
+FINAL_URL: https://www.airbnb.com/help/article/1857
+FETCHED: 2026-11-07T20:48:51.365281+00:00
+
+Help Center
+
+Home
+
+All topics
+
+Payments and pricing
+
+Pricing and fees
+
+Airbnb service fees
+
+How-to
+
+Airbnb service fees
+
+To help Airbnb run smoothly and to cover the cost of services like 24/7 customer support, we charge a service fee when a booking is confirmed. 
+
+There are 2 different fee structures for stays: a split fee and single fee.
+
+We're in the process of transitioning all home hosts to a single service fee structure. The split-fee structure is being phased out and will no longer be available after all hosts are migrated to the single service fee structure. Once you’ve switched to the single fee structure, you can’t switch back. 
+
+After you’ve migrated from the split-fee structure, the single fee structure applies only to new bookings. Bookings made before the switch are unaffected, even if they occur after the switch.
+
+Airbnb service fees for home hosts
+
+1. Split-fee
+
+This fee structure is split between the host and the guest.
+
+Host service fee
+
+Most hosts pay a 3% service fee, but some pay more. Hosts pay a 4% fee for listings in Brazil and Mexico. The fee is automatically deducted from the total price (service fees are a percentage of the nightly price and any fees charged by the host, but exclude the guest service fee and taxes) to calculate the host payout.
+
+Review the host service fee for a reservation
+
+DesktopiOS appAndroid appMobile browser
+
+Find the host service fee on desktop
+
+Click Today > Menu > Earnings
+
+Go to Upcoming or Paid
+
+Filter listings, payout methods, and date range, or search using the confirmation code or payout amount
+
+Click to open a transaction
+
+Under Earnings, find the Airbnb service fee
+
+Guest service fee
+
+The guest service fee can be found in the Price breakdown before booking a reservation.
+
+Guests pay a service fee ranging from 14.1% to 16.5% of the booking subtotal (the booking subtotal includes the nightly price and any additional fees charged by the host, but excludes the guest service fee and taxes). The guest service fee varies based on a variety of factors and may be higher or lower depending on the booking.
+
+For bookings where the guest pays using a different currency from the one set by the host for their listing, we adjust our fees to align with the value we provide our guests. For these cross-currency bookings, the guest service fee will include an additional amount, resulting in a guest service fee of up to 16.5% of the booking subtotal.
+
+2. Single fee
+
+With this structure, the entire fee is deducted from the host's payout. Most hosts pay 15.5%, remaining hosts typically pay 14%-16%, and hosts pay a 16% fee for listings in Brazil and Mexico.
+
+This fee structure is mandatory for most hosts, including traditional hospitality listings (e.g., hotels, serviced apartments, etc.), hosts who use property management software, and hosts in countries subject to this fee structure.
+
+VAT charges
+
+Depending on the laws of the jurisdiction involved, VAT may be applicable to the above fees. The service fee shown to hosts and guests is VAT inclusive, where applicable.
+
+We reserve the right to change our service fees at any time, and any changes will be made in accordance with our Terms of Service.
+
+Airbnb service fees for service and experience hosts
+
+For service reservations, we typically charge a 15% fee, with a minimum fee of $6 USD (or the local currency equivalent), which may vary based on the daily exchange rate. For experience reservations, we typically charge a 20% service fee.
+
+Did this help?
+
+Related articles
+
+How-to • Guest
+
+Service fee refunds for home stays
+
+The service fee is refundable for home stays as long as all of the criteria are met. Find out more about what is needed to receive a refund.
+
+How-to • Home host
+
+Preview your price breakdown
+
+You can use the nightly price breakdown feature to preview what your guest will pay when reserving your space—and what you’ll earn.
+
+How-to • Guest
+
+How pricing works for homes
+
+Learn more about how the total price of a reservation is calculated
+
+Log in or sign up 
+
+Get help with your reservations, account, and more.
+Log in or sign up 
+
+Site Footer
+
+Support
+
+Help Center
+
+Get help with a safety issue
+
+AirCover
+
+Travel insurance
+
+Anti-discrimination
+
+Disability support
+
+Cancellation options
+
+Report neighborhood concern
+
+Hosting
+
+Airbnb your home
+
+Airbnb your hotel
+
+Airbnb your experience
+
+Airbnb your service
+
+AirCover for Hosts
+
+Earnings Protection
+
+Hosting resources
+
+Community forum
+
+Hosting responsibly
+
+Airbnb-friendly apartments
+
+Join a free hosting class
+
+Find a co‑host
+
+Refer a host
+
+Airbnb
+
+2026 Summer Release
+
+Newsroom
+
+Careers
+
+Investors
+
+Gift cards
+
+Airbnb.org emergency stays
+
+Footer section
+
+English (US)
+$USD
+
+© 2026 Airbnb, Inc.
+
+·
+Privacy·
+
+·Terms·
+
+·Your Privacy Choices
+
+English (US)
+$USD
+
+© 2026 Airbnb, Inc.
+
+·
+Privacy·
+
+·Terms·
+
+·Your Privacy Choices
+
+© 2026 Airbnb, Inc.
+
+·
+Privacy·
+
+·Terms·
+
+·Your Privacy Choices
+
+English (US)
+$USD

@@ -1,0 +1,2811 @@
+URL: https://en.wikipedia.org/wiki/Uber
+FINAL_URL: https://en.wikipedia.org/wiki/Uber
+FETCHED: 2026-11-07T20:48:30.501640+00:00
+
+Jump to content
+
+Main menu
+
+Main menu
+
+ move to sidebar
+ hide
+
+ Navigation
+
+Main page
+
+Contents
+
+Current events
+
+Random article
+
+About Wikipedia
+
+Contact us
+
+ Contribute
+
+Help
+
+Learn to edit
+
+Community portal
+
+Recent changes
+
+Upload file
+
+Special pages
+
+Search
+
+ Search
+
+Appearance
+
+Donate
+
+Create account
+
+Log in
+
+Personal tools
+
+Donate
+
+Create account
+
+Log in
+
+Contents
+
+ move to sidebar
+ hide
+
+(Top)
+
+ 1
+ History
+
+ 2
+ Legal and regulatory issues
+
+ Toggle Legal and regulatory issues subsection
+
+ 2.1
+ Operating without permission
+
+ 2.2
+ Legal cases by taxi companies and taxi drivers
+
+ 2.3
+ Classification of drivers as gig workers
+
+ 2.4
+ Accusations of misleading drivers
+
+ 2.5
+ Driver control over fares
+
+ 2.6
+ Greyball
+
+ 2.7
+ Ripley – kill switch
+
+ 2.8
+ Counter-intelligence research on class action plaintiffs
+
+ 2.9
+ Insufficient accessibility
+
+ 2.10
+ Refusal to transport service animal for a blind customer
+
+ 2.11
+ Sexual harassment settlement (2017)
+
+ 2.12
+ Illegal concealment of data breaches
+
+ 2.13
+ Privacy fines
+
+ 2.14
+ Deceptive billing practices
+
+ 2.15
+ Passenger safety and sexual assault lawsuits (2024)
+
+ 2.16
+ Wage theft claims
+
+ 2.17
+ Data breaches and related fines
+
+ 2.18
+ Deactivation of driver accounts through automated systems
+
+ 3
+ Corporate affairs
+
+ Toggle Corporate affairs subsection
+
+ 3.1
+ Finances
+
+ 3.2
+ Lobbying
+
+ 4
+ Gallery
+
+ 5
+ References
+
+ 6
+ Further reading
+
+ Toggle Further reading subsection
+
+ 6.1
+ Further viewing
+
+ 7
+ External links
+
+Toggle the table of contents
+
+Uber
+
+67 languages
+
+Afrikaans
+
+العربية
+
+Asturianu
+
+Azərbaycanca
+
+تۆرکجه
+
+Žemaitėška
+
+Bikol Central
+
+Беларуская
+
+Български
+
+বাংলা
+
+Català
+
+Čeština
+
+Dansk
+
+Deutsch
+
+Ελληνικά
+
+Esperanto
+
+Español
+
+Eesti
+
+Euskara
+
+فارسی
+
+Suomi
+
+Français
+
+Gaeilge
+
+Galego
+
+Hausa
+
+עברית
+
+हिन्दी
+
+Magyar
+
+Հայերեն
+
+Bahasa Indonesia
+
+Italiano
+
+日本語
+
+Қазақша
+
+ಕನ್ನಡ
+
+한국어
+
+Lietuvių
+
+മലയാളം
+
+Монгол
+
+Bahasa Melayu
+
+Nederlands
+
+Norsk bokmål
+
+Papiamentu
+
+Polski
+
+Português
+
+Română
+
+Русский
+
+Scots
+
+سنڌي
+
+Simple English
+
+Slovenčina
+
+Shqip
+
+Српски / srpski
+
+Svenska
+
+தமிழ்
+
+తెలుగు
+
+Тоҷикӣ
+
+ไทย
+
+Türkçe
+
+Татарча / tatarça
+
+ئۇيغۇرچە / Uyghurche
+
+Українська
+
+اردو
+
+Tiếng Việt
+
+吴语
+
+閩南語 / Bân-lâm-gí
+
+粵語
+
+中文
+
+Edit links
+
+Article
+
+Talk
+
+ English
+
+Read
+
+Edit
+
+View history
+
+Save
+
+Tools
+
+Tools
+
+ move to sidebar
+ hide
+
+ Actions
+
+Read
+
+Edit
+
+View history
+
+Save
+
+ General
+
+What links here
+
+Related changes
+
+Upload file
+
+Permanent link
+
+Page information
+
+Cite this page
+
+Get shortened URL
+
+Switch to legacy parser
+
+ Print/export
+
+Download as PDF
+
+Printable version
+
+ In other projects
+
+Wikimedia Commons
+
+Wikinews
+
+Wikiquote
+
+Wikidata item
+
+Appearance
+
+ move to sidebar
+ hide
+
+Checked
+
+From Wikipedia, the free encyclopedia
+
+Page version status
+
+This is an accepted version of this page
+
+This is the latest accepted revision, reviewed on 28 October 2026.
+
+American ridesharing and delivery company
+
+For other uses, see Über and Uber (disambiguation).
+
+ | 
+
+ | 
+The neutrality of this article is disputed. Relevant discussion may be found on the talk page. Please do not remove this message until conditions to do so are met. (August 2026) (Learn how and when to remove this message)
+
+ | Uber Technologies, Inc.
+
+ | 
+
+ | 
+Headquarters in Mission Bay, San Francisco
+
+ | Formerly | Ubercab (2009–2011)
+
+ | Type | Public
+
+ | 
+Traded as
+ | 
+
+NYSE: UBER
+
+DJTA component
+
+S&P 100 component
+
+S&P 500 component
+
+ | Industry | 
+
+Transportation
+
+Mobility as a service
+
+ | Founded | March 2009; 17 years ago (2009-03)
+
+ | Founders | 
+
+Garrett Camp
+
+Travis Kalanick
+
+ | Headquarters | 
+
+1725 3rd St.
+
+San Francisco, California, United States
+
+ | 
+Area served
+ | 70 countries and 10,500 cities worldwide
+
+ | Key people | 
+
+Ronald Sugar (chairman)
+
+Dara Khosrowshahi (CEO)
+
+ | Services | 
+
+Taxi
+
+Food delivery
+
+Package delivery
+
+Freight transport
+
+ | Revenue | US$52.017 billion (2025)
+
+ | 
+Operating income
+ | US$5.565 billion (2025)
+
+ | 
+Net income
+ | US$10.053 billion (2025)
+
+ | Total assets | US$61.802 billion (2025)
+
+ | Total equity | US$27.041 billion (2025)
+
+ | 
+Number of employees
+ | 34,000 (2025)
+
+ | Subsidiaries | 
+
+Careem (2020–2023)
+
+Cornershop
+
+Drizly (2021–2024)
+
+Postmates
+
+Uber Carshare (2022–2024)
+
+Uber Eats
+
+Uber Freight
+
+ | Website | uber.com
+
+ | Footnotes
+
+[1]
+
+Uber taxi
+
+Uber Technologies, Inc. is an American multinational transportation company that provides ride-hailing services, courier services, food delivery, and freight transport.[1] It is headquartered in San Francisco, California, and operates in approximately 70 countries and 15,000 cities worldwide.[1] It is the largest ridesharing company worldwide with over 202 million monthly active users and 10 million active drivers and couriers. It coordinates an average of 42 million trips and delivery orders per day, and has coordinated 72 billion trips and delivery orders since its inception in 2010.[2] In the fourth quarter of 2025, the company had a take rate (revenue as a percentage of gross bookings) of 29.9% for mobility services and 19.2% for food delivery.[2]
+
+The company has launched or is in the process of launching robotaxi services in several cities worldwide in partnership with operators, software designers, and car manufacturers including Lucid Motors, Nuro, Baidu, Pony.ai, Avride, Nissan, Rivian, Zoox, Stellantis, Wayve, and Nvidia (to use the Nvidia Drive software).[3][4][5][6]
+
+History
+[edit | edit source]
+
+For a chronological guide, see Timeline of Uber.
+
+Travis Kalanick, former CEO of Uber, in 2013
+
+In 2009, Garrett Camp, a co-founder of StumbleUpon, came up with the idea to create Uber to make it easier and cheaper to procure direct transportation. Camp and Travis Kalanick had spent $800 hiring a private driver on New Year's Eve, which they deemed excessive, and Camp was also inspired by his difficulty in finding a taxi on a snowy night in Paris.[7][8] The prototype of the mobile app was built by Camp and his friends, Oscar Salazar and Conrad Whelan, with Kalanick as the "mega advisor" to the company.[8]
+
+In February 2010, Ryan Graves became the first Uber employee; he was named chief executive officer (CEO) in May 2010.[9] In December 2010, Kalanick succeeded Graves as CEO and Graves became the chief operating officer.[10]
+
+Following a beta launch in May 2010, Uber's services and mobile app launched publicly in San Francisco in 2011.[11][12] Originally, the application only allowed users to hail a black luxury car and the price was approximately 1.5 times that of a taxi.[13][14] In 2011, the company changed its name from UberCab to Uber after complaints from San Francisco taxicab operators.[15] Kalanick believed that in addition to efficiency, Uber offered elegance because all drivers had fancy black cars. He did not feel that regular cars driven by non-professional drivers would be attractive. Kalanick and his angel investor Jason Calacanis publicly stated in podcasts that the world's first rideshare company (Wingz) was illegal and would not work.[16][17]
+
+The company's early hires included a nuclear physicist, a computational neuroscientist, and a machinery expert who worked on predicting arrival times for Uber's cars more accurately than Google APIs.[7][18] In April 2012, Uber launched a service in Chicago, whereby users were able to request a regular taxi or an Uber driver via its mobile app.[19][20]
+
+In July 2012, Uber introduced UberX, a cheaper option that allowed drivers to use non-luxury vehicles, but still subject to having commercial licenses.[21][22]
+
+In April 2013, after Wingz, Lyft, and Sidecar obtained licenses to legally operate as rideshare companies, Uber announced that it was going to adopt this model and add regular drivers with personal vehicles to the UberX platform instead of only commercially licensed vehicles, subject to a background check, insurance, registration, and vehicle standards.[23][24][25] Former Uber executive Andrew Chen and Sidecar co-founder Sunil Paul credit the volunteer- and donation-based LGBTQ rideshare service Homobiles as their inspiration for enabling regular drivers to offer rideshares.[26][27]. By December 2013, Uber operated in 65 cities.[28]
+
+In December 2013, USA Today named Uber its "tech company of the year".[29]
+
+In August 2014, Uber launched a shared transport service in the San Francisco Bay Area[30][31] and launched Uber Eats, a food delivery service.[32][33]
+
+Uber logo used from February 2016 until September 2018
+
+In August 2016, facing tough competition, and after losing approximately $2 billion, Uber sold its operations in China to its local competitor DiDi in exchange for an 18% stake in DiDi.[34] [35] DiDi agreed to invest $1 billion in Uber.[36] Uber had started operations in China in 2014, under the name 优步 (Yōubù).[37]
+
+In 2016, Uber acquired Ottomotto, a self-driving truck company founded by Anthony Levandowski, for $625 million. Levandowski, previously employed by Waymo, allegedly founded Ottomotto using trade secrets he stole from Waymo. Uber settled a lawsuit regarding the use of such intellectual property and reached a deal to use Waymo's technology for its freight transport operations.[38][39]
+
+In December 2016, Uber acquired Geometric Intelligence and its 15-person staff, which became "Uber AI", a division for researching artificial intelligence and machine learning.[40] Uber AI was shut down in May 2020.[41]
+
+In August 2017, Dara Khosrowshahi, the former CEO of Expedia Group, replaced Kalanick as CEO.[42][43] Earlier in March 2015, as CEO of Expedia Group, Khosrowshahi had led a multimillion equity investment in Wingz, Inc., the first ridesharing company in the world.[44][45]
+
+In July 2017, Uber received a five-star privacy rating from the Electronic Frontier Foundation,[46] but was harshly criticized by the group in September 2017 for a controversial policy of tracking customers' locations even after a ride ended, forcing the company to reverse its policy.[47]
+
+In February 2018, Uber combined its operations in Russia, Armenia, Azerbaijan, Belarus, Georgia and Kazakhstan with those of Yandex Taxi and invested $225 million in the venture.[48] On April 21, 2023, Yandex announced that it had bought Uber's share in the joint venture for $702.5 million, and that it became the sole owner of the Yandex Taxi business. Uber's involvement in Russia came to a close.[49]
+
+In March 2018, Uber merged its services in Southeast Asia with those of Grab in exchange for a 27.5% ownership stake in Grab. The business continued under the Grab brand.[50][51][52][53]
+
+Between May 2018 and November 2018, Uber offered Uber Rent powered by Getaround, a peer-to-peer carsharing service available to some users in San Francisco.[54]
+
+In November 2018, Uber became a gold member of the Linux Foundation.[55][56]
+
+In 2018, Uber formed a partnership with Autzu, a San Francisco-based ridesharing company. This collaboration provides Uber drivers with the opportunity to rent electric Tesla on an hourly basis.[57][58][59]
+
+In May 2019, Uber became a public company via an initial public offering.[60]
+
+In March and May 2019, the 2019 Lyft and Uber drivers' strikes led by Rideshare Drivers United were in protest of low wages, long hours, working conditions, and lack of benefits.[61]
+
+In the summer of 2019, Uber announced layoffs of 8% of its staff and eliminated the position of COO Barney Harford.[62]
+
+In October 2019, Uber acquired 53% of Cornershop, a provider of grocery delivery services primarily in Latin America.[63][64] In June 2021, it acquired the remaining 47% interest in Cornershop for 29 million shares of Uber.[65]
+
+After California Assembly Bill 5 (2019) was introduced, Uber announced that it would not comply with the law, then engaged lobbyists and mounted a public opinion campaign to overturn it via a ballot.[66][67]
+
+Between October 2019 and May 2020, Uber offered Uber Works, a mobile app connecting workers who wanted temporary jobs with businesses in Chicago and Miami.[68][69][70]
+
+In January 2020, Uber acquired Careem for $3.1 billion[71] and sold its Indian Uber Eats operations to Zomato.[72]
+
+Also in January 2020, Uber tested a feature that enabled drivers at the Santa Barbara, Sacramento, and Palm Springs airports to set fares based on a multiple of Uber's rates.[73]
+
+In May 2020, during the COVID-19 pandemic, Uber announced layoffs of over 14% of its workforce.[74][70]
+
+In June 2020, in its first software as a service partnership, Uber announced that it would manage the on-demand high-occupancy vehicle fleet for Marin Transit, a public bus agency in Marin County, California.[75]
+
+In September 2020, Uber committed to carbon neutrality globally by 2040, and required that, by 2030, in most countries, rides must be offered exclusively in electric vehicles.[76][77][78]
+
+In December 2020, Uber acquired Postmates for $2.65 billion.[79][80][81]
+
+Also in December 2020, Uber sold its Elevate division, which was developing short flights using VTOL aircraft, to Joby Aviation.[82][83]
+
+In January 2021, Uber Advanced Technologies Group (ATG), a joint venture minority-owned by SoftBank Vision Fund, Toyota, and Denso that was developing self-driving cars, was sold to Aurora Innovation for $4 billion in equity and Uber invested $400 million into Aurora.[84][85]
+
+In March 2021, the company moved to a new headquarters on Third Street in Mission Bay, San Francisco, consisting of several 6- and 11-story buildings connected by bridges and walkways.[86]
+
+In October 2021, Uber acquired Drizly, an alcohol delivery service, for $1.1 billion in cash and stock; it was shut down in early 2024.[87][88]
+
+In January 2022, Uber acquired Australian car-sharing company Car Next Door.[89]
+
+In February 2023, thousands of drivers for Uber, Lyft, and DoorDash went on strike in the US and UK to protest wages and fees.[90]
+
+The company posted its first operating profit in 2023.[91]
+
+In May 2025, Uber acquired an 85% controlling stake in Trendyol Go, an online meal and grocery delivery business based in Istanbul, for about $700 million in cash.[92] It also acquired DanTaxi, the largest taxi operator in Denmark.[93]
+
+Also in July 2025, Uber invested over $300 million in Lucid Motors and Nuro and announced the purchase of Lucid Gravity vehicles to develop a robotaxi service.[94][95]
+
+In September 2025, Uber announced the launch of air taxi and seaplane flights in certain markets in partnership with Joby Aviation.[96] That same month, the company launched a Kenyan game safari business.[97][98]
+
+In February 2026, Uber announced the acquisition of SpotHero.[99]
+
+In February 2026, Uber launched the Uber Autonomous Solutions division to handle its operations in robotaxis, self-driving trucks, and sidewalk delivery robots, including software and support services.[100]
+
+In March 2026, Uber agreed to invest up to $1.25 billion in Rivian as part of a deal to deploy up to 50,000 robotaxis through 2031.[101] Also in March 2026, Uber partnered with Nvidia to use the Nvidia Drive software in its robotaxis.[102]
+
+In July 2026, Uber agreed to acquire Delivery Hero for $14.8 billion.[103]
+
+In September 2026, Uber announced plans to reduce its 34,000 person workforce by 10% to simplify its management structure.[104]
+
+Legal and regulatory issues
+[edit | edit source]
+
+Operating without permission
+[edit | edit source]
+
+While it was expanding, Uber was accused of commencing operations in a city based on a loose interpretation of local regulations or by ignoring them completely and then using lobbying to change regulations.[66] In 2016, Uber was fined $11.4 million for operating in Pennsylvania without permission.[105]
+
+Legal cases by taxi companies and taxi drivers
+[edit | edit source]
+
+Taxi companies sued Uber in Boston, alleging that Uber acted unlawfully in the years prior to ride-sharing regulations being implemented in the city; courts ruled in favor of Uber.[106]
+
+In the U.S., although some courts did find that Uber intentionally violated taxi rules, Uber prevailed in every case, including the only case to proceed to trial.[107] Anoush Cab, Inc. v. Uber Technologies, Inc., No. 19-2001 (1st Cir. 2021) alleged that Uber caused asset devaluation by competing unfairly; the trial resulted in a full verdict for Uber.[108]
+
+Flywheel, the largest operator of taxis in San Francisco, sued Uber in 2016, alleging antitrust violations and predatory pricing.[109] In 2021, a federal judge threw out the bulk of the case and Uber settled the remainder of the case by integrating Flywheel taxis into its mobile app.[110]
+
+In 2019, 8,000 taxi drivers, represented by law firm Maurice Blackburn, filed a class action lawsuit against Uber in Australia alleging illegal taxi operations, loss of income and loss of value of taxi and/or hire car licenses. Uber agreed to settle the case by paying AU$271.8 million.[111][112]
+
+Classification of drivers as gig workers
+[edit | edit source]
+
+This section is transcluded from Ridesharing company. (edit | history)
+
+Unless otherwise required by law, ridesharing companies have classified drivers as independent contractors and not employees under employment law, arguing that they receive flextime not generally received by employees. This classification has been challenged legally since it affects taxation, minimum wage requirements, working time, paid time off, employee benefits, unemployment benefits, and overtime benefits.[113]
+
+Jurisdictions in which drivers must receive the classification of "employees" include the United Kingdom (after the case of Aslam v Uber BV which was decided by the Supreme Court of the United Kingdom),[114][115] New Zealand,[116][117] Switzerland,[118] New Jersey,[119] and the Netherlands.[120][121] California Assembly Bill 5 (2019) was passed to force drivers to be classified as employees in California, although ridesharing companies received an exemption by 2020 California Proposition 22, a ballot initiative.[122] Ridesharing companies spent tens of millions of dollars on the campaign.[123][124] In 2025, California Governor Gavin Newsom signed AB 1340 into law, which gave rideshare drivers the right to collectively bargain with rideshare companies despite their classification as independent contractors rather than employees.[125]
+
+In some jurisdictions, laws were passed to guarantee drivers a minimum wage before and after expenses as well as paid time off and insurance benefits.[126][127]
+
+Accusations of misleading drivers
+[edit | edit source]
+
+Uber has paid to settle accusations of having misled drivers about potential earnings[128][129][130] and shortchanging drivers.[131][132][133][134]
+
+Driver control over fares
+[edit | edit source]
+
+In the United States, drivers do not have any control over the fares they charge. A lawsuit filed in California, Gill et al. v. Uber Technologies, Inc. et al., alleged that this is a violation of the Sherman Antitrust Act of 1890. The lawsuit was denied class action status; a judge forced each plaintiff to go to arbitration individually. The case was dropped in March 2024.[135][136]
+
+Greyball
+[edit | edit source]
+
+In March 2017, an investigation by The New York Times revealed that Uber developed a software tool called "Greyball" to avoid giving rides to known law enforcement officers in areas where its service was illegal such as in Portland, Oregon, Australia, South Korea, and China, leading to government inquiries. The tool identified government officials using geofencing, mining credit card databases, identifying devices, and searches of social media.[137][138][139] While at first, Uber stated that it only used the tool to identify riders that violated its terms of service, after investigations by Portland, Oregon,[140][141][142] and the United States Department of Justice,[143][144][145] Uber admitted to using the tool to skirt local regulations and promised not to use the tool for that purpose.[146][147] The use of Greyball in London was cited by Transport for London as one of the reasons for its decision not to renew Uber's private hire operator licence in September 2017.[148][149][150]
+
+Ripley – kill switch
+[edit | edit source]
+
+A January 2018 report by Bloomberg News stated that Uber routinely used a "panic button" system, codenamed "Ripley", that locked, powered off and changed passwords on staff computers when those offices were subjected to government raids.[151] Uber allegedly used this button at least 24 times, from spring 2015 until late 2016.[152][153]
+
+The company claimed the kill switches were not intended to obstruct justice, but rather to protect intellectual property, customer privacy, and due process and that no data was permanently deleted, and was available for authorities to obtain later.[154]
+
+Counter-intelligence research on class action plaintiffs
+[edit | edit source]
+
+In 2016, Uber hired Ergo, a global security consulting firm, to secretly investigate plaintiffs involved in a class action lawsuit. Ergo operatives posed as acquaintances of the plaintiff's counsel and tried to contact their associates to obtain information. As a result, the judge threw out evidence that was obtained in a fraudulent manner.[155][156]
+
+Insufficient accessibility
+[edit | edit source]
+
+According to a lawsuit filed in 2018, not enough Uber drivers own a wheelchair accessible vans (WAV), in violation of accessibility laws.[157]
+
+Refusal to transport service animal for a blind customer
+[edit | edit source]
+
+In April 2021, an arbitrator ruled against Uber in a case involving Lisa Irving, a blind American customer with a guide dog who was denied rides on 14 separate occasions. Uber was ordered to pay $1.1 million, including $324,000 in damages and more than $800,000 in attorney fees and court costs. While drivers are required to transport service animals, drivers have been criticized for refusal to transport service animals, which, in the United States, is in violation of the Americans with Disabilities Act.[158][159]
+
+Sexual harassment settlement (2017)
+[edit | edit source]
+
+On February 19, 2017, former Uber engineer Susan Fowler published on her website that she was propositioned for sex by a manager and subsequently threatened with termination of employment by another manager if she continued to report the incident. Travis Kalanick, the CEO at the time, was allegedly aware of the complaint.[160][161] On February 27, 2017, Amit Singhal, Uber's Senior Vice President of Engineering, was forced to resign after he failed to disclose a sexual harassment claim against him that occurred while he served as Vice President of Google Search.[162] After investigations led by former attorney general Eric Holder and Arianna Huffington, a member of Uber's board of directors,[163] in June 2017, Uber fired over 20 employees.[164][165] Kalanick took an indefinite leave of absence but, under pressure from investors, he resigned as CEO a week later.[166][167] Also departing the company in June 2017 was Emil Michael, a senior vice president who suggested that Uber hire a team of opposition researchers and journalists, with a million-dollar budget, to "dig up dirt" on the personal lives and backgrounds of journalists who reported negatively on Uber, specifically targeting Sarah Lacy, editor of PandoDaily, who, in an article published in October 2014, accused Uber of sexism and misogyny in its advertising.[168][169][170][171][172][173] In August 2018, Uber agreed to pay a total of $7 million to settle claims of gender discrimination, harassment, and hostile work environment, with 480 employees and former employees receiving $10,700 each and 56 of those employees and former employees receiving an additional $33,900 each.[174] In December 2019, Kalanick resigned from the board of directors of the company and sold his shares.[175][176][177][178]
+
+Illegal concealment of data breaches
+[edit | edit source]
+
+In 2020, the US Department of Justice announced criminal charges against former Chief Security Officer Joe Sullivan for obstruction of justice. The criminal complaint said Joe Sullivan arranged with Travis Kalanick's knowledge, to pay a ransom for the 2016 data breach as a "bug bounty" to conceal its true nature, and for the hackers to falsify non-disclosure agreements to say they had not obtained any data.[179]
+
+Privacy fines
+[edit | edit source]
+
+In January 2024, Uber was fined €10 million by the Dutch Data Protection Authority for violating privacy regulations pertaining to the personal data of its drivers. The authority determined that Uber had failed to provide clear information in its terms and conditions regarding the duration for which it retained drivers' personal data, as well as the measures taken to secure this data when transmitting it to undisclosed entities outside the European Economic Area.[180]
+
+In August 2024, Uber was fined €290 million by the Dutch Data Protection Authority for transferring the personal data of European drivers to US servers in breach of the GDPR.[181]
+
+Deceptive billing practices
+[edit | edit source]
+
+In April 2025, the Federal Trade Commission (FTC) sued Uber, alleging that it enrolled some of its customers in the $9.99 monthly Uber One service without their consent, and used unlawful tactics to make cancellation difficult for consumers.[182] In December 2025, 21 US states and Washington, D.C. joined the FTC in filing an amended complaint seeking civil penalties against Uber for allegedly violating both state laws and the federal Restore Online Shoppers' Confidence Act.[183]
+
+Passenger safety and sexual assault lawsuits (2024)
+[edit | edit source]
+
+In February 2024, a multidistrict litigation (MDL) was established in the Northern District of California against Uber Technologies, Inc., consolidating numerous claims from among the more than 3,000 sexual assault lawsuits filed against the company in state and federal courts.[184] These lawsuits allege Uber prioritized growth over safety by using inadequate background checks, skipping in-person driver vetting, and failing to invest in preventive measures such as cameras or monitoring systems.[185] It also claims Uber knowingly put vulnerable passengers, such as intoxicated women, at risk through its marketing and business practices. The litigation seeks injunctive relief, damages and changes to Uber's safety policies. Some survivors have chosen to pursue justice in state courts outside of the MDL, seeking faster resolutions and a more individualized approach.[186]
+
+Wage theft claims
+[edit | edit source]
+
+In 2020, 5,000 drivers filed wage and hour claims with the California labour commission office against Uber and Lyft, alleging they were misclassified as independent contractors. Rideshare Drivers United in California claimed that at least 250,000 individual rideshare drivers in California who drove for the apps between 2016 and 2020 are estimated to be eligible for the settlement for wage theft claims of tens of billions of dollars.[187]
+
+Data breaches and related fines
+[edit | edit source]
+
+On February 27, 2015, Uber admitted that it had suffered a data breach more than nine months prior. Names and license plate information from approximately 50,000 drivers were inadvertently disclosed.[188] Uber discovered this leak in September 2014, but waited more than five months to notify the affected individuals.[189]
+
+An announcement in November 2017 revealed that in 2016, a separate data breach had disclosed the personal information of 600,000 drivers and 57 million customers. This data included names, email addresses, phone numbers, and drivers' license information. Hackers used employees' usernames and passwords that had been compromised in previous breaches (a "credential stuffing" method) to gain access to a private GitHub repository used by Uber's developers. The hackers located credentials for the company's Amazon Web Services datastore in the repository files, and were able to obtain access to the account records of users and drivers, as well as other data contained in over 100 Amazon S3 buckets. Uber paid a $100,000 ransom to the hackers on the promise they would delete the stolen data.[190][191] Uber was subsequently criticized for concealing this data breach.[192] Dara Khosrowshahi publicly apologized.[193][194] In September 2018, in the largest multi-state settlement of a data breach, Uber paid $148 million to the Federal Trade Commission, and admitted that internal access to consumers' personal information was closely monitored on an ongoing basis was false, and stated that it had failed to live up to its promise to provide reasonable security for consumer data.[195] In November 2018, Uber's British divisions were fined £385,000 (reduced to £308,000) by the Information Commissioner's Office.[196]
+
+On September 15, 2022, Uber discovered a security breach of its internal network by a hacker that utilized social engineering to obtain an employee's credentials and gain access to the company's VPN and intranet. The company said that no sensitive data had been compromised.[197][198]
+
+Deactivation of driver accounts through automated systems
+[edit | edit source]
+
+In August 2026, Uber was fined €825 million by the Dutch Data Protection Authority for deactivating driver accounts through automated systems, while also not informing the users adequately of the deactivation. European Union law forbid companies from making decisions through the sole use of automated systems if they have a big impact on the person's life, requiring human review and the ability to appeal.[199][200]
+
+Corporate affairs
+[edit | edit source]
+
+Finances
+[edit | edit source]
+
+Uber revenue and net income in billion US$[201][202]
+
+ | Year | Revenue | Net income
+
+ | 2025
+ | 52.0
+ | 10.1
+
+ | 2024 | 43.9 | 9.8
+
+ | 2023 | 37.3 | 1.8
+
+ | 2022 | 31.8 | −9.1
+
+ | 2021 | 17.4 | −0.4
+
+ | 2020 | 11.1 | −6.7
+
+ | 2019 | 14.1 | −8.5
+
+ | 2018 | 11.3 | 1
+
+ | 2017 | 7.9 | −4
+
+ | 2016 | 5 | −3.6
+
+ | 2015 | 1.7 | −1.6
+
+ | 2014 | 0.4 | −0.7
+
+Sales by region (2024)[203]
+
+ | Region
+ | Sales in billion $
+ | Share
+
+ | United States and Canada
+ | 23.6
+ | 53.7%
+
+ | Europe, the Middle East and Africa
+ | 12.5
+ | 28.5%
+
+ | Asia–Pacific
+ | 5.0
+ | 11.5%
+
+ | Latin America
+ | 2.8
+ | 6.4%
+
+Sales by business segment (2024)[203]
+
+ | Business segment
+ | Sales in billion $
+ | Share
+
+ | Mobility
+ | 25.1
+ | 57.0%
+
+ | Delivery
+ | 13.8
+ | 31.3%
+
+ | Freight
+ | 5.1
+ | 11.7%
+
+Lobbying
+[edit | edit source]
+
+In 2022, more than 124,000 internal documents covering the five-year period from 2012 to 2017 when Uber was run by Travis Kalanick were leaked by Mark MacGann, a lobbyist who "led Uber's efforts to win over governments across Europe, the Middle East and Africa".[204] The documents were leaked to The Guardian and first printed on 10 July 2022 by its Sunday sister The Observer. The documents revealed attempts to lobby Joe Biden, Olaf Scholz and George Osborne; how Emmanuel Macron secretly aided Uber lobbying in France, and use of a kill switch during police raids to conceal data.[205]
+
+Gallery
+[edit | edit source]
+
+An Uber driver in Bogotá, Colombia with the Uber app on a dashboard-mounted iPhone
+
+Uber Boat by Thames Clippers on River Thames, London
+
+References
+[edit | edit source]
+
+1 2 3 "Uber Technologies, Inc. 2025 Form 10-K Annual Report". United States Securities and Exchange Commission. February 13, 2026.
+
+1 2 "Uber Announces Results for Fourth Quarter and Full Year 2025" (Press release). Business Wire. February 4, 2026.
+
+↑ "Nissan, Uber, Wayve unveil robotaxi tie-up". CNA. March 12, 2026.
+
+↑ Lung, Natalie (March 26, 2026). "Pony AI, Uber to Launch Robotaxis in Croatia in Europe Push". Bloomberg News.
+
+↑ Tanna, Shivani (November 26, 2025). Dhaniwala, Mrigank (ed.). "Uber, WeRide launch driverless robotaxis in Abu Dhabi". Reuters.
+
+↑ Kharpal, Arjun (July 15, 2025). "China's Baidu to bring its driverless cars to Uber globally". CNBC.
+
+1 2 Scott, Alec (November 19, 2015). "Co-founding Uber made Calgary-born Garrett Camp a billionaire". Canadian Business. Archived from the original on June 5, 2023. Retrieved February 7, 2023.
+
+1 2 Shontell, Alyson (January 11, 2014). "All Hail The Uber Man! How Sharp-Elbowed Salesman Travis Kalanick Became Silicon Valley's Newest Star". Business Insider. Archived from the original on September 8, 2018.
+
+↑ Clark, Kate (May 24, 2019). "Uber's first employee Ryan Graves resigns from board". TechCrunch. Retrieved April 29, 2025.
+
+↑ Balakrishnan, Anita (August 10, 2017). "How Ryan Graves became Uber's first CEO". CNBC.
+
+↑ Lagorio-Chafkin, Christine (January 15, 2014). "How Uber Is Going To Hire 1,000 People This Year". Inc. Archived from the original on November 18, 2018.
+
+↑ 
+Huet, Ellen (December 11, 2014). "Uber's Global Expansion in Five Seconds". Forbes. Archived from the original on February 10, 2018.
+
+↑ McAlone, Nathan (February 10, 2016). "This is how Uber used to look when it first started out – and how it's changed over time". Business Insider. Archived from the original on August 25, 2018. Retrieved September 8, 2018.
+
+↑ Kircher, Madison Malone (March 2, 2017). "So What Are That Uber Driver and Travis Kalanick Arguing About Exactly?". Intelligencer. Retrieved April 29, 2025.
+
+↑ O'Brien, Danny (January 13, 2012). "New York cab fleecing holds lesson on data versus intuition". The Irish Times. Archived from the original on November 29, 2018. Retrieved September 8, 2018.
+
+↑ Canacalis, Jason (August 16, 2011). "Travis Kalanick of Uber minute 1:08:00 Kalanick said rideshare was illegal". This Week in Startups.
+
+↑ Canacalis, Jason (October 13, 2012). "Startups News Panel with Uber Investor Jason Calacanis minute 50:50 Wingz known as Tickengo back then mentioned and 1:01:50 Airbnb for rides won't survive". This Week in Startups.
+
+↑ Lacy, Sarah (June 15, 2011). "Uber Out-Maths Google on NYC ETAs". TechCrunch. Archived from the original on February 26, 2017.
+
+↑ Rao, Leena (April 18, 2012). "Uber Experiments With Lower-Priced Taxis in Chicago Through Newly Launched Labs Group, 'Garage'". TechCrunch. Archived from the original on January 22, 2018. Retrieved June 25, 2017.
+
+↑ O'Brien, Terrence (April 18, 2012). "Uber tackles Taxis in Chicago with Uber Garage experiment". Engadget. Archived from the original on February 26, 2017. Retrieved February 26, 2017.
+
+↑ Hahn, Fritz (December 4, 2012). "Uber opens doors in D.C." The Washington Post. Archived from the original on February 22, 2017. Retrieved February 20, 2017.
+
+↑ Hartmans, Avery; Leskin, Paige (May 18, 2019). "The history of how Uber went from the most feared startup in the world to its massive IPO". Business Insider.
+
+↑ Lawler, Ryan (April 12, 2013). "Uber Moves Deeper Into Ride Sharing, Promises to Roll Out Services". TechCrunch.
+
+↑ Kalanick, Travis (April 12, 2013). "Uber Policy White Paper 1.0: Addressing Regulatory Ambiguity Around Ridesharing Apps". Scribd.com.
+
+↑ Fowler, Geoffrey (October 28, 2012). "Taxi Apps Face Bumpy Road". The Wall Street Journal.
+
+↑ Paul, Sunil (September 10, 2017). "The Untold Story of Ridesharing — Part III: The Birth of Sidecar and Ridesharing". Medium. Retrieved April 26, 2026.
+
+↑ Chen, Andrew (2021). The cold start problem: how to start and scale network effects (PDF) (First ed.). New York, NY: Harper Business, an imprint of HarperCollinsPublishers. p. 95. ISBN 978-0062969743. Retrieved April 26, 2026.
+
+↑ Thu, Kelsey Brugger (December 19, 2013). "Uber Taxi App a Fit for Santa Barbara?". Santa Barbara Independent.
+
+↑ Wolff, Michael (December 22, 2013). "Wolff: The tech company of the year is Uber". USA Today. Archived from the original on September 7, 2017. Retrieved September 17, 2017.
+
+↑ Lawler, Ryan (September 2, 2014). "Uber Opens Up UberPool To All San Francisco Users". TechCrunch. Archived from the original on April 23, 2017. Retrieved June 25, 2017.
+
+↑ "Lyft and Uber launch carpool-like services in San Francisco". Los Angeles Times. August 6, 2014. Retrieved March 10, 2020.
+
+↑ Carson, Biz (March 2, 2016). "Uber's GrubHub killer is finally in the US – here's the inside story on its big bet on food". Business Insider. Archived from the original on August 25, 2018. Retrieved September 8, 2018.
+
+↑ Dickey, Megan Rose (January 20, 2016). "Uber's Standalone Food Delivery App Is Coming To The U.S." TechCrunch. Archived from the original on July 7, 2017. Retrieved December 19, 2017.
+
+↑ "The battle between Uber and its fiercest competitor is over—and Uber lost". Quartz. July 21, 2022.
+
+↑ Crabtree, James (February 9, 2018). "Didi Chuxing took on Uber and won. Now it's taking on the world". Wired. Archived from the original on October 11, 2018. Retrieved October 10, 2018.
+
+↑ Issac, Mike (August 26, 2016). "How Uber Lost More Than $1 Billion in the First Half of 2016". The New York Times. Archived from the original on December 23, 2016. Retrieved February 28, 2017.
+
+↑ Kirby, William (August 2, 2016). "The Real Reason Uber Is Giving Up in China". Harvard Business Review. Archived from the original on January 22, 2019. Retrieved January 22, 2019.
+
+↑ Chappell, Bill (July 31, 2018). "Uber Parks Its Self-Driving Truck Project, Saying It Will Push For Autonomous Cars". NPR. Archived from the original on August 8, 2018.
+
+↑ Hawkins, Andrew J. (June 7, 2022). "Waymo is teaming up with Uber on autonomous trucking because time really heals all wounds". The Verge.
+
+↑ Marinova, Polina (December 5, 2016). "Uber Just Bought a Startup You've Never Heard Of. Here's Why That's Important". Fortune.
+
+↑ Bosa, Deirdre; Feiner, Lauren (May 18, 2020). "Uber to cut 3,000 more jobs". CNBC.
+
+↑ Said, Carolyn (August 28, 2017). "New Uber CEO will face daunting challenges". San Francisco Chronicle.
+
+↑ Flynn, Kerry (August 28, 2017). "Uber's (probable) new CEO is known to be 'fair and nice,' for a change". Mashable.
+
+↑ Jeb Su (January 25, 2016). "Wingz Raises $11 Million To Disrupt Airport Rides, Plans Nationwide Expansion". Forbes.
+
+↑ Lora Kolodny, Wall Street Journal Staff (April 13, 2015). "Wingz Raises $2M to Book Airport Rides for People Who Plan Ahead". Wall Street Journal. Retrieved April 13, 2015.
+
+↑ Reitman, Rainey (July 10, 2017). "Who Has Your Back? Government Data Requests 2017". Electronic Frontier Foundation. Archived from the original on September 15, 2018.
+
+↑ Gebhart, Kurt Opsahl and Gennie (September 18, 2017). "In A Win For Privacy, Uber Restores User Control Over Location-Sharing". Electronic Frontier Foundation.
+
+↑ Stubbs, Jack (February 7, 2018). "Uber, Yandex complete ride services merger". Reuters.
+
+↑ "Russia's Yandex buys Uber's stake in taxi JV for $703 million". Reuters. April 21, 2023.
+
+↑ "Uber sells South East Asia business to Grab". BBC News. March 26, 2018. Archived from the original on June 28, 2018. Retrieved June 22, 2018.
+
+↑ Waters, Richard; Lucas, Louise (March 26, 2018). "Uber exits south-east Asia with sale to rival Grab". Financial Times. Archived from the original on January 13, 2019. Retrieved January 12, 2019.
+
+↑ Keeton-Olsen, Danielle (March 26, 2018). "Grab Officially Takes Control Of Uber's Southeast Asia Operations". Fortune. Archived from the original on April 1, 2019. Retrieved January 12, 2019.
+
+↑ Russell, Jon (April 12, 2019). "Uber has already made billions from its exits in China, Russia and Southeast Asia". TechCrunch.
+
+↑ Griswold, Alison (November 27, 2018). "Uber shut down its rental car program for Uber riders". Quartz.
+
+↑ Miller, Ron (November 15, 2018). "Uber joins Linux Foundation, cementing commitment to open-source tools". TechCrunch. Archived from the original on November 16, 2018.
+
+↑ Sargent, Jenna (November 19, 2018). "SD Times news digest: Alexa-hosted skills, Uber becomes Gold member of the Linux Foundation, and Oasis Devnet". SD Times.
+
+↑ Garsten, Ed. "Tesla-Only Driveshare Company Autzu Expanding To Three Big U.S. Cities With Eye To EV Robocars". Forbes. Retrieved August 19, 2023.
+
+↑ Jones, Ryan. "Uber partnerships with car-rental startups could increase congestion, experts say". CBC.
+
+↑ Jilek, Jiri (2025). "Environmental Implications of Autonomous Vehicles : A Case Study on Autzu's Ridesharing Model and CO2 Reduction". International Journal of Scientific Research in Science and Technology. 12 (1): 73–80. doi:10.32628/IJSRST251217. ISSN 2395-602X.
+
+↑ Driebusch, Corrie; Farrell, Maureen (May 10, 2019). "Uber IPO Stumbles, Stock Trades Below Offering Price". The Wall Street Journal.
+
+↑ "Live updates: Uber and Lyft strike for better pay". CNN. May 8, 2019. Archived from the original on April 1, 2022.
+
+↑ Abril, Danielle (September 10, 2019). "Uber Makes a Second Round of Employee Cuts, Laying Off 435 From the Engineering and Product Teams". Fortune.
+
+↑ Conger, Kate (October 11, 2019). "Uber Acquires Cornershop, a Grocery Delivery Start-Up". The New York Times.
+
+↑ Thakker, Krishna (October 14, 2019). "Uber to acquire international grocery delivery startup". Industry Dive.
+
+↑ Alamalhodaei, Aria (June 21, 2021). "Uber to become the sole owner of grocery delivery startup Cornershop". TechCrunch.
+
+1 2 Ongweso, Edward Jr.; Koebler, Jason (September 11, 2019). "Uber Became Big by Ignoring Laws (and It Plans to Keep Doing That)". Vice Media.
+
+↑ SAMMON, ALEXANDER (September 12, 2019). "Uber Goes Back to Basics: Violating the Law". The American Prospect.
+
+↑ "Uber launches app aimed at connecting workers with businesses". Reuters. October 3, 2019.
+
+↑ Wile, Rob (December 18, 2019). "Uber is about to provide a lot more gig opportunities in Miami-Dade". Miami Herald.
+
+1 2 Rana, Preetika (May 18, 2020). "Uber Cuts 3,000 More Jobs, Shuts 45 Offices in Coronavirus Crunch". The Wall Street Journal.
+
+↑ Singh, Pradeep (January 6, 2020). "[Big News] Uber closes the acquisition of Middle-Eastern rival Careem for $3.1 Billion". LAFFAZ. Retrieved January 17, 2020.
+
+↑ Singh, Manish (January 20, 2020). "Uber sells food delivery business in India to Zomato". TechCrunch.
+
+↑ McFarland, Matt (January 21, 2020). "Uber Tests Feature Letting Some California Drivers Set Their Own Rates". CNN.
+
+↑ Heater, Brian (May 6, 2020). "Uber is laying off 3,700 as rides plummet due to COVID-19". TechCrunch.
+
+↑ Korosec, Kirsten (June 17, 2020). "Uber pushes into on-demand public transit with its first SaaS partnership". TechCrunch. Archived from the original on August 17, 2020. Retrieved June 17, 2020.
+
+↑ Khosrowshahi, Dara (September 8, 2020). "Driving a Green Recovery". Uber.
+
+↑ Shieber, Jonathan (September 8, 2020). "Committing to a fully zero-emission fleet by 2040, Uber is dedicating $800 million to electrifying its drivers". TechCrunch.
+
+↑ Kelley, Alexandra (September 9, 2020). "Uber pledges net-zero emissions by 2040". The Hill.
+
+↑ "Uber Completes Acquisition of Postmates" (Press release). Business Wire. December 1, 2020.
+
+↑ Etherington, Darrell (December 1, 2020). "Uber officially completes Postmates acquisition". TechCrunch.
+
+↑ Sumagaysay, Levi (December 1, 2020). "Uber completes Postmates acquisition, boosting its place in food delivery". MarketWatch.
+
+↑ Neate, Rupert (December 9, 2020). "Uber sells loss-making flying taxi division to Joby Aviation". The Guardian. ISSN 0261-3077.
+
+↑ Schubarth, Cromwell (December 8, 2020). "A day after selling self-driving unit, Uber's offloading air taxi wing to Joby Aviation". American City Business Journals.
+
+↑ Hu, Krystal; Bellon, Tina; Lee, Jane Lanhee (December 7, 2020). "Uber sells ATG self-driving business to Aurora at $4 billion". Reuters.
+
+↑ Mericle, Julia (January 19, 2021). "Aurora closes acquisition of Uber ATG, forms partnership with PACCAR". American City Business Journals.
+
+↑ Vacar, Tom (March 29, 2021). "Uber opens new San Francisco Mission Bay headquarters". KTVU.
+
+↑ Mehta, Ivan (January 16, 2024). "Uber is closing alcohol delivery service Drizly three years after acquisition". TechCrunch.
+
+↑ "Cheers! Uber Completes Acquisition of Drizly" (Press release). Business Wire. October 13, 2021.
+
+↑ Ross, David (January 20, 2022). "Uber buys Australian car-sharing tech start up Car Next Door". The Australian. Archived from the original on June 20, 2023.
+
+↑ DURBIN, DEE-ANN (February 14, 2024). "Date night strike: Thousands of US, UK delivery, ride-hailing drivers stop work on Valentine's Day". Associated Press.
+
+↑ Waters, Richard (August 1, 2023). "Uber makes first operating profit after racking up $31.5bn of losses". Financial Times.
+
+↑ Bellan, Rebecca (May 6, 2025). "Uber Eats comes to Turkey via $700M Trendyol Go acquisition". TechCrunch.
+
+↑ "Uber takes over Denmark's largest taxi company". The Local. May 28, 2025.
+
+↑ Korosec, Kirsten (July 17, 2025). "Uber makes multimillion-dollar investment in Lucid and Nuro to build a premium robotaxi service". TechCrunch.
+
+↑ Carlson, Kara; Lung, Natalie (July 18, 2025). "Uber partnering with Lucid, Nuro to launch robotaxis in 2026". Los Angeles Times.
+
+↑ Tripathy, Anshuman (September 10, 2025). Kishore, Vijay; Muhammed, Sahal (eds.). "Joby to bring helicopter and seaplane rides to Uber app as soon as 2026". Reuters.
+
+↑ Ombok, Eric (September 17, 2025). "Uber Adds Kenya Game Safaris With Eye on $4 Billion Industry". Bloomberg.
+
+↑ Kimeu, Caroline (September 27, 2026). "Uber's New Kenyan Safari Business Is Already Stumbling". Wall Street Journal. ISSN 0099-9660. Retrieved October 28, 2026.
+
+↑ Rodriguez, Salvador (February 23, 2026). "Uber acquiring parking app SpotHero as it moves beyond ride-hailing and food delivery". CNBC.
+
+↑ Korosec, Kirsten (February 23, 2026). "Uber wants to be a Swiss Army Knife for robotaxis". TechCrunch.
+
+↑ Wayland, Michael (March 19, 2026). "Uber to invest up to $1.25 billion in EV maker Rivian in deal to launch 50,000 robotaxis". CNBC.
+
+↑ "Uber, Nvidia plan robotaxi rollout in 28 cities starting next year". Reuters. March 16, 2026.
+
+↑ Korosec, Kirsten (July 16, 2026). "Uber's $14.8B Delivery Hero deal would nearly double its global footprint". TechCrunch.
+
+↑ Subin, Samantha (September 2, 2026). "Uber to cut 10% of workforce in bid to move 'simpler and faster'". CNBC.
+
+↑ Koebler, Jason (October 14, 2016). "Uber CEO and Pittsburgh Mayor Discussed Reducing State Fines, Emails Reveal". Vice.
+
+↑ Larkin, Emilee (August 6, 2021). "Boston cab drivers lose battle with Uber at First Circuit". Courthouse News Service.
+
+↑ Greil, John (July 1, 2021). "The Unfranchised Competitor Doctrine". Villanova Law Review.
+
+↑ "Anoush Cab, Inc. v. Uber Technologies, Inc., No. 19-2001 (1st Cir. 2021)". Justia. 2021.
+
+↑ Dickey, Megan Rose (November 2, 2016). "San Francisco taxi company sues Uber for "predatory pricing tactics"". TechCrunch.
+
+↑ Leonard, Mike (December 13, 2021). "Uber Resolves San Francisco Cab Company's Predatory Pricing Suit". Bloomberg Law.
+
+↑ "Uber class action". Maurice Blackburn.
+
+↑ Hoskins, Peter (March 18, 2024). "Uber agrees $178m payout to Australia taxi drivers". BBC News.
+
+↑ Sainato, Michael (August 27, 2021). "'I don't like being treated like crap': gig workers aim to retool a system they say is rigged". The Guardian. Archived from the original on October 31, 2021.
+
+↑ Thompson, Rachel (February 19, 2021). "Uber loses its final appeal in UK Supreme Court in landmark ruling". Mashable. Archived from the original on February 19, 2021.
+
+↑ Korosec, Kirsten; Lomas, Natasha (March 17, 2021). "Uber says it will treat UK drivers as workers in wake of Supreme Court ruling". TechCrunch. Archived from the original on April 8, 2021.
+
+↑ Tibshraeny, Jenée (November 17, 2025). "Uber drivers win battle for employee status in Supreme Court". NZ Herald.
+
+↑ Pullar-Strecker, Tom (November 17, 2025). "End of the road for Uber appeals after top court rules drivers should be treated as employees". Stuff.
+
+↑ "Swiss authorities say Uber drivers should be treated as 'employees'". Swissinfo. March 19, 2018. Archived from the original on October 11, 2020.
+
+↑ "Uber has to pay New Jersey nearly $650 million in employment taxes". Engadget. November 14, 2019. Archived from the original on January 16, 2021.
+
+↑ Lomas, Natasha (September 13, 2021). "Dutch court finds Uber drivers are employees". TechCrunch. Archived from the original on October 31, 2021.
+
+↑ Keane, Jonathan (September 13, 2021). "Uber Hit By Dutch Ruling That Deems Drivers Employees". Forbes. Archived from the original on October 31, 2021.
+
+↑ Luna, Taryn (November 4, 2020). "California voters approve Prop. 22, allowing Uber and Lyft drivers to remain independent contractors". Los Angeles Times. Archived from the original on January 4, 2021.
+
+↑ HILTZIK, MICHAEL (September 8, 2020). "Column: Uber and Lyft just made their campaign to keep exploiting workers the costliest in history". Los Angeles Times. Archived from the original on November 4, 2020.
+
+↑ "Late Contribution Report". Secretary of State of California. Archived from the original on September 12, 2020.
+
+↑ Paul Rogers; Grant Stringer (October 14, 2025). "Glock ban, slavery reparations, ICE agent masks, more housing: Here are 10 key bills Gov. Gavin Newsom signed into law". The Sacramento Bee. Retrieved December 23, 2025.
+
+↑ "AG Campbell Reaches Nation-Leading Settlement WIth Uber and Lyft, Secures Landmark Wages, Benefits and PRotections for Drivers" (Press release). Massachusetts Attorney General. June 27, 2024.
+
+↑ Ongweso Jr., Edward (January 21, 2021). "New Study Finds Chicago Uber and Lyft Drivers Are Paid Below Minimum Wage". Vice. Archived from the original on October 30, 2021.
+
+↑ Bartz, Diane (January 19, 2017). "Uber to pay $20 million to settle U.S. claims it misled drivers". Reuters. Archived from the original on December 15, 2018.
+
+↑ Carson, Biz (January 20, 2017). "Uber to pay $20 million to FTC to settle claims that it exaggerated how much drivers could make". Business Insider. Archived from the original on January 20, 2017.
+
+↑ Huet, Ellen (January 19, 2017). "Uber to Pay $20 Million to Settle FTC Suit Over Driver Pay". Bloomberg News. Archived from the original on January 20, 2017.
+
+↑ Wong, Julia Carrie (May 23, 2017). "Uber admits underpaying New York City drivers by millions of dollars". The Guardian. Archived from the original on January 9, 2019.
+
+↑ Lien, Tracey (February 19, 2018). "Uber class-action lawsuit over how drivers were paid gets green light from judge". Los Angeles Times. Archived from the original on January 13, 2019.
+
+↑ "Uber drivers who sued over pay will get at least $20 each after". Los Angeles Times. July 23, 2019. Archived from the original on October 20, 2021.
+
+↑ CHRISTOPHI, HELEN (September 27, 2018). "Judge Gives Preliminary Approval to Uber Class Action Settlement". Courthouse News Service. Archived from the original on October 19, 2021.
+
+↑ "Gill et al v. Uber Technologies, Inc. et al". PacerMonitor. Archived from the original on February 27, 2023. Retrieved February 27, 2023.
+
+↑ Scarcella, Mike (March 15, 2024). "Uber, Lyft drivers drop price-fixing lawsuit in California". Reuters.
+
+↑ Isaac, Mike (March 3, 2017). "How Uber Deceives the Authorities Worldwide". The New York Times. Archived from the original on March 5, 2017.
+
+↑ Somerville, Heather (March 8, 2017). "Uber prohibits use of 'Greyball' technology to evade authorities". Reuters.
+
+↑ Timberg, Craig; Fung, Brian (March 3, 2017). "Uber's secret 'Greyball' program shows just how far it will go to get its way". Chicago Tribune. Archived from the original on April 30, 2017.
+
+↑ Njus, Elliot (March 6, 2017). "Portland to investigate Uber's 'Greyball' scheme to thwart regulators". The Oregonian. Archived from the original on September 10, 2018.
+
+↑ "Transportation Network Companies: Regulation Evasion Audit". Portland Bureau of Transportation. April 28, 2017. Archived from the original on May 3, 2017.
+
+↑ Njus, Elliot (April 27, 2017). "Portland may subpoena Uber over regulator-dodging 'Greyball' software". The Oregonian. Archived from the original on September 10, 2018.
+
+↑ Levine, Dan; Menn, Joseph (May 5, 2017). "Exclusive: Uber faces criminal probe over software used to evade authorities". Reuters.
+
+↑ Isaac, Mike (May 4, 2017). "Uber Faces Federal Inquiry Over Use of Greyball Tool to Evade Authorities". The New York Times.
+
+↑ Isaac, Mike (May 5, 2017). "Justice Department Expands Its Inquiry Into Uber's Greyball Tool". The New York Times.
+
+↑ della Cava, Marco (March 8, 2017). "Uber admits its ghost driver 'Greyball' tool was used to thwart regulators, vows to stop". USA Today. Archived from the original on April 28, 2017.
+
+↑ Sullivan, Joe (March 8, 2017). "An update on "greyballing"". Uber. Archived from the original on March 29, 2017.
+
+↑ "TFL decision on Uber London Limited" (Press release). Transport for London. September 22, 2017.
+
+↑ "Uber has lost its licence to operate in London". Business Insider. September 22, 2017.
+
+↑ "Uber to begin appeal over London licence". BBC News. June 25, 2018.
+
+↑ Zaleski, Olivia; Newcomer, Eric (January 11, 2018). "Uber's Secret Tool for Keeping the Cops in the Dark". Bloomberg News. Archived from the original on September 21, 2018.
+
+↑ Matousek, Mark (January 11, 2018). "Uber reportedly disrupted government investigations for almost 2 years with a 'secret' system called 'Ripley'". Business Insider. Archived from the original on September 8, 2018.
+
+↑ Solon, Olivia (January 11, 2018). "Uber developed secret system to lock down staff computers in a police raid". The Guardian. Archived from the original on January 11, 2018.
+
+↑ Davies, Rob; Goodley, Simon (July 11, 2022). "Uber bosses told staff to use 'kill switch' during raids to stop police seeing data". The Guardian.
+
+↑ Brandom, Russel; Hawkins, Andrew (July 10, 2016). "How Uber secretly investigated its legal foes — and got caught". The Verge. Retrieved July 18, 2022. By the end of the week, Henley was on the phone with a corporate research firm called Ergo, also known as Global Precision Research LLC, asking for help with 'a sensitive, very under-the-radar investigation.' After a few emails, Henley worked out the terms of the deal with an Ergo executive named Todd Egeland. It would be a 'level two' investigation, the middle of the three levels of work offered by Ergo. It would be drawn from seven source interviews conducted over the course of 10 days, for which Uber would pay $19,500. As with any Ergo investigation, the confidentiality of the client was paramount, and sources were never meant to know who was paying for the research. 'We do quite a bit of this work for law firms,' Egeland reassured him. (Ergo did not respond to requests for comment.)
+
+↑ Hiltzik, Michael (June 10, 2016). "Column: How sleazy is Uber? This federal judge wants to know". Los Angeles Times. Retrieved July 22, 2022. As it turns out, it was them. Uber confessed in February that it had hired the security firm Ergo to investigate Mayer and his lawyers. In fact, Meyer's lawyers say Ergo's investigative report was circulating in Uber's offices and may have been in the hands of the company's general counsel, Salle Yoo, on January 20, the very day the company's lawyers were saying 'it is not us.'
+
+↑ Said, Carolyn (February 27, 2018). "Uber does not have enough wheelchair-accessible vehicles, new lawsuit says". San Francisco Chronicle. Archived from the original on November 9, 2020. Retrieved April 25, 2018.
+
+↑ Sonnemaker, Tyler (April 2, 2021). "Uber ordered to pay $1.1 million to blind passenger who was denied rides 14 separate times". Business Insider.
+
+↑ Williams, David (April 2, 2021). "Uber ordered to pay $1.1 million after blind woman was denied rides more than a dozen times". CNN.
+
+↑ Fowler, Susan (February 19, 2017). "Reflecting on one very, very strange year at Uber".
+
+↑ Kosoff, Maya (February 20, 2017). "Uber C.E.O. Orders "Urgent Investigation" into Sexual Harassment Allegations". Vanity Fair. Archived from the original on July 13, 2017.
+
+↑ Isaac, Mike (February 27, 2017). "Amit Singhal, Uber Executive Linked to Old Harassment Claim, Resigns". The New York Times. Archived from the original on March 8, 2017.
+
+↑ Overly, Steven (February 21, 2017). "Uber hires Eric Holder to investigate sexual harassment claims". Los Angeles Times. Archived from the original on February 21, 2017.
+
+↑ Solon, Olivia (June 7, 2016). "Uber fires more than 20 employees after sexual harassment investigation". The Guardian. ISSN 0261-3077. Archived from the original on June 7, 2017.
+
+↑ Marinova, Polina (June 6, 2017). "Uber Fires More Than 20 Employees After Harassment Investigation: Report". Fortune. Archived from the original on June 8, 2017.
+
+↑ Isaac, Mike (June 21, 2017). "Uber Founder Travis Kalanick Resigns as C.E.O.". The New York Times. Archived from the original on June 21, 2017.
+
+↑ Segall, Laurie (June 21, 2017). "Travis Kalanick resigns as Uber CEO after months of crisis". CNN. Archived from the original on August 31, 2018.
+
+↑ Lacy, Sarah (October 22, 2014). "The horrific trickle down of Asshole culture: Why I've just deleted Uber from my phone". PandoDaily. Archived from the original on September 10, 2018.
+
+↑ Smith, Ben (November 17, 2014). "Uber Executive Suggests Digging Up Dirt On Journalists". BuzzFeed. Archived from the original on September 17, 2017.
+
+↑ Isaac, Mike (November 18, 2014). "Uber Executive Proposes Digging into Journalists' Private Lives". The New York Times. Archived from the original on November 3, 2018.
+
+↑ Lacy, Sarah (November 17, 2014). "The moment I learned just how far Uber will go to silence journalists and attack women". PandoDaily. Archived from the original on September 8, 2018.
+
+↑ Lacy, Sarah (November 14, 2017). "Uber Executive Said the Company Would Spend 'A Million Dollars' to Shut Me Up". Time. Archived from the original on July 28, 2018.
+
+↑ Griswold, Alison (June 12, 2017). "Uber's most scandal-ridden exec is out – and it's not Travis Kalanick". Quartz. Archived from the original on September 9, 2018.
+
+↑ O'Brien, Sara Ashley (August 22, 2018). "Uber to pay 56 workers $1.9 million for harassment and discrimination claims". CNN. Archived from the original on September 9, 2018.
+
+↑ Palmer, Annie (December 24, 2019). "Travis Kalanick severs all ties with Uber, departing board and selling all his shares". CNBC.
+
+↑ Conger, Kate (December 24, 2019). "Uber Founder Travis Kalanick Leaves Board, Severing Last Tie". The New York Times.
+
+↑ Brown, Eliot (December 24, 2019). "Uber Co-Founder Travis Kalanick Departs Board, Sells All His Shares". The Wall Street Journal.
+
+↑ LEE, TIMOTHY B. (December 24, 2019). "Travis Kalanick quits Uber's board, sells off all his Uber stock". Ars Technica.
+
+↑ BOND, SHANNON (August 20, 2020). "Former Uber Executive Charged With Paying 'Hush Money' To Conceal Massive Breach". NPR.
+
+↑ "Dutch watchdog fines Uber 10 mln euros over privacy regulations infringement Reuters". Reuters. February 1, 2024.
+
+↑ Khalil, Hafsa (August 26, 2024). "Uber fined €290m for personal data transfer". BBC News.
+
+↑ Tan, Eli (April 21, 2025). "FTC Sues Uber Over Billing for Its Uber One Subscription Service". The New York Times. Archived from the original on April 22, 2025. Retrieved April 22, 2025.
+
+↑ "US FTC, 21 states file amended complaint against Uber over subscription practices". Reuters. December 15, 2025. Retrieved December 20, 2025.
+
+↑ "Uber Sexual Assault Lawsuit [2024 Update] - Legal Action for Uber Sexual Assault Victims". TorHoerman Law, LLC. December 4, 2024. Retrieved December 6, 2024.
+
+↑ "In re: Uber Technologies, Passenger Sexual Assault Litigation (MDL No. 3084)". United States District Court Northern District of California.
+
+↑ "Uber's Terms of Use Fails to Split Up Mass Sexual Assault Suits". Bloomberg Law. May 21, 2024. Retrieved December 6, 2024.
+
+↑ Sainato, Michael (March 26, 2025). "California Uber and Lyft drivers push for settlement in wage theft claims". The Guardian. ISSN 0261-3077. Retrieved March 26, 2025.
+
+↑ Guess, Megan (February 28, 2015). "50,000 Uber driver names, license plate numbers exposed in a data breach". Ars Technica. Archived from the original on November 25, 2016.
+
+↑ Taylor, Colleen (February 22, 2015). "Uber Database Breach Exposed Information Of 50,000 Drivers, Company Confirms". TechCrunch. Archived from the original on December 30, 2017.
+
+↑ Lee, Dave (November 22, 2017). "Uber concealed huge data breach". BBC News. Archived from the original on June 25, 2018.
+
+↑ Farivar, Cyrus (November 21, 2017). "Hackers hit Uber in 2016: data on 57 million riders, drivers stolen". Ars Technica. Archived from the original on November 22, 2017.
+
+↑ Wong, Julia Carrie (November 22, 2017). "Uber faces slew of investigations in wake of 'outrageous' data hack cover-up". The Guardian. Archived from the original on November 22, 2017.
+
+↑ "Uber Paid Hackers to Delete Stolen Data on 57 Million People". Bloomberg News. November 21, 2017. Archived from the original on November 21, 2017.
+
+↑ Liedtke, Michael (November 22, 2017). "Uber reveals coverup of hack affecting 57M riders, drivers". Financial Post. Archived from the original on September 8, 2018.
+
+↑ Al-Muslim, Aisha (September 26, 2018). "Uber to Pay $148 Million Penalty to Settle 2016 Data Breach". The Wall Street Journal. ISSN 0099-9660. Archived from the original on September 27, 2018.
+
+↑ "Monetary Penalty Notice (Uber)" (PDF). Information Commissioner's Office. November 27, 2018. Archived (PDF) from the original on November 28, 2018.
+
+↑ Fingas, Jon (September 16, 2022). "Uber finds 'no evidence' that sensitive user data was stolen in hack". Engadget.
+
+↑ "Uber investigating hack on its computer systems". BBC News. September 16, 2022.
+
+↑ "Dutch regulator fines Uber $966 million for automating driver suspensions, document shows". Reuters. August 21, 2026. Retrieved August 21, 2026.
+
+↑ "Uber schond rechten chauffeurs, AP legt megaboete van 825 miljoen op" [Uber violated rights of chauffeurs, AP imposes mega fine of 825 million]. NOS (in Dutch). August 21, 2026. Retrieved August 21, 2026.
+
+↑ "Uber Revenue and Usage Statistics (2022)", Business of Apps, February 26, 2025, retrieved April 24, 2025
+
+↑ "Uber Technologies Yearly Financial Statements". www.macrotrends.net. Retrieved April 26, 2026.
+
+1 2 "Uber Technologies, Inc.: Business Segments and Geographical Breakdown of Revenue". www.marketscreener.com. Retrieved May 18, 2025.
+
+↑ Lewis, Paul; Davies, Harry; O'Carroll, Lisa; Goodley, Simon; Lawrence, Felicity (July 11, 2022). "The Uber whistleblower: I'm exposing a system that sold people a lie". The Guardian.
+
+↑ Davies, Harry; Goodley, Simon; Lawrence, Felicity; Lewis, Paul; O'Carroll, Lisa (July 10, 2022). "Uber broke laws, duped police and built secret lobbying operation, leak reveals". The Observer.
+
+Further reading
+[edit | edit source]
+
+Scholarly papers
+
+Laurell, Christofer; Sandström, Christian (June 28, 2016). "Analysing Uber in social media – disruptive technology or institutional disruption?". International Journal of Innovation Management. 20 (5): 1640013. doi:10.1142/S1363919616400132.
+
+McGaughey, E. (2018). "Uber, the Taylor Review, mutuality, and the duty to not misrepresent employment status". Industrial Law Journal. SSRN 3018516.
+
+Petropoulos, Georgios (February 22, 2016). "Uber and the economic impact of sharing economy platforms". Bruegel.
+
+Noto La Diega, Guido (2016). "Uber law and awareness by design. An empirical study on online platforms and dehumanised negotiations" (PDF). Revue européenne de droit de la consommation/ European Journal of Consumer Law. 2016 (II): 383–413 – via Northumbria Research Link.
+
+Oitaven, Juliana Carreiro Corbal; Carelli, Rodrigo de Lacerda; Casagrande, Cássio Luís (2018). Empresas de transporte, plataformas digitais e a relação de emprego: um estudo do trabalho subordinado sob aplicativos (PDF) (in Portuguese). Brasília: Ministério Público do Trabalho. ISBN 9788566507270.
+
+Rogers, B. (2015). "The Social Costs of Uber". University of Chicago Law Review Dialogue. 82: 85. SSRN 2608017.
+
+Books
+
+Isaac, Mike (2019). Super Pumped: The Battle for Uber. New York: W. W. Norton. ISBN 978-0393652246.
+
+Stone, Brad (2017). The Upstarts: How Uber, Airbnb, and the Killer Companies of the New Silicon Valley are Changing the World (1st ed.). New York: Little, Brown and Company. ISBN 9780316388399. OCLC 953598607.
+
+Articles
+
+The Uber whistleblower: I’m exposing a system that sold people a lie. The Guardian. July 11, 2022.
+
+‘Facing an existential threat’: How Uber is navigating clashes with trial attorneys, assault lawsuits and competition. Laurence Darmiento. Los Angeles Times. May 22, 2026.
+
+Further viewing
+[edit | edit source]
+
+Playing by the Rules: Ethics at Work: Season 3 Episode 1: "Driven" PBS, October 3, 2019
+
+External links
+[edit | edit source]
+
+Official website 
+
+Wikimedia Commons has media related to Uber (company).
+
+Wikinews has news related to:
+
+ Uber 
+
+Business data for Uber Technologies, Inc.: 
+
+Google
+
+Reuters
+
+SEC filings
+
+Yahoo!
+
+ | 
+
+v
+
+t
+
+e
+
+Uber
+
+ | Founders | 
+
+Travis Kalanick
+
+Garrett Camp
+
+ | 
+
+ | Executives | 
+
+Ronald Sugar (Chairman)
+
+Dara Khosrowshahi (CEO)
+
+Nelson Chai (CFO)
+
+Thuan Pham (former CTO)
+
+ | Subsidiaries | 
+
+Uber Eats
+
+Uber Freight
+
+Careem
+
+Postmates
+
+ | Acquisitions | 
+
+Careem
+
+Drizly
+
+Jump
+
+Ottomotto
+
+Postmates
+
+ | Defunct/Former | 
+
+Jump
+
+Drizly
+
+Ottomotto
+
+Uber Carshare
+
+Uber Elevate (sold to Joby Aviation)
+
+ | History | 
+
+Timeline of Uber
+
+Controversies involving Uber
+
+Uber Files
+
+2019 strike
+
+ | Related | 
+
+Ridesharing company
+
+Legality of ridesharing companies by jurisdiction
+
+Sharing economy
+
+ | 
+
+ Category
+
+ | 
+
+v
+
+t
+
+e
+
+Platform economy
+
+ | 
+
+Platform capitalism
+
+Platform cooperative
+
+ | Concepts | 
+
+Crowdfunding
+
+Comparison
+
+Customer to customer
+
+Freelancer
+
+Gig economy
+
+list of companies
+
+Gig worker
+
+Online marketplace
+
+Ridesharing company
+
+Two-sided market
+
+ | Labor | 
+
+ | Unions | 
+
+International Alliance of App-based Transport Workers (Global)
+
+Indian Federation of App-based Transport Workers (India)
+
+Rideshare Drivers United (California)
+
+National Taxi Workers' Alliance (New York)
+
+Professional E-Hailing Drivers and Private Owners Association (Nigeria)
+
+ | Strikes | 
+
+2021 Gorillas strikes (Berlin)
+
+2019 Lyft and Uber drivers' strikes (California)
+
+ | Ridesharing | 
+
+ | 
+
+2020 California Proposition 22
+
+California Assembly Bill 5 (2019)
+
+Flight sharing
+
+Legality by jurisdiction
+
+Privacy
+
+ | Companies | 
+
+BlaBlaCar
+
+Co-op Ride
+
+Lyft
+
+Motivate
+
+Uber
+
+Careshare
+
+Controversies
+
+Eats
+
+Uber BV v Aslam
+
+Uber Files
+
+Wingly
+
+ | Online marketplaces | 
+
+ | 
+
+List of online marketplaces
+
+ | Homestay | 
+
+9flats, Airbnb, GuestReady, Hipcamp, misterb&b, Vrbo, Wimdu
+
+ | Related | 
+
+Big Tech
+
+Enshittification
+
+Farm stay
+
+Multi-level marketing
+
+List of companies
+
+ | 
+
+v
+
+t
+
+e
+
+Major Internet companies
+
+ | 
+Companies with an annual revenue of over US$4 billion
+
+ | Internet | 
+
+Adobe
+
+Alibaba
+
+Alphabet
+
+Google
+
+Amazon
+
+Apple
+
+Baidu
+
+IAC
+
+Kakao
+
+Meituan
+
+Meta
+
+Facebook
+
+Microsoft
+
+Naver
+
+NetEase
+
+Tencent
+
+Yandex
+
+ | Cloud computing | 
+
+Akamai
+
+Alibaba Cloud
+
+AWS
+
+Apple iCloud
+
+Google
+
+IBM
+
+Microsoft Azure
+
+Oracle Corporation
+
+Salesforce
+
+SAP
+
+ServiceNow
+
+ | E-commerce | 
+
+Amazon.com
+
+Apple
+
+Booking Holdings
+
+Coupang
+
+eBay
+
+Expedia
+
+Flipkart
+
+Groupon
+
+JD.com
+
+Lazada
+
+Mercado Libre
+
+Ozon
+
+PDD Holdings
+
+Rakuten
+
+Shopee
+
+Shopify
+
+Suning.com
+
+Trip.com
+
+Uber
+
+Wayfair
+
+Wildberries
+
+Zalando
+
+ | Media | 
+
+Bloomberg
+
+BuzzFeed
+
+ByteDance
+
+Disney Streaming
+
+Kuaishou
+
+Netflix
+
+Paramount Streaming
+
+Spotify
+
+Warner Bros. Discovery
+
+ | 
+
+v
+
+t
+
+e
+
+Components of the Dow Jones Transportation Average
+
+ | 
+
+Alaska Air Group
+
+Avis Budget Group
+
+C.H. Robinson
+
+CSX
+
+Delta Air Lines
+
+Expeditors International
+
+FedEx
+
+FedEx Freight
+
+J. B. Hunt
+
+Kirby
+
+Landstar System
+
+Matson
+
+Norfolk Southern
+
+Old Dominion Freight Line
+
+Ryder
+
+Southwest Airlines
+
+Uber
+
+Union Pacific
+
+United Airlines Holdings
+
+United Parcel Service
+
+ | 
+
+v
+
+t
+
+e
+
+S&P 500 companies
+
+ | Communication 
+
+services | 
+
+Alphabet Inc.
+
+AT&T
+
+Charter Communications
+
+Comcast
+
+EchoStar
+
+Fox Corporation
+
+Live Nation Entertainment
+
+Meta Platforms
+
+Netflix
+
+News Corp
+
+Omnicom Group
+
+Reddit
+
+Skydance
+
+T-Mobile
+
+Take-Two Interactive
+
+TKO Group Holdings
+
+Verizon
+
+The Walt Disney Company
+
+ | Consumer 
+
+discretionary | 
+
+Airbnb
+
+Amazon
+
+Aptiv
+
+AutoZone
+
+Best Buy
+
+Booking Holdings
+
+Carnival
+
+Carvana
+
+Chipotle Mexican Grill
+
+Darden Restaurants
+
+Deckers Brands
+
+Domino's
+
+DoorDash
+
+D. R. Horton
+
+eBay
+
+Expedia Group
+
+Ford Motor Company
+
+Garmin
+
+General Motors
+
+Genuine Parts Company
+
+Hasbro
+
+Hilton Worldwide
+
+Home Depot
+
+Las Vegas Sands
+
+Lennar
+
+Lowe's
+
+Lululemon
+
+Marriott International
+
+McDonald's
+
+MGM Resorts International
+
+Nike, Inc.
+
+Norwegian Cruise Line Holdings
+
+NVR, Inc.
+
+O'Reilly Auto Parts
+
+PulteGroup
+
+Ralph Lauren Corporation
+
+Ross Stores
+
+Royal Caribbean Group
+
+Starbucks
+
+Tapestry, Inc.
+
+Tesla, Inc.
+
+TJX
+
+Tractor Supply Company
+
+Ulta Beauty
+
+Williams-Sonoma, Inc.
+
+Wynn Resorts
+
+Yum! Brands
+
+ | Consumer 
+
+staples | 
+
+Altria
+
+Archer Daniels Midland
+
+Brown-Forman
+
+Bunge Global
+
+Casey's
+
+Church & Dwight
+
+Clorox
+
+The Coca-Cola Company
+
+Colgate-Palmolive
+
+Constellation Brands
+
+Costco
+
+Dollar General
+
+Dollar Tree
+
+Estée Lauder Companies
+
+General Mills
+
+The Hershey Company
+
+Hormel Foods
+
+Keurig Dr Pepper
+
+Kimberly-Clark
+
+Kraft Heinz
+
+Kroger
+
+McCormick & Company
+
+Mondelez International
+
+Monster Beverage
+
+PepsiCo
+
+Philip Morris International
+
+Procter & Gamble
+
+The J.M. Smucker Company
+
+Sysco
+
+Target Corporation
+
+Tyson Foods
+
+Vylor
+
+Walmart
+
+ | Energy | 
+
+APA Corporation
+
+Baker Hughes
+
+Chevron Corporation
+
+ConocoPhillips
+
+Devon Energy
+
+Diamondback Energy
+
+EOG Resources
+
+EQT Corporation
+
+Expand Energy
+
+ExxonMobil
+
+Halliburton
+
+Kinder Morgan
+
+Marathon Petroleum
+
+Occidental Petroleum
+
+Oneok
+
+Phillips 66
+
+SLB
+
+Targa Resources
+
+Texas Pacific Land Corporation
+
+Valero Energy
+
+Williams Companies
+
+ | Financials | 
+
+Aflac
+
+Allstate
+
+American Express
+
+American International Group
+
+Ameriprise Financial
+
+Aon
+
+Apollo Global Management
+
+Arch Capital Group
+
+Ares Management
+
+Arthur J. Gallagher & Co.
+
+Assurant
+
+Bank of America
+
+Berkshire Hathaway
+
+BlackRock
+
+Blackstone Inc.
+
+Block, Inc.
+
+BNY
+
+Brown & Brown
+
+Capital One
+
+Cboe Global Markets
+
+Charles Schwab Corporation
+
+Chubb Limited
+
+Cincinnati Financial
+
+Citigroup
+
+Citizens Financial Group
+
+CME Group
+
+Coinbase
+
+Corpay
+
+Erie Indemnity
+
+Everest Group
+
+FactSet
+
+Fifth Third Bank
+
+FIS
+
+Fiserv
+
+Franklin Resources
+
+Global Payments
+
+Globe Life
+
+Goldman Sachs
+
+The Hartford
+
+Huntington Bancshares
+
+Interactive Brokers
+
+Intercontinental Exchange
+
+Invesco
+
+Jack Henry & Associates
+
+JPMorgan Chase
+
+KeyBank
+
+KKR & Co.
+
+Loews Corporation
+
+M&T Bank
+
+Marsh McLennan
+
+Mastercard
+
+MetLife
+
+Moody's Corporation
+
+Morgan Stanley
+
+MSCI
+
+Nasdaq, Inc.
+
+Northern Trust
+
+PayPal
+
+PNC Financial Services
+
+Principal Financial Group
+
+Progressive Corporation
+
+Prudential Financial
+
+Raymond James Financial
+
+Regions Financial Corporation
+
+Robinhood Markets
+
+S&P Global
+
+State Street Corporation
+
+Synchrony Financial
+
+T. Rowe Price
+
+The Travelers Companies
+
+Truist
+
+U.S. Bancorp
+
+Visa Inc.
+
+W. R. Berkley Corporation
+
+Wells Fargo
+
+Willis Towers Watson
+
+ | Health Care | 
+
+Abbott Laboratories
+
+AbbVie
+
+Agilent Technologies
+
+Align Technology
+
+Amgen
+
+Baxter International
+
+Becton Dickinson
+
+Bio-Techne
+
+Biogen
+
+Boston Scientific
+
+Bristol Myers Squibb
+
+Cardinal Health
+
+Cencora
+
+Centene Corporation
+
+Charles River Laboratories
+
+The Cigna Group
+
+Cooper Companies
+
+CVS Health
+
+Danaher Corporation
+
+DaVita
+
+Dexcom
+
+Edwards Lifesciences
+
+Elevance Health
+
+GE HealthCare
+
+Gilead Sciences
+
+HCA Healthcare
+
+Henry Schein
+
+Humana
+
+Idexx Laboratories
+
+Illumina, Inc.
+
+Incyte
+
+Insulet
+
+Intuitive Surgical
+
+IQVIA
+
+Johnson & Johnson
+
+Labcorp
+
+Eli Lilly and Company
+
+McKesson
+
+Medtronic
+
+Merck & Co.
+
+Mettler Toledo
+
+Moderna
+
+Pfizer
+
+Quest Diagnostics
+
+Regeneron Pharmaceuticals
+
+ResMed
+
+Revvity
+
+Solventum
+
+Steris
+
+Stryker Corporation
+
+Thermo Fisher Scientific
+
+UnitedHealth Group
+
+Universal Health Services
+
+Veeva Systems
+
+Vertex Pharmaceuticals
+
+Viatris
+
+Waters Corporation
+
+West Pharmaceutical Services
+
+Zimmer Biomet
+
+Zoetis
+
+ | Industrials | 
+
+3M
+
+A. O. Smith
+
+Allegion
+
+Ametek
+
+Automatic Data Processing
+
+Axon Enterprise
+
+Bloom Energy
+
+Boeing
+
+Broadridge Financial Solutions
+
+C. H. Robinson
+
+Carrier Global
+
+Caterpillar Inc.
+
+Cintas
+
+Comfort Systems USA
+
+Copart
+
+CSX Corporation
+
+Cummins
+
+Deere & Company
+
+Delta Air Lines
+
+Dover Corporation
+
+Eaton Corporation
+
+Emcor
+
+Emerson Electric
+
+Equifax
+
+Expeditors International
+
+Fastenal
+
+FedEx
+
+FedEx Freight
+
+Ferguson Enterprises
+
+Fortive
+
+GE Aerospace
+
+GE Vernova
+
+Generac
+
+General Dynamics
+
+Honeywell Aerospace
+
+Honeywell Technologies
+
+Howmet Aerospace
+
+Hubbell Incorporated
+
+Huntington Ingalls Industries
+
+IDEX Corporation
+
+Illinois Tool Works
+
+Ingersoll Rand
+
+J. B. Hunt
+
+Jacobs Solutions
+
+Johnson Controls
+
+L3Harris
+
+Leidos
+
+Lennox International
+
+Lockheed Martin
+
+Masco
+
+Nordson Corporation
+
+Norfolk Southern Railway
+
+Northrop Grumman
+
+Old Dominion Freight Line
+
+Otis Worldwide
+
+Paccar
+
+Parker Hannifin
+
+Paychex
+
+Pentair
+
+Quanta Services
+
+RTX Corporation
+
+Republic Services
+
+Rockwell Automation
+
+Rollins, Inc.
+
+Snap-on
+
+Southwest Airlines
+
+Stanley Black & Decker
+
+Textron
+
+Trane Technologies
+
+TransDigm Group
+
+Uber
+
+Union Pacific Corporation
+
+United Airlines
+
+United Parcel Service
+
+United Rentals
+
+Veralto
+
+Verisk Analytics
+
+Vertiv
+
+W. W. Grainger
+
+Wabtec
+
+Waste Management, Inc.
+
+Xylem Inc.
+
+ | Information 
+
+technology | 
+
+Accenture
+
+Adobe Inc.
+
+Akamai Technologies
+
+AMD
+
+Amphenol
+
+Analog Devices
+
+Apple Inc.
+
+Applied Materials
+
+AppLovin
+
+Arista Networks
+
+Autodesk
+
+Broadcom
+
+Cadence Design Systems
+
+CDW
+
+Ciena
+
+Cisco
+
+Cognizant
+
+Coherent Corp.
+
+Corning Inc.
+
+CrowdStrike
+
+Datadog
+
+Dell Technologies
+
+Everpure
+
+F5, Inc.
+
+FICO
+
+First Solar
+
+Flex Ltd.
+
+Fortinet
+
+Gartner
+
+Gen Digital
+
+GoDaddy
+
+Hewlett Packard Enterprise
+
+HP Inc.
+
+IBM
+
+Intel
+
+Intuit
+
+Jabil
+
+Keysight
+
+KLA Corporation
+
+Lam Research
+
+Lumentum
+
+Marvell Technology
+
+Microchip Technology
+
+Micron Technology
+
+Microsoft
+
+Monolithic Power Systems
+
+Motorola Solutions
+
+NetApp
+
+Nvidia
+
+NXP Semiconductors
+
+Okta, Inc.
+
+onsemi
+
+Oracle Corporation
+
+Palantir
+
+Palo Alto Networks
+
+PTC Inc.
+
+Qualcomm
+
+Qnity Electronics
+
+Roper Technologies
+
+Salesforce
+
+Sandisk
+
+Seagate Technology
+
+ServiceNow
+
+Skyworks Solutions
+
+Supermicro
+
+Synopsys
+
+TE Connectivity
+
+Teledyne Technologies
+
+Teradyne
+
+Texas Instruments
+
+Trimble Inc.
+
+Twilio
+
+Tyler Technologies
+
+Verisign
+
+Western Digital
+
+Workday, Inc.
+
+Zebra Technologies
+
+ | Materials | 
+
+Air Products
+
+Albemarle Corporation
+
+Amcor
+
+Avery Dennison
+
+Ball Corporation
+
+CF Industries
+
+CRH plc
+
+Dow Chemical Company
+
+DuPont
+
+Ecolab
+
+Freeport-McMoRan
+
+International Flavors & Fragrances
+
+International Paper
+
+Linde plc
+
+LyondellBasell
+
+Martin Marietta Materials
+
+Mosaic
+
+Newmont
+
+Nucor
+
+Packaging Corporation of America
+
+PPG Industries
+
+Sherwin-Williams
+
+Smurfit Westrock
+
+Steel Dynamics
+
+Vulcan Materials Company
+
+ | Real estate | 
+
+Alexandria Real Estate Equities
+
+American Tower
+
+BXP, Inc.
+
+Camden Property Trust
+
+CBRE Group
+
+CoStar Group
+
+Crown Castle
+
+Digital Realty
+
+Equinix
+
+Essex Property Trust
+
+Extra Space Storage
+
+Federal Realty Investment Trust
+
+Healthpeak Properties
+
+Host Hotels & Resorts
+
+Invitation Homes
+
+Iron Mountain
+
+Kimco Realty
+
+Mid-America Apartment Communities
+
+Prologis
+
+Public Storage
+
+Realty Income
+
+Regency Centers
+
+SBA Communications
+
+Simon Property Group
+
+UDR, Inc.
+
+Ventas
+
+Vici Properties
+
+Vivmark Residential
+
+Welltower
+
+Weyerhaeuser
+
+ | Utilities | 
+
+AES Corporation
+
+Alliant Energy
+
+Ameren
+
+American Electric Power
+
+American Water Works
+
+Atmos Energy
+
+CenterPoint Energy
+
+CMS Energy
+
+Consolidated Edison
+
+Constellation Energy
+
+Dominion Energy
+
+DTE Energy
+
+Duke Energy
+
+Edison International
+
+Entergy
+
+Evergy
+
+Eversource Energy
+
+Exelon
+
+FirstEnergy
+
+NextEra Energy
+
+NiSource
+
+NRG Energy
+
+Pacific Gas and Electric Company
+
+Pinnacle West Capital
+
+PPL Corporation
+
+Public Service Enterprise Group
+
+Sempra
+
+Southern Company
+
+Vistra Corp.
+
+WEC Energy Group
+
+Xcel Energy
+
+ | 
+Authority control databases 
+
+ | International | 
+
+ISNI
+
+VIAF
+
+GND
+
+ | National | 
+
+United States
+
+Czech Republic
+
+Israel
+
+ | Other | 
+
+Yale LUX
+
+Retrieved from "https://en.wikipedia.org/w/index.php?title=Uber&oldid=1382453321"
+
+Categories: 
+Uber
+
+2009 establishments in California
+
+2019 initial public offerings
+
+American brands
+
+American companies established in 2009
+
+Companies based in San Francisco
+
+Companies in the Dow Jones Transportation Average
+
+Companies listed on the New York Stock Exchange
+
+Location-based software
+
+Ridesharing companies of the United States
+
+Transport companies established in 2009
+
+Hidden categories: 
+Articles with short description
+
+Short description is different from Wikidata
+
+Wikipedia neutral point of view disputes from August 2026
+
+All Wikipedia neutral point of view disputes
+
+Wikipedia pending changes protected pages
+
+Use American English from January 2016
+
+All Wikipedia articles written in American English
+
+Use mdy dates from February 2017
+
+Pages with non-numeric formatnum arguments
+
+CS1 Dutch-language sources (nl)
+
+CS1 Portuguese-language sources (pt)
+
+Commons category link is on Wikidata
+
+ This page was last edited on 28 October 2026, at 19:57 (UTC).
+
+Page was rendered with Parsoid.
+
+Text is available under the Creative Commons Attribution-ShareAlike 4.0 License;
+additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+Privacy policy
+
+About Wikipedia
+
+Disclaimers
+
+Contact Wikipedia
+
+Legal & safety contacts
+
+Code of Conduct
+
+Developers
+
+Statistics
+
+Cookie statement
+
+Mobile view
+
+Search
+
+ Search
+
+Toggle the table of contents
+
+Uber
+
+67 languages
+
+Add topic

@@ -1,0 +1,890 @@
+URL: https://en.wikipedia.org/wiki/Animator
+FINAL_URL: https://en.wikipedia.org/wiki/Animator
+FETCHED: 2026-11-07T20:48:27.391713+00:00
+
+Jump to content
+
+Main menu
+
+Main menu
+
+ move to sidebar
+ hide
+
+ Navigation
+
+Main page
+
+Contents
+
+Current events
+
+Random article
+
+About Wikipedia
+
+Contact us
+
+ Contribute
+
+Help
+
+Learn to edit
+
+Community portal
+
+Recent changes
+
+Upload file
+
+Special pages
+
+Search
+
+ Search
+
+Appearance
+
+Donate
+
+Create account
+
+Log in
+
+Personal tools
+
+Donate
+
+Create account
+
+Log in
+
+Contents
+
+ move to sidebar
+ hide
+
+(Top)
+
+ 1
+ Specialized fields
+
+ 2
+ Inbetweeners and cleanup artists
+
+ 3
+ Methods
+
+ 4
+ Evolution of animator's roles
+
+ 5
+ See also
+
+ 6
+ References
+
+ 7
+ External links
+
+Toggle the table of contents
+
+Animator
+
+42 languages
+
+العربية
+
+Български
+
+Català
+
+کوردی
+
+Čeština
+
+Dansk
+
+Deutsch
+
+Zazaki
+
+Esperanto
+
+Español
+
+Euskara
+
+فارسی
+
+Suomi
+
+Français
+
+עברית
+
+हिन्दी
+
+Magyar
+
+Հայերեն
+
+Bahasa Indonesia
+
+日本語
+
+ქართული
+
+Қазақша
+
+한국어
+
+Lietuvių
+
+Latviešu
+
+Malagasy
+
+Bahasa Melayu
+
+Norsk bokmål
+
+Occitan
+
+Português
+
+Русский
+
+Simple English
+
+Slovenščina
+
+Shqip
+
+Sunda
+
+Svenska
+
+ไทย
+
+Türkçe
+
+Українська
+
+Oʻzbekcha / ўзбекча
+
+Tiếng Việt
+
+中文
+
+Edit links
+
+Article
+
+Talk
+
+ English
+
+Read
+
+Edit
+
+View history
+
+Save
+
+Tools
+
+Tools
+
+ move to sidebar
+ hide
+
+ Actions
+
+Read
+
+Edit
+
+View history
+
+Save
+
+ General
+
+What links here
+
+Related changes
+
+Upload file
+
+Permanent link
+
+Page information
+
+Cite this page
+
+Get shortened URL
+
+Switch to legacy parser
+
+ Print/export
+
+Download as PDF
+
+Printable version
+
+ In other projects
+
+Wikimedia Commons
+
+Wikidata item
+
+Appearance
+
+ move to sidebar
+ hide
+
+From Wikipedia, the free encyclopedia
+
+Person who makes animation sequences out of still images
+
+For other uses, see Animator (disambiguation).
+
+For people who draw individual images and comics, see Cartoonist.
+
+ | 
+
+ | 
+This article needs more citations. Please help improve this article by adding citations to reliable sources. Unsourced material may be challenged and removed.
+
+Find sources: "Animator" – news · newspapers · books · scholar · JSTOR (July 2021) (Learn how and when to remove this message)
+
+Animator
+ | 
+Scottish Canadian animator Norman McLaren drawing on film, 1944
+
+ | Occupation
+
+ | 
+Occupation type
+ | Art
+
+ | 
+Activity sectors
+ | Film, television, internet, mass media, video games
+
+ | Description
+
+ | Competencies | Drawing, fine arts, acting, computer software
+
+ | 
+Fields of
+
+employment
+ | Animation
+
+An animator is an artist who creates images, known as frames, which give an illusion of movement called animation when displayed in rapid sequence. Animators can work in a variety of fields including film, television, and video games. Animation is closely related to filmmaking and like filmmaking is extremely labor-intensive, which means that most significant works require the collaboration of several animators. The methods of creating the images or frames for an animation piece depend on the animators' artistic styles and their field.
+
+Other artists who contribute to animated cartoons, but who are not animators, include layout artists (who design the backgrounds, lighting, and camera angles), storyboard artists (who draw panels of the action from the script), and background artists (who paint the "scenery"). Animated films share some film crew positions with regular live action films, such as director, producer, sound engineer, and editor, but differ radically in that for most of the history of animation, they did not need most of the crew positions seen on a physical set.
+
+In hand-drawn Japanese animation productions, such as in Hayao Miyazaki's films, the key animator handles both layout and key animation. Some animators in Japan such as Mitsuo Iso take full responsibility for their scenes, making them become more than just the key animator.
+
+Specialized fields
+[edit]
+
+Animators often specialize. One important distinction is between character animators (artists who specialize in character movement, dialogue, acting, etc.) and special effects animators (who animate anything that is not a character; most commonly vehicles, machinery, and natural phenomena such as rain, snow, and water).
+
+Stop motion animators do not draw their images, instead they move models or cut-outs frame-by-frame,[1] famous animators of this genre being Ray Harryhausen and Nick Park. 
+
+Stop-motion animated character from 20 Million Miles to Earth (1957)
+
+Inbetweeners and cleanup artists
+[edit]
+
+In large-scale productions by major studios, each animator usually has one or more assistants, "inbetweeners" and "clean-up artists", who make drawings between the "key poses" drawn by the animator, and also re-draw any sketches that are too roughly made to be used as such.[2] The terms "assistant animator" and "clean-up artists" tend to be used in place of each other.[3] Usually, a young artist seeking to break into animation is hired for the first time in one of these categories, and can later advance to the rank of full animator (usually after working on several productions).
+
+Methods
+[edit]
+
+Historically, the creation of animation was a long and arduous process. Each frame of a given scene was hand-drawn, then transposed onto celluloid, where it would be traced and painted. These finished "cels" were then placed together in sequence over painted backgrounds and filmed, one frame at a time.[4]
+
+Animation methods have become far more varied in recent years.[5] Today's cartoons could be created using any number of methods, mostly using computers to make the animation process cheaper and faster. These more efficient animation procedures have made the animator's job less tedious and more creative.
+
+Audiences generally find animation to be much more interesting with sound. Voice actors and musicians, among other talent, may contribute vocal or music tracks. Some early animated films asked the vocal and music talent to synchronize their recordings to already-extant animation (and this is still the case when films are dubbed for international audiences). For the majority of animated films today, the soundtrack is recorded first in the language of the film's primary target market and the animators are required to synchronize their work to the soundtrack.[5]
+
+Evolution of animator's roles
+[edit]
+
+As a result of the ongoing transition from traditional 2D to 3D computer animation, the animator's traditional task of redrawing and repainting the same character 24 times a second (for each second of finished animation) has now been superseded by the modern task of developing dozens (or hundreds) of movements of different parts of a character in a virtual scene.
+
+Because of the transition to computer animation, many additional support positions have become essential, with the result that the animator has become but one component of a very long and highly specialized production pipeline. In the 21st century, visual development artists design a character as a 2D drawing or painting, then hand it off to modelers who build the character as a collection of digital polygons. Texture artists "paint" the character with colorful or complex textures, and technical directors set up rigging so that the character can be easily moved and posed. For each scene, layout artists set up virtual cameras and rough blocking. Finally, when a character's bugs have been worked out and its scenes have been blocked, it is handed off to an animator (that is, a person with that actual job title) who can start developing the exact movements of the character's virtual limbs, muscles, and facial expressions in each specific scene.
+
+At that point, the role of the modern computer animator overlaps in some respects with that of their predecessors in traditional animation: namely, trying to create scenes already storyboarded in rough form by a team of story artists, and synchronizing lip or mouth movements to dialogue already prepared by a screenwriter and recorded by vocal talent. Despite those constraints, the animator is still capable of exercising significant artistic skill and discretion in developing the character's movements to accomplish the objective of each scene. There is an obvious analogy here between the art of animation and the art of acting, in that actors also must do the best they can with the lines they are given; it is often encapsulated by the common industry saying that animators are "actors with pencils".[6] In 2015, Chris Buck noted in an interview that animators have become "actors with mice."[7] Some studios bring in acting coaches on feature films to help animators work through such issues. Once each scene is complete and has been perfected through the "sweat box" feedback process, the resulting data can be dispatched to a render farm, where computers handle the tedious task of actually rendering all the frames. Each finished film clip is then checked for quality and rushed to a film editor, who assembles the clips together to create the film.
+
+While early computer animation was heavily criticized for rendering human characters that looked plastic or even worse, eerie (see uncanny valley), contemporary software can now render strikingly realistic clothing, hair, and skin. The solid shading of traditional animation has been replaced by very sophisticated virtual lighting in computer animation, and computer animation can take advantage of many camera techniques used in live-action filmmaking (i.e., simulating real-world "camera shake" through motion capture of a cameraman's movements). As a result, some studios now hire nearly as many lighting artists as animators for animated films, while costume designers, hairstylists, choreographers, and cinematographers have occasionally been called upon as consultants to computer-animated projects.
+
+See also
+[edit]
+
+Animation portal
+
+Animation
+
+Computer animation
+
+Computer graphics
+
+Key frame
+
+List of animators
+
+Sweat box
+
+References
+[edit]
+
+↑ Shaw, Susannah (10 September 2012). Stop Motion: Craft Skills for Model Animation. CRC Press. ISBN 978-1-136-13510-1.
+
+↑ "Animator (Animation)". ScreenSkills.
+
+↑ Di Massimo, Eleonora (15 November 2023). "Research Into the industry: Assistant Animator/Clean Up Artist".
+
+↑ "How A Cartoon is Made" "How a Cartoon is Made". Archived from the original on 25 September 2006. Retrieved 10 January 2007.
+
+1 2 nyfa (17 October 2023). "The History of Animation: Celebrating Disney's 100 Years of Stories". NYFA. Retrieved 30 August 2024.
+
+↑ Gaut, Berys (2010). A Philosophy of Cinematic Art. Cambridge: Cambridge University Press. pp. 138–139. ISBN 9780521822442. Retrieved 9 June 2014.
+
+↑ Virtue, Robert (29 April 2015). "Acclaimed Disney director shares his creative vision for Newcastle". 1233 ABC Newcastle. Australian Broadcasting Corporation. Archived from the original on 5 May 2015. Retrieved 2 May 2015.
+
+External links
+[edit]
+
+Look up animator in Wiktionary, the free dictionary.
+
+Animation Toolworks Glossary: Who Does What In Animation
+
+How An Animated Cartoon Is Made
+
+ | 
+
+v
+
+t
+
+e
+
+Animation topics
+
+ | By country | 
+
+Azerbaijan
+
+Bangladesh
+
+Bhutan
+
+Brazil
+
+Bulgaria
+
+Canada
+
+China
+
+history
+
+Czechia
+
+Estonia
+
+France
+
+Hungary
+
+India
+
+history
+
+Indonesia
+
+Iran
+
+Italy
+
+Japan
+
+history
+
+Korea
+
+North
+
+South
+
+history
+
+Latvia
+
+Lithuania
+
+Malaysia
+
+Mexico
+
+Philippines
+
+Portugal
+
+Romania
+
+Russia
+
+South Africa
+
+Spain
+
+Taiwan
+
+Thailand
+
+Ukraine
+
+United Kingdom
+
+United States
+
+Silent Era
+
+The Golden Age
+
+World War II
+
+Early TV broadcast era
+
+Modern TV cable and streaming era
+
+Vietnam
+
+ | Industry | 
+
+Animator
+
+List
+
+Animation department
+
+Animation director
+
+Story artist
+
+Animation studios
+
+List
+
+Animation database
+
+Biologist simulators
+
+Animation film festivals
+
+international
+
+regional
+
+Highest-grossing films
+
+Opening weekends
+
+Outsourcing
+
+International Animation Day
+
+ | Works | 
+
+Films
+
+Computer-animated
+
+Feature-length
+
+Lost or unfinished
+
+Package
+
+Short
+
+Short series
+
+Stop-motion
+
+Adult animated films
+
+Children's animated films
+
+Series
+
+Adult animated
+
+Web series
+
+Children's animated
+
+Computer-animated
+
+Direct-to-video
+
+Flash
+
+Internet
+
+Television
+
+Years in animation
+
+ | Techniques | 
+
+ | Traditional | 
+
+Barrier-grid and stereography
+
+Flip book
+
+Limited animation
+
+Masking
+
+Rotoscoping
+
+Exposure sheet
+
+ | Stop motion | 
+
+Claymation
+
+clay painting, strata-cut
+
+Cutout (silhouette)
+
+Graphic
+
+Model
+
+go motion
+
+Object
+
+Brickfilm
+
+Pixilation
+
+Puppetoons
+
+ | Computer | 
+
+ | 2D | 
+
+2.5D
+
+Flash
+
+PowerPoint
+
+SVG
+
+CSS
+
+Multi-sketch
+
+Onion skinning
+
+ | 3D | 
+
+T-pose
+
+Cel shading
+
+CGI
+
+Crowd
+
+Facial animation
+
+Morph target
+
+Motion capture
+
+facial
+
+hand tracking
+
+eye tracking
+
+Non-photorealistic rendering
+
+Physically based animation
+
+Procedural
+
+Skeletal
+
+Virtual cinematography
+
+ | Puppetry | 
+
+Traditional puppetry
+
+Digital puppetry
+
+Machinima
+
+Aniforms
+
+Virtual human
+
+Live2D
+
+Supermarionation
+
+ | Mechanical | 
+
+Animatronics
+
+Audio-Animatronics
+
+Linear Animation Generator
+
+Direct manipulation animation
+
+Humanoid animation
+
+Idle animation
+
+Ink-wash animation
+
+Magic Lantern
+
+Scanimate
+
+Shadowmation
+
+Squigglevision
+
+Whiteboard animation
+
+ | Other methods | 
+
+Blocking
+
+Character animation
+
+model sheet
+
+walk cycle
+
+lip sync
+
+off-model
+
+Chuckimation
+
+Drawn-on-film
+
+Erasure animation
+
+Hydrotechnics
+
+Inbetweening
+
+Morphing
+
+Paint-on-glass
+
+Pinscreen
+
+Pixel art
+
+Pose to pose
+
+Straight ahead
+
+Rubber hose
+
+Special effects
+
+Sand
+
+Syncro-Vox
+
+Zoetrope
+
+ | Variants | 
+
+Abstract animation (visual music)
+
+Adult animation
+
+Animated cartoon
+
+Animated sitcom
+
+Animated documentary
+
+Educational animation
+
+Erotic animation
+
+Independent animation
+
+Instructional animation
+
+Virtual newscaster
+
+ | History | 
+
+Early history
+
+History of computer animation
+
+List of years in animation
+
+ | Related topics | 
+
+Animation music
+
+Bouncing ball
+
+Mickey Mousing
+
+Key frame
+
+Cel
+
+Character animation
+
+model sheet
+
+walk cycle
+
+lip sync
+
+off-model
+
+Creature animation
+
+Twelve basic principles
+
+Motion comic
+
+Films with live action and animation
+
+highest grossing
+
+Cartoon
+
+physics
+
+violence
+
+Most expensive animated films
+
+List of animated films by box office admissions
+
+List of animated television series by episode count
+
+ | 
+
+ Category
+
+ Portal
+
+Outline
+
+ | 
+Authority control databases 
+
+ | International | 
+
+GND
+2
+
+FAST
+
+ | National | 
+
+United States
+
+Japan
+
+Czech Republic
+2
+
+Latvia
+
+Israel
+
+ | Other | 
+
+Yale LUX
+
+Retrieved from "https://en.wikipedia.org/w/index.php?title=Animator&oldid=1338072109"
+
+Categories: 
+Animators
+
+Visual arts occupations
+
+Filmmaking occupations
+
+Information technology occupations
+
+Hidden categories: 
+Articles with short description
+
+Short description is different from Wikidata
+
+Articles needing additional references from July 2021
+
+All articles needing additional references
+
+Use dmy dates from February 2025
+
+ This page was last edited on 13 February 2026, at 02:01 (UTC).
+
+Page was rendered with Parsoid.
+
+Text is available under the Creative Commons Attribution-ShareAlike 4.0 License;
+additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+Privacy policy
+
+About Wikipedia
+
+Disclaimers
+
+Contact Wikipedia
+
+Legal & safety contacts
+
+Code of Conduct
+
+Developers
+
+Statistics
+
+Cookie statement
+
+Mobile view
+
+Search
+
+ Search
+
+Toggle the table of contents
+
+Animator
+
+42 languages
+
+Add topic

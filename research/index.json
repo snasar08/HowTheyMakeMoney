@@ -1,0 +1,614 @@
+{
+  "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000033201113": {
+    "file": "pages/6ac3f49758d9.txt",
+    "fetched_at": "2026-11-07T20:48:13.432548+00:00",
+    "ok": true,
+    "chars": 374,
+    "status": 200,
+    "final_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000033201113",
+    "content_type": "application/json"
+  },
+  "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000033201111": {
+    "file": "pages/100326b9dba5.txt",
+    "fetched_at": "2026-11-07T20:48:13.971898+00:00",
+    "ok": true,
+    "chars": 374,
+    "status": 200,
+    "final_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000033201111",
+    "content_type": "application/json"
+  },
+  "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000033201115": {
+    "file": "pages/0ab4e4f84fe4.txt",
+    "fetched_at": "2026-11-07T20:48:14.449312+00:00",
+    "ok": true,
+    "chars": 375,
+    "status": 200,
+    "final_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000033201115",
+    "content_type": "application/json"
+  },
+  "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000033201101": {
+    "file": "pages/1f7a01bde4e2.txt",
+    "fetched_at": "2026-11-07T20:48:14.964735+00:00",
+    "ok": true,
+    "chars": 375,
+    "status": 200,
+    "final_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000033201101",
+    "content_type": "application/json"
+  },
+  "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000027202113": {
+    "file": "pages/f1f8d3d3830f.txt",
+    "fetched_at": "2026-11-07T20:48:15.390726+00:00",
+    "ok": true,
+    "chars": 374,
+    "status": 200,
+    "final_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000027202113",
+    "content_type": "application/json"
+  },
+  "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000027202111": {
+    "file": "pages/8d5de4cbf361.txt",
+    "fetched_at": "2026-11-07T20:48:15.800649+00:00",
+    "ok": true,
+    "chars": 374,
+    "status": 200,
+    "final_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000027202111",
+    "content_type": "application/json"
+  },
+  "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000027202115": {
+    "file": "pages/6b8e4e1a7336.txt",
+    "fetched_at": "2026-11-07T20:48:16.225644+00:00",
+    "ok": true,
+    "chars": 375,
+    "status": 200,
+    "final_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000027202115",
+    "content_type": "application/json"
+  },
+  "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000027202101": {
+    "file": "pages/2d439d8a1d93.txt",
+    "fetched_at": "2026-11-07T20:48:16.645849+00:00",
+    "ok": true,
+    "chars": 374,
+    "status": 200,
+    "final_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000027202101",
+    "content_type": "application/json"
+  },
+  "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000033909213": {
+    "file": "pages/413361728806.txt",
+    "fetched_at": "2026-11-07T20:48:17.083019+00:00",
+    "ok": true,
+    "chars": 374,
+    "status": 200,
+    "final_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000033909213",
+    "content_type": "application/json"
+  },
+  "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000033909211": {
+    "file": "pages/5156f7d0090d.txt",
+    "fetched_at": "2026-11-07T20:48:17.534920+00:00",
+    "ok": true,
+    "chars": 374,
+    "status": 200,
+    "final_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000033909211",
+    "content_type": "application/json"
+  },
+  "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000033909215": {
+    "file": "pages/e85792346e60.txt",
+    "fetched_at": "2026-11-07T20:48:17.986137+00:00",
+    "ok": true,
+    "chars": 374,
+    "status": 200,
+    "final_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000033909215",
+    "content_type": "application/json"
+  },
+  "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000033909201": {
+    "file": "pages/35a2a2d06e66.txt",
+    "fetched_at": "2026-11-07T20:48:18.393107+00:00",
+    "ok": true,
+    "chars": 375,
+    "status": 200,
+    "final_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000033909201",
+    "content_type": "application/json"
+  },
+  "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000027101413": {
+    "file": "pages/30b224d48e52.txt",
+    "fetched_at": "2026-11-07T20:48:18.802532+00:00",
+    "ok": true,
+    "chars": 375,
+    "status": 200,
+    "final_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000027101413",
+    "content_type": "application/json"
+  },
+  "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000027101411": {
+    "file": "pages/31e43232388d.txt",
+    "fetched_at": "2026-11-07T20:48:19.307753+00:00",
+    "ok": true,
+    "chars": 374,
+    "status": 200,
+    "final_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000027101411",
+    "content_type": "application/json"
+  },
+  "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000027101415": {
+    "file": "pages/3f86551f6f00.txt",
+    "fetched_at": "2026-11-07T20:48:19.719054+00:00",
+    "ok": true,
+    "chars": 375,
+    "status": 200,
+    "final_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000027101415",
+    "content_type": "application/json"
+  },
+  "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000027101401": {
+    "file": "pages/8b709a3258d8.txt",
+    "fetched_at": "2026-11-07T20:48:20.132510+00:00",
+    "ok": true,
+    "chars": 374,
+    "status": 200,
+    "final_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000027101401",
+    "content_type": "application/json"
+  },
+  "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000029113113": {
+    "file": "pages/18063b3483a5.txt",
+    "fetched_at": "2026-11-07T20:48:20.597118+00:00",
+    "ok": true,
+    "chars": 375,
+    "status": 200,
+    "final_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000029113113",
+    "content_type": "application/json"
+  },
+  "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000029113111": {
+    "file": "pages/eb6c348cd99b.txt",
+    "fetched_at": "2026-11-07T20:48:21.072317+00:00",
+    "ok": true,
+    "chars": 374,
+    "status": 200,
+    "final_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000029113111",
+    "content_type": "application/json"
+  },
+  "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000029113115": {
+    "file": "pages/9652b8f48ca2.txt",
+    "fetched_at": "2026-11-07T20:48:21.482840+00:00",
+    "ok": true,
+    "chars": 375,
+    "status": 200,
+    "final_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000029113115",
+    "content_type": "application/json"
+  },
+  "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000029113101": {
+    "file": "pages/8e85b948d401.txt",
+    "fetched_at": "2026-11-07T20:48:21.919440+00:00",
+    "ok": true,
+    "chars": 374,
+    "status": 200,
+    "final_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000029113101",
+    "content_type": "application/json"
+  },
+  "https://en.wikipedia.org/wiki/Firefighting_in_the_United_States": {
+    "file": "pages/a6ed87ab446d.txt",
+    "fetched_at": "2026-11-07T20:48:22.323652+00:00",
+    "ok": true,
+    "chars": 44352,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Firefighting_in_the_United_States",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Volunteer_fire_department": {
+    "file": "pages/9cac583a2785.txt",
+    "fetched_at": "2026-11-07T20:48:22.921362+00:00",
+    "ok": true,
+    "chars": 37648,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Volunteer_fire_department",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://www.nfpa.org/education-and-research/research/nfpa-research/fire-statistical-reports/us-fire-department-profile": {
+    "file": "pages/599511b26674.txt",
+    "fetched_at": "2026-11-07T20:48:25.312457+00:00",
+    "ok": true,
+    "chars": 0,
+    "status": 200,
+    "final_url": "https://www.nfpa.org/education-and-research/research/nfpa-research/fire-statistical-reports/us-fire-department-profile",
+    "content_type": "text/html; charset=utf-8"
+  },
+  "https://en.wikipedia.org/wiki/Lifeguard": {
+    "file": "pages/8f0dd34d9245.txt",
+    "fetched_at": "2026-11-07T20:48:25.952381+00:00",
+    "ok": true,
+    "chars": 55653,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Lifeguard",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Veterinarian": {
+    "file": "pages/16d1cc0a4bca.txt",
+    "fetched_at": "2026-11-07T20:48:26.501832+00:00",
+    "ok": true,
+    "chars": 48744,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Veterinarian",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Veterinary_medicine_in_the_United_States": {
+    "file": "pages/9aef54af3ae6.txt",
+    "fetched_at": "2026-11-07T20:48:26.991830+00:00",
+    "ok": true,
+    "chars": 17417,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Veterinary_medicine_in_the_United_States",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Animator": {
+    "file": "pages/b697908e0686.txt",
+    "fetched_at": "2026-11-07T20:48:27.391713+00:00",
+    "ok": true,
+    "chars": 15214,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Animator",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Professional_sports": {
+    "file": "pages/c589e4a1a160.txt",
+    "fetched_at": "2026-11-07T20:48:27.857925+00:00",
+    "ok": true,
+    "chars": 41850,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Professional_sports",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://s1.q4cdn.com/050606653/files/content_files/4Q26-Earnings-Release_vFINAL.pdf": {
+    "file": "pages/a4b59c8824c4.txt",
+    "fetched_at": "2026-11-07T20:48:28.387986+00:00",
+    "ok": true,
+    "chars": 61600,
+    "status": 200,
+    "final_url": "https://s1.q4cdn.com/050606653/files/content_files/4Q26-Earnings-Release_vFINAL.pdf",
+    "content_type": "application/pdf"
+  },
+  "https://en.wikipedia.org/wiki/Visa_Inc.": {
+    "file": "pages/f7e5379affd9.txt",
+    "fetched_at": "2026-11-07T20:48:28.852546+00:00",
+    "ok": true,
+    "chars": 101162,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Visa_Inc.",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://investor.uber.com/news-events/news/press-release-details/2026/Uber-Announces-Results-for-Third-Quarter-2026/default.aspx": {
+    "file": "pages/55778ab6666f.txt",
+    "fetched_at": "2026-11-07T20:48:29.428877+00:00",
+    "ok": true,
+    "chars": 50583,
+    "status": 200,
+    "final_url": "https://investor.uber.com/news-events/news/press-release-details/2026/Uber-Announces-Results-for-Third-Quarter-2026/default.aspx",
+    "content_type": "text/html; charset=utf-8"
+  },
+  "https://investingnews.com/uber-announces-results-for-third-quarter-2026/": {
+    "file": "pages/cdb6e0f70eac.txt",
+    "fetched_at": "2026-11-07T20:48:29.910309+00:00",
+    "ok": true,
+    "chars": 55858,
+    "status": 200,
+    "final_url": "https://investingnews.com/uber-announces-results-for-third-quarter-2026/",
+    "content_type": "text/html; charset=utf-8"
+  },
+  "https://en.wikipedia.org/wiki/Uber": {
+    "file": "pages/12b034702e9a.txt",
+    "fetched_at": "2026-11-07T20:48:30.501640+00:00",
+    "ok": true,
+    "chars": 77271,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Uber",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Fortnite": {
+    "file": "pages/0c81bb54691c.txt",
+    "fetched_at": "2026-11-07T20:48:31.117751+00:00",
+    "ok": true,
+    "chars": 52823,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Fortnite",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Fortnite_Battle_Royale": {
+    "file": "pages/624d8de76a44.txt",
+    "fetched_at": "2026-11-07T20:48:31.522215+00:00",
+    "ok": true,
+    "chars": 118302,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Fortnite_Battle_Royale",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Instagram": {
+    "file": "pages/046e26986d97.txt",
+    "fetched_at": "2026-11-07T20:48:32.158924+00:00",
+    "ok": true,
+    "chars": 204594,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Instagram",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Arm_span": {
+    "file": "pages/1beca2632b97.txt",
+    "fetched_at": "2026-11-07T20:48:33.073708+00:00",
+    "ok": true,
+    "chars": 11188,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Arm_span",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Earth": {
+    "file": "pages/fa1b34ba841d.txt",
+    "fetched_at": "2026-11-07T20:48:33.564488+00:00",
+    "ok": true,
+    "chars": 151677,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Earth",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Costco": {
+    "file": "pages/ef4abc9806ae.txt",
+    "fetched_at": "2026-11-07T20:48:34.082574+00:00",
+    "ok": true,
+    "chars": 122596,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Costco",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Markus_Persson": {
+    "file": "pages/5fb1a6ea6806.txt",
+    "fetched_at": "2026-11-07T20:48:34.810464+00:00",
+    "ok": true,
+    "chars": 41194,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Markus_Persson",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Minecraft": {
+    "file": "pages/a32730c8de57.txt",
+    "fetched_at": "2026-11-07T20:48:35.323023+00:00",
+    "ok": true,
+    "chars": 170573,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Minecraft",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Mojang_Studios": {
+    "file": "pages/1ee0a089aff6.txt",
+    "fetched_at": "2026-11-07T20:48:35.852025+00:00",
+    "ok": true,
+    "chars": 50761,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Mojang_Studios",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Lionel_Messi": {
+    "file": "pages/2ec5caf4a5c3.txt",
+    "fetched_at": "2026-11-07T20:48:36.378478+00:00",
+    "ok": true,
+    "chars": 217914,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Lionel_Messi",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Forbes_list_of_the_world%27s_highest-paid_athletes": {
+    "file": "pages/d45abcb77f35.txt",
+    "fetched_at": "2026-11-07T20:48:37.420282+00:00",
+    "ok": true,
+    "chars": 25934,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Forbes_list_of_the_world%27s_highest-paid_athletes",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Michael_Jordan": {
+    "file": "pages/39a6bffcde84.txt",
+    "fetched_at": "2026-11-07T20:48:37.815844+00:00",
+    "ok": true,
+    "chars": 208586,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Michael_Jordan",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Air_Jordan": {
+    "file": "pages/0ec2f30bbd20.txt",
+    "fetched_at": "2026-11-07T20:48:38.415417+00:00",
+    "ok": true,
+    "chars": 85927,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Air_Jordan",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Marvel_Entertainment": {
+    "file": "pages/bbccf01793e7.txt",
+    "fetched_at": "2026-11-07T20:48:38.855551+00:00",
+    "ok": true,
+    "chars": 85240,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Marvel_Entertainment",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Marvel_Studios": {
+    "file": "pages/56ff0f784d96.txt",
+    "fetched_at": "2026-11-07T20:48:39.526304+00:00",
+    "ok": true,
+    "chars": 157462,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Marvel_Studios",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe": {
+    "file": "pages/a7c53e96c80b.txt",
+    "fetched_at": "2026-11-07T20:48:40.189529+00:00",
+    "ok": true,
+    "chars": 229418,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Iron_Man_(2008_film)": {
+    "file": "pages/63953639e99e.txt",
+    "fetched_at": "2026-11-07T20:48:41.090034+00:00",
+    "ok": true,
+    "chars": 94328,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Iron_Man_(2008_film)",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Toy_Biz": {
+    "file": "pages/27929b1ccd60.txt",
+    "fetched_at": "2026-11-07T20:48:41.695722+00:00",
+    "ok": true,
+    "chars": 14498,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Toy_Biz",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://s203.q4cdn.com/918857832/files/doc_financials/2025/q4/Q425_HP-Inc-Earnings-Press-Release.pdf": {
+    "file": "pages/2e60c03c2cbd.txt",
+    "fetched_at": "2026-11-07T20:48:43.908101+00:00",
+    "ok": true,
+    "chars": 74826,
+    "status": 200,
+    "final_url": "https://s203.q4cdn.com/918857832/files/doc_financials/2025/q4/Q425_HP-Inc-Earnings-Press-Release.pdf",
+    "content_type": "application/pdf"
+  },
+  "https://www.hp.com/us-en/newsroom/press-releases/2025/hp-inc-reports-fiscal-2025-full-year-and-fourth-quarter-results.html": {
+    "file": "pages/909877877aaf.txt",
+    "fetched_at": "2026-11-07T20:48:44.564994+00:00",
+    "ok": true,
+    "chars": 25025,
+    "status": 200,
+    "final_url": "https://www.hp.com/us-en/newsroom/press-releases/2025/hp-inc-reports-fiscal-2025-full-year-and-fourth-quarter-results.html",
+    "content_type": "text/html;charset=utf-8"
+  },
+  "https://en.wikipedia.org/wiki/Ink_cartridge": {
+    "file": "pages/75b62c7a0e0b.txt",
+    "fetched_at": "2026-11-07T20:48:45.162706+00:00",
+    "ok": true,
+    "chars": 22224,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Ink_cartridge",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Freebie_marketing": {
+    "file": "pages/4510c688fa92.txt",
+    "fetched_at": "2026-11-07T20:48:47.491024+00:00",
+    "ok": true,
+    "chars": 15525,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Freebie_marketing",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Airbnb": {
+    "file": "pages/056d1628ceb0.txt",
+    "fetched_at": "2026-11-07T20:48:47.961329+00:00",
+    "ok": true,
+    "chars": 76145,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Airbnb",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://www.airbnb.com/help/article/1857": {
+    "file": "pages/1166a5d1d9cd.txt",
+    "fetched_at": "2026-11-07T20:48:51.365281+00:00",
+    "ok": true,
+    "chars": 4926,
+    "status": 200,
+    "final_url": "https://www.airbnb.com/help/article/1857",
+    "content_type": "text/html;charset=utf-8"
+  },
+  "https://news.airbnb.com/about-us/": {
+    "file": "pages/e2c078950255.txt",
+    "fetched_at": "2026-11-07T20:48:52.010741+00:00",
+    "ok": true,
+    "chars": 7402,
+    "status": 200,
+    "final_url": "https://news.airbnb.com/about-us",
+    "content_type": "text/html; charset=utf-8"
+  },
+  "https://commons.wikimedia.org/w/api.php?action=query&list=search&srnamespace=6&srlimit=8&format=json&srsearch=Stan%20Lee": {
+    "file": "pages/64840c4686e0.txt",
+    "fetched_at": "2026-11-07T20:48:52.670728+00:00",
+    "ok": true,
+    "chars": 2647,
+    "status": 200,
+    "final_url": "https://commons.wikimedia.org/w/api.php?action=query&list=search&srnamespace=6&srlimit=8&format=json&srsearch=Stan%20Lee",
+    "content_type": "application/json; charset=utf-8"
+  },
+  "https://commons.wikimedia.org/w/api.php?action=query&list=search&srnamespace=6&srlimit=8&format=json&srsearch=Kevin%20Feige": {
+    "file": "pages/373b3848433c.txt",
+    "fetched_at": "2026-11-07T20:48:53.422100+00:00",
+    "ok": true,
+    "chars": 2642,
+    "status": 200,
+    "final_url": "https://commons.wikimedia.org/w/api.php?action=query&list=search&srnamespace=6&srlimit=8&format=json&srsearch=Kevin%20Feige",
+    "content_type": "application/json; charset=utf-8"
+  },
+  "https://commons.wikimedia.org/w/api.php?action=query&list=search&srnamespace=6&srlimit=8&format=json&srsearch=Avi%20Arad": {
+    "file": "pages/f819ca016576.txt",
+    "fetched_at": "2026-11-07T20:48:53.974726+00:00",
+    "ok": true,
+    "chars": 2848,
+    "status": 200,
+    "final_url": "https://commons.wikimedia.org/w/api.php?action=query&list=search&srnamespace=6&srlimit=8&format=json&srsearch=Avi%20Arad",
+    "content_type": "application/json; charset=utf-8"
+  },
+  "https://commons.wikimedia.org/w/api.php?action=query&list=search&srnamespace=6&srlimit=8&format=json&srsearch=Bob%20Iger": {
+    "file": "pages/d37e154be85b.txt",
+    "fetched_at": "2026-11-07T20:48:54.503921+00:00",
+    "ok": true,
+    "chars": 2616,
+    "status": 200,
+    "final_url": "https://commons.wikimedia.org/w/api.php?action=query&list=search&srnamespace=6&srlimit=8&format=json&srsearch=Bob%20Iger",
+    "content_type": "application/json; charset=utf-8"
+  },
+  "https://commons.wikimedia.org/w/api.php?action=query&list=search&srnamespace=6&srlimit=8&format=json&srsearch=Robert%20Downey%20Jr": {
+    "file": "pages/000371c6ad7c.txt",
+    "fetched_at": "2026-11-07T20:48:55.076723+00:00",
+    "ok": true,
+    "chars": 2937,
+    "status": 200,
+    "final_url": "https://commons.wikimedia.org/w/api.php?action=query&list=search&srnamespace=6&srlimit=8&format=json&srsearch=Robert%20Downey%20Jr",
+    "content_type": "application/json; charset=utf-8"
+  },
+  "https://commons.wikimedia.org/w/api.php?action=query&list=search&srnamespace=6&srlimit=8&format=json&srsearch=Jack%20Kirby": {
+    "file": "pages/21e84b605069.txt",
+    "fetched_at": "2026-11-07T20:48:55.692691+00:00",
+    "ok": true,
+    "chars": 2488,
+    "status": 200,
+    "final_url": "https://commons.wikimedia.org/w/api.php?action=query&list=search&srnamespace=6&srlimit=8&format=json&srsearch=Jack%20Kirby",
+    "content_type": "application/json; charset=utf-8"
+  },
+  "https://commons.wikimedia.org/w/api.php?action=query&list=search&srnamespace=6&srlimit=8&format=json&srsearch=Marvel%20comics%20convention": {
+    "file": "pages/76d3b0a66582.txt",
+    "fetched_at": "2026-11-07T20:48:56.425467+00:00",
+    "ok": true,
+    "chars": 2603,
+    "status": 200,
+    "final_url": "https://commons.wikimedia.org/w/api.php?action=query&list=search&srnamespace=6&srlimit=8&format=json&srsearch=Marvel%20comics%20convention",
+    "content_type": "application/json; charset=utf-8"
+  },
+  "https://commons.wikimedia.org/w/api.php?action=query&list=search&srnamespace=6&srlimit=8&format=json&srsearch=Iron%20Man%20cosplay": {
+    "file": "pages/86f666093f34.txt",
+    "fetched_at": "2026-11-07T20:48:57.250839+00:00",
+    "ok": true,
+    "chars": 2729,
+    "status": 200,
+    "final_url": "https://commons.wikimedia.org/w/api.php?action=query&list=search&srnamespace=6&srlimit=8&format=json&srsearch=Iron%20Man%20cosplay",
+    "content_type": "application/json; charset=utf-8"
+  },
+  "https://commons.wikimedia.org/w/api.php?action=query&list=search&srnamespace=6&srlimit=8&format=json&srsearch=El%20Capitan%20Theatre%20Marvel": {
+    "file": "pages/bc9b2f20c7b7.txt",
+    "fetched_at": "2026-11-07T20:48:57.758719+00:00",
+    "ok": true,
+    "chars": 3072,
+    "status": 200,
+    "final_url": "https://commons.wikimedia.org/w/api.php?action=query&list=search&srnamespace=6&srlimit=8&format=json&srsearch=El%20Capitan%20Theatre%20Marvel",
+    "content_type": "application/json; charset=utf-8"
+  },
+  "https://commons.wikimedia.org/w/api.php?action=query&list=search&srnamespace=6&srlimit=8&format=json&srsearch=Disney%20Burbank%20headquarters": {
+    "file": "pages/64ed5c16f2e1.txt",
+    "fetched_at": "2026-11-07T20:48:58.482114+00:00",
+    "ok": true,
+    "chars": 2905,
+    "status": 200,
+    "final_url": "https://commons.wikimedia.org/w/api.php?action=query&list=search&srnamespace=6&srlimit=8&format=json&srsearch=Disney%20Burbank%20headquarters",
+    "content_type": "application/json; charset=utf-8"
+  }
+}

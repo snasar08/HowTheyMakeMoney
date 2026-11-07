@@ -1,0 +1,4 @@
+URL: https://www.nfpa.org/education-and-research/research/nfpa-research/fire-statistical-reports/us-fire-department-profile
+FINAL_URL: https://www.nfpa.org/education-and-research/research/nfpa-research/fire-statistical-reports/us-fire-department-profile
+FETCHED: 2026-11-07T20:48:25.312457+00:00
+
