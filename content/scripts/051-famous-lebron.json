@@ -1,0 +1,107 @@
+{
+  "id": "051",
+  "slug": "famous-lebron",
+  "company": "LeBron James",
+  "format": "famous",
+  "visual_style": "lowpoly",
+  "hook_style": "question",
+  "title_style": "question",
+  "theme": "clean_navy",
+  "status": "ready",
+  "score": 90,
+  "title": "How Did LeBron Earn $1 Billion While Playing?",
+  "name_card": "LeBron James",
+  "name_sub": "basketball player",
+  "description": "How did LeBron James make a billion dollars while still playing?\n\nSources:\n- Wikipedia: LeBron James: https://en.wikipedia.org/wiki/LeBron_James\n\nFrom the cited page: seven-year Nike deal signed in May 2003, coming out of high school, for approximately $90 million; more than $30 million from the sale of his Beats stake in 2014; minority stake in Liverpool FC through a 2011 Fenway Sports Group deal; first player in NBA history to accumulate $1 billion in earnings as an active player (2021). Not financial advice.\n\n#shorts #lebron #nba #howtheymakemoney",
+  "tags": [
+    "lebron james",
+    "nba",
+    "basketball",
+    "famous",
+    "shorts"
+  ],
+  "images": {},
+  "loop": "So next time you lace up your sneakers, ask yourself:",
+  "cta": "Shoe deal or own a team? Comment below.",
+  "cta_question": "Shoe deal or own a team?",
+  "scenes": [
+    {
+      "narration": "How did LeBron James make a billion dollars while still playing?",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "ball",
+          "trophy"
+        ],
+        "stat": "$1 BILLION",
+        "stat_sub": "while still playing?"
+      }
+    },
+    {
+      "narration": "May 2003. Just out of high school. A shoe deal worth about 90 million.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "run",
+        "crowd": 0,
+        "props": [
+          "ball"
+        ],
+        "stat": "$90 MILLION",
+        "stat_sub": "7-year shoe deal, 2003"
+      }
+    },
+    {
+      "narration": "Then his stake in Beats paid over 30 million.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "office",
+        "action": "work",
+        "crowd": 0,
+        "props": [
+          "check",
+          "phone"
+        ],
+        "stat": "$30M+",
+        "stat_sub": "Beats stake, sold 2014"
+      }
+    },
+    {
+      "narration": "Not just hoops. He got a stake in Liverpool soccer club.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "pitch",
+        "action": "cheer",
+        "crowd": 300,
+        "props": [
+          "ball"
+        ],
+        "stat": "LIVERPOOL",
+        "stat_sub": "minority stake"
+      }
+    },
+    {
+      "narration": "The result? The first NBA player to earn a billion while still playing.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "cheer",
+        "crowd": 400,
+        "props": [
+          "trophy"
+        ],
+        "stat": "#1",
+        "stat_sub": "to earn $1B while active"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: LeBron James",
+      "url": "https://en.wikipedia.org/wiki/LeBron_James"
+    }
+  ]
+}

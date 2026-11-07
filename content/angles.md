@@ -42,3 +42,18 @@ clearly different angle, new figures, a new hook, new B-roll and a different sce
 040 | Cristiano Ronaldo (famous) | top-paid athlete's earnings per day and per minute | $300M (Forbes 2026), $235M on-field, $65M off-field, ~$822K/day, ~$571/minute
 041 | Pro gamers / esports (careers) | the biggest esports prize ever and who paid for it | $40.0M TI 2021 pool, 25% of battle pass sales, $18.2M first place, ~$3.6M per player
 042 | PlayStation (Sony) | record profit while selling fewer consoles; network services drive it | ¥463.3B record G&NS operating income, ¥4,685.7B flat sales, 125M MAU, FY26 forecast
+044 | Chick-fil-A | closed Sundays yet tops per-restaurant sales; it builds and owns the restaurants, operators pay a $10,000 fee | $7.5M per restaurant (2024), ~$3.9M McDonald's (our math from $53.5B / 13,559), $10,000 fee, thousands apply
+045 | Netflix (whatif) | one person watching every hour Netflix members watched in six months | 95B hours H1 2025, ~10.8M years, Adolescence 145M views
+046 | NASA astronauts (careers) | astronauts were paid on the federal GS scale; only 339 ever selected | $79,766-$183,500 (Houston 2023), 339 candidates, AD scale since 2024
+047 | MrBeast (famous) | spends ~$1M per video, sponsors + ads fund it, reinvests everything | $1M per video (2022), quit college 2016, $2.6B net worth (Fortune 2026)
+048 | LEGO (editorial, almost broke) | patent ran out, huge losses in 2004, owner's own money, record comeback | DKK 1.9B loss 2004, ~1,000 jobs, DKK 800M owner money, DKK 83.5B revenue 2025
+049 | YouTube (whatif) | could you watch one minute / one day of uploads | 500 hours/minute (2019), ~3 weeks, 720,000 hours/day, 82 years/day
+050 | MLB players (careers) | minimum pay from $6,000 (pre-1968) to $780,000 (2026) plus young-star bonus pool | $6,000, 1968 first CBA, $780K 2026, $50M pre-arb pool
+051 | LeBron James (famous) | how off-court deals made the first $1B active NBA player | ~$90M Nike deal (May 2003), $30M+ Beats, Liverpool stake, $1B while active
+052 | DoorDash | what DoorDash keeps from an average order | ~$34 avg order (our math), 13.6% net revenue margin, ~47 cents profit/order, $466M record Q3 2026 net income
+053 | Roblox (whatif) | one person playing every Roblox hour in a quarter | ~34B hours Q3 2026, ~3.9M years, 30M monthly payers, $1.7B bookings
+054 | Air traffic controllers (careers) | start by 31, retire at 56, paid well | 31, 56, $148,080 median (May 2025), $78,420 / $215,610, 14,000+ controllers, 2.9M passengers/day
+055 | Taylor Swift (famous) | Eras Tour per-show money | 149 shows, $2.077B, ~$13.9M per show, billionaire Oct 2023
+056 | Red Bull (editorial) | a marketing/stunt company that sells drinks | 1982 Thailand, $500K each, two F1 teams, 13.969B cans, EUR 12.2B turnover 2025
+057 | NBA (whatif) | paying a team's salary cap in $1 bills | $154.647M cap 2025-26, ~155 tonnes, ~5 years to count, ~500 km stack for 30 teams
+058 | Software developers (careers) | median pay and the wide range for people who build apps | 1.69M employed, $135,980 median, $82,460 10th pct, $214,670 90th pct (May 2025)

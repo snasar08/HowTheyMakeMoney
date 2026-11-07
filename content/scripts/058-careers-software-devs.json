@@ -1,0 +1,122 @@
+{
+  "id": "058",
+  "slug": "careers-software-devs",
+  "company": "Software developers",
+  "format": "careers",
+  "visual_style": "charts3d",
+  "hook_style": "question",
+  "title_style": "statement",
+  "theme": "dark_neon",
+  "status": "ready",
+  "score": 87,
+  "title": "App Builders Earn a Median of $135,980",
+  "description": "You tap apps all day. But what do their builders earn?\n\nSources:\n- BLS OEWS via api.bls.gov: Software developers 15-1252, annual median wage, May 2025: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000015125213\n- BLS OEWS via api.bls.gov: employment: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000015125201\n- BLS OEWS via api.bls.gov: 10th percentile: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000015125211\n- BLS OEWS via api.bls.gov: 90th percentile: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000015125215\n\nBLS May 2025 (OEWS, occupation 15-1252 software developers): employment 1,687,890; median $135,980; 10th percentile $82,460; 90th percentile $214,670. 214,670 / 82,460 = about 2.6x (our math). Median = half earn more, half earn less. Not financial advice.\n\n#shorts #coding #careers #tech #howtheymakemoney",
+  "tags": [
+    "software developer",
+    "coding",
+    "apps",
+    "careers",
+    "shorts"
+  ],
+  "images": {
+    "hook": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: a young adult software developer at a desk with two monitors full of colorful abstract code blocks, holding a smartphone with glowing app shapes floating out of it, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261107_180257_6e4c96ec-773a-444d-b4c7-3417a76baee4.png"
+    },
+    "mid": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: a small team of young adult developers around a whiteboard covered in colorful blank sticky notes and arrows, laptops open, bright modern office, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261107_180256_6fbd6cbd-606c-4c04-b2ba-c211a69a9333.png"
+    },
+    "broll1": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: a giant floating smartphone surrounded by colorful rounded app-shaped tiles and golden coins, soft gradient background, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261107_180257_a848d652-58ae-49eb-b8ce-55ba024421b6.png"
+    },
+    "broll2": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: a happy young adult developer leaning back from a laptop with arms raised, golden coins rising from the screen, cozy home office at night, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261107_180257_35a22ae5-34f6-4056-a5fa-3f2aa292f18d.png"
+    }
+  },
+  "loop": "So next time you open an app, ask yourself:",
+  "cta": "Apps or games? Comment which you'd build.",
+  "cta_question": "Apps or games?",
+  "scenes": [
+    {
+      "narration": "You tap apps all day. But what do their builders earn?",
+      "visual": {
+        "type": "image",
+        "image": "hook",
+        "overlay": "APP BUILDERS",
+        "overlay_sub": "what do they earn?"
+      }
+    },
+    {
+      "narration": "They're software developers. Just in the U.S., about 1.7 million.",
+      "visual": {
+        "type": "image",
+        "image": "mid",
+        "overlay": "1.7 MILLION",
+        "overlay_sub": "U.S. software developers"
+      }
+    },
+    {
+      "narration": "But pay varies. The median is 135,980 dollars.",
+      "visual": {
+        "type": "stat",
+        "value": 135980,
+        "prefix": "$",
+        "suffix": "",
+        "decimals": 0,
+        "label": "Median pay, software developers, May 2025"
+      }
+    },
+    {
+      "narration": "Then the extremes. The lowest tenth earn under 82,460. The top tenth, over 214,670.",
+      "visual": {
+        "type": "bars",
+        "items": [
+          {
+            "label": "Low 10%",
+            "value": 82.5
+          },
+          {
+            "label": "Median",
+            "value": 136.0
+          },
+          {
+            "label": "Top 10%",
+            "value": 214.7
+          }
+        ],
+        "prefix": "$",
+        "suffix": "K",
+        "title": "Software developer pay, May 2025"
+      }
+    },
+    {
+      "narration": "Same job. Yet over two and a half times the pay.",
+      "visual": {
+        "type": "text",
+        "text": "2.6x",
+        "sub": "top tenth vs. lowest tenth"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "BLS OEWS via api.bls.gov: Software developers 15-1252, annual median wage, May 2025",
+      "url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000015125213"
+    },
+    {
+      "title": "BLS OEWS via api.bls.gov: employment",
+      "url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000015125201"
+    },
+    {
+      "title": "BLS OEWS via api.bls.gov: 10th percentile",
+      "url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000015125211"
+    },
+    {
+      "title": "BLS OEWS via api.bls.gov: 90th percentile",
+      "url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000015125215"
+    }
+  ]
+}

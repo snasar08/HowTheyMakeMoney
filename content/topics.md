@@ -13,6 +13,9 @@ Apple (Services), Nike, Coca-Cola, Walmart (ads + membership), Meta, Nintendo, P
 ## Used (Oct 31 2026 one-off batch)
 Roblox, PlayStation, YouTubers (careers), Twitch streamers (careers), NFL players (careers), pro gamers / esports (careers), McDonald's (whatif: one cashier), Spotify (whatif: listeners as a country), Cristiano Ronaldo (famous: highest-paid athlete), Shohei Ohtani (famous: off-field earnings)
 
+## Used (Nov 7 2026 batch, part 1)
+Chick-fil-A, DoorDash, LEGO (editorial), Red Bull (editorial), Netflix (whatif: watch it all), YouTube (whatif: one minute of uploads), Roblox (whatif: every hour), NBA (whatif: salary cap in $1 bills), NASA astronauts (careers), MLB players (careers), air traffic controllers (careers), software developers (careers), MrBeast (famous), LeBron James (famous), Taylor Swift (famous: Eras Tour)
+
 ## Ranked for the next batches (Oct 29 2026 — teen appeal × curiosity gap × surprising number)
 Write from the top. Casinos dropped (not kid-safe). Skip anything already used above.
 | # | Topic | Angle / hook seed | Est. score |

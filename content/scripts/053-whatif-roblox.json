@@ -1,0 +1,112 @@
+{
+  "id": "053",
+  "slug": "whatif-roblox",
+  "company": "Roblox",
+  "format": "whatif",
+  "visual_style": "lowpoly",
+  "hook_style": "whatif",
+  "title_style": "whatif",
+  "theme": "bold_bright",
+  "status": "ready",
+  "score": 90,
+  "title": "What If One Person Played All of Roblox?",
+  "description": "What if just one person played every hour of Roblox?\n\nSources:\n- Gaming.net: Roblox Q3 revenue rises 16% as bookings fall 12% to $1.7 billion (Oct 2026): https://gaming.net/roblox-q3-revenue-rises-16-as-bookings-fall-12-to-1-7-billion\n- Wikipedia: Roblox Corporation: https://en.wikipedia.org/wiki/Roblox_Corporation\n\nQ3 2026 (from Roblox's shareholder letter as reported): nearly 34 billion hours engaged, 138 million daily active users, 30 million average monthly unique payers, $1.697 billion bookings. 34 billion hours / 8,766 hours a year = about 3.9 million years; 34 billion / 92 days / 138 million = about 2.7 hours a day (our math). Not financial advice.\n\n#shorts #roblox #whatif #gaming #howtheymakemoney",
+  "tags": [
+    "roblox",
+    "what if",
+    "gaming",
+    "robux",
+    "shorts"
+  ],
+  "images": {},
+  "hud_label": "TIME TO PLAY",
+  "loop": "So next time you hop into Roblox, ask yourself:",
+  "cta": "Free or buy Robux? Comment which you are.",
+  "cta_question": "Free or buy Robux?",
+  "scenes": [
+    {
+      "narration": "What if just one person played every hour of Roblox?",
+      "visual": {
+        "type": "lowpoly",
+        "set": "gaming",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "headset"
+        ],
+        "stat": "1 PLAYER",
+        "stat_sub": "every hour played",
+        "hud": "0 HOURS"
+      }
+    },
+    {
+      "narration": "Just three months this year. Nearly 34 billion hours.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "run",
+        "crowd": 400,
+        "props": [
+          "phone"
+        ],
+        "stat": "34 BILLION",
+        "stat_sub": "hours, Q3 2026",
+        "hud": "34B HOURS"
+      }
+    },
+    {
+      "narration": "Playing nonstop? That's still about 3.9 million years.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "gaming",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "headset"
+        ],
+        "stat": "3.9 MILLION",
+        "stat_sub": "years, nonstop",
+        "hud": "3.9M YEARS"
+      }
+    },
+    {
+      "narration": "But only 30 million people paid in a month.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "store",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "cash"
+        ],
+        "stat": "30 MILLION",
+        "stat_sub": "monthly payers, Q3 2026"
+      }
+    },
+    {
+      "narration": "Still, they spent 1.7 billion dollars in three months.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "stage",
+        "action": "cheer",
+        "crowd": 400,
+        "props": [
+          "cash",
+          "trophy"
+        ],
+        "stat": "$1.7 BILLION",
+        "stat_sub": "bookings, Q3 2026"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "Gaming.net: Roblox Q3 revenue rises 16% as bookings fall 12% to $1.7 billion (Oct 2026)",
+      "url": "https://gaming.net/roblox-q3-revenue-rises-16-as-bookings-fall-12-to-1-7-billion"
+    },
+    {
+      "title": "Wikipedia: Roblox Corporation",
+      "url": "https://en.wikipedia.org/wiki/Roblox_Corporation"
+    }
+  ]
+}

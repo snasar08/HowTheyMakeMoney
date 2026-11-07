@@ -1,0 +1,113 @@
+{
+  "id": "046",
+  "slug": "careers-astronauts",
+  "company": "NASA astronauts",
+  "format": "careers",
+  "visual_style": "charts3d",
+  "hook_style": "question",
+  "title_style": "question",
+  "theme": "clean_navy",
+  "status": "ready",
+  "score": 89,
+  "title": "How Much Do NASA Astronauts Get Paid?",
+  "description": "You go to space for NASA. But what's the paycheck?\n\nSources:\n- Wikipedia: NASA Astronaut Corps (Salary section): https://en.wikipedia.org/wiki/NASA_Astronaut_Corps\n- Wikipedia: General Schedule (US civil service pay scale): https://en.wikipedia.org/wiki/General_Schedule_(US_civil_service_pay_scale)\n\nAs of 2023, astronauts at Johnson Space Center in Houston earned between $79,766 (GS-11 step 1) and $183,500 (GS-15 step 6 and above). Since the 2024 candidate class, new candidates are paid on an Administratively Determined scale. 339 candidates selected to date, including the Original Seven. Not financial advice.\n\n#shorts #nasa #astronaut #careers #howtheymakemoney",
+  "tags": [
+    "nasa",
+    "astronaut",
+    "space",
+    "careers",
+    "shorts"
+  ],
+  "images": {
+    "hook": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: a young adult astronaut in a plain white spacesuit holding a helmet under one arm, a tall rocket on a launch pad behind at sunrise, golden coins floating in the air, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261107_180026_3bcd882e-1644-40d1-bad1-ac5c1c3dc95f.png"
+    },
+    "mid": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: an astronaut in a plain blue flight suit sitting at a simple government office desk with a stack of paperwork and a coffee mug, looking amused, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261107_180027_91fbb3ba-d204-4cb2-ba76-586188287230.png"
+    },
+    "broll1": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: a tall white rocket standing on a launch pad at sunrise with steam rising, empty launch site, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261107_180026_daadf996-87d5-47d7-8c53-05543cfc0ab3.png"
+    },
+    "broll2": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: two astronauts in plain suits floating inside a space station module, the blue Earth glowing through a round window, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261107_180026_e04753a7-ee51-4137-87a8-62ddbcb8b4d3.png"
+    }
+  },
+  "loop": "So next time you see a rocket launch, ask yourself:",
+  "cta": "Astronaut or pilot? Comment your pick.",
+  "cta_question": "Astronaut or pilot?",
+  "scenes": [
+    {
+      "narration": "You go to space for NASA. But what's the paycheck?",
+      "visual": {
+        "type": "image",
+        "image": "hook",
+        "overlay": "SPACE PAY?",
+        "overlay_sub": "NASA astronauts"
+      }
+    },
+    {
+      "narration": "Astronauts were paid on the regular government pay scale. Just like other federal jobs.",
+      "visual": {
+        "type": "image",
+        "image": "mid",
+        "overlay": "GOVERNMENT PAY",
+        "overlay_sub": "the federal pay scale"
+      }
+    },
+    {
+      "narration": "In 2023, starting pay in Houston was only about 80,000 dollars.",
+      "visual": {
+        "type": "stat",
+        "value": 79766,
+        "prefix": "$",
+        "suffix": "",
+        "decimals": 0,
+        "label": "Starting pay, Houston, 2023 (GS-11)"
+      }
+    },
+    {
+      "narration": "The very top? Still about 183,500.",
+      "visual": {
+        "type": "bars",
+        "items": [
+          {
+            "label": "Start",
+            "value": 79.8
+          },
+          {
+            "label": "Top",
+            "value": 183.5
+          }
+        ],
+        "prefix": "$",
+        "suffix": "K",
+        "title": "NASA astronaut pay, Houston, 2023"
+      }
+    },
+    {
+      "narration": "But only 339 people have ever been picked.",
+      "visual": {
+        "type": "stat",
+        "value": 339,
+        "prefix": "",
+        "suffix": "",
+        "decimals": 0,
+        "label": "NASA astronaut candidates ever selected"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: NASA Astronaut Corps (Salary section)",
+      "url": "https://en.wikipedia.org/wiki/NASA_Astronaut_Corps"
+    },
+    {
+      "title": "Wikipedia: General Schedule (US civil service pay scale)",
+      "url": "https://en.wikipedia.org/wiki/General_Schedule_(US_civil_service_pay_scale)"
+    }
+  ]
+}

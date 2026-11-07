@@ -1,0 +1,126 @@
+{
+  "id": "049",
+  "slug": "whatif-youtube",
+  "company": "YouTube",
+  "format": "whatif",
+  "visual_style": "lowpoly",
+  "hook_style": "challenge",
+  "title_style": "number",
+  "theme": "dark_neon",
+  "status": "ready",
+  "score": 89,
+  "title": "500 Hours Hit YouTube Every Minute",
+  "description": "Could you watch just one minute of YouTube uploads?\n\nSources:\n- Tubefilter: More than 500 hours of content are now being uploaded to YouTube every minute (May 7 2019): https://www.tubefilter.com/2019/05/07/number-hours-video-uploaded-to-youtube-per-minute/\n- Wikipedia: YouTube: https://en.wikipedia.org/wiki/YouTube\n\nYouTube said in 2019 that more than 500 hours of video are uploaded every minute: 30,000 hours an hour and 720,000 hours a day, about 82.2 years of video every day (Tubefilter's math). 500 hours = about 21 days nonstop (our math). Not financial advice.\n\n#shorts #youtube #whatif #howtheymakemoney",
+  "tags": [
+    "youtube",
+    "what if",
+    "videos",
+    "creators",
+    "shorts"
+  ],
+  "images": {},
+  "hud_label": "TIME TO WATCH",
+  "loop": "So next time you scroll past a video, ask yourself:",
+  "cta": "Long videos or Shorts? Comment below.",
+  "cta_question": "Long videos or Shorts?",
+  "scenes": [
+    {
+      "narration": "Could you watch just one minute of YouTube uploads?",
+      "visual": {
+        "type": "lowpoly",
+        "set": "gaming",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "phone",
+          "headset"
+        ],
+        "stat": "1 MINUTE",
+        "stat_sub": "of uploads?",
+        "hud": "1 MINUTE"
+      }
+    },
+    {
+      "narration": "But in 2019, YouTube said over 500 hours went up every minute.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "run",
+        "crowd": 300,
+        "props": [
+          "phone"
+        ],
+        "stat": "500 HOURS",
+        "stat_sub": "uploaded per minute, 2019",
+        "hud": "500 HOURS"
+      }
+    },
+    {
+      "narration": "Watching nonstop, that one minute still takes almost three weeks.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "gaming",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "headset"
+        ],
+        "stat": "~3 WEEKS",
+        "stat_sub": "nonstop",
+        "hud": "~3 WEEKS"
+      }
+    },
+    {
+      "narration": "Then try one day of uploads. 720,000 hours.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "stage",
+        "action": "cheer",
+        "crowd": 400,
+        "props": [],
+        "stat": "720,000",
+        "stat_sub": "hours, one day",
+        "hud": "720,000 HOURS"
+      }
+    },
+    {
+      "narration": "That's 82 years of video. From just one day.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "cheer",
+        "crowd": 300,
+        "props": [
+          "phone"
+        ],
+        "stat": "82 YEARS",
+        "stat_sub": "of video, every day",
+        "hud": "82 YEARS"
+      }
+    },
+    {
+      "narration": "Not even a whole lifetime is enough.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "office",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "phone"
+        ],
+        "stat": "1 LIFETIME",
+        "stat_sub": "not enough"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "Tubefilter: More than 500 hours of content are now being uploaded to YouTube every minute (May 7 2019)",
+      "url": "https://www.tubefilter.com/2019/05/07/number-hours-video-uploaded-to-youtube-per-minute/"
+    },
+    {
+      "title": "Wikipedia: YouTube",
+      "url": "https://en.wikipedia.org/wiki/YouTube"
+    }
+  ]
+}

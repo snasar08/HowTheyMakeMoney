@@ -1,0 +1,108 @@
+{
+  "id": "047",
+  "slug": "famous-mrbeast",
+  "company": "MrBeast",
+  "format": "famous",
+  "visual_style": "lowpoly",
+  "hook_style": "number",
+  "title_style": "statement",
+  "theme": "bold_bright",
+  "status": "ready",
+  "score": 92,
+  "title": "MrBeast Spends About $1M Per Video",
+  "name_card": "MrBeast",
+  "name_sub": "YouTuber",
+  "description": "Why would a YouTuber spend 1 million dollars on one video?\n\nSources:\n- Wikipedia: MrBeast: https://en.wikipedia.org/wiki/MrBeast\n\nFrom the cited page: dropped out of college in late 2016; by 2022 about $1 million per flagship video (reported); brand sponsorships and AdSense primarily fund the videos and he reinvests the revenue; first YouTuber past 300 million subscribers on July 10 2024; Fortune estimated his net worth at about $2.6 billion in 2026. Not financial advice.\n\n#shorts #mrbeast #youtube #howtheymakemoney",
+  "tags": [
+    "mrbeast",
+    "youtube",
+    "creators",
+    "famous",
+    "shorts"
+  ],
+  "images": {},
+  "loop": "So next time you watch a giant giveaway, ask yourself:",
+  "cta": "Spend it or save it? Comment below.",
+  "cta_question": "Spend it or save it?",
+  "scenes": [
+    {
+      "narration": "Why would a YouTuber spend 1 million dollars on one video?",
+      "visual": {
+        "type": "lowpoly",
+        "set": "studio",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "check",
+          "mic"
+        ],
+        "stat": "$1 MILLION",
+        "stat_sub": "on one video?"
+      }
+    },
+    {
+      "narration": "In 2016, he quit college. Just him and a camera.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "studio",
+        "action": "work",
+        "crowd": 0,
+        "props": [
+          "mic"
+        ],
+        "stat": "2016",
+        "stat_sub": "quit college"
+      }
+    },
+    {
+      "narration": "But sponsors and ads pay for each video.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "office",
+        "action": "work",
+        "crowd": 0,
+        "props": [
+          "cash",
+          "check"
+        ],
+        "stat": "ALL BACK IN",
+        "stat_sub": "sponsors + ads"
+      }
+    },
+    {
+      "narration": "Then it all goes back in. Bigger videos, bigger deals.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "cheer",
+        "crowd": 300,
+        "props": [
+          "phone"
+        ],
+        "stat": "BIGGER DEALS",
+        "stat_sub": "the loop that grows"
+      }
+    },
+    {
+      "narration": "Now Fortune puts his net worth near 2.6 billion dollars.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "stage",
+        "action": "cheer",
+        "crowd": 200,
+        "props": [
+          "cash",
+          "trophy"
+        ],
+        "stat": "$2.6 BILLION",
+        "stat_sub": "net worth, Fortune 2026"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: MrBeast",
+      "url": "https://en.wikipedia.org/wiki/MrBeast"
+    }
+  ]
+}

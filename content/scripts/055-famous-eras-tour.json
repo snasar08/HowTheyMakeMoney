@@ -1,0 +1,113 @@
+{
+  "id": "055",
+  "slug": "famous-eras-tour",
+  "company": "Taylor Swift",
+  "format": "famous",
+  "visual_style": "lowpoly",
+  "hook_style": "challenge",
+  "title_style": "number",
+  "theme": "bold_bright",
+  "status": "ready",
+  "score": 91,
+  "title": "$2.077 Billion From 149 Shows",
+  "name_card": "Taylor Swift",
+  "name_sub": "singer",
+  "description": "Guess how much just one Eras Tour show sold in tickets?\n\nSources:\n- Wikipedia: The Eras Tour: https://en.wikipedia.org/wiki/The_Eras_Tour\n- Wikipedia: Taylor Swift: https://en.wikipedia.org/wiki/Taylor_Swift\n\nThe Eras Tour (March 2023 to December 2024): 149 shows, 10.1 million attendance, $2.077 billion box office, the highest-grossing tour of all time. $2.077 billion / 149 = about $13.9 million per show (our math). In October 2023 it was reported that Swift had become a billionaire. Not financial advice.\n\n#shorts #taylorswift #erastour #howtheymakemoney",
+  "tags": [
+    "taylor swift",
+    "eras tour",
+    "music",
+    "famous",
+    "shorts"
+  ],
+  "images": {},
+  "hud_label": "TOUR TOTAL",
+  "loop": "So next time you sing along at a concert, ask yourself:",
+  "cta": "Front row or cheap seats? Comment your pick.",
+  "cta_question": "Front row or cheap seats?",
+  "scenes": [
+    {
+      "narration": "Guess how much just one Eras Tour show sold in tickets?",
+      "visual": {
+        "type": "lowpoly",
+        "set": "stage",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "mic"
+        ],
+        "stat": "ONE NIGHT?",
+        "stat_sub": "the Eras Tour"
+      }
+    },
+    {
+      "narration": "Just one night? About 13.9 million dollars, on average.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "run",
+        "crowd": 300,
+        "props": [
+          "cash"
+        ],
+        "stat": "$13.9 MILLION",
+        "stat_sub": "per show, on average",
+        "hud": "$13.9M"
+      }
+    },
+    {
+      "narration": "Then multiply by 149 shows. Almost two years on the road.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "stage",
+        "action": "cheer",
+        "crowd": 400,
+        "props": [
+          "mic"
+        ],
+        "stat": "149 SHOWS",
+        "stat_sub": "March 2023 to December 2024"
+      }
+    },
+    {
+      "narration": "But the total? 2.077 billion dollars. The biggest tour ever.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "stage",
+        "action": "cheer",
+        "crowd": 400,
+        "props": [
+          "trophy"
+        ],
+        "stat": "$2.077 BILLION",
+        "stat_sub": "highest-grossing tour ever",
+        "hud": "$2.077B"
+      }
+    },
+    {
+      "narration": "Then, in October 2023, reports said she'd become a billionaire.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "stage",
+        "action": "cheer",
+        "crowd": 200,
+        "props": [
+          "mic",
+          "trophy"
+        ],
+        "stat": "BILLIONAIRE",
+        "stat_sub": "reported October 2023"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: The Eras Tour",
+      "url": "https://en.wikipedia.org/wiki/The_Eras_Tour"
+    },
+    {
+      "title": "Wikipedia: Taylor Swift",
+      "url": "https://en.wikipedia.org/wiki/Taylor_Swift"
+    }
+  ]
+}

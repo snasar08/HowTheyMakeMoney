@@ -1,0 +1,99 @@
+{
+  "id": "052",
+  "slug": "how-doordash",
+  "company": "DoorDash",
+  "format": "how",
+  "visual_style": "charts3d",
+  "hook_style": "number",
+  "title_style": "statement",
+  "theme": "dark_neon",
+  "status": "ready",
+  "score": 88,
+  "title": "DoorDash Keeps 47 Cents of a $34 Order",
+  "description": "Your average DoorDash order: about 34 dollars. What does DoorDash keep?\n\nSources:\n- DoorDash Q3 2026 earnings press release: https://s22.q4cdn.com/280253921/files/content_files/Q3-2026-Earnings-Press-Release.pdf\n- Wikipedia: DoorDash: https://en.wikipedia.org/wiki/DoorDash\n\nQ3 2026: 993 million orders, $33.9 billion Marketplace GOV (about $34.18 per order, our math), net revenue margin 13.6%, record GAAP net income of $466 million (about 47 cents per order, our math). Not financial advice.\n\n#shorts #doordash #delivery #howtheymakemoney",
+  "tags": [
+    "doordash",
+    "food delivery",
+    "apps",
+    "business",
+    "shorts"
+  ],
+  "images": {
+    "hook": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: a young adult opening the front door to a smiling delivery courier in a plain red jacket handing over an insulated food bag, cozy apartment hallway, a few golden coins floating, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261107_180144_0d570b32-dc77-490b-b1aa-4ba97cf8f58f.png"
+    },
+    "mid": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: a delivery courier on an electric bike riding through a glowing city street at night with an insulated bag on the back, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261107_180145_8a07d82d-7ada-4060-99bb-1319ceb4a53a.png"
+    },
+    "broll1": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: a restaurant worker packing takeout bags on a steel counter in a busy kitchen, order tickets as blank paper slips, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261107_180145_9b8ce1d3-3500-48eb-b00f-a2426e20d4ea.png"
+    },
+    "broll2": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: a smartphone on a kitchen table showing a simple map with a glowing route line, a paper takeout bag beside it, a small stack of coins, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261107_180145_5c940ed5-3129-4bdc-9a34-7748accf6faf.png"
+    }
+  },
+  "loop": "So next time you tap order, ask yourself:",
+  "cta": "Delivery or pickup? Comment your pick.",
+  "cta_question": "Delivery or pickup?",
+  "scenes": [
+    {
+      "narration": "Your average DoorDash order: about 34 dollars. What does DoorDash keep?",
+      "visual": {
+        "type": "image",
+        "image": "hook",
+        "overlay": "$34 ORDER",
+        "overlay_sub": "what does DoorDash keep?"
+      }
+    },
+    {
+      "narration": "Just 13.6 percent. That's its revenue.",
+      "visual": {
+        "type": "donut",
+        "value": 13.6,
+        "label": "DoorDash revenue as % of order value, Q3 2026"
+      }
+    },
+    {
+      "narration": "But the rest goes to restaurants, Dashers, tips and taxes.",
+      "visual": {
+        "type": "image",
+        "image": "mid",
+        "overlay": "THE REST",
+        "overlay_sub": "restaurants, Dashers, tips, taxes"
+      }
+    },
+    {
+      "narration": "Then DoorDash pays its own costs. Profit? Only 47 cents an order.",
+      "visual": {
+        "type": "stat",
+        "value": 0.47,
+        "prefix": "$",
+        "suffix": "",
+        "decimals": 2,
+        "label": "Net income per order, Q3 2026"
+      }
+    },
+    {
+      "narration": "Still, times nearly a billion orders, that's a record 466 million dollars.",
+      "visual": {
+        "type": "text",
+        "text": "$466M",
+        "sub": "record quarterly profit, Q3 2026"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "DoorDash Q3 2026 earnings press release",
+      "url": "https://s22.q4cdn.com/280253921/files/content_files/Q3-2026-Earnings-Press-Release.pdf"
+    },
+    {
+      "title": "Wikipedia: DoorDash",
+      "url": "https://en.wikipedia.org/wiki/DoorDash"
+    }
+  ]
+}

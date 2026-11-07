@@ -1,0 +1,104 @@
+{
+  "id": "045",
+  "slug": "whatif-netflix",
+  "company": "Netflix",
+  "format": "whatif",
+  "visual_style": "lowpoly",
+  "hook_style": "whatif",
+  "title_style": "whatif",
+  "theme": "dark_neon",
+  "status": "ready",
+  "score": 88,
+  "title": "What If One Person Watched All of Netflix?",
+  "description": "What if one person watched every Netflix hour? Just six months' worth.\n\nSources:\n- Netflix: What We Watched the First Half of 2025 (July 17 2025): https://about.netflix.com/en/news/what-we-watched-the-first-half-of-2025\n\nNetflix reported over 95 billion hours watched from January to June 2025. 95 billion hours divided by 8,766 hours in a year = about 10.8 million years (our math). Not financial advice.\n\n#shorts #netflix #whatif #howtheymakemoney",
+  "tags": [
+    "netflix",
+    "what if",
+    "streaming",
+    "binge",
+    "shorts"
+  ],
+  "images": {},
+  "hud_label": "TIME TO WATCH",
+  "loop": "So next time you hit next episode, ask yourself:",
+  "cta": "Binge it or one a night? Comment below.",
+  "cta_question": "Binge it or one a night?",
+  "scenes": [
+    {
+      "narration": "What if one person watched every Netflix hour? Just six months' worth.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "phone"
+        ],
+        "stat": "1 VIEWER",
+        "stat_sub": "every hour watched",
+        "hud": "0 HOURS"
+      }
+    },
+    {
+      "narration": "Just January to June 2025. Over 95 billion hours.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "stage",
+        "action": "cheer",
+        "crowd": 400,
+        "props": [],
+        "stat": "95 BILLION",
+        "stat_sub": "hours watched, first half 2025",
+        "hud": "95B HOURS"
+      }
+    },
+    {
+      "narration": "Watching nonstop? That still takes about 10.8 million years.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "office",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "phone"
+        ],
+        "stat": "10.8 MILLION",
+        "stat_sub": "years, nonstop",
+        "hud": "10.8M YEARS"
+      }
+    },
+    {
+      "narration": "And just one show, Adolescence, got 145 million views.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "run",
+        "crowd": 300,
+        "props": [],
+        "stat": "145 MILLION",
+        "stat_sub": "views, #1 show"
+      }
+    },
+    {
+      "narration": "But that's the business. Netflix says more watching keeps members around.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "office",
+        "action": "work",
+        "crowd": 0,
+        "props": [
+          "cash",
+          "phone"
+        ],
+        "stat": "WATCH = STAY",
+        "stat_sub": "Netflix's own words"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "Netflix: What We Watched the First Half of 2025 (July 17 2025)",
+      "url": "https://about.netflix.com/en/news/what-we-watched-the-first-half-of-2025"
+    }
+  ]
+}

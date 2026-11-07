@@ -1,0 +1,118 @@
+{
+  "id": "044",
+  "slug": "how-chickfila",
+  "company": "Chick-fil-A",
+  "format": "how",
+  "visual_style": "charts3d",
+  "hook_style": "question",
+  "title_style": "number",
+  "theme": "bold_bright",
+  "status": "ready",
+  "score": 90,
+  "title": "$7.5 Million Per Store, Closed Every Sunday",
+  "description": "Closed every Sunday. So why does Chick-fil-A out-earn everyone?\n\nSources:\n- Wikipedia: Chick-fil-A: https://en.wikipedia.org/wiki/Chick-fil-A\n- Chick-fil-A press room: Myths about becoming a Chick-fil-A Operator (Jan 2024): https://www.chick-fil-a.com/press-room/2024/01/myths-about-becoming-a-chick-fil-a-operator\n\n2024 figures from Wikipedia: $22 billion systemwide sales, 3,109 locations, $7.5 million average per location; McDonald's $53.5 billion across 13,559 U.S. locations (about $3.9 million each, our division). The $10,000 is the initial franchise fee; Chick-fil-A says the total investment is higher. Not financial advice.\n\n#shorts #chickfila #fastfood #howtheymakemoney",
+  "tags": [
+    "chick-fil-a",
+    "fast food",
+    "franchise",
+    "business",
+    "shorts"
+  ],
+  "images": {
+    "hook": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: a bright suburban chicken sandwich restaurant on a sunny Sunday morning, doors shut, chairs stacked inside, empty drive-thru lane, a puzzled young adult customer holding car keys outside, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261107_175949_693b8490-bae5-4a67-89e7-69fea7a51f7e.png"
+    },
+    "mid": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: a smiling restaurant owner in a plain red apron receiving a giant golden key from a builder in a hard hat in front of a brand-new restaurant building, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261107_175948_01ac482d-0c25-47ac-ac20-f2bdc9b9fb37.png"
+    },
+    "broll1": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: a busy double drive-thru lane at lunchtime, friendly workers in plain red aprons taking orders on tablets beside the cars, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261107_175947_ddf2eb8a-09cf-4ece-ad2d-09ab01d54aea.png"
+    },
+    "broll2": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: a crispy chicken sandwich and a pile of waffle-cut fries on a tray, golden coins scattered around, warm studio light, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261107_175949_53af5f78-52c1-4bef-8e84-3ef7d439e762.png"
+    }
+  },
+  "loop": "So next time it's closed on a Sunday, ask yourself:",
+  "cta": "Chick-fil-A or McDonald's? Comment your pick.",
+  "cta_question": "Chick-fil-A or McDonald's?",
+  "scenes": [
+    {
+      "narration": "Closed every Sunday. So why does Chick-fil-A out-earn everyone?",
+      "visual": {
+        "type": "image",
+        "image": "hook",
+        "overlay": "CLOSED SUNDAYS",
+        "overlay_sub": "still #1?"
+      }
+    },
+    {
+      "narration": "Each restaurant still averaged 7.5 million dollars in 2024.",
+      "visual": {
+        "type": "stat",
+        "value": 7.5,
+        "prefix": "$",
+        "suffix": "M",
+        "decimals": 1,
+        "label": "Average sales per restaurant, 2024"
+      }
+    },
+    {
+      "narration": "McDonald's? Just 3.9 million each.",
+      "visual": {
+        "type": "bars",
+        "items": [
+          {
+            "label": "Chick-fil-A",
+            "value": 7.5
+          },
+          {
+            "label": "McDonald's",
+            "value": 3.9
+          }
+        ],
+        "prefix": "$",
+        "suffix": "M",
+        "title": "Sales per U.S. restaurant, 2024"
+      }
+    },
+    {
+      "narration": "Then the flip. Chick-fil-A builds and owns the restaurants.",
+      "visual": {
+        "type": "image",
+        "image": "mid",
+        "overlay": "IT OWNS THEM",
+        "overlay_sub": "builds every restaurant"
+      }
+    },
+    {
+      "narration": "The operator's starting fee? Only 10,000 dollars.",
+      "visual": {
+        "type": "text",
+        "text": "$10,000",
+        "sub": "franchise fee to start"
+      }
+    },
+    {
+      "narration": "But thousands apply every year. Few get picked.",
+      "visual": {
+        "type": "text",
+        "text": "Thousands apply.",
+        "sub": "Very few get a restaurant."
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Chick-fil-A",
+      "url": "https://en.wikipedia.org/wiki/Chick-fil-A"
+    },
+    {
+      "title": "Chick-fil-A press room: Myths about becoming a Chick-fil-A Operator (Jan 2024)",
+      "url": "https://www.chick-fil-a.com/press-room/2024/01/myths-about-becoming-a-chick-fil-a-operator"
+    }
+  ]
+}

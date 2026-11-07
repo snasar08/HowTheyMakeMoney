@@ -1,0 +1,99 @@
+{
+  "id": "050",
+  "slug": "careers-mlb",
+  "company": "MLB players",
+  "format": "careers",
+  "visual_style": "charts3d",
+  "hook_style": "number",
+  "title_style": "number",
+  "theme": "bold_bright",
+  "status": "ready",
+  "score": 87,
+  "title": "From $6,000 to $780,000: MLB's Lowest Pay",
+  "description": "MLB's lowest pay was just 6,000 dollars. What is it now?\n\nSources:\n- MLB.com: MLB, MLBPA agree to new CBA (2022): https://www.mlb.com/news/mlb-mlbpa-agree-to-cba\n- Wikipedia: Major League Baseball Players Association: https://en.wikipedia.org/wiki/Major_League_Baseball_Players_Association\n\nThe 1968 agreement raised the minimum from $6,000 to $10,000 (Wikipedia). The 2022 five-year agreement set the minimum at $700,000 (2022), $720,000, $740,000, $760,000 and $780,000 (2026), plus a $50 million pre-arbitration bonus pool for the top 100 players by awards and stats (MLB.com). Not financial advice.\n\n#shorts #mlb #baseball #careers #howtheymakemoney",
+  "tags": [
+    "mlb",
+    "baseball",
+    "salary",
+    "careers",
+    "shorts"
+  ],
+  "images": {
+    "hook": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: a young adult baseball player in a plain unbranded white uniform holding a bat over one shoulder, staring at a tiny paycheck in an empty old-fashioned ballpark, sepia warm light, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261107_180103_80fc2bc0-5aeb-4139-80ed-d377d4995648.png"
+    },
+    "mid": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: a giant golden bowl overflowing with gold coins sitting on home plate of a baseball field at night, young players in plain uniforms cheering around it, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261107_180103_d7b2e2d6-1c0e-494f-af35-6a11b82e3a6c.png"
+    },
+    "broll1": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: baseball players in plain unbranded uniforms celebrating in a dugout, high fives, bright stadium lights, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261107_180104_e3b77149-03da-4999-a2bc-67bf08fe424f.png"
+    },
+    "broll2": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: a packed baseball stadium at night under bright lights, green field glowing, fans cheering in the stands, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261107_180104_3d7f204d-a9da-4f50-b939-02ee9dde4c6e.png"
+    }
+  },
+  "loop": "So next time a rookie steps up to bat, ask yourself:",
+  "cta": "MLB or NFL? Comment your pick.",
+  "cta_question": "MLB or NFL?",
+  "scenes": [
+    {
+      "narration": "MLB's lowest pay was just 6,000 dollars. What is it now?",
+      "visual": {
+        "type": "image",
+        "image": "hook",
+        "overlay": "$6,000?",
+        "overlay_sub": "MLB's lowest pay"
+      }
+    },
+    {
+      "narration": "Then in 1968, players signed their first union deal.",
+      "visual": {
+        "type": "text",
+        "text": "1968",
+        "sub": "first players' union deal"
+      }
+    },
+    {
+      "narration": "In 2026, it's 780,000 dollars. Still the minimum.",
+      "visual": {
+        "type": "stat",
+        "value": 780,
+        "prefix": "$",
+        "suffix": "K",
+        "decimals": 0,
+        "label": "MLB minimum salary, 2026"
+      }
+    },
+    {
+      "narration": "But young stars can earn more. A 50 million dollar bonus pool.",
+      "visual": {
+        "type": "image",
+        "image": "mid",
+        "overlay": "BONUS POOL",
+        "overlay_sub": "$50M for young stars"
+      }
+    },
+    {
+      "narration": "Only the top young players split it, by awards and stats.",
+      "visual": {
+        "type": "text",
+        "text": "Top young players",
+        "sub": "split the bonus pool"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "MLB.com: MLB, MLBPA agree to new CBA (2022)",
+      "url": "https://www.mlb.com/news/mlb-mlbpa-agree-to-cba"
+    },
+    {
+      "title": "Wikipedia: Major League Baseball Players Association",
+      "url": "https://en.wikipedia.org/wiki/Major_League_Baseball_Players_Association"
+    }
+  ]
+}

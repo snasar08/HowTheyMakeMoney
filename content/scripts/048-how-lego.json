@@ -1,0 +1,166 @@
+{
+  "id": "048",
+  "slug": "how-lego",
+  "company": "LEGO",
+  "format": "how",
+  "visual_style": "editorial",
+  "hook_style": "number",
+  "title_style": "question",
+  "theme": "bold_bright",
+  "status": "ready",
+  "score": 91,
+  "tag": "Company backstory",
+  "title": "How Did LEGO Come Back From Its Worst Year?",
+  "description": "In 2004, LEGO lost almost 2 billion kroner. Why is it booming?\n\nSources:\n- Wikipedia: The Lego Group: https://en.wikipedia.org/wiki/The_Lego_Group\n- The LEGO Group: record results in 2025 (March 10 2026): https://www.lego.com/en-us/aboutus/news/2026/march/the-lego-group-delivers-record-results-in-2025-driven-by-strong-brand-and-innovative-portfolio\n\nFrom the cited pages: founded 1932 by carpenter Ole Kirk Christiansen; last Lego patent expired 1989; 2003 deficit of DKK 1.4 billion; almost 1,000 employees laid off; 2004 net loss DKK 1,931 million; Kjeld Kirk Kristiansen put DKK 800 million of his private funds into the company in 2004; amusement parks sold; 2025 revenue DKK 83.5 billion (record), net profit DKK 16.7 billion. Not financial advice.\n\n#shorts #lego #business #howtheymakemoney",
+  "tags": [
+    "lego",
+    "toys",
+    "comeback",
+    "business",
+    "shorts"
+  ],
+  "images": {},
+  "hud_label": "LEGO result",
+  "loop": "So next time you snap two bricks together, ask yourself:",
+  "cta": "LEGO sets or video games? Comment your pick.",
+  "cta_question": "LEGO or video games?",
+  "scenes": [
+    {
+      "narration": "In 2004, LEGO lost almost 2 billion kroner. Why is it booming?",
+      "visual": {
+        "type": "editorial",
+        "layout": "cards",
+        "label": "The family",
+        "people": [
+          {
+            "name": "Ole Kirk Christiansen",
+            "photo": "File:Ole Kirk Christiansen, 1957 (cropped).jpg",
+            "role": "Founder"
+          },
+          {
+            "name": "Kjeld Kirk Kristiansen",
+            "photo": "File:Kjeld Kirk Kristiansen 2018.jpg",
+            "role": "Grandson, owner"
+          }
+        ]
+      }
+    },
+    {
+      "narration": "It started with a carpenter making wooden toys. Then plastic bricks.",
+      "visual": {
+        "type": "editorial",
+        "layout": "timeline",
+        "points": [
+          [
+            "1932",
+            "carpenter starts LEGO"
+          ],
+          [
+            "1947",
+            "plastic bricks begin"
+          ],
+          [
+            "1989",
+            "last patent runs out"
+          ]
+        ]
+      }
+    },
+    {
+      "narration": "But then the last patent ran out. Copycats moved in.",
+      "visual": {
+        "type": "editorial",
+        "layout": "headline",
+        "headline": "Copycats moved in.",
+        "accent": "Copycats"
+      }
+    },
+    {
+      "narration": "Then came the low point. About a thousand jobs cut.",
+      "visual": {
+        "type": "editorial",
+        "layout": "stat",
+        "stat": "-DKK 1.9B",
+        "stat_sub": "net loss, 2004",
+        "label": "The low point",
+        "hud": "-DKK 1.9B"
+      }
+    },
+    {
+      "narration": "Still, the owner put in 800 million kroner of his own.",
+      "visual": {
+        "type": "editorial",
+        "layout": "stat",
+        "stat": "DKK 800M",
+        "stat_sub": "owner's own money, 2004",
+        "label": "The rescue"
+      }
+    },
+    {
+      "narration": "It worked. Last year, sales hit a record 83.5 billion kroner.",
+      "visual": {
+        "type": "editorial",
+        "layout": "stat",
+        "stat": "DKK 83.5B",
+        "stat_sub": "revenue, 2025 (record)",
+        "hud": "DKK 83.5B"
+      }
+    }
+  ],
+  "photos": [
+    {
+      "photo": "File:Ole Kirk Christiansen, 1957.jpg",
+      "caption": "Ole Kirk Christiansen"
+    },
+    {
+      "photo": "File:Ole Kirks Hus 01.jpg",
+      "caption": "Where it started, Billund"
+    },
+    {
+      "photo": "File:Lego Color Bricks.jpg",
+      "caption": "The brick"
+    },
+    {
+      "photo": "File:Lego 2x4 brick.jpg",
+      "caption": "Same shape for decades"
+    },
+    {
+      "photo": "File:Legoland Billund, 1977 (09).jpg",
+      "caption": "Legoland, 1977"
+    },
+    {
+      "photo": "File:Pile of light gray LEGO bricks at a LEGO store.jpg",
+      "caption": "Bricks by the pile"
+    },
+    {
+      "photo": "File:Lego bricks in Lego House.jpg",
+      "caption": "LEGO House, Billund"
+    },
+    {
+      "photo": "File:Billund Lego House 01.jpg",
+      "caption": "Built like bricks"
+    },
+    {
+      "photo": "File:Lego store Rock Ctr 2022 jeh.jpg",
+      "caption": "LEGO store, New York"
+    },
+    {
+      "photo": "File:Playing with Lego bricks.jpg",
+      "caption": "Still playing"
+    },
+    {
+      "photo": "File:The LEGO Campus in Billund (2025).jpg",
+      "caption": "LEGO campus, 2025"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: The Lego Group",
+      "url": "https://en.wikipedia.org/wiki/The_Lego_Group"
+    },
+    {
+      "title": "The LEGO Group: record results in 2025 (March 10 2026)",
+      "url": "https://www.lego.com/en-us/aboutus/news/2026/march/the-lego-group-delivers-record-results-in-2025-driven-by-strong-brand-and-innovative-portfolio"
+    }
+  ]
+}

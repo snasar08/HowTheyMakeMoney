@@ -1,0 +1,126 @@
+{
+  "id": "054",
+  "slug": "careers-air-traffic",
+  "company": "Air traffic controllers",
+  "format": "careers",
+  "visual_style": "charts3d",
+  "hook_style": "surprise",
+  "title_style": "statement",
+  "theme": "clean_navy",
+  "status": "ready",
+  "score": 86,
+  "title": "Too Old at 31: This Job Pays $148,080",
+  "description": "Too old at 31? For this job, you are.\n\nSources:\n- BLS OEWS via api.bls.gov: Air traffic controllers 53-2021, annual median wage, May 2025: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000053202113\n- BLS OEWS via api.bls.gov: 10th percentile: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000053202111\n- BLS OEWS via api.bls.gov: 90th percentile: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000053202115\n- Wikipedia: Air traffic controller: https://en.wikipedia.org/wiki/Air_traffic_controller\n- FAA: Aviation careers: https://www.faa.gov/jobs/career_fields/aviation_careers\n\nBLS May 2025 (OEWS): median $148,080; 10th percentile $78,420; 90th percentile $215,610. FAA rule: trainees start at the academy by their 31st birthday; mandatory retirement at 56 (Wikipedia). FAA: more than 14,000 controllers, 2.9 million daily passengers. Median = half earn more, half earn less. Not financial advice.\n\n#shorts #airtrafficcontrol #careers #aviation #howtheymakemoney",
+  "tags": [
+    "air traffic controller",
+    "faa",
+    "aviation",
+    "careers",
+    "shorts"
+  ],
+  "images": {
+    "hook": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: a young adult air traffic controller wearing a headset in a glass control tower at dusk, airplanes lined up on a glowing runway outside the windows, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261107_180222_dd357a30-51aa-4b2b-9c85-c1a83f9ab8c1.png"
+    },
+    "mid": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: young adult trainees in plain polo shirts sitting at radar simulator desks in a classroom, an instructor pointing at a glowing screen of plane dots, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261107_180224_9693b83b-8fc3-40c8-9ecd-dce40ae07f59.png"
+    },
+    "broll1": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: airplanes lined up on an airport runway at sunset, runway lights glowing, empty tarmac, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261107_180222_3ac8ec23-9983-4cdf-9080-16a31662e94a.png"
+    },
+    "broll2": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: a calm controller's hand resting on a glowing radar console with green plane dots, headset on the desk, dark tower room, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261107_180223_cdce3754-826e-4c30-9012-2468147fb525.png"
+    }
+  },
+  "loop": "So next time your plane lands, ask yourself:",
+  "cta": "Pilot or controller? Comment your pick.",
+  "cta_question": "Pilot or controller?",
+  "scenes": [
+    {
+      "narration": "Too old at 31? For this job, you are.",
+      "visual": {
+        "type": "image",
+        "image": "hook",
+        "overlay": "TOO OLD AT 31?",
+        "overlay_sub": "for this job, yes"
+      }
+    },
+    {
+      "narration": "FAA trainees must start by their 31st birthday.",
+      "visual": {
+        "type": "image",
+        "image": "mid",
+        "overlay": "START BY 31",
+        "overlay_sub": "FAA academy rule"
+      }
+    },
+    {
+      "narration": "Then they must retire at 56.",
+      "visual": {
+        "type": "stat",
+        "value": 56,
+        "prefix": "",
+        "suffix": "",
+        "decimals": 0,
+        "label": "Mandatory retirement age, FAA controllers"
+      }
+    },
+    {
+      "narration": "But the pay makes up for it. A median of 148,080 dollars.",
+      "visual": {
+        "type": "bars",
+        "items": [
+          {
+            "label": "Low 10%",
+            "value": 78.4
+          },
+          {
+            "label": "Median",
+            "value": 148.1
+          },
+          {
+            "label": "Top 10%",
+            "value": 215.6
+          }
+        ],
+        "prefix": "$",
+        "suffix": "K",
+        "title": "Air traffic controller pay, May 2025"
+      }
+    },
+    {
+      "narration": "Only 14,000-plus controllers guide 2.9 million passengers a day.",
+      "visual": {
+        "type": "text",
+        "text": "14,000+ controllers",
+        "sub": "2.9 million passengers a day"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "BLS OEWS via api.bls.gov: Air traffic controllers 53-2021, annual median wage, May 2025",
+      "url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000053202113"
+    },
+    {
+      "title": "BLS OEWS via api.bls.gov: 10th percentile",
+      "url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000053202111"
+    },
+    {
+      "title": "BLS OEWS via api.bls.gov: 90th percentile",
+      "url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000053202115"
+    },
+    {
+      "title": "Wikipedia: Air traffic controller",
+      "url": "https://en.wikipedia.org/wiki/Air_traffic_controller"
+    },
+    {
+      "title": "FAA: Aviation careers",
+      "url": "https://www.faa.gov/jobs/career_fields/aviation_careers"
+    }
+  ]
+}
