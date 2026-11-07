@@ -245,3 +245,6 @@ Sam rated test Shorts 6-7/10 and called the stories bland. Rewrote all 17 ready 
 
 ## Nov 5: stress test
 Rendered all ready rewrites in dry runs on a temporary workflow. No crashes or gate blocks. Fixed: silent shots now get word cards (reused pictures 012, 017, 023 went to 0), reworded lines the voice check kept missing, and Nike's static ending. Round 2 on the 10 changed Shorts passed: no clarity warnings, no reused pictures. "Near-copy" warnings remain; word cards share a background, so these are mostly false flags. Word-card endings are plainer than pictures; more images per script would need credits.
+
+## Nov 7: cover frame
+Frame 0 is the cover YouTube usually picks. For Shorts that open on a picture with an overlay, it now shows the overlay in up to 2 huge lines on a dark band, with the question below (`_cover_text` in `render.py`). Checked at thumbnail size locally; GitHub dry run on 052 passed. Low-poly and editorial openers are unchanged.
