@@ -1,0 +1,368 @@
+{
+  "https://en.wikipedia.org/wiki/Chick-fil-A": {
+    "file": "pages/ad81ef017885.txt",
+    "fetched_at": "2026-11-07T17:48:09.452279+00:00",
+    "ok": true,
+    "chars": 67292,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Chick-fil-A",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://www.chick-fil-a.com/press-room/2024/01/myths-about-becoming-a-chick-fil-a-operator": {
+    "file": "pages/024ba23267b4.txt",
+    "fetched_at": "2026-11-07T17:48:09.984927+00:00",
+    "ok": true,
+    "chars": 6924,
+    "status": 200,
+    "final_url": "https://www.chick-fil-a.com/press-room/myths-about-becoming-a-chick-fil-a-operator",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://www.chick-fil-a.com/franchise-opportunities/us": {
+    "file": "pages/bef1957b0656.txt",
+    "fetched_at": "2026-11-07T17:48:11.030070+00:00",
+    "ok": false,
+    "error": "HTTP 404"
+  },
+  "https://en.wikipedia.org/wiki/DoorDash": {
+    "file": "pages/e748506273e4.txt",
+    "fetched_at": "2026-11-07T17:48:11.995811+00:00",
+    "ok": true,
+    "chars": 54758,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/DoorDash",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://s22.q4cdn.com/280253921/files/content_files/Q3-2026-Earnings-Press-Release.pdf": {
+    "file": "pages/46ff864cdd32.txt",
+    "fetched_at": "2026-11-07T17:48:12.449752+00:00",
+    "ok": true,
+    "chars": 81106,
+    "status": 200,
+    "final_url": "https://s22.q4cdn.com/280253921/files/content_files/Q3-2026-Earnings-Press-Release.pdf",
+    "content_type": "application/pdf"
+  },
+  "https://en.wikipedia.org/wiki/The_Lego_Group": {
+    "file": "pages/0cdc58ecb082.txt",
+    "fetched_at": "2026-11-07T17:48:13.158637+00:00",
+    "ok": true,
+    "chars": 50512,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/The_Lego_Group",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://www.lego.com/en-us/aboutus/news/2026/march/the-lego-group-delivers-record-results-in-2025-driven-by-strong-brand-and-innovative-portfolio": {
+    "file": "pages/aa5526a02c3e.txt",
+    "fetched_at": "2026-11-07T17:48:13.637619+00:00",
+    "ok": true,
+    "chars": 20623,
+    "status": 200,
+    "final_url": "https://www.lego.com/en-us/aboutus/news/2026/march/the-lego-group-delivers-record-results-in-2025-driven-by-strong-brand-and-innovative-portfolio",
+    "content_type": "text/html; charset=utf-8"
+  },
+  "https://en.wikipedia.org/wiki/Red_Bull": {
+    "file": "pages/b0c2d330dc7c.txt",
+    "fetched_at": "2026-11-07T17:48:14.169731+00:00",
+    "ok": true,
+    "chars": 29387,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Red_Bull",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Red_Bull_GmbH": {
+    "file": "pages/6ea31dcce649.txt",
+    "fetched_at": "2026-11-07T17:48:14.620936+00:00",
+    "ok": true,
+    "chars": 56096,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Red_Bull_GmbH",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://www.redbull.com/int-en/energydrink/company-profile": {
+    "file": "pages/13927ac5f126.txt",
+    "fetched_at": "2026-11-07T17:48:15.090136+00:00",
+    "ok": true,
+    "chars": 1515,
+    "status": 200,
+    "final_url": "https://www.redbull.com/int-en/energydrink/company-profile",
+    "content_type": "text/html; charset=utf-8"
+  },
+  "https://en.wikipedia.org/wiki/Fortnite": {
+    "file": "pages/0c81bb54691c.txt",
+    "fetched_at": "2026-11-07T17:48:16.354973+00:00",
+    "ok": true,
+    "chars": 52823,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Fortnite",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Fortnite_Battle_Royale": {
+    "file": "pages/624d8de76a44.txt",
+    "fetched_at": "2026-11-07T17:48:16.823796+00:00",
+    "ok": true,
+    "chars": 118619,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Fortnite_Battle_Royale",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Roblox_Corporation": {
+    "file": "pages/b331791ca3ef.txt",
+    "fetched_at": "2026-11-07T17:48:17.354226+00:00",
+    "ok": true,
+    "chars": 29091,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Roblox_Corporation",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://ir.roblox.com/news/news-details/2026/Roblox-Reports-Third-Quarter-2026-Financial-Results/default.aspx": {
+    "file": "pages/fd33c55be7a2.txt",
+    "fetched_at": "2026-11-07T17:48:17.778232+00:00",
+    "ok": false,
+    "error": "HTTP 403"
+  },
+  "https://gaming.net/roblox-q3-revenue-rises-16-as-bookings-fall-12-to-1-7-billion": {
+    "file": "pages/d2d8dafab1f3.txt",
+    "fetched_at": "2026-11-07T17:48:18.337518+00:00",
+    "ok": true,
+    "chars": 12219,
+    "status": 200,
+    "final_url": "https://www.gaming.net/roblox-q3-revenue-rises-16-as-bookings-fall-12-to-1-7-billion/",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://about.netflix.com/en/news/what-we-watched-the-first-half-of-2025": {
+    "file": "pages/3886bfba6655.txt",
+    "fetched_at": "2026-11-07T17:48:18.893315+00:00",
+    "ok": true,
+    "chars": 4579,
+    "status": 200,
+    "final_url": "https://about.netflix.com/en/news/what-we-watched-the-first-half-of-2025",
+    "content_type": "text/html; charset=utf-8"
+  },
+  "https://en.wikipedia.org/wiki/YouTube": {
+    "file": "pages/283fd0ecef83.txt",
+    "fetched_at": "2026-11-07T17:48:19.418815+00:00",
+    "ok": true,
+    "chars": 166701,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/YouTube",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://www.tubefilter.com/2019/05/07/number-hours-video-uploaded-to-youtube-per-minute/": {
+    "file": "pages/d85c6d1bef34.txt",
+    "fetched_at": "2026-11-07T17:48:19.972284+00:00",
+    "ok": true,
+    "chars": 2725,
+    "status": 200,
+    "final_url": "https://www.tubefilter.com/2019/05/07/number-hours-video-uploaded-to-youtube-per-minute/",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/The_Eras_Tour": {
+    "file": "pages/6883375ebe70.txt",
+    "fetched_at": "2026-11-07T17:48:20.485026+00:00",
+    "ok": true,
+    "chars": 184840,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/The_Eras_Tour",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Taylor_Swift": {
+    "file": "pages/8467d5db914e.txt",
+    "fetched_at": "2026-11-07T17:48:21.048478+00:00",
+    "ok": true,
+    "chars": 255508,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Taylor_Swift",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/MrBeast": {
+    "file": "pages/c6fa0a398c78.txt",
+    "fetched_at": "2026-11-07T17:48:21.718459+00:00",
+    "ok": true,
+    "chars": 91965,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/MrBeast",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/LeBron_James": {
+    "file": "pages/b2ad2d29ffdd.txt",
+    "fetched_at": "2026-11-07T17:48:22.231504+00:00",
+    "ok": true,
+    "chars": 253862,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/LeBron_James",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://www.mlb.com/news/mlb-mlbpa-agree-to-cba": {
+    "file": "pages/bb3fb526ea67.txt",
+    "fetched_at": "2026-11-07T17:48:23.233376+00:00",
+    "ok": true,
+    "chars": 9428,
+    "status": 200,
+    "final_url": "https://www.mlb.com/news/mlb-mlbpa-agree-to-cba",
+    "content_type": "text/html; charset=utf-8"
+  },
+  "https://en.wikipedia.org/wiki/Major_League_Baseball_Players_Association": {
+    "file": "pages/340d1301ffe6.txt",
+    "fetched_at": "2026-11-07T17:48:23.624749+00:00",
+    "ok": true,
+    "chars": 24562,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Major_League_Baseball_Players_Association",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://www.nasa.gov/humans-in-space/astronauts/astronaut-selection-and-training/": {
+    "file": "pages/4cfe7ce1c200.txt",
+    "fetched_at": "2026-11-07T17:48:24.081313+00:00",
+    "ok": false,
+    "error": "HTTP 404"
+  },
+  "https://www.nasa.gov/careers/astronaut/": {
+    "file": "pages/13299df6a15d.txt",
+    "fetched_at": "2026-11-07T17:48:25.079533+00:00",
+    "ok": false,
+    "error": "HTTP 404"
+  },
+  "https://en.wikipedia.org/wiki/NASA_Astronaut_Corps": {
+    "file": "pages/ace259fe865a.txt",
+    "fetched_at": "2026-11-07T17:48:25.857309+00:00",
+    "ok": true,
+    "chars": 42482,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/NASA_Astronaut_Corps",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/General_Schedule_(US_civil_service_pay_scale)": {
+    "file": "pages/49ec00807a4d.txt",
+    "fetched_at": "2026-11-07T17:48:26.303048+00:00",
+    "ok": true,
+    "chars": 46066,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/General_Schedule_(US_civil_service_pay_scale)",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000015125213": {
+    "file": "pages/f60631446266.txt",
+    "fetched_at": "2026-11-07T17:48:26.887351+00:00",
+    "ok": true,
+    "chars": 375,
+    "status": 200,
+    "final_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000015125213",
+    "content_type": "application/json"
+  },
+  "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000015125204": {
+    "file": "pages/e2b0c8d236e4.txt",
+    "fetched_at": "2026-11-07T17:48:27.650261+00:00",
+    "ok": true,
+    "chars": 375,
+    "status": 200,
+    "final_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000015125204",
+    "content_type": "application/json"
+  },
+  "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000015125201": {
+    "file": "pages/30a6fe08e197.txt",
+    "fetched_at": "2026-11-07T17:48:28.075273+00:00",
+    "ok": true,
+    "chars": 376,
+    "status": 200,
+    "final_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000015125201",
+    "content_type": "application/json"
+  },
+  "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000015125211": {
+    "file": "pages/485ba8b25a3f.txt",
+    "fetched_at": "2026-11-07T17:48:28.492393+00:00",
+    "ok": true,
+    "chars": 374,
+    "status": 200,
+    "final_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000015125211",
+    "content_type": "application/json"
+  },
+  "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000015125215": {
+    "file": "pages/ab64bc9becbc.txt",
+    "fetched_at": "2026-11-07T17:48:28.975227+00:00",
+    "ok": true,
+    "chars": 375,
+    "status": 200,
+    "final_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000015125215",
+    "content_type": "application/json"
+  },
+  "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000053202113": {
+    "file": "pages/23093ad33661.txt",
+    "fetched_at": "2026-11-07T17:48:29.403169+00:00",
+    "ok": true,
+    "chars": 375,
+    "status": 200,
+    "final_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000053202113",
+    "content_type": "application/json"
+  },
+  "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000053202111": {
+    "file": "pages/e2511fd9bfdf.txt",
+    "fetched_at": "2026-11-07T17:48:29.843001+00:00",
+    "ok": true,
+    "chars": 374,
+    "status": 200,
+    "final_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000053202111",
+    "content_type": "application/json"
+  },
+  "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000053202115": {
+    "file": "pages/bb466ee4a042.txt",
+    "fetched_at": "2026-11-07T17:48:30.258602+00:00",
+    "ok": true,
+    "chars": 375,
+    "status": 200,
+    "final_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000053202115",
+    "content_type": "application/json"
+  },
+  "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000053202101": {
+    "file": "pages/4d450c9d4afa.txt",
+    "fetched_at": "2026-11-07T17:48:30.661179+00:00",
+    "ok": true,
+    "chars": 374,
+    "status": 200,
+    "final_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000053202101",
+    "content_type": "application/json"
+  },
+  "https://support.tiktok.com/en/business-and-creator/creator-rewards-program/creator-rewards-program": {
+    "file": "pages/6685a5f1cd5d.txt",
+    "fetched_at": "2026-11-07T17:48:31.076102+00:00",
+    "ok": true,
+    "chars": 0,
+    "status": 200,
+    "final_url": "https://www.tiktok.com/support/faq_detail?id=7581821550694013452",
+    "content_type": "text/html; charset=utf-8"
+  },
+  "https://newsroom.tiktok.com/en-us/creator-rewards-program": {
+    "file": "pages/94ce7a435854.txt",
+    "fetched_at": "2026-11-07T17:48:31.845455+00:00",
+    "ok": true,
+    "chars": 2854,
+    "status": 200,
+    "final_url": "https://newsroom.tiktok.com/?lang=en",
+    "content_type": "text/html; charset=utf-8"
+  },
+  "https://www.tiktok.com/legal/page/global/creator-rewards-program-terms/en": {
+    "file": "pages/222a30b31c67.txt",
+    "fetched_at": "2026-11-07T17:48:32.982788+00:00",
+    "ok": true,
+    "chars": 0,
+    "status": 200,
+    "final_url": "https://www.tiktok.com/404",
+    "content_type": "text/html; charset=utf-8"
+  },
+  "https://en.wikipedia.org/wiki/TikTok": {
+    "file": "pages/db9588340077.txt",
+    "fetched_at": "2026-11-07T17:48:33.505060+00:00",
+    "ok": true,
+    "chars": 229724,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/TikTok",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/The_International_2021": {
+    "file": "pages/b5948877e7fe.txt",
+    "fetched_at": "2026-11-07T17:48:34.101140+00:00",
+    "ok": true,
+    "chars": 14799,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/The_International_2021",
+    "content_type": "text/html; charset=UTF-8"
+  }
+}

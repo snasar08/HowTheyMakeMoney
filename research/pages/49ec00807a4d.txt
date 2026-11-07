@@ -1,0 +1,1177 @@
+URL: https://en.wikipedia.org/wiki/General_Schedule_(US_civil_service_pay_scale)
+FINAL_URL: https://en.wikipedia.org/wiki/General_Schedule_(US_civil_service_pay_scale)
+FETCHED: 2026-11-07T17:48:26.303048+00:00
+
+Jump to content
+
+Main menu
+
+Main menu
+
+ move to sidebar
+ hide
+
+ Navigation
+
+Main page
+
+Contents
+
+Current events
+
+Random article
+
+About Wikipedia
+
+Contact us
+
+ Contribute
+
+Help
+
+Learn to edit
+
+Community portal
+
+Recent changes
+
+Upload file
+
+Special pages
+
+Search
+
+ Search
+
+Appearance
+
+Donate
+
+Create account
+
+Log in
+
+Personal tools
+
+Donate
+
+Create account
+
+Log in
+
+Contents
+
+ move to sidebar
+ hide
+
+(Top)
+
+ 1
+ History
+
+ 2
+ Administration
+
+ 3
+ Grade and step structure
+
+ Toggle Grade and step structure subsection
+
+ 3.1
+ Advancement between steps within the same grade
+
+ 3.2
+ Advancement between grades
+
+ 4
+ Salary calculation
+
+ Toggle Salary calculation subsection
+
+ 4.1
+ Base salary
+
+ 4.2
+ Locality adjustment
+
+ 4.3
+ Personnel outside the United States
+
+ 5
+ Comparison between civilian and military rank equivalents
+
+ 6
+ Pay for performance
+
+ 7
+ List of other pay scale terms
+
+ 8
+ References
+
+ 9
+ External links
+
+Toggle the table of contents
+
+General Schedule
+
+Add languages
+
+Add links
+
+Article
+
+Talk
+
+ English
+
+Read
+
+Edit
+
+View history
+
+Save
+
+Tools
+
+Tools
+
+ move to sidebar
+ hide
+
+ Actions
+
+Read
+
+Edit
+
+View history
+
+Save
+
+ General
+
+What links here
+
+Related changes
+
+Upload file
+
+Permanent link
+
+Page information
+
+Cite this page
+
+Get shortened URL
+
+Switch to legacy parser
+
+ Print/export
+
+Download as PDF
+
+Printable version
+
+ In other projects
+
+Wikidata item
+
+Appearance
+
+ move to sidebar
+ hide
+
+From Wikipedia, the free encyclopedia
+
+(Redirected from General Schedule (US civil service pay scale))
+
+Pay scale for some employees of the Federal Government of the United States
+
+The General Schedule (GS) is the predominant pay scale within the United States civil service. The GS includes the majority of white collar personnel (professional, technical, administrative, and clerical) positions. As of September 2004[update], 71 percent of federal civilian employees were paid under the GS. The GG pay rates are identical to published GS pay rates.
+
+The remaining 29 percent were paid under other systems such as the Federal Wage System (WG, for federal blue-collar civilian employees), the Senior Executive Service and the Executive Schedule for high-ranking federal employees, and other unique pay schedules used by some agencies such as the United States Securities and Exchange Commission and the Foreign Service. Starting in 2009[update], some federal employees were also paid under Pay Bands.[1]
+
+History
+[edit]
+
+The GS was enacted into law by the Classification Act of 1949, which replaced Classification Act of 1923. The GS is now codified as part of Chapter 53 of Title 5 of the United States Code sections 5331 to 5338 (5 U.S.C. §§ 5331–5338). The pay scale was originally created with the purpose of keeping federal salaries in line with equivalent private sector jobs. Although never the intent, the GS pay scale does a good job of ensuring equal pay for equal work by reducing pay gaps between men, women, and minorities, in accordance with another, separate law, the Equal Pay Act of 1963. [citation needed]
+
+Prior to January 1994, GS personnel were generally paid the same amount (for a given grade and step) regardless of where they worked. This system ignored the growing reality of regional differences in salaries and wages across the United States, and this led to a perception that in many locations federal civil service salaries were increasingly uncompetitive with those in the private sector, thus affecting recruiting and retention efforts by federal agencies. In January 1994, the Federal Employees Pay Comparability Act of 1990 (FEPCA) introduced a "locality pay adjustment" component to the GS salary structure. Both Republican and Democratic administrations have complained about the methodology used to compute locality adjustments and the projected cost of closing the pay gap (as determined by FEPCA) between federal salaries and those in the private sector. In December 2007, the President's Pay Agent reported that an average locality pay adjustment of 36.89% would be required to reach the target set by FEPCA (to close the computed pay gap between federal and non-federal pay to a disparity of 5%). By comparison, in calendar year 2007, the average locality pay adjustment actually authorized was 16.88%. As a result, FEPCA has never been fully implemented. [citation needed]
+
+Administration
+[edit]
+
+The United States Office of Personnel Management administers the GS pay schedule on behalf of other federal agencies.
+
+Changes to the GS must normally be authorized by either the president (via Executive Order) or by Congress (via legislation). Normally, the President directs annual across-the-board pay adjustments (including locality pay adjustments) at the beginning of a calendar year after Congress has passed the annual appropriations legislation for the federal government.
+
+Under FEPCA, the Bureau of Labor Statistics conducts annual surveys of wages and salaries paid to non-federal workers in designated locality pay areas. Surveys are used to determine the disparity, if any, between federal and non-federal pay in a given locality pay area. The Federal Salary Council (created by FEPCA) prepares recommendations concerning the composition of the designated locality pay areas and the annual comparability adjustment for each area, as well as an adjustment for all other workers outside these areas, referred to as "Rest of U.S.". The council's recommendations are transmitted to the President's Pay Agent (also created by FEPCA), which then establishes, modifies, or disestablishes individual locality pay areas and makes the final recommendation on pay adjustments to the president, who may either accept the agent's recommendations or (in effect) reject them through the submission of an alternative pay plan.
+
+FEPCA also provides for an automatic annual across-the-board adjustment of GS pay rates. A common misconception is that the annual federal pay adjustments are determined according to cost of living fluctuations and other regional considerations. In fact, the across-the-board adjustments to the GS (but not locality pay) are determined according to the rise in the cost of employment as measured by the Department of Labor's Employment Cost Index, which does not necessarily correlate to the better-known Consumer Price Index, which tracks consumer prices.
+
+Grade and step structure
+[edit]
+
+US Government Employees Pay Comparison
+
+The GS is separated into 15 grades (GS-1, GS-2, etc. up to GS-15); each grade is separated into 10 steps. At one time, there were also three GS "supergrades" (GS-16, GS-17 and GS-18); these were eliminated under the provisions of the Civil Service Reform Act of 1978 and replaced by the Senior Executive Service and the more recent Senior Level (non-supervisory) pay scale.
+
+Most positions in the competitive service are paid according to the GS. In addition, many positions in the excepted service use the GS as a basis for setting pay rates. Some positions in the excepted service use the grade designator "GG"—for example, "GG-12" or "GG-13". The GG pay rates are generally identical to published GS pay rates.
+
+The GS-1 through GS-7 range generally marks entry-level positions, while mid-level positions are in the GS-8 to GS-12 range and top-level positions (senior managers, high-level technical specialists, or physicians) are in the GS-13 to GS-15 range. A new GS employee is normally employed in the first step of their assigned GS grade, although the employer has discretion to, as a recruiting incentive, authorize initial appointment at a higher step (other agencies may place the employee at a higher grade). In most professional occupations, entry to mid-level positions are classified at two-grade intervals—that is, an employee would advance from GS-5 to GS-7, then to GS-9 and finally to GS-11, skipping grades 6, 8 and 10.
+
+Advancement between steps within the same grade
+[edit]
+
+Permanent employees below step 10 in their grade normally earn step increases after serving a prescribed period of service in at least a satisfactory manner. The normal progression is 52 weeks (one year) between steps 1–2, 2–3, and 3–4, then 104 weeks (two years) between steps 4–5, 5–6, and 6–7, and finally 156 weeks (three years) between steps 7–8, 8–9, and 9–10.[2] However, an employee can be rewarded for outstanding work performance via a "quality step increase" ("QSI"), which advances the employee one step within grade regardless of time at the previous step.[3] (A QSI does not affect the timing of an employee’s next regular within-grade increase, unless the QSI places the employee in step 4 or step 7 of his or her grade. In these cases, the employee must complete the full waiting period for the new step, 104 weeks for steps 4-6 or 156 weeks for steps 7-9. However, the time an employee has already waited is not lost; it continues to count towards the waiting period for the next step increase. The QSI provides the employee the benefit of receiving an additional step increase at an earlier date than he or she originally would have without losing any time creditable towards his or her next WGI.)[4]
+
+Advancement between grades
+[edit]
+
+Depending on the agency and the work description, a GS position may provide for advancement within a "career ladder," meaning that an employee performing satisfactorily will advance between GS grades, normally on an annual basis, until s/he has reached the top GS grade for that job (which represents full performance). Advancement beyond the top grade (to either a managerial or technical specialty position) would be subject to competitive selection.
+
+Not all positions, however, provide for such a "career ladder," thus requiring employees who seek advancement to consider other career paths, either within their agency or outside it.
+
+An example is the "career ladder" for auditors within the Defense Contract Audit Agency (DCAA). The traditional "entry level" grade within DCAA is the GS-7 level (some employees come in either at the lower GS-5 level or higher GS-9 or GS-11 levels) and the "career ladder" is GS-7 to GS-9 to GS-11 and finally to GS-12, with the employee expected to advance between grades after one year and if hired as a GS-7, to reach the GS-12 level after three years). Beyond the GS-12 level, advancement to the next level (GS-13, which is in most cases either a supervisory auditor or a technical specialist) are based on competitive selections.
+
+Furthermore, if an employee is promoted to a grade which is not part of the career ladder (such as a promotion to a managerial or technical specialty position), the employee's salary is set at the step within the higher grade nearest the employee's current salary (but never below the current salary), plus additional steps to reward the employee for the promotion and to account for the increased responsibilities that go along with the new position. As an example (and not including locality adjustments), an employee at GS-12 Step 10 (base salary $98,422) being promoted to a GS-13 position would initially have his/her salary set at GS-13 Step 4 (base salary $99,028, as it is the nearest salary to GS-12 Step 10 but not lower than it), and then have his/her salary adjusted to a higher step (such as GS-13 Step 6, having a base salary of $105,030).
+
+Salary calculation
+[edit]
+
+Salaries under the GS have two components: a base salary and a "locality pay adjustment".
+
+Base salary
+[edit]
+
+The base salary is based on a table compiled by Office of Personnel Management (the 2024 table is shown below),[5] and is used as the baseline for the locality pay adjustment. The increases between steps for Grades GS-1 and GS-2 varies between the steps; for Grades GS-3 through GS-15 the increases between the steps are the same within the grade but increase as the grade increases. The table is revised effective January of each year (officially, the first full pay period which begins in January) to reflect the basic cost of living adjustment (known as the General Schedule Increase).
+
+2025 General Schedule Basic Pay 
+
+v
+
+t
+
+e
+
+ | Grade
+ | Step 1
+ | Step 2
+ | Step 3
+ | Step 4
+ | Step 5
+ | Step 6
+ | Step 7
+ | Step 8
+ | Step 9
+ | Step 10
+
+ | 1
+ | $22,360
+ | $23,110
+ | $23,853
+ | $24,594
+ | $25,336
+ | $25,770
+ | $26,506
+ | $27,247
+ | $27,277
+ | $27,970
+
+ | 2
+ | $25,142
+ | $25,740
+ | $26,573
+ | $27,277
+ | $27,583
+ | $28,394
+ | $29,205
+ | $30,016
+ | $30,827
+ | $31,638
+
+ | 3
+ | $27,434
+ | $28,348
+ | $29,262
+ | $30,176
+ | $31,090
+ | $32,004
+ | $32,918
+ | $33,832
+ | $34,746
+ | $35,660
+
+ | 4
+ | $30,795
+ | $31,822
+ | $32,849
+ | $33,876
+ | $34,903
+ | $35,930
+ | $36,957
+ | $37,984
+ | $39,011
+ | $40,038
+
+ | 5
+ | $34,454
+ | $35,602
+ | $36,750
+ | $37,898
+ | $39,046
+ | $40,194
+ | $41,342
+ | $42,490
+ | $43,638
+ | $44,786
+
+ | 6
+ | $38,407
+ | $39,687
+ | $40,967
+ | $42,247
+ | $43,527
+ | $44,807
+ | $46,087
+ | $47,367
+ | $48,647
+ | $49,927
+
+ | 7
+ | $42,679
+ | $44,102
+ | $45,525
+ | $46,948
+ | $48,371
+ | $49,794
+ | $51,217
+ | $52,640
+ | $54,063
+ | $55,486
+
+ | 8
+ | $47,265
+ | $48,841
+ | $50,417
+ | $51,993
+ | $53,569
+ | $55,145
+ | $56,721
+ | $58,297
+ | $59,873
+ | $61,449
+
+ | 9
+ | $52,205
+ | $53,945
+ | $55,685
+ | $57,425
+ | $59,165
+ | $60,905
+ | $62,645
+ | $64,385
+ | $66,125
+ | $67,865
+
+ | 10
+ | $57,489
+ | $59,405
+ | $61,321
+ | $63,237
+ | $65,153
+ | $67,069
+ | $68,985
+ | $70,901
+ | $72,817
+ | $74,733
+
+ | 11
+ | $63,163
+ | $65,268
+ | $67,373
+ | $69,478
+ | $71,583
+ | $73,688
+ | $75,793
+ | $77,898
+ | $80,003
+ | $82,108
+
+ | 12
+ | $75,706
+ | $78,230
+ | $80,754
+ | $83,278
+ | $85,802
+ | $88,326
+ | $90,850
+ | $93,374
+ | $95,898
+ | $98,422
+
+ | 13
+ | $90,025
+ | $93,026
+ | $96,027
+ | $99,028
+ | $102,029
+ | $105,030
+ | $108,031
+ | $111,032
+ | $114,033
+ | $117,034
+
+ | 14
+ | $106,382
+ | $109,928
+ | $113,474
+ | $117,020
+ | $120,566
+ | $124,112
+ | $127,658
+ | $131,204
+ | $134,750
+ | $138,296
+
+ | 15
+ | $125,133
+ | $129,304
+ | $133,475
+ | $137,646
+ | $141,817
+ | $145,988
+ | $150,159
+ | $154,330
+ | $158,501
+ | $162,672
+
+Some positions have their own unique GS scales. One notable example being patent examiner positions who can receive a supplement of more than 50% from the standard GS scale. Under the laws governing special GS scales, employees whose positions are covered by those scales earn either the special scale salary, or the standard GS scale salary plus a locality adjustment (see below), whichever is higher.[6]
+
+Locality adjustment
+[edit]
+
+The second component of the GS salary, the locality pay adjustment, was introduced in 1994 as part of the Federal Employees Pay Comparability Act of 1990 (FEPCA). Prior to FEPCA, all GS employees received the same salary regardless of location, which failed to reflect both the disparity between public sector and private sector pay as well as differences in cost of living in major metropolitan areas. As noted earlier, an employee in a position with a special GS scale does not receive a locality adjustment unless the pay under the special scale is lower than using the locality pay adjustment.
+
+Under FEPCA, the United States (excluding its Territories and overseas employees) are divided into locality areas for purposes of determining pay. The locality areas generally follow either Metropolitan statistical areas (MSAs) or Combined statistical areas (CSAs) but frequently include bordering counties that are not included within the MSA or CSA,[7] with two additional designated areas for the states of Alaska and Hawaii, and finally a "Rest of U.S." which consists of areas within the United States that are not designed as a separate locality area; this area receives the smallest locality pay adjustment. The geographical definition of locality areas is subject to periodic review, and new or revised areas generally are recommended one year prior to actual implementation (to allow for review and public comment). Salary adjustments for employees in other U.S. Territories and for overseas employees are separate from this adjustment. As of 2025, there are 58 designated areas (including Alaska, Hawaii, and "Rest of U.S."):
+
+2025 Major metropolitan areas and their designated percentage adjustments[8]
+
+ | Area | Adjustment | Area | Adjustment | Area | Adjustment | Area | Adjustment | Area | Adjustment | Area | Adjustment
+
+ | Alaska[9]
+ | 32.36%
+ | Chicago[10]
+ | 30.86%
+ | Des Moines[11]
+ | 18.01%
+ | Laredo[12]
+ | 21.59%
+ | Phoenix[13]
+ | 22.45%
+ | San Jose[14]
+ | 46.34%
+
+ | Albany[15]
+ | 20.77%
+ | Cincinnati[16]
+ | 21.93%
+ | Detroit[17]
+ | 29.12%
+ | Las Vegas[18]
+ | 19.57%
+ | Pittsburgh[19]
+ | 21.03%
+ | Seattle[20]
+ | 31.57%
+
+ | Albuquerque[21]
+ | 18.33%
+ | Cleveland[22]
+ | 22.23%
+ | Fresno[23]
+ | 17.65%
+ | Los Angeles[24]
+ | 36.47%
+ | Portland[25]
+ | 26.13%
+ | Spokane[26]
+ | 17.67%
+
+ | Atlanta[27]
+ | 23.79%
+ | Colorado Springs[28]
+ | 20.15%
+ | Harrisburg[29]
+ | 19.43%
+ | Miami[30]
+ | 24.67%
+ | Raleigh[31]
+ | 22.24%
+ | St. Louis[32]
+ | 20.03%
+
+ | Austin[33]
+ | 20.35%
+ | Columbus[34]
+ | 22.15%
+ | Hartford[35]
+ | 32.08%
+ | Milwaukee[36]
+ | 22.42%
+ | Reno[37]
+ | 17.52%
+ | Tucson[38]
+ | 19.28%
+
+ | Birmingham[39]
+ | 18.24%
+ | Corpus Christi[40]
+ | 17.63%
+ | Hawaii[41]
+ | 22.21%
+ | Minneapolis-St. Paul[42]
+ | 27.62%
+ | Richmond[43]
+ | 22.28%
+ | Virginia Beach-Norfolk[44]
+ | 18.80%
+
+ | Boston[45]
+ | 32.58%
+ | Dallas-Ft. Worth[46]
+ | 27.26%
+ | Houston[47]
+ | 35.00%
+ | New York City[48]
+ | 37.95%
+ | Rochester[49]
+ | 17.88%
+ | Washington, D.C.[50]
+ | 33.94%
+
+ | Buffalo[51]
+ | 22.41%
+ | Davenport[52]
+ | 18.93%
+ | Huntsville[53]
+ | 21.91%
+ | Omaha[54]
+ | 18.23%
+ | Sacramento[55]
+ | 29.76%
+ | "Rest of U.S."[56]
+ | 17.06%
+
+ | Burlington[57]
+ | 19.45%
+ | Dayton[58]
+ | 21.42%
+ | Indianapolis[59]
+ | 18.15%
+ | Palm Bay[60]
+ | 17.93%
+ | San Antonio[61]
+ | 18.78%
+
+ | Charlotte[62]
+ | 19.67%
+ | Denver[63]
+ | 30.52%
+ | Kansas City[64]
+ | 18.97%
+ | Philadelphia[65]
+ | 28.99%
+ | San Diego[66]
+ | 33.72%
+
+The total pay with locality is calculated as follows (the result of both equations is the same):
+
+Total pay=Locality%⋅(Base pay)+Base pay
+Total pay=Base pay×(1+Locality%)
+
+FEPCA places a cap on the total salary of highly paid employees (mainly those at the higher GS-15 Grade steps) – the total base pay plus locality adjustment cannot exceed the salary for employees under Level IV of the Executive Schedule.
+
+The locality pay adjustment is counted as part of the "high-3" salary in calculating Federal Employees Retirement System (FERS) and Civil Service Retirement System (CSRS) annuities, as well as the baseline for individuals having a percentage of salary deducted for deposit into the Thrift Savings Plan.
+
+Personnel outside the United States
+[edit]
+
+Personnel based outside the United States (e.g. U.S. territories, foreign overseas areas) receive a lower locality adjustment (4.76% for 2010). However, they may also receive certain non-taxable allowances such as cost-of-living allowances, post allowances and housing allowances in accordance with other laws, such as the Foreign Service Act. Federal civilian workers based in CONUS do not normally receive housing allowances or government-furnished housing. Also, some civilian personnel stationed overseas do not receive housing allowances; this may include military dependents working in federal civilian positions overseas, military members that left the service while overseas and were hired into an overseas position, and U.S. citizens hired into overseas positions while traveling abroad.
+
+In contrast, the tax-free allowances paid during overseas assignments (especially the housing allowances) are generally considered to be an incentive to serve overseas, as they can be quite generous. While this situation may be advantageous to some personnel during their assignment overseas, these tax-free allowances are not considered to be part of one's salary, therefore they are not counted when computing a civil service annuity at retirement. CONUS locality adjustments, however, are counted when computing annuities.
+
+Employees stationed in Alaska and Hawaii were formerly considered OCONUS and received a cost of living adjustment, but are being phased into the domestic locality pay system.
+
+Note:"Employees of the U.S. Government are not entitled to the foreign earned income exclusion or the foreign housing exclusion/deduction under section 911 because 'foreign earned income' does not include amounts paid by the U.S. Government as an employee. But see Other Employment, later"[67]
+
+Comparison between civilian and military rank equivalents
+[edit]
+
+US Government Employees Pay Comparison
+
+Protocol Precedence Lists for civilian and military personnel have been developed by each of the Department of Defense organizations to establish the order of government, military, and civic leaders for diplomatic, ceremonial, and social events. Protocol is a code of established guidelines on proper etiquette. Precedence is defined as priority in place, time, or rank. In the government, military and diplomatic corps, precedence among individuals' positions plays a substantial role. Equivalency between civilian pay grades and military rank is only for protocol purposes and informally for delegated supervisory responsibilities. While the authority of military rank extends across services and within each service, the same does not exist for civilian employees and therefore, there is no equivalency of command or supervisory authority between civilian and military personnel external to the local organization. The "Department of the Army Protocol Precedence List" is developed by the Army Protocol Directorate. Another form of the Army "Precedence List" can be found in Appendix D of DA PAM 600-60: A Guide to Protocol and Etiquette for Official Entertainment. The Department of the Navy "Civilian and Military Pay Grades" list can be found in Annex D of OPNAVINST 1710.7A: Social Usage and Protocol. The Department of the Air Force "Military and Civilian Rank Equivalents" can be found in Attachment 10 of AFI 34-1201. Consolidated DOD lists have been compiled by JMAR.[68]
+
+ | Geneva Convention category
+ | Military
+ | GS
+
+ | V: General officer
+ | O-7 through O-10
+ | SES/SL/ST
+
+ | IV: Field grade officer
+ | O-6
+
+O-5
+
+O-4
+ | GS-15
+
+GS-14
+
+GS-13
+
+ | III: Company grade officer
+ | O-3
+
+O-2
+
+O-1
+ | GS-10/GS-11/GS-12
+
+GS-8/GS-9
+
+GS-6/GS-7
+
+ | II: Non-commissioned officer (NCO)
+ | E-8/E-9
+
+E-5/E-6/E-7
+ | WS/GS-5
+
+WL/WS/GS-1 through GS-4
+
+ | I: Enlisted
+ | E-1 through E-4
+ | WG/WL
+
+The equivalency of GS and military ranks with respect to financial accounting has different rules than those treating protocol.[69]
+
+ | Geneva Convention category
+ | GS/SES
+ | Military
+
+ | V: General officer
+ | ES Level III
+
+ES Level IV
+
+ES Level V
+ | O-9
+
+O-8
+
+O-7
+
+ | IV: Field grade officer
+ | GS-15
+
+GS-14
+
+GS-13
+ | O-6
+
+O-5
+
+O-4
+
+ | III: Warrant officer/company grade officer
+ | GS-12
+
+GS-11
+
+GS-09
+
+ | O-3, WO-5/WO-4
+
+O-2, WO-3
+
+O-1, WO-2/WO-1
+
+ | II: Non-commissioned officer/senior non-commissioned officer
+ | GS-08
+
+GS-07
+
+GS-06
+
+GS-05
+ | E-9
+
+E-8
+
+E-7
+
+E-6/E-5
+
+ | I: Enlisted
+ | GS-04
+
+GS-03
+
+GS-02
+
+GS-01
+
+ | E-4
+
+E-3
+
+E-2
+
+E-1
+
+Pay for performance
+[edit]
+
+In recent years, there have been several attempts to eliminate the GS and replace it with various pay systems emphasizing "pay for performance" (i.e., a system in which pay increases are awarded based more on merit and work performance and less on seniority and length of service). The pay structure which enables this is typically known as pay banding. The best known efforts in this area are the pay systems created for the Departments of Homeland Security and Defense (the National Security Personnel System)[70] in 2002 and 2003, respectively. These efforts were challenged by federal labor unions and other employee groups.[citation needed] Many supervisory and non-bargaining-unit employees, however, were converted from their GS positions into equitable NSPS positions. As part of his fiscal 2007 and 2008 budget proposals, President George W. Bush proposed the eventual elimination of the GS to be replaced by a pay-for-performance concept throughout the Executive Branch of the government. The Office of Management and Budget prepared draft legislation, known as the "Working for America Act",[71] but as of January 2008[update][needs update] Congress has not implemented the proposal. President Barack Obama signed the legislation repealing the NSPS system on October 29, 2009. Under the terms of the 2010 Defense Authorization Act, Public Law 111-84, all employees under NSPS must be converted back to their previous pay system not later than January 1, 2012. The law also mandates that no employees lose pay as a result of this conversion.[72] In order to ensure this, a set of conversion rules has been developed. In most cases, if an employee's current NSPS salary falls between two step levels of the GS grade to which their position is classified, their salary will be increased to the higher step. Employees whose salary was increased beyond the GS step 10 amount while under NSPS will be placed on retained pay, meaning they will receive 50% of the annual cost of living increase until the GS table catches up to the level of salary they are earning.[73]
+
+List of other pay scale terms
+[edit]
+
+AD: Administratively Determined
+
+DB: Demonstration Army Engineers and Scientists External Link
+
+DE: Demonstration Army Technical and Business Support External Link
+
+DJ: Demonstration Army Administrative External Link
+
+DK: Demonstration Army General Support External Link
+
+DN: Defense Nuclear Facilities Safety Board External Link
+
+DO: Demonstration Air Force Business Management and Professional External Link
+
+DP: Scientific and Engineering (S&E) External Link (page 10)
+
+DR: Demonstration Air Force Scientist and Engineer External Link
+
+DS: Technical Specialist External Link (page 10)
+
+DU: Demonstration Air Force Mission Support External Link
+
+DX: Demonstration Air Force Technician External Link
+
+ES: Executive Schedule
+
+FO, FP, FS: Foreign Service (Department of State, USAID, Commerce, Agriculture)
+
+FR: Federal Reserve System External Link
+
+AT, EV, FG, FV, FW: Federal Aviation Administration[74]
+
+GG: General schedule, excepted service (except patent examiners)
+
+GM, GL, GP, GR: e.g., see General Schedule Supervisory Guide and U.S. Personnel Management – Pay & Leave
+
+HS: House Employee Schedule, governs salaries of employees of the United States House of Representatives and is maintained by the Committee on House Administration.[75]
+
+HWS: House Wage Schedule, similar to the House Employee Schedule but applies to certain House employees not employed by Member offices.[75]
+
+IA: Defense Civilian Intelligence Personnel System (DCIPS)—used by the Navy and others External link
+
+IC: Incident Command – FEMA Exempted Service Intermittent Disaster Staff (FEMA Reservist)
+
+IT: Incident Teams – FEMA Exempted Service Incident Management Staff (FEMA CORE) Pay Band I–V
+
+JS: Judiciary Salary – U.S. Courts
+
+NF: Non-Appropriated Fund
+
+NH, NJ, NK: AcqDemo (DOD Civilian Acquisition Workforce Personnel Demonstration Project [76]
+
+NY: Corporation for National and Community Service[77]
+
+SK: United States Securities and Exchange Commission pay scale
+
+SV: Department of Homeland Security excepted service (i.e., Transportation Security Administration)
+
+VN: Federal medical careers
+
+WG: Wage grade
+
+WM: Wage Mariner. Operates government owned, government operated (GOGO) ships for National Oceanic and Atmospheric Administration (NOAA) and Military Sealift Command (MSC) among other agencies.
+
+Y (National Security Personnel System): Formerly used for Department of Defense (DoD) civil service jobs (approx. 2006–2012)[78] There are four Career Groups: (1) Standard: YA, YB, YC, YP, (2) Scientific and Engineering: YD, YE, YF, (3) Medical: YG, YH, YI, YJ, (4) Investigative and Protective Services: YK, YL, YM, YN (NSPS was repealed in 2009; see National Security Personnel System for more info)
+
+Z: National Institute of Standards and Technology's Alternative Personnel Management System (APMS)[79]
+
+References
+[edit]
+
+↑ "ALTERNATIVE PAY SCHEDULES" Archived 2015-11-28 at the Wayback Machine, http://gogovernment.org/
+
+↑ "GENERAL SCHEDULE WITHIN-GRADE INCREASES". Office of Personnel Management.
+
+↑ "QUESTIONS AND ANSWERS ON GENERAL SCHEDULE WITHIN-GRADE INCREASES". Office of Personnel Management.
+
+↑ "GENERAL SCHEDULE QUALITY STEP INCREASES". Office of Personnel Management. This article incorporates text from this source, which is in the public domain.
+
+↑ "Salary Table 2024-GS" (PDF). U.S. Office of Personnel Management. Retrieved January 3, 2024.
+
+↑ "Special Rate Table Number 0576". U.S. Office of Personnel Management. January 1, 2017. Retrieved March 26, 2017.
+
+↑ In those rare instances where a county which is part of a MSA/CSA is excluded from a locality pay area containing that MSA/CSA, it is included within another area, generally one with a higher adjustment percentage.
+
+↑ The definition of locality pay areas is found in 5 CFR 531.606(b). For ease of presentation and to avoid repeated edits (for when a new locality pay area is added, it is included where it appears in alphabetical order within this section), all subsections are in alphabetical order (from left to right, top to bottom, on this table) except for "Rest of U.S." which is the last subsection (subsection 58 as of 2024).
+
+↑ Defined as all areas within the state of Alaska.
+
+↑ Defined as the Chicago-Naperville, IL-IN-WI CSA and also including Boone County, Illinois, Iroquois County, Illinois, Ogle County, Illinois, Stephenson County, Illinois, Winnebago County, Illinois, and Starke County, Indiana.
+
+↑ Defined as the Des Moines-Ames-West Des Moines, IA CSA and also including Adair County, Iowa, Clarke County, Iowa, Greene County, Iowa, Hamilton County, Iowa, Lucas County, Iowa, Monroe County, Iowa, and Poweshiek County, Iowa.
+
+↑ Defined as the Laredo, TX MSA and also including Jim Hogg County, Texas, and La Salle County, Texas.
+
+↑ Defined as the Phoenix-Mesa-Scottsdale, AZ MSA.
+
+↑ Defined as the San Jose-San Francisco-Oakland, CA CSA and also including Calaveras County, California and Monterey County, California.
+
+↑ Defined as the Albany-Schenectady, NY CSA and also including Berkshire County, Massachusetts, Greene County, New York, and Hamilton County, New York.
+
+↑ Defined as the Cincinnati-Wilmington-Maysville, OH-KY-IN CSA and also including Ripley County, Indiana, Switzerland County, Indiana, Carroll County, Kentucky, Fleming County, Kentucky, Lewis County, Kentucky, Owen County, Kentucky, Robertson County, Kentucky, Adams County, Ohio, and Highland County, Ohio.
+
+↑ Defined as the Detroit-Warren-Ann Arbor, MI CSA and also including Clinton County, Michigan, Eaton County, Michigan, Huron County, Michigan, Ingham County, Michigan, Jackson County, Michigan, Sanilac County, Michigan, Shiawassee County, Michigan, and Tuscola County, Michigan.
+
+↑ Defined as the Las Vegas-Henderson, NV-AZ CSA and also including Mohave County, Arizona.
+
+↑ Defined as the Pittsburgh-New Castle-Weirton, PA-OH-WV CSA and also including Belmont County, Ohio, Cambria County, Pennsylvania, Greene County, Pennsylvania, Somerset County, Pennsylvania, Marshall County, West Virginia, and Ohio County, West Virginia.
+
+↑ Defined as the Seattle-Tacoma, WA CSA and also including Grays Harbor County, Washington, Pacific County, Washington, San Juan County, Washington, and Whatcom County, Washington.
+
+↑ Defined as the Albuquerque-Santa Fe-Las Vegas, NM CSA and also including Cibola County, New Mexico and McKinley County, New Mexico.
+
+↑ Defined as the Cleveland-Akron-Canton, OH CSA and also including Ashland County, Ohio, Columbiana County, Ohio, Crawford County, Ohio, Harrison County, Ohio, Holmes County, Ohio, Mahoning County, Ohio, Richland County, Ohio, Trumbull County, Ohio, and Mercer County, Pennsylvania.
+
+↑ Defined as the Fresno-Madera-Hanford, CA CSA and also including Mariposa County, California, and Tulare County, California.
+
+↑ Defined as the Los Angeles-Long Beach, CA CSA and also including Imperial County, California, Kern County, California, San Luis Obispo County, California, and Santa Barbara County, California.
+
+↑ Defined as the Portland-Vancouver-Salem, OR-WA CSA and also including Wahkiakum County, Washington.
+
+↑ Defined as the Spokane-Spokane Valley-Coeur d'Alene, WA-ID CSA and also including Benewah County, Idaho, Shoshone County, Idaho, Ferry County, Washington, Lincoln County, Washington, and Pend Oreille County, Washington.
+
+↑ Defined as the Atlanta—Athens-Clarke County—Sandy Springs, GA CSA and also including Cherokee County, Alabama, Cleburne County, Alabama, Lee County, Alabama, Randolph County, Alabama, Russell County, Alabama, Banks County, Georgia, Chattahoochee County, Georgia, Elbert County, Georgia, Franklin County, Georgia, Gilmer County, Georgia, Gordon County, Georgia, Greene County, Georgia, Harris County, Georgia, Lumpkin County, Georgia, Marion County, Georgia, Muscogee County, Georgia, Putnam County, Georgia, Rabun County, Georgia, Stewart County, Georgia, Talbot County, Georgia, Taliaferro County, Georgia, and White County, Georgia.
+
+↑ Defined as the Colorado Springs, CO MSA and also including Fremont County, Colorado, and Pueblo County, Colorado.
+
+↑ Defined as the Harrisburg-York-Lebanon, PA CSA, except for Adams County, Pennsylvania and York County, Pennsylvania, and also including Juniata County, Pennsylvania and Lancaster County, Pennsylvania.
+
+↑ Defined as the Miami-Fort Lauderdale-Port St. Lucie, FL CSA and also including Okeechobee County, Florida.
+
+↑ Defined as the Raleigh-Durham-Chapel Hill, NC CSA and also including Caswell County, North Carolina, Cumberland County, North Carolina, Edgecombe County, North Carolina, Halifax County, North Carolina, Harnett County, North Carolina, Hoke County, North Carolina, Lee County, North Carolina, Moore County, North Carolina, Nash County, North Carolina, Northampton County, North Carolina, Robeson County, North Carolina, Scotland County, North Carolina, Warren County, North Carolina, Wayne County, North Carolina, and Wilson County, North Carolina.
+
+↑ Defined as the St. Louis-St. Charles-Farmington, MO-IL CSA and also including Fayette County, Illinois, Greene County, Illinois, Montgomery County, Illinois, Randolph County, Illinois, Washington County, Illinois, Crawford County, Missouri, Gasconade County, Missouri, Iron County, Missouri, Madison County, Missouri, Montgomery County, Missouri, Pike County, Missouri, Ste. Genevieve County, Missouri, and Washington County, Missouri.
+
+↑ Defined as the Austin-Round Rock, TX MSA and also including Blanco County, Texas, Burnet County, Texas, Lee County, Texas, and Milam County, Texas.
+
+↑ Defined as the Columbus-Marion-Zanesville, OH CSA and also including Coshocton County, Ohio, Hardin County, Ohio, Morgan County, Ohio, Noble County, Ohio, Pike County, Ohio, and Vinton County, Ohio.
+
+↑ Defined as the Hartford-West Hartford, CT CSA and also including Franklin County, Massachusetts, Hampden County, Massachusetts, and Hampshire County, Massachusetts.
+
+↑ Defined as the Milwaukee-Racine-Waukesha, WI CSA and also including Fond du Lac County, Wisconsin and Sheboygan County, Wisconsin.
+
+↑ Defined as the Reno-Carson City-Fernley, NV CSA, except for Carson City, Nevada and Douglas County, Nevada, and also including Churchill County, Nevada.
+
+↑ Defined as the Tucson-Nogales, AZ CSA and also including Cochise County, Arizona.
+
+↑ Defined as the Birmingham-Hoover-Talladega, AL CSA and also including Calhoun County, Alabama, Clay County, Alabama, Coosa County, Alabama, Etowah County, Alabama, Greene County, Alabama, Hale County, Alabama, Pickens County, Alabama, Tallapoosa County, Alabama, Tuscaloosa County, Alabama, and Winston County, Alabama.
+
+↑ Defined as the Corpus Christi-Kingsville-Alice, TX CSA and also including Brooks County, Texas, Live Oak County, Texas, and Refugio County, Texas.
+
+↑ Defined as all areas within the state of Hawaii.
+
+↑ Defined as the Minneapolis-St. Paul, MN-WI CSA and also including Blue Earth County, Minnesota, Brown County, Minnesota, Dodge County, Minnesota, Fillmore County, Minnesota, Kanabec County, Minnesota, Meeker County, Minnesota, Morrison County, Minnesota, Mower County, Minnesota, Nicollet County, Minnesota, Olmsted County, Minnesota, Pine County, Minnesota, Sibley County, Minnesota, Wabasha County, Minnesota, Waseca County, Minnesota, and Polk County, Wisconsin.
+
+↑ Defined as the Richmond, VA MSA and also including Brunswick County, Virginia, Cumberland County, Virginia, Essex County, Virginia, Greensville County, Virginia, Louisa County, Virginia, Nottoway County, Virginia, and Emporia City, Virginia.
+
+↑ Defined as the Virginia Beach-Norfolk, VA-NC CSA and also including Chowan County, North Carolina, Hertford County, North Carolina, Tyrrell County, North Carolina, Middlesex County, Virginia, and Surry County, Virginia.
+
+↑ Defined as the Boston-Worcester-Providence, MA-RI-NH-CT CSA and also including Androscoggin County, Maine, Cumberland County, Maine, Sagadahoc County, Maine, York County, Maine, Dukes County, Massachusetts, Nantucket County, Massachusetts, Carroll County, New Hampshire, Cheshire County, New Hampshire, Grafton County, New Hampshire, Sullivan County, New Hampshire, Orange County, Vermont, and Windsor County, Vermont.
+
+↑ Defined as the Dallas-Fort Worth, TX-OK CSA and also including Carter County, Oklahoma, Love County, Oklahoma, Delta County, Texas, Hill County, Texas, Hopkins County, Texas, Jack County, Texas, Montague County, Texas, Rains County, Texas, Somervell County, Texas, and Van Zandt County, Texas.
+
+↑ Defined as the Houston-The Woodlands, TX CSA and also including Colorado County, Texas, Grimes County, Texas, Jackson County, Texas, Madison County, Texas, San Jacinto County, Texas, and Trinity County, Texas.
+
+↑ Defined as the New York-Newark, NY-NJ-CT-PA CSA and also including Warren County, New Jersey, Sullivan County, New York, Carbon County, Pennsylvania, Lehigh County, Pennsylvania, Northampton County, Pennsylvania, Wayne County, Pennsylvania, and all of Joint Base McGuire-Dix-Lakehurst.
+
+↑ Defined as the Rochester-Batavia-Seneca Falls, NY CSA.
+
+↑ Defined as the Washington-Baltimore-Arlington, DC-MD-VA-WV-PA CSA and also including Allegany County, Maryland, Caroline County, Maryland, Dorchester County, Maryland, Kent County, Maryland, Adams County, Pennsylvania, Fulton County, Pennsylvania, York County, Pennsylvania, Caroline County, Virginia, King George County, Virginia, Orange County, Virginia, Shenandoah County, Virginia, Westmoreland County, Virginia, Hardy County, West Virginia, and Mineral County, West Virginia.
+
+↑ Defined as the Buffalo-Cheektowaga, NY CSA and also including Allegany County, New York and Wyoming County, New York.
+
+↑ Defined as the Davenport-Moline, IA-IL CSA and also including Carroll County, Illinois, Lee County, Illinois, Whiteside County, Illinois, Cedar County, Iowa, Jackson County, Iowa, and Louisa County, Iowa.
+
+↑ Defined as the Huntsville-Decatur-Albertville, AL CSA and also including Colbert County, Alabama, DeKalb County, Alabama, Lauderdale County, Alabama, Marshall County, Alabama, and Lincoln County, Tennessee.
+
+↑ Defined as the Omaha-Council Bluffs-Fremont, NE-IA CSA and also including Fremont County, Iowa, Shelby County, Iowa, and Burt County, Nebraska.
+
+↑ Defined as the Sacramento-Roseville, CA CSA and also including Alpine County, California, Amador County, California, Butte County, California, Colusa County, California, Sierra County, California, Carson City, Nevada, and Douglas County, Nevada.
+
+↑ Defined as "those portions of the United States and its territories and possessions as listed in 5 CFR 591.205 not located within another locality pay area".
+
+↑ Defined as the Burlington-South Burlington, VT MSA and also including Addison County, Vermont and Lamoille County, Vermont.
+
+↑ Defined as the Dayton-Springfield-Sidney, OH CSA and also including Allen County, Ohio, Auglaize County, Ohio, Mercer County, Ohio, Preble County, Ohio, and Van Wert County, Ohio.
+
+↑ Defined as the Indianapolis-Carmel-Muncie, IN CSA and also including Benton County, Indiana, Blackford County, Indiana, Carroll County, Indiana, Clinton County, Indiana, Fayette County, Indiana, Fountain County, Indiana, Grant County, Indiana, Lawrence County, Indiana, Monroe County, Indiana, Owen County, Indiana, Randolph County, Indiana, Rush County, Indiana, Tippecanoe County, Indiana, Tipton County, Indiana, Warren County, Indiana, and Wayne County, Indiana.
+
+↑ Defined as the Palm Bay-Melbourne-Titusville, FL MSA.
+
+↑ Defined as the San Antonio-New Braunfels-Pearsall, TX CSA and also including Gillespie County, Texas, Gonzales County, Texas, Karnes County, Texas, Kerr County, Texas, and McMullen County, Texas.
+
+↑ Defined as the Charlotte-Concord, NC-SC CSA and also including Alexander County, North Carolina, Burke County, North Carolina, Caldwell County, North Carolina, Catawba County, North Carolina, and Chesterfield County, South Carolina.
+
+↑ Defined as the Denver-Aurora, CO CSA and also including Larimer County, Colorado and Lincoln County, Colorado.
+
+↑ Defined as the Kansas City-Overland Park-Kansas City, MO-KS CSA and also including Anderson County, Kansas, Jackson County, Kansas, Jefferson County, Kansas, Osage County, Kansas, Shawnee County, Kansas, Wabaunsee County, Kansas, Carroll County, Missouri, Daviess County, Missouri, Gentry County, Missouri, Henry County, Missouri, and Holt County, Missouri.
+
+↑ Defined as the Philadelphia-Reading-Camden, PA-NJ-DE-MD CSA, except for Joint Base McGuire-Dix-Lakehurst, and also including Sussex County, Delaware, Somerset County, Maryland, Wicomico County, Maryland, Worcester County, Maryland, and Schuylkill County, Pennsylvania.
+
+↑ Defined as the San Diego-Carlsbad, CA MSA.
+
+↑ "Publication 516 (11/2018), U.S. Government Civilian Employees Stationed Abroad | Internal Revenue Service". www.irs.gov.
+
+↑ "Precedence Codes". Jmarprotocol.com. Archived from the original on November 19, 2014. Retrieved May 8, 2014.
+
+↑ "VOLUME 11A CHAPTER 6: "ANNUAL REIMBURSABLE RATES"" (PDF). Under Secretary of Defense (Comptroller). November 2019. p. B-9. Retrieved December 31, 2022.
+
+↑ "National Security Personnel System". Office of the Secretary of Defense. Archived from the original on April 6, 2007.
+
+↑ "Key Features - "Working for America Act"" (PDF). Archived from the original (PDF) on November 7, 2012. Retrieved July 21, 2014.
+
+↑ "National defense authorization act for fiscal year 2010" (PDF). Archived from the original (PDF) on November 3, 2010.
+
+↑ "National Security Personnel System – Frequently Asked Questions". www.dcpas.osd.mil. Archived from the original on January 24, 2010.
+
+↑ "Pay & Benefits". Federal Aviation Administration. July 11, 2023. Retrieved November 2, 2023.
+
+1 2 "[USC02] 2 USC 293: Compensation schedules". uscode.house.gov.
+
+↑ "About AcqDemo". Office of the Under Secretary of Defense for Acquisition and Sustainment (A&S). February 21, 2019. Archived from the original on March 31, 2019. Retrieved March 31, 2019.
+
+↑ "Home". americorps.gov.
+
+↑ "NSPS - National Security Personnel System". Archived from the original on April 10, 2007. Retrieved April 11, 2007.
+
+↑ Archived February 2, 2009, at the Wayback Machine
+
+Army Regulation 570-4, p. 39–40.
+
+External links
+[edit]
+
+Official website at the United States Office of Personnel Management website
+
+General Schedule pay tables at the United States Office of Personnel Management website
+
+General Schedule Qualifications contains information on how general schedule grade levels intersect with qualifying education levels.
+
+2010 Schedule from Federal jobsite contains information on how general schedule grade levels are increased based on locality pay percentage.
+
+ | 
+
+v
+
+t
+
+e
+
+Civil service
+
+ | Concepts | 
+
+Bureaucracy
+
+Bureaucrat
+
+Drift
+
+Inertia
+
+Civil service commission
+
+Diplomat
+
+Entrance examination
+
+Government agency
+
+Merit system / Spoils system
+
+Parkinson's law
+
+Public administration
+
+Theory
+
+Public policy
+
+Public sector
+
+Public service
+
+Regulatory agency
+
+Technocracy
+
+ | By country/territory | 
+
+Australia
+
+Bangladesh
+
+Brazil
+
+Canada
+
+China
+
+Hong Kong
+
+France
+
+Germany
+
+Greece
+
+India
+
+Ireland
+
+Italy
+
+Japan
+
+Kazakhstan
+
+Malaysia
+
+New Zealand
+
+Nigeria
+
+Pakistan
+
+Russia
+
+Singapore
+
+Sri Lanka
+
+United Kingdom
+
+Northern Ireland
+
+United States
+
+European Union
+
+ | Categories | 
+
+National civil service commissions
+
+Government occupations
+
+Civil service by country
+
+ | 
+
+See also: Civil service reform in developing countries
+
+Retrieved from "https://en.wikipedia.org/w/index.php?title=General_Schedule&oldid=1381416724"
+
+Categories: 
+United States Office of Personnel Management
+
+Salaries of office-holders
+
+Civil service ranks in the United States
+
+Hidden categories: 
+Articles with short description
+
+Short description matches Wikidata
+
+Use American English from August 2026
+
+All Wikipedia articles written in American English
+
+Use mdy dates from August 2026
+
+Articles containing potentially dated statements from 2004
+
+All articles containing potentially dated statements
+
+Articles containing potentially dated statements from 2009
+
+Webarchive template wayback links
+
+All articles with unsourced statements
+
+Articles with unsourced statements from June 2018
+
+Source attribution
+
+Articles with unsourced statements from February 2009
+
+Articles containing potentially dated statements from January 2008
+
+Wikipedia articles in need of updating from February 2009
+
+All Wikipedia articles in need of updating
+
+ This page was last edited on 22 October 2026, at 09:21 (UTC).
+
+Page was rendered with Parsoid.
+
+Text is available under the Creative Commons Attribution-ShareAlike 4.0 License;
+additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+Privacy policy
+
+About Wikipedia
+
+Disclaimers
+
+Contact Wikipedia
+
+Legal & safety contacts
+
+Code of Conduct
+
+Developers
+
+Statistics
+
+Cookie statement
+
+Mobile view
+
+Search
+
+ Search
+
+Toggle the table of contents
+
+General Schedule
+
+Add languages
+
+Add topic
