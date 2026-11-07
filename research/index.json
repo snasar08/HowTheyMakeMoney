@@ -19,7 +19,7 @@
   },
   "https://www.chick-fil-a.com/franchise-opportunities/us": {
     "file": "pages/bef1957b0656.txt",
-    "fetched_at": "2026-11-07T17:48:11.030070+00:00",
+    "fetched_at": "2026-11-07T17:51:12.549753+00:00",
     "ok": false,
     "error": "HTTP 404"
   },
@@ -115,7 +115,7 @@
   },
   "https://ir.roblox.com/news/news-details/2026/Roblox-Reports-Third-Quarter-2026-Financial-Results/default.aspx": {
     "file": "pages/fd33c55be7a2.txt",
-    "fetched_at": "2026-11-07T17:48:17.778232+00:00",
+    "fetched_at": "2026-11-07T17:51:13.538974+00:00",
     "ok": false,
     "error": "HTTP 403"
   },
@@ -211,13 +211,13 @@
   },
   "https://www.nasa.gov/humans-in-space/astronauts/astronaut-selection-and-training/": {
     "file": "pages/4cfe7ce1c200.txt",
-    "fetched_at": "2026-11-07T17:48:24.081313+00:00",
+    "fetched_at": "2026-11-07T17:51:14.051486+00:00",
     "ok": false,
     "error": "HTTP 404"
   },
   "https://www.nasa.gov/careers/astronaut/": {
     "file": "pages/13299df6a15d.txt",
-    "fetched_at": "2026-11-07T17:48:25.079533+00:00",
+    "fetched_at": "2026-11-07T17:51:14.844592+00:00",
     "ok": false,
     "error": "HTTP 404"
   },
@@ -363,6 +363,165 @@
     "chars": 14799,
     "status": 200,
     "final_url": "https://en.wikipedia.org/wiki/The_International_2021",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=40&prop=imageinfo&iiprop=extmetadata&iiextmetadatafilter=LicenseShortName|Artist&gsrsearch=LEGO%20bricks": {
+    "file": "pages/9e40594f334d.txt",
+    "fetched_at": "2026-11-07T17:51:15.605455+00:00",
+    "ok": true,
+    "chars": 12596,
+    "status": 200,
+    "final_url": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=40&prop=imageinfo&iiprop=extmetadata&iiextmetadatafilter=LicenseShortName|Artist&gsrsearch=LEGO%20bricks",
+    "content_type": "application/json; charset=utf-8"
+  },
+  "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=40&prop=imageinfo&iiprop=extmetadata&iiextmetadatafilter=LicenseShortName|Artist&gsrsearch=Lego%20Billund": {
+    "file": "pages/10f2765d4bf1.txt",
+    "fetched_at": "2026-11-07T17:51:16.664311+00:00",
+    "ok": true,
+    "chars": 12340,
+    "status": 200,
+    "final_url": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=40&prop=imageinfo&iiprop=extmetadata&iiextmetadatafilter=LicenseShortName|Artist&gsrsearch=Lego%20Billund",
+    "content_type": "application/json; charset=utf-8"
+  },
+  "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=40&prop=imageinfo&iiprop=extmetadata&iiextmetadatafilter=LicenseShortName|Artist&gsrsearch=Ole%20Kirk%20Christiansen": {
+    "file": "pages/fa8735446f0f.txt",
+    "fetched_at": "2026-11-07T17:51:17.907886+00:00",
+    "ok": true,
+    "chars": 13235,
+    "status": 200,
+    "final_url": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=40&prop=imageinfo&iiprop=extmetadata&iiextmetadatafilter=LicenseShortName|Artist&gsrsearch=Ole%20Kirk%20Christiansen",
+    "content_type": "application/json; charset=utf-8"
+  },
+  "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=40&prop=imageinfo&iiprop=extmetadata&iiextmetadatafilter=LicenseShortName|Artist&gsrsearch=Kjeld%20Kirk%20Kristiansen": {
+    "file": "pages/f8407c591db9.txt",
+    "fetched_at": "2026-11-07T17:51:19.136548+00:00",
+    "ok": true,
+    "chars": 4389,
+    "status": 200,
+    "final_url": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=40&prop=imageinfo&iiprop=extmetadata&iiextmetadatafilter=LicenseShortName|Artist&gsrsearch=Kjeld%20Kirk%20Kristiansen",
+    "content_type": "application/json; charset=utf-8"
+  },
+  "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=40&prop=imageinfo&iiprop=extmetadata&iiextmetadatafilter=LicenseShortName|Artist&gsrsearch=Legoland": {
+    "file": "pages/18c44b387e78.txt",
+    "fetched_at": "2026-11-07T17:51:20.033248+00:00",
+    "ok": true,
+    "chars": 13075,
+    "status": 200,
+    "final_url": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=40&prop=imageinfo&iiprop=extmetadata&iiextmetadatafilter=LicenseShortName|Artist&gsrsearch=Legoland",
+    "content_type": "application/json; charset=utf-8"
+  },
+  "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=40&prop=imageinfo&iiprop=extmetadata&iiextmetadatafilter=LicenseShortName|Artist&gsrsearch=Lego%20store": {
+    "file": "pages/d393650bd5d1.txt",
+    "fetched_at": "2026-11-07T17:51:21.492512+00:00",
+    "ok": true,
+    "chars": 15533,
+    "status": 200,
+    "final_url": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=40&prop=imageinfo&iiprop=extmetadata&iiextmetadatafilter=LicenseShortName|Artist&gsrsearch=Lego%20store",
+    "content_type": "application/json; charset=utf-8"
+  },
+  "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=40&prop=imageinfo&iiprop=extmetadata&iiextmetadatafilter=LicenseShortName|Artist&gsrsearch=Red%20Bull%20can": {
+    "file": "pages/35e6c7413bd0.txt",
+    "fetched_at": "2026-11-07T17:51:22.647448+00:00",
+    "ok": true,
+    "chars": 12808,
+    "status": 200,
+    "final_url": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=40&prop=imageinfo&iiprop=extmetadata&iiextmetadatafilter=LicenseShortName|Artist&gsrsearch=Red%20Bull%20can",
+    "content_type": "application/json; charset=utf-8"
+  },
+  "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=40&prop=imageinfo&iiprop=extmetadata&iiextmetadatafilter=LicenseShortName|Artist&gsrsearch=Dietrich%20Mateschitz": {
+    "file": "pages/9dfcf99bf486.txt",
+    "fetched_at": "2026-11-07T17:51:23.566845+00:00",
+    "ok": true,
+    "chars": 10171,
+    "status": 200,
+    "final_url": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=40&prop=imageinfo&iiprop=extmetadata&iiextmetadatafilter=LicenseShortName|Artist&gsrsearch=Dietrich%20Mateschitz",
+    "content_type": "application/json; charset=utf-8"
+  },
+  "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=40&prop=imageinfo&iiprop=extmetadata&iiextmetadatafilter=LicenseShortName|Artist&gsrsearch=Red%20Bull%20Racing%20car": {
+    "file": "pages/ba4101e64929.txt",
+    "fetched_at": "2026-11-07T17:51:24.676828+00:00",
+    "ok": true,
+    "chars": 13100,
+    "status": 200,
+    "final_url": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=40&prop=imageinfo&iiprop=extmetadata&iiextmetadatafilter=LicenseShortName|Artist&gsrsearch=Red%20Bull%20Racing%20car",
+    "content_type": "application/json; charset=utf-8"
+  },
+  "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=40&prop=imageinfo&iiprop=extmetadata&iiextmetadatafilter=LicenseShortName|Artist&gsrsearch=Red%20Bull%20Flugtag": {
+    "file": "pages/abcfccb17563.txt",
+    "fetched_at": "2026-11-07T17:51:25.999759+00:00",
+    "ok": true,
+    "chars": 12517,
+    "status": 200,
+    "final_url": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=40&prop=imageinfo&iiprop=extmetadata&iiextmetadatafilter=LicenseShortName|Artist&gsrsearch=Red%20Bull%20Flugtag",
+    "content_type": "application/json; charset=utf-8"
+  },
+  "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=40&prop=imageinfo&iiprop=extmetadata&iiextmetadatafilter=LicenseShortName|Artist&gsrsearch=Red%20Bull%20Fuschl": {
+    "file": "pages/4d41a6556d77.txt",
+    "fetched_at": "2026-11-07T17:51:27.784038+00:00",
+    "ok": true,
+    "chars": 13626,
+    "status": 200,
+    "final_url": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=40&prop=imageinfo&iiprop=extmetadata&iiextmetadatafilter=LicenseShortName|Artist&gsrsearch=Red%20Bull%20Fuschl",
+    "content_type": "application/json; charset=utf-8"
+  },
+  "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=40&prop=imageinfo&iiprop=extmetadata&iiextmetadatafilter=LicenseShortName|Artist&gsrsearch=Chaleo%20Yoovidhya": {
+    "file": "pages/89241d1e3665.txt",
+    "fetched_at": "2026-11-07T17:51:30.373931+00:00",
+    "ok": true,
+    "chars": 20,
+    "status": 200,
+    "final_url": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=40&prop=imageinfo&iiprop=extmetadata&iiextmetadatafilter=LicenseShortName|Artist&gsrsearch=Chaleo%20Yoovidhya",
+    "content_type": "application/json; charset=utf-8"
+  },
+  "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=40&prop=imageinfo&iiprop=extmetadata&iiextmetadatafilter=LicenseShortName|Artist&gsrsearch=Krating%20Daeng": {
+    "file": "pages/8b5132523ac9.txt",
+    "fetched_at": "2026-11-07T17:51:30.958361+00:00",
+    "ok": true,
+    "chars": 1358,
+    "status": 200,
+    "final_url": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=40&prop=imageinfo&iiprop=extmetadata&iiextmetadatafilter=LicenseShortName|Artist&gsrsearch=Krating%20Daeng",
+    "content_type": "application/json; charset=utf-8"
+  },
+  "https://en.wikipedia.org/wiki/Air_traffic_controller": {
+    "file": "pages/cd57f7195cc1.txt",
+    "fetched_at": "2026-11-07T17:51:31.488395+00:00",
+    "ok": true,
+    "chars": 30460,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Air_traffic_controller",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/NBA_salary_cap": {
+    "file": "pages/607a722ff5bc.txt",
+    "fetched_at": "2026-11-07T17:51:31.944496+00:00",
+    "ok": true,
+    "chars": 82201,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/NBA_salary_cap",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/United_States_one-dollar_bill": {
+    "file": "pages/0beb2e2833ac.txt",
+    "fetched_at": "2026-11-07T17:51:32.405213+00:00",
+    "ok": true,
+    "chars": 47867,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/United_States_one-dollar_bill",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Federal_Aviation_Administration_Academy": {
+    "file": "pages/93a3660b3e90.txt",
+    "fetched_at": "2026-11-07T17:51:32.857164+00:00",
+    "ok": false,
+    "error": "HTTP 404"
+  },
+  "https://www.faa.gov/jobs/career_fields/aviation_careers": {
+    "file": "pages/c35e39abd114.txt",
+    "fetched_at": "2026-11-07T17:51:33.372310+00:00",
+    "ok": true,
+    "chars": 17250,
+    "status": 200,
+    "final_url": "https://www.faa.gov/jobs/career_fields/aviation_careers",
     "content_type": "text/html; charset=UTF-8"
   }
 }

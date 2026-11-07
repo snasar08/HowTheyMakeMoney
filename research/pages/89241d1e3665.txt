@@ -1,0 +1,5 @@
+URL: https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=40&prop=imageinfo&iiprop=extmetadata&iiextmetadatafilter=LicenseShortName|Artist&gsrsearch=Chaleo%20Yoovidhya
+FINAL_URL: https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=40&prop=imageinfo&iiprop=extmetadata&iiextmetadatafilter=LicenseShortName|Artist&gsrsearch=Chaleo%20Yoovidhya
+FETCHED: 2026-11-07T17:51:30.373931+00:00
+
+{"batchcomplete":""}
