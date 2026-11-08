@@ -47,7 +47,7 @@ and **free beyond his Higgsfield Pro plan** — never add a paid service or ask 
   at 48 h / 7 d, like and comment rates by group; < 10 Shorts per group = early signal only) and
   `analytics/format_weights.json` (0.7–1.4, only once a format has ≥ 10 Shorts), which the queue
   uses: priority = score × format weight, formats alternate post to post. `analytics/status.json`
-  says whether the key works. Never change post times, posts/day, voice or upload mode for this.
+  says whether the key works. **Health check (Nov 8):** `pipeline/health.py` runs after stats and writes `analytics/health.md` (each Short from the last 7 days: views, views/h, likes, comments, thumbnail status). Nightly saves each Short's frame 0 to `analytics/covers/<id>.jpg`; health downloads YouTube's public thumbnail and marks it MISSING, "our cover" (fingerprint match >= 90%) or "other frame", with a ::warning for problems. To check analytics, read `analytics/health.md` (or run `python -m pipeline.health` locally after pulling). Never change post times, posts/day, voice or upload mode for this.
 - `pipeline/audio_check.py` runs after every render: one-breath runs (>6 s), syllables/s per
   scene, swallowed words, silent CTA beat, clipping. Prints `::warning`s; `AUDIO_CHECK=strict`
   blocks delivery.

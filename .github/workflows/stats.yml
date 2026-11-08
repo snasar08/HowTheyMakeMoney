@@ -33,8 +33,10 @@ jobs:
         env:
           YT_API_KEY: ${{ secrets.YT_API_KEY }}
         run: |
+          pip install -q pillow numpy
           python -m pipeline.stats
           python -m pipeline.insights
+          python -m pipeline.health
       - name: Commit to main
         run: |
           git config user.name "shorts-bot"

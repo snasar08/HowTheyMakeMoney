@@ -248,3 +248,8 @@ Rendered all ready rewrites in dry runs on a temporary workflow. No crashes or g
 
 ## Nov 7: cover frame
 Frame 0 is the cover YouTube usually picks. For Shorts that open on a picture with an overlay, it now shows the overlay in up to 2 huge lines on a dark band, with the question below (`_cover_text` in `render.py`). Checked at thumbnail size locally; GitHub dry run on 052 passed. Low-poly and editorial openers are unchanged.
+
+## Nov 8: health check
+- New `pipeline/health.py` (daily in stats.yml): `analytics/health.md` lists recent Shorts by views/hour and whether YouTube's thumbnail is up and matches our cover frame.
+- Nightly now saves each cover to `analytics/covers/`. Older Shorts show "no saved cover"; the match check starts with tonight's posts.
+- Tested locally on 18 live Shorts: all thumbnails up. Same-template Shorts fingerprint ~0.8 alike, so the bar is 0.9.

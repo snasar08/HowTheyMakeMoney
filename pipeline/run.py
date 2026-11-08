@@ -114,6 +114,18 @@ def contact_sheet(video: Path, times: list[float], out: Path):
                         f"hstack=inputs={len(frames)}", "-q:v", "4", str(out)], check=True)
 
 
+def save_cover(video: Path, out: Path) -> None:
+    """Frame 0 (the cover) at 270x480, so pipeline.health can compare it with YouTube's thumbnail."""
+    import subprocess
+
+    out.parent.mkdir(parents=True, exist_ok=True)
+    try:
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(video), "-frames:v", "1",
+                        "-vf", "scale=270:480", "-q:v", "5", str(out)], check=True)
+    except Exception as exc:  # never block a post over this
+        print(f"::warning title={out.stem}::cover not saved: {exc}")
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--count", type=int, default=int(os.environ.get("SHORTS_PER_RUN", "2")))
@@ -187,7 +199,9 @@ def main() -> int:
                 print(f"::warning title={path.stem} gate::{b}")
             if args.dry:
                 contact_sheet(video, info["scene_mids"], ROOT / "previews" / f"{path.stem}.jpg")
+                save_cover(video, ROOT / "previews" / f"{path.stem}-cover.jpg")
                 continue
+            save_cover(video, ROOT / "analytics" / "covers" / f"{path.stem}.jpg")
             result = deliver(video, script, when)
             script["status"] = "delivered"
             script["delivered"] = {**result, "rendered_at": dt.datetime.now(dt.timezone.utc).isoformat(),
