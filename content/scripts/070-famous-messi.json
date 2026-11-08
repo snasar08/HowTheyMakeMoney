@@ -7,7 +7,7 @@
   "hook_style": "surprise",
   "title_style": "statement",
   "theme": "bold_bright",
-  "status": "ready",
+  "status": "delivered",
   "score": 92,
   "title": "From a Napkin Contract to $1.1 Billion",
   "name_card": "Lionel Messi",
@@ -108,5 +108,15 @@
       "title": "Wikipedia: Forbes list of the world's highest-paid athletes",
       "url": "https://en.wikipedia.org/wiki/Forbes_list_of_the_world%27s_highest-paid_athletes"
     }
-  ]
+  ],
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-070-famous-messi",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-070-famous-messi/070-famous-messi.mp4",
+    "post_at": "2026-11-09T18:00:00-05:00",
+    "buffer_post": "6af09b80229bf05dafbec381",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-08T15:55:44.580029+00:00",
+    "seconds": 29.63
+  }
 }

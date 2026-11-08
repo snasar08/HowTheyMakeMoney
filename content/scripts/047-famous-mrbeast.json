@@ -7,7 +7,7 @@
   "hook_style": "number",
   "title_style": "statement",
   "theme": "bold_bright",
-  "status": "ready",
+  "status": "delivered",
   "score": 92,
   "title": "MrBeast Spends About $1M Per Video",
   "name_card": "MrBeast",
@@ -104,5 +104,15 @@
       "title": "Wikipedia: MrBeast",
       "url": "https://en.wikipedia.org/wiki/MrBeast"
     }
-  ]
+  ],
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-047-famous-mrbeast",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-047-famous-mrbeast/047-famous-mrbeast.mp4",
+    "post_at": "2026-11-09T12:00:00-05:00",
+    "buffer_post": "6af09abc562f2e6de9c97674",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-08T15:52:29.047163+00:00",
+    "seconds": 22.86
+  }
 }

@@ -7,7 +7,7 @@
   "hook_style": "number",
   "title_style": "number",
   "theme": "bold_bright",
-  "status": "ready",
+  "status": "delivered",
   "score": 90,
   "title": "Pro Athletes' Median Pay: $66,710",
   "description": "Think every pro athlete is a millionaire? Most aren't close.\n\nSources:\n- BLS OEWS via api.bls.gov: Athletes and sports competitors 27-2021, annual median wage, May 2025: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000027202113\n- BLS OEWS via api.bls.gov: Athletes and sports competitors, 10th percentile: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000027202111\n- BLS OEWS via api.bls.gov: Athletes and sports competitors, 90th percentile: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000027202115\n- BLS OEWS via api.bls.gov: Athletes and sports competitors, employment: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000027202101\n- Wikipedia: Forbes list of the world's highest-paid athletes: https://en.wikipedia.org/wiki/Forbes_list_of_the_world%27s_highest-paid_athletes\n\nBLS May 2025 (OEWS), athletes and sports competitors (27-2021): 15,070 jobs; median $66,710; 10th percentile $26,500; 90th percentile $742,310. OEWS counts wage-and-salary jobs. Forbes 2026 (cited on Wikipedia): Cristiano Ronaldo earned $300 million, the most of any athlete. Median = half earn more, half earn less. Not financial advice.\n\n#shorts #athletes #careers #howtheymakemoney",
@@ -121,5 +121,15 @@
       "title": "Wikipedia: Forbes list of the world's highest-paid athletes",
       "url": "https://en.wikipedia.org/wiki/Forbes_list_of_the_world%27s_highest-paid_athletes"
     }
-  ]
+  ],
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-063-careers-athletes",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-063-careers-athletes/063-careers-athletes.mp4",
+    "post_at": "2026-11-09T15:00:00-05:00",
+    "buffer_post": "6af09b25004e4879a7c7d698",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-08T15:54:13.525870+00:00",
+    "seconds": 26.52
+  }
 }
