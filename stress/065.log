@@ -1,0 +1,29 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/torch/nn/modules/rnn.py:1012: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.2 and num_layers=1
+  super().__init__("LSTM", *args, **kwargs)
+/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/torch/nn/utils/weight_norm.py:145: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.
+  WeightNorm.apply(module, name, dim)
+Collecting en-core-web-sm==3.8.0
+  Downloading en_core_web_sm-3.8.0-py3-none-any.whl (12.8 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.8/12.8 MB 84.6 MB/s  0:00:00
+Installing collected packages: en-core-web-sm
+Successfully installed en-core-web-sm-3.8.0
+
+[notice] A new release of pip is available: 26.2.2 -> 26.3
+[notice] To update, run: pip install --upgrade pip
+/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+[run] already scheduled: []
+[run] open slots to fill: ['Tue 10 12:00']
+[run] rendering 1 script(s); 34 ready after this run
+WARNING: Defaulting repo_id to hexgrad/Kokoro-82M. Pass repo_id='hexgrad/Kokoro-82M' to suppress this warning.
+[38;5;2m✔ Download and installation successful[0m
+You can now load the package via spacy.load('en_core_web_sm')
+::warning::[render] 065: scene 3 shot 1 looks like scene 2 shot 1
+::warning::[render] 065: scene 4 shot 1 looks like scene 2 shot 1
+::warning::[render] 065: scene 6 shot 5 looks like scene 6 shot 1
+::notice::[render] repeat check:3 near-copies, 0 reused pictures
+[render] 3D on: llvmpipe (LLVM 21.1.8, 256 bits)
+[run] rendered 065-how-marvel.mp4: 28.13s
+::notice title=065-how-marvel::{"seconds": 28.13, "scenes": 6, "cuts": 13, "avg_shot": 2.01, "scene_mids": [2.73, 6.38, 7.24, 11.91, 16.38, 21.0], "voice": "kokoro", "timed_words": true, "images_ok": [], "blank_frames": [], "longest_breath": 2.48, "clipped_pct": 0.0, "syllables_per_s": [4.75, 4.65, 6.75, 4.26, 4.1, 4.81], "pitch_spread_st": [3.62, 2.25, 3.36, 2.76, 3.18, 2.94], "clarity": 0.975, "unclear_words": ["'It's' at 3.8s", "'First?' at 16.4s"]}
+::warning title=065-how-marvel audio::scene 2: voice sounds flat (pitch moves 2.2 semitones, want ≥ 2.5)
