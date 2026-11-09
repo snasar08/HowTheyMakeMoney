@@ -253,3 +253,12 @@ Frame 0 is the cover YouTube usually picks. For Shorts that open on a picture wi
 - New `pipeline/health.py` (daily in stats.yml): `analytics/health.md` lists recent Shorts by views/hour and whether YouTube's thumbnail is up and matches our cover frame.
 - Nightly now saves each cover to `analytics/covers/`. Older Shorts show "no saved cover"; the match check starts with tonight's posts.
 - Tested locally on 18 live Shorts: all thumbnails up. Same-template Shorts fingerprint ~0.8 alike, so the bar is 0.9.
+
+## Nov 9: premium look (Fable 5.2 session)
+- Sam: make the videos look more premium with free tools only, stress test, be usage-efficient.
+- 3D charts: stage light, sharp labels (aperture 0.9 -> 0.3), bigger text, plum bars on bold_bright, pies clear of labels, cash rain below the number, stat camera pulled back so stacks clear the captions.
+- Word cards and text scenes: drifting soft lights, vignette, key word in accent, underline wipe, soft shadow.
+- Editorial Shorts opened on a near-blank page (bad thumbnail): now a 0.45 s title cover.
+- Caption icons no longer sit on charts or word cards; stray dashes dropped from word cards.
+- Stress test (temporary `stress-test` branch, Kokoro voice, 17 Shorts over 2 rounds, all styles/themes): every Short rendered, 0 errors, 0 reused pictures, 0 blank frames. 003's result upload failed both rounds only because `previews/003-delta.jpg` is tracked (test quirk).
+- Nov 9 scheduled run 42673861395 failed in ~1 min with no plan job listed (GitHub never started it; not our code). Slots for Nov 10 get filled by the next scheduled run.
