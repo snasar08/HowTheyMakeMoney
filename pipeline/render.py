@@ -618,6 +618,91 @@ class Renderer:
         txt = self.frame_text(sc, 99.0, 0, base=frame)
         return txt
 
+    def _card_bg(self, t: float) -> Image.Image:
+        """Background for text cards: the theme gradient with slow drifting soft lights and a vignette."""
+        if getattr(self, "_glow", None) is None:
+            rng = np.random.default_rng(11)
+            gw, gh = (W + 240) // 8, (H + 240) // 8
+            yy, xx = np.mgrid[0:gh, 0:gw].astype(np.float32)
+            a = np.zeros((gh, gw), np.float32)
+            for _ in range(9):
+                cx, cy, r = rng.uniform(0, gw), rng.uniform(0, gh), rng.uniform(18, 46)
+                a += np.exp(-((xx - cx) ** 2 + (yy - cy) ** 2) / (2 * r * r)) * rng.uniform(0.5, 1.0)
+            light = self.s.get("theme") == "clean_navy"
+            a = np.clip(a, 0, 1) * (46 if light else 70)
+            col = self.theme["accent"][:3] if light else (255, 255, 255)
+            g = Image.merge("RGBA", (*[Image.new("L", (gw, gh), c) for c in col], Image.fromarray(a.astype(np.uint8))))
+            self._glow = g.resize((W + 240, H + 240), Image.BILINEAR)
+            yy, xx = np.mgrid[0:H // 8, 0:W // 8].astype(np.float32)
+            r = np.hypot((xx - W / 16) / (W / 16), (yy - H / 16 * 0.9) / (H / 16))
+            v = (np.clip(r - 0.45, 0, 1) ** 1.5 * (60 if light else 150)).clip(0, 255).astype(np.uint8)
+            self._cardvig = Image.fromarray(v).resize((W, H), Image.BILINEAR)
+            self._cards = {}
+        t = t if t < 50 else 0.0
+        frame = self.bg.copy()
+        ox, oy = int(40 + 34 * t) % 240, int(120 - 22 * t) % 240
+        glow = self._glow.crop((ox, oy, ox + W, oy + H))
+        frame.paste(glow, (0, 0), glow)
+        frame.paste((0, 0, 0), (0, 0), self._cardvig)
+        self._draw_tag(frame)
+        return frame
+
+    def shot_wordcard(self, text: str, t: float) -> Image.Image:
+        """Bold card of the words being said: the key word in the accent color, an underline
+        that wipes in, a soft shadow under the type."""
+        frame = self._card_bg(t)
+        if text not in self._cards:
+            maxw = SAFE_X1 - SAFE_X0
+            size = 168
+            while True:
+                f = font(BLACK, size)
+                lines = wrap(text, f, maxw)
+                if size <= 64 or (len(lines) <= 3 and all(f.getlength(l) <= maxw for l in lines)):
+                    break
+                size -= 6
+            words = text.split()
+            key = next((i for i, w in enumerate(words) if any(c.isdigit() for c in w)), None)
+            if key is None:  # no number: the longest word carries the meaning (ties go to the later one)
+                key = max(range(len(words)), key=lambda i: (len(words[i].strip(".,!?'")), i))
+            gap = int(size * 1.08)
+            th = len(lines) * gap + 46
+            layer = Image.new("RGBA", (W, th + 80), (0, 0, 0, 0))
+            d = ImageDraw.Draw(layer)
+            n, y = 0, 20
+            for line in lines:
+                x = (W - f.getlength(line)) / 2 + (SAFE_X0 + SAFE_X1 - W) / 2
+                for w in line.split():
+                    d.text((x, y), w, font=f, fill=self.theme["accent"] if n == key else self.theme["text"])
+                    x += f.getlength(w + " ")
+                    n += 1
+                y += gap
+            bw = min(maxw, max(180, f.getlength(lines[-1]) * 0.5))
+            bx = (SAFE_X0 + SAFE_X1) / 2 - bw / 2
+            bar = (int(bx), y + 16, int(bx + bw), y + 34)
+            sh = Image.new("L", layer.size, 0)
+            sh.paste(layer.getchannel("A").point(lambda v: int(v * (0.22 if self.s.get("theme") == "clean_navy" else 0.5))), (0, 12))
+            sh = sh.filter(ImageFilter.GaussianBlur(14))
+            out = Image.new("RGBA", layer.size, (0, 0, 0, 0))
+            out.paste((0, 0, 0), (0, 0), sh)
+            out.alpha_composite(layer)
+            self._cards[text] = (out, bar)
+        card, bar = self._cards[text]
+        y0 = 840 - card.height // 2
+        p = ease_out_back(t / 0.3)
+        if p < 0.999:  # quick punch-in
+            z = 0.8 + 0.2 * p
+            small = card.resize((max(2, int(card.width * z)), max(2, int(card.height * z))), Image.BILINEAR)
+            frame.paste(small, ((W - small.width) // 2, y0 + (card.height - small.height) // 2), small)
+        else:
+            frame.paste(card, (0, y0), card)
+        q = ease_out((t - 0.25) / 0.35)
+        if q > 0:
+            d = ImageDraw.Draw(frame)
+            cx = (bar[0] + bar[2]) / 2
+            hw = (bar[2] - bar[0]) / 2 * q
+            d.rounded_rectangle((cx - hw, y0 + bar[1], cx + hw, y0 + bar[3]), 9, fill=self.theme["accent"])
+        return frame
+
     # ---- code-drawn "action" shots (only use numbers already in the script)
     def live_bg(self, t: float) -> Image.Image:
         """Chart background with a slowly drifting grid so chart shots never sit still."""
@@ -823,7 +908,7 @@ class Renderer:
 
     def frame_text(self, sc: Scene, t: float, idx: int, base: Image.Image | None = None) -> Image.Image:
         v = sc.visual
-        frame = base if base is not None else self.bg.copy()
+        frame = base if base is not None else self._card_bg(t)
         d = ImageDraw.Draw(frame)
         cx = (SAFE_X0 + SAFE_X1) / 2
         maxw = SAFE_X1 - SAFE_X0
@@ -870,7 +955,7 @@ class Renderer:
         tb, pb = t - b0, (t - b0) / max(b1 - b0, 0.1)
         kind, key, variant, first = sc.shots[b]
         if kind == "wordcard":
-            return self.frame_text(Scene(sc.narration, {"type": "text", "text": key}), tb, si), tb
+            return self.shot_wordcard(key, tb), tb
         if kind == "editorial":
             from . import editorial
             return editorial.render(self.s, sc.visual, t, b, tb, key), tb

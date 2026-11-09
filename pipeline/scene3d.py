@@ -30,18 +30,19 @@ def look_for(theme: dict, name: str) -> dict:
     """Per-theme lighting so every 3D shot of a theme shares one look."""
     acc, bgt, bgb = _c(theme["accent"]), _c(theme["bg_top"]), _c(theme["bg_bottom"])
     if name == "bold_bright":
-        fog = (0.98, 0.42, 0.30)
-        return dict(fog=fog, floor=(1.0, 0.55, 0.40), grid=0.0, sky=(0.78, 0.72, 0.7), ground=(0.42, 0.2, 0.18),
-                    rim=(1, 0.9, 0.8), key_dir=(-0.4, -1, -0.6), fog_near=20, fog_far=46, floor_radius=16,
-                    primary=acc, secondary=(1, 1, 1), text=(1, 1, 1), side=(0.55, 0.12, 0.18), gold=(0.98, 0.66, 0.08))
+        fog = (0.96, 0.30, 0.22)
+        return dict(fog=fog, floor=(1.0, 0.44, 0.30), grid=0.0, sky=(0.82, 0.74, 0.74), ground=(0.42, 0.2, 0.18),
+                    rim=(1, 0.9, 0.8), key_dir=(-0.4, -1, -0.6), fog_near=20, fog_far=46, floor_radius=16, spot=1.0,
+                    primary=acc, secondary=(0.24, 0.08, 0.32), text=(1, 1, 1), side=(0.36, 0.05, 0.12),
+                    gold=(0.98, 0.66, 0.08))
     if name == "clean_navy":
         return dict(fog=(0.92, 0.94, 0.98), floor=(0.97, 0.98, 1.0), grid=1.0, grid_col=(0.82, 0.86, 0.94),
-                    sky=(1, 1, 1), ground=(0.75, 0.8, 0.9), rim=(0.55, 0.7, 1.0), key_dir=(-0.4, -1, -0.5),
+                    sky=(1, 1, 1), ground=(0.75, 0.8, 0.9), rim=(0.55, 0.7, 1.0), key_dir=(-0.4, -1, -0.5), spot=0.3,
                     fog_near=20, fog_far=46, floor_radius=16, primary=acc, secondary=_c(theme["accent2"]),
                     text=_c(theme["text"]), side=(0.55, 0.62, 0.78), gold=(0.95, 0.62, 0.08))
     return dict(fog=tuple(0.5 * (a + b) for a, b in zip(bgt, bgb)), floor=(0.05, 0.10, 0.07), grid=1.0,
                 grid_col=tuple(a * 0.35 for a in acc), sky=(0.6, 1.0, 0.75), ground=(0.02, 0.05, 0.03),
-                rim=acc, key_dir=(-0.35, -1, -0.6), fog_near=19, fog_far=42, floor_radius=14,
+                rim=acc, key_dir=(-0.35, -1, -0.6), fog_near=19, fog_far=42, floor_radius=14, spot=0.8,
                 primary=acc, secondary=_c(theme["accent2"]), text=(0.94, 1, 0.96), side=(0.05, 0.35, 0.18),
                 gold=(1.0, 0.7, 0.12))
 
@@ -135,7 +136,7 @@ def bars(theme, tname, v, t, p, variant):
     xs = [(k - (n - 1) / 2) * span for k in range(n)]
     hmax = 3.3
     eye, tgt = _orbit(p, variant, 12.5 + n * 3.8, 3.4, 2.4)
-    sc = Scene(L, eye, tgt, fov=36, aperture=0.9)
+    sc = Scene(L, eye, tgt, fov=36, aperture=0.3)
     box = Engine.get().meshes["box"]
     for k, (it, x) in enumerate(zip(items, xs)):
         g = ease_back((t - 0.15 - 0.22 * k) / 0.9)
@@ -147,10 +148,10 @@ def bars(theme, tname, v, t, p, variant):
                shadow=(x + 0.35, 0.35, 1.0, 0.9))
         shown = val * min(1.0, ease((t - 0.15 - 0.22 * k) / 0.9))
         dec = None if val.is_integer() else 1
-        text3d(sc, _fmt(shown, v.get("prefix", ""), v.get("suffix", ""), dec), (x, h + 0.95 + (0.45 if len(it['label']) > 12 else 0), 0.2), 0.66,
+        text3d(sc, _fmt(shown, v.get("prefix", ""), v.get("suffix", ""), dec), (x, h + 1.02 + (0.5 if len(it['label']) > 12 else 0), 0.2), 0.74,
                L["text"], L["side"], billboard=True, layers=6, depth=0.12, max_w=span * 0.95)
         lab_w = span * 0.98
-        label3d(sc, it["label"].upper(), (x, h + 0.3 + (0.45 if len(it["label"]) > 12 else 0), 0.2), 0.36,
+        label3d(sc, it["label"].upper(), (x, h + 0.32 + (0.5 if len(it["label"]) > 12 else 0), 0.2), 0.40,
                 L["text"], L["side"], max_chars=12, billboard=True, layers=2, depth=0.03,
                 font_name="Inter-Bold.otf", max_w=lab_w)
     if v.get("title") and BAR_TITLES:  # off: the top band belongs to the channel tag / YouTube UI
@@ -188,7 +189,7 @@ def _cash_rain(sc, L, t, n=46):
     """Bills tumble down from above and settle into a growing pile (deterministic per frame)."""
     box = Engine.get().meshes["box"]
     rng = np.random.default_rng(7)
-    xs, zs = rng.uniform(-2.2, 2.2, n), rng.uniform(-0.9, 1.0, n)
+    xs, zs = rng.uniform(-2.2, 2.2, n), rng.uniform(-1.7, 0.2, n)  # behind the number, never across it
     delays, spins = rng.uniform(0, 1.6, n), rng.uniform(-3, 3, (n, 3))
     for k in range(n):
         q = (t - delays[k]) / 0.9
@@ -197,7 +198,7 @@ def _cash_rain(sc, L, t, n=46):
         land = min(1.0, q)
         r = math.hypot(xs[k], zs[k] * 1.6)
         rest_y = max(0.0, 0.9 - 0.4 * r) + (k % 7) * 0.06   # pile peaks in the middle
-        y = rest_y + (1 - land ** 2) * 7.0
+        y = rest_y + (1 - land ** 2) * 2.1  # starts below the number, so bills never cross it
         tumble = (1 - land) * 4
         sc.add(box, trs((xs[k] * (0.6 + 0.4 * land), y, zs[k]), (1.0, 0.03, 0.45), ry=spins[k, 0] * tumble + k,
                         rx=spins[k, 1] * tumble * 0.6, rz=spins[k, 2] * tumble * 0.3 + (0.12 if land >= 1 else 0)),
@@ -211,8 +212,8 @@ def stat(theme, tname, v, t, p, variant):
     k = ease(t / 1.1)
     prefix, suffix = v.get("prefix", ""), v.get("suffix", "")
     money = prefix == "$" or "dollar" in v.get("label", "").lower()
-    eye, tgt = _orbit(p, variant, 18.0, 2.8, 2.6, spread=0.35)
-    sc = Scene(L, eye, tgt, fov=36, aperture=0.8, focus=None)
+    eye, tgt = _orbit(p, variant, 20.6, 2.8, 2.5, spread=0.35)
+    sc = Scene(L, eye, tgt, fov=36, aperture=0.4, focus=None)
     if money and variant % 2 == 1:
         _cash_rain(sc, L, t)
     else:
@@ -221,7 +222,7 @@ def stat(theme, tname, v, t, p, variant):
     num = _fmt(val * k, prefix, suffix, v.get("decimals"))
     bob = 0.08 * math.sin(t * 2.2)
     sc.add  # noqa
-    text3d(sc, num, (0, 4.6 + bob, 0.4), 1.15, L["primary"], L["side"], billboard=True, layers=12, depth=0.35, max_w=5.6)
+    text3d(sc, num, (0, 4.6 + bob, 0.4), 1.15, L["primary"], L["side"], billboard=True, layers=8, depth=0.16, max_w=5.6)
     lab = v.get("label", "")
     if lab:
         label3d(sc, lab, (0, 3.85 + bob, 0.4), 0.42, L["text"], L["side"], billboard=True, layers=3,
@@ -234,8 +235,8 @@ def donut(theme, tname, v, t, p, variant):
     L = look_for(theme, tname)
     e = Engine.get()
     pct = float(v["value"])
-    eye, tgt = _orbit(p, variant, 19.0, 10.5, 1.2, spread=0.3)
-    sc = Scene(L, eye, tgt, fov=38, aperture=0.6)
+    eye, tgt = _orbit(p, variant, 19.0, 10.5, 1.5, spread=0.3)
+    sc = Scene(L, eye, tgt, fov=38, aperture=0.3)
     grow = ease(t / 1.0)
     a_hi = 2 * math.pi * pct / 100 * grow
     start = -math.pi / 2
@@ -244,18 +245,18 @@ def donut(theme, tname, v, t, p, variant):
     if a_hi > 0.01:
         mid = start + a_hi / 2
         hi = e.mesh(("wedge", round(a_hi, 3)), lambda: gl3d.wedge_mesh(start, start + a_hi, 0.0))
-        sc.add(hi, trs((math.cos(mid) * out, lift, math.sin(mid) * out), (2.6, 0.7, 2.6)), L["primary"],
-               spec=0.6, gloss=50, emissive=0.2, shadow=(math.cos(mid) * out, math.sin(mid) * out, 2.4, 2.4))
+        sc.add(hi, trs((math.cos(mid) * out, lift, math.sin(mid) * out), (2.15, 0.7, 2.15)), L["primary"],
+               spec=0.6, gloss=50, emissive=0.2, shadow=(math.cos(mid) * out, math.sin(mid) * out, 2.0, 2.0))
     if a_hi < 2 * math.pi - 0.01:
         rest = e.mesh(("wedge", round(a_hi, 3), "rest"), lambda: gl3d.wedge_mesh(start + a_hi, start + 2 * math.pi, 0.0))
-        sc.add(rest, trs((0, 0, 0), (2.6, 0.5, 2.6)), L["secondary"] if tname != "dark_neon" else (0.16, 0.26, 0.2),
-               spec=0.3, gloss=30, shadow=(0, 0, 2.5, 2.5))
+        sc.add(rest, trs((0, 0, 0), (2.15, 0.5, 2.15)), L["secondary"] if tname != "dark_neon" else (0.16, 0.26, 0.2),
+               spec=0.3, gloss=30, shadow=(0, 0, 2.05, 2.05))
     from .render import fmt_number
     txt = f"{fmt_number(pct * grow, 0 if pct.is_integer() else 1)}%"
-    text3d(sc, txt, (0, 4.15 + 0.06 * math.sin(t * 2), 0.6), 1.3, L["primary"] if tname != "bold_bright" else (1, 1, 1),
-           L["side"], billboard=True, layers=12, depth=0.32, max_w=5.0)
+    text3d(sc, txt, (0, 4.7 + 0.06 * math.sin(t * 2), 0.6), 1.3, L["primary"] if tname != "bold_bright" else (1, 1, 1),
+           L["side"], billboard=True, layers=8, depth=0.16, max_w=5.0)
     if v.get("label"):
-        label3d(sc, v["label"], (0, 3.25, 0.9), 0.46, L["text"], L["side"], billboard=True, layers=3,
+        label3d(sc, v["label"], (0, 3.78, 0.9), 0.46, L["text"], L["side"], billboard=True, layers=3,
                 depth=0.05, font_name="Inter-SemiBold.otf")
     return Image.fromarray(sc.render())
 

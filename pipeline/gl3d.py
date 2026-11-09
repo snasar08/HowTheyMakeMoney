@@ -108,7 +108,7 @@ _POST_FS = """
 #version 330
 uniform sampler2D color; uniform sampler2D depth;
 uniform float focus; uniform float aperture;
-uniform vec2 px; uniform float vig_amt;
+uniform vec2 px; uniform float vig_amt; uniform float spot;
 in vec2 uv; out vec4 f;
 void main() {
     float d = texture(depth, uv).r;
@@ -121,6 +121,9 @@ void main() {
     }
     vec3 c = acc / wsum;
     float vig = smoothstep(1.15, 0.35, length((uv - 0.5) * vec2(0.9, 1.0)));
+    // stage light: a soft pool of light on the chart, falling off toward the corners
+    float sr = length((uv - vec2(0.5, 0.62)) * vec2(1.0, 0.8));
+    c *= mix(1.0, mix(0.52, 1.10, smoothstep(0.85, 0.05, sr)), spot);
     f = vec4(c * mix(1.0 - vig_amt, 1.0, vig), 1.0);
 }"""
 
@@ -463,6 +466,7 @@ class Scene:
         q["focus"].value, q["aperture"].value = float(self.focus), float(self.aperture)
         q["px"].value = (1.0 / w3, 1.0 / h3)
         q["vig_amt"].value = float(self.vignette)
+        q["spot"].value = float(L.get("spot", 0.0))
         e.post_vao.render()
         raw = R.out_fbo.read(components=3)
         return np.frombuffer(raw, np.uint8).reshape(h3, w3, 3)[::-1]
