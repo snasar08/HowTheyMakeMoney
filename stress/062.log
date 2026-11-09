@@ -1,0 +1,29 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/torch/nn/modules/rnn.py:1012: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.2 and num_layers=1
+  super().__init__("LSTM", *args, **kwargs)
+/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/torch/nn/utils/weight_norm.py:145: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.
+  WeightNorm.apply(module, name, dim)
+Collecting en-core-web-sm==3.8.0
+  Downloading en_core_web_sm-3.8.0-py3-none-any.whl (12.8 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.8/12.8 MB 190.4 MB/s  0:00:00
+Installing collected packages: en-core-web-sm
+Successfully installed en-core-web-sm-3.8.0
+
+[notice] A new release of pip is available: 26.2.2 -> 26.3
+[notice] To update, run: pip install --upgrade pip
+/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+[run] already scheduled: ['Mon 09 18:00 (070)']
+[run] open slots to fill: ['Tue 10 12:00']
+[run] rendering 1 script(s); 34 ready after this run
+WARNING: Defaulting repo_id to hexgrad/Kokoro-82M. Pass repo_id='hexgrad/Kokoro-82M' to suppress this warning.
+[38;5;2m✔ Download and installation successful[0m
+You can now load the package via spacy.load('en_core_web_sm')
+[render] 3D on: llvmpipe (LLVM 21.1.8, 256 bits)
+Loading weights:   0%|          | 0/287 [00:00<?, ?it/s]Loading weights: 100%|██████████| 287/287 [00:00<00:00, 5362.60it/s]
+::warning::[render] 062: scene 5 shot 4 looks like scene 5 shot 1
+::warning::[render] 062: scene 5 shot 5 looks like scene 3 shot 1
+::notice::[render] repeat check:2 near-copies, 0 reused pictures
+[run] rendered 062-how-hp-ink.mp4: 24.34s
+::notice title=062-how-hp-ink::{"seconds": 24.34, "scenes": 5, "cuts": 12, "avg_shot": 1.87, "scene_mids": [2.6, 5.7, 10.58, 13.98, 17.21], "voice": "kokoro", "timed_words": true, "images_ok": ["broll1", "broll2", "hook", "mid"], "blank_frames": [], "longest_breath": 2.78, "clipped_pct": 0.0, "syllables_per_s": [4.4, 4.53, 4.23, 4.77, 4.19], "pitch_spread_st": [3.9, 3.13, 3.65, 3.87, 3.84], "clarity": 0.971, "unclear_words": ["'earned' at 15.3s", "'PCs,' at 16.6s", "home"]}
+::warning title=062-how-hp-ink audio::'home' at 18.8s heard but unclear (low confidence)
