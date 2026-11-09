@@ -8,7 +8,7 @@ and **free beyond his Higgsfield Pro plan** — never add a paid service or ask 
 ## How it runs
 - `content/scripts/NNN-slug.json` — the queue. `status: "ready"` → waiting; `"delivered"` → done.
 - `.github/workflows/nightly.yml` — GitHub Actions (free tier, no GPU). **Slot-aware** (Oct 29):
-  runs ~3 AM ET (fills today's 12:00/15:00/18:00 slots; Sam, Nov 3: 3 posts/day) + ~9:41 AM ET backup; each run renders only for OPEN slots
+  runs ~3 AM ET (fills today's 12:00/15:00/18:00 slots; Sam, Nov 3: 3 posts/day) + ~9:41 AM ET backup + a third run (cron 19:23 UTC, added Nov 9 after GitHub dropped one run and failed to start the other; it arrives in the evening and fills tomorrow early); each run renders only for OPEN slots
   in the next 36 h (`publish.taken_slots` from the delivered records; never a taken slot, max
   `MAX_PER_DAY`=3/day, a passed slot rolls to the next free one), so late/backup/manual runs
   never double-post. GitHub starts scheduled runs late (Oct 26–28: 5.5–6.5 h). Check Buffer:
@@ -85,8 +85,9 @@ and **free beyond his Higgsfield Pro plan** — never add a paid service or ask 
   people in the pack's clothed CC0 textures (6 skin tones; Nov 1, Sam wanted them to look like people), eased camera moves with slight handheld sway, Lanczos upscale + light sharpen, a hero + instanced crowds of up to ~400 via `pipeline/crowd.py` GPU skinning, 5 camera
   shots cut every beat, 540x960 upscaled) with big yellow outlined stats and lowercase one-word
   yellow captions. CC0 characters: `assets/characters/CREDITS.md`. Meant for `whatif` + `famous`. **Famous worlds (Nov 1):** sets `court` (basketball), `pitch` (soccer night stadium), `studio` (music), `gaming` (streamer desk), `launch` (rockets); props `ball` (dribbled beside the hero), `mic`, `headset`; script fields `name_card` ("Cristiano Ronaldo") + `name_sub` ("soccer player") show a yellow name banner ~0.8–4.2 s. Sam wanted celebrities to look similar: we identify them by name, setting and real numbers only, never their face/hair/outfit (YouTube synthetic-media + publicity risk).
-  Use it for most `whatif` and `famous` Shorts (no Higgsfield images needed, saves credits); keep
-  Higgsfield 3D characters + 3D charts for `how` and `careers`. Renderer choice (GitHub, 1080x1920):
+  **Nov 9 (Sam): low-poly looks empty (flat backgrounds) and its Shorts sit at the bottom of the views.** Write at most 1 low-poly script in 6;
+  give `whatif`/`famous` the `charts3d` look with Higgsfield images, or `editorial` when there are good Commons photos. The queue also spaces
+  them out (`run.LOWPOLY_GAP` = 5 posts between two low-poly Shorts). Don't rebuild the sets without Sam asking. Renderer choice (GitHub, 1080x1920):
   moderngl 123/207 ms per frame for 100/300 characters vs three.js+SwiftShader 1262/3270 ms.
 - **Blender stage (Nov 3, nightly):** low-poly Shorts are re-rendered in Cycles: `lpplan` records every 3D frame
   (LP_RECORD; `lowpoly._record`), 20 `blender` machines render `pipeline/blender_lp.py` shards at 540x960 with
@@ -95,6 +96,7 @@ and **free beyond his Higgsfield Pro plan** — never add a paid service or ask 
   Test the whole nightly file as a dry run on script 040: push branch `nightly-test`.
 - **Editorial style (Nov 3):** `visual_style: "editorial"` (`pipeline/editorial.py`): dark backstory page, HTMM mark + `tag`, per-scene `layout` cards (real people, free-license Wikimedia Commons photos only via `pipeline/photos.py`: CC0/PD/CC BY/CC BY-SA, credits auto-added to the description) / stat / headline / timeline. Use the REELS.md Reel 5 arc; ~1 in 3 should be an "almost went bankrupt" story (Sam's favorite, REELS.md). Add 4–8 more Commons photos in the script's `photos` list ([{photo, caption}]) so a new picture shows every other beat. Example: 043-how-prime. No Higgsfield images needed.
 - **Premium look (Nov 9):** 3D charts get a stage light (`spot` in `scene3d.look_for`, applied in the gl3d post pass: bright pool on the chart, darker corners), low depth of field so labels stay sharp, bigger value/label text, deep plum (not white) secondary bars on bold_bright, pies kept clear of their label, cash that falls below the number. Word cards (`render.shot_wordcard`, used when a Short runs out of pictures) and plain text scenes share `_card_bg` (drifting soft lights + vignette); the key word (number, else longest word) is in the accent color with a wipe-in underline and soft shadow. Editorial Shorts open on a 0.45 s title cover (`_cover_text` over the settled page; long titles use 3 lines). Caption icons never draw over charts or word cards. Preview locally without voice: `python -m pipeline.preview content/scripts/NNN.json out.png` (3D works on Sam's PC).
+- **Commons photos in chart Shorts (Nov 9, Sam):** a `charts3d` script may add `"photos": [{"photo": "File:...", "caption": "..."}]` (same format as editorial). The renderer mixes them in with the 4 Higgsfield images (keys `brollpN`), so fewer shots fall back to word cards; credits go in the description automatically. Only use photos that look as good as the Higgsfield renders: real places, events, landmarks, people (stadiums, headquarters, founders), at least ~1500 px, no visible logos or brand marks. Tested Nov 9: Commons product snapshots (ink cartridges, printers) are amateur, low-res and branded, so skip those and leave `photos` out rather than add weak ones.
 - Chart scenes also get code-drawn "alt" shots (ticker / waffle / columns) on a drifting grid.
 - **Posting via Buffer (default since Oct 26 2026):** `UPLOAD_MODE` defaults to `buffer` in
   `nightly.yml`. Each Short is attached to a GitHub Release (the public video URL) and scheduled
@@ -173,8 +175,7 @@ Posting uses 21 Shorts/week (3/day since Nov 3). Goal: build a buffer, capped so
    in a row (by posting order) share format + theme + hook style; vary length (25–55 s; stories may run longer, Nov 1), hook
    style and title style. **Title test (Oct 30):** rotate `title_style` evenly (question / number /
    statement / whatif) until each has ≥ 10 posted Shorts in `analytics/insights.md`; after that,
-   ~60% the winning style, the rest spread over the others so the test keeps running. Every script sets `format`, `visual_style` (`charts3d`, or `lowpoly`
-   for most whatif/famous — see existing 030/031 for the lowpoly scene JSON), `hook_style` (question / number / whatif / challenge / surprise),
+   ~60% the winning style, the rest spread over the others so the test keeps running. Every script sets `format`, `visual_style` (`charts3d` for most; `lowpoly` for at most 1 in 6 (Nov 9) — see existing 030/031 for the lowpoly scene JSON), `hook_style` (question / number / whatif / challenge / surprise),
    `title_style` (question / number / statement / whatif). Real people: STYLE.md
    "Real people and brands".
    **Before writing, read `analytics/insights.md`** (updated by stats.yml before Saturday).
