@@ -1,0 +1,32 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/torch/nn/modules/rnn.py:1012: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.2 and num_layers=1
+  super().__init__("LSTM", *args, **kwargs)
+/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/torch/nn/utils/weight_norm.py:145: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.
+  WeightNorm.apply(module, name, dim)
+Collecting en-core-web-sm==3.8.0
+  Downloading en_core_web_sm-3.8.0-py3-none-any.whl (12.8 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.8/12.8 MB 217.8 MB/s  0:00:00
+Installing collected packages: en-core-web-sm
+Successfully installed en-core-web-sm-3.8.0
+
+[notice] A new release of pip is available: 26.2.2 -> 26.3
+[notice] To update, run: pip install --upgrade pip
+/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+[run] already scheduled: ['Mon 09 18:00 (070)']
+[run] open slots to fill: ['Tue 10 12:00']
+[run] rendering 1 script(s); 34 ready after this run
+WARNING: Defaulting repo_id to hexgrad/Kokoro-82M. Pass repo_id='hexgrad/Kokoro-82M' to suppress this warning.
+[38;5;2m✔ Download and installation successful[0m
+You can now load the package via spacy.load('en_core_web_sm')
+[render] 3D on: llvmpipe (LLVM 21.1.8, 256 bits)
+Loading weights:   0%|          | 0/287 [00:00<?, ?it/s]Loading weights: 100%|██████████| 287/287 [00:00<00:00, 4886.36it/s]
+::warning::[render] 044: scene 3 shot 2 looks like scene 3 shot 1
+::warning::[render] 044: scene 6 shot 3 looks like scene 6 shot 1
+::warning::[render] 044: scene 6 shot 4 looks like scene 5 shot 1
+::warning::[render] 044: scene 6 shot 5 looks like scene 6 shot 1
+::notice::[render] repeat check:4 near-copies, 0 reused pictures
+[run] rendered 044-how-chickfila.mp4: 25.69s
+::notice title=044-how-chickfila::{"seconds": 25.69, "scenes": 6, "cuts": 13, "avg_shot": 1.83, "scene_mids": [2.76, 6.76, 10.77, 11.61, 16.54, 19.31], "voice": "kokoro", "timed_words": true, "images_ok": ["broll1", "broll2", "hook", "mid"], "blank_frames": [], "longest_breath": 2.08, "clipped_pct": 0.0, "syllables_per_s": [5.63, 4.72, 2.85, 4.84, 5.1, 4.68], "pitch_spread_st": [2.93, 4.73, 3.07, 4.13, 2.78, 3.16], "clarity": 0.957, "unclear_words": ["'out-earn' at 2.2s", "'10,000' at 15.9s", "'Few' at 18.7s", "Closed"]}
+::warning title=044-how-chickfila audio::scene 3: 2.8 syllables/s (too slow)
+::warning title=044-how-chickfila audio::'Closed' at 0.0s heard but unclear (low confidence)
