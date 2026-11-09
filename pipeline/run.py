@@ -26,6 +26,9 @@ FORMATS = ("how", "whatif", "careers", "famous")
 WEIGHTS = ROOT / "analytics" / "format_weights.json"  # written by pipeline/insights.py
 
 
+LOWPOLY_GAP = 5  # posts between two low-poly Shorts (3 posts/day -> one every two days)
+
+
 def _weights() -> dict:
     try:
         return json.loads(WEIGHTS.read_text())
@@ -50,13 +53,20 @@ def ready_scripts(recent: list[str] | None = None) -> list[Path]:
             print(f"[run] skipping invalid JSON: {p.name}")
     items.sort(key=lambda x: (-x[0], x[1]))
     last = (recent or [(None, None)])[-1]
+    looks = [look for _, look in (recent or [])][-LOWPOLY_GAP:]
     out = []
+
+    def ok(it):  # Sam, Nov 9: low-poly looks empty; at most one in every LOWPOLY_GAP + 1 posts
+        return it[4] != "lowpoly" or "lowpoly" not in looks
+
     while items:  # differ from the previous post in format AND look if possible, else format only
-        pick = (next((it for it in items if it[3] != last[0] and it[4] != last[1]), None)
-                or next((it for it in items if it[3] != last[0]), items[0]))
+        pick = (next((it for it in items if ok(it) and it[3] != last[0] and it[4] != last[1]), None)
+                or next((it for it in items if ok(it) and it[3] != last[0]), None)
+                or next((it for it in items if ok(it)), items[0]))
         items.remove(pick)
         out.append(pick[2])
         last = (pick[3], pick[4])
+        looks = (looks + [pick[4]])[-LOWPOLY_GAP:]
     return out
 
 
@@ -137,7 +147,7 @@ def main() -> int:
         print(f"[run] posting starts {POST_START} (New York); nothing to do yet")
         return 0
 
-    queue = ready_scripts(recent_formats())
+    queue = ready_scripts(recent_formats(LOWPOLY_GAP))
     if args.id:
         queue = [p for p in SCRIPTS.glob(f"{args.id}*.json")]
     # only as many Shorts as there are open slots soon (no double posts, max 2/day); a second

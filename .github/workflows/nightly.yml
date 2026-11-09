@@ -7,6 +7,7 @@ on:
   schedule:
     - cron: "0 8 * * *"     # ~3 AM New York (EST; Sam, Nov 3) — fills today's 3 slots; even 6 h late it's before noon
     - cron: "41 13 * * *"   # ~9:41 AM New York backup — fills anything still open today
+    - cron: "23 19 * * *"   # Nov 9: third run (GitHub dropped one run and failed to start the other); arrives in the evening and fills tomorrow's slots early
   push:
     branches: ["nightly-test"]   # dry run of this exact file on script 040 (nothing posted)
   workflow_dispatch:

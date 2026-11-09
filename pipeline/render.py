@@ -329,6 +329,15 @@ class Renderer:
         imgs = script.get("images", {}) if load_images else {}
         self.images = {k: fetch_image((v or {}).get("url")) for k, v in imgs.items()}
         self.images = {k: v for k, v in self.images.items() if v is not None}
+        # Nov 9 (Sam): chart-style Shorts mix free-license Wikimedia Commons photos (script "photos":
+        # [{photo, caption}], credited in the description by publish.py) in with the Higgsfield images,
+        # so more shots are real pictures instead of word cards.
+        if load_images and script.get("visual_style", "charts3d") not in ("editorial", "lowpoly"):
+            from . import photos
+            for i, ph in enumerate(script.get("photos", [])):
+                img, _ = photos.photo(ph["photo"], ph.get("caption", ""))
+                if img is not None:
+                    self.images[f"brollp{i}"] = img
         self.bg = gradient(self.theme["bg_top"], self.theme["bg_bottom"])
         # Blender frames (nightly, Nov 3): LP_PLATES/<slug>/<scene>_<frame>.jpg from 20 machines.
         # Used only if every frame of the Short's plan arrived; else the GL renderer, as before.
