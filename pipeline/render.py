@@ -570,6 +570,12 @@ class Renderer:
         if len(words) > 1 and fit_font(big, BLACK, wmax, 220, 60).size < 170:
             cut = min(range(1, len(words)), key=lambda i: abs(len(" ".join(words[:i])) - len(" ".join(words[i:]))))
             lines = [" ".join(words[:cut]), " ".join(words[cut:])]
+            if len(words) > 2 and min(fit_font(x, BLACK, wmax, 220, 60).size for x in lines) < 110:
+                # a long title reads bigger on three lines: the split with the shortest longest line
+                a, b = min(((i, j) for i in range(1, len(words) - 1) for j in range(i + 1, len(words))),
+                           key=lambda c: max(len(" ".join(words[:c[0]])), len(" ".join(words[c[0]:c[1]])),
+                                             len(" ".join(words[c[1]:]))))
+                lines = [" ".join(words[:a]), " ".join(words[a:b]), " ".join(words[b:])]
         size = min(fit_font(x, BLACK, wmax, 220, 60).size for x in lines)
         f = font(BLACK, size)
         col = self.theme["accent"] if self.s.get("theme") != "clean_navy" else (255, 255, 255)
@@ -958,7 +964,13 @@ class Renderer:
             return self.shot_wordcard(key, tb), tb
         if kind == "editorial":
             from . import editorial
-            return editorial.render(self.s, sc.visual, t, b, tb, key), tb
+            hold = 0.45 if si == 0 and b == 0 else 0.0  # the Short opens on a cover: the page + the title, huge
+            if hold and t < hold:
+                if "edcover" not in self._base:
+                    page = editorial.render(self.s, sc.visual, 3.0, 0, 3.0, key)
+                    self._base["edcover"] = self._cover_text(page, self.s.get("title", "").upper(), "")
+                return self._base["edcover"].copy(), tb
+            return editorial.render(self.s, sc.visual, t - hold, b, tb - hold, key), tb
         if kind == "lowpoly":
             from . import lowpoly
             from .gl3d import run3d
@@ -1143,7 +1155,8 @@ class Renderer:
                 self._hud(frame, scenes, si, t)
                 self._name(frame, gt)
                 self._cta(frame, si, t)
-                self._icon(frame, chunks[si], t, lp)
+                if sc.shots[max(0, bisect.bisect_right(sc.beats, t) - 1)][0] not in ("3d", "alt", "chartzoom"):
+                    self._icon(frame, chunks[si], t, lp)  # never on top of a chart
                 self._caption(frame, chunks[si], t)  # after the CTA dim, so captions stay bright
                 # thin progress bar along the top edge keeps people watching to the end
                 ImageDraw.Draw(frame).rectangle((0, 0, int(W * min(1.0, gt / total_s)), PROGRESS_H),
