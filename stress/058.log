@@ -1,0 +1,30 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/torch/nn/modules/rnn.py:1012: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.2 and num_layers=1
+  super().__init__("LSTM", *args, **kwargs)
+/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/torch/nn/utils/weight_norm.py:145: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.
+  WeightNorm.apply(module, name, dim)
+Collecting en-core-web-sm==3.8.0
+  Downloading en_core_web_sm-3.8.0-py3-none-any.whl (12.8 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.8/12.8 MB 58.6 MB/s  0:00:00
+Installing collected packages: en-core-web-sm
+Successfully installed en-core-web-sm-3.8.0
+
+[notice] A new release of pip is available: 26.2.2 -> 26.3
+[notice] To update, run: pip install --upgrade pip
+/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+[run] already scheduled: []
+[run] open slots to fill: ['Tue 10 12:00']
+[run] rendering 1 script(s); 34 ready after this run
+WARNING: Defaulting repo_id to hexgrad/Kokoro-82M. Pass repo_id='hexgrad/Kokoro-82M' to suppress this warning.
+[38;5;2m✔ Download and installation successful[0m
+You can now load the package via spacy.load('en_core_web_sm')
+[render] 3D on: llvmpipe (LLVM 21.1.8, 256 bits)
+Loading weights:   0%|          | 0/287 [00:00<?, ?it/s]Loading weights: 100%|██████████| 287/287 [00:00<00:00, 6411.91it/s]
+::warning::[render] 058: scene 5 shot 3 looks like scene 5 shot 1
+::warning::[render] 058: scene 5 shot 4 looks like scene 5 shot 1
+::notice::[render] repeat check:2 near-copies, 0 reused pictures
+[run] rendered 058-careers-software-devs.mp4: 27.33s
+::notice title=058-careers-software-devs::{"seconds": 27.33, "scenes": 5, "cuts": 12, "avg_shot": 2.1, "scene_mids": [2.71, 5.92, 11.58, 14.42, 22.43], "voice": "kokoro", "timed_words": true, "images_ok": ["broll1", "broll2", "hook", "mid"], "blank_frames": [], "longest_breath": 3.6, "clipped_pct": 0.0, "syllables_per_s": [4.7, 4.68, 3.35, 3.69, 4.62], "pitch_spread_st": [2.7, 3.84, 3.92, 3.96, 3.59], "clarity": 0.943, "unclear_words": ["'135,980' at 8.6s", "'82,460.' at 14.0s", "'214,670.' at 16.9s", "'or' at 22.2s", "Yet"]}
+::warning title=058-careers-software-devs audio::clarity 94% (min 95%) — hard to hear: '135,980' at 8.6s; '82,460.' at 14.0s; '214,670.' at 16.9s; 'or' at 22.2s
+::warning title=058-careers-software-devs audio::'Yet' at 20.2s heard but unclear (low confidence)
