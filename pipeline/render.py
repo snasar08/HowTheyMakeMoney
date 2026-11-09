@@ -657,6 +657,7 @@ class Renderer:
         """Bold card of the words being said: the key word in the accent color, an underline
         that wipes in, a soft shadow under the type."""
         frame = self._card_bg(t)
+        text = " ".join(w for w in text.split() if any(c.isalnum() for c in w))  # no stray dashes
         if text not in self._cards:
             maxw = SAFE_X1 - SAFE_X0
             size = 168
@@ -1155,8 +1156,8 @@ class Renderer:
                 self._hud(frame, scenes, si, t)
                 self._name(frame, gt)
                 self._cta(frame, si, t)
-                if sc.shots[max(0, bisect.bisect_right(sc.beats, t) - 1)][0] not in ("3d", "alt", "chartzoom"):
-                    self._icon(frame, chunks[si], t, lp)  # never on top of a chart
+                if sc.shots[max(0, bisect.bisect_right(sc.beats, t) - 1)][0] not in ("3d", "alt", "chartzoom", "wordcard"):
+                    self._icon(frame, chunks[si], t, lp)  # never on top of a chart or a word card
                 self._caption(frame, chunks[si], t)  # after the CTA dim, so captions stay bright
                 # thin progress bar along the top edge keeps people watching to the end
                 ImageDraw.Draw(frame).rectangle((0, 0, int(W * min(1.0, gt / total_s)), PROGRESS_H),
