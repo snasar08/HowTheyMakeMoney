@@ -1,0 +1,121 @@
+name: Low-poly look check (temporary)
+on:
+  push:
+    branches: ["stress-test"]
+permissions:
+  contents: write
+env:
+  IDS: "051 055 040 047"
+  BEATS: "2"
+  SMOOTHS: "0 180 180s1"
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      EGL_PLATFORM: surfaceless
+      RENDER_3D: "on"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: |
+          for i in 1 2 3; do
+            sudo timeout 240 apt-get update -qq && sudo timeout 300 apt-get install -y -qq libegl1 libgl1-mesa-dri libegl-mesa0 && exit 0
+            sleep 20
+          done
+          exit 1
+      - run: pip install -q numpy pillow moderngl
+      - run: |
+          mkdir -p plans gl
+          for id in $IDS; do
+            f=$(ls content/scripts/${id}*.json | head -1)
+            python -m pipeline.lp_look $f gl/$(basename $f .json).jpg plans $BEATS
+          done
+          ls -la plans
+      - uses: actions/upload-artifact@v4
+        with:
+          name: look-plans
+          path: |
+            plans/
+            gl/
+          retention-days: 1
+  blender:
+    needs: plan
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: look-plans
+          path: art
+      - uses: actions/cache@v4
+        id: bl
+        with:
+          path: /opt/blender-4.2.3-linux-x64
+          key: blender-4.2.3
+      - if: steps.bl.outputs.cache-hit != 'true'
+        run: |
+          { curl -fsSL https://mirrors.ocf.berkeley.edu/blender/release/Blender4.2/blender-4.2.3-linux-x64.tar.xz || curl -fsSL https://mirror.clarkson.edu/blender/release/Blender4.2/blender-4.2.3-linux-x64.tar.xz; } | sudo tar -xJ -C /opt
+      - run: python3 -m pipeline.polyhaven assets/polyhaven
+      - run: |
+          for s in $SMOOTHS; do
+            BL_SMOOTH=$s /opt/blender-4.2.3-linux-x64/blender -b -P pipeline/blender_lp.py -- art/plans plates/s$s ${{ matrix.shard }} 10 16 2>&1 | grep -E "blender\]|Error|Traceback|line " | tail -12
+          done
+      - uses: actions/upload-artifact@v4
+        with:
+          name: look-plates-${{ matrix.shard }}
+          path: plates/
+          retention-days: 1
+  sheet:
+    needs: blender
+    if: ${{ always() }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: look-*
+          path: art
+          merge-multiple: true
+      - run: pip install -q pillow
+      - run: |
+          python3 - <<'PY'
+          import os
+          from pathlib import Path
+          from PIL import Image
+          cols = int(os.environ["BEATS"]) * 3
+          out = Path("look"); out.mkdir(exist_ok=True)
+          for f in Path("art/gl").glob("*.jpg"):
+              Image.open(f).save(out / f"{f.stem}-gl.jpg", quality=85)
+          for var in sorted(Path("art").glob("s*")):
+              for d in sorted(p for p in var.iterdir() if p.is_dir()):
+                  fr = sorted(d.glob("*.jpg"), key=lambda p: tuple(int(x) for x in p.stem.split("_")))
+                  if not fr:
+                      continue
+                  w, h = 360, 640
+                  rows = (len(fr) + cols - 1) // cols
+                  im = Image.new("RGB", (cols * w, rows * h))
+                  for i, p in enumerate(fr):
+                      im.paste(Image.open(p).resize((w, h), Image.LANCZOS), ((i % cols) * w, (i // cols) * h))
+                  im.save(out / f"{d.name}-{var.name}.jpg", quality=88)
+                  print(d.name, var.name, len(fr))
+          PY
+          ls art look
+      - run: |
+          git config user.name "shorts-bot"
+          git config user.email "shorts-bot@users.noreply.github.com"
+          git add -f look
+          git commit -qm "Look check results" || exit 0
+          for i in 1 2 3 4 5; do
+            git pull -q --rebase origin stress-test && git push -q origin HEAD:stress-test && exit 0
+            sleep 7
+          done
+          exit 1
