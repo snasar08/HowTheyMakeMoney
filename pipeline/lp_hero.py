@@ -135,7 +135,7 @@ def accessories(hero):
             add(side + "UpLeg", "cyl", (-0.015, 0.5, z), (0.108, 0.34, 0.1), pants)
         add("Hips", "box", (-0.012, 0.76, 0), (0.25, 0.17, 0.37), pants)
     elif outfit == "dress":                   # knee-length skirt in the dress color
-        add("Hips", "cyl", (-0.012, 0.5, 0), (0.24, 0.42, 0.26), shirt)
+        add("Hips", "cyl", (-0.012, 0.6, 0), (0.185, 0.3, 0.215), shirt)
     elif outfit == "suit":                    # dark jacket: white shirt V and a tie
         add("Spine2", "box", (0.1, 1.2, 0), (0.022, 0.25, 0.085), (0.96, 0.96, 0.96))
         add("Spine2", "box", (0.116, 1.2, 0), (0.012, 0.21, 0.034), c(s.get("tie"), (200, 30, 40)))

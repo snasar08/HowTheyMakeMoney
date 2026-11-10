@@ -212,7 +212,21 @@ def sphere():
     return me
 
 
-MESHES = {"box": box(), "cyl": cyl(), "sphere": sphere()}
+def rbox():
+    """A box with rounded edges and corners, same footprint as box()."""
+    bpy.ops.mesh.primitive_cube_add(size=1)
+    o = bpy.context.object
+    m = o.modifiers.new("bev", "BEVEL")
+    m.width, m.segments = 0.16, 4
+    me = bpy.data.meshes.new_from_object(o.evaluated_get(bpy.context.evaluated_depsgraph_get()))
+    bpy.data.objects.remove(o)
+    me.transform(Matrix.Translation((0, 0.5, 0)))
+    for p in me.polygons:
+        p.use_smooth = True
+    return me
+
+
+MESHES = {"box": box(), "cyl": cyl(), "sphere": sphere(), "rbox": rbox()}
 _slot = bpy.data.materials.new("slot")
 for _me in MESHES.values():
     _me.materials.append(_slot)  # one slot, overridden per object (link='OBJECT')
@@ -243,6 +257,24 @@ body = next(o for o in bpy.context.scene.objects if o.type == "MESH")
 for o in (arm, body):
     o.hide_render = True
 to_lp = Matrix.Rotation(math.radians(-90), 4, "X")  # Blender Z-up -> pipeline Y-up
+# BL_SMOOTH="<degrees>[s<levels>]": edges flatter than <degrees> are shaded smooth; s1/s2 also
+# subdivides the people (rounded, toy-like forms instead of facets). "0" = the old faceted look.
+_sm = os.environ.get("BL_SMOOTH", "0").split("s")
+SMOOTH, SUBSURF = float(_sm[0] or 0), int(_sm[1]) if len(_sm) > 1 else 0
+if SMOOTH or SUBSURF:
+    import bmesh
+    _bm = bmesh.new()
+    _bm.from_mesh(body.data)
+    bmesh.ops.remove_doubles(_bm, verts=_bm.verts, dist=1e-5)   # the file stores every face apart
+    _bm.to_mesh(body.data)
+    _bm.free()
+    for _a in ("custom_normal", "sharp_face", "sharp_edge"):
+        if _a in body.data.attributes:
+            body.data.attributes.remove(body.data.attributes[_a])
+    if SUBSURF:
+        _m = body.modifiers.new("sub", "SUBSURF")
+        _m.levels = _m.render_levels = SUBSURF
+        _m.uv_smooth = "NONE"
 acts = {a.name.lower(): a for a in bpy.data.actions}
 
 
@@ -270,7 +302,6 @@ def bake(clip, t):
     return me
 
 
-SMOOTH = float(os.environ.get("BL_SMOOTH", "0"))   # degrees: edges flatter than this are smoothed
 
 
 def bone_mats(names):
@@ -284,7 +315,9 @@ def bone_mats(names):
     return out
 
 
+arm.data.pose_position = "REST"
 rest = bake(None, 0.0)
+arm.data.pose_position = "POSE"
 ys = [v.co.y for v in rest.vertices]
 B_BASE, B_HEIGHT = min(ys), (max(ys) - min(ys)) or 1.0
 bpy.data.meshes.remove(rest)
@@ -546,7 +579,7 @@ for n, (plan, key) in enumerate(JOBS):
                     W = bone_mats({a[0] for a in acc})
                     for bone, mesh, pos, size, col in acc:
                         if bone in W:
-                            o = obj("a", MESHES[mesh], m @ W[bone] @ UNNORM @ Matrix.Translation(pos) @ Matrix.Diagonal((*size, 1)))
+                            o = obj("a", MESHES["rbox" if (mesh == "box" and (SMOOTH or SUBSURF)) else mesh], m @ W[bone] @ UNNORM @ Matrix.Translation(pos) @ Matrix.Diagonal((*size, 1)))
                             paint(o, mat(col))
                             acc_objs.append(o)
     (out_dir / plan["_slug"]).mkdir(parents=True, exist_ok=True)
