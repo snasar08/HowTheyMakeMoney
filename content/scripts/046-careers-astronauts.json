@@ -7,7 +7,7 @@
   "hook_style": "question",
   "title_style": "question",
   "theme": "clean_navy",
-  "status": "ready",
+  "status": "delivered",
   "score": 89,
   "title": "How Much Do NASA Astronauts Get Paid?",
   "description": "You go to space for NASA. But what's the paycheck?\n\nSources:\n- Wikipedia: NASA Astronaut Corps (Salary section): https://en.wikipedia.org/wiki/NASA_Astronaut_Corps\n- Wikipedia: General Schedule (US civil service pay scale): https://en.wikipedia.org/wiki/General_Schedule_(US_civil_service_pay_scale)\n\nAs of 2023, astronauts at Johnson Space Center in Houston earned between $79,766 (GS-11 step 1) and $183,500 (GS-15 step 6 and above). Since the 2024 candidate class, new candidates are paid on an Administratively Determined scale. 339 candidates selected to date, including the Original Seven. Not financial advice.\n\n#shorts #nasa #astronaut #careers #howtheymakemoney",
@@ -109,5 +109,15 @@
       "title": "Wikipedia: General Schedule (US civil service pay scale)",
       "url": "https://en.wikipedia.org/wiki/General_Schedule_(US_civil_service_pay_scale)"
     }
-  ]
+  ],
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-046-careers-astronauts",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-046-careers-astronauts/046-careers-astronauts.mp4",
+    "post_at": "2026-11-10T12:00:00-05:00",
+    "buffer_post": "6af268f5223aa16048dc3f95",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-10T00:44:37.315387+00:00",
+    "seconds": 25.75
+  }
 }

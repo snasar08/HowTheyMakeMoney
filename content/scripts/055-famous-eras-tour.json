@@ -7,7 +7,7 @@
   "hook_style": "challenge",
   "title_style": "number",
   "theme": "bold_bright",
-  "status": "ready",
+  "status": "delivered",
   "score": 91,
   "title": "$2.077 Billion From 149 Shows",
   "name_card": "Taylor Swift",
@@ -109,5 +109,15 @@
       "title": "Wikipedia: Taylor Swift",
       "url": "https://en.wikipedia.org/wiki/Taylor_Swift"
     }
-  ]
+  ],
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-055-famous-eras-tour",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-055-famous-eras-tour/055-famous-eras-tour.mp4",
+    "post_at": "2026-11-10T15:00:00-05:00",
+    "buffer_post": "6af2694ad35dff5701ccb730",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-10T00:46:03.014790+00:00",
+    "seconds": 27.61
+  }
 }

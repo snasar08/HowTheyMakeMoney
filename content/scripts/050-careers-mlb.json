@@ -7,7 +7,7 @@
   "hook_style": "number",
   "title_style": "number",
   "theme": "bold_bright",
-  "status": "ready",
+  "status": "delivered",
   "score": 87,
   "title": "From $6,000 to $780,000: MLB's Lowest Pay",
   "description": "MLB's lowest pay was just 6,000 dollars. What is it now?\n\nSources:\n- MLB.com: MLB, MLBPA agree to new CBA (2022): https://www.mlb.com/news/mlb-mlbpa-agree-to-cba\n- Wikipedia: Major League Baseball Players Association: https://en.wikipedia.org/wiki/Major_League_Baseball_Players_Association\n\nThe 1968 agreement raised the minimum from $6,000 to $10,000 (Wikipedia). The 2022 five-year agreement set the minimum at $700,000 (2022), $720,000, $740,000, $760,000 and $780,000 (2026), plus a $50 million pre-arbitration bonus pool for the top 100 players by awards and stats (MLB.com). Not financial advice.\n\n#shorts #mlb #baseball #careers #howtheymakemoney",
@@ -95,5 +95,15 @@
       "title": "Wikipedia: Major League Baseball Players Association",
       "url": "https://en.wikipedia.org/wiki/Major_League_Baseball_Players_Association"
     }
-  ]
+  ],
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-050-careers-mlb",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-050-careers-mlb/050-careers-mlb.mp4",
+    "post_at": "2026-11-10T18:00:00-05:00",
+    "buffer_post": "6af269a8d35dff5701ccc794",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-10T00:47:36.295121+00:00",
+    "seconds": 25.54
+  }
 }
