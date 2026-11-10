@@ -26,7 +26,7 @@ FORMATS = ("how", "whatif", "careers", "famous")
 WEIGHTS = ROOT / "analytics" / "format_weights.json"  # written by pipeline/insights.py
 
 
-LOWPOLY_GAP = 5  # posts between two low-poly Shorts (3 posts/day -> one every two days)
+LOWPOLY_GAP = 2  # posts between two low-poly Shorts (Nov 10: the look was rebuilt; was 5 while it looked empty)
 
 
 def _weights() -> dict:
