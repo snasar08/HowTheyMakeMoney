@@ -85,9 +85,9 @@ and **free beyond his Higgsfield Pro plan** — never add a paid service or ask 
   people in the pack's clothed CC0 textures (6 skin tones; Nov 1, Sam wanted them to look like people), eased camera moves with slight handheld sway, Lanczos upscale + light sharpen, a hero + instanced crowds of up to ~400 via `pipeline/crowd.py` GPU skinning, 5 camera
   shots cut every beat, 540x960 upscaled) with big yellow outlined stats and lowercase one-word
   yellow captions. CC0 characters: `assets/characters/CREDITS.md`. Meant for `whatif` + `famous`. **Famous worlds (Nov 1):** sets `court` (basketball), `pitch` (soccer night stadium), `studio` (music), `gaming` (streamer desk), `launch` (rockets); props `ball` (dribbled beside the hero), `mic`, `headset`; script fields `name_card` ("Cristiano Ronaldo") + `name_sub` ("soccer player") show a yellow name banner ~0.8–4.2 s. Sam wanted celebrities to look similar: we identify them by name, setting and real numbers only, never their face/hair/outfit (YouTube synthetic-media + publicity risk).
-  **Nov 9 (Sam): low-poly looks empty (flat backgrounds) and its Shorts sit at the bottom of the views.** Write at most 1 low-poly script in 6;
-  give `whatif`/`famous` the `charts3d` look with Higgsfield images, or `editorial` when there are good Commons photos. The queue also spaces
-  them out (`run.LOWPOLY_GAP` = 5 posts between two low-poly Shorts). Don't rebuild the sets without Sam asking. Renderer choice (GitHub, 1080x1920):
+  **Nov 9 (Sam): the whatif/famous IDEAS are great; it's the low-poly LOOK he dislikes (flat, empty backgrounds). It doesn't need to be low-poly,
+  just codable.** Until a new code-drawn look replaces it, the queue spaces low-poly out (`run.LOWPOLY_GAP` = 5 posts between two) and new
+  `whatif`/`famous` scripts should use `charts3d` with images or `editorial`. Keep writing these formats; never drop them. Renderer choice (GitHub, 1080x1920):
   moderngl 123/207 ms per frame for 100/300 characters vs three.js+SwiftShader 1262/3270 ms.
 - **Blender stage (Nov 3, nightly):** low-poly Shorts are re-rendered in Cycles: `lpplan` records every 3D frame
   (LP_RECORD; `lowpoly._record`), 20 `blender` machines render `pipeline/blender_lp.py` shards at 540x960 with
