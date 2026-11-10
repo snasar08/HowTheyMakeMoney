@@ -538,6 +538,17 @@ for n, (plan, key) in enumerate(JOBS):
             bpy.data.objects.remove(o)
         item_objs = item_objs_by_plan[plan["_slug"]] = {}
     f = plan["frames"][key]
+    # the workflow runs this script up to 3 times: finished frames are kept, and a frame that
+    # killed Blender once is skipped (render.py covers a stray frame with its neighbor)
+    dest = out_dir / plan["_slug"] / f"{key}.jpg"
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    mark = dest.with_suffix(".try")
+    if dest.exists():
+        continue
+    if mark.exists():
+        print(f"[blender] skipping {plan['_slug']}/{key}: it crashed the last attempt", flush=True)
+        continue
+    mark.write_text("")
     set_look(f["look"], f.get("set", "field"))
     set_camera(f)
     want = set(f["items"])

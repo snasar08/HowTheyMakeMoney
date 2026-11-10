@@ -691,11 +691,11 @@ def _camera(shot, p, hz, hy, lift):
     elif shot == "side":
         eye, tgt, fov = (5.2 - 0.8 * p, 1.25, hz + 1.2), (0, 1.1 + lift, hz + 0.3), 42
     elif shot == "wide":
-        eye, tgt, fov = (4.6 - 3.6 * p, 2.9, hz + 8.6 - 0.8 * p), (0, 1.3 + lift, hz - 3), 46
+        eye, tgt, fov = (3.6 - 2.8 * p, 2.3, hz + 6.4 - 0.8 * p), (0, 1.25 + lift, hz - 2), 46
     elif shot == "back":
         eye, tgt, fov = (1.3 - 0.9 * p, 2.7 + 0.3 * p, hz - 4.8), (0, 1.5, hz + 8), 48
     else:  # crane
-        eye, tgt, fov = (3.0 - 2 * p, 6.2 - 3.8 * p, hz + 7.4 - 1.8 * p), (0, 1.0 + lift, hz - 1), 46
+        eye, tgt, fov = (2.6 - 1.8 * p, 4.6 - 2.6 * p, hz + 6.0 - 1.4 * p), (0, 1.1 + lift, hz - 1), 46
     return (eye[0], eye[1] + hy, eye[2]), (tgt[0], tgt[1] + hy, tgt[2]), fov
 
 

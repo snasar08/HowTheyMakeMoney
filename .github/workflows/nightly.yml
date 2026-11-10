@@ -177,7 +177,14 @@ jobs:
           { curl -fsSL https://mirrors.ocf.berkeley.edu/blender/release/Blender4.2/blender-4.2.3-linux-x64.tar.xz || curl -fsSL https://mirror.clarkson.edu/blender/release/Blender4.2/blender-4.2.3-linux-x64.tar.xz; } | sudo tar -xJ -C /opt
       - run: python3 -m pipeline.polyhaven assets/polyhaven
       - run: |
-          /opt/blender-4.2.3-linux-x64/blender -b -P pipeline/blender_lp.py -- plans plates ${{ matrix.shard }} 20 16 2>&1             | grep -E "blender\]|Error|Traceback" | tail -5
+          for try in 1 2 3; do   # a crash on one machine used to cost the whole Short its Blender look
+            /opt/blender-4.2.3-linux-x64/blender -b -P pipeline/blender_lp.py -- plans plates ${{ matrix.shard }} 20 16 > bl.log 2>&1 || true
+            grep -E "blender\]" bl.log | tail -2
+            if grep -qE "Traceback|Error:|Segmentation|Killed" bl.log; then
+              echo "::warning title=blender shard ${{ matrix.shard }} try $try::$(grep -vE '^\[blender\]|^Fra:|^$' bl.log | tail -8 | tr '\n' ' ' | cut -c1-900)"
+            fi
+          done
+          find plates -name "*.try" -delete
       - uses: actions/upload-artifact@v4
         with:
           name: plates-${{ matrix.shard }}
