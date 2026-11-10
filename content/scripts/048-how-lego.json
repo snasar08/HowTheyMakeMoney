@@ -7,7 +7,7 @@
   "hook_style": "number",
   "title_style": "question",
   "theme": "bold_bright",
-  "status": "ready",
+  "status": "delivered",
   "score": 91,
   "tag": "Company backstory",
   "title": "How Did LEGO Come Back From Its Worst Year?",
@@ -162,5 +162,15 @@
       "title": "The LEGO Group: record results in 2025 (March 10 2026)",
       "url": "https://www.lego.com/en-us/aboutus/news/2026/march/the-lego-group-delivers-record-results-in-2025-driven-by-strong-brand-and-innovative-portfolio"
     }
-  ]
+  ],
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-048-how-lego",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-048-how-lego/048-how-lego.mp4",
+    "post_at": "2026-11-11T18:00:00-05:00",
+    "buffer_post": "6af34e51a0d7326462d40e04",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-10T17:03:14.231953+00:00",
+    "seconds": 29.51
+  }
 }

@@ -7,7 +7,7 @@
   "hook_style": "question",
   "title_style": "question",
   "theme": "bold_bright",
-  "status": "ready",
+  "status": "delivered",
   "score": 92,
   "title": "How Did Bankrupt Marvel Become a $4B Deal?",
   "tag": "Company backstory",
@@ -184,5 +184,15 @@
       "title": "Wikipedia: Marvel Cinematic Universe",
       "url": "https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe"
     }
-  ]
+  ],
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-065-how-marvel",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-065-how-marvel/065-how-marvel.mp4",
+    "post_at": "2026-11-11T12:00:00-05:00",
+    "buffer_post": "6af34dab0649793ed2f7d93f",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-10T17:00:28.147692+00:00",
+    "seconds": 30.78
+  }
 }

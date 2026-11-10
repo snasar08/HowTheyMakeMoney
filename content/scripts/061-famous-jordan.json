@@ -7,7 +7,7 @@
   "hook_style": "number",
   "title_style": "number",
   "theme": "bold_bright",
-  "status": "ready",
+  "status": "delivered",
   "score": 91,
   "title": "From a $2.5M Shoe Deal to $4.7 Billion",
   "name_card": "Michael Jordan",
@@ -36,7 +36,19 @@
           "ball"
         ],
         "stat": "$4.7 BILLION",
-        "stat_sub": "retired. still growing?"
+        "stat_sub": "retired. still growing?",
+        "hero": {
+          "skin": "7a4e34",
+          "hair": "bald",
+          "beard": "goatee",
+          "beard_color": "1a1512",
+          "outfit": "kit",
+          "shirt": "ce1141",
+          "pants": "ce1141",
+          "socks": "f4f4f4",
+          "shoes": "1a1a1a",
+          "height": 1.1
+        }
       }
     },
     {
@@ -51,7 +63,19 @@
         ],
         "stat": "$2.5 MILLION",
         "stat_sub": "6-year Nike deal, 1984",
-        "hud": "$2.5M"
+        "hud": "$2.5M",
+        "hero": {
+          "skin": "7a4e34",
+          "hair": "bald",
+          "beard": "goatee",
+          "beard_color": "1a1512",
+          "outfit": "kit",
+          "shirt": "ce1141",
+          "pants": "ce1141",
+          "socks": "f4f4f4",
+          "shoes": "1a1a1a",
+          "height": 1.1
+        }
       }
     },
     {
@@ -65,7 +89,19 @@
           "boxes"
         ],
         "stat": "ROYALTIES",
-        "stat_sub": "a cut of every pair"
+        "stat_sub": "a cut of every pair",
+        "hero": {
+          "skin": "7a4e34",
+          "hair": "bald",
+          "beard": "goatee",
+          "beard_color": "1a1512",
+          "outfit": "kit",
+          "shirt": "ce1141",
+          "pants": "ce1141",
+          "socks": "f4f4f4",
+          "shoes": "1a1a1a",
+          "height": 1.1
+        }
       }
     },
     {
@@ -80,7 +116,19 @@
           "cash"
         ],
         "stat": "$110 MILLION",
-        "stat_sub": "income in 2015, retired"
+        "stat_sub": "income in 2015, retired",
+        "hero": {
+          "skin": "7a4e34",
+          "hair": "bald",
+          "beard": "goatee",
+          "beard_color": "1a1512",
+          "outfit": "kit",
+          "shirt": "ce1141",
+          "pants": "ce1141",
+          "socks": "f4f4f4",
+          "shoes": "1a1a1a",
+          "height": 1.1
+        }
       }
     },
     {
@@ -96,7 +144,19 @@
         ],
         "stat": "$4.7 BILLION",
         "stat_sub": "net worth, Forbes 2026",
-        "hud": "$4.7B"
+        "hud": "$4.7B",
+        "hero": {
+          "skin": "7a4e34",
+          "hair": "bald",
+          "beard": "goatee",
+          "beard_color": "1a1512",
+          "outfit": "kit",
+          "shirt": "ce1141",
+          "pants": "ce1141",
+          "socks": "f4f4f4",
+          "shoes": "1a1a1a",
+          "height": 1.1
+        }
       }
     }
   ],
@@ -121,5 +181,15 @@
     "socks": "f4f4f4",
     "shoes": "1a1a1a",
     "height": 1.1
+  },
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-061-famous-jordan",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-061-famous-jordan/061-famous-jordan.mp4",
+    "post_at": "2026-11-11T15:00:00-05:00",
+    "buffer_post": "6af34df5a0d7326462d3e6c9",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-10T17:01:42.215636+00:00",
+    "seconds": 28.39
   }
 }
