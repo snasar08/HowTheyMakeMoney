@@ -1,0 +1,9 @@
+# Morning summary, Nov 10
+
+Overnight I rebuilt the animated (low-poly) Shorts, because you said they had no background, the Ronaldo edit was bad and famous people should be recognisable. I first checked what the popular money Shorts use: it is hand-made smooth 3D made with paid tools, which cannot be automated for free, so I kept our free characters and matched what is free (smooth figures, lighting, depth of field, camera work). Every set now has a real sky, far scenery and full dressing (stands, floodlights, shop fronts, trees); famous people are recognisable by hair, beard and plain-colour clothes with no logos or real jersey designs (done for 9 scripts); the empty top-down shots are gone, every cut has a punch-in and the camera frames the hero against the set; the cover bug where the name banner hid the title is fixed; and in 7 of the 10 top-scoring ready scripts the big sourced number is on screen from the first second, since most viewers leave at 4 to 5 seconds. It was tested on GitHub with a full dry run of the Ronaldo Short with the real voice and Blender (all 20 Blender machines passed; picture: `previews/040-famous-ronaldo-new-look.jpg`), then merged to main, and animated Shorts may now be up to 1 in every 3 posts instead of 1 in 6. What did not work: the first full test fell back to the plain look because one Blender machine crashed (I added a retry and the second test was clean, but the cause is unknown), the faces are still simple cartoon faces, and in very tight close-ups the shorts' waistband looks like a blue block.
+
+## Needs you
+- Watch the first new animated Short when it posts and tell me if the look is right.
+- Better free character models exist (CC0 packs) but need a download; say yes if you want me to try them.
+- I left the test branches (`stress-test`, `nightly-test`) and the temporary look-check workflow in place; nothing to do unless you want them removed.
+- Already-posted Shorts were not changed.
