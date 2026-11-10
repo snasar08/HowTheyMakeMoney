@@ -25,6 +25,7 @@ FPS = 30
 PH_DIR = ROOT_DIR / "assets" / "polyhaven"   # filled by `python -m pipeline.polyhaven` (CC0 skies + floors)
 sys.path.insert(0, str(ROOT_DIR))
 from pipeline.polyhaven import LOOKS  # noqa: E402  (stdlib-only module)
+from pipeline import lp_hero  # noqa: E402  (stdlib-only: hero looks)
 SHIRTS = {(115, 167, 196), (100, 215, 105)}   # palette colors, as in pipeline.character
 SHORTS = {(21, 96, 189), (200, 148, 89)}
 
@@ -150,15 +151,21 @@ def skin_mat(name):
         b = nt.nodes["Principled BSDF"]
         b.inputs["Roughness"].default_value = 0.7
         tex = nt.nodes.new("ShaderNodeTexImage")
-        base, shirt, shorts = kit_colors(name)
+        base, cmap = lp_hero.recolor_map(name)
+        shirt = shorts = None
+        if not cmap:
+            base, shirt, shorts = kit_colors(name)
         tex.image = bpy.data.images.load(str(SKINS / f"{base}.png"))
-        if shirt or shorts:  # same recolor as pipeline.character.skin_image
+        if cmap or shirt or shorts:  # same recolor as pipeline.character.skin_image
             src = tex.image
             img = bpy.data.images.new(name, src.size[0], src.size[1])
             px = list(src.pixels)
             for i in range(0, len(px), 4):
                 c = tuple(round(v * 255) for v in px[i:i + 3])
-                new = shirt if (shirt and c in SHIRTS) else shorts if (shorts and c in SHORTS) else None
+                if cmap:
+                    new = cmap.get(c)
+                else:
+                    new = shirt if (shirt and c in SHIRTS) else shorts if (shorts and c in SHORTS) else None
                 if new:
                     px[i:i + 3] = [v / 255 for v in new]
             img.pixels = px
@@ -253,7 +260,27 @@ def bake(clip, t):
     dg = bpy.context.evaluated_depsgraph_get()
     me = bpy.data.meshes.new_from_object(body.evaluated_get(dg))
     me.transform(to_lp @ body.matrix_world)
+    if SMOOTH:
+        me.polygons.foreach_set("use_smooth", [True] * len(me.polygons))
+        try:
+            me.set_sharp_from_angle(angle=math.radians(SMOOTH))
+        except AttributeError:
+            pass
     return me
+
+
+SMOOTH = float(os.environ.get("BL_SMOOTH", "0"))   # degrees: edges flatter than this are smoothed
+
+
+def bone_mats(names):
+    """Rest-pose -> current-pose matrix per bone, in pipeline coordinates (for hero hair, shoes...)."""
+    aw, inv = arm.matrix_world, to_lp.inverted()
+    out = {}
+    for n in names:
+        pb = arm.pose.bones.get(n)
+        if pb is not None:
+            out[n] = to_lp @ aw @ pb.matrix @ pb.bone.matrix_local.inverted() @ aw.inverted() @ inv
+    return out
 
 
 rest = bake(None, 0.0)
@@ -281,9 +308,96 @@ wl.new(lp_node.outputs["Is Camera Ray"], mix.inputs[0])
 wl.new(mix.outputs[0], wn["World Output"].inputs[0])
 bg_amb.inputs["Strength"].default_value = 0.55
 env = wn.new("ShaderNodeTexEnvironment")
-sky_mix = wn.new("ShaderNodeMixRGB")    # camera background: fog color (0) or the real sky (1)
-wl.new(env.outputs["Color"], sky_mix.inputs[2])
-wl.new(sky_mix.outputs[0], bg_cam.inputs["Color"])
+
+
+def _n(kind, **props):
+    n = wn.new(kind)
+    for k, v in props.items():
+        setattr(n, k, v)
+    return n
+
+
+def _math(op, a, b=None):
+    n = _n("ShaderNodeMath", operation=op)
+    for i, x in enumerate((a, b)):
+        if x is None:
+            continue
+        if isinstance(x, (int, float)):
+            n.inputs[i].default_value = x
+        else:
+            wl.new(x, n.inputs[i])
+    return n
+
+
+def _ramp(val, lo, hi):
+    n = _n("ShaderNodeMapRange", interpolation_type="SMOOTHSTEP")
+    wl.new(val, n.inputs["Value"])
+    n.inputs["From Min"].default_value, n.inputs["From Max"].default_value = lo, hi
+    return n
+
+
+def _mixc(fac, a=None, b=None):
+    n = _n("ShaderNodeMixRGB")
+    wl.new(fac, n.inputs[0])
+    for i, x in ((1, a), (2, b)):
+        if x is not None:
+            wl.new(x, n.inputs[i])
+    return n
+
+
+tc, sep = wn.new("ShaderNodeTexCoord"), wn.new("ShaderNodeSeparateXYZ")
+wl.new(tc.outputs["Generated"], sep.inputs[0])       # world shader: the view direction (z = up)
+up = sep.outputs["Z"]
+sky1 = _mixc(_ramp(up, 0.0, 0.28).outputs[0])        # horizon -> mid
+sky2 = _mixc(_ramp(up, 0.2, 0.8).outputs[0], sky1.outputs[0])   # -> top
+k_cloud = _math("DIVIDE", 1.6, _math("ADD", up, 0.3).outputs[0]).outputs[0]
+cxy = wn.new("ShaderNodeCombineXYZ")
+wl.new(_math("MULTIPLY", sep.outputs["X"], k_cloud).outputs[0], cxy.inputs[0])
+wl.new(_math("MULTIPLY", sep.outputs["Y"], k_cloud).outputs[0], cxy.inputs[1])
+noise = _n("ShaderNodeTexNoise", noise_dimensions="2D")
+noise.inputs["Scale"].default_value, noise.inputs["Detail"].default_value = 1.1, 4.0
+wl.new(cxy.outputs[0], noise.inputs["Vector"])
+cloud_amt = _math("MULTIPLY", _ramp(noise.outputs["Fac"], 0.5, 0.68).outputs[0], 0.0)
+cloud_f = _math("MULTIPLY", cloud_amt.outputs[0], _ramp(up, 0.03, 0.22).outputs[0])
+sky3 = _mixc(cloud_f.outputs[0], sky2.outputs[0])
+vor = _n("ShaderNodeTexVoronoi")
+vor.inputs["Scale"].default_value = 70.0
+wl.new(tc.outputs["Generated"], vor.inputs["Vector"])
+vsep = wn.new("ShaderNodeSeparateXYZ")
+wl.new(vor.outputs["Color"], vsep.inputs[0])
+star = _math("MULTIPLY", _math("GREATER_THAN", vsep.outputs[0], 0.985).outputs[0],
+             _math("SUBTRACT", 1.0, _ramp(vor.outputs["Distance"], 0.04, 0.22).outputs[0]).outputs[0])
+star_amt = _math("MULTIPLY", _math("MULTIPLY", star.outputs[0], _ramp(up, 0.05, 0.35).outputs[0]).outputs[0], 0.0)
+sky4 = _n("ShaderNodeMixRGB", blend_type="ADD")
+wl.new(star_amt.outputs[0], sky4.inputs[0])
+wl.new(sky3.outputs[0], sky4.inputs[1])
+sky4.inputs[2].default_value = (1.6, 1.6, 1.8, 1)
+sdot = _n("ShaderNodeVectorMath", operation="DOT_PRODUCT")
+wl.new(tc.outputs["Generated"], sdot.inputs[0])
+sun_disc = _ramp(sdot.outputs["Value"], 0.99, 1.0)
+sky5 = _mixc(sun_disc.outputs[0], sky4.outputs[0])
+sun_glow = _math("MULTIPLY", _math("POWER", _math("MAXIMUM", sdot.outputs["Value"], 0.0).outputs[0], 30.0).outputs[0], 0.0)
+sky6 = _n("ShaderNodeMixRGB", blend_type="ADD")
+wl.new(sun_glow.outputs[0], sky6.inputs[0])
+wl.new(sky5.outputs[0], sky6.inputs[1])
+wl.new(sky6.outputs[0], bg_cam.inputs["Color"])
+
+
+def set_sky(L):
+    c4 = lambda k, mul=1.0: (*[mul * x for x in lin(L[k])], 1)   # noqa: E731
+    sky1.inputs[1].default_value, sky1.inputs[2].default_value = c4("fog"), c4("mid")
+    sky2.inputs[2].default_value = c4("top")
+    sky3.inputs[2].default_value = c4("cloud_col")
+    cloud_amt.inputs[1].default_value = L["clouds"]
+    star_amt.inputs[1].default_value = L["stars"]
+    x, y, z = Vector(L["sun"]).normalized()
+    sdot.inputs[1].default_value = (x, -z, y)            # pipeline (x, y, z) -> Blender (x, -z, y)
+    size = L["sun_size"]
+    sun_disc.inputs["From Min"].default_value = math.cos(size) - 0.0015 if size else 2.0
+    sun_disc.inputs["From Max"].default_value = math.cos(size) if size else 3.0
+    sky5.inputs[2].default_value = c4("sun_col", 2.2)   # over 1: the glare pass makes it bloom
+    sky6.inputs[2].default_value = c4("sun_col")
+    sun_glow.inputs[1].default_value = 0.3 if size else 0.0
 amb_mix = wn.new("ShaderNodeMixRGB")    # lighting: flat sky/ground color (0) or the HDRI (1)
 wl.new(env.outputs["Color"], amb_mix.inputs[2])
 wl.new(amb_mix.outputs[0], bg_amb.inputs["Color"])
@@ -313,6 +427,7 @@ rim.rotation_euler = (math.radians(-160), math.radians(-20), 0)
 rim.data.energy, rim.data.size = 170, 4
 
 sc.view_layers[0].use_pass_mist = True
+sc.view_layers[0].use_pass_z = True
 sc.use_nodes = True
 ct = sc.node_tree
 for n in list(ct.nodes):
@@ -324,7 +439,15 @@ ct.links.new(rl.outputs["Image"], fogmix.inputs[1])
 fog_amt = ct.nodes.new("CompositorNodeMath")
 fog_amt.operation = "MULTIPLY"
 ct.links.new(rl.outputs["Mist"], fog_amt.inputs[0])
-ct.links.new(fog_amt.outputs[0], fogmix.inputs[0])
+is_sky = ct.nodes.new("CompositorNodeMath")       # the sky itself gets no haze (it is the haze color at the horizon)
+is_sky.operation = "LESS_THAN"
+ct.links.new(rl.outputs["Depth"], is_sky.inputs[0])
+is_sky.inputs[1].default_value = 5000.0
+fog_geo = ct.nodes.new("CompositorNodeMath")
+fog_geo.operation = "MULTIPLY"
+ct.links.new(fog_amt.outputs[0], fog_geo.inputs[0])
+ct.links.new(is_sky.outputs[0], fog_geo.inputs[1])
+ct.links.new(fog_geo.outputs[0], fogmix.inputs[0])
 ct.links.new(fogmix.outputs[0], glare.inputs[0])
 ct.links.new(glare.outputs[0], comp.inputs[0])
 
@@ -335,14 +458,13 @@ def set_look(L, set_name):
     img = hdri(h_name)
     env.image = img
     has = img is not None
-    sky_mix.inputs[1].default_value = (*fog, 1)
-    sky_visible = sky_visible and os.environ.get("BL_PHOTO_SKY") == "1"
-    sky_mix.inputs[0].default_value = 1.0 if (has and sky_visible) else 0.0
+    set_sky(L)
     amb_mix.inputs[1].default_value = (*[0.5 * (a + b) for a, b in zip(lin(L["sky"]), lin(L["ground"]))], 1)
     amb_mix.inputs[0].default_value = 1.0 if has else 0.0
     bg_amb.inputs["Strength"].default_value = 0.85 if has else 0.7
     fogmix.inputs[2].default_value = (*fog, 1)
-    fog_amt.inputs[1].default_value = 0.0 if (has and sky_visible) else 1.0  # real sky: no flat fog wall
+    fog_amt.inputs[1].default_value = 1.0
+    sun.data.color = tuple(L.get("key_col", (1.0, 1.0, 1.0)))
     sc.world.mist_settings.start = L.get("fog_near", 35)
     sc.world.mist_settings.depth = L.get("fog_far", 110) - L.get("fog_near", 35)
     sc.world.mist_settings.falloff = "QUADRATIC"
@@ -369,6 +491,8 @@ def set_camera(f):
 # ---------------------------------------------------------------- per frame
 item_objs = {}
 frame_objs = []
+acc_objs = []
+UNNORM = Matrix.Translation((0, B_BASE, 0)) @ Matrix.Scale(B_HEIGHT / 1.75, 4)   # 1.75 m figure -> the mesh's units
 
 item_objs_by_plan = {}
 for n, (plan, key) in enumerate(JOBS):
@@ -395,7 +519,11 @@ for n, (plan, key) in enumerate(JOBS):
         bpy.data.objects.remove(o)
         if me.users == 0:
             bpy.data.meshes.remove(me)
-    frame_objs = []
+    for o in acc_objs:    # last frame's hero hair, shoes...
+        bpy.data.objects.remove(o)
+    frame_objs, acc_objs = [], []
+    hero_cid = f["crowds"][-1][0] if f.get("hero") and f["crowds"] else None
+    acc = lp_hero.accessories(f["hero"]) if hero_cid is not None else []
     k = 1.75 / f["height"]
     for cid, cm in f["crowds"]:
         gm = mat4(cm)
@@ -413,6 +541,13 @@ for n, (plan, key) in enumerate(JOBS):
                 m = (gm @ Matrix.Translation((r[0], feet, r[2])) @ ry(r[3])
                      @ Matrix.Scale(1.75 / B_HEIGHT * s, 4) @ Matrix.Translation((0, -B_BASE, 0)))
                 frame_objs.append(obj("p", me, m))
+                if cid == hero_cid and acc:
+                    W = bone_mats({a[0] for a in acc})
+                    for bone, mesh, pos, size, col in acc:
+                        if bone in W:
+                            o = obj("a", MESHES[mesh], m @ W[bone] @ UNNORM @ Matrix.Translation(pos) @ Matrix.Diagonal((*size, 1)))
+                            paint(o, mat(col))
+                            acc_objs.append(o)
     (out_dir / plan["_slug"]).mkdir(parents=True, exist_ok=True)
     sc.render.filepath = str(out_dir / plan["_slug"] / f"{key}.jpg")
     bpy.ops.render.render(write_still=True)

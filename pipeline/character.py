@@ -216,6 +216,16 @@ def kit_colors(name):
 def skin_image(name):
     """The pack's palette texture for a skin name, recolored for a kit if it has one."""
     from PIL import Image
+    from . import lp_hero
+    base, cmap = lp_hero.recolor_map(name)
+    if cmap:  # 'LightSkin#skin-hair-shirt-pants' (hero looks, varied crowd clothes)
+        im = Image.open(CHAR_DIR / "skins" / f"{base}.png").convert("RGB")
+        px = im.load()
+        for y in range(im.height):
+            for x in range(im.width):
+                if px[x, y] in cmap:
+                    px[x, y] = cmap[px[x, y]]
+        return im
     base, shirt, shorts = kit_colors(name)
     im = Image.open(CHAR_DIR / "skins" / f"{base}.png").convert("RGB")
     if shirt or shorts:
