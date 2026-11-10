@@ -1,5 +1,5 @@
 {
- "at": "2026-11-10T01:52:16.423940+00:00",
+ "at": "2026-11-10T18:38:56.412227+00:00",
  "shorts": [
   {
    "video": "-4AV3y6mP2Y",
@@ -124,7 +124,7 @@
   {
    "video": "N9lyHjCmWr0",
    "title": "How Did PlayStation Make Record Profit?",
-   "views": 274,
+   "views": 273,
    "avg_pct": 82.6,
    "avg_seconds": 28,
    "tags": {
@@ -923,6 +923,28 @@
     "post_at": "2026-11-09T18:00:00-05:00",
     "post_slot": "18:00",
     "score": 92
+   }
+  },
+  {
+   "video": "v_MBJE6z344",
+   "title": "How Much Do NASA Astronauts Get Paid?",
+   "views": 0,
+   "avg_pct": 0,
+   "avg_seconds": 0,
+   "tags": {
+    "script": "046",
+    "slug": "careers-astronauts",
+    "topic": "NASA astronauts",
+    "format": "careers",
+    "visual_style": "charts3d",
+    "theme": "clean_navy",
+    "hook_style": "question",
+    "title_style": "question",
+    "length_s": 25.75,
+    "length_bucket": "<30",
+    "post_at": "2026-11-10T12:00:00-05:00",
+    "post_slot": "12:00",
+    "score": 89
    }
   }
  ]

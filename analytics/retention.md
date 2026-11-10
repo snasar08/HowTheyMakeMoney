@@ -1,4 +1,4 @@
-# Retention, 2026-11-10 01:52 UTC
+# Retention, 2026-11-10 18:38 UTC
 
 Shorts from the last 14 days, most viewed first. 'Still watching' is the share of viewers at that point of the video (over 100% at the start means replays). 'Biggest drop' is where the most viewers leave in one 5% stretch.
 
@@ -8,7 +8,7 @@ Shorts from the last 14 days, most viewed first. 'Still watching' is the share o
 | How Much of Your Chipotle Bowl Is Food? | 970 | 50.6% (11 s) | 112% | 83% | 41% | 29% | 13% | -22 pts at 4.6 s |
 | What If Nike's Best Store Isn't Nike's? | 900 | 43.1% (11 s) | 111% | 65% | 29% | 19% | 8% | -31 pts at 4.3 s |
 | Apple Services Keep 75 Cents of Every Dollar | 543 | 40.2% (10 s) | 106% | 51% | 30% | 17% | 6% | -38 pts at 5.2 s |
-| How Did PlayStation Make Record Profit? | 274 | 82.6% (28 s) | 149% | 91% | 77% | 64% | 49% | -33 pts at 5.1 s |
+| How Did PlayStation Make Record Profit? | 273 | 82.6% (28 s) | 149% | 91% | 77% | 64% | 49% | -33 pts at 5.1 s |
 | Microsoft Keeps 47 Cents of Every Dollar | 183 | 46.4% (12 s) | 108% | 65% | 39% | 24% | 8% | -28 pts at 4.1 s |
 | Robinhood Is Free. So How Did It Make $4.5B? | 77 | 61.9% (20 s) | 127% | 91% | 55% | 50% | 27% | -27 pts at 1.9 s |
 | How Much Do Airline Pilots Really Make? | 54 | 58.5% (18 s) | 113% | 80% | 57% | 37% | 13% | -17 pts at 4.0 s |
@@ -42,3 +42,4 @@ Shorts from the last 14 days, most viewed first. 'Still watching' is the share o
 | Planet Fitness Made $310 Million on Machines | 0 | 0% (0 s) | not enough views for a curve | | | | | |
 | How Much of Your Netflix Bill Is Profit? | 0 | 0% (0 s) | not enough views for a curve | | | | | |
 | From a Napkin Contract to $1.1 Billion | 0 | 0% (0 s) | not enough views for a curve | | | | | |
+| How Much Do NASA Astronauts Get Paid? | 0 | 0% (0 s) | not enough views for a curve | | | | | |
