@@ -110,5 +110,18 @@
       "title": "Wikipedia: Forbes list of the world's highest-paid athletes",
       "url": "https://en.wikipedia.org/wiki/Forbes_list_of_the_world%27s_highest-paid_athletes"
     }
-  ]
+  ],
+  "hero": {
+    "skin": "c99a6e",
+    "hair": "short",
+    "hair_color": "1a1512",
+    "beard": "goatee",
+    "beard_color": "1a1512",
+    "outfit": "kit",
+    "shirt": "1d428a",
+    "pants": "1d428a",
+    "socks": "f4f4f4",
+    "shoes": "ffc72c",
+    "height": 1.05
+  }
 }

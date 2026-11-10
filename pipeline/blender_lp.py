@@ -90,7 +90,8 @@ def mat(color, emit=False):
         m.node_tree.links.new(bev.outputs["Normal"], b.inputs["Normal"])
         if emit:
             b.inputs["Emission Color"].default_value = (*lin(color), 1)
-            b.inputs["Emission Strength"].default_value = 2.5
+            # white lamps bloom; colored screens and signs stay saturated instead of washing out to pastel
+            b.inputs["Emission Strength"].default_value = 0.9 + 1.7 * max(0.0, min(color[:3]) - 0.4) / 0.6
         _mats[k] = m
     return _mats[k]
 

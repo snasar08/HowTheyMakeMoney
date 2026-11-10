@@ -355,6 +355,12 @@ class Renderer:
                 print(f"::warning::[render] Blender frames incomplete for {slug} ({len(missing)}/{len(keys)} missing, "
                       f"e.g. {missing[:3]}; have {have}; dirs {sorted(x.name for x in Path(pd).iterdir())[:5]}); using the GL look")
         self.lp_record = bool(os.environ.get("LP_RECORD"))
+        # one hero per Short (Sam, Nov 9): the script's "hero" look rides into every low-poly scene,
+        # so the figure is the same recognisable person from the first frame to the last
+        for sc_ in script.get("scenes", []):
+            v_ = sc_.get("visual", {})
+            if v_.get("type") == "lowpoly" and script.get("hero") and "hero" not in v_:
+                v_["hero"] = script["hero"]
         hook = self.images.get("hook")
         if hook is not None:
             ghost = cover(hook, W, H).filter(ImageFilter.GaussianBlur(28))
@@ -993,7 +999,8 @@ class Renderer:
                 frame = Image.open(plate).convert("RGB").resize((W, H), Image.LANCZOS)
                 frame = frame.filter(ImageFilter.UnsharpMask(radius=2, percent=60, threshold=2))
             else:
-                frame = run3d(lowpoly.render, sc.visual, t, pb, variant, key if self.lp_record else None)
+                frame = run3d(lowpoly.render, sc.visual, t, pb, variant, key if self.lp_record else None,
+                              b, si, bool(sc.visual.get("stat")) and b % 2 == 0)
             self._lp_stat(frame, sc.visual, tb - (0.75 if si == 0 and b == 0 else 0), b, si)
             return frame, tb
         if kind == "3d":
@@ -1147,6 +1154,8 @@ class Renderer:
                 if lp:
                     if si > 0:  # camera cuts every beat; a zoom-blur marks each new scene
                         frame = fx.zoom_blur(frame, t)
+                    if tb < 0.12 and t > 0.2:  # and a small punch-in lands every cut inside a scene
+                        frame = fx.zoom(frame, 1.05 - 0.05 * ease_out(tb / 0.12))
                 elif TRANSITION_3D and three_d_ok() and gt > 0.05 and tb < 0.18:
                     # 3D swing: the new shot arrives as a card turning in from the side
                     from .gl3d import card, run3d
@@ -1161,7 +1170,8 @@ class Renderer:
                         frame = Image.blend(frame, flash, 0.22 * (1 - tb / 0.07))
                 frame = fx.grade(frame, n)
                 if lp:
-                    fx.hook(frame, self.s.get("title", ""), gt, font, BLACK)
+                    # the name banner sits at the top (famous format): the title goes under it, not behind it
+                    fx.hook(frame, self.s.get("title", ""), gt, font, BLACK, y=345 if self.s.get("name_card") else 150)
                 self._hud(frame, scenes, si, t)
                 self._name(frame, gt)
                 self._cta(frame, si, t)

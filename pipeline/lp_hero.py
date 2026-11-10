@@ -77,13 +77,13 @@ def accessories(hero):
     add = lambda bone, mesh, pos, size, col: out.append((bone, mesh, pos, size, col))   # noqa: E731
     style = s["hair"]
     if style == "quiff":                      # short, brushed up at the front
-        add("Head", "box", (0.0, 1.725, 0), (0.22, 0.055, 0.19), hair)
-        add("Head", "box", (0.07, 1.735, 0), (0.1, 0.075, 0.17), hair)
+        add("Head", "box", (0.0, 1.7, 0), (0.2, 0.055, 0.17), hair)
+        add("Head", "box", (0.075, 1.705, 0), (0.08, 0.075, 0.15), hair)
     elif style in ("long", "bangs"):          # past the shoulders
         add("Head", "box", (-0.135, 1.3, 0), (0.07, 0.46, 0.25), hair)
         for z in (-0.122, 0.122):
             add("Head", "box", (-0.03, 1.36, z), (0.17, 0.34, 0.035), hair)
-        add("Head", "box", (-0.01, 1.735, 0), (0.25, 0.035, 0.24), hair)
+        add("Head", "box", (-0.01, 1.7, 0), (0.25, 0.06, 0.235), hair)
         if style == "bangs":
             add("Head", "box", (0.115, 1.665, 0), (0.035, 0.075, 0.21), hair)
     elif style == "ponytail":
@@ -100,35 +100,36 @@ def accessories(hero):
     bc = c(s.get("beard_color"), tuple(int(v * 255) for v in hair))
     if beard == "stubble":
         bc = tuple(a * 0.62 + b * 0.38 for a, b in zip(skin, bc))
-    if beard in ("full", "stubble"):
-        add("Head", "box", (0.092, 1.455, 0), (0.05, 0.105, 0.2), bc)
-        for z in (-0.108, 0.108):
-            add("Head", "box", (0.02, 1.47, z), (0.14, 0.115, 0.028), bc)
-        add("Head", "box", (0.118, 1.537, 0), (0.016, 0.02, 0.1), bc)
+    if beard in ("full", "stubble"):          # along the jaw and chin, mouth left clear
+        add("Head", "box", (0.094, 1.437, 0), (0.062, 0.058, 0.15), bc)
+        for z in (-0.086, 0.086):
+            add("Head", "box", (0.04, 1.44, z), (0.125, 0.078, 0.022), bc)
+            add("Head", "box", (0.0, 1.5, z * 1.2), (0.05, 0.09, 0.018), bc)
+        add("Head", "box", (0.127, 1.512, 0), (0.012, 0.016, 0.075), bc)
     elif beard == "goatee":
-        add("Head", "box", (0.105, 1.455, 0), (0.04, 0.075, 0.085), bc)
-        add("Head", "box", (0.118, 1.537, 0), (0.016, 0.02, 0.09), bc)
+        add("Head", "box", (0.105, 1.437, 0), (0.04, 0.058, 0.07), bc)
+        add("Head", "box", (0.127, 1.512, 0), (0.012, 0.016, 0.075), bc)
     elif beard == "mustache":
-        add("Head", "box", (0.118, 1.535, 0), (0.018, 0.024, 0.1), bc)
+        add("Head", "box", (0.127, 1.512, 0), (0.014, 0.018, 0.085), bc)
     ex, ec = s.get("extras") or [], c(s.get("extra_color"), (30, 30, 34))
     if "glasses" in ex:
         for z in (-0.047, 0.047):
             add("Head", "box", (0.128, 1.595, z), (0.012, 0.045, 0.07), ec)
         add("Head", "box", (0.128, 1.612, 0), (0.01, 0.012, 0.03), ec)
     if "cap" in ex:
-        add("Head", "cyl", (-0.01, 1.69, 0), (0.135, 0.075, 0.125), ec)
-        add("Head", "box", (0.16, 1.69, 0), (0.13, 0.016, 0.17), ec)
+        add("Head", "sphere", (-0.008, 1.668, 0), (0.148, 0.098, 0.127), ec)
+        add("Head", "box", (0.19, 1.66, 0), (0.13, 0.016, 0.17), ec)
     if "headband" in ex:
-        add("Head", "cyl", (-0.01, 1.655, 0), (0.137, 0.035, 0.122), ec)
+        add("Head", "cyl", (-0.008, 1.648, 0), (0.142, 0.036, 0.122), ec)
     shoes = c(s.get("shoes"), (244, 244, 244))
     for side, z in (("Left", -0.115), ("Right", 0.115)):
-        add(side + "Foot", "box", (0.055, -0.012, z), (0.31, 0.09, 0.128), shoes)
+        add(side + "Foot", "box", (0.056, -0.008, z * 0.99), (0.29, 0.078, 0.12), shoes)
     outfit, shirt, pants = s["outfit"], c(s.get("shirt"), SHIRT), c(s.get("pants"), PANTS)
     if outfit in ("kit", "dress"):
         sock = c(s.get("socks"), (245, 245, 245))
         for side, z in (("Left", -0.1), ("Right", 0.1)):
             if s.get("socks") != "none":
-                add(side + "Leg", "cyl", (-0.012, 0.05, z), (0.064, 0.2 if outfit == "kit" else 0.34, 0.064), sock)
+                add(side + "Leg", "cyl", (-0.018, 0.05, z * 1.08), (0.062, 0.2 if outfit == "kit" else 0.34, 0.064), sock)
     if outfit == "kit":                       # shorts over bare legs
         for side, z in (("Left", -0.088), ("Right", 0.088)):
             add(side + "UpLeg", "cyl", (-0.015, 0.5, z), (0.108, 0.34, 0.1), pants)

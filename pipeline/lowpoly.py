@@ -393,9 +393,11 @@ def build_set(sc, name, rng, fans=True):
     elif name == "stage":                          # arena show: platform, video wall, truss lights, speakers
         _box(sc, (0, 0, -3.5), (20, 1.0, 12), (0.2, 0.18, 0.26))
         _glow(sc, (0, 0.72, 2.52), (20, 0.14, 0.04), (0.95, 0.3, 0.85))
-        for i, x in enumerate(np.arange(-8.75, 9, 2.5)):                                  # video wall: plain color panels
-            for j in range(3):
-                _glow(sc, (x, 1.3 + j * 2.5, -9.2), (2.38, 2.38, 0.1), tuple(0.9 * c for c in PALETTE[(i + j * 2) % 7]))
+        _box(sc, (0, 1.0, -9.4), (19.6, 8.4, 0.3), (0.05, 0.04, 0.1), shadow=False)       # video wall: plain glowing tiles
+        for i, x in enumerate(np.arange(-8.8, 9, 1.6)):
+            for j in range(5):
+                k = (math.sin(i * 0.9 + j * 1.7) + 1) / 2
+                _glow(sc, (x, 1.3 + j * 1.6, -9.2), (1.5, 1.5, 0.1), (0.35 + 0.5 * k, 0.12 + 0.1 * k, 0.75 - 0.25 * k))
         for x in (-10.4, 10.4):
             _box(sc, (x, 1, -8.6), (0.5, 9.5, 0.5), (0.3, 0.3, 0.35), shadow=False)
             for y in np.arange(1.0, 6.5, 1.3):
@@ -493,9 +495,16 @@ def add_props(sc, props, t, rng, y0=0.0):
             for dx in (-0.6, 0.6):
                 _cyl(sc, (dx, 1.6 + 0.1 * math.sin(t * 2), -4), 0.3, 0.6, (0.12, 0.12, 0.14))
         elif name == "trophy":
-            _cyl(sc, (2, 0, -3), 0.5, 0.3, (0.4, 0.3, 0.2))
-            _cyl(sc, (2, 0.3, -3), 0.25, 1.0, (0.95, 0.75, 0.2))
-            _cyl(sc, (2, 1.3, -3), 0.7, 0.8, (0.95, 0.75, 0.2))
+            gold = (0.98, 0.78, 0.2)
+            _box(sc, (2, 0, -2.6), (0.7, 0.14, 0.7), (0.25, 0.2, 0.18))
+            _cyl(sc, (2, 0.14, -2.6), 0.2, 0.1, gold, shadow=False)
+            _cyl(sc, (2, 0.24, -2.6), 0.07, 0.42, gold, shadow=False)
+            sc.add(Engine.get().meshes["sphere"], trs((2, 0.98, -2.6), (0.36, 0.42, 0.36)), gold, spec=0.5, gloss=30)
+            _cyl(sc, (2, 1.0, -2.6), 0.37, 0.34, gold, shadow=False)
+            for dx in (-0.46, 0.46):
+                _box(sc, (2 + dx, 0.92, -2.6), (0.07, 0.34, 0.07), gold, shadow=False)
+                _box(sc, (2 + dx * 0.9, 1.22, -2.6), (0.16, 0.06, 0.07), gold, shadow=False)
+                _box(sc, (2 + dx * 0.9, 0.9, -2.6), (0.16, 0.06, 0.07), gold, shadow=False)
 
 
 # ----------------------------------------------------------------- characters
@@ -672,18 +681,18 @@ def _camera(shot, p, hz, hy, lift):
     elif shot == "low":
         eye, tgt, fov = (1.5 - 1.1 * p, 0.3, hz + 3.3), (0, 1.45 + lift * 0.5, hz), 52
     elif shot == "close":
-        eye, tgt, fov = (0.75 - 0.35 * p, 1.62, hz + 1.75 - 0.2 * p), (0, 1.55, hz), 38
+        eye, tgt, fov = (0.75 - 0.35 * p, 1.6, hz + 2.15 - 0.25 * p), (0, 1.5, hz), 38
     elif shot == "orbit":
         a = -0.85 + 1.1 * p
         eye, tgt, fov = (math.sin(a) * 4.6, 1.55 + 0.3 * p, hz + math.cos(a) * 4.6), (0, 1.15 + lift, hz), 44
     elif shot == "side":
         eye, tgt, fov = (5.2 - 0.8 * p, 1.25, hz + 1.2), (0, 1.1 + lift, hz + 0.3), 42
     elif shot == "wide":
-        eye, tgt, fov = (6 - 5 * p, 4.2, hz + 12.5), (0, 1.4 + lift, hz - 5), 48
+        eye, tgt, fov = (4.6 - 3.6 * p, 2.9, hz + 8.6 - 0.8 * p), (0, 1.3 + lift, hz - 3), 46
     elif shot == "back":
-        eye, tgt, fov = (1.6 - 1.0 * p, 2.5 + 0.4 * p, hz - 3.6), (0, 1.1, hz + 9), 50
+        eye, tgt, fov = (1.3 - 0.9 * p, 2.7 + 0.3 * p, hz - 4.8), (0, 1.5, hz + 8), 48
     else:  # crane
-        eye, tgt, fov = (3.5 - 2 * p, 8.5 - 5 * p, hz + 9.5 - 2 * p), (0, 1.0 + lift, hz - 1), 46
+        eye, tgt, fov = (3.0 - 2 * p, 6.2 - 3.8 * p, hz + 7.4 - 1.8 * p), (0, 1.0 + lift, hz - 1), 46
     return (eye[0], eye[1] + hy, eye[2]), (tgt[0], tgt[1] + hy, tgt[2]), fov
 
 
@@ -826,7 +835,7 @@ def render(v, t, p, variant, rec=None, beat=None, si=0, stat=False):
         sc.add(Engine.get().meshes["sphere"], trs((0.45, hy + 0.12 + abs(math.sin(t * 5)) * 0.4, dz + 0.35), (0.12, 0.12, 0.12)),
                (0.95, 0.95, 0.95) if set_name == "pitch" else (0.95, 0.5, 0.15), spec=0.2, gloss=20)
     if act == "carry":
-        _box(sc, (0, 1.05, dz + 0.45), (0.6, 0.45, 0.45), (0.8, 0.6, 0.38), shadow=False)
+        _box(sc, (0, 0.82, dz + 0.42), (0.55, 0.38, 0.4), (0.8, 0.6, 0.38), shadow=False)   # at the waist: the face stays clear
     if rec is not None:
         _record(rec, sc, placed, t, set_name, (set_name, fans), len(st.items), hero)
     _hero_extras(sc, ch, hero, t, m)

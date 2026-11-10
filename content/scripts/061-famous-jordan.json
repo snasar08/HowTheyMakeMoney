@@ -109,5 +109,17 @@
       "title": "Wikipedia: Michael Jordan",
       "url": "https://en.wikipedia.org/wiki/Michael_Jordan"
     }
-  ]
+  ],
+  "hero": {
+    "skin": "7a4e34",
+    "hair": "bald",
+    "beard": "goatee",
+    "beard_color": "1a1512",
+    "outfit": "kit",
+    "shirt": "ce1141",
+    "pants": "ce1141",
+    "socks": "f4f4f4",
+    "shoes": "1a1a1a",
+    "height": 1.1
+  }
 }

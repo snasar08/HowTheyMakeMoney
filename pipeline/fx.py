@@ -80,7 +80,7 @@ def burst(frame: Image.Image, cx: float, cy: float, t: float, seed: int = 0, dur
 
 
 # ---- hook title
-def hook(frame: Image.Image, title: str, gt: float, font_fn, black: str, dur: float = 0.75):
+def hook(frame: Image.Image, title: str, gt: float, font_fn, black: str, dur: float = 0.75, y: int = 150):
     if not ON or not title or gt >= dur:
         return
     txt = title.upper()
@@ -113,7 +113,7 @@ def hook(frame: Image.Image, title: str, gt: float, font_fn, black: str, dur: fl
                                                           (nw - W) // 2 + W, (nh - 560) // 2 + 560))
     if alpha < 1:
         lay.putalpha(lay.getchannel("A").point(lambda a: int(a * alpha)))
-    frame.paste(lay, (0, 150), lay)
+    frame.paste(lay, (0, y), lay)
 
 
 # ---- loop seam

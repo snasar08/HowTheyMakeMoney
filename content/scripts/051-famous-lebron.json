@@ -103,5 +103,22 @@
       "title": "Wikipedia: LeBron James",
       "url": "https://en.wikipedia.org/wiki/LeBron_James"
     }
-  ]
+  ],
+  "hero": {
+    "skin": "8a5a3c",
+    "hair": "buzz",
+    "hair_color": "141210",
+    "beard": "full",
+    "beard_color": "141210",
+    "outfit": "kit",
+    "shirt": "fdb927",
+    "pants": "552583",
+    "socks": "f4f4f4",
+    "shoes": "552583",
+    "extras": [
+      "headband"
+    ],
+    "extra_color": "f4f4f4",
+    "height": 1.12
+  }
 }

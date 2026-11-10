@@ -119,5 +119,16 @@
     "buffer_status": "scheduled",
     "rendered_at": "2026-11-10T00:46:03.014790+00:00",
     "seconds": 27.61
+  },
+  "hero": {
+    "skin": "light",
+    "hair": "bangs",
+    "hair_color": "e3c069",
+    "beard": "none",
+    "outfit": "dress",
+    "shirt": "b04cc0",
+    "socks": "f2f2f2",
+    "shoes": "f2f2f2",
+    "height": 1.0
   }
 }
