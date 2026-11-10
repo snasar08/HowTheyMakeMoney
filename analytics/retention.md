@@ -1,4 +1,4 @@
-# Retention, 2026-11-10 01:08 UTC
+# Retention, 2026-11-10 01:52 UTC
 
 Shorts from the last 14 days, most viewed first. 'Still watching' is the share of viewers at that point of the video (over 100% at the start means replays). 'Biggest drop' is where the most viewers leave in one 5% stretch.
 
@@ -41,3 +41,4 @@ Shorts from the last 14 days, most viewed first. 'Still watching' is the share o
 | MrBeast Spends About $1M Per Video | 0 | 0% (0 s) | not enough views for a curve | | | | | |
 | Planet Fitness Made $310 Million on Machines | 0 | 0% (0 s) | not enough views for a curve | | | | | |
 | How Much of Your Netflix Bill Is Profit? | 0 | 0% (0 s) | not enough views for a curve | | | | | |
+| From a Napkin Contract to $1.1 Billion | 0 | 0% (0 s) | not enough views for a curve | | | | | |

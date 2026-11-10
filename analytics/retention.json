@@ -1,5 +1,5 @@
 {
- "at": "2026-11-10T01:08:23.050059+00:00",
+ "at": "2026-11-10T01:52:16.423940+00:00",
  "shorts": [
   {
    "video": "-4AV3y6mP2Y",
@@ -901,6 +901,28 @@
     "post_at": "2026-11-08T15:00:00-05:00",
     "post_slot": "15:00",
     "score": 88
+   }
+  },
+  {
+   "video": "aGOO0z7dfpk",
+   "title": "From a Napkin Contract to $1.1 Billion",
+   "views": 0,
+   "avg_pct": 0,
+   "avg_seconds": 0,
+   "tags": {
+    "script": "070",
+    "slug": "famous-messi",
+    "topic": "Lionel Messi",
+    "format": "famous",
+    "visual_style": "lowpoly",
+    "theme": "bold_bright",
+    "hook_style": "surprise",
+    "title_style": "statement",
+    "length_s": 29.63,
+    "length_bucket": "<30",
+    "post_at": "2026-11-09T18:00:00-05:00",
+    "post_slot": "18:00",
+    "score": 92
    }
   }
  ]
