@@ -143,3 +143,19 @@ def accessories(hero):
         add("Spine2", "box", (-0.155, 1.33, 0), (0.07, 0.17, 0.26), shirt)
         add("Spine2", "box", (0.1, 1.0, 0), (0.02, 0.1, 0.2), tuple(v * 0.85 for v in shirt))
     return out
+
+
+def auto(slug):
+    """A stable everyman look for a Short with no named hero (what-if format): the same figure all
+    Short long, a different one from Short to Short, always in a bright top that stands out of a crowd."""
+    import zlib
+    h = zlib.crc32((slug or "").encode())
+    shirts = ("e63946", "f4a261", "2a9d8f", "ffca3a", "8e5bd0", "ff6b9d", "3a86ff")
+    hairs = (("short", "3a2a1c"), ("quiff", "1c1612"), ("curly", "2a1a10"), ("ponytail", "5a3a20"),
+             ("short", "c9a45a"), ("buzz", "141210"), ("bun", "3a2a1c"))
+    hair, hair_color = hairs[(h >> 3) % len(hairs)]
+    return dict(skin=("light", "tan", "brown", "dark")[(h >> 7) % 4], hair=hair, hair_color=hair_color,
+                beard="stubble" if (h >> 11) % 5 == 0 and hair not in ("ponytail", "bun") else "none",
+                outfit="hoodie" if (h >> 13) % 3 == 0 else "tee", shirt=shirts[h % len(shirts)],
+                pants=("263247", "3a3a3a", "2c4a3a")[(h >> 17) % 3], shoes="f4f4f4")
+

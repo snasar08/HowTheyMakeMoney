@@ -141,6 +141,8 @@ class Character:
         if clip and clip in self.clips:
             chans, dur = self.clips[clip]
             tt = t % dur if dur > 0 else 0.0
+            if "death" in clip:  # a fall plays once and stays down (it used to pop back up and fall again)
+                tt = min(max(t, 0.0), dur - 1 / 30)
             for node, path, times, vals in chans:
                 k = int(np.clip(np.searchsorted(times, tt) - 1, 0, len(times) - 1))
                 k2 = min(k + 1, len(times) - 1)

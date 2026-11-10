@@ -41,10 +41,10 @@ _NIGHT = dict(top=(0.02, 0.03, 0.12), mid=(0.07, 0.09, 0.3), fog=(0.2, 0.19, 0.4
 _HALL = dict(sun=(0, -1, 0), sun_size=0.0, stars=0.0, clouds=0.0, cloud_col=(1, 1, 1), sun_col=(1, 1, 1))
 SETS = {
     "field": dict(_DAY, floor=(0.36, 0.64, 0.3)),
-    "store": dict(_HALL, top=(0.8, 0.82, 0.86), mid=(0.9, 0.91, 0.94), fog=(0.95, 0.95, 0.97), floor=(0.82, 0.82, 0.85)),
-    "warehouse": dict(_HALL, top=(0.42, 0.45, 0.5), mid=(0.62, 0.65, 0.7), fog=(0.78, 0.8, 0.84), floor=(0.62, 0.62, 0.64)),
+    "store": dict(_HALL, top=(0.5, 0.56, 0.68), mid=(0.62, 0.68, 0.8), fog=(0.72, 0.77, 0.86), floor=(0.56, 0.58, 0.64)),
+    "warehouse": dict(_HALL, top=(0.3, 0.33, 0.4), mid=(0.45, 0.48, 0.56), fog=(0.6, 0.63, 0.7), floor=(0.5, 0.5, 0.53)),
     "city": dict(_DUSK, floor=(0.42, 0.44, 0.48)),
-    "office": dict(_HALL, top=(0.72, 0.78, 0.88), mid=(0.84, 0.88, 0.95), fog=(0.9, 0.93, 0.98), floor=(0.7, 0.62, 0.52)),
+    "office": dict(_HALL, top=(0.5, 0.58, 0.74), mid=(0.62, 0.7, 0.84), fog=(0.72, 0.79, 0.9), floor=(0.56, 0.44, 0.33)),
     "stage": dict(_HALL, top=(0.02, 0.02, 0.06), mid=(0.08, 0.05, 0.18), fog=(0.16, 0.1, 0.3), floor=(0.18, 0.16, 0.24)),
     # famous-people worlds (Nov 1): the setting hints who it is; the hero's look does the rest (lp_hero)
     "court": dict(_HALL, top=(0.03, 0.03, 0.06), mid=(0.08, 0.08, 0.14), fog=(0.17, 0.17, 0.26), floor=(0.78, 0.55, 0.32)),
@@ -70,8 +70,9 @@ def look(set_name):
     night = set_name in ("pitch", "stage", "court", "studio", "gaming")
     L = dict(st, grid=0.0, sky=(0.8, 0.84, 1.0) if night else (1.0, 1.0, 1.0), ground=(0.45, 0.42, 0.4),
              rim=(0.25, 0.25, 0.25), key_dir=(-0.45, -1.0, -0.5), fog_near=45, fog_far=150, floor_radius=120)
-    if set_name in INDOOR:
-        L.update(fog_near=55, fog_far=170)
+    if set_name in INDOOR:   # key_e / amb_e: Blender sun and ambient strength (bright rooms washed out to white)
+        bright = set_name in ("store", "warehouse", "office")
+        L.update(fog_near=55, fog_far=170, key_e=0.5 if bright else 0.85, amb_e=0.6 if bright else 1.0)
     return L
 
 
@@ -204,12 +205,12 @@ def build_set(sc, name, rng, fans=True):
             for z in np.arange(-60, 30, 4.5):
                 if abs(z + 1) < 4 and abs(x) < 10 and store:
                     continue
-                _box(sc, (x, 0, z), (1.6, 3.6 if store else 6.4, 4.2), (0.85, 0.85, 0.88) if store else (0.92, 0.45, 0.12))
+                _box(sc, (x, 0, z), (1.6, 3.6 if store else 6.4, 4.2), (0.5, 0.53, 0.6) if store else (0.86, 0.42, 0.12))
                 for lv in range(3 if store else 4):
                     for dz in (-1.35, 0, 1.35):
                         _box(sc, (x, 0.35 + lv * (1.1 if store else 1.5), z + dz), (1.75, 0.72 if store else 1.0, 1.1),
                              PALETTE[int(rng.integers(8))] if store else (0.8, 0.62, 0.4), shadow=False)
-        _hall(sc, 21, -66, 36, (0.93, 0.93, 0.95) if store else (0.72, 0.74, 0.78), h=8.0 if store else 11.0)
+        _hall(sc, 21, -66, 36, (0.6, 0.66, 0.78) if store else (0.52, 0.55, 0.62), h=8.0 if store else 11.0)
         if store:
             for i, x in enumerate(np.arange(-17, 18, 5.6)):                    # plain color banners, back wall
                 _glow(sc, (x, 4.6, -65.7), (4.6, 2.2, 0.1), PALETTE[i % 7])
@@ -218,7 +219,7 @@ def build_set(sc, name, rng, fans=True):
                 _glow(sc, (x + 0.9, 1.0, -1.6), (0.5, 0.42, 0.08), (0.4, 0.9, 0.6))
             for i, z in enumerate(np.arange(-60, 30, 2.0)):                    # checker floor tiles
                 if i % 2:
-                    _box(sc, (0, 0.003, z), (15.5, 0.006, 2.0), (0.76, 0.78, 0.84), shadow=False)
+                    _box(sc, (0, 0.003, z), (15.5, 0.006, 2.0), (0.47, 0.5, 0.57), shadow=False)
         else:
             for x in (-12.5, -4.0, 4.0, 12.5):                                 # lane lines + pallets
                 _lines(sc, [(x - 1.6, -15, 0.18, 96), (x + 1.6, -15, 0.18, 96)], (0.98, 0.8, 0.15))
@@ -267,12 +268,12 @@ def build_set(sc, name, rng, fans=True):
             for z in np.arange(-24, 22, 4):
                 if abs(x) < 3 and -1.5 < z < 6:
                     continue
-                _box(sc, (x, 0, z), (2.4, 0.9, 1.2), (0.85, 0.75, 0.6))
+                _box(sc, (x, 0, z), (2.4, 0.9, 1.2), (0.7, 0.56, 0.4))
                 _box(sc, (x, 0.9, z - 0.3), (0.9, 0.6, 0.06), (0.15, 0.18, 0.22), shadow=False)
                 _glow(sc, (x, 0.95, z - 0.26), (0.8, 0.5, 0.02), (0.55, 0.78, 1.0))
                 _box(sc, (x, 0, z + 1.75), (0.55, 0.5, 0.55), (0.2, 0.22, 0.28), shadow=False)
                 _box(sc, (x, 0.5, z + 2.0), (0.55, 0.6, 0.08), (0.2, 0.22, 0.28), shadow=False)
-        _hall(sc, 11, -28, 26, (0.93, 0.92, 0.9), h=6.0)
+        _hall(sc, 11, -28, 26, (0.62, 0.66, 0.76), h=6.0)
         for side in (-1, 1):
             for z in np.arange(-25, 24, 4.0):      # windows: glowing sky panes with frames
                 _glow(sc, (side * 10.75, 1.4, z), (0.06, 3.2, 3.3), (0.62, 0.8, 1.0))
@@ -284,7 +285,7 @@ def build_set(sc, name, rng, fans=True):
             _sph(sc, (x, 1.25, z), (0.55, 0.8, 0.55), (0.25, 0.6, 0.32))
         for i, z in enumerate(np.arange(-26, 24, 4)):
             if i % 2:
-                _box(sc, (0, 0.003, z), (21, 0.006, 4), (0.64, 0.57, 0.48), shadow=False)
+                _box(sc, (0, 0.003, z), (21, 0.006, 4), (0.5, 0.39, 0.29), shadow=False)
     elif name == "court":                          # indoor arena: full court, hoops, seats all round, lights
         _lines(sc, [(0, 0, 16.2, 0.14), (0, -22, 16.2, 0.14), (0, 22, 16.2, 0.14), (-8.1, 0, 0.14, 44), (8.1, 0, 0.14, 44)])
         _cyl(sc, (0, 0.002, 0), 1.9, 0.008, (0.97, 0.97, 0.97), shadow=False)
@@ -601,6 +602,8 @@ def _crowd(key, v, ch):
         n = int(v.get("crowd", 0))
         act = v.get("action", "run")
         clip = ch.find_clip(CLIP.get(act, "idle"))
+        if act == "work" and v.get("set") in ("office", "gaming", "studio", "store"):
+            clip = ch.find_clip("idle")   # the pack's work clip kneels and hammers: wrong at a desk
         # the pack's clothed textures and recolors: skin tones, hair, shirts and pants
         skins = list(CROWD_SKINS)
         rng.shuffle(skins)
@@ -812,7 +815,10 @@ def render(v, t, p, variant, rec=None, beat=None, si=0, stat=False):
     shot = v.get("shot") or pick_shot(v, si, variant if beat is None else beat, stat)
     dz = t * (3.2 if act == "run" else 1.4 if act in ("push", "carry") else 0.0)
     hy = HERO_Y.get(set_name, 0.0) if dz == 0.0 else 0.0
-    eye, tgt, fov = _camera(shot, p, dz, hy, 0.35 if stat else 0.0)
+    lift = 0.35 if stat else 0.0
+    if act == "fall":   # follow the hero down instead of filming the air above them
+        lift -= 0.8 * _ease(min(1.0, max(0.0, t - 0.3) / 0.9))
+    eye, tgt, fov = _camera(shot, p, dz, hy, lift)
     # slight handheld sway so held shots never look frozen
     eye = (eye[0] + 0.06 * math.sin(t * 1.7), eye[1] + 0.04 * math.sin(t * 2.3 + 1), eye[2])
     sc = Scene(look(set_name), eye, tgt, fov=fov, aperture=0.0)

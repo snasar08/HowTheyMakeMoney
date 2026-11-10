@@ -259,7 +259,7 @@ for o in (arm, body):
 to_lp = Matrix.Rotation(math.radians(-90), 4, "X")  # Blender Z-up -> pipeline Y-up
 # BL_SMOOTH="<degrees>[s<levels>]": edges flatter than <degrees> are shaded smooth; s1/s2 also
 # subdivides the people (rounded, toy-like forms instead of facets). "0" = the old faceted look.
-_sm = os.environ.get("BL_SMOOTH", "0").split("s")
+_sm = os.environ.get("BL_SMOOTH", "180s1").split("s")   # Nov 10: smooth, rounded people are the default
 SMOOTH, SUBSURF = float(_sm[0] or 0), int(_sm[1]) if len(_sm) > 1 else 0
 if SMOOTH or SUBSURF:
     import bmesh
@@ -288,7 +288,8 @@ def bake(clip, t):
     a = action(clip)
     if a is not None:
         f0, f1 = a.frame_range
-        arm.pose.apply_pose_from_action(a, evaluation_time=f0 + (t * FPS) % max(f1 - f0, 1))
+        ft = min(max(t, 0.0) * FPS, f1 - f0 - 1) if "death" in a.name.lower() else (t * FPS) % max(f1 - f0, 1)
+        arm.pose.apply_pose_from_action(a, evaluation_time=f0 + ft)   # a fall plays once and stays down
     bpy.context.view_layer.update()
     dg = bpy.context.evaluated_depsgraph_get()
     me = bpy.data.meshes.new_from_object(body.evaluated_get(dg))
@@ -495,7 +496,8 @@ def set_look(L, set_name):
     set_sky(L)
     amb_mix.inputs[1].default_value = (*[0.5 * (a + b) for a, b in zip(lin(L["sky"]), lin(L["ground"]))], 1)
     amb_mix.inputs[0].default_value = 1.0 if has else 0.0
-    bg_amb.inputs["Strength"].default_value = 0.85 if has else 0.7
+    bg_amb.inputs["Strength"].default_value = (0.85 if has else 0.7) * L.get("amb_e", 1.0)
+    sun.data.energy = 3.2 * L.get("key_e", 1.0)
     fogmix.inputs[2].default_value = (*fog, 1)
     fog_amt.inputs[1].default_value = 1.0
     sun.data.color = tuple(L.get("key_col", (1.0, 1.0, 1.0)))

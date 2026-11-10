@@ -17,7 +17,8 @@ from .gl3d import run3d
 
 
 def frames(script, beats=3, rec=False):
-    hero = script.get("hero")
+    from . import lp_hero
+    hero = script.get("hero") or lp_hero.auto(script.get("slug", ""))
     out = []
     for si, sc in enumerate(script["scenes"]):
         v = sc["visual"]

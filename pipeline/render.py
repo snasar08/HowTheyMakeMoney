@@ -357,10 +357,14 @@ class Renderer:
         self.lp_record = bool(os.environ.get("LP_RECORD"))
         # one hero per Short (Sam, Nov 9): the script's "hero" look rides into every low-poly scene,
         # so the figure is the same recognisable person from the first frame to the last
+        hero_ = script.get("hero")
+        if not hero_ and script.get("visual_style") == "lowpoly":
+            from . import lp_hero
+            hero_ = lp_hero.auto(script.get("slug", ""))   # what-if Shorts: a stable everyman, new per Short
         for sc_ in script.get("scenes", []):
             v_ = sc_.get("visual", {})
-            if v_.get("type") == "lowpoly" and script.get("hero") and "hero" not in v_:
-                v_["hero"] = script["hero"]
+            if v_.get("type") == "lowpoly" and hero_ and "hero" not in v_ and "kit" not in v_:
+                v_["hero"] = hero_
         hook = self.images.get("hook")
         if hook is not None:
             ghost = cover(hook, W, H).filter(ImageFilter.GaussianBlur(28))
