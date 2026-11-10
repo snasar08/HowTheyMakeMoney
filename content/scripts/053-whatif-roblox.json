@@ -34,13 +34,13 @@
         "props": [
           "headset"
         ],
-        "stat": "1 PLAYER",
-        "stat_sub": "every hour played",
+        "stat": "34 BILLION",
+        "stat_sub": "hours. one player?",
         "hud": "0 HOURS"
       }
     },
     {
-      "narration": "Just three months this year. Nearly 34 billion hours.",
+      "narration": "Nearly 34 billion hours. In just three months this year.",
       "visual": {
         "type": "lowpoly",
         "set": "city",
@@ -49,8 +49,8 @@
         "props": [
           "phone"
         ],
-        "stat": "34 BILLION",
-        "stat_sub": "hours, Q3 2026",
+        "stat": "3 MONTHS",
+        "stat_sub": "of play, Q3 2026",
         "hud": "34B HOURS"
       }
     },

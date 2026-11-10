@@ -45,12 +45,12 @@
       "visual": {
         "type": "image",
         "image": "hook",
-        "overlay": "CLOSED SUNDAYS",
-        "overlay_sub": "still #1?"
+        "overlay": "$7.5 MILLION",
+        "overlay_sub": "per store. closed sundays?"
       }
     },
     {
-      "narration": "Each restaurant still averaged 7.5 million dollars in 2024.",
+      "narration": "7.5 million dollars. That's what each restaurant averaged in 2024.",
       "visual": {
         "type": "stat",
         "value": 7.5,

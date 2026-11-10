@@ -33,12 +33,12 @@
         "props": [
           "car"
         ],
-        "stat": "1 DRIVER",
-        "stat_sub": "every trip, one day"
+        "stat": "4.1 BILLION",
+        "stat_sub": "trips. one driver?"
       }
     },
     {
-      "narration": "Sounds tough. Uber did 4.1 billion rides and deliveries last quarter.",
+      "narration": "Sounds tough? Uber did 4.1 billion rides and deliveries last quarter.",
       "visual": {
         "type": "lowpoly",
         "set": "city",
@@ -48,8 +48,8 @@
           "car",
           "phone"
         ],
-        "stat": "4.1 BILLION",
-        "stat_sub": "trips, Q3 2026",
+        "stat": "LAST QUARTER",
+        "stat_sub": "rides + deliveries, Q3 2026",
         "hud": "4.1B"
       }
     },

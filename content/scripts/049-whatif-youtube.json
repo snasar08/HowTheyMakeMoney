@@ -35,13 +35,13 @@
           "phone",
           "headset"
         ],
-        "stat": "1 MINUTE",
-        "stat_sub": "of uploads?",
+        "stat": "500 HOURS",
+        "stat_sub": "uploaded every minute",
         "hud": "1 MINUTE"
       }
     },
     {
-      "narration": "But in 2019, YouTube said over 500 hours went up every minute.",
+      "narration": "Over 500 hours went up every minute, YouTube said in 2019.",
       "visual": {
         "type": "lowpoly",
         "set": "city",
@@ -50,8 +50,8 @@
         "props": [
           "phone"
         ],
-        "stat": "500 HOURS",
-        "stat_sub": "uploaded per minute, 2019",
+        "stat": "EVERY MINUTE",
+        "stat_sub": "YouTube, 2019",
         "hud": "500 HOURS"
       }
     },

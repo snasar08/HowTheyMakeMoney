@@ -35,12 +35,12 @@
         "props": [
           "ball"
         ],
-        "stat": "STILL GROWING?",
-        "stat_sub": "long after his last game"
+        "stat": "$4.7 BILLION",
+        "stat_sub": "retired. still growing?"
       }
     },
     {
-      "narration": "Back in his rookie year, Nike paid 2.5 million dollars. For six years.",
+      "narration": "His rookie Nike deal? Just 2.5 million dollars. For six years.",
       "visual": {
         "type": "lowpoly",
         "set": "court",

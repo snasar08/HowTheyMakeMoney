@@ -33,12 +33,12 @@
         "props": [
           "headset"
         ],
-        "stat": "EVERY COPY?",
-        "stat_sub": "sold by you"
+        "stat": "400 MILLION",
+        "stat_sub": "copies. sold by you?"
       }
     },
     {
-      "narration": "But it's the best-selling game ever. Over 400 million copies.",
+      "narration": "But it's over 400 million copies. The best-selling game ever.",
       "visual": {
         "type": "lowpoly",
         "set": "store",
@@ -47,8 +47,8 @@
         "props": [
           "boxes"
         ],
-        "stat": "400 MILLION",
-        "stat_sub": "copies sold",
+        "stat": "#1 EVER",
+        "stat_sub": "best-selling game",
         "hud": "400M"
       }
     },
