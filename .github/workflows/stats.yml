@@ -32,11 +32,15 @@ jobs:
       - name: Collect + analyze
         env:
           YT_API_KEY: ${{ secrets.YT_API_KEY }}
+          YTA_CLIENT_ID: ${{ secrets.YTA_CLIENT_ID }}
+          YTA_CLIENT_SECRET: ${{ secrets.YTA_CLIENT_SECRET }}
+          YTA_REFRESH_TOKEN: ${{ secrets.YTA_REFRESH_TOKEN }}
         run: |
           pip install -q pillow numpy
           python -m pipeline.stats
           python -m pipeline.insights
           python -m pipeline.health
+          python -m pipeline.retention
       - name: Commit to main
         run: |
           git config user.name "shorts-bot"

@@ -10,7 +10,7 @@ Retention is only in the YouTube Analytics API, which needs the channel owner's 
    (git ignores client_secret*.json).
 4. Run:  python -m pipeline.analytics_auth client_secret.json
    A browser opens: pick the channel's account and allow "View YouTube Analytics reports".
-5. Save the three printed values as GitHub repo secrets (Settings -> Secrets and variables -> Actions):
+5. Save the three values from client_secret_values.json as GitHub repo secrets (Settings -> Secrets and variables -> Actions):
    YTA_CLIENT_ID, YTA_CLIENT_SECRET, YTA_REFRESH_TOKEN
 """
 import json
@@ -24,10 +24,12 @@ SCOPES = ["https://www.googleapis.com/auth/yt-analytics.readonly",
 if __name__ == "__main__":
     secret_file = sys.argv[1] if len(sys.argv) > 1 else "client_secret.json"
     flow = InstalledAppFlow.from_client_secrets_file(secret_file, SCOPES)
-    creds = flow.run_local_server(port=0, prompt="consent", access_type="offline")
+    # The sign-in link is printed (open it in the browser where the channel's account is signed in).
+    creds = flow.run_local_server(port=0, prompt="consent", access_type="offline", open_browser=False)
     inner = json.load(open(secret_file))
     inner = inner.get("installed") or inner.get("web")
-    print("\nAdd these as GitHub secrets (Settings -> Secrets and variables -> Actions):")
-    print("YTA_CLIENT_ID =", inner["client_id"])
-    print("YTA_CLIENT_SECRET =", inner["client_secret"])
-    print("YTA_REFRESH_TOKEN =", creds.refresh_token)
+    out = "client_secret_values.json"  # ignored by git; never printed, so the values stay off screen
+    json.dump({"YTA_CLIENT_ID": inner["client_id"], "YTA_CLIENT_SECRET": inner["client_secret"],
+               "YTA_REFRESH_TOKEN": creds.refresh_token}, open(out, "w"), indent=2)
+    print(f"Signed in. The three values are in {out}.")
+    print("Add each as a GitHub secret (Settings -> Secrets and variables -> Actions), then delete the file.")
