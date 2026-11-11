@@ -189,13 +189,12 @@ def accessories(hero):
         bc = tuple(a * 0.62 + b * 0.38 for a, b in zip(skin, bc))
     if beard != "none" and not _modelled_beard(s) and family(s) == "m" and not (beard == "stubble" and s["hair"] in ("ponytail", "bun")):
         if beard in ("full", "stubble"):
-            add("box", (0.0, 1.512, 0.075), (0.11, 0.075, 0.1), bc)
-            for x in (-0.083, 0.083):
-                add("box", (x, 1.535, 0.0), (0.026, 0.1, 0.125), bc)
-                add("box", (x * 1.2, 1.63, -0.005), (0.016, 0.07, 0.05), bc)
+            add("box", (0.0, 1.528, 0.125), (0.078, 0.056, 0.062), bc)      # chin
+            for x in (-0.07, 0.07):                                          # along the jaw
+                add("box", (x, 1.548, 0.07), (0.02, 0.062, 0.1), bc)
         elif beard == "goatee":
             add("box", (0.0, 1.533, 0.14), (0.06, 0.05, 0.042), bc)
-        add("box", (0.0, 1.617, 0.158), (0.078, 0.015, 0.016), bc)
+        add("box", (0.0, 1.613, 0.17), (0.066, 0.013, 0.018), bc)
     ex, ec = s.get("extras") or [], c(s.get("extra_color"), (30, 30, 34))
     if "glasses" in ex:
         for x in (-0.034, 0.034):
