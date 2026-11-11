@@ -49,6 +49,7 @@ def look_color(over, slot, mat):
     return rgb(v[1:] if len(v) == 7 else v, None)
 
 
+SPIKY = {"m_beach": ("Hair",), "m_punk": ("Red", "Red_Dark"), "w_punk": ("Pink",)}   # hair that must stay pointed in Blender
 BEARD_CUT = (1.655, 0.02)   # of the bearded head's hair piece, the beard is what lies below this y and in front of this z (standing pose, meters)
 
 

@@ -291,7 +291,7 @@ def model(name):
     objs0, acts0 = set(bpy.data.objects), set(bpy.data.actions)
     bpy.ops.import_scene.gltf(filepath=str(PEOPLE / f"{name}.glb"))
     objs = [o for o in bpy.data.objects if o not in objs0]
-    M = MODELS[name] = dict(arm=next(o for o in objs if o.type == "ARMATURE"), parts={}, scale=1.0, posed=None, ref={}, cut={},
+    M = MODELS[name] = dict(arm=next(o for o in objs if o.type == "ARMATURE"), parts={}, scale=1.0, posed=None, ref={}, cut={}, flat={},
                             acts={_clip_key(a.name): a for a in bpy.data.actions if a not in acts0})
     M["arm"].animation_data_clear()   # the importer leaves an action playing: a render would re-pose the armature behind our back
     for o in objs:
@@ -305,6 +305,13 @@ def model(name):
             bm = bmesh.new()
             bm.from_mesh(o.data)
             bmesh.ops.remove_doubles(bm, verts=bm.verts, dist=1e-6)   # the file stores every face apart
+            spiky = {i for i, m_ in enumerate(o.data.materials) if m_ and m_.name.split(".")[0] in lp_hero.SPIKY.get(name, ())}
+            if spiky and slot == "head":     # spiky hair keeps its points: creased edges, flat faces (smoothing melted it into a blob)
+                cl = bm.edges.layers.float.get("crease_edge") or bm.edges.layers.float.new("crease_edge")
+                for e_ in bm.edges:
+                    if any(fc.material_index in spiky for fc in e_.link_faces):
+                        e_[cl] = 1.0
+                M["flat"][slot] = spiky
             bm.to_mesh(o.data)
             bm.free()
             for at in ("custom_normal", "sharp_face", "sharp_edge"):
@@ -367,7 +374,12 @@ def part_mesh(name, slot, clip, t):
         me = bpy.data.meshes.new_from_object(o.evaluated_get(dg))
         me.transform(Matrix.Scale(M["scale"], 4) @ to_lp @ o.matrix_world)
         if SMOOTH:
-            me.polygons.foreach_set("use_smooth", [True] * len(me.polygons))
+            smooth = [True] * len(me.polygons)
+            if M["flat"].get(slot):
+                mi = [0] * len(me.polygons)
+                me.polygons.foreach_get("material_index", mi)
+                smooth = [i_ not in M["flat"][slot] for i_ in mi]
+            me.polygons.foreach_set("use_smooth", smooth)
             try:
                 me.set_sharp_from_angle(angle=math.radians(SMOOTH))
             except AttributeError:
