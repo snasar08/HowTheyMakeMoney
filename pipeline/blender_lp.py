@@ -314,6 +314,22 @@ def model(name):
     M["scale"] = lp_hero.HEAD_Y[name[0]] / y if y > 1e-6 else 1.0
     M["ref"] = {"Head": bone_m(M, "Head").inverted()}
     print(f"[blender] model {name}: parts {sorted(M['parts'])}, {len(M['acts'])} clips, scale {M['scale']:.4f}", flush=True)
+    if os.environ.get("BL_DEBUG"):
+        hb = bone_m(M, "Head").translation
+        dbg = [f"idle head bone {tuple(round(v, 3) for v in hb)} y0 {y:.3f}"]
+        if "head" in M["parts"]:
+            hm = part_mesh(name, "head", "idle_neutral", 0.0)
+            xs = [v.co for v in hm.vertices]
+            dbg.append("head mesh min %s max %s" % (tuple(round(min(c[i] for c in xs), 3) for i in range(3)),
+                                                    tuple(round(max(c[i] for c in xs), 3) for i in range(3))))
+        M["arm"].data.pose_position = "REST"
+        bpy.context.view_layer.update()
+        dbg.append(f"rest head bone {tuple(round(v, 3) for v in bone_m(M, 'Head').translation)}")
+        M["arm"].data.pose_position = "POSE"
+        bpy.context.view_layer.update()
+        dbg.append("acts " + ",".join(sorted(M["acts"]))[:120])
+        dbg.append(f"arm world {[tuple(round(v, 2) for v in r) for r in M['arm'].matrix_world]}")
+        print(f"::warning title=dbg {name}::" + " | ".join(dbg), flush=True)
     return M
 
 
@@ -379,6 +395,14 @@ def look_meshes(look, clip, t):
             _look_mats[k] = ms
         for i, m in enumerate(_look_mats[k]):
             me.materials[i] = m
+        hide = {i for i, m in enumerate(_look_mats[k]) if m is HIDDEN}
+        if hide:                             # really remove hidden pieces (stacked transparent hair rendered as dark specks)
+            import bmesh
+            bm = bmesh.new()
+            bm.from_mesh(me)
+            bmesh.ops.delete(bm, geom=[fc for fc in bm.faces if fc.material_index in hide], context="FACES")
+            bm.to_mesh(me)
+            bm.free()
         out.append(me)
     return out
 
