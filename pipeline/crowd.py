@@ -16,7 +16,7 @@ from .gl3d import Engine
 
 VS = """
 #version 330
-uniform mat4 vp; uniform mat4 joints[48];
+uniform mat4 vp; uniform mat4 joints[64];
 in vec3 in_pos; in vec3 in_norm; in vec2 in_uv; in vec4 in_j; in vec4 in_w;
 in vec4 i_off; in vec3 i_tint; in float i_scale;
 flat out vec3 v_n; out vec3 v_w; out vec2 v_uv; flat out vec3 v_tint;
@@ -57,11 +57,17 @@ class Crowd:
         if not hasattr(e, "crowd_prog"):
             e.crowd_prog = e.ctx.program(vertex_shader=VS, fragment_shader=FS)
         self.e, self.ch, self.skin = e, ch, skin
-        p = ch.prims[0]
-        idx = p["idx"].ravel()
-        uv = p["uv"] if p["uv"] is not None else np.zeros((len(p["pos"]), 2), np.float32)
-        verts = np.concatenate([p["pos"], p["norm"], np.column_stack([uv[:, 0], 1 - uv[:, 1]]),
-                                p["jnt"].astype(np.float32), p["w"]], 1)[idx].astype(np.float32)
+        self.palette = None
+        if skin and skin.startswith("P:"):      # modular people pack: parts + material colors (pipeline/people.py)
+            from . import people
+            b = people.build(skin)
+            self.ch, verts, self.palette = b.ch, b.verts, b.palette
+        else:
+            p = ch.prims[0]
+            idx = p["idx"].ravel()
+            uv = p["uv"] if p["uv"] is not None else np.zeros((len(p["pos"]), 2), np.float32)
+            verts = np.concatenate([p["pos"], p["norm"], np.column_stack([uv[:, 0], 1 - uv[:, 1]]),
+                                    p["jnt"].astype(np.float32), p["w"]], 1)[idx].astype(np.float32)
         self.vbo = e.ctx.buffer(verts.tobytes())
         self.groups = []  # (clip, phase, instance buffer, count, vao)
         self.rows = []    # (clip, phase, [[x, y, z, yaw, r, g, b, scale], ...]) for the Blender plan
@@ -97,13 +103,15 @@ class Crowd:
                 from PIL import Image
                 from .character import CHAR_DIR
                 from .character import skin_image
-                tex = e.texture(("charskin", self.skin), skin_image(self.skin).resize((256, 256), Image.NEAREST))
+                img = self.palette if self.palette is not None else skin_image(self.skin).resize((256, 256), Image.NEAREST)
+                tex = e.texture(("charskin", self.skin), img)
                 tex.use(0)
                 pr["tex"].value = 0
                 use = 1
             pr["use_tex"].value = use
             for clip, ph, ib, n, vao in self.groups:
                 J = self.ch.joint_mats(clip, t + ph)
+                J = np.concatenate([J, np.zeros((64 - len(J), 4, 4), np.float32)]) if len(J) < 64 else J
                 pr["joints"].write(J.transpose(0, 2, 1).copy().tobytes())
                 vao.render(instances=n)
         return draw

@@ -21,13 +21,15 @@ import zlib
 import numpy as np
 from PIL import Image, ImageFilter
 
-from . import character, lp_hero
+from . import character, lp_hero, people
 from .crowd import Crowd, grid_crowd
 from .gl3d import Engine, Scene, trs
 
 SIZE = (540, 960)
-CHAR = "quaternius-animated-human"
-CLIP = {"run": "run", "push": "walk", "carry": "walk", "cheer": "jump", "fall": "death", "work": "working", "idle": "idle"}
+# people: the modular CC0 pack (pipeline/people.py); clip names are that pack's
+CLIP = {"run": "run", "push": "walk", "carry": "walk", "cheer": "wave", "fall": "death", "work": "interact", "idle": "idle_neutral",
+        "jump": "wave", "working": "interact"}
+REF_CLIP = "idle_neutral"   # hero extras (lp_hero.accessories) are given in this pose at t = 0
 # Nov 10 (Sam: "the low poly has no background"): every set has a real sky (gradient, sun or moon,
 # clouds, stars), far scenery, and is dressed front and back. top/mid/fog = sky colors from straight
 # up down to the horizon (fog = horizon = distance haze); sun = direction TO the sun/moon.
@@ -601,15 +603,15 @@ def _crowd(key, v, ch):
         rng = np.random.default_rng(zlib.crc32(repr(key[:3]).encode()))
         n = int(v.get("crowd", 0))
         act = v.get("action", "run")
-        clip = ch.find_clip(CLIP.get(act, "idle"))
+        clip = ch.find_clip(CLIP.get(act, CLIP["idle"]))
         if act == "work" and v.get("set") in ("office", "gaming", "studio", "store"):
-            clip = ch.find_clip("idle")   # the pack's work clip kneels and hammers: wrong at a desk
+            clip = ch.find_clip(CLIP["idle"])   # at a desk: stand, do not reach around
         # the pack's clothed textures and recolors: skin tones, hair, shirts and pants
-        skins = list(CROWD_SKINS)
+        skins = lp_hero.crowd_looks()
         rng.shuffle(skins)
         buckets = {}
         for i, (pos, yaw, c, speed) in enumerate(_layout(crowd_mode(v), v, n, rng, act)):
-            buckets.setdefault((i % len(skins), speed), []).append((pos, yaw, ch.find_clip(c), (i % 8) * 0.137))
+            buckets.setdefault((i % len(skins), speed), []).append((pos, yaw, ch.find_clip(CLIP.get(c, c)), (i % 8) * 0.137))
         cs = []
         for (k, speed), rows in buckets.items():
             c = Crowd(ch, skin=skins[k])
@@ -617,7 +619,7 @@ def _crowd(key, v, ch):
                     [(1, 1, 1)] * len(rows), [r[2] for r in rows], [r[3] for r in rows])
             cs.append((c, speed))
         hs = hero_spec(v)
-        hero = Crowd(ch, skin=lp_hero.skin_name(hs))
+        hero = Crowd(ch, skin=lp_hero.look(hs))
         hero.place([(0, 0, 0)], [0.0], [float(hs.get("height", 1.0))], [(1, 1, 1)], [clip], [0.0])
         hero.spec, hero.clip = hs, clip
         e.lp_crowds[key] = (cs, hero)
@@ -630,21 +632,21 @@ _REST = {}
 def _hero_extras(sc, ch, hero, t, m):
     """Hair, beard, shoes, shorts... riding on the hero's bones (GL preview; Blender builds its own
     from the same lp_hero list)."""
-    if CHAR not in _REST:
+    ch = hero.ch                      # the rig of the hero's family
+    if id(ch) not in _REST:
         names = [ch.nodes[j].get("name") for j in ch.joints]
-        _REST[CHAR] = (names, [np.linalg.inv(x) for x in ch.joint_mats(None, 0.0)])
-    names, rest_inv = _REST[CHAR]
+        _REST[id(ch)] = (names, [np.linalg.inv(x) for x in ch.joint_mats(ch.find_clip(REF_CLIP), 0.0)])
+    names, rest_inv = _REST[id(ch)]
     J = ch.joint_mats(hero.clip, t)
     s = float(hero.spec.get("height", 1.0))
     k = 1.75 / ch.height
-    base = m @ trs((0, -ch.base_y * k * s, 0), (k * s, k * s, k * s))
-    unnorm = trs((0, ch.base_y, 0), (1 / k, 1 / k, 1 / k))
+    base = m @ trs((0, 0, 0), (k * s, k * s, k * s))
     meshes = Engine.get().meshes
     for bone, mesh, pos, size, col in lp_hero.accessories(hero.spec):
         if bone not in names:
             continue
         b = names.index(bone)
-        sc.add(meshes[mesh], base @ J[b] @ rest_inv[b] @ unnorm @ trs(pos, size), col, spec=0.08, gloss=10)
+        sc.add(meshes[mesh], base @ J[b] @ rest_inv[b] @ trs(pos, size), col, spec=0.08, gloss=10)
 
 
 def _ease(p):
@@ -788,7 +790,7 @@ def _record(key, sc, placed, t, set_name, static_key, n_static, hero):
             _CROWD_IDS[id(c)] = len(CROWDS)
             CROWDS.append(dict(skin=c.skin, groups=[[clip, ph, rows] for clip, ph, rows in c.rows]))
         cids.append([_CROWD_IDS[id(c)], np.asarray(cm).ravel().tolist()])
-    ch = character.load(CHAR)
+    ch = people.rig("m")
     PLAN[key] = dict(eye=[float(x) for x in sc.eye], target=[float(x) for x in sc.target], fov=sc.fov,
                      set=set_name, look={k: list(v) if isinstance(v, tuple) else v for k, v in sc.look.items()},
                      items=ids, t=t, base_y=ch.base_y, height=ch.height,
@@ -807,7 +809,7 @@ def dump_plan(path):
 def render(v, t, p, variant, rec=None, beat=None, si=0, stat=False):
     """One low-poly frame (RGB PIL, 1080x1920, upscaled from 540x960). rec (a frame key) records it
     for Blender. beat/si/stat (from render.py) choose the shot; variant is the old fallback."""
-    ch = character.load(CHAR)
+    ch = people.rig("m")
     act = v.get("action", "run")
     set_name = v.get("set", "field")
     key = (set_name, act, int(v.get("crowd", 0)), id(v))

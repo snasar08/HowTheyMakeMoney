@@ -21,6 +21,34 @@ DEFAULT = dict(skin="light", hair="short", hair_color="3a2a1c", beard="none", sh
                outfit="tee", shoes="f4f4f4")
 
 
+# ---- modular people pack (pipeline/people.py, blender_lp.py): look strings both renderers read
+PEOPLE_H = 1.80                                  # model height the pack is scaled by (1.75 m at scale 1)
+HEAD_Y = {"m": 1.579, "w": 1.58, "v": 1.58}                 # height of the Head bone standing (idle_neutral, t = 0), meters: Blender scales by it
+RIG = {"m": "m_casual", "w": "w_adventurer", "v": "v_casual"}   # the model whose bones and clips drive a family
+# a family = one export of the pack (first letter of the model name): m = men, v = women (author's
+# files), w = two women from another export. Parts only mix inside a family (bind poses differ).
+SLOTS = ("head", "body", "legs", "feet")
+
+
+def look_name(head, body, legs, feet, colors=None):
+    """'P:head,body,legs,feet;slot.Material=rrggbb;Material=rrggbb;slot.Material=-' ('-' hides it)."""
+    return "P:" + ",".join((head, body, legs, feet)) + "".join(f";{k}={v}" for k, v in sorted((colors or {}).items()))
+
+
+def parse_look(name):
+    parts, _, rest = name[2:].partition(";")
+    over = dict(kv.split("=", 1) for kv in rest.split(";") if "=" in kv)
+    return dict(zip(SLOTS, parts.split(","))), over
+
+
+def look_color(over, slot, mat):
+    """Override for a material: (r, g, b) 0..255, '-' = leave that piece out, None = the pack's color."""
+    v = over.get(f"{slot}.{mat}", over.get(mat))
+    if v is None or v == "-":
+        return v
+    return rgb(v, None)
+
+
 def rgb(h, default=(128, 128, 128)):
     h = SKINS.get(h, h or "")
     try:
@@ -66,82 +94,134 @@ def recolor_map(name):
     return base, {k: rgb(h, k) for k, h in zip((SKIN, HAIR, SHIRT, PANTS), parts)}
 
 
+def _hex(c):
+    return "%02x%02x%02x" % tuple(int(v) for v in c)
+
+
+WOMEN_HAIR = ("long", "bangs", "ponytail", "bun")
+_HEADS = {"short": "m_suit", "quiff": "m_beach", "curly": "m_hoodie", "afro": "m_hoodie", "long": "m_adventurer",
+          "ponytail": "m_casual", "bun": "m_casual", "mohawk": "m_punk", "bald": "m_suit", "buzz": "m_suit",
+          "bangs": "m_suit"}
+
+
+def family(hero):
+    s = spec(hero)
+    if s.get("family") in ("m", "w"):
+        return s["family"]
+    return "w" if (s["outfit"] == "dress" or (s["hair"] in WOMEN_HAIR and s.get("beard", "none") == "none")) else "m"
+
+
+def _modelled_beard(s):
+    """True when the chosen head already carries the beard (the bearded head's hair and beard are one piece)."""
+    return family(s) == "m" and s.get("beard") == "full" and s["hair"] in ("short", "long", "curly", "quiff", "afro", "bangs")
+
+
+def look(hero):
+    """The look string for a hero spec: which modelled head / body / legs / feet, and their colors."""
+    s = spec(hero)
+    skin, hair = rgb(s["skin"], SKIN), rgb(s.get("hair_color"), HAIR)
+    shirt, pants, shoes = rgb(s.get("shirt"), SHIRT), rgb(s.get("pants"), PANTS), rgb(s.get("shoes"), (244, 244, 244))
+    outfit = s["outfit"]
+    col = {"Skin": _hex(skin), "Hair": _hex(hair), "Hair_Brown": _hex(hair), "Eyebrows": _hex(_mix(hair, (20, 16, 14), 0.5)),
+           "head.Skin_Darker": _hex(_mix(skin, rgb(s.get("beard_color"), hair), 0.3) if s.get("beard") == "stubble" else skin),
+           "head.Earrings": "-"}
+    if family(s) == "w":
+        if s["hair"] == "mohawk":         # the punk model: its own export, so the whole figure comes from that family
+            col.update({"head.Pink": _hex(hair), "head.Black": _hex(_mix(hair, (0, 0, 0), 0.4)), "body.Pink": _hex(shirt),
+                        "body.Black": _hex(_mix(shirt, (0, 0, 0), 0.3)), "legs.Black": _hex(pants), "legs.Skin": _hex(pants),
+                        "feet.Black": _hex(shoes), "feet.Grey": _hex(_mix(shoes, (255, 255, 255), 0.5))})
+            return look_name("w_punk", "w_adventurer" if outfit == "dress" else "w_punk", "w_punk", "w_punk", col)
+        head = "v_formal" if s["hair"] in ("bun", "ponytail") else "v_suit" if s["hair"] in ("short", "buzz", "bald", "curly") else "v_casual"
+        col.update({"head.Hair_Blond": _hex(hair), "head.Hair_Brown": _hex(_mix(hair, (30, 22, 16), 0.35)), "head.Red": _hex(hair)})
+        if outfit == "dress":
+            body = legs = feet = "v_formal"
+            col.update({"body.LimeGreen": _hex(shirt), "legs.LimeGreen": _hex(shirt), "body.Gold": _hex(_mix(shirt, (255, 255, 255), 0.45)),
+                        "feet.Red": _hex(shoes)})
+        elif outfit == "suit":
+            body = legs = feet = "v_suit"
+            col.update({"body.Black": _hex(shirt), "legs.Black": _hex(pants), "feet.Black": _hex(shoes)})
+        else:
+            body = legs = feet = "v_casual"
+            col.update({"body.White": _hex(shirt), "legs.Orange": _hex(pants), "feet.Grey": _hex(shoes)})
+        return look_name(head, body, legs, feet, col)
+    head = "m_adventurer" if _modelled_beard(s) else _HEADS.get(s["hair"], "m_suit")
+    if s["hair"] in ("bald", "buzz") or ("cap" in (s.get("extras") or []) and head in ("m_suit", "m_beach", "m_hoodie")):
+        col["head.Hair"] = "-"
+    if head == "m_punk":
+        col.update({"head.Red": _hex(hair), "head.Red_Dark": _hex(_mix(hair, (0, 0, 0), 0.3))})
+    feet = "m_casual"
+    col.update({"feet.Red_Dark": _hex(shoes), "feet.White": _hex(_mix(shoes, (255, 255, 255), 0.6))})
+    if outfit == "suit":
+        body = legs = feet = "m_suit"
+        col.update({"body.Suit": _hex(shirt), "legs.Suit": _hex(pants), "body.Tie": s.get("tie") or "c81e28", "feet.Black": _hex(shoes)})
+    elif outfit == "hoodie":
+        body, legs = "m_hoodie", "m_casual"
+        col.update({"body.Purple": _hex(shirt), "legs.LightBlue": _hex(pants)})
+    elif outfit in ("kit", "dress"):      # plain shirt and shorts: never a crest, number or real jersey design
+        body, legs = "m_casual", "m_beach"
+        col.update({"body.LightBrown": _hex(shirt), "legs.Red_Dark": _hex(pants), "legs.White": _hex(pants)})
+    else:
+        body = legs = "m_casual"
+        col.update({"body.LightBrown": _hex(shirt), "legs.LightBlue": _hex(pants)})
+    return look_name(head, body, legs, feet, col)
+
+
 def accessories(hero):
-    """[(bone, mesh, (x, y, z), (sx, sy, sz), (r, g, b) 0..1)] in rest-pose meters. Boxes sit on their
-    base (y = bottom), spheres are centered, cylinders stand on their base with radius sx."""
+    """[(bone, mesh, (x, y, z), (sx, sy, sz), (r, g, b) 0..1)] for what the modelled heads do not have:
+    beards on other heads, a buzz cut, glasses, cap, headband. Meters in the standing pose (idle clip,
+    t = 0): +z forward, +y up. Boxes sit on their base, spheres are centered, cylinders stand on
+    their base with radius sx."""
     s = spec(hero)
     c = lambda h, d=(128, 128, 128): tuple(v / 255 for v in rgb(h, d))   # noqa: E731
     skin = tuple(v / 255 for v in rgb(s["skin"], SKIN))
     hair = c(s.get("hair_color"), HAIR)
     out = []
-    add = lambda bone, mesh, pos, size, col: out.append((bone, mesh, pos, size, col))   # noqa: E731
-    style = s["hair"]
-    if style == "quiff":                      # short, brushed up at the front
-        add("Head", "box", (0.0, 1.7, 0), (0.2, 0.055, 0.17), hair)
-        add("Head", "box", (0.075, 1.705, 0), (0.08, 0.075, 0.15), hair)
-    elif style in ("long", "bangs"):          # past the shoulders
-        add("Head", "box", (-0.135, 1.3, 0), (0.07, 0.46, 0.25), hair)
-        for z in (-0.122, 0.122):
-            add("Head", "box", (-0.03, 1.36, z), (0.17, 0.34, 0.035), hair)
-        add("Head", "box", (-0.01, 1.7, 0), (0.25, 0.06, 0.235), hair)
-        if style == "bangs":
-            add("Head", "box", (0.115, 1.665, 0), (0.035, 0.075, 0.21), hair)
-    elif style == "ponytail":
-        add("Head", "sphere", (-0.17, 1.67, 0), (0.05, 0.05, 0.05), hair)
-        add("Head", "box", (-0.21, 1.4, 0), (0.05, 0.26, 0.07), hair)
-    elif style == "bun":
-        add("Head", "sphere", (-0.1, 1.79, 0), (0.07, 0.07, 0.07), hair)
-    elif style in ("afro", "curly"):
-        r = 0.185 if style == "afro" else 0.15
-        add("Head", "sphere", (-0.045, 1.72, 0), (r, r * 0.82, r * 0.95), hair)
-    elif style == "mohawk":
-        add("Head", "box", (-0.02, 1.73, 0), (0.24, 0.09, 0.045), hair)
+    add = lambda mesh, pos, size, col: out.append(("Head", mesh, pos, size, col))   # noqa: E731
+    if s["hair"] == "buzz":
+        add("sphere", (0.0, 1.762, 0.052), (0.103, 0.062, 0.117), tuple(a * 0.45 + b * 0.55 for a, b in zip(skin, hair)))
     beard = s.get("beard", "none")
     bc = c(s.get("beard_color"), tuple(int(v * 255) for v in hair))
     if beard == "stubble":
         bc = tuple(a * 0.62 + b * 0.38 for a, b in zip(skin, bc))
-    if beard in ("full", "stubble"):          # along the jaw and chin, mouth left clear
-        add("Head", "box", (0.094, 1.437, 0), (0.062, 0.058, 0.15), bc)
-        for z in (-0.086, 0.086):
-            add("Head", "box", (0.04, 1.44, z), (0.125, 0.078, 0.022), bc)
-            add("Head", "box", (0.0, 1.5, z * 1.2), (0.05, 0.09, 0.018), bc)
-        add("Head", "box", (0.127, 1.512, 0), (0.012, 0.016, 0.075), bc)
-    elif beard == "goatee":
-        add("Head", "box", (0.105, 1.437, 0), (0.04, 0.058, 0.07), bc)
-        add("Head", "box", (0.127, 1.512, 0), (0.012, 0.016, 0.075), bc)
-    elif beard == "mustache":
-        add("Head", "box", (0.127, 1.512, 0), (0.014, 0.018, 0.085), bc)
+    if beard != "none" and not _modelled_beard(s) and family(s) == "m" and not (beard == "stubble" and s["hair"] in ("ponytail", "bun")):
+        if beard in ("full", "stubble"):
+            add("box", (0.0, 1.528, 0.125), (0.078, 0.056, 0.062), bc)      # chin
+            for x in (-0.07, 0.07):                                          # along the jaw
+                add("box", (x, 1.548, 0.07), (0.02, 0.062, 0.1), bc)
+        elif beard == "goatee":
+            add("box", (0.0, 1.533, 0.14), (0.06, 0.05, 0.042), bc)
+        add("box", (0.0, 1.613, 0.17), (0.066, 0.013, 0.018), bc)
     ex, ec = s.get("extras") or [], c(s.get("extra_color"), (30, 30, 34))
     if "glasses" in ex:
-        for z in (-0.047, 0.047):
-            add("Head", "box", (0.128, 1.595, z), (0.012, 0.045, 0.07), ec)
-        add("Head", "box", (0.128, 1.612, 0), (0.01, 0.012, 0.03), ec)
+        for x in (-0.034, 0.034):
+            add("box", (x, 1.674, 0.168), (0.052, 0.034, 0.01), ec)
+        add("box", (0.0, 1.69, 0.17), (0.02, 0.008, 0.008), ec)
     if "cap" in ex:
-        add("Head", "sphere", (-0.008, 1.668, 0), (0.148, 0.098, 0.127), ec)
-        add("Head", "box", (0.19, 1.66, 0), (0.13, 0.016, 0.17), ec)
+        add("sphere", (0.0, 1.772, 0.05), (0.12, 0.078, 0.13), ec)
+        add("box", (0.0, 1.758, 0.2), (0.15, 0.014, 0.12), ec)
     if "headband" in ex:
-        add("Head", "cyl", (-0.008, 1.648, 0), (0.142, 0.036, 0.122), ec)
-    shoes = c(s.get("shoes"), (244, 244, 244))
-    for side, z in (("Left", -0.115), ("Right", 0.115)):
-        add(side + "Foot", "box", (0.056, -0.008, z * 0.99), (0.29, 0.078, 0.12), shoes)
-    outfit, shirt, pants = s["outfit"], c(s.get("shirt"), SHIRT), c(s.get("pants"), PANTS)
-    if outfit in ("kit", "dress"):
-        sock = c(s.get("socks"), (245, 245, 245))
-        for side, z in (("Left", -0.1), ("Right", 0.1)):
-            if s.get("socks") != "none":
-                add(side + "Leg", "cyl", (-0.018, 0.05, z * 1.08), (0.062, 0.2 if outfit == "kit" else 0.34, 0.064), sock)
-    if outfit == "kit":                       # shorts over bare legs
-        for side, z in (("Left", -0.088), ("Right", 0.088)):
-            add(side + "UpLeg", "cyl", (-0.015, 0.5, z), (0.108, 0.34, 0.1), pants)
-        add("Hips", "box", (-0.012, 0.76, 0), (0.25, 0.17, 0.37), pants)
-    elif outfit == "dress":                   # knee-length skirt in the dress color
-        add("Hips", "cyl", (-0.012, 0.6, 0), (0.185, 0.3, 0.215), shirt)
-    elif outfit == "suit":                    # dark jacket: white shirt V and a tie
-        add("Spine2", "box", (0.1, 1.2, 0), (0.022, 0.25, 0.085), (0.96, 0.96, 0.96))
-        add("Spine2", "box", (0.116, 1.2, 0), (0.012, 0.21, 0.034), c(s.get("tie"), (200, 30, 40)))
-    elif outfit == "hoodie":
-        add("Spine2", "box", (-0.155, 1.33, 0), (0.07, 0.17, 0.26), shirt)
-        add("Spine2", "box", (0.1, 1.0, 0), (0.02, 0.1, 0.2), tuple(v * 0.85 for v in shirt))
+        add("cyl", (0.0, 1.735, 0.055), (0.112, 0.03, 0.125), ec)
+    return out
+
+
+def crowd_looks():
+    """A fixed mix of modelled people for background crowds (plain clothes; work and costume pieces rare)."""
+    tones = ("ffd19f", "e0ac7e", "a8744a", "6b4a32", "f0c8a0", "c99a6e")
+    hairs = ("2b2118", "1c1c1c", "141414", "5a3a20", "c9a45a", "8a3a1c", "3a2a1c", "101010")
+    tops = ("e8554e", "f2c230", "f4f4f4", "8e5bd0", "35b0a0", "f08a3c", "5aa2f0", "e63946", "3a86ff", "ff6b9d", "2a9d8f", "ffca3a")
+    pants = ("2f3b52", "3a3a3a", "1d3f8f", "24262e", "5a4636", "2c4a3a", "e8e2d4", "8a2c2c")
+    men = (("short", "tee"), ("quiff", "hoodie"), ("curly", "tee"), ("short", "hoodie"), ("ponytail", "tee"), ("quiff", "kit"),
+           ("curly", "hoodie"), ("short", "suit"), ("bald", "tee"), ("long", "tee"), ("short", "kit"))
+    out = []
+    for i, (hair, outfit) in enumerate(men):
+        out.append(look(dict(skin=tones[i % 6], hair=hair, hair_color=hairs[(i * 3) % 8], outfit=outfit, beard="full" if hair == "long" else "none",
+                             shirt=tops[i % 12] if outfit != "suit" else "2b2f3a", pants=pants[(i * 5) % 8],
+                             shoes=("f4f4f4", "2a2a2a", "c8442e")[i % 3])))
+    for i in range(5):
+        out.append(look(dict(family="w", skin=tones[(i * 2 + 1) % 6], hair=("long", "short", "bun", "long", "short")[i],
+                             hair_color=hairs[(i * 3 + 1) % 8], outfit=("tee", "dress", "tee", "suit", "tee")[i],
+                             shirt=tops[(i * 5 + 3) % 12] if i != 3 else "33384a", pants=pants[(i * 3 + 1) % 8],
+                             shoes=("f4f4f4", "3a3a3a")[i % 2])))
     return out
 
 
