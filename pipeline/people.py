@@ -73,12 +73,16 @@ def build(look: str) -> Built:
             if c == "-":
                 continue
             p = m.prims[pi]
+            idx = p["idx"].reshape(-1, 3)
+            if lp_hero.look_cut(over, slot, mat):      # keep only the beard of the bearded head's hair piece
+                ctr = m.pose(m.find_clip("idle_neutral"), 0.0)[pi][0][idx].mean(1)
+                idx = idx[(ctr[:, 1] < lp_hero.BEARD_CUT[0]) & (ctr[:, 2] > lp_hero.BEARD_CUT[1])]
             col = tuple(v / 255 for v in c) if c else srgb(p["color"])
             if col not in cols:
                 cols.append(col)
             k = cols.index(col)
             uv = np.tile(np.array([[(k % 8 + 0.5) / 8, 1 - (k // 8 + 0.5) / 8]], np.float32), (len(p["pos"]), 1))
-            idx = p["idx"].ravel()
+            idx = idx.ravel()
             rows.append(np.concatenate([p["pos"], p["norm"], uv, p["jnt"].astype(np.float32), p["w"]], 1)[idx])
     b.verts = np.concatenate(rows).astype(np.float32)
     im = Image.new("RGB", (256, 256), (128, 128, 128))
