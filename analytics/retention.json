@@ -1,12 +1,12 @@
 {
- "at": "2026-11-10T18:38:56.412227+00:00",
+ "at": "2026-11-11T19:19:02.003665+00:00",
  "shorts": [
   {
    "video": "-4AV3y6mP2Y",
    "title": "How Much of Your Uber Fare Does Uber Keep?",
-   "views": 1016,
-   "avg_pct": 58.0,
-   "avg_seconds": 15,
+   "views": 1031,
+   "avg_pct": 57.6,
+   "avg_seconds": 14,
    "tags": {
     "script": "011",
     "slug": "uber",
@@ -24,18 +24,48 @@
    },
    "start": 110,
    "q25": 83,
-   "q50": 59,
-   "q75": 34,
-   "end": 11,
+   "q50": 58,
+   "q75": 33,
+   "end": 10,
    "drop_at_pct": 16,
-   "drop_at_s": 4.1,
-   "drop_size": 18
+   "drop_at_s": 3.9,
+   "drop_size": 19
+  },
+  {
+   "video": "rDHeA2dVTLM",
+   "title": "What If Nike's Best Store Isn't Nike's?",
+   "views": 1022,
+   "avg_pct": 42.3,
+   "avg_seconds": 11,
+   "tags": {
+    "script": "016",
+    "slug": "nike",
+    "topic": "Nike",
+    "format": "how",
+    "visual_style": "charts3d",
+    "theme": "bold_bright",
+    "hook_style": "whatif",
+    "title_style": "whatif",
+    "length_s": 26.19,
+    "length_bucket": "<30",
+    "post_at": "2026-11-07T18:00:00-05:00",
+    "post_slot": "18:00",
+    "score": 89
+   },
+   "start": 110,
+   "q25": 64,
+   "q50": 28,
+   "q75": 18,
+   "end": 8,
+   "drop_at_pct": 17,
+   "drop_at_s": 4.4,
+   "drop_size": 32
   },
   {
    "video": "Q-fNnacDmuQ",
    "title": "How Much of Your Chipotle Bowl Is Food?",
-   "views": 970,
-   "avg_pct": 50.6,
+   "views": 974,
+   "avg_pct": 50.5,
    "avg_seconds": 11,
    "tags": {
     "script": "022",
@@ -54,7 +84,7 @@
    },
    "start": 112,
    "q25": 83,
-   "q50": 41,
+   "q50": 40,
    "q75": 29,
    "end": 13,
    "drop_at_pct": 21,
@@ -62,40 +92,10 @@
    "drop_size": 22
   },
   {
-   "video": "rDHeA2dVTLM",
-   "title": "What If Nike's Best Store Isn't Nike's?",
-   "views": 900,
-   "avg_pct": 43.1,
-   "avg_seconds": 11,
-   "tags": {
-    "script": "016",
-    "slug": "nike",
-    "topic": "Nike",
-    "format": "how",
-    "visual_style": "charts3d",
-    "theme": "bold_bright",
-    "hook_style": "whatif",
-    "title_style": "whatif",
-    "length_s": 26.19,
-    "length_bucket": "<30",
-    "post_at": "2026-11-07T18:00:00-05:00",
-    "post_slot": "18:00",
-    "score": 89
-   },
-   "start": 111,
-   "q25": 65,
-   "q50": 29,
-   "q75": 19,
-   "end": 8,
-   "drop_at_pct": 17,
-   "drop_at_s": 4.3,
-   "drop_size": 31
-  },
-  {
    "video": "pHISbEQ042Q",
    "title": "Apple Services Keep 75 Cents of Every Dollar",
-   "views": 543,
-   "avg_pct": 40.2,
+   "views": 559,
+   "avg_pct": 41.0,
    "avg_seconds": 10,
    "tags": {
     "script": "015",
@@ -112,14 +112,14 @@
     "post_slot": "18:00",
     "score": 94
    },
-   "start": 106,
-   "q25": 51,
-   "q50": 30,
-   "q75": 17,
-   "end": 6,
+   "start": 107,
+   "q25": 53,
+   "q50": 31,
+   "q75": 18,
+   "end": 7,
    "drop_at_pct": 21,
-   "drop_at_s": 5.2,
-   "drop_size": 38
+   "drop_at_s": 5.1,
+   "drop_size": 37
   },
   {
    "video": "N9lyHjCmWr0",
@@ -154,8 +154,8 @@
   {
    "video": "NmjUgbv6_jE",
    "title": "Microsoft Keeps 47 Cents of Every Dollar",
-   "views": 183,
-   "avg_pct": 46.4,
+   "views": 194,
+   "avg_pct": 46.5,
    "avg_seconds": 12,
    "tags": {
     "script": "027",
@@ -172,14 +172,14 @@
     "post_slot": "12:00",
     "score": 92
    },
-   "start": 108,
-   "q25": 65,
-   "q50": 39,
+   "start": 109,
+   "q25": 64,
+   "q50": 38,
    "q75": 24,
-   "end": 8,
+   "end": 9,
    "drop_at_pct": 16,
    "drop_at_s": 4.1,
-   "drop_size": 28
+   "drop_size": 29
   },
   {
    "video": "1QcFteTrYtk",
@@ -272,6 +272,58 @@
    "drop_size": 15
   },
   {
+   "video": "0BjUUMdMBUI",
+   "title": "Why Are Gamers Only 7% of Nvidia Now?",
+   "views": 29,
+   "avg_pct": 67,
+   "avg_seconds": 17,
+   "tags": {
+    "script": "025",
+    "slug": "nvidia",
+    "topic": "Nvidia",
+    "format": "how",
+    "visual_style": "charts3d",
+    "theme": "dark_neon",
+    "hook_style": "number",
+    "title_style": "question",
+    "length_s": 25.79,
+    "length_bucket": "<30",
+    "post_at": "2026-11-06T12:00:00-05:00",
+    "post_slot": "12:00",
+    "score": 100
+   },
+   "start": 107,
+   "q25": 80,
+   "q50": 80,
+   "q75": 73,
+   "end": 7,
+   "drop_at_pct": 81,
+   "drop_at_s": 20.6,
+   "drop_size": 27
+  },
+  {
+   "video": "ipvQc7-oq_8",
+   "title": "How Much of Your Netflix Bill Is Profit?",
+   "views": 25,
+   "avg_pct": 49.7,
+   "avg_seconds": 13,
+   "tags": {
+    "script": "014",
+    "slug": "netflix",
+    "topic": "Netflix",
+    "format": "how",
+    "visual_style": "charts3d",
+    "theme": "clean_navy",
+    "hook_style": "question",
+    "title_style": "question",
+    "length_s": 26.36,
+    "length_bucket": "<30",
+    "post_at": "2026-11-08T15:00:00-05:00",
+    "post_slot": "15:00",
+    "score": 88
+   }
+  },
+  {
    "video": "cGLTzVo-lyc",
    "title": "What If One Cashier Served All of McDonald's?",
    "views": 23,
@@ -322,36 +374,6 @@
    "drop_at_pct": 18,
    "drop_at_s": 4.6,
    "drop_size": 25
-  },
-  {
-   "video": "0BjUUMdMBUI",
-   "title": "Why Are Gamers Only 7% of Nvidia Now?",
-   "views": 20,
-   "avg_pct": 73.2,
-   "avg_seconds": 19,
-   "tags": {
-    "script": "025",
-    "slug": "nvidia",
-    "topic": "Nvidia",
-    "format": "how",
-    "visual_style": "charts3d",
-    "theme": "dark_neon",
-    "hook_style": "number",
-    "title_style": "question",
-    "length_s": 25.79,
-    "length_bucket": "<30",
-    "post_at": "2026-11-06T12:00:00-05:00",
-    "post_slot": "12:00",
-    "score": 100
-   },
-   "start": 110,
-   "q25": 90,
-   "q50": 90,
-   "q75": 80,
-   "end": 10,
-   "drop_at_pct": 85,
-   "drop_at_s": 22.1,
-   "drop_size": 30
   },
   {
    "video": "cqSU-i2fgMI",
@@ -420,6 +442,28 @@
    }
   },
   {
+   "video": "Ox0qHyPUNIk",
+   "title": "$885,000: The Lowest NFL Salary in 2026",
+   "views": 12,
+   "avg_pct": 69.9,
+   "avg_seconds": 23,
+   "tags": {
+    "script": "038",
+    "slug": "careers-nfl",
+    "topic": "NFL players",
+    "format": "careers",
+    "visual_style": "charts3d",
+    "theme": "clean_navy",
+    "hook_style": "challenge",
+    "title_style": "number",
+    "length_s": 32.35,
+    "length_bucket": "30-38",
+    "post_at": "2026-11-05T15:00:00-05:00",
+    "post_slot": "15:00",
+    "score": 88
+   }
+  },
+  {
    "video": "VUuUEcESMGM",
    "title": "Shorts Creators Keep Just 45% of Ad Money",
    "views": 11,
@@ -439,28 +483,6 @@
     "post_at": "2026-11-02T18:00:00-05:00",
     "post_slot": "18:00",
     "score": 94
-   }
-  },
-  {
-   "video": "Ox0qHyPUNIk",
-   "title": "$885,000: The Lowest NFL Salary in 2026",
-   "views": 10,
-   "avg_pct": 76.7,
-   "avg_seconds": 25,
-   "tags": {
-    "script": "038",
-    "slug": "careers-nfl",
-    "topic": "NFL players",
-    "format": "careers",
-    "visual_style": "charts3d",
-    "theme": "clean_navy",
-    "hook_style": "challenge",
-    "title_style": "number",
-    "length_s": 32.35,
-    "length_bucket": "30-38",
-    "post_at": "2026-11-05T15:00:00-05:00",
-    "post_slot": "15:00",
-    "score": 88
    }
   },
   {
@@ -505,6 +527,28 @@
     "post_at": "2026-11-04T15:00:00-05:00",
     "post_slot": "15:00",
     "score": 93
+   }
+  },
+  {
+   "video": "th_hOXugjsE",
+   "title": "Planet Fitness Made $310 Million on Machines",
+   "views": 8,
+   "avg_pct": 73.3,
+   "avg_seconds": 18,
+   "tags": {
+    "script": "021",
+    "slug": "planet-fitness",
+    "topic": "Planet Fitness",
+    "format": "how",
+    "visual_style": "charts3d",
+    "theme": "bold_bright",
+    "hook_style": "challenge",
+    "title_style": "statement",
+    "length_s": 24.67,
+    "length_bucket": "<30",
+    "post_at": "2026-11-08T18:00:00-05:00",
+    "post_slot": "18:00",
+    "score": 88
    }
   },
   {
@@ -618,47 +662,25 @@
    }
   },
   {
-   "video": "3RPzz5w97iU",
-   "title": "Who Pays for Your Instagram?",
-   "views": 1,
-   "avg_pct": 56.6,
-   "avg_seconds": 16,
+   "video": "fF26h1klI-Y",
+   "title": "Visa Kept $20 Billion Without Lending a Dime",
+   "views": 2,
+   "avg_pct": 0,
+   "avg_seconds": 0,
    "tags": {
-    "script": "019",
-    "slug": "meta-ads",
-    "topic": "Meta",
+    "script": "010",
+    "slug": "visa",
+    "topic": "Visa",
     "format": "how",
     "visual_style": "charts3d",
     "theme": "dark_neon",
     "hook_style": "question",
-    "title_style": "question",
-    "length_s": 29.02,
+    "title_style": "statement",
+    "length_s": 23.67,
     "length_bucket": "<30",
-    "post_at": "2026-10-26T20:00:00-04:00",
-    "post_slot": "20:00",
-    "score": 92
-   }
-  },
-  {
-   "video": "pF8AnVShMbA",
-   "title": "Why Does Google Pay Apple $20 Billion?",
-   "views": 1,
-   "avg_pct": 39.3,
-   "avg_seconds": 13,
-   "tags": {
-    "script": "009",
-    "slug": "google-apple",
-    "topic": "Google & Apple",
-    "format": "how",
-    "visual_style": "charts3d",
-    "theme": "dark_neon",
-    "hook_style": "question",
-    "title_style": "question",
-    "length_s": 34.37,
-    "length_bucket": "30-38",
-    "post_at": "2026-10-26T19:00:00-04:00",
-    "post_slot": "19:00",
-    "score": 95
+    "post_at": "2026-11-08T12:00:00-05:00",
+    "post_slot": "12:00",
+    "score": 88
    }
   },
   {
@@ -750,28 +772,6 @@
    }
   },
   {
-   "video": "V0j2pFMClAg",
-   "title": "Is McDonald's Even a Burger Company?",
-   "views": 0,
-   "avg_pct": 0,
-   "avg_seconds": 0,
-   "tags": {
-    "script": "002",
-    "slug": "mcdonalds",
-    "topic": "McDonald's",
-    "format": "how",
-    "visual_style": "charts3d",
-    "theme": "bold_bright",
-    "hook_style": "whatif",
-    "title_style": "question",
-    "length_s": 42.63,
-    "length_bucket": "38+",
-    "post_at": "2026-10-26T21:00:00-04:00",
-    "post_slot": "21:00",
-    "score": 90
-   }
-  },
-  {
    "video": "EEw5Hm9n4PU",
    "title": "Is Starbucks Secretly a Bank?",
    "views": 0,
@@ -791,28 +791,6 @@
     "post_at": "2026-10-31T12:00:00-04:00",
     "post_slot": "12:00",
     "score": 84
-   }
-  },
-  {
-   "video": "fF26h1klI-Y",
-   "title": "Visa Kept $20 Billion Without Lending a Dime",
-   "views": 0,
-   "avg_pct": 0,
-   "avg_seconds": 0,
-   "tags": {
-    "script": "010",
-    "slug": "visa",
-    "topic": "Visa",
-    "format": "how",
-    "visual_style": "charts3d",
-    "theme": "dark_neon",
-    "hook_style": "question",
-    "title_style": "statement",
-    "length_s": 23.67,
-    "length_bucket": "<30",
-    "post_at": "2026-11-08T12:00:00-05:00",
-    "post_slot": "12:00",
-    "score": 88
    }
   },
   {
@@ -860,50 +838,6 @@
    }
   },
   {
-   "video": "th_hOXugjsE",
-   "title": "Planet Fitness Made $310 Million on Machines",
-   "views": 0,
-   "avg_pct": 0,
-   "avg_seconds": 0,
-   "tags": {
-    "script": "021",
-    "slug": "planet-fitness",
-    "topic": "Planet Fitness",
-    "format": "how",
-    "visual_style": "charts3d",
-    "theme": "bold_bright",
-    "hook_style": "challenge",
-    "title_style": "statement",
-    "length_s": 24.67,
-    "length_bucket": "<30",
-    "post_at": "2026-11-08T18:00:00-05:00",
-    "post_slot": "18:00",
-    "score": 88
-   }
-  },
-  {
-   "video": "ipvQc7-oq_8",
-   "title": "How Much of Your Netflix Bill Is Profit?",
-   "views": 0,
-   "avg_pct": 0,
-   "avg_seconds": 0,
-   "tags": {
-    "script": "014",
-    "slug": "netflix",
-    "topic": "Netflix",
-    "format": "how",
-    "visual_style": "charts3d",
-    "theme": "clean_navy",
-    "hook_style": "question",
-    "title_style": "question",
-    "length_s": 26.36,
-    "length_bucket": "<30",
-    "post_at": "2026-11-08T15:00:00-05:00",
-    "post_slot": "15:00",
-    "score": 88
-   }
-  },
-  {
    "video": "aGOO0z7dfpk",
    "title": "From a Napkin Contract to $1.1 Billion",
    "views": 0,
@@ -945,6 +879,72 @@
     "post_at": "2026-11-10T12:00:00-05:00",
     "post_slot": "12:00",
     "score": 89
+   }
+  },
+  {
+   "video": "4RBsErczezM",
+   "title": "How Did Bankrupt Marvel Become a $4B Deal?",
+   "views": 0,
+   "avg_pct": 0,
+   "avg_seconds": 0,
+   "tags": {
+    "script": "065",
+    "slug": "how-marvel",
+    "topic": "Marvel",
+    "format": "how",
+    "visual_style": "editorial",
+    "theme": "bold_bright",
+    "hook_style": "question",
+    "title_style": "question",
+    "length_s": 30.78,
+    "length_bucket": "30-38",
+    "post_at": "2026-11-11T12:00:00-05:00",
+    "post_slot": "12:00",
+    "score": 92
+   }
+  },
+  {
+   "video": "dzsMqPku2HM",
+   "title": "From $6,000 to $780,000: MLB's Lowest Pay",
+   "views": 0,
+   "avg_pct": 0,
+   "avg_seconds": 0,
+   "tags": {
+    "script": "050",
+    "slug": "careers-mlb",
+    "topic": "MLB players",
+    "format": "careers",
+    "visual_style": "charts3d",
+    "theme": "bold_bright",
+    "hook_style": "number",
+    "title_style": "number",
+    "length_s": 25.54,
+    "length_bucket": "<30",
+    "post_at": "2026-11-10T18:00:00-05:00",
+    "post_slot": "18:00",
+    "score": 87
+   }
+  },
+  {
+   "video": "oygxmVi4Icg",
+   "title": "$2.077 Billion From 149 Shows",
+   "views": 0,
+   "avg_pct": 0,
+   "avg_seconds": 0,
+   "tags": {
+    "script": "055",
+    "slug": "famous-eras-tour",
+    "topic": "Taylor Swift",
+    "format": "famous",
+    "visual_style": "lowpoly",
+    "theme": "bold_bright",
+    "hook_style": "challenge",
+    "title_style": "number",
+    "length_s": 27.61,
+    "length_bucket": "<30",
+    "post_at": "2026-11-10T15:00:00-05:00",
+    "post_slot": "15:00",
+    "score": 91
    }
   }
  ]
