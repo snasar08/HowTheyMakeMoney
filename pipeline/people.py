@@ -32,7 +32,8 @@ def model(name: str) -> Character:
         if "mesh" not in n:
             continue
         mesh = g["meshes"][n["mesh"]]
-        slot = _SLOT_OF.get(mesh.get("name", "").split("_")[-1].lower())
+        slot = (_SLOT_OF.get(n.get("name", "").split(".")[0].split("_")[-1].lower())       # node name (Blender exports)
+                or _SLOT_OF.get(mesh.get("name", "").split("_")[-1].lower()))
         for pr in mesh["primitives"]:
             if "JOINTS_0" not in pr["attributes"]:
                 continue

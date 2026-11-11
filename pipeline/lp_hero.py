@@ -23,8 +23,10 @@ DEFAULT = dict(skin="light", hair="short", hair_color="3a2a1c", beard="none", sh
 
 # ---- modular people pack (pipeline/people.py, blender_lp.py): look strings both renderers read
 PEOPLE_H = 1.80                                  # model height the pack is scaled by (1.75 m at scale 1)
-HEAD_Y = {"m": 1.579, "w": 1.58}                 # height of the Head bone standing (idle_neutral, t = 0), meters: Blender scales by it
-RIG = {"m": "m_casual", "w": "w_adventurer"}     # the model whose bones and clips drive a family
+HEAD_Y = {"m": 1.579, "w": 1.58, "v": 1.58}                 # height of the Head bone standing (idle_neutral, t = 0), meters: Blender scales by it
+RIG = {"m": "m_casual", "w": "w_adventurer", "v": "v_casual"}   # the model whose bones and clips drive a family
+# a family = one export of the pack (first letter of the model name): m = men, v = women (author's
+# files), w = two women from another export. Parts only mix inside a family (bind poses differ).
 SLOTS = ("head", "body", "legs", "feet")
 
 
@@ -124,18 +126,23 @@ def look(hero):
            "head.Skin_Darker": _hex(_mix(skin, rgb(s.get("beard_color"), hair), 0.3) if s.get("beard") == "stubble" else skin),
            "head.Earrings": "-"}
     if family(s) == "w":
-        head = "w_punk" if s["hair"] == "mohawk" else "w_adventurer"
-        col.update({"head.Pink": _hex(hair), "head.Black": _hex(_mix(hair, (0, 0, 0), 0.4))})
-        body = "w_adventurer"
-        dark = _hex(_mix(shirt, (0, 0, 0), 0.25))
-        col.update({"body.LightGreen": _hex(shirt), "body.Green": dark, "body.White": _hex(shirt), "body.Brown2": dark, "body.Gold": dark})
-        if outfit == "dress":             # shorts in the dress color read as a short dress
-            legs = feet = "w_adventurer"
-            col.update({k: _hex(shirt) for k in ("legs.LightGreen", "legs.Brown2", "legs.Gold", "legs.White", "legs.Brown_02")})
-            col.update({"feet.Brown2": _hex(shoes), "feet.Brown_02": _hex(shoes)})
+        if s["hair"] == "mohawk":         # the punk model: its own export, so the whole figure comes from that family
+            col.update({"head.Pink": _hex(hair), "head.Black": _hex(_mix(hair, (0, 0, 0), 0.4)), "body.Pink": _hex(shirt),
+                        "body.Black": _hex(_mix(shirt, (0, 0, 0), 0.3)), "legs.Black": _hex(pants), "legs.Skin": _hex(pants),
+                        "feet.Black": _hex(shoes), "feet.Grey": _hex(_mix(shoes, (255, 255, 255), 0.5))})
+            return look_name("w_punk", "w_adventurer" if outfit == "dress" else "w_punk", "w_punk", "w_punk", col)
+        head = "v_formal" if s["hair"] in ("bun", "ponytail") else "v_suit" if s["hair"] in ("short", "buzz", "bald", "curly") else "v_casual"
+        col.update({"head.Hair_Blond": _hex(hair), "head.Hair_Brown": _hex(_mix(hair, (30, 22, 16), 0.35)), "head.Red": _hex(hair)})
+        if outfit == "dress":
+            body = legs = feet = "v_formal"
+            col.update({"body.LimeGreen": _hex(shirt), "legs.LimeGreen": _hex(shirt), "body.Gold": _hex(_mix(shirt, (255, 255, 255), 0.45)),
+                        "feet.Red": _hex(shoes)})
+        elif outfit == "suit":
+            body = legs = feet = "v_suit"
+            col.update({"body.Black": _hex(shirt), "legs.Black": _hex(pants), "feet.Black": _hex(shoes)})
         else:
-            legs = feet = "w_punk"
-            col.update({"legs.Black": _hex(pants), "legs.Skin": _hex(pants), "feet.Black": _hex(shoes), "feet.Grey": _hex(_mix(shoes, (255, 255, 255), 0.5))})
+            body = legs = feet = "v_casual"
+            col.update({"body.White": _hex(shirt), "legs.Orange": _hex(pants), "feet.Grey": _hex(shoes)})
         return look_name(head, body, legs, feet, col)
     head = "m_adventurer" if _modelled_beard(s) else _HEADS.get(s["hair"], "m_suit")
     if s["hair"] in ("bald", "buzz") or ("cap" in (s.get("extras") or []) and head in ("m_suit", "m_beach", "m_hoodie")):
@@ -170,17 +177,6 @@ def accessories(hero):
     hair = c(s.get("hair_color"), HAIR)
     out = []
     add = lambda mesh, pos, size, col: out.append(("Head", mesh, pos, size, col))   # noqa: E731
-    if family(s) == "w":
-        if s["hair"] in ("long", "bangs"):
-            add("box", (0.0, 1.36, -0.075), (0.2, 0.4, 0.06), hair)
-            for x in (-0.098, 0.098):
-                add("box", (x, 1.45, 0.0), (0.03, 0.3, 0.12), hair)
-        if s["hair"] == "bangs":
-            add("box", (0.0, 1.725, 0.165), (0.17, 0.05, 0.02), hair)
-        if s["hair"] == "ponytail":
-            add("box", (0.0, 1.45, -0.11), (0.06, 0.28, 0.05), hair)
-        if s["hair"] == "bun":
-            add("sphere", (0.0, 1.84, -0.03), (0.06, 0.06, 0.06), hair)
     if s["hair"] == "buzz":
         add("sphere", (0.0, 1.762, 0.052), (0.103, 0.062, 0.117), tuple(a * 0.45 + b * 0.55 for a, b in zip(skin, hair)))
     beard = s.get("beard", "none")
@@ -222,8 +218,9 @@ def crowd_looks():
                              shirt=tops[i % 12] if outfit != "suit" else "2b2f3a", pants=pants[(i * 5) % 8],
                              shoes=("f4f4f4", "2a2a2a", "c8442e")[i % 3])))
     for i in range(5):
-        out.append(look(dict(family="w", skin=tones[(i * 2 + 1) % 6], hair="short", hair_color=hairs[(i * 3 + 1) % 8],
-                             outfit="dress" if i % 2 else "tee", shirt=tops[(i * 5 + 3) % 12], pants=pants[(i * 3 + 1) % 8],
+        out.append(look(dict(family="w", skin=tones[(i * 2 + 1) % 6], hair=("long", "short", "bun", "long", "short")[i],
+                             hair_color=hairs[(i * 3 + 1) % 8], outfit=("tee", "dress", "tee", "suit", "tee")[i],
+                             shirt=tops[(i * 5 + 3) % 12] if i != 3 else "33384a", pants=pants[(i * 3 + 1) % 8],
                              shoes=("f4f4f4", "3a3a3a")[i % 2])))
     return out
 
