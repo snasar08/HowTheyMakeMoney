@@ -7,7 +7,7 @@
   "hook_style": "question",
   "title_style": "statement",
   "theme": "dark_neon",
-  "status": "ready",
+  "status": "delivered",
   "score": 87,
   "title": "App Builders Earn a Median of $135,980",
   "description": "You tap apps all day. But what do their builders earn?\n\nSources:\n- BLS OEWS via api.bls.gov: Software developers 15-1252, annual median wage, May 2025: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000015125213\n- BLS OEWS via api.bls.gov: employment: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000015125201\n- BLS OEWS via api.bls.gov: 10th percentile: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000015125211\n- BLS OEWS via api.bls.gov: 90th percentile: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000015125215\n\nBLS May 2025 (OEWS, occupation 15-1252 software developers): employment 1,687,890; median $135,980; 10th percentile $82,460; 90th percentile $214,670. 214,670 / 82,460 = about 2.6x (our math). Median = half earn more, half earn less. Not financial advice.\n\n#shorts #coding #careers #tech #howtheymakemoney",
@@ -118,5 +118,15 @@
       "title": "BLS OEWS via api.bls.gov: 90th percentile",
       "url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000015125215"
     }
-  ]
+  ],
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-058-careers-software-devs",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-058-careers-software-devs/058-careers-software-devs.mp4",
+    "post_at": "2026-11-12T12:00:00-05:00",
+    "buffer_post": "6af49f0039f6862ef6fd8213",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-11T16:59:45.091213+00:00",
+    "seconds": 30.19
+  }
 }

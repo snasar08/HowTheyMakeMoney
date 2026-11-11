@@ -7,7 +7,7 @@
   "hook_style": "question",
   "title_style": "question",
   "theme": "clean_navy",
-  "status": "ready",
+  "status": "delivered",
   "score": 90,
   "title": "How Did LeBron Earn $1 Billion While Playing?",
   "name_card": "LeBron James",
@@ -37,7 +37,24 @@
           "trophy"
         ],
         "stat": "$1 BILLION",
-        "stat_sub": "while still playing?"
+        "stat_sub": "while still playing?",
+        "hero": {
+          "skin": "8a5a3c",
+          "hair": "buzz",
+          "hair_color": "141210",
+          "beard": "full",
+          "beard_color": "141210",
+          "outfit": "kit",
+          "shirt": "fdb927",
+          "pants": "552583",
+          "socks": "f4f4f4",
+          "shoes": "552583",
+          "extras": [
+            "headband"
+          ],
+          "extra_color": "f4f4f4",
+          "height": 1.12
+        }
       }
     },
     {
@@ -51,7 +68,24 @@
           "ball"
         ],
         "stat": "$90 MILLION",
-        "stat_sub": "7-year shoe deal, 2003"
+        "stat_sub": "7-year shoe deal, 2003",
+        "hero": {
+          "skin": "8a5a3c",
+          "hair": "buzz",
+          "hair_color": "141210",
+          "beard": "full",
+          "beard_color": "141210",
+          "outfit": "kit",
+          "shirt": "fdb927",
+          "pants": "552583",
+          "socks": "f4f4f4",
+          "shoes": "552583",
+          "extras": [
+            "headband"
+          ],
+          "extra_color": "f4f4f4",
+          "height": 1.12
+        }
       }
     },
     {
@@ -66,7 +100,24 @@
           "phone"
         ],
         "stat": "$30M+",
-        "stat_sub": "Beats stake, sold 2014"
+        "stat_sub": "Beats stake, sold 2014",
+        "hero": {
+          "skin": "8a5a3c",
+          "hair": "buzz",
+          "hair_color": "141210",
+          "beard": "full",
+          "beard_color": "141210",
+          "outfit": "kit",
+          "shirt": "fdb927",
+          "pants": "552583",
+          "socks": "f4f4f4",
+          "shoes": "552583",
+          "extras": [
+            "headband"
+          ],
+          "extra_color": "f4f4f4",
+          "height": 1.12
+        }
       }
     },
     {
@@ -80,7 +131,24 @@
           "ball"
         ],
         "stat": "LIVERPOOL",
-        "stat_sub": "minority stake"
+        "stat_sub": "minority stake",
+        "hero": {
+          "skin": "8a5a3c",
+          "hair": "buzz",
+          "hair_color": "141210",
+          "beard": "full",
+          "beard_color": "141210",
+          "outfit": "kit",
+          "shirt": "fdb927",
+          "pants": "552583",
+          "socks": "f4f4f4",
+          "shoes": "552583",
+          "extras": [
+            "headband"
+          ],
+          "extra_color": "f4f4f4",
+          "height": 1.12
+        }
       }
     },
     {
@@ -94,7 +162,24 @@
           "trophy"
         ],
         "stat": "#1",
-        "stat_sub": "to earn $1B while active"
+        "stat_sub": "to earn $1B while active",
+        "hero": {
+          "skin": "8a5a3c",
+          "hair": "buzz",
+          "hair_color": "141210",
+          "beard": "full",
+          "beard_color": "141210",
+          "outfit": "kit",
+          "shirt": "fdb927",
+          "pants": "552583",
+          "socks": "f4f4f4",
+          "shoes": "552583",
+          "extras": [
+            "headband"
+          ],
+          "extra_color": "f4f4f4",
+          "height": 1.12
+        }
       }
     }
   ],
@@ -120,5 +205,15 @@
     ],
     "extra_color": "f4f4f4",
     "height": 1.12
+  },
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-051-famous-lebron",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-051-famous-lebron/051-famous-lebron.mp4",
+    "post_at": "2026-11-12T15:00:00-05:00",
+    "buffer_post": "6af4a061aa9908a25ec4aa17",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-11T17:05:37.528505+00:00",
+    "seconds": 25.27
   }
 }

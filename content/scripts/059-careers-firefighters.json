@@ -7,7 +7,7 @@
   "hook_style": "surprise",
   "title_style": "number",
   "theme": "clean_navy",
-  "status": "ready",
+  "status": "delivered",
   "score": 87,
   "title": "54% of US Firefighters Are Volunteers",
   "description": "Who fights the fires in your town? Maybe a volunteer.\n\nSources:\n- BLS OEWS via api.bls.gov: Firefighters 33-2011, annual median wage, May 2025: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000033201113\n- BLS OEWS via api.bls.gov: Firefighters, 10th percentile: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000033201111\n- BLS OEWS via api.bls.gov: Firefighters, 90th percentile: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000033201115\n- BLS OEWS via api.bls.gov: Firefighters, employment: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000033201101\n- Wikipedia: Volunteer fire department: https://en.wikipedia.org/wiki/Volunteer_fire_department\n- Wikipedia: Firefighting in the United States: https://en.wikipedia.org/wiki/Firefighting_in_the_United_States\n\nNFPA (cited on Wikipedia): 54 percent of US firefighters are volunteers. US Department of Labor: volunteers get no pay or nominal fees up to 20% of a full-time firefighter's pay (Wikipedia). 95% of volunteer firefighters serve departments protecting fewer than 25,000 people (Wikipedia). BLS May 2025 (OEWS), paid firefighters: 345,990 jobs; median $59,280; 10th percentile $34,910; 90th percentile $101,040. Median = half earn more, half earn less. Not financial advice.\n\n#shorts #firefighter #careers #howtheymakemoney",
@@ -122,5 +122,15 @@
       "title": "Wikipedia: Firefighting in the United States",
       "url": "https://en.wikipedia.org/wiki/Firefighting_in_the_United_States"
     }
-  ]
+  ],
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-059-careers-firefighters",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-059-careers-firefighters/059-careers-firefighters.mp4",
+    "post_at": "2026-11-12T18:00:00-05:00",
+    "buffer_post": "6af4a0cbafe96d2e4a0d0231",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-11T17:07:23.605578+00:00",
+    "seconds": 24.9
+  }
 }
