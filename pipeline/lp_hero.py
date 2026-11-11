@@ -202,8 +202,6 @@ def accessories(hero):
         elif beard == "goatee":
             add("box", (0.0, 1.533, 0.14), (0.06, 0.05, 0.042), bc)
         add("box", (0.0, 1.613, 0.17), (0.066, 0.013, 0.018), bc)
-    if beard == "none" or family(s) != "m":    # a small mouth: the pack's faces have none, and a hero is seen close up
-        add("box", (0.0, 1.582, 0.157), (0.05, 0.009, 0.014), tuple(a * 0.5 + b * 0.5 for a, b in zip(skin, (0.42, 0.13, 0.12))))
     ex, ec = s.get("extras") or [], c(s.get("extra_color"), (30, 30, 34))
     if "glasses" in ex:
         for x in (-0.034, 0.034):
