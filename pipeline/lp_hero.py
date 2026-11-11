@@ -194,7 +194,7 @@ def accessories(hero):
                 add("box", (x, 1.535, 0.0), (0.026, 0.1, 0.125), bc)
                 add("box", (x * 1.2, 1.63, -0.005), (0.016, 0.07, 0.05), bc)
         elif beard == "goatee":
-            add("box", (0.0, 1.522, 0.115), (0.062, 0.058, 0.05), bc)
+            add("box", (0.0, 1.533, 0.14), (0.06, 0.05, 0.042), bc)
         add("box", (0.0, 1.617, 0.158), (0.078, 0.015, 0.016), bc)
     ex, ec = s.get("extras") or [], c(s.get("extra_color"), (30, 30, 34))
     if "glasses" in ex:
