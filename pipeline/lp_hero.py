@@ -46,7 +46,16 @@ def look_color(over, slot, mat):
     v = over.get(f"{slot}.{mat}", over.get(mat))
     if v is None or v == "-":
         return v
-    return rgb(v, None)
+    return rgb(v[1:] if len(v) == 7 else v, None)
+
+
+BEARD_CUT = (1.655, 0.02)   # of the bearded head's hair piece, the beard is what lies below this y and in front of this z (standing pose, meters)
+
+
+def look_cut(over, slot, mat):
+    """True when only the beard part of that material is kept ('bRRGGBB': a bald or buzz-cut head with a modelled beard)."""
+    v = over.get(f"{slot}.{mat}", over.get(mat)) or ""
+    return len(v) == 7 and v[0] == "b"
 
 
 def rgb(h, default=(128, 128, 128)):
@@ -113,7 +122,7 @@ def family(hero):
 
 def _modelled_beard(s):
     """True when the chosen head already carries the beard (the bearded head's hair and beard are one piece)."""
-    return family(s) == "m" and s.get("beard") == "full" and s["hair"] in ("short", "long", "curly", "quiff", "afro", "bangs")
+    return family(s) == "m" and s.get("beard") == "full" and s["hair"] in ("short", "long", "curly", "quiff", "afro", "bangs", "bald", "buzz")
 
 
 def look(hero):
@@ -145,7 +154,9 @@ def look(hero):
             col.update({"body.White": _hex(shirt), "legs.Orange": _hex(pants), "feet.Grey": _hex(shoes)})
         return look_name(head, body, legs, feet, col)
     head = "m_adventurer" if _modelled_beard(s) else _HEADS.get(s["hair"], "m_suit")
-    if s["hair"] in ("bald", "buzz") or ("cap" in (s.get("extras") or []) and head in ("m_suit", "m_beach", "m_hoodie")):
+    if head == "m_adventurer" and s["hair"] in ("bald", "buzz"):
+        col["head.Hair"] = "b" + _hex(rgb(s.get("beard_color"), hair))     # keep the modelled beard, drop the hair on top
+    elif s["hair"] in ("bald", "buzz") or ("cap" in (s.get("extras") or []) and head in ("m_suit", "m_beach", "m_hoodie")):
         col["head.Hair"] = "-"
     if head == "m_punk":
         col.update({"head.Red": _hex(hair), "head.Red_Dark": _hex(_mix(hair, (0, 0, 0), 0.3))})
@@ -181,10 +192,9 @@ def accessories(hero):
         add("sphere", (0.0, 1.762, 0.052), (0.103, 0.062, 0.117), tuple(a * 0.45 + b * 0.55 for a, b in zip(skin, hair)))
     beard = s.get("beard", "none")
     bc = c(s.get("beard_color"), tuple(int(v * 255) for v in hair))
-    if beard == "stubble":
-        bc = tuple(a * 0.62 + b * 0.38 for a, b in zip(skin, bc))
-    if beard != "none" and not _modelled_beard(s) and family(s) == "m" and not (beard == "stubble" and s["hair"] in ("ponytail", "bun")):
-        if beard in ("full", "stubble"):
+    # stubble is not drawn as blocks (it read as a neck brace); the ponytail head shades its own
+    if beard not in ("none", "stubble") and not _modelled_beard(s) and family(s) == "m":
+        if beard == "full":
             add("box", (0.0, 1.528, 0.125), (0.078, 0.056, 0.062), bc)      # chin
             for x in (-0.07, 0.07):                                          # along the jaw
                 add("box", (x, 1.548, 0.07), (0.02, 0.062, 0.1), bc)

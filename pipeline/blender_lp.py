@@ -291,8 +291,9 @@ def model(name):
     objs0, acts0 = set(bpy.data.objects), set(bpy.data.actions)
     bpy.ops.import_scene.gltf(filepath=str(PEOPLE / f"{name}.glb"))
     objs = [o for o in bpy.data.objects if o not in objs0]
-    M = MODELS[name] = dict(arm=next(o for o in objs if o.type == "ARMATURE"), parts={}, scale=1.0, posed=None, ref={},
+    M = MODELS[name] = dict(arm=next(o for o in objs if o.type == "ARMATURE"), parts={}, scale=1.0, posed=None, ref={}, cut={},
                             acts={_clip_key(a.name): a for a in bpy.data.actions if a not in acts0})
+    M["arm"].animation_data_clear()   # the importer leaves an action playing: a render would re-pose the armature behind our back
     for o in objs:
         o.hide_render = True
         slot = SLOT_OF.get(o.name.split(".")[0].split("_")[-1].lower()) if o.type == "MESH" else None
@@ -401,11 +402,21 @@ def look_meshes(look, clip, t):
         for i, m in enumerate(_look_mats[k]):
             me.materials[i] = m
         hide = {i for i, m in enumerate(_look_mats[k]) if m is HIDDEN}
-        if hide:                             # really remove hidden pieces (stacked transparent hair rendered as dark specks)
+        cut = set()
+        M = model(parts[slot])
+        for i, m0 in enumerate(M["parts"][slot].data.materials):
+            if m0 and lp_hero.look_cut(over, slot, m0.name.split(".")[0]):
+                ck = (slot, i)
+                if ck not in M["cut"]:       # which faces of that piece are not beard, judged once in the standing pose
+                    ref_me = part_mesh(parts[slot], slot, "idle_neutral", 0.0)
+                    M["cut"][ck] = {pl.index for pl in ref_me.polygons if pl.material_index == i
+                                    and not (pl.center.y < lp_hero.BEARD_CUT[0] and pl.center.z > lp_hero.BEARD_CUT[1])}
+                cut |= M["cut"][ck]
+        if hide or cut:                      # really remove hidden pieces (stacked transparent hair rendered as dark specks)
             import bmesh
             bm = bmesh.new()
             bm.from_mesh(me)
-            bmesh.ops.delete(bm, geom=[fc for fc in bm.faces if fc.material_index in hide], context="FACES")
+            bmesh.ops.delete(bm, geom=[fc for fc in bm.faces if fc.material_index in hide or fc.index in cut], context="FACES")
             bm.to_mesh(me)
             bm.free()
         out.append(me)
@@ -659,6 +670,8 @@ for n, (plan, key) in enumerate(JOBS):
     for me in _baked.values():   # last frame's posed parts
         bpy.data.meshes.remove(me)
     _baked.clear()
+    for M_ in MODELS.values():   # never trust a pose across a render
+        M_["posed"] = None
     hero_cid = f["crowds"][-1][0] if f.get("hero") and f["crowds"] else None
     acc = lp_hero.accessories(f["hero"]) if hero_cid is not None else []
     for cid, cm in f["crowds"]:
@@ -671,6 +684,9 @@ for n, (plan, key) in enumerate(JOBS):
                 HM = model(lp_hero.parse_look(c["skin"])[0]["head"])
                 _pose(HM, clip, f["t"] + ph)
                 W = {b_: bone_m(HM, b_) @ r_ for b_, r_ in HM["ref"].items()}
+                if os.environ.get("BL_DEBUG"):
+                    print(f"::warning title=dbg acc {key}::clip {clip} t {f['t'] + ph:.3f} acc {len(acc)} rows {len(rows)} "
+                          f"W {[tuple(round(v, 3) for v in r) for r in W['Head']][:3]}", flush=True)
             for r in rows:
                 if (gm @ Vector((r[0], r[1] + 1, r[2])) - Vector(f["eye"])).length < 4.0 and cid != f["crowds"][-1][0]:
                     continue  # never let a background person block the lens

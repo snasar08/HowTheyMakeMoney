@@ -363,7 +363,7 @@ class Renderer:
             hero_ = lp_hero.auto(script.get("slug", ""))   # what-if Shorts: a stable everyman, new per Short
         for sc_ in script.get("scenes", []):
             v_ = sc_.get("visual", {})
-            if v_.get("type") == "lowpoly" and hero_ and "hero" not in v_ and "kit" not in v_:
+            if v_.get("type") == "lowpoly" and hero_ and "hero" not in v_:   # the script's hero wins over an old per-scene "kit"
                 v_["hero"] = hero_
         hook = self.images.get("hook")
         if hook is not None:

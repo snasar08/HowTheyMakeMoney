@@ -284,4 +284,5 @@ Sam: "the better free character models... do it yourself". Done in one session.
 - `pipeline/people.py` + look strings in `pipeline/lp_hero.py`; crowds are 16 mixed people; heroes map hair/beard/outfit to real modelled parts.
 - Blender: imports each model once, bakes the four parts per pose, recolors by material name. First run was not animated because Blender names actions `Idle_CharacterArmature`; fixed. Hidden hair is deleted (stacked transparent faces rendered as dark specks).
 - Tested with the Blender look check (030, 040, 051, 055, 061) and a full dry run of 040.
+- Later the same day: 4 more women's models from the author's own Drive folder (casual, formal dress, suit, worker; `v_*`). Bald/buzz heroes with a full beard (LeBron) get the modelled beard instead of blocks. Block stubble removed. Bug: a hero's goatee vanished in some idle frames because the imported action re-posed the armature during a render; fixed. Ronaldo was drawn with the default hair in full renders because an old per-scene `kit` blocked the script `hero`; fixed.
 
