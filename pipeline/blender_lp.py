@@ -264,6 +264,11 @@ SMOOTH, SUBSURF = float(_sm[0] or 0), int(_sm[1]) if len(_sm) > 1 else 0
 MODELS = {}
 
 
+def _clip_key(name):
+    """'CharacterArmature|Idle_Neutral', 'Idle_Neutral_CharacterArmature.001' -> 'idle_neutral'."""
+    return name.lower().split(".")[0].replace("characterarmature", "").replace("humanarmature", "").replace("|", "").strip("_")
+
+
 def _pose(M, clip, t):
     a = M["acts"].get((clip or "idle_neutral").lower()) or M["acts"].get("idle_neutral")
     if a is not None:
@@ -287,7 +292,7 @@ def model(name):
     bpy.ops.import_scene.gltf(filepath=str(PEOPLE / f"{name}.glb"))
     objs = [o for o in bpy.data.objects if o not in objs0]
     M = MODELS[name] = dict(arm=next(o for o in objs if o.type == "ARMATURE"), parts={}, scale=1.0, posed=None, ref={},
-                            acts={a.name.split("|")[-1].split(".")[0].lower(): a for a in bpy.data.actions if a not in acts0})
+                            acts={_clip_key(a.name): a for a in bpy.data.actions if a not in acts0})
     for o in objs:
         o.hide_render = True
         slot = SLOT_OF.get(o.name.split(".")[0].split("_")[-1].lower()) if o.type == "MESH" else None

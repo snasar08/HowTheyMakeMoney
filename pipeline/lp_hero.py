@@ -23,7 +23,7 @@ DEFAULT = dict(skin="light", hair="short", hair_color="3a2a1c", beard="none", sh
 
 # ---- modular people pack (pipeline/people.py, blender_lp.py): look strings both renderers read
 PEOPLE_H = 1.80                                  # model height the pack is scaled by (1.75 m at scale 1)
-HEAD_Y = {"m": 1.556, "w": 1.548}                # rest height of the Head bone, in meters (Blender scales by it)
+HEAD_Y = {"m": 1.579, "w": 1.58}                 # height of the Head bone standing (idle_neutral, t = 0), meters: Blender scales by it
 RIG = {"m": "m_casual", "w": "w_adventurer"}     # the model whose bones and clips drive a family
 SLOTS = ("head", "body", "legs", "feet")
 
