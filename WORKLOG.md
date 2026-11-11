@@ -277,3 +277,11 @@ Sam: the low-poly Shorts have no background, the Ronaldo edit is bad, famous peo
 - Tools: `pipeline.lp_look` (contact sheet without voice; records a few frames for Blender), temporary workflow `lplook.yml` on the `stress-test` branch renders those frames in Cycles in about 5 minutes. `pipeline.preview` now works for low-poly.
 - `LOWPOLY_GAP` 5 -> 2.
 
+## Nov 11: new people for the animated Shorts (CC0 modular pack)
+Sam: "the better free character models... do it yourself". Done in one session.
+- Looked at three packs. Quaternius Universal Base Characters: smooth but the free version is underwear-only. Kenney Mini Characters: blockier than ours. Chosen: Quaternius Ultimate Modular Men/Women (CC0): clothed, faces, hair, beards, swappable head/body/legs/feet.
+- Downloaded 10 models (about 15 MB) from poly.pizza, CC0-listed ones only (the author's Drive was over its download quota).
+- `pipeline/people.py` + look strings in `pipeline/lp_hero.py`; crowds are 16 mixed people; heroes map hair/beard/outfit to real modelled parts.
+- Blender: imports each model once, bakes the four parts per pose, recolors by material name. First run was not animated because Blender names actions `Idle_CharacterArmature`; fixed. Hidden hair is deleted (stacked transparent faces rendered as dark specks).
+- Tested with the Blender look check (030, 040, 051, 055, 061) and a full dry run of 040.
+
