@@ -293,6 +293,7 @@ def model(name):
     objs = [o for o in bpy.data.objects if o not in objs0]
     M = MODELS[name] = dict(arm=next(o for o in objs if o.type == "ARMATURE"), parts={}, scale=1.0, posed=None, ref={}, cut={},
                             acts={_clip_key(a.name): a for a in bpy.data.actions if a not in acts0})
+    M["arm"].animation_data_clear()   # the importer leaves an action playing: a render would re-pose the armature behind our back
     for o in objs:
         o.hide_render = True
         slot = SLOT_OF.get(o.name.split(".")[0].split("_")[-1].lower()) if o.type == "MESH" else None
@@ -669,6 +670,8 @@ for n, (plan, key) in enumerate(JOBS):
     for me in _baked.values():   # last frame's posed parts
         bpy.data.meshes.remove(me)
     _baked.clear()
+    for M_ in MODELS.values():   # never trust a pose across a render
+        M_["posed"] = None
     hero_cid = f["crowds"][-1][0] if f.get("hero") and f["crowds"] else None
     acc = lp_hero.accessories(f["hero"]) if hero_cid is not None else []
     for cid, cm in f["crowds"]:
