@@ -250,78 +250,137 @@ def mat4(flat):
     return Matrix([flat[0:4], flat[4:8], flat[8:12], flat[12:16]])
 
 
-# ---------------------------------------------------------------- the character, posed by baking
-bpy.ops.import_scene.gltf(filepath=str(CHAR))
-arm = next(o for o in bpy.context.scene.objects if o.type == "ARMATURE")
-body = next(o for o in bpy.context.scene.objects if o.type == "MESH")
-for o in (arm, body):
-    o.hide_render = True
+# ---------------------------------------------------------------- the people, posed by baking
+# Modular CC0 pack (assets/characters/people, pipeline/people.py): each model is one armature with four
+# part meshes (head, body, legs, feet) and 24 actions. A look (lp_hero.look_name) mixes parts of one
+# family and recolors their named materials.
+PEOPLE = ROOT_DIR / "assets" / "characters" / "people"
+SLOT_OF = {"head": "head", "body": "body", "legs": "legs", "pants": "legs", "feet": "feet"}
 to_lp = Matrix.Rotation(math.radians(-90), 4, "X")  # Blender Z-up -> pipeline Y-up
 # BL_SMOOTH="<degrees>[s<levels>]": edges flatter than <degrees> are shaded smooth; s1/s2 also
-# subdivides the people (rounded, toy-like forms instead of facets). "0" = the old faceted look.
-_sm = os.environ.get("BL_SMOOTH", "180s1").split("s")   # Nov 10: smooth, rounded people are the default
+# subdivides the people (rounded, toy-like forms instead of facets). "0" = the faceted look.
+_sm = os.environ.get("BL_SMOOTH", "180s1").split("s")
 SMOOTH, SUBSURF = float(_sm[0] or 0), int(_sm[1]) if len(_sm) > 1 else 0
-if SMOOTH or SUBSURF:
-    import bmesh
-    _bm = bmesh.new()
-    _bm.from_mesh(body.data)
-    bmesh.ops.remove_doubles(_bm, verts=_bm.verts, dist=1e-5)   # the file stores every face apart
-    _bm.to_mesh(body.data)
-    _bm.free()
-    for _a in ("custom_normal", "sharp_face", "sharp_edge"):
-        if _a in body.data.attributes:
-            body.data.attributes.remove(body.data.attributes[_a])
-    if SUBSURF:
-        _m = body.modifiers.new("sub", "SUBSURF")
-        _m.levels = _m.render_levels = SUBSURF
-        _m.uv_smooth = "NONE"
-acts = {a.name.lower(): a for a in bpy.data.actions}
+MODELS = {}
 
 
-def action(clip):
-    clip = (clip or "idle").lower()
-    return acts.get(clip) or next((a for n, a in acts.items() if n.endswith(clip) or clip in n), None)
-
-
-def bake(clip, t):
-    """Deformed body mesh at clip time t, in pipeline coordinates, normalized to feet at y=0."""
-    a = action(clip)
+def _pose(M, clip, t):
+    a = M["acts"].get((clip or "idle_neutral").lower()) or M["acts"].get("idle_neutral")
     if a is not None:
         f0, f1 = a.frame_range
         ft = min(max(t, 0.0) * FPS, f1 - f0 - 1) if "death" in a.name.lower() else (t * FPS) % max(f1 - f0, 1)
-        arm.pose.apply_pose_from_action(a, evaluation_time=f0 + ft)   # a fall plays once and stays down
+        M["arm"].pose.apply_pose_from_action(a, evaluation_time=f0 + ft)   # a fall plays once and stays down
+    M["posed"] = (clip, t)
     bpy.context.view_layer.update()
-    dg = bpy.context.evaluated_depsgraph_get()
-    me = bpy.data.meshes.new_from_object(body.evaluated_get(dg))
-    me.transform(to_lp @ body.matrix_world)
-    if SMOOTH:
-        me.polygons.foreach_set("use_smooth", [True] * len(me.polygons))
-        try:
-            me.set_sharp_from_angle(angle=math.radians(SMOOTH))
-        except AttributeError:
-            pass
-    return me
 
 
+def bone_m(M, bone):
+    """A bone's current matrix in pipeline coordinates, in meters."""
+    pb = M["arm"].pose.bones.get(bone)
+    return None if pb is None else Matrix.Scale(M["scale"], 4) @ to_lp @ M["arm"].matrix_world @ pb.matrix
 
 
-def bone_mats(names):
-    """Rest-pose -> current-pose matrix per bone, in pipeline coordinates (for hero hair, shoes...)."""
-    aw, inv = arm.matrix_world, to_lp.inverted()
-    out = {}
-    for n in names:
-        pb = arm.pose.bones.get(n)
-        if pb is not None:
-            out[n] = to_lp @ aw @ pb.matrix @ pb.bone.matrix_local.inverted() @ aw.inverted() @ inv
+def model(name):
+    if name in MODELS:
+        return MODELS[name]
+    objs0, acts0 = set(bpy.data.objects), set(bpy.data.actions)
+    bpy.ops.import_scene.gltf(filepath=str(PEOPLE / f"{name}.glb"))
+    objs = [o for o in bpy.data.objects if o not in objs0]
+    M = MODELS[name] = dict(arm=next(o for o in objs if o.type == "ARMATURE"), parts={}, scale=1.0, posed=None, ref={},
+                            acts={a.name.split("|")[-1].split(".")[0].lower(): a for a in bpy.data.actions if a not in acts0})
+    for o in objs:
+        o.hide_render = True
+        slot = SLOT_OF.get(o.name.split(".")[0].split("_")[-1].lower()) if o.type == "MESH" else None
+        if not slot:
+            continue
+        M["parts"][slot] = o
+        if SMOOTH or SUBSURF:
+            import bmesh
+            bm = bmesh.new()
+            bm.from_mesh(o.data)
+            bmesh.ops.remove_doubles(bm, verts=bm.verts, dist=1e-6)   # the file stores every face apart
+            bm.to_mesh(o.data)
+            bm.free()
+            for at in ("custom_normal", "sharp_face", "sharp_edge"):
+                if at in o.data.attributes:
+                    o.data.attributes.remove(o.data.attributes[at])
+            if SUBSURF:
+                md = o.modifiers.new("sub", "SUBSURF")
+                md.levels = md.render_levels = SUBSURF
+                md.uv_smooth = "NONE"
+    # size: the standing Head bone must sit where the GL renderer has it (lp_hero.HEAD_Y, meters)
+    _pose(M, "idle_neutral", 0.0)
+    y = bone_m(M, "Head").translation.y
+    M["scale"] = lp_hero.HEAD_Y[name[0]] / y if y > 1e-6 else 1.0
+    M["ref"] = {"Head": bone_m(M, "Head").inverted()}
+    print(f"[blender] model {name}: parts {sorted(M['parts'])}, {len(M['acts'])} clips, scale {M['scale']:.4f}", flush=True)
+    return M
+
+
+_baked = {}       # (model, slot, clip, t) -> posed mesh of this frame
+_look_mats = {}   # (look, slot) -> [material per slot index]
+HIDDEN = None
+
+
+def _hidden():
+    global HIDDEN
+    if HIDDEN is None:
+        HIDDEN = bpy.data.materials.new("hidden")
+        HIDDEN.use_nodes = True
+        nt = HIDDEN.node_tree
+        nt.nodes.clear()
+        out, tr = nt.nodes.new("ShaderNodeOutputMaterial"), nt.nodes.new("ShaderNodeBsdfTransparent")
+        nt.links.new(tr.outputs[0], out.inputs["Surface"])
+    return HIDDEN
+
+
+def part_mesh(name, slot, clip, t):
+    k = (name, slot, clip, round(t, 4))
+    if k not in _baked:
+        M = model(name)
+        if M["posed"] != (clip, t):
+            _pose(M, clip, t)
+        o = M["parts"][slot]
+        dg = bpy.context.evaluated_depsgraph_get()
+        me = bpy.data.meshes.new_from_object(o.evaluated_get(dg))
+        me.transform(Matrix.Scale(M["scale"], 4) @ to_lp @ o.matrix_world)
+        if SMOOTH:
+            me.polygons.foreach_set("use_smooth", [True] * len(me.polygons))
+            try:
+                me.set_sharp_from_angle(angle=math.radians(SMOOTH))
+            except AttributeError:
+                pass
+        _baked[k] = me
+    return _baked[k]
+
+
+def look_meshes(look, clip, t):
+    """The posed part meshes of a look, wearing its colors."""
+    parts, over = lp_hero.parse_look(look)
+    out = []
+    for slot in lp_hero.SLOTS:
+        if slot not in model(parts[slot])["parts"]:
+            continue
+        me = part_mesh(parts[slot], slot, clip, t).copy()
+        k = (look, slot)
+        if k not in _look_mats:
+            ms = []
+            for m0 in me.materials:
+                c = lp_hero.look_color(over, slot, m0.name.split(".")[0]) if m0 else None
+                if c == "-":
+                    ms.append(_hidden())
+                elif c:
+                    ms.append(mat(tuple(v / 255 for v in c)))
+                else:
+                    bc = (0.5, 0.5, 0.5, 1.0)
+                    if m0 and m0.use_nodes and "Principled BSDF" in m0.node_tree.nodes:
+                        bc = m0.node_tree.nodes["Principled BSDF"].inputs["Base Color"].default_value
+                    ms.append(mat(tuple(min(1.0, max(0.0, v)) ** (1 / 2.2) for v in bc[:3])))
+            _look_mats[k] = ms
+        for i, m in enumerate(_look_mats[k]):
+            me.materials[i] = m
+        out.append(me)
     return out
-
-
-arm.data.pose_position = "REST"
-rest = bake(None, 0.0)
-arm.data.pose_position = "POSE"
-ys = [v.co.y for v in rest.vertices]
-B_BASE, B_HEIGHT = min(ys), (max(ys) - min(ys)) or 1.0
-bpy.data.meshes.remove(rest)
 
 
 def ry(a):
@@ -528,7 +587,6 @@ def set_camera(f):
 item_objs = {}
 frame_objs = []
 acc_objs = []
-UNNORM = Matrix.Translation((0, B_BASE, 0)) @ Matrix.Scale(B_HEIGHT / 1.75, 4)   # 1.75 m figure -> the mesh's units
 
 item_objs_by_plan = {}
 for n, (plan, key) in enumerate(JOBS):
@@ -569,32 +627,36 @@ for n, (plan, key) in enumerate(JOBS):
     for o in acc_objs:    # last frame's hero hair, shoes...
         bpy.data.objects.remove(o)
     frame_objs, acc_objs = [], []
+    for me in _baked.values():   # last frame's posed parts
+        bpy.data.meshes.remove(me)
+    _baked.clear()
     hero_cid = f["crowds"][-1][0] if f.get("hero") and f["crowds"] else None
     acc = lp_hero.accessories(f["hero"]) if hero_cid is not None else []
-    k = 1.75 / f["height"]
     for cid, cm in f["crowds"]:
         gm = mat4(cm)
         c = plan["crowds"][cid]
-        sm = skin_mat(c["skin"] or "LightSkin")
         for clip, ph, rows in c["groups"]:
-            me = bake(clip, f["t"] + ph)
-            me.materials.clear()
-            me.materials.append(sm)
+            meshes = look_meshes(c["skin"], clip, f["t"] + ph)
+            W = None
+            if cid == hero_cid and acc:      # hero extras ride on the head: its pose now, relative to standing
+                HM = model(lp_hero.parse_look(c["skin"])[0]["head"])
+                _pose(HM, clip, f["t"] + ph)
+                W = {b_: bone_m(HM, b_) @ r_ for b_, r_ in HM["ref"].items()}
             for r in rows:
                 if (gm @ Vector((r[0], r[1] + 1, r[2])) - Vector(f["eye"])).length < 4.0 and cid != f["crowds"][-1][0]:
                     continue  # never let a background person block the lens
-                s = r[7] / k                                   # the instance's own size factor
-                feet = r[1] + f["base_y"] * r[7]               # rows store y already lowered by base_y
-                m = (gm @ Matrix.Translation((r[0], feet, r[2])) @ ry(r[3])
-                     @ Matrix.Scale(1.75 / B_HEIGHT * s, 4) @ Matrix.Translation((0, -B_BASE, 0)))
-                frame_objs.append(obj("p", me, m))
-                if cid == hero_cid and acc:
-                    W = bone_mats({a[0] for a in acc})
+                m = gm @ Matrix.Translation((r[0], r[1], r[2])) @ ry(r[3]) @ Matrix.Scale(r[7], 4)   # r[7]: 1.75 / model height * size
+                for me in meshes:
+                    frame_objs.append(obj("p", me, m))
+                if W:
                     for bone, mesh, pos, size, col in acc:
                         if bone in W:
-                            o = obj("a", MESHES["rbox" if (mesh == "box" and (SMOOTH or SUBSURF)) else mesh], m @ W[bone] @ UNNORM @ Matrix.Translation(pos) @ Matrix.Diagonal((*size, 1)))
+                            o = obj("a", MESHES["rbox" if (mesh == "box" and (SMOOTH or SUBSURF)) else mesh], m @ W[bone] @ Matrix.Translation(pos) @ Matrix.Diagonal((*size, 1)))
                             paint(o, mat(col))
                             acc_objs.append(o)
+            for me in meshes:                # a group nobody used (all too close to the lens)
+                if me.users == 0:
+                    bpy.data.meshes.remove(me)
     (out_dir / plan["_slug"]).mkdir(parents=True, exist_ok=True)
     sc.render.filepath = str(out_dir / plan["_slug"] / f"{key}.jpg")
     bpy.ops.render.render(write_still=True)

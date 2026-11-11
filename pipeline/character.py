@@ -75,6 +75,8 @@ class Character:
                 img = None
                 if "baseColorTexture" in pbr:
                     img = g["textures"][pbr["baseColorTexture"]["index"]]["source"]
+                if "JOINTS_0" not in a:
+                    continue
                 self.prims.append(dict(
                     pos=self._acc(a["POSITION"]), norm=self._acc(a["NORMAL"]),
                     uv=self._acc(a["TEXCOORD_0"]) if "TEXCOORD_0" in a else None,
@@ -118,6 +120,8 @@ class Character:
 
     def find_clip(self, *names):
         for want in names:
+            if want in self.clips:
+                return want
             for k in self.clips:
                 if want in k:
                     return k
