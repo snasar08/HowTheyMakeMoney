@@ -7,7 +7,7 @@
   "hook_style": "surprise",
   "title_style": "number",
   "theme": "bold_bright",
-  "status": "ready",
+  "status": "delivered",
   "score": 94,
   "title": "From Selling Sunglasses to $228 Million",
   "name_card": "Giannis Antetokounmpo",
@@ -36,7 +36,20 @@
           "boxes"
         ],
         "stat": "$228 MILLION",
-        "stat_sub": "from selling sunglasses"
+        "stat_sub": "from selling sunglasses",
+        "hero": {
+          "skin": "5a3c28",
+          "hair": "short",
+          "hair_color": "15110e",
+          "beard": "goatee",
+          "beard_color": "15110e",
+          "outfit": "kit",
+          "shirt": "1f5a34",
+          "pants": "1f5a34",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "height": 1.1
+        }
       }
     },
     {
@@ -50,7 +63,20 @@
           "boxes"
         ],
         "stat": "STREET SELLER",
-        "stat_sub": "with his older brother"
+        "stat_sub": "with his older brother",
+        "hero": {
+          "skin": "5a3c28",
+          "hair": "short",
+          "hair_color": "15110e",
+          "beard": "goatee",
+          "beard_color": "15110e",
+          "outfit": "kit",
+          "shirt": "1f5a34",
+          "pants": "1f5a34",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "height": 1.1
+        }
       }
     },
     {
@@ -64,7 +90,20 @@
           "ball"
         ],
         "stat": "PICK 15",
-        "stat_sub": "2013 NBA draft"
+        "stat_sub": "2013 NBA draft",
+        "hero": {
+          "skin": "5a3c28",
+          "hair": "short",
+          "hair_color": "15110e",
+          "beard": "goatee",
+          "beard_color": "15110e",
+          "outfit": "kit",
+          "shirt": "1f5a34",
+          "pants": "1f5a34",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "height": 1.1
+        }
       }
     },
     {
@@ -80,7 +119,20 @@
         ],
         "stat": "$228 MILLION",
         "stat_sub": "5-year deal, 2020",
-        "hud": "$228M"
+        "hud": "$228M",
+        "hero": {
+          "skin": "5a3c28",
+          "hair": "short",
+          "hair_color": "15110e",
+          "beard": "goatee",
+          "beard_color": "15110e",
+          "outfit": "kit",
+          "shirt": "1f5a34",
+          "pants": "1f5a34",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "height": 1.1
+        }
       }
     },
     {
@@ -96,7 +148,20 @@
         ],
         "stat": "CHAMPION",
         "stat_sub": "2021, first since 1971",
-        "hud": "$228M"
+        "hud": "$228M",
+        "hero": {
+          "skin": "5a3c28",
+          "hair": "short",
+          "hair_color": "15110e",
+          "beard": "goatee",
+          "beard_color": "15110e",
+          "outfit": "kit",
+          "shirt": "1f5a34",
+          "pants": "1f5a34",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "height": 1.1
+        }
       }
     }
   ],
@@ -118,5 +183,15 @@
     "socks": "f4f4f4",
     "shoes": "f4f4f4",
     "height": 1.1
+  },
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-074-famous-giannis",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-074-famous-giannis/074-famous-giannis.mp4",
+    "post_at": "2026-11-13T16:30:00-05:00",
+    "buffer_post": "6af5fd5f1b490358bd2f160c",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-12T17:54:39.288560+00:00",
+    "seconds": 27.65
   }
 }

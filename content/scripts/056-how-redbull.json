@@ -7,7 +7,7 @@
   "hook_style": "number",
   "title_style": "number",
   "theme": "dark_neon",
-  "status": "ready",
+  "status": "delivered",
   "score": 91,
   "tag": "Company backstory",
   "title": "Red Bull Sells 14 Billion Cans a Year",
@@ -166,5 +166,15 @@
       "title": "Wikipedia: Red Bull",
       "url": "https://en.wikipedia.org/wiki/Red_Bull"
     }
-  ]
+  ],
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-056-how-redbull",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-056-how-redbull/056-how-redbull.mp4",
+    "post_at": "2026-11-12T16:30:00-05:00",
+    "buffer_post": "6af5fc0c845ed638c961c5f8",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-12T17:49:00.920231+00:00",
+    "seconds": 25.71
+  }
 }

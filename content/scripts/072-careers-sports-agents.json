@@ -7,7 +7,7 @@
   "hook_style": "number",
   "title_style": "statement",
   "theme": "clean_navy",
-  "status": "ready",
+  "status": "delivered",
   "score": 90,
   "title": "Soccer Agents Made $1.37 Billion in 2025",
   "description": "Soccer agents earned 1.37 billion dollars in 2025. Just in fees.\n\nSources:\n- Wikipedia: Sports agent: https://en.wikipedia.org/wiki/Sports_agent\n- BLS OEWS via api.bls.gov: Agents and business managers of artists, performers, and athletes 13-1011, annual median wage, May 2025: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000013101113\n- BLS OEWS via api.bls.gov: Agents and business managers of artists, performers, and athletes, 10th percentile: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000013101111\n- BLS OEWS via api.bls.gov: Agents and business managers of artists, performers, and athletes, 90th percentile: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000013101115\n- BLS OEWS via api.bls.gov: Agents and business managers of artists, performers, and athletes, employment: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000013101101\n\nWikipedia (Sports agent), citing FIFA's Annual Report on Football Agents: men's professional football agent fees reached $1.37 billion in 2025, against $13.08 billion in global men's transfer fees. Most US states require agents to register, disclose fees and use written contracts (Uniform Athlete Agents Act). BLS May 2025 (OEWS), agents and business managers of artists, performers and athletes (13-1011): 12,620 jobs; median $82,890; 10th percentile $48,010; 90th percentile $284,570. Our math: $1.37B / $13.08B = about 10 cents per transfer dollar. Not financial advice.\n\n#shorts #sportsagent #careers #howtheymakemoney",
@@ -117,5 +117,15 @@
       "title": "BLS OEWS via api.bls.gov: Agents and business managers of artists, performers, and athletes, employment",
       "url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000013101101"
     }
-  ]
+  ],
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-072-careers-sports-agents",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-072-careers-sports-agents/072-careers-sports-agents.mp4",
+    "post_at": "2026-11-13T15:00:00-05:00",
+    "buffer_post": "6af5fd0f6886c92cc4df6d26",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-12T17:53:19.344180+00:00",
+    "seconds": 29.46
+  }
 }

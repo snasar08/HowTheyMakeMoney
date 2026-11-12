@@ -7,7 +7,7 @@
   "hook_style": "number",
   "title_style": "statement",
   "theme": "dark_neon",
-  "status": "ready",
+  "status": "delivered",
   "score": 93,
   "title": "DoorDash Keeps 47 Cents of a $34 Order",
   "description": "Your DoorDash order: about 34 dollars. DoorDash's profit: just 47 cents.\n\nSources:\n- DoorDash Q3 2026 earnings press release: https://s22.q4cdn.com/280253921/files/content_files/Q3-2026-Earnings-Press-Release.pdf\n- Wikipedia: DoorDash: https://en.wikipedia.org/wiki/DoorDash\n\nQ3 2026: 993 million orders, $33.9 billion Marketplace GOV (about $34.18 per order, our math), net revenue margin 13.6%, record GAAP net income of $466 million (about 47 cents per order, our math). Not financial advice.\n\n#shorts #doordash #delivery #howtheymakemoney",
@@ -95,5 +95,15 @@
       "title": "Wikipedia: DoorDash",
       "url": "https://en.wikipedia.org/wiki/DoorDash"
     }
-  ]
+  ],
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-052-how-doordash",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-052-how-doordash/052-how-doordash.mp4",
+    "post_at": "2026-11-13T12:00:00-05:00",
+    "buffer_post": "6af5fcb6845ed638c96209c0",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-12T17:51:50.334398+00:00",
+    "seconds": 26.75
+  }
 }

@@ -7,7 +7,7 @@
   "hook_style": "surprise",
   "title_style": "number",
   "theme": "bold_bright",
-  "status": "ready",
+  "status": "delivered",
   "score": 95,
   "title": "From a Walk-On Offer to $156 Million",
   "name_card": "Stephen Curry",
@@ -36,7 +36,20 @@
           "ball"
         ],
         "stat": "$156 MILLION",
-        "stat_sub": "from a walk-on offer"
+        "stat_sub": "from a walk-on offer",
+        "hero": {
+          "skin": "c99a6e",
+          "hair": "short",
+          "hair_color": "1a1512",
+          "beard": "goatee",
+          "beard_color": "1a1512",
+          "outfit": "kit",
+          "shirt": "1d428a",
+          "pants": "1d428a",
+          "socks": "f4f4f4",
+          "shoes": "ffc72c",
+          "height": 1.05
+        }
       }
     },
     {
@@ -50,7 +63,20 @@
           "ball"
         ],
         "stat": "160 POUNDS",
-        "stat_sub": "too small, they thought"
+        "stat_sub": "too small, they thought",
+        "hero": {
+          "skin": "c99a6e",
+          "hair": "short",
+          "hair_color": "1a1512",
+          "beard": "goatee",
+          "beard_color": "1a1512",
+          "outfit": "kit",
+          "shirt": "1d428a",
+          "pants": "1d428a",
+          "socks": "f4f4f4",
+          "shoes": "ffc72c",
+          "height": 1.05
+        }
       }
     },
     {
@@ -66,7 +92,20 @@
         ],
         "stat": "$201 MILLION",
         "stat_sub": "5-year deal, 2017",
-        "hud": "$201M"
+        "hud": "$201M",
+        "hero": {
+          "skin": "c99a6e",
+          "hair": "short",
+          "hair_color": "1a1512",
+          "beard": "goatee",
+          "beard_color": "1a1512",
+          "outfit": "kit",
+          "shirt": "1d428a",
+          "pants": "1d428a",
+          "socks": "f4f4f4",
+          "shoes": "ffc72c",
+          "height": 1.05
+        }
       }
     },
     {
@@ -81,7 +120,20 @@
           "trophy"
         ],
         "stat": "4,000 THREES",
-        "stat_sub": "first in NBA history"
+        "stat_sub": "first in NBA history",
+        "hero": {
+          "skin": "c99a6e",
+          "hair": "short",
+          "hair_color": "1a1512",
+          "beard": "goatee",
+          "beard_color": "1a1512",
+          "outfit": "kit",
+          "shirt": "1d428a",
+          "pants": "1d428a",
+          "socks": "f4f4f4",
+          "shoes": "ffc72c",
+          "height": 1.05
+        }
       }
     },
     {
@@ -97,7 +149,20 @@
         ],
         "stat": "$156 MILLION",
         "stat_sub": "2025: $100M off the court",
-        "hud": "$156M"
+        "hud": "$156M",
+        "hero": {
+          "skin": "c99a6e",
+          "hair": "short",
+          "hair_color": "1a1512",
+          "beard": "goatee",
+          "beard_color": "1a1512",
+          "outfit": "kit",
+          "shirt": "1d428a",
+          "pants": "1d428a",
+          "socks": "f4f4f4",
+          "shoes": "ffc72c",
+          "height": 1.05
+        }
       }
     }
   ],
@@ -123,5 +188,15 @@
     "socks": "f4f4f4",
     "shoes": "ffc72c",
     "height": 1.05
+  },
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-073-famous-curry",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-073-famous-curry/073-famous-curry.mp4",
+    "post_at": "2026-11-12T20:00:00-05:00",
+    "buffer_post": "6af5fc5afd26e2f8bb0f51b3",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-12T17:50:18.336199+00:00",
+    "seconds": 26.52
   }
 }
