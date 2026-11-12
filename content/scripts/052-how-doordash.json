@@ -8,9 +8,9 @@
   "title_style": "statement",
   "theme": "dark_neon",
   "status": "ready",
-  "score": 88,
+  "score": 93,
   "title": "DoorDash Keeps 47 Cents of a $34 Order",
-  "description": "Your average DoorDash order: about 34 dollars. What does DoorDash keep?\n\nSources:\n- DoorDash Q3 2026 earnings press release: https://s22.q4cdn.com/280253921/files/content_files/Q3-2026-Earnings-Press-Release.pdf\n- Wikipedia: DoorDash: https://en.wikipedia.org/wiki/DoorDash\n\nQ3 2026: 993 million orders, $33.9 billion Marketplace GOV (about $34.18 per order, our math), net revenue margin 13.6%, record GAAP net income of $466 million (about 47 cents per order, our math). Not financial advice.\n\n#shorts #doordash #delivery #howtheymakemoney",
+  "description": "Your DoorDash order: about 34 dollars. DoorDash's profit: just 47 cents.\n\nSources:\n- DoorDash Q3 2026 earnings press release: https://s22.q4cdn.com/280253921/files/content_files/Q3-2026-Earnings-Press-Release.pdf\n- Wikipedia: DoorDash: https://en.wikipedia.org/wiki/DoorDash\n\nQ3 2026: 993 million orders, $33.9 billion Marketplace GOV (about $34.18 per order, our math), net revenue margin 13.6%, record GAAP net income of $466 million (about 47 cents per order, our math). Not financial advice.\n\n#shorts #doordash #delivery #howtheymakemoney",
   "tags": [
     "doordash",
     "food delivery",
@@ -36,21 +36,21 @@
       "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261107_180145_5c940ed5-3129-4bdc-9a34-7748accf6faf.png"
     }
   },
-  "loop": "So next time you tap order, ask yourself:",
+  "loop": "So next time you tap order, remember:",
   "cta": "Delivery or pickup? Comment your pick.",
   "cta_question": "Delivery or pickup?",
   "scenes": [
     {
-      "narration": "Your average DoorDash order: about 34 dollars. What does DoorDash keep?",
+      "narration": "Your DoorDash order: about 34 dollars. DoorDash's profit: just 47 cents.",
       "visual": {
         "type": "image",
         "image": "hook",
-        "overlay": "$34 ORDER",
-        "overlay_sub": "what does DoorDash keep?"
+        "overlay": "47 CENTS",
+        "overlay_sub": "from a $34 order"
       }
     },
     {
-      "narration": "Just 13.6 percent. That's its revenue.",
+      "narration": "Its revenue? Only 13.6 percent of the order.",
       "visual": {
         "type": "donut",
         "value": 13.6,
@@ -67,7 +67,7 @@
       }
     },
     {
-      "narration": "Then DoorDash pays its own costs. Profit? Only 47 cents an order.",
+      "narration": "Then DoorDash pays its own costs. That leaves the 47 cents.",
       "visual": {
         "type": "stat",
         "value": 0.47,

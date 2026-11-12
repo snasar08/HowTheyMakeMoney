@@ -5,7 +5,7 @@
   "theme": "clean_navy",
   "status": "ready",
   "title": "$8.2 Billion From a Card, Not a Seat",
-  "description": "You swipe a Delta card. So why did Delta get 8.2 billion dollars?\n\nSources:\n- Delta 2025 results: Amex remuneration $8.2B (AltexSoft): https://www.altexsoft.com/travel-industry-news/premium-strategy-works-deltas-2025-revenue-hits-63b/\n- Delta cards ~13% of Amex billed business (View from the Wing): https://viewfromthewing.com/amex-pays-delta-3-8-cents-per-dollar-charged-why-banks-pay-more-for-miles-than-you-do/\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "description": "Delta got 8.2 billion dollars in 2025. Just from a credit card.\n\nSources:\n- Delta 2025 results: Amex remuneration $8.2B (AltexSoft): https://www.altexsoft.com/travel-industry-news/premium-strategy-works-deltas-2025-revenue-hits-63b/\n- Delta cards ~13% of Amex billed business (View from the Wing): https://viewfromthewing.com/amex-pays-delta-3-8-cents-per-dollar-charged-why-banks-pay-more-for-miles-than-you-do/\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
     "delta",
     "airlines",
@@ -36,12 +36,12 @@
   },
   "scenes": [
     {
-      "narration": "You swipe a Delta card. So why did Delta get 8.2 billion dollars?",
+      "narration": "Delta got 8.2 billion dollars in 2025. Just from a credit card.",
       "visual": {
         "type": "image",
         "image": "hook",
         "overlay": "$8.2 BILLION",
-        "overlay_sub": "from a card?"
+        "overlay_sub": "from a credit card"
       }
     },
     {
@@ -91,7 +91,7 @@
       "url": "https://viewfromthewing.com/amex-pays-delta-3-8-cents-per-dollar-charged-why-banks-pay-more-for-miles-than-you-do/"
     }
   ],
-  "loop": "So next time you swipe a Delta card, ask yourself:",
+  "loop": "So next time you swipe a Delta card, remember:",
   "score": 87,
   "format": "how",
   "visual_style": "charts3d",

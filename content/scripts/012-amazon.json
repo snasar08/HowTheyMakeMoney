@@ -5,7 +5,7 @@
   "theme": "clean_navy",
   "status": "ready",
   "title": "57% of Amazon's Profit Isn't the Store",
-  "description": "You see Amazon's boxes everywhere. So why aren't they the big profit?\n\nSources:\n- Amazon Q4 and full year 2025 results (TED): https://tedmag.com/amazon-announces-4q-results/\n- Amazon FY2025 segment analysis (Beancount): https://beancount.io/blog/2026/07/13/amazon-fy2025-earnings-analysis\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "description": "57 percent of Amazon's operating profit isn't from the store.\n\nSources:\n- Amazon Q4 and full year 2025 results (TED): https://tedmag.com/amazon-announces-4q-results/\n- Amazon FY2025 segment analysis (Beancount): https://beancount.io/blog/2026/07/13/amazon-fy2025-earnings-analysis\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
     "amazon",
     "aws",
@@ -35,12 +35,12 @@
   },
   "scenes": [
     {
-      "narration": "You see Amazon's boxes everywhere. So why aren't they the big profit?",
+      "narration": "57 percent of Amazon's operating profit isn't from the store.",
       "visual": {
         "type": "image",
         "image": "hook",
-        "overlay": "NOT",
-        "overlay_sub": "the boxes?"
+        "overlay": "57%",
+        "overlay_sub": "isn't the store"
       }
     },
     {
@@ -101,12 +101,12 @@
       "url": "https://beancount.io/blog/2026/07/13/amazon-fy2025-earnings-analysis"
     }
   ],
-  "loop": "So next time an Amazon box hits your doorstep, ask yourself:",
+  "loop": "So next time an Amazon box hits your doorstep, remember:",
   "score": 82,
   "format": "how",
   "visual_style": "charts3d",
   "title_style": "number",
-  "hook_style": "surprise",
+  "hook_style": "number",
   "cta": "Boxes or cloud? Comment your pick.",
   "cta_question": "Boxes or cloud?"
 }

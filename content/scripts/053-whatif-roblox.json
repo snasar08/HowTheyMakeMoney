@@ -4,13 +4,13 @@
   "company": "Roblox",
   "format": "whatif",
   "visual_style": "lowpoly",
-  "hook_style": "whatif",
+  "hook_style": "number",
   "title_style": "whatif",
   "theme": "bold_bright",
   "status": "ready",
   "score": 90,
   "title": "What If One Person Played All of Roblox?",
-  "description": "What if just one person played every hour of Roblox?\n\nSources:\n- Gaming.net: Roblox Q3 revenue rises 16% as bookings fall 12% to $1.7 billion (Oct 2026): https://gaming.net/roblox-q3-revenue-rises-16-as-bookings-fall-12-to-1-7-billion\n- Wikipedia: Roblox Corporation: https://en.wikipedia.org/wiki/Roblox_Corporation\n\nQ3 2026 (from Roblox's shareholder letter as reported): nearly 34 billion hours engaged, 138 million daily active users, 30 million average monthly unique payers, $1.697 billion bookings. 34 billion hours / 8,766 hours a year = about 3.9 million years; 34 billion / 92 days / 138 million = about 2.7 hours a day (our math). Not financial advice.\n\n#shorts #roblox #whatif #gaming #howtheymakemoney",
+  "description": "Roblox players logged nearly 34 billion hours. In just three months.\n\nSources:\n- Gaming.net: Roblox Q3 revenue rises 16% as bookings fall 12% to $1.7 billion (Oct 2026): https://gaming.net/roblox-q3-revenue-rises-16-as-bookings-fall-12-to-1-7-billion\n- Wikipedia: Roblox Corporation: https://en.wikipedia.org/wiki/Roblox_Corporation\n\nQ3 2026 (from Roblox's shareholder letter as reported): nearly 34 billion hours engaged, 138 million daily active users, 30 million average monthly unique payers, $1.697 billion bookings. 34 billion hours / 8,766 hours a year = about 3.9 million years; 34 billion / 92 days / 138 million = about 2.7 hours a day (our math). Not financial advice.\n\n#shorts #roblox #whatif #gaming #howtheymakemoney",
   "tags": [
     "roblox",
     "what if",
@@ -20,12 +20,12 @@
   ],
   "images": {},
   "hud_label": "TIME TO PLAY",
-  "loop": "So next time you hop into Roblox, ask yourself:",
+  "loop": "So next time you hop into Roblox, remember:",
   "cta": "Free or buy Robux? Comment which you are.",
   "cta_question": "Free or buy Robux?",
   "scenes": [
     {
-      "narration": "What if just one person played every hour of Roblox?",
+      "narration": "Roblox players logged nearly 34 billion hours. In just three months.",
       "visual": {
         "type": "lowpoly",
         "set": "gaming",
@@ -40,7 +40,7 @@
       }
     },
     {
-      "narration": "Nearly 34 billion hours. In just three months this year.",
+      "narration": "Now give every hour to one person.",
       "visual": {
         "type": "lowpoly",
         "set": "city",
@@ -49,7 +49,7 @@
         "props": [
           "phone"
         ],
-        "stat": "3 MONTHS",
+        "stat": "1 PLAYER",
         "stat_sub": "of play, Q3 2026",
         "hud": "34B HOURS"
       }

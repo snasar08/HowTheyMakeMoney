@@ -5,7 +5,7 @@
   "theme": "dark_neon",
   "status": "ready",
   "title": "Live Nation Keeps 3 Cents Per Concert Dollar",
-  "description": "Which makes Live Nation more profit, the concert or your ticket?\n\nSources:\n- Live Nation Entertainment full-year and Q4 2025 results: https://news.livenationentertainment.com/news/live-nation-entertainment-full-year-and-fourth-quarter-2025-results\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "description": "Live Nation barely profits from concerts. The money is in your ticket.\n\nSources:\n- Live Nation Entertainment full-year and Q4 2025 results: https://news.livenationentertainment.com/news/live-nation-entertainment-full-year-and-fourth-quarter-2025-results\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
     "live nation",
     "ticketmaster",
@@ -36,12 +36,12 @@
   },
   "scenes": [
     {
-      "narration": "Which makes Live Nation more profit, the concert or your ticket?",
+      "narration": "Live Nation barely profits from concerts. The money is in your ticket.",
       "visual": {
         "type": "image",
         "image": "hook",
-        "overlay": "SHOW OR TICKET?",
-        "overlay_sub": "which pays more?"
+        "overlay": "3 CENTS",
+        "overlay_sub": "per concert dollar"
       }
     },
     {
@@ -98,12 +98,12 @@
       "url": "https://news.livenationentertainment.com/news/live-nation-entertainment-full-year-and-fourth-quarter-2025-results"
     }
   ],
-  "loop": "So next time you buy concert tickets, ask yourself:",
+  "loop": "So next time you buy concert tickets, remember:",
   "score": 87,
   "format": "how",
   "visual_style": "charts3d",
   "title_style": "number",
-  "hook_style": "challenge",
+  "hook_style": "surprise",
   "cta": "Front row or cheap seats? Comment your pick.",
   "cta_question": "Front row or cheap seats?"
 }

@@ -5,7 +5,7 @@
   "theme": "clean_navy",
   "status": "ready",
   "title": "Walmart's $6.4 Billion Side Business",
-  "description": "Walmart made 713 billion dollars. So why does it even need ads?\n\nSources:\n- Walmart Q4 and fiscal 2026 earnings release: https://stock.walmart.com/sec-filings/all-sec-filings/content/0000104169-26-000032/earningsreleasefy26q4.htm\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "description": "Walmart made 713 billion dollars. And kept only about 4 cents per dollar.\n\nSources:\n- Walmart Q4 and fiscal 2026 earnings release: https://stock.walmart.com/sec-filings/all-sec-filings/content/0000104169-26-000032/earningsreleasefy26q4.htm\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
     "walmart",
     "advertising",
@@ -36,16 +36,16 @@
   },
   "scenes": [
     {
-      "narration": "Walmart made 713 billion dollars. So why does it even need ads?",
+      "narration": "Walmart made 713 billion dollars. And kept only about 4 cents per dollar.",
       "visual": {
         "type": "image",
         "image": "hook",
-        "overlay": "$713 BILLION",
-        "overlay_sub": "why sell ads?"
+        "overlay": "4 CENTS",
+        "overlay_sub": "kept per dollar"
       }
     },
     {
-      "narration": "Because it keeps only about 4 cents of every dollar.",
+      "narration": "Then it found a side business. Ads.",
       "visual": {
         "type": "donut",
         "value": 4.2,
@@ -98,7 +98,7 @@
       "url": "https://stock.walmart.com/sec-filings/all-sec-filings/content/0000104169-26-000032/earningsreleasefy26q4.htm"
     }
   ],
-  "loop": "So next time you shop at Walmart, ask yourself:",
+  "loop": "So next time you shop at Walmart, remember:",
   "score": 87,
   "format": "how",
   "visual_style": "charts3d",

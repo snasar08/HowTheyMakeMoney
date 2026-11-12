@@ -4,8 +4,8 @@
   "company": "Coca-Cola",
   "theme": "clean_navy",
   "status": "ready",
-  "title": "What If Coca-Cola Stopped Making Bottles?",
-  "description": "Why would Coca-Cola stop making most of its own bottles?\n\nSources:\n- Coca-Cola Q4 and full-year 2025 results (press release): https://investors.coca-colacompany.com/news-events/press-releases/detail/1151/coca-cola-reports-fourth-quarter-and-full-year-2025-results\n- Coca-Cola Q4 2025 earnings release (full PDF with segment tables): https://www.coca-colacompany.com/content/dam/company/us/en/media-center/Coca-Cola%20Q4%202025%20Earnings%20Release_Full%20Release_2.10.26.pdf\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "title": "Coke Keeps 29 Cents by Skipping the Bottles",
+  "description": "Coca-Cola keeps almost 29 cents of every dollar. Without doing the bottling.\n\nSources:\n- Coca-Cola Q4 and full-year 2025 results (press release): https://investors.coca-colacompany.com/news-events/press-releases/detail/1151/coca-cola-reports-fourth-quarter-and-full-year-2025-results\n- Coca-Cola Q4 2025 earnings release (full PDF with segment tables): https://www.coca-colacompany.com/content/dam/company/us/en/media-center/Coca-Cola%20Q4%202025%20Earnings%20Release_Full%20Release_2.10.26.pdf\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
     "coca-cola",
     "soda",
@@ -36,16 +36,16 @@
   },
   "scenes": [
     {
-      "narration": "Why would Coca-Cola stop making most of its own bottles?",
+      "narration": "Coca-Cola keeps almost 29 cents of every dollar. Without doing the bottling.",
       "visual": {
         "type": "image",
         "image": "hook",
-        "overlay": "WHO MAKES",
-        "overlay_sub": "the bottles?"
+        "overlay": "29 CENTS",
+        "overlay_sub": "kept from every dollar"
       }
     },
     {
-      "narration": "Because Coke just sells the syrup. Partners do the bottling.",
+      "narration": "Coke just sells the syrup. Partners do the bottling.",
       "visual": {
         "type": "text",
         "text": "Sell the syrup.",
@@ -64,7 +64,7 @@
       }
     },
     {
-      "narration": "That's almost 29 cents per dollar. But its own bottling arm? About 7.",
+      "narration": "Its own bottling arm? It keeps only about 7 cents.",
       "visual": {
         "type": "bars",
         "items": [
@@ -102,12 +102,12 @@
       "url": "https://www.coca-colacompany.com/content/dam/company/us/en/media-center/Coca-Cola%20Q4%202025%20Earnings%20Release_Full%20Release_2.10.26.pdf"
     }
   ],
-  "loop": "So next time you crack open a Coke, ask yourself:",
+  "loop": "So next time you crack open a Coke, remember:",
   "score": 87,
   "format": "how",
   "visual_style": "charts3d",
-  "title_style": "whatif",
-  "hook_style": "whatif",
+  "title_style": "number",
+  "hook_style": "number",
   "cta": "Coke or Pepsi? Comment which you'd pick.",
   "cta_question": "Coke or Pepsi?"
 }

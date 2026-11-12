@@ -4,13 +4,13 @@
   "company": "YouTube",
   "format": "whatif",
   "visual_style": "lowpoly",
-  "hook_style": "challenge",
+  "hook_style": "number",
   "title_style": "number",
   "theme": "dark_neon",
   "status": "ready",
   "score": 89,
   "title": "500 Hours Hit YouTube Every Minute",
-  "description": "Could you watch just one minute of YouTube uploads?\n\nSources:\n- Tubefilter: More than 500 hours of content are now being uploaded to YouTube every minute (May 7 2019): https://www.tubefilter.com/2019/05/07/number-hours-video-uploaded-to-youtube-per-minute/\n- Wikipedia: YouTube: https://en.wikipedia.org/wiki/YouTube\n\nYouTube said in 2019 that more than 500 hours of video are uploaded every minute: 30,000 hours an hour and 720,000 hours a day, about 82.2 years of video every day (Tubefilter's math). 500 hours = about 21 days nonstop (our math). Not financial advice.\n\n#shorts #youtube #whatif #howtheymakemoney",
+  "description": "Over 500 hours of video hit YouTube every minute. Try watching that.\n\nSources:\n- Tubefilter: More than 500 hours of content are now being uploaded to YouTube every minute (May 7 2019): https://www.tubefilter.com/2019/05/07/number-hours-video-uploaded-to-youtube-per-minute/\n- Wikipedia: YouTube: https://en.wikipedia.org/wiki/YouTube\n\nYouTube said in 2019 that more than 500 hours of video are uploaded every minute: 30,000 hours an hour and 720,000 hours a day, about 82.2 years of video every day (Tubefilter's math). 500 hours = about 21 days nonstop (our math). Not financial advice.\n\n#shorts #youtube #whatif #howtheymakemoney",
   "tags": [
     "youtube",
     "what if",
@@ -20,12 +20,12 @@
   ],
   "images": {},
   "hud_label": "TIME TO WATCH",
-  "loop": "So next time you scroll past a video, ask yourself:",
+  "loop": "So next time you scroll past a video, remember:",
   "cta": "Long videos or Shorts? Comment below.",
   "cta_question": "Long videos or Shorts?",
   "scenes": [
     {
-      "narration": "Could you watch just one minute of YouTube uploads?",
+      "narration": "Over 500 hours of video hit YouTube every minute. Try watching that.",
       "visual": {
         "type": "lowpoly",
         "set": "gaming",
@@ -41,7 +41,7 @@
       }
     },
     {
-      "narration": "Over 500 hours went up every minute, YouTube said in 2019.",
+      "narration": "That's what YouTube said in 2019.",
       "visual": {
         "type": "lowpoly",
         "set": "city",

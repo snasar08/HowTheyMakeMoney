@@ -5,12 +5,12 @@
   "format": "how",
   "visual_style": "charts3d",
   "hook_style": "surprise",
-  "title_style": "whatif",
+  "title_style": "number",
   "theme": "bold_bright",
   "status": "ready",
-  "score": 88,
-  "title": "What If Your Air Mattress Became a Business?",
-  "description": "How did one air mattress turn into 2.5 billion guest stays?\n\nSources:\n- Wikipedia: Airbnb: https://en.wikipedia.org/wiki/Airbnb\n- Airbnb Help Center: Airbnb service fees: https://www.airbnb.com/help/article/1857\n- Airbnb Newsroom: About us: https://news.airbnb.com/about-us/\n\nWikipedia (Airbnb): October 2007, roommates Brian Chesky and Joe Gebbia put an air mattress in their San Francisco living room to help pay rent; the founders raised $30,000 selling cereal named after the 2008 presidential candidates; Airbnb acts as a broker and charges a commission on each booking. Airbnb Help Center: under the single-fee structure most hosts pay 15.5%; under the older split fee, most hosts pay 3% and guests 14.1% to 16.5%. Airbnb newsroom: over 5.5 million hosts and over 2.5 billion guest arrivals. Not financial advice.\n\n#shorts #airbnb #travel #howtheymakemoney",
+  "score": 92,
+  "title": "One Air Mattress Became 2.5 Billion Stays",
+  "description": "One air mattress turned into 2.5 billion guest stays.\n\nSources:\n- Wikipedia: Airbnb: https://en.wikipedia.org/wiki/Airbnb\n- Airbnb Help Center: Airbnb service fees: https://www.airbnb.com/help/article/1857\n- Airbnb Newsroom: About us: https://news.airbnb.com/about-us/\n\nWikipedia (Airbnb): October 2007, roommates Brian Chesky and Joe Gebbia put an air mattress in their San Francisco living room to help pay rent; the founders raised $30,000 selling cereal named after the 2008 presidential candidates; Airbnb acts as a broker and charges a commission on each booking. Airbnb Help Center: under the single-fee structure most hosts pay 15.5%; under the older split fee, most hosts pay 3% and guests 14.1% to 16.5%. Airbnb newsroom: over 5.5 million hosts and over 2.5 billion guest arrivals. Not financial advice.\n\n#shorts #airbnb #travel #howtheymakemoney",
   "tags": [
     "airbnb",
     "travel",
@@ -35,16 +35,16 @@
       "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261107_211003_231e1556-6e8c-4a03-b376-c291146f4698.png"
     }
   },
-  "loop": "So next time you book a trip, ask yourself:",
+  "loop": "So next time you book a trip, remember:",
   "cta": "Hotel or Airbnb? Comment your pick.",
   "cta_question": "Hotel or Airbnb?",
   "scenes": [
     {
-      "narration": "How did one air mattress turn into 2.5 billion guest stays?",
+      "narration": "One air mattress turned into 2.5 billion guest stays.",
       "visual": {
         "type": "image",
         "image": "hook",
-        "overlay": "ONE AIR MATTRESS?",
+        "overlay": "ONE AIR MATTRESS",
         "overlay_sub": "2.5 billion stays later"
       }
     },

@@ -5,13 +5,13 @@
   "format": "how",
   "visual_style": "editorial",
   "hook_style": "number",
-  "title_style": "question",
+  "title_style": "number",
   "theme": "dark_neon",
   "status": "ready",
-  "score": 88,
+  "score": 91,
   "tag": "Company backstory",
-  "title": "How Does Red Bull Sell 14 Billion Cans a Year?",
-  "description": "Why does Red Bull sell almost 14 billion cans a year?\n\nSources:\n- Red Bull: Company profile (company facts, 2025): https://www.redbull.com/int-en/energydrink/company-profile\n- Wikipedia: Red Bull GmbH: https://en.wikipedia.org/wiki/Red_Bull_GmbH\n- Wikipedia: Red Bull: https://en.wikipedia.org/wiki/Red_Bull\n\nFrom the cited pages: Dietrich Mateschitz found Krating Daeng in Thailand in 1982 and said it cured his jet lag; he and Chaleo Yoovidhya each invested US$500,000 to found Red Bull GmbH in 1984; launched in Austria on April 1 1987; early on it gave free cases to college students and built its brand through extreme sport events; it runs Red Bull Media House and the Red Bull Racing and Racing Bulls teams. 2025: 13.969 billion cans, turnover EUR 12.196 billion, sold in 178 countries. Not financial advice.\n\n#shorts #redbull #business #howtheymakemoney",
+  "title": "Red Bull Sells 14 Billion Cans a Year",
+  "description": "Red Bull sells almost 14 billion cans a year.\n\nSources:\n- Red Bull: Company profile (company facts, 2025): https://www.redbull.com/int-en/energydrink/company-profile\n- Wikipedia: Red Bull GmbH: https://en.wikipedia.org/wiki/Red_Bull_GmbH\n- Wikipedia: Red Bull: https://en.wikipedia.org/wiki/Red_Bull\n\nFrom the cited pages: Dietrich Mateschitz found Krating Daeng in Thailand in 1982 and said it cured his jet lag; he and Chaleo Yoovidhya each invested US$500,000 to found Red Bull GmbH in 1984; launched in Austria on April 1 1987; early on it gave free cases to college students and built its brand through extreme sport events; it runs Red Bull Media House and the Red Bull Racing and Racing Bulls teams. 2025: 13.969 billion cans, turnover EUR 12.196 billion, sold in 178 countries. Not financial advice.\n\n#shorts #redbull #business #howtheymakemoney",
   "tags": [
     "red bull",
     "marketing",
@@ -21,12 +21,12 @@
   ],
   "images": {},
   "hud_label": "Cans sold",
-  "loop": "So next time you see a big stunt, ask yourself:",
+  "loop": "So next time you see a big stunt, remember:",
   "cta": "Stunts or F1? Comment your pick.",
   "cta_question": "Extreme sports or F1?",
   "scenes": [
     {
-      "narration": "Why does Red Bull sell almost 14 billion cans a year?",
+      "narration": "Red Bull sells almost 14 billion cans a year.",
       "visual": {
         "type": "editorial",
         "layout": "cards",

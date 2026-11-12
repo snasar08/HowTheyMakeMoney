@@ -3,12 +3,18 @@
 Every Short answers one question: **how does this company (or industry) actually make its money?**
 
 ## Format
-- 5–6 scenes, 70–115 words total (about 28–45 seconds of narration).
-- Scene 1 is the hook: a surprising claim in one or two short sentences, on the `hook` image.
+- 5–6 scenes, about 45–60 words of narration (22–28 seconds with the ending). Only a real story
+  (`famous`, editorial backstory) may run longer. (Nov 11: under 30 s got far more views.)
+- Scene 1 is the hook: the most surprising number or fact, said in the first sentence (12 words
+  or fewer) and shown on the overlay, on the `hook` image. A question is optional, not required.
+- Scene 2 is the payoff or a sharper twist. Never setup, never a repeat of scene 1.
+- The title carries the same number ("$7.5 Million Per Store, Closed Every Sunday",
+  "From a Walk-On Offer to $156 Million").
 - One idea per scene. Short sentences. Calm, confident, plain English — no hype words
   ("insane", "crazy", "you won't believe").
 - Spell numbers the way they should be spoken: "4.5 billion dollars", "57 percent".
-- Last scene ends with: " Follow for more."
+- The last scene does not say "Follow for more" (the ending is added automatically). The `loop`
+  line ends with "remember:" and leads back into the opening line.
 - Use each visual type at most twice per Short, and vary the order from Short to Short so
   videos don't feel templated.
 

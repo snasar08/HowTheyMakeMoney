@@ -72,3 +72,5 @@ clearly different angle, new figures, a new hook, new B-roll and a different sce
 071 | Minecraft (whatif) | selling every copy one per second | 400M+ copies, ~12.7 years, 1M sales early 2011 with no ads, $2.5B Microsoft deal 2014
 072 | Sports agents (careers) | soccer agents' cut of transfers; most US agents aren't rich | $1.37B agent fees vs $13.08B transfers (FIFA 2025), $82,890 median, $284,570 top 10% (May 2025)
 073 | Stephen Curry (famous) | walk-on offer to first $200M+ NBA deal and $100M of sponsors | 160 lb, $201M 2017 extension, 4,000 threes, $156M 2025 ($100M endorsements)
+074 | Giannis Antetokounmpo (famous) | sold sunglasses on the street, then the largest NBA deal of its time | started 2007, pick 15 (2013), two MVPs, $228M five-year deal (Dec 2020), 2021 title (first since 1971)
+075 | Patrick Mahomes (famous) | round-37 baseball pick who chose football | round 37 (2014 MLB draft), pick 10 (2017), ten-year deal up to $503M (July 2020), three Super Bowl wins

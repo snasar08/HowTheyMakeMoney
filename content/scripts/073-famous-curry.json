@@ -4,15 +4,15 @@
   "company": "Stephen Curry",
   "format": "famous",
   "visual_style": "lowpoly",
-  "hook_style": "challenge",
-  "title_style": "question",
+  "hook_style": "surprise",
+  "title_style": "number",
   "theme": "bold_bright",
   "status": "ready",
-  "score": 90,
-  "title": "How Did a Walk-On Offer Become $156 Million?",
+  "score": 95,
+  "title": "From a Walk-On Offer to $156 Million",
   "name_card": "Stephen Curry",
   "name_sub": "basketball player",
-  "description": "His dream college offered him only a walk-on spot. Guess what happened?\n\nSources:\n- Wikipedia: Stephen Curry: https://en.wikipedia.org/wiki/Stephen_Curry\n- Wikipedia: Forbes list of the world's highest-paid athletes: https://en.wikipedia.org/wiki/Forbes_list_of_the_world%27s_highest-paid_athletes\n\nFrom Wikipedia (Stephen Curry): Virginia Tech offered him only a walk-on spot, partly due to his 160-pound frame, so he chose Davidson; in July 2017 he signed a five-year, $201 million extension, the first NBA supermax over $200 million; in March 2025 he became the first player with 4,000 career three-pointers. Forbes (Wikipedia: highest-paid athletes): 2025, $156 million ($56M salary, $100M endorsements); 2026, $124.7 million. Not financial advice.\n\n#shorts #stephencurry #nba #howtheymakemoney",
+  "description": "His dream college offered only a walk-on spot. Last year he made 156 million dollars.\n\nSources:\n- Wikipedia: Stephen Curry: https://en.wikipedia.org/wiki/Stephen_Curry\n- Wikipedia: Forbes list of the world's highest-paid athletes: https://en.wikipedia.org/wiki/Forbes_list_of_the_world%27s_highest-paid_athletes\n\nFrom Wikipedia (Stephen Curry): Virginia Tech offered him only a walk-on spot, partly due to his 160-pound frame, so he chose Davidson; in July 2017 he signed a five-year, $201 million extension, the first NBA supermax over $200 million; in March 2025 he became the first player with 4,000 career three-pointers. Forbes (Wikipedia: highest-paid athletes): 2025, $156 million ($56M salary, $100M endorsements); 2026, $124.7 million. Not financial advice.\n\n#shorts #stephencurry #nba #howtheymakemoney",
   "tags": [
     "stephen curry",
     "nba",
@@ -21,12 +21,12 @@
   ],
   "images": {},
   "hud_label": "HIS MONEY",
-  "loop": "So next time you shoot a three, ask yourself:",
+  "loop": "So next time you shoot a three, remember:",
   "cta": "Curry or LeBron? Comment your pick.",
   "cta_question": "Curry or LeBron?",
   "scenes": [
     {
-      "narration": "His dream college offered him only a walk-on spot. Guess what happened?",
+      "narration": "His dream college offered only a walk-on spot. Last year he made 156 million dollars.",
       "visual": {
         "type": "lowpoly",
         "set": "court",
@@ -36,7 +36,7 @@
           "ball"
         ],
         "stat": "$156 MILLION",
-        "stat_sub": "from a walk-on offer?"
+        "stat_sub": "from a walk-on offer"
       }
     },
     {
@@ -85,7 +85,7 @@
       }
     },
     {
-      "narration": "But the real money? In 2025, sponsors paid him 100 million dollars.",
+      "narration": "But the real money? Sponsors paid him 100 million of it.",
       "visual": {
         "type": "lowpoly",
         "set": "store",

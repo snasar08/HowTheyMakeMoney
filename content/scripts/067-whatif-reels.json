@@ -4,13 +4,13 @@
   "company": "Instagram",
   "format": "whatif",
   "visual_style": "lowpoly",
-  "hook_style": "whatif",
+  "hook_style": "number",
   "title_style": "statement",
   "theme": "dark_neon",
   "status": "ready",
   "score": 88,
   "title": "One Day of Reels Would Take 4,400 Years",
-  "description": "What if you watched one day of Reels views yourself?\n\nSources:\n- Wikipedia: Instagram: https://en.wikipedia.org/wiki/Instagram\n\nWikipedia (Instagram): in September 2022, Instagram Reels generated over 140 billion views daily. Our math: 140 billion / 86,400 seconds = about 1.6 million views a second; one second per view = 140 billion seconds, about 4,400 years; starting in 2026, you'd finish after the year 6400. Not financial advice.\n\n#shorts #instagram #reels #howtheymakemoney",
+  "description": "Reels got over 140 billion views a day in 2022. Try watching one day.\n\nSources:\n- Wikipedia: Instagram: https://en.wikipedia.org/wiki/Instagram\n\nWikipedia (Instagram): in September 2022, Instagram Reels generated over 140 billion views daily. Our math: 140 billion / 86,400 seconds = about 1.6 million views a second; one second per view = 140 billion seconds, about 4,400 years; starting in 2026, you'd finish after the year 6400. Not financial advice.\n\n#shorts #instagram #reels #howtheymakemoney",
   "tags": [
     "instagram",
     "reels",
@@ -19,12 +19,12 @@
   ],
   "images": {},
   "hud_label": "VIEWS",
-  "loop": "So next time you swipe to the next Reel, ask yourself:",
+  "loop": "So next time you swipe to the next Reel, remember:",
   "cta": "Reels or Shorts? Comment your pick.",
   "cta_question": "Reels or Shorts?",
   "scenes": [
     {
-      "narration": "What if you watched one day of Reels views yourself?",
+      "narration": "Reels got over 140 billion views a day in 2022. Try watching one day.",
       "visual": {
         "type": "lowpoly",
         "set": "gaming",
@@ -33,12 +33,12 @@
         "props": [
           "phone"
         ],
-        "stat": "ONE DAY",
+        "stat": "140 BILLION",
         "stat_sub": "of Reels views"
       }
     },
     {
-      "narration": "Sounds easy. But in 2022, Reels got over 140 billion views a day.",
+      "narration": "Just one day's worth. All by yourself.",
       "visual": {
         "type": "lowpoly",
         "set": "city",
@@ -47,7 +47,7 @@
         "props": [
           "phone"
         ],
-        "stat": "140 BILLION",
+        "stat": "ONE DAY",
         "stat_sub": "views a day, 2022",
         "hud": "140B"
       }

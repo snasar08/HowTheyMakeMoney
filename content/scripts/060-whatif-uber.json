@@ -4,13 +4,13 @@
   "company": "Uber",
   "format": "whatif",
   "visual_style": "lowpoly",
-  "hook_style": "whatif",
+  "hook_style": "number",
   "title_style": "whatif",
   "theme": "bold_bright",
   "status": "ready",
   "score": 89,
   "title": "What If One Driver Did Every Uber Trip?",
-  "description": "What if one driver had to do every Uber trip in a day?\n\nSources:\n- Uber: Uber Announces Results for Third Quarter 2026: https://investor.uber.com/news-events/news/press-release-details/2026/Uber-Announces-Results-for-Third-Quarter-2026/default.aspx\n\nUber Q3 2026 (Nov 4 2026): 4.1 billion trips in the quarter, up 16%. Trips = Mobility rides plus Delivery orders. Uber: more than 83 billion trips since 2010. Our math: 4.1 billion / 92 days = about 44.6 million a day, about 516 a second; one trip a minute = about 85 years for one day's trips; 83 billion trips at one a minute = about 158,000 years. Not financial advice.\n\n#shorts #uber #whatif #howtheymakemoney",
+  "description": "Uber did 4.1 billion rides and deliveries last quarter. Now picture one driver.\n\nSources:\n- Uber: Uber Announces Results for Third Quarter 2026: https://investor.uber.com/news-events/news/press-release-details/2026/Uber-Announces-Results-for-Third-Quarter-2026/default.aspx\n\nUber Q3 2026 (Nov 4 2026): 4.1 billion trips in the quarter, up 16%. Trips = Mobility rides plus Delivery orders. Uber: more than 83 billion trips since 2010. Our math: 4.1 billion / 92 days = about 44.6 million a day, about 516 a second; one trip a minute = about 85 years for one day's trips; 83 billion trips at one a minute = about 158,000 years. Not financial advice.\n\n#shorts #uber #whatif #howtheymakemoney",
   "tags": [
     "uber",
     "what if",
@@ -19,12 +19,12 @@
   ],
   "images": {},
   "hud_label": "TRIPS",
-  "loop": "So next time you tap for a ride, ask yourself:",
+  "loop": "So next time you tap for a ride, remember:",
   "cta": "Uber or a bike? Comment your pick.",
   "cta_question": "Uber or a bike?",
   "scenes": [
     {
-      "narration": "What if one driver had to do every Uber trip in a day?",
+      "narration": "Uber did 4.1 billion rides and deliveries last quarter. Now picture one driver.",
       "visual": {
         "type": "lowpoly",
         "set": "city",
@@ -38,7 +38,7 @@
       }
     },
     {
-      "narration": "Sounds tough? Uber did 4.1 billion rides and deliveries last quarter.",
+      "narration": "Just one driver. Every single trip.",
       "visual": {
         "type": "lowpoly",
         "set": "city",
@@ -48,7 +48,7 @@
           "car",
           "phone"
         ],
-        "stat": "LAST QUARTER",
+        "stat": "1 DRIVER",
         "stat_sub": "rides + deliveries, Q3 2026",
         "hud": "4.1B"
       }

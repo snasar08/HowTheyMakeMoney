@@ -5,7 +5,7 @@
   "theme": "clean_navy",
   "status": "ready",
   "title": "Marriott Earns $5.4 Billion in Hotel Fees",
-  "description": "How did Marriott get 5.4 billion dollars from hotels other people own?\n\nSources:\n- Marriott Q4 and full-year 2025 results (press release): https://fortune.com/company-assets/729/quartr/earnings-release-8-k-909ff-2026-02-10-12-08-01.pdf\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "description": "Marriott made 5.4 billion dollars in fees. From hotels other people own.\n\nSources:\n- Marriott Q4 and full-year 2025 results (press release): https://fortune.com/company-assets/729/quartr/earnings-release-8-k-909ff-2026-02-10-12-08-01.pdf\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
     "marriott",
     "hotels",
@@ -36,12 +36,12 @@
   },
   "scenes": [
     {
-      "narration": "How did Marriott get 5.4 billion dollars from hotels other people own?",
+      "narration": "Marriott made 5.4 billion dollars in fees. From hotels other people own.",
       "visual": {
         "type": "image",
         "image": "hook",
         "overlay": "$5.4 BILLION",
-        "overlay_sub": "in fees?"
+        "overlay_sub": "from hotels it doesn't own"
       }
     },
     {
@@ -102,7 +102,7 @@
       "url": "https://fortune.com/company-assets/729/quartr/earnings-release-8-k-909ff-2026-02-10-12-08-01.pdf"
     }
   ],
-  "loop": "So next time you check into a hotel, ask yourself:",
+  "loop": "So next time you check into a hotel, remember:",
   "score": 84,
   "format": "how",
   "visual_style": "charts3d",

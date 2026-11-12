@@ -27,17 +27,17 @@ def score(s: dict) -> tuple[int, dict]:
     sents = [x for x in re.split(r"(?<=[.!?])\s+", text) if x.strip()]
     lens = [len(x.split()) for x in sents] or [99]
     first = lines[0] if lines else ""
-    first_q = re.split(r"(?<=[?])\s+", first)[0]
+    first_q = re.split(r"(?<=[.!?])\s+", first.strip())[0]   # the opening sentence (a statement or a question, Nov 11)
 
     hook = 0  # 25: short, personal, with a concrete number or a contradiction
     hook += 10 if len(first_q.split()) <= 12 else 5 if len(first_q.split()) <= 15 else 0
-    hook += 8 if HOOK.search(first) else 0
+    hook += 8 if HOOK.search(first) or NUM.search(first_q) else 0   # personal, or the number comes first
     hook += 7 if NUM.search(first) or re.search(r"\b(still|already|free|only|just|even|but)\b", first, re.I) else 0
 
     turns = sum(bool(TURN.search(x)) for x in lines[1:])  # 20: flips after the hook
     turn = min(20, turns * 7)
 
-    nums = len(set(NUM.findall(text)))  # 15: a few numbers that land
+    nums = len({n.rstrip(".,") for n in NUM.findall(text)})  # 15: a few numbers that land
     load = 15 if nums <= 4 else 10 if nums <= 5 else 5 if nums <= 6 else 0
 
     avg = sum(lens) / len(lens)  # 15: fragments
