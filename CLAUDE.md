@@ -32,8 +32,8 @@ and **free beyond his Higgsfield Pro plan** — never add a paid service or ask 
 - End-of-video CTA (`CTA_LINE` in `render.py`): "Comment which brand we should do next, and
   subscribe." after the last scene's answer (Sam removed the mid-video like/subscribe ask — it
   broke the flow). Comment bubble + SUBSCRIBE→SUBSCRIBED pop in on their words. Then the script's
-  `loop` line ("So next time you … ask yourself:") which leads straight back into the opening
-  question, so the replay is seamless. No "Follow for more". Keep prompts kid-safe.
+  `loop` line ("So next time you …, remember:") which leads straight back into the opening
+  line, so the replay is seamless. No "Follow for more". Keep prompts kid-safe.
 - First frame shows the hook overlay fully (no pop-in); thin progress bar along the top edge.
 - Quality gate (`gate()` in `run.py`): a Short is NOT posted if clarity < 90%, a breath run
   > 8 s, clipping, untimed captions, failed images, or a chart in the caption zone. It's marked
@@ -56,8 +56,16 @@ and **free beyond his Higgsfield Pro plan** — never add a paid service or ask 
   some words weren't clear. Found and fixed: Kokoro swallowed weak first syllables ("Across" →
   "cross"; fixed by a leading "..." in `tts.kokoro`) and music masked line openings (duck now
   starts 0.2 s early). If a line keeps failing, reword it — don't slow the voice.
-- Hooks: every Short opens with a question in the first line + on-screen overlay, and the title
-  is a question (Sam: hooks matter most). Aim for topics/hooks that score ~90/100 for virality.
+- **Hooks (changed Nov 11 from the numbers; Sam: hooks matter most):** every Short opens on its most
+  surprising number or fact: spoken in the first sentence (12 words or fewer), on the overlay in second 1,
+  and in the title. A question is allowed but no longer required (old rule: question line + question title).
+  Line two is the payoff or a sharper twist, never setup. Why: of 42 Shorts, question hooks had a median 4
+  views at 48 h (number 112, surprise 280), question titles 4 (number 30); every Short loses the most
+  viewers at 4–5 s, right after the opening line (and the voice adds a 0.5 s pause after a question);
+  under 30 s got a median 26 vs 3 for 30–38 s. What took off Nov 9–11: person stories with a number in the
+  title, under 30 s ("From a Napkin Contract to $1.1 Billion" 1254, "$2.077 Billion From 149 Shows" 902 in
+  23 h, "From $6,000 to $780,000: MLB's Lowest Pay" 462 in 20 h). The question that did work is "How much
+  of YOUR [thing you buy] ..." (Uber 1020, Chipotle 963). Aim for topics/hooks that score ~90/100.
 - Captions: numbers always pop (highlight color, 18% bigger, commas kept); the spoken word gets a
   small punch. Music mood per format (`music.MOODS`: whatif faster/bouncy, famous steady, careers
   warm, how lo-fi). Buffer delivery retries the public-URL check ~90 s; if a Short still falls
@@ -156,13 +164,15 @@ Posting uses 21 Shorts/week (3/day since Nov 3). Goal: build a buffer, capped so
    If `content/performance.json` exists, read it: lean toward the topics and hook styles of the
    most-viewed Shorts and away from the least-viewed.
    **Score gate (Sam wants ~90/100 virality):** give every idea a `score` 0–100 (would a
-   13–18-year-old stop scrolling? topic they use/love × question hook × surprising number) and
+   13–18-year-old stop scrolling? topic they use/love × surprising number said first) and
    only write ideas scoring **85+**. Gaming, phones, apps teens use, food/snacks, sneakers,
    sports, YouTubers/streamers rank high; hotels, B2B, software for offices rank low. Store the
    number in the script's `score` field (the nightly run posts the highest first).
-   Every script also needs: a question as the first line, the overlay and the title, and a
-   `loop` field — one short line spoken last ("So next time you …, ask yourself:") that leads
-   back into the opening question. The last scene must not say "Follow for more" (the CTA is
+   Every script also needs (Nov 11 rules, see "Hooks" above): the surprising number or fact as the
+   first sentence (12 words or fewer), on the overlay and in the title; line two = the payoff or a
+   sharper twist, never setup; and a `loop` field — one short line spoken last ("So next time you …,
+   remember:") that leads back into the opening line. A question opening is optional; if used, put
+   the number in it ("How much of your 34 dollar order ..."). The last scene must not say "Follow for more" (the CTA is
    added automatically).
    **Formats (Sam, Oct 29 2026) — rotate 4:** `format` = `how` (how X makes money), `whatif`
    (absurd scenario on ONE real stat, e.g. "What if one person delivered every Amazon package in
@@ -170,10 +180,15 @@ Posting uses 21 Shorts/week (3/day since Nov 3). Goal: build a buffer, capped so
    real, dated net worth/earnings). Ideas + sources: `content/topics.md` "Formats". Mix per batch:
    start ~25% each, then follow `analytics/insights.md` (more of what wins, fewer losers) but keep
    ~20% experimental and NEVER drop a format entirely without asking Sam. Variety: no two Shorts
-   in a row (by posting order) share format + theme + hook style; vary length (25–55 s; stories may run longer, Nov 1), hook
+   in a row (by posting order) share format + theme + hook style; length **22–28 s** for standard Shorts (lint warns over 30 s; only a real story, `famous` or editorial, may run longer, Nov 11), vary hook
    style and title style. **Title test (Oct 30):** rotate `title_style` evenly (question / number /
    statement / whatif) until each has ≥ 10 posted Shorts in `analytics/insights.md`; after that,
-   ~60% the winning style, the rest spread over the others so the test keeps running. Every script sets `format`, `visual_style` (`charts3d` for most; `lowpoly` for at most 1 in 3 (Nov 10; famous scripts set `hero`, see 051/061/073) — see existing 030/031 for the lowpoly scene JSON), `hook_style` (question / number / whatif / challenge / surprise),
+   ~60% the winning style, the rest spread over the others so the test keeps running. (Nov 11:
+   question titles are done, 23 posted and weakest, so at most 1 in 6 and only the "how much of
+   your ..." kind; number leads; statement 8 and whatif 5 still need Shorts to finish the test.)
+   **Mix (Nov 11):** each batch part writes at least 4 person stories (`famous`, or a founder /
+   "almost went bankrupt" `how`) with a "From X to $Y" or plain-number title, because those are
+   what took off; the queue had only one `famous` script left on Nov 11. Every script sets `format`, `visual_style` (`charts3d` for most; `lowpoly` for at most 1 in 3 (Nov 10; famous scripts set `hero`, see 051/061/073) — see existing 030/031 for the lowpoly scene JSON), `hook_style` (question / number / whatif / challenge / surprise),
    `title_style` (question / number / statement / whatif). Real people: STYLE.md
    "Real people and brands".
    **Before writing, read `analytics/insights.md`** (updated by stats.yml before Saturday).

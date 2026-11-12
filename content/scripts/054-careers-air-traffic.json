@@ -10,7 +10,7 @@
   "status": "ready",
   "score": 86,
   "title": "Too Old at 31: This Job Pays $148,080",
-  "description": "Too old at 31? For this job, you are.\n\nSources:\n- BLS OEWS via api.bls.gov: Air traffic controllers 53-2021, annual median wage, May 2025: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000053202113\n- BLS OEWS via api.bls.gov: 10th percentile: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000053202111\n- BLS OEWS via api.bls.gov: 90th percentile: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000053202115\n- Wikipedia: Air traffic controller: https://en.wikipedia.org/wiki/Air_traffic_controller\n- FAA: Aviation careers: https://www.faa.gov/jobs/career_fields/aviation_careers\n\nBLS May 2025 (OEWS): median $148,080; 10th percentile $78,420; 90th percentile $215,610. FAA rule: trainees start at the academy by their 31st birthday; mandatory retirement at 56 (Wikipedia). FAA: more than 14,000 controllers, 2.9 million daily passengers. Median = half earn more, half earn less. Not financial advice.\n\n#shorts #airtrafficcontrol #careers #aviation #howtheymakemoney",
+  "description": "Too old at 31. For this job, you are.\n\nSources:\n- BLS OEWS via api.bls.gov: Air traffic controllers 53-2021, annual median wage, May 2025: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000053202113\n- BLS OEWS via api.bls.gov: 10th percentile: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000053202111\n- BLS OEWS via api.bls.gov: 90th percentile: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000053202115\n- Wikipedia: Air traffic controller: https://en.wikipedia.org/wiki/Air_traffic_controller\n- FAA: Aviation careers: https://www.faa.gov/jobs/career_fields/aviation_careers\n\nBLS May 2025 (OEWS): median $148,080; 10th percentile $78,420; 90th percentile $215,610. FAA rule: trainees start at the academy by their 31st birthday; mandatory retirement at 56 (Wikipedia). FAA: more than 14,000 controllers, 2.9 million daily passengers. Median = half earn more, half earn less. Not financial advice.\n\n#shorts #airtrafficcontrol #careers #aviation #howtheymakemoney",
   "tags": [
     "air traffic controller",
     "faa",
@@ -36,17 +36,17 @@
       "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261107_180223_cdce3754-826e-4c30-9012-2468147fb525.png"
     }
   },
-  "loop": "So next time your plane lands, ask yourself:",
+  "loop": "So next time your plane lands, remember:",
   "cta": "Pilot or controller? Comment your pick.",
   "cta_question": "Pilot or controller?",
   "scenes": [
     {
-      "narration": "Too old at 31? For this job, you are.",
+      "narration": "Too old at 31. For this job, you are.",
       "visual": {
         "type": "image",
         "image": "hook",
-        "overlay": "TOO OLD AT 31?",
-        "overlay_sub": "for this job, yes"
+        "overlay": "TOO OLD AT 31",
+        "overlay_sub": "for a $148,080 job"
       }
     },
     {

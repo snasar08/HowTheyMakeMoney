@@ -4,13 +4,13 @@
   "company": "Chick-fil-A",
   "format": "how",
   "visual_style": "charts3d",
-  "hook_style": "question",
+  "hook_style": "number",
   "title_style": "number",
   "theme": "bold_bright",
   "status": "ready",
-  "score": 90,
+  "score": 92,
   "title": "$7.5 Million Per Store, Closed Every Sunday",
-  "description": "Closed every Sunday. So why does Chick-fil-A out-earn everyone?\n\nSources:\n- Wikipedia: Chick-fil-A: https://en.wikipedia.org/wiki/Chick-fil-A\n- Chick-fil-A press room: Myths about becoming a Chick-fil-A Operator (Jan 2024): https://www.chick-fil-a.com/press-room/2024/01/myths-about-becoming-a-chick-fil-a-operator\n\n2024 figures from Wikipedia: $22 billion systemwide sales, 3,109 locations, $7.5 million average per location; McDonald's $53.5 billion across 13,559 U.S. locations (about $3.9 million each, our division). The $10,000 is the initial franchise fee; Chick-fil-A says the total investment is higher. Not financial advice.\n\n#shorts #chickfila #fastfood #howtheymakemoney",
+  "description": "Closed every Sunday. Still, each Chick-fil-A makes 7.5 million dollars a year.\n\nSources:\n- Wikipedia: Chick-fil-A: https://en.wikipedia.org/wiki/Chick-fil-A\n- Chick-fil-A press room: Myths about becoming a Chick-fil-A Operator (Jan 2024): https://www.chick-fil-a.com/press-room/2024/01/myths-about-becoming-a-chick-fil-a-operator\n\n2024 figures from Wikipedia: $22 billion systemwide sales, 3,109 locations, $7.5 million average per location; McDonald's $53.5 billion across 13,559 U.S. locations (about $3.9 million each, our division). The $10,000 is the initial franchise fee; Chick-fil-A says the total investment is higher. Not financial advice.\n\n#shorts #chickfila #fastfood #howtheymakemoney",
   "tags": [
     "chick-fil-a",
     "fast food",
@@ -36,21 +36,21 @@
       "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261107_175949_53af5f78-52c1-4bef-8e84-3ef7d439e762.png"
     }
   },
-  "loop": "So next time it's closed on a Sunday, ask yourself:",
+  "loop": "So next time it's closed on a Sunday, remember:",
   "cta": "Chick-fil-A or McDonald's? Comment your pick.",
   "cta_question": "Chick-fil-A or McDonald's?",
   "scenes": [
     {
-      "narration": "Closed every Sunday. So why does Chick-fil-A out-earn everyone?",
+      "narration": "Closed every Sunday. Still, each Chick-fil-A makes 7.5 million dollars a year.",
       "visual": {
         "type": "image",
         "image": "hook",
         "overlay": "$7.5 MILLION",
-        "overlay_sub": "per store. closed sundays?"
+        "overlay_sub": "per store. closed sundays."
       }
     },
     {
-      "narration": "7.5 million dollars. That's what each restaurant averaged in 2024.",
+      "narration": "That's the 2024 average. Per restaurant.",
       "visual": {
         "type": "stat",
         "value": 7.5,

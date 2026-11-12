@@ -23,7 +23,8 @@ BANNED = ["guaranteed", "get rich", "invest now", "you should buy", "buy the sto
           "kill", "dead", "die ", "hate", "stupid", "scam", "damn", "hell", "sexy", "drunk", "gambl"]
 LOWPOLY_LIVE = True  # Sam approved the low-poly look (Oct 29 2026)
 WPS = 2.55        # spoken words per second at KOKORO_SPEED 1.25 (measured: 009 ≈ 34 s for 88 words)
-LEN_MIN, LEN_MAX = 25, 55  # Oct 31: Sam's liked reels run 45-69 s; story/what-if Shorts may run longer
+LEN_MIN, LEN_MAX = 20, 55  # Oct 31: Sam's liked reels run 45-69 s; story/what-if Shorts may run longer
+LEN_STD = 30      # Nov 11: Shorts under 30 s got a median 26 views at 48 h vs 3 for 30-38 s; only real stories may run longer
 TITLE_MAX = 50    # Shorts titles get cut on mobile beyond ~50 chars
 PEOPLE = re.compile(r"\b(person|people|man|woman|couple|family|shopper|worker|cashier|driver|owner|"
                     r"customer|customers|crowd|fan|player|gamer|chef|pilot|student|friend|parent|teenager|kid|traveler|barista|technician|engineer|runner|clerk|singer|crew|rider|employee|adult)s?\b", re.I)
@@ -43,8 +44,15 @@ def lint(s: dict) -> tuple[list[str], list[str]]:
         err.append("low-poly style isn't approved for the daily pipeline yet (Sam)")
     if not 5 <= len(scenes) <= 6:
         err.append(f"{len(scenes)} scenes (want 5–6)")
-    if "?" not in first.split(".")[0] + first[:140]:
-        err.append("first line is not a question hook")
+    # Nov 11: the opening is the surprising number or fact (question openings were the weakest group
+    # and the biggest drop comes right after the opening line); a question is allowed, not required
+    first_sent = re.split(r"(?<=[.!?])\s+", first.strip())[0]
+    if not first.strip():
+        err.append("no opening line")
+    elif len(first_sent.split()) > 14:
+        warn.append(f"opening sentence is {len(first_sent.split())} words (12 or fewer lands before the 4 s drop)")
+    if first.strip() and not re.search(r"\d", first) and "?" in first_sent:
+        warn.append("opening is a bare question: lead with the surprising number or fact instead")
     ov = (scenes[0].get("visual", {}) if scenes else {})
     if ov.get("type") == "image" and not (ov.get("overlay") or ov.get("overlay_sub")):
         warn.append("opening image has no on-screen hook text")
@@ -63,6 +71,8 @@ def lint(s: dict) -> tuple[list[str], list[str]]:
     est = len(spoken.split()) / WPS + 0.4 * len(scenes)
     if not LEN_MIN <= est <= LEN_MAX:
         warn.append(f"estimated length {est:.0f}s (sweet spot {LEN_MIN}–{LEN_MAX}s)")
+    elif est > LEN_STD and s.get("visual_style", "charts3d") != "editorial" and s.get("format") != "famous":
+        warn.append(f"estimated length {est:.0f}s: standard Shorts do best at 22–28 s (cut filler, not facts)")
     for sc in scenes:
         for sent in re.split(r"(?<=[.!?])\s+", sc.get("narration", "")):
             if len(sent.split()) > 18:

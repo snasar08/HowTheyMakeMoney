@@ -4,13 +4,13 @@
   "company": "Veterinarians",
   "format": "careers",
   "visual_style": "charts3d",
-  "hook_style": "question",
-  "title_style": "question",
+  "hook_style": "number",
+  "title_style": "number",
   "theme": "clean_navy",
   "status": "ready",
   "score": 87,
-  "title": "How Much Do Vets Really Make?",
-  "description": "Love animals? Guess what a vet earns. Not just puppy hugs.\n\nSources:\n- BLS OEWS via api.bls.gov: Veterinarians 29-1131, annual median wage, May 2025: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000029113113\n- BLS OEWS via api.bls.gov: Veterinarians, 10th percentile: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000029113111\n- BLS OEWS via api.bls.gov: Veterinarians, 90th percentile: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000029113115\n- BLS OEWS via api.bls.gov: Veterinarians, employment: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000029113101\n- Wikipedia: Veterinary medicine in the United States: https://en.wikipedia.org/wiki/Veterinary_medicine_in_the_United_States\n\nWikipedia (Veterinary medicine in the United States): as of 2021 there were only 33 accredited veterinary schools in the US; graduates must pass the North American Veterinary Licensing Exam, eight hours and 360 multiple-choice questions. BLS May 2025 (OEWS), veterinarians (29-1131): 83,900 jobs; median $130,100; 10th percentile $73,920; 90th percentile $215,700. Median = half earn more, half earn less. Not financial advice.\n\n#shorts #veterinarian #careers #howtheymakemoney",
+  "title": "Vets Earn $130,100. Getting In Is the Hard Part",
+  "description": "The typical vet earns 130,100 dollars a year. Getting there is the hard part.\n\nSources:\n- BLS OEWS via api.bls.gov: Veterinarians 29-1131, annual median wage, May 2025: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000029113113\n- BLS OEWS via api.bls.gov: Veterinarians, 10th percentile: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000029113111\n- BLS OEWS via api.bls.gov: Veterinarians, 90th percentile: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000029113115\n- BLS OEWS via api.bls.gov: Veterinarians, employment: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000029113101\n- Wikipedia: Veterinary medicine in the United States: https://en.wikipedia.org/wiki/Veterinary_medicine_in_the_United_States\n\nWikipedia (Veterinary medicine in the United States): as of 2021 there were only 33 accredited veterinary schools in the US; graduates must pass the North American Veterinary Licensing Exam, eight hours and 360 multiple-choice questions. BLS May 2025 (OEWS), veterinarians (29-1131): 83,900 jobs; median $130,100; 10th percentile $73,920; 90th percentile $215,700. Median = half earn more, half earn less. Not financial advice.\n\n#shorts #veterinarian #careers #howtheymakemoney",
   "tags": [
     "veterinarian",
     "careers",
@@ -35,17 +35,17 @@
       "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261107_210844_eca415f7-67d8-4066-8b95-d01a05ef8d32.png"
     }
   },
-  "loop": "So next time you take your pet for a checkup, ask yourself:",
+  "loop": "So next time you take your pet for a checkup, remember:",
   "cta": "Dogs or cats? Comment your pick.",
   "cta_question": "Dogs or cats?",
   "scenes": [
     {
-      "narration": "Love animals? Guess what a vet earns. Not just puppy hugs.",
+      "narration": "The typical vet earns 130,100 dollars a year. Getting there is the hard part.",
       "visual": {
         "type": "image",
         "image": "hook",
-        "overlay": "VET PAY?",
-        "overlay_sub": "the real number"
+        "overlay": "$130,100",
+        "overlay_sub": "a vet's median pay"
       }
     },
     {
@@ -68,7 +68,7 @@
       }
     },
     {
-      "narration": "The payoff? A median of 130,100 dollars a year.",
+      "narration": "Then the payoff. That 130,100 median.",
       "visual": {
         "type": "bars",
         "items": [

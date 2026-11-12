@@ -4,13 +4,13 @@
   "company": "Netflix",
   "format": "whatif",
   "visual_style": "lowpoly",
-  "hook_style": "whatif",
+  "hook_style": "number",
   "title_style": "whatif",
   "theme": "dark_neon",
   "status": "ready",
   "score": 88,
   "title": "What If One Person Watched All of Netflix?",
-  "description": "What if one person watched every Netflix hour? Just six months' worth.\n\nSources:\n- Netflix: What We Watched the First Half of 2025 (July 17 2025): https://about.netflix.com/en/news/what-we-watched-the-first-half-of-2025\n\nNetflix reported over 95 billion hours watched from January to June 2025. 95 billion hours divided by 8,766 hours in a year = about 10.8 million years (our math). Not financial advice.\n\n#shorts #netflix #whatif #howtheymakemoney",
+  "description": "Netflix streamed over 95 billion hours in six months. Now picture one viewer.\n\nSources:\n- Netflix: What We Watched the First Half of 2025 (July 17 2025): https://about.netflix.com/en/news/what-we-watched-the-first-half-of-2025\n\nNetflix reported over 95 billion hours watched from January to June 2025. 95 billion hours divided by 8,766 hours in a year = about 10.8 million years (our math). Not financial advice.\n\n#shorts #netflix #whatif #howtheymakemoney",
   "tags": [
     "netflix",
     "what if",
@@ -20,12 +20,12 @@
   ],
   "images": {},
   "hud_label": "TIME TO WATCH",
-  "loop": "So next time you hit next episode, ask yourself:",
+  "loop": "So next time you hit next episode, remember:",
   "cta": "Binge it or one a night? Comment below.",
   "cta_question": "Binge it or one a night?",
   "scenes": [
     {
-      "narration": "What if one person watched every Netflix hour? Just six months' worth.",
+      "narration": "Netflix streamed over 95 billion hours in six months. Now picture one viewer.",
       "visual": {
         "type": "lowpoly",
         "set": "city",
@@ -34,21 +34,21 @@
         "props": [
           "phone"
         ],
-        "stat": "1 VIEWER",
-        "stat_sub": "every hour watched",
+        "stat": "95 BILLION",
+        "stat_sub": "hours in six months",
         "hud": "0 HOURS"
       }
     },
     {
-      "narration": "Just January to June 2025. Over 95 billion hours.",
+      "narration": "Just January to June 2025. One person. Every hour.",
       "visual": {
         "type": "lowpoly",
         "set": "stage",
         "action": "cheer",
         "crowd": 400,
         "props": [],
-        "stat": "95 BILLION",
-        "stat_sub": "hours watched, first half 2025",
+        "stat": "1 VIEWER",
+        "stat_sub": "every hour watched",
         "hud": "95B HOURS"
       }
     },

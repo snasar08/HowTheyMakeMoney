@@ -4,8 +4,8 @@
   "company": "Target",
   "theme": "bold_bright",
   "status": "ready",
-  "title": "What If Brands Pay Target to Reach You?",
-  "description": "What if your Target app's ads were worth almost a billion dollars?\n\nSources:\n- Target Q4 and full-year 2025 earnings release: https://corporate.target.com/press/release/2026/03/target-corporation-reports-fourth-quarter-and-full-year-2025-earnings\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "title": "Brands Paid Target $915 Million for Ads",
+  "description": "Brands paid Target 915 million dollars. Just to show you ads.\n\nSources:\n- Target Q4 and full-year 2025 earnings release: https://corporate.target.com/press/release/2026/03/target-corporation-reports-fourth-quarter-and-full-year-2025-earnings\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
     "target",
     "roundel",
@@ -36,16 +36,16 @@
   },
   "scenes": [
     {
-      "narration": "What if your Target app's ads were worth almost a billion dollars?",
+      "narration": "Brands paid Target 915 million dollars. Just to show you ads.",
       "visual": {
         "type": "image",
         "image": "hook",
-        "overlay": "WHAT IF",
-        "overlay_sub": "ads pay Target?"
+        "overlay": "$915 MILLION",
+        "overlay_sub": "to show you ads"
       }
     },
     {
-      "narration": "They actually are. Brands pay Target to reach you.",
+      "narration": "It's called Roundel. Target's own ad business.",
       "visual": {
         "type": "image",
         "image": "mid",
@@ -54,7 +54,7 @@
       }
     },
     {
-      "narration": "Its ad revenue jumped from 649 million dollars to 915 million.",
+      "narration": "It jumped from 649 million dollars to 915 million.",
       "visual": {
         "type": "bars",
         "items": [
@@ -98,12 +98,12 @@
       "url": "https://corporate.target.com/press/release/2026/03/target-corporation-reports-fourth-quarter-and-full-year-2025-earnings"
     }
   ],
-  "loop": "So next time you see an ad on Target's app, ask yourself:",
+  "loop": "So next time you see an ad on Target's app, remember:",
   "score": 85,
   "format": "how",
   "visual_style": "charts3d",
-  "title_style": "whatif",
-  "hook_style": "whatif",
+  "title_style": "number",
+  "hook_style": "number",
   "cta": "App or in store? Comment how you shop.",
   "cta_question": "App or in store?"
 }

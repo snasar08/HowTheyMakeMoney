@@ -1,0 +1,119 @@
+{
+  "id": "075",
+  "slug": "famous-mahomes",
+  "company": "Patrick Mahomes",
+  "format": "famous",
+  "visual_style": "lowpoly",
+  "hook_style": "surprise",
+  "title_style": "number",
+  "theme": "bold_bright",
+  "status": "ready",
+  "score": 91,
+  "title": "From a Round 37 Pick to a $503 Million Deal",
+  "name_card": "Patrick Mahomes",
+  "name_sub": "football player",
+  "description": "Baseball drafted him in round 37. Football signed him for up to 503 million dollars.\n\nSources:\n- Wikipedia: Patrick Mahomes: https://en.wikipedia.org/wiki/Patrick_Mahomes\n\nFrom Wikipedia (Patrick Mahomes): the Detroit Tigers selected him in the 37th round of the 2014 MLB draft and he did not sign; the Kansas City Chiefs selected him 10th overall in the 2017 NFL draft and he spent his rookie season as the backup; on July 6, 2020 he signed a ten-year extension worth $477 million with an additional $26 million in potential bonuses ($503 million in total), at the time the largest contract in professional sports history; he has won three Super Bowls and three Super Bowl MVPs. Not financial advice.\n\n#shorts #patrickmahomes #nfl #howtheymakemoney",
+  "tags": [
+    "patrick mahomes",
+    "nfl",
+    "famous",
+    "shorts"
+  ],
+  "images": {},
+  "hud_label": "HIS MONEY",
+  "loop": "So next time someone picks you last, remember:",
+  "cta": "Football or baseball? Comment your pick.",
+  "cta_question": "Football or baseball?",
+  "scenes": [
+    {
+      "narration": "Baseball drafted him in round 37. Football signed him for up to 503 million dollars.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "pitch",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": "$503 MILLION",
+        "stat_sub": "from a round 37 pick"
+      }
+    },
+    {
+      "narration": "He never signed. He picked football instead.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "office",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "check"
+        ],
+        "stat": "ROUND 37",
+        "stat_sub": "2014 baseball draft"
+      }
+    },
+    {
+      "narration": "Then the Chiefs took him 10th. But year one, he was the backup.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "pitch",
+        "action": "run",
+        "crowd": 100,
+        "props": [],
+        "stat": "PICK 10",
+        "stat_sub": "2017, then a backup"
+      }
+    },
+    {
+      "narration": "Then a ten-year deal. The largest in pro sports at the time.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "office",
+        "action": "cheer",
+        "crowd": 60,
+        "props": [
+          "check",
+          "cash"
+        ],
+        "stat": "10 YEARS",
+        "stat_sub": "signed July 2020",
+        "hud": "$503M"
+      }
+    },
+    {
+      "narration": "And he's won three Super Bowls. Just so far.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "pitch",
+        "action": "cheer",
+        "crowd": 400,
+        "props": [
+          "trophy"
+        ],
+        "stat": "3 SUPER BOWLS",
+        "stat_sub": "and 3 Super Bowl MVPs",
+        "hud": "$503M"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Patrick Mahomes",
+      "url": "https://en.wikipedia.org/wiki/Patrick_Mahomes"
+    }
+  ],
+  "hero": {
+    "skin": "b98a62",
+    "hair": "curly",
+    "hair_color": "2a1f18",
+    "beard": "none",
+    "outfit": "kit",
+    "shirt": "c8102e",
+    "pants": "f4f4f4",
+    "socks": "c8102e",
+    "shoes": "f4f4f4",
+    "extras": [
+      "headband"
+    ],
+    "height": 1.0
+  }
+}

@@ -4,13 +4,13 @@
   "company": "Sports agents",
   "format": "careers",
   "visual_style": "charts3d",
-  "hook_style": "question",
+  "hook_style": "number",
   "title_style": "statement",
   "theme": "clean_navy",
   "status": "ready",
-  "score": 87,
+  "score": 90,
   "title": "Soccer Agents Made $1.37 Billion in 2025",
-  "description": "Your favorite star switches teams. Guess who else gets paid?\n\nSources:\n- Wikipedia: Sports agent: https://en.wikipedia.org/wiki/Sports_agent\n- BLS OEWS via api.bls.gov: Agents and business managers of artists, performers, and athletes 13-1011, annual median wage, May 2025: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000013101113\n- BLS OEWS via api.bls.gov: Agents and business managers of artists, performers, and athletes, 10th percentile: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000013101111\n- BLS OEWS via api.bls.gov: Agents and business managers of artists, performers, and athletes, 90th percentile: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000013101115\n- BLS OEWS via api.bls.gov: Agents and business managers of artists, performers, and athletes, employment: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000013101101\n\nWikipedia (Sports agent), citing FIFA's Annual Report on Football Agents: men's professional football agent fees reached $1.37 billion in 2025, against $13.08 billion in global men's transfer fees. Most US states require agents to register, disclose fees and use written contracts (Uniform Athlete Agents Act). BLS May 2025 (OEWS), agents and business managers of artists, performers and athletes (13-1011): 12,620 jobs; median $82,890; 10th percentile $48,010; 90th percentile $284,570. Our math: $1.37B / $13.08B = about 10 cents per transfer dollar. Not financial advice.\n\n#shorts #sportsagent #careers #howtheymakemoney",
+  "description": "Soccer agents earned 1.37 billion dollars in 2025. Just in fees.\n\nSources:\n- Wikipedia: Sports agent: https://en.wikipedia.org/wiki/Sports_agent\n- BLS OEWS via api.bls.gov: Agents and business managers of artists, performers, and athletes 13-1011, annual median wage, May 2025: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000013101113\n- BLS OEWS via api.bls.gov: Agents and business managers of artists, performers, and athletes, 10th percentile: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000013101111\n- BLS OEWS via api.bls.gov: Agents and business managers of artists, performers, and athletes, 90th percentile: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000013101115\n- BLS OEWS via api.bls.gov: Agents and business managers of artists, performers, and athletes, employment: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000013101101\n\nWikipedia (Sports agent), citing FIFA's Annual Report on Football Agents: men's professional football agent fees reached $1.37 billion in 2025, against $13.08 billion in global men's transfer fees. Most US states require agents to register, disclose fees and use written contracts (Uniform Athlete Agents Act). BLS May 2025 (OEWS), agents and business managers of artists, performers and athletes (13-1011): 12,620 jobs; median $82,890; 10th percentile $48,010; 90th percentile $284,570. Our math: $1.37B / $13.08B = about 10 cents per transfer dollar. Not financial advice.\n\n#shorts #sportsagent #careers #howtheymakemoney",
   "tags": [
     "sports agent",
     "careers",
@@ -35,21 +35,21 @@
       "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261107_211045_364414d6-1079-4347-b464-a0f6d2f9d63c.png"
     }
   },
-  "loop": "So next time your favorite player switches teams, ask yourself:",
+  "loop": "So next time your favorite player switches teams, remember:",
   "cta": "Agent or player? Comment your pick.",
   "cta_question": "Agent or player?",
   "scenes": [
     {
-      "narration": "Your favorite star switches teams. Guess who else gets paid?",
+      "narration": "Soccer agents earned 1.37 billion dollars in 2025. Just in fees.",
       "visual": {
         "type": "image",
         "image": "hook",
-        "overlay": "WHO ELSE GETS PAID?",
-        "overlay_sub": "when a star moves"
+        "overlay": "$1.37 BILLION",
+        "overlay_sub": "for the agents"
       }
     },
     {
-      "narration": "The agent. In 2025, soccer agents earned 1.37 billion dollars in fees.",
+      "narration": "When a star switches teams, the agent gets paid too.",
       "visual": {
         "type": "stat",
         "value": 1.37,

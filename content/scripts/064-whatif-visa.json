@@ -4,13 +4,13 @@
   "company": "Visa",
   "format": "whatif",
   "visual_style": "lowpoly",
-  "hook_style": "whatif",
+  "hook_style": "number",
   "title_style": "whatif",
   "theme": "dark_neon",
   "status": "ready",
   "score": 87,
   "title": "What If Every Visa Swipe Made a Beep?",
-  "description": "What if every Visa card swipe made one beep?\n\nSources:\n- Visa: Fiscal fourth quarter and full-year 2026 results (PDF): https://s1.q4cdn.com/050606653/files/content_files/4Q26-Earnings-Release_vFINAL.pdf\n- Wikipedia: Visa Inc.: https://en.wikipedia.org/wiki/Visa_Inc.\n\nVisa fiscal 2026 (year ended Sept 30 2026), earnings release: 281.3 billion processed transactions, up 9%; net revenue $45.9 billion. Wikipedia: Visa does not issue cards, extend credit or set consumer rates. Our math: 281.3 billion / 31.5 million seconds in a year = about 8,900 a second; one beep a second = about 8,900 years. Not financial advice.\n\n#shorts #visa #whatif #howtheymakemoney",
+  "description": "Visa handled 281.3 billion payments last year. Imagine each one beeped.\n\nSources:\n- Visa: Fiscal fourth quarter and full-year 2026 results (PDF): https://s1.q4cdn.com/050606653/files/content_files/4Q26-Earnings-Release_vFINAL.pdf\n- Wikipedia: Visa Inc.: https://en.wikipedia.org/wiki/Visa_Inc.\n\nVisa fiscal 2026 (year ended Sept 30 2026), earnings release: 281.3 billion processed transactions, up 9%; net revenue $45.9 billion. Wikipedia: Visa does not issue cards, extend credit or set consumer rates. Our math: 281.3 billion / 31.5 million seconds in a year = about 8,900 a second; one beep a second = about 8,900 years. Not financial advice.\n\n#shorts #visa #whatif #howtheymakemoney",
   "tags": [
     "visa",
     "what if",
@@ -19,12 +19,12 @@
   ],
   "images": {},
   "hud_label": "SWIPES",
-  "loop": "So next time you tap your card, ask yourself:",
+  "loop": "So next time you tap your card, remember:",
   "cta": "Card or cash? Comment your pick.",
   "cta_question": "Card or cash?",
   "scenes": [
     {
-      "narration": "What if every Visa card swipe made one beep?",
+      "narration": "Visa handled 281.3 billion payments last year. Imagine each one beeped.",
       "visual": {
         "type": "lowpoly",
         "set": "store",
@@ -33,12 +33,12 @@
         "props": [
           "phone"
         ],
-        "stat": "BEEP",
+        "stat": "281.3 BILLION",
         "stat_sub": "every single swipe"
       }
     },
     {
-      "narration": "Sounds quiet? Visa handled 281.3 billion payments last year.",
+      "narration": "Just one beep for every swipe.",
       "visual": {
         "type": "lowpoly",
         "set": "store",
@@ -48,7 +48,7 @@
           "phone",
           "boxes"
         ],
-        "stat": "281.3 BILLION",
+        "stat": "BEEP",
         "stat_sub": "transactions, fiscal 2026",
         "hud": "281.3B"
       }

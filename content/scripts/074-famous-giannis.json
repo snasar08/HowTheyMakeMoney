@@ -1,0 +1,122 @@
+{
+  "id": "074",
+  "slug": "famous-giannis",
+  "company": "Giannis Antetokounmpo",
+  "format": "famous",
+  "visual_style": "lowpoly",
+  "hook_style": "surprise",
+  "title_style": "number",
+  "theme": "bold_bright",
+  "status": "ready",
+  "score": 94,
+  "title": "From Selling Sunglasses to $228 Million",
+  "name_card": "Giannis Antetokounmpo",
+  "name_sub": "basketball player",
+  "description": "He once sold sunglasses on the street. Then he signed for 228 million dollars.\n\nSources:\n- Wikipedia: Giannis Antetokounmpo: https://en.wikipedia.org/wiki/Giannis_Antetokounmpo\n\nFrom Wikipedia (Giannis Antetokounmpo): his parents, immigrants without work permits, could not easily find work, so he and his older brother Thanasis helped by hawking watches, handbags and sunglasses in the streets; he started playing basketball in 2007; the Milwaukee Bucks selected him 15th overall in the 2013 NBA draft; he won consecutive MVP awards in 2019 and 2020; on December 15, 2020 he agreed a five-year, $228 million extension, the largest in league history at the time; in 2021 he led the Bucks to their first championship since 1971. Not financial advice.\n\n#shorts #giannis #nba #howtheymakemoney",
+  "tags": [
+    "giannis antetokounmpo",
+    "nba",
+    "famous",
+    "shorts"
+  ],
+  "images": {},
+  "hud_label": "HIS MONEY",
+  "loop": "So next time you see sunglasses for sale, remember:",
+  "cta": "Giannis or Curry? Comment your pick.",
+  "cta_question": "Giannis or Curry?",
+  "scenes": [
+    {
+      "narration": "He once sold sunglasses on the street. Then he signed for 228 million dollars.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "boxes"
+        ],
+        "stat": "$228 MILLION",
+        "stat_sub": "from selling sunglasses"
+      }
+    },
+    {
+      "narration": "Just to help his family. Watches, handbags, sunglasses.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "carry",
+        "crowd": 40,
+        "props": [
+          "boxes"
+        ],
+        "stat": "STREET SELLER",
+        "stat_sub": "with his older brother"
+      }
+    },
+    {
+      "narration": "He only started basketball in 2007. Still, an NBA team picked him 15th.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "run",
+        "crowd": 0,
+        "props": [
+          "ball"
+        ],
+        "stat": "PICK 15",
+        "stat_sub": "2013 NBA draft"
+      }
+    },
+    {
+      "narration": "Then two MVP awards. And the biggest deal in league history at the time.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "cheer",
+        "crowd": 300,
+        "props": [
+          "ball",
+          "check"
+        ],
+        "stat": "$228 MILLION",
+        "stat_sub": "5-year deal, 2020",
+        "hud": "$228M"
+      }
+    },
+    {
+      "narration": "Then a championship. The Bucks' first since 1971.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "cheer",
+        "crowd": 400,
+        "props": [
+          "ball",
+          "trophy"
+        ],
+        "stat": "CHAMPION",
+        "stat_sub": "2021, first since 1971",
+        "hud": "$228M"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Giannis Antetokounmpo",
+      "url": "https://en.wikipedia.org/wiki/Giannis_Antetokounmpo"
+    }
+  ],
+  "hero": {
+    "skin": "5a3c28",
+    "hair": "short",
+    "hair_color": "15110e",
+    "beard": "goatee",
+    "beard_color": "15110e",
+    "outfit": "kit",
+    "shirt": "1f5a34",
+    "pants": "1f5a34",
+    "socks": "f4f4f4",
+    "shoes": "f4f4f4",
+    "height": 1.1
+  }
+}

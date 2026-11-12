@@ -4,13 +4,13 @@
   "company": "HP",
   "format": "how",
   "visual_style": "charts3d",
-  "hook_style": "surprise",
+  "hook_style": "number",
   "title_style": "statement",
   "theme": "dark_neon",
   "status": "ready",
   "score": 88,
   "title": "HP Sold $10.9 Billion of Ink and Toner",
-  "description": "Your printer was cheap. So why does HP love it?\n\nSources:\n- HP Inc.: Fiscal 2025 full year and fourth quarter results (PDF): https://s203.q4cdn.com/918857832/files/doc_financials/2025/q4/Q425_HP-Inc-Earnings-Press-Release.pdf\n- HP newsroom: HP Inc. reports fiscal 2025 results: https://www.hp.com/us-en/newsroom/press-releases/2025/hp-inc-reports-fiscal-2025-full-year-and-fourth-quarter-results.html\n- Wikipedia: Ink cartridge: https://en.wikipedia.org/wiki/Ink_cartridge\n\nHP Inc. fiscal 2025 (year ended Oct 31 2025), from its earnings release: Supplies net revenue $10,916 million; Commercial Printing $4,633 million and Consumer Printing $1,153 million (printer hardware, about $5.8 billion together); Printing segment earnings from operations $3,118 million vs Personal Systems (PCs) $2,054 million on $38,532 million of revenue. Wikipedia (Ink cartridge): a study by the UK consumer group Which? found some manufacturers' ink can cost more than champagne; printer makers use a razor-and-blades model. Not financial advice.\n\n#shorts #hp #printers #howtheymakemoney",
+  "description": "HP sold 10.9 billion dollars of ink and toner. The printer was just the start.\n\nSources:\n- HP Inc.: Fiscal 2025 full year and fourth quarter results (PDF): https://s203.q4cdn.com/918857832/files/doc_financials/2025/q4/Q425_HP-Inc-Earnings-Press-Release.pdf\n- HP newsroom: HP Inc. reports fiscal 2025 results: https://www.hp.com/us-en/newsroom/press-releases/2025/hp-inc-reports-fiscal-2025-full-year-and-fourth-quarter-results.html\n- Wikipedia: Ink cartridge: https://en.wikipedia.org/wiki/Ink_cartridge\n\nHP Inc. fiscal 2025 (year ended Oct 31 2025), from its earnings release: Supplies net revenue $10,916 million; Commercial Printing $4,633 million and Consumer Printing $1,153 million (printer hardware, about $5.8 billion together); Printing segment earnings from operations $3,118 million vs Personal Systems (PCs) $2,054 million on $38,532 million of revenue. Wikipedia (Ink cartridge): a study by the UK consumer group Which? found some manufacturers' ink can cost more than champagne; printer makers use a razor-and-blades model. Not financial advice.\n\n#shorts #hp #printers #howtheymakemoney",
   "tags": [
     "hp",
     "printers",
@@ -35,21 +35,21 @@
       "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261107_210728_e5e6358f-a6d2-467d-b8de-412b44a8258f.png"
     }
   },
-  "loop": "So next time your printer says low ink, ask yourself:",
+  "loop": "So next time your printer says low ink, remember:",
   "cta": "Print at home or at school? Comment your pick.",
   "cta_question": "Home or school printer?",
   "scenes": [
     {
-      "narration": "Your printer was cheap. So why does HP love it?",
+      "narration": "HP sold 10.9 billion dollars of ink and toner. The printer was just the start.",
       "visual": {
         "type": "image",
         "image": "hook",
-        "overlay": "CHEAP PRINTER?",
-        "overlay_sub": "here's the catch"
+        "overlay": "$10.9 BILLION",
+        "overlay_sub": "of ink and toner"
       }
     },
     {
-      "narration": "But the ink is the business. Ink and toner sales? 10.9 billion dollars.",
+      "narration": "The ink is the business. Not the printer.",
       "visual": {
         "type": "stat",
         "value": 10.9,

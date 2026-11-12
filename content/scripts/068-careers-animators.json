@@ -4,13 +4,13 @@
   "company": "Animators",
   "format": "careers",
   "visual_style": "charts3d",
-  "hook_style": "challenge",
+  "hook_style": "number",
   "title_style": "number",
   "theme": "bold_bright",
   "status": "ready",
   "score": 86,
-  "title": "$102,030 a Year to Make Cartoons?",
-  "description": "Guess what the people who animate movies and games earn?\n\nSources:\n- BLS OEWS via api.bls.gov: Special effects artists and animators 27-1014, annual median wage, May 2025: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000027101413\n- BLS OEWS via api.bls.gov: Special effects artists and animators, 10th percentile: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000027101411\n- BLS OEWS via api.bls.gov: Special effects artists and animators, 90th percentile: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000027101415\n- BLS OEWS via api.bls.gov: Special effects artists and animators, employment: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000027101401\n\nBLS May 2025 (OEWS), special effects artists and animators (27-1014): 19,970 jobs on payrolls (OEWS does not count the self-employed); median $102,030; 10th percentile $58,600; 90th percentile $177,110. Median = half earn more, half earn less. Not financial advice.\n\n#shorts #animator #careers #howtheymakemoney",
+  "title": "$102,030 a Year to Make Cartoons",
+  "description": "Making cartoons pays 102,030 dollars a year. That's the median.\n\nSources:\n- BLS OEWS via api.bls.gov: Special effects artists and animators 27-1014, annual median wage, May 2025: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000027101413\n- BLS OEWS via api.bls.gov: Special effects artists and animators, 10th percentile: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000027101411\n- BLS OEWS via api.bls.gov: Special effects artists and animators, 90th percentile: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000027101415\n- BLS OEWS via api.bls.gov: Special effects artists and animators, employment: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000027101401\n\nBLS May 2025 (OEWS), special effects artists and animators (27-1014): 19,970 jobs on payrolls (OEWS does not count the self-employed); median $102,030; 10th percentile $58,600; 90th percentile $177,110. Median = half earn more, half earn less. Not financial advice.\n\n#shorts #animator #careers #howtheymakemoney",
   "tags": [
     "animator",
     "careers",
@@ -35,21 +35,21 @@
       "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261107_210920_f7ca715f-19de-438e-9162-7cd0b300e7a6.png"
     }
   },
-  "loop": "So next time you watch a cartoon, ask yourself:",
+  "loop": "So next time you watch a cartoon, remember:",
   "cta": "Movies or video games? Comment where you'd animate.",
   "cta_question": "Movies or video games?",
   "scenes": [
     {
-      "narration": "Guess what the people who animate movies and games earn?",
+      "narration": "Making cartoons pays 102,030 dollars a year. That's the median.",
       "visual": {
         "type": "image",
         "image": "hook",
-        "overlay": "GUESS THE PAY",
-        "overlay_sub": "animators"
+        "overlay": "$102,030",
+        "overlay_sub": "to make cartoons"
       }
     },
     {
-      "narration": "It's a small club. About 19,970 jobs on US payrolls.",
+      "narration": "But it's a small club. Just 19,970 jobs on US payrolls.",
       "visual": {
         "type": "text",
         "text": "19,970 jobs",
@@ -66,7 +66,7 @@
       }
     },
     {
-      "narration": "But the median? 102,030 dollars a year.",
+      "narration": "But right in the middle? That 102,030 dollars.",
       "visual": {
         "type": "stat",
         "value": 102030,
@@ -77,7 +77,7 @@
       }
     },
     {
-      "narration": "And the top ten percent pass 177,000. For drawing dragons.",
+      "narration": "Then the top ten percent pass 177,000. For drawing dragons.",
       "visual": {
         "type": "bars",
         "items": [

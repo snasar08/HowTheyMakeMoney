@@ -15,12 +15,15 @@ Reference guides for stronger hooks, retention and replays. Read them before wri
 
 ## How to use them here
 For every script: write 3 hook variants from `hook.md`, keep the one most likely to stop a
-13-18-year-old scrolling, and make the `loop` line call back to it. Check each scene against the
+13-18-year-old scrolling (at least two of the three open on the number or fact, not a question), and
+make the `loop` line ("So next time you ..., remember:") call back to it. Check each scene against the
 retention guide (a new idea or reveal every few seconds, the payoff delivered, no slow build-up).
 
 ## Project rules win
 These guides are general YouTube advice. Where they disagree with CLAUDE.md or content/STYLE.md,
-**the project rules win**: 25-45 s length, question hook + question title, kid-safe, never invent
+**the project rules win**: 22-28 s length (stories may run longer), the surprising number or fact in
+the first sentence, on the overlay and in the title (a question is optional; Nov 11 analytics: question
+hooks and titles were the weakest group), line two = the payoff, kid-safe, never invent
 numbers (every figure sourced), no real logos or likenesses, our own synthesized music (ignore
 music-licensing advice), the automatic end CTA (no extra like/subscribe asks), no paid tools.
 Skip anything about DataForSEO, API keys, channel audits, OAuth or execution scripts - those parts

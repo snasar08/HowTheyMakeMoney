@@ -286,3 +286,32 @@ Sam: "the better free character models... do it yourself". Done in one session.
 - Tested with the Blender look check (030, 040, 051, 055, 061) and a full dry run of 040.
 - Later the same day: 4 more women's models from the author's own Drive folder (casual, formal dress, suit, worker; `v_*`). Bald/buzz heroes with a full beard (LeBron) get the modelled beard instead of blocks. Block stubble removed. Bug: a hero's goatee vanished in some idle frames because the imported action re-posed the armature during a render; fixed. Ronaldo was drawn with the default hair in full renders because an old per-scene `kit` blocked the script `hero`; fixed.
 
+
+## Nov 11 2026 (10 PM job) — numbers re-read, number-first hooks
+- Sam: "kinda been going viral lately", look again and make everything as good as possible.
+- Stats as of Nov 11 19:19 UTC (no local API key, so no fresher pull). What took off since Nov 9: 070 Messi
+  "From a Napkin Contract to $1.1 Billion" 1254 (famous, animated, 29.6 s), 055 Eras Tour "$2.077 Billion From 149
+  Shows" 902 in 23 h (38.8/h, fastest ever; famous, animated, 27.6 s), 050 MLB "From $6,000 to $780,000" 462 in
+  20 h (careers, 25.5 s), 065 Marvel bankrupt story 52 in its first 2 h. Shared: a person or comeback story, a
+  number in the title, under 31 s. Two of the three are animated Shorts with the new hero looks.
+- The afternoon reading holds, with one correction. Since Nov 6 (when the channel woke up) question titles:
+  median 29 (Uber 1020, Chipotle 963, Nvidia 29, Netflix 26, Astronauts 20); other titles: median ~335. So
+  questions are weak on average, but "How much of YOUR ..." is the one question shape that worked. Everything
+  posted before Nov 5 is flat whatever its hook, so the all-time medians overstate the gap. Drop at 4-5 s and
+  under-30 s still hold; every Short over 500 views is 22-30 s.
+- Rules changed (CLAUDE.md Hooks + Weekly script batch, STYLE.md, both skills): number or fact first, payoff
+  second, 22-28 s, at least 4 person stories per batch part, question titles at most 1 in 6.
+- lint.py: a question opening is no longer required; warns on a bare question, an opening sentence over 14
+  words, and a standard Short estimated over 30 s. story_score.py: scores the first sentence whether or not it
+  is a question, counts a number-first opening, and no longer counts "31," and "31" as two numbers.
+- All 26 ready scripts reworked: new first line (and second line where it was setup), overlay, loop ("remember:"),
+  description first line; 8 titles changed (006, 017, 026, 056, 066, 068, 069, 073). The 6 animated what-if
+  titles stay what-if so the title test keeps running. Only numbers already in each script. Lint 0 errors;
+  story score average 88 -> 95, none lower. Cover of 052 previewed locally.
+- Posting order: 073 Curry 95, 052 DoorDash 93, 044 Chick-fil-A 92, 069 Airbnb 92, 056 Red Bull 91, 072 agents 90.
+- Not done: health.md "other frame" thumbnails (YouTube picks the Shorts cover itself; views are fine on those).
+- Two new person stories written the new way, since only one `famous` script was left: 074 Giannis ("From Selling
+  Sunglasses to $228 Million") and 075 Mahomes ("From a Round 37 Pick to a $503 Million Deal"). Animated, so no
+  Higgsfield images. Every figure is from the Wikipedia page opened tonight (listed in each description). Lint OK,
+  story 87 and 95, both previewed with `pipeline.lp_look`. Mahomes plays on the `pitch` set (a soccer stadium; there
+  is no football field set yet). A Tom Brady script was dropped: the page gave no usable money figure.

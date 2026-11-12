@@ -4,13 +4,13 @@
   "company": "NBA",
   "format": "whatif",
   "visual_style": "lowpoly",
-  "hook_style": "whatif",
+  "hook_style": "number",
   "title_style": "whatif",
   "theme": "bold_bright",
   "status": "ready",
   "score": 88,
   "title": "What If an NBA Team Paid Players in $1 Bills?",
-  "description": "What if an NBA team paid its players in 1 dollar bills?\n\nSources:\n- Wikipedia: NBA salary cap: https://en.wikipedia.org/wiki/NBA_salary_cap\n- Wikipedia: United States one-dollar bill: https://en.wikipedia.org/wiki/United_States_one-dollar_bill\n\n2025-26 NBA salary cap: $154.647 million (NBA.com, cited on Wikipedia). A $1 bill weighs about 1 gram and is 0.0043 inches thick. Our math: 154.647 million grams = about 155 tonnes; counting one bill a second = about 4.9 years; 30 teams x $154.647 million = about 4.64 billion bills, a stack about 507 km high. Not financial advice.\n\n#shorts #nba #whatif #howtheymakemoney",
+  "description": "One NBA team's salary cap: about 154.6 million dollars. Now pay it in ones.\n\nSources:\n- Wikipedia: NBA salary cap: https://en.wikipedia.org/wiki/NBA_salary_cap\n- Wikipedia: United States one-dollar bill: https://en.wikipedia.org/wiki/United_States_one-dollar_bill\n\n2025-26 NBA salary cap: $154.647 million (NBA.com, cited on Wikipedia). A $1 bill weighs about 1 gram and is 0.0043 inches thick. Our math: 154.647 million grams = about 155 tonnes; counting one bill a second = about 4.9 years; 30 teams x $154.647 million = about 4.64 billion bills, a stack about 507 km high. Not financial advice.\n\n#shorts #nba #whatif #howtheymakemoney",
   "tags": [
     "nba",
     "what if",
@@ -20,12 +20,12 @@
   ],
   "images": {},
   "hud_label": "DOLLAR BILLS",
-  "loop": "So next time you see a buzzer beater, ask yourself:",
+  "loop": "So next time you see a buzzer beater, remember:",
   "cta": "The cash or the trophy? Comment your pick.",
   "cta_question": "The cash or the trophy?",
   "scenes": [
     {
-      "narration": "What if an NBA team paid its players in 1 dollar bills?",
+      "narration": "One NBA team's salary cap: about 154.6 million dollars. Now pay it in ones.",
       "visual": {
         "type": "lowpoly",
         "set": "court",
@@ -35,12 +35,12 @@
           "ball",
           "cash"
         ],
-        "stat": "$1 BILLS",
+        "stat": "$154.6 MILLION",
         "stat_sub": "the whole payroll?"
       }
     },
     {
-      "narration": "But the salary cap is about 154.6 million dollars a team.",
+      "narration": "Just 1 dollar bills. One gram each.",
       "visual": {
         "type": "lowpoly",
         "set": "court",
@@ -49,13 +49,13 @@
         "props": [
           "ball"
         ],
-        "stat": "$154.6 MILLION",
+        "stat": "$1 BILLS",
         "stat_sub": "salary cap, 2025-26",
         "hud": "154.6M BILLS"
       }
     },
     {
-      "narration": "Then weigh it. One gram a bill. About 155 tonnes.",
+      "narration": "Then weigh it. About 155 tonnes of cash.",
       "visual": {
         "type": "lowpoly",
         "set": "warehouse",
