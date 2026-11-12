@@ -8,9 +8,9 @@ and **free beyond his Higgsfield Pro plan** — never add a paid service or ask 
 ## How it runs
 - `content/scripts/NNN-slug.json` — the queue. `status: "ready"` → waiting; `"delivered"` → done.
 - `.github/workflows/nightly.yml` — GitHub Actions (free tier, no GPU). **Slot-aware** (Oct 29):
-  runs ~3 AM ET (fills today's 12:00/15:00/18:00 slots; Sam, Nov 3: 3 posts/day) + ~9:41 AM ET backup + a third run (cron 19:23 UTC, added Nov 9 after GitHub dropped one run and failed to start the other; it arrives in the evening and fills tomorrow early); each run renders only for OPEN slots
+  runs ~3 AM ET (fills today's 12:00/15:00/16:30/18:00/20:00 slots; Sam, Nov 12: **5 posts/day**, was 3 since Nov 3) + ~9:41 AM ET backup + a third run (cron 19:23 UTC, added Nov 9 after GitHub dropped one run and failed to start the other; it arrives in the evening and fills tomorrow early); each run renders only for OPEN slots
   in the next 36 h (`publish.taken_slots` from the delivered records; never a taken slot, max
-  `MAX_PER_DAY`=3/day, a passed slot rolls to the next free one), so late/backup/manual runs
+  `MAX_PER_DAY`=5/day, a passed slot rolls to the next free one), so late/backup/manual runs
   never double-post. GitHub starts scheduled runs late (Oct 26–28: 5.5–6.5 h). Check Buffer:
   push branch `slot-audit` (report) / `slot-fix` (delete extras, scripts back to ready). Minutes: the repo is public, so standard GitHub runners are free and unlimited (6 h max per job, ~20 jobs at once); a run takes ~5–8 minutes.
 - `pipeline/render.py` draws every frame with Pillow and pipes to ffmpeg (1080x1920, 30 fps).
@@ -155,10 +155,15 @@ and **free beyond his Higgsfield Pro plan** — never add a paid service or ask 
 5. Ask Sam to Watch the repo (Watch → Custom → Releases) so release notifications reach his phone.
 
 ## Weekly script batch (cloud routines, Saturdays — two parts so one session never runs too long)
-Posting uses 21 Shorts/week (3/day since Nov 3). Goal: build a buffer, capped so credits aren't wasted.
-1. Count `ready` scripts. **If 45 or more are ready, write nothing** (still do step 8). Otherwise
-   write `min(15, 45 - ready)` new scripts in this part (part 1 ~12:30 ET, part 2 ~4:30 PM ET,
-   so up to 30/week).
+Posting uses **35 Shorts/week (5/day since Nov 12; Sam: "up to 5 posts a day ... have the Saturday
+research more ... maintain quality too")**. Goal: build a buffer, capped so credits aren't wasted.
+1. Count `ready` scripts. **If 75 or more are ready, write nothing** (still do step 8). Otherwise
+   write `min(20, 75 - ready)` new scripts in this part (part 1 ~12:30 ET, part 2 ~4:30 PM ET,
+   so up to 40/week). **Quality comes before the count:** every script still needs opened sources,
+   idea score 85+, lint 0 errors and story score 80+. If time or good ideas run short, stop and
+   push fewer good scripts; never pad the batch. To keep Higgsfield credits flat while writing more,
+   at least half of each part is animated (`lowpoly`, up to 2 in 5 of the queue) or `editorial`
+   (free Commons photos): neither needs Higgsfield images.
    First, fix any `status: "needs_fix"` scripts (reasons are in `needs_fix`; e.g. reword lines
    with unclear words, shorten long sentences), then set them back to `ready` and drop the field.
    If `content/performance.json` exists, read it: lean toward the topics and hook styles of the
@@ -188,7 +193,7 @@ Posting uses 21 Shorts/week (3/day since Nov 3). Goal: build a buffer, capped so
    your ..." kind; number leads; statement 8 and whatif 5 still need Shorts to finish the test.)
    **Mix (Nov 11):** each batch part writes at least 4 person stories (`famous`, or a founder /
    "almost went bankrupt" `how`) with a "From X to $Y" or plain-number title, because those are
-   what took off; the queue had only one `famous` script left on Nov 11. Every script sets `format`, `visual_style` (`charts3d` for most; `lowpoly` for at most 1 in 3 (Nov 10; famous scripts set `hero`, see 051/061/073) — see existing 030/031 for the lowpoly scene JSON), `hook_style` (question / number / whatif / challenge / surprise),
+   what took off; the queue had only one `famous` script left on Nov 11. Every script sets `format`, `visual_style` (`charts3d` for most; `lowpoly` for at most 2 in 5 (Nov 12; was 1 in 3 on Nov 10; famous scripts set `hero`, see 051/061/073) — see existing 030/031 for the lowpoly scene JSON), `hook_style` (question / number / whatif / challenge / surprise),
    `title_style` (question / number / statement / whatif). Real people: STYLE.md
    "Real people and brands".
    **Before writing, read `analytics/insights.md`** (updated by stats.yml before Saturday).
