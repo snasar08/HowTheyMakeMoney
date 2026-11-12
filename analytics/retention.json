@@ -1,10 +1,40 @@
 {
- "at": "2026-11-11T19:19:02.003665+00:00",
+ "at": "2026-11-12T18:52:03.413071+00:00",
  "shorts": [
+  {
+   "video": "aGOO0z7dfpk",
+   "title": "From a Napkin Contract to $1.1 Billion",
+   "views": 1207,
+   "avg_pct": 80.7,
+   "avg_seconds": 24,
+   "tags": {
+    "script": "070",
+    "slug": "famous-messi",
+    "topic": "Lionel Messi",
+    "format": "famous",
+    "visual_style": "lowpoly",
+    "theme": "bold_bright",
+    "hook_style": "surprise",
+    "title_style": "statement",
+    "length_s": 29.63,
+    "length_bucket": "<30",
+    "post_at": "2026-11-09T18:00:00-05:00",
+    "post_slot": "18:00",
+    "score": 92
+   },
+   "start": 140,
+   "q25": 99,
+   "q50": 78,
+   "q75": 64,
+   "end": 41,
+   "drop_at_pct": 19,
+   "drop_at_s": 5.6,
+   "drop_size": 17
+  },
   {
    "video": "-4AV3y6mP2Y",
    "title": "How Much of Your Uber Fare Does Uber Keep?",
-   "views": 1031,
+   "views": 1035,
    "avg_pct": 57.6,
    "avg_seconds": 14,
    "tags": {
@@ -34,7 +64,7 @@
   {
    "video": "rDHeA2dVTLM",
    "title": "What If Nike's Best Store Isn't Nike's?",
-   "views": 1022,
+   "views": 1025,
    "avg_pct": 42.3,
    "avg_seconds": 11,
    "tags": {
@@ -152,10 +182,40 @@
    "drop_size": 33
   },
   {
+   "video": "Zf2GdNSZ2SE",
+   "title": "MrBeast Spends About $1M Per Video",
+   "views": 206,
+   "avg_pct": 51.1,
+   "avg_seconds": 11,
+   "tags": {
+    "script": "047",
+    "slug": "famous-mrbeast",
+    "topic": "MrBeast",
+    "format": "famous",
+    "visual_style": "lowpoly",
+    "theme": "bold_bright",
+    "hook_style": "number",
+    "title_style": "statement",
+    "length_s": 22.86,
+    "length_bucket": "<30",
+    "post_at": "2026-11-09T12:00:00-05:00",
+    "post_slot": "12:00",
+    "score": 92
+   },
+   "start": 109,
+   "q25": 85,
+   "q50": 40,
+   "q75": 29,
+   "end": 11,
+   "drop_at_pct": 28,
+   "drop_at_s": 6.0,
+   "drop_size": 18
+  },
+  {
    "video": "NmjUgbv6_jE",
    "title": "Microsoft Keeps 47 Cents of Every Dollar",
-   "views": 194,
-   "avg_pct": 46.5,
+   "views": 195,
+   "avg_pct": 46.7,
    "avg_seconds": 12,
    "tags": {
     "script": "027",
@@ -173,8 +233,8 @@
     "score": 92
    },
    "start": 109,
-   "q25": 64,
-   "q50": 38,
+   "q25": 65,
+   "q50": 39,
    "q75": 24,
    "end": 9,
    "drop_at_pct": 16,
@@ -274,9 +334,9 @@
   {
    "video": "0BjUUMdMBUI",
    "title": "Why Are Gamers Only 7% of Nvidia Now?",
-   "views": 29,
-   "avg_pct": 67,
-   "avg_seconds": 17,
+   "views": 30,
+   "avg_pct": 64.0,
+   "avg_seconds": 16,
    "tags": {
     "script": "025",
     "slug": "nvidia",
@@ -292,19 +352,19 @@
     "post_slot": "12:00",
     "score": 100
    },
-   "start": 107,
-   "q25": 80,
-   "q50": 80,
-   "q75": 73,
-   "end": 7,
-   "drop_at_pct": 81,
-   "drop_at_s": 20.6,
-   "drop_size": 27
+   "start": 100,
+   "q25": 75,
+   "q50": 75,
+   "q75": 69,
+   "end": 6,
+   "drop_at_pct": 83,
+   "drop_at_s": 20.8,
+   "drop_size": 25
   },
   {
    "video": "ipvQc7-oq_8",
    "title": "How Much of Your Netflix Bill Is Profit?",
-   "views": 25,
+   "views": 26,
    "avg_pct": 49.7,
    "avg_seconds": 13,
    "tags": {
@@ -343,6 +403,28 @@
     "post_at": "2026-11-01T01:46:00-05:00",
     "post_slot": "01:46",
     "score": 88
+   }
+  },
+  {
+   "video": "04sFxeB3E9g",
+   "title": "Pro Athletes' Median Pay: $66,710",
+   "views": 23,
+   "avg_pct": 45.5,
+   "avg_seconds": 12,
+   "tags": {
+    "script": "063",
+    "slug": "careers-athletes",
+    "topic": "Pro athletes",
+    "format": "careers",
+    "visual_style": "charts3d",
+    "theme": "bold_bright",
+    "hook_style": "number",
+    "title_style": "number",
+    "length_s": 26.52,
+    "length_bucket": "<30",
+    "post_at": "2026-11-09T15:00:00-05:00",
+    "post_slot": "15:00",
+    "score": 90
    }
   },
   {
@@ -422,7 +504,7 @@
   {
    "video": "Hpv6RuoiVYk",
    "title": "What If You Won the Biggest Esports Prize?",
-   "views": 12,
+   "views": 13,
    "avg_pct": 48.6,
    "avg_seconds": 14,
    "tags": {
@@ -444,9 +526,9 @@
   {
    "video": "Ox0qHyPUNIk",
    "title": "$885,000: The Lowest NFL Salary in 2026",
-   "views": 12,
-   "avg_pct": 69.9,
-   "avg_seconds": 23,
+   "views": 13,
+   "avg_pct": 66.6,
+   "avg_seconds": 21,
    "tags": {
     "script": "038",
     "slug": "careers-nfl",
@@ -486,6 +568,50 @@
    }
   },
   {
+   "video": "TUK7UzL3e2Q",
+   "title": "Roblox Creators Earned $1.5 Billion in 2025",
+   "views": 10,
+   "avg_pct": 51.7,
+   "avg_seconds": 20,
+   "tags": {
+    "script": "037",
+    "slug": "how-roblox",
+    "topic": "Roblox",
+    "format": "how",
+    "visual_style": "charts3d",
+    "theme": "bold_bright",
+    "hook_style": "number",
+    "title_style": "statement",
+    "length_s": 38.5,
+    "length_bucket": "38+",
+    "post_at": "2026-11-04T15:00:00-05:00",
+    "post_slot": "15:00",
+    "score": 93
+   }
+  },
+  {
+   "video": "th_hOXugjsE",
+   "title": "Planet Fitness Made $310 Million on Machines",
+   "views": 10,
+   "avg_pct": 85.5,
+   "avg_seconds": 21,
+   "tags": {
+    "script": "021",
+    "slug": "planet-fitness",
+    "topic": "Planet Fitness",
+    "format": "how",
+    "visual_style": "charts3d",
+    "theme": "bold_bright",
+    "hook_style": "challenge",
+    "title_style": "statement",
+    "length_s": 24.67,
+    "length_bucket": "<30",
+    "post_at": "2026-11-08T18:00:00-05:00",
+    "post_slot": "18:00",
+    "score": 88
+   }
+  },
+  {
    "video": "j0Os3j43cns",
    "title": "What If One Person Delivered Every Amazon Package?",
    "views": 9,
@@ -508,50 +634,6 @@
    }
   },
   {
-   "video": "TUK7UzL3e2Q",
-   "title": "Roblox Creators Earned $1.5 Billion in 2025",
-   "views": 8,
-   "avg_pct": 39.0,
-   "avg_seconds": 15,
-   "tags": {
-    "script": "037",
-    "slug": "how-roblox",
-    "topic": "Roblox",
-    "format": "how",
-    "visual_style": "charts3d",
-    "theme": "bold_bright",
-    "hook_style": "number",
-    "title_style": "statement",
-    "length_s": 38.5,
-    "length_bucket": "38+",
-    "post_at": "2026-11-04T15:00:00-05:00",
-    "post_slot": "15:00",
-    "score": 93
-   }
-  },
-  {
-   "video": "th_hOXugjsE",
-   "title": "Planet Fitness Made $310 Million on Machines",
-   "views": 8,
-   "avg_pct": 73.3,
-   "avg_seconds": 18,
-   "tags": {
-    "script": "021",
-    "slug": "planet-fitness",
-    "topic": "Planet Fitness",
-    "format": "how",
-    "visual_style": "charts3d",
-    "theme": "bold_bright",
-    "hook_style": "challenge",
-    "title_style": "statement",
-    "length_s": 24.67,
-    "length_bucket": "<30",
-    "post_at": "2026-11-08T18:00:00-05:00",
-    "post_slot": "18:00",
-    "score": 88
-   }
-  },
-  {
    "video": "tgjuBkok7cE",
    "title": "Why Does Ohtani Earn Just $2.6M Playing?",
    "views": 5,
@@ -571,6 +653,28 @@
     "post_at": "2026-11-02T12:00:00-05:00",
     "post_slot": "12:00",
     "score": 90
+   }
+  },
+  {
+   "video": "kCqHnPVY9Wc",
+   "title": "What If Spotify Listeners Were a Country?",
+   "views": 5,
+   "avg_pct": 38.4,
+   "avg_seconds": 11,
+   "tags": {
+    "script": "039",
+    "slug": "whatif-spotify",
+    "topic": "Spotify",
+    "format": "whatif",
+    "visual_style": "lowpoly",
+    "theme": "dark_neon",
+    "hook_style": "whatif",
+    "title_style": "whatif",
+    "length_s": 30.83,
+    "length_bucket": "30-38",
+    "post_at": "2026-11-04T12:00:00-05:00",
+    "post_slot": "12:00",
+    "score": 86
    }
   },
   {
@@ -615,50 +719,6 @@
     "post_at": "2026-11-01T12:00:00-05:00",
     "post_slot": "12:00",
     "score": 78
-   }
-  },
-  {
-   "video": "kCqHnPVY9Wc",
-   "title": "What If Spotify Listeners Were a Country?",
-   "views": 4,
-   "avg_pct": 38.4,
-   "avg_seconds": 11,
-   "tags": {
-    "script": "039",
-    "slug": "whatif-spotify",
-    "topic": "Spotify",
-    "format": "whatif",
-    "visual_style": "lowpoly",
-    "theme": "dark_neon",
-    "hook_style": "whatif",
-    "title_style": "whatif",
-    "length_s": 30.83,
-    "length_bucket": "30-38",
-    "post_at": "2026-11-04T12:00:00-05:00",
-    "post_slot": "12:00",
-    "score": 86
-   }
-  },
-  {
-   "video": "M_dlK2dz_mg",
-   "title": "Why Is Movie Popcorn So Expensive?",
-   "views": 2,
-   "avg_pct": 108.3,
-   "avg_seconds": 33,
-   "tags": {
-    "script": "008",
-    "slug": "movie-theaters",
-    "topic": "Movie theaters",
-    "format": "how",
-    "visual_style": "charts3d",
-    "theme": "bold_bright",
-    "hook_style": "question",
-    "title_style": "question",
-    "length_s": 30.45,
-    "length_bucket": "30-38",
-    "post_at": "2026-10-27T18:00:00-04:00",
-    "post_slot": "18:00",
-    "score": 88
    }
   },
   {
@@ -750,28 +810,6 @@
    }
   },
   {
-   "video": "6QvQEoAwFbE",
-   "title": "How Is Costco's Hot Dog Still $1.50?",
-   "views": 0,
-   "avg_pct": 0,
-   "avg_seconds": 0,
-   "tags": {
-    "script": "001",
-    "slug": "costco",
-    "topic": "Costco",
-    "format": "how",
-    "visual_style": "charts3d",
-    "theme": "bold_bright",
-    "hook_style": "question",
-    "title_style": "question",
-    "length_s": 40.12,
-    "length_bucket": "38+",
-    "post_at": "2026-10-28T12:00:00-04:00",
-    "post_slot": "12:00",
-    "score": 87
-   }
-  },
-  {
    "video": "EEw5Hm9n4PU",
    "title": "Is Starbucks Secretly a Bank?",
    "views": 0,
@@ -791,72 +829,6 @@
     "post_at": "2026-10-31T12:00:00-04:00",
     "post_slot": "12:00",
     "score": 84
-   }
-  },
-  {
-   "video": "04sFxeB3E9g",
-   "title": "Pro Athletes' Median Pay: $66,710",
-   "views": 0,
-   "avg_pct": 0,
-   "avg_seconds": 0,
-   "tags": {
-    "script": "063",
-    "slug": "careers-athletes",
-    "topic": "Pro athletes",
-    "format": "careers",
-    "visual_style": "charts3d",
-    "theme": "bold_bright",
-    "hook_style": "number",
-    "title_style": "number",
-    "length_s": 26.52,
-    "length_bucket": "<30",
-    "post_at": "2026-11-09T15:00:00-05:00",
-    "post_slot": "15:00",
-    "score": 90
-   }
-  },
-  {
-   "video": "Zf2GdNSZ2SE",
-   "title": "MrBeast Spends About $1M Per Video",
-   "views": 0,
-   "avg_pct": 0,
-   "avg_seconds": 0,
-   "tags": {
-    "script": "047",
-    "slug": "famous-mrbeast",
-    "topic": "MrBeast",
-    "format": "famous",
-    "visual_style": "lowpoly",
-    "theme": "bold_bright",
-    "hook_style": "number",
-    "title_style": "statement",
-    "length_s": 22.86,
-    "length_bucket": "<30",
-    "post_at": "2026-11-09T12:00:00-05:00",
-    "post_slot": "12:00",
-    "score": 92
-   }
-  },
-  {
-   "video": "aGOO0z7dfpk",
-   "title": "From a Napkin Contract to $1.1 Billion",
-   "views": 0,
-   "avg_pct": 0,
-   "avg_seconds": 0,
-   "tags": {
-    "script": "070",
-    "slug": "famous-messi",
-    "topic": "Lionel Messi",
-    "format": "famous",
-    "visual_style": "lowpoly",
-    "theme": "bold_bright",
-    "hook_style": "surprise",
-    "title_style": "statement",
-    "length_s": 29.63,
-    "length_bucket": "<30",
-    "post_at": "2026-11-09T18:00:00-05:00",
-    "post_slot": "18:00",
-    "score": 92
    }
   },
   {
@@ -943,6 +915,72 @@
     "length_s": 27.61,
     "length_bucket": "<30",
     "post_at": "2026-11-10T15:00:00-05:00",
+    "post_slot": "15:00",
+    "score": 91
+   }
+  },
+  {
+   "video": "PU6nz6U7md0",
+   "title": "App Builders Earn a Median of $135,980",
+   "views": 0,
+   "avg_pct": 0,
+   "avg_seconds": 0,
+   "tags": {
+    "script": "058",
+    "slug": "careers-software-devs",
+    "topic": "Software developers",
+    "format": "careers",
+    "visual_style": "charts3d",
+    "theme": "dark_neon",
+    "hook_style": "question",
+    "title_style": "statement",
+    "length_s": 30.19,
+    "length_bucket": "30-38",
+    "post_at": "2026-11-12T12:00:00-05:00",
+    "post_slot": "12:00",
+    "score": 87
+   }
+  },
+  {
+   "video": "Em5KSC9FqFw",
+   "title": "How Did LEGO Come Back From Its Worst Year?",
+   "views": 0,
+   "avg_pct": 0,
+   "avg_seconds": 0,
+   "tags": {
+    "script": "048",
+    "slug": "how-lego",
+    "topic": "LEGO",
+    "format": "how",
+    "visual_style": "editorial",
+    "theme": "bold_bright",
+    "hook_style": "number",
+    "title_style": "question",
+    "length_s": 29.51,
+    "length_bucket": "<30",
+    "post_at": "2026-11-11T18:00:00-05:00",
+    "post_slot": "18:00",
+    "score": 91
+   }
+  },
+  {
+   "video": "PRUzamrtY2E",
+   "title": "From a $2.5M Shoe Deal to $4.7 Billion",
+   "views": 0,
+   "avg_pct": 0,
+   "avg_seconds": 0,
+   "tags": {
+    "script": "061",
+    "slug": "famous-jordan",
+    "topic": "Michael Jordan",
+    "format": "famous",
+    "visual_style": "lowpoly",
+    "theme": "bold_bright",
+    "hook_style": "number",
+    "title_style": "number",
+    "length_s": 28.39,
+    "length_bucket": "<30",
+    "post_at": "2026-11-11T15:00:00-05:00",
     "post_slot": "15:00",
     "score": 91
    }
