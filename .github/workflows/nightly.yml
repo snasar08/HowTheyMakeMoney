@@ -5,7 +5,7 @@ on:
   # and keep a morning backup. Both only fill open slots (pipeline/publish.py), so extra runs —
   # backup, late or manual — never double-post.
   schedule:
-    - cron: "0 8 * * *"     # ~3 AM New York (EST; Sam, Nov 3) — fills today's 3 slots; even 6 h late it's before noon
+    - cron: "0 8 * * *"     # ~3 AM New York (EST; Sam, Nov 3) — fills today's 5 slots (Sam, Nov 12: 5 a day); even 6 h late it's before noon
     - cron: "41 13 * * *"   # ~9:41 AM New York backup — fills anything still open today
     - cron: "23 19 * * *"   # Nov 9: third run (GitHub dropped one run and failed to start the other); arrives in the evening and fills tomorrow's slots early
   push:
@@ -14,7 +14,7 @@ on:
     inputs:
       count:
         description: "How many Shorts to make"
-        default: "3"
+        default: "5"
       script_id:
         description: "Only this script id (e.g. 001). Leave blank for next in queue."
         default: ""
@@ -41,8 +41,8 @@ jobs:
       ids: ${{ steps.ids.outputs.ids }}
     env:
       POST_START: ${{ vars.POST_START || '2026-10-27' }}
-      POST_SLOTS: "12:00,15:00,18:00"
-      MAX_PER_DAY: "3"
+      POST_SLOTS: "12:00,15:00,16:30,18:00,20:00"
+      MAX_PER_DAY: "5"
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -52,7 +52,7 @@ jobs:
       - run: pip install -q -r requirements.txt
       - id: ids
         run: |
-          ARGS="--count ${{ inputs.count || '3' }}"
+          ARGS="--count ${{ inputs.count || '5' }}"
           if [ -n "${{ inputs.script_id }}" ]; then ARGS="$ARGS --id ${{ inputs.script_id }}"; fi
           if [ "${{ inputs.dry_run }}" = "true" ]; then ARGS="$ARGS --dry"; fi
           if [ "${{ github.ref }}" = "refs/heads/nightly-test" ]; then ARGS="--id 040 --dry"; fi
@@ -107,8 +107,8 @@ jobs:
       UPLOAD_MODE: buffer_dry
       AUDIO_CHECK: warn
       POST_START: ${{ vars.POST_START || '2026-10-27' }}
-      POST_SLOTS: "12:00,15:00,18:00"
-      MAX_PER_DAY: "3"
+      POST_SLOTS: "12:00,15:00,16:30,18:00,20:00"
+      MAX_PER_DAY: "5"
       IDS: ${{ needs.plan.outputs.ids }}
     steps:
       - uses: actions/checkout@v4
@@ -160,7 +160,7 @@ jobs:
       matrix:
         shard: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
     runs-on: ubuntu-latest
-    timeout-minutes: 150
+    timeout-minutes: 300   # Nov 12: a run can now hold two animated Shorts
     steps:
       - uses: actions/checkout@v4
       - uses: actions/download-artifact@v4
@@ -194,9 +194,9 @@ jobs:
     needs: [plan, voice, lpplan, blender]
     if: ${{ always() }}
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 90
     env:
-      SHORTS_PER_RUN: "3"   # Sam, Nov 3: 3 posts a day
+      SHORTS_PER_RUN: "5"   # Sam, Nov 12: 5 posts a day (was 3 since Nov 3)
       UPLOAD_MODE: ${{ vars.UPLOAD_MODE || 'buffer' }}
       POST_START: ${{ vars.POST_START || '2026-10-27' }}
       BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
@@ -206,8 +206,8 @@ jobs:
       LP_PLATES: ${{ github.workspace }}/lp/plates   # Blender frames (used only when complete)
       KOKORO_VOICE: am_puck   # Oct 30: Sam wants a male voice; am_puck = top-rated male (C+), most expressive
       KOKORO_SPEED: "1.2"
-      POST_SLOTS: "12:00,15:00,18:00"
-      MAX_PER_DAY: "3"
+      POST_SLOTS: "12:00,15:00,16:30,18:00,20:00"
+      MAX_PER_DAY: "5"
       GH_TOKEN: ${{ github.token }}
       YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
       YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}

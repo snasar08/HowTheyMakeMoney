@@ -315,3 +315,13 @@ Sam: "the better free character models... do it yourself". Done in one session.
   Higgsfield images. Every figure is from the Wikipedia page opened tonight (listed in each description). Lint OK,
   story 87 and 95, both previewed with `pipeline.lp_look`. Mahomes plays on the `pitch` set (a soccer stadium; there
   is no football field set yet). A Tom Brady script was dropped: the page gave no usable money figure.
+
+## Nov 12 2026 — 5 posts a day
+- Sam: "Let's up to 5 posts a day and just have the Saturday morning research more ... maintain quality too."
+- nightly.yml + publish.py: slots 12:00 / 15:00 / 16:30 / 18:00 / 20:00 ET, MAX_PER_DAY 5, 5 Shorts per run. The
+  three old times are unchanged so the post-time comparison stays valid; 16:30 and 20:00 are new. Blender job
+  timeout 150 -> 300 min and make 45 -> 90 min (a run can hold two animated Shorts). Buffer free plan allows 10
+  queued posts; the most this schedule queues is 9.
+- Weekly batch: up to 20 scripts per part (40/week for 35 posted), stop writing at 75 ready, at least half
+  animated or editorial so Higgsfield credits do not rise, quality gates unchanged and ahead of the count.
+- Queue on Nov 12: 28 ready = about 5.5 days at 5 a day; Saturday Nov 14 batches refill it.
