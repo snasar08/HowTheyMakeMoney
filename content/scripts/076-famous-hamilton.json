@@ -7,7 +7,7 @@
   "hook_style": "surprise",
   "title_style": "number",
   "theme": "bold_bright",
-  "status": "ready",
+  "status": "delivered",
   "score": 94,
   "title": "From a Dad With 4 Jobs to $100 Million",
   "name_card": "Lewis Hamilton",
@@ -36,7 +36,20 @@
           "car"
         ],
         "stat": "$100 MILLION",
-        "stat_sub": "his dad worked 4 jobs"
+        "stat_sub": "his dad worked 4 jobs",
+        "hero": {
+          "skin": "7a5236",
+          "hair": "long",
+          "hair_color": "17120f",
+          "beard": "goatee",
+          "beard_color": "17120f",
+          "outfit": "kit",
+          "shirt": "c81d25",
+          "pants": "c81d25",
+          "socks": "1a1a1a",
+          "shoes": "1a1a1a",
+          "height": 1.0
+        }
       }
     },
     {
@@ -50,7 +63,20 @@
           "car"
         ],
         "stat": "AGE 6",
-        "stat_sub": "a go-kart for Christmas"
+        "stat_sub": "a go-kart for Christmas",
+        "hero": {
+          "skin": "7a5236",
+          "hair": "long",
+          "hair_color": "17120f",
+          "beard": "goatee",
+          "beard_color": "17120f",
+          "outfit": "kit",
+          "shirt": "c81d25",
+          "pants": "c81d25",
+          "socks": "1a1a1a",
+          "shoes": "1a1a1a",
+          "height": 1.0
+        }
       }
     },
     {
@@ -64,7 +90,20 @@
           "trophy"
         ],
         "stat": "AGE 10",
-        "stat_sub": "youngest British kart champion"
+        "stat_sub": "youngest British kart champion",
+        "hero": {
+          "skin": "7a5236",
+          "hair": "long",
+          "hair_color": "17120f",
+          "beard": "goatee",
+          "beard_color": "17120f",
+          "outfit": "kit",
+          "shirt": "c81d25",
+          "pants": "c81d25",
+          "socks": "1a1a1a",
+          "shoes": "1a1a1a",
+          "height": 1.0
+        }
       }
     },
     {
@@ -80,7 +119,20 @@
         ],
         "stat": "106 WINS",
         "stat_sub": "the most in Formula One",
-        "hud": "$100M"
+        "hud": "$100M",
+        "hero": {
+          "skin": "7a5236",
+          "hair": "long",
+          "hair_color": "17120f",
+          "beard": "goatee",
+          "beard_color": "17120f",
+          "outfit": "kit",
+          "shirt": "c81d25",
+          "pants": "c81d25",
+          "socks": "1a1a1a",
+          "shoes": "1a1a1a",
+          "height": 1.0
+        }
       }
     },
     {
@@ -96,7 +148,20 @@
         ],
         "stat": "$70M + $30M",
         "stat_sub": "racing + sponsors, Forbes 2026",
-        "hud": "$100M"
+        "hud": "$100M",
+        "hero": {
+          "skin": "7a5236",
+          "hair": "long",
+          "hair_color": "17120f",
+          "beard": "goatee",
+          "beard_color": "17120f",
+          "outfit": "kit",
+          "shirt": "c81d25",
+          "pants": "c81d25",
+          "socks": "1a1a1a",
+          "shoes": "1a1a1a",
+          "height": 1.0
+        }
       }
     }
   ],
@@ -122,5 +187,15 @@
     "socks": "1a1a1a",
     "shoes": "1a1a1a",
     "height": 1.0
+  },
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-076-famous-hamilton",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-076-famous-hamilton/076-famous-hamilton.mp4",
+    "post_at": "2026-11-14T12:00:00-05:00",
+    "buffer_post": "6af749f438f9934c1900901d",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-13T17:33:40.513191+00:00",
+    "seconds": 26.1
   }
 }

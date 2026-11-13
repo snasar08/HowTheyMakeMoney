@@ -7,7 +7,7 @@
   "hook_style": "surprise",
   "title_style": "number",
   "theme": "bold_bright",
-  "status": "ready",
+  "status": "delivered",
   "score": 91,
   "title": "From a Round 37 Pick to a $503 Million Deal",
   "name_card": "Patrick Mahomes",
@@ -34,7 +34,22 @@
         "crowd": 0,
         "props": [],
         "stat": "$503 MILLION",
-        "stat_sub": "from a round 37 pick"
+        "stat_sub": "from a round 37 pick",
+        "hero": {
+          "skin": "b98a62",
+          "hair": "curly",
+          "hair_color": "2a1f18",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "c8102e",
+          "pants": "f4f4f4",
+          "socks": "c8102e",
+          "shoes": "f4f4f4",
+          "extras": [
+            "headband"
+          ],
+          "height": 1.0
+        }
       }
     },
     {
@@ -48,7 +63,22 @@
           "check"
         ],
         "stat": "ROUND 37",
-        "stat_sub": "2014 baseball draft"
+        "stat_sub": "2014 baseball draft",
+        "hero": {
+          "skin": "b98a62",
+          "hair": "curly",
+          "hair_color": "2a1f18",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "c8102e",
+          "pants": "f4f4f4",
+          "socks": "c8102e",
+          "shoes": "f4f4f4",
+          "extras": [
+            "headband"
+          ],
+          "height": 1.0
+        }
       }
     },
     {
@@ -60,7 +90,22 @@
         "crowd": 100,
         "props": [],
         "stat": "PICK 10",
-        "stat_sub": "2017, then a backup"
+        "stat_sub": "2017, then a backup",
+        "hero": {
+          "skin": "b98a62",
+          "hair": "curly",
+          "hair_color": "2a1f18",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "c8102e",
+          "pants": "f4f4f4",
+          "socks": "c8102e",
+          "shoes": "f4f4f4",
+          "extras": [
+            "headband"
+          ],
+          "height": 1.0
+        }
       }
     },
     {
@@ -76,7 +121,22 @@
         ],
         "stat": "10 YEARS",
         "stat_sub": "signed July 2020",
-        "hud": "$503M"
+        "hud": "$503M",
+        "hero": {
+          "skin": "b98a62",
+          "hair": "curly",
+          "hair_color": "2a1f18",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "c8102e",
+          "pants": "f4f4f4",
+          "socks": "c8102e",
+          "shoes": "f4f4f4",
+          "extras": [
+            "headband"
+          ],
+          "height": 1.0
+        }
       }
     },
     {
@@ -91,7 +151,22 @@
         ],
         "stat": "3 SUPER BOWLS",
         "stat_sub": "and 3 Super Bowl MVPs",
-        "hud": "$503M"
+        "hud": "$503M",
+        "hero": {
+          "skin": "b98a62",
+          "hair": "curly",
+          "hair_color": "2a1f18",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "c8102e",
+          "pants": "f4f4f4",
+          "socks": "c8102e",
+          "shoes": "f4f4f4",
+          "extras": [
+            "headband"
+          ],
+          "height": 1.0
+        }
       }
     }
   ],
@@ -115,5 +190,15 @@
       "headband"
     ],
     "height": 1.0
+  },
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-075-famous-mahomes",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-075-famous-mahomes/075-famous-mahomes.mp4",
+    "post_at": "2026-11-14T20:00:00-05:00",
+    "buffer_post": "6af74b8b5bbd7cc6dbc3ba17",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-13T17:40:27.242661+00:00",
+    "seconds": 24.98
   }
 }

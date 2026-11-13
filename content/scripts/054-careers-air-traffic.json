@@ -7,7 +7,7 @@
   "hook_style": "surprise",
   "title_style": "statement",
   "theme": "clean_navy",
-  "status": "ready",
+  "status": "delivered",
   "score": 86,
   "title": "Too Old at 31: This Job Pays $148,080",
   "description": "Too old at 31. For this job, you are.\n\nSources:\n- BLS OEWS via api.bls.gov: Air traffic controllers 53-2021, annual median wage, May 2025: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000053202113\n- BLS OEWS via api.bls.gov: 10th percentile: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000053202111\n- BLS OEWS via api.bls.gov: 90th percentile: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000053202115\n- Wikipedia: Air traffic controller: https://en.wikipedia.org/wiki/Air_traffic_controller\n- FAA: Aviation careers: https://www.faa.gov/jobs/career_fields/aviation_careers\n\nBLS May 2025 (OEWS): median $148,080; 10th percentile $78,420; 90th percentile $215,610. FAA rule: trainees start at the academy by their 31st birthday; mandatory retirement at 56 (Wikipedia). FAA: more than 14,000 controllers, 2.9 million daily passengers. Median = half earn more, half earn less. Not financial advice.\n\n#shorts #airtrafficcontrol #careers #aviation #howtheymakemoney",
@@ -122,5 +122,15 @@
       "title": "FAA: Aviation careers",
       "url": "https://www.faa.gov/jobs/career_fields/aviation_careers"
     }
-  ]
+  ],
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-054-careers-air-traffic",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-054-careers-air-traffic/054-careers-air-traffic.mp4",
+    "post_at": "2026-11-14T15:00:00-05:00",
+    "buffer_post": "6af74a5338f9934c1900bc87",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-13T17:35:15.352338+00:00",
+    "seconds": 23.95
+  }
 }

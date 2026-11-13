@@ -7,7 +7,7 @@
   "hook_style": "number",
   "title_style": "number",
   "theme": "bold_bright",
-  "status": "ready",
+  "status": "delivered",
   "score": 86,
   "title": "$102,030 a Year to Make Cartoons",
   "description": "Making cartoons pays 102,030 dollars a year. That's the median.\n\nSources:\n- BLS OEWS via api.bls.gov: Special effects artists and animators 27-1014, annual median wage, May 2025: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000027101413\n- BLS OEWS via api.bls.gov: Special effects artists and animators, 10th percentile: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000027101411\n- BLS OEWS via api.bls.gov: Special effects artists and animators, 90th percentile: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000027101415\n- BLS OEWS via api.bls.gov: Special effects artists and animators, employment: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000027101401\n\nBLS May 2025 (OEWS), special effects artists and animators (27-1014): 19,970 jobs on payrolls (OEWS does not count the self-employed); median $102,030; 10th percentile $58,600; 90th percentile $177,110. Median = half earn more, half earn less. Not financial advice.\n\n#shorts #animator #careers #howtheymakemoney",
@@ -117,5 +117,15 @@
       "title": "BLS OEWS via api.bls.gov: Special effects artists and animators, employment",
       "url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000027101401"
     }
-  ]
+  ],
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-068-careers-animators",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-068-careers-animators/068-careers-animators.mp4",
+    "post_at": "2026-11-14T18:00:00-05:00",
+    "buffer_post": "6af74b34357fdb912a6d4b4c",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-13T17:39:00.963883+00:00",
+    "seconds": 31.35
+  }
 }
