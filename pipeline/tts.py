@@ -63,8 +63,28 @@ def cache_path(sent: str) -> str:
     return os.path.join(VOICE_CACHE, hashlib.sha1(f"{QWEN_VOICE}|{sent}".encode()).hexdigest()[:20])
 
 
+def _gemini_voice() -> str:
+    """Repo variable GEMINI_VOICE wins; else the voice the Gemini test picked (assets/voice/gemini_voice.txt)."""
+    v = os.environ.get("GEMINI_VOICE", "").strip()
+    if v:
+        return v
+    f = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "assets", "voice", "gemini_voice.txt")
+    return open(f, encoding="utf-8").read().strip() if os.path.exists(f) else "Charon"
+
+
+GEMINI_VOICE = _gemini_voice()
+
+
+def line_path(line: str) -> str:
+    """Cache key for a whole line voiced in one pass (Gemini TTS, Nov 13): reads like a person, not a list."""
+    import hashlib
+    return os.path.join(VOICE_CACHE, "L" + hashlib.sha1(f"gemini:{GEMINI_VOICE}|{line}".encode()).hexdigest()[:20])
+
+
 def qwen_ready(texts) -> bool:
-    return all(os.path.exists(cache_path(s) + ".wav") for t in texts for s, _, b in sentences(speakable(t)) if not b)
+    return all(os.path.exists(line_path(speakable(t)) + ".wav")
+               or all(os.path.exists(cache_path(s) + ".wav") for s, _, b in sentences(speakable(t)) if not b)
+               for t in texts)
 
 
 def use_engine_for(texts):
@@ -103,6 +123,20 @@ def qwen(text: str):
     import json
 
     import soundfile as sf
+    lp = line_path(text)
+    if os.path.exists(lp + ".wav"):              # the whole line in one Gemini pass
+        a, sr = sf.read(lp + ".wav", dtype="float32")
+        if a.ndim > 1:
+            a = a.mean(axis=1)
+        if sr != SAMPLE_RATE:
+            a = np.interp(np.linspace(0, len(a) - 1, int(len(a) * SAMPLE_RATE / sr)), np.arange(len(a)), a).astype(np.float32)
+        loud = np.flatnonzero(np.abs(a) > 0.02)
+        c0 = max(0, int(loud[0]) - int(LEAD_KEEP * SAMPLE_RATE)) if len(loud) else 0
+        c1 = min(len(a), int(loud[-1]) + int(TAIL_KEEP * SAMPLE_RATE)) if len(loud) else len(a)
+        shift = c0 / SAMPLE_RATE
+        ws = [(t, max(0.0, st - shift), min((c1 - c0) / SAMPLE_RATE, en - shift))
+              for t, st, en in json.load(open(lp + ".json", encoding="utf-8"))]
+        return np.asarray(a[c0:c1], np.float32), (ws or None)
     chunks, words, offset = [], [], 0.0
     for sent, q, b in sentences(text):
         if b:

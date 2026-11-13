@@ -14,6 +14,18 @@ and **free beyond his Higgsfield Pro plan** — never add a paid service or ask 
   never double-post. GitHub starts scheduled runs late (Oct 26–28: 5.5–6.5 h). Check Buffer:
   push branch `slot-audit` (report) / `slot-fix` (delete extras, scripts back to ready). Minutes: the repo is public, so standard GitHub runners are free and unlimited (6 h max per job, ~20 jobs at once); a run takes ~5–8 minutes.
 - `pipeline/render.py` draws every frame with Pillow and pipes to ffmpeg (1080x1920, 30 fps).
+- **Gemini TTS (Nov 13, night; switches on by itself when the `GEMINI_API_KEY` secret exists).** Sam: "this voice
+  sucks", wanted a real search and a new angle. Public TTS arenas put Google Gemini TTS at or next to ElevenLabs
+  at the top; open models (Qwen3, Chatterbox, Orpheus, Kokoro) rank below. `pipeline/gemini_tts.py` (stdlib REST,
+  model `gemini-3.8-flash-tts`, a style direction in `STYLE`) voices each LINE in one pass (flows like a person
+  reading, unlike our sentence-by-sentence Qwen), cached as `tts.line_path`; `voice_prepass.gemini_pass` checks
+  every line with Whisper + `prosody.py`, retakes up to 3, and falls back to the Qwen voice for the whole Short if
+  Gemini fails (quota/outage). Voice name: repo variable `GEMINI_VOICE`, else `assets/voice/gemini_voice.txt`,
+  which `voice-gemini.yml` writes: every 2 h until it has run once with the key, 10 male voices read Short 074,
+  get scored, `bench/pick_gemini.py` picks (95-160 Hz, 2.6-5.5 st, then UTMOS), clips on branch
+  `voice-gemini-results-<run>`. Cost: 25 audio tokens/s at $9/1M (2026; $18 from 2027) = about 1 cent a Short,
+  ~$1.60/month at 5/day; free tier may cover it (free-tier text is used by Google to improve products).
+  Claude must never create, see or type the key: Sam makes it in AI Studio and adds the secret himself.
 - **Voice now (Nov 13, evening): `narrator4` + a voice test with retakes.** Sam: #4 (narrator3) "is fine, just sounds
   so monotone ... it needs to sound like you were reading it ... a test, and if it fails it redoes the voice until it
   passes". narrator4 = "anchor-lively": the same anchor design with a lively instruction and an excited reference

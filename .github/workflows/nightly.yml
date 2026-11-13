@@ -69,6 +69,8 @@ jobs:
     timeout-minutes: 90
     env:
       HTMM_CACHE: ${{ github.workspace }}/.cache
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}   # Nov 13: when set, every line is voiced by Gemini TTS
+      GEMINI_VOICE: ${{ vars.GEMINI_VOICE }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -100,6 +102,7 @@ jobs:
     env:
       VOICE_ENGINE: ${{ vars.VOICE_ENGINE || 'qwen' }}
       QWEN_VOICE: narrator4
+      GEMINI_VOICE: ${{ vars.GEMINI_VOICE }}   # must match the voice job (cache key)
       KOKORO_VOICE: am_puck
       KOKORO_SPEED: "1.2"
       EGL_PLATFORM: surfaceless
@@ -203,6 +206,7 @@ jobs:
       AUDIO_CHECK: ${{ vars.AUDIO_CHECK || 'warn' }}
       VOICE_ENGINE: ${{ vars.VOICE_ENGINE || 'qwen' }}   # Nov 3: Qwen3-TTS clone (falls back to Kokoro per Short)
       QWEN_VOICE: narrator4
+      GEMINI_VOICE: ${{ vars.GEMINI_VOICE }}   # must match the voice job (cache key)
       LP_PLATES: ${{ github.workspace }}/lp/plates   # Blender frames (used only when complete)
       KOKORO_VOICE: am_puck   # Oct 30: Sam wants a male voice; am_puck = top-rated male (C+), most expressive
       KOKORO_SPEED: "1.2"

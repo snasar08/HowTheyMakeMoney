@@ -64,6 +64,55 @@ def problems(sent: str, heard: list[dict]) -> list[str]:
     return out
 
 
+GEMINI_TAKES = int(os.environ.get("GEMINI_TAKES", "3"))
+
+
+def gemini_pass(ids: list[str]) -> bool:
+    """Voice every line of the Short(s) with Gemini TTS, one pass per line, re-recording a line that fails
+    the clarity or natural-delivery test (best take kept). All lines or nothing: a Short never mixes voices."""
+    import soundfile as sf
+    import whisper
+    from . import gemini_tts
+    lines = []
+    for sid in ids:
+        path = next((ROOT / "content" / "scripts").glob(f"{sid}*.json"), None)
+        if path:
+            lines += [tts.speakable(x) for x in lines_for(json.loads(path.read_text(encoding="utf-8"))) if x.strip()]
+    lines = [x for x in dict.fromkeys(lines) if not os.path.exists(tts.line_path(x) + ".wav")]
+    if not lines:
+        return True
+    asr = whisper.load_model("base.en")
+    done, passed = {}, 0
+    for line in lines:
+        best = None
+        for take in range(1, GEMINI_TAKES + 1):
+            try:
+                w, sr = gemini_tts.say(line, voice=tts.GEMINI_VOICE)
+            except Exception as e:  # noqa: BLE001
+                print(f"::warning title=voice::gemini: {str(e)[:200]}", flush=True)
+                break
+            a16 = np.interp(np.linspace(0, len(w) - 1, int(len(w) * 16000 / sr)), np.arange(len(w)), w).astype(np.float32)
+            heard = [x for seg in asr.transcribe(a16, language="en", word_timestamps=True, fp16=False)["segments"]
+                     for x in seg.get("words", [])]
+            bad = problems(line, heard) + prosody.problems(w, sr, line)
+            rank = (len(bad), prosody.badness(w, sr, line))
+            if best is None or rank < best[0]:
+                best = (rank, bad, w, sr, [(x["word"].strip(), float(x["start"]), float(x["end"])) for x in heard])
+            if not bad:
+                break
+            print(f"[prepass] gemini take {take} flagged {bad[:3]}: {line[:60]}", flush=True)
+        if best is None:
+            return False                       # API down or out of quota: the caller falls back
+        done[line] = best
+        passed += not best[1]
+    for line, (_r, bad, w, sr, words) in done.items():
+        sf.write(tts.line_path(line) + ".wav", w, sr)
+        Path(tts.line_path(line) + ".json").write_text(json.dumps(words), encoding="utf-8")
+    print(f"::notice title=voice test::Gemini {tts.GEMINI_VOICE}: {passed}/{len(done)} line(s) pass "
+          f"(clear words + natural pitch movement)", flush=True)
+    return True
+
+
 def main(ids: list[str]) -> int:
     import soundfile as sf
     import torch
@@ -80,6 +129,10 @@ def main(ids: list[str]) -> int:
             for sent, _q, b in tts.sentences(tts.speakable(line)):
                 if not b and not os.path.exists(tts.cache_path(sent) + ".wav") and sent not in todo:
                     todo.append(sent)
+    if os.environ.get("GEMINI_API_KEY") and os.environ.get("VOICE_SOURCE", "gemini") == "gemini":
+        if gemini_pass(ids):
+            return 0
+        print("::warning title=voice::Gemini voice failed for this Short; using the Qwen voice", flush=True)
     print(f"[prepass] {len(todo)} sentence(s) to voice for {ids}", flush=True)
     if not todo:
         return 0

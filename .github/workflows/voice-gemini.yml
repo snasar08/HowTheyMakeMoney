@@ -3,9 +3,14 @@ name: Gemini voice test
 # Push branch voice-gemini: 10 Gemini TTS voices read the same Short (bench/voice_gemini.py), get scored
 # (bench/voice_score.py), and the mp3s + scores go to branch voice-gemini-results-<run>. Needs the
 # GEMINI_API_KEY secret. Nothing is posted and main is not touched.
+# Also runs on its own every 2 hours until it has succeeded once (Sam adds the secret whenever he can): it then
+# picks the best voice by measurement and commits assets/voice/gemini_voice.txt to main, which nightly uses.
 on:
   push:
     branches: ["voice-gemini"]
+  schedule:
+    - cron: "17 */2 * * *"
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -18,22 +23,39 @@ jobs:
       GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - id: gate
+        run: |
+          if [ -z "$GEMINI_API_KEY" ]; then echo "::notice title=voice-gemini::waiting for the GEMINI_API_KEY secret"; echo go=0 >> "$GITHUB_OUTPUT"; exit 0; fi
+          if [ "${{ github.event_name }}" = schedule ] && [ -f assets/voice/gemini_voice.txt ]; then echo go=0 >> "$GITHUB_OUTPUT"; exit 0; fi
+          echo go=1 >> "$GITHUB_OUTPUT"
+      - if: steps.gate.outputs.go == '1'
+        uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
-      - run: |
+      - if: steps.gate.outputs.go == '1'
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+      - if: steps.gate.outputs.go == '1'
+        run: |
           pip install -q torch torchaudio --index-url https://download.pytorch.org/whl/cpu
           pip install -q numpy soundfile librosa resemblyzer
-      - run: |
-          if [ -z "$GEMINI_API_KEY" ]; then echo "::error title=voice-gemini::GEMINI_API_KEY secret is missing"; exit 1; fi
+      - if: steps.gate.outputs.go == '1'
+        run: |
           python bench/voice_gemini.py v
           for f in v/*.wav; do echo "::notice title=gemini voice::$(grep "$(basename "${f%.wav}")" v/gemini.log)"; done
           python bench/voice_score.py v | tee v/scores.txt
           cd v && for f in *.wav; do ffmpeg -loglevel error -y -i "$f" -b:a 128k "${f%.wav}.mp3" && rm "$f"; done
-      - run: |
+      - if: steps.gate.outputs.go == '1'
+        run: python bench/pick_gemini.py v
+      - if: steps.gate.outputs.go == '1'
+        run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          cp v/pick.txt /tmp/pick.txt 2>/dev/null || true
           git checkout --orphan r
           git rm -rfq --cached . && git add -f v && git commit -qm "Gemini voice candidates $(date -u +%F)"
           git push origin r:voice-gemini-results-${{ github.run_number }}
+          if [ -s /tmp/pick.txt ]; then
+            git fetch -q origin main && git checkout -q -f -B m origin/main
+            cp /tmp/pick.txt assets/voice/gemini_voice.txt
+            git add assets/voice/gemini_voice.txt && git commit -qm "Gemini voice picked by test: $(cat v/pick.txt)" && git push origin m:main
+          fi
