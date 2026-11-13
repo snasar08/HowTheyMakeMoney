@@ -42,7 +42,7 @@ def strip_speakers(text: str) -> str:
 _kokoro = {}
 _ming_model = None
 VOICE_CACHE = os.path.join(os.environ.get("HTMM_CACHE", ".cache"), "voice")
-QWEN_VOICE = os.environ.get("QWEN_VOICE", "narrator2")  # assets/voice/<name>.wav + .txt = the cloned voice
+QWEN_VOICE = os.environ.get("QWEN_VOICE", "narrator3")  # assets/voice/<name>.wav + .txt = the cloned voice
 _engine_now = None  # set per Short by use_engine_for(); None = VOICE_ENGINE
 
 
