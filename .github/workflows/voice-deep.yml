@@ -15,7 +15,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        name: [trend-explainer, trend-punchy, trend-story, cv-Ryan, cv-Aiden, current]
+        name: [anchor-lively, anchor-story, anchor-hype, deep-anchor]
     runs-on: ubuntu-latest
     timeout-minutes: 120
     steps:
