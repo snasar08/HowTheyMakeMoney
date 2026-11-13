@@ -42,7 +42,7 @@ def strip_speakers(text: str) -> str:
 _kokoro = {}
 _ming_model = None
 VOICE_CACHE = os.path.join(os.environ.get("HTMM_CACHE", ".cache"), "voice")
-QWEN_VOICE = os.environ.get("QWEN_VOICE", "narrator")  # assets/voice/<name>.wav + .txt = the cloned voice
+QWEN_VOICE = os.environ.get("QWEN_VOICE", "narrator2")  # assets/voice/<name>.wav + .txt = the cloned voice
 _engine_now = None  # set per Short by use_engine_for(); None = VOICE_ENGINE
 
 
@@ -80,6 +80,23 @@ def use_engine_for(texts):
     return _engine_now or VOICE_ENGINE
 
 
+QWEN_SPEED = float(os.environ.get("QWEN_SPEED", "1.1"))
+
+
+def _atempo(a, speed: float):
+    """Time-stretch without changing pitch (ffmpeg atempo); returns the input unchanged if ffmpeg fails."""
+    import subprocess
+    try:
+        r = subprocess.run(["ffmpeg", "-loglevel", "error", "-f", "f32le", "-ar", str(SAMPLE_RATE), "-ac", "1", "-i", "pipe:0",
+                            "-filter:a", f"atempo={speed:.3f}", "-f", "f32le", "-ar", str(SAMPLE_RATE), "-ac", "1", "pipe:1"],
+                           input=np.asarray(a, np.float32).tobytes(), capture_output=True, check=True)
+        out = np.frombuffer(r.stdout, np.float32)
+        return out if len(out) > len(a) / speed * 0.8 else a
+    except Exception as e:  # noqa: BLE001
+        print(f"::warning::[tts] atempo failed ({e!r}); normal speed", flush=True)
+        return a
+
+
 def qwen(text: str):
     """Assemble cached Qwen sentences like kokoro() does: trimmed gaps, a beat after questions,
     word timings shifted into place. Speaker-B lines use Kokoro's second voice."""
@@ -104,6 +121,10 @@ def qwen(text: str):
             a, shift = a[c0:c1], c0 / SAMPLE_RATE
             ws = [(t, max(0.0, st - shift), min(len(a) / SAMPLE_RATE, en - shift))
                   for t, st, en in json.load(open(cache_path(sent) + ".json", encoding="utf-8"))]
+            if abs(QWEN_SPEED - 1.0) > 0.01:      # same pitch, faster read (the deeper narrator reads ~15% slower)
+                n0, a = len(a), _atempo(a, QWEN_SPEED)
+                k = n0 / max(len(a), 1)           # the real stretch (1.0 if ffmpeg failed)
+                ws = [(t, st / k, min(len(a) / SAMPLE_RATE, en / k)) for t, st, en in ws]
         words += [(t, offset + st, offset + en) for t, st, en in ws]
         chunks.append(np.asarray(a, np.float32))
         offset += len(a) / SAMPLE_RATE

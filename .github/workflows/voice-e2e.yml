@@ -11,7 +11,7 @@ permissions:
   contents: write
 
 env:
-  TEST_ID: "043"
+  TEST_ID: "074"
 
 jobs:
   voice:
@@ -44,7 +44,7 @@ jobs:
     env:
       UPLOAD_MODE: buffer_dry
       VOICE_ENGINE: qwen
-      QWEN_VOICE: narrator
+      QWEN_VOICE: narrator2
       KOKORO_VOICE: am_puck
       KOKORO_SPEED: "1.2"
       EGL_PLATFORM: surfaceless

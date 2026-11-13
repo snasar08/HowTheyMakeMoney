@@ -99,7 +99,7 @@ jobs:
       any: ${{ steps.rec.outputs.any }}
     env:
       VOICE_ENGINE: ${{ vars.VOICE_ENGINE || 'qwen' }}
-      QWEN_VOICE: narrator
+      QWEN_VOICE: narrator2
       KOKORO_VOICE: am_puck
       KOKORO_SPEED: "1.2"
       EGL_PLATFORM: surfaceless
@@ -202,7 +202,7 @@ jobs:
       BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
       AUDIO_CHECK: ${{ vars.AUDIO_CHECK || 'warn' }}
       VOICE_ENGINE: ${{ vars.VOICE_ENGINE || 'qwen' }}   # Nov 3: Qwen3-TTS clone (falls back to Kokoro per Short)
-      QWEN_VOICE: narrator
+      QWEN_VOICE: narrator2
       LP_PLATES: ${{ github.workspace }}/lp/plates   # Blender frames (used only when complete)
       KOKORO_VOICE: am_puck   # Oct 30: Sam wants a male voice; am_puck = top-rated male (C+), most expressive
       KOKORO_SPEED: "1.2"

@@ -62,4 +62,4 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git checkout --orphan voice-deep-results
           git rm -rfq --cached . && git add -f v && git commit -qm "Deeper voice candidates $(date -u +%F)"
-          git push -f origin voice-deep-results
+          git push origin voice-deep-results:voice-deep-results-${{ github.run_number }}
