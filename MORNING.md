@@ -1,4 +1,15 @@
-# Update, Nov 13
+# Update, Nov 13 (night)
+
+**New voice: Google's, free.** After your friends' feedback I researched what actually sounds good. The public blind-vote voice leaderboards put Google's Gemini voices at or next to ElevenLabs at the top. Your new key (project "Game") is on Google's free tier, so it costs $0. The free tier allows 10 voice requests a day per model, so each Short is now read by Google in one go (1 request per Short, and it flows like a person reading) and cut into lines by the pipeline. 3 more free Google voice models are backups, and if Google ever fails, a Short falls back to the old voice instead of missing its slot. The voice is "Umbriel", picked from 10 by measurement. The test Short with it is in `previews/voice/gemini-074-small.mp4`.
+
+**Eyes.** Every finished Short is now looked at by Google's free vision model (same key): it scores it 1-10, lists what a viewer would notice (cut-off or misspelled text, broken frames, glitchy characters, logos, an unclear cover) and the one best fix. For now it only reports; it never blocks a post.
+
+**What I'll check:** tonight's run is the first real one with both. I'll look at the results in the morning and fix anything that failed.
+
+## Needs you
+- Nothing.
+
+# Earlier: Nov 13
 
 **New voice.** I measured the old voice: it sat at 239 Hz, which is high for a man, and swung a lot, which is the "out of tune" people heard. I had GitHub make five deeper narrators, read the same script lines with each, and scored them. The channel now uses the deepest clear one (about 89 Hz, calm "teacher explaining" delivery, steadier pitch, same clarity score), played 10% faster so Shorts stay under 30 seconds. A full test Short rendered fine with it. Clips to compare: `previews/voice/current.mp3` (old) and `previews/voice/deep-teacher.mp3` (new); `deep-anchor.mp3` is a less deep backup.
 
