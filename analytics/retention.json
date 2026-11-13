@@ -1,11 +1,11 @@
 {
- "at": "2026-11-12T18:52:03.413071+00:00",
+ "at": "2026-11-13T07:01:46.731896+00:00",
  "shorts": [
   {
    "video": "aGOO0z7dfpk",
    "title": "From a Napkin Contract to $1.1 Billion",
-   "views": 1207,
-   "avg_pct": 80.7,
+   "views": 1258,
+   "avg_pct": 80.3,
    "avg_seconds": 24,
    "tags": {
     "script": "070",
@@ -27,8 +27,8 @@
    "q50": 78,
    "q75": 64,
    "end": 41,
-   "drop_at_pct": 19,
-   "drop_at_s": 5.6,
+   "drop_at_pct": 17,
+   "drop_at_s": 5.1,
    "drop_size": 17
   },
   {
@@ -64,7 +64,7 @@
   {
    "video": "rDHeA2dVTLM",
    "title": "What If Nike's Best Store Isn't Nike's?",
-   "views": 1025,
+   "views": 1026,
    "avg_pct": 42.3,
    "avg_seconds": 11,
    "tags": {
@@ -122,6 +122,36 @@
    "drop_size": 22
   },
   {
+   "video": "oygxmVi4Icg",
+   "title": "$2.077 Billion From 149 Shows",
+   "views": 900,
+   "avg_pct": 51,
+   "avg_seconds": 14,
+   "tags": {
+    "script": "055",
+    "slug": "famous-eras-tour",
+    "topic": "Taylor Swift",
+    "format": "famous",
+    "visual_style": "lowpoly",
+    "theme": "bold_bright",
+    "hook_style": "challenge",
+    "title_style": "number",
+    "length_s": 27.61,
+    "length_bucket": "<30",
+    "post_at": "2026-11-10T15:00:00-05:00",
+    "post_slot": "15:00",
+    "score": 91
+   },
+   "start": 118,
+   "q25": 68,
+   "q50": 42,
+   "q75": 30,
+   "end": 18,
+   "drop_at_pct": 18,
+   "drop_at_s": 4.9,
+   "drop_size": 25
+  },
+  {
    "video": "pHISbEQ042Q",
    "title": "Apple Services Keep 75 Cents of Every Dollar",
    "views": 559,
@@ -150,6 +180,36 @@
    "drop_at_pct": 21,
    "drop_at_s": 5.1,
    "drop_size": 37
+  },
+  {
+   "video": "dzsMqPku2HM",
+   "title": "From $6,000 to $780,000: MLB's Lowest Pay",
+   "views": 461,
+   "avg_pct": 38.0,
+   "avg_seconds": 9,
+   "tags": {
+    "script": "050",
+    "slug": "careers-mlb",
+    "topic": "MLB players",
+    "format": "careers",
+    "visual_style": "charts3d",
+    "theme": "bold_bright",
+    "hook_style": "number",
+    "title_style": "number",
+    "length_s": 25.54,
+    "length_bucket": "<30",
+    "post_at": "2026-11-10T18:00:00-05:00",
+    "post_slot": "18:00",
+    "score": 87
+   },
+   "start": 103,
+   "q25": 58,
+   "q50": 25,
+   "q75": 16,
+   "end": 3,
+   "drop_at_pct": 17,
+   "drop_at_s": 4.0,
+   "drop_size": 32
   },
   {
    "video": "N9lyHjCmWr0",
@@ -184,8 +244,8 @@
   {
    "video": "Zf2GdNSZ2SE",
    "title": "MrBeast Spends About $1M Per Video",
-   "views": 206,
-   "avg_pct": 51.1,
+   "views": 208,
+   "avg_pct": 51.5,
    "avg_seconds": 11,
    "tags": {
     "script": "047",
@@ -204,8 +264,8 @@
    },
    "start": 109,
    "q25": 85,
-   "q50": 40,
-   "q75": 29,
+   "q50": 41,
+   "q75": 30,
    "end": 11,
    "drop_at_pct": 28,
    "drop_at_s": 6.0,
@@ -362,6 +422,28 @@
    "drop_size": 25
   },
   {
+   "video": "04sFxeB3E9g",
+   "title": "Pro Athletes' Median Pay: $66,710",
+   "views": 30,
+   "avg_pct": 45.2,
+   "avg_seconds": 12,
+   "tags": {
+    "script": "063",
+    "slug": "careers-athletes",
+    "topic": "Pro athletes",
+    "format": "careers",
+    "visual_style": "charts3d",
+    "theme": "bold_bright",
+    "hook_style": "number",
+    "title_style": "number",
+    "length_s": 26.52,
+    "length_bucket": "<30",
+    "post_at": "2026-11-09T15:00:00-05:00",
+    "post_slot": "15:00",
+    "score": 90
+   }
+  },
+  {
    "video": "ipvQc7-oq_8",
    "title": "How Much of Your Netflix Bill Is Profit?",
    "views": 26,
@@ -406,28 +488,6 @@
    }
   },
   {
-   "video": "04sFxeB3E9g",
-   "title": "Pro Athletes' Median Pay: $66,710",
-   "views": 23,
-   "avg_pct": 45.5,
-   "avg_seconds": 12,
-   "tags": {
-    "script": "063",
-    "slug": "careers-athletes",
-    "topic": "Pro athletes",
-    "format": "careers",
-    "visual_style": "charts3d",
-    "theme": "bold_bright",
-    "hook_style": "number",
-    "title_style": "number",
-    "length_s": 26.52,
-    "length_bucket": "<30",
-    "post_at": "2026-11-09T15:00:00-05:00",
-    "post_slot": "15:00",
-    "score": 90
-   }
-  },
-  {
    "video": "2VO-nLuo7xU",
    "title": "How Does a Free App Make $1 Billion?",
    "views": 21,
@@ -456,6 +516,28 @@
    "drop_at_pct": 18,
    "drop_at_s": 4.6,
    "drop_size": 25
+  },
+  {
+   "video": "v_MBJE6z344",
+   "title": "How Much Do NASA Astronauts Get Paid?",
+   "views": 19,
+   "avg_pct": 76.3,
+   "avg_seconds": 19,
+   "tags": {
+    "script": "046",
+    "slug": "careers-astronauts",
+    "topic": "NASA astronauts",
+    "format": "careers",
+    "visual_style": "charts3d",
+    "theme": "clean_navy",
+    "hook_style": "question",
+    "title_style": "question",
+    "length_s": 25.75,
+    "length_bucket": "<30",
+    "post_at": "2026-11-10T12:00:00-05:00",
+    "post_slot": "12:00",
+    "score": 89
+   }
   },
   {
    "video": "cqSU-i2fgMI",
@@ -504,9 +586,9 @@
   {
    "video": "Hpv6RuoiVYk",
    "title": "What If You Won the Biggest Esports Prize?",
-   "views": 13,
-   "avg_pct": 48.6,
-   "avg_seconds": 14,
+   "views": 14,
+   "avg_pct": 61.1,
+   "avg_seconds": 17,
    "tags": {
     "script": "041",
     "slug": "careers-esports",
@@ -568,6 +650,28 @@
    }
   },
   {
+   "video": "th_hOXugjsE",
+   "title": "Planet Fitness Made $310 Million on Machines",
+   "views": 11,
+   "avg_pct": 69.1,
+   "avg_seconds": 17,
+   "tags": {
+    "script": "021",
+    "slug": "planet-fitness",
+    "topic": "Planet Fitness",
+    "format": "how",
+    "visual_style": "charts3d",
+    "theme": "bold_bright",
+    "hook_style": "challenge",
+    "title_style": "statement",
+    "length_s": 24.67,
+    "length_bucket": "<30",
+    "post_at": "2026-11-08T18:00:00-05:00",
+    "post_slot": "18:00",
+    "score": 88
+   }
+  },
+  {
    "video": "TUK7UzL3e2Q",
    "title": "Roblox Creators Earned $1.5 Billion in 2025",
    "views": 10,
@@ -587,28 +691,6 @@
     "post_at": "2026-11-04T15:00:00-05:00",
     "post_slot": "15:00",
     "score": 93
-   }
-  },
-  {
-   "video": "th_hOXugjsE",
-   "title": "Planet Fitness Made $310 Million on Machines",
-   "views": 10,
-   "avg_pct": 85.5,
-   "avg_seconds": 21,
-   "tags": {
-    "script": "021",
-    "slug": "planet-fitness",
-    "topic": "Planet Fitness",
-    "format": "how",
-    "visual_style": "charts3d",
-    "theme": "bold_bright",
-    "hook_style": "challenge",
-    "title_style": "statement",
-    "length_s": 24.67,
-    "length_bucket": "<30",
-    "post_at": "2026-11-08T18:00:00-05:00",
-    "post_slot": "18:00",
-    "score": 88
    }
   },
   {
@@ -788,28 +870,6 @@
    }
   },
   {
-   "video": "JlqiWwaNp8I",
-   "title": "How Many Switch 2s Has Nintendo Sold?",
-   "views": 0,
-   "avg_pct": 0,
-   "avg_seconds": 0,
-   "tags": {
-    "script": "020",
-    "slug": "nintendo",
-    "topic": "Nintendo",
-    "format": "how",
-    "visual_style": "charts3d",
-    "theme": "bold_bright",
-    "hook_style": "question",
-    "title_style": "question",
-    "length_s": 29.37,
-    "length_bucket": "<30",
-    "post_at": "2026-10-28T18:00:00-04:00",
-    "post_slot": "18:00",
-    "score": 87
-   }
-  },
-  {
    "video": "EEw5Hm9n4PU",
    "title": "Is Starbucks Secretly a Bank?",
    "views": 0,
@@ -832,28 +892,6 @@
    }
   },
   {
-   "video": "v_MBJE6z344",
-   "title": "How Much Do NASA Astronauts Get Paid?",
-   "views": 0,
-   "avg_pct": 0,
-   "avg_seconds": 0,
-   "tags": {
-    "script": "046",
-    "slug": "careers-astronauts",
-    "topic": "NASA astronauts",
-    "format": "careers",
-    "visual_style": "charts3d",
-    "theme": "clean_navy",
-    "hook_style": "question",
-    "title_style": "question",
-    "length_s": 25.75,
-    "length_bucket": "<30",
-    "post_at": "2026-11-10T12:00:00-05:00",
-    "post_slot": "12:00",
-    "score": 89
-   }
-  },
-  {
    "video": "4RBsErczezM",
    "title": "How Did Bankrupt Marvel Become a $4B Deal?",
    "views": 0,
@@ -873,50 +911,6 @@
     "post_at": "2026-11-11T12:00:00-05:00",
     "post_slot": "12:00",
     "score": 92
-   }
-  },
-  {
-   "video": "dzsMqPku2HM",
-   "title": "From $6,000 to $780,000: MLB's Lowest Pay",
-   "views": 0,
-   "avg_pct": 0,
-   "avg_seconds": 0,
-   "tags": {
-    "script": "050",
-    "slug": "careers-mlb",
-    "topic": "MLB players",
-    "format": "careers",
-    "visual_style": "charts3d",
-    "theme": "bold_bright",
-    "hook_style": "number",
-    "title_style": "number",
-    "length_s": 25.54,
-    "length_bucket": "<30",
-    "post_at": "2026-11-10T18:00:00-05:00",
-    "post_slot": "18:00",
-    "score": 87
-   }
-  },
-  {
-   "video": "oygxmVi4Icg",
-   "title": "$2.077 Billion From 149 Shows",
-   "views": 0,
-   "avg_pct": 0,
-   "avg_seconds": 0,
-   "tags": {
-    "script": "055",
-    "slug": "famous-eras-tour",
-    "topic": "Taylor Swift",
-    "format": "famous",
-    "visual_style": "lowpoly",
-    "theme": "bold_bright",
-    "hook_style": "challenge",
-    "title_style": "number",
-    "length_s": 27.61,
-    "length_bucket": "<30",
-    "post_at": "2026-11-10T15:00:00-05:00",
-    "post_slot": "15:00",
-    "score": 91
    }
   },
   {
@@ -983,6 +977,94 @@
     "post_at": "2026-11-11T15:00:00-05:00",
     "post_slot": "15:00",
     "score": 91
+   }
+  },
+  {
+   "video": "S8-8-mNeMZs",
+   "title": "From a Walk-On Offer to $156 Million",
+   "views": 0,
+   "avg_pct": 0,
+   "avg_seconds": 0,
+   "tags": {
+    "script": "073",
+    "slug": "famous-curry",
+    "topic": "Stephen Curry",
+    "format": "famous",
+    "visual_style": "lowpoly",
+    "theme": "bold_bright",
+    "hook_style": "surprise",
+    "title_style": "number",
+    "length_s": 26.52,
+    "length_bucket": "<30",
+    "post_at": "2026-11-12T20:00:00-05:00",
+    "post_slot": "20:00",
+    "score": 95
+   }
+  },
+  {
+   "video": "GBRwgUPZltY",
+   "title": "54% of US Firefighters Are Volunteers",
+   "views": 0,
+   "avg_pct": 0,
+   "avg_seconds": 0,
+   "tags": {
+    "script": "059",
+    "slug": "careers-firefighters",
+    "topic": "Firefighters",
+    "format": "careers",
+    "visual_style": "charts3d",
+    "theme": "clean_navy",
+    "hook_style": "surprise",
+    "title_style": "number",
+    "length_s": 24.9,
+    "length_bucket": "<30",
+    "post_at": "2026-11-12T18:00:00-05:00",
+    "post_slot": "18:00",
+    "score": 87
+   }
+  },
+  {
+   "video": "jLD-ouKQ6Eo",
+   "title": "Red Bull Sells 14 Billion Cans a Year",
+   "views": 0,
+   "avg_pct": 0,
+   "avg_seconds": 0,
+   "tags": {
+    "script": "056",
+    "slug": "how-redbull",
+    "topic": "Red Bull",
+    "format": "how",
+    "visual_style": "editorial",
+    "theme": "dark_neon",
+    "hook_style": "number",
+    "title_style": "number",
+    "length_s": 25.71,
+    "length_bucket": "<30",
+    "post_at": "2026-11-12T16:30:00-05:00",
+    "post_slot": "16:30",
+    "score": 91
+   }
+  },
+  {
+   "video": "TqsuLch9Bzc",
+   "title": "How Did LeBron Earn $1 Billion While Playing?",
+   "views": 0,
+   "avg_pct": 0,
+   "avg_seconds": 0,
+   "tags": {
+    "script": "051",
+    "slug": "famous-lebron",
+    "topic": "LeBron James",
+    "format": "famous",
+    "visual_style": "lowpoly",
+    "theme": "clean_navy",
+    "hook_style": "question",
+    "title_style": "question",
+    "length_s": 25.27,
+    "length_bucket": "<30",
+    "post_at": "2026-11-12T15:00:00-05:00",
+    "post_slot": "15:00",
+    "score": 90
    }
   }
  ]
