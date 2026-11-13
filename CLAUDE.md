@@ -14,6 +14,13 @@ and **free beyond his Higgsfield Pro plan** — never add a paid service or ask 
   never double-post. GitHub starts scheduled runs late (Oct 26–28: 5.5–6.5 h). Check Buffer:
   push branch `slot-audit` (report) / `slot-fix` (delete extras, scripts back to ready). Minutes: the repo is public, so standard GitHub runners are free and unlimited (6 h max per job, ~20 jobs at once); a run takes ~5–8 minutes.
 - `pipeline/render.py` draws every frame with Pillow and pipes to ffmpeg (1080x1920, 30 fps).
+- **Voice now (Nov 13, later): `narrator3`, mid-level.** Sam: narrator2 was "too deep, find a mid level". narrator3 =
+  the "deep-anchor" design (calm, clear, authoritative but kind): median 121 Hz (a normal adult male speaking
+  pitch; old 239-253, narrator2 89), 4.4 st movement, UTMOS 4.52, same-voice 0.822. Sam is ranking numbered
+  clips in `previews/voice/` (01-11: mid designs, trend styles other faceless channels use, Qwen's built-in
+  Ryan/Aiden, the old voice); switch to his #1 by copying its `.ref.wav/.ref.txt` from branch
+  `voice-deep-results-2` or `-3` to `assets/voice/narratorN` (cv-* voices have no ref: make one with
+  CustomVoice first). ElevenLabs (what most channels use) is paid; OpenAudio/Fish S1-mini is non-commercial.
 - **Voice changed Nov 13 (deeper):** people Sam showed the Shorts to called the voice irritating and "out of
   tune" and asked for a deeper voice that explains better. Measured: the old `narrator` clone sat at a median
   239 Hz with 5 st swings (high and sing-song for a man). The channel now clones `assets/voice/narrator2.wav`

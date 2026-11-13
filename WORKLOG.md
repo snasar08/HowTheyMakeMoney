@@ -341,3 +341,8 @@ Sam: "the better free character models... do it yourself". Done in one session.
   061 Jordan 1,161, 055 Swift 1,014; chart Shorts 4-40). So LOWPOLY_GAP 2 -> 1 and two more written: 076 Hamilton,
   077 Mbappe (figures from the Wikipedia pages opened tonight). The local GL preview was unavailable (screen
   locked), so 076/077 are lint- and score-checked only; they use sets and props other Shorts already use.
+- Later Nov 13: Sam: narrator2 "too deep, find a mid level, make sure reviewed well", "see what other people are
+  using", "see if S1 open sourced it". Most faceless channels use ElevenLabs (paid, account). OpenAudio S1-mini
+  weights are non-commercial only, so not usable. Two more tests (voice-deep runs 2 and 3): mid designs came out
+  89-152 Hz; trend styles 150-220 Hz; Qwen built-in Ryan 173 / Aiden 155; old voice 253. Live now: narrator3 =
+  deep-anchor, 121 Hz, 4.4 st, UTMOS 4.52. 11 numbered clips in previews/voice/ for Sam to rank.

@@ -17,7 +17,17 @@ import torch
 name, out = sys.argv[1], Path(sys.argv[2])
 out.mkdir(parents=True, exist_ok=True)
 BASE = "adult American man in his late thirties, deep low-pitched baritone voice, warm and rich"
+MID = "adult American man around thirty, natural medium-pitched voice, a typical male speaking pitch that is neither deep nor high, warm and clear"
 DESIGNS = {
+    # Nov 13, Sam: the deep voice was too deep -> mid-level candidates
+    "mid-teacher": f"{MID}, calm and friendly like a favorite teacher explaining something clearly, steady even pitch, natural pace",
+    "mid-host": f"{MID}, podcast host explaining business to a friend, conversational and relaxed, steady pitch, smooth",
+    "mid-doc": f"{MID}, documentary narrator, confident and measured, small natural pitch movement, very clear articulation",
+    # styles other faceless channels use (Nov 13: Sam wants to rank them), made free with VoiceDesign
+    "trend-explainer": f"{MID}, the classic YouTube explainer narrator, confident and slightly dramatic, clear, steady medium pitch",
+    "trend-punchy": f"{MID}, fast punchy short-video narrator, energetic and confident, crisp, steady medium pitch, not squeaky",
+    "trend-story": f"{MID}, cinematic storyteller, intriguing and smooth, medium-low pitch, builds suspense gently",
+    "mid-bright": f"{MID}, upbeat but grounded explainer, engaging and confident, steady pitch, never sing-song or squeaky",
     "deep-teacher": f"{BASE}, calm and friendly like a favorite teacher explaining something clearly, steady even pitch, natural unhurried pace",
     "deep-doc": f"{BASE}, documentary narrator, confident and measured, steady pitch with small natural movement, clear articulation",
     "deep-story": f"{BASE}, relaxed storyteller, grounded and sincere, low steady tone, lightly engaging, never sing-song",
@@ -38,6 +48,16 @@ LINES = [
 
 from qwen_tts import Qwen3TTSModel  # noqa: E402
 
+if name.startswith("cv-"):   # Qwen's built-in English speakers (Ryan, Aiden), no cloning
+    m = Qwen3TTSModel.from_pretrained("Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice", device_map="cpu", dtype=torch.float32)
+    parts, sr = [], 24000
+    for t in LINES:
+        w, sr = m.generate_custom_voice(text=t, language="English", speaker=name[3:],
+                                        instruct="calm, clear, confident explainer voice, steady pitch")
+        parts += [np.asarray(w[0], np.float32).ravel(), np.zeros(int(sr * 0.25), np.float32)]
+    sf.write(out / f"{name}.wav", np.concatenate(parts), sr)
+    print("done", name, flush=True)
+    sys.exit(0)
 if name == "current":
     ref, ref_text = "assets/voice/narrator.wav", Path("assets/voice/narrator.txt").read_text(encoding="utf-8").strip()
 else:
