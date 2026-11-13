@@ -1,0 +1,65 @@
+name: Deeper voice test
+
+# Push branch voice-deep: Qwen3-TTS designs deeper narrator candidates, clones each for real script
+# lines (bench/voice_deep.py), scores them (bench/voice_score.py) and pushes the clips, reference
+# files and scores.json to branch voice-deep-results. Nothing is posted and main is not touched.
+on:
+  push:
+    branches: ["voice-deep"]
+
+permissions:
+  contents: write
+
+jobs:
+  voice:
+    strategy:
+      fail-fast: false
+      matrix:
+        name: [current, deep-teacher, deep-doc, deep-story, deep-host, deep-anchor]
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg sox libsox-dev
+      - run: |
+          pip install -q torch torchaudio --index-url https://download.pytorch.org/whl/cpu
+          pip install -q -U qwen-tts soundfile numpy
+      - run: python bench/voice_deep.py ${{ matrix.name }} out
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: deep-${{ matrix.name }}
+          path: out/
+          retention-days: 3
+  score:
+    needs: voice
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - uses: actions/download-artifact@v4
+        with:
+          path: v
+          merge-multiple: true
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+      - run: |
+          pip install -q torch torchaudio --index-url https://download.pytorch.org/whl/cpu
+          pip install -q librosa resemblyzer soundfile
+      - run: |
+          mkdir -p clips && cp v/*.wav clips/ && rm -f clips/*.ref.wav
+          python bench/voice_score.py clips | tee v/scores.txt
+          cp clips/scores.json v/
+          cd v && for f in *.wav; do case "$f" in *.ref.wav) ;; *) ffmpeg -loglevel error -y -i "$f" -b:a 128k "${f%.wav}.mp3" && rm "$f";; esac; done
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout --orphan voice-deep-results
+          git rm -rfq --cached . && git add -f v && git commit -qm "Deeper voice candidates $(date -u +%F)"
+          git push -f origin voice-deep-results

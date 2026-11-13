@@ -32,7 +32,7 @@ for f in sorted(list(d.glob("*.mp3")) + list(d.glob("*.wav"))):
     f0, vo, _ = librosa.pyin(y, fmin=60, fmax=400, sr=sr)
     f0 = f0[~np.isnan(f0)]
     spread = float(np.std(12 * np.log2(f0 / np.median(f0)))) if len(f0) else 0.0
-    rows[f.stem] = {"utmos": round(mos, 2), "consistency_min": round(cons, 3), "pitch_spread_st": round(spread, 2),
+    rows[f.stem] = {"utmos": round(mos, 2), "consistency_min": round(cons, 3), "pitch_spread_st": round(spread, 2), "f0_median_hz": round(float(np.median(f0)), 1) if len(f0) else 0,
                     "seconds": round(len(y) / sr, 1)}
-    print(f"{f.stem:28s} UTMOS {mos:.2f}  same-voice {cons:.3f}  pitch {spread:.2f} st", flush=True)
+    print(f"{f.stem:28s} UTMOS {mos:.2f}  same-voice {cons:.3f}  pitch {spread:.2f} st  median {float(np.median(f0)) if len(f0) else 0:.0f} Hz", flush=True)
 (d / "scores.json").write_text(json.dumps(rows, indent=2))
