@@ -18,11 +18,11 @@ from pathlib import Path
 
 import numpy as np
 
-from . import clarity_check, tts
+from . import clarity_check, prosody, tts
 
 ROOT = Path(__file__).resolve().parent.parent
 REF = ROOT / "assets" / "voice"
-MAX_TAKES = 3  # a flagged line gets up to two more takes; the clearest one is kept
+MAX_TAKES = 6  # a flagged line (unclear words, or monotone / sing-song / off-pitch, pipeline/prosody.py) is re-recorded; the best take is kept
 RETAKE_UNTIL_S = 40 * 60  # no new retakes after this, so the job stays well inside its time limit
 SHORT_WORD_S = 0.06
 
@@ -99,17 +99,21 @@ def main(ids: list[str]) -> int:
                 a16 = np.interp(np.linspace(0, len(w) - 1, int(len(w) * 16000 / sr)), np.arange(len(w)), w).astype(np.float32)
                 res = asr.transcribe(a16, language="en", word_timestamps=True, fp16=False)
                 heard = [x for seg in res["segments"] for x in seg.get("words", [])]
-                bad = problems(sent, heard)
-                if sent not in best or len(bad) < len(best[sent][0]):
+                bad = problems(sent, heard) + prosody.problems(w, sr, sent)
+                rank = (len(bad), prosody.badness(w, sr, sent))
+                if sent not in best or rank < best[sent][4]:
                     words = [(x["word"].strip(), float(x["start"]), float(x["end"])) for x in heard]
-                    best[sent] = (bad, w, sr, words)
+                    best[sent] = (bad, w, sr, words, rank)
             print(f"[prepass] take {take}: {min(i + 4, len(pending))}/{len(pending)} ({time.time() - t0:.0f}s)", flush=True)
         pending = [s for s in pending if best[s][0]]
         if not pending or time.time() - t0 > RETAKE_UNTIL_S:
             break
         print(f"[prepass] re-recording {len(pending)} flagged line(s): "
               + "; ".join(f"{best[s][0][:3]}" for s in pending), flush=True)
-    for sent, (bad, w, sr, words) in best.items():
+    passed = sum(not v[0] for v in best.values())
+    print(f"::notice title=voice test::{passed}/{len(best)} line(s) pass (clear words + natural pitch movement) "
+          f"after up to {take} take(s)", flush=True)
+    for sent, (bad, w, sr, words, _rank) in best.items():
         sf.write(tts.cache_path(sent) + ".wav", w, sr)
         Path(tts.cache_path(sent) + ".json").write_text(json.dumps(words), encoding="utf-8")
         if bad:

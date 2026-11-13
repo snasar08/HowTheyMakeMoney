@@ -14,6 +14,14 @@ and **free beyond his Higgsfield Pro plan** — never add a paid service or ask 
   never double-post. GitHub starts scheduled runs late (Oct 26–28: 5.5–6.5 h). Check Buffer:
   push branch `slot-audit` (report) / `slot-fix` (delete extras, scripts back to ready). Minutes: the repo is public, so standard GitHub runners are free and unlimited (6 h max per job, ~20 jobs at once); a run takes ~5–8 minutes.
 - `pipeline/render.py` draws every frame with Pillow and pipes to ffmpeg (1080x1920, 30 fps).
+- **Voice now (Nov 13, evening): `narrator4` + a voice test with retakes.** Sam: #4 (narrator3) "is fine, just sounds
+  so monotone ... it needs to sound like you were reading it ... a test, and if it fails it redoes the voice until it
+  passes". narrator4 = "anchor-lively": the same anchor design with a lively instruction and an excited reference
+  read (the clone copies the reference's melody), median ~145-153 Hz (mid), fewest flat lines of the candidates.
+  `pipeline/prosody.py` (numpy pitch tracker, checked on a ±3 st test tone) tests every sentence: pitch movement
+  2.6-5.5 st (below = monotone, above = sing-song), median 90-175 Hz, pace; `voice_prepass` re-records any line that
+  fails it or Whisper's clarity check, up to 6 takes (40 min cap), keeps the best, and posts a `voice test` notice
+  ("12/13 lines pass"). Full test (074): 12/13 passed (the miss was Whisper hearing "Bucks'"), clarity 98.6%, 31.1 s.
 - **Voice now (Nov 13, later): `narrator3`, mid-level.** Sam: narrator2 was "too deep, find a mid level". narrator3 =
   the "deep-anchor" design (calm, clear, authoritative but kind): median 121 Hz (a normal adult male speaking
   pitch; old 239-253, narrator2 89), 4.4 st movement, UTMOS 4.52, same-voice 0.822. Sam is ranking numbered

@@ -44,7 +44,7 @@ jobs:
     env:
       UPLOAD_MODE: buffer_dry
       VOICE_ENGINE: qwen
-      QWEN_VOICE: narrator3
+      QWEN_VOICE: narrator4
       KOKORO_VOICE: am_puck
       KOKORO_SPEED: "1.2"
       EGL_PLATFORM: surfaceless

@@ -20,6 +20,10 @@ BASE = "adult American man in his late thirties, deep low-pitched baritone voice
 MID = "adult American man around thirty, natural medium-pitched voice, a typical male speaking pitch that is neither deep nor high, warm and clear"
 DESIGNS = {
     # Nov 13, Sam: the deep voice was too deep -> mid-level candidates
+    # Nov 13, Sam: #4 (deep-anchor) "is fine, just sounds so monotone" -> same voice, livelier reads
+    "anchor-lively": "adult American man in his late thirties, deep low-pitched baritone voice, warm and rich, news anchor, authoritative but kind, very clear, lively and expressive, natural rising and falling intonation, leans into key numbers with excitement, engaging",
+    "anchor-story": "adult American man in his late thirties, deep low-pitched baritone voice, warm and rich, news anchor, authoritative but kind, very clear, animated storyteller energy, varied pitch and pace, a little smile in the voice, emphasizes surprises",
+    "anchor-hype": "adult American man in his late thirties, deep low-pitched baritone voice, warm and rich, news anchor, authoritative but kind, very clear, upbeat sports-highlight energy, dynamic and punchy, strong emphasis on big numbers, never shouting",
     "mid-teacher": f"{MID}, calm and friendly like a favorite teacher explaining something clearly, steady even pitch, natural pace",
     "mid-host": f"{MID}, podcast host explaining business to a friend, conversational and relaxed, steady pitch, smooth",
     "mid-doc": f"{MID}, documentary narrator, confident and measured, small natural pitch movement, very clear articulation",
@@ -37,6 +41,9 @@ DESIGNS = {
 # a statement-style reference: the clone copies the reference's melody, and the old one was two questions
 REF_TEXT = ("Here is how it actually works. A company sells something small, millions of times a day. "
             "Each sale keeps only a few cents. But those cents add up to billions of dollars a year.")
+# a livelier reference read: the clone copies the reference's melody (Nov 13: monotone fix)
+LIVELY_TEXT = ("Okay, here's the wild part. One tiny sale, a few cents. Nothing, right? "
+               "Now do it a million times a day. Suddenly that's billions of dollars! And nobody even notices.")
 LINES = [
     "Closed every Sunday. Still, each Chick-fil-A makes 7.5 million dollars a year.",
     "That's the 2024 average. Per restaurant.",
@@ -63,6 +70,7 @@ if name == "current":
 else:
     des = Qwen3TTSModel.from_pretrained("Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign", device_map="cpu", dtype=torch.float32)
     torch.manual_seed(7)
+    REF_TEXT = LIVELY_TEXT if name.startswith("anchor-") else REF_TEXT
     rw, rsr = des.generate_voice_design(text=REF_TEXT, language="English", instruct=DESIGNS[name])
     sf.write(out / f"{name}.ref.wav", np.asarray(rw[0], np.float32).ravel(), rsr)
     (out / f"{name}.ref.txt").write_text(REF_TEXT, encoding="utf-8")
