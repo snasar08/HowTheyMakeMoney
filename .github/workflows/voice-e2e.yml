@@ -19,6 +19,8 @@ jobs:
     timeout-minutes: 90
     env:
       HTMM_CACHE: ${{ github.workspace }}/.cache
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}   # same as nightly: Gemini voice when the key exists
+      GEMINI_VOICE: ${{ vars.GEMINI_VOICE }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -45,6 +47,7 @@ jobs:
       UPLOAD_MODE: buffer_dry
       VOICE_ENGINE: qwen
       QWEN_VOICE: narrator4
+      GEMINI_VOICE: ${{ vars.GEMINI_VOICE }}
       KOKORO_VOICE: am_puck
       KOKORO_SPEED: "1.2"
       EGL_PLATFORM: surfaceless
