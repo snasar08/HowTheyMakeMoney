@@ -8,8 +8,6 @@ name: Gemini voice test
 on:
   push:
     branches: ["voice-gemini"]
-  schedule:
-    - cron: "17 */2 * * *"
   workflow_dispatch:
 
 permissions:

@@ -64,7 +64,40 @@ def problems(sent: str, heard: list[dict]) -> list[str]:
     return out
 
 
-GEMINI_TAKES = int(os.environ.get("GEMINI_TAKES", "3"))
+GEMINI_TAKES = int(os.environ.get("GEMINI_TAKES", "2"))   # whole-Short takes (each is one request of 10/day)
+
+
+def split_lines(lines: list[str], heard: list[dict], total: float):
+    """Cut points between lines of a whole-Short read: midway between the last heard word of a line and the
+    first of the next (words matched to the script with difflib). None if any line can't be found."""
+    exp, owner = [], []
+    for i, ln in enumerate(lines):
+        for t in clarity_check.tokens(ln):
+            exp.append(t)
+            owner.append(i)
+    got, gw = [], []
+    for k, x in enumerate(heard):
+        for t in clarity_check.tokens(tts.speakable(x["word"])):
+            got.append(t.lstrip("$"))
+            gw.append(k)
+    exp_n = [t.lstrip("$") for t in exp]
+    first, last = {}, {}
+    for a, b, n in difflib.SequenceMatcher(None, exp_n, got, autojunk=False).get_matching_blocks():
+        for j in range(n):
+            i, k = owner[a + j], gw[b + j]
+            first.setdefault(i, k)
+            first[i] = min(first[i], k)
+            last[i] = max(last.get(i, k), k)
+    if len(first) < len(lines):
+        return None
+    cuts = [0.0]
+    for i in range(len(lines) - 1):
+        e, s = float(heard[last[i]]["end"]), float(heard[first[i + 1]]["start"])
+        if s < e:
+            return None
+        cuts.append((e + s) / 2)
+    cuts.append(total)
+    return list(zip(cuts[:-1], cuts[1:]))
 
 
 def gemini_pass(ids: list[str]) -> bool:
@@ -73,43 +106,61 @@ def gemini_pass(ids: list[str]) -> bool:
     import soundfile as sf
     import whisper
     from . import gemini_tts
+    ok = True
+    for sid in ids:                            # one Short at a time: each is its own single request
+        ok = _gemini_short(sid) and ok
+    return ok
+
+
+def _gemini_short(sid: str) -> bool:
+    import soundfile as sf
+    import whisper
+    from . import gemini_tts
     lines = []
-    for sid in ids:
+    for sid in [sid]:
         path = next((ROOT / "content" / "scripts").glob(f"{sid}*.json"), None)
         if path:
             lines += [tts.speakable(x) for x in lines_for(json.loads(path.read_text(encoding="utf-8"))) if x.strip()]
-    lines = [x for x in dict.fromkeys(lines) if not os.path.exists(tts.line_path(x) + ".wav")]
-    if not lines:
+    lines = list(dict.fromkeys(lines))
+    if not lines or all(os.path.exists(tts.line_path(x) + ".wav") for x in lines):
         return True
     asr = whisper.load_model("base.en")
-    done, passed = {}, 0
-    for line in lines:
-        best = None
-        for take in range(1, GEMINI_TAKES + 1):
-            try:
-                w, sr = gemini_tts.say(line, voice=tts.GEMINI_VOICE)
-            except Exception as e:  # noqa: BLE001
-                print(f"::warning title=voice::gemini: {str(e)[:200]}", flush=True)
-                break
-            a16 = np.interp(np.linspace(0, len(w) - 1, int(len(w) * 16000 / sr)), np.arange(len(w)), w).astype(np.float32)
-            heard = [x for seg in asr.transcribe(a16, language="en", word_timestamps=True, fp16=False)["segments"]
-                     for x in seg.get("words", [])]
-            bad = problems(line, heard) + prosody.problems(w, sr, line)
-            rank = (len(bad), prosody.badness(w, sr, line))
-            if best is None or rank < best[0]:
-                best = (rank, bad, w, sr, [(x["word"].strip(), float(x["start"]), float(x["end"])) for x in heard])
-            if not bad:
-                break
-            print(f"[prepass] gemini take {take} flagged {bad[:3]}: {line[:60]}", flush=True)
-        if best is None:
-            return False                       # API down or out of quota: the caller falls back
-        done[line] = best
-        passed += not best[1]
-    for line, (_r, bad, w, sr, words) in done.items():
-        sf.write(tts.line_path(line) + ".wav", w, sr)
-        Path(tts.line_path(line) + ".json").write_text(json.dumps(words), encoding="utf-8")
-    print(f"::notice title=voice test::Gemini {tts.GEMINI_VOICE}: {passed}/{len(done)} line(s) pass "
-          f"(clear words + natural pitch movement)", flush=True)
+    best = None
+    for take in range(1, GEMINI_TAKES + 1):
+        try:   # the whole Short in ONE request: it flows like one read, and fits the free tier's 10 a day
+            w, sr = gemini_tts.say("\n\n".join(lines), voice=tts.GEMINI_VOICE)
+        except Exception as e:  # noqa: BLE001
+            print(f"::warning title=voice::gemini: {str(e)[:300]}", flush=True)
+            break
+        a16 = np.interp(np.linspace(0, len(w) - 1, int(len(w) * 16000 / sr)), np.arange(len(w)), w).astype(np.float32)
+        heard = [x for seg in asr.transcribe(a16, language="en", word_timestamps=True, fp16=False)["segments"]
+                 for x in seg.get("words", [])]
+        segs = split_lines(lines, heard, len(w) / sr)
+        if not segs:
+            print(f"[prepass] gemini take {take}: could not find every line in the read; retaking", flush=True)
+            continue
+        parts, bad_all = [], []
+        for line, (t0, t1) in zip(lines, segs):
+            piece = w[int(t0 * sr):int(t1 * sr)]
+            ws = [(x["word"].strip(), float(x["start"]) - t0, float(x["end"]) - t0) for x in heard if t0 <= float(x["start"]) < t1]
+            bad = problems(line, [x for x in heard if t0 <= float(x["start"]) < t1]) + prosody.problems(piece, sr, line)
+            parts.append((line, piece, ws, bad))
+            bad_all += bad
+        rank = (sum(bool(p[3]) for p in parts), prosody.badness(w, sr, " ".join(lines)))
+        if best is None or rank < best[0]:
+            best = (rank, parts, sr)
+        if not bad_all:
+            break
+        print(f"[prepass] gemini take {take} flagged {bad_all[:4]}", flush=True)
+    if best is None:
+        return False                           # API down or out of quota: the caller falls back
+    _rank, parts, sr = best
+    for line, piece, ws, _bad in parts:
+        sf.write(tts.line_path(line) + ".wav", piece, sr)
+        Path(tts.line_path(line) + ".json").write_text(json.dumps(ws), encoding="utf-8")
+    passed = sum(not p[3] for p in parts)
+    print(f"::notice title=voice test::Gemini {tts.GEMINI_VOICE}: {passed}/{len(parts)} line(s) pass "
+          f"(clear words + natural pitch movement), one read of the whole Short", flush=True)
     return True
 
 

@@ -26,6 +26,12 @@ and **free beyond his Higgsfield Pro plan** — never add a paid service or ask 
   `voice-gemini-results-<run>`. Cost: 25 audio tokens/s at $9/1M (2026; $18 from 2027) = about 1 cent a Short,
   ~$1.60/month at 5/day; free tier may cover it (free-tier text is used by Google to improve products).
   Claude must never create, see or type the key: Sam makes it in AI Studio and adds the secret himself.
+  **Free tier only (Sam: "I don't want to pay").** The key is from AI Studio project "Game" (no billing; the
+  "Default Gemini Project" is on a prepaid billing account with $0 credit, so its keys fail). Free limits per
+  TTS model: 3 requests/min, 10/day, each model its own quota. So `_gemini_short` voices a WHOLE Short in ONE
+  request and cuts it into lines with Whisper (`split_lines`), up to 2 takes; `gemini_tts.MODELS` falls back
+  3.8 Flash -> 3.8 Flash-Lite -> 3.1 Flash -> 2.5 Flash when a day's quota is used. voice-gemini.yml no longer
+  runs on a schedule (it would spend the daily quota).
 - **Voice now (Nov 13, evening): `narrator4` + a voice test with retakes.** Sam: #4 (narrator3) "is fine, just sounds
   so monotone ... it needs to sound like you were reading it ... a test, and if it fails it redoes the voice until it
   passes". narrator4 = "anchor-lively": the same anchor design with a lively instruction and an excited reference

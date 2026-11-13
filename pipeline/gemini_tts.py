@@ -19,6 +19,11 @@ import numpy as np
 
 API = "https://generativelanguage.googleapis.com/v1beta"
 MODEL = os.environ.get("GEMINI_TTS_MODEL", "gemini-3.8-flash-tts")
+# free tier (Nov 13, AI Studio rate-limit page): every TTS model allows 3 requests/min and 10/day, each model its
+# own quota, so when one is used up for the day the next takes over (same voice names on all of them)
+MODELS = [m for m in os.environ.get("GEMINI_TTS_MODELS", f"{MODEL},gemini-3.8-flash-lite-tts,"
+                                    "gemini-3.1-flash-tts-preview,gemini-2.5-flash-preview-tts").split(",") if m]
+_spent: set = set()   # models whose daily quota ran out in this process
 STYLE = os.environ.get("GEMINI_TTS_STYLE", (
     "a warm, confident man in his thirties explaining something fascinating to a friend; natural and "
     "conversational, like a great YouTube explainer; medium-low pitch, relaxed but engaged, real rise and fall, "
@@ -62,8 +67,21 @@ def _find_audio(obj) -> bytes | None:
 
 def say(text: str, voice: str = "Charon", style: str | None = None, model: str | None = None,
         tries: int = 4) -> tuple[np.ndarray, int]:
+    """One request (more only on errors). Tries each model in MODELS until one has quota left."""
+    errs = []
+    for m in ([model] if model else [x for x in MODELS if x not in _spent]):
+        try:
+            return _say(text, voice, style, m, tries)
+        except RuntimeError as e:
+            errs.append(f"{m}: {e}")
+            if "day" not in str(e).lower() and "quota" not in str(e).lower():
+                continue
+            _spent.add(m)
+    raise RuntimeError("; ".join(errs)[:600] or "no model left with quota today")
+
+
+def _say(text, voice, style, model, tries):
     key = os.environ["GEMINI_API_KEY"]
-    model = model or MODEL
     style = STYLE if style is None else style
     bodies = [
         (f"{API}/interactions", {
@@ -86,10 +104,14 @@ def say(text: str, voice: str = "Charon", style: str | None = None, model: str |
                     return _pcm(audio), 24000
                 last = "no audio in response"
             except urllib.error.HTTPError as e:
-                last = f"HTTP {e.code}: {e.read()[:300]!r}"
-                if e.code == 429:            # free-tier rate limit: wait and retry
-                    time.sleep(30 * (attempt + 1))
+                last = f"HTTP {e.code}: {e.read()[:400]!r}"
+                if e.code == 429:
+                    if "PerDay" in last or "per day" in last.lower():
+                        raise RuntimeError(f"daily quota used up ({last[:160]})")
+                    time.sleep(25 * (attempt + 1))     # 3 requests/min on the free tier
                     break
+                if e.code in (400, 403, 404) and url.endswith("interactions"):
+                    continue                 # try the older endpoint
             except Exception as e:  # noqa: BLE001
                 last = repr(e)
         time.sleep(2)
