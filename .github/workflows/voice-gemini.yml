@@ -1,0 +1,39 @@
+name: Gemini voice test
+
+# Push branch voice-gemini: 10 Gemini TTS voices read the same Short (bench/voice_gemini.py), get scored
+# (bench/voice_score.py), and the mp3s + scores go to branch voice-gemini-results-<run>. Needs the
+# GEMINI_API_KEY secret. Nothing is posted and main is not touched.
+on:
+  push:
+    branches: ["voice-gemini"]
+
+permissions:
+  contents: write
+
+jobs:
+  voices:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+      - run: |
+          pip install -q torch torchaudio --index-url https://download.pytorch.org/whl/cpu
+          pip install -q numpy soundfile librosa resemblyzer
+      - run: |
+          if [ -z "$GEMINI_API_KEY" ]; then echo "::error title=voice-gemini::GEMINI_API_KEY secret is missing"; exit 1; fi
+          python bench/voice_gemini.py v
+          for f in v/*.wav; do echo "::notice title=gemini voice::$(grep "$(basename "${f%.wav}")" v/gemini.log)"; done
+          python bench/voice_score.py v | tee v/scores.txt
+          cd v && for f in *.wav; do ffmpeg -loglevel error -y -i "$f" -b:a 128k "${f%.wav}.mp3" && rm "$f"; done
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout --orphan r
+          git rm -rfq --cached . && git add -f v && git commit -qm "Gemini voice candidates $(date -u +%F)"
+          git push origin r:voice-gemini-results-${{ github.run_number }}

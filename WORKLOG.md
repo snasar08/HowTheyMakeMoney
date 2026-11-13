@@ -350,3 +350,11 @@ Sam: "the better free character models... do it yourself". Done in one session.
   voice until it passes. Built pipeline/prosody.py + retakes in voice_prepass (up to 6). Livelier takes of #4
   (voice-deep run 4): lively 145 Hz 4.35 st (2 flat pieces of 11), story 124 Hz (6 flat), hype 176 Hz (too high),
   #4 127 Hz (4 flat). Picked anchor-lively -> narrator4. voice-e2e on 074: 12/13 lines pass, clarity 98.6%, 31.1 s.
+- Night Nov 13: Sam: "this voice sucks", the emotion and monotone suck, do a real deep search, new angle, everyone
+  uses ElevenLabs. Research: the public TTS arenas (Artificial Analysis, Voice Arena, Benchmarklist) put Google's
+  Gemini TTS at or next to ElevenLabs at the top; open models (Qwen3, Chatterbox, Orpheus, Kokoro) rank below.
+  Gemini 3.8 Flash TTS has a free tier (content used to improve Google's products) and costs about $0.01 per Short
+  paid. It takes a style direction, <short pause> tags and CAPS emphasis, and reads a whole Short in one pass
+  (flow like a person reading, instead of one sentence at a time, which is part of why ours sounded flat).
+  Added pipeline/gemini_tts.py + bench/voice_gemini.py + voice-gemini.yml (10 male voices). Blocked on Sam adding
+  the GEMINI_API_KEY secret.
