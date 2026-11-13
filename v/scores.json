@@ -1,0 +1,44 @@
+{
+  "current": {
+    "utmos": 4.44,
+    "consistency_min": 0.825,
+    "pitch_spread_st": 4.93,
+    "f0_median_hz": 252.8,
+    "seconds": 27.2
+  },
+  "cv-Aiden": {
+    "utmos": 4.43,
+    "consistency_min": 0.84,
+    "pitch_spread_st": 5.78,
+    "f0_median_hz": 154.7,
+    "seconds": 32.5
+  },
+  "cv-Ryan": {
+    "utmos": 4.42,
+    "consistency_min": 0.793,
+    "pitch_spread_st": 5.23,
+    "f0_median_hz": 172.7,
+    "seconds": 32.1
+  },
+  "trend-explainer": {
+    "utmos": 4.53,
+    "consistency_min": 0.832,
+    "pitch_spread_st": 6.05,
+    "f0_median_hz": 150.3,
+    "seconds": 31.3
+  },
+  "trend-punchy": {
+    "utmos": 4.47,
+    "consistency_min": 0.844,
+    "pitch_spread_st": 3.44,
+    "f0_median_hz": 220.1,
+    "seconds": 29.3
+  },
+  "trend-story": {
+    "utmos": 4.5,
+    "consistency_min": 0.82,
+    "pitch_spread_st": 4.74,
+    "f0_median_hz": 182.9,
+    "seconds": 33.5
+  }
+}
