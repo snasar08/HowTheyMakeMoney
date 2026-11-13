@@ -76,6 +76,11 @@ and **free beyond his Higgsfield Pro plan** — never add a paid service or ask 
   `loop` line ("So next time you …, remember:") which leads straight back into the opening
   line, so the replay is seamless. No "Follow for more". Keep prompts kid-safe.
 - First frame shows the hook overlay fully (no pop-in); thin progress bar along the top edge.
+- **Eyes (Nov 13, Sam: "give it eyes"):** `pipeline/eyes.py` runs after every render: the cover + a 12-frame
+  sheet + title + narration go to Gemini Flash-Lite (free tier, same `GEMINI_API_KEY`, ~500 requests/day, one per
+  Short), which returns a 1-10 score, the problems a viewer would see and the best fix. Printed as `eyes`
+  notices/warnings in the run and saved in the script's `delivered.eyes`. Warn-only; `EYES=strict` blocks a score
+  <= 3. Read these after a run to decide what to improve.
 - Quality gate (`gate()` in `run.py`): a Short is NOT posted if clarity < 90%, a breath run
   > 8 s, clipping, untimed captions, failed images, or a chart in the caption zone. It's marked
   `status: "needs_fix"` with reasons and the next ready script takes its slot.

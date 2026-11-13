@@ -197,6 +197,14 @@ def main() -> int:
             elif os.environ.get("AUDIO_CHECK") == "strict" and not args.dry:
                 raise RuntimeError(f"audio check failed: {len(info['audio_issues'])} issue(s)")
             blockers = gate(script, info)
+            try:   # Nov 13: a vision model looks at the finished Short (warn-only unless EYES=strict)
+                from . import eyes
+                seen = eyes.look(video, script)
+                blockers += eyes.report(path.stem, seen)
+                if seen:
+                    info["eyes"] = {k: seen.get(k) for k in ("score", "problems", "best_fix", "model")}
+            except Exception as e:  # noqa: BLE001  never lose a Short over the reviewer
+                print(f"::warning title=eyes::{e!r}")
             if blockers and not args.dry:
                 script["status"] = "needs_fix"
                 script["needs_fix"] = blockers
@@ -215,7 +223,7 @@ def main() -> int:
             result = deliver(video, script, when)
             script["status"] = "delivered"
             script["delivered"] = {**result, "rendered_at": dt.datetime.now(dt.timezone.utc).isoformat(),
-                                   "seconds": info["seconds"]}
+                                   "seconds": info["seconds"], **({"eyes": info["eyes"]} if info.get("eyes") else {})}
             path.write_text(json.dumps(script, indent=2, ensure_ascii=False) + "\n")
             print(f"[run] delivered {path.stem}: {result}")
         except Exception:  # keep going; the failed script stays 'ready' for next run

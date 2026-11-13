@@ -203,6 +203,7 @@ jobs:
       UPLOAD_MODE: ${{ vars.UPLOAD_MODE || 'buffer' }}
       POST_START: ${{ vars.POST_START || '2026-10-27' }}
       BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}   # Nov 13: "eyes" review of each finished Short (pipeline/eyes.py)
       AUDIO_CHECK: ${{ vars.AUDIO_CHECK || 'warn' }}
       VOICE_ENGINE: ${{ vars.VOICE_ENGINE || 'qwen' }}   # Nov 3: Qwen3-TTS clone (falls back to Kokoro per Short)
       QWEN_VOICE: narrator4

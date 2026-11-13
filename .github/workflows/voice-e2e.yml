@@ -45,6 +45,7 @@ jobs:
     timeout-minutes: 60
     env:
       UPLOAD_MODE: buffer_dry
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
       VOICE_ENGINE: qwen
       QWEN_VOICE: narrator4
       GEMINI_VOICE: ${{ vars.GEMINI_VOICE }}
