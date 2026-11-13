@@ -74,3 +74,5 @@ clearly different angle, new figures, a new hook, new B-roll and a different sce
 073 | Stephen Curry (famous) | walk-on offer to first $200M+ NBA deal and $100M of sponsors | 160 lb, $201M 2017 extension, 4,000 threes, $156M 2025 ($100M endorsements)
 074 | Giannis Antetokounmpo (famous) | sold sunglasses on the street, then the largest NBA deal of its time | started 2007, pick 15 (2013), two MVPs, $228M five-year deal (Dec 2020), 2021 title (first since 1971)
 075 | Patrick Mahomes (famous) | round-37 baseball pick who chose football | round 37 (2014 MLB draft), pick 10 (2017), ten-year deal up to $503M (July 2020), three Super Bowl wins
+076 | Lewis Hamilton (famous) | dad worked up to four jobs for his karting; now $100M a year | go-kart at 6, kart champion at 10, 7 titles, 106 wins, Forbes 2026 $100M ($70M + $30M)
+077 | Kylian Mbappé (famous) | the most expensive teenager ever | started at 6 in Bondy, Monaco debut at 16 (record since 1994), EUR 180M to PSG (2017), World Cup at 19

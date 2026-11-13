@@ -1,0 +1,126 @@
+{
+  "id": "076",
+  "slug": "famous-hamilton",
+  "company": "Lewis Hamilton",
+  "format": "famous",
+  "visual_style": "lowpoly",
+  "hook_style": "surprise",
+  "title_style": "number",
+  "theme": "bold_bright",
+  "status": "ready",
+  "score": 94,
+  "title": "From a Dad With 4 Jobs to $100 Million",
+  "name_card": "Lewis Hamilton",
+  "name_sub": "racing driver",
+  "description": "His dad worked up to 4 jobs at once. Now he earns 100 million dollars a year.\n\nSources:\n- Wikipedia: Lewis Hamilton: https://en.wikipedia.org/wiki/Lewis_Hamilton\n- Wikipedia: Forbes list of the world's highest-paid athletes: https://en.wikipedia.org/wiki/Forbes_list_of_the_world%27s_highest-paid_athletes\n\nFrom Wikipedia (Lewis Hamilton): his father sometimes worked up to four jobs at a time to fund his racing; his father bought him a go-kart for Christmas when he was six; at ten, the youngest British cadet karting champion, he told McLaren's Ron Dennis he wanted to race his cars one day; he has won a joint-record seven World Drivers' Championships and holds the record for most wins (106). Forbes 2026 list (Wikipedia: highest-paid athletes): $100 million ($70M salary and winnings, $30M endorsements). Not financial advice.\n\n#shorts #lewishamilton #f1 #howtheymakemoney",
+  "tags": [
+    "lewis hamilton",
+    "formula one",
+    "famous",
+    "shorts"
+  ],
+  "images": {},
+  "hud_label": "HIS MONEY",
+  "loop": "So next time you see a go-kart, remember:",
+  "cta": "Fast car or big trophy? Comment your pick.",
+  "cta_question": "Fast car or big trophy?",
+  "scenes": [
+    {
+      "narration": "His dad worked up to 4 jobs at once. Now he earns 100 million dollars a year.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "car"
+        ],
+        "stat": "$100 MILLION",
+        "stat_sub": "his dad worked 4 jobs"
+      }
+    },
+    {
+      "narration": "It started with a go-kart for Christmas. He was just six.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "run",
+        "crowd": 0,
+        "props": [
+          "car"
+        ],
+        "stat": "AGE 6",
+        "stat_sub": "a go-kart for Christmas"
+      }
+    },
+    {
+      "narration": "At ten, he told a team boss he'd race his cars.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "office",
+        "action": "idle",
+        "crowd": 20,
+        "props": [
+          "trophy"
+        ],
+        "stat": "AGE 10",
+        "stat_sub": "youngest British kart champion"
+      }
+    },
+    {
+      "narration": "Then he did. Seven world titles. A record 106 wins.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "stage",
+        "action": "cheer",
+        "crowd": 400,
+        "props": [
+          "trophy",
+          "car"
+        ],
+        "stat": "106 WINS",
+        "stat_sub": "the most in Formula One",
+        "hud": "$100M"
+      }
+    },
+    {
+      "narration": "But only 70 million is from racing. Sponsors pay the rest.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "store",
+        "action": "cheer",
+        "crowd": 100,
+        "props": [
+          "cash",
+          "check"
+        ],
+        "stat": "$70M + $30M",
+        "stat_sub": "racing + sponsors, Forbes 2026",
+        "hud": "$100M"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Lewis Hamilton",
+      "url": "https://en.wikipedia.org/wiki/Lewis_Hamilton"
+    },
+    {
+      "title": "Wikipedia: Forbes list of the world's highest-paid athletes",
+      "url": "https://en.wikipedia.org/wiki/Forbes_list_of_the_world%27s_highest-paid_athletes"
+    }
+  ],
+  "hero": {
+    "skin": "7a5236",
+    "hair": "long",
+    "hair_color": "17120f",
+    "beard": "goatee",
+    "beard_color": "17120f",
+    "outfit": "kit",
+    "shirt": "c81d25",
+    "pants": "c81d25",
+    "socks": "1a1a1a",
+    "shoes": "1a1a1a",
+    "height": 1.0
+  }
+}

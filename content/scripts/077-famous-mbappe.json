@@ -1,0 +1,121 @@
+{
+  "id": "077",
+  "slug": "famous-mbappe",
+  "company": "Kylian Mbappé",
+  "format": "famous",
+  "visual_style": "lowpoly",
+  "hook_style": "surprise",
+  "title_style": "number",
+  "theme": "bold_bright",
+  "status": "ready",
+  "score": 93,
+  "title": "The 180 Million Euro Teenager",
+  "name_card": "Kylian Mbappé",
+  "name_sub": "soccer player",
+  "description": "A club paid 180 million euros for a teenager. The most expensive teen ever.\n\nSources:\n- Wikipedia: Kylian Mbappé: https://en.wikipedia.org/wiki/Kylian_Mbapp%C3%A9\n\nFrom Wikipedia (Kylian Mbappé): raised in Bondy, he started with AS Bondy at the age of six; at 16 he became Monaco's youngest-ever first-team player (December 2015), a record held since 1994; Paris Saint-Germain signed him in August 2017 on a loan with a mandatory purchase option of 180 million euros, which made him the most expensive teenager ever and the second-most-expensive player ever; he won the 2018 World Cup aged 19. Not financial advice.\n\n#shorts #mbappe #soccer #howtheymakemoney",
+  "tags": [
+    "kylian mbappe",
+    "soccer",
+    "famous",
+    "shorts"
+  ],
+  "images": {},
+  "hud_label": "TRANSFER FEE",
+  "loop": "So next time you kick a ball around, remember:",
+  "cta": "Mbappé or Messi? Comment your pick.",
+  "cta_question": "Mbappé or Messi?",
+  "scenes": [
+    {
+      "narration": "A club paid 180 million euros for a teenager. The most expensive teen ever.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "pitch",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "ball"
+        ],
+        "stat": "180 MILLION",
+        "stat_sub": "euros, for a teenager"
+      }
+    },
+    {
+      "narration": "He started at six. Just a small club in his hometown, Bondy.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "pitch",
+        "action": "run",
+        "crowd": 0,
+        "props": [
+          "ball"
+        ],
+        "stat": "AGE 6",
+        "stat_sub": "his hometown club"
+      }
+    },
+    {
+      "narration": "At 16, he was Monaco's youngest first-team player ever.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "pitch",
+        "action": "run",
+        "crowd": 200,
+        "props": [
+          "ball"
+        ],
+        "stat": "AGE 16",
+        "stat_sub": "a record held since 1994"
+      }
+    },
+    {
+      "narration": "Then came the 180 million. Only one player had ever cost more.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "office",
+        "action": "cheer",
+        "crowd": 60,
+        "props": [
+          "check",
+          "cash"
+        ],
+        "stat": "#2 EVER",
+        "stat_sub": "second-most-expensive player",
+        "hud": "180M"
+      }
+    },
+    {
+      "narration": "And at 19, he won the World Cup.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "pitch",
+        "action": "cheer",
+        "crowd": 400,
+        "props": [
+          "ball",
+          "trophy"
+        ],
+        "stat": "WORLD CUP",
+        "stat_sub": "won at 19",
+        "hud": "180M"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Kylian Mbappé",
+      "url": "https://en.wikipedia.org/wiki/Kylian_Mbapp%C3%A9"
+    }
+  ],
+  "hero": {
+    "skin": "6b4a32",
+    "hair": "buzz",
+    "hair_color": "15110e",
+    "beard": "none",
+    "outfit": "kit",
+    "shirt": "1c2a5a",
+    "pants": "1c2a5a",
+    "socks": "f4f4f4",
+    "shoes": "f4f4f4",
+    "height": 1.0
+  }
+}

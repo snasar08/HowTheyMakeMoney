@@ -1,4 +1,16 @@
-# Update, Nov 12 (overnight job)
+# Update, Nov 13
+
+**New voice.** I measured the old voice: it sat at 239 Hz, which is high for a man, and swung a lot, which is the "out of tune" people heard. I had GitHub make five deeper narrators, read the same script lines with each, and scored them. The channel now uses the deepest clear one (about 89 Hz, calm "teacher explaining" delivery, steadier pitch, same clarity score), played 10% faster so Shorts stay under 30 seconds. A full test Short rendered fine with it. Clips to compare: `previews/voice/current.mp3` (old) and `previews/voice/deep-teacher.mp3` (new); `deep-anchor.mp3` is a less deep backup.
+
+**Numbers any time.** Say "how are the Shorts doing" and I pull fresh numbers in about a minute (`python -m pipeline.now`).
+
+**What the numbers say now.** The animated person stories are far ahead: Curry 638 views in 6 hours, LeBron 1,067 in 11 hours, Jordan 1,161, Swift 1,014. Chart Shorts get 4 to 40. So animated Shorts can now be every other post, and I wrote two more (Lewis Hamilton, Kylian Mbappe). Saturday's batches are told to write mostly these.
+
+## Needs you
+- Nothing. The new voice starts with the Shorts posted from Nov 14 (today's five were already made with the old voice).
+- If the new voice feels too deep when you hear it, tell me and I switch to the backup in one step.
+
+# Earlier: Nov 12 (overnight job)
 
 **Later on Nov 12 (you asked for 5 posts a day):** posting is now 5 a day at 12:00, 3:00, 4:30, 6:00 and 8:00 PM New York (the three old times are unchanged, two were added). Both Saturday routines now write up to 20 scripts each (40 a week for 35 posted) and stop at 75 waiting; at least half are animated or photo-story Shorts, which use no Higgsfield credits, and the quality checks come before the count. The sentence below about "3 posts a day" was true overnight and is now out of date.
 
