@@ -1,0 +1,37 @@
+{
+  "deep-anchor": {
+    "utmos": 4.52,
+    "consistency_min": 0.822,
+    "pitch_spread_st": 4.38,
+    "f0_median_hz": 120.7,
+    "seconds": 31.6
+  },
+  "mid-bright": {
+    "utmos": 4.52,
+    "consistency_min": 0.892,
+    "pitch_spread_st": 3.46,
+    "f0_median_hz": 97.5,
+    "seconds": 30.3
+  },
+  "mid-doc": {
+    "utmos": 4.53,
+    "consistency_min": 0.815,
+    "pitch_spread_st": 5.19,
+    "f0_median_hz": 152.1,
+    "seconds": 28.1
+  },
+  "mid-host": {
+    "utmos": 4.43,
+    "consistency_min": 0.835,
+    "pitch_spread_st": 3.25,
+    "f0_median_hz": 89.4,
+    "seconds": 31.8
+  },
+  "mid-teacher": {
+    "utmos": 4.5,
+    "consistency_min": 0.841,
+    "pitch_spread_st": 2.89,
+    "f0_median_hz": 88.9,
+    "seconds": 31.0
+  }
+}
