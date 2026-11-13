@@ -346,3 +346,7 @@ Sam: "the better free character models... do it yourself". Done in one session.
   weights are non-commercial only, so not usable. Two more tests (voice-deep runs 2 and 3): mid designs came out
   89-152 Hz; trend styles 150-220 Hz; Qwen built-in Ryan 173 / Aiden 155; old voice 253. Live now: narrator3 =
   deep-anchor, 121 Hz, 4.4 st, UTMOS 4.52. 11 numbered clips in previews/voice/ for Sam to rank.
+- Evening Nov 13: Sam: #4 fine but monotone; wants it to sound like someone reading, plus a test that redoes the
+  voice until it passes. Built pipeline/prosody.py + retakes in voice_prepass (up to 6). Livelier takes of #4
+  (voice-deep run 4): lively 145 Hz 4.35 st (2 flat pieces of 11), story 124 Hz (6 flat), hype 176 Hz (too high),
+  #4 127 Hz (4 flat). Picked anchor-lively -> narrator4. voice-e2e on 074: 12/13 lines pass, clarity 98.6%, 31.1 s.
