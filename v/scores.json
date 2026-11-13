@@ -1,0 +1,44 @@
+{
+  "current": {
+    "utmos": 4.51,
+    "consistency_min": 0.823,
+    "pitch_spread_st": 4.98,
+    "f0_median_hz": 239.3,
+    "seconds": 28.1
+  },
+  "deep-anchor": {
+    "utmos": 4.55,
+    "consistency_min": 0.825,
+    "pitch_spread_st": 4.58,
+    "f0_median_hz": 120.7,
+    "seconds": 31.5
+  },
+  "deep-doc": {
+    "utmos": 4.5,
+    "consistency_min": 0.795,
+    "pitch_spread_st": 3.3,
+    "f0_median_hz": 91.5,
+    "seconds": 38.5
+  },
+  "deep-host": {
+    "utmos": 4.47,
+    "consistency_min": 0.784,
+    "pitch_spread_st": 3.6,
+    "f0_median_hz": 89.4,
+    "seconds": 32.7
+  },
+  "deep-story": {
+    "utmos": 4.39,
+    "consistency_min": 0.842,
+    "pitch_spread_st": 1.78,
+    "f0_median_hz": 91.5,
+    "seconds": 32.4
+  },
+  "deep-teacher": {
+    "utmos": 4.48,
+    "consistency_min": 0.855,
+    "pitch_spread_st": 3.63,
+    "f0_median_hz": 89.4,
+    "seconds": 32.2
+  }
+}
