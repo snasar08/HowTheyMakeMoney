@@ -1,0 +1,13 @@
+Downloading: "https://github.com/tarepan/SpeechMOS/zipball/v1.2.0" to /home/runner/.cache/torch/hub/v1.2.0.zip
+Downloading: "https://github.com/tarepan/SpeechMOS/releases/download/v1.0.0/utmos22_strong_step7459_v1.pt" to /home/runner/.cache/torch/hub/checkpoints/utmos22_strong_step7459_v1.pt
+Loaded the voice encoder model on cpu in 0.01 seconds.
+g01-Charon                   UTMOS 3.91  same-voice 0.822  pitch 5.57 st  median 104 Hz
+g02-Algenib                  UTMOS 4.04  same-voice 0.846  pitch 6.84 st  median 117 Hz
+g03-Orus                     UTMOS 4.15  same-voice 0.804  pitch 4.63 st  median 151 Hz
+g04-Alnilam                  UTMOS 4.10  same-voice 0.807  pitch 5.69 st  median 139 Hz
+g05-Gacrux                   UTMOS 4.11  same-voice 0.812  pitch 6.26 st  median 119 Hz
+g06-Iapetus                  UTMOS 4.04  same-voice 0.802  pitch 5.73 st  median 132 Hz
+g07-Sadaltager               UTMOS 3.87  same-voice 0.809  pitch 5.42 st  median 128 Hz
+g08-Rasalgethi               UTMOS 4.01  same-voice 0.794  pitch 5.01 st  median 122 Hz
+g09-Achird                   UTMOS 4.07  same-voice 0.850  pitch 4.74 st  median 136 Hz
+g10-Umbriel                  UTMOS 4.34  same-voice 0.795  pitch 4.82 st  median 123 Hz

@@ -1,0 +1,72 @@
+{
+  "g01-Charon": {
+    "utmos": 3.91,
+    "consistency_min": 0.822,
+    "pitch_spread_st": 5.57,
+    "f0_median_hz": 104.5,
+    "seconds": 28.2
+  },
+  "g02-Algenib": {
+    "utmos": 4.04,
+    "consistency_min": 0.846,
+    "pitch_spread_st": 6.84,
+    "f0_median_hz": 117.3,
+    "seconds": 31.5
+  },
+  "g03-Orus": {
+    "utmos": 4.15,
+    "consistency_min": 0.804,
+    "pitch_spread_st": 4.63,
+    "f0_median_hz": 151.2,
+    "seconds": 29.8
+  },
+  "g04-Alnilam": {
+    "utmos": 4.1,
+    "consistency_min": 0.807,
+    "pitch_spread_st": 5.69,
+    "f0_median_hz": 139.4,
+    "seconds": 28.2
+  },
+  "g05-Gacrux": {
+    "utmos": 4.11,
+    "consistency_min": 0.812,
+    "pitch_spread_st": 6.26,
+    "f0_median_hz": 118.6,
+    "seconds": 30.7
+  },
+  "g06-Iapetus": {
+    "utmos": 4.04,
+    "consistency_min": 0.802,
+    "pitch_spread_st": 5.73,
+    "f0_median_hz": 131.6,
+    "seconds": 28.3
+  },
+  "g07-Sadaltager": {
+    "utmos": 3.87,
+    "consistency_min": 0.809,
+    "pitch_spread_st": 5.42,
+    "f0_median_hz": 127.9,
+    "seconds": 28.5
+  },
+  "g08-Rasalgethi": {
+    "utmos": 4.01,
+    "consistency_min": 0.794,
+    "pitch_spread_st": 5.01,
+    "f0_median_hz": 122.1,
+    "seconds": 26.8
+  },
+  "g09-Achird": {
+    "utmos": 4.07,
+    "consistency_min": 0.85,
+    "pitch_spread_st": 4.74,
+    "f0_median_hz": 136.3,
+    "seconds": 28.7
+  },
+  "g10-Umbriel": {
+    "utmos": 4.34,
+    "consistency_min": 0.795,
+    "pitch_spread_st": 4.82,
+    "f0_median_hz": 122.8,
+    "seconds": 30.3
+  }
+}
