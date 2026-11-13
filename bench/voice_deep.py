@@ -17,7 +17,13 @@ import torch
 name, out = sys.argv[1], Path(sys.argv[2])
 out.mkdir(parents=True, exist_ok=True)
 BASE = "adult American man in his late thirties, deep low-pitched baritone voice, warm and rich"
+MID = "adult American man around thirty, natural medium-pitched voice, a typical male speaking pitch that is neither deep nor high, warm and clear"
 DESIGNS = {
+    # Nov 13, Sam: the deep voice was too deep -> mid-level candidates
+    "mid-teacher": f"{MID}, calm and friendly like a favorite teacher explaining something clearly, steady even pitch, natural pace",
+    "mid-host": f"{MID}, podcast host explaining business to a friend, conversational and relaxed, steady pitch, smooth",
+    "mid-doc": f"{MID}, documentary narrator, confident and measured, small natural pitch movement, very clear articulation",
+    "mid-bright": f"{MID}, upbeat but grounded explainer, engaging and confident, steady pitch, never sing-song or squeaky",
     "deep-teacher": f"{BASE}, calm and friendly like a favorite teacher explaining something clearly, steady even pitch, natural unhurried pace",
     "deep-doc": f"{BASE}, documentary narrator, confident and measured, steady pitch with small natural movement, clear articulation",
     "deep-story": f"{BASE}, relaxed storyteller, grounded and sincere, low steady tone, lightly engaging, never sing-song",
