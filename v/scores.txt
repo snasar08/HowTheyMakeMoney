@@ -1,0 +1,7 @@
+Downloading: "https://github.com/tarepan/SpeechMOS/zipball/v1.2.0" to /home/runner/.cache/torch/hub/v1.2.0.zip
+Downloading: "https://github.com/tarepan/SpeechMOS/releases/download/v1.0.0/utmos22_strong_step7459_v1.pt" to /home/runner/.cache/torch/hub/checkpoints/utmos22_strong_step7459_v1.pt
+Loaded the voice encoder model on cpu in 0.01 seconds.
+anchor-hype                  UTMOS 4.49  same-voice 0.867  pitch 5.32 st  median 176 Hz
+anchor-lively                UTMOS 4.51  same-voice 0.808  pitch 4.35 st  median 145 Hz
+anchor-story                 UTMOS 4.47  same-voice 0.789  pitch 3.81 st  median 124 Hz
+deep-anchor                  UTMOS 4.55  same-voice 0.825  pitch 4.58 st  median 121 Hz
