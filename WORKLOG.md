@@ -325,3 +325,19 @@ Sam: "the better free character models... do it yourself". Done in one session.
 - Weekly batch: up to 20 scripts per part (40/week for 35 posted), stop writing at 75 ready, at least half
   animated or editorial so Higgsfield credits do not rise, quality gates unchanged and ahead of the count.
 - Queue on Nov 12: 28 ready = about 5.5 days at 5 a day; Saturday Nov 14 batches refill it.
+
+## Nov 13 2026 — deeper voice, numbers on demand, more animated person stories
+- Sam showed the Shorts to people: they "hate the voice", "out of key, out of tune", irritating; want it deeper and
+  explaining better. Measured why: the Nov 3 `narrator` clone has a median pitch of 239 Hz with 5 st swings.
+- `voice-deep` test on GitHub: 5 designed candidates + current, same six script lines, scored. current 4.51 UTMOS /
+  0.823 / 4.98 st / 239 Hz; deep-anchor 4.55 / 0.825 / 4.58 / 121; deep-doc 4.50 / 0.795 / 3.30 / 91; deep-host
+  4.47 / 0.784 / 3.60 / 89; deep-story 4.39 / 0.842 / 1.78 / 91 (too flat); deep-teacher 4.48 / 0.855 / 3.63 / 89.
+  Picked deep-teacher (deep, most consistent, natural movement, "explaining" delivery) -> `assets/voice/narrator2`.
+  It reads ~15% slower, so `QWEN_SPEED` 1.1 (same pitch). Fallback if Sam finds it too deep: deep-anchor (121 Hz).
+- `voice-e2e` full test on 074 with the new voice: rendered 29.7 s, Qwen voice on every line, captions timed, one
+  short-word warning. Shorts already scheduled for Nov 13 were rendered earlier with the old voice.
+- `python -m pipeline.now`: fresh numbers on demand (tested: stats arrived in about a minute).
+- Numbers Nov 13 07:01 UTC: animated person stories lead by far (073 Curry 638 in 6 h, 051 LeBron 1,067 in 11 h,
+  061 Jordan 1,161, 055 Swift 1,014; chart Shorts 4-40). So LOWPOLY_GAP 2 -> 1 and two more written: 076 Hamilton,
+  077 Mbappe (figures from the Wikipedia pages opened tonight). The local GL preview was unavailable (screen
+  locked), so 076/077 are lint- and score-checked only; they use sets and props other Shorts already use.
