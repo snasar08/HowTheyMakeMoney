@@ -1,5 +1,5 @@
 {
- "at": "2026-11-13T07:01:46.731896+00:00",
+ "at": "2026-11-13T18:29:59.747409+00:00",
  "shorts": [
   {
    "video": "aGOO0z7dfpk",
@@ -760,28 +760,6 @@
    }
   },
   {
-   "video": "Y0dzSer10Gc",
-   "title": "How Do NBA Players Actually Get Paid?",
-   "views": 4,
-   "avg_pct": 87.7,
-   "avg_seconds": 28,
-   "tags": {
-    "script": "029",
-    "slug": "nba-players",
-    "topic": "NBA players",
-    "format": "careers",
-    "visual_style": "charts3d",
-    "theme": "clean_navy",
-    "hook_style": "question",
-    "title_style": "question",
-    "length_s": 31.51,
-    "length_bucket": "30-38",
-    "post_at": "2026-10-29T12:00:00-04:00",
-    "post_slot": "12:00",
-    "score": 85
-   }
-  },
-  {
    "video": "O5kd32nBRpQ",
    "title": "Why Do Gas Stations Want You Inside?",
    "views": 4,
@@ -1065,6 +1043,28 @@
     "post_at": "2026-11-12T15:00:00-05:00",
     "post_slot": "15:00",
     "score": 90
+   }
+  },
+  {
+   "video": "EtG0FpzQuwg",
+   "title": "DoorDash Keeps 47 Cents of a $34 Order",
+   "views": 0,
+   "avg_pct": 0,
+   "avg_seconds": 0,
+   "tags": {
+    "script": "052",
+    "slug": "how-doordash",
+    "topic": "DoorDash",
+    "format": "how",
+    "visual_style": "charts3d",
+    "theme": "dark_neon",
+    "hook_style": "number",
+    "title_style": "statement",
+    "length_s": 26.75,
+    "length_bucket": "<30",
+    "post_at": "2026-11-13T12:00:00-05:00",
+    "post_slot": "12:00",
+    "score": 93
    }
   }
  ]

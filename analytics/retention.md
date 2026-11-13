@@ -1,4 +1,4 @@
-# Retention, 2026-11-13 07:01 UTC
+# Retention, 2026-11-13 18:29 UTC
 
 Shorts from the last 14 days, most viewed first. 'Still watching' is the share of viewers at that point of the video (over 100% at the start means replays). 'Biggest drop' is where the most viewers leave in one 5% stretch.
 
@@ -33,7 +33,6 @@ Shorts from the last 14 days, most viewed first. 'Still watching' is the share o
 | What If One Person Delivered Every Amazon Package? | 9 | 66.1% (21 s) | not enough views for a curve | | | | | |
 | Why Does Ohtani Earn Just $2.6M Playing? | 5 | 59.6% (20 s) | not enough views for a curve | | | | | |
 | What If Spotify Listeners Were a Country? | 5 | 38.4% (11 s) | not enough views for a curve | | | | | |
-| How Do NBA Players Actually Get Paid? | 4 | 87.7% (28 s) | not enough views for a curve | | | | | |
 | Why Do Gas Stations Want You Inside? | 4 | 100.1% (27 s) | not enough views for a curve | | | | | |
 | Visa Kept $20 Billion Without Lending a Dime | 2 | 0% (0 s) | not enough views for a curve | | | | | |
 | Could You Spend the Richest Person's Fortune? | 1 | 82.8% (25 s) | not enough views for a curve | | | | | |
@@ -47,3 +46,4 @@ Shorts from the last 14 days, most viewed first. 'Still watching' is the share o
 | 54% of US Firefighters Are Volunteers | 0 | 0% (0 s) | not enough views for a curve | | | | | |
 | Red Bull Sells 14 Billion Cans a Year | 0 | 0% (0 s) | not enough views for a curve | | | | | |
 | How Did LeBron Earn $1 Billion While Playing? | 0 | 0% (0 s) | not enough views for a curve | | | | | |
+| DoorDash Keeps 47 Cents of a $34 Order | 0 | 0% (0 s) | not enough views for a curve | | | | | |
