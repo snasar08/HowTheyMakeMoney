@@ -26,6 +26,9 @@ and **free beyond his Higgsfield Pro plan** — never add a paid service or ask 
   `voice-gemini-results-<run>`. Cost: 25 audio tokens/s at $9/1M (2026; $18 from 2027) = about 1 cent a Short,
   ~$1.60/month at 5/day; free tier may cover it (free-tier text is used by Google to improve products).
   Claude must never create, see or type the key: Sam makes it in AI Studio and adds the secret himself.
+  **Pitch (Nov 14, Sam: "voice is a lot better", but "a tad too deep, not significantly"):** Umbriel is raised
+  `GEMINI_PITCH_ST` = 1.0 semitone in `tts.qwen` (ffmpeg asetrate + atempo: same speed, same word timings);
+  samples `previews/voice/umbriel-up-1.mp3` / `-1.5.mp3`. Raise to 1.5 if he still finds it deep.
   **Free tier only (Sam: "I don't want to pay").** The key is from AI Studio project "Game" (no billing; the
   "Default Gemini Project" is on a prepaid billing account with $0 credit, so its keys fail). Free limits per
   TTS model: 3 requests/min, 10/day, each model its own quota. So `_gemini_short` voices a WHOLE Short in ONE

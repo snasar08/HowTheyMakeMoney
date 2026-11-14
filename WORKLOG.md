@@ -371,3 +371,5 @@ Sam: "the better free character models... do it yourself". Done in one session.
   caught mid count-up, "0%" pies filling, and "Q3 2026 is in the future". Taught the eyes prompt what is normal
   (count-ups, fills, low-poly style, today's date). Kept as real signals to look at: the animated characters'
   faces read as "no facial features" at phone size; 069 reuses similar shots (repeat check flagged 8).
+- Sam on the Google voice: "a lot better", but a tad too deep. Raised it 1 semitone in tts (GEMINI_PITCH_ST,
+  duration and timings unchanged; test tone 121 -> 128 Hz). Live from the next run.

@@ -101,6 +101,24 @@ def use_engine_for(texts):
 
 
 QWEN_SPEED = float(os.environ.get("QWEN_SPEED", "1.1"))
+# Nov 14, Sam: the Gemini voice is "a tad too deep" -> raised one semitone, same speed and timing
+GEMINI_PITCH_ST = float(os.environ.get("GEMINI_PITCH_ST", "1.0"))
+
+
+def _pitch(a, st: float):
+    """Shift pitch by st semitones, keeping duration (ffmpeg asetrate + atempo); unchanged if ffmpeg fails."""
+    import subprocess
+    f = 2 ** (st / 12)
+    try:
+        r = subprocess.run(["ffmpeg", "-loglevel", "error", "-f", "f32le", "-ar", str(SAMPLE_RATE), "-ac", "1", "-i", "pipe:0",
+                            "-filter:a", f"asetrate={SAMPLE_RATE * f:.1f},aresample={SAMPLE_RATE},atempo={1 / f:.5f}",
+                            "-f", "f32le", "-ar", str(SAMPLE_RATE), "-ac", "1", "pipe:1"],
+                           input=np.asarray(a, np.float32).tobytes(), capture_output=True, check=True)
+        out = np.frombuffer(r.stdout, np.float32)
+        return out if abs(len(out) - len(a)) < 0.05 * len(a) + SAMPLE_RATE * 0.05 else a
+    except Exception as e:  # noqa: BLE001
+        print(f"::warning::[tts] pitch shift failed ({e!r}); original pitch", flush=True)
+        return a
 
 
 def _atempo(a, speed: float):
@@ -130,6 +148,8 @@ def qwen(text: str):
             a = a.mean(axis=1)
         if sr != SAMPLE_RATE:
             a = np.interp(np.linspace(0, len(a) - 1, int(len(a) * SAMPLE_RATE / sr)), np.arange(len(a)), a).astype(np.float32)
+        if abs(GEMINI_PITCH_ST) > 0.01:
+            a = _pitch(a, GEMINI_PITCH_ST)
         loud = np.flatnonzero(np.abs(a) > 0.02)
         c0 = max(0, int(loud[0]) - int(LEAD_KEEP * SAMPLE_RATE)) if len(loud) else 0
         c1 = min(len(a), int(loud[-1]) + int(TAIL_KEEP * SAMPLE_RATE)) if len(loud) else len(a)
