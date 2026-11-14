@@ -7,7 +7,7 @@
   "hook_style": "number",
   "title_style": "whatif",
   "theme": "bold_bright",
-  "status": "ready",
+  "status": "delivered",
   "score": 90,
   "title": "What If One Person Played All of Roblox?",
   "description": "Roblox players logged nearly 34 billion hours. In just three months.\n\nSources:\n- Gaming.net: Roblox Q3 revenue rises 16% as bookings fall 12% to $1.7 billion (Oct 2026): https://gaming.net/roblox-q3-revenue-rises-16-as-bookings-fall-12-to-1-7-billion\n- Wikipedia: Roblox Corporation: https://en.wikipedia.org/wiki/Roblox_Corporation\n\nQ3 2026 (from Roblox's shareholder letter as reported): nearly 34 billion hours engaged, 138 million daily active users, 30 million average monthly unique payers, $1.697 billion bookings. 34 billion hours / 8,766 hours a year = about 3.9 million years; 34 billion / 92 days / 138 million = about 2.7 hours a day (our math). Not financial advice.\n\n#shorts #roblox #whatif #gaming #howtheymakemoney",
@@ -36,7 +36,17 @@
         ],
         "stat": "34 BILLION",
         "stat_sub": "hours. one player?",
-        "hud": "0 HOURS"
+        "hud": "0 HOURS",
+        "hero": {
+          "skin": "dark",
+          "hair": "short",
+          "hair_color": "3a2a1c",
+          "beard": "stubble",
+          "outfit": "tee",
+          "shirt": "f4a261",
+          "pants": "263247",
+          "shoes": "f4f4f4"
+        }
       }
     },
     {
@@ -51,7 +61,17 @@
         ],
         "stat": "1 PLAYER",
         "stat_sub": "of play, Q3 2026",
-        "hud": "34B HOURS"
+        "hud": "34B HOURS",
+        "hero": {
+          "skin": "dark",
+          "hair": "short",
+          "hair_color": "3a2a1c",
+          "beard": "stubble",
+          "outfit": "tee",
+          "shirt": "f4a261",
+          "pants": "263247",
+          "shoes": "f4f4f4"
+        }
       }
     },
     {
@@ -66,7 +86,17 @@
         ],
         "stat": "3.9 MILLION",
         "stat_sub": "years, nonstop",
-        "hud": "3.9M YEARS"
+        "hud": "3.9M YEARS",
+        "hero": {
+          "skin": "dark",
+          "hair": "short",
+          "hair_color": "3a2a1c",
+          "beard": "stubble",
+          "outfit": "tee",
+          "shirt": "f4a261",
+          "pants": "263247",
+          "shoes": "f4f4f4"
+        }
       }
     },
     {
@@ -80,7 +110,17 @@
           "cash"
         ],
         "stat": "30 MILLION",
-        "stat_sub": "monthly payers, Q3 2026"
+        "stat_sub": "monthly payers, Q3 2026",
+        "hero": {
+          "skin": "dark",
+          "hair": "short",
+          "hair_color": "3a2a1c",
+          "beard": "stubble",
+          "outfit": "tee",
+          "shirt": "f4a261",
+          "pants": "263247",
+          "shoes": "f4f4f4"
+        }
       }
     },
     {
@@ -95,7 +135,17 @@
           "trophy"
         ],
         "stat": "$1.7 BILLION",
-        "stat_sub": "bookings, Q3 2026"
+        "stat_sub": "bookings, Q3 2026",
+        "hero": {
+          "skin": "dark",
+          "hair": "short",
+          "hair_color": "3a2a1c",
+          "beard": "stubble",
+          "outfit": "tee",
+          "shirt": "f4a261",
+          "pants": "263247",
+          "shoes": "f4f4f4"
+        }
       }
     }
   ],
@@ -108,5 +158,28 @@
       "title": "Wikipedia: Roblox Corporation",
       "url": "https://en.wikipedia.org/wiki/Roblox_Corporation"
     }
-  ]
+  ],
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-053-whatif-roblox",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-053-whatif-roblox/053-whatif-roblox.mp4",
+    "post_at": "2026-11-15T15:00:00-05:00",
+    "buffer_post": "6af892a476c23bf1c72ab64f",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-14T16:56:05.044568+00:00",
+    "seconds": 24.72,
+    "eyes": {
+      "score": 3,
+      "problems": [
+        "The character model has no facial features, making it look broken and uncanny.",
+        "The text on screen frequently contradicts the narration (e.g., narration says 34 billion hours, screen shows 9 billion; narration says 30 million people, screen shows 30 million monthly payers).",
+        "The text 'q3 2026' appears on screen, which is in the future and confusing for a video about current stats.",
+        "The character's movements are stiff and robotic, appearing low-quality.",
+        "The cover image is generic and does not clearly communicate the 'how they make money' hook.",
+        "The text '0 PLAYER' and '1 PLAYER' is confusing and does not align with the narration's flow."
+      ],
+      "best_fix": "Replace the faceless character model with a more expressive avatar and ensure all on-screen text perfectly matches the narration to avoid confusing the viewer.",
+      "model": "gemini-3.1-flash-lite"
+    }
+  }
 }

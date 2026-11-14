@@ -7,7 +7,7 @@
   "hook_style": "number",
   "title_style": "whatif",
   "theme": "bold_bright",
-  "status": "ready",
+  "status": "delivered",
   "score": 90,
   "title": "What If You Sold Every Minecraft Copy Yourself?",
   "description": "Minecraft sold over 400 million copies. Now try selling them one by one.\n\nSources:\n- Wikipedia: Minecraft: https://en.wikipedia.org/wiki/Minecraft\n- Wikipedia: Mojang Studios: https://en.wikipedia.org/wiki/Mojang_Studios\n- Wikipedia: Markus Persson: https://en.wikipedia.org/wiki/Markus_Persson\n\nWikipedia (Minecraft): the best-selling video game of all time, over 400 million copies sold; it passed one million purchases less than a month into its beta in early 2011, with no publisher and no ads beyond word of mouth. Wikipedia (Mojang Studios / Markus Persson): Microsoft agreed to buy Mojang for $2.5 billion in September 2014. Our math: 400 million seconds = about 12.7 years. Not financial advice.\n\n#shorts #minecraft #gaming #howtheymakemoney",
@@ -34,7 +34,17 @@
           "headset"
         ],
         "stat": "400 MILLION",
-        "stat_sub": "copies. sold by you?"
+        "stat_sub": "copies. sold by you?",
+        "hero": {
+          "skin": "light",
+          "hair": "short",
+          "hair_color": "3a2a1c",
+          "beard": "stubble",
+          "outfit": "hoodie",
+          "shirt": "f4a261",
+          "pants": "2c4a3a",
+          "shoes": "f4f4f4"
+        }
       }
     },
     {
@@ -49,7 +59,17 @@
         ],
         "stat": "#1 EVER",
         "stat_sub": "best-selling game",
-        "hud": "400M"
+        "hud": "400M",
+        "hero": {
+          "skin": "light",
+          "hair": "short",
+          "hair_color": "3a2a1c",
+          "beard": "stubble",
+          "outfit": "hoodie",
+          "shirt": "f4a261",
+          "pants": "2c4a3a",
+          "shoes": "f4f4f4"
+        }
       }
     },
     {
@@ -63,7 +83,17 @@
           "boxes"
         ],
         "stat": "12.7 YEARS",
-        "stat_sub": "one sale a second"
+        "stat_sub": "one sale a second",
+        "hero": {
+          "skin": "light",
+          "hair": "short",
+          "hair_color": "3a2a1c",
+          "beard": "stubble",
+          "outfit": "hoodie",
+          "shirt": "f4a261",
+          "pants": "2c4a3a",
+          "shoes": "f4f4f4"
+        }
       }
     },
     {
@@ -78,7 +108,17 @@
         ],
         "stat": "1 MILLION",
         "stat_sub": "sales by early 2011, no ads",
-        "hud": "1M"
+        "hud": "1M",
+        "hero": {
+          "skin": "light",
+          "hair": "short",
+          "hair_color": "3a2a1c",
+          "beard": "stubble",
+          "outfit": "hoodie",
+          "shirt": "f4a261",
+          "pants": "2c4a3a",
+          "shoes": "f4f4f4"
+        }
       }
     },
     {
@@ -94,7 +134,17 @@
         ],
         "stat": "$2.5 BILLION",
         "stat_sub": "Microsoft buys Mojang, 2014",
-        "hud": "$2.5B"
+        "hud": "$2.5B",
+        "hero": {
+          "skin": "light",
+          "hair": "short",
+          "hair_color": "3a2a1c",
+          "beard": "stubble",
+          "outfit": "hoodie",
+          "shirt": "f4a261",
+          "pants": "2c4a3a",
+          "shoes": "f4f4f4"
+        }
       }
     }
   ],
@@ -111,5 +161,27 @@
       "title": "Wikipedia: Markus Persson",
       "url": "https://en.wikipedia.org/wiki/Markus_Persson"
     }
-  ]
+  ],
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-071-whatif-minecraft",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-071-whatif-minecraft/071-whatif-minecraft.mp4",
+    "post_at": "2026-11-15T18:00:00-05:00",
+    "buffer_post": "6af8938ae86a5789a6bcfe83",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-14T16:59:54.313046+00:00",
+    "seconds": 30.36,
+    "eyes": {
+      "score": 4,
+      "problems": [
+        "The character model has no face/features, which looks low-effort and off-putting.",
+        "The number '$2.1 BILLION' appears on screen while the narration says '2.5 billion dollars', creating a direct contradiction.",
+        "The text '108 MILLION' appears on screen at the start, but the narration says '400 million'.",
+        "The character's movement and the environment look generic and cheap, failing to capture the 'Minecraft' aesthetic.",
+        "The final frame repeats the title text, which is redundant and feels like a filler ending."
+      ],
+      "best_fix": "Align all on-screen text and numbers with the narration and replace the faceless character model with a more expressive or stylized avatar that fits the Minecraft theme.",
+      "model": "gemini-3.1-flash-lite"
+    }
+  }
 }

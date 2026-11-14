@@ -3,7 +3,7 @@
   "slug": "delta",
   "company": "Delta",
   "theme": "clean_navy",
-  "status": "ready",
+  "status": "delivered",
   "title": "$8.2 Billion From a Card, Not a Seat",
   "description": "Delta got 8.2 billion dollars in 2025. Just from a credit card.\n\nSources:\n- Delta 2025 results: Amex remuneration $8.2B (AltexSoft): https://www.altexsoft.com/travel-industry-news/premium-strategy-works-deltas-2025-revenue-hits-63b/\n- Delta cards ~13% of Amex billed business (View from the Wing): https://viewfromthewing.com/amex-pays-delta-3-8-cents-per-dollar-charged-why-banks-pay-more-for-miles-than-you-do/\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
@@ -98,5 +98,26 @@
   "title_style": "number",
   "hook_style": "number",
   "cta": "Cash back or miles? Comment which you'd pick.",
-  "cta_question": "Cash back or miles?"
+  "cta_question": "Cash back or miles?",
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-003-delta",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-003-delta/003-delta.mp4",
+    "post_at": "2026-11-15T20:00:00-05:00",
+    "buffer_post": "6af893f0e5a113497a977abe",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-14T17:01:37.213244+00:00",
+    "seconds": 26.12,
+    "eyes": {
+      "score": 6,
+      "problems": [
+        "Contradictory numbers: Frame 3 shows $6.4B while the narration and other frames state $8.2B",
+        "Visual error: The pie chart in frame 6 is labeled '0%' despite the text below saying '13%'",
+        "Repetitive/Confusing flow: The phrase 'No fuel. No pilots. Just miles.' appears twice in quick succession",
+        "Visual clutter: The 'Subscribed' button overlay in the final sequence looks like a UI element rather than content"
+      ],
+      "best_fix": "Correct the $6.4B text to $8.2B and fix the pie chart label to read 13% instead of 0%.",
+      "model": "gemini-3.1-flash-lite"
+    }
+  }
 }

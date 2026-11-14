@@ -7,7 +7,7 @@
   "hook_style": "number",
   "title_style": "statement",
   "theme": "dark_neon",
-  "status": "ready",
+  "status": "delivered",
   "score": 88,
   "title": "HP Sold $10.9 Billion of Ink and Toner",
   "description": "HP sold 10.9 billion dollars of ink and toner. The printer was just the start.\n\nSources:\n- HP Inc.: Fiscal 2025 full year and fourth quarter results (PDF): https://s203.q4cdn.com/918857832/files/doc_financials/2025/q4/Q425_HP-Inc-Earnings-Press-Release.pdf\n- HP newsroom: HP Inc. reports fiscal 2025 results: https://www.hp.com/us-en/newsroom/press-releases/2025/hp-inc-reports-fiscal-2025-full-year-and-fourth-quarter-results.html\n- Wikipedia: Ink cartridge: https://en.wikipedia.org/wiki/Ink_cartridge\n\nHP Inc. fiscal 2025 (year ended Oct 31 2025), from its earnings release: Supplies net revenue $10,916 million; Commercial Printing $4,633 million and Consumer Printing $1,153 million (printer hardware, about $5.8 billion together); Printing segment earnings from operations $3,118 million vs Personal Systems (PCs) $2,054 million on $38,532 million of revenue. Wikipedia (Ink cartridge): a study by the UK consumer group Which? found some manufacturers' ink can cost more than champagne; printer makers use a razor-and-blades model. Not financial advice.\n\n#shorts #hp #printers #howtheymakemoney",
@@ -120,5 +120,27 @@
       "title": "Wikipedia: Ink cartridge",
       "url": "https://en.wikipedia.org/wiki/Ink_cartridge"
     }
-  ]
+  ],
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-062-how-hp-ink",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-062-how-hp-ink/062-how-hp-ink.mp4",
+    "post_at": "2026-11-15T16:30:00-05:00",
+    "buffer_post": "6af8932bb9a106584c59a516",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-14T16:58:19.529175+00:00",
+    "seconds": 27.75,
+    "eyes": {
+      "score": 4,
+      "problems": [
+        "The cover image fails to mention 'HP', making the topic unclear to a scrolling viewer.",
+        "The data in the charts is inconsistent and contradictory (e.g., one chart shows $1.8B for printing, another shows $3.1B).",
+        "The narration says 'Printing earned 3.1 billion' while the screen shows '$1.8B' for printing, creating a direct contradiction.",
+        "The visual style is inconsistent, switching between stock footage of people and abstract bar charts, which feels disjointed.",
+        "The 'SUBSCRIBED' button overlay in the final frames looks like a cheap, forced call-to-action that disrupts the flow."
+      ],
+      "best_fix": "Standardize all financial data to match the narration and ensure the company name (HP) is prominently displayed on the cover image.",
+      "model": "gemini-3.1-flash-lite"
+    }
+  }
 }
