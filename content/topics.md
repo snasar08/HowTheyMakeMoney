@@ -22,6 +22,9 @@ HP (printer ink), Airbnb, Marvel (editorial), Uber (whatif: one driver), Visa (w
 ## Used (Nov 14 2026 batch, part 1)
 Tom Brady, Erling Haaland, Neymar, Caitlin Clark, Rihanna (Fenty), Ninja, Kai Cenat, Dwayne Johnson, Lamine Yamal, Usain Bolt, Serena Williams (famous); Apple 1997 comeback (editorial); airline pilots (careers). Skipped: Jensen Huang (his Nov 2026 Wikipedia page describes a scandal and resignation, so not a feel-good story now), Jan Koum and Tiger Woods (pages dominated by politics / private life), lifeguards (BLS median $33,580, not a strong enough hook).
 
+## Used (Nov 14 2026 batch, part 2)
+Juan Soto, Faker, Roger Federer, Magic Johnson, Bad Bunny, Mohamed Salah (famous); Netflix vs Blockbuster, Nintendo playing cards (editorial); Pokémon cards, Switch stack (whatif); orthodontists (careers); Crocs (how). Researched and skipped: Victor Wembanyama and Simone Biles (no sourced money figures on their pages), Selena Gomez / Rare Beauty (too close to part 1's Rihanna makeup angle), Aaron Judge (too close to Mahomes' late-round pick story), Novak Djokovic (third tennis star in the queue; good story: trained in an empty swimming pool, $197M prize money, for a later batch), Monster Beverage (juice in 1935, Coca-Cola's $2.15B stake, $8.29B revenue 2025: energy drink for a teen audience, skipped for now), Mark Rober (no money figures).
+
 ## Ranked for the next batches (Oct 29 2026 — teen appeal × curiosity gap × surprising number)
 Write from the top. Casinos dropped (not kid-safe). Skip anything already used above.
 | # | Topic | Angle / hook seed | Est. score |

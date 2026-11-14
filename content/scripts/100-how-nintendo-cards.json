@@ -1,0 +1,165 @@
+{
+  "id": "100",
+  "slug": "how-nintendo-cards",
+  "company": "Nintendo",
+  "format": "how",
+  "visual_style": "editorial",
+  "hook_style": "surprise",
+  "title_style": "number",
+  "theme": "clean_navy",
+  "status": "ready",
+  "score": 90,
+  "title": "From Playing Cards to 1.59 Billion Games",
+  "tag": "Company backstory",
+  "description": "Nintendo started in 1889, making playing cards.\n\nSources:\n- Wikipedia: History of Nintendo: https://en.wikipedia.org/wiki/History_of_Nintendo\n- Nintendo IR: Dedicated Video Game Sales Units (as of September 30, 2026): https://www.nintendo.co.jp/ir/en/finance/hard_soft/index.html\n- Wikipedia: List of best-selling game consoles: https://en.wikipedia.org/wiki/List_of_best-selling_game_consoles\n\nFrom Wikipedia (History of Nintendo): Fusajiro Yamauchi founded Nintendo on September 23, 1889 in Kyoto to make hanafuda playing cards; in the 1960s it ran a taxi company in Kyoto and tried a food company with instant rice and a vacuum cleaner; in 1964 the playing card business reached saturation and the stock fell from 900 yen to 60 yen (a drop of about 93%, our math); the Game & Watch handheld line ran from 1980 to 1991. From Nintendo IR (as of September 30, 2026): Nintendo Switch 157.20 million units and 1,593.87 million software units; Nintendo Switch 2 26.35 million units. From Wikipedia (List of best-selling game consoles): the Switch is the second best-selling console of all time. Photos: Wikimedia Commons (credits below). Not financial advice.\n\n#shorts #nintendo #nintendoswitch #gaming #howtheymakemoney",
+  "tags": [
+    "nintendo",
+    "nintendoswitch",
+    "gaming",
+    "shorts"
+  ],
+  "images": {},
+  "hud_label": "SWITCH GAMES",
+  "loop": "So next time you pick up a controller, remember:",
+  "cta": "Switch or Game Boy? Comment your favorite.",
+  "cta_question": "Switch or Game Boy?",
+  "scenes": [
+    {
+      "narration": "Nintendo started in 1889, making playing cards.",
+      "visual": {
+        "type": "editorial",
+        "layout": "headline",
+        "headline": "It started with playing cards.",
+        "accent": "playing cards",
+        "label": "Kyoto, 1889"
+      }
+    },
+    {
+      "narration": "Today, people have bought 1.59 billion of its Switch games.",
+      "visual": {
+        "type": "editorial",
+        "layout": "stat",
+        "stat": "1.59B",
+        "stat_sub": "Switch games sold, Sept 2026",
+        "label": "The payoff",
+        "hud": "1.59B"
+      }
+    },
+    {
+      "narration": "But in between? A taxi company. Instant rice. Even a vacuum.",
+      "visual": {
+        "type": "editorial",
+        "layout": "headline",
+        "headline": "Taxis. Rice. A vacuum.",
+        "accent": "vacuum",
+        "label": "The 1960s"
+      }
+    },
+    {
+      "narration": "Then card sales crashed. Its stock lost over 90 percent.",
+      "visual": {
+        "type": "editorial",
+        "layout": "stat",
+        "stat": "¥60",
+        "stat_sub": "share price, down from ¥900",
+        "label": "The low point"
+      }
+    },
+    {
+      "narration": "So it bet on games instead. Pocket games, then home consoles.",
+      "visual": {
+        "type": "editorial",
+        "layout": "timeline",
+        "points": [
+          [
+            "1980",
+            "Game & Watch"
+          ],
+          [
+            "2017",
+            "Switch"
+          ],
+          [
+            "2025",
+            "Switch 2"
+          ]
+        ]
+      }
+    },
+    {
+      "narration": "Now the Switch is the second best-selling console ever.",
+      "visual": {
+        "type": "editorial",
+        "layout": "stat",
+        "stat": "157.2M",
+        "stat_sub": "Switch consoles, Sept 2026",
+        "label": "The scoreboard",
+        "hud": "157.2M"
+      }
+    }
+  ],
+  "photos": [
+    {
+      "photo": "File:Nintendo 1889.jpg",
+      "caption": "Nintendo's first shop, 1889"
+    },
+    {
+      "photo": "File:Nintendo headquarters in 1930s.jpg",
+      "caption": "Nintendo in the 1930s"
+    },
+    {
+      "photo": "File:Nintendo Hanafuda.jpg",
+      "caption": "Nintendo hanafuda cards"
+    },
+    {
+      "photo": "File:Hanafuda Koi-Koi Setup 1.jpg",
+      "caption": "A hanafuda game"
+    },
+    {
+      "photo": "File:Game&watch-donkey-kong-2.jpg",
+      "caption": "Game & Watch"
+    },
+    {
+      "photo": "File:Chef - Game&Watch - Nintendo.jpg",
+      "caption": "Game & Watch: Chef"
+    },
+    {
+      "photo": "File:Nintendo-Entertainment-System-NES-Console-FR.jpg",
+      "caption": "The NES"
+    },
+    {
+      "photo": "File:Game-Boy-Original.jpg",
+      "caption": "The original Game Boy"
+    },
+    {
+      "photo": "File:Nintendo-Switch-Console-Docked-wJoyConRB.jpg",
+      "caption": "Nintendo Switch"
+    },
+    {
+      "photo": "File:Nintendo Switch 2 in Docking Console.jpg",
+      "caption": "Nintendo Switch 2"
+    },
+    {
+      "photo": "File:Nintendo Headquarters in Kyoto.jpg",
+      "caption": "Nintendo headquarters, Kyoto"
+    },
+    {
+      "photo": "File:Headquarters of Nintendo Co., Ltd.jpg",
+      "caption": "Nintendo today"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: History of Nintendo",
+      "url": "https://en.wikipedia.org/wiki/History_of_Nintendo"
+    },
+    {
+      "title": "Nintendo IR: Dedicated Video Game Sales Units (as of September 30, 2026)",
+      "url": "https://www.nintendo.co.jp/ir/en/finance/hard_soft/index.html"
+    },
+    {
+      "title": "Wikipedia: List of best-selling game consoles",
+      "url": "https://en.wikipedia.org/wiki/List_of_best-selling_game_consoles"
+    }
+  ]
+}

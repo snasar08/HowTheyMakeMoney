@@ -1,0 +1,133 @@
+{
+  "id": "099",
+  "slug": "famous-bad-bunny",
+  "company": "Bad Bunny",
+  "format": "famous",
+  "visual_style": "lowpoly",
+  "hook_style": "surprise",
+  "title_style": "number",
+  "theme": "bold_bright",
+  "status": "ready",
+  "score": 89,
+  "title": "From Bagging Groceries to $232.5 Million",
+  "name_card": "Bad Bunny",
+  "name_sub": "singer",
+  "description": "A former grocery bagger's tour made 232.5 million dollars.\n\nSources:\n- Wikipedia: Bad Bunny: https://en.wikipedia.org/wiki/Bad_Bunny\n\nFrom Wikipedia (Bad Bunny): after high school he worked part-time as a bagger and cashier at a supermarket while creating music; his World's Hottest Tour became the highest-grossing tour by a Latin artist in history, earning US$232.5 million by October 4, 2022; he was the most-streamed artist of the year on Spotify four times between 2020 and 2025; a Moody's Analytics estimate expected his Puerto Rico residency to have a direct economic impact of $250 million; in 2019 he and Marc Anthony donated $1.6 million to rebuild Puerto Rican baseball fields. Not financial advice.\n\n#shorts #badbunny #music #famous #howtheymakemoney",
+  "tags": [
+    "badbunny",
+    "music",
+    "famous",
+    "shorts"
+  ],
+  "images": {},
+  "hud_label": "HIS TOUR",
+  "loop": "So next time you're bagging groceries, remember:",
+  "cta": "Concert or stream? Comment how you listen.",
+  "cta_question": "Concert or stream?",
+  "scenes": [
+    {
+      "narration": "A former grocery bagger's tour made 232.5 million dollars.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "stage",
+        "action": "cheer",
+        "crowd": 400,
+        "props": [
+          "mic"
+        ],
+        "stat": "$232.5 MILLION",
+        "stat_sub": "one tour, by October 2022"
+      }
+    },
+    {
+      "narration": "In Puerto Rico, he bagged groceries part-time. And made music.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "store",
+        "action": "carry",
+        "crowd": 0,
+        "props": [
+          "boxes"
+        ],
+        "stat": "PART-TIME",
+        "stat_sub": "bagger and cashier"
+      }
+    },
+    {
+      "narration": "Then Spotify's most-streamed artist. Four times.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "studio",
+        "action": "work",
+        "crowd": 0,
+        "props": [
+          "mic"
+        ],
+        "stat": "4 TIMES",
+        "stat_sub": "Spotify's most-streamed, 2020-2025"
+      }
+    },
+    {
+      "narration": "That 2022 tour? The biggest ever for a Latin artist.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "stage",
+        "action": "cheer",
+        "crowd": 400,
+        "props": [
+          "mic"
+        ],
+        "stat": "RECORD TOUR",
+        "stat_sub": "highest-grossing Latin tour",
+        "hud": "$232.5M"
+      }
+    },
+    {
+      "narration": "Then a home show run, expected to bring Puerto Rico 250 million.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "cheer",
+        "crowd": 100,
+        "props": [],
+        "stat": "$250 MILLION",
+        "stat_sub": "expected impact (Moody's)"
+      }
+    },
+    {
+      "narration": "And he gave 1.6 million dollars to rebuild baseball fields.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "field",
+        "action": "cheer",
+        "crowd": 60,
+        "props": [
+          "ball"
+        ],
+        "stat": "$1.6 MILLION",
+        "stat_sub": "to rebuild ballfields, 2019"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Bad Bunny",
+      "url": "https://en.wikipedia.org/wiki/Bad_Bunny"
+    }
+  ],
+  "hero": {
+    "skin": "c9956b",
+    "hair": "short",
+    "hair_color": "1c1612",
+    "beard": "none",
+    "outfit": "tee",
+    "shirt": "e85d9a",
+    "pants": "2a2a33",
+    "socks": "f4f4f4",
+    "shoes": "f4f4f4",
+    "extras": [
+      "glasses"
+    ],
+    "height": 1.0
+  }
+}

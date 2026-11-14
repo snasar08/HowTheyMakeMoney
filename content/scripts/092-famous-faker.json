@@ -1,0 +1,122 @@
+{
+  "id": "092",
+  "slug": "famous-faker",
+  "company": "Faker",
+  "format": "famous",
+  "visual_style": "lowpoly",
+  "hook_style": "surprise",
+  "title_style": "number",
+  "theme": "dark_neon",
+  "status": "ready",
+  "score": 90,
+  "title": "He Turned Down $20 Million a Year",
+  "name_card": "Faker",
+  "name_sub": "esports player",
+  "description": "He turned down 20 million dollars a year. To stay.\n\nSources:\n- Wikipedia: Faker (gamer): https://en.wikipedia.org/wiki/Faker_(gamer)\n\nFrom Wikipedia (Faker (gamer)): Lee Sang-hyeok, known as Faker, was signed by SK Telecom T1 in 2013 at 17 and won the LCK and the World Championship in his debut year; he is a six-time world champion (2013, 2015, 2016, 2023-2025) and the first player to win three consecutive Worlds titles; he re-signed in the 2015 offseason despite offers of nearly US$1,000,000 from Chinese companies (reported November 2014); before the 2022 season a Chinese team offered him US$20,000,000 per year, according to T1's CEO, and he stayed with T1; he became a part-owner of T1 in 2020, and his salary as of 2020 was estimated at nearly US$5 million. Not financial advice.\n\n#shorts #faker #leagueoflegends #esports #gaming #howtheymakemoney",
+  "tags": [
+    "faker",
+    "leagueoflegends",
+    "esports",
+    "gaming",
+    "shorts"
+  ],
+  "images": {},
+  "hud_label": "HIS PAY",
+  "loop": "So next time someone says loyalty doesn't pay, remember:",
+  "cta": "Stay or take the money? Comment your pick.",
+  "cta_question": "Stay or take the money?",
+  "scenes": [
+    {
+      "narration": "He turned down 20 million dollars a year. To stay.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "gaming",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "headset"
+        ],
+        "stat": "$20 MILLION",
+        "stat_sub": "a year, offered in 2022"
+      }
+    },
+    {
+      "narration": "He's Faker. Six-time League of Legends world champion.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "stage",
+        "action": "cheer",
+        "crowd": 300,
+        "props": [
+          "trophy"
+        ],
+        "stat": "6 WORLD TITLES",
+        "stat_sub": "League of Legends"
+      }
+    },
+    {
+      "narration": "He went pro at 17. Then won the world title that same year.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "gaming",
+        "action": "work",
+        "crowd": 0,
+        "props": [
+          "headset"
+        ],
+        "stat": "AGE 17",
+        "stat_sub": "signed and champion, 2013"
+      }
+    },
+    {
+      "narration": "Instead, he stayed for about 5 million a year. Plus part of the team.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "office",
+        "action": "cheer",
+        "crowd": 40,
+        "props": [
+          "cash"
+        ],
+        "stat": "PART-OWNER",
+        "stat_sub": "his team, since 2020",
+        "hud": "~$5M/YR"
+      }
+    },
+    {
+      "narration": "Then three world titles in a row. The first player ever.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "stage",
+        "action": "cheer",
+        "crowd": 400,
+        "props": [
+          "trophy"
+        ],
+        "stat": "3 IN A ROW",
+        "stat_sub": "2023, 2024, 2025"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Faker (gamer)",
+      "url": "https://en.wikipedia.org/wiki/Faker_(gamer)"
+    }
+  ],
+  "hero": {
+    "skin": "e6c09c",
+    "hair": "short",
+    "hair_color": "141414",
+    "beard": "none",
+    "outfit": "hoodie",
+    "shirt": "2b3a67",
+    "pants": "1f1f24",
+    "socks": "f4f4f4",
+    "shoes": "f4f4f4",
+    "extras": [
+      "glasses"
+    ],
+    "height": 0.98
+  }
+}

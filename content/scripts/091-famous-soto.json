@@ -1,0 +1,118 @@
+{
+  "id": "091",
+  "slug": "famous-soto",
+  "company": "Juan Soto",
+  "format": "famous",
+  "visual_style": "lowpoly",
+  "hook_style": "number",
+  "title_style": "number",
+  "theme": "bold_bright",
+  "status": "ready",
+  "score": 89,
+  "title": "From $1.5 Million at 16 to $765 Million",
+  "name_card": "Juan Soto",
+  "name_sub": "baseball player",
+  "description": "He signed for 765 million dollars. The biggest deal in sports.\n\nSources:\n- Wikipedia: Juan Soto: https://en.wikipedia.org/wiki/Juan_Soto\n\nFrom Wikipedia (Juan Soto): he signed with the Washington Nationals as an international free agent for a $1.5 million signing bonus in July 2015; on May 20, 2018 he became the youngest player in the major leagues at 19; Game 3 of the 2019 World Series fell on his 21st birthday, fulfilling a prediction his father had made about 10 years earlier, and the Nationals won the series; on December 11, 2024 he signed a 15-year, $765 million contract with the New York Mets, the largest contract in professional sports history, including a $75 million signing bonus. 75 / 1.5 = 50 is our math. Not financial advice.\n\n#shorts #juansoto #mlb #baseball #howtheymakemoney",
+  "tags": [
+    "juansoto",
+    "mlb",
+    "baseball",
+    "shorts"
+  ],
+  "images": {},
+  "hud_label": "HIS DEAL",
+  "loop": "So next time someone says you're too young, remember:",
+  "cta": "Baseball or basketball? Comment your pick.",
+  "cta_question": "Baseball or basketball?",
+  "scenes": [
+    {
+      "narration": "He signed for 765 million dollars. The biggest deal in sports.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "office",
+        "action": "cheer",
+        "crowd": 40,
+        "props": [
+          "check"
+        ],
+        "stat": "$765 MILLION",
+        "stat_sub": "15 years, December 2024"
+      }
+    },
+    {
+      "narration": "But at 16? Just a 1.5 million dollar bonus.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "field",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": "$1.5 MILLION",
+        "stat_sub": "his first bonus, July 2015"
+      }
+    },
+    {
+      "narration": "Then he became the youngest player in the majors.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "field",
+        "action": "run",
+        "crowd": 100,
+        "props": [],
+        "stat": "AGE 19",
+        "stat_sub": "MLB debut, May 2018"
+      }
+    },
+    {
+      "narration": "His dad predicted a World Series game on his birthday. It actually happened.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "field",
+        "action": "cheer",
+        "crowd": 400,
+        "props": [
+          "trophy"
+        ],
+        "stat": "WORLD SERIES",
+        "stat_sub": "on his 21st birthday, 2019"
+      }
+    },
+    {
+      "narration": "Then the Mets paid 75 million just to sign. Fifty times his first bonus.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "office",
+        "action": "cheer",
+        "crowd": 60,
+        "props": [
+          "check",
+          "cash"
+        ],
+        "stat": "$75 MILLION",
+        "stat_sub": "signing bonus alone",
+        "hud": "$765M"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Juan Soto",
+      "url": "https://en.wikipedia.org/wiki/Juan_Soto"
+    }
+  ],
+  "hero": {
+    "skin": "8d5a3b",
+    "hair": "short",
+    "hair_color": "161210",
+    "beard": "none",
+    "outfit": "kit",
+    "shirt": "1f3a93",
+    "pants": "f4f4f4",
+    "socks": "1f3a93",
+    "shoes": "1a1a1a",
+    "extras": [
+      "cap"
+    ],
+    "height": 1.02
+  }
+}

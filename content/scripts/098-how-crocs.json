@@ -1,0 +1,97 @@
+{
+  "id": "098",
+  "slug": "how-crocs",
+  "company": "Crocs",
+  "format": "how",
+  "visual_style": "charts3d",
+  "hook_style": "surprise",
+  "title_style": "number",
+  "theme": "bold_bright",
+  "status": "ready",
+  "score": 86,
+  "title": "From '50 Worst Inventions' to $4.1 Billion",
+  "description": "Time magazine called Crocs one of the 50 worst inventions.\n\nSources:\n- Wikipedia: Crocs: https://en.wikipedia.org/wiki/Crocs\n\nFrom Wikipedia (Crocs): founded in 2002; its first model, the Beach, was unveiled at the Fort Lauderdale Boat Show in 2002 and all 200 pairs sold out; during the 2008 financial crisis the stock dropped as low as $0.79 before rebounding; Time magazine listed Crocs among the world's \"50 Worst Inventions\" in 2010; Crocs had sold 300 million pairs by 2017; revenue was US$4.102 billion in 2024. Not financial advice.\n\n#shorts #crocs #shoes #business #howtheymakemoney",
+  "tags": [
+    "crocs",
+    "shoes",
+    "business",
+    "shorts"
+  ],
+  "images": {
+    "hook": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: a cheerful adult in bright foam clogs, plain lime green with round holes, striking a proud pose on a pastel studio floor while a friend laughs and points, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261114_205639_9ca3899b-6fe8-4e5d-9519-6df0cf4bf5b5.png"
+    },
+    "mid": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: a busy outdoor boat show booth on a sunny marina dock, a vendor handing a pair of plain colorful foam clogs with round holes to a smiling customer, boats in the background, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261114_205639_18e073cb-23de-429a-81f5-ad5d8570b9af.png"
+    },
+    "broll1": {
+      "prompt": "3D rendered CGI scene, smooth stylized realistic look, soft studio lighting, shallow depth of field, vertical: a tall wall of plain foam clogs with round holes in every bright color in a modern shoe store, neat rows, no people, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261114_205639_1142c37f-5790-4e9f-a10e-9108164dd9fa.png"
+    },
+    "broll2": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: a group of adult friends wearing plain colorful foam clogs with round holes, laughing together on a sunny boardwalk, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261114_205638_28684cfa-c7b2-4bcd-afa4-90d7be16c466.png"
+    }
+  },
+  "loop": "So next time someone laughs at your shoes, remember:",
+  "cta": "Crocs or sneakers? Comment your pick.",
+  "cta_question": "Crocs or sneakers?",
+  "scenes": [
+    {
+      "narration": "Time magazine called Crocs one of the 50 worst inventions.",
+      "visual": {
+        "type": "image",
+        "image": "hook",
+        "overlay": "WORST INVENTION?",
+        "overlay_sub": "Time magazine, 2010"
+      }
+    },
+    {
+      "narration": "Yet the company now sells about 4.1 billion dollars a year.",
+      "visual": {
+        "type": "stat",
+        "value": 4.1,
+        "prefix": "$",
+        "suffix": "B",
+        "decimals": 1,
+        "label": "Crocs, Inc. revenue, 2024"
+      }
+    },
+    {
+      "narration": "It began at a boat show. All 200 pairs sold out.",
+      "visual": {
+        "type": "image",
+        "image": "mid",
+        "overlay": "200 PAIRS",
+        "overlay_sub": "sold out, 2002 boat show"
+      }
+    },
+    {
+      "narration": "Then a crash hit. The stock fell under a dollar.",
+      "visual": {
+        "type": "stat",
+        "value": 0.79,
+        "prefix": "$",
+        "suffix": "",
+        "decimals": 2,
+        "label": "Crocs stock low, 2008 crisis"
+      }
+    },
+    {
+      "narration": "But people kept buying. 300 million pairs.",
+      "visual": {
+        "type": "text",
+        "text": "300 million pairs",
+        "sub": "sold by 2017"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Crocs",
+      "url": "https://en.wikipedia.org/wiki/Crocs"
+    }
+  ]
+}

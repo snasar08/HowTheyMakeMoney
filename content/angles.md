@@ -89,3 +89,15 @@ clearly different angle, new figures, a new hook, new B-roll and a different sce
 088 | Apple (editorial, comeback) | worth $2.46B in 1997, rival Microsoft's $150M, then iMac/iPod/iPhone to $4T | $2.46B market cap (Aug 1997), $150M Microsoft, ~800,000 iMacs in 5 months, $1T (2018), $4T+ (Oct 2025)
 089 | Airline pilots (careers) | pilot pay median and range | 103,560 jobs, $232,140 median, $106,710 / $463,830 (May 2025)
 090 | Serena Williams (famous) | $12M deal right after high school | $12M Puma (1999), $40M Nike (2004), 23 majors, sponsor's largest building named after her
+091 | Juan Soto (famous) | $1.5M bonus at 16 to the biggest contract in sports | $1.5M (July 2015), youngest in MLB at 19 (2018), World Series on his 21st birthday (2019), $765M / 15 years with $75M signing bonus (Dec 2024), 50x (our math)
+092 | Faker (famous) | turned down $20M a year to stay with his team | $20M/yr offer (2022), signed at 17 and world champion 2013, ~$1M offers (2014), ~$5M salary + part-owner (2020), 6 world titles, 3 in a row (2023-25)
+093 | Netflix (editorial, rival's mistake) | Blockbuster passed on buying Netflix for $50M | $50M (2000), 9,094 Blockbuster stores (2004), monthly plan 1999, streaming 2007, Blockbuster bankrupt 2010, 325M paid memberships (2026), one store left
+094 | Pokémon cards (whatif) | opening every card ever made, one a second | 85B+ cards (Mar 2026), ~2,693 years, 86,400/day, Pikachu Illustrator $5.275M (2021) -> $16.5M (Feb 2026)
+095 | Roger Federer (famous) | ball boy at his hometown event to $1.1B | ball boy 1992-93, Wimbledon 2003 at 21, $130.6M prize money, reported $300M / 10 years clothing deal (2018), Forbes No. 1 2020, $1.1B (Forbes Aug 2026)
+096 | Orthodontists (careers) | braces pay more than flying planes | $289,140 median, $99,850 / $416,000, 6,210 jobs, dentists $170,950, pilots $232,140 (May 2025)
+097 | Magic Johnson (famous) | 16 championships, ten as an owner | $25M / 25 years (1981), 4% Lakers for $10M, Dodgers $2B (2012), $240M NFL stake (2023), $1.6B (Forbes 2026)
+098 | Crocs | "50 worst inventions" to a $4.1B company | Time 2010 list, 200 pairs at 2002 boat show, stock low $0.79 (2008), 300M pairs by 2017, $4.102B revenue (2024)
+099 | Bad Bunny (famous) | grocery bagger to the biggest Latin tour ever | $232.5M tour (Oct 2022), Spotify most-streamed 4 times (2020-25), $250M expected residency impact (Moody's), $1.6M ballfields (2019)
+100 | Nintendo (editorial, almost broke) | playing cards in 1889, taxis and instant rice, stock crash, then games | 1889, taxi/rice/vacuum (1960s), ¥900 -> ¥60 (1964), Game & Watch 1980, 1,593.87M Switch games, 157.2M Switch (Sept 2026)
+101 | Mohamed Salah (famous) | three-hour trips to practice to a £155M offer he didn't take | 3 hours at 14, £11M Chelsea (2014) then loans, £36.9M club record (2017), 32 goals (record then), £155M two-year offer (2023)
+102 | Nintendo Switch (whatif) | stacking every Switch ever sold | 157.2M units (Sept 2026), 14 mm thick, ~2,201 km stack (~5x ISS altitude 413-422 km), ~27,196 km end to end, 2.8M behind PS2's 160M

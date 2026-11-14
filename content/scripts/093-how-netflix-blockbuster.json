@@ -1,0 +1,170 @@
+{
+  "id": "093",
+  "slug": "how-netflix-blockbuster",
+  "company": "Netflix",
+  "format": "how",
+  "visual_style": "editorial",
+  "hook_style": "number",
+  "title_style": "number",
+  "theme": "dark_neon",
+  "status": "ready",
+  "score": 90,
+  "title": "Blockbuster Passed on Netflix for $50 Million",
+  "tag": "Company backstory",
+  "description": "In 2000, blockbuster could have bought Netflix for 50 million dollars.\n\nSources:\n- Wikipedia: Netflix: https://en.wikipedia.org/wiki/Netflix\n- Wikipedia: Blockbuster LLC: https://en.wikipedia.org/wiki/Blockbuster_LLC\n\nFrom Wikipedia (Blockbuster LLC): in 2000 Blockbuster turned down a chance to buy the fledgling Netflix for $50 million; at its peak in 2004 it operated 9,094 stores; it filed for bankruptcy protection in 2010; one franchised store remains, in Bend, Oregon. From Wikipedia (Netflix): Netflix was founded by Marc Randolph and Reed Hastings as a DVD rental service on August 29, 1997; it introduced a monthly subscription in September 1999; in 2005 it shipped 1 million DVDs a day; streaming launched January 16, 2007; it has 325 million paid memberships as of 2026. Photos: Wikimedia Commons (credits below). Not financial advice.\n\n#shorts #netflix #blockbuster #streaming #howtheymakemoney",
+  "tags": [
+    "netflix",
+    "blockbuster",
+    "streaming",
+    "shorts"
+  ],
+  "images": {},
+  "hud_label": "NETFLIX",
+  "loop": "So next time you press play, remember:",
+  "cta": "Streaming or a movie store? Comment your pick.",
+  "cta_question": "Streaming or a movie store?",
+  "scenes": [
+    {
+      "narration": "Blockbuster could have bought Netflix for 50 million dollars.",
+      "visual": {
+        "type": "editorial",
+        "layout": "stat",
+        "stat": "$50M",
+        "stat_sub": "Netflix's price, 2000",
+        "label": "The offer",
+        "hud": "$50M"
+      }
+    },
+    {
+      "narration": "It passed. It had over 9,000 stores.",
+      "visual": {
+        "type": "editorial",
+        "layout": "stat",
+        "stat": "9,094",
+        "stat_sub": "Blockbuster stores, 2004",
+        "label": "The giant"
+      }
+    },
+    {
+      "narration": "Netflix just mailed DVDs. Two founders and a red envelope.",
+      "visual": {
+        "type": "editorial",
+        "layout": "cards",
+        "label": "The founders, 1997",
+        "people": [
+          {
+            "name": "Reed Hastings",
+            "photo": "File:Reed Hastings 2008 A.jpg",
+            "role": "Netflix co-founder"
+          },
+          {
+            "name": "Marc Randolph",
+            "photo": "File:Marc Randolph by Gage Skidmore.jpg",
+            "role": "Netflix co-founder"
+          }
+        ]
+      }
+    },
+    {
+      "narration": "But it charged one monthly price. Then it started streaming.",
+      "visual": {
+        "type": "editorial",
+        "layout": "headline",
+        "headline": "One monthly price.",
+        "accent": "monthly"
+      }
+    },
+    {
+      "narration": "Blockbuster? It went bankrupt.",
+      "visual": {
+        "type": "editorial",
+        "layout": "timeline",
+        "points": [
+          [
+            "1999",
+            "monthly plan"
+          ],
+          [
+            "2007",
+            "streaming"
+          ],
+          [
+            "2010",
+            "Blockbuster bankrupt"
+          ]
+        ]
+      }
+    },
+    {
+      "narration": "Today, Netflix has 325 million paid members. Blockbuster has only one store.",
+      "visual": {
+        "type": "editorial",
+        "layout": "stat",
+        "stat": "325M",
+        "stat_sub": "Netflix paid memberships, 2026",
+        "label": "The scoreboard",
+        "hud": "325M"
+      }
+    }
+  ],
+  "photos": [
+    {
+      "photo": "File:Reed Hastings 2010 A.jpg",
+      "caption": "Reed Hastings, 2010"
+    },
+    {
+      "photo": "File:Marc Randolph (34127210976).jpg",
+      "caption": "Marc Randolph"
+    },
+    {
+      "photo": "File:Video rental shop - The News Tribune (1985).jpg",
+      "caption": "A video rental shop, 1985"
+    },
+    {
+      "photo": "File:Anchorage Blockbuster video store (41894010352).jpg",
+      "caption": "A Blockbuster store"
+    },
+    {
+      "photo": "File:Blockbuster Video store Rockhampton.jpg",
+      "caption": "Blockbuster, Australia"
+    },
+    {
+      "photo": "File:Video shop in Iowa, USA -- 2006-11.jpg",
+      "caption": "A video shop, 2006"
+    },
+    {
+      "photo": "File:Netflix headquarters.jpg",
+      "caption": "Netflix headquarters"
+    },
+    {
+      "photo": "File:100 Winchester Circle.jpg",
+      "caption": "Netflix offices, Los Gatos"
+    },
+    {
+      "photo": "File:Blockbuster Store Closing, Ypsilanti Township, Michigan.JPG",
+      "caption": "A store closing, Michigan"
+    },
+    {
+      "photo": "File:Blockbuster Video closing sale -01- (9719273998).jpg",
+      "caption": "Closing sale"
+    },
+    {
+      "photo": "File:The Last Blockbuster storefront.jpg",
+      "caption": "The last Blockbuster, Bend, Oregon"
+    },
+    {
+      "photo": "File:Exterior of last Blockbuster Video.jpg",
+      "caption": "The last one left"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Netflix",
+      "url": "https://en.wikipedia.org/wiki/Netflix"
+    },
+    {
+      "title": "Wikipedia: Blockbuster LLC",
+      "url": "https://en.wikipedia.org/wiki/Blockbuster_LLC"
+    }
+  ]
+}

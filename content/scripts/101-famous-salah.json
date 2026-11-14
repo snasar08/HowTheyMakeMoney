@@ -1,0 +1,120 @@
+{
+  "id": "101",
+  "slug": "famous-salah",
+  "company": "Mohamed Salah",
+  "format": "famous",
+  "visual_style": "lowpoly",
+  "hook_style": "surprise",
+  "title_style": "number",
+  "theme": "dark_neon",
+  "status": "ready",
+  "score": 87,
+  "title": "A 3-Hour Trip to Practice, Then £155 Million",
+  "name_card": "Mohamed Salah",
+  "name_sub": "soccer player",
+  "description": "He was offered 155 million pounds for two years. He stayed.\n\nSources:\n- Wikipedia: Mohamed Salah: https://en.wikipedia.org/wiki/Mohamed_Salah\n\nFrom Wikipedia (Mohamed Salah): born in Nagrig, Egypt, he joined the Al Mokawloon youth team at 14 and often missed school to make the three-hour journey to training; Chelsea signed him in January 2014 for a reported £11 million, and limited game time led to loans to Fiorentina and Roma; Liverpool signed him in 2017 for a club-record fee of about £36.9 million; in his first season (2017-18) he set the then-record for most Premier League goals in a 38-game season (32); in the 2023-24 preseason he received a two-year contract offer worth £155m from Saudi club Al-Ittihad, and he stayed at Liverpool. Not financial advice.\n\n#shorts #mohamedsalah #soccer #football #famous #howtheymakemoney",
+  "tags": [
+    "mohamedsalah",
+    "soccer",
+    "football",
+    "famous",
+    "shorts"
+  ],
+  "images": {},
+  "hud_label": "HIS FEES",
+  "loop": "So next time practice feels far away, remember:",
+  "cta": "Liverpool or Chelsea? Comment your pick.",
+  "cta_question": "Liverpool or Chelsea?",
+  "scenes": [
+    {
+      "narration": "He was offered 155 million pounds for two years. He stayed.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "office",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "check"
+        ],
+        "stat": "£155 MILLION",
+        "stat_sub": "a two-year offer, 2023"
+      }
+    },
+    {
+      "narration": "As a kid, he missed school just to get to practice. Three hours away.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "run",
+        "crowd": 0,
+        "props": [
+          "ball"
+        ],
+        "stat": "3 HOURS",
+        "stat_sub": "to get to training, age 14"
+      }
+    },
+    {
+      "narration": "Then a big club bought him. But barely played him.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "pitch",
+        "action": "idle",
+        "crowd": 60,
+        "props": [
+          "ball"
+        ],
+        "stat": "£11 MILLION",
+        "stat_sub": "Chelsea, 2014"
+      }
+    },
+    {
+      "narration": "Then Liverpool paid a club record. 36.9 million.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "office",
+        "action": "cheer",
+        "crowd": 40,
+        "props": [
+          "check"
+        ],
+        "stat": "£36.9 MILLION",
+        "stat_sub": "club record, 2017",
+        "hud": "£36.9M"
+      }
+    },
+    {
+      "narration": "His first season? 32 goals. A record back then.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "pitch",
+        "action": "cheer",
+        "crowd": 400,
+        "props": [
+          "ball",
+          "trophy"
+        ],
+        "stat": "32 GOALS",
+        "stat_sub": "a 38-game record in 2018"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Mohamed Salah",
+      "url": "https://en.wikipedia.org/wiki/Mohamed_Salah"
+    }
+  ],
+  "hero": {
+    "skin": "a0704a",
+    "hair": "curly",
+    "hair_color": "1a140f",
+    "beard": "full",
+    "outfit": "kit",
+    "shirt": "f4f4f4",
+    "pants": "1f3a5f",
+    "socks": "f4f4f4",
+    "shoes": "f2c230",
+    "height": 0.98
+  }
+}

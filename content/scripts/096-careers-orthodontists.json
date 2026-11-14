@@ -1,0 +1,129 @@
+{
+  "id": "096",
+  "slug": "careers-orthodontists",
+  "company": "Orthodontists",
+  "format": "careers",
+  "visual_style": "charts3d",
+  "hook_style": "number",
+  "title_style": "number",
+  "theme": "clean_navy",
+  "status": "ready",
+  "score": 87,
+  "title": "$289,140 a Year to Straighten Teeth",
+  "description": "Orthodontists make 289,140 dollars a year. That's the median.\n\nSources:\n- BLS OEWS via api.bls.gov: Orthodontists 29-1023, annual median wage, May 2025: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000029102313\n- BLS OEWS via api.bls.gov: Orthodontists, 10th percentile: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000029102311\n- BLS OEWS via api.bls.gov: Orthodontists, 90th percentile: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000029102315\n- BLS OEWS via api.bls.gov: Orthodontists, employment: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000029102301\n- BLS OEWS via api.bls.gov: Dentists, general 29-1021, annual median wage: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000029102113\n- BLS OEWS via api.bls.gov: Airline pilots 53-2011, annual median wage: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000053201113\n\nFrom the US Bureau of Labor Statistics, Occupational Employment and Wage Statistics, May 2025 (api.bls.gov): orthodontists' annual median wage $289,140, 10th percentile $99,850, 90th percentile $416,000, employment 6,210; general dentists' median $170,950; airline pilots' median $232,140. Not financial advice.\n\n#shorts #orthodontist #braces #careers #howtheymakemoney",
+  "tags": [
+    "orthodontist",
+    "braces",
+    "careers",
+    "shorts"
+  ],
+  "images": {
+    "hook": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: a friendly adult orthodontist in a light blue coat smiling beside a modern dental chair in a bright clean clinic, holding a small tooth model, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261114_205613_68b565bc-fa75-4c02-bb64-c9dc7c8cf3f4.png"
+    },
+    "mid": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: a young adult dental student studying a large tooth and jaw model at a desk in a bright classroom, with books and a laptop, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261114_205614_8ee69dc3-179f-4368-8afa-60b630a17263.png"
+    },
+    "broll1": {
+      "prompt": "3D rendered CGI scene, smooth stylized realistic look, soft studio lighting, shallow depth of field, vertical: a close-up of a plastic smile model with shiny metal braces on white teeth, on a clean white tray beside small dental tools, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261114_205614_87d3e026-2720-4e8b-a6bf-6fba2d0781e1.png"
+    },
+    "broll2": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: a smiling adult patient in a dental chair holding a hand mirror and admiring straight teeth while a cheerful orthodontist stands beside them, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261114_205613_aaa9c48d-b66f-422c-b214-b4c12deeedba.png"
+    }
+  },
+  "loop": "So next time you see braces, remember:",
+  "cta": "Orthodontist or pilot? Comment which job you'd pick.",
+  "cta_question": "Orthodontist or pilot?",
+  "scenes": [
+    {
+      "narration": "Orthodontists make 289,140 dollars a year. That's the median.",
+      "visual": {
+        "type": "image",
+        "image": "hook",
+        "overlay": "$289,140",
+        "overlay_sub": "a year, to straighten teeth"
+      }
+    },
+    {
+      "narration": "That's more than airline pilots. And way more than dentists.",
+      "visual": {
+        "type": "bars",
+        "items": [
+          {
+            "label": "Orthodontists",
+            "value": 289.1
+          },
+          {
+            "label": "Pilots",
+            "value": 232.1
+          },
+          {
+            "label": "Dentists",
+            "value": 171.0
+          }
+        ],
+        "prefix": "$",
+        "suffix": "K",
+        "title": "Median pay, May 2025"
+      }
+    },
+    {
+      "narration": "The top ten percent? Around 416,000 a year.",
+      "visual": {
+        "type": "stat",
+        "value": 416000,
+        "prefix": "$",
+        "suffix": "",
+        "decimals": 0,
+        "label": "Top 10% of orthodontists, May 2025"
+      }
+    },
+    {
+      "narration": "Even the bottom tenth earn almost 100,000.",
+      "visual": {
+        "type": "image",
+        "image": "mid",
+        "overlay": "$99,850",
+        "overlay_sub": "the bottom 10% line"
+      }
+    },
+    {
+      "narration": "But it's a tiny club. Just 6,210 in the whole US.",
+      "visual": {
+        "type": "text",
+        "text": "6,210 jobs",
+        "sub": "orthodontists, May 2025"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "BLS OEWS via api.bls.gov: Orthodontists 29-1023, annual median wage, May 2025",
+      "url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000029102313"
+    },
+    {
+      "title": "BLS OEWS via api.bls.gov: Orthodontists, 10th percentile",
+      "url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000029102311"
+    },
+    {
+      "title": "BLS OEWS via api.bls.gov: Orthodontists, 90th percentile",
+      "url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000029102315"
+    },
+    {
+      "title": "BLS OEWS via api.bls.gov: Orthodontists, employment",
+      "url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000029102301"
+    },
+    {
+      "title": "BLS OEWS via api.bls.gov: Dentists, general 29-1021, annual median wage",
+      "url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000029102113"
+    },
+    {
+      "title": "BLS OEWS via api.bls.gov: Airline pilots 53-2011, annual median wage",
+      "url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000053201113"
+    }
+  ]
+}
