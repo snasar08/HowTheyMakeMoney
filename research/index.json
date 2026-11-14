@@ -349,5 +349,203 @@
     "status": 200,
     "final_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN00000000000033909201",
     "content_type": "application/json"
+  },
+  "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000053201113": {
+    "file": "pages/5ca5feb7a4b6.txt",
+    "fetched_at": "2026-11-14T17:49:27.638314+00:00",
+    "ok": true,
+    "chars": 375,
+    "status": 200,
+    "final_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000053201113",
+    "content_type": "application/json"
+  },
+  "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000053201111": {
+    "file": "pages/31c18baf2d8a.txt",
+    "fetched_at": "2026-11-14T17:49:28.319748+00:00",
+    "ok": true,
+    "chars": 375,
+    "status": 200,
+    "final_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000053201111",
+    "content_type": "application/json"
+  },
+  "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000053201115": {
+    "file": "pages/c28ba81f1a77.txt",
+    "fetched_at": "2026-11-14T17:49:28.744917+00:00",
+    "ok": true,
+    "chars": 375,
+    "status": 200,
+    "final_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000053201115",
+    "content_type": "application/json"
+  },
+  "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000053201101": {
+    "file": "pages/54a56f45b5d6.txt",
+    "fetched_at": "2026-11-14T17:49:29.155315+00:00",
+    "ok": true,
+    "chars": 375,
+    "status": 200,
+    "final_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000053201101",
+    "content_type": "application/json"
+  },
+  "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000033909213": {
+    "file": "pages/413361728806.txt",
+    "fetched_at": "2026-11-14T17:49:29.630367+00:00",
+    "ok": true,
+    "chars": 374,
+    "status": 200,
+    "final_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000033909213",
+    "content_type": "application/json"
+  },
+  "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000033909211": {
+    "file": "pages/5156f7d0090d.txt",
+    "fetched_at": "2026-11-14T17:49:30.068107+00:00",
+    "ok": true,
+    "chars": 374,
+    "status": 200,
+    "final_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000033909211",
+    "content_type": "application/json"
+  },
+  "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000033909215": {
+    "file": "pages/e85792346e60.txt",
+    "fetched_at": "2026-11-14T17:49:30.466930+00:00",
+    "ok": true,
+    "chars": 374,
+    "status": 200,
+    "final_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000033909215",
+    "content_type": "application/json"
+  },
+  "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000033909201": {
+    "file": "pages/35a2a2d06e66.txt",
+    "fetched_at": "2026-11-14T17:49:30.882761+00:00",
+    "ok": true,
+    "chars": 375,
+    "status": 200,
+    "final_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000033909201",
+    "content_type": "application/json"
+  },
+  "https://en.wikipedia.org/wiki/Apple_Inc.": {
+    "file": "pages/06a6c0e9ea4b.txt",
+    "fetched_at": "2026-11-14T17:49:31.291931+00:00",
+    "ok": true,
+    "chars": 196555,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Apple_Inc.",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/IMac_G3": {
+    "file": "pages/fcfb479482b5.txt",
+    "fetched_at": "2026-11-14T17:49:31.979683+00:00",
+    "ok": true,
+    "chars": 50000,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/IMac_G3",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=20&prop=imageinfo&iiprop=size|extmetadata&iiextmetadatafilter=LicenseShortName|Artist&gsrsearch=Steve+Jobs": {
+    "file": "pages/7ca40b65ea9c.txt",
+    "fetched_at": "2026-11-14T17:49:32.429793+00:00",
+    "ok": true,
+    "chars": 7273,
+    "status": 200,
+    "final_url": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=20&prop=imageinfo&iiprop=size|extmetadata&iiextmetadatafilter=LicenseShortName|Artist&gsrsearch=Steve+Jobs",
+    "content_type": "application/json; charset=utf-8"
+  },
+  "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=20&prop=imageinfo&iiprop=size|extmetadata&iiextmetadatafilter=LicenseShortName|Artist&gsrsearch=Steve+Jobs+1990s": {
+    "file": "pages/f1bc66df246c.txt",
+    "fetched_at": "2026-11-14T17:49:33.204206+00:00",
+    "ok": true,
+    "chars": 8911,
+    "status": 200,
+    "final_url": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=20&prop=imageinfo&iiprop=size|extmetadata&iiextmetadatafilter=LicenseShortName|Artist&gsrsearch=Steve+Jobs+1990s",
+    "content_type": "application/json; charset=utf-8"
+  },
+  "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=20&prop=imageinfo&iiprop=size|extmetadata&iiextmetadatafilter=LicenseShortName|Artist&gsrsearch=Bill+Gates": {
+    "file": "pages/d1f59acac3ae.txt",
+    "fetched_at": "2026-11-14T17:49:33.781113+00:00",
+    "ok": true,
+    "chars": 7302,
+    "status": 200,
+    "final_url": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=20&prop=imageinfo&iiprop=size|extmetadata&iiextmetadatafilter=LicenseShortName|Artist&gsrsearch=Bill+Gates",
+    "content_type": "application/json; charset=utf-8"
+  },
+  "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=20&prop=imageinfo&iiprop=size|extmetadata&iiextmetadatafilter=LicenseShortName|Artist&gsrsearch=iMac+G3": {
+    "file": "pages/0453b6b877df.txt",
+    "fetched_at": "2026-11-14T17:49:34.534139+00:00",
+    "ok": true,
+    "chars": 7534,
+    "status": 200,
+    "final_url": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=20&prop=imageinfo&iiprop=size|extmetadata&iiextmetadatafilter=LicenseShortName|Artist&gsrsearch=iMac+G3",
+    "content_type": "application/json; charset=utf-8"
+  },
+  "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=20&prop=imageinfo&iiprop=size|extmetadata&iiextmetadatafilter=LicenseShortName|Artist&gsrsearch=iPod+classic": {
+    "file": "pages/6938bd94f3f9.txt",
+    "fetched_at": "2026-11-14T17:49:35.087636+00:00",
+    "ok": true,
+    "chars": 7161,
+    "status": 200,
+    "final_url": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=20&prop=imageinfo&iiprop=size|extmetadata&iiextmetadatafilter=LicenseShortName|Artist&gsrsearch=iPod+classic",
+    "content_type": "application/json; charset=utf-8"
+  },
+  "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=20&prop=imageinfo&iiprop=size|extmetadata&iiextmetadatafilter=LicenseShortName|Artist&gsrsearch=iPhone+2007": {
+    "file": "pages/654dd3cda43f.txt",
+    "fetched_at": "2026-11-14T17:49:35.734765+00:00",
+    "ok": true,
+    "chars": 7526,
+    "status": 200,
+    "final_url": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=20&prop=imageinfo&iiprop=size|extmetadata&iiextmetadatafilter=LicenseShortName|Artist&gsrsearch=iPhone+2007",
+    "content_type": "application/json; charset=utf-8"
+  },
+  "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=20&prop=imageinfo&iiprop=size|extmetadata&iiextmetadatafilter=LicenseShortName|Artist&gsrsearch=Apple+Park": {
+    "file": "pages/abbd03e30c29.txt",
+    "fetched_at": "2026-11-14T17:49:36.494514+00:00",
+    "ok": true,
+    "chars": 7083,
+    "status": 200,
+    "final_url": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=20&prop=imageinfo&iiprop=size|extmetadata&iiextmetadatafilter=LicenseShortName|Artist&gsrsearch=Apple+Park",
+    "content_type": "application/json; charset=utf-8"
+  },
+  "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=20&prop=imageinfo&iiprop=size|extmetadata&iiextmetadatafilter=LicenseShortName|Artist&gsrsearch=Apple+Store+Fifth+Avenue": {
+    "file": "pages/74f0692b4546.txt",
+    "fetched_at": "2026-11-14T17:49:37.234206+00:00",
+    "ok": true,
+    "chars": 7240,
+    "status": 200,
+    "final_url": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=20&prop=imageinfo&iiprop=size|extmetadata&iiextmetadatafilter=LicenseShortName|Artist&gsrsearch=Apple+Store+Fifth+Avenue",
+    "content_type": "application/json; charset=utf-8"
+  },
+  "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=20&prop=imageinfo&iiprop=size|extmetadata&iiextmetadatafilter=LicenseShortName|Artist&gsrsearch=Tim+Cook": {
+    "file": "pages/a32a056781d6.txt",
+    "fetched_at": "2026-11-14T17:49:37.945483+00:00",
+    "ok": true,
+    "chars": 7898,
+    "status": 200,
+    "final_url": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=20&prop=imageinfo&iiprop=size|extmetadata&iiextmetadatafilter=LicenseShortName|Artist&gsrsearch=Tim+Cook",
+    "content_type": "application/json; charset=utf-8"
+  },
+  "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=20&prop=imageinfo&iiprop=size|extmetadata&iiextmetadatafilter=LicenseShortName|Artist&gsrsearch=Steve+Wozniak": {
+    "file": "pages/6b1e078067e2.txt",
+    "fetched_at": "2026-11-14T17:49:38.669986+00:00",
+    "ok": true,
+    "chars": 7303,
+    "status": 200,
+    "final_url": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=20&prop=imageinfo&iiprop=size|extmetadata&iiextmetadatafilter=LicenseShortName|Artist&gsrsearch=Steve+Wozniak",
+    "content_type": "application/json; charset=utf-8"
+  },
+  "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=20&prop=imageinfo&iiprop=size|extmetadata&iiextmetadatafilter=LicenseShortName|Artist&gsrsearch=Macintosh+128K": {
+    "file": "pages/ba9428079571.txt",
+    "fetched_at": "2026-11-14T17:49:39.357783+00:00",
+    "ok": true,
+    "chars": 7598,
+    "status": 200,
+    "final_url": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=20&prop=imageinfo&iiprop=size|extmetadata&iiextmetadatafilter=LicenseShortName|Artist&gsrsearch=Macintosh+128K",
+    "content_type": "application/json; charset=utf-8"
+  },
+  "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=20&prop=imageinfo&iiprop=size|extmetadata&iiextmetadatafilter=LicenseShortName|Artist&gsrsearch=Apple+Campus+Infinite+Loop": {
+    "file": "pages/c3ea84de8431.txt",
+    "fetched_at": "2026-11-14T17:49:39.936423+00:00",
+    "ok": true,
+    "chars": 7127,
+    "status": 200,
+    "final_url": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=20&prop=imageinfo&iiprop=size|extmetadata&iiextmetadatafilter=LicenseShortName|Artist&gsrsearch=Apple+Campus+Infinite+Loop",
+    "content_type": "application/json; charset=utf-8"
   }
 }

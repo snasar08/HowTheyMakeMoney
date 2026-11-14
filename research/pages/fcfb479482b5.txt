@@ -1,0 +1,2130 @@
+URL: https://en.wikipedia.org/wiki/IMac_G3
+FINAL_URL: https://en.wikipedia.org/wiki/IMac_G3
+FETCHED: 2026-11-14T17:49:31.979683+00:00
+
+Jump to content
+
+Main menu
+
+Main menu
+
+ move to sidebar
+ hide
+
+ Navigation
+
+Main page
+
+Contents
+
+Current events
+
+Random article
+
+About Wikipedia
+
+Contact us
+
+ Contribute
+
+Help
+
+Learn to edit
+
+Community portal
+
+Recent changes
+
+Upload file
+
+Special pages
+
+Search
+
+ Search
+
+Appearance
+
+Donate
+
+Create account
+
+Log in
+
+Personal tools
+
+Donate
+
+Create account
+
+Log in
+
+Contents
+
+ move to sidebar
+ hide
+
+(Top)
+
+ 1
+ Background
+
+ 2
+ Design
+
+ 3
+ Release
+
+ Toggle Release subsection
+
+ 3.1
+ Model lineup
+
+ 4
+ Sales
+
+ 5
+ Critical reception
+
+ 6
+ Legacy
+
+ 7
+ Specifications
+
+ 8
+ References
+
+ Toggle References subsection
+
+ 8.1
+ Sources
+
+ 9
+ See also
+
+ 10
+ External links
+
+Toggle the table of contents
+
+iMac G3
+
+16 languages
+
+العربية
+
+Català
+
+Español
+
+Français
+
+Hausa
+
+Bahasa Indonesia
+
+Italiano
+
+한국어
+
+Nederlands
+
+Polski
+
+Português
+
+Русский
+
+Türkçe
+
+Українська
+
+Tiếng Việt
+
+中文
+
+Edit links
+
+Article
+
+Talk
+
+ English
+
+Read
+
+Edit
+
+View history
+
+Save
+
+Tools
+
+Tools
+
+ move to sidebar
+ hide
+
+ Actions
+
+Read
+
+Edit
+
+View history
+
+Save
+
+ General
+
+What links here
+
+Related changes
+
+Upload file
+
+Permanent link
+
+Page information
+
+Cite this page
+
+Get shortened URL
+
+Switch to legacy parser
+
+ Print/export
+
+Download as PDF
+
+Printable version
+
+ In other projects
+
+Wikimedia Commons
+
+Wikidata item
+
+Appearance
+
+ move to sidebar
+ hide
+
+From Wikipedia, the free encyclopedia
+
+All-in-one computer by Apple
+
+iMac G3
+ | 
+
+ | 
+Original "Bondi Blue" iMac
+
+ | Manufacturer | Apple Computer
+
+ | 
+Product family
+ | iMac
+
+ | Type | All-in-one
+
+ | Released | August 15, 1998; 28 years ago (1998-08-15)
+
+ | Discontinued | March 2003; 23 years ago (2003-03)
+
+ | Successor | iMac G4
+
+eMac
+
+ | Related | iBook
+
+ | Website | web.archive.org/web/20000615172251/https://www.apple.com/imac/ at the Wayback Machine (archived June 15, 2000)
+
+The iMac G3, originally released as the iMac, is a series of Macintosh personal computers that Apple Computer sold from 1998 to 2003. The iMac was Apple's first major product release under CEO Steve Jobs following his return to the financially troubled company he co-founded. Jobs reorganized the company and simplified the product line. The iMac was designed as Apple's new consumer desktop product—an inexpensive, consumer-oriented computer that would easily connect to the Internet.
+
+The iMac's all-in-one design is based around a cathode-ray tube display; the G3 processor, components, and connectivity were all included in a single enclosure. Apple's head of design Jony Ive and his team developed a teardrop-shaped, translucent plastic case that was a radical departure from the look of the company's previous computers. The company developed new working methods to finish the computer quickly, and new workflows for designing future products. The iMac eschewed legacy technologies like serial ports and floppy disk drives in favor of CD-ROMs and USB ports.
+
+Critical response to the iMac was mixed; journalists said the machine would be good for new computer users but bemoaned the lack of legacy technology, and said the separate mouse and keyboard were uncomfortable. Despite the reviews, the iMac was an immediate commercial success, becoming Apple's fastest-selling computer. More than six million units were sold in its lifetime.
+
+The original model was revised several times, improving the processor speed, the amount of random-access memory, hard drive space, and other capabilities. The iMac is credited with saving Apple from financial ruin, and for turning personal computers from niche, technical products to mass-consumer fashion. Other computers and consumer products appropriated the translucent plastic look, leading to legal action from Apple. The iMac G3 series was succeeded by the iMac G4, and the iMac G3's position in education markets was replaced by the eMac.
+
+Background
+[edit]
+
+See also: Apple Inc. history, 1990–1997
+
+In the mid-1990s, Apple Computer was experiencing severe financial difficulties. At the end of 1997, the company was selling 1.8 million Macs per year, in comparison with 4.5 million two years earlier. Apple's sales were compromised by licensed Mac systems that undercut and out-performed Apple's own products.[1] Apple was unable to compete in the low-cost computer market, and entirely abandoned the sector.[2]
+
+In December 1996, Apple purchased the NeXT computer company, founded by Steve Jobs. As part of the deal, he returned to Apple, the company he had co-founded in 1976 and then been ousted from in 1985.[3][4] Apple also acquired NeXT's operating system NeXTSTEP, which would become the foundation for Apple's next-generation operating system Mac OS X.[5] Jobs returned to Apple as an advisor but the company's board of directors dismissed CEO Gil Amelio on July 9, 1997, and Jobs replaced him in an interim capacity.[6][7]
+
+Around the same time, Apple's industrial design director Robert Brunner left the company and was succeeded by junior designer Jony Ive, who inherited the award-winning design team.[8] Ive was dispirited with Apple's leadership and also considered leaving.[9] At a meeting announcing Jobs's appointment as Apple's CEO, Jobs told his staff that Apple's problems stemmed from its poor products. Ive noted Jobs's focus on making industrial design a core part of Apple's comeback strategy.[10] Ive and Jobs quickly developed a rapport, and Jobs retained Apple's industrial design team under Ive's leadership.[11]
+
+Jobs streamlined the company into profitability by cost-cutting, but the company still needed compelling products to boost sales.[12] He planned to reduce Apple's extensive and confusing computer offerings to four products: a laptop and desktop model each for professionals and consumers.[13] The planned consumer-oriented desktop computer would become the iMac.[14]
+
+Design
+[edit]
+
+Jobs initially wanted the new consumer desktop to be a network computer—a cheap, low-powered terminal without disk drives that would connect to Internet servers. Ive's design team was given Jobs's specifications for the new product in September 1997: it should be a distinctive, all-in-one computer with a price of about $1,200, much lower than the $2,000 (equivalent to $4,000 in 2025) for contemporary entry-level models.[15] The engineering and design teams had less than one year to deliver a finished product.[16]
+
+The design team tried to discern what objects conveyed the emotions they wanted the computer to evoke. While collaboratively developing sketches, designer Doug Satzger drew an ovoid drawing based on his earlier work on Thomson televisions. Ive and the rest of the team focused on the ovoid design, although Jobs initially rejected the look. Ive defended the design as playful and fun, and persuaded Jobs to accept the idea. Jobs began carrying a foamcore model of the computer around the Apple campus to show it off.[17]
+
+Preceding Apple products featuring translucent plastics, such as the eMate 300, influenced the look of the iMac.
+
+When discussing the idea of a machine that inspired positive emotions, the designers mentioned colorful candy dispensers.[18] Materials tests with solid plastics looked cheap, so they made the case translucent.[19] Translucent hardware design was not new to Apple's products; the Power Macintosh 8600, 9600, and Power Macintosh G3 tower computers had translucent green latches, and the LaserWriter 8500, eMate 300, and Studio Display incorporated translucent colored plastics more extensively. Former Apple senior designer Thomas Meyerhoffer described the eMate's plastics as a way of making the product accessible and distinctive.[20] To Ive, the translucency "came across as cheeky" but meant the aesthetic design of the internal components would also need to be considered. Inspiration came from translucent items the designers brought to the office; one item was a piece of greenish-blue beach glass. This "Bondi blue" object inspired the color Jobs selected for the first iMac.[21]
+
+While design was developing the computer, Apple's engineers had to determine how to manufacture the machine. Chris Novak, the project's lead engineer, clashed with the design team over the prototype, arguing that it could not be produced at scale.[22] He was replaced by engineer David Hoenig, who hired specialty contractors to solve the challenge of manufacturing its eggshell shape, but they also failed. Jobs then brought in Acorn, a design consultant he had previously worked with at NeXT.[23] After Acorn also found the design flawed, Jobs restarted the project with a new August 1998 deadline. David Lundgren, a mechanical engineer and a former employee of Jobs, joined the team, reorganized the project, added staff, and improved communication with the designers. Ive was ultimately convinced to modify the design to make it easier to produce.[24]
+
+Apple's design team radically overhauled its processes to meet the tight deadline. In the past, they had sent two-dimensional blueprints or hand-drawn sketches to toolmakers to create molds, a laborious process that could take months. Instead, Apple relied on computer-aided design (CAD) using the three-dimensional (3D) modeling program Alias Wavefront to sculpt designs, and CNC milling machines and primitive 3D printers to create physical mockups. Apple's product designers wrote software to allow the Wavefront 3D models to be brought into Unigraphics, a program that was used in aerospace design. This process allowed the engineers to compare 3D models of the computer's components with the casing, speeding up the process of finding a workable combination of external and internal elements.[25] The difficulties in producing a design that could be feasibly manufactured led to Ive's design team getting involved in production earlier, learning what materials, tools, and techniques they had to work with.[26]
+
+The finalized iMac's components and 15-inch (38 cm) cathode-ray tube (CRT) display are enclosed within a plastic shell. The translucent effect was achieved by mixing light-scattering particles into the plastic, instead of texturing the surface as is typically done with injection-molded parts.[27] The computer features translucency throughout, such as the small foot to raise the computer, and the power cord resembling condensation on glass.[28] Port labels and regulatory markings have holographic stickers.[29] The design team added a recessed handle to the back of the computer to make it more personal and approachable for new computer users.[28] The cost of the casing was more than three times that of a typical computer[30] but Ive credited Jobs with intuitively understanding the design aims and not demanding justification for the increased costs.[28] The keyboard and mouse were redesigned with matching translucent plastics and trim for the iMac. Ive was especially proud of the round mouse, which shows the complicated internal components that are partially hidden behind the Apple logo.[31]
+
+Jobs reconsidered the network computer concept as similar products struggled in the market, and recalibrated the project as a full-featured computer with optical disc storage and hard drives.[32][33] Jobs wanted the new computer to be a modern, legacy-free PC without old or proprietary technology.[34] Engineers adapted the Common Hardware Reference Platform (CHRP) specification to speed development. This included standard SO-DIMM RAM of Windows-based PCs, and an Open Firmware read-only memory (ROM). While previous models stored substantial machine-specific OS components in ROM to minimize RAM use, with CHRP the iMac loaded them into RAM from storage, shortening production time.[35] The iMac has no serial ports, Apple Desktop Bus, or floppy disk drive. To replace the removed ports, the iMac has Universal Serial Bus (USB) ports, which were faster and cheaper than Apple Desktop Bus and serial ports but were very new—the standard was not finalized until after the iMac's release—and unsupported by any third-party Mac peripheral.[34][36] Jobs wagered USB would solve the problem of accessory makers abandoning the shrinking Mac market with its special connectors.[37] The iMac does not officially have an expansion slot, but early versions include a PCI Mezzanine Card slot intended for internal use but for which a few third parties produced expansion cards, such as video card upgrades and SCSI ports.[38] Early models have an IrDA infrared port that wirelessly connects personal digital assistants and other devices.[36] Jobs was furious the initial iMac model came with a tray-loading CD-ROM drive rather than a more-modern slot-loading drive, and nearly canceled the product launch over it. Jobs continued with the launch after he was assured subsequent models would include a slot-loading CD-ROM drive as soon as possible.[39]
+
+In early 1998, representatives from the advertising agency TBWA\Chiat\Day were shown the new computer, codenamed "C1". Creative director Ken Segall said the agency's first impression was that the product might be too shocking to be successful.[40] Jobs was proud to show off Apple's work, saying "the back of our computer looks better than the front of [our competitors'] computers". Jobs informed Segall the internal name was "MacMan", contributed by Apple's marketing executive Phil Schiller, and solicited a study for a better name. Apple stipulated the name must contain "Mac", it must evoke easy Internet connectivity, and it must not sound portable or toy-like.[41] TBWA spent a week developing other names; Segall's pick was "iMac"; it was short, it said the product was a Macintosh computer, and the i prefix suggested the internet.[42] Jobs disliked all of the suggested names and gave the agency another week to generate more possibilities. At the next presentation, Segall once again ended with "iMac"; Jobs said he no longer hated the name but still preferred "MacMan". Segall thought he had failed, but the next day he learned Jobs had suggested the name to other employees and gotten a positive response. The product was thus named the iMac.[43]
+
+Release
+[edit]
+
+All thirteen colors of the iMac G3
+
+Steve Jobs unveiled the iMac on May 6, 1998. The product launch echoed that of the original Macintosh 128K in 1984. It was staged in the same location, the Flint Center for the Performing Arts at De Anza College. Jobs invited Apple founding members Steve Wozniak, Mike Markkula, and Michael Scott, as well as members of the original Macintosh team. After demonstrating the look of traditional computers, Jobs revealed the iMac from under a tablecloth. The computer displayed "Hello (again)" on its screen, hearkening back to the Macintosh's whimsical "Hello" introduction.[44]
+
+Apple began shipping the iMac on August 15, 1998.[45] The computer was supported by a $100 million advertising campaign that stressed the iMac's ease of use, internet connectivity, and striking contrast from competitors' products. Actor Jeff Goldblum narrated television advertisements that rhetorically asked if computer companies had been in "thinking jail" making only beige products.[46] Other promotions included radio giveaways, midnight launch events, and "golden tickets" hidden in select iMacs that could be redeemed for a tour of an Apple factory.[47] To make sure Apple was able to ship as many Macs as possible, operations executive Tim Cook prebooked $100 million in air freight. Apple was able to meet demand while at the same time causing shipping delays for their competitors during the holiday season.[48]
+
+Model lineup
+[edit]
+
+The first release of the iMac G3 had a 233 MHz PowerPC G3 processor, ATI Rage IIc graphics, 4 GB hard drive, 32MB of RAM, a tray-loading CD-ROM drive, two USB ports, networking, an infrared port, built-in stereo speakers, and headphone ports. Its casing was Bondi blue–colored and it shipped with Mac OS 8.1. On October 17, the iMac was updated with faster ATI Rage Pro Turbo graphics options and Mac OS 8.5.[49] A more substantial revision to the iMac lineup came in January 1999. These new models came in five colors: blueberry, strawberry, tangerine, grape, and lime. They had a 266 MHz processor and a 6 GB hard drive. The infrared port and mezzanine slot were removed.[50]
+
+Apple released a new series of iMacs on October 5, 1999, focused on the emerging digital video (DV) market.[51] The new models were similar in appearance to the previous models but had a slightly smaller enclosure; the steel casing shrouding many of the components in the previous model was removed, the colors were lighter, and the plastics clearer. The tray-loading CD-ROM drive was replaced with a slot-loading drive and a rear door was fitted so users could easily add RAM, and a slot for an AirPort wireless networking card was added. The computer's components were cooled fanlessly by convection, with hot air exhausted through vents around the top handle.[51] Three new models were offered, and some colors and features were restricted to certain models. The cheapest model, now at $999, was available in only one color. It shipped with a 350 MHz processor, 64 MB of RAM, a new graphics chipset, and a larger hard drive. The iMac DV came in five colors and shipped with the video-editing software iMovie. It also had a 400 MHz processor, two FireWire ports for high-speed connectivity, a larger hard drive, and DVD-ROM optical drive. The iMac DV Special Edition came in a new color named graphite, and shipped with more RAM and a 13 GB hard drive—the largest capacity in the lineup. The iMac DV models also included a VGA video-out port for mirroring the iMac's display on another monitor.[52][53]
+
+On July 19, 2000, Apple released a new iMac lineup with four configurations in five colors. The base model had no FireWire port or video-out socket, came in an indigo casing, and retailed for $799. It had the same processor and memory as the previous iMac with a larger hard drive. The iMac DV and DV+ models had 400 MHz and 450 MHz processors, respectively, and larger hard drives; and the DV+ model had a DVD-ROM drive. The most expensive model was the iMac DV Special Edition, which had a 500 MHz processor, 128 MB of RAM, a larger hard drive, and an exclusive snow color.[54]
+
+Apple's next iMac revision was released on February 22, 2001. The new machines came with CD-RW drives and iTunes software as Apple shifted to digital music consumption.[55] The iMac and iMac Special Edition shipped with 400 to 600 MHz processors and FireWire became standard alongside a faster graphics chipset and larger hard drives. Apple supplemented the existing indigo and graphite colors with two new patterns, "Flower Power" and "Blue Dalmatian", which were intended as visual representations of music.[56]
+
+A final revision in July 2001 returned to more sedate colors—indigo, graphite, and snow. These models shipped with Mac OS X, 500, 600, or 700 MHz processors, up to 256 MB of RAM, and a 60 GB hard drive on the Special Edition.[57] Following the introduction of the iMac G4 in January 2002, Apple continued selling some G3-based iMac models,[58] with 500 and 600 MHz models in indigo, snow, and graphite. The indigo and graphite models were discontinued first, and the snow model was discontinued in March 2003.[59]
+
+Sales
+[edit]
+
+The iMac G3 was an immediate hit with consumers,[60] with 278,000 units sold in the first six weeks, and 800,000 units after 20 weeks. It was the top-selling desktop computer in US stores the first three months of its release.[50] Nearly half of iMac sales were to first-time computer buyers, and nearly 20 percent were Microsoft Windows users who switched to the Mac.[61] In the quarter the iMac shipped, Macintosh computer sales grew year-on-year for the first time since late 1995, and saw the Mac grow its worldwide market share from 3 to 5 percent.[12] Apple went from losing $878 million in 1997 to making $414 million in 1998, its first profit in three years.[45] The iMac continued to be a strong seller for Apple, with 3.7 million units sold by July 2000,[62] and shipping the five-millionth iMac in April 2001.[63] In announcing the computer's successor in January 2002, Jobs said that the iMac had sold 6 million units.[64]
+
+Critical reception
+[edit]
+
+The "hockey puck" mouse that shipped with early iMacs
+
+The iMac G3 received mixed reviews on release. Tech reviewers were often negative about the machine.[5][65] Hiawatha Bray said the choices Jobs had made with the iMac doomed the product.[65] In comparison, Macworld's Andrew Gore said the iMac G3 might be as important as the original Macintosh in shifting the computing paradigm, and that Apple's "Think different" marketing campaign was not just empty talk.[66] Reporters including Newsweek's Barbara Kantrowitz and the San Francisco Chronicle's David Einstein considered it the first promising step in Apple's possible resurgence.[67][68][69]
+
+The look of the iMac was generally praised.[70] Many reviewers compared its curved look to the recently released Volkswagen New Beetle,[68][71] journalist Rob Morse likened it to a "huggable", futuristic machine like R2-D2 or a toy from The Jetsons.[72] Less positive reviews compared the iMac to an AMC Gremlin.[69]
+
+Positive reviews highlighted the computer's ease of use for setup and operation;[67][73][74] According to Morse, the iMac felt "almost human" and approachable for a non-tech consumer.[72] Publications including CNN and PC Week considered the iMac's performance fast,[75] but others felt the machine was underpowered, and PC World's testing showed that the machine generally performed less well than Windows PC competitors.[76] Although reviewers noted that general consumers and new computer buyers would be well served by the machine,[77] they were less sure that it could fit into an office environment, especially if it was not networked.[78]
+
+Criticism focused on the iMac's lack of legacy ports.[5] Bray wrote that the lack of a floppy drive essentially wrote off most potential buyers in favor of " 'elites' [who will] pay more for less".[79] Gore considered the loss of the floppy drive acceptable but wished that the CD-ROM module, which was identical to that of the PowerBook notebook, could be swapped. He said the lack of expansion slots limited the computer's future potential.[80] The Washington Post's John Breeden highlighted the lack of SCSI as making the iMac unsuitable for office work.[81] Other reviewers bemoaned the high cost of external replacements for the internal floppy disk drive,[82] low amount of installed memory,[70] and its tinny speakers.[81]
+
+Another major complaint with the iMac was its original mouse and keyboard, which reviewers said were small and difficult to use comfortably,[83] calling them an example of style over substance.[74] The shape of the mouse was derisively compared to a hockey puck, and its reviewers considered the cable too short.[84] The mouse's round shape made it difficult for users to discern its correct orientation.[31] The mouse and keyboard were replaced with the Apple Pro Mouse and Apple Pro Keyboard for the 2000-revision iMacs.[85] Other complaints included the lack of software and USB accessories, incompatibility with Microsoft Windows, and price.[60] Later iMac G3 models addressed some of the product's perceived shortcomings.[5][86] As the product line aged, reviews noted the new models offered few advances over previous versions.[57]
+
+The iMac won several design competitions and awards, including Gold at the 1999 D&AD Design Awards in the UK,[46] and "Object of the Year" by The Face.[87] iMac G3 models are held in the collections of museums including the Henry Ford, the Victoria and Albert Museum, the Powerhouse Museum, and the Museum of Modern Art.[88]
+
+Legacy
+[edit]
+
+Further information: Notable litigation of Apple Inc. § Apple v. eMachines, § appleimac.com
+
+The iMac G3 became a computing icon. Paul Atkinson wrote that the original Macintosh made a huge impact on computing, but it had not affected the look of computers; for decades, personal computers were defined by unimaginative, beige boxes. The iMac, in contrast, did not affect the way consumers used computers but its design changed the idea of the appearance of computers. Apple defined itself in opposition to its competitors, who rushed to produce computers that followed the iMac's design language, adding similar translucent or colored plastic to their designs.[89][90] The iMac mirrored contemporary design trends in its use of streamlining and curves; one designer said the focus on rounding helped make objects more approachable and personal.[91]
+
+Apple protected the distinctive iMac design with legal action against competing computer makers who attempted to imitate the iMac, such as eMachines' eOne.[92] The iMac made computers fashionable rather than utilitarian,[93] and helped popularize USB and hasten the demise of the floppy disk.[45] Following Apple's lead, other computer makers focused on "legacy-free" personal computers.[94][95]
+
+The iMac's sales helped buoy Apple while it released a modern operating system and refreshed the rest of the Mac lineup. The computer's success positioned the company to focus on emerging digital media trends.[5] It also established a formula of quickly polishing a new Apple product through rapid iterative updates.[96] Macworld noted the iMac saved Apple financially and proved Apple could still produce exciting, innovative products.[45] The iMac also served as the public's introduction to Jony Ive, making him one of the world's most celebrated designers.[90][93] The product's name influenced many of Apple's later products—such as iPod, iLife, and iPhone[45]—and for a time defined Apple's consumer-focused product lines.[97] Apple's consumer laptop the iBook followed the iMac's lead in a lack of legacy technology and use of colorful, translucent plastic.[98] The iMac was so successful in schools Apple created a G4-powered successor named the eMac, initially sold only to the education market.[5][99]
+
+The design influence of the iMac G3 was not limited to personal computers; by the early 2000s, multicolored, translucent plastic designs had become common among consumer designs, including microwave ovens and George Foreman grills. USA Today called the translucence trend "electronics voyeurism".[93] Apple would follow the bulbous, candy-colored iMac G3 with the flat-panel, white "Sunflower" iMac G4 in 2002.[45] Apple's desktop lineup remained relatively monochrome in the following years; the 2021 release of Apple silicon-based iMacs were sold in seven colors and were considered to hearken back to the iMac's colorful roots.[100][101][102]
+
+Specifications
+[edit]
+
+First generation
+
+ | Model
+ | iMac (233 MHz)[103]
+ | iMac (266 MHz)[104]
+ | iMac (333 MHz)[105]
+
+ | Colors
+ | 
+ | 
+
+ | Release date
+ | August 15, 1998
+ | October 26, 1998
+ | January 5, 1999
+ | April 15, 1999
+
+ | Color(s)
+ | Bondi Blue
+ | Blueberry Grape Tangerine Lime Strawberry
+
+ | Processor
+ | 233 MHz G3
+ | 266 MHz G3
+ | 333 MHz G3
+
+ | Cache
+ | 32 KB of L1 Cache and 512 KB of L2 backside cache
+
+ | Memory
+ | Two SO-DIMM slots: 32–256 MB PC100 SDRAM
+
+ | Graphics
+ | ATI Rage IIc with 2 MB of SGRAM[50]
+ | ATI Rage Pro Turbo with 6 MB of SGRAM[50][106]
+
+ | Hard drive
+ | 4 GB
+ | 6 GB
+
+ | Optical drive
+
+Tray-loading
+ | 24× CD-ROM
+
+ | Network
+ | 10/100 BASE-T Ethernet
+
+56k modem
+
+ | 4 Mbit/s IrDA
+ | —N/a
+
+ | Peripherals
+ | 2× USB
+
+Audio input/output jacks
+
+Built-in stereo speakers
+
+ | Original operating system
+ | Mac OS 8.1 (initial release) or Mac OS 8.5
+ | Mac OS 8.5.1
+
+ | Maximum operating system
+ | Mac OS X 10.3 Panther if 128 MB of RAM installed, otherwise Mac OS 9[107]
+
+ | Weight
+ | 40 lb (17.25 kg)
+
+ | Dimensions
+ | 15.8 × 15.2 × 17.6-inch (40.1 × 38.6 × 44.7 cm)
+
+Second generation
+
+ | Model
+ | iMac (slot loading)[108]
+ | iMac (Summer 2000)[109]
+ | iMac (early 2001)[110]
+ | iMac (Summer 2001)[111]
+
+ | Pictures
+ | 
+ | 
+ | 
+ | 
+
+ | Release date
+ | October 5, 1999
+ | July 19, 2000
+ | February 22, 2001
+ | July 18, 2001
+
+ | Colors
+ | Blueberry Grape Tangerine Lime Strawberry Graphite
+ | Indigo Ruby Sage Graphite Snow
+ | Indigo Graphite Blue Dalmatian ✿ Flower Power
+ | Indigo Graphite Snow
+
+ | Processor speed
+ | 
+
+350 or 400 MHz G3
+
+ | 
+
+350, 400, 450, or 500 MHz G3
+
+ | 
+
+400, 500, or 600 MHz G3
+
+ | 
+
+500, 600, or 700 MHz G3
+
+ | Cache
+ | 512 KB of L2 Cache
+ | 512 KB of L2 Cache or 256 KB of L2 Cache
+ | 256 KB of L2 Cache
+
+ | Memory
+ | Two slots of PC100 SDRAM
+
+64 MB – 512 MB
+ | Two slots of PC100 SDRAM
+
+64 MB – 1 GB
+ | Two slots of PC100 SDRAM
+
+128 MB – 1 GB
+
+ | Graphics
+ | ATI Rage 128 VR with 8 MB of SDRAM[53]
+ | ATI Rage 128 Pro with 8 MB of SDRAM[53]
+ | ATI Rage 128 Pro with 8 MB of SDRAM
+
+ATI Rage 128 Ultra with 16 MB of SDRAM
+ | ATI Rage 128 Ultra with 16 MB of SDRAM
+
+ | Hard drive
+ | 6 GB, 10 GB or 13 GB
+ | 7 GB, 10 GB, 20 GB or 30 GB
+ | 10 GB, 20 GB, or 40 GB
+ | 20 GB, 40 GB or 60 GB
+
+ | Optical drive
+
+Slot-loading
+ | CD-ROM, DVD-ROM, or CD-RW
+
+ | Network
+ | 10/100 BASE-T Ethernet
+
+56k V.90 modem
+
+AirPort ready (except 350 MHz Summer 2000 model)[112]
+
+ | Peripherals
+ | 2× USB
+
+2× FireWire (except 350 MHz models)
+
+Audio input/output jacks
+
+Built-in stereo speakers
+ | 2× USB
+
+2× FireWire
+
+Audio input/output jacks
+
+Built-in stereo speakers
+
+ | Video out
+
+(Mirroring)
+ | VGA
+
+ | Original operating system
+ | Mac OS 8.6
+ | Mac OS 9.0.4
+ | Mac OS 9.1
+ | Mac OS 9.1 and Mac OS X 10.0.4[57]
+
+ | Maximum operating system
+ | Mac OS X 10.3 Panther (all models) if 128 MB of RAM installed, otherwise Mac OS 9[107]
+
+ Mac OS X 10.4 Tiger (FireWire models) if 256 MB of RAM installed[113]
+ | Mac OS X 10.4 Tiger if 256 MB of RAM installed, otherwise Mac OS X 10.3 Panther if 128 MB of RAM installed or Mac OS 9[113]
+ | Mac OS X 10.4 Tiger if 256 MB of RAM installed, otherwise Mac OS X 10.3 Panther
+
+ | Weight
+ | 34.7 lb (15.7 kg)
+
+ | Dimensions
+ | 15.0 × 15.0 × 17.1 inch (38.1 × 38.1 × 43.5 cm)
+
+References
+[edit]
+
+↑ Gruman (1997), p. 32.
+
+↑ Gore & Epler (1998), p. 17A.
+
+↑ Kawamoto, Dawn (December 20, 1996). "Apple Acquires Next, Jobs". CNET. Archived from the original on June 6, 2022. Retrieved November 22, 2022.
+
+↑ Isaacson (2013), pp. 213–214.
+
+1 2 3 4 5 6 Snell, Jason (December 28, 2020). "20 Macs for 2020: #1 – iMac G3". Six Colors. Archived from the original on January 12, 2023. Retrieved November 21, 2022.
+
+↑ Lohr, Steve (July 10, 1997). "Apple Computer Ousts Chief in Response to Poor Results". The New York Times. ISSN 0362-4331. Archived from the original on January 12, 2023. Retrieved December 9, 2022.
+
+↑ Kahney (2013), p. 101.
+
+↑ Kahney (2013), pp. 92–94.
+
+↑ Kahney (2013), p. 99.
+
+↑ Kahney (2013), pp. 101, 105.
+
+↑ Kahney (2013), p. 113.
+
+1 2 Swartz, Jon (January 14, 1999). "Apple Profit Up — iMac Sales Cited". San Francisco Chronicle. Archived from the original on November 22, 2022. Retrieved November 21, 2022.
+
+↑ Kahney (2013), p. 103.
+
+↑ Kahney (2013), p. 114.
+
+↑ Kahney (2013), p. 115.
+
+↑ Kahney (2013), p. 118.
+
+↑ Kahney (2013), pp. 116–117, 122.
+
+↑ Kahney (2013), pp. 116–117.
+
+↑ Kahney (2013), p. 123.
+
+↑ Edwards, Benj (November 15, 2012). "The Unexplored History of Translucent Apple Design". Macworld. Archived from the original on November 22, 2022. Retrieved November 22, 2022.
+
+↑ Kahney (2013), pp. 123–124.
+
+↑ McGee (2026), pp. 53–55.
+
+↑ McGee (2026), pp. 55–56.
+
+↑ McGee (2026), pp. 55–58.
+
+↑ Kahney (2013), pp. 117–120.
+
+↑ McGee (2026), p. 58.
+
+↑ Designed by apple in California. Cupertino, CA: Apple, Inc. 2016. ISBN 978-0-9975138-0-6.
+
+1 2 3 Kahney (2013), p. 124.
+
+↑ Gore & Epler (1998), pp. 17B–17D.
+
+↑ Isaacson (2013), p. 350.
+
+1 2 Kahney (2013), p. 126.
+
+↑ Isaacson (2013), p. 349.
+
+↑ Kahney (2013), p. 122.
+
+1 2 Kahney (2013), p. 125.
+
+↑ Gore & Epler (1998), p. 17B.
+
+1 2 Gore & Epler (1998), p. 17C.
+
+↑ Kahney (2013), pp. 125–126.
+
+↑ De Nike, Kristina (March 31, 1999). "iMac Boards Use Forbidden Interface". Macworld. Archived from the original on December 3, 2019. Retrieved December 3, 2019.
+
+↑ Isaacson (2013), pp. 351–352.
+
+↑ Segall (2013), pp. 104–105.
+
+↑ Segall (2013), pp. 106–109.
+
+↑ Segall (2013), p. 109.
+
+↑ Segall (2013), pp. 109–110.
+
+↑ Isaacson (2013), pp. 354–355.
+
+1 2 3 4 5 6 Edwards, Benj (August 15, 2019). "8 Ways the iMac Changed Computing". Macworld. Archived from the original on November 22, 2022. Retrieved November 21, 2022.
+
+1 2 Press & Cooper (2017), p. 29.
+
+↑ Levy, Steven (August 17, 1998). "Say Hello to iMac". Newsweek. Vol. 132, no. 7. p. 12.
+
+↑ Kahney (2019), p. 70.
+
+↑ Lewis, Peter (November 5, 1998). "State of the Art; Microsoft's Latest: a Telephone". The New York Times.
+
+1 2 3 4 Simmons & Reynolds (1999), p. 23.
+
+1 2 Breitzer (2000), pp. 70–74.
+
+↑ Breitzer (2000), p. 70.
+
+1 2 3 Capps (1999), pp. 45–47.
+
+↑ Michaels & Snell (2000), p. 27.
+
+↑ Honan (2001), p. 68.
+
+↑ Honan (2001), p. 69.
+
+1 2 3 Breen (2001), pp. 33–34.
+
+↑ Michaels (2002), p. 32.
+
+↑ Hackett, Stephen (July 7, 2016). "Summer 2001: The Final iMac G3s". 512 Pixels. Archived from the original on November 30, 2022. Retrieved November 30, 2022.
+
+1 2 Kahney (2013), p. 134.
+
+↑ Barker, Garry (December 23, 1998). "Apple Rides the iMac Back into Fashion". The Age.
+
+↑ Levy, Steven (July 30, 2000). "Thinking Inside the Box". Newsweek. Archived from the original on October 4, 2020. Retrieved November 29, 2022.
+
+↑ Gallagher, William (April 19, 2020). "How Apple went from bust to five million colorful iMacs sold". Apple Insider. Archived from the original on November 29, 2022. Retrieved November 30, 2022.
+
+↑ Menn, Joseph (January 8, 2002). "Apple Unveils Its Redesigned iMac; Computers: The company hopes the desktop's innovative design will help shore up its sagging market share". Los Angeles Times. p. C2.
+
+1 2 Kahney (2013), p. 133.
+
+↑ Gore (1998a), p. 17.
+
+1 2 Kantrowitz, Barbara (September 28, 1998). "At Last, a Really Big Mac". Newsweek. Vol. 132, no. 13. p. 85.
+
+1 2 Einstein, David (August 12, 1998). "Apple's iMac — the New VW Beetle of Computers". San Francisco Chronicle. p. B2.
+
+1 2 Dotto, Steve (August 13, 1998). "New iMac Important Development in Apple's Recovery". The Vancouver Sun. p. E1.
+
+1 2 Evarts, Eric (December 21, 1998). "Tech Review: Apple's iMac; Triumph of Form, Substance". Christian Science Monitor. Vol. 91, no. 18. p. 16.
+
+↑ Makris, Steve (August 13, 1998). "Apple's Imac Ahead of Its Time". Calgary Herald. p. E14.;
+
+1 2 Morse, Rob (August 9, 1998). "Iwant One – Right Now". San Francisco Examiner. p. B1.
+
+↑ Lefevre, Greg (August 14, 1998). "The iMac's Here, but Where's Apple?". CNN. Archived from the original on November 30, 2022. Retrieved November 30, 2022.
+
+1 2 Gore (1998b), p. 32.
+
+↑ Attributed to multiple sources:
+
+Kantrowitz, Barbara (September 28, 1998). "At Last, a Really Big Mac". Newsweek. Vol. 132, no. 13. p. 85.
+
+Dotto, Steve (August 13, 1998). "New iMac Important Development in Apple's Recovery". The Vancouver Sun. p. E1.
+
+Lefevre, Greg (August 14, 1998). "The iMac's Here, but Where's Apple?". CNN. Archived from the original on November 30, 2022. Retrieved November 30, 2022.
+
+Bethoney, Herb (August 31, 1998). "iMac Fills Replacement Bill". PC Week. p. 39.
+
+↑ Silvius (1998), pp. 75–76.
+
+↑ Buchanan, Charles (November 28, 1998). "For a Ready-to-use, Non-upgradable Machine, the iMac Is It". The Facts. Clute, Texas. p. 15.
+
+↑ Attributed to multiple sources: 
+
+Einstein, David (August 12, 1998). "Apple's iMac — the New VW Beetle of Computers". San Francisco Chronicle. p. B2.
+
+Evarts, Eric (December 21, 1998). "Tech Review: Apple's iMac; Triumph of Form, Substance". Christian Science Monitor. Vol. 91, no. 18. p. 16.
+
+Bethoney, Herb (August 31, 1998). "iMac Fills Replacement Bill". PC Week. p. 39.
+
+Breeden, John (December 17, 1998). "Skin-deep Beauty; the iMac's Performance Doesn't Live Up to Its Snappy Appearance". The Washington Post. p. B5.
+
+↑ Bray, Hiawatha (May 17, 1998). "iMac Is Too Odd to Succeed". Lakeland Ledger. p. E5.
+
+↑ Gore (1998b), p. 33.
+
+1 2 Breeden, John (December 17, 1998). "Skin-Deep Beauty; the iMac's Performance Doesn't Live Up to Its Snappy Appearance". The Washington Post. p. B5.
+
+↑ Staff (August 31, 1998). "iMac Review". Santa Cruz Sentinel. pp. A7–A8.
+
+↑ Breitzer (2000), p. 76.
+
+↑ Rutherford, Sam (August 15, 2018). "Don't Get Nostalgic for This 20th Anniversary: Apple's iMac G3 Was an Awful Computer". Gizmodo. Archived from the original on November 22, 2022. Retrieved November 29, 2022.
+
+↑ Honan & Schmeiser (2000), p. 28.
+
+↑ Regan, Tom (November 18, 1999). "iMac's Innovation Streaks Ahead". Christian Science Monitor. Vol. 91, no. 247. p. 18.
+
+↑ Wanders, Marcel (2005). The International Design Yearbook 2005. Laurence King Publishing. p. 232. ISBN 978-1-8566-9435-3.
+
+↑ Attributed to multiple sources:
+
+Henry Ford: Ive, Jony (c. 1999). iMac G3 (artifact; 14in × 14.75in × 16.25in). The Henry Ford. 99.162.1. Archived from the original on December 9, 2022. Retrieved December 9, 2022.
+
+Victoria and Albert: Ive, Jony (c. 1999). iMac G3 (artifact; 38 cm × 37.5 cm × 44 cm). Victoria and Albert Museum. 158296. Archived from the original on January 6, 2024. Retrieved December 9, 2022.
+
+Powerhouse Museum: Ive, Jony (c. 1999). iMac G3 'ruby red' computer (artifact; 14 in × 14.75 in × 16.25 in). Powerhouse Museum. 2021/100/1. Archived from the original on January 5, 2024. Retrieved December 9, 2022.
+
+MoMA: Apple Industrial Design Group (c. 1998). iMac desktop computer (artifact; 15 in × 15 in × 17 in). Museum of Modern Art. 1396.2001. Archived from the original on June 1, 2019. Retrieved December 9, 2022.; Atkinson 2020, pp. 147–149.
+
+↑ Thomas, Susan (July 12, 1999). "Thinking Outside the Box". U.S. News & World Report. Vol. 127, no. 2. p. 61.
+
+1 2 Atkinson (2020), pp. 147–149.
+
+↑ Feeney, Mary (December 10, 1998). "The Appeal of the Round: The Two Biggest Technological Design Successes of the Year, the Apple iMac Computer and the Renascent Volkswagen Beetle, Reflect on a Society Increasingly Choosing Curves over Angles". Vancouver Sun. p. A19.
+
+↑ Kanellos, Michael (August 19, 1999). "Apple Sues Emachines for iMac Look-alike". CNET. Archived from the original on July 14, 2014. Retrieved July 3, 2014.
+
+1 2 3 Kahney (2013), p. 135.
+
+↑ Spooner, John (December 15, 1999). "Compaq Hopes to Follow the iMac". ZDNet. Archived from the original on July 3, 2014. Retrieved December 1, 2022.
+
+↑ Takahashi, Dean (November 4, 1998). "Intel Is Pushing for Simpler Personal Computers". The Wall Street Journal. p. B6.
+
+↑ Kahney (2013), p. 141.
+
+↑ Segall (2013), p. 113.
+
+↑ Pogue (1999), pp. 62–64.
+
+↑ Michaels & Cellini (2002), p. 16.
+
+↑ Ackerman, Dan (April 21, 2021). "Apple's Colorful New iMac Looks Back to Go Forward". CNET. Archived from the original on April 21, 2021. Retrieved April 21, 2021.
+
+↑ Eadicicco, Lisa (April 21, 2021). "Apple Just Announced a Redesigned iMac in 7 Colors, Marking a Revival of Its Iconic Colorful Computers". Business Insider. Archived from the original on April 21, 2021. Retrieved April 21, 2021.
+
+↑ Lopez, Napier (April 21, 2021). "The Slim New iMac Is Powered By M1 and Comes in 7 Gorgeous Colors". The Next Web. Archived from the original on April 21, 2021. Retrieved April 21, 2021.
+
+↑ "iMac – Technical Specifications". Apple, Inc. Archived from the original on August 3, 2012. Retrieved December 29, 2020.
+
+↑ "iMac (266 mhz) – Technical Specifications". Apple, Inc. Archived from the original on August 3, 2012. Retrieved March 31, 2022.
+
+↑ "iMac (333 mhz) – Technical Specifications". Apple, Inc. Archived from the original on October 25, 2012. Retrieved March 31, 2022.
+
+↑ Bates (1999), p. 47.
+
+1 2 "Apple Announces Mac OS X "Panther"". Apple Newsroom. Retrieved July 15, 2025.
+
+↑ "iMac (slot Loading) – Technical Specifications". Apple, Inc. Archived from the original on November 5, 2013. Retrieved March 31, 2022.
+
+↑ "iMac (summer 2000) – Technical Specifications". Apple, Inc. Archived from the original on November 5, 2013. Retrieved March 31, 2022.
+
+↑ "iMac (early 2001) – Technical Specifications". Apple, Inc. Archived from the original on May 29, 2014. Retrieved March 31, 2022.
+
+↑ "iMac (summer 2001) – Technical Specifications". Apple, Inc. Archived from the original on July 4, 2013. Retrieved March 31, 2022.
+
+↑ "Apple Introduces New iMacs in Stunning New Colors – Apple". Apple.com. Archived from the original on November 27, 2024. Retrieved July 4, 2025.
+
+1 2 "Apple Announces Mac OS X Server "Tiger"". Apple Newsroom. Retrieved July 15, 2025.
+
+Sources
+[edit]
+
+Atkinson, Paul (2020). "Apple iMac G3". In Lees-Maffei, Grace (ed.). Iconic designs: 50 stories about 50 things. Bloomsbury Publishing. ISBN 978-0-8578-5353-0.
+
+Bates, Allyson (July 1999). "iMac 333MHz". Macworld. Reviews. p. 47. ISSN 0741-8647.
+
+Breen, Christopher (December 2001). "iMac and iMac Special Edition". Macworld. Reviews. pp. 33–34. ISSN 0741-8647.
+
+Breitzer, Frith (January 2000). "The iMac is back". Macworld. pp. 70–77. ISSN 0741-8647.
+
+Capps, Robert (December 1999). "Eeny meeny miny iMac". MacAddict. No. 40. ISSN 1088-548X.
+
+Gore, Andrew (July 1998a). "Defying gravity ... again". Macworld. The Vision Thing. p. 17. ISSN 0741-8647.
+
+Gore, Andrew (November 1998b). "Reviews". Macworld. iMac: Groundbreaking consumer offering lives up to its hype. pp. 32–33. ISSN 0741-8647.
+
+Gore, Andrew; Epler, Anita (July 1998). "The iMac cometh". Macworld. pp. 17A–17D. ISSN 0741-8647.
+
+Gruman, Galen (November 1997). "Why Apple pulled the plug". Macworld. pp. 31–32, 36. ISSN 0741-8647.
+
+Honan, Mathew (June 2001). "iMac and iMac Special Edition". Macworld. Reviews. pp. 68–69. ISSN 0741-8647.
+
+Honan, Mathew; Schmeiser, Lisa (October 2000). "The mouse that roared". Macworld. Macworld Expo Buzz Extra. p. 28. ISSN 0741-8647.
+
+Isaacson, Walter (2013). Steve Jobs. Simon & Schuster. ISBN 978-1-4516-4854-6.
+
+Kahney, Leander (2013). Jony Ive: the genius behind Apple's greatest products. Penguin Group. ISBN 978-1-5918-4617-8.
+
+Kahney, Leander (2019). Tim Cook: the genius who took Apple to the next level. Penguin Group. ISBN 978-0-241-34820-8.
+
+McGee, Patrick (2026). Apple in China: The Capture of the World's Greatest Company. Scribner. ISBN 978-1-6680-5338-6.
+
+Michaels, Philip; Snell, Jason (October 2000). "iMac of a different color". Macworld. Macworld Expo Buzz Extra. p. 27. ISSN 0741-8647.
+
+Michaels, Philip (March 2002). "The iMac: flat is where it's at". Macworld. Special Report. pp. 29–32. ISSN 0741-8647.
+
+Michaels, Philip; Cellini, Adelia (July 2002). "Does the eMac make the grade?". Macworld. No. 207. Mac Beat. ISSN 0741-8647.
+
+Pogue, David (October 1999). "Meet the iBook". Macworld. Features. pp. 62–67. ISSN 0741-8647.
+
+Press, Mike; Cooper, Rachel (2017). "Design and consumer culture". The design experience: the role of design and designers in the twenty-first century. Routledge. pp. 11–34. ISBN 978-1-3518-9170-7.
+
+Segall, Ken (2013). Insanely simple: the obsession that drives Apple's success (2nd ed.). The Penguin Group. ISBN 978-1-5918-4621-5.
+
+Silvius, Susan (December 1998). "iMac vs. Pentium: no points for good looks". PC World. ISSN 0737-8939.
+
+Simmons, Mark; Reynolds, David (March 1999). "The Mac of the Future". MacAddict. No. 31. ISSN 1088-548X.
+
+See also
+[edit]
+
+iPAQ (desktop computer)
+
+Mac NC
+
+Twentieth Anniversary Macintosh
+
+External links
+[edit]
+
+ Media related to IMac G3 at Wikimedia Commons
+
+ | 
+
+v
+
+t
+
+e
+
+Apple hardware since 1998
+
+ | 
+
+Hardware lists
+
+Macs
+
+grouped by CPU type
+
+iPhones
+
+iPads
+
+ | Mac | 
+
+ | Desktops | 
+
+eMac
+
+iMac
+
+G3
+
+G4
+
+G5
+
+Intel-based
+
+iMac Pro
+
+Apple silicon
+
+Mac Mini
+
+Mac Pro
+
+Mac Studio
+
+Power Mac
+
+G3
+
+G4
+
+G4 Cube
+
+G5
+
+Xserve
+
+ | MacBook | 
+
+iBook
+
+MacBook (2006–2012)
+
+12-inch MacBook (2015–2019)
+
+MacBook Air
+
+Intel
+
+Apple silicon
+
+MacBook Neo
+
+MacBook Pro
+
+Intel
+
+Apple silicon
+
+PowerBook
+
+G3
+
+G4
+
+ | iPhone | 
+
+iPhone
+
+1st
+
+3G
+
+3GS
+
+4
+
+4s
+
+5
+
+5c
+
+5s
+
+6 & 6 Plus
+
+6s & 6s Plus
+
+7 & 7 Plus
+
+8 & 8 Plus
+
+X
+
+XS, XS Max
+
+XR
+
+11
+
+11 Pro & Pro Max
+
+12 & 12 Mini
+
+12 Pro & Pro Max
+
+13 & 13 Mini
+
+13 Pro & Pro Max
+
+14 & 14 Plus
+
+14 Pro & Pro Max
+
+15 & 15 Plus
+
+15 Pro & Pro Max
+
+16 & 16 Plus
+
+16 Pro & Pro Max
+
+16e
+
+17
+
+17 Pro & Pro Max
+
+17e
+
+18 Pro & Pro Max
+
+iPhone SE
+
+1st
+
+2nd
+
+3rd
+
+iPhone Air
+
+iPhone Duo
+
+ | iPad | 
+
+iPad
+
+1st
+
+2
+
+3rd
+
+4th
+
+5th
+
+6th
+
+7th
+
+8th
+
+9th
+
+10th
+
+11th
+
+iPad Mini
+
+1st
+
+2
+
+3
+
+4
+
+5th
+
+6th
+
+A17 Pro
+
+A20 Pro
+
+iPad Air
+
+1st
+
+2
+
+3rd
+
+4th
+
+5th
+
+M2
+
+M3
+
+M4
+
+iPad Pro
+
+1st
+
+2nd
+
+3rd
+
+4th
+
+5th
+
+6th
+
+M4
+
+M5
+
+ | iPod | 
+
+Classic
+
+Mini
+
+iPod+HP
+
+Shuffle
+
+Nano
+
+Touch
+
+1st
+
+2nd
+
+3rd
+
+4th
+
+5th
+
+6th
+
+7th
+
+ | Other 
+
+consumer 
+
+electronics | 
+
+Apple TV
+
+Apple Vision Pro
+
+Apple Watch
+
+Ultra
+
+Displays
+
+Studio (1998–2004)
+
+Cinema
+
+Thunderbolt
+
+Pro Display XDR
+
+Studio (2022, 2026)
+
+ | Accessories | 
+
+AirPort
+
+Express
+
+Extreme
+
+Time Capsule
+
+AirPower (canceled)
+
+AirTag
+
+Headphones
+
+EarPods
+
+AirPods
+
+Pro
+
+Max
+
+iPad
+
+Pencil
+
+iPhone
+
+Bumper
+
+Pocket
+
+iPod
+
+Click wheel
+
+Nike+iPod
+
+Socks
+
+iSight
+
+Keyboards
+
+Wireless
+
+Magic
+
+Mice and trackpads
+
+USB
+
+Mighty
+
+Magic
+
+Magic Trackpad
+
+Polishing Cloth
+
+Remote
+
+Siri Remote
+
+Speakers
+
+iPod Hi-Fi
+
+SoundSticks
+
+HomePod
+
+Mini
+
+HomeView
+
+SuperDrive
+
+USB Modem
+
+Xserve RAID
+
+ | Silicon | 
+
+A series
+
+A4
+
+A5
+
+A5X
+
+A6
+
+A6X
+
+A7
+
+A8
+
+A8X
+
+A9
+
+A9X
+
+A10
+
+A10X
+
+A11
+
+A12
+
+A12X / A12Z
+
+A13
+
+A14
+
+A15
+
+A16
+
+A17 Pro
+
+A18 / A18 Pro
+
+A19 / A19 Pro
+
+A20 Pro
+
+C series
+
+C1
+
+C1X
+
+H series
+
+H1
+
+H2
+
+M series
+
+M1
+
+M2
+
+M3
+
+M4
+
+M5
+
+M6
+
+N series
+
+N1
+
+R series
+
+R1
+
+S series
+
+S1
+
+S1P
+
+S2
+
+S3
+
+S4
+
+S5
+
+S6
+
+S7
+
+S8
+
+S9
+
+S10
+
+T series
+
+T1
+
+T2
+
+U series
+
+U1
+
+W series
+
+W1
+
+W2
+
+W3
+
+ | 
+See also template: Apple hardware before 1998
+
+ | 
+
+v
+
+t
+
+e
+
+Apple hardware
+
+ | Apple II 
+
+family | 
+
+Apple I
+
+Apple II
+
+II
+
+II Plus
+
+IIe
+
+IIe Card
+
+IIc
+
+IIc Plus
+
+IIGS
+
+Apple III
+
+ | Mac | 
+
+ | Desktops | 
+
+Lisa
+
+Macintosh XL
+
+Compact
+
+128K
+
+512K
+
+512Ke
+
+Plus
+
+SE
+
+SE/30
+
+Classic
+
+Classic II
+
+Color Classic
+
+II family
+
+II
+
+IIx
+
+IIcx
+
+IIci
+
+IIfx
+
+IIsi
+
+IIvi
+
+IIvx
+
+LC family
+
+LC
+
+LC II
+
+LC III
+
+LC 475
+
+LC 500 series
+
+LC 630
+
+5200 LC
+
+Macintosh TV
+
+Quadra
+
+610
+
+650
+
+660AV
+
+605
+
+630
+
+700
+
+900
+
+950
+
+800
+
+840AV
+
+Performa
+
+Centris
+
+Power Macintosh
+
+4400 and 7220
+
+5000 series
+
+5200 LC and 5300 LC
+
+5260
+
+5400
+
+5500
+
+6000 series
+
+6100
+
+6200 and 6300
+
+6400
+
+6500
+
+7000 series
+
+7100
+
+7200 and 8200
+
+7300
+
+7500
+
+7600
+
+8000 series
+
+8100
+
+8500
+
+8600
+
+9000 series
+
+9500
+
+9600
+
+G3
+
+G4
+
+G4 Cube
+
+G5
+
+20th Anniversary
+
+iMac
+
+G3
+
+G4
+
+G5
+
+Intel
+
+Pro
+
+Apple silicon
+
+eMac
+
+Mac Pro
+
+Mac Mini
+
+Mac Studio
+
+ | Laptops | 
+
+Macintosh Portable
+
+PowerBook
+
+100 series
+
+100
+
+140
+
+170
+
+160
+
+180
+
+150
+
+190
+
+Duo
+
+210
+
+230
+
+500 series
+
+5300
+
+1400
+
+3400c
+
+2400c
+
+G3
+
+G4
+
+iBook
+
+MacBook
+
+2006–2012
+
+2015–2019
+
+MacBook Air
+
+Intel
+
+Apple silicon
+
+MacBook Neo
+
+MacBook Pro
+
+Intel
+
+Apple silicon
+
+ | Servers | 
+
+Workgroup Server
+
+9150
+
+Network Server
+
+Xserve
+
+ | Devices | 
+
+ | iPhone | 
+
+1st
+
+3G
+
+3GS
+
+4
+
+4S
+
+5
+
+5C
+
+5S
+
+6 / 6 Plus
+
+6S / 6S Plus
+
+7 / 7 Plus
+
+8 / 8 Plus
+
+X
+
+XR
+
+XS / XS Max
+
+11
+
+11 Pro / 11 Pro Max
+
+12 / 12 Mini
+
+12 Pro / 12 Pro Max
+
+13 / 13 Mini
+
+13 Pro / 13 Pro Max
+
+14 / 14 Plus
+
+14 Pro / 14 Pro Max
+
+15 / 15 Plus
+
+15 Pro / 15 Pro Max
+
+16 / 16 Plus
+
+16 Pro / 16 Pro Max
+
+16e
+
+17
+
+17 Pro / Pro Max
+
+17e
+
+18 Pro / Pro Max
+
+iPhone SE
+
+1st
+
+2nd
+
+3rd
+
+Air
+
+Duo
+
+ | iPad | 
+
+1st
+
+2
+
+3rd
+
+4th
+
+5th
+
+6th
+
+7th
+
+8th
+
+9th
+
+10th
+
+11th
+
+iPad Air
+
+1st
+
+2
+
+3rd
+
+4th
+
+5th
+
+6th
+
+7th
+
+8th
+
+iPad Mini
+
+1st
+
+2
+
+3
+
+4
+
+5th
+
+6th
+
+7th
+
+8th
+
+iPad Pro
+
+9.7 / 12.9 (1st)
+
+10.5 / 12.9 (2nd)
+
+11 (1st) / 12.9 (3rd)
+
+11 (2nd) / 12.9 (4th)
+
+11 (3rd) / 12.9 (5th)
+
+11 (4th) / 12.9 (6th)
+
+11 (5th) / 13 (1st)
+
+11 (6th) / 13 (2nd)
+
+ | iPod | 
+
+Classic
+
+Mini
+
+Nano
+
+Shuffle
+
+Touch
+
+1st
+
+2nd
+
+3rd
+
+4th
+
+5th
+
+6th
+
+7th
+
+ | Other | 
+
+Apple TV
+
+Apple Watch
+
+Ultra
+
+Beddit
+
+DOS/PC Compatibility Cards
+
+Newton
+
+MessagePad
+
+eMate 300
+
+Paladin
+
+Pippin
+
+Bandai
+
+PowerCD
+
+QuickTake
+
+Vision Pro
+
+ | Unreleased | 
+
+AirPower
+
+Interactive Television Box
+
+Mac NC
+
+W.A.L.T.
+
+ | Accessories | 
+
+ | Audio | 
+
+AirPods
+
+Pro
+
+Max
+
+Beats
+
+Pill
+
+Headphones
+
+EarPods
+
+Speakers
+
+iPod Hi-Fi
+
+SoundSticks
+
+HomePod
+
+Mini
+
+HomeView
+
+ | Displays | 
+
+Monitor III
+
+Monitor II
+
+AppleColor Composite IIe
+
+AppleColor High-Resolution RGB
+
+Color
+
+AudioVision 14
+
+Multiple Scan 14
+
+ColorSync 750
+
+Studio
+
+1998–2004
+
+2022
+
+Cinema
+
+Thunderbolt
+
+Pro Display XDR
+
+ | Drives | 
+
+Disk II
+
+Macintosh
+
+ProFile
+
+Hard Disk 20
+
+Hard Disk 20SC
+
+AppleCD
+
+PowerCD
+
+Tape Drive 40SC
+
+SuperDrive
+
+Xserve RAID
+
+ | Input | 
+
+Desktop Bus
+
+iPad accessories
+
+Pencil
+
+iSight
+
+Keyboards
+
+Extended
+
+Adjustable
+
+Wireless
+
+Magic
+
+Mice and trackpads
+
+USB
+
+Mighty
+
+Magic
+
+Magic Trackpad
+
+Remote
+
+Siri Remote
+
+Scanner
+
+OneScanner
+
+ | iPod | 
+
+Click wheel
+
+Nike+iPod
+
+ | Networking | 
+
+AirPort
+
+Express
+
+Extreme
+
+Time Capsule
+
+Apple II serial cards
+
+USB Modem
+
+LocalTalk
+
+Communication Slot
+
+GeoPort
+
+ | Printers | 
+
+Silentype
+
+Dot Matrix Printer
+
+Letter Quality Printer
+
+ImageWriter
+
+LaserWriter
+
+410 Color Plotter
+
+Color LaserWriter
+
+StyleWriter
+
+ | Security | 
+AirTag
+
+ | 
+
+Hardware lists
+
+Macs
+
+iPhones
+
+iPads
+
+List of Apple products
+
+Retrieved from "https://en.wikipedia.org/w/index.php?title=IMac_G3&oldid=1383606749"
+
+Categories: 
+Computer-related introductions in 1998
+
+Discontinued Apple Inc. products
+
+IMac family
+
+Collection of the Museum of Modern Art (New York City)
+
+Collection of the Powerhouse Museum
+
+Collection of the Victoria and Albert Museum
+
+Macintosh all-in-ones
+
+PowerPC Macintosh computers
+
+Hidden categories: 
+Articles with short description
+
+Short description is different from Wikidata
+
+Featured articles
+
+Use mdy dates from May 2025
+
+Use American English from May 2025
+
+All Wikipedia articles written in American English
+
+Commons category link is on Wikidata
+
+ This page was last edited on 3 November 2026, at 17:26 (UTC).
+
+Page was rendered with Parsoid.
+
+Text is available under the Creative Commons Attribution-ShareAlike 4.0 License;
+additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+Privacy policy
+
+About Wikipedia
+
+Disclaimers
+
+Contact Wikipedia
+
+Legal & safety contacts
+
+Code of Conduct
+
+Developers
+
+Statistics
+
+Cookie statement
+
+Mobile view
+
+Search
+
+ Search
+
+Toggle the table of contents
+
+iMac G3
+
+16 languages
+
+Add topic
