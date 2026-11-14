@@ -1,0 +1,353 @@
+{
+  "https://en.wikipedia.org/wiki/Dwayne_Johnson": {
+    "file": "pages/59c70db0d830.txt",
+    "fetched_at": "2026-11-14T17:47:01.166697+00:00",
+    "ok": true,
+    "chars": 195839,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Dwayne_Johnson",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Tom_Brady": {
+    "file": "pages/c2ab9c1b9427.txt",
+    "fetched_at": "2026-11-14T17:47:01.745793+00:00",
+    "ok": true,
+    "chars": 315895,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Tom_Brady",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Caitlin_Clark": {
+    "file": "pages/6f58e022ba7c.txt",
+    "fetched_at": "2026-11-14T17:47:02.353588+00:00",
+    "ok": true,
+    "chars": 162835,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Caitlin_Clark",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Lamine_Yamal": {
+    "file": "pages/7be824b8ffbe.txt",
+    "fetched_at": "2026-11-14T17:47:02.868044+00:00",
+    "ok": true,
+    "chars": 78680,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Lamine_Yamal",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Erling_Haaland": {
+    "file": "pages/447b6cf3f97f.txt",
+    "fetched_at": "2026-11-14T17:47:03.332953+00:00",
+    "ok": true,
+    "chars": 139799,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Erling_Haaland",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Rihanna": {
+    "file": "pages/079844e9d0e7.txt",
+    "fetched_at": "2026-11-14T17:47:04.037812+00:00",
+    "ok": true,
+    "chars": 162467,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Rihanna",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Fenty_Beauty": {
+    "file": "pages/8646851453f8.txt",
+    "fetched_at": "2026-11-14T17:47:04.542065+00:00",
+    "ok": true,
+    "chars": 33046,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Fenty_Beauty",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Jensen_Huang": {
+    "file": "pages/f5b3ff01ae76.txt",
+    "fetched_at": "2026-11-14T17:47:05.114079+00:00",
+    "ok": true,
+    "chars": 55437,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Jensen_Huang",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Nvidia": {
+    "file": "pages/4a7ac65635eb.txt",
+    "fetched_at": "2026-11-14T17:47:05.534625+00:00",
+    "ok": true,
+    "chars": 155011,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Nvidia",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Ninja_(gamer)": {
+    "file": "pages/cf1ae2aa433e.txt",
+    "fetched_at": "2026-11-14T17:47:06.010821+00:00",
+    "ok": true,
+    "chars": 41885,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Ninja_(gamer)",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Serena_Williams": {
+    "file": "pages/a8a75dac4ca9.txt",
+    "fetched_at": "2026-11-14T17:47:06.565975+00:00",
+    "ok": true,
+    "chars": 270975,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Serena_Williams",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Tiger_Woods": {
+    "file": "pages/a4c43128a627.txt",
+    "fetched_at": "2026-11-14T17:47:07.126307+00:00",
+    "ok": true,
+    "chars": 161279,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Tiger_Woods",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Usain_Bolt": {
+    "file": "pages/eb538df48e7a.txt",
+    "fetched_at": "2026-11-14T17:47:07.632541+00:00",
+    "ok": true,
+    "chars": 167574,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Usain_Bolt",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Jan_Koum": {
+    "file": "pages/396786808b92.txt",
+    "fetched_at": "2026-11-14T17:47:08.151305+00:00",
+    "ok": true,
+    "chars": 16385,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Jan_Koum",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/WhatsApp": {
+    "file": "pages/1296901c4e7a.txt",
+    "fetched_at": "2026-11-14T17:47:08.670633+00:00",
+    "ok": true,
+    "chars": 161257,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/WhatsApp",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Shaquille_O%27Neal": {
+    "file": "pages/753d1693ff2f.txt",
+    "fetched_at": "2026-11-14T17:47:09.163896+00:00",
+    "ok": true,
+    "chars": 186272,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Shaquille_O%27Neal",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Kevin_Durant": {
+    "file": "pages/8e5b9695a3f1.txt",
+    "fetched_at": "2026-11-14T17:47:09.688469+00:00",
+    "ok": true,
+    "chars": 163285,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Kevin_Durant",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Simone_Biles": {
+    "file": "pages/4f38a87ddd78.txt",
+    "fetched_at": "2026-11-14T17:47:10.182564+00:00",
+    "ok": true,
+    "chars": 153145,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Simone_Biles",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/History_of_Apple_Inc.": {
+    "file": "pages/eeea0ef492ed.txt",
+    "fetched_at": "2026-11-14T17:47:10.679295+00:00",
+    "ok": true,
+    "chars": 120570,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/History_of_Apple_Inc.",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Forbes_list_of_the_world%27s_highest-paid_athletes": {
+    "file": "pages/d45abcb77f35.txt",
+    "fetched_at": "2026-11-14T17:47:11.143159+00:00",
+    "ok": true,
+    "chars": 25934,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Forbes_list_of_the_world%27s_highest-paid_athletes",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Victor_Wembanyama": {
+    "file": "pages/9a4700374cc1.txt",
+    "fetched_at": "2026-11-14T17:47:11.548107+00:00",
+    "ok": true,
+    "chars": 91906,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Victor_Wembanyama",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Kevin_De_Bruyne": {
+    "file": "pages/59f9dc0c812c.txt",
+    "fetched_at": "2026-11-14T17:47:11.995049+00:00",
+    "ok": true,
+    "chars": 130465,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Kevin_De_Bruyne",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Neymar": {
+    "file": "pages/96a4109d63db.txt",
+    "fetched_at": "2026-11-14T17:47:12.686188+00:00",
+    "ok": true,
+    "chars": 274978,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Neymar",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Max_Verstappen": {
+    "file": "pages/cafebc503e6a.txt",
+    "fetched_at": "2026-11-14T17:47:13.484047+00:00",
+    "ok": true,
+    "chars": 202944,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Max_Verstappen",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Roger_Federer": {
+    "file": "pages/fd0dda7de3cc.txt",
+    "fetched_at": "2026-11-14T17:47:13.998200+00:00",
+    "ok": true,
+    "chars": 253633,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Roger_Federer",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Novak_Djokovic": {
+    "file": "pages/3076cee5bbf2.txt",
+    "fetched_at": "2026-11-14T17:47:14.551621+00:00",
+    "ok": true,
+    "chars": 267916,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Novak_Djokovic",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Kai_Cenat": {
+    "file": "pages/1039ab23f7ac.txt",
+    "fetched_at": "2026-11-14T17:47:15.398859+00:00",
+    "ok": true,
+    "chars": 44259,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Kai_Cenat",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Bad_Bunny": {
+    "file": "pages/31d426e9fba4.txt",
+    "fetched_at": "2026-11-14T17:47:15.820880+00:00",
+    "ok": true,
+    "chars": 117116,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Bad_Bunny",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Ed_Sheeran": {
+    "file": "pages/4cb483bed02e.txt",
+    "fetched_at": "2026-11-14T17:47:16.284463+00:00",
+    "ok": true,
+    "chars": 166941,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Ed_Sheeran",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Shohei_Ohtani": {
+    "file": "pages/8547e83e2992.txt",
+    "fetched_at": "2026-11-14T17:47:16.781139+00:00",
+    "ok": true,
+    "chars": 196486,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Shohei_Ohtani",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Steve_Jobs": {
+    "file": "pages/80e3a81cebcc.txt",
+    "fetched_at": "2026-11-14T17:47:17.456863+00:00",
+    "ok": true,
+    "chars": 154532,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Steve_Jobs",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN00000000000053201113": {
+    "file": "pages/5d79c8c8aa05.txt",
+    "fetched_at": "2026-11-14T17:47:17.940455+00:00",
+    "ok": true,
+    "chars": 196,
+    "status": 200,
+    "final_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN00000000000053201113",
+    "content_type": "application/json"
+  },
+  "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN00000000000053201111": {
+    "file": "pages/b5068b5b13da.txt",
+    "fetched_at": "2026-11-14T17:47:18.508088+00:00",
+    "ok": true,
+    "chars": 196,
+    "status": 200,
+    "final_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN00000000000053201111",
+    "content_type": "application/json"
+  },
+  "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN00000000000053201115": {
+    "file": "pages/ea1d83dd0d5c.txt",
+    "fetched_at": "2026-11-14T17:47:19.041045+00:00",
+    "ok": true,
+    "chars": 195,
+    "status": 200,
+    "final_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN00000000000053201115",
+    "content_type": "application/json"
+  },
+  "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN00000000000053201101": {
+    "file": "pages/65debe36ec6c.txt",
+    "fetched_at": "2026-11-14T17:47:19.497070+00:00",
+    "ok": true,
+    "chars": 196,
+    "status": 200,
+    "final_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN00000000000053201101",
+    "content_type": "application/json"
+  },
+  "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN00000000000033909213": {
+    "file": "pages/99d68b4b0ae4.txt",
+    "fetched_at": "2026-11-14T17:47:19.984586+00:00",
+    "ok": true,
+    "chars": 196,
+    "status": 200,
+    "final_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN00000000000033909213",
+    "content_type": "application/json"
+  },
+  "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN00000000000033909211": {
+    "file": "pages/5a83ce755bd7.txt",
+    "fetched_at": "2026-11-14T17:47:20.441372+00:00",
+    "ok": true,
+    "chars": 196,
+    "status": 200,
+    "final_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN00000000000033909211",
+    "content_type": "application/json"
+  },
+  "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN00000000000033909215": {
+    "file": "pages/6aefb48d3433.txt",
+    "fetched_at": "2026-11-14T17:47:20.954240+00:00",
+    "ok": true,
+    "chars": 196,
+    "status": 200,
+    "final_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN00000000000033909215",
+    "content_type": "application/json"
+  },
+  "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN00000000000033909201": {
+    "file": "pages/a047837fbed7.txt",
+    "fetched_at": "2026-11-14T17:47:21.506531+00:00",
+    "ok": true,
+    "chars": 196,
+    "status": 200,
+    "final_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN00000000000033909201",
+    "content_type": "application/json"
+  }
+}

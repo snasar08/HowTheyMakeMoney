@@ -1,0 +1,1522 @@
+URL: https://en.wikipedia.org/wiki/Jensen_Huang
+FINAL_URL: https://en.wikipedia.org/wiki/Jensen_Huang
+FETCHED: 2026-11-14T17:47:05.114079+00:00
+
+Jump to content
+
+Main menu
+
+Main menu
+
+ move to sidebar
+ hide
+
+ Navigation
+
+Main page
+
+Contents
+
+Current events
+
+Random article
+
+About Wikipedia
+
+Contact us
+
+ Contribute
+
+Help
+
+Learn to edit
+
+Community portal
+
+Recent changes
+
+Upload file
+
+Special pages
+
+Search
+
+ Search
+
+Appearance
+
+Donate
+
+Create account
+
+Log in
+
+Personal tools
+
+Donate
+
+Create account
+
+Log in
+
+Contents
+
+ move to sidebar
+ hide
+
+(Top)
+
+ 1
+ Early life and education
+
+ 2
+ AMD and LSI Logic
+
+ 3
+ Nvidia
+
+ Toggle Nvidia subsection
+
+ 3.1
+ Founding (1993)
+
+ 3.2
+ President and CEO (1993–2026)
+
+ 3.3
+ Scandal and resignation (2026)
+
+ 4
+ Personal life
+
+ 5
+ Philanthropy
+
+ 6
+ See also
+
+ 7
+ Notes
+
+ 8
+ References
+
+ Toggle References subsection
+
+ 8.1
+ Additional sources
+
+ 9
+ External links
+
+Toggle the table of contents
+
+Jensen Huang
+
+60 languages
+
+Afrikaans
+
+العربية
+
+مصرى
+
+Asturianu
+
+Български
+
+বাংলা
+
+Brezhoneg
+
+Bosanski
+
+Català
+
+کوردی
+
+Čeština
+
+Dansk
+
+Deutsch
+
+Ελληνικά
+
+Español
+
+Eesti
+
+فارسی
+
+Suomi
+
+Français
+
+Galego
+
+עברית
+
+हिन्दी
+
+Hrvatski
+
+Magyar
+
+Հայերեն
+
+Bahasa Indonesia
+
+Italiano
+
+日本語
+
+ქართული
+
+Қазақша
+
+한국어
+
+ລາວ
+
+Madhurâ
+
+Malagasy
+
+Minangkabau
+
+Монгол
+
+Nederlands
+
+Norsk bokmål
+
+Kapampangan
+
+Polski
+
+Português
+
+Runa Simi
+
+Русский
+
+Slovenčina
+
+Slovenščina
+
+Српски / srpski
+
+Svenska
+
+Kiswahili
+
+తెలుగు
+
+Тоҷикӣ
+
+ไทย
+
+Türkçe
+
+Українська
+
+اردو
+
+Oʻzbekcha / ўзбекча
+
+Tiếng Việt
+
+吴语
+
+閩南語 / Bân-lâm-gí
+
+粵語
+
+中文
+
+Edit links
+
+Article
+
+Talk
+
+ English
+
+Read
+
+View source
+
+View history
+
+Save
+
+Tools
+
+Tools
+
+ move to sidebar
+ hide
+
+ Actions
+
+Read
+
+View source
+
+View history
+
+Save
+
+ General
+
+What links here
+
+Related changes
+
+Upload file
+
+Permanent link
+
+Page information
+
+Cite this page
+
+Get shortened URL
+
+Switch to legacy parser
+
+ Print/export
+
+Download as PDF
+
+Printable version
+
+ In other projects
+
+Wikimedia Commons
+
+Wikiquote
+
+Wikidata item
+
+Appearance
+
+ move to sidebar
+ hide
+
+From Wikipedia, the free encyclopedia
+
+Taiwanese-American businessman (born 1963)
+
+The native form of this personal name is Huang Jen-Hsun. This article uses Western name order when mentioning individuals.
+
+ | 
+
+ | 
+This article is affected by the following current event: Jensen Huang spying scandal. Its information may change rapidly. Please update outdated or incomplete information with citations to reliable sources. (November 2026) (Learn how and when to remove this message)
+
+ | 
+Jensen Huang
+
+ | 
+黃仁勳
+
+ | 
+Huang in 2026
+
+ | Born | 
+Jen-Hsun Huang
+
+ (1963-02-17) February 17, 1963 (age 63)
+
+Taipei, Taiwan
+
+ | Citizenship | 
+
+Taiwan
+
+United States
+
+ | Education | 
+
+Oregon State University (BS)
+
+Stanford University (MS)
+
+ | Known for | Co-founding Nvidia
+
+ | Title | President and CEO of Nvidia Corporation (1993–2026)
+
+ | Successor | Colette Kress (interim)
+
+ | Spouse | 
+
+Lori Mills
+
+​
+(m. 1985)​
+
+ | Children | 2
+
+ | Relatives | Lisa Su (cousin)
+
+ | Awards | 
+
+IEEE Founders Medal (2020)
+
+VinFuture Prize (2024)
+
+Edison Award (2024)
+
+Primetime Engineering Award (2024)
+
+Queen Elizabeth Prize for Engineering (2025)
+
+IEEE Medal of Honor (2026)
+
+National Medal of Science (2026)
+
+ | 
+
+ | 
+
+ | Chinese name
+
+ | Traditional Chinese | 黃仁勳
+
+ | Simplified Chinese | 黄仁勋
+
+ | 
+
+ | Transcriptions
+
+ | Standard Mandarin
+
+ | Hanyu Pinyin | Huáng Rénxūn
+
+ | Bopomofo | ㄏㄨㄤˊ ㄖㄣˊ ㄒㄩㄣˉ
+
+ | Gwoyeu Romatzyh | Hwang Ren-shiun
+
+ | Wade–Giles | Huang2 Jên2-hsün1
+
+ | Tongyong Pinyin | Huáng Rén-syūn
+
+ | Yale Romanization | Hwáng Rén-syūn
+
+ | MPS2 | Huáng Rén-shiūn
+
+ | IPA | [xwǎŋ ɻə̌n.ɕýn]
+
+ | Yue: Cantonese
+
+ | Jyutping | Wong4 Jan4-fan1
+
+ | Southern Min
+
+ | Hokkien POJ | N̂g Jîn-hun
+
+ | Tâi-lô | N̂g Jîn-hun
+
+ | 
+
+ | 
+
+ | Signature
+
+ | 
+
+Jen-Hsun "Jensen" Huang[a] (born February 17, 1963) is a Taiwanese and American electrical engineer and businessman. He co-founded the technology company Nvidia, one of the world's most valuable corporations, and served as its president and CEO from its founding in 1993 until his resignation in November 2026. As of November 2026,[update] Forbes estimates his net worth at over US$150 billion, making him the eleventh-wealthiest person in the world. 
+
+Born in Taipei, Huang spent his childhood in Taiwan and Thailand before immigrating to the United States. After earning a master's degree from Stanford University, he launched Nvidia alongside Chris Malachowsky and Curtis Priem from a Denny's restaurant in San Jose, California, in 1993 at age 30. Huang led the company out of near-bankruptcy during the 1990s and oversaw its expansion from graphics processing unit (GPU) development into high-performance computing and artificial intelligence (AI).
+
+Under Huang's leadership, Nvidia experienced rapid growth during the AI boom, becoming the first company to reach a market capitalization of over $5 trillion in October 2025. In 2021 and 2024, Time magazine included him in its list of the most influential people. In 2025, Huang was named as one of the "Architects of AI" for Time's Person of the Year. In November 2026, a scandal emerged where it was reported that he had had multiple affairs, including one with Alice Huang, whom the U.S. government suspects may have been a spy for China, though later reporting said there was no conclusive proof. As a result, on November 12, Huang resigned from his positions at Nvidia, and the company confirmed he would have no formal role at the firm going forward.
+
+Early life and education
+
+Huang was born in Taipei, Taiwan, on February 17, 1963,[1] and moved to the southern city of Tainan as a child.[2] He is the second son of Huang Hsing-tai,[b] a chemical engineer at an oil refinery, and Lo Tsai-hsiu,[c] a schoolteacher.[3] They were a middle-class Taiwanese family that relocated often,[4] and were native speakers of Taiwanese Hokkien.[5] Each day, Jensen's mother randomly selected 10 words from the dictionary to teach her sons English.[6] When he was five years old, Huang's family moved to Thailand to support his father's refinery career and remained there for approximately four years.[2][7] He attended Ruamrudee International School while in Bangkok.[8]
+
+In the late 1960s, Hsing-tai traveled from Taiwan to New York City to train under an air conditioning company and, after returning home, resolved to send his sons to the United States.[9] At age nine, Jensen's parents sent him to live in the United States, even though he did not yet speak English fluently.[10] He and his older brother moved in 1973 to live with an uncle in Tacoma, Washington.[11] Both Huang's aunt and uncle were recent immigrants to Washington state; they accidentally enrolled him and his brother in the Oneida Baptist Institute, a religious reform academy in Kentucky for troubled youth,[11] mistakenly believing it to be a prestigious boarding school.[12] In order to afford the academy's tuition, Jensen's parents sold nearly all their possessions.[13]
+
+When he was 10 years old, Huang lived with his older brother in the Oneida boys' dormitory.[12] Because he was too young to attend classes at the reform academy, Huang was educated at Oneida Elementary school in Oneida, Kentucky, arriving as "an undersized Asian immigrant with long hair and heavily accented English".[12] He was frequently bullied and beaten.[14] In Oneida, Huang cleaned toilets every day, learned to play table tennis,[d] joined the swimming team,[16] and appeared in Sports Illustrated at age 14.[17] He taught his roommate how to read in exchange for being taught how to bench press.[12][17] In 2002, Huang said he remembered the part of his life in Kentucky "more vividly than just about any other".[17]
+
+Two years after Huang arrived in Oneida, his parents moved to the United States and settled in Beaverton, Oregon, after which the brothers withdrew from school in Kentucky to live with them.[18] As a teenager, Huang attended Aloha High School in Aloha, Oregon,[19] where he excelled academically. He skipped two grades, graduated at age 16, and became a nationally ranked table-tennis player, in addition to being a member of its mathematics, computer, and science clubs.[12] In 1977, the school purchased an Apple II computer which Huang used to play Super Star Trek, a text-based game, and to program in BASIC, creating his own version of Snake.[20]
+
+Huang's first job, at age 15, was working the graveyard shift[21] at a local Denny's restaurant as a dishwasher, busboy, and waiter from 1978 to 1983.[22][23][24] After high school, he enrolled at Oregon State University because of its low tuition fees.[25] He studied electrical engineering and was graduated in 1984 with a bachelor's degree with highest honors.[26][27] Huang later recalled, "I was the youngest kid in school, in class" and the only student who "looked like a child".[28] While working as a microchip designer in Silicon Valley, he took graduate classes at Stanford University, where he earned a master's degree in electrical engineering in 1992.[12][29]
+
+AMD and LSI Logic
+
+Sun GX version 1. Note the two large LSI Logic chips implementing the accelerator.
+
+After college, Huang worked as a microchip designer in Silicon Valley.[12] He was approached for positions at Texas Instruments, Advanced Micro Devices (AMD), and LSI Logic,[30] ultimately choosing the California-based AMD due to already being familiar with the company. From 1984 to 1985,[31] Huang designed AMD microprocessors while simultaneously attending Stanford and raising his two children. However, when he heard of new chip design processes at LSI Logic, Huang left AMD to assume a role as a technical officer at LSI Logic, working under a startup company, Sun Microsystems, where he met engineers Chris Malachowsky and Curtis Priem.[32]
+
+LSI was in contract with Sun Microsystems and had introduced Huang to Malachowsky and Priem, who were working on a new graphics accelerator card. While the three produced the card's manufacturing process, the relationship between Malachowsky and Priem became strained as the two disputed the chip's design, leading to infighting; according to Malachowsky, they "broke every tool that LSI Logic had in their standard portfolio".[33] In 1989, Huang, Malachowsky, and Priem finalized the accelerator, which they called the "GX graphics engine".[34] GX was a widespread financial success; the sales of the graphics engine contributed to Sun Microsystem's revenue increasing from $262 million in 1987 to $656 million in 1990, and Huang was promoted to be the director of LSI's CoreWare, a division that manufactured chips for hardware vendors.[35] He stayed at LSI until 1993.[31]
+
+Nvidia
+
+Founding (1993)
+
+Huang co-founded Nvidia Corporation after meeting with Chris Malachowsky and Curtis Priem in a Denny's diner in East San Jose (pictured). As a teenager, Huang was an employee at a Denny's restaurant in Oregon.
+
+When business began to slow for Sun Microsystems after 1990, Huang, alongside Priem and Malachowsky, resigned to found a venture making graphics chips for PC games.[36] They initially named their new company "NVision" until Huang suggested that the company be named based on the Latin word invidia, as Priem wanted competitors to turn "green with envy".[12] They eventually dropped the "i" to honor the NV1 chip that they were then developing.[37] The three met frequently in 1992 at a Denny's roadside diner in East San Jose to formulate a business plan.[38] Huang chose for them to meet at Denny's due to his prior work experience at the restaurant chain and because it was "quieter than home and had cheap coffee".[12] The three founded the company during one meeting at a breakfast booth at the diner.[39][40]
+
+To formally incorporate the company, Huang found a lawyer, James Gaither of Cooley Godward, who used $200 of Huang's money to capitalize the company.[37] After that meeting, Huang went back to Priem and Malachowsky to ask each of them for $200 for their respective shares of the company, which meant that Nvidia's initial capital was $600.[41] On April 5, 1993, Huang personally signed Nvidia's original articles of incorporation into effect.[42]
+
+Although he had left LSI, Huang remained in good standing with the company and was able to secure funding for Nvidia from LSI's CEO, Wilfred Corrigan, who introduced Huang to venture capitalist Don Valentine.[43] Valentine, the leader of Sequoia Capital, chose to invest in Nvidia through Corrigan's support,[43] as did Sutter Hill Ventures. The funding enabled Nvidia to begin development efforts toward its first chip and to begin paying wages for its employees.[44] By the first day of operation, Huang was made Nvidia's president and CEO.[45] Even though Huang, at age 30, was younger than Priem and Malachowsky, both Priem and Malachowsky believed that he was prepared to be CEO.[12] According to Priem, "we basically deferred to Jensen on day one" and told Huang, "you're in charge of running the company—all the stuff Chris and I don't know how to do".[46][e]
+
+President and CEO (1993–2026)
+
+Huang at Computex Taipei in 2016
+By 2024, Huang had been Nvidia's chief executive for over three decades, a tenure described by The Wall Street Journal as "almost unheard of in fast-moving Silicon Valley".[47] He owns 3.6% of Nvidia's stock, which went public in 1999.[48] He earned US$24.6 million as CEO in 2007, ranking him as the 61st highest paid U.S. CEO by Forbes.[48] According to Huang, the three co-founders in 1993 had "no idea how" to start a company,[40] "building Nvidia turned out to have been a million times harder" than they expected, and they probably would not have done it if they had realized up front "the pain and suffering [involved] ... the challenges [they were] going to endure, the embarrassment and the shame, and the list of all the things that [would] go wrong."[49] For its first graphics accelerator chips, Nvidia focused on rendering quadrilateral primitives (forward texture mapping) instead of the triangle primitives preferred by its competitors,[12] and barely survived long enough to successfully pivot to triangles only because Sega agreed to keep Nvidia alive with a $5 million investment.[50] By the time the RIVA 128 was released in August 1997 and saved the company, Nvidia was down to one month of payroll.[12] This resulted in the "unofficial company motto": "Our company is thirty days from going out of business."[12] Huang regularly began presentations to Nvidia staff with those words for many years.[12] However, Huang regards the "pain and suffering" of Nvidia's early years as essential to the company's success in later years, because it forced him to become a better leader.[51]
+Huang at the ACM/IEEE Supercomputing Conference in 2018
+
+Huang did not keep a fixed office; he roamed Nvidia's headquarters and settled temporarily in conference rooms as needed.[52] He preferred to maintain a relatively flat management structure, with around 60 direct reports as of November 2024,[53] based upon his view that people reporting directly to him "should be at the top of their game" and "require the least amount of pampering".[54] He has said he does not wear a watch, because he believes that "now is the most important time".[47]
+
+Historically, Huang and Nvidia were well-known only among the gamers and computer graphics experts who were the original intended markets for Nvidia's graphics processing unit (GPU) products. In 2017, a Fortune profile article suggested: "If you haven't heard of Nvidia, you can be forgiven."[52] During the AI boom, Huang's net worth rose rapidly along with the value of Nvidia's stock, from US$3 billion in 2019 to US$90 billion in May 2024.[55] During the same timeframe, Huang became more widely known. In March 2024, Mark Zuckerberg wrote on Instagram with a picture of himself and Huang wearing each other's signature jacket: "He's like Taylor Swift, but for tech".[56]
+
+Huang with Mark Zuckerberg and Elon Musk at an artificial intelligence luncheon hosted by U.S. president Donald Trump at the White House, September 29, 2026
+
+In June 2024, Nvidia's market capitalization reached US$3 trillion for the first time and Huang's net worth grew to US$100 billion.[57] By then, the news media was using the term "Jensanity" to refer to Huang's celebrity status in Taiwan,[57] and it was compared to the "Linsanity" phenomenon of 2012.[7] Huang was the center of attention at Computex 2024 in Taipei, even though he was not on the official speaking program.[57] Large crowds of fans and paparazzi followed Huang and his family members around every time they appeared in public during their 2024 visit to Taiwan.[57][7]
+
+In January 2025, Huang delivered the keynote address at the Consumer Electronics Show in Las Vegas.[58] During this keynote, Huang made a number of announcements such as a new gaming GPU series called the GeForce RTX 50 series for both PCs and laptops.[58] In October 2025, Nvidia became the first publicly traded company in the world to reach a market capitalization exceeding $5 trillion.[59]
+
+In 2026, Huang was appointed to the President's Council of Advisors on Science and Technology (PCAST) by President Donald Trump.[60]
+
+Scandal and resignation (2026)
+
+Main article: Jensen Huang spying scandal
+
+Beginning on October 29, 2026, The New York Times published a series of reports that the United States federal government believed Huang had a "close relationship" with Chinese tech executive Alice Huang.[f] Despite sharing a surname, the two have no direct familial connection.[61] Alice Huang worked at Megaspeed, a Singapore-based company that purchases Nvidia's AI chips, and it was reported that U.S. intelligence sources believed she was recruited by China's Ministry of State Security as a spy.[62][63][64][65] Following these reports, on November 8, Jensen Huang admitted to marital infidelity in an internal memo to Nvidia employees.[66][67] On November 8, Nvidia's board launched an investigation into Jensen Huang[68][69] while stating that they have "no reason to believe that either national security or NVIDIA secrets were compromised" and that "The Board has confidence in Jensen and his leadership team."[70]
+
+On November 11, 2026, The New York Times reported that Huang had a second affair with Nvidia's vice president of healthcare Kimberly Powell, a married woman who reports to him.[71] The two were allegedly filmed "being affectionate" at a hotel during a company conference. The affair was in violation of Nvidia's code of conduct, which advises employees to avoid "personal relationships" that "create conflict".[72] Three people briefed on the incident stated that the incident at the hotel was captured by a bystander, who was caught by Huang's security team and made to sign a non-disclosure agreement.[73] That same day, The Wall Street Journal reported that Nvidia's board was set to meet as soon as November 11 to "determine his future" and to prepare to oust Huang.[74][failed verification] Huang resigned as president and CEO on November 12, with CFO and executive vice president Colette Kress becoming the company's interim CEO.[75][76][77] Nvidia confirmed Huang would have no role in the company going forward.[78][75] Later that day, Reuters reported that Huang had a third affair with a second Nvidia employee, whose name has not been disclosed.[79][80] U.S. Attorney General Todd Blanche stated on November 12 that the Justice Department has not yet reached a conclusion regarding whether Alice Huang was acting as a spy for Beijing.[81] Later reports confirmed that U.S. intelligence found no proof that Alice Huang was a spy.[82]
+
+Following his resignation,[83] Jensen Huang retained Paul, Weiss, white-collar defense litigators Melinda Haag[84] and Walter Brown amid widening federal inquiries and an impending congressional hearing, at which he has agreed to testify.[85] Concurrently, the U.S. Department of Justice is pursuing an antitrust probe focused directly on Nvidia alongside separate export-control investigations into Supermicro and Megaspeed regarding ties to Alice Huang, with officials indicating no criminal charges against Nvidia or Huang.[86]
+
+Personal life
+
+As of November 2026,[update] Forbes estimates Huang's net worth to be over US$150 billion, making him the eleventh-wealthiest person in the world.[48]
+
+While at Oregon State University, Huang met his future wife, Lori Huang (née Mills), who was his engineering lab partner at the time.[12] They have two children, Spencer[g] and Madison.[h][52] Spencer launched a bar in Taipei in 2015[88] that was honored as one of the top 50 bars in Asia by Forbes.[89] The bar closed in April 2021,[90][non-primary source needed] and he is currently a product manager at Nvidia. Madison previously worked in the hotel industry and is currently director of product marketing at Nvidia.[91] The Huang family lived in ordinary middle-class starter homes in San Jose before Nvidia went public in 1999.[92] In 2003, they moved to a larger house in nearby Los Altos Hills and they acquired a second home in Wailea, Hawaii, the following year.[92] In 2017, a limited liability company reportedly linked to the Huangs acquired a mansion in San Francisco for $38 million.[92]
+
+Huang is a relative of Lisa Su, AMD's chair and CEO.[93] Huang's mother is the youngest sister of Su's maternal grandfather, making them first cousins, once removed.[94][95] Huang was unaware of their familial connection until Su became AMD's CEO.[96]
+
+A December 2024 investigation by The New York Times reported that Huang had set up an intentionally defective grantor trust and a grantor retained annuity trust. It was estimated that these trusts and his foundation would reduce his family's estate tax by US$8 billion.[97]
+
+Huang has dual Taiwanese and United States citizenship.[98] During his time at AMD in 1984, Huang, who grew up speaking Taiwanese Hokkien,[99] began learning Mandarin Chinese in order to communicate with Chinese photomask workers employed at the company. He has said that he learned the language phonetically through regular conversations with his co-workers.[20] He makes frequent visits back to Taiwan.[100]
+
+Huang and Taiwanese billionaire Charles Liang, co-founder of Supermicro, are longtime friends. Both companies were established in 1993 and have collaborated on products, with the latter utilizing Nvidia AI chips in its servers.[101] Huang is also a close friend of TSMC founder Morris Chang.[102]
+
+Huang got a tattoo of an abstract version of the Nvidia logo when the company's stock price hit US$100,[103] which he first publicly showed at the 2010 GPU Technology Conference.[104] The Times of India described the tattoo, along with the black leather jacket he frequently wears, as "his signature style",[105] while The New York Times considered Huang's jacket "poised to step neatly into that gap" of "a popularly identifiable face of A.I."[106] In 2026, a leather jacket worn by Huang was sold at an auction for US$960,000.[107]
+
+Philanthropy
+
+Jensen Huang and his wife, Lori Huang, established the Jen-Hsun & Lori Huang Foundation in 2007 and donated $330 million of Nvidia shares.[97] The foundation's assets, primarily Nvidia shares, have significantly appreciated, reaching a value exceeding US$12 billion as of late 2025, placing it among the largest private foundations in the United States.[108][109] Approximately two-thirds of its grants are allocated to donor-advised funds, including the GeForce Fund at Schwab Charitable.[110][111] In June 2025, the Huangs contributed an additional $60 million in Nvidia stock to the foundation.[112]
+
+Huang with U.S. president Donald Trump and Saudi crown prince Mohammed bin Salman at the U.S.-Saudi Investment Forum at the Kennedy Center in Washington, D.C., November 19, 2025
+
+On October 14, 2022, Jensen and Lori Huang donated $50 million toward a new $213 million research and education center at Oregon State University. The center will house one of the nation's most powerful supercomputers, built around Nvidia's DGX SuperPOD and OVX SuperPOD systems, giving faculty the computing power to tackle complex research problems. Waste heat from the system's cooling will be repurposed to heat more than 500,000 square feet of building space on Oregon State's Corvallis campus.[113][114][115]
+
+In early 2025, the foundation matched a $22.5 million fundraising effort by the California College of the Arts, contributing an equivalent amount to complete a $45 million campaign to address the institution's financial deficits and enrollment challenges, marking one of the largest individual gifts in the college's history.[116][117][118] The foundation has also provided grants ranging from five to six figures to organizations including Monterey Bay Aquarium, the Law Foundation of Silicon Valley, the Tides Center, the B612 Foundation, AI4ALL (promoting diversity in artificial intelligence), and Mental Health Innovations (developing technology-based mental health solutions).[111] In accordance with Internal Revenue Service regulations for private foundations, the foundation disbursed $123 million in 2024 and was projected to distribute $369 million in 2025.
+
+In 2026, Huang donated $10 million to relief efforts for the 2026 Nepal–Tibet floods.[119]
+
+See also
+
+Huang's law – Computer science observation
+
+Notes
+
+↑ Chinese: 黃仁勳; pinyin: Huáng Rénxūn; Wade–Giles: Huang² Jên²-hsün¹; Tâi-lô: N̂g Jîn-hun
+
+↑ Chinese name: 黃興泰
+
+↑ Chinese name: 羅采秀
+
+↑ According to Forbes, Huang "placed third in junior doubles at the U.S. Table Tennis Open championship, at age 15" in 1978.[15]
+
+↑ In a 2011 interview at Stanford University, Huang recalled that Priem said, "Jensen, you're the CEO, right? Done".[46]
+
+↑ Chinese name: Huang Le; 黄乐
+
+↑ Chinese name: Huang Shengbin 黃勝斌[87]
+
+↑ Chinese name: Huang Minshan 黃敏珊[87]
+
+References
+
+↑ Witt 2025, p. 5; Kim 2024, p. 17.
+
+1 2 Toh, Michelle; Chang, Wayne (November 4, 2023). "The Taiwanese American cousins going head-to-head in the global AI race". CNN Business. Archived from the original on March 25, 2026. Retrieved December 23, 2024.
+
+↑ Volle, Adam (December 2024). "Jensen Huang: Taiwan-born American entrepreneur". Encyclopædia Britannica. Archived from the original on January 28, 2025. Retrieved December 15, 2024.
+
+↑ Kim 2024, p. 17.
+
+↑ Witt 2025, p. 5.
+
+↑ Kim 2024, pp. 17–18.
+
+1 2 3 Lin, Liza; Wang, Joyu; Jie, Yang (June 8, 2024). "Nvidia's Jensen Huang Finds Celebrity Status". The Wall Street Journal. Archived from the original on June 8, 2024. Retrieved June 8, 2024.
+
+↑ Mr. Jensen Huang ประธานกรรมการบริหารและผู้ก่อตั้งบริษัท NVIDIA เข้าพบนายกรัฐมนตรี. ไทยคู่ฟ้า ทําเนียบรัฐบาล. December 2, 2024. Archived from the original on December 26, 2024. Retrieved December 4, 2024 – via YouTube. (At 0:27.) This is a video released by the Government of Thailand of a conversation between Huang and Paetongtarn Shinawatra, the then Prime Minister of Thailand, in which Huang mentions that he was raised in Bangkok and attended the Ruamrudee school.
+
+↑ Gurdus, Lizzy (May 6, 2018). "Nvidia CEO: My mom taught me English a 'random 10 words at a time' before we emigrated from Taiwan". CNBC. Archived from the original on June 2, 2021. Retrieved December 24, 2024.
+
+↑ Bhaimiya, Sawdah (May 13, 2024). "Nvidia's CEO was labeled a 'demanding' boss by staff. But experts say you have to be cutthroat". Make It. CNBC. Archived from the original on January 21, 2026. Retrieved December 23, 2024.
+
+1 2 Tan, Huileng; Varanasi, Lakshmi; Mohamed, Theron; Nolan, Beatrice; Yip, Jaures (November 6, 2024). "Jensen Huang is billions richer as Nvidia overtakes Apple to become world's most valuable company". Business Insider. Archived from the original on June 14, 2023. Retrieved December 23, 2024.
+
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 Witt, Stephen (November 27, 2023). "How Jensen Huang's Nvidia Is Powering the A.I. Revolution". The New Yorker. Archived from the original on July 11, 2026. Retrieved December 5, 2023.
+
+↑ Kim 2024, p. 18.
+
+↑ Kim 2024, pp. 18–19.
+
+↑ Tilley, Aaron (November 30, 2016). "The New Intel: How Nvidia Went From Powering Video Games To Revolutionizing Artificial Intelligence". Forbes. Archived from the original on March 14, 2023. Retrieved March 14, 2023.
+
+↑ Henn, Steve (February 20, 2012). "Tech Pioneer Channels Hard Lessons Into Silicon Valley Success". NPR. Archived from the original on June 2, 2021. Retrieved December 23, 2024.
+
+1 2 3 "Meet Nvidia CEO Jen-Hsun Huang, the man who plans to make the CPU obsolete". Wired. July 2002. ISSN 1059-1028. Archived from the original on June 2, 2021. Retrieved December 23, 2024.
+
+↑ Kim 2024, p. 19.
+
+↑ Parvini, Sarah (June 21, 2024). "Nvidia's riding high on AI, and it's not by accident". The Oregonian. Archived from the original on February 8, 2026. Retrieved December 23, 2024.
+
+1 2 Witt 2025, p. 28.
+
+↑ Hart, Robert. "Chip Stock Rally Continues Wednesday After AI Boom Catapults Nvidia To World's Most Valuable Company". Forbes. Archived from the original on August 26, 2024. Retrieved August 26, 2024.
+
+↑ Lake, Sydney (March 12, 2024). "How Nvidia's billionaire CEO went from Denny's dishwasher to leading a company with a $2 trillion market cap". Fortune. Archived from the original on February 12, 2025. Retrieved December 24, 2024.
+
+↑ Berger, Chloe (August 28, 2024). "Nvidia's billionaire boss: 'I used to clean bathrooms, and now I'm the CEO'". Fortune. Archived from the original on June 5, 2026. Retrieved December 23, 2024.
+
+↑ Anand, Nisha (August 28, 2024). "Nvidia CEO Jensen Huang's experience as 'dishwasher' goes viral on LinkedIn". Business Standard. Archived from the original on October 7, 2024. Retrieved December 24, 2024.
+
+↑ Kim 2024, p. 21.
+
+↑ "Jen-Hsun Huang: Engineering Hall of Fame – 2013 | College of Engineering". Oregon State University. October 3, 2022. Archived from the original on June 5, 2026. Retrieved December 23, 2024.
+
+↑ Witt 2025, p. 12.
+
+↑ Varanasi, Lakshmi; Lee, Lloyd (November 24, 2024). "Here's how Nvidia CEO Jensen Huang won over his wife". Business Insider. Archived from the original on June 5, 2026. Retrieved December 24, 2024.
+
+↑ "#61 Jen-Hsun Huang". Forbes. April 30, 2008. Archived from the original on May 9, 2008. Retrieved November 15, 2021.
+
+↑ "Who is Jensen Huang, the "Taylor Swift of Tech"?". Luxus Magazine. Archived from the original on March 1, 2026. Retrieved January 18, 2026.
+
+1 2 Lloyd Lee; Sarah Jackson. "Meet Jensen Huang, Nvidia's founder and CEO". Business Insider. Archived from the original on October 17, 2026. Retrieved October 24, 2026.
+
+↑ Kim 2024, pp. 22–23.
+
+↑ Kim 2024, pp. 33–34.
+
+↑ Kim 2024, p. 34.
+
+↑ Kim 2024, pp. 36–37.
+
+↑ Kim 2024, pp. 39–43.
+
+1 2 Kim, Tae (2024). The Nvidia Way: Jensen Huang and the Making of a Tech Giant. W. W. Norton & Company. ISBN 978-1-324-08672-7.
+
+↑ Kim 2024, p. 41.
+
+↑ Jackson, Ashton (November 5, 2024). "Nvidia briefly overtakes Apple as world's most valuable company—it began in a breakfast booth at Denny's". CNBC. Archived from the original on December 25, 2024. Retrieved December 25, 2024.
+
+1 2 Whitaker, Bill (April 28, 2024). "Meet Nvidia CEO Jensen Huang, the man behind the $2 trillion company powering today's artificial intelligence". 60 Minutes. CBS News. Archived from the original on June 19, 2024. Retrieved June 19, 2024.
+
+↑ Kim 2024, p. 43.
+
+↑ Huang, Jen-Hsun (April 5, 1993). "Articles of Incorporation of NVidia Corporation". bizfile online. California Secretary of State. Archived from the original on December 25, 2024. Retrieved October 11, 2024.
+
+1 2 Witt 2025, p. 31.
+
+↑ Kim 2024, pp. 47–52, 54.
+
+↑ Kim 2024, pp. 54–55.
+
+1 2 Kim 2024, p. 55.
+
+1 2 Fitch, Asa (February 26, 2024). "Nvidia's Stunning Ascent Has Also Made It a Giant Target". The Wall Street Journal. Archived from the original on February 27, 2024. Retrieved February 27, 2024.
+
+1 2 3 "Jensen Huang: CEO & President, NVIDIA". Forbes. June 27, 2025. Archived from the original on October 4, 2025. Retrieved June 28, 2025.
+
+↑ Taylor, Chloe (October 23, 2023). "Nvidia cofounder Jensen Huang says 'nobody in their right mind' would start a company, and he'd opt out if he could go back in time". Fortune. Retrieved June 19, 2024.
+
+↑ Cohen, Ben (May 18, 2024). "The 84-Year-Old Man Who Saved Nvidia". The Wall Street Journal. Archived from the original on May 20, 2024.
+
+↑ Huddleston Jr., Tom (March 15, 2024). "Success requires 'ample doses of pain,' billionaire Nvidia CEO tells Stanford students: 'I hope suffering happens to you'". CNBC Make It. Archived from the original on June 20, 2024. Retrieved June 19, 2024.
+
+1 2 3 Nusca, Andrew (November 16, 2017). "This Man Is Leading an AI Revolution in Silicon Valley—And He's Just Getting Started". Fortune. Archived from the original on November 16, 2017. Retrieved November 14, 2021.
+
+↑ Kahn, Jeremy (November 12, 2024). "60 direct reports, but no 1-on-1 meetings: How an unconventional leadership style helped Jensen Huang of Nvidia become one of the most powerful people in business". Fortune. Archived from the original on November 14, 2024. Retrieved November 16, 2024.
+
+↑ Leswing, Kit (November 29, 2023). "Nvidia CEO: Senior executives don't need pampering, career guidance". CNBC. Archived from the original on June 20, 2024. Retrieved June 19, 2024.
+
+↑ Leswing, Kif (May 24, 2024). "Nvidia CEO Jensen Huang's net worth swells from $3 billion to $90 billion in five years". CNBC. Archived from the original on May 30, 2024. Retrieved May 30, 2024.
+
+↑ Tan, Kwan Wei Kevin (March 27, 2024). "Mark Zuckerberg says Nvidia CEO Jensen Huang is basically the Taylor Swift of tech". Business Insider. Archived from the original on June 15, 2024. Retrieved June 15, 2024.
+
+1 2 3 4 Savov, Vlad; Lee, Jane Lanhee; Mochizuki, Takashi (June 6, 2024). "Nvidia's Rise to $3 Trillion Fuels 'Jensanity' in Tech World". Bloomberg News. Retrieved June 6, 2024.
+
+1 2 Leswing, Kif (January 7, 2025). "Nvidia releases gaming chips for PCs, tapping AI features from data center GPUs". CNBC. Archived from the original on January 7, 2025. Retrieved January 7, 2025.
+
+↑ Nishant, Niket; Singh, Rashika (October 29, 2025). "Nvidia hits $5 trillion valuation as AI boom powers meteoric rise". Reuters. Archived from the original on November 30, 2025. Retrieved October 31, 2025.
+
+↑ "President Trump Announces Appointments to President's Council of Advisors on Science and Technology". The White House. March 25, 2026. Archived from the original on March 26, 2026. Retrieved March 26, 2026.
+
+↑ Mickle, Tripp; Haberman, Maggie; Swan, Jonathan; Barnes, Julian E.; Swanson, Ana (November 8, 2026). "Nvidia Opens Investigation Into Jensen Huang's Relationship With Chinese Spy". The New York Times. Archived from the original on November 9, 2026. Retrieved November 9, 2026. Mr. Huang and Ms. Huang are not related.
+
+↑ Barnes, Julian E.; Mickle, Tripp; Mozur, Paul; Haberman, Maggie (November 6, 2026). "China's Top Spy Agency Recruited Woman Who Targeted Jensen Huang". The New York Times. ISSN 0362-4331. Archived from the original on November 9, 2026. Retrieved November 10, 2026.
+
+↑ Swan, Jonathan; Haberman, Maggie; Swanson, Ana; Mozur, Paul; Mickle, Tripp; Barnes, Julian E. (October 29, 2026). "Nvidia Chief Seen as Target of Chinese Spy Plot". The New York Times. ISSN 0362-4331. Retrieved November 8, 2026.
+
+↑ Berkowitz, Ben (November 7, 2026). "'Congress will investigate': Nvidia CEO Jensen Huang faces probe over alleged Chinese spy ties". Axios. Retrieved November 8, 2026.
+
+↑ Sevastopulo, Demetri (November 7, 2026). "US believes Nvidia's Huang had romantic relationship with alleged Chinese spy". Financial Times. Archived from the original on November 7, 2026. Retrieved November 7, 2026.
+
+↑ Kopack, Steve (November 8, 2026). "Nvidia opens investigation after reports CEO Jensen Huang was targeted by Chinese intelligence". NBC News. Archived from the original on November 8, 2026. Retrieved November 8, 2026.
+
+↑ Williams, Nathan; Kleinman, Zoe (November 8, 2026). "Nvidia launches investigation into CEO's affair with suspected Chinese spy". BBC News. Archived from the original on November 8, 2026. Retrieved November 8, 2026.
+
+↑ Mickle, Tripp; Haberman, Maggie; Swan, Jonathan; Barnes, Julian E.; Swanson, Ana (November 8, 2026). "Nvidia Opens Investigation Into Jensen Huang's Relationship With Suspected Chinese Spy". The New York Times. ISSN 0362-4331. Retrieved November 13, 2026.
+
+↑ "Statement From NVIDIA Board of Directors". NVIDIA Newsroom. Retrieved November 13, 2026.
+
+↑ "Statement From NVIDIA Board of Directors". NVIDIA Newsroom. Archived from the original on November 12, 2026. Retrieved November 12, 2026.
+
+↑ Council, Stephen (November 11, 2026). "Who is Kimberly Powell, the Nvidia exec alleged to have a relationship with CEO Jensen Huang?". Business Insider. Archived from the original on November 12, 2026. Retrieved November 12, 2026.
+
+↑ Mac, Ryan; Mickle, Tripp; Gee, Georgia (November 11, 2026). "Jensen Huang Said to Have Had Relationship With Nvidia Executive Who Reports to Him". The New York Times. ISSN 0362-4331. Archived from the original on November 12, 2026. Retrieved November 11, 2026.
+
+↑ "Who Is Kimberly Powell, Nvidia Executive Who Had Affair With CEO Jensen Huang?". NDTV. Archived from the original on November 12, 2026. Retrieved November 12, 2026.
+
+↑ Whelan, Robbie; Dawsey, Josh; Ramkumar, Amrith (November 11, 2026). "Nvidia is Preparing to Oust CEO Jensen Huang". The Wall Street Journal. Archived from the original on November 12, 2026. Retrieved November 11, 2026.
+
+1 2 "Nvidia Board Discusses Jensen Huang's Future After Reports of Another Affair". Bloomberg.com. November 12, 2026. Retrieved November 12, 2026.
+
+↑ Kleinman, Zoe (November 12, 2026). "Nvidia CEO Jensen Huang resigns after reports of second affair deepened scandal". BBC News. Archived from the original on November 12, 2026. Retrieved November 12, 2026.
+
+↑ Duffy, Clare; Eadicicco, Lisa (November 12, 2026). "CFO Colette Kress to serve as interim leader after Nvidia CEO Jensen Huang resignation". CNN. Archived from the original on November 12, 2026. Retrieved November 12, 2026.
+
+↑ Thubron, Rob (November 12, 2026). "Jensen Huang resigns as Nvidia CEO following reports of two extramarital affairs". TechSpot. Archived from the original on November 12, 2026. Retrieved November 12, 2026.
+
+↑ Cherney, Max A.; Hu, Krystal; Alper, Alexandra; Seetharaman, Deepa (November 12, 2026). "EXCLUSIVE: Former Nvidia CEO Huang had a relationship with a second employee, sources say". Reuters. Archived from the original on November 13, 2026. Retrieved November 12, 2026.
+
+↑ "Jensen Huang latest: Outgoing boss reportedly had affair with second Nvidia employee". Sky News. November 12, 2026. Retrieved November 12, 2026.
+
+↑ "Blanche says DOJ has not concluded Alice Huang was Chinese spy". Reuters. November 12, 2026. Retrieved November 13, 2026.
+
+↑ Bertrand, Natasha; Alayna Treene, Alayna; Lillis, Katie Bo; Perez, Evan; Cohen, Zachary; Hansler, Jennifer (November 12, 2026). "US intel isn't sure if businesswoman spied on Nvidia for China, doesn't mean she wasn't a risk, sources say". CNN. Archived from the original on November 13, 2026. Retrieved November 13, 2026.
+
+↑ "NVIDIA Announces CEO Transition". NVIDIA Newsroom. Archived from the original on November 12, 2026. Retrieved November 12, 2026.
+
+↑ "Haag, Melinda". Paul, Weiss. Archived from the original on August 8, 2026. Retrieved November 12, 2026.
+
+↑ "Jensen Huang agrees to testify before Congress". POLITICO. Retrieved November 12, 2026.
+
+↑ Goswami, Rohan (November 12, 2026). "US DOJ probes Nvidia as fallout from Huang's resignation ripples across Washington". Semafor. Archived from the original on November 12, 2026. Retrieved November 13, 2026.
+
+1 2 廖綉玉 (May 28, 2026). "黃仁勳口中的「台灣典型父母」是什麼？他解釋，批評助員工進步". Global Views Monthly [zh] (in Chinese (Taiwan)). Retrieved November 13, 2026.
+
+↑ "Bittersweet concoction". Taipei Times. September 26, 2015. Archived from the original on September 3, 2026. Retrieved September 3, 2026.
+
+↑ Alindahao, Karla (April 1, 2016). "Asia's 50 Best Bars 2016 Announced". Forbes. Archived from the original on September 3, 2026. Retrieved September 3, 2026.
+
+↑ "R&D Cocktail Lab's Post". R&D Cocktail Lab. April 13, 2021 – via Facebook. After nearly 7 years of serving our wonderful guests, regulars, friends and family, we are saddened to announce that this iteration of R&D Lab will suspend its services as of April 17th, 2021.
+
+↑ "多圖｜黃仁勳混血帥兒曝光！結束台北酒吧 進NVIDIA幫老爸做這事｜壹蘋新聞網" [Jensen Huang's Handsome Mixed-Race Son Revealed! After Leaving Taipei Bars, He Joins NVIDIA to Help His Dad with This.]. Nextapple (in Chinese (Taiwan)). May 31, 2023. Archived from the original on October 3, 2023. Retrieved June 10, 2023.
+
+1 2 3 Solomont, E. B. (March 4, 2024). "Jensen Huang's Homes: How the Nvidia CEO Grew His Property Portfolio". The Wall Street Journal. Archived from the original on January 10, 2026. Retrieved March 6, 2024.
+
+↑ "Masters of Leadership: Dr. Lisa Su". cta.tech. Archived from the original on August 1, 2023. Retrieved February 24, 2023.
+
+↑ "台南四百最大榮光 黃仁勳蘇姿丰各寫傳奇 | 中華日報|中華新聞雲" [The Luo family's daughters' ability to study has deep roots in the Southern Women's School.]. China Daily News. June 1, 2023. Archived from the original on June 16, 2023. Retrieved June 16, 2023.
+
+↑ "羅家女會念書 與南女淵源深 | 中華日報|中華新聞雲" [Tainan's 400 Most Glorious Figures: Huang Renxun and Su Zifeng Each Write Their Own Legends]. China Daily News. June 1, 2023. Archived from the original on July 5, 2023. Retrieved June 16, 2023.
+
+↑ Witt 2025, p. 157.
+
+1 2 Story, Louise; Goldstein, Matthew; Levy, Ariel (December 5, 2024). "How One of the World's Richest Men Is Avoiding $8 Billion in Taxes". The New York Times. Archived from the original on November 10, 2025. Retrieved August 10, 2026.
+
+↑ Deokho, Byun (June 7, 2024). "With U.S. semiconductor company Nvidia leading the AI craze, CEO Jensen Huang's popularity is soarin.. - MK". Maeil Business Newspaper. Archived from the original on December 22, 2024. Retrieved December 22, 2024.
+
+↑ Blanchard, Ben; Cherney, Max A. (June 5, 2024). "Like a pop star, Nvidia's CEO Huang stirs up 'Jensanity' in Taiwan". Reuters. Retrieved December 15, 2024.
+
+↑ "Nvidia's rock-star CEO leads US chip bosses to Taiwan's AI expo". South China Morning Post. May 31, 2024. Archived from the original on December 12, 2024. Retrieved December 23, 2024.
+
+↑ "Super Micro's shares up 3454% in the past 5 years". Archived from the original on September 3, 2026. Retrieved September 3, 2026.
+
+↑ Toole, John (October 17, 2007). "An Evening with Morris Chang in conversation with Jen-Hsun Huang" (PDF). Computer History Museum. pp. 1–14. Archived (PDF) from the original on December 24, 2024. Retrieved December 23, 2024.
+
+↑ Nusca, Andrew (November 16, 2017). "This Man Is Leading an AI Revolution in Silicon Valley—And He's Just Getting Started". Fortune. Archived from the original on November 16, 2017. Retrieved September 18, 2026.
+
+↑ Lai, Richard (September 25, 2010). "Caption Contest: NVIDIA CEO flaunts tattoo on stage, still serving cans of whoop-ass". Engadget. Archived from the original on October 18, 2026. Retrieved September 18, 2026.
+
+↑ "Why Nvidia CEO doesn't want another tattoo with the company's logo". The Times of India. November 6, 2023. ISSN 0971-8257. Archived from the original on October 17, 2026. Retrieved September 18, 2026.
+
+↑ Friedman, Vanessa (June 14, 2023). "Is This a Trillion-Dollar Look?". The New York Times. ISSN 0362-4331. Archived from the original on September 15, 2025. Retrieved November 10, 2026.
+
+↑ Leswing, Kif (July 17, 2026). "Leather jacket worn by Nvidia CEO goes for just under $1 million at Sotheby's auction". CNBC. Archived from the original on October 29, 2026. Retrieved November 8, 2026.
+
+↑ Weiss, Miles (June 27, 2024). "Nvidia CEO Huang has billions at foundation where he logs 1-hour weeks". Bloomberg Law. Retrieved November 13, 2026.
+
+↑ Stoller, Kristen (July 14, 2025). "Jensen Huang's Family Foundation Could Be Worth Over $10B as Nvidia Stock Soars". Observer. Archived from the original on October 17, 2026. Retrieved October 17, 2026.
+
+↑ Weiss, Miles (June 27, 2024). "NVIDIA CEO's $8 billion foundation awards two-thirds of giving to DAFs". Philanthropy News Digest. Archived from the original on February 3, 2026. Retrieved October 17, 2026.
+
+1 2 Stoller, Kristen (June 26, 2024). "Where Does Nvidia CEO Jensen Huang Give Away His Billions?". Observer. Archived from the original on October 18, 2026. Retrieved October 17, 2026.
+
+↑ Cuccinello, Hayley (June 12, 2025). "Jensen Huang's charitable foundation balloons on Nvidia stock gains". CNBC. Archived from the original on February 5, 2026. Retrieved March 12, 2026.
+
+↑ "$50 Million Gift by NVIDIA Founder and Spouse Helps Launch Oregon State University Research Center". Oregon State University Newsroom. October 14, 2022. Archived from the original on September 25, 2026. Retrieved September 25, 2026.
+
+↑ "The Jen-Hsun Huang and Lori Mills Huang Collaborative Innovation Complex was made possible by two $50 million gifts, from the Huangs and the Wayne and Gladys Valley Foundation". OSU Foundation. April 12, 2024. Archived from the original on September 25, 2026. Retrieved September 25, 2026.
+
+↑ Gusinow, Sander (October 15, 2022). "Oregon State University Announces $200M Semiconductor Research Center". Oregon Business. Retrieved September 29, 2026.
+
+↑ Howse, Jane (March 11, 2025). "Nvidia Chief Commits More Than $22 Million to Save Ailing California Art School". Artnet News. Archived from the original on October 17, 2026. Retrieved October 17, 2026.
+
+↑ Guilfoil, Jack (March 11, 2025). "Nvidia CEO Jensen Huang gives $22.5 million to save cash-starved arts college". Crain's New York Business. Archived from the original on July 31, 2026. Retrieved October 17, 2026.
+
+↑ Meltzer, Julian (February 20, 2025). "Jensen Huang's donation saves California College of the Arts". The San Francisco Standard. Archived from the original on July 31, 2026. Retrieved October 17, 2026.
+
+↑ "NVIDIA CEO donates $10 million as Nepal faces $5 billion in rebuilding costs, finance minister says". CNN. September 3, 2026. Retrieved September 3, 2026.
+
+Additional sources
+
+Witt, Stephen (2025). The Thinking Machine: Jensen Huang, Nvidia, and the World's Most Coveted Microchip. Penguin Publishing Group. ISBN 978-0-593-83269-1.
+
+External links
+
+Wikimedia Commons has media related to Jen-Hsun Huang.
+
+Wikiquote has quotations related to Jensen Huang.
+
+"An Interview with Jen Hsun Huang". Wired, July 2002. Volume 10, number 7.
+
+Nvidia Corporate Biography
+
+Jen-Hsun Huang (2015). "GPU Technology Conference 2015 – Leaps in Visual Computing". Retrieved March 26, 2015.
+
+Appearances on C-SPAN
+
+After Words interview with Stephen Witt on The Thinking Machine: Jensen Huang, Nvidia, and the World's Most Coveted Microchip. April 25, 2025. C-SPAN.
+
+ | 
+
+v
+
+t
+
+e
+
+Nvidia
+
+ | People | 
+
+Jensen Huang
+
+Chris Malachowsky
+
+Curtis Priem
+
+David Kirk
+
+Bill Dally
+
+Colette Kress
+
+ | Products | 
+
+ | GeForce
+
+(List of GPUs) | 
+
+ | Fixed pixel
+
+pipeline | 
+
+Pre-GeForce
+
+NV1
+
+NV2
+
+RIVA 128
+
+RIVA TNT
+
+TNT2
+
+GeForce 256
+
+2
+
+4 MX
+
+ | Vertex and
+
+pixel shaders | 
+
+GeForce 3
+
+4 Ti
+
+FX
+
+6
+
+7
+
+ | Unified
+
+shaders | 
+
+GeForce 8
+
+9
+
+100
+
+200
+
+300
+
+400
+
+500
+
+ | Unified shaders
+
+& NUMA | 
+
+GeForce 600
+
+700
+
+800M
+
+900
+
+10
+
+16
+
+ | Ray tracing
+
+& Tensor Cores | 
+
+GeForce 20
+
+30
+
+40
+
+50
+
+ | Graphics
+
+workstation cards | 
+
+Nvidia Quadro
+
+Quadro Plex
+
+ | GPGPU software | 
+
+Nvidia Tesla
+
+DGX
+
+ | Console
+
+components | 
+
+NV2A (Xbox)
+
+RSX 'Reality Synthesizer' (PlayStation 3)
+
+Tegra X1 "Erista" (Nintendo Switch)
+
+Tegra T239 "Drake" (Nintendo Switch 2)
+
+ | Nvidia Shield | 
+
+Shield Portable
+
+Shield Tablet
+
+Shield Android TV
+
+GeForce Now
+
+ | SoCs and
+
+embedded | 
+
+GoForce
+
+Drive
+
+Jetson
+
+Tegra
+
+N1
+
+Nvidia RTX Spark
+
+ | CPUs | 
+
+Project Denver
+
+ | Computer
+
+chipsets | 
+
+nForce
+
+ | Software and
+
+technologies | 
+
+ | Multimedia
+
+acceleration | 
+
+NVENC (video encoding)
+
+NVDEC (video decoding)
+
+PureVideo (video decoding)
+
+ | Software | 
+
+Cg (shading language)
+
+CUDA
+
+Nvidia GameWorks
+
+OptiX (ray tracing API)
+
+PhysX (physics SDK)
+
+Nvidia Omniverse (3D graphics)
+
+Nvidia RTX (ray tracing platform)
+
+Nvidia System Tools
+
+VDPAU (video decode API)
+
+ | Technologies | 
+
+Nvidia 3D Vision (stereo 3D)
+
+Nvidia G-Sync (variable refresh rate)
+
+Nvidia Optimus (GPU switching)
+
+Nvidia Surround (multi-monitor)
+
+MXM (module/socket)
+
+SXM (module/socket)
+
+NVLink (protocol)
+
+SLI (multi-GPU)
+
+TurboCache (framebuffer in system memory)
+
+Video Super Resolution (live video upscaling)
+
+ | GPU
+
+microarchitectures | 
+
+Celsius
+
+Kelvin
+
+Rankine
+
+Curie
+
+Tesla
+
+Fermi
+
+Kepler
+
+Maxwell
+
+Pascal
+
+Volta
+
+Turing
+
+Ampere
+
+Hopper
+
+Ada Lovelace
+
+Blackwell
+
+Rubin
+
+Feynman
+
+ | Acquisitions | 
+
+3dfx Interactive
+
+Ageia
+
+ULi
+
+Bright Computing
+
+Cumulus Networks
+
+DeepMap
+
+Icera
+
+Mellanox Technologies
+
+Mental Images
+
+PortalPlayer
+
+Exluna
+
+MediaQ
+
+Stexar
+
+ | Related | 
+
+Megaspeed
+
+ | 
+
+ Category
+
+ | 
+
+v
+
+t
+
+e
+
+Time Persons of the Year
+
+ | 1927–1950 | 
+
+Charles Lindbergh (1927)
+
+Walter Chrysler (1928)
+
+Owen D. Young (1929)
+
+Mahatma Gandhi (1930)
+
+Pierre Laval (1931)
+
+Franklin D. Roosevelt (1932)
+
+Hugh S. Johnson (1933)
+
+Franklin D. Roosevelt (1934)
+
+Haile Selassie (1935)
+
+Wallis Simpson (1936)
+
+Chiang Kai-shek / Soong Mei-ling (1937)
+
+Adolf Hitler (1938)
+
+Joseph Stalin (1939)
+
+Winston Churchill (1940)
+
+Franklin D. Roosevelt (1941)
+
+Joseph Stalin (1942)
+
+George Marshall (1943)
+
+Dwight D. Eisenhower (1944)
+
+Harry S. Truman (1945)
+
+James F. Byrnes (1946)
+
+George Marshall (1947)
+
+Harry S. Truman (1948)
+
+Winston Churchill (1949)
+
+The American Fighting-Man (1950)
+
+ | 1951–1975 | 
+
+Mohammed Mosaddeq (1951)
+
+Elizabeth II (1952)
+
+Konrad Adenauer (1953)
+
+John Foster Dulles (1954)
+
+Harlow Curtice (1955)
+
+Hungarian Freedom Fighters (1956)
+
+Nikita Khrushchev (1957)
+
+Charles de Gaulle (1958)
+
+Dwight D. Eisenhower (1959)
+
+ U.S. Scientists: George Beadle / Charles Draper / John Enders / Donald Glaser / Joshua Lederberg / Willard Libby / Linus Pauling / Edward Purcell / Isidor Rabi / Emilio Segrè / William Shockley / Edward Teller / Charles Townes / James Van Allen / Robert Woodward (1960)
+
+John F. Kennedy (1961)
+
+Pope John XXIII (1962)
+
+Martin Luther King Jr. (1963)
+
+Lyndon B. Johnson (1964)
+
+William Westmoreland (1965)
+
+The Generation Twenty-Five and Under (1966)
+
+Lyndon B. Johnson (1967)
+
+ The Apollo 8 Astronauts: William Anders / Frank Borman / Jim Lovell (1968)
+
+The Middle Americans (1969)
+
+Willy Brandt (1970)
+
+Richard Nixon (1971)
+
+Henry Kissinger / Richard Nixon (1972)
+
+John Sirica (1973)
+
+King Faisal (1974)
+
+ American Women: Susan Brownmiller / Kathleen Byerly / Alison Cheek / Jill Conway / Betty Ford / Ella Grasso / Carla Hills / Barbara Jordan / Billie Jean King / Susie Sharp / Carol Sutton / Addie Wyatt (1975)
+
+ | 1976–2000 | 
+
+Jimmy Carter (1976)
+
+Anwar Sadat (1977)
+
+Deng Xiaoping (1978)
+
+Ayatollah Khomeini (1979)
+
+Ronald Reagan (1980)
+
+Lech Wałęsa (1981)
+
+The Computer (1982)
+
+Ronald Reagan / Yuri Andropov (1983)
+
+Peter Ueberroth (1984)
+
+Deng Xiaoping (1985)
+
+Corazon Aquino (1986)
+
+Mikhail Gorbachev (1987)
+
+The Endangered Earth (1988)
+
+Mikhail Gorbachev (1989)
+
+George H. W. Bush (1990)
+
+Ted Turner (1991)
+
+Bill Clinton (1992)
+
+ The Peacemakers: Yasser Arafat / F. W. de Klerk / Nelson Mandela / Yitzhak Rabin (1993)
+
+Pope John Paul II (1994)
+
+Newt Gingrich (1995)
+
+David Ho (1996)
+
+Andrew Grove (1997)
+
+Bill Clinton / Ken Starr (1998)
+
+Jeff Bezos (1999)
+
+George W. Bush (2000)
+
+ | 2001–present | 
+
+Rudolph Giuliani (2001)
+
+ The Whistleblowers: Cynthia Cooper / Coleen Rowley / Sherron Watkins (2002)
+
+The American Soldier (2003)
+
+George W. Bush (2004)
+
+ The Good Samaritans: Bono / Bill Gates / Melinda Gates (2005)
+
+You (2006)
+
+Vladimir Putin (2007)
+
+Barack Obama (2008)
+
+Ben Bernanke (2009)
+
+Mark Zuckerberg (2010)
+
+The Protester (2011)
+
+Barack Obama (2012)
+
+Pope Francis (2013)
+
+ Ebola Fighters: Dr. Jerry Brown / Dr. Kent Brantly / Ella Watson-Stryker / Foday Gollah / Salome Karwah (2014)
+
+Angela Merkel (2015)
+
+Donald Trump (2016)
+
+The Silence Breakers (2017)
+
+ The Guardians: Jamal Khashoggi / Maria Ressa / Wa Lone / Kyaw Soe Oo / Staff of The Capital (2018)
+
+Greta Thunberg (2019)
+
+Joe Biden / Kamala Harris (2020)
+
+Elon Musk (2021)
+
+Volodymyr Zelenskyy / Spirit of Ukraine (2022)
+
+Taylor Swift (2023)
+
+Donald Trump (2024)
+
+The Architects of AI: Sam Altman / Dario Amodei / Demis Hassabis / Jensen Huang / Fei-Fei Li / Elon Musk / Lisa Su / Mark Zuckerberg (2025)
+
+ | 
+Authority control databases 
+
+ | International | 
+
+VIAF
+
+GND
+
+ | National | 
+
+United States
+
+Czech Republic
+
+Norway
+
+Poland
+
+Israel
+
+Catalonia
+
+ | Other | 
+
+IdRef
+
+Retrieved from "https://en.wikipedia.org/w/index.php?title=Jensen_Huang&oldid=1385677054"
+
+Categories: 
+1963 births
+
+20th-century American businesspeople
+
+20th-century American designers
+
+20th-century American engineers
+
+21st-century American businesspeople
+
+21st-century American engineers
+
+21st-century American philanthropists
+
+Aloha High School alumni
+
+AMD people
+
+American billionaires
+
+American businesspeople in the computer industry
+
+American chief executives in technology
+
+American chief executives of materials companies
+
+American corporate directors
+
+American electrical engineers
+
+American industrial designers
+
+American technology company founders
+
+Artificial intelligence industry in the United States
+
+Artificial intelligence people
+
+Businesspeople from Oregon
+
+Businesspeople from Tainan
+
+Businesspeople from Taipei
+
+Businesspeople in the electronics industry
+
+Computer graphics pioneers
+
+Computer hardware engineers
+
+Corporate directors in technology
+
+Electrical engineers
+
+Engineers from Oregon
+
+Living people
+
+Members of the Committee of 100
+
+Nvidia people
+
+Oneida Baptist Institute alumni
+
+Oregon State University alumni
+
+People from Aloha, Oregon
+
+Philanthropists from Oregon
+
+Proprietary technology salespersons
+
+Restaurant staff
+
+Stanford University alumni
+
+Taiwanese billionaires
+
+Taiwanese emigrants to the United States
+
+Taiwanese expatriates in Thailand
+
+Time Person of the Year
+
+VinFuture Prize
+
+Hidden categories: 
+Articles with short description
+
+Short description is different from Wikidata
+
+Current events from November 2026
+
+Wikipedia temporarily semi-protected biographies of living people
+
+Use American English from November 2025
+
+All Wikipedia articles written in American English
+
+Use mdy dates from November 2026
+
+Articles containing Chinese-language text
+
+Biography with signature
+
+Articles with hCards
+
+Articles containing traditional Chinese-language text
+
+Articles containing potentially dated statements from November 2026
+
+All articles containing potentially dated statements
+
+Pages with non-numeric formatnum arguments
+
+All articles with failed verification
+
+Articles with failed verification from November 2026
+
+CS1 Chinese (Taiwan)-language sources (zh-tw)
+
+All pages needing factual verification
+
+Wikipedia articles needing factual verification from November 2026
+
+Commons category link from Wikidata
+
+People appearing on C-SPAN
+
+ This page was last edited on 14 November 2026, at 17:31 (UTC).
+
+Page was rendered with Parsoid.
+
+Text is available under the Creative Commons Attribution-ShareAlike 4.0 License;
+additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+Privacy policy
+
+About Wikipedia
+
+Disclaimers
+
+Contact Wikipedia
+
+Legal & safety contacts
+
+Code of Conduct
+
+Developers
+
+Statistics
+
+Cookie statement
+
+Mobile view
+
+Search
+
+ Search
+
+Toggle the table of contents
+
+Jensen Huang
+
+60 languages
+
+Add topic

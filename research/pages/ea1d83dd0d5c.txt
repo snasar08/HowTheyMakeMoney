@@ -1,0 +1,8 @@
+URL: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN00000000000053201115
+FINAL_URL: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN00000000000053201115
+FETCHED: 2026-11-14T17:47:19.041045+00:00
+
+{"status":"REQUEST_SUCCEEDED","responseTime":9,"message":["Series does not exist for Series OEUN00000000000053201115"],"Results":{
+"series":
+[{"seriesID":"OEUN00000000000053201115","data":[]}]
+}}
