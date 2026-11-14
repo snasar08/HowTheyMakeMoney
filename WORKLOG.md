@@ -358,3 +358,11 @@ Sam: "the better free character models... do it yourself". Done in one session.
   (flow like a person reading, instead of one sentence at a time, which is part of why ours sounded flat).
   Added pipeline/gemini_tts.py + bench/voice_gemini.py + voice-gemini.yml (10 male voices). Blocked on Sam adding
   the GEMINI_API_KEY secret.
+
+## Nov 14 2026 — first real run with the free Google voice + eyes
+- Run 43606812981 (scheduled 3 AM ET, started 9:48 AM ET): all 7 voice jobs (5 + 2 spares) were voiced by Gemini
+  Umbriel, one request per Short, no quota errors and no fallback. The voice test passed only 2-5 of 7 lines
+  each. Reproduced locally on the Umbriel sample: pitch movement, pitch and pace pass on every line; the fails
+  were Whisper word timings marking normal short words (The, and, Still) as "rushed" (< 60 ms), plus one real
+  mishearing ("handbags" -> "pan bags"). Dropped the "rushed" flag for the Gemini path only, so retakes go to
+  real problems and don't spend the 10-a-day quota.

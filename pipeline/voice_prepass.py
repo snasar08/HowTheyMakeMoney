@@ -143,7 +143,10 @@ def _gemini_short(sid: str) -> bool:
         for line, (t0, t1) in zip(lines, segs):
             piece = w[int(t0 * sr):int(t1 * sr)]
             ws = [(x["word"].strip(), float(x["start"]) - t0, float(x["end"]) - t0) for x in heard if t0 <= float(x["start"]) < t1]
-            bad = problems(line, [x for x in heard if t0 <= float(x["start"]) < t1]) + prosody.problems(piece, sr, line)
+            # "rushed" is left out for Gemini: in fluent speech Whisper's word timings often give a normally
+            # spoken short word (The, and, Still) under 60 ms (Nov 14: 4 of 6 "failures" on a clean read were this)
+            bad = [b for b in problems(line, [x for x in heard if t0 <= float(x["start"]) < t1])
+                   if not b.startswith("rushed:")] + prosody.problems(piece, sr, line)
             parts.append((line, piece, ws, bad))
             bad_all += bad
         rank = (sum(bool(p[3]) for p in parts), prosody.badness(w, sr, " ".join(lines)))
