@@ -1,0 +1,120 @@
+{
+  "id": "078",
+  "slug": "famous-brady",
+  "company": "Tom Brady",
+  "format": "famous",
+  "visual_style": "lowpoly",
+  "hook_style": "surprise",
+  "title_style": "number",
+  "theme": "clean_navy",
+  "status": "ready",
+  "score": 92,
+  "title": "Pick 199 to a $375 Million Mic",
+  "name_card": "Tom Brady",
+  "name_sub": "football player",
+  "description": "198 players were picked before him. Then he got a reported 375 million dollars to talk.\n\nSources:\n- Wikipedia: Tom Brady: https://en.wikipedia.org/wiki/Tom_Brady\n\nFrom Wikipedia (Tom Brady): picked 199th overall by the Patriots in the sixth round of the 2000 NFL draft, the seventh quarterback taken; seven Super Bowl wins in ten appearances, both records; oldest Super Bowl MVP at 43; May 2022, Fox Sports announced he would be its lead NFL color commentator, a deal that reportedly pays $375 million over 10 years, the most for any sports commentator. Not financial advice.\n\n#shorts #tombrady #nfl #howtheymakemoney",
+  "tags": [
+    "tom brady",
+    "nfl",
+    "famous",
+    "shorts"
+  ],
+  "images": {},
+  "hud_label": "HIS MONEY",
+  "loop": "So next time you get picked last, remember:",
+  "cta": "Brady or Mahomes? Comment your pick.",
+  "cta_question": "Brady or Mahomes?",
+  "scenes": [
+    {
+      "narration": "198 players were picked before him. Now he's paid 375 million to talk.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "field",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "ball"
+        ],
+        "stat": "$375 MILLION",
+        "stat_sub": "to talk football"
+      }
+    },
+    {
+      "narration": "Pick 199. Just the seventh quarterback taken in 2000.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "field",
+        "action": "run",
+        "crowd": 0,
+        "props": [
+          "ball"
+        ],
+        "stat": "PICK 199",
+        "stat_sub": "2000 NFL draft"
+      }
+    },
+    {
+      "narration": "Then he won seven Super Bowls. More than any player ever.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "field",
+        "action": "cheer",
+        "crowd": 400,
+        "props": [
+          "ball",
+          "trophy"
+        ],
+        "stat": "7 SUPER BOWLS",
+        "stat_sub": "an NFL record"
+      }
+    },
+    {
+      "narration": "His last Super Bowl MVP? At age 43. The oldest ever.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "field",
+        "action": "cheer",
+        "crowd": 300,
+        "props": [
+          "trophy"
+        ],
+        "stat": "AGE 43",
+        "stat_sub": "oldest Super Bowl MVP"
+      }
+    },
+    {
+      "narration": "Then he retired. And TV reportedly paid 375 million dollars. Ten years, just to talk.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "studio",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "mic",
+          "check"
+        ],
+        "stat": "$375 MILLION",
+        "stat_sub": "10 years on TV, reported 2022",
+        "hud": "$375M"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Tom Brady",
+      "url": "https://en.wikipedia.org/wiki/Tom_Brady"
+    }
+  ],
+  "hero": {
+    "skin": "f0c8a0",
+    "hair": "short",
+    "hair_color": "6b4a2e",
+    "beard": "none",
+    "outfit": "kit",
+    "shirt": "1b2a4a",
+    "pants": "e8e8e8",
+    "socks": "1b2a4a",
+    "shoes": "1a1a1a",
+    "height": 1.05
+  }
+}

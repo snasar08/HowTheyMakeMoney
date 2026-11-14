@@ -19,6 +19,9 @@ Chick-fil-A, DoorDash, LEGO (editorial), Red Bull (editorial), Netflix (whatif: 
 ## Used (Nov 7 2026 batch, part 2)
 HP (printer ink), Airbnb, Marvel (editorial), Uber (whatif: one driver), Visa (whatif: swipe beeps), Instagram Reels (whatif: one day of views), Minecraft (whatif: sell every copy), firefighters (careers), pro athletes (careers), veterinarians (careers), animators (careers), sports agents (careers), Michael Jordan (famous), Lionel Messi (famous), Stephen Curry (famous)
 
+## Used (Nov 14 2026 batch, part 1)
+Tom Brady, Erling Haaland, Neymar, Caitlin Clark, Rihanna (Fenty), Ninja, Kai Cenat, Dwayne Johnson, Lamine Yamal, Usain Bolt, Serena Williams (famous); Apple 1997 comeback (editorial); airline pilots (careers). Skipped: Jensen Huang (his Nov 2026 Wikipedia page describes a scandal and resignation, so not a feel-good story now), Jan Koum and Tiger Woods (pages dominated by politics / private life), lifeguards (BLS median $33,580, not a strong enough hook).
+
 ## Ranked for the next batches (Oct 29 2026 — teen appeal × curiosity gap × surprising number)
 Write from the top. Casinos dropped (not kid-safe). Skip anything already used above.
 | # | Topic | Angle / hook seed | Est. score |

@@ -1,0 +1,121 @@
+{
+  "id": "081",
+  "slug": "famous-clark",
+  "company": "Caitlin Clark",
+  "format": "famous",
+  "visual_style": "lowpoly",
+  "hook_style": "surprise",
+  "title_style": "number",
+  "theme": "bold_bright",
+  "status": "ready",
+  "score": 90,
+  "title": "From a Dream Board to a $28 Million Deal",
+  "name_card": "Caitlin Clark",
+  "name_sub": "basketball player",
+  "description": "A reported 28 million dollar shoe deal. Before her first pro game.\n\nSources:\n- Wikipedia: Caitlin Clark: https://en.wikipedia.org/wiki/Caitlin_Clark\n\nFrom Wikipedia (Caitlin Clark): NCAA Division I all-time leading scorer at Iowa; the 2023 national championship game was the most-viewed women's college basketball game ever (9.9 million); first pick of the 2024 WNBA draft; after the draft in April 2024, The Wall Street Journal and The Athletic reported a pending eight-year, $28 million Nike deal, the largest sponsorship for a women's basketball player; her signature basketball features phrases from her dream board: \"Play in the WNBA\" and \"Get a basketball scholarship\". Not financial advice.\n\n#shorts #caitlinclark #wnba #howtheymakemoney",
+  "tags": [
+    "caitlin clark",
+    "wnba",
+    "famous",
+    "shorts"
+  ],
+  "images": {},
+  "hud_label": "HER DEAL",
+  "loop": "So next time you write down a dream, remember:",
+  "cta": "Clark or Curry? Comment your pick.",
+  "cta_question": "Clark or Curry?",
+  "scenes": [
+    {
+      "narration": "A reported 28 million dollar shoe deal. Before her first pro game.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "ball"
+        ],
+        "stat": "$28 MILLION",
+        "stat_sub": "before her first WNBA game"
+      }
+    },
+    {
+      "narration": "As a kid, her dream board said: get a basketball scholarship.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "run",
+        "crowd": 0,
+        "props": [
+          "ball"
+        ],
+        "stat": "THE DREAM",
+        "stat_sub": "get a scholarship"
+      }
+    },
+    {
+      "narration": "She got it. Then became college basketball's all-time top scorer.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "cheer",
+        "crowd": 300,
+        "props": [
+          "ball",
+          "trophy"
+        ],
+        "stat": "ALL-TIME #1",
+        "stat_sub": "NCAA Division I scoring"
+      }
+    },
+    {
+      "narration": "Then pick one in 2024. Eight years, 28 million, reported.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "office",
+        "action": "cheer",
+        "crowd": 40,
+        "props": [
+          "check",
+          "boxes"
+        ],
+        "stat": "$28 MILLION",
+        "stat_sub": "8-year shoe deal, reported",
+        "hud": "$28M"
+      }
+    },
+    {
+      "narration": "And those dream board words? Now printed on her own basketball.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "cheer",
+        "crowd": 300,
+        "props": [
+          "ball"
+        ],
+        "stat": "HER OWN BALL",
+        "stat_sub": "with her dream board words",
+        "hud": "$28M"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Caitlin Clark",
+      "url": "https://en.wikipedia.org/wiki/Caitlin_Clark"
+    }
+  ],
+  "hero": {
+    "skin": "f4d2b4",
+    "hair": "ponytail",
+    "hair_color": "9a7448",
+    "beard": "none",
+    "outfit": "kit",
+    "shirt": "0c2340",
+    "pants": "0c2340",
+    "socks": "f4f4f4",
+    "shoes": "f2b02e",
+    "height": 1.0
+  }
+}

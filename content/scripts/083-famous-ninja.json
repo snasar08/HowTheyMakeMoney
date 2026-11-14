@@ -1,0 +1,121 @@
+{
+  "id": "083",
+  "slug": "famous-ninja",
+  "company": "Ninja",
+  "format": "famous",
+  "visual_style": "lowpoly",
+  "hook_style": "number",
+  "title_style": "number",
+  "theme": "dark_neon",
+  "status": "ready",
+  "score": 90,
+  "title": "$1 Million to Play a Different Game",
+  "name_card": "Ninja",
+  "name_sub": "streamer",
+  "description": "A game company paid him 1 million dollars. To play its game.\n\nSources:\n- Wikipedia: Ninja (gamer): https://en.wikipedia.org/wiki/Ninja_(gamer)\n\nFrom Wikipedia (Ninja (gamer)): his Twitch followers grew from 500,000 in September 2017 to over 2 million by March 2018; that month he set the record for the largest concurrent audience on an individual stream outside tournaments, 635,000; in December 2018 he estimated he made close to US$10 million that year; Reuters reported Electronic Arts paid him US$1 million to promote Apex Legends, a rival battle royale to Fortnite, on his stream and social media in February 2019. Not financial advice.\n\n#shorts #ninja #streamer #howtheymakemoney",
+  "tags": [
+    "ninja",
+    "streamer",
+    "famous",
+    "shorts"
+  ],
+  "images": {},
+  "hud_label": "HIS MONEY",
+  "loop": "So next time you start a new game, remember:",
+  "cta": "Fortnite or Apex? Comment your pick.",
+  "cta_question": "Fortnite or Apex?",
+  "scenes": [
+    {
+      "narration": "A game company paid him 1 million dollars. To play its game.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "gaming",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "headset"
+        ],
+        "stat": "$1 MILLION",
+        "stat_sub": "to play one game"
+      }
+    },
+    {
+      "narration": "But not his usual game. A rival to Fortnite.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "gaming",
+        "action": "work",
+        "crowd": 0,
+        "props": [
+          "headset"
+        ],
+        "stat": "A RIVAL GAME",
+        "stat_sub": "Apex Legends, 2019"
+      }
+    },
+    {
+      "narration": "Just months earlier, he had 500,000 followers. Then over 2 million.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "gaming",
+        "action": "work",
+        "crowd": 0,
+        "props": [
+          "headset",
+          "phone"
+        ],
+        "stat": "2 MILLION",
+        "stat_sub": "followers by March 2018",
+        "hud": "2M"
+      }
+    },
+    {
+      "narration": "Then he played Fortnite with Drake. A record crowd tuned in.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "gaming",
+        "action": "cheer",
+        "crowd": 200,
+        "props": [
+          "headset"
+        ],
+        "stat": "635,000",
+        "stat_sub": "watching at once"
+      }
+    },
+    {
+      "narration": "That year? Close to 10 million dollars, by his own guess. Just from playing.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "gaming",
+        "action": "cheer",
+        "crowd": 100,
+        "props": [
+          "headset",
+          "cash"
+        ],
+        "stat": "$10 MILLION",
+        "stat_sub": "his 2018 estimate",
+        "hud": "$10M"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Ninja (gamer)",
+      "url": "https://en.wikipedia.org/wiki/Ninja_(gamer)"
+    }
+  ],
+  "hero": {
+    "skin": "f0c8a0",
+    "hair": "short",
+    "hair_color": "5a3a20",
+    "beard": "none",
+    "outfit": "hoodie",
+    "shirt": "2b2f3a",
+    "pants": "2c3550",
+    "socks": "f4f4f4",
+    "shoes": "f4f4f4",
+    "height": 1.0
+  }
+}

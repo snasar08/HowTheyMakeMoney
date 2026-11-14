@@ -1,0 +1,120 @@
+{
+  "id": "085",
+  "slug": "famous-dwayne-johnson",
+  "company": "Dwayne Johnson",
+  "format": "famous",
+  "visual_style": "lowpoly",
+  "hook_style": "surprise",
+  "title_style": "number",
+  "theme": "bold_bright",
+  "status": "ready",
+  "score": 90,
+  "title": "Cut After 2 Months, Then $11.4 Billion",
+  "name_card": "Dwayne Johnson",
+  "name_sub": "actor",
+  "description": "Cut from a football team in 1995. Then his movies made 11.4 billion dollars.\n\nSources:\n- Wikipedia: Dwayne Johnson: https://en.wikipedia.org/wiki/Dwayne_Johnson\n\nFrom Wikipedia (Dwayne Johnson): undrafted in the 1995 NFL draft, he signed with the Calgary Stampeders and was cut two months into the season; he started wrestling in 1996; he was paid $5.5 million for his first leading role, The Scorpion King (2002), a Guinness World Record for an actor's first lead; Forbes named him the world's highest-paid actor in 2016; his films have grossed over $11.4 billion worldwide. Not financial advice.\n\n#shorts #dwaynejohnson #movies #howtheymakemoney",
+  "tags": [
+    "dwayne johnson",
+    "movies",
+    "famous",
+    "shorts"
+  ],
+  "images": {},
+  "hud_label": "HIS MOVIES",
+  "loop": "So next time a team cuts you, remember:",
+  "cta": "Wrestling or movies? Comment your pick.",
+  "cta_question": "Wrestling or movies?",
+  "scenes": [
+    {
+      "narration": "Cut from a football team in 1995. Then his movies made 11.4 billion dollars.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "field",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "ball"
+        ],
+        "stat": "$11.4 BILLION",
+        "stat_sub": "from a cut player"
+      }
+    },
+    {
+      "narration": "But that's not his pay. It's his films' box office, worldwide.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "studio",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "trophy"
+        ],
+        "stat": "$11.4 BILLION",
+        "stat_sub": "box office, worldwide"
+      }
+    },
+    {
+      "narration": "So he tried wrestling instead. The crowd loved him.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "stage",
+        "action": "cheer",
+        "crowd": 400,
+        "props": [
+          "trophy"
+        ],
+        "stat": "A NEW START",
+        "stat_sub": "wrestling, 1996"
+      }
+    },
+    {
+      "narration": "His first lead movie role still paid 5.5 million. A world record.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "studio",
+        "action": "cheer",
+        "crowd": 40,
+        "props": [
+          "check"
+        ],
+        "stat": "$5.5 MILLION",
+        "stat_sub": "a first-lead record",
+        "hud": "$5.5M"
+      }
+    },
+    {
+      "narration": "Just years after that cut: the world's highest-paid actor.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "studio",
+        "action": "cheer",
+        "crowd": 100,
+        "props": [
+          "cash",
+          "trophy"
+        ],
+        "stat": "#1 PAID ACTOR",
+        "stat_sub": "Forbes, 2016",
+        "hud": "$11.4B"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Dwayne Johnson",
+      "url": "https://en.wikipedia.org/wiki/Dwayne_Johnson"
+    }
+  ],
+  "hero": {
+    "skin": "a8744a",
+    "hair": "bald",
+    "hair_color": "15110e",
+    "beard": "none",
+    "outfit": "tee",
+    "shirt": "1a1a1a",
+    "pants": "2c3550",
+    "socks": "1a1a1a",
+    "shoes": "1a1a1a",
+    "height": 1.12
+  }
+}

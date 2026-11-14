@@ -1,0 +1,121 @@
+{
+  "id": "089",
+  "slug": "careers-pilots",
+  "company": "Airline pilots",
+  "format": "careers",
+  "visual_style": "charts3d",
+  "hook_style": "number",
+  "title_style": "number",
+  "theme": "clean_navy",
+  "status": "ready",
+  "score": 88,
+  "title": "$232,140 a Year to Fly Planes",
+  "description": "Airline pilots make 232,140 dollars a year. That's the median.\n\nSources:\n- BLS OEWS via api.bls.gov: Airline pilots, copilots, and flight engineers 53-2011, annual median wage, May 2025: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000053201113\n- BLS OEWS via api.bls.gov: Airline pilots, copilots, and flight engineers, 10th percentile: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000053201111\n- BLS OEWS via api.bls.gov: Airline pilots, copilots, and flight engineers, 90th percentile: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000053201115\n- BLS OEWS via api.bls.gov: Airline pilots, copilots, and flight engineers, employment: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000053201101\n\nBLS May 2025 (OEWS), airline pilots, copilots, and flight engineers (53-2011): 103,560 jobs on payrolls (OEWS does not count the self-employed); median $232,140; 10th percentile $106,710; 90th percentile $463,830. Median = half earn more, half earn less. Not financial advice.\n\n#shorts #pilot #careers #howtheymakemoney",
+  "tags": [
+    "pilot",
+    "careers",
+    "airline",
+    "shorts"
+  ],
+  "images": {
+    "hook": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: a confident adult airline pilot in a plain dark uniform with gold stripes sitting in a glowing cockpit at sunrise, clouds outside the windshield, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261114_175327_58cc8ac8-bc0f-4c4b-b9f1-052811dfd905.png"
+    },
+    "mid": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: a young adult pilot trainee studying flight charts at a small airfield beside a little single-engine training plane, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261114_175324_587f07b8-0730-48ca-a568-7a0e68c7f859.png"
+    },
+    "broll1": {
+      "prompt": "3D rendered CGI scene, smooth stylized realistic look, soft studio lighting, shallow depth of field, vertical: a plain white passenger jet climbing above golden sunset clouds, seen from slightly below, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261114_175324_bb990b8c-102e-4e94-99ae-52455946eebb.png"
+    },
+    "broll2": {
+      "prompt": "3D rendered CGI character scene, smooth stylized realistic characters, soft studio lighting, clean simple background, shallow depth of field, vertical: two adult pilots, a man and a woman in plain dark uniforms, walking through a bright airport terminal pulling small rolling suitcases, big windows with a plane outside, no text, no logos, no brand names",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FuJinsJJIMh55UxcurcoWjVzGy/hf_20261114_175324_4145084c-1054-4450-b586-acc3eced23db.png"
+    }
+  },
+  "loop": "So next time you board a plane, remember:",
+  "cta": "Pilot or astronaut? Comment which job you'd pick.",
+  "cta_question": "Pilot or astronaut?",
+  "scenes": [
+    {
+      "narration": "Airline pilots make 232,140 dollars a year. That's the median.",
+      "visual": {
+        "type": "image",
+        "image": "hook",
+        "overlay": "$232,140",
+        "overlay_sub": "a year, to fly planes"
+      }
+    },
+    {
+      "narration": "And the top ten percent? Over 463,000 a year.",
+      "visual": {
+        "type": "stat",
+        "value": 463830,
+        "prefix": "$",
+        "suffix": "",
+        "decimals": 0,
+        "label": "Top 10% of airline pilots, May 2025"
+      }
+    },
+    {
+      "narration": "Even the low end is high. Only one in ten earn under 106,710.",
+      "visual": {
+        "type": "image",
+        "image": "mid",
+        "overlay": "$106,710",
+        "overlay_sub": "the bottom 10% line"
+      }
+    },
+    {
+      "narration": "But it's a small club. Just 103,560 jobs in the whole US.",
+      "visual": {
+        "type": "text",
+        "text": "103,560 jobs",
+        "sub": "airline pilots, May 2025"
+      }
+    },
+    {
+      "narration": "So the full range? About 107,000 up to 463,000.",
+      "visual": {
+        "type": "bars",
+        "items": [
+          {
+            "label": "Low 10%",
+            "value": 106.7
+          },
+          {
+            "label": "Median",
+            "value": 232.1
+          },
+          {
+            "label": "Top 10%",
+            "value": 463.8
+          }
+        ],
+        "prefix": "$",
+        "suffix": "K",
+        "title": "Airline pilot pay, May 2025"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "BLS OEWS via api.bls.gov: Airline pilots, copilots, and flight engineers 53-2011, annual median wage, May 2025",
+      "url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000053201113"
+    },
+    {
+      "title": "BLS OEWS via api.bls.gov: Airline pilots, copilots, and flight engineers, 10th percentile",
+      "url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000053201111"
+    },
+    {
+      "title": "BLS OEWS via api.bls.gov: Airline pilots, copilots, and flight engineers, 90th percentile",
+      "url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000053201115"
+    },
+    {
+      "title": "BLS OEWS via api.bls.gov: Airline pilots, copilots, and flight engineers, employment",
+      "url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000053201101"
+    }
+  ]
+}

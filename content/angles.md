@@ -76,3 +76,16 @@ clearly different angle, new figures, a new hook, new B-roll and a different sce
 075 | Patrick Mahomes (famous) | round-37 baseball pick who chose football | round 37 (2014 MLB draft), pick 10 (2017), ten-year deal up to $503M (July 2020), three Super Bowl wins
 076 | Lewis Hamilton (famous) | dad worked up to four jobs for his karting; now $100M a year | go-kart at 6, kart champion at 10, 7 titles, 106 wins, Forbes 2026 $100M ($70M + $30M)
 077 | Kylian Mbappé (famous) | the most expensive teenager ever | started at 6 in Bondy, Monaco debut at 16 (record since 1994), EUR 180M to PSG (2017), World Cup at 19
+078 | Tom Brady (famous) | pick 199 to the biggest TV commentator deal | pick 199 (2000), 7 Super Bowls, Super Bowl MVP at 43, $375M / 10 years Fox (reported, 2022)
+079 | Erling Haaland (famous) | £500K a week on the longest Premier League deal | £500,000/week (reported), ~£26M/yr (our math), Bryne, €60M clause (2022), 36-goal record, contract to 2034
+080 | Neymar (famous) | the €222M release clause nobody was meant to pay | ~£20M bid at 18 (2010), "might need to gain weight", €222M clause (2016), paid by PSG Aug 2017 (world record)
+081 | Caitlin Clark (famous) | dream board to a reported $28M shoe deal before her first pro game | NCAA all-time top scorer, pick 1 (2024), $28M / 8 years (reported), dream-board words on her own ball
+082 | Rihanna (famous) | her makeup brand, not music, made her a billionaire | audition at 15 (2003), 14 Hot 100 number ones, Fenty Beauty Sept 2017, $570M in 15 months (Forbes 2018), first female musician billionaire
+083 | Ninja (famous) | paid $1M to stream a rival game | 500,000 -> 2M+ followers (Sept 2017 -> Mar 2018), 635,000 record viewers, ~$10M 2018 (his estimate), $1M EA / Apex (2019)
+084 | Kai Cenat (famous) | $23,280 a month from sleep streams | $23,280/month (Mar 2023), 5.6M hours watched, 306,621 subs record (Feb 2023), $4.7M Forbes 2023, 21M followers (2026)
+085 | Dwayne Johnson (famous) | cut by a football team, then $11.4B at the box office | undrafted 1995, cut by Calgary, wrestling 1996, $5.5M first lead (Guinness), highest-paid actor 2016, $11.4B box office
+086 | Lamine Yamal (famous) | bathed by Messi as a baby, beat him in a World Cup final | 2007 UNICEF photo, started at 4, Spain debut at 16, deal to 2031 up to $45.3M/yr (reported), 2026 World Cup
+087 | Usain Bolt (famous) | the only track athlete on Forbes' highest-paid list | $33M (2016, Forbes No. 32), 1.95 m at 15, 2002 world junior title, Puma deal, 9.58 s world record (2009)
+088 | Apple (editorial, comeback) | worth $2.46B in 1997, rival Microsoft's $150M, then iMac/iPod/iPhone to $4T | $2.46B market cap (Aug 1997), $150M Microsoft, ~800,000 iMacs in 5 months, $1T (2018), $4T+ (Oct 2025)
+089 | Airline pilots (careers) | pilot pay median and range | 103,560 jobs, $232,140 median, $106,710 / $463,830 (May 2025)
+090 | Serena Williams (famous) | $12M deal right after high school | $12M Puma (1999), $40M Nike (2004), 23 majors, sponsor's largest building named after her

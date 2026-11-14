@@ -1,0 +1,122 @@
+{
+  "id": "084",
+  "slug": "famous-kai-cenat",
+  "company": "Kai Cenat",
+  "format": "famous",
+  "visual_style": "lowpoly",
+  "hook_style": "surprise",
+  "title_style": "whatif",
+  "theme": "dark_neon",
+  "status": "ready",
+  "score": 91,
+  "title": "What If You Got Paid $23,280 to Sleep?",
+  "name_card": "Kai Cenat",
+  "name_sub": "streamer",
+  "description": "23,280 dollars a month. For streaming while he sleeps.\n\nSources:\n- Wikipedia: Kai Cenat: https://en.wikipedia.org/wiki/Kai_Cenat\n\nFrom Wikipedia (Kai Cenat): in March 2023 he was reported to make about $23,280 per month from his sleep streams, which had over 5.6 million hours watched (Streams Charts); on 28 February 2023 he became the most-subscribed Twitch streamer at the time, peaking at 306,621 subscribers; Forbes put his 2023 earnings at an estimated $4.7 million; as of 2026 he is the most-followed Twitch streamer, with 21 million followers. Not financial advice.\n\n#shorts #kaicenat #streamer #howtheymakemoney",
+  "tags": [
+    "kai cenat",
+    "streamer",
+    "famous",
+    "shorts"
+  ],
+  "images": {},
+  "hud_label": "HIS MONEY",
+  "loop": "So next time you take a nap, remember:",
+  "cta": "Sleep stream or gaming stream? Comment your pick.",
+  "cta_question": "Sleep or gaming?",
+  "scenes": [
+    {
+      "narration": "23,280 dollars a month. For streaming while he sleeps.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "gaming",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "headset"
+        ],
+        "stat": "$23,280",
+        "stat_sub": "a month, asleep"
+      }
+    },
+    {
+      "narration": "But people really watched. Over 5.6 million hours of sleep.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "gaming",
+        "action": "idle",
+        "crowd": 60,
+        "props": [
+          "phone"
+        ],
+        "stat": "5.6 MILLION",
+        "stat_sub": "hours of sleep watched"
+      }
+    },
+    {
+      "narration": "Then, awake, he broke a Twitch record. 306,621 subscribers.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "gaming",
+        "action": "cheer",
+        "crowd": 200,
+        "props": [
+          "headset"
+        ],
+        "stat": "306,621",
+        "stat_sub": "subscribers, February 2023",
+        "hud": "306K"
+      }
+    },
+    {
+      "narration": "Yet sleeping was just a side gig. Forbes estimated 4.7 million that year.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "gaming",
+        "action": "cheer",
+        "crowd": 100,
+        "props": [
+          "headset",
+          "cash"
+        ],
+        "stat": "$4.7 MILLION",
+        "stat_sub": "Forbes, 2023",
+        "hud": "$4.7M"
+      }
+    },
+    {
+      "narration": "Now? The most-followed streamer on all of Twitch.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "gaming",
+        "action": "cheer",
+        "crowd": 300,
+        "props": [
+          "headset",
+          "trophy"
+        ],
+        "stat": "21 MILLION",
+        "stat_sub": "followers, 2026",
+        "hud": "21M"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Kai Cenat",
+      "url": "https://en.wikipedia.org/wiki/Kai_Cenat"
+    }
+  ],
+  "hero": {
+    "skin": "5a3a28",
+    "hair": "short",
+    "hair_color": "15110e",
+    "beard": "none",
+    "outfit": "hoodie",
+    "shirt": "d8402e",
+    "pants": "24262e",
+    "socks": "f4f4f4",
+    "shoes": "f4f4f4",
+    "height": 1.0
+  }
+}

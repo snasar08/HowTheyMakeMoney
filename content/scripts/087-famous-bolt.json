@@ -1,0 +1,117 @@
+{
+  "id": "087",
+  "slug": "famous-bolt",
+  "company": "Usain Bolt",
+  "format": "famous",
+  "visual_style": "lowpoly",
+  "hook_style": "number",
+  "title_style": "number",
+  "theme": "clean_navy",
+  "status": "ready",
+  "score": 87,
+  "title": "$33 Million a Year for Running",
+  "name_card": "Usain Bolt",
+  "name_sub": "sprinter",
+  "description": "33 million dollars in one year. For running.\n\nSources:\n- Wikipedia: Usain Bolt: https://en.wikipedia.org/wiki/Usain_Bolt\n\nFrom Wikipedia (Usain Bolt): by 15 he was 1.95 metres tall and won the 200 m at the 2002 World Junior Championships in Kingston, after which he signed a sponsorship deal with Puma; his 100 m world record of 9.58 seconds (2009) still stands; in 2016 he earned about $33 million, No. 32 on Forbes' list of the world's highest-paid athletes and the only track and field athlete on it; the highest-paid athlete in the sport's history. Not financial advice.\n\n#shorts #usainbolt #track #howtheymakemoney",
+  "tags": [
+    "usain bolt",
+    "track",
+    "famous",
+    "shorts"
+  ],
+  "images": {},
+  "hud_label": "HIS MONEY",
+  "loop": "So next time you run for the bus, remember:",
+  "cta": "Bolt or a cheetah? Comment who wins.",
+  "cta_question": "Bolt or a cheetah?",
+  "scenes": [
+    {
+      "narration": "33 million dollars in one year. For running.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "field",
+        "action": "run",
+        "crowd": 0,
+        "props": [],
+        "stat": "$33 MILLION",
+        "stat_sub": "in one year, 2016"
+      }
+    },
+    {
+      "narration": "The only track athlete on Forbes' highest-paid list.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "field",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "trophy"
+        ],
+        "stat": "THE ONLY ONE",
+        "stat_sub": "track athlete on the list, 2016"
+      }
+    },
+    {
+      "narration": "At 15, he was already 1.95 meters tall. And he won a world junior title.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "field",
+        "action": "run",
+        "crowd": 300,
+        "props": [
+          "trophy"
+        ],
+        "stat": "AGE 15",
+        "stat_sub": "world junior champion, 2002"
+      }
+    },
+    {
+      "narration": "A sponsor signed him right after. Then came 9.58 seconds.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "field",
+        "action": "run",
+        "crowd": 400,
+        "props": [
+          "check"
+        ],
+        "stat": "9.58 SECONDS",
+        "stat_sub": "100 m world record, 2009"
+      }
+    },
+    {
+      "narration": "It's still the record. And no sprinter has been paid more.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "field",
+        "action": "cheer",
+        "crowd": 400,
+        "props": [
+          "trophy",
+          "cash"
+        ],
+        "stat": "$33 MILLION",
+        "stat_sub": "the sport's highest-paid ever",
+        "hud": "$33M"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Usain Bolt",
+      "url": "https://en.wikipedia.org/wiki/Usain_Bolt"
+    }
+  ],
+  "hero": {
+    "skin": "5a3c28",
+    "hair": "buzz",
+    "hair_color": "15110e",
+    "beard": "none",
+    "outfit": "kit",
+    "shirt": "f2c230",
+    "pants": "1f7a3a",
+    "socks": "1a1a1a",
+    "shoes": "f2c230",
+    "height": 1.15
+  }
+}

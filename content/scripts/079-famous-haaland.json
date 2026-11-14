@@ -1,0 +1,137 @@
+{
+  "id": "079",
+  "slug": "famous-haaland",
+  "company": "Erling Haaland",
+  "format": "famous",
+  "visual_style": "lowpoly",
+  "hook_style": "number",
+  "title_style": "number",
+  "theme": "bold_bright",
+  "status": "ready",
+  "score": 90,
+  "title": "£500,000 a Week Until 2034",
+  "name_card": "Erling Haaland",
+  "name_sub": "soccer player",
+  "description": "500,000 pounds a week, reportedly. Signed until 2034.\n\nSources:\n- Wikipedia: Erling Haaland: https://en.wikipedia.org/wiki/Erling_Haaland\n\nFrom Wikipedia (Erling Haaland): began his senior career at Norwegian club Bryne; May 2022, Manchester City activated his €60 million release clause; 36 Premier League goals in his first season, a record; 17 January 2025, he extended his contract until 2034, the longest deal in Premier League history, reportedly earning £500,000 per week. About £26 million a year is our math (500,000 x 52). Not financial advice.\n\n#shorts #erlinghaaland #soccer #howtheymakemoney",
+  "tags": [
+    "erling haaland",
+    "soccer",
+    "famous",
+    "shorts"
+  ],
+  "images": {},
+  "hud_label": "HIS PAY",
+  "loop": "So next time you kick a ball, remember:",
+  "cta": "Haaland or Mbappé? Comment your pick.",
+  "cta_question": "Haaland or Mbappé?",
+  "scenes": [
+    {
+      "narration": "500,000 pounds. Every week. Until 2034.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "pitch",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "ball"
+        ],
+        "stat": "£500,000",
+        "stat_sub": "a week, reportedly"
+      }
+    },
+    {
+      "narration": "That's about 26 million pounds a year. Just for him.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "pitch",
+        "action": "run",
+        "crowd": 0,
+        "props": [
+          "ball",
+          "cash"
+        ],
+        "stat": "£26M A YEAR",
+        "stat_sub": "our math: 500K x 52",
+        "hud": "£26M"
+      }
+    },
+    {
+      "narration": "But it started at Bryne. A small club in Norway.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "field",
+        "action": "run",
+        "crowd": 0,
+        "props": [
+          "ball"
+        ],
+        "stat": "BRYNE",
+        "stat_sub": "where it started"
+      }
+    },
+    {
+      "narration": "Then Manchester City paid his release clause.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "office",
+        "action": "cheer",
+        "crowd": 40,
+        "props": [
+          "check"
+        ],
+        "stat": "€60 MILLION",
+        "stat_sub": "Manchester City, 2022"
+      }
+    },
+    {
+      "narration": "His first season? 36 Premier League goals. A new record.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "pitch",
+        "action": "cheer",
+        "crowd": 400,
+        "props": [
+          "ball",
+          "trophy"
+        ],
+        "stat": "36 GOALS",
+        "stat_sub": "Premier League record"
+      }
+    },
+    {
+      "narration": "So City didn't just keep him. They signed the longest deal in league history.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "pitch",
+        "action": "cheer",
+        "crowd": 300,
+        "props": [
+          "ball",
+          "check"
+        ],
+        "stat": "UNTIL 2034",
+        "stat_sub": "longest Premier League deal",
+        "hud": "£26M"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Erling Haaland",
+      "url": "https://en.wikipedia.org/wiki/Erling_Haaland"
+    }
+  ],
+  "hero": {
+    "skin": "f4d2b4",
+    "hair": "long",
+    "hair_color": "e0c27a",
+    "beard": "stubble",
+    "outfit": "kit",
+    "shirt": "6cabdd",
+    "pants": "f4f4f4",
+    "socks": "6cabdd",
+    "shoes": "1a1a1a",
+    "height": 1.12,
+    "beard_color": "c9a45a"
+  }
+}

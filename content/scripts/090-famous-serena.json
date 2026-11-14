@@ -1,0 +1,117 @@
+{
+  "id": "090",
+  "slug": "famous-serena",
+  "company": "Serena Williams",
+  "format": "famous",
+  "visual_style": "lowpoly",
+  "hook_style": "surprise",
+  "title_style": "number",
+  "theme": "bold_bright",
+  "status": "ready",
+  "score": 88,
+  "title": "A $12 Million Deal Right After High School",
+  "name_card": "Serena Williams",
+  "name_sub": "tennis player",
+  "description": "She signed a 12 million dollar deal right after high school.\n\nSources:\n- Wikipedia: Serena Williams: https://en.wikipedia.org/wiki/Serena_Williams\n\nFrom Wikipedia (Serena Williams): coached by her parents, she turned professional in 1995 and won her first major at the 1999 US Open; after graduating from Driftwood Academy in 1999 she signed a $12 million endorsement deal with Puma; in 2004 a five-year, $40 million deal with Nike, whose largest building on its Portland campus is now the one-million-square-foot Serena Williams Building; 23 major singles titles, the most in the Open Era; the highest-earning woman athlete of all time. Not financial advice.\n\n#shorts #serenawilliams #tennis #howtheymakemoney",
+  "tags": [
+    "serena williams",
+    "tennis",
+    "famous",
+    "shorts"
+  ],
+  "images": {},
+  "hud_label": "HER DEALS",
+  "loop": "So next time you finish a school year, remember:",
+  "cta": "Serena or Venus? Comment your pick.",
+  "cta_question": "Serena or Venus?",
+  "scenes": [
+    {
+      "narration": "She signed a 12 million dollar deal right after high school.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "trophy"
+        ],
+        "stat": "$12 MILLION",
+        "stat_sub": "right after high school, 1999"
+      }
+    },
+    {
+      "narration": "Her coaches? Just her mom and dad.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "field",
+        "action": "run",
+        "crowd": 0,
+        "props": [],
+        "stat": "HER PARENTS",
+        "stat_sub": "her first coaches"
+      }
+    },
+    {
+      "narration": "Then a 40 million dollar shoe deal in 2004.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "office",
+        "action": "cheer",
+        "crowd": 40,
+        "props": [
+          "check"
+        ],
+        "stat": "$40 MILLION",
+        "stat_sub": "5-year deal, 2004",
+        "hud": "$40M"
+      }
+    },
+    {
+      "narration": "Then 23 major titles. The most of the Open Era.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "cheer",
+        "crowd": 400,
+        "props": [
+          "trophy"
+        ],
+        "stat": "23 MAJORS",
+        "stat_sub": "an Open Era record"
+      }
+    },
+    {
+      "narration": "Now her sponsor's biggest building? It's named after her.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "cheer",
+        "crowd": 100,
+        "props": [
+          "trophy",
+          "cash"
+        ],
+        "stat": "HER BUILDING",
+        "stat_sub": "1 million square feet"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Serena Williams",
+      "url": "https://en.wikipedia.org/wiki/Serena_Williams"
+    }
+  ],
+  "hero": {
+    "skin": "6b4a32",
+    "hair": "bun",
+    "hair_color": "15110e",
+    "beard": "none",
+    "outfit": "dress",
+    "shirt": "e8554e",
+    "pants": "e8554e",
+    "socks": "f4f4f4",
+    "shoes": "f4f4f4",
+    "height": 1.02
+  }
+}

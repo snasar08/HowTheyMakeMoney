@@ -1,0 +1,180 @@
+{
+  "id": "088",
+  "slug": "how-apple-1997",
+  "company": "Apple",
+  "format": "how",
+  "visual_style": "editorial",
+  "hook_style": "number",
+  "title_style": "number",
+  "theme": "clean_navy",
+  "status": "ready",
+  "score": 90,
+  "title": "From $2.46 Billion to $4 Trillion",
+  "tag": "Company backstory",
+  "description": "In 1997, all of Apple was worth 2.46 billion dollars. Today it's worth over 4 trillion.\n\nSources:\n- Wikipedia: History of Apple Inc.: https://en.wikipedia.org/wiki/History_of_Apple_Inc.\n- Wikipedia: Apple Inc.: https://en.wikipedia.org/wiki/Apple_Inc.\n\nFrom Wikipedia (History of Apple Inc.): Steve Jobs returned to Apple in 1997 after it bought his company NeXT and became interim CEO; at the August 1997 Macworld Expo he announced a partnership with Microsoft including a US$150 million investment in Apple; the day before, Apple had a market cap of $2.46 billion; the first iMac was unveiled May 6, 1998 and sold about 800,000 units in its first five months; the iPod arrived in 2001 and the iPhone on June 29, 2007. From Wikipedia (Apple Inc.): on August 2, 2018 Apple became the first publicly traded US company worth $1 trillion, and as of October 2025 it was valued at just over $4 trillion. Photos: Wikimedia Commons (credits below). Not financial advice.\n\n#shorts #apple #iphone #howtheymakemoney",
+  "tags": [
+    "apple",
+    "iphone",
+    "comeback",
+    "shorts"
+  ],
+  "images": {},
+  "hud_label": "APPLE'S VALUE",
+  "loop": "So next time you pick up your phone, remember:",
+  "cta": "iPhone or iPod? Comment which saved Apple more.",
+  "cta_question": "iPhone or iPod?",
+  "scenes": [
+    {
+      "narration": "In 1997, all of Apple was worth 2.46 billion dollars. Today? Over 4 trillion.",
+      "visual": {
+        "type": "editorial",
+        "layout": "stat",
+        "stat": "$2.46B",
+        "stat_sub": "all of Apple, August 1997",
+        "label": "The low point",
+        "hud": "$2.46B"
+      }
+    },
+    {
+      "narration": "But sales were rocky. So it called back Steve Jobs.",
+      "visual": {
+        "type": "editorial",
+        "layout": "cards",
+        "label": "The return, 1997",
+        "people": [
+          {
+            "name": "Steve Jobs",
+            "photo": "File:Steve Jobs and Macintosh computer, January 1984, by Bernard Gotfryd - edited.jpg",
+            "role": "Apple co-founder"
+          },
+          {
+            "name": "Steve Wozniak",
+            "photo": "File:Steve Wozniak by Gage Skidmore.jpg",
+            "role": "Apple co-founder"
+          }
+        ]
+      }
+    },
+    {
+      "narration": "Then its biggest rival, Microsoft, invested 150 million dollars.",
+      "visual": {
+        "type": "editorial",
+        "layout": "cards",
+        "label": "The rival's help",
+        "people": [
+          {
+            "name": "Bill Gates",
+            "photo": "File:Bill Gates July 2014.jpg",
+            "role": "Microsoft co-founder"
+          },
+          {
+            "name": "Steve Jobs",
+            "photo": "File:Steve Jobs WWDC07.jpg",
+            "role": "Apple CEO"
+          }
+        ]
+      }
+    },
+    {
+      "narration": "Jobs bet on one colorful computer. About 800,000 sold in five months.",
+      "visual": {
+        "type": "editorial",
+        "layout": "headline",
+        "headline": "A computer you could see through.",
+        "accent": "see through"
+      }
+    },
+    {
+      "narration": "Then the iPod. Then the iPhone.",
+      "visual": {
+        "type": "editorial",
+        "layout": "timeline",
+        "points": [
+          [
+            "1998",
+            "the iMac"
+          ],
+          [
+            "2001",
+            "the iPod"
+          ],
+          [
+            "2007",
+            "the iPhone"
+          ]
+        ]
+      }
+    },
+    {
+      "narration": "Then the first US company worth a trillion. Now? Past 4 trillion.",
+      "visual": {
+        "type": "editorial",
+        "layout": "stat",
+        "stat": "$4T+",
+        "stat_sub": "Apple's value, October 2025",
+        "label": "The scoreboard",
+        "hud": "$4T"
+      }
+    }
+  ],
+  "photos": [
+    {
+      "photo": "File:Steve Jobs 2007.jpg",
+      "caption": "Steve Jobs, 2007"
+    },
+    {
+      "photo": "File:Steve Jobs and Bill Gates (522695099).jpg",
+      "caption": "Steve Jobs and Bill Gates"
+    },
+    {
+      "photo": "File:Macintosh 128k Enter Museum.jpg",
+      "caption": "The first Macintosh, 1984"
+    },
+    {
+      "photo": "File:IMac G3 Bondi Blue, three-quarters view.png",
+      "caption": "The first iMac, 1998"
+    },
+    {
+      "photo": "File:Imac G3 Blueberry side.jpg",
+      "caption": "iMac G3"
+    },
+    {
+      "photo": "File:IMac G3 greenhouse.jpg",
+      "caption": "iMac colors"
+    },
+    {
+      "photo": "File:The New iPod classic (1511209190).jpg",
+      "caption": "An iPod"
+    },
+    {
+      "photo": "File:First iPhone Macworld 2007 DSCF1286.agr.jpg",
+      "caption": "The first iPhone, 2007"
+    },
+    {
+      "photo": "File:Original iPhone docked.jpg",
+      "caption": "The original iPhone"
+    },
+    {
+      "photo": "File:Apple Infinite Loop Aerial.jpg",
+      "caption": "Apple's old campus"
+    },
+    {
+      "photo": "File:Aerial view of Apple Park dllu.jpg",
+      "caption": "Apple Park"
+    },
+    {
+      "photo": "File:Tim Cook (2017, cropped).jpg",
+      "caption": "Tim Cook, Apple CEO"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: History of Apple Inc.",
+      "url": "https://en.wikipedia.org/wiki/History_of_Apple_Inc."
+    },
+    {
+      "title": "Wikipedia: Apple Inc.",
+      "url": "https://en.wikipedia.org/wiki/Apple_Inc."
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "id": "086",
+  "slug": "famous-yamal",
+  "company": "Lamine Yamal",
+  "format": "famous",
+  "visual_style": "lowpoly",
+  "hook_style": "surprise",
+  "title_style": "number",
+  "theme": "bold_bright",
+  "status": "ready",
+  "score": 92,
+  "title": "From a Baby Photo With Messi to $45 Million",
+  "name_card": "Lamine Yamal",
+  "name_sub": "soccer player",
+  "description": "Lionel Messi once gave him a bath. He was just a baby. In 2026 he beat him in a World Cup final.\n\nSources:\n- Wikipedia: Lamine Yamal: https://en.wikipedia.org/wiki/Lamine_Yamal\n\nFrom Wikipedia (Lamine Yamal): born 13 July 2007; as a baby he was in a 2007 UNICEF charity photo shoot with Barcelona in which a 20-year-old Lionel Messi bathed him; he started playing at age four at local club La Torreta; youngest player to represent Spain, at 16; on 27 May 2025 he agreed a contract to June 2031, which The Athletic reported could reach $45.3 million a year including bonuses; he won the 2026 World Cup with Spain, in a final against Messi's Argentina. Not financial advice.\n\n#shorts #lamineyamal #soccer #howtheymakemoney",
+  "tags": [
+    "lamine yamal",
+    "soccer",
+    "famous",
+    "shorts"
+  ],
+  "images": {},
+  "hud_label": "HIS DEAL",
+  "loop": "So next time someone shows your baby photos, remember:",
+  "cta": "Yamal or Messi? Comment your pick.",
+  "cta_question": "Yamal or Messi?",
+  "scenes": [
+    {
+      "narration": "Lionel Messi once gave him a bath. He was just a baby.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "pitch",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "ball"
+        ],
+        "stat": "BABY PHOTO",
+        "stat_sub": "with Messi, 2007"
+      }
+    },
+    {
+      "narration": "19 years later, they met in a World Cup final. Then he won it.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "pitch",
+        "action": "cheer",
+        "crowd": 400,
+        "props": [
+          "ball",
+          "trophy"
+        ],
+        "stat": "WORLD CUP",
+        "stat_sub": "2026 champion"
+      }
+    },
+    {
+      "narration": "He only started at four, at a tiny local club.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "field",
+        "action": "run",
+        "crowd": 0,
+        "props": [
+          "ball"
+        ],
+        "stat": "AGE 4",
+        "stat_sub": "his first club"
+      }
+    },
+    {
+      "narration": "Then at 16, Spain's youngest player ever.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "pitch",
+        "action": "run",
+        "crowd": 200,
+        "props": [
+          "ball"
+        ],
+        "stat": "AGE 16",
+        "stat_sub": "youngest ever for Spain"
+      }
+    },
+    {
+      "narration": "Still a teenager, he signed to 2031. Reportedly up to 45.3 million dollars a year.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "office",
+        "action": "cheer",
+        "crowd": 40,
+        "props": [
+          "check",
+          "cash"
+        ],
+        "stat": "$45.3 MILLION",
+        "stat_sub": "a year, reported, to 2031",
+        "hud": "$45.3M"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Lamine Yamal",
+      "url": "https://en.wikipedia.org/wiki/Lamine_Yamal"
+    }
+  ],
+  "hero": {
+    "skin": "a8744a",
+    "hair": "curly",
+    "hair_color": "15110e",
+    "beard": "none",
+    "outfit": "kit",
+    "shirt": "a50044",
+    "pants": "004d98",
+    "socks": "a50044",
+    "shoes": "f2c230",
+    "height": 0.98
+  }
+}

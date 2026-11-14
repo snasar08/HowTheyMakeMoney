@@ -1,0 +1,120 @@
+{
+  "id": "080",
+  "slug": "famous-neymar",
+  "company": "Neymar",
+  "format": "famous",
+  "visual_style": "lowpoly",
+  "hook_style": "number",
+  "title_style": "number",
+  "theme": "bold_bright",
+  "status": "ready",
+  "score": 89,
+  "title": "The €222 Million Transfer Record",
+  "name_card": "Neymar",
+  "name_sub": "soccer player",
+  "description": "222 million euros for one player. A world record.\n\nSources:\n- Wikipedia: Neymar: https://en.wikipedia.org/wiki/Neymar\n\nFrom Wikipedia (Neymar): in 2010 Santos received bids from Premier League clubs, Chelsea's reported at about £20 million, and he stayed in Brazil; at Barcelona the club doctor suggested he might need to gain weight; July 2016, a new Barcelona contract with a buy-out clause of €200 million rising to €222 million in its second year; 3 August 2017, his representatives paid the €222 million clause and he joined Paris Saint-Germain, the most expensive transfer ever. Not financial advice.\n\n#shorts #neymar #soccer #howtheymakemoney",
+  "tags": [
+    "neymar",
+    "soccer",
+    "famous",
+    "shorts"
+  ],
+  "images": {},
+  "hud_label": "HIS PRICE",
+  "loop": "So next time someone says you're too small, remember:",
+  "cta": "Neymar or Mbappé? Comment your pick.",
+  "cta_question": "Neymar or Mbappé?",
+  "scenes": [
+    {
+      "narration": "222 million euros for one player. A world record.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "pitch",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "ball"
+        ],
+        "stat": "€222 MILLION",
+        "stat_sub": "for one player"
+      }
+    },
+    {
+      "narration": "At 18, an English club bid about 20 million pounds. But he stayed in Brazil.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "field",
+        "action": "run",
+        "crowd": 0,
+        "props": [
+          "ball"
+        ],
+        "stat": "£20 MILLION",
+        "stat_sub": "a bid at 18, 2010"
+      }
+    },
+    {
+      "narration": "Then Barcelona. Their doctor said he might need to gain weight.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "pitch",
+        "action": "run",
+        "crowd": 0,
+        "props": [
+          "ball"
+        ],
+        "stat": "TOO LIGHT?",
+        "stat_sub": "Barcelona, 2013"
+      }
+    },
+    {
+      "narration": "So they set his price at 222 million. Sounds safe. Nobody pays that.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "office",
+        "action": "idle",
+        "crowd": 20,
+        "props": [
+          "check"
+        ],
+        "stat": "€222 MILLION",
+        "stat_sub": "his buy-out clause, 2016",
+        "hud": "€222M"
+      }
+    },
+    {
+      "narration": "But in 2017, a club in Paris paid it. All of it.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "pitch",
+        "action": "cheer",
+        "crowd": 400,
+        "props": [
+          "ball",
+          "cash"
+        ],
+        "stat": "PAID IN FULL",
+        "stat_sub": "August 2017, a world record",
+        "hud": "€222M"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Neymar",
+      "url": "https://en.wikipedia.org/wiki/Neymar"
+    }
+  ],
+  "hero": {
+    "skin": "c6906a",
+    "hair": "short",
+    "hair_color": "2a1a10",
+    "beard": "none",
+    "outfit": "kit",
+    "shirt": "f7d117",
+    "pants": "1f4fa0",
+    "socks": "f4f4f4",
+    "shoes": "f4f4f4",
+    "height": 1.0
+  }
+}
