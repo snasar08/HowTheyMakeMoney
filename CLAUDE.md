@@ -27,8 +27,12 @@ and **free beyond his Higgsfield Pro plan** — never add a paid service or ask 
   ~$1.60/month at 5/day; free tier may cover it (free-tier text is used by Google to improve products).
   Claude must never create, see or type the key: Sam makes it in AI Studio and adds the secret himself.
   **Pitch (Nov 14, Sam: "voice is a lot better", but "a tad too deep, not significantly"):** Umbriel is raised
-  `GEMINI_PITCH_ST` = 1.0 semitone in `tts.qwen` (ffmpeg asetrate + atempo: same speed, same word timings);
+  `GEMINI_PITCH_ST` = 1.5 semitones (Sam picked +1.5 over +1) in `tts.qwen` (ffmpeg asetrate + atempo: same speed, same word timings);
   samples `previews/voice/umbriel-up-1.mp3` / `-1.5.mp3`. Raise to 1.5 if he still finds it deep.
+  **Odd-tone check (Nov 14, Sam: "the way it says 'just to help his family' gets me nervous"):** that line had
+  dropped 2.9 st below the rest of the read. `voice_prepass.odd_lines` flags a line more than 2.3 st below / 3.5 st
+  above the Short's median pitch; a line still failing after the whole-Short takes is re-recorded alone (up to 2
+  per Short). Test on 074: 7/7 lines pass, clarity 98.6%.
   **Free tier only (Sam: "I don't want to pay").** The key is from AI Studio project "Game" (no billing; the
   "Default Gemini Project" is on a prepaid billing account with $0 credit, so its keys fail). Free limits per
   TTS model: 3 requests/min, 10/day, each model its own quota. So `_gemini_short` voices a WHOLE Short in ONE

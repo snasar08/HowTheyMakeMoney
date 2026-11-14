@@ -373,3 +373,6 @@ Sam: "the better free character models... do it yourself". Done in one session.
   faces read as "no facial features" at phone size; 069 reuses similar shots (repeat check flagged 8).
 - Sam on the Google voice: "a lot better", but a tad too deep. Raised it 1 semitone in tts (GEMINI_PITCH_ST,
   duration and timings unchanged; test tone 121 -> 128 Hz). Live from the next run.
+- Sam picked +1.5 semitones; said "just to help his family" sounded nervous. Measured: that line sat 2.9 st below
+  the rest of the read. Added the odd-tone check (odd_lines) + single-line re-records. voice-e2e on 074: 7/7 lines
+  pass, clarity 98.6%, 32.7 s. Eyes (6/10) claimed "Antetokounmpo" is misspelled; it isn't (eyes can be wrong).

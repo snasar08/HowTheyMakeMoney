@@ -102,7 +102,7 @@ def use_engine_for(texts):
 
 QWEN_SPEED = float(os.environ.get("QWEN_SPEED", "1.1"))
 # Nov 14, Sam: the Gemini voice is "a tad too deep" -> raised one semitone, same speed and timing
-GEMINI_PITCH_ST = float(os.environ.get("GEMINI_PITCH_ST", "1.0"))
+GEMINI_PITCH_ST = float(os.environ.get("GEMINI_PITCH_ST", "1.5"))   # Sam picked +1.5 over +1
 
 
 def _pitch(a, st: float):

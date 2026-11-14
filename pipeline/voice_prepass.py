@@ -65,6 +65,24 @@ def problems(sent: str, heard: list[dict]) -> list[str]:
 
 
 GEMINI_TAKES = int(os.environ.get("GEMINI_TAKES", "2"))   # whole-Short takes (each is one request of 10/day)
+LINE_FIXES = int(os.environ.get("GEMINI_LINE_FIXES", "2"))  # then up to this many single-line re-records per Short
+DROP_ST, RISE_ST = 2.3, 3.5   # a line whose pitch sits this far below / above the rest of the read sounds "off"
+
+
+def odd_lines(parts, sr) -> None:
+    """Nov 14, Sam: "the way it says 'just to help his family' gets me nervous". That line had dropped ~2.9 semitones
+    below the rest of the read (a sudden low, croaky tone) and nothing flagged it. Flag any line whose median pitch
+    is far from the Short's median: it sounds like a different mood."""
+    med = {i: prosody.measure(p[1], sr)["median_hz"] for i, p in enumerate(parts)}
+    vals = [v for v in med.values() if v]
+    if len(vals) < 3:
+        return
+    ref = float(np.median(vals))
+    for i, p in enumerate(parts):
+        if med[i] and len(p[0].split()) >= prosody.MIN_WORDS:
+            d = 12 * np.log2(med[i] / ref)
+            if d < -DROP_ST or d > RISE_ST:
+                p[3].append(f"odd-pitch:{d:+.1f}st")
 
 
 def split_lines(lines: list[str], heard: list[dict], total: float):
@@ -148,7 +166,8 @@ def _gemini_short(sid: str) -> bool:
             bad = [b for b in problems(line, [x for x in heard if t0 <= float(x["start"]) < t1])
                    if not b.startswith("rushed:")] + prosody.problems(piece, sr, line)
             parts.append((line, piece, ws, bad))
-            bad_all += bad
+        odd_lines(parts, sr)
+        bad_all = [b for p in parts for b in p[3]]
         rank = (sum(bool(p[3]) for p in parts), prosody.badness(w, sr, " ".join(lines)))
         if best is None or rank < best[0]:
             best = (rank, parts, sr)
@@ -158,6 +177,29 @@ def _gemini_short(sid: str) -> bool:
     if best is None:
         return False                           # API down or out of quota: the caller falls back
     _rank, parts, sr = best
+    # a line that still fails after the whole-Short takes gets re-recorded on its own (one request each)
+    fixes = 0
+    for k, (line, piece, ws, bad) in enumerate(parts):
+        if not bad or fixes >= LINE_FIXES:
+            continue
+        fixes += 1
+        try:
+            w2, sr2 = gemini_tts.say(line, voice=tts.GEMINI_VOICE)
+        except Exception as e:  # noqa: BLE001
+            print(f"::warning title=voice::gemini line retake: {str(e)[:200]}", flush=True)
+            break
+        if sr2 != sr:
+            w2 = np.interp(np.linspace(0, len(w2) - 1, int(len(w2) * sr / sr2)), np.arange(len(w2)), w2).astype(np.float32)
+        a16 = np.interp(np.linspace(0, len(w2) - 1, int(len(w2) * 16000 / sr)), np.arange(len(w2)), w2).astype(np.float32)
+        h2 = [x for seg in asr.transcribe(a16, language="en", word_timestamps=True, fp16=False)["segments"]
+              for x in seg.get("words", [])]
+        trial = parts[:k] + [(line, w2, [], [])] + parts[k + 1:]
+        bad2 = [b for b in problems(line, h2) if not b.startswith("rushed:")] + prosody.problems(w2, sr, line)
+        trial[k] = (line, w2, [(x["word"].strip(), float(x["start"]), float(x["end"])) for x in h2], bad2)
+        odd_lines([(p[0], p[1], p[2], list(p[3]) if i != k else p[3]) for i, p in enumerate(trial)], sr)
+        if len(trial[k][3]) < len(bad):
+            print(f"[prepass] line re-recorded ({bad[:2]} -> {trial[k][3][:2]}): {line[:50]}", flush=True)
+            parts[k] = trial[k]
     for line, piece, ws, _bad in parts:
         sf.write(tts.line_path(line) + ".wav", piece, sr)
         Path(tts.line_path(line) + ".json").write_text(json.dumps(ws), encoding="utf-8")
