@@ -1,0 +1,380 @@
+{
+  "https://en.wikipedia.org/wiki/Juan_Soto": {
+    "file": "pages/69524b0a1f94.txt",
+    "fetched_at": "2026-11-14T20:47:28.146176+00:00",
+    "ok": true,
+    "chars": 72549,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Juan_Soto",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Victor_Wembanyama": {
+    "file": "pages/9a4700374cc1.txt",
+    "fetched_at": "2026-11-14T20:47:28.805416+00:00",
+    "ok": true,
+    "chars": 91906,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Victor_Wembanyama",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Novak_Djokovic": {
+    "file": "pages/3076cee5bbf2.txt",
+    "fetched_at": "2026-11-14T20:47:29.266938+00:00",
+    "ok": true,
+    "chars": 267916,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Novak_Djokovic",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Roger_Federer": {
+    "file": "pages/fd0dda7de3cc.txt",
+    "fetched_at": "2026-11-14T20:47:30.133502+00:00",
+    "ok": true,
+    "chars": 253633,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Roger_Federer",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Selena_Gomez": {
+    "file": "pages/c75e9004cac0.txt",
+    "fetched_at": "2026-11-14T20:47:30.702634+00:00",
+    "ok": true,
+    "chars": 183778,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Selena_Gomez",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Rare_Beauty": {
+    "file": "pages/924d6888f48a.txt",
+    "fetched_at": "2026-11-14T20:47:31.233967+00:00",
+    "ok": true,
+    "chars": 14895,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Rare_Beauty",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Simone_Biles": {
+    "file": "pages/4f38a87ddd78.txt",
+    "fetched_at": "2026-11-14T20:47:31.624214+00:00",
+    "ok": true,
+    "chars": 153145,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Simone_Biles",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Max_Verstappen": {
+    "file": "pages/cafebc503e6a.txt",
+    "fetched_at": "2026-11-14T20:47:32.375111+00:00",
+    "ok": true,
+    "chars": 202944,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Max_Verstappen",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Jeff_Bezos": {
+    "file": "pages/47bacba3cb01.txt",
+    "fetched_at": "2026-11-14T20:47:32.897433+00:00",
+    "ok": true,
+    "chars": 137679,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Jeff_Bezos",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Netflix": {
+    "file": "pages/66995a6bf5c7.txt",
+    "fetched_at": "2026-11-14T20:47:33.378632+00:00",
+    "ok": true,
+    "chars": 252141,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Netflix",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Blockbuster_LLC": {
+    "file": "pages/53f95f1741ac.txt",
+    "fetched_at": "2026-11-14T20:47:33.958106+00:00",
+    "ok": true,
+    "chars": 121223,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Blockbuster_LLC",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Crocs": {
+    "file": "pages/246b6ce5c48c.txt",
+    "fetched_at": "2026-11-14T20:47:34.606907+00:00",
+    "ok": true,
+    "chars": 39440,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Crocs",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/History_of_Nintendo": {
+    "file": "pages/e6db6070fe49.txt",
+    "fetched_at": "2026-11-14T20:47:35.019349+00:00",
+    "ok": true,
+    "chars": 135194,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/History_of_Nintendo",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Pok%C3%A9mon_Trading_Card_Game": {
+    "file": "pages/f77c227619cc.txt",
+    "fetched_at": "2026-11-14T20:47:35.600161+00:00",
+    "ok": true,
+    "chars": 72688,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Pok%C3%A9mon_Trading_Card_Game",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Nintendo_Switch": {
+    "file": "pages/efae8f4122b4.txt",
+    "fetched_at": "2026-11-14T20:47:36.027585+00:00",
+    "ok": true,
+    "chars": 233383,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Nintendo_Switch",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Faker_(gamer)": {
+    "file": "pages/c3e3c3d78ff2.txt",
+    "fetched_at": "2026-11-14T20:47:36.558459+00:00",
+    "ok": true,
+    "chars": 80861,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Faker_(gamer)",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Aaron_Judge": {
+    "file": "pages/69a2e0a7e549.txt",
+    "fetched_at": "2026-11-14T20:47:37.005457+00:00",
+    "ok": true,
+    "chars": 135125,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Aaron_Judge",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Shaquille_O%27Neal": {
+    "file": "pages/753d1693ff2f.txt",
+    "fetched_at": "2026-11-14T20:47:37.685923+00:00",
+    "ok": true,
+    "chars": 186272,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Shaquille_O%27Neal",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Magic_Johnson": {
+    "file": "pages/89990e92ecdf.txt",
+    "fetched_at": "2026-11-14T20:47:38.209587+00:00",
+    "ok": true,
+    "chars": 158762,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Magic_Johnson",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Michael_Phelps": {
+    "file": "pages/75991d60867f.txt",
+    "fetched_at": "2026-11-14T20:47:38.721171+00:00",
+    "ok": true,
+    "chars": 166474,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Michael_Phelps",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Mohamed_Salah": {
+    "file": "pages/710146a216b8.txt",
+    "fetched_at": "2026-11-14T20:47:39.254452+00:00",
+    "ok": true,
+    "chars": 220828,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Mohamed_Salah",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Ed_Sheeran": {
+    "file": "pages/4cb483bed02e.txt",
+    "fetched_at": "2026-11-14T20:47:39.986629+00:00",
+    "ok": true,
+    "chars": 166941,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Ed_Sheeran",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Fortnite": {
+    "file": "pages/0c81bb54691c.txt",
+    "fetched_at": "2026-11-14T20:47:40.479257+00:00",
+    "ok": true,
+    "chars": 52817,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Fortnite",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Krispy_Kreme": {
+    "file": "pages/f0978451fc39.txt",
+    "fetched_at": "2026-11-14T20:47:40.908908+00:00",
+    "ok": true,
+    "chars": 50998,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Krispy_Kreme",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Monster_Beverage": {
+    "file": "pages/043bd6af9a88.txt",
+    "fetched_at": "2026-11-14T20:47:41.326680+00:00",
+    "ok": true,
+    "chars": 30480,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Monster_Beverage",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Kevin_Durant": {
+    "file": "pages/8e5b9695a3f1.txt",
+    "fetched_at": "2026-11-14T20:47:41.733829+00:00",
+    "ok": true,
+    "chars": 163285,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Kevin_Durant",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Bad_Bunny": {
+    "file": "pages/31d426e9fba4.txt",
+    "fetched_at": "2026-11-14T20:47:42.234260+00:00",
+    "ok": true,
+    "chars": 117116,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Bad_Bunny",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Luka_Don%C4%8Di%C4%87": {
+    "file": "pages/1768559fcb17.txt",
+    "fetched_at": "2026-11-14T20:47:42.709744+00:00",
+    "ok": true,
+    "chars": 165735,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Luka_Don%C4%8Di%C4%87",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Sabrina_Carpenter": {
+    "file": "pages/9eee341f34cc.txt",
+    "fetched_at": "2026-11-14T20:47:43.201267+00:00",
+    "ok": true,
+    "chars": 105207,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Sabrina_Carpenter",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Mark_Rober": {
+    "file": "pages/7068dbe5e813.txt",
+    "fetched_at": "2026-11-14T20:47:43.661415+00:00",
+    "ok": true,
+    "chars": 26047,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Mark_Rober",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://www.nintendo.co.jp/ir/en/finance/hard_soft/index.html": {
+    "file": "pages/43a40b7125c8.txt",
+    "fetched_at": "2026-11-14T20:47:44.068357+00:00",
+    "ok": true,
+    "chars": 511,
+    "status": 200,
+    "final_url": "https://www.nintendo.co.jp/ir/en/finance/hard_soft/index.html",
+    "content_type": "text/html"
+  },
+  "https://corporate.pokemon.co.jp/en/aboutus/figures/": {
+    "file": "pages/c5fa01dc46cf.txt",
+    "fetched_at": "2026-11-14T20:47:45.174056+00:00",
+    "ok": true,
+    "chars": 3566,
+    "status": 200,
+    "final_url": "https://corporate.pokemon.co.jp/en/aboutus/figures/",
+    "content_type": "text/html; charset=utf-8"
+  },
+  "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000029102313": {
+    "file": "pages/367f82755499.txt",
+    "fetched_at": "2026-11-14T20:47:45.901422+00:00",
+    "ok": true,
+    "chars": 375,
+    "status": 200,
+    "final_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000029102313",
+    "content_type": "application/json"
+  },
+  "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000029102311": {
+    "file": "pages/b3c95508a7fc.txt",
+    "fetched_at": "2026-11-14T20:47:46.474401+00:00",
+    "ok": true,
+    "chars": 374,
+    "status": 200,
+    "final_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000029102311",
+    "content_type": "application/json"
+  },
+  "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000029102315": {
+    "file": "pages/0e4f2b188236.txt",
+    "fetched_at": "2026-11-14T20:47:46.899226+00:00",
+    "ok": true,
+    "chars": 375,
+    "status": 200,
+    "final_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000029102315",
+    "content_type": "application/json"
+  },
+  "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000029102301": {
+    "file": "pages/798a29844c84.txt",
+    "fetched_at": "2026-11-14T20:47:47.369438+00:00",
+    "ok": true,
+    "chars": 373,
+    "status": 200,
+    "final_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000029102301",
+    "content_type": "application/json"
+  },
+  "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000035101113": {
+    "file": "pages/1ef3b4542981.txt",
+    "fetched_at": "2026-11-14T20:47:47.841886+00:00",
+    "ok": true,
+    "chars": 374,
+    "status": 200,
+    "final_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000035101113",
+    "content_type": "application/json"
+  },
+  "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000035101111": {
+    "file": "pages/55f98256de15.txt",
+    "fetched_at": "2026-11-14T20:47:48.363345+00:00",
+    "ok": true,
+    "chars": 374,
+    "status": 200,
+    "final_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000035101111",
+    "content_type": "application/json"
+  },
+  "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000035101115": {
+    "file": "pages/9965f3b41d59.txt",
+    "fetched_at": "2026-11-14T20:47:48.805531+00:00",
+    "ok": true,
+    "chars": 374,
+    "status": 200,
+    "final_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000035101115",
+    "content_type": "application/json"
+  },
+  "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000035101101": {
+    "file": "pages/be64ea28a674.txt",
+    "fetched_at": "2026-11-14T20:47:49.676640+00:00",
+    "ok": true,
+    "chars": 375,
+    "status": 200,
+    "final_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000035101101",
+    "content_type": "application/json"
+  },
+  "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000029102113": {
+    "file": "pages/105a5a59f46e.txt",
+    "fetched_at": "2026-11-14T20:47:50.265030+00:00",
+    "ok": true,
+    "chars": 375,
+    "status": 200,
+    "final_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000029102113",
+    "content_type": "application/json"
+  },
+  "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000029102101": {
+    "file": "pages/1c3e78234fd3.txt",
+    "fetched_at": "2026-11-14T20:47:50.730859+00:00",
+    "ok": true,
+    "chars": 375,
+    "status": 200,
+    "final_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000029102101",
+    "content_type": "application/json"
+  }
+}

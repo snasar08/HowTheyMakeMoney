@@ -1,0 +1,1963 @@
+URL: https://en.wikipedia.org/wiki/Pok%C3%A9mon_Trading_Card_Game
+FINAL_URL: https://en.wikipedia.org/wiki/Pok%C3%A9mon_Trading_Card_Game
+FETCHED: 2026-11-14T20:47:35.600161+00:00
+
+Jump to content
+
+Main menu
+
+Main menu
+
+ move to sidebar
+ hide
+
+ Navigation
+
+Main page
+
+Contents
+
+Current events
+
+Random article
+
+About Wikipedia
+
+Contact us
+
+ Contribute
+
+Help
+
+Learn to edit
+
+Community portal
+
+Recent changes
+
+Upload file
+
+Special pages
+
+Search
+
+ Search
+
+Appearance
+
+Donate
+
+Create account
+
+Log in
+
+Personal tools
+
+Donate
+
+Create account
+
+Log in
+
+Contents
+
+ move to sidebar
+ hide
+
+(Top)
+
+ 1
+ Development and publication
+
+ 2
+ Gameplay
+
+ Toggle Gameplay subsection
+
+ 2.1
+ Card types
+
+ 2.2
+ Pokémon types
+
+ 3
+ Sets
+
+ 4
+ Card collecting
+
+ 5
+ Rarest cards
+
+ 6
+ Competitive play
+
+ Toggle Competitive play subsection
+
+ 6.1
+ Pokémon TCG World Championships
+
+ 7
+ Controversies
+
+ 8
+ Reception
+
+ 9
+ Reviews
+
+ 10
+ Video games
+
+ 11
+ References
+
+ 12
+ Further reading
+
+ 13
+ External links
+
+Toggle the table of contents
+
+Pokémon Trading Card Game
+
+29 languages
+
+العربية
+
+Asturianu
+
+Català
+
+Čeština
+
+Dansk
+
+Deutsch
+
+Español
+
+Suomi
+
+Français
+
+Հայերեն
+
+Bahasa Indonesia
+
+Italiano
+
+日本語
+
+한국어
+
+Bahasa Melayu
+
+Nederlands
+
+ਪੰਜਾਬੀ
+
+Polski
+
+Português
+
+Русский
+
+Simple English
+
+Slovenčina
+
+Svenska
+
+ไทย
+
+Türkçe
+
+Українська
+
+Tiếng Việt
+
+粵語
+
+中文
+
+Edit links
+
+Article
+
+Talk
+
+ English
+
+Read
+
+Edit
+
+View history
+
+Save
+
+Tools
+
+Tools
+
+ move to sidebar
+ hide
+
+ Actions
+
+Read
+
+Edit
+
+View history
+
+Save
+
+ General
+
+What links here
+
+Related changes
+
+Upload file
+
+Permanent link
+
+Page information
+
+Cite this page
+
+Get shortened URL
+
+Switch to legacy parser
+
+ Print/export
+
+Download as PDF
+
+Printable version
+
+ In other projects
+
+Wikimedia Commons
+
+Wikidata item
+
+Appearance
+
+ move to sidebar
+ hide
+
+From Wikipedia, the free encyclopedia
+
+Collectible card game
+
+This article is about the card game. For the video game, see Pokémon Trading Card Game (video game).
+
+Pokémon Trading Card Game
+ | 
+
+ | 
+Pokémon Trading Card Game logo (top) and cardback
+
+ | Designer | 
+
+Tsunekazu Ishihara[1]
+
+Kouichi Ooyama
+
+Takumi Akabane
+
+ | Publisher | 
+
+The Pokémon Company
+
+Japan
+
+Media Factory
+
+(October 1996 – November 2000)
+
+United States
+
+Wizards of the Coast
+
+(December 1998 – July 2003)
+
+ | Release date | October 20, 1996; 30 years ago (1996-10-20)
+
+ | Type | Collectible
+
+ | Players | 2
+
+ | Skills | 
+
+Card playing
+
+Arithmetic
+
+Reading
+
+ | Age range | 6+
+
+ | Cards | 60
+
+ | Playing time | 2–120 minutes
+
+ | Chance | Some (order of cards drawn, dice, coin flip)
+
+ | Website | tcg.pokemon.com
+
+The Pokémon Trading Card Game (Japanese: ポケモンカードゲーム, Hepburn: Pokemon Kādo Gēmu; "Pokémon Card Game"), abbreviated as PTCG or Pokémon TCG, is a tabletop and collectible card game developed by Creatures Inc. based on the Pokémon franchise. Originally published in Japan by Media Factory in 1996, publishing worldwide is currently handled by the Pokémon Company. In the United States, the game was originally licensed to Wizards of the Coast, the producer of Magic: The Gathering. Wizards published eight expansion sets between 1998 and 2003, after which licensing was transferred to the Pokémon Company.
+
+Players assume the role of Pokémon Trainers engaging in battle, and play with 60-card decks. Standard gameplay cards include Pokémon cards, Energy cards, and Trainer cards. Pokémon are introduced in battle from a "bench" and perform attacks on their opponent to deplete their health points. Attacks are enabled by the attachment of a sufficient number of Energy cards to the active Pokémon. Pokémon may also adjust other gameplay factors and evolve into more powerful stages. Players may use Trainer cards to draw cards into their hand, harm their opponent, or perform other gameplay functions. Card effects often rely on elements of luck, such as dice rolls and coin tosses, to decide an outcome. Gameplay relies on the usage of counters to indicate damage dealt and status effects. It is also classified as a sport.
+
+The Pokémon TCG has been the subject of both officially-sanctioned and informal tournaments. Wizards of the Coast staged multiple tournaments across American malls and stores. Official tournaments are currently overseen by Play! Pokémon, a division of the Pokémon Company, and are hosted on a local, national, and international basis. In addition, numerous video game adaptations of the Pokémon TCG have been published, including two Game Boy Color games, the Pokémon: Play It! series, and Pokémon TCG Online. After the closure of TCG Online in 2023, it was replaced with Pokémon Trading Card Game Live (PC) and Pokémon Trading Card Game Pocket (mobile) in 2024. In recent years, the cards have become subjected to shortages due to scalping, with products from the official Pokemon Center site being sold out. 
+
+As of March 2026, the game has produced over 85 billion cards worldwide.[2] Beside formal competitions and informal battling, the Pokémon TCG has also been the subject of collecting hobbies, with an extensive market for individual Pokémon cards, packs, and ephemera.
+
+Development and publication
+[edit]
+
+Pokemon card collection
+
+The Pokémon Trading Card Game was developed in Japan, based on the 1996 Pokémon Red, Blue, and Yellow Game Boy video game by Nintendo.[3] It was first published in October 1996 by Media Factory in Japan.[4] In the US, it was first published by Wizards of the Coast, towards the end of 1998 to capitalize on the US popularity of Pokémon.[3] Over the next five years, Wizards of the Coast published more than a dozen expansion sets for the game, allowing the company to sell millions of cards and earn more revenue from Pokémon than they had from Magic: The Gathering in its first 10 years.[3] Hasbro bought Wizards of the Coast in September 1999 for $325 million based on the strength of the Pokémon license.[3] In 2001, Nintendo created its affiliate Pokémon USA, Inc., so that it could recover the US licensing rights to the game.[3] In June 2003, Nintendo transferred the publishing rights from Wizards of the Coast to The Pokémon Company.[5] Wizards sued Nintendo on October 1, 2003, and accused the company of poaching employees and violating its patent; the lawsuit was settled out of court.[3]
+
+Gameplay
+[edit]
+
+A Pokémon TCG playmat with labels of various gameplay aspects, e.g. Active Spot, Bench, Deck, and Discard Pile
+
+The Pokémon Trading Card Game is a strategy-based card game that is usually played on a designated playmat or digitally on an official game client (usually Pokémon Trading Card Game Live) where two players (assuming the role of Pokémon Trainer) use their Pokémon to battle one another. Pokémon that have sustained enough damage from attacks–that reaches or exceeds its HP–is referred to as being "Knocked Out", granting the opponent a prize card; however, powerful card mechanics like Pokémon-V and Pokémon ex (which have higher HP and are harder to "Knock Out") grant extra prize cards when Knocked Out.[1]
+
+Taking all six prize cards is the most common win condition. Other ways to win are by "Knocking Out" or by removing all opponent's Pokémon in play–the Active and those on the Bench (i.e. the row behind the Active that can house up to five additional Pokémon to support and substitute Active Pokémon if it retreats or is "Knocked Out"), or by Decked Out–if at the opponent's next turn they have no cards left in deck to draw into.[1]
+
+Players begin by having one player select heads or tails, and the other flips a coin; the winner of the coin flip will decide who goes first or second. (Dice may be used in place of coins, with even numbers representing heads and odd numbers representing tails; dice are also primarily used in official tournaments organized by The Pokémon Company). The player going first cannot attack or play a Supporter card (powerful Trainer effects card) on their first turn. Players shuffle their decks and draw seven cards, and then each puts one Basic Pokémon in play as their Active Pokémon. This Pokémon is the one that is actively attacking and receiving damage. If a player does not have any Basic Pokémon, they must call mulligan, shuffle, and then draw another hand until they draw a Basic Pokémon; the opponent may draw one additional card per mulligan. Once both players have at least one Basic Pokémon, they can play up to five more Basic Pokémon onto their Bench, and then take the top six cards of their deck and place them to the side as Prize cards.[6][1]
+
+Play alternates between players who may take several actions during their turn, including playing additional Basic Pokémon, evolving their Pokémon, attaching an Energy card, playing Trainer cards, and using Pokémon abilities and attacks. After Trainer cards are played, cards are discarded by effects from Trainer cards or Abilities, and after Pokémon were "Knocked Out", they are put into the discard pile.[1] A player may also retreat their Active Pokémon, switching the Active Pokémon with one on the Bench by paying the Active Pokémon's retreat cost of a certain number of Energies. At the cost of ending the turn, players may use one of their Active Pokémon's attacks once the prerequisite number and types of Energy attached to that Pokémon is fulfilled. Effects from that attack are then activated and damage may be dealt on the defending Pokémon, which may modify based on the defender Pokémon's type weakness or a resistance policies, and/or by any other effects on the defending Pokémon. Players alternate attacking until a player wins either through one of the above win conditions or by concession.[7][1] Although in rare cases both players may take a Prize card at the same time with a Pokémon like Dusknoir from Shrouded Fable's ability which can "Knock Out" another Pokémon but it also "Knocks Out" itself, if this happens a new games known as "Sudden Death" starts where both players set up as usual but with one Prize card and the first player to take their Prize card wins the game, but if both players take a Prize card at the same time again, this process is repeated.
+
+Card types
+[edit]
+
+Pokémon cards depict one or multiple Pokémon from the Pokémon franchise, one to two elemental types, one or more attacks and/or an Ability, and a certain amount of HP. Basic Pokémon are Pokémon that have not evolved and can be played directly onto the Bench; they have Stage 1, Stage 2, and/or special mechanic evolutions. Each player may have up to six Pokémon in play: one in the Active Spot and five on the Bench.[7]
+
+Most Pokémon have attacks that require a certain amount of Energies to use. Attacks deal damage to the opponent's Active Pokémon and sometimes deal additional damage to their Benched Pokémon; they may have additional effects like drawing cards, inflicting Special Conditions (Asleep, Burned, Confused, Paralyzed, or Poisoned) or altering the opponent's deck and/or board state. Abilities, previously called Poké-Powers and Poké-Bodies until 2011,[8] are not attacks, but special effects on Pokémon that may be activated once or multiple times during their turn, such as drawing additional cards or switching the opponent's Active Pokémon with one of their Benched Pokémon, or can be passive, i.e. they remain in effect as long as the Pokémon with the Ability remains in play.[1]
+
+The other type of Pokémon cards are Evolution Pokémon. In contrast to a Basic Pokémon, Evolution Pokémon cannot be directly put into play; they must be placed on top of the corresponding previous Stage Pokémon to evolve it, and they cannot be played onto a Pokémon the same turn that Pokémon was put into the Bench or during the player's first turn. Stage 1 Pokémon evolve from Basic Pokémon, and Stage 2 Pokémon evolve from Stage 1 Pokémon. As a Pokémon evolves, it gains HP and their attacks change, usually becoming more powerful.[8] Over the years many different variations to the standard mechanics have been added, the most prominent of which are the signature feature of their respective expansion series.
+
+Major Pokémon card attributes
+
+ | Card Type
+ | Release Expansion
+ | Evolution Stage(s)
+ | Mechanics
+
+ | Shining Pokémon,
+
+Pokémon ☆,
+Radiant Pokémon
+
+ | Neo Revelation & Shining Legends[9] (Shining),
+
+EX Team Rocket Returns[10] (☆),
+Astral Radiance[11] (Radiant)
+
+ | Basic
+ | One per deck (excluding Shining Pokémon released after Shining Legends)
+
+ | Pokémon-ex,
+
+Pokémon ex
+
+ | EX Ruby & Sapphire series,
+
+Scarlet & Violet series
+
+ | Basic, Stage 1, Stage 2
+ | 2 Prizes, official documentation writes the names from the two releases differently but they function the same and are treated as such.[12][clarification needed]
+
+ | Pokémon LV.X
+ | Diamond & Pearl series
+ | LEVEL-UP
+ | Can use attacks, Poké-Powers, and Poké-Bodies from its previous evolution[13]
+
+ | Pokémon LEGEND
+ | HeartGold & SoulSilver series
+ | LEGEND
+ | 2 Prizes, 2 cards must be played onto the Bench at the same time[14]
+
+ | Pokémon-EX
+ | Next Destinies
+ | Basic
+ | 2 Prizes, distinct from Pokémon-ex because it is composed only of Basic Pokémon
+
+ | Mega Pokémon-EX
+ | XY series
+ | MEGA
+ | 2 Prizes, turn ends after evolving from Pokémon-EX (Can be cancelled with a Spirit Link Pokémon Tool)
+
+ | Pokémon BREAK
+ | BREAKthrough
+ | BREAK
+ | Increases HP and gives an additional attack/Ability to its previous evolution.
+
+ | Pokémon GX
+ | Sun and Moon series
+ | Basic, Stage 1, Stage 2
+ | 2 Prizes, each player can use a GX attack once per battle
+
+ | TAG TEAM Pokémon GX
+ | Team Up
+ | Basic
+ | 3 prizes, each player can use a GX attack once per battle[15]
+
+ | Prism Star Cards
+ | Ultra Prism
+ | Basic
+ | One of each Prism Star card per deck, sent to the Lost Zone when discarded
+
+ | Pokémon V
+ | Sword and Shield series
+ | Basic
+ | 2 Prizes
+
+ | Pokémon VMAX
+ | Sword and Shield series
+ | VMAX
+ | 3 Prizes, evolves from Pokémon V[16]
+
+ | Pokémon V-UNION
+ | SWSH Black Star Promos
+ | V-UNION
+ | 3 Prizes, once per game for each V-UNION name: add four V-UNION cards with the same name from the discard pile to the Bench[17]
+
+ | Pokémon VSTAR
+ | Brilliant Stars
+ | VSTAR
+ | 2 Prizes, each player can use a VSTAR Power once per battle, evolves from Pokémon V[18]
+
+ | Tera Pokémon ex
+ | Scarlet & Violet series
+ | Basic, Stage 1, Stage 2
+ | 2 Prizes, different types than normal but uses the same energy, cannot be dealt damage by attacks while on the Bench[19]
+
+ | Mega Evolution Pokémon ex
+ | Mega Evolution series
+ | Basic, Stage 1, Stage 2
+ | 3 Prizes, Distinct From Mega Pokémon-EX[20]
+
+Other Pokémon attributes include Owner's Pokémon,[21] Baby Pokémon,[22] Crystal Pokémon,[23] Dark Pokémon,[24] Light Pokémon,[25] Team Magma's cards,[26] Team Aqua's cards,[26] δ Delta Species,[27] Pokémon Prime,[28] Pokémon SP, Restored Pokémon, Team Plasma cards,[29] Ancient Trait, Ultra Beasts,[30] Single Strike,[31] Rapid Strike, Fusion Strike,[32] Ancient,[33] and Future cards.
+
+Trainer cards create a wide range of effects that influence the game, such as drawing cards, healing Pokémon, removing Energy from opposing Pokémon, or recovering cards from the discard pile. Before the Diamond & Pearl series, all non-Pokémon and non-Energy cards were simply classified as Trainer cards. Afterward, they were divided into three categories: Item, Stadium, and Supporter.
+
+Item cards provide immediate effects for battling Pokémon and include Pokémon Tool cards, which can be attached to a Pokémon for added benefits. Stadium cards create field-wide effects that both players can use, usually once per turn. Supporter cards offer the strongest effects, but players are limited to using only one Supporter card each turn.[1] Starting with Scarlet & Violet, Pokémon Tool cards are considered as a separate category from Item cards; existing Pokémon Tool cards have received errata to conform to this change.[34] ACE SPEC Trainer cards have powerful unique effects but only one ACE SPEC card is allowed in the deck.
+
+Energy cards are attached to Pokémon in play to power their attacks. Only one Energy card may be attached per turn, unless a player has an effect that specifies otherwise. There are two categories of Energy cards: Basic Energy and Special Energy. The nine different Basic Energy types which correspond to Pokémon card types are Grass, Fire, Water, Lightning, Psychic, Fighting, Darkness, Metal, and Fairy.[35][36] The Dragon type does not have a corresponding Basic Energy card, and instead uses multiple types of Energy cards. Basic Energy cards fulfill costs for attacking and retreating and don't have additional effects, while most Special Energy cards have additional effects. Most attacks require a certain type and amount of Energy. If the attack has a Colorless Energy requirement, that requirement can be met by any Energy card.[1] Any amount of Basic Energy can be put in the deck, but only four of each special energy can be put in, just like Trainer and Pokémon cards.
+
+Pokémon types
+[edit]
+
+ | TCG type
+ | Game type
+
+ | Grass
+ | Grass, Bug, and Poison (1996–2007)
+
+ | Fire
+ | Fire
+
+ | Water
+ | Water and Ice
+
+ | Lightning
+ | Electric
+
+ | Psychic
+ | Psychic, Ghost, Poison (2007–2019), and Fairy (2019–)
+
+ | Fighting
+ | Fighting, Rock, and Ground
+
+ | Darkness
+ | Dark and Poison (2019–)
+
+ | Metal
+ | Steel
+
+ | Dragon
+ | Dragon (2012–)
+
+ | Fairy
+ | Fairy (2014–2019)
+
+ | Colorless
+ | Normal, Flying, and Dragon (1996–2012)
+
+Pokémon Types are elemental attributes, determining the strengths and weaknesses for each Pokémon and its attacks. Pokémon take double damage from attacks of types they are weak to and less damage from attacks they resist.[37] These type matchups offset one another in rock–paper–scissors-style relationships.[38] Pokémon Types in the TCG include Fire, Fighting, Dragon, Lightning, Grass, Water, Fairy, Psychic, Darkness, Metal, and Colorless.[36] Other Pokémon types such as Ice and Ground types from the franchise, however, do not have their own types in the TCG and instead are categorized/incorporated inside other types; for example, Ice type[39] and Ground type[40] are categorized under Water type and Fighting type, respectively.[41]
+
+Starting with Dragons Exalted, Dragon type Pokémon are now listed as Dragon-type, and they were previously categorized under the Colorless type.[42] Similarly, starting with Sword & Shield, Poison type Pokémon are categorized under Darkness-type; Poison-type were previously Psychic type,[43] and before that they were categorized under Grass type.[44]
+
+A simplified type system was adopted from the video games for use in the trading card game. Darkness and Metal types was introduced alongside the corresponding Pokémon Gold and Silver video game, the Dragon-type was introduced in the Japanese Dragon Selection set; and Fairy type was introduced in the XY set to correspond to its introduction in the franchise, but they were later categorized under Psychic type starting with Sword and Pokémon Shield.[43][45] While most Pokémon have only one type, three exceptions are EX Team Magma vs Team Aqua which introduced dual-type Pokémon that have two different types, as well as XY and HeartGold and SoulSilver series sets.[26] Dual types were also utilized in Pokémon-Legend cards from HeartGold and SoulSilver.[46] In August 2016, XY Steam Siege reintroduced the dual-type mechanic, but this time on regular Pokémon and Pokémon-EX.[47]
+
+Sets
+[edit]
+
+Main article: List of Pokémon Trading Card Game sets
+
+The Pokémon TCG debuted In Japan in 1996[48] with the release of "1st Starter & Expansion Pack" (第1弾スターターパック & 第1弾拡張パック),[49][50] which was the original core series of cards and Theme Decks released in Japan on October 20, 1996,[51] and in the United States as "Base Set" on January 9, 1999.[52][53][54] The "1st Starter & Expansion Pack" contained various Pokémon cards depicting the original 150 Pokémon species in the main Pokémon franchise,[55][56] and it is the only expansion not to have a set logo or symbol[57] (i.e. except for the error "no-symbol" Jungle cards).[58]
+
+In the United States, the "1998 Pokémon Demo Game Plastic Pack" was the earliest introduction to the Pokémon TCG, preceding the "1st Starter & Expansion Pack";[57] and consisting of 24 Base Set shadowless cards and an instruction manual.[59] "The Pokémon Demo Game Plastic Pack", "Base Set", along with the subsequent expansions "Jungle", "Fossil", "Base Set 2", "Team Rocket", "Gym Heroes", "Gym Challenge", make up the "First Generation Sets" published by the original English-edition publisher Wizards of the Coast. Similarly, the "Second Generation Sets" published by Wizards comprised "Neo Genesis", "Neo Discovery", "Southern Islands", "Neo Revelation", "Neo Destiny", "Legendary Collection", "Expedition Base Set", "Aquapolis", and "Skyridge". The "Second Generation Sets" is the last collection set published by Wizards before Nintendo transferred the publishing right to The Pokémon Company In July 2003.[60] Since July 2003, The Pokémon Company has published eight additional "Generation" sets, which has gradually transitioned the TCG to more modern gameplay and mechanics.[61]
+
+Card collecting
+[edit]
+
+The PSA 10 Pikachu Illustrator is the most valuable Pokémon card ever sold. The estimated price of this card is between $344,040 and $3,200,000
+
+Collecting and swapping cards outside of gameplay has been a key aspect of the hobby since the initial release of the Pokémon TCG; many collectors have little-to-no interest in using their cards for gameplay, instead focusing on acquiring cards based on rarity/market value, a desire to complete a particular set, or a fondness for a certain Pokémon species or a specific art style.
+
+Pokémon cards are sold at stores in many different formats including individual booster packs, pre-constructed decks, boxed sets including several booster packs and one or more promotional cards, booster bundles of six packs, and booster boxes of 36 packs.[62] Subsequently, cards are also available through e-commerce websites and individual sellers. However, buyers should be cautioned of fake Pokémon cards.[63] Additionally, a resurgence in the TCG's popularity since the early 2020s has led to a rise in scalping of sealed products; many players and collectors have reported difficulties in finding packs and boxes of popular sets at normal retail prices, as scalpers have targeted online product drops with automated bots, while in-person drops of popular items at brick-and-mortar stores have often sold out in minutes.
+
+Many collectors opt to have their cards graded by a professional service, with Professional Sports Authenticator (PSA), Certified Guaranty Company (CGC), and Beckett being the most popular among Pokémon TCG enthusiasts. A card with a high grade can be worth significantly more on the open market than its ungraded counterpart, with many collectors using a card's PSA 10 (Gem Mint) value as a benchmark for the maximum potential value of a card; CGC and Beckett "Pristine 10" cards, however, can often sell for even larger amounts.
+
+Pokémon card collectables are valued based on their rarity, though some lower rarity cards can be worth more than higher rarity ones. This depends on the popularity of the card within competitive play, the age of the card, number of cards printed, and various other factors.[64] From the lowest to the highest level, cards rarities are indicated by different shapes on the bottom corner, i.e. Common (circle), Uncommon (diamond), and Rare (star).[64] Japanese-edition cards use letters rather than shapes to denote rarities; i.e. from the lowest to the highest level, C, U, R, RR, SR, and UR.[65] In a single Pokémon TCG booster pack, a collector can pull 10 cards in total, i.e. five Common cards, three Uncommon cards, a reverse holographic card of any rarity, and sometimes a Rare card.[62] Starting with the Scarlet and Violet series however, each pack will contain one holographic card, as well as two reverse holographic cards.[66] Unlike the basic Common and Uncommon, Rare collectables are divided into many different sub-groups, comprising Holo Rare, Reverse Holo, Half Art/Half Body, Full Art/Full Body, Secret Rare, Ultra Rare, Rainbow Rare, Promo, and card mechanics including EX/GX, V/VSTAR/VMAX, and Tag Team.[67] Rarities can be also account for old card collectibles such as "1st-edition Base Set" and "First Generation Sets", and such collectibles are some of the rarest and most expensive Pokémon cards with some valuing at thousands and millions of dollars.[68][69]
+
+Holo Rare are Rare cards that have a holographic illustration, whereas Reverse Holo are any-rarity cards that have holographic textures elsewhere on the surface except for the main illustration. Half Art and Full Art are Half Body and Full Body artworks covering the entire/half the card surface, respectively. In comparison, Secret Rares can be Full Art or Half Arts but with additional artwork schemes such as alternative holofoil scheme, shiny scheme, or a gold trim; they are characterized by a set number past the actual printed size of the set (ex. 242/220). Secret Rares also comprise the subset Rainbow Rare, which features similar materials but in rainbow-color foil schemes.[67][64] In response to these collectible's considerable rarities, card collectors use card sleeves to protect them from wear and tear.[70][71]
+
+There are various TikTok accounts dedicated to opening Pokémon card packs (also known as "ripping" packs) people buy live on stream for viewers.[72] Some streamers even run "pulls", where certain cards or number values are associated with rare, high value cards that are included if they happen to be pulled during pack openings. While there are genuine accounts associated with this trend, there are also scammers intentionally selling resealed packs with valuable cards already taken out, sending counterfeit cards or not sending anything at all.[72] Pack rips are also streamed for other popular card games such as Magic: the Gathering and One Piece. Additionally, several YouTubers that focus on opening packs have accumulated millions of subscribers.
+
+Some particularly well-known cards have been given fan-made names as well, such as "Moonbreon," the alternate art Umbreon VMAX from Sword and Shield: Evolving Skies.[73]
+
+Rarest cards
+[edit]
+
+From least to most, the top 15 rarest and most expensive Pokémon cards are:
+
+"20th Anniversary 24-karat real-gold Pikachu"
+
+"Prerelease Raichu"
+
+"Master's Key"
+
+"Espeon and Umbreon Gold Star POP Series 5"
+
+"2002 Pokémon World Championships No. 1 Trainer"
+
+"1996 Pokémon Japanese Base Set No Rarity Symbol Holo Venusaur"
+
+"1999 Pokémon Japanese Promo Tropical Mega Battle Tropical Wind"
+
+"1999 Super Secret Battle No. 1 Trainer, "2006 Pokémon World Championships Promo No. 2 Trainer"
+
+"2000 Pokémon Neo Genesis 1st Edition Holo Lugia #9"
+
+"Kangaskhan-Holo #115 Family Event Trophy Card"
+
+"Black Star Ishihara Signed GX Promo Card"
+
+"Pokémon Blastoise #009/165R Commissioned Presentation Galaxy Star Hologram"
+
+"1999 First Edition Shadowless Holographic Charizard #4"
+
+PSA-graded 10 "Pikachu Illustrator".[74][69]
+
+The "Pikachu Illustrator" is the rarest and most expensive Pokémon card ever sold in history, and it was acquired by the celebrity and collector Logan Paul for $5,275,000 in July 2021. In February 2026, it was sold for $16.5 million.[75]
+
+This card was created as a prize for the 1997-1998 Pokémon design contests organized by the Japanese manga-magazine CoroCoro Comic. With only 39 copies ever being distributed, they were not available to the public for purchase, making them some of the rarest cards ever printed.[76] Unlike most Trainer cards, it is the only Pokémon card to say "Illustrator" rather than the usual "Trainer" label. The card was illustrated by Atsuko Nishida, the original designer of the Pokémon species including Pikachu. The Japanese imprint reads: "We certify that your illustration is an excellent entry in the Pokémon Card Game Illust Contest. Therefore, we state that you are an Officially Authorized Pokémon Card Illustrator and admire your skill."[69][77]
+While the Pikachu Illustrator Card purchased by Logan Paul has the record for the most expensive Pokémon Card ever sold, other lower grade versions of the card have been sold for high prices elsewhere. Shopping platform ZenPlus, a subsidiary of shopping service ZenMarket (now part of ZenGroup), sold two of the cards in 2020, for the Japanese Yen equivalent of US$233,000 and US$208,496 respectively.[78][79] A third card was sold on the platform in 2022 for US$772,000.[80]
+
+In March 2026, another 1998 CoroCoro Comic PSA 9-graded Pokémon Pikachu Illustrator promo card was sold for $1,406,250 at Heritage Auctions.[81]
+
+Competitive play
+[edit]
+
+Pokémon TCG Junior (10 years old and younger) / Senior (11 to 14 years old)-class tournament
+
+Pokémon TCG Master (15 years old and older)-class tournament
+
+In addition to the collectible aspect of the card game, The Pokémon Company International (formerly known as Pokémon USA) has also organized Play! Pokémon, a program run by Pokémon Organized Play (POP),[82] players can compete against others in tournaments and earn player points, two-card booster packets for promotional sets, badges, stickers and other prizes. POP are governed by League Leaders and League Owners. Play! Pokémon also features a professor program, where individuals aged 18 or over may be nominated as a "professor", who can help sanction the tournament.
+
+League Leaders assist in organizing the league, while League Owners are the main organizer of the event. The latter report directly to the Organized Play program every seven weeks. A league cycle is usually divided into eight seasons, each of which lasts about five weeks and is typically represented by themes found in Pokémon (e.g. gym badges, starter Pokémon). Play! Pokémon supports both standard and expanded card format, however in its competitive tournaments only standard format (i.e. card rotation format that discontinues older Pokémon cards to foster new strategies and a healthy competitive environment) are permitted. In contrast to the former, expanded card format permits inclusion of any Pokémon cards, regardless if they are older cards.[83]
+
+The first Pokémon TCG tournament began on June 14–15, 1997, at the Makuhari Messe Event Hall. As the tournament had no real skill-based qualifiers, participants were admitted through preregistration and through an extensive lottery system process if too many people applied. Many deck lists including the winning deck lists used in the tournament are poorly built because of the lack of skill sets in the admittance process, with many players running incomplete evolution lines and excessive Trainer cards. The tournament was divided into four sessions with three solely restricted to elementary school players and one allowing players up to junior high. The top three player of the tournament were awarded the No.1, 2, and 3 trainer trophy cards; this practice continue through subsequent Pokémon TCG tournaments and organized plays.[84]
+
+Players in a tournament are split into three age categories: Junior (11 years old and younger), Senior (12 to 15 years old), and Master (16 years old and older).[85] Notable references include Austin Brewen who won the first junior tournament, Brenden Zhang who won the first Senior Tournament, and Arturo Heras who won the first Master Tournament. These tournaments play several rounds, where players will play a standard game against each other and wins and losses will be recorded. In most tournaments, there are some Swiss-style rounds where players are paired up against others of similar win/loss ratios,[86] usually from their age group (this does not always occur in smaller events, though). Afterward, there will be a cut off the top record-holders (approximately the top 1/8 of participants) where players will play best two out of three matches and the loser gets eliminated (standard tournament bracket style), with an eventual winner.[87]
+
+POP runs a season for these tournaments, which allows players to earn larger prizes and play in a more competitive environment in comparison to League. These range from City and Regional Championships, all the way up to the Pokémon World Championships, the single invite-only event of the year. Players can earn invites to the World Championships by winning or ranking high at International Championships, doing well at tournaments to get Championship Points, or by qualifying in the Last Chance Qualifier.[88] Some of these methods are only used in the United States, as PUI and POP are based in the United States, but they are represented by local distributors who provide the Organized Play program to their own country.[89]
+
+Although The Pokémon Company International tries to keep Organized Play as uniform as possible globally, there are some notable differences in how POP is run outside of the United States. The Pokémon Card Laboratory (PCL), located in Japan, is the designer of new cards and the ultimate authority on any matter relating to the Pokémon Trading Card Game. It can declare rulings on any in-game circumstance, issue errata, change card text after publishing, and change the basic game rules, although the latter three rarely occur. PCL runs Organized Play in Japan. The Pokémon Trading Card Game in most European countries is currently handled by The Pokémon Company International. Certain countries have no direct official presence; in these regions, distributors of the game run tournaments. European countries can qualify for positions at the Pokémon Trading Card Game World Championships each year, through National Championships and European Rankings.
+
+Competitive Pokémon Trading Card Game play is organized through official tournaments held around the world, including regional events and the annual Pokémon World Championships. Players compete using tournament-legal decks built according to current format rules, with new expansions regularly influencing the competitive environment. The combination of organized competition, frequent set releases, and changing strategies has helped maintain an active global player community.[90]
+
+Pokémon TCG World Championships
+[edit]
+
+The first Pokémon TCG World Championships was held in 2002 in Seattle, Washington. This first edition of the World Championships was organized by Wizards of the Coast, with more than 100 invited contestants from various countries.[91] After WotC’s Pokémon license lapsed, the next World Championships would be held in Orlando, Florida in 2004, organized by Pokémon USA (now known as The Pokémon Company International)[92] through their organized play program (now known as Play! Pokémon). To qualify for the championships, players are required to collect Championship Points across regionals and other official tournaments, which can vary based on each championship and different regions.[93][94]
+
+Locations of Pokémon World Championships
+
+ | Year | Location
+
+ | 2002
+ | Seattle, Washington, U.S.[91]
+
+ | 2004
+ | Orlando, Florida, U.S.[92]
+
+ | 2005
+ | San Diego, California, U.S.[95]
+
+ | 2006
+ | Anaheim, California, U.S.[96]
+
+ | 2007
+ | Waikoloa Village, Hawaii, U.S.[97]
+
+ | 2008
+ | Orlando, Florida, U.S.[98]
+
+ | 2009
+ | San Diego, California, U.S.[99]
+
+ | 2010
+ | Waikoloa Village, Hawaii, U.S.[100]
+
+ | 2011
+ | San Diego, California, U.S.[101]
+
+ | 2012
+ | Waikoloa Village, Hawaii, U.S.[102]
+
+ | 2013
+ | Vancouver, British Columbia, Canada[103]
+
+ | 2014
+ | Washington D.C., U.S.[104]
+
+ | 2015
+ | Boston, Massachusetts, U.S.[105]
+
+ | 2016
+ | San Francisco, California, U.S.[106]
+
+ | 2017
+ | Anaheim, California, U.S.[107]
+
+ | 2018
+ | Nashville, Tennessee, U.S.[108]
+
+ | 2019
+ | Washington, D.C., U.S.[109]
+
+ | 2020 - 2021
+ | All events have been canceled due to the COVID-19 pandemic[110][111]
+
+ | 2022
+ | London, England, U.K.[112]
+
+ | 2023
+ | Yokohama, Japan[113]
+
+ | 2024
+ | Honolulu, Hawaii[114]
+
+ | 2025
+ | Anaheim, California, U.S [115]
+
+ | 2026
+ | San Francisco, California, U.S.[116]
+
+Controversies
+[edit]
+
+In November 2000, Israeli magician Uri Geller alleged that Kadabra's spoon bending and Japanese name, Yungera, were unauthorized appropriations of his identity, leading him to sue Nintendo. Geller learned of the similarity after fans of both himself and Pokémon noted the similarities between him and Kadabra,[117][118] He remarked that the lightning patterns on its abdomen is popular with the Waffen-SS and that Nintendo had "turned [Geller] into an evil, occult Pokémon character".[119] A Nintendo director denied this, stating that they had no knowledge of any Pokémon named "based on the image of any particular person".[120] In 2008, Pokémon anime director and storyboard artist Masamitsu Hidaka stated that Kadabra would not be used in the Pokémon Trading Card Game until an agreement was reached on the case.[121] In November 2020, Geller told TheGamer that he received emails from Pokémon fans which convinced him to drop the case and allow Nintendo to bring back Kadabra.[122]
+
+The artwork of several Base Set Pokemon cards have been altered in the past for controversies. The original Jynx Base Set card (1999) released in Japan featured a dark, exaggerated face that resembled blackface, a racist caricature of Black people. In response, the Pokemon Company changed Jynx's skin from black to its current purple. Another of the original Base Set artwork for the Trainer card, Koga's Ninja Trick (1999), included a symbol that resembles a swastika. While the symbol was originally used by countless religions and cultures throughout history, including Japanese Buddhism, its association with the Nazis led to it being replaced with a different symbol when the card was released in English.[123]. 
+
+Reception
+[edit]
+
+The reviewer from the online second volume of Pyramid in 1999 stated that "Pokémon is the second most popular CCG in Japan (behind Magic: The Gathering), and it's no fluke. The game plays like a kinder, gentler version of Magic, with easier rules and graphics geared to the younger crowd."[124] In the United States, Wizards of the Coast reported in early 1999 that it had sold 400,000 packs of Pokémon trading cards in less than six weeks of its release.[125]
+
+In 2016, it was the year's top-selling toy in the strategic card game subclass.[126] In 2017, it had an 82% share of Europe's strategic card game market.[127] As of March 2023, the game has sold over 52.9 billion cards worldwide.[128]
+
+Reviews
+[edit]
+
+Family Games: The 100 Best[129]
+
+Syfy[130]
+
+Video games
+[edit]
+
+The Pokémon Trading Card Game video game adaptation was developed by Hudson Soft and Creatures and published by Nintendo for the Game Boy Color console.[131] It was released in Japan in December 1998[132] and later in North American and Europe in 2000,[133] reappearing in the Nintendo 3DS Virtual Console released in 2014.[134] The adaptation are similar in gameplay and rules, featuring 226 cards from the TCG with infrared linking for multiplayer and trading.[135][136] The video game was accompanied by Pokémon Card GB2: Great Rocket-Dan Sanjō!, a Japan-exclusive sequel released in March 2001.[137] In addition to the Pokémon Trading Card Game video game, Wizards has developed another digitized adaptation, Pokémon Play It!, which consisted of two versions that offer players a beginner's introduction to the different gameplay aspects of TCG as they slowly transitioned into "Advanced Challenges" in the 2nd version. The first version of Pokémon Play It! was released in 1999, followed by its sequel Pokémon Play It! Version 2 in 2000.[138]
+
+The Pokémon Trading Card Game Online was a prominent video game adaptation of the Pokémon TCG. It was released on March 24, 2011, as Pokémon Trainer Challenge for Microsoft Windows, Android, macOS, iOS, and iPadOS.[139] The game initially offered three starting decks but significantly expanded its card collection shortly after release. Card packs and premade decks could be redeemed using in-game currencies and rewards. Beginning April 6, 2011, players could redeem digital booster packs using a promo code card bundled inside printed booster packs.[140][141]
+
+The Pokémon Card Game: How to Play DS (ポケモンカードゲーム あそびかたDS, Pokemon Kādo Gēmu asobi kata DS) how-to-guide video game adaptation was released in Japan on August 5, 2011, for Nintendo DS, alongside three bundled 30-card decks, a play mat, and damage counters tokens.[142]
+
+On September 20, 2021, another Pokémon Trading Card Game-based video game was announced, titled Pokémon Trading Card Game Live. A closed beta of Pokémon Trading Card Game Live was released for Canadian players on February 22, 2022.[143] Later, a global beta of Pokémon Trading Card Game Live was released on November 15, 2022 on Android, iOS, Microsoft Windows.[144] The game is now also available on macOS.[145] Upon the full release, Pokémon Trading Card Game Live replaced Pokémon Trading Card Game Online, and the latter was discontinued shortly after. Crown Zenith was the final set supported on Pokémon Trading Card Game Online.[146] Existing players of Pokémon Trading Card Game Online can transfer their account and in-game data to Pokémon Trading Card Game Live.[147]
+
+On February 27, 2024, another Pokémon Trading Card Game-based video game for Android and iOS was announced in the Pokémon Presents presentation developed by Creatures (company) and DeNA titled Pokémon Trading Card Game Pocket.[148] The game features entirely original digital cards not present in the physical card game featuring dynamic artwork, as well as the ability to look into the artwork of certain cards to see obscured elements. The gameplay utilizes streamlined battle and trading systems.[149] Players are given two booster packs to open every day at no charge,[150] but also have the option to pay for in app purchases, including a paid premium membership. This membership allows players to open an additional free pack, and adds other features within the game.[151][152] The game was released worldwide on October 30, 2024.[153]
+
+References
+[edit]
+
+1 2 3 4 5 6 7 8 9 "Pokemon Rulebook" (PDF). The Pokémon Company. Archived (PDF) from the original on 2023-08-10. Retrieved 2023-09-07.
+
+↑ "Pokémon in Figures". The Pokémon Company. Archived from the original on August 7, 2026. Retrieved August 10, 2026.
+
+1 2 3 4 5 6 Shannon Appelcline (2011). Designers & Dragons. Mongoose Publishing. p. 286. ISBN 978-1-907702-58-7.
+
+↑ "Pokémon at 25: A History - from Pocket Monsters, to TCG and Pokémon GO". BBC Newsround. 2021-02-27. Archived from the original on 2023-09-12. Retrieved 2023-09-09.
+
+↑ Kaufeld, John; Smith, Jeremy (2006). Trading Card Games for Dummies. John Wiley & Sons. ISBN 0470044071.
+
+↑ Georgiou, Leon. "How to Play Pokémon Cards: Your Guide to the Pokémon TCG". Wargamer. Archived from the original on June 19, 2022. Retrieved June 25, 2022.
+
+1 2 Honey, Mia (February 5, 2020). "How to Play the Pokémon TCG: A Beginner's Guide". Dicebreaker. Archived from the original on May 3, 2022. Retrieved June 25, 2022.
+
+1 2 "What Are Abilities, Poke-Powers & Poke-Bodies in Pokemon?". Howcast. 7 November 2018. Archived from the original on July 23, 2021. Retrieved June 26, 2022.
+
+↑ Comments, Theo Dwyer | (2021-10-25). "A Holographic History of The Pokémon TCG: Shining Pokémon". bleedingcool.com. Archived from the original on 2021-11-27. Retrieved 2023-09-11.
+
+↑ Comments, Theo Dwyer | (2021-11-28). "A Holographic History of The Pokémon TCG: Pokémon ☆". bleedingcool.com. Archived from the original on 2022-01-24. Retrieved 2023-09-11.
+
+↑ O'Connor, Quinton (2022-07-12). "What Are Radiant Cards in the Pokemon TCG?". TheGamer. Archived from the original on 2022-08-02. Retrieved 2023-09-11.
+
+↑ "Pokémon TCG: Scarlet & Violet". tcg.pokemon.com. Archived from the original on 2023-10-30. Retrieved 2024-02-28.
+
+↑ "Enjoy Pokémon TCG Cards Featuring These Spe-Shell Pokémon". Pokemon.com. Archived from the original on 2024-02-28. Retrieved 2024-02-28.
+
+↑ Comments, Theo Dwyer | (2021-12-27). "A Holographic History of The Pokémon TCG: Pokémon LEGEND". bleedingcool.com. Archived from the original on 2022-08-19. Retrieved 2023-09-11.
+
+↑ "An Interview with Atsushi Nagashima About New Tag Team Pokémon-GX". Pokemon.com. Archived from the original on 2024-02-28. Retrieved 2024-02-27.
+
+↑ "Galar Pokémon and Pokémon V Arrive in Pokémon TCG: Sword & Shield in February 2020". Pokemon.com. Archived from the original on 2021-03-12. Retrieved 2022-06-26.
+
+↑ Parlock, Joe (2021-09-14). "What Are Pokemon V-UNION Cards, And How Do They Work?". TheGamer. Archived from the original on 2022-01-27. Retrieved 2022-06-26.
+
+↑ Michael, Cale (2021-10-19). "New VSTAR Mechanic Officially Revealed for the Pokémon TCG, Showcases Arceus VSTAR". Dot Esports. Archived from the original on 2022-06-26. Retrieved 2022-06-26.
+
+↑ "par_rulebook_en.pdf" (PDF). Pokemon.com. Archived (PDF) from the original on 2024-02-28. Retrieved 2024-02-28.
+
+↑ tcg.pokemon.com https://tcg.pokemon.com/en-us/expansions/mega-evolution/. Retrieved 2026-09-29. {{cite web}}: Missing or empty |title= (help)
+
+↑ "Pokemon TCG Glossary". Pokemon.com. Retrieved 2024-02-27.
+
+↑ Dwyer, Theo (2021-01-25). "Vintage Neo Genesis Pichu Pokémon Card Swirls Onto Auction". Bleeding Cool. Archived from the original on 2021-03-06. Retrieved 2022-06-26.
+
+↑ Rahaman, Reyadh (2020-12-11). "Pokemon TCG: All Crystal Pokemon, Ranked". Game Rant. Archived from the original on 2022-09-07. Retrieved 2023-09-11.
+
+↑ Rahaman, Reyadh (2020-12-10). "Pokemon TCG: 10 Strongest Dark Pokemon, Ranked". Game Rant. Archived from the original on 2023-04-07. Retrieved 2023-09-11.
+
+↑ Rahaman, Reyadh (2020-12-11). "Pokemon TCG: 10 Strongest Light Pokemon, Ranked". Game Rant. Archived from the original on 2024-08-17. Retrieved 2024-02-28.
+
+1 2 3 "EX Team Magma vs Team Aqua". Pokemon.com. Archived from the original on 2016-03-03. Retrieved 2023-09-11.
+
+↑ Dennett, Thomas (2020-03-17). "Pokémon TCG: The 10 Coolest Delta Species Cards". TheGamer. Archived from the original on 2023-04-07. Retrieved 2023-09-11.
+
+↑ Comments, Theo Dwyer | (2022-01-03). "A Holographic History of the Pokémon TCG: Pokémon Prime". bleedingcool.com. Archived from the original on 2022-05-25. Retrieved 2023-09-11.
+
+↑ "Black & White Plasma Storm Rulebook" (PDF). Archived (PDF) from the original on 2023-08-01. Retrieved 2023-09-11.
+
+↑ "Sun & Moon—Crimson Invasion | Trading Card Game". Pokemon.com. Archived from the original on 2024-08-17. Retrieved 2024-02-27.
+
+↑ "Sword & Shield—Battle Styles | Trading Card Game". Pokemon.com. Archived from the original on 2024-08-17. Retrieved 2024-02-27.
+
+↑ "Sword & Shield—Fusion Strike | Trading Card Game". Pokemon.com. Archived from the original on 2024-02-28. Retrieved 2024-02-27.
+
+↑ "Scarlet & Violet—Paradox Rift | Trading Card Game". Pokemon.com. Archived from the original on 2024-02-28. Retrieved 2024-02-27.
+
+↑ "2023 Pokémon TCG Standard Format Rotation and Pokémon Tool Errata". Pokemon.com. Archived from the original on 2023-09-15. Retrieved 2023-09-13.
+
+↑ "What Does a "Pokemon" Energy Card Do?". Our Pastimes. Archived from the original on 2021-04-15. Retrieved 2022-06-26.
+
+1 2 "How to build a Pokémon TCG deck for beginners". Dicebreaker. 2020-02-07. Archived from the original on 2021-04-23. Retrieved 2022-06-26.
+
+↑ "Pokémon Type Chart: Strengths, Weaknesses, and Effectiveness Explained". The Loadout. Archived from the original on January 23, 2022. Retrieved June 26, 2022.
+
+↑ Fortner, Kirkland (January 28, 2022). "Pokemon: Immediate Changes Needed To Balance The Type Chart". Game Rant. Archived from the original on June 26, 2022. Retrieved June 26, 2022.
+
+↑ Garcia, Johnny (April 21, 2020). "Pokémon TCG: Every Energy Type in the Game, Ranked from Worst to Best". TheGamer. Archived from the original on December 23, 2021. Retrieved June 29, 2022.
+
+↑ Lowthian, Declan (April 24, 2022). "Pokémon: 10 Things You Didn't Know About Ground Types". CBR. Archived from the original on June 3, 2022. Retrieved June 29, 2022.
+
+↑ Bishop, Ben (2022-03-21). "Why the Pokémon TCG Has Fewer Types Than the Video Games". CBR. Archived from the original on June 26, 2022. Retrieved June 29, 2022.
+
+↑ "Black & White—Dragons Exalted". Pokemon.com. 2012-08-15. Archived from the original on 2023-04-06. Retrieved 2023-09-21.
+
+1 2 Yehl, Joshua (January 9, 2020). "Pokemon Removes Fairy-Type from the TCG". IGN Southeast Asia. Archived from the original on October 29, 2020. Retrieved June 29, 2022.
+
+↑ Lowthian, Declan (2022-03-29). "Pokémon: 10 Things You Didn't Know About Grass Types". CBR. Archived from the original on May 10, 2022. Retrieved June 29, 2022.
+
+↑ "Changes Coming to the Pokémon TCG with Sword & Shield". Pokémon.com. The Pokémon Company. Archived from the original on 4 February 2021. Retrieved 12 February 2021.
+
+↑ "Discussing the Dual-Types: Are They Viable or Just Cool to Look At? -". PokéBeach. 2016-08-24. Archived from the original on 2018-09-28. Retrieved 2022-06-26.
+
+↑ "Exploring the Pokemon TCG - Steam Siege Expansion". Comicbook.com. 6 September 2017. Archived from the original on 2022-06-26. Retrieved 2022-06-26.
+
+↑ "The History of Pokémon Cards!". smrcollectibles. 2021-03-30. Archived from the original on 2022-02-03. Retrieved 2022-07-04.
+
+↑ Tadashi (2016-04-09). "What Is the First Printed Pokemon Card? That Card Is Undervaluation". PokeBoon JAPAN. Archived from the original on 2021-02-10. Retrieved 2022-07-04.
+
+↑ "第1弾拡張パックの値段と価格推移は?|594件の売買情報を集計した第1弾拡張パックの価格や価値の推移データを公開". aucfan.com (in Japanese). Archived from the original on 2022-07-06. Retrieved 2022-07-04.
+
+↑ Nelson, Joshua (2021-06-12). "Pokémon Japanese Base Set Booster Box up for Auction at Heritage". Bleeding Cool. Archived from the original on 2021-07-27. Retrieved 2022-07-04.
+
+↑ Nelson, Joshua (2021-06-13). "Pokémon TCG Unlimited Base Set Booster Box Auctioning at Heritage". Bleeding Cool. Archived from the original on 2021-07-27. Retrieved 2022-07-04.
+
+↑ Sudlow, Paul (May 1999). "On deck: Alpha Centauri". InQuest. No. 49. Wizard Entertainment. p. 89.
+
+↑ "Pokémon Trading Card Game a Monster Success!". Wizards of the Coast. Archived from the original on 2000-03-11. Retrieved 2024-08-23.
+
+↑ "The 15 Best Pokémon Cards of the First Generation". Den of Geek. 2020-03-21. Archived from the original on 2021-06-22. Retrieved 2022-07-04.
+
+↑ "Base Set Pokemon Cards". Pokéllector. Archived from the original on 2022-07-06. Retrieved 2022-07-04.
+
+1 2 "Identifying Early Pokémon Cards". Archived from the original on 2022-05-24. Retrieved 2022-07-04.
+
+↑ Nelson, Joshua (2022-04-12). "Pokémon TCG: "No-Symbol" Jungle Jolteon On Auction At Heritage". Bleeding Cool. Archived from the original on 2022-05-07. Retrieved 2022-07-04.
+
+↑ "Pokémon Demo Game Sealed Booster Pack (Wizards of the Coast, 1998) PSA GEM MT". Heritage Auctions. Archived from the original on 2021-01-25. Retrieved 2022-07-05.
+
+↑ "How many Pokemon cards are there? All sets released so far". Dexerto. Archived from the original on 2022-03-25. Retrieved 2022-07-04.
+
+↑ "How many Pokémon are there in 2022?". Wargamer. Archived from the original on 2022-06-20. Retrieved 2022-07-05.
+
+1 2 "Pokemon TCG Buyers Guide - Booster Packs, Boxes, & Decks". Covenant. Archived from the original on December 12, 2019. Retrieved December 14, 2019.
+
+↑ "How To Spot Fake Pokemon Cards". thecardbazaar.com.au. Archived from the original on December 4, 2019. Retrieved December 14, 2019.
+
+1 2 3 Yehl, Joshua (March 8, 2021). "How to Check Pokemon Card Value and Appraise Your Collection". IGN. Archived from the original on June 30, 2022. Retrieved July 1, 2022.
+
+↑ "A Comprehensive Review of Rarity in the Pokemon TCG - Part Two". Flipside Gaming. 15 August 2017. Archived from the original on December 13, 2019. Retrieved December 14, 2019.
+
+↑ Master, Water Pokémon (2023-03-16). ""Scarlet & Violet" Complete Set Guide: English Cards, Set List, Products, Changes, and More! -". PokéBeach.com Forums. Archived from the original on 2023-04-30. Retrieved 2023-04-30.
+
+1 2 Newell, Adam (April 27, 2020). "Pokémon TCG Card Rarity Explained | What are Rare, Ultra, Secret, and more cards?". Dot Esports. Archived from the original on April 10, 2022. Retrieved July 1, 2022.
+
+↑ "Why is the Gen 1 Pokemon card Base Set so expensive?". GameRevolution. March 3, 2021. Archived from the original on November 1, 2021. Retrieved July 5, 2022.
+
+1 2 3 "Top 15 Most Rare and Expensive Pokémon Cards". Dicebreaker. October 14, 2020. Archived from the original on June 29, 2022. Retrieved July 5, 2022.
+
+↑ "Best way to take care of & store your Pokemon cards". Dexerto. 6 November 2020. Archived from the original on June 23, 2021. Retrieved July 1, 2022.
+
+↑ Yehl, Joshua (February 14, 2020). "How Sword and Shield Kicks Off a New Era of the Pokemon TCG". IGN. Archived from the original on July 1, 2022. Retrieved July 1, 2022.
+
+1 2 "Gotta buy 'em all: Rising popularity of Pokemon trading card game in Singapore attracting collectors... and also scammers". TODAY. Retrieved 2024-10-28.
+
+↑ "Umbreon VMAX (Moonbreon) – Evolving Skies #215". Catchinary. Retrieved 2026-05-06.
+
+↑ "33 Rarest Pokémon Cards In The World (Updated for 2022)". cardcollector.co.uk. 2022-02-17. Archived from the original on 2022-11-17. Retrieved 2022-11-17.
+
+↑ "Logan Paul sells Pokémon's Pikachu Illustrator card for record $16m to AJ Scaramucci". www.bbc.com. 2026-02-16. Retrieved 2026-02-16.
+
+↑ Kencana, Nate (2026-06-01). "20 Rare Pokémon Cards in 2026 – Legendary Finds in 2026". Eneba. Retrieved 2026-10-28.
+
+↑ Dinsdale, Ryan (2022-04-04). "Logan Paul Wears Most Expensive Pokemon Card to Wrestlemania 38". IGN. Archived from the original on 2022-04-28. Retrieved 2022-07-01.
+
+↑ "ANOTHER PIKACHU ILLUSTRATOR CARD! SOLD FOR $208,000". zenmarket.jp. Archived from the original on 4 July 2023. Retrieved 4 July 2023.
+
+↑ Facundo, Joe (11 August 2020). "Illustrator Pikachu PSA 9 Sells for Record High $233,244". psacard.com. Professional Sports Authenticator (PSA). Archived from the original on 4 July 2023. Retrieved 4 July 2023.
+
+↑ "POKÉMON PIKACHU ILLUSTRATOR CARD SELLS FOR OVER $772,000". zenmarket.jp. Archived from the original on 4 July 2023. Retrieved 4 July 2023.
+
+↑ "PSA Mint 9 Pikachu Illustrator Draws Record $1.4 Million". ha.com.
+
+↑ "Play! Pokémon Glossary". Pokemon.com. Archived from the original on 2019-08-13. Retrieved 2019-07-31.
+
+↑ "2020 Season Pokémon TCG Format Rotation". Pokemon.com. Archived from the original on 2019-12-04. Retrieved 2019-12-04.
+
+↑ "1st Official Pokemon Card Game Tournament". Pokumon. 2021-06-25. Archived from the original on 2023-05-29. Retrieved 2023-09-08.
+
+↑ "Changes revealed for Play! Pokémon 2022 Championship Series". Upcomer. 22 June 2021. Archived from the original on 2023-03-07. Retrieved 2023-03-07.
+
+↑ "How Competitive Pokemon Works". IGN. 12 August 2017. Archived from the original on 2019-12-04. Retrieved 2019-12-04.
+
+↑ "Play! Pokémon Tournament Rules Handbook English Version" (PDF). Pokémon Assets. September 30, 2021. Archived from the original (PDF) on June 16, 2022. Retrieved July 1, 2022.
+
+↑ "Pokemon Organised Play TCG Championship Points". Sutton Coldfield Pokemon club. Archived from the original on 2019-12-04. Retrieved 2019-12-04.
+
+↑ "Pokémon Championship Series". Pokemon.com. Archived from the original on 2022-06-30. Retrieved 2022-07-01.
+
+↑ TCG, Rafał (2026-08-01). "Jak wygląda społeczność Pokémon TCG?". TCG24.pl (in Polish). Retrieved 2026-08-06.
+
+1 2 "First-Ever Pokemon Trading Card Game World Champion Titles Won by Dylan Austin, 14 of Ann Arbor, Michigan and Mindy Lambkee, 10 of Kent, Washington – IndexArticles". 2021-06-30. Archived from the original on 2023-09-08. Retrieved 2023-09-08.
+
+1 2 Wrack, Suzanne (2022-08-24). "Still catching 'em all: why the Pokémon World Championships are bigger than ever". The Guardian. ISSN 0261-3077. Archived from the original on 2023-03-31. Retrieved 2023-09-08.
+
+↑ Richman, Olivia (2023-07-31). "Pokémon Community Shocked by New Championship Point Requirements". Esports Illustrated. Archived from the original on 2023-09-08. Retrieved 2023-09-08.
+
+↑ "Pokémon World Championships". Pokemon.com. Archived from the original on 2023-08-28. Retrieved 2023-09-08.
+
+↑ Release, Press (June 22, 2005). "2005 Pokémon World Championship qualifier comes to town". Houston Chronicle.
+
+↑ "Pokemon Organized Play (POP) Timeline 2005-2006 (Pokemon League Year 7)". Elite Fourum. 2022-10-22. Archived from the original on 2023-02-05. Retrieved 2023-09-08.
+
+↑ "Pokemon Organized Play (POP) Timeline 2006-2007 (Pokemon League Year 8)". Elite Fourum. 2023-03-10. Archived from the original on 2023-09-08. Retrieved 2023-09-08.
+
+↑ Pokemon World Championships in Orlando, Florida, 18 August 2008, archived from the original on 2017-12-15, retrieved 2023-09-08
+
+↑ "2009 Pokémon Championship Series". www.serebii.net. Archived from the original on 2023-07-29. Retrieved 2023-09-08.
+
+↑ Mastrapa, Gus. "New Jerseyan Wins Pokemon World Championship". Wired. ISSN 1059-1028. Archived from the original on 2016-12-22. Retrieved 2023-09-08.
+
+↑ "Kent teen wins Pokemon Trading Card Game World Championship title". Kent Reporter. 2011-08-15. Archived from the original on 2023-09-08. Retrieved 2023-09-08.
+
+↑ Lien, Tracey (2012-08-14). "Pokémon World Champions crowned in Hawaii". Polygon. Archived from the original on 2023-02-08. Retrieved 2023-09-08.
+
+↑ Ellwood, Greg (2013-06-07). "Pokémon Trainers head to the 2013 Pokémon World Championships". Entertainment Focus. Archived from the original on 2022-12-10. Retrieved 2023-09-08.
+
+↑ "A Weekend At The 2014 Pokémon World Championships". Time. 2014-08-18. Archived from the original on 2023-06-20. Retrieved 2023-09-08.
+
+↑ "2015 Pokémon World Championship (Local Guide)". www.bostoncentral.com. Archived from the original on 2023-09-08. Retrieved 2023-09-08.
+
+↑ Rousseau, Jeffrey (2016-08-23). "The Elite 4: Our 2016 Pokemon World Championship Winners". GameSkinny. Archived from the original on 2023-09-08. Retrieved 2023-09-08.
+
+↑ "The 2017 Worlds Is a Wrap!". Pokemon.com. Archived from the original on 2017-09-27. Retrieved 2017-09-27.
+
+↑ Blogger (2018-08-26). "Day 2 of the 2018 Pokémon World Championships is complete, here's the official recap". Pokémon Blog. Archived from the original on 2023-09-08. Retrieved 2023-09-08.
+
+↑ "2019 Pokemon World Championships: Prize pool, schedule, and how to watch". Shacknews. 15 August 2019. Archived from the original on 2023-03-07. Retrieved 2023-03-07.
+
+↑ Marshall, Cass (2020-03-31). "Pokémon competitive circuit canceled for 2020 due to coronavirus". Polygon. Archived from the original on 2023-03-07. Retrieved 2023-03-07.
+
+↑ Diaz, Ana (2021-02-09). "The 2021 Pokémon World Championships canceled due to COVID-19 concerns". Polygon. Archived from the original on 2023-03-07. Retrieved 2023-03-07.
+
+↑ "Pokémon World Championships". Pokemon.com. Archived from the original on 2022-06-26. Retrieved 2022-07-02.
+
+↑ Yehl, Joshua (2023-08-17). "Underdog Defeats Pokémon TCG's Greatest Player to Become World Champion". IGN. Archived from the original on 2023-09-11. Retrieved 2023-09-12.
+
+↑ "Pokémon World Championships 2024: Everything you need to know". BBC Newsround. 2024-08-15. Archived from the original on 2026-04-14. Retrieved 2026-04-14.
+
+↑ Urbain, Tom (12 August 2025). "Anaheim Welcomes Pokémon's Elite: 2025 World Championships Full Event Guide". Card-Codex.com.
+
+↑ "Pokémon | 2026". Pokémon. Retrieved 2026-04-08.
+
+↑ Kelts, Roland (2007). Japanamerica: How Japanese Pop Culture Has Invaded the U.S. Palgrave Macmillan. pp. 95–96. ISBN 978-1-4039-8476-0.
+
+↑ Staff (November 18, 1998). "Uri Geller Vs. Pokémon". People. Archived from the original on October 5, 2012. Retrieved September 29, 2009.
+
+↑ "Geller sues Nintendo over Pokémon". BBC News. November 2, 2000. Archived from the original on March 29, 2007. Retrieved May 30, 2007.
+
+↑ Staff (January 4, 2000). "Uri Geller sues Pokémon". ZDNet. CBS Interactive. Archived from the original on June 16, 2012. Retrieved September 29, 2009.
+
+↑ Sahagian, Jon (July 4, 2008). "Second Interview with Masamitsu Hidaka – Many Interesting Points!". PokéBeach. Archived from the original on June 21, 2012. Retrieved March 4, 2016.
+
+↑ Carpenter, Nicole (November 30, 2020). "Magician ends 20-year battle with Nintendo over Pokemon card". Polygon. Vox Media. Archived from the original on November 30, 2020. Retrieved August 25, 2021.
+
+↑ "TCGplayer". TCGplayer Content. Retrieved 2026-10-28.
+
+↑ "Pyramid: Pyramid Pick: Pokemon Trading Card Game". SJ Games.com. January 29, 1999. Archived from the original on 2020-10-21. Retrieved 2020-05-06.
+
+↑ Carter, Reon (1999-04-13). "Pokémon power". The Cincinnati Enquirer. p. 23. Archived from the original on 2021-12-20. Retrieved 2021-12-20.
+
+↑ "The Top 150 Global Licensors". License Mag.com. April 1, 2017. Archived from the original on April 14, 2017. Retrieved April 13, 2017. The Pokémon trading card game continues to be popular with 21.5 million cards shipped globally as of 2016, and was the No. 1 selling toy in the strategic card games subclass.
+
+↑ "Pokémon toys and trading card sales spike in Europe". GamesIndustry.biz. March 1, 2018. Archived from the original on 2018-06-28. Retrieved 2018-06-28. Data from NPD, and relayed by The Pokémon Company, states that trading €100 million was spent on the Pokémon Trading Card Game last year, which gave the firm a 82% share of the market (total sales of strategic trading cards sat at €122 million for Europe).
+
+↑ "Business Summary". Pokémon official website. The Pokémon Company. March 2023. Archived from the original on October 10, 2020. Retrieved May 26, 2023.
+
+↑ Lowder, James (2010). Family games : The 100 best. Green Ronin. ISBN 978-1-934547-21-2.
+
+↑ "SYFY Official Site: Shows, Videos, News & Schedule". Archived from the original on 25 March 2009.
+
+↑ "1998|Creatures クリーチャーズ". Creatures.co.jp (in Japanese). 2008-09-25. Archived from the original on 2008-09-25. Retrieved 2022-07-06.
+
+↑ IGN Staff (1999-09-11). "Pokémon Card Game Coming to the US". IGN. Archived from the original on 2021-02-24. Retrieved 2022-07-06.
+
+↑ IGN Staff (1999-12-03). "Pokémon Card Delayed". IGN. Archived from the original on 2021-02-24. Retrieved 2022-07-06.
+
+↑ "This week's European downloads - July 10 (Pokemon TCG and more) - What are YOU waiting for?". GoNintendo. 2014-07-14. Archived from the original on 2014-07-14. Retrieved 2022-07-06.
+
+↑ "ギフトセンター". Nintendo.co.jp (in Japanese). Archived from the original on 2018-03-19. Retrieved 2022-07-06.
+
+↑ "「カードポン!」でカードが増える!友達が増える!!". Nintendo.co.jp (in Japanese). Archived from the original on 2018-03-19. Retrieved 2022-07-06.
+
+↑ IGN Staff (2001-01-25). "A New Pokemon Game In The Cards". IGN. Archived from the original on 2018-03-19. Retrieved 2022-07-06.
+
+↑ "Pokémon Play It! series". Moby Games. Archived from the original on 2018-09-03. Retrieved 2018-09-03.
+
+↑ "Pokemon TCG Online now available for iPad users in North America". Tech Times. 2 October 2014. Archived from the original on 14 June 2018. Retrieved 14 June 2015.
+
+↑ Kato, Matthew (February 15, 2011). "Online Battles Start With Pokémon Trainer Challenge - News". Game Informer. Archived from the original on 2011-02-18. Retrieved 2011-02-15.
+
+↑ Raby, Mark (2011-02-16). "Pokémon trading cards getting free browser-based game, Pokemon Black / White DS News". GamesRadar. Archived from the original on 2021-04-19. Retrieved 2011-02-22.
+
+↑ "New Pokémon Trading Card Game Includes Nintendo DS Tutorial - News". Nintendo World Report. Archived from the original on 2021-09-20. Retrieved 2021-09-20.
+
+↑ "Pokémon TCG Live Makes its Canadian Debut in Limited Beta". Pokemon.com. Archived from the original on 2022-03-01. Retrieved 2022-03-01.
+
+↑ "Pokemon TCG Live beta finally hits US with global launch". Dexerto. 15 November 2022. Archived from the original on 2023-03-07. Retrieved 2023-03-07.
+
+↑ "Pokémon TCG Live". tcg.pokemon.com. Retrieved 2024-09-15.
+
+↑ "Card Set Development Ending for the Pokémon Trading Card Game Online". Pokemon.com. Archived from the original on 2023-02-25. Retrieved 2023-02-25.
+
+↑ "Pokémon TCG Live Launches Soon on Mobile Devices, Tablets, PCs and Macs". Pokemon.com. Archived from the original on 2021-09-21. Retrieved 2021-09-20.
+
+↑ "Updates from the Pokémon Day 2024 Pokémon Presents". Pokemon.com. Archived from the original on 2024-03-02. Retrieved 2024-03-02.
+
+↑ Yu, Johnny (2024-11-27). "When will trading release in Pokémon TCG Pocket?". Polygon. Retrieved 2025-01-01.
+
+↑ "Announcement | Pokémon Trading Card Game Pocket". tcgpocket.pokemon.com. Retrieved 2024-03-02.
+
+↑ Lee, Julia (2024-10-31). "Is the Pokémon TCG Pocket Premium Pass worth buying?". Polygon. Retrieved 2024-11-02.
+
+↑ "Pokémon TCG Pocket Purchase and Premium Pass FAQ". support.pokemon.com. Archived from the original on 2024-11-07. Retrieved 2024-11-02.
+
+↑ Romano, Sal (2024-08-19). "Pokemon Trading Card Game Pocket launches October 30". Gematsu. Archived from the original on 2024-08-19. Retrieved 2024-10-30.
+
+[1]
+
+Further reading
+[edit]
+
+Venters, Jillian (January 1999). "Is that a monster in your pocket?". The Duelist. No. 33. Wizards of the Coast. pp. 88–89.
+
+Preview in Scrye #58
+
+Overview in Scrye #68
+
+Scrye Pokemon Price and Players Guide 2000
+
+External links
+[edit]
+
+Wikibooks has more on the topic of: Pokémon Trading Card Game
+
+Official website
+
+ | 
+
+v
+
+t
+
+e
+
+Pokémon
+
+ | 
+by the Pokémon Company, owned by Nintendo, Creatures Inc. and Game Freak
+
+ | 
+
+ | 
+Video games
+
+ | Main series | 
+
+ | 
+
+ | 
+
+ | Generation I | Generation II
+
+ | 
+
+Red / Blue / Yellow
+
+Lavender Town
+
+Pokémon
+
+Bulbasaur
+
+Charmander
+
+Charizard
+
+Squirtle
+
+Blastoise
+
+Butterfree
+
+Pikachu
+
+Raichu
+
+Ninetales
+
+Jigglypuff
+
+Parasect
+
+Diglett and Dugtrio
+
+Meowth
+
+Psyduck
+
+Slowpoke
+
+Haunter
+
+Gengar
+
+Voltorb
+
+Cubone
+
+Weezing
+
+Starmie
+
+Mr. Mime
+
+Jynx
+
+Pinsir
+
+Magikarp and Gyarados
+
+Ditto
+
+Eevee
+
+Snorlax
+
+Dragonite
+
+Mewtwo
+
+Mew
+
+MissingNo.
+
+ | 
+
+Gold / Silver
+
+Crystal
+
+Pokémon
+
+Typhlosion
+
+Sudowoodo
+
+Wooper
+
+Unown
+
+Wobbuffet
+
+Heracross
+
+Delibird
+
+Smeargle
+
+ | 
+
+ | 
+
+ | Generation III | Generation IV | Generation V | Generation VI
+
+ | 
+
+Ruby / Sapphire
+
+Emerald
+
+FireRed / LeafGreen
+
+Pokémon
+
+Blaziken
+
+Gardevoir
+
+Shedinja
+
+Mawile
+
+Flygon
+
+Regirock, Regice, and Registeel
+
+ | 
+
+Diamond / Pearl
+
+Platinum
+
+HeartGold / SoulSilver
+
+Pokémon
+
+Pachirisu
+
+Garchomp
+
+Lucario
+
+Regigigas
+
+Arceus
+
+ | 
+
+Black / White
+
+Black 2 / White 2
+
+Pokémon
+
+Victini
+
+Zoroark
+
+Chandelure
+
+ | 
+
+X / Y
+
+Omega Ruby / Alpha Sapphire
+
+Pokémon
+
+Talonflame
+
+Malamar
+
+Klefki
+
+ | 
+
+ | 
+
+ | Generation VII | Generation VIII | Generation IX | Generation X
+
+ | 
+
+Sun / Moon
+
+Ultra Sun / Ultra Moon
+
+Let's Go, Pikachu! / Let's Go, Eevee!
+
+Pokémon
+
+Popplio, Brionne, and Primarina
+
+Mimikyu
+
+Meltan
+
+ | 
+
+Sword / Shield
+
+Expansion Pass
+
+Brilliant Diamond / Shining Pearl
+
+Legends: Arceus
+
+Pokémon
+
+Scorbunny
+
+Sobble
+
+Wooloo
+
+Fossil Pokémon
+
+Regieleki and Regidrago
+
+Kleavor
+
+ | 
+
+Scarlet / Violet
+
+Hidden Treasure of Area Zero
+
+"Celestial"
+
+"Biri-Biri"
+
+Legends: Z-A
+
+Pokémon
+
+Sprigatito, Floragato, and Meowscarada
+
+Fuecoco
+
+Tinkaton
+
+Gholdengo
+
+ | 
+
+Winds / Waves
+
+ | Related | 
+
+Pocket Monsters Stadium
+
+Stadium
+
+Stadium 2
+
+Colosseum
+
+XD: Gale of Darkness
+
+Battle Revolution
+
+My Pokémon Ranch
+
+Go
+
+live events
+
+Champions
+
+ | Characters | 
+
+Professor Oak
+
+Brock
+
+Misty
+
+Team Rocket
+
+Hex Maniac
+
+Cynthia
+
+Lillie
+
+Team Skull
+
+Ball Guy
+
+Nessa
+
+Larry
+
+Rika
+
+Lebanne
+
+Rivals
+
+Serena
+
+Hop
+
+Nemona
+
+List of Pokémon
+
+Shiny Pokémon
+
+ | Spin-offs | 
+
+ | Mystery Dungeon | 
+
+Red and Blue Rescue Team
+
+Rescue Team DX
+
+Explorers of Time and Darkness
+
+Explorers of Sky
+
+Gates to Infinity
+
+Super Mystery Dungeon
+
+ | Rumble | 
+
+Rumble
+
+Blast
+
+U
+
+World
+
+Rush
+
+ | Puzzle | 
+
+Puzzle League
+
+Puzzle Challenge
+
+Trozei!
+
+Battle Trozei
+
+Shuffle
+
+Picross
+
+Café ReMix
+
+Friends
+
+ | Educational | 
+
+Project Studio
+
+PokéROM
+
+Typing Adventure
+
+Art Academy
+
+Smile
+
+Hey You, Pikachu!
+
+Snap
+
+New Snap
+
+Pinball
+
+Ruby & Sapphire
+
+Channel
+
+Dash
+
+Ranger
+
+Shadows of Almia
+
+Guardian Signs
+
+PokéPark
+
+Wonders Beyond
+
+Conquest
+
+Pokkén Tournament
+
+Detective Pikachu
+
+Returns
+
+Duel
+
+Magikarp Jump
+
+Quest
+
+Masters EX
+
+Unite
+
+Sleep
+
+Pokopia
+
+ | Competitive play | 
+
+World Championships (2023)
+
+Wolfe Glick
+
+Ray Rizzo
+
+Park Se-jun
+
+ | Trading Card Game | 
+
+Sets
+
+Base Set (1996)
+
+Most expensive cards
+
+ | Video games | 
+
+Pokémon Trading Card Game
+
+TCG Online
+
+TCG Pocket
+
+ | Other | 
+
+Pokémon Pikachu
+
+Pokémon Mini
+
+Poké Ball Plus
+
+Bank
+
+Super Smash Bros.
+
+Twitch Plays Pokémon
+
+ | Unofficial | 
+
+Pokémon fan games
+
+Insurgence
+
+Prism
+
+Showdown
+
+Uranium
+
+Micromon
+
+Pocket Mortys
+
+ | 
+
+ | 
+Media
+
+ | TV series | 
+
+ | Seasons | 
+
+Indigo League
+
+Adventures in the Orange Islands
+
+The Johto Journeys
+
+Johto League Champions
+
+Master Quest
+
+Advanced
+
+Advanced Challenge
+
+Advanced Battle
+
+Battle Frontier
+
+Diamond and Pearl
+
+Battle Dimension
+
+Galactic Battles
+
+Sinnoh League Victors
+
+Black & White
+
+Rival Destinies
+
+Adventures in Unova and Beyond
+
+XY
+
+Kalos Quest
+
+XYZ
+
+Sun & Moon
+
+Ultra Adventures
+
+Ultra Legends
+
+Journeys
+
+Master Journeys
+
+Ultimate Journeys
+
+Horizons
+
+The Search for Laqua
+
+Rising Hope
+
+ | Episodes | 
+
+by Season
+
+1–9
+
+10–19
+
+20–present
+
+"Pokémon, I Choose You!"
+
+Removed from rotation
+
+"Dennō Senshi Porygon"
+
+Chronicles
+
+ | Characters | 
+
+Ash Ketchum
+
+Brock
+
+Misty
+
+Team Rocket
+
+Professor Oak
+
+Serena
+
+Lillie
+
+Liko
+
+ | Films | 
+
+ | 
+
+The First Movie
+
+Mewtwo Strikes Back – Evolution
+
+2000
+
+3: The Movie
+
+4Ever
+
+Heroes
+
+Jirachi, Wish Maker
+
+Destiny Deoxys
+
+Lucario and the Mystery of Mew
+
+Ranger and the Temple of the Sea
+
+The Rise of Darkrai
+
+Giratina & the Sky Warrior
+
+Arceus and the Jewel of Life
+
+Zoroark: Master of Illusions
+
+Black—Victini and Reshiram / White—Victini and Zekrom
+
+Kyurem vs. the Sword of Justice
+
+Genesect and the Legend Awakened
+
+Diancie and the Cocoon of Destruction
+
+Hoopa and the Clash of Ages
+
+Volcanion and the Mechanical Marvel
+
+I Choose You!
+
+The Power of Us
+
+Secrets of the Jungle
+
+Wild Card
+
+ | Live-action | 
+
+Detective Pikachu
+
+ | Manga | 
+
+Pocket Monsters
+
+Adventures
+
+volumes
+
+1–20
+
+20–40
+
+41–current
+
+The Electric Tale of Pikachu
+
+Magical Pokémon Journey
+
+ | Miniseries | 
+
+Origins
+
+Generations
+
+Twilight Wings
+
+Pokétoon
+
+Evolutions
+
+Concierge
+
+ | Music | 
+
+Theme songs
+
+"Pokémon Theme"
+
+"Biri-Biri"
+
+"Carry On"
+
+"Celestial"
+
+"Electric"
+
+"Flying Without Wings"
+
+"One"
+
+2.B.A. Master
+
+The First Movie
+
+"Don't Say You Love Me"
+
+"The Power of One"
+
+Project Voltage
+
+"Sora/Koe"
+
+"Te o Tsunagō / Kindan no Karma"
+
+"Toi et Moi"
+
+Detective Pikachu
+
+Symphonic Evolutions
+
+ | Related | 
+
+4Kids Entertainment
+
+Media Factory
+
+OLM
+
+Pokémon Live!
+
+Pokémon Apokélypse
+
+ | 
+
+ | 
+Related
+
+ | People | 
+
+Tsunekazu Ishihara
+
+Sayuri Ichiishi
+
+Junichi Masuda
+
+Shigeki Morimoto
+
+Atsuko Nishida
+
+Shigeru Ohmori
+
+Naoki Saito
+
+Takeshi Shudo
+
+Ken Sugimori
+
+Satoshi Tajiri
+
+Kunihiko Yuyama
+
+ | Organizations | 
+
+Ambrella
+
+Genius Sonority
+
+ILCA
+
+Wizards of the Coast
+
+ | Community | 
+
+MissJirachi
+
+pChal
+
+Nuzlocke
+
+ | Marketing | 
+
+Pokémon Center
+
+Pokémon Jet
+
+Burger King Pokémon container recall
+
+Pokéfuta
+
+Pokémon 25th Anniversary
+
+Pokémon Fossil Museum
+
+Project Voltage
+
+PokéPark
+
+PokéPark Kanto
+
+ | Pop culture | 
+
+Pikachu virus
+
+Tía Pikachu
+
+Pokémon and pornography
+
+doujinshi incident
+
+Fakemon
+
+Chinpokomon
+
+ | Eponymous | 
+
+Zbtb7
+
+Bulbasaurus
+
+Chilicola charizard
+
+Stentorceps weedlei
+
+Pikachurin
+
+Mazuca strigicincta
+
+Alistra pikachu
+
+Hiperantha pikachu
+
+Aerodactylus
+
+Binburrum articuno
+
+Binburrum moltres
+
+Anyphaena treecko
+
+Anyphaena grovyle
+
+Anyphaena sceptile
+
+Nocticola pheromosa
+
+Phrynarachne dreepy
+
+ | 
+
+ Category
+
+↑ Wu, Aurik (2026-04-08). "Pokémon Worlds San Francisco". Pokémon. Retrieved 2026-04-08.
+
+Retrieved from "https://en.wikipedia.org/w/index.php?title=Pokémon_Trading_Card_Game&oldid=1385194448"
+
+Categories: 
+Pokémon Trading Card Game
+
+Card games introduced in 1996
+
+Collectible card games based on video games
+
+Japanese card games
+
+Wizards of the Coast games
+
+Nintendo toys
+
+1990s fads and trends
+
+2020s fads and trends
+
+Hidden categories: 
+Articles with short description
+
+Short description is different from Wikidata
+
+Articles containing Japanese-language text
+
+Wikipedia articles needing clarification from March 2026
+
+CS1 errors: missing title
+
+CS1 errors: bare URL
+
+CS1 Japanese-language sources (ja)
+
+Pages using multiple image with auto scaled images
+
+CS1 Polish-language sources (pl)
+
+Official website different in Wikidata and Wikipedia
+
+ This page was last edited on 12 November 2026, at 08:28 (UTC).
+
+Page was rendered with Parsoid.
+
+Text is available under the Creative Commons Attribution-ShareAlike 4.0 License;
+additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+Privacy policy
+
+About Wikipedia
+
+Disclaimers
+
+Contact Wikipedia
+
+Legal & safety contacts
+
+Code of Conduct
+
+Developers
+
+Statistics
+
+Cookie statement
+
+Mobile view
+
+Search
+
+ Search
+
+Toggle the table of contents
+
+Pokémon Trading Card Game
+
+29 languages
+
+Add topic
