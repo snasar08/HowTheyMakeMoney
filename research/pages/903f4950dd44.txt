@@ -1,0 +1,5 @@
+URL: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Nintendo+old+headquarters+Kyoto+Yamauchi&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=size%7Cextmetadata&iiextmetadatafilter=LicenseShortName%7CArtist&format=json
+FINAL_URL: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Nintendo+old+headquarters+Kyoto+Yamauchi&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=size%7Cextmetadata&iiextmetadatafilter=LicenseShortName%7CArtist&format=json
+FETCHED: 2026-11-14T20:50:49.244493+00:00
+
+{"batchcomplete":""}

@@ -1,0 +1,7 @@
+URL: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Netflix+DVD+envelope&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=size%7Cextmetadata&iiextmetadatafilter=LicenseShortName%7CArtist&format=json
+FINAL_URL: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Netflix+DVD+envelope&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=size%7Cextmetadata&iiextmetadatafilter=LicenseShortName%7CArtist&format=json
+FETCHED: 2026-11-14T20:50:40.089246+00:00
+
+{"batchcomplete":"","query":{"pages":{"69992566":{"pageid":69992566,"ns":6,"title":"File:10 Rules for Radicals.djvu","index":2,"imagerepository":"local","imageinfo":[{"size":349653,"width":1879,"height":2775,"pagecount":39,"extmetadata":{"Artist":{"value":"
+\nCarl Malamud
+","source":"commons-desc-page"},"LicenseShortName":{"value":"CC0","source":"commons-desc-page","hidden":""}}}]},"7695258":{"pageid":7695258,"ns":6,"title":"File:Netflixenvelope.jpg","index":1,"imagerepository":"local","imageinfo":[{"size":156725,"width":490,"height":300,"extmetadata":{"Artist":{"value":"The original uploader was BlueMint at English Wikipedia.","source":"commons-desc-page"},"LicenseShortName":{"value":"CC BY 2.5","source":"commons-desc-page","hidden":""}}}]}}}}

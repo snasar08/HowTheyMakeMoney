@@ -376,5 +376,221 @@
     "status": 200,
     "final_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000029102101",
     "content_type": "application/json"
+  },
+  "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Reed+Hastings&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=size%7Cextmetadata&iiextmetadatafilter=LicenseShortName%7CArtist&format=json": {
+    "file": "pages/4eafbc67fe39.txt",
+    "fetched_at": "2026-11-14T20:50:37.632128+00:00",
+    "ok": true,
+    "chars": 2716,
+    "status": 200,
+    "final_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Reed+Hastings&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=size%7Cextmetadata&iiextmetadatafilter=LicenseShortName%7CArtist&format=json",
+    "content_type": "application/json; charset=utf-8"
+  },
+  "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Marc+Randolph&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=size%7Cextmetadata&iiextmetadatafilter=LicenseShortName%7CArtist&format=json": {
+    "file": "pages/0abe2a52828a.txt",
+    "fetched_at": "2026-11-14T20:50:38.215511+00:00",
+    "ok": true,
+    "chars": 3068,
+    "status": 200,
+    "final_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Marc+Randolph&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=size%7Cextmetadata&iiextmetadatafilter=LicenseShortName%7CArtist&format=json",
+    "content_type": "application/json; charset=utf-8"
+  },
+  "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Blockbuster+Bend+Oregon&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=size%7Cextmetadata&iiextmetadatafilter=LicenseShortName%7CArtist&format=json": {
+    "file": "pages/a325dedd7e1d.txt",
+    "fetched_at": "2026-11-14T20:50:38.904039+00:00",
+    "ok": true,
+    "chars": 2784,
+    "status": 200,
+    "final_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Blockbuster+Bend+Oregon&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=size%7Cextmetadata&iiextmetadatafilter=LicenseShortName%7CArtist&format=json",
+    "content_type": "application/json; charset=utf-8"
+  },
+  "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Blockbuster+Video+store&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=size%7Cextmetadata&iiextmetadatafilter=LicenseShortName%7CArtist&format=json": {
+    "file": "pages/d839555763db.txt",
+    "fetched_at": "2026-11-14T20:50:39.497911+00:00",
+    "ok": true,
+    "chars": 3105,
+    "status": 200,
+    "final_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Blockbuster+Video+store&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=size%7Cextmetadata&iiextmetadatafilter=LicenseShortName%7CArtist&format=json",
+    "content_type": "application/json; charset=utf-8"
+  },
+  "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Netflix+DVD+envelope&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=size%7Cextmetadata&iiextmetadatafilter=LicenseShortName%7CArtist&format=json": {
+    "file": "pages/137f06f3062b.txt",
+    "fetched_at": "2026-11-14T20:50:40.089246+00:00",
+    "ok": true,
+    "chars": 754,
+    "status": 200,
+    "final_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Netflix+DVD+envelope&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=size%7Cextmetadata&iiextmetadatafilter=LicenseShortName%7CArtist&format=json",
+    "content_type": "application/json; charset=utf-8"
+  },
+  "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Netflix+headquarters+Los+Gatos&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=size%7Cextmetadata&iiextmetadatafilter=LicenseShortName%7CArtist&format=json": {
+    "file": "pages/99fb9b0948eb.txt",
+    "fetched_at": "2026-11-14T20:50:40.641865+00:00",
+    "ok": true,
+    "chars": 1744,
+    "status": 200,
+    "final_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Netflix+headquarters+Los+Gatos&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=size%7Cextmetadata&iiextmetadatafilter=LicenseShortName%7CArtist&format=json",
+    "content_type": "application/json; charset=utf-8"
+  },
+  "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Blockbuster+store+closing&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=size%7Cextmetadata&iiextmetadatafilter=LicenseShortName%7CArtist&format=json": {
+    "file": "pages/6647d567f9e6.txt",
+    "fetched_at": "2026-11-14T20:50:41.210244+00:00",
+    "ok": true,
+    "chars": 3108,
+    "status": 200,
+    "final_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Blockbuster+store+closing&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=size%7Cextmetadata&iiextmetadatafilter=LicenseShortName%7CArtist&format=json",
+    "content_type": "application/json; charset=utf-8"
+  },
+  "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=DVD+rental+store&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=size%7Cextmetadata&iiextmetadatafilter=LicenseShortName%7CArtist&format=json": {
+    "file": "pages/7b27ea1ffec5.txt",
+    "fetched_at": "2026-11-14T20:50:42.012791+00:00",
+    "ok": true,
+    "chars": 3030,
+    "status": 200,
+    "final_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=DVD+rental+store&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=size%7Cextmetadata&iiextmetadatafilter=LicenseShortName%7CArtist&format=json",
+    "content_type": "application/json; charset=utf-8"
+  },
+  "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Nintendo+headquarters+Kyoto&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=size%7Cextmetadata&iiextmetadatafilter=LicenseShortName%7CArtist&format=json": {
+    "file": "pages/9a632f3bc391.txt",
+    "fetched_at": "2026-11-14T20:50:42.565282+00:00",
+    "ok": true,
+    "chars": 2879,
+    "status": 200,
+    "final_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Nintendo+headquarters+Kyoto&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=size%7Cextmetadata&iiextmetadatafilter=LicenseShortName%7CArtist&format=json",
+    "content_type": "application/json; charset=utf-8"
+  },
+  "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Hanafuda+cards&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=size%7Cextmetadata&iiextmetadatafilter=LicenseShortName%7CArtist&format=json": {
+    "file": "pages/88910bd8c9b9.txt",
+    "fetched_at": "2026-11-14T20:50:43.323662+00:00",
+    "ok": true,
+    "chars": 3036,
+    "status": 200,
+    "final_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Hanafuda+cards&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=size%7Cextmetadata&iiextmetadatafilter=LicenseShortName%7CArtist&format=json",
+    "content_type": "application/json; charset=utf-8"
+  },
+  "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Hiroshi+Yamauchi&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=size%7Cextmetadata&iiextmetadatafilter=LicenseShortName%7CArtist&format=json": {
+    "file": "pages/aa9f13cecbaa.txt",
+    "fetched_at": "2026-11-14T20:50:44.323995+00:00",
+    "ok": true,
+    "chars": 3618,
+    "status": 200,
+    "final_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Hiroshi+Yamauchi&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=size%7Cextmetadata&iiextmetadatafilter=LicenseShortName%7CArtist&format=json",
+    "content_type": "application/json; charset=utf-8"
+  },
+  "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Gunpei+Yokoi&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=size%7Cextmetadata&iiextmetadatafilter=LicenseShortName%7CArtist&format=json": {
+    "file": "pages/03fcc6466e2a.txt",
+    "fetched_at": "2026-11-14T20:50:45.405843+00:00",
+    "ok": true,
+    "chars": 2933,
+    "status": 200,
+    "final_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Gunpei+Yokoi&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=size%7Cextmetadata&iiextmetadatafilter=LicenseShortName%7CArtist&format=json",
+    "content_type": "application/json; charset=utf-8"
+  },
+  "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Ultra+Hand+Nintendo&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=size%7Cextmetadata&iiextmetadatafilter=LicenseShortName%7CArtist&format=json": {
+    "file": "pages/cc0d5e32a6cb.txt",
+    "fetched_at": "2026-11-14T20:50:45.901263+00:00",
+    "ok": true,
+    "chars": 3287,
+    "status": 200,
+    "final_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Ultra+Hand+Nintendo&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=size%7Cextmetadata&iiextmetadatafilter=LicenseShortName%7CArtist&format=json",
+    "content_type": "application/json; charset=utf-8"
+  },
+  "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Game+%26+Watch&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=size%7Cextmetadata&iiextmetadatafilter=LicenseShortName%7CArtist&format=json": {
+    "file": "pages/25e02bd76e8e.txt",
+    "fetched_at": "2026-11-14T20:50:46.409455+00:00",
+    "ok": true,
+    "chars": 2902,
+    "status": 200,
+    "final_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Game+%26+Watch&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=size%7Cextmetadata&iiextmetadatafilter=LicenseShortName%7CArtist&format=json",
+    "content_type": "application/json; charset=utf-8"
+  },
+  "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Nintendo+Switch+console&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=size%7Cextmetadata&iiextmetadatafilter=LicenseShortName%7CArtist&format=json": {
+    "file": "pages/ff2f342b4e1d.txt",
+    "fetched_at": "2026-11-14T20:50:47.174094+00:00",
+    "ok": true,
+    "chars": 3052,
+    "status": 200,
+    "final_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Nintendo+Switch+console&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=size%7Cextmetadata&iiextmetadatafilter=LicenseShortName%7CArtist&format=json",
+    "content_type": "application/json; charset=utf-8"
+  },
+  "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Nintendo+Entertainment+System&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=size%7Cextmetadata&iiextmetadatafilter=LicenseShortName%7CArtist&format=json": {
+    "file": "pages/7ce290bf01ea.txt",
+    "fetched_at": "2026-11-14T20:50:47.910444+00:00",
+    "ok": true,
+    "chars": 3054,
+    "status": 200,
+    "final_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Nintendo+Entertainment+System&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=size%7Cextmetadata&iiextmetadatafilter=LicenseShortName%7CArtist&format=json",
+    "content_type": "application/json; charset=utf-8"
+  },
+  "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Game+Boy+original&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=size%7Cextmetadata&iiextmetadatafilter=LicenseShortName%7CArtist&format=json": {
+    "file": "pages/7a491e6069ed.txt",
+    "fetched_at": "2026-11-14T20:50:48.685875+00:00",
+    "ok": true,
+    "chars": 2850,
+    "status": 200,
+    "final_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Game+Boy+original&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=size%7Cextmetadata&iiextmetadatafilter=LicenseShortName%7CArtist&format=json",
+    "content_type": "application/json; charset=utf-8"
+  },
+  "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Nintendo+old+headquarters+Kyoto+Yamauchi&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=size%7Cextmetadata&iiextmetadatafilter=LicenseShortName%7CArtist&format=json": {
+    "file": "pages/903f4950dd44.txt",
+    "fetched_at": "2026-11-14T20:50:49.244493+00:00",
+    "ok": true,
+    "chars": 20,
+    "status": 200,
+    "final_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Nintendo+old+headquarters+Kyoto+Yamauchi&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=size%7Cextmetadata&iiextmetadatafilter=LicenseShortName%7CArtist&format=json",
+    "content_type": "application/json; charset=utf-8"
+  },
+  "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Satoru+Iwata&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=size%7Cextmetadata&iiextmetadatafilter=LicenseShortName%7CArtist&format=json": {
+    "file": "pages/34918a6aae28.txt",
+    "fetched_at": "2026-11-14T20:50:49.908618+00:00",
+    "ok": true,
+    "chars": 2913,
+    "status": 200,
+    "final_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Satoru+Iwata&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=size%7Cextmetadata&iiextmetadatafilter=LicenseShortName%7CArtist&format=json",
+    "content_type": "application/json; charset=utf-8"
+  },
+  "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Shigeru+Miyamoto&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=size%7Cextmetadata&iiextmetadatafilter=LicenseShortName%7CArtist&format=json": {
+    "file": "pages/d380b3d99c8a.txt",
+    "fetched_at": "2026-11-14T20:50:50.550731+00:00",
+    "ok": true,
+    "chars": 2944,
+    "status": 200,
+    "final_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Shigeru+Miyamoto&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=size%7Cextmetadata&iiextmetadatafilter=LicenseShortName%7CArtist&format=json",
+    "content_type": "application/json; charset=utf-8"
+  },
+  "https://en.wikipedia.org/wiki/International_Space_Station": {
+    "file": "pages/cf9da971a2a2.txt",
+    "fetched_at": "2026-11-14T20:50:51.231988+00:00",
+    "ok": true,
+    "chars": 264029,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/International_Space_Station",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Mount_Everest": {
+    "file": "pages/2c037cf2d4b9.txt",
+    "fetched_at": "2026-11-14T20:50:51.834552+00:00",
+    "ok": true,
+    "chars": 179388,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Mount_Everest",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Moon": {
+    "file": "pages/04c9f9b5af2a.txt",
+    "fetched_at": "2026-11-14T20:50:52.354643+00:00",
+    "ok": true,
+    "chars": 206597,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Moon",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/List_of_best-selling_game_consoles": {
+    "file": "pages/c8c5cc3ede76.txt",
+    "fetched_at": "2026-11-14T20:50:52.907954+00:00",
+    "ok": true,
+    "chars": 29997,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/List_of_best-selling_game_consoles",
+    "content_type": "text/html; charset=UTF-8"
   }
 }
