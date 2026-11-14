@@ -30,6 +30,10 @@ Image 1 is the cover (frame 0). Image 2 is a sheet of frames from the finished v
 Title: {title}
 Narration: {narration}
 
+Things that are NORMAL here, never report them: big numbers COUNT UP from 0 to their final value, so a frame
+can show a smaller number mid-count (only a FINAL number that disagrees with the narration is a problem); pie
+charts fill up from 0%; the animated characters are a simple low-poly cartoon style; today is {today}, so
+dates up to now (e.g. Q3 2026) are in the past; one-word captions at the bottom follow the voice.
 Judge it the way a viewer scrolling past would. Report only problems you can actually SEE:
 - text that is cut off, overlapping other text, too small to read on a phone, or misspelled compared to the narration
 - numbers on screen that contradict the narration
@@ -79,7 +83,8 @@ def look(video: Path, script: dict) -> dict | None:
     imgs = frames(video)
     narration = " ".join(sc.get("narration", "") for sc in script.get("scenes", []))
     body = {"contents": [{"parts": [
-        {"text": PROMPT.format(title=script.get("title", ""), narration=narration)},
+        {"text": PROMPT.format(title=script.get("title", ""), narration=narration,
+                                today=__import__("datetime").date.today().strftime("%B %Y"))},
         {"inline_data": {"mime_type": "image/jpeg", "data": _jpeg(imgs[0].resize((540, 960)))}},
         {"inline_data": {"mime_type": "image/jpeg", "data": _jpeg(sheet(imgs[1:]))}}]}],
         "generationConfig": {"responseMimeType": "application/json", "temperature": 0.2}}

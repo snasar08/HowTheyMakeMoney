@@ -366,3 +366,8 @@ Sam: "the better free character models... do it yourself". Done in one session.
   were Whisper word timings marking normal short words (The, and, Still) as "rushed" (< 60 ms), plus one real
   mishearing ("handbags" -> "pan bags"). Dropped the "rushed" flag for the Gemini path only, so retakes go to
   real problems and don't spend the 10-a-day quota.
+- Same run: all 5 Nov 15 slots scheduled (069, 053, 062, 071, 003), nothing blocked. Eyes ran on every Short
+  (gemini-3.1-flash-lite, free): scores 3-6/10. Most "numbers contradict the narration" complaints were frames
+  caught mid count-up, "0%" pies filling, and "Q3 2026 is in the future". Taught the eyes prompt what is normal
+  (count-ups, fills, low-poly style, today's date). Kept as real signals to look at: the animated characters'
+  faces read as "no facial features" at phone size; 069 reuses similar shots (repeat check flagged 8).

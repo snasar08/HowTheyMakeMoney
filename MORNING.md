@@ -1,4 +1,8 @@
-# Update, Nov 13 (night)
+# Update, Nov 14
+
+The first real run with the free Google voice worked: all 7 Shorts (5 to post plus 2 spares) were voiced by it, one free request each, no limits hit, and all 5 of tomorrow's slots are scheduled. The new "eyes" check looked at every Short and scored them 3 to 6 out of 10. Most of its complaints were it misreading the count-up animation (a number counting to $8.2 billion shows $6.4 billion for a moment), so I taught it what's normal. Its one real point worth acting on: at phone size the animated characters' faces read as blank. I also stopped the voice check from re-recording lines over a false "rushed word" alarm, which saves free requests. Nothing needs you.
+
+# Earlier: Nov 13 (night)
 
 **New voice: Google's, free.** After your friends' feedback I researched what actually sounds good. The public blind-vote voice leaderboards put Google's Gemini voices at or next to ElevenLabs at the top. Your new key (project "Game") is on Google's free tier, so it costs $0. The free tier allows 10 voice requests a day per model, so each Short is now read by Google in one go (1 request per Short, and it flows like a person reading) and cut into lines by the pipeline. 3 more free Google voice models are backups, and if Google ever fails, a Short falls back to the old voice instead of missing its slot. The voice is "Umbriel", picked from 10 by measurement. The test Short with it is in `previews/voice/gemini-074-small.mp4`.
 
