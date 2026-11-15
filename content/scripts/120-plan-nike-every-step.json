@@ -95,16 +95,23 @@
           "crowd": 30
         },
         {
-          "place": "court",
+          "place": "street",
           "beat": "walk",
           "mood": "proud",
-          "crowd": 12
+          "crowd": 15,
+          "things": [
+            "poster",
+            "tv"
+          ]
         },
         {
-          "place": "court",
+          "place": "office",
           "beat": "walk",
           "mood": "shock",
-          "crowd": 0
+          "crowd": 0,
+          "things": [
+            "idea"
+          ]
         },
         {
           "place": "court",

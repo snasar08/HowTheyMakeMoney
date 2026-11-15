@@ -106,11 +106,14 @@
           "action": "run"
         },
         {
-          "place": "street",
+          "place": "court",
           "beat": "walk",
-          "mood": "happy",
+          "mood": "stern",
           "action": "cheer",
-          "crowd": 40
+          "crowd": 6,
+          "things": [
+            "shot"
+          ]
         },
         {
           "place": "court",
@@ -148,8 +151,11 @@
         },
         {
           "place": "court",
-          "beat": "clock",
-          "mood": "scheme"
+          "beat": "walk",
+          "mood": "scheme",
+          "things": [
+            "shot"
+          ]
         },
         {
           "place": "court",
@@ -268,7 +274,7 @@
             "ball"
           ],
           "things": [
-            "ring"
+            "springshoe"
           ]
         }
       ]
@@ -289,9 +295,13 @@
       "toon": [
         {
           "place": "court",
-          "beat": "money",
+          "beat": "walk",
           "mood": "proud",
-          "crowd": 40
+          "crowd": 30,
+          "things": [
+            "ring",
+            "crown"
+          ]
         },
         {
           "place": "court",

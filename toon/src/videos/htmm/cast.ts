@@ -565,7 +565,7 @@ export const stage = (id: number, t: number, _b: BridgeState, cam: CamInfo): Sta
   }
   if (beat === "sign" && BR) {
     const k = pop(0.1), x = h.x + r[0] * 1.1 + h.d[0] * -1.4, z = h.z + r[1] * 1.1 + h.d[1] * -1.4;   // open side of the frame
-    if (k > 0) out.fx.push({ key: `prop|sign|${s.light}|${bkey}`, cw: 900, ch: 620, x, y: h.y + 1.25 * k + 1.45, z, w: 2.5 * k, h: 1.72 * k,
+    if (k > 0) out.fx.push({ key: `prop|sign|${s.light}|${bkey}`, cw: 900, ch: 620, x, y: h.y + 1.05 * k + 1.15, z, w: 2.4 * k, h: 1.65 * k,
       draw: tintDraw((pen) => {
         pen.poly(rr(60, 470, 120, 620, 6), "#5a5560", 10); pen.poly(rr(780, 470, 840, 620, 6), "#5a5560", 10);   // posts
         pen.poly(rr(16, 16, 884, 480, 34), BR.bg, 16);
@@ -653,7 +653,7 @@ export const stage = (id: number, t: number, _b: BridgeState, cam: CamInfo): Sta
     const big = k === 0 && !busy, w = (big ? 1.7 : k === 0 ? 1.3 : 1.0) * kp, side = big ? 1.0 : 0.5, fw = big ? -0.3 : 1.3;
     const x = h.x + r[0] * side + h.d[0] * fw, z = h.z + r[1] * side + h.d[1] * fw;
     const hover = name === "drone" || name === "satellite" ? 0.5 + 0.12 * Math.sin(tl * 4) : 0;   // fliers bob in the air
-    out.fx.push({ key, cw: T.cw, ch: T.ch, x, y: h.y + (big ? 1.7 : w * asp * 0.5 + 0.05) + hover, z, w, h: w * asp, draw });
+    out.fx.push({ key, cw: T.cw, ch: T.ch, x, y: h.y + (big ? 1.45 : w * asp * 0.5 + 0.05) + hover, z, w, h: w * asp, draw });
   });
   return out;
   function put(name: string, fwd: number, side: number, w: number, hgt: number, lift = 0, follow = false) {

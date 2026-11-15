@@ -26,7 +26,7 @@ PROPS = ["car", "truck", "trophy", "cash", "boxes", "check", "rocket", "ball", "
 MOODS = ["happy", "laugh", "shock", "nervous", "proud", "stern", "scheme", "relief", "dazed", "sad", "calm", "excited"]
 ACTIONS = ["stand", "walk", "run", "cheer", "work"]
 THINGS = ["shoe", "springshoe", "sneakerbus", "bus", "glasses", "robot", "chip", "drone", "plant", "satellite", "chatbot", "ring",
-          "stadium", "factory", "snack", "hanger", "dome", "dumbbell", "tv", "books", "ereader", "letter", "medal", "crown"]
+          "stadium", "factory", "snack", "hanger", "dome", "dumbbell", "tv", "books", "ereader", "letter", "idea", "shot", "poster", "medal", "crown"]
 ICONS = ["swoosh", "star", "rocket", "bolt", "chip", "globe", "car", "brain", "bird", "sun", "play", "cart", "robot", "burger", "letter"]
 
 KIT = f"""You direct a cartoon YouTube Short (flat 2D characters in a colourful 3D world). The hero is the main

@@ -138,7 +138,10 @@ THING_WORDS = [
     ("tv", r"\bcartoons?\b|\btv\b|\bstream\w*\b|\bvideos?\b"),
     ("books", r"\bbooks?\b|\bbookstore\b"),
     ("ereader", r"\be-?readers?\b|\bkindle\b|\btablets?\b"),
-    ("letter", r"\bmemo\b|\bletters?\b|\bemails?\b|\bresign\w*\b|\bannounce\w*\b|\bcontracts?\b"),
+    ("letter", r"\bsigns? (them|him|her|a deal)\b|\bmemo\b|\bletters?\b|\bemails?\b|\bresign\w*\b|\bannounce\w*\b|\bcontracts?\b"),
+    ("idea", r"not enough\?|\bnext idea|\bideas?\b"),
+    ("shot", r"\bshoot\w*\b|\bshots?\b|\bhalf court\b|\bfree throw\b"),
+    ("poster", r"\bposters?\b|\bhighlights?\b|\bbillboards?\b"),
     ("medal", r"\bmedals?\b|\bgold\b|\bolympic\w*\b"),
     ("crown", r"\bbest ever\b|\bking\b|\bgreatest\b|\bface of\b|\bdynasty\b"),
 ]
