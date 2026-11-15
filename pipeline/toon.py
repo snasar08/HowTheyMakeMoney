@@ -80,6 +80,8 @@ def outfit(hero: dict | None, slug: str = "", sport: str = "", name: str = "") -
         o["chest"] = str(s["chest"])[:6]
     if s.get("outfit") == "dress":
         o["dress"] = o["jacket"]
+    if float((hero or {}).get("height") or 1) >= 1.15:
+        o["build"] = "tall"                               # e.g. Wembanyama (height 1.3)
     return o
 
 

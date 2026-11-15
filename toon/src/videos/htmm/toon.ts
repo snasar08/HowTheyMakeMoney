@@ -13,7 +13,7 @@ const SH_SKIN: C3 = [0.96, 0.86, 0.84]; // measured shadow/lit ratio on skin hea
 const SH_CLOTH: C3 = [0.64, 0.66, 0.74]; // torsos: lit side -> far side ~0.65
 const SH_FELT: C3 = [0.62, 0.62, 0.7];
 
-export type Build = "adult" | "stout" | "kid";
+export type Build = "adult" | "stout" | "kid" | "tall";
 export type Outfit = {
   jacket: string; pants: string; boots: string; hat?: string | null; belt?: string | null; buttons?: string; rifle?: boolean;
   sash?: string; sword?: boolean; moustache?: string; skin?: string; head?: number; cap?: string; hair?: string; dress?: string;
@@ -520,6 +520,7 @@ const BUILD: Record<Build, { a: number; torso: number; legs: number; tw: number 
   adult: { a: 118, torso: 1.1, legs: 1.4, tw: 0.8 },
   stout: { a: 118, torso: 1.15, legs: 1.32, tw: 0.92 },
   kid: { a: 112, torso: 0.85, legs: 1.0, tw: 0.72 },
+  tall: { a: 118, torso: 1.3, legs: 1.95, tw: 0.74 },   // very tall players (Wembanyama)
 };
 
 export type FrontOpts = {
