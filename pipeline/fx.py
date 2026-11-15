@@ -36,8 +36,8 @@ _NUM = re.compile(r"\d[\d,]*(?:\.\d+)?")
 def count_up(text: str, p: float) -> str:
     """Replace the first number in text with its value * ease_out(p), keeping commas/decimals."""
     m = _NUM.search(text)
-    if not m or p >= 1:
-        return text
+    if not m or p >= 1 or re.match(r"\s*step", text, re.I) or float(m.group().replace(",", "") or 0) < 10:
+        return text                      # "AGE 3" / "STEP 4" counting up read as wrong numbers (Nov 15)
     raw = m.group()
     dec = len(raw.split(".")[1]) if "." in raw else 0
     v = float(raw.replace(",", "")) * ease_out(p)

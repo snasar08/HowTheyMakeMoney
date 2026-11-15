@@ -1175,7 +1175,8 @@ class Renderer:
                 frame = fx.grade(frame, n)
                 if lp:
                     # the name banner sits at the top (famous format): the title goes under it, not behind it
-                    fx.hook(frame, self.s.get("title", ""), gt, font, BLACK, y=345 if self.s.get("name_card") else 150)
+                    fx.hook(frame, self.s.get("title", ""), gt, font, BLACK,
+                            y=(410 if self.s.get("name_sub") else 345) if self.s.get("name_card") else 150)   # below the banner + its sub line
                 self._hud(frame, scenes, si, t)
                 self._name(frame, gt)
                 self._cta(frame, si, t)
@@ -1356,7 +1357,8 @@ class Renderer:
         f = fit_font(v["stat"], BLACK, SAFE_X1 - SAFE_X0, 210, 90)
         f = font(BLACK, max(20, int(f.size * (0.5 + 0.5 * pop))))
         cx = (SAFE_X0 + SAFE_X1) / 2
-        shown = fx.count_up(v["stat"], tb / 0.5) if b == 0 and fx.ON else v["stat"]
+        # the opening number shows whole (it is the cover frame and the hook); later scenes count up
+        shown = fx.count_up(v["stat"], tb / 0.5) if b == 0 and fx.ON and si != 0 else v["stat"]
         draw_centered(d, cx, 430, shown, f, (255, 221, 0), 14, (0, 0, 0))
         if b == 0 and fx.is_huge(v["stat"]):
             fx.burst(frame, cx, 430 + f.size / 2, tb - 0.45, seed=si)
