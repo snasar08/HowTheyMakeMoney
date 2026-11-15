@@ -1175,7 +1175,8 @@ class Renderer:
                 frame = fx.grade(frame, n)
                 if lp:
                     # the name banner sits at the top (famous format): the title goes under it, not behind it
-                    fx.hook(frame, self.s.get("title", ""), gt, font, BLACK, y=345 if self.s.get("name_card") else 150)
+                    fx.hook(frame, self.s.get("title", ""), gt, font, BLACK,
+                            y=(410 if self.s.get("name_sub") else 345) if self.s.get("name_card") else 150)   # below the banner + its sub line
                 self._hud(frame, scenes, si, t)
                 self._name(frame, gt)
                 self._cta(frame, si, t)
