@@ -1,0 +1,283 @@
+{
+  "format": "story",
+  "story_mode": "plan",
+  "visual_style": "lowpoly",
+  "hook_style": "surprise",
+  "title_style": "statement",
+  "theme": "bold_bright",
+  "status": "draft",
+  "images": {},
+  "hud_label": "THE AI RACE",
+  "id": "123",
+  "slug": "plan-nvidia-ai-fight",
+  "company": "Nvidia",
+  "score": 94,
+  "title": "OpenAI Fired Its Boss. Nvidia Won Anyway.",
+  "name_card": "Jensen Huang",
+  "name_sub": "Nvidia, a hypothetical plan",
+  "description": "In November 2023, OpenAI's board fired its boss, Sam Altman. Five days later he was back. While the AI companies fight, one company sells to all of them.\n\nReal: OpenAI's board removed Sam Altman on November 17, 2023, and he was reinstated on November 22; Nvidia makes the graphics chips (GPUs) used for AI and was founded in 1993 by Jensen Huang, Chris Malachowsky and Curtis Priem. Everything after that is a made-up, hypothetical master plan for fun: imagined steps, not Nvidia news or anything Nvidia has announced.\n\nSources:\n- Wikipedia: Removal of Sam Altman from OpenAI: https://en.wikipedia.org/wiki/Removal_of_Sam_Altman_from_OpenAI\n- Wikipedia: Nvidia: https://en.wikipedia.org/wiki/Nvidia\n\n#shorts #nvidia #openai #howtheymakemoney",
+  "tags": [
+    "nvidia",
+    "openai",
+    "ai race",
+    "shorts"
+  ],
+  "loop": "So next time someone picks a side in the AI race, remember:",
+  "cta": "Who wins the AI race? Comment your pick.",
+  "cta_question": "Who wins the AI race?",
+  "hero": {
+    "skin": "e3b98f",
+    "hair": "short",
+    "hair_color": "3a3a3a",
+    "beard": "none",
+    "outfit": "suit",
+    "shirt": "151515",
+    "pants": "151515",
+    "shoes": "151515",
+    "tie": "151515",
+    "height": 0.98
+  },
+  "scenes": [
+    {
+      "narration": "In 2023, OpenAI fires its own boss. Five days later, he's back.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": "NOV 2023",
+        "stat_sub": "fired, then back"
+      },
+      "toon": [
+        {
+          "place": "office",
+          "beat": "logo",
+          "mood": "shock",
+          "brand": {
+            "name": "OpenAI",
+            "bg": "#111111",
+            "fg": "#ffffff",
+            "icon": "brain"
+          }
+        },
+        {
+          "place": "office",
+          "beat": "clock",
+          "mood": "dazed"
+        }
+      ]
+    },
+    {
+      "narration": "Everyone picks a side. But you're Nvidia, and you sell the chips every side needs.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": "THE FIGHT",
+        "stat_sub": "everyone picks a side"
+      },
+      "toon": [
+        {
+          "place": "street",
+          "beat": "queue",
+          "mood": "nervous",
+          "crowd": 40
+        },
+        {
+          "place": "servers",
+          "beat": "logo",
+          "mood": "scheme",
+          "brand": {
+            "name": "Nvidia",
+            "bg": "#76b900",
+            "fg": "#111111",
+            "icon": "chip"
+          }
+        }
+      ]
+    },
+    {
+      "narration": "So you make a plan. Every new AI lab is a new customer. So you help people start more AI labs.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": "STEP 1",
+        "stat_sub": "more labs, more customers"
+      },
+      "toon": [
+        {
+          "place": "office",
+          "beat": "walk",
+          "mood": "scheme"
+        },
+        {
+          "place": "street",
+          "beat": "money",
+          "mood": "laugh",
+          "props": [
+            "cash"
+          ]
+        },
+        {
+          "place": "office",
+          "beat": "walk",
+          "mood": "proud",
+          "crowd": 12,
+          "props": [
+            "check"
+          ]
+        }
+      ]
+    },
+    {
+      "narration": "They all race to build the biggest brain. So they all need more chips. You sell them faster than you can make them.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": "STEP 2",
+        "stat_sub": "chips sell out"
+      },
+      "toon": [
+        {
+          "place": "servers",
+          "beat": "walk",
+          "mood": "excited"
+        },
+        {
+          "place": "street",
+          "beat": "queue",
+          "mood": "happy",
+          "crowd": 55
+        },
+        {
+          "place": "servers",
+          "beat": "clock",
+          "mood": "laugh",
+          "brand": {
+            "name": "Nvidia",
+            "bg": "#76b900",
+            "fg": "#111111",
+            "icon": "chip"
+          }
+        }
+      ]
+    },
+    {
+      "narration": "Then robots need brains too. So you put your chips in every robot and every car.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": "STEP 3",
+        "stat_sub": "chips in every robot"
+      },
+      "toon": [
+        {
+          "place": "street",
+          "beat": "walk",
+          "mood": "scheme"
+        },
+        {
+          "place": "road",
+          "beat": "drive",
+          "mood": "excited",
+          "brand": {
+            "name": "Nvidia",
+            "bg": "#76b900",
+            "fg": "#111111",
+            "icon": "chip"
+          }
+        }
+      ]
+    },
+    {
+      "narration": "Still not enough? You build a chip factory on the Moon. No traffic, plenty of room.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": "STEP 4",
+        "stat_sub": "a factory on the Moon"
+      },
+      "toon": [
+        {
+          "place": "office",
+          "beat": "walk",
+          "mood": "scheme"
+        },
+        {
+          "place": "space",
+          "beat": "logo",
+          "mood": "laugh",
+          "action": "cheer",
+          "brand": {
+            "name": "Nvidia Moon",
+            "bg": "#76b900",
+            "fg": "#111111",
+            "icon": "chip"
+          }
+        },
+        {
+          "place": "space",
+          "beat": "walk",
+          "mood": "proud"
+        }
+      ]
+    },
+    {
+      "narration": "The AI companies keep fighting. And every round, Nvidia gets paid.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": "THE PLAN",
+        "stat_sub": "sell to every side"
+      },
+      "toon": [
+        {
+          "place": "street",
+          "beat": "queue",
+          "mood": "calm",
+          "crowd": 30
+        },
+        {
+          "place": "street",
+          "beat": "money",
+          "mood": "laugh",
+          "brand": {
+            "name": "Nvidia",
+            "bg": "#76b900",
+            "fg": "#111111",
+            "icon": "chip"
+          },
+          "action": "cheer"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Removal of Sam Altman from OpenAI",
+      "url": "https://en.wikipedia.org/wiki/Removal_of_Sam_Altman_from_OpenAI"
+    },
+    {
+      "title": "Wikipedia: Nvidia",
+      "url": "https://en.wikipedia.org/wiki/Nvidia"
+    }
+  ]
+}

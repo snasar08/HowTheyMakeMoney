@@ -1,0 +1,296 @@
+{
+  "format": "story",
+  "story_mode": "plan",
+  "visual_style": "lowpoly",
+  "hook_style": "surprise",
+  "title_style": "statement",
+  "theme": "bold_bright",
+  "status": "draft",
+  "images": {},
+  "hud_label": "THE AI RACE",
+  "id": "121",
+  "slug": "plan-zuck-ai-race",
+  "company": "Meta",
+  "score": 93,
+  "title": "You're Zuckerberg. Win the AI Race.",
+  "name_card": "Mark Zuckerberg",
+  "name_sub": "a hypothetical master plan",
+  "description": "You're Mark Zuckerberg, and you want to win the AI race.\n\nThe first step is real: Meta released its Llama AI models from February 2023. Everything after that is a made-up, hypothetical master plan for fun: imagined steps, not Meta news or anything Meta has announced.\n\nSources:\n- Wikipedia: Llama (language model): https://en.wikipedia.org/wiki/Llama_(language_model)\n\n#shorts #meta #ai #howtheymakemoney",
+  "tags": [
+    "meta",
+    "zuckerberg",
+    "ai race",
+    "shorts"
+  ],
+  "loop": "So next time your feed knows exactly what you want, remember:",
+  "cta": "Meta or OpenAI? Comment your pick.",
+  "cta_question": "Meta or OpenAI?",
+  "hero": {
+    "skin": "efc7a4",
+    "hair": "curly",
+    "hair_color": "5a3b22",
+    "beard": "none",
+    "outfit": "tee",
+    "shirt": "8a8f98",
+    "pants": "2b2f3a",
+    "shoes": "f4f4f4",
+    "height": 0.97
+  },
+  "scenes": [
+    {
+      "narration": "You're Mark Zuckerberg, and you're losing the AI race. Everyone is talking about someone else's chatbot.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": "THE AI RACE",
+        "stat_sub": "you're behind"
+      },
+      "toon": [
+        {
+          "place": "office",
+          "beat": "logo",
+          "mood": "nervous",
+          "brand": {
+            "name": "Meta",
+            "bg": "#0866ff",
+            "fg": "#ffffff",
+            "icon": "globe"
+          }
+        },
+        {
+          "place": "street",
+          "beat": "queue",
+          "mood": "shock",
+          "crowd": 35,
+          "props": [
+            "laptop"
+          ]
+        }
+      ]
+    },
+    {
+      "narration": "So in 2023, you do something nobody expects. You give your AI away for free. Llama.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "office",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": "2023",
+        "stat_sub": "Llama, free"
+      },
+      "toon": [
+        {
+          "place": "office",
+          "beat": "walk",
+          "mood": "scheme",
+          "props": [
+            "laptop"
+          ]
+        },
+        {
+          "place": "street",
+          "beat": "money",
+          "mood": "laugh",
+          "action": "cheer"
+        },
+        {
+          "place": "servers",
+          "beat": "logo",
+          "mood": "proud",
+          "brand": {
+            "name": "Llama",
+            "bg": "#0866ff",
+            "fg": "#ffffff",
+            "icon": "brain"
+          }
+        }
+      ]
+    },
+    {
+      "narration": "Now every coder on Earth is building on your AI. But free doesn't win the race. You need the smartest brains.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": "STEP 1",
+        "stat_sub": "everyone builds on it"
+      },
+      "toon": [
+        {
+          "place": "street",
+          "beat": "queue",
+          "mood": "happy",
+          "crowd": 45,
+          "props": [
+            "laptop"
+          ]
+        },
+        {
+          "place": "office",
+          "beat": "walk",
+          "mood": "stern"
+        },
+        {
+          "place": "office",
+          "beat": "money",
+          "mood": "scheme",
+          "props": [
+            "check"
+          ]
+        }
+      ]
+    },
+    {
+      "narration": "So you hire them. Then they need more computers than exist. So you build data centers the size of towns.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": "STEP 2",
+        "stat_sub": "towns of computers"
+      },
+      "toon": [
+        {
+          "place": "office",
+          "beat": "walk",
+          "mood": "proud",
+          "crowd": 12
+        },
+        {
+          "place": "servers",
+          "beat": "walk",
+          "mood": "nervous"
+        },
+        {
+          "place": "servers",
+          "beat": "sign",
+          "mood": "excited",
+          "brand": {
+            "name": "Meta AI",
+            "bg": "#0866ff",
+            "fg": "#ffffff",
+            "icon": "chip"
+          }
+        }
+      ]
+    },
+    {
+      "narration": "Those need power. So you build your own power plants. Then you put the AI in glasses, so it sees what you see.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": "STEP 3",
+        "stat_sub": "AI in your glasses"
+      },
+      "toon": [
+        {
+          "place": "street",
+          "beat": "walk",
+          "mood": "nervous"
+        },
+        {
+          "place": "street",
+          "beat": "sign",
+          "mood": "scheme",
+          "brand": {
+            "name": "Meta Power",
+            "bg": "#0866ff",
+            "fg": "#ffffff",
+            "icon": "bolt"
+          }
+        },
+        {
+          "place": "street",
+          "beat": "logo",
+          "mood": "excited",
+          "brand": {
+            "name": "Meta Glasses",
+            "bg": "#111111",
+            "fg": "#ffffff",
+            "icon": "globe"
+          },
+          "crowd": 20
+        }
+      ]
+    },
+    {
+      "narration": "Still not enough? You launch the servers into space, where the sun never sets.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": "STEP 4",
+        "stat_sub": "servers in space"
+      },
+      "toon": [
+        {
+          "place": "office",
+          "beat": "walk",
+          "mood": "scheme"
+        },
+        {
+          "place": "space",
+          "beat": "logo",
+          "mood": "laugh",
+          "action": "cheer",
+          "brand": {
+            "name": "Meta Orbit",
+            "bg": "#0b2a6f",
+            "fg": "#ffffff",
+            "icon": "sun"
+          }
+        }
+      ]
+    },
+    {
+      "narration": "Now three billion people ask your AI everything. And it all started with giving it away.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": "THE PLAN",
+        "stat_sub": "give it away, win it all"
+      },
+      "toon": [
+        {
+          "place": "street",
+          "beat": "queue",
+          "mood": "proud",
+          "crowd": 60
+        },
+        {
+          "place": "street",
+          "beat": "sign",
+          "mood": "laugh",
+          "brand": {
+            "name": "Meta",
+            "bg": "#0866ff",
+            "fg": "#ffffff",
+            "icon": "globe"
+          }
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Llama (language model)",
+      "url": "https://en.wikipedia.org/wiki/Llama_(language_model)"
+    }
+  ]
+}

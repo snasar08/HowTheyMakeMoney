@@ -245,11 +245,11 @@ research more ... maintain quality too")**. Goal: build a buffer, capped so cred
    **Story format (Nov 15, Sam; toon look only):** `format: "story"`, `visual_style: "lowpoly"`, 5-9 scenes, may run
    ~45-65 s, told sentence by sentence like the reference "You're Elon Musk..." Short. Two modes (`story_mode`):
    - `history`: the real story of a big company/person, second person ("You quit a Wall Street job to sell books
-     online. It's 1994."), every fact sourced (078 Bezos, 079 Nike).
+     online. It's 1994."), every fact sourced (118 Bezos, 119 Nike).
    - `plan`: a HYPOTHETICAL escalating master plan, Sam's words: "Nike wants to take over the shoe game, so they
      sign athletes, they take over, then fans want dunks, so robotic dunk shoes, then everyone's dunking, so...
      just like the Elon video, the next idea, the next idea", feasible-sounding, each step caused by the last,
-     getting bigger, ending on a twist (080 Nike). Real numbers only if sourced; imagined steps carry no fake
+     getting bigger, ending on a twist (120 Nike; AI race: 121 Zuckerberg, 122 Bezos, 123 Nvidia). Real numbers only if sourced; imagined steps carry no fake
      statistics; the description says plainly it is a made-up plan, not company news.
    Any big company everyone knows. When a company/product appears or is created, its logo pops up (code-drawn:
    `brand` {name, bg, fg, icon}; brand names on screen are allowed since Nov 15, plain lettering, no copied logo art).
