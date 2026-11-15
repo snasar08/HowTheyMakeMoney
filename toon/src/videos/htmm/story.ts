@@ -393,7 +393,7 @@ const FR: Record<string, (id: number, f0: number) => (f: number) => Shot> = {
   cu: (id, f0) => (f) => dolly(off(id, f, 3.3, -0.6, 1.5), off(id, f, 0, 0, 1.4), pushK(f, f0, 0.002), { fov: 34, roll: 0.03 }),
   low: (id, f0) => (f) => dolly(off(id, f, 4.4, -1.0, 0.5), off(id, f, 0, 0, 1.25), pushK(f, f0, 0.0025), { fov: 42, roll: -0.04 }),
   // beats
-  side: (id, f0) => (f) => dolly(off(id, f, 0.8, 11.5, 1.6), off(id, f, 0.6, 0, 1.25), pushK(f, f0, 0.002), { fov: 40 }),
+  side: (id, f0) => (f) => dolly(off(id, f, 0.25, 12.5, 1.6), off(id, f, 0.1, 0, 1.25), pushK(f, f0, 0.002), { fov: 40 }),
   chase: (id, f0) => (f) => dolly(off(id, f, 7.5, 8.0, 2.4), off(id, f, 0.2, 0, 1.2), pushK(f, f0, 0.002), { fov: 40, roll: 0.03 }),
   wide2: (id, f0) => (f) => dolly(off(id, f, 7.5, -3.2, 2.6), off(id, f, 0, 0.8, 1.6), pushK(f, f0, 0.0022), { fov: 44 }),
   two: (id, f0) => (f) => dolly(off(id, f, 5.2, -1.4, 1.6), off(id, f, 0, 0.75, 1.5), pushK(f, f0, 0.0025), { fov: 40 }),
