@@ -1,1 +1,3 @@
-BridgeShort 60,400,800,1100,1500,1900 0.5
+BridgeShort 400 0.5 props_nopost.json swangle
+BridgeShort 400 0.5 - angle-egl
+BridgeShort 400 0.5 - swiftshader

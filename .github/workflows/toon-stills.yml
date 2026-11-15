@@ -1,7 +1,7 @@
 name: Toon stills
 
 # Push branch toon-stills: renders still frames of a toon composition (three.js + Remotion, software GL) and pushes
-# them to branch toon-stills-results-<run>. toon/stills.txt = "<compositionId> <frames> <scale> [props.json]".
+# them to branch toon-stills-results-<run>. toon/stills.txt: one render per line, "<compositionId> <frames> <scale> [props.json|-] [gl]".
 on:
   push:
     branches: ["toon-stills"]
@@ -35,8 +35,13 @@ jobs:
           npm ls --depth=0 2>/dev/null | tee ../versions.txt
       - working-directory: toon
         run: |
-          read -r ID FRAMES SCALE PROPS < stills.txt
-          node scripts/stills.mjs "$ID" "out/s_" "$FRAMES" "${SCALE:-0.5}" $PROPS 2>&1 | tee ../stills.log
+          n=0
+          while read -r ID FRAMES SCALE PROPS GLV; do
+            [ -z "$ID" ] && continue
+            n=$((n+1))
+            echo "=== line $n: $ID $FRAMES $SCALE $PROPS $GLV" | tee -a ../stills.log
+            DEBUG=1 GL="${GLV:-swangle}" node scripts/stills.mjs "$ID" "out/v${n}_" "$FRAMES" "${SCALE:-0.5}" "${PROPS:--}" 2>&1 | tee -a ../stills.log
+          done < stills.txt
       - if: always()
         run: |
           mkdir -p r && cp toon/out/*.jpg r/ 2>/dev/null || true
