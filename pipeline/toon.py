@@ -86,10 +86,16 @@ def make_plan(script: dict, recorded: dict | None = None) -> dict:
 
 
 def plates(plan: dict, frames_dir: Path, plates_dir: Path) -> int:
-    """Remotion's image sequence (element-<frame>.jpeg) -> <plates_dir>/<slug>/<scene>_<frame>.jpg"""
+    """Shard folders from toon/scripts/frames.mjs (<frames_dir>/<shard>/ with range.json + the JPEGs in frame order)
+    -> <plates_dir>/<slug>/<scene>_<frame>.jpg, the names render.py looks for (LP_PLATES)."""
     out = plates_dir / plan["slug"]
     out.mkdir(parents=True, exist_ok=True)
-    files = {int(re.search(r"(\d+)\.jpe?g$", p.name).group(1)): p for p in frames_dir.glob("*.jp*g")}
+    files = {}
+    for rj in frames_dir.rglob("range.json"):
+        r = json.loads(rj.read_text())
+        imgs = sorted(rj.parent.glob("*.jp*g"), key=lambda q: int(re.findall(r"\d+", q.stem)[-1]))
+        for k, q in enumerate(imgs):
+            files[r["start"] + k] = q
     n = 0
     for sc in plan["scenes"]:
         for j in range(sc["n"]):
