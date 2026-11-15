@@ -308,5 +308,70 @@
       "title": "Wikipedia: Nike, Inc. (who Nike is; the plan itself is imagined)",
       "url": "https://en.wikipedia.org/wiki/Nike,_Inc."
     }
-  ]
+  ],
+  "aivideo": [
+    {
+      "url": "assets/aivideo/120/c1.mp4",
+      "lines": [
+        0,
+        16
+      ]
+    },
+    {
+      "url": "assets/aivideo/120/c2.mp4",
+      "lines": [
+        1
+      ]
+    },
+    {
+      "url": "assets/aivideo/120/c3.mp4",
+      "lines": [
+        2,
+        3
+      ]
+    },
+    {
+      "url": "assets/aivideo/120/c4.mp4",
+      "lines": [
+        4,
+        5
+      ]
+    },
+    {
+      "url": "assets/aivideo/120/c5.mp4",
+      "lines": [
+        6
+      ]
+    },
+    {
+      "url": "assets/aivideo/120/c6.mp4",
+      "lines": [
+        7,
+        8
+      ]
+    },
+    {
+      "url": "assets/aivideo/120/c7.mp4",
+      "lines": [
+        9,
+        10
+      ]
+    },
+    {
+      "url": "assets/aivideo/120/c8.mp4",
+      "lines": [
+        11,
+        12
+      ]
+    },
+    {
+      "url": "assets/aivideo/120/c9.mp4",
+      "lines": [
+        13,
+        14,
+        15
+      ]
+    }
+  ],
+  "aivideo_note": "Nov 15 2026: one premium Short (Sam). 9 Higgsfield Seedance 2.5 clips, 5 s each, 9:16, no logos/real people in prompts; 315 credits."
 }

@@ -307,3 +307,7 @@ if __name__ == "__main__":
     elif cmd == "plates":
         plan = json.loads(Path(sys.argv[2]).read_text(encoding="utf-8"))["plan"]
         print(f"[toon] {plates(plan, Path(sys.argv[3]), Path(sys.argv[4]))}/{plan['total']} plates")
+        from . import aivideo                      # Higgsfield AI-video Shorts replace the toon frames with their clips
+        sc = aivideo.script_for(plan["slug"])
+        if sc and sc.get("aivideo"):
+            aivideo.override(sc, plan, Path(sys.argv[4]))
