@@ -1,0 +1,283 @@
+{
+  "id": "126",
+  "slug": "plan-ant-takeover",
+  "company": "",
+  "format": "story",
+  "story_mode": "plan",
+  "visual_style": "lowpoly",
+  "hook_style": "surprise",
+  "title_style": "statement",
+  "theme": "bold_bright",
+  "status": "draft",
+  "score": 94,
+  "title": "You're Ant. Become the Face of the NBA.",
+  "name_card": "Anthony Edwards",
+  "name_sub": "Timberwolves, a hypothetical plan",
+  "images": {},
+  "hud_label": "THE PLAN",
+  "description": "You're Anthony Edwards, and you want to be the face of the whole NBA.\n\nReal (Wikipedia): Anthony Edwards was the first overall pick by the Minnesota Timberwolves in the 2020 NBA draft, is a four-time All-Star, and won a gold medal with the 2024 U.S. Olympic team. Everything after that is a made-up, hypothetical plan for fun: imagined steps, not news and not anything Anthony Edwards has said or planned.\n\nSources:\n- Wikipedia: Anthony Edwards: https://en.wikipedia.org/wiki/Anthony_Edwards_(basketball)\n\n#shorts #nba #ant #howtheymakemoney",
+  "sources": [
+    {
+      "title": "Wikipedia: Anthony Edwards",
+      "url": "https://en.wikipedia.org/wiki/Anthony_Edwards_(basketball)"
+    }
+  ],
+  "tags": [
+    "anthony edwards",
+    "timberwolves",
+    "nba",
+    "shorts"
+  ],
+  "loop": "So next time Ant dunks on someone, remember:",
+  "cta": "Ant or Wemby, who's the next face? Comment your pick.",
+  "cta_question": "Ant or Wemby?",
+  "hero": {
+    "skin": "6b4430",
+    "hair": "short",
+    "hair_color": "141010",
+    "beard": "stubble",
+    "beard_color": "141010",
+    "shirt": "0c2340",
+    "pants": "0c2340",
+    "trim": "78be20",
+    "socks": "f4f4f4",
+    "shoes": "78be20",
+    "height": 1.02,
+    "outfit": "kit",
+    "number": 5
+  },
+  "scenes": [
+    {
+      "narration": "You're Anthony Edwards. First pick, Olympic gold. Now you want to be the face of the whole NBA.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "ball"
+        ],
+        "stat": "ANT",
+        "stat_sub": "the face of the NBA"
+      },
+      "toon": [
+        {
+          "place": "court",
+          "beat": "walk",
+          "mood": "calm",
+          "crowd": 15
+        },
+        {
+          "place": "court",
+          "beat": "sign",
+          "mood": "proud",
+          "brand": {
+            "name": "Gold",
+            "bg": "#b8860b",
+            "fg": "#ffffff",
+            "icon": "star"
+          }
+        },
+        {
+          "place": "court",
+          "beat": "logo",
+          "mood": "scheme",
+          "brand": {
+            "name": "Wolves",
+            "bg": "#0c2340",
+            "fg": "#78be20",
+            "icon": "star"
+          }
+        }
+      ]
+    },
+    {
+      "narration": "Step one, dunk on everybody. Every dunk goes viral, so every kid knows your name.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "ball"
+        ],
+        "stat": "STEP 1",
+        "stat_sub": "dunk on everybody"
+      },
+      "toon": [
+        {
+          "place": "court",
+          "beat": "walk",
+          "mood": "laugh",
+          "action": "run",
+          "crowd": 30
+        },
+        {
+          "place": "street",
+          "beat": "phone",
+          "mood": "excited",
+          "crowd": 25
+        }
+      ]
+    },
+    {
+      "narration": "Then you talk the funniest trash in the league. So every interview gets more views than the game.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "ball"
+        ],
+        "stat": "STEP 2",
+        "stat_sub": "the best interviews"
+      },
+      "toon": [
+        {
+          "place": "stage",
+          "beat": "walk",
+          "mood": "laugh",
+          "props": [
+            "mic"
+          ]
+        },
+        {
+          "place": "street",
+          "beat": "queue",
+          "mood": "happy",
+          "crowd": 45
+        }
+      ]
+    },
+    {
+      "narration": "But faces of the league win titles. So you bring a ring to Minnesota, in the cold.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "ball"
+        ],
+        "stat": "STEP 3",
+        "stat_sub": "a ring in the cold"
+      },
+      "toon": [
+        {
+          "place": "court",
+          "beat": "walk",
+          "mood": "stern"
+        },
+        {
+          "place": "court",
+          "beat": "money",
+          "mood": "laugh",
+          "action": "cheer",
+          "crowd": 40
+        }
+      ]
+    },
+    {
+      "narration": "Fans fly in from everywhere. So Minnesota builds a heated dome, the size of a city.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "ball"
+        ],
+        "stat": "STEP 4",
+        "stat_sub": "a dome for fans"
+      },
+      "toon": [
+        {
+          "place": "road",
+          "beat": "drive",
+          "mood": "happy",
+          "brand": {
+            "name": "Wolves",
+            "bg": "#0c2340",
+            "fg": "#78be20",
+            "icon": "star"
+          }
+        },
+        {
+          "place": "street",
+          "beat": "sign",
+          "mood": "proud",
+          "brand": {
+            "name": "Ant Dome",
+            "bg": "#0c2340",
+            "fg": "#78be20",
+            "icon": "sun"
+          }
+        }
+      ]
+    },
+    {
+      "narration": "Still not enough? You get your own cartoon, your own game, your own shoe.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "ball"
+        ],
+        "stat": "STEP 5",
+        "stat_sub": "your own everything"
+      },
+      "toon": [
+        {
+          "place": "street",
+          "beat": "walk",
+          "mood": "scheme"
+        },
+        {
+          "place": "street",
+          "beat": "logo",
+          "mood": "excited",
+          "props": [
+            "controller"
+          ],
+          "brand": {
+            "name": "Ant",
+            "bg": "#78be20",
+            "fg": "#0c2340",
+            "icon": "play"
+          }
+        }
+      ]
+    },
+    {
+      "narration": "Now the NBA logo might as well be you.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "ball"
+        ],
+        "stat": "THE PLAN",
+        "stat_sub": "the face of the NBA"
+      },
+      "toon": [
+        {
+          "place": "court",
+          "beat": "sign",
+          "mood": "laugh",
+          "brand": {
+            "name": "Wolves",
+            "bg": "#0c2340",
+            "fg": "#78be20",
+            "icon": "star"
+          },
+          "crowd": 30
+        }
+      ]
+    }
+  ]
+}
