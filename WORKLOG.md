@@ -400,3 +400,20 @@ Sam: "the better free character models... do it yourself". Done in one session.
 - Sam: "I LOVE THE VOICE FOR uber driver vid, always use that one" = Gemini Umbriel +1.5 st (already the default).
 - Local test renders: portable Node 22.11 (nodejs.org zip, SHA-256 checked) in the scratchpad, Chrome with GL=angle,
   ~7 s per half-size still vs 16 s on GitHub. Sam allowed testing on his machine.
+
+## 2026-11-15 (afternoon/evening): toon look goes live
+- Sam's rules added: check every test video frame by frame at 30 fps (`python -m pipeline.allframes`, read every
+  sheet); scenery = everything a line mentions is on screen ("if we talk about the sneaker bus, we see it").
+- Things library (toon/src/videos/htmm/things.ts, ~30 code-drawn objects: spring shoes, sneaker bus, robot, chip,
+  drone, power plant, factory, satellite, glasses, chatbot, ring, crown, medal, stadium, dome, books, e-reader,
+  memo, idea bulb, long shot, poster, TV...). Per-sentence `things`, plus `pipeline/toon.things_for` adds them from
+  the line's words; the director (Gemini) can pick them too. Garage place; tall build (Wemby).
+- From frame checks: hard cut every <=1.7 s, no navy second half, signs/phones/logos inside the frame, $ on cash,
+  no count-up for STEP labels / small numbers, opening stat whole, outro montage instead of a 10 s held shot,
+  hook title below the name banner's sub line (also fixed the live Brady cover).
+- Tests (reviewer): Wemby plan 9/10, Nike plan 8/10, Ronaldo nightly dry run 8/10, Jensen 6-7/10 (reviewer's
+  knowledge predates the Nov 12 resignation and calls the affair line false; sourced, but Sam decides). Old look
+  median 4/10. Merged to main (Sam's rule: test vs old, switch if it wins). LOOK=blender switches back.
+- New drafts (need Sam's OK): 118 Bezos history, 119 Nike history, 120 Nike plan, 121 Zuck AI race, 122 Bezos AI
+  race, 123 Jensen vs Nvidia, 124 Wemby, 125 SGA, 126 Ant, 127 Luka. They run 45-60 s; the data says under 30 s
+  does best, so the first ones posted are a test.
