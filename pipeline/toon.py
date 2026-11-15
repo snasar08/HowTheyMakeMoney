@@ -138,6 +138,7 @@ THING_WORDS = [
     ("tv", r"\bcartoons?\b|\btv\b|\bstream\w*\b|\bvideos?\b"),
     ("books", r"\bbooks?\b|\bbookstore\b"),
     ("ereader", r"\be-?readers?\b|\bkindle\b|\btablets?\b"),
+    ("letter", r"\bmemo\b|\bletters?\b|\bemails?\b|\bresign\w*\b|\bannounce\w*\b|\bcontracts?\b"),
     ("medal", r"\bmedals?\b|\bgold\b|\bolympic\w*\b"),
     ("crown", r"\bbest ever\b|\bking\b|\bgreatest\b|\bface of\b|\bdynasty\b"),
 ]
@@ -252,10 +253,11 @@ def make_plan(script: dict, recorded: dict | None = None) -> dict:
                 key = (e.get("place"), e["beat"], tuple(e.get("things") or []))
                 if key not in seen:
                     seen.add(key); uniq.append(e)
+            uniq = [e for e in uniq if e.get("si") != scenes[0][0]][::-1] or uniq    # latest, biggest steps first; not the opener
             pos, kk = lo + n, 0
             while tail > 0:
                 m = min(tail, 45) if tail - 45 >= 20 else tail
-                src = uniq[(kk * 3) % len(uniq)] if uniq else out[-1]
+                src = uniq[kk % len(uniq)] if uniq else out[-1]
                 out.append({**src, "a": a, "n": m, "frLo": pos, "si": i, "line": "(outro) " + src.get("line", "")[:60]})
                 a += m; pos += m; tail -= m; kk += 1
     slug = f"{script.get('id', '')}-{script.get('slug', '')}"

@@ -399,7 +399,7 @@ const FR: Record<string, (id: number, f0: number) => (f: number) => Shot> = {
   two: (id, f0) => (f) => dolly(off(id, f, 5.2, -1.4, 1.6), off(id, f, 0, 0.75, 1.5), pushK(f, f0, 0.0025), { fov: 40 }),
   line: (id, f0) => (f) => dolly(off(id, f, -2.2, 3.4, 1.7), off(id, f, 6, 0.3, 1.3), pushK(f, f0, 0.002), { fov: 42 }),
 };
-const BSEQ: Record<string, string[]> = { logo: ["two", "wide2", "two"], sign: ["wide2", "two", "wide2"], drive: ["side", "chase", "side"], clock: ["wide2", "two", "cu"], phone: ["two", "wide2", "two"],
+const BSEQ: Record<string, string[]> = { logo: ["two", "wide2", "two"], sign: ["wide2", "two", "wide2"], drive: ["side", "chase", "side"], clock: ["wide2", "two", "wide2"], phone: ["two", "wide2", "two"],
   money: ["two", "low", "wide2"], queue: ["line", "ws", "ms"] };
 const SEQ = [["ms", "low", "cu"], ["ms", "cu", "ws"], ["low", "ms", "cu"], ["ms", "ws", "low"]];   // open close: a tiny hero in an empty wide read as nothing
 const CINF: Record<string, number> = { ws: 0, ms: 11, cu: 14, low: 9 };

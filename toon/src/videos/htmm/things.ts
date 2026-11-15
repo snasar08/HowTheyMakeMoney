@@ -136,6 +136,12 @@ export const THINGS: Record<string, Thing> = {
     for (let i = 0; i < 7; i++) p.stroke([[70, 90 + i * 34], [i % 3 === 2 ? 170 : 230, 90 + i * 34]], 8, "#9aa3b5");
     p.poly(rr(120, 360, 180, 376, 6), "#5a5560", 0);
   } },
+  letter: { cw: 360, ch: 440, draw: (p) => {        // a memo / letter / email (announcements, resignations, contracts)
+    p.poly(rr(20, 20, 340, 420, 14), "#fbf8f1", 10); p.poly(rr(20, 20, 340, 95, 14), "#3f6fb5", 0);
+    txt(p, "MEMO", 180, 60, 48, "#ffffff");
+    for (let i = 0; i < 7; i++) p.stroke([[55, 140 + i * 36], [i === 6 ? 190 : 305, 140 + i * 36]], 9, "#9aa3b5");
+    p.stroke([[200, 390], [240, 372], [270, 392], [305, 370]], 6, "#2b2a33");                                    // signature
+  } },
   medal: { cw: 300, ch: 420, draw: (p) => {
     p.poly([[70, 20], [140, 20], [170, 200], [100, 200]], "#3f6fb5", 7); p.poly([[230, 20], [160, 20], [130, 200], [200, 200]], "#e2453c", 7);
     p.ell(150, 290, 110, 110, "#e0b030", 10); p.ell(150, 290, 70, 70, "#f2c94c", 6); txt(p, "1", 150, 292, 90, "#a8761a");

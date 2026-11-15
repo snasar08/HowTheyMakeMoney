@@ -68,9 +68,12 @@
         },
         {
           "place": "office",
-          "beat": "phone",
+          "beat": "walk",
           "mood": "sad",
-          "crowd": 10
+          "crowd": 10,
+          "things": [
+            "letter"
+          ]
         }
       ]
     },
