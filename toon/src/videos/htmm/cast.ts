@@ -557,8 +557,8 @@ export const stage = (id: number, t: number, _b: BridgeState, cam: CamInfo): Sta
     }
   }
   if (beat === "sign" && BR) {
-    const k = pop(0.1), x = h.x + h.d[0] * -1.2, z = h.z + h.d[1] * -1.2;
-    if (k > 0) out.fx.push({ key: `prop|sign|${s.light}|${bkey}`, cw: 900, ch: 620, x, y: h.y + 1.6 * k + 1.7, z, w: 3.4 * k, h: 2.34 * k,
+    const k = pop(0.1), x = h.x + r[0] * 1.1 + h.d[0] * -1.4, z = h.z + r[1] * 1.1 + h.d[1] * -1.4;   // open side of the frame
+    if (k > 0) out.fx.push({ key: `prop|sign|${s.light}|${bkey}`, cw: 900, ch: 620, x, y: h.y + 1.25 * k + 1.45, z, w: 2.5 * k, h: 1.72 * k,
       draw: tintDraw((pen) => {
         pen.poly(rr(60, 470, 120, 620, 6), "#5a5560", 10); pen.poly(rr(780, 470, 840, 620, 6), "#5a5560", 10);   // posts
         pen.poly(rr(16, 16, 884, 480, 34), BR.bg, 16);
@@ -572,16 +572,16 @@ export const stage = (id: number, t: number, _b: BridgeState, cam: CamInfo): Sta
     const k = pop(0.12), x = h.x + r[0] * 1.25 + h.d[0] * -0.4, z = h.z + r[1] * 1.25 + h.d[1] * -0.4;
     const spin = q((tl * 0.35) % 1, 24), B = BR;
     if (k > 0) {
-      out.fx.push({ key: `fx|rays|${spin}|${s.light}`, cw: 512, ch: 512, x: x + h.d[0] * -0.25, y: h.y + 2.05, z: z + h.d[1] * -0.25, w: 3.4 * k, h: 3.4 * k,
+      out.fx.push({ key: `fx|rays|${spin}|${s.light}`, cw: 512, ch: 512, x: x + h.d[0] * -0.25, y: h.y + 1.75, z: z + h.d[1] * -0.25, w: 2.7 * k, h: 2.7 * k,
         draw: (pen) => drawRays(pen, spin * Math.PI * 2, B.bg), soft: true });
-      out.fx.push({ key: `prop|logo|${bkey}|${s.light}`, cw: 600, ch: 600, x, y: h.y + 2.05, z, w: 2.1 * k, h: 2.1 * k,
+      out.fx.push({ key: `prop|logo|${bkey}|${s.light}`, cw: 600, ch: 600, x, y: h.y + 1.75, z, w: 1.6 * k, h: 1.6 * k,
         draw: tintDraw((pen) => drawLogo(pen, B), 600, 600) });
     }
   }
   if (beat === "phone") {
-    const k = pop(0.15), x = h.x + r[0] * 1.35, z = h.z + r[1] * 1.35;
+    const k = pop(0.15), x = h.x + r[0] * 1.05, z = h.z + r[1] * 1.05;
     const pins = Math.min(9, Math.floor(tl * 4));
-    if (k > 0) out.fx.push({ key: `prop|phone|${pins}|${s.light}|${bkey}`, cw: 420, ch: 780, x, y: h.y + 1.25 * k + 0.1, z, w: 1.25 * k, h: 2.3 * k,
+    if (k > 0) out.fx.push({ key: `prop|phone|${pins}|${s.light}|${bkey}`, cw: 420, ch: 780, x, y: h.y + 1.0 * k + 0.1, z, w: 1.0 * k, h: 1.85 * k,
       draw: tintDraw((pen) => drawPhone(pen, pins), 420, 780) });
   }
   if (beat === "money") {
@@ -787,6 +787,8 @@ const PROPS: Record<string, { cw: number; ch: number; draw: (p: Pen) => void }> 
       p.poly(rr(x, y, x + 290, y + 52, 8), k % 2 ? "#4fbf6b" : "#3fae5c", 9);
       p.poly(rr(x + 118, y, x + 172, y + 52, 3), "#f4f1ea", 6);
       p.ell(x + 56, y + 26, 14, 14, "#2f8f4a", 5);
+      p.g.font = `900 40px "Arial Black", Arial, sans-serif`; p.g.textAlign = "center"; p.g.textBaseline = "middle";
+      p.g.fillStyle = "#1f6b35"; p.g.fillText("$", x + 145, y + 28);
     }
   } },
   boxes: { cw: 420, ch: 420, draw: (p) => {

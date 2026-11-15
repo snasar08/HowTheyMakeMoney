@@ -84,13 +84,14 @@ def outfit(hero: dict | None, slug: str = "", sport: str = "", name: str = "") -
 
 
 def lights(n: int) -> list[str]:
-    """The reference's light arc: bright while the story sets up, golden at the turn, night-blue for the payoff."""
+    """Bright while the story sets up, golden for the payoff. Night only comes from a place (stage, space): the
+    Nov 15 Uber test went navy for its whole second half and the scenery got hard to read."""
     if n <= 2:
         return ["day"] * n
     out = []
     for i in range(n):
         p = i / (n - 1)
-        out.append("day" if p < 0.45 else "golden" if p < 0.7 else "night")
+        out.append("day" if p < 0.6 else "golden")
     return out
 
 

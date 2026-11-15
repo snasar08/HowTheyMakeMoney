@@ -42,7 +42,9 @@ sound off still understands. Use only this kit:
 - crowd: 0-60 people around (more for fans, customers, everyone)
 - brand (only for logo/sign beats, or when a company is named): {{"name": "...", "bg": "#hex", "fg": "#hex", "icon": one of {", ".join(ICONS)}}}
   Use the company's real brand colours.
-Rules: consecutive sentences should look different (change place, beat or camera subject); a sports star plays in
+Rules: in a what-if Short the hero IS the one person doing the thing: show them doing it (drive for rides, boxes
+for deliveries, burger for food) on most lines, not standing around. Use clock at most twice and phone at most once
+per Short. money happens on the street or in an office, never in space. Consecutive sentences should look different (change place, beat or camera subject); a sports star plays in
 their sport's place; numbers about money -> money; about time -> clock; about many people -> queue or crowd;
 about an app or phone -> phone; rides/driving/delivery -> drive. Never invent facts.
 Reply with JSON only: {{"scenes": [{{"i": 0, "place": "...", "beat": "...", "props": [], "mood": "...", "action": "...", "crowd": 0, "brand": null}}, ...]}}"""
@@ -88,6 +90,23 @@ def clean(sc: dict) -> dict:
     return out
 
 
+def vary(out: list[dict]) -> list[dict]:
+    """Nov 15 Uber test: three clocks and back-to-back phones. No beat other than walk twice in a row, clock <= 2,
+    phone <= 1; a dropped beat becomes walk in a different place."""
+    seen: dict[str, int] = {}
+    cap = {"clock": 2, "phone": 1, "queue": 2, "money": 2}
+    for i, sc in enumerate(out):
+        b = sc["beat"]
+        prev = out[i - 1]["beat"] if i else None
+        if b != "walk" and (b == prev or seen.get(b, 0) >= cap.get(b, 9)):
+            sc["beat"] = "walk"
+            sc.pop("brand", None) if b not in ("logo", "sign") else None
+            if sc["place"] == "road":
+                sc["place"] = "street"
+        seen[sc["beat"]] = seen.get(sc["beat"], 0) + 1
+    return out
+
+
 def fallback(sentences: list[str], script: dict) -> list[dict]:
     from .toon import beats_for
     fmt, hero_sets = script.get("format"), {sc.get("visual", {}).get("set") for sc in script.get("scenes", [])}
@@ -123,7 +142,7 @@ def direct(script: dict, sentences: list[str]) -> tuple[list[dict], str]:
             else:
                 fb = fb or fallback(sentences, script)
                 out.append(fb[i])
-        return out, res.get("_model", "gemini")
+        return vary(out), res.get("_model", "gemini")
     return fallback(sentences, script), "keywords"
 
 

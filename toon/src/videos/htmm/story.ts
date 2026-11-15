@@ -399,7 +399,7 @@ const FR: Record<string, (id: number, f0: number) => (f: number) => Shot> = {
   two: (id, f0) => (f) => dolly(off(id, f, 5.2, -1.4, 1.6), off(id, f, 0, 0.75, 1.5), pushK(f, f0, 0.0025), { fov: 40 }),
   line: (id, f0) => (f) => dolly(off(id, f, -2.2, 3.4, 1.7), off(id, f, 6, 0.3, 1.3), pushK(f, f0, 0.002), { fov: 42 }),
 };
-const BSEQ: Record<string, string[]> = { logo: ["two", "ms", "low"], sign: ["wide2", "two", "low"], drive: ["side", "chase", "side"], clock: ["wide2", "two", "cu"], phone: ["two", "cu", "wide2"],
+const BSEQ: Record<string, string[]> = { logo: ["two", "ms", "low"], sign: ["wide2", "two", "wide2"], drive: ["side", "chase", "side"], clock: ["wide2", "two", "cu"], phone: ["two", "wide2", "two"],
   money: ["two", "low", "wide2"], queue: ["line", "ws", "ms"] };
 const SEQ = [["ws", "ms", "cu"], ["ms", "low", "ws"], ["low", "cu", "ms"], ["ws", "cu", "low"]];
 const CINF: Record<string, number> = { ws: 0, ms: 11, cu: 14, low: 9 };
@@ -409,9 +409,9 @@ for (const k of Object.keys(CAMS)) delete CAMS[+k];
 for (const k of Object.keys(XFADE)) delete XFADE[+k];
 DOF.length = 0; KICKS.length = 0; FOREGROUND.length = 0;
 SHOTS.forEach((s) => {
-  const n = s.b - s.a, seq = BSEQ[beatOf(s.id)] ?? SEQ[(s.id - 1) % SEQ.length], m = n < 70 ? 1 : n < 130 ? 2 : 3, keys: Key[] = [];
+  const n = s.b - s.a, seq = BSEQ[beatOf(s.id)] ?? SEQ[(s.id - 1) % SEQ.length], m = Math.min(5, Math.max(1, Math.ceil(n / 50))), keys: Key[] = [];
   for (let j = 0; j < m; j++) {
-    const f0 = s.a + Math.round((j * n) / m), name = seq[j];
+    const f0 = s.a + Math.round((j * n) / m), name = seq[j % seq.length];
     keys.push({ f: f0, cut: j === 0, dur: 26, s: FR[name](s.id, f0) });
     DOF.push({ f: f0, ...(j ? { dur: 26 } : {}), cInf: CINF[name] ?? 10, focus: (f: number) => off(s.id, Math.min(f, s.b - 1), 0, 0, beatOf(s.id) === "drive" ? 1.1 : 1.48) });
   }

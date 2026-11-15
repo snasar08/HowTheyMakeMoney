@@ -333,6 +333,11 @@ research more ... maintain quality too")**. Goal: build a buffer, capped so cred
    needs Sam.
 
 ## Rules
+- **Check every frame at 30 fps (Sam, Nov 15: "a must ... make this a rule").** Before calling any test video good,
+  or sending it to Sam, run `python -m pipeline.allframes video.mp4 outdir` (all frames at 30 fps, numbered, 100 per
+  sheet, plus a scan for blank/flash frames) and Read EVERY sheet in order. A 12-frame sample is not a check. What
+  to look for: each sentence's picture shows what it says; a new view every 1.5-2 s (no 3 s+ holds); nothing cut off
+  at the frame edge (logos, signs, phones); cars actually moving; money that reads as money; no empty or dark scenes.
 - **No picture repeats within a Short (Sam, Nov 3).** Editorial Shorts take each photo once (`editorial.pictures` + photo slots in `render.plan`); give them 8–12+ Commons photos. Image-style (`charts3d`) Shorts still reuse their 4 Higgsfield images — more images per Short costs credits, ask Sam before changing.
 - Never invent numbers. Never use real logos or people in image prompts.
 - Real people/brands (STYLE.md "Real people and brands"): names OK in voiceover/captions/titles

@@ -160,4 +160,6 @@ export const buildPlaces = (root: THREE.Object3D) => {
   }), transparent: true, fog: false, side: THREE.DoubleSide }));
   earth.position.set(PLACES.space.p[0] - 18, D0 + 26, PLACES.space.p[2] + 90); earth.layers.set(3);
   root.add(earth);
+  // a second Earth on the other side, so the Moon reads as the Moon whichever way the camera looks (Nov 15 test)
+  const earth2 = earth.clone(); earth2.position.set(PLACES.space.p[0] + 14, D0 + 22, PLACES.space.p[2] - 90); root.add(earth2);
 };
