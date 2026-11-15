@@ -242,6 +242,26 @@ research more ... maintain quality too")**. Goal: build a buffer, capped so cred
    remember:") that leads back into the opening line. A question opening is optional; if used, put
    the number in it ("How much of your 34 dollar order ..."). The last scene must not say "Follow for more" (the CTA is
    added automatically).
+   **Story format (Nov 15, Sam; toon look only):** `format: "story"`, `visual_style: "lowpoly"`, 5-9 scenes, may run
+   ~45-65 s, told sentence by sentence like the reference "You're Elon Musk..." Short. Two modes (`story_mode`):
+   - `history`: the real story of a big company/person, second person ("You quit a Wall Street job to sell books
+     online. It's 1994."), every fact sourced (078 Bezos, 079 Nike).
+   - `plan`: a HYPOTHETICAL escalating master plan, Sam's words: "Nike wants to take over the shoe game, so they
+     sign athletes, they take over, then fans want dunks, so robotic dunk shoes, then everyone's dunking, so...
+     just like the Elon video, the next idea, the next idea", feasible-sounding, each step caused by the last,
+     getting bigger, ending on a twist (080 Nike). Real numbers only if sourced; imagined steps carry no fake
+     statistics; the description says plainly it is a made-up plan, not company news.
+   Any big company everyone knows. When a company/product appears or is created, its logo pops up (code-drawn:
+   `brand` {name, bg, fg, icon}; brand names on screen are allowed since Nov 15, plain lettering, no copied logo art).
+   **Per-sentence scenes (all toon Shorts):** each scene may carry `toon`: one dict per sentence (same count as the
+   sentences in its narration) with `place` (street bridge quay road court pitch stage office servers space), `beat`
+   (walk drive queue phone clock money logo sign), `props` (car truck trophy cash boxes check rocket ball mic flag
+   laptop burger controller), `mood` (happy laugh shock nervous proud stern scheme relief dazed sad calm excited),
+   `action`, `crowd`, `brand`. Without it, `pipeline/toon_director.py` asks Gemini to pick them. The picture must
+   show what the sentence says (Sam: "the scenes are the most important part"). Famous people: set `hero` fields
+   so the cartoon looks like them (hair style/colour, beard, glasses, headband, skin) and `number` for athletes
+   (jersey in team colours with their number; no team logo art); everyone else a signature outfit (`outfit`
+   tee/suit/hoodie/kit/dress, `chest` text, `tie`).
    **Formats (Sam, Oct 29 2026) — rotate 4:** `format` = `how` (how X makes money), `whatif`
    (absurd scenario on ONE real stat, e.g. "What if one person delivered every Amazon package in
    a day?"), `careers` (how pilots/streamers/NBA players make money), `famous` (a famous person's
