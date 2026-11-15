@@ -58,7 +58,8 @@ def _env(n: int, sr: int, attack: float, release: float) -> np.ndarray:
 MOODS = {
     "how": (84, 14, (0, 1, 2, 3)),       # lo-fi, the original
     "whatif": (104, 12, (1, 3)),         # quicker, bouncy, major-leaning (I V vi IV / I vi IV V)
-    "famous": (94, 8, (0, 3)),           # steady "luxury" groove
+    "famous": (94, 8, (0, 3)),
+    "story": (100, 8, (0, 3)),           # Nov 15: "You're X..." stories, steady and a little brighter           # steady "luxury" groove
     "careers": (88, 10, (1, 2)),         # warm mid-tempo
 }
 
