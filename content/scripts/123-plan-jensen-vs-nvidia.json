@@ -63,6 +63,11 @@
         },
         {
           "place": "office",
+          "beat": "clock",
+          "mood": "proud"
+        },
+        {
+          "place": "office",
           "beat": "phone",
           "mood": "sad",
           "crowd": 10
@@ -192,6 +197,11 @@
         "stat_sub": "bigger than Nvidia"
       },
       "toon": [
+        {
+          "place": "office",
+          "beat": "walk",
+          "mood": "scheme"
+        },
         {
           "place": "servers",
           "beat": "sign",
