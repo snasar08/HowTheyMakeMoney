@@ -272,6 +272,12 @@ research more ... maintain quality too")**. Goal: build a buffer, capped so cred
    - GOOD scenes: the picture matches the sentence (rides = drive on the road, money = cash stacks, years = clock, an app = phone, a company named or founded = its logo or sign with real brand colours, fans = crowd/queue, an athlete = court or pitch); every sentence looks different from the one before; the hero looks like the real person (hair, beard, skin, glasses) and athletes wear their real number in team colours; moods follow the line (shock at a big number, sad at a setback, laugh at a win).
    - BAD scenes: a random street during a money or time line; the same beat twice in a row; more than 2 clocks or 1 phone per Short; money in space; an empty place with nothing happening; a famous person with the wrong hair or skin; made-up facts; a logo or sign the line does not mention.
    - Brand names and code-drawn logos (`brand` {name, bg, fg, icon}) are allowed on screen in toon Shorts; never copied logo art, crests or real jersey designs.
+   **Formats now (Sam, Nov 15 2026): `famous`, `whatif`, `story` (history + plan) only.** Sam dropped `how` and
+   `careers` after the numbers (median 21 and 18 views at 48 h vs 781 for famous; 40 chart Shorts median 15). Their
+   ready scripts were set back to `draft` with a `paused` note; do not write new ones, do not set them ready. With
+   no chart Shorts, Higgsfield images are no longer needed (toon Shorts are drawn in code, editorial uses free
+   Commons photos). Most Shorts: famous athletes / big names; ~1/3 story (company history, company or athlete
+   master plans); some what-ifs on one real number. Everything below about rotating 4 formats is history.
    **Formats (Sam, Oct 29 2026) — rotate 4:** `format` = `how` (how X makes money), `whatif`
    (absurd scenario on ONE real stat, e.g. "What if one person delivered every Amazon package in
    a day?"), `careers` (how pilots/streamers/NBA players make money), `famous` (a famous person's

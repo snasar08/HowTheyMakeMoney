@@ -3,7 +3,7 @@
   "slug": "live-nation",
   "company": "Live Nation",
   "theme": "dark_neon",
-  "status": "ready",
+  "status": "draft",
   "title": "Live Nation Keeps 3 Cents Per Concert Dollar",
   "description": "Live Nation barely profits from concerts. The money is in your ticket.\n\nSources:\n- Live Nation Entertainment full-year and Q4 2025 results: https://news.livenationentertainment.com/news/live-nation-entertainment-full-year-and-fourth-quarter-2025-results\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
@@ -105,5 +105,6 @@
   "title_style": "number",
   "hook_style": "surprise",
   "cta": "Front row or cheap seats? Comment your pick.",
-  "cta_question": "Front row or cheap seats?"
+  "cta_question": "Front row or cheap seats?",
+  "paused": "Nov 15 2026, Sam: drop the 'how' and 'careers' formats (median 21 / 18 views at 48 h vs 781 for famous)"
 }

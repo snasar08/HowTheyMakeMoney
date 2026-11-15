@@ -7,7 +7,7 @@
   "hook_style": "number",
   "title_style": "number",
   "theme": "dark_neon",
-  "status": "ready",
+  "status": "draft",
   "score": 90,
   "title": "Blockbuster Passed on Netflix for $50 Million",
   "tag": "Company backstory",
@@ -166,5 +166,6 @@
       "title": "Wikipedia: Blockbuster LLC",
       "url": "https://en.wikipedia.org/wiki/Blockbuster_LLC"
     }
-  ]
+  ],
+  "paused": "Nov 15 2026, Sam: drop the 'how' and 'careers' formats (median 21 / 18 views at 48 h vs 781 for famous)"
 }
