@@ -7,7 +7,7 @@
   "hook_style": "surprise",
   "title_style": "whatif",
   "theme": "dark_neon",
-  "status": "needs_fix",
+  "status": "ready",
   "score": 91,
   "title": "What If You Got Paid $23,280 to Sleep?",
   "name_card": "Kai Cenat",
@@ -26,7 +26,7 @@
   "cta_question": "Sleep or gaming?",
   "scenes": [
     {
-      "narration": "23,280 dollars a month. For streaming while he sleeps.",
+      "narration": "Over 23,000 dollars a month. Just for streaming while he sleeps.",
       "visual": {
         "type": "lowpoly",
         "set": "gaming",
@@ -78,7 +78,7 @@
       }
     },
     {
-      "narration": "Then, awake, he broke a Twitch record. 306,621 subscribers.",
+      "narration": "Then, awake, he broke a Twitch record. Over 300,000 subscribers.",
       "visual": {
         "type": "lowpoly",
         "set": "gaming",
@@ -105,7 +105,7 @@
       }
     },
     {
-      "narration": "Yet sleeping was just a side gig. Forbes estimated 4.7 million that year.",
+      "narration": "But sleeping was just a side gig. Forbes estimated 4.7 million that year.",
       "visual": {
         "type": "lowpoly",
         "set": "gaming",
@@ -133,7 +133,7 @@
       }
     },
     {
-      "narration": "Now? The most-followed streamer on all of Twitch.",
+      "narration": "Now? He's the most-followed streamer on all of Twitch.",
       "visual": {
         "type": "lowpoly",
         "set": "gaming",
@@ -178,8 +178,5 @@
     "socks": "f4f4f4",
     "shoes": "f4f4f4",
     "height": 1.0
-  },
-  "needs_fix": [
-    "clarity 89% < 90%: '23,280' at 0.1s, '306,621' at 14.2s, 'Yet' at 17.2s, 'a' at 18.8s, 'streamer' at 24.1s, 'Sleep stream' at 26.1s"
-  ]
+  }
 }
