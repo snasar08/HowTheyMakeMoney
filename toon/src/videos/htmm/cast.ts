@@ -474,7 +474,7 @@ export { FPS };
 
 
 // ======================= HTMM: our hero and the crowd around them =======================
-import { PLAN, heroAt, locOf, sceneOf } from "./story";
+import { PLAN, heroAt, locOf, sceneOf, beatOf } from "./story";
 void stageBridge;
 const HERO = PLAN.hero as unknown as Outfit;
 const SK = ["#ffe2c2", "#f5c9a0", "#d9a577", "#b07a4f", "#8a5a3a", "#6b4630"];
@@ -502,28 +502,90 @@ export const stage = (id: number, t: number, _b: BridgeState, cam: CamInfo): Sta
   const fo: FrontOpts = { mode, phase, expr, blink: lidAt(t, 500), ...(wave !== undefined ? { wave } : {}) };
   const so: SideOpts = { mode: moving ? "march" : "stand", phase, expr, blink: lidAt(t, 500), stride: h.v / 1.6 };
   const view = moving ? viewOf(cam, h.x, h.z, h.d[0], h.d[1]) : { side: false, mirror: false };
-  out.places.push(person(cam, { i: 500, o: HERO, okey: "hero" }, h.x, h.y, h.z, view, fo, so));
-  blob(out, h.x, h.y, h.z);
-  const n = Math.min(sc.crowd, 70), r: [number, number] = [-L.d[1], L.d[0]], lead = moving ? h.v * 3 : 0;
+  const beat = beatOf(id), r: [number, number] = [-L.d[1], L.d[0]];
+  const base = moving ? { x: L.p[0] + L.d[0] * h.v * 2.4, z: L.p[2] + L.d[1] * h.v * 2.4 } : { x: h.x, z: h.z };
+  const night = s.light === "night", gold = s.light === "golden";
+  const tintDraw = (draw: (p: Pen) => void, cw: number, ch: number) => (pen: Pen) => { draw(pen); if (night || gold) { const g = pen.g; g.globalCompositeOperation = "source-atop"; g.fillStyle = night ? "rgba(28,44,150,0.5)" : "rgba(255,150,60,0.22)"; g.fillRect(0, 0, cw, ch); g.globalCompositeOperation = "source-over"; } };
+  // things pop in when their line starts (reference: every object arrives on its word), back-eased overshoot
+  const pop = (delay: number) => { const u = clamp01((tl - delay) / 0.32); return u <= 0 ? 0 : 1 + 2.2 * (u - 1) ** 3 + 1.2 * (u - 1) ** 2; };
+  if (beat === "drive") {
+    // the hero DRIVES: a side-on car moving down the street, the hero seen through the window, speed lines behind
+    const right = Math.sign(L.d[0] * cam.right.x + L.d[1] * cam.right.z) || 1;
+    const away = { x: h.x - cam.pos.x, z: h.z - cam.pos.z }, al = Math.hypot(away.x, away.z) || 1;
+    const hx = h.x + (away.x / al) * 0.3 + cam.right.x * right * 0.42, hz = h.z + (away.z / al) * 0.3 + cam.right.z * right * 0.42;
+    const bump = 0.03 * Math.abs(Math.sin(tl * 11));
+    out.places.push(person(cam, { i: 500, o: HERO, okey: "hero" }, hx, h.y + 0.98 + bump, hz, { side: false, mirror: false },
+      { mode: "sit", expr: id % 2 ? "grin" : "laugh", blink: lidAt(t, 500), look: right * 0.6 }, {}, 0.8));
+    out.fx.push({ key: `prop|carDrive|${s.light}`, cw: 700, ch: 380, x: h.x, y: h.y + 1.2 + bump, z: h.z, w: 4.5 * right, h: 2.44,
+      draw: tintDraw(PROPS.carDrive.draw, 700, 380) });
+    blob(out, h.x, h.y, h.z, 4.0, 0.9);
+    for (let k = 0; k < 3; k++) {
+      const back = 3.0 + k * 0.9 + ((tl * 6 + k * 0.37) % 1) * 0.6;
+      out.fx.push({ key: `fx|speed|${k}`, cw: 256, ch: 64, x: h.x - L.d[0] * back, y: h.y + 0.5 + k * 0.35, z: h.z - L.d[1] * back, w: 1.3, h: 0.16,
+        draw: (pen) => pen.stroke([[20, 32], [236, 32]], 18, "#ffffff"), soft: true });
+    }
+  } else {
+    out.places.push(person(cam, { i: 500, o: HERO, okey: "hero" }, h.x, h.y, h.z, view, fo, so));
+    blob(out, h.x, h.y, h.z);
+  }
+  if (beat === "clock") {
+    // a giant clock beside the hero, hands racing: time adding up
+    const ang = q(((tl * 1.6) % 1) * 360, 0.0625);
+    const k = pop(0.15), x = h.x + r[0] * 1.55 + h.d[0] * -0.6, z = h.z + r[1] * 1.55 + h.d[1] * -0.6;
+    if (k > 0) out.fx.push({ key: `prop|clock|${ang}|${s.light}`, cw: 520, ch: 520, x, y: h.y + 1.35 * k + 0.25, z, w: 2.3 * k, h: 2.3 * k,
+      draw: tintDraw((pen) => drawClock(pen, ang), 520, 520) });
+    for (let k2 = 0; k2 < 5; k2++) {           // calendar pages flying off
+      const u = (tl * 0.9 + k2 * 0.21) % 1;
+      out.fx.push({ key: `prop|page|${k2 % 3}|${s.light}`, cw: 200, ch: 240, x: x + h.d[0] * (0.4 + u * 2.4), y: h.y + 2.3 + u * 1.6, z: z + h.d[1] * (0.4 + u * 2.4),
+        w: 0.42, h: 0.5, rot: u * 4 + k2, draw: tintDraw((pen) => drawPage(pen, k2), 200, 240) });
+    }
+  }
+  if (beat === "phone") {
+    const k = pop(0.15), x = h.x + r[0] * 1.35, z = h.z + r[1] * 1.35;
+    const pins = Math.min(9, Math.floor(tl * 4));
+    if (k > 0) out.fx.push({ key: `prop|phone|${pins}|${s.light}`, cw: 420, ch: 780, x, y: h.y + 1.25 * k + 0.1, z, w: 1.25 * k, h: 2.3 * k,
+      draw: tintDraw((pen) => drawPhone(pen, pins), 420, 780) });
+  }
+  if (beat === "money") {
+    const spots: [number, number, number][] = [[1.2, 0.3, 0], [-1.25, 0.1, 0.12], [1.6, -1.0, 0.28], [-1.7, -0.9, 0.4], [0.5, -1.9, 0.52], [-0.6, -2.1, 0.64]];
+    spots.forEach(([sd, fw, dl], k2) => {
+      const k = pop(dl);
+      if (k > 0) put("cash", fw, sd, 1.05 * k, 0.78 * k);
+      if (k > 0 && k2 < 2) put("cash", fw, sd, 1.0 * k, 0.75 * k, 0.62 * k);
+    });
+  }
+  const n = beat === "queue" ? Math.max(sc.crowd, 34) : beat === "drive" ? Math.min(sc.crowd, 24) : Math.min(sc.crowd, 70);
+  const lead = moving ? h.v * 3 : 0;
   for (let i = 0; i < n; i++) {
-    const lat = (i % 2 ? 1 : -1) * (L.w * 0.55 + hh(i, 2) * L.w * 0.45), along = (hh(i, 1) - 0.4) * 34 + lead;
+    const qline = beat === "queue";
+    const lat = qline ? 0.55 + (i % 2) * 0.2 : beat === "drive" ? (i % 2 ? 1 : -1) * (L.w * 0.5 + 1.2 + hh(i, 2) * 2) : (i % 2 ? 1 : -1) * (L.w * 0.55 + hh(i, 2) * L.w * 0.45);
+    const along = qline ? 1.6 + i * 0.85 : (hh(i, 1) - 0.4) * 34 + lead;
     const x = L.p[0] + L.d[0] * along + r[0] * lat, z = L.p[2] + L.d[1] * along + r[1] * lat;
     // keep the lens clear: nobody between the camera and the hero, nobody right in front of the lens
     const cx = cam.pos.x - h.x, cz = cam.pos.z - h.z, cl = Math.hypot(cx, cz) || 1, px = x - h.x, pz = z - h.z;
     const al = (px * cx + pz * cz) / cl, perp = Math.abs(px * cz - pz * cx) / cl;
     if ((al > 0.3 && al < cl + 2 && perp < 1.5) || Math.hypot(cam.pos.x - x, cam.pos.z - z) < 3.2 || Math.hypot(px, pz) < 0.9) continue;
-    const cheer = act === "cheer" || i % 3 === 0;
+    const cheer = !qline && (act === "cheer" || i % 3 === 0);
     const ce = (["smile", "grin", "laugh", "shock", "smile_closed", "relief_open"] as Expr[])[i % 6];
     const cfo: FrontOpts = { mode: "stand", expr: ce, blink: lidAt(t, i), ...(cheer ? { wave: q(Math.sin(tl * 8 + i), 4) } : {}) };
     out.places.push(person(cam, { i, o: CROWD_O[i % CROWD_O.length], okey: "c" + (i % CROWD_O.length) }, x, L.p[1], z, { side: false, mirror: false }, cfo, {}));
     blob(out, x, L.p[1], z);
   }
   // ---- props: flat ink drawings standing in the 3D world (like the reference's signs and effects) ----
-  const base = moving ? { x: L.p[0] + L.d[0] * lead * 0.8, z: L.p[2] + L.d[1] * lead * 0.8 } : { x: h.x, z: h.z };
-  const night = s.light === "night", gold = s.light === "golden";
-  const put = (name: string, fwd: number, side: number, w: number, hgt: number, lift = 0, follow = false) => {
+  for (const name of beat === "drive" ? [] : sc.props) {
+    if (name === "car") put("car", -3.0, L.w * 0.5 + 0.6, 3.5, 1.9);
+    else if (name === "truck") put("truck", -4.0, L.w * 0.5 + 0.9, 4.4, 2.4);
+    else if (name === "trophy") put("trophy", 0.2, -1.15, 0.8 * pop(0.2), 1.12 * pop(0.2));
+    else if (name === "cash" && beat !== "money") put("cash", 0.25, 1.1, 0.95 * pop(0.2), 0.68 * pop(0.2));
+    else if (name === "boxes") put("boxes", 0.1, 1.25, 1.05 * pop(0.2), 1.05 * pop(0.2));
+    else if (name === "check") put("check", 0.15, -1.45, 1.6 * pop(0.2), 0.8 * pop(0.2), 0.55);
+    else if (name === "rocket") put("rocket", -6, -L.w * 0.5 - 2, 2.0, 4.6);
+    else if (name === "ball") put("ball", 0.25, -0.55, 0.3, 0.3, 0.02 + 0.75 * Math.abs(Math.sin(tl * 6.5)), true);
+  }
+  return out;
+  function put(name: string, fwd: number, side: number, w: number, hgt: number, lift = 0, follow = false) {
     const d = PROPS[name];
-    if (!d) return;
+    if (!d || w < 0.02) return;
     const o = follow ? { x: h.x, z: h.z } : base;
     const x = o.x + L.d[0] * fwd + r[0] * side, z = o.z + L.d[1] * fwd + r[1] * side;
     const cx = cam.pos.x - h.x, cz = cam.pos.z - h.z, cl = Math.hypot(cx, cz) || 1, px = x - h.x, pz = z - h.z;
@@ -532,19 +594,33 @@ export const stage = (id: number, t: number, _b: BridgeState, cam: CamInfo): Sta
     out.fx.push({ key: `prop|${name}|${s.light}`, cw: d.cw, ch: d.ch, x, y: L.p[1] + hgt / 2 + lift, z, w, h: hgt,
       draw: (pen) => { d.draw(pen); if (night || gold) { const g = pen.g; g.globalCompositeOperation = "source-atop"; g.fillStyle = night ? "rgba(28,44,150,0.5)" : "rgba(255,150,60,0.22)"; g.fillRect(0, 0, d.cw, d.ch); g.globalCompositeOperation = "source-over"; } } });
     if (!lift) blob(out, x, L.p[1], z, Math.min(2.2, w / 0.6), 0.8);
-  };
-  for (const name of sc.props) {
-    if (name === "car") put("car", -3.0, L.w * 0.5 + 0.6, 3.5, 1.9);
-    else if (name === "truck") put("truck", -4.0, L.w * 0.5 + 0.9, 4.4, 2.4);
-    else if (name === "trophy") put("trophy", 0.2, -1.15, 0.8, 1.12);
-    else if (name === "cash") put("cash", 0.25, 1.1, 0.95, 0.68);
-    else if (name === "boxes") put("boxes", 0.1, 1.25, 1.05, 1.05);
-    else if (name === "check") put("check", 0.15, -1.45, 1.6, 0.8, 0.55);
-    else if (name === "rocket") put("rocket", -6, -L.w * 0.5 - 2, 2.0, 4.6);
-    else if (name === "ball") put("ball", 0.25, -0.55, 0.3, 0.3, 0.02 + 0.75 * Math.abs(Math.sin(tl * 6.5)), true);
   }
-  return out;
 };
+function drawClock(p: Pen, ang: number) {
+  p.ell(260, 260, 236, 236, "#f4f1ea", 16);
+  p.ell(260, 260, 200, 200, null, 6);
+  for (let i = 0; i < 12; i++) { const a = (i * Math.PI) / 6; p.stroke([[260 + 172 * Math.sin(a), 260 - 172 * Math.cos(a)], [260 + 196 * Math.sin(a), 260 - 196 * Math.cos(a)]], i % 3 ? 7 : 14); }
+  const a1 = (ang * Math.PI) / 180, a2 = a1 / 12;
+  p.stroke([[260, 260], [260 + 105 * Math.sin(a2), 260 - 105 * Math.cos(a2)]], 18);
+  p.stroke([[260, 260], [260 + 165 * Math.sin(a1), 260 - 165 * Math.cos(a1)]], 11, "#e2453c");
+  p.ell(260, 260, 18, 18, "#241726", 0);
+}
+function drawPage(p: Pen, k: number) {
+  p.poly(rr(10, 10, 190, 230, 10), "#fbf8f1", 8);
+  p.poly(rr(10, 10, 190, 66, 10), "#e2453c", 8);
+  for (let i = 0; i < 3; i++) p.stroke([[40, 108 + i * 40 + k * 4], [160, 108 + i * 40 + k * 4]], 9, "#9aa3b5");
+}
+function drawPhone(p: Pen, pins: number) {
+  p.poly(rr(14, 14, 406, 766, 56), "#2b2a33", 14);
+  p.poly(rr(40, 74, 380, 690, 18), "#cfe8d4", 0);                         // map
+  for (const y of [190, 330, 470, 600]) p.stroke([[40, y], [380, y - 40]], 22, "#f4f1ea");
+  for (const x of [120, 250, 330]) p.stroke([[x, 74], [x + 30, 690]], 18, "#f4f1ea");
+  const P: [number, number][] = [[90, 140], [300, 210], [170, 300], [340, 380], [80, 430], [230, 500], [320, 600], [130, 610], [260, 120]];
+  for (let i = 0; i < pins; i++) { const [x, y] = P[i]; p.poly([[x, y + 34], [x - 22, y], [x, y - 24], [x + 22, y]], "#e2453c", 7); p.ell(x, y - 2, 8, 8, "#ffffff", 0); }
+  p.poly(rr(80, 630, 340, 690, 26), "#241726", 0);                        // request button
+  p.stroke([[150, 660], [270, 660]], 10, "#ffffff");
+  p.ell(210, 44, 34, 9, "#4a4952", 0);
+}
 
 // ---- prop drawings (design canvas px; thick plum ink like the characters) ----
 const INKP = "#241726";
@@ -556,6 +632,18 @@ const rr = (x0: number, y0: number, x1: number, y1: number, rad: number): [numbe
 };
 const wheel = (pen: Pen, x: number, y: number, rad: number) => { pen.ell(x, y, rad, rad, "#2b2a33", 10); pen.ell(x, y, rad * 0.45, rad * 0.45, "#c9ccd6", 6); };
 const PROPS: Record<string, { cw: number; ch: number; draw: (p: Pen) => void }> = {
+  carDrive: { cw: 700, ch: 380, draw: (p) => {
+    p.poly([[150, 170], [215, 60], [470, 60], [560, 170]], "#2f9e7a", 12);
+    p.poly([[232, 160], [262, 86], [345, 86], [345, 160]], "rgba(191,230,255,0.2)", 8);
+    p.poly([[368, 160], [368, 86], [452, 86], [512, 160]], "rgba(191,230,255,0.2)", 8);
+    const g = p.g; g.save(); g.globalCompositeOperation = "destination-out";
+    p.poly([[240, 154], [266, 94], [338, 94], [338, 154]], "#000000", 0); p.poly([[375, 154], [375, 94], [448, 94], [502, 154]], "#000000", 0);
+    g.restore();
+    p.poly(rr(40, 160, 660, 300, 46), "#35b58c", 12);
+    p.poly(rr(612, 196, 650, 232, 10), "#fff3b0", 7); p.poly(rr(46, 200, 76, 236, 8), "#e2453c", 7);
+    p.stroke([[352, 176], [352, 286]], 6); p.stroke([[392, 214], [432, 214]], 9);
+    wheel(p, 190, 300, 58); wheel(p, 520, 300, 58);
+  } },
   car: { cw: 700, ch: 380, draw: (p) => {
     p.poly([[150, 170], [215, 60], [470, 60], [560, 170]], "#2f9e7a", 12);                    // cabin
     p.poly([[232, 160], [262, 86], [345, 86], [345, 160]], "#bfe6ff", 8);                      // windows

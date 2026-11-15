@@ -58,6 +58,31 @@ def lights(n: int) -> list[str]:
     return out
 
 
+# Scene library (Nov 15, Sam: "make scenes based on what we are posting ... the script goes with the background").
+# A scene's `visual.beat` wins; otherwise the line's words pick one, never the same beat twice in a row.
+BEATS = {
+    "drive": r"\b(drive|drives|driver|drivers|driving|ride|rides|trip|trips|car|cars|taxi|uber|lyft|deliver\w*|road|commute)\b",
+    "clock": r"\b(years?|minutes?|hours?|seconds?|days?|weeks?|months?|forever|time|nonstop|decades?|centur\w+)\b",
+    "money": r"(\$|\b(dollars?|paid|pays?|earn\w*|money|cash|revenue|profit\w*|salary|rich|fortune|net worth|cents?)\b)",
+    "phone": r"\b(app|apps|phone|tap|taps|order\w*|download\w*|online|scroll\w*|swipe\w*|stream\w*)\b",
+    "queue": r"\b(people|customers?|riders?|users?|fans|everyone|everybody|line|crowd|members|players)\b",
+}
+PRIORITY = ["drive", "money", "clock", "phone", "queue"]
+
+
+def beats_for(lines: list[str], given: list[str | None]) -> list[str]:
+    out, prev = [], None
+    for text, g in zip(lines, given):
+        if g:
+            out.append(g); prev = g; continue
+        t = text.lower()
+        score = {b: len(re.findall(rx, t)) for b, rx in BEATS.items()}
+        ranked = sorted((b for b in PRIORITY if score[b]), key=lambda b: (-score[b], PRIORITY.index(b)))
+        pick = next((b for b in ranked if b != prev), "walk")
+        out.append(pick); prev = pick
+    return out
+
+
 def make_plan(script: dict, recorded: dict | None = None) -> dict:
     scenes = [(i, sc) for i, sc in enumerate(script["scenes"]) if sc.get("visual", {}).get("type") == "lowpoly"]
     ranges = {}
@@ -67,6 +92,7 @@ def make_plan(script: dict, recorded: dict | None = None) -> dict:
             lo, hi = ranges.get(si, (fr, fr))
             ranges[si] = (min(lo, fr), max(hi, fr))
     lt, out, a = lights(len(scenes)), [], 0
+    bt = beats_for([sc.get("narration", "") for _, sc in scenes], [sc["visual"].get("beat") for _, sc in scenes])
     for k, (i, sc) in enumerate(scenes):
         v = sc["visual"]
         if recorded:
@@ -78,7 +104,8 @@ def make_plan(script: dict, recorded: dict | None = None) -> dict:
             lo, hi = 0, int((len(sc.get("narration", "").split()) / 2.6 + 0.6) * FPS)
         n = hi - lo + 1
         out.append({"si": i, "a": a, "n": n, "frLo": lo, "light": lt[k], "set": v.get("set", "city"),
-                    "action": v.get("action", "idle"), "crowd": int(v.get("crowd", 0) or 0), "props": v.get("props") or []})
+                    "action": v.get("action", "idle"), "crowd": int(v.get("crowd", 0) or 0), "props": v.get("props") or [],
+                    "beat": bt[k]})
         a += n
     slug = f"{script.get('id', '')}-{script.get('slug', '')}"
     return {"slug": slug, "fps": FPS, "total": a, "scenes": out, "hero": outfit(script.get("hero"), script.get("slug", "")),
