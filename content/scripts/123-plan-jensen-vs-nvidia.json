@@ -1,0 +1,261 @@
+{
+  "id": "123",
+  "slug": "plan-jensen-vs-nvidia",
+  "company": "Nvidia",
+  "format": "story",
+  "story_mode": "plan",
+  "visual_style": "lowpoly",
+  "hook_style": "surprise",
+  "title_style": "statement",
+  "theme": "bold_bright",
+  "status": "draft",
+  "score": 95,
+  "images": {},
+  "hud_label": "THE PLAN",
+  "title": "He Built Nvidia for 33 Years. Now He Wants to Beat It.",
+  "name_card": "Jensen Huang",
+  "name_sub": "a hypothetical plan to beat Nvidia",
+  "description": "You're Jensen Huang. You built Nvidia for 33 years, then resigned. Now you want to beat it.\n\nReal (Bloomberg, November 10, 2026): Huang disclosed the relationship in a memo to employees (\"I was unfaithful to my wife\"); Nvidia shares slid as much as 8.8 percent that Monday, at one point erasing almost $400 billion in market value; the board is forming a committee of independent directors to investigate; there is no known succession plan. Nvidia was co-founded by Huang in 1993. Nvidia announced on November 12, 2026 that Huang stepped down as CEO and left the board after 33 years (Al Jazeera/Reuters); CFO Colette Kress is interim CEO. Everything after his resignation is a made-up, hypothetical plan for fun: imagined steps, not news and not anything Huang or Nvidia has said or planned.\n\nSources:\n- Bloomberg via the Jefferson City News Tribune: Nvidia probe into CEO affair raises thorny questions for AI: https://www.newstribune.com/news/2026/nov/10/nvidia-probe-into-ceo-affair-raises-thorny/\n- Wikipedia: Nvidia: https://en.wikipedia.org/wiki/Nvidia\n\n#shorts #nvidia #jensenhuang #howtheymakemoney",
+  "tags": [
+    "nvidia",
+    "jensen huang",
+    "master plan",
+    "shorts"
+  ],
+  "loop": "So next time someone says a CEO is finished, remember:",
+  "cta": "Could Jensen beat his own company? Comment yes or no.",
+  "cta_question": "Could he beat Nvidia?",
+  "hero": {
+    "skin": "e3b98f",
+    "hair": "short",
+    "hair_color": "3a3a3a",
+    "beard": "none",
+    "outfit": "suit",
+    "shirt": "151515",
+    "pants": "151515",
+    "shoes": "151515",
+    "tie": "151515",
+    "height": 0.98
+  },
+  "scenes": [
+    {
+      "narration": "You're Jensen Huang. You built Nvidia for 33 years. Then you admit you cheated on your wife, and you resign.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "office",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": "33 YEARS",
+        "stat_sub": "then you resign"
+      },
+      "toon": [
+        {
+          "place": "office",
+          "beat": "logo",
+          "mood": "proud",
+          "brand": {
+            "name": "Nvidia",
+            "bg": "#76b900",
+            "fg": "#111111",
+            "icon": "chip"
+          }
+        },
+        {
+          "place": "office",
+          "beat": "phone",
+          "mood": "sad",
+          "crowd": 10
+        }
+      ]
+    },
+    {
+      "narration": "Now you want one thing. Beat Nvidia. So you start over, like 1993. A garage, a laptop, a new chip company.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": "THE PLAN",
+        "stat_sub": "beat Nvidia"
+      },
+      "toon": [
+        {
+          "place": "street",
+          "beat": "walk",
+          "mood": "stern"
+        },
+        {
+          "place": "street",
+          "beat": "sign",
+          "mood": "scheme",
+          "brand": {
+            "name": "Nvidia",
+            "bg": "#76b900",
+            "fg": "#111111",
+            "icon": "chip"
+          }
+        },
+        {
+          "place": "street",
+          "beat": "clock",
+          "mood": "calm"
+        },
+        {
+          "place": "street",
+          "beat": "logo",
+          "mood": "excited",
+          "brand": {
+            "name": "Jensen Chips",
+            "bg": "#111111",
+            "fg": "#76b900",
+            "icon": "bolt"
+          },
+          "props": [
+            "laptop"
+          ]
+        }
+      ]
+    },
+    {
+      "narration": "Your old company is too busy to answer small AI labs. So you sell to every one of them first.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": "STEP 2",
+        "stat_sub": "steal the small labs"
+      },
+      "toon": [
+        {
+          "place": "servers",
+          "beat": "walk",
+          "mood": "scheme"
+        },
+        {
+          "place": "street",
+          "beat": "queue",
+          "mood": "happy",
+          "crowd": 45,
+          "brand": {
+            "name": "Jensen Chips",
+            "bg": "#111111",
+            "fg": "#76b900",
+            "icon": "bolt"
+          }
+        }
+      ]
+    },
+    {
+      "narration": "Then you put a cheap chip in every phone and every robot. Now Nvidia's best engineers want to work for you.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": "STEP 3",
+        "stat_sub": "a chip in every phone"
+      },
+      "toon": [
+        {
+          "place": "street",
+          "beat": "phone",
+          "mood": "proud",
+          "brand": {
+            "name": "Jensen Chips",
+            "bg": "#111111",
+            "fg": "#76b900",
+            "icon": "bolt"
+          }
+        },
+        {
+          "place": "office",
+          "beat": "walk",
+          "mood": "laugh",
+          "crowd": 20
+        }
+      ]
+    },
+    {
+      "narration": "Still not enough? You build the biggest data center on Earth. Then one on the Moon.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": "STEP 4",
+        "stat_sub": "bigger than Nvidia"
+      },
+      "toon": [
+        {
+          "place": "servers",
+          "beat": "sign",
+          "mood": "excited",
+          "brand": {
+            "name": "Jensen Chips",
+            "bg": "#111111",
+            "fg": "#76b900",
+            "icon": "bolt"
+          }
+        },
+        {
+          "place": "space",
+          "beat": "logo",
+          "mood": "laugh",
+          "action": "cheer",
+          "brand": {
+            "name": "Jensen Chips",
+            "bg": "#111111",
+            "fg": "#76b900",
+            "icon": "bolt"
+          }
+        }
+      ]
+    },
+    {
+      "narration": "The only company that could ever beat Nvidia is the guy who built it.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": "THE PLAN",
+        "stat_sub": "beat your own company"
+      },
+      "toon": [
+        {
+          "place": "street",
+          "beat": "sign",
+          "mood": "proud",
+          "brand": {
+            "name": "Nvidia",
+            "bg": "#76b900",
+            "fg": "#111111",
+            "icon": "chip"
+          },
+          "crowd": 25
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Bloomberg (via News Tribune): Nvidia probe into CEO affair raises thorny questions for AI",
+      "url": "https://www.newstribune.com/news/2026/nov/10/nvidia-probe-into-ceo-affair-raises-thorny/"
+    },
+    {
+      "title": "Al Jazeera: Why did Nvidia CEO Jensen Huang resign?",
+      "url": "https://www.aljazeera.com/news/2026/11/12/why-did-nvidia-ceo-jensen-huang-resign-and-who-is-colette-kress"
+    },
+    {
+      "title": "Wikipedia: Nvidia",
+      "url": "https://en.wikipedia.org/wiki/Nvidia"
+    }
+  ]
+}
