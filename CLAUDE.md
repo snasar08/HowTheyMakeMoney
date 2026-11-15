@@ -272,6 +272,9 @@ research more ... maintain quality too")**. Goal: build a buffer, capped so cred
    - GOOD scenes: the picture matches the sentence (rides = drive on the road, money = cash stacks, years = clock, an app = phone, a company named or founded = its logo or sign with real brand colours, fans = crowd/queue, an athlete = court or pitch); every sentence looks different from the one before; the hero looks like the real person (hair, beard, skin, glasses) and athletes wear their real number in team colours; moods follow the line (shock at a big number, sad at a setback, laugh at a win).
    - BAD scenes: a random street during a money or time line; the same beat twice in a row; more than 2 clocks or 1 phone per Short; money in space; an empty place with nothing happening; a famous person with the wrong hair or skin; made-up facts; a logo or sign the line does not mention.
    - Brand names and code-drawn logos (`brand` {name, bg, fg, icon}) are allowed on screen in toon Shorts; never copied logo art, crests or real jersey designs.
+   **Story/plan Shorts post automatically (Sam approved, Nov 15 2026: "Post automatically").** Story `history` and
+   `plan` scripts the routines write go in as `status: "ready"` like any other script once they pass every check
+   (sources opened, lint 0 errors, story score 80+, one `toon` dict per sentence); no separate approval needed.
    **Formats now (Sam, Nov 15 2026): `famous`, `whatif`, `story` (history + plan) only.** Sam dropped `how` and
    `careers` after the numbers (median 21 and 18 views at 48 h vs 781 for famous; 40 chart Shorts median 15). Their
    ready scripts were set back to `draft` with a `paused` note; do not write new ones, do not set them ready. With
