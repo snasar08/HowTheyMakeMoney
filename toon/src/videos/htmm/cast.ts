@@ -668,6 +668,8 @@ function drawLogo(p: Pen, B: { name: string; bg: string; fg: string; icon?: stri
   else if (ic === "play") { g.beginPath(); g.moveTo(-60, -90); g.lineTo(90, 0); g.lineTo(-60, 90); g.closePath(); g.fill(); }
   else if (ic === "cart") { g.beginPath(); g.moveTo(-130, -90); g.lineTo(-90, -90); g.lineTo(-50, 50); g.lineTo(100, 50); g.lineTo(130, -50); g.lineTo(-70, -50); g.stroke(); g.beginPath(); g.arc(-35, 100, 22, 0, 7); g.arc(85, 100, 22, 0, 7); g.fill(); }
   else if (ic === "robot") { g.strokeRect(-90, -70, 180, 140); g.beginPath(); g.arc(-40, -5, 22, 0, 7); g.arc(40, -5, 22, 0, 7); g.fill(); g.beginPath(); g.moveTo(0, -70); g.lineTo(0, -120); g.stroke(); g.beginPath(); g.arc(0, -125, 16, 0, 7); g.fill(); }
+  else if (ic === "swoosh") { g.beginPath(); g.moveTo(-150, 30); g.quadraticCurveTo(-120, 120, -20, 70); g.lineTo(150, -60); g.quadraticCurveTo(-30, 40, -100, 30); g.quadraticCurveTo(-140, 20, -110, -30); g.quadraticCurveTo(-170, 0, -150, 30); g.fill(); }
+  else if (ic === "star") { g.beginPath(); for (let i = 0; i < 10; i++) { const a = -Math.PI / 2 + (i * Math.PI) / 5, r = i % 2 ? 55 : 130; g.lineTo(r * Math.cos(a), r * Math.sin(a)); } g.closePath(); g.fill(); }
   else if (ic === "burger") { g.beginPath(); g.arc(0, -10, 120, Math.PI, 0); g.fill(); g.fillRect(-125, 15, 250, 30); g.beginPath(); g.moveTo(-120, 65); g.lineTo(120, 65); g.lineTo(100, 110); g.lineTo(-100, 110); g.closePath(); g.fill(); }
   else { g.font = `900 260px "Arial Black", Arial, sans-serif`; g.textAlign = "center"; g.textBaseline = "middle"; g.fillText(B.name.slice(0, 1).toUpperCase(), 0, 10); }
   g.restore();

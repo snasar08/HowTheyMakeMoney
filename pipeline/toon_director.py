@@ -25,7 +25,7 @@ BEATS = ["walk", "drive", "queue", "phone", "clock", "money", "logo", "sign"]
 PROPS = ["car", "truck", "trophy", "cash", "boxes", "check", "rocket", "ball", "mic", "flag", "laptop", "burger", "controller"]
 MOODS = ["happy", "laugh", "shock", "nervous", "proud", "stern", "scheme", "relief", "dazed", "sad", "calm", "excited"]
 ACTIONS = ["stand", "walk", "run", "cheer", "work"]
-ICONS = ["rocket", "bolt", "chip", "globe", "car", "brain", "bird", "sun", "play", "cart", "robot", "burger", "letter"]
+ICONS = ["swoosh", "star", "rocket", "bolt", "chip", "globe", "car", "brain", "bird", "sun", "play", "cart", "robot", "burger", "letter"]
 
 KIT = f"""You direct a cartoon YouTube Short (flat 2D characters in a colourful 3D world). The hero is the main
 character. For EVERY sentence pick ONE scene that literally shows what that sentence says, so a viewer with the
