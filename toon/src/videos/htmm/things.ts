@@ -68,7 +68,7 @@ export const THINGS: Record<string, Thing> = {
     p.poly(rr(60, 60, 340, 340, 26), "#2b2a33", 10); p.poly(rr(100, 100, 300, 300, 16), pick(c, "#76b900"), 6);
     txt(p, "AI", 200, 204, 92, c.fg && pick(c, "") ? c.fg : "#111111");
   } },
-  drone: { cw: 480, ch: 360, move: "fly", draw: (p) => {
+  drone: { cw: 480, ch: 360, draw: (p) => {
     p.stroke([[90, 90], [390, 90]], 14); for (const x of [90, 390]) { p.stroke([[x, 90], [x, 60]], 10); p.ell(x, 56, 70, 12, "#cfd6de", 6); }
     p.poly(rr(170, 70, 310, 140, 22), "#3f6fb5", 9); p.ell(240, 105, 14, 14, "#4dff9a", 0);
     p.stroke([[210, 140], [200, 200]], 6); p.stroke([[270, 140], [280, 200]], 6);
@@ -81,7 +81,7 @@ export const THINGS: Record<string, Thing> = {
     p.poly([[150, 360], [120, 420], [160, 410], [140, 470]], "#f2c94c", 6);                                                              // bolt
     p.poly([[175, 350], [205, 350], [180, 400], [215, 400], [160, 450], [175, 410], [150, 410]], "#f2c94c", 7);
   } },
-  satellite: { cw: 560, ch: 300, move: "fly", draw: (p) => {
+  satellite: { cw: 560, ch: 300, draw: (p) => {
     for (const x of [20, 360]) { p.poly(rr(x, 90, x + 180, 210, 8), "#3f6fb5", 8); for (let i = 1; i < 4; i++) p.stroke([[x + i * 45, 92], [x + i * 45, 208]], 4, "#a8d8ff"); }
     p.stroke([[200, 150], [360, 150]], 10); p.poly(rr(225, 95, 335, 205, 14), "#cfd6de", 9); p.ell(280, 150, 22, 22, "#4dff9a", 5);
     p.stroke([[280, 95], [280, 40]], 6); p.ell(280, 34, 26, 10, "#cfd6de", 5);

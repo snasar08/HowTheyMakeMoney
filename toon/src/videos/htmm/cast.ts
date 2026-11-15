@@ -643,16 +643,17 @@ export const stage = (id: number, t: number, _b: BridgeState, cam: CamInfo): Sta
     const draw = tintDraw((pen) => T.draw(pen, c), T.cw, T.ch);
     if (T.move === "drive" && beat === "drive") return;   // already the vehicle the hero drives
     if (T.move) {
-      const u = tl * 5.5 - 9 + k * 4, fly = T.move === "fly", w = fly ? 2.2 : 4.2;
+      const fly = T.move === "fly", u = fly ? tl * 2.4 - 2.5 + k * 2 : tl * 5.5 - 9 + k * 4, w = fly ? 2.0 : 4.2;
       const x = h.x + L.d[0] * u + r[0] * (fly ? 0.6 : -2.6), z = h.z + L.d[1] * u + r[1] * (fly ? 0.6 : -2.6);
       out.fx.push({ key, cw: T.cw, ch: T.ch, x, y: h.y + (fly ? 3.0 + 0.15 * Math.sin(tl * 5) : w * asp * 0.5), z, w, h: w * asp, draw });
       return;
     }
     const kp = pop(0.12 + k * 0.3);
     if (kp <= 0) return;
-    const big = k === 0 && !busy, w = (big ? 1.7 : 1.0) * kp, side = k === 0 ? (busy ? -0.9 : 1.0) : 0.8, fw = big ? -0.3 : 0.9;
+    const big = k === 0 && !busy, w = (big ? 1.7 : k === 0 ? 1.3 : 1.0) * kp, side = big ? 1.0 : 0.5, fw = big ? -0.3 : 1.3;
     const x = h.x + r[0] * side + h.d[0] * fw, z = h.z + r[1] * side + h.d[1] * fw;
-    out.fx.push({ key, cw: T.cw, ch: T.ch, x, y: h.y + (big ? 1.7 : w * asp * 0.5 + 0.05), z, w, h: w * asp, draw });
+    const hover = name === "drone" || name === "satellite" ? 0.5 + 0.12 * Math.sin(tl * 4) : 0;   // fliers bob in the air
+    out.fx.push({ key, cw: T.cw, ch: T.ch, x, y: h.y + (big ? 1.7 : w * asp * 0.5 + 0.05) + hover, z, w, h: w * asp, draw });
   });
   return out;
   function put(name: string, fwd: number, side: number, w: number, hgt: number, lift = 0, follow = false) {

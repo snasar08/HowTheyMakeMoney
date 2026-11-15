@@ -127,7 +127,7 @@ THING_WORDS = [
     ("drone", r"\bdrones?\b|\bflying robots?\b|\bfly your package\b"),
     ("plant", r"\bpower plants?\b|\bpower\b"),
     ("satellite", r"\bsatellites?\b|\binto space\b|\bin space\b|\bin orbit\b"),
-    ("chatbot", r"\bchatbots?\b|\bchat ?gpt\b|\bai\b|\ba\.i\.(?=\W|$)"),
+    ("chatbot", r"\bchatbots?\b|\bchat ?gpt\b"),
     ("ring", r"\brings?\b|\bchampionships?\b|\btitles?\b"),
     ("stadium", r"\bstadiums?\b|\barenas?\b"),
     ("factory", r"\bfactor(y|ies)\b|\bdata cent(er|re)s?\b|\bbuilds?\b.*\bplants?\b"),
@@ -143,14 +143,16 @@ THING_WORDS = [
 ]
 
 
-def things_for(line: str, given: list) -> list:
-    """The script's/director's `things` first, then whatever the line mentions, at most 2, no near-duplicates."""
+def things_for(line: str, given: list, prev: list | None = None) -> list:
+    """The script's/director's `things` first, then whatever the line mentions, at most 2, no near-duplicates, and
+    nothing the previous sentence already showed (one AI bubble per line got repetitive in the Nov 15 test)."""
     out = [t for t in given if isinstance(t, str)]
+    prev = prev or []
     low = line.lower()
     for name, rx in THING_WORDS:
         if len(out) >= 2:
             break
-        if name not in out and re.search(rx, low):
+        if name not in out and name not in prev and re.search(rx, low):
             if name == "shoe" and ("springshoe" in out or "sneakerbus" in out):
                 continue
             if name == "bus" and "sneakerbus" in out:
@@ -198,6 +200,7 @@ def make_plan(script: dict, recorded: dict | None = None) -> dict:
     direction, how = toon_director.direct(script, flat)
     print(f"[toon] director: {how}, {len(flat)} sentences", flush=True)
     di = 0
+    prev_things: list = []
     for k, (i, sc) in enumerate(scenes):
         v = sc["visual"]
         if recorded:
@@ -227,7 +230,7 @@ def make_plan(script: dict, recorded: dict | None = None) -> dict:
                         **({"place": place} if place in ("court", "pitch", "stage", "office", "servers", "space", "garage") else {}),
                         **({"loc": {"bridge": 0, "street": 1, "quay": 2}[place]} if place in ("bridge", "street", "quay") else {}),
                         **({"brand": _brand(d["brand"])} if d.get("brand") else {"brand": _brand(v["brand"])} if v.get("brand") else {}),
-                        "things": things_for(ss[j], d.get("things") or []), "line": ss[j][:80]})
+                        "things": (prev_things := things_for(ss[j], d.get("things") or [], prev_things)), "line": ss[j][:80]})
             a += m
     slug = f"{script.get('id', '')}-{script.get('slug', '')}"
     co = script.get("company", "")
