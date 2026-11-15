@@ -378,10 +378,10 @@ const off = (id: number, f: number, fwd: number, side: number, up: number): V3 =
   return [h.x + h.d[0] * fwd + r[0] * side, h.y + up, h.z + h.d[1] * fwd + r[1] * side];
 };
 const FR: Record<string, (id: number, f0: number) => (f: number) => Shot> = {
-  ws: (id, f0) => (f) => dolly(off(id, f, 10.5, 2.6, 3.0), off(id, f, 0, 0, 1.45), pushK(f, f0, 0.002), { fov: 42 }),
-  ms: (id, f0) => (f) => dolly(off(id, f, 5.6, 0.7, 1.5), off(id, f, 0, 0, 1.6), pushK(f, f0, 0.0025), { fov: 38 }),
-  cu: (id, f0) => (f) => dolly(off(id, f, 3.1, -0.6, 1.6), off(id, f, 0, 0, 1.75), pushK(f, f0, 0.002), { fov: 34, roll: 0.03 }),
-  low: (id, f0) => (f) => dolly(off(id, f, 4.4, -1.0, 0.5), off(id, f, 0, 0, 1.4), pushK(f, f0, 0.0025), { fov: 42, roll: -0.04 }),
+  ws: (id, f0) => (f) => dolly(off(id, f, 10.5, 2.6, 3.0), off(id, f, 0, 0, 1.2), pushK(f, f0, 0.002), { fov: 42 }),
+  ms: (id, f0) => (f) => dolly(off(id, f, 5.6, 0.7, 1.5), off(id, f, 0, 0, 1.4), pushK(f, f0, 0.0025), { fov: 38 }),
+  cu: (id, f0) => (f) => dolly(off(id, f, 3.3, -0.6, 1.5), off(id, f, 0, 0, 1.4), pushK(f, f0, 0.002), { fov: 34, roll: 0.03 }),
+  low: (id, f0) => (f) => dolly(off(id, f, 4.4, -1.0, 0.5), off(id, f, 0, 0, 1.25), pushK(f, f0, 0.0025), { fov: 42, roll: -0.04 }),
 };
 const SEQ = [["ws", "ms", "cu"], ["ms", "low", "ws"], ["low", "cu", "ms"], ["ws", "cu", "low"]];
 const CINF: Record<string, number> = { ws: 0, ms: 11, cu: 14, low: 9 };
@@ -395,7 +395,7 @@ SHOTS.forEach((s) => {
   for (let j = 0; j < m; j++) {
     const f0 = s.a + Math.round((j * n) / m), name = seq[j];
     keys.push({ f: f0, cut: j === 0, dur: 26, s: FR[name](s.id, f0) });
-    DOF.push({ f: f0, ...(j ? { dur: 26 } : {}), cInf: CINF[name], focus: (f: number) => off(s.id, Math.min(f, s.b - 1), 0, 0, 1.7) });
+    DOF.push({ f: f0, ...(j ? { dur: 26 } : {}), cInf: CINF[name], focus: (f: number) => off(s.id, Math.min(f, s.b - 1), 0, 0, 1.48) });
   }
   CAMS[s.id] = keys;
 });
