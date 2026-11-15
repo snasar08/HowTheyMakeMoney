@@ -508,6 +508,10 @@ export const stage = (id: number, t: number, _b: BridgeState, cam: CamInfo): Sta
   for (let i = 0; i < n; i++) {
     const lat = (i % 2 ? 1 : -1) * (L.w * 0.55 + hh(i, 2) * L.w * 0.45), along = (hh(i, 1) - 0.4) * 34 + lead;
     const x = L.p[0] + L.d[0] * along + r[0] * lat, z = L.p[2] + L.d[1] * along + r[1] * lat;
+    // keep the lens clear: nobody between the camera and the hero, nobody right in front of the lens
+    const cx = cam.pos.x - h.x, cz = cam.pos.z - h.z, cl = Math.hypot(cx, cz) || 1, px = x - h.x, pz = z - h.z;
+    const al = (px * cx + pz * cz) / cl, perp = Math.abs(px * cz - pz * cx) / cl;
+    if ((al > 0.3 && al < cl + 2 && perp < 1.5) || Math.hypot(cam.pos.x - x, cam.pos.z - z) < 3.2 || Math.hypot(px, pz) < 0.9) continue;
     const cheer = act === "cheer" || i % 3 === 0;
     const ce = (["smile", "grin", "laugh", "shock", "smile_closed", "relief_open"] as Expr[])[i % 6];
     const cfo: FrontOpts = { mode: "stand", expr: ce, blink: lidAt(t, i), ...(cheer ? { wave: q(Math.sin(tl * 8 + i), 4) } : {}) };
