@@ -70,14 +70,15 @@ jobs:
           name: voice
           path: .cache/voice
       - run: |
-          ID=$(cat toon/test_id.txt)
-          F=$(ls content/scripts/${ID}*.json | head -1)
-          mkdir -p plans tp
-          LP_RECORD=plans timeout 1500 python -m pipeline.run --id $ID --dry 2>&1 | grep -E "^\[run\]|Error|Traceback" || true
-          ls -la plans
-          python -m pipeline.toon plan "$F" tp/plan.json plans/$(basename "${F%.json}").json | tee tp/director.txt
-          python -c "import json;[print(s['si'],s['n'],s['beat'],s.get('place',s.get('loc','')),s.get('mood'),s.get('props'),(s.get('brand') or {}).get('name',''),'|',s.get('line','')) for s in json.load(open('tp/plan.json'))['plan']['scenes']]" | tee -a tp/director.txt
-          cp plans/*.json tp/
+          # toon/test_id.txt may list several ids (space separated): one plan per Short, all rendered by the 12 machines
+          mkdir -p plans tp/plans tp/rec
+          for ID in $(cat toon/test_id.txt); do
+            F=$(ls content/scripts/${ID}*.json | head -1); S=$(basename "${F%.json}")
+            LP_RECORD=plans timeout 1500 python -m pipeline.run --id $ID --dry 2>&1 | grep -E "^\[run\]|Error|Traceback" || true
+            python -m pipeline.toon plan "$F" tp/plans/$S.json plans/$S.json | tee -a tp/director.txt
+            python -c "import json,sys;[print(s['si'],s['n'],s['beat'],s.get('place',s.get('loc','')),s.get('mood'),s.get('things'),(s.get('brand') or {}).get('name',''),'|',s.get('line','')) for s in json.load(open(sys.argv[1]))['plan']['scenes']]" tp/plans/$S.json | tee -a tp/director.txt
+          done
+          cp plans/*.json tp/rec/
       - uses: actions/upload-artifact@v4
         with:
           name: toon-plan
@@ -114,7 +115,9 @@ jobs:
         run: |
           [ -d node_modules/remotion ] || npm install --no-audit --no-fund 2>&1 | tail -3
           npx remotion browser ensure 2>&1 | tail -1
-          node scripts/frames.mjs HtmmShort ../tp/plan.json ../frames ${{ matrix.shard }} 12 "$(cat scale.txt)"
+          for f in ../tp/plans/*.json; do
+            node scripts/frames.mjs HtmmShort "$f" "../frames/$(basename "$f" .json)" ${{ matrix.shard }} 12 "$(cat scale.txt)"
+          done
       - uses: actions/upload-artifact@v4
         with:
           name: toon-frames-${{ matrix.shard }}
@@ -150,11 +153,12 @@ jobs:
           path: frames
           merge-multiple: true
       - run: |
-          ID=$(cat toon/test_id.txt)
           mkdir -p lp/plates
-          python -m pipeline.toon plates tp/plan.json frames lp/plates
-          for f in tp/*.json; do [ "$(basename $f)" = plan.json ] || cp "$f" lp/plates/; done
-          LP_PLATES=$PWD/lp/plates python -m pipeline.run --id $ID --dry 2>&1 | grep -v "Warning\|warn(" | tee run.log
+          for f in tp/plans/*.json; do python -m pipeline.toon plates "$f" "frames/$(basename "$f" .json)" lp/plates; done
+          cp tp/rec/*.json lp/plates/
+          for ID in $(cat toon/test_id.txt); do
+            LP_PLATES=$PWD/lp/plates python -m pipeline.run --id $ID --dry 2>&1 | grep -v "Warning\|warn(" | tee -a run.log
+          done
       - if: always()
         run: |
           gh release view toon-test --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1 || gh release create toon-test --repo "$GITHUB_REPOSITORY" --title "Toon look tests" --notes "Test renders of the toon look. Nothing here is posted." --prerelease
