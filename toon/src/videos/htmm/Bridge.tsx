@@ -50,6 +50,7 @@ const Inner: React.FC<{ id: number; kit: Kit }> = ({ id, kit }) => {
   const f = useCurrentFrame();
   const { camera, scene, gl } = useThree();
   const dbg = useMemo(() => ((getInputProps() as { post?: Record<string, unknown> }).post ?? {}) as { composer?: boolean; msaa?: number; fb?: string; manual?: number }, []);
+  if (dbg.manual === undefined) dbg.manual = 2; // HTMM default: postprocessing's own composer
   useEffect(() => { const x = gl.getContext() as WebGL2RenderingContext; console.warn("[gl]", x.getParameter(x.VERSION), "| float", !!x.getExtension("EXT_color_buffer_float"), "| half", !!x.getExtension("EXT_color_buffer_half_float"), "| samples", x.getParameter(x.MAX_SAMPLES), "| tex", x.getParameter(x.MAX_TEXTURE_SIZE)); }, [gl]);
   const world = useMemo(() => new World(kit), [kit]);
   const target = useMemo(() => new THREE.Vector3(), []);

@@ -1,3 +1,1 @@
-HtmmShort 60 0.5 plans/dbg_e.json swangle
-HtmmShort 60 0.5 plans/dbg_f.json swangle
-HtmmShort 60 0.5 plans/dbg_g.json swangle
+HtmmShort 5,90,150,175,215,250,262,310,360,372,440,520,530,600,660 0.5 plans/060.json swangle
