@@ -1,0 +1,290 @@
+{
+  "id": "125",
+  "slug": "plan-sga-dynasty",
+  "company": "",
+  "format": "story",
+  "story_mode": "plan",
+  "visual_style": "lowpoly",
+  "hook_style": "surprise",
+  "title_style": "statement",
+  "theme": "bold_bright",
+  "status": "draft",
+  "score": 94,
+  "title": "You're SGA. One Ring Isn't Enough.",
+  "name_card": "Shai Gilgeous-Alexander",
+  "name_sub": "Thunder, a hypothetical plan",
+  "images": {},
+  "hud_label": "THE PLAN",
+  "description": "You're Shai Gilgeous-Alexander. You won it all. Now you want a dynasty.\n\nReal (Wikipedia): Shai Gilgeous-Alexander was picked 11th overall in the 2018 NBA draft, was traded to Oklahoma City in 2019, won the 2024-25 MVP and scoring title, then led the Thunder to the 2025 NBA championship as Finals MVP; he won a second MVP in 2025-26. Everything after that is a made-up, hypothetical plan for fun: imagined steps, not news and not anything Shai Gilgeous-Alexander has said or planned.\n\nSources:\n- Wikipedia: Shai Gilgeous-Alexander: https://en.wikipedia.org/wiki/Shai_Gilgeous-Alexander\n\n#shorts #nba #sga #howtheymakemoney",
+  "sources": [
+    {
+      "title": "Wikipedia: Shai Gilgeous-Alexander",
+      "url": "https://en.wikipedia.org/wiki/Shai_Gilgeous-Alexander"
+    }
+  ],
+  "tags": [
+    "sga",
+    "thunder",
+    "nba",
+    "shorts"
+  ],
+  "loop": "So next time you see a tunnel fit, remember:",
+  "cta": "Can OKC build a dynasty? Comment yes or no.",
+  "cta_question": "OKC dynasty: yes or no?",
+  "hero": {
+    "skin": "7a4e34",
+    "hair": "short",
+    "hair_color": "141010",
+    "beard": "mustache",
+    "beard_color": "141010",
+    "shirt": "007ac1",
+    "pants": "007ac1",
+    "trim": "ef3b24",
+    "socks": "f4f4f4",
+    "shoes": "f4f4f4",
+    "glasses": false,
+    "height": 1.08,
+    "outfit": "kit",
+    "number": 2
+  },
+  "scenes": [
+    {
+      "narration": "You're Shai Gilgeous-Alexander. Picked 11th, traded twice, then you win MVP and the title in the same year.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "ball"
+        ],
+        "stat": "11TH PICK",
+        "stat_sub": "then MVP and a ring"
+      },
+      "toon": [
+        {
+          "place": "court",
+          "beat": "walk",
+          "mood": "calm",
+          "crowd": 10
+        },
+        {
+          "place": "street",
+          "beat": "walk",
+          "mood": "happy",
+          "action": "cheer",
+          "crowd": 40
+        },
+        {
+          "place": "court",
+          "beat": "sign",
+          "mood": "laugh",
+          "action": "cheer",
+          "crowd": 40,
+          "brand": {
+            "name": "Thunder",
+            "bg": "#007ac1",
+            "fg": "#ffffff",
+            "icon": "bolt"
+          }
+        }
+      ]
+    },
+    {
+      "narration": "One ring isn't enough. You want a dynasty. So you keep your whole team together.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "ball"
+        ],
+        "stat": "THE PLAN",
+        "stat_sub": "a dynasty"
+      },
+      "toon": [
+        {
+          "place": "court",
+          "beat": "walk",
+          "mood": "stern"
+        },
+        {
+          "place": "office",
+          "beat": "walk",
+          "mood": "scheme"
+        },
+        {
+          "place": "office",
+          "beat": "money",
+          "mood": "proud",
+          "props": [
+            "check"
+          ],
+          "things": [
+            "ring"
+          ]
+        }
+      ]
+    },
+    {
+      "narration": "Then you get to the rim so often, every team builds a wall. So you learn to score from the elbow, every single time.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "ball"
+        ],
+        "stat": "STEP 1",
+        "stat_sub": "unguardable"
+      },
+      "toon": [
+        {
+          "place": "court",
+          "beat": "queue",
+          "mood": "shock",
+          "crowd": 30
+        },
+        {
+          "place": "court",
+          "beat": "walk",
+          "mood": "scheme",
+          "action": "run"
+        }
+      ]
+    },
+    {
+      "narration": "Your style goes viral. So kids everywhere copy your tunnel fits. You turn it into your own fashion brand.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "ball"
+        ],
+        "stat": "STEP 2",
+        "stat_sub": "tunnel fits"
+      },
+      "toon": [
+        {
+          "place": "street",
+          "beat": "phone",
+          "mood": "happy",
+          "crowd": 20
+        },
+        {
+          "place": "street",
+          "beat": "queue",
+          "mood": "laugh",
+          "crowd": 45
+        },
+        {
+          "place": "street",
+          "beat": "logo",
+          "mood": "excited",
+          "brand": {
+            "name": "SGA",
+            "bg": "#111111",
+            "fg": "#ffffff",
+            "icon": "star"
+          }
+        }
+      ]
+    },
+    {
+      "narration": "The brand pays for a giant training center in Oklahoma City. Now the best young players all want to play there.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "ball"
+        ],
+        "stat": "STEP 3",
+        "stat_sub": "everyone wants OKC"
+      },
+      "toon": [
+        {
+          "place": "office",
+          "beat": "sign",
+          "mood": "proud",
+          "brand": {
+            "name": "Thunder",
+            "bg": "#007ac1",
+            "fg": "#ffffff",
+            "icon": "bolt"
+          }
+        },
+        {
+          "place": "court",
+          "beat": "walk",
+          "mood": "laugh",
+          "crowd": 25
+        }
+      ]
+    },
+    {
+      "narration": "Still not enough? You win five in a row.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "ball"
+        ],
+        "stat": "STEP 4",
+        "stat_sub": "five in a row"
+      },
+      "toon": [
+        {
+          "place": "court",
+          "beat": "clock",
+          "mood": "scheme"
+        },
+        {
+          "place": "court",
+          "beat": "money",
+          "mood": "laugh",
+          "action": "cheer",
+          "crowd": 40,
+          "things": [
+            "ring"
+          ]
+        }
+      ]
+    },
+    {
+      "narration": "The 11th pick ends up with the best dynasty of his time.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "ball"
+        ],
+        "stat": "THE PLAN",
+        "stat_sub": "from 11th pick"
+      },
+      "toon": [
+        {
+          "place": "court",
+          "beat": "sign",
+          "mood": "proud",
+          "brand": {
+            "name": "Thunder",
+            "bg": "#007ac1",
+            "fg": "#ffffff",
+            "icon": "bolt"
+          },
+          "crowd": 30
+        }
+      ]
+    }
+  ]
+}

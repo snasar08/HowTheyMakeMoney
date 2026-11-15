@@ -22,7 +22,7 @@ SCRIPTS = ROOT / "content" / "scripts"
 OUT = ROOT / "out"
 
 
-FORMATS = ("how", "whatif", "careers", "famous")
+FORMATS = ("how", "whatif", "careers", "famous", "story")
 WEIGHTS = ROOT / "analytics" / "format_weights.json"  # written by pipeline/insights.py
 
 

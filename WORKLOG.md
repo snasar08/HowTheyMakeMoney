@@ -376,3 +376,27 @@ Sam: "the better free character models... do it yourself". Done in one session.
 - Sam picked +1.5 semitones; said "just to help his family" sounded nervous. Measured: that line sat 2.9 st below
   the rest of the read. Added the odd-tone check (odd_lines) + single-line re-records. voice-e2e on 074: 7/7 lines
   pass, clarity 98.6%, 32.7 s. Eyes (6/10) claimed "Antetokounmpo" is misspelled; it isn't (eyes can be wrong).
+
+## Nov 15 2026 — toon look, Phase 1 in progress (branch `toon`, NOT on main)
+- Sam: the reference Shorts (Mr omi, mromidev/claude-animated-shorts, MIT) "look infinitely better", build off that repo.
+- `toon/`: Remotion + three.js project. `src/videos/bridge` = his source verbatim; `src/videos/htmm` = our copy patched by
+  the scratch script make_htmm.py (plan-driven shots/cameras/lens in story.ts, our hero + crowd in cast.ts, a night
+  light, HtmmShort composition). `pipeline/toon.py` makes the plan from a script (and will name frames as LP plates).
+  `toon-stills.yml`: push branch `toon-stills`, results on `toon-stills-results-<run>` (toon/stills.txt lists renders).
+- State: npm install + bundle + render run on GitHub (versions: remotion 4.0.543, three 0.187, fiber 9.8, react 19).
+  WebGL works only with gl=swangle. PROBLEM: stills come out as the plain background (canvas not drawn), no errors.
+  Run 3 rendered 4 variants of HtmmShort frame 60 (a: no composer, b: msaa 0 + byte buffer, c: msaa 0, d: default);
+  images are on branch toon-stills-results-3 (v1..v4_60.jpg) and NOT yet looked at. Next: look at them, fix the blank
+  canvas, then tune the look, then wire plates into the pipeline (LP_PLATES) on a test branch.
+- Nov 15 (later): blank frames fixed (the React postprocessing wrapper drew nothing under software GL; Bridge.tsx now
+  drives postprocessing's own EffectComposer by default). First full toon Short (060, run 43715050229): voice 3 min,
+  plan 11 min, 12 render machines 5-18 min each (839 frames), make 3 min; all 839 plates used. Sent to Sam.
+- Sam: "looks better, but it doesn't look like it's talking about Uber; make scenes based on what we post" + reference
+  Short (Afterhour Theory, Elon "AI race to space", 170 s, 5,106 frames measured: 42 hard cuts, ~4 s per shot, every
+  sentence its own literal scene, objects pop in on their word). Built a scene library ("beats"): drive (hero drives a
+  car through the street, side/chase cameras), queue (long line of people), phone (giant phone, ride pins pop in),
+  clock (giant clock racing + calendar pages), money (cash stacks pop in). pipeline/toon.beats_for picks one per
+  scene from the line's words (visual.beat wins), never the same twice in a row. Props pop in with an overshoot.
+- Sam: "I LOVE THE VOICE FOR uber driver vid, always use that one" = Gemini Umbriel +1.5 st (already the default).
+- Local test renders: portable Node 22.11 (nodejs.org zip, SHA-256 checked) in the scratchpad, Chrome with GL=angle,
+  ~7 s per half-size still vs 16 s on GitHub. Sam allowed testing on his machine.

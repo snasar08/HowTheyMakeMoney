@@ -14,6 +14,16 @@ and **free beyond his Higgsfield Pro plan** — never add a paid service or ask 
   never double-post. GitHub starts scheduled runs late (Oct 26–28: 5.5–6.5 h). Check Buffer:
   push branch `slot-audit` (report) / `slot-fix` (delete extras, scripts back to ready). Minutes: the repo is public, so standard GitHub runners are free and unlimited (6 h max per job, ~20 jobs at once); a run takes ~5–8 minutes.
 - `pipeline/render.py` draws every frame with Pillow and pipes to ffmpeg (1080x1920, 30 fps).
+- **Toon look (Nov 15, LIVE since the Nov 15 evening merge; repo variable LOOK=blender switches back):** Sam: the Mr omi reference Shorts look "infinitely better";
+  build off his MIT repo (mromidev/claude-animated-shorts). `toon/` = Remotion + three.js project: `src/videos/bridge`
+  his source as-is, `src/videos/htmm` ours (plan-driven via input props `{plan}`: one shot per script scene, our hero
+  outfit from the script `hero`, crowd, day -> golden -> night light arc, drawn props, and the **scene library**:
+  `beat` = drive / queue / phone / clock / money / walk, from `visual.beat` or picked from the line's words by
+  `pipeline/toon.beats_for`). `pipeline/toon.py plan` makes the plan from a script + the recorded LP plan, `plates`
+  maps rendered frames to LP_PLATES names so render.py adds captions/numbers/music on top. Test: push branch
+  `toon-test` (full Short on 12 machines, MP4 on release `toon-test`) or `toon-stills` (stills from toon/stills.txt).
+  Software GL needs `gl=swangle`; the React EffectComposer draws nothing there, so Bridge.tsx uses postprocessing's
+  own composer. Local: portable Node in the scratchpad, `GL=angle`.
 - **Gemini TTS (Nov 13, night; switches on by itself when the `GEMINI_API_KEY` secret exists).** Sam: "this voice
   sucks", wanted a real search and a new angle. Public TTS arenas put Google Gemini TTS at or next to ElevenLabs
   at the top; open models (Qwen3, Chatterbox, Orpheus, Kokoro) rank below. `pipeline/gemini_tts.py` (stdlib REST,
@@ -232,6 +242,36 @@ research more ... maintain quality too")**. Goal: build a buffer, capped so cred
    remember:") that leads back into the opening line. A question opening is optional; if used, put
    the number in it ("How much of your 34 dollar order ..."). The last scene must not say "Follow for more" (the CTA is
    added automatically).
+   **Story format (Nov 15, Sam; toon look only):** `format: "story"`, `visual_style: "lowpoly"`, 5-9 scenes, may run
+   ~45-65 s, told sentence by sentence like the reference "You're Elon Musk..." Short. Two modes (`story_mode`):
+   - `history`: the real story of a big company/person, second person ("You quit a Wall Street job to sell books
+     online. It's 1994."), every fact sourced (118 Bezos, 119 Nike).
+   - `plan`: a HYPOTHETICAL escalating master plan, Sam's words: "Nike wants to take over the shoe game, so they
+     sign athletes, they take over, then fans want dunks, so robotic dunk shoes, then everyone's dunking, so...
+     just like the Elon video, the next idea, the next idea", feasible-sounding, each step caused by the last,
+     getting bigger, ending on a twist (120 Nike; AI race: 121 Zuckerberg, 122 Bezos, 123 Nvidia). Real numbers only if sourced; imagined steps carry no fake
+     statistics; the description says plainly it is a made-up plan, not company news.
+   Any big company everyone knows. When a company/product appears or is created, its logo pops up (code-drawn:
+   `brand` {name, bg, fg, icon}; brand names on screen are allowed since Nov 15, plain lettering, no copied logo art).
+   **Per-sentence scenes (all toon Shorts):** each scene may carry `toon`: one dict per sentence (same count as the
+   sentences in its narration) with `place` (street bridge quay road court pitch stage office servers space garage), `beat`
+   (walk drive queue phone clock money logo sign), `props` (car truck trophy cash boxes check rocket ball mic flag
+   laptop burger controller), `things` (0-2 drawn objects the sentence MENTIONS, shown big: shoe springshoe sneakerbus
+   bus glasses robot chip drone plant satellite chatbot ring stadium factory snack hanger dome dumbbell tv books ereader
+   medal crown; `pipeline/toon.things_for` also adds them from the line's words; Sam, Nov 15: "if it's mentioned in
+   the video, it should make the scenery"), `mood` (happy laugh shock nervous proud stern scheme relief dazed sad calm excited),
+   `action`, `crowd`, `brand`. Without it, `pipeline/toon_director.py` asks Gemini to pick them. The picture must
+   show what the sentence says (Sam: "the scenes are the most important part"). Famous people: set `hero` fields
+   so the cartoon looks like them (hair style/colour, beard, glasses, headband, skin) and `number` for athletes
+   (jersey in team colours with their number; no team logo art); everyone else a signature outfit (`outfit`
+   tee/suit/hoodie/kit/dress, `chest` text, `tie`).
+   **STORY SHORTS AND SCENES (Sam, Nov 15 2026; the routines follow this, it overrides their older 'no logos/likenesses/jerseys' line for toon Shorts):**
+   - Write about a third of this part as `format: "story"` Shorts: `history` (the real story of a big company or person in second person: "You quit Wall Street to sell books online. It's 1994.") and `plan` (a HYPOTHETICAL escalating master plan, Sam's words: "Nike wants to take over the shoe game, so ... so ... then ... still not enough?"). Athletes go viral for this channel, so most `plan` Shorts should be athletes ("You're Victor Wembanyama. You want to be the best ever. So you do X, which leads to Y, which leads to Z") and big companies in a race (the AI race: Meta, Amazon, Nvidia). Patterns: 118-127. Big current news about a famous company is allowed when sourced from a news page you opened, framed carefully (no unproven accusations, no names of private people).
+   - In a `plan`, step one is real and sourced; every later step is clearly imagined, carries no made-up statistics, and the description says in plain words it is a made-up, hypothetical plan, not news.
+   - Every story/toon scene carries `toon`: ONE dict per sentence of its narration (count them; the sentence splitter also splits long sentences at commas, so keep sentences short). Pick place / beat / props / mood / brand so the picture SHOWS what the sentence says.
+   - GOOD scenes: the picture matches the sentence (rides = drive on the road, money = cash stacks, years = clock, an app = phone, a company named or founded = its logo or sign with real brand colours, fans = crowd/queue, an athlete = court or pitch); every sentence looks different from the one before; the hero looks like the real person (hair, beard, skin, glasses) and athletes wear their real number in team colours; moods follow the line (shock at a big number, sad at a setback, laugh at a win).
+   - BAD scenes: a random street during a money or time line; the same beat twice in a row; more than 2 clocks or 1 phone per Short; money in space; an empty place with nothing happening; a famous person with the wrong hair or skin; made-up facts; a logo or sign the line does not mention.
+   - Brand names and code-drawn logos (`brand` {name, bg, fg, icon}) are allowed on screen in toon Shorts; never copied logo art, crests or real jersey designs.
    **Formats (Sam, Oct 29 2026) — rotate 4:** `format` = `how` (how X makes money), `whatif`
    (absurd scenario on ONE real stat, e.g. "What if one person delivered every Amazon package in
    a day?"), `careers` (how pilots/streamers/NBA players make money), `famous` (a famous person's
@@ -303,6 +343,11 @@ research more ... maintain quality too")**. Goal: build a buffer, capped so cred
    needs Sam.
 
 ## Rules
+- **Check every frame at 30 fps (Sam, Nov 15: "a must ... make this a rule").** Before calling any test video good,
+  or sending it to Sam, run `python -m pipeline.allframes video.mp4 outdir` (all frames at 30 fps, numbered, 100 per
+  sheet, plus a scan for blank/flash frames) and Read EVERY sheet in order. A 12-frame sample is not a check. What
+  to look for: each sentence's picture shows what it says; a new view every 1.5-2 s (no 3 s+ holds); nothing cut off
+  at the frame edge (logos, signs, phones); cars actually moving; money that reads as money; no empty or dark scenes.
 - **No picture repeats within a Short (Sam, Nov 3).** Editorial Shorts take each photo once (`editorial.pictures` + photo slots in `render.plan`); give them 8–12+ Commons photos. Image-style (`charts3d`) Shorts still reuse their 4 Higgsfield images — more images per Short costs credits, ask Sam before changing.
 - Never invent numbers. Never use real logos or people in image prompts.
 - Real people/brands (STYLE.md "Real people and brands"): names OK in voiceover/captions/titles
