@@ -55,6 +55,8 @@ jobs:
     needs: voice
     runs-on: ubuntu-latest
     timeout-minutes: 45
+    env:
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}   # the director picks one scene per sentence
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -73,7 +75,8 @@ jobs:
           mkdir -p plans tp
           LP_RECORD=plans timeout 1500 python -m pipeline.run --id $ID --dry 2>&1 | grep -E "^\[run\]|Error|Traceback" || true
           ls -la plans
-          python -m pipeline.toon plan "$F" tp/plan.json plans/$(basename "${F%.json}").json
+          python -m pipeline.toon plan "$F" tp/plan.json plans/$(basename "${F%.json}").json | tee tp/director.txt
+          python -c "import json;[print(s['si'],s['n'],s['beat'],s.get('place',s.get('loc','')),s.get('mood'),s.get('props'),(s.get('brand') or {}).get('name',''),'|',s.get('line','')) for s in json.load(open('tp/plan.json'))['plan']['scenes']]" | tee -a tp/director.txt
           cp plans/*.json tp/
       - uses: actions/upload-artifact@v4
         with:
@@ -155,4 +158,4 @@ jobs:
       - if: always()
         run: |
           gh release view toon-test --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1 || gh release create toon-test --repo "$GITHUB_REPOSITORY" --title "Toon look tests" --notes "Test renders of the toon look. Nothing here is posted." --prerelease
-          gh release upload toon-test --repo "$GITHUB_REPOSITORY" out/*.mp4 run.log --clobber
+          gh release upload toon-test --repo "$GITHUB_REPOSITORY" out/*.mp4 run.log tp/director.txt --clobber

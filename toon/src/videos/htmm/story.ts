@@ -6,7 +6,7 @@ export const FPS = 30;
 import { getInputProps } from "remotion";
 import { PLACES } from "./places";
 /** HTMM: one entry per script scene. a = first composition frame, n = frames, frLo = the scene-local frame number of a. */
-export type PlanScene = { a: number; n: number; frLo: number; light: "day" | "golden" | "night"; set: string; action: string; crowd: number; props: string[]; beat?: string; brand?: Brand; place?: string; mood?: string };
+export type PlanScene = { a: number; n: number; frLo: number; light: "day" | "golden" | "night"; set: string; action: string; crowd: number; props: string[]; beat?: string; brand?: Brand; place?: string; mood?: string; loc?: number; line?: string };
 export type Brand = { name: string; bg: string; fg: string; icon?: string };
 export const PLAN: { scenes: PlanScene[]; hero: Record<string, unknown>; seed: number; brand?: Brand } = (getInputProps() as { plan?: any }).plan ?? {
   scenes: [{ a: 0, n: 90, frLo: 0, light: "day", set: "city", action: "idle", crowd: 12, props: [] }],
@@ -375,10 +375,11 @@ export const placeOf = (id: number) => { const p = sceneOf(id)?.place; return p 
 export const locOf = (id: number): Loc => {
   const pl = placeOf(id);
   if (pl) return PLACES[pl];
-  return beatOf(id) === "drive" ? ROAD : beatOf(id) === "sign" ? LOCS[1] : LOCS[(id - 1) % LOCS.length];
+  const lc = sceneOf(id)?.loc;
+  return beatOf(id) === "drive" ? ROAD : beatOf(id) === "sign" ? LOCS[1] : lc != null && LOCS[lc] ? LOCS[lc] : LOCS[(id - 1) % LOCS.length];
 };
 export const heroAt = (id: number, tl: number) => {
-  const L = locOf(id), b = beatOf(id), v = b === "drive" ? 7.5 : b === "queue" || b === "clock" || b === "phone" || b === "money" || b === "sign" || b === "logo" ? 0 : SPEED[sceneOf(id).action] ?? 0;
+  const L = locOf(id), b = beatOf(id), a0 = sceneOf(id).action, v = b === "drive" ? 7.5 : a0 === "stand" || a0 === "cheer" || a0 === "work" ? 0 : b === "queue" || b === "clock" || b === "phone" || b === "money" || b === "sign" || b === "logo" ? 0 : SPEED[sceneOf(id).action] ?? 0;
   return { x: L.p[0] + L.d[0] * v * tl, y: L.p[1], z: L.p[2] + L.d[1] * v * tl, d: L.d, v };
 };
 /** a point relative to the hero at frame f: fwd = metres ahead (walking direction), side = to the hero's left, up */

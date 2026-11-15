@@ -142,9 +142,14 @@ def make_plan(script: dict, recorded: dict | None = None) -> dict:
             lo, hi = ranges.get(si, (fr, fr))
             ranges[si] = (min(lo, fr), max(hi, fr))
     lt, out, a = lights(len(scenes)), [], 0
-    bt = beats_for([sc.get("narration", "") for _, sc in scenes],
-                   [sc["visual"].get("beat") or ("logo" if sc["visual"].get("brand") else None) for _, sc in scenes],
-                   script.get("company", "") if script.get("format") != "famous" else "")
+    # one shot per SENTENCE (Nov 15): the director picks each sentence's place / beat / props / mood / brand
+    from . import prosody, toon_director, tts
+    sents = {i: [x for x, _q, b in tts.sentences(tts.speakable(sc.get("narration", ""))) if not b] or [sc.get("narration", "")]
+             for i, sc in scenes}
+    flat = [x for i, _ in scenes for x in sents[i]]
+    direction, how = toon_director.direct(script, flat)
+    print(f"[toon] director: {how}, {len(flat)} sentences", flush=True)
+    di = 0
     for k, (i, sc) in enumerate(scenes):
         v = sc["visual"]
         if recorded:
@@ -155,10 +160,27 @@ def make_plan(script: dict, recorded: dict | None = None) -> dict:
         else:
             lo, hi = 0, int((len(sc.get("narration", "").split()) / 2.6 + 0.6) * FPS)
         n = hi - lo + 1
-        out.append({"si": i, "a": a, "n": n, "frLo": lo, "light": lt[k], "set": v.get("set", "city"),
-                    "action": v.get("action", "idle"), "crowd": int(v.get("crowd", 0) or 0), "props": v.get("props") or [],
-                    "beat": bt[k], **({"brand": _brand(v["brand"])} if v.get("brand") else {})})
-        a += n
+        ss = sents[i]
+        w = [max(1, prosody.syllables(x)) for x in ss]
+        cuts = [0]
+        for j in range(len(ss) - 1):
+            cuts.append(round(n * sum(w[:j + 1]) / sum(w)))
+        cuts.append(n)
+        for j in range(len(ss)):
+            d = direction[di] if di < len(direction) else {}
+            di += 1
+            m = cuts[j + 1] - cuts[j]
+            if m <= 0:
+                continue
+            place = d.get("place", "street")
+            out.append({"si": i, "a": a, "n": m, "frLo": lo + cuts[j], "light": lt[k], "set": v.get("set", "city"),
+                        "action": d.get("action", v.get("action", "idle")), "crowd": int(d.get("crowd", v.get("crowd", 0)) or 0),
+                        "props": d.get("props") or [], "beat": d.get("beat", "walk"), "mood": d.get("mood", "happy"),
+                        **({"place": place} if place in ("court", "pitch", "stage", "office", "servers", "space") else {}),
+                        **({"loc": {"bridge": 0, "street": 1, "quay": 2}[place]} if place in ("bridge", "street", "quay") else {}),
+                        **({"brand": _brand(d["brand"])} if d.get("brand") else {"brand": _brand(v["brand"])} if v.get("brand") else {}),
+                        "line": ss[j][:80]})
+            a += m
     slug = f"{script.get('id', '')}-{script.get('slug', '')}"
     co = script.get("company", "")
     bg, fg = BRAND_COLORS.get(co.lower(), ("#241726", "#ffffff"))
