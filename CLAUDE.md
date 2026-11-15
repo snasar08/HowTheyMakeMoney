@@ -14,6 +14,16 @@ and **free beyond his Higgsfield Pro plan** — never add a paid service or ask 
   never double-post. GitHub starts scheduled runs late (Oct 26–28: 5.5–6.5 h). Check Buffer:
   push branch `slot-audit` (report) / `slot-fix` (delete extras, scripts back to ready). Minutes: the repo is public, so standard GitHub runners are free and unlimited (6 h max per job, ~20 jobs at once); a run takes ~5–8 minutes.
 - `pipeline/render.py` draws every frame with Pillow and pipes to ffmpeg (1080x1920, 30 fps).
+- **Toon look (Nov 15, branch `toon`, NOT live yet):** Sam: the Mr omi reference Shorts look "infinitely better";
+  build off his MIT repo (mromidev/claude-animated-shorts). `toon/` = Remotion + three.js project: `src/videos/bridge`
+  his source as-is, `src/videos/htmm` ours (plan-driven via input props `{plan}`: one shot per script scene, our hero
+  outfit from the script `hero`, crowd, day -> golden -> night light arc, drawn props, and the **scene library**:
+  `beat` = drive / queue / phone / clock / money / walk, from `visual.beat` or picked from the line's words by
+  `pipeline/toon.beats_for`). `pipeline/toon.py plan` makes the plan from a script + the recorded LP plan, `plates`
+  maps rendered frames to LP_PLATES names so render.py adds captions/numbers/music on top. Test: push branch
+  `toon-test` (full Short on 12 machines, MP4 on release `toon-test`) or `toon-stills` (stills from toon/stills.txt).
+  Software GL needs `gl=swangle`; the React EffectComposer draws nothing there, so Bridge.tsx uses postprocessing's
+  own composer. Local: portable Node in the scratchpad, `GL=angle`.
 - **Gemini TTS (Nov 13, night; switches on by itself when the `GEMINI_API_KEY` secret exists).** Sam: "this voice
   sucks", wanted a real search and a new angle. Public TTS arenas put Google Gemini TTS at or next to ElevenLabs
   at the top; open models (Qwen3, Chatterbox, Orpheus, Kokoro) rank below. `pipeline/gemini_tts.py` (stdlib REST,
