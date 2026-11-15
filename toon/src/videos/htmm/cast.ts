@@ -475,6 +475,7 @@ export { FPS };
 
 // ======================= HTMM: our hero and the crowd around them =======================
 import { PLAN, heroAt, locOf, sceneOf, beatOf, placeOf } from "./story";
+import { THINGS } from "./things";
 let BR = PLAN.brand;  // the scene's brand (set per scene in stage())
 /** the brand name in bold lettering, centred in the box (x0,y0)-(x1,y1), shrunk to fit */
 function brandText(p: Pen, x0: number, y0: number, x1: number, y1: number, fg?: string) {
@@ -532,7 +533,13 @@ export const stage = (id: number, t: number, _b: BridgeState, cam: CamInfo): Sta
     const bump = 0.03 * Math.abs(Math.sin(tl * 11));
     out.places.push(person(cam, { i: 500, o: HERO, okey: "hero" }, hx, h.y + 0.98 + bump, hz, { side: false, mirror: false },
       { mode: "sit", expr: id % 2 ? "grin" : "laugh", blink: lidAt(t, 500), look: right * 0.6 }, {}, 0.8));
-    out.fx.push({ key: `prop|carDrive|${s.light}|${bkey}`, cw: 700, ch: 380, x: h.x, y: h.y + 1.2 + bump, z: h.z, w: 4.5 * right, h: 2.44,
+    // a line about buses (or Nike's sneaker bus) drives THAT vehicle, not the car (Sam: we should see the sneaker bus)
+    const veh = (sc.things ?? []).find((n) => THINGS[n]?.move === "drive");
+    if (veh) {
+      const T = THINGS[veh], vw = 4.7, vh = (vw * T.ch) / T.cw, c = { bg: BR?.bg ?? "", fg: BR?.fg ?? "" };
+      out.fx.push({ key: `thing|${veh}|drive|${s.light}|${bkey}`, cw: T.cw, ch: T.ch, x: h.x, y: h.y + vh / 2 - 0.05 + bump, z: h.z, w: vw * right, h: vh,
+        draw: tintDraw((pen) => T.draw(pen, c), T.cw, T.ch) });
+    } else out.fx.push({ key: `prop|carDrive|${s.light}|${bkey}`, cw: 700, ch: 380, x: h.x, y: h.y + 1.2 + bump, z: h.z, w: 4.5 * right, h: 2.44,
       draw: tintDraw(PROPS.carDrive.draw, 700, 380) });
     blob(out, h.x, h.y, h.z, 4.0, 0.9);
     for (let k = 0; k < 3; k++) {
@@ -627,6 +634,26 @@ export const stage = (id: number, t: number, _b: BridgeState, cam: CamInfo): Sta
     else if (name === "burger") put("burger", 0.3, 1.05, 0.7, 0.6, 0.9, true);
     else if (name === "controller") put("controller", 0.35, 0.8, 0.55, 0.36, 1.0, true);
   }
+  // ---- things the line mentions (Sam: "if it's mentioned, it should make the scenery"): the first pops in big beside
+  // the hero (lower and closer if a logo / sign / phone already holds that spot), a second one smaller at his feet;
+  // vehicles drive through behind him, drones and satellites fly across ----
+  const busy = beat === "logo" || beat === "sign" || beat === "phone" || beat === "clock";
+  (sc.things ?? []).filter((n) => THINGS[n]).slice(0, 2).forEach((name, k) => {
+    const T = THINGS[name], c = { bg: BR?.bg ?? "", fg: BR?.fg ?? "" }, asp = T.ch / T.cw, key = `thing|${name}|${s.light}|${bkey}`;
+    const draw = tintDraw((pen) => T.draw(pen, c), T.cw, T.ch);
+    if (T.move === "drive" && beat === "drive") return;   // already the vehicle the hero drives
+    if (T.move) {
+      const u = tl * 5.5 - 9 + k * 4, fly = T.move === "fly", w = fly ? 2.2 : 4.2;
+      const x = h.x + L.d[0] * u + r[0] * (fly ? 0.6 : -2.6), z = h.z + L.d[1] * u + r[1] * (fly ? 0.6 : -2.6);
+      out.fx.push({ key, cw: T.cw, ch: T.ch, x, y: h.y + (fly ? 3.0 + 0.15 * Math.sin(tl * 5) : w * asp * 0.5), z, w, h: w * asp, draw });
+      return;
+    }
+    const kp = pop(0.12 + k * 0.3);
+    if (kp <= 0) return;
+    const big = k === 0 && !busy, w = (big ? 1.7 : 1.0) * kp, side = k === 0 ? (busy ? -0.9 : 1.0) : 0.8, fw = big ? -0.3 : 0.9;
+    const x = h.x + r[0] * side + h.d[0] * fw, z = h.z + r[1] * side + h.d[1] * fw;
+    out.fx.push({ key, cw: T.cw, ch: T.ch, x, y: h.y + (big ? 1.7 : w * asp * 0.5 + 0.05), z, w, h: w * asp, draw });
+  });
   return out;
   function put(name: string, fwd: number, side: number, w: number, hgt: number, lift = 0, follow = false) {
     const d = PROPS[name];

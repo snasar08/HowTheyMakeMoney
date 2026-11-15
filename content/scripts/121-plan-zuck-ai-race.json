@@ -58,7 +58,10 @@
             "bg": "#0866ff",
             "fg": "#ffffff",
             "icon": "globe"
-          }
+          },
+          "things": [
+            "chatbot"
+          ]
         },
         {
           "place": "street",
@@ -142,6 +145,9 @@
           "mood": "scheme",
           "props": [
             "check"
+          ],
+          "things": [
+            "robot"
           ]
         }
       ]
@@ -167,7 +173,10 @@
         {
           "place": "servers",
           "beat": "walk",
-          "mood": "nervous"
+          "mood": "nervous",
+          "things": [
+            "factory"
+          ]
         },
         {
           "place": "servers",
@@ -271,7 +280,10 @@
           "place": "street",
           "beat": "queue",
           "mood": "proud",
-          "crowd": 60
+          "crowd": 60,
+          "things": [
+            "chatbot"
+          ]
         },
         {
           "place": "street",
@@ -282,7 +294,10 @@
             "bg": "#0866ff",
             "fg": "#ffffff",
             "icon": "globe"
-          }
+          },
+          "things": [
+            "chatbot"
+          ]
         }
       ]
     }

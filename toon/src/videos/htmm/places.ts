@@ -17,6 +17,7 @@ export const PLACES: Record<string, Place> = {
   office: { p: [X0, D0, 1200], d: [0, 1], w: 3 },
   servers: { p: [X0, D0, 1600], d: [0, 1], w: 1.6 },
   space: { p: [X0, D0, 2000], d: [0, -1], w: 4, light: "night" },
+  garage: { p: [X0, D0, 2400], d: [0, 1], w: 2.2 },   // where founders start (Amazon, Nvidia-style comebacks, Apple...)
 };
 
 const plane = (w: number, d: number, tex: THREE.Texture | null, col: string, key: string) => {
@@ -144,6 +145,37 @@ export const buildPlaces = (root: THREE.Object3D) => {
       for (let j = 0; j < 6; j++) b.add(boxGeo(V(x - s * 0.52 - 0.01, D0 + 0.4 + j * 0.36, z - 0.4), V(x - s * 0.5, D0 + 0.44 + j * 0.36, z + (j % 2 ? 0.1 : 0.35))), (j + k) % 3 ? leds : leds2);
     }
     b.add(boxGeo(V(P[0] - 6, D0 + 3.4, P[2] - 24), V(P[0] + 6, D0 + 3.6, P[2] + 2)), dark);
+  }
+  // ---- a garage: concrete floor, brick walls, roll-up door, workbench, shelves of boxes, a hanging bulb ----
+  {
+    const P = PLACES.garage.p, cz = P[2] - 6;
+    const ground = plane(260, 260, null, "#6a6258", "plGarageGround"); b.add(ground.g, ground.m, at(P[0], D0 - 0.02, cz));
+    const fl = plane(11, 16, null, "#a9a49b", "plGarageFloor"); b.add(fl.g, fl.m, at(P[0], D0 + 0.005, cz));
+    const brick = lam("plBrick", () => ({ map: rep(ctex("brickTex", 256, 256, (g) => {
+      g.fillStyle = "#e2dccf"; g.fillRect(0, 0, 256, 256);
+      for (let y = 0; y < 256; y += 32) for (let x = (y / 32) % 2 ? -32 : 0; x < 256; x += 64) { g.fillStyle = ["#b5533c", "#a84a35", "#c05e44"][(x + y) % 3]; g.fillRect(x + 3, y + 3, 58, 26); }
+    }), 4, 2) }));
+    const door = lam("plRollDoor", () => ({ map: ctex("rollDoor", 256, 256, (g) => {
+      g.fillStyle = "#d8dde3"; g.fillRect(0, 0, 256, 256); g.strokeStyle = "#9aa3ae"; g.lineWidth = 5;
+      for (let y = 10; y < 256; y += 22) { g.beginPath(); g.moveTo(0, y); g.lineTo(256, y); g.stroke(); }
+      g.fillStyle = "#59616b"; g.fillRect(108, 228, 40, 12);
+    }) }));
+    b.add(boxGeo(V(P[0] - 5.5, D0, cz - 8.2), V(P[0] + 5.5, D0 + 4.2, cz - 7.8)), brick);              // back wall
+    for (const s of [-1, 1]) b.add(boxGeo(V(P[0] + s * 5.5 - 0.2, D0, cz - 8), V(P[0] + s * 5.5 + 0.2, D0 + 4.2, cz + 6)), brick); // side walls
+    const rd = new THREE.PlaneGeometry(4.2, 3.1); b.add(rd, door, at(P[0] - 2.4, D0 + 1.55, cz - 7.75));   // roll-up door
+    const wood = lam("plBench", () => ({ color: "#9a6a3e" })), box = lam("plBox", () => ({ color: "#d9a066" })), lampG = glow("#ffe7a3", 2.6);
+    b.add(boxGeo(V(P[0] + 1.2, D0 + 0.9, cz - 7.7), V(P[0] + 4.8, D0 + 1.0, cz - 6.6)), wood);          // workbench
+    for (const x of [1.3, 4.6]) b.add(boxGeo(V(P[0] + x - 0.06, D0, cz - 7.6), V(P[0] + x + 0.06, D0 + 0.9, cz - 6.7)), dark);
+    b.add(boxGeo(V(P[0] + 2.0, D0 + 1.0, cz - 7.5), V(P[0] + 2.9, D0 + 1.55, cz - 7.2)), dark);           // old computer
+    b.add(boxGeo(V(P[0] + 2.07, D0 + 1.06, cz - 7.19), V(P[0] + 2.83, D0 + 1.49, cz - 7.18)), glow("#7fd6ff", 1.6));
+    for (const s of [-1, 1]) for (let j = 0; j < 3; j++) {                                                    // shelves + boxes
+      const x = P[0] + s * 5.1, y = D0 + 0.5 + j * 1.1;
+      b.add(boxGeo(V(x - 0.35, y, cz - 5), V(x + 0.35, y + 0.06, cz + 2)), wood);
+      for (let k = 0; k < 4; k++) b.add(boxGeo(V(x - 0.3, y + 0.06, cz - 4.6 + k * 1.6), V(x + 0.3, y + 0.62, cz - 3.9 + k * 1.6)), box);
+    }
+    for (let k = 0; k < 5; k++) b.add(boxGeo(V(P[0] - 4.6 + (k % 3) * 0.75, D0 + Math.floor(k / 3) * 0.6, cz - 7.5), V(P[0] - 3.95 + (k % 3) * 0.75, D0 + 0.6 + Math.floor(k / 3) * 0.6, cz - 6.9)), box);
+    b.add(boxGeo(V(P[0] - 0.02, D0 + 3.4, cz - 3.02), V(P[0] + 0.02, D0 + 4.2, cz - 2.98)), dark);          // bulb cord
+    b.add(boxGeo(V(P[0] - 0.14, D0 + 3.15, cz - 3.14), V(P[0] + 0.14, D0 + 3.42, cz - 2.86)), lampG);        // bulb
   }
   // ---- the Moon ----
   {

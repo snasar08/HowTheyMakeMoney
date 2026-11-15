@@ -6,7 +6,7 @@ export const FPS = 30;
 import { getInputProps } from "remotion";
 import { PLACES } from "./places";
 /** HTMM: one entry per script scene. a = first composition frame, n = frames, frLo = the scene-local frame number of a. */
-export type PlanScene = { a: number; n: number; frLo: number; light: "day" | "golden" | "night"; set: string; action: string; crowd: number; props: string[]; beat?: string; brand?: Brand; place?: string; mood?: string; loc?: number; line?: string };
+export type PlanScene = { a: number; n: number; frLo: number; light: "day" | "golden" | "night"; set: string; action: string; crowd: number; props: string[]; beat?: string; brand?: Brand; place?: string; mood?: string; loc?: number; line?: string; things?: string[] };
 export type Brand = { name: string; bg: string; fg: string; icon?: string };
 export const PLAN: { scenes: PlanScene[]; hero: Record<string, unknown>; seed: number; brand?: Brand } = (getInputProps() as { plan?: any }).plan ?? {
   scenes: [{ a: 0, n: 90, frLo: 0, light: "day", set: "city", action: "idle", crowd: 12, props: [] }],
@@ -399,7 +399,7 @@ const FR: Record<string, (id: number, f0: number) => (f: number) => Shot> = {
   two: (id, f0) => (f) => dolly(off(id, f, 5.2, -1.4, 1.6), off(id, f, 0, 0.75, 1.5), pushK(f, f0, 0.0025), { fov: 40 }),
   line: (id, f0) => (f) => dolly(off(id, f, -2.2, 3.4, 1.7), off(id, f, 6, 0.3, 1.3), pushK(f, f0, 0.002), { fov: 42 }),
 };
-const BSEQ: Record<string, string[]> = { logo: ["two", "ms", "low"], sign: ["wide2", "two", "wide2"], drive: ["side", "chase", "side"], clock: ["wide2", "two", "cu"], phone: ["two", "wide2", "two"],
+const BSEQ: Record<string, string[]> = { logo: ["two", "wide2", "two"], sign: ["wide2", "two", "wide2"], drive: ["side", "chase", "side"], clock: ["wide2", "two", "cu"], phone: ["two", "wide2", "two"],
   money: ["two", "low", "wide2"], queue: ["line", "ws", "ms"] };
 const SEQ = [["ws", "ms", "cu"], ["ms", "low", "ws"], ["low", "cu", "ms"], ["ws", "cu", "low"]];
 const CINF: Record<string, number> = { ws: 0, ms: 11, cu: 14, low: 9 };
@@ -409,7 +409,7 @@ for (const k of Object.keys(CAMS)) delete CAMS[+k];
 for (const k of Object.keys(XFADE)) delete XFADE[+k];
 DOF.length = 0; KICKS.length = 0; FOREGROUND.length = 0;
 SHOTS.forEach((s) => {
-  const n = s.b - s.a, seq = BSEQ[beatOf(s.id)] ?? SEQ[(s.id - 1) % SEQ.length], m = Math.min(5, Math.max(1, Math.ceil(n / 50))), keys: Key[] = [];
+  const n = s.b - s.a, seq = BSEQ[beatOf(s.id)] ?? ((sceneOf(s.id)?.things ?? []).length ? ["two", "wide2", "two"] : SEQ[(s.id - 1) % SEQ.length]), m = Math.min(5, Math.max(1, Math.ceil(n / 50))), keys: Key[] = [];
   for (let j = 0; j < m; j++) {
     const f0 = s.a + Math.round((j * n) / m), name = seq[j % seq.length];
     keys.push({ f: f0, cut: j === 0, dur: 26, s: FR[name](s.id, f0) });

@@ -222,7 +222,10 @@
           "place": "street",
           "beat": "queue",
           "mood": "proud",
-          "crowd": 50
+          "crowd": 50,
+          "things": [
+            "dumbbell"
+          ]
         }
       ]
     },
@@ -263,6 +266,9 @@
           "action": "cheer",
           "props": [
             "ball"
+          ],
+          "things": [
+            "ring"
           ]
         }
       ]
@@ -297,7 +303,10 @@
             "fg": "#c4ced4",
             "icon": "star"
           },
-          "crowd": 30
+          "crowd": 30,
+          "things": [
+            "crown"
+          ]
         }
       ]
     }

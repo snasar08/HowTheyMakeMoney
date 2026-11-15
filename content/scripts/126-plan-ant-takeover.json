@@ -247,7 +247,11 @@
             "bg": "#78be20",
             "fg": "#0c2340",
             "icon": "play"
-          }
+          },
+          "things": [
+            "tv",
+            "shoe"
+          ]
         }
       ]
     },
@@ -275,7 +279,10 @@
             "fg": "#78be20",
             "icon": "star"
           },
-          "crowd": 30
+          "crowd": 30,
+          "things": [
+            "crown"
+          ]
         }
       ]
     }

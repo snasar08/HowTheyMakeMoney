@@ -254,9 +254,12 @@ research more ... maintain quality too")**. Goal: build a buffer, capped so cred
    Any big company everyone knows. When a company/product appears or is created, its logo pops up (code-drawn:
    `brand` {name, bg, fg, icon}; brand names on screen are allowed since Nov 15, plain lettering, no copied logo art).
    **Per-sentence scenes (all toon Shorts):** each scene may carry `toon`: one dict per sentence (same count as the
-   sentences in its narration) with `place` (street bridge quay road court pitch stage office servers space), `beat`
+   sentences in its narration) with `place` (street bridge quay road court pitch stage office servers space garage), `beat`
    (walk drive queue phone clock money logo sign), `props` (car truck trophy cash boxes check rocket ball mic flag
-   laptop burger controller), `mood` (happy laugh shock nervous proud stern scheme relief dazed sad calm excited),
+   laptop burger controller), `things` (0-2 drawn objects the sentence MENTIONS, shown big: shoe springshoe sneakerbus
+   bus glasses robot chip drone plant satellite chatbot ring stadium factory snack hanger dome dumbbell tv books ereader
+   medal crown; `pipeline/toon.things_for` also adds them from the line's words; Sam, Nov 15: "if it's mentioned in
+   the video, it should make the scenery"), `mood` (happy laugh shock nervous proud stern scheme relief dazed sad calm excited),
    `action`, `crowd`, `brand`. Without it, `pipeline/toon_director.py` asks Gemini to pick them. The picture must
    show what the sentence says (Sam: "the scenes are the most important part"). Famous people: set `hero` fields
    so the cartoon looks like them (hair style/colour, beard, glasses, headband, skin) and `number` for athletes

@@ -107,7 +107,10 @@
             "bg": "#552583",
             "fg": "#fdb927",
             "icon": "star"
-          }
+          },
+          "things": [
+            "crown"
+          ]
         },
         {
           "place": "court",
@@ -176,7 +179,11 @@
             "bg": "#552583",
             "fg": "#fdb927",
             "icon": "star"
-          }
+          },
+          "things": [
+            "bus",
+            "ring"
+          ]
         }
       ]
     },

@@ -114,6 +114,51 @@ BRAND_COLORS = {"uber": ("#000000", "#ffffff"), "nike": ("#111111", "#ffffff"), 
                 "youtube": ("#ff0000", "#ffffff"), "visa": ("#1a1f71", "#ffffff"), "airbnb": ("#ff5a5f", "#ffffff")}
 
 
+# Things a line mentions -> the drawing that shows it (toon/src/videos/htmm/things.ts). Sam, Nov 15: "if it's mentioned
+# in the video, it should make the video and the scenery" (spring shoes, a sneaker bus, glasses, a chip factory...).
+THING_WORDS = [
+    ("sneakerbus", r"\b(sneaker|shoe)[- ]?(bus|buses)\b|\bbuses shaped like sneakers\b"),
+    ("springshoe", r"\b(springs?|motors?|robotic shoes?|dunk shoes?)\b"),
+    ("shoe", r"\b(shoes?|sneakers?|kicks|footwear|air jordans?)\b"),
+    ("bus", r"\bbus(es)?\b"),
+    ("glasses", r"\bglasses\b"),
+    ("robot", r"\brobots?\b|\bai helper\b"),
+    ("chip", r"\bchips?\b(?! (bag|snack))|\bgpus?\b|\bprocessors?\b"),
+    ("drone", r"\bdrones?\b|\bflying robots?\b|\bfly your package\b"),
+    ("plant", r"\bpower plants?\b|\bpower\b"),
+    ("satellite", r"\bsatellites?\b|\binto space\b|\bin space\b|\bin orbit\b"),
+    ("chatbot", r"\bchatbots?\b|\bchat ?gpt\b|\bai\b|\ba\.i\.(?=\W|$)"),
+    ("ring", r"\brings?\b|\bchampionships?\b|\btitles?\b"),
+    ("stadium", r"\bstadiums?\b|\barenas?\b"),
+    ("factory", r"\bfactor(y|ies)\b|\bdata cent(er|re)s?\b|\bbuilds?\b.*\bplants?\b"),
+    ("snack", r"\bsnacks?\b|\bchips bag\b"),
+    ("hanger", r"\bfashion\b|\bclothes\b|\bfits?\b|\bclothing\b|\bapparel\b"),
+    ("dome", r"\bdomes?\b"),
+    ("dumbbell", r"\btrain(ing)?\b|\bgym\b|\bworks? out\b|\bbest shape\b"),
+    ("tv", r"\bcartoons?\b|\btv\b|\bstream\w*\b|\bvideos?\b"),
+    ("books", r"\bbooks?\b|\bbookstore\b"),
+    ("ereader", r"\be-?readers?\b|\bkindle\b|\btablets?\b"),
+    ("medal", r"\bmedals?\b|\bgold\b|\bolympic\w*\b"),
+    ("crown", r"\bbest ever\b|\bking\b|\bgreatest\b|\bface of\b|\bdynasty\b"),
+]
+
+
+def things_for(line: str, given: list) -> list:
+    """The script's/director's `things` first, then whatever the line mentions, at most 2, no near-duplicates."""
+    out = [t for t in given if isinstance(t, str)]
+    low = line.lower()
+    for name, rx in THING_WORDS:
+        if len(out) >= 2:
+            break
+        if name not in out and re.search(rx, low):
+            if name == "shoe" and ("springshoe" in out or "sneakerbus" in out):
+                continue
+            if name == "bus" and "sneakerbus" in out:
+                continue
+            out.append(name)
+    return out[:2]
+
+
 def beats_for(lines: list[str], given: list[str | None], company: str = "") -> list[str]:
     out, prev = [], None
     for text, g in zip(lines, given):
@@ -179,10 +224,10 @@ def make_plan(script: dict, recorded: dict | None = None) -> dict:
             out.append({"si": i, "a": a, "n": m, "frLo": lo + cuts[j], "light": lt[k], "set": v.get("set", "city"),
                         "action": d.get("action", v.get("action", "idle")), "crowd": int(d.get("crowd", v.get("crowd", 0)) or 0),
                         "props": d.get("props") or [], "beat": d.get("beat", "walk"), "mood": d.get("mood", "happy"),
-                        **({"place": place} if place in ("court", "pitch", "stage", "office", "servers", "space") else {}),
+                        **({"place": place} if place in ("court", "pitch", "stage", "office", "servers", "space", "garage") else {}),
                         **({"loc": {"bridge": 0, "street": 1, "quay": 2}[place]} if place in ("bridge", "street", "quay") else {}),
                         **({"brand": _brand(d["brand"])} if d.get("brand") else {"brand": _brand(v["brand"])} if v.get("brand") else {}),
-                        "line": ss[j][:80]})
+                        "things": things_for(ss[j], d.get("things") or []), "line": ss[j][:80]})
             a += m
     slug = f"{script.get('id', '')}-{script.get('slug', '')}"
     co = script.get("company", "")

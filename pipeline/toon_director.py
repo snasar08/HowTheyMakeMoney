@@ -20,23 +20,28 @@ from pathlib import Path
 API = "https://generativelanguage.googleapis.com/v1beta"
 MODELS = [m for m in os.environ.get("DIRECTOR_MODELS", "gemini-3.1-flash-lite,gemini-3.5-flash-lite,gemini-2.5-flash-lite,gemini-2.5-flash").split(",") if m]
 
-PLACES = ["street", "bridge", "quay", "road", "court", "pitch", "stage", "office", "servers", "space"]
+PLACES = ["street", "bridge", "quay", "road", "court", "pitch", "stage", "office", "servers", "space", "garage"]
 BEATS = ["walk", "drive", "queue", "phone", "clock", "money", "logo", "sign"]
 PROPS = ["car", "truck", "trophy", "cash", "boxes", "check", "rocket", "ball", "mic", "flag", "laptop", "burger", "controller"]
 MOODS = ["happy", "laugh", "shock", "nervous", "proud", "stern", "scheme", "relief", "dazed", "sad", "calm", "excited"]
 ACTIONS = ["stand", "walk", "run", "cheer", "work"]
+THINGS = ["shoe", "springshoe", "sneakerbus", "bus", "glasses", "robot", "chip", "drone", "plant", "satellite", "chatbot", "ring",
+          "stadium", "factory", "snack", "hanger", "dome", "dumbbell", "tv", "books", "ereader", "medal", "crown"]
 ICONS = ["swoosh", "star", "rocket", "bolt", "chip", "globe", "car", "brain", "bird", "sun", "play", "cart", "robot", "burger", "letter"]
 
 KIT = f"""You direct a cartoon YouTube Short (flat 2D characters in a colourful 3D world). The hero is the main
 character. For EVERY sentence pick ONE scene that literally shows what that sentence says, so a viewer with the
 sound off still understands. Use only this kit:
 - place: {", ".join(PLACES)}  (street/bridge/quay = a town; road = a long street for driving; court = basketball;
-  pitch = soccer; stage = concert stage; office = desks; servers = data center; space = the Moon with Earth in the sky)
+  pitch = soccer; stage = concert stage; office = desks; servers = data center; space = the Moon with Earth in the sky; garage = a small garage with a workbench and boxes, where companies start)
 - beat (what happens): walk (hero in the place), drive (hero drives a car along the road), queue (a long line of
   people waiting), phone (giant phone with an app and pins popping in), clock (giant clock racing, for time and
   years), money (cash stacks popping up, for dollars/earnings/prices), logo (a company's logo pops up big beside the
   hero, use when a company/product is founded, launched, bought or named), sign (a big sign with the brand name)
 - props (0-2 extra objects that appear): {", ".join(PROPS)}
+- things (0-2 drawn objects the sentence MENTIONS, so we see them: the most important rule): {", ".join(THINGS)}
+  (springshoe = a sneaker with springs/motors; sneakerbus = a bus shaped like a sneaker; plant = power plant;
+  factory = factory or data center; hanger = clothes/fashion; dumbbell = training/gym; tv = a show/cartoon/stream)
 - mood (hero face): {", ".join(MOODS)}
 - action: {", ".join(ACTIONS)}
 - crowd: 0-60 people around (more for fans, customers, everyone)
@@ -47,7 +52,7 @@ for deliveries, burger for food) on most lines, not standing around. Use clock a
 per Short. money happens on the street or in an office, never in space. Consecutive sentences should look different (change place, beat or camera subject); a sports star plays in
 their sport's place; numbers about money -> money; about time -> clock; about many people -> queue or crowd;
 about an app or phone -> phone; rides/driving/delivery -> drive. Never invent facts.
-Reply with JSON only: {{"scenes": [{{"i": 0, "place": "...", "beat": "...", "props": [], "mood": "...", "action": "...", "crowd": 0, "brand": null}}, ...]}}"""
+Reply with JSON only: {{"scenes": [{{"i": 0, "place": "...", "beat": "...", "props": [], "things": [], "mood": "...", "action": "...", "crowd": 0, "brand": null}}, ...]}}"""
 
 
 def _gemini(prompt: str) -> dict | None:
@@ -77,7 +82,8 @@ def clean(sc: dict) -> dict:
            "props": [p for p in (sc.get("props") or []) if p in PROPS][:2],
            "mood": sc.get("mood") if sc.get("mood") in MOODS else "happy",
            "action": sc.get("action") if sc.get("action") in ACTIONS else "stand",
-           "crowd": max(0, min(60, int(sc.get("crowd") or 0)))}
+           "crowd": max(0, min(60, int(sc.get("crowd") or 0))),
+           "things": [t for t in (sc.get("things") or []) if t in THINGS][:2]}
     b = sc.get("brand")
     if isinstance(b, dict) and b.get("name"):
         ok = lambda c: isinstance(c, str) and re.fullmatch(r"#[0-9a-fA-F]{6}", c or "")

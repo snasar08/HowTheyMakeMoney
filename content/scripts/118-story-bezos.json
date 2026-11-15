@@ -91,7 +91,7 @@
           }
         },
         {
-          "place": "street",
+          "place": "garage",
           "beat": "walk",
           "mood": "proud",
           "props": [
@@ -290,7 +290,7 @@
       },
       "toon": [
         {
-          "place": "street",
+          "place": "garage",
           "beat": "sign",
           "mood": "proud",
           "props": [

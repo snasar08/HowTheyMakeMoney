@@ -103,12 +103,12 @@
           }
         },
         {
-          "place": "street",
+          "place": "garage",
           "beat": "clock",
           "mood": "calm"
         },
         {
-          "place": "street",
+          "place": "garage",
           "beat": "logo",
           "mood": "excited",
           "brand": {
@@ -138,7 +138,10 @@
         {
           "place": "servers",
           "beat": "walk",
-          "mood": "scheme"
+          "mood": "scheme",
+          "things": [
+            "chatbot"
+          ]
         },
         {
           "place": "street",
@@ -150,7 +153,10 @@
             "bg": "#111111",
             "fg": "#76b900",
             "icon": "bolt"
-          }
+          },
+          "things": [
+            "chip"
+          ]
         }
       ]
     },
@@ -181,7 +187,10 @@
           "place": "office",
           "beat": "walk",
           "mood": "laugh",
-          "crowd": 20
+          "crowd": 20,
+          "things": [
+            "chip"
+          ]
         }
       ]
     },
@@ -223,7 +232,11 @@
             "bg": "#111111",
             "fg": "#76b900",
             "icon": "bolt"
-          }
+          },
+          "things": [
+            "factory",
+            "chip"
+          ]
         }
       ]
     },

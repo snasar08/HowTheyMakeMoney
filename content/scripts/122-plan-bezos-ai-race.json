@@ -98,7 +98,10 @@
             "bg": "#232f3e",
             "fg": "#ff9900",
             "icon": "chip"
-          }
+          },
+          "things": [
+            "chatbot"
+          ]
         }
       ]
     },
@@ -118,7 +121,10 @@
           "place": "street",
           "beat": "money",
           "mood": "laugh",
-          "action": "cheer"
+          "action": "cheer",
+          "things": [
+            "chatbot"
+          ]
         },
         {
           "place": "street",
@@ -131,6 +137,9 @@
           "mood": "excited",
           "props": [
             "boxes"
+          ],
+          "things": [
+            "robot"
           ]
         }
       ]
@@ -161,7 +170,10 @@
         {
           "place": "street",
           "beat": "clock",
-          "mood": "laugh"
+          "mood": "laugh",
+          "things": [
+            "snack"
+          ]
         },
         {
           "place": "road",
@@ -235,7 +247,10 @@
             "bg": "#0b2a6f",
             "fg": "#ffffff",
             "icon": "rocket"
-          }
+          },
+          "things": [
+            "robot"
+          ]
         },
         {
           "place": "space",

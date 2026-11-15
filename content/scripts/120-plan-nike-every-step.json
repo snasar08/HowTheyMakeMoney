@@ -110,7 +110,10 @@
           "place": "court",
           "beat": "queue",
           "mood": "excited",
-          "crowd": 40
+          "crowd": 40,
+          "things": [
+            "springshoe"
+          ]
         }
       ]
     },
@@ -144,7 +147,10 @@
           "beat": "walk",
           "mood": "laugh",
           "action": "cheer",
-          "crowd": 20
+          "crowd": 20,
+          "things": [
+            "springshoe"
+          ]
         }
       ]
     },
@@ -253,6 +259,9 @@
           "action": "cheer",
           "props": [
             "ball"
+          ],
+          "things": [
+            "springshoe"
           ]
         }
       ]
@@ -279,7 +288,10 @@
             "bg": "#111111",
             "fg": "#ffffff",
             "icon": "swoosh"
-          }
+          },
+          "things": [
+            "shoe"
+          ]
         }
       ]
     }

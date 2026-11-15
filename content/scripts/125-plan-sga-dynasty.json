@@ -120,6 +120,9 @@
           "mood": "proud",
           "props": [
             "check"
+          ],
+          "things": [
+            "ring"
           ]
         }
       ]
@@ -248,7 +251,10 @@
           "beat": "money",
           "mood": "laugh",
           "action": "cheer",
-          "crowd": 40
+          "crowd": 40,
+          "things": [
+            "ring"
+          ]
         }
       ]
     },
