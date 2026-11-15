@@ -534,8 +534,8 @@ export const stage = (id: number, t: number, _b: BridgeState, cam: CamInfo): Sta
     if (!lift) blob(out, x, L.p[1], z, Math.min(2.2, w / 0.6), 0.8);
   };
   for (const name of sc.props) {
-    if (name === "car") put("car", -1.2, L.w * 0.5 + 1.2, 3.5, 1.9);
-    else if (name === "truck") put("truck", -2.5, L.w * 0.5 + 1.6, 4.4, 2.4);
+    if (name === "car") put("car", -3.0, L.w * 0.5 + 0.6, 3.5, 1.9);
+    else if (name === "truck") put("truck", -4.0, L.w * 0.5 + 0.9, 4.4, 2.4);
     else if (name === "trophy") put("trophy", 0.2, -1.15, 0.8, 1.12);
     else if (name === "cash") put("cash", 0.25, 1.1, 0.95, 0.68);
     else if (name === "boxes") put("boxes", 0.1, 1.25, 1.05, 1.05);
