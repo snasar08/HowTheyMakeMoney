@@ -518,5 +518,97 @@ export const stage = (id: number, t: number, _b: BridgeState, cam: CamInfo): Sta
     out.places.push(person(cam, { i, o: CROWD_O[i % CROWD_O.length], okey: "c" + (i % CROWD_O.length) }, x, L.p[1], z, { side: false, mirror: false }, cfo, {}));
     blob(out, x, L.p[1], z);
   }
+  // ---- props: flat ink drawings standing in the 3D world (like the reference's signs and effects) ----
+  const base = moving ? { x: L.p[0] + L.d[0] * lead * 0.8, z: L.p[2] + L.d[1] * lead * 0.8 } : { x: h.x, z: h.z };
+  const night = s.light === "night", gold = s.light === "golden";
+  const put = (name: string, fwd: number, side: number, w: number, hgt: number, lift = 0, follow = false) => {
+    const d = PROPS[name];
+    if (!d) return;
+    const o = follow ? { x: h.x, z: h.z } : base;
+    const x = o.x + L.d[0] * fwd + r[0] * side, z = o.z + L.d[1] * fwd + r[1] * side;
+    const cx = cam.pos.x - h.x, cz = cam.pos.z - h.z, cl = Math.hypot(cx, cz) || 1, px = x - h.x, pz = z - h.z;
+    const al = (px * cx + pz * cz) / cl, perp = Math.abs(px * cz - pz * cx) / cl;
+    if (al > 0.3 && perp < w * 0.5 + 0.5) return; // never between the lens and the hero
+    out.fx.push({ key: `prop|${name}|${s.light}`, cw: d.cw, ch: d.ch, x, y: L.p[1] + hgt / 2 + lift, z, w, h: hgt,
+      draw: (pen) => { d.draw(pen); if (night || gold) { const g = pen.g; g.globalCompositeOperation = "source-atop"; g.fillStyle = night ? "rgba(28,44,150,0.5)" : "rgba(255,150,60,0.22)"; g.fillRect(0, 0, d.cw, d.ch); g.globalCompositeOperation = "source-over"; } } });
+    if (!lift) blob(out, x, L.p[1], z, Math.min(2.2, w / 0.6), 0.8);
+  };
+  for (const name of sc.props) {
+    if (name === "car") put("car", -1.2, L.w * 0.5 + 1.2, 3.5, 1.9);
+    else if (name === "truck") put("truck", -2.5, L.w * 0.5 + 1.6, 4.4, 2.4);
+    else if (name === "trophy") put("trophy", 0.2, -1.15, 0.8, 1.12);
+    else if (name === "cash") put("cash", 0.25, 1.1, 0.95, 0.68);
+    else if (name === "boxes") put("boxes", 0.1, 1.25, 1.05, 1.05);
+    else if (name === "check") put("check", 0.15, -1.45, 1.6, 0.8, 0.55);
+    else if (name === "rocket") put("rocket", -6, -L.w * 0.5 - 2, 2.0, 4.6);
+    else if (name === "ball") put("ball", 0.25, -0.55, 0.3, 0.3, 0.02 + 0.75 * Math.abs(Math.sin(tl * 6.5)), true);
+  }
   return out;
+};
+
+// ---- prop drawings (design canvas px; thick plum ink like the characters) ----
+const INKP = "#241726";
+const rr = (x0: number, y0: number, x1: number, y1: number, rad: number): [number, number][] => {
+  const o: [number, number][] = [];
+  for (const [cx, cy, a] of [[x1 - rad, y0 + rad, -90], [x1 - rad, y1 - rad, 0], [x0 + rad, y1 - rad, 90], [x0 + rad, y0 + rad, 180]])
+    for (let k = 0; k <= 6; k++) { const t = ((a + k * 15) * Math.PI) / 180; o.push([cx + rad * Math.cos(t), cy + rad * Math.sin(t)]); }
+  return o;
+};
+const wheel = (pen: Pen, x: number, y: number, rad: number) => { pen.ell(x, y, rad, rad, "#2b2a33", 10); pen.ell(x, y, rad * 0.45, rad * 0.45, "#c9ccd6", 6); };
+const PROPS: Record<string, { cw: number; ch: number; draw: (p: Pen) => void }> = {
+  car: { cw: 700, ch: 380, draw: (p) => {
+    p.poly([[150, 170], [215, 60], [470, 60], [560, 170]], "#2f9e7a", 12);                    // cabin
+    p.poly([[232, 160], [262, 86], [345, 86], [345, 160]], "#bfe6ff", 8);                      // windows
+    p.poly([[368, 160], [368, 86], [452, 86], [512, 160]], "#bfe6ff", 8);
+    p.poly(rr(40, 160, 660, 300, 46), "#35b58c", 12);                                         // body
+    p.poly(rr(612, 196, 650, 232, 10), "#fff3b0", 7); p.poly(rr(46, 200, 76, 236, 8), "#e2453c", 7); // lights
+    p.stroke([[352, 176], [352, 286]], 6); p.stroke([[392, 214], [432, 214]], 9);              // door seam + handle
+    wheel(p, 190, 300, 58); wheel(p, 520, 300, 58);
+  } },
+  truck: { cw: 800, ch: 440, draw: (p) => {
+    p.poly(rr(40, 50, 540, 330, 18), "#f4f1ea", 12);                                          // box
+    p.stroke([[70, 120], [510, 120]], 8, "#d9a441"); p.stroke([[70, 160], [510, 160]], 8, "#d9a441");
+    p.poly([[540, 150], [690, 150], [760, 240], [760, 330], [540, 330]], "#4aa3df", 12);       // cab
+    p.poly([[575, 172], [680, 172], [728, 240], [575, 240]], "#bfe6ff", 8);
+    wheel(p, 170, 340, 62); wheel(p, 640, 340, 62);
+  } },
+  trophy: { cw: 300, ch: 420, draw: (p) => {
+    p.arc(70, 130, 46, 60, 90, 270, 16, INKP); p.arc(230, 130, 46, 60, -90, 90, 16, INKP);    // handles
+    p.arc(70, 130, 46, 60, 90, 270, 7, "#f2c94c"); p.arc(230, 130, 46, 60, -90, 90, 7, "#f2c94c");
+    p.poly([[70, 40], [230, 40], [212, 170], [170, 222], [130, 222], [88, 170]], "#f2c94c", 11); // cup
+    p.poly([[96, 60], [122, 60], [130, 160], [112, 160]], "#fff3b0", 0);                       // shine
+    p.poly(rr(132, 222, 168, 300, 6), "#e0b030", 10);                                         // stem
+    p.poly(rr(84, 300, 216, 338, 10), "#f2c94c", 10); p.poly(rr(60, 338, 240, 396, 10), "#7a4f33", 11); // base
+  } },
+  cash: { cw: 360, ch: 260, draw: (p) => {
+    for (let k = 0; k < 4; k++) {
+      const y = 190 - k * 44, x = 30 + (k % 2) * 16;
+      p.poly(rr(x, y, x + 290, y + 52, 8), k % 2 ? "#4fbf6b" : "#3fae5c", 9);
+      p.poly(rr(x + 118, y, x + 172, y + 52, 3), "#f4f1ea", 6);
+      p.ell(x + 56, y + 26, 14, 14, "#2f8f4a", 5);
+    }
+  } },
+  boxes: { cw: 420, ch: 420, draw: (p) => {
+    const bx = (x: number, y: number, w: number, hh2: number) => { p.poly(rr(x, y, x + w, y + hh2, 6), "#d9a066", 10); p.poly(rr(x + w * 0.42, y, x + w * 0.58, y + hh2, 2), "#c08a52", 0); p.stroke([[x, y + 6], [x + w, y + 6]], 5); };
+    bx(30, 230, 190, 160); bx(215, 250, 175, 140); bx(110, 80, 200, 152);
+  } },
+  check: { cw: 560, ch: 280, draw: (p) => {
+    p.poly(rr(12, 12, 548, 268, 14), "#fbf8f1", 11);
+    p.poly(rr(34, 34, 150, 78, 6), "#3f6fb5", 0);
+    p.stroke([[190, 60], [520, 60]], 9, "#9aa3b5"); p.stroke([[40, 130], [520, 130]], 9, "#9aa3b5");
+    p.stroke([[40, 180], [330, 180]], 9, "#9aa3b5"); p.poly(rr(372, 162, 526, 232, 8), "#f2c94c", 8);
+    p.stroke([[60, 232], [250, 232]], 6);
+  } },
+  rocket: { cw: 300, ch: 700, draw: (p) => {
+    p.poly([[60, 520], [20, 640], [110, 590]], "#e2453c", 11); p.poly([[240, 520], [280, 640], [190, 590]], "#e2453c", 11); // fins
+    p.poly([[150, 20], [222, 170], [232, 560], [68, 560], [78, 170]], "#f4f1ea", 12);          // body
+    p.poly([[150, 20], [222, 170], [78, 170]], "#e2453c", 12);                                 // nose
+    p.ell(150, 290, 40, 40, "#bfe6ff", 10);
+    p.poly([[100, 560], [200, 560], [176, 660], [150, 690], [124, 660]], "#f0b429", 10);       // flame
+  } },
+  ball: { cw: 160, ch: 160, draw: (p) => {
+    p.ell(80, 80, 66, 66, "#f08a2c", 10);
+    p.stroke([[14, 80], [146, 80]], 6); p.stroke([[80, 14], [80, 146]], 6);
+    p.arc(80, 80, 40, 66, -90, 90, 6); p.arc(80, 80, 40, 66, 90, 270, 6);
+  } },
 };
