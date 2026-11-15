@@ -1,0 +1,124 @@
+=== line 1: BridgeShort 400 0.5 props_nopost.json swangle
+bundle 3.4s
+[40m http://localhost:3000/public/bridge/kenney/tree_oak.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/tree_default.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/tree_detailed.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/tree_fat.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/tree_cone.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/tree-high-round.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/tree.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/plant_bushLarge.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/plant_bushDetailed.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/plant_bush.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/hedge.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/flower_redA.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/flower_yellowA.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/flower_purpleA.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/grass_large.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/grass.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/lily_large.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/lantern.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/cart.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/stall-red.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/stall-green.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/stall-bench.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/banner-red.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/banner-green.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/windmill.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/canoe.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m Tab 0, node_modules/three/build/three.core.js:2014 [49m [33mTHREE.Clock: This module has been deprecated. Please use THREE.Timer instead.[39m
+still 400 21.2s
+=== line 2: BridgeShort 400 0.5 - angle-egl
+bundle 3.4s
+[40m http://localhost:3000/public/bridge/kenney/tree_oak.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/tree_default.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/tree_detailed.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/tree_fat.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/tree_cone.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/tree-high-round.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/tree.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/plant_bushLarge.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/plant_bushDetailed.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/plant_bush.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/hedge.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/flower_redA.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/flower_yellowA.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/flower_purpleA.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/grass_large.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/grass.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/lily_large.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/lantern.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/cart.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/stall-red.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/stall-green.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/stall-bench.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/banner-red.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/banner-green.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/windmill.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/canoe.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m Tab 0, node_modules/three/build/three.core.js:2014 [49m [33mTHREE.Clock: This module has been deprecated. Please use THREE.Timer instead.[39m
+[error] THREE.WebGLRenderer: A WebGL context could not be created. Reason:  Could not create a WebGL context, VENDOR = 0xffff, DEVICE = 0xffff, Sandboxed = no, Optimus = no, AMD switchable = no, Reset notification strategy = 0x0000, ErrorMessage = BindToCurrentSequence failed: .
+[40m Tab 0, node_modules/three/build/three.core.js:2052 [49m [31mTHREE.WebGLRenderer: A WebGL context could not be created. Reason:  Could not create a WebGL context, VENDOR = 0xffff, DEVICE = 0xffff, Sandboxed = no, Optimus = no, AMD switchable = no, Reset notification strategy = 0x0000, ErrorMessage = BindToCurrentSequence failed: .[39m
+[40m Tab 0, node_modules/three/build/three.core.js:2052 [49m [31mTHREE.WebGLRenderer: A WebGL context could not be created. Reason:  Could not create a WebGL context, VENDOR = 0xffff, DEVICE = 0xffff, Sandboxed = no, Optimus = no, AMD switchable = no, Reset notification strategy = 0x0000, ErrorMessage = BindToCurrentSequence failed: .[39m
+[error] THREE.WebGLRenderer: THREE.WebGLRenderer: Error creating WebGL context.
+[40m Tab 0, node_modules/three/build/three.core.js:2052 [49m [31mTHREE.WebGLRenderer: THREE.WebGLRenderer: Error creating WebGL context.[39m
+[error] Uncaught Error: THREE.WebGLRenderer: Error creating WebGL context.
+    at new WebGLRenderer (http://localhost:3000/bundle.js:77873:13)
+    at createRenderer (http://localhost:3000/bundle.js:82596:10)
+    at run (http://localhost:3000/bundle.js:90086:96)
+    at Object.configure (http://localhost:3000/bundle.js:90093:74)
+    at http://localhost:3000/bundle.js:90673:20
+    at commitHookEffectListMount (http://localhost:3000/bundle.js:138555:24)
+    at commitLayoutEffectOnFiber (http://localhost:300
+
+[33m💡 You might need to set the OpenGL renderer to "angle". Learn why at https://www.remotion.dev/docs/three[39m
+[33m💡 Check how it's done at https://www.remotion.dev/docs/chromium-flags#--gl[39m
+💡 Get help for this issue at https://remotion.dev/docs/troubleshooting/webgl2-context
+FAILED 400 Error: THREE.WebGLRenderer: Error creating WebGL context.
+=== line 3: BridgeShort 400 0.5 - swiftshader
+bundle 3.4s
+[40m http://localhost:3000/public/bridge/kenney/tree_oak.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/tree_default.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/tree_detailed.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/tree_fat.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/tree_cone.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/tree-high-round.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/tree.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/plant_bushLarge.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/plant_bushDetailed.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/plant_bush.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/hedge.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/flower_redA.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/flower_yellowA.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/flower_purpleA.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/grass_large.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/grass.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/lily_large.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/lantern.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/cart.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/stall-red.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/stall-green.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/stall-bench.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/banner-red.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/banner-green.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/windmill.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/canoe.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m Tab 0, node_modules/three/build/three.core.js:2014 [49m [33mTHREE.Clock: This module has been deprecated. Please use THREE.Timer instead.[39m
+[error] THREE.WebGLRenderer: A WebGL context could not be created. Reason:  Could not create a WebGL context, VENDOR = 0xffff, DEVICE = 0xffff, GL_VENDOR = Disabled, GL_RENDERER = Disabled, Sandboxed = no, Optimus = no, AMD switchable = no, Reset notification strategy = 0x0000, ErrorMessage = BindToCurrentSequence failed: .
+[40m Tab 0, node_modules/three/build/three.core.js:2052 [49m [31mTHREE.WebGLRenderer: A WebGL context could not be created. Reason:  Could not create a WebGL context, VENDOR = 0xffff, DEVICE = 0xffff, GL_VENDOR = Disabled, GL_RENDERER = Disabled, Sandboxed = no, Optimus = no, AMD switchable = no, Reset notification strategy = 0x0000, ErrorMessage = BindToCurrentSequence failed: .[39m
+[40m Tab 0, node_modules/three/build/three.core.js:2052 [49m [31mTHREE.WebGLRenderer: A WebGL context could not be created. Reason:  Could not create a WebGL context, VENDOR = 0xffff, DEVICE = 0xffff, GL_VENDOR = Disabled, GL_RENDERER = Disabled, Sandboxed = no, Optimus = no, AMD switchable = no, Reset notification strategy = 0x0000, ErrorMessage = BindToCurrentSequence failed: .[39m
+[error] THREE.WebGLRenderer: THREE.WebGLRenderer: Error creating WebGL context.
+[40m Tab 0, node_modules/three/build/three.core.js:2052 [49m [31mTHREE.WebGLRenderer: THREE.WebGLRenderer: Error creating WebGL context.[39m
+[error] Uncaught Error: THREE.WebGLRenderer: Error creating WebGL context.
+    at new WebGLRenderer (http://localhost:3000/bundle.js:77873:13)
+    at createRenderer (http://localhost:3000/bundle.js:82596:10)
+    at run (http://localhost:3000/bundle.js:90086:96)
+    at Object.configure (http://localhost:3000/bundle.js:90093:74)
+    at http://localhost:3000/bundle.js:90673:20
+    at commitHookEffectListMount (http://localhost:3000/bundle.js:138555:24)
+    at commitLayoutEffectOnFiber (http://localhost:300
+
+[33m💡 You might need to set the OpenGL renderer to "angle". Learn why at https://www.remotion.dev/docs/three[39m
+[33m💡 Check how it's done at https://www.remotion.dev/docs/chromium-flags#--gl[39m
+💡 Get help for this issue at https://remotion.dev/docs/troubleshooting/webgl2-context
+FAILED 400 Error: THREE.WebGLRenderer: Error creating WebGL context.
