@@ -1,3 +1,4 @@
-BridgeShort 400 0.5 props_nopost.json swangle
-BridgeShort 400 0.5 - angle-egl
-BridgeShort 400 0.5 - swiftshader
+HtmmShort 60 0.5 plans/dbg_a.json swangle
+HtmmShort 60 0.5 plans/dbg_b.json swangle
+HtmmShort 60 0.5 plans/dbg_c.json swangle
+HtmmShort 60 0.5 plans/dbg_d.json swangle
