@@ -31,7 +31,9 @@ def _hex(c, default):
 # shirt numbers people know (used when the script's hero has no "number")
 NUMBERS = {"stephen curry": "30", "lebron james": "23", "michael jordan": "23", "lionel messi": "10", "cristiano ronaldo": "7",
            "kylian mbappé": "10", "kylian mbappe": "10", "giannis antetokounmpo": "34", "patrick mahomes": "15", "shohei ohtani": "17",
-           "kevin durant": "35", "tom brady": "12"}
+           "kevin durant": "35", "tom brady": "12", "neymar": "10", "neymar jr": "10", "caitlin clark": "22", "juan soto": "22",
+           "erling haaland": "9", "lamine yamal": "19", "mohamed salah": "11", "magic johnson": "32", "victor wembanyama": "1",
+           "luka doncic": "77", "anthony edwards": "5", "shai gilgeous-alexander": "2", "kobe bryant": "24", "jayson tatum": "0"}
 
 
 def _lum(h: str) -> float:
