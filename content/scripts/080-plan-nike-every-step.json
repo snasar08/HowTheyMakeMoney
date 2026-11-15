@@ -9,76 +9,80 @@
   "title_style": "statement",
   "theme": "bold_bright",
   "status": "draft",
-  "score": 94,
-  "title": "You're Nike. Your Plan to Own Every Step.",
-  "name_card": "You are Nike",
+  "score": 95,
+  "title": "Nike's Master Plan to Own Every Dunk",
+  "name_card": "Nike",
   "name_sub": "a hypothetical master plan",
-  "description": "You're Nike. You already make 46.3 billion dollars a year. But you want every foot on Earth.\n\nThis is a hypothetical plan: an imagined strategy, not Nike news or anything Nike has announced.\n\nSources (the real starting point):\n- Wikipedia: Nike, Inc.: https://en.wikipedia.org/wiki/Nike,_Inc.\n\nFrom the cited page: Nike's fiscal 2025 revenue was $46.3 billion; it bought Converse in 2003 for $309 million. Everything after that is imagined. Not financial advice.\n\n#shorts #nike #whatif #howtheymakemoney",
+  "description": "Nike wants to take over the whole shoe game. So it starts with athletes.\n\nThis is a made-up, hypothetical master plan for fun: imagined steps, not Nike news or anything Nike has announced.\n\n#shorts #nike #whatif #howtheymakemoney",
   "tags": ["nike", "what if", "master plan", "shorts"],
   "images": {},
   "hud_label": "THE PLAN",
-  "loop": "So next time you take a step, remember:",
-  "cta": "Would you wear a shoe with a chip in it? Comment yes or no.",
-  "cta_question": "Chip in your shoe: yes or no?",
+  "loop": "So next time you see someone dunk, remember:",
+  "cta": "Would you wear dunk shoes? Comment yes or no.",
+  "cta_question": "Dunk shoes: yes or no?",
   "hero": {"skin": "d9a577", "hair": "short", "hair_color": "2a1d14", "beard": "none", "outfit": "tee", "shirt": "111111", "pants": "2b2f3a", "shoes": "f4f4f4", "chest": "NIKE", "trim": "ffffff", "height": 1.0},
   "scenes": [
     {
-      "narration": "You're Nike. You already make 46.3 billion dollars a year. But you want every foot on Earth.",
-      "visual": {"type": "lowpoly", "set": "city", "action": "idle", "crowd": 0, "props": ["cash"], "stat": "$46.3 BILLION", "stat_sub": "Nike revenue, fiscal 2025"},
+      "narration": "Nike wants to take over the whole shoe game. So it finds the best young athletes and signs them before anyone else.",
+      "visual": {"type": "lowpoly", "set": "city", "action": "idle", "crowd": 0, "props": [], "stat": "THE PLAN", "stat_sub": "own the shoe game"},
       "toon": [
         {"place": "street", "beat": "logo", "mood": "scheme", "brand": {"name": "Nike", "bg": "#111111", "fg": "#ffffff", "icon": "swoosh"}},
-        {"place": "street", "beat": "money", "mood": "proud"},
-        {"place": "street", "beat": "queue", "mood": "scheme", "crowd": 45}
+        {"place": "court", "beat": "walk", "mood": "scheme", "props": ["check"], "crowd": 6}
       ]
     },
     {
-      "narration": "Step one: you buy the biggest sneaker resale app. Now every pair that gets sold again still pays you.",
-      "visual": {"type": "lowpoly", "set": "office", "action": "idle", "crowd": 0, "props": [], "stat": "STEP 1", "stat_sub": "own the resale market"},
+      "narration": "Those athletes take over. Every highlight, every poster, every game. Then Nike notices one thing. Fans go wild for dunks.",
+      "visual": {"type": "lowpoly", "set": "court", "action": "cheer", "crowd": 200, "props": ["ball"], "stat": "STEP 1", "stat_sub": "sign them first"},
       "toon": [
-        {"place": "office", "beat": "phone", "mood": "scheme", "brand": {"name": "Resell", "bg": "#f05a28", "fg": "#ffffff"}},
-        {"place": "street", "beat": "money", "mood": "laugh", "props": ["boxes"]}
+        {"place": "court", "beat": "walk", "mood": "laugh", "action": "cheer", "crowd": 30},
+        {"place": "court", "beat": "walk", "mood": "proud", "crowd": 12},
+        {"place": "court", "beat": "walk", "mood": "shock", "crowd": 0},
+        {"place": "court", "beat": "queue", "mood": "excited", "crowd": 40}
       ]
     },
     {
-      "narration": "Step two: a tiny chip in every shoe. Now you know how far the whole world walks.",
-      "visual": {"type": "lowpoly", "set": "office", "action": "work", "crowd": 0, "props": [], "stat": "STEP 2", "stat_sub": "a chip in every shoe"},
+      "narration": "So it builds a shoe with tiny springs and motors that launches you higher. Now regular kids are dunking on ten foot rims.",
+      "visual": {"type": "lowpoly", "set": "court", "action": "cheer", "crowd": 100, "props": ["ball"], "stat": "STEP 2", "stat_sub": "shoes that make you dunk"},
       "toon": [
-        {"place": "servers", "beat": "logo", "mood": "excited", "brand": {"name": "Nike Chip", "bg": "#111111", "fg": "#4dff9a", "icon": "chip"}},
-        {"place": "servers", "beat": "walk", "mood": "scheme", "action": "walk"}
+        {"place": "servers", "beat": "logo", "mood": "excited", "brand": {"name": "Air Lift", "bg": "#e2453c", "fg": "#ffffff", "icon": "bolt"}},
+        {"place": "court", "beat": "walk", "mood": "laugh", "action": "cheer", "crowd": 20}
       ]
     },
     {
-      "narration": "Step three: a shoe printer on every corner. Your exact size, ready in ten minutes.",
-      "visual": {"type": "lowpoly", "set": "store", "action": "idle", "crowd": 20, "props": ["boxes"], "stat": "STEP 3", "stat_sub": "print shoes on every corner"},
+      "narration": "But schools ban the shoes. So Nike starts its own league, where they're allowed. The league needs fans, so Nike builds a stadium in every city.",
+      "visual": {"type": "lowpoly", "set": "pitch", "action": "cheer", "crowd": 300, "props": [], "stat": "STEP 3", "stat_sub": "its own league"},
       "toon": [
-        {"place": "street", "beat": "sign", "mood": "proud", "brand": {"name": "Print Shop", "bg": "#111111", "fg": "#ffffff"}},
-        {"place": "street", "beat": "clock", "mood": "happy"}
+        {"place": "office", "beat": "walk", "mood": "nervous"},
+        {"place": "court", "beat": "sign", "mood": "scheme", "brand": {"name": "Nike League", "bg": "#111111", "fg": "#ffffff"}},
+        {"place": "pitch", "beat": "walk", "mood": "proud", "crowd": 25}
       ]
     },
     {
-      "narration": "Step four: you sign every top high school athlete before anyone knows their name.",
-      "visual": {"type": "lowpoly", "set": "court", "action": "cheer", "crowd": 100, "props": ["ball", "check"], "stat": "STEP 4", "stat_sub": "sign them first"},
+      "narration": "Fans need to get there. So Nike builds self-driving buses shaped like sneakers.",
+      "visual": {"type": "lowpoly", "set": "city", "action": "run", "crowd": 0, "props": ["car"], "stat": "STEP 4", "stat_sub": "sneaker buses"},
       "toon": [
-        {"place": "court", "beat": "walk", "mood": "scheme", "props": ["check"], "crowd": 8}
+        {"place": "street", "beat": "queue", "mood": "nervous", "crowd": 40},
+        {"place": "road", "beat": "drive", "mood": "laugh", "brand": {"name": "Nike", "bg": "#111111", "fg": "#ffffff", "icon": "swoosh"}}
       ]
     },
     {
-      "narration": "Step five: a shoe that charges your phone while you walk.",
-      "visual": {"type": "lowpoly", "set": "city", "action": "run", "crowd": 0, "props": [], "stat": "STEP 5", "stat_sub": "walk to charge"},
+      "narration": "Still not enough? Nike builds a court on the Moon. The first dunk in low gravity.",
+      "visual": {"type": "lowpoly", "set": "launch", "action": "cheer", "crowd": 0, "props": ["rocket"], "stat": "STEP 5", "stat_sub": "a court on the Moon"},
       "toon": [
-        {"place": "street", "beat": "phone", "mood": "excited", "action": "walk", "brand": {"name": "Nike", "bg": "#111111", "fg": "#ffffff", "icon": "bolt"}}
+        {"place": "street", "beat": "walk", "mood": "scheme"},
+        {"place": "space", "beat": "logo", "mood": "excited", "brand": {"name": "Moon Court", "bg": "#0b2a6f", "fg": "#ffffff", "icon": "rocket"}},
+        {"place": "space", "beat": "walk", "mood": "laugh", "action": "cheer", "props": ["ball"]}
       ]
     },
     {
-      "narration": "Now every step anyone takes runs through you. Just do it. Literally.",
-      "visual": {"type": "lowpoly", "set": "city", "action": "cheer", "crowd": 300, "props": [], "stat": "EVERY STEP", "stat_sub": "the whole plan"},
+      "narration": "Now every dunk on Earth, and off it, has a swoosh on it.",
+      "visual": {"type": "lowpoly", "set": "city", "action": "cheer", "crowd": 300, "props": [], "stat": "EVERY DUNK", "stat_sub": "the whole plan"},
       "toon": [
-        {"place": "street", "beat": "queue", "mood": "proud", "crowd": 50},
-        {"place": "street", "beat": "sign", "mood": "laugh", "action": "cheer", "brand": {"name": "Just Do It", "bg": "#111111", "fg": "#ffffff"}}
+        {"place": "court", "beat": "logo", "mood": "proud", "crowd": 30, "brand": {"name": "Nike", "bg": "#111111", "fg": "#ffffff", "icon": "swoosh"}}
       ]
     }
   ],
   "sources": [
-    {"title": "Wikipedia: Nike, Inc.", "url": "https://en.wikipedia.org/wiki/Nike,_Inc."}
+    {"title": "Wikipedia: Nike, Inc. (who Nike is; the plan itself is imagined)", "url": "https://en.wikipedia.org/wiki/Nike,_Inc."}
   ]
 }
