@@ -1,0 +1,15 @@
+htmm-toon@ /home/runner/work/HowTheyMakeMoney/HowTheyMakeMoney/toon
+├── @react-three/fiber@9.8.2 invalid: "latest" from the root project
+├── @react-three/postprocessing@3.2.2 invalid: "latest" from the root project
+├── @remotion/bundler@4.0.543 invalid: "latest" from the root project
+├── @remotion/cli@4.0.543 invalid: "latest" from the root project
+├── @remotion/renderer@4.0.543 invalid: "latest" from the root project
+├── @remotion/three@4.0.543 invalid: "latest" from the root project
+├── @types/three@0.187.0 invalid: "latest" from the root project
+├── postprocessing@6.39.6 invalid: "latest" from the root project
+├── react-dom@19.3.1 invalid: "latest" from the root project
+├── react@19.3.1 invalid: "latest" from the root project
+├── remotion@4.0.543 invalid: "latest" from the root project
+├── three@0.187.0 invalid: "latest" from the root project
+└── typescript@7.0.2 invalid: "latest" from the root project
+
