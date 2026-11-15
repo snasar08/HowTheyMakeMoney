@@ -475,6 +475,18 @@ export { FPS };
 
 // ======================= HTMM: our hero and the crowd around them =======================
 import { PLAN, heroAt, locOf, sceneOf, beatOf } from "./story";
+let BR = PLAN.brand;  // the scene's brand (set per scene in stage())
+/** the brand name in bold lettering, centred in the box (x0,y0)-(x1,y1), shrunk to fit */
+function brandText(p: Pen, x0: number, y0: number, x1: number, y1: number, fg?: string) {
+  if (!BR) return;
+  const g = p.g, txt = BR.name.toUpperCase();
+  let sz = y1 - y0;
+  g.font = `900 ${sz}px "Arial Black", "Helvetica Neue", Arial, sans-serif`;
+  const w = g.measureText(txt).width;
+  if (w > (x1 - x0)) { sz = (sz * (x1 - x0)) / w; g.font = `900 ${sz}px "Arial Black", "Helvetica Neue", Arial, sans-serif`; }
+  g.textAlign = "center"; g.textBaseline = "middle";
+  g.fillStyle = fg ?? BR.fg; g.fillText(txt, (x0 + x1) / 2, (y0 + y1) / 2 + sz * 0.04);
+}
 void stageBridge;
 const HERO = PLAN.hero as unknown as Outfit;
 const SK = ["#ffe2c2", "#f5c9a0", "#d9a577", "#b07a4f", "#8a5a3a", "#6b4630"];
@@ -503,6 +515,8 @@ export const stage = (id: number, t: number, _b: BridgeState, cam: CamInfo): Sta
   const so: SideOpts = { mode: moving ? "march" : "stand", phase, expr, blink: lidAt(t, 500), stride: h.v / 1.6 };
   const view = moving ? viewOf(cam, h.x, h.z, h.d[0], h.d[1]) : { side: false, mirror: false };
   const beat = beatOf(id), r: [number, number] = [-L.d[1], L.d[0]];
+  BR = sc.brand ?? PLAN.brand;
+  const bkey = BR ? `${BR.name}|${BR.bg}|${BR.fg}|${BR.icon ?? ""}` : "-";
   const base = moving ? { x: L.p[0] + L.d[0] * h.v * 2.4, z: L.p[2] + L.d[1] * h.v * 2.4 } : { x: h.x, z: h.z };
   const night = s.light === "night", gold = s.light === "golden";
   const tintDraw = (draw: (p: Pen) => void, cw: number, ch: number) => (pen: Pen) => { draw(pen); if (night || gold) { const g = pen.g; g.globalCompositeOperation = "source-atop"; g.fillStyle = night ? "rgba(28,44,150,0.5)" : "rgba(255,150,60,0.22)"; g.fillRect(0, 0, cw, ch); g.globalCompositeOperation = "source-over"; } };
@@ -516,7 +530,7 @@ export const stage = (id: number, t: number, _b: BridgeState, cam: CamInfo): Sta
     const bump = 0.03 * Math.abs(Math.sin(tl * 11));
     out.places.push(person(cam, { i: 500, o: HERO, okey: "hero" }, hx, h.y + 0.98 + bump, hz, { side: false, mirror: false },
       { mode: "sit", expr: id % 2 ? "grin" : "laugh", blink: lidAt(t, 500), look: right * 0.6 }, {}, 0.8));
-    out.fx.push({ key: `prop|carDrive|${s.light}`, cw: 700, ch: 380, x: h.x, y: h.y + 1.2 + bump, z: h.z, w: 4.5 * right, h: 2.44,
+    out.fx.push({ key: `prop|carDrive|${s.light}|${bkey}`, cw: 700, ch: 380, x: h.x, y: h.y + 1.2 + bump, z: h.z, w: 4.5 * right, h: 2.44,
       draw: tintDraw(PROPS.carDrive.draw, 700, 380) });
     blob(out, h.x, h.y, h.z, 4.0, 0.9);
     for (let k = 0; k < 3; k++) {
@@ -540,10 +554,32 @@ export const stage = (id: number, t: number, _b: BridgeState, cam: CamInfo): Sta
         w: 0.42, h: 0.5, rot: u * 4 + k2, draw: tintDraw((pen) => drawPage(pen, k2), 200, 240) });
     }
   }
+  if (beat === "sign" && BR) {
+    const k = pop(0.1), x = h.x + h.d[0] * -1.2, z = h.z + h.d[1] * -1.2;
+    if (k > 0) out.fx.push({ key: `prop|sign|${s.light}|${bkey}`, cw: 900, ch: 620, x, y: h.y + 1.6 * k + 1.7, z, w: 3.4 * k, h: 2.34 * k,
+      draw: tintDraw((pen) => {
+        pen.poly(rr(60, 470, 120, 620, 6), "#5a5560", 10); pen.poly(rr(780, 470, 840, 620, 6), "#5a5560", 10);   // posts
+        pen.poly(rr(16, 16, 884, 480, 34), BR.bg, 16);
+        pen.poly(rr(46, 46, 854, 450, 22), null, 6);
+        brandText(pen, 80, 120, 820, 380);
+        for (let i = 0; i < 9; i++) pen.ell(70 + i * 95, 30, 9, 9, "#fff3b0", 4);                                  // bulbs
+      }, 900, 620) });
+  }
+  if (beat === "logo" && BR) {
+    // the new company's logo pops up big beside the hero, with a burst of rays behind it
+    const k = pop(0.12), x = h.x + r[0] * 1.25 + h.d[0] * -0.4, z = h.z + r[1] * 1.25 + h.d[1] * -0.4;
+    const spin = q((tl * 0.35) % 1, 24), B = BR;
+    if (k > 0) {
+      out.fx.push({ key: `fx|rays|${spin}|${s.light}`, cw: 512, ch: 512, x: x + h.d[0] * -0.25, y: h.y + 2.05, z: z + h.d[1] * -0.25, w: 3.4 * k, h: 3.4 * k,
+        draw: (pen) => drawRays(pen, spin * Math.PI * 2, B.bg), soft: true });
+      out.fx.push({ key: `prop|logo|${bkey}|${s.light}`, cw: 600, ch: 600, x, y: h.y + 2.05, z, w: 2.1 * k, h: 2.1 * k,
+        draw: tintDraw((pen) => drawLogo(pen, B), 600, 600) });
+    }
+  }
   if (beat === "phone") {
     const k = pop(0.15), x = h.x + r[0] * 1.35, z = h.z + r[1] * 1.35;
     const pins = Math.min(9, Math.floor(tl * 4));
-    if (k > 0) out.fx.push({ key: `prop|phone|${pins}|${s.light}`, cw: 420, ch: 780, x, y: h.y + 1.25 * k + 0.1, z, w: 1.25 * k, h: 2.3 * k,
+    if (k > 0) out.fx.push({ key: `prop|phone|${pins}|${s.light}|${bkey}`, cw: 420, ch: 780, x, y: h.y + 1.25 * k + 0.1, z, w: 1.25 * k, h: 2.3 * k,
       draw: tintDraw((pen) => drawPhone(pen, pins), 420, 780) });
   }
   if (beat === "money") {
@@ -596,6 +632,38 @@ export const stage = (id: number, t: number, _b: BridgeState, cam: CamInfo): Sta
     if (!lift) blob(out, x, L.p[1], z, Math.min(2.2, w / 0.6), 0.8);
   }
 };
+function drawRays(p: Pen, a0: number, col: string) {
+  const g = p.g;
+  for (let i = 0; i < 14; i++) {
+    const a = a0 + (i * Math.PI * 2) / 14, b = a + 0.12;
+    g.beginPath(); g.moveTo(256, 256); g.lineTo(256 + 250 * Math.cos(a), 256 + 250 * Math.sin(a)); g.lineTo(256 + 250 * Math.cos(b), 256 + 250 * Math.sin(b)); g.closePath();
+    g.fillStyle = i % 2 ? "rgba(255,243,176,0.85)" : "rgba(255,255,255,0.7)"; g.fill();
+  }
+  void col;
+}
+/** a simple code-drawn logo: rounded badge in the brand colour, an icon, the name underneath */
+function drawLogo(p: Pen, B: { name: string; bg: string; fg: string; icon?: string }) {
+  const g = p.g;
+  p.poly(rr(40, 30, 560, 570, 120), "#ffffff", 0);
+  p.poly(rr(56, 46, 544, 554, 108), B.bg, 16);
+  g.save(); g.translate(300, 245); g.fillStyle = B.fg; g.strokeStyle = B.fg; g.lineWidth = 26; g.lineCap = "round"; g.lineJoin = "round";
+  const ic = B.icon ?? "letter";
+  if (ic === "rocket") { g.beginPath(); g.moveTo(0, -130); g.quadraticCurveTo(70, -60, 52, 70); g.lineTo(-52, 70); g.quadraticCurveTo(-70, -60, 0, -130); g.fill(); g.beginPath(); g.moveTo(-52, 40); g.lineTo(-100, 110); g.lineTo(-40, 85); g.moveTo(52, 40); g.lineTo(100, 110); g.lineTo(40, 85); g.stroke(); g.fillStyle = B.bg; g.beginPath(); g.arc(0, -35, 26, 0, 7); g.fill(); }
+  else if (ic === "bolt") { g.beginPath(); g.moveTo(30, -140); g.lineTo(-70, 20); g.lineTo(0, 20); g.lineTo(-30, 140); g.lineTo(70, -20); g.lineTo(0, -20); g.closePath(); g.fill(); }
+  else if (ic === "chip") { g.strokeRect(-80, -80, 160, 160); g.fillRect(-40, -40, 80, 80); for (let i = -1; i <= 1; i++) { g.beginPath(); g.moveTo(i * 45, -80); g.lineTo(i * 45, -125); g.moveTo(i * 45, 80); g.lineTo(i * 45, 125); g.moveTo(-80, i * 45); g.lineTo(-125, i * 45); g.moveTo(80, i * 45); g.lineTo(125, i * 45); g.stroke(); } }
+  else if (ic === "globe") { g.beginPath(); g.arc(0, 0, 120, 0, 7); g.stroke(); g.beginPath(); g.ellipse(0, 0, 55, 120, 0, 0, 7); g.stroke(); g.beginPath(); g.moveTo(-120, 0); g.lineTo(120, 0); g.moveTo(-100, -60); g.lineTo(100, -60); g.moveTo(-100, 60); g.lineTo(100, 60); g.stroke(); }
+  else if (ic === "car") { g.beginPath(); g.moveTo(-140, 40); g.lineTo(-120, -20); g.lineTo(-60, -80); g.lineTo(60, -80); g.lineTo(120, -20); g.lineTo(140, 40); g.closePath(); g.fill(); g.fillStyle = B.bg; g.beginPath(); g.arc(-75, 50, 34, 0, 7); g.arc(75, 50, 34, 0, 7); g.fill(); g.fillStyle = B.fg; g.beginPath(); g.arc(-75, 50, 22, 0, 7); g.fill(); g.beginPath(); g.arc(75, 50, 22, 0, 7); g.fill(); }
+  else if (ic === "brain") { g.beginPath(); g.arc(-45, -10, 80, Math.PI * 0.5, Math.PI * 1.9); g.arc(45, -10, 80, Math.PI * 1.1, Math.PI * 2.5); g.closePath(); g.stroke(); g.beginPath(); g.moveTo(0, -90); g.lineTo(0, 70); g.stroke(); }
+  else if (ic === "bird") { g.beginPath(); g.moveTo(-120, 10); g.quadraticCurveTo(-40, -90, 40, -40); g.lineTo(120, -80); g.lineTo(90, -10); g.quadraticCurveTo(60, 100, -80, 70); g.quadraticCurveTo(-20, 40, -120, 10); g.fill(); }
+  else if (ic === "sun") { g.beginPath(); g.arc(0, 0, 60, 0, 7); g.fill(); for (let i = 0; i < 10; i++) { const a = (i * Math.PI) / 5; g.beginPath(); g.moveTo(85 * Math.cos(a), 85 * Math.sin(a)); g.lineTo(125 * Math.cos(a), 125 * Math.sin(a)); g.stroke(); } }
+  else if (ic === "play") { g.beginPath(); g.moveTo(-60, -90); g.lineTo(90, 0); g.lineTo(-60, 90); g.closePath(); g.fill(); }
+  else if (ic === "cart") { g.beginPath(); g.moveTo(-130, -90); g.lineTo(-90, -90); g.lineTo(-50, 50); g.lineTo(100, 50); g.lineTo(130, -50); g.lineTo(-70, -50); g.stroke(); g.beginPath(); g.arc(-35, 100, 22, 0, 7); g.arc(85, 100, 22, 0, 7); g.fill(); }
+  else if (ic === "robot") { g.strokeRect(-90, -70, 180, 140); g.beginPath(); g.arc(-40, -5, 22, 0, 7); g.arc(40, -5, 22, 0, 7); g.fill(); g.beginPath(); g.moveTo(0, -70); g.lineTo(0, -120); g.stroke(); g.beginPath(); g.arc(0, -125, 16, 0, 7); g.fill(); }
+  else if (ic === "burger") { g.beginPath(); g.arc(0, -10, 120, Math.PI, 0); g.fill(); g.fillRect(-125, 15, 250, 30); g.beginPath(); g.moveTo(-120, 65); g.lineTo(120, 65); g.lineTo(100, 110); g.lineTo(-100, 110); g.closePath(); g.fill(); }
+  else { g.font = `900 260px "Arial Black", Arial, sans-serif`; g.textAlign = "center"; g.textBaseline = "middle"; g.fillText(B.name.slice(0, 1).toUpperCase(), 0, 10); }
+  g.restore();
+  const old = BR; BR = { ...B }; brandText(p, 96, 430, 504, 520, B.fg); BR = old;
+}
 function drawClock(p: Pen, ang: number) {
   p.ell(260, 260, 236, 236, "#f4f1ea", 16);
   p.ell(260, 260, 200, 200, null, 6);
@@ -617,6 +685,7 @@ function drawPhone(p: Pen, pins: number) {
   for (const x of [120, 250, 330]) p.stroke([[x, 74], [x + 30, 690]], 18, "#f4f1ea");
   const P: [number, number][] = [[90, 140], [300, 210], [170, 300], [340, 380], [80, 430], [230, 500], [320, 600], [130, 610], [260, 120]];
   for (let i = 0; i < pins; i++) { const [x, y] = P[i]; p.poly([[x, y + 34], [x - 22, y], [x, y - 24], [x + 22, y]], "#e2453c", 7); p.ell(x, y - 2, 8, 8, "#ffffff", 0); }
+  if (BR) { p.poly(rr(40, 74, 380, 150, 0), BR.bg, 0); brandText(p, 60, 84, 360, 140); }
   p.poly(rr(80, 630, 340, 690, 26), "#241726", 0);                        // request button
   p.stroke([[150, 660], [270, 660]], 10, "#ffffff");
   p.ell(210, 44, 34, 9, "#4a4952", 0);
@@ -642,6 +711,7 @@ const PROPS: Record<string, { cw: number; ch: number; draw: (p: Pen) => void }> 
     p.poly(rr(40, 160, 660, 300, 46), "#35b58c", 12);
     p.poly(rr(612, 196, 650, 232, 10), "#fff3b0", 7); p.poly(rr(46, 200, 76, 236, 8), "#e2453c", 7);
     p.stroke([[352, 176], [352, 286]], 6); p.stroke([[392, 214], [432, 214]], 9);
+    if (BR) { p.poly(rr(104, 180, 332, 232, 12), BR.bg, 6); brandText(p, 116, 185, 320, 227); }
     wheel(p, 190, 300, 58); wheel(p, 520, 300, 58);
   } },
   car: { cw: 700, ch: 380, draw: (p) => {

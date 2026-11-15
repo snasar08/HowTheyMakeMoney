@@ -28,20 +28,56 @@ def _hex(c, default):
     return c if c.startswith("#") else "#" + c
 
 
-def outfit(hero: dict | None, slug: str = "") -> dict:
+# shirt numbers people know (used when the script's hero has no "number")
+NUMBERS = {"stephen curry": "30", "lebron james": "23", "michael jordan": "23", "lionel messi": "10", "cristiano ronaldo": "7",
+           "kylian mbappé": "10", "kylian mbappe": "10", "giannis antetokounmpo": "34", "patrick mahomes": "15", "shohei ohtani": "17",
+           "kevin durant": "35", "tom brady": "12"}
+
+
+def _lum(h: str) -> float:
+    h = h.lstrip("#")
+    return (0.299 * int(h[0:2], 16) + 0.587 * int(h[2:4], 16) + 0.114 * int(h[4:6], 16)) / 255
+
+
+def outfit(hero: dict | None, slug: str = "", sport: str = "", name: str = "") -> dict:
     """Our hero fields -> the reference character model (jacket / pants / boots / skin / hat / hair / moustache)."""
     s = lp_hero.spec(hero) if hero else lp_hero.spec(lp_hero.auto(slug))
     o = {"jacket": _hex(s.get("shirt"), "e63946"), "pants": _hex(s.get("pants"), "263247"),
          "boots": _hex(s.get("shoes"), "f4f4f4"), "skin": _hex(s.get("skin"), "light")}
     extras = s.get("extras") or []
+    hair = s.get("hair") or "short"
     if "cap" in extras:
-        o.update(hat="cap", cap=_hex(s.get("shirt"), "e63946"))
-    elif s.get("hair") in ("bald",):
+        o.update(hat="cap", cap=_hex(s.get("cap_color") or s.get("shirt"), "e63946"))
+    elif hair == "bald":
         o["hat"] = None
     else:
-        o.update(hat="hair", hair=_hex(s.get("hair_color"), "3a2a1c"))
-    if s.get("beard") in ("full", "goatee", "mustache"):
-        o["moustache"] = _hex(s.get("beard_color") or s.get("hair_color"), "3a2a1c")
+        style = {"short": "short", "buzz": "buzz", "quiff": "quiff", "long": "long", "bangs": "short", "ponytail": "ponytail",
+                 "bun": "bun", "afro": "afro", "curly": "curly", "mohawk": "mohawk", "spiky": "spiky"}.get(hair, "short")
+        if (s.get("family") == "w" or s.get("outfit") == "dress") and hair in ("bangs", "short", "long", "ponytail"):
+            style = "long"          # women's bangs / long hair: hair down past the shoulders
+        o.update(hat="hair", hair=_hex(s.get("hair_color"), "3a2a1c"), style=style)
+    bc = _hex(s.get("beard_color") or s.get("hair_color"), "3a2a1c")
+    if s.get("beard") in ("full", "goatee", "stubble"):
+        o.update(beard=s["beard"], beardCol=bc)
+    if s.get("beard") in ("full", "mustache"):
+        o["moustache"] = bc
+    if "glasses" in extras:
+        o["glasses"] = True
+    if "headband" in extras:
+        o["band"] = _hex(s.get("band_color") or s.get("extra_color"), "f4f4f4")
+    kind = s.get("outfit")
+    if kind == "kit":
+        o["kit"] = "bball" if sport == "court" else "soccer" if sport == "pitch" else "soccer"
+        num = str(s.get("number") or NUMBERS.get(name.lower(), ""))
+        if num:
+            o["num"] = num
+        cands = [_hex(c, "ffffff") for c in (s.get("trim"), s.get("pants"), s.get("shoes"), s.get("socks"), "ffffff") if c]
+        o["trim"] = next((c for c in cands if abs(_lum(c) - _lum(o["jacket"])) > 0.3), "#ffffff")
+    elif kind in ("suit", "hoodie", "tee"):
+        o["kit"] = kind
+        o["trim"] = _hex(s.get("tie") or s.get("trim"), "c0353a" if kind == "suit" else "ffffff")
+    if s.get("chest"):
+        o["chest"] = str(s["chest"])[:6]
     if s.get("outfit") == "dress":
         o["dress"] = o["jacket"]
     return o
@@ -67,20 +103,34 @@ BEATS = {
     "phone": r"\b(app|apps|phone|tap|taps|order\w*|download\w*|online|scroll\w*|swipe\w*|stream\w*)\b",
     "queue": r"\b(people|customers?|riders?|users?|fans|everyone|everybody|line|crowd|members|players)\b",
 }
-PRIORITY = ["drive", "money", "clock", "phone", "queue"]
+PRIORITY = ["drive", "money", "clock", "phone", "queue", "sign"]
+# brand colours for names on screen (lettering only, Sam Nov 15); scripts may set brand_color / brand_text_color
+BRAND_COLORS = {"uber": ("#000000", "#ffffff"), "nike": ("#111111", "#ffffff"), "mcdonald's": ("#da291c", "#ffc72c"),
+                "netflix": ("#141414", "#e50914"), "amazon": ("#232f3e", "#ff9900"), "doordash": ("#ff3008", "#ffffff"),
+                "starbucks": ("#00704a", "#ffffff"), "chick-fil-a": ("#e51636", "#ffffff"), "roblox": ("#232527", "#ffffff"),
+                "youtube": ("#ff0000", "#ffffff"), "visa": ("#1a1f71", "#ffffff"), "airbnb": ("#ff5a5f", "#ffffff")}
 
 
-def beats_for(lines: list[str], given: list[str | None]) -> list[str]:
+def beats_for(lines: list[str], given: list[str | None], company: str = "") -> list[str]:
     out, prev = [], None
     for text, g in zip(lines, given):
         if g:
             out.append(g); prev = g; continue
         t = text.lower()
         score = {b: len(re.findall(rx, t)) for b, rx in BEATS.items()}
+        score["sign"] = 1 if company and company.lower() in t else 0
         ranked = sorted((b for b in PRIORITY if score[b]), key=lambda b: (-score[b], PRIORITY.index(b)))
         pick = next((b for b in ranked if b != prev), "walk")
         out.append(pick); prev = pick
     return out
+
+
+def _brand(b) -> dict:
+    """visual.brand: "SpaceX" or {"name", "bg", "fg", "icon"} (icon: rocket bolt chip globe car brain bird sun play cart robot burger)"""
+    if isinstance(b, str):
+        b = {"name": b}
+    bg, fg = BRAND_COLORS.get(b["name"].lower(), ("#241726", "#ffffff"))
+    return {"name": b["name"], "bg": b.get("bg", bg), "fg": b.get("fg", fg), **({"icon": b["icon"]} if b.get("icon") else {})}
 
 
 def make_plan(script: dict, recorded: dict | None = None) -> dict:
@@ -92,7 +142,9 @@ def make_plan(script: dict, recorded: dict | None = None) -> dict:
             lo, hi = ranges.get(si, (fr, fr))
             ranges[si] = (min(lo, fr), max(hi, fr))
     lt, out, a = lights(len(scenes)), [], 0
-    bt = beats_for([sc.get("narration", "") for _, sc in scenes], [sc["visual"].get("beat") for _, sc in scenes])
+    bt = beats_for([sc.get("narration", "") for _, sc in scenes],
+                   [sc["visual"].get("beat") or ("logo" if sc["visual"].get("brand") else None) for _, sc in scenes],
+                   script.get("company", "") if script.get("format") != "famous" else "")
     for k, (i, sc) in enumerate(scenes):
         v = sc["visual"]
         if recorded:
@@ -105,10 +157,15 @@ def make_plan(script: dict, recorded: dict | None = None) -> dict:
         n = hi - lo + 1
         out.append({"si": i, "a": a, "n": n, "frLo": lo, "light": lt[k], "set": v.get("set", "city"),
                     "action": v.get("action", "idle"), "crowd": int(v.get("crowd", 0) or 0), "props": v.get("props") or [],
-                    "beat": bt[k]})
+                    "beat": bt[k], **({"brand": _brand(v["brand"])} if v.get("brand") else {})})
         a += n
     slug = f"{script.get('id', '')}-{script.get('slug', '')}"
-    return {"slug": slug, "fps": FPS, "total": a, "scenes": out, "hero": outfit(script.get("hero"), script.get("slug", "")),
+    co = script.get("company", "")
+    bg, fg = BRAND_COLORS.get(co.lower(), ("#241726", "#ffffff"))
+    brand = {"name": co, "bg": script.get("brand_color", bg), "fg": script.get("brand_text_color", fg)} if co and script.get("format") != "famous" else None
+    sport = next((sc["visual"].get("set") for _, sc in scenes if sc["visual"].get("set") in ("court", "pitch")), "")
+    hero = outfit(script.get("hero"), script.get("slug", ""), sport, script.get("name_card", ""))
+    return {"slug": slug, "fps": FPS, "total": a, "scenes": out, "brand": brand, "hero": hero,
             "seed": int(re.sub(r"\D", "", str(script.get("id", "1"))) or 1)}
 
 

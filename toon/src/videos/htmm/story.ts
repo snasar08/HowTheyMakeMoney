@@ -5,8 +5,9 @@
 export const FPS = 30;
 import { getInputProps } from "remotion";
 /** HTMM: one entry per script scene. a = first composition frame, n = frames, frLo = the scene-local frame number of a. */
-export type PlanScene = { a: number; n: number; frLo: number; light: "day" | "golden" | "night"; set: string; action: string; crowd: number; props: string[]; beat?: string };
-export const PLAN: { scenes: PlanScene[]; hero: Record<string, unknown>; seed: number } = (getInputProps() as { plan?: any }).plan ?? {
+export type PlanScene = { a: number; n: number; frLo: number; light: "day" | "golden" | "night"; set: string; action: string; crowd: number; props: string[]; beat?: string; brand?: Brand };
+export type Brand = { name: string; bg: string; fg: string; icon?: string };
+export const PLAN: { scenes: PlanScene[]; hero: Record<string, unknown>; seed: number; brand?: Brand } = (getInputProps() as { plan?: any }).plan ?? {
   scenes: [{ a: 0, n: 90, frLo: 0, light: "day", set: "city", action: "idle", crowd: 12, props: [] }],
   hero: { jacket: "#e2453c", pants: "#3b5b9a", boots: "#f4f1ea", hat: "hair", hair: "#3a2a20", skin: "#f5c9a0" }, seed: 1 };
 export const TOTAL = PLAN.scenes.reduce((m, s) => Math.max(m, s.a + s.n), 0);
@@ -369,9 +370,9 @@ const SPEED: Record<string, number> = { run: 3.0, walk: 1.6, carry: 1.3, push: 1
 export const sceneOf = (id: number) => PLAN.scenes[id - 1];
 export const beatOf = (id: number) => sceneOf(id)?.beat ?? "walk";
 const ROAD: Loc = { p: [0, D0, 150], d: [0, -1], w: 4.6 }; // a long straight run of the main street, clear of the bridge
-export const locOf = (id: number) => (beatOf(id) === "drive" ? ROAD : LOCS[(id - 1) % LOCS.length]);
+export const locOf = (id: number) => (beatOf(id) === "drive" ? ROAD : beatOf(id) === "sign" ? LOCS[1] : LOCS[(id - 1) % LOCS.length]);
 export const heroAt = (id: number, tl: number) => {
-  const L = locOf(id), b = beatOf(id), v = b === "drive" ? 7.5 : b === "queue" || b === "clock" || b === "phone" || b === "money" ? 0 : SPEED[sceneOf(id).action] ?? 0;
+  const L = locOf(id), b = beatOf(id), v = b === "drive" ? 7.5 : b === "queue" || b === "clock" || b === "phone" || b === "money" || b === "sign" || b === "logo" ? 0 : SPEED[sceneOf(id).action] ?? 0;
   return { x: L.p[0] + L.d[0] * v * tl, y: L.p[1], z: L.p[2] + L.d[1] * v * tl, d: L.d, v };
 };
 /** a point relative to the hero at frame f: fwd = metres ahead (walking direction), side = to the hero's left, up */
@@ -391,7 +392,7 @@ const FR: Record<string, (id: number, f0: number) => (f: number) => Shot> = {
   two: (id, f0) => (f) => dolly(off(id, f, 5.2, -1.4, 1.6), off(id, f, 0, 0.75, 1.5), pushK(f, f0, 0.0025), { fov: 40 }),
   line: (id, f0) => (f) => dolly(off(id, f, -2.2, 3.4, 1.7), off(id, f, 6, 0.3, 1.3), pushK(f, f0, 0.002), { fov: 42 }),
 };
-const BSEQ: Record<string, string[]> = { drive: ["side", "chase", "side"], clock: ["wide2", "two", "cu"], phone: ["two", "cu", "wide2"],
+const BSEQ: Record<string, string[]> = { logo: ["two", "ms", "low"], sign: ["wide2", "two", "low"], drive: ["side", "chase", "side"], clock: ["wide2", "two", "cu"], phone: ["two", "cu", "wide2"],
   money: ["two", "low", "wide2"], queue: ["line", "ws", "ms"] };
 const SEQ = [["ws", "ms", "cu"], ["ms", "low", "ws"], ["low", "cu", "ms"], ["ws", "cu", "low"]];
 const CINF: Record<string, number> = { ws: 0, ms: 11, cu: 14, low: 9 };
