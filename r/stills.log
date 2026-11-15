@@ -1,0 +1,102 @@
+=== line 1: HtmmShort 60 0.5 plans/dbg_e.json swangle
+bundle 6.2s
+[40m http://localhost:3000/public/bridge/kenney/tree_oak.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/tree_default.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/tree_detailed.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/tree_fat.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/tree_cone.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/tree-high-round.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/tree.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/plant_bushLarge.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/plant_bushDetailed.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/plant_bush.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/hedge.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/flower_redA.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/flower_yellowA.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/flower_purpleA.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/grass_large.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/grass.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/lily_large.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/lantern.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/cart.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/stall-red.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/stall-green.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/stall-bench.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/banner-red.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/banner-green.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/windmill.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/canoe.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m Tab 0, node_modules/three/build/three.core.js:2014 [49m [33mTHREE.Clock: This module has been deprecated. Please use THREE.Timer instead.[39m
+[warning] THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.
+[40m Tab 0, node_modules/three/build/three.core.js:2014 [49m [33mTHREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.[39m
+[warning] [gl] WebGL 2.0 (OpenGL ES 3.0 Chromium) | float true | half true | samples 4 | tex 8192
+[40m Tab 0, src/videos/htmm/Bridge.tsx:53 [49m [33m[gl] WebGL 2.0 (OpenGL ES 3.0 Chromium) | float [33mtrue[39m[33m | half [33mtrue[39m[33m | samples [33m4[39m[33m | tex [33m8192[39m[33m[39m
+still 60 28.5s
+=== line 2: HtmmShort 60 0.5 plans/dbg_f.json swangle
+bundle 3.4s
+[40m http://localhost:3000/public/bridge/kenney/tree_oak.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/tree_default.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/tree_detailed.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/tree_fat.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/tree_cone.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/tree-high-round.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/tree.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/plant_bushLarge.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/plant_bushDetailed.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/plant_bush.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/hedge.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/flower_redA.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/flower_yellowA.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/flower_purpleA.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/grass_large.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/grass.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/lily_large.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/lantern.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/cart.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/stall-red.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/stall-green.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/stall-bench.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/banner-red.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/banner-green.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/windmill.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/canoe.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m Tab 0, node_modules/three/build/three.core.js:2014 [49m [33mTHREE.Clock: This module has been deprecated. Please use THREE.Timer instead.[39m
+[warning] THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.
+[40m Tab 0, node_modules/three/build/three.core.js:2014 [49m [33mTHREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.[39m
+[warning] [gl] WebGL 2.0 (OpenGL ES 3.0 Chromium) | float true | half true | samples 4 | tex 8192
+[40m Tab 0, src/videos/htmm/Bridge.tsx:53 [49m [33m[gl] WebGL 2.0 (OpenGL ES 3.0 Chromium) | float [33mtrue[39m[33m | half [33mtrue[39m[33m | samples [33m4[39m[33m | tex [33m8192[39m[33m[39m
+still 60 36.4s
+=== line 3: HtmmShort 60 0.5 plans/dbg_g.json swangle
+bundle 3.3s
+[40m http://localhost:3000/public/bridge/kenney/tree_oak.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/tree_default.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/tree_detailed.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/tree_fat.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/tree_cone.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/tree-high-round.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/tree.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/plant_bushLarge.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/plant_bushDetailed.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/plant_bush.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/hedge.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/flower_redA.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/flower_yellowA.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/flower_purpleA.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/grass_large.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/grass.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/lily_large.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/lantern.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/cart.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/stall-red.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/stall-green.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/stall-bench.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/banner-red.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/banner-green.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/windmill.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m http://localhost:3000/public/bridge/kenney/canoe.glb [49m [31mFailed to load resource: the server responded with a status of 404 (Not Found)[39m
+[40m Tab 0, node_modules/three/build/three.core.js:2014 [49m [33mTHREE.Clock: This module has been deprecated. Please use THREE.Timer instead.[39m
+[warning] THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.
+[40m Tab 0, node_modules/three/build/three.core.js:2014 [49m [33mTHREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.[39m
+[warning] [gl] WebGL 2.0 (OpenGL ES 3.0 Chromium) | float true | half true | samples 4 | tex 8192
+[40m Tab 0, src/videos/htmm/Bridge.tsx:53 [49m [33m[gl] WebGL 2.0 (OpenGL ES 3.0 Chromium) | float [33mtrue[39m[33m | half [33mtrue[39m[33m | samples [33m4[39m[33m | tex [33m8192[39m[33m[39m
+still 60 33.6s
