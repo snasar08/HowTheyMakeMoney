@@ -401,7 +401,7 @@ const FR: Record<string, (id: number, f0: number) => (f: number) => Shot> = {
 };
 const BSEQ: Record<string, string[]> = { logo: ["two", "wide2", "two"], sign: ["wide2", "two", "wide2"], drive: ["side", "chase", "side"], clock: ["wide2", "two", "cu"], phone: ["two", "wide2", "two"],
   money: ["two", "low", "wide2"], queue: ["line", "ws", "ms"] };
-const SEQ = [["ws", "ms", "cu"], ["ms", "low", "ws"], ["low", "cu", "ms"], ["ws", "cu", "low"]];
+const SEQ = [["ms", "low", "cu"], ["ms", "cu", "ws"], ["low", "ms", "cu"], ["ms", "ws", "low"]];   // open close: a tiny hero in an empty wide read as nothing
 const CINF: Record<string, number> = { ws: 0, ms: 11, cu: 14, low: 9 };
 SHOTS.length = 0;
 PLAN.scenes.forEach((sc, i) => SHOTS.push({ id: i + 1, a: sc.a, b: sc.a + sc.n, light: (sc.place && PLACES[sc.place]?.light) || sc.light, crowd: "none", tau: (t) => t }));
@@ -412,7 +412,7 @@ SHOTS.forEach((s) => {
   const n = s.b - s.a, seq = BSEQ[beatOf(s.id)] ?? ((sceneOf(s.id)?.things ?? []).length ? ["two", "wide2", "two"] : SEQ[(s.id - 1) % SEQ.length]), m = Math.min(5, Math.max(1, Math.ceil(n / 50))), keys: Key[] = [];
   for (let j = 0; j < m; j++) {
     const f0 = s.a + Math.round((j * n) / m), name = seq[j % seq.length];
-    keys.push({ f: f0, cut: j === 0, dur: 26, s: FR[name](s.id, f0) });
+    keys.push({ f: f0, cut: true, dur: 26, s: FR[name](s.id, f0) });   // hard cuts: a new view every ~1.7 s (Sam)
     DOF.push({ f: f0, ...(j ? { dur: 26 } : {}), cInf: CINF[name] ?? 10, focus: (f: number) => off(s.id, Math.min(f, s.b - 1), 0, 0, beatOf(s.id) === "drive" ? 1.1 : 1.48) });
   }
   CAMS[s.id] = keys;

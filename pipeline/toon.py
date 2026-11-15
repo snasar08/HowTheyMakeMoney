@@ -201,6 +201,13 @@ def make_plan(script: dict, recorded: dict | None = None) -> dict:
     print(f"[toon] director: {how}, {len(flat)} sentences", flush=True)
     di = 0
     prev_things: list = []
+    # frames per syllable over the whole Short, so the last scene (which also holds the CTA and the loop line) can be
+    # split into "narration" + an outro montage instead of one shot held for ~10 s (Nov 15 Jensen frame check)
+    rate = None
+    if recorded and len(scenes) > 1:
+        fr = sum(ranges[i][1] - ranges[i][0] + 1 for i, _ in scenes[:-1] if i in ranges)
+        sy = sum(max(1, prosody.syllables(x)) for i, _ in scenes[:-1] for x in sents[i])
+        rate = fr / sy if sy else None
     for k, (i, sc) in enumerate(scenes):
         v = sc["visual"]
         if recorded:
@@ -213,6 +220,11 @@ def make_plan(script: dict, recorded: dict | None = None) -> dict:
         n = hi - lo + 1
         ss = sents[i]
         w = [max(1, prosody.syllables(x)) for x in ss]
+        tail = 0
+        if k == len(scenes) - 1 and rate:
+            need = int(sum(w) * rate * 1.1) + 6
+            if n - need > FPS * 1.5:
+                tail, n = n - need, need
         cuts = [0]
         for j in range(len(ss) - 1):
             cuts.append(round(n * sum(w[:j + 1]) / sum(w)))
@@ -232,6 +244,20 @@ def make_plan(script: dict, recorded: dict | None = None) -> dict:
                         **({"brand": _brand(d["brand"])} if d.get("brand") else {"brand": _brand(v["brand"])} if v.get("brand") else {}),
                         "things": (prev_things := things_for(ss[j], d.get("things") or [], prev_things)), "line": ss[j][:80]})
             a += m
+        if tail:
+            # outro: quick callbacks to the Short's best moments (logos, things, signs), a new view every ~1.5 s
+            picks = [e for e in out if e.get("things") or e["beat"] in ("logo", "sign", "money", "drive", "queue")] or out[:]
+            seen, uniq = set(), []
+            for e in picks:
+                key = (e.get("place"), e["beat"], tuple(e.get("things") or []))
+                if key not in seen:
+                    seen.add(key); uniq.append(e)
+            pos, kk = lo + n, 0
+            while tail > 0:
+                m = min(tail, 45) if tail - 45 >= 20 else tail
+                src = uniq[(kk * 3) % len(uniq)] if uniq else out[-1]
+                out.append({**src, "a": a, "n": m, "frLo": pos, "si": i, "line": "(outro) " + src.get("line", "")[:60]})
+                a += m; pos += m; tail -= m; kk += 1
     slug = f"{script.get('id', '')}-{script.get('slug', '')}"
     co = script.get("company", "")
     bg, fg = BRAND_COLORS.get(co.lower(), ("#241726", "#ffffff"))
