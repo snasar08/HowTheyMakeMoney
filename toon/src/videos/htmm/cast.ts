@@ -474,7 +474,7 @@ export { FPS };
 
 
 // ======================= HTMM: our hero and the crowd around them =======================
-import { PLAN, heroAt, locOf, sceneOf, beatOf } from "./story";
+import { PLAN, heroAt, locOf, sceneOf, beatOf, placeOf } from "./story";
 let BR = PLAN.brand;  // the scene's brand (set per scene in stage())
 /** the brand name in bold lettering, centred in the box (x0,y0)-(x1,y1), shrunk to fit */
 function brandText(p: Pen, x0: number, y0: number, x1: number, y1: number, fg?: string) {
@@ -507,7 +507,9 @@ export const stage = (id: number, t: number, _b: BridgeState, cam: CamInfo): Sta
   findSun(cam, SUN);
   const moving = h.v > 0, act = sc.action;
   const phase = q((tl * (h.v > 2 ? 1.5 : 1.0)) % 1, 48);
-  const expr: Expr = act === "cheer" ? "laugh" : act === "run" ? (id % 2 ? "grin" : "nervous") : act === "work" || act === "interact" ? "stern"
+  const MOODS: Record<string, Expr> = { happy: "grin", laugh: "laugh", shock: "shock", nervous: "nervous", proud: "smile_closed", stern: "stern",
+    scheme: "smile", relief: "relief_open", dazed: "dazed", sad: "pained", calm: "neutral", excited: "laugh" };
+  const expr: Expr = sc.mood && MOODS[sc.mood] ? MOODS[sc.mood] : act === "cheer" ? "laugh" : act === "run" ? (id % 2 ? "grin" : "nervous") : act === "work" || act === "interact" ? "stern"
     : act === "death" || act === "fall" ? "dazed" : id % 2 ? "smile" : "grin";
   const wave = act === "cheer" || act === "wave" ? q(Math.sin(tl * 9), 8) : undefined;
   const mode = act === "death" || act === "fall" ? "fall" : moving ? "march" : "stand";
@@ -608,7 +610,9 @@ export const stage = (id: number, t: number, _b: BridgeState, cam: CamInfo): Sta
     blob(out, x, L.p[1], z);
   }
   // ---- props: flat ink drawings standing in the 3D world (like the reference's signs and effects) ----
-  for (const name of beat === "drive" ? [] : sc.props) {
+  const place = placeOf(id);
+  const auto = place === "court" || place === "pitch" ? ["ball"] : place === "stage" ? ["mic"] : place === "space" ? ["rocket", "flag"] : [];
+  for (const name of beat === "drive" ? [] : [...new Set([...sc.props, ...auto])]) {
     if (name === "car") put("car", -3.0, L.w * 0.5 + 0.6, 3.5, 1.9);
     else if (name === "truck") put("truck", -4.0, L.w * 0.5 + 0.9, 4.4, 2.4);
     else if (name === "trophy") put("trophy", 0.2, -1.15, 0.8 * pop(0.2), 1.12 * pop(0.2));
@@ -616,7 +620,12 @@ export const stage = (id: number, t: number, _b: BridgeState, cam: CamInfo): Sta
     else if (name === "boxes") put("boxes", 0.1, 1.25, 1.05 * pop(0.2), 1.05 * pop(0.2));
     else if (name === "check") put("check", 0.15, -1.45, 1.6 * pop(0.2), 0.8 * pop(0.2), 0.55);
     else if (name === "rocket") put("rocket", -6, -L.w * 0.5 - 2, 2.0, 4.6);
-    else if (name === "ball") put("ball", 0.25, -0.55, 0.3, 0.3, 0.02 + 0.75 * Math.abs(Math.sin(tl * 6.5)), true);
+    else if (name === "ball") put(place === "pitch" ? "football" : "ball", place === "pitch" ? 0.55 : 0.25, -0.55, 0.3, 0.3, place === "pitch" ? 0 : 0.02 + 0.75 * Math.abs(Math.sin(tl * 6.5)), true);
+    else if (name === "mic") put("mic", 0.45, -0.5, 0.55, 1.6, 0, true);
+    else if (name === "flag") put("flag", -1.5, -2.2, 1.1, 2.1);
+    else if (name === "laptop") put("laptop", 0.4, 0.95, 0.75, 0.55, 0.75, true);
+    else if (name === "burger") put("burger", 0.3, 1.05, 0.7, 0.6, 0.9, true);
+    else if (name === "controller") put("controller", 0.35, 0.8, 0.55, 0.36, 1.0, true);
   }
   return out;
   function put(name: string, fwd: number, side: number, w: number, hgt: number, lift = 0, follow = false) {
@@ -701,6 +710,38 @@ const rr = (x0: number, y0: number, x1: number, y1: number, rad: number): [numbe
 };
 const wheel = (pen: Pen, x: number, y: number, rad: number) => { pen.ell(x, y, rad, rad, "#2b2a33", 10); pen.ell(x, y, rad * 0.45, rad * 0.45, "#c9ccd6", 6); };
 const PROPS: Record<string, { cw: number; ch: number; draw: (p: Pen) => void }> = {
+  football: { cw: 160, ch: 160, draw: (p) => {
+    p.ell(80, 80, 66, 66, "#f4f4f4", 10);
+    p.poly([[80, 52], [104, 70], [95, 98], [65, 98], [56, 70]], "#241726", 0);
+    for (const [x, y] of [[80, 20], [134, 66], [116, 128], [44, 128], [26, 66]]) p.ell(x, y, 13, 11, "#241726", 0);
+  } },
+  mic: { cw: 200, ch: 580, draw: (p) => {
+    p.stroke([[100, 120], [100, 540]], 14); p.poly(rr(40, 530, 160, 566, 14), "#2b2a33", 8);
+    p.ell(100, 70, 46, 60, "#5a5966", 10); for (let i = 0; i < 4; i++) p.stroke([[66, 40 + i * 18], [134, 40 + i * 18]], 3, "#9a99a6");
+    p.poly(rr(84, 128, 116, 190, 8), "#2b2a33", 7);
+  } },
+  flag: { cw: 300, ch: 580, draw: (p) => {
+    p.stroke([[40, 30], [40, 570]], 14, "#c9ccd6"); p.stroke([[40, 30], [40, 570]], 4, "#9aa3b5");
+    p.poly([[46, 40], [280, 40], [280, 200], [46, 200]], "#f4f4f4", 9);
+    p.poly([[46, 40], [140, 40], [140, 120], [46, 120]], "#3f6fb5", 0);
+    for (let i = 0; i < 4; i++) p.stroke([[140, 52 + i * 40], [276, 52 + i * 40]], 14, "#e2453c");
+  } },
+  laptop: { cw: 360, ch: 260, draw: (p) => {
+    p.poly([[60, 20], [300, 20], [300, 180], [60, 180]], "#2b2a33", 10); p.poly([[78, 36], [282, 36], [282, 166], [78, 166]], "#7fd6ff", 0);
+    for (let i = 0; i < 4; i++) p.stroke([[96, 60 + i * 26], [96 + 60 + ((i * 37) % 100), 60 + i * 26]], 8, "#ffffff");
+    p.poly([[20, 182], [340, 182], [320, 230], [40, 230]], "#9aa3b5", 10);
+  } },
+  burger: { cw: 320, ch: 280, draw: (p) => {
+    p.ell(160, 110, 140, 80, "#e8a24a", 10, 180, 360); p.poly([[20, 112], [300, 112], [300, 128], [20, 128]], "#e8a24a", 6);
+    p.poly([[14, 128], [306, 128], [290, 150], [30, 150]], "#4fbf6b", 6); p.poly(rr(24, 150, 296, 184, 12), "#7a3b22", 8);
+    p.poly([[20, 184], [300, 184], [290, 196], [30, 196]], "#f0c22c", 5); p.ell(160, 210, 140, 46, "#e8a24a", 10, 0, 180);
+    for (const [x, y] of [[100, 70], [160, 55], [220, 72], [130, 92], [195, 95]]) p.ell(x, y, 6, 3.5, "#fff3d6", 0);
+  } },
+  controller: { cw: 360, ch: 240, draw: (p) => {
+    p.poly([[70, 40], [290, 40], [340, 170], [300, 220], [240, 170], [120, 170], [60, 220], [20, 170]], "#2b2a33", 10);
+    p.ell(100, 100, 16, 16, "#9aa3b5", 5); p.stroke([[100, 80], [100, 120]], 10, "#c9ccd6"); p.stroke([[80, 100], [120, 100]], 10, "#c9ccd6");
+    for (const [x, y, c] of [[260, 80, "#4fbf6b"], [290, 105, "#e2453c"], [230, 105, "#3f6fb5"], [260, 130, "#f0b429"]] as [number, number, string][]) p.ell(x, y, 13, 13, c, 4);
+  } },
   carDrive: { cw: 700, ch: 380, draw: (p) => {
     p.poly([[150, 170], [215, 60], [470, 60], [560, 170]], "#2f9e7a", 12);
     p.poly([[232, 160], [262, 86], [345, 86], [345, 160]], "rgba(191,230,255,0.2)", 8);
