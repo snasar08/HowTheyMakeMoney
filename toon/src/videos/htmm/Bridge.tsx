@@ -10,9 +10,9 @@ import React, { useEffect, useMemo, useState } from "react";
 import * as THREE from "three";
 import { AbsoluteFill, continueRender, delayRender, getInputProps, useCurrentFrame } from "remotion";
 import { ThreeCanvas } from "@remotion/three";
-import { useThree } from "@react-three/fiber";
+import { useThree, useFrame } from "@react-three/fiber";
 import { EffectComposer } from "@react-three/postprocessing";
-import { BlendFunction, BloomEffect, ToneMappingEffect, ToneMappingMode } from "postprocessing";
+import { BlendFunction, BloomEffect, ToneMappingEffect, ToneMappingMode, EffectComposer as CoreComposer, RenderPass, EffectPass, Effect } from "postprocessing";
 import { World, loadKit } from "./world";
 import { InkPass, noInkFallback } from "./ink";
 import { LensBlur, GrainEffect } from "./lensblur";
@@ -49,7 +49,7 @@ const useKit = () => {
 const Inner: React.FC<{ id: number; kit: Kit }> = ({ id, kit }) => {
   const f = useCurrentFrame();
   const { camera, scene, gl } = useThree();
-  const dbg = useMemo(() => ((getInputProps() as { post?: Record<string, unknown> }).post ?? {}) as { composer?: boolean; msaa?: number; fb?: string }, []);
+  const dbg = useMemo(() => ((getInputProps() as { post?: Record<string, unknown> }).post ?? {}) as { composer?: boolean; msaa?: number; fb?: string; manual?: number }, []);
   useEffect(() => { const x = gl.getContext() as WebGL2RenderingContext; console.warn("[gl]", x.getParameter(x.VERSION), "| float", !!x.getExtension("EXT_color_buffer_float"), "| half", !!x.getExtension("EXT_color_buffer_half_float"), "| samples", x.getParameter(x.MAX_SAMPLES), "| tex", x.getParameter(x.MAX_TEXTURE_SIZE)); }, [gl]);
   const world = useMemo(() => new World(kit), [kit]);
   const target = useMemo(() => new THREE.Vector3(), []);
@@ -74,6 +74,23 @@ const Inner: React.FC<{ id: number; kit: Kit }> = ({ id, kit }) => {
       {on.grain ? <primitive object={fx.grain} dispose={null} /> : null}
     </EffectComposer>
   ), [fx, on, dbg]);
+  // HTMM: the same chain driven by postprocessing's own composer (the React wrapper drew nothing under software GL)
+  const size = useThree((st) => st.size);
+  const core = useMemo(() => {
+    if (!dbg.manual) return null;
+    const c = new CoreComposer(gl, { multisampling: dbg.msaa ?? 4, frameBufferType: dbg.fb === "byte" ? THREE.UnsignedByteType : THREE.HalfFloatType });
+    c.addPass(new RenderPass(scene, camera));
+    if (dbg.manual >= 2) {
+      if (on.ink) c.addPass(fx.ink);
+      if (on.lens && on.pre) c.addPass(new EffectPass(camera, fx.lens.pre));
+      if (on.lens) c.addPass(new EffectPass(camera, fx.lens.main));
+    }
+    const tail = (dbg.manual >= 2 ? [on.bloom ? fx.bloom : null, fx.tone, on.grade ? fx.grade : null] : [fx.tone]).filter(Boolean) as Effect[];
+    c.addPass(new EffectPass(camera, ...tail));
+    return c;
+  }, [gl, scene, camera, fx, on, dbg]);
+  useEffect(() => { if (core) { const v = gl.getDrawingBufferSize(new THREE.Vector2()); core.setSize(v.x, v.y, false); } }, [core, gl, size]);
+  useFrame(() => { if (core) { gl.toneMapping = THREE.NoToneMapping; core.render(); } }, core ? 1 : 0);
   const cam = camera as THREE.PerspectiveCamera;
   target.copy(world.update(id, f, cam, scene));
   noInkFallback(world.root);
@@ -88,7 +105,7 @@ const Inner: React.FC<{ id: number; kit: Kit }> = ({ id, kit }) => {
   return (
     <>
       <primitive object={world.root} dispose={null} />
-      {dbg.composer === false ? null : post}
+      {dbg.composer === false || dbg.manual ? null : post}
     </>
   );
 };

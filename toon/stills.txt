@@ -1,4 +1,3 @@
-HtmmShort 60 0.5 plans/dbg_a.json swangle
-HtmmShort 60 0.5 plans/dbg_b.json swangle
-HtmmShort 60 0.5 plans/dbg_c.json swangle
-HtmmShort 60 0.5 plans/dbg_d.json swangle
+HtmmShort 60 0.5 plans/dbg_e.json swangle
+HtmmShort 60 0.5 plans/dbg_f.json swangle
+HtmmShort 60 0.5 plans/dbg_g.json swangle
