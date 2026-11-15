@@ -7,7 +7,7 @@
   "hook_style": "number",
   "title_style": "number",
   "theme": "clean_navy",
-  "status": "ready",
+  "status": "needs_fix",
   "score": 87,
   "title": "$289,140 a Year to Straighten Teeth",
   "description": "Orthodontists make 289,140 dollars a year. That's the median.\n\nSources:\n- BLS OEWS via api.bls.gov: Orthodontists 29-1023, annual median wage, May 2025: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000029102313\n- BLS OEWS via api.bls.gov: Orthodontists, 10th percentile: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000029102311\n- BLS OEWS via api.bls.gov: Orthodontists, 90th percentile: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000029102315\n- BLS OEWS via api.bls.gov: Orthodontists, employment: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000029102301\n- BLS OEWS via api.bls.gov: Dentists, general 29-1021, annual median wage: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000029102113\n- BLS OEWS via api.bls.gov: Airline pilots 53-2011, annual median wage: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000053201113\n\nFrom the US Bureau of Labor Statistics, Occupational Employment and Wage Statistics, May 2025 (api.bls.gov): orthodontists' annual median wage $289,140, 10th percentile $99,850, 90th percentile $416,000, employment 6,210; general dentists' median $170,950; airline pilots' median $232,140. Not financial advice.\n\n#shorts #orthodontist #braces #careers #howtheymakemoney",
@@ -125,5 +125,8 @@
       "title": "BLS OEWS via api.bls.gov: Airline pilots 53-2011, annual median wage",
       "url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000053201113"
     }
+  ],
+  "needs_fix": [
+    "clarity 88% < 90%: '289,140' at 1.7s, '416,000' at 12.2s, 'tenth' at 14.7s, '100,000.' at 16.4s, '6,210' at 21.7s, 'Orthodontist or' at 24.7s"
   ]
 }

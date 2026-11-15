@@ -7,7 +7,7 @@
   "hook_style": "surprise",
   "title_style": "whatif",
   "theme": "dark_neon",
-  "status": "ready",
+  "status": "needs_fix",
   "score": 91,
   "title": "What If You Got Paid $23,280 to Sleep?",
   "name_card": "Kai Cenat",
@@ -36,7 +36,19 @@
           "headset"
         ],
         "stat": "$23,280",
-        "stat_sub": "a month, asleep"
+        "stat_sub": "a month, asleep",
+        "hero": {
+          "skin": "5a3a28",
+          "hair": "short",
+          "hair_color": "15110e",
+          "beard": "none",
+          "outfit": "hoodie",
+          "shirt": "d8402e",
+          "pants": "24262e",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "height": 1.0
+        }
       }
     },
     {
@@ -50,7 +62,19 @@
           "phone"
         ],
         "stat": "5.6 MILLION",
-        "stat_sub": "hours of sleep watched"
+        "stat_sub": "hours of sleep watched",
+        "hero": {
+          "skin": "5a3a28",
+          "hair": "short",
+          "hair_color": "15110e",
+          "beard": "none",
+          "outfit": "hoodie",
+          "shirt": "d8402e",
+          "pants": "24262e",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "height": 1.0
+        }
       }
     },
     {
@@ -65,7 +89,19 @@
         ],
         "stat": "306,621",
         "stat_sub": "subscribers, February 2023",
-        "hud": "306K"
+        "hud": "306K",
+        "hero": {
+          "skin": "5a3a28",
+          "hair": "short",
+          "hair_color": "15110e",
+          "beard": "none",
+          "outfit": "hoodie",
+          "shirt": "d8402e",
+          "pants": "24262e",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "height": 1.0
+        }
       }
     },
     {
@@ -81,7 +117,19 @@
         ],
         "stat": "$4.7 MILLION",
         "stat_sub": "Forbes, 2023",
-        "hud": "$4.7M"
+        "hud": "$4.7M",
+        "hero": {
+          "skin": "5a3a28",
+          "hair": "short",
+          "hair_color": "15110e",
+          "beard": "none",
+          "outfit": "hoodie",
+          "shirt": "d8402e",
+          "pants": "24262e",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "height": 1.0
+        }
       }
     },
     {
@@ -97,7 +145,19 @@
         ],
         "stat": "21 MILLION",
         "stat_sub": "followers, 2026",
-        "hud": "21M"
+        "hud": "21M",
+        "hero": {
+          "skin": "5a3a28",
+          "hair": "short",
+          "hair_color": "15110e",
+          "beard": "none",
+          "outfit": "hoodie",
+          "shirt": "d8402e",
+          "pants": "24262e",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "height": 1.0
+        }
       }
     }
   ],
@@ -118,5 +178,8 @@
     "socks": "f4f4f4",
     "shoes": "f4f4f4",
     "height": 1.0
-  }
+  },
+  "needs_fix": [
+    "clarity 89% < 90%: '23,280' at 0.1s, '306,621' at 14.2s, 'Yet' at 17.2s, 'a' at 18.8s, 'streamer' at 24.1s, 'Sleep stream' at 26.1s"
+  ]
 }

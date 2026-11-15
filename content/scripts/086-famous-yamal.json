@@ -7,7 +7,7 @@
   "hook_style": "surprise",
   "title_style": "number",
   "theme": "bold_bright",
-  "status": "ready",
+  "status": "delivered",
   "score": 92,
   "title": "From a Baby Photo With Messi to $45 Million",
   "name_card": "Lamine Yamal",
@@ -36,7 +36,19 @@
           "ball"
         ],
         "stat": "BABY PHOTO",
-        "stat_sub": "with Messi, 2007"
+        "stat_sub": "with Messi, 2007",
+        "hero": {
+          "skin": "a8744a",
+          "hair": "curly",
+          "hair_color": "15110e",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "a50044",
+          "pants": "004d98",
+          "socks": "a50044",
+          "shoes": "f2c230",
+          "height": 0.98
+        }
       }
     },
     {
@@ -51,7 +63,19 @@
           "trophy"
         ],
         "stat": "WORLD CUP",
-        "stat_sub": "2026 champion"
+        "stat_sub": "2026 champion",
+        "hero": {
+          "skin": "a8744a",
+          "hair": "curly",
+          "hair_color": "15110e",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "a50044",
+          "pants": "004d98",
+          "socks": "a50044",
+          "shoes": "f2c230",
+          "height": 0.98
+        }
       }
     },
     {
@@ -65,7 +89,19 @@
           "ball"
         ],
         "stat": "AGE 4",
-        "stat_sub": "his first club"
+        "stat_sub": "his first club",
+        "hero": {
+          "skin": "a8744a",
+          "hair": "curly",
+          "hair_color": "15110e",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "a50044",
+          "pants": "004d98",
+          "socks": "a50044",
+          "shoes": "f2c230",
+          "height": 0.98
+        }
       }
     },
     {
@@ -79,7 +115,19 @@
           "ball"
         ],
         "stat": "AGE 16",
-        "stat_sub": "youngest ever for Spain"
+        "stat_sub": "youngest ever for Spain",
+        "hero": {
+          "skin": "a8744a",
+          "hair": "curly",
+          "hair_color": "15110e",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "a50044",
+          "pants": "004d98",
+          "socks": "a50044",
+          "shoes": "f2c230",
+          "height": 0.98
+        }
       }
     },
     {
@@ -95,7 +143,19 @@
         ],
         "stat": "$45.3 MILLION",
         "stat_sub": "a year, reported, to 2031",
-        "hud": "$45.3M"
+        "hud": "$45.3M",
+        "hero": {
+          "skin": "a8744a",
+          "hair": "curly",
+          "hair_color": "15110e",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "a50044",
+          "pants": "004d98",
+          "socks": "a50044",
+          "shoes": "f2c230",
+          "height": 0.98
+        }
       }
     }
   ],
@@ -116,5 +176,25 @@
     "socks": "a50044",
     "shoes": "f2c230",
     "height": 0.98
+  },
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-086-famous-yamal",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-086-famous-yamal/086-famous-yamal.mp4",
+    "post_at": "2026-11-16T16:30:00-05:00",
+    "buffer_post": "6af9ee1055ad64be50496a3a",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-15T17:38:25.073779+00:00",
+    "seconds": 29.82,
+    "eyes": {
+      "score": 8,
+      "problems": [
+        "The narration says he started at four, but the on-screen text says 'AGE 3'",
+        "The narration says 'He only started at four', but the text says 'AGE 3 his first club'",
+        "The final frame repeats the cover text and character, which feels redundant and lazy for a loop"
+      ],
+      "best_fix": "Update the 'AGE 3' text to 'AGE 4' to match the narration exactly.",
+      "model": "gemini-3.1-flash-lite"
+    }
   }
 }
