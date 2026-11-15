@@ -127,25 +127,25 @@ THING_WORDS = [
     ("robot", r"\brobots?\b|\bai helper\b"),
     ("chip", r"\bchips?\b(?! (bag|snack))|\bgpus?\b|\bprocessors?\b"),
     ("drone", r"\bdrones?\b|\bflying robots?\b|\bfly your package\b"),
-    ("plant", r"\bpower plants?\b|\bpower\b"),
+    ("plant", r"\bpower plants?\b|\belectricity\b"),
     ("satellite", r"\bsatellites?\b|\binto space\b|\bin space\b|\bin orbit\b"),
     ("chatbot", r"\bchatbots?\b|\bchat ?gpt\b"),
-    ("ring", r"\brings?\b|\bchampionships?\b|\btitles?\b"),
+    ("ring", r"\brings?\b(?! (out|up))|\bchampionships?\b|\btitles?\b"),
     ("stadium", r"\bstadiums?\b|\barenas?\b"),
     ("factory", r"\bfactor(y|ies)\b|\bdata cent(er|re)s?\b|\bbuilds?\b.*\bplants?\b"),
     ("snack", r"\bsnacks?\b|\bchips bag\b"),
-    ("hanger", r"\bfashion\b|\bclothes\b|\bfits?\b|\bclothing\b|\bapparel\b"),
+    ("hanger", r"\bfashion\b|\bclothes\b|\btunnel fits?\b|\bclothing\b|\bapparel\b"),
     ("dome", r"\bdomes?\b"),
     ("dumbbell", r"\btrain(ing)?\b|\bgym\b|\bworks? out\b|\bbest shape\b"),
     ("tv", r"\bcartoons?\b|\btv\b|\bstream\w*\b|\bvideos?\b"),
-    ("books", r"\bbooks?\b|\bbookstore\b"),
+    ("books", r"\bbooks?\b|\bbookstore\b|\bdream board\b|\bnotebook\b"),
     ("ereader", r"\be-?readers?\b|\bkindle\b|\btablets?\b"),
-    ("letter", r"\bsigns? (them|him|her|a deal)\b|\bmemo\b|\bletters?\b|\bemails?\b|\bresign\w*\b|\bannounce\w*\b|\bcontracts?\b"),
+    ("letter", r"\bsigns? (them|him|her|a deal)\b|\bmemo\b|\bletters?\b|\bemails?\b|\bresign\w*\b|\bbids?\b|\boffers?\b|\bannounce\w*\b|\bcontracts?\b"),
     ("idea", r"not enough\?|\bnext idea|\bideas?\b"),
     ("shot", r"\bshoot\w*\b|\bshots?\b|\bhalf court\b|\bfree throw\b"),
     ("poster", r"\bposters?\b|\bhighlights?\b|\bbillboards?\b"),
-    ("medal", r"\bmedals?\b|\bgold\b|\bolympic\w*\b"),
-    ("crown", r"\bbest ever\b|\bking\b|\bgreatest\b|\bface of\b|\bdynasty\b"),
+    ("medal", r"\bmedals?\b|\bolympic gold\b|\bgold medal\b|\bolympics?\b"),
+    ("crown", r"\bworld record\b|\ball-time\b|\bbest ever\b|\bking\b|\bgreatest\b|\bface of\b|\bdynasty\b"),
 ]
 
 
@@ -205,8 +205,20 @@ def make_plan(script: dict, recorded: dict | None = None) -> dict:
     flat = [x for i, _ in scenes for x in sents[i]]
     direction, how = toon_director.direct(script, flat)
     print(f"[toon] director: {how}, {len(flat)} sentences", flush=True)
+    # Nov 15 frame checks (Neymar, Clark): the AI director added objects the line never names (a medal for a
+    # transfer fee, books for "sounds safe") and put a basketball player on a soccer pitch. So: objects only from
+    # the line's own words unless a script spells them out, and athletes stay in their sport's place.
+    sport_place = next((sc["visual"].get("set") for _, sc in scenes if sc["visual"].get("set") in ("court", "pitch")), "")
+    for d in direction:
+        if how != "script":
+            d["things"] = []
+        if sport_place and d.get("place") in ("court", "pitch") and d["place"] != sport_place:
+            d["place"] = sport_place
     di = 0
     prev_things: list = []
+    # an athlete's sport (Nov 15 frame check: Gemini put Caitlin Clark on a soccer pitch): their home place wins
+    vsets = [sc["visual"].get("set") for _, sc in scenes]
+    sport = "court" if "court" in vsets else "pitch" if "pitch" in vsets else None
     # frames per syllable over the whole Short, so the last scene (which also holds the CTA and the loop line) can be
     # split into "narration" + an outro montage instead of one shot held for ~10 s (Nov 15 Jensen frame check)
     rate = None
@@ -242,13 +254,18 @@ def make_plan(script: dict, recorded: dict | None = None) -> dict:
             if m <= 0:
                 continue
             place = d.get("place", "street")
+            if sport and place in ("court", "pitch") and place != sport:
+                place = sport
+            given = d.get("things") or []
+            if how != "script":   # the AI's things only when the line names them (it drew a power plant for "stayed in Brazil")
+                given = [t for t in given if any(nm == t and re.search(rx, ss[j].lower()) for nm, rx in THING_WORDS)]
             out.append({"si": i, "a": a, "n": m, "frLo": lo + cuts[j], "light": lt[k], "set": v.get("set", "city"),
                         "action": d.get("action", v.get("action", "idle")), "crowd": int(d.get("crowd", v.get("crowd", 0)) or 0),
                         "props": d.get("props") or [], "beat": d.get("beat", "walk"), "mood": d.get("mood", "happy"),
                         **({"place": place} if place in ("court", "pitch", "stage", "office", "servers", "space", "garage") else {}),
                         **({"loc": {"bridge": 0, "street": 1, "quay": 2}[place]} if place in ("bridge", "street", "quay") else {}),
                         **({"brand": _brand(d["brand"])} if d.get("brand") else {"brand": _brand(v["brand"])} if v.get("brand") else {}),
-                        "things": (prev_things := things_for(ss[j], d.get("things") or [], prev_things)), "line": ss[j][:80]})
+                        "things": (prev_things := things_for(ss[j], given, prev_things)), "line": ss[j][:80]})
             a += m
         if tail:
             # outro: quick callbacks to the Short's best moments (logos, things, signs), a new view every ~1.5 s
