@@ -8,6 +8,12 @@ Sends one sheet of 12 frames (every ~2.5 s, in order) + the cover, with the scri
 for JSON: a 1-10 score, problems a viewer would notice (unreadable / cut-off / overlapping text, misspellings vs the
 script, blank or broken frames, glitchy or distorted characters, logos, a cover that doesn't say the topic) and the
 single most useful fix. Warn-only unless EYES=strict (then a score <= 3 blocks the post).
+
+Nov 15 (Sam approved: "the automatic 30 fps frame check before posting"): by default (EYES_FRAMES=all) it sends
+EVERY frame at 30 fps as numbered sheets of 100 (like pipeline/allframes), plus a machine scan (blank frames, the
+longest frozen stretch), and asks whether each picture shows what the line says. A Short is HELD (needs_fix, the
+next ready Short takes its slot) when the score is <= 3, the reviewer marks a serious visible defect ("hold"), or
+the picture is frozen for more than 4 s. EYES=warn makes it warn-only again; EYES_FRAMES=12 is the old sample.
 """
 from __future__ import annotations
 
@@ -42,9 +48,19 @@ Judge it the way a viewer scrolling past would. Report only problems you can act
 - real company logos or brand marks
 - a cover that does not make the topic or the number clear
 - anything that looks cheap, confusing or off-putting
-Reply with JSON only:
+{extra}Reply with JSON only:
 {{"score": <1-10, 10 = would stop a teen scrolling, nothing wrong>, "problems": ["<short, specific>", ...],
-"best_fix": "<the single most useful change>"}}"""
+"best_fix": "<the single most useful change>", "hold": <true ONLY for a serious defect a viewer cannot miss: blank
+or black stretches, broken/corrupted frames, a melted or glitched main character, text covering the main subject
+for seconds, unreadable cut-off title, or scenes with nothing to do with the narration for most of the video>}}"""
+ALL_FRAMES = """Images 2+ are EVERY frame of the video at 30 fps, 100 per sheet (10 x 10, read left to right, top to
+bottom; the small yellow number is the frame index, 30 = 1 second). Also check, for the whole video:
+- the scenery: when the narration mentions a thing (a shoe, a bus, a phone, money, a logo, a place), it should be on
+  screen around then; a picture that has nothing to do with its line is a problem
+- a new view at least every ~2 seconds (no long holds on one shot)
+- logos, signs, phones or people cut off at the frame edge
+Machine scan of all frames: {scan}
+"""
 
 
 def frames(video: Path, n: int = 12):
@@ -76,17 +92,58 @@ def _jpeg(im, q=85) -> str:
     return base64.b64encode(b.getvalue()).decode()
 
 
+def all_frames(video: Path):
+    """Every frame at 30 fps (108x192) -> (numbered 10x10 sheets, scan dict: blank frames, longest frozen run)."""
+    import tempfile
+
+    import numpy as np
+    from PIL import Image, ImageDraw
+    with tempfile.TemporaryDirectory() as d:
+        subprocess.run(["ffmpeg", "-v", "error", "-i", str(video), "-vf", "fps=30,scale=108:192", "-q:v", "4",
+                        f"{d}/%05d.jpg"], check=True)
+        fs = sorted(Path(d).glob("*.jpg"))
+        ims = [Image.open(f).convert("RGB") for f in fs]
+        for im in ims:
+            im.load()
+    blank, run, longest, prev = 0, 0, 0, None
+    for im in ims:
+        a = np.asarray(im.convert("L"), dtype=np.float32)
+        blank += a.std() < 6
+        run = run + 1 if prev is not None and np.abs(a - prev).mean() < 0.4 else 0
+        longest = max(longest, run)
+        prev = a
+    sheets = []
+    for s0 in range(0, len(ims), 100):
+        sh = Image.new("RGB", (1080, 1920), (0, 0, 0))
+        for j, im in enumerate(ims[s0:s0 + 100]):
+            im = im.copy()
+            ImageDraw.Draw(im).text((2, 2), str(s0 + j), fill=(255, 255, 0))
+            sh.paste(im, (j % 10 * 108, j // 10 * 192))
+        sheets.append(sh)
+    return sheets, {"frames": len(ims), "blank_frames": int(blank), "longest_frozen_s": round((longest + 1) / 30, 1)}
+
+
 def look(video: Path, script: dict) -> dict | None:
     key = os.environ.get("GEMINI_API_KEY")
     if not key:
         return None
-    imgs = frames(video)
+    imgs = frames(video, 0 if os.environ.get("EYES_FRAMES", "all") == "all" else 12)
     narration = " ".join(sc.get("narration", "") for sc in script.get("scenes", []))
+    if os.environ.get("EYES_FRAMES", "all") == "all":
+        sheets, scan = all_frames(video)
+        extra = ALL_FRAMES.format(scan=json.dumps(scan))
+        pics = [_jpeg(sh, 80) for sh in sheets]
+    else:
+        scan, extra, pics = {}, "", [_jpeg(sheet(imgs[1:]))]
+    text = PROMPT.format(title=script.get("title", ""), narration=narration, extra=extra,
+                         today=__import__("datetime").date.today().strftime("%B %Y"))
+    if extra:
+        text = text.replace("Image 2 is a sheet of frames from the finished vertical video in time order\n"
+                            "(left to right, top to bottom, about 2.5 seconds apart).", "")
     body = {"contents": [{"parts": [
-        {"text": PROMPT.format(title=script.get("title", ""), narration=narration,
-                                today=__import__("datetime").date.today().strftime("%B %Y"))},
+        {"text": text},
         {"inline_data": {"mime_type": "image/jpeg", "data": _jpeg(imgs[0].resize((540, 960)))}},
-        {"inline_data": {"mime_type": "image/jpeg", "data": _jpeg(sheet(imgs[1:]))}}]}],
+        *({"inline_data": {"mime_type": "image/jpeg", "data": p}} for p in pics)]}],
         "generationConfig": {"responseMimeType": "application/json", "temperature": 0.2}}
     last = ""
     for m in MODELS:
@@ -98,6 +155,8 @@ def look(video: Path, script: dict) -> dict | None:
             text = "".join(p.get("text", "") for c in res.get("candidates", []) for p in c.get("content", {}).get("parts", []))
             out = json.loads(text[text.find("{"):text.rfind("}") + 1])
             out["model"] = m
+            if scan:
+                out["scan"] = scan
             return out
         except urllib.error.HTTPError as e:
             last = f"{m}: HTTP {e.code} {e.read()[:200]!r}"
@@ -108,7 +167,7 @@ def look(video: Path, script: dict) -> dict | None:
 
 
 def report(name: str, r: dict | None) -> list[str]:
-    """Print the review; returns blockers (only with EYES=strict and a very low score)."""
+    """Print the review; returns blockers (score <= 3, a "hold" defect, frozen > 4 s; none with EYES=warn)."""
     if not r:
         return []
     print(f"::notice title={name} eyes::score {r.get('score')}/10 ({r.get('model')}); fix: {str(r.get('best_fix', ''))[:200]}",
@@ -119,7 +178,18 @@ def report(name: str, r: dict | None) -> list[str]:
         low = float(r.get("score", 10)) <= 3
     except (TypeError, ValueError):
         low = False
-    return [f"eyes score {r.get('score')}/10"] if low and os.environ.get("EYES") == "strict" else []
+    frozen = float((r.get("scan") or {}).get("longest_frozen_s", 0)) > 4
+    if r.get("scan"):
+        print(f"::notice title={name} frames::{json.dumps(r['scan'])}", flush=True)
+    out = [f"eyes score {r.get('score')}/10"] if low else []
+    if r.get("hold") is True:
+        out.append(f"eyes hold: {str((r.get('problems') or ['serious defect'])[0])[:160]}")
+    if frozen:
+        out.append(f"picture frozen {r['scan']['longest_frozen_s']} s")
+    if out and os.environ.get("EYES", "block") == "warn":
+        print(f"::warning title={name} eyes::would hold ({'; '.join(out)}) but EYES=warn", flush=True)
+        return []
+    return out
 
 
 if __name__ == "__main__":

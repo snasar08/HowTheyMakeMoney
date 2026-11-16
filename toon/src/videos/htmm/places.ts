@@ -17,7 +17,11 @@ export const PLACES: Record<string, Place> = {
   office: { p: [X0, D0, 1200], d: [0, 1], w: 3 },
   servers: { p: [X0, D0, 1600], d: [0, 1], w: 1.6 },
   space: { p: [X0, D0, 2000], d: [0, -1], w: 4, light: "night" },
-  garage: { p: [X0, D0, 2400], d: [0, 1], w: 2.2 },   // where founders start (Amazon, Nvidia-style comebacks, Apple...)
+  garage: { p: [X0, D0, 2400], d: [0, 1], w: 2.2 },
+  // Nov 15, afterhour style (reference studied frame by frame): a king's throne room, a gold-rush field, a selling stall
+  throne: { p: [X0, D0, 2800], d: [0, 1], w: 2.0, light: "night" },
+  mine: { p: [X0, D0, 3200], d: [0, 1], w: 4, light: "night" },
+  stall: { p: [X0, D0, 3600], d: [0, 1], w: 2.0 },   // where founders start (Amazon, Nvidia-style comebacks, Apple...)
 };
 
 const plane = (w: number, d: number, tex: THREE.Texture | null, col: string, key: string) => {
@@ -176,6 +180,64 @@ export const buildPlaces = (root: THREE.Object3D) => {
     for (let k = 0; k < 5; k++) b.add(boxGeo(V(P[0] - 4.6 + (k % 3) * 0.75, D0 + Math.floor(k / 3) * 0.6, cz - 7.5), V(P[0] - 3.95 + (k % 3) * 0.75, D0 + 0.6 + Math.floor(k / 3) * 0.6, cz - 6.9)), box);
     b.add(boxGeo(V(P[0] - 0.02, D0 + 3.4, cz - 3.02), V(P[0] + 0.02, D0 + 4.2, cz - 2.98)), dark);          // bulb cord
     b.add(boxGeo(V(P[0] - 0.14, D0 + 3.15, cz - 3.14), V(P[0] + 0.14, D0 + 3.42, cz - 2.86)), lampG);        // bulb
+  }
+  // ---- throne room: purple hall, a tower of glowing GPU boxes as the throne, gold coin heaps, neon banner ----
+  {
+    const P = PLACES.throne.p, cz = P[2] - 4;
+    const ground = plane(260, 260, null, "#2a1f3d", "plThroneGround"); b.add(ground.g, ground.m, at(P[0], D0 - 0.02, cz));
+    const rug = plane(3.2, 14, null, "#7a1f3a", "plThroneRug"); b.add(rug.g, rug.m, at(P[0], D0 + 0.005, P[2] + 2));
+    const wallP = lam("plThroneWall", () => ({ color: "#4a3a78" })), blk = twoTone(new THREE.MeshLambertMaterial({ color: "#1c1d24" }));
+    const neon = glow("#9cff3a", 2.6), gold = glow("#ffd23a", 1.6), goldM = lam("plGold", () => ({ color: "#f2c230" }));
+    b.add(boxGeo(V(P[0] - 14, D0, cz - 6.2), V(P[0] + 14, D0 + 9, cz - 5.8)), wallP);
+    for (const sx of [-1, 1]) b.add(boxGeo(V(P[0] + sx * 9 - 0.6, D0, cz - 6), V(P[0] + sx * 9 + 0.6, D0 + 8, cz - 4.8)), blk);   // pillars
+    for (let k = 0; k < 6; k++) {                                                                            // GPU-box throne tower
+      const w = 2.6 - k * 0.25, y = D0 + k * 0.62, z0 = cz - 1.6;
+      b.add(boxGeo(V(P[0] - w / 2, y, z0 - 1), V(P[0] + w / 2, y + 0.56, z0 + 0.4)), blk);
+      b.add(boxGeo(V(P[0] - w / 2 + 0.1, y + 0.24, z0 + 0.41), V(P[0] + w / 2 - 0.1, y + 0.3, z0 + 0.43)), neon);
+      for (const fx of [-0.5, 0, 0.5]) b.add(boxGeo(V(P[0] + fx * w * 0.7 - 0.08, y + 0.1, z0 + 0.42), V(P[0] + fx * w * 0.7 + 0.08, y + 0.18, z0 + 0.44)), neon);
+    }
+    b.add(boxGeo(V(P[0] - 0.45, D0 + 3.75, cz - 2.2), V(P[0] + 0.45, D0 + 4.65, cz - 1.3)), gold);           // glowing orb on top
+    b.add(boxGeo(V(P[0] - 3.2, D0 + 5.6, cz - 5.7), V(P[0] + 3.2, D0 + 7.0, cz - 5.6)), blk);                 // banner board
+    b.add(boxGeo(V(P[0] - 3.0, D0 + 5.75, cz - 5.59), V(P[0] + 3.0, D0 + 5.85, cz - 5.58)), neon);
+    for (let k = 0; k < 26; k++) { const a = (k * 2.39) % 6.28, rr = 2.2 + (k % 5) * 0.7, x = P[0] + Math.cos(a) * rr, z = cz + 1 + Math.sin(a) * rr * 0.6;   // coin heaps
+      if (Math.abs(x - P[0]) < 1.2 && z > cz) continue;
+      b.add(boxGeo(V(x - 0.25, D0, z - 0.25), V(x + 0.25, D0 + 0.12 + (k % 3) * 0.08, z + 0.25)), goldM); }
+  }
+  // ---- gold-rush field: purple ground, gold nuggets, rocks, lanterns on posts, cliffs behind ----
+  {
+    const P = PLACES.mine.p, cz = P[2] - 6;
+    const ground = plane(260, 260, null, "#5a4a86", "plMineGround"); b.add(ground.g, ground.m, at(P[0], D0 - 0.02, cz));
+    const cliff = lam("plCliff", () => ({ color: "#3e3266" })), rock = lam("plRock", () => ({ color: "#8a7fb0" })), goldM = lam("plGold", () => ({ color: "#f2c230" }));
+    const lampG = glow("#ffb03a", 2.4), wood = lam("plBench", () => ({ color: "#9a6a3e" }));
+    for (let k = 0; k < 7; k++) { const x = P[0] - 18 + k * 6, h = 5 + (k * 37) % 5; b.add(boxGeo(V(x - 3.2, D0, cz - 14 - (k % 2) * 3), V(x + 3.2, D0 + h, cz - 11 - (k % 2) * 3)), cliff); }
+    for (let k = 0; k < 40; k++) { const x = P[0] + ((k * 7.3) % 16) - 8, z = cz + ((k * 5.1) % 18) - 9;
+      if (Math.abs(x - P[0]) < 0.8 && Math.abs(z - P[2]) < 1.2) continue;
+      b.add(boxGeo(V(x - 0.16, D0, z - 0.16), V(x + 0.16, D0 + 0.18, z + 0.16)), k % 3 ? goldM : rock); }
+    for (const [dx, dz] of [[-3.5, -3], [3.8, -5], [-4.2, 3], [4.4, 1.5]]) {
+      b.add(boxGeo(V(P[0] + dx - 0.07, D0, P[2] + dz - 0.07), V(P[0] + dx + 0.07, D0 + 2.6, P[2] + dz + 0.07)), wood);
+      b.add(boxGeo(V(P[0] + dx - 0.18, D0 + 2.6, P[2] + dz - 0.18), V(P[0] + dx + 0.18, D0 + 3.0, P[2] + dz + 0.18)), lampG);
+    }
+  }
+  // ---- selling stall: wooden counter, striped awning, shelves of goods, a lantern ----
+  {
+    const P = PLACES.stall.p, cz = P[2] - 1.4;
+    const ground = plane(260, 260, null, "#6e5a86", "plStallGround"); b.add(ground.g, ground.m, at(P[0], D0 - 0.02, cz));
+    const wood = lam("plStallWood", () => ({ color: "#a8693a" })), dk = lam("plStallDark", () => ({ color: "#6e4022" }));
+    const stripe = lam("plStripe", () => ({ map: rep(ctex("stripeTex", 128, 32, (g) => { g.fillStyle = "#9cff3a"; g.fillRect(0, 0, 128, 32); g.fillStyle = "#1c1d24"; g.fillRect(0, 0, 64, 32); }), 6, 1) }));
+    const blk = twoTone(new THREE.MeshLambertMaterial({ color: "#1c1d24" })), neon = glow("#9cff3a", 2.2), lampG = glow("#ffb03a", 2.4);
+    b.add(boxGeo(V(P[0] - 3, D0, cz - 1.6), V(P[0] + 3, D0 + 3.6, cz - 1.4)), dk);                            // back board
+    for (let j = 0; j < 3; j++) {                                                                               // shelves of GPU boxes
+      b.add(boxGeo(V(P[0] - 2.8, D0 + 1.1 + j * 0.8, cz - 1.4), V(P[0] + 2.8, D0 + 1.16 + j * 0.8, cz - 1.0)), wood);
+      for (let k = 0; k < 7; k++) { const x = P[0] - 2.5 + k * 0.82;
+        b.add(boxGeo(V(x - 0.3, D0 + 1.16 + j * 0.8, cz - 1.35), V(x + 0.3, D0 + 1.56 + j * 0.8, cz - 1.05)), blk);
+        b.add(boxGeo(V(x - 0.22, D0 + 1.3 + j * 0.8, cz - 1.04), V(x + 0.22, D0 + 1.34 + j * 0.8, cz - 1.03)), neon); }
+    }
+    for (const sx of [-1, 1]) b.add(boxGeo(V(P[0] + sx * 3 - 0.1, D0, cz - 1.5), V(P[0] + sx * 3 + 0.1, D0 + 3.9, cz + 2.6)), wood);   // posts
+    b.add(boxGeo(V(P[0] - 3.3, D0 + 3.7, cz - 1.6), V(P[0] + 3.3, D0 + 3.85, cz + 2.9)), stripe);              // awning
+    b.add(boxGeo(V(P[0] - 3.3, D0 + 3.3, cz + 2.7), V(P[0] + 3.3, D0 + 3.85, cz + 2.9)), stripe);
+    b.add(boxGeo(V(P[0] - 2.9, D0, P[2] + 0.9), V(P[0] + 2.9, D0 + 0.95, P[2] + 1.4)), wood);                  // counter
+    b.add(boxGeo(V(P[0] - 2.95, D0 + 0.95, P[2] + 0.85), V(P[0] + 2.95, D0 + 1.02, P[2] + 1.45)), dk);
+    b.add(boxGeo(V(P[0] + 2.4, D0 + 3.0, cz + 2.4), V(P[0] + 2.7, D0 + 3.3, cz + 2.7)), lampG);
   }
   // ---- the Moon ----
   {

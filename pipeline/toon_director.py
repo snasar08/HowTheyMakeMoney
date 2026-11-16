@@ -20,7 +20,7 @@ from pathlib import Path
 API = "https://generativelanguage.googleapis.com/v1beta"
 MODELS = [m for m in os.environ.get("DIRECTOR_MODELS", "gemini-3.1-flash-lite,gemini-3.5-flash-lite,gemini-2.5-flash-lite,gemini-2.5-flash").split(",") if m]
 
-PLACES = ["street", "bridge", "quay", "road", "court", "pitch", "stage", "office", "servers", "space", "garage"]
+PLACES = ["street", "bridge", "quay", "road", "court", "pitch", "stage", "office", "servers", "space", "garage", "throne", "mine", "stall"]
 BEATS = ["walk", "drive", "queue", "phone", "clock", "money", "logo", "sign"]
 PROPS = ["car", "truck", "trophy", "cash", "boxes", "check", "rocket", "ball", "mic", "flag", "laptop", "burger", "controller"]
 MOODS = ["happy", "laugh", "shock", "nervous", "proud", "stern", "scheme", "relief", "dazed", "sad", "calm", "excited"]
@@ -89,6 +89,18 @@ def clean(sc: dict) -> dict:
         ok = lambda c: isinstance(c, str) and re.fullmatch(r"#[0-9a-fA-F]{6}", c or "")
         out["brand"] = {"name": str(b["name"])[:16], "bg": b["bg"] if ok(b.get("bg")) else "#241726",
                         "fg": b["fg"] if ok(b.get("fg")) else "#ffffff", **({"icon": b["icon"]} if b.get("icon") in ICONS else {})}
+    # Nov 16 (afterhour style): a text card, a fixed view, a different character for the line, hide the hero
+    c = sc.get("card")
+    if isinstance(c, dict) and c.get("text"):
+        out["card"] = {k: str(c[k])[:60] for k in ("text", "kind", "sub", "to", "bg", "fg") if c.get(k)}
+        if isinstance(c.get("at"), (int, float)):
+            out["card"]["at"] = float(c["at"])
+    if sc.get("view") in ("ws", "wide", "ms", "cu", "face", "low"):
+        out["view"] = sc["view"]
+    if isinstance(sc.get("who"), dict):
+        out["who"] = sc["who"]
+    if sc.get("hide"):
+        out["hide"] = True
     if out["beat"] == "drive":
         out["place"] = "road"
     if out["beat"] in ("logo", "sign") and "brand" not in out:

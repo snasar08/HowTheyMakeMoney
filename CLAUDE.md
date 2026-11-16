@@ -96,8 +96,7 @@ and **free beyond his Higgsfield Pro plan** — never add a paid service or ask 
 - **Eyes (Nov 13, Sam: "give it eyes"):** `pipeline/eyes.py` runs after every render: the cover + a 12-frame
   sheet + title + narration go to Gemini Flash-Lite (free tier, same `GEMINI_API_KEY`, ~500 requests/day, one per
   Short), which returns a 1-10 score, the problems a viewer would see and the best fix. Printed as `eyes`
-  notices/warnings in the run and saved in the script's `delivered.eyes`. Warn-only; `EYES=strict` blocks a score
-  <= 3. Read these after a run to decide what to improve.
+  notices/warnings in the run and saved in the script's `delivered.eyes`. (Until Nov 15 warn-only.) Read these after a run to decide what to improve. **Full-frame check (Nov 15, Sam approved):** by default eyes sends EVERY frame at 30 fps (numbered sheets of 100) plus a machine scan (blank frames, longest frozen stretch) and checks the scenery against the narration; a Short is HELD (`needs_fix`, the next ready Short takes the slot) on score <= 3, a reviewer `hold` (a serious defect a viewer can't miss) or a picture frozen > 4 s. `EYES=warn` = warn only, `EYES_FRAMES=12` = the old 12-frame sample.
 - Quality gate (`gate()` in `run.py`): a Short is NOT posted if clarity < 90%, a breath run
   > 8 s, clipping, untimed captions, failed images, or a chart in the caption zone. It's marked
   `status: "needs_fix"` with reasons and the next ready script takes its slot.
@@ -180,6 +179,15 @@ and **free beyond his Higgsfield Pro plan** — never add a paid service or ask 
   voice + audio check, and schedules → confirms → deletes one private test post on Buffer.
   Results land on the `ci-test-results` branch (`buffer-test.json`, `out-render.log`).
 - Rendering frames runs in a thread pool (`RENDER_THREADS`, default min(4, cores)); same output.
+- **Thumbnails (Nov 15):** YouTube used a frame ~40% into each Short as the thumbnail (22 of 22 in health.md were
+  "other frame"). Buffer refuses a custom image (`thumbnailUrl`: "social networks do not accept custom video
+  thumbnail images") but takes `metadata.thumbnailOffset` (ms) on the video, so `publish.post_input` sends
+  `THUMB_OFFSET_MS` = 40 (frame 1 = the title cover). Check health.md after new posts.
+- **Pace (Nov 15, Sam: the Nike story was "very very slow"; his reference: @afterhourtheories "Jensen Huang's Affair
+  Rocks NVIDIA", 2.5 min, 55K likes, a new view every ~1.3 s):** the Gemini read is sped up with atempo (same voice
+  and pitch): `VOICE_SPEED_STORY` 1.2 for story Shorts, `VOICE_SPEED` 1.1 for the rest (`tts.VOICE_SPEED_FOR`, set per
+  Short in render.py); toon story cuts every ~40 frames; animated Shorts show the sentence being said as white text
+  near the top (`render._subline`, `SUBLINE=off` hides it) on top of the big one-word caption, like the reference.
 - `pipeline/publish.py` — `UPLOAD_MODE` repo variable:
   - `release` (default): MP4 attached to a GitHub Release with title/description to paste. Sam
     uploads from the YouTube app. Required until YouTube approves the API audit, because uploads
@@ -217,7 +225,12 @@ and **free beyond his Higgsfield Pro plan** — never add a paid service or ask 
    `test-shorts` artifact and confirm it works on GitHub's machines.
 5. Ask Sam to Watch the repo (Watch → Custom → Releases) so release notifications reach his phone.
 
-## Weekly script batch (cloud routines, Saturdays — two parts so one session never runs too long)
+## Weekly script batch (cloud routines, Saturdays — FOUR parts since Nov 15: 11:00, 1:30, 4:00, 6:30 PM ET)
+**Chain (Sam approved Nov 15 2026: "11 AM until finished", "what if I hit usage"):** each part writes up to
+`min(10, 75 - ready)` scripts and **commits + pushes after EVERY finished script**, so a part cut off by the usage
+limit loses at most the script in progress; the next part starts by reading `git log` and finishing anything left
+half-done (an open research branch, a draft missing checks). Up to 40 a week, same quality gate. Monthly report
+in part 1. Where the older text below says "part 1 / part 2" or `min(20, ...)`, the 4-part chain wins.
 Posting uses **35 Shorts/week (5/day since Nov 12; Sam: "up to 5 posts a day ... have the Saturday
 research more ... maintain quality too")**. Goal: build a buffer, capped so credits aren't wasted.
 1. Count `ready` scripts. **If 75 or more are ready, write nothing** (still do step 8). Otherwise
@@ -308,6 +321,12 @@ research more ... maintain quality too")**. Goal: build a buffer, capped so cred
    no chart Shorts, Higgsfield images are no longer needed (toon Shorts are drawn in code, editorial uses free
    Commons photos). Most Shorts: famous athletes / big names; ~1/3 story (company history, company or athlete
    master plans); some what-ifs on one real number. Everything below about rotating 4 formats is history.
+   **Mix and hooks (Sam approved the next-step plan, Nov 15 2026):** about 2 in 3 scripts are `famous` athletes /
+   big names (median ~900 views vs ~18 for the rest), about 1 in 3 `story` (history + plan), plus the odd what-if.
+   Story length test for the week of Nov 16: write half the story scripts SHORT (25-35 s, 4-5 scenes, tag
+   `"length_test": "short"`) and half LONG (45-60 s, `"length_test": "long"`); after a week keep the winner
+   (`analytics/insights.md`). Every Short: a surprise number in line one, a number title, under ~30 s when the
+   story allows, and a second line that hits hard (every Short loses the most viewers at 4-5 s).
    **Formats (Sam, Oct 29 2026) — rotate 4:** `format` = `how` (how X makes money), `whatif`
    (absurd scenario on ONE real stat, e.g. "What if one person delivered every Amazon package in
    a day?"), `careers` (how pilots/streamers/NBA players make money), `famous` (a famous person's

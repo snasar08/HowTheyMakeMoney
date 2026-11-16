@@ -185,6 +185,8 @@ def youtube_text(script: dict) -> str:
     return (desc + ("\n\n" + tags if tags and tags not in desc else ""))[:4900]
 
 
+THUMB_OFFSET_MS = int(os.environ.get("THUMB_OFFSET_MS", "40"))
+
 CREATE_POST = """
 mutation($input: CreatePostInput!) {
   createPost(input: $input) {
@@ -206,7 +208,10 @@ def post_input(video_url: str, script: dict, when: dt.datetime, privacy: str | N
         "schedulingType": "automatic",
         "mode": "customScheduled",
         "dueAt": when.astimezone(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%S.000Z"),
-        "assets": [{"video": {"url": video_url, "metadata": {"title": script["title"][:100]}}}],
+        # Nov 15: YouTube picked a frame ~40% in as every Short's thumbnail (health.md: 22 of 22 "other frame").
+        # Buffer has no custom-image field but takes metadata.thumbnailOffset (ms): 40 ms = our title cover.
+        "assets": [{"video": {"url": video_url, "metadata": {"title": script["title"][:100],
+                                                             "thumbnailOffset": THUMB_OFFSET_MS}}}],
         "metadata": {"youtube": youtube},
     }
     return inp

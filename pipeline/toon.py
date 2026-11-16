@@ -11,6 +11,7 @@ Without a recorded plan the scene lengths are estimated from the words (for look
 from __future__ import annotations
 
 import json
+import os
 import re
 import shutil
 import sys
@@ -262,9 +263,12 @@ def make_plan(script: dict, recorded: dict | None = None) -> dict:
             out.append({"si": i, "a": a, "n": m, "frLo": lo + cuts[j], "light": lt[k], "set": v.get("set", "city"),
                         "action": d.get("action", v.get("action", "idle")), "crowd": int(d.get("crowd", v.get("crowd", 0)) or 0),
                         "props": d.get("props") or [], "beat": d.get("beat", "walk"), "mood": d.get("mood", "happy"),
-                        **({"place": place} if place in ("court", "pitch", "stage", "office", "servers", "space", "garage") else {}),
+                        **({"place": place} if place in PLACE_NAMES else {}),
                         **({"loc": {"bridge": 0, "street": 1, "quay": 2}[place]} if place in ("bridge", "street", "quay") else {}),
                         **({"brand": _brand(d["brand"])} if d.get("brand") else {"brand": _brand(v["brand"])} if v.get("brand") else {}),
+                        # Nov 15 (afterhour style): a text card in the scene (date sign, money screen that flips, headline,
+                        # tombstone...), a fixed view ("face" close-up etc.), a different character for this line, hide the hero
+                        **{k: d[k] for k in ("card", "view", "who", "hide", "crowdO") if d.get(k)},
                         "things": (prev_things := things_for(ss[j], given, prev_things)), "line": ss[j][:80]})
             a += m
         if tail:
@@ -292,6 +296,86 @@ def make_plan(script: dict, recorded: dict | None = None) -> dict:
             "seed": int(re.sub(r"\D", "", str(script.get("id", "1"))) or 1)}
 
 
+# ---- afterhour look (Nov 16): the same per-sentence plan as real-3D shots for the AhShort composition ----
+AH_SET = {"throne": "throne", "office": "office", "servers": "lab", "garage": "garage", "stall": "stall", "mine": "field",
+          "court": "court", "pitch": "pitch", "stage": "stage", "space": "space", "street": "street", "bridge": "street",
+          "quay": "beach", "road": "track"}
+AH_EXPR = {"happy": "smile", "laugh": "laugh", "shock": "shock", "nervous": "shock", "proud": "smug", "stern": "angry",
+           "scheme": "smug", "relief": "smile", "dazed": "sad", "sad": "sad", "calm": "neutral", "excited": "grin"}
+AH_POSE = {"cheer": "cheer", "walk": "walk", "run": "walk", "work": "point", "interact": "point", "wave": "wave", "idle": "stand"}
+AH_THING = {"shoe": "shoe", "springshoe": "springshoe", "sneakerbus": "bus", "bus": "bus", "robot": "robot", "chip": "chip", "drone": "drone",
+            "satellite": "satellite", "ring": "ring", "crown": "crown", "tv": "tv", "books": "books", "letter": "letter", "medal": "medal",
+            "idea": "lightbulb", "factory": "factory", "stadium": "stadium", "plant": "factory", "car": "car", "truck": "truck",
+            "trophy": "trophy", "cash": "cashstack", "boxes": "box", "check": "letter", "rocket": "rocket", "ball": "basketball", "mic": "mic",
+            "laptop": "laptop", "burger": "burger", "controller": "controller", "ereader": "phone", "snack": "burger", "poster": "newspaper"}
+AH_BIG = {"car", "truck", "bus", "rocket", "factory", "stadium", "plane", "yacht", "house"}
+AH_CROWD = [{"body": c, "hat": "hair", "hair": h} for c, h in (("#e86a6a", "#3a2a20"), ("#5ad0d8", "#8a5a2a"), ("#8bc34a", "#1a1a1a"),
+            ("#b48ae0", "#3a2a20"), ("#f2a33a", "#5a3b2a"), ("#4a7bd0", "#1a1a1a"))]
+
+
+def ah_look(o: dict) -> dict:
+    """our Outfit dict -> the afterhour Look (white round heads for everyone, like the reference)"""
+    hat = o.get("hat")
+    lk = {"body": o.get("jacket", "#1b1b22"), "legs": o.get("pants", "#141418")}
+    if hat in ("crown", "hardhat", "fedora", "cap"):
+        lk.update(hat=hat, hatColor=o.get("cap") or "#f2c230", **({"hatText": o["chest"]} if hat == "hardhat" and o.get("chest") else {}))
+    elif hat == "hair":
+        lk.update(hat="hair", hair=o.get("hair", "#2a1d16"))
+    if o.get("glasses"):
+        lk["glasses"] = "shades" if o.get("hat") == "crown" else "round"
+    if o.get("num"):
+        lk["text"] = str(o["num"])
+    elif o.get("chest") and hat != "hardhat":
+        lk["text"] = str(o["chest"])[:6]
+    return lk
+
+
+def ah_shots(plan: dict) -> list:
+    hero, shots, views = plan.get("hero") or {}, [], ["ms", "face", "cu", "ms", "low", "face"]
+    for k, sc in enumerate(plan["scenes"]):
+        place = sc.get("place") or {0: "bridge", 1: "street", 2: "quay"}.get(sc.get("loc"), "street")
+        who = {**hero, **(sc.get("who") or {})}
+        pose = AH_POSE.get(sc.get("action", "idle"), "stand")
+        chars = [{"look": ah_look(who), "at": [0, 0, 0], "pose": pose, "expr": AH_EXPR.get(sc.get("mood", "happy"), "smile")}]
+        for i in range(min(6, int(sc.get("crowd") or 0) // 5)):     # a few extras behind, cheering/reacting
+            chars.append({"look": AH_CROWD[i % len(AH_CROWD)], "at": [(-1) ** i * (1.3 + 0.6 * (i // 2)), 0, -1.6 - 0.9 * (i // 2)],
+                          "pose": "cheer" if sc.get("action") == "cheer" else "stand", "expr": "laugh" if i % 2 else "smile"})
+        cards = []
+        if sc.get("card"):
+            c = dict(sc["card"]); cards.append({**c, "at": [0.48, 2.2, -0.6], "w": 0.88})   # up beside the head, in frame
+        elif sc.get("brand") and sc.get("beat") in ("logo", "sign"):
+            b = sc["brand"]; cards.append({"text": b["name"].upper(), "kind": "sign", "bg": b.get("bg"), "fg": b.get("fg"), "at": [0.48, 2.2, -0.6], "w": 0.88})
+        things, seen = [], set()
+        for nm in list(sc.get("things") or []) + list(sc.get("props") or []):
+            t3 = AH_THING.get(nm)
+            if not t3 or t3 in seen or len(things) >= 2:
+                continue
+            seen.add(t3)
+            big = t3 in AH_BIG
+            things.append({"name": t3, "at": [-1.9, 0, -1.6] if big else ([0.55, 0.85, 0.55] if not things else [-0.55, 0.85, 0.55]),
+                           "fit": 1.6 if big else (0.42 if not things else 0.34)})   # held at hand height, in frame
+        shot = {"a": sc["a"], "n": sc["n"], "set": AH_SET.get(place, "street"), "view": sc.get("view") or views[k % len(views)],
+                "chars": chars, "cards": cards, "things": things, **({"coins": True} if sc.get("beat") == "money" else {})}
+        if sc.get("hide") and cards:   # a card-only shot: frame the card
+            cards[0]["at"] = [0, 1.55, 0.3]; cards[0]["w"] = 1.15; shot["chars"] = chars[:0]
+            shot["cam"] = {"from": [0, 1.55, 2.5], "to": [0, 1.55, 2.2], "look": [0, 1.55, 0.3]}
+        # his tempo (30 fps study): a new view about every 1.3 s, so a long sentence becomes several shots of the same
+        # moment from different angles (medium -> face -> close -> low ...), each with its slow push-in
+        parts = max(1, round(sc["n"] / 40)) if "cam" not in shot else 1
+        order = {"ms": ["ms", "face", "cu", "low"], "face": ["face", "ms", "cu"], "cu": ["cu", "face", "ms"], "low": ["low", "face", "ms"],
+                 "ws": ["ws", "ms", "face"], "wide": ["wide", "ms", "face"]}.get(shot["view"], [shot["view"], "face", "ms"])
+        for j in range(parts):
+            a0, a1 = sc["a"] + round(j * sc["n"] / parts), sc["a"] + round((j + 1) * sc["n"] / parts)
+            sub = {**shot, "a": a0, "n": a1 - a0, "view": order[j % len(order)]}
+            if j and sub["things"]:
+                sub["things"] = [dict(t, pop=False) for t in sub["things"]]   # already on screen: no second pop
+            shots.append(sub)
+    return shots
+
+
+PLACE_NAMES = ("court", "pitch", "stage", "office", "servers", "space", "garage", "throne", "mine", "stall")
+
+
 def plates(plan: dict, frames_dir: Path, plates_dir: Path) -> int:
     """Shard folders from toon/scripts/frames.mjs (<frames_dir>/<shard>/ with range.json + the JPEGs in frame order)
     -> <plates_dir>/<slug>/<scene>_<frame>.jpg, the names render.py looks for (LP_PLATES)."""
@@ -313,13 +397,63 @@ def plates(plan: dict, frames_dir: Path, plates_dir: Path) -> int:
     return n
 
 
+def whips(plan: dict, plates_dir: Path) -> int:
+    """Nov 15, Sam's reference (@afterhourtheories, every frame studied): it never hard-cuts; the camera whips to the
+    next view in 6-10 frames of motion blur. Every hard cut in the finished plates gets that whip: 3 frames before
+    the cut smear out sideways, 3 after smear in, alternating left/right. WHIPS=off skips it."""
+    import os
+
+    import numpy as np
+    from PIL import Image
+    if os.environ.get("WHIPS", "on") == "off":
+        return 0
+    d = plates_dir / plan["slug"]
+    seq = [d / f"{sc['si']}_{sc['frLo'] + j}.jpg" for sc in plan["scenes"] for j in range(sc["n"])]
+    seq = [q for q in seq if q.exists()]
+    small = [np.asarray(Image.open(q).convert("L").resize((54, 96)), np.float32) for q in seq]
+    dif = [0.0] + [float(np.abs(small[i] - small[i - 1]).mean()) for i in range(1, len(seq))] + [0.0]
+    # a real cut is ONE big jump with calm frames either side (a logo popping in changes over several frames)
+    cuts = [i for i in range(1, len(seq)) if dif[i] > 22 and dif[i - 1] < dif[i] / 3 and dif[i + 1] < dif[i] / 3]
+    cuts = [c for k, c in enumerate(cuts) if k == 0 or c - cuts[k - 1] > 8]
+
+    def shift(a, dx: int):                       # slide sideways, repeating the edge column (no wrap-around seam)
+        if dx == 0:
+            return a
+        p = np.pad(a, ((0, 0), (abs(dx), abs(dx)), (0, 0)), mode="edge")
+        return p[:, abs(dx) - dx: abs(dx) - dx + a.shape[1]]
+
+    def smear(q: Path, w: int, slide: int, sign: int):
+        a = shift(np.asarray(Image.open(q).convert("RGB"), np.float32), sign * slide)
+        acc, k = np.zeros_like(a), 0
+        for dx in range(0, w + 1, max(2, w // 10)):
+            acc += shift(a, sign * dx)
+            k += 1
+        Image.fromarray((acc / k).clip(0, 255).astype(np.uint8)).save(q, quality=92)
+
+    W = Image.open(seq[0]).width if seq else 720
+    for k, c in enumerate(cuts):
+        sign = 1 if k % 2 == 0 else -1
+        for off, w, slide in ((-2, int(W * .06), int(W * .04)), (-1, int(W * .14), int(W * .09))):   # softer (Nov 16 review)
+            if c + off >= 0:
+                smear(seq[c + off], w, slide, -sign)
+        for off, w, slide in ((0, int(W * .14), int(W * .09)), (1, int(W * .06), int(W * .035))):
+            if c + off < len(seq):
+                smear(seq[c + off], w, slide, sign)
+    return len(cuts)
+
+
 if __name__ == "__main__":
     cmd = sys.argv[1]
     if cmd == "plan":
         script = json.loads(Path(sys.argv[2]).read_text(encoding="utf-8"))
         rec = json.loads(Path(sys.argv[4]).read_text(encoding="utf-8")) if len(sys.argv) > 4 else None
         plan = make_plan(script, rec)
-        Path(sys.argv[3]).write_text(json.dumps({"plan": plan}), encoding="utf-8")
+        props = {"plan": plan}
+        # Nov 16 (Sam: "this is how a video idea could work for the history videos"): story Shorts use the real-3D
+        # afterhour look by default; a script can force it with "look": "afterhour" or opt out with "look": "toon"
+        if os.environ.get("TOON_LOOK") == "afterhour" or script.get("look") == "afterhour" or                 (script.get("format") == "story" and script.get("look") != "toon" and os.environ.get("TOON_LOOK") != "toon"):
+            props["ah"] = {"shots": ah_shots(plan)}       # frames.mjs renders AhShort when the props carry "ah"
+        Path(sys.argv[3]).write_text(json.dumps(props), encoding="utf-8")
         print(f"[toon] plan {plan['slug']}: {len(plan['scenes'])} scenes, {plan['total']} frames, lights {[s['light'] for s in plan['scenes']]}")
     elif cmd == "plates":
         plan = json.loads(Path(sys.argv[2]).read_text(encoding="utf-8"))["plan"]
@@ -328,3 +462,4 @@ if __name__ == "__main__":
         sc = aivideo.script_for(plan["slug"])
         if sc and sc.get("aivideo"):
             aivideo.override(sc, plan, Path(sys.argv[4]))
+        print(f"[toon] whip transitions on {whips(plan, Path(sys.argv[4]))} cuts", flush=True)

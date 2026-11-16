@@ -39,6 +39,8 @@ CACHE = Path(os.environ.get("HTMM_CACHE", ROOT / ".cache"))
 SAFE_X0, SAFE_X1 = 70, 950          # keep clear of Shorts' right-side buttons
 CAPTION_Y = 1330                     # above the Shorts title/channel overlay
 ZONE_TOP = CAPTION_Y - 100           # caption dead zone: charts/figures stay above this line
+SUBLINE = os.environ.get("SUBLINE", "off") == "on"   # top sentence: OFF (Nov 15: that was YouTube's own CC on the reference, not the creator's)
+SUBLINE_Y = 150
 SCENE_GAP = 0.06                     # seconds of silence between scenes
 END_HOLD = 0.7
 BEAT_TARGET = float(os.environ.get("BEAT_TARGET", "1.4"))  # seconds per shot
@@ -1055,6 +1057,7 @@ class Renderer:
         self.cta = None
         sr = tts.SAMPLE_RATE
         tts.use_engine_for([raw["narration"] for raw in self.s["scenes"]] + [cta_line, loop])
+        tts.VOICE_SPEED_NOW = tts.VOICE_SPEED_FOR.get(self.s.get("format"), tts.VOICE_SPEED_FOR["default"])
         for i, raw in enumerate(self.s["scenes"]):
             sc = Scene(tts.strip_speakers(raw["narration"]), raw["visual"])
             sc.audio, timings = tts.synthesize(raw["narration"])  # "B:" lines use the second voice
@@ -1180,9 +1183,11 @@ class Renderer:
                 self._hud(frame, scenes, si, t)
                 self._name(frame, gt)
                 self._cta(frame, si, t)
-                if sc.shots[max(0, bisect.bisect_right(sc.beats, t) - 1)][0] not in ("3d", "alt", "chartzoom", "wordcard"):
+                if self.s.get("format") != "story" and sc.shots[max(0, bisect.bisect_right(sc.beats, t) - 1)][0] not in ("3d", "alt", "chartzoom", "wordcard"):
                     self._icon(frame, chunks[si], t, lp)  # never on top of a chart or a word card
                 self._caption(frame, chunks[si], t)  # after the CTA dim, so captions stay bright
+                if lp and SUBLINE:
+                    self._subline(frame, chunks[si], t, gt)
                 # thin progress bar along the top edge keeps people watching to the end
                 ImageDraw.Draw(frame).rectangle((0, 0, int(W * min(1.0, gt / total_s)), PROGRESS_H),
                                                 fill=self.theme["accent"])
@@ -1352,6 +1357,10 @@ class Renderer:
         first beat the number counts up from 0; a billion+ number lands with a coin burst."""
         if not v.get("stat") or b % 2 or tb < 0:
             return
+        # Nov 15: in story Shorts the "STEP 2" card stayed up the whole step and covered the drawn signs (DPOY);
+        # like the reference channel, it now lands at the step's start and is gone after ~1.6 s
+        if self.s.get("format") == "story":   # the reference has no step/stat cards at all: the scene shows it
+            return
         d = ImageDraw.Draw(frame)
         pop = ease_out_back(min(1.0, tb / 0.25))
         f = fit_font(v["stat"], BLACK, SAFE_X1 - SAFE_X0, 210, 90)
@@ -1369,6 +1378,8 @@ class Renderer:
 
     def _caption_lp(self, frame, words, t):
         """Low-poly captions: one lowercase yellow word at a time, thick black outline."""
+        if self.s.get("format") == "story" and os.environ.get("CAPTION_STYLE", "phrase") == "phrase":
+            return self._caption_phrase(frame, words, t)
         cur = None
         for w in words:
             if w.start - 0.03 <= t <= w.end + 0.08:
@@ -1381,6 +1392,68 @@ class Renderer:
         f = font(BLACK, max(20, int(f.size * (0.85 + 0.15 * k))))
         draw_centered(ImageDraw.Draw(frame), (SAFE_X0 + SAFE_X1) / 2, CAPTION_Y - f.size // 2, txt, f,
                       (255, 221, 0), 12, (0, 0, 0))
+
+    def _caption_phrase(self, frame, words, t):
+        """Story Shorts (Nov 15, Sam's reference @afterhourtheories, every frame studied): small white bold phrases of
+        1-4 words in the lower middle, thin black outline, no highlight colour, no pop; a phrase breaks at punctuation."""
+        groups, cur = [], []
+        for w in words:
+            cur.append(w)
+            if len(cur) >= 4 or re.search(r"[.,!?;:]$", w.text) or (len(cur) >= 3 and len(" ".join(x.text for x in cur)) > 18):
+                groups.append(cur)
+                cur = []
+        if cur:
+            groups.append(cur)
+        show = None
+        for i, g in enumerate(groups):
+            end = groups[i + 1][0].start - 0.02 if i + 1 < len(groups) else g[-1].end + 0.25
+            if g[0].start - 0.03 <= t <= max(end, g[-1].end + 0.05):
+                show = g
+        if not show:
+            return
+        txt = " ".join(w.text for w in show)
+        f = fit_font(txt, BOLD, SAFE_X1 - SAFE_X0 - 120, 62, 38)
+        draw_centered(ImageDraw.Draw(frame), (SAFE_X0 + SAFE_X1) / 2, 1265 - f.size // 2, txt, f, (255, 255, 255), 6, (0, 0, 0))
+
+    def _subline(self, frame, chunks, t, gt):
+        """Nov 15, Sam's reference channel (@afterhourtheories, "mimic his style"): the sentence being said runs
+        as plain white text near the top, two lines at most, under the progress bar; the big one-word caption
+        stays. Hidden while the hook title / name banner are up."""
+        if gt < (4.4 if self.s.get("name_card") else 0.8):
+            return
+        words = [w for ch in chunks for w in ch]
+        idx = next((k for k, w in enumerate(words) if w.start - 0.03 <= t <= w.end + 0.25), None)
+        if idx is None:
+            return
+        a = idx
+        while a > 0 and not re.search(r"[.!?]$", words[a - 1].text):
+            a -= 1
+        b = idx
+        while b < len(words) - 1 and not re.search(r"[.!?]$", words[b].text):
+            b += 1
+        text = " ".join(w.text for w in words[a:b + 1])
+        f = font(BOLD, 42)
+        d = ImageDraw.Draw(frame)
+        lines, cur = [], ""
+        for wd in text.split():
+            nxt = (cur + " " + wd).strip()
+            if d.textlength(nxt, font=f) > SAFE_X1 - SAFE_X0 - 40 and cur:
+                lines.append(cur)
+                cur = wd
+            else:
+                cur = nxt
+        lines.append(cur)
+        if len(lines) > 2:   # keep the part being said: the two lines around the current word
+            said = len(" ".join(w.text for w in words[a:idx + 1]))
+            run, li = 0, 0
+            for li, ln in enumerate(lines):
+                run += len(ln) + 1
+                if run >= said:
+                    break
+            lines = lines[min(li, len(lines) - 2):][:2]
+        for k, ln in enumerate(lines):
+            d.text((SAFE_X0 + 20, SUBLINE_Y + (120 if self.s.get("hud_label") else 0) + k * 52), ln, font=f, fill=(255, 255, 255),
+                   stroke_width=4, stroke_fill=(0, 0, 0))
 
     def _hud(self, frame, scenes, si, t):
         """Running counter in the top-left corner (Sam's liked reels: "TIME SINCE HE WOKE UP",
