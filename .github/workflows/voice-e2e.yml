@@ -18,8 +18,10 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 90
     env:
+      QWEN_VOICE: umbriel
       HTMM_CACHE: ${{ github.workspace }}/.cache
       GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}   # same as nightly: Gemini voice when the key exists
+      VOICE_SOURCE: qwen   # TEST: force the backup voice
       GEMINI_VOICE: ${{ vars.GEMINI_VOICE }}
     steps:
       - uses: actions/checkout@v4
