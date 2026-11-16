@@ -103,6 +103,8 @@ def use_engine_for(texts):
 QWEN_SPEED = float(os.environ.get("QWEN_SPEED", "1.0"))   # 1.0 for the Umbriel clone (1.1 made some lines rushed, Nov 15)
 # Nov 14, Sam: the Gemini voice is "a tad too deep" -> raised one semitone, same speed and timing
 GEMINI_PITCH_ST = float(os.environ.get("GEMINI_PITCH_ST", "1.5"))   # Sam picked +1.5 over +1
+# Nov 15: the Umbriel clone sat at 142 Hz vs real Umbriel +1.5 at 136 Hz -> lower it 0.75 st to match
+QWEN_PITCH_ST = float(os.environ.get("QWEN_PITCH_ST", "-0.75")) if QWEN_VOICE == "umbriel" else 0.0
 
 
 def _pitch(a, st: float):
@@ -179,6 +181,8 @@ def qwen(text: str):
                 n0, a = len(a), _atempo(a, QWEN_SPEED)
                 k = n0 / max(len(a), 1)           # the real stretch (1.0 if ffmpeg failed)
                 ws = [(t, st / k, min(len(a) / SAMPLE_RATE, en / k)) for t, st, en in ws]
+            if abs(QWEN_PITCH_ST) > 0.01:         # same length, so word timings stay
+                a = _pitch(a, QWEN_PITCH_ST)
         words += [(t, offset + st, offset + en) for t, st, en in ws]
         chunks.append(np.asarray(a, np.float32))
         offset += len(a) / SAMPLE_RATE
