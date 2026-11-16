@@ -20,9 +20,9 @@ and **free beyond his Higgsfield Pro plan** — never add a paid service or ask 
   shades, chest text/number), `sets.ts` 21 dense sets (throne office diner lab stall field ring track graveyard
   boardroom street beach court pitch stage space garage classroom bathroom mansion showroom), `things3d.ts` 60 3D
   objects, `cards.ts` text pictures. `pipeline/toon.ah_shots` turns the normal per-sentence plan into shots (a new
-  view every ~1.3 s: medium/face/close/low), `frames.mjs` renders AhShort when the plan carries `ah`. Story Shorts get
+  picture per sentence with a smooth camera push; cut when the line changes, ~2-3 s; Sam, Nov 16: re-angling one moment every ~1.3 s with blur cuts was "a headache"), `frames.mjs` renders AhShort when the plan carries `ah`. Story Shorts get
   it by default; any script can opt in with `"look": "afterhour"` or out with `"look": "toon"`; env TOON_LOOK=toon
-  switches it off everywhere. Captions are his small white phrases; whip-pan blur on cuts. Test: toon-test branch.
+  switches it off everywhere. Captions are his small white phrases; clean hard cuts (whip blur off, WHIPS=on brings it back). Test: toon-test branch.
   Local stills: `node scripts/stills.mjs AhShort <out> <frames> 0.5 <props.json>` (test modes: {"ah":{"test":"chars"|"sets"|"things"}}).
 - **Toon look (Nov 15, LIVE since the Nov 15 evening merge; repo variable LOOK=blender switches back):** Sam: the Mr omi reference Shorts look "infinitely better";
   build off his MIT repo (mromidev/claude-animated-shorts). `toon/` = Remotion + three.js project: `src/videos/bridge`
@@ -322,6 +322,23 @@ research more ... maintain quality too")**. Goal: build a buffer, capped so cred
      clock, news as a headline, the ending as a strong image (a grave, an empty throne). Use `toon` dict `card`
      {text, kind: sign|screen|paper|flip|tomb|white, sub, to, at} for the text pictures and `view: "face"` for
      punchlines (a face filling the frame).
+   **New objects (Sam, Nov 16: "in the hypothetical where you create something new it should be a new object"):**
+   real, everyday things come from the prop library (60 code-built objects in `toon/src/videos/afterhour/things3d.ts`
+   + the free CC0 model packs in `toon/public/models/index.json`); a word with no match shows a white word sign.
+   But anything a script INVENTS (a `plan` step's new product: robotic dunk shoes, a sneaker bus, a GPU throne, an AI
+   referee robot) must be BUILT as its own new 3D object so the viewer sees the idea, not a sign. In the LAST part of
+   the Saturday chain only, after the scripts are pushed:
+   1. List the invented items in this week's scripts that have no object yet (and any real thing a script needs that
+      the library lacks); pick the up to 3 that matter most (on screen longest, central to the story).
+   2. Build each in `things3d.ts` in the same style (toonMat 3-step cel shading, `outline()` on main parts, chunky
+      readable shapes, bright colours, a small `tick` motion, deterministic). Mix existing pieces where it helps
+      (springshoe = shoe + springs). Add the name to `ThingName`, the test list in Ah.tsx and `pipeline/toon.AH_THING`
+      (the words that trigger it), and set that script's `toon` `things` to it.
+   3. TEST before main: push to a branch `things-test/<date>` with `toon/things_test.json` showing the new objects
+      (workflow `things-test.yml` renders stills and type-checks), wait for it, pull the stills and LOOK at every one.
+      Fix and re-push until each is instantly recognisable and matches the look. If it still fails, or the check
+      fails, do NOT merge: leave the branch, note it in the commit/report, and the script keeps its word sign.
+   4. Only then merge to main. Never push an untested things3d.ts to main: a broken file breaks every render that night.
    **Story/plan Shorts post automatically (Sam approved, Nov 15 2026: "Post automatically").** Story `history` and
    `plan` scripts the routines write go in as `status: "ready"` like any other script once they pass every check
    (sources opened, lint 0 errors, story score 80+, one `toon` dict per sentence); no separate approval needed.

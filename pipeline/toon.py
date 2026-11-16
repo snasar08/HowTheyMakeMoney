@@ -10,6 +10,7 @@ Without a recorded plan the scene lengths are estimated from the words (for look
 """
 from __future__ import annotations
 
+from . import ah_actions
 import json
 import os
 import re
@@ -380,10 +381,14 @@ def ah_look(o: dict) -> dict:
 
 def ah_shots(plan: dict) -> list:
     hero, shots, views = plan.get("hero") or {}, [], ["ms", "face", "cu", "ms", "low", "face"]
+    prev_pose = None
     for k, sc in enumerate(plan["scenes"]):
         place = sc.get("place") or {0: "bridge", 1: "street", 2: "quay"}.get(sc.get("loc"), "street")
         who = {**hero, **(sc.get("who") or {})}
-        pose = AH_POSE.get(sc.get("action", "idle"), "stand")
+        # the hero DOES what the sentence says (Sam, Nov 16: "jump shoes, people should jump"): pipeline/ah_actions
+        pose = ah_actions.pick_pose(sc.get("text") or sc.get("line") or "", list(sc.get("things") or []) + list(sc.get("props") or []),
+                                    sc.get("mood", "happy"), sc.get("action"), place, prev_pose)
+        prev_pose = pose
         chars = [{"look": ah_look(who), "at": [0, 0, 0], "pose": pose, "expr": AH_EXPR.get(sc.get("mood", "happy"), "smile")}]
         for i in range(min(6, int(sc.get("crowd") or 0) // 5)):     # a few extras behind, cheering/reacting
             chars.append({"look": AH_CROWD[i % len(AH_CROWD)], "at": [(-1) ** i * (1.3 + 0.6 * (i // 2)), 0, -1.6 - 0.9 * (i // 2)],
@@ -416,9 +421,12 @@ def ah_shots(plan: dict) -> list:
             shot["cam"] = {"from": [0, 1.55, 2.5], "to": [0, 1.55, 2.2], "look": [0, 1.55, 0.3]}
         # his tempo (30 fps study): a new view about every 1.3 s, so a long sentence becomes several shots of the same
         # moment from different angles (medium -> face -> close -> low ...), each with its slow push-in
-        parts = max(1, round(sc["n"] / 40)) if "cam" not in shot else 1
-        order = {"ms": ["ms", "face", "cu", "low"], "face": ["face", "ms", "cu"], "cu": ["cu", "face", "ms"], "low": ["low", "face", "ms"],
-                 "ws": ["ws", "ms", "face"], "wide": ["wide", "ms", "face"]}.get(shot["view"], [shot["view"], "face", "ms"])
+        # Sam, Nov 16: re-cutting the same moment every ~1.3 s "is a headache": ONE picture per sentence with a smooth
+        # camera push; a cut only when the line changes. A long sentence (> ~3.5 s) gets one extra cut to a clearly
+        # different framing (medium -> face), never a cut every second.
+        parts = (1 if sc["n"] <= 105 else 2) if "cam" not in shot else 1
+        order = {"ms": ["ms", "face"], "face": ["face", "ms"], "cu": ["cu", "ws"], "low": ["low", "face"],
+                 "ws": ["ws", "face"], "wide": ["wide", "face"]}.get(shot["view"], [shot["view"], "face"])
         for j in range(parts):
             a0, a1 = sc["a"] + round(j * sc["n"] / parts), sc["a"] + round((j + 1) * sc["n"] / parts)
             sub = {**shot, "a": a0, "n": a1 - a0, "view": order[j % len(order)]}
@@ -460,7 +468,7 @@ def whips(plan: dict, plates_dir: Path) -> int:
 
     import numpy as np
     from PIL import Image
-    if os.environ.get("WHIPS", "on") == "off":
+    if os.environ.get("WHIPS", "off") == "off"   # Sam, Nov 16: the blur cuts "look horrendous": off unless WHIPS=on:
         return 0
     d = plates_dir / plan["slug"]
     seq = [d / f"{sc['si']}_{sc['frLo'] + j}.jpg" for sc in plan["scenes"] for j in range(sc["n"])]

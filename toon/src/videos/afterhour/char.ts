@@ -10,7 +10,10 @@ export type Look = { body: string; legs?: string; skin?: string; hat?: "none" | 
   /** 1 = normal; 1.3 = very tall (longer legs, torso and arms; the head stays the same size) */ height?: number;
   /** "jacket" (default), "jersey" (basketball tank top + shorts, `text` = big number, `trim` colour) or "leather" (black leather jacket) */ outfit?: "jacket" | "jersey" | "leather";
   /** jersey trim colour at the neck, arm holes, hem, shorts stripe, socks and number (default white) */ trim?: string };
-export type Pose = "stand" | "sit" | "cheer" | "wave" | "point" | "walk" | "dig" | "shrug";
+export type Pose = "stand" | "sit" | "cheer" | "wave" | "point" | "walk" | "dig" | "shrug"
+  | "jump" | "dunk" | "run" | "dribble" | "shoot" | "throw" | "type" | "eat" | "talk" | "phone" | "count" | "dance" | "fistpump" | "fall" | "facepalm" | "think" | "sleep";
+export const POSES: Pose[] = ["stand", "sit", "cheer", "wave", "point", "walk", "dig", "shrug",
+  "jump", "dunk", "run", "dribble", "shoot", "throw", "type", "eat", "talk", "phone", "count", "dance", "fistpump", "fall", "facepalm", "think", "sleep"];
 export type Char = { root: THREE.Group; /** head centre height above the root when standing (1.55 at height 1) */ readonly headY: number; set(t: number, pose: Pose, expr: Expr, blink?: boolean): void };
 
 const INK = "#14101a";
@@ -579,6 +582,46 @@ function buildChar(look: Look, cheap: boolean): Char {
   };
   const tgt = new THREE.Vector3(), pole = new THREE.Vector3();
 
+  // ---- motion helpers (all deterministic, driven by t only)
+  const cl01 = (x: number) => Math.min(1, Math.max(0, x));
+  const S = (x: number) => { x = cl01(x); return x * x * (3 - 2 * x); };
+  const seg = (u: number, a: number, b: number) => S((u - a) / (b - a));
+  const mixn = (a: number, b: number, k: number) => a + (b - a) * k;
+  /** keyframes [u, v1, v2...] sorted by u, eased in/out between keys; first and last rows should match for a loop */
+  const kfv = (u: number, rows: number[][]): number[] => {
+    if (u <= rows[0][0]) return rows[0].slice(1);
+    for (let i = 0; i < rows.length - 1; i++) {
+      const A = rows[i], B = rows[i + 1];
+      if (u <= B[0]) { const k = S((u - A[0]) / (B[0] - A[0])); return A.slice(1).map((v, j) => v + (B[j + 1] - v) * k); }
+    }
+    return rows[rows.length - 1].slice(1);
+  };
+  const drop = (a: number, b: number) => 0.28 * sl * (1 - Math.cos(a)) + 0.255 * sl * (1 - Math.cos(b - a));
+  /** both legs: thigh forward a, knee bend b; returns how far the rig must sink so the feet stay on the floor */
+  const legs2 = (a: number, b: number, spread = 0.06) => {
+    legR.hip.rotation.x = -a; legL.hip.rotation.x = -a; legR.knee.rotation.x = b; legL.knee.rotation.x = b;
+    legR.hip.rotation.z = spread; legL.hip.rotation.z = -spread;
+    return drop(a, b);
+  };
+  /** hand to (x outward on the arm's own side, y, z) in rig space, elbow bending toward the pole */
+  const hand = (a: Limb, x: number, y: number, z: number, px = 1, py = -0.4, pz = -0.6) => {
+    tgt.set(a.s * x, y, z); pole.set(a.s * px, py, pz); reach(a, tgt, pole);
+  };
+  const jprof = (u: number, a1: number, a2: number, a3: number, a4: number, H: number) => {
+    let c = 0, y = 0, air = 0;
+    if (u < a1) c = S(u / a1);
+    else if (u < a2) c = 1 - S((u - a1) / (a2 - a1));
+    else if (u < a3) { const w = (u - a2) / (a3 - a2); y = H * 4 * w * (1 - w); air = Math.sin(Math.PI * w); }
+    else if (u < a4) c = Math.sin(Math.PI * (u - a3) / (a4 - a3));
+    return { c, y, air };
+  };
+  const jumpBody = (p: { c: number; y: number; air: number }) => {
+    legs2(0.95 * p.c + 0.65 * p.air, 1.6 * p.c + 1.1 * p.air);
+    rig.position.y += p.y - drop(0.95 * p.c, 1.6 * p.c);
+    body.scale.x *= 1 + 0.07 * p.c; body.scale.z *= 1 + 0.07 * p.c; body.scale.y *= 1 - 0.08 * p.c;
+    head.position.y -= 0.03 * p.c;
+  };
+
   let curExpr = "", curBlink = false;
   const set = (t: number, pose: Pose, expr: Expr, blink = false) => {
     // face (extras only draw two expressions: happy / flat)
@@ -587,7 +630,7 @@ function buildChar(look: Look, cheap: boolean): Char {
     const fb = cheap ? false : blink;
     if (curExpr !== fe || curBlink !== fb) { (face.material as THREE.Material) = faceMat(fe, fb); curExpr = fe; curBlink = fb; }
     // reset
-    rig.position.set(0, 0, 0); rig.rotation.set(0, 0, 0);
+    rig.position.set(0, 0, 0); rig.rotation.set(0, 0, 0); rig.scale.set(1, 1, 1);
     head.position.set(0, HEAD_Y, 0);
     head.rotation.set(0, 0, 0);
     shovel.visible = false;
@@ -670,6 +713,170 @@ function buildChar(look: Look, cheap: boolean): Char {
         const up = (Math.sin(t * 4) * 0.5 + 0.5) * 0.12;
         setArm(armR, 1, 0.1, 0.35 + up, 0, 1.75); setArm(armL, -1, 0.1, 0.35 + up, 0, 1.75);
         head.rotation.z += 0.09; head.position.y -= 0.03;
+        break;
+      }
+      case "jump": {
+        const u = ((t / 0.9) % 1 + 1) % 1, p = jprof(u, 0.2, 0.32, 0.76, 0.92, 0.5);
+        jumpBody(p);
+        const upk = seg(u, 0.3, 0.42) * (1 - seg(u, 0.68, 0.78));
+        for (const a of [armR, armL]) setArm(a, a.s, 0.7 * p.c * (1 - upk) + 0.1, mixn(0.25, Math.PI - 0.75, upk), -0.3 * (1 - upk), 0);
+        head.rotation.x += -0.12 * p.air + 0.1 * p.c;
+        break;
+      }
+      case "dunk": {
+        const u = ((t / 1.1) % 1 + 1) % 1, p = jprof(u, 0.22, 0.34, 0.74, 0.9, 0.55);
+        jumpBody(p);
+        const SY = SHOULDER_Y;
+        const r = kfv(u, [[0, 0.3, SY - 0.35, -0.1], [0.22, 0.3, SY - 0.4, -0.25], [0.36, 0.5, SY + 0.3, 0.0], [0.47, 0.52, SY + 0.58, 0.1], [0.55, 0.52, SY + 0.6, 0.12],
+          [0.62, 0.22, SY - 0.12, 0.58], [0.74, 0.2, SY - 0.38, 0.45], [0.9, 0.28, SY - 0.4, 0.05], [1, 0.3, SY - 0.35, -0.1]]);
+        hand(armR, r[0], r[1], r[2], 1, 0, -0.4);
+        const upk = seg(u, 0.3, 0.44) * (1 - seg(u, 0.7, 0.8));
+        setArm(armL, -1, 0.5 * p.c * (1 - upk), mixn(0.25, 1.9, upk), -0.2, 0);
+        rig.rotation.x = 0.08 * p.air;
+        head.rotation.x += seg(u, 0.5, 0.62) * 0.2 - 0.1 * p.air;
+        break;
+      }
+      case "run": {
+        const ph = t * 11, sw = Math.sin(ph);
+        const amp = 1.0 / Math.sqrt(sl);
+        legR.hip.rotation.x = sw * amp; legL.hip.rotation.x = -sw * amp;
+        legR.knee.rotation.x = Math.max(0, -Math.cos(ph)) * 1.7 + 0.25; legL.knee.rotation.x = Math.max(0, Math.cos(ph)) * 1.7 + 0.25;
+        rig.position.y += Math.abs(Math.cos(ph)) * 0.07 + 0.03;
+        rig.rotation.x = 0.3; rig.rotation.y = sw * 0.12;
+        setArm(armR, 1, -sw * 1.0, 0.12, -1.4, 0); setArm(armL, -1, sw * 1.0, 0.12, -1.4, 0);
+        head.rotation.x += -0.2;
+        break;
+      }
+      case "dribble": {
+        const ph = t * 12.566, k = 0.5 + 0.5 * Math.cos(ph);   // 0.5 s per bounce, k=1 hand high
+        const d = legs2(0.95, 1.6, 0.12);
+        rig.position.y += -d + (k - 0.5) * 0.03;
+        rig.rotation.x = 0.3; rig.rotation.y = -0.2;
+        hand(armR, 0.42, HIP_Y + 0.08 - 0.34 * (1 - k) - d * 0.5, 0.3 + 0.1 * (1 - k), 1.5, -0.2, -0.3);
+        setArm(armL, -1, -0.5, 0.85, -0.9, 0);
+        head.rotation.x += 0.12 + 0.03 * Math.sin(ph); head.rotation.y += 0.2;
+        break;
+      }
+      case "shoot": {
+        const u = ((t / 1.2) % 1 + 1) % 1, p = jprof(u, 0.22, 0.38, 0.78, 0.92, 0.22);
+        jumpBody(p);
+        const SY = SHOULDER_Y, HY = HEAD_Y;
+        const r = kfv(u, [[0, 0.14, SY - 0.28, 0.38], [0.22, 0.15, SY - 0.4, 0.34], [0.38, 0.14, SY + 0.05, 0.42], [0.55, 0.12, HY + 0.4, 0.28], [0.64, 0.1, HY + 0.46, 0.4], [0.78, 0.12, HY + 0.1, 0.5], [0.92, 0.14, SY - 0.3, 0.4], [1, 0.14, SY - 0.28, 0.38]]);
+        for (const a of [armR, armL]) hand(a, r[0], r[1], r[2], 1.2, 0.2, -0.3);
+        head.rotation.x += -0.15 * seg(u, 0.4, 0.55) * (1 - seg(u, 0.8, 0.92));
+        break;
+      }
+      case "throw": {
+        const u = ((t / 1.4) % 1 + 1) % 1;
+        const r = kfv(u, [[0, 0.05, 0.14, -0.1, 0, 0], [0.3, 2.0, 0.35, -1.3, 0.5, -0.2], [0.38, 2.15, 0.3, -1.4, 0.6, -0.3], [0.5, 3.8, 0.15, -0.1, -0.35, 0.25],
+          [0.78, 5.5, 0.2, -0.2, -0.5, 0.3], [1, 0.05 + Math.PI * 2, 0.14, -0.1, 0, 0]]);
+        setArm(armR, 1, r[0], r[1], r[2], 0);
+        rig.rotation.y = r[3]; rig.rotation.x = r[4];
+        setArm(armL, -1, -0.9 + 0.5 * seg(u, 0.4, 0.5), 0.4, -0.4, 0);
+        legR.hip.rotation.x = 0.25 * seg(u, 0.3, 0.5); legL.hip.rotation.x = -0.3 * seg(u, 0.3, 0.5);
+        legL.knee.rotation.x = 0.2 * seg(u, 0.3, 0.5);
+        head.rotation.y += -0.2;
+        break;
+      }
+      case "type": {
+        const SY = SHOULDER_Y, ph = t * 24;
+        const bob = (o: number) => 0.035 * Math.max(0, Math.sin(ph + o));
+        hand(armR, 0.2 + 0.03 * Math.sin(t * 5), SY - 0.55 + bob(0) * 1.6, 0.4, 2, -0.3, -0.2);
+        hand(armL, 0.2 + 0.03 * Math.sin(t * 5 + 2), SY - 0.55 + bob(2.4) * 1.6, 0.4, 2, -0.3, -0.2);
+        rig.rotation.x = 0.1; head.rotation.x += 0.25 + 0.02 * Math.sin(t * 9); head.rotation.y += Math.sin(t * 2) * 0.06;
+        break;
+      }
+      case "eat": {
+        const u = ((t / 1.0) % 1 + 1) % 1, SY = SHOULDER_Y, HY = HEAD_Y;
+        const r = kfv(u, [[0, 0.22, SY - 0.38, 0.38], [0.3, 0.06, HY - 0.15, 0.5], [0.6, 0.06, HY - 0.15, 0.5], [0.9, 0.22, SY - 0.38, 0.38], [1, 0.22, SY - 0.38, 0.38]]);
+        hand(armR, r[0], r[1], r[2], 1, -0.3, -0.6);
+        hand(armL, 0.12, SY - 0.45, 0.3, 1, -0.5, -0.5);
+        const chew = seg(u, 0.3, 0.4) * (1 - seg(u, 0.88, 1.0));
+        head.rotation.x += chew * (0.04 + Math.sin(t * 22) * 0.05) - 0.08 * seg(u, 0.1, 0.3) * (1 - seg(u, 0.6, 0.9));
+        head.position.y -= chew * Math.abs(Math.sin(t * 11)) * 0.02;
+        rig.rotation.x = 0.04;
+        break;
+      }
+      case "talk": {
+        const SY = SHOULDER_Y, ph = t * 4.8;
+        hand(armR, 0.36 + 0.18 * Math.sin(ph), SY - 0.32 + 0.16 * Math.sin(ph * 2 + 0.4), 0.36 + 0.12 * Math.cos(ph), 2, -0.2, -0.3);
+        hand(armL, 0.36 + 0.18 * Math.sin(ph + 2.2), SY - 0.32 + 0.16 * Math.sin(ph * 2 + 2.6), 0.36 + 0.12 * Math.cos(ph + 2.2), 2, -0.2, -0.3);
+        head.rotation.x += Math.sin(ph * 2) * 0.05; head.rotation.y += Math.sin(ph * 0.5) * 0.12; rig.rotation.y = Math.sin(ph * 0.5) * 0.07;
+        break;
+      }
+      case "phone": {
+        const SY = SHOULDER_Y, HY = HEAD_Y;
+        hand(armR, 0.5, HY - 0.1 + Math.sin(t * 3) * 0.008, 0.06, 1.2, -0.3, -0.6);
+        hand(armL, 0.1 + 0.03 * Math.sin(t * 1.8), SY - 0.45, 0.32, 1, -0.5, -0.4);
+        head.rotation.z += -0.12; head.position.x = 0.03; head.rotation.x += Math.sin(t * 5) * 0.035; head.rotation.y += Math.sin(t * 2.4) * 0.05;
+        break;
+      }
+      case "count": {
+        const SY = SHOULDER_Y, ph = t * 20;
+        hand(armL, 0.0, SY - 0.45, 0.4, 1.5, -0.4, -0.3);
+        hand(armR, 0.05 + 0.1 * Math.sin(ph), SY - 0.4 + 0.08 * Math.max(0, Math.sin(ph * 0.5 + 1)), 0.44, 1.5, -0.4, -0.3);
+        head.rotation.x += 0.22 + Math.sin(t * 4) * 0.03; head.rotation.y += Math.sin(t * 1.5) * 0.08;
+        break;
+      }
+      case "dance": {
+        const ph = t * 10.47, sw = Math.sin(ph / 2);   // 0.6 s per bounce
+        const bn = Math.abs(sw);
+        const d = legs2(0.25 + 0.3 * (1 - bn), 0.5 + 0.7 * (1 - bn), 0.1);
+        legR.hip.rotation.x = -0.25 - 0.3 * Math.max(0, sw); legL.hip.rotation.x = -0.25 - 0.3 * Math.max(0, -sw);
+        rig.position.y += -d + bn * 0.06 - 0.02;
+        rig.position.x = sw * 0.07; rig.rotation.z = sw * 0.1; rig.rotation.y = sw * 0.25;
+        const aR = 0.5 + 0.5 * Math.sin(ph / 2 + 1.6), aL = 1 - aR;
+        setArm(armR, 1, 0.1 - 0.5 * aR, mixn(0.3, 2.3, aR), -0.3 - 1.0 * (1 - aR), 0); setArm(armL, -1, 0.1 - 0.5 * aL, mixn(0.3, 2.3, aL), -0.3 - 1.0 * (1 - aL), 0);
+        head.rotation.z += -sw * 0.12;
+        break;
+      }
+      case "fistpump": {
+        const u = ((t / 1.3) % 1 + 1) % 1, SY = SHOULDER_Y, HY = HEAD_Y;
+        const r = kfv(u, [[0, 0.5, HY + 0.2, 0.15, 0], [0.12, 0.55, HY + 0.32, 0.15, 0], [0.22, 0.25, SY - 0.45, 0.3, 1], [0.34, 0.55, HY + 0.32, 0.15, 0], [0.44, 0.25, SY - 0.45, 0.3, 1],
+          [0.6, 0.55, HY + 0.3, 0.15, 0.2], [0.8, 0.52, HY + 0.22, 0.15, 0], [1, 0.5, HY + 0.2, 0.15, 0]]);
+        hand(armR, r[0], r[1], r[2], 1.2, 0.0, -0.6);
+        const d = legs2(0.35 * r[3], 0.7 * r[3], 0.08);
+        rig.position.y += -d; rig.rotation.x = 0.2 * r[3]; rig.rotation.y = -0.15 * r[3];
+        setArm(armL, -1, 0.1, 0.3 + 0.3 * r[3], -0.4, 0);
+        head.rotation.x += 0.12 * r[3];
+        break;
+      }
+      case "fall": {
+        const u = cl01(t / 0.75);
+        const k = u < 1 ? 1 - Math.pow(1 - u, 3) * Math.cos(u * 4.2) : 1;   // ease out with a little overshoot
+        const wob = Math.sin(t * 2.4) * 0.025 * seg(t, 0.8, 1.2);
+        rig.rotation.x = -0.75 * k + wob;
+        const d = legs2(0.55 * k, 1.0 * k, 0.12);
+        rig.position.y += -d * 0.9; rig.position.z = -0.1 * k;
+        for (const a of [armR, armL]) setArm(a, a.s, -0.5 * k + 0.4 * Math.sin(u * Math.PI), 0.9 + 0.5 * Math.sin(u * Math.PI) + wob * 2, -0.3, 0);
+        head.rotation.x += -0.3 * k + 0.1 * Math.sin(t * 2.6) * seg(t, 0.8, 1.2); head.rotation.z += 0.18 * k; head.position.x = 0.06 * k;
+        break;
+      }
+      case "facepalm": {
+        const u = seg(t, 0, 0.45), SY = SHOULDER_Y, HY = HEAD_Y;
+        hand(armR, mixn(0.2, 0.02, u), mixn(SY - 0.55, HY - 0.04, u) + 0.1 * Math.sin(Math.PI * u), mixn(0.05, 0.38, u), 1.5, -0.3, -0.5);
+        head.position.z = -0.1 * u;
+        setArm(armL, -1, 0.05, 0.14 + 0.1 * u, -0.1, 0);
+        head.rotation.x += 0.4 * u; head.rotation.y += Math.sin(t * 4.5) * 0.06 * u; head.position.y -= 0.04 * u;
+        rig.rotation.x = 0.1 * u + Math.sin(t * 1.6) * 0.01; rig.position.y -= 0.02 * u;
+        break;
+      }
+      case "think": {
+        const SY = SHOULDER_Y, HY = HEAD_Y, u = seg(t, 0, 0.35);
+        hand(armR, mixn(0.25, 0.12, u), mixn(SY - 0.5, HY - 0.4, u), mixn(0.1, 0.32, u), 1.5, -0.6, -0.3);
+        head.position.z = -0.04 * u;
+        hand(armL, 0.02, SY - 0.42, 0.3, 1, -0.6, -0.4);
+        head.rotation.z += -0.16 * u + Math.sin(t * 1.4) * 0.03; head.rotation.x += -0.05 * u; head.rotation.y += 0.14 * u + Math.sin(t * 1.1) * 0.05;
+        rig.rotation.y = -0.05 * u;
+        break;
+      }
+      case "sleep": {
+        const br = Math.sin(t * 1.5);
+        rig.rotation.x = 0.14; rig.rotation.z = Math.sin(t * 0.7) * 0.02;
+        const d = legs2(0.12, 0.28, 0.1); rig.position.y += -d - 0.02 + br * 0.006;
+        body.scale.set(1 + br * 0.03, 1 + br * 0.05, 1 + br * 0.03);
+        head.rotation.z += 0.5; head.rotation.x += 0.3; head.position.x = -0.1; head.position.y -= 0.1;
+        setArm(armR, 1, 0.12, 0.08, -0.05, 0); setArm(armL, -1, 0.12, 0.08, -0.05, 0);
         break;
       }
     }
