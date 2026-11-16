@@ -85,6 +85,9 @@ def outfit(hero: dict | None, slug: str = "", sport: str = "", name: str = "") -
         o["dress"] = o["jacket"]
     if float((hero or {}).get("height") or 1) >= 1.15:
         o["build"] = "tall"                               # e.g. Wembanyama (height 1.3)
+    o["height"] = float((hero or {}).get("height") or 1)
+    if (hero or {}).get("jacket") == "leather":           # e.g. Jensen Huang's signature black leather jacket
+        o["leather"] = True
     return o
 
 
@@ -327,6 +330,13 @@ def ah_look(o: dict) -> dict:
         lk["text"] = str(o["num"])
     elif o.get("chest") and hat != "hardhat":
         lk["text"] = str(o["chest"])[:6]
+    h = float(o.get("height") or 1)
+    if abs(h - 1) > 0.03:
+        lk["height"] = round(max(0.85, min(1.35, h)), 2)
+    if o.get("kit") in ("bball", "soccer"):            # athletes in a sleeveless jersey with their number, not a jacket
+        lk.update(outfit="jersey", trim=o.get("trim", "#ffffff"))
+    elif o.get("leather"):
+        lk.update(outfit="leather", body="#141414")
     return lk
 
 

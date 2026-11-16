@@ -35,7 +35,8 @@
     "pants": "151515",
     "shoes": "151515",
     "tie": "151515",
-    "height": 0.98
+    "height": 0.98,
+    "jacket": "leather"
   },
   "scenes": [
     {

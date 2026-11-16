@@ -149,7 +149,8 @@ const Inner: React.FC = () => {
   // camera: preset relative to the subject, or explicit
   // presets are written for a standing head at y 1.55; shift them to where this subject's head really is
   const subj = s.chars[s.subject ?? 0], sp = subj ? spotOf(b, subj.at) : ([0, 0, 0] as V3);
-  const rootY = subj?.pose === "sit" ? Math.max(0, sp[1] - 0.55) : sp[1], drop = rootY;   // char.ts keeps the head at 1.55 above the root in every pose
+  const hy = (b.chars[s.subject ?? 0] as Char & { headY?: number } | undefined)?.headY ?? 1.55;   // tall people (height 1.3) carry the head higher
+  const rootY = subj?.pose === "sit" ? Math.max(0, sp[1] - 0.55) : sp[1], drop = rootY + (subj?.pose === "sit" ? 0 : hy - 1.55);
   const V = s.cam ? { ...s.cam, blur: 4 } : VIEWS[s.view ?? "ms"] ?? VIEWS.ms;
   const off = (p: V3): V3 => (s.cam ? p : [p[0] + sp[0], p[1] + drop, p[2] + sp[2]]);
   const pos = off(lerp(V.from, V.to, u)), look = off(V.look);

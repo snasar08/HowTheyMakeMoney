@@ -473,15 +473,47 @@ const B: Record<ThingName, Builder> = {
     return { g };
   },
   pizza: (c) => {
-    const g = new THREE.Group(); const col = c ?? "#c8975a";
-    bx(g, 0.4, 0.04, 0.4, col, 0, 0.02, 0); const lid = new THREE.Group(); lid.position.set(0, 0.04, -0.2); lid.rotation.x = -1.9; g.add(lid); bx(lid, 0.4, 0.01, 0.4, col, 0, 0, 0.2);
-    plane(lid, 0.24, 0.1, flat(textTex("PIZZA", 256, 100, col, "#c0152a")), 0, 0.0056, 0.2, [-PI / 2, 0, PI]).visible = false;
-    const p = new THREE.Group(); p.position.y = 0.045; g.add(p);
-    cy(p, 0.17, 0.17, 0.018, "#e0a352", 0, 0.009, 0, undefined, 32); cy(p, 0.15, 0.15, 0.006, "#e5392a", 0, 0.02, 0, undefined, 32);
-    cy(p, 0.145, 0.145, 0.006, "#ffd24a", 0, 0.026, 0, undefined, 32);
-    const r = seeded(11); for (let i = 0; i < 9; i++) { const a = r() * PI * 2; const rr = 0.03 + r() * 0.1; cy(p, 0.021, 0.021, 0.008, "#b4261c", Math.cos(a) * rr, 0.033, Math.sin(a) * rr, undefined, 12); }
-    for (let i = 0; i < 6; i++) { const a = (i / 6) * PI; bx(p, 0.34, 0.002, 0.002, "#1b1b24", 0, 0.0305, 0, [0, a, 0]); }
-    return { g };
+    const g = new THREE.Group(); const crust = c ?? "#f0b04a";
+    const tilt = new THREE.Group(); tilt.rotation.set(1.05, 0, 0); g.add(tilt);
+    const gapH = 0.45; // half-angle of the missing slice (rad), slice points toward local +z
+    const pie = (r: number, h: number, a0: number, len: number) => new THREE.CylinderGeometry(r, r, h, 48, 1, false, a0, len);
+    const arcAt = (grp: THREE.Group, R: number, tube: number, a0: number, len: number, m: M, y: number) => {
+      const sub = new THREE.Group(); sub.rotation.y = -a0; sub.position.y = y; grp.add(sub);
+      return put(sub, new THREE.TorusGeometry(R, tube, 12, 40, len), m, 0, 0, 0, [PI / 2, 0, 0], [1, 1, 0.8]);
+    };
+    const fullLen = PI * 2 - gapH * 2;
+    // main pie (gap centred on +z)
+    put(tilt, pie(0.2, 0.03, gapH, fullLen), "#e8a340", 0, 0.015, 0);
+    put(tilt, pie(0.18, 0.014, gapH, fullLen), "#d92b1c", 0, 0.036, 0, undefined, undefined, false);
+    put(tilt, pie(0.155, 0.016, gapH, fullLen), "#ffc82e", 0, 0.047, 0, undefined, undefined, false);
+    arcAt(tilt, 0.19, 0.032, PI / 2 + gapH, fullLen, crust, 0.036);
+    // melted cheese drips over the sauce edge
+    const dr = seeded(7);
+    for (let i = 0; i < 9; i++) {
+      const th = gapH + 0.25 + (i / 8) * (fullLen - 0.5); const L = 0.03 + dr() * 0.03;
+      const rr = 0.16 + L * 0.3; const s = sp(tilt, 0.022, "#ffd23a", Math.sin(th) * rr, 0.044, Math.cos(th) * rr, [0.8, 0.45, 1.3 + dr()], 10); s.rotation.y = th;
+    }
+    // pepperoni (raised discs)
+    const pp: [number, number][] = [[-0.07, -0.07], [0.07, -0.09], [0.0, 0.0], [-0.115, 0.03], [0.12, 0.01], [-0.04, 0.095], [0.09, 0.09], [0.0, -0.13]];
+    for (const [x, z] of pp) {
+      if (Math.abs(Math.atan2(x, z)) < gapH + 0.2 && z > 0) continue;
+      cy(tilt, 0.036, 0.036, 0.018, "#b3201c", x, 0.062, z, undefined, 20); cy(tilt, 0.026, 0.026, 0.006, "#df4538", x, 0.074, z, undefined, 16).children[0].visible = false;
+    }
+    // green basil bits
+    for (const [x, z, a] of [[-0.03, 0.05, 0.6], [0.11, -0.04, 2.1], [-0.1, -0.1, 1.2]]) sp(tilt, 0.016, "#2fa84f", x, 0.058, z, [1.5, 0.35, 0.8], 8).rotation.y = a;
+    // the pulled-out slice
+    const sl = new THREE.Group(); sl.position.set(0, 0.012, 0.2); tilt.add(sl);
+    put(sl, pie(0.2, 0.03, -gapH * 0.92, gapH * 1.84), "#e8a340", 0, 0.015, 0);
+    put(sl, pie(0.18, 0.014, -gapH * 0.92, gapH * 1.84), "#d92b1c", 0, 0.036, 0, undefined, undefined, false);
+    put(sl, pie(0.155, 0.016, -gapH * 0.92, gapH * 1.84), "#ffc82e", 0, 0.047, 0, undefined, undefined, false);
+    arcAt(sl, 0.19, 0.032, PI / 2 - gapH * 0.92, gapH * 1.84, crust, 0.036);
+    cy(sl, 0.032, 0.032, 0.018, "#b3201c", 0, 0.062, 0.095, undefined, 20); cy(sl, 0.022, 0.022, 0.006, "#df4538", 0, 0.074, 0.095, undefined, 16).children[0].visible = false;
+    // cheese strings between slice and pie
+    const strings: THREE.Mesh[] = [];
+    for (const [x, z0, len, w] of [[0.0, 0.0, 0.2, 0.012], [0.045, 0.06, 0.15, 0.01], [-0.05, 0.06, 0.15, 0.01], [0.085, 0.1, 0.1, 0.008], [-0.09, 0.1, 0.1, 0.008]] as [number, number, number, number][]) {
+      strings.push(cy(tilt, w, w, len, "#ffd23a", x, 0.052 - len * 0.02, z0 + len / 2 + 0.015, [PI / 2, 0, 0], 8));
+    }
+    return { g, tick: (t) => { tilt.rotation.z = Math.sin(t * 1.6) * 0.07; tilt.rotation.y = Math.sin(t * 1.1) * 0.12; sl.position.z = 0.2 + Math.sin(t * 2.1) * 0.012; strings.forEach((s) => { s.scale.set(1 - 0.05 * Math.sin(t * 2.1), 1, 1 - 0.05 * Math.sin(t * 2.1)); }); } };
   },
   coffee: (c) => {
     const g = new THREE.Group(); const col = c ?? "#fafafa";
@@ -513,18 +545,38 @@ const B: Record<ThingName, Builder> = {
     return { g, tick: (t) => { bd.position.y = Math.sin(t * 3) * 0.015; hd.rotation.y = Math.sin(t * 1.2) * 0.25; (ant.material as THREE.Material) && (ant.scale.setScalar(1 + 0.2 * Math.sin(t * 8))); } };
   },
   drone: (c) => {
-    const g = new THREE.Group(); const col = c ?? "#e8edf5"; const hv = new THREE.Group(); hv.position.y = 0.12; g.add(hv); const rot: THREE.Group[] = [];
-    rbx(hv, 0.16, 0.05, 0.16, 0.03, col, 0, 0.1, 0, [PI / 2, 0, 0]).rotation.x = 0;
-    hv.children[0].rotation.set(0, 0, 0); (hv.children[0] as THREE.Mesh).geometry = new THREE.BoxGeometry(0.16, 0.05, 0.16); ((hv.children[0] as THREE.Mesh).children[0] as THREE.Mesh).geometry = (hv.children[0] as THREE.Mesh).geometry;
-    sp(hv, 0.03, "#16161c", 0, 0.065, 0.085, undefined, 12); sp(hv, 0.014, glowMat("#38e8ff", 2.2), 0, 0.065, 0.113, undefined, 8);
-    for (const [x, z] of [[-1, -1], [1, -1], [-1, 1], [1, 1]]) {
-      bx(hv, 0.02, 0.012, 0.17, "#454a58", x * 0.09, 0.1, z * 0.09, [0, Math.atan2(x * z, 1) * 0.0 + (x * z > 0 ? -0.78 : 0.78), 0]).scale.z = 1;
-      const p = new THREE.Group(); p.position.set(x * 0.16, 0.14, z * 0.16); hv.add(p); rot.push(p);
-      cy(p, 0.012, 0.012, 0.04, "#16161c", 0, -0.02, 0, undefined, 8); bx(p, 0.17, 0.004, 0.02, "#2a2a32", 0, 0, 0); bx(p, 0.02, 0.004, 0.17, "#2a2a32", 0, 0.0, 0).visible = false;
-      sp(p, 0.085, toonMat("#cfe9ff", { transparent: true }), 0, -0.001, 0, [1, 0.01, 1], 12).visible = false;
-      bx(hv, 0.01, 0.1, 0.01, "#454a58", x * 0.07, 0.05, z * 0.07).position.y = 0.0;
+    const g = new THREE.Group(); const col = c ?? "#f2f5fa"; const hv = new THREE.Group(); hv.position.y = 0.2; g.add(hv);
+    const props: THREE.Group[] = []; const leds: THREE.Mesh[] = [];
+    const frame = "#2e3342", pod = "#ff7a1a";
+    // body shell + top cap
+    sp(hv, 0.1, col, 0, 0.0, 0, [1, 0.5, 1.15], 24);
+    sp(hv, 0.06, "#2e3342", 0, 0.034, -0.005, [1, 0.5, 1.1], 16);
+    // X frame: two crossing arms
+    for (const a of [PI / 4, -PI / 4]) bx(hv, 0.036, 0.024, 0.62, frame, 0, 0.0, 0, [0, a, 0]);
+    // motor pods, props, LEDs at the four arm ends
+    const R = 0.2193;
+    for (const [sx, sz] of [[-1, 1], [1, 1], [-1, -1], [1, -1]]) {
+      const x = sx * R, z = sz * R; const front = sz > 0;
+      cy(hv, 0.045, 0.04, 0.06, pod, x, 0.03, z, undefined, 16); cy(hv, 0.03, 0.03, 0.012, "#16161c", x, 0.07, z, undefined, 12);
+      const p = new THREE.Group(); p.position.set(x, 0.085, z); hv.add(p); props.push(p);
+      bx(p, 0.3, 0.008, 0.038, front ? "#ffffff" : "#ffe14a", 0, 0, 0);
+      cy(p, 0.012, 0.012, 0.016, "#16161c", 0, 0.008, 0, undefined, 8);
+      const disc = new THREE.Mesh(new THREE.CylinderGeometry(0.17, 0.17, 0.004, 24), new THREE.MeshBasicMaterial({ color: "#cfe9ff", transparent: true, opacity: 0.22, depthWrite: false }));
+      disc.position.set(x, 0.087, z); hv.add(disc);
+      leds.push(sp(hv, 0.018, glowMat(front ? "#38ff6a" : "#ff2a2a", 2.6), x, -0.012, z + sz * 0.03, undefined, 10));
     }
-    return { g, tick: (t) => { hv.position.y = 0.12 + Math.sin(t * 2.2) * 0.02; hv.rotation.z = Math.sin(t * 1.3) * 0.05; rot.forEach((p, i) => (p.rotation.y = t * 40 * (i % 2 ? 1 : -1))); } };
+    // landing skids
+    for (const s of [-1, 1]) { bx(hv, 0.02, 0.1, 0.02, frame, s * 0.07, -0.06, 0.0); bx(hv, 0.026, 0.02, 0.26, frame, s * 0.07, -0.115, 0.0); }
+    // camera gimbal underneath
+    cy(hv, 0.012, 0.012, 0.04, frame, 0, -0.04, 0.07, undefined, 8);
+    const gim = new THREE.Group(); gim.position.set(0, -0.085, 0.075); hv.add(gim);
+    sp(gim, 0.04, "#16161c", 0, 0, 0, undefined, 16); cy(gim, 0.022, 0.022, 0.03, "#2e3342", 0, 0, 0.035, [PI / 2, 0, 0], 14);
+    sp(gim, 0.017, glowMat("#38b8ff", 2.2), 0, 0, 0.052, [1, 1, 0.5], 10);
+    return { g, tick: (t) => {
+      hv.position.y = 0.2 + Math.sin(t * 2.4) * 0.025; hv.rotation.z = Math.sin(t * 1.3) * 0.07; hv.rotation.x = 0.22 + Math.sin(t * 1.7 + 1) * 0.05; hv.rotation.y = 0.5 + Math.sin(t * 0.9) * 0.15;
+      props.forEach((p, i) => (p.rotation.y = t * 22 * (i === 0 || i === 3 ? 1 : -1))); gim.rotation.x = Math.sin(t * 1.5) * 0.15;
+      leds.forEach((l, i) => l.scale.setScalar(0.85 + 0.35 * Math.max(0, Math.sin(t * 6 + i * 1.5))));
+    } };
   },
   satellite: (c) => {
     const g = new THREE.Group(); const s = new THREE.Group(); s.position.y = 0.6; s.rotation.set(0.3, 0.5, 0); g.add(s);
@@ -666,15 +718,33 @@ const B: Record<ThingName, Builder> = {
     return { g, tick: (t) => { a.scale.setScalar(1 + 0.4 * Math.sin(t * 30)); b.position.set(Math.sin(t * 23) * 0.03, 0.01 + Math.abs(Math.sin(t * 17)) * 0.04, Math.cos(t * 19) * 0.03); } };
   },
   fire: (c) => {
-    const g = new THREE.Group(); const outer = c ?? "#ff3d00";
-    for (const a of [0.5, -0.5]) cy(g, 0.04, 0.04, 0.45, "#6b4328", 0, 0.04, 0, [PI / 2, a, 0.0], 8).rotation.set(0, a, PI / 2);
-    const fl: THREE.Mesh[] = [];
-    const prof = (h: number): [number, number][] => [[0, 0], [0.16, 0.08 * h], [0.17, 0.25 * h], [0.1, 0.55 * h], [0.0, h]];
-    fl.push(lathe(g, prof(0.55), glowMat(outer, 1.7), 0, 0.07, 0, undefined, 12));
-    fl.push(lathe(g, prof(0.42).map((p) => [p[0] * 0.7, p[1]] as [number, number]), glowMat("#ffb21f", 1.9), 0.0, 0.07, 0.02, undefined, 12));
-    fl.push(lathe(g, prof(0.28).map((p) => [p[0] * 0.45, p[1]] as [number, number]), glowMat("#fff0a0", 2.2), 0.0, 0.07, 0.04, undefined, 12));
-    for (const s of [-1, 1]) fl.push(lathe(g, prof(0.3), glowMat(outer, 1.6), s * 0.14, 0.07, 0, undefined, 10));
-    return { g, tick: (t) => fl.forEach((m, i) => { const k = 1 + 0.14 * Math.sin(t * (13 + i * 2.3) + i * 1.7) + 0.07 * Math.sin(t * 29 + i); m.scale.set(1 - (k - 1) * 0.5, k, 1 - (k - 1) * 0.5); m.rotation.z = Math.sin(t * 9 + i) * 0.05; }) };
+    const g = new THREE.Group(); const outer = c ?? "#ff2e0a";
+    // stones ring
+    const sr = seeded(3); for (let i = 0; i < 8; i++) { const a = (i / 8) * PI * 2 + 0.2; sp(g, 0.06, i % 2 ? "#8a93a0" : "#a7afbb", Math.cos(a) * 0.3, 0.035, Math.sin(a) * 0.3, [1.2, 0.7, 1 + sr() * 0.3], 10); }
+    // log pile
+    const log = (a: number, y: number, len: number, col: string) => {
+      const k = new THREE.Group(); k.rotation.y = a; k.position.y = y; g.add(k);
+      cy(k, 0.05, 0.05, len, col, 0, 0, 0, [0, 0, PI / 2], 12);
+      for (const s of [-1, 1]) cy(k, 0.04, 0.04, 0.012, "#e6b57a", s * len / 2, 0, 0, [0, 0, PI / 2], 12);
+    };
+    log(0.55, 0.05, 0.46, "#7a4a28"); log(-0.55, 0.05, 0.46, "#6b3f22"); log(1.57, 0.14, 0.4, "#85522c");
+    // flames: teardrop lathes in three layers, each on a pivot at its base
+    const drop = (h: number, w: number): [number, number][] => { const o: [number, number][] = [[0, 0]]; for (let i = 1; i <= 14; i++) { const s = i / 14; o.push([w * Math.pow(Math.sin(PI * Math.pow(s, 0.72)), 0.85), s * h]); } o[14][0] = 0.002; return o; };
+    type F = { piv: THREE.Group; ph: number; sp: number; amp: number };
+    const fl: F[] = [];
+    const defs: [number, number, number, number][] = [[0, 0, 0.78, 0.2], [-0.14, 0.02, 0.5, 0.14], [0.15, -0.02, 0.56, 0.15], [-0.07, 0.07, 0.34, 0.1], [0.08, 0.08, 0.3, 0.1]];
+    defs.forEach(([x, z, h, w], i) => {
+      const layers: [string, number, number, number, boolean][] = [[outer, 1, 1, 0, true], ["#ff9a1a", 0.8, 0.72, 0.035, false], ["#ffe45c", 0.5, 0.45, 0.07, false]];
+      const piv = new THREE.Group(); piv.position.set(x, 0.12, z); g.add(piv);
+      layers.forEach(([colr, hk, wk, zo, ol], li) => put(piv, new THREE.LatheGeometry(drop(h * hk, w * wk).map((p) => new THREE.Vector2(p[0], p[1])), 20), dbl(glowMat(colr, li === 0 ? 1.7 : li === 1 ? 1.9 : 2.2)), 0, 0, zo, [0, 0, 0], [1, 1, 0.55 + li * 0.1], ol));
+      fl.push({ piv, ph: i * 1.9, sp: 9 + i * 2.1, amp: 0.1 + (i === 0 ? 0 : 0.04) });
+    });
+    // embers
+    const em: THREE.Mesh[] = []; for (let i = 0; i < 7; i++) em.push(sp(g, 0.014, glowMat("#ffc23a", 2.6), 0, 0.5, 0, undefined, 6));
+    return { g, tick: (t) => {
+      fl.forEach((f, i) => { const k = 1 + 0.13 * Math.sin(t * f.sp + f.ph) + 0.06 * Math.sin(t * 2.3 * f.sp + f.ph * 2); f.piv.scale.set(1 - (k - 1) * 0.6, k, 1 - (k - 1) * 0.6); f.piv.rotation.z = Math.sin(t * (4 + i) + f.ph) * f.amp; f.piv.rotation.x = Math.cos(t * (3 + i * 0.7) + f.ph) * 0.05; });
+      em.forEach((e, i) => { const k = (t * 0.7 + i / 7) % 1; e.position.set(Math.sin(k * 7 + i * 2.3) * 0.14, 0.45 + k * 0.6, Math.cos(k * 5 + i) * 0.06); e.scale.setScalar(Math.max(0.05, 1 - k)); });
+    } };
   },
   camera: (c) => {
     const g = new THREE.Group(); const col = c ?? "#26262e";
@@ -696,7 +766,7 @@ function arrow(col: string, dir: 1 | -1): Built {
 
 // rough sizes help pick outline widths before the object exists
 const OLW = (n: ThingName): number => {
-  const big: Partial<Record<ThingName, number>> = { house: 0.14, factory: 0.3, stadium: 0.9, plane: 0.25, yacht: 0.18, bus: 0.07, truck: 0.07, car: 0.04, sportscar: 0.04, rocket: 0.04, hoop: 0.03, shovel: 0.012, pickaxe: 0.012, tv: 0.012, satellite: 0.02, robot: 0.018, arrowup: 0.025, arrowdown: 0.025, chart: 0.012, fire: 0.012, crate: 0.012, box: 0.01 };
+  const big: Partial<Record<ThingName, number>> = { house: 0.14, factory: 0.3, stadium: 0.9, plane: 0.25, yacht: 0.18, bus: 0.07, truck: 0.07, car: 0.04, sportscar: 0.04, rocket: 0.04, hoop: 0.03, shovel: 0.012, pickaxe: 0.012, tv: 0.012, satellite: 0.02, robot: 0.018, arrowup: 0.025, arrowdown: 0.025, chart: 0.012, fire: 0.01, pizza: 0.006, drone: 0.006, crate: 0.012, box: 0.01 };
   return big[n] ?? 0.0035;
 };
 
