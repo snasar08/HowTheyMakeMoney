@@ -1,0 +1,326 @@
+{
+  "id": "129",
+  "slug": "famous-vinicius",
+  "company": "Vinícius Júnior",
+  "format": "famous",
+  "visual_style": "lowpoly",
+  "hook_style": "surprise",
+  "title_style": "number",
+  "theme": "bold_bright",
+  "status": "needs_fix",
+  "score": 92,
+  "title": "The £38 Million 16-Year-Old",
+  "name_card": "Vinícius Júnior",
+  "name_sub": "soccer player",
+  "description": "Real Madrid paid 38 million pounds for a 16-year-old. Then he had to wait until he turned 18.\n\nSources:\n- Wikipedia: Vinícius Júnior: https://en.wikipedia.org/wiki/Vin%C3%ADcius_J%C3%BAnior\n\nFrom Wikipedia (Vinícius Júnior): born 12 July 2000 in São Gonçalo; his career began in 2006 when his father took him to Flamengo's branch in São Gonçalo; he made his senior debut for Flamengo in 2017 at age 16; on 23 May 2017 Real Madrid signed a contract to acquire him, effective after his 18th birthday on 12 July 2018 (18 is the minimum age for an international transfer), in a £38 million deal, a national record for a player under 18; he scored the only goal of the 2022 Champions League final against Liverpool; he scored in the 2024 final and became the youngest player to score in two Champions League finals, beating Lionel Messi's record; he was named The Best FIFA Men's Player for 2024. Not financial advice.\n\n#shorts #vinicius #realmadrid #howtheymakemoney",
+  "tags": [
+    "vinicius junior",
+    "real madrid",
+    "soccer",
+    "famous",
+    "shorts"
+  ],
+  "images": {},
+  "hud_label": "HIS RISE",
+  "loop": "So next time you see a teen play, remember:",
+  "cta": "Vinícius or Mbappé? Comment your pick.",
+  "cta_question": "Vinícius or Mbappé?",
+  "hero": {
+    "skin": "4f3324",
+    "hair": "short",
+    "hair_color": "15110e",
+    "beard": "none",
+    "outfit": "kit",
+    "shirt": "f4f4f4",
+    "pants": "f4f4f4",
+    "trim": "d4af37",
+    "socks": "f4f4f4",
+    "shoes": "111111",
+    "height": 1.0,
+    "number": 7
+  },
+  "scenes": [
+    {
+      "narration": "Real Madrid paid 38 million pounds for a 16-year-old.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "pitch",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "ball"
+        ],
+        "stat": "£38 MILLION",
+        "stat_sub": "for a 16-year-old",
+        "hero": {
+          "skin": "4f3324",
+          "hair": "short",
+          "hair_color": "15110e",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "f4f4f4",
+          "pants": "f4f4f4",
+          "trim": "d4af37",
+          "socks": "f4f4f4",
+          "shoes": "111111",
+          "height": 1.0,
+          "number": 7
+        }
+      },
+      "toon": [
+        {
+          "place": "pitch",
+          "beat": "money",
+          "mood": "shock",
+          "brand": {
+            "name": "Real Madrid",
+            "bg": "#ffffff",
+            "fg": "#00529f",
+            "icon": "crown"
+          },
+          "card": {
+            "text": "£38M",
+            "kind": "screen",
+            "sub": "AGE 16"
+          },
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "But he couldn't move until he turned 18.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "boxes"
+        ],
+        "stat": "WAIT",
+        "stat_sub": "no transfers before 18",
+        "hero": {
+          "skin": "4f3324",
+          "hair": "short",
+          "hair_color": "15110e",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "f4f4f4",
+          "pants": "f4f4f4",
+          "trim": "d4af37",
+          "socks": "f4f4f4",
+          "shoes": "111111",
+          "height": 1.0,
+          "number": 7
+        }
+      },
+      "toon": [
+        {
+          "place": "street",
+          "beat": "clock",
+          "mood": "nervous",
+          "props": [
+            "boxes"
+          ],
+          "card": {
+            "text": "18",
+            "kind": "flip",
+            "sub": "AGE TO MOVE"
+          }
+        }
+      ]
+    },
+    {
+      "narration": "He started at just six, at a Flamengo school.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "pitch",
+        "action": "run",
+        "crowd": 0,
+        "props": [
+          "ball"
+        ],
+        "stat": "AGE 6",
+        "stat_sub": "Flamengo school, São Gonçalo",
+        "hero": {
+          "skin": "4f3324",
+          "hair": "short",
+          "hair_color": "15110e",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "f4f4f4",
+          "pants": "f4f4f4",
+          "trim": "d4af37",
+          "socks": "f4f4f4",
+          "shoes": "111111",
+          "height": 1.0,
+          "number": 7
+        }
+      },
+      "toon": [
+        {
+          "place": "pitch",
+          "beat": "sign",
+          "mood": "happy",
+          "action": "run",
+          "props": [
+            "ball"
+          ],
+          "card": {
+            "text": "AGE 6",
+            "kind": "flip",
+            "sub": "SÃO GONÇALO"
+          }
+        }
+      ]
+    },
+    {
+      "narration": "Then, at 21, his goal won a Champions League final.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "pitch",
+        "action": "cheer",
+        "crowd": 300,
+        "props": [
+          "ball",
+          "trophy"
+        ],
+        "stat": "1-0",
+        "stat_sub": "2022 Champions League final",
+        "hero": {
+          "skin": "4f3324",
+          "hair": "short",
+          "hair_color": "15110e",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "f4f4f4",
+          "pants": "f4f4f4",
+          "trim": "d4af37",
+          "socks": "f4f4f4",
+          "shoes": "111111",
+          "height": 1.0,
+          "number": 7
+        }
+      },
+      "toon": [
+        {
+          "place": "pitch",
+          "beat": "walk",
+          "mood": "laugh",
+          "action": "cheer",
+          "props": [
+            "trophy"
+          ],
+          "crowd": 40,
+          "view": "low"
+        }
+      ]
+    },
+    {
+      "narration": "Two years later, he scored in another. Younger than Messi.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "pitch",
+        "action": "cheer",
+        "crowd": 300,
+        "props": [
+          "ball"
+        ],
+        "stat": "2 FINALS",
+        "stat_sub": "youngest to score in both",
+        "hero": {
+          "skin": "4f3324",
+          "hair": "short",
+          "hair_color": "15110e",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "f4f4f4",
+          "pants": "f4f4f4",
+          "trim": "d4af37",
+          "socks": "f4f4f4",
+          "shoes": "111111",
+          "height": 1.0,
+          "number": 7
+        }
+      },
+      "toon": [
+        {
+          "place": "pitch",
+          "beat": "queue",
+          "mood": "proud",
+          "action": "cheer",
+          "crowd": 40,
+          "props": [
+            "ball"
+          ]
+        },
+        {
+          "place": "pitch",
+          "beat": "sign",
+          "mood": "scheme",
+          "card": {
+            "text": "YOUNGEST",
+            "kind": "white",
+            "sub": "BEAT MESSI'S RECORD"
+          },
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "In 2024, FIFA named him the world's best player.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "stage",
+        "action": "cheer",
+        "crowd": 200,
+        "props": [
+          "trophy"
+        ],
+        "stat": "THE BEST",
+        "stat_sub": "FIFA men's player, 2024",
+        "hud": "£38M",
+        "hero": {
+          "skin": "4f3324",
+          "hair": "short",
+          "hair_color": "15110e",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "f4f4f4",
+          "pants": "f4f4f4",
+          "trim": "d4af37",
+          "socks": "f4f4f4",
+          "shoes": "111111",
+          "height": 1.0,
+          "number": 7
+        }
+      },
+      "toon": [
+        {
+          "place": "stage",
+          "beat": "sign",
+          "mood": "proud",
+          "things": [
+            "trophy",
+            "crown"
+          ],
+          "card": {
+            "text": "2024",
+            "kind": "sign",
+            "sub": "THE BEST"
+          },
+          "crowd": 30
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Vinícius Júnior",
+      "url": "https://en.wikipedia.org/wiki/Vin%C3%ADcius_J%C3%BAnior"
+    }
+  ],
+  "needs_fix": [
+    "clarity 89% < 90%: 'couldn't' at 3.5s, 'Flamengo' at 6.5s, 'FIFA' at 14.3s, 'Vinícius' at 16.3s, 'Mbappé? Comment' at 16.9s, 'teen' at 19.6s"
+  ]
+}
