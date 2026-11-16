@@ -1357,6 +1357,10 @@ class Renderer:
         first beat the number counts up from 0; a billion+ number lands with a coin burst."""
         if not v.get("stat") or b % 2 or tb < 0:
             return
+        # Nov 15: in story Shorts the "STEP 2" card stayed up the whole step and covered the drawn signs (DPOY);
+        # like the reference channel, it now lands at the step's start and is gone after ~1.6 s
+        if self.s.get("format") == "story" and (b > 0 or tb > 1.6):
+            return
         d = ImageDraw.Draw(frame)
         pop = ease_out_back(min(1.0, tb / 0.25))
         f = fit_font(v["stat"], BLACK, SAFE_X1 - SAFE_X0, 210, 90)

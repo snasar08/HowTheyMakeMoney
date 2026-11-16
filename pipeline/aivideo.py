@@ -59,6 +59,29 @@ def _pingpong(frames: list[Path], k: int) -> Path:
     return frames[k] if k < n else frames[2 * n - 2 - k]
 
 
+# Nov 15 (Sam: the Nike Short was "very very slow"; his reference cuts every ~1.3 s): one AI clip often covers
+# 3-6 s of narration, so every VIEW_N frames the clip is reframed (wide / push-in / left / right-low), which
+# reads as a new camera angle. (zoom, x centre 0-1, y centre 0-1)
+VIEW_N = 40
+VIEWS = [(1.0, 0.5, 0.5), (1.32, 0.5, 0.42), (1.22, 0.34, 0.5), (1.4, 0.64, 0.58), (1.15, 0.5, 0.62)]
+
+
+def _view(src: Path, v: int) -> bytes:
+    z, cx, cy = VIEWS[v % len(VIEWS)]
+    if z == 1.0:
+        return src.read_bytes()
+    import io
+
+    from PIL import Image
+    im = Image.open(src)
+    w, h = im.width / z, im.height / z
+    x0 = min(max(0.0, cx * im.width - w / 2), im.width - w)
+    y0 = min(max(0.0, cy * im.height - h / 2), im.height - h)
+    b = io.BytesIO()
+    im.resize((im.width, im.height), Image.LANCZOS, box=(x0, y0, x0 + w, y0 + h)).save(b, "JPEG", quality=92)
+    return b.getvalue()
+
+
 def override(script: dict, plan: dict, plates_dir: Path) -> int:
     clips = script.get("aivideo") or []
     if not clips:
@@ -69,7 +92,7 @@ def override(script: dict, plan: dict, plates_dir: Path) -> int:
     offset = [0] * len(clips)
     out = plates_dir / plan["slug"]
     out.mkdir(parents=True, exist_ok=True)
-    line, outro, n = 0, 0, 0
+    line, outro, n, view = 0, 0, 0, 0
     for sc in plan["scenes"]:
         if str(sc.get("line", "")).startswith("(outro)"):
             ci = outro % len(clips)
@@ -78,10 +101,13 @@ def override(script: dict, plan: dict, plates_dir: Path) -> int:
             ci = by_line.get(line, min(len(clips) - 1, line * len(clips) // max(1, len(by_line) or 1)))
             line += 1
         fr = frames[ci]
+        v0 = view
         for j in range(sc["n"]):
             src = _pingpong(fr, offset[ci] + j)
-            (out / f"{sc['si']}_{sc['frLo'] + j}.jpg").write_bytes(src.read_bytes())
+            view = v0 + j // VIEW_N
+            (out / f"{sc['si']}_{sc['frLo'] + j}.jpg").write_bytes(_view(src, view))
             n += 1
+        view += 1           # the next line opens on a different framing too
         offset[ci] += sc["n"]
     print(f"[aivideo] {plan['slug']}: {n} frames from {len(clips)} clips", flush=True)
     return n
