@@ -141,7 +141,7 @@ const Inner: React.FC = () => {
     const m = new THREE.Matrix4(), q = new THREE.Quaternion(), sc = new THREE.Vector3(1, 1, 1);
     const c0 = spotOf(b, s.chars[s.subject ?? 0]?.at);
     for (let i = 0; i < 60; i++) {
-      const ph = (i * 0.618) % 1, y = 4 - ((tl * 2.2 + ph * 4) % 4), x = c0[0] + ((i * 7.31) % 5) - 2.5, z = c0[2] + ((i * 3.17) % 4) - 1.2;
+      const ph = (i * 0.618) % 1, y = 4 - ((tl * 2.2 + ph * 4) % 4), x = c0[0] + ((i * 7.31) % 5) - 2.5, z = c0[2] - 0.4 - ((i * 3.17) % 3.2);   // behind the subject: never through the lens (Nov 16 frame check)
       q.setFromEuler(new THREE.Euler(tl * 3 + i, i, tl * 2)); m.compose(new THREE.Vector3(x, y, z), q, sc); b.coinGeo.setMatrixAt(i, m);
     }
     b.coinGeo.instanceMatrix.needsUpdate = true;
