@@ -100,7 +100,7 @@ def use_engine_for(texts):
     return _engine_now or VOICE_ENGINE
 
 
-QWEN_SPEED = float(os.environ.get("QWEN_SPEED", "1.1"))
+QWEN_SPEED = float(os.environ.get("QWEN_SPEED", "1.0"))   # 1.0 for the Umbriel clone (1.1 made some lines rushed, Nov 15)
 # Nov 14, Sam: the Gemini voice is "a tad too deep" -> raised one semitone, same speed and timing
 GEMINI_PITCH_ST = float(os.environ.get("GEMINI_PITCH_ST", "1.5"))   # Sam picked +1.5 over +1
 
