@@ -105,7 +105,7 @@ QWEN_SPEED = float(os.environ.get("QWEN_SPEED", "1.0"))   # 1.0 for the Umbriel 
 GEMINI_PITCH_ST = float(os.environ.get("GEMINI_PITCH_ST", "1.5"))   # Sam picked +1.5 over +1
 # Nov 15 (Sam: the Nike story was "very very slow"; his reference channel reads ~1.3x faster than we did):
 # the Gemini read is sped up with atempo (same pitch/voice). render.py sets it per Short from VOICE_SPEED_FOR.
-VOICE_SPEED_FOR = {"story": float(os.environ.get("VOICE_SPEED_STORY", "1.15")),
+VOICE_SPEED_FOR = {"story": float(os.environ.get("VOICE_SPEED_STORY", "1.25")),
                    "default": float(os.environ.get("VOICE_SPEED", "1.1"))}
 VOICE_SPEED_NOW = 1.0
 # Nov 15: the Umbriel clone sat at 142 Hz vs real Umbriel +1.5 at 136 Hz -> lower it 0.75 st to match
