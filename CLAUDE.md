@@ -272,6 +272,33 @@ research more ... maintain quality too")**. Goal: build a buffer, capped so cred
    - GOOD scenes: the picture matches the sentence (rides = drive on the road, money = cash stacks, years = clock, an app = phone, a company named or founded = its logo or sign with real brand colours, fans = crowd/queue, an athlete = court or pitch); every sentence looks different from the one before; the hero looks like the real person (hair, beard, skin, glasses) and athletes wear their real number in team colours; moods follow the line (shock at a big number, sad at a setback, laugh at a win).
    - BAD scenes: a random street during a money or time line; the same beat twice in a row; more than 2 clocks or 1 phone per Short; money in space; an empty place with nothing happening; a famous person with the wrong hair or skin; made-up facts; a logo or sign the line does not mention.
    - Brand names and code-drawn logos (`brand` {name, bg, fg, icon}) are allowed on screen in toon Shorts; never copied logo art, crests or real jersey designs.
+   **How to WRITE a story Short (Nov 16, Sam: "learn his script writing"; from a frame-by-frame + word-timed study of
+   @afterhourtheories "Jensen Huang's Affair Rocks NVIDIA", 2.5 min, 55K likes; learn the moves, never copy his lines):**
+   - Second person, present tense, the whole way: "You are X, the [role], and you are the king of [world]." Identity +
+     status in the first 2 sentences, no setup before it.
+   - One METAPHOR frames the whole story and pays off in the last line (his: everyone digs for gold, you sell the
+     shovels ... you were digging your own grave). Plant it in line 2-3, call back to it at the end.
+   - Short sentences: median 10 words, about 2 in 3 under 12 words; each sentence is ONE picture (the scenes are drawn
+     from it). Speech runs about 2.8 words/s with almost no pauses.
+   - Turn words do the pacing; every few lines starts with one: "Then," "But" "Then, one day," "Suddenly," "Now,"
+     "Yet" "And if that wasn't enough," and the big pivot "But every king has a weakness."
+   - Lists of names get one beat each ("Google, Meta, OpenAI, Microsoft, Elon Musk: they're all ..."), each drawn
+     as its own character.
+   - Human quirks + concrete details right after the crown (same jacket everywhere, a logo tattoo when the stock hit
+     $100, employees driving supercars): sourced facts, specific and visual.
+   - Arc: crown (now) -> quirks -> humble start (a real early job) -> near-death (almost bankrupt) -> a bet everyone
+     mocked (with its year) -> the moment it paid off (with its year) -> total dominance ("whoever wins pays you") ->
+     a callback quip to the humble start ("not bad for a dishwasher") -> a surprising real connection -> the turn
+     ("but every king has a weakness") -> the fall, each line worse than the last, ending on one hard number -> the
+     final line closes the metaphor.
+   - Numbers are concrete and dated ($5 trillion, $100, 2006, 2012, 33 years, $200 billion), every one sourced.
+   - One real, sourced quote at most, mid-way, from the person (no made-up quotes).
+   - History Shorts may use this full arc at 45-60 s; plan Shorts use the same voice and turn words for their chain.
+   - Scenery for this style (each sentence one picture): every named company/person as its own character (a hard hat
+     or shirt with the name), dates as big signs or flip cards, money as screens that change, years as a spinning
+     clock, news as a headline, the ending as a strong image (a grave, an empty throne). Use `toon` dict `card`
+     {text, kind: sign|screen|paper|flip|tomb|white, sub, to, at} for the text pictures and `view: "face"` for
+     punchlines (a face filling the frame).
    **Story/plan Shorts post automatically (Sam approved, Nov 15 2026: "Post automatically").** Story `history` and
    `plan` scripts the routines write go in as `status: "ready"` like any other script once they pass every check
    (sources opened, lint 0 errors, story score 80+, one `toon` dict per sentence); no separate approval needed.
