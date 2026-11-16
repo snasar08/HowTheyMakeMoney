@@ -429,6 +429,10 @@ def ah_shots(plan: dict) -> list:
         parts = (1 if sc["n"] <= 105 else 2) if "cam" not in shot else 1
         order = {"ms": ["ms", "face"], "face": ["face", "ms"], "cu": ["cu", "ws"], "low": ["low", "face"],
                  "ws": ["ws", "face"], "wide": ["wide", "face"]}.get(shot["view"], [shot["view"], "face"])
+        if pose in ("jump", "dunk", "shoot") and "cam" not in shot:
+            # Nov 16 Wemby frame check: a close-up on a jump put his head out of the top of the frame for ~2 s;
+            # the whole body (and the air above it) must be in shot when he leaves the ground
+            shot["view"] = "wide"; order = ["wide", "ws"]
         for j in range(parts):
             a0, a1 = sc["a"] + round(j * sc["n"] / parts), sc["a"] + round((j + 1) * sc["n"] / parts)
             sub = {**shot, "a": a0, "n": a1 - a0, "view": order[j % len(order)]}
