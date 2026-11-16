@@ -1,0 +1,107 @@
+{
+  "https://en.wikipedia.org/wiki/Vin%C3%ADcius_J%C3%BAnior": {
+    "file": "pages/90a972676c4a.txt",
+    "fetched_at": "2026-11-16T16:02:16.448343+00:00",
+    "ok": true,
+    "chars": 87261,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Vin%C3%ADcius_J%C3%BAnior",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Jude_Bellingham": {
+    "file": "pages/ec8d47adebe4.txt",
+    "fetched_at": "2026-11-16T16:02:17.283219+00:00",
+    "ok": true,
+    "chars": 90809,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Jude_Bellingham",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Shaquille_O%27Neal": {
+    "file": "pages/753d1693ff2f.txt",
+    "fetched_at": "2026-11-16T16:02:17.730080+00:00",
+    "ok": true,
+    "chars": 186273,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Shaquille_O%27Neal",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Kobe_Bryant": {
+    "file": "pages/30343e07a9ab.txt",
+    "fetched_at": "2026-11-16T16:02:18.281728+00:00",
+    "ok": true,
+    "chars": 190637,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Kobe_Bryant",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/BodyArmor_SuperDrink": {
+    "file": "pages/f6fe5eb02129.txt",
+    "fetched_at": "2026-11-16T16:02:18.821742+00:00",
+    "ok": false,
+    "error": "HTTP 404"
+  },
+  "https://en.wikipedia.org/wiki/Cooper_Flagg": {
+    "file": "pages/1ddec993fcb2.txt",
+    "fetched_at": "2026-11-16T16:02:19.499044+00:00",
+    "ok": true,
+    "chars": 55456,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Cooper_Flagg",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Ferruccio_Lamborghini": {
+    "file": "pages/13b9611e5945.txt",
+    "fetched_at": "2026-11-16T16:02:19.900400+00:00",
+    "ok": true,
+    "chars": 26875,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Ferruccio_Lamborghini",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Lamborghini": {
+    "file": "pages/0d457a6900ac.txt",
+    "fetched_at": "2026-11-16T16:02:20.249993+00:00",
+    "ok": true,
+    "chars": 64406,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Lamborghini",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Walt_Disney": {
+    "file": "pages/4047ad9d0db0.txt",
+    "fetched_at": "2026-11-16T16:02:20.660454+00:00",
+    "ok": true,
+    "chars": 110158,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Walt_Disney",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Laugh-O-Gram_Studio": {
+    "file": "pages/8f81006cffb4.txt",
+    "fetched_at": "2026-11-16T16:02:21.097140+00:00",
+    "ok": true,
+    "chars": 32592,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Laugh-O-Gram_Studio",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Oswald_the_Lucky_Rabbit": {
+    "file": "pages/9e690637c5ff.txt",
+    "fetched_at": "2026-11-16T16:02:21.530682+00:00",
+    "ok": true,
+    "chars": 54316,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Oswald_the_Lucky_Rabbit",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Cristiano_Ronaldo": {
+    "file": "pages/2f9f50524993.txt",
+    "fetched_at": "2026-11-16T16:02:21.895025+00:00",
+    "ok": true,
+    "chars": 228420,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Cristiano_Ronaldo",
+    "content_type": "text/html; charset=UTF-8"
+  }
+}
