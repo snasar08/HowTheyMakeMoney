@@ -494,6 +494,39 @@ const hatOn = (p: Pen, o: Outfit, hp: P2[], H: Blob, cx: number, hc: number, lig
         p.ell(px, py, 32 * u, 0.06 * HH, shade(col, 0.8), ow, 0, 180, deg);
       }
     }
+  } else if (o.hat === "crown") {           // afterhour study: a gold crown sitting on the head
+    const yb = crown + 0.2 * HH, ht = 0.34 * HH, wb = 0.34 * W, gold = "#f2c230", n = 5;
+    const pts: P2[] = [...sag(yb, wb).reverse()];
+    for (let i = 0; i <= 2 * n; i++) { const x = cx + wb * (2 * (i / (2 * n)) - 1); pts.push([x, yb - (i % 2 ? 0.55 : 1) * ht]); }
+    const body = R(pts);
+    p.shadedFill(body, gold, mul(gold, [0.8, 0.7, 0.45]), light, wb, 0.35);
+    p.poly(body, null, ow);
+    for (let i = 0; i <= n; i++) { const [tx, ty] = R([[cx + wb * (2 * (i / n) - 1), yb - ht]])[0]; p.ell(tx, ty, 5 * u, 5 * u, i % 2 ? "#e2453c" : "#3fb6e8", 1.8 * u); }
+  } else if (o.hat === "hardhat") {         // afterhour study: company diggers, the company name on the hat
+    const yb = crown + 0.36 * HH, col = o.cap ?? "#f2c230", ht = 0.5 * HH, wb = 0.5 * W;
+    const dome: P2[] = [];
+    for (let i = 0; i <= 16; i++) { const t = Math.PI * (i / 16); dome.push([cx - Math.cos(t) * wb * 0.92, yb - Math.sin(t) * ht]); }
+    const body = R(dome);
+    p.shadedFill(body, col, mul(col, SH_FELT), light, wb, 0.35);
+    p.poly(body, null, ow);
+    const [bx, by] = R([[cx, yb + 1 * u]])[0];
+    p.ell(bx, by, wb * 1.08, 0.06 * HH, shade(col, 0.85), ow, 0, 360, (a * 180) / Math.PI);   // brim
+    if (o.chest) {                                                                              // label band with the name
+      const [lx, ly] = R([[cx, yb - 0.38 * ht]])[0], g = p.g, txt = o.chest.toUpperCase();
+      g.save(); g.translate(lx, ly); g.rotate(a);
+      const fs = Math.min(0.2 * HH, (1.5 * wb) / Math.max(3, txt.length) * 1.7);
+      g.fillStyle = "#ffffff"; g.strokeStyle = "#1a1a1a"; g.lineWidth = 2 * u;
+      g.fillRect(-wb * 0.8, -fs * 0.7, wb * 1.6, fs * 1.4); g.strokeRect(-wb * 0.8, -fs * 0.7, wb * 1.6, fs * 1.4);
+      g.fillStyle = "#1a1a1a"; g.font = `900 ${fs}px Arial, sans-serif`; g.textAlign = "center"; g.textBaseline = "middle"; g.fillText(txt, 0, fs * 0.05);
+      g.restore();
+    }
+  } else if (o.hat === "fedora") {          // afterhour study: smugglers
+    const yb = crown + 0.3 * HH, ht = 0.42 * HH, wb = 0.36 * W, col = o.cap ?? "#2b2522";
+    const body = R([...sag(yb, wb).reverse(), [cx - wb * 0.85, yb - ht], [cx, yb - ht * 0.8], [cx + wb * 0.85, yb - ht]]);
+    p.shadedFill(body, col, mul(col, SH_FELT), light, wb, 0.4);
+    p.poly(body, null, ow);
+    const [bx, by] = R([[cx, yb + 1 * u]])[0];
+    p.ell(bx, by, 0.62 * W, 0.07 * HH, shade(col, 0.8), ow, 0, 360, (a * 180) / Math.PI);
   } else if (o.hat === "tophat") {
     const yb = crown + 0.22 * HH, ht = 0.8 * HH, wb = 0.31 * W, wt = 0.33 * W, col = "#2e2a36";
     const body = R([...sag(yb, wb).reverse(), [cx - wt, yb - ht], [cx + wt, yb - ht]]);

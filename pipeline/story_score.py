@@ -46,6 +46,11 @@ def score(s: dict) -> tuple[int, dict]:
     spoken = text + " " + s.get("loop", "") + " " + s.get("cta", "Comment which brand we should do next, and subscribe.")
     sec = len(spoken.split()) / WPS + 0.4 * len(scenes)  # 15: about 25 s
     length = 15 if 20 <= sec <= 28 else 10 if sec <= 32 else 5 if sec <= 38 else 0
+    if s.get("format") == "story":   # Nov 16: story Shorts run a length test (25-35 s short / 45-62 s long, read 1.2x
+        # faster) and history is dated by nature (the reference Short lands ~8 dated numbers), so judge them on that
+        sec = round(sec / 1.2, 1)
+        length = 15 if 22 <= sec <= 35 or 42 <= sec <= 62 else 8 if sec <= 70 else 0
+        load = 15 if nums <= 10 else 8 if nums <= 13 else 0
 
     end = (5 if s.get("loop") else 0) + (5 if s.get("cta_question") else 0)  # 10: loop + this-or-that
     parts = {"hook": hook, "turn": turn, "numbers": load, "pace": pace, "length": length, "ending": end}

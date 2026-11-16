@@ -518,6 +518,7 @@ export const stage = (id: number, t: number, _b: BridgeState, cam: CamInfo): Sta
   const so: SideOpts = { mode: moving ? "march" : "stand", phase, expr, blink: lidAt(t, 500), stride: h.v / 1.6 };
   const view = moving ? viewOf(cam, h.x, h.z, h.d[0], h.d[1]) : { side: false, mirror: false };
   const beat = beatOf(id), r: [number, number] = [-L.d[1], L.d[0]];
+  const HO = sc.who ? ({ ...HERO, ...sc.who } as Outfit) : HERO, hkey = sc.who ? "who" + JSON.stringify(sc.who) : "hero";
   BR = sc.brand ?? PLAN.brand;
   const bkey = BR ? `${BR.name}|${BR.bg}|${BR.fg}|${BR.icon ?? ""}` : "-";
   const base = moving ? { x: L.p[0] + L.d[0] * h.v * 2.4, z: L.p[2] + L.d[1] * h.v * 2.4 } : { x: h.x, z: h.z };
@@ -531,7 +532,7 @@ export const stage = (id: number, t: number, _b: BridgeState, cam: CamInfo): Sta
     const away = { x: h.x - cam.pos.x, z: h.z - cam.pos.z }, al = Math.hypot(away.x, away.z) || 1;
     const hx = h.x + (away.x / al) * 0.3 + cam.right.x * right * 0.42, hz = h.z + (away.z / al) * 0.3 + cam.right.z * right * 0.42;
     const bump = 0.03 * Math.abs(Math.sin(tl * 11));
-    out.places.push(person(cam, { i: 500, o: HERO, okey: "hero" }, hx, h.y + 0.98 + bump, hz, { side: false, mirror: false },
+    out.places.push(person(cam, { i: 500, o: HO, okey: hkey }, hx, h.y + 0.98 + bump, hz, { side: false, mirror: false },
       { mode: "sit", expr: id % 2 ? "grin" : "laugh", blink: lidAt(t, 500), look: right * 0.6 }, {}, 0.8));
     // a line about buses (or Nike's sneaker bus) drives THAT vehicle, not the car (Sam: we should see the sneaker bus)
     const veh = (sc.things ?? []).find((n) => THINGS[n]?.move === "drive");
@@ -547,9 +548,18 @@ export const stage = (id: number, t: number, _b: BridgeState, cam: CamInfo): Sta
       out.fx.push({ key: `fx|speed|${k}`, cw: 256, ch: 64, x: h.x - L.d[0] * back, y: h.y + 0.5 + k * 0.35, z: h.z - L.d[1] * back, w: 1.3, h: 0.16,
         draw: (pen) => pen.stroke([[20, 32], [236, 32]], 18, "#ffffff"), soft: true });
     }
-  } else {
-    out.places.push(person(cam, { i: 500, o: HERO, okey: "hero" }, h.x, h.y, h.z, view, fo, so));
+  } else if (!sc.hide) {
+    out.places.push(person(cam, { i: 500, o: HO, okey: hkey }, h.x, h.y, h.z, view, fo, so));
     blob(out, h.x, h.y, h.z);
+  }
+  if (sc.card) {
+    // afterhour study: a text card in the world (date sign, balance screen, headline, ticker, R.I.P...), flips to .to at .at s
+    const C = sc.card, txt = C.to && tl >= (C.at ?? 1e9) ? C.to : C.text, k = pop(0.05), full = C.pos === "full" || sc.hide;
+    const ck = `card|${C.kind ?? "sign"}|${txt}|${C.sub ?? ""}|${C.bg ?? ""}|${s.light}`;
+    const cw = 900, ch = C.kind === "paper" || C.kind === "tomb" ? 1100 : 600, W2 = full ? 1.6 : 1.35;   // fits the 9:16 frame from the ms/cu views (2.5 m cropped the text)
+    const x = full ? h.x : h.x + r[0] * 1.2 + h.d[0] * -1.2, z = full ? h.z : h.z + r[1] * 1.2 + h.d[1] * -1.2;
+    if (k > 0) out.fx.push({ key: ck, cw, ch, x, y: h.y + (full ? 1.45 : 1.0 * k + 1.15), z, w: W2 * k, h: (W2 * ch / cw) * k,
+      draw: tintDraw((pen) => drawCard(pen, C, txt, cw, ch), cw, ch) });
   }
   if (beat === "clock") {
     // a giant clock beside the hero, hands racing: time adding up
@@ -613,7 +623,8 @@ export const stage = (id: number, t: number, _b: BridgeState, cam: CamInfo): Sta
     const cheer = !qline && (act === "cheer" || i % 3 === 0);
     const ce = (["smile", "grin", "laugh", "shock", "smile_closed", "relief_open"] as Expr[])[i % 6];
     const cfo: FrontOpts = { mode: "stand", expr: ce, blink: lidAt(t, i), ...(cheer ? { wave: q(Math.sin(tl * 8 + i), 4) } : {}) };
-    out.places.push(person(cam, { i, o: CROWD_O[i % CROWD_O.length], okey: "c" + (i % CROWD_O.length) }, x, L.p[1], z, { side: false, mirror: false }, cfo, {}));
+    const CO = (sc.crowdO as unknown as Outfit[] | undefined) ?? CROWD_O;
+    out.places.push(person(cam, { i, o: CO[i % CO.length], okey: (sc.crowdO ? "x" + JSON.stringify(CO[i % CO.length]) : "c") + (i % CO.length) }, x, L.p[1], z, { side: false, mirror: false }, cfo, {}));
     blob(out, x, L.p[1], z);
   }
   // ---- props: flat ink drawings standing in the 3D world (like the reference's signs and effects) ----
@@ -677,6 +688,46 @@ function drawRays(p: Pen, a0: number, col: string) {
     g.fillStyle = i % 2 ? "rgba(255,243,176,0.85)" : "rgba(255,255,255,0.7)"; g.fill();
   }
   void col;
+}
+/** afterhour study cards: sign (dark board, neon text), screen (monitor), paper (newspaper), tomb (gravestone),
+ * flip (red/white calendar card), white (plain white card) */
+function drawCard(p: Pen, C: { kind?: string; bg?: string; fg?: string; sub?: string }, txt: string, cw: number, ch: number) {
+  const g = p.g, kind = C.kind ?? "sign";
+  const fit = (t: string, maxW: number, size: number, weight = 900, font = '"Arial Black", Arial, sans-serif') => {
+    g.font = `${weight} ${size}px ${font}`; const w = g.measureText(t).width; if (w > maxW) { size = (size * maxW) / w; g.font = `${weight} ${size}px ${font}`; } return size; };
+  g.textAlign = "center"; g.textBaseline = "middle";
+  if (kind === "sign") {
+    p.poly(rr(10, 10, cw - 10, ch - 10, 26), C.bg ?? "#101418", 14);
+    const lines = txt.split("\n"), sz = (ch - 120) / Math.max(1, lines.length);
+    lines.forEach((ln, i) => { fit(ln, cw - 90, sz * 0.8); g.fillStyle = C.fg ?? "#b8f12a"; g.fillText(ln, cw / 2, 60 + sz * (i + 0.5)); });
+  } else if (kind === "screen") {
+    p.poly(rr(10, 10, cw - 10, ch - 10, 40), "#d9d6cf", 14);
+    p.poly(rr(60, 60, cw - 60, ch - 60, 18), C.bg ?? "#0d1a12", 10);
+    if (C.sub) { fit(C.sub, cw - 200, 50, 800, "Arial, sans-serif"); g.fillStyle = "#cfe8d8"; g.fillText(C.sub, cw / 2, 130); }
+    fit(txt, cw - 180, 150); g.fillStyle = C.fg ?? "#3ee07a"; g.fillText(txt, cw / 2, ch / 2 + 30);
+  } else if (kind === "paper") {
+    p.poly(rr(10, 10, cw - 10, ch - 10, 8), "#f4f2ec", 12);
+    fit(C.sub ?? "The Daily News", cw - 120, 70, 700, 'Georgia, "Times New Roman", serif'); g.fillStyle = "#222"; g.fillText(C.sub ?? "The Daily News", cw / 2, 90);
+    p.stroke([[60, 150], [cw - 60, 150]], 5, "#222");
+    const lines = txt.split("\n"); lines.forEach((ln, i) => { fit(ln, cw - 120, 80, 800, 'Georgia, serif'); g.fillStyle = "#1a1a1a"; g.fillText(ln, cw / 2, 220 + i * 90); });
+    p.poly(rr(90, 420, 470, 700, 6), "#a9c6cc", 6);
+    for (let i = 0; i < 14; i++) p.stroke([[500, 430 + i * 22], [cw - 90, 430 + i * 22]], 6, "#9a9a9a");
+    for (let i = 0; i < 12; i++) p.stroke([[90, 740 + i * 26], [cw - 90, 740 + i * 26]], 6, "#9a9a9a");
+  } else if (kind === "tomb") {
+    const pts: [number, number][] = [[120, ch - 20], [120, 300]]; for (let i = 0; i <= 16; i++) { const t = Math.PI * (1 - i / 16); pts.push([cw / 2 + Math.cos(t) * (cw / 2 - 120), 300 - Math.sin(t) * 260]); } pts.push([cw - 120, ch - 20]);
+    p.poly(pts, "#b9b2d6", 14);
+    const lines = txt.split("\n"); lines.forEach((ln, i) => { fit(ln, cw - 320, i ? 70 : 120); g.fillStyle = "#3b3560"; g.fillText(ln, cw / 2, 520 + i * 130); });
+  } else if (kind === "flip") {
+    p.poly(rr(10, 10, cw - 10, ch - 10, 20), "#ffffff", 14);
+    p.poly(rr(10, 10, cw - 10, 170, 20), C.bg ?? "#e0343a", 0);
+    if (C.sub) { fit(C.sub, cw - 120, 90); g.fillStyle = "#ffffff"; g.fillText(C.sub, cw / 2, 95); }
+    fit(txt, cw - 100, 300); g.fillStyle = C.fg ?? "#151515"; g.fillText(txt, cw / 2, 380);
+  } else {
+    p.poly(rr(10, 10, cw - 10, ch - 10, 20), C.bg ?? "#ffffff", 14);
+    if (C.sub) { fit(C.sub, cw - 120, 60, 800, "Arial, sans-serif"); g.fillStyle = "#555"; g.fillText(C.sub, cw / 2, 110); }
+    const lines = txt.split("\n"), sz = 200 / Math.max(1, lines.length);
+    lines.forEach((ln, i) => { fit(ln, cw - 100, sz); g.fillStyle = C.fg ?? "#e0343a"; g.fillText(ln, cw / 2, ch / 2 + 30 + (i - (lines.length - 1) / 2) * sz * 1.1); });
+  }
 }
 /** a simple code-drawn logo: rounded badge in the brand colour, an icon, the name underneath */
 function drawLogo(p: Pen, B: { name: string; bg: string; fg: string; icon?: string }) {

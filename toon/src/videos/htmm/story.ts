@@ -6,7 +6,10 @@ export const FPS = 30;
 import { getInputProps } from "remotion";
 import { PLACES } from "./places";
 /** HTMM: one entry per script scene. a = first composition frame, n = frames, frLo = the scene-local frame number of a. */
-export type PlanScene = { a: number; n: number; frLo: number; light: "day" | "golden" | "night"; set: string; action: string; crowd: number; props: string[]; beat?: string; brand?: Brand; place?: string; mood?: string; loc?: number; line?: string; things?: string[] };
+export type PlanScene = { a: number; n: number; frLo: number; light: "day" | "golden" | "night"; set: string; action: string; crowd: number; props: string[]; beat?: string; brand?: Brand; place?: string; mood?: string; loc?: number; line?: string; things?: string[];
+  /** afterhour study (Nov 15): one fixed view per shot, a per-shot main character / crowd, a text card in the world */
+  view?: string; cuts?: number; who?: Record<string, unknown>; crowdO?: Record<string, unknown>[]; hide?: boolean;
+  card?: { text: string; sub?: string; to?: string; at?: number; kind?: string; bg?: string; fg?: string; pos?: string } };
 export type Brand = { name: string; bg: string; fg: string; icon?: string };
 export const PLAN: { scenes: PlanScene[]; hero: Record<string, unknown>; seed: number; brand?: Brand } = (getInputProps() as { plan?: any }).plan ?? {
   scenes: [{ a: 0, n: 90, frLo: 0, light: "day", set: "city", action: "idle", crowd: 12, props: [] }],
@@ -391,6 +394,8 @@ const FR: Record<string, (id: number, f0: number) => (f: number) => Shot> = {
   ws: (id, f0) => (f) => dolly(off(id, f, 10.5, 2.6, 3.0), off(id, f, 0, 0, 1.2), pushK(f, f0, 0.002), { fov: 42 }),
   ms: (id, f0) => (f) => dolly(off(id, f, 5.6, 0.7, 1.5), off(id, f, 0, 0, 1.4), pushK(f, f0, 0.0025), { fov: 38 }),
   cu: (id, f0) => (f) => dolly(off(id, f, 3.3, -0.6, 1.5), off(id, f, 0, 0, 1.4), pushK(f, f0, 0.002), { fov: 34, roll: 0.03 }),
+  // Nov 15 (reference studied frame by frame): his punchlines land on a face that fills the frame, slow push-in
+  face: (id, f0) => (f) => dolly(off(id, f, 1.75, 0.25, 1.62), off(id, f, 0, 0, 1.52), pushK(f, f0, 0.004), { fov: 36 }),
   low: (id, f0) => (f) => dolly(off(id, f, 4.4, -1.0, 0.5), off(id, f, 0, 0, 1.25), pushK(f, f0, 0.0025), { fov: 42, roll: -0.04 }),
   // beats
   side: (id, f0) => (f) => dolly(off(id, f, 0.25, 12.5, 1.6), off(id, f, 0.1, 0, 1.25), pushK(f, f0, 0.002), { fov: 40 }),
@@ -401,15 +406,16 @@ const FR: Record<string, (id: number, f0: number) => (f: number) => Shot> = {
 };
 const BSEQ: Record<string, string[]> = { logo: ["two", "wide2", "two"], sign: ["wide2", "two", "wide2"], drive: ["side", "chase", "side"], clock: ["wide2", "two", "wide2"], phone: ["two", "wide2", "two"],
   money: ["two", "low", "wide2"], queue: ["line", "ws", "ms"] };
-const SEQ = [["ms", "low", "cu"], ["ms", "cu", "ws"], ["low", "ms", "cu"], ["ms", "ws", "low"]];   // open close: a tiny hero in an empty wide read as nothing
-const CINF: Record<string, number> = { ws: 0, ms: 11, cu: 14, low: 9 };
+const SEQ = [["ms", "face", "cu"], ["ms", "cu", "face"], ["low", "ms", "face"], ["ms", "ws", "face"]];   // open close: a tiny hero in an empty wide read as nothing
+const CINF: Record<string, number> = { ws: 0, ms: 11, cu: 14, low: 9, face: 16 };
 SHOTS.length = 0;
 PLAN.scenes.forEach((sc, i) => SHOTS.push({ id: i + 1, a: sc.a, b: sc.a + sc.n, light: (sc.place && PLACES[sc.place]?.light) || sc.light, crowd: "none", tau: (t) => t }));
 for (const k of Object.keys(CAMS)) delete CAMS[+k];
 for (const k of Object.keys(XFADE)) delete XFADE[+k];
 DOF.length = 0; KICKS.length = 0; FOREGROUND.length = 0;
 SHOTS.forEach((s) => {
-  const n = s.b - s.a, seq = BSEQ[beatOf(s.id)] ?? ((sceneOf(s.id)?.things ?? []).length ? ["two", "wide2", "two"] : SEQ[(s.id - 1) % SEQ.length]), m = Math.min(6, Math.max(1, Math.ceil(n / 40)))  /* Nov 15: ~1.3 s per view, like the reference channel */, keys: Key[] = [];
+  const sv = sceneOf(s.id);
+  const n = s.b - s.a, seq = sv?.view ? [sv.view] : BSEQ[beatOf(s.id)] ?? ((sceneOf(s.id)?.things ?? []).length ? ["two", "wide2", "two"] : SEQ[(s.id - 1) % SEQ.length]), m = sv?.cuts ?? (sv?.view ? 1 : Math.min(6, Math.max(1, Math.ceil(n / 40))))  /* Nov 15: ~1.3 s per view, like the reference channel */, keys: Key[] = [];
   for (let j = 0; j < m; j++) {
     const f0 = s.a + Math.round((j * n) / m), name = seq[j % seq.length];
     keys.push({ f: f0, cut: true, dur: 26, s: FR[name](s.id, f0) });   // hard cuts: a new view every ~1.7 s (Sam)

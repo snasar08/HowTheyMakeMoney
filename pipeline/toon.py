@@ -262,9 +262,12 @@ def make_plan(script: dict, recorded: dict | None = None) -> dict:
             out.append({"si": i, "a": a, "n": m, "frLo": lo + cuts[j], "light": lt[k], "set": v.get("set", "city"),
                         "action": d.get("action", v.get("action", "idle")), "crowd": int(d.get("crowd", v.get("crowd", 0)) or 0),
                         "props": d.get("props") or [], "beat": d.get("beat", "walk"), "mood": d.get("mood", "happy"),
-                        **({"place": place} if place in ("court", "pitch", "stage", "office", "servers", "space", "garage") else {}),
+                        **({"place": place} if place in PLACE_NAMES else {}),
                         **({"loc": {"bridge": 0, "street": 1, "quay": 2}[place]} if place in ("bridge", "street", "quay") else {}),
                         **({"brand": _brand(d["brand"])} if d.get("brand") else {"brand": _brand(v["brand"])} if v.get("brand") else {}),
+                        # Nov 15 (afterhour style): a text card in the scene (date sign, money screen that flips, headline,
+                        # tombstone...), a fixed view ("face" close-up etc.), a different character for this line, hide the hero
+                        **{k: d[k] for k in ("card", "view", "who", "hide", "crowdO") if d.get(k)},
                         "things": (prev_things := things_for(ss[j], given, prev_things)), "line": ss[j][:80]})
             a += m
         if tail:
@@ -292,6 +295,9 @@ def make_plan(script: dict, recorded: dict | None = None) -> dict:
             "seed": int(re.sub(r"\D", "", str(script.get("id", "1"))) or 1)}
 
 
+PLACE_NAMES = ("court", "pitch", "stage", "office", "servers", "space", "garage", "throne", "mine", "stall")
+
+
 def plates(plan: dict, frames_dir: Path, plates_dir: Path) -> int:
     """Shard folders from toon/scripts/frames.mjs (<frames_dir>/<shard>/ with range.json + the JPEGs in frame order)
     -> <plates_dir>/<slug>/<scene>_<frame>.jpg, the names render.py looks for (LP_PLATES)."""
@@ -313,6 +319,51 @@ def plates(plan: dict, frames_dir: Path, plates_dir: Path) -> int:
     return n
 
 
+def whips(plan: dict, plates_dir: Path) -> int:
+    """Nov 15, Sam's reference (@afterhourtheories, every frame studied): it never hard-cuts; the camera whips to the
+    next view in 6-10 frames of motion blur. Every hard cut in the finished plates gets that whip: 3 frames before
+    the cut smear out sideways, 3 after smear in, alternating left/right. WHIPS=off skips it."""
+    import os
+
+    import numpy as np
+    from PIL import Image
+    if os.environ.get("WHIPS", "on") == "off":
+        return 0
+    d = plates_dir / plan["slug"]
+    seq = [d / f"{sc['si']}_{sc['frLo'] + j}.jpg" for sc in plan["scenes"] for j in range(sc["n"])]
+    seq = [q for q in seq if q.exists()]
+    small = [np.asarray(Image.open(q).convert("L").resize((54, 96)), np.float32) for q in seq]
+    dif = [0.0] + [float(np.abs(small[i] - small[i - 1]).mean()) for i in range(1, len(seq))] + [0.0]
+    # a real cut is ONE big jump with calm frames either side (a logo popping in changes over several frames)
+    cuts = [i for i in range(1, len(seq)) if dif[i] > 22 and dif[i - 1] < dif[i] / 3 and dif[i + 1] < dif[i] / 3]
+    cuts = [c for k, c in enumerate(cuts) if k == 0 or c - cuts[k - 1] > 8]
+
+    def shift(a, dx: int):                       # slide sideways, repeating the edge column (no wrap-around seam)
+        if dx == 0:
+            return a
+        p = np.pad(a, ((0, 0), (abs(dx), abs(dx)), (0, 0)), mode="edge")
+        return p[:, abs(dx) - dx: abs(dx) - dx + a.shape[1]]
+
+    def smear(q: Path, w: int, slide: int, sign: int):
+        a = shift(np.asarray(Image.open(q).convert("RGB"), np.float32), sign * slide)
+        acc, k = np.zeros_like(a), 0
+        for dx in range(0, w + 1, max(2, w // 10)):
+            acc += shift(a, sign * dx)
+            k += 1
+        Image.fromarray((acc / k).clip(0, 255).astype(np.uint8)).save(q, quality=92)
+
+    W = Image.open(seq[0]).width if seq else 720
+    for k, c in enumerate(cuts):
+        sign = 1 if k % 2 == 0 else -1
+        for off, w, slide in ((-3, int(W * .05), int(W * .03)), (-2, int(W * .12), int(W * .08)), (-1, int(W * .22), int(W * .15))):
+            if c + off >= 0:
+                smear(seq[c + off], w, slide, -sign)
+        for off, w, slide in ((0, int(W * .22), int(W * .15)), (1, int(W * .12), int(W * .07)), (2, int(W * .05), int(W * .025))):
+            if c + off < len(seq):
+                smear(seq[c + off], w, slide, sign)
+    return len(cuts)
+
+
 if __name__ == "__main__":
     cmd = sys.argv[1]
     if cmd == "plan":
@@ -328,3 +379,4 @@ if __name__ == "__main__":
         sc = aivideo.script_for(plan["slug"])
         if sc and sc.get("aivideo"):
             aivideo.override(sc, plan, Path(sys.argv[4]))
+        print(f"[toon] whip transitions on {whips(plan, Path(sys.argv[4]))} cuts", flush=True)

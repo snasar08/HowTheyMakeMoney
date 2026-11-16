@@ -39,7 +39,7 @@ CACHE = Path(os.environ.get("HTMM_CACHE", ROOT / ".cache"))
 SAFE_X0, SAFE_X1 = 70, 950          # keep clear of Shorts' right-side buttons
 CAPTION_Y = 1330                     # above the Shorts title/channel overlay
 ZONE_TOP = CAPTION_Y - 100           # caption dead zone: charts/figures stay above this line
-SUBLINE = os.environ.get("SUBLINE", "on") != "off"   # top running sentence on animated Shorts (Nov 15)
+SUBLINE = os.environ.get("SUBLINE", "off") == "on"   # top sentence: OFF (Nov 15: that was YouTube's own CC on the reference, not the creator's)
 SUBLINE_Y = 150
 SCENE_GAP = 0.06                     # seconds of silence between scenes
 END_HOLD = 0.7
@@ -1183,7 +1183,7 @@ class Renderer:
                 self._hud(frame, scenes, si, t)
                 self._name(frame, gt)
                 self._cta(frame, si, t)
-                if sc.shots[max(0, bisect.bisect_right(sc.beats, t) - 1)][0] not in ("3d", "alt", "chartzoom", "wordcard"):
+                if self.s.get("format") != "story" and sc.shots[max(0, bisect.bisect_right(sc.beats, t) - 1)][0] not in ("3d", "alt", "chartzoom", "wordcard"):
                     self._icon(frame, chunks[si], t, lp)  # never on top of a chart or a word card
                 self._caption(frame, chunks[si], t)  # after the CTA dim, so captions stay bright
                 if lp and SUBLINE:
@@ -1359,7 +1359,7 @@ class Renderer:
             return
         # Nov 15: in story Shorts the "STEP 2" card stayed up the whole step and covered the drawn signs (DPOY);
         # like the reference channel, it now lands at the step's start and is gone after ~1.6 s
-        if self.s.get("format") == "story" and (b > 0 or tb > 1.6):
+        if self.s.get("format") == "story":   # the reference has no step/stat cards at all: the scene shows it
             return
         d = ImageDraw.Draw(frame)
         pop = ease_out_back(min(1.0, tb / 0.25))
@@ -1378,6 +1378,8 @@ class Renderer:
 
     def _caption_lp(self, frame, words, t):
         """Low-poly captions: one lowercase yellow word at a time, thick black outline."""
+        if self.s.get("format") == "story" and os.environ.get("CAPTION_STYLE", "phrase") == "phrase":
+            return self._caption_phrase(frame, words, t)
         cur = None
         for w in words:
             if w.start - 0.03 <= t <= w.end + 0.08:
@@ -1390,6 +1392,28 @@ class Renderer:
         f = font(BLACK, max(20, int(f.size * (0.85 + 0.15 * k))))
         draw_centered(ImageDraw.Draw(frame), (SAFE_X0 + SAFE_X1) / 2, CAPTION_Y - f.size // 2, txt, f,
                       (255, 221, 0), 12, (0, 0, 0))
+
+    def _caption_phrase(self, frame, words, t):
+        """Story Shorts (Nov 15, Sam's reference @afterhourtheories, every frame studied): small white bold phrases of
+        1-4 words in the lower middle, thin black outline, no highlight colour, no pop; a phrase breaks at punctuation."""
+        groups, cur = [], []
+        for w in words:
+            cur.append(w)
+            if len(cur) >= 4 or re.search(r"[.,!?;:]$", w.text) or (len(cur) >= 3 and len(" ".join(x.text for x in cur)) > 18):
+                groups.append(cur)
+                cur = []
+        if cur:
+            groups.append(cur)
+        show = None
+        for i, g in enumerate(groups):
+            end = groups[i + 1][0].start - 0.02 if i + 1 < len(groups) else g[-1].end + 0.25
+            if g[0].start - 0.03 <= t <= max(end, g[-1].end + 0.05):
+                show = g
+        if not show:
+            return
+        txt = " ".join(w.text for w in show)
+        f = fit_font(txt, BOLD, SAFE_X1 - SAFE_X0 - 120, 62, 38)
+        draw_centered(ImageDraw.Draw(frame), (SAFE_X0 + SAFE_X1) / 2, 1265 - f.size // 2, txt, f, (255, 255, 255), 6, (0, 0, 0))
 
     def _subline(self, frame, chunks, t, gt):
         """Nov 15, Sam's reference channel (@afterhourtheories, "mimic his style"): the sentence being said runs
