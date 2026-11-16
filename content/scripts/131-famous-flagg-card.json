@@ -1,0 +1,234 @@
+{
+  "id": "131",
+  "slug": "famous-flagg-card",
+  "company": "Cooper Flagg",
+  "format": "famous",
+  "visual_style": "lowpoly",
+  "hook_style": "surprise",
+  "title_style": "number",
+  "theme": "bold_bright",
+  "status": "ready",
+  "score": 90,
+  "title": "His Card Sold for $8.04 Million. He's 19.",
+  "name_card": "Cooper Flagg",
+  "name_sub": "basketball player",
+  "description": "One Cooper Flagg card sold for 8.04 million dollars. He's only 19.\n\nSources:\n- Wikipedia: Cooper Flagg: https://en.wikipedia.org/wiki/Cooper_Flagg\n\nFrom Wikipedia (Cooper Flagg): born in Newport, Maine; his mother Kelly played college basketball at the University of Maine and was team captain as a senior; the Dallas Mavericks picked him first overall in the 2025 NBA draft; on April 3, 2026 he scored a career-high 51 points, becoming the youngest player in NBA history to score 50+ (19 years and 103 days) and the first teenager to do it; he won the 2025-26 Rookie of the Year award; on September 25, 2026, his NBA Rookie Debut Patch Autograph card sold for $8.04 million through Fanatics Collect (ESPN, cited on the page). Not investment advice. Not financial advice.\n\n#shorts #cooperflagg #nba #howtheymakemoney",
+  "tags": [
+    "cooper flagg",
+    "mavericks",
+    "nba",
+    "trading cards",
+    "famous",
+    "shorts"
+  ],
+  "images": {},
+  "hud_label": "ONE CARD",
+  "loop": "So next time you open a card pack, remember:",
+  "cta": "Flagg or Wemby? Comment your pick.",
+  "cta_question": "Flagg or Wemby?",
+  "hero": {
+    "skin": "f0c8a8",
+    "hair": "short",
+    "hair_color": "6b4a2e",
+    "beard": "none",
+    "outfit": "kit",
+    "shirt": "00538c",
+    "pants": "00538c",
+    "trim": "f4f4f4",
+    "socks": "f4f4f4",
+    "shoes": "f4f4f4",
+    "height": 1.2,
+    "number": 32
+  },
+  "scenes": [
+    {
+      "narration": "One Cooper Flagg card sold for 8.04 million dollars.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "cash"
+        ],
+        "stat": "$8.04 MILLION",
+        "stat_sub": "one trading card"
+      },
+      "toon": [
+        {
+          "place": "court",
+          "beat": "money",
+          "mood": "shock",
+          "card": {
+            "text": "$8.04M",
+            "kind": "screen",
+            "sub": "ONE CARD"
+          },
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "He's only 19. It's from his first NBA game.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "ball"
+        ],
+        "stat": "AGE 19",
+        "stat_sub": "rookie debut card"
+      },
+      "toon": [
+        {
+          "place": "court",
+          "beat": "walk",
+          "mood": "laugh",
+          "props": [
+            "ball"
+          ]
+        },
+        {
+          "place": "court",
+          "beat": "sign",
+          "mood": "proud",
+          "card": {
+            "text": "ROOKIE DEBUT",
+            "kind": "paper",
+            "sub": "PATCH + AUTOGRAPH"
+          },
+          "crowd": 20
+        }
+      ]
+    },
+    {
+      "narration": "But he's just a kid from Newport, Maine.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "run",
+        "crowd": 0,
+        "props": [
+          "ball"
+        ],
+        "stat": "NEWPORT, MAINE",
+        "stat_sub": "where he grew up"
+      },
+      "toon": [
+        {
+          "place": "street",
+          "beat": "sign",
+          "mood": "calm",
+          "card": {
+            "text": "NEWPORT",
+            "kind": "sign",
+            "sub": "MAINE"
+          }
+        }
+      ]
+    },
+    {
+      "narration": "At 18, he went first in the NBA draft.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "stage",
+        "action": "cheer",
+        "crowd": 100,
+        "props": [
+          "ball"
+        ],
+        "stat": "PICK 1",
+        "stat_sub": "2025 NBA draft"
+      },
+      "toon": [
+        {
+          "place": "stage",
+          "beat": "logo",
+          "mood": "excited",
+          "action": "cheer",
+          "crowd": 30,
+          "brand": {
+            "name": "Mavericks",
+            "bg": "#00538c",
+            "fg": "#ffffff",
+            "icon": "star"
+          }
+        }
+      ]
+    },
+    {
+      "narration": "Then, at 19, he scored 51 points. No teenager had ever done that.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "cheer",
+        "crowd": 300,
+        "props": [
+          "ball"
+        ],
+        "stat": "51 POINTS",
+        "stat_sub": "youngest ever to score 50+"
+      },
+      "toon": [
+        {
+          "place": "court",
+          "beat": "sign",
+          "mood": "stern",
+          "action": "run",
+          "props": [
+            "ball"
+          ],
+          "card": {
+            "text": "51",
+            "kind": "flip",
+            "sub": "POINTS"
+          }
+        },
+        {
+          "place": "court",
+          "beat": "queue",
+          "mood": "laugh",
+          "action": "cheer",
+          "crowd": 40,
+          "view": "low"
+        }
+      ]
+    },
+    {
+      "narration": "And yes, he won Rookie of the Year.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "cheer",
+        "crowd": 300,
+        "props": [
+          "trophy"
+        ],
+        "stat": "ROOKIE OF THE YEAR",
+        "stat_sub": "2025-26",
+        "hud": "$8.04M"
+      },
+      "toon": [
+        {
+          "place": "court",
+          "beat": "walk",
+          "mood": "proud",
+          "things": [
+            "trophy",
+            "crown"
+          ],
+          "crowd": 30,
+          "view": "face"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Cooper Flagg",
+      "url": "https://en.wikipedia.org/wiki/Cooper_Flagg"
+    }
+  ]
+}
