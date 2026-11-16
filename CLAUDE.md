@@ -14,6 +14,16 @@ and **free beyond his Higgsfield Pro plan** — never add a paid service or ask 
   never double-post. GitHub starts scheduled runs late (Oct 26–28: 5.5–6.5 h). Check Buffer:
   push branch `slot-audit` (report) / `slot-fix` (delete extras, scripts back to ready). Minutes: the repo is public, so standard GitHub runners are free and unlimited (6 h max per job, ~20 jobs at once); a run takes ~5–8 minutes.
 - `pipeline/render.py` draws every frame with Pillow and pipes to ffmpeg (1080x1920, 30 fps).
+- **Afterhour look (Nov 16, LIVE for every `format: "story"` Short; Sam: "mimic this exact style", ref @afterhourtheories
+  Jensen Short studied frame by frame):** real-3D cel-shaded world in `toon/src/videos/afterhour/` (composition
+  `AhShort`): `char.ts` white round-headed characters (10 expressions, poses, crown/hardhat+name/fedora/cap/hair,
+  shades, chest text/number), `sets.ts` 21 dense sets (throne office diner lab stall field ring track graveyard
+  boardroom street beach court pitch stage space garage classroom bathroom mansion showroom), `things3d.ts` 60 3D
+  objects, `cards.ts` text pictures. `pipeline/toon.ah_shots` turns the normal per-sentence plan into shots (a new
+  view every ~1.3 s: medium/face/close/low), `frames.mjs` renders AhShort when the plan carries `ah`. Story Shorts get
+  it by default; any script can opt in with `"look": "afterhour"` or out with `"look": "toon"`; env TOON_LOOK=toon
+  switches it off everywhere. Captions are his small white phrases; whip-pan blur on cuts. Test: toon-test branch.
+  Local stills: `node scripts/stills.mjs AhShort <out> <frames> 0.5 <props.json>` (test modes: {"ah":{"test":"chars"|"sets"|"things"}}).
 - **Toon look (Nov 15, LIVE since the Nov 15 evening merge; repo variable LOOK=blender switches back):** Sam: the Mr omi reference Shorts look "infinitely better";
   build off his MIT repo (mromidev/claude-animated-shorts). `toon/` = Remotion + three.js project: `src/videos/bridge`
   his source as-is, `src/videos/htmm` ours (plan-driven via input props `{plan}`: one shot per script scene, our hero
