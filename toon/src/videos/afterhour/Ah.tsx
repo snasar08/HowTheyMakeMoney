@@ -1,8 +1,8 @@
 // Afterhour look (Nov 16): real-3D cel-shaded characters in dense sets, one shot list driven by inputProps.ah.
 // Post: lens blur (thin-lens DOF, from htmm) -> bloom (emissive) -> neutral tone mapping -> vignette.
-import React, { useMemo } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import * as THREE from "three";
-import { AbsoluteFill, getInputProps, useCurrentFrame } from "remotion";
+import { AbsoluteFill, continueRender, delayRender, getInputProps, useCurrentFrame } from "remotion";
 import { ThreeCanvas } from "@remotion/three";
 import { useThree, useFrame } from "@react-three/fiber";
 import { BlendFunction, BloomEffect, ToneMappingEffect, ToneMappingMode, VignetteEffect, EffectComposer as CoreComposer, RenderPass, EffectPass } from "postprocessing";
@@ -10,7 +10,8 @@ import { LensBlur } from "../htmm/lensblur";
 import { makeChar, Char, Look, Pose, Expr } from "./char";
 import { makeSet, SetName } from "./sets";
 import { drawCard, CardSpec } from "./cards";
-import { makeThing, Thing } from "./things3d";
+import { makeThing, isCodeThing, Thing } from "./things3d";
+import { hasModel, loadModels, MODEL_INDEX } from "./models";
 
 type V3 = [number, number, number];
 export type AhChar = { look: Look; at?: string | V3; rot?: number; pose?: Pose; expr?: Expr; exprAt?: [number, Expr][] };
@@ -49,10 +50,18 @@ const shotsFor = (p: AhProps): AhShot[] => {
       things: ALL.slice(k * 12, k * 12 + 12).map((nm, i) => ({ name: nm, at: [((i % 4) - 1.5) * 1.15, 0.2 + (2 - Math.floor(i / 4)) * 0.85, 1.5] as V3, fit: 0.7 }) as AhThing) });
     return out;
   }
+  if (p.test === "models") {   // contact sheets of the CC0 library: 12 per shot; props {"ah":{"test":"models","from":0}} starts at that index
+    const ALL = Object.keys(MODEL_INDEX).sort(), from = (p as AhProps & { from?: number }).from ?? 0, out: AhShot[] = [];
+    for (let k = 0; k < 6 && from + k * 12 < ALL.length; k++) out.push({ a: k * 30, n: 30, set: "office", cam: { from: [0, 1.6, 7.2], to: [0, 1.6, 7.0], look: [0, 1.25, 0] }, chars: [],
+      things: ALL.slice(from + k * 12, from + k * 12 + 12).map((nm, i) => ({ name: nm, at: [((i % 4) - 1.5) * 1.15, 0.2 + (2 - Math.floor(i / 4)) * 0.85, 1.5] as V3, fit: 0.7 }) as AhThing) });
+    return out;
+  }
   if (p.test === "sets") return SETS.map((s, k) => ({ a: k * 30, n: 30, set: s, cam: { from: [0, 1.6, 7], to: [0, 1.6, 6.6], look: [0, 1.2, 0] }, chars: [{ look: JEN, at: [0, 0, 0], pose: "stand", expr: "smile" }] }));
   return p.shots ?? DEMO;
 };
 const SHOTS_ = shotsFor(PROPS());
+/** every library model the shot list needs: loaded up front so rendering stays deterministic */
+const MODEL_NAMES = [...new Set(SHOTS_.flatMap((s) => (s.things ?? []).map((t) => t.name)).filter((n) => !isCodeThing(n) && hasModel(n)))];
 export const AH_FRAMES = Math.max(1, ...SHOTS_.map((s) => s.a + s.n));
 
 /** camera presets relative to the subject's head (x, z of the subject; head at y ~1.55 standing, ~1.15 sitting) */
@@ -86,7 +95,7 @@ const build = (k: number, s: AhShot): Built => {
     const p = spotOf(set, c.at ?? [1.2, 1.6, -0.6]); m.position.set(p[0], p[1], p[2] + 0.02); m.rotation.y = c.rot ?? 0; root.add(m);
   });
   const things: Thing[] = (s.things ?? []).map((t) => {
-    const th = makeThing(t.name as never, { color: t.color, text: t.text }), p = spotOf(set, t.at ?? [1.0, 0, 0.4]);
+    const th = makeThing(t.name, { color: t.color, text: t.text }), p = spotOf(set, t.at ?? [1.0, 0, 0.4]);
     const fit = (t as AhThing & { fit?: number }).fit;
     const sc = fit ? fit / Math.max(0.05, th.size) : (t.scale ?? 1);
     th.root.position.set(p[0], p[1], p[2]); th.root.rotation.y = t.rot ?? -0.35; th.root.scale.setScalar(sc);
@@ -164,10 +173,18 @@ const Inner: React.FC = () => {
   return <primitive object={b.root} dispose={null} />;
 };
 
-export const AhShort: React.FC = () => (
+export const AhShort: React.FC = () => {
+  const [ready, setReady] = useState(MODEL_NAMES.length === 0);
+  const [handle] = useState(() => (MODEL_NAMES.length ? delayRender("afterhour models") : 0));
+  useEffect(() => {
+    if (!MODEL_NAMES.length) return;
+    loadModels(MODEL_NAMES).then(() => { setReady(true); continueRender(handle); });
+  }, [handle]);
+  return (
   <AbsoluteFill style={{ background: "#000" }}>
-    <ThreeCanvas width={1080} height={1920} shadows gl={{ antialias: false, stencil: false, powerPreference: "high-performance" }} camera={{ fov: 40, near: 0.1, far: 400 }}>
+    {ready && <ThreeCanvas width={1080} height={1920} shadows gl={{ antialias: false, stencil: false, powerPreference: "high-performance" }} camera={{ fov: 40, near: 0.1, far: 400 }}>
       <Inner />
-    </ThreeCanvas>
+    </ThreeCanvas>}
   </AbsoluteFill>
-);
+  );
+};
