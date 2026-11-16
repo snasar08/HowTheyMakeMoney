@@ -272,7 +272,7 @@ def make_plan(script: dict, recorded: dict | None = None) -> dict:
                         # Nov 15 (afterhour style): a text card in the scene (date sign, money screen that flips, headline,
                         # tombstone...), a fixed view ("face" close-up etc.), a different character for this line, hide the hero
                         **{k: d[k] for k in ("card", "view", "who", "hide", "crowdO") if d.get(k)},
-                        "things": (prev_things := things_for(ss[j], given, prev_things)), "line": ss[j][:80]})
+                        "things": (prev_things := things_for(ss[j], given, prev_things)), "line": ss[j][:80], "text": ss[j]})
             a += m
         if tail:
             # outro: quick callbacks to the Short's best moments (logos, things, signs), a new view every ~1.5 s
@@ -314,6 +314,44 @@ AH_THING = {"shoe": "shoe", "springshoe": "springshoe", "sneakerbus": "bus", "bu
 AH_BIG = {"car", "truck", "bus", "rocket", "factory", "stadium", "plane", "yacht", "house"}
 AH_CROWD = [{"body": c, "hat": "hair", "hair": h} for c, h in (("#e86a6a", "#3a2a20"), ("#5ad0d8", "#8a5a2a"), ("#8bc34a", "#1a1a1a"),
             ("#b48ae0", "#3a2a20"), ("#f2a33a", "#5a3b2a"), ("#4a7bd0", "#1a1a1a"))]
+
+
+_AH_MODELS: dict | None = None
+_AH_STOP = {"the", "a", "an", "and", "or", "of", "to", "in", "on", "it", "is", "was", "he", "she", "they", "his", "her", "this", "that", "with", "for", "at", "by", "as", "be", "so", "but"}
+
+
+def ah_models() -> dict:
+    """word -> model name from toon/public/models/index.json (names first, then tags; first name alphabetically wins)"""
+    global _AH_MODELS
+    if _AH_MODELS is None:
+        _AH_MODELS = {}
+        f = Path(__file__).resolve().parent.parent / "toon" / "public" / "models" / "index.json"
+        try:
+            idx = json.loads(f.read_text(encoding="utf8"))
+        except Exception:
+            idx = {}
+        for nm in sorted(idx):                       # names: "vending_machine" is matched by its last word too ("machine" would
+            _AH_MODELS.setdefault(nm.replace("_", ""), nm)   # be too vague, so only the full name, spaces removed, and the name itself)
+            _AH_MODELS.setdefault(nm, nm)
+        for nm in sorted(idx):
+            for t in idx[nm].get("tags", []):
+                _AH_MODELS.setdefault(t.lower().replace(" ", ""), nm)
+    return _AH_MODELS
+
+
+def ah_words_to_models(text: str) -> list:
+    """model names for the words (and two-word runs like "vending machine") of a sentence, in order, plurals ok"""
+    m, out = ah_models(), []
+    ws = [w for w in re.findall(r"[a-z]+", text.lower())]
+    def look(w: str):
+        for c in (w, w[:-1] if w.endswith("s") else "", w[:-2] if w.endswith("es") else "", w[:-3] + "y" if w.endswith("ies") else ""):
+            if c and c in m and c not in _AH_STOP:
+                return m[c]
+    for i, w in enumerate(ws):
+        hit = (i + 1 < len(ws) and look(w + ws[i + 1])) or look(w)
+        if hit and hit not in out:
+            out.append(hit)
+    return out
 
 
 def ah_look(o: dict) -> dict:
@@ -364,6 +402,13 @@ def ah_shots(plan: dict) -> list:
             big = t3 in AH_BIG
             things.append({"name": t3, "at": [-1.9, 0, -1.6] if big else ([0.55, 0.85, 0.55] if not things else [-0.55, 0.85, 0.55]),
                            "fit": 1.6 if big else (0.42 if not things else 0.34)})   # held at hand height, in frame
+        for t3 in ah_words_to_models(sc.get("text") or sc.get("line") or ""):   # then library models the sentence's words name
+            if len(things) >= 2:
+                break
+            if t3 in seen:
+                continue
+            seen.add(t3)
+            things.append({"name": t3, "at": [0.55, 0.85, 0.55] if not things else [-0.55, 0.85, 0.55], "fit": 0.42 if not things else 0.34})
         shot = {"a": sc["a"], "n": sc["n"], "set": AH_SET.get(place, "street"), "view": sc.get("view") or views[k % len(views)],
                 "chars": chars, "cards": cards, "things": things, **({"coins": True} if sc.get("beat") == "money" else {})}
         if sc.get("hide") and cards:   # a card-only shot: frame the card

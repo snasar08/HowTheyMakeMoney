@@ -1,6 +1,8 @@
 // Afterhour look: cel-shaded cartoon props ("things"). See SPEC.md. Deterministic, built from primitives, metres, base at y = 0.
 import * as THREE from "three";
 import { toonMat, metalMat, glowMat, canvasTex, seeded } from "./common";
+import { hasModel, makeModelGroup, MODEL_SIZE } from "./models";
+import { drawCard } from "./cards";
 
 export type ThingName = "shoe" | "springshoe" | "chip" | "gpu" | "cash" | "cashstack" | "coins" | "goldbar" | "trophy" | "medal" | "crown" | "ring" | "car" | "sportscar" | "bus" | "truck" | "rocket" | "phone" | "laptop" | "tv" | "monitor" | "clock" | "books" | "letter" | "newspaper" | "briefcase" | "shovel" | "pickaxe" | "box" | "crate" | "basketball" | "football" | "hoop" | "mic" | "headset" | "controller" | "burger" | "pizza" | "coffee" | "plant" | "robot" | "drone" | "satellite" | "globe" | "house" | "factory" | "stadium" | "plane" | "yacht" | "chart" | "arrowup" | "arrowdown" | "lightbulb" | "lock" | "key" | "heart" | "bomb" | "fire" | "camera";
 export type Thing = { root: THREE.Group; size: number; tick?(t: number): void };
@@ -770,9 +772,30 @@ const OLW = (n: ThingName): number => {
   return big[n] ?? 0.0035;
 };
 
-export const makeThing = (name: ThingName, opts: { color?: string; text?: string } = {}): Thing => {
-  OW = OLW(name);
-  const b = B[name](opts.color, opts.text);
+/** a clean white sign card with the word, for things that exist nowhere (code-built or model library) */
+const wordSign = (word: string): Thing => {
+  const g = new THREE.Group(), W = 1100, H = 700, w = 0.9, h = (w * H) / W;
+  const tex = drawCard({ text: word.toUpperCase().slice(0, 18), kind: "white", fg: "#1b1b24" }, W, H);
+  const m = new THREE.Mesh(new THREE.PlaneGeometry(w, h), new THREE.MeshBasicMaterial({ map: tex, transparent: true, toneMapped: false, side: THREE.DoubleSide }));
+  m.position.y = h / 2; g.add(m);
+  const root = new THREE.Group(); root.add(g);
+  return { root, size: h };
+};
+
+export const isCodeThing = (name: string) => Object.prototype.hasOwnProperty.call(B, name);
+
+/** code-built things win; then the CC0 model library (models.ts, must be preloaded); else a word sign. size = height
+ *  for code-built things, longest side for library models */
+export const makeThing = (name: string, opts: { color?: string; text?: string } = {}): Thing => {
+  if (!isCodeThing(name)) {
+    if (hasModel(name)) {
+      const m = makeModelGroup(name);
+      if (m) { const root = new THREE.Group(); root.add(m); return { root, size: MODEL_SIZE }; }
+    }
+    return wordSign(name.replace(/[_-]+/g, " "));
+  }
+  OW = OLW(name as ThingName);
+  const b = B[name as ThingName](opts.color, opts.text);
   const root = new THREE.Group(); root.add(b.g);
   const box = new THREE.Box3(); const tmp = new THREE.Box3();
   b.g.updateMatrixWorld(true);
