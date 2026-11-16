@@ -55,8 +55,10 @@ def main(video_url: str, out: Path) -> int:
               "before it publishes.", "tags": []}
     post_id = None
     try:
-        post = P.buffer_schedule(video_url, script, when, privacy=privacy)
+        thumb = "https://raw.githubusercontent.com/snasar08/HowTheyMakeMoney/main/analytics/covers/086-famous-yamal.jpg"
+        post = P.buffer_schedule(video_url, script, when, privacy=privacy, thumb=thumb)
         post_id = post["id"]
+        step("cover thumbnail accepted", not P.THUMB_REFUSED, refused=P.THUMB_REFUSED)
         step("schedule test post", True, post=post_id, dueAt=post.get("dueAt"), privacy=privacy)
         got = P.buffer_post(post_id)
         step("confirm queued", str(got.get("status")).lower() in ("scheduled", "pending", "buffer"),

@@ -97,13 +97,24 @@ def _release(video: Path, script: dict, when: dt.datetime) -> dict:
     )
     subprocess.run(["gh", "release", "delete", tag, "--yes", "--cleanup-tag"],
                    capture_output=True)
-    subprocess.run(["gh", "release", "create", tag, str(video),
+    files = [str(video)]
+    cover = video.with_name(video.stem + "-cover.jpg")   # frame 0 = our title cover (Buffer thumbnailUrl)
+    try:
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(video), "-frames:v", "1", "-q:v", "2", str(cover)],
+                       check=True, timeout=60)
+        files.append(str(cover))
+    except Exception as exc:  # noqa: BLE001
+        print(f"[publish] no cover image ({exc!r})", flush=True)
+    subprocess.run(["gh", "release", "create", tag, *files,
                     "--title", f"Ready to post: {script['company']} — {script['title']}",
                     "--notes", notes], check=True)
     url = subprocess.run(["gh", "release", "view", tag, "--json", "url", "-q", ".url"],
                          capture_output=True, text=True).stdout.strip()
     asset = f"https://github.com/{REPO}/releases/download/{tag}/{video.name}"
-    return {"mode": "release", "release": url, "asset_url": asset, "post_at": when.isoformat()}
+    out = {"mode": "release", "release": url, "asset_url": asset, "post_at": when.isoformat()}
+    if len(files) > 1:
+        out["cover_url"] = f"https://github.com/{REPO}/releases/download/{tag}/{cover.name}"
+    return out
 
 
 # ---- Buffer (docs: developers.buffer.com — GraphQL, Bearer key, createPost/deletePost)
@@ -185,6 +196,8 @@ def youtube_text(script: dict) -> str:
     return (desc + ("\n\n" + tags if tags and tags not in desc else ""))[:4900]
 
 
+THUMB_REFUSED = ""      # set when Buffer refused thumbnailUrl (buffer_test reports it)
+
 CREATE_POST = """
 mutation($input: CreatePostInput!) {
   createPost(input: $input) {
@@ -194,7 +207,8 @@ mutation($input: CreatePostInput!) {
 }"""
 
 
-def post_input(video_url: str, script: dict, when: dt.datetime, privacy: str | None = None) -> dict:
+def post_input(video_url: str, script: dict, when: dt.datetime, privacy: str | None = None,
+               thumb: str | None = None) -> dict:
     _, channel = buffer_channel()
     youtube = {"title": script["title"][:100], "categoryId": "27",  # Education
                "madeForKids": False, "isAiGenerated": True, "notifySubscribers": True}
@@ -206,15 +220,28 @@ def post_input(video_url: str, script: dict, when: dt.datetime, privacy: str | N
         "schedulingType": "automatic",
         "mode": "customScheduled",
         "dueAt": when.astimezone(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%S.000Z"),
-        "assets": [{"video": {"url": video_url, "metadata": {"title": script["title"][:100]}}}],
+        "assets": [{"video": {"url": video_url, "metadata": {"title": script["title"][:100]},
+                              **({"thumbnailUrl": thumb} if thumb else {})}}],
         "metadata": {"youtube": youtube},
     }
     return inp
 
 
-def buffer_schedule(video_url: str, script: dict, when: dt.datetime, privacy: str | None = None) -> dict:
-    inp = post_input(video_url, script, when, privacy)
-    res = buffer_gql(CREATE_POST, {"input": inp})["createPost"]
+def buffer_schedule(video_url: str, script: dict, when: dt.datetime, privacy: str | None = None,
+                    thumb: str | None = None) -> dict:
+    """Nov 15: YouTube showed a frame ~40% in as the thumbnail on every Short (health.md), never our title
+    cover, so the cover rides along as Buffer's thumbnailUrl. If Buffer refuses it, post without it."""
+    try:
+        res = buffer_gql(CREATE_POST, {"input": post_input(video_url, script, when, privacy, thumb)})["createPost"]
+        if thumb and "post" not in res:
+            raise BufferError(res.get("message"))
+    except BufferError as exc:
+        if not thumb:
+            raise
+        global THUMB_REFUSED
+        THUMB_REFUSED = str(exc)[:300]
+        print(f"::warning title=cover thumbnail::Buffer refused thumbnailUrl ({str(exc)[:200]}); posting without it")
+        res = buffer_gql(CREATE_POST, {"input": post_input(video_url, script, when, privacy)})["createPost"]
     if "post" not in res:
         raise BufferError(f"createPost: {res.get('message')}")
     return res["post"]
@@ -237,7 +264,8 @@ def _buffer(video: Path, script: dict, when: dt.datetime) -> dict:
     try:
         if not public_ok(rel["asset_url"]):
             raise BufferError(f"video URL isn't public ({rel['asset_url']}) — is the repo public?")
-        post = buffer_schedule(rel["asset_url"], script, when)
+        thumb = rel.get("cover_url") if rel.get("cover_url") and public_ok(rel["cover_url"], 3) else None
+        post = buffer_schedule(rel["asset_url"], script, when, thumb=thumb)
         check = buffer_post(post["id"])  # confirm it is really queued
         print(f"[publish] Buffer scheduled {script['id']} for {when:%a %H:%M %Z}: post {post['id']} "
               f"status={check.get('status')}")
