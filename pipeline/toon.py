@@ -326,11 +326,13 @@ def ah_models() -> dict:
     global _AH_MODELS
     if _AH_MODELS is None:
         _AH_MODELS = {}
-        f = Path(__file__).resolve().parent.parent / "toon" / "public" / "models" / "index.json"
-        try:
-            idx = json.loads(f.read_text(encoding="utf8"))
-        except Exception:
-            idx = {}
+        d = Path(__file__).resolve().parent.parent / "toon" / "public" / "models"
+        idx = {}
+        for f in [d / "index.json", *sorted(d.glob("index.*.json"))]:     # index.json + any per-pack index.<pack>.json
+            try:
+                idx.update(json.loads(f.read_text(encoding="utf8")))
+            except Exception:
+                pass
         for nm in sorted(idx):                       # names: "vending_machine" is matched by its last word too ("machine" would
             _AH_MODELS.setdefault(nm.replace("_", ""), nm)   # be too vague, so only the full name, spaces removed, and the name itself)
             _AH_MODELS.setdefault(nm, nm)
@@ -468,7 +470,7 @@ def whips(plan: dict, plates_dir: Path) -> int:
 
     import numpy as np
     from PIL import Image
-    if os.environ.get("WHIPS", "off") == "off"   # Sam, Nov 16: the blur cuts "look horrendous": off unless WHIPS=on:
+    if os.environ.get("WHIPS", "off") == "off":   # Sam, Nov 16: the blur cuts "look horrendous": off unless WHIPS=on
         return 0
     d = plates_dir / plan["slug"]
     seq = [d / f"{sc['si']}_{sc['frLo'] + j}.jpg" for sc in plan["scenes"] for j in range(sc["n"])]
