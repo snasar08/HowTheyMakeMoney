@@ -409,7 +409,7 @@ for (const k of Object.keys(CAMS)) delete CAMS[+k];
 for (const k of Object.keys(XFADE)) delete XFADE[+k];
 DOF.length = 0; KICKS.length = 0; FOREGROUND.length = 0;
 SHOTS.forEach((s) => {
-  const n = s.b - s.a, seq = BSEQ[beatOf(s.id)] ?? ((sceneOf(s.id)?.things ?? []).length ? ["two", "wide2", "two"] : SEQ[(s.id - 1) % SEQ.length]), m = Math.min(5, Math.max(1, Math.ceil(n / 50))), keys: Key[] = [];
+  const n = s.b - s.a, seq = BSEQ[beatOf(s.id)] ?? ((sceneOf(s.id)?.things ?? []).length ? ["two", "wide2", "two"] : SEQ[(s.id - 1) % SEQ.length]), m = Math.min(6, Math.max(1, Math.ceil(n / 40)))  /* Nov 15: ~1.3 s per view, like the reference channel */, keys: Key[] = [];
   for (let j = 0; j < m; j++) {
     const f0 = s.a + Math.round((j * n) / m), name = seq[j % seq.length];
     keys.push({ f: f0, cut: true, dur: 26, s: FR[name](s.id, f0) });   // hard cuts: a new view every ~1.7 s (Sam)

@@ -103,6 +103,11 @@ def use_engine_for(texts):
 QWEN_SPEED = float(os.environ.get("QWEN_SPEED", "1.0"))   # 1.0 for the Umbriel clone (1.1 made some lines rushed, Nov 15)
 # Nov 14, Sam: the Gemini voice is "a tad too deep" -> raised one semitone, same speed and timing
 GEMINI_PITCH_ST = float(os.environ.get("GEMINI_PITCH_ST", "1.5"))   # Sam picked +1.5 over +1
+# Nov 15 (Sam: the Nike story was "very very slow"; his reference channel reads ~1.3x faster than we did):
+# the Gemini read is sped up with atempo (same pitch/voice). render.py sets it per Short from VOICE_SPEED_FOR.
+VOICE_SPEED_FOR = {"story": float(os.environ.get("VOICE_SPEED_STORY", "1.2")),
+                   "default": float(os.environ.get("VOICE_SPEED", "1.1"))}
+VOICE_SPEED_NOW = 1.0
 # Nov 15: the Umbriel clone sat at 142 Hz vs real Umbriel +1.5 at 136 Hz -> lower it 0.75 st to match
 QWEN_PITCH_ST = float(os.environ.get("QWEN_PITCH_ST", "-0.75")) if QWEN_VOICE == "umbriel" else 0.0
 
@@ -152,11 +157,15 @@ def qwen(text: str):
             a = np.interp(np.linspace(0, len(a) - 1, int(len(a) * SAMPLE_RATE / sr)), np.arange(len(a)), a).astype(np.float32)
         if abs(GEMINI_PITCH_ST) > 0.01:
             a = _pitch(a, GEMINI_PITCH_ST)
+        k = 1.0
+        if abs(VOICE_SPEED_NOW - 1.0) > 0.01:   # same voice and pitch, quicker read (Sam, Nov 15: Nike "very very slow")
+            n0, a = len(a), _atempo(a, VOICE_SPEED_NOW)
+            k = n0 / max(len(a), 1)
         loud = np.flatnonzero(np.abs(a) > 0.02)
         c0 = max(0, int(loud[0]) - int(LEAD_KEEP * SAMPLE_RATE)) if len(loud) else 0
         c1 = min(len(a), int(loud[-1]) + int(TAIL_KEEP * SAMPLE_RATE)) if len(loud) else len(a)
         shift = c0 / SAMPLE_RATE
-        ws = [(t, max(0.0, st - shift), min((c1 - c0) / SAMPLE_RATE, en - shift))
+        ws = [(t, max(0.0, st / k - shift), min((c1 - c0) / SAMPLE_RATE, en / k - shift))
               for t, st, en in json.load(open(lp + ".json", encoding="utf-8"))]
         return np.asarray(a[c0:c1], np.float32), (ws or None)
     chunks, words, offset = [], [], 0.0

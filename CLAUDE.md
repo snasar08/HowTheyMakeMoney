@@ -180,9 +180,14 @@ and **free beyond his Higgsfield Pro plan** — never add a paid service or ask 
   Results land on the `ci-test-results` branch (`buffer-test.json`, `out-render.log`).
 - Rendering frames runs in a thread pool (`RENDER_THREADS`, default min(4, cores)); same output.
 - **Thumbnails (Nov 15):** YouTube used a frame ~40% into each Short as the thumbnail (22 of 22 in health.md were
-  "other frame"). `publish._release` now also attaches frame 0 (`<slug>-cover.jpg`) and Buffer gets it as the
-  video's `thumbnailUrl`; if Buffer refuses the field the post goes out without it (`::warning title=cover
-  thumbnail`). Buffer's help says custom Shorts thumbnails may not be supported, so check health.md after posts.
+  "other frame"). Buffer refuses a custom image (`thumbnailUrl`: "social networks do not accept custom video
+  thumbnail images") but takes `metadata.thumbnailOffset` (ms) on the video, so `publish.post_input` sends
+  `THUMB_OFFSET_MS` = 40 (frame 1 = the title cover). Check health.md after new posts.
+- **Pace (Nov 15, Sam: the Nike story was "very very slow"; his reference: @afterhourtheories "Jensen Huang's Affair
+  Rocks NVIDIA", 2.5 min, 55K likes, a new view every ~1.3 s):** the Gemini read is sped up with atempo (same voice
+  and pitch): `VOICE_SPEED_STORY` 1.2 for story Shorts, `VOICE_SPEED` 1.1 for the rest (`tts.VOICE_SPEED_FOR`, set per
+  Short in render.py); toon story cuts every ~40 frames; animated Shorts show the sentence being said as white text
+  near the top (`render._subline`, `SUBLINE=off` hides it) on top of the big one-word caption, like the reference.
 - `pipeline/publish.py` — `UPLOAD_MODE` repo variable:
   - `release` (default): MP4 attached to a GitHub Release with title/description to paste. Sam
     uploads from the YouTube app. Required until YouTube approves the API audit, because uploads
@@ -220,7 +225,12 @@ and **free beyond his Higgsfield Pro plan** — never add a paid service or ask 
    `test-shorts` artifact and confirm it works on GitHub's machines.
 5. Ask Sam to Watch the repo (Watch → Custom → Releases) so release notifications reach his phone.
 
-## Weekly script batch (cloud routines, Saturdays — two parts so one session never runs too long)
+## Weekly script batch (cloud routines, Saturdays — FOUR parts since Nov 15: 11:00, 1:30, 4:00, 6:30 PM ET)
+**Chain (Sam approved Nov 15 2026: "11 AM until finished", "what if I hit usage"):** each part writes up to
+`min(10, 75 - ready)` scripts and **commits + pushes after EVERY finished script**, so a part cut off by the usage
+limit loses at most the script in progress; the next part starts by reading `git log` and finishing anything left
+half-done (an open research branch, a draft missing checks). Up to 40 a week, same quality gate. Monthly report
+in part 1. Where the older text below says "part 1 / part 2" or `min(20, ...)`, the 4-part chain wins.
 Posting uses **35 Shorts/week (5/day since Nov 12; Sam: "up to 5 posts a day ... have the Saturday
 research more ... maintain quality too")**. Goal: build a buffer, capped so credits aren't wasted.
 1. Count `ready` scripts. **If 75 or more are ready, write nothing** (still do step 8). Otherwise
