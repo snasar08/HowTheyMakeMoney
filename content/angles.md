@@ -101,3 +101,4 @@ clearly different angle, new figures, a new hook, new B-roll and a different sce
 100 | Nintendo (editorial, almost broke) | playing cards in 1889, taxis and instant rice, stock crash, then games | 1889, taxi/rice/vacuum (1960s), ¥900 -> ¥60 (1964), Game & Watch 1980, 1,593.87M Switch games, 157.2M Switch (Sept 2026)
 101 | Mohamed Salah (famous) | three-hour trips to practice to a £155M offer he didn't take | 3 hours at 14, £11M Chelsea (2014) then loans, £36.9M club record (2017), 32 goals (record then), £155M two-year offer (2023)
 102 | Nintendo Switch (whatif) | stacking every Switch ever sold | 157.2M units (Sept 2026), 14 mm thick, ~2,201 km stack (~5x ISS altitude 413-422 km), ~27,196 km end to end, 2.8M behind PS2's 160M
+128 | Shaquille O'Neal (famous) | owned about 1 in 10 Five Guys; business bets beat his salary | 155 Five Guys (~10%), early Google investor, turned down $40M shoe deal, $121M Lakers deal, $400M net worth (2022)

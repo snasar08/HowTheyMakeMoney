@@ -1,0 +1,239 @@
+{
+  "id": "128",
+  "slug": "famous-shaq",
+  "company": "Shaquille O'Neal",
+  "format": "famous",
+  "visual_style": "lowpoly",
+  "hook_style": "surprise",
+  "title_style": "number",
+  "theme": "bold_bright",
+  "status": "ready",
+  "score": 92,
+  "title": "He Owned 155 Five Guys Restaurants",
+  "name_card": "Shaquille O'Neal",
+  "name_sub": "basketball player",
+  "description": "Shaq owned 155 Five Guys restaurants, about one in ten of the whole chain.\n\nSources:\n- Wikipedia: Shaquille O'Neal: https://en.wikipedia.org/wiki/Shaquille_O%27Neal\n\nFrom Wikipedia (Shaquille O'Neal): the Orlando Magic picked him first overall in the 1992 NBA draft; he joined the Los Angeles Lakers on a seven-year, $121 million contract; he was an early investor in Google; he owned, and later sold, 155 Five Guys restaurants, about 10% of all locations; he turned down a $40 million deal with Reebok after hearing a mother complain about how expensive his shoes were; as of 2022 he was among the five wealthiest NBA players, with a net worth of $400 million. Not financial advice.\n\n#shorts #shaq #nba #howtheymakemoney",
+  "tags": [
+    "shaquille o'neal",
+    "shaq",
+    "nba",
+    "famous",
+    "shorts"
+  ],
+  "images": {},
+  "hud_label": "HIS MONEY",
+  "loop": "So next time you grab a burger, remember:",
+  "cta": "Shaq or LeBron? Comment your pick.",
+  "cta_question": "Shaq or LeBron?",
+  "hero": {
+    "skin": "4a3020",
+    "hair": "bald",
+    "beard": "goatee",
+    "beard_color": "15110e",
+    "outfit": "kit",
+    "shirt": "552583",
+    "pants": "552583",
+    "trim": "fdb927",
+    "socks": "f4f4f4",
+    "shoes": "f4f4f4",
+    "height": 1.35,
+    "number": 34
+  },
+  "scenes": [
+    {
+      "narration": "Shaq owned 155 Five Guys restaurants. About one in every ten.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "burger"
+        ],
+        "stat": "155",
+        "stat_sub": "Five Guys restaurants"
+      },
+      "toon": [
+        {
+          "place": "street",
+          "beat": "logo",
+          "mood": "proud",
+          "brand": {
+            "name": "Five Guys",
+            "bg": "#c8102e",
+            "fg": "#ffffff",
+            "icon": "burger"
+          },
+          "things": [
+            "burger"
+          ],
+          "card": {
+            "text": "155",
+            "kind": "sign",
+            "sub": "FIVE GUYS"
+          }
+        },
+        {
+          "place": "street",
+          "beat": "queue",
+          "mood": "laugh",
+          "crowd": 35,
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "But burgers were just one bet. He bought into Google early.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "office",
+        "action": "work",
+        "crowd": 0,
+        "props": [
+          "laptop"
+        ],
+        "stat": "GOOGLE",
+        "stat_sub": "an early investor"
+      },
+      "toon": [
+        {
+          "place": "office",
+          "beat": "walk",
+          "mood": "scheme",
+          "props": [
+            "burger"
+          ]
+        },
+        {
+          "place": "office",
+          "beat": "logo",
+          "mood": "proud",
+          "brand": {
+            "name": "Google",
+            "bg": "#ffffff",
+            "fg": "#4285f4",
+            "icon": "search"
+          },
+          "props": [
+            "laptop"
+          ]
+        }
+      ]
+    },
+    {
+      "narration": "Then he said no to 40 million dollars. A mom said his shoes cost too much.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "store",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "boxes"
+        ],
+        "stat": "$40 MILLION",
+        "stat_sub": "a shoe deal he turned down"
+      },
+      "toon": [
+        {
+          "place": "office",
+          "beat": "money",
+          "mood": "stern",
+          "props": [
+            "check"
+          ],
+          "card": {
+            "text": "$40M",
+            "kind": "paper",
+            "sub": "SHOE DEAL"
+          }
+        },
+        {
+          "place": "street",
+          "beat": "queue",
+          "mood": "sad",
+          "crowd": 10,
+          "things": [
+            "shoe"
+          ],
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "Still, basketball came first. The Lakers paid him 121 million.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "run",
+        "crowd": 0,
+        "props": [
+          "ball"
+        ],
+        "stat": "$121 MILLION",
+        "stat_sub": "7-year Lakers deal"
+      },
+      "toon": [
+        {
+          "place": "court",
+          "beat": "walk",
+          "mood": "excited",
+          "action": "run",
+          "props": [
+            "ball"
+          ],
+          "crowd": 20
+        },
+        {
+          "place": "court",
+          "beat": "money",
+          "mood": "shock",
+          "action": "cheer",
+          "crowd": 30,
+          "card": {
+            "text": "$121M",
+            "kind": "screen",
+            "sub": "LAKERS"
+          }
+        }
+      ]
+    },
+    {
+      "narration": "By 2022, he was worth 400 million dollars.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "cheer",
+        "crowd": 300,
+        "props": [
+          "ball",
+          "cash"
+        ],
+        "stat": "$400 MILLION",
+        "stat_sub": "net worth, 2022",
+        "hud": "$400M"
+      },
+      "toon": [
+        {
+          "place": "throne",
+          "beat": "money",
+          "mood": "laugh",
+          "card": {
+            "text": "$400M",
+            "kind": "screen",
+            "sub": "2022"
+          },
+          "things": [
+            "crown"
+          ],
+          "view": "face"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Shaquille O'Neal",
+      "url": "https://en.wikipedia.org/wiki/Shaquille_O%27Neal"
+    }
+  ]
+}
