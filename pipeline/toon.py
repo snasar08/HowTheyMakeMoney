@@ -302,7 +302,7 @@ AH_SET = {"throne": "throne", "office": "office", "servers": "lab", "garage": "g
           "quay": "beach", "road": "track"}
 AH_EXPR = {"happy": "smile", "laugh": "laugh", "shock": "shock", "nervous": "shock", "proud": "smug", "stern": "angry",
            "scheme": "smug", "relief": "smile", "dazed": "sad", "sad": "sad", "calm": "neutral", "excited": "grin"}
-AH_POSE = {"cheer": "cheer", "walk": "walk", "run": "walk", "work": "dig", "interact": "point", "wave": "wave", "idle": "stand"}
+AH_POSE = {"cheer": "cheer", "walk": "walk", "run": "walk", "work": "point", "interact": "point", "wave": "wave", "idle": "stand"}
 AH_THING = {"shoe": "shoe", "springshoe": "springshoe", "sneakerbus": "bus", "bus": "bus", "robot": "robot", "chip": "chip", "drone": "drone",
             "satellite": "satellite", "ring": "ring", "crown": "crown", "tv": "tv", "books": "books", "letter": "letter", "medal": "medal",
             "idea": "lightbulb", "factory": "factory", "stadium": "stadium", "plant": "factory", "car": "car", "truck": "truck",
@@ -359,7 +359,17 @@ def ah_shots(plan: dict) -> list:
         if sc.get("hide") and cards:   # a card-only shot: frame the card
             cards[0]["at"] = [0, 1.55, 0.3]; cards[0]["w"] = 1.15; shot["chars"] = chars[:0]
             shot["cam"] = {"from": [0, 1.55, 2.5], "to": [0, 1.55, 2.2], "look": [0, 1.55, 0.3]}
-        shots.append(shot)
+        # his tempo (30 fps study): a new view about every 1.3 s, so a long sentence becomes several shots of the same
+        # moment from different angles (medium -> face -> close -> low ...), each with its slow push-in
+        parts = max(1, round(sc["n"] / 40)) if "cam" not in shot else 1
+        order = {"ms": ["ms", "face", "cu", "low"], "face": ["face", "ms", "cu"], "cu": ["cu", "face", "ms"], "low": ["low", "face", "ms"],
+                 "ws": ["ws", "ms", "face"], "wide": ["wide", "ms", "face"]}.get(shot["view"], [shot["view"], "face", "ms"])
+        for j in range(parts):
+            a0, a1 = sc["a"] + round(j * sc["n"] / parts), sc["a"] + round((j + 1) * sc["n"] / parts)
+            sub = {**shot, "a": a0, "n": a1 - a0, "view": order[j % len(order)]}
+            if j and sub["things"]:
+                sub["things"] = [dict(t, pop=False) for t in sub["things"]]   # already on screen: no second pop
+            shots.append(sub)
     return shots
 
 
@@ -439,7 +449,9 @@ if __name__ == "__main__":
         rec = json.loads(Path(sys.argv[4]).read_text(encoding="utf-8")) if len(sys.argv) > 4 else None
         plan = make_plan(script, rec)
         props = {"plan": plan}
-        if os.environ.get("TOON_LOOK") == "afterhour" or script.get("look") == "afterhour":
+        # Nov 16 (Sam: "this is how a video idea could work for the history videos"): story Shorts use the real-3D
+        # afterhour look by default; a script can force it with "look": "afterhour" or opt out with "look": "toon"
+        if os.environ.get("TOON_LOOK") == "afterhour" or script.get("look") == "afterhour" or                 (script.get("format") == "story" and script.get("look") != "toon" and os.environ.get("TOON_LOOK") != "toon"):
             props["ah"] = {"shots": ah_shots(plan)}       # frames.mjs renders AhShort when the props carry "ah"
         Path(sys.argv[3]).write_text(json.dumps(props), encoding="utf-8")
         print(f"[toon] plan {plan['slug']}: {len(plan['scenes'])} scenes, {plan['total']} frames, lights {[s['light'] for s in plan['scenes']]}")
