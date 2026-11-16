@@ -47,7 +47,7 @@ jobs:
       UPLOAD_MODE: buffer_dry
       GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
       VOICE_ENGINE: qwen
-      QWEN_VOICE: narrator4
+      QWEN_VOICE: umbriel
       GEMINI_VOICE: ${{ vars.GEMINI_VOICE }}
       KOKORO_VOICE: am_puck
       KOKORO_SPEED: "1.2"
