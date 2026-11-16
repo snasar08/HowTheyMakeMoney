@@ -1,0 +1,690 @@
+{
+ "apple": {
+  "file": "food-kit/apple.glb",
+  "pack": "food-kit",
+  "tags": [
+   "fruit"
+  ]
+ },
+ "avocado": {
+  "file": "food-kit/avocado.glb",
+  "pack": "food-kit",
+  "tags": [
+   "fruit"
+  ]
+ },
+ "bacon": {
+  "file": "food-kit/bacon.glb",
+  "pack": "food-kit",
+  "tags": [
+   "breakfast"
+  ]
+ },
+ "baguette": {
+  "file": "food-kit/baguette.glb",
+  "pack": "food-kit",
+  "tags": [
+   "french_bread"
+  ]
+ },
+ "banana": {
+  "file": "food-kit/banana.glb",
+  "pack": "food-kit",
+  "tags": [
+   "fruit"
+  ]
+ },
+ "birthday_cake": {
+  "file": "food-kit/birthday_cake.glb",
+  "pack": "food-kit",
+  "tags": [
+   "party",
+   "celebration"
+  ]
+ },
+ "bread": {
+  "file": "food-kit/bread.glb",
+  "pack": "food-kit",
+  "tags": [
+   "bakery",
+   "toast"
+  ]
+ },
+ "broccoli": {
+  "file": "food-kit/broccoli.glb",
+  "pack": "food-kit",
+  "tags": [
+   "vegetable"
+  ]
+ },
+ "cake": {
+  "file": "food-kit/cake.glb",
+  "pack": "food-kit",
+  "tags": [
+   "dessert"
+  ]
+ },
+ "candy_bar": {
+  "file": "food-kit/candy_bar.glb",
+  "pack": "food-kit",
+  "tags": [
+   "candy",
+   "snack"
+  ]
+ },
+ "carrot": {
+  "file": "food-kit/carrot.glb",
+  "pack": "food-kit",
+  "tags": [
+   "vegetable"
+  ]
+ },
+ "cheese": {
+  "file": "food-kit/cheese.glb",
+  "pack": "food-kit",
+  "tags": [
+   "dairy"
+  ]
+ },
+ "cheese_wedge": {
+  "file": "food-kit/cheese_wedge.glb",
+  "pack": "food-kit",
+  "tags": [
+   "cheese"
+  ]
+ },
+ "cheeseburger": {
+  "file": "food-kit/cheeseburger.glb",
+  "pack": "food-kit",
+  "tags": [
+   "burger",
+   "fast_food"
+  ]
+ },
+ "cherries": {
+  "file": "food-kit/cherries.glb",
+  "pack": "food-kit",
+  "tags": [
+   "fruit"
+  ]
+ },
+ "chocolate": {
+  "file": "food-kit/chocolate.glb",
+  "pack": "food-kit",
+  "tags": [
+   "sweet"
+  ]
+ },
+ "cocktail": {
+  "file": "food-kit/cocktail.glb",
+  "pack": "food-kit",
+  "tags": [
+   "drink",
+   "bar"
+  ]
+ },
+ "coconut": {
+  "file": "food-kit/coconut.glb",
+  "pack": "food-kit",
+  "tags": [
+   "fruit"
+  ]
+ },
+ "coffee_cup": {
+  "file": "food-kit/coffee_cup.glb",
+  "pack": "food-kit",
+  "tags": [
+   "cafe",
+   "latte",
+   "starbucks"
+  ]
+ },
+ "cookie": {
+  "file": "food-kit/cookie.glb",
+  "pack": "food-kit",
+  "tags": [
+   "biscuit",
+   "snack"
+  ]
+ },
+ "cooking_pot": {
+  "file": "food-kit/cooking_pot.glb",
+  "pack": "food-kit",
+  "tags": [
+   "pot"
+  ]
+ },
+ "corn": {
+  "file": "food-kit/corn.glb",
+  "pack": "food-kit",
+  "tags": [
+   "maize"
+  ]
+ },
+ "corn_dog": {
+  "file": "food-kit/corn_dog.glb",
+  "pack": "food-kit",
+  "tags": [
+   "fair"
+  ]
+ },
+ "croissant": {
+  "file": "food-kit/croissant.glb",
+  "pack": "food-kit",
+  "tags": [
+   "pastry",
+   "bakery"
+  ]
+ },
+ "cup": {
+  "file": "food-kit/cup.glb",
+  "pack": "food-kit",
+  "tags": [
+   "mug"
+  ]
+ },
+ "cupcake": {
+  "file": "food-kit/cupcake.glb",
+  "pack": "food-kit",
+  "tags": [
+   "dessert",
+   "muffin"
+  ]
+ },
+ "cutting_board": {
+  "file": "food-kit/cutting_board.glb",
+  "pack": "food-kit",
+  "tags": [
+   "kitchen"
+  ]
+ },
+ "dim_sum": {
+  "file": "food-kit/dim_sum.glb",
+  "pack": "food-kit",
+  "tags": [
+   "dumpling"
+  ]
+ },
+ "donut": {
+  "file": "food-kit/donut.glb",
+  "pack": "food-kit",
+  "tags": [
+   "doughnut",
+   "krispy_kreme"
+  ]
+ },
+ "double_burger": {
+  "file": "food-kit/double_burger.glb",
+  "pack": "food-kit",
+  "tags": [
+   "burger",
+   "fast_food"
+  ]
+ },
+ "egg": {
+  "file": "food-kit/egg.glb",
+  "pack": "food-kit",
+  "tags": [
+   "breakfast"
+  ]
+ },
+ "eggplant": {
+  "file": "food-kit/eggplant.glb",
+  "pack": "food-kit",
+  "tags": [
+   "vegetable"
+  ]
+ },
+ "fish_dish": {
+  "file": "food-kit/fish_dish.glb",
+  "pack": "food-kit",
+  "tags": [
+   "seafood"
+  ]
+ },
+ "fries": {
+  "file": "food-kit/fries.glb",
+  "pack": "food-kit",
+  "tags": [
+   "fast_food",
+   "mcdonalds",
+   "chips"
+  ]
+ },
+ "frying_pan": {
+  "file": "food-kit/frying_pan.glb",
+  "pack": "food-kit",
+  "tags": [
+   "cooking",
+   "pan"
+  ]
+ },
+ "gingerbread": {
+  "file": "food-kit/gingerbread.glb",
+  "pack": "food-kit",
+  "tags": [
+   "cookie",
+   "christmas"
+  ]
+ },
+ "glass": {
+  "file": "food-kit/glass.glb",
+  "pack": "food-kit",
+  "tags": [
+   "drinkware"
+  ]
+ },
+ "grapes": {
+  "file": "food-kit/grapes.glb",
+  "pack": "food-kit",
+  "tags": [
+   "fruit"
+  ]
+ },
+ "ham": {
+  "file": "food-kit/ham.glb",
+  "pack": "food-kit",
+  "tags": [
+   "meat"
+  ]
+ },
+ "honey": {
+  "file": "food-kit/honey.glb",
+  "pack": "food-kit",
+  "tags": [
+   "jar"
+  ]
+ },
+ "hot_dog": {
+  "file": "food-kit/hot_dog.glb",
+  "pack": "food-kit",
+  "tags": [
+   "fast_food"
+  ]
+ },
+ "ice_cream": {
+  "file": "food-kit/ice_cream.glb",
+  "pack": "food-kit",
+  "tags": [
+   "dessert"
+  ]
+ },
+ "ice_cream_cone": {
+  "file": "food-kit/ice_cream_cone.glb",
+  "pack": "food-kit",
+  "tags": [
+   "dessert",
+   "cone"
+  ]
+ },
+ "ketchup": {
+  "file": "food-kit/ketchup.glb",
+  "pack": "food-kit",
+  "tags": [
+   "sauce",
+   "condiment"
+  ]
+ },
+ "kitchen_knife": {
+  "file": "food-kit/kitchen_knife.glb",
+  "pack": "food-kit",
+  "tags": [
+   "knife"
+  ]
+ },
+ "lemon": {
+  "file": "food-kit/lemon.glb",
+  "pack": "food-kit",
+  "tags": [
+   "fruit"
+  ]
+ },
+ "lollipop": {
+  "file": "food-kit/lollipop.glb",
+  "pack": "food-kit",
+  "tags": [
+   "candy",
+   "sweet"
+  ]
+ },
+ "milk_carton": {
+  "file": "food-kit/milk_carton.glb",
+  "pack": "food-kit",
+  "tags": [
+   "milk",
+   "dairy"
+  ]
+ },
+ "mortar_pestle": {
+  "file": "food-kit/mortar_pestle.glb",
+  "pack": "food-kit",
+  "tags": [
+   "pharmacy"
+  ]
+ },
+ "muffin": {
+  "file": "food-kit/muffin.glb",
+  "pack": "food-kit",
+  "tags": [
+   "bakery"
+  ]
+ },
+ "mug": {
+  "file": "food-kit/mug.glb",
+  "pack": "food-kit",
+  "tags": [
+   "cup"
+  ]
+ },
+ "mushroom": {
+  "file": "food-kit/mushroom.glb",
+  "pack": "food-kit",
+  "tags": [
+   "fungus"
+  ]
+ },
+ "onion": {
+  "file": "food-kit/onion.glb",
+  "pack": "food-kit",
+  "tags": [
+   "vegetable"
+  ]
+ },
+ "orange": {
+  "file": "food-kit/orange.glb",
+  "pack": "food-kit",
+  "tags": [
+   "fruit"
+  ]
+ },
+ "pancakes": {
+  "file": "food-kit/pancakes.glb",
+  "pack": "food-kit",
+  "tags": [
+   "breakfast"
+  ]
+ },
+ "paper_bag": {
+  "file": "food-kit/paper_bag.glb",
+  "pack": "food-kit",
+  "tags": [
+   "grocery",
+   "shopping_bag"
+  ]
+ },
+ "peanut_butter": {
+  "file": "food-kit/peanut_butter.glb",
+  "pack": "food-kit",
+  "tags": [
+   "jar"
+  ]
+ },
+ "pear": {
+  "file": "food-kit/pear.glb",
+  "pack": "food-kit",
+  "tags": [
+   "fruit"
+  ]
+ },
+ "pie": {
+  "file": "food-kit/pie.glb",
+  "pack": "food-kit",
+  "tags": [
+   "dessert"
+  ]
+ },
+ "pineapple": {
+  "file": "food-kit/pineapple.glb",
+  "pack": "food-kit",
+  "tags": [
+   "fruit"
+  ]
+ },
+ "pizza_box": {
+  "file": "food-kit/pizza_box.glb",
+  "pack": "food-kit",
+  "tags": [
+   "delivery",
+   "takeout"
+  ]
+ },
+ "pizza_cutter": {
+  "file": "food-kit/pizza_cutter.glb",
+  "pack": "food-kit",
+  "tags": [
+   "slicer"
+  ]
+ },
+ "plate": {
+  "file": "food-kit/plate.glb",
+  "pack": "food-kit",
+  "tags": [
+   "dish"
+  ]
+ },
+ "popsicle": {
+  "file": "food-kit/popsicle.glb",
+  "pack": "food-kit",
+  "tags": [
+   "ice_pop"
+  ]
+ },
+ "pudding": {
+  "file": "food-kit/pudding.glb",
+  "pack": "food-kit",
+  "tags": [
+   "dessert"
+  ]
+ },
+ "pumpkin": {
+  "file": "food-kit/pumpkin.glb",
+  "pack": "food-kit",
+  "tags": [
+   "halloween"
+  ]
+ },
+ "ribs": {
+  "file": "food-kit/ribs.glb",
+  "pack": "food-kit",
+  "tags": [
+   "bbq",
+   "meat"
+  ]
+ },
+ "rice_ball": {
+  "file": "food-kit/rice_ball.glb",
+  "pack": "food-kit",
+  "tags": [
+   "onigiri"
+  ]
+ },
+ "rolling_pin": {
+  "file": "food-kit/rolling_pin.glb",
+  "pack": "food-kit",
+  "tags": [
+   "baking"
+  ]
+ },
+ "salad": {
+  "file": "food-kit/salad.glb",
+  "pack": "food-kit",
+  "tags": [
+   "healthy"
+  ]
+ },
+ "sandwich": {
+  "file": "food-kit/sandwich.glb",
+  "pack": "food-kit",
+  "tags": [
+   "lunch"
+  ]
+ },
+ "sausage": {
+  "file": "food-kit/sausage.glb",
+  "pack": "food-kit",
+  "tags": [
+   "meat"
+  ]
+ },
+ "soda": {
+  "file": "food-kit/soda.glb",
+  "pack": "food-kit",
+  "tags": [
+   "cola",
+   "bottle",
+   "drink"
+  ]
+ },
+ "soda_can": {
+  "file": "food-kit/soda_can.glb",
+  "pack": "food-kit",
+  "tags": [
+   "cola",
+   "coke",
+   "pepsi",
+   "drink"
+  ]
+ },
+ "soup": {
+  "file": "food-kit/soup.glb",
+  "pack": "food-kit",
+  "tags": [
+   "bowl"
+  ]
+ },
+ "sprinkle_donut": {
+  "file": "food-kit/sprinkle_donut.glb",
+  "pack": "food-kit",
+  "tags": [
+   "doughnut"
+  ]
+ },
+ "steak": {
+  "file": "food-kit/steak.glb",
+  "pack": "food-kit",
+  "tags": [
+   "beef",
+   "meat"
+  ]
+ },
+ "strawberry": {
+  "file": "food-kit/strawberry.glb",
+  "pack": "food-kit",
+  "tags": [
+   "fruit",
+   "berry"
+  ]
+ },
+ "sub_sandwich": {
+  "file": "food-kit/sub_sandwich.glb",
+  "pack": "food-kit",
+  "tags": [
+   "subway",
+   "sandwich"
+  ]
+ },
+ "sundae": {
+  "file": "food-kit/sundae.glb",
+  "pack": "food-kit",
+  "tags": [
+   "ice_cream"
+  ]
+ },
+ "sushi": {
+  "file": "food-kit/sushi.glb",
+  "pack": "food-kit",
+  "tags": [
+   "nigiri"
+  ]
+ },
+ "sushi_roll": {
+  "file": "food-kit/sushi_roll.glb",
+  "pack": "food-kit",
+  "tags": [
+   "maki",
+   "sushi"
+  ]
+ },
+ "taco": {
+  "file": "food-kit/taco.glb",
+  "pack": "food-kit",
+  "tags": [
+   "mexican",
+   "chipotle"
+  ]
+ },
+ "takeout_box": {
+  "file": "food-kit/takeout_box.glb",
+  "pack": "food-kit",
+  "tags": [
+   "chinese",
+   "noodles",
+   "takeaway"
+  ]
+ },
+ "tin_can": {
+  "file": "food-kit/tin_can.glb",
+  "pack": "food-kit",
+  "tags": [
+   "can"
+  ]
+ },
+ "tomato": {
+  "file": "food-kit/tomato.glb",
+  "pack": "food-kit",
+  "tags": [
+   "vegetable"
+  ]
+ },
+ "turkey": {
+  "file": "food-kit/turkey.glb",
+  "pack": "food-kit",
+  "tags": [
+   "thanksgiving"
+  ]
+ },
+ "waffle": {
+  "file": "food-kit/waffle.glb",
+  "pack": "food-kit",
+  "tags": [
+   "breakfast"
+  ]
+ },
+ "watermelon": {
+  "file": "food-kit/watermelon.glb",
+  "pack": "food-kit",
+  "tags": [
+   "fruit"
+  ]
+ },
+ "whipped_cream": {
+  "file": "food-kit/whipped_cream.glb",
+  "pack": "food-kit",
+  "tags": [
+   "dessert"
+  ]
+ },
+ "whisk": {
+  "file": "food-kit/whisk.glb",
+  "pack": "food-kit",
+  "tags": [
+   "baking"
+  ]
+ },
+ "wine_bottle": {
+  "file": "food-kit/wine_bottle.glb",
+  "pack": "food-kit",
+  "tags": [
+   "wine",
+   "vineyard"
+  ]
+ },
+ "wine_glass": {
+  "file": "food-kit/wine_glass.glb",
+  "pack": "food-kit",
+  "tags": [
+   "wine",
+   "drink"
+  ]
+ }
+}

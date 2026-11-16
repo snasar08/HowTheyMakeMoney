@@ -1,0 +1,464 @@
+{
+ "wood_barrel": {
+  "file": "survival/barrel.glb",
+  "pack": "kenney-survival-kit",
+  "tags": [
+   "cask",
+   "keg",
+   "drum"
+  ]
+ },
+ "wood_barrel_open": {
+  "file": "survival/barrel-open.glb",
+  "pack": "kenney-survival-kit",
+  "tags": [
+   "cask",
+   "keg",
+   "storage"
+  ]
+ },
+ "bedroll_packed": {
+  "file": "survival/bedroll-packed.glb",
+  "pack": "kenney-survival-kit",
+  "tags": [
+   "rolled sleeping bag",
+   "camping gear"
+  ]
+ },
+ "bottle": {
+  "file": "survival/bottle.glb",
+  "pack": "kenney-survival-kit",
+  "tags": [
+   "glass bottle",
+   "drink"
+  ]
+ },
+ "bottle_large": {
+  "file": "survival/bottle-large.glb",
+  "pack": "kenney-survival-kit",
+  "tags": [
+   "jug",
+   "glass bottle",
+   "potion"
+  ]
+ },
+ "wood_box": {
+  "file": "survival/box.glb",
+  "pack": "kenney-survival-kit",
+  "tags": [
+   "wooden crate",
+   "storage",
+   "package"
+  ]
+ },
+ "wood_box_large": {
+  "file": "survival/box-large.glb",
+  "pack": "kenney-survival-kit",
+  "tags": [
+   "big wooden crate",
+   "storage"
+  ]
+ },
+ "wood_box_open": {
+  "file": "survival/box-open.glb",
+  "pack": "kenney-survival-kit",
+  "tags": [
+   "open crate",
+   "empty crate"
+  ]
+ },
+ "campfire": {
+  "file": "survival/campfire-pit.glb",
+  "pack": "kenney-survival-kit",
+  "tags": [
+   "fire pit",
+   "camp fire",
+   "bonfire"
+  ]
+ },
+ "campfire_stand": {
+  "file": "survival/campfire-stand.glb",
+  "pack": "kenney-survival-kit",
+  "tags": [
+   "cooking fire",
+   "camp fire"
+  ]
+ },
+ "campfire_fishing": {
+  "file": "survival/campfire-fishing-stand.glb",
+  "pack": "kenney-survival-kit",
+  "tags": [
+   "cooking fish",
+   "camp fire"
+  ]
+ },
+ "treasure_chest": {
+  "file": "survival/chest.glb",
+  "pack": "kenney-survival-kit",
+  "tags": [
+   "chest",
+   "loot",
+   "pirate",
+   "treasure"
+  ]
+ },
+ "wood_fence": {
+  "file": "survival/fence.glb",
+  "pack": "kenney-survival-kit",
+  "tags": [
+   "fence",
+   "barrier",
+   "gate"
+  ]
+ },
+ "fort_fence": {
+  "file": "survival/fence-fortified.glb",
+  "pack": "kenney-survival-kit",
+  "tags": [
+   "palisade",
+   "wall",
+   "defense"
+  ]
+ },
+ "fish": {
+  "file": "survival/fish.glb",
+  "pack": "kenney-survival-kit",
+  "tags": [
+   "fish",
+   "catch",
+   "seafood"
+  ]
+ },
+ "big_fish": {
+  "file": "survival/fish-large.glb",
+  "pack": "kenney-survival-kit",
+  "tags": [
+   "fish",
+   "big catch",
+   "seafood"
+  ]
+ },
+ "wood_planks": {
+  "file": "survival/resource-planks.glb",
+  "pack": "kenney-survival-kit",
+  "tags": [
+   "planks",
+   "lumber",
+   "boards"
+  ]
+ },
+ "stone_pile": {
+  "file": "survival/resource-stone.glb",
+  "pack": "kenney-survival-kit",
+  "tags": [
+   "stones",
+   "rocks",
+   "quarry"
+  ]
+ },
+ "stone_pile_large": {
+  "file": "survival/resource-stone-large.glb",
+  "pack": "kenney-survival-kit",
+  "tags": [
+   "stones",
+   "rocks",
+   "quarry"
+  ]
+ },
+ "wood_pile": {
+  "file": "survival/resource-wood.glb",
+  "pack": "kenney-survival-kit",
+  "tags": [
+   "logs",
+   "firewood",
+   "lumber"
+  ]
+ },
+ "rock_a": {
+  "file": "survival/rock-a.glb",
+  "pack": "kenney-survival-kit",
+  "tags": [
+   "stone",
+   "boulder"
+  ]
+ },
+ "rock_b": {
+  "file": "survival/rock-b.glb",
+  "pack": "kenney-survival-kit",
+  "tags": [
+   "stone",
+   "boulder"
+  ]
+ },
+ "rock_c": {
+  "file": "survival/rock-c.glb",
+  "pack": "kenney-survival-kit",
+  "tags": [
+   "stone",
+   "boulder"
+  ]
+ },
+ "flat_rock": {
+  "file": "survival/rock-flat.glb",
+  "pack": "kenney-survival-kit",
+  "tags": [
+   "stone slab",
+   "boulder"
+  ]
+ },
+ "sand_rock": {
+  "file": "survival/rock-sand-a.glb",
+  "pack": "kenney-survival-kit",
+  "tags": [
+   "desert rock",
+   "stone"
+  ]
+ },
+ "sand_rock_b": {
+  "file": "survival/rock-sand-b.glb",
+  "pack": "kenney-survival-kit",
+  "tags": [
+   "desert rock",
+   "stone"
+  ]
+ },
+ "signpost": {
+  "file": "survival/signpost.glb",
+  "pack": "kenney-survival-kit",
+  "tags": [
+   "sign",
+   "direction",
+   "road sign"
+  ]
+ },
+ "signpost_single": {
+  "file": "survival/signpost-single.glb",
+  "pack": "kenney-survival-kit",
+  "tags": [
+   "sign",
+   "signboard"
+  ]
+ },
+ "wood_hut": {
+  "file": "survival/structure.glb",
+  "pack": "kenney-survival-kit",
+  "tags": [
+   "shelter",
+   "cabin",
+   "shack"
+  ]
+ },
+ "canvas_hut": {
+  "file": "survival/structure-canvas.glb",
+  "pack": "kenney-survival-kit",
+  "tags": [
+   "shelter",
+   "cabin",
+   "camp"
+  ]
+ },
+ "tent": {
+  "file": "survival/tent.glb",
+  "pack": "kenney-survival-kit",
+  "tags": [
+   "camping",
+   "campsite",
+   "shelter"
+  ]
+ },
+ "canvas_tent": {
+  "file": "survival/tent-canvas.glb",
+  "pack": "kenney-survival-kit",
+  "tags": [
+   "camping",
+   "campsite",
+   "shelter"
+  ]
+ },
+ "half_tent": {
+  "file": "survival/tent-canvas-half.glb",
+  "pack": "kenney-survival-kit",
+  "tags": [
+   "camping",
+   "lean-to",
+   "shelter"
+  ]
+ },
+ "axe": {
+  "file": "survival/tool-axe.glb",
+  "pack": "kenney-survival-kit",
+  "tags": [
+   "hatchet",
+   "lumberjack",
+   "chop"
+  ]
+ },
+ "axe_upgraded": {
+  "file": "survival/tool-axe-upgraded.glb",
+  "pack": "kenney-survival-kit",
+  "tags": [
+   "hatchet",
+   "lumberjack",
+   "steel axe"
+  ]
+ },
+ "hammer": {
+  "file": "survival/tool-hammer.glb",
+  "pack": "kenney-survival-kit",
+  "tags": [
+   "mallet",
+   "builder",
+   "construction"
+  ]
+ },
+ "hammer_upgraded": {
+  "file": "survival/tool-hammer-upgraded.glb",
+  "pack": "kenney-survival-kit",
+  "tags": [
+   "mallet",
+   "builder",
+   "sledgehammer"
+  ]
+ },
+ "hoe": {
+  "file": "survival/tool-hoe.glb",
+  "pack": "kenney-survival-kit",
+  "tags": [
+   "farming",
+   "garden tool"
+  ]
+ },
+ "hoe_upgraded": {
+  "file": "survival/tool-hoe-upgraded.glb",
+  "pack": "kenney-survival-kit",
+  "tags": [
+   "farming",
+   "garden tool"
+  ]
+ },
+ "survival_pickaxe": {
+  "file": "survival/tool-pickaxe.glb",
+  "pack": "kenney-survival-kit",
+  "tags": [
+   "mining",
+   "miner",
+   "dig"
+  ]
+ },
+ "survival_pickaxe_upgraded": {
+  "file": "survival/tool-pickaxe-upgraded.glb",
+  "pack": "kenney-survival-kit",
+  "tags": [
+   "mining",
+   "miner",
+   "dig"
+  ]
+ },
+ "survival_shovel": {
+  "file": "survival/tool-shovel.glb",
+  "pack": "kenney-survival-kit",
+  "tags": [
+   "spade",
+   "dig",
+   "digging"
+  ]
+ },
+ "survival_shovel_upgraded": {
+  "file": "survival/tool-shovel-upgraded.glb",
+  "pack": "kenney-survival-kit",
+  "tags": [
+   "spade",
+   "dig",
+   "digging"
+  ]
+ },
+ "tree": {
+  "file": "survival/tree.glb",
+  "pack": "kenney-survival-kit",
+  "tags": [
+   "pine",
+   "forest",
+   "woods"
+  ]
+ },
+ "tall_tree": {
+  "file": "survival/tree-tall.glb",
+  "pack": "kenney-survival-kit",
+  "tags": [
+   "pine",
+   "forest",
+   "woods"
+  ]
+ },
+ "autumn_tree": {
+  "file": "survival/tree-autumn.glb",
+  "pack": "kenney-survival-kit",
+  "tags": [
+   "fall tree",
+   "forest",
+   "woods"
+  ]
+ },
+ "autumn_tree_tall": {
+  "file": "survival/tree-autumn-tall.glb",
+  "pack": "kenney-survival-kit",
+  "tags": [
+   "fall tree",
+   "forest",
+   "woods"
+  ]
+ },
+ "log": {
+  "file": "survival/tree-log.glb",
+  "pack": "kenney-survival-kit",
+  "tags": [
+   "tree trunk",
+   "timber",
+   "wood"
+  ]
+ },
+ "small_log": {
+  "file": "survival/tree-log-small.glb",
+  "pack": "kenney-survival-kit",
+  "tags": [
+   "timber",
+   "wood"
+  ]
+ },
+ "tree_stump": {
+  "file": "survival/tree-trunk.glb",
+  "pack": "kenney-survival-kit",
+  "tags": [
+   "stump",
+   "trunk",
+   "lumber"
+  ]
+ },
+ "workbench": {
+  "file": "survival/workbench.glb",
+  "pack": "kenney-survival-kit",
+  "tags": [
+   "carpentry",
+   "crafting table",
+   "workshop"
+  ]
+ },
+ "anvil": {
+  "file": "survival/workbench-anvil.glb",
+  "pack": "kenney-survival-kit",
+  "tags": [
+   "blacksmith",
+   "forge",
+   "anvil"
+  ]
+ },
+ "grindstone": {
+  "file": "survival/workbench-grind.glb",
+  "pack": "kenney-survival-kit",
+  "tags": [
+   "sharpening",
+   "workshop",
+   "grinder"
+  ]
+ }
+}

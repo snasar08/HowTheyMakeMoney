@@ -779,7 +779,7 @@ const wordSign = (word: string): Thing => {
   const m = new THREE.Mesh(new THREE.PlaneGeometry(w, h), new THREE.MeshBasicMaterial({ map: tex, transparent: true, toneMapped: false, side: THREE.DoubleSide }));
   m.position.y = h / 2; g.add(m);
   const root = new THREE.Group(); root.add(g);
-  return { root, size: h };
+  return { root, size: w };  // size = width, so `fit` is the sign's width
 };
 
 export const isCodeThing = (name: string) => Object.prototype.hasOwnProperty.call(B, name);

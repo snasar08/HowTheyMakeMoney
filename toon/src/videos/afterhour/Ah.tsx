@@ -47,13 +47,13 @@ const shotsFor = (p: AhProps): AhShot[] => {
     const ALL = ["shoe", "springshoe", "chip", "gpu", "cash", "cashstack", "coins", "goldbar", "trophy", "medal", "crown", "ring", "car", "sportscar", "bus", "truck", "rocket", "phone", "laptop", "tv", "monitor", "clock", "books", "letter", "newspaper", "briefcase", "shovel", "pickaxe", "box", "crate", "basketball", "football", "hoop", "mic", "headset", "controller", "burger", "pizza", "coffee", "plant", "robot", "drone", "satellite", "globe", "house", "factory", "stadium", "plane", "yacht", "chart", "arrowup", "arrowdown", "lightbulb", "lock", "key", "heart", "bomb", "fire", "camera"];
     const out: AhShot[] = [];
     for (let k = 0; k * 12 < ALL.length; k++) out.push({ a: k * 30, n: 30, set: "office", cam: { from: [0, 1.6, 7.2], to: [0, 1.6, 7.0], look: [0, 1.25, 0] }, chars: [],
-      things: ALL.slice(k * 12, k * 12 + 12).map((nm, i) => ({ name: nm, at: [((i % 4) - 1.5) * 1.15, 0.2 + (2 - Math.floor(i / 4)) * 0.85, 1.5] as V3, fit: 0.7 }) as AhThing) });
+      things: ALL.slice(k * 12, k * 12 + 12).map((nm, i) => ({ name: nm, at: [((i % 3) - 1) * 0.85, 0.1 + (3 - Math.floor(i / 3)) * 0.8, 1.5] as V3, fit: 0.5 }) as AhThing) });
     return out;
   }
   if (p.test === "models") {   // contact sheets of the CC0 library: 12 per shot; props {"ah":{"test":"models","from":0}} starts at that index
     const ALL = Object.keys(MODEL_INDEX).sort(), from = (p as AhProps & { from?: number }).from ?? 0, out: AhShot[] = [];
     for (let k = 0; k < 6 && from + k * 12 < ALL.length; k++) out.push({ a: k * 30, n: 30, set: "office", cam: { from: [0, 1.6, 7.2], to: [0, 1.6, 7.0], look: [0, 1.25, 0] }, chars: [],
-      things: ALL.slice(from + k * 12, from + k * 12 + 12).map((nm, i) => ({ name: nm, at: [((i % 4) - 1.5) * 1.15, 0.2 + (2 - Math.floor(i / 4)) * 0.85, 1.5] as V3, fit: 0.7 }) as AhThing) });
+      things: ALL.slice(from + k * 12, from + k * 12 + 12).map((nm, i) => ({ name: nm, at: [((i % 3) - 1) * 0.85, 0.1 + (3 - Math.floor(i / 3)) * 0.8, 1.5] as V3, fit: 0.5 }) as AhThing) });
     return out;
   }
   if (p.test === "sets") return SETS.map((s, k) => ({ a: k * 30, n: 30, set: s, cam: { from: [0, 1.6, 7], to: [0, 1.6, 6.6], look: [0, 1.2, 0] }, chars: [{ look: JEN, at: [0, 0, 0], pose: "stand", expr: "smile" }] }));

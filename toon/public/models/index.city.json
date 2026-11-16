@@ -1,0 +1,217 @@
+{
+ "shop": {
+  "file": "city/building-a.glb",
+  "pack": "kenney-city-kit-commercial",
+  "tags": [
+   "store",
+   "small shop",
+   "commercial"
+  ]
+ },
+ "storefront": {
+  "file": "city/building-b.glb",
+  "pack": "kenney-city-kit-commercial",
+  "tags": [
+   "shop",
+   "store",
+   "retail"
+  ]
+ },
+ "cornershop": {
+  "file": "city/building-c.glb",
+  "pack": "kenney-city-kit-commercial",
+  "tags": [
+   "shop",
+   "store",
+   "retail"
+  ]
+ },
+ "minimall": {
+  "file": "city/building-d.glb",
+  "pack": "kenney-city-kit-commercial",
+  "tags": [
+   "shops",
+   "retail",
+   "mall"
+  ]
+ },
+ "officeblock": {
+  "file": "city/building-e.glb",
+  "pack": "kenney-city-kit-commercial",
+  "tags": [
+   "office",
+   "business",
+   "building"
+  ]
+ },
+ "bankbuilding": {
+  "file": "city/building-f.glb",
+  "pack": "kenney-city-kit-commercial",
+  "tags": [
+   "bank",
+   "finance",
+   "office"
+  ]
+ },
+ "midrise": {
+  "file": "city/building-g.glb",
+  "pack": "kenney-city-kit-commercial",
+  "tags": [
+   "office",
+   "building",
+   "apartment block"
+  ]
+ },
+ "tradehouse": {
+  "file": "city/building-h.glb",
+  "pack": "kenney-city-kit-commercial",
+  "tags": [
+   "trading",
+   "commercial",
+   "building"
+  ]
+ },
+ "citybuilding": {
+  "file": "city/building-i.glb",
+  "pack": "kenney-city-kit-commercial",
+  "tags": [
+   "building",
+   "office",
+   "commercial"
+  ]
+ },
+ "corporatehq": {
+  "file": "city/building-j.glb",
+  "pack": "kenney-city-kit-commercial",
+  "tags": [
+   "headquarters",
+   "office",
+   "corporate"
+  ]
+ },
+ "plaza": {
+  "file": "city/building-k.glb",
+  "pack": "kenney-city-kit-commercial",
+  "tags": [
+   "office",
+   "commercial",
+   "building"
+  ]
+ },
+ "glassoffice": {
+  "file": "city/building-l.glb",
+  "pack": "kenney-city-kit-commercial",
+  "tags": [
+   "office",
+   "glass building",
+   "commercial"
+  ]
+ },
+ "towerblock": {
+  "file": "city/building-m.glb",
+  "pack": "kenney-city-kit-commercial",
+  "tags": [
+   "tower",
+   "office",
+   "building"
+  ]
+ },
+ "bigstore": {
+  "file": "city/building-n.glb",
+  "pack": "kenney-city-kit-commercial",
+  "tags": [
+   "department store",
+   "shop",
+   "retail"
+  ]
+ },
+ "skyscraper": {
+  "file": "city/building-skyscraper-a.glb",
+  "pack": "kenney-city-kit-commercial",
+  "tags": [
+   "tower",
+   "high-rise",
+   "downtown"
+  ]
+ },
+ "skyscraperb": {
+  "file": "city/building-skyscraper-b.glb",
+  "pack": "kenney-city-kit-commercial",
+  "tags": [
+   "tower",
+   "high-rise",
+   "downtown"
+  ]
+ },
+ "skyscraperc": {
+  "file": "city/building-skyscraper-c.glb",
+  "pack": "kenney-city-kit-commercial",
+  "tags": [
+   "tower",
+   "high-rise",
+   "city"
+  ]
+ },
+ "skyscraperd": {
+  "file": "city/building-skyscraper-d.glb",
+  "pack": "kenney-city-kit-commercial",
+  "tags": [
+   "tower",
+   "high-rise",
+   "city"
+  ]
+ },
+ "skyscrapere": {
+  "file": "city/building-skyscraper-e.glb",
+  "pack": "kenney-city-kit-commercial",
+  "tags": [
+   "tower",
+   "high-rise",
+   "wall street"
+  ]
+ },
+ "awning": {
+  "file": "city/detail-awning.glb",
+  "pack": "kenney-city-kit-commercial",
+  "tags": [
+   "shop awning",
+   "canopy"
+  ]
+ },
+ "wideawning": {
+  "file": "city/detail-awning-wide.glb",
+  "pack": "kenney-city-kit-commercial",
+  "tags": [
+   "awning",
+   "canopy",
+   "shop"
+  ]
+ },
+ "parasol": {
+  "file": "city/detail-parasol-a.glb",
+  "pack": "kenney-city-kit-commercial",
+  "tags": [
+   "umbrella",
+   "cafe",
+   "outdoor"
+  ]
+ },
+ "parasolb": {
+  "file": "city/detail-parasol-b.glb",
+  "pack": "kenney-city-kit-commercial",
+  "tags": [
+   "umbrella",
+   "cafe",
+   "outdoor"
+  ]
+ },
+ "widebuildingb": {
+  "file": "city/low-detail-building-wide-b.glb",
+  "pack": "kenney-city-kit-commercial",
+  "tags": [
+   "mall",
+   "warehouse",
+   "store"
+  ]
+ }
+}
