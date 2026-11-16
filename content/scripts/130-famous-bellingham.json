@@ -7,7 +7,7 @@
   "hook_style": "surprise",
   "title_style": "number",
   "theme": "bold_bright",
-  "status": "ready",
+  "status": "delivered",
   "score": 91,
   "title": "From a Retired Shirt at 17 to €103 Million",
   "name_card": "Jude Bellingham",
@@ -51,7 +51,21 @@
           "ball"
         ],
         "stat": "AGE 17",
-        "stat_sub": "his shirt, retired"
+        "stat_sub": "his shirt, retired",
+        "hero": {
+          "skin": "8a5a3c",
+          "hair": "buzz",
+          "hair_color": "15110e",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "f4f4f4",
+          "pants": "f4f4f4",
+          "trim": "d4af37",
+          "socks": "f4f4f4",
+          "shoes": "111111",
+          "height": 1.05,
+          "number": 5
+        }
       },
       "toon": [
         {
@@ -84,7 +98,21 @@
           "ball"
         ],
         "stat": "1 SEASON",
-        "stat_sub": "Birmingham City"
+        "stat_sub": "Birmingham City",
+        "hero": {
+          "skin": "8a5a3c",
+          "hair": "buzz",
+          "hair_color": "15110e",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "f4f4f4",
+          "pants": "f4f4f4",
+          "trim": "d4af37",
+          "socks": "f4f4f4",
+          "shoes": "111111",
+          "height": 1.05,
+          "number": 5
+        }
       },
       "toon": [
         {
@@ -116,7 +144,21 @@
           "check"
         ],
         "stat": "£25 MILLION",
-        "stat_sub": "Dortmund, 2020"
+        "stat_sub": "Dortmund, 2020",
+        "hero": {
+          "skin": "8a5a3c",
+          "hair": "buzz",
+          "hair_color": "15110e",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "f4f4f4",
+          "pants": "f4f4f4",
+          "trim": "d4af37",
+          "socks": "f4f4f4",
+          "shoes": "111111",
+          "height": 1.05,
+          "number": 5
+        }
       },
       "toon": [
         {
@@ -156,7 +198,21 @@
         ],
         "stat": "€103 MILLION",
         "stat_sub": "Real Madrid, 2023",
-        "hud": "€103M"
+        "hud": "€103M",
+        "hero": {
+          "skin": "8a5a3c",
+          "hair": "buzz",
+          "hair_color": "15110e",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "f4f4f4",
+          "pants": "f4f4f4",
+          "trim": "d4af37",
+          "socks": "f4f4f4",
+          "shoes": "111111",
+          "height": 1.05,
+          "number": 5
+        }
       },
       "toon": [
         {
@@ -191,7 +247,21 @@
         ],
         "stat": "CHAMPIONS",
         "stat_sub": "his first Madrid season",
-        "hud": "€103M"
+        "hud": "€103M",
+        "hero": {
+          "skin": "8a5a3c",
+          "hair": "buzz",
+          "hair_color": "15110e",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "f4f4f4",
+          "pants": "f4f4f4",
+          "trim": "d4af37",
+          "socks": "f4f4f4",
+          "shoes": "111111",
+          "height": 1.05,
+          "number": 5
+        }
       },
       "toon": [
         {
@@ -226,5 +296,23 @@
       "title": "Wikipedia: Jude Bellingham",
       "url": "https://en.wikipedia.org/wiki/Jude_Bellingham"
     }
-  ]
+  ],
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-130-famous-bellingham",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-130-famous-bellingham/130-famous-bellingham.mp4",
+    "post_at": "2026-11-17T18:00:00-05:00",
+    "buffer_post": "6afb58ea08dd0180500bccee",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-16T19:26:34.352255+00:00",
+    "seconds": 25.41,
+    "eyes": {
+      "score": 9,
+      "problems": [
+        "Subtitle text layout slightly repetitive at the bottom"
+      ],
+      "best_fix": "Ensure exact synchronization of narration pacing with visual milestones",
+      "model": "gemini-3.5-flash-lite"
+    }
+  }
 }

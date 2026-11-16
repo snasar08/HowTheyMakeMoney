@@ -7,7 +7,7 @@
   "hook_style": "surprise",
   "title_style": "number",
   "theme": "bold_bright",
-  "status": "ready",
+  "status": "delivered",
   "score": 90,
   "title": "From a Dream Board to a $28 Million Deal",
   "name_card": "Caitlin Clark",
@@ -36,7 +36,19 @@
           "ball"
         ],
         "stat": "$28 MILLION",
-        "stat_sub": "before her first WNBA game"
+        "stat_sub": "before her first WNBA game",
+        "hero": {
+          "skin": "f4d2b4",
+          "hair": "ponytail",
+          "hair_color": "9a7448",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "0c2340",
+          "pants": "0c2340",
+          "socks": "f4f4f4",
+          "shoes": "f2b02e",
+          "height": 1.0
+        }
       }
     },
     {
@@ -50,7 +62,19 @@
           "ball"
         ],
         "stat": "THE DREAM",
-        "stat_sub": "get a scholarship"
+        "stat_sub": "get a scholarship",
+        "hero": {
+          "skin": "f4d2b4",
+          "hair": "ponytail",
+          "hair_color": "9a7448",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "0c2340",
+          "pants": "0c2340",
+          "socks": "f4f4f4",
+          "shoes": "f2b02e",
+          "height": 1.0
+        }
       }
     },
     {
@@ -65,7 +89,19 @@
           "trophy"
         ],
         "stat": "ALL-TIME #1",
-        "stat_sub": "NCAA Division I scoring"
+        "stat_sub": "NCAA Division I scoring",
+        "hero": {
+          "skin": "f4d2b4",
+          "hair": "ponytail",
+          "hair_color": "9a7448",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "0c2340",
+          "pants": "0c2340",
+          "socks": "f4f4f4",
+          "shoes": "f2b02e",
+          "height": 1.0
+        }
       }
     },
     {
@@ -81,7 +117,19 @@
         ],
         "stat": "$28 MILLION",
         "stat_sub": "8-year shoe deal, reported",
-        "hud": "$28M"
+        "hud": "$28M",
+        "hero": {
+          "skin": "f4d2b4",
+          "hair": "ponytail",
+          "hair_color": "9a7448",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "0c2340",
+          "pants": "0c2340",
+          "socks": "f4f4f4",
+          "shoes": "f2b02e",
+          "height": 1.0
+        }
       }
     },
     {
@@ -96,7 +144,19 @@
         ],
         "stat": "HER OWN BALL",
         "stat_sub": "with her dream board words",
-        "hud": "$28M"
+        "hud": "$28M",
+        "hero": {
+          "skin": "f4d2b4",
+          "hair": "ponytail",
+          "hair_color": "9a7448",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "0c2340",
+          "pants": "0c2340",
+          "socks": "f4f4f4",
+          "shoes": "f2b02e",
+          "height": 1.0
+        }
       }
     }
   ],
@@ -117,5 +177,24 @@
     "socks": "f4f4f4",
     "shoes": "f2b02e",
     "height": 1.0
+  },
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-081-famous-clark",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-081-famous-clark/081-famous-clark.mp4",
+    "post_at": "2026-11-17T20:00:00-05:00",
+    "buffer_post": "6afb594523d030fd36c4fdef",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-16T19:28:05.463903+00:00",
+    "seconds": 24.41,
+    "eyes": {
+      "score": 9,
+      "problems": [
+        "The caption 'her' appears twice in quick succession around frame 75-85, causing a slight stutter in the reading flow.",
+        "The transition at frame 116 is slightly jarring due to a motion blur effect that makes the character look temporarily distorted."
+      ],
+      "best_fix": "Smooth out the caption timing in the 75-85 frame range to ensure a consistent word-per-second pace.",
+      "model": "gemini-3.1-flash-lite"
+    }
   }
 }

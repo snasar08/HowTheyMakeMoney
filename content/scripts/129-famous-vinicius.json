@@ -7,7 +7,7 @@
   "hook_style": "surprise",
   "title_style": "number",
   "theme": "bold_bright",
-  "status": "ready",
+  "status": "needs_fix",
   "score": 92,
   "title": "The £38 Million 16-Year-Old",
   "name_card": "Vinícius Júnior",
@@ -51,7 +51,21 @@
           "ball"
         ],
         "stat": "£38 MILLION",
-        "stat_sub": "for a 16-year-old"
+        "stat_sub": "for a 16-year-old",
+        "hero": {
+          "skin": "4f3324",
+          "hair": "short",
+          "hair_color": "15110e",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "f4f4f4",
+          "pants": "f4f4f4",
+          "trim": "d4af37",
+          "socks": "f4f4f4",
+          "shoes": "111111",
+          "height": 1.0,
+          "number": 7
+        }
       },
       "toon": [
         {
@@ -84,7 +98,21 @@
           "boxes"
         ],
         "stat": "WAIT",
-        "stat_sub": "no transfers before 18"
+        "stat_sub": "no transfers before 18",
+        "hero": {
+          "skin": "4f3324",
+          "hair": "short",
+          "hair_color": "15110e",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "f4f4f4",
+          "pants": "f4f4f4",
+          "trim": "d4af37",
+          "socks": "f4f4f4",
+          "shoes": "111111",
+          "height": 1.0,
+          "number": 7
+        }
       },
       "toon": [
         {
@@ -113,7 +141,21 @@
           "ball"
         ],
         "stat": "AGE 6",
-        "stat_sub": "Flamengo school, São Gonçalo"
+        "stat_sub": "Flamengo school, São Gonçalo",
+        "hero": {
+          "skin": "4f3324",
+          "hair": "short",
+          "hair_color": "15110e",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "f4f4f4",
+          "pants": "f4f4f4",
+          "trim": "d4af37",
+          "socks": "f4f4f4",
+          "shoes": "111111",
+          "height": 1.0,
+          "number": 7
+        }
       },
       "toon": [
         {
@@ -144,7 +186,21 @@
           "trophy"
         ],
         "stat": "1-0",
-        "stat_sub": "2022 Champions League final"
+        "stat_sub": "2022 Champions League final",
+        "hero": {
+          "skin": "4f3324",
+          "hair": "short",
+          "hair_color": "15110e",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "f4f4f4",
+          "pants": "f4f4f4",
+          "trim": "d4af37",
+          "socks": "f4f4f4",
+          "shoes": "111111",
+          "height": 1.0,
+          "number": 7
+        }
       },
       "toon": [
         {
@@ -171,7 +227,21 @@
           "ball"
         ],
         "stat": "2 FINALS",
-        "stat_sub": "youngest to score in both"
+        "stat_sub": "youngest to score in both",
+        "hero": {
+          "skin": "4f3324",
+          "hair": "short",
+          "hair_color": "15110e",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "f4f4f4",
+          "pants": "f4f4f4",
+          "trim": "d4af37",
+          "socks": "f4f4f4",
+          "shoes": "111111",
+          "height": 1.0,
+          "number": 7
+        }
       },
       "toon": [
         {
@@ -209,7 +279,21 @@
         ],
         "stat": "THE BEST",
         "stat_sub": "FIFA men's player, 2024",
-        "hud": "£38M"
+        "hud": "£38M",
+        "hero": {
+          "skin": "4f3324",
+          "hair": "short",
+          "hair_color": "15110e",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "f4f4f4",
+          "pants": "f4f4f4",
+          "trim": "d4af37",
+          "socks": "f4f4f4",
+          "shoes": "111111",
+          "height": 1.0,
+          "number": 7
+        }
       },
       "toon": [
         {
@@ -235,5 +319,8 @@
       "title": "Wikipedia: Vinícius Júnior",
       "url": "https://en.wikipedia.org/wiki/Vin%C3%ADcius_J%C3%BAnior"
     }
+  ],
+  "needs_fix": [
+    "clarity 89% < 90%: 'couldn't' at 3.5s, 'Flamengo' at 6.5s, 'FIFA' at 14.3s, 'Vinícius' at 16.3s, 'Mbappé? Comment' at 16.9s, 'teen' at 19.6s"
   ]
 }

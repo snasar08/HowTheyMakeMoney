@@ -7,7 +7,7 @@
   "hook_style": "surprise",
   "title_style": "whatif",
   "theme": "dark_neon",
-  "status": "ready",
+  "status": "delivered",
   "score": 91,
   "title": "What If You Got Paid $23,280 to Sleep?",
   "name_card": "Kai Cenat",
@@ -178,5 +178,23 @@
     "socks": "f4f4f4",
     "shoes": "f4f4f4",
     "height": 1.0
+  },
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-084-famous-kai-cenat",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-084-famous-kai-cenat/084-famous-kai-cenat.mp4",
+    "post_at": "2026-11-17T16:30:00-05:00",
+    "buffer_post": "6afb57e5be9cb91737f32087",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-16T19:22:13.583842+00:00",
+    "seconds": 28.56,
+    "eyes": {
+      "score": 9,
+      "problems": [
+        "Minor visual repetition in background elements around frame 400-500"
+      ],
+      "best_fix": "Add more varied B-roll or dynamic background movements during the middle section.",
+      "model": "gemini-3.5-flash-lite"
+    }
   }
 }

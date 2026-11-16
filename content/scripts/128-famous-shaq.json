@@ -7,7 +7,7 @@
   "hook_style": "surprise",
   "title_style": "number",
   "theme": "bold_bright",
-  "status": "ready",
+  "status": "delivered",
   "score": 92,
   "title": "He Owned 155 Five Guys Restaurants",
   "name_card": "Shaquille O'Neal",
@@ -51,7 +51,21 @@
           "burger"
         ],
         "stat": "155",
-        "stat_sub": "Five Guys restaurants"
+        "stat_sub": "Five Guys restaurants",
+        "hero": {
+          "skin": "4a3020",
+          "hair": "bald",
+          "beard": "goatee",
+          "beard_color": "15110e",
+          "outfit": "kit",
+          "shirt": "552583",
+          "pants": "552583",
+          "trim": "fdb927",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "height": 1.35,
+          "number": 34
+        }
       },
       "toon": [
         {
@@ -93,7 +107,21 @@
           "laptop"
         ],
         "stat": "GOOGLE",
-        "stat_sub": "an early investor"
+        "stat_sub": "an early investor",
+        "hero": {
+          "skin": "4a3020",
+          "hair": "bald",
+          "beard": "goatee",
+          "beard_color": "15110e",
+          "outfit": "kit",
+          "shirt": "552583",
+          "pants": "552583",
+          "trim": "fdb927",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "height": 1.35,
+          "number": 34
+        }
       },
       "toon": [
         {
@@ -131,7 +159,21 @@
           "boxes"
         ],
         "stat": "$40 MILLION",
-        "stat_sub": "a shoe deal he turned down"
+        "stat_sub": "a shoe deal he turned down",
+        "hero": {
+          "skin": "4a3020",
+          "hair": "bald",
+          "beard": "goatee",
+          "beard_color": "15110e",
+          "outfit": "kit",
+          "shirt": "552583",
+          "pants": "552583",
+          "trim": "fdb927",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "height": 1.35,
+          "number": 34
+        }
       },
       "toon": [
         {
@@ -170,7 +212,21 @@
           "ball"
         ],
         "stat": "$121 MILLION",
-        "stat_sub": "7-year Lakers deal"
+        "stat_sub": "7-year Lakers deal",
+        "hero": {
+          "skin": "4a3020",
+          "hair": "bald",
+          "beard": "goatee",
+          "beard_color": "15110e",
+          "outfit": "kit",
+          "shirt": "552583",
+          "pants": "552583",
+          "trim": "fdb927",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "height": 1.35,
+          "number": 34
+        }
       },
       "toon": [
         {
@@ -210,7 +266,21 @@
         ],
         "stat": "$400 MILLION",
         "stat_sub": "net worth, 2022",
-        "hud": "$400M"
+        "hud": "$400M",
+        "hero": {
+          "skin": "4a3020",
+          "hair": "bald",
+          "beard": "goatee",
+          "beard_color": "15110e",
+          "outfit": "kit",
+          "shirt": "552583",
+          "pants": "552583",
+          "trim": "fdb927",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "height": 1.35,
+          "number": 34
+        }
       },
       "toon": [
         {
@@ -235,5 +305,25 @@
       "title": "Wikipedia: Shaquille O'Neal",
       "url": "https://en.wikipedia.org/wiki/Shaquille_O%27Neal"
     }
-  ]
+  ],
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-128-famous-shaq",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-128-famous-shaq/128-famous-shaq.mp4",
+    "post_at": "2026-11-17T12:00:00-05:00",
+    "buffer_post": "6afb5693be9cb91737f28b4d",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-16T19:16:35.863493+00:00",
+    "seconds": 27.64,
+    "eyes": {
+      "score": 8,
+      "problems": [
+        "The narration mentions 'Google' but the visual shows a generic 'G' logo, which is acceptable, but the transition to the '40 million' section is slightly abrupt.",
+        "The captioning at the end becomes repetitive and slightly out of sync with the final narration.",
+        "The visual of the 'Lakers' contract is a bit generic and could be more visually engaging for the target demographic."
+      ],
+      "best_fix": "Improve the visual transition between the Google investment segment and the shoe deal segment to make the narrative flow more clearly for the viewer.",
+      "model": "gemini-3.1-flash-lite"
+    }
+  }
 }
