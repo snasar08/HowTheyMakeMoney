@@ -2,7 +2,8 @@
 import * as THREE from "three";
 import { toonMat, metalMat, glowMat, outline, canvasTex } from "./common";
 
-export type Expr = "smile" | "grin" | "smug" | "laugh" | "shock" | "sad" | "angry" | "wink" | "neutral" | "scream";
+export type Expr = "smile" | "grin" | "smug" | "laugh" | "shock" | "sad" | "angry" | "wink" | "neutral" | "scream"
+  | "bite" | "chew_a" | "chew_b" | "gulp" | "yum" | "sip" | "effort" | "shout" | "focus";
 export type Look = { body: string; legs?: string; skin?: string; hat?: "none" | "crown" | "hardhat" | "fedora" | "cap" | "hair";
   hatColor?: string; hatText?: string; hair?: string; glasses?: "none" | "round" | "shades"; tie?: string; text?: string; halo?: boolean;
   /** colour of a shirt / collar showing at the neck */ shirt?: string;
@@ -14,7 +15,10 @@ export type Pose = "stand" | "sit" | "cheer" | "wave" | "point" | "walk" | "dig"
   | "jump" | "dunk" | "run" | "dribble" | "shoot" | "throw" | "type" | "eat" | "talk" | "phone" | "count" | "dance" | "fistpump" | "fall" | "facepalm" | "think" | "sleep";
 export const POSES: Pose[] = ["stand", "sit", "cheer", "wave", "point", "walk", "dig", "shrug",
   "jump", "dunk", "run", "dribble", "shoot", "throw", "type", "eat", "talk", "phone", "count", "dance", "fistpump", "fall", "facepalm", "think", "sleep"];
-export type Char = { root: THREE.Group; /** head centre height above the root when standing (1.55 at height 1) */ readonly headY: number; set(t: number, pose: Pose, expr: Expr, blink?: boolean): void };
+export type Char = { root: THREE.Group; /** head centre height above the root when standing (1.55 at height 1) */ readonly headY: number; set(t: number, pose: Pose, expr: Expr, blink?: boolean): void;
+  /** the hand mesh ("r" = the character's right hand, the one most poses use) so props can be parented to it or read at its world position */ hand(side: "l" | "r"): THREE.Object3D;
+  /** world-space centre of the mouth (front of the head at mouth height, follows pose/height/jumps) */ mouth(): THREE.Vector3;
+  /** show / hide the look's own hat or hair (so an act can put a helmet or hat on the hero without doubling up) */ showHat(on: boolean): void };
 
 const INK = "#14101a";
 const HEAD_R = 0.42;
@@ -138,9 +142,89 @@ function drawFace(g: CanvasRenderingContext2D, e: Expr, blink: boolean) {
       brow(g, CX - EX - 34, 88, CX - EX + 30, 74, -20, 16); brow(g, CX + EX - 30, 74, CX + EX + 34, 88, -20, 16);
       openMouth(g, CX, M - 34, 106, 134, true, true, true);
       break;
+    case "bite": {   // mouth WIDE open: big oval, dark inside, pink tongue, white teeth top + bottom
+      eyes("happy"); brow(g, CX - EX - 28, 96, CX - EX + 28, 88, -10, 15); brow(g, CX + EX - 28, 88, CX + EX + 28, 96, -10, 15);
+      const cx = CX, top = 216, w = 98, h = 142;
+      g.save(); const p = new Path2D(); p.ellipse(cx, top + h / 2, w, h / 2, 0, 0, Math.PI * 2);
+      g.fillStyle = INK; g.fill(p); g.clip(p);
+      g.fillStyle = "#ee5566"; g.beginPath(); g.ellipse(cx, top + h * 0.92, w * 0.62, h * 0.3, 0, 0, Math.PI * 2); g.fill();
+      g.fillStyle = "#fff"; g.fillRect(cx - w, top - 4, w * 2, 30); g.fillRect(cx - w, top + h - 26, w * 2, 30);
+      g.strokeStyle = INK; g.lineWidth = 5; for (const dx of [-42, -14, 14, 42]) { g.beginPath(); g.moveTo(cx + dx, top + 4); g.lineTo(cx + dx, top + 24); g.moveTo(cx + dx, top + h - 24); g.lineTo(cx + dx, top + h - 4); g.stroke(); }
+      g.restore(); line(g, 15); g.stroke(p);
+      break;
+    }
+    case "chew_a": case "chew_b": {   // closed wavy mouth, both cheeks puffed; a / b shift the mouth and swap the bigger cheek
+      const a = e === "chew_a", sh = a ? -16 : 16;
+      eyes("happy"); brow(g, CX - EX - 28, 100, CX - EX + 28, 94, -8, 15); brow(g, CX + EX - 28, 94, CX + EX + 28, 100, -8, 15);
+      for (const s of [-1, 1]) {
+        const big = (s < 0) === a, r = big ? 62 : 46, x = CX + s * 164, y = 262;
+        g.fillStyle = "#ff9fb0"; g.globalAlpha = 0.55; g.beginPath(); g.arc(x, y, r, 0, Math.PI * 2); g.fill(); g.globalAlpha = 1;
+        line(g, 11); g.beginPath(); g.arc(x, y, r, -0.6, Math.PI * 0.9); g.stroke();
+      }
+      line(g, 17); g.beginPath(); g.moveTo(CX - 62 + sh, M + 6);
+      for (let i = 0; i < 4; i++) g.quadraticCurveTo(CX - 62 + sh + i * 31 + 16, M + (i % 2 ? 30 : -18), CX - 62 + sh + (i + 1) * 31, M + 6);
+      g.stroke();
+      break;
+    }
+    case "effort": {   // squeezed eyes, gritted teeth showing, sweat drop
+      for (const s of [-1, 1]) {
+        const x = CX + s * EX; line(g, 19); g.beginPath();
+        g.moveTo(x - s * 26, EY - 22); g.lineTo(x + s * 22, EY + 2); g.lineTo(x - s * 26, EY + 26); g.stroke();
+      }
+      brow(g, CX - EX - 36, 98, CX - EX + 30, 124, -2, 19); brow(g, CX + EX - 30, 124, CX + EX + 36, 98, -2, 19);
+      g.save(); const p = new Path2D(); p.roundRect(CX - 70, M - 14, 140, 62, 22);
+      g.fillStyle = "#fff"; g.fill(p); g.clip(p); g.strokeStyle = INK; g.lineWidth = 6;
+      for (let i = -3; i <= 3; i++) { g.beginPath(); g.moveTo(CX + i * 20, M - 14); g.lineTo(CX + i * 20, M + 48); g.stroke(); }
+      g.beginPath(); g.moveTo(CX - 70, M + 17); g.lineTo(CX + 70, M + 17); g.stroke(); g.restore();
+      line(g, 15); g.stroke(p);
+      g.fillStyle = "#58c8ff"; g.strokeStyle = INK; g.lineWidth = 9;
+      g.beginPath(); g.moveTo(CX + 186, 66); g.quadraticCurveTo(CX + 228, 122, CX + 186, 138); g.quadraticCurveTo(CX + 144, 122, CX + 186, 66); g.fill(); g.stroke();
+      break;
+    }
+    case "shout": {   // huge open yelling mouth, angry-happy brows
+      for (const s of [-1, 1]) {
+        const x = CX + s * EX; line(g, 19); g.beginPath();
+        g.moveTo(x - 30, EY + 14); g.quadraticCurveTo(x, EY - 28, x + 30, EY + 14); g.stroke();
+      }
+      brow(g, CX - EX - 38, 96, CX - EX + 32, 120, -2, 20); brow(g, CX + EX - 32, 120, CX + EX + 38, 96, -2, 20);
+      openMouth(g, CX, M - 42, 118, 150, true, true, false);
+      break;
+    }
+    case "focus": {   // narrowed eyes, brows pulled in, tongue poking out the side of the mouth
+      for (const s of [-1, 1]) {
+        const x = CX + s * EX;
+        if (blink) { blinkEye(g, x, EY); continue; }
+        g.save(); g.beginPath(); g.rect(x - 40, EY - 6, 80, 60); g.clip(); dotEye(g, x, EY + 8, 23, 29); g.restore();
+        line(g, 17); g.beginPath(); g.moveTo(x - 34, EY - 5); g.lineTo(x + 34, EY - 5); g.stroke();
+      }
+      brow(g, CX - EX - 34, 100, CX - EX + 30, 118, -2, 17); brow(g, CX + EX - 30, 118, CX + EX + 34, 100, -2, 17);
+      g.fillStyle = "#ee5566"; g.beginPath(); g.moveTo(CX + 8, M + 6); g.quadraticCurveTo(CX + 70, M + 4, CX + 74, M + 38); g.quadraticCurveTo(CX + 62, M + 62, CX + 38, M + 44); g.quadraticCurveTo(CX + 14, M + 34, CX + 8, M + 6); g.fill();
+      line(g, 11); g.stroke(); line(g, 8); g.beginPath(); g.moveTo(CX + 48, M + 14); g.lineTo(CX + 50, M + 40); g.stroke();
+      line(g, 16); g.beginPath(); g.moveTo(CX - 36, M + 4); g.quadraticCurveTo(CX - 8, M + 12, CX + 12, M + 4); g.stroke();
+      break;
+    }
+    case "gulp":
+      eyes("dot", 25, 37); brow(g, CX - EX - 28, 92, CX - EX + 28, 84, -12, 15); brow(g, CX + EX - 28, 84, CX + EX + 28, 92, -12, 15);
+      line(g, 16); g.beginPath(); g.moveTo(CX - 30, M + 12); g.quadraticCurveTo(CX, M + 26, CX + 30, M + 12); g.stroke();
+      line(g, 10); g.beginPath(); g.arc(CX, M + 62, 14, 0.2, Math.PI - 0.2); g.stroke();   // throat bump
+      break;
+    case "yum": {
+      eyes("happy"); brow(g, CX - EX - 28, 96, CX - EX + 28, 88, -10, 15); brow(g, CX + EX - 28, 88, CX + EX + 28, 96, -10, 15);
+      g.fillStyle = "#ee5566"; g.beginPath(); g.moveTo(CX - 6, M + 2); g.quadraticCurveTo(CX - 40, M + 70, CX + 4, M + 78); g.quadraticCurveTo(CX + 48, M + 70, CX + 30, M + 2); g.fill();
+      line(g, 12); g.stroke();
+      line(g, 15); g.beginPath(); g.moveTo(CX - 62, M - 10); g.quadraticCurveTo(CX, M + 22, CX + 62, M - 10); g.stroke();
+      break;
+    }
+    case "sip":
+      eyes(); brow(g, CX - EX - 28, 106, CX - EX + 28, 98, -10, 15); brow(g, CX + EX - 28, 98, CX + EX + 28, 106, -10, 15);
+      g.fillStyle = "#e0455a"; g.beginPath(); g.ellipse(CX, M + 10, 26, 22, 0, 0, Math.PI * 2); g.fill();
+      line(g, 14); g.stroke(); g.fillStyle = INK; g.beginPath(); g.ellipse(CX, M + 10, 9, 8, 0, 0, Math.PI * 2); g.fill();
+      break;
   }
 }
 
+const EAT = new Set<string>(["bite", "chew_a", "chew_b", "gulp", "yum", "sip"]);
+const _mouth = new THREE.Vector3();
 const faceMats = new Map<string, THREE.MeshBasicMaterial>();
 function faceMat(e: Expr, blink: boolean) {
   const key = e + (blink ? "|b" : "");
@@ -413,9 +497,21 @@ function buildChar(look: Look, cheap: boolean): Char {
   const face = new THREE.Mesh(
     new THREE.SphereGeometry(HEAD_R + 0.006, cheap ? 14 : 32, cheap ? 10 : 24, Math.PI / 2 - PHI_HALF, PHI_HALF * 2, TH0, TH_LEN), faceMat("neutral", false));
   face.renderOrder = 2; head.add(face);
+  // mouth + eating helpers: canvas y 290 -> theta
+  const MTH = TH0 + (290 / FH) * TH_LEN;
+  const MY = HEAD_R * Math.cos(MTH), MZ = HEAD_R * Math.sin(MTH);
+  // dark open-mouth interior: sits just under the face drawing (renderOrder 1), never writes depth, so food in front of the mouth stays on top
+  const hole = new THREE.Mesh(new THREE.SphereGeometry(1, 16, 12), new THREE.MeshBasicMaterial({ color: INK, depthWrite: false, transparent: true }));
+  hole.position.set(0, MY, MZ + 0.004); hole.rotation.x = Math.asin(-MY / HEAD_R) * 0.9; hole.scale.set(0.095, 0.07, 0.02); hole.renderOrder = 1; hole.visible = false; head.add(hole);
+  const cheeks: THREE.Object3D[] = [];
+  for (const s of [-1, 1]) {
+    const c = mesh(new THREE.SphereGeometry(0.075, cheap ? 12 : 20, cheap ? 8 : 14), skinMat, s * 0.25, -0.11, 0.27, false);   // no outline + sunk into the head: reads as a puffed cheek, not a separate ball (Nov 16 review)
+    c.visible = false; head.add(c); cheeks.push(c);
+  }
 
   // accessories
   const hc = look.hatColor ?? "#e9a21a";
+  const hatFrom = head.children.length;
   switch (look.hat ?? "none") {
     case "crown": {
       const gold = metalMat("#ffc928", 0.3);
@@ -482,6 +578,7 @@ function buildChar(look: Look, cheap: boolean): Char {
       break;
     }
   }
+  const hatNodes = head.children.slice(hatFrom);
   if (look.halo) {
     const halo = mesh(new THREE.TorusGeometry(0.22, 0.032, 12, 40), glowMat("#ffd84a", 2.4), 0, 0.62, 0, false);
     halo.rotation.x = Math.PI / 2; halo.name = "halo"; head.add(halo);
@@ -626,13 +723,13 @@ function buildChar(look: Look, cheap: boolean): Char {
   const set = (t: number, pose: Pose, expr: Expr, blink = false) => {
     // face (extras only draw two expressions: happy / flat)
     let fe: Expr = expr;
-    if (cheap) fe = (expr === "smile" || expr === "grin" || expr === "laugh" || expr === "wink" || expr === "smug") ? "grin" : "neutral";
-    const fb = cheap ? false : blink;
+    if (cheap && !EAT.has(expr)) fe = (expr === "smile" || expr === "grin" || expr === "laugh" || expr === "wink" || expr === "smug") ? "grin" : "neutral";
+    const fb = cheap ? false : blink; if (EAT.has(fe) && fe !== "sip" && fe !== "gulp") blink = false;
     if (curExpr !== fe || curBlink !== fb) { (face.material as THREE.Material) = faceMat(fe, fb); curExpr = fe; curBlink = fb; }
     // reset
     rig.position.set(0, 0, 0); rig.rotation.set(0, 0, 0); rig.scale.set(1, 1, 1);
     head.position.set(0, HEAD_Y, 0);
-    head.rotation.set(0, 0, 0);
+    head.rotation.set(0, 0, 0); head.scale.set(1, 1, 1);
     shovel.visible = false;
     legR.hip.position.set(0.125, HIP_Y, 0); legL.hip.position.set(-0.125, HIP_Y, 0);
     legR.hip.rotation.set(0, 0, 0); legL.hip.rotation.set(0, 0, 0); legR.knee.rotation.set(0, 0, 0); legL.knee.rotation.set(0, 0, 0);
@@ -888,9 +985,20 @@ function buildChar(look: Look, cheap: boolean): Char {
     else if (expr === "laugh") head.rotation.x += -0.1 + Math.sin(t * 14) * 0.03;
     else if (expr === "grin" || expr === "smile") head.rotation.x += -0.02 + Math.sin(t * 2.6) * 0.012;
     else if (expr === "wink") head.rotation.z += 0.05;
+    else if (expr === "shout") head.rotation.x += -0.12 + Math.sin(t * 18) * 0.02;
+    else if (expr === "effort") head.rotation.x += 0.05 + Math.sin(t * 30) * 0.006;
+    else if (expr === "focus") head.rotation.x += 0.08;
+    // eating: open mouth interior + jaw drop, puffed cheeks that alternate
+    const chewing = expr === "chew_a" || expr === "chew_b";
+    hole.visible = expr === "bite";
+    if (expr === "bite") { head.scale.y = 1.03; head.position.y -= 0.006; head.rotation.x += 0.05; }
+    cheeks[0].visible = cheeks[1].visible = chewing;
+    if (chewing) { const a = expr === "chew_a"; cheeks[0].scale.setScalar(a ? 1.1 : 0.85); cheeks[1].scale.setScalar(a ? 0.85 : 1.1); head.rotation.z += a ? 0.025 : -0.025; }
+    if (expr === "gulp") head.rotation.x -= 0.05;
   };
   set(0, "stand", "neutral", false);
-  return { root, headY: HEAD_Y, set };
+  return { root, headY: HEAD_Y, set, showHat: (on) => { for (const n of hatNodes) n.visible = on; }, hand: (side) => (side === "l" ? armL.hand : armR.hand),
+    mouth: () => { head.updateWorldMatrix(true, false); return _mouth.set(0, MY, MZ).applyMatrix4(head.matrixWorld).clone(); } };
 }
 
 let SHADE_LENS: THREE.MeshStandardMaterial | undefined;

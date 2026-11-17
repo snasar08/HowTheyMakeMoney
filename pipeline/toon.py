@@ -384,12 +384,20 @@ def ah_look(o: dict) -> dict:
 def ah_shots(plan: dict) -> list:
     hero, shots, views = plan.get("hero") or {}, [], ["ms", "face", "cu", "ms", "low", "face"]
     prev_pose = None
+    prev_acts: list = []
     for k, sc in enumerate(plan["scenes"]):
         place = sc.get("place") or {0: "bridge", 1: "street", 2: "quay"}.get(sc.get("loc"), "street")
         who = {**hero, **(sc.get("who") or {})}
         # the hero DOES what the sentence says (Sam, Nov 16: "jump shoes, people should jump"): pipeline/ah_actions
         pose = ah_actions.pick_pose(sc.get("text") or sc.get("line") or "", list(sc.get("things") or []) + list(sc.get("props") or []),
                                     sc.get("mood", "happy"), sc.get("action"), place, prev_pose)
+        # Nov 16 (Sam: "he hasn't played basketball"): a line that DOES something gets a real mini-scene (`act`)
+        thing_names = list(sc.get("things") or []) + list(sc.get("props") or [])
+        act = ah_actions.pick_act(sc.get("text") or sc.get("line") or "", thing_names, place, sc.get("mood", "happy"),
+                                  sc.get("action"), prev_acts[-2:])
+        prev_acts.append(act)
+        if act:
+            pose = ah_actions.ACT_POSE[act]
         prev_pose = pose
         chars = [{"look": ah_look(who), "at": [0, 0, 0], "pose": pose, "expr": AH_EXPR.get(sc.get("mood", "happy"), "smile")}]
         for i in range(min(6, int(sc.get("crowd") or 0) // 5)):     # a few extras behind, cheering/reacting
@@ -401,9 +409,10 @@ def ah_shots(plan: dict) -> list:
         elif sc.get("brand") and sc.get("beat") in ("logo", "sign"):
             b = sc["brand"]; cards.append({"text": b["name"].upper(), "kind": "sign", "bg": b.get("bg"), "fg": b.get("fg"), "at": [0.48, 2.2, -0.6], "w": 0.88})
         things, seen = [], set()
+        own = ah_actions.ACT_OWN_PROPS.get(act, set()) if act else set()   # the act brings this prop itself
         for nm in list(sc.get("things") or []) + list(sc.get("props") or []):
             t3 = AH_THING.get(nm)
-            if not t3 or t3 in seen or len(things) >= 2:
+            if not t3 or t3 in seen or len(things) >= 2 or nm in own or t3 in own:
                 continue
             seen.add(t3)
             big = t3 in AH_BIG
@@ -412,24 +421,28 @@ def ah_shots(plan: dict) -> list:
         for t3 in ah_words_to_models(sc.get("text") or sc.get("line") or ""):   # then library models the sentence's words name
             if len(things) >= 2:
                 break
-            if t3 in seen:
+            if t3 in seen or t3 in own:
                 continue
             seen.add(t3)
             things.append({"name": t3, "at": [0.55, 0.85, 0.55] if not things else [-0.55, 0.85, 0.55], "fit": 0.42 if not things else 0.34})
         shot = {"a": sc["a"], "n": sc["n"], "set": AH_SET.get(place, "street"), "view": sc.get("view") or views[k % len(views)],
                 "chars": chars, "cards": cards, "things": things, **({"coins": True} if sc.get("beat") == "money" else {})}
-        if sc.get("hide") and cards:   # a card-only shot: frame the card
-            cards[0]["at"] = [0, 1.55, 0.3]; cards[0]["w"] = 1.15; shot["chars"] = chars[:0]
-            shot["cam"] = {"from": [0, 1.55, 2.5], "to": [0, 1.55, 2.2], "look": [0, 1.55, 0.3]}
+        if act:
+            shot["act"] = {"kind": act}
+            allowed, default = ah_actions.ACT_SET.get(act, ((), None))
+            if default and shot["set"] not in allowed:       # the act's own world (court / pitch / ring / track / field ...)
+                shot["set"] = default
+            if "cam" not in shot:
+                shot["view"] = ah_actions.ACT_VIEW.get(act, "ms")
         # his tempo (30 fps study): a new view about every 1.3 s, so a long sentence becomes several shots of the same
         # moment from different angles (medium -> face -> close -> low ...), each with its slow push-in
         # Sam, Nov 16: re-cutting the same moment every ~1.3 s "is a headache": ONE picture per sentence with a smooth
         # camera push; a cut only when the line changes. A long sentence (> ~3.5 s) gets one extra cut to a clearly
         # different framing (medium -> face), never a cut every second.
-        parts = (1 if sc["n"] <= 105 else 2) if "cam" not in shot else 1
+        parts = (1 if sc["n"] <= 105 else 2) if ("cam" not in shot and not act) else 1   # an act shot is one unbroken take
         order = {"ms": ["ms", "face"], "face": ["face", "ms"], "cu": ["cu", "ws"], "low": ["low", "face"],
                  "ws": ["ws", "face"], "wide": ["wide", "face"]}.get(shot["view"], [shot["view"], "face"])
-        if pose in ("jump", "dunk", "shoot") and "cam" not in shot:
+        if pose in ("jump", "dunk", "shoot") and "cam" not in shot and not act:
             # Nov 16 Wemby frame check: a close-up on a jump put his head out of the top of the frame for ~2 s;
             # the whole body (and the air above it) must be in shot when he leaves the ground
             shot["view"] = "wide"; order = ["wide", "ws"]

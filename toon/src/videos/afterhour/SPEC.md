@@ -64,3 +64,49 @@ Each set dense and art-directed, roughly what a viewer sees in a 9:16 frame from
 - street: night city street, buildings with lit windows, lamp posts, a pavement.
 - beach: sand, sea, red beach umbrella, cooler, sky with sun.
 Blank signs/screens: expose them as `spots` too (e.g. `banner`, `screen`) so the lead can place text cards there.
+
+## Acts (Nov 16, Sam: "he hasn't played basketball": actions must really happen, with the ball/hoop/opponent, not mimed)
+A shot may carry `act: { kind: string; at?: [x,y,z] }`. An act is a tiny scripted scene around the hero for that shot.
+
+```ts
+// toon/src/videos/afterhour/acts/types.ts (owned by worker A)
+export type ActCtx = { root: THREE.Group; hero: Char; heroAt: [number, number, number]; set: SetName;
+  spots: Record<string, [number, number, number]>; seed: number };
+export type ActRun = { tick(t: number): Pose | void };          // t = seconds into the shot; may override the hero pose per frame
+export type ActDef = { pose: Pose; view?: string; build(ctx: ActCtx): ActRun };
+```
+- `Char.hand(side: "l" | "r"): THREE.Object3D` (worker A adds to char.ts): the hand mesh, so props can be parented to it
+  or placed at its world position (`getWorldPosition`).
+- Registry `acts/index.ts` (worker A) merges `SPORTS` from `acts/sports.ts` (A) and `DAILY` from `acts/daily.ts` (C).
+- Ah.tsx (A) builds the act once per shot (cache like `build()`), calls `tick(tl)` every frame, uses its pose override,
+  and uses `def.view` (usually "wide") unless the shot has an explicit `cam`.
+- Everything deterministic (t and seed only), cel style (toonMat + outline), objects big enough to read on a phone.
+Kinds: sports (A) dribble, shoot, dunk, block, pass, layup, kick, punch, sprint, trophy_lift;
+daily (C) eat, drink, phone_call, type_laptop, count_cash, sign_contract, drive_car, throw_cash, present_chart, unbox.
+Pipeline (worker B): `pipeline/ah_actions.pick_act(line, things, place, ...)` -> kind or None; `toon.ah_shots` writes `act`.
+
+## Eating (Nov 16, Sam: "I want to see a mouth open ... make it look like he's eating")
+- New face expressions in char.ts (worker G): "bite" (mouth WIDE open, round, teeth top and bottom, eyes happy-squint),
+  "chew_a" / "chew_b" (mouth closed and wavy, both cheeks puffed out; a and b alternate fast so the jaw reads as chewing),
+  "gulp" (mouth closed small, eyes wide, a little throat bump), "yum" (eyes closed happy, tongue licking the lips),
+  "sip" (lips pursed small "o" for a straw/cup). Optional 3D cheek bulges shown for chew_a/b. Add them to the Expr type.
+- `Char.mouth(): THREE.Vector3` (worker G): world position of the mouth centre (front of the head, ~0.12 below head centre),
+  so food can be brought exactly to it.
+- Bitten food (worker H, acts/daily.ts eat + drink): food is brought to `mouth()`, the face goes "bite" ~0.15 s BEFORE
+  contact, the food goes slightly INTO the mouth, comes away with a visible bite missing (a semicircle notch: swap to a
+  pre-built bitten model or hide wedge pieces), crumbs fly, then chew_a/chew_b alternate ~6 Hz for ~0.6 s, then gulp/yum.
+  2 bites per act. Expressions are returned from tick via ActPose.expr.
+- More foods (worker I, new file acts/food.ts exporting FOOD): eat_pizza (slice, cheese stretches on the bite),
+  eat_fries (one fry at a time), eat_icecream (lick), eat_donut, drink_soda (straw sip, cheeks hollow), each with real bite
+  states using the same expressions and `mouth()`.
+
+## Act quality bar (Nov 16, Sam after the eating faces: "it should be like that for everything")
+Every act, existing or new, must meet the eating standard:
+1. CONTACT: the object really touches its target (food inside the open mouth, ball through the net, pen on paper leaving ink,
+   hammer on the board, hand on the bell rope, card on the reader). No hovering, no miming.
+2. FACE IN SYNC: the expression changes with the action's phases via ActPose.expr: anticipation (eager/focus) -> the action
+   (bite / shout / effort / wince) -> the result (smug / yum / shock / laugh). New faces for this: "effort" (gritted teeth,
+   squeezed eyes), "shout" (huge open yell), "focus" (tongue out the side, narrowed eyes).
+3. BEFORE -> AFTER is visible: a bite missing, a signature on the page, the net swishing, a taller gold stack, cut ribbon halves,
+   a broken tape, a chart that ends higher. The viewer sees what changed.
+4. Readable on a phone from the act's camera; the hero's face visible in 3/4 front most frames; one hoop/ball/prop, never a duplicate.

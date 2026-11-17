@@ -11,12 +11,12 @@ the script's `things`, then whatever the line's words add (toon.things_for, max 
 then only the names in toon.AH_THING are drawn, then library models named by the line's words fill free slots.
 
 ERROR (the Short would render wrong or lie):
-  toon length != sentence count (or a story scene with no toon); unknown place/beat/mood/view/action/card kind;
+  toon length != sentence count (or a story scene with no toon); unknown place/beat/mood/view/action/act/card kind;
   a thing/prop that exists nowhere ("missing object"); a year or money/number figure with no card and no money
   picture; a brand named for the first time with no brand and no card.
 WARN (looks weak): same place+view+pose as the line before; same beat twice; >2 clocks or >1 phone; a mentioned
   object that is not drawn; a thing that ah_shots cannot draw; a twist line in a scene with no "face" view; 4+
-  lines in a row with no card/thing/brand; fewer than 30% of lines with a thing or card; later brand mentions with
+  lines in a row with no card/thing/brand; a line with a clear action verb (an `act` fires) whose toon `action` forces another pose; fewer than 30% of lines with a thing or card; later brand mentions with
   no sign; no hero.
 Score = 100 - 10 per ERROR - 2.5 per WARN (floor 0).
 """
@@ -146,6 +146,7 @@ def check(script: dict) -> tuple[Report, dict]:
     rows: list[dict] = []                                   # one per sentence, in order
     prev_things: list = []
     prev_pose = None
+    prev_acts: list = []
     clocks = phones = 0
     brand_seen: set[str] = set()
     k = 0                                                   # index among all shots (the view cycle)
@@ -230,6 +231,20 @@ def check(script: dict) -> tuple[Report, dict]:
                         r.add("WARN", w, f"mention not shown: '{nm}' is in the line but not in `things` (add it, or the 2 slots are taken)", line)
             # pose / view like ah_shots
             pose = ah_actions.pick_pose(text, list(shown_plan) + list(props), mood, act, place, prev_pose)
+            # acts (Nov 16): a line with a clear action verb plays a real mini-scene (ah_shots does the same call)
+            kind = ah_actions.pick_act(text, list(shown_plan) + [p for p in props if isinstance(p, str)], place, mood, act, prev_acts[-2:])
+            prev_acts.append(kind)
+            if "act" in d:
+                dk = d["act"].get("kind") if isinstance(d["act"], dict) else d["act"]
+                if dk not in ah_actions.ACTS:
+                    r.add("ERROR", w, f"unknown act '{dk}' (use {', '.join(ah_actions.ACTS)})", line)
+            if kind:
+                forced = d.get("action")
+                if isinstance(forced, str) and forced in ah_actions.POSES and forced not in ah_actions.OLD_ACTIONS and forced != ah_actions.ACT_POSE[kind]:
+                    r.add("WARN", w, f"the line says an action ({kind}) but `action: \"{forced}\"` forces another pose: the renderer plays "
+                                     f"the {kind} act with pose {ah_actions.ACT_POSE[kind]}; drop `action` or reword the line", line)
+            if kind:
+                pose = ah_actions.ACT_POSE[kind]
             prev_pose = pose
             vw = view or DEFAULT_VIEWS[k % len(DEFAULT_VIEWS)]
             k += 1
@@ -259,7 +274,8 @@ def check(script: dict) -> tuple[Report, dict]:
             if beat == "phone" or "phone" in drawn:
                 phones += 1
             row = {"w": w, "line": line, "text": text, "place": place, "beat": beat, "view": vw, "pose": pose, "explicit_view": view,
-                   "visual": bool(card or drawn or has_brand or beat in ("logo", "sign")), "thing_or_card": bool(card or drawn),
+                   "visual": bool(card or drawn or has_brand or kind or beat in ("logo", "sign")), "thing_or_card": bool(card or drawn or kind),
+                   "act": kind,
                    "twist": bool(TWIST.search(text) or text.rstrip().endswith(("?", "!")))}
             rows.append(row)
             scene_rows.append(row)
@@ -304,7 +320,7 @@ def check(script: dict) -> tuple[Report, dict]:
             r.add("WARN", "script", f"only {round(share * 100)}% of lines show a thing or a card (aim for 30%+)")
     score = max(0.0, 100 - 10 * r.count("ERROR") - 2.5 * r.count("WARN"))
     return r, {"score": round(score), "sentences": len(rows), "story": story, "mode": mode,
-               "shown": sum(1 for x in rows if x["thing_or_card"])}
+               "shown": sum(1 for x in rows if x["thing_or_card"]), "acts": sum(1 for x in rows if x.get("act"))}
 
 
 def report(path: str, out=print) -> dict | None:
@@ -319,7 +335,7 @@ def report(path: str, out=print) -> dict | None:
     if info["score"] is None:
         out(f"== {path}  [{kind}]  not a toon Short (no lowpoly scenes): skipped")
         return {"path": path, "score": None, "errors": 0, "warns": 0, "sentences": 0}
-    out(f"== {path}  [{kind}, {info['sentences']} sentences]  scene score {info['score']}  errors {e}  warns {w}")
+    out(f"== {path}  [{kind}, {info['sentences']} sentences]  scene score {info['score']}  errors {e}  warns {w}  acts {info.get('acts', 0)}")
     for lvl, where, msg, line in sorted(r.items, key=lambda i: (i[0] != "ERROR", )):
         out(f"  {lvl:5s} {where}: {msg}" + (f'\n          "{line}"' if line else ""))
     if r.build:

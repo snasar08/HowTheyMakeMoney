@@ -82,6 +82,23 @@ The picture must SHOW what the sentence says. Fields (all optional; use only the
 - `who`: a different character for that line (e.g. Michael Jordan in a kit with number 23). Set the hero in
   `hero` (below).
 
+- Acts (Nov 16, Sam: "he hasn't played basketball"): when a line DOES something, the renderer plays a real mini-scene
+  around the hero (the ball goes through the hoop, a shot gets swatted, the burger gets eaten, the contract gets signed)
+  and picks it from the line's verbs (`pipeline/ah_actions.pick_act`); nothing to set. So write action lines in concrete
+  verbs ("you shoot from half court", "you block everything", "you sign Jordan", "you count the cash", "you code the
+  app") and put the related object in `things` (pizza fries icecream donut soda coffee burger pick the food act) (burger, car, chart / arrowup, box / shoe, laptop, cash, trophy) so the
+  act fires and has its prop. Do not force `action` on such a line: the act's own pose wins. Kinds: sports = dribble
+  shoot dunk block pass layup kick punch sprint trophy_lift, plus qb_throw touchdown bat_swing pitch (baseball only)
+  tennis_serve golf_swing goal_celebrate race_car sprint_finish lift_weights; daily = eat (burger, sandwich, any food) eat_pizza eat_fries eat_icecream eat_donut drink (coffee, tea) drink_soda (soda, cola, milkshake) phone_call type_laptop
+  count_cash sign_contract drive_car throw_cash present_chart unbox; business = handshake_deal ("strike a deal",
+  "partner with", "merge") ring_bell (IPO, "goes public") ribbon_cut ("opens its first store") stack_gold card_swipe
+  cash_register stock_up stock_crash vault hire; creator = gaming streaming sing_stage guitar film_camera rocket_launch
+  build_tools ("builds a shoe", "in a garage") code_screens ("you code the app") robot_build post_video ("goes viral").
+  Each act moves the shot to its own place (court / pitch / ring / track / field / boardroom / stage / stall / lab ...) and
+  uses a wide view for sports, driving, charts, stock moves and rockets. Buying something big ("you buy it for 309 million")
+  is shown as signing the paper. Vague lines
+  ("it grows", "you win") get no act on purpose; "Nobody can score on you" = block, "your teammates get wide open" = pass.
+
 Rules of thumb (the checker enforces most of them):
 - A year or a money figure said in the line is SHOWN: a `card` (flip for years, screen for money) or a money beat.
 - A company or brand named for the first time pops its `brand` sign or a `card`.
