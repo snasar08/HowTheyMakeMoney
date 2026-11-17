@@ -85,6 +85,12 @@ def odd_lines(parts, sr) -> None:
                 p[3].append(f"odd-pitch:{d:+.1f}st")
 
 
+def channel_dist_st(pieces, sr) -> float:
+    """|semitones| between the Short's voiced median (after the render's GEMINI_PITCH_ST) and CHANNEL_HZ, 0.5 st steps."""
+    m = prosody.short_median(pieces, sr) * 2 ** (tts.GEMINI_PITCH_ST / 12)
+    return round(abs(12 * float(np.log2(m / prosody.CHANNEL_HZ))) * 2) / 2 if m else 99.0
+
+
 def split_lines(lines: list[str], heard: list[dict], total: float):
     """Cut points between lines of a whole-Short read: midway between the last heard word of a line and the
     first of the next (words matched to the script with difflib). None if any line can't be found."""
@@ -168,7 +174,9 @@ def _gemini_short(sid: str) -> bool:
             parts.append((line, piece, ws, bad))
         odd_lines(parts, sr)
         bad_all = [b for p in parts for b in p[3]]
-        rank = (sum(bool(p[3]) for p in parts), prosody.badness(w, sr, " ".join(lines)))
+        # among takes, the one nearer the channel pitch wins (after flags; no extra requests): distance in semitones
+        # of the take's pooled median, as heard after the +GEMINI_PITCH_ST shift, from CHANNEL_HZ
+        rank = (sum(bool(p[3]) for p in parts), channel_dist_st([p[1] for p in parts], sr), prosody.badness(w, sr, " ".join(lines)))
         if best is None or rank < best[0]:
             best = (rank, parts, sr)
         if not bad_all:
@@ -200,6 +208,14 @@ def _gemini_short(sid: str) -> bool:
         if len(trial[k][3]) < len(bad):
             print(f"[prepass] line re-recorded ({bad[:2]} -> {trial[k][3][:2]}): {line[:50]}", flush=True)
             parts[k] = trial[k]
+    # Nov 17: level the register (Short median -> CHANNEL_HZ, outlier lines nudged), one pitch shift, no requests
+    try:
+        lv, info = tts.level_pieces([p[1] for p in parts], [p[0] for p in parts], sr)
+        print(f"[prepass] leveled: median {info.get('median_hz', 0):.0f} Hz -> {info.get('new_median_hz', 0):.0f} Hz "
+              f"(shift {info.get('delta_st', 0):+.1f} st, line nudges {[round(x, 1) for x in info.get('nudges', []) if x]})", flush=True)
+        parts = [(p[0], q, p[2], p[3]) for p, q in zip(parts, lv)]
+    except Exception as e:  # noqa: BLE001
+        print(f"::warning title=voice::leveling skipped: {e!r}", flush=True)
     for line, piece, ws, _bad in parts:
         sf.write(tts.line_path(line) + ".wav", piece, sr)
         Path(tts.line_path(line) + ".json").write_text(json.dumps(ws), encoding="utf-8")

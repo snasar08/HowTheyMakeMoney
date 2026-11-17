@@ -28,7 +28,14 @@ Formats allowed: `famous`, `whatif`, `story`. Do NOT write `how` or `careers` (p
 - Line 2 = the payoff or a sharper twist. Never setup, never a repeat of line 1. Viewers leave at 4-5 s.
 - Title carries the number ("From Selling Japan's Shoes to $46.3 Billion"). Person stories with a low start and a
   dated number are the channel's fastest. Do not write more than 1 in 6 question titles.
-- Short fragments. Calm, plain English, no hype words ("insane", "crazy", "you won't believe").
+- Short sentences, but full ones: 6-14 words. Never two 2-4 word fragments in a row (Nov 17 review of the posted
+  Ninja Short: 6 of its 14 sentences were fragments like "That year?" / "By his own guess.", each read with a
+  falling pitch and a 0.7 s gap, so it sounded chopped). Calm, plain English, no hype words ("insane", "crazy").
+- Line one says WHO by name ("Ninja got paid 1 million dollars ..."), never only "him"/"he".
+- Time words must match the dates: "months earlier", "that same year", "a year later" only when the sourced dates
+  say so; otherwise say the year ("Back in 2017 ...").
+- Say the thing plainly so the voice can't blur it: "a rival game called Apex Legends", not "A rival to Fortnite"
+  (heard as "Arrival"). Every format now renders in the 3D look, so every line needs a picture (section 4).
 - Every few lines flips the one before it. Use 2-4 numbers, each sourced. Spell numbers for speech: "46.3 billion
   dollars", "57 percent" ($ is allowed; it is spoken as dollars).
 - `loop`: one short line spoken last that leads back into line 1 ("So next time you lace up your shoes, remember:").

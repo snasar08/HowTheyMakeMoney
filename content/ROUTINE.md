@@ -8,6 +8,17 @@ HOW THIS TEAM WORKS (Sam, Nov 16 2026: "3 sonnet agents and you being background
 
 SAVE AFTER EVERY SCRIPT: the session can be cut off by the usage limit at any moment. After EACH script passes your check: `git pull --rebase origin main`, commit that script (+ its angles.md/topics.md lines) alone, push to main right away. If pushing to main is refused, push to claude/scripts-<date> and say so.
 
+USAGE (Sam, Nov 17: "add the same usage skills ... this way it's more efficient"; these runs use Sam's plan limits):
+- Helpers do the reading: research pages, long files and logs go to the Sonnet helpers; they send back a short text
+  report (file path, check outputs, URLs, objects to build), never whole pages. Always pass model "sonnet".
+- Keep tool output short: grep/head/tail, `git log --oneline`, read files with offset/limit, never cat a whole
+  research page or a big script into your own context when a helper can summarise it.
+- Images cost a lot (a 1080x1920 still is ~2.7k tokens): look at stills as small contact sheets, only the ones the
+  check flags plus a spot check.
+- Batch: run independent commands and helper launches in one message; wait for background notifications, never
+  poll in a loop with sleeps beyond the fetcher wait.
+- Don't re-read this file, WRITER_GUIDE.md or the example script once you've read them.
+
 0. START: `git log --oneline -40`, finish anything an earlier part left half-done today (a research/* branch with pages but no script, a draft whose checks were not finished, a things-test/* branch not merged).
 1. READ (short on purpose; this replaces reading all of CLAUDE.md): content/WRITER_GUIDE.md (the rules), analytics/insights.md, the last 40 lines of content/angles.md, content/topics.md, and the best example script content/scripts/119-plan-nike.json (Sam's favourite: copy its structure and scene density). Read CLAUDE.md only for a rule the guide does not cover.
 2. HOW MANY: count status "ready". Target this part = min(10, 75 - ready) (0 if 75+ ready). First fix any "needs_fix" scripts (reasons are in the field) and set them back to ready.
