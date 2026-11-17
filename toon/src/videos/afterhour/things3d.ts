@@ -67,7 +67,7 @@ const textTex = (text: string, w: number, h: number, bg: string, fg: string, bol
     g.fillStyle = bg; g.fillRect(0, 0, w, h); bgDraw?.(g);
     if (!text) return;
     let fs = h * 0.5; let lines: string[] = [];
-    for (; fs > 10; fs -= 4) { g.font = `${bold ? "900" : "600"} ${fs}px Arial Black, Arial, sans-serif`; lines = wrapText(g, text, w * 0.86); if (lines.length * fs * 1.1 <= h * 0.86) break; }
+    for (; fs > 10; fs -= 4) { g.font = `${bold ? "900" : "600"} ${fs}px Arial Black, Arial, sans-serif`; lines = wrapText(g, text, w * 0.86); if (lines.length * fs * 1.1 <= h * 0.86 && lines.every((l) => g.measureText(l).width <= w * 0.9)) break; }   // a single long word ("BREAKING") must fit too
     g.fillStyle = fg; g.textAlign = "center"; g.textBaseline = "middle";
     lines.forEach((l, i) => g.fillText(l, w / 2, h / 2 + (i - (lines.length - 1) / 2) * fs * 1.1));
   });

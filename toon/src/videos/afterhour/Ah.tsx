@@ -219,13 +219,22 @@ const build = (k: number, s: AhShot): Built => {
   const things: Thing[] = (s.things ?? []).map((t) => {
     const th = makeThing(t.name, { color: t.color, text: t.text }), p = spotOf(set, t.at ?? [1.0, 0, 0.4]);
     const fit = (t as AhThing & { fit?: number }).fit;
-    const fitK = s.view === "wide" ? 1.5 : s.view === "ws" ? 2.1 : 1;   // held things read bigger in the far views
+    const fitK = s.view === "wide" ? 1.3 : s.view === "ws" ? 1.6 : 1;   // held things read bigger in the far views (not so big they bury the hero)
     const sc = fit ? (fit * fitK) / Math.max(0.05, th.size) : (t.scale ?? 1);
     th.root.position.set(p[0], p[1], p[2]); th.root.rotation.y = t.rot ?? -0.35; th.root.scale.setScalar(sc);
     th.root.userData.base = sc; th.root.userData.pop = t.pop !== false;
     root.add(th.root);
     th.root.updateMatrixWorld(true);
-    const bb = new THREE.Box3().setFromObject(th.root), bs = bb.getSize(new THREE.Vector3()), bc = bb.getCenter(new THREE.Vector3());   // the real extent (a tv / sign is wider than its nominal size)
+    let bb = new THREE.Box3().setFromObject(th.root);   // the real extent (a tv / sign is wider than its nominal size)
+    // Nov 17 (Ninja test: the grown cash stack / controller covered his face): a held thing never sits in front of the
+    // hero's head or torso — slide it out to the hero's side until its box clears the body column
+    const hero0 = chars[s.subject ?? 0];
+    if (fit && hero0 && !s.cam) {
+      const hx = hero0.root.position.x, clear = 0.36 * (hero0.root.scale.x || 1);
+      const left = bb.min.x - hx;
+      if (left < clear) { th.root.position.x += clear - left; th.root.updateMatrixWorld(true); bb = new THREE.Box3().setFromObject(th.root); }
+    }
+    const bs = bb.getSize(new THREE.Vector3()), bc = bb.getCenter(new THREE.Vector3());
     const r = Math.max(0.1, (fit ? fit * fitK : th.size * sc) * 0.6), hw0 = bs.x / 2 + Math.abs(bc.x - th.root.position.x), hh0 = bs.y / 2 + Math.abs(bc.y - th.root.position.y);
     if (!s.act) fitItems.push({ pos: th.root.position, hw: Math.max(r, hw0), hh: Math.max(r, hh0), set: (k2) => { th.root.userData.base *= k2; th.root.scale.setScalar(th.root.userData.base); } });
     return th;
