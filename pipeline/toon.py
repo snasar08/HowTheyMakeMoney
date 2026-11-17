@@ -413,6 +413,8 @@ def ah_shots(plan: dict) -> list:
                         break
                 if want in ("count_cash", "throw_cash", "stack_gold", "vault"):
                     sc = {**sc, "beat": "money"}                        # coins rain too
+        if not act and pose == "stand" and sc["n"] > 60:
+            pose = "talk"                                           # never a 2 s+ statue: he explains with his hands
         prev_pose = pose
         chars = [{"look": ah_look(who), "at": [0, 0, 0], "pose": pose, "expr": AH_EXPR.get(sc.get("mood", "happy"), "smile")}]
         for i in range(min(6, int(sc.get("crowd") or 0) // 5)):     # a few extras behind, cheering/reacting
@@ -456,7 +458,7 @@ def ah_shots(plan: dict) -> list:
         # Sam, Nov 16: re-cutting the same moment every ~1.3 s "is a headache": ONE picture per sentence with a smooth
         # camera push; a cut only when the line changes. A long sentence (> ~3.5 s) gets one extra cut to a clearly
         # different framing (medium -> face), never a cut every second.
-        parts = (1 if sc["n"] <= 105 else 2) if ("cam" not in shot and not act) else 1   # an act shot is one unbroken take
+        parts = (1 if sc["n"] <= 80 else 2) if ("cam" not in shot and not act) else 1   # an act shot is one unbroken take; a still line over ~2.7 s gets a second angle (Nov 16 Nike review: 3 s static holds)
         order = {"ms": ["ms", "face"], "face": ["face", "ms"], "cu": ["cu", "ws"], "low": ["low", "face"],
                  "ws": ["ws", "face"], "wide": ["wide", "face"]}.get(shot["view"], [shot["view"], "face"])
         if pose in ("jump", "dunk", "shoot") and "cam" not in shot and not act:
