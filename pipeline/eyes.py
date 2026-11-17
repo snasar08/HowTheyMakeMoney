@@ -62,6 +62,115 @@ bottom; the small yellow number is the frame index, 30 = 1 second). Also check, 
 Machine scan of all frames: {scan}
 """
 
+# ACT CHECK (Nov 16): story Shorts have "acts" (the hero performs a scripted action). One short description per kind;
+# a kind not listed falls back to its name. Frame ranges come from the toon plan's ah.shots ({a, n, act: {kind}}).
+ACT_DESC = {
+    "dribble": "visibly DRIBBLING a basketball", "shoot": "visibly SHOOTING a basketball that goes through the hoop",
+    "dunk": "visibly DUNKING a basketball into the hoop", "block": "visibly BLOCKING an opponent's shot / jumping to swat the ball",
+    "pass": "visibly PASSING a basketball to a teammate", "layup": "visibly doing a LAYUP at the hoop",
+    "kick": "visibly KICKING a ball", "punch": "visibly PUNCHING (boxing)", "sprint": "visibly SPRINTING on a track",
+    "trophy_lift": "visibly LIFTING a trophy overhead", "eat": "visibly EATING food", "drink": "visibly DRINKING",
+    "phone_call": "visibly TALKING on a phone held to the ear", "type_laptop": "visibly TYPING on a laptop",
+    "count_cash": "visibly COUNTING cash (bills in hand / stacks)", "sign_contract": "visibly SIGNING a contract with a pen",
+    "drive_car": "visibly DRIVING a car (seated at the wheel, car moving)", "throw_cash": "visibly THROWING cash into the air",
+    "present_chart": "visibly PRESENTING a chart (pointing at it)", "unbox": "visibly UNBOXING a package",
+    "handshake_deal": "visibly SHAKING HANDS to close a deal", "qb_throw": "visibly THROWING a football",
+    "touchdown": "visibly SCORING a touchdown", "bat_swing": "visibly SWINGING a baseball bat",
+    "pitch": "visibly PITCHING a baseball", "tennis_serve": "visibly SERVING a tennis ball",
+    "golf_swing": "visibly SWINGING a golf club", "goal_celebrate": "visibly CELEBRATING a goal",
+    "race_car": "visibly RACING a car", "sprint_finish": "visibly CROSSING a finish line", "lift_weights": "visibly LIFTING weights",
+    "ring_bell": "visibly RINGING a bell", "ribbon_cut": "visibly CUTTING a ribbon", "stack_gold": "visibly STACKING gold bars",
+    "card_swipe": "visibly SWIPING a card", "cash_register": "visibly working a CASH REGISTER",
+    "stock_up": "a stock chart visibly GOING UP", "stock_crash": "a stock chart visibly CRASHING",
+    "vault": "visibly at a VAULT of money", "hire": "visibly HIRING someone", "gaming": "visibly PLAYING a video game",
+    "streaming": "visibly STREAMING (talking to a camera/mic)", "sing_stage": "visibly SINGING on a stage",
+    "guitar": "visibly PLAYING a guitar", "film_camera": "visibly FILMING with a camera",
+    "rocket_launch": "visibly LAUNCHING a rocket", "build_tools": "visibly BUILDING with tools",
+    "code_screens": "visibly CODING on screens", "robot_build": "visibly BUILDING a robot",
+    "post_video": "visibly POSTING a video on a phone", "eat_pizza": "visibly EATING pizza", "eat_fries": "visibly EATING fries",
+    "eat_icecream": "visibly EATING ice cream", "eat_donut": "visibly EATING a donut", "drink_soda": "visibly DRINKING a soda",
+}
+ACT_ASK = """ACT CHECK. In these frame ranges the character performs a scripted action. For EACH one decide whether a viewer
+would instantly read that action (right pose, the right object in hand, the action actually completing; a character just
+standing or posing beside the object is NOT clear):
+{lines}
+Add to the JSON reply a key "acts": one object per range above, in order:
+{{"kind": "<kind>", "frames": "<A-B>", "clear": <true|false>, "why": "<one short sentence of what you actually see>"}}
+"""
+
+
+def load_acts(video: Path, total: int | None = None) -> list[dict]:
+    """Act shots [{kind, a, b}] (b inclusive) from the toon plan props (ah.shots with act). Looked up, in order: env
+    EYES_ACTS (a props/plan JSON or sidecar), <video>.acts.json, EYES_PLAN_DIR/<stem>.json, toonplans/<stem>.json and
+    tp/<stem>.json (the nightly make job has toonplans/). Adjacent shots of the same kind merge. [] when none found.
+    `total` = frames in the video: plan frame numbers are scaled if the plan length differs by more than 2%."""
+    cands = [os.environ.get("EYES_ACTS"), str(video) + ".acts.json", str(video.with_suffix(".acts.json"))]
+    for d in (os.environ.get("EYES_PLAN_DIR"), "toonplans", "tp"):
+        if d:
+            cands.append(str(Path(d) / f"{video.stem}.json"))
+    for c in cands:
+        if not c or not Path(c).is_file():
+            continue
+        try:
+            data = json.loads(Path(c).read_text(encoding="utf-8"))
+        except Exception:  # noqa: BLE001
+            continue
+        shots = data if isinstance(data, list) else ((data.get("ah") or {}).get("shots") or data.get("shots") or [])
+        return acts_from_shots(shots, total)
+    return []
+
+
+def acts_from_shots(shots: list, total: int | None = None) -> list[dict]:
+    shots = [s for s in shots if isinstance(s, dict) and "a" in s and "n" in s]
+    end = max([int(s["a"]) + int(s["n"]) for s in shots] or [0])
+    k = total / end if total and end and abs(total - end) / end > 0.02 else 1.0
+    out: list[dict] = []
+    for s in shots:
+        kind = (s.get("act") or {}).get("kind")
+        if not kind:
+            continue
+        a, b = round(int(s["a"]) * k), round((int(s["a"]) + int(s["n"])) * k) - 1
+        if out and out[-1]["kind"] == kind and a <= out[-1]["b"] + 1:
+            out[-1]["b"] = max(out[-1]["b"], b)
+        else:
+            out.append({"kind": kind, "a": a, "b": max(a, b)})
+    return out
+
+
+def act_text(acts: list[dict]) -> str:
+    lines = "\n".join("- frames %d-%d (%s): he should be %s" % (
+        x["a"], x["b"], x["kind"], ACT_DESC.get(x["kind"], "visibly doing: " + x["kind"].replace("_", " "))) for x in acts)
+    return ACT_ASK.format(lines=lines)
+
+
+def parse_acts(reply: dict | None, acts: list[dict]) -> list[dict]:
+    """Per-act verdicts [{kind, frames, clear (True/False/None = no verdict), why}], one per expected act, in order.
+    Tolerant of a missing/garbled "acts" key, string booleans, and verdicts out of order (matched by frames, then kind)."""
+    raw = (reply or {}).get("acts")
+    got = [g for g in raw if isinstance(g, dict)] if isinstance(raw, list) else []
+    used: set[int] = set()
+    out = []
+    for x in acts:
+        fr = f'{x["a"]}-{x["b"]}'
+        pick = next((i for i, g in enumerate(got) if i not in used and str(g.get("frames", "")).replace(" ", "") == fr), None)
+        if pick is None:
+            pick = next((i for i, g in enumerate(got) if i not in used and g.get("kind") == x["kind"]), None)
+        v = {"kind": x["kind"], "frames": fr, "clear": None, "why": ""}
+        if pick is not None:
+            used.add(pick)
+            c = got[pick].get("clear")
+            if isinstance(c, str):
+                c = {"true": True, "false": False}.get(c.strip().lower())
+            v["clear"] = c if isinstance(c, bool) else None
+            v["why"] = str(got[pick].get("why", ""))[:200]
+        out.append(v)
+    return out
+
+
+def act_blockers(verdicts: list[dict]) -> list[str]:
+    return [f'act {v["kind"]} unclear at frames {v["frames"]}: {v.get("why") or "no reason given"}'[:200]
+            for v in verdicts if v.get("clear") is False]
+
 
 def frames(video: Path, n: int = 12):
     from PIL import Image
@@ -127,11 +236,18 @@ def look(video: Path, script: dict) -> dict | None:
     key = os.environ.get("GEMINI_API_KEY")
     if not key:
         return None
+    acts: list[dict] = []
     imgs = frames(video, 0 if os.environ.get("EYES_FRAMES", "all") == "all" else 12)
     narration = " ".join(sc.get("narration", "") for sc in script.get("scenes", []))
     if os.environ.get("EYES_FRAMES", "all") == "all":
         sheets, scan = all_frames(video)
         extra = ALL_FRAMES.format(scan=json.dumps(scan))
+        try:
+            acts = load_acts(video, scan.get("frames"))
+        except Exception as e:  # noqa: BLE001
+            print(f"::warning title=eyes::could not read the acts ({e!r})", flush=True)
+        if acts:
+            extra += act_text(acts)
         pics = [_jpeg(sh, 80) for sh in sheets]
     else:
         scan, extra, pics = {}, "", [_jpeg(sheet(imgs[1:]))]
@@ -155,6 +271,8 @@ def look(video: Path, script: dict) -> dict | None:
             text = "".join(p.get("text", "") for c in res.get("candidates", []) for p in c.get("content", {}).get("parts", []))
             out = json.loads(text[text.find("{"):text.rfind("}") + 1])
             out["model"] = m
+            if acts:
+                out["acts"] = parse_acts(out, acts)
             if scan:
                 out["scan"] = scan
             return out
@@ -184,6 +302,13 @@ def report(name: str, r: dict | None) -> list[str]:
     out = [f"eyes score {r.get('score')}/10"] if low else []
     if r.get("hold") is True:
         out.append(f"eyes hold: {str((r.get('problems') or ['serious defect'])[0])[:160]}")
+    acts = r.get("acts") or []
+    for v in acts:
+        print(f"::notice title={name} act::{v.get('kind')} frames {v.get('frames')} clear={v.get('clear')}: {str(v.get('why', ''))[:160]}",
+              flush=True)
+    if acts and all(v.get("clear") is None for v in acts):
+        print(f"::warning title={name} eyes::{len(acts)} act(s) to check but the reviewer returned no act verdicts", flush=True)
+    out += act_blockers(acts)
     if frozen:
         out.append(f"picture frozen {r['scan']['longest_frozen_s']} s")
     if out and os.environ.get("EYES", "block") == "warn":

@@ -20,7 +20,9 @@ To extend: add a regex to the tables below; plain stdlib, deterministic.
 """
 from __future__ import annotations
 
+import json
 import re
+from pathlib import Path
 
 POSES = {"stand", "sit", "cheer", "wave", "point", "walk", "dig", "shrug",
          "jump", "dunk", "run", "dribble", "shoot", "throw", "type", "eat", "talk", "phone", "count",
@@ -816,3 +818,28 @@ if __name__ == "__main__":
     print("\nTotal", sum(counts.values()))
     for p, n in counts.most_common():
         print(f"  {p:9s} {n}")
+
+
+# ---- approved acts only (Sam, Nov 16: a weak act "can't happen" in an automatic Short) ----
+# pick_act returns a kind only when it is in toon/src/videos/afterhour/acts/approved.json; everything else falls back to
+# the plain pose picker (the character reacts instead of acting). A kind is added there only after a frame-by-frame review.
+_APPROVED_FILE = Path(__file__).resolve().parent.parent / "toon" / "src" / "videos" / "afterhour" / "acts" / "approved.json"
+_APPROVED: set | None = None
+
+
+def approved_acts() -> set:
+    global _APPROVED
+    if _APPROVED is None:
+        try:
+            _APPROVED = set(json.loads(_APPROVED_FILE.read_text(encoding="utf-8")).get("approved", []))
+        except Exception:
+            _APPROVED = set()
+    return _APPROVED
+
+
+_pick_act_all = pick_act
+
+
+def pick_act(*args, **kwargs):   # noqa: F811  (same signature as above, filtered to approved kinds)
+    kind = _pick_act_all(*args, **kwargs)
+    return kind if kind in approved_acts() else None

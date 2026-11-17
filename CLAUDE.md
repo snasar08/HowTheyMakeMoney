@@ -195,7 +195,7 @@ and **free beyond his Higgsfield Pro plan** — never add a paid service or ask 
   `THUMB_OFFSET_MS` = 40 (frame 1 = the title cover). Check health.md after new posts.
 - **Pace (Nov 15, Sam: the Nike story was "very very slow"; his reference: @afterhourtheories "Jensen Huang's Affair
   Rocks NVIDIA", 2.5 min, 55K likes, a new view every ~1.3 s):** the Gemini read is sped up with atempo (same voice
-  and pitch): `VOICE_SPEED_STORY` 1.25 for story Shorts (Nov 16, Sam: the 3D Nike at 1.15 was great, "speed it up a little"), `VOICE_SPEED` 1.1 for the rest (`tts.VOICE_SPEED_FOR`, set per
+  and pitch): `VOICE_SPEED_STORY` 1.2 for story Shorts (Nov 16, Sam: 1.15 "a little slow", 1.25 "a little too fast"), `VOICE_SPEED` 1.1 for the rest (`tts.VOICE_SPEED_FOR`, set per
   Short in render.py); toon story cuts every ~40 frames; animated Shorts show the sentence being said as white text
   near the top (`render._subline`, `SUBLINE=off` hides it) on top of the big one-word caption, like the reference.
 - `pipeline/publish.py` — `UPLOAD_MODE` repo variable:

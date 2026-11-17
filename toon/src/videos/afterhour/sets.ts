@@ -910,9 +910,13 @@ function court(): SetObj {
   panel(g, 9, 0.8, 0, 0.55, -8.6, "#ffc21f", 0, "#10102a"); panel(g, 5, 0.8, -8.5, 0.55, -8.5, "#7b3fe4", 0, "#10102a"); panel(g, 5, 0.8, 8.5, 0.55, -8.5, "#7b3fe4", 0, "#10102a");
   const sb = canvasTex(512, 256, (c) => {
     c.fillStyle = "#06060e"; c.fillRect(0, 0, 512, 256); c.textAlign = "center"; c.font = "bold 34px Arial";
-    c.fillStyle = "#ffc21f"; c.fillText("HOME", 110, 50); c.fillText("AWAY", 402, 50);
-    c.font = "bold 110px Courier New"; c.fillStyle = "#ff4d3a"; c.fillText("88", 110, 160); c.fillText("85", 402, 160);
-    c.font = "bold 70px Courier New"; c.fillStyle = "#ffe36a"; c.fillText("2:41", 256, 120); c.font = "bold 30px Arial"; c.fillStyle = "#8ae0ff"; c.fillText("4TH", 256, 190);
+    // HOME score left, AWAY score right, the clock in its own box between them with clear gaps (Nov 16: "882:4185" ran together)
+    c.fillStyle = "#ffc21f"; c.fillText("HOME", 88, 62); c.fillText("AWAY", 424, 62);
+    c.font = "bold 104px Courier New"; c.fillStyle = "#ff4d3a"; c.fillText("88", 88, 178); c.fillText("85", 424, 178);
+    c.fillStyle = "#10102a"; c.fillRect(176, 40, 160, 176); c.strokeStyle = "#8ae0ff"; c.lineWidth = 3; c.strokeRect(176, 40, 160, 176);
+    c.font = "bold 30px Arial"; c.fillStyle = "#8ae0ff"; c.fillText("4TH", 256, 82);
+    c.font = "bold 52px Courier New"; c.fillStyle = "#ffe36a"; c.fillText("2:41", 256, 160);
+    c.font = "bold 20px Arial"; c.fillStyle = "#ffc21f"; c.fillText("QUARTER", 256, 196);
     c.strokeStyle = "#ffc21f"; c.lineWidth = 6; c.strokeRect(6, 6, 500, 244);
   });
   bx(g, 4.8, 2.4, 0.7, T("#0c0c18"), 0, 7.0, -8.0, 0.04); const sbp = new THREE.Mesh(new THREE.PlaneGeometry(4.6, 2.3), basic(sb, 1.25, false)); sbp.position.set(0, 7.0, -7.64); g.add(sbp);

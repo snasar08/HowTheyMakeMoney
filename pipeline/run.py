@@ -202,7 +202,7 @@ def main() -> int:
                 seen = eyes.look(video, script)
                 blockers += eyes.report(path.stem, seen)
                 if seen:
-                    info["eyes"] = {k: seen.get(k) for k in ("score", "problems", "best_fix", "model")}
+                    info["eyes"] = {k: seen.get(k) for k in ("score", "problems", "best_fix", "model", "acts")}
             except Exception as e:  # noqa: BLE001  never lose a Short over the reviewer
                 print(f"::warning title=eyes::{e!r}")
             if blockers and not args.dry:

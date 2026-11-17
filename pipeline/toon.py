@@ -318,7 +318,7 @@ AH_CROWD = [{"body": c, "hat": "hair", "hair": h} for c, h in (("#e86a6a", "#3a2
 
 
 _AH_MODELS: dict | None = None
-_AH_STOP = {"the", "a", "an", "and", "or", "of", "to", "in", "on", "it", "is", "was", "he", "she", "they", "his", "her", "this", "that", "with", "for", "at", "by", "as", "be", "so", "but"}
+_AH_STOP = {"sign", "signs", "signed", "signing", "deal", "deals", "the", "a", "an", "and", "or", "of", "to", "in", "on", "it", "is", "was", "he", "she", "they", "his", "her", "this", "that", "with", "for", "at", "by", "as", "be", "so", "but"}
 
 
 def ah_models() -> dict:
@@ -398,6 +398,21 @@ def ah_shots(plan: dict) -> list:
         prev_acts.append(act)
         if act:
             pose = ah_actions.ACT_POSE[act]
+        else:
+            # Sam, Nov 16: an act that is switched OFF (not in approved.json) must never leave a hole: the line still
+            # shows its object (cash stack, contract, camera, ball...) held/next to him and the closest simple pose
+            want = ah_actions._pick_act_all(sc.get("text") or sc.get("line") or "", thing_names, place,
+                                            sc.get("mood", "happy"), sc.get("action"), prev_acts[-3:-1])
+            if want:
+                pose = ah_actions.ACT_POSE.get(want, pose)
+                key = {"sign_contract": "letter", "count_cash": "cash", "throw_cash": "cash", "stack_gold": "goldbar"}.get(want)
+                own = [key] if key else sorted(ah_actions.ACT_OWN_PROPS.get(want) or [])
+                for nm in own:
+                    if AH_THING.get(nm) or nm in AH_THING.values():
+                        thing_names = [nm] + [t for t in thing_names if t != nm]
+                        break
+                if want in ("count_cash", "throw_cash", "stack_gold", "vault"):
+                    sc = {**sc, "beat": "money"}                        # coins rain too
         prev_pose = pose
         chars = [{"look": ah_look(who), "at": [0, 0, 0], "pose": pose, "expr": AH_EXPR.get(sc.get("mood", "happy"), "smile")}]
         for i in range(min(6, int(sc.get("crowd") or 0) // 5)):     # a few extras behind, cheering/reacting
@@ -410,7 +425,7 @@ def ah_shots(plan: dict) -> list:
             b = sc["brand"]; cards.append({"text": b["name"].upper(), "kind": "sign", "bg": b.get("bg"), "fg": b.get("fg"), "at": [0.48, 2.2, -0.6], "w": 0.88})
         things, seen = [], set()
         own = ah_actions.ACT_OWN_PROPS.get(act, set()) if act else set()   # the act brings this prop itself
-        for nm in list(sc.get("things") or []) + list(sc.get("props") or []):
+        for nm in thing_names:          # things + props (+ the object of an act that is switched off)
             t3 = AH_THING.get(nm)
             if not t3 or t3 in seen or len(things) >= 2 or nm in own or t3 in own:
                 continue
@@ -430,7 +445,9 @@ def ah_shots(plan: dict) -> list:
         if act:
             shot["act"] = {"kind": act}
             allowed, default = ah_actions.ACT_SET.get(act, ((), None))
-            if default and shot["set"] not in allowed:       # the act's own world (court / pitch / ring / track / field ...)
+            # the act's own world (court / pitch / ring / track / field ...), but never over a place the story CHOSE on
+            # purpose: "you dunk from the free throw line ... on the Moon" stays in space (Nov 16 Wemby review)
+            if default and shot["set"] not in allowed and shot["set"] not in ("space", "stage", "throne", "beach"):
                 shot["set"] = default
             if "cam" not in shot:
                 shot["view"] = ah_actions.ACT_VIEW.get(act, "ms")

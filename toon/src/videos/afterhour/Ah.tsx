@@ -87,6 +87,12 @@ const VIEWS: Record<string, { from: V3; to: V3; look: V3; blur: number }> = {
   actcode: { from: [0.3, 1.6, 5.2], to: [0.3, 1.6, 4.7], look: [0.2, 1.4, 0], blur: 1 },     // seated coder, middle screen + DEPLOY button
   actt: { from: [0.3, 2.0, 8.0], to: [0.3, 2.0, 7.4], look: [0.3, 1.9, 0], blur: 1 },
 };
+/** Nov 16 (owner: the acted hero was ~1/8 of the frame): pull each act view in along its own view ray (k < 1 = closer) and aim lower, so the whole body fills ~45% of the frame height; the head-in-frame guard below still backs off for jumps */
+const ACT_CLOSER: Record<string, [number, number]> = { act: [0.62, -0.25], actl: [0.64, -0.25], actw: [0.7, -0.2], actd: [0.7, -0.25], actc: [0.7, -0.2], actm: [0.97, -0.08], actsing: [0.85, -0.05], actf: [0.85, -0.05], actcode: [0.88, 0], actt: [0.75, -0.2] };
+for (const [n, [k, dy]] of Object.entries(ACT_CLOSER)) {
+  const v = VIEWS[n], c = (p: V3): V3 => [v.look[0] + (p[0] - v.look[0]) * k, v.look[1] + (p[1] - v.look[1]) * k + dy, v.look[2] + (p[2] - v.look[2]) * k];
+  v.from = c(v.from); v.to = c(v.to); v.look = [v.look[0], v.look[1] + dy, v.look[2]];
+}
 const lerp = (a: V3, b: V3, u: number): V3 => [a[0] + (b[0] - a[0]) * u, a[1] + (b[1] - a[1]) * u, a[2] + (b[2] - a[2]) * u];
 const ease = (u: number) => 1 - (1 - Math.max(0, Math.min(1, u))) ** 2;
 
