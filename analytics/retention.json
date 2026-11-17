@@ -1,5 +1,5 @@
 {
- "at": "2026-11-16T20:58:15.591980+00:00",
+ "at": "2026-11-17T19:48:07.118464+00:00",
  "shorts": [
   {
    "video": "aGOO0z7dfpk",
@@ -662,36 +662,6 @@
    "drop_size": 41
   },
   {
-   "video": "1QcFteTrYtk",
-   "title": "Robinhood Is Free. So How Did It Make $4.5B?",
-   "views": 77,
-   "avg_pct": 61.9,
-   "avg_seconds": 20,
-   "tags": {
-    "script": "007",
-    "slug": "robinhood",
-    "topic": "Robinhood",
-    "format": "how",
-    "visual_style": "charts3d",
-    "theme": "dark_neon",
-    "hook_style": "question",
-    "title_style": "question",
-    "length_s": 32.34,
-    "length_bucket": "30-38",
-    "post_at": "2026-11-01T18:00:00-05:00",
-    "post_slot": "18:00",
-    "score": 77
-   },
-   "start": 127,
-   "q25": 91,
-   "q50": 55,
-   "q75": 50,
-   "end": 27,
-   "drop_at_pct": 6,
-   "drop_at_s": 1.9,
-   "drop_size": 27
-  },
-  {
    "video": "jLD-ouKQ6Eo",
    "title": "Red Bull Sells 14 Billion Cans a Year",
    "views": 54,
@@ -1142,28 +1112,6 @@
    }
   },
   {
-   "video": "tgjuBkok7cE",
-   "title": "Why Does Ohtani Earn Just $2.6M Playing?",
-   "views": 5,
-   "avg_pct": 59.6,
-   "avg_seconds": 20,
-   "tags": {
-    "script": "036",
-    "slug": "famous-ohtani",
-    "topic": "Shohei Ohtani",
-    "format": "famous",
-    "visual_style": "lowpoly",
-    "theme": "clean_navy",
-    "hook_style": "surprise",
-    "title_style": "question",
-    "length_s": 33.0,
-    "length_bucket": "30-38",
-    "post_at": "2026-11-02T12:00:00-05:00",
-    "post_slot": "12:00",
-    "score": 90
-   }
-  },
-  {
    "video": "fF26h1klI-Y",
    "title": "Visa Kept $20 Billion Without Lending a Dime",
    "views": 3,
@@ -1337,6 +1285,94 @@
     "post_at": "2026-11-15T15:00:00-05:00",
     "post_slot": "15:00",
     "score": 90
+   }
+  },
+  {
+   "video": "MNyjUP3ItAc",
+   "title": "He Owned 155 Five Guys Restaurants",
+   "views": 0,
+   "avg_pct": 0,
+   "avg_seconds": 0,
+   "tags": {
+    "script": "128",
+    "slug": "famous-shaq",
+    "topic": "Shaquille O'Neal",
+    "format": "famous",
+    "visual_style": "lowpoly",
+    "theme": "bold_bright",
+    "hook_style": "surprise",
+    "title_style": "number",
+    "length_s": 27.64,
+    "length_bucket": "<30",
+    "post_at": "2026-11-17T12:00:00-05:00",
+    "post_slot": "12:00",
+    "score": 92
+   }
+  },
+  {
+   "video": "p6Meiqc_h2Q",
+   "title": "\u00a3500,000 a Week Until 2034",
+   "views": 0,
+   "avg_pct": 0,
+   "avg_seconds": 0,
+   "tags": {
+    "script": "079",
+    "slug": "famous-haaland",
+    "topic": "Erling Haaland",
+    "format": "famous",
+    "visual_style": "lowpoly",
+    "theme": "bold_bright",
+    "hook_style": "number",
+    "title_style": "number",
+    "length_s": 29.57,
+    "length_bucket": "<30",
+    "post_at": "2026-11-16T20:00:00-05:00",
+    "post_slot": "20:00",
+    "score": 90
+   }
+  },
+  {
+   "video": "H8TQsxm7j6c",
+   "title": "From $2.46 Billion to $4 Trillion",
+   "views": 0,
+   "avg_pct": 0,
+   "avg_seconds": 0,
+   "tags": {
+    "script": "088",
+    "slug": "how-apple-1997",
+    "topic": "Apple",
+    "format": "how",
+    "visual_style": "editorial",
+    "theme": "clean_navy",
+    "hook_style": "number",
+    "title_style": "number",
+    "length_s": 36.39,
+    "length_bucket": "30-38",
+    "post_at": "2026-11-16T18:00:00-05:00",
+    "post_slot": "18:00",
+    "score": 90
+   }
+  },
+  {
+   "video": "OnAqPBAM37s",
+   "title": "From a Baby Photo With Messi to $45 Million",
+   "views": 0,
+   "avg_pct": 0,
+   "avg_seconds": 0,
+   "tags": {
+    "script": "086",
+    "slug": "famous-yamal",
+    "topic": "Lamine Yamal",
+    "format": "famous",
+    "visual_style": "lowpoly",
+    "theme": "bold_bright",
+    "hook_style": "surprise",
+    "title_style": "number",
+    "length_s": 29.82,
+    "length_bucket": "<30",
+    "post_at": "2026-11-16T16:30:00-05:00",
+    "post_slot": "16:30",
+    "score": 92
    }
   }
  ]
