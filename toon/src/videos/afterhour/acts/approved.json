@@ -1,8 +1,33 @@
 {
   "_why": "Sam, Nov 16: weak acts (Nike contract / money throwing) 'can't happen' in automatic Shorts. pipeline.ah_actions.pick_act only returns kinds listed here. A kind is added ONLY after its contact sheet was looked at frame by frame and it passes the SPEC 'Act quality bar'. New acts a routine builds start OFF (not listed) until reviewed.",
-  "approved": ["dribble", "shoot", "dunk", "layup", "block", "lift_weights",
-               "eat", "eat_pizza", "eat_donut",
-               "handshake_deal", "ribbon_cut", "stock_up", "drive_car",
-               "gaming", "post_video", "build_tools", "rocket_launch", "code_screens", "sing_stage"],
-  "off_until_fixed": {"count_cash": "Nike review: bills too small, reads weak", "sign_contract": "Nike review: weak", "throw_cash": "Sam: not great", "film_camera": "camera hides the face"}
+  "approved": [
+    "dribble",
+    "shoot",
+    "dunk",
+    "layup",
+    "block",
+    "lift_weights",
+    "eat",
+    "eat_pizza",
+    "eat_donut",
+    "handshake_deal",
+    "ribbon_cut",
+    "stock_up",
+    "drive_car",
+    "gaming",
+    "post_video",
+    "build_tools",
+    "rocket_launch",
+    "code_screens",
+    "sing_stage",
+    "count_cash",
+    "sign_contract",
+    "throw_cash"
+  ],
+  "off_until_fixed": {
+    "film_camera": "camera hides the face"
+  },
+  "approved_notes": {
+    "count_cash/sign_contract/throw_cash": "rebuilt Nov 16, reviewed frame by frame, Sam: 'Yes include'"
+  }
 }
