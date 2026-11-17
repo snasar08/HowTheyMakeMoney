@@ -10,7 +10,8 @@ export type Look = { body: string; legs?: string; skin?: string; hat?: "none" | 
   /** override the jacket colour used when `body` is near black (default #2f2f3a) */ jacket?: string;
   /** 1 = normal; 1.3 = very tall (longer legs, torso and arms; the head stays the same size) */ height?: number;
   /** "jacket" (default), "jersey" (basketball tank top + shorts, `text` = big number, `trim` colour) or "leather" (black leather jacket) */ outfit?: "jacket" | "jersey" | "leather";
-  /** jersey trim colour at the neck, arm holes, hem, shorts stripe, socks and number (default white) */ trim?: string };
+  /** jersey trim colour at the neck, arm holes, hem, shorts stripe, socks and number (default white) */ trim?: string;
+  /** facial hair on the round head: "goatee" (chin patch + thin moustache), "full" (band along the jaw and chin) or "stubble" (faint shadow on the chin) */ beard?: "goatee" | "full" | "stubble"; /** beard colour (default near-black brown) */ beardCol?: string };
 export type Pose = "stand" | "sit" | "cheer" | "wave" | "point" | "walk" | "dig" | "shrug"
   | "jump" | "dunk" | "run" | "dribble" | "shoot" | "throw" | "type" | "eat" | "talk" | "phone" | "count" | "dance" | "fistpump" | "fall" | "facepalm" | "think" | "sleep";
 export const POSES: Pose[] = ["stand", "sit", "cheer", "wave", "point", "walk", "dig", "shrug",
@@ -258,6 +259,12 @@ const tube = (r: number, len: number, mat: THREE.Material, t: number, rad = 12, 
   if (t > 0) ink(m, geo(`cylo|${r}|${len}|${t}|${rad}`, () => new THREE.CylinderGeometry(r + t, r + t, len + t * 2, rad)));
   return m;
 };
+/** tapered limb segment: radius rt at the top, rb at the bottom */
+const ttube = (rt: number, rb: number, len: number, mat: THREE.Material, t: number, rad = 12, x = 0, y = 0, z = 0) => {
+  const m = mesh(geo(`tcyl|${rt}|${rb}|${len}|${rad}`, () => new THREE.CylinderGeometry(rt, rb, len, rad)), mat, x, y, z);
+  if (t > 0) ink(m, geo(`tcylo|${rt}|${rb}|${len}|${t}|${rad}`, () => new THREE.CylinderGeometry(rt + t, rb + t, len + t * 2, rad)));
+  return m;
+};
 const ball = (r: number, mat: THREE.Material, t: number, w = 14, h = 10, x = 0, y = 0, z = 0) => {
   const m = mesh(geo(`sph|${r}|${w}|${h}`, () => new THREE.SphereGeometry(r, w, h)), mat, x, y, z);
   if (t > 0) ink(m, geo(`spho|${r}|${t}|${w}|${h}`, () => new THREE.SphereGeometry(r + t, w, h)));
@@ -291,7 +298,7 @@ type Limb = { sh: THREE.Group; el: THREE.Group; hand: THREE.Mesh; s: number; sy:
 
 const B_R = 0.26;
 
-const _a = new THREE.Vector3(), _b = new THREE.Vector3(), _c = new THREE.Vector3(), _d = new THREE.Vector3(), _e = new THREE.Vector3();
+const _a = new THREE.Vector3(), _b = new THREE.Vector3(), _c = new THREE.Vector3(), _d = new THREE.Vector3(), _e = new THREE.Vector3(), _f = new THREE.Vector3();
 const _q = new THREE.Quaternion(), _q2 = new THREE.Quaternion(), DOWN = new THREE.Vector3(0, -1, 0);
 /** two-bone reach: the hand centre goes to `target` (rig space); `pole` says which way the elbow bends */
 function reach(a: Limb, target: THREE.Vector3, pole: THREE.Vector3) {
@@ -299,13 +306,13 @@ function reach(a: Limb, target: THREE.Vector3, pole: THREE.Vector3) {
   const P = _a.set(a.s * 0.285, a.sy, 0);
   const v = _b.copy(target).sub(P); let D = v.length();
   D = Math.min(Math.max(D, 0.12), L1 + L2 - 0.004);
-  const dir = v.normalize();                                   // shoulder -> hand
+  const dir = _f.copy(v).normalize();                          // shoulder -> hand (own vector: v is reused below)
   const aa = (L1 * L1 - L2 * L2 + D * D) / (2 * D), h = Math.sqrt(Math.max(0, L1 * L1 - aa * aa));
   const perp = _c.copy(pole).addScaledVector(dir, -pole.dot(dir)).normalize();
   const E = _d.copy(P).addScaledVector(dir, aa).addScaledVector(perp, h);   // elbow
   const d1 = _e.copy(E).sub(P).normalize();
   a.sh.quaternion.setFromUnitVectors(DOWN, d1);
-  const hand = _b.copy(P).addScaledVector(dir, D);
+  const hand = _b.copy(P).addScaledVector(dir, D);   // Nov 17: dir used to alias _b, so the hand/forearm direction was wrong (the "cursed" arms)
   const d2 = hand.sub(E).normalize();                          // in rig space
   _q.copy(a.sh.quaternion).invert();
   _q2.setFromUnitVectors(DOWN, d2);
@@ -366,15 +373,18 @@ function buildChar(look: Look, cheap: boolean): Char {
   const trimCol = look.trim ?? "#ffffff";
   const skin = look.skin ?? "#f7f7f7";
   const dark = lum(look.body) < 0.14;
-  const jacketCol = look.jacket ?? (dark ? (jersey ? "#26262e" : "#454552") : look.body);   // near-black jackets read as dark grey, not a hole
+  // Nov 17: saturated dark kit colours (Lakers purple #552583) went black under the 3-step ramp: lift HSL lightness to ~0.42 for jerseys (light kits untouched)
+  const liftKit = (c: string) => { const k = new THREE.Color(c), hsl = { h: 0, s: 0, l: 0 }; k.getHSL(hsl); if (hsl.s > 0.25 && hsl.l < 0.42) k.setHSL(hsl.h, hsl.s, 0.42); return "#" + k.getHexString(); };
+  const sat = (c: string) => { const h = { h: 0, s: 0, l: 0 }; new THREE.Color(c).getHSL(h); return h.s > 0.25; };   // coloured, not just dark grey
+  const jacketCol = look.jacket ?? (jersey && sat(look.body) ? liftKit(look.body) : dark ? (jersey ? "#26262e" : "#454552") : look.body);   // near-black jackets read as dark grey, not a hole
   const sleeveCol = dark ? "#34343f" : shade(look.body, 0.82);
   const legCol = look.legs ?? "#33333e";
-  const legLit = jersey && lum(legCol) < 0.14 ? "#26262e" : legCol;
+  const legLit = jersey ? (sat(legCol) ? liftKit(legCol) : lum(legCol) < 0.14 ? "#26262e" : legCol) : legCol;
   const skinMat = toonMat(skin, { emissive: skin, emissiveIntensity: 0.32 });   // heads stay white under coloured room light, like the reference
   const leatherCol = lum(look.body) < 0.2 ? "#30303a" : look.body;
   const leatherMat = leather ? stdMat(`leather|${leatherCol}`, { color: leatherCol, metalness: 0.25, roughness: 0.28, emissive: "#1a1a22", emissiveIntensity: 0.9 }) : undefined;
   const limbMat: THREE.Material = jersey ? skinMat : leather ? leatherMat! : toonMat(sleeveCol, { emissive: sleeveCol, emissiveIntensity: 0.3 });
-  const bodyMat: THREE.Material = leather ? leatherMat! : toonMat(jacketCol, { emissive: jacketCol, emissiveIntensity: jersey ? 0.38 : 0.28 });
+  const bodyMat: THREE.Material = leather ? leatherMat! : toonMat(jacketCol, { emissive: jacketCol, emissiveIntensity: jersey ? 0.45 : 0.28 });
   const trimMat = toonMat(dark ? "#1a1a22" : shade(look.body, 0.6));
   const zipMat = toonMat("#b4b6c4", { emissive: "#6a6c78", emissiveIntensity: 0.5 });
   const zipMetal: THREE.Material = leather ? stdMat("zip", { color: "#e4e7f0", metalness: 0.9, roughness: 0.2, emissive: "#a0a4b4", emissiveIntensity: 0.7 }) : zipMat;
@@ -509,6 +519,29 @@ function buildChar(look: Look, cheap: boolean): Char {
     c.visible = false; head.add(c); cheeks.push(c);
   }
 
+  // facial hair (Nov 17): dark shapes hugging the head below / above the mouth; they sit under the face drawing, so mouths and eating still read
+  if (look.beard && !cheap) {
+    const bcol = "#" + new THREE.Color(look.beardCol ?? "#1b1511").lerp(new THREE.Color("#2a2420"), 0.85).getHexString(), bm = toonMat(bcol, { emissive: bcol, emissiveIntensity: 0.25 });
+    const onHead = (th: number, ph: number, r = HEAD_R - 0.004) => new THREE.Vector3(Math.sin(th) * Math.sin(ph) * r, Math.cos(th) * r, Math.sin(th) * Math.cos(ph) * r);
+    const blob = (th: number, ph: number, sx: number, sy: number, rz = 0) => {   // flat ellipsoid lying on the head surface, outlined
+      const m = outline(mesh(geo("beardblob", () => new THREE.SphereGeometry(1, 16, 12)), bm), 0.12);
+      const pos = onHead(th, ph); m.position.copy(pos);
+      m.scale.set(sx, sy, 0.03);
+      m.rotation.order = "YXZ"; m.rotation.y = ph; m.rotation.x = th - Math.PI / 2; m.rotation.z = rz;
+      head.add(m); return m;
+    };
+    const mous = () => { blob(1.68, 0.1, 0.065, 0.012, -0.3); blob(1.68, -0.1, 0.065, 0.012, 0.3); };
+    if (look.beard === "goatee") {
+      blob(2.5, 0, 0.042, 0.05); blob(2.42, 0, 0.055, 0.03); mous();
+    } else if (look.beard === "full") {
+      // jaw band from ear to ear under the mouth, chin tuft, moustache
+      for (let k = -3; k <= 3; k++) blob(2.26 + 0.03 * Math.abs(k), k * 0.22, 0.1, 0.085);
+      blob(2.38, 0, 0.1, 0.07); mous();
+    } else {
+      blob(2.3, 0, 0.1, 0.07); blob(2.22, 0.3, 0.06, 0.045); blob(2.22, -0.3, 0.06, 0.045);
+    }
+  }
+
   // accessories
   const hc = look.hatColor ?? "#e9a21a";
   const hatFrom = head.children.length;
@@ -623,12 +656,13 @@ function buildChar(look: Look, cheap: boolean): Char {
   const ot = cheap ? 0 : 0.011, rad = cheap ? 6 : 12;
   const addArm = (s: number): Limb => {
     const sh = new THREE.Group(); sh.position.set(s * 0.285, SHOULDER_Y, 0); rig.add(sh);
-    if (!cheap) sh.add(ball(0.054, limbMat, ot, 12, 10));
-    sh.add(tube(0.042, L1 - 0.02, limbMat, ot, rad, 0, -L1 / 2, 0));
+    // Nov 17: thicker tapered sleeves; joint balls are exactly as wide as the tube (no bulge, no ring) so the elbow bends smoothly
+    if (!cheap) sh.add(ball(0.056, limbMat, ot, 12, 10));
+    sh.add(ttube(0.056, 0.047, L1 - 0.02, limbMat, ot, rad, 0, -L1 / 2, 0));
     const el = new THREE.Group(); el.position.y = -L1; sh.add(el);
-    if (!cheap) el.add(ball(0.045, limbMat, ot, 10, 8));
-    el.add(tube(0.04, L2 - 0.07, limbMat, ot, rad, 0, -(L2 - 0.07) / 2 - 0.0, 0));
-    const hand = outline(mesh(geo(`hand${cheap}`, () => new THREE.SphereGeometry(0.072, cheap ? 8 : 16, cheap ? 6 : 12)), skinMat, 0, -L2, 0), cheap ? 0.012 : 0.016);
+    if (!cheap) el.add(ball(0.047, limbMat, ot, 10, 8));
+    el.add(ttube(0.047, 0.041, L2 - 0.06, limbMat, ot, rad, 0, -(L2 - 0.06) / 2, 0));
+    const hand = outline(mesh(geo(`hand${cheap}`, () => new THREE.SphereGeometry(0.08, cheap ? 8 : 16, cheap ? 6 : 12)), skinMat, 0, -L2, 0), cheap ? 0.012 : 0.016);
     el.add(hand);
     return { sh, el, hand, s, sy: SHOULDER_Y, l1: L1, l2: L2 };
   };
@@ -702,7 +736,8 @@ function buildChar(look: Look, cheap: boolean): Char {
   };
   /** hand to (x outward on the arm's own side, y, z) in rig space, elbow bending toward the pole */
   const hand = (a: Limb, x: number, y: number, z: number, px = 1, py = -0.4, pz = -0.6) => {
-    tgt.set(a.s * x, y, z); pole.set(a.s * px, py, pz); reach(a, tgt, pole);
+    // Nov 17: the elbow always bends down and back (px/py/pz kept for the callers but only nudge it), never outward or toward the camera
+    tgt.set(a.s * x, y, z); pole.set(a.s * (0.25 + 0.08 * Math.min(px, 2)), -1, -0.45 + 0.1 * Math.max(-1, Math.min(0, pz))); reach(a, tgt, pole);
   };
   const jprof = (u: number, a1: number, a2: number, a3: number, a4: number, H: number) => {
     let c = 0, y = 0, air = 0;
@@ -754,30 +789,34 @@ function buildChar(look: Look, cheap: boolean): Char {
         legR.hip.position.set(0.14, HIP_Y + 0.09, 0.03); legL.hip.position.set(-0.14, HIP_Y + 0.09, 0.03);
         const tw = Math.sin(t * 1.7) * 0.01;
         for (const a of [armR, armL]) {
-          tgt.set(a.s * 0.2, 0.78 + (HIP_Y - 0.55) + tw, 0.24 + 0.14 * (sl - 1)); pole.set(a.s * 1, -0.1, -0.7);
+          tgt.set(a.s * 0.2, 0.78 + (HIP_Y - 0.55) + tw, 0.24 + 0.14 * (sl - 1)); pole.set(a.s * 0.4, -1, -0.5);
           reach(a, tgt, pole);
         }
         break;
       }
       case "cheer": {
+        // calmer: a natural V with slightly bent elbows, a little bounce
         const b = Math.abs(Math.sin(t * 7));
-        rig.position.y += b * 0.07;
-        const w = Math.sin(t * 7) * 0.12;
-        setArm(armR, 1, 0, Math.PI - 0.38 + w, 0, 0); setArm(armL, -1, 0, Math.PI - 0.38 - w, 0, 0);
+        rig.position.y += b * 0.05;
+        const w = Math.sin(t * 7) * 0.05;
+        hand(armR, 0.56 + w, SHOULDER_Y + 0.5, 0.05, 1, -1, -0.5);
+        hand(armL, 0.56 - w, SHOULDER_Y + 0.5, 0.05, 1, -1, -0.5);
         legR.hip.rotation.z = 0.06; legL.hip.rotation.z = -0.06;
         break;
       }
       case "wave": {
-        setArm(armR, 1, 0, Math.PI - 0.62, 0, Math.sin(t * 9) * 0.55 + 0.1);
+        hand(armR, 0.5 + Math.sin(t * 9) * 0.09, SHOULDER_Y + 0.4, 0.1, 1, -1, -0.5);
         setArm(armL, -1, 0.05, 0.14, 0, 0);
         head.rotation.z += -0.05;
         break;
       }
-      case "point":
-        setArm(armR, 1, -Math.PI / 2 + 0.05, 0.12, -0.08, 0);
+      case "point": {
+        // pointing out to the side and a little forward (never into the lens)
+        hand(armR, 0.8, SHOULDER_Y - 0.04, 0.22, 1, -1, -0.5);
         setArm(armL, -1, 0.05, 0.14, 0, 0);
         head.rotation.y += -0.12;
         break;
+      }
       case "walk": {
         const ph = t * 6.5, sw = Math.sin(ph);
         rig.position.y += Math.abs(Math.cos(ph)) * 0.035;
@@ -800,15 +839,15 @@ function buildChar(look: Look, cheap: boolean): Char {
         for (const a of [armR, armL]) {
           const g = a.s === 1 ? grips[0] : grips[1];
           tgt.set(a.s * 0.045, g[0], 0).applyMatrix4(shovel.matrix);
-          pole.set(a.s * 0.8, -0.5, -0.2);
+          pole.set(a.s * 0.35, -1, -0.3);
           reach(a, tgt, pole);
         }
         legR.hip.rotation.x = -0.12; legL.hip.rotation.x = 0.15; legR.knee.rotation.x = 0.12; legL.knee.rotation.x = 0.1;
         break;
       }
       case "shrug": {
-        const up = (Math.sin(t * 4) * 0.5 + 0.5) * 0.12;
-        setArm(armR, 1, 0.1, 0.35 + up, 0, 1.75); setArm(armL, -1, 0.1, 0.35 + up, 0, 1.75);
+        const up = (Math.sin(t * 4) * 0.5 + 0.5) * 0.08;
+        for (const a of [armR, armL]) hand(a, 0.5, SHOULDER_Y - 0.32 + up, 0.2, 1, -1, -0.5);
         head.rotation.z += 0.09; head.position.y -= 0.03;
         break;
       }
@@ -895,9 +934,10 @@ function buildChar(look: Look, cheap: boolean): Char {
         break;
       }
       case "talk": {
+        // hands gesture in front of the belly / chest, below the chin, modest z, elbows down and back
         const SY = SHOULDER_Y, ph = t * 4.8;
-        hand(armR, 0.36 + 0.18 * Math.sin(ph), SY - 0.32 + 0.16 * Math.sin(ph * 2 + 0.4), 0.36 + 0.12 * Math.cos(ph), 2, -0.2, -0.3);
-        hand(armL, 0.36 + 0.18 * Math.sin(ph + 2.2), SY - 0.32 + 0.16 * Math.sin(ph * 2 + 2.6), 0.36 + 0.12 * Math.cos(ph + 2.2), 2, -0.2, -0.3);
+        hand(armR, 0.30 + 0.08 * Math.sin(ph), SY - 0.40 + 0.12 * Math.sin(ph * 2 + 0.4), 0.27 + 0.05 * Math.cos(ph), 1, -1, -0.5);
+        hand(armL, 0.28 + 0.06 * Math.sin(ph + 2.2), SY - 0.50 + 0.08 * Math.sin(ph * 2 + 2.6), 0.24 + 0.04 * Math.cos(ph + 2.2), 1, -1, -0.5);
         head.rotation.x += Math.sin(ph * 2) * 0.05; head.rotation.y += Math.sin(ph * 0.5) * 0.12; rig.rotation.y = Math.sin(ph * 0.5) * 0.07;
         break;
       }
@@ -929,8 +969,8 @@ function buildChar(look: Look, cheap: boolean): Char {
       }
       case "fistpump": {
         const u = ((t / 1.3) % 1 + 1) % 1, SY = SHOULDER_Y, HY = HEAD_Y;
-        const r = kfv(u, [[0, 0.5, HY + 0.2, 0.15, 0], [0.12, 0.55, HY + 0.32, 0.15, 0], [0.22, 0.25, SY - 0.45, 0.3, 1], [0.34, 0.55, HY + 0.32, 0.15, 0], [0.44, 0.25, SY - 0.45, 0.3, 1],
-          [0.6, 0.55, HY + 0.3, 0.15, 0.2], [0.8, 0.52, HY + 0.22, 0.15, 0], [1, 0.5, HY + 0.2, 0.15, 0]]);
+        const r = kfv(u, [[0, 0.5, SY + 0.4, 0.15, 0], [0.12, 0.52, SY + 0.5, 0.15, 0], [0.22, 0.25, SY - 0.45, 0.3, 1], [0.34, 0.52, SY + 0.5, 0.15, 0], [0.44, 0.25, SY - 0.45, 0.3, 1],
+          [0.6, 0.52, SY + 0.48, 0.15, 0.2], [0.8, 0.5, SY + 0.42, 0.15, 0], [1, 0.5, SY + 0.4, 0.15, 0]]);
         hand(armR, r[0], r[1], r[2], 1.2, 0.0, -0.6);
         const d = legs2(0.35 * r[3], 0.7 * r[3], 0.08);
         rig.position.y += -d; rig.rotation.x = 0.2 * r[3]; rig.rotation.y = -0.15 * r[3];

@@ -367,6 +367,8 @@ def ah_look(o: dict) -> dict:
         lk.update(hat="hair", hair=o.get("hair", "#2a1d16"))
     if o.get("glasses"):
         lk["glasses"] = "shades" if o.get("hat") == "crown" else "round"
+    if o.get("beard"):   # Nov 17 (Sam on Shaq: "doesn't really look like him"): his goatee
+        lk.update(beard=o["beard"], beardCol=o.get("beardCol", "#2a1d16"))
     if o.get("num"):
         lk["text"] = str(o["num"])
     elif o.get("chest") and hat != "hardhat":
@@ -444,6 +446,32 @@ AH_SKIP_FIRST = {"i", "it", "its", "he", "she", "they", "we", "you", "the", "a",
                  "just", "back", "by", "in", "at", "on", "of", "to", "for", "with", "from", "when", "while", "after", "before", "one", "two",
                  "three", "every", "each", "all", "no", "not", "if", "yes", "his", "her", "their", "our", "my", "your", "today", "later", "next",
                  "some", "many", "most", "what", "who", "why", "how", "here", "there", "even", "only", "once", "soon", "first", "last"}
+
+
+AH_FOOD_RX = re.compile(r"\b(?:restaurants?|burgers?|cheeseburgers?|diners?|fast[- ]?food|eateries|franchises?|fries|pizzerias?|cafes?|food chain|drive[- ]?thru)\b", re.I)
+AH_COUNT_RX = re.compile(r"\b\d[\d,]*\s+(?:\w+\s+)?(?:restaurants?|stores?|shops?|locations?|branches|outlets?|cafes?|franchises?)\b", re.I)
+AH_RATIO_RX = re.compile(r"\b(?:one|1)\s+(?:in|out of)\s+(?:every\s+)?(?:ten|10|five|5|four|4|three|3|twenty|20|hundred|100)\b|\b(?:ten|10) (?:percent|per ?cent)\b|\b10\s?%", re.I)
+AH_DARK_SETS = {"street", "graveyard", "field", "space", "throne"}   # night / dim rooms: two people do not read there
+AH_FACE_VIEWS = ("face", "cu")                                       # close views crop cards and held things
+
+
+def ah_fits_props(view: str | None, has_props: bool) -> str | None:
+    """a close view (face / cu) crops a card or a held thing: use the medium shot instead"""
+    return "ms" if (has_props and view in AH_FACE_VIEWS) else view
+
+
+def ah_ratio_row(k: int, n: int = 10) -> list:
+    """"one in every ten": ten small figures in a row, one lit up (gold, halo, bigger)"""
+    hot = 2 + (k * 3) % max(1, n - 3)
+    row = []
+    for i in range(n):
+        x = (i - (n - 1) / 2) * 0.21
+        if i == hot:
+            row.append({"look": {"body": "#f2b630", "legs": "#2c3550", "hat": "crown", "hatColor": "#f2b630", "halo": True}, "at": [x, 0, 1.5],
+                        "pose": "cheer", "expr": "grin", "scale": 0.36})
+        else:
+            row.append({"look": {"body": "#8c93a6", "legs": "#2c3550", "hat": "none"}, "at": [x, 0, 1.5], "pose": "stand", "expr": "neutral", "scale": 0.27})
+    return row
 
 
 def ah_hero_tokens(script: dict | None, plan: dict) -> set:
@@ -553,7 +581,7 @@ def ah_dedupe(shots: list, ctx: dict) -> list:
             continue
         group = AH_GAMER_GROUP if (ctx.get("gamer") and s["set"] in AH_GAMER_GROUP) else \
             AH_ROOM_GROUP if (s["set"] in AH_ROOM_GROUP and not ctx.get("athlete")) else [s["set"]]
-        views = ["wide", "ws"] if any(c.get("who") for c in s["chars"][1:]) else AH_VIEWS
+        views = ["wide", "ws"] if any(c.get("who") for c in s["chars"][1:]) else             ["wide", "ws"] if s.get("cards") else ["ms", "ws", "wide"] if s.get("things") else AH_VIEWS
         if outro:
             cands = sorted(((st, v) for st in group for v in views), key=lambda sv: (use.get(sv[0], 0), AH_VIEWS.index(sv[1])))
         else:
@@ -587,6 +615,10 @@ def ah_shots(plan: dict) -> list:
                 ((ctx["famous"] or ctx["gamer"]) and not ctx["athlete"] and aset in AH_SPORT_SETS):
             aset = AH_SCRIPT_SET.get(sc.get("set"), "office") if sc.get("set") != "city" else "office"
             place = next((pl for pl, st in AH_SET.items() if st == aset), place)
+        # Nov 17 (Shaq test: "155 Five Guys restaurants" showed a night street): a restaurant / burger / food-chain line is in the diner
+        food_line = bool(AH_FOOD_RX.search(sc.get("text") or sc.get("line") or "")) and place not in ("space", "stage", "throne") and not outro
+        if food_line:
+            aset = "diner"
         # the hero DOES what the sentence says (Sam, Nov 16: "jump shoes, people should jump"): pipeline/ah_actions
         pose = ah_actions.pick_pose(sc.get("text") or sc.get("line") or "", list(sc.get("things") or []) + list(sc.get("props") or []),
                                     sc.get("mood", "happy"), sc.get("action"), place, prev_pose)
@@ -638,10 +670,18 @@ def ah_shots(plan: dict) -> list:
         if people:
             side += 1
         cards = []
-        if sc.get("card"):
-            c = dict(sc["card"]); cards.append({**c, "at": [0.48, 2.2, -0.6], "w": 0.88})   # up beside the head, in frame
+        top = 1.97 + (float(chars[0]["look"].get("height") or 1) - 1) * 1.4     # top of the hero's head: cards sit ABOVE it, never behind it
+        if sc.get("card") and sc.get("brand") and sc.get("beat") in ("logo", "sign") and (AH_COUNT_RX.search(line_txt) or AH_FOOD_RX.search(line_txt)):
+            # "155 Five Guys restaurants": the brand sign above the head and the number card under it (Nov 17 Shaq test)
+            b = sc["brand"]; c = dict(sc["card"]); c.pop("sub", None)
+            cards.append({"text": b["name"].upper(), "kind": "sign", "bg": b.get("bg"), "fg": b.get("fg"), "at": [0.0, top + 0.95, -0.7], "w": 1.15})
+            cards.append({**c, "at": [0.55, top + 0.35, -0.6], "w": 0.62})
+        elif sc.get("card"):
+            c = dict(sc["card"]); cards.append({**c, "at": [0.3, top + 0.5, -0.6], "w": 0.9})   # above the head, in frame
         elif sc.get("brand") and sc.get("beat") in ("logo", "sign"):
-            b = sc["brand"]; cards.append({"text": b["name"].upper(), "kind": "sign", "bg": b.get("bg"), "fg": b.get("fg"), "at": [0.0, 2.62, -0.7], "w": 0.95})
+            b = sc["brand"]; cards.append({"text": b["name"].upper(), "kind": "sign", "bg": b.get("bg"), "fg": b.get("fg"), "at": [0.0, top + 0.5, -0.7], "w": 1.0})
+        if food_line and not outro and not act and not any(str(t).lower() in ("burger", "snack", "pizza") for t in thing_names) and re.search(r"burger|restaurant|five guys|fast[- ]?food|chain", line_txt, re.I):
+            thing_names = ["burger"] + thing_names                  # the burger itself is on screen when the line is about burgers / a burger chain
         things, seen = [], set()
         own = ah_actions.ACT_OWN_PROPS.get(act, set()) if act else set()   # the act brings this prop itself
         if not thing_names and (ctx["gamer"] or ctx["famous"]) and not (sc.get("card") or act):   # Nov 17: show what the line talks about
@@ -667,12 +707,30 @@ def ah_shots(plan: dict) -> list:
                 break
             if t3 in seen or t3 in own or (t3 in AH_TIME_THINGS and not AH_TIME_RX.search(line_txt)):
                 continue
+            if any(t3 in q or q in t3 for q in seen):               # "burger" + "cheeseburger": one is enough
+                continue
             seen.add(t3)
             things.append({"name": t3, "at": [0.55, 0.85, 0.55] if not things else [-0.55, 0.85, 0.55], "fit": 0.42 if not things else 0.34})
         if outro:
             things = []
         shot = {"a": sc["a"], "n": sc["n"], "set": aset, "view": sc.get("view") or views[k % len(views)],
                 "chars": chars, "cards": cards, "things": things, **({"coins": True} if sc.get("beat") == "money" else {})}
+        # Rule (Nov 17, owner: "the things that are said are not shown"): a ratio ("one in every ten") is a row of small
+        # figures with one lit up, seen from a camera that sees the floor, plus the short number card
+        rm = AH_RATIO_RX.search(line_txt)
+        if rm and not act and not outro and not people and "cam" not in shot:
+            W2N = {"ten": 10, "five": 5, "four": 4, "three": 3, "twenty": 20, "hundred": 100}
+            nums = re.findall(r"\b(ten|five|four|three|twenty|hundred|\d+)\b", rm.group(0).lower())
+            pct = bool(re.search(r"%|percent|per ?cent", rm.group(0), re.I))
+            n = W2N.get(nums[-1], None) if nums and not nums[-1].isdigit() else (int(nums[-1]) if nums else 10)
+            n = 10 if pct else (n or 10)
+            shot["chars"] = chars[:1] + ah_ratio_row(k, min(n, 12))
+            shot["cam"] = {"from": [0, 2.1, 8.6], "to": [0, 2.05, 8.1], "look": [0, 1.55, 0.6]}
+            shot["cards"] = [{"text": "10%" if pct else f"1 IN {n}", "kind": "sign", "bg": "#f2b630", "fg": "#1b1b22", "at": [0.0, top + 0.5, -0.6], "w": 1.0}]
+            shot["things"] = []
+            if shot["set"] in AH_DARK_SETS:                          # the row of figures needs light
+                prev_set = shots[-1]["set"] if shots else None
+                shot["set"] = prev_set if prev_set and prev_set not in AH_DARK_SETS else "office"
         if act:
             shot["act"] = {"kind": act}
             allowed, default = ah_actions.ACT_SET.get(act, ((), None))
@@ -688,7 +746,9 @@ def ah_shots(plan: dict) -> list:
         # camera push; a cut only when the line changes. A long sentence (> ~3.5 s) gets one extra cut to a clearly
         # different framing (medium -> face), never a cut every second.
         if people and not act and "cam" not in shot:
-            shot["view"] = "wide" if k % 2 else "ws"                # both of them fit in frame
+            shot["view"] = "wide"                                   # both of them fit in frame, big enough to read (Nov 17: the mom was a tiny dark ws)
+            if shot["set"] in AH_DARK_SETS and not (sc.get("place") in ("space",) or sc.get("set") == "space"):
+                shot["set"] = "stall" if re.search(r"\b(?:shoes?|sneakers?|store|shop|sell\w*|buy\w*|price\w*|cost\w*|expensive)\b", line_txt, re.I) else "office"   # a lit room
         if people and act and ah_actions.ACT_VIEW.get(act) != "wide":
             shot["cam"] = {"from": [0, 2.1, 7.6], "to": [0, 2.0, 6.9], "look": [0, 1.45, 0]}   # a close act: pull back so the named person is in frame
         parts = (1 if sc["n"] <= 80 else 2) if ("cam" not in shot and not act) else 1   # an act shot is one unbroken take; a still line over ~2.7 s gets a second angle (Nov 16 Nike review: 3 s static holds)
@@ -696,6 +756,14 @@ def ah_shots(plan: dict) -> list:
                  "ws": ["ws", "face"], "wide": ["wide", "face"]}.get(shot["view"], [shot["view"], "face"])
         if people and not act:
             order = ["wide", "ws"]
+        if not act and "cam" not in shot and (shot["things"] or shot["cards"]):
+            # the thing / card the line names must be in frame: no face / cu on a shot that has one
+            shot["view"] = ah_fits_props(shot["view"], True)
+            order = [ah_fits_props(o, True) for o in order]
+            if shot["cards"] and not people:                       # a card needs head room above the hero: the wide view has it, ms does not
+                shot["view"] = "wide"; order = ["wide", "ws"]
+            if len(set(order)) < 2:
+                order = [order[0], "ws" if order[0] != "ws" else "wide"]
         if pose in ("jump", "dunk", "shoot") and "cam" not in shot and not act:
             # Nov 16 Wemby frame check: a close-up on a jump put his head out of the top of the frame for ~2 s;
             # the whole body (and the air above it) must be in shot when he leaves the ground
