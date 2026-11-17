@@ -80,12 +80,13 @@ def burst(frame: Image.Image, cx: float, cy: float, t: float, seed: int = 0, dur
 
 
 # ---- hook title
-def hook(frame: Image.Image, title: str, gt: float, font_fn, black: str, dur: float = 0.75, y: int = 150):
+def hook(frame: Image.Image, title: str, gt: float, font_fn, black: str, dur: float = 0.75, y: int = 150, pop_on: bool = True):
     if not ON or not title or gt >= dur:
         return
     txt = title.upper()
     # frame 0 shows the title in full: it's the frame YouTube tends to use as the Short's cover
-    pop = 1.0 if gt < 0.04 else 1.35 - 0.35 * ease_out((gt - 0.04) / 0.25)
+    # Nov 17: calm (3D-look) Shorts get no pop: the 1.35x punch also cropped the top line off
+    pop = 1.0 if (gt < 0.04 or not pop_on) else 1.35 - 0.35 * ease_out((gt - 0.04) / 0.25)
     alpha = 1.0 if gt < dur - 0.15 else (dur - gt) / 0.15
     for size in (92, 80, 70, 60):  # biggest size that fits in 3 lines
         f = font_fn(black, size)
@@ -102,11 +103,11 @@ def hook(frame: Image.Image, title: str, gt: float, font_fn, black: str, dur: fl
             break
     lay = Image.new("RGBA", (W, 560), (0, 0, 0, 0))
     d = ImageDraw.Draw(lay)
-    y = 40
+    ly = 40   # was "y", which overwrote the caller's y: the title landed wherever its last line ended (Nov 17)
     for ln in lines[:4]:
         tw = f.getlength(ln)
-        d.text(((W - tw) / 2, y), ln, font=f, fill=(255, 255, 255), stroke_width=12, stroke_fill=(0, 0, 0))
-        y += int(f.size * 1.08)
+        d.text(((W - tw) / 2, ly), ln, font=f, fill=(255, 255, 255), stroke_width=12, stroke_fill=(0, 0, 0))
+        ly += int(f.size * 1.08)
     if pop != 1:
         nw, nh = int(W * pop), int(560 * pop)
         lay = lay.resize((nw, nh), Image.BILINEAR).crop(((nw - W) // 2, (nh - 560) // 2,
