@@ -84,6 +84,46 @@ def measure(a, sr: int, text: str = "") -> dict:
             "syl_per_s": round(syllables(text) / max(dur, 0.1), 2) if text else 0.0}
 
 
+CHANNEL_HZ = float(os.environ.get("CHANNEL_HZ", "131"))        # the channel's voiced median (Nike 119 sounds right at ~131)
+LEVEL_MIN_ST = float(os.environ.get("LEVEL_MIN_ST", "-1.5"))     # total pitch shift stays inside this window: always still Umbriel
+LEVEL_MAX_ST = float(os.environ.get("LEVEL_MAX_ST", "3.0"))
+LINE_OFF_ST = float(os.environ.get("LEVEL_LINE_OFF_ST", "2.0"))  # a line this far from the Short's median gets nudged
+LINE_NUDGE_MAX = 2.0
+
+
+def short_median(pieces, sr: int) -> float:
+    """Voiced median Hz over all the audio of a Short (pooled frames; 0 if nothing voiced)."""
+    f = [pitch_track(p, sr) for p in pieces]
+    f = np.concatenate(f) if f else np.zeros(0)
+    return float(np.median(f)) if len(f) else 0.0
+
+
+def level_plan(pieces, texts, sr: int, shift_now: float, target: float | None = None, in_pieces: float = 0.0):
+    """Free post-processing plan, no new TTS requests. `pieces` are the lines of ONE Short carrying `in_pieces` semitones
+    of shift; the listener will hear `shift_now` in total (the render still adds the rest). Returns (short_delta_st, [line_nudge_st],
+    info): the Short-level change that brings the pooled median to `target` with the total shift kept in
+    [LEVEL_MIN_ST, LEVEL_MAX_ST], and a per-line nudge (max +-2 st) for lines far from the Short's median."""
+    target = target or CHANNEL_HZ
+    k = 2 ** ((shift_now - in_pieces) / 12)
+    med = short_median(pieces, sr) * k
+    if not med:
+        return 0.0, [0.0] * len(pieces), {"median_hz": 0.0}
+    want = 12 * np.log2(target / med)
+    delta = float(np.clip(shift_now + want, LEVEL_MIN_ST, LEVEL_MAX_ST) - shift_now)
+    new_med = med * 2 ** (delta / 12)
+    nudges, devs = [], []
+    for p, t in zip(pieces, texts):
+        m = measure(p, sr)
+        ok = m["median_hz"] and m["voiced_frames"] >= 20 and len(re.findall(r"[A-Za-z0-9]+", t)) >= MIN_WORDS
+        d = 12 * np.log2(m["median_hz"] * k * 2 ** (delta / 12) / new_med) if ok else 0.0
+        devs.append(d)
+        if abs(d) > LINE_OFF_ST:
+            nudges.append(float(-np.sign(d) * min(LINE_NUDGE_MAX, abs(d) - 0.5)))   # gentle: stop 0.5 st short of the median
+        else:
+            nudges.append(0.0)
+    return delta, nudges, {"median_hz": med, "new_median_hz": new_med, "line_dev_st": devs}
+
+
 TARGET_ST = 3.6   # a lively but natural read; among passing takes the one nearest this wins
 
 

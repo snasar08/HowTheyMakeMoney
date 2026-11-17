@@ -14,7 +14,7 @@ and **free beyond his Higgsfield Pro plan** — never add a paid service or ask 
   never double-post. GitHub starts scheduled runs late (Oct 26–28: 5.5–6.5 h). Check Buffer:
   push branch `slot-audit` (report) / `slot-fix` (delete extras, scripts back to ready). Minutes: the repo is public, so standard GitHub runners are free and unlimited (6 h max per job, ~20 jobs at once); a run takes ~5–8 minutes.
 - `pipeline/render.py` draws every frame with Pillow and pipes to ffmpeg (1080x1920, 30 fps).
-- **Afterhour look (Nov 16, LIVE for every `format: "story"` Short; Sam: "mimic this exact style", ref @afterhourtheories
+- **Afterhour look (Nov 16 for story Shorts; Nov 17, Sam: "I want almost every script to look like that": now the DEFAULT for EVERY format, famous included; `"look": "toon"` opts out; Sam: "mimic this exact style", ref @afterhourtheories
   Jensen Short studied frame by frame):** real-3D cel-shaded world in `toon/src/videos/afterhour/` (composition
   `AhShort`): `char.ts` white round-headed characters (10 expressions, poses, crown/hardhat+name/fedora/cap/hair,
   shades, chest text/number), `sets.ts` 21 dense sets (throne office diner lab stall field ring track graveyard

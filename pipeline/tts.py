@@ -112,20 +112,44 @@ VOICE_SPEED_NOW = 1.0
 QWEN_PITCH_ST = float(os.environ.get("QWEN_PITCH_ST", "-0.75")) if QWEN_VOICE == "umbriel" else 0.0
 
 
-def _pitch(a, st: float):
+def _pitch(a, st: float, sr: int = SAMPLE_RATE):
     """Shift pitch by st semitones, keeping duration (ffmpeg asetrate + atempo); unchanged if ffmpeg fails."""
     import subprocess
     f = 2 ** (st / 12)
     try:
-        r = subprocess.run(["ffmpeg", "-loglevel", "error", "-f", "f32le", "-ar", str(SAMPLE_RATE), "-ac", "1", "-i", "pipe:0",
-                            "-filter:a", f"asetrate={SAMPLE_RATE * f:.1f},aresample={SAMPLE_RATE},atempo={1 / f:.5f}",
-                            "-f", "f32le", "-ar", str(SAMPLE_RATE), "-ac", "1", "pipe:1"],
+        r = subprocess.run(["ffmpeg", "-loglevel", "error", "-f", "f32le", "-ar", str(sr), "-ac", "1", "-i", "pipe:0",
+                            "-filter:a", f"asetrate={sr * f:.1f},aresample={sr},atempo={1 / f:.5f}",
+                            "-f", "f32le", "-ar", str(sr), "-ac", "1", "pipe:1"],
                            input=np.asarray(a, np.float32).tobytes(), capture_output=True, check=True)
         out = np.frombuffer(r.stdout, np.float32)
-        return out if abs(len(out) - len(a)) < 0.05 * len(a) + SAMPLE_RATE * 0.05 else a
+        return out if abs(len(out) - len(a)) < 0.05 * len(a) + sr * 0.05 else a
     except Exception as e:  # noqa: BLE001
         print(f"::warning::[tts] pitch shift failed ({e!r}); original pitch", flush=True)
         return a
+
+
+def level_pieces(pieces, texts, sr: int, shift_total: float = None, in_pieces: float = 0.0, target: float = None,
+                 fade_s: float = 0.012):
+    """Nov 17: the register drifted between Shorts (Ninja 121 Hz, Shaq 167 Hz vs Nike 131 Hz) and inside one.
+    Free post-processing, no extra Gemini request. ONE pitch shift per line: the Short-level delta that lands the
+    Short's median on CHANNEL_HZ (total shift, shift_total + delta, clamped 0..+3 st so it is still Umbriel) plus a
+    +-2 st nudge for lines far from the Short's median; then a short fade at both ends so joining never clicks.
+    `shift_total` = what the listener ends up with before leveling (default GEMINI_PITCH_ST, which qwen() applies
+    later); `in_pieces` = how much of it the pieces already carry. Returns (pieces, info)."""
+    from . import prosody
+    shift_total = GEMINI_PITCH_ST if shift_total is None else shift_total
+    delta, nudges, info = prosody.level_plan(pieces, texts, sr, shift_total, target, in_pieces)
+    out, n = [], max(1, int(fade_s * sr))
+    for p, nz in zip(pieces, nudges):
+        q, st = np.asarray(p, np.float32), delta + nz
+        if abs(st) > 0.02:
+            q = _pitch(q, st, sr).copy()
+            if len(q) > 2 * n:
+                q[:n] *= np.linspace(0, 1, n, dtype=np.float32)
+                q[-n:] *= np.linspace(1, 0, n, dtype=np.float32)
+        out.append(q)
+    info.update(delta_st=delta, nudges=nudges)
+    return out, info
 
 
 def _atempo(a, speed: float):

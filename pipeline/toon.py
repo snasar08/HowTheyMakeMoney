@@ -381,20 +381,223 @@ def ah_look(o: dict) -> dict:
     return lk
 
 
+# ---- Nov 17 (Ninja review: a streamer on a soccer pitch, Drake / LeBron / his mom named but never shown, a clock on
+# "followers", an outro of repeats): who the Short is about, who a sentence names, and "no two shots look alike" ----
+AH_SPORT_SETS = ("court", "pitch", "ring", "track")
+AH_SCRIPT_SET = {"gaming": "office", "office": "office", "studio": "stage", "stage": "stage", "store": "stall", "warehouse": "garage",
+                 "launch": "space", "city": "street"}
+AH_GAMER_GROUP = ["office", "lab", "garage", "stage"]
+AH_ROOM_GROUP = ["office", "boardroom", "lab"]
+AH_MONTHS = "january|february|march|april|may|june|july|august|september|october|november|december"
+AH_TIME_RX = re.compile(r"\b(?:1[5-9]|20)\d\d\b|\b\d{1,2}(?::\d\d)?\s?(?:a\.?m\.?|p\.?m\.?)|o'clock|\bmidnight\b|\bnoon\b|"
+                        r"\b(?:\d+|one|two|three|four|five|six|seven|eight|nine|ten|twelve|twenty|thirty|a few|several|many)\s+(?:seconds?|minutes?|hours?|days?|weeks?|months?|years?|decades?)\b|"
+                        r"\b(?:" + AH_MONTHS + r")\b|\byears? (?:ago|later|earlier)\b|\bovernight\b|\bdeadline\b|\bcountdown\b|\bby (?:friday|monday|tuesday|wednesday|thursday|saturday|sunday)\b", re.I)
+AH_TIME_THINGS = {"clock", "alarmclock", "stopwatch", "hourglass", "calendar", "watch", "wristwatch", "timer"}
+# capitalised words that are never a person (brands, games, teams, places, calendar words)
+AH_NOT_PERSON = set("""converse puma reebok under armour jordan_brand coca cola pepsi nvidia openai spotify disney walmart target costco chipotle visa robinhood delta marriott duolingo uber january february march april may june july august september october november december monday tuesday wednesday thursday
+friday saturday sunday fortnite apex legends twitch youtube tiktok instagram google nike adidas netflix amazon apple tesla microsoft meta
+facebook xbox playstation nintendo roblox minecraft valorant league warzone call duty five guys mcdonald mcdonalds starbucks uber lyft
+lakers bulls warriors celtics heat knicks spurs nets magic suns clippers cavaliers cavs mavericks rockets nba nfl mlb fifa uefa ufc wnba
+olympics olympic world cup super bowl finals real madrid barcelona united city chelsea arsenal liverpool psg bayern juventus milan
+america american usa us uk canada france brazil china japan korea europe asia africa london paris new york los angeles miami chicago texas
+california orlando boston ai ceo cfo ipo wikipedia internet monster energy red bull coca cola pepsi disney spotify hbo hulu espn tnt
+christmas thanksgiving easter god""".split())
+AH_PERSON_CTX = re.compile(r"(?:\bwith|\bagainst|\bvs\.?|\bversus|\balongside|\bnamed|\bcalled|\bmet|\bmeets|\bbeat|\bbeats|\bbeating|\bfacing|\bfaced|\bthan|\bbehind|\bsigns?|\bsigned|\bhires?|\bhired|\bfires?|\bfired)\s+$")
+# people the voice names that everyone knows: (number, body, trim) for athletes; plain tones for the rest
+AH_PEOPLE_ATH = {"lebron": ("23", "#fdb927", "#552583"), "jordan": ("23", "#ce1141", "#111111"), "kobe": ("24", "#fdb927", "#552583"),
+                 "curry": ("30", "#1d428a", "#ffc72c"), "shaq": ("34", "#552583", "#fdb927"), "shaquille": ("34", "#552583", "#fdb927"),
+                 "durant": ("35", "#1d1160", "#e56020"), "giannis": ("34", "#00471b", "#eee1c6"), "wembanyama": ("1", "#222222", "#c4ced4"),
+                 "wemby": ("1", "#222222", "#c4ced4"), "messi": ("10", "#75aadb", "#ffffff"), "ronaldo": ("7", "#c8102e", "#ffffff"),
+                 "mbappe": ("10", "#1a2a6c", "#ffffff"), "mbappé": ("10", "#1a2a6c", "#ffffff"), "neymar": ("10", "#f7d117", "#1a8a3a"),
+                 "haaland": ("9", "#6cabdd", "#ffffff"), "mahomes": ("15", "#e31837", "#ffb81c"), "brady": ("12", "#d50a0a", "#ffffff"),
+                 "ohtani": ("17", "#005a9c", "#ffffff"), "bolt": ("9", "#2a8f3a", "#f7d117"), "doncic": ("77", "#00538c", "#ffffff"),
+                 "tatum": ("0", "#007a33", "#ffffff"), "salah": ("11", "#c8102e", "#ffffff"), "yamal": ("19", "#a50044", "#004d98")}
+AH_PEOPLE_PLAIN = {"drake": ("#2a2a36", "#1a1a1a"), "rihanna": ("#7a2a4a", "#2a1a1a"), "beyonce": ("#c9a227", "#2a1a1a"),
+                   "beyoncé": ("#c9a227", "#2a1a1a"), "kanye": ("#3a3a3a", "#1a1a1a"), "eminem": ("#555555", "#d8c27a"),
+                   "snoop": ("#4a6aa8", "#1a1a1a"), "bieber": ("#7a7a8a", "#6a4a2a"), "swift": ("#e8d8a8", "#c9a227"),
+                   "bezos": ("#2a3a4a", "#4a4a4a"), "musk": ("#1a1a24", "#2a1a1a"), "zuckerberg": ("#6a6a72", "#4a2f1c"),
+                   "obama": ("#1f2f4f", "#6a6a6a"), "trump": ("#1f2f4f", "#d8b84a"), "oprah": ("#8a3a5a", "#1a1a1a"),
+                   "mrbeast": ("#2a8fd8", "#2a1a10"), "pewdiepie": ("#c43a3a", "#d8b84a"), "shroud": ("#3a4a3a", "#2a2a2a"),
+                   "tfue": ("#1a1a24", "#2a1a10"), "faker": ("#7a1a1a", "#1a1a1a"), "serena": ("#f4f4f4", "#1a1a1a"), "clark": ("#fdb927", "#1a1a1a")}
+# "his mom", "a coach", "the boss": (body, hair, chest text, expression) so the viewer sees the relation
+AH_REL = {"mom": ("#d96a8a", "#4a2f1c", "", "smile"), "mother": ("#d96a8a", "#4a2f1c", "", "smile"), "mum": ("#d96a8a", "#4a2f1c", "", "smile"),
+          "mama": ("#d96a8a", "#4a2f1c", "", "smile"), "grandma": ("#b48ae0", "#c8c8c8", "", "smile"), "grandmother": ("#b48ae0", "#c8c8c8", "", "smile"),
+          "dad": ("#6b7a8f", "#8a8a8a", "", "smile"), "father": ("#6b7a8f", "#8a8a8a", "", "smile"), "grandpa": ("#6a8a6a", "#d8d8d8", "", "smile"),
+          "brother": ("#2a8f6a", "#3a2a1c", "", "grin"), "sister": ("#e0a030", "#3a2a1c", "", "grin"), "wife": ("#c0533a", "#2a1a10", "", "smile"),
+          "husband": ("#3a4a8a", "#2a1a10", "", "smile"), "girlfriend": ("#c0533a", "#2a1a10", "", "smile"), "boyfriend": ("#3a4a8a", "#2a1a10", "", "smile"),
+          "son": ("#4a8ad8", "#3a2a1c", "", "grin"), "daughter": ("#e86a9a", "#3a2a1c", "", "grin"), "friend": ("#2a8f6a", "#5a3a20", "", "grin"),
+          "coach": ("#1b3a6b", "#2a2a2a", "COACH", "neutral"), "teacher": ("#6a4a8a", "#5a5a5a", "", "neutral"),
+          "boss": ("#2a2f3f", "#2a2a2a", "BOSS", "angry"), "manager": ("#2a2f3f", "#3a2a1c", "", "neutral"), "agent": ("#2a2f3f", "#3a2a1c", "", "smug"),
+          "investor": ("#1f3a2f", "#4a4a4a", "", "smug"), "teammate": ("#3a6ad8", "#2a1a10", "", "grin"),
+          "opponent": ("#b02a2a", "#2a1a10", "", "angry"), "referee": ("#222222", "#2a2a2a", "REF", "angry"),
+          "co-founder": ("#d8a02a", "#3a2a1c", "", "smile"), "cofounder": ("#d8a02a", "#3a2a1c", "", "smile"),
+          "judge": ("#222222", "#9a9a9a", "", "angry"), "doctor": ("#e8e8f0", "#2a2a2a", "", "neutral")}
+AH_REL_ALT = {"friends": "friend", "investors": "investor", "teammates": "teammate", "coaches": "coach", "brothers": "brother", "sisters": "sister",
+              "rival": "opponent", "doctors": "doctor"}
+AH_REL_RX = re.compile(r"\b(?:his|her|their|a|an|the|my|your|our)\s+(?:(?:old|new|young|best|first|former|own|famous|big|high school)\s+)*("
+                       + "|".join(sorted((re.escape(k) for k in [*AH_REL, *AH_REL_ALT]), key=len, reverse=True))
+                       + r")(?:'s)?\b(?!\s+(?:game|company|brand|app|team|product|show|league|rating|ranking|model|idea))", re.I)
+AH_PAL = ["#e86a6a", "#5ad0d8", "#8bc34a", "#b48ae0", "#f2a33a", "#4a7bd0", "#d96ab8", "#6ad89a"]
+AH_VIEWS = ["ms", "face", "cu", "low", "ws", "wide"]
+AH_SKIP_FIRST = {"i", "it", "its", "he", "she", "they", "we", "you", "the", "a", "an", "this", "that", "but", "and", "then", "now", "so", "still",
+                 "just", "back", "by", "in", "at", "on", "of", "to", "for", "with", "from", "when", "while", "after", "before", "one", "two",
+                 "three", "every", "each", "all", "no", "not", "if", "yes", "his", "her", "their", "our", "my", "your", "today", "later", "next",
+                 "some", "many", "most", "what", "who", "why", "how", "here", "there", "even", "only", "once", "soon", "first", "last"}
+
+
+def ah_hero_tokens(script: dict | None, plan: dict) -> set:
+    toks = set()
+    for v in ((script or {}).get("name_card"), (script or {}).get("company"), (script or {}).get("hero_name")):
+        toks |= {t for t in re.findall(r"[a-z0-9]+", str(v or "").lower()) if len(t) >= 3}
+    for t in re.split(r"[-_ ]", str(plan.get("slug") or "").lower()):
+        if len(t) >= 3 and not t.isdigit() and t not in ("famous", "plan", "whatif", "story", "best", "ever", "careers", "how"):
+            toks.add(t)
+    return toks
+
+
+def ah_context(plan: dict) -> dict:
+    """who the Short is about: the script (name card + role line) and a world: gamer / athlete / other"""
+    script = None
+    try:
+        from . import aivideo
+        script = aivideo.script_for(str(plan.get("slug") or ""))
+    except Exception:  # noqa: BLE001
+        script = None
+    sets = {sc.get("set") for sc in plan["scenes"]} | {sc.get("visual", {}).get("set") for sc in (script or {}).get("scenes", [])}
+    sub = str((script or {}).get("name_sub") or "").lower()
+    gamer = bool(re.search(r"streamer|gamer|esports|twitch", sub)) or "gaming" in sets
+    sportish = bool(re.search(r"player|sprinter|driver|boxer|fighter|racer|athlete|golfer|swimmer|skater|champion|quarterback|runner", sub))
+    athlete = bool(sets & {"court", "pitch", "field"}) or (plan.get("hero") or {}).get("kit") in ("bball", "soccer") or (sportish and not gamer)
+    return {"script": script, "hero": ah_hero_tokens(script, plan), "gamer": gamer, "athlete": athlete,
+            "famous": (script or {}).get("format") == "famous", "company": str((script or {}).get("company") or "").lower(),
+            "brand": str((plan.get("brand") or {}).get("name") or "").lower()}
+
+
+def ah_person_look(key: str, rel: str | None = None) -> tuple[dict, str]:
+    """(Look, expression) for a person the voice names"""
+    k = key.lower()
+    if rel:
+        body, hair, text, expr = AH_REL[rel]
+        lk = {"body": body, "legs": "#2c3550", "hat": "hair", "hair": hair}
+        if text:
+            lk["text"] = text
+        if rel in ("investor", "agent", "manager", "boss"):
+            lk["tie"] = "#c0353a"
+        if rel == "teacher":
+            lk["glasses"] = "round"
+        if rel == "coach":
+            lk.update(hat="cap", hatColor="#1b3a6b")
+        return lk, expr
+    toks = re.findall(r"[a-zé]+", k)
+    for tok in toks:
+        if tok in AH_PEOPLE_ATH:
+            num, body, trim = AH_PEOPLE_ATH[tok]
+            return {"body": body, "legs": trim, "hat": "hair", "hair": "#1a1410", "text": num, "outfit": "jersey", "trim": trim}, "grin"
+    for tok in toks:
+        if tok in AH_PEOPLE_PLAIN:
+            body, hair = AH_PEOPLE_PLAIN[tok]
+            return {"body": body, "legs": "#1a1a22", "hat": "hair", "hair": hair, **({"glasses": "shades"} if tok in ("drake", "kanye", "snoop") else {})}, "smug"
+    h = sum(ord(c) for c in k)
+    return {"body": AH_PAL[h % len(AH_PAL)], "legs": "#2c3550", "hat": "hair", "hair": ["#3a2a20", "#1a1a1a", "#8a5a2a", "#5a3b2a"][h % 4]}, "smile"
+
+
+def ah_people(text: str, ctx: dict) -> list:
+    """the people a sentence names (a famous name, "his mom", "a coach"), in order, as [(key, look, expr)], at most 2"""
+    t = (text or "").replace("’", "'")
+    cands = []                                                    # (position, key, rel)
+    for m in AH_REL_RX.finditer(t):
+        r = m.group(1).lower()
+        cands.append((m.start(1), r, AH_REL_ALT.get(r, r)))
+    comp = {w for c in (ctx.get("company"), ctx.get("brand")) for w in re.findall(r"[a-z0-9]+", c or "") if len(w) >= 3}
+    for m in re.finditer(r"\b[A-ZÉ][A-Za-zé']+(?:\s+[A-ZÉ][A-Za-zé'.]+)*", t):
+        name = m.group(0)
+        toks = [w.lower().strip(".'") for w in name.split()]
+        known = any(w in AH_PEOPLE_ATH or w in AH_PEOPLE_PLAIN for w in toks)
+        if any(w in AH_NOT_PERSON or w in comp or (w in ctx["hero"] and len(w) >= 3) for w in toks):
+            continue
+        if toks[0] in AH_SKIP_FIRST and not known:
+            continue
+        if known or (m.start() > 0 and AH_PERSON_CTX.search(t[:m.start()] + " ") and not re.search(r"\d", name)
+                     and not any(ah_models().get(w) for w in toks)):
+            cands.append((m.start(), name, None))
+    out, seen = [], set()
+    for pos, key, rel in sorted(cands):
+        sig = rel or key.lower().split()[-1]
+        if sig in seen:
+            continue
+        seen.add(sig)
+        lk, ex = ah_person_look(key, rel)
+        out.append((key, lk, ex))
+        if len(out) >= 2:
+            break
+    return out
+
+
+def ah_sig(s: dict) -> tuple:
+    return (s["set"], s.get("view"), tuple(sorted(t["name"] for t in s.get("things") or [])), (s.get("act") or {}).get("kind"),
+            tuple(sorted(str(c["look"].get("body")) + str(c["look"].get("text", "")) for c in s["chars"][1:] if c.get("who"))))
+
+
+def ah_dedupe(shots: list, ctx: dict) -> list:
+    """No two shots look the same (same set + view + things + people). A repeat first changes the camera, then the room
+    (a gaming room has an office, a lab, a garage and a stage); the outro takes the least-used room and camera."""
+    seen: dict = {}
+    use: dict = {}
+    for s in shots:
+        use[s["set"]] = use.get(s["set"], 0) + 1
+    for i, s in enumerate(shots):
+        outro = s.pop("_outro", False)
+        if s.get("act") or "cam" in s:
+            seen.setdefault(ah_sig(s), i)
+            continue
+        group = AH_GAMER_GROUP if (ctx.get("gamer") and s["set"] in AH_GAMER_GROUP) else \
+            AH_ROOM_GROUP if (s["set"] in AH_ROOM_GROUP and not ctx.get("athlete")) else [s["set"]]
+        views = ["wide", "ws"] if any(c.get("who") for c in s["chars"][1:]) else AH_VIEWS
+        if outro:
+            cands = sorted(((st, v) for st in group for v in views), key=lambda sv: (use.get(sv[0], 0), AH_VIEWS.index(sv[1])))
+        else:
+            cands = [(s["set"], v) for v in views] + [(st, v) for st in group if st != s["set"] for v in views]
+        want = [(st, v) for st, v in cands if ah_sig({**s, "set": st, "view": v}) not in seen]
+        prev = shots[i - 1] if i else None
+        want = [c for c in want if not (prev and (prev["set"], prev.get("view")) == c)] or want
+        if want and (outro or ah_sig(s) in seen):
+            st, v = want[0]
+            use[s["set"]] -= 1
+            use[st] = use.get(st, 0) + 1
+            s["set"], s["view"] = st, v
+        seen.setdefault(ah_sig(s), i)
+    return shots
+
+
 def ah_shots(plan: dict) -> list:
     hero, shots, views = plan.get("hero") or {}, [], ["ms", "face", "cu", "ms", "low", "face"]
     prev_pose = None
     prev_acts: list = []
+    ctx = ah_context(plan)
+    side = 0
     for k, sc in enumerate(plan["scenes"]):
         place = sc.get("place") or {0: "bridge", 1: "street", 2: "quay"}.get(sc.get("loc"), "street")
         who = {**hero, **(sc.get("who") or {})}
+        outro = str(sc.get("line") or "").startswith("(outro)")
+        # the set must fit who the Short is about (Ninja: a streamer stood on a soccer pitch): a gamer lives in a screens room,
+        # and a non-athlete never gets a sport pitch; a place the story chose on purpose (space, stage, throne ...) stays
+        aset = AH_SET.get(place, "street")
+        if (ctx["gamer"] and sc.get("set") == "gaming" and aset in ("street", "beach") + AH_SPORT_SETS) or \
+                ((ctx["famous"] or ctx["gamer"]) and not ctx["athlete"] and aset in AH_SPORT_SETS):
+            aset = AH_SCRIPT_SET.get(sc.get("set"), "office") if sc.get("set") != "city" else "office"
+            place = next((pl for pl, st in AH_SET.items() if st == aset), place)
         # the hero DOES what the sentence says (Sam, Nov 16: "jump shoes, people should jump"): pipeline/ah_actions
         pose = ah_actions.pick_pose(sc.get("text") or sc.get("line") or "", list(sc.get("things") or []) + list(sc.get("props") or []),
                                     sc.get("mood", "happy"), sc.get("action"), place, prev_pose)
         # Nov 16 (Sam: "he hasn't played basketball"): a line that DOES something gets a real mini-scene (`act`)
         thing_names = list(sc.get("things") or []) + list(sc.get("props") or [])
+        line_txt = sc.get("text") or sc.get("line") or ""
+        if not AH_TIME_RX.search(line_txt):                         # a clock / calendar only for a real date or time ("in 2019", "3 a.m.")
+            thing_names = [t for t in thing_names if str(t).lower() not in AH_TIME_THINGS]
         act = ah_actions.pick_act(sc.get("text") or sc.get("line") or "", thing_names, place, sc.get("mood", "happy"),
                                   sc.get("action"), prev_acts[-2:])
+        if act and (outro or (not ctx["athlete"] and (ctx["famous"] or ctx["gamer"]) and ah_actions.ACT_SET.get(act, ((), None))[1] in AH_SPORT_SETS + ("field",))):
+            act = None                                              # no sport act for a non-athlete, and no repeat act in the outro
         prev_acts.append(act)
         if act:
             pose = ah_actions.ACT_POSE[act]
@@ -415,11 +618,24 @@ def ah_shots(plan: dict) -> list:
                     sc = {**sc, "beat": "money"}                        # coins rain too
         if not act and pose == "stand" and sc["n"] > 60:
             pose = "talk"                                           # never a 2 s+ statue: he explains with his hands
+        if outro:
+            pose = "cheer" if k % 2 else "wave"                     # the sign-off: waves and cheers, never a replay of an earlier picture
         prev_pose = pose
         chars = [{"look": ah_look(who), "at": [0, 0, 0], "pose": pose, "expr": AH_EXPR.get(sc.get("mood", "happy"), "smile")}]
-        for i in range(min(6, int(sc.get("crowd") or 0) // 5)):     # a few extras behind, cheering/reacting
+        # every person the sentence names (Drake, LeBron, "his mom", a coach) stands in the shot next to him
+        people = [] if (sc.get("who") or sc.get("hide") or outro) else ah_people(line_txt, ctx)
+        crowd_n = min(6, int(sc.get("crowd") or 0) // 5) if not people else min(2, int(sc.get("crowd") or 0) // 15)
+        if outro:
+            crowd_n = max(crowd_n, 3)
+        for i in range(crowd_n):     # a few extras behind, cheering/reacting
             chars.append({"look": AH_CROWD[i % len(AH_CROWD)], "at": [(-1) ** i * (1.3 + 0.6 * (i // 2)), 0, -1.6 - 0.9 * (i // 2)],
-                          "pose": "cheer" if sc.get("action") == "cheer" else "stand", "expr": "laugh" if i % 2 else "smile"})
+                          "pose": "cheer" if (sc.get("action") == "cheer" or outro) else "stand", "expr": "laugh" if i % 2 else "smile"})
+        for i, (_nm, plk, pex) in enumerate(people):
+            sgn = (1 if (side + i) % 2 == 0 else -1) if len(people) == 1 else (-1 if i == 0 else 1)
+            chars.append({"look": plk, "at": [sgn * 1.0, 0, -0.25], "rot": -sgn * 0.4, "pose": "talk" if pex in ("smug", "angry") else "stand",
+                          "expr": pex, "who": True})
+        if people:
+            side += 1
         cards = []
         if sc.get("card"):
             c = dict(sc["card"]); cards.append({**c, "at": [0.48, 2.2, -0.6], "w": 0.88})   # up beside the head, in frame
@@ -427,6 +643,16 @@ def ah_shots(plan: dict) -> list:
             b = sc["brand"]; cards.append({"text": b["name"].upper(), "kind": "sign", "bg": b.get("bg"), "fg": b.get("fg"), "at": [0.48, 2.2, -0.6], "w": 0.88})
         things, seen = [], set()
         own = ah_actions.ACT_OWN_PROPS.get(act, set()) if act else set()   # the act brings this prop itself
+        if not thing_names and (ctx["gamer"] or ctx["famous"]) and not (sc.get("card") or act):   # Nov 17: show what the line talks about
+            low_l = line_txt.lower()
+            if re.search(r"\$|\b(?:dollars?|paid|pays?|earn\w*|worth|cash|salary|bucks)\b", low_l):
+                thing_names = ["cash"]
+            elif ctx["gamer"] and re.search(r"\b(?:followers?|subscribers?|subs|million)\b", low_l):
+                thing_names = ["ereader"]
+            elif ctx["gamer"] and re.search(r"\b(?:viewers?|stream\w*|tuned in|watch\w*|crowd|fans|audience)\b", low_l):
+                thing_names = ["tv"]
+            elif ctx["gamer"] and re.search(r"\b(?:games?|play(?:s|ed|ing)?|fortnite|apex|match(?:es)?|ranked|controller)\b", low_l):
+                thing_names = ["controller"]
         for nm in thing_names:          # things + props (+ the object of an act that is switched off)
             t3 = AH_THING.get(nm)
             if not t3 or t3 in seen or len(things) >= 2 or nm in own or t3 in own:
@@ -435,14 +661,16 @@ def ah_shots(plan: dict) -> list:
             big = t3 in AH_BIG
             things.append({"name": t3, "at": [-1.9, 0, -1.6] if big else ([0.55, 0.85, 0.55] if not things else [-0.55, 0.85, 0.55]),
                            "fit": 1.6 if big else (0.42 if not things else 0.34)})   # held at hand height, in frame
-        for t3 in ah_words_to_models(sc.get("text") or sc.get("line") or ""):   # then library models the sentence's words name
+        for t3 in ([] if outro else ah_words_to_models(line_txt)):   # then library models the sentence's words name
             if len(things) >= 2:
                 break
-            if t3 in seen or t3 in own:
+            if t3 in seen or t3 in own or (t3 in AH_TIME_THINGS and not AH_TIME_RX.search(line_txt)):
                 continue
             seen.add(t3)
             things.append({"name": t3, "at": [0.55, 0.85, 0.55] if not things else [-0.55, 0.85, 0.55], "fit": 0.42 if not things else 0.34})
-        shot = {"a": sc["a"], "n": sc["n"], "set": AH_SET.get(place, "street"), "view": sc.get("view") or views[k % len(views)],
+        if outro:
+            things = []
+        shot = {"a": sc["a"], "n": sc["n"], "set": aset, "view": sc.get("view") or views[k % len(views)],
                 "chars": chars, "cards": cards, "things": things, **({"coins": True} if sc.get("beat") == "money" else {})}
         if act:
             shot["act"] = {"kind": act}
@@ -458,19 +686,29 @@ def ah_shots(plan: dict) -> list:
         # Sam, Nov 16: re-cutting the same moment every ~1.3 s "is a headache": ONE picture per sentence with a smooth
         # camera push; a cut only when the line changes. A long sentence (> ~3.5 s) gets one extra cut to a clearly
         # different framing (medium -> face), never a cut every second.
+        if people and not act and "cam" not in shot:
+            shot["view"] = "wide" if k % 2 else "ws"                # both of them fit in frame
+        if people and act and ah_actions.ACT_VIEW.get(act) != "wide":
+            shot["cam"] = {"from": [0, 2.1, 7.6], "to": [0, 2.0, 6.9], "look": [0, 1.45, 0]}   # a close act: pull back so the named person is in frame
         parts = (1 if sc["n"] <= 80 else 2) if ("cam" not in shot and not act) else 1   # an act shot is one unbroken take; a still line over ~2.7 s gets a second angle (Nov 16 Nike review: 3 s static holds)
         order = {"ms": ["ms", "face"], "face": ["face", "ms"], "cu": ["cu", "ws"], "low": ["low", "face"],
                  "ws": ["ws", "face"], "wide": ["wide", "face"]}.get(shot["view"], [shot["view"], "face"])
+        if people and not act:
+            order = ["wide", "ws"]
         if pose in ("jump", "dunk", "shoot") and "cam" not in shot and not act:
             # Nov 16 Wemby frame check: a close-up on a jump put his head out of the top of the frame for ~2 s;
             # the whole body (and the air above it) must be in shot when he leaves the ground
             shot["view"] = "wide"; order = ["wide", "ws"]
         for j in range(parts):
             a0, a1 = sc["a"] + round(j * sc["n"] / parts), sc["a"] + round((j + 1) * sc["n"] / parts)
-            sub = {**shot, "a": a0, "n": a1 - a0, "view": order[j % len(order)]}
+            sub = {**shot, "a": a0, "n": a1 - a0, "view": order[j % len(order)], **({"_outro": True} if outro else {})}
             if j and sub["things"]:
                 sub["things"] = [dict(t, pop=False) for t in sub["things"]]   # already on screen: no second pop
             shots.append(sub)
+    shots = ah_dedupe(shots, ctx)
+    for sh in shots:
+        for c in sh["chars"]:
+            c.pop("who", None)
     return shots
 
 
@@ -552,7 +790,9 @@ if __name__ == "__main__":
         props = {"plan": plan}
         # Nov 16 (Sam: "this is how a video idea could work for the history videos"): story Shorts use the real-3D
         # afterhour look by default; a script can force it with "look": "afterhour" or opt out with "look": "toon"
-        if os.environ.get("TOON_LOOK") == "afterhour" or script.get("look") == "afterhour" or                 (script.get("format") == "story" and script.get("look") != "toon" and os.environ.get("TOON_LOOK") != "toon"):
+        # Nov 17 (Sam: "I want almost every script to look like that"): EVERY format now uses the afterhour look;
+        # only "look": "toon" in a script or TOON_LOOK=toon keeps the old cartoon path
+        if script.get("look") != "toon" and os.environ.get("TOON_LOOK") != "toon":
             props["ah"] = {"shots": ah_shots(plan)}       # frames.mjs renders AhShort when the props carry "ah"
         Path(sys.argv[3]).write_text(json.dumps(props), encoding="utf-8")
         print(f"[toon] plan {plan['slug']}: {len(plan['scenes'])} scenes, {plan['total']} frames, lights {[s['light'] for s in plan['scenes']]}")

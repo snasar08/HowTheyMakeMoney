@@ -41,6 +41,16 @@ CAPTION_Y = 1330                     # above the Shorts title/channel overlay
 ZONE_TOP = CAPTION_Y - 100           # caption dead zone: charts/figures stay above this line
 SUBLINE = os.environ.get("SUBLINE", "off") == "on"   # top sentence: OFF (Nov 15: that was YouTube's own CC on the reference, not the creator's)
 SUBLINE_Y = 150
+# Nov 16 (owner review of the Nike Short): the small phrase caption sat on top of the prop of an acted shot (contract,
+# cash stack, ball). In an "act" shot the whole phrase moves: "low" = lower band (~y 1600, above YouTube's bottom UI),
+# "high" = top band under the title/subline (acts whose action is low in the frame). Default "low".
+ACT_CAPTION_POS = {"drive_car": "high", "race_car": "high", "dribble": "high", "kick": "high", "sprint": "high",
+                   "sprint_finish": "high", "goal_celebrate": "high", "touchdown": "high", "golf_swing": "high",
+                   "bat_swing": "high", "pitch": "high", "tennis_serve": "high",
+                   # the cash stack / contract are held at belly height and fill the lower third: a low caption sat on them
+                   "count_cash": "high", "sign_contract": "high", "throw_cash": "high", "stack_gold": "high",
+                   "cash_register": "high", "handshake_deal": "high"}
+ACT_CAPTION_Y = {"low": 1600, "high": 410}     # caption bottom edge (the normal one is 1265)
 SCENE_GAP = 0.06                     # seconds of silence between scenes
 END_HOLD = 0.7
 BEAT_TARGET = float(os.environ.get("BEAT_TARGET", "1.4"))  # seconds per shot
@@ -357,6 +367,8 @@ class Renderer:
                 print(f"::warning::[render] Blender frames incomplete for {slug} ({len(missing)}/{len(keys)} missing, "
                       f"e.g. {missing[:3]}; have {have}; dirs {sorted(x.name for x in Path(pd).iterdir())[:5]}); using the GL look")
         self.lp_record = bool(os.environ.get("LP_RECORD"))
+        self._props = self._load_props(slug)
+        self.act_spans = self._load_act_spans(slug)
         # one hero per Short (Sam, Nov 9): the script's "hero" look rides into every low-poly scene,
         # so the figure is the same recognisable person from the first frame to the last
         hero_ = script.get("hero")
@@ -380,6 +392,61 @@ class Renderer:
                      [k for k in ("mid", "hook") if k in self.images]
         self._pool_i = 0
         self._last_key = None
+
+    @staticmethod
+    def _load_props(slug: str):
+        """The toon props JSON of this Short, or None. Found via env TOON_PROPS (a path), else
+        $LP_PLATES/<slug>.props.json, else tp/<slug>.json / tp/plans/<slug>.json."""
+        cands = [os.environ.get("TOON_PROPS")]
+        pd = os.environ.get("LP_PLATES")
+        if pd:
+            cands.append(str(Path(pd) / f"{slug}.props.json"))
+        cands += [f"tp/{slug}.json", f"tp/plans/{slug}.json", f"toonplans/{slug}.json"]   # toonplans/ = nightly make job
+        for c in cands:
+            try:
+                if c and Path(c).is_file():
+                    return json.loads(Path(c).read_text(encoding="utf-8"))
+            except Exception as e:   # a caption nicety must never cost a post
+                print(f"::warning::[render] toon props skipped ({c}): {e}")
+        return None
+
+    @staticmethod
+    def _load_act_spans(slug: str) -> list:
+        """[(start_s, end_s, kind)] of the afterhour shots that carry an `act` ({"ah": {"shots": [{a, n, act: {kind}}]}}).
+        None found = no acts (old behaviour)."""
+        try:
+            shots = ((Renderer._load_props(slug) or {}).get("ah") or {}).get("shots") or []
+            return [(sh["a"] / FPS, (sh["a"] + sh["n"]) / FPS, sh["act"].get("kind", "")) for sh in shots if sh.get("act")]
+        except Exception as e:
+            print(f"::warning::[render] act caption spans skipped: {e}")
+            return []
+
+    def _calm(self) -> bool:
+        """True when this Short is drawn in the afterhour look (every format since Nov 17): the picture does the
+        talking, so no zoom blur / punch-in / step-stat cards / icon pops / HUD; phrase captions only (Sam: famous
+        Shorts had 'too many edits'). Toon props carry "ah" -> yes; props found without it -> no; none found ->
+        same rule as toon.py (low-poly Short whose "look" isn't "toon", TOON_LOOK not "toon"); format story always."""
+        c = getattr(self, "_calm_v", None)
+        if c is None:
+            props = getattr(self, "_props", None)
+            if props is not None:
+                c = bool(props.get("ah"))
+            else:
+                c = (self.s.get("look") == "afterhour"
+                     or (self.s.get("look") != "toon" and os.environ.get("TOON_LOOK") != "toon"
+                         and (self.s.get("format") == "story" or self.s.get("visual_style") == "lowpoly")))
+            self._calm_v = c
+        return c
+
+    def _caption_y(self, g0: float, g1: float) -> int:
+        """Caption bottom edge for a phrase spanning global seconds g0..g1: 1265 normally; if it overlaps an act
+        shot (by more than 0.12 s) the whole phrase goes to that act's band (ACT_CAPTION_POS, default low)."""
+        best, kind = 0.12, None
+        for a, b, k in getattr(self, "act_spans", []):
+            ov = min(g1, b) - max(g0, a)
+            if ov > best:
+                best, kind = ov, k
+        return 1265 if kind is None else ACT_CAPTION_Y[ACT_CAPTION_POS.get(kind, "low")]
 
     def _draw_tag(self, img: Image.Image):
         d = ImageDraw.Draw(img, "RGBA")
@@ -1156,12 +1223,13 @@ class Renderer:
                 sc, t = scenes[si], gt - starts[si]
                 frame, tb = self.draw(sc, si, t)
                 lp = self.s.get("visual_style") == "lowpoly"
+                calm = self._calm()
                 if not lp and sc.shots[max(0, bisect.bisect_right(sc.beats, t) - 1)][0] != "image":
                     frame = fx.drift(frame, tb)  # images already zoom; everything else drifts in
                 if lp:
-                    if si > 0:  # camera cuts every beat; a zoom-blur marks each new scene
+                    if si > 0 and not calm:  # camera cuts every beat; a zoom-blur marks each new scene
                         frame = fx.zoom_blur(frame, t)
-                    if tb < 0.12 and t > 0.2:  # and a small punch-in lands every cut inside a scene
+                    if tb < 0.12 and t > 0.2 and not calm:  # and a small punch-in lands every cut inside a scene
                         frame = fx.zoom(frame, 1.05 - 0.05 * ease_out(tb / 0.12))
                 elif TRANSITION_3D and three_d_ok() and gt > 0.05 and tb < 0.18:
                     # 3D swing: the new shot arrives as a card turning in from the side
@@ -1180,12 +1248,13 @@ class Renderer:
                     # the name banner sits at the top (famous format): the title goes under it, not behind it
                     fx.hook(frame, self.s.get("title", ""), gt, font, BLACK,
                             y=(410 if self.s.get("name_sub") else 345) if self.s.get("name_card") else 150)   # below the banner + its sub line
-                self._hud(frame, scenes, si, t)
+                if not calm:   # a counter that pops on change is an "edit" too
+                    self._hud(frame, scenes, si, t)
                 self._name(frame, gt)
                 self._cta(frame, si, t)
-                if self.s.get("format") != "story" and sc.shots[max(0, bisect.bisect_right(sc.beats, t) - 1)][0] not in ("3d", "alt", "chartzoom", "wordcard"):
+                if not calm and sc.shots[max(0, bisect.bisect_right(sc.beats, t) - 1)][0] not in ("3d", "alt", "chartzoom", "wordcard"):
                     self._icon(frame, chunks[si], t, lp)  # never on top of a chart or a word card
-                self._caption(frame, chunks[si], t)  # after the CTA dim, so captions stay bright
+                self._caption(frame, chunks[si], t, gt)  # after the CTA dim, so captions stay bright
                 if lp and SUBLINE:
                     self._subline(frame, chunks[si], t, gt)
                 # thin progress bar along the top edge keeps people watching to the end
@@ -1359,7 +1428,7 @@ class Renderer:
             return
         # Nov 15: in story Shorts the "STEP 2" card stayed up the whole step and covered the drawn signs (DPOY);
         # like the reference channel, it now lands at the step's start and is gone after ~1.6 s
-        if self.s.get("format") == "story":   # the reference has no step/stat cards at all: the scene shows it
+        if self._calm():   # the reference has no step/stat cards at all: the scene shows it
             return
         d = ImageDraw.Draw(frame)
         pop = ease_out_back(min(1.0, tb / 0.25))
@@ -1376,10 +1445,10 @@ class Renderer:
             fs = fit_font(v["stat_sub"].lower(), BOLD, SAFE_X1 - SAFE_X0, 64, 40)
             draw_centered(d, cx, 430 + f.size + 24, v["stat_sub"].lower(), fs, (255, 255, 255), 8, (0, 0, 0))
 
-    def _caption_lp(self, frame, words, t):
+    def _caption_lp(self, frame, words, t, gt=None):
         """Low-poly captions: one lowercase yellow word at a time, thick black outline."""
-        if self.s.get("format") == "story" and os.environ.get("CAPTION_STYLE", "phrase") == "phrase":
-            return self._caption_phrase(frame, words, t)
+        if self._calm() and os.environ.get("CAPTION_STYLE", "phrase") == "phrase":
+            return self._caption_phrase(frame, words, t, gt)
         cur = None
         for w in words:
             if w.start - 0.03 <= t <= w.end + 0.08:
@@ -1393,7 +1462,7 @@ class Renderer:
         draw_centered(ImageDraw.Draw(frame), (SAFE_X0 + SAFE_X1) / 2, CAPTION_Y - f.size // 2, txt, f,
                       (255, 221, 0), 12, (0, 0, 0))
 
-    def _caption_phrase(self, frame, words, t):
+    def _caption_phrase(self, frame, words, t, gt=None):
         """Story Shorts (Nov 15, Sam's reference @afterhourtheories, every frame studied): small white bold phrases of
         1-4 words in the lower middle, thin black outline, no highlight colour, no pop; a phrase breaks at punctuation."""
         groups, cur = [], []
@@ -1413,7 +1482,10 @@ class Renderer:
             return
         txt = " ".join(w.text for w in show)
         f = fit_font(txt, BOLD, SAFE_X1 - SAFE_X0 - 120, 62, 38)
-        draw_centered(ImageDraw.Draw(frame), (SAFE_X0 + SAFE_X1) / 2, 1265 - f.size // 2, txt, f, (255, 255, 255), 6, (0, 0, 0))
+        y = 1265
+        if gt is not None:   # decided per phrase (its whole span), so a sentence never jumps mid-way
+            y = self._caption_y(gt - t + show[0].start, gt - t + show[-1].end)
+        draw_centered(ImageDraw.Draw(frame), (SAFE_X0 + SAFE_X1) / 2, y - f.size // 2, txt, f, (255, 255, 255), 6, (0, 0, 0))
 
     def _subline(self, frame, chunks, t, gt):
         """Nov 15, Sam's reference channel (@afterhourtheories, "mimic his style"): the sentence being said runs
@@ -1505,9 +1577,9 @@ class Renderer:
                 fx.draw_icon(frame, kind, (SAFE_X0 + SAFE_X1) / 2, y, (t - w.start + 0.03) / 0.15)
                 return
 
-    def _caption(self, frame: Image.Image, chunks: list[list[Word]], t: float):
+    def _caption(self, frame: Image.Image, chunks: list[list[Word]], t: float, gt: float | None = None):
         if self.s.get("visual_style") == "lowpoly":
-            self._caption_lp(frame, [w for ch in chunks for w in ch], t)
+            self._caption_lp(frame, [w for ch in chunks for w in ch], t, gt)
             return
         for ch in chunks:
             if ch[0].start - 0.05 <= t <= ch[-1].end + 0.05:
