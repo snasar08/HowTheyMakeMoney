@@ -7,7 +7,7 @@
   "hook_style": "number",
   "title_style": "number",
   "theme": "bold_bright",
-  "status": "ready",
+  "status": "delivered",
   "score": 89,
   "title": "From $1.5 Million at 16 to $765 Million",
   "name_card": "Juan Soto",
@@ -36,7 +36,22 @@
           "check"
         ],
         "stat": "$765 MILLION",
-        "stat_sub": "15 years, December 2024"
+        "stat_sub": "15 years, December 2024",
+        "hero": {
+          "skin": "8d5a3b",
+          "hair": "short",
+          "hair_color": "161210",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "1f3a93",
+          "pants": "f4f4f4",
+          "socks": "1f3a93",
+          "shoes": "1a1a1a",
+          "extras": [
+            "cap"
+          ],
+          "height": 1.02
+        }
       }
     },
     {
@@ -48,7 +63,22 @@
         "crowd": 0,
         "props": [],
         "stat": "$1.5 MILLION",
-        "stat_sub": "his first bonus, July 2015"
+        "stat_sub": "his first bonus, July 2015",
+        "hero": {
+          "skin": "8d5a3b",
+          "hair": "short",
+          "hair_color": "161210",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "1f3a93",
+          "pants": "f4f4f4",
+          "socks": "1f3a93",
+          "shoes": "1a1a1a",
+          "extras": [
+            "cap"
+          ],
+          "height": 1.02
+        }
       }
     },
     {
@@ -60,7 +90,22 @@
         "crowd": 100,
         "props": [],
         "stat": "AGE 19",
-        "stat_sub": "MLB debut, May 2018"
+        "stat_sub": "MLB debut, May 2018",
+        "hero": {
+          "skin": "8d5a3b",
+          "hair": "short",
+          "hair_color": "161210",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "1f3a93",
+          "pants": "f4f4f4",
+          "socks": "1f3a93",
+          "shoes": "1a1a1a",
+          "extras": [
+            "cap"
+          ],
+          "height": 1.02
+        }
       }
     },
     {
@@ -74,7 +119,22 @@
           "trophy"
         ],
         "stat": "WORLD SERIES",
-        "stat_sub": "on his 21st birthday, 2019"
+        "stat_sub": "on his 21st birthday, 2019",
+        "hero": {
+          "skin": "8d5a3b",
+          "hair": "short",
+          "hair_color": "161210",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "1f3a93",
+          "pants": "f4f4f4",
+          "socks": "1f3a93",
+          "shoes": "1a1a1a",
+          "extras": [
+            "cap"
+          ],
+          "height": 1.02
+        }
       }
     },
     {
@@ -90,7 +150,22 @@
         ],
         "stat": "$75 MILLION",
         "stat_sub": "signing bonus alone",
-        "hud": "$765M"
+        "hud": "$765M",
+        "hero": {
+          "skin": "8d5a3b",
+          "hair": "short",
+          "hair_color": "161210",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "1f3a93",
+          "pants": "f4f4f4",
+          "socks": "1f3a93",
+          "shoes": "1a1a1a",
+          "extras": [
+            "cap"
+          ],
+          "height": 1.02
+        }
       }
     }
   ],
@@ -114,5 +189,26 @@
       "cap"
     ],
     "height": 1.02
+  },
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-091-famous-soto",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-091-famous-soto/091-famous-soto.mp4",
+    "post_at": "2026-11-18T20:00:00-05:00",
+    "buffer_post": "6afca553dfd7767b00723e30",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-17T19:04:51.753908+00:00",
+    "seconds": 27.29,
+    "eyes": {
+      "score": 8,
+      "problems": [
+        "The MLB logo is a real brand mark and should be removed or replaced with a generic baseball icon.",
+        "The text '15 years, december 2024' appears on screen, which is confusing as the narration does not mention this date and it is in the future relative to the current date (November 2026).",
+        "The text 'on his 21st birthday, 2019' is slightly small and could be difficult to read on smaller mobile screens."
+      ],
+      "best_fix": "Remove the MLB logo and replace it with a generic baseball icon to avoid copyright issues, and remove the confusing '15 years, december 2024' text overlay.",
+      "model": "gemini-3.1-flash-lite",
+      "acts": null
+    }
   }
 }

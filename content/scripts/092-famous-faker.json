@@ -7,7 +7,7 @@
   "hook_style": "surprise",
   "title_style": "number",
   "theme": "dark_neon",
-  "status": "ready",
+  "status": "delivered",
   "score": 90,
   "title": "He Turned Down $20 Million a Year",
   "name_card": "Faker",
@@ -37,7 +37,22 @@
           "headset"
         ],
         "stat": "$20 MILLION",
-        "stat_sub": "a year, offered in 2022"
+        "stat_sub": "a year, offered in 2022",
+        "hero": {
+          "skin": "e6c09c",
+          "hair": "short",
+          "hair_color": "141414",
+          "beard": "none",
+          "outfit": "hoodie",
+          "shirt": "2b3a67",
+          "pants": "1f1f24",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "extras": [
+            "glasses"
+          ],
+          "height": 0.98
+        }
       }
     },
     {
@@ -51,7 +66,22 @@
           "trophy"
         ],
         "stat": "6 WORLD TITLES",
-        "stat_sub": "League of Legends"
+        "stat_sub": "League of Legends",
+        "hero": {
+          "skin": "e6c09c",
+          "hair": "short",
+          "hair_color": "141414",
+          "beard": "none",
+          "outfit": "hoodie",
+          "shirt": "2b3a67",
+          "pants": "1f1f24",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "extras": [
+            "glasses"
+          ],
+          "height": 0.98
+        }
       }
     },
     {
@@ -65,7 +95,22 @@
           "headset"
         ],
         "stat": "AGE 17",
-        "stat_sub": "signed and champion, 2013"
+        "stat_sub": "signed and champion, 2013",
+        "hero": {
+          "skin": "e6c09c",
+          "hair": "short",
+          "hair_color": "141414",
+          "beard": "none",
+          "outfit": "hoodie",
+          "shirt": "2b3a67",
+          "pants": "1f1f24",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "extras": [
+            "glasses"
+          ],
+          "height": 0.98
+        }
       }
     },
     {
@@ -80,7 +125,22 @@
         ],
         "stat": "PART-OWNER",
         "stat_sub": "his team, since 2020",
-        "hud": "~$5M/YR"
+        "hud": "~$5M/YR",
+        "hero": {
+          "skin": "e6c09c",
+          "hair": "short",
+          "hair_color": "141414",
+          "beard": "none",
+          "outfit": "hoodie",
+          "shirt": "2b3a67",
+          "pants": "1f1f24",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "extras": [
+            "glasses"
+          ],
+          "height": 0.98
+        }
       }
     },
     {
@@ -94,7 +154,22 @@
           "trophy"
         ],
         "stat": "3 IN A ROW",
-        "stat_sub": "2023, 2024, 2025"
+        "stat_sub": "2023, 2024, 2025",
+        "hero": {
+          "skin": "e6c09c",
+          "hair": "short",
+          "hair_color": "141414",
+          "beard": "none",
+          "outfit": "hoodie",
+          "shirt": "2b3a67",
+          "pants": "1f1f24",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "extras": [
+            "glasses"
+          ],
+          "height": 0.98
+        }
       }
     }
   ],
@@ -118,5 +193,25 @@
       "glasses"
     ],
     "height": 0.98
+  },
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-092-famous-faker",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-092-famous-faker/092-famous-faker.mp4",
+    "post_at": "2026-11-18T15:00:00-05:00",
+    "buffer_post": "6afca3fc1521a8d022973011",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-17T18:59:09.128351+00:00",
+    "seconds": 23.93,
+    "eyes": {
+      "score": 8,
+      "problems": [
+        "The narration claims he is a 'six-time' world champion, but the text on screen says '3 IN A ROW' and lists years 2023, 2024, 2025, which is confusing and potentially inaccurate for the viewer.",
+        "The text '3 IN A ROW' appears while the narration is discussing his early career, creating a mismatch between audio and visual information."
+      ],
+      "best_fix": "Update the on-screen text to accurately reflect the 'six-time' claim or adjust the narration to match the '3 in a row' visual, ensuring the timeline of his career is clearly represented.",
+      "model": "gemini-3.1-flash-lite",
+      "acts": null
+    }
   }
 }

@@ -7,7 +7,7 @@
   "hook_style": "surprise",
   "title_style": "number",
   "theme": "bold_bright",
-  "status": "ready",
+  "status": "delivered",
   "score": 90,
   "title": "Cut After 2 Months, Then $11.4 Billion",
   "name_card": "Dwayne Johnson",
@@ -36,7 +36,19 @@
           "ball"
         ],
         "stat": "$11.4 BILLION",
-        "stat_sub": "from a cut player"
+        "stat_sub": "from a cut player",
+        "hero": {
+          "skin": "a8744a",
+          "hair": "bald",
+          "hair_color": "15110e",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "1a1a1a",
+          "pants": "2c3550",
+          "socks": "1a1a1a",
+          "shoes": "1a1a1a",
+          "height": 1.12
+        }
       }
     },
     {
@@ -50,7 +62,19 @@
           "trophy"
         ],
         "stat": "$11.4 BILLION",
-        "stat_sub": "box office, worldwide"
+        "stat_sub": "box office, worldwide",
+        "hero": {
+          "skin": "a8744a",
+          "hair": "bald",
+          "hair_color": "15110e",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "1a1a1a",
+          "pants": "2c3550",
+          "socks": "1a1a1a",
+          "shoes": "1a1a1a",
+          "height": 1.12
+        }
       }
     },
     {
@@ -64,7 +88,19 @@
           "trophy"
         ],
         "stat": "A NEW START",
-        "stat_sub": "wrestling, 1996"
+        "stat_sub": "wrestling, 1996",
+        "hero": {
+          "skin": "a8744a",
+          "hair": "bald",
+          "hair_color": "15110e",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "1a1a1a",
+          "pants": "2c3550",
+          "socks": "1a1a1a",
+          "shoes": "1a1a1a",
+          "height": 1.12
+        }
       }
     },
     {
@@ -79,7 +115,19 @@
         ],
         "stat": "$5.5 MILLION",
         "stat_sub": "a first-lead record",
-        "hud": "$5.5M"
+        "hud": "$5.5M",
+        "hero": {
+          "skin": "a8744a",
+          "hair": "bald",
+          "hair_color": "15110e",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "1a1a1a",
+          "pants": "2c3550",
+          "socks": "1a1a1a",
+          "shoes": "1a1a1a",
+          "height": 1.12
+        }
       }
     },
     {
@@ -95,7 +143,19 @@
         ],
         "stat": "#1 PAID ACTOR",
         "stat_sub": "Forbes, 2016",
-        "hud": "$11.4B"
+        "hud": "$11.4B",
+        "hero": {
+          "skin": "a8744a",
+          "hair": "bald",
+          "hair_color": "15110e",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "1a1a1a",
+          "pants": "2c3550",
+          "socks": "1a1a1a",
+          "shoes": "1a1a1a",
+          "height": 1.12
+        }
       }
     }
   ],
@@ -116,5 +176,26 @@
     "socks": "1a1a1a",
     "shoes": "1a1a1a",
     "height": 1.12
+  },
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-085-famous-dwayne-johnson",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-085-famous-dwayne-johnson/085-famous-dwayne-johnson.mp4",
+    "post_at": "2026-11-18T12:00:00-05:00",
+    "buffer_post": "6afca38132ea84693c3810cd",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-17T18:57:05.947684+00:00",
+    "seconds": 25.99,
+    "eyes": {
+      "score": 8,
+      "problems": [
+        "The text 'FORBES, 2016' appears on screen, which is a brand mark/logo.",
+        "The narration mentions 'wrestling' but the visual shows a basketball court/ball for several seconds.",
+        "The text 'GUINNESS' appears on screen, which is a brand mark/logo."
+      ],
+      "best_fix": "Replace the basketball court scene with a wrestling ring or wrestling-themed animation to match the narration, and remove the brand logos.",
+      "model": "gemini-3.1-flash-lite",
+      "acts": null
+    }
   }
 }

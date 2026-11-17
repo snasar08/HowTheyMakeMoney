@@ -7,7 +7,7 @@
   "hook_style": "surprise",
   "title_style": "number",
   "theme": "bold_bright",
-  "status": "ready",
+  "status": "delivered",
   "score": 90,
   "title": "His Card Sold for $8.04 Million. He's 19.",
   "name_card": "Cooper Flagg",
@@ -52,7 +52,21 @@
           "cash"
         ],
         "stat": "$8.04 MILLION",
-        "stat_sub": "one trading card"
+        "stat_sub": "one trading card",
+        "hero": {
+          "skin": "f0c8a8",
+          "hair": "short",
+          "hair_color": "6b4a2e",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "00538c",
+          "pants": "00538c",
+          "trim": "f4f4f4",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "height": 1.2,
+          "number": 32
+        }
       },
       "toon": [
         {
@@ -79,7 +93,21 @@
           "ball"
         ],
         "stat": "AGE 19",
-        "stat_sub": "rookie debut card"
+        "stat_sub": "rookie debut card",
+        "hero": {
+          "skin": "f0c8a8",
+          "hair": "short",
+          "hair_color": "6b4a2e",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "00538c",
+          "pants": "00538c",
+          "trim": "f4f4f4",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "height": 1.2,
+          "number": 32
+        }
       },
       "toon": [
         {
@@ -114,7 +142,21 @@
           "ball"
         ],
         "stat": "NEWPORT, MAINE",
-        "stat_sub": "where he grew up"
+        "stat_sub": "where he grew up",
+        "hero": {
+          "skin": "f0c8a8",
+          "hair": "short",
+          "hair_color": "6b4a2e",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "00538c",
+          "pants": "00538c",
+          "trim": "f4f4f4",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "height": 1.2,
+          "number": 32
+        }
       },
       "toon": [
         {
@@ -140,7 +182,21 @@
           "ball"
         ],
         "stat": "PICK 1",
-        "stat_sub": "2025 NBA draft"
+        "stat_sub": "2025 NBA draft",
+        "hero": {
+          "skin": "f0c8a8",
+          "hair": "short",
+          "hair_color": "6b4a2e",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "00538c",
+          "pants": "00538c",
+          "trim": "f4f4f4",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "height": 1.2,
+          "number": 32
+        }
       },
       "toon": [
         {
@@ -169,7 +225,21 @@
           "ball"
         ],
         "stat": "51 POINTS",
-        "stat_sub": "youngest ever to score 50+"
+        "stat_sub": "youngest ever to score 50+",
+        "hero": {
+          "skin": "f0c8a8",
+          "hair": "short",
+          "hair_color": "6b4a2e",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "00538c",
+          "pants": "00538c",
+          "trim": "f4f4f4",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "height": 1.2,
+          "number": 32
+        }
       },
       "toon": [
         {
@@ -208,7 +278,21 @@
         ],
         "stat": "ROOKIE OF THE YEAR",
         "stat_sub": "2025-26",
-        "hud": "$8.04M"
+        "hud": "$8.04M",
+        "hero": {
+          "skin": "f0c8a8",
+          "hair": "short",
+          "hair_color": "6b4a2e",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "00538c",
+          "pants": "00538c",
+          "trim": "f4f4f4",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "height": 1.2,
+          "number": 32
+        }
       },
       "toon": [
         {
@@ -230,5 +314,26 @@
       "title": "Wikipedia: Cooper Flagg",
       "url": "https://en.wikipedia.org/wiki/Cooper_Flagg"
     }
-  ]
+  ],
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-131-famous-flagg-card",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-131-famous-flagg-card/131-famous-flagg-card.mp4",
+    "post_at": "2026-11-18T16:30:00-05:00",
+    "buffer_post": "6afca4621521a8d022977a3c",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-17T19:00:52.052336+00:00",
+    "seconds": 23.69,
+    "eyes": {
+      "score": 8,
+      "problems": [
+        "The text 'Rookie of the Year 2025-26' appears on screen while the narration is still discussing the 51-point game, causing a slight mismatch in timing.",
+        "The visual transition from the 'Newport, Maine' scene to the 'Pick 1' scene is abrupt.",
+        "The 'Subscribe' and 'Comment' call-to-action overlays are slightly cluttered and distract from the main character."
+      ],
+      "best_fix": "Adjust the timing of the 'Rookie of the Year' text overlay to sync precisely with the narration, and simplify the end-screen call-to-action to avoid visual clutter.",
+      "model": "gemini-3.1-flash-lite",
+      "acts": null
+    }
+  }
 }

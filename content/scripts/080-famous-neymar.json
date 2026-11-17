@@ -7,7 +7,7 @@
   "hook_style": "number",
   "title_style": "number",
   "theme": "bold_bright",
-  "status": "ready",
+  "status": "delivered",
   "score": 89,
   "title": "The €222 Million Transfer Record",
   "name_card": "Neymar",
@@ -36,7 +36,19 @@
           "ball"
         ],
         "stat": "€222 MILLION",
-        "stat_sub": "for one player"
+        "stat_sub": "for one player",
+        "hero": {
+          "skin": "c6906a",
+          "hair": "short",
+          "hair_color": "2a1a10",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "f7d117",
+          "pants": "1f4fa0",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "height": 1.0
+        }
       }
     },
     {
@@ -50,7 +62,19 @@
           "ball"
         ],
         "stat": "£20 MILLION",
-        "stat_sub": "a bid at 18, 2010"
+        "stat_sub": "a bid at 18, 2010",
+        "hero": {
+          "skin": "c6906a",
+          "hair": "short",
+          "hair_color": "2a1a10",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "f7d117",
+          "pants": "1f4fa0",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "height": 1.0
+        }
       }
     },
     {
@@ -64,7 +88,19 @@
           "ball"
         ],
         "stat": "TOO LIGHT?",
-        "stat_sub": "Barcelona, 2013"
+        "stat_sub": "Barcelona, 2013",
+        "hero": {
+          "skin": "c6906a",
+          "hair": "short",
+          "hair_color": "2a1a10",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "f7d117",
+          "pants": "1f4fa0",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "height": 1.0
+        }
       }
     },
     {
@@ -79,7 +115,19 @@
         ],
         "stat": "€222 MILLION",
         "stat_sub": "his buy-out clause, 2016",
-        "hud": "€222M"
+        "hud": "€222M",
+        "hero": {
+          "skin": "c6906a",
+          "hair": "short",
+          "hair_color": "2a1a10",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "f7d117",
+          "pants": "1f4fa0",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "height": 1.0
+        }
       }
     },
     {
@@ -95,7 +143,19 @@
         ],
         "stat": "PAID IN FULL",
         "stat_sub": "August 2017, a world record",
-        "hud": "€222M"
+        "hud": "€222M",
+        "hero": {
+          "skin": "c6906a",
+          "hair": "short",
+          "hair_color": "2a1a10",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "f7d117",
+          "pants": "1f4fa0",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "height": 1.0
+        }
       }
     }
   ],
@@ -116,5 +176,25 @@
     "socks": "f4f4f4",
     "shoes": "f4f4f4",
     "height": 1.0
+  },
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-080-famous-neymar",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-080-famous-neymar/080-famous-neymar.mp4",
+    "post_at": "2026-11-18T18:00:00-05:00",
+    "buffer_post": "6afca4f73f600a65285a2fef",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-17T19:03:20.180039+00:00",
+    "seconds": 28.98,
+    "eyes": {
+      "score": 9,
+      "problems": [
+        "The caption 'EMO' at frame 800-815 is a typo for 'too' or 'too small' as per the narration.",
+        "The caption 'a' at frame 566-579 is grammatically awkward/incomplete in context of the sentence."
+      ],
+      "best_fix": "Correct the caption 'EMO' to 'too' to match the narration and improve readability.",
+      "model": "gemini-3.1-flash-lite",
+      "acts": null
+    }
   }
 }
