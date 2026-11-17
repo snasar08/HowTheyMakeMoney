@@ -16,7 +16,7 @@ import { ACTS } from "./acts";
 import type { ActRun, ActPose } from "./acts/types";
 
 type V3 = [number, number, number];
-export type AhChar = { look: Look; at?: string | V3; rot?: number; pose?: Pose; expr?: Expr; exprAt?: [number, Expr][] };
+export type AhChar = { look: Look; at?: string | V3; rot?: number; scale?: number; pose?: Pose; expr?: Expr; exprAt?: [number, Expr][] };
 export type AhCard = CardSpec & { at?: string | V3; w?: number; rot?: number };
 export type AhThing = { name: string; at?: string | V3; scale?: number; rot?: number; color?: string; text?: string; pop?: boolean };
 export type AhShot = { a: number; n: number; set: SetName; view?: string; subject?: number; cam?: { from: V3; to: V3; look: V3 }; chars: AhChar[]; cards?: AhCard[]; things?: AhThing[]; coins?: boolean;
@@ -155,6 +155,46 @@ const applyInstHide = (list: InstHide[], k: number, all: Set<THREE.InstancedMesh
 };
 const EVER_INST = new Map<THREE.Object3D, Set<THREE.InstancedMesh>>();
 
+
+/** Cards and things must sit fully inside the 9:16 frame (and clear of the top subtitle) at every moment of the shot's camera move:
+ *  nudge them along the camera's right/up axes, and shrink them when they are simply too big for the view. */
+type FitItem = { pos: THREE.Vector3; hw: number; hh: number; set: (k: number) => void };
+const fitInFrame = (s: AhShot, viewName: string | undefined, headY: number, root: THREE.Vector3, sitting: boolean, items: FitItem[]) => {
+  if (!items.length) return;
+  const V = s.cam ? { ...s.cam, blur: 4 } : VIEWS[(viewName && VIEWS[viewName]) ? viewName : "ms"] ?? VIEWS.ms;
+  const sp: V3 = s.chars[s.subject ?? 0] ? [root.x, root.y, root.z] : [0, 0, 0];
+  const drop = (sitting ? Math.max(0, root.y) : root.y) + (sitting ? 0 : headY - 1.55);
+  const off = (p: V3): V3 => (s.cam ? p : [p[0] + sp[0], p[1] + drop, p[2] + sp[2]]);
+  const fov = s.view === "face" ? 38 : 40, tf = Math.tan((fov * Math.PI) / 360), asp = 1080 / 1920;
+  const cams = [0, 0.75, 1].map((t) => {
+    const c = new THREE.PerspectiveCamera(fov, asp, 0.1, 400);
+    c.position.set(...off(lerp(V.from, V.to, t))); c.lookAt(...off(V.look)); c.updateMatrixWorld(true); c.updateProjectionMatrix(); return c;
+  });
+  const LX = 0.84, YLO = -0.7, YHI = 0.66, v = new THREE.Vector3(), right = new THREE.Vector3(), up = new THREE.Vector3();
+  for (const it of items) {
+    for (let iter = 0; iter < 24; iter++) {
+      let moved = false, tooBig = false;
+      for (const c of cams) {
+        let x0 = 9, x1 = -9, y0 = 9, y1 = -9, ok = true;
+        for (const [sx, sy] of [[-1, -1], [1, -1], [-1, 1], [1, 1]]) {
+          v.set(it.pos.x + sx * it.hw, it.pos.y + sy * it.hh, it.pos.z).project(c);
+          if (v.z > 1) ok = false; x0 = Math.min(x0, v.x); x1 = Math.max(x1, v.x); y0 = Math.min(y0, v.y); y1 = Math.max(y1, v.y);
+        }
+        if (!ok) continue;
+        if (x1 - x0 > 2 * LX || y1 - y0 > YHI - YLO) { tooBig = true; continue; }
+        const dx = x1 > LX ? LX - x1 : x0 < -LX ? -LX - x0 : 0, dy = y1 > YHI ? YHI - y1 : y0 < YLO ? YLO - y0 : 0;
+        if (dx || dy) {
+          const d = Math.max(0.5, v.set(it.pos.x, it.pos.y, it.pos.z).applyMatrix4(c.matrixWorldInverse).z * -1);
+          right.setFromMatrixColumn(c.matrixWorld, 0); up.setFromMatrixColumn(c.matrixWorld, 1);
+          it.pos.addScaledVector(right, dx * d * tf * asp).addScaledVector(up, dy * d * tf); moved = true;
+        }
+      }
+      if (tooBig) { it.hw *= 0.88; it.hh *= 0.88; it.set(0.88); continue; }
+      if (!moved) break;
+    }
+  }
+};
+
 const build = (k: number, s: AhShot): Built => {
   const hit = BUILT.get(k); if (hit) return hit;
   const set = makeSet(s.set), root = new THREE.Group();
@@ -162,21 +202,35 @@ const build = (k: number, s: AhShot): Built => {
   const chars = s.chars.map((c) => {
     const ch = makeChar(c.look), p = spotOf(set, c.at);
     ch.root.position.set(p[0], c.pose === "sit" ? Math.max(0, p[1] - 0.55) : p[1], p[2]); ch.root.rotation.y = c.rot ?? 0;
+    if (c.scale) ch.root.scale.setScalar(c.scale);   // small figures (a "1 in 10" row)
     root.add(ch.root); return ch;
   });
+  const fitItems: FitItem[] = [];
   (s.cards ?? []).forEach((c) => {
-    const W = 1100, Hh = c.kind === "paper" || c.kind === "tomb" ? 1300 : 700, tex = drawCard(c, W, Hh), w = c.w ?? 1.6;
+    const W = 1100, Hh = c.kind === "paper" || c.kind === "tomb" ? 1300 : 700, tex = drawCard(c, W, Hh);
+    // far views: the card grows about the top of the hero's head so it stays readable on a phone (and stays above the head)
+    const ck = s.view === "wide" ? 1.35 : s.view === "ws" ? 1.8 : 1, headTop = ((chars[s.subject ?? 0] as Char & { headY?: number } | undefined)?.headY ?? 1.55) + 0.42;
+    const w = (c.w ?? 1.6) * (s.cam || s.act ? 1 : ck);
     const m = new THREE.Mesh(new THREE.PlaneGeometry(w, (w * Hh) / W), new THREE.MeshBasicMaterial({ map: tex, transparent: true, toneMapped: false }));
-    const p = spotOf(set, c.at ?? [1.2, 1.6, -0.6]); m.position.set(p[0], p[1], p[2] + 0.02); m.rotation.y = c.rot ?? 0; root.add(m);
+    const p0 = spotOf(set, c.at ?? [1.2, 1.6, -0.6]), kk = s.cam || s.act ? 1 : ck, p: V3 = [p0[0] * kk, headTop + (p0[1] - headTop) * kk, p0[2]]; m.position.set(p[0], p[1], p[2] + 0.02); m.rotation.y = c.rot ?? 0; root.add(m);
+    const hh = (w * Hh) / W;
+    fitItems.push({ pos: m.position, hw: w / 2, hh: hh / 2, set: (k2) => m.scale.multiplyScalar(k2) });
   });
   const things: Thing[] = (s.things ?? []).map((t) => {
     const th = makeThing(t.name, { color: t.color, text: t.text }), p = spotOf(set, t.at ?? [1.0, 0, 0.4]);
     const fit = (t as AhThing & { fit?: number }).fit;
-    const sc = fit ? fit / Math.max(0.05, th.size) : (t.scale ?? 1);
+    const fitK = s.view === "wide" ? 1.5 : s.view === "ws" ? 2.1 : 1;   // held things read bigger in the far views
+    const sc = fit ? (fit * fitK) / Math.max(0.05, th.size) : (t.scale ?? 1);
     th.root.position.set(p[0], p[1], p[2]); th.root.rotation.y = t.rot ?? -0.35; th.root.scale.setScalar(sc);
     th.root.userData.base = sc; th.root.userData.pop = t.pop !== false;
-    root.add(th.root); return th;
+    root.add(th.root);
+    th.root.updateMatrixWorld(true);
+    const bb = new THREE.Box3().setFromObject(th.root), bs = bb.getSize(new THREE.Vector3()), bc = bb.getCenter(new THREE.Vector3());   // the real extent (a tv / sign is wider than its nominal size)
+    const r = Math.max(0.1, (fit ? fit * fitK : th.size * sc) * 0.6), hw0 = bs.x / 2 + Math.abs(bc.x - th.root.position.x), hh0 = bs.y / 2 + Math.abs(bc.y - th.root.position.y);
+    if (!s.act) fitItems.push({ pos: th.root.position, hw: Math.max(r, hw0), hh: Math.max(r, hh0), set: (k2) => { th.root.userData.base *= k2; th.root.scale.setScalar(th.root.userData.base); } });
+    return th;
   });
+
   // the act: built once with the shot (props, opponents), ticked every frame
   let run: ActRun | undefined, view: string | undefined, hide: THREE.Object3D[] = [], instHide: InstHide[] = [];
   const def = s.act ? ACTS[s.act.kind] : undefined;
@@ -195,6 +249,8 @@ const build = (k: number, s: AhShot): Built => {
     run = def.build({ root, hero, heroAt: at, set: s.set, spots: set.spots as Record<string, V3>, seed: k + 1 });
     view = def.view;
   }
+  { const sj = chars[s.subject ?? 0], sc0 = s.chars[s.subject ?? 0];
+    if (sj) fitInFrame(s, view && VIEWS[view] ? view : s.view, (sj as Char & { headY?: number }).headY ?? 1.55, sj.root.position, sc0?.pose === "sit", fitItems); }
   let coinGeo: THREE.InstancedMesh | undefined;
   if (s.coins) {
     coinGeo = new THREE.InstancedMesh(new THREE.CylinderGeometry(0.07, 0.07, 0.015, 16), new THREE.MeshStandardMaterial({ color: "#f2c230", metalness: 0.8, roughness: 0.3, emissive: "#f2c230", emissiveIntensity: 0.4 }), 60);
