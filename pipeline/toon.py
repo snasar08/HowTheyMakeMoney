@@ -439,6 +439,7 @@ AH_REL_RX = re.compile(r"\b(?:his|her|their|a|an|the|my|your|our)\s+(?:(?:old|ne
                        + r")(?:'s)?\b(?!\s+(?:game|company|brand|app|team|product|show|league|rating|ranking|model|idea))", re.I)
 AH_PAL = ["#e86a6a", "#5ad0d8", "#8bc34a", "#b48ae0", "#f2a33a", "#4a7bd0", "#d96ab8", "#6ad89a"]
 AH_VIEWS = ["ms", "face", "cu", "low", "ws", "wide"]
+AH_NO_LOW = {"stage", "throne", "ring"}   # raised floors: the low camera ends up inside them
 AH_SKIP_FIRST = {"i", "it", "its", "he", "she", "they", "we", "you", "the", "a", "an", "this", "that", "but", "and", "then", "now", "so", "still",
                  "just", "back", "by", "in", "at", "on", "of", "to", "for", "with", "from", "when", "while", "after", "before", "one", "two",
                  "three", "every", "each", "all", "no", "not", "if", "yes", "his", "her", "their", "our", "my", "your", "today", "later", "next",
@@ -640,7 +641,7 @@ def ah_shots(plan: dict) -> list:
         if sc.get("card"):
             c = dict(sc["card"]); cards.append({**c, "at": [0.48, 2.2, -0.6], "w": 0.88})   # up beside the head, in frame
         elif sc.get("brand") and sc.get("beat") in ("logo", "sign"):
-            b = sc["brand"]; cards.append({"text": b["name"].upper(), "kind": "sign", "bg": b.get("bg"), "fg": b.get("fg"), "at": [0.48, 2.2, -0.6], "w": 0.88})
+            b = sc["brand"]; cards.append({"text": b["name"].upper(), "kind": "sign", "bg": b.get("bg"), "fg": b.get("fg"), "at": [0.0, 2.62, -0.7], "w": 0.95})
         things, seen = [], set()
         own = ah_actions.ACT_OWN_PROPS.get(act, set()) if act else set()   # the act brings this prop itself
         if not thing_names and (ctx["gamer"] or ctx["famous"]) and not (sc.get("card") or act):   # Nov 17: show what the line talks about
@@ -705,7 +706,14 @@ def ah_shots(plan: dict) -> list:
             if j and sub["things"]:
                 sub["things"] = [dict(t, pop=False) for t in sub["things"]]   # already on screen: no second pop
             shots.append(sub)
+    # Nov 17 test render: on raised floors the "low" camera sits INSIDE the platform (2 s of flat purple on the stage)
+    for s in shots:
+        if s.get("view") == "low" and s.get("set") in AH_NO_LOW and "cam" not in s:
+            s["view"] = "ms"
     shots = ah_dedupe(shots, ctx)
+    for s in shots:   # dedupe may pick "low" again when it moves a shot to a raised set
+        if s.get("view") == "low" and s.get("set") in AH_NO_LOW and "cam" not in s:
+            s["view"] = "ws"
     for sh in shots:
         for c in sh["chars"]:
             c.pop("who", None)
