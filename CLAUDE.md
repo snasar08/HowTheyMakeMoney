@@ -55,6 +55,8 @@ Saturday cloud routines (4 parts) follow `content/ROUTINE.md` and `content/WRITE
 history). The mix each week comes from `analytics/weekly_plan.md` (`pipeline/weekly_mix.py`: focus on the lane that goes viral,
 one experiment lane, never drop a lane; bets logged in analytics/experiments.json). Up to 75 ready scripts; quality gate: sources opened, idea score 85+, lint 0 errors, story score 80+,
 scene check passing, one `toon` dict per sentence.
+Any object or set (place) a script needs that is not built yet gets BUILT (Sam, Nov 18), never worked around;
+what a part can't finish goes into content/BUILD_QUEUE.md, which the next part builds first.
 
 ## Usage (Sam's plan limits)
 Fresh chat per chunk of work with a handoff memory; helpers on Sonnet do the reading and return short reports;

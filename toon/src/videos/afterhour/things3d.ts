@@ -468,11 +468,17 @@ const B: Record<ThingName, Builder> = {
     for (let i = 0; i < 10; i++) { const a = (i / 10) * PI * 2; bx(g, 0.14, 0.12, 0.02, glowMat("#fff6c0", 1.2), Math.sin(a) * 1.065, 0.16, Math.cos(a) * 1.065, [0, a, 0]); }
     return { g };
   },
+  // Nov 18: prolate spheroid with pointed tips, long axis = x (profile to camera), laces on top, two stripes near the tips
   football: (c) => {
-    const g = new THREE.Group(); const o = new THREE.Group(); o.position.y = 0.1; o.rotation.set(0, 0.6, 0.0); g.add(o);
-    sp(o, 0.1, c ?? "#8a4b22", 0, 0, 0, [0.62, 0.62, 1.35], 24);
-    for (const z of [-0.06, 0.06]) to(o, 0.062, 0.006, "#fafafa", 0, 0, z * 1.4, [0, 0, 0]);
-    bx(o, 0.012, 0.012, 0.1, "#fafafa", 0, 0.062, 0).visible = true; for (let i = 0; i < 5; i++) bx(o, 0.05, 0.006, 0.007, "#fafafa", 0, 0.064, -0.04 + i * 0.02);
+    const g = new THREE.Group(); const o = new THREE.Group(); o.position.y = 0.105; o.rotation.set(0, 0.3, 0.13); g.add(o);
+    const L = 0.175, R = 0.1, W = "#fafafa";
+    const rad = (t: number) => R * Math.pow(Math.max(0, 1 - Math.pow(Math.abs(t), 1.8)), 0.62);
+    const pts: [number, number][] = []; for (let i = 0; i <= 24; i++) { const t = -1 + i / 12; pts.push([Math.max(0.0005, rad(t)), t * L]); }
+    lathe(o, pts, c ?? "#8a4b22", 0, 0, 0, [0, 0, PI / 2], 24);
+    for (const s of [-1, 1]) { const t = 0.62, rr = rad(t); const r = to(o, rr * 1.004, 0.007, W, s * t * L, 0, 0, [0, PI / 2, 0]); r.castShadow = false; }
+    const top = (x: number) => rad(x / L) + 0.0015;
+    for (let i = 0; i < 6; i++) { const x = -0.055 + i * 0.022; bx(o, 0.007, 0.007, 0.05, W, x, top(x), 0); }
+    bx(o, 0.14, 0.007, 0.008, W, 0, top(0) + 0.002, 0);
     return { g };
   },
   hoop: () => {

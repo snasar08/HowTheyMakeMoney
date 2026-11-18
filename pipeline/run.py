@@ -182,6 +182,11 @@ def run_remake(jobs: list, args) -> int:
                     info["eyes"] = {k: seen.get(k) for k in ("score", "problems", "best_fix", "model", "acts")}
             except Exception as e:  # noqa: BLE001
                 print(f"::warning title=eyes::{e!r}")
+            try:   # Nov 18: automatic scene scan (blank / flash / frozen / too-short or too-long shot / jump); warn-only
+                from . import scenesheet
+                info["scene_scan"] = scenesheet.scan_report(path.stem, video)
+            except Exception as e:  # noqa: BLE001
+                print(f"::warning title=scene scan::{e!r}")
             if blockers:
                 print(f"::warning title={path.stem} remake held::old post kept: {'; '.join(blockers)}")
                 path.write_text(before, encoding="utf-8")
@@ -200,7 +205,8 @@ def run_remake(jobs: list, args) -> int:
                 print(f"::error title={path.stem} remake::new post booked but old post {old['buffer_post']} NOT deleted: {e!r}")
             script["status"] = "delivered"
             script["delivered"] = {**result, "rendered_at": dt.datetime.now(dt.timezone.utc).isoformat(), "seconds": info["seconds"],
-                                   "remade_from": old.get("buffer_post"), **({"eyes": info["eyes"]} if info.get("eyes") else {})}
+                                   "remade_from": old.get("buffer_post"), **({"eyes": info["eyes"]} if info.get("eyes") else {}),
+                                   **({"scene_scan": info["scene_scan"]} if info.get("scene_scan") else {})}
             path.write_text(json.dumps(script, indent=2, ensure_ascii=False) + "\n")
             print(f"[remake] {path.stem} rebooked at {when:%a %H:%M}: {result.get('buffer_post')}")
         except Exception as e:  # noqa: BLE001
@@ -282,6 +288,11 @@ def main() -> int:
                     info["eyes"] = {k: seen.get(k) for k in ("score", "problems", "best_fix", "model", "acts")}
             except Exception as e:  # noqa: BLE001  never lose a Short over the reviewer
                 print(f"::warning title=eyes::{e!r}")
+            try:   # Nov 18: automatic scene scan (blank / flash / frozen / too-short or too-long shot / jump); warn-only
+                from . import scenesheet
+                info["scene_scan"] = scenesheet.scan_report(path.stem, video)
+            except Exception as e:  # noqa: BLE001
+                print(f"::warning title=scene scan::{e!r}")
             if blockers and not args.dry:
                 script["status"] = "needs_fix"
                 script["needs_fix"] = blockers
@@ -300,7 +311,8 @@ def main() -> int:
             result = deliver(video, script, when)
             script["status"] = "delivered"
             script["delivered"] = {**result, "rendered_at": dt.datetime.now(dt.timezone.utc).isoformat(),
-                                   "seconds": info["seconds"], **({"eyes": info["eyes"]} if info.get("eyes") else {})}
+                                   "seconds": info["seconds"], **({"eyes": info["eyes"]} if info.get("eyes") else {}),
+                                   **({"scene_scan": info["scene_scan"]} if info.get("scene_scan") else {})}
             path.write_text(json.dumps(script, indent=2, ensure_ascii=False) + "\n")
             print(f"[run] delivered {path.stem}: {result}")
         except Exception:  # keep going; the failed script stays 'ready' for next run

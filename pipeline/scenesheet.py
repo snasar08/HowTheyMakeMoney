@@ -31,8 +31,8 @@ def frames(video: str, out: str) -> list[str]:
     return sorted(glob.glob(out + "/sf/*.jpg"))
 
 
-def main(video: str, out: str) -> None:
-    fs = frames(video, out)
+def _analyse(fs: list[str]) -> tuple[list, list, list, list]:
+    """gray frames, frame-to-frame differences, shots (start, end) and the automatic scan notes"""
     g = [np.asarray(Image.open(f).convert("L").resize((90, 160)), dtype=np.float32) for f in fs]
     d = [0.0] + [float(np.abs(g[i] - g[i - 1]).mean()) for i in range(1, len(g))]
     cuts = [0] + [i for i in range(1, len(g)) if d[i] > CUT] + [len(g)]
@@ -57,6 +57,35 @@ def main(video: str, out: str) -> None:
             for j, v in enumerate(inner):
                 if v > max(9.0, base * 6) and v <= CUT:
                     notes.append(f"shot {k} @{a + 1 + j}: jump inside shot ({v:.0f}) - something teleports?")
+    return g, d, shots, notes
+
+
+def scan(video: str) -> list[str]:
+    """Nov 18: the automatic scan alone (no sheets), for the nightly: a list of notes, [] when clean. 180x320 frames in a
+    temp folder, so it is cheap. Raises on a broken video / missing ffmpeg: callers wrap it in try/except."""
+    import tempfile
+    with tempfile.TemporaryDirectory() as tmp:
+        fs = frames(video, tmp)
+        return _analyse(fs)[3] if fs else ["no frames decoded"]
+
+
+def scan_report(sid: str, video) -> list[str]:
+    """scan() for the nightly: prints each note as a GitHub warning annotation, returns the notes (max 40), NEVER raises"""
+    try:
+        notes = scan(str(video))
+    except Exception as e:  # noqa: BLE001  the scan must never cost a Short
+        print(f"::warning title=scene scan::{sid} scan failed: {e!r}")
+        return []
+    for n in notes[:40]:
+        print(f"::warning::{sid} scene scan: {n}")
+    if not notes:
+        print(f"[scan] {sid}: scene scan clean")
+    return notes[:40]
+
+
+def main(video: str, out: str) -> None:
+    fs = frames(video, out)
+    g, d, shots, notes = _analyse(fs)
     tiles = []
     for k, (a, b) in enumerate(shots):
         for f in (min(a + 2, b - 1), (a + b) // 2, max(b - 3, a)):

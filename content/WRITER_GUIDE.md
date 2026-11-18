@@ -67,8 +67,9 @@ narration. Count with:
 `python -c "from pipeline import tts; print(len(tts.sentences(tts.speakable('NARRATION'))))"`.
 The picture must SHOW what the sentence says. Fields (all optional; use only these values):
 - `place` (Nov 18: any 3D set by name): throne office diner lab stall field ring track graveyard boardroom street
-  beach court pitch stage space garage classroom bathroom mansion showroom (old names still work: servers=lab,
-  road=track, quay=beach, bridge=street). court = basketball/tennis; pitch = soccer; track = sprinting; ring =
+  beach court pitch diamond gridiron tennis farm store gym studio stage space garage classroom bathroom mansion showroom (old names still work: servers=lab,
+  road=track, quay=beach, bridge=street). court = basketball; pitch = soccer; diamond = baseball; gridiron = American
+  football (NFL, quarterback, touchdown, Super Bowl; sentence words pick it automatically); tennis = tennis court (Wimbledon, US Open, racket); farm = barn, tractor, crops, harvest; store = grocery store, cashier, bagger; gym = weights, workout, training centre; studio = animation / film studio, cartoons, animators (a RECORDING studio stays on stage); track = sprinting; ring =
   boxing/wrestling; garage = a humble start; throne = the crown moment; lab = AI / data centre; diner = food;
   boardroom/office = deals; mansion = wealth; stall/showroom = shops and products; classroom = school/childhood;
   stage = music/shows; graveyard ONLY for a real ending/death line. Check: `python -m pipeline.ah_table <file>`.

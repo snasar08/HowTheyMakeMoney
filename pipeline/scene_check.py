@@ -75,6 +75,58 @@ FILLER = {"it", "them", "this", "that", "money", "sense", "history", "everything
           "deal", "move", "court", "gym", "city", "brand", "company", "league", "school", "team", "world", "bet", "name", "mark", "list", "team", "year", "years", "fans", "people", "wins", "win", "pay", "rules"}
 
 
+# Nov 18: SETS TO BUILD. (set name to build, regex of the words that name that place or sport, set names that already
+# serve it). A line that says the place but has none of those sets in toon.AH_ALL_SETS falls back to a generic set.
+PLACE_NEEDS = [
+    ("rink", r"ice rink|hockey|skating rink|figure skat\w*|\bNHL\b|\bzamboni", ("rink",)),
+    ("golf", r"golf course|golf club|\bgolf\b|fairway|putting green|\bPGA\b|\bcaddie", ("golf",)),
+    ("pool", r"swimming pool|\bpool\b|swimmer|swimming|olympic swim\w*|\blaps\b", ("pool",)),
+    ("gym", r"weight room|weights|\bgym\b|workout|dumbbell|bench press|fitness|bodybuild\w*", ("gym",)),
+    ("hospital", r"hospital|surgeon|surgery|\bER\b|ambulance|nurses?|\bdoctors?\b|clinic", ("hospital",)),
+    ("farm", r"\bfarms?\b|farmer|barn|tractor|crops?|harvest|cattle|\bcows?\b", ("farm",)),
+    ("airport", r"airport|runway|\bairline|terminal gate|flight attendant|cockpit|\bpilots?\b", ("airport", "runway")),
+    ("factory", r"factory|factories|assembly line|\bplant\b|manufactur\w+", ("factory", "warehouse")),
+    ("kitchen", r"kitchen|\bchefs?\b|\bcook(?:s|ing|ed)?\b|\bbaker(?:y|ies)\b|bakes\b", ("kitchen",)),
+    ("courtroom", r"courtroom|\bjudge\b|\bjury\b|\btrial\b|lawsuit|\bsued?\b|\bsuing\b|\blawyers?\b|attorney", ("courtroom",)),
+    ("studio", r"recording studio|\bstudio\b|\bbooth\b|podcast|\bbroadcast|film set|\bmovie set", ("studio",)),
+    ("casino", r"casino|slot machines?|poker|blackjack|roulette|\bgambl\w+|\bVegas\b", ("casino",)),
+    ("ship", r"\bships?\b|cargo|\bcruise\b|\bnavy\b|\bports?\b|harbou?r|\bdocks?\b|\bboats?\b|\bsailors?\b|\bfleet of ships", ("ship", "yacht", "harbor", "dock")),
+    ("bank", r"\bbanks?\b|\bvault\b|\bteller\b|\bATM\b", ("bank", "vault")),
+    ("store", r"supermarket|grocery|\bmall\b|\bstores?\b|\bshops?\b|checkout|\baisles?\b", ("store", "shop", "supermarket")),
+    ("hotel", r"\bhotels?\b|\bresort\b|\blobby\b", ("hotel", "resort")),
+    ("prison", r"prison|\bjail\b|\bcell\b|inmate|behind bars", ("prison",)),
+    ("library", r"library|librarian", ("library",)),
+    ("church", r"\bchurch\b|\bchapel\b|cathedral|\btemple\b|\bmosque\b", ("church", "temple")),
+    ("castle", r"\bcastle\b|\bpalace\b|\bknights?\b|medieval", ("castle", "palace")),
+    ("forest", r"\bforest\b|\bjungle\b|\bwoods\b|\bcamp(?:ing|site)?\b|\btrees?\b|rainforest", ("forest", "jungle")),
+    ("desert", r"\bdesert\b|\bsahara\b|\bdunes?\b|\boasis\b", ("desert",)),
+    ("mountain", r"\bmountains?\b|\bpeak\b|\bsummit\b|\bcliff\b|\bclimb(?:er|ers|ing)?\b|\bski(?:ing|s)?\b|\bslopes?\b|\bsnowboard\w*", ("mountain", "slope")),
+    ("skatepark", r"skate ?park|skateboard\w*|\bhalf-?pipe\b", ("skatepark",)),
+    ("volleyball", r"volleyball|beach volley", ("volleyball",)),
+    ("cricket", r"\bcricket\b|wicket|\bbowler\b", ("cricket",)),
+    ("rugby", r"\brugby\b|\bscrum\b", ("rugby", "gridiron")),
+    ("bowling", r"bowling alley|\bbowling\b|\bstrikes? pins?\b", ("bowling",)),
+    ("racetrack", r"race ?track|formula (?:1|one)|\bF1\b|grand prix|nascar|\bpit stop\b|race car", ("track", "racetrack")),
+    ("train", r"\btrains?\b|railway|railroad|subway|\bmetro\b|train station", ("train", "station")),
+    ("plane", r"\bairplanes?\b|\bplanes?\b|\bjets?\b|\bairlines?\b|in the air|\bflight\b", ("airport", "plane", "cabin")),
+    ("lab_science", r"\bnasa\b|\bmission control\b|launch ?pad|\bobservatory\b", ("space", "launchpad")),
+    ("school", r"\bclassroom\b|\bschool\b|\bteacher\b|\bstudents?\b|\bcampus\b|\buniversity\b|\bcollege\b|\bhomework\b", ("classroom",)),
+    ("gymnastics", r"gymnast\w*|balance beam|\bvault\b.*\bgym", ("gym", "gymnastics")),
+]
+# sets that are generic and so never "satisfy" a specific place by themselves
+PLACE_NEEDS_RX = [(n, re.compile(rx, re.I), ok) for n, rx, ok in PLACE_NEEDS]
+
+
+def sets_to_build(text: str, explicit_place: str | None = None) -> list[str]:
+    """names of places / sports this sentence says that have no 3D set (so it falls back to a generic one)"""
+    have = set(toon.AH_ALL_SETS)
+    out = []
+    for name, rx, ok in PLACE_NEEDS_RX:
+        if rx.search(text) and not (have & set(ok)) and explicit_place not in ok:
+            out.append(name)
+    return out
+
+
 def _load_names() -> dict:
     """object names that exist: code-built (things3d.ts), library models (index*.json), AH_THING keys/values, word table"""
     code = set()
@@ -112,6 +164,7 @@ class Report:
     def __init__(self):
         self.items: list[tuple[str, str, str, str]] = []     # (level, where, msg, line)
         self.build: dict[str, str] = {}                       # object name/noun -> why
+        self.sets: dict[str, list[str]] = {}                  # set name to build -> the lines that need it
 
     def add(self, level: str, where: str, msg: str, line: str = ""):
         self.items.append((level, where, msg, line))
@@ -229,6 +282,12 @@ def check(script: dict) -> tuple[Report, dict]:
                         r.build.setdefault(nm, f"{w}: the line mentions it, nothing draws it")
                     elif t3 not in drawn and nm not in (given or []):
                         r.add("WARN", w, f"mention not shown: '{nm}' is in the line but not in `things` (add it, or the 2 slots are taken)", line)
+            # Nov 18: a line naming a place / sport that has no 3D set falls back to a generic set: say which set to build
+            for nm in sets_to_build(text, d.get("place")):
+                lst = r.sets.setdefault(nm, [])
+                if not lst:
+                    r.add("WARN", w, f"set to build: '{nm}' (the line names it, no such set: falls back to a generic set)", line)
+                lst.append(f"{w}: {line}")
             # pose / view like ah_shots
             pose = ah_actions.pick_pose(text, list(shown_plan) + list(props), mood, act, place, prev_pose)
             # acts (Nov 16): a line with a clear action verb plays a real mini-scene (ah_shots does the same call)
@@ -342,6 +401,10 @@ def report(path: str, out=print) -> dict | None:
         out("  objects to build / decide:")
         for nm, why in r.build.items():
             out(f"    - {nm}  ({why})")
+    if r.sets:
+        out("  sets to build:")
+        for nm, lines in r.sets.items():
+            out(f"    - {nm}  ({len(lines)} line{'s' if len(lines) != 1 else ''}; e.g. {lines[0]})")
     if not r.items:
         out("  clean")
     return {"path": path, "score": info["score"], "errors": e, "warns": w, "sentences": info["sentences"]}
