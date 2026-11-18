@@ -320,18 +320,18 @@
     "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-080-famous-neymar",
     "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-080-famous-neymar/080-famous-neymar.mp4",
     "post_at": "2026-11-18T18:00:00-05:00",
-    "buffer_post": "6afca4f73f600a65285a2fef",
+    "buffer_post": "6afd4690152518c7f4648bf1",
     "buffer_status": "scheduled",
-    "rendered_at": "2026-11-17T19:03:20.180039+00:00",
+    "rendered_at": "2026-11-18T06:32:49.345988+00:00",
     "seconds": 28.98,
+    "remade_from": "6afca4f73f600a65285a2fef",
     "eyes": {
       "score": 9,
       "problems": [
-        "The caption 'EMO' at frame 800-815 is a typo for 'too' or 'too small' as per the narration.",
-        "The caption 'a' at frame 566-579 is grammatically awkward/incomplete in context of the sentence."
+        "slight visual repetition in the middle scenes showing the same character model repeatedly"
       ],
-      "best_fix": "Correct the caption 'EMO' to 'too' to match the narration and improve readability.",
-      "model": "gemini-3.1-flash-lite",
+      "best_fix": "Add more varied B-roll or dynamic camera angles during the middle timeline.",
+      "model": "gemini-3.5-flash-lite",
       "acts": null
     }
   }

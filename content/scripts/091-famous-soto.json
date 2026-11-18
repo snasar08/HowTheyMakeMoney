@@ -316,20 +316,35 @@
     "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-091-famous-soto",
     "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-091-famous-soto/091-famous-soto.mp4",
     "post_at": "2026-11-18T20:00:00-05:00",
-    "buffer_post": "6afca553dfd7767b00723e30",
+    "buffer_post": "6afd470b0f01b387a161fc16",
     "buffer_status": "scheduled",
-    "rendered_at": "2026-11-17T19:04:51.753908+00:00",
+    "rendered_at": "2026-11-18T06:34:51.542012+00:00",
     "seconds": 27.29,
+    "remade_from": "6afca553dfd7767b00723e30",
     "eyes": {
-      "score": 8,
+      "score": 6,
       "problems": [
-        "The MLB logo is a real brand mark and should be removed or replaced with a generic baseball icon.",
-        "The text '15 years, december 2024' appears on screen, which is confusing as the narration does not mention this date and it is in the future relative to the current date (November 2026).",
-        "The text 'on his 21st birthday, 2019' is slightly small and could be difficult to read on smaller mobile screens."
+        "The character is holding a basketball jersey (number 22) throughout the video, which contradicts the narration about a baseball player.",
+        "The character is holding a basketball in the scenes where he is supposed to be a baseball player.",
+        "The text 'Baseball or basketball?' appears on screen, which is confusing and highlights the visual error.",
+        "The character's outfit and props are consistently incorrect for the subject (Juan Soto, a baseball player)."
       ],
-      "best_fix": "Remove the MLB logo and replace it with a generic baseball icon to avoid copyright issues, and remove the confusing '15 years, december 2024' text overlay.",
+      "best_fix": "Replace the basketball jersey and basketball props with a baseball uniform and a baseball bat/glove to match the narration about Juan Soto.",
       "model": "gemini-3.1-flash-lite",
-      "acts": null
+      "acts": [
+        {
+          "kind": "sign_contract",
+          "frames": "0-105",
+          "clear": true,
+          "why": "The character is clearly holding a pen and signing a document labeled 'CONTRACT'."
+        },
+        {
+          "kind": "count_cash",
+          "frames": "496-597",
+          "clear": true,
+          "why": "The character is visibly holding and counting stacks of cash."
+        }
+      ]
     }
   }
 }
