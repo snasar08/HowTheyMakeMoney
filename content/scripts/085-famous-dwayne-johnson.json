@@ -287,18 +287,18 @@
     "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-085-famous-dwayne-johnson",
     "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-085-famous-dwayne-johnson/085-famous-dwayne-johnson.mp4",
     "post_at": "2026-11-18T12:00:00-05:00",
-    "buffer_post": "6afca38132ea84693c3810cd",
+    "buffer_post": "6afd4546b116b81c9934f42d",
     "buffer_status": "scheduled",
-    "rendered_at": "2026-11-17T18:57:05.947684+00:00",
+    "rendered_at": "2026-11-18T06:27:18.429041+00:00",
     "seconds": 25.99,
+    "remade_from": "6afca38132ea84693c3810cd",
     "eyes": {
       "score": 8,
       "problems": [
-        "The text 'FORBES, 2016' appears on screen, which is a brand mark/logo.",
-        "The narration mentions 'wrestling' but the visual shows a basketball court/ball for several seconds.",
-        "The text 'GUINNESS' appears on screen, which is a brand mark/logo."
+        "Text glitch in frames 120-125 where the name 'Dwayne Johnson' is partially cut off/missing letters.",
+        "The caption 'million' in frames 480-500 is redundant and lacks context compared to the narration."
       ],
-      "best_fix": "Replace the basketball court scene with a wrestling ring or wrestling-themed animation to match the narration, and remove the brand logos.",
+      "best_fix": "Fix the text rendering for the name 'Dwayne Johnson' in frames 120-125 to ensure the full name is visible, and update the caption 'million' to '$5.5M' to match the on-screen graphic and narration.",
       "model": "gemini-3.1-flash-lite",
       "acts": null
     }
