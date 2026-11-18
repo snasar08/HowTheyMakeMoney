@@ -710,7 +710,7 @@ def ah_shots(plan: dict) -> list:
         if food_line and not outro and not act and not any(str(t).lower() in ("burger", "snack", "pizza") for t in thing_names) and re.search(r"burger|restaurant|five guys|fast[- ]?food|chain", line_txt, re.I):
             thing_names = ["burger"] + thing_names                  # the burger itself is on screen when the line is about burgers / a burger chain
         if aset == "pitch" or ctx.get("soccer"):    # Nov 18: soccer gets a soccer ball, never a basketball / American football
-            thing_names = ["soccerball" if str(t) in ("ball", "basketball", "football") else t for t in thing_names]
+            thing_names = ["soccerball" if str(t) in ("ball", "basketball") else t for t in thing_names]  # an explicit "football" stays (085: The Rock, Canadian football)
         things, seen = [], set()
         own = ah_actions.ACT_OWN_PROPS.get(act, set()) if act else set()   # the act brings this prop itself
         if not thing_names and (ctx["gamer"] or ctx["famous"]) and not (sc.get("card") or act):   # Nov 17: show what the line talks about
