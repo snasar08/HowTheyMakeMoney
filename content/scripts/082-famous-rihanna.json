@@ -7,7 +7,7 @@
   "hook_style": "number",
   "title_style": "number",
   "theme": "dark_neon",
-  "status": "ready",
+  "status": "needs_fix",
   "score": 87,
   "title": "$570 Million in 15 Months",
   "name_card": "Rihanna",
@@ -36,7 +36,19 @@
           "mic"
         ],
         "stat": "$570 MILLION",
-        "stat_sub": "in 15 months"
+        "stat_sub": "in 15 months",
+        "hero": {
+          "skin": "8d5a3b",
+          "hair": "long",
+          "hair_color": "1a1210",
+          "beard": "none",
+          "outfit": "dress",
+          "shirt": "b02a5a",
+          "pants": "1a1a1a",
+          "socks": "1a1a1a",
+          "shoes": "1a1a1a",
+          "height": 0.98
+        }
       },
       "toon": [
         {
@@ -80,7 +92,19 @@
           "cash"
         ],
         "stat": "BILLIONAIRE",
-        "stat_sub": "a first for a female musician"
+        "stat_sub": "a first for a female musician",
+        "hero": {
+          "skin": "8d5a3b",
+          "hair": "long",
+          "hair_color": "1a1210",
+          "beard": "none",
+          "outfit": "dress",
+          "shirt": "b02a5a",
+          "pants": "1a1a1a",
+          "socks": "1a1a1a",
+          "shoes": "1a1a1a",
+          "height": 0.98
+        }
       },
       "toon": [
         {
@@ -112,7 +136,19 @@
           "mic"
         ],
         "stat": "AGE 15",
-        "stat_sub": "Barbados, 2003"
+        "stat_sub": "Barbados, 2003",
+        "hero": {
+          "skin": "8d5a3b",
+          "hair": "long",
+          "hair_color": "1a1210",
+          "beard": "none",
+          "outfit": "dress",
+          "shirt": "b02a5a",
+          "pants": "1a1a1a",
+          "socks": "1a1a1a",
+          "shoes": "1a1a1a",
+          "height": 0.98
+        }
       },
       "toon": [
         {
@@ -154,7 +190,19 @@
           "trophy"
         ],
         "stat": "14 NUMBER ONES",
-        "stat_sub": "Billboard Hot 100"
+        "stat_sub": "Billboard Hot 100",
+        "hero": {
+          "skin": "8d5a3b",
+          "hair": "long",
+          "hair_color": "1a1210",
+          "beard": "none",
+          "outfit": "dress",
+          "shirt": "b02a5a",
+          "pants": "1a1a1a",
+          "socks": "1a1a1a",
+          "shoes": "1a1a1a",
+          "height": 0.98
+        }
       },
       "toon": [
         {
@@ -193,7 +241,19 @@
           "boxes"
         ],
         "stat": "SEPT 2017",
-        "stat_sub": "makeup for every skin tone"
+        "stat_sub": "makeup for every skin tone",
+        "hero": {
+          "skin": "8d5a3b",
+          "hair": "long",
+          "hair_color": "1a1210",
+          "beard": "none",
+          "outfit": "dress",
+          "shirt": "b02a5a",
+          "pants": "1a1a1a",
+          "socks": "1a1a1a",
+          "shoes": "1a1a1a",
+          "height": 0.98
+        }
       },
       "toon": [
         {
@@ -225,7 +285,19 @@
         ],
         "stat": "$570 MILLION",
         "stat_sub": "Forbes, 2018",
-        "hud": "$570M"
+        "hud": "$570M",
+        "hero": {
+          "skin": "8d5a3b",
+          "hair": "long",
+          "hair_color": "1a1210",
+          "beard": "none",
+          "outfit": "dress",
+          "shirt": "b02a5a",
+          "pants": "1a1a1a",
+          "socks": "1a1a1a",
+          "shoes": "1a1a1a",
+          "height": 0.98
+        }
       },
       "toon": [
         {
@@ -266,5 +338,8 @@
     "socks": "1a1a1a",
     "shoes": "1a1a1a",
     "height": 0.98
-  }
+  },
+  "needs_fix": [
+    "act sing_stage unclear at frames 398-445: The character is holding a microphone but the mouth is not moving or showing any singing animation."
+  ]
 }

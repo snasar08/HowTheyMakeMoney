@@ -7,7 +7,7 @@
   "hook_style": "number",
   "title_style": "number",
   "theme": "clean_navy",
-  "status": "ready",
+  "status": "delivered",
   "score": 87,
   "title": "$33 Million a Year for Running",
   "name_card": "Usain Bolt",
@@ -34,7 +34,19 @@
         "crowd": 0,
         "props": [],
         "stat": "$33 MILLION",
-        "stat_sub": "in one year, 2016"
+        "stat_sub": "in one year, 2016",
+        "hero": {
+          "skin": "5a3c28",
+          "hair": "buzz",
+          "hair_color": "15110e",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "f2c230",
+          "pants": "1f7a3a",
+          "socks": "1a1a1a",
+          "shoes": "f2c230",
+          "height": 1.15
+        }
       },
       "toon": [
         {
@@ -70,7 +82,19 @@
           "trophy"
         ],
         "stat": "THE ONLY ONE",
-        "stat_sub": "track athlete on the list, 2016"
+        "stat_sub": "track athlete on the list, 2016",
+        "hero": {
+          "skin": "5a3c28",
+          "hair": "buzz",
+          "hair_color": "15110e",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "f2c230",
+          "pants": "1f7a3a",
+          "socks": "1a1a1a",
+          "shoes": "f2c230",
+          "height": 1.15
+        }
       },
       "toon": [
         {
@@ -99,7 +123,19 @@
           "trophy"
         ],
         "stat": "AGE 15",
-        "stat_sub": "world junior champion, 2002"
+        "stat_sub": "world junior champion, 2002",
+        "hero": {
+          "skin": "5a3c28",
+          "hair": "buzz",
+          "hair_color": "15110e",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "f2c230",
+          "pants": "1f7a3a",
+          "socks": "1a1a1a",
+          "shoes": "f2c230",
+          "height": 1.15
+        }
       },
       "toon": [
         {
@@ -142,7 +178,19 @@
           "check"
         ],
         "stat": "9.58 SECONDS",
-        "stat_sub": "100 m world record, 2009"
+        "stat_sub": "100 m world record, 2009",
+        "hero": {
+          "skin": "5a3c28",
+          "hair": "buzz",
+          "hair_color": "15110e",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "f2c230",
+          "pants": "1f7a3a",
+          "socks": "1a1a1a",
+          "shoes": "f2c230",
+          "height": 1.15
+        }
       },
       "toon": [
         {
@@ -182,7 +230,19 @@
         ],
         "stat": "$33 MILLION",
         "stat_sub": "the sport's highest-paid ever",
-        "hud": "$33M"
+        "hud": "$33M",
+        "hero": {
+          "skin": "5a3c28",
+          "hair": "buzz",
+          "hair_color": "15110e",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "f2c230",
+          "pants": "1f7a3a",
+          "socks": "1a1a1a",
+          "shoes": "f2c230",
+          "height": 1.15
+        }
       },
       "toon": [
         {
@@ -234,5 +294,24 @@
     "socks": "1a1a1a",
     "shoes": "f2c230",
     "height": 1.15
+  },
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-087-famous-bolt",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-087-famous-bolt/087-famous-bolt.mp4",
+    "post_at": "2026-11-19T15:00:00-05:00",
+    "buffer_post": "6afdec88c71477154fa9b8cb",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-18T18:20:57.176274+00:00",
+    "seconds": 25.11,
+    "eyes": {
+      "score": 9,
+      "problems": [
+        "The Forbes logo is clearly visible on the screen around frame 120-200, which violates the policy against real company logos."
+      ],
+      "best_fix": "Replace the real Forbes logo with a generic 'Top Earner' or 'Wealth List' icon to avoid brand trademark issues.",
+      "model": "gemini-3.1-flash-lite",
+      "acts": null
+    }
   }
 }

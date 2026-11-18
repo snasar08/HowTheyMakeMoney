@@ -7,7 +7,7 @@
   "hook_style": "surprise",
   "title_style": "number",
   "theme": "bold_bright",
-  "status": "ready",
+  "status": "needs_fix",
   "score": 89,
   "title": "From Bagging Groceries to $232.5 Million",
   "name_card": "Bad Bunny",
@@ -36,7 +36,22 @@
           "mic"
         ],
         "stat": "$232.5 MILLION",
-        "stat_sub": "one tour, by October 2022"
+        "stat_sub": "one tour, by October 2022",
+        "hero": {
+          "skin": "c9956b",
+          "hair": "short",
+          "hair_color": "1c1612",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "e85d9a",
+          "pants": "2a2a33",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "extras": [
+            "glasses"
+          ],
+          "height": 1.0
+        }
       },
       "toon": [
         {
@@ -68,7 +83,22 @@
           "boxes"
         ],
         "stat": "PART-TIME",
-        "stat_sub": "bagger and cashier"
+        "stat_sub": "bagger and cashier",
+        "hero": {
+          "skin": "c9956b",
+          "hair": "short",
+          "hair_color": "1c1612",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "e85d9a",
+          "pants": "2a2a33",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "extras": [
+            "glasses"
+          ],
+          "height": 1.0
+        }
       },
       "toon": [
         {
@@ -108,7 +138,22 @@
           "mic"
         ],
         "stat": "4 TIMES",
-        "stat_sub": "Spotify's most-streamed, 2020-2025"
+        "stat_sub": "Spotify's most-streamed, 2020-2025",
+        "hero": {
+          "skin": "c9956b",
+          "hair": "short",
+          "hair_color": "1c1612",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "e85d9a",
+          "pants": "2a2a33",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "extras": [
+            "glasses"
+          ],
+          "height": 1.0
+        }
       },
       "toon": [
         {
@@ -151,7 +196,22 @@
         ],
         "stat": "RECORD TOUR",
         "stat_sub": "highest-grossing Latin tour",
-        "hud": "$232.5M"
+        "hud": "$232.5M",
+        "hero": {
+          "skin": "c9956b",
+          "hair": "short",
+          "hair_color": "1c1612",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "e85d9a",
+          "pants": "2a2a33",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "extras": [
+            "glasses"
+          ],
+          "height": 1.0
+        }
       },
       "toon": [
         {
@@ -195,7 +255,22 @@
         "crowd": 100,
         "props": [],
         "stat": "$250 MILLION",
-        "stat_sub": "expected impact (Moody's)"
+        "stat_sub": "expected impact (Moody's)",
+        "hero": {
+          "skin": "c9956b",
+          "hair": "short",
+          "hair_color": "1c1612",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "e85d9a",
+          "pants": "2a2a33",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "extras": [
+            "glasses"
+          ],
+          "height": 1.0
+        }
       },
       "toon": [
         {
@@ -225,7 +300,22 @@
           "ball"
         ],
         "stat": "$1.6 MILLION",
-        "stat_sub": "to rebuild ballfields, 2019"
+        "stat_sub": "to rebuild ballfields, 2019",
+        "hero": {
+          "skin": "c9956b",
+          "hair": "short",
+          "hair_color": "1c1612",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "e85d9a",
+          "pants": "2a2a33",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "extras": [
+            "glasses"
+          ],
+          "height": 1.0
+        }
       },
       "toon": [
         {
@@ -265,5 +355,8 @@
       "glasses"
     ],
     "height": 1.0
-  }
+  },
+  "needs_fix": [
+    "act sing_stage unclear at frames 435-484: The character is holding a microphone but the mouth is not moving to simulate singing."
+  ]
 }

@@ -7,7 +7,7 @@
   "hook_style": "surprise",
   "title_style": "number",
   "theme": "bold_bright",
-  "status": "ready",
+  "status": "delivered",
   "score": 88,
   "title": "A $12 Million Deal Right After High School",
   "name_card": "Serena Williams",
@@ -36,7 +36,19 @@
           "trophy"
         ],
         "stat": "$12 MILLION",
-        "stat_sub": "right after high school, 1999"
+        "stat_sub": "right after high school, 1999",
+        "hero": {
+          "skin": "6b4a32",
+          "hair": "bun",
+          "hair_color": "15110e",
+          "beard": "none",
+          "outfit": "dress",
+          "shirt": "e8554e",
+          "pants": "e8554e",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "height": 1.02
+        }
       },
       "toon": [
         {
@@ -63,7 +75,19 @@
         "crowd": 0,
         "props": [],
         "stat": "HER PARENTS",
-        "stat_sub": "her first coaches"
+        "stat_sub": "her first coaches",
+        "hero": {
+          "skin": "6b4a32",
+          "hair": "bun",
+          "hair_color": "15110e",
+          "beard": "none",
+          "outfit": "dress",
+          "shirt": "e8554e",
+          "pants": "e8554e",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "height": 1.02
+        }
       },
       "toon": [
         {
@@ -101,7 +125,19 @@
         ],
         "stat": "$40 MILLION",
         "stat_sub": "5-year deal, 2004",
-        "hud": "$40M"
+        "hud": "$40M",
+        "hero": {
+          "skin": "6b4a32",
+          "hair": "bun",
+          "hair_color": "15110e",
+          "beard": "none",
+          "outfit": "dress",
+          "shirt": "e8554e",
+          "pants": "e8554e",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "height": 1.02
+        }
       },
       "toon": [
         {
@@ -131,7 +167,19 @@
           "trophy"
         ],
         "stat": "23 MAJORS",
-        "stat_sub": "an Open Era record"
+        "stat_sub": "an Open Era record",
+        "hero": {
+          "skin": "6b4a32",
+          "hair": "bun",
+          "hair_color": "15110e",
+          "beard": "none",
+          "outfit": "dress",
+          "shirt": "e8554e",
+          "pants": "e8554e",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "height": 1.02
+        }
       },
       "toon": [
         {
@@ -178,7 +226,19 @@
           "cash"
         ],
         "stat": "HER BUILDING",
-        "stat_sub": "1 million square feet"
+        "stat_sub": "1 million square feet",
+        "hero": {
+          "skin": "6b4a32",
+          "hair": "bun",
+          "hair_color": "15110e",
+          "beard": "none",
+          "outfit": "dress",
+          "shirt": "e8554e",
+          "pants": "e8554e",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "height": 1.02
+        }
       },
       "toon": [
         {
@@ -224,5 +284,26 @@
     "socks": "f4f4f4",
     "shoes": "f4f4f4",
     "height": 1.02
+  },
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-090-famous-serena",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-090-famous-serena/090-famous-serena.mp4",
+    "post_at": "2026-11-19T16:30:00-05:00",
+    "buffer_post": "6afdeb0f144d89f0a5b5b9ec",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-18T18:14:40.099125+00:00",
+    "seconds": 19.28,
+    "eyes": {
+      "score": 8,
+      "problems": [
+        "The caption text 'dollar shoe dealin' is grammatically awkward and looks like a typo",
+        "The character's name 'ERENA WILLIAMS' appears briefly in frame 121 due to a text glitch",
+        "The transition at the end (frame 569) causes a jarring visual flicker where the previous scene overlaps with the cover"
+      ],
+      "best_fix": "Correct the caption 'dollar shoe dealin' to 'dollar shoe deal' and fix the text rendering glitch in frame 121.",
+      "model": "gemini-3.1-flash-lite",
+      "acts": null
+    }
   }
 }

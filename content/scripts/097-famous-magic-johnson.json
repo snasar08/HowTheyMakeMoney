@@ -7,7 +7,7 @@
   "hook_style": "surprise",
   "title_style": "number",
   "theme": "bold_bright",
-  "status": "ready",
+  "status": "delivered",
   "score": 88,
   "title": "From a $25 Million Deal to $1.6 Billion",
   "name_card": "Magic Johnson",
@@ -36,7 +36,19 @@
           "trophy"
         ],
         "stat": "16 TITLES",
-        "stat_sub": "10 of them as an owner"
+        "stat_sub": "10 of them as an owner",
+        "hero": {
+          "skin": "5c3b26",
+          "hair": "buzz",
+          "hair_color": "141210",
+          "beard": "none",
+          "outfit": "suit",
+          "shirt": "2b2f3a",
+          "pants": "2b2f3a",
+          "socks": "1a1a1a",
+          "shoes": "1a1a1a",
+          "height": 1.08
+        }
       },
       "toon": [
         {
@@ -80,7 +92,19 @@
           "check"
         ],
         "stat": "$25 MILLION",
-        "stat_sub": "25 years, signed 1981"
+        "stat_sub": "25 years, signed 1981",
+        "hero": {
+          "skin": "5c3b26",
+          "hair": "buzz",
+          "hair_color": "141210",
+          "beard": "none",
+          "outfit": "suit",
+          "shirt": "2b2f3a",
+          "pants": "2b2f3a",
+          "socks": "1a1a1a",
+          "shoes": "1a1a1a",
+          "height": 1.08
+        }
       },
       "toon": [
         {
@@ -122,7 +146,19 @@
           "cash"
         ],
         "stat": "HIS OWN TEAM",
-        "stat_sub": "4% of the Lakers"
+        "stat_sub": "4% of the Lakers",
+        "hero": {
+          "skin": "5c3b26",
+          "hair": "buzz",
+          "hair_color": "141210",
+          "beard": "none",
+          "outfit": "suit",
+          "shirt": "2b2f3a",
+          "pants": "2b2f3a",
+          "socks": "1a1a1a",
+          "shoes": "1a1a1a",
+          "height": 1.08
+        }
       },
       "toon": [
         {
@@ -160,7 +196,19 @@
           "check"
         ],
         "stat": "$2 BILLION",
-        "stat_sub": "Dodgers 2012, then an NFL stake"
+        "stat_sub": "Dodgers 2012, then an NFL stake",
+        "hero": {
+          "skin": "5c3b26",
+          "hair": "buzz",
+          "hair_color": "141210",
+          "beard": "none",
+          "outfit": "suit",
+          "shirt": "2b2f3a",
+          "pants": "2b2f3a",
+          "socks": "1a1a1a",
+          "shoes": "1a1a1a",
+          "height": 1.08
+        }
       },
       "toon": [
         {
@@ -204,7 +252,19 @@
         ],
         "stat": "$1.6 BILLION",
         "stat_sub": "Forbes, 2026",
-        "hud": "$1.6B"
+        "hud": "$1.6B",
+        "hero": {
+          "skin": "5c3b26",
+          "hair": "buzz",
+          "hair_color": "141210",
+          "beard": "none",
+          "outfit": "suit",
+          "shirt": "2b2f3a",
+          "pants": "2b2f3a",
+          "socks": "1a1a1a",
+          "shoes": "1a1a1a",
+          "height": 1.08
+        }
       },
       "toon": [
         {
@@ -241,5 +301,26 @@
     "socks": "1a1a1a",
     "shoes": "1a1a1a",
     "height": 1.08
+  },
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-097-famous-magic-johnson",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-097-famous-magic-johnson/097-famous-magic-johnson.mp4",
+    "post_at": "2026-11-19T20:00:00-05:00",
+    "buffer_post": "6afdebbec71477154fa95e9f",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-18T18:17:34.958405+00:00",
+    "seconds": 25.74,
+    "eyes": {
+      "score": 7,
+      "problems": [
+        "Caption text is often cut off or incomplete (e.g., 'Comment which you'd' is grammatically broken and confusing)",
+        "The visual transition at the end loops back to the start abruptly",
+        "The 'NFL' logo appears on screen without context or explanation in the narration"
+      ],
+      "best_fix": "Refine the captioning to ensure complete, readable sentences and add a brief visual indicator or text label when the NFL team is mentioned to provide context.",
+      "model": "gemini-3.1-flash-lite",
+      "acts": null
+    }
   }
 }
