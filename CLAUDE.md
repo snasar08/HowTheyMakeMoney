@@ -50,7 +50,8 @@ their money, told as fast 3D cartoon stories with an AI voice. Owner: Sam (snasa
 
 ## Weekly scripts
 Saturday cloud routines (4 parts) follow `content/ROUTINE.md` and `content/WRITER_GUIDE.md` (read those, not this
-history). Up to 75 ready scripts; quality gate: sources opened, idea score 85+, lint 0 errors, story score 80+,
+history). The mix each week comes from `analytics/weekly_plan.md` (`pipeline/weekly_mix.py`: focus on the lane that goes viral,
+one experiment lane, never drop a lane; bets logged in analytics/experiments.json). Up to 75 ready scripts; quality gate: sources opened, idea score 85+, lint 0 errors, story score 80+,
 scene check passing, one `toon` dict per sentence.
 
 ## Usage (Sam's plan limits)
