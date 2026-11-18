@@ -303,7 +303,7 @@ const DAILY_DEFS: Record<string, ActDef> = {
     } };
   } },
   // ------------------------------------------------------------------ count_cash: a fat banded stack held big at chest height; the right thumb flicks bills off one by one
-  // out to the side in an arc (never across the face), a $ counter pops per flick, the stack shrinks, the pile grows; focus -> grin -> smug "cha-ching"
+  // out to the side in an arc (never across the face), a "+$" pops per flick (no made-up figures), the stack shrinks, the pile grows; focus -> grin -> smug "cha-ching"
   count_cash: { pose: "count", view: "cu", build(ctx) {
     const G = new THREE.Group(); ctx.root.add(G);
     const NL = 18, LT = 0.03, NF = 14, T0 = 0.35, DT = 0.15, DUR = 1.05, GR = 5, TH = 0.95, BW = 0.56;
@@ -318,7 +318,7 @@ const DAILY_DEFS: Record<string, ActDef> = {
       const g = fatBill(0.5); G.add(g);
       fl.push({ g, v0: 0, vx: 0, vz: 0, sp: 6 + rnd() * 5, ph: rnd() * 6.28, e: new V3(H.x + 0.62 + 0.2 * Math.sin(i * 2.3) + 0.12 * rnd(), H.y + 0.025 + Math.floor(i / 3) * 0.016, H.z + 0.45 + 0.13 * Math.cos(i * 1.9)) });
     }
-    const cnt = Array.from({ length: NF + 1 }, (_, k) => { const m = flashPlane(k < NF ? flashTex("$" + (k + 1) * 100, "#ffe14d") : flashTex("CHA-CHING!", "#7dff8f", 640, 170, 92), k < NF ? 0.42 : 0.68, k < NF ? 0.175 : 0.18); G.add(m); return m; });
+    const cnt = Array.from({ length: NF + 1 }, (_, k) => { const m = flashPlane(k < NF ? flashTex("+$", "#ffe14d") : flashTex("CHA-CHING!", "#7dff8f", 640, 170, 92), k < NF ? 0.42 : 0.68, k < NF ? 0.175 : 0.18); G.add(m); return m; });
     const stars: THREE.Group[] = []; for (let i = 0; i < 5; i++) { const s = star(0.09); G.add(s); stars.push(s); }
     const tf = (j: number) => T0 + j * DT + DT * 0.5;   // moment bill j leaves the stack
     return { tick(t) {
