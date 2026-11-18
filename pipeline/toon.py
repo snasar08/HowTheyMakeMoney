@@ -787,7 +787,7 @@ def ah_shots(plan: dict) -> list:
             aset = "diner"
         elif AH_BASEBALL_RX.search(sc.get("text") or sc.get("line") or "") and aset not in ("space", "stage", "throne") and place not in ("space", "stage", "throne") and not outro:
             aset = "diamond"                                        # Nov 18: baseball lines live on the baseball field
-        elif ctx.get("tennis") and aset == "court" and not outro:
+        elif ctx.get("tennis") and aset == "court":   # Nov 18 Serena remake: the outro landed on the basketball arena
             aset = "tennis"                                         # a tennis star's "court" is the tennis court, never the basketball arena
         elif ah_sport_set(sc.get("text") or sc.get("line") or "", ctx) and aset not in ("space", "stage", "throne") and place not in ("space", "stage", "throne") and not outro:
             aset = ah_sport_set(sc.get("text") or sc.get("line") or "", ctx)   # Nov 18: American football -> gridiron, tennis -> tennis court
