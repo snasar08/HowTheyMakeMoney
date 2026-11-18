@@ -35,7 +35,29 @@
         "props": [],
         "stat": "$33 MILLION",
         "stat_sub": "in one year, 2016"
-      }
+      },
+      "toon": [
+        {
+          "place": "mansion",
+          "beat": "money",
+          "mood": "shock",
+          "things": [
+            "cashstack"
+          ],
+          "card": {
+            "text": "$33M",
+            "kind": "screen",
+            "sub": "IN ONE YEAR"
+          }
+        },
+        {
+          "place": "track",
+          "beat": "walk",
+          "mood": "proud",
+          "action": "run",
+          "view": "ws"
+        }
+      ]
     },
     {
       "narration": "The only track athlete on Forbes' highest-paid list.",
@@ -49,7 +71,22 @@
         ],
         "stat": "THE ONLY ONE",
         "stat_sub": "track athlete on the list, 2016"
-      }
+      },
+      "toon": [
+        {
+          "place": "boardroom",
+          "beat": "sign",
+          "mood": "proud",
+          "things": [
+            "trophy"
+          ],
+          "card": {
+            "text": "FORBES",
+            "kind": "screen",
+            "sub": "ONLY TRACK ATHLETE"
+          }
+        }
+      ]
     },
     {
       "narration": "At 15, he was already 1.95 meters tall. And he won a world junior title.",
@@ -63,7 +100,36 @@
         ],
         "stat": "AGE 15",
         "stat_sub": "world junior champion, 2002"
-      }
+      },
+      "toon": [
+        {
+          "place": "track",
+          "beat": "walk",
+          "mood": "proud",
+          "card": {
+            "text": "1.95 M",
+            "kind": "sign",
+            "sub": "AT 15"
+          },
+          "view": "ws"
+        },
+        {
+          "place": "track",
+          "beat": "walk",
+          "mood": "excited",
+          "action": "cheer",
+          "crowd": 40,
+          "things": [
+            "medal",
+            "trophy"
+          ],
+          "card": {
+            "text": "WORLD JUNIOR",
+            "kind": "flip",
+            "sub": "TITLE"
+          }
+        }
+      ]
     },
     {
       "narration": "A sponsor signed him right after. Then came 9.58 seconds.",
@@ -77,7 +143,31 @@
         ],
         "stat": "9.58 SECONDS",
         "stat_sub": "100 m world record, 2009"
-      }
+      },
+      "toon": [
+        {
+          "place": "boardroom",
+          "beat": "sign",
+          "mood": "happy",
+          "card": {
+            "text": "SPONSORED",
+            "kind": "paper",
+            "sub": "RIGHT AFTER"
+          }
+        },
+        {
+          "place": "track",
+          "beat": "walk",
+          "mood": "excited",
+          "action": "run",
+          "crowd": 30,
+          "card": {
+            "text": "9.58",
+            "kind": "screen",
+            "sub": "SECONDS"
+          }
+        }
+      ]
     },
     {
       "narration": "It's still the record. And no sprinter has been paid more.",
@@ -93,7 +183,38 @@
         "stat": "$33 MILLION",
         "stat_sub": "the sport's highest-paid ever",
         "hud": "$33M"
-      }
+      },
+      "toon": [
+        {
+          "place": "track",
+          "beat": "walk",
+          "mood": "proud",
+          "action": "cheer",
+          "crowd": 50,
+          "things": [
+            "trophy"
+          ],
+          "card": {
+            "text": "RECORD",
+            "kind": "sign",
+            "sub": "STILL STANDS"
+          }
+        },
+        {
+          "place": "mansion",
+          "beat": "money",
+          "mood": "proud",
+          "things": [
+            "cashstack",
+            "goldbar"
+          ],
+          "card": {
+            "text": "$33M",
+            "kind": "paper",
+            "sub": "NO SPRINTER MORE"
+          }
+        }
+      ]
     }
   ],
   "sources": [

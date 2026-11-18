@@ -136,6 +136,80 @@ def save_cover(video: Path, out: Path) -> None:
         print(f"::warning title={out.stem}::cover not saved: {exc}")
 
 
+def remake_jobs() -> list | None:
+    """REMAKE_IDS=085,092 (branch `remake`, Nov 18, Sam: "fix all the old ones"): Shorts that are already
+    scheduled on Buffer but were rendered in the old look. Each is rendered again with the SAME voice (the
+    voice artifacts of the run that made it) and booked into its SAME slot; the old Buffer post is deleted only
+    after the new one is booked, so a failed or held remake leaves the old post in place."""
+    ids = [x.strip() for x in os.environ.get("REMAKE_IDS", "").split(",") if x.strip()]
+    if not ids:
+        return None
+    now = dt.datetime.now(dt.timezone.utc)
+    out = []
+    for i in ids:
+        for p in SCRIPTS.glob(f"{i}-*.json"):
+            s = json.loads(p.read_text(encoding="utf-8"))
+            d = s.get("delivered") or {}
+            when = dt.datetime.fromisoformat(d["post_at"]) if d.get("post_at") else None
+            if s.get("status") != "delivered" or not d.get("buffer_post") or not when or when <= now + dt.timedelta(minutes=25):
+                print(f"[remake] skip {p.stem}: not a future Buffer post")
+                continue
+            out.append((p, when))
+    return sorted(out, key=lambda x: x[1])
+
+
+def run_remake(jobs: list, args) -> int:
+    from . import publish as P
+    if args.plan_ids:
+        Path(args.plan_ids).write_text("\n".join(p.stem.split("-")[0] for p, _ in jobs) + "\n")
+        print(f"[remake] plan: {[p.stem for p, _ in jobs]}")
+        return 0
+    bad = 0
+    for path, when in jobs:
+        before = path.read_text(encoding="utf-8")
+        script = json.loads(before)
+        old = dict(script.get("delivered") or {})
+        video = OUT / f"{path.stem}.mp4"
+        try:
+            info = render_script(path, video)
+            print(f"[remake] rendered {video.name}: {info['seconds']}s")
+            blockers = gate(script, info)
+            try:
+                from . import eyes
+                seen = eyes.look(video, script)
+                blockers += eyes.report(path.stem, seen)
+                if seen:
+                    info["eyes"] = {k: seen.get(k) for k in ("score", "problems", "best_fix", "model", "acts")}
+            except Exception as e:  # noqa: BLE001
+                print(f"::warning title=eyes::{e!r}")
+            if blockers:
+                print(f"::warning title={path.stem} remake held::old post kept: {'; '.join(blockers)}")
+                path.write_text(before, encoding="utf-8")
+                bad += 1
+                continue
+            if args.dry:
+                continue
+            save_cover(video, ROOT / "analytics" / "covers" / f"{path.stem}.jpg")
+            result = deliver(video, script, when)
+            if not result.get("buffer_post"):
+                raise RuntimeError(f"new post not booked: {result}")
+            try:
+                P.buffer_delete(old["buffer_post"])
+                print(f"[remake] deleted old Buffer post {old['buffer_post']}")
+            except Exception as e:  # noqa: BLE001  two posts in one slot is better than none; say so loudly
+                print(f"::error title={path.stem} remake::new post booked but old post {old['buffer_post']} NOT deleted: {e!r}")
+            script["status"] = "delivered"
+            script["delivered"] = {**result, "rendered_at": dt.datetime.now(dt.timezone.utc).isoformat(), "seconds": info["seconds"],
+                                   "remade_from": old.get("buffer_post"), **({"eyes": info["eyes"]} if info.get("eyes") else {})}
+            path.write_text(json.dumps(script, indent=2, ensure_ascii=False) + "\n")
+            print(f"[remake] {path.stem} rebooked at {when:%a %H:%M}: {result.get('buffer_post')}")
+        except Exception as e:  # noqa: BLE001
+            path.write_text(before, encoding="utf-8")
+            print(f"::error title={path.stem} remake failed::old post kept: {e!r}")
+            bad += 1
+    return 1 if bad == len(jobs) and jobs else 0
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--count", type=int, default=int(os.environ.get("SHORTS_PER_RUN", "2")))
@@ -148,6 +222,9 @@ def main() -> int:
         return 0
 
     queue = ready_scripts(recent_formats(LOWPOLY_GAP))
+    remake = remake_jobs()
+    if remake is not None:              # Nov 18: re-render already scheduled Shorts in the new look, same slots
+        return run_remake(remake, args)
     if args.id:
         queue = [p for p in SCRIPTS.glob(f"{args.id}*.json")]
     # only as many Shorts as there are open slots soon (no double posts, max 2/day); a second

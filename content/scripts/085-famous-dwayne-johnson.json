@@ -49,7 +49,34 @@
           "shoes": "1a1a1a",
           "height": 1.12
         }
-      }
+      },
+      "toon": [
+        {
+          "place": "pitch",
+          "things": [
+            "football"
+          ],
+          "card": {
+            "text": "CUT 1995",
+            "kind": "paper"
+          },
+          "mood": "sad"
+        },
+        {
+          "place": "showroom",
+          "things": [
+            "cashstack",
+            "camera"
+          ],
+          "card": {
+            "text": "$11.4B",
+            "kind": "screen",
+            "sub": "MOVIES"
+          },
+          "beat": "money",
+          "mood": "proud"
+        }
+      ]
     },
     {
       "narration": "But that's not his pay. It's his films' box office, worldwide.",
@@ -75,7 +102,30 @@
           "shoes": "1a1a1a",
           "height": 1.12
         }
-      }
+      },
+      "toon": [
+        {
+          "place": "boardroom",
+          "things": [
+            "briefcase"
+          ],
+          "mood": "stern"
+        },
+        {
+          "place": "stage",
+          "things": [
+            "globe",
+            "tv"
+          ],
+          "card": {
+            "text": "BOX OFFICE",
+            "kind": "sign",
+            "sub": "WORLDWIDE"
+          },
+          "mood": "calm",
+          "crowd": 40
+        }
+      ]
     },
     {
       "narration": "So he tried wrestling instead. The crowd loved him.",
@@ -101,7 +151,20 @@
           "shoes": "1a1a1a",
           "height": 1.12
         }
-      }
+      },
+      "toon": [
+        {
+          "place": "ring",
+          "mood": "scheme"
+        },
+        {
+          "place": "ring",
+          "mood": "proud",
+          "action": "cheer",
+          "crowd": 50,
+          "view": "low"
+        }
+      ]
     },
     {
       "narration": "His first lead movie role still paid 5.5 million. A world record.",
@@ -128,7 +191,34 @@
           "shoes": "1a1a1a",
           "height": 1.12
         }
-      }
+      },
+      "toon": [
+        {
+          "place": "office",
+          "things": [
+            "camera",
+            "cashstack"
+          ],
+          "card": {
+            "text": "$5.5M",
+            "kind": "screen",
+            "sub": "FIRST LEAD ROLE"
+          },
+          "mood": "happy"
+        },
+        {
+          "place": "stage",
+          "things": [
+            "trophy",
+            "crown"
+          ],
+          "card": {
+            "text": "WORLD RECORD",
+            "kind": "sign"
+          },
+          "mood": "proud"
+        }
+      ]
     },
     {
       "narration": "Just years after that cut: the world's highest-paid actor.",
@@ -156,7 +246,22 @@
           "shoes": "1a1a1a",
           "height": 1.12
         }
-      }
+      },
+      "toon": [
+        {
+          "place": "mansion",
+          "things": [
+            "crown",
+            "camera"
+          ],
+          "card": {
+            "text": "#1 PAID ACTOR",
+            "kind": "screen"
+          },
+          "beat": "money",
+          "mood": "proud"
+        }
+      ]
     }
   ],
   "sources": [

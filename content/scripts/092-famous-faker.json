@@ -53,7 +53,31 @@
           ],
           "height": 0.98
         }
-      }
+      },
+      "toon": [
+        {
+          "place": "boardroom",
+          "things": [
+            "cashstack",
+            "briefcase"
+          ],
+          "card": {
+            "text": "$20M/YEAR",
+            "kind": "screen",
+            "sub": "TURNED DOWN"
+          },
+          "mood": "stern"
+        },
+        {
+          "place": "office",
+          "things": [
+            "monitor",
+            "headset"
+          ],
+          "mood": "calm",
+          "view": "ms"
+        }
+      ]
     },
     {
       "narration": "He's Faker. Six-time League of Legends world champion.",
@@ -82,7 +106,33 @@
           ],
           "height": 0.98
         }
-      }
+      },
+      "toon": [
+        {
+          "place": "stage",
+          "card": {
+            "text": "FAKER",
+            "kind": "sign"
+          },
+          "mood": "proud",
+          "crowd": 30,
+          "view": "ms"
+        },
+        {
+          "place": "showroom",
+          "things": [
+            "trophy",
+            "monitor"
+          ],
+          "card": {
+            "text": "6X CHAMPION",
+            "kind": "flip",
+            "sub": "LEAGUE OF LEGENDS"
+          },
+          "mood": "proud",
+          "action": "cheer"
+        }
+      ]
     },
     {
       "narration": "He went pro at 17. Then won the world title that same year.",
@@ -111,7 +161,35 @@
           ],
           "height": 0.98
         }
-      }
+      },
+      "toon": [
+        {
+          "place": "classroom",
+          "things": [
+            "laptop",
+            "controller"
+          ],
+          "card": {
+            "text": "AGE 17",
+            "kind": "flip"
+          },
+          "mood": "excited"
+        },
+        {
+          "place": "stage",
+          "things": [
+            "trophy",
+            "headset"
+          ],
+          "card": {
+            "text": "WORLD TITLE",
+            "kind": "sign"
+          },
+          "mood": "happy",
+          "action": "cheer",
+          "crowd": 50
+        }
+      ]
     },
     {
       "narration": "Instead, he stayed for about 5 million a year. Plus part of the team.",
@@ -141,7 +219,34 @@
           ],
           "height": 0.98
         }
-      }
+      },
+      "toon": [
+        {
+          "place": "office",
+          "things": [
+            "cashstack",
+            "monitor"
+          ],
+          "card": {
+            "text": "$5M/YEAR",
+            "kind": "screen"
+          },
+          "mood": "calm"
+        },
+        {
+          "place": "lab",
+          "things": [
+            "headset",
+            "laptop"
+          ],
+          "card": {
+            "text": "PART OF TEAM",
+            "kind": "white"
+          },
+          "mood": "proud",
+          "crowd": 5
+        }
+      ]
     },
     {
       "narration": "Then three world titles in a row. The first player ever.",
@@ -170,7 +275,34 @@
           ],
           "height": 0.98
         }
-      }
+      },
+      "toon": [
+        {
+          "place": "stage",
+          "things": [
+            "trophy",
+            "medal"
+          ],
+          "card": {
+            "text": "3 IN A ROW",
+            "kind": "flip",
+            "sub": "WORLD TITLES"
+          },
+          "mood": "excited",
+          "crowd": 40
+        },
+        {
+          "place": "throne",
+          "things": [
+            "crown"
+          ],
+          "card": {
+            "text": "FIRST EVER",
+            "kind": "sign"
+          },
+          "mood": "proud"
+        }
+      ]
     }
   ],
   "sources": [

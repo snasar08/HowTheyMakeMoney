@@ -53,28 +53,28 @@
       "toon": [
         {
           "place": "office",
-          "beat": "logo",
           "mood": "proud",
-          "brand": {
-            "name": "Nvidia",
-            "bg": "#76b900",
-            "fg": "#111111",
-            "icon": "chip"
-          }
+          "view": "wide"
         },
         {
-          "place": "office",
-          "beat": "clock",
-          "mood": "proud"
+          "place": "lab",
+          "mood": "proud",
+          "things": [
+            "chip"
+          ],
+          "card": {
+            "text": "33 YEARS",
+            "kind": "sign"
+          },
+          "view": "ms"
         },
         {
-          "place": "office",
-          "beat": "walk",
+          "place": "mansion",
           "mood": "sad",
-          "crowd": 10,
           "things": [
             "letter"
-          ]
+          ],
+          "view": "ms"
         }
       ]
     },
@@ -92,38 +92,36 @@
       "toon": [
         {
           "place": "street",
-          "beat": "walk",
-          "mood": "stern"
+          "mood": "stern",
+          "view": "cu"
         },
         {
-          "place": "street",
-          "beat": "sign",
+          "place": "ring",
           "mood": "scheme",
-          "brand": {
-            "name": "Nvidia",
-            "bg": "#76b900",
-            "fg": "#111111",
-            "icon": "chip"
-          }
-        },
-        {
-          "place": "garage",
-          "beat": "clock",
-          "mood": "calm"
-        },
-        {
-          "place": "garage",
-          "beat": "logo",
-          "mood": "excited",
-          "brand": {
-            "name": "Jensen Chips",
-            "bg": "#111111",
-            "fg": "#76b900",
-            "icon": "bolt"
+          "card": {
+            "text": "NVIDIA",
+            "kind": "sign"
           },
-          "props": [
-            "laptop"
-          ]
+          "view": "ms"
+        },
+        {
+          "place": "garage",
+          "mood": "calm",
+          "card": {
+            "text": "1993",
+            "kind": "flip",
+            "sub": "YEAR"
+          },
+          "view": "ms"
+        },
+        {
+          "place": "garage",
+          "mood": "excited",
+          "things": [
+            "laptop",
+            "chip"
+          ],
+          "view": "ms"
         }
       ]
     },
@@ -140,27 +138,22 @@
       },
       "toon": [
         {
-          "place": "servers",
-          "beat": "walk",
+          "place": "office",
           "mood": "scheme",
           "things": [
-            "chatbot"
-          ]
+            "phone"
+          ],
+          "view": "ms"
         },
         {
-          "place": "street",
-          "beat": "queue",
+          "place": "showroom",
           "mood": "happy",
-          "crowd": 45,
-          "brand": {
-            "name": "Jensen Chips",
-            "bg": "#111111",
-            "fg": "#76b900",
-            "icon": "bolt"
-          },
+          "crowd": 10,
           "things": [
-            "chip"
-          ]
+            "chip",
+            "box"
+          ],
+          "view": "wide"
         }
       ]
     },
@@ -177,24 +170,22 @@
       },
       "toon": [
         {
-          "place": "street",
-          "beat": "phone",
+          "place": "lab",
           "mood": "proud",
-          "brand": {
-            "name": "Jensen Chips",
-            "bg": "#111111",
-            "fg": "#76b900",
-            "icon": "bolt"
-          }
+          "things": [
+            "chip",
+            "robot"
+          ],
+          "view": "ms"
         },
         {
           "place": "office",
-          "beat": "walk",
           "mood": "laugh",
-          "crowd": 20,
+          "crowd": 10,
           "things": [
             "chip"
-          ]
+          ],
+          "view": "ms"
         }
       ]
     },
@@ -211,36 +202,27 @@
       },
       "toon": [
         {
-          "place": "office",
-          "beat": "walk",
-          "mood": "scheme"
+          "place": "boardroom",
+          "mood": "scheme",
+          "view": "cu"
         },
         {
-          "place": "servers",
-          "beat": "sign",
+          "place": "field",
           "mood": "excited",
-          "brand": {
-            "name": "Jensen Chips",
-            "bg": "#111111",
-            "fg": "#76b900",
-            "icon": "bolt"
-          }
+          "things": [
+            "factory",
+            "globe"
+          ],
+          "view": "wide"
         },
         {
           "place": "space",
-          "beat": "logo",
           "mood": "laugh",
-          "action": "cheer",
-          "brand": {
-            "name": "Jensen Chips",
-            "bg": "#111111",
-            "fg": "#76b900",
-            "icon": "bolt"
-          },
           "things": [
             "factory",
-            "chip"
-          ]
+            "gpu"
+          ],
+          "view": "wide"
         }
       ]
     },
@@ -257,16 +239,17 @@
       },
       "toon": [
         {
-          "place": "street",
-          "beat": "sign",
+          "place": "throne",
           "mood": "proud",
-          "brand": {
-            "name": "Nvidia",
-            "bg": "#76b900",
-            "fg": "#111111",
-            "icon": "chip"
+          "things": [
+            "crown",
+            "chip"
+          ],
+          "card": {
+            "text": "NVIDIA",
+            "kind": "sign"
           },
-          "crowd": 25
+          "view": "ms"
         }
       ]
     }

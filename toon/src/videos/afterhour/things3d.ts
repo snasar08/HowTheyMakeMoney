@@ -4,7 +4,7 @@ import { toonMat, metalMat, glowMat, canvasTex, seeded } from "./common";
 import { hasModel, makeModelGroup, MODEL_SIZE } from "./models";
 import { drawCard } from "./cards";
 
-export type ThingName = "shoe" | "springshoe" | "chip" | "gpu" | "cash" | "cashstack" | "coins" | "goldbar" | "trophy" | "medal" | "crown" | "ring" | "car" | "sportscar" | "bus" | "truck" | "rocket" | "phone" | "laptop" | "tv" | "monitor" | "clock" | "books" | "letter" | "newspaper" | "briefcase" | "shovel" | "pickaxe" | "box" | "crate" | "basketball" | "football" | "hoop" | "mic" | "headset" | "controller" | "burger" | "pizza" | "coffee" | "plant" | "robot" | "drone" | "satellite" | "globe" | "house" | "factory" | "stadium" | "plane" | "yacht" | "chart" | "arrowup" | "arrowdown" | "lightbulb" | "lock" | "key" | "heart" | "bomb" | "fire" | "camera";
+export type ThingName = "shoe" | "springshoe" | "chip" | "gpu" | "cash" | "cashstack" | "coins" | "goldbar" | "trophy" | "medal" | "crown" | "ring" | "car" | "sportscar" | "bus" | "truck" | "rocket" | "phone" | "laptop" | "tv" | "monitor" | "clock" | "books" | "letter" | "newspaper" | "briefcase" | "shovel" | "pickaxe" | "box" | "crate" | "basketball" | "football" | "soccerball" | "hoop" | "mic" | "headset" | "controller" | "burger" | "pizza" | "coffee" | "plant" | "robot" | "drone" | "satellite" | "globe" | "house" | "factory" | "stadium" | "plane" | "yacht" | "chart" | "arrowup" | "arrowdown" | "lightbulb" | "lock" | "key" | "heart" | "bomb" | "fire" | "camera";
 export type Thing = { root: THREE.Group; size: number; tick?(t: number): void };
 
 type M = string | THREE.Material;
@@ -417,6 +417,18 @@ const B: Record<ThingName, Builder> = {
     const d = 0.075; const R2 = Math.sqrt(r * r - d * d);
     for (const s of [-1, 1]) { const t = to(g, R2 + 0.001, 0.0035, "#1b1b24", s * d, r, 0, [0, PI / 2, 0]); t.position.x = s * d; }
     void line; return { g };
+  },
+  // Nov 18: a real soccer ball (the "football" object is an American football; soccer Shorts showed the wrong ball)
+  soccerball: (c) => {
+    const g = new THREE.Group(); const r = 0.12; sp(g, r, c ?? "#f7f7f7", 0, r, 0, undefined, 28);
+    const ph = (1 + Math.sqrt(5)) / 2; const v: V3[] = [];
+    for (const a of [-1, 1]) for (const b of [-ph, ph]) { v.push([0, a, b]); v.push([a, b, 0]); v.push([b, 0, a]); }
+    for (const [x, y, z] of v) {
+      const n = Math.hypot(x, y, z); const k = (r * 1.004) / n;
+      const p = put(g, new THREE.CircleGeometry(0.04, 5), "#1b1b24", x * k, r + y * k, z * k, [0, 0, 0], [1, 1, 1], false);
+      p.lookAt(x * 10, r + y * 10, z * 10);
+    }
+    return { g };
   },
   football: (c) => {
     const g = new THREE.Group(); const o = new THREE.Group(); o.position.y = 0.1; o.rotation.set(0, 0.6, 0.0); g.add(o);

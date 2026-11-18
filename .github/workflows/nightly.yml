@@ -9,7 +9,7 @@ on:
     - cron: "41 13 * * *"   # ~9:41 AM New York backup — fills anything still open today
     - cron: "23 19 * * *"   # Nov 9: third run (GitHub dropped one run and failed to start the other); arrives in the evening and fills tomorrow's slots early
   push:
-    branches: ["nightly-test"]   # dry run of this exact file on script 040 (nothing posted)
+    branches: ["nightly-test", "remake"]   # nightly-test: dry run on script 040 (nothing posted); remake: see content/remake.txt
   workflow_dispatch:
     inputs:
       count:
@@ -56,11 +56,13 @@ jobs:
           if [ -n "${{ inputs.script_id }}" ]; then ARGS="$ARGS --id ${{ inputs.script_id }}"; fi
           if [ "${{ inputs.dry_run }}" = "true" ]; then ARGS="$ARGS --dry"; fi
           if [ "${{ github.ref }}" = "refs/heads/nightly-test" ]; then ARGS="--id 040 --dry"; fi
+          # Nov 18 remake: content/remake.txt line 1 = ids (085,092), line 2 = the run whose voice artifacts to reuse
+          if [ "${{ github.ref }}" = "refs/heads/remake" ]; then export REMAKE_IDS=$(sed -n 1p content/remake.txt); fi
           python -m pipeline.run $ARGS --plan-ids ids.txt || true
           echo "ids=$(python -c "import json;print(json.dumps([l.strip() for l in open('ids.txt') if l.strip()] if __import__('os').path.exists('ids.txt') else []))")" >> "$GITHUB_OUTPUT"
   voice:
     needs: plan
-    if: ${{ needs.plan.outputs.ids != '[]' && needs.plan.outputs.ids != '' && (vars.VOICE_ENGINE || 'qwen') == 'qwen' }}
+    if: ${{ needs.plan.outputs.ids != '[]' && needs.plan.outputs.ids != '' && (vars.VOICE_ENGINE || 'qwen') == 'qwen' && github.ref != 'refs/heads/remake' }}
     strategy:
       fail-fast: false
       matrix:
@@ -129,12 +131,16 @@ jobs:
             .cache
           key: htmm-models-v2-${{ hashFiles('requirements.txt') }}
           restore-keys: htmm-models-v2-
+      - id: rm
+        run: echo "run=$( [ "${{ github.ref }}" = "refs/heads/remake" ] && sed -n 2p content/remake.txt || echo ${{ github.run_id }} )" >> "$GITHUB_OUTPUT"
       - uses: actions/download-artifact@v4
         continue-on-error: true
         with:
           pattern: voice-*
           path: .cache/voice
           merge-multiple: true
+          run-id: ${{ steps.rm.outputs.run }}   # remake: the voice of the first render
+          github-token: ${{ github.token }}
       - id: rec
         run: |
           mkdir -p plans
@@ -331,6 +337,20 @@ jobs:
           path: .cache/voice
           merge-multiple: true
 
+      - id: rm
+        if: ${{ github.ref == 'refs/heads/remake' }}
+        run: echo "run=$(sed -n 2p content/remake.txt)" >> "$GITHUB_OUTPUT"
+      - name: Remake - the same voice as the first render (no new voice requests)
+        if: ${{ github.ref == 'refs/heads/remake' }}
+        uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          pattern: voice-*
+          path: .cache/voice
+          merge-multiple: true
+          run-id: ${{ steps.rm.outputs.run }}
+          github-token: ${{ github.token }}
+
       - name: Blender frames from the 20 render machines
         uses: actions/download-artifact@v4
         continue-on-error: true
@@ -376,6 +396,7 @@ jobs:
           if [ -n "${{ inputs.script_id }}" ]; then ARGS="$ARGS --id ${{ inputs.script_id }}"; fi
           if [ "${{ inputs.dry_run }}" = "true" ]; then ARGS="$ARGS --dry"; fi
           if [ "${{ github.ref }}" = "refs/heads/nightly-test" ]; then ARGS="--id 040 --dry"; fi
+          if [ "${{ github.ref }}" = "refs/heads/remake" ]; then export REMAKE_IDS=$(sed -n 1p content/remake.txt); fi
           set -o pipefail
           python -m pipeline.run $ARGS 2>&1 | tee make.log
 

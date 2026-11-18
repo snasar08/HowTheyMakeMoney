@@ -37,7 +37,31 @@
         ],
         "stat": "$154.6 MILLION",
         "stat_sub": "the whole payroll?"
-      }
+      },
+      "toon": [
+        {
+          "place": "court",
+          "things": [
+            "basketball",
+            "cashstack"
+          ],
+          "card": {
+            "text": "$154.6M",
+            "kind": "screen",
+            "sub": "SALARY CAP"
+          },
+          "mood": "shock"
+        },
+        {
+          "place": "office",
+          "things": [
+            "cashstack",
+            "cash"
+          ],
+          "beat": "money",
+          "mood": "scheme"
+        }
+      ]
     },
     {
       "narration": "Just 1 dollar bills. One gram each.",
@@ -52,7 +76,32 @@
         "stat": "$1 BILLS",
         "stat_sub": "salary cap, 2025-26",
         "hud": "154.6M BILLS"
-      }
+      },
+      "toon": [
+        {
+          "place": "stall",
+          "things": [
+            "cash"
+          ],
+          "card": {
+            "text": "$1",
+            "kind": "paper"
+          },
+          "mood": "calm"
+        },
+        {
+          "place": "lab",
+          "things": [
+            "cash"
+          ],
+          "card": {
+            "text": "1 GRAM",
+            "kind": "white",
+            "sub": "EACH BILL"
+          },
+          "mood": "calm"
+        }
+      ]
     },
     {
       "narration": "Then weigh it. About 155 tonnes of cash.",
@@ -67,7 +116,29 @@
         ],
         "stat": "155 TONNES",
         "stat_sub": "of $1 bills"
-      }
+      },
+      "toon": [
+        {
+          "place": "showroom",
+          "things": [
+            "cashstack",
+            "crate"
+          ],
+          "mood": "stern"
+        },
+        {
+          "place": "street",
+          "things": [
+            "truck",
+            "cashstack"
+          ],
+          "card": {
+            "text": "155 TONNES",
+            "kind": "sign"
+          },
+          "mood": "shock"
+        }
+      ]
     },
     {
       "narration": "Just counting it, one bill a second? Almost five years.",
@@ -81,7 +152,27 @@
         ],
         "stat": "~5 YEARS",
         "stat_sub": "to count one team's cap"
-      }
+      },
+      "toon": [
+        {
+          "place": "mansion",
+          "things": [
+            "cashstack"
+          ],
+          "mood": "nervous"
+        },
+        {
+          "place": "garage",
+          "things": [
+            "clock"
+          ],
+          "card": {
+            "text": "5 YEARS",
+            "kind": "flip"
+          },
+          "mood": "dazed"
+        }
+      ]
     },
     {
       "narration": "Then stack all 30 teams. About 500 kilometers high.",
@@ -97,7 +188,35 @@
         "stat": "500 KM",
         "stat_sub": "stack, all 30 teams",
         "hud": "4.6B BILLS"
-      }
+      },
+      "toon": [
+        {
+          "place": "field",
+          "things": [
+            "cashstack",
+            "crate"
+          ],
+          "card": {
+            "text": "30 TEAMS",
+            "kind": "sign"
+          },
+          "mood": "scheme",
+          "crowd": 30
+        },
+        {
+          "place": "street",
+          "things": [
+            "cashstack",
+            "satellite"
+          ],
+          "card": {
+            "text": "500 KM HIGH",
+            "kind": "sign"
+          },
+          "mood": "shock",
+          "view": "low"
+        }
+      ]
     }
   ],
   "sources": [

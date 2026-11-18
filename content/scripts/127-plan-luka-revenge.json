@@ -63,19 +63,28 @@
       "toon": [
         {
           "place": "court",
-          "beat": "walk",
-          "mood": "proud",
-          "crowd": 25
+          "mood": "calm",
+          "view": "ms"
         },
         {
           "place": "court",
-          "beat": "walk",
-          "mood": "happy"
+          "mood": "proud",
+          "things": [
+            "trophy"
+          ],
+          "card": {
+            "text": "FINALS",
+            "kind": "sign"
+          },
+          "view": "wide"
         },
         {
-          "place": "office",
-          "beat": "phone",
-          "mood": "shock"
+          "place": "boardroom",
+          "mood": "shock",
+          "things": [
+            "letter"
+          ],
+          "view": "ms"
         }
       ]
     },
@@ -95,28 +104,26 @@
       "toon": [
         {
           "place": "court",
-          "beat": "walk",
-          "mood": "stern"
-        },
-        {
-          "place": "street",
-          "beat": "sign",
-          "mood": "scheme",
-          "brand": {
-            "name": "Lakers",
-            "bg": "#552583",
-            "fg": "#fdb927",
-            "icon": "star"
-          },
-          "things": [
-            "crown"
-          ]
+          "mood": "stern",
+          "view": "cu"
         },
         {
           "place": "court",
-          "beat": "walk",
+          "mood": "stern",
+          "card": {
+            "text": "DALLAS",
+            "kind": "sign"
+          },
+          "view": "wide"
+        },
+        {
+          "place": "garage",
           "mood": "proud",
-          "action": "run"
+          "card": {
+            "text": "LAKERS",
+            "kind": "sign"
+          },
+          "view": "ms"
         }
       ]
     },
@@ -136,16 +143,25 @@
       "toon": [
         {
           "place": "court",
-          "beat": "money",
           "mood": "laugh",
-          "crowd": 30
+          "action": "shoot",
+          "things": [
+            "trophy",
+            "basketball"
+          ],
+          "view": "wide"
         },
         {
           "place": "court",
-          "beat": "walk",
-          "mood": "scheme",
-          "action": "cheer",
-          "crowd": 20
+          "mood": "excited",
+          "things": [
+            "fire"
+          ],
+          "card": {
+            "text": "DALLAS",
+            "kind": "sign"
+          },
+          "view": "low"
         }
       ]
     },
@@ -164,26 +180,27 @@
       },
       "toon": [
         {
-          "place": "court",
-          "beat": "money",
+          "place": "mansion",
           "mood": "excited",
-          "action": "cheer",
-          "crowd": 40
+          "things": [
+            "ring",
+            "plane"
+          ],
+          "card": {
+            "text": "LA",
+            "kind": "sign"
+          },
+          "view": "ms"
         },
         {
-          "place": "road",
-          "beat": "drive",
+          "place": "street",
           "mood": "laugh",
-          "brand": {
-            "name": "Lakers",
-            "bg": "#552583",
-            "fg": "#fdb927",
-            "icon": "star"
-          },
+          "crowd": 30,
           "things": [
             "bus",
             "ring"
-          ]
+          ],
+          "view": "wide"
         }
       ]
     },
@@ -202,21 +219,30 @@
       },
       "toon": [
         {
-          "place": "street",
-          "beat": "walk",
-          "mood": "scheme"
+          "place": "office",
+          "mood": "scheme",
+          "view": "cu"
         },
         {
-          "place": "street",
-          "beat": "walk",
+          "place": "field",
           "mood": "proud",
-          "crowd": 45
+          "things": [
+            "hoop"
+          ],
+          "card": {
+            "text": "SLOVENIA",
+            "kind": "sign"
+          },
+          "view": "wide"
         },
         {
           "place": "court",
-          "beat": "queue",
           "mood": "happy",
-          "crowd": 45
+          "crowd": 10,
+          "things": [
+            "basketball"
+          ],
+          "view": "wide"
         }
       ]
     },
@@ -236,13 +262,15 @@
       "toon": [
         {
           "place": "office",
-          "beat": "phone",
-          "mood": "laugh",
-          "brand": {
-            "name": "Dallas",
-            "bg": "#00538c",
-            "fg": "#ffffff"
-          }
+          "mood": "relief",
+          "things": [
+            "phone"
+          ],
+          "card": {
+            "text": "DALLAS",
+            "kind": "sign"
+          },
+          "view": "ms"
         }
       ]
     }

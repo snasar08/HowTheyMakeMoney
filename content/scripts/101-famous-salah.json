@@ -38,7 +38,28 @@
         ],
         "stat": "£155 MILLION",
         "stat_sub": "a two-year offer, 2023"
-      }
+      },
+      "toon": [
+        {
+          "place": "boardroom",
+          "beat": "walk",
+          "mood": "stern",
+          "things": [
+            "cashstack"
+          ],
+          "card": {
+            "text": "£155M",
+            "kind": "paper",
+            "sub": "2 YEARS"
+          }
+        },
+        {
+          "place": "pitch",
+          "beat": "walk",
+          "mood": "proud",
+          "view": "ws"
+        }
+      ]
     },
     {
       "narration": "As a kid, he missed school just to get to practice. Three hours away.",
@@ -52,7 +73,31 @@
         ],
         "stat": "3 HOURS",
         "stat_sub": "to get to training, age 14"
-      }
+      },
+      "toon": [
+        {
+          "place": "classroom",
+          "beat": "walk",
+          "mood": "nervous",
+          "things": [
+            "books"
+          ],
+          "view": "ms"
+        },
+        {
+          "place": "street",
+          "beat": "drive",
+          "mood": "nervous",
+          "things": [
+            "bus"
+          ],
+          "card": {
+            "text": "3 HOURS",
+            "kind": "sign",
+            "sub": "AWAY"
+          }
+        }
+      ]
     },
     {
       "narration": "Then a big club bought him. But barely played him.",
@@ -66,7 +111,32 @@
         ],
         "stat": "£11 MILLION",
         "stat_sub": "Chelsea, 2014"
-      }
+      },
+      "toon": [
+        {
+          "place": "street",
+          "beat": "sign",
+          "mood": "happy",
+          "things": [
+            "stadium"
+          ],
+          "card": {
+            "text": "BIG CLUB",
+            "kind": "sign"
+          },
+          "view": "wide"
+        },
+        {
+          "place": "pitch",
+          "beat": "walk",
+          "mood": "sad",
+          "card": {
+            "text": "BARELY PLAYED",
+            "kind": "sign"
+          },
+          "view": "ms"
+        }
+      ]
     },
     {
       "narration": "Then Liverpool paid a club record. 36.9 million.",
@@ -81,7 +151,35 @@
         "stat": "£36.9 MILLION",
         "stat_sub": "club record, 2017",
         "hud": "£36.9M"
-      }
+      },
+      "toon": [
+        {
+          "place": "boardroom",
+          "beat": "sign",
+          "mood": "excited",
+          "things": [
+            "coins"
+          ],
+          "brand": {
+            "name": "LIVERPOOL",
+            "bg": "#c8102e",
+            "fg": "#ffffff"
+          }
+        },
+        {
+          "place": "mansion",
+          "beat": "money",
+          "mood": "shock",
+          "things": [
+            "cashstack"
+          ],
+          "card": {
+            "text": "36.9M",
+            "kind": "screen",
+            "sub": "CLUB RECORD"
+          }
+        }
+      ]
     },
     {
       "narration": "His first season? 32 goals. A record back then.",
@@ -96,7 +194,44 @@
         ],
         "stat": "32 GOALS",
         "stat_sub": "a 38-game record in 2018"
-      }
+      },
+      "toon": [
+        {
+          "place": "pitch",
+          "beat": "walk",
+          "mood": "excited",
+          "crowd": 40,
+          "view": "ws"
+        },
+        {
+          "place": "pitch",
+          "beat": "walk",
+          "mood": "proud",
+          "things": [
+            "soccerball"
+          ],
+          "card": {
+            "text": "32 GOALS",
+            "kind": "screen",
+            "sub": "FIRST SEASON"
+          }
+        },
+        {
+          "place": "pitch",
+          "beat": "walk",
+          "mood": "proud",
+          "action": "cheer",
+          "crowd": 50,
+          "things": [
+            "trophy"
+          ],
+          "card": {
+            "text": "RECORD",
+            "kind": "sign",
+            "sub": "BACK THEN"
+          }
+        }
+      ]
     }
   ],
   "sources": [

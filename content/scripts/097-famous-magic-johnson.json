@@ -37,7 +37,37 @@
         ],
         "stat": "16 TITLES",
         "stat_sub": "10 of them as an owner"
-      }
+      },
+      "toon": [
+        {
+          "place": "court",
+          "beat": "walk",
+          "mood": "proud",
+          "action": "cheer",
+          "crowd": 50,
+          "things": [
+            "trophy",
+            "medal"
+          ],
+          "card": {
+            "text": "16 TITLES",
+            "kind": "screen"
+          }
+        },
+        {
+          "place": "boardroom",
+          "beat": "walk",
+          "mood": "proud",
+          "things": [
+            "trophy"
+          ],
+          "view": "ws",
+          "card": {
+            "text": "10 AS OWNER",
+            "kind": "paper"
+          }
+        }
+      ]
     },
     {
       "narration": "As a player, he signed sports' richest deal. 25 million dollars, for 25 years.",
@@ -51,7 +81,35 @@
         ],
         "stat": "$25 MILLION",
         "stat_sub": "25 years, signed 1981"
-      }
+      },
+      "toon": [
+        {
+          "place": "court",
+          "beat": "sign",
+          "mood": "proud",
+          "things": [
+            "basketball"
+          ],
+          "card": {
+            "text": "RICHEST DEAL",
+            "kind": "sign",
+            "sub": "IN SPORTS"
+          }
+        },
+        {
+          "place": "boardroom",
+          "beat": "sign",
+          "mood": "happy",
+          "things": [
+            "cashstack"
+          ],
+          "card": {
+            "text": "$25M",
+            "kind": "paper",
+            "sub": "25 YEARS"
+          }
+        }
+      ]
     },
     {
       "narration": "But he kept buying. First, a slice of his own team.",
@@ -65,7 +123,31 @@
         ],
         "stat": "HIS OWN TEAM",
         "stat_sub": "4% of the Lakers"
-      }
+      },
+      "toon": [
+        {
+          "place": "street",
+          "beat": "walk",
+          "mood": "scheme",
+          "things": [
+            "briefcase"
+          ],
+          "view": "ws"
+        },
+        {
+          "place": "court",
+          "beat": "walk",
+          "mood": "proud",
+          "things": [
+            "hoop"
+          ],
+          "card": {
+            "text": "A SLICE",
+            "kind": "sign",
+            "sub": "OWN TEAM"
+          }
+        }
+      ]
     },
     {
       "narration": "Then the Dodgers, for 2 billion. Then a piece of an NFL team.",
@@ -79,7 +161,36 @@
         ],
         "stat": "$2 BILLION",
         "stat_sub": "Dodgers 2012, then an NFL stake"
-      }
+      },
+      "toon": [
+        {
+          "place": "field",
+          "beat": "money",
+          "mood": "excited",
+          "things": [
+            "cashstack"
+          ],
+          "card": {
+            "text": "$2B",
+            "kind": "screen",
+            "sub": "DODGERS"
+          }
+        },
+        {
+          "place": "pitch",
+          "beat": "walk",
+          "mood": "proud",
+          "things": [
+            "soccerball",
+            "stadium"
+          ],
+          "card": {
+            "text": "NFL",
+            "kind": "sign",
+            "sub": "A PIECE"
+          }
+        }
+      ]
     },
     {
       "narration": "Now Forbes says he's worth 1.6 billion dollars.",
@@ -94,7 +205,23 @@
         "stat": "$1.6 BILLION",
         "stat_sub": "Forbes, 2026",
         "hud": "$1.6B"
-      }
+      },
+      "toon": [
+        {
+          "place": "mansion",
+          "beat": "money",
+          "mood": "proud",
+          "things": [
+            "cashstack",
+            "goldbar"
+          ],
+          "card": {
+            "text": "$1.6B",
+            "kind": "screen",
+            "sub": "FORBES"
+          }
+        }
+      ]
     }
   ],
   "sources": [

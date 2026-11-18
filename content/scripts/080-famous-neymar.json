@@ -49,7 +49,34 @@
           "shoes": "f4f4f4",
           "height": 1.0
         }
-      }
+      },
+      "toon": [
+        {
+          "place": "pitch",
+          "things": [
+            "cashstack"
+          ],
+          "card": {
+            "text": "€222M",
+            "kind": "screen",
+            "sub": "ONE PLAYER"
+          },
+          "beat": "money",
+          "mood": "shock"
+        },
+        {
+          "place": "stage",
+          "things": [
+            "trophy",
+            "crown"
+          ],
+          "card": {
+            "text": "WORLD RECORD",
+            "kind": "sign"
+          },
+          "mood": "proud"
+        }
+      ]
     },
     {
       "narration": "At 18, an English club bid about 20 million pounds. But he stayed in Brazil.",
@@ -75,7 +102,34 @@
           "shoes": "f4f4f4",
           "height": 1.0
         }
-      }
+      },
+      "toon": [
+        {
+          "place": "boardroom",
+          "things": [
+            "letter",
+            "cash"
+          ],
+          "card": {
+            "text": "£20M BID",
+            "kind": "paper",
+            "sub": "AGE 18"
+          },
+          "mood": "scheme"
+        },
+        {
+          "place": "pitch",
+          "things": [
+            "soccerball"
+          ],
+          "card": {
+            "text": "BRAZIL",
+            "kind": "sign"
+          },
+          "mood": "proud",
+          "action": "run"
+        }
+      ]
     },
     {
       "narration": "Then Barcelona. Their doctor said he might need to gain weight.",
@@ -101,7 +155,34 @@
           "shoes": "f4f4f4",
           "height": 1.0
         }
-      }
+      },
+      "toon": [
+        {
+          "place": "pitch",
+          "things": [
+            "stadium"
+          ],
+          "brand": {
+            "name": "BARCELONA",
+            "bg": "#a50044",
+            "fg": "#edbb00"
+          },
+          "beat": "sign",
+          "mood": "excited",
+          "crowd": 40
+        },
+        {
+          "place": "lab",
+          "things": [
+            "chart"
+          ],
+          "card": {
+            "text": "GAIN WEIGHT",
+            "kind": "paper"
+          },
+          "mood": "nervous"
+        }
+      ]
     },
     {
       "narration": "So they set his price at 222 million. Sounds safe. Nobody pays that.",
@@ -128,7 +209,34 @@
           "shoes": "f4f4f4",
           "height": 1.0
         }
-      }
+      },
+      "toon": [
+        {
+          "place": "boardroom",
+          "things": [
+            "briefcase",
+            "cashstack"
+          ],
+          "card": {
+            "text": "€222M",
+            "kind": "flip",
+            "sub": "HIS PRICE"
+          },
+          "mood": "scheme"
+        },
+        {
+          "place": "mansion",
+          "mood": "calm",
+          "view": "face"
+        },
+        {
+          "place": "office",
+          "things": [
+            "cashstack"
+          ],
+          "mood": "dazed"
+        }
+      ]
     },
     {
       "narration": "But in 2017, a club in Paris paid it. All of it.",
@@ -156,7 +264,37 @@
           "shoes": "f4f4f4",
           "height": 1.0
         }
-      }
+      },
+      "toon": [
+        {
+          "place": "showroom",
+          "things": [
+            "cashstack",
+            "plane"
+          ],
+          "card": {
+            "text": "2017",
+            "kind": "paper",
+            "sub": "PARIS CLUB"
+          },
+          "beat": "money",
+          "mood": "excited"
+        },
+        {
+          "place": "pitch",
+          "things": [
+            "cashstack",
+            "goldbar"
+          ],
+          "card": {
+            "text": "€222M PAID",
+            "kind": "screen"
+          },
+          "beat": "money",
+          "mood": "proud",
+          "view": "low"
+        }
+      ]
     }
   ],
   "sources": [

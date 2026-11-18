@@ -50,27 +50,21 @@
       },
       "toon": [
         {
-          "place": "office",
-          "beat": "logo",
-          "mood": "nervous",
-          "brand": {
-            "name": "Meta",
-            "bg": "#0866ff",
-            "fg": "#ffffff",
-            "icon": "globe"
-          },
+          "place": "track",
+          "mood": "shock",
           "things": [
-            "chatbot"
-          ]
+            "robot"
+          ],
+          "view": "wide"
         },
         {
           "place": "street",
-          "beat": "queue",
           "mood": "shock",
-          "crowd": 35,
-          "props": [
+          "crowd": 25,
+          "things": [
             "laptop"
-          ]
+          ],
+          "view": "wide"
         }
       ]
     },
@@ -88,28 +82,36 @@
       "toon": [
         {
           "place": "office",
-          "beat": "walk",
           "mood": "scheme",
-          "props": [
-            "laptop"
-          ]
+          "card": {
+            "text": "2023",
+            "kind": "flip",
+            "sub": "YEAR"
+          },
+          "view": "ms"
         },
         {
-          "place": "street",
-          "beat": "money",
+          "place": "stall",
           "mood": "laugh",
-          "action": "cheer"
+          "action": "cheer",
+          "things": [
+            "robot",
+            "box"
+          ],
+          "card": {
+            "text": "FREE",
+            "kind": "sign"
+          },
+          "view": "ms"
         },
         {
-          "place": "servers",
-          "beat": "logo",
+          "place": "lab",
           "mood": "proud",
-          "brand": {
-            "name": "Llama",
-            "bg": "#0866ff",
-            "fg": "#ffffff",
-            "icon": "brain"
-          }
+          "card": {
+            "text": "LLAMA",
+            "kind": "sign"
+          },
+          "view": "ms"
         }
       ]
     },
@@ -126,29 +128,28 @@
       },
       "toon": [
         {
-          "place": "street",
-          "beat": "queue",
+          "place": "office",
           "mood": "happy",
-          "crowd": 45,
-          "props": [
-            "laptop"
-          ]
-        },
-        {
-          "place": "office",
-          "beat": "walk",
-          "mood": "stern"
-        },
-        {
-          "place": "office",
-          "beat": "money",
-          "mood": "scheme",
-          "props": [
-            "check"
-          ],
+          "crowd": 25,
           "things": [
-            "robot"
-          ]
+            "laptop",
+            "globe"
+          ],
+          "view": "wide"
+        },
+        {
+          "place": "boardroom",
+          "mood": "stern",
+          "view": "cu"
+        },
+        {
+          "place": "classroom",
+          "mood": "scheme",
+          "things": [
+            "books",
+            "lightbulb"
+          ],
+          "view": "ms"
         }
       ]
     },
@@ -165,29 +166,30 @@
       },
       "toon": [
         {
-          "place": "office",
-          "beat": "walk",
+          "place": "boardroom",
           "mood": "proud",
-          "crowd": 12
-        },
-        {
-          "place": "servers",
-          "beat": "walk",
-          "mood": "nervous",
           "things": [
-            "factory"
-          ]
+            "letter"
+          ],
+          "view": "ms"
         },
         {
-          "place": "servers",
-          "beat": "sign",
+          "place": "garage",
+          "mood": "shock",
+          "things": [
+            "gpu",
+            "laptop"
+          ],
+          "view": "ms"
+        },
+        {
+          "place": "lab",
           "mood": "excited",
-          "brand": {
-            "name": "Meta AI",
-            "bg": "#0866ff",
-            "fg": "#ffffff",
-            "icon": "chip"
-          }
+          "things": [
+            "factory",
+            "gpu"
+          ],
+          "view": "wide"
         }
       ]
     },
@@ -205,31 +207,28 @@
       "toon": [
         {
           "place": "street",
-          "beat": "walk",
-          "mood": "nervous"
+          "mood": "nervous",
+          "things": [
+            "lightbulb"
+          ],
+          "view": "ms"
         },
         {
-          "place": "street",
-          "beat": "sign",
+          "place": "field",
           "mood": "scheme",
-          "brand": {
-            "name": "Meta Power",
-            "bg": "#0866ff",
-            "fg": "#ffffff",
-            "icon": "bolt"
-          }
+          "things": [
+            "factory",
+            "arrowup"
+          ],
+          "view": "wide"
         },
         {
-          "place": "street",
-          "beat": "logo",
+          "place": "office",
           "mood": "excited",
-          "brand": {
-            "name": "Meta Glasses",
-            "bg": "#111111",
-            "fg": "#ffffff",
-            "icon": "globe"
-          },
-          "crowd": 20
+          "things": [
+            "camera"
+          ],
+          "view": "ms"
         }
       ]
     },
@@ -246,21 +245,18 @@
       },
       "toon": [
         {
-          "place": "office",
-          "beat": "walk",
-          "mood": "scheme"
+          "place": "boardroom",
+          "mood": "scheme",
+          "view": "cu"
         },
         {
           "place": "space",
-          "beat": "logo",
           "mood": "laugh",
-          "action": "cheer",
-          "brand": {
-            "name": "Meta Orbit",
-            "bg": "#0b2a6f",
-            "fg": "#ffffff",
-            "icon": "sun"
-          }
+          "things": [
+            "gpu",
+            "satellite"
+          ],
+          "view": "wide"
         }
       ]
     },
@@ -278,26 +274,25 @@
       "toon": [
         {
           "place": "street",
-          "beat": "queue",
           "mood": "proud",
           "crowd": 60,
           "things": [
-            "chatbot"
-          ]
+            "robot"
+          ],
+          "card": {
+            "text": "3 BILLION",
+            "kind": "sign"
+          },
+          "view": "wide"
         },
         {
-          "place": "street",
-          "beat": "sign",
+          "place": "stall",
           "mood": "laugh",
-          "brand": {
-            "name": "Meta",
-            "bg": "#0866ff",
-            "fg": "#ffffff",
-            "icon": "globe"
-          },
           "things": [
-            "chatbot"
-          ]
+            "box",
+            "heart"
+          ],
+          "view": "ms"
         }
       ]
     }

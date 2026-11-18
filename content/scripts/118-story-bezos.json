@@ -49,19 +49,30 @@
       },
       "toon": [
         {
-          "place": "office",
+          "place": "boardroom",
           "beat": "walk",
           "mood": "scheme",
-          "action": "walk",
-          "props": [
-            "laptop"
-          ]
+          "things": [
+            "briefcase"
+          ],
+          "card": {
+            "text": "WALL STREET",
+            "kind": "sign"
+          },
+          "view": "ws"
         },
         {
           "place": "office",
-          "beat": "clock",
+          "beat": "walk",
           "mood": "excited",
-          "action": "stand"
+          "things": [
+            "laptop",
+            "books"
+          ],
+          "card": {
+            "text": "1994",
+            "kind": "flip"
+          }
         }
       ]
     },
@@ -80,23 +91,30 @@
       },
       "toon": [
         {
-          "place": "road",
+          "place": "street",
           "beat": "drive",
           "mood": "happy",
-          "brand": {
-            "name": "Amazon",
-            "bg": "#232f3e",
-            "fg": "#ff9900",
-            "icon": "cart"
+          "things": [
+            "car"
+          ],
+          "card": {
+            "text": "NY TO SEATTLE",
+            "kind": "sign",
+            "sub": "ROAD TRIP"
           }
         },
         {
           "place": "garage",
           "beat": "walk",
           "mood": "proud",
-          "props": [
-            "boxes"
-          ]
+          "action": "work",
+          "things": [
+            "box"
+          ],
+          "card": {
+            "text": "RENTED GARAGE",
+            "kind": "sign"
+          }
         }
       ]
     },
@@ -116,22 +134,33 @@
       },
       "toon": [
         {
-          "place": "street",
-          "beat": "logo",
+          "place": "stall",
+          "beat": "walk",
           "mood": "happy",
-          "brand": {
-            "name": "Amazon",
-            "bg": "#232f3e",
-            "fg": "#ff9900",
-            "icon": "cart"
+          "things": [
+            "books",
+            "laptop"
+          ],
+          "card": {
+            "text": "BOOKSTORE",
+            "kind": "sign",
+            "sub": "ONLINE"
           }
         },
         {
-          "place": "street",
+          "place": "mansion",
           "beat": "money",
           "mood": "laugh",
           "action": "cheer",
-          "crowd": 20
+          "crowd": 20,
+          "things": [
+            "cashstack"
+          ],
+          "card": {
+            "text": "GOES PUBLIC",
+            "kind": "screen",
+            "sub": "3 YEARS LATER"
+          }
         }
       ]
     },
@@ -151,25 +180,37 @@
           "place": "street",
           "beat": "walk",
           "mood": "nervous",
-          "props": [
-            "boxes"
-          ]
+          "things": [
+            "books",
+            "crate"
+          ],
+          "view": "ws"
         },
         {
-          "place": "servers",
+          "place": "lab",
           "beat": "walk",
           "mood": "scheme",
-          "action": "walk"
+          "things": [
+            "laptop",
+            "gpu"
+          ],
+          "card": {
+            "text": "2002",
+            "kind": "flip",
+            "sub": "RENT COMPUTERS"
+          }
         },
         {
-          "place": "servers",
-          "beat": "logo",
+          "place": "lab",
+          "beat": "sign",
           "mood": "proud",
+          "things": [
+            "chip"
+          ],
           "brand": {
             "name": "AWS",
             "bg": "#232f3e",
-            "fg": "#ff9900",
-            "icon": "chip"
+            "fg": "#ff9900"
           }
         }
       ]
@@ -189,27 +230,30 @@
       },
       "toon": [
         {
-          "place": "street",
-          "beat": "logo",
+          "place": "showroom",
+          "beat": "sign",
           "mood": "happy",
+          "things": [
+            "books"
+          ],
           "brand": {
             "name": "Kindle",
             "bg": "#1a1a1a",
-            "fg": "#ffffff",
-            "icon": "play"
+            "fg": "#ffffff"
           }
         },
         {
-          "place": "street",
-          "beat": "money",
+          "place": "boardroom",
+          "beat": "sign",
           "mood": "scheme",
-          "props": [
-            "check"
+          "things": [
+            "cashstack",
+            "briefcase"
           ],
-          "brand": {
-            "name": "Whole Foods",
-            "bg": "#00674b",
-            "fg": "#ffffff"
+          "card": {
+            "text": "$13.7B",
+            "kind": "paper",
+            "sub": "WHOLE FOODS"
           }
         }
       ]
@@ -229,21 +273,31 @@
       },
       "toon": [
         {
-          "place": "space",
-          "beat": "logo",
+          "place": "lab",
+          "beat": "sign",
           "mood": "excited",
+          "things": [
+            "rocket"
+          ],
           "brand": {
             "name": "Blue Origin",
             "bg": "#0b2a6f",
-            "fg": "#ffffff",
-            "icon": "rocket"
+            "fg": "#ffffff"
           }
         },
         {
           "place": "space",
           "beat": "walk",
           "mood": "laugh",
-          "action": "cheer"
+          "action": "cheer",
+          "things": [
+            "rocket"
+          ],
+          "card": {
+            "text": "66 MILES",
+            "kind": "sign",
+            "sub": "IN 2021"
+          }
         }
       ]
     },
@@ -262,16 +316,29 @@
       },
       "toon": [
         {
-          "place": "street",
+          "place": "mansion",
           "beat": "money",
-          "mood": "proud",
-          "crowd": 10
+          "mood": "shock",
+          "things": [
+            "cashstack",
+            "factory"
+          ],
+          "card": {
+            "text": "$716.9B",
+            "kind": "screen",
+            "sub": "A YEAR"
+          }
         },
         {
           "place": "street",
           "beat": "queue",
-          "mood": "laugh",
-          "crowd": 40
+          "mood": "proud",
+          "crowd": 60,
+          "card": {
+            "text": "1.5M WORKERS",
+            "kind": "sign"
+          },
+          "view": "wide"
         }
       ]
     },
@@ -291,17 +358,14 @@
       "toon": [
         {
           "place": "garage",
-          "beat": "sign",
+          "beat": "walk",
           "mood": "proud",
-          "props": [
-            "boxes"
+          "action": "work",
+          "things": [
+            "books",
+            "crate"
           ],
-          "brand": {
-            "name": "Amazon",
-            "bg": "#232f3e",
-            "fg": "#ff9900",
-            "icon": "cart"
-          }
+          "view": "ms"
         }
       ]
     }

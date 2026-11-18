@@ -37,7 +37,23 @@
         ],
         "stat": "$1.1 BILLION",
         "stat_sub": "Forbes, August 2026"
-      }
+      },
+      "toon": [
+        {
+          "place": "mansion",
+          "beat": "money",
+          "mood": "proud",
+          "things": [
+            "cashstack",
+            "goldbar"
+          ],
+          "card": {
+            "text": "$1.1B",
+            "kind": "screen",
+            "sub": "WORTH"
+          }
+        }
+      ]
     },
     {
       "narration": "As a kid, he just fetched balls at his hometown tournament.",
@@ -51,7 +67,21 @@
         ],
         "stat": "BALL BOY",
         "stat_sub": "hometown event, Basel, 1992"
-      }
+      },
+      "toon": [
+        {
+          "place": "court",
+          "beat": "walk",
+          "mood": "calm",
+          "crowd": 15,
+          "card": {
+            "text": "BALL BOY",
+            "kind": "sign",
+            "sub": "HOMETOWN"
+          },
+          "view": "ws"
+        }
+      ]
     },
     {
       "narration": "Then he won Wimbledon. His first major, at 21.",
@@ -65,7 +95,37 @@
         ],
         "stat": "FIRST MAJOR",
         "stat_sub": "Wimbledon, age 21"
-      }
+      },
+      "toon": [
+        {
+          "place": "court",
+          "beat": "walk",
+          "mood": "excited",
+          "action": "cheer",
+          "crowd": 50,
+          "things": [
+            "trophy"
+          ],
+          "card": {
+            "text": "WIMBLEDON",
+            "kind": "sign"
+          }
+        },
+        {
+          "place": "court",
+          "beat": "walk",
+          "mood": "proud",
+          "things": [
+            "medal"
+          ],
+          "card": {
+            "text": "AGE 21",
+            "kind": "flip",
+            "sub": "FIRST MAJOR"
+          },
+          "view": "ws"
+        }
+      ]
     },
     {
       "narration": "But prize money wasn't the big part. One clothing deal reportedly paid 300 million.",
@@ -80,7 +140,31 @@
         "stat": "$300 MILLION",
         "stat_sub": "reported, 10 years, 2018",
         "hud": "$300M"
-      }
+      },
+      "toon": [
+        {
+          "place": "boardroom",
+          "beat": "walk",
+          "mood": "scheme",
+          "things": [
+            "coins"
+          ],
+          "view": "ms"
+        },
+        {
+          "place": "showroom",
+          "beat": "sign",
+          "mood": "happy",
+          "things": [
+            "cashstack"
+          ],
+          "card": {
+            "text": "$300M",
+            "kind": "paper",
+            "sub": "CLOTHING DEAL"
+          }
+        }
+      ]
     },
     {
       "narration": "Then he topped Forbes' highest-paid athletes. The first tennis player ever.",
@@ -95,7 +179,34 @@
         "stat": "NO. 1",
         "stat_sub": "Forbes highest-paid, 2020",
         "hud": "$1.1B"
-      }
+      },
+      "toon": [
+        {
+          "place": "mansion",
+          "beat": "walk",
+          "mood": "proud",
+          "things": [
+            "trophy"
+          ],
+          "card": {
+            "text": "FORBES",
+            "kind": "screen",
+            "sub": "HIGHEST-PAID"
+          }
+        },
+        {
+          "place": "court",
+          "beat": "walk",
+          "mood": "proud",
+          "action": "cheer",
+          "crowd": 40,
+          "card": {
+            "text": "1ST EVER",
+            "kind": "flip",
+            "sub": "TENNIS PLAYER"
+          }
+        }
+      ]
     }
   ],
   "sources": [

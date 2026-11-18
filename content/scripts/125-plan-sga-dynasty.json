@@ -64,29 +64,31 @@
       "toon": [
         {
           "place": "court",
-          "beat": "walk",
           "mood": "calm",
-          "crowd": 10
+          "view": "ms"
         },
         {
-          "place": "street",
-          "beat": "walk",
+          "place": "stage",
           "mood": "happy",
-          "action": "cheer",
-          "crowd": 40
+          "card": {
+            "text": "11TH PICK",
+            "kind": "sign",
+            "sub": "TRADED TWICE"
+          },
+          "view": "ms"
         },
         {
           "place": "court",
-          "beat": "sign",
           "mood": "laugh",
-          "action": "cheer",
-          "crowd": 40,
-          "brand": {
-            "name": "Thunder",
-            "bg": "#007ac1",
-            "fg": "#ffffff",
-            "icon": "bolt"
-          }
+          "things": [
+            "trophy",
+            "ring"
+          ],
+          "card": {
+            "text": "MVP + TITLE",
+            "kind": "sign"
+          },
+          "view": "wide"
         }
       ]
     },
@@ -106,24 +108,28 @@
       "toon": [
         {
           "place": "court",
-          "beat": "walk",
-          "mood": "stern"
-        },
-        {
-          "place": "office",
-          "beat": "walk",
-          "mood": "scheme"
-        },
-        {
-          "place": "office",
-          "beat": "money",
-          "mood": "proud",
-          "props": [
-            "check"
-          ],
+          "mood": "stern",
           "things": [
             "ring"
-          ]
+          ],
+          "view": "ms"
+        },
+        {
+          "place": "throne",
+          "mood": "scheme",
+          "things": [
+            "crown"
+          ],
+          "view": "ms"
+        },
+        {
+          "place": "office",
+          "mood": "proud",
+          "crowd": 5,
+          "things": [
+            "letter"
+          ],
+          "view": "ms"
         }
       ]
     },
@@ -143,15 +149,18 @@
       "toon": [
         {
           "place": "court",
-          "beat": "queue",
           "mood": "shock",
-          "crowd": 30
+          "things": [
+            "hoop",
+            "fort_fence"
+          ],
+          "view": "ms"
         },
         {
           "place": "court",
-          "beat": "walk",
           "mood": "scheme",
-          "action": "run"
+          "action": "shoot",
+          "view": "wide"
         }
       ]
     },
@@ -170,27 +179,27 @@
       },
       "toon": [
         {
-          "place": "street",
-          "beat": "phone",
+          "place": "stage",
           "mood": "happy",
-          "crowd": 20
+          "things": [
+            "phone"
+          ],
+          "view": "ms"
         },
         {
-          "place": "street",
-          "beat": "queue",
+          "place": "classroom",
           "mood": "laugh",
-          "crowd": 45
+          "crowd": 20,
+          "view": "wide"
         },
         {
-          "place": "street",
-          "beat": "logo",
+          "place": "showroom",
           "mood": "excited",
-          "brand": {
-            "name": "SGA",
-            "bg": "#111111",
-            "fg": "#ffffff",
-            "icon": "star"
-          }
+          "things": [
+            "shoe",
+            "box"
+          ],
+          "view": "ms"
         }
       ]
     },
@@ -209,21 +218,23 @@
       },
       "toon": [
         {
-          "place": "office",
-          "beat": "sign",
+          "place": "field",
           "mood": "proud",
-          "brand": {
-            "name": "Thunder",
-            "bg": "#007ac1",
-            "fg": "#ffffff",
-            "icon": "bolt"
-          }
+          "things": [
+            "stadium",
+            "cashstack"
+          ],
+          "card": {
+            "text": "OKLAHOMA CITY",
+            "kind": "sign"
+          },
+          "view": "wide"
         },
         {
           "place": "court",
-          "beat": "walk",
           "mood": "laugh",
-          "crowd": 25
+          "crowd": 12,
+          "view": "low"
         }
       ]
     },
@@ -242,19 +253,25 @@
       },
       "toon": [
         {
-          "place": "court",
-          "beat": "clock",
-          "mood": "scheme"
+          "place": "office",
+          "mood": "scheme",
+          "things": [
+            "lightbulb"
+          ],
+          "view": "ms"
         },
         {
           "place": "court",
-          "beat": "money",
           "mood": "laugh",
-          "action": "cheer",
-          "crowd": 40,
           "things": [
+            "trophy",
             "ring"
-          ]
+          ],
+          "card": {
+            "text": "5 IN A ROW",
+            "kind": "flip"
+          },
+          "view": "wide"
         }
       ]
     },
@@ -273,16 +290,17 @@
       },
       "toon": [
         {
-          "place": "court",
-          "beat": "sign",
+          "place": "throne",
           "mood": "proud",
-          "brand": {
-            "name": "Thunder",
-            "bg": "#007ac1",
-            "fg": "#ffffff",
-            "icon": "bolt"
+          "things": [
+            "crown",
+            "trophy"
+          ],
+          "card": {
+            "text": "11TH PICK",
+            "kind": "sign"
           },
-          "crowd": 30
+          "view": "ms"
         }
       ]
     }

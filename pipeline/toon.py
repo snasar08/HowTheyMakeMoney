@@ -267,7 +267,7 @@ def make_plan(script: dict, recorded: dict | None = None) -> dict:
             out.append({"si": i, "a": a, "n": m, "frLo": lo + cuts[j], "light": lt[k], "set": v.get("set", "city"),
                         "action": d.get("action", v.get("action", "idle")), "crowd": int(d.get("crowd", v.get("crowd", 0)) or 0),
                         "props": d.get("props") or [], "beat": d.get("beat", "walk"), "mood": d.get("mood", "happy"),
-                        **({"place": place} if place in PLACE_NAMES else {}),
+                        **({"place": place} if place in PLACE_NAMES or place in AH_ALL_SETS or place in AH_SET else {}),
                         **({"loc": {"bridge": 0, "street": 1, "quay": 2}[place]} if place in ("bridge", "street", "quay") else {}),
                         **({"brand": _brand(d["brand"])} if d.get("brand") else {"brand": _brand(v["brand"])} if v.get("brand") else {}),
                         # Nov 15 (afterhour style): a text card in the scene (date sign, money screen that flips, headline,
@@ -312,13 +312,33 @@ AH_THING = {"shoe": "shoe", "springshoe": "springshoe", "sneakerbus": "bus", "bu
             "idea": "lightbulb", "factory": "factory", "stadium": "stadium", "plant": "factory", "car": "car", "truck": "truck",
             "trophy": "trophy", "cash": "cashstack", "boxes": "box", "check": "letter", "rocket": "rocket", "ball": "basketball", "mic": "mic",
             "laptop": "laptop", "burger": "burger", "controller": "controller", "ereader": "phone", "snack": "burger", "poster": "newspaper"}
+def _ts_union(path: str, typ: str) -> set:
+    """the names a TS union type lists (SetName / ThingName), so a script may ask for any set or object directly"""
+    try:
+        src = (Path(__file__).resolve().parent.parent / path).read_text(encoding="utf-8")
+        m = re.search(r"export type " + typ + r" =(.*?);", src, re.S)
+        return set(re.findall(r'"([a-z0-9_]+)"', m.group(1))) if m else set()
+    except OSError:
+        return set()
+
+
+AH_ALL_SETS = _ts_union("toon/src/videos/afterhour/sets.ts", "SetName")        # Nov 18: a toon "place" may name any 3D set
+AH_ALL_THINGS = _ts_union("toon/src/videos/afterhour/things3d.ts", "ThingName")  # and "things" any 3D object
 AH_BIG = {"car", "truck", "bus", "rocket", "factory", "stadium", "plane", "yacht", "house"}
 AH_CROWD = [{"body": c, "hat": "hair", "hair": h} for c, h in (("#e86a6a", "#3a2a20"), ("#5ad0d8", "#8a5a2a"), ("#8bc34a", "#1a1a1a"),
             ("#b48ae0", "#3a2a20"), ("#f2a33a", "#5a3b2a"), ("#4a7bd0", "#1a1a1a"))]
 
 
 _AH_MODELS: dict | None = None
-_AH_STOP = {"sign", "signs", "signed", "signing", "deal", "deals", "the", "a", "an", "and", "or", "of", "to", "in", "on", "it", "is", "was", "he", "she", "they", "his", "her", "this", "that", "with", "for", "at", "by", "as", "be", "so", "but"}
+_AH_STOP = {"sign", "signs", "signed", "signing", "deal", "deals", "the", "a", "an", "and", "or", "of", "to", "in", "on", "it", "is", "was", "he", "she", "they", "his", "her", "this", "that", "with", "for", "at", "by", "as", "be", "so", "but",
+           # Nov 18 (overnight scene pass): words that mean something else in a story line ("fans" -> ceiling fan, "can" -> tin can,
+           # "cold" -> fridge, "Mickey Mouse" -> computer mouse, "defense", "steps", "stack", "power" ...), and no weapons ever
+           "can", "cold", "fan", "fans", "trash", "waste", "mouse", "bar", "base", "bay", "bend", "catch", "chest", "chop", "counter",
+           "deck", "direction", "display", "fair", "frame", "hole", "hooks", "light", "loot", "pad", "peel", "pot", "power", "present",
+           "ride", "round", "seat", "shed", "signal", "stack", "steps", "storage", "tank", "tube", "wall", "wheel", "wings", "trading",
+           "finance", "business", "corporate", "commercial", "retail", "healthy", "compact", "emergency", "defense", "entrance",
+           "outdoor", "reading", "cooling", "module", "portal", "booster", "logistics", "drawer", "drawers", "remains", "skeleton",
+           "pistol", "rifle", "gunturret", "twinguns", "lasergun", "raygun", "cannon", "knife", "hatchet", "arrest"}
 
 
 def ah_models() -> dict:
@@ -617,7 +637,7 @@ def ah_shots(plan: dict) -> list:
         outro = str(sc.get("line") or "").startswith("(outro)")
         # the set must fit who the Short is about (Ninja: a streamer stood on a soccer pitch): a gamer lives in a screens room,
         # and a non-athlete never gets a sport pitch; a place the story chose on purpose (space, stage, throne ...) stays
-        aset = AH_SET.get(place, "street")
+        aset = AH_SET.get(place) or (place if place in AH_ALL_SETS else "street")
         if (ctx["gamer"] and sc.get("set") == "gaming" and aset in ("street", "beach") + AH_SPORT_SETS) or \
                 ((ctx["famous"] or ctx["gamer"]) and not ctx["athlete"] and aset in AH_SPORT_SETS):
             aset = AH_SCRIPT_SET.get(sc.get("set"), "office") if sc.get("set") != "city" else "office"
@@ -689,6 +709,8 @@ def ah_shots(plan: dict) -> list:
             b = sc["brand"]; cards.append({"text": b["name"].upper(), "kind": "sign", "bg": b.get("bg"), "fg": b.get("fg"), "at": [0.0, top + 0.5, -0.7], "w": 1.0})
         if food_line and not outro and not act and not any(str(t).lower() in ("burger", "snack", "pizza") for t in thing_names) and re.search(r"burger|restaurant|five guys|fast[- ]?food|chain", line_txt, re.I):
             thing_names = ["burger"] + thing_names                  # the burger itself is on screen when the line is about burgers / a burger chain
+        if aset == "pitch" or ctx.get("soccer"):    # Nov 18: soccer gets a soccer ball, never a basketball / American football
+            thing_names = ["soccerball" if str(t) in ("ball", "basketball", "football") else t for t in thing_names]
         things, seen = [], set()
         own = ah_actions.ACT_OWN_PROPS.get(act, set()) if act else set()   # the act brings this prop itself
         if not thing_names and (ctx["gamer"] or ctx["famous"]) and not (sc.get("card") or act):   # Nov 17: show what the line talks about
@@ -702,7 +724,7 @@ def ah_shots(plan: dict) -> list:
             elif ctx["gamer"] and re.search(r"\b(?:games?|play(?:s|ed|ing)?|fortnite|apex|match(?:es)?|ranked|controller)\b", low_l):
                 thing_names = ["controller"]
         for nm in thing_names:          # things + props (+ the object of an act that is switched off)
-            t3 = AH_THING.get(nm)
+            t3 = AH_THING.get(nm) or (nm if nm in AH_ALL_THINGS else None)
             if not t3 or t3 in seen or len(things) >= 2 or nm in own or t3 in own:
                 continue
             seen.add(t3)

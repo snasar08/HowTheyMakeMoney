@@ -37,7 +37,36 @@
         ],
         "stat": "$570 MILLION",
         "stat_sub": "in 15 months"
-      }
+      },
+      "toon": [
+        {
+          "place": "mansion",
+          "beat": "money",
+          "mood": "shock",
+          "things": [
+            "cashstack"
+          ],
+          "card": {
+            "text": "$570M",
+            "kind": "screen",
+            "sub": "570 MILLION"
+          }
+        },
+        {
+          "place": "stall",
+          "beat": "sign",
+          "mood": "proud",
+          "things": [
+            "box"
+          ],
+          "card": {
+            "text": "15 MONTHS",
+            "kind": "sign",
+            "sub": "FIRST 15"
+          },
+          "view": "ws"
+        }
+      ]
     },
     {
       "narration": "It made her the first female musician to become a billionaire.",
@@ -52,7 +81,25 @@
         ],
         "stat": "BILLIONAIRE",
         "stat_sub": "a first for a female musician"
-      }
+      },
+      "toon": [
+        {
+          "place": "stage",
+          "beat": "walk",
+          "mood": "proud",
+          "action": "cheer",
+          "crowd": 30,
+          "things": [
+            "mic",
+            "goldbar"
+          ],
+          "card": {
+            "text": "BILLIONAIRE",
+            "kind": "screen",
+            "sub": "FIRST FEMALE MUSICIAN"
+          }
+        }
+      ]
     },
     {
       "narration": "It started at 15. An audition in Barbados, with two classmates.",
@@ -66,7 +113,34 @@
         ],
         "stat": "AGE 15",
         "stat_sub": "Barbados, 2003"
-      }
+      },
+      "toon": [
+        {
+          "place": "classroom",
+          "beat": "walk",
+          "mood": "calm",
+          "card": {
+            "text": "AGE 15",
+            "kind": "flip",
+            "sub": "BARBADOS"
+          }
+        },
+        {
+          "place": "stage",
+          "beat": "walk",
+          "mood": "excited",
+          "things": [
+            "mic"
+          ],
+          "crowd": 2,
+          "view": "ws",
+          "card": {
+            "text": "AUDITION",
+            "kind": "sign",
+            "sub": "2 CLASSMATES"
+          }
+        }
+      ]
     },
     {
       "narration": "Then 14 number-one hits. But songs weren't the jackpot.",
@@ -81,7 +155,32 @@
         ],
         "stat": "14 NUMBER ONES",
         "stat_sub": "Billboard Hot 100"
-      }
+      },
+      "toon": [
+        {
+          "place": "stage",
+          "beat": "walk",
+          "mood": "excited",
+          "action": "cheer",
+          "crowd": 40,
+          "things": [
+            "trophy"
+          ],
+          "card": {
+            "text": "14 NO.1 HITS",
+            "kind": "screen"
+          }
+        },
+        {
+          "place": "boardroom",
+          "beat": "money",
+          "mood": "scheme",
+          "things": [
+            "coins"
+          ],
+          "view": "ms"
+        }
+      ]
     },
     {
       "narration": "In 2017, she launched makeup for every skin tone.",
@@ -95,7 +194,23 @@
         ],
         "stat": "SEPT 2017",
         "stat_sub": "makeup for every skin tone"
-      }
+      },
+      "toon": [
+        {
+          "place": "stall",
+          "beat": "sign",
+          "mood": "proud",
+          "crowd": 20,
+          "things": [
+            "box"
+          ],
+          "card": {
+            "text": "2017",
+            "kind": "flip",
+            "sub": "EVERY SKIN TONE"
+          }
+        }
+      ]
     },
     {
       "narration": "15 months later: 570 million dollars in sales.",
@@ -111,7 +226,23 @@
         "stat": "$570 MILLION",
         "stat_sub": "Forbes, 2018",
         "hud": "$570M"
-      }
+      },
+      "toon": [
+        {
+          "place": "showroom",
+          "beat": "money",
+          "mood": "shock",
+          "things": [
+            "cashstack",
+            "box"
+          ],
+          "card": {
+            "text": "$570M",
+            "kind": "screen",
+            "sub": "IN SALES"
+          }
+        }
+      ]
     }
   ],
   "sources": [

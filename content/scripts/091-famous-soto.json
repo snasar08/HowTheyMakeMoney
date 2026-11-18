@@ -52,7 +52,37 @@
           ],
           "height": 1.02
         }
-      }
+      },
+      "toon": [
+        {
+          "place": "boardroom",
+          "things": [
+            "letter",
+            "cashstack"
+          ],
+          "card": {
+            "text": "$765M",
+            "kind": "screen",
+            "sub": "HIS DEAL"
+          },
+          "beat": "money",
+          "mood": "excited"
+        },
+        {
+          "place": "stage",
+          "things": [
+            "trophy",
+            "crown"
+          ],
+          "card": {
+            "text": "BIGGEST EVER",
+            "kind": "sign",
+            "sub": "IN SPORTS"
+          },
+          "mood": "proud",
+          "crowd": 40
+        }
+      ]
     },
     {
       "narration": "But at 16? Just a 1.5 million dollar bonus.",
@@ -79,7 +109,30 @@
           ],
           "height": 1.02
         }
-      }
+      },
+      "toon": [
+        {
+          "place": "field",
+          "card": {
+            "text": "AGE 16",
+            "kind": "flip"
+          },
+          "mood": "nervous",
+          "view": "ms"
+        },
+        {
+          "place": "office",
+          "things": [
+            "cash"
+          ],
+          "card": {
+            "text": "$1.5M",
+            "kind": "paper",
+            "sub": "BONUS"
+          },
+          "mood": "calm"
+        }
+      ]
     },
     {
       "narration": "Then he became the youngest player in the majors.",
@@ -106,7 +159,22 @@
           ],
           "height": 1.02
         }
-      }
+      },
+      "toon": [
+        {
+          "place": "field",
+          "things": [
+            "medal"
+          ],
+          "card": {
+            "text": "YOUNGEST",
+            "kind": "flip",
+            "sub": "IN THE MAJORS"
+          },
+          "mood": "proud",
+          "crowd": 40
+        }
+      ]
     },
     {
       "narration": "His dad predicted a World Series game on his birthday. It actually happened.",
@@ -135,7 +203,27 @@
           ],
           "height": 1.02
         }
-      }
+      },
+      "toon": [
+        {
+          "place": "diner",
+          "card": {
+            "text": "WORLD SERIES",
+            "kind": "paper",
+            "sub": "HIS BIRTHDAY"
+          },
+          "mood": "calm"
+        },
+        {
+          "place": "stage",
+          "things": [
+            "trophy"
+          ],
+          "mood": "excited",
+          "action": "cheer",
+          "crowd": 50
+        }
+      ]
     },
     {
       "narration": "Then the Mets paid 75 million just to sign. Fifty times his first bonus.",
@@ -166,7 +254,40 @@
           ],
           "height": 1.02
         }
-      }
+      },
+      "toon": [
+        {
+          "place": "showroom",
+          "things": [
+            "cashstack"
+          ],
+          "card": {
+            "text": "$75M",
+            "kind": "screen",
+            "sub": "JUST TO SIGN"
+          },
+          "brand": {
+            "name": "METS",
+            "bg": "#002d72",
+            "fg": "#ff5910"
+          },
+          "beat": "sign",
+          "mood": "excited"
+        },
+        {
+          "place": "mansion",
+          "things": [
+            "cashstack",
+            "goldbar"
+          ],
+          "card": {
+            "text": "50X",
+            "kind": "sign",
+            "sub": "HIS FIRST BONUS"
+          },
+          "mood": "shock"
+        }
+      ]
     }
   ],
   "sources": [

@@ -56,28 +56,26 @@
       "toon": [
         {
           "place": "throne",
-          "beat": "logo",
+          "beat": "sign",
           "mood": "proud",
           "brand": {
             "name": "Disney",
             "bg": "#0b2a6f",
-            "fg": "#ffffff",
-            "icon": "star"
-          },
-          "things": [
-            "crown"
-          ]
+            "fg": "#ffffff"
+          }
         },
         {
-          "place": "throne",
+          "place": "mansion",
           "beat": "money",
           "mood": "laugh",
+          "things": [
+            "cashstack"
+          ],
           "card": {
             "text": "$94.4B",
             "kind": "screen",
             "sub": "A YEAR"
-          },
-          "view": "face"
+          }
         }
       ]
     },
@@ -99,18 +97,21 @@
           "place": "street",
           "beat": "walk",
           "mood": "sad",
-          "props": [
-            "boxes"
-          ]
+          "card": {
+            "text": "AGE 21",
+            "kind": "flip",
+            "sub": "BROKE"
+          },
+          "view": "ms"
         },
         {
-          "place": "office",
+          "place": "garage",
           "beat": "sign",
           "mood": "dazed",
           "card": {
             "text": "BANKRUPT",
             "kind": "tomb",
-            "sub": "1923"
+            "sub": "FIRST STUDIO"
           }
         }
       ]
@@ -135,25 +136,27 @@
           "card": {
             "text": "OSWALD",
             "kind": "paper",
-            "sub": "THE LUCKY RABBIT"
+            "sub": "LUCKY RABBIT"
           }
         },
         {
-          "place": "office",
-          "beat": "logo",
+          "place": "boardroom",
+          "beat": "sign",
           "mood": "shock",
           "brand": {
             "name": "Universal",
             "bg": "#111111",
-            "fg": "#ffffff",
-            "icon": "star"
-          },
-          "view": "face"
+            "fg": "#ffffff"
+          }
         },
         {
-          "place": "office",
+          "place": "street",
           "beat": "walk",
-          "mood": "sad"
+          "mood": "sad",
+          "things": [
+            "box"
+          ],
+          "view": "ws"
         }
       ]
     },
@@ -175,6 +178,7 @@
           "place": "office",
           "beat": "sign",
           "mood": "scheme",
+          "action": "work",
           "card": {
             "text": "A MOUSE",
             "kind": "paper",
@@ -187,8 +191,9 @@
           "mood": "laugh",
           "action": "cheer",
           "crowd": 40,
-          "props": [
-            "mic"
+          "things": [
+            "mic",
+            "tv"
           ],
           "card": {
             "text": "1928",
@@ -212,20 +217,20 @@
       },
       "toon": [
         {
-          "place": "office",
+          "place": "boardroom",
           "beat": "sign",
           "mood": "excited",
           "card": {
             "text": "2006",
             "kind": "flip",
-            "sub": "OSWALD RETURNS"
+            "sub": "OSWALD BACK"
           }
         },
         {
           "place": "stage",
           "beat": "walk",
           "mood": "laugh",
-          "props": [
+          "things": [
             "mic"
           ],
           "who": {
@@ -234,7 +239,8 @@
             "hat": "hair",
             "hair": "#b8b8b8",
             "chest": "TV"
-          }
+          },
+          "view": "ws"
         },
         {
           "place": "throne",
@@ -243,10 +249,9 @@
           "brand": {
             "name": "Disney",
             "bg": "#0b2a6f",
-            "fg": "#ffffff",
-            "icon": "star"
+            "fg": "#ffffff"
           },
-          "view": "face"
+          "view": "wide"
         }
       ]
     }

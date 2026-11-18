@@ -172,8 +172,8 @@ def check(script: dict) -> tuple[Report, dict]:
             beat = d.get("beat", "walk")
             mood = d.get("mood", "happy")
             view = d.get("view")
-            if "place" in d and place not in toon_director.PLACES:
-                r.add("ERROR", w, f"unknown place '{place}' (use {', '.join(toon_director.PLACES)})", line)
+            if "place" in d and place not in toon_director.PLACES and place not in toon.AH_ALL_SETS:
+                r.add("ERROR", w, f"unknown place '{place}' (use {', '.join(sorted(toon.AH_ALL_SETS))})", line)
             if "beat" in d and beat not in toon_director.BEATS:
                 r.add("ERROR", w, f"unknown beat '{beat}' (use {', '.join(toon_director.BEATS)})", line)
             if "mood" in d and mood not in toon_director.MOODS:
@@ -199,7 +199,7 @@ def check(script: dict) -> tuple[Report, dict]:
                 if nm not in NAMES["known"]:
                     r.add("ERROR", w, f"missing object: {nm} (build it or pick another)", line)
                     r.build[nm] = f"{w}: named in toon, no such object"
-                elif nm not in toon.AH_THING and ("undrawable", nm) not in once:
+                elif nm not in toon.AH_THING and nm not in toon.AH_ALL_THINGS and ("undrawable", nm) not in once:
                     once.add(("undrawable", nm))
                     r.add("WARN", w, f"'{nm}' exists but ah_shots cannot draw it from `things`/`props` (not in toon.AH_THING); "
                                      f"it only shows if a library model matches the line's words", line)
@@ -208,7 +208,7 @@ def check(script: dict) -> tuple[Report, dict]:
             prev_things = shown_plan
             drawn: list[str] = []
             for nm in list(shown_plan) + [p for p in props if isinstance(p, str)]:
-                t3 = toon.AH_THING.get(nm)
+                t3 = toon.AH_THING.get(nm) or (nm if nm in toon.AH_ALL_THINGS else None)
                 if t3 and t3 not in drawn and len(drawn) < 2:
                     drawn.append(t3)
             for t3 in toon.ah_words_to_models(text):
@@ -220,7 +220,7 @@ def check(script: dict) -> tuple[Report, dict]:
             low = text.lower()
             for nm, rx in toon.THING_WORDS:
                 if re.search(rx, low):
-                    t3 = toon.AH_THING.get(nm)
+                    t3 = toon.AH_THING.get(nm) or (nm if nm in toon.AH_ALL_THINGS else None)
                     if t3 is None:
                         if nm in ("idea", "shot", "letter") or ("nodraw", nm) in once:
                             continue

@@ -77,13 +77,14 @@ def _gemini(prompt: str) -> dict | None:
 
 def clean(sc: dict) -> dict:
     """Keep only kit values; drop anything unknown."""
-    out = {"place": sc.get("place") if sc.get("place") in PLACES else "street",
+    from . import toon as _t      # Nov 18: the 3D look also takes any of its own sets / objects by name
+    out = {"place": sc.get("place") if sc.get("place") in PLACES or sc.get("place") in _t.AH_ALL_SETS else "street",
            "beat": sc.get("beat") if sc.get("beat") in BEATS else "walk",
            "props": [p for p in (sc.get("props") or []) if p in PROPS][:2],
            "mood": sc.get("mood") if sc.get("mood") in MOODS else "happy",
            "action": sc.get("action") if sc.get("action") in ACTIONS else "stand",
            "crowd": max(0, min(60, int(sc.get("crowd") or 0))),
-           "things": [t for t in (sc.get("things") or []) if t in THINGS][:2]}
+           "things": [t for t in (sc.get("things") or []) if t in THINGS or t in _t.AH_ALL_THINGS][:2]}
     b = sc.get("brand")
     if isinstance(b, dict) and b.get("name"):
         ok = lambda c: isinstance(c, str) and re.fullmatch(r"#[0-9a-fA-F]{6}", c or "")

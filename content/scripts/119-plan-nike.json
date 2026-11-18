@@ -53,12 +53,7 @@
         {
           "place": "throne",
           "mood": "proud",
-          "brand": {
-            "name": "Nike",
-            "bg": "#111111",
-            "fg": "#ffffff",
-            "icon": "swoosh"
-          },
+          "beat": "money",
           "card": {
             "text": "$46.3 BILLION",
             "kind": "screen",
@@ -69,6 +64,9 @@
         {
           "place": "stall",
           "mood": "nervous",
+          "things": [
+            "shoe"
+          ],
           "card": {
             "text": "1964",
             "kind": "flip",
@@ -77,17 +75,17 @@
           "view": "ms"
         },
         {
-          "place": "stall",
+          "place": "beach",
           "mood": "scheme",
-          "props": [
-            "boxes"
+          "things": [
+            "box",
+            "yacht"
           ],
           "card": {
             "text": "MADE IN JAPAN",
-            "kind": "white",
-            "fg": "#c0353a"
+            "kind": "white"
           },
-          "view": "face"
+          "view": "wide"
         }
       ]
     },
@@ -104,19 +102,22 @@
         {
           "place": "garage",
           "mood": "excited",
-          "action": "work",
           "things": [
             "shoe"
           ],
           "view": "ms"
         },
         {
-          "place": "garage",
+          "place": "showroom",
           "mood": "laugh",
           "things": [
             "shoe"
           ],
-          "view": "face"
+          "card": {
+            "text": "FIRST SOLE",
+            "kind": "paper"
+          },
+          "view": "ms"
         },
         {
           "place": "garage",
@@ -129,16 +130,15 @@
           "view": "ms"
         },
         {
-          "place": "garage",
-          "beat": "logo",
+          "place": "street",
           "mood": "proud",
           "brand": {
-            "name": "Nike",
+            "name": "NIKE",
             "bg": "#111111",
-            "fg": "#ffffff",
-            "icon": "swoosh"
+            "fg": "#ffffff"
           },
-          "view": "ms"
+          "beat": "sign",
+          "view": "wide"
         }
       ]
     },
@@ -155,7 +155,7 @@
       },
       "toon": [
         {
-          "place": "office",
+          "place": "boardroom",
           "mood": "excited",
           "action": "cheer",
           "card": {
@@ -206,11 +206,10 @@
             "trim": "#111111"
           },
           "action": "cheer",
-          "crowd": 30,
-          "view": "face"
+          "view": "ws"
         },
         {
-          "place": "court",
+          "place": "showroom",
           "mood": "excited",
           "who": {
             "jacket": "#c8102e",
@@ -227,7 +226,6 @@
           "things": [
             "shoe"
           ],
-          "crowd": 30,
           "view": "ms"
         }
       ]
@@ -253,11 +251,12 @@
           "view": "ms"
         },
         {
-          "place": "stage",
+          "place": "street",
           "mood": "excited",
-          "crowd": 40,
-          "action": "cheer",
-          "view": "ws"
+          "things": [
+            "globe"
+          ],
+          "view": "wide"
         },
         {
           "place": "stage",
@@ -266,7 +265,7 @@
             "text": "JUST DO IT.",
             "kind": "sign"
           },
-          "view": "face"
+          "view": "ms"
         }
       ]
     },
@@ -287,20 +286,22 @@
           "mood": "scheme",
           "card": {
             "text": "CONVERSE",
-            "kind": "white",
-            "fg": "#111111"
+            "kind": "white"
           },
           "view": "ms"
         },
         {
-          "place": "office",
+          "place": "boardroom",
           "mood": "laugh",
+          "things": [
+            "cashstack"
+          ],
           "card": {
             "text": "$309,000,000",
             "kind": "screen",
             "sub": "SOLD: 2003"
           },
-          "view": "face"
+          "view": "ms"
         }
       ]
     },
@@ -317,23 +318,24 @@
       },
       "toon": [
         {
-          "place": "throne",
-          "mood": "excited",
-          "action": "cheer",
-          "props": [
-            "cash"
-          ],
+          "place": "mansion",
+          "mood": "proud",
           "beat": "money",
+          "things": [
+            "cashstack",
+            "goldbar"
+          ],
           "view": "ms"
         },
         {
           "place": "throne",
           "mood": "proud",
+          "crowd": 20,
           "things": [
-            "crown"
+            "crown",
+            "shoe"
           ],
-          "crowd": 30,
-          "view": "face"
+          "view": "wide"
         }
       ]
     }

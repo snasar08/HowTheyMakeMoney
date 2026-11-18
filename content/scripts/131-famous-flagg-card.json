@@ -71,13 +71,13 @@
       "toon": [
         {
           "place": "court",
-          "beat": "money",
-          "mood": "shock",
           "card": {
             "text": "$8.04M",
             "kind": "screen",
             "sub": "ONE CARD"
           },
+          "beat": "money",
+          "mood": "shock",
           "view": "face"
         }
       ]
@@ -112,21 +112,25 @@
       "toon": [
         {
           "place": "court",
-          "beat": "walk",
-          "mood": "laugh",
-          "props": [
-            "ball"
-          ]
+          "things": [
+            "basketball"
+          ],
+          "card": {
+            "text": "AGE 19",
+            "kind": "flip"
+          },
+          "mood": "laugh"
         },
         {
-          "place": "court",
-          "beat": "sign",
-          "mood": "proud",
+          "place": "showroom",
+          "things": [
+            "letter"
+          ],
           "card": {
-            "text": "ROOKIE DEBUT",
-            "kind": "paper",
-            "sub": "PATCH + AUTOGRAPH"
+            "text": "FIRST NBA GAME",
+            "kind": "paper"
           },
+          "mood": "proud",
           "crowd": 20
         }
       ]
@@ -161,13 +165,16 @@
       "toon": [
         {
           "place": "street",
-          "beat": "sign",
-          "mood": "calm",
+          "things": [
+            "house"
+          ],
           "card": {
             "text": "NEWPORT",
             "kind": "sign",
             "sub": "MAINE"
-          }
+          },
+          "beat": "walk",
+          "mood": "calm"
         }
       ]
     },
@@ -201,16 +208,17 @@
       "toon": [
         {
           "place": "stage",
-          "beat": "logo",
+          "things": [
+            "mic"
+          ],
+          "card": {
+            "text": "#1 PICK",
+            "kind": "flip",
+            "sub": "NBA DRAFT"
+          },
           "mood": "excited",
           "action": "cheer",
-          "crowd": 30,
-          "brand": {
-            "name": "Mavericks",
-            "bg": "#00538c",
-            "fg": "#ffffff",
-            "icon": "star"
-          }
+          "crowd": 30
         }
       ]
     },
@@ -244,21 +252,24 @@
       "toon": [
         {
           "place": "court",
-          "beat": "sign",
-          "mood": "stern",
-          "action": "run",
-          "props": [
-            "ball"
+          "things": [
+            "basketball",
+            "hoop"
           ],
           "card": {
             "text": "51",
             "kind": "flip",
             "sub": "POINTS"
-          }
+          },
+          "mood": "stern",
+          "action": "shoot"
         },
         {
           "place": "court",
-          "beat": "queue",
+          "card": {
+            "text": "FIRST TEEN",
+            "kind": "white"
+          },
           "mood": "laugh",
           "action": "cheer",
           "crowd": 40,
@@ -296,15 +307,14 @@
       },
       "toon": [
         {
-          "place": "court",
-          "beat": "walk",
-          "mood": "proud",
+          "place": "stage",
           "things": [
             "trophy",
             "crown"
           ],
+          "mood": "proud",
           "crowd": 30,
-          "view": "face"
+          "view": "ms"
         }
       ]
     }

@@ -37,7 +37,22 @@
         ],
         "stat": "$12 MILLION",
         "stat_sub": "right after high school, 1999"
-      }
+      },
+      "toon": [
+        {
+          "place": "boardroom",
+          "beat": "sign",
+          "mood": "proud",
+          "things": [
+            "cashstack"
+          ],
+          "card": {
+            "text": "$12M",
+            "kind": "paper",
+            "sub": "AFTER HIGH SCHOOL"
+          }
+        }
+      ]
     },
     {
       "narration": "Her coaches? Just her mom and dad.",
@@ -49,7 +64,30 @@
         "props": [],
         "stat": "HER PARENTS",
         "stat_sub": "her first coaches"
-      }
+      },
+      "toon": [
+        {
+          "place": "court",
+          "beat": "walk",
+          "mood": "calm",
+          "view": "ws",
+          "card": {
+            "text": "COACHES",
+            "kind": "sign"
+          }
+        },
+        {
+          "place": "court",
+          "beat": "walk",
+          "mood": "happy",
+          "crowd": 2,
+          "card": {
+            "text": "MOM + DAD",
+            "kind": "flip"
+          },
+          "view": "wide"
+        }
+      ]
     },
     {
       "narration": "Then a 40 million dollar shoe deal in 2004.",
@@ -64,7 +102,23 @@
         "stat": "$40 MILLION",
         "stat_sub": "5-year deal, 2004",
         "hud": "$40M"
-      }
+      },
+      "toon": [
+        {
+          "place": "showroom",
+          "beat": "sign",
+          "mood": "excited",
+          "things": [
+            "shoe",
+            "cashstack"
+          ],
+          "card": {
+            "text": "$40M",
+            "kind": "paper",
+            "sub": "2004 SHOE DEAL"
+          }
+        }
+      ]
     },
     {
       "narration": "Then 23 major titles. The most of the Open Era.",
@@ -78,7 +132,39 @@
         ],
         "stat": "23 MAJORS",
         "stat_sub": "an Open Era record"
-      }
+      },
+      "toon": [
+        {
+          "place": "court",
+          "beat": "walk",
+          "mood": "proud",
+          "action": "cheer",
+          "crowd": 40,
+          "things": [
+            "trophy",
+            "medal"
+          ],
+          "card": {
+            "text": "23 TITLES",
+            "kind": "screen",
+            "sub": "MAJORS"
+          }
+        },
+        {
+          "place": "court",
+          "beat": "walk",
+          "mood": "proud",
+          "things": [
+            "crown"
+          ],
+          "card": {
+            "text": "OPEN ERA",
+            "kind": "sign",
+            "sub": "THE MOST"
+          },
+          "view": "ws"
+        }
+      ]
     },
     {
       "narration": "Now her sponsor's biggest building? It's named after her.",
@@ -93,7 +179,32 @@
         ],
         "stat": "HER BUILDING",
         "stat_sub": "1 million square feet"
-      }
+      },
+      "toon": [
+        {
+          "place": "street",
+          "beat": "walk",
+          "mood": "excited",
+          "things": [
+            "factory"
+          ],
+          "card": {
+            "text": "BIGGEST BUILDING",
+            "kind": "sign"
+          },
+          "view": "wide"
+        },
+        {
+          "place": "mansion",
+          "beat": "sign",
+          "mood": "proud",
+          "card": {
+            "text": "SERENA",
+            "kind": "sign",
+            "sub": "NAMED AFTER HER"
+          }
+        }
+      ]
     }
   ],
   "sources": [
