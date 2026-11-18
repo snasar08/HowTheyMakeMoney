@@ -27,6 +27,7 @@ jobs:
     timeout-minutes: 90
     env:
       GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      VOICE_SOURCE: qwen   # Nov 18: tests never spend the 10/day Gemini voice requests (they are for posted Shorts)
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
