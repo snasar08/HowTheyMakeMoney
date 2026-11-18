@@ -418,7 +418,7 @@ SHOTS.forEach((s) => {
   const n = s.b - s.a, seq = sv?.view ? [sv.view] : BSEQ[beatOf(s.id)] ?? ((sceneOf(s.id)?.things ?? []).length ? ["two", "wide2", "two"] : SEQ[(s.id - 1) % SEQ.length]), m = sv?.cuts ?? (sv?.view ? 1 : Math.min(6, Math.max(1, Math.ceil(n / 40))))  /* Nov 15: ~1.3 s per view, like the reference channel */, keys: Key[] = [];
   for (let j = 0; j < m; j++) {
     const f0 = s.a + Math.round((j * n) / m), name = seq[j % seq.length];
-    keys.push({ f: f0, cut: true, dur: 26, s: FR[name](s.id, f0) });   // hard cuts: a new view every ~1.7 s (Sam)
+    keys.push({ f: f0, cut: true, dur: 26, s: (FR[name] ?? FR[name === "wide" ? "ws" : "ms"])(s.id, f0) });   // Nov 18: an AH view name ("wide") crashed every shard   // hard cuts: a new view every ~1.7 s (Sam)
     DOF.push({ f: f0, ...(j ? { dur: 26 } : {}), cInf: CINF[name] ?? 10, focus: (f: number) => off(s.id, Math.min(f, s.b - 1), 0, 0, beatOf(s.id) === "drive" ? 1.1 : 1.48) });
   }
   CAMS[s.id] = keys;
