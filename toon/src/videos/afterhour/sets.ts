@@ -577,7 +577,7 @@ function farm(): SetObj {
     bx(g, 0.07, 0.1, 22, wood, sxn * 2.35, 0.9, -5, 0.01); bx(g, 0.07, 0.1, 22, wood, sxn * 2.35, 0.5, -5, 0.01);
   }
   // red barn (gable roof, white trim, X doors, hay-loft window)
-  const barn = new THREE.Group(); barn.position.set(7.4, 0, -9.5); barn.rotation.y = -0.32; g.add(barn);
+  const barn = new THREE.Group(); barn.position.set(-4.4, 0, -10.5); barn.rotation.y = 0.35; g.add(barn);
   bx(barn, 6, 3.4, 4.6, red, 0, 1.7, 0, 0.03);
   for (let i = 0; i < 6; i++) bx(barn, 0.04, 3.2, 0.04, redD, -2.5 + i, 1.7, 2.33);
   const gab = new THREE.Mesh(new THREE.ShapeGeometry((() => { const s = new THREE.Shape(); s.moveTo(-3, 0); s.lineTo(3, 0); s.lineTo(0, 2.2); s.closePath(); return s; })()), red);
@@ -612,7 +612,7 @@ function farm(): SetObj {
   glowSp(g, 3.2, "#fff3b0", -22, 26, -70, 1.4);
   for (const [cx, cyy, cs] of [[-30, 28, 1.2], [14, 34, 1.6], [42, 24, 1.0], [-4, 42, 1.1]] as V3[]) for (let i = 0; i < 5; i++) { const m = sp(g, 3 * cs, T("#ffffff", { emissive: "#c8d8ee", emissiveIntensity: 0.6 }), cx + (i - 2) * 3.4 * cs, cyy + (i % 2) * 1.2, -72, 0, 12); m.scale.set(1.3, 0.7, 0.5); }
   const lights = mkLights(["#f4faff", "#7ab060", 1.3], ["#fff4d6", 2.6, [-7, 14, 9]], [["#ffffff", 22, [0, 6, 6], 22]], 14);
-  return { root: g, lights, fog: new THREE.Fog("#cfeaff", 45, 130), bg: "#8ecbff", spots: { spot: [0, 0, 0], road: [0, 0, -4], barn: [7.4, 0, -7], hay: [-3.5, 1.2, 1.6], silo: [2.6, 3, -11] } };
+  return { root: g, lights, fog: new THREE.Fog("#cfeaff", 45, 130), bg: "#8ecbff", spots: { spot: [0, 0, 0], road: [0, 0, -4], barn: [-4.4, 0, -8], hay: [-3.5, 1.2, 1.6], silo: [2.6, 3, -11] } };
 }
 
 // ================= STORE (grocery: aisles, fruit stand, checkout with conveyor, paper bags) =================
@@ -661,7 +661,7 @@ function store(): SetObj {
     const np = new THREE.Mesh(new THREE.PlaneGeometry(1.0, 0.45), basic(nt, 1.1, false)); np.position.set(x, 5.1, -3.16); g.add(np);
   }
   // fruit stand (right front): tiered crates of apples, oranges, lemons
-  const fx = 4.2, fz = 2.4;
+  const fx = 2.6, fz = -0.6;
   bx(g, 2.3, 0.5, 1.3, T("#a8713a"), fx, 0.25, fz, 0.025); bx(g, 2.3, 0.5, 0.8, T("#b9803f"), fx, 0.62, fz - 0.3, 0.025); bx(g, 2.3, 0.5, 0.5, T("#a8713a"), fx, 0.98, fz - 0.5, 0.025);
   const fr = seeded(81);
   for (const [y, zOff, d, n] of [[0.55, 0.3, 0.9, 30], [0.92, -0.05, 0.6, 22], [1.28, -0.4, 0.35, 12]] as V4[]) {
@@ -672,7 +672,7 @@ function store(): SetObj {
   bx(g, 0.06, 1.6, 0.06, T("#6b3f1d"), fx - 1.1, 2.2, fz - 0.5); bx(g, 0.06, 1.6, 0.06, T("#6b3f1d"), fx + 1.1, 2.2, fz - 0.5);
   bx(g, 2.5, 0.12, 1.1, T("#2fae4f"), fx, 3.0, fz - 0.3, 0.02);
   // checkout counter with a conveyor belt (left front), register, bags
-  const cx = -3.6;
+  const cx = -2.5;
   bx(g, 1.2, 0.95, 3.4, T("#4a74c9"), cx, 0.475, 1.8, 0.03); bx(g, 1.3, 0.06, 3.5, T("#e8ecf2"), cx, 0.98, 1.8, 0.015);
   bx(g, 0.8, 0.07, 2.4, T("#2c2f3a"), cx + 0.05, 1.04, 1.3, 0.01);
   for (let i = 0; i < 12; i++) bx(g, 0.78, 0.015, 0.03, T("#4a4f60"), cx + 0.05, 1.085, 0.2 + i * 0.2);
