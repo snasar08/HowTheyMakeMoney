@@ -333,7 +333,7 @@ const sing_stage: ActDef = { pose: "stand", view: "actsing", build(c: ActCtx): A
     // singer: arm up to the mouth, passionate lean, left arm sweeping
     const SY = shY(hero), HY = hero.headY;
     const mouth = mouthOf(hero), f = fwdOf(hero), right = new Vec(f.z, 0, -f.x);
-    const handT = mouth.clone().addScaledVector(right, 0.13).addScaledVector(f, 0.07).add(new Vec(0, -0.15, 0)).add(new Vec(0.012 * Math.sin(t * 12), 0.014 * Math.sin(t * 9), 0));
+    const handT = mouth.clone().addScaledVector(right, 0.2).addScaledVector(f, 0.1).add(new Vec(0, -0.3, 0))   /* Nov 18: mic held below + beside the mouth, so the singing mouth reads */.add(new Vec(0.012 * Math.sin(t * 12), 0.014 * Math.sin(t * 9), 0));
     armW(hero, "r", handT, [1.2, -0.3, -0.5]);
     const sw = Math.sin(t * 3.2);
     arm(hero, "l", 0.5 + 0.1 * sw, SY + 0.55 + 0.12 * Math.sin(t * 6.4), 0.12, [-0.4, -0.3, -1]);
@@ -341,8 +341,10 @@ const sing_stage: ActDef = { pose: "stand", view: "actsing", build(c: ActCtx): A
     const hp = wp(hero.hand("r"));
     dirT.copy(mouth).addScaledVector(f, 0.02).sub(hp); placeAlong(mic, hp.clone().addScaledVector(dirT.clone().normalize(), -0.02), dirT);
     void HY;
-    const hi = Math.sin(t * 6.2 + 0.6) > 0.15;   // a high note every second or so: the singer belts it
-    return { pose: "stand", t, expr: (t < 0.3 ? "smile" : hi ? "shout" : "grin") as Expr };
+    // Nov 18 (eyes held Rihanna + Bad Bunny: "mouth not moving"): the mouth opens and closes at syllable speed (~4/s),
+    // with a held belt (big open mouth) every ~2 s
+    const belt = Math.sin(t * 3.1 + 0.6) > 0.7, open = Math.sin(t * 25) > -0.25;
+    return { pose: "stand", t, expr: (t < 0.25 ? "smile" : belt ? "shout" : open ? "laugh" : "grin") as Expr };
   } };
 } };
 
