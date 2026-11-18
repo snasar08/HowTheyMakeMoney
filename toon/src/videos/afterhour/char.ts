@@ -227,11 +227,20 @@ function drawFace(g: CanvasRenderingContext2D, e: Expr, blink: boolean) {
 const EAT = new Set<string>(["bite", "chew_a", "chew_b", "gulp", "yum", "sip"]);
 const _mouth = new THREE.Vector3();
 const faceMats = new Map<string, THREE.MeshBasicMaterial>();
-function faceMat(e: Expr, blink: boolean) {
-  const key = e + (blink ? "|b" : "");
+function faceMat(e: Expr, blink: boolean, halo = "") {
+  const key = e + (blink ? "|b" : "") + halo;
   let m = faceMats.get(key);
   if (!m) {
-    const tex = canvasTex(FW, FH, (g) => drawFace(g, e, blink));
+    const tex = canvasTex(FW, FH, (g) => {
+      if (!halo) { drawFace(g, e, blink); return; }
+      // dark skin: the black lines would vanish, so every stroke gets a light skin-tone rim (cel look kept, ink stays near-black)
+      const a = document.createElement("canvas"); a.width = FW; a.height = FH;
+      const ag = a.getContext("2d")!; drawFace(ag, e, blink);
+      const s = document.createElement("canvas"); s.width = FW; s.height = FH;
+      const sg = s.getContext("2d")!; sg.drawImage(a, 0, 0); sg.globalCompositeOperation = "source-in"; sg.fillStyle = halo; sg.fillRect(0, 0, FW, FH);
+      for (const r of [11, 6]) for (let i = 0; i < 16; i++) { const t = (i / 16) * Math.PI * 2; g.drawImage(s, Math.cos(t) * r, Math.sin(t) * r); }
+      g.drawImage(a, 0, 0);
+    });
     m = new THREE.MeshBasicMaterial({ map: tex, transparent: true, depthWrite: false, polygonOffset: true, polygonOffsetFactor: -2, polygonOffsetUnits: -2 });
     faceMats.set(key, m);
   }
@@ -371,7 +380,9 @@ function buildChar(look: Look, cheap: boolean): Char {
   const outfit = look.outfit ?? "jacket";
   const jersey = outfit === "jersey", leather = outfit === "leather";
   const trimCol = look.trim ?? "#ffffff";
-  const skin = look.skin ?? "#f7f7f7";
+  // Nov 17 (Sam: "Shaq should be black"): look.skin tints head, hands, bare arms and legs; very dark tones are lifted a little so the toon ramp still shows a face, not a black ball
+  const skin = (() => { if (!look.skin) return "#f7f7f7"; const k = new THREE.Color(look.skin), h = { h: 0, s: 0, l: 0 }; k.getHSL(h); if (h.l < 0.34) k.setHSL(h.h, h.s, 0.34 + (h.l - 0.34) * 0.3); return "#" + k.getHexString(); })();
+  const faceHalo = lum(skin) < 0.5 ? "#" + new THREE.Color(skin).lerp(new THREE.Color("#ffffff"), 0.55).getHexString() : "";
   const dark = lum(look.body) < 0.14;
   // Nov 17: saturated dark kit colours (Lakers purple #552583) went black under the 3-step ramp: lift HSL lightness to ~0.42 for jerseys (light kits untouched)
   const liftKit = (c: string) => { const k = new THREE.Color(c), hsl = { h: 0, s: 0, l: 0 }; k.getHSL(hsl); if (hsl.s > 0.25 && hsl.l < 0.42) k.setHSL(hsl.h, hsl.s, 0.42); return "#" + k.getHexString(); };
@@ -505,7 +516,7 @@ function buildChar(look: Look, cheap: boolean): Char {
   const head = new THREE.Group(); head.position.set(0, HEAD_Y, 0); rig.add(head);
   head.add(outline(mesh(new THREE.SphereGeometry(HEAD_R, cheap ? 22 : 40, cheap ? 16 : 28), skinMat), 0.032));
   const face = new THREE.Mesh(
-    new THREE.SphereGeometry(HEAD_R + 0.006, cheap ? 14 : 32, cheap ? 10 : 24, Math.PI / 2 - PHI_HALF, PHI_HALF * 2, TH0, TH_LEN), faceMat("neutral", false));
+    new THREE.SphereGeometry(HEAD_R + 0.006, cheap ? 14 : 32, cheap ? 10 : 24, Math.PI / 2 - PHI_HALF, PHI_HALF * 2, TH0, TH_LEN), faceMat("neutral", false, faceHalo));
   face.renderOrder = 2; head.add(face);
   // mouth + eating helpers: canvas y 290 -> theta
   const MTH = TH0 + (290 / FH) * TH_LEN;
@@ -521,7 +532,8 @@ function buildChar(look: Look, cheap: boolean): Char {
 
   // facial hair (Nov 17): dark shapes hugging the head below / above the mouth; they sit under the face drawing, so mouths and eating still read
   if (look.beard && !cheap) {
-    const bcol = "#" + new THREE.Color(look.beardCol ?? "#1b1511").lerp(new THREE.Color("#2a2420"), 0.85).getHexString(), bm = toonMat(bcol, { emissive: bcol, emissiveIntensity: 0.25 });
+    const bcol = faceHalo ? "#" + new THREE.Color(look.beardCol ?? "#15110e").lerp(new THREE.Color("#0c0a09"), 0.6).getHexString()   // dark skin: near-black beard, the ink outline + lifted skin keep it readable
+      : "#" + new THREE.Color(look.beardCol ?? "#1b1511").lerp(new THREE.Color("#2a2420"), 0.85).getHexString(), bm = toonMat(bcol, { emissive: bcol, emissiveIntensity: 0.25 });
     const onHead = (th: number, ph: number, r = HEAD_R - 0.004) => new THREE.Vector3(Math.sin(th) * Math.sin(ph) * r, Math.cos(th) * r, Math.sin(th) * Math.cos(ph) * r);
     const blob = (th: number, ph: number, sx: number, sy: number, rz = 0) => {   // flat ellipsoid lying on the head surface, outlined
       const m = outline(mesh(geo("beardblob", () => new THREE.SphereGeometry(1, 16, 12)), bm), 0.12);
@@ -760,7 +772,7 @@ function buildChar(look: Look, cheap: boolean): Char {
     let fe: Expr = expr;
     if (cheap && !EAT.has(expr)) fe = (expr === "smile" || expr === "grin" || expr === "laugh" || expr === "wink" || expr === "smug") ? "grin" : "neutral";
     const fb = cheap ? false : blink; if (EAT.has(fe) && fe !== "sip" && fe !== "gulp") blink = false;
-    if (curExpr !== fe || curBlink !== fb) { (face.material as THREE.Material) = faceMat(fe, fb); curExpr = fe; curBlink = fb; }
+    if (curExpr !== fe || curBlink !== fb) { (face.material as THREE.Material) = faceMat(fe, fb, faceHalo); curExpr = fe; curBlink = fb; }
     // reset
     rig.position.set(0, 0, 0); rig.rotation.set(0, 0, 0); rig.scale.set(1, 1, 1);
     head.position.set(0, HEAD_Y, 0);

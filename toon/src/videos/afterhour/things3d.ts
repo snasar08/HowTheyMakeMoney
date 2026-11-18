@@ -454,13 +454,15 @@ const B: Record<ThingName, Builder> = {
     return { g };
   },
   controller: (c) => {
-    const g = new THREE.Group(); const o = new THREE.Group(); o.rotation.x = -1.0; g.add(o); const col = c ?? "#1c2438";
-    sp(o, 0.05, col, 0, 0, 0, [1.35, 0.45, 0.8], 20);
-    for (const s of [-1, 1]) sp(o, 0.035, col, s * 0.058, -0.012, 0.02, [0.7, 0.55, 1.5], 14).rotation.y = s * 0.35;
-    bx(o, 0.026, 0.008, 0.008, "#d7dbe6", -0.042, 0.021, -0.004); bx(o, 0.008, 0.008, 0.026, "#d7dbe6", -0.042, 0.021, -0.004);
-    const bc = ["#2ecc71", "#e74c3c", "#3b82f6", "#f1c40f"]; [[0, 0.013], [0.013, 0], [-0.013, 0], [0, -0.013]].forEach((p, i) => cy(o, 0.0068, 0.0068, 0.008, bc[i], 0.046 + p[0], 0.021, -0.004 + p[1], undefined, 10));
-    for (const [x, z] of [[-0.02, 0.016], [0.02, 0.016]]) { cy(o, 0.011, 0.011, 0.01, "#0c0f18", x, 0.022, z, undefined, 12); }
-    cy(o, 0.006, 0.006, 0.006, glowMat("#38ffa0", 2), 0, 0.023, -0.012, undefined, 8);
+    // Nov 17 (Sam: "doesn't really look like a controller"): the old one was navy, tilted away and read as a dark blob.
+    // Now: light body facing the camera, darker grips, big coloured face buttons, two thumbsticks, a white d-pad.
+    const g = new THREE.Group(); const o = new THREE.Group(); o.rotation.x = 1.15; g.add(o); const col = c ?? "#eef1f6", grip = "#9aa3b5";
+    sp(o, 0.05, col, 0, 0, 0, [1.4, 0.42, 0.78], 20);
+    for (const s of [-1, 1]) sp(o, 0.036, grip, s * 0.06, -0.012, 0.026, [0.72, 0.6, 1.5], 14).rotation.y = s * 0.35;
+    bx(o, 0.032, 0.012, 0.011, "#2a3040", -0.043, 0.02, -0.006); bx(o, 0.011, 0.012, 0.032, "#2a3040", -0.043, 0.02, -0.006);
+    const bc = ["#22c55e", "#ef4444", "#3b82f6", "#facc15"]; [[0, 0.016], [0.016, 0], [-0.016, 0], [0, -0.016]].forEach((p, i) => cy(o, 0.009, 0.009, 0.012, bc[i], 0.045 + p[0], 0.02, -0.006 + p[1], undefined, 12));
+    for (const [x, z] of [[-0.02, 0.018], [0.02, 0.018]]) { cy(o, 0.014, 0.014, 0.008, "#2a3040", x, 0.018, z, undefined, 14); cy(o, 0.009, 0.009, 0.012, "#4b5568", x, 0.024, z, undefined, 12); }
+    cy(o, 0.006, 0.006, 0.006, glowMat("#38bdf8", 2), 0, 0.022, -0.014, undefined, 8);
     return { g };
   },
   burger: (c) => {
