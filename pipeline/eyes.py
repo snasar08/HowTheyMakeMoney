@@ -28,8 +28,7 @@ import urllib.request
 from pathlib import Path
 
 API = "https://generativelanguage.googleapis.com/v1beta"
-MODELS = [m for m in os.environ.get("EYES_MODELS", "gemini-3.1-flash-lite,gemini-3.5-flash-lite,gemini-2.5-flash-lite,"
-                                    "gemini-2.5-flash").split(",") if m]
+MODELS = [m for m in os.environ.get("EYES_MODELS", "gemini-3.1-flash-lite,gemini-3.5-flash-lite,gemini-2.5-flash-lite").split(",") if m]   # Nov 18: gemini-2.5-flash retired (404)
 PROMPT = """You are the strict quality checker for a YouTube Shorts channel ("How They Make Money", viewers 13-18).
 Image 1 is the cover (frame 0). Image 2 is a sheet of frames from the finished vertical video in time order
 (left to right, top to bottom, about 2.5 seconds apart).
