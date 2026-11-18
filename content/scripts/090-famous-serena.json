@@ -290,18 +290,19 @@
     "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-090-famous-serena",
     "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-090-famous-serena/090-famous-serena.mp4",
     "post_at": "2026-11-19T16:30:00-05:00",
-    "buffer_post": "6afdeb0f144d89f0a5b5b9ec",
+    "buffer_post": "6afe27304cace847b37a44ee",
     "buffer_status": "scheduled",
-    "rendered_at": "2026-11-18T18:14:40.099125+00:00",
+    "rendered_at": "2026-11-18T22:31:13.264465+00:00",
     "seconds": 19.28,
+    "remade_from": "6afe23a7a588bd66879e2c85",
     "eyes": {
-      "score": 8,
+      "score": 7,
       "problems": [
-        "The caption text 'dollar shoe dealin' is grammatically awkward and looks like a typo",
-        "The character's name 'ERENA WILLIAMS' appears briefly in frame 121 due to a text glitch",
-        "The transition at the end (frame 569) causes a jarring visual flicker where the previous scene overlaps with the cover"
+        "The narration mentions '23 major titles' but the screen displays '23 TITLES' for a long duration, which is slightly repetitive/redundant.",
+        "The transition at frame 430 introduces a 'Serena or Venus?' question that is completely disconnected from the narration and the topic of the video.",
+        "The call-to-action at the end is generic and doesn't fit the flow of the story."
       ],
-      "best_fix": "Correct the caption 'dollar shoe dealin' to 'dollar shoe deal' and fix the text rendering glitch in frame 121.",
+      "best_fix": "Remove the 'Serena or Venus?' segment and replace it with a concluding summary or a relevant question about the sponsor's building to maintain narrative consistency.",
       "model": "gemini-3.1-flash-lite",
       "acts": null
     }
