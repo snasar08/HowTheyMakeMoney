@@ -21,13 +21,14 @@
     "sing_stage",
     "count_cash",
     "sign_contract",
-    "throw_cash"
+    "throw_cash",
+    "shoot"
   ],
   "off_until_fixed": {
-    "film_camera": "camera hides the face",
-    "shoot": "Nov 18 eyes check held 131 Flagg: stiff motion, ball teleports instead of a clear arc through the hoop"
+    "film_camera": "camera hides the face"
   },
   "approved_notes": {
-    "count_cash/sign_contract/throw_cash": "rebuilt Nov 16, reviewed frame by frame, Sam: 'Yes include'"
+    "count_cash/sign_contract/throw_cash": "rebuilt Nov 16, reviewed frame by frame, Sam: 'Yes include'",
+    "shoot": "Nov 18 rebuilt: ball in both hands to above the head, one smooth arc through the net, swish + bounce; own centred camera (acts view). Stills checked every 6th frame."
   }
 }

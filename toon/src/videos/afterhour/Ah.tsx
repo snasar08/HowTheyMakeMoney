@@ -77,6 +77,7 @@ const VIEWS: Record<string, { from: V3; to: V3; look: V3; blur: number }> = {
   low: { from: [0.8, 0.6, 3.6], to: [0.7, 0.6, 3.2], look: [0, 1.4, 0], blur: 8 },
   // act views (acts/*.ts): whole body + the hoop / goal / opponent in frame, little blur
   act: { from: [1.4, 2.2, 11.2], to: [1.4, 2.2, 10.4], look: [1.4, 2.0, 0], blur: 1 },     // scene extends to the hero's right
+  acts: { from: [0.9, 2.4, 13.2], to: [0.9, 2.4, 12.4], look: [0.9, 2.1, 0], blur: 1 },   // jump shot: shooter + hoop both whole (Nov 18)
   actl: { from: [0.25, 2.2, 10.2], to: [0.25, 2.2, 9.5], look: [0.25, 2.0, 0], blur: 1 },  // run-in from the right, hoop on the left
   actw: { from: [0.1, 1.95, 11.4], to: [0.1, 1.95, 10.6], look: [0.1, 1.8, 0], blur: 1 },
   actd: { from: [0.5, 2.2, 10.2], to: [0.5, 2.2, 9.5], look: [0.5, 2.0, 0], blur: 1 },
@@ -257,6 +258,10 @@ const build = (k: number, s: AhShot): Built => {
     instHide.forEach((h) => ei!.add(h.mesh));
     run = def.build({ root, hero, heroAt: at, set: s.set, spots: set.spots as Record<string, V3>, seed: k + 1 });
     view = def.view;
+  }
+  if (s.things?.some((t) => ["basketball", "football", "soccerball", "baseball"].includes(t.name))) {   // a set's own ball (court / pitch) is hidden when the shot already shows a ball thing
+    let ev = EVER_HIDDEN.get(set.root); if (!ev) EVER_HIDDEN.set(set.root, ev = new Set());
+    set.root.traverse((o) => { if (o.userData.setBall) { hide.push(o); ev!.add(o); } });
   }
   { const sj = chars[s.subject ?? 0], sc0 = s.chars[s.subject ?? 0];
     if (sj) fitInFrame(s, view && VIEWS[view] ? view : s.view, (sj as Char & { headY?: number }).headY ?? 1.55, sj.root.position, sc0?.pose === "sit", fitItems); }

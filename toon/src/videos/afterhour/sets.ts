@@ -3,7 +3,7 @@ import * as THREE from "three";
 import { toonMat, glowMat, metalMat, outline, canvasTex, seeded, box } from "./common";
 
 export type SetName = "throne" | "office" | "diner" | "lab" | "stall" | "field" | "ring" | "track" | "graveyard" | "boardroom" | "street" | "beach"
-  | "court" | "pitch" | "stage" | "space" | "garage" | "classroom" | "bathroom" | "mansion" | "showroom";
+  | "court" | "pitch" | "diamond" | "stage" | "space" | "garage" | "classroom" | "bathroom" | "mansion" | "showroom";
 export type SetObj = { root: THREE.Group; lights: THREE.Light[]; fog?: THREE.Fog; bg: string; spots: Record<string, [number, number, number]> };
 
 type V3 = [number, number, number];
@@ -891,8 +891,9 @@ function court(): SetObj {
   ring(g, 0.23, 0.022, "#ff6a1a", 0, 3.05, -4.72, PI / 2, 0, 1.4); bx(g, 0.1, 0.04, 0.3, T("#ff6a1a"), 0, 3.05, -4.93);
   const net = new THREE.Mesh(new THREE.CylinderGeometry(0.23, 0.14, 0.42, 12, 3, true), new THREE.MeshBasicMaterial({ color: "#ffffff", wireframe: true })); net.position.set(0, 2.83, -4.72); g.add(net);
   // ball
-  sp(g, 0.12, T("#ff7a1a"), 1.0, 0.12, 1.6, 0.012);
-  for (const rx of [0, PI / 2]) { const t = new THREE.Mesh(new THREE.TorusGeometry(0.12, 0.007, 4, 18), T("#1b120a")); t.position.set(1.0, 0.12, 1.6); t.rotation.set(rx, 0.3, 0); g.add(t); }
+  const cball = new THREE.Group(); cball.userData.setBall = true; g.add(cball);   // Ah.tsx hides it when the shot already shows a ball thing
+  sp(cball, 0.12, T("#ff7a1a"), 1.0, 0.12, 1.6, 0.012);
+  for (const rx of [0, PI / 2]) { const t = new THREE.Mesh(new THREE.TorusGeometry(0.12, 0.007, 4, 18), T("#1b120a")); t.position.set(1.0, 0.12, 1.6); t.rotation.set(rx, 0.3, 0); cball.add(t); }
   // arena shell
   bx(g, 46, 16, 0.6, T("#1c2444"), 0, 8, -18.5).castShadow = false;
   for (const sx of [-1, 1]) bx(g, 0.6, 16, 56, T("#1c2444"), sx * 17, 8, 4).castShadow = false;
@@ -950,8 +951,9 @@ function pitch(): SetObj {
   vplane(g, 6.4, 2.6, nm(), 0, 1.3, -8); vplane(g, 2, 2.6, nm(), -3.2, 1.3, -7, PI / 2); vplane(g, 2, 2.6, nm(), 3.2, 1.3, -7, PI / 2);
   const rf = new THREE.Mesh(new THREE.PlaneGeometry(6.4, 2), nm()); rf.rotation.x = -PI / 2; rf.position.set(0, 2.6, -7); g.add(rf);
   // ball, cones, bibs
-  sp(g, 0.22, T("#ffffff"), 0.4, 0.22, 0.5, 0.015);
-  for (let i = 0; i < 6; i++) { const a = i * 1.05; sp(g, 0.07, T("#1b1b22"), 0.4 + Math.cos(a) * 0.2, 0.22 + Math.sin(a * 1.3) * 0.15, 0.5 + Math.sin(a) * 0.15, 0, 6); }
+  const sball = new THREE.Group(); sball.userData.setBall = true; g.add(sball);   // Ah.tsx hides it when the shot is about American football
+  sp(sball, 0.22, T("#ffffff"), 0.4, 0.22, 0.5, 0.015);
+  for (let i = 0; i < 6; i++) { const a = i * 1.05; sp(sball, 0.07, T("#1b1b22"), 0.4 + Math.cos(a) * 0.2, 0.22 + Math.sin(a * 1.3) * 0.15, 0.5 + Math.sin(a) * 0.15, 0, 6); }
   for (const [x, z] of [[-2.2, 2.6], [-1.2, 3.4], [-0.2, 4.2], [2.6, 2.4]] as V2[]) { cone(g, 0.18, 0.4, T("#ff8a1a"), x, 0.2, z, 0.012, 10); cy(g, 0.22, 0.22, 0.03, T("#ff8a1a"), x, 0.02, z); }
   // advertising boards (blank centre sign) and stands
   const adc = ["#e5233b", "#ffc21f", "#2a7de0", "#7cff6b", "#ff4da6", "#ffffff"];
@@ -976,6 +978,79 @@ function pitch(): SetObj {
   vplane(g, 200, 80, basic(gradTex([[0, "#03040f"], [0.6, "#0d1840"], [1, "#2a3a78"]], 8, 256), 1, false), 0, 30, -70); stars(g, 120, 51, 100, 12, 50, -69); glowSp(g, 2.4, "#fff6d0", -14, 22, -66, 1.3);
   const lights = mkLights(["#9cb4ff", "#1d4a2a", 1.0], ["#e8f0ff", 2.4, [4, 13, 6]], [["#fffbe8", 60, [-5.6, 8.5, -8.5], 22], ["#fffbe8", 60, [5.6, 8.5, -8.5], 22], ["#fffbe8", 40, [0, 7, 6], 18]], 12);
   return { root: g, lights, fog: new THREE.Fog("#0f1a3a", 30, 75), bg: "#0a1030", spots: { spot: [0, 0, 0], goal: [0, 1.3, -6], ball: [0.4, 0.22, 0.5], sign: [0, 0.5, -8.92], screen: [0, 5.2, -11.3] } };
+}
+
+// ================= DIAMOND (baseball field) =================
+function diamond(): SetObj {
+  const g = new THREE.Group(); const S = 12.8, HZ = 0.9;   // home plate at z = HZ; 1024 px texture over 80 m (x -40..40, z -70..10)
+  const X = (x: number) => (x + 40) * S, Z = (z: number) => (z + 70) * S;
+  const dt = canvasTex(1024, 1024, (c) => {
+    for (let i = 0; i < 20; i++) { c.fillStyle = i % 2 ? "#2f9a46" : "#3aad52"; c.fillRect(0, i * 51.2, 1024, 52); }
+    const base = [[0, HZ], [5.8, HZ - 5.8], [0, HZ - 11.6], [-5.8, HZ - 5.8]];
+    // infield dirt: a big arc behind the bases plus a circle round home plate and the mound
+    c.fillStyle = "#b9814f";
+    c.beginPath(); c.arc(X(0), Z(HZ - 5.8), 9.6 * S, PI, 0); c.lineTo(X(9.6), Z(HZ - 3)); c.lineTo(X(0), Z(HZ + 3.2)); c.lineTo(X(-9.6), Z(HZ - 3)); c.closePath(); c.fill();
+    c.fillStyle = "#3aad52"; c.beginPath(); c.moveTo(X(0), Z(HZ - 1.8)); c.lineTo(X(3.9), Z(HZ - 5.8)); c.lineTo(X(0), Z(HZ - 9.8)); c.lineTo(X(-3.9), Z(HZ - 5.8)); c.closePath(); c.fill();   // grass diamond inside
+    c.fillStyle = "#b9814f"; c.beginPath(); c.arc(X(0), Z(HZ), 2.2 * S, 0, PI * 2); c.fill(); c.beginPath(); c.arc(X(0), Z(HZ - 5.5), 2.0 * S, 0, PI * 2); c.fill();
+    // foul lines and batter's boxes
+    c.strokeStyle = "#f4f7f0"; c.lineWidth = 5; c.fillStyle = "#f4f7f0";
+    c.beginPath(); c.moveTo(X(0), Z(HZ)); c.lineTo(X(30), Z(HZ - 30)); c.moveTo(X(0), Z(HZ)); c.lineTo(X(-30), Z(HZ - 30)); c.stroke();
+    c.strokeRect(X(-1.4), Z(HZ - 0.9), 0.9 * S, 1.8 * S); c.strokeRect(X(0.5), Z(HZ - 0.9), 0.9 * S, 1.8 * S);
+    c.beginPath(); c.moveTo(X(0), Z(HZ + 0.3)); c.lineTo(X(0.35), Z(HZ)); c.lineTo(X(0.35), Z(HZ - 0.3)); c.lineTo(X(-0.35), Z(HZ - 0.3)); c.lineTo(X(-0.35), Z(HZ)); c.closePath(); c.fill();   // home plate
+    void base;
+  });
+  plane(g, 140, 100, T("#1d6a33"), 0, 0, -30);
+  plane(g, 80, 80, T("#ffffff", { map: dt }), 0, 0.01, -30);
+  // bases + pitcher's mound (rubber)
+  for (const [x, z] of [[5.8, HZ - 5.8], [0, HZ - 11.6], [-5.8, HZ - 5.8]] as V2[]) bx(g, 0.5, 0.12, 0.5, T("#ffffff"), x, 0.07, z, 0.015).rotation.y = PI / 4;
+  const mound = cy(g, 1.3, 1.9, 0.28, T("#b9814f"), 0, 0.14, HZ - 5.5, 0.015, 24); mound.receiveShadow = true;
+  bx(g, 0.6, 0.05, 0.14, T("#ffffff"), 0, 0.3, HZ - 5.5);
+  // outfield wall: a curved padded wall with a yellow top rail, scoreboard and ads
+  const R = 21, wallM = T("#14407a"), n = 22;
+  for (let i = 0; i < n; i++) {
+    const a = -PI * 0.46 + (i / (n - 1)) * PI * 0.92, x = Math.sin(a) * R, z = HZ - Math.cos(a) * R;
+    const w = bx(g, 2.5, 2.2, 0.35, wallM, x, 1.1, z, 0.02); w.rotation.y = -a;
+    const r = bx(g, 2.5, 0.12, 0.42, T("#ffc21f", { emissive: "#6a4a00", emissiveIntensity: 0.4 }), x, 2.26, z); r.rotation.y = -a;
+    if (i % 3 === 1) { const ad = bx(g, 1.7, 0.9, 0.05, T(["#e5233b", "#ffffff", "#2a7de0", "#7cff6b"][i % 4], { emissive: "#303030", emissiveIntensity: 0.4 }), x - Math.sin(a) * 0.2, 1.1, z + Math.cos(a) * 0.2); ad.rotation.y = -a; }
+  }
+  const warn = T("#8a5a3a");
+  for (let i = 0; i < n - 1; i++) { const a = -PI * 0.46 + ((i + 0.5) / (n - 1)) * PI * 0.92, x = Math.sin(a) * (R - 1.2), z = HZ - Math.cos(a) * (R - 1.2); const s = bx(g, 2.7, 0.03, 2.2, warn, x, 0.02, z); s.rotation.y = -a; s.castShadow = false; }
+  // stands + crowd behind the wall
+  const pal = ["#e5233b", "#ffffff", "#2a7de0", "#ffc21f", "#2a2a3a", "#7cff6b"];
+  const stand = (x: number, z: number, ry: number, perRow: number, seed: number) => { bx(g, perRow * 0.62 + 1, 1.2, 3, T("#27304a"), x, 0.6, z + 0.2, 0).rotation.y = ry; crowd(g, x, 1.0, z - 0.6, ry, perRow, 6, seed, 0.62, 0.55, 0.8, pal, true); };
+  stand(0, HZ - R - 2.2, 0, 56, 61); stand(-13.2, HZ - R + 5.4, PI / 4, 24, 62); stand(13.2, HZ - R + 5.4, -PI / 4, 24, 63);
+  bx(g, 56, 9, 0.5, T("#161c32"), 0, 4.5, HZ - R - 11);
+  panel(g, 7.4, 3.0, 0, 6.6, HZ - R - 5.8, "#ffc21f", 0, "#06060e");
+  const sb = canvasTex(512, 256, (c) => {
+    c.fillStyle = "#06060e"; c.fillRect(0, 0, 512, 256); c.textAlign = "center"; c.font = "bold 34px Arial";
+    c.fillStyle = "#ffc21f"; c.fillText("HOME", 96, 56); c.fillText("AWAY", 416, 56); c.fillText("INN", 256, 56);
+    c.font = "bold 100px Courier New"; c.fillStyle = "#ff4d3a"; c.fillText("4", 96, 160); c.fillText("3", 416, 160);
+    c.fillStyle = "#ffe36a"; c.fillText("9", 256, 160);
+    c.fillStyle = "#37f58a"; for (let i = 0; i < 3; i++) { c.beginPath(); c.arc(200 + i * 56, 218, 14, 0, PI * 2); c.fill(); }
+    c.strokeStyle = "#ffc21f"; c.lineWidth = 6; c.strokeRect(6, 6, 500, 244);
+  });
+  const sbp = new THREE.Mesh(new THREE.PlaneGeometry(7.0, 2.6), basic(sb, 1.2, false)); sbp.position.set(0, 6.6, HZ - R - 5.7); g.add(sbp);
+  // dugouts beside the foul lines, with a bench
+  for (const sx of [-1, 1]) {
+    bx(g, 5, 0.9, 1.6, T("#27304a"), sx * 9.2, 0.45, HZ + 1.6, 0.02); bx(g, 5.2, 0.12, 1.9, T("#14407a"), sx * 9.2, 1.45, HZ + 1.6, 0.02);
+    bx(g, 4.6, 0.12, 0.5, T("#9a6a3a"), sx * 9.2, 0.55, HZ + 1.3); cy(g, 0.1, 0.1, 1.4, T("#8a93a8"), sx * 6.9, 0.7, HZ + 0.7, 0.01, 8); cy(g, 0.1, 0.1, 1.4, T("#8a93a8"), sx * 11.5, 0.7, HZ + 0.7, 0.01, 8);
+  }
+  // bat rack, bat + ball on the ground, bucket of balls
+  const bat = bx(g, 0.07, 1.0, 0.07, T("#c98a4a"), 1.6, 0.5, HZ + 1.0, 0.012); bat.rotation.z = 0.28;
+  cy(g, 0.12, 0.09, 0.9, T("#c98a4a"), 1.62, 0.45, HZ + 1.0, 0.012, 10).rotation.z = 0.28;
+  sp(g, 0.1, T("#ffffff"), -1.2, 0.1, HZ + 1.3, 0.01); for (const rx of [0.4, -0.4]) { const t = new THREE.Mesh(new THREE.TorusGeometry(0.09, 0.006, 4, 14), T("#c0141f")); t.position.set(-1.2, 0.1, HZ + 1.3); t.rotation.set(rx, 0.5, 0); g.add(t); }
+  // backstop net behind home plate
+  const nt = canvasTex(128, 64, (c) => { c.clearRect(0, 0, 128, 64); c.strokeStyle = "#e8eef8"; c.lineWidth = 2; for (let i = 0; i <= 16; i++) { c.beginPath(); c.moveTo(i * 8, 0); c.lineTo(i * 8, 64); c.stroke(); } for (let j = 0; j <= 8; j++) { c.beginPath(); c.moveTo(0, j * 8); c.lineTo(128, j * 8); c.stroke(); } });
+  // floodlight towers
+  for (const sx of [-1, 1]) {
+    cy(g, 0.16, 0.24, 11, T("#3a4058"), sx * 12, 5.5, HZ - 14, 0.02, 8);
+    bx(g, 2.6, 1.7, 0.25, T("#20263a"), sx * 12, 11.3, HZ - 13.8, 0.03);
+    for (let i = 0; i < 3; i++) for (let j = 0; j < 2; j++) glow(g, 0.65, 0.65, 0.05, "#fffbe8", sx * 12 + (i - 1) * 0.8, 11.3 + (j - 0.5) * 0.8, HZ - 13.65, 3.2);
+  }
+  void nt;
+  vplane(g, 220, 90, basic(gradTex([[0, "#03040f"], [0.6, "#0d1840"], [1, "#2a3a78"]], 8, 256), 1, false), 0, 30, -70); stars(g, 120, 71, 100, 14, 50, -69); glowSp(g, 2.4, "#fff6d0", 16, 24, -66, 1.3);
+  const lights = mkLights(["#9cb4ff", "#1d4a2a", 1.0], ["#e8f0ff", 2.4, [4, 13, 6]], [["#fffbe8", 60, [-10, 9, -10], 24], ["#fffbe8", 60, [10, 9, -10], 24], ["#fffbe8", 40, [0, 7, 6], 18]], 12);
+  return { root: g, lights, fog: new THREE.Fog("#0f1a3a", 30, 80), bg: "#0a1030", spots: { spot: [0, 0, 0], plate: [0, 0, HZ], mound: [0, 0.28, HZ - 5.5], sign: [0, 6.6, HZ - R - 5.6], ball: [-1.2, 0.1, HZ + 1.3] } };
 }
 
 // ================= STAGE =================
@@ -1321,7 +1396,7 @@ function showroom(): SetObj {
 }
 const gold2 = () => T("#e6a418", { emissive: "#6a3a00", emissiveIntensity: 0.4 });
 
-const BUILD: Record<SetName, () => SetObj> = { throne, office, diner, lab, stall, field, ring: ring_, track, graveyard, boardroom, street, beach, court, pitch, stage, space, garage, classroom, bathroom, mansion, showroom };
+const BUILD: Record<SetName, () => SetObj> = { throne, office, diner, lab, stall, field, ring: ring_, track, graveyard, boardroom, street, beach, court, pitch, diamond, stage, space, garage, classroom, bathroom, mansion, showroom };
 const CACHE = new Map<SetName, SetObj>();
 export const makeSet = (name: SetName): SetObj => {
   let s = CACHE.get(name);

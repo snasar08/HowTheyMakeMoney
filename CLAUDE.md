@@ -16,9 +16,11 @@ their money, told as fast 3D cartoon stories with an AI voice. Owner: Sam (snasa
   (one request voices a whole Short); add no extra voice requests.
 - Kid-safe. Never invent numbers: every figure comes from a source page actually opened, listed in `sources`.
 - No copied logo art, crests, real jersey designs or other creators' lines. Brand names in plain lettering are fine.
-- **Check every frame at 30 fps** before calling a video good or sending it: `python -m pipeline.allframes video.mp4 outdir`
-  and look at every sheet (cheaper: pair sheets, downscale to <=1600 px). No picture repeats inside a Short; a new
-  view every ~1.5-2 s; every thing a line mentions is on screen.
+- **Check every scene** before calling a video good (Sam, Nov 18: "not frame by frame but enough to check what's
+  broken and what isn't"): `python -m pipeline.scenesheet video.mp4 outdir` = start/middle/end of every shot on 1-2
+  sheets + an automatic scan of every frame (blank, flash, frozen, too short/long shot, jump inside a shot). Look
+  closer (`pipeline.allframes`, or stills) only at what it flags or what looks wrong. No picture repeats inside a
+  Short; a new view every ~1.5-2 s; every thing a line mentions is on screen.
 - Before pushing to main, send Sam the result and wait for his yes (unless he said to go ahead for that job).
 - Team: 3 Sonnet helpers do the work in parallel; the lead coordinates and checks.
 

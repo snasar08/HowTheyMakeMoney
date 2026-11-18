@@ -302,7 +302,7 @@ def make_plan(script: dict, recorded: dict | None = None) -> dict:
 
 # ---- afterhour look (Nov 16): the same per-sentence plan as real-3D shots for the AhShort composition ----
 AH_SET = {"throne": "throne", "office": "office", "servers": "lab", "garage": "garage", "stall": "stall", "mine": "field",
-          "court": "court", "pitch": "pitch", "stage": "stage", "space": "space", "street": "street", "bridge": "street",
+          "court": "court", "pitch": "pitch", "diamond": "diamond", "stage": "stage", "space": "space", "street": "street", "bridge": "street",
           "quay": "beach", "road": "track"}
 AH_EXPR = {"happy": "smile", "laugh": "laugh", "shock": "shock", "nervous": "shock", "proud": "smug", "stern": "angry",
            "scheme": "smug", "relief": "smile", "dazed": "sad", "sad": "sad", "calm": "neutral", "excited": "grin"}
@@ -412,7 +412,11 @@ def ah_look(o: dict) -> dict:
 
 # ---- Nov 17 (Ninja review: a streamer on a soccer pitch, Drake / LeBron / his mom named but never shown, a clock on
 # "followers", an outro of repeats): who the Short is about, who a sentence names, and "no two shots look alike" ----
-AH_SPORT_SETS = ("court", "pitch", "ring", "track")
+AH_SPORT_SETS = ("court", "pitch", "diamond", "ring", "track")
+# Nov 18: a baseball line stands on the baseball field (diamond), not a purple park
+AH_BASEBALL_RX = re.compile(r"\b(?:baseball|mlb|major leagues?|the majors|ballparks?|home runs?|homers?|grand slams?|pitchers?|fastballs?|curveballs?|strikeouts?|"
+                            r"innings?|shortstops?|outfield\w*|dugouts?|batters?|world series|yankees|dodgers|mets|red sox|cubs|braves|astros|padres|phillies|"
+                            r"blue jays|orioles|white sox|nationals|mariners|brewers|rockies|marlins|diamondbacks|first base|home plate)\b", re.I)
 AH_SCRIPT_SET = {"gaming": "office", "office": "office", "studio": "stage", "stage": "stage", "store": "stall", "warehouse": "garage",
                  "launch": "space", "city": "street"}
 AH_GAMER_GROUP = ["office", "lab", "garage", "stage"]
@@ -523,7 +527,7 @@ def ah_context(plan: dict) -> dict:
     sub = str((script or {}).get("name_sub") or "").lower()
     gamer = bool(re.search(r"streamer|gamer|esports|twitch", sub)) or "gaming" in sets
     sportish = bool(re.search(r"player|sprinter|driver|boxer|fighter|racer|athlete|golfer|swimmer|skater|champion|quarterback|runner", sub))
-    athlete = bool(sets & {"court", "pitch", "field"}) or (plan.get("hero") or {}).get("kit") in ("bball", "soccer") or (sportish and not gamer)
+    athlete = bool(sets & {"court", "pitch", "field", "diamond"}) or (plan.get("hero") or {}).get("kit") in ("bball", "soccer") or (sportish and not gamer)
     return {"script": script, "hero": ah_hero_tokens(script, plan), "gamer": gamer, "athlete": athlete,
             "famous": (script or {}).get("format") == "famous", "company": str((script or {}).get("company") or "").lower(),
             "brand": str((plan.get("brand") or {}).get("name") or "").lower()}
@@ -625,6 +629,64 @@ def ah_dedupe(shots: list, ctx: dict) -> list:
     return shots
 
 
+# Nov 18 (Sam: "no picture twice in a Short"): the same set came back 4x in a long Short (131 Flagg: court x5, 085 The Rock: stage x3).
+# ah_spread runs after ah_dedupe: a set already used by 2 other sentences goes to a different lit room when the line does not NAME
+# the place and does not need it (hoop / ball / sport act); otherwise the repeat gets a clearly different camera (side / high / low).
+AH_PLACE_WORDS = {"court": r"court|arena|hardwood|gym\b|garden", "pitch": r"pitch|stadium|field|grass|turf", "stage": r"stage|podium|ceremony|draft|award|concert|spotlight|trophy|champion",
+                  "ring": r"ring|wrestl|boxing|fight", "track": r"track|race|sprint", "throne": r"throne|king|crown", "space": r"space|moon|rocket|orbit|mars",
+                  "beach": r"beach|sea|ocean|island|yacht", "street": r"street|city|town|road|from [A-Z]", "diner": r"diner|burger|restaurant|food",
+                  "field": r"field|mine|farm", "graveyard": r"grave|dead|died"}
+AH_SPORT_BOUND = {"basketball", "hoop", "soccerball", "football", "goal", "ball", "net", "whistle", "helmet", "boxing", "gloves", "bat", "baseball"}
+AH_ALT_SETS = ["showroom", "office", "boardroom", "mansion", "stall", "stage", "lab"]
+AH_SPREAD_CAMS = [   # side / high / low views: every card stays above the head, far enough back to keep hero + things + card in frame
+    {"from": [3.9, 2.1, 7.9], "to": [3.2, 2.0, 7.1], "look": [0, 1.5, 0]},
+    {"from": [-3.9, 2.1, 7.9], "to": [-3.2, 2.0, 7.1], "look": [0, 1.5, 0]},
+    {"from": [0, 4.6, 8.2], "to": [0, 4.2, 7.6], "look": [0, 1.1, 0]},
+    {"from": [-2.6, 0.7, 8.2], "to": [-1.9, 0.85, 7.5], "look": [0, 1.7, 0]},
+    {"from": [2.6, 0.7, 8.2], "to": [1.9, 0.85, 7.5], "look": [0, 1.7, 0]},
+    {"from": [6.2, 2.8, 10.0], "to": [5.4, 2.6, 9.2], "look": [0, 1.3, 0]},
+]
+
+
+def ah_spread(shots: list, ctx: dict) -> list:
+    use: dict = {}         # set -> distinct sentence ids that showed it
+    looks: dict = {}       # set -> views / cams already shown there
+    moved: dict = {}       # sentence id -> (new set)
+    ncam = 0
+    for i, s in enumerate(shots):
+        k, st = s.get("_k", i), s["set"]
+        outro = s.get("_outro_seen")
+        txt = s.get("_txt", "")
+        bound = bool(s.get("act") or "cam" in s or outro or any(str(t["name"]) in AH_SPORT_BOUND for t in s.get("things") or [])
+                     or s["chars"][0].get("pose") in ("shoot", "dunk", "jump", "run")
+                     or (st == "diamond" and AH_BASEBALL_RX.search(txt)))   # a baseball line stays on the field
+        named = bool(re.search(AH_PLACE_WORDS.get(st, r"\b" + re.escape(st) + r"\b"), txt, re.I)) if st in AH_PLACE_WORDS else bool(re.search(r"\b" + re.escape(st) + r"\b", txt, re.I))
+        if k in moved:
+            s["set"] = st = moved[k]
+        elif not bound and not named and len(use.get(st, set()) - {k}) >= 1 and k not in use.get(st, set()):
+            alts = list(AH_GAMER_GROUP + ["showroom"]) if ctx.get("gamer") else AH_ALT_SETS
+            nxt = shots[i + 1]["set"] if i + 1 < len(shots) else None
+            prv = shots[i - 1]["set"] if i else None
+            alts = [a for a in alts if a != st and a not in AH_DARK_SETS and (a not in AH_SPORT_SETS or ctx.get("athlete"))]
+            alts.sort(key=lambda a: (len(use.get(a, ())), a in (prv, nxt)))
+            if alts and len(use.get(alts[0], ())) < len(use.get(st, ())):
+                moved[k] = s["set"] = st = alts[0]
+        key = s.get("view") if "cam" not in s else json.dumps(s["cam"]["from"])
+        seen_here = looks.setdefault(st, [])
+        if k not in use.get(st, set()) and use.get(st) and not s.get("act") and "cam" not in s and (key in seen_here):
+            # a repeat of the same set from a view we already showed: a different camera
+            for j in range(len(AH_SPREAD_CAMS)):
+                c = AH_SPREAD_CAMS[(ncam + j) % len(AH_SPREAD_CAMS)]
+                if c["from"][1] < 1 and st in AH_NO_LOW:
+                    continue
+                if json.dumps(c["from"]) not in seen_here:
+                    s["cam"] = c; ncam += j + 1; key = json.dumps(c["from"])
+                    break
+        use.setdefault(st, set()).add(k)
+        seen_here.append(key)
+    return shots
+
+
 def ah_shots(plan: dict) -> list:
     hero, shots, views = plan.get("hero") or {}, [], ["ms", "face", "cu", "ms", "low", "face"]
     prev_pose = None
@@ -646,6 +708,8 @@ def ah_shots(plan: dict) -> list:
         food_line = bool(AH_FOOD_RX.search(sc.get("text") or sc.get("line") or "")) and place not in ("space", "stage", "throne") and not outro
         if food_line:
             aset = "diner"
+        elif AH_BASEBALL_RX.search(sc.get("text") or sc.get("line") or "") and aset not in ("space", "stage", "throne") and place not in ("space", "stage", "throne") and not outro:
+            aset = "diamond"                                        # Nov 18: baseball lines live on the baseball field
         # the hero DOES what the sentence says (Sam, Nov 16: "jump shoes, people should jump"): pipeline/ah_actions
         pose = ah_actions.pick_pose(sc.get("text") or sc.get("line") or "", list(sc.get("things") or []) + list(sc.get("props") or []),
                                     sc.get("mood", "happy"), sc.get("action"), place, prev_pose)
@@ -743,7 +807,7 @@ def ah_shots(plan: dict) -> list:
         if outro:
             things = []
         shot = {"a": sc["a"], "n": sc["n"], "set": aset, "view": sc.get("view") or views[k % len(views)],
-                "chars": chars, "cards": cards, "things": things, **({"coins": True} if sc.get("beat") == "money" else {})}
+                "chars": chars, "cards": cards, "things": things, "_k": k, "_txt": line_txt, **({"coins": True} if sc.get("beat") == "money" else {})}
         # Rule (Nov 17, owner: "the things that are said are not shown"): a ratio ("one in every ten") is a row of small
         # figures with one lit up, seen from a camera that sees the floor, plus the short number card
         rm = AH_RATIO_RX.search(line_txt)
@@ -808,10 +872,12 @@ def ah_shots(plan: dict) -> list:
         if s.get("view") == "low" and s.get("set") in AH_NO_LOW and "cam" not in s:
             s["view"] = "ms"
     shots = ah_dedupe(shots, ctx)
+    shots = ah_spread(shots, ctx)
     for s in shots:   # dedupe may pick "low" again when it moves a shot to a raised set
         if s.get("view") == "low" and s.get("set") in AH_NO_LOW and "cam" not in s:
             s["view"] = "ws"
     for sh in shots:
+        sh.pop("_k", None); sh.pop("_txt", None)
         for c in sh["chars"]:
             c.pop("who", None)
     return shots
