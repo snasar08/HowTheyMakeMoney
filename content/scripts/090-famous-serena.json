@@ -290,18 +290,19 @@
     "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-090-famous-serena",
     "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-090-famous-serena/090-famous-serena.mp4",
     "post_at": "2026-11-19T16:30:00-05:00",
-    "buffer_post": "6afdeb0f144d89f0a5b5b9ec",
+    "buffer_post": "6afe23a7a588bd66879e2c85",
     "buffer_status": "scheduled",
-    "rendered_at": "2026-11-18T18:14:40.099125+00:00",
+    "rendered_at": "2026-11-18T22:16:07.861668+00:00",
     "seconds": 19.28,
+    "remade_from": "6afdeb0f144d89f0a5b5b9ec",
     "eyes": {
-      "score": 8,
+      "score": 7,
       "problems": [
-        "The caption text 'dollar shoe dealin' is grammatically awkward and looks like a typo",
-        "The character's name 'ERENA WILLIAMS' appears briefly in frame 121 due to a text glitch",
-        "The transition at the end (frame 569) causes a jarring visual flicker where the previous scene overlaps with the cover"
+        "The caption text 'finish a school year' at frame 518 does not match the narration.",
+        "The video loops back to the beginning at frame 570, which is jarring and unnecessary for a short.",
+        "The text 'Serena or Venus?' appears at frame 436 but is not mentioned in the narration, causing confusion."
       ],
-      "best_fix": "Correct the caption 'dollar shoe dealin' to 'dollar shoe deal' and fix the text rendering glitch in frame 121.",
+      "best_fix": "Remove the 'Serena or Venus?' segment and the looping ending, and ensure the captions align perfectly with the narration throughout.",
       "model": "gemini-3.1-flash-lite",
       "acts": null
     }
