@@ -2,7 +2,6 @@
   "_why": "Sam, Nov 16: weak acts (Nike contract / money throwing) 'can't happen' in automatic Shorts. pipeline.ah_actions.pick_act only returns kinds listed here. A kind is added ONLY after its contact sheet was looked at frame by frame and it passes the SPEC 'Act quality bar'. New acts a routine builds start OFF (not listed) until reviewed.",
   "approved": [
     "dribble",
-    "shoot",
     "dunk",
     "layup",
     "block",
@@ -25,7 +24,8 @@
     "throw_cash"
   ],
   "off_until_fixed": {
-    "film_camera": "camera hides the face"
+    "film_camera": "camera hides the face",
+    "shoot": "Nov 18 eyes check held 131 Flagg: stiff motion, ball teleports instead of a clear arc through the hoop"
   },
   "approved_notes": {
     "count_cash/sign_contract/throw_cash": "rebuilt Nov 16, reviewed frame by frame, Sam: 'Yes include'"
