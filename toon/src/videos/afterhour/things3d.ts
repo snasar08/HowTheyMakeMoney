@@ -4,7 +4,7 @@ import { toonMat, metalMat, glowMat, canvasTex, seeded } from "./common";
 import { hasModel, makeModelGroup, MODEL_SIZE } from "./models";
 import { drawCard } from "./cards";
 
-export type ThingName = "shoe" | "springshoe" | "chip" | "gpu" | "cash" | "cashstack" | "coins" | "goldbar" | "trophy" | "medal" | "crown" | "ring" | "car" | "sportscar" | "bus" | "truck" | "rocket" | "phone" | "laptop" | "tv" | "monitor" | "clock" | "books" | "letter" | "newspaper" | "briefcase" | "shovel" | "pickaxe" | "box" | "crate" | "basketball" | "football" | "soccerball" | "hoop" | "mic" | "headset" | "controller" | "burger" | "pizza" | "coffee" | "plant" | "robot" | "drone" | "satellite" | "globe" | "house" | "factory" | "stadium" | "plane" | "yacht" | "chart" | "arrowup" | "arrowdown" | "lightbulb" | "lock" | "key" | "heart" | "bomb" | "fire" | "camera";
+export type ThingName = "shoe" | "springshoe" | "chip" | "gpu" | "cash" | "cashstack" | "coins" | "goldbar" | "trophy" | "medal" | "crown" | "ring" | "car" | "sportscar" | "bus" | "truck" | "rocket" | "phone" | "laptop" | "tv" | "monitor" | "clock" | "books" | "letter" | "newspaper" | "briefcase" | "shovel" | "pickaxe" | "box" | "crate" | "basketball" | "football" | "soccerball" | "hoop" | "mic" | "headset" | "controller" | "burger" | "pizza" | "coffee" | "plant" | "robot" | "drone" | "satellite" | "globe" | "house" | "factory" | "stadium" | "plane" | "yacht" | "chart" | "arrowup" | "arrowdown" | "lightbulb" | "lock" | "key" | "heart" | "bomb" | "fire" | "camera" | "chatbot" | "glasses" | "dumbbell" | "hanger" | "dome";
 export type Thing = { root: THREE.Group; size: number; tick?(t: number): void };
 
 type M = string | THREE.Material;
@@ -430,6 +430,44 @@ const B: Record<ThingName, Builder> = {
     }
     return { g };
   },
+  // Nov 18: objects scripts kept asking for (chatbot, glasses, dumbbell, hanger, dome)
+  chatbot: (c, text) => {
+    const g = new THREE.Group(); const col = c ?? "#1d5cff";
+    rbx(g, 0.5, 0.32, 0.06, 0.08, col, 0, 0.3, 0);
+    ext(g, [[-0.04, 0], [0.06, 0], [-0.08, -0.1]], 0.06, col, -0.1, 0.12, -0.03);
+    if (text) plane(g, 0.42, 0.24, screenMat(textTex(text, 420, 240, col, "#fff"), 1.2), 0, 0.3, 0.032);
+    else for (const x of [-0.12, 0, 0.12]) sp(g, 0.035, "#ffffff", x, 0.3, 0.035, [1, 1, 0.4], 12);
+    return { g };
+  },
+  glasses: (c) => {
+    const g = new THREE.Group(); const col = c ?? "#1b1b24"; const y = 0.05;
+    const lens = new THREE.MeshBasicMaterial({ color: "#9fd8ff", transparent: true, opacity: 0.55 });
+    for (const s of [-1, 1]) { to(g, 0.045, 0.008, col, s * 0.058, y, 0); disc(g, 0.044, lens, s * 0.058, y, 0); bx(g, 0.008, 0.008, 0.14, col, s * 0.104, y + 0.01, -0.07); }
+    to(g, 0.018, 0.006, col, 0, y + 0.012, 0, [0, 0, 0], PI);
+    return { g };
+  },
+  dumbbell: (c) => {
+    const g = new THREE.Group(); const col = c ?? "#2b2b34"; const y = 0.07;
+    cy(g, 0.016, 0.016, 0.42, "#aab", 0, y, 0, [0, 0, PI / 2], 12);
+    for (const s of [-1, 1]) { cy(g, 0.07, 0.07, 0.05, col, s * 0.13, y, 0, [0, 0, PI / 2]); cy(g, 0.055, 0.055, 0.04, col, s * 0.175, y, 0, [0, 0, PI / 2]); cy(g, 0.022, 0.022, 0.02, "#aab", s * 0.205, y, 0, [0, 0, PI / 2], 12); }
+    return { g };
+  },
+  hanger: (c) => {
+    const g = new THREE.Group(); const col = c ?? "#e5262f";
+    to(g, 0.035, 0.006, "#aab", 0, 0.37, 0, [0, 0, -PI / 2], PI * 1.3);
+    cy(g, 0.006, 0.006, 0.05, "#aab", 0, 0.315, 0, undefined, 8);
+    for (const s of [-1, 1]) cy(g, 0.017, 0.017, 0.27, col, s * 0.115, 0.2, 0, [0, 0, s * 1.08], 10);
+    cy(g, 0.014, 0.014, 0.46, col, 0, 0.055, 0, [0, 0, PI / 2], 10);
+    return { g };
+  },
+  dome: (c) => {
+    const g = new THREE.Group(); const col = c ?? "#e8ecf4";
+    const h = new THREE.SphereGeometry(1, 28, 12, 0, PI * 2, 0, PI / 2); put(g, h, dbl(col), 0, 0.3, 0);
+    cy(g, 1.04, 1.06, 0.3, "#8a93a0", 0, 0.15, 0, undefined, 28);
+    for (let i = 0; i < 8; i++) to(g, 1.005, 0.012, "#5d6675", 0, 0.3, 0, [0, (i * PI) / 8, 0], PI);
+    for (let i = 0; i < 10; i++) { const a = (i / 10) * PI * 2; bx(g, 0.14, 0.12, 0.02, glowMat("#fff6c0", 1.2), Math.sin(a) * 1.065, 0.16, Math.cos(a) * 1.065, [0, a, 0]); }
+    return { g };
+  },
   football: (c) => {
     const g = new THREE.Group(); const o = new THREE.Group(); o.position.y = 0.1; o.rotation.set(0, 0.6, 0.0); g.add(o);
     sp(o, 0.1, c ?? "#8a4b22", 0, 0, 0, [0.62, 0.62, 1.35], 24);
@@ -782,7 +820,7 @@ function arrow(col: string, dir: 1 | -1): Built {
 
 // rough sizes help pick outline widths before the object exists
 const OLW = (n: ThingName): number => {
-  const big: Partial<Record<ThingName, number>> = { house: 0.14, factory: 0.3, stadium: 0.9, plane: 0.25, yacht: 0.18, bus: 0.07, truck: 0.07, car: 0.04, sportscar: 0.04, rocket: 0.04, hoop: 0.03, shovel: 0.012, pickaxe: 0.012, tv: 0.012, satellite: 0.02, robot: 0.018, arrowup: 0.025, arrowdown: 0.025, chart: 0.012, fire: 0.01, pizza: 0.006, drone: 0.006, crate: 0.012, box: 0.01 };
+  const big: Partial<Record<ThingName, number>> = { house: 0.14, factory: 0.3, stadium: 0.9, plane: 0.25, yacht: 0.18, bus: 0.07, truck: 0.07, car: 0.04, sportscar: 0.04, rocket: 0.04, hoop: 0.03, shovel: 0.012, pickaxe: 0.012, tv: 0.012, satellite: 0.02, robot: 0.018, arrowup: 0.025, arrowdown: 0.025, chart: 0.012, fire: 0.01, pizza: 0.006, drone: 0.006, crate: 0.012, box: 0.01, dome: 0.03, chatbot: 0.006 };
   return big[n] ?? 0.0035;
 };
 

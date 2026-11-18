@@ -324,7 +324,7 @@ def _ts_union(path: str, typ: str) -> set:
 
 AH_ALL_SETS = _ts_union("toon/src/videos/afterhour/sets.ts", "SetName")        # Nov 18: a toon "place" may name any 3D set
 AH_ALL_THINGS = _ts_union("toon/src/videos/afterhour/things3d.ts", "ThingName")  # and "things" any 3D object
-AH_BIG = {"car", "truck", "bus", "rocket", "factory", "stadium", "plane", "yacht", "house"}
+AH_BIG = {"car", "truck", "bus", "rocket", "factory", "stadium", "plane", "yacht", "house", "dome"}
 AH_CROWD = [{"body": c, "hat": "hair", "hair": h} for c, h in (("#e86a6a", "#3a2a20"), ("#5ad0d8", "#8a5a2a"), ("#8bc34a", "#1a1a1a"),
             ("#b48ae0", "#3a2a20"), ("#f2a33a", "#5a3b2a"), ("#4a7bd0", "#1a1a1a"))]
 

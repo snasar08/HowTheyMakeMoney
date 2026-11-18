@@ -77,10 +77,10 @@ The picture must SHOW what the sentence says. Fields (all optional; use only the
 - `props` (max 2): car truck trophy cash boxes check rocket ball mic flag laptop burger controller.
 - `things` (0-2 objects the sentence MENTIONS, shown big; Nov 18: any 3D object by name): shoe springshoe chip gpu
   cash cashstack coins goldbar trophy medal crown ring car sportscar bus truck rocket phone laptop tv monitor clock
-  books letter newspaper briefcase shovel pickaxe box crate basketball football hoop mic headset controller burger
+  books letter newspaper briefcase shovel pickaxe box crate basketball football soccerball hoop mic headset controller burger
   pizza coffee plant robot drone satellite globe house factory stadium plane yacht chart arrowup arrowdown lightbulb
-  lock key heart bomb fire camera (+ old names sneakerbus idea poster). The renderer also adds models from the line's
-  words (max 2). Use `things` not `props` for a football (props "ball" draws a basketball).
+  lock key heart bomb fire camera chatbot glasses dumbbell hanger dome (+ old names sneakerbus idea poster). The renderer also adds models from the line's
+  words (max 2). Use `things` not `props` for a football (props "ball" draws a basketball); "football" is the American ball, soccer = "soccerball" (balls on the pitch set become one automatically).
 - `mood`: happy laugh shock nervous proud stern scheme relief dazed sad calm excited. Match the line (shock at a
   big number, sad at a setback, laugh at a win).
 - `action` (the pose; otherwise picked from the line's verbs): stand sit cheer wave point walk dig shrug jump dunk
