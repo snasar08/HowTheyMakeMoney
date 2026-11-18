@@ -701,6 +701,16 @@ AH_PLACE_WORDS = {"court": r"court|arena|hardwood|gym\b|garden", "pitch": r"pitc
                   "field": r"field|mine|farm", "graveyard": r"grave|dead|died"}
 AH_SPORT_BOUND = {"basketball", "hoop", "soccerball", "football", "goal", "ball", "net", "whistle", "helmet", "boxing", "gloves", "bat", "baseball"}
 AH_ALT_SETS = ["showroom", "office", "boardroom", "mansion", "stall", "stage", "lab"]
+# Nov 18 (085: "The crowd loved him" went to the mansion, "A world record" to a market stall): a repeat moves only to a room
+# whose meaning fits the line; no fitting room -> it stays and gets a new camera instead
+AH_ALT_FIT = {"showroom": r"car|cars|luxury|rich|billion|buy|bought|spend|collect|watch|jet",
+              "office": r"orders?|cancel|cancelled|job|work|worked|company|career|salary|paid|pay|contract|deal|signed|boss|hired|fired|employee",
+              "boardroom": r"deal|company|business|ceo|board|investor|invest|shares|stake|owner|owns|brand|partner|empire",
+              "mansion": r"home|house|mansion|family|mom|dad|kids|lives|lived|rich|luxury|retire",
+              "stall": r"sell|sold|selling|shop|market|price|cheap|card|cards|merch|stand|ticket",
+              "stage": r"crowd|fans?|famous|award|record|star|show|cheer|loved|movie|actor|film|hollywood|celebrity|viral|views",
+              "lab": r"idea|tech|ai|invent|built|build|science|robot|app|code|game|design|smart|future|data",
+              "garage": r"garage|car|built|start|started|first|tinker|fix"}
 AH_SPREAD_CAMS = [   # side / high / low views: every card stays above the head, far enough back to keep hero + things + card in frame
     {"from": [3.9, 2.1, 7.9], "to": [3.2, 2.0, 7.1], "look": [0, 1.5, 0]},
     {"from": [-3.9, 2.1, 7.9], "to": [-3.2, 2.0, 7.1], "look": [0, 1.5, 0]},
@@ -734,6 +744,7 @@ def ah_spread(shots: list, ctx: dict) -> list:
             nxt = shots[i + 1]["set"] if i + 1 < len(shots) else None
             prv = shots[i - 1]["set"] if i else None
             alts = [a for a in alts if a != st and a not in AH_DARK_SETS and (a not in AH_SPORT_SETS or ctx.get("athlete"))]
+            alts = [a for a in alts if re.search(r"\b(" + AH_ALT_FIT.get(a, "$^") + r")\b", txt, re.I)]
             alts.sort(key=lambda a: (len(use.get(a, ())), a in (prv, nxt)))
             if alts and len(use.get(alts[0], ())) < len(use.get(st, ())):
                 moved[k] = s["set"] = st = alts[0]
