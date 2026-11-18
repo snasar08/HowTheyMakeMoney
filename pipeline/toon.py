@@ -965,6 +965,10 @@ def ah_shots(plan: dict) -> list:
     for s in shots:   # dedupe may pick "low" again when it moves a shot to a raised set
         if s.get("view") == "low" and s.get("set") in AH_NO_LOW and "cam" not in s:
             s["view"] = "ws"
+    for p, s in zip(shots, shots[1:]):   # Nov 18 test 4 (132 @783): dedupe/spread left two halves of a line on the SAME set + view = a jump cut
+        if s["set"] == p["set"] and s.get("view") == p.get("view") and "cam" not in s and not s.get("act"):
+            alt = ["wide", "ws"] if (s.get("things") or s.get("cards")) else ["face", "ms", "ws"]
+            s["view"] = next((v for v in alt if v != p.get("view") and not (v == "low" and s["set"] in AH_NO_LOW)), "wide")
     for sh in shots:
         sh.pop("_k", None); sh.pop("_txt", None)
         for c in sh["chars"]:
@@ -986,13 +990,36 @@ def plates(plan: dict, frames_dir: Path, plates_dir: Path) -> int:
         imgs = sorted(rj.parent.glob("*.jp*g"), key=lambda q: int(re.findall(r"\d+", q.stem)[-1]))
         for k, q in enumerate(imgs):
             files[r["start"] + k] = q
-    n = 0
+    n, gaps = 0, []
     for sc in plan["scenes"]:
         for j in range(sc["n"]):
             f = files.get(sc["a"] + j)
+            if not f and files:   # Nov 18: a missing frame fell back to the old renderer = a BLACK flash (099 @556)
+                gaps.append(sc["a"] + j)
+                near = min(files, key=lambda k: (abs(k - (sc["a"] + j)), k > sc["a"] + j))
+                f = files[near]
             if f:
                 shutil.copyfile(f, out / f"{sc['si']}_{sc['frLo'] + j}.jpg")
                 n += 1
+    if gaps:
+        print(f"::warning::{plan['slug']} plates: {len(gaps)} missing frame(s) filled from neighbours: {gaps[:10]}")
+    try:   # a frame that RENDERED blank (one black flash) gets the frame before it
+        import numpy as np
+        from PIL import Image
+        seq = [out / f"{sc['si']}_{sc['frLo'] + j}.jpg" for sc in plan["scenes"] for j in range(sc["n"])]
+        seq = [q for q in seq if q.exists()]
+        prev, fixed = None, []
+        for q in seq:
+            blank = float(np.asarray(Image.open(q).convert("L").resize((45, 80)), np.float32).std()) < 6
+            if blank and prev is not None:
+                shutil.copyfile(prev, q)
+                fixed.append(q.stem)
+            elif not blank:
+                prev = q
+        if fixed:
+            print(f"::warning::{plan['slug']} plates: {len(fixed)} blank frame(s) replaced: {fixed[:10]}")
+    except Exception as e:  # noqa: BLE001  never cost a Short
+        print(f"[plates] blank check skipped: {e!r}")
     return n
 
 
