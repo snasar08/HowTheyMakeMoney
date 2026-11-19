@@ -1,0 +1,17 @@
+=== line 1: Film2D 40,100,160,220,248,340,415,460,520,580,640,700,790,835,940 0.5 film/settest.json 
+bundle 5.2s
+still 40 0.6s
+still 100 0.6s
+still 160 0.7s
+still 220 0.8s
+still 248 0.8s
+still 340 0.6s
+still 415 0.6s
+still 460 0.6s
+still 520 0.6s
+still 580 0.5s
+still 640 0.4s
+still 700 0.6s
+still 790 0.4s
+still 835 0.4s
+still 940 0.6s
