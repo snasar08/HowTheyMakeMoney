@@ -181,7 +181,7 @@ export const Guy: React.FC<{ p: Pose; e: Expr; dir?: number; t: number; look?: L
     <path d={d} stroke={fill} strokeWidth={w} strokeLinecap="round" strokeLinejoin="round" fill="none" />
   </g>;
   const body = `M ${hx} ${hy} L ${sx} ${sy}`;
-  const headT = `translate(${nx} ${ny - HEAD_R + 14}) rotate(${(p.head ?? 0) * dir})`;
+  const headT = `translate(${nx} ${ny - HEAD_R + 14}) rotate(${((p.head ?? 0) - (Math.abs(p.rot ?? 0) > 45 ? p.rot ?? 0 : 0)) * dir})`;   // lying: the face stays upright
   const glow = mon ? "url(#monGlow)" : undefined;
   return (
     <g transform={`translate(${x} ${y - (p.lift ?? 0) * scale}) scale(${scale}) rotate(${(p.rot ?? 0) * dir})`} filter={glow} opacity={1 - dim}>
