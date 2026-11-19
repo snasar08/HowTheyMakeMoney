@@ -30,7 +30,7 @@ export const SET_CAMS: Record<string, { c: [number, number, number]; push: numbe
   bedroom: { c: [655, 445, 1.35], push: 1.2 },
   bedroomdawn: { c: [655, 445, 1.35], push: 0 },
   couch: { c: [697, 448, 1.27], push: 1.0 },
-  desk: { c: [690, 337, 1.1], push: 1.0 },
+  desk: { c: [690, 422, 1.1], push: 1.0 },
   street: { c: [686, 429, 1.15], push: 0.4 },
   mirror: { c: [650, 421, 1.4], push: 1.0 },
   gym: { c: [642, 435, 1.2], push: 0 },
@@ -261,7 +261,7 @@ const Bag: React.FC<{ x: number; t: number; hit?: number; speed?: number; hit0?:
 };
 /** yellow speed lines streaming left from (x,y) */
 export const Speed: React.FC<{ x: number; y: number; v?: number; s?: number }> = ({ x, y, v = 1, s = 1 }) => (
-  <g opacity={Math.min(1, v)} transform={`translate(${x} ${y}) scale(${s})`} stroke="#e6c63a" strokeLinecap="round" fill="none">
+  <g opacity={Math.min(1, v)} transform={`translate(${x} ${y}) scale(${s})`} stroke="#b8982e" strokeLinecap="round" fill="none">
     {Array.from({ length: 12 }, (_, i) => {
       const yy = (i - 5.5) * 5 + rnd(i) * 6, len = 330 + rnd(i * 3) * 300, sl = -((i - 5.5) / 5.5) * 0.3 + (rnd(i * 5) - 0.5) * 0.06;
       return <path key={i} d={`M ${-14 - rnd(i * 7) * 30} ${yy} l ${-len} ${len * sl}`} strokeWidth={1.8 + rnd(i * 2) * 1.8} opacity={0.85} />;
@@ -421,8 +421,8 @@ const Fridge: React.FC<{ x: number; open?: number; t: number }> = ({ x, open = 0
       <rect x={x - hw} y={top} width={w} height={390} rx={14} fill="#5d6678" stroke="#97a0b4" strokeWidth={3} />
       <rect x={x - hw + 10} y={top + 10} width={w - 20} height={370} rx={8} fill="#6b7488" opacity={0.7} />
       <path d={`M ${x - hw + 6} ${top + 125} L ${x + hw - 6} ${top + 125} M ${x - hw + 6} ${top + 248} L ${x + hw - 6} ${top + 248}`} stroke="#a4adc0" strokeWidth={3} />
-      <path d={`M ${x + hw} ${top + 2} L ${x + hw + 74} ${top + 34} L ${x + hw + 74} ${FLOOR - 22} L ${x + hw} ${FLOOR - 4} Z`} fill="#3b4150" stroke="#8b93a6" strokeWidth={3} strokeLinejoin="round" />
-      <path d={`M ${x + hw + 60} ${top + 120} L ${x + hw + 60} ${top + 250}`} stroke="#b3bbcc" strokeWidth={5} strokeLinecap="round" opacity={0.7} />
+      <path d={`M ${x + hw} ${top + 2} L ${x + hw + 112} ${top + 50} L ${x + hw + 112} ${FLOOR - 30} L ${x + hw} ${FLOOR - 4} Z`} fill="#3b4150" stroke="#8b93a6" strokeWidth={3} strokeLinejoin="round" />
+      <path d={`M ${x + hw + 96} ${top + 130} L ${x + hw + 96} ${top + 260}`} stroke="#b3bbcc" strokeWidth={5} strokeLinecap="round" opacity={0.7} />
     </g>
   );
   return (
@@ -495,7 +495,7 @@ export const SetView: React.FC<{ name: string; t: number; scroll?: number; arg?:
     case "bedroom": return <g><Wedge x={930} y={258} w={140} /><Window x={930} y={258} /><Floor /><Nightstand x={332} /><Bed x={420} /><Alarm x={376} y={FLOOR - 78 - 9} s={0.7} text={arg.clock ? fmtClock(arg.clock) : "5:00"} ring={arg.ring ? t : 0} /></g>;
     case "bedroomdawn": return <g><Wedge x={930} y={258} w={140} col="#e08aa0" o={Math.min(1, 0.5 + t / 4)} /><Window x={930} y={258} dawn={t / 4} /><Floor /><Nightstand x={332} /><Bed x={420} /><Alarm x={376} y={FLOOR - 78 - 9} s={0.7} text={arg.clock ? fmtClock(arg.clock) : "5:00"} /></g>;
     case "couch": return <g><Floor />{!arg.nolamp && <FloorLamp x={330} on={!!arg.lamp} />}<Couch x={680} /></g>;
-    case "desk": return <g><WallClock x={730} y={296} t={t} /><Floor /><Chair x={560} dir={1} /><Desk x={680} /><BookStack x={860} y={FLOOR - 112} /><DeskLamp x={860} y={FLOOR - 154} /></g>;
+    case "desk": return <g><WallClock x={730} y={180} t={t} /><Floor /><Chair x={560} dir={1} /><Desk x={680} /><BookStack x={860} y={FLOOR - 112} /><DeskLamp x={860} y={FLOOR - 154} /></g>;
     case "street": { const off = scroll ?? t * 240; return <g><City off={off} /><StreetLamps off={off} t={t} /><Floor /><RoadDashes off={off} />
       {Array.from({ length: 7 }, (_, i) => <path key={i} d={`M ${wrap(rnd(i * 3) * 1800 - t * (1100 + i * 90), 1800) - 300} ${FLOOR - 330 + rnd(i) * 300} l ${110 + rnd(i * 5) * 160} 0`} stroke="#fff" strokeWidth={1.4} strokeLinecap="round" opacity={0.12} />)}</g>; }
     case "mirror": return <g><Floor /><Mirror x={760} crack={arg.crack ?? 0} tint={arg.tint ?? 0} hue={arg.tintHue ?? 210} /></g>;

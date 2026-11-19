@@ -85,7 +85,7 @@ export const pose = (name: string, t: number, punchPeriod = 1.25): Pose => {
     case "desk":    // sitting at a desk, writing
       return { hipY: 44, lean: 18, head: 16, lF: [84, -84], lB: [80, -80], aF: [70 + tw(ti, 0.5) * 6, 40], aB: [60, 40] };
     case "sleepdesk": case "deskslump":   // face down on the desk, one arm reaching forward
-      return { hipY: 44 + b * 0.2, lean: 50, head: 10, headY: 0, lF: [84, -84], lB: [80, -80], aF: [96, -6], aB: [60, 40] };
+      return { hipY: 44 + b * 0.2, lean: 50, head: -12, headY: 0, lF: [84, -84], lB: [80, -80], aF: [96, -6], aB: [60, 40] };
     case "punch": {   // wind-up 10 f, extension 3 f, hold 4 f, return 12 f, then guard (one bar = 2.5 s in the ref; default 1.25 s,
       // per beat arg.punch = period in seconds, e.g. 2.5; the motion itself always takes 28.5 f, the rest of the period is the guard)
       const f = (t % Math.max(0.95, punchPeriod)) * 30;
@@ -132,7 +132,7 @@ export const pose = (name: string, t: number, punchPeriod = 1.25): Pose => {
     case "monster":   // the inner voice: tall, still, slight sway
       return { hipY: 74, lean: 4 + tw(ti, 2.6) * 3, head: 6, aF: [20 + tw(ti, 2.1) * 6, 20], aB: [-12, 20], lF: [4, 0], lB: [-4, 0] };
     case "loom":      // monster leaning over him, arms out
-      return { hipY: 74, lean: 18, head: 14, aF: [96 + tw(t, 1.7) * 10, 30], aB: [70, 40], lF: [8, 0], lB: [-8, 0] };
+      return { hipY: 74, lean: 3, head: 4, aF: [88 + tw(t, 1.7) * 4, 8], aB: [-86 - tw(t, 1.7) * 4, 8], lF: [4, 0], lB: [-4, 0] };   // T-pose, arms out (ref 119-121 s)
     case "peek":      // monster peeking over a sofa / chair back, one hand up
       return { hipY: 62, lean: 20, head: 10, aF: [150 + tw(ti, 1.3) * 12, 40], aB: [20, 30], lF: [6, 0], lB: [-6, 0] };
     case "lurk":      // monster standing behind him, hand on the chair
@@ -287,7 +287,7 @@ export const Guy: React.FC<{ p: Pose; e: Expr; dir?: number; t: number; look?: L
     const arm = `M ${off.x} ${off.y} Q ${el.x} ${el.y} ${tip.x} ${tip.y}`;
     // cream arm + fist with an ink outline (look.blackHand keeps the old black glowing villain arm)
     const black = mon && !!look.blackHand, hs = black ? skin : look.skin ?? SKIN, hl = black ? line : INK, ow = black ? 0 : 3.4, fing = (sl?.fist ? [] : [-34, -12, 12, 34]).map((o, i) => ({ cx: tip.x - 4 * dir + o * dir * 0.3, cy: tip.y + 40 + (i % 2) * 6 }));
-    return wrap(<g>
+    return wrap(<g transform={sl ? `translate(${tip.x} ${tip.y}) scale(0.72) translate(${-tip.x} ${-tip.y})` : undefined}>
       {sl && sl.glow > 0 && <circle cx={tip.x} cy={tip.y} r={150} fill="url(#g-ffd27a)" opacity={sl.glow} />}
       <path d={arm} stroke={hl} strokeWidth={86 + ow * 2} strokeLinecap="round" fill="none" />
       <ellipse cx={tip.x} cy={tip.y} rx={58 + ow} ry={50 + ow} fill={hl} />
