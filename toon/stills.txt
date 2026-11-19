@@ -1,1 +1,1 @@
-Film2D 120,390,2985 0.5 film/900-replica.json
+Film2D 390,2985 0.5 film/900-replica.json

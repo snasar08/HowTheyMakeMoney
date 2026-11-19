@@ -318,7 +318,7 @@ export const Guy: React.FC<{ p: Pose; e: Expr; dir?: number; t: number; look?: L
   const base: Pt = { x: g.hx + ux * 14, y: g.hy + uy * 14 };
   const circles: { x: number; y: number; r: number }[] = [];
   const nb = 9, nn = 6;
-  for (let i = 0; i <= nb; i++) { const k = i / nb; circles.push({ x: base.x + (g.sh.x - base.x) * k, y: base.y + (g.sh.y - base.y) * k, r: R0 + (R1 - R0) * k }); }
+  for (let i = 0; i <= nb; i++) { const k = i / nb; circles.push({ x: base.x + (g.sh.x - base.x) * k, y: base.y + (g.sh.y - base.y) * k, r: p.front ? 9 : R0 + (R1 - R0) * k }); }
   for (let i = 1; i <= nn; i++) { const k = i / nn; circles.push({ x: g.sh.x + (g.hc.x - g.sh.x) * k, y: g.sh.y + (g.hc.y - g.sh.y) * k, r: p.front ? 9 : R1 + (RN - R1) * sm(k) }); }
   const hangDeg = g.hang * dir;
   const egg = <g key="egg">
