@@ -3,7 +3,8 @@ import * as THREE from "three";
 import { toonMat, glowMat, metalMat, outline, canvasTex, seeded, box } from "./common";
 
 export type SetName = "throne" | "office" | "diner" | "lab" | "stall" | "field" | "ring" | "track" | "graveyard" | "boardroom" | "street" | "beach"
-  | "court" | "pitch" | "diamond" | "gridiron" | "tennis" | "gym" | "studio" | "farm" | "store" | "stage" | "space" | "garage" | "classroom" | "bathroom" | "mansion" | "showroom";
+  | "court" | "pitch" | "diamond" | "gridiron" | "tennis" | "gym" | "studio" | "farm" | "store" | "stage" | "space" | "garage" | "classroom" | "bathroom" | "mansion" | "showroom"
+  | "bedroom" | "bedroomday" | "void" | "courtempty";
 export type SetObj = { root: THREE.Group; lights: THREE.Light[]; fog?: THREE.Fog; bg: string; spots: Record<string, [number, number, number]> };
 
 type V3 = [number, number, number];
@@ -995,7 +996,10 @@ function beach(): SetObj {
 
 
 // ================= COURT =================
-function court(): SetObj {
+function court(): SetObj { return courtOf(false); }
+/** Nov 19 films: the same gym before school: empty bleachers, scoreboard at 00-00, half the lights on, cold */
+function courtempty(): SetObj { return courtOf(true); }
+function courtOf(empty: boolean): SetObj {
   const g = new THREE.Group(); const S = 36;
   const ct = canvasTex(540, 1008, (c) => {
     c.fillStyle = "#d9a463"; c.fillRect(0, 0, 540, 1008);
@@ -1037,28 +1041,35 @@ function court(): SetObj {
   // stands with crowd (back, left, right + upper tier)
   const pal = ["#7b3fe4", "#ffc21f", "#ffffff", "#2a2a3a", "#ff4d6d", "#3ad1ff"];
   bx(g, 40, 3.3, 4.2, T("#2a335c"), 0, 1.65, -16.3);
-  crowd(g, 0, 0, -9.7, 0, 40, 6, 31, 0.62, 0.55, 0.8, pal, true);
-  crowd(g, 0, 3.3, -14.7, 0, 40, 5, 34, 0.62, 0.5, 0.8, pal, true);
-  crowd(g, -9.8, 0, 2, PI / 2, 30, 6, 32, 0.6, 0.5, 0.8, pal, true);
-  crowd(g, 9.8, 0, 2, -PI / 2, 30, 6, 35, 0.6, 0.5, 0.8, pal, true);
+  if (!empty) {
+    crowd(g, 0, 0, -9.7, 0, 40, 6, 31, 0.62, 0.55, 0.8, pal, true);
+    crowd(g, 0, 3.3, -14.7, 0, 40, 5, 34, 0.62, 0.5, 0.8, pal, true);
+    crowd(g, -9.8, 0, 2, PI / 2, 30, 6, 32, 0.6, 0.5, 0.8, pal, true);
+    crowd(g, 9.8, 0, 2, -PI / 2, 30, 6, 35, 0.6, 0.5, 0.8, pal, true);
+  } else {   // empty wooden bleacher steps
+    const seat = T("#5a4634"), step = T("#2a2f45");
+    for (let r = 0; r < 6; r++) { bx(g, 40, 0.5, 0.75, step, 0, 0.25 + r * 0.5, -9.9 - r * 0.8); bx(g, 40, 0.08, 0.5, seat, 0, 0.54 + r * 0.5, -9.8 - r * 0.8); }
+    for (const sx of [-1, 1]) for (let r = 0; r < 6; r++) { bx(g, 0.75, 0.5, 28, step, sx * (9.9 + r * 0.8), 0.25 + r * 0.5, 2); bx(g, 0.5, 0.08, 28, seat, sx * (9.8 + r * 0.8), 0.54 + r * 0.5, 2); }
+  }
   // LED ribbon boards, scoreboard, bench
   panel(g, 9, 0.8, 0, 0.55, -8.6, "#ffc21f", 0, "#10102a"); panel(g, 5, 0.8, -8.5, 0.55, -8.5, "#7b3fe4", 0, "#10102a"); panel(g, 5, 0.8, 8.5, 0.55, -8.5, "#7b3fe4", 0, "#10102a");
   const sb = canvasTex(512, 256, (c) => {
     c.fillStyle = "#06060e"; c.fillRect(0, 0, 512, 256); c.textAlign = "center"; c.font = "bold 34px Arial";
     // HOME score left, AWAY score right, the clock in its own box between them with clear gaps (Nov 16: "882:4185" ran together)
     c.fillStyle = "#ffc21f"; c.fillText("HOME", 88, 62); c.fillText("AWAY", 424, 62);
-    c.font = "bold 104px Courier New"; c.fillStyle = "#ff4d3a"; c.fillText("88", 88, 178); c.fillText("85", 424, 178);
+    c.font = "bold 104px Courier New"; c.fillStyle = "#ff4d3a"; c.fillText(empty ? "00" : "88", 88, 178); c.fillText(empty ? "00" : "85", 424, 178);
     c.fillStyle = "#10102a"; c.fillRect(176, 40, 160, 176); c.strokeStyle = "#8ae0ff"; c.lineWidth = 3; c.strokeRect(176, 40, 160, 176);
     c.font = "bold 30px Arial"; c.fillStyle = "#8ae0ff"; c.fillText("4TH", 256, 82);
-    c.font = "bold 52px Courier New"; c.fillStyle = "#ffe36a"; c.fillText("2:41", 256, 160);
+    c.font = "bold 52px Courier New"; c.fillStyle = "#ffe36a"; c.fillText(empty ? "0:00" : "2:41", 256, 160);
     c.font = "bold 20px Arial"; c.fillStyle = "#ffc21f"; c.fillText("QUARTER", 256, 196);
     c.strokeStyle = "#ffc21f"; c.lineWidth = 6; c.strokeRect(6, 6, 500, 244);
   });
   bx(g, 4.8, 2.4, 0.7, T("#0c0c18"), 0, 7.0, -8.0, 0.04); const sbp = new THREE.Mesh(new THREE.PlaneGeometry(4.6, 2.3), basic(sb, 1.25, false)); sbp.position.set(0, 7.0, -7.64); g.add(sbp);
   for (const sx of [-1, 1]) cy(g, 0.03, 0.03, 6, T("#444"), sx * 2.0, 10.0, -8.0);
   bx(g, 3.2, 0.5, 0.7, T("#2a2a3a"), 7.6, 0.3, 4.2, 0.02); cy(g, 0.22, 0.2, 0.7, T("#ff8a1a"), 7.6, 0.85, 3.2, 0.02); cy(g, 0.23, 0.23, 0.1, T("#ffffff"), 7.6, 1.24, 3.2);
-  const lights = mkLights(["#dfe6ff", "#8a6a50", 1.2], ["#fff0d8", 2.2, [3, 12, 8]], [["#fff4d8", 40, [0, 8, 1], 18], ["#fff4d8", 40, [0, 7, -6], 16], ["#ffc21f", 25, [0, 4, -7], 10]], 12);
-  return { root: g, lights, fog: new THREE.Fog("#232c48", 28, 70), bg: "#1b2238", spots: { court: [0, 0, 0], hoop: [0, 3.05, -4.72], backboard: [0, 3.45, -4.95], scoreboard: [0, 7.0, -7.6], sign: [0, 0.55, -8.5], ball: [1.0, 0.12, 1.6] } };
+  const lights = empty ? mkLights(["#b8c4ff", "#3a3040", 0.8], ["#e8eeff", 1.6, [3, 12, 8]], [["#e8f0ff", 45, [0, 8, 1], 16]], 12)
+    : mkLights(["#dfe6ff", "#8a6a50", 1.2], ["#fff0d8", 2.2, [3, 12, 8]], [["#fff4d8", 40, [0, 8, 1], 18], ["#fff4d8", 40, [0, 7, -6], 16], ["#ffc21f", 25, [0, 4, -7], 10]], 12);
+  return { root: g, lights, fog: new THREE.Fog(empty ? "#10142a" : "#232c48", 28, 70), bg: empty ? "#0e1222" : "#1b2238", spots: { court: [0, 0, 0], hoop: [0, 3.05, -4.72], backboard: [0, 3.45, -4.95], scoreboard: [0, 7.0, -7.6], sign: [0, 0.55, -8.5], ball: [1.0, 0.12, 1.6] } };
 }
 
 // ================= PITCH =================
@@ -1804,9 +1815,64 @@ function showroom(): SetObj {
   const lights = mkLights(["#b8c4ff", "#14141e", 1.0], ["#f4f8ff", 2.0, [2, 10, 7]], [["#fff4d8", 60, [-3.4, 6, -4], 14], ["#fff4d8", 60, [3.6, 6, -5], 14], ["#ff9a3a", 40, [0, 3, -10], 12], ["#8ae0ff", 30, [0, 2.5, 4], 12]], 12);
   return { root: g, lights, fog: new THREE.Fog("#0b0b14", 22, 52), bg: "#080810", spots: { floor: [0, 0, 0], sign: [0, 5.2, -10.92], car1: [-3.4, 0.14, -4.4], car2: [3.6, 0.14, -5.4], car3: [0.2, 0.14, -9.0] } };
 }
+
+// ================= BEDROOM (Nov 19 films: night = cold blue moonlight + phone/alarm glow; "bedroomday" = the same room at sunrise) =================
+function bedroomOf(day: boolean): SetObj {
+  const g = new THREE.Group();
+  plane(g, 30, 30, T("#ffffff", { map: woodTex(day ? "#9a6a44" : "#3a2c2a", day ? "#7e5536" : "#2e2322", 10, 10, 8) }), 0, 0, 0);
+  const wallC = day ? "#f2d3a8" : "#2a3350", wm = T(wallC);
+  bx(g, 9, 3.4, 0.3, wm, 0, 1.7, -3.3).castShadow = false;
+  for (const sx of [-1, 1]) bx(g, 0.3, 3.4, 12, wm, sx * 4.4, 1.7, 2.5).castShadow = false;
+  bx(g, 9, 0.12, 0.06, T(day ? "#d9b27e" : "#20283f"), 0, 0.06, -3.12);   // skirting
+  // window (right of centre) with curtains: moon or sunrise behind
+  const sky = day ? gradTex([[0, "#ffb05a"], [0.55, "#ffd98a"], [1, "#fff1c8"]], 8, 128) : gradTex([[0, "#0c1430"], [1, "#24407a"]], 8, 128);
+  const win = new THREE.Mesh(new THREE.PlaneGeometry(1.6, 1.4), basic(sky, day ? 1.6 : 1.1, false)); win.position.set(1.2, 1.95, -3.13); g.add(win);
+  if (!day) glowSp(g, 0.16, "#dfe8ff", 1.6, 2.3, -3.12, 1.6); else glowSp(g, 0.32, "#fff0b0", 1.0, 1.55, -3.12, 2.6);
+  bx(g, 1.7, 0.06, 0.08, T("#e8e2d8"), 1.2, 1.25, -3.08, 0.01); bx(g, 0.05, 1.45, 0.06, T("#e8e2d8"), 1.2, 1.95, -3.1); bx(g, 1.6, 0.05, 0.06, T("#e8e2d8"), 1.2, 1.95, -3.1);
+  for (const sx of [-1, 1]) bx(g, 0.35, 1.9, 0.08, T(day ? "#d65a4a" : "#3b2a55"), 1.2 + sx * 1.0, 1.85, -3.05, 0.02);
+  // bed along the left wall: frame, mattress, blanket, pillow
+  const bed = T(day ? "#7a4e2e" : "#3b2a22");
+  bx(g, 2.4, 0.35, 1.5, bed, -2.4, 0.2, -1.6, 0.02); bx(g, 0.12, 1.1, 1.5, bed, -3.62, 0.55, -1.6, 0.02);
+  bx(g, 2.3, 0.22, 1.4, T("#eef0f6"), -2.4, 0.48, -1.6, 0.015);
+  bx(g, 1.5, 0.12, 1.46, T(day ? "#3f7fd0" : "#2c4a86"), -2.0, 0.62, -1.6, 0.02);
+  bx(g, 0.5, 0.14, 0.9, T("#ffffff"), -3.25, 0.66, -1.6, 0.015);
+  // nightstand + lamp at the bed head (the alarm clock is a thing: spot "alarm")
+  bx(g, 0.55, 0.6, 0.5, T(day ? "#8a5a36" : "#30241f"), -3.8, 0.3, -2.75, 0.02);
+  cy(g, 0.05, 0.08, 0.3, T("#c9b79a"), -3.95, 0.75, -2.85, 0.01, 10); cy(g, 0.12, 0.18, 0.2, T(day ? "#f4e2b8" : "#594a36"), -3.95, 0.98, -2.85, 0.01, 14);
+  // desk on the right with chair, laptop glow, lamp
+  const dk = T(day ? "#b98a5a" : "#3a2f2c");
+  bx(g, 1.8, 0.07, 0.75, dk, 3.2, 0.82, -2.5, 0.02); for (const [x, z] of [[2.4, -2.8], [4.0, -2.8], [2.4, -2.2], [4.0, -2.2]] as V2[]) bx(g, 0.06, 0.8, 0.06, dk, x, 0.4, z);
+  bx(g, 0.5, 0.32, 0.02, T("#20222a"), 3.3, 1.04, -2.75, 0.01); panel(g, 0.46, 0.28, 3.3, 1.04, -2.735, day ? "#bfe0ff" : "#7a8cff", 0, "#141a3a");
+  bx(g, 0.55, 0.06, 0.5, T("#e9494f"), 3.1, 0.5, -1.8, 0.015); bx(g, 0.55, 0.6, 0.06, T("#e9494f"), 3.1, 0.8, -1.55, 0.015);
+  // posters, shelf with a small trophy, shoes, laundry
+  const pst = (x: number, y: number, a: string, b: string, sd: number) => { const m = new THREE.Mesh(new THREE.PlaneGeometry(0.7, 1.0), basic(posterTex(a, b, sd), day ? 1 : 0.55)); m.position.set(x, y, -3.13); g.add(m); };
+  pst(-1.2, 2.15, "#e8742a", "#1d1d2a", 3); pst(-0.3, 2.3, "#2b6bff", "#f2c230", 7); pst(3.4, 2.2, "#22a35a", "#f4f4f4", 11);
+  bx(g, 1.1, 0.05, 0.25, dk, -0.7, 1.45, -3.05, 0.01); for (let i = 0; i < 4; i++) bx(g, 0.08, 0.25 + (i % 2) * 0.06, 0.18, T(["#c0392b", "#2b6bff", "#2ecc71", "#f1c40f"][i]), -1.1 + i * 0.1, 1.6, -3.05);
+  for (const sx of [0, 0.28]) { bx(g, 0.14, 0.09, 0.32, T("#f4f4f4"), -0.4 + sx, 0.05, 0.3, 0.01); bx(g, 0.14, 0.04, 0.3, T("#e5262f"), -0.4 + sx, 0.11, 0.28); }
+  sp(g, 0.28, T(day ? "#7d8fb0" : "#3b4560"), 2.2, 0.12, -0.2, 0.015, 10).scale.set(1.4, 0.4, 1);
+  shadowBlob(g, -2.4, -1.6, 1.4, 0.9, 0.4);
+  const lights = day
+    ? mkLights(["#fff2d8", "#a07050", 1.6], ["#ffc070", 2.6, [3, 5, -6]], [["#ffb050", 50, [1.2, 2.0, -2.4], 12], ["#fff0d0", 25, [0, 3, 2], 12]], 8, [0, 0, -1])
+    : mkLights(["#5a6ea8", "#120c18", 0.7], ["#8fb0ff", 1.3, [3, 6, -5]], [["#7f9cff", 22, [1.2, 2.0, -2.4], 8], ["#7a8cff", 10, [3.3, 1.2, -2.2], 4], ["#ff3a30", 4, [-3.8, 0.8, -2.5], 2.5]], 8, [0, 0, -1]);
+  const bg = day ? "#f6d9a8" : "#0b0f1e";
+  return { root: g, lights, fog: new THREE.Fog(bg, 18, 40), bg, spots: { floor: [0, 0, 0], bed: [-2.3, 0.72, -1.6], alarm: [-3.75, 0.6, -2.7], desk: [3.1, 0, -1.6], window: [1.2, 1.9, -3.0], ball: [1.6, 0, -0.4], door: [0.2, 0, 1.0], sign: [0, 2.6, -3.1] } };
+}
+const bedroom = () => bedroomOf(false), bedroomday = () => bedroomOf(true);
+
+// ================= VOID (Nov 19 films: black stage, one cold spot from above; for the monster, rock bottom, title beats) =================
+function void_(): SetObj {
+  const g = new THREE.Group();
+  plane(g, 40, 40, T("#15161c"), 0, 0, 0);
+  const pool = new THREE.Mesh(new THREE.CircleGeometry(1.6, 40), new THREE.MeshBasicMaterial({ color: "#3a4466", transparent: true, opacity: 0.35, depthWrite: false })); pool.rotation.x = -PI / 2; pool.position.y = 0.012; g.add(pool);
+  const lights: THREE.Light[] = [new THREE.HemisphereLight("#5a6690", "#0a0a10", 0.9)];
+  const sl = new THREE.SpotLight("#cdd8ff", 120, 16, 0.62, 0.55, 2); sl.position.set(0, 7, 1.5); sl.target.position.set(0, 0, 0); sl.target.updateMatrixWorld(); sl.castShadow = true; sl.shadow.mapSize.set(1024, 1024); lights.push(sl, sl.target as unknown as THREE.Light);
+  const fill = new THREE.DirectionalLight("#9aa8d8", 1.1); fill.position.set(2, 3, 6); lights.push(fill);
+  return { root: g, lights, fog: new THREE.Fog("#050507", 9, 22), bg: "#050507", spots: { floor: [0, 0, 0], left: [-1.6, 0, -0.6], right: [1.6, 0, -0.6], back: [0, 0, -2.5] } };
+}
+
 const gold2 = () => T("#e6a418", { emissive: "#6a3a00", emissiveIntensity: 0.4 });
 
-const BUILD: Record<SetName, () => SetObj> = { throne, office, diner, lab, stall, field, ring: ring_, track, graveyard, boardroom, street, beach, court, pitch, diamond, gridiron, tennis, gym, studio, farm, store, stage, space, garage, classroom, bathroom, mansion, showroom };
+const BUILD: Record<SetName, () => SetObj> = { throne, office, diner, lab, stall, field, ring: ring_, track, graveyard, boardroom, street, beach, court, pitch, diamond, gridiron, tennis, gym, studio, farm, store, stage, space, garage, classroom, bathroom, mansion, showroom, bedroom, bedroomday, void: void_, courtempty };
 const CACHE = new Map<SetName, SetObj>();
 export const makeSet = (name: SetName): SetObj => {
   let s = CACHE.get(name);

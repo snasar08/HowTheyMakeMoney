@@ -11,7 +11,8 @@ export type Look = { body: string; legs?: string; skin?: string; hat?: "none" | 
   /** 1 = normal; 1.3 = very tall (longer legs, torso and arms; the head stays the same size) */ height?: number;
   /** "jacket" (default), "jersey" (basketball tank top + shorts, `text` = big number, `trim` colour) or "leather" (black leather jacket) */ outfit?: "jacket" | "jersey" | "leather";
   /** jersey trim colour at the neck, arm holes, hem, shorts stripe, socks and number (default white) */ trim?: string;
-  /** facial hair on the round head: "goatee" (chin patch + thin moustache), "full" (band along the jaw and chin) or "stubble" (faint shadow on the chin) */ beard?: "goatee" | "full" | "stubble"; /** beard colour (default near-black brown) */ beardCol?: string };
+  /** facial hair on the round head: "goatee" (chin patch + thin moustache), "full" (band along the jaw and chin) or "stubble" (faint shadow on the chin) */ beard?: "goatee" | "full" | "stubble"; /** beard colour (default near-black brown) */ beardCol?: string;
+  /** Nov 19 films: the inner-voice shadow monster (black body, glowing red outline, red slit eyes; anger in the eyes only) */ monster?: boolean };
 export type Pose = "stand" | "sit" | "cheer" | "wave" | "point" | "walk" | "dig" | "shrug"
   | "jump" | "dunk" | "run" | "dribble" | "shoot" | "throw" | "type" | "eat" | "talk" | "phone" | "count" | "dance" | "fistpump" | "fall" | "facepalm" | "think" | "sleep";
 export const POSES: Pose[] = ["stand", "sit", "cheer", "wave", "point", "walk", "dig", "shrug",
@@ -232,6 +233,16 @@ function faceMat(e: Expr, blink: boolean, halo = "") {
   let m = faceMats.get(key);
   if (!m) {
     const tex = canvasTex(FW, FH, (g) => {
+      if (halo === "monster") {   // two red slanted slits, brighter core; blink = thin lines
+        for (const sx of [-1, 1]) {
+          g.save(); g.translate(CX + sx * 78, 150); g.rotate(sx * 0.32);
+          g.shadowColor = "#ff2a2a"; g.shadowBlur = 26; g.fillStyle = "#ff3030";
+          g.beginPath(); g.ellipse(0, 0, 54, blink ? 3 : (e === "angry" || e === "scream" ? 9 : 13), 0, 0, Math.PI * 2); g.fill();
+          g.shadowBlur = 0; g.fillStyle = "#ffd0c8"; g.beginPath(); g.ellipse(0, 0, 30, blink ? 1.5 : 4, 0, 0, Math.PI * 2); g.fill();
+          g.restore();
+        }
+        return;
+      }
       if (!halo) { drawFace(g, e, blink); return; }
       // dark skin: the black lines would vanish, so every stroke gets a light skin-tone rim (cel look kept, ink stays near-black)
       const a = document.createElement("canvas"); a.width = FW; a.height = FH;
@@ -382,7 +393,7 @@ function buildChar(look: Look, cheap: boolean): Char {
   const trimCol = look.trim ?? "#ffffff";
   // Nov 17 (Sam: "Shaq should be black"): look.skin tints head, hands, bare arms and legs; very dark tones are lifted a little so the toon ramp still shows a face, not a black ball
   const skin = (() => { if (!look.skin) return "#f7f7f7"; const k = new THREE.Color(look.skin), h = { h: 0, s: 0, l: 0 }; k.getHSL(h); if (h.l < 0.34) k.setHSL(h.h, h.s, 0.34 + (h.l - 0.34) * 0.3); return "#" + k.getHexString(); })();
-  const faceHalo = lum(skin) < 0.5 ? "#" + new THREE.Color(skin).lerp(new THREE.Color("#ffffff"), 0.55).getHexString() : "";
+  const faceHalo = look.monster ? "monster" : lum(skin) < 0.5 ? "#" + new THREE.Color(skin).lerp(new THREE.Color("#ffffff"), 0.55).getHexString() : "";
   const dark = lum(look.body) < 0.14;
   // Nov 17: saturated dark kit colours (Lakers purple #552583) went black under the 3-step ramp: lift HSL lightness to ~0.42 for jerseys (light kits untouched)
   const liftKit = (c: string) => { const k = new THREE.Color(c), hsl = { h: 0, s: 0, l: 0 }; k.getHSL(hsl); if (hsl.s > 0.25 && hsl.l < 0.42) k.setHSL(hsl.h, hsl.s, 0.42); return "#" + k.getHexString(); };
@@ -1055,6 +1066,19 @@ function buildChar(look: Look, cheap: boolean): Char {
 
 let SHADE_LENS: THREE.MeshStandardMaterial | undefined;
 
-export function makeChar(look: Look): Char { return buildChar(look, false); }
+const MON_BODY = new THREE.MeshBasicMaterial({ color: "#050507" });
+const MON_LINE = new THREE.MeshBasicMaterial({ color: new THREE.Color("#ff2a22").multiplyScalar(3.2), side: THREE.BackSide, toneMapped: false });
+/** the shadow monster: every outline glows red (bloom catches it), every surface is flat black, the face keeps its red eyes */
+const monsterize = (c: Char): Char => {
+  c.root.traverse((o) => {
+    const m = o as THREE.Mesh; if (!m.isMesh) return;
+    const mat = m.material as THREE.MeshBasicMaterial;
+    if (mat.map && mat.transparent && mat.depthWrite === false) return;   // the face drawing
+    if (mat.side === THREE.BackSide) { m.material = MON_LINE; m.scale.multiplyScalar(1.045); } else m.material = MON_BODY;
+    m.castShadow = false;
+  });
+  return c;
+};
+export function makeChar(look: Look): Char { const c = buildChar(look.monster ? { ...look, body: "#050507", legs: "#050507", hat: "none", glasses: "none", tie: undefined, text: undefined } : look, false); return look.monster ? monsterize(c) : c; }
 /** cheaper character for crowds (10-30): fewer segments, no seams/outlines on limbs, only two face drawings (happy / flat) */
 export function makeExtra(look: Look): Char { return buildChar(look, true); }
