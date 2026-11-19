@@ -1,0 +1,35 @@
+=== line 1: Film2D 15,45,75,105,135,165,195,225,255,285,315,345,375,405,435,465,495,525,555,585,615,645,675,705,735,765,795,825,855,885,915,945,975 0.5 film/rigtest.json 
+bundle 7.3s
+still 15 0.9s
+still 45 0.9s
+still 75 1.0s
+still 105 0.9s
+still 135 0.9s
+still 165 0.9s
+still 195 1.0s
+still 225 0.9s
+still 255 0.9s
+still 285 0.7s
+still 315 0.7s
+still 345 1.0s
+still 375 0.9s
+still 405 0.9s
+still 435 1.2s
+still 465 0.9s
+still 495 0.9s
+still 525 0.9s
+still 555 0.9s
+still 585 0.9s
+still 615 0.9s
+still 645 0.9s
+still 675 1.0s
+still 705 1.0s
+still 735 0.9s
+still 765 0.9s
+still 795 0.9s
+still 825 0.9s
+still 855 0.9s
+still 885 0.8s
+still 915 0.8s
+still 945 0.9s
+still 975 1.0s
