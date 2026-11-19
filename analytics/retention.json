@@ -1,10 +1,10 @@
 {
- "at": "2026-11-19T04:09:36.618455+00:00",
+ "at": "2026-11-19T19:28:34.463688+00:00",
  "shorts": [
   {
    "video": "NDSx2v-Zyv4",
    "title": "The 180 Million Euro Teenager",
-   "views": 1298,
+   "views": 1294,
    "avg_pct": 70.8,
    "avg_seconds": 19,
    "tags": {
@@ -34,7 +34,7 @@
   {
    "video": "aGOO0z7dfpk",
    "title": "From a Napkin Contract to $1.1 Billion",
-   "views": 1261,
+   "views": 1257,
    "avg_pct": 80.3,
    "avg_seconds": 24,
    "tags": {
@@ -64,7 +64,7 @@
   {
    "video": "PRUzamrtY2E",
    "title": "From a $2.5M Shoe Deal to $4.7 Billion",
-   "views": 1181,
+   "views": 1171,
    "avg_pct": 70.1,
    "avg_seconds": 20,
    "tags": {
@@ -124,7 +124,7 @@
   {
    "video": "QZ0VHeZVcEI",
    "title": "From a Dad With 4 Jobs to $100 Million",
-   "views": 1146,
+   "views": 1137,
    "avg_pct": 89.4,
    "avg_seconds": 24,
    "tags": {
@@ -175,16 +175,16 @@
    "start": 136,
    "q25": 100,
    "q50": 73,
-   "q75": 57,
-   "end": 36,
+   "q75": 56,
+   "end": 35,
    "drop_at_pct": 14,
    "drop_at_s": 4.2,
-   "drop_size": 12
+   "drop_size": 13
   },
   {
    "video": "TqsuLch9Bzc",
    "title": "How Did LeBron Earn $1 Billion While Playing?",
-   "views": 1082,
+   "views": 1080,
    "avg_pct": 55.2,
    "avg_seconds": 14,
    "tags": {
@@ -214,7 +214,7 @@
   {
    "video": "ANr26BqGNNI",
    "title": "From Selling Sunglasses to $228 Million",
-   "views": 1043,
+   "views": 1034,
    "avg_pct": 60.1,
    "avg_seconds": 16,
    "tags": {
@@ -244,7 +244,7 @@
   {
    "video": "-4AV3y6mP2Y",
    "title": "How Much of Your Uber Fare Does Uber Keep?",
-   "views": 1039,
+   "views": 1024,
    "avg_pct": 57.7,
    "avg_seconds": 15,
    "tags": {
@@ -272,39 +272,9 @@
    "drop_size": 19
   },
   {
-   "video": "rDHeA2dVTLM",
-   "title": "What If Nike's Best Store Isn't Nike's?",
-   "views": 1026,
-   "avg_pct": 42.3,
-   "avg_seconds": 11,
-   "tags": {
-    "script": "016",
-    "slug": "nike",
-    "topic": "Nike",
-    "format": "how",
-    "visual_style": "charts3d",
-    "theme": "bold_bright",
-    "hook_style": "whatif",
-    "title_style": "whatif",
-    "length_s": 26.19,
-    "length_bucket": "<30",
-    "post_at": "2026-11-07T18:00:00-05:00",
-    "post_slot": "18:00",
-    "score": 89
-   },
-   "start": 109,
-   "q25": 63,
-   "q50": 26,
-   "q75": 16,
-   "end": 7,
-   "drop_at_pct": 17,
-   "drop_at_s": 4.4,
-   "drop_size": 32
-  },
-  {
    "video": "oygxmVi4Icg",
    "title": "$2.077 Billion From 149 Shows",
-   "views": 1015,
+   "views": 1014,
    "avg_pct": 50.7,
    "avg_seconds": 14,
    "tags": {
@@ -364,7 +334,7 @@
   {
    "video": "LjNhttpIT3o",
    "title": "From a Round 37 Pick to a $503 Million Deal",
-   "views": 1008,
+   "views": 1002,
    "avg_pct": 68.8,
    "avg_seconds": 17,
    "tags": {
@@ -422,9 +392,39 @@
    "drop_size": 16
   },
   {
+   "video": "rDHeA2dVTLM",
+   "title": "What If Nike's Best Store Isn't Nike's?",
+   "views": 998,
+   "avg_pct": 42.3,
+   "avg_seconds": 11,
+   "tags": {
+    "script": "016",
+    "slug": "nike",
+    "topic": "Nike",
+    "format": "how",
+    "visual_style": "charts3d",
+    "theme": "bold_bright",
+    "hook_style": "whatif",
+    "title_style": "whatif",
+    "length_s": 26.19,
+    "length_bucket": "<30",
+    "post_at": "2026-11-07T18:00:00-05:00",
+    "post_slot": "18:00",
+    "score": 89
+   },
+   "start": 109,
+   "q25": 63,
+   "q50": 26,
+   "q75": 16,
+   "end": 7,
+   "drop_at_pct": 17,
+   "drop_at_s": 4.4,
+   "drop_size": 32
+  },
+  {
    "video": "Q-fNnacDmuQ",
    "title": "How Much of Your Chipotle Bowl Is Food?",
-   "views": 974,
+   "views": 963,
    "avg_pct": 50.5,
    "avg_seconds": 11,
    "tags": {
@@ -514,7 +514,7 @@
   {
    "video": "S8-8-mNeMZs",
    "title": "From a Walk-On Offer to $156 Million",
-   "views": 781,
+   "views": 780,
    "avg_pct": 51.7,
    "avg_seconds": 13,
    "tags": {
@@ -574,7 +574,7 @@
   {
    "video": "pHISbEQ042Q",
    "title": "Apple Services Keep 75 Cents of Every Dollar",
-   "views": 563,
+   "views": 558,
    "avg_pct": 41.2,
    "avg_seconds": 10,
    "tags": {
@@ -604,7 +604,7 @@
   {
    "video": "dzsMqPku2HM",
    "title": "From $6,000 to $780,000: MLB's Lowest Pay",
-   "views": 466,
+   "views": 455,
    "avg_pct": 37.7,
    "avg_seconds": 9,
    "tags": {
@@ -634,7 +634,7 @@
   {
    "video": "N9lyHjCmWr0",
    "title": "How Did PlayStation Make Record Profit?",
-   "views": 278,
+   "views": 276,
    "avg_pct": 80.8,
    "avg_seconds": 28,
    "tags": {
@@ -694,7 +694,7 @@
   {
    "video": "bkk_VW26I6E",
    "title": "Too Old at 31: This Job Pays $148,080",
-   "views": 216,
+   "views": 213,
    "avg_pct": 89.6,
    "avg_seconds": 21,
    "tags": {
@@ -714,17 +714,17 @@
    },
    "start": 138,
    "q25": 118,
-   "q50": 87,
-   "q75": 68,
+   "q50": 88,
+   "q75": 69,
    "end": 41,
-   "drop_at_pct": 17,
-   "drop_at_s": 4.0,
+   "drop_at_pct": 87,
+   "drop_at_s": 20.4,
    "drop_size": 16
   },
   {
    "video": "Zf2GdNSZ2SE",
    "title": "MrBeast Spends About $1M Per Video",
-   "views": 211,
+   "views": 210,
    "avg_pct": 51.0,
    "avg_seconds": 11,
    "tags": {
@@ -754,7 +754,7 @@
   {
    "video": "NmjUgbv6_jE",
    "title": "Microsoft Keeps 47 Cents of Every Dollar",
-   "views": 198,
+   "views": 197,
    "avg_pct": 47.7,
    "avg_seconds": 12,
    "tags": {
@@ -782,39 +782,9 @@
    "drop_size": 29
   },
   {
-   "video": "Em5KSC9FqFw",
-   "title": "How Did LEGO Come Back From Its Worst Year?",
-   "views": 113,
-   "avg_pct": 57.6,
-   "avg_seconds": 17,
-   "tags": {
-    "script": "048",
-    "slug": "how-lego",
-    "topic": "LEGO",
-    "format": "how",
-    "visual_style": "editorial",
-    "theme": "bold_bright",
-    "hook_style": "number",
-    "title_style": "question",
-    "length_s": 29.51,
-    "length_bucket": "<30",
-    "post_at": "2026-11-11T18:00:00-05:00",
-    "post_slot": "18:00",
-    "score": 91
-   },
-   "start": 129,
-   "q25": 69,
-   "q50": 45,
-   "q75": 45,
-   "end": 31,
-   "drop_at_pct": 16,
-   "drop_at_s": 4.7,
-   "drop_size": 33
-  },
-  {
    "video": "Qo-nSIDy_fM",
    "title": "$102,030 a Year to Make Cartoons",
-   "views": 113,
+   "views": 112,
    "avg_pct": 40.9,
    "avg_seconds": 13,
    "tags": {
@@ -844,7 +814,7 @@
   {
    "video": "4RBsErczezM",
    "title": "How Did Bankrupt Marvel Become a $4B Deal?",
-   "views": 112,
+   "views": 111,
    "avg_pct": 38.4,
    "avg_seconds": 11,
    "tags": {
@@ -872,9 +842,69 @@
    "drop_size": 41
   },
   {
+   "video": "Em5KSC9FqFw",
+   "title": "How Did LEGO Come Back From Its Worst Year?",
+   "views": 109,
+   "avg_pct": 57.6,
+   "avg_seconds": 17,
+   "tags": {
+    "script": "048",
+    "slug": "how-lego",
+    "topic": "LEGO",
+    "format": "how",
+    "visual_style": "editorial",
+    "theme": "bold_bright",
+    "hook_style": "number",
+    "title_style": "question",
+    "length_s": 29.51,
+    "length_bucket": "<30",
+    "post_at": "2026-11-11T18:00:00-05:00",
+    "post_slot": "18:00",
+    "score": 91
+   },
+   "start": 129,
+   "q25": 69,
+   "q50": 45,
+   "q75": 45,
+   "end": 31,
+   "drop_at_pct": 16,
+   "drop_at_s": 4.7,
+   "drop_size": 33
+  },
+  {
+   "video": "_Z4XVNFVtBE",
+   "title": "One Air Mattress Became 2.5 Billion Stays",
+   "views": 97,
+   "avg_pct": 119.2,
+   "avg_seconds": 39,
+   "tags": {
+    "script": "069",
+    "slug": "how-airbnb",
+    "topic": "Airbnb",
+    "format": "how",
+    "visual_style": "charts3d",
+    "theme": "bold_bright",
+    "hook_style": "surprise",
+    "title_style": "number",
+    "length_s": 32.57,
+    "length_bucket": "30-38",
+    "post_at": "2026-11-15T12:00:00-05:00",
+    "post_slot": "12:00",
+    "score": 92
+   },
+   "start": 177,
+   "q25": 145,
+   "q50": 113,
+   "q75": 97,
+   "end": 84,
+   "drop_at_pct": 15,
+   "drop_at_s": 4.9,
+   "drop_size": 26
+  },
+  {
    "video": "fo3JkU3bngI",
    "title": "$7.5 Million Per Store, Closed Every Sunday",
-   "views": 97,
+   "views": 67,
    "avg_pct": 51.1,
    "avg_seconds": 13,
    "tags": {
@@ -900,36 +930,6 @@
    "drop_at_pct": 41,
    "drop_at_s": 10.4,
    "drop_size": 52
-  },
-  {
-   "video": "_Z4XVNFVtBE",
-   "title": "One Air Mattress Became 2.5 Billion Stays",
-   "views": 97,
-   "avg_pct": 119.2,
-   "avg_seconds": 39,
-   "tags": {
-    "script": "069",
-    "slug": "how-airbnb",
-    "topic": "Airbnb",
-    "format": "how",
-    "visual_style": "charts3d",
-    "theme": "bold_bright",
-    "hook_style": "surprise",
-    "title_style": "number",
-    "length_s": 32.57,
-    "length_bucket": "30-38",
-    "post_at": "2026-11-15T12:00:00-05:00",
-    "post_slot": "12:00",
-    "score": 92
-   },
-   "start": 175,
-   "q25": 144,
-   "q50": 109,
-   "q75": 94,
-   "end": 81,
-   "drop_at_pct": 15,
-   "drop_at_s": 4.9,
-   "drop_size": 25
   },
   {
    "video": "jLD-ouKQ6Eo",
@@ -1060,7 +1060,7 @@
   {
    "video": "0BjUUMdMBUI",
    "title": "Why Are Gamers Only 7% of Nvidia Now?",
-   "views": 30,
+   "views": 29,
    "avg_pct": 64.0,
    "avg_seconds": 16,
    "tags": {
@@ -1283,28 +1283,6 @@
     "post_at": "2026-11-04T15:00:00-05:00",
     "post_slot": "15:00",
     "score": 93
-   }
-  },
-  {
-   "video": "kCqHnPVY9Wc",
-   "title": "What If Spotify Listeners Were a Country?",
-   "views": 8,
-   "avg_pct": 50.5,
-   "avg_seconds": 15,
-   "tags": {
-    "script": "039",
-    "slug": "whatif-spotify",
-    "topic": "Spotify",
-    "format": "whatif",
-    "visual_style": "lowpoly",
-    "theme": "dark_neon",
-    "hook_style": "whatif",
-    "title_style": "whatif",
-    "length_s": 30.83,
-    "length_bucket": "30-38",
-    "post_at": "2026-11-04T12:00:00-05:00",
-    "post_slot": "12:00",
-    "score": 86
    }
   },
   {
