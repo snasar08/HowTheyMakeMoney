@@ -78,7 +78,7 @@ export const pose = (name: string, t: number): Pose => {
     case "phone":
       return { hipY: 74, lean: 6 + b * 0.3, head: 14, lF: [2, 0], lB: [-2, 0], aF: [80, 90], aB: [10, 20] };
     case "phonesit": case "sofaphone":   // slouched back on the couch, legs forward, phone by his face
-      return { hipY: 40 + b * 0.3, lean: -14, head: 20, lF: [64, -6], lB: [58, -4], aF: [80, 92], aB: [24, 40] };
+      return { hipY: 35 + b * 0.3, lean: -14, head: 20, lF: [64, -6], lB: [58, -4], aF: [80, 92], aB: [24, 40] };
     case "desk":    // sitting at a desk, writing
       return { hipY: 44, lean: 18, head: 16, lF: [84, -84], lB: [80, -80], aF: [70 + tw(ti, 0.5) * 6, 40], aB: [60, 40] };
     case "sleepdesk": case "deskslump":   // face down on the desk, one arm reaching forward
