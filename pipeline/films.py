@@ -136,8 +136,20 @@ def thumb(mp4: str, out: str, at: float | None = None) -> None:
                     "-vf", "scale=1280:720", "-q:v", "3", out], check=True)
 
 
+# Same easy shape for every film (Sam, Nov 19: "a description which is easy to all of them"): the film's own
+# "description" is just its story in 1-2 plain sentences; these lines are added the same way every time.
+DESC_END = ("A new silent story every 3 days. Subscribe so you don't miss the next one.\n"
+            "Short money stories every day: @HowTheyMakeMoneyDaily\n\n"
+            "#animation #shortfilm #money")
+
+
+def description(film: dict) -> str:
+    story = film.get("description", "").strip()
+    return f"{story}\n\n{DESC_END}" if story else DESC_END
+
+
 def notes(film: dict) -> str:
-    return f"# {film.get('title', '')}\n\n{film.get('description', '')}\n\nTags: {', '.join(film.get('tags', []))}\n"
+    return f"# {film.get('title', '')}\n\n{description(film)}\n\nTags: {', '.join(film.get('tags', []))}\n"
 
 
 def mark(path: Path, posted: str, release_url: str = "", youtube_url: str = "") -> None:
@@ -161,7 +173,8 @@ def upload(film_path: Path, mp4: Path, thumb_img: Path, posted: str) -> dict | N
         from . import yt_upload
         film = json.loads(film_path.read_text(encoding="utf-8"))
         film.setdefault("id", film_path.stem)
-        res = yt_upload.upload_film(mp4, film, _parse(posted), thumb_img)
+        film["description"] = description(film)
+        res =yt_upload.upload_film(mp4, film, _parse(posted), thumb_img)
         if res is None:
             print(f"::warning title=film upload::YouTube upload failed: Sam must upload {mp4.name} from the release by hand")
         return res

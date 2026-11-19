@@ -7,7 +7,7 @@ Guide for writing films: [FILM_GUIDE.md](FILM_GUIDE.md).
 
 ## Queue
 `content/films2d/NNN-slug.json` (top level only). Extra top-level keys next to the beats:
-`"status"`: `draft` | `ready` | `delivered`, `"title"`, `"description"`, `"tags"`; the workflow adds `"posted_at"`, `"release"`, `"youtube"` on delivery.
+`"status"`: `draft` | `ready` | `delivered`, `"title"`, `"description"` (ONLY the story in 1-2 plain sentences: `pipeline.films.description` adds the same closing lines + hashtags to every film), `"tags"`; the workflow adds `"posted_at"`, `"release"`, `"youtube"` on delivery.
 - Next film = lowest id with status `ready`. Ids **900 and up are internal and skipped forever** (hard-coded in `pipeline/films.py`).
 - Subfolders (e.g. `content/films2d/test/`) are never queued. `test/tiny.json` is the 5 s pipeline test.
 - Film format: see the docstring of `pipeline/film2d.py` and the header of `Film2D.tsx`. Check with `python -m pipeline.film2d table FILE` and `python -m pipeline.film2d audio FILE out.wav`.

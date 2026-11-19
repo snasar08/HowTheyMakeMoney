@@ -117,3 +117,12 @@ class Upload(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TeaserWindow(unittest.TestCase):
+    def test_from_to_and_red_fallback(self):
+        from pipeline.teaser import window
+        beats = [{"s": 10.0}, {"s": 10.0}, {"s": 10.0, "say": [{"t": "told you.", "red": True}]}, {"s": 10.0}]
+        self.assertEqual(window({"beats": beats, "teaser": {"from": 1, "to": 2, "hook": "h"}}), (10.0, 30.0, "h"))
+        a, b, hook = window({"beats": beats, "title": "Jar: x"})
+        self.assertEqual((a, b, hook), (5.0, 30.0, "Jar"))
