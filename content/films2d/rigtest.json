@@ -117,7 +117,9 @@
      "expr": "angry"
     },
     {
-     "look": {"ghost": true},
+     "look": {
+      "ghost": true
+     },
      "x": 300,
      "pose": "monster",
      "scale": 0.5
@@ -275,6 +277,302 @@
      "x": 640,
      "pose": "walk",
      "expr": "neutral"
+    }
+   ]
+  },
+  {
+   "s": 1,
+   "set": "void",
+   "chars": [
+    {
+     "look": "hero",
+     "x": 640,
+     "y": 700,
+     "scale": 2.6,
+     "pose": "stand",
+     "expr": "neutral"
+    }
+   ],
+   "cam": {
+    "from": [
+     640,
+     420,
+     1.0
+    ]
+   }
+  },
+  {
+   "s": 1,
+   "set": "void",
+   "chars": [
+    {
+     "look": "hero",
+     "x": 640,
+     "y": 700,
+     "scale": 2.6,
+     "pose": "stand",
+     "expr": "tired"
+    }
+   ],
+   "cam": {
+    "from": [
+     640,
+     420,
+     1.0
+    ]
+   }
+  },
+  {
+   "s": 1,
+   "set": "void",
+   "chars": [
+    {
+     "look": "hero",
+     "x": 640,
+     "y": 700,
+     "scale": 2.6,
+     "pose": "stand",
+     "expr": "sad"
+    }
+   ],
+   "cam": {
+    "from": [
+     640,
+     420,
+     1.0
+    ]
+   }
+  },
+  {
+   "s": 1,
+   "set": "void",
+   "chars": [
+    {
+     "look": "band",
+     "x": 640,
+     "y": 700,
+     "scale": 2.6,
+     "pose": "stand",
+     "expr": "angry"
+    }
+   ],
+   "cam": {
+    "from": [
+     640,
+     420,
+     1.0
+    ]
+   }
+  },
+  {
+   "s": 1,
+   "set": "void",
+   "chars": [
+    {
+     "look": "hero",
+     "x": 640,
+     "y": 700,
+     "scale": 2.6,
+     "pose": "stand",
+     "expr": "grin"
+    }
+   ],
+   "cam": {
+    "from": [
+     640,
+     420,
+     1.0
+    ]
+   }
+  },
+  {
+   "s": 1,
+   "set": "void",
+   "chars": [
+    {
+     "look": "hero",
+     "x": 640,
+     "y": 700,
+     "scale": 2.6,
+     "pose": "stand",
+     "expr": "shock"
+    }
+   ],
+   "cam": {
+    "from": [
+     640,
+     420,
+     1.0
+    ]
+   }
+  },
+  {
+   "s": 1,
+   "set": "void",
+   "chars": [
+    {
+     "look": "hero",
+     "x": 640,
+     "y": 700,
+     "scale": 2.6,
+     "pose": "stand",
+     "expr": "sleep"
+    }
+   ],
+   "cam": {
+    "from": [
+     640,
+     420,
+     1.0
+    ]
+   }
+  },
+  {
+   "s": 1,
+   "set": "void",
+   "chars": [
+    {
+     "look": "hero",
+     "x": 640,
+     "y": 700,
+     "scale": 2.6,
+     "pose": "stand",
+     "expr": "scared"
+    }
+   ],
+   "cam": {
+    "from": [
+     640,
+     420,
+     1.0
+    ]
+   }
+  },
+  {
+   "s": 1,
+   "set": "void",
+   "chars": [
+    {
+     "look": "hero",
+     "x": 640,
+     "y": 700,
+     "scale": 2.6,
+     "pose": "stand",
+     "expr": "cry"
+    }
+   ],
+   "cam": {
+    "from": [
+     640,
+     420,
+     1.0
+    ]
+   }
+  },
+  {
+   "s": 1,
+   "set": "void",
+   "chars": [
+    {
+     "look": "band",
+     "x": 640,
+     "y": 700,
+     "scale": 2.6,
+     "pose": "stand",
+     "expr": "determined"
+    }
+   ],
+   "cam": {
+    "from": [
+     640,
+     420,
+     1.0
+    ]
+   }
+  },
+  {
+   "s": 1,
+   "set": "void",
+   "chars": [
+    {
+     "look": "hero",
+     "x": 640,
+     "pose": "kneel",
+     "expr": "neutral"
+    }
+   ]
+  },
+  {
+   "s": 1,
+   "set": "void",
+   "chars": [
+    {
+     "look": "hero",
+     "x": 640,
+     "pose": "cheer",
+     "expr": "neutral"
+    }
+   ]
+  },
+  {
+   "s": 1,
+   "set": "void",
+   "chars": [
+    {
+     "look": "hero",
+     "x": 640,
+     "pose": "facepalm",
+     "expr": "neutral"
+    }
+   ]
+  },
+  {
+   "s": 1,
+   "set": "void",
+   "chars": [
+    {
+     "look": "hero",
+     "x": 640,
+     "pose": "reach",
+     "expr": "neutral"
+    }
+   ]
+  },
+  {
+   "s": 1,
+   "set": "void",
+   "chars": [
+    {
+     "look": "hero",
+     "x": 640,
+     "pose": "sit",
+     "expr": "neutral"
+    }
+   ]
+  },
+  {
+   "s": 1,
+   "set": "void",
+   "chars": [
+    {
+     "look": "hero",
+     "x": 640,
+     "pose": "trudge",
+     "expr": "neutral"
+    }
+   ]
+  },
+  {
+   "s": 1,
+   "set": "void",
+   "chars": [
+    {
+     "look": "voice",
+     "x": 640,
+     "y": 520,
+     "scale": 1.0,
+     "pose": "loom",
+     "expr": "angry"
     }
    ]
   }

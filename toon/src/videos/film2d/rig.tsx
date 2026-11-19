@@ -29,6 +29,7 @@ export type Pose = {
   lift?: number;      // raise the whole body (lying on the floor: half the body thickness)
   hand?: boolean;     // villain's giant arm reaching in from the top-right corner (x,y = where the fist ends up when reach = 1)
   reach?: number;     // 0..1 how far the giant arm has come in
+  face?: number;      // extra tilt of the face (deg), e.g. push-ups: the face follows the body a bit
 };
 
 const LEG = [38, 36], ARM = [34, 34];
@@ -71,7 +72,7 @@ export const pose = (name: string, t: number): Pose => {
     case "hug": case "fetal":    // on the floor, knees up, arms round them, head down
       return { hipY: 17 + b * 0.2, lean: 30, head: 24, headY: 2, lF: [128, -152], lB: [122, -148], aF: [20, 100], aB: [8, 100] };
     case "lie":     // on his back (in bed): the bed draws the blanket over him
-      return { rot: -90, hipY: 74, lean: 0, aF: [6, 0], aB: [-6, 0], lF: [0, 0], lB: [0, 0], head: -6 + b };
+      return { rot: -90, hipY: 100, lean: 0, aF: [6, 0], aB: [-6, 0], lF: [0, 0], lB: [0, 0], head: -6 + b };
     case "floor":   // face down on the floor, worn out
       return { rot: 86, lift: 24, hipY: 74, head: -40, aF: [150, 20], aB: [-10, 0], lF: [4, 0], lB: [-4, 6] };
     case "phone":
@@ -91,7 +92,7 @@ export const pose = (name: string, t: number): Pose => {
     }
     case "pushup": case "crawl": {
       const k = (tw(t, 1.1) + 1) / 2;
-      return { rot: 76, lift: 46, hipY: 74, head: -60, aF: [90 - k * 30, -60 + k * 60], aB: [86 - k * 30, -60 + k * 60], lF: [0, 0], lB: [0, 0], hipX: 0 };
+      return { rot: 64 - k * 6, hipY: 74, lean: -3, head: 6, face: 26, aF: [64 - k * 6, 0], aB: [60 - k * 6, 0], lF: [0, 0], lB: [0, 0] };
     }
     case "climb": case "stairs": {   // 19 frame cycle = one step
       const p = 19 / 30, s = tw(t, p), c = tw(t, p, 0.25);
@@ -173,7 +174,7 @@ const Face: React.FC<{ e: Expr; f: number; t: number; band: boolean; mon?: boole
     return <g stroke="#ff3a2a" strokeLinecap="round" fill="none">
       <path d={`M ${f * 6} -9 L ${f * 19} -2`} strokeWidth={4} />
       <path d={`M ${f * 26} -2 L ${f * 38} -9`} strokeWidth={4} />
-      {grin && e !== "sad" && e !== "neutral" ? <path d={`M ${f * 8} 14 Q ${f * 24} 28 ${f * 38} 12`} strokeWidth={2.6} /> : null}
+      {grin && e !== "sad" ? <path d={`M ${f * 8} 14 Q ${f * 24} 28 ${f * 38} 12`} strokeWidth={2.6} /> : null}
     </g>;
   }
   const blink = (t % 4.3) > 4.2 && e !== "angry" && e !== "determined";
@@ -275,13 +276,13 @@ export const Guy: React.FC<{ p: Pose; e: Expr; dir?: number; t: number; look?: L
 
   const g = geo(p, dir);
   const lF = p.lF ?? [0, 0], lB = p.lB ?? [0, 0], aF = p.aF ?? [0, 0], aB = p.aB ?? [0, 0];
-  const lw2 = mon ? 15 : LIMB, aw = mon ? 13 : LIMB - 1;
+  const lw2 = mon ? 19 : LIMB, aw = mon ? 16 : LIMB - 1;
   const tube = (d: string, w: number, fill: string, key: string) => <g key={key}>
     <path d={d} stroke={line} strokeWidth={w + lw * 2} strokeLinecap="round" strokeLinejoin="round" fill="none" />
     <path d={d} stroke={fill} strokeWidth={w} strokeLinecap="round" strokeLinejoin="round" fill="none" />
   </g>;
   // the egg: a chain of circles from the hip up to the neck, then the head
-  const R0 = mon ? 19 : 28, R1 = mon ? 21 : 30, RN = mon ? 11 : 31, hrx = mon ? 40 : 35, hry = mon ? 40 : 32;
+  const R0 = mon ? 26 : 26, R1 = mon ? 28 : 28, RN = mon ? 14 : 31, hrx = mon ? 42 : 36, hry = mon ? 42 : 33;
   const ux = S(rad(p.lean ?? 0)) * dir, uy = -C(rad(p.lean ?? 0));
   const base: Pt = { x: g.hx + ux * 14, y: g.hy + uy * 14 };
   const circles: { x: number; y: number; r: number }[] = [];
@@ -296,7 +297,7 @@ export const Guy: React.FC<{ p: Pose; e: Expr; dir?: number; t: number; look?: L
     <ellipse cx={g.hc.x} cy={g.hc.y} rx={hrx} ry={hry} fill={skin} transform={`rotate(${hangDeg} ${g.hc.x} ${g.hc.y})`} />
   </g>;
   const lying = Math.abs(p.rot ?? 0) > 45 ? p.rot ?? 0 : 0;
-  const faceRot = (g.hang - lying) * dir;
+  const faceRot = (g.hang - lying + (p.face ?? 0)) * dir;
   const band = !mon && (!!look.headband || !!look.band);
   const bandCol = typeof look.band === "string" ? look.band : RED;
   const fl = Math.sin(t * 9) * 3, fl2 = Math.sin(t * 9 + 1.7) * 3;
