@@ -12,6 +12,7 @@
 //             the X marks drawing in (default 0 = all drawn at once) | crossT0 = seconds before the first X (default 0) | today = day
 //             number circled in red (0 = none) | days = days in the month (default 31)
 //             paper = 1: the reference look: cream paper page, red header band, plain 7 x 5 grid, no numbers / weekday letters, thin red X, no floor
+//   bedroom / bedroomdawn: nsExt = px the nightstand grows to the left (the clock moves with it, room for a jar beside the clock; default 0)
 //   (grades "sunset" / "rain" and the embers / burst / punch args are documented in Film2D.tsx)
 // SET_CAMS = the default framing per set (wide shots: hero ~43% of the picture height, floor at ~y 515) and the slow
 // push-in in %/s (Film2D uses it when a beat has no "cam").
@@ -150,8 +151,8 @@ export const Blanket: React.FC<{ x: number; heave?: number; x0?: number }> = ({ 
   </g>
   );
 };
-const Nightstand: React.FC<{ x: number }> = ({ x }) => (
-  <g><rect x={x} y={FLOOR - 78} width={88} height={78} rx={11} fill={F2} {...L} /><path d={`M ${x + 6} ${FLOOR - 52} L ${x + 82} ${FLOOR - 52}`} {...L} strokeWidth={1.6} opacity={0.7} /><circle cx={x + 44} cy={FLOOR - 64} r={3} fill={INK2} /></g>
+const Nightstand: React.FC<{ x: number; w?: number }> = ({ x, w = 88 }) => (
+  <g><rect x={x} y={FLOOR - 78} width={w} height={78} rx={11} fill={F2} {...L} /><path d={`M ${x + 6} ${FLOOR - 52} L ${x + w - 6} ${FLOOR - 52}`} {...L} strokeWidth={1.6} opacity={0.7} /><circle cx={x + w / 2} cy={FLOOR - 64} r={3} fill={INK2} /></g>
 );
 const Couch: React.FC<{ x: number }> = ({ x }) => (
   <g>
@@ -492,8 +493,8 @@ const fmtClock = (v: number) => `${Math.floor(v / 100)}:${String(v % 100).padSta
 /** a whole place. `t` = seconds into the shot, `scroll` = px the street has moved (default: t * 240) */
 export const SetView: React.FC<{ name: string; t: number; scroll?: number; arg?: Record<string, number> }> = ({ name, t, scroll, arg = {} }) => {
   switch (name) {
-    case "bedroom": return <g><Wedge x={930} y={258} w={140} /><Window x={930} y={258} /><Floor /><Nightstand x={332} /><Bed x={420} /><Alarm x={376} y={FLOOR - 78 - 9} s={0.7} text={arg.clock ? fmtClock(arg.clock) : "5:00"} ring={arg.ring ? t : 0} /></g>;
-    case "bedroomdawn": return <g><Wedge x={930} y={258} w={140} col="#e08aa0" o={Math.min(1, 0.5 + t / 4)} /><Window x={930} y={258} dawn={t / 4} /><Floor /><Nightstand x={332} /><Bed x={420} /><Alarm x={376} y={FLOOR - 78 - 9} s={0.7} text={arg.clock ? fmtClock(arg.clock) : "5:00"} /></g>;
+    case "bedroom": return <g><Wedge x={930} y={258} w={140} /><Window x={930} y={258} /><Floor /><Nightstand x={332 - (arg.nsExt ?? 0)} w={88 + (arg.nsExt ?? 0)} /><Bed x={420} /><Alarm x={376 - (arg.nsExt ?? 0)} y={FLOOR - 78 - 9} s={0.7} text={arg.clock ? fmtClock(arg.clock) : "5:00"} ring={arg.ring ? t : 0} /></g>;
+    case "bedroomdawn": return <g><Wedge x={930} y={258} w={140} col="#e08aa0" o={Math.min(1, 0.5 + t / 4)} /><Window x={930} y={258} dawn={t / 4} /><Floor /><Nightstand x={332 - (arg.nsExt ?? 0)} w={88 + (arg.nsExt ?? 0)} /><Bed x={420} /><Alarm x={376 - (arg.nsExt ?? 0)} y={FLOOR - 78 - 9} s={0.7} text={arg.clock ? fmtClock(arg.clock) : "5:00"} /></g>;
     case "couch": return <g><Floor />{!arg.nolamp && <FloorLamp x={330} on={!!arg.lamp} />}<Couch x={680} /></g>;
     case "desk": return <g><WallClock x={730} y={180} t={t} /><Floor /><Chair x={560} dir={1} /><Desk x={680} /><BookStack x={860} y={FLOOR - 112} /><DeskLamp x={860} y={FLOOR - 154} /></g>;
     case "street": { const off = scroll ?? t * 240; return <g><City off={off} /><StreetLamps off={off} t={t} /><Floor /><RoadDashes off={off} />

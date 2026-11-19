@@ -1,0 +1,2317 @@
+{
+ "id": "101-the-quiet-jar",
+ "status": "draft",
+ "title": "The Quiet Jar: He Never Spent Big. He Just Never Noticed.",
+ "description": "A man loses his coins one small treat at a time, then starts again with a single coin in an empty jar. A quiet short film about small savings, setbacks and starting over. Animated short film.",
+ "tags": [
+  "animated short film",
+  "saving money",
+  "discipline",
+  "motivation",
+  "small habits",
+  "2d animation",
+  "money mindset",
+  "starting over",
+  "silent film",
+  "how they make money"
+ ],
+ "wishlist": [
+  "a coin-drop animation (coin falls into the jar with ripple)",
+  "a hand/arm pose for dropping a coin",
+  "a market stall or workbench set for his own small shop",
+  "a rainy window or night street set for the low point",
+  "a receive/hand-over pose for the customer",
+  "piggy bank / jar-on-shelf set"
+ ],
+ "cast": {
+  "hero": {},
+  "nova": {
+   "band": "#2fa8a0"
+  },
+  "friend": {
+   "band": "#d9822b"
+  },
+  "voice": {
+   "monster": true
+  }
+ },
+ "grid": 0.714286,
+ "bpm": 84,
+ "pedal": 31,
+ "prog_dark": [
+  [
+   52,
+   55,
+   59
+  ],
+  [
+   45,
+   48,
+   52
+  ],
+  [
+   48,
+   52,
+   55
+  ],
+  [
+   50,
+   54,
+   57
+  ]
+ ],
+ "prog_hope": [
+  [
+   55,
+   59,
+   62
+  ],
+  [
+   50,
+   54,
+   57
+  ],
+  [
+   52,
+   55,
+   59
+  ],
+  [
+   48,
+   52,
+   55
+  ]
+ ],
+ "arp_dark": [
+  [
+   64,
+   67,
+   71,
+   76
+  ],
+  [
+   60,
+   64,
+   69,
+   72
+  ],
+  [
+   60,
+   64,
+   67,
+   72
+  ],
+  [
+   62,
+   66,
+   69,
+   74
+  ]
+ ],
+ "arp_hope": [
+  [
+   67,
+   71,
+   74,
+   79
+  ],
+  [
+   66,
+   69,
+   74,
+   78
+  ],
+  [
+   64,
+   67,
+   71,
+   76
+  ],
+  [
+   64,
+   67,
+   72,
+   76
+  ]
+ ],
+ "arp_pattern": [
+  0,
+  2,
+  1,
+  3,
+  2,
+  1,
+  3,
+  2
+ ],
+ "beats": [
+  {
+   "s": 2.8571,
+   "set": "black",
+   "music": "drone",
+   "say": [
+    {
+     "t": "Coins never leave loudly.",
+     "delay": 0.5,
+     "until": 2.5,
+     "at": "mid",
+     "bold": true,
+     "size": 46
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "s": 5.7143,
+   "set": "store",
+   "fade": 20,
+   "day": "DAY 1",
+   "cam": {
+    "from": [
+     456,
+     410,
+     1.25
+    ],
+    "to": [
+     456,
+     410,
+     1.33
+    ],
+    "ease": "lin"
+   },
+   "music": "drone",
+   "chars": [
+    {
+     "look": "hero",
+     "x": 480,
+     "pose": "stand",
+     "expr": "smile"
+    },
+    {
+     "look": "voice",
+     "x": 250,
+     "y": 900,
+     "pose": "lurk",
+     "scale": 1.0,
+     "dir": -1,
+     "to": [
+      250,
+      560
+     ],
+     "ease": true,
+     "dur": 1.2
+    }
+   ],
+   "things": [
+    {
+     "name": "cash",
+     "hand": 0
+    }
+   ],
+   "say": [
+    {
+     "t": "just a little treat.",
+     "delay": 1.8,
+     "until": 5.2,
+     "red": true,
+     "size": 40,
+     "at": [
+      985,
+      272
+     ]
+    }
+   ],
+   "sfx": [
+    [
+     "register",
+     4.4
+    ]
+   ]
+  },
+  {
+   "s": 4.2857,
+   "set": "couch",
+   "day": "DAY 2",
+   "arg": {
+    "nolamp": 1,
+    "lamp": 0
+   },
+   "chars": [
+    {
+     "look": "hero",
+     "x": 640,
+     "pose": "sofaphone",
+     "expr": "smile",
+     "y": 548
+    },
+    {
+     "look": "voice",
+     "x": 840,
+     "y": 560,
+     "pose": "peek",
+     "scale": 1.0,
+     "dir": -1
+    }
+   ],
+   "things": [
+    {
+     "name": "phone",
+     "hand": 0
+    }
+   ],
+   "say": [
+    {
+     "t": "one tap.",
+     "delay": 1.4,
+     "until": 3.9,
+     "red": true,
+     "size": 40,
+     "at": [
+      420,
+      150
+     ]
+    }
+   ],
+   "sfx": [
+    [
+     "ping",
+     2.3
+    ]
+   ],
+   "cam": {
+    "from": [
+     740,
+     450,
+     1.5
+    ],
+    "to": [
+     740,
+     450,
+     1.65
+    ],
+    "ease": "lin"
+   }
+  },
+  {
+   "s": 4.2857,
+   "set": "fridge",
+   "day": "DAY 3",
+   "arg": {
+    "open": 1,
+    "x": 760
+   },
+   "cam": {
+    "from": [
+     700,
+     420,
+     1.15
+    ],
+    "to": [
+     700,
+     420,
+     1.25
+    ],
+    "ease": "lin"
+   },
+   "chars": [
+    {
+     "look": "hero",
+     "x": 520,
+     "pose": "stand",
+     "expr": "grin"
+    },
+    {
+     "look": "voice",
+     "x": 1000,
+     "y": 560,
+     "pose": "monster",
+     "scale": 0.9,
+     "dir": -1
+    }
+   ],
+   "say": [
+    {
+     "t": "you earned it.",
+     "delay": 1.4,
+     "until": 4.2,
+     "red": true,
+     "size": 40,
+     "at": [
+      300,
+      190
+     ]
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "s": 2.8571,
+   "set": "street",
+   "day": "DAY 6",
+   "cam": {
+    "from": [
+     686,
+     429,
+     1.15
+    ],
+    "to": [
+     686,
+     429,
+     1.22
+    ],
+    "ease": "lin"
+   },
+   "chars": [
+    {
+     "look": "hero",
+     "x": 640,
+     "pose": "walk",
+     "expr": "neutral",
+     "y": 538
+    }
+   ],
+   "things": [
+    {
+     "name": "bag",
+     "hand": 0,
+     "s": 0.8
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "s": 2.1429,
+   "set": "store",
+   "day": "DAY 9",
+   "cam": {
+    "from": [
+     760,
+     445,
+     2.2
+    ]
+   },
+   "chars": [
+    {
+     "look": "hero",
+     "x": 580,
+     "pose": "count",
+     "expr": "grin"
+    }
+   ],
+   "things": [
+    {
+     "name": "cash",
+     "hand": 0
+    }
+   ],
+   "sfx": [
+    [
+     "register",
+     0.3
+    ]
+   ]
+  },
+  {
+   "s": 1.4286,
+   "set": "couch",
+   "day": "DAY 12",
+   "cam": {
+    "from": [
+     660,
+     490,
+     2.1
+    ]
+   },
+   "arg": {
+    "nolamp": 1
+   },
+   "chars": [
+    {
+     "look": "hero",
+     "x": 640,
+     "pose": "sofaphone",
+     "expr": "tired",
+     "y": 548
+    }
+   ],
+   "things": [
+    {
+     "name": "phone",
+     "hand": 0
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "s": 1.4286,
+   "set": "fridge",
+   "day": "DAY 15",
+   "arg": {
+    "open": 1,
+    "x": 613
+   },
+   "cam": {
+    "from": [
+     700,
+     420,
+     1.15
+    ]
+   },
+   "chars": [
+    {
+     "look": "hero",
+     "x": 874,
+     "pose": "stand",
+     "expr": "tired",
+     "dir": -1
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "s": 1.4286,
+   "set": "void",
+   "day": "DAY 17",
+   "cam": {
+    "from": [
+     640,
+     420,
+     1.0
+    ]
+   },
+   "chars": [],
+   "things": [
+    {
+     "name": "coin",
+     "x": 640,
+     "y": 380,
+     "s": 3.2
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "s": 1.4286,
+   "set": "street",
+   "day": "DAY 19",
+   "cam": {
+    "from": [
+     686,
+     429,
+     1.5
+    ]
+   },
+   "scroll": [
+    200,
+    420
+   ],
+   "chars": [
+    {
+     "look": "hero",
+     "x": 640,
+     "pose": "trudge",
+     "expr": "tired",
+     "y": 538
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "s": 1.4286,
+   "set": "spot",
+   "day": "DAY 21",
+   "arg": {
+    "x": 640
+   },
+   "cam": {
+    "from": [
+     640,
+     480,
+     2.0
+    ]
+   },
+   "chars": [],
+   "things": [
+    {
+     "name": "jar",
+     "x": 640,
+     "y": 560,
+     "s": 1.6,
+     "v": 0
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "s": 5.7143,
+   "set": "desk",
+   "day": "DAY 24",
+   "fade": 9,
+   "cam": {
+    "from": [
+     660,
+     365,
+     1.22
+    ],
+    "to": [
+     660,
+     365,
+     1.3
+    ],
+    "ease": "lin"
+   },
+   "music": "tick",
+   "chars": [
+    {
+     "look": "hero",
+     "x": 560,
+     "pose": "deskslump",
+     "expr": "tired",
+     "y": 510
+    },
+    {
+     "look": "voice",
+     "x": 400,
+     "y": 900,
+     "pose": "lurk",
+     "scale": 1.0,
+     "dir": -1,
+     "to": [
+      400,
+      560
+     ],
+     "ease": true,
+     "dur": 1.1
+    }
+   ],
+   "say": [
+    {
+     "t": "why save so slowly?",
+     "delay": 1.2,
+     "until": 3.4,
+     "red": true,
+     "size": 40,
+     "at": [
+      700,
+      250
+     ]
+    },
+    {
+     "t": "nothing changes.",
+     "delay": 3.6,
+     "until": 5.5,
+     "red": true,
+     "size": 40,
+     "at": [
+      700,
+      250
+     ]
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "s": 4.2857,
+   "set": "mirror",
+   "day": "DAY 30",
+   "cam": {
+    "from": [
+     650,
+     421,
+     1.4
+    ],
+    "to": [
+     650,
+     421,
+     1.5
+    ],
+    "ease": "lin"
+   },
+   "arg": {
+    "crack": 0
+   },
+   "chars": [
+    {
+     "look": "hero",
+     "x": 540,
+     "pose": "stand",
+     "expr": "sad"
+    },
+    {
+     "look": "voice",
+     "x": 760,
+     "y": 540,
+     "pose": "monster",
+     "scale": 0.9,
+     "dir": -1
+    }
+   ],
+   "say": [
+    {
+     "t": "Where did it all go?",
+     "delay": 0.7,
+     "until": 4.1,
+     "bold": true,
+     "size": 40,
+     "at": [
+      430,
+      215
+     ]
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "s": 2.1429,
+   "set": "calendar",
+   "day": "DAY 34",
+   "arg": {
+    "start": 2,
+    "cross": 17,
+    "crossDt": 0.1,
+    "crossT0": 0.2
+   },
+   "cam": {
+    "from": [
+     640,
+     292,
+     1.4
+    ]
+   },
+   "sfx": []
+  },
+  {
+   "s": 1.4286,
+   "set": "bedroom",
+   "day": "DAY 36",
+   "arg": {
+    "clock": 700
+   },
+   "cam": {
+    "from": [
+     520,
+     450,
+     1.6
+    ]
+   },
+   "chars": [
+    {
+     "look": "hero",
+     "x": 720,
+     "pose": "lie",
+     "expr": "tired",
+     "bed": true
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "s": 5.7143,
+   "set": "spot",
+   "day": "DAY 1",
+   "fade": 14,
+   "arg": {
+    "x": 650
+   },
+   "cam": {
+    "from": [
+     650,
+     441,
+     1.0
+    ],
+    "to": [
+     650,
+     441,
+     1.15
+    ],
+    "ease": "lin"
+   },
+   "music": "tick",
+   "chars": [
+    {
+     "look": "nova",
+     "x": 520,
+     "pose": "stand",
+     "expr": "determined",
+     "dir": 1
+    }
+   ],
+   "things": [
+    {
+     "name": "jar",
+     "x": 780,
+     "y": 560,
+     "s": 1.7,
+     "v": [
+      0,
+      0.12
+     ]
+    },
+    {
+     "name": "coin",
+     "hand": 0,
+     "s": 1.1,
+     "at": 0.8
+    }
+   ],
+   "say": [
+    {
+     "t": "ONE COIN.",
+     "delay": 1.2,
+     "until": 4.6,
+     "white": true,
+     "size": 84
+    }
+   ],
+   "sfx": [
+    [
+     "coin",
+     1.2
+    ],
+    [
+     "ping",
+     1.5
+    ]
+   ]
+  },
+  {
+   "s": 1.4286,
+   "set": "spot",
+   "day": "DAY 2",
+   "chars": [],
+   "things": [
+    {
+     "name": "jar",
+     "x": 700,
+     "y": 560,
+     "s": 1.7,
+     "v": 0.12
+    }
+   ],
+   "cam": {
+    "from": [
+     700,
+     470,
+     2.3
+    ]
+   },
+   "arg": {
+    "x": 700
+   },
+   "music": "montage",
+   "sfx": [
+    [
+     "coin",
+     0.2
+    ]
+   ]
+  },
+  {
+   "s": 1.4286,
+   "set": "couch",
+   "day": "DAY 3",
+   "chars": [
+    {
+     "look": "nova",
+     "x": 640,
+     "pose": "sit",
+     "expr": "determined",
+     "y": 548
+    }
+   ],
+   "things": [
+    {
+     "name": "book",
+     "x": 640,
+     "y": 470,
+     "s": 1.1
+    }
+   ],
+   "arg": {
+    "nolamp": 1
+   },
+   "sfx": [],
+   "cam": {
+    "from": [
+     660,
+     480,
+     1.7
+    ]
+   }
+  },
+  {
+   "s": 1.4286,
+   "set": "fridge",
+   "day": "DAY 5",
+   "chars": [
+    {
+     "look": "nova",
+     "x": 300,
+     "pose": "walk",
+     "expr": "determined",
+     "to": [
+      1000,
+      560
+     ]
+    }
+   ],
+   "arg": {
+    "open": 0,
+    "x": 760
+   },
+   "sfx": []
+  },
+  {
+   "s": 1.4286,
+   "set": "street",
+   "day": "DAY 7",
+   "chars": [
+    {
+     "look": "nova",
+     "x": 640,
+     "pose": "walk",
+     "expr": "determined",
+     "y": 538
+    }
+   ],
+   "cam": {
+    "from": [
+     686,
+     429,
+     1.3
+    ]
+   },
+   "scroll": [
+    0,
+    420
+   ],
+   "sfx": []
+  },
+  {
+   "s": 1.4286,
+   "set": "store",
+   "day": "DAY 9",
+   "chars": [
+    {
+     "look": "nova",
+     "x": 280,
+     "pose": "walk",
+     "expr": "neutral",
+     "to": [
+      950,
+      560
+     ]
+    }
+   ],
+   "cam": {
+    "from": [
+     470,
+     445,
+     1.15
+    ]
+   },
+   "sfx": []
+  },
+  {
+   "s": 1.4286,
+   "set": "desk",
+   "day": "DAY 12",
+   "chars": [
+    {
+     "look": "nova",
+     "x": 560,
+     "pose": "desk",
+     "expr": "determined",
+     "y": 510
+    }
+   ],
+   "things": [
+    {
+     "name": "book",
+     "x": 700,
+     "y": 440,
+     "s": 0.9
+    }
+   ],
+   "sfx": [],
+   "cam": {
+    "from": [
+     690,
+     385,
+     1.1
+    ]
+   }
+  },
+  {
+   "s": 1.4286,
+   "set": "spot",
+   "day": "DAY 14",
+   "chars": [],
+   "things": [
+    {
+     "name": "jar",
+     "x": 640,
+     "y": 560,
+     "s": 1.6,
+     "v": 0.2
+    }
+   ],
+   "cam": {
+    "from": [
+     640,
+     500,
+     1.5
+    ]
+   },
+   "arg": {
+    "x": 640
+   },
+   "sfx": [
+    [
+     "coin",
+     0.3
+    ]
+   ]
+  },
+  {
+   "s": 1.4286,
+   "set": "stairs",
+   "day": "DAY 18",
+   "chars": [
+    {
+     "look": "nova",
+     "x": 0,
+     "pose": "stairs",
+     "expr": "determined",
+     "stairs": [
+      0.1,
+      0.2
+     ],
+     "scale": 0.92
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "s": 1.4286,
+   "set": "spot",
+   "day": "DAY 21",
+   "chars": [
+    {
+     "look": "nova",
+     "x": 600,
+     "pose": "count",
+     "expr": "smile"
+    }
+   ],
+   "things": [
+    {
+     "name": "cash",
+     "hand": 0
+    },
+    {
+     "name": "jar",
+     "x": 820,
+     "y": 560,
+     "s": 1.4,
+     "v": 0.3
+    }
+   ],
+   "cam": {
+    "from": [
+     700,
+     450,
+     1.4
+    ]
+   },
+   "sfx": [],
+   "arg": {
+    "x": 650
+   }
+  },
+  {
+   "s": 1.4286,
+   "set": "couch",
+   "day": "DAY 25",
+   "chars": [
+    {
+     "look": "nova",
+     "x": 640,
+     "pose": "sit",
+     "expr": "smile",
+     "y": 548
+    }
+   ],
+   "things": [
+    {
+     "name": "phone",
+     "x": 880,
+     "y": 530,
+     "s": 0.9
+    }
+   ],
+   "arg": {
+    "nolamp": 1
+   },
+   "cam": {
+    "from": [
+     700,
+     440,
+     2.2
+    ]
+   },
+   "sfx": []
+  },
+  {
+   "s": 1.4286,
+   "set": "calendar",
+   "day": "DAY 30",
+   "chars": [],
+   "arg": {
+    "start": 3,
+    "cross": 25,
+    "crossDt": 0.02,
+    "crossT0": 0.1
+   },
+   "cam": {
+    "from": [
+     640,
+     292,
+     1.5
+    ]
+   },
+   "sfx": []
+  },
+  {
+   "s": 1.4286,
+   "set": "street",
+   "day": "DAY 33",
+   "chars": [
+    {
+     "look": "nova",
+     "x": 640,
+     "pose": "trudge",
+     "expr": "determined",
+     "y": 538
+    }
+   ],
+   "cam": {
+    "from": [
+     700,
+     429,
+     1.7
+    ]
+   },
+   "scroll": [
+    300,
+    520
+   ],
+   "sfx": []
+  },
+  {
+   "s": 1.4286,
+   "set": "office",
+   "day": "DAY 38",
+   "chars": [
+    {
+     "look": "nova",
+     "x": 640,
+     "pose": "point",
+     "expr": "smile"
+    }
+   ],
+   "things": [
+    {
+     "name": "chart",
+     "x": 900,
+     "y": 300,
+     "v": 0.3,
+     "text": "SAVINGS"
+    }
+   ],
+   "sfx": [],
+   "cam": {
+    "from": [
+     880,
+     420,
+     1.5
+    ]
+   }
+  },
+  {
+   "s": 1.4286,
+   "set": "spot",
+   "day": "DAY 45",
+   "chars": [],
+   "things": [
+    {
+     "name": "jar",
+     "x": 600,
+     "y": 560,
+     "s": 1.7,
+     "v": 0.35
+    }
+   ],
+   "cam": {
+    "from": [
+     600,
+     520,
+     1.9
+    ]
+   },
+   "arg": {
+    "x": 600
+   },
+   "sfx": [
+    [
+     "coin",
+     0.2
+    ]
+   ]
+  },
+  {
+   "s": 1.4286,
+   "set": "desk",
+   "day": "DAY 52",
+   "chars": [
+    {
+     "look": "nova",
+     "x": 560,
+     "pose": "desk",
+     "expr": "tired",
+     "y": 510
+    },
+    {
+     "look": "voice",
+     "x": 1000,
+     "y": 560,
+     "pose": "lurk",
+     "scale": 0.7,
+     "dir": -1
+    }
+   ],
+   "cam": {
+    "from": [
+     740,
+     365,
+     1.25
+    ]
+   },
+   "sfx": []
+  },
+  {
+   "s": 1.4286,
+   "set": "mirror",
+   "day": "DAY 60",
+   "chars": [
+    {
+     "look": "nova",
+     "x": 540,
+     "pose": "stand",
+     "expr": "determined"
+    }
+   ],
+   "arg": {
+    "crack": 0
+   },
+   "sfx": []
+  },
+  {
+   "s": 1.4286,
+   "set": "store",
+   "day": "DAY 70",
+   "chars": [
+    {
+     "look": "nova",
+     "x": 520,
+     "pose": "count",
+     "expr": "grin"
+    }
+   ],
+   "things": [
+    {
+     "name": "cash",
+     "hand": 0
+    }
+   ],
+   "cam": {
+    "from": [
+     444,
+     415,
+     1.3
+    ]
+   },
+   "sfx": []
+  },
+  {
+   "s": 1.4286,
+   "set": "bedroomdawn",
+   "day": "DAY 80",
+   "chars": [
+    {
+     "look": "nova",
+     "x": 520,
+     "pose": "bedge",
+     "expr": "smile"
+    }
+   ],
+   "things": [
+    {
+     "name": "jar",
+     "x": 380,
+     "y": 482,
+     "s": 0.6,
+     "v": 0.5
+    }
+   ],
+   "cam": {
+    "from": [
+     450,
+     470,
+     1.45
+    ]
+   },
+   "sfx": [],
+   "arg": {
+    "nsExt": 70
+   }
+  },
+  {
+   "s": 1.4286,
+   "set": "stairs",
+   "day": "DAY 90",
+   "chars": [
+    {
+     "look": "nova",
+     "x": 0,
+     "pose": "stairs",
+     "expr": "determined",
+     "stairs": [
+      0.45,
+      0.55
+     ],
+     "scale": 0.9
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "s": 1.4286,
+   "set": "office",
+   "day": "DAY 100",
+   "chars": [
+    {
+     "look": "nova",
+     "x": 650,
+     "pose": "stand",
+     "expr": "grin"
+    }
+   ],
+   "things": [
+    {
+     "name": "chart",
+     "x": 900,
+     "y": 300,
+     "v": 0.65,
+     "text": "SAVINGS"
+    },
+    {
+     "name": "jar",
+     "x": 525,
+     "y": 560,
+     "v": 0.6
+    }
+   ],
+   "cam": {
+    "from": [
+     900,
+     430,
+     1.4
+    ]
+   },
+   "sfx": []
+  },
+  {
+   "s": 1.4286,
+   "set": "spot",
+   "day": "DAY 110",
+   "chars": [],
+   "things": [
+    {
+     "name": "jar",
+     "x": 660,
+     "y": 560,
+     "s": 1.8,
+     "v": 0.62
+    }
+   ],
+   "cam": {
+    "from": [
+     660,
+     440,
+     2.1
+    ]
+   },
+   "arg": {
+    "x": 660
+   },
+   "sfx": [
+    [
+     "coin",
+     0.2
+    ]
+   ]
+  },
+  {
+   "s": 1.4286,
+   "set": "street",
+   "day": "DAY 120",
+   "chars": [
+    {
+     "look": "nova",
+     "x": 640,
+     "pose": "run",
+     "expr": "determined",
+     "y": 538
+    }
+   ],
+   "grade": "sunset",
+   "arg": {
+    "gradeAmt": 0.4
+   },
+   "cam": {
+    "from": [
+     686,
+     429,
+     1.3
+    ]
+   },
+   "sfx": []
+  },
+  {
+   "s": 1.4286,
+   "set": "void",
+   "day": "DAY 128",
+   "chars": [
+    {
+     "look": "nova",
+     "x": 640,
+     "pose": "reach",
+     "expr": "determined"
+    }
+   ],
+   "things": [
+    {
+     "name": "coin",
+     "x": 800,
+     "y": 330,
+     "s": 2.4
+    }
+   ],
+   "cam": {
+    "from": [
+     640,
+     420,
+     1.0
+    ]
+   },
+   "sfx": []
+  },
+  {
+   "s": 1.4286,
+   "set": "spot",
+   "day": "DAY 135",
+   "chars": [],
+   "things": [
+    {
+     "name": "jar",
+     "x": 640,
+     "y": 560,
+     "s": 1.7,
+     "v": 0.78
+    }
+   ],
+   "cam": {
+    "from": [
+     640,
+     470,
+     1.6
+    ]
+   },
+   "arg": {
+    "x": 640
+   },
+   "sfx": [
+    [
+     "coin",
+     0.2
+    ]
+   ]
+  },
+  {
+   "s": 4.2857,
+   "set": "street",
+   "day": "DAY 142",
+   "grade": "rain",
+   "music": "drone",
+   "fade": 10,
+   "cam": {
+    "from": [
+     750,
+     429,
+     1.25
+    ],
+    "to": [
+     750,
+     429,
+     1.35
+    ],
+    "ease": "lin"
+   },
+   "chars": [
+    {
+     "look": "nova",
+     "x": 560,
+     "pose": "facepalm",
+     "expr": "scared",
+     "y": 538
+    }
+   ],
+   "things": [
+    {
+     "name": "car",
+     "x": 940,
+     "y": 560,
+     "s": 1.3
+    }
+   ],
+   "say": [
+    {
+     "t": "Then something broke.",
+     "delay": 0.6,
+     "until": 4.0,
+     "bold": true,
+     "size": 42
+    }
+   ],
+   "sfx": [
+    [
+     "buzz",
+     0.9
+    ]
+   ]
+  },
+  {
+   "s": 4.2857,
+   "set": "spot",
+   "arg": {
+    "x": 640
+   },
+   "cam": {
+    "from": [
+     640,
+     420,
+     1.6
+    ],
+    "to": [
+     640,
+     420,
+     1.75
+    ],
+    "ease": "lin"
+   },
+   "chars": [],
+   "things": [
+    {
+     "name": "jar",
+     "x": 640,
+     "y": 560,
+     "s": 1.7,
+     "v": [
+      0.78,
+      0.06
+     ]
+    }
+   ],
+   "say": [
+    {
+     "t": "Gone in a day.",
+     "delay": 1.0,
+     "until": 4.2,
+     "bold": true,
+     "size": 44,
+     "at": [
+      640,
+      150
+     ]
+    }
+   ],
+   "sfx": [
+    [
+     "powerdown",
+     0.8
+    ]
+   ]
+  },
+  {
+   "s": 5.7143,
+   "set": "spot",
+   "arg": {
+    "x": 640
+   },
+   "cam": {
+    "from": [
+     640,
+     441,
+     1.15
+    ],
+    "to": [
+     640,
+     441,
+     1.4
+    ],
+    "ease": "lin"
+   },
+   "chars": [
+    {
+     "look": "nova",
+     "x": 520,
+     "pose": "hug",
+     "expr": "cry"
+    },
+    {
+     "look": "voice",
+     "x": 930,
+     "y": 560,
+     "pose": "loom",
+     "scale": 1.3,
+     "dir": -1
+    }
+   ],
+   "things": [
+    {
+     "name": "jar",
+     "x": 380,
+     "y": 560,
+     "s": 0.9,
+     "v": 0.06
+    }
+   ],
+   "say": [
+    {
+     "t": "told you.",
+     "delay": 1.4,
+     "until": 5.5,
+     "red": true,
+     "size": 80,
+     "shatter": 3.6
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "s": 2.1429,
+   "set": "black",
+   "say": [
+    {
+     "t": "He sat there a while.",
+     "delay": 0.3,
+     "until": 2.0,
+     "bold": true,
+     "size": 40,
+     "at": "mid"
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "s": 5.0,
+   "set": "bedroomdawn",
+   "day": "DAY 1",
+   "fade": 24,
+   "music": "pulse96",
+   "cam": {
+    "from": [
+     450,
+     450,
+     1.35
+    ],
+    "to": [
+     450,
+     450,
+     1.5
+    ],
+    "ease": "lin"
+   },
+   "chars": [
+    {
+     "look": "nova",
+     "x": 520,
+     "pose": "bedge",
+     "expr": "sad",
+     "exprAt": [
+      [
+       3.5,
+       "determined"
+      ]
+     ],
+     "poseAt": [
+      [
+       4.2,
+       "stand"
+      ]
+     ]
+    }
+   ],
+   "things": [
+    {
+     "name": "jar",
+     "x": 380,
+     "y": 482,
+     "s": 0.6,
+     "v": 0.06
+    }
+   ],
+   "say": [
+    {
+     "t": "Start again. Smaller.",
+     "delay": 1.0,
+     "until": 4.6,
+     "bold": true,
+     "size": 44
+    }
+   ],
+   "sfx": [],
+   "arg": {
+    "nsExt": 70
+   }
+  },
+  {
+   "s": 2.8571,
+   "set": "spot",
+   "arg": {
+    "x": 640
+   },
+   "cam": {
+    "from": [
+     640,
+     500,
+     1.8
+    ]
+   },
+   "chars": [],
+   "things": [
+    {
+     "name": "jar",
+     "x": 640,
+     "y": 560,
+     "s": 1.7,
+     "v": [
+      0.06,
+      0.15
+     ]
+    }
+   ],
+   "sfx": [
+    [
+     "coin",
+     0.5
+    ]
+   ]
+  },
+  {
+   "s": 1.4286,
+   "set": "stairs",
+   "day": "DAY 12",
+   "chars": [
+    {
+     "look": "nova",
+     "x": 0,
+     "pose": "stairs",
+     "expr": "determined",
+     "stairs": [
+      0.0,
+      0.1
+     ]
+    }
+   ],
+   "music": "montage",
+   "sfx": [
+    [
+     "swish",
+     0.2
+    ]
+   ]
+  },
+  {
+   "s": 1.4286,
+   "set": "desk",
+   "day": "DAY 30",
+   "chars": [
+    {
+     "look": "nova",
+     "x": 560,
+     "pose": "desk",
+     "expr": "determined",
+     "y": 510
+    }
+   ],
+   "things": [
+    {
+     "name": "book",
+     "x": 700,
+     "y": 440,
+     "s": 0.9
+    }
+   ],
+   "cam": {
+    "from": [
+     720,
+     360,
+     1.3
+    ]
+   },
+   "sfx": []
+  },
+  {
+   "s": 1.4286,
+   "set": "store",
+   "day": "DAY 64",
+   "chars": [
+    {
+     "look": "nova",
+     "x": 520,
+     "pose": "stand",
+     "expr": "smile"
+    }
+   ],
+   "things": [
+    {
+     "name": "bag",
+     "x": 760,
+     "y": 440,
+     "s": 1.0
+    },
+    {
+     "name": "cash",
+     "x": 680,
+     "y": 440,
+     "s": 0.7
+    }
+   ],
+   "cam": {
+    "from": [
+     450,
+     430,
+     1.2
+    ]
+   },
+   "sfx": []
+  },
+  {
+   "s": 1.4286,
+   "set": "street",
+   "day": "DAY 110",
+   "chars": [
+    {
+     "look": "nova",
+     "x": 640,
+     "pose": "walk",
+     "expr": "smile",
+     "y": 538
+    }
+   ],
+   "things": [
+    {
+     "name": "bag",
+     "hand": 0,
+     "s": 0.8
+    }
+   ],
+   "grade": "sunset",
+   "arg": {
+    "gradeAmt": 0.5
+   },
+   "cam": {
+    "from": [
+     820,
+     450,
+     1.9
+    ]
+   },
+   "scroll": [
+    500,
+    760
+   ],
+   "sfx": []
+  },
+  {
+   "s": 1.4286,
+   "set": "spot",
+   "day": "DAY 160",
+   "chars": [],
+   "things": [
+    {
+     "name": "jar",
+     "x": 700,
+     "y": 560,
+     "s": 1.8,
+     "v": 0.45
+    }
+   ],
+   "cam": {
+    "from": [
+     700,
+     460,
+     2.2
+    ]
+   },
+   "arg": {
+    "x": 700
+   },
+   "sfx": [
+    [
+     "coin",
+     0.2
+    ]
+   ]
+  },
+  {
+   "s": 1.4286,
+   "set": "calendar",
+   "day": "DAY 200",
+   "chars": [],
+   "arg": {
+    "start": 1,
+    "cross": 31,
+    "crossDt": 0.03,
+    "crossT0": 0.0,
+    "days": 31
+   },
+   "cam": {
+    "from": [
+     640,
+     292,
+     1.3
+    ]
+   },
+   "sfx": []
+  },
+  {
+   "s": 1.4286,
+   "set": "office",
+   "day": "DAY 260",
+   "chars": [
+    {
+     "look": "nova",
+     "x": 650,
+     "pose": "point",
+     "expr": "grin"
+    }
+   ],
+   "things": [
+    {
+     "name": "chart",
+     "x": 900,
+     "y": 300,
+     "v": 1,
+     "text": "SAVINGS"
+    },
+    {
+     "name": "jar",
+     "x": 530,
+     "y": 560,
+     "v": 0.85
+    }
+   ],
+   "cam": {
+    "from": [
+     955,
+     430,
+     1.25
+    ]
+   },
+   "sfx": []
+  },
+  {
+   "s": 1.4286,
+   "set": "mirror",
+   "day": "DAY 300",
+   "chars": [
+    {
+     "look": "nova",
+     "x": 540,
+     "pose": "stand",
+     "expr": "smile"
+    }
+   ],
+   "arg": {
+    "crack": 0
+   },
+   "cam": {
+    "from": [
+     650,
+     421,
+     1.7
+    ]
+   },
+   "sfx": [
+    [
+     "ping",
+     0.2
+    ]
+   ]
+  },
+  {
+   "s": 5.7143,
+   "set": "store",
+   "music": "finale",
+   "day": "DAY 365",
+   "cam": {
+    "from": [
+     450,
+     425,
+     1.1
+    ],
+    "to": [
+     450,
+     425,
+     1.2
+    ],
+    "ease": "lin"
+   },
+   "chars": [
+    {
+     "look": "nova",
+     "x": 520,
+     "pose": "stand",
+     "expr": "smile"
+    },
+    {
+     "look": "friend",
+     "x": 870,
+     "pose": "stand",
+     "expr": "smile",
+     "dir": -1
+    }
+   ],
+   "things": [
+    {
+     "name": "coin",
+     "hand": 1,
+     "s": 0.8
+    },
+    {
+     "name": "bag",
+     "x": 760,
+     "y": 440,
+     "s": 1.1
+    }
+   ],
+   "say": [
+    {
+     "t": "Someone chose what he made.",
+     "delay": 1.6,
+     "until": 5.5,
+     "bold": true,
+     "size": 42,
+     "at": [
+      640,
+      590
+     ]
+    }
+   ],
+   "sfx": [
+    [
+     "register",
+     3.0
+    ],
+    [
+     "coin",
+     3.1
+    ]
+   ]
+  },
+  {
+   "s": 5.7143,
+   "set": "hill",
+   "arg": {
+    "hx": 430
+   },
+   "cam": {
+    "from": [
+     598,
+     470,
+     0.8
+    ],
+    "to": [
+     440,
+     485,
+     1.35
+    ],
+    "ease": "io"
+   },
+   "chars": [
+    {
+     "look": "nova",
+     "x": 430,
+     "pose": "stand",
+     "expr": "smile",
+     "y": 566,
+     "poseAt": [
+      [
+       4.0,
+       "raise"
+      ]
+     ]
+    }
+   ],
+   "say": [
+    {
+     "t": "Small, then more.",
+     "delay": 1.0,
+     "until": 4.0,
+     "bold": true,
+     "size": 44
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "s": 5.7143,
+   "set": "bedroomdawn",
+   "fadeOut": 16,
+   "cam": {
+    "from": [
+     470,
+     450,
+     1.4
+    ],
+    "to": [
+     470,
+     450,
+     1.5
+    ],
+    "ease": "lin"
+   },
+   "chars": [
+    {
+     "look": "nova",
+     "x": 560,
+     "pose": "stand",
+     "expr": "smile"
+    }
+   ],
+   "things": [
+    {
+     "name": "jar",
+     "x": 380,
+     "y": 482,
+     "s": 0.6,
+     "v": 1
+    }
+   ],
+   "arg": {
+    "nsExt": 70,
+    "dawn": 0.2
+   },
+   "sfx": [],
+   "say": [
+    {
+     "t": "Coins never arrive loudly, either.",
+     "delay": 1.0,
+     "until": 4.9,
+     "bold": true,
+     "size": 42
+    }
+   ]
+  },
+  {
+   "s": 7.1429,
+   "set": "black",
+   "music": "title",
+   "card": {
+    "big": "THE QUIET JAR",
+    "line": "Small now. Big later.",
+    "cmd": "Drop one today.",
+    "fs": 110,
+    "sy": 1.15,
+    "tagAt": 2.2,
+    "cmdAt": 3.8,
+    "outAt": 5.8,
+    "outLen": 1.0
+   },
+   "sfx": [
+    [
+     "boom",
+     0.0,
+     {
+      "dur": 5
+     }
+    ]
+   ]
+  }
+ ],
+ "audio_hi": [
+  [
+   0,
+   0
+  ],
+  [
+   3.5,
+   0
+  ],
+  [
+   5.5,
+   0.9
+  ],
+  [
+   30,
+   0.9
+  ],
+  [
+   36,
+   0.35
+  ],
+  [
+   46.6,
+   0.35
+  ],
+  [
+   48.6,
+   0.05
+  ],
+  [
+   2.4,
+   0.05
+  ],
+  [
+   2.9,
+   0.6
+  ],
+  [
+   106.6,
+   0.8
+  ],
+  [
+   107.1,
+   0.05
+  ],
+  [
+   117.6,
+   0.05
+  ],
+  [
+   119.6,
+   0.9
+  ]
+ ],
+ "audio_air": [
+  [
+   0,
+   0
+  ],
+  [
+   3.5,
+   0
+  ],
+  [
+   5.5,
+   2
+  ],
+  [
+   36,
+   1
+  ],
+  [
+   48.6,
+   0.3
+  ],
+  [
+   2.9,
+   1
+  ],
+  [
+   107.1,
+   0.3
+  ],
+  [
+   118.6,
+   1
+  ]
+ ],
+ "audio_trim": [
+  [
+   0,
+   0
+  ],
+  [
+   3,
+   3
+  ],
+  [
+   8,
+   0
+  ],
+  [
+   30,
+   0
+  ],
+  [
+   34,
+   2
+  ],
+  [
+   40,
+   5
+  ],
+  [
+   48,
+   5
+  ],
+  [
+   50,
+   3.5
+  ],
+  [
+   82,
+   3.5
+  ],
+  [
+   84,
+   -1
+  ],
+  [
+   98,
+   -1
+  ],
+  [
+   100,
+   1
+  ],
+  [
+   106,
+   1
+  ],
+  [
+   108,
+   5
+  ],
+  [
+   118,
+   5
+  ],
+  [
+   120,
+   1
+  ],
+  [
+   136,
+   0
+  ],
+  [
+   149,
+   0
+  ]
+ ]
+}
