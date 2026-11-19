@@ -14,20 +14,41 @@
 //   bloom = seconds into the beat of a golden-peach full-frame bloom (20 f up, 28 f down).
 // Text: narration = white fade (no typing); red + size < 60 = whisper typed ~2 f/char above the monster (or `at`);
 //   red + size >= 60 = slam that hard-pops with a 3 f overshoot, centred near the top.
+//   white: true  = white bold "pop" line (e.g. "DAY 1."): same hard pop as the slam but white, bold, typed as written, default size 84,
+//                  centred near the top (or `at`).
+//   bold: true   = bold spotlight line: narration (white fade) in bold, e.g. the second line of a pair.
+//   shatter: true | seconds = on a slam / pop line the letters break apart and fall: true = 16 f before the line ends, a number = seconds
+//                  into the line when the break starts (the break lasts 16 f; make the line long enough).
+//   Line fields in JSON "say" entries: t, red, white, bold, shatter, at, size, cps, delay, until.
+// Title card (beat "card": {big, line, cmd}): optional timing / size fields, defaults = the old look:
+//   tagAt = seconds from the card start when `line` (the tagline) fades in (default: just after the underline is drawn, ~ big letters
+//   2.4 f each + 32 f); cmdAt = seconds when `cmd` (the "You decide." end line) appears (default 1.5 s after the tagline);
+//   fs = title font size px (default: as big as fits, max 150).
+//   sy = vertical stretch of the title (the reference letters are taller / narrower than Comic Neue, default 1)
+//   outAt / outLen = seconds from the card start when the card starts fading out / how long the fade takes (default: the last third, max 2 s).
+//   The title is heavy: bold 700 + a 5 px same-colour stroke (matches the reference's thick hand-lettered DISCIPLINE).
+// Beat keys passed through (film2d.py KEYS):
+//   grade: "sunset" = warm orange wash + low sun glow | "rain" = cool blue-grey wash, darker, diagonal rain streaks;  arg.gradeAmt 0..1 (default 1)
+//   arg.punchPhase = seconds the punch cycle is shifted (contact lands 0.42 s into a cycle: use it to land the punch on a music hit)
+//   arg.punch = seconds per punch cycle of the "punch" pose in this beat (default 1.25, the reference uses 2.5)
+//   arg.embers = N floating embers rising through the frame (try 40) | arg.emberSpeed multiplier (default 1)
+//   arg.burst = seconds into the beat of a spark burst (radial yellow-white streaks, 0.9 s) | arg.burstX, arg.burstY screen px
+//   (default 640, 300) | arg.burstN count (default 28)
+//   lying hero in a bed ("bed": true): the blanket now starts right of the face, so the face shows on the pillow.
 import React, { useEffect, useState } from "react";
 import { AbsoluteFill, continueRender, delayRender, getInputProps, useCurrentFrame } from "remotion";
 import "@fontsource/comic-neue/700.css";
 import "@fontsource/comic-neue/400.css";
-import { Expr, Guy, handOf, Look, pose } from "./rig";
+import { Expr, Guy, handOf, headOf, Look, pose } from "./rig";
 import { Blanket, FLOOR, GLOW_COLORS, SET_CAMS, SetView, stairAt, ThingView } from "./sets";
 
 type V3 = [number, number, number];
 export type Char2 = { look?: Look; x: number; y?: number; dir?: number; pose?: string; expr?: Expr; exprAt?: [number, Expr][]; poseAt?: [number, string][]; scale?: number; to?: [number, number]; stairs?: [number, number]; bed?: boolean; dim?: number; ease?: boolean };
 export type Thing2 = { name: string; x?: number; y?: number; s?: number; text?: string; v?: number | [number, number]; hand?: number; at?: number; dx?: number; dy?: number };
 export type Cam2 = { from?: V3; to?: V3; ease?: "lin" | "in" | "out" | "io"; push?: number };
-export type Shot2 = { a: number; n: number; set: string; arg?: Record<string, number>; cam?: Cam2; chars?: Char2[]; things?: Thing2[]; fade?: number; fadeOut?: number; sat?: [number, number]; shake?: [number, number][]; flash?: number[]; scroll?: [number, number]; spot?: number; dark?: number };
-export type Line2 = { a: number; n: number; t: string; red?: boolean; at?: "top" | "mid" | "low" | [number, number]; size?: number; cps?: number };
-export type Card2 = { a: number; n: number; big: string; line?: string; cmd?: string };
+export type Shot2 = { a: number; n: number; set: string; arg?: Record<string, number>; cam?: Cam2; chars?: Char2[]; things?: Thing2[]; fade?: number; fadeOut?: number; sat?: [number, number]; shake?: [number, number][]; flash?: number[]; scroll?: [number, number]; spot?: number; dark?: number; grade?: "sunset" | "rain" };
+export type Line2 = { a: number; n: number; t: string; red?: boolean; white?: boolean; bold?: boolean; shatter?: boolean | number; at?: "top" | "mid" | "low" | [number, number]; size?: number; cps?: number };
+export type Card2 = { a: number; n: number; big: string; line?: string; cmd?: string; tagAt?: number; cmdAt?: number; fs?: number; outAt?: number; outLen?: number; sy?: number };
 export type Day2 = { a: number; n: number; t: string };
 export type Hud2 = { a: number; n: number; label: string; from: number; to: number; unit?: string };
 export type Thumb2 = { words: string; red?: string[]; pos?: "tl" | "tr" };
@@ -79,7 +100,7 @@ const Defs: React.FC = () => (
 const charsOf = (s: Shot2, tl: number, u: number) => (s.chars ?? []).map((c, i) => {
   let name = c.pose ?? "stand"; for (const [at, p] of c.poseAt ?? []) if (tl >= at) name = p;
   let e: Expr = c.expr ?? "neutral"; for (const [at, x] of c.exprAt ?? []) if (tl >= at) e = x;
-  const p = pose(name, tl + i * 0.37);
+  const p = pose(name, tl + i * 0.37 + (s.arg?.punchPhase ?? 0), s.arg?.punch);
   let x = c.x, y = c.y ?? FLOOR;
   if (c.to) { const k = c.ease ? ease(u) : u; x = lerp(c.x, c.to[0], k); y = lerp(c.y ?? FLOOR, c.to[1], k); }
   if (c.stairs) { const q = stairAt(lerp(c.stairs[0], c.stairs[1], u)); x = q.x; y = q.y; }
@@ -118,7 +139,7 @@ const Shot: React.FC<{ s: Shot2; f: number }> = ({ s, f }) => {
         <SetView name={s.set} t={tl} scroll={scroll} arg={s.arg} />
         {chars.map(({ c, p, e, x, y, dir, sc, name }, i) => <g key={i}>
           <Guy p={p} e={e} dir={dir} t={tl + i} look={c.look} scale={sc} x={x} y={c.bed ? y - 96 : y} dim={c.dim} />
-          {c.bed && <Blanket x={420} heave={Math.sin(tl * 2) * 2} />}
+          {c.bed && <Blanket x={420} heave={Math.sin(tl * 2) * 2} x0={Math.max(532, x + headOf(p, dir).x * sc + 46)} />}
           {name === "sleepdesk" || (c.bed && e === "sleep") ? <ThingView name="zzz" x={x + 40 * dir} y={y - (c.bed ? 150 : 170) * sc} t={tl} /> : null}
         </g>)}
         {things.map((th, i) => {
@@ -135,7 +156,7 @@ const Shot: React.FC<{ s: Shot2; f: number }> = ({ s, f }) => {
 /** where a line sits on screen (1280x720). Narration: top-centre. Whisper: above the monster's head. Slam: big, near the top. */
 const placeOf = (l: Line2, shots: Shot2[]): [number, number] => {
   if (Array.isArray(l.at)) return l.at;
-  const size = l.size ?? (l.red ? 30 : 38), slam = !!l.red && size >= 60;
+  const size = l.size ?? (l.red ? 30 : 38), slam = (!!l.red && size >= 60) || !!l.white;
   if (l.at === "mid") return [640, 360];
   if (l.at === "low") return [640, 560];
   if (l.at === "top" || !l.red || slam) return [640, slam ? 172 : 152];
@@ -153,15 +174,27 @@ const placeOf = (l: Line2, shots: Shot2[]): [number, number] => {
   return [640, 240];
 };
 
+/** letters of a slam / pop line: after `sa` frames they break apart, fly out and fall (deterministic) */
+const Shatter: React.FC<{ text: string; k: number }> = ({ text, k }) => (
+  <>{text.split("").map((ch, i) => {
+    const dx = (rnd(i * 5 + 2) - 0.5) * 360 * k, dy = (rnd(i * 3 + 1) - 0.65) * 120 * k + 260 * k * k, rot = (rnd(i * 7 + 4) - 0.5) * 220 * k;
+    return <span key={i} style={{ display: "inline-block", whiteSpace: "pre", transform: `translate(${dx}px, ${dy}px) rotate(${rot}deg)`, opacity: clamp(1 - k * 1.15) }}>{ch}</span>;
+  })}</>
+);
+
 const Line: React.FC<{ l: Line2; f: number; pos: [number, number] }> = ({ l, f, pos }) => {
-  const size = l.size ?? (l.red ? 30 : 38), slam = !!l.red && size >= 60, t = f - l.a;
-  const box: React.CSSProperties = { position: "absolute", left: pos[0], top: pos[1], width: "max-content", maxWidth: 1040, textAlign: "center", whiteSpace: "pre-wrap", fontFamily: HAND, fontWeight: 400, fontSize: size, lineHeight: 1.15 };
-  if (!l.red) {   // narration: linear fade in ~16 f, out ~12 f, no typing
-    return <div style={{ ...box, transform: "translate(-50%,-50%)", opacity: vis(f, l.a, l.n, 16, 12), color: WHITE }}>{l.t}</div>;
+  const size = l.size ?? (l.red ? 30 : l.white ? 84 : 38), slam = (!!l.red && size >= 60) || !!l.white, t = f - l.a;
+  const box: React.CSSProperties = { position: "absolute", left: pos[0], top: pos[1], width: "max-content", maxWidth: 1040, textAlign: "center", whiteSpace: "pre-wrap", fontFamily: HAND, fontWeight: l.white || l.bold ? 700 : 400, fontSize: size, lineHeight: 1.15 };
+  const sa = !l.shatter ? -1 : l.shatter === true ? Math.max(6, l.n - 16) : Math.round(l.shatter * 30);
+  const ks = sa >= 0 ? clamp((t - sa) / 16) : 0;
+  const body = (txt: string) => (sa >= 0 && ks > 0 ? <Shatter text={txt} k={ks} /> : txt);
+  if (!l.red && !l.white) {   // narration: near-hard pop in 4 f, out 6 f (the reference cuts text on and off), no typing
+    return <div style={{ ...box, transform: "translate(-50%,-50%)", opacity: vis(f, l.a, l.n, 4, 6), color: WHITE, textShadow: l.bold ? "0 0 26px rgba(255,255,255,0.18)" : undefined }}>{l.t}</div>;
   }
-  if (slam) {     // hard pop: 1.35x -> 1.0x over 3 f, then a slow fade out (18 f)
-    const k = clamp(t / 3), sc = 1 + 0.35 * (1 - k), o = f < l.a || f >= l.a + l.n ? 0 : clamp((l.a + l.n - f) / 18);
-    return <div style={{ ...box, transform: `translate(-50%,-50%) scale(${sc})`, opacity: o, color: RED }}>{l.t.toLowerCase()}</div>;
+  if (slam) {     // hard pop: 1.35x -> 1.0x over 3 f, then a slow fade out (18 f); shatter lines stay solid until the letters fall
+    const k = clamp(t / 3), sc = 1 + 0.35 * (1 - k), inl = f < l.a || f >= l.a + l.n ? 0 : 1;
+    const o = sa >= 0 ? inl : inl * clamp((l.a + l.n - f) / 18), txt = l.white ? l.t : l.t.toLowerCase();
+    return <div style={{ ...box, transform: `translate(-50%,-50%) scale(${sc})`, opacity: o, color: l.white ? WHITE : RED, textShadow: l.white ? "0 0 30px rgba(255,255,255,0.22)" : undefined }}>{body(txt)}</div>;
   }
   const txt = l.t.toLowerCase(), n = Math.max(0, Math.min(txt.length, Math.ceil((t / 30) * (l.cps ?? 15))));   // red whisper: typed ~2 f/char
   const o = f < l.a || f >= l.a + l.n ? 0 : clamp((l.a + l.n - f) / 8);
@@ -177,25 +210,25 @@ const wavy = (w: number, amp: number, waves: number, frac: number) => {
 
 const Card: React.FC<{ c: Card2; f: number }> = ({ c, f }) => {
   const t = f - c.a, len = c.big.length;
-  const fs = Math.min(128, 773 / (0.52 * Math.max(5, len))), ls = Math.min(12, Math.max(0, (773 - 0.52 * len * fs) / len));
-  const lettersEnd = 3 + len * 2.4 + 4;
+  const fs = c.fs ?? Math.min(150, 880 / (0.52 * Math.max(5, len))), ls = Math.min(14, Math.max(0, (880 - 0.52 * len * fs) / len));
+  const lettersEnd = 26;   // the reference fades the whole word in over ~0.7 s, then draws the underline
   const ul = clamp((t - lettersEnd + 1) / 18);
-  const tag0 = lettersEnd + 18 + 14, cmd0 = tag0 + 45;
-  const fout = Math.min(60, c.n / 3), o = clamp((c.a + c.n - f) / fout);
+  const tag0 = c.tagAt !== undefined ? c.tagAt * 30 : lettersEnd + 18 + 14, cmd0 = c.cmdAt !== undefined ? c.cmdAt * 30 : tag0 + 45;
+  const fout = Math.min(60, c.n / 3), o = c.outAt !== undefined ? clamp(1 - (t - c.outAt * 30) / Math.max(1, (c.outLen ?? 1) * 30)) : clamp((c.a + c.n - f) / fout);
   return <AbsoluteFill style={{ background: `radial-gradient(ellipse at 50% 50%, ${BG} 52%, #050505 100%)` }}>
     <svg width={1280} height={720} style={{ position: "absolute", opacity: o }}>
       {Array.from({ length: 70 }, (_, i) => <circle key={i} cx={rnd(i * 3) * 1280} cy={70 + rnd(i * 5 + 1) * 580} r={0.7 + rnd(i * 7) * 1.1} fill="#fff" opacity={0.1 + rnd(i * 9) * 0.28} />)}
     </svg>
     <div style={{ position: "absolute", left: 0, right: 0, top: 310 - fs * 0.5, textAlign: "center", opacity: o }}>
-      <div style={{ position: "relative", display: "inline-block", fontFamily: HAND, fontWeight: 700, fontSize: fs, letterSpacing: ls, lineHeight: 1, color: WHITE, WebkitTextStroke: "2.5px #000", paintOrder: "stroke fill", textShadow: "0 0 22px rgba(255,255,255,0.10)" }}>
-        {c.big.split("").map((ch, i) => <span key={i} style={{ opacity: clamp((t - 3 - i * 2.4) / 4), whiteSpace: "pre" }}>{ch}</span>)}
+      <div style={{ position: "relative", display: "inline-block", fontFamily: HAND, fontWeight: 700, fontSize: fs, letterSpacing: ls, lineHeight: 1, transform: `scaleY(${c.sy ?? 1})`, transformOrigin: "50% 40%", color: WHITE, WebkitTextStroke: "4.5px #EDEBE7", textShadow: "0 0 26px rgba(255,255,255,0.12)" }}>
+        {c.big.split("").map((ch, i) => <span key={i} style={{ opacity: clamp((t - 3 - i * 0.8) / 18), whiteSpace: "pre" }}>{ch}</span>)}
         <svg height={26} viewBox="0 0 400 26" preserveAspectRatio="none" style={{ position: "absolute", left: -10, top: fs * 1.0, width: "calc(100% + 20px)", overflow: "visible" }}>
           {ul > 0 && <path d={wavy(400, 4.5, 3.2, ul)} stroke={RED} strokeWidth={7} strokeLinecap="round" strokeLinejoin="round" fill="none" vectorEffect="non-scaling-stroke" />}
         </svg>
       </div>
     </div>
-    {c.line && <div style={{ position: "absolute", left: 0, right: 0, top: 477 - 20, textAlign: "center", fontFamily: HAND, fontWeight: 400, fontSize: 30, color: WHITE, opacity: o * clamp((t - tag0) / 15) }}>{c.line}</div>}
-    {c.cmd && <div style={{ position: "absolute", left: 0, right: 0, top: 545 - 24, textAlign: "center", fontFamily: HAND, fontWeight: 700, fontSize: 40, color: RED, opacity: o * clamp((t - cmd0) / 6) }}>{c.cmd}</div>}
+    {c.line && <div style={{ position: "absolute", left: 0, right: 0, top: 462 - 4, textAlign: "center", fontFamily: HAND, fontWeight: 700, fontSize: 42, color: WHITE, opacity: o * clamp((t - tag0) / 15) }}>{c.line}</div>}
+    {c.cmd && <div style={{ position: "absolute", left: 0, right: 0, top: 545 - 14, textAlign: "center", fontFamily: HAND, fontWeight: 700, fontSize: 50, color: RED, opacity: o * clamp((t - cmd0) / 6) }}>{c.cmd}</div>}
   </AbsoluteFill>;
 };
 
@@ -207,6 +240,39 @@ const Thumb: React.FC<{ t: Thumb2 }> = ({ t }) => {
     </div>)}
   </div>;
 };
+
+/** floating embers (screen space, deterministic by frame): n particles rising and swaying, flickering orange */
+const Embers: React.FC<{ tl: number; n: number; speed: number }> = ({ tl, n, speed }) => (
+  <svg width={1280} height={720} style={{ position: "absolute", left: 0, top: 0 }}>
+    {Array.from({ length: Math.min(120, Math.round(n)) }, (_, i) => {
+      const sp = (28 + rnd(i * 5 + 1) * 70) * speed, y = 780 - ((rnd(i * 7 + 2) * 860 + tl * sp) % 860), x = rnd(i * 3) * 1280 + Math.sin(tl * (0.8 + rnd(i) * 1.2) + i) * 22;
+      const o = (0.35 + rnd(i * 9 + 3) * 0.6) * (0.65 + 0.35 * Math.sin(tl * 7 + i * 2.3)) * clamp(y / 160) * clamp((790 - y) / 60);
+      return <circle key={i} cx={x} cy={y} r={1.2 + rnd(i * 11 + 4) * 2.6} fill={["#ff8a3a", "#ffb35a", "#ff5a2a", "#ffd27a"][i % 4]} opacity={Math.max(0, o)} />;
+    })}
+  </svg>
+);
+
+/** radial spark burst: k = frames since the burst, ~26 f long */
+const Burst: React.FC<{ k: number; x: number; y: number; n: number }> = ({ k, x, y, n }) => (
+  <svg width={1280} height={720} style={{ position: "absolute", left: 0, top: 0 }}>
+    {k < 4 && <circle cx={x} cy={y} r={30 + k * 22} fill="#fff6cf" opacity={0.7 * (1 - k / 4)} />}
+    {Array.from({ length: Math.min(80, Math.round(n)) }, (_, i) => {
+      const a = rnd(i * 3 + 1) * Math.PI * 2, v = 9 + rnd(i * 5 + 2) * 22, d = v * k * (1 - k / 60), len = (10 + rnd(i * 7) * 24) * (1 - k / 30);
+      const cx = Math.cos(a), cy = Math.sin(a) + 0.12 * k * 0.1;
+      return <path key={i} d={`M ${x + cx * d} ${y + cy * d} L ${x + cx * (d - len)} ${y + cy * (d - len)}`} stroke={i % 3 === 0 ? "#fff" : "#f7dc4a"} strokeWidth={1.6 + rnd(i * 9) * 2.2} strokeLinecap="round" opacity={Math.max(0, 1 - k / 26)} />;
+    })}
+  </svg>
+);
+
+/** rain: diagonal streaks falling (deterministic by frame) */
+const Rain: React.FC<{ f: number; amt: number }> = ({ f, amt }) => (
+  <svg width={1280} height={720} style={{ position: "absolute", left: 0, top: 0 }}>
+    {Array.from({ length: 90 }, (_, i) => {
+      const sp = 34 + rnd(i * 5 + 1) * 30, y = ((rnd(i * 7 + 2) * 900 + f * sp) % 900) - 90, len = 22 + rnd(i * 11 + 4) * 34, x = rnd(i * 3) * 1500 - y * 0.22;
+      return <path key={i} d={`M ${x} ${y} l ${-0.22 * len} ${len}`} stroke="#cfe0ff" strokeWidth={1 + rnd(i * 9) * 1.2} strokeLinecap="round" opacity={(0.1 + rnd(i * 13) * 0.22) * amt} />;
+    })}
+  </svg>
+);
 
 export const Film2D: React.FC = () => {
   useFontsReady();
@@ -224,14 +290,21 @@ export const Film2D: React.FC = () => {
   const day = (film.day ?? []).find((d) => f >= d.a && f < d.a + d.n);
   const hud = (film.hud ?? []).find((d) => f >= d.a && f < d.a + d.n);
   const dark = 0.6 + (s.dark ?? 0) * 0.3;
+  const gAmt = s.arg?.gradeAmt ?? 1, tlS = (f - s.a) / 30;
+  const gFilter = s.grade === "sunset" ? `sepia(${0.3 * gAmt}) saturate(${1 + 0.25 * gAmt}) hue-rotate(${-8 * gAmt}deg)` : s.grade === "rain" ? `brightness(${1 - 0.18 * gAmt}) saturate(${1 - 0.25 * gAmt}) hue-rotate(${8 * gAmt}deg)` : undefined;
+  const burstK = s.arg?.burst !== undefined ? f - s.a - Math.round(s.arg.burst * 30) : -1;
   return (
     <AbsoluteFill style={{ background: BG }}>
-      <svg width={1280} height={720} viewBox="0 0 1280 720" style={{ position: "absolute" }}>
+      <svg width={1280} height={720} viewBox="0 0 1280 720" style={{ position: "absolute", filter: gFilter }}>
         <Defs />
         <Shot s={s} f={f} />
       </svg>
       {/* static vignette: flat centre, falls to ~40 % at the corners */}
       <AbsoluteFill style={{ background: `radial-gradient(ellipse at 50% 50%, rgba(0,0,0,0) 52%, rgba(0,0,0,${dark}) 100%)` }} />
+      {s.grade === "sunset" && <AbsoluteFill style={{ opacity: gAmt, background: "radial-gradient(ellipse at 50% 88%, rgba(255,190,90,0.34) 0%, rgba(255,120,50,0.0) 55%), linear-gradient(to bottom, rgba(70,30,60,0.22) 0%, rgba(255,110,50,0.20) 62%, rgba(255,150,70,0.30) 100%)" }} />}
+      {s.grade === "rain" && <><AbsoluteFill style={{ background: `rgba(40,70,120,${0.16 * gAmt})` }} /><Rain f={f} amt={gAmt} /></>}
+      {s.arg?.embers ? <Embers tl={tlS} n={s.arg.embers} speed={s.arg.emberSpeed ?? 1} /> : null}
+      {burstK >= 0 && burstK < 26 && <Burst k={burstK} x={s.arg?.burstX ?? 640} y={s.arg?.burstY ?? 300} n={s.arg?.burstN ?? 28} />}
       {flash > 0 && <AbsoluteFill style={{ background: "#fff", opacity: flash }} />}
       {bloom > 0 && <AbsoluteFill style={{ background: "#E8B180", opacity: bloom }} />}
       {day && <div style={{ position: "absolute", left: 100, top: 80, fontFamily: HAND, fontWeight: 700, fontSize: 27, letterSpacing: 2.7, color: "#b8b6b0", opacity: vis(f, day.a, day.n, 4, 4) }}>{day.t.toUpperCase()}</div>}
