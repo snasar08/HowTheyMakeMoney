@@ -30,7 +30,7 @@ from zoneinfo import ZoneInfo
 
 TZ = ZoneInfo(os.environ.get("CHANNEL_TZ", "America/New_York"))
 # Daily posting times (local). One slot per video rendered in a run.
-SLOTS = [s.strip() for s in os.environ.get("POST_SLOTS", "12:00,15:00,16:30,18:00,20:00").split(",") if s.strip()]
+SLOTS = [s.strip() for s in os.environ.get("POST_SLOTS", "07:00,12:00,15:30,19:00,22:00").split(",") if s.strip()]
 # Nothing is rendered or delivered by the nightly run before this date (New York).
 POST_START = dt.date.fromisoformat(os.environ.get("POST_START") or "2026-10-27")
 BUFFER_API = "https://api.buffer.com"

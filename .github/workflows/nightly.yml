@@ -41,7 +41,7 @@ jobs:
       ids: ${{ steps.ids.outputs.ids }}
     env:
       POST_START: ${{ vars.POST_START || '2026-10-27' }}
-      POST_SLOTS: "12:00,15:00,16:30,18:00,20:00"
+      POST_SLOTS: "07:00,12:00,15:30,19:00,22:00"
       MAX_PER_DAY: "5"
     steps:
       - uses: actions/checkout@v4
@@ -112,7 +112,7 @@ jobs:
       UPLOAD_MODE: buffer_dry
       AUDIO_CHECK: warn
       POST_START: ${{ vars.POST_START || '2026-10-27' }}
-      POST_SLOTS: "12:00,15:00,16:30,18:00,20:00"
+      POST_SLOTS: "07:00,12:00,15:30,19:00,22:00"
       MAX_PER_DAY: "5"
       IDS: ${{ needs.plan.outputs.ids }}
     steps:
@@ -290,7 +290,7 @@ jobs:
       LP_PLATES: ${{ github.workspace }}/lp/plates   # Blender frames (used only when complete)
       KOKORO_VOICE: am_puck   # Oct 30: Sam wants a male voice; am_puck = top-rated male (C+), most expressive
       KOKORO_SPEED: "1.2"
-      POST_SLOTS: "12:00,15:00,16:30,18:00,20:00"
+      POST_SLOTS: "07:00,12:00,15:30,19:00,22:00"
       MAX_PER_DAY: "5"
       GH_TOKEN: ${{ github.token }}
       YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
