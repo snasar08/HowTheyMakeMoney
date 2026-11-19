@@ -560,6 +560,12 @@ export const ThingView: React.FC<{ name: string; x: number; y: number; s?: numbe
       <circle cx={-90} cy={-20} r={24} fill="#18181a" {...L} /><circle cx={90} cy={-20} r={24} fill="#18181a" {...L} />
     </g>;
     case "book": return <g transform={`translate(${x} ${y}) scale(${s})`}><Glow x={0} y={-10} r={90} c="#ffd27a" o={0.35} /><path d="M -40 0 L 0 -8 L 40 0 L 40 -30 L 0 -38 L -40 -30 Z" fill="#e9e3d2" {...L} /><path d="M 0 -8 L 0 -38" {...L} /></g>;
+    case "sign": return <g transform={`translate(${x} ${y}) scale(${s})`}>  {/* hand-lettered hanging board; text = words (film 102) */}
+      <Glow x={0} y={0} r={140} c="#ffd27a" o={0.22} />
+      <path d="M -70 -34 L 0 -78 L 70 -34" fill="none" {...L} /><circle cx={0} cy={-80} r={4} fill="#8a8d98" />
+      <rect x={-105} y={-36} width={210} height={72} rx={8} fill="#c79a5a" {...L} />
+      <text x={0} y={10} textAnchor="middle" fontFamily={HAND} fontWeight={700} fontSize={28} fill="#2a1d10">{text ?? "HAND LETTERING"}</text>
+    </g>;
     case "bag": return <g transform={`translate(${x} ${y}) scale(${s})`}><rect x={-26} y={-50} width={52} height={50} rx={4} fill="#c79a5a" {...L} /><path d="M -12 -50 q 12 -22 24 0" {...L} fill="none" /></g>;
     case "trophy": return <g transform={`translate(${x} ${y}) scale(${s})`}><Glow x={0} y={-40} r={110} c="#ffd27a" o={0.5} /><path d="M -26 -80 L 26 -80 L 20 -44 q -20 14 -40 0 Z M -8 -38 L 8 -38 L 8 -14 L -8 -14 Z M -24 -14 L 24 -14 L 24 0 L -24 0 Z" fill="#e8b84a" {...L} /></g>;
     case "zzz": return <g fontFamily={HAND} fill="#8a8d98" opacity={0.8}>
