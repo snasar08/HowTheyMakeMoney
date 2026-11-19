@@ -4,7 +4,7 @@ import { toonMat, metalMat, glowMat, canvasTex, seeded } from "./common";
 import { hasModel, makeModelGroup, MODEL_SIZE } from "./models";
 import { drawCard } from "./cards";
 
-export type ThingName = "shoe" | "springshoe" | "chip" | "gpu" | "cash" | "cashstack" | "coins" | "goldbar" | "trophy" | "medal" | "crown" | "ring" | "car" | "sportscar" | "bus" | "truck" | "rocket" | "phone" | "laptop" | "tv" | "monitor" | "clock" | "books" | "letter" | "newspaper" | "briefcase" | "shovel" | "pickaxe" | "box" | "crate" | "basketball" | "football" | "soccerball" | "hoop" | "mic" | "headset" | "controller" | "burger" | "pizza" | "coffee" | "plant" | "robot" | "drone" | "satellite" | "globe" | "house" | "factory" | "stadium" | "plane" | "yacht" | "chart" | "arrowup" | "arrowdown" | "lightbulb" | "lock" | "key" | "heart" | "bomb" | "fire" | "camera" | "chatbot" | "glasses" | "dumbbell" | "hanger" | "dome";
+export type ThingName = "shoe" | "springshoe" | "chip" | "gpu" | "cash" | "cashstack" | "coins" | "goldbar" | "trophy" | "medal" | "crown" | "ring" | "car" | "sportscar" | "bus" | "truck" | "rocket" | "phone" | "laptop" | "tv" | "monitor" | "clock" | "books" | "letter" | "newspaper" | "briefcase" | "shovel" | "pickaxe" | "box" | "crate" | "basketball" | "football" | "soccerball" | "hoop" | "mic" | "headset" | "controller" | "burger" | "pizza" | "coffee" | "plant" | "robot" | "drone" | "satellite" | "globe" | "house" | "factory" | "stadium" | "plane" | "yacht" | "chart" | "arrowup" | "arrowdown" | "lightbulb" | "lock" | "key" | "heart" | "bomb" | "fire" | "camera" | "chatbot" | "glasses" | "dumbbell" | "hanger" | "dome" | "alarm";
 export type Thing = { root: THREE.Group; size: number; tick?(t: number): void };
 
 type M = string | THREE.Material;
@@ -321,6 +321,13 @@ const B: Record<ThingName, Builder> = {
     const g = new THREE.Group(); const fr = c ?? "#22222a";
     bx(g, 0.6, 0.36, 0.035, fr, 0, 0.3, 0); plane(g, 0.57, 0.33, screenMat(textTex(text ?? "", 512, 296, "#0f1b3a", "#35e08a", true, (x) => { x.strokeStyle = "#35e08a"; x.lineWidth = 6; x.beginPath(); x.moveTo(20, 270); x.lineTo(120, 200); x.lineTo(200, 230); x.lineTo(330, 120); x.lineTo(490, 40); x.stroke(); }), 1.3), 0, 0.3, 0.0185);
     cy(g, 0.03, 0.04, 0.12, "#33333c", 0, 0.1, -0.03); cy(g, 0.12, 0.12, 0.012, "#33333c", 0, 0.006, -0.02);
+    return { g };
+  },
+  alarm: (c, text) => {   // Nov 19 films: bedside digital alarm clock, red glowing digits (text = the time, default 6:00)
+    const g = new THREE.Group();
+    rbx(g, 0.26, 0.12, 0.1, 0.02, c ?? "#17171d", 0, 0.06, 0);
+    const tex = canvasTex(256, 112, (x) => { x.fillStyle = "#0a0204"; x.fillRect(0, 0, 256, 112); x.font = "900 92px Arial Black, Arial"; x.textAlign = "center"; x.textBaseline = "middle"; x.shadowColor = "#ff2020"; x.shadowBlur = 18; x.fillStyle = "#ff3a30"; x.fillText(text ?? "6:00", 128, 60); });
+    plane(g, 0.22, 0.09, screenMat(tex, 2.2), 0, 0.062, 0.0505);
     return { g };
   },
   clock: (c) => {
