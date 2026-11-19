@@ -3,6 +3,15 @@
 // near-black stage (#0B0B0B, drawn by Film2D), light only where the story needs it: the moon wedge, a lamp cone, a phone,
 // street-lamp bloom, a spotlight cone with dust, a red glowing bag, one warm sunrise at the end.
 // World units = px of a 1280x720 frame at camera zoom 1; the floor is at y = FLOOR. The hero is ~190 px tall.
+// Set args (Shot2.arg, numbers only; every one optional, existing films keep their look):
+//   couch:    lamp = 1 lamp lit (warm glow) | nolamp = 1 no floor lamp at all
+//   mirror:   crack 0..1 | tint 0..1 reflection tint inside the glass (default 0) | tintHue degrees (default 210 = cool blue; 20 = warm)
+//   stairs:   the steps are drawn bumpy / hand-wobbled (deterministic, no arg)
+//   fridge:   open 0..1 = door ajar, light spilling out (default 0) | x = fridge centre (default 760)
+//   calendar: start = weekday of day 1 (0..4, default 2) | cross = N days crossed off with a red X (default 0) | crossDt = seconds between
+//             the X marks drawing in (default 0 = all drawn at once) | crossT0 = seconds before the first X (default 0) | today = day
+//             number circled in red (0 = none) | days = days in the month (default 31)
+//   (grades "sunset" / "rain" and the embers / burst / punch args are documented in Film2D.tsx)
 // SET_CAMS = the default framing per set (wide shots: hero ~43% of the picture height, floor at ~y 515) and the slow
 // push-in in %/s (Film2D uses it when a beat has no "cam").
 import React from "react";
@@ -26,6 +35,8 @@ export const SET_CAMS: Record<string, { c: [number, number, number]; push: numbe
   gym: { c: [670, 443, 1.4], push: 0.5 },
   stairs: { c: [760, 330, 1.2], push: 0 },
   hill: { c: [640, 446, 0.7], push: -0.6 },
+  fridge: { c: [700, 420, 1.3], push: 0.6 },
+  calendar: { c: [640, 292, 1.4], push: 0.5 },
   court: { c: [860, 445, 1.35], push: 0.6 },
   store: { c: [640, 445, 1.35], push: 0.6 },
   office: { c: [640, 445, 1.35], push: 0.6 },
@@ -126,12 +137,17 @@ const Bed: React.FC<{ x: number; occupied?: boolean }> = ({ x }) => (
   </g>
 );
 /** the blanket goes over whoever lies in the bed */
-export const Blanket: React.FC<{ x: number; heave?: number }> = ({ x, heave = 0 }) => (
-  <g>
+export const Blanket: React.FC<{ x: number; heave?: number; x0?: number }> = ({ x, heave = 0, x0 }) => {
+  // x0 = where the blanket's left edge should sit (so the sleeper's face stays clear on the pillow); the shape is squeezed to fit the bed
+  const k = x0 === undefined ? 1 : Math.max(0.5, Math.min(1, (x + 432 - x0) / 320));
+  const tr = x0 === undefined ? undefined : `translate(${x0} 0) scale(${k} 1) translate(${-(x + 112)} 0)`;
+  return (
+  <g transform={tr}>
     <path d={`M ${x + 112} ${FLOOR - 66} C ${x + 106} ${FLOOR - 124 - heave}, ${x + 150} ${FLOOR - 134 - heave}, ${x + 210} ${FLOOR - 131 - heave} C ${x + 280} ${FLOOR - 126 - heave}, ${x + 350} ${FLOOR - 136 - heave}, ${x + 400} ${FLOOR - 124} Q ${x + 436} ${FLOOR - 118} ${x + 432} ${FLOOR - 62} Z`} fill="#1a2036" stroke="#3b4366" strokeWidth={2.2} strokeLinejoin="round" />
     <path d={`M ${x + 150} ${FLOOR - 120} q 30 26 14 56 M ${x + 300} ${FLOOR - 124} q 20 30 4 60`} stroke="#2b3354" strokeWidth={1.6} fill="none" strokeLinecap="round" />
   </g>
-);
+  );
+};
 const Nightstand: React.FC<{ x: number }> = ({ x }) => (
   <g><rect x={x} y={FLOOR - 78} width={88} height={78} rx={11} fill={F2} {...L} /><path d={`M ${x + 6} ${FLOOR - 52} L ${x + 82} ${FLOOR - 52}`} {...L} strokeWidth={1.6} opacity={0.7} /><circle cx={x + 44} cy={FLOOR - 64} r={3} fill={INK2} /></g>
 );
@@ -187,12 +203,13 @@ const WallClock: React.FC<{ x: number; y: number; t: number }> = ({ x, y, t }) =
   </g>;
 };
 /** oval mirror on a pedestal; whatever stands at x (the villain) shows inside; crack = 0..1 */
-const Mirror: React.FC<{ x: number; crack?: number }> = ({ x, crack = 0 }) => {
+const Mirror: React.FC<{ x: number; crack?: number; tint?: number; hue?: number }> = ({ x, crack = 0, tint = 0, hue = 210 }) => {
   const cy = FLOOR - 188, cx2 = x + 4, cyc = cy + 22;
   const rays = [[-80, -78], [78, -62], [-70, 84], [70, 96], [8, -150], [-30, 150], [60, 6]];
   return (
     <g>
       <ellipse cx={x} cy={cy} rx={90} ry={128} fill="#0a0a0d" stroke="#8a8d9a" strokeWidth={4} />
+      {tint > 0 && <ellipse cx={x} cy={cy} rx={86} ry={124} fill={`hsl(${hue} 55% 42%)`} opacity={0.32 * Math.min(1, tint)} />}
       <ellipse cx={x} cy={cy} rx={79} ry={117} fill="none" stroke="#2c2e38" strokeWidth={1.6} />
       <path d={`M ${x - 62} ${cy - 66} q 4 -34 34 -52`} stroke="#fff" strokeWidth={4} strokeLinecap="round" fill="none" opacity={0.12} />
       <rect x={x - 96} y={FLOOR - 56} width={192} height={18} rx={9} fill={F3} {...L} />
@@ -279,9 +296,19 @@ const RoadDashes: React.FC<{ off: number }> = ({ off }) => (
   </g>
 );
 export const Stairs: React.FC = () => {
-  // steps rise from bottom-left (x 200, floor) to top-right; step 44 wide, 26 high
+  // steps rise from bottom-left (x 200, floor) to top-right; step 44 wide, 26 high. Hand-drawn: every tread / riser is a slightly
+  // bumpy curve (deterministic jitter); the corners land on the exact grid so the hero's feet (stairAt) still meet the treads
   let d = `M -200 ${FLOOR + 120} L 200 ${FLOOR + 120} L 200 ${FLOOR}`;
-  for (let i = 0; i < 26; i++) d += ` l 44 0 l 0 -26`;
+  let x = 200, y = FLOOR;
+  const j = (i: number, k: number, a: number) => (rnd(i * 13 + k * 5 + 3) - 0.5) * 2 * a;
+  for (let i = 0; i < 26; i++) {
+    d += ` Q ${(x + 12 + j(i, 1, 6)).toFixed(1)} ${(y + j(i, 2, 4.5)).toFixed(1)} ${(x + 24 + j(i, 3, 3)).toFixed(1)} ${(y + j(i, 4, 2.2)).toFixed(1)}`;
+    d += ` Q ${(x + 36 + j(i, 5, 5)).toFixed(1)} ${(y + j(i, 6, 3.5)).toFixed(1)} ${x + 44} ${y}`;
+    x += 44;
+    d += ` Q ${(x + j(i, 7, 5)).toFixed(1)} ${(y - 8 + j(i, 8, 4)).toFixed(1)} ${(x + j(i, 9, 1.6)).toFixed(1)} ${y - 15}`;
+    d += ` Q ${(x + j(i, 10, 4)).toFixed(1)} ${(y - 22 + j(i, 11, 3)).toFixed(1)} ${x} ${y - 26}`;
+    y -= 26;
+  }
   d += ` L 2000 -400 L 2000 ${FLOOR + 400} L -200 ${FLOOR + 400} Z`;
   return <path d={d} fill="#1d1d22" stroke="#575a6c" strokeWidth={2.6} strokeLinejoin="round" />;
 };
@@ -371,6 +398,70 @@ const Skyline: React.FC<{ x: number; y: number }> = ({ x, y }) => (
   </g>
 );
 
+/** kitchen fridge: tall rounded box, freezer door split, handles, a note + magnet; open = door ajar with a light spill */
+const Fridge: React.FC<{ x: number; open?: number; t: number }> = ({ x, open = 0, t }) => {
+  const top = FLOOR - 390, w = 200, hw = w / 2, fz = top + 128, fl = open > 0 ? open * (0.9 + 0.1 * Math.sin(t * 9)) : 0;
+  return (
+    <g>
+      {fl > 0 && <g opacity={Math.min(1, fl)}>
+        <g filter="url(#soft8)"><path d={`M ${x + hw - 6} ${fz + 24} L ${x + hw + 330} ${FLOOR - 90} L ${x + hw + 330} ${FLOOR + 30} L ${x + hw - 6} ${FLOOR - 40} Z`} fill="#ffe9b8" fillOpacity={0.16} /></g>
+        <Glow x={x + hw + 20} y={FLOOR - 170} r={260} c="#ffd27a" o={0.34} />
+        <rect x={x + hw - 8} y={fz + 22} width={9} height={FLOOR - fz - 56} rx={3} fill="#fff4d0" opacity={0.85} />
+      </g>}
+      <rect x={x - hw} y={top} width={w} height={390} rx={16} fill={F2} {...L} />
+      <path d={`M ${x - hw} ${fz} L ${x + hw} ${fz}`} {...L} strokeWidth={2.6} />
+      <path d={`M ${x + hw - 28} ${fz - 82} L ${x + hw - 28} ${fz - 16} M ${x + hw - 28} ${fz + 22} L ${x + hw - 28} ${fz + 118}`} {...L} strokeWidth={7} />
+      <path d={`M ${x - hw + 12} ${top + 10} q 60 -6 120 0`} stroke="#fff" strokeWidth={4} strokeLinecap="round" fill="none" opacity={0.08} />
+      <rect x={x - 66} y={fz + 54} width={58} height={74} rx={3} fill="#cfc9b8" opacity={0.78} transform={`rotate(-3 ${x - 37} ${fz + 90})`} />
+      <path d={`M ${x - 58} ${fz + 76} l 40 -1 M ${x - 58} ${fz + 92} l 34 0 M ${x - 58} ${fz + 108} l 40 -1`} stroke="#8a8676" strokeWidth={2} strokeLinecap="round" />
+      <circle cx={x - 38} cy={fz + 56} r={7} fill="#EF4E3A" stroke={INK} strokeWidth={1.4} />
+      <rect x={x - 100} y={fz + 190} width={46} height={36} rx={4} fill="#2f5aa8" opacity={0.75} stroke={INK} strokeWidth={1.4} transform={`rotate(4 ${x - 77} ${fz + 208})`} />
+      <path d={`M ${x - hw + 18} ${FLOOR} l 0 8 M ${x + hw - 18} ${FLOOR} l 0 8`} {...L} strokeWidth={6} />
+    </g>
+  );
+};
+
+/** wall calendar of day boxes with optional hand-drawn red X marks over the crossed-off days */
+const Calendar: React.FC<{ t: number; start?: number; cross?: number; crossDt?: number; crossT0?: number; today?: number; days?: number }> = ({ t, start = 2, cross = 0, crossDt = 0, crossT0 = 0, today = 0, days = 31 }) => {
+  const x0 = 416, y0 = 192, cw = 64, ch = 56, st = Math.max(0, Math.min(4, Math.round(start))), nd = Math.max(28, Math.min(31, Math.round(days)));
+  const cells: React.ReactNode[] = [];
+  for (let d = 1; d <= nd; d++) {
+    const k = st + d - 1, cx = x0 + (k % 7) * cw, cy = y0 + Math.floor(k / 7) * ch;
+    cells.push(<g key={d}>
+      <rect x={cx + 1.5} y={cy + 1.5} width={cw - 3} height={ch - 3} rx={4} fill={d <= cross ? F1 : F2} stroke={INK} strokeWidth={1.8} />
+      <text x={cx + 8} y={cy + 20} fontFamily={HAND} fontWeight={700} fontSize={17} fill={d <= cross ? "#6b6f82" : "#b9bbc6"}>{d}</text>
+    </g>);
+  }
+  const marks: React.ReactNode[] = [];
+  for (let d = 1; d <= Math.min(cross, nd); d++) {
+    const at = crossT0 + (d - 1) * crossDt;
+    if (crossDt > 0 && t < at) continue;
+    const u = crossDt > 0 ? Math.max(0, Math.min(1, (t - at) / 0.18)) : 1;
+    const k = st + d - 1, cx = x0 + (k % 7) * cw, cy = y0 + Math.floor(k / 7) * ch, r = (i: number) => (rnd(d * 11 + i) - 0.5) * 7;
+    const a = `M ${cx + 9 + r(1)} ${cy + 8 + r(2)} L ${cx + cw - 9 + r(3)} ${cy + ch - 8 + r(4)}`, b = `M ${cx + cw - 9 + r(5)} ${cy + 8 + r(6)} L ${cx + 9 + r(7)} ${cy + ch - 8 + r(8)}`;
+    marks.push(<g key={d} stroke="#EF4E3A" strokeWidth={5} strokeLinecap="round" fill="none">
+      <path d={a} pathLength={1} strokeDasharray={1} strokeDashoffset={1 - Math.min(1, u * 2)} />
+      <path d={b} pathLength={1} strokeDasharray={1} strokeDashoffset={1 - Math.max(0, u * 2 - 1)} />
+    </g>);
+  }
+  let ring: React.ReactNode = null;
+  if (today > 0 && today <= nd) { const k = st + today - 1; ring = <ellipse cx={x0 + (k % 7) * cw + cw / 2} cy={y0 + Math.floor(k / 7) * ch + ch / 2} rx={cw / 2 - 1} ry={ch / 2 - 1} fill="none" stroke="#EF4E3A" strokeWidth={3.4} />; }
+  return (
+    <g>
+      <path d="M 640 40 L 640 92" {...L} strokeWidth={2} />
+      <circle cx={640} cy={92} r={5} fill={INK2} />
+      <rect x={396} y={96} width={488} height={394} rx={10} fill="#121216" {...L} strokeWidth={2.6} />
+      <path d="M 396 106 Q 396 96 406 96 L 874 96 Q 884 96 884 106 L 884 158 L 396 158 Z" fill="#2a1b1b" stroke={INK} strokeWidth={2.2} strokeLinejoin="round" />
+      <path d="M 460 112 l 0 -4 M 520 112 l 0 -4 M 760 112 l 0 -4 M 820 112 l 0 -4" stroke={INK2} strokeWidth={4} strokeLinecap="round" />
+      <path d="M 430 126 q 90 -10 180 0 M 430 142 q 60 6 120 0" stroke="#6b6f82" strokeWidth={3} strokeLinecap="round" fill="none" opacity={0.7} />
+      {["S", "M", "T", "W", "T", "F", "S"].map((l, i) => <text key={i} x={x0 + i * cw + cw / 2} y={y0 - 10} textAnchor="middle" fontFamily={HAND} fontWeight={700} fontSize={16} fill="#8a8d9a">{l}</text>)}
+      {cells}
+      {ring}
+      {marks}
+    </g>
+  );
+};
+
 const fmtClock = (v: number) => `${Math.floor(v / 100)}:${String(v % 100).padStart(2, "0")}`;
 
 /** a whole place. `t` = seconds into the shot, `scroll` = px the street has moved (default: t * 240) */
@@ -378,11 +469,13 @@ export const SetView: React.FC<{ name: string; t: number; scroll?: number; arg?:
   switch (name) {
     case "bedroom": return <g><Wedge x={930} y={258} w={140} /><Window x={930} y={258} /><Floor /><Nightstand x={332} /><Bed x={420} /><Alarm x={376} y={FLOOR - 78 - 9} s={0.7} text={arg.clock ? fmtClock(arg.clock) : "5:00"} ring={arg.ring ? t : 0} /></g>;
     case "bedroomdawn": return <g><Wedge x={930} y={258} w={140} col="#e08aa0" o={Math.min(1, 0.5 + t / 4)} /><Window x={930} y={258} dawn={t / 4} /><Floor /><Nightstand x={332} /><Bed x={420} /><Alarm x={376} y={FLOOR - 78 - 9} s={0.7} text={arg.clock ? fmtClock(arg.clock) : "5:00"} /></g>;
-    case "couch": return <g><Floor /><FloorLamp x={330} on={!!arg.lamp} /><Couch x={680} /></g>;
+    case "couch": return <g><Floor />{!arg.nolamp && <FloorLamp x={330} on={!!arg.lamp} />}<Couch x={680} /></g>;
     case "desk": return <g><WallClock x={730} y={296} t={t} /><Floor /><Chair x={560} dir={1} /><Desk x={700} /><BookStack x={812} y={FLOOR - 112} /><DeskLamp x={812} y={FLOOR - 154} /></g>;
     case "street": { const off = scroll ?? t * 240; return <g><City off={off} /><StreetLamps off={off} t={t} /><Floor /><RoadDashes off={off} />
       {Array.from({ length: 7 }, (_, i) => <path key={i} d={`M ${wrap(rnd(i * 3) * 1800 - t * (1100 + i * 90), 1800) - 300} ${FLOOR - 330 + rnd(i) * 300} l ${110 + rnd(i * 5) * 160} 0`} stroke="#fff" strokeWidth={1.4} strokeLinecap="round" opacity={0.12} />)}</g>; }
-    case "mirror": return <g><Floor /><Mirror x={760} crack={arg.crack ?? 0} /></g>;
+    case "mirror": return <g><Floor /><Mirror x={760} crack={arg.crack ?? 0} tint={arg.tint ?? 0} hue={arg.tintHue ?? 210} /></g>;
+    case "fridge": return <g><Floor /><Fridge x={arg.x ?? 760} open={arg.open ?? 0} t={t} /></g>;
+    case "calendar": return <g><Floor /><Calendar t={t} start={arg.start ?? 2} cross={arg.cross ?? 0} crossDt={arg.crossDt ?? 0} crossT0={arg.crossT0 ?? 0} today={arg.today ?? 0} days={arg.days ?? 31} /></g>;
     case "gym": return <g><Floor /><Bag x={arg.x ?? 780} t={t} hit={arg.hit ?? 1} speed={arg.speed ?? 0} /></g>;
     case "stairs": return <g><Stairs /></g>;
     case "hill": return <g><Hills glow={arg.glow ?? 1} hx={arg.hx ?? 430} t={t} /></g>;

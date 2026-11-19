@@ -13,8 +13,10 @@ import React from "react";
 
 export type Expr = "neutral" | "smile" | "grin" | "sad" | "cry" | "angry" | "tired" | "shock" | "determined" | "scared" | "sleep";
 /** band / headband: true or a colour = red headband with two tails; monster = black villain; ghost = tiny dim red outline only (defeated);
- *  size = monster height factor (default 1.4); grin:false = no red grin on the monster. */
-export type Look = { skin?: string; band?: string | boolean; headband?: boolean; cap?: string; tie?: string; monster?: boolean; ghost?: boolean; size?: number; grin?: boolean };
+ *  size = monster height factor (default 1.4); grin:false = no red grin on the monster;
+ *  blackHand = the pose "hand" (giant arm) stays a black glowing villain arm even for a monster look; otherwise the giant arm is always cream
+ *  skin with an ink outline (the hero's hand), also for look.monster. */
+export type Look = { skin?: string; band?: string | boolean; headband?: boolean; cap?: string; tie?: string; monster?: boolean; ghost?: boolean; size?: number; grin?: boolean; blackHand?: boolean };
 
 /** a pose: angles in degrees, 0 = limb hanging straight down, + = towards the way he faces */
 export type Pose = {
@@ -48,7 +50,7 @@ const sm = (x: number) => x * x * (3 - 2 * x);
 const cl = (x: number, a = 0, b = 1) => Math.max(a, Math.min(b, x));
 
 /** a pose for name at time t (seconds, looping motions) */
-export const pose = (name: string, t: number): Pose => {
+export const pose = (name: string, t: number, punchPeriod = 1.25): Pose => {
   const ti = q10(t), b = tw(ti, 3.2) * 1.2;   // breathing, on threes
   switch (name) {
     case "walk": {   // 20 frame cycle, 2% bob
@@ -83,8 +85,9 @@ export const pose = (name: string, t: number): Pose => {
       return { hipY: 44, lean: 18, head: 16, lF: [84, -84], lB: [80, -80], aF: [70 + tw(ti, 0.5) * 6, 40], aB: [60, 40] };
     case "sleepdesk": case "deskslump":   // face down on the desk, one arm reaching forward
       return { hipY: 44 + b * 0.2, lean: 60, head: 22, headY: 4, lF: [84, -84], lB: [80, -80], aF: [96, -6], aB: [60, 40] };
-    case "punch": {   // wind-up 10 f, extension 3 f, hold 4 f, return 12 f, then guard (one bar = 2.5 s in the ref; here 1.25 s)
-      const f = ((t % 1.25) / 1.25) * 37.5;
+    case "punch": {   // wind-up 10 f, extension 3 f, hold 4 f, return 12 f, then guard (one bar = 2.5 s in the ref; default 1.25 s,
+      // per beat arg.punch = period in seconds, e.g. 2.5; the motion itself always takes 28.5 f, the rest of the period is the guard)
+      const f = (t % Math.max(0.95, punchPeriod)) * 30;
       const wind = f < 10 ? sm(f / 10) : f < 12.5 ? 1 - sm((f - 10) / 2.5) : 0;
       const ext = f >= 10 && f < 12.5 ? sm((f - 10) / 2.5) : f < 16.5 && f >= 12.5 ? 1 : f >= 16.5 && f < 28.5 ? 1 - sm((f - 16.5) / 12) : 0;
       const hit = ext;
@@ -165,6 +168,12 @@ export const handOf = (p: Pose, dir: number) => {
   const g = geo(p, dir), [a0, a1] = p.aF ?? [0, 0];
   const x1 = g.sh.x + S(rad(a0)) * ARM[0] * dir, y1 = g.sh.y + C(rad(a0)) * ARM[0];
   return { x: x1 + S(rad(a0 + a1)) * ARM[1] * dir, y: y1 + C(rad(a0 + a1)) * ARM[1] };
+};
+
+/** centre of the head in the character's own frame (x,y px relative to the feet, rotation of a lying pose applied; scale 1) */
+export const headOf = (p: Pose, dir: number) => {
+  const g = geo(p, dir), r = rad((p.rot ?? 0) * dir), c = Math.cos(r), s = Math.sin(r);
+  return { x: g.hc.x * c - g.hc.y * s, y: g.hc.x * s + g.hc.y * c - (p.lift ?? 0) };
 };
 
 const WHITE = "#f4f2ea";
@@ -260,18 +269,24 @@ export const Guy: React.FC<{ p: Pose; e: Expr; dir?: number; t: number; look?: L
   const line = mon ? (ghost ? "#8a2a22" : "#040404") : INK;
   const lw = ghost ? 1.6 : LINE;
   const filt = mon && !ghost ? "url(#rigMonGlow)" : undefined;
-  const wrap = (kids: React.ReactNode) => <g transform={`translate(${x} ${y - (p.lift ?? 0) * scale}) scale(${sc}) rotate(${(p.rot ?? 0) * dir})`} filter={filt} opacity={(1 - dim) * (ghost ? 0.75 : 1)}>{mon && !ghost ? <MonDefs /> : null}{kids}</g>;
+  const wrap = (kids: React.ReactNode, plain = false) => <g transform={`translate(${x} ${y - (p.lift ?? 0) * scale}) scale(${sc}) rotate(${(p.rot ?? 0) * dir})`} filter={plain ? undefined : filt} opacity={(1 - dim) * (ghost ? 0.75 : 1)}>{mon && !ghost && !plain ? <MonDefs /> : null}{kids}</g>;
 
   if (p.hand) {   // the giant arm: from off the top-right corner down to the fist at (0,0) when reach = 1
     const r = p.reach ?? 1, off = { x: 560 * dir, y: -700 };
     const tip = { x: (1 - r) * 120 * dir, y: -(1 - r) * 260 };
     const el = { x: (off.x + tip.x) / 2 - 90 * dir, y: (off.y + tip.y) / 2 + 40 };
     const arm = `M ${off.x} ${off.y} Q ${el.x} ${el.y} ${tip.x} ${tip.y}`;
+    // cream arm + fist with an ink outline (look.blackHand keeps the old black glowing villain arm)
+    const black = mon && !!look.blackHand, hs = black ? skin : look.skin ?? SKIN, hl = black ? line : INK, ow = black ? 0 : 3.4, fing = [-34, -12, 12, 34].map((o, i) => ({ cx: tip.x - 4 * dir + o * dir * 0.3, cy: tip.y + 40 + (i % 2) * 6 }));
     return wrap(<g>
-      <path d={arm} stroke={line} strokeWidth={86} strokeLinecap="round" fill="none" />
-      <ellipse cx={tip.x} cy={tip.y} rx={58} ry={50} fill={skin} />
-      {[-34, -12, 12, 34].map((o, i) => <ellipse key={i} cx={tip.x - 4 * dir + o * dir * 0.3} cy={tip.y + 40 + (i % 2) * 6} rx={13} ry={22} fill={skin} />)}
-    </g>);
+      <path d={arm} stroke={hl} strokeWidth={86 + ow * 2} strokeLinecap="round" fill="none" />
+      <ellipse cx={tip.x} cy={tip.y} rx={58 + ow} ry={50 + ow} fill={hl} />
+      {fing.map((q, i) => <ellipse key={"o" + i} cx={q.cx} cy={q.cy} rx={13 + ow} ry={22 + ow} fill={hl} />)}
+      <path d={arm} stroke={hs} strokeWidth={86} strokeLinecap="round" fill="none" />
+      <ellipse cx={tip.x} cy={tip.y} rx={58} ry={50} fill={hs} />
+      {fing.map((q, i) => <ellipse key={"f" + i} cx={q.cx} cy={q.cy} rx={13} ry={22} fill={hs} stroke={ow ? hl : undefined} strokeWidth={ow ? 2.2 : 0} />)}
+      {ow > 0 && <path d={`M ${tip.x - 40 * dir} ${tip.y + 34} q ${34 * dir} 10 ${80 * dir} 0`} stroke={hl} strokeWidth={2} fill="none" opacity={0.5} />}
+    </g>, !black);
   }
 
   const g = geo(p, dir);
