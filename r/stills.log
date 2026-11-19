@@ -1,0 +1,12 @@
+=== line 1: AhFilm 20 1 film/thumb2.json 
+bundle 7.1s
+[40m Tab 0, node_modules/three/build/three.core.js:2014 [49m [33mTHREE.Clock: This module has been deprecated. Please use THREE.Timer instead.[39m
+still 20 5.4s
+=== line 2: AhFilm 20 1 film/t2thumb0.json 
+bundle 3.2s
+[40m Tab 0, node_modules/three/build/three.core.js:2014 [49m [33mTHREE.Clock: This module has been deprecated. Please use THREE.Timer instead.[39m
+still 20 5.9s
+=== line 3: AhFilm 20 1 film/t2thumb1.json 
+bundle 4.3s
+[40m Tab 0, node_modules/three/build/three.core.js:2014 [49m [33mTHREE.Clock: This module has been deprecated. Please use THREE.Timer instead.[39m
+still 20 4.6s
