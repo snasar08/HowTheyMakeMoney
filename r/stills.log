@@ -1,0 +1,21 @@
+=== line 1: Film2D 15,45,75,105,135,165,195,225,255,285,315,345,375,405,435,505 0.5 film/d000.json 
+bundle 13.7s
+still 15 0.8s
+still 45 0.7s
+still 75 0.7s
+still 105 0.7s
+still 135 0.8s
+still 165 0.8s
+still 195 0.8s
+still 225 0.7s
+still 255 0.7s
+still 285 0.7s
+still 315 0.5s
+still 345 0.7s
+still 375 0.7s
+still 405 0.7s
+still 435 0.7s
+still 505 0.7s
+=== line 2: Film2D 20 1 film/d000t.json 
+bundle 4.1s
+still 20 1.3s
