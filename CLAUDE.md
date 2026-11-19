@@ -35,6 +35,7 @@ their money, told as fast 3D cartoon stories with an AI voice. Owner: Sam (snasa
   emails a week before: Sam makes a new one and updates the secret), video hosted on a GitHub Release. `slot-audit` branch = report of upcoming posts; `slot-fix` = delete extras.
   `remake` branch = re-render already scheduled Shorts in the current look with their recorded voice, same slots
   (`content/remake.txt`: line 1 ids, line 2 the run id whose voice artifacts to reuse; artifacts live 2 days).
+- `UPLOAD_MODE` (repo variable, default `buffer`): `youtube` = every post through the YouTube API (`pipeline/yt_upload.py`, YTC_* secrets, private + publishAt; public only after Google audits the project), `mix` = Buffer up to the rolling cap, rest via API; test = push branch `yt-upload-test` (id in `yt_test_id.txt`, private upload).
 - Look (Nov 17): **every format** renders in the real-3D cel-shaded "afterhour" look (Remotion + three.js,
   `toon/src/videos/afterhour/`: char.ts people, sets.ts 21 sets, things3d.ts 60 objects, cards.ts text signs,
   acts/ mini-scenes gated by acts/approved.json). `pipeline/toon.ah_shots` turns each spoken sentence into a shot.

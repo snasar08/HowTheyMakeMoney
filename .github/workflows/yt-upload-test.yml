@@ -1,0 +1,47 @@
+name: YouTube upload test
+
+# Push to branch yt-upload-test = upload ONE already-rendered Short to YouTube through the Data API as PRIVATE
+# (no publishAt), set its cover thumbnail, print the video id + status. Does not touch main.
+# The Short id is the first word of yt_test_id.txt on the branch; its MP4 comes from the GitHub release
+# short-<id>-<slug>. Without the YTC_* secrets it prints a notice and exits 0. Delete the private video in Studio after.
+on:
+  push:
+    branches: ["yt-upload-test"]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: yt-upload-test
+  cancel-in-progress: false
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Upload one Short as private
+        env:
+          YTC_CLIENT_ID: ${{ secrets.YTC_CLIENT_ID }}
+          YTC_CLIENT_SECRET: ${{ secrets.YTC_CLIENT_SECRET }}
+          YTC_REFRESH_TOKEN: ${{ secrets.YTC_REFRESH_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ -z "$YTC_CLIENT_ID" ] || [ -z "$YTC_CLIENT_SECRET" ] || [ -z "$YTC_REFRESH_TOKEN" ]; then
+            echo "::notice title=yt-upload-test::YTC_* secrets are not set; nothing uploaded"
+            exit 0
+          fi
+          ID=$(head -n1 yt_test_id.txt | awk '{print $1}')
+          [ -n "$ID" ] || { echo "::notice title=yt-upload-test::yt_test_id.txt is empty"; exit 0; }
+          FILE=$(ls content/scripts/${ID}-*.json 2>/dev/null | head -n1)
+          [ -n "$FILE" ] || { echo "::warning title=yt-upload-test::no script $ID"; exit 0; }
+          SLUG=$(python -c "import json,sys; s=json.load(open(sys.argv[1])); print(f\"short-{s['id']}-{s['slug']}\")" "$FILE")
+          mkdir -p dl
+          gh release download "$SLUG" --pattern '*.mp4' --dir dl --repo "$GITHUB_REPOSITORY" || { echo "::warning title=yt-upload-test::no MP4 on release $SLUG"; exit 0; }
+          MP4=$(ls dl/*.mp4 | head -n1)
+          sudo apt-get install -y -qq ffmpeg >/dev/null 2>&1 || true
+          python -m pipeline.yt_upload --test "$ID" --mp4 "$MP4"

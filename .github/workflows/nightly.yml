@@ -296,6 +296,9 @@ jobs:
       YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
       YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
       YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+      YTC_CLIENT_ID: ${{ secrets.YTC_CLIENT_ID }}   # Nov 19: UPLOAD_MODE youtube/mix posts through the YouTube API (pipeline/yt_upload.py)
+      YTC_CLIENT_SECRET: ${{ secrets.YTC_CLIENT_SECRET }}
+      YTC_REFRESH_TOKEN: ${{ secrets.YTC_REFRESH_TOKEN }}
       HTMM_CACHE: ${{ github.workspace }}/.cache
       RENDER_3D: ${{ vars.RENDER_3D || 'on' }}   # repo variable RENDER_3D=off -> old 2D charts
       EGL_PLATFORM: surfaceless

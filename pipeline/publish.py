@@ -6,9 +6,11 @@ UPLOAD_MODE:
              upload it in the YouTube app (~1 min). Use this until YouTube
              approves your API audit, because unaudited API uploads are locked
              to private by YouTube.
-  youtube  - upload straight to YouTube via the Data API, scheduled with
-             publishAt. Needs YT_CLIENT_ID / YT_CLIENT_SECRET / YT_REFRESH_TOKEN
-             secrets and an audited Google Cloud project to go public.
+  youtube  - every post goes straight to YouTube via the Data API (pipeline/yt_upload.py), private +
+             publishAt = the slot time. Needs the YTC_* secrets (comment login) and, to actually go public,
+             an audited Google Cloud project. A release is made first as the MP4's home and the fallback.
+  mix      - Buffer for up to ROLLING_MAX posts per rolling 24 h, the overflow via the YouTube API.
+             With youtube/mix the per-day cap is MAX_PER_DAY and the rolling rule applies to Buffer only.
   buffer   - make the release (so the MP4 has a stable public URL), then schedule it on the
              YouTube channel through Buffer's GraphQL API (https://api.buffer.com, free plan)
              at its POST_SLOTS time. Needs the BUFFER_API_KEY secret and a PUBLIC repo,
@@ -49,6 +51,25 @@ ROLLING_MAX = int(os.environ.get("ROLLING_MAX", "2"))
 ROLLING_WIN = dt.timedelta(hours=float(os.environ.get("ROLLING_H", "24.25")))
 NUDGE_MIN = int(os.environ.get("NUDGE_MIN", "15"))
 NUDGE_MAX_MIN = int(os.environ.get("NUDGE_MAX_MIN", "120"))
+
+
+def api_slots() -> bool:
+    """UPLOAD_MODE youtube/mix: YouTube API posts have no 2-per-24h cap, so slots are not nudged for it
+    (mix decides Buffer vs API per post in deliver(); only MAX_PER_DAY limits a day)."""
+    return os.environ.get("UPLOAD_MODE") in ("youtube", "mix")
+
+
+def buffer_times() -> list[dt.datetime]:
+    """post_at of every live Buffer-booked post in the script records (what the rolling rule counts)."""
+    out = []
+    for p in (Path(__file__).resolve().parent.parent / "content" / "scripts").glob("*.json"):
+        try:
+            d = json.loads(p.read_text(encoding="utf-8")).get("delivered") or {}
+        except Exception:
+            continue
+        if d.get("mode") == "buffer" and d.get("post_at") and d.get("buffer_status") != "deleted":
+            out.append(dt.datetime.fromisoformat(d["post_at"]).astimezone(TZ))
+    return out
 
 
 def rolling_ok(t: dt.datetime, others) -> bool:
@@ -100,7 +121,7 @@ def publish_slots(n: int, now: dt.datetime | None = None, taken=None, horizon_h:
                 c = base + dt.timedelta(minutes=k)
                 if c <= now + lead or c in taken or (end and c > end) or c.date() != day:
                     continue
-                if rolling_ok(c, list(taken) + out):
+                if api_slots() or rolling_ok(c, list(taken) + out):
                     t = c
                     break
             if t is None:
@@ -279,49 +300,19 @@ def _buffer(video: Path, script: dict, when: dt.datetime) -> dict:
 
 
 def _youtube(video: Path, script: dict, when: dt.datetime) -> dict:
-    from google.oauth2.credentials import Credentials
-    from googleapiclient.discovery import build
-    from googleapiclient.errors import HttpError
-    from googleapiclient.http import MediaFileUpload
-
-    creds = Credentials(
-        None,
-        refresh_token=os.environ["YT_REFRESH_TOKEN"],
-        client_id=os.environ["YT_CLIENT_ID"],
-        client_secret=os.environ["YT_CLIENT_SECRET"],
-        token_uri="https://oauth2.googleapis.com/token",
-        scopes=["https://www.googleapis.com/auth/youtube.upload"],
-    )
-    yt = build("youtube", "v3", credentials=creds, cache_discovery=False)
-    status = {
-        "privacyStatus": "private",
-        "publishAt": when.astimezone(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
-        "selfDeclaredMadeForKids": False,
-        "containsSyntheticMedia": True,  # AI images + AI voice disclosure
-    }
-    body = {
-        "snippet": {
-            "title": script["title"][:100],
-            "description": script["description"][:4900],
-            "tags": script.get("tags", [])[:15],
-            "categoryId": "27",  # Education
-        },
-        "status": status,
-    }
+    """YouTube Data API upload (pipeline/yt_upload.py). Release first (MP4 home + fallback); if the API
+    upload fails (warning printed there) the release is the result, so a finished video is never lost."""
+    from . import yt_upload
     try:
-        req = yt.videos().insert(part="snippet,status", body=body,
-                                 media_body=MediaFileUpload(str(video), resumable=True,
-                                                            mimetype="video/mp4"))
-        resp = None
-        while resp is None:
-            _, resp = req.next_chunk()
-    except HttpError as exc:
-        if "containsSyntheticMedia" in str(exc):
-            status.pop("containsSyntheticMedia")
-            return _youtube(video, script, when)
-        raise
-    return {"mode": "youtube", "video_id": resp["id"], "post_at": when.isoformat(),
-            "url": f"https://youtube.com/shorts/{resp['id']}"}
+        rel = _release(video, script, when)
+    except Exception as exc:  # no gh (local run): still try the upload
+        print(f"::warning title=release for {script['id']}::{exc!r}")
+        rel = {"mode": "release", "post_at": when.isoformat()}
+    res = yt_upload.upload_short(video, script, when)
+    if not res:
+        return rel
+    return {**rel, "mode": "youtube", "video_id": res["video_id"], "url": res["url"], "post_at": when.isoformat(),
+            **({"locked": res["locked"]} if res.get("locked") else {})}
 
 
 def deliver(video: Path, script: dict, when: dt.datetime) -> dict:
@@ -341,11 +332,14 @@ def deliver(video: Path, script: dict, when: dt.datetime) -> dict:
             raise BufferError(f"buffer dry run: {problems}")
         return out
     if mode == "youtube":
-        try:
-            return _youtube(video, script, when)
-        except Exception as exc:  # never lose a finished video
-            print(f"[publish] YouTube upload failed ({exc!r}); saving as a release instead")
-            return _release(video, script, when)
+        return _youtube(video, script, when)
+    if mode == "mix":  # Buffer while the rolling 24 h cap has room, the rest through the API
+        if rolling_ok(when, buffer_times()):
+            res = _buffer(video, script, when)
+            if res.get("mode") == "buffer":
+                return res
+            print(f"[publish] Buffer failed for {script['id']}; trying the YouTube API")
+        return _youtube(video, script, when)
     if mode == "release":
         return _release(video, script, when)
     return {"mode": "none", "path": str(video)}
