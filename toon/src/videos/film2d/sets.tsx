@@ -219,7 +219,7 @@ const Bag: React.FC<{ x: number; t: number; hit?: number; speed?: number }> = ({
         <path d={Array.from({ length: 16 }, (_, i) => { const yy = top + 34 + rnd(i) * (bot - top - 70), xx = x - 34 + rnd(i * 5) * 52; return `M ${xx} ${yy} l ${14 + rnd(i * 9) * 14} ${-3 - rnd(i * 4) * 6}`; }).join(" ")} stroke="#a3150f" strokeWidth={2} strokeLinecap="round" fill="none" opacity={0.75} />
         <path d={`M ${x - 52} ${bot - 50} q 52 22 104 0`} stroke="#7a120e" strokeWidth={2} fill="none" opacity={0.6} />
       </g>
-      {speed > 0 && <Speed x={x - 70} y={FLOOR - 150} v={speed} />}
+      {speed > 0 && <Speed x={x - 150} y={FLOOR - 190} v={speed} />}
     </g>
   );
 };
@@ -227,7 +227,7 @@ const Bag: React.FC<{ x: number; t: number; hit?: number; speed?: number }> = ({
 export const Speed: React.FC<{ x: number; y: number; v?: number; s?: number }> = ({ x, y, v = 1, s = 1 }) => (
   <g opacity={Math.min(1, v)} transform={`translate(${x} ${y}) scale(${s})`} stroke="#f2d23c" strokeLinecap="round" fill="none">
     {Array.from({ length: 12 }, (_, i) => {
-      const yy = (i - 5.5) * 20 + rnd(i) * 8, len = 150 + rnd(i * 3) * 230, sl = -0.1 - rnd(i * 5) * 0.1 + (i - 5.5) * 0.025;
+      const yy = (i - 8) * 16 + rnd(i) * 8, len = 140 + rnd(i * 3) * 220, sl = -0.1 - rnd(i * 5) * 0.12;
       return <path key={i} d={`M ${-20 - rnd(i * 7) * 30} ${yy} l ${-len} ${len * sl}`} strokeWidth={2 + rnd(i * 2) * 2.4} />;
     })}
   </g>
@@ -253,14 +253,14 @@ const City: React.FC<{ off: number }> = ({ off }) => {
           return on ? <rect key={j} x={x + 12 + (j % 2) * (w / 2 - 6)} y={FLOOR - h + 24 + Math.floor(j / 2) * 36} width={11} height={14} fill="#e9c27a" opacity={0.55 + rnd(j + i) * 0.35} /> : null;
         })}
       </g>);
-      x += w + 6 + rnd(seed + i * 9) * 22;
+      x += w + 14 + rnd(seed + i * 9) * 60;
     }
     return <g key={key} transform={`translate(${-off * k} 0)`}>{els}</g>;
   };
   return <g>
-    {layer(0.12, 1, 140, 300, 60, 100, "#0d1017", "#141a28", 0.05, "far")}
-    {layer(0.3, 500, 170, 360, 70, 120, "#101420", "#1b2234", 0.09, "mid")}
-    {layer(0.55, 900, 120, 220, 80, 130, "#121726", "#1e2740", 0.07, "near")}
+    {layer(0.12, 1, 90, 200, 60, 110, "#0c0f16", "#121827", 0.04, "far")}
+    {layer(0.3, 500, 110, 250, 70, 120, "#0f121c", "#182030", 0.08, "mid")}
+    {layer(0.55, 900, 60, 140, 80, 140, "#10141f", "#1b2338", 0.06, "near")}
   </g>;
 };
 const StreetLamps: React.FC<{ off: number; t: number }> = ({ off }) => (
@@ -301,12 +301,12 @@ const Hills: React.FC<{ glow: number; hx: number; t: number }> = ({ glow, hx, t 
   return (
     <g>
       <rect x={-1400} y={-900} width={4000} height={2500} fill="url(#sumSky)" opacity={glow} />
-      <Glow x={hx + 520} y={F + 150} r={760} c="#e8b180" o={0.55 * glow} />
-      <Glow x={hx + 520} y={F + 150} r={340} c="#ffd27a" o={0.35 * glow} />
-      <path d={ridge([[-1000, F + 150], [-600, F + 62], [-200, F + 130], [300, F + 84], [800, F + 140], [1300, F + 70], [1800, F + 130], [2300, F + 100]])} fill="#8a4c2e" opacity={glow} />
-      <path d={ridge([[-1000, F + 190], [-500, F + 120], [0, F + 180], [600, F + 120], [1100, F + 190], [1700, F + 130], [2300, F + 170]])} fill="#6a3626" opacity={glow} />
-      <path d={ridge([[-1000, F + 230], [-400, F + 170], [100, F + 220], [800, F + 168], [1500, F + 224], [2300, F + 190]])} fill="#44241f" opacity={glow} />
-      <rect x={-1000} y={F + 262} width={3400} height={600} fill="#c07a40" opacity={0.5 * glow} />
+      <Glow x={hx + 560} y={F - 20} r={820} c="#e8b180" o={0.55 * glow} />
+      <Glow x={hx + 560} y={F - 20} r={360} c="#ffd27a" o={0.4 * glow} />
+      <path d={ridge([[-1000, F - 40], [-640, F - 110], [-300, F - 50], [100, F - 120], [520, F - 40], [900, F - 100], [1300, F - 30], [1700, F - 110], [2300, F - 60]])} fill="#8a4a2c" opacity={glow} />
+      <path d={ridge([[-1000, F + 0], [-500, F - 60], [-100, F + 10], [350, F - 70], [800, F - 10], [1250, F - 80], [1700, F - 10], [2300, F - 50]])} fill="#6a3424" opacity={glow} />
+      <path d={ridge([[-1000, F + 40], [-300, F - 10], [200, F + 50], [700, F - 10], [1200, F + 56], [1800, F + 0], [2300, F + 40]])} fill="#44221f" opacity={glow} />
+      <path d={ridge([[-1000, F + 90], [-200, F + 50], [400, F + 100], [1000, F + 50], [1600, F + 110], [2300, F + 70]])} fill="#26151a" opacity={glow} />
       <path d={`${peak} L 2300 1500 L -900 1500 Z`} fill="#100a0b" />
       <path d={peak} stroke="#d27a45" strokeWidth={2.4} fill="none" opacity={0.85 * glow} />
       {Array.from({ length: 6 }, (_, i) => <path key={i} d={`M ${wrap(rnd(i) * 2400 - t * (500 + i * 60), 2400) - 700} ${F - 140 + i * 38} l 120 0`} stroke="#e8b180" strokeWidth={1.6} strokeLinecap="round" opacity={0.18 * glow} />)}
@@ -376,10 +376,10 @@ const fmtClock = (v: number) => `${Math.floor(v / 100)}:${String(v % 100).padSta
 /** a whole place. `t` = seconds into the shot, `scroll` = px the street has moved (default: t * 240) */
 export const SetView: React.FC<{ name: string; t: number; scroll?: number; arg?: Record<string, number> }> = ({ name, t, scroll, arg = {} }) => {
   switch (name) {
-    case "bedroom": return <g><Wedge x={930} y={218} w={140} /><Window x={930} y={218} /><Floor /><Nightstand x={332} /><Bed x={420} /><Alarm x={376} y={FLOOR - 78 - 9} s={0.7} text={arg.clock ? fmtClock(arg.clock) : "5:00"} ring={arg.ring ? t : 0} /></g>;
-    case "bedroomdawn": return <g><Wedge x={930} y={218} w={140} col="#e08aa0" o={Math.min(1, 0.5 + t / 4)} /><Window x={930} y={218} dawn={t / 4} /><Floor /><Nightstand x={332} /><Bed x={420} /><Alarm x={376} y={FLOOR - 78 - 9} s={0.7} text={arg.clock ? fmtClock(arg.clock) : "5:00"} /></g>;
+    case "bedroom": return <g><Wedge x={930} y={258} w={140} /><Window x={930} y={258} /><Floor /><Nightstand x={332} /><Bed x={420} /><Alarm x={376} y={FLOOR - 78 - 9} s={0.7} text={arg.clock ? fmtClock(arg.clock) : "5:00"} ring={arg.ring ? t : 0} /></g>;
+    case "bedroomdawn": return <g><Wedge x={930} y={258} w={140} col="#e08aa0" o={Math.min(1, 0.5 + t / 4)} /><Window x={930} y={258} dawn={t / 4} /><Floor /><Nightstand x={332} /><Bed x={420} /><Alarm x={376} y={FLOOR - 78 - 9} s={0.7} text={arg.clock ? fmtClock(arg.clock) : "5:00"} /></g>;
     case "couch": return <g><Floor /><FloorLamp x={330} on={!!arg.lamp} /><Couch x={680} /></g>;
-    case "desk": return <g><WallClock x={730} y={236} t={t} /><Floor /><Chair x={560} dir={1} /><Desk x={700} /><BookStack x={812} y={FLOOR - 112} /><DeskLamp x={812} y={FLOOR - 154} /></g>;
+    case "desk": return <g><WallClock x={730} y={296} t={t} /><Floor /><Chair x={560} dir={1} /><Desk x={700} /><BookStack x={812} y={FLOOR - 112} /><DeskLamp x={812} y={FLOOR - 154} /></g>;
     case "street": { const off = scroll ?? t * 240; return <g><City off={off} /><StreetLamps off={off} t={t} /><Floor /><RoadDashes off={off} />
       {Array.from({ length: 7 }, (_, i) => <path key={i} d={`M ${wrap(rnd(i * 3) * 1800 - t * (1100 + i * 90), 1800) - 300} ${FLOOR - 330 + rnd(i) * 300} l ${110 + rnd(i * 5) * 160} 0`} stroke="#fff" strokeWidth={1.4} strokeLinecap="round" opacity={0.12} />)}</g>; }
     case "mirror": return <g><Floor /><Mirror x={760} crack={arg.crack ?? 0} /></g>;

@@ -145,8 +145,8 @@ const placeOf = (l: Line2, shots: Shot2[]): [number, number] => {
     const chars = charsOf(s, tl, u), m = chars.find((q) => q.c.look?.monster);
     if (m) {
       const { cx, cy, z } = camOf(s, f, chars);
-      const sx = 640 + (m.x - cx) * z, sy = 360 + (m.y - 200 * m.sc - cy) * z - 26;
-      return [Math.max(230, Math.min(1050, sx)), Math.max(112, Math.min(560, sy))];
+      const sx = 640 + (m.x - cx) * z, sy = 360 + (m.y - 330 * m.sc - cy) * z - 20;
+      return [Math.max(230, Math.min(1050, sx)), Math.max(130, Math.min(560, sy))];
     }
   }
   return [640, 240];
@@ -176,7 +176,7 @@ const wavy = (w: number, amp: number, waves: number, frac: number) => {
 
 const Card: React.FC<{ c: Card2; f: number }> = ({ c, f }) => {
   const t = f - c.a, len = c.big.length;
-  const fs = Math.min(150, 770 / (0.64 * Math.max(5, len)));
+  const fs = Math.min(128, 773 / (0.52 * Math.max(5, len))), ls = Math.min(12, Math.max(0, (773 - 0.52 * len * fs) / len));
   const lettersEnd = 3 + len * 2.4 + 4;
   const ul = clamp((t - lettersEnd + 1) / 18);
   const tag0 = lettersEnd + 18 + 14, cmd0 = tag0 + 45;
@@ -186,7 +186,7 @@ const Card: React.FC<{ c: Card2; f: number }> = ({ c, f }) => {
       {Array.from({ length: 70 }, (_, i) => <circle key={i} cx={rnd(i * 3) * 1280} cy={70 + rnd(i * 5 + 1) * 580} r={0.7 + rnd(i * 7) * 1.1} fill="#fff" opacity={0.1 + rnd(i * 9) * 0.28} />)}
     </svg>
     <div style={{ position: "absolute", left: 0, right: 0, top: 310 - fs * 0.5, textAlign: "center", opacity: o }}>
-      <div style={{ position: "relative", display: "inline-block", fontFamily: HAND, fontWeight: 700, fontSize: fs, lineHeight: 1, color: WHITE, WebkitTextStroke: "2.5px #000", paintOrder: "stroke fill", textShadow: "0 0 22px rgba(255,255,255,0.10)" }}>
+      <div style={{ position: "relative", display: "inline-block", fontFamily: HAND, fontWeight: 700, fontSize: fs, letterSpacing: ls, lineHeight: 1, color: WHITE, WebkitTextStroke: "2.5px #000", paintOrder: "stroke fill", textShadow: "0 0 22px rgba(255,255,255,0.10)" }}>
         {c.big.split("").map((ch, i) => <span key={i} style={{ opacity: clamp((t - 3 - i * 2.4) / 4), whiteSpace: "pre" }}>{ch}</span>)}
         <svg height={26} viewBox="0 0 400 26" preserveAspectRatio="none" style={{ position: "absolute", left: -10, top: fs * 1.0, width: "calc(100% + 20px)", overflow: "visible" }}>
           {ul > 0 && <path d={wavy(400, 4.5, 3.2, ul)} stroke={RED} strokeWidth={7} strokeLinecap="round" strokeLinejoin="round" fill="none" vectorEffect="non-scaling-stroke" />}
@@ -233,7 +233,7 @@ export const Film2D: React.FC = () => {
       <AbsoluteFill style={{ background: `radial-gradient(ellipse at 50% 50%, rgba(0,0,0,0) 52%, rgba(0,0,0,${dark}) 100%)` }} />
       {flash > 0 && <AbsoluteFill style={{ background: "#fff", opacity: flash }} />}
       {bloom > 0 && <AbsoluteFill style={{ background: "#E8B180", opacity: bloom }} />}
-      {day && <div style={{ position: "absolute", left: 100, top: 80, fontFamily: HAND, fontWeight: 700, fontSize: 24, letterSpacing: 2.4, color: "#b4b2ac", opacity: vis(f, day.a, day.n, 4, 4) }}>{day.t.toUpperCase()}</div>}
+      {day && <div style={{ position: "absolute", left: 100, top: 80, fontFamily: HAND, fontWeight: 700, fontSize: 27, letterSpacing: 2.7, color: "#b8b6b0", opacity: vis(f, day.a, day.n, 4, 4) }}>{day.t.toUpperCase()}</div>}
       {hud && (() => {
         const v = Math.round(hud.from + (hud.to - hud.from) * ease(clamp((f - hud.a) / Math.max(1, hud.n - 20))));
         return <div style={{ position: "absolute", right: 100, top: 80, textAlign: "right", opacity: vis(f, hud.a, hud.n, 6, 6), fontFamily: HAND, fontWeight: 700 }}>
