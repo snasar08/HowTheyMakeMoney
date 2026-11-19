@@ -80,7 +80,8 @@ const Card: React.FC<{ c: FilmCard; f: number }> = ({ c, f }) => {
 
 const Thumb: React.FC<{ t: FilmThumb }> = ({ t }) => {
   const words = t.words.toUpperCase().split(/\s+/), right = (t.side ?? "right") === "right";
-  const fs = words.length >= 3 ? 150 : 190;
+  // a long word must stay inside the right half (it covered the hero in the first test)
+  const fs = Math.min(words.length >= 3 ? 150 : 190, Math.floor(600 / (0.64 * Math.max(...words.map((w) => w.length)))));
   return (
     <div style={{ position: "absolute", top: 0, bottom: 0, [right ? "right" : "left"]: 40, width: "52%", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: right ? "flex-end" : "flex-start" }}>
       {words.map((w, i) => (
