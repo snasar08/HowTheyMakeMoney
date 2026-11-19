@@ -12,7 +12,9 @@ const id = inputProps.ah?.film ? "AhFilm" : inputProps.ah ? "AhShort" : id0;   /
 const chromiumOptions = { gl: process.env.GL || "swangle" };
 const serveUrl = await bundle({ entryPoint: path.resolve("src/index.ts"), publicDir: path.resolve("public") });
 const composition = await selectComposition({ serveUrl, id, inputProps, chromiumOptions, timeoutInMilliseconds: 300000 });
-const total = composition.durationInFrames, start = Math.floor((total * shard) / shards), end = Math.floor((total * (shard + 1)) / shards);
+// Nov 19 films: props.split = frame boundaries weighted by render cost (pipeline/film.py split), used when it matches the shard count
+const sp = Array.isArray(inputProps.split) && inputProps.split.length === shards + 1 ? inputProps.split : null;
+const total = composition.durationInFrames, start = sp ? sp[shard] : Math.floor((total * shard) / shards), end = sp ? Math.min(total, sp[shard + 1]) : Math.floor((total * (shard + 1)) / shards);
 const dir = path.join(outDir, String(shard));
 fs.mkdirSync(dir, { recursive: true });
 fs.writeFileSync(path.join(dir, "range.json"), JSON.stringify({ start, end, total }));
