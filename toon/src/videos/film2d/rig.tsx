@@ -313,13 +313,13 @@ export const Guy: React.FC<{ p: Pose; e: Expr; dir?: number; t: number; look?: L
     <path d={d} stroke={fill} strokeWidth={w} strokeLinecap="round" strokeLinejoin="round" fill="none" />
   </g>;
   // the egg: a chain of circles from the hip up to the neck, then the head
-  const R0 = mon ? 21 : 26, R1 = mon ? 23 : 28, RN = mon ? 20 : 31, hrx = mon ? 33 : p.front ? 34 : 36, hry = mon ? 32 : p.front ? 34 : 33;   // villain: slimmer body, round head (ref)
+  const R0 = mon ? 21 : 26, R1 = mon ? 23 : 28, RN = mon ? 20 : 31, hrx = mon ? 33 : p.front ? 31 : 36, hry = mon ? 32 : p.front ? 31 : 33;   // villain: slimmer body, round head (ref)
   const ux = S(rad(p.lean ?? 0)) * dir, uy = -C(rad(p.lean ?? 0));
   const base: Pt = { x: g.hx + ux * 14, y: g.hy + uy * 14 };
   const circles: { x: number; y: number; r: number }[] = [];
   const nb = 9, nn = 6;
   for (let i = 0; i <= nb; i++) { const k = i / nb; circles.push({ x: base.x + (g.sh.x - base.x) * k, y: base.y + (g.sh.y - base.y) * k, r: R0 + (R1 - R0) * k }); }
-  for (let i = 1; i <= nn; i++) { const k = i / nn; circles.push({ x: g.sh.x + (g.hc.x - g.sh.x) * k, y: g.sh.y + (g.hc.y - g.sh.y) * k, r: R1 + (RN - R1) * sm(k) }); }
+  for (let i = 1; i <= nn; i++) { const k = i / nn; circles.push({ x: g.sh.x + (g.hc.x - g.sh.x) * k, y: g.sh.y + (g.hc.y - g.sh.y) * k, r: p.front ? 9 : R1 + (RN - R1) * sm(k) }); }
   const hangDeg = g.hang * dir;
   const egg = <g key="egg">
     {circles.map((c, i) => <circle key={"o" + i} cx={c.x} cy={c.y} r={c.r + lw} fill={line} />)}
