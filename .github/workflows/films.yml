@@ -151,7 +151,9 @@ jobs:
         run: |
           mkdir -p out
           python -m pipeline.film2d make "$FILE" frames/film "out/$FILM_ID.mp4"
-          python -m pipeline.films thumb "out/$FILM_ID.mp4" "out/$FILM_ID-thumb.jpg"
+          # designed thumbnail (rendered from the film's "thumbs" and checked before "ready") wins; else a frame of the film
+          if [ -f "content/films2d/$FILM_ID-thumb.jpg" ]; then cp "content/films2d/$FILM_ID-thumb.jpg" "out/$FILM_ID-thumb.jpg"
+          else python -m pipeline.films thumb "out/$FILM_ID.mp4" "out/$FILM_ID-thumb.jpg"; fi
           python -m pipeline.films notes "$FILE" out/notes.md
           ls -la out
       - name: Scene sheet (warn only)
