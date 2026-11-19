@@ -1,0 +1,3 @@
+=== line 1: Film2D 20 1 thumb102.json 
+bundle 6.0s
+FAILED 20 RangeError: Cannot use frame 20: Duration of composition is 20, therefore the highest frame that can be rendered is 19
