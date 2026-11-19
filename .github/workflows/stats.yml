@@ -29,6 +29,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+      - run: command -v ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg)  # thumb_fix needs it
       - name: Collect + analyze
         env:
           YT_API_KEY: ${{ secrets.YT_API_KEY }}
