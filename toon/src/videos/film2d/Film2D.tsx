@@ -220,7 +220,7 @@ const Card: React.FC<{ c: Card2; f: number }> = ({ c, f }) => {
       {Array.from({ length: 70 }, (_, i) => <circle key={i} cx={rnd(i * 3) * 1280} cy={70 + rnd(i * 5 + 1) * 580} r={0.7 + rnd(i * 7) * 1.1} fill="#fff" opacity={0.1 + rnd(i * 9) * 0.28} />)}
     </svg>
     <div style={{ position: "absolute", left: 0, right: 0, top: 310 - fs * 0.5, textAlign: "center", opacity: o }}>
-      <div style={{ position: "relative", display: "inline-block", fontFamily: HAND, fontWeight: 700, fontSize: fs, letterSpacing: ls, lineHeight: 1, transform: `scaleY(${c.sy ?? 1})`, transformOrigin: "50% 40%", color: WHITE, WebkitTextStroke: "5px #EDEBE7", textShadow: "0 0 26px rgba(255,255,255,0.12)" }}>
+      <div style={{ position: "relative", display: "inline-block", fontFamily: HAND, fontWeight: 700, fontSize: fs, letterSpacing: ls, lineHeight: 1, transform: `scaleY(${c.sy ?? 1})`, transformOrigin: "50% 40%", color: WHITE, WebkitTextStroke: "4.5px #EDEBE7", textShadow: "0 0 26px rgba(255,255,255,0.12)" }}>
         {c.big.split("").map((ch, i) => <span key={i} style={{ opacity: clamp((t - 3 - i * 0.8) / 18), whiteSpace: "pre" }}>{ch}</span>)}
         <svg height={26} viewBox="0 0 400 26" preserveAspectRatio="none" style={{ position: "absolute", left: -10, top: fs * 1.0, width: "calc(100% + 20px)", overflow: "visible" }}>
           {ul > 0 && <path d={wavy(400, 4.5, 3.2, ul)} stroke={RED} strokeWidth={7} strokeLinecap="round" strokeLinejoin="round" fill="none" vectorEffect="non-scaling-stroke" />}
