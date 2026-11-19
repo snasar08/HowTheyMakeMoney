@@ -753,4 +753,30 @@ def onsets(x: np.ndarray, band: tuple[float, float] = (0, 24000), thr: float = 3
     th = thr * max(med, 1e-3) + 0.05
     out, last = [], -1.0
     for i in range(1, nf - 1):
-        if flux[i] > th and flux[i] >= flux[i - 1] and flux[i] >= flux[i + 1] and e[i] > e.max() -
+        if flux[i] > th and flux[i] >= flux[i - 1] and flux[i] >= flux[i + 1] and e[i] > e.max() - 3.5:
+            t = (i * hop + win / 2) / SR
+            if t - last >= gap:
+                out.append(round(t, 3))
+                last = t
+    return out
+
+
+def load_wav(path: str | Path) -> np.ndarray:
+    import soundfile as sf
+    d, sr = sf.read(str(path), always_2d=True)
+    if sr != SR:
+        raise SystemExit(f"{path}: need {SR} Hz (ffmpeg -i in -ac 2 -ar 48000 out.wav)")
+    return d.astype(np.float32)
+
+
+def report(x: np.ndarray, label: str = "") -> None:
+    print(f"{label} integrated {integrated_lufs(x):.1f} LUFS, true peak {true_peak_db(x):.2f} dBTP, length {len(x) / SR:.1f} s")
+    print(" short-term (4 s window every 2 s):", " ".join(f"{t:.0f}:{v:.0f}" for t, v in short_term(x, 4.0, 2.0)))
+    on = onsets(x)
+    print(f" {len(on)} onsets:", " ".join(f"{t:.2f}" for t in on[:80]), "..." if len(on) > 80 else "")
+
+
+if __name__ == "__main__":
+    if len(sys.argv) >= 3 and sys.argv[1] == "measure":
+        for p in sys.argv[2:]:
+            report(load_wav(p), Path(p).name)
