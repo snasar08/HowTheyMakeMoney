@@ -6,13 +6,6 @@
   "The Shots Nobody Saw"
  ],
  "theme": "discipline / basketball: the pros on this channel all started with practice nobody watched",
- "thumb": {
-  "words": "ONE MORE",
-  "set": "court",
-  "mood": "night",
-  "prop": "basketball",
-  "expr": "angry"
- },
  "cast": {
   "hero": {
    "body": "#3d4a6b",
@@ -115,8 +108,8 @@
      "name": "alarm",
      "at": "alarm",
      "text": "5:00",
-     "fit": 0.32,
-     "pop": false
+     "pop": false,
+     "scale": 1.2
     }
    ],
    "say": "5:00 AM. Practice before school.",
@@ -132,18 +125,18 @@
    "set": "bedroom",
    "cam": {
     "from": [
-     -3.0,
-     1.2,
-     -0.6
+     -3.15,
+     0.98,
+     -2.0
     ],
     "to": [
-     -3.1,
-     1.15,
-     -0.9
+     -3.3,
+     0.92,
+     -2.2
     ],
     "look": [
      -3.75,
-     0.75,
+     0.68,
      -2.7
     ]
    },
@@ -162,8 +155,8 @@
      "name": "alarm",
      "at": "alarm",
      "text": "5:00",
-     "fit": 0.32,
-     "pop": false
+     "pop": false,
+     "scale": 1.2
     }
    ],
    "say": [
@@ -214,8 +207,8 @@
      "name": "alarm",
      "at": "alarm",
      "text": "7:42",
-     "fit": 0.32,
-     "pop": false
+     "pop": false,
+     "scale": 1.2
     }
    ],
    "say": "7:42.",
@@ -305,18 +298,18 @@
    "set": "bedroom",
    "cam": {
     "from": [
-     -3.0,
-     1.2,
-     -0.6
+     -3.15,
+     0.98,
+     -2.0
     ],
     "to": [
-     -3.1,
-     1.15,
-     -0.85
+     -3.3,
+     0.92,
+     -2.2
     ],
     "look": [
      -3.75,
-     0.75,
+     0.68,
      -2.7
     ]
    },
@@ -327,8 +320,8 @@
      "name": "alarm",
      "at": "alarm",
      "text": "8:05",
-     "fit": 0.32,
-     "pop": false
+     "pop": false,
+     "scale": 1.2
     }
    ],
    "say": "Another week. Same alarm.",
@@ -531,18 +524,18 @@
    "set": "bedroom",
    "cam": {
     "from": [
-     -3.0,
-     1.2,
-     -0.6
+     -3.15,
+     0.98,
+     -2.0
     ],
     "to": [
-     -3.15,
-     1.15,
-     -1.0
+     -3.3,
+     0.92,
+     -2.2
     ],
     "look": [
      -3.75,
-     0.75,
+     0.68,
      -2.7
     ]
    },
@@ -553,8 +546,8 @@
      "name": "alarm",
      "at": "alarm",
      "text": "5:00",
-     "fit": 0.32,
-     "pop": false
+     "pop": false,
+     "scale": 1.2
     }
    ],
    "say": "Then one night, he set it again.",
@@ -587,8 +580,8 @@
      "name": "alarm",
      "at": "alarm",
      "text": "5:00",
-     "fit": 0.32,
-     "pop": false
+     "pop": false,
+     "scale": 1.2
     }
    ],
    "say": "And this time, he got up.",
@@ -677,8 +670,8 @@
      "name": "alarm",
      "at": "alarm",
      "text": "5:00",
-     "fit": 0.32,
-     "pop": false
+     "pop": false,
+     "scale": 1.2
     }
    ],
    "say": [
@@ -846,8 +839,8 @@
      "name": "alarm",
      "at": "alarm",
      "text": "5:00",
-     "fit": 0.32,
-     "pop": false
+     "pop": false,
+     "scale": 1.2
     }
    ],
    "say": "He went anyway.",
@@ -1066,8 +1059,8 @@
      "name": "alarm",
      "at": "alarm",
      "text": "4:59",
-     "fit": 0.32,
-     "pop": false
+     "pop": false,
+     "scale": 1.2
     }
    ],
    "say": "Day 90. He was up before the alarm.",
@@ -1216,6 +1209,160 @@
      0.15
     ]
    ]
+  }
+ ],
+ "thumbs": [
+  {
+   "words": "ONE MORE.",
+   "red": [
+    "MORE."
+   ],
+   "side": "right",
+   "beat": {
+    "set": "void",
+    "mood": "dark",
+    "cam": {
+     "from": [
+      -0.75,
+      1.45,
+      2.3
+     ],
+     "to": [
+      -0.75,
+      1.45,
+      2.3
+     ],
+     "look": [
+      -0.75,
+      1.35,
+      0
+     ]
+    },
+    "chars": [
+     {
+      "look": "baller",
+      "at": [
+       0,
+       0,
+       0
+      ],
+      "pose": "dribble",
+      "expr": "angry",
+      "rot": 0.35
+     }
+    ],
+    "things": [
+     {
+      "name": "basketball",
+      "at": [
+       0.45,
+       1.0,
+       0.5
+      ],
+      "fit": 0.45,
+      "pop": false
+     }
+    ]
+   }
+  },
+  {
+   "words": "5:00 AM",
+   "red": [
+    "AM"
+   ],
+   "side": "right",
+   "beat": {
+    "set": "bedroom",
+    "mood": "night",
+    "cam": {
+     "from": [
+      -3.05,
+      1.05,
+      -1.55
+     ],
+     "to": [
+      -3.05,
+      1.05,
+      -1.55
+     ],
+     "look": [
+      -3.1,
+      0.85,
+      -2.7
+     ]
+    },
+    "chars": [
+     {
+      "look": "hero",
+      "at": "bed",
+      "lie": true,
+      "pose": "sleep",
+      "expr": "sad"
+     }
+    ],
+    "things": [
+     {
+      "name": "alarm",
+      "at": "alarm",
+      "text": "5:00",
+      "fit": 0.32,
+      "pop": false
+     }
+    ]
+   }
+  },
+  {
+   "words": "NOBODY WATCHED",
+   "red": [
+    "WATCHED"
+   ],
+   "side": "right",
+   "beat": {
+    "set": "courtempty",
+    "mood": "night",
+    "cam": {
+     "from": [
+      -0.9,
+      1.5,
+      2.6
+     ],
+     "to": [
+      -0.9,
+      1.5,
+      2.6
+     ],
+     "look": [
+      -0.9,
+      1.4,
+      0
+     ]
+    },
+    "chars": [
+     {
+      "look": "baller",
+      "at": [
+       0,
+       0,
+       0
+      ],
+      "pose": "stand",
+      "expr": "sad",
+      "rot": 0.3
+     }
+    ],
+    "things": [
+     {
+      "name": "basketball",
+      "at": [
+       0.45,
+       1.0,
+       0.5
+      ],
+      "fit": 0.45,
+      "pop": false
+     }
+    ]
+   }
   }
  ]
 }

@@ -77,6 +77,16 @@ def plan(film: dict) -> dict:
     return {"ah": {"shots": shots, "film": {"lines": lines, "cards": cards, "day": days, "hud": huds}}}
 
 
+def plan_thumb(film: dict, k: int = 0) -> dict:
+    """film["thumbs"][k] = {"words": "ONE MORE", "red": ["MORE"], "side": "right", "beat": {...one beat...}} -> AhFilm props
+    for a single 1280x720 frame (render frame 20 so pops / poses have settled)"""
+    th = film["thumbs"][k]
+    beat = {"s": 1.0, **th["beat"]}
+    p = plan({**film, "beats": [beat]})
+    p["ah"]["film"] = {"thumb": {"words": th["words"], "side": th.get("side", "right"), "red": th.get("red", [])}}
+    return p
+
+
 def table(film: dict) -> str:
     out, t = [], 0.0
     for i, b in enumerate(film["beats"]):
@@ -321,5 +331,7 @@ if __name__ == "__main__":
         write_wav(audio(f), sys.argv[3])
     elif cmd == "make":
         make(f, sys.argv[3], sys.argv[4])
+    elif cmd == "thumb":   # python -m pipeline.film thumb film.json out_props.json [k]
+        Path(sys.argv[3]).write_text(json.dumps(plan_thumb(f, int(sys.argv[4]) if len(sys.argv) > 4 else 0)), encoding="utf-8")
     elif cmd == "table":
         print(table(f))

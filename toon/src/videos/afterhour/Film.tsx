@@ -13,7 +13,9 @@ export type FilmLine = { a: number; n: number; t: string; red?: boolean; at?: "l
 export type FilmCard = { a: number; n: number; big: string; line?: string; cmd?: string; red?: boolean };
 export type FilmDay = { a: number; n: number; t: string };
 export type FilmHud = { a: number; n: number; label: string; from: number; to: number; unit?: string };
-export type FilmSpec = { lines?: FilmLine[]; cards?: FilmCard[]; day?: FilmDay[]; hud?: FilmHud[] };
+/** thumbnail mode: 1-3 huge ALL-CAPS words, white with a thick black outline, on the side away from the face; `red` words are red */
+export type FilmThumb = { words: string; side?: "left" | "right"; red?: string[] };
+export type FilmSpec = { lines?: FilmLine[]; cards?: FilmCard[]; day?: FilmDay[]; hud?: FilmHud[]; thumb?: FilmThumb };
 
 const SPEC = (): FilmSpec => (PROPS().film as FilmSpec) ?? {};
 
@@ -76,6 +78,19 @@ const Card: React.FC<{ c: FilmCard; f: number }> = ({ c, f }) => {
   );
 };
 
+const Thumb: React.FC<{ t: FilmThumb }> = ({ t }) => {
+  const words = t.words.toUpperCase().split(/\s+/), right = (t.side ?? "right") === "right";
+  const fs = words.length >= 3 ? 150 : 190;
+  return (
+    <div style={{ position: "absolute", top: 0, bottom: 0, [right ? "right" : "left"]: 40, width: "52%", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: right ? "flex-end" : "flex-start" }}>
+      {words.map((w, i) => (
+        <div key={i} style={{ fontFamily: "FilmBlack", fontSize: fs, lineHeight: 0.92, letterSpacing: -2, color: (t.red ?? []).includes(w) ? "#ff3b36" : "#ffffff",
+          WebkitTextStroke: "14px #000", paintOrder: "stroke fill", textShadow: "0 8px 0 #000, 0 0 30px rgba(0,0,0,0.9)", transform: `rotate(${i % 2 ? 1.5 : -2}deg)` }}>{w}</div>
+      ))}
+    </div>
+  );
+};
+
 export const AhFilm: React.FC = () => {
   useFonts();
   const f = useCurrentFrame(), sp = SPEC();
@@ -101,6 +116,7 @@ export const AhFilm: React.FC = () => {
       })()}
       {(sp.lines ?? []).filter((l) => f >= l.a && f < l.a + l.n).map((l, i) => <Line key={i} l={l} f={f} />)}
       {(sp.cards ?? []).filter((c) => f >= c.a && f < c.a + c.n).map((c, i) => <Card key={i} c={c} f={f} />)}
+      {sp.thumb && <Thumb t={sp.thumb} />}
     </AbsoluteFill>
   );
 };

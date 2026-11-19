@@ -1,0 +1,95 @@
+name: Film test render
+
+# Nov 19: long-form "silent" films (pipeline/film.py, toon AhFilm 1280x720). Push branch film-test: renders every film
+# listed in toon/film_test.txt (one content/films/*.json path per line) on 20 machines and uploads the MP4 to the
+# prerelease "film-test". Nothing here is posted.
+
+on:
+  push:
+    branches: ["film-test"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -q numpy
+      - run: |
+          mkdir -p fp
+          while read -r F; do [ -z "$F" ] && continue; python -m pipeline.film plan "$F" "fp/$(basename "$F")"; done < toon/film_test.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: film-plan
+          path: fp/
+          retention-days: 2
+  frames:
+    needs: plan
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: actions/cache@v4
+        with:
+          path: |
+            toon/node_modules
+            ~/.npm
+          key: toon-npm-${{ hashFiles('toon/package.json', 'toon/package-lock.json') }}
+      - run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq libnss3 libdbus-1-3 libatk1.0-0 libgbm-dev libxrandr2 libxkbcommon-dev libxfixes3 libxcomposite1 libxdamage1 libatk-bridge2.0-0 libpango-1.0-0 libcairo2 libcups2 || true
+          sudo apt-get install -y -qq libasound2t64 || sudo apt-get install -y -qq libasound2 || true
+      - uses: actions/download-artifact@v4
+        with:
+          name: film-plan
+          path: fp
+      - working-directory: toon
+        run: |
+          [ -d node_modules/remotion ] || npm install --no-audit --no-fund 2>&1 | tail -3
+          npx remotion browser ensure 2>&1 | tail -1
+          for f in ../fp/*.json; do
+            CONCURRENCY=2 node scripts/frames.mjs AhFilm "$f" "../frames/$(basename "$f" .json)" ${{ matrix.shard }} 20 1
+          done
+      - uses: actions/upload-artifact@v4
+        with:
+          name: film-frames-${{ matrix.shard }}
+          path: frames/
+          retention-days: 2
+  make:
+    needs: frames
+    if: always()
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+      - run: pip install -q numpy
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: film-frames-*
+          path: frames
+          merge-multiple: true
+      - run: |
+          mkdir -p out
+          while read -r F; do [ -z "$F" ] && continue; B=$(basename "$F" .json); python -m pipeline.film make "$F" "frames/$B" "out/$B.mp4"; done < toon/film_test.txt
+          ls -la out
+      - run: |
+          gh release view film-test --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1 || gh release create film-test --repo "$GITHUB_REPOSITORY" --title "Film test renders" --notes "Test renders of the long-form films. Nothing here is posted." --prerelease
+          gh release upload film-test --repo "$GITHUB_REPOSITORY" out/*.mp4 --clobber
