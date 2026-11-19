@@ -343,7 +343,7 @@ SFX = {
     "thud": (s_thud, 0.9, 0.0, "start"), "hit": (s_thud, 0.9, 0.0, "start"),
     "punch": (None, 0.0, 0.0, "punch"), "ping": (s_ping, 0.30, 0.15, "start"), "buzz": (s_buzz, 0.35, 0.0, "start"),
     "ring": (s_ring, 0.30, 0.0, "start"), "lowbatt": (s_lowbatt, 0.28, 0.0, "start"), "powerdown": (s_powerdown, 0.35, 0.0, "start"),
-    "riser": (s_riser, 0.50, 0.0, "end"), "slam": (s_slam, 1.7, 0.0, "start"), "steps": (s_steps, 0.55, 0.0, "start"),
+    "riser": (s_riser, 0.50, 0.0, "end"), "slam": (s_slam, 1.3, 0.0, "start"), "steps": (s_steps, 0.55, 0.0, "start"),
     "whoosh": (s_whoosh, 0.40, 0.0, "start"), "page": (s_page, 0.40, 0.0, "start"), "bounce": (s_bounce, 0.65, 0.0, "start"),
     "crowd": (s_crowd, 0.30, 0.0, "start"), "coin": (s_coin, 0.30, 0.2, "start"), "register": (s_register, 0.45, 0.0, "start"),
     "heart": (s_heart, 0.9, 0.0, "start"), "bell": (lambda: s_ping(1200.0, 1.2), 0.30, 0.0, "start"),
@@ -445,7 +445,7 @@ ARP_HOPE = [[65, 69, 72, 77], [64, 67, 72, 76], [62, 65, 69, 74], [62, 65, 70, 7
 LEVEL = {"drone": dict(pad=0.80, sub=0.73, ev=1.16), "tick": dict(pad=0.80, sub=0.73, ev=1.30),
          "pulse96": dict(pad=0.80, sub=1.09, ev=1.45), "montage": dict(pad=0.38, sub=1.05, ev=1.14),
          "slam": dict(pad=0.38, sub=0.90, ev=1.0), "finale": dict(pad=1.0, sub=0.0, ev=1.2),
-         "title": dict(pad=1.35, sub=0.30, ev=0.70), "silent": dict(pad=0, sub=0, ev=0)}
+         "title": dict(pad=1.35, sub=0.30, ev=0.50), "silent": dict(pad=0, sub=0, ev=0)}
 
 
 def _ramp(n: int, a: int, b: int) -> np.ndarray:
@@ -533,6 +533,9 @@ def _music_section(buf: np.ndarray, tag: str, t0: float, t1: float) -> list[tupl
     if L["sub"] > 0:
         buf[:, i0:i1] += _sub(t0, t1, L["sub"])[None, :i1 - i0]
     ducks: list[tuple[float, float]] = []
+    if t0 == 0 and tag == "drone":      # the film opens almost silent (reference: first 3 s are near-inaudible sub pulses)
+        k = min(buf.shape[1] - i0, int(3 * SR))
+        buf[:, i0:i0 + k] *= np.linspace(0.45, 1.0, k).astype(np.float32)
     if tag == "drone":
         # quiet opener: very soft sub pulses ~0.9 s apart, then a boom drop every ~4 s
         for k in range(int(dur / 0.9)):
@@ -750,30 +753,4 @@ def onsets(x: np.ndarray, band: tuple[float, float] = (0, 24000), thr: float = 3
     th = thr * max(med, 1e-3) + 0.05
     out, last = [], -1.0
     for i in range(1, nf - 1):
-        if flux[i] > th and flux[i] >= flux[i - 1] and flux[i] >= flux[i + 1] and e[i] > e.max() - 3.5:
-            t = (i * hop + win / 2) / SR
-            if t - last >= gap:
-                out.append(round(t, 3))
-                last = t
-    return out
-
-
-def load_wav(path: str | Path) -> np.ndarray:
-    import soundfile as sf
-    d, sr = sf.read(str(path), always_2d=True)
-    if sr != SR:
-        raise SystemExit(f"{path}: need {SR} Hz (ffmpeg -i in -ac 2 -ar 48000 out.wav)")
-    return d.astype(np.float32)
-
-
-def report(x: np.ndarray, label: str = "") -> None:
-    print(f"{label} integrated {integrated_lufs(x):.1f} LUFS, true peak {true_peak_db(x):.2f} dBTP, length {len(x) / SR:.1f} s")
-    print(" short-term (4 s window every 2 s):", " ".join(f"{t:.0f}:{v:.0f}" for t, v in short_term(x, 4.0, 2.0)))
-    on = onsets(x)
-    print(f" {len(on)} onsets:", " ".join(f"{t:.2f}" for t in on[:80]), "..." if len(on) > 80 else "")
-
-
-if __name__ == "__main__":
-    if len(sys.argv) >= 3 and sys.argv[1] == "measure":
-        for p in sys.argv[2:]:
-            report(load_wav(p), Path(p).name)
+        if flux[i] > th and flux[i] >= flux[i - 1] and flux[i] >= flux[i + 1] and e[i] > e.max() -
