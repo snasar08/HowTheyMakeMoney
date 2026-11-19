@@ -6,19 +6,19 @@ Made by `python -m pipeline.weekly_mix` from analytics/stats.json + retention.js
 
 | lane | Shorts | median views 48 h | median watched | |
 |---|---|---|---|---|
-| famous-athlete | 13 | 1042 | 66% | FOCUS |
-| famous-other | 4 | 106.5 | 51% |  |
+| famous-athlete | 13 | 1042 | 69% | FOCUS |
+| famous-other | 6 | 607.5 | 61% |  |
 | story-plan | 0 | – | – | EXPERIMENT |
 | story-history | 0 | – | – |  |
 | whatif | 5 | 20 | 73% |  |
-| how | 27 | 55 | 54% | paused |
-| careers | 16 | 28.5 | 59% | paused |
+| how | 27 | 55 | 53% | paused |
+| careers | 16 | 28.5 | 58% | paused |
 
 ## Going viral (top 5, last 21 days)
 
 - 1302 views, famous-athlete, old look, 71% watched: **The 180 Million Euro Teenager** — "A club paid 180 million euros for a teenager. The most expensive teen ever."
 - 1255 views, famous-athlete, old look, 80% watched: **From a Napkin Contract to $1.1 Billion** — "Why was a soccer star's first contract written on a napkin?"
-- 1208 views, how, old look, 78% watched: **From $2.46 Billion to $4 Trillion** — "In 1997, all of Apple was worth 2.46 billion dollars. Today? Over 4 trillion."
+- 1208 views, how, old look: **From $2.46 Billion to $4 Trillion** — "In 1997, all of Apple was worth 2.46 billion dollars. Today? Over 4 trillion."
 - 1166 views, famous-athlete, old look, 70% watched: **From a $2.5M Shoe Deal to $4.7 Billion** — "Why is a retired player still getting richer?"
 - 1143 views, famous-athlete, old look, 89% watched: **From a Dad With 4 Jobs to $100 Million** — "His dad worked up to 4 jobs at once. Now he earns 100 million dollars a year."
 
@@ -30,7 +30,7 @@ Made by `python -m pipeline.weekly_mix` from analytics/stats.json + retention.js
 - 1 views, how: Where Does Your Spotify Money Really Go? — "You pay Spotify every month. So why does Spotify keep so little of it?"
 - 1 views, famous-other: Could You Spend the Richest Person's Fortune? — "Could you spend the richest person's fortune if you blew a million dollars every single da"
 
-Look: old 65 Shorts (median 72), 3D 0 Shorts (median None) — too few 3D Shorts yet to compare.
+Look: old 67 Shorts (median 97), 3D 0 Shorts (median None) — too few 3D Shorts yet to compare.
 
 ## Plan for each Saturday part (10 scripts)
 

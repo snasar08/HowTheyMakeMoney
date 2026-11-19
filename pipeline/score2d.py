@@ -445,6 +445,7 @@ ARP_HOPE = [[65, 69, 72, 77], [64, 67, 72, 76], [62, 65, 69, 74], [62, 65, 70, 7
 
 # per section: pad level, sub-drone level, event level
 SUB_K = {"drone": 0.45}      # sub-drone scale per section tag (default 0.35): the reference bass is much lighter than our first mix
+_CFG: dict = {}              # optional per-film music identity (film keys bpm, pedal, prog_dark, prog_hope, arp_dark, arp_hope, arp_pattern); empty = the replica sound
 _ENV: dict = {}              # optional film keys audio_hi / audio_air: [[t, mult], ...] time envelopes for the upper voices / shimmer
 
 
@@ -502,7 +503,8 @@ def _sub(t0: float, t1: float, gain: float) -> np.ndarray:
     """F1 + C2 + F2 pedal drone (43 / 65 / 87 Hz) with a little saturation so small speakers still hear it"""
     n = int(round((t1 - t0) * SR))
     t = _t(n) + t0
-    x = np.sin(2 * np.pi * 43.65 * t) + 0.6 * np.sin(2 * np.pi * 65.41 * t) + 0.45 * np.sin(2 * np.pi * 87.31 * t)
+    r = 2 ** ((_CFG.get("pedal", 29) - 29) / 12)       # pedal root (MIDI, default F1 = 29)
+    x = np.sin(2 * np.pi * 43.65 * r * t) + 0.6 * np.sin(2 * np.pi * 65.41 * r * t) + 0.45 * np.sin(2 * np.pi * 87.31 * r * t)
     x = np.tanh(1.1 * x) * (1 + 0.15 * np.sin(2 * np.pi * 0.11 * t))
     return (x * gain * _ramp(n, int(0.3 * SR), int(0.3 * SR)) * 0.5).astype(np.float32)
 
@@ -539,7 +541,7 @@ def _music_section(buf: np.ndarray, tag: str, t0: float, t1: float) -> list[tupl
     t0, t1 = round(t0 * SR) / SR, round(t1 * SR) / SR      # sample-aligned section edges (a start that is not on a sample used to crash _pad)
     dur = t1 - t0
     major = tag in ("finale", "title")
-    prog, arp = (PROG_HOPE, ARP_HOPE) if major else (PROG_DARK, ARP_DARK)
+    prog, arp = (_CFG.get("prog_hope", PROG_HOPE), _CFG.get("arp_hope", ARP_HOPE)) if major else (_CFG.get("prog_dark", PROG_DARK), _CFG.get("arp_dark", ARP_DARK))
     i0, i1 = int(round(t0 * SR)), min(buf.shape[1], int(round(t1 * SR)))
     ev = L["ev"]
     pad = _pad(t0, t1, prog, L["pad"], 1.0 if major else 0.0)
@@ -564,7 +566,7 @@ def _music_section(buf: np.ndarray, tag: str, t0: float, t1: float) -> list[tupl
     if tag == "drone":
         # quiet opener: very soft sub pulses ~0.9 s apart, then a boom drop every ~4 s
         for k in range(int(dur / 0.9)):
-            _place(buf, _subnote(29, 0.7), t0 + 0.27 + k * 0.9, 0.35 * ev)
+            _place(buf, _subnote(_CFG.get("pedal", 29), 0.7), t0 + 0.27 + k * 0.9, 0.35 * ev)
         if dur > 3.2:
             for k in range(int(dur / 4.1) + 1):
                 if t0 + 1.0 + k * 4.1 < t1 - 1.5:
@@ -590,13 +592,13 @@ def _music_section(buf: np.ndarray, tag: str, t0: float, t1: float) -> list[tupl
                 if pos in (1, 2, 3) and not (pos == 2 and bar % 2):
                     _place(buf, _pluck(ch[(k + pos) % 4]), tb, 0.30 * ev, -0.2 + 0.4 * (k % 2))
             elif tag == "montage":
-                _place(buf, s_kick(0.55), tb, (0.8 if pos == 0 else 0.5) * ev)
+                _place(buf, s_kick(0.55), tb, (0.4 if pos == 0 else 0.25) * ev)
                 for q in (1, 3):                           # 16th-note hats
                     _place(buf, s_hat(), tb + q * BEAT / 4, 0.5 * ev * (1.0 if q == 3 else 0.7), 0.3)
                 if pos == 2:
                     _place(buf, _pluck(ch[(bar + 1) % 4]), tb, 0.08 * ev, 0.2)
             else:   # finale: warm piano arpeggio on EVERY beat, soft sub notes on the root
-                _place(buf, _pluck(ch[(0, 1, 2, 3, 2, 1)[k % 6]]), tb, 0.55 * ev, -0.25 + 0.5 * (k % 2))
+                _place(buf, _pluck(ch[_CFG.get("arp_pattern", (0, 1, 2, 3, 2, 1))[k % len(_CFG.get("arp_pattern", (0, 1, 2, 3, 2, 1)))]]), tb, 0.55 * ev, -0.25 + 0.5 * (k % 2))
                 if pos in (0, 2):
                     _place(buf, _subnote(prog[bar % 4][0] - 12, 1.2), tb, 0.55 * ev)
         if tag == "slam":
@@ -629,6 +631,11 @@ def _duck(buf: np.ndarray, windows: list[tuple[float, float]]) -> None:
 # ------------------------------------------------------------------ mix + master
 def render(film: dict) -> np.ndarray:
     """un-mastered stereo mix (2, N)"""
+    global BEAT, BAR
+    _CFG.clear()
+    _CFG.update({k: film[k] for k in ("pedal", "prog_dark", "prog_hope", "arp_dark", "arp_hope", "arp_pattern") if film.get(k) is not None})
+    BEAT = 60.0 / film.get("bpm", BPM)
+    BAR = BEAT * 4
     film = prepare(film)
     _ENV.clear()
     _ENV.update({k: film[k] for k in ("audio_hi", "audio_air") if film.get(k)})

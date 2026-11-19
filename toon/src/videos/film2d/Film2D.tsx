@@ -12,6 +12,8 @@
 // Shot2.arg extras (numbers, so they pass through pipeline/film2d.py): dip = N frames: 1 black frame then an N-frame
 //   fade-in (use 4); flashAmp (0..1, default .62) and flashLen (frames, default 10) shape the flash frames in Shot2.flash;
 //   bloom = seconds into the beat of a golden-peach full-frame bloom (20 f up, 28 f down).
+//   dawn = 0..1 peak opacity of a gentle peach wash that ramps up linearly over the whole beat (no jump).
+// Char2.dur = seconds a `to` move (monster rise) takes; default = the whole shot.
 // Text: narration = white fade (no typing); red + size < 60 = whisper typed ~2 f/char above the monster (or `at`);
 //   red + size >= 60 = slam that hard-pops with a 3 f overshoot, centred near the top.
 //   white: true  = white bold "pop" line (e.g. "DAY 1."): same hard pop as the slam but white, bold, typed as written, default size 84,
@@ -43,7 +45,7 @@ import { Expr, Guy, handOf, headOf, Look, pose } from "./rig";
 import { Blanket, FLOOR, GLOW_COLORS, SET_CAMS, SetView, stairAt, ThingView } from "./sets";
 
 type V3 = [number, number, number];
-export type Char2 = { look?: Look; x: number; y?: number; dir?: number; pose?: string; expr?: Expr; exprAt?: [number, Expr][]; poseAt?: [number, string][]; scale?: number; to?: [number, number]; stairs?: [number, number]; bed?: boolean; dim?: number; ease?: boolean };
+export type Char2 = { look?: Look; x: number; y?: number; dir?: number; pose?: string; expr?: Expr; exprAt?: [number, Expr][]; poseAt?: [number, string][]; scale?: number; to?: [number, number]; stairs?: [number, number]; bed?: boolean; dim?: number; ease?: boolean; dur?: number };
 export type Thing2 = { name: string; x?: number; y?: number; s?: number; text?: string; v?: number | [number, number]; hand?: number; at?: number; dx?: number; dy?: number };
 export type Cam2 = { from?: V3; to?: V3; ease?: "lin" | "in" | "out" | "io"; push?: number };
 export type Shot2 = { a: number; n: number; set: string; arg?: Record<string, number>; cam?: Cam2; chars?: Char2[]; things?: Thing2[]; fade?: number; fadeOut?: number; sat?: [number, number]; shake?: [number, number][]; flash?: number[]; scroll?: [number, number]; spot?: number; dark?: number; grade?: "sunset" | "rain" };
@@ -109,7 +111,7 @@ const charsOf = (s: Shot2, tl: number, u: number) => (s.chars ?? []).map((c, i) 
   let e: Expr = c.expr ?? "neutral"; for (const [at, x] of c.exprAt ?? []) if (tl >= at) e = x;
   const p = pose(name, tl + i * 0.37 + (s.arg?.punchPhase ?? 0), s.arg?.punch);
   let x = c.x, y = c.y ?? FLOOR;
-  if (c.to) { const k = c.ease ? ease(u) : u; x = lerp(c.x, c.to[0], k); y = lerp(c.y ?? FLOOR, c.to[1], k); }
+  if (c.to) { const uu = c.dur ? clamp(tl / c.dur) : u, k = c.ease ? ease(uu) : uu; x = lerp(c.x, c.to[0], k); y = lerp(c.y ?? FLOOR, c.to[1], k); }
   if (c.stairs) { const q = stairAt(lerp(c.stairs[0], c.stairs[1], u)); x = q.x; y = q.y; }
   return { c, p, e, x, y, dir: c.dir ?? 1, sc: c.scale ?? 1, name };
 });
@@ -315,6 +317,7 @@ export const Film2D: React.FC = () => {
       {burstK >= 0 && burstK < 26 && <Burst k={burstK} x={s.arg?.burstX ?? 640} y={s.arg?.burstY ?? 300} n={s.arg?.burstN ?? 28} />}
       {flash > 0 && <AbsoluteFill style={{ background: "#fff", opacity: flash }} />}
       {bloom > 0 && <AbsoluteFill style={{ background: "#E8B180", opacity: bloom }} />}
+      {s.arg?.dawn ? <AbsoluteFill style={{ background: "#E8B180", opacity: s.arg.dawn * clamp((f - s.a) / Math.max(1, s.n - 1)) }} /> : null}
       {day && <div style={{ position: "absolute", left: 100, top: 80, fontFamily: HAND, fontWeight: 700, fontSize: 27, letterSpacing: 2.7, color: "#b8b6b0", opacity: vis(f, day.a, day.n, 4, 4) }}>{dayLabel(day.t, (f - day.a) / 30).toUpperCase()}</div>}
       {hud && (() => {
         const v = Math.round(hud.from + (hud.to - hud.from) * ease(clamp((f - hud.a) / Math.max(1, hud.n - 20))));
