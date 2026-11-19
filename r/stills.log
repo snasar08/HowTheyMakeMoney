@@ -1,0 +1,21 @@
+=== line 1: Film2D 100,600,700,1070,1920,1950,1957,2200,2670,2692,2707,2865,2900,3040,3220,3480,3705,3800,3950 0.5 film/900-replica.json 
+bundle 6.7s
+still 100 0.9s
+still 600 0.9s
+still 700 0.8s
+still 1070 0.9s
+still 1920 0.6s
+still 1950 0.6s
+still 1957 0.6s
+still 2200 0.9s
+still 2670 0.8s
+still 2692 0.9s
+still 2707 0.9s
+still 2865 0.8s
+still 2900 0.8s
+still 3040 1.0s
+still 3220 1.0s
+still 3480 0.7s
+still 3705 0.7s
+still 3800 0.7s
+still 3950 0.6s
