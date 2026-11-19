@@ -1,0 +1,349 @@
+{
+ "id": "000-test",
+ "title": "test",
+ "cast": {
+  "hero": {},
+  "voice": {
+   "monster": true
+  }
+ },
+ "beats": [
+  {
+   "s": 1,
+   "set": "bedroom",
+   "chars": [
+    {
+     "look": "hero",
+     "x": 720,
+     "pose": "lie",
+     "bed": true,
+     "expr": "sleep"
+    }
+   ],
+   "say": "Every day started the same."
+  },
+  {
+   "s": 1,
+   "set": "bedroom",
+   "arg": {
+    "ring": 1
+   },
+   "chars": [
+    {
+     "look": "hero",
+     "x": 720,
+     "pose": "lie",
+     "bed": true,
+     "expr": "tired"
+    }
+   ],
+   "say": [
+    {
+     "t": "just 5 more minutes",
+     "red": true
+    }
+   ]
+  },
+  {
+   "s": 1,
+   "set": "couch",
+   "arg": {
+    "lamp": 0
+   },
+   "chars": [
+    {
+     "look": "hero",
+     "x": 640,
+     "y": 500,
+     "pose": "phonesit",
+     "expr": "tired"
+    }
+   ],
+   "things": [
+    {
+     "name": "phone",
+     "hand": 0
+    }
+   ],
+   "day": "DAY 12"
+  },
+  {
+   "s": 1,
+   "set": "desk",
+   "chars": [
+    {
+     "look": "hero",
+     "x": 560,
+     "y": 510,
+     "pose": "desk",
+     "expr": "determined"
+    }
+   ]
+  },
+  {
+   "s": 1,
+   "set": "mirror",
+   "chars": [
+    {
+     "look": "hero",
+     "x": 540,
+     "pose": "stand",
+     "expr": "sad"
+    },
+    {
+     "look": "voice",
+     "x": 760,
+     "y": 540,
+     "pose": "monster",
+     "scale": 0.8,
+     "dir": -1
+    }
+   ],
+   "say": [
+    {
+     "t": "you're lazy",
+     "red": true,
+     "at": "mid",
+     "size": 60
+    }
+   ]
+  },
+  {
+   "s": 1,
+   "set": "spot",
+   "arg": {
+    "x": 640
+   },
+   "chars": [
+    {
+     "look": "hero",
+     "x": 640,
+     "pose": "hug",
+     "expr": "sad"
+    }
+   ],
+   "say": "He believed it."
+  },
+  {
+   "s": 1,
+   "set": "street",
+   "scroll": [
+    0,
+    300
+   ],
+   "chars": [
+    {
+     "look": {
+      "band": "#e0302a"
+     },
+     "x": 640,
+     "pose": "run",
+     "expr": "determined"
+    }
+   ],
+   "day": "DAY 3"
+  },
+  {
+   "s": 1,
+   "set": "void",
+   "chars": [
+    {
+     "look": {
+      "band": "#e0302a"
+     },
+     "x": 640,
+     "pose": "floor",
+     "expr": "tired"
+    }
+   ],
+   "say": [
+    {
+     "t": "told you.",
+     "red": true,
+     "at": [
+      760,
+      420
+     ]
+    }
+   ]
+  },
+  {
+   "s": 1,
+   "set": "gym",
+   "chars": [
+    {
+     "look": {
+      "band": "#e0302a"
+     },
+     "x": 660,
+     "pose": "punch",
+     "expr": "angry"
+    }
+   ]
+  },
+  {
+   "s": 1,
+   "set": "stairs",
+   "chars": [
+    {
+     "look": {
+      "band": "#e0302a"
+     },
+     "x": 0,
+     "pose": "climb",
+     "expr": "determined",
+     "stairs": [
+      0.2,
+      0.3
+     ]
+    },
+    {
+     "look": "voice",
+     "x": 0,
+     "pose": "loom",
+     "dir": -1,
+     "scale": 1.6,
+     "stairs": [
+      0.75,
+      0.75
+     ]
+    }
+   ],
+   "cam": {
+    "from": [
+     760,
+     300,
+     0.9
+    ]
+   }
+  },
+  {
+   "s": 1,
+   "set": "hill",
+   "chars": [
+    {
+     "look": {
+      "band": "#e0302a"
+     },
+     "x": 640,
+     "y": 515,
+     "pose": "stand",
+     "expr": "smile"
+    }
+   ],
+   "say": "So save yourself."
+  },
+  {
+   "s": 1,
+   "set": "court",
+   "chars": [
+    {
+     "look": "hero",
+     "x": 700,
+     "pose": "shoot",
+     "expr": "determined"
+    }
+   ],
+   "things": [
+    {
+     "name": "ball",
+     "hand": 0
+    }
+   ]
+  },
+  {
+   "s": 1,
+   "set": "store",
+   "chars": [
+    {
+     "look": "hero",
+     "x": 520,
+     "pose": "count",
+     "expr": "grin"
+    }
+   ],
+   "things": [
+    {
+     "name": "cash",
+     "hand": 0
+    }
+   ]
+  },
+  {
+   "s": 1,
+   "set": "office",
+   "chars": [
+    {
+     "look": {
+      "tie": "#e8b84a"
+     },
+     "x": 520,
+     "pose": "point",
+     "expr": "smile"
+    }
+   ],
+   "things": [
+    {
+     "name": "chart",
+     "x": 900,
+     "y": 300,
+     "v": 1,
+     "text": "SAVINGS"
+    },
+    {
+     "name": "jar",
+     "x": 380,
+     "y": 560,
+     "v": 0.7
+    }
+   ]
+  },
+  {
+   "s": 1,
+   "set": "void",
+   "things": [
+    {
+     "name": "alarm",
+     "x": 640,
+     "y": 380,
+     "s": 3.2,
+     "text": "5:00",
+     "v": 1
+    }
+   ]
+  },
+  {
+   "s": 2,
+   "set": "black",
+   "card": {
+    "big": "DISCIPLINE",
+    "line": "Day one, or one day.",
+    "cmd": "You decide."
+   }
+  }
+ ],
+ "thumbs": [
+  {
+   "words": "DAY 1.",
+   "beat": {
+    "set": "bedroom",
+    "cam": {
+     "from": [
+      560,
+      470,
+      2.6
+     ]
+    },
+    "chars": [
+     {
+      "look": "hero",
+      "x": 720,
+      "pose": "lie",
+      "bed": true,
+      "expr": "angry"
+     }
+    ]
+   }
+  }
+ ]
+}
