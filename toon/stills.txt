@@ -1,1 +1,2 @@
-Film2D 137,239,1992,2164,2292,3321,3492,3608,3711,1264 0.5 props_own101.json
+Film2D 20 1 thumb101_0.json
+Film2D 20 1 thumb101_1.json

@@ -2313,5 +2313,93 @@
    149,
    0
   ]
+ ],
+ "thumbs": [
+  {
+   "words": "ONE COIN",
+   "red": [
+    "COIN"
+   ],
+   "pos": "tr",
+   "beat": {
+    "set": "spot",
+    "arg": {
+     "x": 560
+    },
+    "cam": {
+     "from": [
+      560,
+      470,
+      1.9
+     ]
+    },
+    "chars": [
+     {
+      "look": "nova",
+      "x": 440,
+      "pose": "count",
+      "expr": "grin"
+     }
+    ],
+    "things": [
+     {
+      "name": "cash",
+      "hand": 0
+     },
+     {
+      "name": "jar",
+      "x": 640,
+      "y": 560,
+      "s": 1.5,
+      "v": 0.9
+     }
+    ]
+   }
+  },
+  {
+   "words": "GONE",
+   "red": [
+    "GONE"
+   ],
+   "pos": "tr",
+   "beat": {
+    "set": "spot",
+    "arg": {
+     "x": 600
+    },
+    "cam": {
+     "from": [
+      600,
+      460,
+      1.6
+     ]
+    },
+    "chars": [
+     {
+      "look": "nova",
+      "x": 470,
+      "pose": "hug",
+      "expr": "cry"
+     },
+     {
+      "look": "voice",
+      "x": 860,
+      "y": 560,
+      "pose": "loom",
+      "scale": 1.3,
+      "dir": -1
+     }
+    ],
+    "things": [
+     {
+      "name": "jar",
+      "x": 560,
+      "y": 560,
+      "s": 1.2,
+      "v": 0.06
+     }
+    ]
+   }
+  }
  ]
 }
