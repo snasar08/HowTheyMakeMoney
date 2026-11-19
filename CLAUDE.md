@@ -45,6 +45,8 @@ their money, told as fast 3D cartoon stories with an AI voice. Owner: Sam (snasa
   has the same name); MP4s land on release `toon-test`. New 3D objects: branch `things-test/<date>`.
 - Checks after every render: clarity (Whisper), audio, quality gate (`run.gate`), **eyes** (`pipeline/eyes.py`,
   free Gemini looks at every frame, holds bad Shorts as `needs_fix`).
+- Comment replies: `comments.yml` Saturdays answers the week's top 100 comments (1-10 words, `pipeline/comment_replies.py`,
+  YouTube API: Buffer has no comment API). Needs secrets YTC_* from `pipeline/comment_auth.py`; branch `comments-test` = dry run.
 - Analytics: `stats.yml` daily -> analytics/insights.md, health.md, retention.md. "How are the Shorts doing" ->
   `python -m pipeline.now`.
 - Formats now: `famous` (most; athletes and big names, real dated earnings), `story` (history / plan), some `whatif`.
