@@ -16,7 +16,7 @@ import { ACTS } from "./acts";
 import type { ActRun, ActPose } from "./acts/types";
 
 type V3 = [number, number, number];
-export type AhChar = { look: Look; at?: string | V3; rot?: number; scale?: number; pose?: Pose; expr?: Expr; exprAt?: [number, Expr][] };
+export type AhChar = { look: Look; at?: string | V3; rot?: number; scale?: number; /** films: lying on his side in bed (head towards -x), facing the camera */ lie?: boolean; pose?: Pose; expr?: Expr; exprAt?: [number, Expr][] };
 export type AhCard = CardSpec & { at?: string | V3; w?: number; rot?: number };
 export type AhThing = { name: string; at?: string | V3; scale?: number; rot?: number; color?: string; text?: string; pop?: boolean };
 export type AhShot = { a: number; n: number; set: SetName; view?: string; subject?: number; cam?: { from: V3; to: V3; look: V3 }; chars: AhChar[]; cards?: AhCard[]; things?: AhThing[]; coins?: boolean;
@@ -207,6 +207,7 @@ const build = (k: number, s: AhShot): Built => {
     const ch = makeChar(c.look), p = spotOf(set, c.at);
     ch.root.position.set(p[0], c.pose === "sit" ? Math.max(0, p[1] - 0.55) : p[1], p[2]); ch.root.rotation.y = c.rot ?? 0;
     if (c.scale) ch.root.scale.setScalar(c.scale);   // small figures (a "1 in 10" row)
+    if (c.lie) { ch.root.rotation.set(0, 0, Math.PI / 2); ch.root.position.y += 0.32; ch.root.position.x += 0.9; }
     root.add(ch.root); return ch;
   });
   const fitItems: FitItem[] = [];
