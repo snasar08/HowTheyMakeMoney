@@ -111,7 +111,8 @@ def main() -> int:
             except urllib.error.HTTPError as exc:
                 body = exc.read().decode(errors="replace")[:300]
                 print(f"::warning title=thumbnails::YouTube refused ({exc.code}): {body}")
-                if exc.code in (401, 403):  # not allowed (channel not verified / wrong login): stop for today
+                # 401/403 = not allowed; 429 = YouTube's limit (~10 thumbnails at a time, seen Nov 19): stop, retry tomorrow
+                if exc.code in (401, 403, 429):
                     break
                 continue
             except Exception as exc:
