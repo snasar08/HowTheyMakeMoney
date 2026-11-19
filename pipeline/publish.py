@@ -30,7 +30,7 @@ from zoneinfo import ZoneInfo
 
 TZ = ZoneInfo(os.environ.get("CHANNEL_TZ", "America/New_York"))
 # Daily posting times (local). One slot per video rendered in a run.
-SLOTS = [s.strip() for s in os.environ.get("POST_SLOTS", "12:00,15:00,16:30,18:00,20:00").split(",") if s.strip()]
+SLOTS = [s.strip() for s in os.environ.get("POST_SLOTS", "12:00,19:00").split(",") if s.strip()]
 # Nothing is rendered or delivered by the nightly run before this date (New York).
 POST_START = dt.date.fromisoformat(os.environ.get("POST_START") or "2026-10-27")
 BUFFER_API = "https://api.buffer.com"
@@ -41,7 +41,22 @@ def posting_started(now: dt.datetime | None = None) -> bool:
     return (now or dt.datetime.now(TZ)).date() >= POST_START
 
 
-MAX_PER_DAY = int(os.environ.get("MAX_PER_DAY", "5"))
+MAX_PER_DAY = int(os.environ.get("MAX_PER_DAY", "2"))
+# Buffer free plan, Nov 19 2026: at most 2 YouTube posts in any rolling 24 h (status.buffer.com), else
+# the post fails with "daily posting limit". Slots are nudged later in NUDGE_MIN steps (up to NUDGE_MAX_MIN)
+# so no 24 h window (plus a margin) ever holds more than ROLLING_MAX posts.
+ROLLING_MAX = int(os.environ.get("ROLLING_MAX", "2"))
+ROLLING_WIN = dt.timedelta(hours=float(os.environ.get("ROLLING_H", "24.25")))
+NUDGE_MIN = int(os.environ.get("NUDGE_MIN", "15"))
+NUDGE_MAX_MIN = int(os.environ.get("NUDGE_MAX_MIN", "120"))
+
+
+def rolling_ok(t: dt.datetime, others) -> bool:
+    """True if adding a post at t keeps every ROLLING_WIN window at <= ROLLING_MAX posts."""
+    near = sorted([x for x in others if abs(x - t) < ROLLING_WIN] + [t])
+    return all(sum(1 for y in near if p <= y < p + ROLLING_WIN) <= ROLLING_MAX for p in near)
+
+
 # render only for open slots this far ahead; the evening run fills tomorrow, the backup run tops up
 HORIZON_H = float(os.environ.get("SLOT_HORIZON_H", "36"))
 
@@ -75,11 +90,21 @@ def publish_slots(n: int, now: dt.datetime | None = None, taken=None, horizon_h:
             break
         for s in SLOTS:
             hh, mm = map(int, s.split(":"))
-            t = dt.datetime.combine(day, dt.time(hh, mm), TZ)
-            if len(out) >= n or t <= now + lead or t in taken or (end and t > end):
+            base = dt.datetime.combine(day, dt.time(hh, mm), TZ)
+            if len(out) >= n:
                 continue
             if per_day.get(day, 0) >= MAX_PER_DAY:
                 break
+            t = None
+            for k in range(0, NUDGE_MAX_MIN + 1, NUDGE_MIN):
+                c = base + dt.timedelta(minutes=k)
+                if c <= now + lead or c in taken or (end and c > end) or c.date() != day:
+                    continue
+                if rolling_ok(c, list(taken) + out):
+                    t = c
+                    break
+            if t is None:
+                continue
             out.append(t)
             per_day[day] = per_day.get(day, 0) + 1
         day += dt.timedelta(days=1)

@@ -7,7 +7,7 @@
   "hook_style": "number",
   "title_style": "number",
   "theme": "clean_navy",
-  "status": "delivered",
+  "status": "ready",
   "score": 87,
   "title": "$33 Million a Year for Running",
   "name_card": "Usain Bolt",
@@ -294,24 +294,5 @@
     "socks": "1a1a1a",
     "shoes": "f2c230",
     "height": 1.15
-  },
-  "delivered": {
-    "mode": "buffer",
-    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-087-famous-bolt",
-    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-087-famous-bolt/087-famous-bolt.mp4",
-    "post_at": "2026-11-19T15:00:00-05:00",
-    "buffer_post": "6afdec88c71477154fa9b8cb",
-    "buffer_status": "scheduled",
-    "rendered_at": "2026-11-18T18:20:57.176274+00:00",
-    "seconds": 25.11,
-    "eyes": {
-      "score": 9,
-      "problems": [
-        "The Forbes logo is clearly visible on the screen around frame 120-200, which violates the policy against real company logos."
-      ],
-      "best_fix": "Replace the real Forbes logo with a generic 'Top Earner' or 'Wealth List' icon to avoid brand trademark issues.",
-      "model": "gemini-3.1-flash-lite",
-      "acts": null
-    }
   }
 }

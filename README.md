@@ -1,5 +1,10 @@
 # How They Make Money
 
+> **YouTube channel:** [How They Make Money (@HowTheyMakeMoneyDaily)](https://www.youtube.com/@HowTheyMakeMoneyDaily)
+> This project uses **YouTube API Services** (HTMM Uploader, a private script for this one channel).
+> **[Privacy Policy](PRIVACY.md)** · **[Terms of Service](TERMS.md)** ·
+> [YouTube Terms of Service](https://www.youtube.com/t/terms) · [Google Privacy Policy](https://policies.google.com/privacy)
+
 Automatic YouTube Shorts for **@HowTheyMakeMoneyDaily**. Each Short explains how a company really
 makes its money, in under a minute.
 

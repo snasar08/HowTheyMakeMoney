@@ -8,7 +8,7 @@
   "hook_style": "surprise",
   "title_style": "statement",
   "theme": "bold_bright",
-  "status": "ready",
+  "status": "needs_fix",
   "score": 94,
   "title": "You're SGA. One Ring Isn't Enough.",
   "name_card": "Shai Gilgeous-Alexander",
@@ -59,7 +59,23 @@
           "ball"
         ],
         "stat": "11TH PICK",
-        "stat_sub": "then MVP and a ring"
+        "stat_sub": "then MVP and a ring",
+        "hero": {
+          "skin": "7a4e34",
+          "hair": "short",
+          "hair_color": "141010",
+          "beard": "mustache",
+          "beard_color": "141010",
+          "shirt": "007ac1",
+          "pants": "007ac1",
+          "trim": "ef3b24",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "glasses": false,
+          "height": 1.08,
+          "outfit": "kit",
+          "number": 2
+        }
       },
       "toon": [
         {
@@ -103,7 +119,23 @@
           "ball"
         ],
         "stat": "THE PLAN",
-        "stat_sub": "a dynasty"
+        "stat_sub": "a dynasty",
+        "hero": {
+          "skin": "7a4e34",
+          "hair": "short",
+          "hair_color": "141010",
+          "beard": "mustache",
+          "beard_color": "141010",
+          "shirt": "007ac1",
+          "pants": "007ac1",
+          "trim": "ef3b24",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "glasses": false,
+          "height": 1.08,
+          "outfit": "kit",
+          "number": 2
+        }
       },
       "toon": [
         {
@@ -144,7 +176,23 @@
           "ball"
         ],
         "stat": "STEP 1",
-        "stat_sub": "unguardable"
+        "stat_sub": "unguardable",
+        "hero": {
+          "skin": "7a4e34",
+          "hair": "short",
+          "hair_color": "141010",
+          "beard": "mustache",
+          "beard_color": "141010",
+          "shirt": "007ac1",
+          "pants": "007ac1",
+          "trim": "ef3b24",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "glasses": false,
+          "height": 1.08,
+          "outfit": "kit",
+          "number": 2
+        }
       },
       "toon": [
         {
@@ -175,7 +223,23 @@
           "ball"
         ],
         "stat": "STEP 2",
-        "stat_sub": "tunnel fits"
+        "stat_sub": "tunnel fits",
+        "hero": {
+          "skin": "7a4e34",
+          "hair": "short",
+          "hair_color": "141010",
+          "beard": "mustache",
+          "beard_color": "141010",
+          "shirt": "007ac1",
+          "pants": "007ac1",
+          "trim": "ef3b24",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "glasses": false,
+          "height": 1.08,
+          "outfit": "kit",
+          "number": 2
+        }
       },
       "toon": [
         {
@@ -214,7 +278,23 @@
           "ball"
         ],
         "stat": "STEP 3",
-        "stat_sub": "everyone wants OKC"
+        "stat_sub": "everyone wants OKC",
+        "hero": {
+          "skin": "7a4e34",
+          "hair": "short",
+          "hair_color": "141010",
+          "beard": "mustache",
+          "beard_color": "141010",
+          "shirt": "007ac1",
+          "pants": "007ac1",
+          "trim": "ef3b24",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "glasses": false,
+          "height": 1.08,
+          "outfit": "kit",
+          "number": 2
+        }
       },
       "toon": [
         {
@@ -249,7 +329,23 @@
           "ball"
         ],
         "stat": "STEP 4",
-        "stat_sub": "five in a row"
+        "stat_sub": "five in a row",
+        "hero": {
+          "skin": "7a4e34",
+          "hair": "short",
+          "hair_color": "141010",
+          "beard": "mustache",
+          "beard_color": "141010",
+          "shirt": "007ac1",
+          "pants": "007ac1",
+          "trim": "ef3b24",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "glasses": false,
+          "height": 1.08,
+          "outfit": "kit",
+          "number": 2
+        }
       },
       "toon": [
         {
@@ -286,7 +382,23 @@
           "ball"
         ],
         "stat": "THE PLAN",
-        "stat_sub": "from 11th pick"
+        "stat_sub": "from 11th pick",
+        "hero": {
+          "skin": "7a4e34",
+          "hair": "short",
+          "hair_color": "141010",
+          "beard": "mustache",
+          "beard_color": "141010",
+          "shirt": "007ac1",
+          "pants": "007ac1",
+          "trim": "ef3b24",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "glasses": false,
+          "height": 1.08,
+          "outfit": "kit",
+          "number": 2
+        }
       },
       "toon": [
         {
@@ -304,5 +416,8 @@
         }
       ]
     }
+  ],
+  "needs_fix": [
+    "eyes score 3/10"
   ]
 }
