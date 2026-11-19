@@ -1,0 +1,6 @@
+=== line 1: Film2D 150,210,270,570 0.5 film/settest.json 
+bundle 6.4s
+still 150 0.9s
+still 210 1.1s
+still 270 1.0s
+still 570 0.8s
