@@ -155,8 +155,6 @@ jobs:
           if [ -f "content/films2d/$FILM_ID-thumb.jpg" ]; then cp "content/films2d/$FILM_ID-thumb.jpg" "out/$FILM_ID-thumb.jpg"
           else python -m pipeline.films thumb "out/$FILM_ID.mp4" "out/$FILM_ID-thumb.jpg"; fi
           python -m pipeline.films notes "$FILE" out/notes.md
-          # teaser Short (9:16, ~25-30 s) for the Shorts lane; NOT posted anywhere yet (only once films go to YouTube)
-          python -m pipeline.teaser "$FILE" "out/$FILM_ID.mp4" "out/$FILM_ID-teaser.mp4" || echo "::warning title=teaser::teaser cut failed (not blocking)"
           ls -la out
       - name: Scene sheet (warn only)
         continue-on-error: true
@@ -174,7 +172,7 @@ jobs:
         if: env.FILM_DRY == 'true'
         run: |
           gh release view films-dry --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1 || gh release create films-dry --repo "$GITHUB_REPOSITORY" --title "Film dry runs" --notes "Dry-run renders of the films pipeline. Nothing here is posted." --prerelease
-          gh release upload films-dry --repo "$GITHUB_REPOSITORY" "out/$FILM_ID.mp4" "out/$FILM_ID-thumb.jpg" $(ls out/$FILM_ID-teaser.mp4 2>/dev/null) --clobber
+          gh release upload films-dry --repo "$GITHUB_REPOSITORY" "out/$FILM_ID.mp4" "out/$FILM_ID-thumb.jpg" --clobber
       - name: Release film-NNN
         if: env.FILM_DRY != 'true'
         id: rel
@@ -188,7 +186,7 @@ jobs:
           else
             gh release create "$TAG" --repo "$GITHUB_REPOSITORY" --title "$TITLE" --notes-file out/notes.md
           fi
-          gh release upload "$TAG" --repo "$GITHUB_REPOSITORY" "out/$FILM_ID.mp4" "out/$FILM_ID-thumb.jpg" $(ls out/$FILM_ID-teaser.mp4 2>/dev/null) --clobber
+          gh release upload "$TAG" --repo "$GITHUB_REPOSITORY" "out/$FILM_ID.mp4" "out/$FILM_ID-thumb.jpg" --clobber
           echo "url=https://github.com/$GITHUB_REPOSITORY/releases/tag/$TAG" >> "$GITHUB_OUTPUT"
       - name: Upload to YouTube (only FILM_UPLOAD=youtube; never fails the job)
         if: env.FILM_DRY != 'true'
