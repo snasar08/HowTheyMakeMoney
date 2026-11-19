@@ -64,7 +64,7 @@ const Bed: React.FC<{ x: number; occupied?: boolean }> = ({ x }) => (
 );
 /** the blanket goes over whoever lies in the bed */
 export const Blanket: React.FC<{ x: number; heave?: number }> = ({ x, heave = 0 }) => (
-  <path d={`M ${x + 104} ${FLOOR - 64} q 10 ${-34 - heave} 60 -36 q 90 -6 150 4 q 22 4 24 32 Z`} fill="#2c3450" {...L} />
+  <path d={`M ${x + 118} ${FLOOR - 60} C ${x + 112} ${FLOOR - 128 - heave}, ${x + 160} ${FLOOR - 134 - heave}, ${x + 214} ${FLOOR - 132 - heave} L ${x + 318} ${FLOOR - 124} Q ${x + 352} ${FLOOR - 120} ${x + 350} ${FLOOR - 60} Z`} fill="#2c3450" {...L} />
 );
 const Nightstand: React.FC<{ x: number }> = ({ x }) => (
   <g><rect x={x} y={FLOOR - 70} width={78} height={70} rx={8} fill={D2} {...L} /><circle cx={x + 39} cy={FLOOR - 38} r={3} fill={OUTLINE} /></g>

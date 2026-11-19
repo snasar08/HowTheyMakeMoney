@@ -59,7 +59,7 @@ const Defs: React.FC = () => (
 
 const Shot: React.FC<{ s: Shot2; f: number }> = ({ s, f }) => {
   const tl = (f - s.a) / 30, u = clamp((f - s.a) / Math.max(1, s.n - 1));
-  const c0 = s.cam?.from ?? [640, 360, 1], c1 = s.cam?.to ?? c0, eu = ease(u);
+  const c0 = s.cam?.from ?? [640, 420, 1.3], c1 = s.cam?.to ?? c0, eu = ease(u);
   let cx = lerp(c0[0], c1[0], eu), cy = lerp(c0[1], c1[1], eu);
   const z = lerp(c0[2], c1[2], eu);
   for (const [at, amp] of s.shake ?? []) { const k = tl - at; if (k >= 0 && k < 0.5) { const d = amp * (1 - k / 0.5); cx += Math.sin(k * 90) * d; cy += Math.cos(k * 77) * d; } }
@@ -80,13 +80,13 @@ const Shot: React.FC<{ s: Shot2; f: number }> = ({ s, f }) => {
       <g filter="url(#wob)">
         <SetView name={s.set} t={tl} scroll={scroll} arg={s.arg} />
         {chars.map(({ c, p, e, x, y, dir, sc, name }, i) => <g key={i}>
-          <Guy p={p} e={e} dir={dir} t={tl + i} look={c.look} scale={sc} x={x} y={c.bed ? y - 74 : y} dim={c.dim} />
+          <Guy p={p} e={e} dir={dir} t={tl + i} look={c.look} scale={sc} x={x} y={c.bed ? y - 96 : y} dim={c.dim} />
           {c.bed && <Blanket x={420} heave={Math.sin(tl * 2) * 2} />}
           {name === "sleepdesk" || (c.bed && e === "sleep") ? <ThingView name="zzz" x={x + 40 * dir} y={y - (c.bed ? 150 : 170) * sc} t={tl} /> : null}
         </g>)}
         {things.map((th, i) => {
           let x = th.x ?? 640, y = th.y ?? FLOOR;
-          if (th.hand !== undefined && chars[th.hand]) { const ch = chars[th.hand], h = handOf(ch.p, ch.dir); x = ch.x + h.x * ch.sc + (th.dx ?? 0); y = (ch.c.bed ? ch.y - 74 : ch.y) + h.y * ch.sc + (th.dy ?? 0); }
+          if (th.hand !== undefined && chars[th.hand]) { const ch = chars[th.hand], h = handOf(ch.p, ch.dir); x = ch.x + h.x * ch.sc + (th.dx ?? 0); y = (ch.c.bed ? ch.y - 96 : ch.y) + h.y * ch.sc + (th.dy ?? 0); }
           const v = Array.isArray(th.v) ? lerp(th.v[0], th.v[1], ease(u)) : th.v ?? 0;
           return <ThingView key={i} name={th.name} x={x} y={y} s={th.s} text={th.text} t={tl} v={v} />;
         })}
@@ -99,7 +99,7 @@ const typed = (t: string, f: number, a: number, cps: number) => t.slice(0, Math.
 
 const Line: React.FC<{ l: Line2; f: number }> = ({ l, f }) => {
   const o = vis(f, l.a, l.n, 3, 10);
-  const pos = Array.isArray(l.at) ? l.at : l.at === "mid" ? [640, 360] : l.at === "low" ? [640, 640] : [640, 120];
+  const pos = Array.isArray(l.at) ? l.at : l.at === "mid" ? [640, 360] : l.at === "low" ? [640, 600] : [640, 160];
   const size = l.size ?? (l.red ? 34 : 30);
   return <div style={{ position: "absolute", left: pos[0] - 560, width: 1120, top: pos[1] - size, textAlign: "center", opacity: o, fontFamily: HAND, fontWeight: 700, fontSize: size,
     color: l.red ? "#ff3a2a" : "#ecebe6", textShadow: l.red ? "0 0 14px rgba(255,40,20,0.75), 0 0 3px rgba(255,60,40,0.9)" : "0 0 10px rgba(0,0,0,0.9)", letterSpacing: 0.3, whiteSpace: "pre-wrap" }}>
@@ -145,12 +145,13 @@ export const Film2D: React.FC = () => {
       </svg>
       {/* soft stage light: a gentle vignette everywhere, darker on "dark" shots */}
       <AbsoluteFill style={{ background: `radial-gradient(ellipse at 50% 55%, rgba(0,0,0,0) 45%, rgba(0,0,0,${0.55 + (s.dark ?? 0) * 0.4}) 100%)` }} />
+      {!film.thumb && <><div style={{ position: "absolute", left: 0, right: 0, top: 0, height: 64, background: "#000" }} /><div style={{ position: "absolute", left: 0, right: 0, bottom: 0, height: 64, background: "#000" }} /></>}
       {flash > 0 && <AbsoluteFill style={{ background: "#ffe9c8", opacity: flash }} />}
       {(fin > 0 || fout > 0) && <AbsoluteFill style={{ background: "#070707", opacity: Math.max(fin, fout) }} />}
-      {day && <div style={{ position: "absolute", left: 50, top: 34, fontFamily: HAND, fontWeight: 700, fontSize: 22, letterSpacing: 1, color: "#c9c6bf", opacity: vis(f, day.a, day.n, 4, 4) }}>{day.t}</div>}
+      {day && <div style={{ position: "absolute", left: 50, top: 82, fontFamily: HAND, fontWeight: 700, fontSize: 22, letterSpacing: 1, color: "#c9c6bf", opacity: vis(f, day.a, day.n, 4, 4) }}>{day.t}</div>}
       {hud && (() => {
         const v = Math.round(hud.from + (hud.to - hud.from) * ease(clamp((f - hud.a) / Math.max(1, hud.n - 20))));
-        return <div style={{ position: "absolute", right: 50, top: 28, textAlign: "right", opacity: vis(f, hud.a, hud.n, 6, 6), fontFamily: HAND, fontWeight: 700 }}>
+        return <div style={{ position: "absolute", right: 50, top: 76, textAlign: "right", opacity: vis(f, hud.a, hud.n, 6, 6), fontFamily: HAND, fontWeight: 700 }}>
           <div style={{ fontSize: 18, letterSpacing: 2, color: "#9a978f" }}>{hud.label}</div>
           <div style={{ fontSize: 40, color: "#ecebe6" }}>{hud.unit?.trim() === "$" ? "$" + v.toLocaleString("en-US") : `${v}${hud.unit ?? ""}`}</div>
         </div>;
