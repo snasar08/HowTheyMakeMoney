@@ -113,7 +113,7 @@ export const AhFilm: React.FC = () => {
         const v = Math.round(hud.from + (hud.to - hud.from) * clamp((f - hud.a) / Math.max(1, hud.n - 20)));
         return <div style={{ position: "absolute", right: 44, top: 28, textAlign: "right", opacity: vis(f, hud.a, hud.n, 6, 6), textShadow: "0 2px 4px #000" }}>
           <div style={{ fontFamily: "FilmText", fontSize: 18, letterSpacing: 3, color: "#b9bdc8" }}>{hud.label}</div>
-          <div style={{ fontFamily: "FilmBlack", fontSize: 44, color: "#f6f3ee" }}>{v}{hud.unit ?? ""}</div>
+          <div style={{ fontFamily: "FilmBlack", fontSize: 44, color: "#f6f3ee" }}>{hud.unit?.trim() === "$" ? "$" + v : `${v}${hud.unit ?? ""}`}</div>
         </div>;
       })()}
       {(sp.lines ?? []).filter((l) => f >= l.a && f < l.a + l.n).map((l, i) => <Line key={i} l={l} f={f} />)}

@@ -217,19 +217,7 @@
      "expr": "shock"
     }
    ],
-   "things": [
-    {
-     "name": "jar",
-     "at": [
-      -0.55,
-      1.0,
-      -0.2
-     ],
-     "text": "0",
-     "fit": 0.42,
-     "pop": false
-    }
-   ],
+   "things": [],
    "say": "Every month. Same story."
   },
   {
@@ -407,7 +395,7 @@
   {
    "s": 4.0,
    "set": "bedroom",
-   "view": "cu",
+   "view": "ms",
    "mood": "night",
    "chars": [
     {
@@ -425,12 +413,12 @@
     {
      "name": "jar",
      "at": [
-      -0.55,
-      1.0,
+      -0.5,
+      0.85,
       -0.2
      ],
      "text": "0.0",
-     "fit": 0.42,
+     "fit": 0.55,
      "pop": false
     }
    ],
@@ -498,7 +486,7 @@
   {
    "s": 4.0,
    "set": "bedroom",
-   "view": "cu",
+   "view": "ms",
    "mood": "night",
    "day": "DAY 1",
    "hud": {
@@ -523,12 +511,12 @@
     {
      "name": "jar",
      "at": [
-      -0.55,
-      1.0,
+      -0.5,
+      0.85,
       -0.2
      ],
      "text": "0.03",
-     "fit": 0.42,
+     "fit": 0.55,
      "pop": false
     }
    ],
@@ -583,7 +571,7 @@
   {
    "s": 4.0,
    "set": "bedroom",
-   "view": "cu",
+   "view": "ms",
    "mood": "night",
    "day": "DAY 30",
    "hud": {
@@ -608,12 +596,12 @@
     {
      "name": "jar",
      "at": [
-      -0.55,
-      1.0,
+      -0.5,
+      0.85,
       -0.2
      ],
      "text": "0.15",
-     "fit": 0.42,
+     "fit": 0.55,
      "pop": false
     }
    ],
@@ -755,7 +743,7 @@
   {
    "s": 3.5,
    "set": "bedroom",
-   "view": "cu",
+   "view": "ms",
    "mood": "night",
    "day": "DAY 151",
    "chars": [
@@ -774,12 +762,12 @@
     {
      "name": "jar",
      "at": [
-      -0.55,
-      1.0,
+      -0.5,
+      0.85,
       -0.2
      ],
      "text": "0.5",
-     "fit": 0.42,
+     "fit": 0.55,
      "pop": false
     }
    ],
@@ -794,20 +782,46 @@
   {
    "s": 4.0,
    "set": "office",
-   "view": "act",
+   "view": "ms",
    "mood": "warm",
    "day": "DAY 200",
    "chars": [
     {
      "look": "hero",
-     "pose": "stand",
+     "at": [
+      0,
+      0,
+      0
+     ],
+     "pose": "point",
      "expr": "smile"
     }
    ],
-   "act": {
-    "kind": "stock_up"
-   },
-   "say": "So he put it to work."
+   "say": "So he put it to work.",
+   "things": [
+    {
+     "name": "chart",
+     "at": [
+      1.1,
+      0.6,
+      -0.4
+     ],
+     "text": "SAVINGS",
+     "fit": 0.9,
+     "pop": true
+    },
+    {
+     "name": "jar",
+     "at": [
+      -0.6,
+      0.85,
+      0.2
+     ],
+     "text": "0.6",
+     "fit": 0.45,
+     "pop": false
+    }
+   ]
   },
   {
    "s": 4.0,
