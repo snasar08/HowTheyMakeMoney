@@ -8,6 +8,10 @@
   },
   "voice": {
    "monster": true
+  },
+  "ghost": {
+   "monster": true,
+   "ghost": true
   }
  },
  "beats": [
@@ -63,7 +67,7 @@
      "look": "hero",
      "x": 640,
      "y": 500,
-     "pose": "phonesit",
+     "pose": "sofaphone",
      "expr": "tired"
     },
     {
@@ -97,7 +101,7 @@
      "look": "hero",
      "x": 560,
      "y": 510,
-     "pose": "desk",
+     "pose": "deskslump",
      "expr": "tired"
     },
     {
@@ -156,7 +160,7 @@
     {
      "look": "hero",
      "x": 640,
-     "pose": "hug",
+     "pose": "fetal",
      "expr": "sad"
     }
    ],
@@ -235,7 +239,7 @@
     {
      "look": "hero2",
      "x": 0,
-     "pose": "climb",
+     "pose": "stairs",
      "expr": "determined",
      "stairs": [
       0.2,
@@ -268,7 +272,7 @@
      "look": "hero2",
      "x": 430,
      "y": 566,
-     "pose": "stand",
+     "pose": "summit",
      "expr": "determined"
     }
    ],
@@ -281,8 +285,13 @@
     {
      "look": "hero2",
      "x": 520,
-     "pose": "stand",
+     "pose": "bedge",
      "expr": "smile"
+    },
+    {
+     "look": "ghost",
+     "x": 200,
+     "pose": "stand"
     }
    ]
   },
@@ -371,7 +380,7 @@
     {
      "look": "hero2",
      "x": 0,
-     "pose": "climb",
+     "pose": "stairs",
      "stairs": [
       0.3,
       0.4
@@ -391,7 +400,7 @@
      "look": "hero2",
      "x": 430,
      "y": 566,
-     "pose": "stand"
+     "pose": "summit"
     }
    ],
    "say": [
