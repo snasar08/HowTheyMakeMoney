@@ -64,6 +64,13 @@ const lerp = (a: number, b: number, u: number) => a + (b - a) * u;
 const easeBy = (k: string | undefined, u: number) => (k === "in" ? u ** 2.2 : k === "out" ? 1 - (1 - u) ** 2.2 : k === "io" ? ease(u) : u);
 /** visibility with linear fade in / out (frames) */
 const vis = (f: number, a: number, n: number, fin = 8, fout = 8) => (f < a || f >= a + n ? 0 : Math.min(clamp((f - a + 1) / fin), clamp((a + n - f) / fout)));
+/** day label; "DAY 1~47" counts up from 1 to 47 over ~1.5 s (reference curve: 11 at 0.3 s, 33 at 0.6 s, 43 at 0.9 s, 46 at 1.2 s) */
+const dayLabel = (t: string, sec: number) => {
+  const m = /^(.*?)(\d+)~(\d+)$/.exec(t); if (!m) return t;
+  const a = +m[2], b = +m[3], kp = [[0, 0], [0.3, 0.217], [0.6, 0.696], [0.9, 0.913], [1.2, 0.978], [1.6, 1]];
+  let u = 1; for (let i = 1; i < kp.length; i++) if (sec < kp[i][0]) { u = kp[i - 1][1] + (kp[i][1] - kp[i - 1][1]) * ((sec - kp[i - 1][0]) / (kp[i][0] - kp[i - 1][0])); break; }
+  return m[1] + Math.round(a + (b - a) * Math.max(0, u));
+};
 const rnd = (i: number) => { const x = Math.sin(i * 127.1 + 311.7) * 43758.5453; return x - Math.floor(x); };
 
 const useFontsReady = () => {
@@ -120,7 +127,7 @@ const camOf = (s: Shot2, f: number, chars: CharState) => {
     const from = cm?.from ?? def.c, push = cm?.push ?? (cm?.from ? 0 : def.push);
     cx = from[0]; cy = from[1]; z = from[2] * (1 + (push / 100) * tl);
     const hero = s.set === "stairs" && !cm?.from ? chars.find((q) => q.c.stairs && !q.c.look?.monster) : undefined;
-    if (hero) { z = 1.2; cx = hero.x + 140 / z; cy = hero.y - 70 / z; }
+    if (hero) { z = 1.0; cx = hero.x + 160 / z; cy = hero.y - 160 / z; }
   }
   for (const [at, amp] of s.shake ?? []) { const k = tl - at; if (k >= 0 && k < 0.5) { const d = amp * (1 - k / 0.5); cx += Math.sin(k * 90) * d; cy += Math.cos(k * 77) * d; } }
   return { cx, cy, z };
@@ -184,7 +191,7 @@ const Shatter: React.FC<{ text: string; k: number }> = ({ text, k }) => (
 
 const Line: React.FC<{ l: Line2; f: number; pos: [number, number] }> = ({ l, f, pos }) => {
   const size = l.size ?? (l.red ? 30 : l.white ? 84 : 38), slam = (!!l.red && size >= 60) || !!l.white, t = f - l.a;
-  const box: React.CSSProperties = { position: "absolute", left: pos[0], top: pos[1], width: "max-content", maxWidth: 1040, textAlign: "center", whiteSpace: "pre-wrap", fontFamily: HAND, fontWeight: l.white || l.bold ? 700 : 400, fontSize: size, lineHeight: 1.15 };
+  const box: React.CSSProperties = { position: "absolute", left: pos[0], top: pos[1], width: "max-content", maxWidth: 1040, textAlign: "center", whiteSpace: "pre-wrap", fontFamily: HAND, fontWeight: l.white || l.bold || (l.red && size >= 60) ? 700 : 400, fontSize: size, lineHeight: 1.15 };
   const sa = !l.shatter ? -1 : l.shatter === true ? Math.max(6, l.n - 16) : Math.round(l.shatter * 30);
   const ks = sa >= 0 ? clamp((t - sa) / 16) : 0;
   const body = (txt: string) => (sa >= 0 && ks > 0 ? <Shatter text={txt} k={ks} /> : txt);
@@ -303,11 +310,12 @@ export const Film2D: React.FC = () => {
       <AbsoluteFill style={{ background: `radial-gradient(ellipse at 50% 50%, rgba(0,0,0,0) 52%, rgba(0,0,0,${dark}) 100%)` }} />
       {s.grade === "sunset" && <AbsoluteFill style={{ opacity: gAmt, background: "radial-gradient(ellipse at 50% 88%, rgba(255,190,90,0.34) 0%, rgba(255,120,50,0.0) 55%), linear-gradient(to bottom, rgba(70,30,60,0.22) 0%, rgba(255,110,50,0.20) 62%, rgba(255,150,70,0.30) 100%)" }} />}
       {s.grade === "rain" && <><AbsoluteFill style={{ background: `rgba(40,70,120,${0.16 * gAmt})` }} /><Rain f={f} amt={gAmt} /></>}
+      {s.arg?.warm ? <AbsoluteFill style={{ background: `radial-gradient(ellipse at 18% 4%, rgba(205,115,40,${0.85 * s.arg.warm}) 0%, rgba(150,85,30,${0.34 * s.arg.warm}) 45%, rgba(0,0,0,0) 80%)` }} /> : null}
       {s.arg?.embers ? <Embers tl={tlS} n={s.arg.embers} speed={s.arg.emberSpeed ?? 1} /> : null}
       {burstK >= 0 && burstK < 26 && <Burst k={burstK} x={s.arg?.burstX ?? 640} y={s.arg?.burstY ?? 300} n={s.arg?.burstN ?? 28} />}
       {flash > 0 && <AbsoluteFill style={{ background: "#fff", opacity: flash }} />}
       {bloom > 0 && <AbsoluteFill style={{ background: "#E8B180", opacity: bloom }} />}
-      {day && <div style={{ position: "absolute", left: 100, top: 80, fontFamily: HAND, fontWeight: 700, fontSize: 27, letterSpacing: 2.7, color: "#b8b6b0", opacity: vis(f, day.a, day.n, 4, 4) }}>{day.t.toUpperCase()}</div>}
+      {day && <div style={{ position: "absolute", left: 100, top: 80, fontFamily: HAND, fontWeight: 700, fontSize: 27, letterSpacing: 2.7, color: "#b8b6b0", opacity: vis(f, day.a, day.n, 4, 4) }}>{dayLabel(day.t, (f - day.a) / 30).toUpperCase()}</div>}
       {hud && (() => {
         const v = Math.round(hud.from + (hud.to - hud.from) * ease(clamp((f - hud.a) / Math.max(1, hud.n - 20))));
         return <div style={{ position: "absolute", right: 100, top: 80, textAlign: "right", opacity: vis(f, hud.a, hud.n, 6, 6), fontFamily: HAND, fontWeight: 700 }}>

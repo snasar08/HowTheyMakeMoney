@@ -629,14 +629,24 @@ def render(film: dict) -> np.ndarray:
             if name == "slam":
                 ducks.append((t - o.get("dropout", 0.3), t))
             _place(sfxbuf, sig, t - (len(sig) / SR if anchor == "end" else 0.0), gn * g, pan)
+    for t in film.get("audio_onsets", []):       # optional extra transient grid (bright clicks) for matching a reference
+        _place(sfxbuf, s_tick(), t, 1.6)
     _duck(music, ducks)
     mix = music + sfxbuf
-    # fade to black: ~2.3 s fade ending 0.5 s before the end, then true silence
-    f1 = seconds - 0.5
-    f0 = max(f1 - 2.3, secs[-1]["t0"] + 0.35)
+    b = film.get("audio_bright", 0)              # optional harmonic exciter: saturate, keep only the highs, add back
+    if b:
+        for c in range(2):
+            mix[c] += (b * _filt(np.tanh(8 * mix[c]) / 8, 900, None)).astype(np.float32)
+    tr = film.get("audio_trim")                  # optional gain curve [[t, dB], ...]
+    if tr:
+        tt = np.arange(mix.shape[1]) / SR
+        mix *= (10 ** (np.interp(tt, [x[0] for x in tr], [x[1] for x in tr]) / 20)).astype(np.float32)[None, :]
+    # fade to black: steep fade ending 0.8 s before the end, then true silence
+    f1 = seconds - 0.4
+    f0 = max(f1 - 2.5, secs[-1]["t0"] + 0.35)
     if f1 > f0:
         i0, i1 = int(f0 * SR), int(f1 * SR)
-        mix[:, i0:i1] *= np.cos(np.linspace(0, np.pi / 2, i1 - i0)).astype(np.float32) ** 2
+        mix[:, i0:i1] *= np.cos(np.linspace(0, np.pi / 2, i1 - i0)).astype(np.float32) ** 3
         mix[:, i1:] = 0
     return mix
 
