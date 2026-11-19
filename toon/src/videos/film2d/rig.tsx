@@ -94,7 +94,11 @@ export const pose = (name: string, t: number, punchPeriod = 1.25): Pose => {
       const hit = ext;
       return { hipY: 68 + hit * 2, lean: 10 + hit * 8 - wind * 4, head: 4, lF: [30, -30 - hit * 8], lB: [-24, 8], aF: [38 + hit * 58 - wind * 10, 128 - hit * 128 + wind * 12], aB: [34, 122 + wind * 10] };
     }
-    case "pushup": case "crawl": {
+    case "crawl": {   // prone, almost flat, dragging himself forward on one forearm (ref 80-87 s)
+      const k = (tw(t, 1.1) + 1) / 2;
+      return { rot: 80 - k * 4, lift: 14, hipY: 74, lean: 0, head: 8, face: 14, aF: [118 - k * 22, 30], aB: [96, 10], lF: [4, 0], lB: [-4, 8 + k * 10] };
+    }
+    case "pushup": {
       const k = (tw(t, 1.1) + 1) / 2;
       return { rot: 64 - k * 6, hipY: 74, lean: -3, head: 6, face: 26, aF: [64 - k * 6, 0], aB: [60 - k * 6, 0], lF: [0, 0], lB: [0, 0] };
     }
