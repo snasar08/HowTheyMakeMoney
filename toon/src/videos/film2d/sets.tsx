@@ -31,9 +31,9 @@ export const SET_CAMS: Record<string, { c: [number, number, number]; push: numbe
   bedroomdawn: { c: [655, 445, 1.35], push: 0 },
   couch: { c: [620, 337, 1.1], push: 1.4 },
   desk: { c: [660, 337, 1.1], push: 1.0 },
-  street: { c: [640, 439, 1.4], push: 0.9 },
+  street: { c: [686, 429, 1.3], push: 0.5 },
   mirror: { c: [650, 421, 1.4], push: 1.0 },
-  gym: { c: [670, 443, 1.4], push: 0.5 },
+  gym: { c: [642, 435, 1.2], push: 0 },
   stairs: { c: [760, 330, 1.2], push: 0 },
   hill: { c: [640, 446, 0.7], push: -0.6 },
   fridge: { c: [700, 420, 1.3], push: 0.6 },
@@ -112,7 +112,8 @@ export const Alarm: React.FC<{ x: number; y: number; s?: number; text?: string; 
   return (
     <g transform={`translate(${x + sh} ${y}) scale(${s})`}>
       <rect x={-50} y={-26} width={100} height={44} rx={10} fill="#0f0f12" stroke={INK2} strokeWidth={2.4} />
-      <g transform="translate(0 -4)"><SevenSeg text={text} /></g>
+      <rect x={-17} y={-34} width={34} height={9} rx={4.5} fill="#2a2b32" stroke={INK2} strokeWidth={1.6} /><text x={0} y={-27} textAnchor="middle" fontFamily={HAND} fontWeight={700} fontSize={5.5} fill="#8a8d98">SNOOZE</text>
+      <g transform="translate(0 -4)" opacity={ring ? (Math.floor(ring / 0.15) % 2 ? 0.45 : 1) : 1}><SevenSeg text={text} /></g>
       {ring ? <g stroke="#ff4a3a" strokeWidth={3} strokeLinecap="round" opacity={0.6 + 0.4 * Math.sin(ring * 60)}>
         <path d="M -64 -28 l -12 -10 M -62 -14 l -16 -2 M -64 0 l -12 8 M 64 -28 l 12 -10 M 62 -14 l 16 -2 M 64 0 l 12 8" />
       </g> : null}
@@ -130,7 +131,7 @@ export const Phone: React.FC<{ x: number; y: number; s?: number; c?: string; tex
 
 const Bed: React.FC<{ x: number; occupied?: boolean }> = ({ x }) => (
   <g>
-    <rect x={x} y={FLOOR - 168} width={26} height={168} rx={11} fill={F2} {...L} />
+    <rect x={x} y={FLOOR - 104} width={22} height={104} rx={10} fill={F2} {...L} />
     <rect x={x + 24} y={FLOOR - 72} width={420} height={17} rx={6} fill={F3} {...L} />
     <rect x={x + 24} y={FLOOR - 55} width={420} height={9} rx={3} fill={F1} {...L} />
     <path d={`M ${x + 34} ${FLOOR - 46} L ${x + 34} ${FLOOR} M ${x + 434} ${FLOOR - 46} L ${x + 434} ${FLOOR}`} {...L} strokeWidth={4} />
@@ -223,7 +224,22 @@ const Mirror: React.FC<{ x: number; crack?: number; tint?: number; hue?: number 
   );
 };
 /** glossy red punching bag with a soft red glow and sketchy texture lines; hit = swing strength */
-const Bag: React.FC<{ x: number; t: number; hit?: number; speed?: number }> = ({ x, t, hit = 0, speed = 0 }) => {
+/** glow + radial spark star at every punch contact (arg.hit0 = first contact s, arg.hitP = period s); local = seconds since the contact */
+const HitFx: React.FC<{ x: number; y: number; k: number }> = ({ x, y, k }) => {
+  const a = Math.max(0, 1 - k / 0.5), r0 = 14 + k * 70;
+  return <g>
+    <Glow x={x} y={y} r={110 * (0.6 + k)} c="#f0d040" o={0.85 * a} />
+    <Glow x={x} y={y} r={55} c="#ffb35a" o={0.9 * a} />
+    <g stroke="#f7dc4a" strokeWidth={2.4} strokeLinecap="round" opacity={Math.max(0, 1 - k / 0.4)}>
+      {Array.from({ length: 11 }, (_, i) => { const an = (i / 11) * Math.PI * 2 + 0.25, r1 = r0 + 14 + (i % 3) * 8, r2 = r1 + 22 + (i % 2) * 12; return <path key={i} d={`M ${x + Math.cos(an) * r1} ${y + Math.sin(an) * r1} L ${x + Math.cos(an) * r2} ${y + Math.sin(an) * r2}`} />; })}
+    </g>
+  </g>;
+};
+const Bag: React.FC<{ x: number; t: number; hit?: number; speed?: number; hit0?: number; hitP?: number; fx?: number; fy?: number; sp0?: number; spP?: number; spLen?: number }> = ({ x, t, hit = 0, speed = 0, hit0, hitP = 1.25, fx = x - 56, fy = FLOOR - 136, sp0, spP = 2.5, spLen = 0.8 }) => {
+  const kh = hit0 !== undefined && t >= hit0 - 0.02 ? (t - hit0 + 0.02) % hitP - 0.02 : -1;
+  const ks = sp0 !== undefined && t >= sp0 ? (t - sp0) % spP : -1;
+  const sv = ks >= 0 && ks < spLen ? Math.min(1, ks / 0.06) * (1 - ks / spLen) ** 0.8 : 0;
+  speed = Math.max(speed, sv);
   const sw = Math.sin(t * 6) * hit * 5;
   const top = FLOOR - 282, bot = FLOOR - 40;
   return (
@@ -237,16 +253,18 @@ const Bag: React.FC<{ x: number; t: number; hit?: number; speed?: number }> = ({
         <path d={Array.from({ length: 16 }, (_, i) => { const yy = top + 34 + rnd(i) * (bot - top - 70), xx = x - 34 + rnd(i * 5) * 52; return `M ${xx} ${yy} l ${14 + rnd(i * 9) * 14} ${-3 - rnd(i * 4) * 6}`; }).join(" ")} stroke="#a3150f" strokeWidth={2} strokeLinecap="round" fill="none" opacity={0.75} />
         <path d={`M ${x - 52} ${bot - 50} q 52 22 104 0`} stroke="#7a120e" strokeWidth={2} fill="none" opacity={0.6} />
       </g>
-      {speed > 0 && <Speed x={x - 150} y={FLOOR - 190} v={speed} />}
+      {sv > 0 && <Glow x={fx - 40} y={FLOOR - 150} r={330} c="#f0d040" o={0.32 * sv} />}
+      {speed > 0 && <Speed x={fx - 70} y={FLOOR - 195} v={speed} />}
+      {kh >= 0 && kh < 0.5 && <HitFx x={fx} y={fy} k={kh} />}
     </g>
   );
 };
 /** yellow speed lines streaming left from (x,y) */
 export const Speed: React.FC<{ x: number; y: number; v?: number; s?: number }> = ({ x, y, v = 1, s = 1 }) => (
-  <g opacity={Math.min(1, v)} transform={`translate(${x} ${y}) scale(${s})`} stroke="#f2d23c" strokeLinecap="round" fill="none">
+  <g opacity={Math.min(1, v)} transform={`translate(${x} ${y}) scale(${s})`} stroke="#e6c63a" strokeLinecap="round" fill="none">
     {Array.from({ length: 12 }, (_, i) => {
-      const yy = (i - 8) * 16 + rnd(i) * 8, len = 140 + rnd(i * 3) * 220, sl = -0.1 - rnd(i * 5) * 0.12;
-      return <path key={i} d={`M ${-20 - rnd(i * 7) * 30} ${yy} l ${-len} ${len * sl}`} strokeWidth={2 + rnd(i * 2) * 2.4} />;
+      const yy = (i - 5.5) * 5 + rnd(i) * 6, len = 150 + rnd(i * 3) * 230, sl = -((i - 5.5) / 5.5) * 0.3 + (rnd(i * 5) - 0.5) * 0.06;
+      return <path key={i} d={`M ${-14 - rnd(i * 7) * 30} ${yy} l ${-len} ${len * sl}`} strokeWidth={1.3 + rnd(i * 2) * 1.6} opacity={0.8} />;
     })}
   </g>
 );
@@ -258,36 +276,36 @@ const Spark: React.FC<{ x: number; y: number; s?: number; v?: number }> = ({ x, 
   </g>
 );
 
-/** night city, 3 parallax layers (off = px the street has moved) */
+/** night city (reference look: soft rounded translucent blocks, a few dim lit windows, 3 parallax layers; off = px the street has moved) */
 const City: React.FC<{ off: number }> = ({ off }) => {
-  const layer = (k: number, seed: number, hmin: number, hmax: number, wmin: number, wmax: number, fill: string, stroke: string, lit: number, key: string) => {
+  const layer = (k: number, seed: number, hmin: number, hmax: number, wmin: number, wmax: number, fill: string, op: number, lit: number, key: string) => {
     const els: React.ReactNode[] = []; let x = -1100 - wmax;
     for (let i = 0; x < 3000; i++) {
       const w = wmin + rnd(seed + i) * (wmax - wmin), h = hmin + rnd(seed + i * 3) * (hmax - hmin);
       els.push(<g key={i}>
-        <rect x={x} y={FLOOR - h} width={w} height={h} fill={fill} stroke={stroke} strokeWidth={1.6} />
-        {Array.from({ length: Math.floor((h - 30) / 36) * 2 }, (_, j) => {
+        <rect x={x} y={FLOOR - h} width={w} height={h + 14} rx={16} fill={fill} fillOpacity={op} stroke="#2a2b34" strokeOpacity={op * 0.9} strokeWidth={1.4} />
+        {Array.from({ length: Math.floor((h - 30) / 44) * 2 }, (_, j) => {
           const on = rnd(seed + i * 17 + j * 5) < lit;
-          return on ? <rect key={j} x={x + 12 + (j % 2) * (w / 2 - 6)} y={FLOOR - h + 24 + Math.floor(j / 2) * 36} width={11} height={14} fill="#e9c27a" opacity={0.55 + rnd(j + i) * 0.35} /> : null;
+          return on ? <rect key={j} x={x + 14 + (j % 2) * (w / 2 - 4)} y={FLOOR - h + 30 + Math.floor(j / 2) * 44} width={9} height={9} fill="#8a6f48" opacity={0.5 + rnd(j + i) * 0.3} /> : null;
         })}
       </g>);
-      x += w + 14 + rnd(seed + i * 9) * 60;
+      x += w + 8 + rnd(seed + i * 9) * 44;
     }
     return <g key={key} transform={`translate(${-off * k} 0)`}>{els}</g>;
   };
   return <g>
-    {layer(0.12, 1, 90, 200, 60, 110, "#0c0f16", "#121827", 0.04, "far")}
-    {layer(0.3, 500, 110, 250, 70, 120, "#0f121c", "#182030", 0.13, "mid")}
-    {layer(0.55, 900, 60, 140, 80, 140, "#10141f", "#1b2338", 0.1, "near")}
+    {layer(0.12, 1, 120, 230, 70, 120, "#20212a", 0.55, 0.12, "far")}
+    {layer(0.3, 500, 100, 210, 80, 130, "#262731", 0.7, 0.14, "mid")}
+    {layer(0.55, 900, 60, 120, 90, 150, "#2c2d38", 0.8, 0.1, "near")}
   </g>;
 };
 const StreetLamps: React.FC<{ off: number; t: number }> = ({ off }) => (
-  <g transform={`translate(${-wrap(off, 460)} 0)`}>
-    {[-460, 0, 460, 920, 1380, 1840].map((x) => <g key={x}>
-      <Glow x={x + 22} y={FLOOR - 176} r={105} c="#ffb35a" o={0.5} />
-      <ellipse cx={x + 10} cy={FLOOR + 36} rx={140} ry={13} fill="#ffb35a" opacity={0.15} filter="url(#soft6)" />
-      <path d={`M ${x} ${FLOOR} L ${x} ${FLOOR - 168} q 0 -16 22 -16`} {...L} strokeWidth={3} fill="none" />
-      <circle cx={x + 22} cy={FLOOR - 170} r={6.5} fill="#ffd9a0" />
+  <g transform={`translate(${-wrap(off, 600)} 0)`}>
+    {Array.from({ length: 9 }, (_, i) => i * 300 - 600).map((x) => <g key={x}>
+      <Glow x={x + 22} y={FLOOR - 176} r={80} c="#ffb35a" o={0.75} />
+      <ellipse cx={x + 10} cy={FLOOR + 30} rx={110} ry={34} fill="#ffb35a" opacity={0.2} filter="url(#soft8)" />
+      <path d={`M ${x} ${FLOOR} L ${x} ${FLOOR - 176} q 0 -14 20 -14`} {...L} strokeWidth={3} stroke="#7a7d8a" fill="none" />
+      <circle cx={x + 22} cy={FLOOR - 172} r={5.5} fill="#ffe2ae" />
     </g>)}
   </g>
 );
@@ -478,7 +496,7 @@ export const SetView: React.FC<{ name: string; t: number; scroll?: number; arg?:
     case "mirror": return <g><Floor /><Mirror x={760} crack={arg.crack ?? 0} tint={arg.tint ?? 0} hue={arg.tintHue ?? 210} /></g>;
     case "fridge": return <g><Floor /><Fridge x={arg.x ?? 760} open={arg.open ?? 0} t={t} /></g>;
     case "calendar": return <g>{!arg.paper && <Floor />}<Calendar paper={arg.paper ?? 0} t={t} start={arg.start ?? 2} cross={arg.cross ?? 0} crossDt={arg.crossDt ?? 0} crossT0={arg.crossT0 ?? 0} today={arg.today ?? 0} days={arg.days ?? 31} /></g>;
-    case "gym": return <g><Floor /><Bag x={arg.x ?? 780} t={t} hit={arg.hit ?? 1} speed={arg.speed ?? 0} /></g>;
+    case "gym": return <g><Bag x={arg.x ?? 770} t={t} hit={arg.hit ?? 1} speed={arg.speed ?? 0} hit0={arg.hit0} hitP={arg.hitP} fx={arg.fx} fy={arg.fy} sp0={arg.sp0} spP={arg.spP} spLen={arg.spLen} /></g>;
     case "stairs": return <g><Stairs /></g>;
     case "hill": return <g><Hills glow={arg.glow ?? 1} hx={arg.hx ?? 430} t={t} /></g>;
     case "court": return <g><Glow x={900} y={160} r={600} c="#ffffff" o={0.07} /><Floor /><CourtMarks /><Hoop x={1060} /></g>;

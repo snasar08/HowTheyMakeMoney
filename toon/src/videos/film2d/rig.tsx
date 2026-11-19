@@ -31,6 +31,7 @@ export type Pose = {
   lift?: number;      // raise the whole body (lying on the floor: half the body thickness)
   hand?: boolean;     // villain's giant arm reaching in from the top-right corner (x,y = where the fist ends up when reach = 1)
   reach?: number;     // 0..1 how far the giant arm has come in
+  slap?: { x: number; y: number; fist: boolean; glow: number };   // hand coming in from the bottom-right (alarm slap): fist tip offset from the anchor, closed fist, glow 0..1
   face?: number;      // extra tilt of the face (deg), e.g. push-ups: the face follows the body a bit
 };
 
@@ -134,6 +135,12 @@ export const pose = (name: string, t: number, punchPeriod = 1.25): Pose => {
       return { hipY: 62, lean: 20, head: 10, aF: [150 + tw(ti, 1.3) * 12, 40], aB: [20, 30], lF: [6, 0], lB: [-6, 0] };
     case "lurk":      // monster standing behind him, hand on the chair
       return { hipY: 74, lean: 12, head: 8, aF: [70, 10], aB: [-6, 20], lF: [6, 0], lB: [-6, 0] };
+    case "slap": {   // alarm slap (ref 63-66 s): the open hand sweeps in from the right to hover over the clock (0.6 s), bobs, closes into a glowing fist at ~2.05 s, leaves by 2.9 s
+      const e = (u: number) => 1 - (1 - cl(u)) ** 2, hov = t >= 0.6 && t < 2.0 ? 9 * S((t - 0.6) * 11) : 0;
+      let x = 485 * (1 - e(t / 0.6)), y = 180 * (1 - e(t / 0.6)) + hov;
+      if (t >= 2.3) { const u = cl((t - 2.3) / 0.55); x = 535 * u * u; y = 190 * u * u; }
+      return { hand: true, reach: 1, slap: { x, y, fist: t >= 2.0, glow: t >= 2.0 && t < 2.35 ? 1 - (t - 2.0) / 0.35 : 0 } };
+    }
     case "hand": {    // giant arm reaching in from the top-right corner (x,y = fist at full reach)
       const r = 0.55 + 0.45 * sm((tw(t, 3.4) + 1) / 2);
       return { hand: true, reach: r };
@@ -272,19 +279,21 @@ export const Guy: React.FC<{ p: Pose; e: Expr; dir?: number; t: number; look?: L
   const wrap = (kids: React.ReactNode, plain = false) => <g transform={`translate(${x} ${y - (p.lift ?? 0) * scale}) scale(${sc}) rotate(${(p.rot ?? 0) * dir})`} filter={plain ? undefined : filt} opacity={(1 - dim) * (ghost ? 0.75 : 1)}>{mon && !ghost && !plain ? <MonDefs /> : null}{kids}</g>;
 
   if (p.hand) {   // the giant arm: from off the top-right corner down to the fist at (0,0) when reach = 1
-    const r = p.reach ?? 1, off = { x: 560 * dir, y: -700 };
-    const tip = { x: (1 - r) * 120 * dir, y: -(1 - r) * 260 };
-    const el = { x: (off.x + tip.x) / 2 - 90 * dir, y: (off.y + tip.y) / 2 + 40 };
+    const r = p.reach ?? 1, sl = p.slap, off = sl ? { x: (sl.x + 800) * dir, y: sl.y + 500 } : { x: 560 * dir, y: -700 };
+    const tip = sl ? { x: sl.x * dir, y: sl.y } : { x: (1 - r) * 120 * dir, y: -(1 - r) * 260 };
+    const el = sl ? { x: (off.x + tip.x) / 2, y: (off.y + tip.y) / 2 } : { x: (off.x + tip.x) / 2 - 90 * dir, y: (off.y + tip.y) / 2 + 40 };
     const arm = `M ${off.x} ${off.y} Q ${el.x} ${el.y} ${tip.x} ${tip.y}`;
     // cream arm + fist with an ink outline (look.blackHand keeps the old black glowing villain arm)
-    const black = mon && !!look.blackHand, hs = black ? skin : look.skin ?? SKIN, hl = black ? line : INK, ow = black ? 0 : 3.4, fing = [-34, -12, 12, 34].map((o, i) => ({ cx: tip.x - 4 * dir + o * dir * 0.3, cy: tip.y + 40 + (i % 2) * 6 }));
+    const black = mon && !!look.blackHand, hs = black ? skin : look.skin ?? SKIN, hl = black ? line : INK, ow = black ? 0 : 3.4, fing = (sl?.fist ? [] : [-34, -12, 12, 34]).map((o, i) => ({ cx: tip.x - 4 * dir + o * dir * 0.3, cy: tip.y + 40 + (i % 2) * 6 }));
     return wrap(<g>
+      {sl && sl.glow > 0 && <circle cx={tip.x} cy={tip.y} r={150} fill="url(#g-ffd27a)" opacity={sl.glow} />}
       <path d={arm} stroke={hl} strokeWidth={86 + ow * 2} strokeLinecap="round" fill="none" />
       <ellipse cx={tip.x} cy={tip.y} rx={58 + ow} ry={50 + ow} fill={hl} />
       {fing.map((q, i) => <ellipse key={"o" + i} cx={q.cx} cy={q.cy} rx={13 + ow} ry={22 + ow} fill={hl} />)}
       <path d={arm} stroke={hs} strokeWidth={86} strokeLinecap="round" fill="none" />
       <ellipse cx={tip.x} cy={tip.y} rx={58} ry={50} fill={hs} />
       {fing.map((q, i) => <ellipse key={"f" + i} cx={q.cx} cy={q.cy} rx={13} ry={22} fill={hs} stroke={ow ? hl : undefined} strokeWidth={ow ? 2.2 : 0} />)}
+      {sl?.fist && <path d={`M ${tip.x - 34 * dir} ${tip.y - 12} l ${30 * dir} 4 M ${tip.x - 34 * dir} ${tip.y + 6} l ${30 * dir} 4 M ${tip.x - 30 * dir} ${tip.y + 24} l ${26 * dir} 3`} stroke={hl} strokeWidth={3} fill="none" strokeLinecap="round" />}
       {ow > 0 && <path d={`M ${tip.x - 40 * dir} ${tip.y + 34} q ${34 * dir} 10 ${80 * dir} 0`} stroke={hl} strokeWidth={2} fill="none" opacity={0.5} />}
     </g>, !black);
   }
