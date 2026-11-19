@@ -1,6 +1,6 @@
 {
  "id": "101-the-quiet-jar",
- "status": "draft",
+ "status": "ready",
  "title": "The Quiet Jar: He Never Spent Big. He Just Never Noticed.",
  "description": "A man loses his coins one small treat at a time, then starts again with a single coin in an empty jar. A quiet short film about small savings, setbacks and starting over. Animated short film.",
  "tags": [
@@ -267,8 +267,8 @@
      "red": true,
      "size": 40,
      "at": [
-      610,
-      215
+      420,
+      150
      ]
     }
    ],
@@ -335,7 +335,11 @@
      "delay": 1.4,
      "until": 4.2,
      "red": true,
-     "size": 40
+     "size": 40,
+     "at": [
+      300,
+      190
+     ]
     }
    ],
    "sfx": []
@@ -685,7 +689,7 @@
    },
    "cam": {
     "from": [
-     530,
+     520,
      450,
      1.6
     ]
@@ -2042,8 +2046,8 @@
     ],
     "to": [
      440,
-     480,
-     1.5
+     485,
+     1.35
     ],
     "ease": "io"
    },
@@ -2066,7 +2070,7 @@
     {
      "t": "Small, then more.",
      "delay": 1.0,
-     "until": 5.2,
+     "until": 4.0,
      "bold": true,
      "size": 44
     }

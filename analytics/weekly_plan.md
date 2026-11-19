@@ -6,13 +6,13 @@ Made by `python -m pipeline.weekly_mix` from analytics/stats.json + retention.js
 
 | lane | Shorts | median views 48 h | median watched | |
 |---|---|---|---|---|
-| famous-athlete | 12 | 1030.5 | 69% | FOCUS |
-| famous-other | 4 | 106.5 | 51% |  |
+| famous-athlete | 13 | 1042 | 69% | FOCUS |
+| famous-other | 6 | 607.5 | 61% |  |
 | story-plan | 0 | – | – | EXPERIMENT |
 | story-history | 0 | – | – |  |
-| whatif | 5 | 20 | 70% |  |
-| how | 28 | 44.0 | 54% | paused |
-| careers | 16 | 28.5 | 59% | paused |
+| whatif | 5 | 20 | 73% |  |
+| how | 26 | 63.5 | 53% | paused |
+| careers | 16 | 28.5 | 58% | paused |
 
 ## Going viral (top 5, last 21 days)
 
@@ -25,12 +25,12 @@ Made by `python -m pipeline.weekly_mix` from analytics/stats.json + retention.js
 ## Not working (bottom 5)
 
 - 0 views, how: Is Starbucks Secretly a Bank? — "Is Starbucks holding your money right now? It might be."
-- 0 views, how: How Is Costco's Hot Dog Still $1.50? — "Costco sold almost 300 billion dollars of stuff last year. So why does it barely make mone"
-- 0 views, how: How Many Switch 2s Has Nintendo Sold? — "How did Nintendo nearly double its sales in nine months? One console."
 - 1 views, careers: How Do NBA Players Actually Get Paid? — "How do NBA players really get paid? It's not a fixed amount."
 - 1 views, how: Where Does Your Spotify Money Really Go? — "You pay Spotify every month. So why does Spotify keep so little of it?"
+- 1 views, famous-other: Could You Spend the Richest Person's Fortune? — "Could you spend the richest person's fortune if you blew a million dollars every single da"
+- 2 views, how: Visa Kept $20 Billion Without Lending a Dime — "How does Visa make billions without ever lending you a dollar?"
 
-Look: old 65 Shorts (median 55), 3D 0 Shorts (median None) — too few 3D Shorts yet to compare.
+Look: old 66 Shorts (median 97.5), 3D 0 Shorts (median None) — too few 3D Shorts yet to compare.
 
 ## Plan for each Saturday part (10 scripts)
 

@@ -1,4 +1,4 @@
-"""Long-form films (Nov 19, Sam: "replicate [Day One Films] for us in a finance way", one a day from Sunday).
+"""Long-form silent films (Nov 19).
 
 A film is content/films/NNN-slug.json: a cast of looks + a list of beats (one shot each, a few seconds). No voice:
 on-screen sentences carry the story (white = narration, red = the inner voice), plus title cards and a day counter.

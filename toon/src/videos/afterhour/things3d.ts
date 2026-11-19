@@ -4,7 +4,7 @@ import { toonMat, metalMat, glowMat, canvasTex, seeded } from "./common";
 import { hasModel, makeModelGroup, MODEL_SIZE } from "./models";
 import { drawCard } from "./cards";
 
-export type ThingName = "shoe" | "springshoe" | "chip" | "gpu" | "cash" | "cashstack" | "coins" | "goldbar" | "trophy" | "medal" | "crown" | "ring" | "car" | "sportscar" | "bus" | "truck" | "rocket" | "phone" | "laptop" | "tv" | "monitor" | "clock" | "books" | "letter" | "newspaper" | "briefcase" | "shovel" | "pickaxe" | "box" | "crate" | "basketball" | "football" | "soccerball" | "hoop" | "mic" | "headset" | "controller" | "burger" | "pizza" | "coffee" | "plant" | "robot" | "drone" | "satellite" | "globe" | "house" | "factory" | "stadium" | "plane" | "yacht" | "chart" | "arrowup" | "arrowdown" | "lightbulb" | "lock" | "key" | "heart" | "bomb" | "fire" | "camera" | "chatbot" | "glasses" | "dumbbell" | "hanger" | "dome" | "alarm" | "jar";
+export type ThingName = "shoe" | "springshoe" | "chip" | "gpu" | "cash" | "cashstack" | "coins" | "goldbar" | "trophy" | "medal" | "crown" | "ring" | "car" | "sportscar" | "bus" | "truck" | "rocket" | "phone" | "laptop" | "tv" | "monitor" | "clock" | "books" | "letter" | "newspaper" | "briefcase" | "shovel" | "pickaxe" | "box" | "crate" | "basketball" | "football" | "soccerball" | "hoop" | "mic" | "headset" | "controller" | "burger" | "pizza" | "coffee" | "plant" | "robot" | "drone" | "satellite" | "globe" | "house" | "factory" | "stadium" | "plane" | "yacht" | "chart" | "arrowup" | "arrowdown" | "lightbulb" | "lock" | "key" | "heart" | "bomb" | "fire" | "camera" | "chatbot" | "glasses" | "dumbbell" | "hanger" | "dome";
 export type Thing = { root: THREE.Group; size: number; tick?(t: number): void };
 
 type M = string | THREE.Material;
@@ -321,27 +321,6 @@ const B: Record<ThingName, Builder> = {
     const g = new THREE.Group(); const fr = c ?? "#22222a";
     bx(g, 0.6, 0.36, 0.035, fr, 0, 0.3, 0); plane(g, 0.57, 0.33, screenMat(textTex(text ?? "", 512, 296, "#0f1b3a", "#35e08a", true, (x) => { x.strokeStyle = "#35e08a"; x.lineWidth = 6; x.beginPath(); x.moveTo(20, 270); x.lineTo(120, 200); x.lineTo(200, 230); x.lineTo(330, 120); x.lineTo(490, 40); x.stroke(); }), 1.3), 0, 0.3, 0.0185);
     cy(g, 0.03, 0.04, 0.12, "#33333c", 0, 0.1, -0.03); cy(g, 0.12, 0.12, 0.012, "#33333c", 0, 0.006, -0.02);
-    return { g };
-  },
-  jar: (c, text) => {   // Nov 19 films: glass savings jar; text = how full, 0..1 (default 0.15): stacked gold coins inside, a paper label "SAVE"
-    const g = new THREE.Group(), fill = Math.max(0, Math.min(1, Number(text ?? "0.15") || 0)), H = 0.26, R = 0.09;
-    const glass = new THREE.MeshStandardMaterial({ color: "#cfefff", transparent: true, opacity: 0.28, roughness: 0.05, metalness: 0.1, depthWrite: false });
-    const body = new THREE.Mesh(new THREE.CylinderGeometry(R, R, H, 32, 1, true), glass); body.position.y = H / 2; g.add(body);
-    cy(g, R * 0.98, R * 0.98, 0.01, "#bfe3f2", 0, 0.005, 0, undefined, 32);
-    cy(g, R * 0.82, R * 0.82, 0.04, c ?? "#c9a227", 0, H + 0.02, 0, undefined, 28);
-    const lvl = Math.max(0.012, fill * (H - 0.02));
-    if (fill > 0) cy(g, R * 0.93, R * 0.93, lvl, metalMat("#ffc928", 0.3), 0, 0.01 + lvl / 2, 0, undefined, 28);
-    const r = seeded(9);
-    for (let i = 0; i < Math.round(fill * 14); i++) cy(g, 0.022, 0.022, 0.006, metalMat("#ffd84a", 0.25), (r() - 0.5) * 0.1, 0.012 + lvl + 0.003, (r() - 0.5) * 0.1, [(r() - 0.5) * 0.6, 0, (r() - 0.5) * 0.6], 14);
-    const lab = new THREE.Mesh(new THREE.CylinderGeometry(R + 0.002, R + 0.002, 0.07, 32, 1, true, -0.9, 1.8), flat(canvasTex(256, 96, (x) => { x.fillStyle = "#f4ead2"; x.fillRect(0, 0, 256, 96); x.fillStyle = "#1b1b24"; x.font = "900 60px Arial Black, Arial"; x.textAlign = "center"; x.textBaseline = "middle"; x.fillText("SAVE", 128, 52); })));
-    lab.position.y = H * 0.6; g.add(lab);
-    return { g };
-  },
-  alarm: (c, text) => {   // Nov 19 films: bedside digital alarm clock, red glowing digits (text = the time, default 6:00)
-    const g = new THREE.Group();
-    rbx(g, 0.26, 0.12, 0.1, 0.02, c ?? "#17171d", 0, 0.06, 0);
-    const tex = canvasTex(256, 112, (x) => { x.fillStyle = "#0a0204"; x.fillRect(0, 0, 256, 112); x.font = "900 92px Arial Black, Arial"; x.textAlign = "center"; x.textBaseline = "middle"; x.shadowColor = "#ff2020"; x.shadowBlur = 18; x.fillStyle = "#ff3a30"; x.fillText(text ?? "6:00", 128, 60); });
-    plane(g, 0.22, 0.09, screenMat(tex, 2.2), 0, 0.062, 0.0505);
     return { g };
   },
   clock: (c) => {

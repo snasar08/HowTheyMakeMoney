@@ -8,11 +8,11 @@ import { renderFrames, selectComposition } from "@remotion/renderer";
 const [id0, propsFile, outDir, shardS, shardsS, scale = "0.5"] = process.argv.slice(2);
 const shard = Number(shardS), shards = Number(shardsS);
 const inputProps = JSON.parse(fs.readFileSync(propsFile, "utf8"));
-const id = inputProps.ah?.film ? "AhFilm" : inputProps.ah ? "AhShort" : id0;   // Nov 16: the afterhour look, chosen by the plan; Nov 19: films (16:9)
+const id = inputProps.ah ? "AhShort" : id0;   // Nov 16: the afterhour look, chosen by the plan
 const chromiumOptions = { gl: process.env.GL || "swangle" };
 const serveUrl = await bundle({ entryPoint: path.resolve("src/index.ts"), publicDir: path.resolve("public") });
 const composition = await selectComposition({ serveUrl, id, inputProps, chromiumOptions, timeoutInMilliseconds: 300000 });
-// Nov 19 films: props.split = frame boundaries weighted by render cost (pipeline/film.py split), used when it matches the shard count
+// films: props.split = frame boundaries weighted by render cost (pipeline/film2d.py split), used when it matches the shard count
 const sp = Array.isArray(inputProps.split) && inputProps.split.length === shards + 1 ? inputProps.split : null;
 const total = composition.durationInFrames, start = sp ? sp[shard] : Math.floor((total * shard) / shards), end = sp ? Math.min(total, sp[shard + 1]) : Math.floor((total * (shard + 1)) / shards);
 const dir = path.join(outDir, String(shard));

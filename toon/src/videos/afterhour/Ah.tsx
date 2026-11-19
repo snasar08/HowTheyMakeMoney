@@ -2,7 +2,7 @@
 // Post: lens blur (thin-lens DOF, from htmm) -> bloom (emissive) -> neutral tone mapping -> vignette.
 import React, { useEffect, useMemo, useState } from "react";
 import * as THREE from "three";
-import { AbsoluteFill, continueRender, delayRender, getInputProps, useCurrentFrame, useVideoConfig } from "remotion";
+import { AbsoluteFill, continueRender, delayRender, getInputProps, useCurrentFrame } from "remotion";
 import { ThreeCanvas } from "@remotion/three";
 import { useThree, useFrame } from "@react-three/fiber";
 import { BlendFunction, BloomEffect, ToneMappingEffect, ToneMappingMode, VignetteEffect, EffectComposer as CoreComposer, RenderPass, EffectPass } from "postprocessing";
@@ -16,13 +16,12 @@ import { ACTS } from "./acts";
 import type { ActRun, ActPose } from "./acts/types";
 
 type V3 = [number, number, number];
-export type AhChar = { look: Look; at?: string | V3; rot?: number; scale?: number; /** films: lying on his side in bed (head towards -x), facing the camera */ lie?: boolean; pose?: Pose; expr?: Expr; exprAt?: [number, Expr][] };
+export type AhChar = { look: Look; at?: string | V3; rot?: number; scale?: number; pose?: Pose; expr?: Expr; exprAt?: [number, Expr][] };
 export type AhCard = CardSpec & { at?: string | V3; w?: number; rot?: number };
 export type AhThing = { name: string; at?: string | V3; scale?: number; rot?: number; color?: string; text?: string; pop?: boolean };
 export type AhShot = { a: number; n: number; set: SetName; view?: string; subject?: number; cam?: { from: V3; to: V3; look: V3 }; chars: AhChar[]; cards?: AhCard[]; things?: AhThing[]; coins?: boolean;
-  /** a scripted action around the subject (acts/*.ts): the ball, hoop, opponent... really happen; `at` places the hero */ act?: { kind: string; at?: V3 };
-  /** films only (Nov 19): colour grade of the shot ("night", "cold", "dark", "red", "warm", "sunrise", "day") and a fade from black over the first `fade` frames */ mood?: string; fade?: number };
-export type AhProps = { test?: string; shots?: AhShot[]; film?: unknown };
+  /** a scripted action around the subject (acts/*.ts): the ball, hoop, opponent... really happen; `at` places the hero */ act?: { kind: string; at?: V3 } };
+type AhProps = { test?: string; shots?: AhShot[] };
 
 const JEN: Look = { body: "#1b1b22", legs: "#141418", hat: "crown", glasses: "shades" };
 const DEMO: AhShot[] = [   // the reference's first 5 shots (0-6.3 s)
@@ -32,7 +31,7 @@ const DEMO: AhShot[] = [   // the reference's first 5 shots (0-6.3 s)
   { a: 98, n: 31, set: "throne", view: "face", chars: [{ look: JEN, at: "seat", pose: "sit", expr: "smug", exprAt: [[0.5, "wink"], [0.7, "smug"]] }] },
   { a: 129, n: 60, set: "throne", view: "ms", chars: [{ look: JEN, at: "seat", pose: "cheer", expr: "laugh" }], coins: true },
 ];
-export const PROPS = (): AhProps => ((getInputProps() as { ah?: AhProps }).ah ?? {});
+const PROPS = (): AhProps => ((getInputProps() as { ah?: AhProps }).ah ?? {});
 
 const LOOKS: Look[] = [JEN, { body: "#2f6fd8", hat: "hardhat", hatColor: "#f2c230", hatText: "GOOGLE" }, { body: "#e2453c", hat: "hair", hair: "#2a1d16" },
   { body: "#1f2b55", hat: "cap", hatColor: "#1f2b55", text: "FBI" }, { body: "#b59a6a", hat: "fedora", hatColor: "#2b2522" }];
@@ -63,9 +62,7 @@ const shotsFor = (p: AhProps): AhShot[] => {
   if (p.test === "sets") return SETS.map((s, k) => ({ a: k * 30, n: 30, set: s, cam: { from: [0, 1.6, 7], to: [0, 1.6, 6.6], look: [0, 1.2, 0] }, chars: [{ look: JEN, at: [0, 0, 0], pose: "stand", expr: "smile" }] }));
   return p.shots ?? DEMO;
 };
-export const SHOTS_ = shotsFor(PROPS());
-/** Nov 19: films render 16:9 (AhFilm, 1280x720); Shorts stay 9:16 */
-const ASP = PROPS().film ? 16 / 9 : 1080 / 1920;
+const SHOTS_ = shotsFor(PROPS());
 /** every library model the shot list needs: loaded up front so rendering stays deterministic */
 const MODEL_NAMES = [...new Set(SHOTS_.flatMap((s) => [...(s.things ?? []).map((t) => t.name), ...((s.act ? ACTS[s.act.kind]?.models : undefined) ?? [])]).filter((n) => !isCodeThing(n) && hasModel(n)))];
 export const AH_FRAMES = Math.max(1, ...SHOTS_.map((s) => s.a + s.n));
@@ -169,7 +166,7 @@ const fitInFrame = (s: AhShot, viewName: string | undefined, headY: number, root
   const sp: V3 = s.chars[s.subject ?? 0] ? [root.x, root.y, root.z] : [0, 0, 0];
   const drop = (sitting ? Math.max(0, root.y) : root.y) + (sitting ? 0 : headY - 1.55);
   const off = (p: V3): V3 => (s.cam ? p : [p[0] + sp[0], p[1] + drop, p[2] + sp[2]]);
-  const fov = s.view === "face" ? 38 : 40, tf = Math.tan((fov * Math.PI) / 360), asp = ASP;
+  const fov = s.view === "face" ? 38 : 40, tf = Math.tan((fov * Math.PI) / 360), asp = 1080 / 1920;
   const cams = [0, 0.75, 1].map((t) => {
     const c = new THREE.PerspectiveCamera(fov, asp, 0.1, 400);
     c.position.set(...off(lerp(V.from, V.to, t))); c.lookAt(...off(V.look)); c.updateMatrixWorld(true); c.updateProjectionMatrix(); return c;
@@ -207,7 +204,6 @@ const build = (k: number, s: AhShot): Built => {
     const ch = makeChar(c.look), p = spotOf(set, c.at);
     ch.root.position.set(p[0], c.pose === "sit" ? Math.max(0, p[1] - 0.55) : p[1], p[2]); ch.root.rotation.y = c.rot ?? 0;
     if (c.scale) ch.root.scale.setScalar(c.scale);   // small figures (a "1 in 10" row)
-    if (c.lie) { ch.root.rotation.set(0, 0, Math.PI / 2); ch.root.position.y += 0.32; ch.root.position.x += 0.9; }
     root.add(ch.root); return ch;
   });
   const fitItems: FitItem[] = [];
@@ -363,7 +359,6 @@ const Inner: React.FC = () => {
 };
 
 export const AhShort: React.FC = () => {
-  const { width, height } = useVideoConfig();
   const [ready, setReady] = useState(MODEL_NAMES.length === 0);
   const [handle] = useState(() => (MODEL_NAMES.length ? delayRender("afterhour models") : 0));
   useEffect(() => {
@@ -372,7 +367,7 @@ export const AhShort: React.FC = () => {
   }, [handle]);
   return (
   <AbsoluteFill style={{ background: "#000" }}>
-    {ready && <ThreeCanvas width={width} height={height} shadows gl={{ antialias: false, stencil: false, powerPreference: "high-performance" }} camera={{ fov: 40, near: 0.1, far: 400 }}>
+    {ready && <ThreeCanvas width={1080} height={1920} shadows gl={{ antialias: false, stencil: false, powerPreference: "high-performance" }} camera={{ fov: 40, near: 0.1, far: 400 }}>
       <Inner />
     </ThreeCanvas>}
   </AbsoluteFill>

@@ -179,7 +179,7 @@ const clearBall = (c: ActCtx) => {
 };
 /** acts that bring their own hoop hide the court set's back hoop, backboard, net and stanchion (exactly one hoop per frame) */
 const hideSetHoop = (c: ActCtx) => {
-  if (!String(c.set).startsWith("court")) return;   // court and courtempty (films)
+  if (c.set !== "court") return;
   c.root.updateMatrixWorld(true);
   c.root.traverse((o) => {
     const m = o as THREE.Mesh; if (!m.isMesh) return;

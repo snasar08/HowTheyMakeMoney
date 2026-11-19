@@ -1,5 +1,5 @@
-// Nov 19 (Sam: "replicate almost exactly ... the look the movement"): the flat 2D film character.
-// Style target = the Day One Films hero (breakdown: C:\Users\rsn\tools\dayone-breakdown\8atK0pF4oJY.md sections 2-3):
+// Nov 19: the flat 2D film character.
+// Style:
 //  - head + torso are ONE cream egg (no neck, head ~1/3 of the height, head a little wider than the body),
 //  - limbs are uniform rubber-hose tubes (~8.6% of the height) with round ends, no hands / feet,
 //  - flat fill, ~3 px near-black outline (scale-relative), far limbs a shade darker,
