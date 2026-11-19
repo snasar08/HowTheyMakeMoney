@@ -74,7 +74,29 @@ def plan(film: dict) -> dict:
         if b.get("hud"):
             huds.append({"a": a, "n": n, **b["hud"]})
         a += n
-    return {"ah": {"shots": shots, "film": {"lines": lines, "cards": cards, "day": days, "hud": huds}}}
+    return {"ah": {"shots": shots, "film": {"lines": lines, "cards": cards, "day": days, "hud": huds}}, "split": split(film["beats"])}
+
+
+# seconds per frame on a GitHub runner, measured on film 1 (Nov 19 run 1): text-only black frames are ~4x cheaper than
+# characters on the dark stage or in the bedroom, so equal frame counts per machine left 8-min and 2-min machines
+COST = {"void": 1.7, "bedroom": 1.8, "bedroomday": 1.8, "street": 1.1, "courtempty": 0.8, "court": 1.2, "gym": 1.2}
+
+
+def split(beats: list, shards: int = 20) -> list:
+    """frame boundaries (shards + 1 numbers) that give every machine about the same render time"""
+    cost = []
+    for b in beats:
+        c = 0.45 if b["set"] == "void" and not b.get("chars") else COST.get(b["set"], 1.3)
+        cost += [c] * int(round(b["s"] * FPS))
+    tot, acc, out, k = sum(cost), 0.0, [0], 1
+    for i, c in enumerate(cost):
+        acc += c
+        while k < shards and acc >= tot * k / shards:
+            out.append(i + 1); k += 1
+    while len(out) < shards:
+        out.append(len(cost))
+    out.append(len(cost))
+    return out
 
 
 def plan_thumb(film: dict, k: int = 0) -> dict:

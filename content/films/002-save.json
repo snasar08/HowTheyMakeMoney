@@ -217,19 +217,7 @@
      "expr": "shock"
     }
    ],
-   "things": [
-    {
-     "name": "jar",
-     "at": [
-      -0.55,
-      1.0,
-      -0.2
-     ],
-     "text": "0",
-     "fit": 0.42,
-     "pop": false
-    }
-   ],
+   "things": [],
    "say": "Every month. Same story."
   },
   {
@@ -407,7 +395,6 @@
   {
    "s": 4.0,
    "set": "bedroom",
-   "view": "cu",
    "mood": "night",
    "chars": [
     {
@@ -425,13 +412,13 @@
     {
      "name": "jar",
      "at": [
-      -0.55,
-      1.0,
-      -0.2
+      -1.9,
+      0.68,
+      -1.0
      ],
      "text": "0.0",
-     "fit": 0.42,
-     "pop": false
+     "pop": false,
+     "scale": 1.6
     }
    ],
    "say": "Then one night, he found an empty jar.",
@@ -440,12 +427,28 @@
      "riser",
      0.0
     ]
-   ]
+   ],
+   "cam": {
+    "from": [
+     -1.75,
+     1.15,
+     0.5
+    ],
+    "to": [
+     -1.85,
+     1.05,
+     0.25
+    ],
+    "look": [
+     -2.0,
+     0.8,
+     -1.0
+    ]
+   }
   },
   {
    "s": 3.5,
    "set": "bedroom",
-   "view": "ms",
    "mood": "night",
    "chars": [
     {
@@ -463,13 +466,13 @@
     {
      "name": "jar",
      "at": [
-      -0.55,
-      1.0,
-      -0.2
+      -1.9,
+      0.68,
+      -1.0
      ],
      "text": "0.03",
-     "fit": 0.42,
-     "pop": false
+     "pop": false,
+     "scale": 1.6
     }
    ],
    "say": "One dollar. That's all.",
@@ -478,7 +481,24 @@
      "bell",
      0.4
     ]
-   ]
+   ],
+   "cam": {
+    "from": [
+     -2.55,
+     2.25,
+     0.25
+    ],
+    "to": [
+     -2.5,
+     2.1,
+     0.05
+    ],
+    "look": [
+     -1.95,
+     0.7,
+     -1.0
+    ]
+   }
   },
   {
    "s": 3.0,
@@ -498,7 +518,7 @@
   {
    "s": 4.0,
    "set": "bedroom",
-   "view": "cu",
+   "view": "ms",
    "mood": "night",
    "day": "DAY 1",
    "hud": {
@@ -523,13 +543,13 @@
     {
      "name": "jar",
      "at": [
-      -0.55,
-      1.0,
-      -0.2
+      -1.9,
+      0.68,
+      -1.0
      ],
      "text": "0.03",
-     "fit": 0.42,
-     "pop": false
+     "pop": false,
+     "scale": 1.6
     }
    ],
    "say": "It felt stupid."
@@ -583,7 +603,6 @@
   {
    "s": 4.0,
    "set": "bedroom",
-   "view": "cu",
    "mood": "night",
    "day": "DAY 30",
    "hud": {
@@ -608,13 +627,13 @@
     {
      "name": "jar",
      "at": [
-      -0.55,
-      1.0,
-      -0.2
+      -1.9,
+      0.68,
+      -1.0
      ],
      "text": "0.15",
-     "fit": 0.42,
-     "pop": false
+     "pop": false,
+     "scale": 1.6
     }
    ],
    "say": "A dollar a day adds up slowly.",
@@ -623,7 +642,24 @@
      "bell",
      0.4
     ]
-   ]
+   ],
+   "cam": {
+    "from": [
+     0.7,
+     1.25,
+     1.5
+    ],
+    "to": [
+     0.5,
+     1.2,
+     1.3
+    ],
+    "look": [
+     -1.4,
+     1.0,
+     -0.8
+    ]
+   }
   },
   {
    "s": 4.5,
@@ -755,7 +791,6 @@
   {
    "s": 3.5,
    "set": "bedroom",
-   "view": "cu",
    "mood": "night",
    "day": "DAY 151",
    "chars": [
@@ -774,13 +809,13 @@
     {
      "name": "jar",
      "at": [
-      -0.55,
-      1.0,
-      -0.2
+      -1.9,
+      0.68,
+      -1.0
      ],
      "text": "0.5",
-     "fit": 0.42,
-     "pop": false
+     "pop": false,
+     "scale": 1.6
     }
    ],
    "say": "He started again the next day.",
@@ -789,25 +824,68 @@
      "bell",
      0.4
     ]
-   ]
+   ],
+   "cam": {
+    "from": [
+     1.9,
+     1.9,
+     2.7
+    ],
+    "to": [
+     1.7,
+     1.8,
+     2.4
+    ],
+    "look": [
+     -1.2,
+     0.9,
+     -1.0
+    ]
+   }
   },
   {
    "s": 4.0,
    "set": "office",
-   "view": "act",
+   "view": "ms",
    "mood": "warm",
    "day": "DAY 200",
    "chars": [
     {
      "look": "hero",
-     "pose": "stand",
+     "at": [
+      0,
+      0,
+      0
+     ],
+     "pose": "point",
      "expr": "smile"
     }
    ],
-   "act": {
-    "kind": "stock_up"
-   },
-   "say": "So he put it to work."
+   "say": "So he put it to work.",
+   "things": [
+    {
+     "name": "chart",
+     "at": [
+      1.1,
+      0.6,
+      -0.4
+     ],
+     "text": "SAVINGS",
+     "fit": 0.9,
+     "pop": true
+    },
+    {
+     "name": "jar",
+     "at": [
+      -0.6,
+      0.85,
+      0.2
+     ],
+     "text": "0.6",
+     "fit": 0.45,
+     "pop": false
+    }
+   ]
   },
   {
    "s": 4.0,
@@ -1074,17 +1152,17 @@
     "mood": "night",
     "cam": {
      "from": [
-      -0.55,
+      0.65,
       1.45,
-      2.0
+      1.9
      ],
      "to": [
-      -0.55,
+      0.65,
       1.45,
-      2.0
+      1.9
      ],
      "look": [
-      -0.55,
+      0.65,
       1.3,
       0
      ]
@@ -1097,7 +1175,7 @@
        0,
        0
       ],
-      "pose": "count",
+      "pose": "stand",
       "expr": "shock",
       "rot": 0.3
      }
@@ -1106,13 +1184,14 @@
      {
       "name": "jar",
       "at": [
-       0.42,
-       0.85,
+       -0.62,
+       0.72,
        0.45
       ],
       "text": "0.05",
-      "fit": 0.42,
-      "pop": false
+      "scale": 1.7,
+      "pop": false,
+      "rot": 0.3
      }
     ]
    }
@@ -1128,18 +1207,18 @@
     "mood": "red",
     "cam": {
      "from": [
-      -0.9,
-      1.6,
-      3.6
+      0.85,
+      1.5,
+      2.5
      ],
      "to": [
-      -0.9,
-      1.6,
-      3.6
+      0.85,
+      1.5,
+      2.5
      ],
      "look": [
-      -0.9,
-      1.5,
+      0.85,
+      1.35,
       0
      ]
     },

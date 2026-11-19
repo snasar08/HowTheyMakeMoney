@@ -80,7 +80,8 @@ const Card: React.FC<{ c: FilmCard; f: number }> = ({ c, f }) => {
 
 const Thumb: React.FC<{ t: FilmThumb }> = ({ t }) => {
   const words = t.words.toUpperCase().split(/\s+/), right = (t.side ?? "right") === "right";
-  const fs = words.length >= 3 ? 150 : 190;
+  // a long word must stay inside the right half (it covered the hero in the first test)
+  const fs = Math.min(words.length >= 3 ? 150 : 190, Math.floor(640 / (0.6 * Math.max(...words.map((w) => w.length)))));
   return (
     <div style={{ position: "absolute", top: 0, bottom: 0, [right ? "right" : "left"]: 40, width: "52%", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: right ? "flex-end" : "flex-start" }}>
       {words.map((w, i) => (
@@ -101,17 +102,19 @@ export const AhFilm: React.FC = () => {
   const hud = (sp.hud ?? []).find((d) => f >= d.a && f < d.a + d.n);
   return (
     <AbsoluteFill style={{ background: "#050507" }}>
-      <AbsoluteFill style={{ filter: m.filter }}><AhShort /></AbsoluteFill>
-      {m.tint && <AbsoluteFill style={{ background: m.tint, mixBlendMode: "multiply" }} />}
+      {/* thumbnails (Nov 19: the first test was too dark to read on a phone): brighter, punchier, a light tint only, a warm rim light behind the hero (left) */}
+      <AbsoluteFill style={{ filter: sp.thumb ? "brightness(1.45) saturate(1.45) contrast(1.12)" : m.filter }}><AhShort /></AbsoluteFill>
+      {m.tint && <AbsoluteFill style={{ background: m.tint, mixBlendMode: "multiply", opacity: sp.thumb ? 0.45 : 1 }} />}
+      {sp.thumb && <AbsoluteFill style={{ background: "radial-gradient(circle at 27% 45%, rgba(255,120,70,0.42), rgba(0,0,0,0) 42%)", mixBlendMode: "screen" }} />}
       {m.glow && <AbsoluteFill style={{ background: `radial-gradient(circle at 78% 18%, ${m.glow}, rgba(0,0,0,0) 60%)`, mixBlendMode: "screen" }} />}
-      <AbsoluteFill style={{ background: "radial-gradient(ellipse at center, rgba(0,0,0,0) 55%, rgba(0,0,0,0.55) 100%)" }} />
+      <AbsoluteFill style={{ background: `radial-gradient(ellipse at center, rgba(0,0,0,0) 55%, rgba(0,0,0,${sp.thumb ? 0.3 : 0.55}) 100%)` }} />
       {fadeO > 0 && <AbsoluteFill style={{ background: "#050507", opacity: fadeO }} />}
       {day && <div style={{ position: "absolute", left: 44, top: 32, fontFamily: "FilmBlack", fontSize: 30, letterSpacing: 2, color: "#b9bdc8", opacity: vis(f, day.a, day.n, 6, 6), textShadow: "0 2px 4px #000" }}>{day.t}</div>}
       {hud && (() => {
         const v = Math.round(hud.from + (hud.to - hud.from) * clamp((f - hud.a) / Math.max(1, hud.n - 20)));
         return <div style={{ position: "absolute", right: 44, top: 28, textAlign: "right", opacity: vis(f, hud.a, hud.n, 6, 6), textShadow: "0 2px 4px #000" }}>
           <div style={{ fontFamily: "FilmText", fontSize: 18, letterSpacing: 3, color: "#b9bdc8" }}>{hud.label}</div>
-          <div style={{ fontFamily: "FilmBlack", fontSize: 44, color: "#f6f3ee" }}>{v}{hud.unit ?? ""}</div>
+          <div style={{ fontFamily: "FilmBlack", fontSize: 44, color: "#f6f3ee" }}>{hud.unit?.trim() === "$" ? "$" + v : `${v}${hud.unit ?? ""}`}</div>
         </div>;
       })()}
       {(sp.lines ?? []).filter((l) => f >= l.a && f < l.a + l.n).map((l, i) => <Line key={i} l={l} f={f} />)}
