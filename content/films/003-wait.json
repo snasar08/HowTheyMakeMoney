@@ -1,0 +1,919 @@
+{
+ "id": "003-wait",
+ "title": "WAIT | An Animated Short Film",
+ "alt_titles": [
+  "Stop Checking It.",
+  "Slow Money"
+ ],
+ "theme": "investing patience: most of every fortune on this channel was time, money left alone to grow",
+ "cast": {
+  "hero": {
+   "body": "#2f5fa8",
+   "hat": "hair",
+   "hair": "#1d1a18",
+   "legs": "#2b2b33"
+  },
+  "rich": {
+   "body": "#2f5fa8",
+   "hat": "hair",
+   "hair": "#8d8d8d",
+   "legs": "#2b2b33",
+   "tie": "#f2c230"
+  },
+  "kid2": {
+   "body": "#c0392b",
+   "hat": "hair",
+   "hair": "#111111",
+   "legs": "#2b2b33"
+  },
+  "monster": {
+   "body": "#000000",
+   "monster": true,
+   "height": 1.3
+  }
+ },
+ "beats": [
+  {
+   "s": 4.5,
+   "set": "void",
+   "view": "ws",
+   "chars": [],
+   "fade": 20,
+   "say": [
+    {
+     "t": "Everyone wants to get rich fast.",
+     "at": "mid"
+    }
+   ]
+  },
+  {
+   "s": 4.0,
+   "set": "void",
+   "view": "ws",
+   "chars": [],
+   "say": [
+    {
+     "t": "Nobody wants to get rich slow.",
+     "at": "mid"
+    }
+   ]
+  },
+  {
+   "s": 4.0,
+   "set": "store",
+   "view": "ms",
+   "mood": "warm",
+   "fade": 10,
+   "chars": [
+    {
+     "look": "hero",
+     "pose": "count",
+     "expr": "grin"
+    }
+   ],
+   "things": [
+    {
+     "name": "cash",
+     "at": [
+      0.55,
+      1.1,
+      0.4
+     ],
+     "fit": 0.35
+    }
+   ],
+   "say": "First paycheck.",
+   "sfx": [
+    [
+     "bell",
+     0.3
+    ]
+   ]
+  },
+  {
+   "s": 4.0,
+   "set": "bedroom",
+   "view": "ms",
+   "mood": "night",
+   "chars": [
+    {
+     "look": "hero",
+     "at": [
+      -1.2,
+      0,
+      -0.6
+     ],
+     "pose": "phone",
+     "expr": "smile"
+    }
+   ],
+   "things": [
+    {
+     "name": "phone",
+     "at": [
+      -0.85,
+      1.2,
+      -0.3
+     ],
+     "fit": 0.3,
+     "text": "+$20"
+    }
+   ],
+   "say": "He put some of it away.",
+   "sfx": [
+    [
+     "buzz",
+     0.4
+    ]
+   ]
+  },
+  {
+   "s": 3.5,
+   "set": "bedroom",
+   "cam": {
+    "from": [
+     0.7,
+     1.25,
+     1.5
+    ],
+    "to": [
+     0.5,
+     1.2,
+     1.3
+    ],
+    "look": [
+     -1.4,
+     1.1,
+     -0.8
+    ]
+   },
+   "mood": "night",
+   "chars": [
+    {
+     "look": "hero",
+     "at": [
+      -1.2,
+      0,
+      -0.6
+     ],
+     "pose": "phone",
+     "expr": "neutral"
+    }
+   ],
+   "things": [
+    {
+     "name": "phone",
+     "at": [
+      -0.85,
+      1.2,
+      -0.3
+     ],
+     "fit": 0.3,
+     "text": "$20"
+    }
+   ],
+   "say": "Then he checked it."
+  },
+  {
+   "s": 3.5,
+   "set": "classroom",
+   "view": "ms",
+   "mood": "cold",
+   "chars": [
+    {
+     "look": "hero",
+     "pose": "phone",
+     "expr": "sad"
+    }
+   ],
+   "things": [
+    {
+     "name": "phone",
+     "at": [
+      0.35,
+      1.2,
+      0.3
+     ],
+     "fit": 0.3,
+     "text": "$20"
+    }
+   ],
+   "say": "He checked it in class."
+  },
+  {
+   "s": 3.5,
+   "set": "street",
+   "view": "wide",
+   "mood": "night",
+   "chars": [
+    {
+     "look": "hero",
+     "pose": "walk",
+     "expr": "sad"
+    }
+   ],
+   "say": "He checked it walking home."
+  },
+  {
+   "s": 4.0,
+   "set": "bedroom",
+   "view": "face",
+   "mood": "cold",
+   "chars": [
+    {
+     "look": "hero",
+     "at": [
+      -1.2,
+      0,
+      -0.6
+     ],
+     "pose": "stand",
+     "expr": "sad"
+    }
+   ],
+   "say": [
+    {
+     "t": "nothing is happening",
+     "red": true
+    }
+   ],
+   "sfx": [
+    [
+     "heart",
+     0.6
+    ],
+    [
+     "heart",
+     1.6
+    ]
+   ]
+  },
+  {
+   "s": 4.0,
+   "set": "street",
+   "view": "ms",
+   "mood": "warm",
+   "chars": [
+    {
+     "look": "kid2",
+     "pose": "cheer",
+     "expr": "laugh"
+    },
+    {
+     "look": "hero",
+     "pose": "stand",
+     "expr": "sad"
+    }
+   ],
+   "things": [
+    {
+     "name": "sportscar",
+     "at": [
+      1.6,
+      0,
+      -1.2
+     ],
+     "fit": 1.6,
+     "pop": false
+    }
+   ],
+   "say": "His friend spent his on a car."
+  },
+  {
+   "s": 5.0,
+   "set": "void",
+   "view": "ms",
+   "mood": "dark",
+   "fade": 10,
+   "chars": [
+    {
+     "look": "hero",
+     "pose": "facepalm",
+     "expr": "sad"
+    }
+   ],
+   "say": "It wasn't too slow.",
+   "sfx": [
+    [
+     "heart",
+     0.5
+    ],
+    [
+     "heart",
+     1.6
+    ],
+    [
+     "heart",
+     2.7
+    ],
+    [
+     "heart",
+     3.8
+    ]
+   ]
+  },
+  {
+   "s": 5.0,
+   "set": "void",
+   "view": "face",
+   "mood": "dark",
+   "chars": [
+    {
+     "look": "hero",
+     "pose": "stand",
+     "expr": "sad"
+    }
+   ],
+   "say": "He was just watching it too closely."
+  },
+  {
+   "s": 3.5,
+   "set": "bedroom",
+   "view": "cu",
+   "mood": "cold",
+   "chars": [
+    {
+     "look": "hero",
+     "at": [
+      -1.2,
+      0,
+      -0.6
+     ],
+     "pose": "phone",
+     "expr": "shock"
+    }
+   ],
+   "things": [
+    {
+     "name": "arrowdown",
+     "at": [
+      -0.3,
+      1.5,
+      -0.2
+     ],
+     "fit": 0.45,
+     "pop": true
+    }
+   ],
+   "say": "Then it dropped.",
+   "sfx": [
+    [
+     "boom",
+     0.2
+    ]
+   ]
+  },
+  {
+   "s": 5.0,
+   "set": "void",
+   "view": "wide",
+   "mood": "red",
+   "chars": [
+    {
+     "look": "hero",
+     "at": "left",
+     "pose": "stand",
+     "expr": "shock",
+     "rot": 0.4
+    },
+    {
+     "look": "monster",
+     "at": "right",
+     "rot": -0.5,
+     "scale": 1.35,
+     "pose": "point",
+     "expr": "angry"
+    }
+   ],
+   "say": [
+    {
+     "t": "take it out before it's gone",
+     "red": true
+    }
+   ],
+   "sfx": [
+    [
+     "boom",
+     0.1
+    ]
+   ]
+  },
+  {
+   "s": 4.0,
+   "set": "void",
+   "view": "face",
+   "mood": "dark",
+   "chars": [
+    {
+     "look": "hero",
+     "pose": "stand",
+     "expr": "angry"
+    }
+   ],
+   "say": "Everyone around him said the same thing."
+  },
+  {
+   "s": 4.0,
+   "set": "bedroom",
+   "view": "wide",
+   "mood": "night",
+   "chars": [
+    {
+     "look": "hero",
+     "at": [
+      0.3,
+      0,
+      -0.4
+     ],
+     "pose": "stand",
+     "expr": "angry"
+    }
+   ],
+   "things": [
+    {
+     "name": "phone",
+     "at": [
+      -2.0,
+      0.72,
+      -1.2
+     ],
+     "scale": 1.4,
+     "text": "",
+     "pop": false
+    }
+   ],
+   "say": "So he put the phone down. And left it.",
+   "sfx": [
+    [
+     "thud",
+     1.2
+    ]
+   ]
+  },
+  {
+   "s": 3.0,
+   "set": "void",
+   "view": "ws",
+   "chars": [],
+   "card": {
+    "big": "YEAR 1."
+   },
+   "sfx": [
+    [
+     "hit",
+     0.15
+    ]
+   ]
+  },
+  {
+   "s": 4.0,
+   "set": "store",
+   "view": "wide",
+   "mood": "cold",
+   "day": "YEAR 1",
+   "hud": {
+    "label": "PUT AWAY",
+    "from": 0,
+    "to": 260,
+    "unit": " $"
+   },
+   "chars": [
+    {
+     "look": "hero",
+     "pose": "count",
+     "expr": "neutral"
+    }
+   ],
+   "say": "Every paycheck, a little more."
+  },
+  {
+   "s": 4.0,
+   "set": "classroom",
+   "view": "wide",
+   "mood": "warm",
+   "day": "YEAR 2",
+   "chars": [
+    {
+     "look": "hero",
+     "pose": "stand",
+     "expr": "smile"
+    }
+   ],
+   "say": "He stopped looking."
+  },
+  {
+   "s": 4.5,
+   "set": "void",
+   "view": "wide",
+   "mood": "red",
+   "day": "YEAR 3",
+   "chars": [
+    {
+     "look": "hero",
+     "at": "left",
+     "pose": "stand",
+     "expr": "neutral",
+     "rot": 0.4
+    },
+    {
+     "look": "monster",
+     "at": "right",
+     "rot": -0.5,
+     "scale": 1.6,
+     "pose": "point",
+     "expr": "angry"
+    }
+   ],
+   "say": [
+    {
+     "t": "check it. just once.",
+     "red": true
+    }
+   ]
+  },
+  {
+   "s": 3.5,
+   "set": "void",
+   "view": "face",
+   "mood": "dark",
+   "day": "YEAR 3",
+   "chars": [
+    {
+     "look": "hero",
+     "pose": "stand",
+     "expr": "smile"
+    }
+   ],
+   "say": "He didn't."
+  },
+  {
+   "s": 4.0,
+   "set": "office",
+   "view": "ms",
+   "mood": "warm",
+   "day": "YEAR 5",
+   "chars": [
+    {
+     "look": "hero",
+     "at": [
+      0,
+      0,
+      0
+     ],
+     "pose": "point",
+     "expr": "grin"
+    }
+   ],
+   "things": [
+    {
+     "name": "chart",
+     "at": [
+      1.1,
+      0.6,
+      -0.4
+     ],
+     "text": "SAVINGS",
+     "fit": 0.9,
+     "pop": true
+    }
+   ],
+   "say": "It had grown while he wasn't watching."
+  },
+  {
+   "s": 4.0,
+   "set": "street",
+   "view": "ms",
+   "mood": "cold",
+   "day": "YEAR 6",
+   "chars": [
+    {
+     "look": "hero",
+     "pose": "walk",
+     "expr": "shock"
+    }
+   ],
+   "things": [
+    {
+     "name": "arrowdown",
+     "at": [
+      0.6,
+      1.5,
+      0.2
+     ],
+     "fit": 0.45,
+     "pop": true
+    }
+   ],
+   "say": "Then another drop. A bigger one.",
+   "sfx": [
+    [
+     "boom",
+     0.2
+    ]
+   ]
+  },
+  {
+   "s": 4.5,
+   "set": "void",
+   "view": "wide",
+   "mood": "red",
+   "day": "YEAR 6",
+   "chars": [
+    {
+     "look": "hero",
+     "at": [
+      -1.3,
+      0,
+      0.3
+     ],
+     "pose": "stand",
+     "expr": "angry",
+     "rot": 0.4
+    },
+    {
+     "look": "monster",
+     "at": [
+      1.8,
+      0,
+      -2.0
+     ],
+     "rot": -0.5,
+     "scale": 2.3,
+     "pose": "point",
+     "expr": "scream"
+    }
+   ],
+   "say": [
+    {
+     "t": "this time it's over",
+     "red": true
+    }
+   ],
+   "sfx": [
+    [
+     "boom",
+     0.0
+    ],
+    [
+     "heart",
+     1.2
+    ],
+    [
+     "heart",
+     2.0
+    ],
+    [
+     "heart",
+     2.8
+    ]
+   ]
+  },
+  {
+   "s": 4.0,
+   "set": "void",
+   "view": "face",
+   "mood": "dark",
+   "day": "YEAR 6",
+   "chars": [
+    {
+     "look": "hero",
+     "pose": "stand",
+     "expr": "angry"
+    }
+   ],
+   "say": "He had heard that voice before."
+  },
+  {
+   "s": 3.5,
+   "set": "office",
+   "view": "face",
+   "mood": "warm",
+   "day": "YEAR 8",
+   "chars": [
+    {
+     "look": "hero",
+     "pose": "stand",
+     "expr": "smile"
+    }
+   ],
+   "things": [
+    {
+     "name": "arrowup",
+     "at": [
+      0.6,
+      1.6,
+      0.2
+     ],
+     "fit": 0.45,
+     "pop": true
+    }
+   ],
+   "say": "It came back.",
+   "sfx": [
+    [
+     "bell",
+     0.3
+    ]
+   ]
+  },
+  {
+   "s": 3.0,
+   "set": "void",
+   "view": "ws",
+   "mood": "dark",
+   "chars": [],
+   "say": [
+    {
+     "t": "...",
+     "red": true,
+     "at": "mid"
+    }
+   ]
+  },
+  {
+   "s": 4.5,
+   "set": "mansion",
+   "view": "ms",
+   "mood": "sunrise",
+   "fade": 15,
+   "day": "YEAR 20",
+   "chars": [
+    {
+     "look": "rich",
+     "pose": "phone",
+     "expr": "shock"
+    }
+   ],
+   "things": [
+    {
+     "name": "phone",
+     "at": [
+      0.35,
+      1.2,
+      0.3
+     ],
+     "fit": 0.3,
+     "text": "WOW"
+    }
+   ],
+   "say": "Year twenty. He finally looked.",
+   "sfx": [
+    [
+     "bell",
+     0.4
+    ]
+   ]
+  },
+  {
+   "s": 4.5,
+   "set": "mansion",
+   "view": "face",
+   "mood": "warm",
+   "chars": [
+    {
+     "look": "rich",
+     "pose": "stand",
+     "expr": "laugh"
+    }
+   ],
+   "say": "Most of it grew while he was busy living."
+  },
+  {
+   "s": 4.5,
+   "set": "void",
+   "view": "ws",
+   "chars": [],
+   "say": [
+    {
+     "t": "Every fortune on this channel took time.",
+     "at": "mid"
+    }
+   ]
+  },
+  {
+   "s": 4.0,
+   "set": "void",
+   "view": "ws",
+   "chars": [],
+   "say": [
+    {
+     "t": "Most of it was waiting.",
+     "at": "mid"
+    }
+   ]
+  },
+  {
+   "s": 8.5,
+   "set": "void",
+   "view": "ws",
+   "chars": [],
+   "card": {
+    "big": "WAIT.",
+    "line": "Slow money is still money.",
+    "cmd": "Stop checking."
+   },
+   "sfx": [
+    [
+     "hit",
+     0.15
+    ]
+   ]
+  }
+ ],
+ "thumbs": [
+  {
+   "words": "JUST WAIT",
+   "red": [
+    "WAIT"
+   ],
+   "side": "right",
+   "beat": {
+    "set": "bedroom",
+    "mood": "night",
+    "cam": {
+     "from": [
+      0.65,
+      1.45,
+      1.9
+     ],
+     "to": [
+      0.65,
+      1.45,
+      1.9
+     ],
+     "look": [
+      0.65,
+      1.3,
+      0
+     ]
+    },
+    "chars": [
+     {
+      "look": "hero",
+      "at": [
+       0,
+       0,
+       0
+      ],
+      "pose": "stand",
+      "expr": "angry",
+      "rot": 0.3
+     }
+    ]
+   }
+  },
+  {
+   "words": "STOP LOOKING",
+   "red": [
+    "LOOKING"
+   ],
+   "side": "right",
+   "beat": {
+    "set": "void",
+    "mood": "red",
+    "cam": {
+     "from": [
+      0.75,
+      1.6,
+      3.2
+     ],
+     "to": [
+      0.75,
+      1.6,
+      3.2
+     ],
+     "look": [
+      0.75,
+      1.45,
+      0
+     ]
+    },
+    "chars": [
+     {
+      "look": "hero",
+      "at": [
+       -0.2,
+       0,
+       0.2
+      ],
+      "pose": "phone",
+      "expr": "shock",
+      "rot": 0.3
+     },
+     {
+      "look": "monster",
+      "at": [
+       -1.6,
+       0,
+       -1.4
+      ],
+      "rot": 0.4,
+      "scale": 1.6,
+      "pose": "point",
+      "expr": "angry"
+     }
+    ]
+   }
+  }
+ ]
+}
