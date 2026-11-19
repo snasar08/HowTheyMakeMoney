@@ -146,7 +146,8 @@ const placeOf = (l: Line2, shots: Shot2[]): [number, number] => {
     if (m) {
       const { cx, cy, z } = camOf(s, f, chars);
       const sx = 640 + (m.x - cx) * z, sy = 360 + (m.y - 330 * m.sc - cy) * z - 20;
-      return [Math.max(230, Math.min(1050, sx)), Math.max(130, Math.min(560, sy))];
+      if (sy < 130) return [Math.max(230, Math.min(1050, sx + (sx < 640 ? 150 : -150))), Math.max(130, sy + 80)];   // no room above the head: beside it
+      return [Math.max(230, Math.min(1050, sx)), Math.min(560, sy)];
     }
   }
   return [640, 240];

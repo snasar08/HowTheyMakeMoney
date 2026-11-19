@@ -337,6 +337,69 @@
      "pose": "point"
     }
    ]
+  },
+  {
+   "s": 2,
+   "set": "gym",
+   "arg": {
+    "hit": 1,
+    "speed": 1,
+    "dip": 4,
+    "flashAmp": 0.65,
+    "flashLen": 10
+   },
+   "flash": [
+    0.1
+   ],
+   "chars": [
+    {
+     "look": "hero2",
+     "x": 660,
+     "pose": "punch",
+     "expr": "angry"
+    }
+   ]
+  },
+  {
+   "s": 2,
+   "set": "stairs",
+   "arg": {
+    "bloom": 0.3
+   },
+   "fadeOut": 20,
+   "chars": [
+    {
+     "look": "hero2",
+     "x": 0,
+     "pose": "climb",
+     "stairs": [
+      0.3,
+      0.4
+     ]
+    }
+   ]
+  },
+  {
+   "s": 2,
+   "set": "hill",
+   "arg": {
+    "hx": 430
+   },
+   "fade": 20,
+   "chars": [
+    {
+     "look": "hero2",
+     "x": 430,
+     "y": 566,
+     "pose": "stand"
+    }
+   ],
+   "say": [
+    {
+     "t": "nobody is coming to save you.",
+     "red": true
+    }
+   ]
   }
  ]
 }

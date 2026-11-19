@@ -210,7 +210,7 @@ const Bag: React.FC<{ x: number; t: number; hit?: number; speed?: number }> = ({
   const top = FLOOR - 282, bot = FLOOR - 40;
   return (
     <g>
-      <Glow x={x} y={FLOOR - 160} r={300} c="#ff3a2a" o={0.42} />
+      <Glow x={x} y={FLOOR - 160} r={250} c="#ff3a2a" o={0.34} />
       <g transform={`rotate(${sw} ${x} ${FLOOR - 460})`}>
         <path d={`M ${x - 12} ${FLOOR - 700} L ${x - 6} ${top} M ${x + 12} ${FLOOR - 700} L ${x + 6} ${top}`} stroke={INK2} strokeWidth={2.4} />
         <rect x={x - 52} y={top} width={104} height={bot - top} rx={40} fill="url(#bagGrad)" stroke="#ff7a62" strokeWidth={2} />
@@ -259,14 +259,14 @@ const City: React.FC<{ off: number }> = ({ off }) => {
   };
   return <g>
     {layer(0.12, 1, 90, 200, 60, 110, "#0c0f16", "#121827", 0.04, "far")}
-    {layer(0.3, 500, 110, 250, 70, 120, "#0f121c", "#182030", 0.08, "mid")}
-    {layer(0.55, 900, 60, 140, 80, 140, "#10141f", "#1b2338", 0.06, "near")}
+    {layer(0.3, 500, 110, 250, 70, 120, "#0f121c", "#182030", 0.13, "mid")}
+    {layer(0.55, 900, 60, 140, 80, 140, "#10141f", "#1b2338", 0.1, "near")}
   </g>;
 };
 const StreetLamps: React.FC<{ off: number; t: number }> = ({ off }) => (
   <g transform={`translate(${-wrap(off, 460)} 0)`}>
     {[-460, 0, 460, 920, 1380, 1840].map((x) => <g key={x}>
-      <Glow x={x + 22} y={FLOOR - 176} r={150} c="#ffb35a" o={0.5} />
+      <Glow x={x + 22} y={FLOOR - 176} r={105} c="#ffb35a" o={0.5} />
       <ellipse cx={x + 10} cy={FLOOR + 36} rx={140} ry={13} fill="#ffb35a" opacity={0.15} filter="url(#soft6)" />
       <path d={`M ${x} ${FLOOR} L ${x} ${FLOOR - 168} q 0 -16 22 -16`} {...L} strokeWidth={3} fill="none" />
       <circle cx={x + 22} cy={FLOOR - 170} r={6.5} fill="#ffd9a0" />
@@ -383,7 +383,7 @@ export const SetView: React.FC<{ name: string; t: number; scroll?: number; arg?:
     case "street": { const off = scroll ?? t * 240; return <g><City off={off} /><StreetLamps off={off} t={t} /><Floor /><RoadDashes off={off} />
       {Array.from({ length: 7 }, (_, i) => <path key={i} d={`M ${wrap(rnd(i * 3) * 1800 - t * (1100 + i * 90), 1800) - 300} ${FLOOR - 330 + rnd(i) * 300} l ${110 + rnd(i * 5) * 160} 0`} stroke="#fff" strokeWidth={1.4} strokeLinecap="round" opacity={0.12} />)}</g>; }
     case "mirror": return <g><Floor /><Mirror x={760} crack={arg.crack ?? 0} /></g>;
-    case "gym": return <g><Floor /><Bag x={780} t={t} hit={arg.hit ?? 1} speed={arg.speed ?? 0} /></g>;
+    case "gym": return <g><Floor /><Bag x={arg.x ?? 780} t={t} hit={arg.hit ?? 1} speed={arg.speed ?? 0} /></g>;
     case "stairs": return <g><Stairs /></g>;
     case "hill": return <g><Hills glow={arg.glow ?? 1} hx={arg.hx ?? 430} t={t} /></g>;
     case "court": return <g><Glow x={900} y={160} r={600} c="#ffffff" o={0.07} /><Floor /><CourtMarks /><Hoop x={1060} /></g>;
