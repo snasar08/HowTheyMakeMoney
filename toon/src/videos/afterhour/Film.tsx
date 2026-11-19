@@ -19,7 +19,7 @@ const SPEC = (): FilmSpec => (PROPS().film as FilmSpec) ?? {};
 
 /** mood -> CSS filter on the 3D picture + a multiply tint + an optional warm glow from the top right */
 const MOODS: Record<string, { filter: string; tint?: string; glow?: string }> = {
-  night: { filter: "brightness(0.85) saturate(0.75)", tint: "#6f80c8" },
+  night: { filter: "brightness(1.08) saturate(0.8)", tint: "#8090d0" },
   cold: { filter: "brightness(0.95) saturate(0.6)", tint: "#9aa8d8" },
   dark: { filter: "brightness(0.6) saturate(0.5)", tint: "#7080b0" },
   red: { filter: "brightness(0.75) saturate(0.8)", tint: "#d07070" },

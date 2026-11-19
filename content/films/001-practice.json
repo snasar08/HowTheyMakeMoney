@@ -1,0 +1,1221 @@
+{
+ "id": "001-practice",
+ "title": "PRACTICE | An Animated Short Film",
+ "alt_titles": [
+  "Nobody Sees The Shots You Take Alone.",
+  "The Shots Nobody Saw"
+ ],
+ "theme": "discipline / basketball: the pros on this channel all started with practice nobody watched",
+ "thumb": {
+  "words": "ONE MORE",
+  "set": "court",
+  "mood": "night",
+  "prop": "basketball",
+  "expr": "angry"
+ },
+ "cast": {
+  "hero": {
+   "body": "#3d4a6b",
+   "hat": "hair",
+   "hair": "#2a1d16",
+   "legs": "#2b2b33"
+  },
+  "baller": {
+   "body": "#3d4a6b",
+   "outfit": "jersey",
+   "text": "7",
+   "trim": "#f2c230",
+   "hat": "hair",
+   "hair": "#2a1d16"
+  },
+  "monster": {
+   "body": "#000000",
+   "monster": true,
+   "height": 1.3
+  },
+  "coach": {
+   "body": "#1f2b55",
+   "hat": "cap",
+   "hatColor": "#1f2b55"
+  },
+  "kid2": {
+   "body": "#c0392b",
+   "outfit": "jersey",
+   "text": "23",
+   "hat": "hair",
+   "hair": "#111111"
+  },
+  "kid3": {
+   "body": "#2ecc71",
+   "outfit": "jersey",
+   "text": "11",
+   "hat": "hair",
+   "hair": "#3a2416"
+  }
+ },
+ "beats": [
+  {
+   "s": 4.5,
+   "set": "void",
+   "view": "ws",
+   "chars": [],
+   "fade": 20,
+   "say": [
+    {
+     "t": "Everyone wants the highlight.",
+     "at": "mid"
+    }
+   ]
+  },
+  {
+   "s": 4.0,
+   "set": "void",
+   "view": "ws",
+   "chars": [],
+   "say": [
+    {
+     "t": "Nobody wants the practice.",
+     "at": "mid"
+    }
+   ]
+  },
+  {
+   "s": 4.5,
+   "set": "bedroom",
+   "cam": {
+    "from": [
+     -1.0,
+     1.7,
+     3.6
+    ],
+    "to": [
+     -1.2,
+     1.6,
+     3.2
+    ],
+    "look": [
+     -2.4,
+     0.9,
+     -1.6
+    ]
+   },
+   "mood": "night",
+   "fade": 12,
+   "chars": [
+    {
+     "look": "hero",
+     "at": "bed",
+     "lie": true,
+     "pose": "sleep",
+     "expr": "neutral"
+    }
+   ],
+   "things": [
+    {
+     "name": "alarm",
+     "at": "alarm",
+     "text": "5:00",
+     "fit": 0.32,
+     "pop": false
+    }
+   ],
+   "say": "5:00 AM. Practice before school.",
+   "sfx": [
+    [
+     "alarm",
+     0.3
+    ]
+   ]
+  },
+  {
+   "s": 3.5,
+   "set": "bedroom",
+   "cam": {
+    "from": [
+     -3.0,
+     1.2,
+     -0.6
+    ],
+    "to": [
+     -3.1,
+     1.15,
+     -0.9
+    ],
+    "look": [
+     -3.75,
+     0.75,
+     -2.7
+    ]
+   },
+   "mood": "night",
+   "chars": [
+    {
+     "look": "hero",
+     "at": "bed",
+     "lie": true,
+     "pose": "sleep",
+     "expr": "neutral"
+    }
+   ],
+   "things": [
+    {
+     "name": "alarm",
+     "at": "alarm",
+     "text": "5:00",
+     "fit": 0.32,
+     "pop": false
+    }
+   ],
+   "say": [
+    {
+     "t": "five more minutes",
+     "red": true
+    }
+   ],
+   "sfx": [
+    [
+     "alarm",
+     0.0
+    ]
+   ]
+  },
+  {
+   "s": 3.5,
+   "set": "bedroom",
+   "cam": {
+    "from": [
+     -1.0,
+     1.7,
+     3.6
+    ],
+    "to": [
+     -1.1,
+     1.65,
+     3.4
+    ],
+    "look": [
+     -2.4,
+     0.9,
+     -1.6
+    ]
+   },
+   "mood": "cold",
+   "chars": [
+    {
+     "look": "hero",
+     "at": "bed",
+     "lie": true,
+     "pose": "sleep",
+     "expr": "neutral"
+    }
+   ],
+   "things": [
+    {
+     "name": "alarm",
+     "at": "alarm",
+     "text": "7:42",
+     "fit": 0.32,
+     "pop": false
+    }
+   ],
+   "say": "7:42.",
+   "sfx": [
+    [
+     "thud",
+     0.2
+    ]
+   ]
+  },
+  {
+   "s": 4.0,
+   "set": "street",
+   "view": "wide",
+   "mood": "cold",
+   "chars": [
+    {
+     "look": "hero",
+     "pose": "run",
+     "expr": "shock"
+    }
+   ],
+   "say": "He told himself: tomorrow."
+  },
+  {
+   "s": 4.0,
+   "set": "bedroom",
+   "view": "ms",
+   "mood": "night",
+   "chars": [
+    {
+     "look": "hero",
+     "at": [
+      -1.2,
+      0,
+      -0.6
+     ],
+     "pose": "phone",
+     "expr": "neutral"
+    }
+   ],
+   "things": [
+    {
+     "name": "phone",
+     "at": [
+      -0.85,
+      1.2,
+      -0.3
+     ],
+     "fit": 0.3
+    }
+   ],
+   "say": [
+    {
+     "t": "start monday",
+     "red": true
+    }
+   ],
+   "sfx": [
+    [
+     "buzz",
+     0.4
+    ]
+   ]
+  },
+  {
+   "s": 3.5,
+   "set": "bedroom",
+   "view": "face",
+   "mood": "night",
+   "chars": [
+    {
+     "look": "hero",
+     "at": [
+      -1.2,
+      0,
+      -0.6
+     ],
+     "pose": "phone",
+     "expr": "smile"
+    }
+   ],
+   "say": "Monday came. So did the phone."
+  },
+  {
+   "s": 3.5,
+   "set": "bedroom",
+   "cam": {
+    "from": [
+     -3.0,
+     1.2,
+     -0.6
+    ],
+    "to": [
+     -3.1,
+     1.15,
+     -0.85
+    ],
+    "look": [
+     -3.75,
+     0.75,
+     -2.7
+    ]
+   },
+   "mood": "cold",
+   "chars": [],
+   "things": [
+    {
+     "name": "alarm",
+     "at": "alarm",
+     "text": "8:05",
+     "fit": 0.32,
+     "pop": false
+    }
+   ],
+   "say": "Another week. Same alarm.",
+   "sfx": [
+    [
+     "alarm",
+     0.0
+    ]
+   ]
+  },
+  {
+   "s": 4.0,
+   "set": "courtempty",
+   "view": "wide",
+   "mood": "cold",
+   "chars": [
+    {
+     "look": "kid2",
+     "at": [
+      -1.4,
+      0,
+      -0.5
+     ],
+     "pose": "dribble",
+     "expr": "grin"
+    },
+    {
+     "look": "kid3",
+     "at": [
+      1.4,
+      0,
+      -0.5
+     ],
+     "pose": "shoot",
+     "expr": "smile"
+    },
+    {
+     "look": "hero",
+     "at": [
+      0,
+      0,
+      1.2
+     ],
+     "pose": "stand",
+     "expr": "sad",
+     "rot": 3.14
+    }
+   ],
+   "subject": 2,
+   "say": "Everyone else was already in the gym.",
+   "sfx": [
+    [
+     "bounce",
+     0.3
+    ],
+    [
+     "bounce",
+     1.1
+    ],
+    [
+     "bounce",
+     1.9
+    ]
+   ]
+  },
+  {
+   "s": 4.5,
+   "set": "courtempty",
+   "view": "ms",
+   "mood": "cold",
+   "chars": [
+    {
+     "look": "coach",
+     "at": [
+      0.6,
+      0,
+      -0.4
+     ],
+     "pose": "point",
+     "expr": "neutral",
+     "rot": -0.4
+    },
+    {
+     "look": "hero",
+     "at": [
+      -0.8,
+      0,
+      0
+     ],
+     "pose": "stand",
+     "expr": "shock",
+     "rot": 0.4
+    }
+   ],
+   "cards": [
+    {
+     "text": "TEAM LIST",
+     "kind": "paper",
+     "at": [
+      1.5,
+      1.7,
+      -0.6
+     ],
+     "w": 1.0
+    }
+   ],
+   "subject": 1,
+   "say": "Tryouts. His name wasn't on the list.",
+   "sfx": [
+    [
+     "thud",
+     0.6
+    ]
+   ]
+  },
+  {
+   "s": 5.0,
+   "set": "void",
+   "view": "ms",
+   "mood": "dark",
+   "fade": 10,
+   "chars": [
+    {
+     "look": "hero",
+     "pose": "facepalm",
+     "expr": "sad"
+    }
+   ],
+   "say": "He wasn't lazy.",
+   "sfx": [
+    [
+     "heart",
+     0.5
+    ],
+    [
+     "heart",
+     1.6
+    ],
+    [
+     "heart",
+     2.7
+    ],
+    [
+     "heart",
+     3.8
+    ]
+   ]
+  },
+  {
+   "s": 5.0,
+   "set": "void",
+   "view": "face",
+   "mood": "dark",
+   "chars": [
+    {
+     "look": "hero",
+     "pose": "stand",
+     "expr": "sad"
+    }
+   ],
+   "say": "He had just practiced quitting. Every morning."
+  },
+  {
+   "s": 5.0,
+   "set": "void",
+   "view": "wide",
+   "mood": "red",
+   "chars": [
+    {
+     "look": "hero",
+     "at": "left",
+     "pose": "stand",
+     "expr": "sad",
+     "rot": 0.4
+    },
+    {
+     "look": "monster",
+     "at": "right",
+     "rot": -0.5,
+     "scale": 1.35,
+     "pose": "point",
+     "expr": "angry"
+    }
+   ],
+   "say": [
+    {
+     "t": "you're not built for this",
+     "red": true
+    }
+   ],
+   "sfx": [
+    [
+     "boom",
+     0.1
+    ]
+   ]
+  },
+  {
+   "s": 4.0,
+   "set": "bedroom",
+   "cam": {
+    "from": [
+     -3.0,
+     1.2,
+     -0.6
+    ],
+    "to": [
+     -3.15,
+     1.15,
+     -1.0
+    ],
+    "look": [
+     -3.75,
+     0.75,
+     -2.7
+    ]
+   },
+   "mood": "night",
+   "chars": [],
+   "things": [
+    {
+     "name": "alarm",
+     "at": "alarm",
+     "text": "5:00",
+     "fit": 0.32,
+     "pop": false
+    }
+   ],
+   "say": "Then one night, he set it again.",
+   "sfx": [
+    [
+     "riser",
+     0.0
+    ]
+   ]
+  },
+  {
+   "s": 3.5,
+   "set": "bedroom",
+   "view": "ms",
+   "mood": "night",
+   "chars": [
+    {
+     "look": "hero",
+     "at": [
+      -1.4,
+      0,
+      -0.9
+     ],
+     "pose": "stand",
+     "expr": "angry"
+    }
+   ],
+   "things": [
+    {
+     "name": "alarm",
+     "at": "alarm",
+     "text": "5:00",
+     "fit": 0.32,
+     "pop": false
+    }
+   ],
+   "say": "And this time, he got up.",
+   "sfx": [
+    [
+     "alarm",
+     0.0
+    ],
+    [
+     "thud",
+     1.6
+    ]
+   ]
+  },
+  {
+   "s": 3.0,
+   "set": "void",
+   "view": "ws",
+   "chars": [],
+   "card": {
+    "big": "DAY 1."
+   },
+   "sfx": [
+    [
+     "hit",
+     0.15
+    ]
+   ]
+  },
+  {
+   "s": 4.0,
+   "set": "courtempty",
+   "view": "act",
+   "mood": "cold",
+   "day": "DAY 1",
+   "chars": [
+    {
+     "look": "baller",
+     "pose": "stand",
+     "expr": "angry"
+    }
+   ],
+   "act": {
+    "kind": "shoot"
+   },
+   "say": "Empty gym. Cold hands."
+  },
+  {
+   "s": 3.5,
+   "set": "courtempty",
+   "view": "act",
+   "mood": "cold",
+   "day": "DAY 2",
+   "chars": [
+    {
+     "look": "baller",
+     "pose": "stand",
+     "expr": "sad"
+    }
+   ],
+   "act": {
+    "kind": "dribble"
+   },
+   "say": "Most shots missed."
+  },
+  {
+   "s": 4.0,
+   "set": "bedroom",
+   "view": "ms",
+   "mood": "night",
+   "day": "DAY 9",
+   "chars": [
+    {
+     "look": "hero",
+     "at": [
+      -1.4,
+      0,
+      -0.9
+     ],
+     "pose": "stand",
+     "expr": "neutral"
+    }
+   ],
+   "things": [
+    {
+     "name": "alarm",
+     "at": "alarm",
+     "text": "5:00",
+     "fit": 0.32,
+     "pop": false
+    }
+   ],
+   "say": [
+    {
+     "t": "stay in bed",
+     "red": true
+    }
+   ],
+   "sfx": [
+    [
+     "alarm",
+     0.0
+    ]
+   ]
+  },
+  {
+   "s": 3.0,
+   "set": "street",
+   "view": "wide",
+   "mood": "night",
+   "day": "DAY 9",
+   "chars": [
+    {
+     "look": "baller",
+     "pose": "run",
+     "expr": "angry"
+    }
+   ],
+   "say": "He went anyway."
+  },
+  {
+   "s": 4.0,
+   "set": "courtempty",
+   "view": "act",
+   "mood": "cold",
+   "day": "DAY 17",
+   "chars": [
+    {
+     "look": "baller",
+     "pose": "stand",
+     "expr": "angry"
+    }
+   ],
+   "act": {
+    "kind": "layup"
+   },
+   "hud": {
+    "label": "SHOTS TODAY",
+    "from": 0,
+    "to": 100
+   },
+   "say": "100 shots before school."
+  },
+  {
+   "s": 4.5,
+   "set": "void",
+   "view": "wide",
+   "mood": "red",
+   "day": "DAY 26",
+   "chars": [
+    {
+     "look": "baller",
+     "at": "left",
+     "pose": "dribble",
+     "expr": "angry",
+     "rot": 0.3
+    },
+    {
+     "look": "monster",
+     "at": [
+      1.9,
+      0,
+      -1.2
+     ],
+     "rot": -0.5,
+     "scale": 1.7,
+     "pose": "point",
+     "expr": "angry"
+    }
+   ],
+   "say": [
+    {
+     "t": "nobody is watching",
+     "red": true
+    }
+   ],
+   "sfx": [
+    [
+     "boom",
+     0.1
+    ]
+   ]
+  },
+  {
+   "s": 3.5,
+   "set": "courtempty",
+   "view": "act",
+   "mood": "cold",
+   "day": "DAY 26",
+   "chars": [
+    {
+     "look": "baller",
+     "pose": "stand",
+     "expr": "neutral"
+    }
+   ],
+   "act": {
+    "kind": "dribble"
+   },
+   "say": "Nobody was."
+  },
+  {
+   "s": 3.5,
+   "set": "courtempty",
+   "view": "act",
+   "mood": "warm",
+   "day": "DAY 26",
+   "chars": [
+    {
+     "look": "baller",
+     "pose": "stand",
+     "expr": "smile"
+    }
+   ],
+   "act": {
+    "kind": "shoot"
+   },
+   "say": "That was the point."
+  },
+  {
+   "s": 3.5,
+   "set": "void",
+   "view": "ms",
+   "mood": "dark",
+   "day": "DAY 33",
+   "chars": [
+    {
+     "look": "baller",
+     "pose": "think",
+     "expr": "sad"
+    }
+   ],
+   "say": "Some mornings he hated it."
+  },
+  {
+   "s": 3.5,
+   "set": "bedroom",
+   "view": "ms",
+   "mood": "night",
+   "day": "DAY 33",
+   "chars": [
+    {
+     "look": "baller",
+     "at": [
+      -1.4,
+      0,
+      -0.9
+     ],
+     "pose": "walk",
+     "expr": "neutral"
+    }
+   ],
+   "things": [
+    {
+     "name": "alarm",
+     "at": "alarm",
+     "text": "5:00",
+     "fit": 0.32,
+     "pop": false
+    }
+   ],
+   "say": "He went anyway.",
+   "sfx": [
+    [
+     "alarm",
+     0.0
+    ]
+   ]
+  },
+  {
+   "s": 4.0,
+   "set": "gym",
+   "view": "act",
+   "mood": "warm",
+   "day": "DAY 41",
+   "chars": [
+    {
+     "look": "baller",
+     "pose": "stand",
+     "expr": "angry"
+    }
+   ],
+   "act": {
+    "kind": "lift_weights"
+   },
+   "say": "His legs got stronger."
+  },
+  {
+   "s": 4.0,
+   "set": "courtempty",
+   "view": "act",
+   "mood": "warm",
+   "day": "DAY 58",
+   "chars": [
+    {
+     "look": "baller",
+     "pose": "stand",
+     "expr": "grin"
+    }
+   ],
+   "act": {
+    "kind": "layup"
+   },
+   "hud": {
+    "label": "SHOTS TODAY",
+    "from": 0,
+    "to": 300
+   },
+   "say": "Then his shot did."
+  },
+  {
+   "s": 4.0,
+   "set": "courtempty",
+   "view": "act",
+   "mood": "warm",
+   "day": "DAY 77",
+   "chars": [
+    {
+     "look": "baller",
+     "pose": "stand",
+     "expr": "angry"
+    }
+   ],
+   "act": {
+    "kind": "block"
+   },
+   "say": "Then the kids who laughed stopped laughing."
+  },
+  {
+   "s": 4.5,
+   "set": "void",
+   "view": "wide",
+   "mood": "red",
+   "day": "DAY 89",
+   "chars": [
+    {
+     "look": "baller",
+     "at": [
+      -1.3,
+      0,
+      0.3
+     ],
+     "pose": "stand",
+     "expr": "angry",
+     "rot": 0.4
+    },
+    {
+     "look": "monster",
+     "at": [
+      1.8,
+      0,
+      -2.0
+     ],
+     "rot": -0.5,
+     "scale": 2.3,
+     "pose": "point",
+     "expr": "scream"
+    }
+   ],
+   "say": [
+    {
+     "t": "you can't",
+     "red": true
+    }
+   ],
+   "sfx": [
+    [
+     "boom",
+     0.0
+    ],
+    [
+     "heart",
+     1.2
+    ],
+    [
+     "heart",
+     2.0
+    ],
+    [
+     "heart",
+     2.8
+    ]
+   ]
+  },
+  {
+   "s": 4.0,
+   "set": "void",
+   "view": "face",
+   "mood": "dark",
+   "day": "DAY 89",
+   "chars": [
+    {
+     "look": "baller",
+     "pose": "stand",
+     "expr": "angry"
+    }
+   ],
+   "say": "He had heard that voice every morning."
+  },
+  {
+   "s": 4.0,
+   "set": "courtempty",
+   "view": "act",
+   "mood": "warm",
+   "day": "DAY 89",
+   "chars": [
+    {
+     "look": "baller",
+     "pose": "stand",
+     "expr": "angry"
+    }
+   ],
+   "act": {
+    "kind": "dunk"
+   },
+   "say": "So he took one more shot.",
+   "sfx": [
+    [
+     "hit",
+     1.3
+    ]
+   ]
+  },
+  {
+   "s": 3.0,
+   "set": "void",
+   "view": "ws",
+   "mood": "dark",
+   "chars": [],
+   "say": [
+    {
+     "t": "...",
+     "red": true,
+     "at": "mid"
+    }
+   ]
+  },
+  {
+   "s": 4.5,
+   "set": "bedroomday",
+   "cam": {
+    "from": [
+     -1.0,
+     1.7,
+     3.6
+    ],
+    "to": [
+     -1.2,
+     1.6,
+     3.1
+    ],
+    "look": [
+     -2.4,
+     0.9,
+     -1.6
+    ]
+   },
+   "mood": "sunrise",
+   "fade": 15,
+   "day": "DAY 90",
+   "chars": [
+    {
+     "look": "baller",
+     "at": [
+      -1.3,
+      0,
+      -0.9
+     ],
+     "pose": "stand",
+     "expr": "smile"
+    }
+   ],
+   "things": [
+    {
+     "name": "alarm",
+     "at": "alarm",
+     "text": "4:59",
+     "fit": 0.32,
+     "pop": false
+    }
+   ],
+   "say": "Day 90. He was up before the alarm.",
+   "sfx": [
+    [
+     "bell",
+     0.4
+    ]
+   ]
+  },
+  {
+   "s": 4.5,
+   "set": "court",
+   "view": "ms",
+   "mood": "warm",
+   "chars": [
+    {
+     "look": "coach",
+     "at": [
+      0.6,
+      0,
+      -0.4
+     ],
+     "pose": "point",
+     "expr": "smile",
+     "rot": -0.4
+    },
+    {
+     "look": "baller",
+     "at": [
+      -0.8,
+      0,
+      0
+     ],
+     "pose": "cheer",
+     "expr": "laugh",
+     "rot": 0.4
+    }
+   ],
+   "cards": [
+    {
+     "text": "TEAM: #7",
+     "kind": "paper",
+     "at": [
+      1.5,
+      1.7,
+      -0.6
+     ],
+     "w": 1.0
+    }
+   ],
+   "subject": 1,
+   "say": "This time, his name was on the list.",
+   "sfx": [
+    [
+     "bell",
+     0.3
+    ]
+   ]
+  },
+  {
+   "s": 4.5,
+   "set": "court",
+   "view": "wide",
+   "mood": "day",
+   "chars": [
+    {
+     "look": "baller",
+     "pose": "fistpump",
+     "expr": "grin"
+    },
+    {
+     "look": "kid2",
+     "at": [
+      -1.6,
+      0,
+      -0.6
+     ],
+     "pose": "cheer",
+     "expr": "laugh"
+    },
+    {
+     "look": "kid3",
+     "at": [
+      1.6,
+      0,
+      -0.6
+     ],
+     "pose": "cheer",
+     "expr": "grin"
+    }
+   ],
+   "say": "Everyone saw the highlight."
+  },
+  {
+   "s": 4.5,
+   "set": "courtempty",
+   "view": "ws",
+   "mood": "night",
+   "chars": [
+    {
+     "look": "baller",
+     "pose": "shoot",
+     "expr": "neutral"
+    }
+   ],
+   "say": "Nobody saw the 9,000 shots before it."
+  },
+  {
+   "s": 4.5,
+   "set": "void",
+   "view": "ws",
+   "chars": [],
+   "say": [
+    {
+     "t": "Every pro on this channel started here.",
+     "at": "mid"
+    }
+   ]
+  },
+  {
+   "s": 3.5,
+   "set": "void",
+   "view": "ws",
+   "chars": [],
+   "say": [
+    {
+     "t": "In an empty gym. Before anyone was watching.",
+     "at": "mid"
+    }
+   ]
+  },
+  {
+   "s": 8.5,
+   "set": "void",
+   "view": "ws",
+   "chars": [],
+   "card": {
+    "big": "PRACTICE.",
+    "line": "Nobody claps for the shots you take alone.",
+    "cmd": "Take one more."
+   },
+   "sfx": [
+    [
+     "hit",
+     0.15
+    ]
+   ]
+  }
+ ]
+}

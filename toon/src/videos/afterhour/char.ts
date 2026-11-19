@@ -1067,14 +1067,14 @@ function buildChar(look: Look, cheap: boolean): Char {
 let SHADE_LENS: THREE.MeshStandardMaterial | undefined;
 
 const MON_BODY = new THREE.MeshBasicMaterial({ color: "#050507" });
-const MON_LINE = new THREE.MeshBasicMaterial({ color: new THREE.Color("#ff2626").multiplyScalar(2.2), side: THREE.BackSide, toneMapped: false });
+const MON_LINE = new THREE.MeshBasicMaterial({ color: new THREE.Color("#ff2a22").multiplyScalar(3.2), side: THREE.BackSide, toneMapped: false });
 /** the shadow monster: every outline glows red (bloom catches it), every surface is flat black, the face keeps its red eyes */
 const monsterize = (c: Char): Char => {
   c.root.traverse((o) => {
     const m = o as THREE.Mesh; if (!m.isMesh) return;
     const mat = m.material as THREE.MeshBasicMaterial;
     if (mat.map && mat.transparent && mat.depthWrite === false) return;   // the face drawing
-    if (mat.side === THREE.BackSide) { m.material = MON_LINE; m.scale.multiplyScalar(1.015); } else m.material = MON_BODY;
+    if (mat.side === THREE.BackSide) { m.material = MON_LINE; m.scale.multiplyScalar(1.045); } else m.material = MON_BODY;
     m.castShadow = false;
   });
   return c;
