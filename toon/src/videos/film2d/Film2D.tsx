@@ -24,6 +24,8 @@
 //   tagAt = seconds from the card start when `line` (the tagline) fades in (default: just after the underline is drawn, ~ big letters
 //   2.4 f each + 32 f); cmdAt = seconds when `cmd` (the "You decide." end line) appears (default 1.5 s after the tagline);
 //   fs = title font size px (default: as big as fits, max 150).
+//   outAt / outLen = seconds from the card start when the card starts fading out / how long the fade takes (default: the last third, max 2 s).
+//   The title is heavy: bold 700 + a 5 px same-colour stroke (matches the reference's thick hand-lettered DISCIPLINE).
 // Beat keys passed through (film2d.py KEYS):
 //   grade: "sunset" = warm orange wash + low sun glow | "rain" = cool blue-grey wash, darker, diagonal rain streaks;  arg.gradeAmt 0..1 (default 1)
 //   arg.punch = seconds per punch cycle of the "punch" pose in this beat (default 1.25, the reference uses 2.5)
@@ -44,7 +46,7 @@ export type Thing2 = { name: string; x?: number; y?: number; s?: number; text?: 
 export type Cam2 = { from?: V3; to?: V3; ease?: "lin" | "in" | "out" | "io"; push?: number };
 export type Shot2 = { a: number; n: number; set: string; arg?: Record<string, number>; cam?: Cam2; chars?: Char2[]; things?: Thing2[]; fade?: number; fadeOut?: number; sat?: [number, number]; shake?: [number, number][]; flash?: number[]; scroll?: [number, number]; spot?: number; dark?: number; grade?: "sunset" | "rain" };
 export type Line2 = { a: number; n: number; t: string; red?: boolean; white?: boolean; bold?: boolean; shatter?: boolean | number; at?: "top" | "mid" | "low" | [number, number]; size?: number; cps?: number };
-export type Card2 = { a: number; n: number; big: string; line?: string; cmd?: string; tagAt?: number; cmdAt?: number; fs?: number };
+export type Card2 = { a: number; n: number; big: string; line?: string; cmd?: string; tagAt?: number; cmdAt?: number; fs?: number; outAt?: number; outLen?: number };
 export type Day2 = { a: number; n: number; t: string };
 export type Hud2 = { a: number; n: number; label: string; from: number; to: number; unit?: string };
 export type Thumb2 = { words: string; red?: string[]; pos?: "tl" | "tr" };
@@ -184,8 +186,8 @@ const Line: React.FC<{ l: Line2; f: number; pos: [number, number] }> = ({ l, f, 
   const sa = !l.shatter ? -1 : l.shatter === true ? Math.max(6, l.n - 16) : Math.round(l.shatter * 30);
   const ks = sa >= 0 ? clamp((t - sa) / 16) : 0;
   const body = (txt: string) => (sa >= 0 && ks > 0 ? <Shatter text={txt} k={ks} /> : txt);
-  if (!l.red && !l.white) {   // narration: linear fade in ~16 f, out ~12 f, no typing
-    return <div style={{ ...box, transform: "translate(-50%,-50%)", opacity: vis(f, l.a, l.n, 16, 12), color: WHITE, textShadow: l.bold ? "0 0 26px rgba(255,255,255,0.18)" : undefined }}>{l.t}</div>;
+  if (!l.red && !l.white) {   // narration: near-hard pop in 4 f, out 6 f (the reference cuts text on and off), no typing
+    return <div style={{ ...box, transform: "translate(-50%,-50%)", opacity: vis(f, l.a, l.n, 4, 6), color: WHITE, textShadow: l.bold ? "0 0 26px rgba(255,255,255,0.18)" : undefined }}>{l.t}</div>;
   }
   if (slam) {     // hard pop: 1.35x -> 1.0x over 3 f, then a slow fade out (18 f); shatter lines stay solid until the letters fall
     const k = clamp(t / 3), sc = 1 + 0.35 * (1 - k), inl = f < l.a || f >= l.a + l.n ? 0 : 1;
@@ -207,17 +209,17 @@ const wavy = (w: number, amp: number, waves: number, frac: number) => {
 const Card: React.FC<{ c: Card2; f: number }> = ({ c, f }) => {
   const t = f - c.a, len = c.big.length;
   const fs = c.fs ?? Math.min(150, 880 / (0.52 * Math.max(5, len))), ls = Math.min(14, Math.max(0, (880 - 0.52 * len * fs) / len));
-  const lettersEnd = 3 + len * 2.4 + 4;
+  const lettersEnd = 26;   // the reference fades the whole word in over ~0.7 s, then draws the underline
   const ul = clamp((t - lettersEnd + 1) / 18);
   const tag0 = c.tagAt !== undefined ? c.tagAt * 30 : lettersEnd + 18 + 14, cmd0 = c.cmdAt !== undefined ? c.cmdAt * 30 : tag0 + 45;
-  const fout = Math.min(60, c.n / 3), o = clamp((c.a + c.n - f) / fout);
+  const fout = Math.min(60, c.n / 3), o = c.outAt !== undefined ? clamp(1 - (t - c.outAt * 30) / Math.max(1, (c.outLen ?? 1) * 30)) : clamp((c.a + c.n - f) / fout);
   return <AbsoluteFill style={{ background: `radial-gradient(ellipse at 50% 50%, ${BG} 52%, #050505 100%)` }}>
     <svg width={1280} height={720} style={{ position: "absolute", opacity: o }}>
       {Array.from({ length: 70 }, (_, i) => <circle key={i} cx={rnd(i * 3) * 1280} cy={70 + rnd(i * 5 + 1) * 580} r={0.7 + rnd(i * 7) * 1.1} fill="#fff" opacity={0.1 + rnd(i * 9) * 0.28} />)}
     </svg>
     <div style={{ position: "absolute", left: 0, right: 0, top: 310 - fs * 0.5, textAlign: "center", opacity: o }}>
-      <div style={{ position: "relative", display: "inline-block", fontFamily: HAND, fontWeight: 700, fontSize: fs, letterSpacing: ls, lineHeight: 1, color: WHITE, WebkitTextStroke: "3.5px #000", paintOrder: "stroke fill", textShadow: "0 0 26px rgba(255,255,255,0.12)" }}>
-        {c.big.split("").map((ch, i) => <span key={i} style={{ opacity: clamp((t - 3 - i * 2.4) / 4), whiteSpace: "pre" }}>{ch}</span>)}
+      <div style={{ position: "relative", display: "inline-block", fontFamily: HAND, fontWeight: 700, fontSize: fs, letterSpacing: ls, lineHeight: 1, color: WHITE, WebkitTextStroke: "5px #EDEBE7", textShadow: "0 0 26px rgba(255,255,255,0.12)" }}>
+        {c.big.split("").map((ch, i) => <span key={i} style={{ opacity: clamp((t - 3 - i * 0.8) / 18), whiteSpace: "pre" }}>{ch}</span>)}
         <svg height={26} viewBox="0 0 400 26" preserveAspectRatio="none" style={{ position: "absolute", left: -10, top: fs * 1.0, width: "calc(100% + 20px)", overflow: "visible" }}>
           {ul > 0 && <path d={wavy(400, 4.5, 3.2, ul)} stroke={RED} strokeWidth={7} strokeLinecap="round" strokeLinejoin="round" fill="none" vectorEffect="non-scaling-stroke" />}
         </svg>

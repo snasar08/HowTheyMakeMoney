@@ -24,7 +24,9 @@
      "t": "Every day started the same.",
      "delay": 0.5,
      "until": 2.8,
-     "at": "mid"
+     "at": "mid",
+     "bold": true,
+     "size": 46
     }
    ],
    "sfx": []
@@ -114,7 +116,7 @@
    "sfx": []
   },
   {
-   "s": 2.4,
+   "s": 2.33,
    "set": "bedroom",
    "arg": {
     "clock": 600
@@ -158,7 +160,7 @@
    "sfx": []
   },
   {
-   "s": 8.1,
+   "s": 8.17,
    "set": "couch",
    "arg": {
     "lamp": 0,
@@ -193,13 +195,15 @@
      "t": "skip the gym.",
      "red": true,
      "delay": 3.3,
-     "until": 5.0
+     "until": 5.0,
+     "size": 40
     },
     {
      "t": "tomorrow.",
      "red": true,
      "delay": 5.1,
-     "until": 7.1
+     "until": 7.1,
+     "size": 40
     }
    ],
    "sfx": []
@@ -283,13 +287,15 @@
      "t": "you're tired.",
      "red": true,
      "delay": 1.5,
-     "until": 4.2
+     "until": 4.2,
+     "size": 40
     },
     {
      "t": "why even try?",
      "red": true,
      "delay": 4.5,
-     "until": 7.2
+     "until": 7.2,
+     "size": 40
     }
    ],
    "sfx": []
@@ -694,29 +700,33 @@
      "t": "He believed it.",
      "delay": 1.2,
      "until": 2.8,
-     "size": 38
+     "size": 46,
+     "bold": true
     },
     {
      "t": "Day after day.",
      "delay": 3.0,
      "until": 4.6,
-     "size": 38
+     "size": 46,
+     "bold": true
     },
     {
      "t": "But lazy isn't who you are.",
      "delay": 5.2,
-     "until": 9.0,
-     "size": 38
+     "until": 9.5,
+     "size": 46,
+     "bold": true
     },
     {
      "t": "It's what you repeat.",
      "delay": 7.0,
-     "until": 9.0,
+     "until": 9.5,
      "at": [
       640,
       210
      ],
-     "size": 44
+     "size": 44,
+     "bold": true
     }
    ],
    "sfx": [
@@ -793,7 +803,7 @@
    "sfx": []
   },
   {
-   "s": 3.0,
+   "s": 3.4,
    "set": "black",
    "cam": {
     "from": [
@@ -802,7 +812,7 @@
      1.0
     ]
    },
-   "fadeOut": 8,
+   "fadeOut": 14,
    "things": [
     {
      "name": "alarm",
@@ -824,7 +834,7 @@
    "sfx": []
   },
   {
-   "s": 0.7,
+   "s": 0.3,
    "set": "black",
    "sfx": []
   },
@@ -947,37 +957,63 @@
      "at": [
       640,
       260
-     ]
+     ],
+     "size": 40
     },
     {
      "t": "1",
-     "delay": 4.5,
-     "until": 5.5,
-     "size": 48,
+     "white": true,
+     "size": 52,
      "at": [
       640,
-      220
-     ]
+      235
+     ],
+     "delay": 4.5,
+     "until": 5.0
+    },
+    {
+     "t": "2",
+     "white": true,
+     "size": 52,
+     "at": [
+      640,
+      235
+     ],
+     "delay": 5.1,
+     "until": 5.6
     },
     {
      "t": "3",
-     "delay": 5.5,
-     "until": 6.5,
-     "size": 48,
+     "white": true,
+     "size": 52,
      "at": [
       640,
-      220
-     ]
+      235
+     ],
+     "delay": 5.7,
+     "until": 6.2
+    },
+    {
+     "t": "4",
+     "white": true,
+     "size": 52,
+     "at": [
+      640,
+      235
+     ],
+     "delay": 6.3,
+     "until": 6.8
     },
     {
      "t": "5",
-     "delay": 6.5,
-     "until": 7.5,
-     "size": 48,
+     "white": true,
+     "size": 52,
      "at": [
       640,
-      220
-     ]
+      235
+     ],
+     "delay": 6.9,
+     "until": 7.4
     }
    ],
    "sfx": []
@@ -989,6 +1025,7 @@
    "arg": {
     "hit": 1,
     "speed": 1,
+    "punch": 2.5,
     "flashAmp": 0.84,
     "flashLen": 8
    },
@@ -1016,30 +1053,34 @@
     {
      "t": "you're lazy",
      "red": true,
-     "delay": 0.0,
-     "until": 2.45,
-     "size": 85
+     "delay": 0.1,
+     "until": 3.2,
+     "size": 85,
+     "shatter": 2.45
     },
     {
      "t": "quit.",
      "red": true,
-     "delay": 2.5,
-     "until": 4.95,
-     "size": 85
+     "delay": 3.0,
+     "until": 5.6,
+     "size": 85,
+     "shatter": 2.05
     },
     {
      "t": "nobody cares.",
      "red": true,
-     "delay": 5.0,
-     "until": 7.45,
-     "size": 85
+     "delay": 5.4,
+     "until": 8.1,
+     "size": 85,
+     "shatter": 2.15
     },
     {
      "t": "it's not working.",
      "red": true,
-     "delay": 7.5,
-     "until": 9.95,
-     "size": 70
+     "delay": 7.75,
+     "until": 10.6,
+     "size": 70,
+     "shatter": 2.3
     }
    ],
    "sfx": [
@@ -1117,6 +1158,7 @@
      1.4
     ]
    },
+   "grade": "rain",
    "sfx": []
   },
   {
@@ -1165,30 +1207,13 @@
   {
    "s": 1.25,
    "day": "DAY 150",
-   "set": "void",
-   "cam": {
-    "from": [
-     640,
-     445,
-     1.35
-    ]
+   "set": "calendar",
+   "arg": {
+    "start": 0,
+    "cross": 18,
+    "crossDt": 0.05
    },
-   "chars": [
-    {
-     "look": "hero2",
-     "x": 520,
-     "pose": "stand",
-     "expr": "determined"
-    }
-   ],
-   "things": [
-    {
-     "name": "cash",
-     "x": 800,
-     "y": 400,
-     "s": 7
-    }
-   ],
+   "chars": [],
    "sfx": []
   },
   {
@@ -1197,7 +1222,11 @@
    "set": "gym",
    "arg": {
     "hit": 1,
-    "speed": 0
+    "speed": 0,
+    "burst": 0.2,
+    "burstX": 705,
+    "burstY": 420,
+    "burstN": 36
    },
    "cam": {
     "from": [
@@ -1248,6 +1277,7 @@
      1.4
     ]
    },
+   "grade": "sunset",
    "sfx": []
   },
   {
@@ -1307,7 +1337,9 @@
     {
      "t": "Motivation gets you started.",
      "delay": 0.8,
-     "until": 3.3
+     "until": 3.3,
+     "bold": true,
+     "size": 46
     }
    ],
    "sfx": []
@@ -1349,7 +1381,9 @@
     {
      "t": "Discipline keeps you going.",
      "delay": 0.3,
-     "until": 3.5
+     "until": 3.5,
+     "bold": true,
+     "size": 46
     }
    ],
    "sfx": []
@@ -1393,9 +1427,14 @@
     {
      "t": "you can't.",
      "red": true,
-     "delay": 1.0,
-     "until": 4.8,
-     "size": 50
+     "delay": 1.2,
+     "until": 5.5,
+     "size": 76,
+     "at": [
+      340,
+      225
+     ],
+     "shatter": 3.8
     }
    ],
    "sfx": []
@@ -1499,21 +1538,20 @@
    ]
   },
   {
-   "s": 1.83,
-   "set": "void",
+   "s": 0.8,
+   "set": "stairs",
+   "day": "DAY 270",
    "flash": [
     0.0
    ],
    "arg": {
-    "flashAmp": 0.85,
-    "flashLen": 24
+    "flashAmp": 1.0,
+    "flashLen": 40,
+    "burst": 0.0,
+    "burstX": 660,
+    "burstY": 300,
+    "burstN": 40
    },
-   "chars": [],
-   "sfx": []
-  },
-  {
-   "s": 1.17,
-   "set": "stairs",
    "cam": {
     "from": [
      706,
@@ -1521,8 +1559,25 @@
      1.0
     ]
    },
+   "chars": [
+    {
+     "look": "hero2",
+     "x": 660,
+     "y": 420,
+     "pose": "stairs",
+     "expr": "shock",
+     "scale": 0.75
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "s": 1.03,
+   "set": "stairs",
+   "day": "DAY 270",
    "arg": {
-    "bloom": 0.0
+    "embers": 36,
+    "emberSpeed": 0.6
    },
    "chars": [
     {
@@ -1531,8 +1586,8 @@
      "pose": "stairs",
      "expr": "determined",
      "stairs": [
-      0.0,
-      0.08
+      0.31,
+      0.36
      ],
      "scale": 0.75
     }
@@ -1540,19 +1595,14 @@
    "sfx": []
   },
   {
-   "s": 0.4,
+   "s": 0.67,
    "set": "stairs",
-   "cam": {
-    "from": [
-     706,
-     250,
-     1.0
-    ]
-   },
+   "day": "DAY 270",
    "arg": {
-    "bloom": -1.17
+    "bloom": 0.0,
+    "embers": 36,
+    "emberSpeed": 0.6
    },
-   "music": "finale",
    "chars": [
     {
      "look": "hero2",
@@ -1560,8 +1610,8 @@
      "pose": "stairs",
      "expr": "determined",
      "stairs": [
-      0.08,
-      0.1
+      0.36,
+      0.43
      ],
      "scale": 0.75
     }
@@ -1569,11 +1619,13 @@
    "sfx": []
   },
   {
-   "s": 11.6,
+   "s": 12.5,
    "set": "hill",
    "arg": {
-    "hx": 430
+    "hx": 430,
+    "bloom": -0.67
    },
+   "music": "finale",
    "fadeOut": 21,
    "chars": [
     {
@@ -1587,13 +1639,17 @@
    "say": [
     {
      "t": "Nobody is coming to save you.",
-     "delay": 0.6,
-     "until": 3.8
+     "delay": 1.65,
+     "until": 4.55,
+     "bold": true,
+     "size": 46
     },
     {
      "t": "So save yourself.",
-     "delay": 4.6,
-     "until": 10.4
+     "delay": 5.65,
+     "until": 11.6,
+     "bold": true,
+     "size": 46
     }
    ],
    "sfx": []
@@ -1652,7 +1708,7 @@
      "pose": "walk",
      "expr": "determined",
      "to": [
-      1250,
+      1690,
       560
      ]
     },
@@ -1677,7 +1733,12 @@
    "card": {
     "big": "DISCIPLINE",
     "line": "Day one, or one day.",
-    "cmd": "You decide."
+    "cmd": "You decide.",
+    "fs": 178,
+    "tagAt": 4.25,
+    "cmdAt": 6.4,
+    "outAt": 10.25,
+    "outLen": 1.0
    },
    "sfx": [
     [
