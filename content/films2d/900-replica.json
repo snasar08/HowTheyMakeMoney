@@ -1,0 +1,1693 @@
+{
+ "id": "900-replica",
+ "title": "INTERNAL replica test - never post",
+ "cast": {
+  "hero": {},
+  "hero2": {
+   "band": "#EC4937"
+  },
+  "voice": {
+   "monster": true
+  },
+  "ghost": {
+   "monster": true,
+   "ghost": true
+  }
+ },
+ "beats": [
+  {
+   "s": 3.0,
+   "set": "black",
+   "music": "drone",
+   "say": [
+    {
+     "t": "Every day started the same.",
+     "delay": 0.5,
+     "until": 2.8,
+     "at": "mid"
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "s": 4.5,
+   "set": "bedroom",
+   "arg": {
+    "ring": 1,
+    "clock": 500
+   },
+   "fade": 20,
+   "cam": {
+    "from": [
+     655,
+     445,
+     1.35
+    ],
+    "to": [
+     655,
+     445,
+     1.4229
+    ],
+    "ease": "lin"
+   },
+   "chars": [
+    {
+     "look": "hero",
+     "x": 720,
+     "pose": "lie",
+     "bed": true,
+     "expr": "sleep"
+    }
+   ],
+   "sfx": [
+    [
+     "alarm",
+     0.97,
+     {
+      "n": 14
+     }
+    ]
+   ]
+  },
+  {
+   "s": 4.0,
+   "set": "bedroom",
+   "arg": {
+    "clock": 541
+   },
+   "cam": {
+    "from": [
+     655,
+     445,
+     1.4229
+    ],
+    "to": [
+     655,
+     445,
+     1.4877
+    ],
+    "ease": "lin"
+   },
+   "chars": [
+    {
+     "look": "hero",
+     "x": 720,
+     "pose": "lie",
+     "bed": true,
+     "expr": "tired"
+    }
+   ],
+   "say": [
+    {
+     "t": "just 5 more minutes...",
+     "red": true,
+     "delay": 1.4,
+     "until": 4.0,
+     "at": [
+      640,
+      200
+     ],
+     "cps": 17,
+     "size": 42
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "s": 2.4,
+   "set": "bedroom",
+   "arg": {
+    "clock": 600
+   },
+   "cam": {
+    "from": [
+     655,
+     445,
+     1.4877
+    ],
+    "to": [
+     655,
+     445,
+     1.5266
+    ],
+    "ease": "lin"
+   },
+   "chars": [
+    {
+     "look": "hero",
+     "x": 720,
+     "pose": "lie",
+     "bed": true,
+     "expr": "sleep"
+    }
+   ],
+   "fadeOut": 6,
+   "say": [
+    {
+     "t": "again.",
+     "red": true,
+     "delay": 1.5,
+     "until": 2.3,
+     "at": [
+      640,
+      200
+     ],
+     "size": 42
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "s": 8.1,
+   "set": "couch",
+   "arg": {
+    "lamp": 0,
+    "dip": 18
+   },
+   "day": "DAY 1",
+   "chars": [
+    {
+     "look": "hero",
+     "x": 640,
+     "y": 500,
+     "pose": "sofaphone",
+     "expr": "tired"
+    },
+    {
+     "look": "voice",
+     "x": 840,
+     "y": 560,
+     "pose": "peek",
+     "scale": 1.0,
+     "dir": -1
+    }
+   ],
+   "things": [
+    {
+     "name": "phone",
+     "hand": 0
+    }
+   ],
+   "say": [
+    {
+     "t": "skip the gym.",
+     "red": true,
+     "delay": 3.3,
+     "until": 5.0
+    },
+    {
+     "t": "tomorrow.",
+     "red": true,
+     "delay": 5.1,
+     "until": 7.1
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "s": 0.5,
+   "set": "desk",
+   "day": "DAY 25",
+   "cam": {
+    "from": [
+     660,
+     337,
+     1.1
+    ],
+    "to": [
+     660,
+     337,
+     1.1055
+    ],
+    "ease": "lin"
+   },
+   "chars": [
+    {
+     "look": "hero",
+     "x": 560,
+     "y": 510,
+     "pose": "deskslump",
+     "expr": "tired"
+    },
+    {
+     "look": "voice",
+     "x": 400,
+     "y": 900,
+     "pose": "lurk",
+     "scale": 1.0,
+     "to": [
+      400,
+      560
+     ],
+     "ease": true
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "s": 7.5,
+   "set": "desk",
+   "day": "DAY 47",
+   "cam": {
+    "from": [
+     660,
+     337,
+     1.1055
+    ],
+    "to": [
+     660,
+     337,
+     1.188
+    ],
+    "ease": "lin"
+   },
+   "fadeOut": 8,
+   "chars": [
+    {
+     "look": "hero",
+     "x": 560,
+     "y": 510,
+     "pose": "deskslump",
+     "expr": "tired"
+    },
+    {
+     "look": "voice",
+     "x": 400,
+     "y": 560,
+     "pose": "lurk",
+     "scale": 1.0
+    }
+   ],
+   "say": [
+    {
+     "t": "you're tired.",
+     "red": true,
+     "delay": 1.5,
+     "until": 4.2
+    },
+    {
+     "t": "why even try?",
+     "red": true,
+     "delay": 4.5,
+     "until": 7.2
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "s": 1.25,
+   "day": "DAY 88",
+   "set": "bedroom",
+   "arg": {
+    "ring": 1,
+    "clock": 500
+   },
+   "cam": {
+    "from": [
+     450,
+     440,
+     2.4
+    ]
+   },
+   "chars": [
+    {
+     "look": "hero",
+     "x": 720,
+     "pose": "lie",
+     "bed": true,
+     "expr": "tired"
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "s": 1.25,
+   "day": "DAY 112",
+   "set": "couch",
+   "arg": {
+    "lamp": 0
+   },
+   "cam": {
+    "from": [
+     640,
+     430,
+     2.4
+    ]
+   },
+   "chars": [
+    {
+     "look": "hero",
+     "x": 640,
+     "y": 500,
+     "pose": "sofaphone",
+     "expr": "tired"
+    }
+   ],
+   "things": [
+    {
+     "name": "phone",
+     "hand": 0
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "s": 1.25,
+   "day": "DAY 150",
+   "set": "bedroom",
+   "arg": {
+    "clock": 245
+   },
+   "cam": {
+    "from": [
+     655,
+     445,
+     1.2
+    ]
+   },
+   "chars": [
+    {
+     "look": "hero",
+     "x": 720,
+     "pose": "lie",
+     "bed": true,
+     "expr": "tired"
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "s": 1.25,
+   "day": "DAY 203",
+   "set": "bedroom",
+   "arg": {
+    "ring": 1,
+    "clock": 500
+   },
+   "cam": {
+    "from": [
+     450,
+     440,
+     2.4
+    ]
+   },
+   "chars": [
+    {
+     "look": "hero",
+     "x": 720,
+     "pose": "lie",
+     "bed": true,
+     "expr": "sad"
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "s": 1.25,
+   "day": "DAY 260",
+   "set": "void",
+   "cam": {
+    "from": [
+     640,
+     445,
+     1.35
+    ]
+   },
+   "chars": [
+    {
+     "look": "hero",
+     "x": 520,
+     "pose": "stand",
+     "expr": "tired"
+    }
+   ],
+   "things": [
+    {
+     "name": "phone",
+     "x": 800,
+     "y": 540,
+     "s": 5
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "s": 1.25,
+   "day": "DAY 301",
+   "set": "couch",
+   "arg": {
+    "lamp": 0
+   },
+   "cam": {
+    "from": [
+     640,
+     430,
+     2.4
+    ]
+   },
+   "chars": [
+    {
+     "look": "hero",
+     "x": 640,
+     "y": 500,
+     "pose": "sofaphone",
+     "expr": "tired"
+    }
+   ],
+   "things": [
+    {
+     "name": "phone",
+     "hand": 0
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "s": 1.25,
+   "day": "DAY 340",
+   "set": "bedroom",
+   "arg": {
+    "ring": 1,
+    "clock": 500
+   },
+   "cam": {
+    "from": [
+     450,
+     440,
+     2.4
+    ]
+   },
+   "chars": [
+    {
+     "look": "hero",
+     "x": 720,
+     "pose": "lie",
+     "bed": true,
+     "expr": "sad"
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "s": 1.25,
+   "day": "DAY 365",
+   "set": "bedroom",
+   "arg": {
+    "clock": 214
+   },
+   "cam": {
+    "from": [
+     655,
+     445,
+     1.2
+    ]
+   },
+   "chars": [
+    {
+     "look": "hero",
+     "x": 720,
+     "pose": "lie",
+     "bed": true,
+     "expr": "sad"
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "s": 4.07,
+   "cam": {
+    "from": [
+     650,
+     421,
+     1.4
+    ],
+    "to": [
+     650,
+     421,
+     1.457
+    ],
+    "ease": "lin"
+   },
+   "set": "mirror",
+   "arg": {
+    "crack": 0
+   },
+   "chars": [
+    {
+     "look": "hero",
+     "x": 540,
+     "pose": "stand",
+     "expr": "sad"
+    },
+    {
+     "look": "voice",
+     "x": 760,
+     "y": 540,
+     "pose": "monster",
+     "scale": 1.0,
+     "dir": -1
+    }
+   ],
+   "sfx": [
+    [
+     "boom",
+     4.0,
+     {
+      "dur": 3.5
+     }
+    ],
+    [
+     "heart",
+     0.4,
+     {
+      "n": 1
+     }
+    ],
+    [
+     "heart",
+     1.6,
+     {
+      "n": 1
+     }
+    ],
+    [
+     "heart",
+     2.05,
+     {
+      "n": 1
+     }
+    ],
+    [
+     "heart",
+     2.47,
+     {
+      "n": 1
+     }
+    ],
+    [
+     "heart",
+     2.89,
+     {
+      "n": 1
+     }
+    ],
+    [
+     "heart",
+     3.31,
+     {
+      "n": 1
+     }
+    ],
+    [
+     "heart",
+     3.72,
+     {
+      "n": 1
+     }
+    ]
+   ]
+  },
+  {
+   "s": 5.93,
+   "cam": {
+    "from": [
+     650,
+     421,
+     1.457
+    ],
+    "to": [
+     650,
+     421,
+     1.5
+    ],
+    "ease": "lin"
+   },
+   "fadeOut": 36,
+   "set": "mirror",
+   "arg": {
+    "crack": 1
+   },
+   "chars": [
+    {
+     "look": "hero",
+     "x": 540,
+     "pose": "stand",
+     "expr": "sad"
+    },
+    {
+     "look": "voice",
+     "x": 760,
+     "y": 540,
+     "pose": "monster",
+     "scale": 1.0,
+     "dir": -1
+    }
+   ],
+   "say": [
+    {
+     "t": "you're lazy",
+     "red": true,
+     "delay": 0.0,
+     "until": 5.58,
+     "size": 95
+    },
+    {
+     "t": "you'll never change.",
+     "red": true,
+     "delay": 2.93,
+     "until": 5.58,
+     "at": [
+      640,
+      330
+     ],
+     "size": 34
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "s": 10.0,
+   "set": "spot",
+   "arg": {
+    "x": 640
+   },
+   "cam": {
+    "from": [
+     640,
+     441,
+     1.12
+    ],
+    "push": 0.2
+   },
+   "fade": 42,
+   "fadeOut": 22,
+   "chars": [
+    {
+     "look": "hero",
+     "x": 640,
+     "pose": "fetal",
+     "expr": "sad"
+    }
+   ],
+   "say": [
+    {
+     "t": "He believed it.",
+     "delay": 1.2,
+     "until": 2.8,
+     "size": 38
+    },
+    {
+     "t": "Day after day.",
+     "delay": 3.0,
+     "until": 4.6,
+     "size": 38
+    },
+    {
+     "t": "But lazy isn't who you are.",
+     "delay": 5.2,
+     "until": 9.0,
+     "size": 38
+    },
+    {
+     "t": "It's what you repeat.",
+     "delay": 7.0,
+     "until": 9.0,
+     "at": [
+      640,
+      210
+     ],
+     "size": 44
+    }
+   ],
+   "sfx": [
+    [
+     "tick",
+     4.97
+    ],
+    [
+     "tick",
+     6.22
+    ],
+    [
+     "tick",
+     7.47
+    ]
+   ]
+  },
+  {
+   "s": 1.2,
+   "set": "black",
+   "sfx": []
+  },
+  {
+   "s": 0.8,
+   "set": "black",
+   "fade": 24,
+   "cam": {
+    "from": [
+     640,
+     400,
+     1.0
+    ]
+   },
+   "things": [
+    {
+     "name": "alarm",
+     "x": 640,
+     "y": 470,
+     "s": 4,
+     "text": "4:59",
+     "v": 0
+    }
+   ],
+   "sfx": [
+    [
+     "alarm",
+     0.76,
+     {
+      "n": 17
+     }
+    ]
+   ]
+  },
+  {
+   "s": 1.0,
+   "set": "black",
+   "cam": {
+    "from": [
+     640,
+     400,
+     1.0
+    ]
+   },
+   "things": [
+    {
+     "name": "alarm",
+     "x": 640,
+     "y": 470,
+     "s": 4,
+     "text": "5:00",
+     "v": 1
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "s": 3.0,
+   "set": "black",
+   "cam": {
+    "from": [
+     640,
+     400,
+     1.0
+    ]
+   },
+   "fadeOut": 8,
+   "things": [
+    {
+     "name": "alarm",
+     "x": 640,
+     "y": 470,
+     "s": 4,
+     "text": "5:00",
+     "v": 1
+    }
+   ],
+   "chars": [
+    {
+     "look": "voice",
+     "x": 760,
+     "y": 300,
+     "pose": "hand"
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "s": 0.7,
+   "set": "black",
+   "sfx": []
+  },
+  {
+   "s": 5.0,
+   "set": "bedroom",
+   "fade": 12,
+   "fadeOut": 6,
+   "cam": {
+    "from": [
+     655,
+     445,
+     1.0
+    ],
+    "to": [
+     655,
+     445,
+     1.8
+    ],
+    "ease": "in"
+   },
+   "chars": [
+    {
+     "look": "hero2",
+     "x": 470,
+     "pose": "bedge",
+     "expr": "angry",
+     "poseAt": [
+      [
+       2.0,
+       "stand"
+      ]
+     ]
+    }
+   ],
+   "say": [
+    {
+     "t": "DAY 1.",
+     "size": 130,
+     "at": [
+      640,
+      190
+     ],
+     "delay": 2.57,
+     "until": 5.0
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "s": 0.175,
+   "set": "black",
+   "sfx": []
+  },
+  {
+   "s": 0.125,
+   "set": "black",
+   "music": "montage",
+   "sfx": []
+  },
+  {
+   "s": 7.5,
+   "set": "street",
+   "day": "DAY 3",
+   "flash": [
+    0.0
+   ],
+   "arg": {
+    "flashAmp": 0.6,
+    "flashLen": 12
+   },
+   "chars": [
+    {
+     "look": "hero2",
+     "x": 640,
+     "pose": "run",
+     "expr": "determined",
+     "poseAt": [
+      [
+       4.0,
+       "trudge"
+      ]
+     ],
+     "exprAt": [
+      [
+       4.0,
+       "tired"
+      ]
+     ]
+    }
+   ],
+   "things": [
+    {
+     "name": "sweat",
+     "x": 668,
+     "y": 360,
+     "at": 4.0
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "s": 7.5,
+   "set": "void",
+   "day": "DAY 12",
+   "chars": [
+    {
+     "look": "hero2",
+     "x": 640,
+     "pose": "crawl",
+     "expr": "determined"
+    }
+   ],
+   "say": [
+    {
+     "t": "told you.",
+     "red": true,
+     "delay": 2.3,
+     "until": 3.5,
+     "at": [
+      640,
+      260
+     ]
+    },
+    {
+     "t": "1",
+     "delay": 4.5,
+     "until": 5.5,
+     "size": 48,
+     "at": [
+      640,
+      220
+     ]
+    },
+    {
+     "t": "3",
+     "delay": 5.5,
+     "until": 6.5,
+     "size": 48,
+     "at": [
+      640,
+      220
+     ]
+    },
+    {
+     "t": "5",
+     "delay": 6.5,
+     "until": 7.5,
+     "size": 48,
+     "at": [
+      640,
+      220
+     ]
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "s": 12.5,
+   "set": "gym",
+   "day": "DAY 64",
+   "arg": {
+    "hit": 1,
+    "speed": 1,
+    "flashAmp": 0.84,
+    "flashLen": 8
+   },
+   "flash": [
+    11.93
+   ],
+   "chars": [
+    {
+     "look": "hero2",
+     "x": 660,
+     "pose": "punch",
+     "expr": "angry"
+    }
+   ],
+   "things": [
+    {
+     "name": "speed",
+     "x": 700,
+     "y": 400,
+     "s": 1.4,
+     "at": 11.93
+    }
+   ],
+   "say": [
+    {
+     "t": "you're lazy",
+     "red": true,
+     "delay": 0.0,
+     "until": 2.45,
+     "size": 85
+    },
+    {
+     "t": "quit.",
+     "red": true,
+     "delay": 2.5,
+     "until": 4.95,
+     "size": 85
+    },
+    {
+     "t": "nobody cares.",
+     "red": true,
+     "delay": 5.0,
+     "until": 7.45,
+     "size": 85
+    },
+    {
+     "t": "it's not working.",
+     "red": true,
+     "delay": 7.5,
+     "until": 9.95,
+     "size": 70
+    }
+   ],
+   "sfx": [
+    [
+     "punch",
+     2.5
+    ],
+    [
+     "punch",
+     5.0
+    ],
+    [
+     "punch",
+     7.5
+    ],
+    [
+     "punch",
+     10.0
+    ],
+    [
+     "riser",
+     11.93,
+     {
+      "len": 0.6
+     }
+    ]
+   ]
+  },
+  {
+   "s": 1.25,
+   "day": "DAY 90",
+   "set": "bedroom",
+   "arg": {
+    "ring": 1,
+    "clock": 500
+   },
+   "cam": {
+    "from": [
+     450,
+     440,
+     2.4
+    ]
+   },
+   "chars": [
+    {
+     "look": "hero2",
+     "x": 720,
+     "pose": "lie",
+     "bed": true,
+     "expr": "angry"
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "s": 1.25,
+   "day": "DAY 105",
+   "set": "street",
+   "sat": [
+    0.55,
+    0.55
+   ],
+   "chars": [
+    {
+     "look": "hero2",
+     "x": 640,
+     "pose": "run",
+     "expr": "determined"
+    }
+   ],
+   "cam": {
+    "from": [
+     640,
+     439,
+     1.4
+    ]
+   },
+   "sfx": []
+  },
+  {
+   "s": 1.25,
+   "day": "DAY 121",
+   "set": "desk",
+   "cam": {
+    "from": [
+     660,
+     337,
+     1.1
+    ]
+   },
+   "chars": [
+    {
+     "look": "hero2",
+     "x": 560,
+     "y": 510,
+     "pose": "desk",
+     "expr": "determined"
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "s": 1.25,
+   "day": "DAY 138",
+   "set": "void",
+   "cam": {
+    "from": [
+     640,
+     445,
+     1.35
+    ]
+   },
+   "chars": [
+    {
+     "look": "hero2",
+     "x": 640,
+     "pose": "pushup",
+     "expr": "determined"
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "s": 1.25,
+   "day": "DAY 150",
+   "set": "void",
+   "cam": {
+    "from": [
+     640,
+     445,
+     1.35
+    ]
+   },
+   "chars": [
+    {
+     "look": "hero2",
+     "x": 520,
+     "pose": "stand",
+     "expr": "determined"
+    }
+   ],
+   "things": [
+    {
+     "name": "cash",
+     "x": 800,
+     "y": 400,
+     "s": 7
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "s": 1.25,
+   "day": "DAY 164",
+   "set": "gym",
+   "arg": {
+    "hit": 1,
+    "speed": 0
+   },
+   "cam": {
+    "from": [
+     670,
+     443,
+     1.4
+    ]
+   },
+   "chars": [
+    {
+     "look": "hero2",
+     "x": 660,
+     "pose": "punch",
+     "expr": "angry"
+    }
+   ],
+   "things": [
+    {
+     "name": "speed",
+     "x": 700,
+     "y": 400,
+     "s": 1.4,
+     "at": 0.88
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "s": 1.25,
+   "day": "DAY 177",
+   "set": "street",
+   "sat": [
+    1.0,
+    1.0
+   ],
+   "chars": [
+    {
+     "look": "hero2",
+     "x": 640,
+     "pose": "run",
+     "expr": "determined"
+    }
+   ],
+   "cam": {
+    "from": [
+     640,
+     439,
+     1.4
+    ]
+   },
+   "sfx": []
+  },
+  {
+   "s": 1.25,
+   "day": "DAY 190",
+   "set": "mirror",
+   "cam": {
+    "from": [
+     650,
+     421,
+     1.4
+    ]
+   },
+   "chars": [
+    {
+     "look": "hero2",
+     "x": 540,
+     "pose": "stand",
+     "expr": "determined"
+    },
+    {
+     "look": "hero2",
+     "x": 760,
+     "y": 540,
+     "pose": "stand",
+     "expr": "determined",
+     "dir": -1
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "s": 4.0,
+   "set": "stairs",
+   "cam": {
+    "from": [
+     706,
+     250,
+     1.0
+    ]
+   },
+   "day": "DAY 270",
+   "chars": [
+    {
+     "look": "hero2",
+     "x": 0,
+     "pose": "stairs",
+     "expr": "determined",
+     "stairs": [
+      0.0,
+      0.2
+     ],
+     "scale": 0.75
+    }
+   ],
+   "say": [
+    {
+     "t": "Motivation gets you started.",
+     "delay": 0.8,
+     "until": 3.3
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "s": 3.5,
+   "set": "stairs",
+   "cam": {
+    "from": [
+     706,
+     250,
+     1.0
+    ]
+   },
+   "day": "DAY 270",
+   "chars": [
+    {
+     "look": "hero2",
+     "x": 0,
+     "pose": "stairs",
+     "expr": "determined",
+     "stairs": [
+      0.2,
+      0.33
+     ],
+     "scale": 0.75
+    },
+    {
+     "look": "voice",
+     "x": 0,
+     "pose": "hand",
+     "stairs": [
+      0.56,
+      0.56
+     ]
+    }
+   ],
+   "say": [
+    {
+     "t": "Discipline keeps you going.",
+     "delay": 0.3,
+     "until": 3.5
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "s": 3.0,
+   "set": "stairs",
+   "cam": {
+    "from": [
+     706,
+     250,
+     1.0
+    ]
+   },
+   "day": "DAY 270",
+   "chars": [
+    {
+     "look": "hero2",
+     "x": 0,
+     "pose": "stairs",
+     "expr": "determined",
+     "stairs": [
+      0.33,
+      0.4
+     ],
+     "scale": 0.75
+    },
+    {
+     "look": "voice",
+     "x": 0,
+     "pose": "loom",
+     "scale": 1.2,
+     "dir": -1,
+     "stairs": [
+      0.56,
+      0.56
+     ]
+    }
+   ],
+   "say": [
+    {
+     "t": "you can't.",
+     "red": true,
+     "delay": 1.0,
+     "until": 4.8,
+     "size": 50
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "s": 1.875,
+   "set": "stairs",
+   "cam": {
+    "from": [
+     706,
+     250,
+     1.0
+    ]
+   },
+   "day": "DAY 270",
+   "chars": [
+    {
+     "look": "hero2",
+     "x": 0,
+     "pose": "floor",
+     "expr": "shock",
+     "stairs": [
+      0.4,
+      0.3
+     ],
+     "scale": 0.75
+    },
+    {
+     "look": "voice",
+     "x": 0,
+     "pose": "loom",
+     "scale": 1.2,
+     "dir": -1,
+     "stairs": [
+      0.56,
+      0.56
+     ]
+    }
+   ],
+   "things": [
+    {
+     "name": "speed",
+     "x": 900,
+     "y": 250,
+     "s": 1.2,
+     "at": 0.0
+    }
+   ],
+   "shake": [
+    [
+     0.0,
+     10
+    ]
+   ],
+   "sfx": []
+  },
+  {
+   "s": 0.125,
+   "set": "stairs",
+   "cam": {
+    "from": [
+     706,
+     250,
+     1.0
+    ]
+   },
+   "day": "DAY 270",
+   "music": "drone",
+   "chars": [
+    {
+     "look": "hero2",
+     "x": 0,
+     "pose": "floor",
+     "expr": "shock",
+     "stairs": [
+      0.3,
+      0.29
+     ],
+     "scale": 0.75
+    },
+    {
+     "look": "voice",
+     "x": 0,
+     "pose": "loom",
+     "scale": 1.2,
+     "dir": -1,
+     "stairs": [
+      0.56,
+      0.56
+     ]
+    }
+   ],
+   "sfx": [
+    [
+     "riser",
+     0.125,
+     {
+      "len": 2.0
+     }
+    ]
+   ]
+  },
+  {
+   "s": 1.83,
+   "set": "void",
+   "flash": [
+    0.0
+   ],
+   "arg": {
+    "flashAmp": 0.85,
+    "flashLen": 24
+   },
+   "chars": [],
+   "sfx": []
+  },
+  {
+   "s": 1.17,
+   "set": "stairs",
+   "cam": {
+    "from": [
+     706,
+     250,
+     1.0
+    ]
+   },
+   "arg": {
+    "bloom": 0.0
+   },
+   "chars": [
+    {
+     "look": "hero2",
+     "x": 0,
+     "pose": "stairs",
+     "expr": "determined",
+     "stairs": [
+      0.0,
+      0.08
+     ],
+     "scale": 0.75
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "s": 0.4,
+   "set": "stairs",
+   "cam": {
+    "from": [
+     706,
+     250,
+     1.0
+    ]
+   },
+   "arg": {
+    "bloom": -1.17
+   },
+   "music": "finale",
+   "chars": [
+    {
+     "look": "hero2",
+     "x": 0,
+     "pose": "stairs",
+     "expr": "determined",
+     "stairs": [
+      0.08,
+      0.1
+     ],
+     "scale": 0.75
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "s": 11.6,
+   "set": "hill",
+   "arg": {
+    "hx": 430
+   },
+   "fadeOut": 21,
+   "chars": [
+    {
+     "look": "hero2",
+     "x": 430,
+     "y": 566,
+     "pose": "summit",
+     "expr": "determined"
+    }
+   ],
+   "say": [
+    {
+     "t": "Nobody is coming to save you.",
+     "delay": 0.6,
+     "until": 3.8
+    },
+    {
+     "t": "So save yourself.",
+     "delay": 4.6,
+     "until": 10.4
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "s": 0.3,
+   "set": "black",
+   "sfx": []
+  },
+  {
+   "s": 3.2,
+   "set": "bedroomdawn",
+   "chars": [
+    {
+     "look": "hero2",
+     "x": 520,
+     "pose": "bedge",
+     "expr": "smile"
+    },
+    {
+     "look": "ghost",
+     "x": 200,
+     "pose": "stand",
+     "scale": 0.4
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "s": 0.5,
+   "set": "bedroomdawn",
+   "chars": [
+    {
+     "look": "hero2",
+     "x": 520,
+     "pose": "stand",
+     "expr": "determined"
+    },
+    {
+     "look": "ghost",
+     "x": 200,
+     "pose": "stand",
+     "scale": 0.4
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "s": 4.0,
+   "set": "bedroomdawn",
+   "fadeOut": 30,
+   "chars": [
+    {
+     "look": "hero2",
+     "x": 520,
+     "pose": "walk",
+     "expr": "determined",
+     "to": [
+      1250,
+      560
+     ]
+    },
+    {
+     "look": "ghost",
+     "x": 200,
+     "pose": "stand",
+     "scale": 0.4
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "s": 0.25,
+   "set": "black",
+   "sfx": []
+  },
+  {
+   "s": 12.75,
+   "set": "black",
+   "music": "title",
+   "card": {
+    "big": "DISCIPLINE",
+    "line": "Day one, or one day.",
+    "cmd": "You decide."
+   },
+   "sfx": [
+    [
+     "boom",
+     0.0,
+     {
+      "dur": 5
+     }
+    ]
+   ]
+  }
+ ]
+}

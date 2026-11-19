@@ -135,7 +135,7 @@ const Shot: React.FC<{ s: Shot2; f: number }> = ({ s, f }) => {
 /** where a line sits on screen (1280x720). Narration: top-centre. Whisper: above the monster's head. Slam: big, near the top. */
 const placeOf = (l: Line2, shots: Shot2[]): [number, number] => {
   if (Array.isArray(l.at)) return l.at;
-  const size = l.size ?? 30, slam = !!l.red && size >= 60;
+  const size = l.size ?? (l.red ? 30 : 38), slam = !!l.red && size >= 60;
   if (l.at === "mid") return [640, 360];
   if (l.at === "low") return [640, 560];
   if (l.at === "top" || !l.red || slam) return [640, slam ? 172 : 152];
@@ -154,7 +154,7 @@ const placeOf = (l: Line2, shots: Shot2[]): [number, number] => {
 };
 
 const Line: React.FC<{ l: Line2; f: number; pos: [number, number] }> = ({ l, f, pos }) => {
-  const size = l.size ?? 30, slam = !!l.red && size >= 60, t = f - l.a;
+  const size = l.size ?? (l.red ? 30 : 38), slam = !!l.red && size >= 60, t = f - l.a;
   const box: React.CSSProperties = { position: "absolute", left: pos[0], top: pos[1], width: "max-content", maxWidth: 1040, textAlign: "center", whiteSpace: "pre-wrap", fontFamily: HAND, fontWeight: 400, fontSize: size, lineHeight: 1.15 };
   if (!l.red) {   // narration: linear fade in ~16 f, out ~12 f, no typing
     return <div style={{ ...box, transform: "translate(-50%,-50%)", opacity: vis(f, l.a, l.n, 16, 12), color: WHITE }}>{l.t}</div>;

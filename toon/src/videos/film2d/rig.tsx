@@ -242,11 +242,11 @@ const MonDefs: React.FC = () => (
   <defs>
     <filter id="rigMonGlow" x="-90%" y="-60%" width="280%" height="220%" colorInterpolationFilters="sRGB">
       <feMorphology in="SourceAlpha" operator="dilate" radius="2" result="d" />
-      <feFlood floodColor="#FF4A3A" result="c1" /><feComposite in="c1" in2="d" operator="in" result="rim" />
-      <feGaussianBlur in="d" stdDeviation="5" result="b1" /><feFlood floodColor="#E03020" floodOpacity="0.85" result="c2" /><feComposite in="c2" in2="b1" operator="in" result="g1" />
-      <feGaussianBlur in="d" stdDeviation="16" result="b2" /><feFlood floodColor="#B01810" floodOpacity="0.7" result="c3" /><feComposite in="c3" in2="b2" operator="in" result="g2" />
+      <feFlood floodColor="#E0402E" floodOpacity="0.7" result="c1" /><feComposite in="c1" in2="d" operator="in" result="rim" />
+      <feGaussianBlur in="d" stdDeviation="5" result="b1" /><feFlood floodColor="#E03020" floodOpacity="0.6" result="c2" /><feComposite in="c2" in2="b1" operator="in" result="g1" />
+      <feGaussianBlur in="d" stdDeviation="16" result="b2" /><feFlood floodColor="#B01810" floodOpacity="0.5" result="c3" /><feComposite in="c3" in2="b2" operator="in" result="g2" />
       <feGaussianBlur in="d" stdDeviation="42" result="b3" /><feFlood floodColor="#701008" floodOpacity="0.55" result="c4" /><feComposite in="c4" in2="b3" operator="in" result="g3" />
-      <feMerge><feMergeNode in="g3" /><feMergeNode in="g2" /><feMergeNode in="g2" /><feMergeNode in="g1" /><feMergeNode in="rim" /><feMergeNode in="SourceGraphic" /></feMerge>
+      <feMerge><feMergeNode in="g3" /><feMergeNode in="g2" /><feMergeNode in="g1" /><feMergeNode in="rim" /><feMergeNode in="SourceGraphic" /></feMerge>
     </filter>
   </defs>
 );
@@ -254,7 +254,7 @@ const MonDefs: React.FC = () => (
 /** the character: x/y = feet on the floor, dir = 1 faces right */
 export const Guy: React.FC<{ p: Pose; e: Expr; dir?: number; t: number; look?: Look; scale?: number; x?: number; y?: number; dim?: number }> = ({ p, e, dir = 1, t, look = {}, scale = 1, x = 0, y = 0, dim = 0 }) => {
   const mon = !!look.monster || !!look.ghost, ghost = !!look.ghost;
-  const sc = scale * (mon ? look.size ?? 1.4 : 1);
+  const sc = scale * (mon ? look.size ?? 1.1 : 1);
   const skin = mon ? (ghost ? "#0b0b0b" : "#040404") : look.skin ?? SKIN;
   const far = mon ? skin : SKIN_FAR;
   const line = mon ? (ghost ? "#8a2a22" : "#040404") : INK;
@@ -276,13 +276,13 @@ export const Guy: React.FC<{ p: Pose; e: Expr; dir?: number; t: number; look?: L
 
   const g = geo(p, dir);
   const lF = p.lF ?? [0, 0], lB = p.lB ?? [0, 0], aF = p.aF ?? [0, 0], aB = p.aB ?? [0, 0];
-  const lw2 = mon ? 19 : LIMB, aw = mon ? 16 : LIMB - 1;
+  const lw2 = mon ? 15 : LIMB, aw = mon ? 13 : LIMB - 1;
   const tube = (d: string, w: number, fill: string, key: string) => <g key={key}>
     <path d={d} stroke={line} strokeWidth={w + lw * 2} strokeLinecap="round" strokeLinejoin="round" fill="none" />
     <path d={d} stroke={fill} strokeWidth={w} strokeLinecap="round" strokeLinejoin="round" fill="none" />
   </g>;
   // the egg: a chain of circles from the hip up to the neck, then the head
-  const R0 = mon ? 26 : 26, R1 = mon ? 28 : 28, RN = mon ? 14 : 31, hrx = mon ? 42 : 36, hry = mon ? 42 : 33;
+  const R0 = mon ? 21 : 26, R1 = mon ? 23 : 28, RN = mon ? 20 : 31, hrx = mon ? 33 : 36, hry = mon ? 32 : 33;   // villain: slimmer body, round head (ref)
   const ux = S(rad(p.lean ?? 0)) * dir, uy = -C(rad(p.lean ?? 0));
   const base: Pt = { x: g.hx + ux * 14, y: g.hy + uy * 14 };
   const circles: { x: number; y: number; r: number }[] = [];
