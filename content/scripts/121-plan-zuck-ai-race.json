@@ -5,7 +5,7 @@
   "hook_style": "surprise",
   "title_style": "statement",
   "theme": "bold_bright",
-  "status": "ready",
+  "status": "delivered",
   "images": {},
   "hud_label": "THE AI RACE",
   "id": "121",
@@ -46,7 +46,18 @@
         "crowd": 0,
         "props": [],
         "stat": "THE AI RACE",
-        "stat_sub": "you're behind"
+        "stat_sub": "you're behind",
+        "hero": {
+          "skin": "efc7a4",
+          "hair": "curly",
+          "hair_color": "5a3b22",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "8a8f98",
+          "pants": "2b2f3a",
+          "shoes": "f4f4f4",
+          "height": 0.97
+        }
       },
       "toon": [
         {
@@ -77,7 +88,18 @@
         "crowd": 0,
         "props": [],
         "stat": "2023",
-        "stat_sub": "Llama, free"
+        "stat_sub": "Llama, free",
+        "hero": {
+          "skin": "efc7a4",
+          "hair": "curly",
+          "hair_color": "5a3b22",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "8a8f98",
+          "pants": "2b2f3a",
+          "shoes": "f4f4f4",
+          "height": 0.97
+        }
       },
       "toon": [
         {
@@ -124,7 +146,18 @@
         "crowd": 0,
         "props": [],
         "stat": "STEP 1",
-        "stat_sub": "everyone builds on it"
+        "stat_sub": "everyone builds on it",
+        "hero": {
+          "skin": "efc7a4",
+          "hair": "curly",
+          "hair_color": "5a3b22",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "8a8f98",
+          "pants": "2b2f3a",
+          "shoes": "f4f4f4",
+          "height": 0.97
+        }
       },
       "toon": [
         {
@@ -162,7 +195,18 @@
         "crowd": 0,
         "props": [],
         "stat": "STEP 2",
-        "stat_sub": "towns of computers"
+        "stat_sub": "towns of computers",
+        "hero": {
+          "skin": "efc7a4",
+          "hair": "curly",
+          "hair_color": "5a3b22",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "8a8f98",
+          "pants": "2b2f3a",
+          "shoes": "f4f4f4",
+          "height": 0.97
+        }
       },
       "toon": [
         {
@@ -202,7 +246,18 @@
         "crowd": 0,
         "props": [],
         "stat": "STEP 3",
-        "stat_sub": "AI in your glasses"
+        "stat_sub": "AI in your glasses",
+        "hero": {
+          "skin": "efc7a4",
+          "hair": "curly",
+          "hair_color": "5a3b22",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "8a8f98",
+          "pants": "2b2f3a",
+          "shoes": "f4f4f4",
+          "height": 0.97
+        }
       },
       "toon": [
         {
@@ -241,7 +296,18 @@
         "crowd": 0,
         "props": [],
         "stat": "STEP 4",
-        "stat_sub": "servers in space"
+        "stat_sub": "servers in space",
+        "hero": {
+          "skin": "efc7a4",
+          "hair": "curly",
+          "hair_color": "5a3b22",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "8a8f98",
+          "pants": "2b2f3a",
+          "shoes": "f4f4f4",
+          "height": 0.97
+        }
       },
       "toon": [
         {
@@ -269,7 +335,18 @@
         "crowd": 0,
         "props": [],
         "stat": "THE PLAN",
-        "stat_sub": "give it away, win it all"
+        "stat_sub": "give it away, win it all",
+        "hero": {
+          "skin": "efc7a4",
+          "hair": "curly",
+          "hair_color": "5a3b22",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "8a8f98",
+          "pants": "2b2f3a",
+          "shoes": "f4f4f4",
+          "height": 0.97
+        }
       },
       "toon": [
         {
@@ -302,5 +379,29 @@
       "title": "Wikipedia: Llama (language model)",
       "url": "https://en.wikipedia.org/wiki/Llama_(language_model)"
     }
-  ]
+  ],
+  "delivered": {
+    "mode": "release",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-121-plan-zuck-ai-race",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-121-plan-zuck-ai-race/121-plan-zuck-ai-race.mp4",
+    "post_at": "2026-11-20T12:00:00-05:00",
+    "rendered_at": "2026-11-19T18:57:07.818742+00:00",
+    "seconds": 39.88,
+    "eyes": {
+      "score": 8,
+      "problems": [
+        "The character remains static in the center of the frame for the entire duration of the video, which is visually repetitive and boring for the target demographic.",
+        "The background scenery does not change to reflect the specific locations mentioned in the narration (e.g., data centers, power plants, space), making the visual storytelling disconnected from the audio."
+      ],
+      "best_fix": "Introduce dynamic background changes or character movement that corresponds to the specific milestones mentioned in the narration (e.g., showing a data center when mentioned, or the character wearing glasses when the AI glasses are discussed).",
+      "model": "gemini-3.1-flash-lite",
+      "acts": null
+    },
+    "scene_scan": [
+      "shot 10 @578: only 7 frames (flash cut?)",
+      "shot 18 @1002: 4.6 s long (same picture too long?)",
+      "shot 18 @1068: jump inside shot (19) - something teleports?",
+      "shot 18 @1082: jump inside shot (18) - something teleports?"
+    ]
+  }
 }

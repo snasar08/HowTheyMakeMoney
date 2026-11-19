@@ -7,7 +7,7 @@
   "hook_style": "surprise",
   "title_style": "statement",
   "theme": "bold_bright",
-  "status": "ready",
+  "status": "delivered",
   "score": 93,
   "title": "You Quit Wall Street to Sell Books Online",
   "name_card": "Jeff Bezos",
@@ -45,7 +45,18 @@
         "crowd": 0,
         "props": [],
         "stat": "1994",
-        "stat_sub": "you quit Wall Street"
+        "stat_sub": "you quit Wall Street",
+        "hero": {
+          "skin": "e8bc92",
+          "hair": "bald",
+          "beard": "none",
+          "outfit": "suit",
+          "shirt": "2b3a55",
+          "pants": "2b3a55",
+          "shoes": "1a1a1a",
+          "tie": "3f6fb5",
+          "height": 1.0
+        }
       },
       "toon": [
         {
@@ -87,7 +98,18 @@
           "car"
         ],
         "stat": "A GARAGE",
-        "stat_sub": "Bellevue, Washington"
+        "stat_sub": "Bellevue, Washington",
+        "hero": {
+          "skin": "e8bc92",
+          "hair": "bald",
+          "beard": "none",
+          "outfit": "suit",
+          "shirt": "2b3a55",
+          "pants": "2b3a55",
+          "shoes": "1a1a1a",
+          "tie": "3f6fb5",
+          "height": 1.0
+        }
       },
       "toon": [
         {
@@ -130,7 +152,18 @@
           "cash"
         ],
         "stat": "1997",
-        "stat_sub": "Amazon goes public"
+        "stat_sub": "Amazon goes public",
+        "hero": {
+          "skin": "e8bc92",
+          "hair": "bald",
+          "beard": "none",
+          "outfit": "suit",
+          "shirt": "2b3a55",
+          "pants": "2b3a55",
+          "shoes": "1a1a1a",
+          "tie": "3f6fb5",
+          "height": 1.0
+        }
       },
       "toon": [
         {
@@ -173,7 +206,18 @@
         "crowd": 0,
         "props": [],
         "stat": "2002",
-        "stat_sub": "Amazon Web Services"
+        "stat_sub": "Amazon Web Services",
+        "hero": {
+          "skin": "e8bc92",
+          "hair": "bald",
+          "beard": "none",
+          "outfit": "suit",
+          "shirt": "2b3a55",
+          "pants": "2b3a55",
+          "shoes": "1a1a1a",
+          "tie": "3f6fb5",
+          "height": 1.0
+        }
       },
       "toon": [
         {
@@ -226,7 +270,18 @@
           "check"
         ],
         "stat": "$13.7 BILLION",
-        "stat_sub": "Whole Foods, 2017"
+        "stat_sub": "Whole Foods, 2017",
+        "hero": {
+          "skin": "e8bc92",
+          "hair": "bald",
+          "beard": "none",
+          "outfit": "suit",
+          "shirt": "2b3a55",
+          "pants": "2b3a55",
+          "shoes": "1a1a1a",
+          "tie": "3f6fb5",
+          "height": 1.0
+        }
       },
       "toon": [
         {
@@ -269,7 +324,18 @@
           "rocket"
         ],
         "stat": "66 MILES UP",
-        "stat_sub": "July 20, 2021"
+        "stat_sub": "July 20, 2021",
+        "hero": {
+          "skin": "e8bc92",
+          "hair": "bald",
+          "beard": "none",
+          "outfit": "suit",
+          "shirt": "2b3a55",
+          "pants": "2b3a55",
+          "shoes": "1a1a1a",
+          "tie": "3f6fb5",
+          "height": 1.0
+        }
       },
       "toon": [
         {
@@ -312,7 +378,18 @@
           "cash"
         ],
         "stat": "$716.9 BILLION",
-        "stat_sub": "Amazon revenue, 2025"
+        "stat_sub": "Amazon revenue, 2025",
+        "hero": {
+          "skin": "e8bc92",
+          "hair": "bald",
+          "beard": "none",
+          "outfit": "suit",
+          "shirt": "2b3a55",
+          "pants": "2b3a55",
+          "shoes": "1a1a1a",
+          "tie": "3f6fb5",
+          "height": 1.0
+        }
       },
       "toon": [
         {
@@ -353,7 +430,18 @@
           "boxes"
         ],
         "stat": "1 GARAGE",
-        "stat_sub": "where it started"
+        "stat_sub": "where it started",
+        "hero": {
+          "skin": "e8bc92",
+          "hair": "bald",
+          "beard": "none",
+          "outfit": "suit",
+          "shirt": "2b3a55",
+          "pants": "2b3a55",
+          "shoes": "1a1a1a",
+          "tie": "3f6fb5",
+          "height": 1.0
+        }
       },
       "toon": [
         {
@@ -380,5 +468,29 @@
       "url": "https://en.wikipedia.org/wiki/Amazon_(company)"
     }
   ],
-  "story_mode": "history"
+  "story_mode": "history",
+  "delivered": {
+    "mode": "release",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-118-story-bezos",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-118-story-bezos/118-story-bezos.mp4",
+    "post_at": "2026-11-20T19:00:00-05:00",
+    "rendered_at": "2026-11-19T18:53:27.339750+00:00",
+    "seconds": 40.67,
+    "eyes": {
+      "score": 8,
+      "problems": [
+        "The character's animation is repetitive and static for long stretches, failing to match the dynamic pace of the narration.",
+        "The visual transition between the office, the street, and the warehouse is jarring and lacks a cohesive narrative flow.",
+        "The text overlays are occasionally difficult to read against the background colors."
+      ],
+      "best_fix": "Introduce more varied character animations and dynamic camera movements to better reflect the milestones mentioned in the narration.",
+      "model": "gemini-3.1-flash-lite",
+      "acts": null
+    },
+    "scene_scan": [
+      "shot 13 @648: 5.1 s long (same picture too long?)",
+      "shot 13 @698: jump inside shot (27) - something teleports?",
+      "shot 13 @756: jump inside shot (28) - something teleports?"
+    ]
+  }
 }
