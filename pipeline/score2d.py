@@ -444,10 +444,21 @@ ARP_DARK = [[62, 65, 69, 74], [58, 62, 65, 70], [60, 65, 69, 72], [60, 64, 67, 7
 ARP_HOPE = [[65, 69, 72, 77], [64, 67, 72, 76], [62, 65, 69, 74], [62, 65, 70, 74]]
 
 # per section: pad level, sub-drone level, event level (relative; calibrated against the DISCIPLINE loudness curve)
-LEVEL = {"drone": dict(pad=0.80, sub=0.73, ev=1.16), "tick": dict(pad=0.80, sub=0.73, ev=1.30),
-         "pulse96": dict(pad=0.80, sub=1.09, ev=1.45), "montage": dict(pad=0.38, sub=1.05, ev=1.14),
-         "slam": dict(pad=0.38, sub=0.90, ev=1.0), "finale": dict(pad=1.0, sub=0.0, ev=1.2),
-         "title": dict(pad=1.35, sub=0.30, ev=0.50), "silent": dict(pad=0, sub=0, ev=0)}
+SUB_K = {"drone": 0.45}      # sub-drone scale per section tag (default 0.35): the reference bass is much lighter than our first mix
+_ENV: dict = {}              # optional film keys audio_hi / audio_air: [[t, mult], ...] time envelopes for the upper voices / shimmer
+
+
+def _env(key: str, t0: float, n: int) -> np.ndarray:
+    pts = _ENV.get(key)
+    if not pts:
+        return np.ones(n, np.float32)
+    return np.interp(t0 + np.arange(n) / SR, [p[0] for p in pts], [p[1] for p in pts]).astype(np.float32)
+
+
+LEVEL = {"drone": dict(pad=1.25, sub=0.73, ev=1.16, hi=1.6, air=0.02), "tick": dict(pad=0.80, sub=0.73, ev=1.30, hi=1.6, air=0.02),
+         "pulse96": dict(pad=0.80, sub=1.09, ev=1.45, hi=1.2, air=0.02), "montage": dict(pad=0.38, sub=1.05, ev=1.14, hi=1.4, air=0.025),
+         "slam": dict(pad=0.38, sub=0.90, ev=1.0, hi=1.0, air=0.02), "finale": dict(pad=1.0, sub=0.0, ev=1.2, hi=0.2, air=0.005),
+         "title": dict(pad=1.35, sub=0.30, ev=0.50, hi=1.4, air=0.03), "silent": dict(pad=0, sub=0, ev=0)}
 
 
 def _ramp(n: int, a: int, b: int) -> np.ndarray:
@@ -535,7 +546,17 @@ def _music_section(buf: np.ndarray, tag: str, t0: float, t1: float) -> list[tupl
     k = min(i1 - i0, pad.shape[1])
     buf[:, i0:i0 + k] += (pad * _ramp(pad.shape[1], int(0.12 * SR), int(0.12 * SR)))[:, :k]
     if L["sub"] > 0:
-        buf[:, i0:i0 + k] += _sub(t0, t1, L["sub"])[None, :k]
+        buf[:, i0:i0 + k] += _sub(t0, t1, L["sub"] * SUB_K.get(tag, 0.35))[None, :k]
+    if L.get("hi", 0) > 0:      # upper-register chord voices (octave up / two up) + airy shimmer: the reference is full from 120 Hz to 2 kHz, ours was bass only
+        for oct_, gm in ((12, 1.0), (24, 0.7)):
+            hv = _pad(t0, t1, [[n + oct_ for n in ch] for ch in prog], L["hi"] * gm, 1.6)
+            kk = min(i1 - i0, hv.shape[1])
+            buf[:, i0:i0 + kk] += (hv * _ramp(hv.shape[1], int(0.12 * SR), int(0.12 * SR)) * _env("audio_hi", t0, hv.shape[1]))[:, :kk]
+    if L.get("air", 0) > 0:
+        n_ = i1 - i0
+        for c in range(2):
+            sh = _noise(n_, f"air{c}{i0}", 1500, 7000) * (0.6 + 0.4 * np.sin(2 * np.pi * 0.17 * (_t(n_) + t0) + c))
+            buf[c, i0:i1] += (sh * L["air"] * _ramp(n_, int(0.12 * SR), int(0.12 * SR)) * _env("audio_air", t0, n_)).astype(np.float32)
     ducks: list[tuple[float, float]] = []
     if t0 == 0 and tag == "drone":      # the film opens almost silent (reference: first 3 s are near-inaudible sub pulses)
         k = min(buf.shape[1] - i0, int(3 * SR))
@@ -609,6 +630,8 @@ def _duck(buf: np.ndarray, windows: list[tuple[float, float]]) -> None:
 def render(film: dict) -> np.ndarray:
     """un-mastered stereo mix (2, N)"""
     film = prepare(film)
+    _ENV.clear()
+    _ENV.update({k: film[k] for k in ("audio_hi", "audio_air") if film.get(k)})
     seconds = sum(b["s"] for b in film["beats"])
     music = np.zeros((2, int(seconds * SR)), np.float32)
     ducks: list[tuple[float, float]] = []
