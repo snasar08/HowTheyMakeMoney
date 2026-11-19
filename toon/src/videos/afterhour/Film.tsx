@@ -101,10 +101,12 @@ export const AhFilm: React.FC = () => {
   const hud = (sp.hud ?? []).find((d) => f >= d.a && f < d.a + d.n);
   return (
     <AbsoluteFill style={{ background: "#050507" }}>
-      <AbsoluteFill style={{ filter: m.filter }}><AhShort /></AbsoluteFill>
-      {m.tint && <AbsoluteFill style={{ background: m.tint, mixBlendMode: "multiply" }} />}
+      {/* thumbnails (Nov 19: the first test was too dark to read on a phone): brighter, punchier, a light tint only, a warm rim light behind the hero (left) */}
+      <AbsoluteFill style={{ filter: sp.thumb ? "brightness(1.45) saturate(1.45) contrast(1.12)" : m.filter }}><AhShort /></AbsoluteFill>
+      {m.tint && <AbsoluteFill style={{ background: m.tint, mixBlendMode: "multiply", opacity: sp.thumb ? 0.45 : 1 }} />}
+      {sp.thumb && <AbsoluteFill style={{ background: "radial-gradient(circle at 27% 45%, rgba(255,120,70,0.42), rgba(0,0,0,0) 42%)", mixBlendMode: "screen" }} />}
       {m.glow && <AbsoluteFill style={{ background: `radial-gradient(circle at 78% 18%, ${m.glow}, rgba(0,0,0,0) 60%)`, mixBlendMode: "screen" }} />}
-      <AbsoluteFill style={{ background: "radial-gradient(ellipse at center, rgba(0,0,0,0) 55%, rgba(0,0,0,0.55) 100%)" }} />
+      <AbsoluteFill style={{ background: `radial-gradient(ellipse at center, rgba(0,0,0,0) 55%, rgba(0,0,0,${sp.thumb ? 0.3 : 0.55}) 100%)` }} />
       {fadeO > 0 && <AbsoluteFill style={{ background: "#050507", opacity: fadeO }} />}
       {day && <div style={{ position: "absolute", left: 44, top: 32, fontFamily: "FilmBlack", fontSize: 30, letterSpacing: 2, color: "#b9bdc8", opacity: vis(f, day.a, day.n, 6, 6), textShadow: "0 2px 4px #000" }}>{day.t}</div>}
       {hud && (() => {
