@@ -590,7 +590,7 @@ def _music_section(buf: np.ndarray, tag: str, t0: float, t1: float) -> list[tupl
                 if pos in (1, 2, 3) and not (pos == 2 and bar % 2):
                     _place(buf, _pluck(ch[(k + pos) % 4]), tb, 0.30 * ev, -0.2 + 0.4 * (k % 2))
             elif tag == "montage":
-                _place(buf, s_kick(0.55), tb, (0.8 if pos == 0 else 0.5) * ev)
+                _place(buf, s_kick(0.55), tb, (0.4 if pos == 0 else 0.25) * ev)
                 for q in (1, 3):                           # 16th-note hats
                     _place(buf, s_hat(), tb + q * BEAT / 4, 0.5 * ev * (1.0 if q == 3 else 0.7), 0.3)
                 if pos == 2:
