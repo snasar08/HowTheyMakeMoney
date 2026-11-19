@@ -1,2 +1,1 @@
-Film2D 20 1 thumb101_0.json
-Film2D 20 1 thumb101_1.json
+Film2D 20 1 thumb102.json
