@@ -1,0 +1,414 @@
+{
+ "id": "settest",
+ "title": "settest",
+ "cast": {
+  "hero": {},
+  "hero2": {
+   "band": "#e8281e"
+  },
+  "voice": {
+   "monster": true
+  },
+  "ghost": {
+   "monster": true,
+   "ghost": true
+  }
+ },
+ "beats": [
+  {
+   "s": 2,
+   "set": "bedroom",
+   "chars": [
+    {
+     "look": "hero",
+     "x": 720,
+     "pose": "lie",
+     "bed": true,
+     "expr": "sleep"
+    }
+   ],
+   "say": "Every day started the same."
+  },
+  {
+   "s": 2,
+   "set": "bedroom",
+   "arg": {
+    "ring": 1,
+    "clock": 541
+   },
+   "chars": [
+    {
+     "look": "hero",
+     "x": 720,
+     "pose": "lie",
+     "bed": true,
+     "expr": "tired"
+    }
+   ],
+   "say": [
+    {
+     "t": "just 5 more minutes",
+     "red": true,
+     "at": [
+      640,
+      250
+     ]
+    }
+   ]
+  },
+  {
+   "s": 2,
+   "set": "couch",
+   "arg": {
+    "lamp": 0
+   },
+   "chars": [
+    {
+     "look": "hero",
+     "x": 640,
+     "y": 500,
+     "pose": "sofaphone",
+     "expr": "tired"
+    },
+    {
+     "look": "voice",
+     "x": 830,
+     "y": 560,
+     "pose": "monster",
+     "scale": 0.8,
+     "dir": -1
+    }
+   ],
+   "things": [
+    {
+     "name": "phone",
+     "hand": 0
+    }
+   ],
+   "day": "DAY 1",
+   "say": [
+    {
+     "t": "skip the gym.",
+     "red": true
+    }
+   ]
+  },
+  {
+   "s": 2,
+   "set": "desk",
+   "chars": [
+    {
+     "look": "hero",
+     "x": 560,
+     "y": 510,
+     "pose": "deskslump",
+     "expr": "tired"
+    },
+    {
+     "look": "voice",
+     "x": 380,
+     "y": 560,
+     "pose": "monster",
+     "scale": 0.9
+    }
+   ],
+   "day": "DAY 47",
+   "say": [
+    {
+     "t": "you're tired.",
+     "red": true
+    }
+   ]
+  },
+  {
+   "s": 2,
+   "set": "mirror",
+   "arg": {
+    "crack": 1
+   },
+   "chars": [
+    {
+     "look": "hero",
+     "x": 540,
+     "pose": "stand",
+     "expr": "sad"
+    },
+    {
+     "look": "voice",
+     "x": 760,
+     "y": 540,
+     "pose": "monster",
+     "scale": 0.8,
+     "dir": -1
+    }
+   ],
+   "say": [
+    {
+     "t": "you're lazy",
+     "red": true,
+     "size": 95
+    }
+   ]
+  },
+  {
+   "s": 2,
+   "set": "spot",
+   "arg": {
+    "x": 640
+   },
+   "chars": [
+    {
+     "look": "hero",
+     "x": 640,
+     "pose": "fetal",
+     "expr": "sad"
+    }
+   ],
+   "say": "He believed it."
+  },
+  {
+   "s": 2,
+   "set": "bedroom",
+   "chars": [
+    {
+     "look": "hero2",
+     "x": 380,
+     "pose": "stand",
+     "expr": "angry"
+    }
+   ],
+   "cam": {
+    "from": [
+     655,
+     445,
+     1.0
+    ],
+    "to": [
+     655,
+     445,
+     1.8
+    ],
+    "ease": "in"
+   }
+  },
+  {
+   "s": 2,
+   "set": "street",
+   "chars": [
+    {
+     "look": "hero2",
+     "x": 640,
+     "pose": "run",
+     "expr": "determined"
+    }
+   ],
+   "day": "DAY 3"
+  },
+  {
+   "s": 2,
+   "set": "gym",
+   "arg": {
+    "hit": 1,
+    "speed": 1
+   },
+   "chars": [
+    {
+     "look": "hero2",
+     "x": 660,
+     "pose": "punch",
+     "expr": "angry"
+    }
+   ],
+   "day": "DAY 64",
+   "say": [
+    {
+     "t": "quit.",
+     "red": true,
+     "size": 95,
+     "at": [
+      700,
+      150
+     ]
+    }
+   ]
+  },
+  {
+   "s": 2,
+   "set": "stairs",
+   "chars": [
+    {
+     "look": "hero2",
+     "x": 0,
+     "pose": "stairs",
+     "expr": "determined",
+     "stairs": [
+      0.2,
+      0.3
+     ]
+    },
+    {
+     "look": "voice",
+     "x": 0,
+     "pose": "loom",
+     "scale": 1.6,
+     "dir": -1,
+     "stairs": [
+      0.75,
+      0.75
+     ]
+    }
+   ],
+   "day": "DAY 270",
+   "say": "Discipline keeps you going."
+  },
+  {
+   "s": 2,
+   "set": "hill",
+   "arg": {
+    "hx": 430
+   },
+   "chars": [
+    {
+     "look": "hero2",
+     "x": 430,
+     "y": 566,
+     "pose": "summit",
+     "expr": "determined"
+    }
+   ],
+   "say": "So save yourself."
+  },
+  {
+   "s": 2,
+   "set": "bedroomdawn",
+   "chars": [
+    {
+     "look": "hero2",
+     "x": 520,
+     "pose": "bedge",
+     "expr": "smile"
+    },
+    {
+     "look": "ghost",
+     "x": 200,
+     "pose": "stand"
+    }
+   ]
+  },
+  {
+   "s": 4,
+   "set": "black",
+   "card": {
+    "big": "DISCIPLINE",
+    "line": "Day one, or one day.",
+    "cmd": "You decide."
+   }
+  },
+  {
+   "s": 2,
+   "set": "court",
+   "chars": [
+    {
+     "look": "hero",
+     "x": 700,
+     "pose": "shoot"
+    }
+   ],
+   "things": [
+    {
+     "name": "ball"
+    }
+   ]
+  },
+  {
+   "s": 2,
+   "set": "store",
+   "chars": [
+    {
+     "look": "hero",
+     "x": 520,
+     "pose": "count"
+    }
+   ],
+   "things": [
+    {
+     "name": "cash"
+    }
+   ]
+  },
+  {
+   "s": 2,
+   "set": "office",
+   "chars": [
+    {
+     "look": "hero",
+     "x": 520,
+     "pose": "point"
+    }
+   ]
+  },
+  {
+   "s": 2,
+   "set": "gym",
+   "arg": {
+    "hit": 1,
+    "speed": 1,
+    "dip": 4,
+    "flashAmp": 0.65,
+    "flashLen": 10
+   },
+   "flash": [
+    0.1
+   ],
+   "chars": [
+    {
+     "look": "hero2",
+     "x": 660,
+     "pose": "punch",
+     "expr": "angry"
+    }
+   ]
+  },
+  {
+   "s": 2,
+   "set": "stairs",
+   "arg": {
+    "bloom": 0.3
+   },
+   "fadeOut": 20,
+   "chars": [
+    {
+     "look": "hero2",
+     "x": 0,
+     "pose": "stairs",
+     "stairs": [
+      0.3,
+      0.4
+     ]
+    }
+   ]
+  },
+  {
+   "s": 2,
+   "set": "hill",
+   "arg": {
+    "hx": 430
+   },
+   "fade": 20,
+   "chars": [
+    {
+     "look": "hero2",
+     "x": 430,
+     "y": 566,
+     "pose": "summit"
+    }
+   ],
+   "say": [
+    {
+     "t": "nobody is coming to save you.",
+     "red": true
+    }
+   ]
+  }
+ ]
+}
