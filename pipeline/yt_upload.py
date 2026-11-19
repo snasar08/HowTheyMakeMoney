@@ -253,7 +253,20 @@ def main(argv: list[str]) -> int:
                 print("::notice title=yt-upload-test::YTC_* secrets are not set; nothing uploaded")
                 return 0
         except Exception as exc:
-            print(f"::warning title=yt-upload-test::login failed ({exc!r}); nothing uploaded")
+            reason = ""
+            if hasattr(exc, "read"):
+                try:
+                    j = json.loads(exc.read().decode())
+                    reason = f"google says: {j.get('error')} / {j.get('error_description')}"  # no secret in this
+                except Exception:
+                    pass
+            import os as _os
+            cid = _os.environ.get("YTC_CLIENT_ID", "")
+            checks = (f"id looks like a client id: {cid.strip().endswith('.apps.googleusercontent.com')}; "
+                      + "; ".join(f"{k} has spaces/newlines at the ends: {_os.environ.get(k,'') != _os.environ.get(k,'').strip()}"
+                                  for k in ("YTC_CLIENT_ID", "YTC_CLIENT_SECRET", "YTC_REFRESH_TOKEN"))
+                      + f"; refresh token starts with 1//: {_os.environ.get('YTC_REFRESH_TOKEN','').strip().startswith('1//')}")
+            print(f"::warning title=yt-upload-test::login failed ({exc!r}) {reason} | {checks}; nothing uploaded")
             return 0
         res = upload_short(Path(argv[3]), script, None)
         print("RESULT", json.dumps(res, ensure_ascii=False))
