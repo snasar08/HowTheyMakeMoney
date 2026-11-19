@@ -181,11 +181,14 @@ def main() -> int:
     posted = skipped = failed = 0
     for c in batch:
         r = clean(drafts.get(c["id"], ""), used)
+        if not r and dry:
+            print(f"::notice title=draft skipped::{c['text'][:60]!r} -> {str(drafts.get(c['id']))[:60]!r}")
         if not r:
             skipped += 1
             continue
         print(f"  [{c['likes']} likes] {c['text'][:70]!r} -> {r!r}")
         if dry:
+            print(f"::notice title=draft reply::{c['text'][:60]!r} -> {r!r}")   # dry run: shown as run notes to check the tone
             continue
         try:
             _post(YT + "comments?part=snippet", {"snippet": {"parentId": c["id"], "textOriginal": r}}, auth)
