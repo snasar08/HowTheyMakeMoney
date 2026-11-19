@@ -1,0 +1,15 @@
+{
+ "id": "tiny",
+ "status": "draft",
+ "title": "Tiny test film",
+ "description": "Throwaway pipeline test. Never posted.",
+ "tags": ["test"],
+ "grid": 0.625,
+ "cast": {"hero": {}, "voice": {"monster": true}},
+ "beats": [
+  {"s": 1.25, "set": "bedroom", "chars": [{"look": "hero", "x": 720, "pose": "lie", "bed": true, "expr": "sleep"}], "say": "A small test.", "music": "drone"},
+  {"s": 1.25, "set": "desk", "chars": [{"look": "hero", "x": 560, "y": 510, "pose": "desk", "expr": "determined"}], "day": "DAY 1"},
+  {"s": 1.25, "set": "mirror", "chars": [{"look": "hero", "x": 540, "pose": "stand", "expr": "sad"}, {"look": "voice", "x": 760, "y": 540, "pose": "monster", "scale": 0.8, "dir": -1}], "say": [{"t": "keep going", "red": true}]},
+  {"s": 1.25, "set": "bedroom", "chars": [{"look": "hero", "x": 720, "pose": "lie", "bed": true, "expr": "tired"}], "card": {"big": "THE END."}}
+ ]
+}
