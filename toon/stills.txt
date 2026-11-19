@@ -1,3 +1,1 @@
-AhFilm 20 1 film/thumb2.json
-AhFilm 20 1 film/t2thumb0.json
-AhFilm 20 1 film/t2thumb1.json
+AhFilm 996 0.5 film/003.json

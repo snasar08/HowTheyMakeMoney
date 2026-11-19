@@ -79,7 +79,8 @@ def plan(film: dict) -> dict:
 
 # seconds per frame on a GitHub runner, measured on film 1 (Nov 19 run 1): text-only black frames are ~4x cheaper than
 # characters on the dark stage or in the bedroom, so equal frame counts per machine left 8-min and 2-min machines
-COST = {"void": 1.7, "bedroom": 1.8, "bedroomday": 1.8, "street": 1.1, "courtempty": 0.8, "court": 1.2, "gym": 1.2}
+COST = {"void": 1.7, "bedroom": 1.6, "bedroomday": 1.8, "street": 1.3, "courtempty": 0.8, "court": 1.2, "gym": 1.2,
+        "garage": 2.4, "office": 1.6, "store": 0.9, "diner": 1.1}   # film 2 run added the last four
 
 
 def split(beats: list, shards: int = 20) -> list:
@@ -334,7 +335,7 @@ def make(film: dict, frames_dir: str, out_mp4: str, loudnorm: bool = True) -> No
     lst.write_text("".join(f"file '{p.resolve().as_posix()}'\nduration {1 / FPS:.6f}\n" for p in seq), encoding="utf-8")
     wav = work / "film.wav"
     write_wav(audio(film), wav)
-    af = ["-af", "loudnorm=I=-16:TP=-1.5:LRA=11"] if loudnorm else []
+    af = ["-af", "loudnorm=I=-16:TP=-1.5:LRA=11,alimiter=limit=0.79:level=false"] if loudnorm else []   # Nov 19: the limiter catches the peaks single-pass loudnorm lets through (film 1 hit -0.2 dBTP)
     cmd = ["ffmpeg", "-y", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", str(lst), "-i", str(wav), *af,
            "-r", str(FPS), "-c:v", "libx264", "-preset", "medium", "-crf", "19", "-pix_fmt", "yuv420p", "-movflags", "+faststart",
            "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-shortest", out_mp4]
