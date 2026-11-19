@@ -1,0 +1,8 @@
+=== line 1: Film2D 120,300,390,940,1170,2985 0.5 film/900-replica.json 
+bundle 6.8s
+still 120 1.2s
+still 300 1.0s
+still 390 1.1s
+still 940 0.9s
+still 1170 0.8s
+still 2985 0.9s
