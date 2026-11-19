@@ -1,0 +1,6 @@
+=== line 1: AhFilm 960,1000 0.5 film/003.json 
+bundle 7.0s
+[40m Tab 0, node_modules/three/build/three.core.js:2014 [49m [33mTHREE.Clock: This module has been deprecated. Please use THREE.Timer instead.[39m
+still 960 5.7s
+[40m Tab 0, node_modules/three/build/three.core.js:2014 [49m [33mTHREE.Clock: This module has been deprecated. Please use THREE.Timer instead.[39m
+still 1000 6.7s
