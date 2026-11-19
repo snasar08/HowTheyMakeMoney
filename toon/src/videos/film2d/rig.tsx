@@ -328,7 +328,7 @@ export const Guy: React.FC<{ p: Pose; e: Expr; dir?: number; t: number; look?: L
     <ellipse cx={g.hc.x} cy={g.hc.y} rx={hrx} ry={hry} fill={skin} transform={`rotate(${hangDeg} ${g.hc.x} ${g.hc.y})`} />
   </g>;
   const lying = Math.abs(p.rot ?? 0) > 45 ? p.rot ?? 0 : 0;
-  const faceRot = p.front ? 0 : (g.hang - lying + (p.face ?? 0)) * dir;
+  const faceRot = p.front ? -lying : (g.hang - lying + (p.face ?? 0)) * dir;
   const band = !mon && (!!look.headband || !!look.band);
   const bandCol = typeof look.band === "string" ? look.band : RED;
   const fl = Math.sin(t * 9) * 3, fl2 = Math.sin(t * 9 + 1.7) * 3;
