@@ -11,6 +11,17 @@ flat 2D look (toon composition Film2D, toon/src/videos/film2d/). A film is conte
               "card": {"big": "DAY 1."}, "day": "DAY 12", "hud": {...}, "sfx": [["alarm", 0.2]],
               "fade": 15, "fadeOut": 10, "sat": [1, 0.2], "shake": [[0.3, 8]], "flash": [0.1], "scroll": [0, 600], "mood": "sunrise"}]}
 
+Sound (pipeline/score2d.py, all synthesized, mastered to -16.5 LUFS / -1 dBTP, 48 kHz stereo; no voice):
+  film key "grid": 0.625        snap every cut to the 96 BPM beat grid (2 beats = 1.25 s, bar = 2.5 s)
+  beat "music": "drone" quiet pad+sub | "tick" clock 0.5 s -> 0.25 s | "pulse96" sparse piano + sub | "montage" loud kick+hats |
+                "slam" pulse + slam on entry | "finale" piano arpeggio on every beat | "title" boom + held chord | "silent"
+                (no key = keeps the previous section; "mood" words or a "card" with "big" can pick one, see score2d.MOOD_TAG)
+  beat "sfx": [["alarm", 0.2], ["punch", 1.25], ["riser", 2.0, {"len": 2}], ["coin", 0.5, 0.8]]  name, seconds into beat, loudness or options;
+                riser/punch/swish land ON the offset. Names: alarm tick ticks boom kick swish thud hit punch ping buzz ring lowbatt
+                powerdown riser slam steps whoosh page bounce crowd coin register heart bell duck
+  beat "flash": [0.1]           each flash gets 0.3 s silence then a broadband slam + sub hit
+
+  python -m pipeline.film2d audio content/films2d/NNN.json out.wav     # sound only (prints loudness)
   python -m pipeline.film2d plan  content/films2d/001-x.json out/props.json
   python -m pipeline.film2d make  content/films2d/001-x.json frames/ out/film.mp4
   python -m pipeline.film2d thumb content/films2d/001-x.json out/thumb_props.json [k]
@@ -23,6 +34,7 @@ import sys
 from pathlib import Path
 
 from pipeline import film as F
+from pipeline import score2d as S
 
 FPS = 30
 KEYS = ("set", "arg", "cam", "things", "fade", "fadeOut", "sat", "shake", "flash", "scroll", "dark")
@@ -30,10 +42,11 @@ KEYS = ("set", "arg", "cam", "things", "fade", "fadeOut", "sat", "shake", "flash
 
 def plan(film: dict) -> dict:
     cast = film.get("cast", {})
+    film = S.prepare(film)
     shots, lines, cards, days, huds = [], [], [], [], []
     a = 0
-    for b in film["beats"]:
-        n = int(round(b["s"] * FPS))
+    ns = frame_counts(film["beats"])
+    for b, n in zip(film["beats"], ns):
         shot = {"a": a, "n": n, **{k: b[k] for k in KEYS if k in b}}
         chars = []
         for c in b.get("chars", []):
@@ -72,11 +85,22 @@ def plan(film: dict) -> dict:
     return {"d2": {"shots": shots, "film": {"lines": lines, "cards": cards, "day": days, "hud": huds}}, "split": split(film["beats"])}
 
 
+def frame_counts(beats: list) -> list:
+    """frames per beat, rounded on the running total so 1.25 s shots do not drift away from the music"""
+    out, t, a = [], 0.0, 0
+    for b in beats:
+        t += b["s"]
+        n = int(round(t * FPS)) - a
+        out.append(n)
+        a += n
+    return out
+
+
 def split(beats: list, shards: int = 20) -> list:
     """2D frames cost about the same everywhere (black cards a bit less): weight cards 0.6"""
     cost = []
-    for b in beats:
-        cost += [0.6 if b.get("card") else 1.0] * int(round(b["s"] * FPS))
+    for b, n in zip(beats, frame_counts(beats)):
+        cost += [0.6 if b.get("card") else 1.0] * n
     tot, acc, out, k = sum(cost), 0.0, [0], 1
     for i, c in enumerate(cost):
         acc += c
@@ -117,9 +141,11 @@ if __name__ == "__main__":
         Path(sys.argv[3]).write_text(json.dumps(plan(f)), encoding="utf-8")
         print(table(f))
     elif cmd == "make":
-        F.make(f, sys.argv[3], sys.argv[4])
+        F.make(f, sys.argv[3], sys.argv[4], loudnorm=False, audio_fn=S.audio, write_fn=S.write_wav)
     elif cmd == "audio":
-        F.write_wav(F.audio(f), sys.argv[3])
+        x = S.audio(f)
+        S.write_wav(x, sys.argv[3])
+        S.report(x, sys.argv[3])
     elif cmd == "thumb":
         Path(sys.argv[3]).write_text(json.dumps(plan_thumb(f, int(sys.argv[4]) if len(sys.argv) > 4 else 0)), encoding="utf-8")
     elif cmd == "table":

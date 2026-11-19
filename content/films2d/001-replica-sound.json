@@ -1,0 +1,205 @@
+{
+ "id": "001-replica-sound",
+ "title": "sound replica of DISCIPLINE timeline (internal test only)",
+ "cast": {},
+ "beats": [
+  {
+   "s": 3.125,
+   "set": "black",
+   "music": "drone",
+   "sfx": []
+  },
+  {
+   "s": 19.375,
+   "set": "black",
+   "music": "drone",
+   "sfx": [
+    [
+     "alarm",
+     0.845,
+     {
+      "n": 14
+     }
+    ]
+   ]
+  },
+  {
+   "s": 17.5,
+   "set": "black",
+   "music": "tick",
+   "sfx": []
+  },
+  {
+   "s": 20,
+   "set": "black",
+   "music": "drone",
+   "sfx": [
+    [
+     "boom",
+     4.0,
+     {
+      "dur": 3.5
+     }
+    ],
+    [
+     "tick",
+     14.97
+    ],
+    [
+     "tick",
+     16.22
+    ],
+    [
+     "tick",
+     17.47
+    ],
+    [
+     "heart",
+     0.4,
+     {
+      "n": 1
+     }
+    ],
+    [
+     "heart",
+     1.6,
+     {
+      "n": 1
+     }
+    ],
+    [
+     "heart",
+     2.05,
+     {
+      "n": 1
+     }
+    ],
+    [
+     "heart",
+     2.47,
+     {
+      "n": 1
+     }
+    ],
+    [
+     "heart",
+     2.89,
+     {
+      "n": 1
+     }
+    ],
+    [
+     "heart",
+     3.31,
+     {
+      "n": 1
+     }
+    ],
+    [
+     "heart",
+     3.72,
+     {
+      "n": 1
+     }
+    ]
+   ]
+  },
+  {
+   "s": 11.875,
+   "set": "black",
+   "music": "drone",
+   "sfx": [
+    [
+     "alarm",
+     1.96,
+     {
+      "n": 17
+     }
+    ]
+   ]
+  },
+  {
+   "s": 26.875,
+   "set": "black",
+   "music": "montage",
+   "sfx": [
+    [
+     "punch",
+     17.625
+    ],
+    [
+     "punch",
+     20.125
+    ],
+    [
+     "punch",
+     22.625
+    ],
+    [
+     "punch",
+     25.125
+    ]
+   ],
+   "flash": [
+    0.125
+   ]
+  },
+  {
+   "s": 23.125,
+   "set": "black",
+   "music": "montage",
+   "sfx": [
+    [
+     "riser",
+     0.18,
+     {
+      "len": 0.6
+     }
+    ]
+   ],
+   "flash": [
+    0.18
+   ]
+  },
+  {
+   "s": 3.125,
+   "set": "black",
+   "music": "drone",
+   "sfx": [
+    [
+     "riser",
+     0.125,
+     {
+      "len": 2.0
+     }
+    ]
+   ],
+   "flash": [
+    0.125
+   ]
+  },
+  {
+   "s": 20,
+   "set": "black",
+   "music": "finale",
+   "sfx": []
+  },
+  {
+   "s": 13.125,
+   "set": "black",
+   "music": "title",
+   "sfx": [
+    [
+     "boom",
+     0.26,
+     {
+      "dur": 5
+     }
+    ]
+   ],
+   "card": {
+    "big": "REPLICA"
+   }
+  }
+ ]
+}

@@ -1,5 +1,6 @@
 name: Film test render
 
+# Nov 19: content/films2d/*.json render with pipeline.film2d + the flat 2D Film2D composition.
 # Nov 19: long-form "silent" films (pipeline/film.py, toon AhFilm 1280x720). Push branch film-test: renders every film
 # listed in toon/film_test.txt (one content/films/*.json path per line) on 20 machines and uploads the MP4 to the
 # prerelease "film-test". Nothing here is posted.
@@ -23,7 +24,7 @@ jobs:
       - run: pip install -q numpy
       - run: |
           mkdir -p fp
-          while read -r F; do [ -z "$F" ] && continue; python -m pipeline.film plan "$F" "fp/$(basename "$F")"; done < toon/film_test.txt
+          while read -r F; do [ -z "$F" ] && continue; M=pipeline.film; case "$F" in *films2d*) M=pipeline.film2d;; esac; python -m $M plan "$F" "fp/$(basename "$F")"; done < toon/film_test.txt
       - uses: actions/upload-artifact@v4
         with:
           name: film-plan
@@ -61,7 +62,8 @@ jobs:
           [ -d node_modules/remotion ] || npm install --no-audit --no-fund 2>&1 | tail -3
           npx remotion browser ensure 2>&1 | tail -1
           for f in ../fp/*.json; do
-            CONCURRENCY=2 node scripts/frames.mjs AhFilm "$f" "../frames/$(basename "$f" .json)" ${{ matrix.shard }} 20 1
+            COMP=AhFilm; grep -q '"d2"' "$f" && COMP=Film2D
+            CONCURRENCY=2 node scripts/frames.mjs $COMP "$f" "../frames/$(basename "$f" .json)" ${{ matrix.shard }} 20 1
           done
       - uses: actions/upload-artifact@v4
         with:
@@ -88,7 +90,7 @@ jobs:
           merge-multiple: true
       - run: |
           mkdir -p out
-          while read -r F; do [ -z "$F" ] && continue; B=$(basename "$F" .json); python -m pipeline.film make "$F" "frames/$B" "out/$B.mp4"; done < toon/film_test.txt
+          while read -r F; do [ -z "$F" ] && continue; B=$(basename "$F" .json); M=pipeline.film; case "$F" in *films2d*) M=pipeline.film2d;; esac; python -m $M make "$F" "frames/$B" "out/$B.mp4"; done < toon/film_test.txt
           ls -la out
       - run: |
           gh release view film-test --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1 || gh release create film-test --repo "$GITHUB_REPOSITORY" --title "Film test renders" --notes "Test renders of the long-form films. Nothing here is posted." --prerelease

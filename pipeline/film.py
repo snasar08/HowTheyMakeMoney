@@ -327,14 +327,14 @@ def collect_frames(frames_dir: str | Path) -> list[Path]:
     return seq
 
 
-def make(film: dict, frames_dir: str, out_mp4: str, loudnorm: bool = True) -> None:
+def make(film: dict, frames_dir: str, out_mp4: str, loudnorm: bool = True, audio_fn=None, write_fn=None) -> None:   # audio_fn/write_fn: film2d passes score2d (own mastering)
     seq = collect_frames(frames_dir)
     work = Path(out_mp4).with_suffix("")
     work.mkdir(parents=True, exist_ok=True)
     lst = work / "frames.txt"
     lst.write_text("".join(f"file '{p.resolve().as_posix()}'\nduration {1 / FPS:.6f}\n" for p in seq), encoding="utf-8")
     wav = work / "film.wav"
-    write_wav(audio(film), wav)
+    (write_fn or write_wav)((audio_fn or audio)(film), wav)
     af = ["-af", "loudnorm=I=-16:TP=-1.5:LRA=11,alimiter=limit=0.79:level=false"] if loudnorm else []   # Nov 19: the limiter catches the peaks single-pass loudnorm lets through (film 1 hit -0.2 dBTP)
     cmd = ["ffmpeg", "-y", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", str(lst), "-i", str(wav), *af,
            "-r", str(FPS), "-c:v", "libx264", "-preset", "medium", "-crf", "19", "-pix_fmt", "yuv420p", "-movflags", "+faststart",
