@@ -445,6 +445,7 @@ ARP_HOPE = [[65, 69, 72, 77], [64, 67, 72, 76], [62, 65, 69, 74], [62, 65, 70, 7
 
 # per section: pad level, sub-drone level, event level (relative; calibrated against the DISCIPLINE loudness curve)
 SUB_K = {"drone": 0.45}      # sub-drone scale per section tag (default 0.35): the reference bass is much lighter than our first mix
+_CFG: dict = {}              # optional per-film music identity (film keys bpm, pedal, prog_dark, prog_hope, arp_dark, arp_hope, arp_pattern); empty = the replica sound
 _ENV: dict = {}              # optional film keys audio_hi / audio_air: [[t, mult], ...] time envelopes for the upper voices / shimmer
 
 
@@ -457,8 +458,8 @@ def _env(key: str, t0: float, n: int) -> np.ndarray:
 
 LEVEL = {"drone": dict(pad=1.25, sub=0.73, ev=1.16, hi=1.6, air=0.02), "tick": dict(pad=0.80, sub=0.73, ev=1.30, hi=1.6, air=0.02),
          "pulse96": dict(pad=0.80, sub=1.09, ev=1.45, hi=1.2, air=0.02), "montage": dict(pad=0.38, sub=1.05, ev=1.14, hi=1.4, air=0.025),
-         "slam": dict(pad=0.38, sub=0.90, ev=1.0, hi=1.0, air=0.02), "finale": dict(pad=1.0, sub=0.0, ev=1.2, hi=0.2, air=0.005),
-         "title": dict(pad=1.35, sub=0.30, ev=0.50, hi=1.4, air=0.03), "silent": dict(pad=0, sub=0, ev=0)}
+         "slam": dict(pad=0.38, sub=0.90, ev=1.0, hi=1.0, air=0.02), "finale": dict(pad=1.0, sub=0.0, ev=1.2, hi=0.7, air=0.012),
+         "title": dict(pad=1.35, sub=0.30, ev=0.50, hi=0.7, air=0.01), "silent": dict(pad=0, sub=0, ev=0)}
 
 
 def _ramp(n: int, a: int, b: int) -> np.ndarray:
@@ -502,7 +503,8 @@ def _sub(t0: float, t1: float, gain: float) -> np.ndarray:
     """F1 + C2 + F2 pedal drone (43 / 65 / 87 Hz) with a little saturation so small speakers still hear it"""
     n = int(round((t1 - t0) * SR))
     t = _t(n) + t0
-    x = np.sin(2 * np.pi * 43.65 * t) + 0.6 * np.sin(2 * np.pi * 65.41 * t) + 0.45 * np.sin(2 * np.pi * 87.31 * t)
+    r = 2 ** ((_CFG.get("pedal", 29) - 29) / 12)       # pedal root (MIDI, default F1 = 29)
+    x = np.sin(2 * np.pi * 43.65 * r * t) + 0.6 * np.sin(2 * np.pi * 65.41 * r * t) + 0.45 * np.sin(2 * np.pi * 87.31 * r * t)
     x = np.tanh(1.1 * x) * (1 + 0.15 * np.sin(2 * np.pi * 0.11 * t))
     return (x * gain * _ramp(n, int(0.3 * SR), int(0.3 * SR)) * 0.5).astype(np.float32)
 
@@ -539,7 +541,7 @@ def _music_section(buf: np.ndarray, tag: str, t0: float, t1: float) -> list[tupl
     t0, t1 = round(t0 * SR) / SR, round(t1 * SR) / SR      # sample-aligned section edges (a start that is not on a sample used to crash _pad)
     dur = t1 - t0
     major = tag in ("finale", "title")
-    prog, arp = (PROG_HOPE, ARP_HOPE) if major else (PROG_DARK, ARP_DARK)
+    prog, arp = (_CFG.get("prog_hope", PROG_HOPE), _CFG.get("arp_hope", ARP_HOPE)) if major else (_CFG.get("prog_dark", PROG_DARK), _CFG.get("arp_dark", ARP_DARK))
     i0, i1 = int(round(t0 * SR)), min(buf.shape[1], int(round(t1 * SR)))
     ev = L["ev"]
     pad = _pad(t0, t1, prog, L["pad"], 1.0 if major else 0.0)
@@ -564,7 +566,7 @@ def _music_section(buf: np.ndarray, tag: str, t0: float, t1: float) -> list[tupl
     if tag == "drone":
         # quiet opener: very soft sub pulses ~0.9 s apart, then a boom drop every ~4 s
         for k in range(int(dur / 0.9)):
-            _place(buf, _subnote(29, 0.7), t0 + 0.27 + k * 0.9, 0.35 * ev)
+            _place(buf, _subnote(_CFG.get("pedal", 29), 0.7), t0 + 0.27 + k * 0.9, 0.35 * ev)
         if dur > 3.2:
             for k in range(int(dur / 4.1) + 1):
                 if t0 + 1.0 + k * 4.1 < t1 - 1.5:
@@ -592,11 +594,11 @@ def _music_section(buf: np.ndarray, tag: str, t0: float, t1: float) -> list[tupl
             elif tag == "montage":
                 _place(buf, s_kick(0.55), tb, (0.8 if pos == 0 else 0.5) * ev)
                 for q in (1, 3):                           # 16th-note hats
-                    _place(buf, s_hat(), tb + q * BEAT / 4, 0.22 * ev * (1.0 if q == 3 else 0.7), 0.3)
+                    _place(buf, s_hat(), tb + q * BEAT / 4, 0.5 * ev * (1.0 if q == 3 else 0.7), 0.3)
                 if pos == 2:
-                    _place(buf, _pluck(ch[(bar + 1) % 4]), tb, 0.2 * ev, 0.2)
+                    _place(buf, _pluck(ch[(bar + 1) % 4]), tb, 0.08 * ev, 0.2)
             else:   # finale: warm piano arpeggio on EVERY beat, soft sub notes on the root
-                _place(buf, _pluck(ch[(0, 1, 2, 3, 2, 1)[k % 6]]), tb, 0.55 * ev, -0.25 + 0.5 * (k % 2))
+                _place(buf, _pluck(ch[_CFG.get("arp_pattern", (0, 1, 2, 3, 2, 1))[k % len(_CFG.get("arp_pattern", (0, 1, 2, 3, 2, 1)))]]), tb, 0.55 * ev, -0.25 + 0.5 * (k % 2))
                 if pos in (0, 2):
                     _place(buf, _subnote(prog[bar % 4][0] - 12, 1.2), tb, 0.55 * ev)
         if tag == "slam":
@@ -629,6 +631,11 @@ def _duck(buf: np.ndarray, windows: list[tuple[float, float]]) -> None:
 # ------------------------------------------------------------------ mix + master
 def render(film: dict) -> np.ndarray:
     """un-mastered stereo mix (2, N)"""
+    global BEAT, BAR
+    _CFG.clear()
+    _CFG.update({k: film[k] for k in ("pedal", "prog_dark", "prog_hope", "arp_dark", "arp_hope", "arp_pattern") if film.get(k) is not None})
+    BEAT = 60.0 / film.get("bpm", BPM)
+    BAR = BEAT * 4
     film = prepare(film)
     _ENV.clear()
     _ENV.update({k: film[k] for k in ("audio_hi", "audio_air") if film.get(k)})
@@ -653,7 +660,7 @@ def render(film: dict) -> np.ndarray:
                 ducks.append((t - o.get("dropout", 0.3), t))
             _place(sfxbuf, sig, t - (len(sig) / SR if anchor == "end" else 0.0), gn * g, pan)
     for t in film.get("audio_onsets", []):       # optional extra transient grid (bright clicks) for matching a reference
-        _place(sfxbuf, s_tick(), t, 1.6)
+        _place(sfxbuf, s_tick(), t, 1.8)
     _duck(music, ducks)
     mix = music + sfxbuf
     b = film.get("audio_bright", 0)              # optional harmonic exciter: saturate, keep only the highs, add back

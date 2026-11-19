@@ -313,7 +313,7 @@ export const Guy: React.FC<{ p: Pose; e: Expr; dir?: number; t: number; look?: L
     <path d={d} stroke={fill} strokeWidth={w} strokeLinecap="round" strokeLinejoin="round" fill="none" />
   </g>;
   // the egg: a chain of circles from the hip up to the neck, then the head
-  const R0 = mon ? 21 : 26, R1 = mon ? 23 : 28, RN = mon ? 20 : 31, hrx = mon ? 33 : p.front ? 31 : 36, hry = mon ? 32 : p.front ? 31 : 33;   // villain: slimmer body, round head (ref)
+  const R0 = mon ? 21 : 26, R1 = mon ? 23 : 28, RN = mon ? 20 : 31, hrx = mon ? 33 : p.front ? 36 : 36, hry = mon ? 32 : p.front ? 36 : 33;   // villain: slimmer body, round head (ref)
   const ux = S(rad(p.lean ?? 0)) * dir, uy = -C(rad(p.lean ?? 0));
   const base: Pt = { x: g.hx + ux * 14, y: g.hy + uy * 14 };
   const circles: { x: number; y: number; r: number }[] = [];
