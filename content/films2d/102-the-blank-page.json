@@ -151,7 +151,7 @@
     {
      "t": "A blank page waits.",
      "delay": 0.5,
-     "until": 3.5,
+     "until": 2.5,
      "at": "mid",
      "bold": true,
      "size": 46
@@ -258,7 +258,7 @@
     {
      "t": "just scroll.",
      "delay": 1.3,
-     "until": 5.0,
+     "until": 4.4,
      "red": true,
      "size": 40,
      "at": [
@@ -325,8 +325,8 @@
    "say": [
     {
      "t": "someone better already exists.",
-     "delay": 1.2,
-     "until": 6.4,
+     "delay": 0.7,
+     "until": 4.5,
      "red": true,
      "size": 40,
      "at": [
@@ -585,7 +585,7 @@
     {
      "t": "it is not good.",
      "delay": 3.8,
-     "until": 7.6,
+     "until": 5.8,
      "red": true,
      "size": 40,
      "at": [
@@ -636,7 +636,7 @@
     {
      "t": "Ten days. One empty page.",
      "delay": 0.7,
-     "until": 5.4,
+     "until": 4.5,
      "bold": true,
      "size": 40,
      "at": [
@@ -687,7 +687,7 @@
     {
      "t": "TEN MINUTES.",
      "delay": 1.2,
-     "until": 6.4,
+     "until": 5.8,
      "white": true,
      "size": 84
     }
@@ -1158,16 +1158,6 @@
      "expr": "smile"
     }
    ],
-   "things": [
-    {
-     "name": "chart",
-     "x": 330,
-     "y": 250,
-     "s": 0.85,
-     "v": 0,
-     "text": "OPEN"
-    }
-   ],
    "say": [
     {
      "t": "His first sign.",
@@ -1182,8 +1172,8 @@
     },
     {
      "t": "He hung it up.",
-     "delay": 4.4,
-     "until": 7.6,
+     "delay": 4.0,
+     "until": 5.8,
      "bold": true,
      "size": 44,
      "at": [
@@ -1219,21 +1209,11 @@
      "expr": "sad"
     }
    ],
-   "things": [
-    {
-     "name": "chart",
-     "x": 330,
-     "y": 250,
-     "s": 0.85,
-     "v": 0,
-     "text": "OPEN"
-    }
-   ],
    "say": [
     {
      "t": "Nobody stopped.",
      "delay": 0.9,
-     "until": 7.2,
+     "until": 5.2,
      "bold": true,
      "size": 44,
      "at": [
@@ -1285,16 +1265,6 @@
      "pose": "sit",
      "expr": "sad",
      "y": 560
-    }
-   ],
-   "things": [
-    {
-     "name": "chart",
-     "x": 330,
-     "y": 250,
-     "s": 0.85,
-     "v": 0,
-     "text": "OPEN"
     }
    ],
    "sfx": []
@@ -1410,10 +1380,10 @@
     {
      "t": "told you.",
      "delay": 1.4,
-     "until": 9.0,
+     "until": 6.5,
      "red": true,
      "size": 80,
-     "shatter": 7.0
+     "shatter": 4.8
     }
    ],
    "sfx": []
@@ -1425,7 +1395,7 @@
     {
      "t": "He kept the sign.",
      "delay": 0.3,
-     "until": 2.9,
+     "until": 1.9,
      "bold": true,
      "size": 40,
      "at": "mid"
@@ -1487,7 +1457,7 @@
     {
      "t": "Ten more minutes.",
      "delay": 1.0,
-     "until": 6.2,
+     "until": 5.8,
      "bold": true,
      "size": 44
     }
@@ -1773,21 +1743,13 @@
      "name": "coin",
      "hand": 1,
      "s": 0.8
-    },
-    {
-     "name": "chart",
-     "x": 330,
-     "y": 250,
-     "s": 0.85,
-     "v": 0,
-     "text": "OPEN"
     }
    ],
    "say": [
     {
      "t": "Someone chose his work.",
      "delay": 1.6,
-     "until": 7.4,
+     "until": 5.8,
      "bold": true,
      "size": 42,
      "at": [
@@ -1835,21 +1797,11 @@
      "expr": "smile"
     }
    ],
-   "things": [
-    {
-     "name": "chart",
-     "x": 330,
-     "y": 250,
-     "s": 0.85,
-     "v": 0,
-     "text": "OPEN"
-    }
-   ],
    "say": [
     {
      "t": "The first one stayed on the wall.",
      "delay": 1.0,
-     "until": 7.4,
+     "until": 5.8,
      "bold": true,
      "size": 42,
      "at": [
@@ -1901,7 +1853,7 @@
     {
      "t": "A blank page is only the start.",
      "delay": 1.0,
-     "until": 7.4,
+     "until": 5.8,
      "bold": true,
      "size": 42
     }
