@@ -457,8 +457,8 @@ def _env(key: str, t0: float, n: int) -> np.ndarray:
 
 LEVEL = {"drone": dict(pad=1.25, sub=0.73, ev=1.16, hi=1.6, air=0.02), "tick": dict(pad=0.80, sub=0.73, ev=1.30, hi=1.6, air=0.02),
          "pulse96": dict(pad=0.80, sub=1.09, ev=1.45, hi=1.2, air=0.02), "montage": dict(pad=0.38, sub=1.05, ev=1.14, hi=1.4, air=0.025),
-         "slam": dict(pad=0.38, sub=0.90, ev=1.0, hi=1.0, air=0.02), "finale": dict(pad=1.0, sub=0.0, ev=1.2, hi=0.2, air=0.005),
-         "title": dict(pad=1.35, sub=0.30, ev=0.50, hi=1.4, air=0.03), "silent": dict(pad=0, sub=0, ev=0)}
+         "slam": dict(pad=0.38, sub=0.90, ev=1.0, hi=1.0, air=0.02), "finale": dict(pad=1.0, sub=0.0, ev=1.2, hi=0.7, air=0.012),
+         "title": dict(pad=1.35, sub=0.30, ev=0.50, hi=0.7, air=0.01), "silent": dict(pad=0, sub=0, ev=0)}
 
 
 def _ramp(n: int, a: int, b: int) -> np.ndarray:
@@ -592,9 +592,9 @@ def _music_section(buf: np.ndarray, tag: str, t0: float, t1: float) -> list[tupl
             elif tag == "montage":
                 _place(buf, s_kick(0.55), tb, (0.8 if pos == 0 else 0.5) * ev)
                 for q in (1, 3):                           # 16th-note hats
-                    _place(buf, s_hat(), tb + q * BEAT / 4, 0.22 * ev * (1.0 if q == 3 else 0.7), 0.3)
+                    _place(buf, s_hat(), tb + q * BEAT / 4, 0.5 * ev * (1.0 if q == 3 else 0.7), 0.3)
                 if pos == 2:
-                    _place(buf, _pluck(ch[(bar + 1) % 4]), tb, 0.2 * ev, 0.2)
+                    _place(buf, _pluck(ch[(bar + 1) % 4]), tb, 0.08 * ev, 0.2)
             else:   # finale: warm piano arpeggio on EVERY beat, soft sub notes on the root
                 _place(buf, _pluck(ch[(0, 1, 2, 3, 2, 1)[k % 6]]), tb, 0.55 * ev, -0.25 + 0.5 * (k % 2))
                 if pos in (0, 2):
@@ -653,7 +653,7 @@ def render(film: dict) -> np.ndarray:
                 ducks.append((t - o.get("dropout", 0.3), t))
             _place(sfxbuf, sig, t - (len(sig) / SR if anchor == "end" else 0.0), gn * g, pan)
     for t in film.get("audio_onsets", []):       # optional extra transient grid (bright clicks) for matching a reference
-        _place(sfxbuf, s_tick(), t, 1.6)
+        _place(sfxbuf, s_tick(), t, 1.8)
     _duck(music, ducks)
     mix = music + sfxbuf
     b = film.get("audio_bright", 0)              # optional harmonic exciter: saturate, keep only the highs, add back

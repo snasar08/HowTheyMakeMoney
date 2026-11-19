@@ -32,6 +32,7 @@ export type Pose = {
   hand?: boolean;     // villain's giant arm reaching in from the top-right corner (x,y = where the fist ends up when reach = 1)
   reach?: number;     // 0..1 how far the giant arm has come in
   slap?: { x: number; y: number; fist: boolean; glow: number };   // hand coming in from the bottom-right (alarm slap): fist tip offset from the anchor, closed fist, glow 0..1
+  front?: boolean;    // face drawn frontal (eyes centred, round head) - lying on the pillow
   face?: number;      // extra tilt of the face (deg), e.g. push-ups: the face follows the body a bit
 };
 
@@ -75,7 +76,7 @@ export const pose = (name: string, t: number, punchPeriod = 1.25): Pose => {
     case "hug": case "fetal":    // on the floor, knees up, arms round them, head down
       return { hipY: 17 + b * 0.2, lean: 30, head: 24, headY: 2, lF: [128, -152], lB: [122, -148], aF: [20, 100], aB: [8, 100] };
     case "lie":     // on his back (in bed): the bed draws the blanket over him
-      return { rot: -90, hipY: 100, lean: 0, aF: [6, 0], aB: [-6, 0], lF: [0, 0], lB: [0, 0], head: -6 + b };
+      return { rot: -90, hipY: 100, lean: 0, aF: [6, 0], aB: [-6, 0], lF: [0, 0], lB: [0, 0], head: -6 + b, front: true };
     case "floor":   // face down on the floor, worn out
       return { rot: 86, lift: 24, hipY: 74, head: -40, aF: [150, 20], aB: [-10, 0], lF: [4, 0], lB: [-4, 6] };
     case "phone":
@@ -191,7 +192,7 @@ export const headOf = (p: Pose, dir: number) => {
 
 const WHITE = "#f4f2ea";
 
-const Face: React.FC<{ e: Expr; f: number; t: number; band: boolean; mon?: boolean; grin?: boolean }> = ({ e, f, t, band, mon, grin = true }) => {
+const Face: React.FC<{ e: Expr; f: number; t: number; band: boolean; mon?: boolean; grin?: boolean; front?: boolean }> = ({ e, f, t, band, mon, grin = true, front }) => {
   if (mon) {   // two red slit eyes (scowl) + a thin red grin
     return <g stroke="#ff3a2a" strokeLinecap="round" fill="none">
       <path d={`M ${f * 6} -9 L ${f * 19} -2`} strokeWidth={4} />
@@ -200,7 +201,7 @@ const Face: React.FC<{ e: Expr; f: number; t: number; band: boolean; mon?: boole
     </g>;
   }
   const blink = (t % 4.3) > 4.2 && e !== "angry" && e !== "determined";
-  const ex = [f * 9, f * 25], ey = 1, mx = f * 17, my = 16;
+  const ex = front ? [-12, 12] : [f * 9, f * 25], ey = 1, mx = front ? 0 : f * 17, my = 16;
   const grit = e === "angry" || e === "determined";
   const closed = e === "sleep" || blink;
   const lidded = e === "tired" || e === "sad" || e === "cry";
@@ -312,13 +313,13 @@ export const Guy: React.FC<{ p: Pose; e: Expr; dir?: number; t: number; look?: L
     <path d={d} stroke={fill} strokeWidth={w} strokeLinecap="round" strokeLinejoin="round" fill="none" />
   </g>;
   // the egg: a chain of circles from the hip up to the neck, then the head
-  const R0 = mon ? 21 : 26, R1 = mon ? 23 : 28, RN = mon ? 20 : 31, hrx = mon ? 33 : 36, hry = mon ? 32 : 33;   // villain: slimmer body, round head (ref)
+  const R0 = mon ? 21 : 26, R1 = mon ? 23 : 28, RN = mon ? 20 : 31, hrx = mon ? 33 : p.front ? 36 : 36, hry = mon ? 32 : p.front ? 36 : 33;   // villain: slimmer body, round head (ref)
   const ux = S(rad(p.lean ?? 0)) * dir, uy = -C(rad(p.lean ?? 0));
   const base: Pt = { x: g.hx + ux * 14, y: g.hy + uy * 14 };
   const circles: { x: number; y: number; r: number }[] = [];
   const nb = 9, nn = 6;
-  for (let i = 0; i <= nb; i++) { const k = i / nb; circles.push({ x: base.x + (g.sh.x - base.x) * k, y: base.y + (g.sh.y - base.y) * k, r: R0 + (R1 - R0) * k }); }
-  for (let i = 1; i <= nn; i++) { const k = i / nn; circles.push({ x: g.sh.x + (g.hc.x - g.sh.x) * k, y: g.sh.y + (g.hc.y - g.sh.y) * k, r: R1 + (RN - R1) * sm(k) }); }
+  for (let i = 0; i <= nb; i++) { const k = i / nb; circles.push({ x: base.x + (g.sh.x - base.x) * k, y: base.y + (g.sh.y - base.y) * k, r: p.front ? 9 : R0 + (R1 - R0) * k }); }
+  for (let i = 1; i <= nn; i++) { const k = i / nn; circles.push({ x: g.sh.x + (g.hc.x - g.sh.x) * k, y: g.sh.y + (g.hc.y - g.sh.y) * k, r: p.front ? 9 : R1 + (RN - R1) * sm(k) }); }
   const hangDeg = g.hang * dir;
   const egg = <g key="egg">
     {circles.map((c, i) => <circle key={"o" + i} cx={c.x} cy={c.y} r={c.r + lw} fill={line} />)}
@@ -327,7 +328,7 @@ export const Guy: React.FC<{ p: Pose; e: Expr; dir?: number; t: number; look?: L
     <ellipse cx={g.hc.x} cy={g.hc.y} rx={hrx} ry={hry} fill={skin} transform={`rotate(${hangDeg} ${g.hc.x} ${g.hc.y})`} />
   </g>;
   const lying = Math.abs(p.rot ?? 0) > 45 ? p.rot ?? 0 : 0;
-  const faceRot = (g.hang - lying + (p.face ?? 0)) * dir;
+  const faceRot = p.front ? -lying : (g.hang - lying + (p.face ?? 0)) * dir;
   const band = !mon && (!!look.headband || !!look.band);
   const bandCol = typeof look.band === "string" ? look.band : RED;
   const fl = Math.sin(t * 9) * 3, fl2 = Math.sin(t * 9 + 1.7) * 3;
@@ -338,7 +339,7 @@ export const Guy: React.FC<{ p: Pose; e: Expr; dir?: number; t: number; look?: L
       <path d={`M ${-dir * 34} -13 Q 0 -25 ${dir * 33} -13`} stroke={bandCol} strokeWidth={10.5} fill="none" />
     </g>}
     {look.cap && !mon && <path d={`M ${-32} -12 A 33 28 0 0 1 32 -12 Z M ${dir * 10} -12 l ${dir * 30} 2`} fill={look.cap} stroke={look.cap} strokeWidth={6} strokeLinecap="round" />}
-    {!ghost && <Face e={e} f={dir} t={t} band={band} mon={mon} grin={look.grin !== false} />}
+    {!ghost && <Face e={e} f={p.front ? 1 : dir} t={t} band={band} mon={mon} grin={look.grin !== false} front={p.front} />}
   </g>;
   const farLeg = tube(hose(g.hx, g.hy, lB[0], lB[1], LEG, dir), lw2, far, "lb");
   const farArm = tube(hose(g.sh.x, g.sh.y + 2, aB[0], aB[1], ARM, dir), aw, far, "ab");
