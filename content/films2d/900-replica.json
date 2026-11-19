@@ -962,8 +962,8 @@
     },
     {
      "t": "1",
-     "white": true,
-     "size": 52,
+     "bold": true,
+     "size": 56,
      "at": [
       640,
       235
@@ -973,8 +973,8 @@
     },
     {
      "t": "2",
-     "white": true,
-     "size": 52,
+     "bold": true,
+     "size": 56,
      "at": [
       640,
       235
@@ -984,8 +984,8 @@
     },
     {
      "t": "3",
-     "white": true,
-     "size": 52,
+     "bold": true,
+     "size": 56,
      "at": [
       640,
       235
@@ -995,8 +995,8 @@
     },
     {
      "t": "4",
-     "white": true,
-     "size": 52,
+     "bold": true,
+     "size": 56,
      "at": [
       640,
       235
@@ -1006,8 +1006,8 @@
     },
     {
      "t": "5",
-     "white": true,
-     "size": 52,
+     "bold": true,
+     "size": 56,
      "at": [
       640,
       235
@@ -1026,6 +1026,7 @@
     "hit": 1,
     "speed": 1,
     "punch": 2.5,
+    "punchPhase": 0.33,
     "flashAmp": 0.84,
     "flashLen": 8
    },
@@ -1140,8 +1141,8 @@
    "day": "DAY 105",
    "set": "street",
    "sat": [
-    0.55,
-    0.55
+    0.9,
+    0.9
    ],
    "chars": [
     {
@@ -1159,6 +1160,9 @@
     ]
    },
    "grade": "rain",
+   "arg": {
+    "gradeAmt": 0.45
+   },
    "sfx": []
   },
   {
@@ -1209,9 +1213,17 @@
    "day": "DAY 150",
    "set": "calendar",
    "arg": {
+    "paper": 1,
     "start": 0,
     "cross": 18,
-    "crossDt": 0.05
+    "crossDt": 0.012
+   },
+   "cam": {
+    "from": [
+     640,
+     402,
+     1.15
+    ]
    },
    "chars": [],
    "sfx": []
@@ -1278,6 +1290,9 @@
     ]
    },
    "grade": "sunset",
+   "arg": {
+    "gradeAmt": 0.4
+   },
    "sfx": []
   },
   {
@@ -1312,13 +1327,6 @@
   {
    "s": 4.0,
    "set": "stairs",
-   "cam": {
-    "from": [
-     706,
-     250,
-     1.0
-    ]
-   },
    "day": "DAY 270",
    "chars": [
     {
@@ -1347,13 +1355,6 @@
   {
    "s": 3.5,
    "set": "stairs",
-   "cam": {
-    "from": [
-     706,
-     250,
-     1.0
-    ]
-   },
    "day": "DAY 270",
    "chars": [
     {
@@ -1734,7 +1735,8 @@
     "big": "DISCIPLINE",
     "line": "Day one, or one day.",
     "cmd": "You decide.",
-    "fs": 178,
+    "fs": 148,
+    "sy": 1.2,
     "tagAt": 4.25,
     "cmdAt": 6.4,
     "outAt": 10.25,

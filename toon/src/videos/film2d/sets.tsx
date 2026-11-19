@@ -11,6 +11,7 @@
 //   calendar: start = weekday of day 1 (0..4, default 2) | cross = N days crossed off with a red X (default 0) | crossDt = seconds between
 //             the X marks drawing in (default 0 = all drawn at once) | crossT0 = seconds before the first X (default 0) | today = day
 //             number circled in red (0 = none) | days = days in the month (default 31)
+//             paper = 1: the reference look: cream paper page, red header band, plain 7 x 5 grid, no numbers / weekday letters, thin red X, no floor
 //   (grades "sunset" / "rain" and the embers / burst / punch args are documented in Film2D.tsx)
 // SET_CAMS = the default framing per set (wide shots: hero ~43% of the picture height, floor at ~y 515) and the slow
 // push-in in %/s (Film2D uses it when a beat has no "cam").
@@ -422,14 +423,15 @@ const Fridge: React.FC<{ x: number; open?: number; t: number }> = ({ x, open = 0
 };
 
 /** wall calendar of day boxes with optional hand-drawn red X marks over the crossed-off days */
-const Calendar: React.FC<{ t: number; start?: number; cross?: number; crossDt?: number; crossT0?: number; today?: number; days?: number }> = ({ t, start = 2, cross = 0, crossDt = 0, crossT0 = 0, today = 0, days = 31 }) => {
+const Calendar: React.FC<{ t: number; start?: number; cross?: number; crossDt?: number; crossT0?: number; today?: number; days?: number; paper?: number }> = ({ t, start = 2, cross = 0, crossDt = 0, crossT0 = 0, today = 0, days = 31, paper = 0 }) => {
   const x0 = 416, y0 = 192, cw = 64, ch = 56, st = Math.max(0, Math.min(4, Math.round(start))), nd = Math.max(28, Math.min(31, Math.round(days)));
   const cells: React.ReactNode[] = [];
-  for (let d = 1; d <= nd; d++) {
+  if (paper) for (let k = 0; k < 35; k++) cells.push(<rect key={"p" + k} x={x0 + (k % 7) * cw + 1.5} y={y0 + Math.floor(k / 7) * ch + 1.5} width={cw - 3} height={ch - 3} fill="#dcd6c8" stroke="#9d9786" strokeWidth={1.6} />);
+  for (let d = 1; d <= (paper ? 0 : nd); d++) {
     const k = st + d - 1, cx = x0 + (k % 7) * cw, cy = y0 + Math.floor(k / 7) * ch;
     cells.push(<g key={d}>
-      <rect x={cx + 1.5} y={cy + 1.5} width={cw - 3} height={ch - 3} rx={4} fill={d <= cross ? F1 : F2} stroke={INK} strokeWidth={1.8} />
-      <text x={cx + 8} y={cy + 20} fontFamily={HAND} fontWeight={700} fontSize={17} fill={d <= cross ? "#6b6f82" : "#b9bbc6"}>{d}</text>
+      <rect x={cx + 1.5} y={cy + 1.5} width={cw - 3} height={ch - 3} rx={paper ? 0 : 4} fill={paper ? "#dcd6c8" : d <= cross ? F1 : F2} stroke={paper ? "#9d9786" : INK} strokeWidth={paper ? 1.6 : 1.8} />
+      {!paper && <text x={cx + 8} y={cy + 20} fontFamily={HAND} fontWeight={700} fontSize={17} fill={d <= cross ? "#6b6f82" : "#b9bbc6"}>{d}</text>}
     </g>);
   }
   const marks: React.ReactNode[] = [];
@@ -439,7 +441,7 @@ const Calendar: React.FC<{ t: number; start?: number; cross?: number; crossDt?: 
     const u = crossDt > 0 ? Math.max(0, Math.min(1, (t - at) / 0.18)) : 1;
     const k = st + d - 1, cx = x0 + (k % 7) * cw, cy = y0 + Math.floor(k / 7) * ch, r = (i: number) => (rnd(d * 11 + i) - 0.5) * 7;
     const a = `M ${cx + 9 + r(1)} ${cy + 8 + r(2)} L ${cx + cw - 9 + r(3)} ${cy + ch - 8 + r(4)}`, b = `M ${cx + cw - 9 + r(5)} ${cy + 8 + r(6)} L ${cx + 9 + r(7)} ${cy + ch - 8 + r(8)}`;
-    marks.push(<g key={d} stroke="#EF4E3A" strokeWidth={5} strokeLinecap="round" fill="none">
+    marks.push(<g key={d} stroke="#EF4E3A" strokeWidth={paper ? 3.4 : 5} strokeLinecap="round" fill="none">
       <path d={a} pathLength={1} strokeDasharray={1} strokeDashoffset={1 - Math.min(1, u * 2)} />
       <path d={b} pathLength={1} strokeDasharray={1} strokeDashoffset={1 - Math.max(0, u * 2 - 1)} />
     </g>);
@@ -450,11 +452,11 @@ const Calendar: React.FC<{ t: number; start?: number; cross?: number; crossDt?: 
     <g>
       <path d="M 640 40 L 640 92" {...L} strokeWidth={2} />
       <circle cx={640} cy={92} r={5} fill={INK2} />
-      <rect x={396} y={96} width={488} height={394} rx={10} fill="#121216" {...L} strokeWidth={2.6} />
-      <path d="M 396 106 Q 396 96 406 96 L 874 96 Q 884 96 884 106 L 884 158 L 396 158 Z" fill="#2a1b1b" stroke={INK} strokeWidth={2.2} strokeLinejoin="round" />
-      <path d="M 460 112 l 0 -4 M 520 112 l 0 -4 M 760 112 l 0 -4 M 820 112 l 0 -4" stroke={INK2} strokeWidth={4} strokeLinecap="round" />
-      <path d="M 430 126 q 90 -10 180 0 M 430 142 q 60 6 120 0" stroke="#6b6f82" strokeWidth={3} strokeLinecap="round" fill="none" opacity={0.7} />
-      {["S", "M", "T", "W", "T", "F", "S"].map((l, i) => <text key={i} x={x0 + i * cw + cw / 2} y={y0 - 10} textAnchor="middle" fontFamily={HAND} fontWeight={700} fontSize={16} fill="#8a8d9a">{l}</text>)}
+      <rect x={396} y={96} width={488} height={394} rx={10} fill={paper ? "#d8d2c2" : "#121216"} {...L} strokeWidth={2.6} stroke={paper ? "#8d8777" : INK} />
+      <path d="M 396 106 Q 396 96 406 96 L 874 96 Q 884 96 884 106 L 884 158 L 396 158 Z" fill={paper ? "#bd3b2c" : "#2a1b1b"} stroke={paper ? "#8d8777" : INK} strokeWidth={2.2} strokeLinejoin="round" />
+      {!paper && <path d="M 460 112 l 0 -4 M 520 112 l 0 -4 M 760 112 l 0 -4 M 820 112 l 0 -4" stroke={INK2} strokeWidth={4} strokeLinecap="round" />}
+      {!paper && <path d="M 430 126 q 90 -10 180 0 M 430 142 q 60 6 120 0" stroke="#6b6f82" strokeWidth={3} strokeLinecap="round" fill="none" opacity={0.7} />}
+      {!paper && ["S", "M", "T", "W", "T", "F", "S"].map((l, i) => <text key={i} x={x0 + i * cw + cw / 2} y={y0 - 10} textAnchor="middle" fontFamily={HAND} fontWeight={700} fontSize={16} fill="#8a8d9a">{l}</text>)}
       {cells}
       {ring}
       {marks}
@@ -475,7 +477,7 @@ export const SetView: React.FC<{ name: string; t: number; scroll?: number; arg?:
       {Array.from({ length: 7 }, (_, i) => <path key={i} d={`M ${wrap(rnd(i * 3) * 1800 - t * (1100 + i * 90), 1800) - 300} ${FLOOR - 330 + rnd(i) * 300} l ${110 + rnd(i * 5) * 160} 0`} stroke="#fff" strokeWidth={1.4} strokeLinecap="round" opacity={0.12} />)}</g>; }
     case "mirror": return <g><Floor /><Mirror x={760} crack={arg.crack ?? 0} tint={arg.tint ?? 0} hue={arg.tintHue ?? 210} /></g>;
     case "fridge": return <g><Floor /><Fridge x={arg.x ?? 760} open={arg.open ?? 0} t={t} /></g>;
-    case "calendar": return <g><Floor /><Calendar t={t} start={arg.start ?? 2} cross={arg.cross ?? 0} crossDt={arg.crossDt ?? 0} crossT0={arg.crossT0 ?? 0} today={arg.today ?? 0} days={arg.days ?? 31} /></g>;
+    case "calendar": return <g>{!arg.paper && <Floor />}<Calendar paper={arg.paper ?? 0} t={t} start={arg.start ?? 2} cross={arg.cross ?? 0} crossDt={arg.crossDt ?? 0} crossT0={arg.crossT0 ?? 0} today={arg.today ?? 0} days={arg.days ?? 31} /></g>;
     case "gym": return <g><Floor /><Bag x={arg.x ?? 780} t={t} hit={arg.hit ?? 1} speed={arg.speed ?? 0} /></g>;
     case "stairs": return <g><Stairs /></g>;
     case "hill": return <g><Hills glow={arg.glow ?? 1} hx={arg.hx ?? 430} t={t} /></g>;
