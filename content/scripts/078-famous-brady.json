@@ -7,7 +7,7 @@
   "hook_style": "surprise",
   "title_style": "number",
   "theme": "clean_navy",
-  "status": "ready",
+  "status": "delivered",
   "score": 92,
   "title": "Pick 199 to a $375 Million Mic",
   "name_card": "Tom Brady",
@@ -36,7 +36,19 @@
           "ball"
         ],
         "stat": "$375 MILLION",
-        "stat_sub": "to talk football"
+        "stat_sub": "to talk football",
+        "hero": {
+          "skin": "f0c8a0",
+          "hair": "short",
+          "hair_color": "6b4a2e",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "1b2a4a",
+          "pants": "e8e8e8",
+          "socks": "1b2a4a",
+          "shoes": "1a1a1a",
+          "height": 1.05
+        }
       }
     },
     {
@@ -50,7 +62,19 @@
           "ball"
         ],
         "stat": "PICK 199",
-        "stat_sub": "2000 NFL draft"
+        "stat_sub": "2000 NFL draft",
+        "hero": {
+          "skin": "f0c8a0",
+          "hair": "short",
+          "hair_color": "6b4a2e",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "1b2a4a",
+          "pants": "e8e8e8",
+          "socks": "1b2a4a",
+          "shoes": "1a1a1a",
+          "height": 1.05
+        }
       }
     },
     {
@@ -65,7 +89,19 @@
           "trophy"
         ],
         "stat": "7 SUPER BOWLS",
-        "stat_sub": "an NFL record"
+        "stat_sub": "an NFL record",
+        "hero": {
+          "skin": "f0c8a0",
+          "hair": "short",
+          "hair_color": "6b4a2e",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "1b2a4a",
+          "pants": "e8e8e8",
+          "socks": "1b2a4a",
+          "shoes": "1a1a1a",
+          "height": 1.05
+        }
       }
     },
     {
@@ -79,7 +115,19 @@
           "trophy"
         ],
         "stat": "AGE 43",
-        "stat_sub": "oldest Super Bowl MVP"
+        "stat_sub": "oldest Super Bowl MVP",
+        "hero": {
+          "skin": "f0c8a0",
+          "hair": "short",
+          "hair_color": "6b4a2e",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "1b2a4a",
+          "pants": "e8e8e8",
+          "socks": "1b2a4a",
+          "shoes": "1a1a1a",
+          "height": 1.05
+        }
       }
     },
     {
@@ -95,7 +143,19 @@
         ],
         "stat": "$375 MILLION",
         "stat_sub": "10 years on TV, reported 2022",
-        "hud": "$375M"
+        "hud": "$375M",
+        "hero": {
+          "skin": "f0c8a0",
+          "hair": "short",
+          "hair_color": "6b4a2e",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "1b2a4a",
+          "pants": "e8e8e8",
+          "socks": "1b2a4a",
+          "shoes": "1a1a1a",
+          "height": 1.05
+        }
       }
     }
   ],
@@ -116,5 +176,26 @@
     "socks": "1b2a4a",
     "shoes": "1a1a1a",
     "height": 1.05
+  },
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-078-famous-brady",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-078-famous-brady/078-famous-brady.mp4",
+    "post_at": "2026-11-16T12:00:00-05:00",
+    "buffer_post": "6af9ed3955ad64be5049240d",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-15T17:34:50.035008+00:00",
+    "seconds": 38.68,
+    "eyes": {
+      "score": 4,
+      "problems": [
+        "The cover text is severely cut off and unreadable (the '19' in '199' is missing/obscured).",
+        "The first frame of the video shows '$102 MILLION' which contradicts the narration of '$375 MILLION'.",
+        "The cover image is confusing and fails to clearly communicate the topic due to the text clipping.",
+        "The text '199' is missing from the cover, making the hook 'Pick 199' unclear to the viewer."
+      ],
+      "best_fix": "Fix the cover design to ensure the full title 'Pick 199 to a $375 Million Mic' is visible and not cut off by the frame boundaries.",
+      "model": "gemini-3.1-flash-lite"
+    }
   }
 }

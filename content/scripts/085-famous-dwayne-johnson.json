@@ -7,7 +7,7 @@
   "hook_style": "surprise",
   "title_style": "number",
   "theme": "bold_bright",
-  "status": "ready",
+  "status": "delivered",
   "score": 90,
   "title": "Cut After 2 Months, Then $11.4 Billion",
   "name_card": "Dwayne Johnson",
@@ -36,8 +36,47 @@
           "ball"
         ],
         "stat": "$11.4 BILLION",
-        "stat_sub": "from a cut player"
-      }
+        "stat_sub": "from a cut player",
+        "hero": {
+          "skin": "a8744a",
+          "hair": "bald",
+          "hair_color": "15110e",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "1a1a1a",
+          "pants": "2c3550",
+          "socks": "1a1a1a",
+          "shoes": "1a1a1a",
+          "height": 1.12
+        }
+      },
+      "toon": [
+        {
+          "place": "pitch",
+          "things": [
+            "football"
+          ],
+          "card": {
+            "text": "CUT 1995",
+            "kind": "paper"
+          },
+          "mood": "sad"
+        },
+        {
+          "place": "showroom",
+          "things": [
+            "cashstack",
+            "camera"
+          ],
+          "card": {
+            "text": "$11.4B",
+            "kind": "screen",
+            "sub": "MOVIES"
+          },
+          "beat": "money",
+          "mood": "proud"
+        }
+      ]
     },
     {
       "narration": "But that's not his pay. It's his films' box office, worldwide.",
@@ -50,8 +89,43 @@
           "trophy"
         ],
         "stat": "$11.4 BILLION",
-        "stat_sub": "box office, worldwide"
-      }
+        "stat_sub": "box office, worldwide",
+        "hero": {
+          "skin": "a8744a",
+          "hair": "bald",
+          "hair_color": "15110e",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "1a1a1a",
+          "pants": "2c3550",
+          "socks": "1a1a1a",
+          "shoes": "1a1a1a",
+          "height": 1.12
+        }
+      },
+      "toon": [
+        {
+          "place": "boardroom",
+          "things": [
+            "briefcase"
+          ],
+          "mood": "stern"
+        },
+        {
+          "place": "stage",
+          "things": [
+            "globe",
+            "tv"
+          ],
+          "card": {
+            "text": "BOX OFFICE",
+            "kind": "sign",
+            "sub": "WORLDWIDE"
+          },
+          "mood": "calm",
+          "crowd": 40
+        }
+      ]
     },
     {
       "narration": "So he tried wrestling instead. The crowd loved him.",
@@ -64,8 +138,33 @@
           "trophy"
         ],
         "stat": "A NEW START",
-        "stat_sub": "wrestling, 1996"
-      }
+        "stat_sub": "wrestling, 1996",
+        "hero": {
+          "skin": "a8744a",
+          "hair": "bald",
+          "hair_color": "15110e",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "1a1a1a",
+          "pants": "2c3550",
+          "socks": "1a1a1a",
+          "shoes": "1a1a1a",
+          "height": 1.12
+        }
+      },
+      "toon": [
+        {
+          "place": "ring",
+          "mood": "scheme"
+        },
+        {
+          "place": "ring",
+          "mood": "proud",
+          "action": "cheer",
+          "crowd": 50,
+          "view": "low"
+        }
+      ]
     },
     {
       "narration": "His first lead movie role still paid 5.5 million. A world record.",
@@ -79,8 +178,47 @@
         ],
         "stat": "$5.5 MILLION",
         "stat_sub": "a first-lead record",
-        "hud": "$5.5M"
-      }
+        "hud": "$5.5M",
+        "hero": {
+          "skin": "a8744a",
+          "hair": "bald",
+          "hair_color": "15110e",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "1a1a1a",
+          "pants": "2c3550",
+          "socks": "1a1a1a",
+          "shoes": "1a1a1a",
+          "height": 1.12
+        }
+      },
+      "toon": [
+        {
+          "place": "office",
+          "things": [
+            "camera",
+            "cashstack"
+          ],
+          "card": {
+            "text": "$5.5M",
+            "kind": "screen",
+            "sub": "FIRST LEAD ROLE"
+          },
+          "mood": "happy"
+        },
+        {
+          "place": "stage",
+          "things": [
+            "trophy",
+            "crown"
+          ],
+          "card": {
+            "text": "WORLD RECORD",
+            "kind": "sign"
+          },
+          "mood": "proud"
+        }
+      ]
     },
     {
       "narration": "Just years after that cut: the world's highest-paid actor.",
@@ -95,8 +233,35 @@
         ],
         "stat": "#1 PAID ACTOR",
         "stat_sub": "Forbes, 2016",
-        "hud": "$11.4B"
-      }
+        "hud": "$11.4B",
+        "hero": {
+          "skin": "a8744a",
+          "hair": "bald",
+          "hair_color": "15110e",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "1a1a1a",
+          "pants": "2c3550",
+          "socks": "1a1a1a",
+          "shoes": "1a1a1a",
+          "height": 1.12
+        }
+      },
+      "toon": [
+        {
+          "place": "mansion",
+          "things": [
+            "crown",
+            "camera"
+          ],
+          "card": {
+            "text": "#1 PAID ACTOR",
+            "kind": "screen"
+          },
+          "beat": "money",
+          "mood": "proud"
+        }
+      ]
     }
   ],
   "sources": [
@@ -116,5 +281,26 @@
     "socks": "1a1a1a",
     "shoes": "1a1a1a",
     "height": 1.12
+  },
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-085-famous-dwayne-johnson",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-085-famous-dwayne-johnson/085-famous-dwayne-johnson.mp4",
+    "post_at": "2026-11-18T12:00:00-05:00",
+    "buffer_post": "6afd5156ec7ce52643749bae",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-18T07:18:46.835878+00:00",
+    "seconds": 25.99,
+    "remade_from": "6afd4546b116b81c9934f42d",
+    "eyes": {
+      "score": 9,
+      "problems": [
+        "The text 'Cut from a football' in the first scene is slightly obscured by the character's head and the football at the bottom.",
+        "The transition at frame 150-157 is slightly jarring as the character suddenly changes position."
+      ],
+      "best_fix": "Adjust the vertical positioning of the caption text in the first scene so it does not overlap with the character or the football.",
+      "model": "gemini-3.1-flash-lite",
+      "acts": null
+    }
   }
 }

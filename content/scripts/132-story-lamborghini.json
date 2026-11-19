@@ -1,0 +1,438 @@
+{
+  "id": "132",
+  "slug": "story-lamborghini",
+  "company": "Lamborghini",
+  "format": "story",
+  "story_mode": "history",
+  "visual_style": "lowpoly",
+  "hook_style": "surprise",
+  "title_style": "statement",
+  "theme": "bold_bright",
+  "status": "ready",
+  "score": 91,
+  "title": "From \"Tractor Maker\" to €3.1 Billion",
+  "name_card": "Ferruccio Lamborghini",
+  "name_sub": "you, the tractor maker",
+  "description": "You are Ferruccio Lamborghini. Your name is on 10,687 supercars a year. And it all started with a tractor.\n\nSources:\n- Wikipedia: Ferruccio Lamborghini: https://en.wikipedia.org/wiki/Ferruccio_Lamborghini\n- Wikipedia: Lamborghini: https://en.wikipedia.org/wiki/Lamborghini\n\nFrom the cited pages: Ferruccio Lamborghini was born in 1916 to grape farmers in Renazzo di Cento, Italy; after the war he built tractors from leftover military engines and parts and founded Lamborghini Trattori in 1948, which quickly became an important maker of farm machines; in 1958 he bought a Ferrari 250 GT whose clutch kept failing; he raised it with Enzo Ferrari and was dismissed (in his own later telling, Ferrari called him a tractor maker; Wikipedia notes the story is as much legend as fact); he founded Automobili Lamborghini in 1963 and chose a raging bull as its badge after visiting a Spanish fighting-bull ranch in 1962; the 1966 Miura used a rear mid-engine layout; in 1971 big tractor orders were cancelled and in 1972 he sold the tractor company to SAME; he sold 51% of the car company to Georges-Henri Rossetti for US$600,000; the car company went bankrupt in 1978, changed owners several times and was sold to the Volkswagen Group (under Audi) in 1998; he retired to an estate in Umbria and made wine. Lamborghini built 10,687 vehicles and had €3.10 billion in revenue in 2024. Not financial advice.\n\n#shorts #lamborghini #ferrari #howtheymakemoney",
+  "tags": [
+    "lamborghini",
+    "ferrari",
+    "supercars",
+    "story",
+    "shorts"
+  ],
+  "images": {},
+  "hud_label": "THE BULL",
+  "loop": "So next time a Lamborghini drives by, remember:",
+  "cta": "Lamborghini or Ferrari? Comment your pick.",
+  "cta_question": "Lamborghini or Ferrari?",
+  "hero": {
+    "skin": "e2b48e",
+    "hair": "short",
+    "hair_color": "4a4038",
+    "beard": "none",
+    "outfit": "suit",
+    "shirt": "6b4a2e",
+    "pants": "3a2a20",
+    "shoes": "1a1a1a",
+    "tie": "d4af37",
+    "height": 1.0
+  },
+  "scenes": [
+    {
+      "narration": "You are Ferruccio Lamborghini. Your name is on 10,687 supercars a year. And it all started with a tractor.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "car"
+        ],
+        "stat": "10,687",
+        "stat_sub": "supercars a year (2024)"
+      },
+      "toon": [
+        {
+          "place": "throne",
+          "beat": "sign",
+          "mood": "proud",
+          "brand": {
+            "name": "LAMBORGHINI",
+            "bg": "#111111",
+            "fg": "#d4af37"
+          }
+        },
+        {
+          "place": "showroom",
+          "beat": "walk",
+          "mood": "laugh",
+          "crowd": 10,
+          "things": [
+            "sportscar"
+          ],
+          "card": {
+            "text": "10,687",
+            "kind": "screen",
+            "sub": "CARS A YEAR"
+          }
+        },
+        {
+          "place": "garage",
+          "beat": "walk",
+          "mood": "calm",
+          "view": "ms"
+        }
+      ]
+    },
+    {
+      "narration": "Your parents grow grapes. After the war, you build tractors from old army parts. Farmers love them.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "truck"
+        ],
+        "stat": "TRACTORS",
+        "stat_sub": "from army leftovers"
+      },
+      "toon": [
+        {
+          "place": "field",
+          "beat": "walk",
+          "mood": "calm",
+          "card": {
+            "text": "GRAPE FARM",
+            "kind": "sign"
+          }
+        },
+        {
+          "place": "garage",
+          "beat": "walk",
+          "mood": "excited",
+          "action": "work",
+          "things": [
+            "crate"
+          ],
+          "view": "ms"
+        },
+        {
+          "place": "field",
+          "beat": "queue",
+          "mood": "laugh",
+          "crowd": 30
+        }
+      ]
+    },
+    {
+      "narration": "In 1958, you buy a Ferrari. But the clutch keeps breaking. So you complain to Enzo Ferrari himself.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "office",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "car"
+        ],
+        "stat": "1958",
+        "stat_sub": "your Ferrari breaks"
+      },
+      "toon": [
+        {
+          "place": "showroom",
+          "beat": "sign",
+          "mood": "happy",
+          "things": [
+            "sportscar"
+          ],
+          "card": {
+            "text": "1958",
+            "kind": "flip",
+            "sub": "YEAR"
+          }
+        },
+        {
+          "place": "garage",
+          "beat": "walk",
+          "mood": "stern",
+          "things": [
+            "car"
+          ],
+          "action": "work",
+          "card": {
+            "text": "BROKEN CLUTCH",
+            "kind": "sign"
+          }
+        },
+        {
+          "place": "office",
+          "beat": "walk",
+          "mood": "nervous",
+          "who": {
+            "jacket": "#c8102e",
+            "pants": "#1a1a1a",
+            "hat": "hair",
+            "hair": "#d8d8d8",
+            "glasses": true,
+            "chest": "ENZO"
+          },
+          "view": "ms"
+        }
+      ]
+    },
+    {
+      "narration": "He brushes you off. To him, you're just a tractor maker.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "office",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": "A TRACTOR MAKER",
+        "stat_sub": "Enzo's brush-off"
+      },
+      "toon": [
+        {
+          "place": "boardroom",
+          "beat": "walk",
+          "mood": "stern",
+          "who": {
+            "jacket": "#c8102e",
+            "pants": "#1a1a1a",
+            "hat": "hair",
+            "hair": "#d8d8d8",
+            "glasses": true,
+            "chest": "ENZO"
+          },
+          "view": "ws"
+        },
+        {
+          "place": "office",
+          "beat": "sign",
+          "mood": "shock",
+          "card": {
+            "text": "TRACTOR MAKER",
+            "kind": "white",
+            "fg": "#c8102e"
+          }
+        }
+      ]
+    },
+    {
+      "narration": "So in 1963, you start your own car company. A raging bull on the badge. Then in 1966, the Miura.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "cheer",
+        "crowd": 0,
+        "props": [
+          "car"
+        ],
+        "stat": "1966",
+        "stat_sub": "the Miura"
+      },
+      "toon": [
+        {
+          "place": "garage",
+          "beat": "sign",
+          "mood": "scheme",
+          "things": [
+            "car"
+          ],
+          "card": {
+            "text": "1963",
+            "kind": "flip",
+            "sub": "YEAR"
+          }
+        },
+        {
+          "place": "showroom",
+          "beat": "sign",
+          "mood": "stern",
+          "things": [
+            "sportscar"
+          ],
+          "card": {
+            "text": "RAGING BULL",
+            "kind": "sign",
+            "bg": "#111111",
+            "fg": "#d4af37"
+          }
+        },
+        {
+          "place": "street",
+          "beat": "drive",
+          "mood": "laugh",
+          "things": [
+            "sportscar"
+          ],
+          "crowd": 25,
+          "view": "low",
+          "card": {
+            "text": "1966",
+            "kind": "flip",
+            "sub": "MIURA"
+          }
+        }
+      ]
+    },
+    {
+      "narration": "But every bull gets tired. Big tractor orders get cancelled. You sell control of the cars for 600,000 dollars.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "office",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "check"
+        ],
+        "stat": "$600,000",
+        "stat_sub": "control of the car company"
+      },
+      "toon": [
+        {
+          "place": "field",
+          "beat": "walk",
+          "mood": "sad",
+          "view": "ms"
+        },
+        {
+          "place": "office",
+          "beat": "walk",
+          "mood": "sad",
+          "card": {
+            "text": "CANCELLED",
+            "kind": "paper",
+            "sub": "TRACTOR ORDERS"
+          }
+        },
+        {
+          "place": "boardroom",
+          "beat": "sign",
+          "mood": "dazed",
+          "things": [
+            "letter",
+            "coins"
+          ],
+          "card": {
+            "text": "$600,000",
+            "kind": "paper"
+          }
+        }
+      ]
+    },
+    {
+      "narration": "In 1978, the car company goes bankrupt. Then, in 1998, Volkswagen buys it.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "boxes"
+        ],
+        "stat": "1978",
+        "stat_sub": "bankrupt"
+      },
+      "toon": [
+        {
+          "place": "street",
+          "beat": "sign",
+          "mood": "sad",
+          "hide": true,
+          "card": {
+            "text": "BANKRUPT",
+            "kind": "tomb",
+            "sub": "1978"
+          }
+        },
+        {
+          "place": "boardroom",
+          "beat": "sign",
+          "mood": "relief",
+          "brand": {
+            "name": "Volkswagen",
+            "bg": "#001e50",
+            "fg": "#ffffff"
+          },
+          "card": {
+            "text": "1998",
+            "kind": "flip",
+            "sub": "NEW OWNER"
+          }
+        }
+      ]
+    },
+    {
+      "narration": "Today, your bull makes 3.1 billion euros a year. And you? You went home to make wine. Not bad for a tractor maker.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "cheer",
+        "crowd": 200,
+        "props": [
+          "car",
+          "cash"
+        ],
+        "stat": "€3.1 BILLION",
+        "stat_sub": "Lamborghini revenue, 2024",
+        "hud": "€3.1B"
+      },
+      "toon": [
+        {
+          "place": "mansion",
+          "beat": "money",
+          "mood": "laugh",
+          "things": [
+            "sportscar",
+            "cashstack"
+          ],
+          "card": {
+            "text": "€3.1B",
+            "kind": "screen",
+            "sub": "A YEAR"
+          }
+        },
+        {
+          "place": "field",
+          "beat": "walk",
+          "mood": "calm",
+          "view": "face"
+        },
+        {
+          "place": "stall",
+          "beat": "sign",
+          "mood": "relief",
+          "card": {
+            "text": "WINE",
+            "kind": "sign",
+            "sub": "BACK TO THE GRAPES"
+          }
+        },
+        {
+          "place": "showroom",
+          "beat": "walk",
+          "mood": "proud",
+          "things": [
+            "sportscar",
+            "truck"
+          ],
+          "view": "ws"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Ferruccio Lamborghini",
+      "url": "https://en.wikipedia.org/wiki/Ferruccio_Lamborghini"
+    },
+    {
+      "title": "Wikipedia: Lamborghini",
+      "url": "https://en.wikipedia.org/wiki/Lamborghini"
+    }
+  ],
+  "length_test": "long"
+}

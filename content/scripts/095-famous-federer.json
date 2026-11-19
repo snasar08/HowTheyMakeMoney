@@ -7,7 +7,7 @@
   "hook_style": "surprise",
   "title_style": "number",
   "theme": "clean_navy",
-  "status": "ready",
+  "status": "delivered",
   "score": 88,
   "title": "From Ball Boy to $1.1 Billion",
   "name_card": "Roger Federer",
@@ -36,8 +36,39 @@
           "ball"
         ],
         "stat": "$1.1 BILLION",
-        "stat_sub": "Forbes, August 2026"
-      }
+        "stat_sub": "Forbes, August 2026",
+        "hero": {
+          "skin": "e8c4a0",
+          "hair": "short",
+          "hair_color": "3a2a1e",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "f4f4f4",
+          "pants": "f4f4f4",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "extras": [
+            "headband"
+          ],
+          "height": 1.03
+        }
+      },
+      "toon": [
+        {
+          "place": "mansion",
+          "beat": "money",
+          "mood": "proud",
+          "things": [
+            "cashstack",
+            "goldbar"
+          ],
+          "card": {
+            "text": "$1.1B",
+            "kind": "screen",
+            "sub": "WORTH"
+          }
+        }
+      ]
     },
     {
       "narration": "As a kid, he just fetched balls at his hometown tournament.",
@@ -50,8 +81,37 @@
           "ball"
         ],
         "stat": "BALL BOY",
-        "stat_sub": "hometown event, Basel, 1992"
-      }
+        "stat_sub": "hometown event, Basel, 1992",
+        "hero": {
+          "skin": "e8c4a0",
+          "hair": "short",
+          "hair_color": "3a2a1e",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "f4f4f4",
+          "pants": "f4f4f4",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "extras": [
+            "headband"
+          ],
+          "height": 1.03
+        }
+      },
+      "toon": [
+        {
+          "place": "court",
+          "beat": "walk",
+          "mood": "calm",
+          "crowd": 15,
+          "card": {
+            "text": "BALL BOY",
+            "kind": "sign",
+            "sub": "HOMETOWN"
+          },
+          "view": "ws"
+        }
+      ]
     },
     {
       "narration": "Then he won Wimbledon. His first major, at 21.",
@@ -64,8 +124,53 @@
           "trophy"
         ],
         "stat": "FIRST MAJOR",
-        "stat_sub": "Wimbledon, age 21"
-      }
+        "stat_sub": "Wimbledon, age 21",
+        "hero": {
+          "skin": "e8c4a0",
+          "hair": "short",
+          "hair_color": "3a2a1e",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "f4f4f4",
+          "pants": "f4f4f4",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "extras": [
+            "headband"
+          ],
+          "height": 1.03
+        }
+      },
+      "toon": [
+        {
+          "place": "court",
+          "beat": "walk",
+          "mood": "excited",
+          "action": "cheer",
+          "crowd": 50,
+          "things": [
+            "trophy"
+          ],
+          "card": {
+            "text": "WIMBLEDON",
+            "kind": "sign"
+          }
+        },
+        {
+          "place": "court",
+          "beat": "walk",
+          "mood": "proud",
+          "things": [
+            "medal"
+          ],
+          "card": {
+            "text": "AGE 21",
+            "kind": "flip",
+            "sub": "FIRST MAJOR"
+          },
+          "view": "ws"
+        }
+      ]
     },
     {
       "narration": "But prize money wasn't the big part. One clothing deal reportedly paid 300 million.",
@@ -79,8 +184,47 @@
         ],
         "stat": "$300 MILLION",
         "stat_sub": "reported, 10 years, 2018",
-        "hud": "$300M"
-      }
+        "hud": "$300M",
+        "hero": {
+          "skin": "e8c4a0",
+          "hair": "short",
+          "hair_color": "3a2a1e",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "f4f4f4",
+          "pants": "f4f4f4",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "extras": [
+            "headband"
+          ],
+          "height": 1.03
+        }
+      },
+      "toon": [
+        {
+          "place": "boardroom",
+          "beat": "walk",
+          "mood": "scheme",
+          "things": [
+            "coins"
+          ],
+          "view": "ms"
+        },
+        {
+          "place": "showroom",
+          "beat": "sign",
+          "mood": "happy",
+          "things": [
+            "cashstack"
+          ],
+          "card": {
+            "text": "$300M",
+            "kind": "paper",
+            "sub": "CLOTHING DEAL"
+          }
+        }
+      ]
     },
     {
       "narration": "Then he topped Forbes' highest-paid athletes. The first tennis player ever.",
@@ -94,8 +238,50 @@
         ],
         "stat": "NO. 1",
         "stat_sub": "Forbes highest-paid, 2020",
-        "hud": "$1.1B"
-      }
+        "hud": "$1.1B",
+        "hero": {
+          "skin": "e8c4a0",
+          "hair": "short",
+          "hair_color": "3a2a1e",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "f4f4f4",
+          "pants": "f4f4f4",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "extras": [
+            "headband"
+          ],
+          "height": 1.03
+        }
+      },
+      "toon": [
+        {
+          "place": "mansion",
+          "beat": "walk",
+          "mood": "proud",
+          "things": [
+            "trophy"
+          ],
+          "card": {
+            "text": "FORBES",
+            "kind": "screen",
+            "sub": "HIGHEST-PAID"
+          }
+        },
+        {
+          "place": "court",
+          "beat": "walk",
+          "mood": "proud",
+          "action": "cheer",
+          "crowd": 40,
+          "card": {
+            "text": "1ST EVER",
+            "kind": "flip",
+            "sub": "TENNIS PLAYER"
+          }
+        }
+      ]
     }
   ],
   "sources": [
@@ -118,5 +304,32 @@
       "headband"
     ],
     "height": 1.03
+  },
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-095-famous-federer",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-095-famous-federer/095-famous-federer.mp4",
+    "post_at": "2026-11-19T18:00:00-05:00",
+    "buffer_post": "6afdeb6868a6d3c65a29eeda",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-18T18:16:09.191188+00:00",
+    "seconds": 26.31,
+    "eyes": {
+      "score": 9,
+      "problems": [
+        "The character is holding gold coins in frames 330-370 while the narration discusses prize money, but the visual transition to counting cash in frames 382-486 is slightly abrupt.",
+        "The text 'is now worth 1.1' in frames 40-70 is grammatically incomplete and awkward compared to the narration."
+      ],
+      "best_fix": "Update the text overlay during the 'is now worth' segment to read 'Net Worth: $1.1B' for better clarity and professionalism.",
+      "model": "gemini-3.1-flash-lite",
+      "acts": [
+        {
+          "kind": "count_cash",
+          "frames": "382-486",
+          "clear": true,
+          "why": "The character is clearly holding and counting stacks of green cash bills."
+        }
+      ]
+    }
   }
 }

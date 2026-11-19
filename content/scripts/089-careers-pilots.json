@@ -7,7 +7,7 @@
   "hook_style": "number",
   "title_style": "number",
   "theme": "clean_navy",
-  "status": "ready",
+  "status": "delivered",
   "score": 88,
   "title": "$232,140 a Year to Fly Planes",
   "description": "Airline pilots make 232,140 dollars a year. That's the median.\n\nSources:\n- BLS OEWS via api.bls.gov: Airline pilots, copilots, and flight engineers 53-2011, annual median wage, May 2025: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000053201113\n- BLS OEWS via api.bls.gov: Airline pilots, copilots, and flight engineers, 10th percentile: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000053201111\n- BLS OEWS via api.bls.gov: Airline pilots, copilots, and flight engineers, 90th percentile: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000053201115\n- BLS OEWS via api.bls.gov: Airline pilots, copilots, and flight engineers, employment: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000053201101\n\nBLS May 2025 (OEWS), airline pilots, copilots, and flight engineers (53-2011): 103,560 jobs on payrolls (OEWS does not count the self-employed); median $232,140; 10th percentile $106,710; 90th percentile $463,830. Median = half earn more, half earn less. Not financial advice.\n\n#shorts #pilot #careers #howtheymakemoney",
@@ -117,5 +117,26 @@
       "title": "BLS OEWS via api.bls.gov: Airline pilots, copilots, and flight engineers, employment",
       "url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000053201101"
     }
-  ]
+  ],
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-089-careers-pilots",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-089-careers-pilots/089-careers-pilots.mp4",
+    "post_at": "2026-11-16T15:00:00-05:00",
+    "buffer_post": "6af9edb7b9a106584cc43a03",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-15T17:36:56.118582+00:00",
+    "seconds": 33.65,
+    "eyes": {
+      "score": 6,
+      "problems": [
+        "The number $354,155 on the third frame contradicts the narration which states the top ten percent earn over 463,000.",
+        "The text 'OVER 463,000 A' on the fourth frame is cut off and incomplete.",
+        "The final frame repeats the cover image and text, which feels redundant and lazy for a short.",
+        "The text 'MAY 2025' appears on multiple frames, which is confusing given the current date is November 2026."
+      ],
+      "best_fix": "Correct the $354,155 figure to match the narration's $463,000 and update the date references to reflect current 2026 data.",
+      "model": "gemini-3.1-flash-lite"
+    }
+  }
 }

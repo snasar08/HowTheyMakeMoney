@@ -3,7 +3,7 @@
   "slug": "marriott",
   "company": "Marriott",
   "theme": "clean_navy",
-  "status": "ready",
+  "status": "draft",
   "title": "Marriott Earns $5.4 Billion in Hotel Fees",
   "description": "Marriott made 5.4 billion dollars in fees. From hotels other people own.\n\nSources:\n- Marriott Q4 and full-year 2025 results (press release): https://fortune.com/company-assets/729/quartr/earnings-release-8-k-909ff-2026-02-10-12-08-01.pdf\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
@@ -109,5 +109,6 @@
   "title_style": "statement",
   "hook_style": "number",
   "cta": "Pool or free breakfast? Comment your must-have.",
-  "cta_question": "Pool or free breakfast?"
+  "cta_question": "Pool or free breakfast?",
+  "paused": "Nov 15 2026, Sam: drop the 'how' and 'careers' formats (median 21 / 18 views at 48 h vs 781 for famous)"
 }

@@ -1,0 +1,351 @@
+{
+  "id": "119",
+  "slug": "plan-nike",
+  "company": "Nike",
+  "format": "story",
+  "story_mode": "history",
+  "visual_style": "lowpoly",
+  "hook_style": "number",
+  "title_style": "number",
+  "theme": "bold_bright",
+  "status": "ready",
+  "score": 94,
+  "title": "From Selling Japan's Shoes to $46.3 Billion",
+  "name_card": "You are Nike",
+  "name_sub": "a true story",
+  "description": "You're Nike, and you want to own the whole shoe game.\n\nSources:\n- Wikipedia: Nike, Inc.: https://en.wikipedia.org/wiki/Nike,_Inc.\n\nFrom the cited page: founded January 25, 1964, as Blue Ribbon Sports by Bill Bowerman and Phil Knight, first distributing Onitsuka Tiger shoes from Japan; in 1971 Bowerman used his wife's waffle iron to experiment with rubber soles; the company officially became Nike, Inc. on May 30, 1971, and first used the Swoosh, designed by Carolyn Davidson, on June 18, 1971; it went public in December 1980; it signed Michael Jordan in 1984, which led to the Air Jordan brand; the \"Just Do It\" slogan debuted July 1, 1988; it bought Converse in 2003 for $309 million; fiscal 2025 revenue was $46.3 billion. Not financial advice.\n\n#shorts #nike #airjordan #howtheymakemoney",
+  "tags": [
+    "nike",
+    "air jordan",
+    "story",
+    "shorts"
+  ],
+  "images": {},
+  "loop": "So next time you lace up your shoes, remember:",
+  "cta": "Nike or Adidas? Comment your pick.",
+  "cta_question": "Nike or Adidas?",
+  "hero": {
+    "skin": "d9a577",
+    "hair": "short",
+    "hair_color": "2a1d14",
+    "beard": "none",
+    "outfit": "tee",
+    "shirt": "111111",
+    "pants": "2b2f3a",
+    "shoes": "f4f4f4",
+    "chest": "NIKE",
+    "trim": "ffffff",
+    "height": 1.0
+  },
+  "scenes": [
+    {
+      "narration": "You are Nike, and you make 46.3 billion dollars a year. But it's 1964, and you don't make shoes. You sell someone else's, shipped from Japan.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "boxes"
+        ]
+      },
+      "toon": [
+        {
+          "place": "throne",
+          "mood": "proud",
+          "beat": "money",
+          "card": {
+            "text": "$46.3 BILLION",
+            "kind": "screen",
+            "sub": "NIKE, EVERY YEAR"
+          },
+          "view": "ms"
+        },
+        {
+          "place": "stall",
+          "mood": "nervous",
+          "things": [
+            "shoe"
+          ],
+          "card": {
+            "text": "1964",
+            "kind": "flip",
+            "sub": "YEAR"
+          },
+          "view": "ms"
+        },
+        {
+          "place": "beach",
+          "mood": "scheme",
+          "things": [
+            "box",
+            "yacht"
+          ],
+          "card": {
+            "text": "MADE IN JAPAN",
+            "kind": "white"
+          },
+          "view": "wide"
+        }
+      ]
+    },
+    {
+      "narration": "Then, your co-founder pours rubber into his wife's waffle iron. That's your first real sole. In 1971, you get a new name. Nike.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "office",
+        "action": "work",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "garage",
+          "mood": "excited",
+          "things": [
+            "shoe"
+          ],
+          "view": "ms"
+        },
+        {
+          "place": "showroom",
+          "mood": "laugh",
+          "things": [
+            "shoe"
+          ],
+          "card": {
+            "text": "FIRST SOLE",
+            "kind": "paper"
+          },
+          "view": "ms"
+        },
+        {
+          "place": "garage",
+          "mood": "calm",
+          "card": {
+            "text": "1971",
+            "kind": "flip",
+            "sub": "YEAR"
+          },
+          "view": "ms"
+        },
+        {
+          "place": "street",
+          "mood": "proud",
+          "brand": {
+            "name": "NIKE",
+            "bg": "#111111",
+            "fg": "#ffffff"
+          },
+          "beat": "sign",
+          "view": "wide"
+        }
+      ]
+    },
+    {
+      "narration": "In December 1980, you go public.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "cheer",
+        "crowd": 60,
+        "props": [
+          "cash"
+        ]
+      },
+      "toon": [
+        {
+          "place": "boardroom",
+          "mood": "excited",
+          "action": "cheer",
+          "card": {
+            "text": "NKE  IPO",
+            "kind": "screen",
+            "sub": "DECEMBER 1980"
+          },
+          "view": "ms"
+        }
+      ]
+    },
+    {
+      "narration": "Then, in 1984, you bet on a rookie. Michael Jordan. His shoe becomes its own brand.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "cheer",
+        "crowd": 200,
+        "props": [
+          "ball",
+          "check"
+        ]
+      },
+      "toon": [
+        {
+          "place": "court",
+          "mood": "scheme",
+          "card": {
+            "text": "1984",
+            "kind": "flip",
+            "sub": "YEAR"
+          },
+          "view": "ms"
+        },
+        {
+          "place": "court",
+          "mood": "proud",
+          "who": {
+            "jacket": "#c8102e",
+            "pants": "#c8102e",
+            "boots": "#ffffff",
+            "hat": "hair",
+            "style": "buzz",
+            "hair": "#1a1a1a",
+            "skin": "#6b4226",
+            "kit": "bball",
+            "num": "23",
+            "trim": "#111111"
+          },
+          "action": "cheer",
+          "view": "ws"
+        },
+        {
+          "place": "showroom",
+          "mood": "excited",
+          "who": {
+            "jacket": "#c8102e",
+            "pants": "#c8102e",
+            "boots": "#ffffff",
+            "hat": "hair",
+            "style": "buzz",
+            "hair": "#1a1a1a",
+            "skin": "#6b4226",
+            "kit": "bball",
+            "num": "23",
+            "trim": "#111111"
+          },
+          "things": [
+            "shoe"
+          ],
+          "view": "ms"
+        }
+      ]
+    },
+    {
+      "narration": "1988. Three words the whole world knows. Just Do It.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "idle",
+        "crowd": 40,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "stage",
+          "mood": "calm",
+          "card": {
+            "text": "1988",
+            "kind": "flip",
+            "sub": "YEAR"
+          },
+          "view": "ms"
+        },
+        {
+          "place": "street",
+          "mood": "excited",
+          "things": [
+            "globe"
+          ],
+          "view": "wide"
+        },
+        {
+          "place": "stage",
+          "mood": "proud",
+          "card": {
+            "text": "JUST DO IT.",
+            "kind": "sign"
+          },
+          "view": "ms"
+        }
+      ]
+    },
+    {
+      "narration": "Your old rival, Converse? In 2003, you buy it for 309 million dollars.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "office",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "check"
+        ]
+      },
+      "toon": [
+        {
+          "place": "office",
+          "mood": "scheme",
+          "card": {
+            "text": "CONVERSE",
+            "kind": "white"
+          },
+          "view": "ms"
+        },
+        {
+          "place": "boardroom",
+          "mood": "laugh",
+          "things": [
+            "cashstack"
+          ],
+          "card": {
+            "text": "$309,000,000",
+            "kind": "screen",
+            "sub": "SOLD: 2003"
+          },
+          "view": "ms"
+        }
+      ]
+    },
+    {
+      "narration": "Now, you make 46.3 billion dollars a year. Turns out, everyone wants to be in your shoes.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "cheer",
+        "crowd": 300,
+        "props": [
+          "cash"
+        ]
+      },
+      "toon": [
+        {
+          "place": "mansion",
+          "mood": "proud",
+          "beat": "money",
+          "things": [
+            "cashstack",
+            "goldbar"
+          ],
+          "view": "ms"
+        },
+        {
+          "place": "throne",
+          "mood": "proud",
+          "crowd": 20,
+          "things": [
+            "crown",
+            "shoe"
+          ],
+          "view": "wide"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Nike, Inc.",
+      "url": "https://en.wikipedia.org/wiki/Nike,_Inc."
+    }
+  ],
+  "length_test": "short",
+  "look": "afterhour"
+}

@@ -7,7 +7,7 @@
   "hook_style": "surprise",
   "title_style": "number",
   "theme": "bold_bright",
-  "status": "ready",
+  "status": "draft",
   "score": 86,
   "title": "From '50 Worst Inventions' to $4.1 Billion",
   "description": "Time magazine called Crocs one of the 50 worst inventions.\n\nSources:\n- Wikipedia: Crocs: https://en.wikipedia.org/wiki/Crocs\n\nFrom Wikipedia (Crocs): founded in 2002; its first model, the Beach, was unveiled at the Fort Lauderdale Boat Show in 2002 and all 200 pairs sold out; during the 2008 financial crisis the stock dropped as low as $0.79 before rebounding; Time magazine listed Crocs among the world's \"50 Worst Inventions\" in 2010; Crocs had sold 300 million pairs by 2017; revenue was US$4.102 billion in 2024. Not financial advice.\n\n#shorts #crocs #shoes #business #howtheymakemoney",
@@ -93,5 +93,6 @@
       "title": "Wikipedia: Crocs",
       "url": "https://en.wikipedia.org/wiki/Crocs"
     }
-  ]
+  ],
+  "paused": "Nov 15 2026, Sam: drop the 'how' and 'careers' formats (median 21 / 18 views at 48 h vs 781 for famous)"
 }

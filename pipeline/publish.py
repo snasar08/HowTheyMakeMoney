@@ -30,7 +30,7 @@ from zoneinfo import ZoneInfo
 
 TZ = ZoneInfo(os.environ.get("CHANNEL_TZ", "America/New_York"))
 # Daily posting times (local). One slot per video rendered in a run.
-SLOTS = [s.strip() for s in os.environ.get("POST_SLOTS", "12:00,15:00,16:30,18:00,20:00").split(",") if s.strip()]
+SLOTS = [s.strip() for s in os.environ.get("POST_SLOTS", "07:00,12:00,15:30,19:00,22:00").split(",") if s.strip()]
 # Nothing is rendered or delivered by the nightly run before this date (New York).
 POST_START = dt.date.fromisoformat(os.environ.get("POST_START") or "2026-10-27")
 BUFFER_API = "https://api.buffer.com"
@@ -185,6 +185,8 @@ def youtube_text(script: dict) -> str:
     return (desc + ("\n\n" + tags if tags and tags not in desc else ""))[:4900]
 
 
+THUMB_OFFSET_MS = int(os.environ.get("THUMB_OFFSET_MS", "40"))
+
 CREATE_POST = """
 mutation($input: CreatePostInput!) {
   createPost(input: $input) {
@@ -206,7 +208,10 @@ def post_input(video_url: str, script: dict, when: dt.datetime, privacy: str | N
         "schedulingType": "automatic",
         "mode": "customScheduled",
         "dueAt": when.astimezone(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%S.000Z"),
-        "assets": [{"video": {"url": video_url, "metadata": {"title": script["title"][:100]}}}],
+        # Nov 15: YouTube picked a frame ~40% in as every Short's thumbnail (health.md: 22 of 22 "other frame").
+        # Buffer has no custom-image field but takes metadata.thumbnailOffset (ms): 40 ms = our title cover.
+        "assets": [{"video": {"url": video_url, "metadata": {"title": script["title"][:100],
+                                                             "thumbnailOffset": THUMB_OFFSET_MS}}}],
         "metadata": {"youtube": youtube},
     }
     return inp

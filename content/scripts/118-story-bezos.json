@@ -1,0 +1,384 @@
+{
+  "id": "118",
+  "slug": "story-bezos",
+  "company": "Amazon",
+  "format": "story",
+  "visual_style": "lowpoly",
+  "hook_style": "surprise",
+  "title_style": "statement",
+  "theme": "bold_bright",
+  "status": "ready",
+  "score": 93,
+  "title": "You Quit Wall Street to Sell Books Online",
+  "name_card": "Jeff Bezos",
+  "name_sub": "you, in 1994",
+  "description": "You quit a Wall Street job to sell books on the internet. It's 1994.\n\nSources:\n- Wikipedia: Jeff Bezos: https://en.wikipedia.org/wiki/Jeff_Bezos\n- Wikipedia: Amazon (company): https://en.wikipedia.org/wiki/Amazon_(company)\n\nFrom the cited pages: Bezos worked at D. E. Shaw from 1990 to 1994 and left to found Amazon; the business plan was written on a cross-country drive from New York City to Seattle; Amazon was founded in a rented garage in Bellevue, Washington, on July 5, 1994, and began as an online bookstore; its IPO three years later made Bezos a millionaire (1997); in 2002 he led Amazon to launch Amazon Web Services; in November 2007 he launched the Kindle; Amazon bought Whole Foods for $13.7 billion on August 28, 2017; Bezos founded Blue Origin in September 2000 and flew on its New Shepard NS-16 flight on July 20, 2021, to 66.5 miles; Amazon revenue was $716.9 billion in 2025 with 1,576,000 employees. Not financial advice.\n\n#shorts #amazon #jeffbezos #howtheymakemoney",
+  "tags": [
+    "amazon",
+    "jeff bezos",
+    "story",
+    "shorts"
+  ],
+  "images": {},
+  "hud_label": "AMAZON",
+  "loop": "So next time a box shows up at your door, remember:",
+  "cta": "Amazon or Walmart? Comment your pick.",
+  "cta_question": "Amazon or Walmart?",
+  "hero": {
+    "skin": "e8bc92",
+    "hair": "bald",
+    "beard": "none",
+    "outfit": "suit",
+    "shirt": "2b3a55",
+    "pants": "2b3a55",
+    "shoes": "1a1a1a",
+    "tie": "3f6fb5",
+    "height": 1.0
+  },
+  "scenes": [
+    {
+      "narration": "You quit a Wall Street job to sell books on the internet. It's 1994.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "office",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": "1994",
+        "stat_sub": "you quit Wall Street"
+      },
+      "toon": [
+        {
+          "place": "boardroom",
+          "beat": "walk",
+          "mood": "scheme",
+          "things": [
+            "briefcase"
+          ],
+          "card": {
+            "text": "WALL STREET",
+            "kind": "sign"
+          },
+          "view": "ws"
+        },
+        {
+          "place": "office",
+          "beat": "walk",
+          "mood": "excited",
+          "things": [
+            "laptop",
+            "books"
+          ],
+          "card": {
+            "text": "1994",
+            "kind": "flip"
+          }
+        }
+      ]
+    },
+    {
+      "narration": "You write the plan on a road trip, New York to Seattle. Then you start in a rented garage.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "run",
+        "crowd": 0,
+        "props": [
+          "car"
+        ],
+        "stat": "A GARAGE",
+        "stat_sub": "Bellevue, Washington"
+      },
+      "toon": [
+        {
+          "place": "street",
+          "beat": "drive",
+          "mood": "happy",
+          "things": [
+            "car"
+          ],
+          "card": {
+            "text": "NY TO SEATTLE",
+            "kind": "sign",
+            "sub": "ROAD TRIP"
+          }
+        },
+        {
+          "place": "garage",
+          "beat": "walk",
+          "mood": "proud",
+          "action": "work",
+          "things": [
+            "box"
+          ],
+          "card": {
+            "text": "RENTED GARAGE",
+            "kind": "sign"
+          }
+        }
+      ]
+    },
+    {
+      "narration": "It starts as an online bookstore. Three years later, it goes public, and you're a millionaire.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "store",
+        "action": "cheer",
+        "crowd": 40,
+        "props": [
+          "boxes",
+          "cash"
+        ],
+        "stat": "1997",
+        "stat_sub": "Amazon goes public"
+      },
+      "toon": [
+        {
+          "place": "stall",
+          "beat": "walk",
+          "mood": "happy",
+          "things": [
+            "books",
+            "laptop"
+          ],
+          "card": {
+            "text": "BOOKSTORE",
+            "kind": "sign",
+            "sub": "ONLINE"
+          }
+        },
+        {
+          "place": "mansion",
+          "beat": "money",
+          "mood": "laugh",
+          "action": "cheer",
+          "crowd": 20,
+          "things": [
+            "cashstack"
+          ],
+          "card": {
+            "text": "GOES PUBLIC",
+            "kind": "screen",
+            "sub": "3 YEARS LATER"
+          }
+        }
+      ]
+    },
+    {
+      "narration": "But books aren't enough. In 2002, you start renting out computers. That's A.W.S.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "office",
+        "action": "work",
+        "crowd": 0,
+        "props": [],
+        "stat": "2002",
+        "stat_sub": "Amazon Web Services"
+      },
+      "toon": [
+        {
+          "place": "street",
+          "beat": "walk",
+          "mood": "nervous",
+          "things": [
+            "books",
+            "crate"
+          ],
+          "view": "ws"
+        },
+        {
+          "place": "lab",
+          "beat": "walk",
+          "mood": "scheme",
+          "things": [
+            "laptop",
+            "gpu"
+          ],
+          "card": {
+            "text": "2002",
+            "kind": "flip",
+            "sub": "RENT COMPUTERS"
+          }
+        },
+        {
+          "place": "lab",
+          "beat": "sign",
+          "mood": "proud",
+          "things": [
+            "chip"
+          ],
+          "brand": {
+            "name": "AWS",
+            "bg": "#232f3e",
+            "fg": "#ff9900"
+          }
+        }
+      ]
+    },
+    {
+      "narration": "Then an e-reader, the Kindle. Then you buy Whole Foods for 13.7 billion dollars.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "store",
+        "action": "idle",
+        "crowd": 20,
+        "props": [
+          "check"
+        ],
+        "stat": "$13.7 BILLION",
+        "stat_sub": "Whole Foods, 2017"
+      },
+      "toon": [
+        {
+          "place": "showroom",
+          "beat": "sign",
+          "mood": "happy",
+          "things": [
+            "books"
+          ],
+          "brand": {
+            "name": "Kindle",
+            "bg": "#1a1a1a",
+            "fg": "#ffffff"
+          }
+        },
+        {
+          "place": "boardroom",
+          "beat": "sign",
+          "mood": "scheme",
+          "things": [
+            "cashstack",
+            "briefcase"
+          ],
+          "card": {
+            "text": "$13.7B",
+            "kind": "paper",
+            "sub": "WHOLE FOODS"
+          }
+        }
+      ]
+    },
+    {
+      "narration": "Then a rocket company, Blue Origin. In 2021, you ride it yourself, 66 miles up.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "launch",
+        "action": "cheer",
+        "crowd": 0,
+        "props": [
+          "rocket"
+        ],
+        "stat": "66 MILES UP",
+        "stat_sub": "July 20, 2021"
+      },
+      "toon": [
+        {
+          "place": "lab",
+          "beat": "sign",
+          "mood": "excited",
+          "things": [
+            "rocket"
+          ],
+          "brand": {
+            "name": "Blue Origin",
+            "bg": "#0b2a6f",
+            "fg": "#ffffff"
+          }
+        },
+        {
+          "place": "space",
+          "beat": "walk",
+          "mood": "laugh",
+          "action": "cheer",
+          "things": [
+            "rocket"
+          ],
+          "card": {
+            "text": "66 MILES",
+            "kind": "sign",
+            "sub": "IN 2021"
+          }
+        }
+      ]
+    },
+    {
+      "narration": "Today, Amazon makes 716.9 billion dollars a year. With over 1.5 million workers.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "cheer",
+        "crowd": 300,
+        "props": [
+          "cash"
+        ],
+        "stat": "$716.9 BILLION",
+        "stat_sub": "Amazon revenue, 2025"
+      },
+      "toon": [
+        {
+          "place": "mansion",
+          "beat": "money",
+          "mood": "shock",
+          "things": [
+            "cashstack",
+            "factory"
+          ],
+          "card": {
+            "text": "$716.9B",
+            "kind": "screen",
+            "sub": "A YEAR"
+          }
+        },
+        {
+          "place": "street",
+          "beat": "queue",
+          "mood": "proud",
+          "crowd": 60,
+          "card": {
+            "text": "1.5M WORKERS",
+            "kind": "sign"
+          },
+          "view": "wide"
+        }
+      ]
+    },
+    {
+      "narration": "And it all started in a garage full of books.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "boxes"
+        ],
+        "stat": "1 GARAGE",
+        "stat_sub": "where it started"
+      },
+      "toon": [
+        {
+          "place": "garage",
+          "beat": "walk",
+          "mood": "proud",
+          "action": "work",
+          "things": [
+            "books",
+            "crate"
+          ],
+          "view": "ms"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Jeff Bezos",
+      "url": "https://en.wikipedia.org/wiki/Jeff_Bezos"
+    },
+    {
+      "title": "Wikipedia: Amazon (company)",
+      "url": "https://en.wikipedia.org/wiki/Amazon_(company)"
+    }
+  ],
+  "story_mode": "history"
+}

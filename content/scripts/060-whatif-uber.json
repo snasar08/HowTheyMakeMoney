@@ -35,7 +35,32 @@
         ],
         "stat": "4.1 BILLION",
         "stat_sub": "trips. one driver?"
-      }
+      },
+      "toon": [
+        {
+          "place": "street",
+          "things": [
+            "car",
+            "truck"
+          ],
+          "card": {
+            "text": "4.1B TRIPS",
+            "kind": "screen",
+            "sub": "LAST QUARTER"
+          },
+          "mood": "shock",
+          "crowd": 30
+        },
+        {
+          "place": "garage",
+          "things": [
+            "car"
+          ],
+          "beat": "drive",
+          "mood": "calm",
+          "view": "ms"
+        }
+      ]
     },
     {
       "narration": "Just one driver. Every single trip.",
@@ -51,7 +76,26 @@
         "stat": "1 DRIVER",
         "stat_sub": "rides + deliveries, Q3 2026",
         "hud": "4.1B"
-      }
+      },
+      "toon": [
+        {
+          "place": "track",
+          "things": [
+            "car"
+          ],
+          "mood": "stern",
+          "view": "ms"
+        },
+        {
+          "place": "street",
+          "things": [
+            "car"
+          ],
+          "beat": "queue",
+          "mood": "nervous",
+          "crowd": 40
+        }
+      ]
     },
     {
       "narration": "Then picture it. Hundreds of trips every second.",
@@ -66,7 +110,31 @@
         "stat": "516 / SECOND",
         "stat_sub": "about 44.6 million a day",
         "hud": "44.6M"
-      }
+      },
+      "toon": [
+        {
+          "place": "lab",
+          "things": [
+            "lightbulb"
+          ],
+          "mood": "scheme",
+          "view": "low"
+        },
+        {
+          "place": "track",
+          "things": [
+            "car",
+            "bus"
+          ],
+          "card": {
+            "text": "HUNDREDS",
+            "kind": "sign",
+            "sub": "TRIPS A SECOND"
+          },
+          "mood": "shock",
+          "crowd": 60
+        }
+      ]
     },
     {
       "narration": "Just one trip a minute? One day's trips would take 85 years.",
@@ -80,7 +148,26 @@
         ],
         "stat": "~85 YEARS",
         "stat_sub": "for one day of trips"
-      }
+      },
+      "toon": [
+        {
+          "place": "street",
+          "things": [
+            "car",
+            "clock"
+          ],
+          "beat": "clock",
+          "mood": "nervous"
+        },
+        {
+          "place": "graveyard",
+          "card": {
+            "text": "85 YEARS",
+            "kind": "tomb"
+          },
+          "mood": "shock"
+        }
+      ]
     },
     {
       "narration": "Still not done? Every trip ever: 83 billion. About 158,000 years.",
@@ -96,7 +183,36 @@
         "stat": "158,000 YEARS",
         "stat_sub": "83 billion trips since 2010",
         "hud": "83B"
-      }
+      },
+      "toon": [
+        {
+          "place": "diner",
+          "mood": "sad",
+          "view": "face"
+        },
+        {
+          "place": "showroom",
+          "things": [
+            "car",
+            "globe"
+          ],
+          "card": {
+            "text": "83 BILLION",
+            "kind": "screen",
+            "sub": "TRIPS EVER"
+          },
+          "mood": "shock",
+          "crowd": 30
+        },
+        {
+          "place": "graveyard",
+          "card": {
+            "text": "158,000 YRS",
+            "kind": "tomb"
+          },
+          "mood": "dazed"
+        }
+      ]
     }
   ],
   "sources": [

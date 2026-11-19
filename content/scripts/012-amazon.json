@@ -3,7 +3,7 @@
   "slug": "amazon",
   "company": "Amazon",
   "theme": "clean_navy",
-  "status": "ready",
+  "status": "draft",
   "title": "57% of Amazon's Profit Isn't the Store",
   "description": "57 percent of Amazon's operating profit isn't from the store.\n\nSources:\n- Amazon Q4 and full year 2025 results (TED): https://tedmag.com/amazon-announces-4q-results/\n- Amazon FY2025 segment analysis (Beancount): https://beancount.io/blog/2026/07/13/amazon-fy2025-earnings-analysis\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
@@ -108,5 +108,6 @@
   "title_style": "number",
   "hook_style": "number",
   "cta": "Boxes or cloud? Comment your pick.",
-  "cta_question": "Boxes or cloud?"
+  "cta_question": "Boxes or cloud?",
+  "paused": "Nov 15 2026, Sam: drop the 'how' and 'careers' formats (median 21 / 18 views at 48 h vs 781 for famous)"
 }

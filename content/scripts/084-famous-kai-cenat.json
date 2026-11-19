@@ -7,7 +7,7 @@
   "hook_style": "surprise",
   "title_style": "whatif",
   "theme": "dark_neon",
-  "status": "ready",
+  "status": "delivered",
   "score": 91,
   "title": "What If You Got Paid $23,280 to Sleep?",
   "name_card": "Kai Cenat",
@@ -26,7 +26,7 @@
   "cta_question": "Sleep or gaming?",
   "scenes": [
     {
-      "narration": "23,280 dollars a month. For streaming while he sleeps.",
+      "narration": "Over 23,000 dollars a month. Just for streaming while he sleeps.",
       "visual": {
         "type": "lowpoly",
         "set": "gaming",
@@ -36,7 +36,19 @@
           "headset"
         ],
         "stat": "$23,280",
-        "stat_sub": "a month, asleep"
+        "stat_sub": "a month, asleep",
+        "hero": {
+          "skin": "5a3a28",
+          "hair": "short",
+          "hair_color": "15110e",
+          "beard": "none",
+          "outfit": "hoodie",
+          "shirt": "d8402e",
+          "pants": "24262e",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "height": 1.0
+        }
       }
     },
     {
@@ -50,11 +62,23 @@
           "phone"
         ],
         "stat": "5.6 MILLION",
-        "stat_sub": "hours of sleep watched"
+        "stat_sub": "hours of sleep watched",
+        "hero": {
+          "skin": "5a3a28",
+          "hair": "short",
+          "hair_color": "15110e",
+          "beard": "none",
+          "outfit": "hoodie",
+          "shirt": "d8402e",
+          "pants": "24262e",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "height": 1.0
+        }
       }
     },
     {
-      "narration": "Then, awake, he broke a Twitch record. 306,621 subscribers.",
+      "narration": "Then, awake, he broke a Twitch record. Over 300,000 subscribers.",
       "visual": {
         "type": "lowpoly",
         "set": "gaming",
@@ -65,11 +89,23 @@
         ],
         "stat": "306,621",
         "stat_sub": "subscribers, February 2023",
-        "hud": "306K"
+        "hud": "306K",
+        "hero": {
+          "skin": "5a3a28",
+          "hair": "short",
+          "hair_color": "15110e",
+          "beard": "none",
+          "outfit": "hoodie",
+          "shirt": "d8402e",
+          "pants": "24262e",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "height": 1.0
+        }
       }
     },
     {
-      "narration": "Yet sleeping was just a side gig. Forbes estimated 4.7 million that year.",
+      "narration": "But sleeping was just a side gig. Forbes estimated 4.7 million that year.",
       "visual": {
         "type": "lowpoly",
         "set": "gaming",
@@ -81,11 +117,23 @@
         ],
         "stat": "$4.7 MILLION",
         "stat_sub": "Forbes, 2023",
-        "hud": "$4.7M"
+        "hud": "$4.7M",
+        "hero": {
+          "skin": "5a3a28",
+          "hair": "short",
+          "hair_color": "15110e",
+          "beard": "none",
+          "outfit": "hoodie",
+          "shirt": "d8402e",
+          "pants": "24262e",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "height": 1.0
+        }
       }
     },
     {
-      "narration": "Now? The most-followed streamer on all of Twitch.",
+      "narration": "Now? He's the most-followed streamer on all of Twitch.",
       "visual": {
         "type": "lowpoly",
         "set": "gaming",
@@ -97,7 +145,19 @@
         ],
         "stat": "21 MILLION",
         "stat_sub": "followers, 2026",
-        "hud": "21M"
+        "hud": "21M",
+        "hero": {
+          "skin": "5a3a28",
+          "hair": "short",
+          "hair_color": "15110e",
+          "beard": "none",
+          "outfit": "hoodie",
+          "shirt": "d8402e",
+          "pants": "24262e",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "height": 1.0
+        }
       }
     }
   ],
@@ -118,5 +178,23 @@
     "socks": "f4f4f4",
     "shoes": "f4f4f4",
     "height": 1.0
+  },
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-084-famous-kai-cenat",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-084-famous-kai-cenat/084-famous-kai-cenat.mp4",
+    "post_at": "2026-11-17T16:30:00-05:00",
+    "buffer_post": "6afb57e5be9cb91737f32087",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-16T19:22:13.583842+00:00",
+    "seconds": 28.56,
+    "eyes": {
+      "score": 9,
+      "problems": [
+        "Minor visual repetition in background elements around frame 400-500"
+      ],
+      "best_fix": "Add more varied B-roll or dynamic background movements during the middle section.",
+      "model": "gemini-3.5-flash-lite"
+    }
   }
 }

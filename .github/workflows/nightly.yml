@@ -9,7 +9,7 @@ on:
     - cron: "41 13 * * *"   # ~9:41 AM New York backup — fills anything still open today
     - cron: "23 19 * * *"   # Nov 9: third run (GitHub dropped one run and failed to start the other); arrives in the evening and fills tomorrow's slots early
   push:
-    branches: ["nightly-test"]   # dry run of this exact file on script 040 (nothing posted)
+    branches: ["nightly-test", "remake"]   # nightly-test: dry run on script 040 (nothing posted); remake: see content/remake.txt
   workflow_dispatch:
     inputs:
       count:
@@ -41,7 +41,7 @@ jobs:
       ids: ${{ steps.ids.outputs.ids }}
     env:
       POST_START: ${{ vars.POST_START || '2026-10-27' }}
-      POST_SLOTS: "12:00,15:00,16:30,18:00,20:00"
+      POST_SLOTS: "07:00,12:00,15:30,19:00,22:00"
       MAX_PER_DAY: "5"
     steps:
       - uses: actions/checkout@v4
@@ -56,11 +56,13 @@ jobs:
           if [ -n "${{ inputs.script_id }}" ]; then ARGS="$ARGS --id ${{ inputs.script_id }}"; fi
           if [ "${{ inputs.dry_run }}" = "true" ]; then ARGS="$ARGS --dry"; fi
           if [ "${{ github.ref }}" = "refs/heads/nightly-test" ]; then ARGS="--id 040 --dry"; fi
+          # Nov 18 remake: content/remake.txt line 1 = ids (085,092), line 2 = the run whose voice artifacts to reuse
+          if [ "${{ github.ref }}" = "refs/heads/remake" ]; then export REMAKE_IDS=$(sed -n 1p content/remake.txt); fi
           python -m pipeline.run $ARGS --plan-ids ids.txt || true
           echo "ids=$(python -c "import json;print(json.dumps([l.strip() for l in open('ids.txt') if l.strip()] if __import__('os').path.exists('ids.txt') else []))")" >> "$GITHUB_OUTPUT"
   voice:
     needs: plan
-    if: ${{ needs.plan.outputs.ids != '[]' && needs.plan.outputs.ids != '' && (vars.VOICE_ENGINE || 'qwen') == 'qwen' }}
+    if: ${{ needs.plan.outputs.ids != '[]' && needs.plan.outputs.ids != '' && (vars.VOICE_ENGINE || 'qwen') == 'qwen' && github.ref != 'refs/heads/remake' }}
     strategy:
       fail-fast: false
       matrix:
@@ -101,7 +103,7 @@ jobs:
       any: ${{ steps.rec.outputs.any }}
     env:
       VOICE_ENGINE: ${{ vars.VOICE_ENGINE || 'qwen' }}
-      QWEN_VOICE: narrator4
+      QWEN_VOICE: umbriel
       GEMINI_VOICE: ${{ vars.GEMINI_VOICE }}   # must match the voice job (cache key)
       KOKORO_VOICE: am_puck
       KOKORO_SPEED: "1.2"
@@ -110,7 +112,7 @@ jobs:
       UPLOAD_MODE: buffer_dry
       AUDIO_CHECK: warn
       POST_START: ${{ vars.POST_START || '2026-10-27' }}
-      POST_SLOTS: "12:00,15:00,16:30,18:00,20:00"
+      POST_SLOTS: "07:00,12:00,15:30,19:00,22:00"
       MAX_PER_DAY: "5"
       IDS: ${{ needs.plan.outputs.ids }}
     steps:
@@ -129,12 +131,16 @@ jobs:
             .cache
           key: htmm-models-v2-${{ hashFiles('requirements.txt') }}
           restore-keys: htmm-models-v2-
+      - id: rm
+        run: echo "run=$( [ "${{ github.ref }}" = "refs/heads/remake" ] && sed -n 2p content/remake.txt || echo ${{ github.run_id }} )" >> "$GITHUB_OUTPUT"
       - uses: actions/download-artifact@v4
         continue-on-error: true
         with:
           pattern: voice-*
           path: .cache/voice
           merge-multiple: true
+          run-id: ${{ steps.rm.outputs.run }}   # remake: the voice of the first render
+          github-token: ${{ github.token }}
       - id: rec
         run: |
           mkdir -p plans
@@ -155,9 +161,82 @@ jobs:
           name: lp-plans
           path: plans/
           retention-days: 2
+  # ---- toon look (Nov 15, three.js + Remotion, toon/): one director-planned scene per sentence ----
+  toonplan:
+    needs: lpplan
+    if: ${{ always() && needs.lpplan.outputs.any != '0' && needs.lpplan.outputs.any != '' && (vars.LOOK || 'toon') == 'toon' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: pip install -q numpy pillow soundfile
+      - uses: actions/download-artifact@v4
+        with:
+          name: lp-plans
+          path: plans
+      - run: |
+          mkdir -p tp
+          for f in plans/*.json; do
+            slug=$(basename "$f" .json)
+            sc=content/scripts/$slug.json
+            [ -f "$sc" ] && python -m pipeline.toon plan "$sc" "tp/$slug.json" "$f" | tee -a tp/director.txt
+          done
+          ls tp
+      - uses: actions/upload-artifact@v4
+        with:
+          name: toon-plans
+          path: tp/
+          retention-days: 2
+  toon:
+    needs: toonplan
+    if: ${{ always() && needs.toonplan.result == 'success' }}
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: actions/cache@v4
+        with:
+          path: |
+            toon/node_modules
+            ~/.npm
+          key: toon-npm-${{ hashFiles('toon/package.json', 'toon/package-lock.json') }}
+      - run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq libnss3 libdbus-1-3 libatk1.0-0 libgbm-dev libxrandr2 libxkbcommon-dev libxfixes3 libxcomposite1 libxdamage1 libatk-bridge2.0-0 libpango-1.0-0 libcairo2 libcups2 || true
+          sudo apt-get install -y -qq libasound2t64 || sudo apt-get install -y -qq libasound2 || true
+      - uses: actions/download-artifact@v4
+        with:
+          name: toon-plans
+          path: tp
+      - working-directory: toon
+        run: |
+          [ -d node_modules/remotion ] || npm ci --no-audit --no-fund 2>&1 | tail -3
+          npx remotion browser ensure 2>&1 | tail -1
+          for f in ../tp/*.json; do
+            slug=$(basename "$f" .json)
+            node scripts/frames.mjs HtmmShort "$f" "../frames/$slug" ${{ matrix.shard }} 20 "$(cat scale.txt)" || echo "::warning title=toon::$slug shard ${{ matrix.shard }} failed"
+          done
+      - uses: actions/upload-artifact@v4
+        with:
+          name: toon-frames-${{ matrix.shard }}
+          path: frames/
+          retention-days: 2
   blender:
     needs: lpplan
-    if: ${{ always() && needs.lpplan.outputs.any != '0' && needs.lpplan.outputs.any != '' }}
+    if: ${{ always() && needs.lpplan.outputs.any != '0' && needs.lpplan.outputs.any != '' && (vars.LOOK || 'toon') == 'blender' }}
     strategy:
       fail-fast: false
       matrix:
@@ -194,7 +273,7 @@ jobs:
           path: plates/
           retention-days: 2
   make:
-    needs: [plan, voice, lpplan, blender]
+    needs: [plan, voice, lpplan, blender, toon]
     if: ${{ always() }}
     runs-on: ubuntu-latest
     timeout-minutes: 90
@@ -206,12 +285,12 @@ jobs:
       GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}   # Nov 13: "eyes" review of each finished Short (pipeline/eyes.py)
       AUDIO_CHECK: ${{ vars.AUDIO_CHECK || 'warn' }}
       VOICE_ENGINE: ${{ vars.VOICE_ENGINE || 'qwen' }}   # Nov 3: Qwen3-TTS clone (falls back to Kokoro per Short)
-      QWEN_VOICE: narrator4
+      QWEN_VOICE: umbriel
       GEMINI_VOICE: ${{ vars.GEMINI_VOICE }}   # must match the voice job (cache key)
       LP_PLATES: ${{ github.workspace }}/lp/plates   # Blender frames (used only when complete)
       KOKORO_VOICE: am_puck   # Oct 30: Sam wants a male voice; am_puck = top-rated male (C+), most expressive
       KOKORO_SPEED: "1.2"
-      POST_SLOTS: "12:00,15:00,16:30,18:00,20:00"
+      POST_SLOTS: "07:00,12:00,15:30,19:00,22:00"
       MAX_PER_DAY: "5"
       GH_TOKEN: ${{ github.token }}
       YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
@@ -258,6 +337,20 @@ jobs:
           path: .cache/voice
           merge-multiple: true
 
+      - id: rm
+        if: ${{ github.ref == 'refs/heads/remake' }}
+        run: echo "run=$(sed -n 2p content/remake.txt)" >> "$GITHUB_OUTPUT"
+      - name: Remake - the same voice as the first render (no new voice requests)
+        if: ${{ github.ref == 'refs/heads/remake' }}
+        uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          pattern: voice-*
+          path: .cache/voice
+          merge-multiple: true
+          run-id: ${{ steps.rm.outputs.run }}
+          github-token: ${{ github.token }}
+
       - name: Blender frames from the 20 render machines
         uses: actions/download-artifact@v4
         continue-on-error: true
@@ -271,6 +364,28 @@ jobs:
         with:
           name: lp-plans
           path: lp/plates
+      - name: Toon frames from the 20 render machines
+        uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          pattern: toon-frames-*
+          path: toonframes
+          merge-multiple: true
+      - name: Toon plans
+        uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          name: toon-plans
+          path: toonplans
+      - name: Toon frames -> plates
+        continue-on-error: true
+        run: |
+          [ -d toonplans ] || exit 0
+          for f in toonplans/*.json; do
+            slug=$(basename "$f" .json)
+            [ -d "toonframes/$slug" ] && python -m pipeline.toon plates "$f" "toonframes/$slug" lp/plates
+          done
+          cat toonplans/director.txt 2>/dev/null | head -80
 
       - name: Lint scripts (warnings only)
         run: python -m pipeline.lint || true
@@ -281,6 +396,7 @@ jobs:
           if [ -n "${{ inputs.script_id }}" ]; then ARGS="$ARGS --id ${{ inputs.script_id }}"; fi
           if [ "${{ inputs.dry_run }}" = "true" ]; then ARGS="$ARGS --dry"; fi
           if [ "${{ github.ref }}" = "refs/heads/nightly-test" ]; then ARGS="--id 040 --dry"; fi
+          if [ "${{ github.ref }}" = "refs/heads/remake" ]; then export REMAKE_IDS=$(sed -n 1p content/remake.txt); fi
           set -o pipefail
           python -m pipeline.run $ARGS 2>&1 | tee make.log
 

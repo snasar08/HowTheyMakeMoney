@@ -3,7 +3,7 @@
   "slug": "walmart-ads",
   "company": "Walmart",
   "theme": "clean_navy",
-  "status": "ready",
+  "status": "draft",
   "title": "Walmart's $6.4 Billion Side Business",
   "description": "Walmart made 713 billion dollars. And kept only about 4 cents per dollar.\n\nSources:\n- Walmart Q4 and fiscal 2026 earnings release: https://stock.walmart.com/sec-filings/all-sec-filings/content/0000104169-26-000032/earningsreleasefy26q4.htm\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
@@ -105,5 +105,6 @@
   "title_style": "number",
   "hook_style": "number",
   "cta": "Store or app? Comment where you shop.",
-  "cta_question": "Store or app?"
+  "cta_question": "Store or app?",
+  "paused": "Nov 15 2026, Sam: drop the 'how' and 'careers' formats (median 21 / 18 views at 48 h vs 781 for famous)"
 }

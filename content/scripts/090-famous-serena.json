@@ -7,7 +7,7 @@
   "hook_style": "surprise",
   "title_style": "number",
   "theme": "bold_bright",
-  "status": "ready",
+  "status": "delivered",
   "score": 88,
   "title": "A $12 Million Deal Right After High School",
   "name_card": "Serena Williams",
@@ -36,8 +36,35 @@
           "trophy"
         ],
         "stat": "$12 MILLION",
-        "stat_sub": "right after high school, 1999"
-      }
+        "stat_sub": "right after high school, 1999",
+        "hero": {
+          "skin": "6b4a32",
+          "hair": "bun",
+          "hair_color": "15110e",
+          "beard": "none",
+          "outfit": "dress",
+          "shirt": "e8554e",
+          "pants": "e8554e",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "height": 1.02
+        }
+      },
+      "toon": [
+        {
+          "place": "boardroom",
+          "beat": "sign",
+          "mood": "proud",
+          "things": [
+            "cashstack"
+          ],
+          "card": {
+            "text": "$12M",
+            "kind": "paper",
+            "sub": "AFTER HIGH SCHOOL"
+          }
+        }
+      ]
     },
     {
       "narration": "Her coaches? Just her mom and dad.",
@@ -48,8 +75,43 @@
         "crowd": 0,
         "props": [],
         "stat": "HER PARENTS",
-        "stat_sub": "her first coaches"
-      }
+        "stat_sub": "her first coaches",
+        "hero": {
+          "skin": "6b4a32",
+          "hair": "bun",
+          "hair_color": "15110e",
+          "beard": "none",
+          "outfit": "dress",
+          "shirt": "e8554e",
+          "pants": "e8554e",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "height": 1.02
+        }
+      },
+      "toon": [
+        {
+          "place": "court",
+          "beat": "walk",
+          "mood": "calm",
+          "view": "ws",
+          "card": {
+            "text": "COACHES",
+            "kind": "sign"
+          }
+        },
+        {
+          "place": "court",
+          "beat": "walk",
+          "mood": "happy",
+          "crowd": 2,
+          "card": {
+            "text": "MOM + DAD",
+            "kind": "flip"
+          },
+          "view": "wide"
+        }
+      ]
     },
     {
       "narration": "Then a 40 million dollar shoe deal in 2004.",
@@ -63,8 +125,36 @@
         ],
         "stat": "$40 MILLION",
         "stat_sub": "5-year deal, 2004",
-        "hud": "$40M"
-      }
+        "hud": "$40M",
+        "hero": {
+          "skin": "6b4a32",
+          "hair": "bun",
+          "hair_color": "15110e",
+          "beard": "none",
+          "outfit": "dress",
+          "shirt": "e8554e",
+          "pants": "e8554e",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "height": 1.02
+        }
+      },
+      "toon": [
+        {
+          "place": "showroom",
+          "beat": "sign",
+          "mood": "excited",
+          "things": [
+            "shoe",
+            "cashstack"
+          ],
+          "card": {
+            "text": "$40M",
+            "kind": "paper",
+            "sub": "2004 SHOE DEAL"
+          }
+        }
+      ]
     },
     {
       "narration": "Then 23 major titles. The most of the Open Era.",
@@ -77,8 +167,52 @@
           "trophy"
         ],
         "stat": "23 MAJORS",
-        "stat_sub": "an Open Era record"
-      }
+        "stat_sub": "an Open Era record",
+        "hero": {
+          "skin": "6b4a32",
+          "hair": "bun",
+          "hair_color": "15110e",
+          "beard": "none",
+          "outfit": "dress",
+          "shirt": "e8554e",
+          "pants": "e8554e",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "height": 1.02
+        }
+      },
+      "toon": [
+        {
+          "place": "court",
+          "beat": "walk",
+          "mood": "proud",
+          "action": "cheer",
+          "crowd": 40,
+          "things": [
+            "trophy",
+            "medal"
+          ],
+          "card": {
+            "text": "23 TITLES",
+            "kind": "screen",
+            "sub": "MAJORS"
+          }
+        },
+        {
+          "place": "court",
+          "beat": "walk",
+          "mood": "proud",
+          "things": [
+            "crown"
+          ],
+          "card": {
+            "text": "OPEN ERA",
+            "kind": "sign",
+            "sub": "THE MOST"
+          },
+          "view": "ws"
+        }
+      ]
     },
     {
       "narration": "Now her sponsor's biggest building? It's named after her.",
@@ -92,8 +226,45 @@
           "cash"
         ],
         "stat": "HER BUILDING",
-        "stat_sub": "1 million square feet"
-      }
+        "stat_sub": "1 million square feet",
+        "hero": {
+          "skin": "6b4a32",
+          "hair": "bun",
+          "hair_color": "15110e",
+          "beard": "none",
+          "outfit": "dress",
+          "shirt": "e8554e",
+          "pants": "e8554e",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "height": 1.02
+        }
+      },
+      "toon": [
+        {
+          "place": "street",
+          "beat": "walk",
+          "mood": "excited",
+          "things": [
+            "factory"
+          ],
+          "card": {
+            "text": "BIGGEST BUILDING",
+            "kind": "sign"
+          },
+          "view": "wide"
+        },
+        {
+          "place": "mansion",
+          "beat": "sign",
+          "mood": "proud",
+          "card": {
+            "text": "SERENA",
+            "kind": "sign",
+            "sub": "NAMED AFTER HER"
+          }
+        }
+      ]
     }
   ],
   "sources": [
@@ -113,5 +284,27 @@
     "socks": "f4f4f4",
     "shoes": "f4f4f4",
     "height": 1.02
+  },
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-090-famous-serena",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-090-famous-serena/090-famous-serena.mp4",
+    "post_at": "2026-11-19T16:30:00-05:00",
+    "buffer_post": "6afe27304cace847b37a44ee",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-18T22:31:13.264465+00:00",
+    "seconds": 19.28,
+    "remade_from": "6afe23a7a588bd66879e2c85",
+    "eyes": {
+      "score": 7,
+      "problems": [
+        "The narration mentions '23 major titles' but the screen displays '23 TITLES' for a long duration, which is slightly repetitive/redundant.",
+        "The transition at frame 430 introduces a 'Serena or Venus?' question that is completely disconnected from the narration and the topic of the video.",
+        "The call-to-action at the end is generic and doesn't fit the flow of the story."
+      ],
+      "best_fix": "Remove the 'Serena or Venus?' segment and replace it with a concluding summary or a relevant question about the sponsor's building to maintain narrative consistency.",
+      "model": "gemini-3.1-flash-lite",
+      "acts": null
+    }
   }
 }

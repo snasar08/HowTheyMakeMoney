@@ -1,0 +1,1 @@
+- Furniture Kit by Kenney, https://kenney.nl/assets/furniture-kit, license CC0 (public domain).

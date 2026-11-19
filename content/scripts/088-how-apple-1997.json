@@ -7,7 +7,7 @@
   "hook_style": "number",
   "title_style": "number",
   "theme": "clean_navy",
-  "status": "ready",
+  "status": "delivered",
   "score": 90,
   "title": "From $2.46 Billion to $4 Trillion",
   "tag": "Company backstory",
@@ -176,5 +176,25 @@
       "title": "Wikipedia: Apple Inc.",
       "url": "https://en.wikipedia.org/wiki/Apple_Inc."
     }
-  ]
+  ],
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-088-how-apple-1997",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-088-how-apple-1997/088-how-apple-1997.mp4",
+    "post_at": "2026-11-16T18:00:00-05:00",
+    "buffer_post": "6af9efbe4f0276ab94520b9c",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-15T17:45:35.055036+00:00",
+    "seconds": 36.39,
+    "eyes": {
+      "score": 7,
+      "problems": [
+        "Cover text overlaps heavily with large faint background text, making it slightly hard to read",
+        "First frame shows $2.28B for 'ALL OF APPLE, AUGUST 1997' while narration and cover state $2.46 billion",
+        "Bill Gates photo label text is partially obscured or unreadable against his shirt"
+      ],
+      "best_fix": "Ensure the 1997 valuation number matches consistently between narration and text ($2.46B) and clean up cover text layering.",
+      "model": "gemini-3.5-flash-lite"
+    }
+  }
 }

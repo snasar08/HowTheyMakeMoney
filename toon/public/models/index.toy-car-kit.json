@@ -1,0 +1,105 @@
+{
+ "banana_peel": {
+  "file": "toy-car-kit/banana_peel.glb",
+  "pack": "toy-car-kit",
+  "tags": [
+   "peel"
+  ]
+ },
+ "bronze_coin": {
+  "file": "toy-car-kit/bronze_coin.glb",
+  "pack": "toy-car-kit",
+  "tags": [
+   "coin"
+  ]
+ },
+ "drag_racer": {
+  "file": "toy-car-kit/drag_racer.glb",
+  "pack": "toy-car-kit",
+  "tags": [
+   "dragster"
+  ]
+ },
+ "finish_gate": {
+  "file": "toy-car-kit/finish_gate.glb",
+  "pack": "toy-car-kit",
+  "tags": [
+   "finish_line",
+   "race_end"
+  ]
+ },
+ "gold_coin": {
+  "file": "toy-car-kit/gold_coin.glb",
+  "pack": "toy-car-kit",
+  "tags": [
+   "coin",
+   "money"
+  ]
+ },
+ "monster_truck": {
+  "file": "toy-car-kit/monster_truck.glb",
+  "pack": "toy-car-kit",
+  "tags": [
+   "truck"
+  ]
+ },
+ "mystery_box": {
+  "file": "toy-car-kit/mystery_box.glb",
+  "pack": "toy-car-kit",
+  "tags": [
+   "gift",
+   "present",
+   "loot"
+  ]
+ },
+ "pine_tree": {
+  "file": "toy-car-kit/pine_tree.glb",
+  "pack": "toy-car-kit",
+  "tags": [
+   "fir",
+   "christmas_tree"
+  ]
+ },
+ "silver_coin": {
+  "file": "toy-car-kit/silver_coin.glb",
+  "pack": "toy-car-kit",
+  "tags": [
+   "coin"
+  ]
+ },
+ "speedster": {
+  "file": "toy-car-kit/speedster.glb",
+  "pack": "toy-car-kit",
+  "tags": [
+   "roadster"
+  ]
+ },
+ "toy_racer": {
+  "file": "toy-car-kit/toy_racer.glb",
+  "pack": "toy-car-kit",
+  "tags": [
+   "racecar"
+  ]
+ },
+ "toy_suv": {
+  "file": "toy-car-kit/toy_suv.glb",
+  "pack": "toy-car-kit",
+  "tags": [
+   "toy_car"
+  ]
+ },
+ "toy_truck": {
+  "file": "toy-car-kit/toy_truck.glb",
+  "pack": "toy-car-kit",
+  "tags": [
+   "pickup"
+  ]
+ },
+ "vintage_racer": {
+  "file": "toy-car-kit/vintage_racer.glb",
+  "pack": "toy-car-kit",
+  "tags": [
+   "classic_car"
+  ]
+ }
+}

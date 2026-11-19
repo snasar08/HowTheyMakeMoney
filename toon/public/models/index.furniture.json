@@ -1,0 +1,726 @@
+{
+ "doublebed": {
+  "file": "furniture/bedDouble.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "bed",
+   "double bed",
+   "bedroom"
+  ]
+ },
+ "singlebed": {
+  "file": "furniture/bedSingle.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "bed",
+   "single bed",
+   "bedroom"
+  ]
+ },
+ "bunkbed": {
+  "file": "furniture/bedBunk.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "bunk bed",
+   "bed",
+   "dorm"
+  ]
+ },
+ "bookshelf": {
+  "file": "furniture/bookcaseClosed.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "bookcase",
+   "shelf",
+   "library"
+  ]
+ },
+ "openshelf": {
+  "file": "furniture/bookcaseOpen.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "shelf",
+   "bookcase",
+   "shelving"
+  ]
+ },
+ "cupboard": {
+  "file": "furniture/bookcaseClosedDoors.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "cabinet",
+   "bookcase",
+   "storage"
+  ]
+ },
+ "lowshelf": {
+  "file": "furniture/bookcaseOpenLow.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "shelf",
+   "bookcase"
+  ]
+ },
+ "tvstand": {
+  "file": "furniture/cabinetTelevision.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "tv cabinet",
+   "media unit",
+   "living room"
+  ]
+ },
+ "nightstand": {
+  "file": "furniture/cabinetBedDrawer.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "bedside table",
+   "drawer",
+   "bedroom"
+  ]
+ },
+ "ceilingfan": {
+  "file": "furniture/ceilingFan.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "fan",
+   "ceiling",
+   "cooling"
+  ]
+ },
+ "woodchair": {
+  "file": "furniture/chair.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "chair",
+   "seat",
+   "dining chair"
+  ]
+ },
+ "officechair": {
+  "file": "furniture/chairDesk.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "desk chair",
+   "swivel chair",
+   "office"
+  ]
+ },
+ "modernchair": {
+  "file": "furniture/chairModernCushion.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "chair",
+   "cushion chair",
+   "seat"
+  ]
+ },
+ "roundchair": {
+  "file": "furniture/chairRounded.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "chair",
+   "rounded chair",
+   "seat"
+  ]
+ },
+ "cushionchair": {
+  "file": "furniture/chairCushion.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "chair",
+   "seat"
+  ]
+ },
+ "coatrack": {
+  "file": "furniture/coatRack.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "coat hanger",
+   "hooks",
+   "hallway"
+  ]
+ },
+ "coatstand": {
+  "file": "furniture/coatRackStanding.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "coat rack",
+   "hat stand",
+   "hallway"
+  ]
+ },
+ "keyboard": {
+  "file": "furniture/computerKeyboard.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "computer keyboard",
+   "typing",
+   "pc"
+  ]
+ },
+ "pcmouse": {
+  "file": "furniture/computerMouse.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "mouse",
+   "computer mouse",
+   "pc"
+  ]
+ },
+ "pcmonitor": {
+  "file": "furniture/computerScreen.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "computer screen",
+   "display",
+   "desktop"
+  ]
+ },
+ "desk": {
+  "file": "furniture/desk.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "office desk",
+   "workstation",
+   "table"
+  ]
+ },
+ "cornerdesk": {
+  "file": "furniture/deskCorner.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "l-shaped desk",
+   "office desk",
+   "workstation"
+  ]
+ },
+ "dryer": {
+  "file": "furniture/dryer.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "tumble dryer",
+   "laundry",
+   "appliance"
+  ]
+ },
+ "washingmachine": {
+  "file": "furniture/washer.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "washer",
+   "laundry",
+   "appliance"
+  ]
+ },
+ "laundrytower": {
+  "file": "furniture/washerDryerStacked.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "washer dryer",
+   "laundry",
+   "appliance"
+  ]
+ },
+ "blender": {
+  "file": "furniture/kitchenBlender.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "smoothie",
+   "kitchen",
+   "appliance"
+  ]
+ },
+ "coffeemachine": {
+  "file": "furniture/kitchenCoffeeMachine.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "espresso",
+   "coffee maker",
+   "cafe"
+  ]
+ },
+ "fridge": {
+  "file": "furniture/kitchenFridge.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "refrigerator",
+   "kitchen",
+   "cold"
+  ]
+ },
+ "bigfridge": {
+  "file": "furniture/kitchenFridgeLarge.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "refrigerator",
+   "freezer",
+   "kitchen"
+  ]
+ },
+ "minifridge": {
+  "file": "furniture/kitchenFridgeSmall.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "small fridge",
+   "dorm",
+   "kitchen"
+  ]
+ },
+ "microwave": {
+  "file": "furniture/kitchenMicrowave.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "oven",
+   "kitchen",
+   "appliance"
+  ]
+ },
+ "kitchensink": {
+  "file": "furniture/kitchenSink.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "sink",
+   "basin",
+   "kitchen"
+  ]
+ },
+ "stove": {
+  "file": "furniture/kitchenStove.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "cooker",
+   "oven",
+   "kitchen"
+  ]
+ },
+ "electricstove": {
+  "file": "furniture/kitchenStoveElectric.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "cooker",
+   "hob",
+   "kitchen"
+  ]
+ },
+ "kitchencounter": {
+  "file": "furniture/kitchenCabinet.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "counter",
+   "cabinet",
+   "kitchen"
+  ]
+ },
+ "wallcabinet": {
+  "file": "furniture/kitchenCabinetUpper.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "kitchen cupboard",
+   "cabinet"
+  ]
+ },
+ "kitchenbar": {
+  "file": "furniture/kitchenBar.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "bar counter",
+   "island",
+   "kitchen"
+  ]
+ },
+ "rangehood": {
+  "file": "furniture/hoodLarge.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "extractor",
+   "kitchen hood",
+   "cooker hood"
+  ]
+ },
+ "toaster": {
+  "file": "furniture/toaster.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "bread",
+   "kitchen",
+   "appliance"
+  ]
+ },
+ "floorlamp": {
+  "file": "furniture/lampRoundFloor.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "lamp",
+   "standing lamp",
+   "light"
+  ]
+ },
+ "tablelamp": {
+  "file": "furniture/lampRoundTable.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "lamp",
+   "desk lamp",
+   "light"
+  ]
+ },
+ "ceilinglamp": {
+  "file": "furniture/lampSquareCeiling.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "ceiling light",
+   "lamp",
+   "light"
+  ]
+ },
+ "desklamp": {
+  "file": "furniture/lampSquareTable.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "lamp",
+   "table lamp",
+   "light"
+  ]
+ },
+ "armchair": {
+  "file": "furniture/loungeChair.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "lounge chair",
+   "chair",
+   "living room"
+  ]
+ },
+ "reclinerchair": {
+  "file": "furniture/loungeChairRelax.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "relax chair",
+   "armchair",
+   "lounge"
+  ]
+ },
+ "designchair": {
+  "file": "furniture/loungeDesignChair.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "modern chair",
+   "lounge chair"
+  ]
+ },
+ "modernsofa": {
+  "file": "furniture/loungeDesignSofa.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "design sofa",
+   "couch",
+   "sofa"
+  ]
+ },
+ "modernsectional": {
+  "file": "furniture/loungeDesignSofaCorner.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "corner sofa",
+   "couch",
+   "sofa"
+  ]
+ },
+ "sofa": {
+  "file": "furniture/loungeSofa.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "couch",
+   "living room",
+   "settee"
+  ]
+ },
+ "cornersofa": {
+  "file": "furniture/loungeSofaCorner.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "sectional",
+   "couch",
+   "sofa"
+  ]
+ },
+ "longsofa": {
+  "file": "furniture/loungeSofaLong.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "couch",
+   "big sofa",
+   "sofa"
+  ]
+ },
+ "ottoman": {
+  "file": "furniture/loungeSofaOttoman.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "footstool",
+   "pouf",
+   "sofa"
+  ]
+ },
+ "pillow": {
+  "file": "furniture/pillow.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "cushion",
+   "bed",
+   "sofa"
+  ]
+ },
+ "pottedplant": {
+  "file": "furniture/pottedPlant.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "houseplant",
+   "plant",
+   "pot"
+  ]
+ },
+ "smallplant": {
+  "file": "furniture/plantSmall1.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "plant",
+   "houseplant",
+   "desk plant"
+  ]
+ },
+ "succulent": {
+  "file": "furniture/plantSmall3.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "plant",
+   "cactus",
+   "houseplant"
+  ]
+ },
+ "radio": {
+  "file": "furniture/radio.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "stereo",
+   "music",
+   "audio"
+  ]
+ },
+ "speaker": {
+  "file": "furniture/speaker.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "loudspeaker",
+   "hifi",
+   "audio"
+  ]
+ },
+ "bathtub": {
+  "file": "furniture/bathtub.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "bath",
+   "tub",
+   "bathroom"
+  ]
+ },
+ "showercabin": {
+  "file": "furniture/shower.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "shower",
+   "bathroom",
+   "cubicle"
+  ]
+ },
+ "toilet": {
+  "file": "furniture/toilet.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "wc",
+   "loo",
+   "bathroom"
+  ]
+ },
+ "washbasin": {
+  "file": "furniture/bathroomSink.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "bathroom sink",
+   "basin",
+   "bathroom"
+  ]
+ },
+ "bathmirror": {
+  "file": "furniture/bathroomMirror.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "mirror",
+   "bathroom"
+  ]
+ },
+ "sidetable": {
+  "file": "furniture/sideTable.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "end table",
+   "small table",
+   "table"
+  ]
+ },
+ "drawertable": {
+  "file": "furniture/sideTableDrawers.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "dresser",
+   "side table",
+   "drawers"
+  ]
+ },
+ "barstool": {
+  "file": "furniture/stoolBar.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "stool",
+   "bar",
+   "seat"
+  ]
+ },
+ "diningtable": {
+  "file": "furniture/table.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "table",
+   "dining",
+   "kitchen table"
+  ]
+ },
+ "coffeetable": {
+  "file": "furniture/tableCoffee.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "table",
+   "living room",
+   "low table"
+  ]
+ },
+ "glasstable": {
+  "file": "furniture/tableGlass.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "table",
+   "glass",
+   "dining table"
+  ]
+ },
+ "roundtable": {
+  "file": "furniture/tableRound.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "table",
+   "round",
+   "dining"
+  ]
+ },
+ "clothtable": {
+  "file": "furniture/tableCloth.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "table",
+   "tablecloth",
+   "dining"
+  ]
+ },
+ "flatscreen": {
+  "file": "furniture/televisionModern.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "television",
+   "smart tv",
+   "screen"
+  ]
+ },
+ "oldtv": {
+  "file": "furniture/televisionVintage.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "vintage tv",
+   "crt",
+   "television"
+  ]
+ },
+ "antennatv": {
+  "file": "furniture/televisionAntenna.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "retro tv",
+   "television",
+   "old tv"
+  ]
+ },
+ "trashcan": {
+  "file": "furniture/trashcan.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "bin",
+   "garbage",
+   "rubbish"
+  ]
+ },
+ "bench": {
+  "file": "furniture/bench.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "seat",
+   "park bench",
+   "hallway"
+  ]
+ },
+ "teddybear": {
+  "file": "furniture/bear.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "teddy",
+   "plush",
+   "toy"
+  ]
+ },
+ "bookstack": {
+  "file": "furniture/books.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "books",
+   "stack",
+   "reading"
+  ]
+ },
+ "notebookpc": {
+  "file": "furniture/laptop.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "laptop",
+   "computer",
+   "notebook"
+  ]
+ },
+ "stairs": {
+  "file": "furniture/stairs.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "staircase",
+   "steps",
+   "stairway"
+  ]
+ },
+ "doorway": {
+  "file": "furniture/doorway.glb",
+  "pack": "kenney-furniture-kit",
+  "tags": [
+   "door",
+   "entrance",
+   "frame"
+  ]
+ }
+}

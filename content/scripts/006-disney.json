@@ -3,7 +3,7 @@
   "slug": "disney",
   "company": "Disney",
   "theme": "bold_bright",
-  "status": "ready",
+  "status": "draft",
   "title": "Disney's Record $10 Billion Isn't From Movies",
   "description": "Disney earned a record 10 billion dollars. And not from movies.\n\nSources:\n- Disney FY2025 Form 10-K (SEC): https://www.sec.gov/Archives/edgar/data/1744489/000174448925000155/dis-20250927.htm\n- Disney FY2025 segment operating income (Market Chameleon): https://marketchameleon.com/articles/b/2025/11/13/disney-earnings-streaming-parks-growth-2025\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
@@ -97,5 +97,6 @@
   "title_style": "number",
   "hook_style": "number",
   "cta": "Movies or parks? Comment which you'd pick.",
-  "cta_question": "Movies or parks?"
+  "cta_question": "Movies or parks?",
+  "paused": "Nov 15 2026, Sam: drop the 'how' and 'careers' formats (median 21 / 18 views at 48 h vs 781 for famous)"
 }

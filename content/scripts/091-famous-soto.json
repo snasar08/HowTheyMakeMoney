@@ -7,7 +7,7 @@
   "hook_style": "number",
   "title_style": "number",
   "theme": "bold_bright",
-  "status": "ready",
+  "status": "delivered",
   "score": 89,
   "title": "From $1.5 Million at 16 to $765 Million",
   "name_card": "Juan Soto",
@@ -36,8 +36,53 @@
           "check"
         ],
         "stat": "$765 MILLION",
-        "stat_sub": "15 years, December 2024"
-      }
+        "stat_sub": "15 years, December 2024",
+        "hero": {
+          "skin": "8d5a3b",
+          "hair": "short",
+          "hair_color": "161210",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "1f3a93",
+          "pants": "f4f4f4",
+          "socks": "1f3a93",
+          "shoes": "1a1a1a",
+          "extras": [
+            "cap"
+          ],
+          "height": 1.02
+        }
+      },
+      "toon": [
+        {
+          "place": "boardroom",
+          "things": [
+            "letter",
+            "cashstack"
+          ],
+          "card": {
+            "text": "$765M",
+            "kind": "screen",
+            "sub": "HIS DEAL"
+          },
+          "beat": "money",
+          "mood": "excited"
+        },
+        {
+          "place": "stage",
+          "things": [
+            "trophy",
+            "crown"
+          ],
+          "card": {
+            "text": "BIGGEST EVER",
+            "kind": "sign",
+            "sub": "IN SPORTS"
+          },
+          "mood": "proud",
+          "crowd": 40
+        }
+      ]
     },
     {
       "narration": "But at 16? Just a 1.5 million dollar bonus.",
@@ -48,8 +93,46 @@
         "crowd": 0,
         "props": [],
         "stat": "$1.5 MILLION",
-        "stat_sub": "his first bonus, July 2015"
-      }
+        "stat_sub": "his first bonus, July 2015",
+        "hero": {
+          "skin": "8d5a3b",
+          "hair": "short",
+          "hair_color": "161210",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "1f3a93",
+          "pants": "f4f4f4",
+          "socks": "1f3a93",
+          "shoes": "1a1a1a",
+          "extras": [
+            "cap"
+          ],
+          "height": 1.02
+        }
+      },
+      "toon": [
+        {
+          "place": "field",
+          "card": {
+            "text": "AGE 16",
+            "kind": "flip"
+          },
+          "mood": "nervous",
+          "view": "ms"
+        },
+        {
+          "place": "office",
+          "things": [
+            "cash"
+          ],
+          "card": {
+            "text": "$1.5M",
+            "kind": "paper",
+            "sub": "BONUS"
+          },
+          "mood": "calm"
+        }
+      ]
     },
     {
       "narration": "Then he became the youngest player in the majors.",
@@ -60,8 +143,38 @@
         "crowd": 100,
         "props": [],
         "stat": "AGE 19",
-        "stat_sub": "MLB debut, May 2018"
-      }
+        "stat_sub": "MLB debut, May 2018",
+        "hero": {
+          "skin": "8d5a3b",
+          "hair": "short",
+          "hair_color": "161210",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "1f3a93",
+          "pants": "f4f4f4",
+          "socks": "1f3a93",
+          "shoes": "1a1a1a",
+          "extras": [
+            "cap"
+          ],
+          "height": 1.02
+        }
+      },
+      "toon": [
+        {
+          "place": "field",
+          "things": [
+            "medal"
+          ],
+          "card": {
+            "text": "YOUNGEST",
+            "kind": "flip",
+            "sub": "IN THE MAJORS"
+          },
+          "mood": "proud",
+          "crowd": 40
+        }
+      ]
     },
     {
       "narration": "His dad predicted a World Series game on his birthday. It actually happened.",
@@ -74,8 +187,43 @@
           "trophy"
         ],
         "stat": "WORLD SERIES",
-        "stat_sub": "on his 21st birthday, 2019"
-      }
+        "stat_sub": "on his 21st birthday, 2019",
+        "hero": {
+          "skin": "8d5a3b",
+          "hair": "short",
+          "hair_color": "161210",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "1f3a93",
+          "pants": "f4f4f4",
+          "socks": "1f3a93",
+          "shoes": "1a1a1a",
+          "extras": [
+            "cap"
+          ],
+          "height": 1.02
+        }
+      },
+      "toon": [
+        {
+          "place": "diner",
+          "card": {
+            "text": "WORLD SERIES",
+            "kind": "paper",
+            "sub": "HIS BIRTHDAY"
+          },
+          "mood": "calm"
+        },
+        {
+          "place": "stage",
+          "things": [
+            "trophy"
+          ],
+          "mood": "excited",
+          "action": "cheer",
+          "crowd": 50
+        }
+      ]
     },
     {
       "narration": "Then the Mets paid 75 million just to sign. Fifty times his first bonus.",
@@ -90,8 +238,56 @@
         ],
         "stat": "$75 MILLION",
         "stat_sub": "signing bonus alone",
-        "hud": "$765M"
-      }
+        "hud": "$765M",
+        "hero": {
+          "skin": "8d5a3b",
+          "hair": "short",
+          "hair_color": "161210",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "1f3a93",
+          "pants": "f4f4f4",
+          "socks": "1f3a93",
+          "shoes": "1a1a1a",
+          "extras": [
+            "cap"
+          ],
+          "height": 1.02
+        }
+      },
+      "toon": [
+        {
+          "place": "showroom",
+          "things": [
+            "cashstack"
+          ],
+          "card": {
+            "text": "$75M",
+            "kind": "screen",
+            "sub": "JUST TO SIGN"
+          },
+          "brand": {
+            "name": "METS",
+            "bg": "#002d72",
+            "fg": "#ff5910"
+          },
+          "beat": "sign",
+          "mood": "excited"
+        },
+        {
+          "place": "mansion",
+          "things": [
+            "cashstack",
+            "goldbar"
+          ],
+          "card": {
+            "text": "50X",
+            "kind": "sign",
+            "sub": "HIS FIRST BONUS"
+          },
+          "mood": "shock"
+        }
+      ]
     }
   ],
   "sources": [
@@ -114,5 +310,41 @@
       "cap"
     ],
     "height": 1.02
+  },
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-091-famous-soto",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-091-famous-soto/091-famous-soto.mp4",
+    "post_at": "2026-11-18T20:00:00-05:00",
+    "buffer_post": "6afd470b0f01b387a161fc16",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-18T06:34:51.542012+00:00",
+    "seconds": 27.29,
+    "remade_from": "6afca553dfd7767b00723e30",
+    "eyes": {
+      "score": 6,
+      "problems": [
+        "The character is holding a basketball jersey (number 22) throughout the video, which contradicts the narration about a baseball player.",
+        "The character is holding a basketball in the scenes where he is supposed to be a baseball player.",
+        "The text 'Baseball or basketball?' appears on screen, which is confusing and highlights the visual error.",
+        "The character's outfit and props are consistently incorrect for the subject (Juan Soto, a baseball player)."
+      ],
+      "best_fix": "Replace the basketball jersey and basketball props with a baseball uniform and a baseball bat/glove to match the narration about Juan Soto.",
+      "model": "gemini-3.1-flash-lite",
+      "acts": [
+        {
+          "kind": "sign_contract",
+          "frames": "0-105",
+          "clear": true,
+          "why": "The character is clearly holding a pen and signing a document labeled 'CONTRACT'."
+        },
+        {
+          "kind": "count_cash",
+          "frames": "496-597",
+          "clear": true,
+          "why": "The character is visibly holding and counting stacks of cash."
+        }
+      ]
+    }
   }
 }

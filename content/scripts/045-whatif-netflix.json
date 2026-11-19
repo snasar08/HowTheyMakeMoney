@@ -37,7 +37,31 @@
         "stat": "95 BILLION",
         "stat_sub": "hours in six months",
         "hud": "0 HOURS"
-      }
+      },
+      "toon": [
+        {
+          "place": "showroom",
+          "things": [
+            "tv"
+          ],
+          "card": {
+            "text": "95 BILLION",
+            "kind": "screen",
+            "sub": "HOURS WATCHED"
+          },
+          "mood": "shock",
+          "crowd": 30
+        },
+        {
+          "place": "mansion",
+          "things": [
+            "tv"
+          ],
+          "mood": "calm",
+          "crowd": 0,
+          "view": "ms"
+        }
+      ]
     },
     {
       "narration": "Just January to June 2025. One person. Every hour.",
@@ -50,7 +74,35 @@
         "stat": "1 VIEWER",
         "stat_sub": "every hour watched",
         "hud": "95B HOURS"
-      }
+      },
+      "toon": [
+        {
+          "place": "office",
+          "things": [
+            "clock"
+          ],
+          "card": {
+            "text": "JAN-JUN 2025",
+            "kind": "paper"
+          },
+          "mood": "calm"
+        },
+        {
+          "place": "street",
+          "mood": "stern",
+          "crowd": 0,
+          "view": "cu"
+        },
+        {
+          "place": "lab",
+          "things": [
+            "clock"
+          ],
+          "beat": "clock",
+          "mood": "nervous",
+          "view": "low"
+        }
+      ]
     },
     {
       "narration": "Watching nonstop? That still takes about 10.8 million years.",
@@ -65,7 +117,25 @@
         "stat": "10.8 MILLION",
         "stat_sub": "years, nonstop",
         "hud": "10.8M YEARS"
-      }
+      },
+      "toon": [
+        {
+          "place": "mansion",
+          "things": [
+            "tv",
+            "coffee"
+          ],
+          "mood": "dazed"
+        },
+        {
+          "place": "graveyard",
+          "card": {
+            "text": "10.8M YEARS",
+            "kind": "tomb"
+          },
+          "mood": "shock"
+        }
+      ]
     },
     {
       "narration": "And just one show, Adolescence, got 145 million views.",
@@ -77,7 +147,22 @@
         "props": [],
         "stat": "145 MILLION",
         "stat_sub": "views, #1 show"
-      }
+      },
+      "toon": [
+        {
+          "place": "showroom",
+          "things": [
+            "tv"
+          ],
+          "card": {
+            "text": "145M VIEWS",
+            "kind": "screen",
+            "sub": "ADOLESCENCE"
+          },
+          "mood": "excited",
+          "crowd": 40
+        }
+      ]
     },
     {
       "narration": "But that's the business. Netflix says more watching keeps members around.",
@@ -92,7 +177,30 @@
         ],
         "stat": "WATCH = STAY",
         "stat_sub": "Netflix's own words"
-      }
+      },
+      "toon": [
+        {
+          "place": "boardroom",
+          "things": [
+            "chart"
+          ],
+          "mood": "scheme"
+        },
+        {
+          "place": "office",
+          "things": [
+            "heart"
+          ],
+          "brand": {
+            "name": "NETFLIX",
+            "bg": "#000000",
+            "fg": "#e50914"
+          },
+          "beat": "sign",
+          "mood": "proud",
+          "crowd": 20
+        }
+      ]
     }
   ],
   "sources": [

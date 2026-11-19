@@ -1,0 +1,318 @@
+{
+  "id": "130",
+  "slug": "famous-bellingham",
+  "company": "Jude Bellingham",
+  "format": "famous",
+  "visual_style": "lowpoly",
+  "hook_style": "surprise",
+  "title_style": "number",
+  "theme": "bold_bright",
+  "status": "delivered",
+  "score": 91,
+  "title": "From a Retired Shirt at 17 to €103 Million",
+  "name_card": "Jude Bellingham",
+  "name_sub": "soccer player",
+  "description": "His club retired his shirt number when he was 17. Three years later, Real Madrid paid 103 million euros for him.\n\nSources:\n- Wikipedia: Jude Bellingham: https://en.wikipedia.org/wiki/Jude_Bellingham\n\nFrom Wikipedia (Jude Bellingham): born 29 June 2003 in Stourbridge; he joined Birmingham City as an under-8 and became the club's youngest first-team player at 16 in August 2019; after the 2019-20 season Birmingham announced it would retire his number 22 shirt; Borussia Dortmund signed him in July 2020 for a fee understood by Sky Sports to be an initial £25 million, making him the most expensive 17-year-old in history; Real Madrid signed him in 2023 for a base fee of €103 million; in his first season he was the club's top league scorer, helped them win the league title and the Champions League, and was voted La Liga Player of the Season. Not financial advice.\n\n#shorts #bellingham #realmadrid #howtheymakemoney",
+  "tags": [
+    "jude bellingham",
+    "real madrid",
+    "soccer",
+    "famous",
+    "shorts"
+  ],
+  "images": {},
+  "hud_label": "HIS PRICE",
+  "loop": "So next time you pick a shirt number, remember:",
+  "cta": "Bellingham or Vinícius? Comment your pick.",
+  "cta_question": "Bellingham or Vinícius?",
+  "hero": {
+    "skin": "8a5a3c",
+    "hair": "buzz",
+    "hair_color": "15110e",
+    "beard": "none",
+    "outfit": "kit",
+    "shirt": "f4f4f4",
+    "pants": "f4f4f4",
+    "trim": "d4af37",
+    "socks": "f4f4f4",
+    "shoes": "111111",
+    "height": 1.05,
+    "number": 5
+  },
+  "scenes": [
+    {
+      "narration": "His club retired his shirt number. He was only 17.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "pitch",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "ball"
+        ],
+        "stat": "AGE 17",
+        "stat_sub": "his shirt, retired",
+        "hero": {
+          "skin": "8a5a3c",
+          "hair": "buzz",
+          "hair_color": "15110e",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "f4f4f4",
+          "pants": "f4f4f4",
+          "trim": "d4af37",
+          "socks": "f4f4f4",
+          "shoes": "111111",
+          "height": 1.05,
+          "number": 5
+        }
+      },
+      "toon": [
+        {
+          "place": "pitch",
+          "beat": "sign",
+          "mood": "shock",
+          "card": {
+            "text": "22",
+            "kind": "white",
+            "sub": "RETIRED"
+          },
+          "hide": true
+        },
+        {
+          "place": "pitch",
+          "beat": "walk",
+          "mood": "dazed",
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "Birmingham City did it after just one season.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "pitch",
+        "action": "run",
+        "crowd": 0,
+        "props": [
+          "ball"
+        ],
+        "stat": "1 SEASON",
+        "stat_sub": "Birmingham City",
+        "hero": {
+          "skin": "8a5a3c",
+          "hair": "buzz",
+          "hair_color": "15110e",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "f4f4f4",
+          "pants": "f4f4f4",
+          "trim": "d4af37",
+          "socks": "f4f4f4",
+          "shoes": "111111",
+          "height": 1.05,
+          "number": 5
+        }
+      },
+      "toon": [
+        {
+          "place": "pitch",
+          "beat": "logo",
+          "mood": "proud",
+          "action": "run",
+          "props": [
+            "ball"
+          ],
+          "brand": {
+            "name": "Birmingham",
+            "bg": "#0033a0",
+            "fg": "#ffffff",
+            "icon": "star"
+          },
+          "crowd": 20
+        }
+      ]
+    },
+    {
+      "narration": "Then Dortmund paid 25 million pounds. The most ever for a 17-year-old.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "pitch",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "check"
+        ],
+        "stat": "£25 MILLION",
+        "stat_sub": "Dortmund, 2020",
+        "hero": {
+          "skin": "8a5a3c",
+          "hair": "buzz",
+          "hair_color": "15110e",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "f4f4f4",
+          "pants": "f4f4f4",
+          "trim": "d4af37",
+          "socks": "f4f4f4",
+          "shoes": "111111",
+          "height": 1.05,
+          "number": 5
+        }
+      },
+      "toon": [
+        {
+          "place": "pitch",
+          "beat": "money",
+          "mood": "excited",
+          "brand": {
+            "name": "Dortmund",
+            "bg": "#fde100",
+            "fg": "#000000",
+            "icon": "star"
+          },
+          "card": {
+            "text": "£25M",
+            "kind": "screen",
+            "sub": "DORTMUND"
+          }
+        },
+        {
+          "place": "pitch",
+          "beat": "queue",
+          "mood": "laugh",
+          "crowd": 35,
+          "action": "cheer"
+        }
+      ]
+    },
+    {
+      "narration": "But three years later, Real Madrid paid 103 million euros.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "pitch",
+        "action": "cheer",
+        "crowd": 200,
+        "props": [
+          "check"
+        ],
+        "stat": "€103 MILLION",
+        "stat_sub": "Real Madrid, 2023",
+        "hud": "€103M",
+        "hero": {
+          "skin": "8a5a3c",
+          "hair": "buzz",
+          "hair_color": "15110e",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "f4f4f4",
+          "pants": "f4f4f4",
+          "trim": "d4af37",
+          "socks": "f4f4f4",
+          "shoes": "111111",
+          "height": 1.05,
+          "number": 5
+        }
+      },
+      "toon": [
+        {
+          "place": "pitch",
+          "beat": "money",
+          "mood": "shock",
+          "brand": {
+            "name": "Real Madrid",
+            "bg": "#ffffff",
+            "fg": "#00529f",
+            "icon": "crown"
+          },
+          "card": {
+            "text": "€103M",
+            "kind": "screen",
+            "sub": "REAL MADRID"
+          },
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "In his first season, he was their top league scorer. Then they won the Champions League.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "pitch",
+        "action": "cheer",
+        "crowd": 300,
+        "props": [
+          "ball",
+          "trophy"
+        ],
+        "stat": "CHAMPIONS",
+        "stat_sub": "his first Madrid season",
+        "hud": "€103M",
+        "hero": {
+          "skin": "8a5a3c",
+          "hair": "buzz",
+          "hair_color": "15110e",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "f4f4f4",
+          "pants": "f4f4f4",
+          "trim": "d4af37",
+          "socks": "f4f4f4",
+          "shoes": "111111",
+          "height": 1.05,
+          "number": 5
+        }
+      },
+      "toon": [
+        {
+          "place": "pitch",
+          "beat": "walk",
+          "mood": "excited",
+          "action": "run",
+          "props": [
+            "ball"
+          ],
+          "things": [
+            "stadium"
+          ],
+          "crowd": 30
+        },
+        {
+          "place": "pitch",
+          "beat": "walk",
+          "mood": "laugh",
+          "action": "cheer",
+          "props": [
+            "trophy"
+          ],
+          "crowd": 40,
+          "view": "low"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Jude Bellingham",
+      "url": "https://en.wikipedia.org/wiki/Jude_Bellingham"
+    }
+  ],
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-130-famous-bellingham",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-130-famous-bellingham/130-famous-bellingham.mp4",
+    "post_at": "2026-11-17T18:00:00-05:00",
+    "buffer_post": "6afb58ea08dd0180500bccee",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-16T19:26:34.352255+00:00",
+    "seconds": 25.41,
+    "eyes": {
+      "score": 9,
+      "problems": [
+        "Subtitle text layout slightly repetitive at the bottom"
+      ],
+      "best_fix": "Ensure exact synchronization of narration pacing with visual milestones",
+      "model": "gemini-3.5-flash-lite"
+    }
+  }
+}

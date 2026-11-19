@@ -1,0 +1,278 @@
+{
+  "id": "133",
+  "slug": "story-disney-rabbit",
+  "company": "Disney",
+  "format": "story",
+  "story_mode": "history",
+  "visual_style": "lowpoly",
+  "hook_style": "surprise",
+  "title_style": "number",
+  "theme": "bold_bright",
+  "status": "ready",
+  "score": 90,
+  "title": "He Lost His Rabbit. The Mouse Made $94.4 Billion.",
+  "name_card": "Walt Disney",
+  "name_sub": "you, in 1923",
+  "description": "You are Walt Disney. Your company makes 94.4 billion dollars a year. But first, you lost a rabbit.\n\nSources:\n- Wikipedia: Walt Disney: https://en.wikipedia.org/wiki/Walt_Disney\n- Wikipedia: Oswald the Lucky Rabbit: https://en.wikipedia.org/wiki/Oswald_the_Lucky_Rabbit\n- Wikipedia: Laugh-O-Gram Studio: https://en.wikipedia.org/wiki/Laugh-O-Gram_Studio\n- Wikipedia: The Walt Disney Company: https://en.wikipedia.org/wiki/The_Walt_Disney_Company\n\nFrom the cited pages: Walt Disney moved to Hollywood in July 1923 at 21, after his Kansas City studio Laugh-O-Gram went bankrupt in 1923; he and Ub Iwerks created Oswald the Lucky Rabbit for distribution through Universal Pictures; in 1928 producer Charles Mintz cut the budget and hired away most of Disney's artists, and Disney found out Universal owned the rights to Oswald; to replace Oswald, Disney and Iwerks created Mickey Mouse in 1928, and Steamboat Willie, with synchronized sound, made Mickey popular; in February 2006 The Walt Disney Company got Oswald and 27 of Walt's Oswald shorts back from NBCUniversal in a trade that sent sportscaster Al Michaels from ABC/ESPN to NBC. The Walt Disney Company reported US$94.4 billion in revenue in fiscal 2025. Not financial advice.\n\n#shorts #disney #mickeymouse #howtheymakemoney",
+  "tags": [
+    "disney",
+    "walt disney",
+    "mickey mouse",
+    "story",
+    "shorts"
+  ],
+  "images": {},
+  "hud_label": "THE MOUSE",
+  "loop": "So next time you see Mickey, remember:",
+  "cta": "Mickey or Oswald? Comment your pick.",
+  "cta_question": "Mickey or Oswald?",
+  "hero": {
+    "skin": "f0c8a8",
+    "hair": "short",
+    "hair_color": "4a3426",
+    "beard": "mustache",
+    "beard_color": "4a3426",
+    "outfit": "suit",
+    "shirt": "3a4a5a",
+    "pants": "3a4a5a",
+    "shoes": "1a1a1a",
+    "tie": "8a1a1a",
+    "height": 1.0
+  },
+  "scenes": [
+    {
+      "narration": "You are Walt Disney. Your company makes 94.4 billion dollars a year.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "cash"
+        ],
+        "stat": "$94.4 BILLION",
+        "stat_sub": "Disney revenue, 2025"
+      },
+      "toon": [
+        {
+          "place": "throne",
+          "beat": "sign",
+          "mood": "proud",
+          "brand": {
+            "name": "Disney",
+            "bg": "#0b2a6f",
+            "fg": "#ffffff"
+          }
+        },
+        {
+          "place": "mansion",
+          "beat": "money",
+          "mood": "laugh",
+          "things": [
+            "cashstack"
+          ],
+          "card": {
+            "text": "$94.4B",
+            "kind": "screen",
+            "sub": "A YEAR"
+          }
+        }
+      ]
+    },
+    {
+      "narration": "But at 21, you're broke. Your first studio just went bankrupt.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "boxes"
+        ],
+        "stat": "AGE 21",
+        "stat_sub": "broke, 1923"
+      },
+      "toon": [
+        {
+          "place": "street",
+          "beat": "walk",
+          "mood": "sad",
+          "card": {
+            "text": "AGE 21",
+            "kind": "flip",
+            "sub": "BROKE"
+          },
+          "view": "ms"
+        },
+        {
+          "place": "garage",
+          "beat": "sign",
+          "mood": "dazed",
+          "card": {
+            "text": "BANKRUPT",
+            "kind": "tomb",
+            "sub": "FIRST STUDIO"
+          }
+        }
+      ]
+    },
+    {
+      "narration": "Then you draw a lucky rabbit, Oswald. But Universal owns him. You lose him, and most of your artists.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "office",
+        "action": "work",
+        "crowd": 0,
+        "props": [],
+        "stat": "OSWALD",
+        "stat_sub": "owned by Universal"
+      },
+      "toon": [
+        {
+          "place": "office",
+          "beat": "sign",
+          "mood": "excited",
+          "action": "work",
+          "card": {
+            "text": "OSWALD",
+            "kind": "paper",
+            "sub": "LUCKY RABBIT"
+          }
+        },
+        {
+          "place": "boardroom",
+          "beat": "sign",
+          "mood": "shock",
+          "brand": {
+            "name": "Universal",
+            "bg": "#111111",
+            "fg": "#ffffff"
+          }
+        },
+        {
+          "place": "street",
+          "beat": "walk",
+          "mood": "sad",
+          "things": [
+            "box"
+          ],
+          "view": "ws"
+        }
+      ]
+    },
+    {
+      "narration": "So you draw a mouse. In 1928, Mickey talks on screen, and he's a star.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "stage",
+        "action": "cheer",
+        "crowd": 200,
+        "props": [
+          "mic"
+        ],
+        "stat": "1928",
+        "stat_sub": "Mickey, with sound"
+      },
+      "toon": [
+        {
+          "place": "office",
+          "beat": "sign",
+          "mood": "scheme",
+          "action": "work",
+          "card": {
+            "text": "A MOUSE",
+            "kind": "paper",
+            "sub": "SKETCH NO. 1"
+          }
+        },
+        {
+          "place": "stage",
+          "beat": "queue",
+          "mood": "laugh",
+          "action": "cheer",
+          "crowd": 40,
+          "things": [
+            "mic",
+            "tv"
+          ],
+          "card": {
+            "text": "1928",
+            "kind": "flip",
+            "sub": "WITH SOUND"
+          }
+        }
+      ]
+    },
+    {
+      "narration": "Then, in 2006, Disney gets the rabbit back. Traded for a sportscaster. The mouse brought the rabbit home.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "cheer",
+        "crowd": 0,
+        "props": [],
+        "stat": "2006",
+        "stat_sub": "Oswald comes home",
+        "hud": "$94.4B"
+      },
+      "toon": [
+        {
+          "place": "boardroom",
+          "beat": "sign",
+          "mood": "excited",
+          "card": {
+            "text": "2006",
+            "kind": "flip",
+            "sub": "OSWALD BACK"
+          }
+        },
+        {
+          "place": "stage",
+          "beat": "walk",
+          "mood": "laugh",
+          "things": [
+            "mic"
+          ],
+          "who": {
+            "jacket": "#2b3a55",
+            "pants": "#2b3a55",
+            "hat": "hair",
+            "hair": "#b8b8b8",
+            "chest": "TV"
+          },
+          "view": "ws"
+        },
+        {
+          "place": "throne",
+          "beat": "logo",
+          "mood": "proud",
+          "brand": {
+            "name": "Disney",
+            "bg": "#0b2a6f",
+            "fg": "#ffffff"
+          },
+          "view": "wide"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Walt Disney",
+      "url": "https://en.wikipedia.org/wiki/Walt_Disney"
+    },
+    {
+      "title": "Wikipedia: Oswald the Lucky Rabbit",
+      "url": "https://en.wikipedia.org/wiki/Oswald_the_Lucky_Rabbit"
+    },
+    {
+      "title": "Wikipedia: Laugh-O-Gram Studio",
+      "url": "https://en.wikipedia.org/wiki/Laugh-O-Gram_Studio"
+    },
+    {
+      "title": "Wikipedia: The Walt Disney Company",
+      "url": "https://en.wikipedia.org/wiki/The_Walt_Disney_Company"
+    }
+  ],
+  "length_test": "short"
+}

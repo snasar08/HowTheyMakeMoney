@@ -192,3 +192,6 @@ See the ranked list and pool above (Roblox, Fortnite, YouTube, PlayStation, Chic
 
 Rules for D: names are fine in voiceover, captions and titles with sourced facts. Characters are
 generic (STYLE.md "Real people and brands"): no faces, hair, outfits or signature looks; no quotes.
+
+## Used (Nov 16 2026 refill)
+Shaquille O'Neal (Five Guys), Vinícius Júnior, Jude Bellingham, Cooper Flagg (card) (famous); Lamborghini, Walt Disney / Oswald (story history); Cristiano Ronaldo 1,000 goals (story plan). Skipped: Kobe Bryant / BodyArmor (no opened source for the stake: the BodyArmor Wikipedia URL redirects to the body-armor article).

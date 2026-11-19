@@ -1,0 +1,253 @@
+{
+  "id": "134",
+  "slug": "plan-ronaldo-1000",
+  "company": "",
+  "format": "story",
+  "story_mode": "plan",
+  "visual_style": "lowpoly",
+  "hook_style": "surprise",
+  "title_style": "number",
+  "theme": "bold_bright",
+  "status": "ready",
+  "score": 93,
+  "title": "You're Ronaldo. You Need 1,000 Goals.",
+  "name_card": "Cristiano Ronaldo",
+  "name_sub": "Al Nassr, a hypothetical plan",
+  "description": "You're Cristiano Ronaldo. You've scored over 980 goals, and you want 1,000.\n\nSources:\n- Wikipedia: Cristiano Ronaldo: https://en.wikipedia.org/wiki/Cristiano_Ronaldo\n\nReal (Wikipedia: Cristiano Ronaldo): born 5 February 1985; he has scored over 980 official senior career goals for club and country, the most in the history of the sport; he scored his 900th career goal on 5 September 2024 against Croatia; he plays for Al Nassr, with a contract extended until 2027. Everything after that is a made-up, hypothetical plan for fun: imagined steps, not news and not anything Cristiano Ronaldo has said or planned. Not financial advice.\n\n#shorts #ronaldo #cr7 #howtheymakemoney",
+  "tags": [
+    "cristiano ronaldo",
+    "al nassr",
+    "soccer",
+    "plan",
+    "shorts"
+  ],
+  "images": {},
+  "hud_label": "THE PLAN",
+  "loop": "So next time Ronaldo scores, remember:",
+  "cta": "Will Ronaldo reach 1,000? Comment yes or no.",
+  "cta_question": "1,000 goals: yes or no?",
+  "hero": {
+    "skin": "c89a72",
+    "hair": "quiff",
+    "hair_color": "15110e",
+    "beard": "none",
+    "outfit": "kit",
+    "shirt": "fcd116",
+    "pants": "0b2a6f",
+    "trim": "0b2a6f",
+    "socks": "fcd116",
+    "shoes": "f4f4f4",
+    "height": 1.1,
+    "number": 7
+  },
+  "scenes": [
+    {
+      "narration": "You're Cristiano Ronaldo. You've scored over 980 goals. Now you want 1,000.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "pitch",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "ball"
+        ],
+        "stat": "980+",
+        "stat_sub": "career goals"
+      },
+      "toon": [
+        {
+          "place": "pitch",
+          "mood": "proud",
+          "view": "ms"
+        },
+        {
+          "place": "pitch",
+          "mood": "laugh",
+          "things": [
+            "soccerball"
+          ],
+          "card": {
+            "text": "980+",
+            "kind": "screen",
+            "sub": "GOALS"
+          },
+          "view": "wide"
+        },
+        {
+          "place": "pitch",
+          "mood": "scheme",
+          "things": [
+            "trophy"
+          ],
+          "card": {
+            "text": "1,000",
+            "kind": "flip",
+            "sub": "THE TARGET"
+          },
+          "view": "ws"
+        }
+      ]
+    },
+    {
+      "narration": "But you're 41. So step one, you never miss a penalty again.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "pitch",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "ball"
+        ],
+        "stat": "STEP 1",
+        "stat_sub": "never miss a penalty"
+      },
+      "toon": [
+        {
+          "place": "pitch",
+          "mood": "nervous",
+          "card": {
+            "text": "41",
+            "kind": "flip",
+            "sub": "AGE"
+          },
+          "view": "ms"
+        },
+        {
+          "place": "pitch",
+          "mood": "stern",
+          "things": [
+            "soccerball"
+          ],
+          "view": "low"
+        }
+      ]
+    },
+    {
+      "narration": "Then teams put three defenders on you. So you score with your head, off every corner.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "pitch",
+        "action": "run",
+        "crowd": 100,
+        "props": [
+          "ball"
+        ],
+        "stat": "STEP 2",
+        "stat_sub": "headers only"
+      },
+      "toon": [
+        {
+          "place": "pitch",
+          "mood": "shock",
+          "crowd": 3,
+          "view": "wide"
+        },
+        {
+          "place": "pitch",
+          "mood": "laugh",
+          "action": "jump",
+          "things": [
+            "soccerball"
+          ],
+          "view": "ws"
+        }
+      ]
+    },
+    {
+      "narration": "Goal 999. Every camera on Earth points at you.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "pitch",
+        "action": "idle",
+        "crowd": 300,
+        "props": [
+          "ball"
+        ],
+        "stat": "999",
+        "stat_sub": "one to go"
+      },
+      "toon": [
+        {
+          "place": "pitch",
+          "mood": "excited",
+          "things": [
+            "soccerball"
+          ],
+          "card": {
+            "text": "999",
+            "kind": "screen",
+            "sub": "ONE TO GO"
+          },
+          "view": "ms"
+        },
+        {
+          "place": "stage",
+          "mood": "shock",
+          "things": [
+            "camera",
+            "globe"
+          ],
+          "view": "ms"
+        }
+      ]
+    },
+    {
+      "narration": "Goal 1,000. But the scoreboard only has three digits. So you buy a bigger one.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "pitch",
+        "action": "cheer",
+        "crowd": 400,
+        "props": [
+          "ball",
+          "trophy"
+        ],
+        "stat": "1,000",
+        "stat_sub": "the plan",
+        "hud": "1,000"
+      },
+      "toon": [
+        {
+          "place": "pitch",
+          "mood": "laugh",
+          "action": "cheer",
+          "things": [
+            "soccerball"
+          ],
+          "card": {
+            "text": "1,000",
+            "kind": "flip"
+          },
+          "view": "wide"
+        },
+        {
+          "place": "pitch",
+          "mood": "shock",
+          "card": {
+            "text": "000",
+            "kind": "screen",
+            "sub": "THREE DIGITS"
+          },
+          "view": "ms"
+        },
+        {
+          "place": "mansion",
+          "mood": "proud",
+          "beat": "money",
+          "things": [
+            "monitor",
+            "cashstack"
+          ],
+          "view": "ms"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Cristiano Ronaldo",
+      "url": "https://en.wikipedia.org/wiki/Cristiano_Ronaldo"
+    }
+  ],
+  "length_test": "short"
+}

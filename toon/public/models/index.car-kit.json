@@ -1,0 +1,162 @@
+{
+ "ambulance": {
+  "file": "car-kit/ambulance.glb",
+  "pack": "car-kit",
+  "tags": [
+   "emergency",
+   "hospital"
+  ]
+ },
+ "cargo_truck": {
+  "file": "car-kit/cargo_truck.glb",
+  "pack": "car-kit",
+  "tags": [
+   "lorry",
+   "freight"
+  ]
+ },
+ "delivery_truck": {
+  "file": "car-kit/delivery_truck.glb",
+  "pack": "car-kit",
+  "tags": [
+   "delivery",
+   "shipping",
+   "logistics"
+  ]
+ },
+ "fire_truck": {
+  "file": "car-kit/fire_truck.glb",
+  "pack": "car-kit",
+  "tags": [
+   "firefighter",
+   "emergency"
+  ]
+ },
+ "future_racer": {
+  "file": "car-kit/future_racer.glb",
+  "pack": "car-kit",
+  "tags": [
+   "futuristic",
+   "electric_car"
+  ]
+ },
+ "garbage_truck": {
+  "file": "car-kit/garbage_truck.glb",
+  "pack": "car-kit",
+  "tags": [
+   "trash",
+   "waste",
+   "recycling"
+  ]
+ },
+ "go_kart": {
+  "file": "car-kit/go_kart.glb",
+  "pack": "car-kit",
+  "tags": [
+   "kart",
+   "karting"
+  ]
+ },
+ "hatchback": {
+  "file": "car-kit/hatchback.glb",
+  "pack": "car-kit",
+  "tags": [
+   "compact"
+  ]
+ },
+ "loader": {
+  "file": "car-kit/loader.glb",
+  "pack": "car-kit",
+  "tags": [
+   "digger",
+   "construction",
+   "excavator"
+  ]
+ },
+ "luxury_suv": {
+  "file": "car-kit/luxury_suv.glb",
+  "pack": "car-kit",
+  "tags": [
+   "limo"
+  ]
+ },
+ "police_car": {
+  "file": "car-kit/police_car.glb",
+  "pack": "car-kit",
+  "tags": [
+   "cop",
+   "police",
+   "arrest"
+  ]
+ },
+ "race_car": {
+  "file": "car-kit/race_car.glb",
+  "pack": "car-kit",
+  "tags": [
+   "racing",
+   "formula",
+   "racer"
+  ]
+ },
+ "racing_wheel": {
+  "file": "car-kit/racing_wheel.glb",
+  "pack": "car-kit",
+  "tags": [
+   "tire",
+   "tyre",
+   "wheel"
+  ]
+ },
+ "sedan": {
+  "file": "car-kit/sedan.glb",
+  "pack": "car-kit",
+  "tags": [
+   "family_car"
+  ]
+ },
+ "sports_sedan": {
+  "file": "car-kit/sports_sedan.glb",
+  "pack": "car-kit",
+  "tags": [
+   "fast_car"
+  ]
+ },
+ "suv": {
+  "file": "car-kit/suv.glb",
+  "pack": "car-kit",
+  "tags": [
+   "jeep"
+  ]
+ },
+ "taxi": {
+  "file": "car-kit/taxi.glb",
+  "pack": "car-kit",
+  "tags": [
+   "cab",
+   "uber",
+   "ride"
+  ]
+ },
+ "tractor": {
+  "file": "car-kit/tractor.glb",
+  "pack": "car-kit",
+  "tags": [
+   "farm",
+   "farmer"
+  ]
+ },
+ "traffic_cone": {
+  "file": "car-kit/traffic_cone.glb",
+  "pack": "car-kit",
+  "tags": [
+   "cone"
+  ]
+ },
+ "van": {
+  "file": "car-kit/van.glb",
+  "pack": "car-kit",
+  "tags": [
+   "minivan"
+  ]
+ }
+}

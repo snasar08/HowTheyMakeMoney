@@ -7,7 +7,7 @@
   "hook_style": "number",
   "title_style": "number",
   "theme": "dark_neon",
-  "status": "ready",
+  "status": "delivered",
   "score": 90,
   "title": "$1 Million to Play a Different Game",
   "name_card": "Ninja",
@@ -36,11 +36,23 @@
           "headset"
         ],
         "stat": "$1 MILLION",
-        "stat_sub": "to play one game"
+        "stat_sub": "to play one game",
+        "hero": {
+          "skin": "f0c8a0",
+          "hair": "short",
+          "hair_color": "5a3a20",
+          "beard": "none",
+          "outfit": "hoodie",
+          "shirt": "2b2f3a",
+          "pants": "2c3550",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "height": 1.0
+        }
       }
     },
     {
-      "narration": "But not his usual game. A rival to Fortnite.",
+      "narration": "But it was not Fortnite. It was a rival game called Apex Legends.",
       "visual": {
         "type": "lowpoly",
         "set": "gaming",
@@ -50,11 +62,23 @@
           "headset"
         ],
         "stat": "A RIVAL GAME",
-        "stat_sub": "Apex Legends, 2019"
+        "stat_sub": "Apex Legends, 2019",
+        "hero": {
+          "skin": "f0c8a0",
+          "hair": "short",
+          "hair_color": "5a3a20",
+          "beard": "none",
+          "outfit": "hoodie",
+          "shirt": "2b2f3a",
+          "pants": "2c3550",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "height": 1.0
+        }
       }
     },
     {
-      "narration": "Just months earlier, he had 500,000 followers. Then over 2 million.",
+      "narration": "Back in 2017, he had 500,000 followers. By 2018, over 2 million.",
       "visual": {
         "type": "lowpoly",
         "set": "gaming",
@@ -66,7 +90,19 @@
         ],
         "stat": "2 MILLION",
         "stat_sub": "followers by March 2018",
-        "hud": "2M"
+        "hud": "2M",
+        "hero": {
+          "skin": "f0c8a0",
+          "hair": "short",
+          "hair_color": "5a3a20",
+          "beard": "none",
+          "outfit": "hoodie",
+          "shirt": "2b2f3a",
+          "pants": "2c3550",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "height": 1.0
+        }
       }
     },
     {
@@ -80,7 +116,19 @@
           "headset"
         ],
         "stat": "635,000",
-        "stat_sub": "watching at once"
+        "stat_sub": "watching at once",
+        "hero": {
+          "skin": "f0c8a0",
+          "hair": "short",
+          "hair_color": "5a3a20",
+          "beard": "none",
+          "outfit": "hoodie",
+          "shirt": "2b2f3a",
+          "pants": "2c3550",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "height": 1.0
+        }
       }
     },
     {
@@ -96,7 +144,19 @@
         ],
         "stat": "$10 MILLION",
         "stat_sub": "his 2018 estimate",
-        "hud": "$10M"
+        "hud": "$10M",
+        "hero": {
+          "skin": "f0c8a0",
+          "hair": "short",
+          "hair_color": "5a3a20",
+          "beard": "none",
+          "outfit": "hoodie",
+          "shirt": "2b2f3a",
+          "pants": "2c3550",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "height": 1.0
+        }
       }
     }
   ],
@@ -117,5 +177,25 @@
     "socks": "f4f4f4",
     "shoes": "f4f4f4",
     "height": 1.0
+  },
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-083-famous-ninja",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-083-famous-ninja/083-famous-ninja.mp4",
+    "post_at": "2026-11-17T15:00:00-05:00",
+    "buffer_post": "6afb59be08dd0180500c0d7c",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-16T19:30:06.899638+00:00",
+    "seconds": 27.38,
+    "eyes": {
+      "score": 8,
+      "problems": [
+        "The cover text 'NINJA STREAMER' is cut off at the top and overlaps the main title, making it look unprofessional.",
+        "The text 'A RIVAL GAME' appears on screen, but the narration says 'A rival to Fortnite', which is slightly confusing.",
+        "The transition at frame 145 is abrupt and visually jarring."
+      ],
+      "best_fix": "Fix the cover layout to ensure all text is fully visible and properly spaced without overlapping.",
+      "model": "gemini-3.1-flash-lite"
+    }
   }
 }

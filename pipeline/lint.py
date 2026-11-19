@@ -36,14 +36,15 @@ def lint(s: dict) -> tuple[list[str], list[str]]:
     narr = re.sub(r"(?<![A-Za-z])B:\s*", "", " ".join(sc.get("narration", "") for sc in scenes))
     spoken = narr + " " + s.get("loop", "") + " Comment which brand we should do next, and subscribe."
     first = scenes[0]["narration"] if scenes else ""
-    if s.get("format") not in ("how", "whatif", "careers", "famous"):
-        err.append(f"format must be how / whatif / careers / famous (got {s.get('format')!r})")
+    if s.get("format") not in ("how", "whatif", "careers", "famous", "story"):
+        err.append(f"format must be how / whatif / careers / famous / story (got {s.get('format')!r})")
     if s.get("visual_style", "charts3d") not in ("charts3d", "lowpoly", "editorial"):
         err.append(f"visual_style must be charts3d, lowpoly or editorial (got {s.get('visual_style')!r})")
     if s.get("visual_style") == "lowpoly" and s.get("status") == "ready" and not LOWPOLY_LIVE:
         err.append("low-poly style isn't approved for the daily pipeline yet (Sam)")
-    if not 5 <= len(scenes) <= 6:
-        err.append(f"{len(scenes)} scenes (want 5–6)")
+    story = s.get("format") == "story"   # Nov 15: "You're X..." stories, one beat per sentence, up to ~65 s
+    if not (5 <= len(scenes) <= (9 if story else 6)):
+        err.append(f"{len(scenes)} scenes (want 5–{9 if story else 6})")
     # Nov 11: the opening is the surprising number or fact (question openings were the weakest group
     # and the biggest drop comes right after the opening line); a question is allowed, not required
     first_sent = re.split(r"(?<=[.!?])\s+", first.strip())[0]
@@ -69,7 +70,7 @@ def lint(s: dict) -> tuple[list[str], list[str]]:
         if b in low:
             err.append(f"banned phrase: '{b.strip()}'")
     est = len(spoken.split()) / WPS + 0.4 * len(scenes)
-    if not LEN_MIN <= est <= LEN_MAX:
+    if not LEN_MIN <= est <= (70 if story else LEN_MAX):
         warn.append(f"estimated length {est:.0f}s (sweet spot {LEN_MIN}–{LEN_MAX}s)")
     elif est > LEN_STD and s.get("visual_style", "charts3d") != "editorial" and s.get("format") != "famous":
         warn.append(f"estimated length {est:.0f}s: standard Shorts do best at 22–28 s (cut filler, not facts)")
@@ -87,7 +88,7 @@ def lint(s: dict) -> tuple[list[str], list[str]]:
         need = min(10, int(est / 1.4 / 2))  # photo beats past the pool become slam cards, never repeats
         if len(pics) < need:
             warn.append(f"only {len(pics)} photos for ~{need} photo beats (add to `photos`; no repeats)")
-    if s.get("visual_style") == "lowpoly" and s.get("format") not in ("whatif", "famous"):
+    if s.get("visual_style") == "lowpoly" and s.get("format") not in ("whatif", "famous", "story"):
         warn.append("low-poly is meant for whatif / famous Shorts")
     if s.get("status") == "ready" and s.get("visual_style") not in ("lowpoly", "editorial"):
         imgs = s.get("images", {})

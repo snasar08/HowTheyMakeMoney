@@ -3,7 +3,7 @@
   "slug": "coca-cola",
   "company": "Coca-Cola",
   "theme": "clean_navy",
-  "status": "ready",
+  "status": "draft",
   "title": "Coke Keeps 29 Cents by Skipping the Bottles",
   "description": "Coca-Cola keeps almost 29 cents of every dollar. Without doing the bottling.\n\nSources:\n- Coca-Cola Q4 and full-year 2025 results (press release): https://investors.coca-colacompany.com/news-events/press-releases/detail/1151/coca-cola-reports-fourth-quarter-and-full-year-2025-results\n- Coca-Cola Q4 2025 earnings release (full PDF with segment tables): https://www.coca-colacompany.com/content/dam/company/us/en/media-center/Coca-Cola%20Q4%202025%20Earnings%20Release_Full%20Release_2.10.26.pdf\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
@@ -109,5 +109,6 @@
   "title_style": "number",
   "hook_style": "number",
   "cta": "Coke or Pepsi? Comment which you'd pick.",
-  "cta_question": "Coke or Pepsi?"
+  "cta_question": "Coke or Pepsi?",
+  "paused": "Nov 15 2026, Sam: drop the 'how' and 'careers' formats (median 21 / 18 views at 48 h vs 781 for famous)"
 }

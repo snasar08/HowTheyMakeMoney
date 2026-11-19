@@ -10,6 +10,7 @@ import { Pen, fxSign } from "./toon";
 import { LIGHTS, LOOK, LightPreset } from "./lights";
 import { TONE, CHAR, LFB, twoTone, untone } from "./shade";
 import { NOINK } from "./ink";
+import { buildPlaces } from "./places";
 import { Pool, Actor, Fx, stage, snapFx, splashFx, creakFx, SIGN_AT, SU_SWING } from "./cast";
 import { FPS, D0, SHOTS, PARK, ANCHOR, SNAP, camAt, bridgeState, deckY, dropW, shapeZ, snapEnd, front, BridgeState, V3, smooth, FOREGROUND, ShotDef } from "./story";
 
@@ -217,6 +218,7 @@ export class World {
     b.add(sandG, M.sand, new THREE.Matrix4().makeTranslation(PARK[0], D0 + 0.012, PARK[2]));
     b.build(R);
     buildTown(R, kit, sightLines());
+    buildPlaces(R);
 
     // water: its own mesh so the ripples can drift
     // river: depression-angle gradient + sparse marks (textures.md 5.2 #4), sun visibility captured for the bridge shadow
