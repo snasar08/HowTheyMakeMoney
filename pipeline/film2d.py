@@ -21,6 +21,12 @@ Sound (pipeline/score2d.py, all synthesized, mastered to -16.5 LUFS / -1 dBTP, 4
                 powerdown riser slam steps whoosh page bounce crowd coin register heart bell duck
   beat "flash": [0.1]           each flash gets 0.3 s silence then a broadband slam + sub hit
 
+New (Nov 19) optional fields, all documented in toon/src/videos/film2d/Film2D.tsx and sets.tsx:
+  say entry: "white": true (white bold pop line), "bold": true (bold spotlight line), "shatter": true | seconds (letters break apart)
+  card: "tagAt" / "cmdAt" seconds (tagline / end line time), "fs" title size
+  beat: "grade": "sunset" | "rain"; arg: punch (cycle seconds), embers, emberSpeed, burst, burstX, burstY, burstN, gradeAmt
+  sets: "fridge" (arg open, x), "calendar" (arg start, cross, crossDt, crossT0, today, days); couch arg nolamp; mirror args tint, tintHue
+
   python -m pipeline.film2d audio content/films2d/NNN.json out.wav     # sound only (prints loudness)
   python -m pipeline.film2d plan  content/films2d/001-x.json out/props.json
   python -m pipeline.film2d make  content/films2d/001-x.json frames/ out/film.mp4
@@ -37,7 +43,7 @@ from pipeline import film as F
 from pipeline import score2d as S
 
 FPS = 30
-KEYS = ("set", "arg", "cam", "things", "fade", "fadeOut", "sat", "shake", "flash", "scroll", "dark")
+KEYS = ("set", "arg", "cam", "things", "fade", "fadeOut", "sat", "shake", "flash", "scroll", "dark", "grade")
 
 
 def plan(film: dict) -> dict:
@@ -68,7 +74,7 @@ def plan(film: dict) -> dict:
                 k0 = a + 6 + (n * i) // len(say)
                 k1 = a + (n * (i + 1)) // len(say) - 2
             ln = {"a": k0, "n": max(20, k1 - k0), "t": s["t"]}
-            for k in ("red", "at", "size", "cps"):
+            for k in ("red", "white", "bold", "shatter", "at", "size", "cps"):
                 if k in s:
                     ln[k] = s[k]
             lines.append(ln)

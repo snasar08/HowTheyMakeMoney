@@ -30,6 +30,8 @@ BEAT = 60.0 / BPM          # 0.625 s
 BAR = BEAT * 4             # 2.5 s
 TARGET_LUFS = -16.5
 TP_CEIL = -1.0             # dBTP
+SLAM_TRIM = 10 ** (-4 / 20)   # our slam hit sat ~4 dB hotter than the reference's: lowered 4 dB
+ROOM_DB = -5.0             # pre-master level of the room tone: lands the post-master dropout at about -23 dB RMS (the reference), our old hole was -41
 
 # beat "mood" words -> music section when the beat has no "music" key
 MOOD_TAG = {"night": "drone", "dark": "drone", "quiet": "drone", "calm": "drone", "tense": "tick", "clock": "tick",
@@ -343,7 +345,7 @@ SFX = {
     "thud": (s_thud, 0.9, 0.0, "start"), "hit": (s_thud, 0.9, 0.0, "start"),
     "punch": (None, 0.0, 0.0, "punch"), "ping": (s_ping, 0.30, 0.15, "start"), "buzz": (s_buzz, 0.35, 0.0, "start"),
     "ring": (s_ring, 0.30, 0.0, "start"), "lowbatt": (s_lowbatt, 0.28, 0.0, "start"), "powerdown": (s_powerdown, 0.35, 0.0, "start"),
-    "riser": (s_riser, 0.50, 0.0, "end"), "slam": (s_slam, 1.3, 0.0, "start"), "steps": (s_steps, 0.55, 0.0, "start"),
+    "riser": (s_riser, 0.50, 0.0, "end"), "slam": (s_slam, 1.3 * SLAM_TRIM, 0.0, "start"), "steps": (s_steps, 0.55, 0.0, "start"),
     "whoosh": (s_whoosh, 0.40, 0.0, "start"), "page": (s_page, 0.40, 0.0, "start"), "bounce": (s_bounce, 0.65, 0.0, "start"),
     "crowd": (s_crowd, 0.30, 0.0, "start"), "coin": (s_coin, 0.30, 0.2, "start"), "register": (s_register, 0.45, 0.0, "start"),
     "heart": (s_heart, 0.9, 0.0, "start"), "bell": (lambda: s_ping(1200.0, 1.2), 0.30, 0.0, "start"),
@@ -462,7 +464,7 @@ def _ramp(n: int, a: int, b: int) -> np.ndarray:
 def _pad(t0: float, t1: float, prog: list, gain: float, bright: float) -> np.ndarray:
     """soft chord pad (2, n): one chord per 2.5 s bar, neighbouring bars cross-fade linearly; absolute-time phases so equal
     notes join cleanly"""
-    n = int((t1 - t0) * SR)
+    n = int(round((t1 - t0) * SR))
     out = np.zeros((2, n), np.float32)
     f = int(0.45 * SR)
     nb = int(np.ceil((t1 - t0) / BAR))
@@ -487,7 +489,7 @@ def _pad(t0: float, t1: float, prog: list, gain: float, bright: float) -> np.nda
 
 def _sub(t0: float, t1: float, gain: float) -> np.ndarray:
     """F1 + C2 + F2 pedal drone (43 / 65 / 87 Hz) with a little saturation so small speakers still hear it"""
-    n = int((t1 - t0) * SR)
+    n = int(round((t1 - t0) * SR))
     t = _t(n) + t0
     x = np.sin(2 * np.pi * 43.65 * t) + 0.6 * np.sin(2 * np.pi * 65.41 * t) + 0.45 * np.sin(2 * np.pi * 87.31 * t)
     x = np.tanh(1.1 * x) * (1 + 0.15 * np.sin(2 * np.pi * 0.11 * t))
@@ -523,15 +525,17 @@ def _music_section(buf: np.ndarray, tag: str, t0: float, t1: float) -> list[tupl
     if tag == "silent":
         return []
     L = LEVEL[tag]
+    t0, t1 = round(t0 * SR) / SR, round(t1 * SR) / SR      # sample-aligned section edges (a start that is not on a sample used to crash _pad)
     dur = t1 - t0
     major = tag in ("finale", "title")
     prog, arp = (PROG_HOPE, ARP_HOPE) if major else (PROG_DARK, ARP_DARK)
-    i0, i1 = int(t0 * SR), min(buf.shape[1], int(t1 * SR))
+    i0, i1 = int(round(t0 * SR)), min(buf.shape[1], int(round(t1 * SR)))
     ev = L["ev"]
     pad = _pad(t0, t1, prog, L["pad"], 1.0 if major else 0.0)
-    buf[:, i0:i1] += (pad * _ramp(pad.shape[1], int(0.12 * SR), int(0.12 * SR)))[:, :i1 - i0]
+    k = min(i1 - i0, pad.shape[1])
+    buf[:, i0:i0 + k] += (pad * _ramp(pad.shape[1], int(0.12 * SR), int(0.12 * SR)))[:, :k]
     if L["sub"] > 0:
-        buf[:, i0:i1] += _sub(t0, t1, L["sub"])[None, :i1 - i0]
+        buf[:, i0:i0 + k] += _sub(t0, t1, L["sub"])[None, :k]
     ducks: list[tuple[float, float]] = []
     if t0 == 0 and tag == "drone":      # the film opens almost silent (reference: first 3 s are near-inaudible sub pulses)
         k = min(buf.shape[1] - i0, int(3 * SR))
@@ -575,7 +579,7 @@ def _music_section(buf: np.ndarray, tag: str, t0: float, t1: float) -> list[tupl
                 if pos in (0, 2):
                     _place(buf, _subnote(prog[bar % 4][0] - 12, 1.2), tb, 0.55 * ev)
         if tag == "slam":
-            _place(buf, s_slam(), t0, 0.8)
+            _place(buf, s_slam(), t0, 0.8 * SLAM_TRIM)
             if t0 > 0.35:
                 ducks.append((t0 - 0.3, t0))
     elif tag == "title":
@@ -585,14 +589,20 @@ def _music_section(buf: np.ndarray, tag: str, t0: float, t1: float) -> list[tupl
 
 
 def _duck(buf: np.ndarray, windows: list[tuple[float, float]]) -> None:
-    """cut holes in the music (8 ms fade down) - the silence before a slam"""
+    """cut the music down to a quiet room tone (8 ms fade down) - the silence before a slam. The floor is a faint band-limited
+    noise bed (ROOM_DB) so it is a quiet room, not a digital hole."""
     for a, b in windows:
-        i0, i1 = max(0, int(a * SR)), min(buf.shape[1], int(b * SR))
+        i0, i1 = max(0, int(round(a * SR))), min(buf.shape[1], int(round(b * SR)))
         if i1 > i0:
-            r = min(int(0.008 * SR), (i1 - i0) // 2)
-            g = np.zeros(i1 - i0, np.float32)
+            n = i1 - i0
+            r = min(int(0.008 * SR), n // 2)
+            g = np.zeros(n, np.float32)
             g[:r] = np.linspace(1, 0, r)
             buf[:, i0:i1] *= g
+            room = np.stack([_noise(n, f"room{i0}{c}", 80, 1800) for c in (0, 1)]) * (10 ** (ROOM_DB / 20)) * 0.9
+            w = np.ones(n, np.float32)
+            w[:r] = np.linspace(0, 1, r)
+            buf[:, i0:i1] += (room * w).astype(np.float32)
 
 
 # ------------------------------------------------------------------ mix + master

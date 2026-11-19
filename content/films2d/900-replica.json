@@ -1381,7 +1381,7 @@
      "look": "voice",
      "x": 0,
      "pose": "loom",
-     "scale": 1.45,
+     "scale": 1.2,
      "dir": -1,
      "stairs": [
       0.56,
@@ -1427,7 +1427,7 @@
      "look": "voice",
      "x": 0,
      "pose": "loom",
-     "scale": 1.45,
+     "scale": 1.2,
      "dir": -1,
      "stairs": [
       0.56,
@@ -1480,7 +1480,7 @@
      "look": "voice",
      "x": 0,
      "pose": "loom",
-     "scale": 1.45,
+     "scale": 1.2,
      "dir": -1,
      "stairs": [
       0.56,
