@@ -3,6 +3,8 @@
 Our own flat 2D animated films (16:9, ~2-4 min, silent, synthesized score), one every 3 days.
 Rendered by the `Film2D` composition (`toon/src/videos/film2d/`) via `pipeline/film2d.py` + `pipeline/score2d.py`.
 
+Guide for writing films: [FILM_GUIDE.md](FILM_GUIDE.md).
+
 ## Queue
 `content/films2d/NNN-slug.json` (top level only). Extra top-level keys next to the beats:
 `"status"`: `draft` | `ready` | `delivered`, `"title"`, `"description"`, `"tags"`; the workflow adds `"posted_at"`, `"release"`, `"youtube"` on delivery.
