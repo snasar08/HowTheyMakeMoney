@@ -167,9 +167,10 @@ const Line: React.FC<{ l: Line2; f: number; pos: [number, number] }> = ({ l, f, 
   return <div style={{ ...box, transform: "translate(-50%,-50%)", opacity: o, color: RED }}>{txt.slice(0, n)}<span style={{ opacity: 0 }}>{txt.slice(n)}</span></div>;
 };
 
-const wavy = (w: number, amp: number, waves: number) => {
+const wavy = (w: number, amp: number, waves: number, frac: number) => {
   let d = `M 0 ${amp + 2}`;
-  for (let i = 1; i <= 60; i++) { const x = (w * i) / 60; d += ` L ${x.toFixed(1)} ${(amp + 2 + Math.sin((i / 60) * waves * Math.PI * 2 + 0.6) * amp + Math.sin(i * 1.7) * 0.8).toFixed(1)}`; }
+  const n = Math.max(1, Math.round(60 * frac));
+  for (let i = 1; i <= n; i++) { const x = (w * i) / 60; d += ` L ${x.toFixed(1)} ${(amp + 2 + Math.sin((i / 60) * waves * Math.PI * 2 + 0.6) * amp + Math.sin(i * 1.7) * 0.8).toFixed(1)}`; }
   return d;
 };
 
@@ -187,8 +188,8 @@ const Card: React.FC<{ c: Card2; f: number }> = ({ c, f }) => {
     <div style={{ position: "absolute", left: 0, right: 0, top: 310 - fs * 0.5, textAlign: "center", opacity: o }}>
       <div style={{ position: "relative", display: "inline-block", fontFamily: HAND, fontWeight: 700, fontSize: fs, lineHeight: 1, color: WHITE, WebkitTextStroke: "2.5px #000", paintOrder: "stroke fill", textShadow: "0 0 22px rgba(255,255,255,0.10)" }}>
         {c.big.split("").map((ch, i) => <span key={i} style={{ opacity: clamp((t - 3 - i * 2.4) / 4), whiteSpace: "pre" }}>{ch}</span>)}
-        <svg width="calc(100% + 20px)" height={26} viewBox="0 0 400 26" preserveAspectRatio="none" style={{ position: "absolute", left: -10, top: fs * 1.0, width: "calc(100% + 20px)", overflow: "visible" }}>
-          <path d={wavy(400, 4.5, 3.2)} stroke={RED} strokeWidth={7} strokeLinecap="round" strokeLinejoin="round" fill="none" vectorEffect="non-scaling-stroke" pathLength={1} strokeDasharray={1} strokeDashoffset={1 - ul} />
+        <svg height={26} viewBox="0 0 400 26" preserveAspectRatio="none" style={{ position: "absolute", left: -10, top: fs * 1.0, width: "calc(100% + 20px)", overflow: "visible" }}>
+          {ul > 0 && <path d={wavy(400, 4.5, 3.2, ul)} stroke={RED} strokeWidth={7} strokeLinecap="round" strokeLinejoin="round" fill="none" vectorEffect="non-scaling-stroke" />}
         </svg>
       </div>
     </div>
