@@ -10,7 +10,9 @@
    YTC_CLIENT_ID, YTC_CLIENT_SECRET, YTC_REFRESH_TOKEN. Then delete client_secret.json.
 """
 import json
+import subprocess
 import sys
+from pathlib import Path
 
 from google_auth_oauthlib.flow import InstalledAppFlow
 
@@ -19,10 +21,15 @@ SCOPES = ["https://www.googleapis.com/auth/youtube.force-ssl"]   # read + reply 
 if __name__ == "__main__":
     secret_file = sys.argv[1] if len(sys.argv) > 1 else "client_secret.json"
     flow = InstalledAppFlow.from_client_secrets_file(secret_file, SCOPES)
-    creds = flow.run_local_server(port=0, prompt="consent", access_type="offline", open_browser=False)
+    creds = flow.run_local_server(port=0, prompt="consent", access_type="offline", open_browser=True)
     inner = json.load(open(secret_file))
     inner = inner.get("installed") or inner.get("web")
-    print("\nAdd these as GitHub secrets (repo -> Settings -> Secrets and variables -> Actions):")
-    print("YTC_CLIENT_ID =", inner["client_id"])
-    print("YTC_CLIENT_SECRET =", inner["client_secret"])
-    print("YTC_REFRESH_TOKEN =", creds.refresh_token)
+    # The values go to a text file next to the login file (NOT the screen, NOT the repo), opened in Notepad for Sam.
+    out = Path(secret_file).resolve().parent / "YTC_secrets.txt"
+    out.write_text("Add these 3 as GitHub secrets (repo -> Settings -> Secrets and variables -> Actions ->\n"
+                   "New repository secret). Name on the left, value on the right. Then delete this file.\n\n"
+                   f"YTC_CLIENT_ID\n{inner['client_id']}\n\nYTC_CLIENT_SECRET\n{inner['client_secret']}\n\n"
+                   f"YTC_REFRESH_TOKEN\n{creds.refresh_token}\n")
+    print(f"\nDone. Saved to {out} (opening it in Notepad).")
+    if sys.platform == "win32":
+        subprocess.Popen(["notepad.exe", str(out)])
