@@ -1,0 +1,13 @@
+=== line 1: Film2D 15,45,75,105,135,255,325,345,410,480,525 0.5 film/newtest.json 
+bundle 7.2s
+still 15 0.9s
+still 45 0.9s
+still 75 0.7s
+still 105 0.9s
+still 135 0.9s
+still 255 0.7s
+still 325 0.7s
+still 345 0.7s
+still 410 1.1s
+still 480 1.0s
+still 525 0.8s
