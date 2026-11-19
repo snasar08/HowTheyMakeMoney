@@ -1,4 +1,4 @@
-# Retention, 2026-11-19 21:33 UTC
+# Retention, 2026-11-19 22:57 UTC
 
 Shorts from the last 14 days, most viewed first. 'Still watching' is the share of viewers at that point of the video (over 100% at the start means replays). 'Biggest drop' is where the most viewers leave in one 5% stretch.
 
@@ -6,6 +6,7 @@ Shorts from the last 14 days, most viewed first. 'Still watching' is the share o
 |---|---|---|---|---|---|---|---|---|
 | The 180 Million Euro Teenager | 1297 | 70.6% (19 s) | 128% | 95% | 66% | 53% | 29% | -13 pts at 4.0 s |
 | From a Napkin Contract to $1.1 Billion | 1258 | 80.3% (24 s) | 140% | 99% | 78% | 64% | 41% | -17 pts at 5.1 s |
+| From $2.46 Billion to $4 Trillion | 1182 | 77.8% (28 s) | 128% | 100% | 77% | 65% | 29% | -20 pts at 31.3 s |
 | From a $2.5M Shoe Deal to $4.7 Billion | 1172 | 70.1% (20 s) | 132% | 94% | 62% | 48% | 32% | -16 pts at 5.7 s |
 | From a Dad With 4 Jobs to $100 Million | 1138 | 89.4% (24 s) | 147% | 118% | 86% | 71% | 46% | -14 pts at 4.6 s |
 | What If You Sold Every Minecraft Copy Yourself? | 1099 | 76.5% (23 s) | 135% | 100% | 73% | 56% | 35% | -13 pts at 4.2 s |
@@ -25,6 +26,7 @@ Shorts from the last 14 days, most viewed first. 'Still watching' is the share o
 | £500,000 a Week Until 2034 | 939 | 61.2% (18 s) | 122% | 88% | 52% | 36% | 22% | -13 pts at 4.1 s |
 | Pick 199 to a $375 Million Mic | 896 | 71.5% (27 s) | 129% | 96% | 65% | 53% | 30% | -14 pts at 4.5 s |
 | From a Walk-On Offer to $156 Million | 780 | 51.7% (13 s) | 114% | 76% | 42% | 30% | 15% | -24 pts at 4.3 s |
+| $232,140 a Year to Fly Planes | 754 | 72.2% (24 s) | 128% | 95% | 68% | 55% | 29% | -15 pts at 29.6 s |
 | Apple Services Keep 75 Cents of Every Dollar | 558 | 41.2% (10 s) | 107% | 53% | 31% | 18% | 7% | -37 pts at 5.1 s |
 | From $6,000 to $780,000: MLB's Lowest Pay | 455 | 37.7% (9 s) | 102% | 59% | 23% | 15% | 3% | -32 pts at 4.1 s |
 | How Did PlayStation Make Record Profit? | 276 | 80.8% (28 s) | 148% | 89% | 75% | 62% | 48% | -34 pts at 5.2 s |

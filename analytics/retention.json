@@ -1,5 +1,5 @@
 {
- "at": "2026-11-19T21:33:53.361183+00:00",
+ "at": "2026-11-19T22:57:07.002681+00:00",
  "shorts": [
   {
    "video": "NDSx2v-Zyv4",
@@ -60,6 +60,36 @@
    "drop_at_pct": 17,
    "drop_at_s": 5.1,
    "drop_size": 17
+  },
+  {
+   "video": "H8TQsxm7j6c",
+   "title": "From $2.46 Billion to $4 Trillion",
+   "views": 1182,
+   "avg_pct": 77.8,
+   "avg_seconds": 28,
+   "tags": {
+    "script": "088",
+    "slug": "how-apple-1997",
+    "topic": "Apple",
+    "format": "how",
+    "visual_style": "editorial",
+    "theme": "clean_navy",
+    "hook_style": "number",
+    "title_style": "number",
+    "length_s": 36.39,
+    "length_bucket": "30-38",
+    "post_at": "2026-11-16T18:00:00-05:00",
+    "post_slot": "18:00",
+    "score": 90
+   },
+   "start": 128,
+   "q25": 100,
+   "q50": 77,
+   "q75": 65,
+   "end": 29,
+   "drop_at_pct": 87,
+   "drop_at_s": 31.3,
+   "drop_size": 20
   },
   {
    "video": "PRUzamrtY2E",
@@ -630,6 +660,36 @@
    "drop_at_pct": 17,
    "drop_at_s": 4.3,
    "drop_size": 24
+  },
+  {
+   "video": "Ih7t-gLT6Iw",
+   "title": "$232,140 a Year to Fly Planes",
+   "views": 754,
+   "avg_pct": 72.2,
+   "avg_seconds": 24,
+   "tags": {
+    "script": "089",
+    "slug": "careers-pilots",
+    "topic": "Airline pilots",
+    "format": "careers",
+    "visual_style": "charts3d",
+    "theme": "clean_navy",
+    "hook_style": "number",
+    "title_style": "number",
+    "length_s": 33.65,
+    "length_bucket": "30-38",
+    "post_at": "2026-11-16T15:00:00-05:00",
+    "post_slot": "15:00",
+    "score": 88
+   },
+   "start": 128,
+   "q25": 95,
+   "q50": 68,
+   "q75": 55,
+   "end": 29,
+   "drop_at_pct": 89,
+   "drop_at_s": 29.6,
+   "drop_size": 15
   },
   {
    "video": "pHISbEQ042Q",
