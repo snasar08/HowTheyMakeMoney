@@ -1,4 +1,4 @@
-"""Flat 2D silent films (Nov 19, Sam: "replicate almost exactly ... the sound the music the look the movement").
+"""Flat 2D silent films (Nov 19).
 
 Same idea as pipeline/film.py (beats -> frames -> mp4, synthesized music + sound effects, no voice) but the picture is the
 flat 2D look (toon composition Film2D, toon/src/videos/film2d/). A film is content/films2d/NNN-slug.json:

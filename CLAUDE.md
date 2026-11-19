@@ -11,7 +11,9 @@ their money, told as fast 3D cartoon stories with an AI voice. Owner: Sam (snasa
 
 ## Sam's rules (never break)
 - Free tiers only. Claude never creates, sees or types an API key or secret: Sam adds secrets himself.
-- Never change post times (7:00, 12:00, 15:30, 19:00, 22:00 ET; Sam, Nov 19: spread out to hit 5 different crowds), posts/day (5), upload mode or the voice without Sam.
+- Never change post times, posts/day, upload mode or the voice without Sam. Now (Sam, Nov 19): **2 a day, 12:00 + 19:00 ET**
+  (nudged up to 2 h later so no 24 h holds 3) while Buffer free caps YouTube at 2 per rolling 24 h; back to 5 a day
+  (7:00, 12:00, 15:30, 19:00, 22:00) only when Sam says, after Buffer lifts the cap.
 - Voice: Gemini TTS **Umbriel, +1.5 semitones** (`GEMINI_PITCH_ST`). Free tier = 10 requests/day per model
   (one request voices a whole Short); add no extra voice requests.
 - Kid-safe. Never invent numbers: every figure comes from a source page actually opened, listed in `sources`.

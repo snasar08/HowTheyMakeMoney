@@ -8,7 +8,7 @@
   "hook_style": "surprise",
   "title_style": "statement",
   "theme": "bold_bright",
-  "status": "ready",
+  "status": "delivered",
   "score": 95,
   "images": {},
   "hud_label": "THE PLAN",
@@ -48,7 +48,20 @@
         "crowd": 0,
         "props": [],
         "stat": "33 YEARS",
-        "stat_sub": "then you resign"
+        "stat_sub": "then you resign",
+        "hero": {
+          "skin": "e3b98f",
+          "hair": "short",
+          "hair_color": "3a3a3a",
+          "beard": "none",
+          "outfit": "suit",
+          "shirt": "151515",
+          "pants": "151515",
+          "shoes": "151515",
+          "tie": "151515",
+          "height": 0.98,
+          "jacket": "leather"
+        }
       },
       "toon": [
         {
@@ -87,7 +100,20 @@
         "crowd": 0,
         "props": [],
         "stat": "THE PLAN",
-        "stat_sub": "beat Nvidia"
+        "stat_sub": "beat Nvidia",
+        "hero": {
+          "skin": "e3b98f",
+          "hair": "short",
+          "hair_color": "3a3a3a",
+          "beard": "none",
+          "outfit": "suit",
+          "shirt": "151515",
+          "pants": "151515",
+          "shoes": "151515",
+          "tie": "151515",
+          "height": 0.98,
+          "jacket": "leather"
+        }
       },
       "toon": [
         {
@@ -134,7 +160,20 @@
         "crowd": 0,
         "props": [],
         "stat": "STEP 2",
-        "stat_sub": "steal the small labs"
+        "stat_sub": "steal the small labs",
+        "hero": {
+          "skin": "e3b98f",
+          "hair": "short",
+          "hair_color": "3a3a3a",
+          "beard": "none",
+          "outfit": "suit",
+          "shirt": "151515",
+          "pants": "151515",
+          "shoes": "151515",
+          "tie": "151515",
+          "height": 0.98,
+          "jacket": "leather"
+        }
       },
       "toon": [
         {
@@ -166,7 +205,20 @@
         "crowd": 0,
         "props": [],
         "stat": "STEP 3",
-        "stat_sub": "a chip in every phone"
+        "stat_sub": "a chip in every phone",
+        "hero": {
+          "skin": "e3b98f",
+          "hair": "short",
+          "hair_color": "3a3a3a",
+          "beard": "none",
+          "outfit": "suit",
+          "shirt": "151515",
+          "pants": "151515",
+          "shoes": "151515",
+          "tie": "151515",
+          "height": 0.98,
+          "jacket": "leather"
+        }
       },
       "toon": [
         {
@@ -198,7 +250,20 @@
         "crowd": 0,
         "props": [],
         "stat": "STEP 4",
-        "stat_sub": "bigger than Nvidia"
+        "stat_sub": "bigger than Nvidia",
+        "hero": {
+          "skin": "e3b98f",
+          "hair": "short",
+          "hair_color": "3a3a3a",
+          "beard": "none",
+          "outfit": "suit",
+          "shirt": "151515",
+          "pants": "151515",
+          "shoes": "151515",
+          "tie": "151515",
+          "height": 0.98,
+          "jacket": "leather"
+        }
       },
       "toon": [
         {
@@ -235,7 +300,20 @@
         "crowd": 0,
         "props": [],
         "stat": "THE PLAN",
-        "stat_sub": "beat your own company"
+        "stat_sub": "beat your own company",
+        "hero": {
+          "skin": "e3b98f",
+          "hair": "short",
+          "hair_color": "3a3a3a",
+          "beard": "none",
+          "outfit": "suit",
+          "shirt": "151515",
+          "pants": "151515",
+          "shoes": "151515",
+          "tie": "151515",
+          "height": 0.98,
+          "jacket": "leather"
+        }
       },
       "toon": [
         {
@@ -267,5 +345,35 @@
       "title": "Wikipedia: Nvidia",
       "url": "https://en.wikipedia.org/wiki/Nvidia"
     }
-  ]
+  ],
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-123-plan-jensen-vs-nvidia",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-123-plan-jensen-vs-nvidia/123-plan-jensen-vs-nvidia.mp4",
+    "post_at": "2026-11-20T22:00:00-05:00",
+    "buffer_post": "6aff4174ba0fb292d5176fd3",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-19T18:35:32.831163+00:00",
+    "seconds": 36.96,
+    "eyes": {
+      "score": 9,
+      "problems": [
+        "Cover text slightly overlaps top frame elements",
+        "Minor text flashing speed on certain caption sequences"
+      ],
+      "best_fix": "Adjust cover text padding to prevent touching the top banner and ensure seamless caption pacing.",
+      "model": "gemini-3.5-flash-lite",
+      "acts": [
+        {
+          "kind": "build_tools",
+          "frames": "341-422",
+          "clear": true,
+          "why": "Character is standing inside a garage structure holding a hammer and interacting with computer setups."
+        }
+      ]
+    },
+    "scene_scan": [
+      "shot 19 @979: jump inside shot (24) - something teleports?"
+    ]
+  }
 }

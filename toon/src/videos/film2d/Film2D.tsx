@@ -1,7 +1,7 @@
-// Nov 19 (Sam: "Analyze 3 of them frame by frame and replicate almost exactly ... the look the movement everything"):
+// Nov 19: the flat 2D silent film.
 // the flat 2D silent film. A cream bean character on a near-black stage (#0B0B0B), side-on, thin grey hand-drawn outlines,
 // light only from lamps / phones / the moon / a sunrise, one sentence at a time, a red glowing inner-voice monster, a day
-// counter, chunky hand-lettered title cards with a red wavy underline. Study: C:\Users\rsn\tools\dayone-breakdown (DISCIPLINE).
+// counter, chunky hand-lettered title cards with a red wavy underline.
 // Our own character, places, music and lines.
 //
 // Props: inputProps.d2 = { shots: Shot2[], film: { lines, cards, day, hud, thumb } } (built by pipeline/film2d.py).
@@ -28,7 +28,7 @@
 //   fs = title font size px (default: as big as fits, max 150).
 //   sy = vertical stretch of the title (the reference letters are taller / narrower than Comic Neue, default 1)
 //   outAt / outLen = seconds from the card start when the card starts fading out / how long the fade takes (default: the last third, max 2 s).
-//   The title is heavy: bold 700 + a 5 px same-colour stroke (matches the reference's thick hand-lettered DISCIPLINE).
+//   The title is heavy: bold 700 + a 5 px same-colour stroke .
 // Beat keys passed through (film2d.py KEYS):
 //   grade: "sunset" = warm orange wash + low sun glow | "rain" = cool blue-grey wash, darker, diagonal rain streaks;  arg.gradeAmt 0..1 (default 1)
 //   arg.punchPhase = seconds the punch cycle is shifted (contact lands 0.42 s into a cycle: use it to land the punch on a music hit)

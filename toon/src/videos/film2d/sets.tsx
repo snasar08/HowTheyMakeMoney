@@ -1,4 +1,4 @@
-// Nov 19 (Sam: "replicate almost exactly" the Day One Films look): places and things for the flat 2D films.
+// Nov 19: places and things for the flat 2D films.
 // Doodle language: dark fills (#101012-#202026) with a thin ~2 px lighter-grey outline (#4a4d5c), one thin grey floor line,
 // near-black stage (#0B0B0B, drawn by Film2D), light only where the story needs it: the moon wedge, a lamp cone, a phone,
 // street-lamp bloom, a spotlight cone with dust, a red glowing bag, one warm sunrise at the end.

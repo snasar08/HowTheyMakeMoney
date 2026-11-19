@@ -7,7 +7,7 @@
   "hook_style": "surprise",
   "title_style": "number",
   "theme": "bold_bright",
-  "status": "ready",
+  "status": "needs_fix",
   "score": 89,
   "title": "From Bagging Groceries to $232.5 Million",
   "name_card": "Bad Bunny",
@@ -355,5 +355,9 @@
       "glasses"
     ],
     "height": 1.0
-  }
+  },
+  "needs_fix": [
+    "act count_cash unclear at frames 0-185: The character is holding a stack of cash but not performing a counting action.",
+    "act sing_stage unclear at frames 437-487: The character is holding a microphone but is not visibly singing."
+  ]
 }

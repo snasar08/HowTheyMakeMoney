@@ -1,0 +1,210 @@
+name: Films
+
+# Long-form 2D films, one every 3 days (docs/FILMS.md). Daily check at 13:00 UTC: if the last delivered film
+# (content/films2d/*.json "status": "delivered", "posted_at") is >= 3 New York days old (or none) and a film with
+# "status": "ready" exists (lowest id < 900), it is rendered on 20 machines, stitched, thumbnailed, released as
+# `film-NNN`, optionally uploaded to YouTube (repo variable FILM_UPLOAD=youtube, private + publishAt 17:00 ET) and
+# marked delivered on main.
+# Dry run (workflow_dispatch dry=true, or a push to branch `films-dry`): renders into the prerelease `films-dry`,
+# never uploads, never marks anything delivered. Ids 900+ are internal and never run.
+
+on:
+  schedule:
+    - cron: "0 13 * * *"
+  workflow_dispatch:
+    inputs:
+      dry:
+        description: "Dry run: render into prerelease films-dry, no upload, nothing marked delivered"
+        type: boolean
+        default: false
+      file:
+        description: "Optional: render this film json (e.g. content/films2d/test/tiny.json) instead of the queue"
+        type: string
+        default: ""
+      force:
+        description: "Ignore the 3-day cadence (still needs a ready film)"
+        type: boolean
+        default: false
+  push:
+    branches: ["films-dry"]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: films
+  cancel-in-progress: false
+
+env:
+  FILM_DRY: ${{ inputs.dry == true || github.ref == 'refs/heads/films-dry' }}
+
+jobs:
+  due:
+    runs-on: ubuntu-latest
+    outputs:
+      go: ${{ steps.due.outputs.go }}
+      file: ${{ steps.due.outputs.file }}
+      id: ${{ steps.due.outputs.id }}
+      publish_at: ${{ steps.due.outputs.publish_at }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Unit checks (due logic, 900+ guard)
+        run: python -m unittest tests.test_films
+      - name: due?
+        id: due
+        env:
+          FILM_FILE: ${{ inputs.file }}
+          FILM_FORCE: ${{ inputs.force == true }}
+        run: |
+          python -m pipeline.films due | tee due.json
+          python - <<'PY'
+          import json
+          d = json.load(open("due.json"))
+          print(("::notice title=films::DUE: " if d["go"] else "::notice title=films::not due: ") + d["why"])
+          PY
+
+  plan:
+    needs: due
+    if: needs.due.outputs.go == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -q numpy
+      - run: |
+          mkdir -p fp
+          python -m pipeline.film2d plan "${{ needs.due.outputs.file }}" fp/film.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: film-plan
+          path: fp/
+          retention-days: 2
+
+  frames:
+    needs: [due, plan]
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: actions/cache@v4
+        with:
+          path: |
+            toon/node_modules
+            ~/.npm
+          key: toon-npm-${{ hashFiles('toon/package.json', 'toon/package-lock.json') }}
+      - run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq libnss3 libdbus-1-3 libatk1.0-0 libgbm-dev libxrandr2 libxkbcommon-dev libxfixes3 libxcomposite1 libxdamage1 libatk-bridge2.0-0 libpango-1.0-0 libcairo2 libcups2 || true
+          sudo apt-get install -y -qq libasound2t64 || sudo apt-get install -y -qq libasound2 || true
+      - uses: actions/download-artifact@v4
+        with:
+          name: film-plan
+          path: fp
+      - working-directory: toon
+        run: |
+          [ -d node_modules/remotion ] || npm install --no-audit --no-fund 2>&1 | tail -3
+          npx remotion browser ensure 2>&1 | tail -1
+          CONCURRENCY=2 node scripts/frames.mjs Film2D ../fp/film.json ../frames/film ${{ matrix.shard }} 20 1
+      - uses: actions/upload-artifact@v4
+        with:
+          name: film-frames-${{ matrix.shard }}
+          path: frames/
+          retention-days: 2
+
+  make:
+    needs: [due, frames]
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      FILM_UPLOAD: ${{ vars.FILM_UPLOAD || 'release' }}
+      YTC_CLIENT_ID: ${{ secrets.YTC_CLIENT_ID }}
+      YTC_CLIENT_SECRET: ${{ secrets.YTC_CLIENT_SECRET }}
+      YTC_REFRESH_TOKEN: ${{ secrets.YTC_REFRESH_TOKEN }}
+      FILE: ${{ needs.due.outputs.file }}
+      FILM_ID: ${{ needs.due.outputs.id }}
+      PUBLISH_AT: ${{ needs.due.outputs.publish_at }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: command -v ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg)
+      - run: pip install -q numpy pillow
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: film-frames-*
+          path: frames
+          merge-multiple: true
+      - name: Stitch MP4 + thumbnail
+        run: |
+          mkdir -p out
+          python -m pipeline.film2d make "$FILE" frames/film "out/$FILM_ID.mp4"
+          # designed thumbnail (rendered from the film's "thumbs" and checked before "ready") wins; else a frame of the film
+          if [ -f "content/films2d/$FILM_ID-thumb.jpg" ]; then cp "content/films2d/$FILM_ID-thumb.jpg" "out/$FILM_ID-thumb.jpg"
+          else python -m pipeline.films thumb "out/$FILM_ID.mp4" "out/$FILM_ID-thumb.jpg"; fi
+          python -m pipeline.films notes "$FILE" out/notes.md
+          # teaser Short (9:16, ~25-30 s) for the Shorts lane; NOT posted anywhere yet (only once films go to YouTube)
+          python -m pipeline.teaser "$FILE" "out/$FILM_ID.mp4" "out/$FILM_ID-teaser.mp4" || echo "::warning title=teaser::teaser cut failed (not blocking)"
+          ls -la out
+      - name: Scene sheet (warn only)
+        continue-on-error: true
+        run: |
+          mkdir -p sheets
+          python -m pipeline.scenesheet "out/$FILM_ID.mp4" sheets || echo "::warning title=films scenesheet::scenesheet failed on the 16:9 film (not blocking)"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: film-scenesheet
+          path: sheets/
+          retention-days: 7
+          if-no-files-found: ignore
+      - name: Dry run release (films-dry)
+        if: env.FILM_DRY == 'true'
+        run: |
+          gh release view films-dry --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1 || gh release create films-dry --repo "$GITHUB_REPOSITORY" --title "Film dry runs" --notes "Dry-run renders of the films pipeline. Nothing here is posted." --prerelease
+          gh release upload films-dry --repo "$GITHUB_REPOSITORY" "out/$FILM_ID.mp4" "out/$FILM_ID-thumb.jpg" $(ls out/$FILM_ID-teaser.mp4 2>/dev/null) --clobber
+      - name: Release film-NNN
+        if: env.FILM_DRY != 'true'
+        id: rel
+        run: |
+          NUM=$(echo "$FILM_ID" | grep -o '^[0-9]*')
+          [ -n "$NUM" ] && [ "$NUM" -lt 900 ] || { echo "::error::film id must be 001-899"; exit 1; }
+          TAG="film-$NUM"
+          TITLE=$(python -c "import json,sys;print(json.load(open(sys.argv[1]))['title'])" "$FILE")
+          if gh release view "$TAG" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            gh release edit "$TAG" --repo "$GITHUB_REPOSITORY" --title "$TITLE" --notes-file out/notes.md
+          else
+            gh release create "$TAG" --repo "$GITHUB_REPOSITORY" --title "$TITLE" --notes-file out/notes.md
+          fi
+          gh release upload "$TAG" --repo "$GITHUB_REPOSITORY" "out/$FILM_ID.mp4" "out/$FILM_ID-thumb.jpg" $(ls out/$FILM_ID-teaser.mp4 2>/dev/null) --clobber
+          echo "url=https://github.com/$GITHUB_REPOSITORY/releases/tag/$TAG" >> "$GITHUB_OUTPUT"
+      - name: Upload to YouTube (only FILM_UPLOAD=youtube; never fails the job)
+        if: env.FILM_DRY != 'true'
+        id: yt
+        continue-on-error: true
+        run: python -m pipeline.films upload "$FILE" "out/$FILM_ID.mp4" "out/$FILM_ID-thumb.jpg" "$PUBLISH_AT"
+      - name: Mark delivered and commit to main
+        if: env.FILM_DRY != 'true'
+        run: |
+          if [ "$GITHUB_REF" != "refs/heads/main" ]; then
+            echo "::warning title=films::not on main ($GITHUB_REF): film released but NOT marked delivered"
+            exit 0
+          fi
+          python -m pipeline.films mark "$FILE" "$PUBLISH_AT" "${{ steps.rel.outputs.url }}" "${{ steps.yt.outputs.yt_url }}"
+          git config user.name "shorts-bot"
+          git config user.email "shorts-bot@users.noreply.github.com"
+          git add "$FILE"
+          git diff --cached --quiet || git commit -m "Delivered film $FILM_ID"
+          git pull --rebase --quiet && git push

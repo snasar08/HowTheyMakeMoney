@@ -1,6 +1,6 @@
 """Music + sound effects for the flat 2D silent films (Nov 19). Everything is synthesized with numpy, nothing to license.
 
-Style target = the "Day One" films measured in C:/Users/rsn/tools/dayone-breakdown (DISCIPLINE 8atK0pF4oJY, DOPAMINE, ROOTS):
+Style target: quiet, sparse synthesized score.
 96 BPM (beat 0.625 s), F pedal drone + sparse piano, ticking clock 0.5 s -> 0.25 s, "silence then slam" on flashes,
 swish-before-thud punches, riser -> hit, warm piano arpeggio finale, boom on the title, last 0.5 s silent.
 
@@ -443,7 +443,7 @@ PROG_HOPE = [[53, 57, 60], [48, 52, 55], [50, 53, 57], [46, 50, 53]]
 ARP_DARK = [[62, 65, 69, 74], [58, 62, 65, 70], [60, 65, 69, 72], [60, 64, 67, 72]]
 ARP_HOPE = [[65, 69, 72, 77], [64, 67, 72, 76], [62, 65, 69, 74], [62, 65, 70, 74]]
 
-# per section: pad level, sub-drone level, event level (relative; calibrated against the DISCIPLINE loudness curve)
+# per section: pad level, sub-drone level, event level
 SUB_K = {"drone": 0.45}      # sub-drone scale per section tag (default 0.35): the reference bass is much lighter than our first mix
 _CFG: dict = {}              # optional per-film music identity (film keys bpm, pedal, prog_dark, prog_hope, arp_dark, arp_hope, arp_pattern); empty = the replica sound
 _ENV: dict = {}              # optional film keys audio_hi / audio_air: [[t, mult], ...] time envelopes for the upper voices / shimmer
@@ -733,7 +733,7 @@ def integrated_lufs(x: np.ndarray) -> float:
 
 
 def short_term(x: np.ndarray, win: float = 3.0, hop: float = 2.0) -> list[tuple[float, float]]:
-    """[(window end time, LUFS)] for a sliding window (3 s = EBU short-term; 4 s to match the DISCIPLINE breakdown)"""
+    """[(window end time, LUFS)] for a sliding window (3 s = EBU short-term)"""
     return [(round(i * hop + win, 1), float(v)) for i, v in enumerate(_lufs(_blocks(x, win, hop)))]
 
 

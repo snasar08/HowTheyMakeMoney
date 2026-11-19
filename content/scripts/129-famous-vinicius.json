@@ -7,7 +7,7 @@
   "hook_style": "surprise",
   "title_style": "number",
   "theme": "bold_bright",
-  "status": "delivered",
+  "status": "ready",
   "score": 92,
   "title": "The £38 Million 16-Year-Old",
   "name_card": "Vinícius Júnior",
@@ -329,26 +329,5 @@
       "title": "Wikipedia: Vinícius Júnior",
       "url": "https://en.wikipedia.org/wiki/Vin%C3%ADcius_J%C3%BAnior"
     }
-  ],
-  "delivered": {
-    "mode": "buffer",
-    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-129-famous-vinicius",
-    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-129-famous-vinicius/129-famous-vinicius.mp4",
-    "post_at": "2026-11-19T12:00:00-05:00",
-    "buffer_post": "6afde9cd144d89f0a5b50593",
-    "buffer_status": "scheduled",
-    "rendered_at": "2026-11-18T18:09:17.864791+00:00",
-    "seconds": 26.52,
-    "eyes": {
-      "score": 8,
-      "problems": [
-        "The caption 'milton pounds for a' is misspelled (should be 'million').",
-        "The caption 'but the could not' is misspelled (should be 'but he could not').",
-        "The caption 'see a teenager play' is grammatically awkward in context."
-      ],
-      "best_fix": "Correct the spelling errors in the captions ('million' and 'he') to maintain professional quality for the target audience.",
-      "model": "gemini-3.1-flash-lite",
-      "acts": null
-    }
-  }
+  ]
 }
