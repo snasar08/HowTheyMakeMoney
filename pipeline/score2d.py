@@ -343,7 +343,7 @@ SFX = {
     "thud": (s_thud, 0.9, 0.0, "start"), "hit": (s_thud, 0.9, 0.0, "start"),
     "punch": (None, 0.0, 0.0, "punch"), "ping": (s_ping, 0.30, 0.15, "start"), "buzz": (s_buzz, 0.35, 0.0, "start"),
     "ring": (s_ring, 0.30, 0.0, "start"), "lowbatt": (s_lowbatt, 0.28, 0.0, "start"), "powerdown": (s_powerdown, 0.35, 0.0, "start"),
-    "riser": (s_riser, 0.50, 0.0, "end"), "slam": (s_slam, 1.05, 0.0, "start"), "steps": (s_steps, 0.55, 0.0, "start"),
+    "riser": (s_riser, 0.50, 0.0, "end"), "slam": (s_slam, 1.7, 0.0, "start"), "steps": (s_steps, 0.55, 0.0, "start"),
     "whoosh": (s_whoosh, 0.40, 0.0, "start"), "page": (s_page, 0.40, 0.0, "start"), "bounce": (s_bounce, 0.65, 0.0, "start"),
     "crowd": (s_crowd, 0.30, 0.0, "start"), "coin": (s_coin, 0.30, 0.2, "start"), "register": (s_register, 0.45, 0.0, "start"),
     "heart": (s_heart, 0.9, 0.0, "start"), "bell": (lambda: s_ping(1200.0, 1.2), 0.30, 0.0, "start"),
@@ -442,10 +442,10 @@ ARP_DARK = [[62, 65, 69, 74], [58, 62, 65, 70], [60, 65, 69, 72], [60, 64, 67, 7
 ARP_HOPE = [[65, 69, 72, 77], [64, 67, 72, 76], [62, 65, 69, 74], [62, 65, 70, 74]]
 
 # per section: pad level, sub-drone level, event level (relative; calibrated against the DISCIPLINE loudness curve)
-LEVEL = {"drone": dict(pad=0.55, sub=0.50, ev=0.8), "tick": dict(pad=0.55, sub=0.50, ev=0.9),
-         "pulse96": dict(pad=0.55, sub=0.75, ev=1.0), "montage": dict(pad=0.45, sub=1.25, ev=1.35),
-         "slam": dict(pad=0.45, sub=1.05, ev=1.2), "finale": dict(pad=0.75, sub=0.0, ev=0.9),
-         "title": dict(pad=0.80, sub=0.20, ev=1.0), "silent": dict(pad=0, sub=0, ev=0)}
+LEVEL = {"drone": dict(pad=0.80, sub=0.73, ev=1.16), "tick": dict(pad=0.80, sub=0.73, ev=1.30),
+         "pulse96": dict(pad=0.80, sub=1.09, ev=1.45), "montage": dict(pad=0.38, sub=1.05, ev=1.14),
+         "slam": dict(pad=0.38, sub=0.90, ev=1.0), "finale": dict(pad=1.0, sub=0.0, ev=1.2),
+         "title": dict(pad=1.35, sub=0.30, ev=0.70), "silent": dict(pad=0, sub=0, ev=0)}
 
 
 def _ramp(n: int, a: int, b: int) -> np.ndarray:
@@ -460,24 +460,28 @@ def _ramp(n: int, a: int, b: int) -> np.ndarray:
 
 
 def _pad(t0: float, t1: float, prog: list, gain: float, bright: float) -> np.ndarray:
-    """soft chord pad (2, n): one chord per 2.5 s bar, bars cross-fade; absolute-time phases so equal notes join cleanly"""
+    """soft chord pad (2, n): one chord per 2.5 s bar, neighbouring bars cross-fade linearly; absolute-time phases so equal
+    notes join cleanly"""
     n = int((t1 - t0) * SR)
-    tt = _t(n) + t0
     out = np.zeros((2, n), np.float32)
-    ramp = np.hanning(int(0.9 * SR) | 1).astype(np.float32)
-    ramp /= ramp.sum()
-    for k in range(int(np.ceil((t1 - t0) / BAR))):
-        w = np.zeros(n, np.float32)
-        w[int(k * BAR * SR):int(min(t1 - t0, (k + 1) * BAR) * SR)] = 1
-        w = np.convolve(w, ramp, "same")           # smooth edges: neighbouring bars cross-fade
-        w[:int(0.1 * SR)] = np.where(k == 0, np.linspace(0, 1, int(0.1 * SR)) * w[:int(0.1 * SR)], w[:int(0.1 * SR)])
+    f = int(0.45 * SR)
+    nb = int(np.ceil((t1 - t0) / BAR))
+    for k in range(nb):
+        c0 = int(k * BAR * SR)
+        c1 = n if k == nb - 1 else int((k + 1) * BAR * SR)
+        i0, i1 = max(0, c0 - f), min(n, c1 + f)
+        idx = np.arange(i0, i1)
+        up = np.ones(len(idx)) if k == 0 else np.clip((idx - (c0 - f)) / (2 * f), 0, 1)           # first bar starts at full level
+        down = np.ones(len(idx)) if k == nb - 1 else np.clip(((c1 + f) - idx) / (2 * f), 0, 1)    # last bar ends at full level
+        w = up * down
+        tt = idx / SR + t0
         for note in prog[k % len(prog)]:
-            f = _mid(note)
+            fr = _mid(note)
             for j, det in enumerate((-0.0016, 0.0016)):      # slight detune left/right = width
-                ph = 2 * np.pi * f * (1 + det) * tt
-                s = np.sin(ph) + 0.35 * np.sin(2 * ph) + bright * (0.18 * np.sin(3 * ph) + 0.1 * np.sin(5 * ph))
-                out[j] += s * w * 0.11
-    out *= (1 + 0.06 * np.sin(2 * np.pi * 0.2 * tt)).astype(np.float32)     # slow breathing
+                ph = 2 * np.pi * fr * (1 + det) * tt
+                sg = np.sin(ph) + 0.35 * np.sin(2 * ph) + bright * (0.18 * np.sin(3 * ph) + 0.1 * np.sin(5 * ph))
+                out[j, i0:i1] += (sg * w * 0.11).astype(np.float32)
+    out *= (1 + 0.06 * np.sin(2 * np.pi * 0.2 * (_t(n) + t0))).astype(np.float32)     # slow breathing
     return out * gain
 
 
