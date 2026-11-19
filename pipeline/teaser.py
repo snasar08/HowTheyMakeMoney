@@ -17,8 +17,6 @@ import sys
 import tempfile
 from pathlib import Path
 
-from PIL import Image, ImageDraw, ImageFont
-
 ROOT = Path(__file__).resolve().parent.parent
 FONT = ROOT / "assets" / "fonts" / "InterDisplay-Black.otf"
 W, H, SW, SH = 1080, 1920, 1080, 608   # whole film width: any zoom cuts the DAY label and edge characters (tried Nov 19)
@@ -46,7 +44,7 @@ def window(film: dict) -> tuple[float, float, str]:
     return mid - 12.5, mid + 12.5, hook
 
 
-def _wrap(d: ImageDraw.ImageDraw, text: str, font, width: int) -> list[str]:
+def _wrap(d, text: str, font, width: int) -> list[str]:
     lines, cur = [], ""
     for w in text.split():
         nxt = (cur + " " + w).strip()
@@ -59,6 +57,7 @@ def _wrap(d: ImageDraw.ImageDraw, text: str, font, width: int) -> list[str]:
 
 
 def overlay(hook: str, out: Path) -> None:
+    from PIL import Image, ImageDraw, ImageFont  # here, not at the top: the films "due" job tests window() without Pillow
     im = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     d = ImageDraw.Draw(im)
     big = ImageFont.truetype(str(FONT), 88)
