@@ -127,7 +127,7 @@ const camOf = (s: Shot2, f: number, chars: CharState) => {
     const from = cm?.from ?? def.c, push = cm?.push ?? (cm?.from ? 0 : def.push);
     cx = from[0]; cy = from[1]; z = from[2] * (1 + (push / 100) * tl);
     const hero = s.set === "stairs" && !cm?.from ? chars.find((q) => q.c.stairs && !q.c.look?.monster) : undefined;
-    if (hero) { z = 1.2; cx = hero.x + 140 / z; cy = hero.y - 70 / z; }
+    if (hero) { z = 1.0; cx = hero.x + 160 / z; cy = hero.y - 160 / z; }
   }
   for (const [at, amp] of s.shake ?? []) { const k = tl - at; if (k >= 0 && k < 0.5) { const d = amp * (1 - k / 0.5); cx += Math.sin(k * 90) * d; cy += Math.cos(k * 77) * d; } }
   return { cx, cy, z };
@@ -310,6 +310,7 @@ export const Film2D: React.FC = () => {
       <AbsoluteFill style={{ background: `radial-gradient(ellipse at 50% 50%, rgba(0,0,0,0) 52%, rgba(0,0,0,${dark}) 100%)` }} />
       {s.grade === "sunset" && <AbsoluteFill style={{ opacity: gAmt, background: "radial-gradient(ellipse at 50% 88%, rgba(255,190,90,0.34) 0%, rgba(255,120,50,0.0) 55%), linear-gradient(to bottom, rgba(70,30,60,0.22) 0%, rgba(255,110,50,0.20) 62%, rgba(255,150,70,0.30) 100%)" }} />}
       {s.grade === "rain" && <><AbsoluteFill style={{ background: `rgba(40,70,120,${0.16 * gAmt})` }} /><Rain f={f} amt={gAmt} /></>}
+      {s.arg?.warm ? <AbsoluteFill style={{ background: `radial-gradient(ellipse at 18% 4%, rgba(190,110,40,${0.55 * s.arg.warm}) 0%, rgba(140,80,30,${0.22 * s.arg.warm}) 45%, rgba(0,0,0,0) 80%)` }} /> : null}
       {s.arg?.embers ? <Embers tl={tlS} n={s.arg.embers} speed={s.arg.emberSpeed ?? 1} /> : null}
       {burstK >= 0 && burstK < 26 && <Burst k={burstK} x={s.arg?.burstX ?? 640} y={s.arg?.burstY ?? 300} n={s.arg?.burstN ?? 28} />}
       {flash > 0 && <AbsoluteFill style={{ background: "#fff", opacity: flash }} />}

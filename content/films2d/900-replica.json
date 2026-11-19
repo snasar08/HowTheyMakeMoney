@@ -62,7 +62,8 @@
      "x": 720,
      "pose": "lie",
      "bed": true,
-     "expr": "sleep"
+     "expr": "sleep",
+     "scale": 0.7
     }
    ],
    "sfx": [
@@ -100,7 +101,8 @@
      "x": 720,
      "pose": "lie",
      "bed": true,
-     "expr": "tired"
+     "expr": "tired",
+     "scale": 0.7
     }
    ],
    "say": [
@@ -144,7 +146,8 @@
      "x": 720,
      "pose": "lie",
      "bed": true,
-     "expr": "sleep"
+     "expr": "sleep",
+     "scale": 0.7
     }
    ],
    "fadeOut": 6,
@@ -327,7 +330,8 @@
      "x": 720,
      "pose": "lie",
      "bed": true,
-     "expr": "tired"
+     "expr": "tired",
+     "scale": 1.0
     }
    ],
    "sfx": []
@@ -384,7 +388,8 @@
      "x": 720,
      "pose": "lie",
      "bed": true,
-     "expr": "tired"
+     "expr": "tired",
+     "scale": 0.7
     }
    ],
    "sfx": []
@@ -410,7 +415,8 @@
      "x": 720,
      "pose": "lie",
      "bed": true,
-     "expr": "sad"
+     "expr": "sad",
+     "scale": 1.0
     }
    ],
    "sfx": []
@@ -433,7 +439,7 @@
    "chars": [
     {
      "look": "hero",
-     "x": 1060,
+     "x": 874,
      "pose": "stand",
      "expr": "tired",
      "dir": -1
@@ -494,7 +500,8 @@
      "x": 720,
      "pose": "lie",
      "bed": true,
-     "expr": "sad"
+     "expr": "sad",
+     "scale": 1.0
     }
    ],
    "sfx": []
@@ -519,7 +526,8 @@
      "x": 720,
      "pose": "lie",
      "bed": true,
-     "expr": "sad"
+     "expr": "sad",
+     "scale": 0.7
     }
    ],
    "sfx": []
@@ -1069,7 +1077,11 @@
      "delay": 0.1,
      "until": 3.2,
      "size": 96,
-     "shatter": 2.45
+     "shatter": 2.45,
+     "at": [
+      640,
+      128
+     ]
     },
     {
      "t": "quit.",
@@ -1077,7 +1089,11 @@
      "delay": 3.0,
      "until": 5.6,
      "size": 96,
-     "shatter": 2.05
+     "shatter": 2.05,
+     "at": [
+      640,
+      128
+     ]
     },
     {
      "t": "nobody cares.",
@@ -1085,7 +1101,11 @@
      "delay": 5.4,
      "until": 8.1,
      "size": 96,
-     "shatter": 2.15
+     "shatter": 2.15,
+     "at": [
+      640,
+      128
+     ]
     },
     {
      "t": "it's not working.",
@@ -1093,7 +1113,11 @@
      "delay": 7.75,
      "until": 10.6,
      "size": 80,
-     "shatter": 2.3
+     "shatter": 2.3,
+     "at": [
+      640,
+      128
+     ]
     }
    ],
    "sfx": [
@@ -1143,7 +1167,8 @@
      "x": 720,
      "pose": "lie",
      "bed": true,
-     "expr": "angry"
+     "expr": "angry",
+     "scale": 1.0
     }
    ],
    "sfx": []
@@ -1587,7 +1612,8 @@
    "day": "DAY 270",
    "arg": {
     "embers": 36,
-    "emberSpeed": 0.6
+    "emberSpeed": 0.6,
+    "warm": 0.6
    },
    "chars": [
     {
@@ -1611,7 +1637,8 @@
    "arg": {
     "bloom": 0.0,
     "embers": 36,
-    "emberSpeed": 0.6
+    "emberSpeed": 0.6,
+    "warm": 1.0
    },
    "chars": [
     {
@@ -1650,8 +1677,18 @@
      "look": "hero2",
      "x": 430,
      "y": 566,
-     "pose": "summit",
-     "expr": "determined"
+     "pose": "stand",
+     "expr": "determined",
+     "poseAt": [
+      [
+       5.3,
+       "summit"
+      ],
+      [
+       5.75,
+       "raise"
+      ]
+     ]
     }
    ],
    "say": [
@@ -1659,14 +1696,14 @@
      "t": "Nobody is coming to save you.",
      "delay": 1.65,
      "until": 4.55,
-     "size": 53,
+     "size": 42,
      "bold": true
     },
     {
      "t": "So save yourself.",
-     "delay": 5.65,
+     "delay": 5.4,
      "until": 11.6,
-     "size": 64,
+     "size": 66,
      "bold": true
     }
    ],

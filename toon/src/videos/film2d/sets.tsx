@@ -29,14 +29,14 @@ const wrap = (v: number, m: number) => ((v % m) + m) % m;
 export const SET_CAMS: Record<string, { c: [number, number, number]; push: number }> = {
   bedroom: { c: [655, 445, 1.35], push: 1.2 },
   bedroomdawn: { c: [655, 445, 1.35], push: 0 },
-  couch: { c: [620, 337, 1.1], push: 1.4 },
-  desk: { c: [660, 337, 1.1], push: 1.0 },
-  street: { c: [686, 429, 1.3], push: 0.5 },
+  couch: { c: [697, 448, 1.27], push: 1.0 },
+  desk: { c: [690, 337, 1.1], push: 1.0 },
+  street: { c: [686, 429, 1.15], push: 0.4 },
   mirror: { c: [650, 421, 1.4], push: 1.0 },
   gym: { c: [642, 435, 1.2], push: 0 },
   stairs: { c: [760, 330, 1.2], push: 0 },
   hill: { c: [640, 446, 0.7], push: -0.6 },
-  fridge: { c: [700, 420, 1.3], push: 0.6 },
+  fridge: { c: [700, 420, 1.15], push: 0.3 },
   calendar: { c: [640, 292, 1.4], push: 0.5 },
   court: { c: [860, 445, 1.35], push: 0.6 },
   store: { c: [640, 445, 1.35], push: 0.6 },
@@ -114,8 +114,8 @@ export const Alarm: React.FC<{ x: number; y: number; s?: number; text?: string; 
       <rect x={-50} y={-26} width={100} height={44} rx={10} fill="#0f0f12" stroke={INK2} strokeWidth={2.4} />
       <rect x={-17} y={-34} width={34} height={9} rx={4.5} fill="#2a2b32" stroke={INK2} strokeWidth={1.6} /><text x={0} y={-27} textAnchor="middle" fontFamily={HAND} fontWeight={700} fontSize={5.5} fill="#8a8d98">SNOOZE</text>
       <g transform="translate(0 -4)" opacity={ring ? (Math.floor(ring / 0.15) % 2 ? 0.45 : 1) : 1}><SevenSeg text={text} /></g>
-      {ring ? <g stroke="#ff4a3a" strokeWidth={3} strokeLinecap="round" opacity={0.6 + 0.4 * Math.sin(ring * 60)}>
-        <path d="M -64 -28 l -12 -10 M -62 -14 l -16 -2 M -64 0 l -12 8 M 64 -28 l 12 -10 M 62 -14 l 16 -2 M 64 0 l 12 8" />
+      {ring ? <g stroke="#ff4a3a" strokeWidth={2} strokeLinecap="round" opacity={Math.floor(ring / 0.15) % 2 ? 0.35 : 1}>
+        <path d="M -76 -36 l 7 9 M -68 -36 l 7 9 M -60 -36 l 7 9 M 76 -36 l -7 9 M 68 -36 l -7 9 M 60 -36 l -7 9" />
       </g> : null}
     </g>
   );
@@ -188,8 +188,8 @@ const BookStack: React.FC<{ x: number; y: number }> = ({ x, y }) => (
 );
 const Desk: React.FC<{ x: number }> = ({ x }) => (
   <g>
-    <rect x={x - 160} y={FLOOR - 112} width={320} height={16} rx={5} fill={F3} {...L} />
-    <path d={`M ${x - 144} ${FLOOR - 96} L ${x - 144} ${FLOOR} M ${x + 144} ${FLOOR - 96} L ${x + 144} ${FLOOR}`} {...L} strokeWidth={5} />
+    <rect x={x - 230} y={FLOOR - 112} width={460} height={16} rx={5} fill={F3} {...L} />
+    <path d={`M ${x - 214} ${FLOOR - 96} L ${x - 214} ${FLOOR} M ${x + 214} ${FLOOR - 96} L ${x + 214} ${FLOOR}`} {...L} strokeWidth={5} />
   </g>
 );
 const Chair: React.FC<{ x: number; dir?: number }> = ({ x, dir = 1 }) => (
@@ -263,8 +263,8 @@ const Bag: React.FC<{ x: number; t: number; hit?: number; speed?: number; hit0?:
 export const Speed: React.FC<{ x: number; y: number; v?: number; s?: number }> = ({ x, y, v = 1, s = 1 }) => (
   <g opacity={Math.min(1, v)} transform={`translate(${x} ${y}) scale(${s})`} stroke="#e6c63a" strokeLinecap="round" fill="none">
     {Array.from({ length: 12 }, (_, i) => {
-      const yy = (i - 5.5) * 5 + rnd(i) * 6, len = 150 + rnd(i * 3) * 230, sl = -((i - 5.5) / 5.5) * 0.3 + (rnd(i * 5) - 0.5) * 0.06;
-      return <path key={i} d={`M ${-14 - rnd(i * 7) * 30} ${yy} l ${-len} ${len * sl}`} strokeWidth={1.3 + rnd(i * 2) * 1.6} opacity={0.8} />;
+      const yy = (i - 5.5) * 5 + rnd(i) * 6, len = 330 + rnd(i * 3) * 300, sl = -((i - 5.5) / 5.5) * 0.3 + (rnd(i * 5) - 0.5) * 0.06;
+      return <path key={i} d={`M ${-14 - rnd(i * 7) * 30} ${yy} l ${-len} ${len * sl}`} strokeWidth={1.8 + rnd(i * 2) * 1.8} opacity={0.85} />;
     })}
   </g>
 );
@@ -289,21 +289,20 @@ const City: React.FC<{ off: number }> = ({ off }) => {
           return on ? <rect key={j} x={x + 14 + (j % 2) * (w / 2 - 4)} y={FLOOR - h + 30 + Math.floor(j / 2) * 44} width={9} height={9} fill="#8a6f48" opacity={0.5 + rnd(j + i) * 0.3} /> : null;
         })}
       </g>);
-      x += w + 8 + rnd(seed + i * 9) * 44;
+      x += w + 14 + rnd(seed + i * 9) * 70;
     }
     return <g key={key} transform={`translate(${-off * k} 0)`}>{els}</g>;
   };
   return <g>
-    {layer(0.12, 1, 120, 230, 70, 120, "#20212a", 0.55, 0.12, "far")}
-    {layer(0.3, 500, 100, 210, 80, 130, "#262731", 0.7, 0.14, "mid")}
-    {layer(0.55, 900, 60, 120, 90, 150, "#2c2d38", 0.8, 0.1, "near")}
+    {layer(0.15, 1, 130, 230, 70, 120, "#1f2029", 0.4, 0.1, "far")}
+    {layer(0.45, 900, 90, 190, 80, 130, "#2a2b36", 0.78, 0.13, "near")}
   </g>;
 };
 const StreetLamps: React.FC<{ off: number; t: number }> = ({ off }) => (
   <g transform={`translate(${-wrap(off, 600)} 0)`}>
     {Array.from({ length: 9 }, (_, i) => i * 300 - 600).map((x) => <g key={x}>
-      <Glow x={x + 22} y={FLOOR - 176} r={80} c="#ffb35a" o={0.75} />
-      <ellipse cx={x + 10} cy={FLOOR + 30} rx={110} ry={34} fill="#ffb35a" opacity={0.2} filter="url(#soft8)" />
+      <Glow x={x + 22} y={FLOOR - 176} r={62} c="#ffb35a" o={0.6} />
+      <ellipse cx={x + 10} cy={FLOOR + 30} rx={110} ry={30} fill="#ffb35a" opacity={0.13} filter="url(#soft8)" />
       <path d={`M ${x} ${FLOOR} L ${x} ${FLOOR - 176} q 0 -14 20 -14`} {...L} strokeWidth={3} stroke="#7a7d8a" fill="none" />
       <circle cx={x + 22} cy={FLOOR - 172} r={5.5} fill="#ffe2ae" />
     </g>)}
@@ -321,18 +320,14 @@ export const Stairs: React.FC = () => {
   let x = 200, y = FLOOR;
   const j = (i: number, k: number, a: number) => (rnd(i * 13 + k * 5 + 3) - 0.5) * 2 * a;
   for (let i = 0; i < 26; i++) {
-    d += ` Q ${(x + 12 + j(i, 1, 6)).toFixed(1)} ${(y + j(i, 2, 4.5)).toFixed(1)} ${(x + 24 + j(i, 3, 3)).toFixed(1)} ${(y + j(i, 4, 2.2)).toFixed(1)}`;
-    d += ` Q ${(x + 36 + j(i, 5, 5)).toFixed(1)} ${(y + j(i, 6, 3.5)).toFixed(1)} ${x + 44} ${y}`;
-    x += 44;
-    d += ` Q ${(x + j(i, 7, 5)).toFixed(1)} ${(y - 8 + j(i, 8, 4)).toFixed(1)} ${(x + j(i, 9, 1.6)).toFixed(1)} ${y - 15}`;
-    d += ` Q ${(x + j(i, 10, 4)).toFixed(1)} ${(y - 22 + j(i, 11, 3)).toFixed(1)} ${x} ${y - 26}`;
-    y -= 26;
+    d += ` C ${(x + 30 + j(i, 1, 3)).toFixed(1)} ${(y + 6 + j(i, 2, 2)).toFixed(1)}, ${(x + 14 + j(i, 3, 3)).toFixed(1)} ${(y - 32 + j(i, 4, 2)).toFixed(1)}, ${x + 44} ${y - 26}`;
+    x += 44; y -= 26;
   }
   d += ` L 2000 -400 L 2000 ${FLOOR + 400} L -200 ${FLOOR + 400} Z`;
   return <path d={d} fill="#1d1d22" stroke="#575a6c" strokeWidth={2.6} strokeLinejoin="round" />;
 };
 /** feet position on the stairs at progress u (0..1) */
-export const stairAt = (u: number) => { const i = u * 22; return { x: 200 + i * 44 + 22, y: FLOOR - Math.floor(i) * 26 }; };
+export const stairAt = (u: number) => { const i = u * 22; return { x: 200 + i * 44 + 22, y: FLOOR - i * 26 }; };
 
 /** rolling ridge through points (quadratic smoothing), closed at the bottom */
 const ridge = (pts: [number, number][], bottom = 1500) => {
@@ -343,7 +338,7 @@ const ridge = (pts: [number, number][], bottom = 1500) => {
 };
 const Hills: React.FC<{ glow: number; hx: number; t: number }> = ({ glow, hx, t }) => {
   const F = FLOOR;
-  const peak = `M -900 ${F + 262} C -300 ${F + 235}, ${hx - 300} ${F + 62}, ${hx - 100} ${F + 13} Q ${hx} ${F + 2} ${hx + 100} ${F + 15} C ${hx + 400} ${F + 62}, ${hx + 800} ${F + 150}, 2300 ${F + 196}`;
+  const peak = `M -900 ${F + 215} C -300 ${F + 190}, ${hx - 400} ${F + 120}, ${hx - 150} ${F + 38} Q ${hx} ${F - 8} ${hx + 150} ${F + 50} C ${hx + 240} ${F + 110}, ${hx + 320} ${F + 230}, ${hx + 440} ${F + 330} L 2300 ${F + 336}`;
   return (
     <g>
       <rect x={-1400} y={-900} width={4000} height={2500} fill="url(#sumSky)" opacity={glow} />
@@ -420,6 +415,16 @@ const Skyline: React.FC<{ x: number; y: number }> = ({ x, y }) => (
 /** kitchen fridge: tall rounded box, freezer door split, handles, a note + magnet; open = door ajar with a light spill */
 const Fridge: React.FC<{ x: number; open?: number; t: number }> = ({ x, open = 0, t }) => {
   const top = FLOOR - 390, w = 200, hw = w / 2, fz = top + 128, fl = open > 0 ? open * (0.9 + 0.1 * Math.sin(t * 9)) : 0;
+  if (open >= 0.99) return (   // reference look: the door swung open, the whole inside lit pale blue-grey, a big cool glow
+    <g>
+      <Glow x={x + 40} y={FLOOR - 200} r={620} c="#7aa8ff" o={0.26} /><Glow x={x + 20} y={FLOOR - 200} r={330} c="#ffffff" o={0.16} />
+      <rect x={x - hw} y={top} width={w} height={390} rx={14} fill="#5d6678" stroke="#97a0b4" strokeWidth={3} />
+      <rect x={x - hw + 10} y={top + 10} width={w - 20} height={370} rx={8} fill="#6b7488" opacity={0.7} />
+      <path d={`M ${x - hw + 6} ${top + 125} L ${x + hw - 6} ${top + 125} M ${x - hw + 6} ${top + 248} L ${x + hw - 6} ${top + 248}`} stroke="#a4adc0" strokeWidth={3} />
+      <path d={`M ${x + hw} ${top + 2} L ${x + hw + 74} ${top + 34} L ${x + hw + 74} ${FLOOR - 22} L ${x + hw} ${FLOOR - 4} Z`} fill="#3b4150" stroke="#8b93a6" strokeWidth={3} strokeLinejoin="round" />
+      <path d={`M ${x + hw + 60} ${top + 120} L ${x + hw + 60} ${top + 250}`} stroke="#b3bbcc" strokeWidth={5} strokeLinecap="round" opacity={0.7} />
+    </g>
+  );
   return (
     <g>
       {fl > 0 && <g opacity={Math.min(1, fl)}>
@@ -490,7 +495,7 @@ export const SetView: React.FC<{ name: string; t: number; scroll?: number; arg?:
     case "bedroom": return <g><Wedge x={930} y={258} w={140} /><Window x={930} y={258} /><Floor /><Nightstand x={332} /><Bed x={420} /><Alarm x={376} y={FLOOR - 78 - 9} s={0.7} text={arg.clock ? fmtClock(arg.clock) : "5:00"} ring={arg.ring ? t : 0} /></g>;
     case "bedroomdawn": return <g><Wedge x={930} y={258} w={140} col="#e08aa0" o={Math.min(1, 0.5 + t / 4)} /><Window x={930} y={258} dawn={t / 4} /><Floor /><Nightstand x={332} /><Bed x={420} /><Alarm x={376} y={FLOOR - 78 - 9} s={0.7} text={arg.clock ? fmtClock(arg.clock) : "5:00"} /></g>;
     case "couch": return <g><Floor />{!arg.nolamp && <FloorLamp x={330} on={!!arg.lamp} />}<Couch x={680} /></g>;
-    case "desk": return <g><WallClock x={730} y={296} t={t} /><Floor /><Chair x={560} dir={1} /><Desk x={700} /><BookStack x={812} y={FLOOR - 112} /><DeskLamp x={812} y={FLOOR - 154} /></g>;
+    case "desk": return <g><WallClock x={730} y={296} t={t} /><Floor /><Chair x={560} dir={1} /><Desk x={680} /><BookStack x={860} y={FLOOR - 112} /><DeskLamp x={860} y={FLOOR - 154} /></g>;
     case "street": { const off = scroll ?? t * 240; return <g><City off={off} /><StreetLamps off={off} t={t} /><Floor /><RoadDashes off={off} />
       {Array.from({ length: 7 }, (_, i) => <path key={i} d={`M ${wrap(rnd(i * 3) * 1800 - t * (1100 + i * 90), 1800) - 300} ${FLOOR - 330 + rnd(i) * 300} l ${110 + rnd(i * 5) * 160} 0`} stroke="#fff" strokeWidth={1.4} strokeLinecap="round" opacity={0.12} />)}</g>; }
     case "mirror": return <g><Floor /><Mirror x={760} crack={arg.crack ?? 0} tint={arg.tint ?? 0} hue={arg.tintHue ?? 210} /></g>;

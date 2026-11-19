@@ -85,7 +85,7 @@ export const pose = (name: string, t: number, punchPeriod = 1.25): Pose => {
     case "desk":    // sitting at a desk, writing
       return { hipY: 44, lean: 18, head: 16, lF: [84, -84], lB: [80, -80], aF: [70 + tw(ti, 0.5) * 6, 40], aB: [60, 40] };
     case "sleepdesk": case "deskslump":   // face down on the desk, one arm reaching forward
-      return { hipY: 44 + b * 0.2, lean: 60, head: 22, headY: 4, lF: [84, -84], lB: [80, -80], aF: [96, -6], aB: [60, 40] };
+      return { hipY: 44 + b * 0.2, lean: 50, head: 10, headY: 0, lF: [84, -84], lB: [80, -80], aF: [96, -6], aB: [60, 40] };
     case "punch": {   // wind-up 10 f, extension 3 f, hold 4 f, return 12 f, then guard (one bar = 2.5 s in the ref; default 1.25 s,
       // per beat arg.punch = period in seconds, e.g. 2.5; the motion itself always takes 28.5 f, the rest of the period is the guard)
       const f = (t % Math.max(0.95, punchPeriod)) * 30;
@@ -104,6 +104,8 @@ export const pose = (name: string, t: number, punchPeriod = 1.25): Pose => {
     }
     case "cheer":
       return { hipY: 74 + Math.abs(tw(t, 0.6)) * 8, lean: -4, aF: [170 + tw(t, 0.6) * 8, -10], aB: [-170 - tw(t, 0.6) * 8, 10], lF: [6, 0], lB: [-6, 0], head: -8 };
+    case "raise":     // one arm straight up (victory, ref 130.5 s)
+      return { hipY: 74 + b * 0.3, lean: 0, head: -4, aF: [174, -4], aB: [-6, 10], lF: [3, 0], lB: [-3, 0] };
     case "point": case "summit":   // standing tall, one arm straight out in front
       return { hipY: 74 + b * 0.3, lean: 2, head: -2, aF: [92 + b, 0], aB: [-6, 10], lF: [4, 0], lB: [-6, 0] };
     case "facepalm":
