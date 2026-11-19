@@ -1,0 +1,282 @@
+{
+ "id": "rigtest",
+ "title": "rig test",
+ "cast": {
+  "hero": {},
+  "band": {
+   "band": true
+  },
+  "voice": {
+   "monster": true
+  }
+ },
+ "beats": [
+  {
+   "s": 1,
+   "set": "bedroom",
+   "chars": [
+    {
+     "look": "hero",
+     "x": 720,
+     "pose": "lie",
+     "bed": true,
+     "expr": "tired"
+    }
+   ]
+  },
+  {
+   "s": 1,
+   "set": "couch",
+   "chars": [
+    {
+     "look": "hero",
+     "x": 640,
+     "y": 500,
+     "pose": "phonesit",
+     "expr": "tired"
+    },
+    {
+     "look": "voice",
+     "x": 900,
+     "y": 500,
+     "pose": "peek",
+     "dir": -1,
+     "scale": 0.7
+    }
+   ],
+   "things": [
+    {
+     "name": "phone",
+     "hand": 0
+    }
+   ]
+  },
+  {
+   "s": 1,
+   "set": "desk",
+   "chars": [
+    {
+     "look": "hero",
+     "x": 560,
+     "y": 510,
+     "pose": "deskslump",
+     "expr": "tired"
+    },
+    {
+     "look": "voice",
+     "x": 420,
+     "y": 510,
+     "pose": "lurk",
+     "scale": 0.8
+    }
+   ]
+  },
+  {
+   "s": 1,
+   "set": "mirror",
+   "chars": [
+    {
+     "look": "hero",
+     "x": 540,
+     "pose": "standsad",
+     "expr": "sad"
+    },
+    {
+     "look": "voice",
+     "x": 760,
+     "y": 540,
+     "pose": "monster",
+     "scale": 0.8,
+     "dir": -1
+    }
+   ]
+  },
+  {
+   "s": 1,
+   "set": "spot",
+   "chars": [
+    {
+     "look": "hero",
+     "x": 640,
+     "pose": "fetal",
+     "expr": "sad"
+    }
+   ],
+   "arg": {
+    "x": 640
+   }
+  },
+  {
+   "s": 1,
+   "set": "bedroomdawn",
+   "chars": [
+    {
+     "look": "band",
+     "x": 560,
+     "pose": "bedge",
+     "expr": "angry"
+    },
+    {
+     "look": {"ghost": true},
+     "x": 300,
+     "pose": "monster",
+     "scale": 0.5
+    }
+   ]
+  },
+  {
+   "s": 1,
+   "set": "street",
+   "chars": [
+    {
+     "look": "band",
+     "x": 640,
+     "pose": "run",
+     "expr": "determined"
+    }
+   ],
+   "scroll": [
+    0,
+    300
+   ]
+  },
+  {
+   "s": 1,
+   "set": "void",
+   "chars": [
+    {
+     "look": "band",
+     "x": 640,
+     "pose": "pushup",
+     "expr": "tired"
+    }
+   ]
+  },
+  {
+   "s": 1,
+   "set": "gym",
+   "chars": [
+    {
+     "look": "band",
+     "x": 560,
+     "pose": "punch",
+     "expr": "angry"
+    }
+   ]
+  },
+  {
+   "s": 1,
+   "set": "stairs",
+   "chars": [
+    {
+     "look": "band",
+     "x": 0,
+     "pose": "climb",
+     "expr": "determined",
+     "stairs": [
+      0.2,
+      0.3
+     ]
+    },
+    {
+     "look": "voice",
+     "x": 0,
+     "pose": "loom",
+     "dir": -1,
+     "scale": 1.0,
+     "stairs": [
+      0.75,
+      0.75
+     ]
+    }
+   ],
+   "cam": {
+    "from": [
+     760,
+     300,
+     0.9
+    ]
+   }
+  },
+  {
+   "s": 1,
+   "set": "hill",
+   "chars": [
+    {
+     "look": "band",
+     "x": 640,
+     "y": 515,
+     "pose": "summit",
+     "expr": "smile"
+    }
+   ]
+  },
+  {
+   "s": 1,
+   "set": "court",
+   "chars": [
+    {
+     "look": "hero",
+     "x": 700,
+     "pose": "shoot",
+     "expr": "determined"
+    }
+   ]
+  },
+  {
+   "s": 1,
+   "set": "court",
+   "chars": [
+    {
+     "look": "hero",
+     "x": 600,
+     "pose": "dribble",
+     "expr": "determined"
+    }
+   ],
+   "things": [
+    {
+     "name": "ball",
+     "hand": 0
+    }
+   ]
+  },
+  {
+   "s": 1,
+   "set": "store",
+   "chars": [
+    {
+     "look": "hero",
+     "x": 520,
+     "pose": "count",
+     "expr": "grin"
+    }
+   ]
+  },
+  {
+   "s": 1,
+   "set": "void",
+   "chars": [
+    {
+     "look": "voice",
+     "x": 700,
+     "y": 520,
+     "pose": "hand",
+     "scale": 1.0
+    }
+   ]
+  },
+  {
+   "s": 1,
+   "set": "void",
+   "chars": [
+    {
+     "look": "hero",
+     "x": 640,
+     "pose": "walk",
+     "expr": "neutral"
+    }
+   ]
+  }
+ ]
+}

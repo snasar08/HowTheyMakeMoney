@@ -1,12 +1,20 @@
 // Nov 19 (Sam: "replicate almost exactly ... the look the movement"): the flat 2D film character.
-// A soft cream bean with thick rounded limbs and a thin grey hand-drawn outline, seen side-on.
-// Our own rig and proportions; drawn as SVG capsules so it renders in a few ms per frame.
+// Style target = the Day One Films hero (breakdown: C:\Users\rsn\tools\dayone-breakdown\8atK0pF4oJY.md sections 2-3):
+//  - head + torso are ONE cream egg (no neck, head ~1/3 of the height, head a little wider than the body),
+//  - limbs are uniform rubber-hose tubes (~8.6% of the height) with round ends, no hands / feet,
+//  - flat fill, ~3 px near-black outline (scale-relative), far limbs a shade darker,
+//  - tiny dot eyes, under-eye bags, short bar brows, short line mouth; angry/effort = grit teeth,
+//  - idle motion updates on threes (10 fps), action motion every frame (30 fps).
+// Villain (look.monster): pure black humanoid, big round head, red rim glow, red slit eyes + thin red grin.
+// Everything is SVG capsules/circles so it renders in a few ms per frame.
 //
 // Units: px at scale 1, origin = between the feet on the floor, y down (SVG).
 import React from "react";
 
 export type Expr = "neutral" | "smile" | "grin" | "sad" | "cry" | "angry" | "tired" | "shock" | "determined" | "scared" | "sleep";
-export type Look = { skin?: string; band?: string; cap?: string; tie?: string; monster?: boolean };
+/** band / headband: true or a colour = red headband with two tails; monster = black villain; ghost = tiny dim red outline only (defeated);
+ *  size = monster height factor (default 1.4); grin:false = no red grin on the monster. */
+export type Look = { skin?: string; band?: string | boolean; headband?: boolean; cap?: string; tie?: string; monster?: boolean; ghost?: boolean; size?: number; grin?: boolean };
 
 /** a pose: angles in degrees, 0 = limb hanging straight down, + = towards the way he faces */
 export type Pose = {
@@ -19,186 +27,295 @@ export type Pose = {
   lF?: [number, number]; lB?: [number, number];   // legs front / back: [hip, knee]
   rot?: number;       // whole body rotation (lying = 90)
   lift?: number;      // raise the whole body (lying on the floor: half the body thickness)
+  hand?: boolean;     // villain's giant arm reaching in from the top-right corner (x,y = where the fist ends up when reach = 1)
+  reach?: number;     // 0..1 how far the giant arm has come in
 };
 
-const LEG = [40, 38], ARM = [32, 30], TORSO = 66, HEAD_R = 40, LIMB_W = 22, BODY_W = 50;
-export const OUTLINE = "#8f8c86";
+const LEG = [38, 36], ARM = [34, 34];
+const SH = 64;          // shoulder distance from the hip along the torso
+const HD = 44;          // shoulder -> head centre
+const LIMB = 18;        // tube width (8.6% of ~215)
+const LINE = 2.3;       // outline half-width each side (scale-relative, ~3 px at the ref's size)
+export const OUTLINE = "#8f8c86";   // grey outline of the props / furniture (sets.tsx)
+export const SKIN = "#DCD8CA", SKIN_FAR = "#b9b5a6", INK = "#101010", RED = "#EF4E3A";
 
 const rad = (d: number) => (d * Math.PI) / 180;
 const S = Math.sin, C = Math.cos;
 const tw = (t: number, p: number, ph = 0) => S((t / p + ph) * 2 * Math.PI);
+const q10 = (t: number) => Math.floor(t * 10 + 1e-6) / 10;   // idle motion updates on threes (10 fps)
+const sm = (x: number) => x * x * (3 - 2 * x);
+const cl = (x: number, a = 0, b = 1) => Math.max(a, Math.min(b, x));
 
 /** a pose for name at time t (seconds, looping motions) */
 export const pose = (name: string, t: number): Pose => {
-  const b = tw(t, 3.2) * 1.2;   // breathing
+  const ti = q10(t), b = tw(ti, 3.2) * 1.2;   // breathing, on threes
   switch (name) {
-    case "walk": {
-      const p = 1.0, s = tw(t, p), s2 = tw(t, p, 0.5);
-      return { hipY: 74 + Math.abs(tw(t, p / 2)) * 3, lean: 4, lF: [s * 26, Math.max(0, -s) * 30], lB: [-s * 26, Math.max(0, s) * 30], aF: [-s * 22, 14], aB: [s * 22, 14], head: 2 };
+    case "walk": {   // 20 frame cycle, 2% bob
+      const p = 20 / 30, s = tw(t, p), c = tw(t, p, 0.25);
+      return { hipY: 72 + Math.abs(c) * 4, lean: 4, lF: [s * 28, -Math.max(0, c) * 38], lB: [-s * 28, -Math.max(0, -c) * 38], aF: [-s * 24, 16], aB: [s * 24, 16], head: 2 };
     }
     case "trudge": {
-      const p = 1.4, s = tw(t, p);
-      return { hipY: 72, lean: 12, head: 14, headY: 4, lF: [s * 16, Math.max(0, -s) * 20], lB: [-s * 16, Math.max(0, s) * 20], aF: [-s * 8, 6], aB: [s * 8, 6] };
+      const p = 1.4, s = tw(t, p), c = tw(t, p, 0.25);
+      return { hipY: 72, lean: 12, head: 14, headY: 4, lF: [s * 16, -Math.max(0, c) * 24], lB: [-s * 16, -Math.max(0, -c) * 24], aF: [-s * 8, 6], aB: [s * 8, 6] };
     }
-    case "run": {
-      const p = 0.62, s = tw(t, p);
-      return { hipY: 70 + Math.abs(tw(t, p / 2)) * 6, lean: 16, lF: [s * 42, 20 + Math.max(0, -s) * 60], lB: [-s * 42, 20 + Math.max(0, s) * 60], aF: [-s * 50, 80], aB: [s * 50, 80], head: 4 };
+    case "run": {    // side view, forward lean, 12 frame stride (ref), in place
+      const p = 0.4, s = tw(t, p), c = tw(t, p, 0.25);
+      return { hipY: 68 + Math.abs(c) * 5, lean: 16, lF: [s * 50, -(18 + Math.max(0, c) * 72)], lB: [-s * 50, -(18 + Math.max(0, -c) * 72)], aF: [-s * 55, 92], aB: [s * 55, 92], head: 2 };
     }
     case "sit":
-      return { hipY: 44 + b * 0.3, lean: 4, lF: [80, -80], lB: [76, -76], aF: [20, 30], aB: [16, 30], head: 4 };
+      return { hipY: 44 + b * 0.3, lean: 4, lF: [82, -82], lB: [78, -78], aF: [22, 34], aB: [16, 34], head: 4 };
+    case "bedge":   // on the edge of the bed, hands on knees, head a little down
+      return { hipY: 44 + b * 0.3, lean: 10, head: 10, lF: [82, -82], lB: [78, -78], aF: [38, 30], aB: [30, 30] };
     case "slump":   // sitting on the edge, head hanging
       return { hipY: 44, lean: 22, head: 26, headY: 6, lF: [78, -78], lB: [72, -72], aF: [30, 40], aB: [26, 40] };
-    case "hug":     // sitting on the floor hugging his knees
-      return { hipY: 16, lean: 18, head: 20, headY: 4, lF: [130, -150], lB: [124, -146], aF: [70, 40], aB: [64, 40] };
+    case "hug": case "fetal":    // on the floor, knees up, arms round them, head down
+      return { hipY: 17 + b * 0.2, lean: 30, head: 24, headY: 2, lF: [128, -152], lB: [122, -148], aF: [20, 100], aB: [8, 100] };
     case "lie":     // on his back (in bed): the bed draws the blanket over him
       return { rot: -90, hipY: 74, lean: 0, aF: [6, 0], aB: [-6, 0], lF: [0, 0], lB: [0, 0], head: -6 + b };
     case "floor":   // face down on the floor, worn out
       return { rot: 86, lift: 24, hipY: 74, head: -40, aF: [150, 20], aB: [-10, 0], lF: [4, 0], lB: [-4, 6] };
     case "phone":
-      return { hipY: 74, lean: 6 + b * 0.3, head: 14, lF: [2, 0], lB: [-2, 0], aF: [70, 110], aB: [10, 20] };
-    case "phonesit":
-      return { hipY: 44, lean: 10, head: 16, lF: [80, -80], lB: [76, -76], aF: [62, 116], aB: [24, 30] };
+      return { hipY: 74, lean: 6 + b * 0.3, head: 14, lF: [2, 0], lB: [-2, 0], aF: [80, 90], aB: [10, 20] };
+    case "phonesit": case "sofaphone":   // slouched back on the couch, legs forward, phone by his face
+      return { hipY: 40 + b * 0.3, lean: -14, head: 20, lF: [64, -6], lB: [58, -4], aF: [80, 92], aB: [24, 40] };
     case "desk":    // sitting at a desk, writing
-      return { hipY: 44, lean: 18, head: 16, lF: [84, -84], lB: [80, -80], aF: [70 + tw(t, 0.5) * 6, 40], aB: [60, 40] };
-    case "sleepdesk":
-      return { hipY: 44, lean: 52, head: 40, lF: [84, -84], lB: [80, -80], aF: [96, 50], aB: [90, 50] };
-    case "punch": {
-      const p = 0.7, k = Math.max(0, tw(t, p)) ** 0.6, k2 = Math.max(0, -tw(t, p)) ** 0.6;
-      return { hipY: 70, lean: 10, lF: [26, -10], lB: [-22, 10], aF: [80 + k * 10, 90 - k * 90], aB: [60 + k2 * 30, 100 - k2 * 100], head: 4 };
+      return { hipY: 44, lean: 18, head: 16, lF: [84, -84], lB: [80, -80], aF: [70 + tw(ti, 0.5) * 6, 40], aB: [60, 40] };
+    case "sleepdesk": case "deskslump":   // face down on the desk, one arm reaching forward
+      return { hipY: 44 + b * 0.2, lean: 60, head: 22, headY: 4, lF: [84, -84], lB: [80, -80], aF: [96, -6], aB: [60, 40] };
+    case "punch": {   // wind-up 10 f, extension 3 f, hold 4 f, return 12 f, then guard (one bar = 2.5 s in the ref; here 1.25 s)
+      const f = ((t % 1.25) / 1.25) * 37.5;
+      const wind = f < 10 ? sm(f / 10) : f < 12.5 ? 1 - sm((f - 10) / 2.5) : 0;
+      const ext = f >= 10 && f < 12.5 ? sm((f - 10) / 2.5) : f < 16.5 && f >= 12.5 ? 1 : f >= 16.5 && f < 28.5 ? 1 - sm((f - 16.5) / 12) : 0;
+      const hit = ext;
+      return { hipY: 68 + hit * 2, lean: 10 + hit * 8 - wind * 4, head: 4, lF: [30, -30 - hit * 8], lB: [-24, 8], aF: [38 + hit * 58 - wind * 10, 128 - hit * 128 + wind * 12], aB: [34, 122 + wind * 10] };
     }
-    case "pushup": {
+    case "pushup": case "crawl": {
       const k = (tw(t, 1.1) + 1) / 2;
       return { rot: 76, lift: 46, hipY: 74, head: -60, aF: [90 - k * 30, -60 + k * 60], aB: [86 - k * 30, -60 + k * 60], lF: [0, 0], lB: [0, 0], hipX: 0 };
     }
-    case "climb": {
-      const p = 0.9, s = tw(t, p);
-      return { hipY: 66, lean: 22, lF: [30 + s * 30, 40 + Math.max(0, s) * 40], lB: [10 - s * 30, 40 + Math.max(0, -s) * 40], aF: [-s * 40 + 20, 70], aB: [s * 40 + 20, 70], head: 0 };
+    case "climb": case "stairs": {   // 19 frame cycle = one step
+      const p = 19 / 30, s = tw(t, p), c = tw(t, p, 0.25);
+      return { hipY: 64 + Math.abs(c) * 4, lean: 22, lF: [34 + s * 30, -(30 + Math.max(0, c) * 34)], lB: [34 - s * 30, -(30 + Math.max(0, -c) * 34)], aF: [-s * 40 + 20, 70], aB: [s * 40 + 20, 70], head: 0 };
     }
     case "cheer":
       return { hipY: 74 + Math.abs(tw(t, 0.6)) * 8, lean: -4, aF: [170 + tw(t, 0.6) * 8, -10], aB: [-170 - tw(t, 0.6) * 8, 10], lF: [6, 0], lB: [-6, 0], head: -8 };
-    case "point":
-      return { hipY: 74, lean: 2, aF: [96, 0], aB: [6, 10], lF: [4, 0], lB: [-4, 0] };
+    case "point": case "summit":   // standing tall, one arm straight out in front
+      return { hipY: 74 + b * 0.3, lean: 2, head: -2, aF: [92 + b, 0], aB: [-6, 10], lF: [4, 0], lB: [-6, 0] };
     case "facepalm":
       return { hipY: 74, lean: 10, head: 20, headY: 3, aF: [80, 120], aB: [8, 10], lF: [2, 0], lB: [-2, 0] };
     case "shoot": {   // basketball jump shot loop: dip, rise, release
       const u = (t % 1.6) / 1.6, up = u < 0.3 ? -u / 0.3 : u < 0.55 ? (u - 0.3) / 0.25 : 1 - (u - 0.55) / 0.45;
-      const air = Math.max(0, up) * 18;
-      return { hipY: 74 - Math.max(0, -up) * 10 + air, lean: -2, lF: [Math.max(0, -up) * 30, -Math.max(0, -up) * 50], lB: [Math.max(0, -up) * 26, -Math.max(0, -up) * 46], aF: [100 + Math.max(0, up) * 60, -60 + Math.max(0, up) * 50], aB: [90 + Math.max(0, up) * 60, -60 + Math.max(0, up) * 50], head: -10 };
+      const dip = Math.max(0, -up), air = Math.max(0, up);
+      return { hipY: 74 - dip * 12 + air * 18, lean: -2, lF: [dip * 34, -dip * 60], lB: [dip * 28, -dip * 52], aF: [96 + air * 60, 20 - air * 30], aB: [88 + air * 56, 24 - air * 30], head: -10 - air * 6 };
     }
-    case "dribble":
-      return { hipY: 68, lean: 14, lF: [24, -20], lB: [-20, 10], aF: [30 + tw(t, 0.45) * 14, 30], aB: [-10, 20], head: 0 };
+    case "dribble": {
+      const k = tw(t, 0.45);
+      return { hipY: 66, lean: 14, lF: [26, -34], lB: [-20, -6], aF: [24 + k * 12, 18 - k * 10], aB: [-14, 28], head: 0 };
+    }
     case "count":   // counting money in his hands
-      return { hipY: 74, lean: 8, head: 18, aF: [60, 70 + tw(t, 0.35) * 10], aB: [50, 80], lF: [2, 0], lB: [-2, 0] };
+      return { hipY: 74, lean: 8, head: 18, aF: [58, 84 + tw(ti, 0.35) * 8], aB: [48, 92], lF: [2, 0], lB: [-2, 0] };
     case "kneel":
       return { hipY: 40, lean: 14, head: 16, lF: [90, -90], lB: [0, -100], aF: [30, 20], aB: [20, 20] };
     case "reach":   // reaching out to an alarm clock / shelf in front of him
       return { hipY: 74, lean: 20, aF: [100, 0], aB: [20, 10], lF: [10, 0], lB: [-10, 0] };
     case "stretch":
       return { hipY: 74, lean: -6, aF: [175, 0], aB: [-175, 0], lF: [4, 0], lB: [-4, 0], head: -10 };
+    case "sad": case "standsad":   // standing, head hung, arms limp
+      return { hipY: 74 + b * 0.3, lean: 6, head: 20 + b, headY: 3, lF: [3, 0], lB: [-3, 0], aF: [4, 12], aB: [-3, 10] };
     case "monster":   // the inner voice: tall, still, slight sway
-      return { hipY: 74, lean: 4 + tw(t, 2.6) * 3, head: 6, aF: [20 + tw(t, 2.1) * 6, 20], aB: [-12, 20], lF: [4, 0], lB: [-4, 0] };
+      return { hipY: 74, lean: 4 + tw(ti, 2.6) * 3, head: 6, aF: [20 + tw(ti, 2.1) * 6, 20], aB: [-12, 20], lF: [4, 0], lB: [-4, 0] };
     case "loom":      // monster leaning over him, arms out
       return { hipY: 74, lean: 18, head: 14, aF: [96 + tw(t, 1.7) * 10, 30], aB: [70, 40], lF: [8, 0], lB: [-8, 0] };
+    case "peek":      // monster peeking over a sofa / chair back, one hand up
+      return { hipY: 62, lean: 20, head: 10, aF: [150 + tw(ti, 1.3) * 12, 40], aB: [20, 30], lF: [6, 0], lB: [-6, 0] };
+    case "lurk":      // monster standing behind him, hand on the chair
+      return { hipY: 74, lean: 12, head: 8, aF: [70, 10], aB: [-6, 20], lF: [6, 0], lB: [-6, 0] };
+    case "hand": {    // giant arm reaching in from the top-right corner (x,y = fist at full reach)
+      const r = 0.55 + 0.45 * sm((tw(t, 3.4) + 1) / 2);
+      return { hand: true, reach: r };
+    }
     default:          // stand
       return { hipY: 74 + b * 0.5, lean: 1, head: 2 + b, lF: [3, 0], lB: [-3, 0], aF: [6 + b, 8], aB: [-6, 8] };
   }
 };
 
-const limb = (x: number, y: number, a0: number, a1: number, L: number[], dir: number) => {
-  // + angle = forward = +x when facing right; 0 = straight down
+type Pt = { x: number; y: number };
+
+/** the skeleton of a pose: hip, shoulder, head centre */
+const geo = (p: Pose, dir: number) => {
+  const hx = p.hipX ?? 0, hy = -(p.hipY ?? 74), lean = p.lean ?? 0;
+  const sh: Pt = { x: hx + S(rad(lean)) * SH * dir, y: hy - C(rad(lean)) * SH };
+  const ha = rad(lean + (p.head ?? 0) * 0.8);
+  const hc: Pt = { x: sh.x + S(ha) * HD * dir, y: sh.y - C(ha) * HD + (p.headY ?? 0) };
+  return { hx, hy, sh, hc, hang: lean + (p.head ?? 0) * 0.8 };
+};
+
+/** rubber hose: the elbow / knee is a smooth bend (rounded corner), not a hinge */
+const hose = (x: number, y: number, a0: number, a1: number, L: number[], dir: number) => {
   const x1 = x + S(rad(a0)) * L[0] * dir, y1 = y + C(rad(a0)) * L[0];
   const x2 = x1 + S(rad(a0 + a1)) * L[1] * dir, y2 = y1 + C(rad(a0 + a1)) * L[1];
-  return `M ${x} ${y} L ${x1} ${y1} L ${x2} ${y2}`;
+  const k = Math.min(0.5, 0.2 + Math.abs(a1) / 260);
+  const ax = x1 + (x - x1) * k, ay = y1 + (y - y1) * k, bx = x1 + (x2 - x1) * k, by = y1 + (y2 - y1) * k;
+  return `M ${x} ${y} L ${ax} ${ay} Q ${x1} ${y1} ${bx} ${by} L ${x2} ${y2}`;
 };
 
 /** hand position of the front arm (to attach phones, money, balls) */
 export const handOf = (p: Pose, dir: number) => {
-  const hx = (p.hipX ?? 0), hy = -(p.hipY ?? 74), lean = rad(p.lean ?? 0);
-  const sx = hx + S(lean) * (TORSO - 8) * dir, sy = hy - C(lean) * (TORSO - 8);
-  const [a0, a1] = p.aF ?? [0, 0];
-  const x1 = sx + S(rad(a0)) * ARM[0] * dir, y1 = sy + C(rad(a0)) * ARM[0];
+  const g = geo(p, dir), [a0, a1] = p.aF ?? [0, 0];
+  const x1 = g.sh.x + S(rad(a0)) * ARM[0] * dir, y1 = g.sh.y + C(rad(a0)) * ARM[0];
   return { x: x1 + S(rad(a0 + a1)) * ARM[1] * dir, y: y1 + C(rad(a0 + a1)) * ARM[1] };
 };
 
-const Face: React.FC<{ e: Expr; dir: number; t: number; monster?: boolean }> = ({ e, dir, t, monster }) => {
-  const ex = 13 * dir, blink = (t % 4.3) > 4.18;
-  if (monster) {   // two red slits
-    return <g>
-      <path d={`M ${ex - 16} -6 L ${ex - 2} -1`} stroke="#ff2a1a" strokeWidth={5} strokeLinecap="round" />
-      <path d={`M ${ex + 4} -1 L ${ex + 18} -6`} stroke="#ff2a1a" strokeWidth={5} strokeLinecap="round" />
+const WHITE = "#f4f2ea";
+
+const Face: React.FC<{ e: Expr; f: number; t: number; band: boolean; mon?: boolean; grin?: boolean }> = ({ e, f, t, band, mon, grin = true }) => {
+  if (mon) {   // two red slit eyes (scowl) + a thin red grin
+    return <g stroke="#ff3a2a" strokeLinecap="round" fill="none">
+      <path d={`M ${f * 6} -9 L ${f * 19} -2`} strokeWidth={4} />
+      <path d={`M ${f * 26} -2 L ${f * 38} -9`} strokeWidth={4} />
+      {grin && e !== "sad" && e !== "neutral" ? <path d={`M ${f * 8} 14 Q ${f * 24} 28 ${f * 38} 12`} strokeWidth={2.6} /> : null}
     </g>;
   }
-  const eyeY = -4, ink = "#1c1b1a", eyes = [ex - 11, ex + 11];
-  const lid = e === "tired" || e === "sleep" ? 1 : 0;
-  const eye = (x: number, k: number) => blink || e === "sleep"
-    ? <path key={k} d={`M ${x - 5} ${eyeY} q 5 4 10 0`} stroke={ink} strokeWidth={2.6} fill="none" strokeLinecap="round" />
-    : <g key={k}>
-      <ellipse cx={x} cy={eyeY} rx={e === "shock" || e === "scared" ? 6.5 : 5} ry={e === "shock" || e === "scared" ? 7.5 : 6} fill={ink} />
-      <circle cx={x + 1.6} cy={eyeY - 2} r={1.6} fill="#fff" opacity={0.85} />
-      {lid ? <path d={`M ${x - 7} ${eyeY - 1} L ${x + 7} ${eyeY - 1}`} stroke={ink} strokeWidth={2.4} strokeLinecap="round" /> : null}
+  const blink = (t % 4.3) > 4.2 && e !== "angry" && e !== "determined";
+  const ex = [f * 9, f * 25], ey = 1, mx = f * 17, my = 16;
+  const grit = e === "angry" || e === "determined";
+  const closed = e === "sleep" || blink;
+  const lidded = e === "tired" || e === "sad" || e === "cry";
+  const big = e === "shock" || e === "scared";
+  const sw = { stroke: INK, strokeLinecap: "round" as const, strokeLinejoin: "round" as const, fill: "none" };
+  const eye = (x: number, i: number) => {
+    if (closed) return <path key={i} d={`M ${x - 5} ${ey - 1} q 5 4.5 10 0`} strokeWidth={2.2} {...sw} />;
+    if (big) return <g key={i}><circle cx={x} cy={ey} r={5.5} fill="#fff" stroke={INK} strokeWidth={1.6} /><circle cx={x + f * 0.6} cy={ey} r={1.9} fill={INK} /></g>;
+    if (grit) return <g key={i}><circle cx={x} cy={ey + 1.5} r={2.6} fill={INK} /><path d={`M ${x - 5} ${ey + 4.5} q 5 2 10 0`} strokeWidth={1.2} {...sw} /></g>;
+    return <g key={i}>
+      <circle cx={x} cy={ey + (lidded ? 1.4 : 0)} r={2.9} fill={INK} />
+      {lidded && <path d={`M ${x - 5.5} ${ey - 0.6} L ${x + 5.5} ${ey - 0.6}`} strokeWidth={2.2} {...sw} />}
+      <path d={`M ${x - 4.5} ${ey + 5.5} q 4.5 3.2 9 0`} strokeWidth={1.2} {...sw} />
     </g>;
-  const brow = (x: number, side: number) => {
-    const w = 8;
-    if (e === "angry" || e === "determined") return `M ${x - w} ${eyeY - 14 - side * 3} L ${x + w} ${eyeY - 14 + side * 3}`;
-    if (e === "sad" || e === "cry" || e === "scared" || e === "tired") return `M ${x - w} ${eyeY - 12 + side * 3} L ${x + w} ${eyeY - 12 - side * 3}`;
-    if (e === "shock") return `M ${x - w} ${eyeY - 17} q ${w} -4 ${2 * w} 0`;
-    return null;
   };
-  const mouth = {
-    neutral: `M ${ex - 7} 18 L ${ex + 7} 18`,
-    smile: `M ${ex - 8} 15 q 8 7 16 0`,
-    grin: `M ${ex - 10} 13 q 10 14 20 0 z`,
-    sad: `M ${ex - 8} 20 q 8 -7 16 0`,
-    cry: `M ${ex - 9} 21 q 9 -9 18 0`,
-    angry: `M ${ex - 9} 19 q 4 -3 9 -1 q 5 -2 9 1`,
-    determined: `M ${ex - 8} 18 L ${ex + 8} 17`,
-    tired: `M ${ex - 6} 19 q 6 -2 12 0`,
-    shock: `M ${ex - 5} 16 a 5 7 0 1 0 10 0 a 5 7 0 1 0 -10 0`,
-    scared: `M ${ex - 8} 19 q 2 -3 4 0 q 2 3 4 0 q 2 -3 4 0 q 2 3 4 0`,
-    sleep: `M ${ex - 5} 17 q 5 3 10 0`,
-  }[e];
+  const brow = (x: number, i: number) => {
+    const w = 5.5, y = -9;
+    if (e === "sad" || e === "cry" || e === "tired" || e === "scared") return <path key={"b" + i} d={`M ${x - w * f} ${y + 1.5} L ${x + w * f} ${y - 1.5}`} strokeWidth={2.6} {...sw} />;
+    if (e === "shock") return <path key={"b" + i} d={`M ${x - w * f} ${y - 5} q ${w * f} -4 ${2 * w * f} 0`} strokeWidth={2.4} {...sw} />;
+    return <path key={"b" + i} d={`M ${x - w * f} ${y} L ${x + w * f} ${y}`} strokeWidth={2.6} {...sw} />;
+  };
+  // brows: for the angry look both brows slant down towards the front (the ref hero faces the way the nose points): inner end low
+  const brows = ex.map((x, i) => {
+    const w = 5.5;
+    if (grit) {
+      // near eye (i=0, towards the back of the head) slants down towards the front, far eye mirrored: both dip towards the middle
+      const a = i === 0 ? [x - w * f, -12.5, x + w * f, -6.5] : [x - w * f, -6.5, x + w * f, -12.5];
+      return <path key={"b" + i} d={`M ${a[0]} ${a[1]} L ${a[2]} ${a[3]}`} strokeWidth={3.6} {...sw} />;
+    }
+    return brow(x, i);
+  });
+  const mouths: Record<Expr, React.ReactNode> = {
+    neutral: <path d={`M ${mx - 5} ${my} L ${mx + 5} ${my}`} strokeWidth={2.2} {...sw} />,
+    smile: <path d={`M ${mx - 6} ${my - 1} q 6 5 12 0`} strokeWidth={2.2} {...sw} />,
+    grin: <g><path d={`M ${mx - 8} ${my - 3} q 8 12 16 0 z`} fill={WHITE} stroke={INK} strokeWidth={2} strokeLinejoin="round" /><path d={`M ${mx - 6} ${my + 0.5} L ${mx + 6} ${my + 0.5}`} stroke={INK} strokeWidth={1} /></g>,
+    sad: <path d={`M ${mx - 5} ${my + 2} q 2.5 -3 5 0 q 2.5 -3 5 0`} strokeWidth={2} {...sw} />,
+    cry: <path d={`M ${mx - 6} ${my + 3} q 6 -6 12 0`} strokeWidth={2.2} {...sw} />,
+    angry: null, determined: null,
+    tired: <path d={`M ${mx - 5} ${my + 1} q 2.5 -2 5 0 q 2.5 2 5 0`} strokeWidth={2} {...sw} />,
+    shock: <ellipse cx={mx} cy={my + 1} rx={3.6} ry={4.8} fill="#2a1a1a" stroke={INK} strokeWidth={1.8} />,
+    scared: <path d={`M ${mx - 6} ${my + 1} q 2 -3 4 0 q 2 3 4 0 q 2 -3 4 0`} strokeWidth={2} {...sw} />,
+    sleep: <path d={`M ${mx - 4} ${my} q 4 2.5 8 0`} strokeWidth={2} {...sw} />,
+  };
+  const tw0 = 21, th0 = 11, tx = mx - (tw0 / 2) * 1, ty = my - 5;
+  const teeth = <g>
+    <rect x={tx} y={ty} width={tw0} height={th0} rx={3} fill={WHITE} stroke={INK} strokeWidth={2} />
+    <path d={`M ${tx + 5.2} ${ty + 0.5} v ${th0 - 1} M ${tx + 10.5} ${ty + 0.5} v ${th0 - 1} M ${tx + 15.8} ${ty + 0.5} v ${th0 - 1} M ${tx + 1} ${ty + th0 / 2} h ${tw0 - 2}`} stroke={INK} strokeWidth={1.1} />
+  </g>;
   return <g>
-    {eyes.map((x, i) => eye(x, i))}
-    {eyes.map((x, i) => { const d = brow(x, i ? -dir : dir); return d ? <path key={"b" + i} d={d} stroke={ink} strokeWidth={3} strokeLinecap="round" /> : null; })}
-    <path d={mouth} stroke={ink} strokeWidth={2.8} fill={e === "grin" ? "#3a2020" : e === "shock" ? "#2a1a1a" : "none"} strokeLinecap="round" strokeLinejoin="round" />
-    {e === "cry" && <path d={`M ${ex - 11} ${eyeY + 8} q -3 8 0 12 q 3 -4 0 -12`} fill="#8fd0ff" opacity={0.95} />}
-    {(e === "tired" || e === "scared") && <path d={`M ${-ex * 1.6} -26 q -4 7 0 10 q 4 -3 0 -10`} fill="#9fd4ff" opacity={0.9} />}
+    {ex.map((x, i) => eye(x, i))}
+    {brows}
+    {grit ? teeth : mouths[e]}
+    {grit && !band ? <path d={`M ${f * 14} -20 l ${f * 4} 3 M ${f * 14} -17 l ${f * 4} -3 M ${f * 24} -19 l ${f * 3} 2`} stroke={INK} strokeWidth={1.4} strokeLinecap="round" /> : null}
+    {e === "cry" && <path d={`M ${ex[0] - 1} ${ey + 8} q -3 8 0 12 q 3 -4 0 -12`} fill="#8fd0ff" opacity={0.95} />}
+    {e === "scared" && <path d={`M ${-f * 18} -16 q -4 7 0 10 q 4 -3 0 -10`} fill="#9fd4ff" opacity={0.9} />}
   </g>;
 };
 
+/** soft red rim glow around the villain (additive look): bright 1-2 px edge, exponential falloff */
+const MonDefs: React.FC = () => (
+  <defs>
+    <filter id="rigMonGlow" x="-90%" y="-60%" width="280%" height="220%" colorInterpolationFilters="sRGB">
+      <feMorphology in="SourceAlpha" operator="dilate" radius="2" result="d" />
+      <feFlood floodColor="#FF4A3A" result="c1" /><feComposite in="c1" in2="d" operator="in" result="rim" />
+      <feGaussianBlur in="d" stdDeviation="5" result="b1" /><feFlood floodColor="#E03020" floodOpacity="0.85" result="c2" /><feComposite in="c2" in2="b1" operator="in" result="g1" />
+      <feGaussianBlur in="d" stdDeviation="16" result="b2" /><feFlood floodColor="#B01810" floodOpacity="0.7" result="c3" /><feComposite in="c3" in2="b2" operator="in" result="g2" />
+      <feGaussianBlur in="d" stdDeviation="42" result="b3" /><feFlood floodColor="#701008" floodOpacity="0.55" result="c4" /><feComposite in="c4" in2="b3" operator="in" result="g3" />
+      <feMerge><feMergeNode in="g3" /><feMergeNode in="g2" /><feMergeNode in="g2" /><feMergeNode in="g1" /><feMergeNode in="rim" /><feMergeNode in="SourceGraphic" /></feMerge>
+    </filter>
+  </defs>
+);
+
 /** the character: x/y = feet on the floor, dir = 1 faces right */
 export const Guy: React.FC<{ p: Pose; e: Expr; dir?: number; t: number; look?: Look; scale?: number; x?: number; y?: number; dim?: number }> = ({ p, e, dir = 1, t, look = {}, scale = 1, x = 0, y = 0, dim = 0 }) => {
-  const mon = !!look.monster;
-  const skin = mon ? "#050505" : look.skin ?? "#ddd6c6";
-  const shade = mon ? "#050505" : "#bdb5a3";
-  const line = mon ? "#ff3020" : OUTLINE;
-  const hx = p.hipX ?? 0, hy = -(p.hipY ?? 74), lean = rad(p.lean ?? 0);
-  const sx = hx + S(lean) * (TORSO - 8) * dir, sy = hy - C(lean) * (TORSO - 8);
-  const nx = hx + S(lean) * (TORSO + 22) * dir, ny = hy - C(lean) * (TORSO + 22) + (p.headY ?? 0);
+  const mon = !!look.monster || !!look.ghost, ghost = !!look.ghost;
+  const sc = scale * (mon ? look.size ?? 1.4 : 1);
+  const skin = mon ? (ghost ? "#0b0b0b" : "#040404") : look.skin ?? SKIN;
+  const far = mon ? skin : SKIN_FAR;
+  const line = mon ? (ghost ? "#8a2a22" : "#040404") : INK;
+  const lw = ghost ? 1.6 : LINE;
+  const filt = mon && !ghost ? "url(#rigMonGlow)" : undefined;
+  const wrap = (kids: React.ReactNode) => <g transform={`translate(${x} ${y - (p.lift ?? 0) * scale}) scale(${sc}) rotate(${(p.rot ?? 0) * dir})`} filter={filt} opacity={(1 - dim) * (ghost ? 0.75 : 1)}>{mon && !ghost ? <MonDefs /> : null}{kids}</g>;
+
+  if (p.hand) {   // the giant arm: from off the top-right corner down to the fist at (0,0) when reach = 1
+    const r = p.reach ?? 1, off = { x: 560 * dir, y: -700 };
+    const tip = { x: (1 - r) * 120 * dir, y: -(1 - r) * 260 };
+    const el = { x: (off.x + tip.x) / 2 - 90 * dir, y: (off.y + tip.y) / 2 + 40 };
+    const arm = `M ${off.x} ${off.y} Q ${el.x} ${el.y} ${tip.x} ${tip.y}`;
+    return wrap(<g>
+      <path d={arm} stroke={line} strokeWidth={86} strokeLinecap="round" fill="none" />
+      <ellipse cx={tip.x} cy={tip.y} rx={58} ry={50} fill={skin} />
+      {[-34, -12, 12, 34].map((o, i) => <ellipse key={i} cx={tip.x - 4 * dir + o * dir * 0.3} cy={tip.y + 40 + (i % 2) * 6} rx={13} ry={22} fill={skin} />)}
+    </g>);
+  }
+
+  const g = geo(p, dir);
   const lF = p.lF ?? [0, 0], lB = p.lB ?? [0, 0], aF = p.aF ?? [0, 0], aB = p.aB ?? [0, 0];
-  const cap = (d: string, w: number, fill: string, key: string) => <g key={key}>
-    <path d={d} stroke={line} strokeWidth={w + 4.4} strokeLinecap="round" strokeLinejoin="round" fill="none" />
+  const lw2 = mon ? 15 : LIMB, aw = mon ? 13 : LIMB - 1;
+  const tube = (d: string, w: number, fill: string, key: string) => <g key={key}>
+    <path d={d} stroke={line} strokeWidth={w + lw * 2} strokeLinecap="round" strokeLinejoin="round" fill="none" />
     <path d={d} stroke={fill} strokeWidth={w} strokeLinecap="round" strokeLinejoin="round" fill="none" />
   </g>;
-  const body = `M ${hx} ${hy} L ${sx} ${sy}`;
-  const headT = `translate(${nx} ${ny - HEAD_R + 14}) rotate(${((p.head ?? 0) - (Math.abs(p.rot ?? 0) > 45 ? p.rot ?? 0 : 0)) * dir})`;   // lying: the face stays upright
-  const glow = mon ? "url(#monGlow)" : undefined;
-  return (
-    <g transform={`translate(${x} ${y - (p.lift ?? 0) * scale}) scale(${scale}) rotate(${(p.rot ?? 0) * dir})`} filter={glow} opacity={1 - dim}>
-      {cap(limb(hx, hy, lB[0], lB[1], LEG, dir), LIMB_W, shade, "lb")}
-      {cap(limb(sx, sy, aB[0], aB[1], ARM, dir), LIMB_W - 3, shade, "ab")}
-      {cap(body, BODY_W, skin, "body")}
-      {cap(limb(hx, hy, lF[0], lF[1], LEG, dir), LIMB_W, skin, "lf")}
-      <g transform={headT}>
-        <circle r={HEAD_R} fill={skin} stroke={line} strokeWidth={2.2} />
-        {!mon && <path d={`M ${-HEAD_R * 0.75 * dir} ${HEAD_R * 0.35} a ${HEAD_R} ${HEAD_R} 0 0 0 ${HEAD_R * 1.2 * dir} ${HEAD_R * 0.55}`} stroke="#c9c1af" strokeWidth={7} fill="none" opacity={0.55} />}
-        {look.band && <path d={`M ${-HEAD_R} -14 Q 0 -22 ${HEAD_R} -14`} stroke={look.band} strokeWidth={8} fill="none" strokeLinecap="round" />}
-        {look.band && <path d={`M ${-HEAD_R * dir} -14 l ${-14 * dir} 6 M ${-HEAD_R * dir} -14 l ${-16 * dir} -2`} stroke={look.band} strokeWidth={5} strokeLinecap="round" />}
-        {look.cap && <path d={`M ${-HEAD_R + 2} -12 A ${HEAD_R - 2} ${HEAD_R - 4} 0 0 1 ${HEAD_R - 2} -12 Z M ${HEAD_R * 0.3 * dir} -12 l ${30 * dir} 2`} fill={look.cap} stroke={look.cap} strokeWidth={6} strokeLinecap="round" />}
-        <Face e={e} dir={dir} t={t} monster={mon} />
-      </g>
-      {look.tie && <path d={`M ${sx} ${sy + 6} l -4 10 l 4 22 l 4 -22 z`} fill={look.tie} transform={`translate(${6 * dir} 0)`} />}
-      {cap(limb(sx, sy, aF[0], aF[1], ARM, dir), LIMB_W - 3, skin, "af")}
-    </g>
-  );
+  // the egg: a chain of circles from the hip up to the neck, then the head
+  const R0 = mon ? 19 : 28, R1 = mon ? 21 : 30, RN = mon ? 11 : 31, hrx = mon ? 40 : 35, hry = mon ? 40 : 32;
+  const ux = S(rad(p.lean ?? 0)) * dir, uy = -C(rad(p.lean ?? 0));
+  const base: Pt = { x: g.hx + ux * 14, y: g.hy + uy * 14 };
+  const circles: { x: number; y: number; r: number }[] = [];
+  const nb = 9, nn = 6;
+  for (let i = 0; i <= nb; i++) { const k = i / nb; circles.push({ x: base.x + (g.sh.x - base.x) * k, y: base.y + (g.sh.y - base.y) * k, r: R0 + (R1 - R0) * k }); }
+  for (let i = 1; i <= nn; i++) { const k = i / nn; circles.push({ x: g.sh.x + (g.hc.x - g.sh.x) * k, y: g.sh.y + (g.hc.y - g.sh.y) * k, r: R1 + (RN - R1) * sm(k) }); }
+  const hangDeg = g.hang * dir;
+  const egg = <g key="egg">
+    {circles.map((c, i) => <circle key={"o" + i} cx={c.x} cy={c.y} r={c.r + lw} fill={line} />)}
+    <ellipse cx={g.hc.x} cy={g.hc.y} rx={hrx + lw} ry={hry + lw} fill={line} transform={`rotate(${hangDeg} ${g.hc.x} ${g.hc.y})`} />
+    {circles.map((c, i) => <circle key={"f" + i} cx={c.x} cy={c.y} r={c.r} fill={skin} />)}
+    <ellipse cx={g.hc.x} cy={g.hc.y} rx={hrx} ry={hry} fill={skin} transform={`rotate(${hangDeg} ${g.hc.x} ${g.hc.y})`} />
+  </g>;
+  const lying = Math.abs(p.rot ?? 0) > 45 ? p.rot ?? 0 : 0;
+  const faceRot = (g.hang - lying) * dir;
+  const band = !mon && (!!look.headband || !!look.band);
+  const bandCol = typeof look.band === "string" ? look.band : RED;
+  const fl = Math.sin(t * 9) * 3, fl2 = Math.sin(t * 9 + 1.7) * 3;
+  const head = <g key="head" transform={`translate(${g.hc.x} ${g.hc.y}) rotate(${faceRot})`}>
+    {band && <g>
+      <path d={`M ${-dir * 32} -13 q ${-dir * 14} ${-1 + fl} ${-dir * 28} ${4 + fl2} M ${-dir * 32} -17 q ${-dir * 12} ${-5 + fl2} ${-dir * 24} ${-9 + fl}`} stroke={INK} strokeWidth={9} strokeLinecap="round" fill="none" />
+      <path d={`M ${-dir * 32} -13 q ${-dir * 14} ${-1 + fl} ${-dir * 28} ${4 + fl2} M ${-dir * 32} -17 q ${-dir * 12} ${-5 + fl2} ${-dir * 24} ${-9 + fl}`} stroke={bandCol} strokeWidth={5.5} strokeLinecap="round" fill="none" />
+      <path d={`M ${-dir * 34} -13 Q 0 -25 ${dir * 33} -13`} stroke={bandCol} strokeWidth={10.5} fill="none" />
+    </g>}
+    {look.cap && !mon && <path d={`M ${-32} -12 A 33 28 0 0 1 32 -12 Z M ${dir * 10} -12 l ${dir * 30} 2`} fill={look.cap} stroke={look.cap} strokeWidth={6} strokeLinecap="round" />}
+    {!ghost && <Face e={e} f={dir} t={t} band={band} mon={mon} grin={look.grin !== false} />}
+  </g>;
+  const farLeg = tube(hose(g.hx, g.hy, lB[0], lB[1], LEG, dir), lw2, far, "lb");
+  const farArm = tube(hose(g.sh.x, g.sh.y + 2, aB[0], aB[1], ARM, dir), aw, far, "ab");
+  const nearLeg = tube(hose(g.hx, g.hy, lF[0], lF[1], LEG, dir), lw2, skin, "lf");
+  const nearArm = tube(hose(g.sh.x, g.sh.y + 2, aF[0], aF[1], ARM, dir), aw, skin, "af");
+  return wrap(<>
+    {farLeg}{farArm}{egg}{nearLeg}{head}
+    {look.tie && !mon && <path d={`M ${g.sh.x - ux * 6 + dir * 8} ${g.sh.y - uy * 6} l -4 8 l 4 20 l 4 -20 z`} fill={look.tie} stroke={INK} strokeWidth={1.2} />}
+    {nearArm}
+  </>);
 };

@@ -20,7 +20,8 @@
      "expr": "sleep"
     }
    ],
-   "say": "Every day started the same."
+   "say": "Every day started the same.",
+   "music": "drone"
   },
   {
    "s": 1,
@@ -42,6 +43,15 @@
      "t": "just 5 more minutes",
      "red": true
     }
+   ],
+   "sfx": [
+    [
+     "alarm",
+     0.0,
+     {
+      "n": 4
+     }
+    ]
    ]
   },
   {
@@ -65,7 +75,8 @@
      "hand": 0
     }
    ],
-   "day": "DAY 12"
+   "day": "DAY 12",
+   "music": "tick"
   },
   {
    "s": 1,
@@ -122,7 +133,8 @@
      "expr": "sad"
     }
    ],
-   "say": "He believed it."
+   "say": "He believed it.",
+   "music": "pulse96"
   },
   {
    "s": 1,
@@ -179,6 +191,13 @@
      "pose": "punch",
      "expr": "angry"
     }
+   ],
+   "music": "montage",
+   "sfx": [
+    [
+     "punch",
+     0.9
+    ]
    ]
   },
   {
@@ -249,7 +268,8 @@
      "name": "ball",
      "hand": 0
     }
-   ]
+   ],
+   "music": "finale"
   },
   {
    "s": 1,
@@ -296,6 +316,12 @@
      "y": 560,
      "v": 0.7
     }
+   ],
+   "sfx": [
+    [
+     "coin",
+     0.3
+    ]
    ]
   },
   {
@@ -310,6 +336,15 @@
      "text": "5:00",
      "v": 1
     }
+   ],
+   "sfx": [
+    [
+     "riser",
+     0.95
+    ]
+   ],
+   "flash": [
+    0.95
    ]
   },
   {
@@ -319,7 +354,8 @@
     "big": "DISCIPLINE",
     "line": "Day one, or one day.",
     "cmd": "You decide."
-   }
+   },
+   "music": "title"
   }
  ],
  "thumbs": [
