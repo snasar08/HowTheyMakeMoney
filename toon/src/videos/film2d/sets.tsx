@@ -29,7 +29,7 @@ const wrap = (v: number, m: number) => ((v % m) + m) % m;
 export const SET_CAMS: Record<string, { c: [number, number, number]; push: number }> = {
   bedroom: { c: [655, 445, 1.35], push: 1.2 },
   bedroomdawn: { c: [655, 445, 1.35], push: 0 },
-  couch: { c: [697, 448, 1.27], push: 1.0 },
+  couch: { c: [697, 448, 1.15], push: 1.0 },
   desk: { c: [690, 422, 1.1], push: 1.0 },
   street: { c: [686, 429, 1.15], push: 0.4 },
   mirror: { c: [650, 421, 1.4], push: 1.0 },
