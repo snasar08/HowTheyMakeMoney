@@ -30,7 +30,7 @@ from zoneinfo import ZoneInfo
 
 TZ = ZoneInfo(os.environ.get("CHANNEL_TZ", "America/New_York"))
 # Daily posting times (local). One slot per video rendered in a run.
-SLOTS = [s.strip() for s in os.environ.get("POST_SLOTS", "12:00,18:00").split(",") if s.strip()]
+SLOTS = [s.strip() for s in os.environ.get("POST_SLOTS", "12:00,19:00").split(",") if s.strip()]
 # Nothing is rendered or delivered by the nightly run before this date (New York).
 POST_START = dt.date.fromisoformat(os.environ.get("POST_START") or "2026-10-27")
 BUFFER_API = "https://api.buffer.com"
@@ -42,6 +42,21 @@ def posting_started(now: dt.datetime | None = None) -> bool:
 
 
 MAX_PER_DAY = int(os.environ.get("MAX_PER_DAY", "2"))
+# Buffer free plan, Nov 19 2026: at most 2 YouTube posts in any rolling 24 h (status.buffer.com), else
+# the post fails with "daily posting limit". Slots are nudged later in NUDGE_MIN steps (up to NUDGE_MAX_MIN)
+# so no 24 h window (plus a margin) ever holds more than ROLLING_MAX posts.
+ROLLING_MAX = int(os.environ.get("ROLLING_MAX", "2"))
+ROLLING_WIN = dt.timedelta(hours=float(os.environ.get("ROLLING_H", "24.25")))
+NUDGE_MIN = int(os.environ.get("NUDGE_MIN", "15"))
+NUDGE_MAX_MIN = int(os.environ.get("NUDGE_MAX_MIN", "120"))
+
+
+def rolling_ok(t: dt.datetime, others) -> bool:
+    """True if adding a post at t keeps every ROLLING_WIN window at <= ROLLING_MAX posts."""
+    near = sorted([x for x in others if abs(x - t) < ROLLING_WIN] + [t])
+    return all(sum(1 for y in near if p <= y < p + ROLLING_WIN) <= ROLLING_MAX for p in near)
+
+
 # render only for open slots this far ahead; the evening run fills tomorrow, the backup run tops up
 HORIZON_H = float(os.environ.get("SLOT_HORIZON_H", "36"))
 
@@ -75,11 +90,21 @@ def publish_slots(n: int, now: dt.datetime | None = None, taken=None, horizon_h:
             break
         for s in SLOTS:
             hh, mm = map(int, s.split(":"))
-            t = dt.datetime.combine(day, dt.time(hh, mm), TZ)
-            if len(out) >= n or t <= now + lead or t in taken or (end and t > end):
+            base = dt.datetime.combine(day, dt.time(hh, mm), TZ)
+            if len(out) >= n:
                 continue
             if per_day.get(day, 0) >= MAX_PER_DAY:
                 break
+            t = None
+            for k in range(0, NUDGE_MAX_MIN + 1, NUDGE_MIN):
+                c = base + dt.timedelta(minutes=k)
+                if c <= now + lead or c in taken or (end and c > end) or c.date() != day:
+                    continue
+                if rolling_ok(c, list(taken) + out):
+                    t = c
+                    break
+            if t is None:
+                continue
             out.append(t)
             per_day[day] = per_day.get(day, 0) + 1
         day += dt.timedelta(days=1)
@@ -155,22 +180,37 @@ def buffer_channel() -> tuple[str, str]:
     return _channel_cache["org"], _channel_cache["channel"]
 
 
-def public_ok(url: str) -> bool:
-    """Buffer needs an unauthenticated URL (it fetches at publish time)."""
-    try:
-        req = urllib.request.Request(url, method="HEAD", headers={"User-Agent": "curl/8"})
-        with urllib.request.urlopen(req, timeout=30) as r:
-            return r.status == 200
-    except Exception:
-        return False
+def public_ok(url: str, tries: int = 7) -> bool:
+    """Buffer needs an unauthenticated URL (it fetches at publish time). A just-uploaded release
+    asset can 404 for a few seconds (Oct 30: the 1 PM launch failed on exactly that), so retry
+    for ~90 s before giving up."""
+    for k in range(tries):
+        try:
+            req = urllib.request.Request(url, method="HEAD", headers={"User-Agent": "curl/8"})
+            with urllib.request.urlopen(req, timeout=30) as r:
+                if r.status == 200:
+                    return True
+        except Exception:
+            pass
+        time.sleep(5 + 5 * k)
+    return False
 
 
 def youtube_text(script: dict) -> str:
     """Buffer's YouTube input has no tags field, so tags ride along as hashtags."""
     tags = " ".join("#" + "".join(ch for ch in t.title() if ch.isalnum()) for t in script.get("tags", [])[:5])
     desc = script["description"].strip()
+    try:  # free-license photos of real people need their credit line (pipeline/photos.py)
+        from .photos import credits
+        cr = credits(script)
+    except Exception:
+        cr = []
+    if cr and "Wikimedia Commons" not in desc:
+        desc += "\n\nPhotos: " + "; ".join(cr)
     return (desc + ("\n\n" + tags if tags and tags not in desc else ""))[:4900]
 
+
+THUMB_OFFSET_MS = int(os.environ.get("THUMB_OFFSET_MS", "40"))
 
 CREATE_POST = """
 mutation($input: CreatePostInput!) {
@@ -193,7 +233,10 @@ def post_input(video_url: str, script: dict, when: dt.datetime, privacy: str | N
         "schedulingType": "automatic",
         "mode": "customScheduled",
         "dueAt": when.astimezone(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%S.000Z"),
-        "assets": [{"video": {"url": video_url, "metadata": {"title": script["title"][:100]}}}],
+        # Nov 15: YouTube picked a frame ~40% in as every Short's thumbnail (health.md: 22 of 22 "other frame").
+        # Buffer has no custom-image field but takes metadata.thumbnailOffset (ms): 40 ms = our title cover.
+        "assets": [{"video": {"url": video_url, "metadata": {"title": script["title"][:100],
+                                                             "thumbnailOffset": THUMB_OFFSET_MS}}}],
         "metadata": {"youtube": youtube},
     }
     return inp
