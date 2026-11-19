@@ -79,7 +79,8 @@ def plan(film: dict) -> dict:
 
 # seconds per frame on a GitHub runner, measured on film 1 (Nov 19 run 1): text-only black frames are ~4x cheaper than
 # characters on the dark stage or in the bedroom, so equal frame counts per machine left 8-min and 2-min machines
-COST = {"void": 1.7, "bedroom": 1.8, "bedroomday": 1.8, "street": 1.1, "courtempty": 0.8, "court": 1.2, "gym": 1.2}
+COST = {"void": 1.7, "bedroom": 1.6, "bedroomday": 1.8, "street": 1.3, "courtempty": 0.8, "court": 1.2, "gym": 1.2,
+        "garage": 2.4, "office": 1.6, "store": 0.9, "diner": 1.1}   # film 2 run added the last four
 
 
 def split(beats: list, shards: int = 20) -> list:
