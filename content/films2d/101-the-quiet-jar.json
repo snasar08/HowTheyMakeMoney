@@ -1,6 +1,6 @@
 {
  "id": "101-the-quiet-jar",
- "status": "delivered",
+ "status": "ready",
  "title": "The Quiet Jar: He Never Spent Big. He Just Never Noticed.",
  "description": "A man loses his coins one small treat at a time. Then he starts again, with one coin in an empty jar.",
  "tags": [
@@ -2360,7 +2360,5 @@
     ]
    }
   }
- ],
- "posted_at": "2026-11-20T22:00:00Z",
- "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/film-101"
+ ]
 }
