@@ -1,0 +1,8 @@
+Wed Nov 18 18:00 ET  080  post 6afd4690152518c7f4648bf1  status sent  ok
+Wed Nov 18 20:00 ET  091  post 6afd470b0f01b387a161fc16  status sent  ok
+Thu Nov 19 20:00 ET  097  post 6afdebbec71477154fa95e9f  status scheduled  ok
+Fri Nov 20 15:30 ET  101  post 6aff4094ed6071e709943c3e  status scheduled  ok
+Fri Nov 20 22:00 ET  123  post 6aff4174ba0fb292d5176fd3  status scheduled  EXTRA
+[audit] deleted Buffer post 6aff4174ba0fb292d5176fd3 (123 at Fri 22:00)
+[audit] 123 is ready again
+[audit] 5 upcoming, 1 extra (removed)
