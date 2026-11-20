@@ -7,7 +7,7 @@
   "hook_style": "surprise",
   "title_style": "number",
   "theme": "bold_bright",
-  "status": "ready",
+  "status": "delivered",
   "score": 88,
   "title": "A $12 Million Deal Right After High School",
   "name_card": "Serena Williams",
@@ -284,5 +284,26 @@
     "socks": "f4f4f4",
     "shoes": "f4f4f4",
     "height": 1.02
+  },
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-090-famous-serena",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-090-famous-serena/090-famous-serena.mp4",
+    "post_at": "2026-11-21T19:15:00-05:00",
+    "buffer_post": "6b00c4f45e993799d830ec22",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-20T22:08:52.438921+00:00",
+    "seconds": 20.22,
+    "eyes": {
+      "score": 8,
+      "problems": [
+        "The caption text 'LIAMS' and 'MS' (frames 123-125) is a glitch/typo of the name 'WILLIAMS'.",
+        "The transition between scenes is slightly repetitive with the character walking in place for long durations.",
+        "The visual representation of the 'building' (frames 334-400) is generic and does not clearly convey the concept of a corporate headquarters."
+      ],
+      "best_fix": "Fix the captioning logic to ensure the full name 'WILLIAMS' is displayed correctly without breaking into fragments, and add more distinct visual variety to the background scenes to keep the viewer engaged.",
+      "model": "gemini-3.1-flash-lite",
+      "acts": null
+    }
   }
 }
