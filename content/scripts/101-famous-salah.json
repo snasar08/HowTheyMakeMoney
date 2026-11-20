@@ -7,7 +7,7 @@
   "hook_style": "surprise",
   "title_style": "number",
   "theme": "dark_neon",
-  "status": "ready",
+  "status": "delivered",
   "score": 87,
   "title": "A 3-Hour Trip to Practice, Then £155 Million",
   "name_card": "Mohamed Salah",
@@ -37,8 +37,41 @@
           "check"
         ],
         "stat": "£155 MILLION",
-        "stat_sub": "a two-year offer, 2023"
-      }
+        "stat_sub": "a two-year offer, 2023",
+        "hero": {
+          "skin": "a0704a",
+          "hair": "curly",
+          "hair_color": "1a140f",
+          "beard": "full",
+          "outfit": "kit",
+          "shirt": "f4f4f4",
+          "pants": "1f3a5f",
+          "socks": "f4f4f4",
+          "shoes": "f2c230",
+          "height": 0.98
+        }
+      },
+      "toon": [
+        {
+          "place": "boardroom",
+          "beat": "walk",
+          "mood": "stern",
+          "things": [
+            "cashstack"
+          ],
+          "card": {
+            "text": "£155M",
+            "kind": "paper",
+            "sub": "2 YEARS"
+          }
+        },
+        {
+          "place": "pitch",
+          "beat": "walk",
+          "mood": "proud",
+          "view": "ws"
+        }
+      ]
     },
     {
       "narration": "As a kid, he missed school just to get to practice. Three hours away.",
@@ -51,8 +84,44 @@
           "ball"
         ],
         "stat": "3 HOURS",
-        "stat_sub": "to get to training, age 14"
-      }
+        "stat_sub": "to get to training, age 14",
+        "hero": {
+          "skin": "a0704a",
+          "hair": "curly",
+          "hair_color": "1a140f",
+          "beard": "full",
+          "outfit": "kit",
+          "shirt": "f4f4f4",
+          "pants": "1f3a5f",
+          "socks": "f4f4f4",
+          "shoes": "f2c230",
+          "height": 0.98
+        }
+      },
+      "toon": [
+        {
+          "place": "classroom",
+          "beat": "walk",
+          "mood": "nervous",
+          "things": [
+            "books"
+          ],
+          "view": "ms"
+        },
+        {
+          "place": "street",
+          "beat": "drive",
+          "mood": "nervous",
+          "things": [
+            "bus"
+          ],
+          "card": {
+            "text": "3 HOURS",
+            "kind": "sign",
+            "sub": "AWAY"
+          }
+        }
+      ]
     },
     {
       "narration": "Then a big club bought him. But barely played him.",
@@ -65,8 +134,45 @@
           "ball"
         ],
         "stat": "£11 MILLION",
-        "stat_sub": "Chelsea, 2014"
-      }
+        "stat_sub": "Chelsea, 2014",
+        "hero": {
+          "skin": "a0704a",
+          "hair": "curly",
+          "hair_color": "1a140f",
+          "beard": "full",
+          "outfit": "kit",
+          "shirt": "f4f4f4",
+          "pants": "1f3a5f",
+          "socks": "f4f4f4",
+          "shoes": "f2c230",
+          "height": 0.98
+        }
+      },
+      "toon": [
+        {
+          "place": "street",
+          "beat": "sign",
+          "mood": "happy",
+          "things": [
+            "stadium"
+          ],
+          "card": {
+            "text": "BIG CLUB",
+            "kind": "sign"
+          },
+          "view": "wide"
+        },
+        {
+          "place": "pitch",
+          "beat": "walk",
+          "mood": "sad",
+          "card": {
+            "text": "BARELY PLAYED",
+            "kind": "sign"
+          },
+          "view": "ms"
+        }
+      ]
     },
     {
       "narration": "Then Liverpool paid a club record. 36.9 million.",
@@ -80,8 +186,48 @@
         ],
         "stat": "£36.9 MILLION",
         "stat_sub": "club record, 2017",
-        "hud": "£36.9M"
-      }
+        "hud": "£36.9M",
+        "hero": {
+          "skin": "a0704a",
+          "hair": "curly",
+          "hair_color": "1a140f",
+          "beard": "full",
+          "outfit": "kit",
+          "shirt": "f4f4f4",
+          "pants": "1f3a5f",
+          "socks": "f4f4f4",
+          "shoes": "f2c230",
+          "height": 0.98
+        }
+      },
+      "toon": [
+        {
+          "place": "boardroom",
+          "beat": "sign",
+          "mood": "excited",
+          "things": [
+            "coins"
+          ],
+          "brand": {
+            "name": "LIVERPOOL",
+            "bg": "#c8102e",
+            "fg": "#ffffff"
+          }
+        },
+        {
+          "place": "mansion",
+          "beat": "money",
+          "mood": "shock",
+          "things": [
+            "cashstack"
+          ],
+          "card": {
+            "text": "36.9M",
+            "kind": "screen",
+            "sub": "CLUB RECORD"
+          }
+        }
+      ]
     },
     {
       "narration": "His first season? 32 goals. A record back then.",
@@ -95,8 +241,57 @@
           "trophy"
         ],
         "stat": "32 GOALS",
-        "stat_sub": "a 38-game record in 2018"
-      }
+        "stat_sub": "a 38-game record in 2018",
+        "hero": {
+          "skin": "a0704a",
+          "hair": "curly",
+          "hair_color": "1a140f",
+          "beard": "full",
+          "outfit": "kit",
+          "shirt": "f4f4f4",
+          "pants": "1f3a5f",
+          "socks": "f4f4f4",
+          "shoes": "f2c230",
+          "height": 0.98
+        }
+      },
+      "toon": [
+        {
+          "place": "pitch",
+          "beat": "walk",
+          "mood": "excited",
+          "crowd": 40,
+          "view": "ws"
+        },
+        {
+          "place": "pitch",
+          "beat": "walk",
+          "mood": "proud",
+          "things": [
+            "soccerball"
+          ],
+          "card": {
+            "text": "32 GOALS",
+            "kind": "screen",
+            "sub": "FIRST SEASON"
+          }
+        },
+        {
+          "place": "pitch",
+          "beat": "walk",
+          "mood": "proud",
+          "action": "cheer",
+          "crowd": 50,
+          "things": [
+            "trophy"
+          ],
+          "card": {
+            "text": "RECORD",
+            "kind": "sign",
+            "sub": "BACK THEN"
+          }
+        }
+      ]
     }
   ],
   "sources": [
@@ -116,5 +311,27 @@
     "socks": "f4f4f4",
     "shoes": "f2c230",
     "height": 0.98
+  },
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-101-famous-salah",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-101-famous-salah/101-famous-salah.mp4",
+    "post_at": "2026-11-20T15:30:00-05:00",
+    "buffer_post": "6aff4094ed6071e709943c3e",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-19T18:31:48.776382+00:00",
+    "seconds": 24.89,
+    "eyes": {
+      "score": 7,
+      "problems": [
+        "The captioning is inconsistent and often displays multiple words or garbled text instead of the requested one-word-at-a-time format.",
+        "The character's face/eyes glitch and disappear in several frames (e.g., frames 144-199).",
+        "The text 'CDEFGHIJ' appears as a glitch overlaying the screen for a significant portion of the video (frames 144-199).",
+        "The narration mentions '36.9 million' but the on-screen text displays '36.9M' which is acceptable, but the transition to the final scene is abrupt."
+      ],
+      "best_fix": "Remove the 'CDEFGHIJ' text glitch and fix the character's facial animation to ensure the eyes and mouth remain consistent throughout the school-related scenes.",
+      "model": "gemini-3.1-flash-lite",
+      "acts": null
+    }
   }
 }

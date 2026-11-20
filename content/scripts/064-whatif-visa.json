@@ -35,7 +35,32 @@
         ],
         "stat": "281.3 BILLION",
         "stat_sub": "every single swipe"
-      }
+      },
+      "toon": [
+        {
+          "place": "stall",
+          "card": {
+            "text": "281.3 BILLION",
+            "kind": "screen",
+            "sub": "PAYMENTS"
+          },
+          "brand": {
+            "name": "VISA",
+            "bg": "#1a1f71",
+            "fg": "#ffffff"
+          },
+          "beat": "sign",
+          "mood": "shock"
+        },
+        {
+          "place": "street",
+          "things": [
+            "phone"
+          ],
+          "mood": "shock",
+          "crowd": 50
+        }
+      ]
     },
     {
       "narration": "Just one beep for every swipe.",
@@ -51,7 +76,21 @@
         "stat": "BEEP",
         "stat_sub": "transactions, fiscal 2026",
         "hud": "281.3B"
-      }
+      },
+      "toon": [
+        {
+          "place": "showroom",
+          "things": [
+            "chip",
+            "cash"
+          ],
+          "card": {
+            "text": "BEEP",
+            "kind": "flip"
+          },
+          "mood": "scheme"
+        }
+      ]
     },
     {
       "narration": "Then do the math. About 8,900 beeps every second.",
@@ -65,7 +104,29 @@
         ],
         "stat": "8,900 / SECOND",
         "stat_sub": "all day, all year"
-      }
+      },
+      "toon": [
+        {
+          "place": "classroom",
+          "things": [
+            "books",
+            "chart"
+          ],
+          "mood": "calm"
+        },
+        {
+          "place": "stage",
+          "things": [
+            "headset"
+          ],
+          "card": {
+            "text": "8,900/SEC",
+            "kind": "screen"
+          },
+          "mood": "shock",
+          "crowd": 60
+        }
+      ]
     },
     {
       "narration": "Now hear them one per second. Still 8,900 years.",
@@ -79,7 +140,25 @@
         ],
         "stat": "~8,900 YEARS",
         "stat_sub": "of beeping, one a second"
-      }
+      },
+      "toon": [
+        {
+          "place": "lab",
+          "things": [
+            "clock"
+          ],
+          "beat": "clock",
+          "mood": "stern"
+        },
+        {
+          "place": "graveyard",
+          "card": {
+            "text": "8,900 YEARS",
+            "kind": "tomb"
+          },
+          "mood": "dazed"
+        }
+      ]
     },
     {
       "narration": "But Visa doesn't lend you money. It earns fees for running the network. 45.9 billion dollars.",
@@ -94,7 +173,44 @@
         "stat": "$45.9 BILLION",
         "stat_sub": "net revenue, fiscal 2026",
         "hud": "$45.9B"
-      }
+      },
+      "toon": [
+        {
+          "place": "office",
+          "things": [
+            "cash"
+          ],
+          "brand": {
+            "name": "VISA",
+            "bg": "#1a1f71",
+            "fg": "#ffffff"
+          },
+          "beat": "sign",
+          "mood": "stern"
+        },
+        {
+          "place": "lab",
+          "things": [
+            "globe",
+            "chip"
+          ],
+          "mood": "scheme"
+        },
+        {
+          "place": "mansion",
+          "things": [
+            "cashstack",
+            "goldbar"
+          ],
+          "card": {
+            "text": "$45.9B",
+            "kind": "screen",
+            "sub": "FEES"
+          },
+          "beat": "money",
+          "mood": "proud"
+        }
+      ]
     }
   ],
   "sources": [

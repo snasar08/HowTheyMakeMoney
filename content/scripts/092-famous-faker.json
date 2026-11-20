@@ -53,7 +53,31 @@
           ],
           "height": 0.98
         }
-      }
+      },
+      "toon": [
+        {
+          "place": "boardroom",
+          "things": [
+            "cashstack",
+            "briefcase"
+          ],
+          "card": {
+            "text": "$20M/YEAR",
+            "kind": "screen",
+            "sub": "TURNED DOWN"
+          },
+          "mood": "stern"
+        },
+        {
+          "place": "office",
+          "things": [
+            "monitor",
+            "headset"
+          ],
+          "mood": "calm",
+          "view": "ms"
+        }
+      ]
     },
     {
       "narration": "He's Faker. Six-time League of Legends world champion.",
@@ -82,7 +106,33 @@
           ],
           "height": 0.98
         }
-      }
+      },
+      "toon": [
+        {
+          "place": "stage",
+          "card": {
+            "text": "FAKER",
+            "kind": "sign"
+          },
+          "mood": "proud",
+          "crowd": 30,
+          "view": "ms"
+        },
+        {
+          "place": "showroom",
+          "things": [
+            "trophy",
+            "monitor"
+          ],
+          "card": {
+            "text": "6X CHAMPION",
+            "kind": "flip",
+            "sub": "LEAGUE OF LEGENDS"
+          },
+          "mood": "proud",
+          "action": "cheer"
+        }
+      ]
     },
     {
       "narration": "He went pro at 17. Then won the world title that same year.",
@@ -111,7 +161,35 @@
           ],
           "height": 0.98
         }
-      }
+      },
+      "toon": [
+        {
+          "place": "classroom",
+          "things": [
+            "laptop",
+            "controller"
+          ],
+          "card": {
+            "text": "AGE 17",
+            "kind": "flip"
+          },
+          "mood": "excited"
+        },
+        {
+          "place": "stage",
+          "things": [
+            "trophy",
+            "headset"
+          ],
+          "card": {
+            "text": "WORLD TITLE",
+            "kind": "sign"
+          },
+          "mood": "happy",
+          "action": "cheer",
+          "crowd": 50
+        }
+      ]
     },
     {
       "narration": "Instead, he stayed for about 5 million a year. Plus part of the team.",
@@ -141,7 +219,34 @@
           ],
           "height": 0.98
         }
-      }
+      },
+      "toon": [
+        {
+          "place": "office",
+          "things": [
+            "cashstack",
+            "monitor"
+          ],
+          "card": {
+            "text": "$5M/YEAR",
+            "kind": "screen"
+          },
+          "mood": "calm"
+        },
+        {
+          "place": "lab",
+          "things": [
+            "headset",
+            "laptop"
+          ],
+          "card": {
+            "text": "PART OF TEAM",
+            "kind": "white"
+          },
+          "mood": "proud",
+          "crowd": 5
+        }
+      ]
     },
     {
       "narration": "Then three world titles in a row. The first player ever.",
@@ -170,7 +275,34 @@
           ],
           "height": 0.98
         }
-      }
+      },
+      "toon": [
+        {
+          "place": "stage",
+          "things": [
+            "trophy",
+            "medal"
+          ],
+          "card": {
+            "text": "3 IN A ROW",
+            "kind": "flip",
+            "sub": "WORLD TITLES"
+          },
+          "mood": "excited",
+          "crowd": 40
+        },
+        {
+          "place": "throne",
+          "things": [
+            "crown"
+          ],
+          "card": {
+            "text": "FIRST EVER",
+            "kind": "sign"
+          },
+          "mood": "proud"
+        }
+      ]
     }
   ],
   "sources": [
@@ -199,17 +331,18 @@
     "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-092-famous-faker",
     "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-092-famous-faker/092-famous-faker.mp4",
     "post_at": "2026-11-18T15:00:00-05:00",
-    "buffer_post": "6afca3fc1521a8d022973011",
+    "buffer_post": "6afd45a4b116b81c99350ca1",
     "buffer_status": "scheduled",
-    "rendered_at": "2026-11-17T18:59:09.128351+00:00",
+    "rendered_at": "2026-11-18T06:28:52.706684+00:00",
     "seconds": 23.93,
+    "remade_from": "6afca3fc1521a8d022973011",
     "eyes": {
-      "score": 8,
+      "score": 9,
       "problems": [
-        "The narration claims he is a 'six-time' world champion, but the text on screen says '3 IN A ROW' and lists years 2023, 2024, 2025, which is confusing and potentially inaccurate for the viewer.",
-        "The text '3 IN A ROW' appears while the narration is discussing his early career, creating a mismatch between audio and visual information."
+        "The caption 'He turned down 20' appears in the first few frames but the narration says 'He turned down 20 million dollars a year', creating a slight mismatch in pacing.",
+        "The visual transition at frame 139 is slightly abrupt."
       ],
-      "best_fix": "Update the on-screen text to accurately reflect the 'six-time' claim or adjust the narration to match the '3 in a row' visual, ensuring the timeline of his career is clearly represented.",
+      "best_fix": "Ensure the initial caption syncs more precisely with the full spoken phrase '20 million dollars a year' to avoid the truncated text.",
       "model": "gemini-3.1-flash-lite",
       "acts": null
     }

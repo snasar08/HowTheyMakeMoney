@@ -8,7 +8,7 @@
   "hook_style": "surprise",
   "title_style": "statement",
   "theme": "bold_bright",
-  "status": "ready",
+  "status": "needs_fix",
   "score": 94,
   "title": "Dallas Traded You. Now Make Them Regret It.",
   "name_card": "Luka Doncic",
@@ -58,24 +58,48 @@
           "ball"
         ],
         "stat": "TRADED",
-        "stat_sub": "out of nowhere"
+        "stat_sub": "out of nowhere",
+        "hero": {
+          "skin": "eac2a0",
+          "hair": "short",
+          "hair_color": "5a3b22",
+          "beard": "full",
+          "beard_color": "5a3b22",
+          "shirt": "fdb927",
+          "pants": "fdb927",
+          "trim": "552583",
+          "socks": "f4f4f4",
+          "shoes": "552583",
+          "height": 1.05,
+          "outfit": "kit",
+          "number": 77
+        }
       },
       "toon": [
         {
           "place": "court",
-          "beat": "walk",
-          "mood": "proud",
-          "crowd": 25
+          "mood": "calm",
+          "view": "ms"
         },
         {
           "place": "court",
-          "beat": "walk",
-          "mood": "happy"
+          "mood": "proud",
+          "things": [
+            "trophy"
+          ],
+          "card": {
+            "text": "FINALS",
+            "kind": "sign"
+          },
+          "view": "wide"
         },
         {
-          "place": "office",
-          "beat": "phone",
-          "mood": "shock"
+          "place": "boardroom",
+          "mood": "shock",
+          "things": [
+            "letter"
+          ],
+          "view": "ms"
         }
       ]
     },
@@ -90,33 +114,46 @@
           "ball"
         ],
         "stat": "THE MISSION",
-        "stat_sub": "make them regret it"
+        "stat_sub": "make them regret it",
+        "hero": {
+          "skin": "eac2a0",
+          "hair": "short",
+          "hair_color": "5a3b22",
+          "beard": "full",
+          "beard_color": "5a3b22",
+          "shirt": "fdb927",
+          "pants": "fdb927",
+          "trim": "552583",
+          "socks": "f4f4f4",
+          "shoes": "552583",
+          "height": 1.05,
+          "outfit": "kit",
+          "number": 77
+        }
       },
       "toon": [
         {
           "place": "court",
-          "beat": "walk",
-          "mood": "stern"
-        },
-        {
-          "place": "street",
-          "beat": "sign",
-          "mood": "scheme",
-          "brand": {
-            "name": "Lakers",
-            "bg": "#552583",
-            "fg": "#fdb927",
-            "icon": "star"
-          },
-          "things": [
-            "crown"
-          ]
+          "mood": "stern",
+          "view": "cu"
         },
         {
           "place": "court",
-          "beat": "walk",
+          "mood": "stern",
+          "card": {
+            "text": "DALLAS",
+            "kind": "sign"
+          },
+          "view": "wide"
+        },
+        {
+          "place": "garage",
           "mood": "proud",
-          "action": "run"
+          "card": {
+            "text": "LAKERS",
+            "kind": "sign"
+          },
+          "view": "ms"
         }
       ]
     },
@@ -131,21 +168,45 @@
           "ball"
         ],
         "stat": "STEP 1",
-        "stat_sub": "lead the league"
+        "stat_sub": "lead the league",
+        "hero": {
+          "skin": "eac2a0",
+          "hair": "short",
+          "hair_color": "5a3b22",
+          "beard": "full",
+          "beard_color": "5a3b22",
+          "shirt": "fdb927",
+          "pants": "fdb927",
+          "trim": "552583",
+          "socks": "f4f4f4",
+          "shoes": "552583",
+          "height": 1.05,
+          "outfit": "kit",
+          "number": 77
+        }
       },
       "toon": [
         {
           "place": "court",
-          "beat": "money",
           "mood": "laugh",
-          "crowd": 30
+          "action": "shoot",
+          "things": [
+            "trophy",
+            "basketball"
+          ],
+          "view": "wide"
         },
         {
           "place": "court",
-          "beat": "walk",
-          "mood": "scheme",
-          "action": "cheer",
-          "crowd": 20
+          "mood": "excited",
+          "things": [
+            "fire"
+          ],
+          "card": {
+            "text": "DALLAS",
+            "kind": "sign"
+          },
+          "view": "low"
         }
       ]
     },
@@ -160,30 +221,46 @@
           "ball"
         ],
         "stat": "STEP 2",
-        "stat_sub": "a ring in LA"
+        "stat_sub": "a ring in LA",
+        "hero": {
+          "skin": "eac2a0",
+          "hair": "short",
+          "hair_color": "5a3b22",
+          "beard": "full",
+          "beard_color": "5a3b22",
+          "shirt": "fdb927",
+          "pants": "fdb927",
+          "trim": "552583",
+          "socks": "f4f4f4",
+          "shoes": "552583",
+          "height": 1.05,
+          "outfit": "kit",
+          "number": 77
+        }
       },
       "toon": [
         {
-          "place": "court",
-          "beat": "money",
+          "place": "mansion",
           "mood": "excited",
-          "action": "cheer",
-          "crowd": 40
+          "things": [
+            "ring",
+            "plane"
+          ],
+          "card": {
+            "text": "LA",
+            "kind": "sign"
+          },
+          "view": "ms"
         },
         {
-          "place": "road",
-          "beat": "drive",
+          "place": "street",
           "mood": "laugh",
-          "brand": {
-            "name": "Lakers",
-            "bg": "#552583",
-            "fg": "#fdb927",
-            "icon": "star"
-          },
+          "crowd": 30,
           "things": [
             "bus",
             "ring"
-          ]
+          ],
+          "view": "wide"
         }
       ]
     },
@@ -198,25 +275,49 @@
           "ball"
         ],
         "stat": "STEP 3",
-        "stat_sub": "the next Luka"
+        "stat_sub": "the next Luka",
+        "hero": {
+          "skin": "eac2a0",
+          "hair": "short",
+          "hair_color": "5a3b22",
+          "beard": "full",
+          "beard_color": "5a3b22",
+          "shirt": "fdb927",
+          "pants": "fdb927",
+          "trim": "552583",
+          "socks": "f4f4f4",
+          "shoes": "552583",
+          "height": 1.05,
+          "outfit": "kit",
+          "number": 77
+        }
       },
       "toon": [
         {
-          "place": "street",
-          "beat": "walk",
-          "mood": "scheme"
+          "place": "office",
+          "mood": "scheme",
+          "view": "cu"
         },
         {
-          "place": "street",
-          "beat": "walk",
+          "place": "field",
           "mood": "proud",
-          "crowd": 45
+          "things": [
+            "hoop"
+          ],
+          "card": {
+            "text": "SLOVENIA",
+            "kind": "sign"
+          },
+          "view": "wide"
         },
         {
           "place": "court",
-          "beat": "queue",
           "mood": "happy",
-          "crowd": 45
+          "crowd": 10,
+          "things": [
+            "basketball"
+          ],
+          "view": "wide"
         }
       ]
     },
@@ -231,20 +332,40 @@
           "ball"
         ],
         "stat": "THE CALL",
-        "stat_sub": "sorry"
+        "stat_sub": "sorry",
+        "hero": {
+          "skin": "eac2a0",
+          "hair": "short",
+          "hair_color": "5a3b22",
+          "beard": "full",
+          "beard_color": "5a3b22",
+          "shirt": "fdb927",
+          "pants": "fdb927",
+          "trim": "552583",
+          "socks": "f4f4f4",
+          "shoes": "552583",
+          "height": 1.05,
+          "outfit": "kit",
+          "number": 77
+        }
       },
       "toon": [
         {
           "place": "office",
-          "beat": "phone",
-          "mood": "laugh",
-          "brand": {
-            "name": "Dallas",
-            "bg": "#00538c",
-            "fg": "#ffffff"
-          }
+          "mood": "relief",
+          "things": [
+            "phone"
+          ],
+          "card": {
+            "text": "DALLAS",
+            "kind": "sign"
+          },
+          "view": "ms"
         }
       ]
     }
+  ],
+  "needs_fix": [
+    "eyes hold: The video uses the exact same static shot of the character for the entire 28-second duration, which is highly repetitive and boring for the target audience."
   ]
 }

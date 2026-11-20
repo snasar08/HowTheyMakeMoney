@@ -35,7 +35,29 @@
         ],
         "stat": "85 BILLION",
         "stat_sub": "cards made, by March 2026"
-      }
+      },
+      "toon": [
+        {
+          "place": "stall",
+          "things": [
+            "crate",
+            "box"
+          ],
+          "card": {
+            "text": "85 BILLION",
+            "kind": "screen",
+            "sub": "CARDS"
+          },
+          "brand": {
+            "name": "POKEMON",
+            "bg": "#ffcb05",
+            "fg": "#3b4cca"
+          },
+          "beat": "sign",
+          "mood": "shock",
+          "crowd": 40
+        }
+      ]
     },
     {
       "narration": "Open one every second, nonstop? About 2,700 years.",
@@ -50,7 +72,26 @@
         "stat": "2,700 YEARS",
         "stat_sub": "one card a second",
         "hud": "0"
-      }
+      },
+      "toon": [
+        {
+          "place": "garage",
+          "things": [
+            "box"
+          ],
+          "mood": "nervous",
+          "action": "work",
+          "view": "ms"
+        },
+        {
+          "place": "graveyard",
+          "card": {
+            "text": "2,700 YEARS",
+            "kind": "tomb"
+          },
+          "mood": "dazed"
+        }
+      ]
     },
     {
       "narration": "One full day of opening? Just 86,400 cards.",
@@ -65,7 +106,31 @@
         "stat": "86,400",
         "stat_sub": "cards in a day",
         "hud": "86,400"
-      }
+      },
+      "toon": [
+        {
+          "place": "office",
+          "things": [
+            "box",
+            "clock"
+          ],
+          "mood": "scheme",
+          "view": "ws"
+        },
+        {
+          "place": "showroom",
+          "things": [
+            "crate"
+          ],
+          "card": {
+            "text": "86,400",
+            "kind": "flip",
+            "sub": "CARDS A DAY"
+          },
+          "mood": "excited",
+          "crowd": 20
+        }
+      ]
     },
     {
       "narration": "And one rare card just sold for 16.5 million dollars.",
@@ -79,7 +144,23 @@
         ],
         "stat": "$16.5 MILLION",
         "stat_sub": "Pikachu Illustrator, Feb 2026"
-      }
+      },
+      "toon": [
+        {
+          "place": "mansion",
+          "things": [
+            "cashstack",
+            "goldbar"
+          ],
+          "card": {
+            "text": "$16.5M",
+            "kind": "screen",
+            "sub": "ONE RARE CARD"
+          },
+          "beat": "money",
+          "mood": "shock"
+        }
+      ]
     },
     {
       "narration": "In 2021, that same card sold for 5.3 million. The price tripled.",
@@ -93,7 +174,33 @@
         ],
         "stat": "3X",
         "stat_sub": "$5.3M in 2021 to $16.5M"
-      }
+      },
+      "toon": [
+        {
+          "place": "boardroom",
+          "things": [
+            "cash"
+          ],
+          "card": {
+            "text": "2021: $5.3M",
+            "kind": "paper"
+          },
+          "mood": "calm"
+        },
+        {
+          "place": "stage",
+          "things": [
+            "arrowup",
+            "chart"
+          ],
+          "card": {
+            "text": "3X",
+            "kind": "sign"
+          },
+          "mood": "shock",
+          "view": "ms"
+        }
+      ]
     }
   ],
   "sources": [

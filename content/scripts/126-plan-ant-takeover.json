@@ -8,7 +8,7 @@
   "hook_style": "surprise",
   "title_style": "statement",
   "theme": "bold_bright",
-  "status": "ready",
+  "status": "delivered",
   "score": 94,
   "title": "You're Ant. Become the Face of the NBA.",
   "name_card": "Anthony Edwards",
@@ -58,36 +58,50 @@
           "ball"
         ],
         "stat": "ANT",
-        "stat_sub": "the face of the NBA"
+        "stat_sub": "the face of the NBA",
+        "hero": {
+          "skin": "6b4430",
+          "hair": "short",
+          "hair_color": "141010",
+          "beard": "stubble",
+          "beard_color": "141010",
+          "shirt": "0c2340",
+          "pants": "0c2340",
+          "trim": "78be20",
+          "socks": "f4f4f4",
+          "shoes": "78be20",
+          "height": 1.02,
+          "outfit": "kit",
+          "number": 5
+        }
       },
       "toon": [
         {
           "place": "court",
-          "beat": "walk",
           "mood": "calm",
-          "crowd": 15
+          "view": "ms"
         },
         {
-          "place": "court",
-          "beat": "sign",
+          "place": "stage",
           "mood": "proud",
-          "brand": {
-            "name": "Gold",
-            "bg": "#b8860b",
-            "fg": "#ffffff",
-            "icon": "star"
-          }
+          "things": [
+            "medal"
+          ],
+          "card": {
+            "text": "1ST PICK",
+            "kind": "sign",
+            "sub": "OLYMPIC GOLD"
+          },
+          "view": "ms"
         },
         {
-          "place": "court",
-          "beat": "logo",
+          "place": "stage",
           "mood": "scheme",
-          "brand": {
-            "name": "Wolves",
-            "bg": "#0c2340",
-            "fg": "#78be20",
-            "icon": "star"
-          }
+          "things": [
+            "crown",
+            "camera"
+          ],
+          "view": "wide"
         }
       ]
     },
@@ -102,21 +116,38 @@
           "ball"
         ],
         "stat": "STEP 1",
-        "stat_sub": "dunk on everybody"
+        "stat_sub": "dunk on everybody",
+        "hero": {
+          "skin": "6b4430",
+          "hair": "short",
+          "hair_color": "141010",
+          "beard": "stubble",
+          "beard_color": "141010",
+          "shirt": "0c2340",
+          "pants": "0c2340",
+          "trim": "78be20",
+          "socks": "f4f4f4",
+          "shoes": "78be20",
+          "height": 1.02,
+          "outfit": "kit",
+          "number": 5
+        }
       },
       "toon": [
         {
           "place": "court",
-          "beat": "walk",
           "mood": "laugh",
-          "action": "run",
-          "crowd": 30
+          "action": "dunk",
+          "view": "wide"
         },
         {
-          "place": "street",
-          "beat": "phone",
+          "place": "classroom",
           "mood": "excited",
-          "crowd": 25
+          "crowd": 12,
+          "things": [
+            "phone"
+          ],
+          "view": "wide"
         }
       ]
     },
@@ -131,22 +162,40 @@
           "ball"
         ],
         "stat": "STEP 2",
-        "stat_sub": "the best interviews"
+        "stat_sub": "the best interviews",
+        "hero": {
+          "skin": "6b4430",
+          "hair": "short",
+          "hair_color": "141010",
+          "beard": "stubble",
+          "beard_color": "141010",
+          "shirt": "0c2340",
+          "pants": "0c2340",
+          "trim": "78be20",
+          "socks": "f4f4f4",
+          "shoes": "78be20",
+          "height": 1.02,
+          "outfit": "kit",
+          "number": 5
+        }
       },
       "toon": [
         {
           "place": "stage",
-          "beat": "walk",
           "mood": "laugh",
-          "props": [
+          "things": [
             "mic"
-          ]
+          ],
+          "view": "ms"
         },
         {
-          "place": "street",
-          "beat": "queue",
+          "place": "office",
           "mood": "happy",
-          "crowd": 45
+          "things": [
+            "tv",
+            "camera"
+          ],
+          "view": "ms"
         }
       ]
     },
@@ -161,20 +210,43 @@
           "ball"
         ],
         "stat": "STEP 3",
-        "stat_sub": "a ring in the cold"
+        "stat_sub": "a ring in the cold",
+        "hero": {
+          "skin": "6b4430",
+          "hair": "short",
+          "hair_color": "141010",
+          "beard": "stubble",
+          "beard_color": "141010",
+          "shirt": "0c2340",
+          "pants": "0c2340",
+          "trim": "78be20",
+          "socks": "f4f4f4",
+          "shoes": "78be20",
+          "height": 1.02,
+          "outfit": "kit",
+          "number": 5
+        }
       },
       "toon": [
         {
           "place": "court",
-          "beat": "walk",
-          "mood": "stern"
+          "mood": "stern",
+          "things": [
+            "trophy"
+          ],
+          "view": "ms"
         },
         {
           "place": "court",
-          "beat": "money",
           "mood": "laugh",
-          "action": "cheer",
-          "crowd": 40
+          "things": [
+            "ring"
+          ],
+          "card": {
+            "text": "MINNESOTA",
+            "kind": "sign"
+          },
+          "view": "wide"
         }
       ]
     },
@@ -189,30 +261,41 @@
           "ball"
         ],
         "stat": "STEP 4",
-        "stat_sub": "a dome for fans"
+        "stat_sub": "a dome for fans",
+        "hero": {
+          "skin": "6b4430",
+          "hair": "short",
+          "hair_color": "141010",
+          "beard": "stubble",
+          "beard_color": "141010",
+          "shirt": "0c2340",
+          "pants": "0c2340",
+          "trim": "78be20",
+          "socks": "f4f4f4",
+          "shoes": "78be20",
+          "height": 1.02,
+          "outfit": "kit",
+          "number": 5
+        }
       },
       "toon": [
         {
-          "place": "road",
-          "beat": "drive",
+          "place": "street",
           "mood": "happy",
-          "brand": {
-            "name": "Wolves",
-            "bg": "#0c2340",
-            "fg": "#78be20",
-            "icon": "star"
-          }
+          "crowd": 25,
+          "things": [
+            "plane"
+          ],
+          "view": "wide"
         },
         {
-          "place": "street",
-          "beat": "sign",
+          "place": "field",
           "mood": "proud",
-          "brand": {
-            "name": "Ant Dome",
-            "bg": "#0c2340",
-            "fg": "#78be20",
-            "icon": "sun"
-          }
+          "things": [
+            "stadium",
+            "fire"
+          ],
+          "view": "wide"
         }
       ]
     },
@@ -227,31 +310,37 @@
           "ball"
         ],
         "stat": "STEP 5",
-        "stat_sub": "your own everything"
+        "stat_sub": "your own everything",
+        "hero": {
+          "skin": "6b4430",
+          "hair": "short",
+          "hair_color": "141010",
+          "beard": "stubble",
+          "beard_color": "141010",
+          "shirt": "0c2340",
+          "pants": "0c2340",
+          "trim": "78be20",
+          "socks": "f4f4f4",
+          "shoes": "78be20",
+          "height": 1.02,
+          "outfit": "kit",
+          "number": 5
+        }
       },
       "toon": [
         {
-          "place": "street",
-          "beat": "walk",
-          "mood": "scheme"
+          "place": "boardroom",
+          "mood": "scheme",
+          "view": "cu"
         },
         {
-          "place": "street",
-          "beat": "logo",
+          "place": "showroom",
           "mood": "excited",
-          "props": [
-            "controller"
-          ],
-          "brand": {
-            "name": "Ant",
-            "bg": "#78be20",
-            "fg": "#0c2340",
-            "icon": "play"
-          },
           "things": [
             "tv",
             "shoe"
-          ]
+          ],
+          "view": "wide"
         }
       ]
     },
@@ -266,25 +355,56 @@
           "ball"
         ],
         "stat": "THE PLAN",
-        "stat_sub": "the face of the NBA"
+        "stat_sub": "the face of the NBA",
+        "hero": {
+          "skin": "6b4430",
+          "hair": "short",
+          "hair_color": "141010",
+          "beard": "stubble",
+          "beard_color": "141010",
+          "shirt": "0c2340",
+          "pants": "0c2340",
+          "trim": "78be20",
+          "socks": "f4f4f4",
+          "shoes": "78be20",
+          "height": 1.02,
+          "outfit": "kit",
+          "number": 5
+        }
       },
       "toon": [
         {
           "place": "court",
-          "beat": "sign",
           "mood": "laugh",
-          "brand": {
-            "name": "Wolves",
-            "bg": "#0c2340",
-            "fg": "#78be20",
-            "icon": "star"
-          },
-          "crowd": 30,
           "things": [
             "crown"
-          ]
+          ],
+          "card": {
+            "text": "NBA",
+            "kind": "sign"
+          },
+          "view": "wide"
         }
       ]
     }
-  ]
+  ],
+  "delivered": {
+    "mode": "release",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-126-plan-ant-takeover",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-126-plan-ant-takeover/126-plan-ant-takeover.mp4",
+    "post_at": "2026-11-20T07:00:00-05:00",
+    "rendered_at": "2026-11-19T18:46:07.492045+00:00",
+    "seconds": 32.69,
+    "eyes": {
+      "score": 7,
+      "problems": [
+        "The video is visually repetitive, using the same static character model and background for the entire duration, which fails to maintain viewer engagement for a 13-18 demographic.",
+        "The narration mentions specific items like a 'heated dome', 'cartoon', 'game', and 'shoe', but these are never visually represented on screen, making the video feel like a slideshow rather than a dynamic story.",
+        "The text captions are static and lack the visual flair or movement expected for a high-quality YouTube Short."
+      ],
+      "best_fix": "Incorporate dynamic visual assets (e.g., simple 3D models or animations) for each specific milestone mentioned in the narration—such as a basketball shoe, a cartoon logo, and a futuristic dome—to break the visual monotony.",
+      "model": "gemini-3.1-flash-lite",
+      "acts": null
+    }
+  }
 }

@@ -7,7 +7,7 @@
   "hook_style": "surprise",
   "title_style": "number",
   "theme": "bold_bright",
-  "status": "ready",
+  "status": "needs_fix",
   "score": 89,
   "title": "From Bagging Groceries to $232.5 Million",
   "name_card": "Bad Bunny",
@@ -36,8 +36,41 @@
           "mic"
         ],
         "stat": "$232.5 MILLION",
-        "stat_sub": "one tour, by October 2022"
-      }
+        "stat_sub": "one tour, by October 2022",
+        "hero": {
+          "skin": "c9956b",
+          "hair": "short",
+          "hair_color": "1c1612",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "e85d9a",
+          "pants": "2a2a33",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "extras": [
+            "glasses"
+          ],
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "stage",
+          "beat": "walk",
+          "mood": "excited",
+          "action": "cheer",
+          "crowd": 60,
+          "things": [
+            "mic",
+            "cashstack"
+          ],
+          "card": {
+            "text": "$232.5M",
+            "kind": "screen",
+            "sub": "THE TOUR"
+          }
+        }
+      ]
     },
     {
       "narration": "In Puerto Rico, he bagged groceries part-time. And made music.",
@@ -50,8 +83,49 @@
           "boxes"
         ],
         "stat": "PART-TIME",
-        "stat_sub": "bagger and cashier"
-      }
+        "stat_sub": "bagger and cashier",
+        "hero": {
+          "skin": "c9956b",
+          "hair": "short",
+          "hair_color": "1c1612",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "e85d9a",
+          "pants": "2a2a33",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "extras": [
+            "glasses"
+          ],
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "stall",
+          "beat": "walk",
+          "mood": "calm",
+          "action": "work",
+          "things": [
+            "box",
+            "crate"
+          ],
+          "card": {
+            "text": "PUERTO RICO",
+            "kind": "sign",
+            "sub": "PART-TIME"
+          }
+        },
+        {
+          "place": "garage",
+          "beat": "walk",
+          "mood": "excited",
+          "things": [
+            "mic",
+            "headset"
+          ]
+        }
+      ]
     },
     {
       "narration": "Then Spotify's most-streamed artist. Four times.",
@@ -64,8 +138,51 @@
           "mic"
         ],
         "stat": "4 TIMES",
-        "stat_sub": "Spotify's most-streamed, 2020-2025"
-      }
+        "stat_sub": "Spotify's most-streamed, 2020-2025",
+        "hero": {
+          "skin": "c9956b",
+          "hair": "short",
+          "hair_color": "1c1612",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "e85d9a",
+          "pants": "2a2a33",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "extras": [
+            "glasses"
+          ],
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "street",
+          "beat": "sign",
+          "mood": "proud",
+          "things": [
+            "headset"
+          ],
+          "brand": {
+            "name": "SPOTIFY",
+            "bg": "#1db954",
+            "fg": "#000000"
+          }
+        },
+        {
+          "place": "mansion",
+          "beat": "walk",
+          "mood": "proud",
+          "things": [
+            "trophy"
+          ],
+          "card": {
+            "text": "4 TIMES",
+            "kind": "flip",
+            "sub": "MOST-STREAMED"
+          }
+        }
+      ]
     },
     {
       "narration": "That 2022 tour? The biggest ever for a Latin artist.",
@@ -79,8 +196,55 @@
         ],
         "stat": "RECORD TOUR",
         "stat_sub": "highest-grossing Latin tour",
-        "hud": "$232.5M"
-      }
+        "hud": "$232.5M",
+        "hero": {
+          "skin": "c9956b",
+          "hair": "short",
+          "hair_color": "1c1612",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "e85d9a",
+          "pants": "2a2a33",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "extras": [
+            "glasses"
+          ],
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "stage",
+          "beat": "walk",
+          "mood": "excited",
+          "action": "cheer",
+          "crowd": 60,
+          "things": [
+            "mic"
+          ],
+          "card": {
+            "text": "2022",
+            "kind": "flip",
+            "sub": "THE TOUR"
+          }
+        },
+        {
+          "place": "stage",
+          "beat": "walk",
+          "mood": "proud",
+          "crowd": 60,
+          "things": [
+            "stadium"
+          ],
+          "card": {
+            "text": "BIGGEST EVER",
+            "kind": "sign",
+            "sub": "FOR LATIN ARTIST"
+          },
+          "view": "ws"
+        }
+      ]
     },
     {
       "narration": "Then a home show run, expected to bring Puerto Rico 250 million.",
@@ -91,8 +255,39 @@
         "crowd": 100,
         "props": [],
         "stat": "$250 MILLION",
-        "stat_sub": "expected impact (Moody's)"
-      }
+        "stat_sub": "expected impact (Moody's)",
+        "hero": {
+          "skin": "c9956b",
+          "hair": "short",
+          "hair_color": "1c1612",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "e85d9a",
+          "pants": "2a2a33",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "extras": [
+            "glasses"
+          ],
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "street",
+          "beat": "money",
+          "mood": "proud",
+          "things": [
+            "stadium",
+            "cashstack"
+          ],
+          "card": {
+            "text": "$250M",
+            "kind": "screen",
+            "sub": "FOR PUERTO RICO"
+          }
+        }
+      ]
     },
     {
       "narration": "And he gave 1.6 million dollars to rebuild baseball fields.",
@@ -105,8 +300,39 @@
           "ball"
         ],
         "stat": "$1.6 MILLION",
-        "stat_sub": "to rebuild ballfields, 2019"
-      }
+        "stat_sub": "to rebuild ballfields, 2019",
+        "hero": {
+          "skin": "c9956b",
+          "hair": "short",
+          "hair_color": "1c1612",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "e85d9a",
+          "pants": "2a2a33",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "extras": [
+            "glasses"
+          ],
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "field",
+          "beat": "walk",
+          "mood": "proud",
+          "action": "point",
+          "things": [
+            "cashstack"
+          ],
+          "card": {
+            "text": "$1.6M",
+            "kind": "paper",
+            "sub": "BASEBALL FIELDS"
+          }
+        }
+      ]
     }
   ],
   "sources": [
@@ -129,5 +355,9 @@
       "glasses"
     ],
     "height": 1.0
-  }
+  },
+  "needs_fix": [
+    "act count_cash unclear at frames 0-185: The character is holding a stack of cash but not performing a counting action.",
+    "act sing_stage unclear at frames 437-487: The character is holding a microphone but is not visibly singing."
+  ]
 }

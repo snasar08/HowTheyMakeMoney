@@ -37,7 +37,32 @@
         "stat": "2,200 KM",
         "stat_sub": "157.2 million Switches, stacked",
         "hud": "2,200 KM"
-      }
+      },
+      "toon": [
+        {
+          "place": "showroom",
+          "things": [
+            "controller",
+            "crate"
+          ],
+          "mood": "scheme",
+          "crowd": 40
+        },
+        {
+          "place": "field",
+          "things": [
+            "controller",
+            "rocket"
+          ],
+          "card": {
+            "text": "2,200 KM",
+            "kind": "sign",
+            "sub": "UP"
+          },
+          "mood": "shock",
+          "view": "low"
+        }
+      ]
     },
     {
       "narration": "That's over five times higher than the space station.",
@@ -51,7 +76,21 @@
         ],
         "stat": "5X HIGHER",
         "stat_sub": "the space station flies about 420 km up"
-      }
+      },
+      "toon": [
+        {
+          "place": "space",
+          "things": [
+            "satellite",
+            "controller"
+          ],
+          "card": {
+            "text": "5X HIGHER",
+            "kind": "white"
+          },
+          "mood": "shock"
+        }
+      ]
     },
     {
       "narration": "Because each one is only 14 millimeters thick.",
@@ -65,7 +104,21 @@
         ],
         "stat": "14 MM",
         "stat_sub": "one Switch, top to bottom"
-      }
+      },
+      "toon": [
+        {
+          "place": "lab",
+          "things": [
+            "controller"
+          ],
+          "card": {
+            "text": "14 MM",
+            "kind": "flip",
+            "sub": "THICK"
+          },
+          "mood": "calm"
+        }
+      ]
     },
     {
       "narration": "Lay them end to end instead? 27,196 kilometers.",
@@ -79,7 +132,29 @@
         ],
         "stat": "27,196 KM",
         "stat_sub": "Switches end to end"
-      }
+      },
+      "toon": [
+        {
+          "place": "street",
+          "things": [
+            "controller",
+            "crate"
+          ],
+          "mood": "scheme",
+          "view": "wide"
+        },
+        {
+          "place": "beach",
+          "things": [
+            "globe"
+          ],
+          "card": {
+            "text": "27,196 KM",
+            "kind": "screen"
+          },
+          "mood": "shock"
+        }
+      ]
     },
     {
       "narration": "And it's still not number one. It's 2.8 million behind the PlayStation 2.",
@@ -93,7 +168,31 @@
         ],
         "stat": "2.8 MILLION",
         "stat_sub": "short of the PS2's 160 million"
-      }
+      },
+      "toon": [
+        {
+          "place": "stage",
+          "things": [
+            "trophy"
+          ],
+          "mood": "sad",
+          "crowd": 30,
+          "view": "ms"
+        },
+        {
+          "place": "garage",
+          "things": [
+            "controller",
+            "tv"
+          ],
+          "card": {
+            "text": "2.8M BEHIND",
+            "kind": "sign",
+            "sub": "PLAYSTATION 2"
+          },
+          "mood": "stern"
+        }
+      ]
     }
   ],
   "sources": [

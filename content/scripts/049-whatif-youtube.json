@@ -38,7 +38,30 @@
         "stat": "500 HOURS",
         "stat_sub": "uploaded every minute",
         "hud": "1 MINUTE"
-      }
+      },
+      "toon": [
+        {
+          "place": "lab",
+          "things": [
+            "monitor",
+            "tv"
+          ],
+          "card": {
+            "text": "500 HOURS",
+            "kind": "screen",
+            "sub": "EVERY MINUTE"
+          },
+          "mood": "shock"
+        },
+        {
+          "place": "mansion",
+          "things": [
+            "tv"
+          ],
+          "mood": "nervous",
+          "view": "ms"
+        }
+      ]
     },
     {
       "narration": "That's what YouTube said in 2019.",
@@ -53,7 +76,23 @@
         "stat": "EVERY MINUTE",
         "stat_sub": "YouTube, 2019",
         "hud": "500 HOURS"
-      }
+      },
+      "toon": [
+        {
+          "place": "boardroom",
+          "card": {
+            "text": "2019",
+            "kind": "paper"
+          },
+          "brand": {
+            "name": "YOUTUBE",
+            "bg": "#ff0000",
+            "fg": "#ffffff"
+          },
+          "beat": "sign",
+          "mood": "calm"
+        }
+      ]
     },
     {
       "narration": "Watching nonstop, that one minute still takes almost three weeks.",
@@ -68,7 +107,22 @@
         "stat": "~3 WEEKS",
         "stat_sub": "nonstop",
         "hud": "~3 WEEKS"
-      }
+      },
+      "toon": [
+        {
+          "place": "street",
+          "things": [
+            "tv",
+            "coffee"
+          ],
+          "card": {
+            "text": "3 WEEKS",
+            "kind": "flip",
+            "sub": "NONSTOP"
+          },
+          "mood": "dazed"
+        }
+      ]
     },
     {
       "narration": "Then try one day of uploads. 720,000 hours.",
@@ -81,7 +135,26 @@
         "stat": "720,000",
         "stat_sub": "hours, one day",
         "hud": "720,000 HOURS"
-      }
+      },
+      "toon": [
+        {
+          "place": "lab",
+          "things": [
+            "globe",
+            "tv"
+          ],
+          "mood": "scheme"
+        },
+        {
+          "place": "field",
+          "card": {
+            "text": "720,000 HRS",
+            "kind": "sign"
+          },
+          "mood": "shock",
+          "crowd": 50
+        }
+      ]
     },
     {
       "narration": "That's 82 years of video. From just one day.",
@@ -96,7 +169,29 @@
         "stat": "82 YEARS",
         "stat_sub": "of video, every day",
         "hud": "82 YEARS"
-      }
+      },
+      "toon": [
+        {
+          "place": "graveyard",
+          "card": {
+            "text": "82 YEARS",
+            "kind": "tomb"
+          },
+          "mood": "shock"
+        },
+        {
+          "place": "office",
+          "things": [
+            "tv"
+          ],
+          "card": {
+            "text": "1 DAY",
+            "kind": "flip"
+          },
+          "mood": "calm",
+          "view": "cu"
+        }
+      ]
     },
     {
       "narration": "Not even a whole lifetime is enough.",
@@ -110,7 +205,17 @@
         ],
         "stat": "1 LIFETIME",
         "stat_sub": "not enough"
-      }
+      },
+      "toon": [
+        {
+          "place": "beach",
+          "things": [
+            "clock"
+          ],
+          "mood": "dazed",
+          "view": "wide"
+        }
+      ]
     }
   ],
   "sources": [

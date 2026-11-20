@@ -55,39 +55,33 @@
       "toon": [
         {
           "place": "throne",
-          "beat": "logo",
+          "beat": "sign",
           "mood": "proud",
           "brand": {
-            "name": "Lamborghini",
+            "name": "LAMBORGHINI",
             "bg": "#111111",
-            "fg": "#d4af37",
-            "icon": "star"
-          },
-          "things": [
-            "crown"
-          ]
+            "fg": "#d4af37"
+          }
         },
         {
-          "place": "road",
-          "beat": "drive",
+          "place": "showroom",
+          "beat": "walk",
           "mood": "laugh",
-          "props": [
-            "car"
+          "crowd": 10,
+          "things": [
+            "sportscar"
           ],
           "card": {
             "text": "10,687",
             "kind": "screen",
-            "sub": "CARS IN 2024"
+            "sub": "CARS A YEAR"
           }
         },
         {
-          "place": "mine",
-          "beat": "drive",
-          "mood": "scheme",
-          "props": [
-            "truck"
-          ],
-          "view": "face"
+          "place": "garage",
+          "beat": "walk",
+          "mood": "calm",
+          "view": "ms"
         }
       ]
     },
@@ -106,13 +100,12 @@
       },
       "toon": [
         {
-          "place": "mine",
+          "place": "field",
           "beat": "walk",
           "mood": "calm",
           "card": {
             "text": "GRAPE FARM",
-            "kind": "sign",
-            "sub": "ITALY"
+            "kind": "sign"
           }
         },
         {
@@ -120,19 +113,16 @@
           "beat": "walk",
           "mood": "excited",
           "action": "work",
-          "props": [
-            "truck",
-            "boxes"
-          ]
+          "things": [
+            "crate"
+          ],
+          "view": "ms"
         },
         {
-          "place": "mine",
+          "place": "field",
           "beat": "queue",
           "mood": "laugh",
-          "crowd": 30,
-          "props": [
-            "truck"
-          ]
+          "crowd": 30
         }
       ]
     },
@@ -151,11 +141,11 @@
       },
       "toon": [
         {
-          "place": "road",
-          "beat": "drive",
+          "place": "showroom",
+          "beat": "sign",
           "mood": "happy",
-          "props": [
-            "car"
+          "things": [
+            "sportscar"
           ],
           "card": {
             "text": "1958",
@@ -167,9 +157,14 @@
           "place": "garage",
           "beat": "walk",
           "mood": "stern",
-          "props": [
+          "things": [
             "car"
-          ]
+          ],
+          "action": "work",
+          "card": {
+            "text": "BROKEN CLUTCH",
+            "kind": "sign"
+          }
         },
         {
           "place": "office",
@@ -200,9 +195,9 @@
       },
       "toon": [
         {
-          "place": "office",
+          "place": "boardroom",
           "beat": "walk",
-          "mood": "proud",
+          "mood": "stern",
           "who": {
             "jacket": "#c8102e",
             "pants": "#1a1a1a",
@@ -211,7 +206,7 @@
             "glasses": true,
             "chest": "ENZO"
           },
-          "view": "face"
+          "view": "ws"
         },
         {
           "place": "office",
@@ -221,8 +216,7 @@
             "text": "TRACTOR MAKER",
             "kind": "white",
             "fg": "#c8102e"
-          },
-          "view": "face"
+          }
         }
       ]
     },
@@ -242,14 +236,11 @@
       "toon": [
         {
           "place": "garage",
-          "beat": "logo",
+          "beat": "sign",
           "mood": "scheme",
-          "brand": {
-            "name": "Lamborghini",
-            "bg": "#111111",
-            "fg": "#d4af37",
-            "icon": "star"
-          },
+          "things": [
+            "car"
+          ],
           "card": {
             "text": "1963",
             "kind": "flip",
@@ -257,9 +248,12 @@
           }
         },
         {
-          "place": "garage",
+          "place": "showroom",
           "beat": "sign",
           "mood": "stern",
+          "things": [
+            "sportscar"
+          ],
           "card": {
             "text": "RAGING BULL",
             "kind": "sign",
@@ -268,14 +262,19 @@
           }
         },
         {
-          "place": "road",
+          "place": "street",
           "beat": "drive",
           "mood": "laugh",
-          "props": [
-            "car"
+          "things": [
+            "sportscar"
           ],
           "crowd": 25,
-          "view": "low"
+          "view": "low",
+          "card": {
+            "text": "1966",
+            "kind": "flip",
+            "sub": "MIURA"
+          }
         }
       ]
     },
@@ -294,29 +293,32 @@
       },
       "toon": [
         {
-          "place": "mine",
+          "place": "field",
           "beat": "walk",
-          "mood": "nervous",
-          "props": [
-            "truck"
-          ]
+          "mood": "sad",
+          "view": "ms"
         },
         {
           "place": "office",
-          "beat": "clock",
-          "mood": "sad"
+          "beat": "walk",
+          "mood": "sad",
+          "card": {
+            "text": "CANCELLED",
+            "kind": "paper",
+            "sub": "TRACTOR ORDERS"
+          }
         },
         {
-          "place": "office",
-          "beat": "money",
+          "place": "boardroom",
+          "beat": "sign",
           "mood": "dazed",
-          "props": [
-            "check"
+          "things": [
+            "letter",
+            "coins"
           ],
           "card": {
             "text": "$600,000",
-            "kind": "paper",
-            "sub": "51% OF THE CARS"
+            "kind": "paper"
           }
         }
       ]
@@ -339,22 +341,21 @@
           "place": "street",
           "beat": "sign",
           "mood": "sad",
+          "hide": true,
           "card": {
             "text": "BANKRUPT",
             "kind": "tomb",
             "sub": "1978"
-          },
-          "hide": true
+          }
         },
         {
-          "place": "office",
-          "beat": "logo",
+          "place": "boardroom",
+          "beat": "sign",
           "mood": "relief",
           "brand": {
             "name": "Volkswagen",
             "bg": "#001e50",
-            "fg": "#ffffff",
-            "icon": "star"
+            "fg": "#ffffff"
           },
           "card": {
             "text": "1998",
@@ -381,11 +382,12 @@
       },
       "toon": [
         {
-          "place": "road",
+          "place": "mansion",
           "beat": "money",
           "mood": "laugh",
-          "props": [
-            "car"
+          "things": [
+            "sportscar",
+            "cashstack"
           ],
           "card": {
             "text": "€3.1B",
@@ -394,13 +396,13 @@
           }
         },
         {
-          "place": "mine",
+          "place": "field",
           "beat": "walk",
           "mood": "calm",
           "view": "face"
         },
         {
-          "place": "mine",
+          "place": "stall",
           "beat": "sign",
           "mood": "relief",
           "card": {
@@ -410,13 +412,14 @@
           }
         },
         {
-          "place": "mine",
-          "beat": "drive",
+          "place": "showroom",
+          "beat": "walk",
           "mood": "proud",
-          "props": [
+          "things": [
+            "sportscar",
             "truck"
           ],
-          "view": "face"
+          "view": "ws"
         }
       ]
     }

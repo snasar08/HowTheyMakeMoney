@@ -36,8 +36,35 @@
           "trophy"
         ],
         "stat": "$12 MILLION",
-        "stat_sub": "right after high school, 1999"
-      }
+        "stat_sub": "right after high school, 1999",
+        "hero": {
+          "skin": "6b4a32",
+          "hair": "bun",
+          "hair_color": "15110e",
+          "beard": "none",
+          "outfit": "dress",
+          "shirt": "e8554e",
+          "pants": "e8554e",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "height": 1.02
+        }
+      },
+      "toon": [
+        {
+          "place": "boardroom",
+          "beat": "sign",
+          "mood": "proud",
+          "things": [
+            "cashstack"
+          ],
+          "card": {
+            "text": "$12M",
+            "kind": "paper",
+            "sub": "AFTER HIGH SCHOOL"
+          }
+        }
+      ]
     },
     {
       "narration": "Her coaches? Just her mom and dad.",
@@ -48,8 +75,43 @@
         "crowd": 0,
         "props": [],
         "stat": "HER PARENTS",
-        "stat_sub": "her first coaches"
-      }
+        "stat_sub": "her first coaches",
+        "hero": {
+          "skin": "6b4a32",
+          "hair": "bun",
+          "hair_color": "15110e",
+          "beard": "none",
+          "outfit": "dress",
+          "shirt": "e8554e",
+          "pants": "e8554e",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "height": 1.02
+        }
+      },
+      "toon": [
+        {
+          "place": "court",
+          "beat": "walk",
+          "mood": "calm",
+          "view": "ws",
+          "card": {
+            "text": "COACHES",
+            "kind": "sign"
+          }
+        },
+        {
+          "place": "court",
+          "beat": "walk",
+          "mood": "happy",
+          "crowd": 2,
+          "card": {
+            "text": "MOM + DAD",
+            "kind": "flip"
+          },
+          "view": "wide"
+        }
+      ]
     },
     {
       "narration": "Then a 40 million dollar shoe deal in 2004.",
@@ -63,8 +125,36 @@
         ],
         "stat": "$40 MILLION",
         "stat_sub": "5-year deal, 2004",
-        "hud": "$40M"
-      }
+        "hud": "$40M",
+        "hero": {
+          "skin": "6b4a32",
+          "hair": "bun",
+          "hair_color": "15110e",
+          "beard": "none",
+          "outfit": "dress",
+          "shirt": "e8554e",
+          "pants": "e8554e",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "height": 1.02
+        }
+      },
+      "toon": [
+        {
+          "place": "showroom",
+          "beat": "sign",
+          "mood": "excited",
+          "things": [
+            "shoe",
+            "cashstack"
+          ],
+          "card": {
+            "text": "$40M",
+            "kind": "paper",
+            "sub": "2004 SHOE DEAL"
+          }
+        }
+      ]
     },
     {
       "narration": "Then 23 major titles. The most of the Open Era.",
@@ -77,8 +167,52 @@
           "trophy"
         ],
         "stat": "23 MAJORS",
-        "stat_sub": "an Open Era record"
-      }
+        "stat_sub": "an Open Era record",
+        "hero": {
+          "skin": "6b4a32",
+          "hair": "bun",
+          "hair_color": "15110e",
+          "beard": "none",
+          "outfit": "dress",
+          "shirt": "e8554e",
+          "pants": "e8554e",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "height": 1.02
+        }
+      },
+      "toon": [
+        {
+          "place": "court",
+          "beat": "walk",
+          "mood": "proud",
+          "action": "cheer",
+          "crowd": 40,
+          "things": [
+            "trophy",
+            "medal"
+          ],
+          "card": {
+            "text": "23 TITLES",
+            "kind": "screen",
+            "sub": "MAJORS"
+          }
+        },
+        {
+          "place": "court",
+          "beat": "walk",
+          "mood": "proud",
+          "things": [
+            "crown"
+          ],
+          "card": {
+            "text": "OPEN ERA",
+            "kind": "sign",
+            "sub": "THE MOST"
+          },
+          "view": "ws"
+        }
+      ]
     },
     {
       "narration": "Now her sponsor's biggest building? It's named after her.",
@@ -92,8 +226,45 @@
           "cash"
         ],
         "stat": "HER BUILDING",
-        "stat_sub": "1 million square feet"
-      }
+        "stat_sub": "1 million square feet",
+        "hero": {
+          "skin": "6b4a32",
+          "hair": "bun",
+          "hair_color": "15110e",
+          "beard": "none",
+          "outfit": "dress",
+          "shirt": "e8554e",
+          "pants": "e8554e",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "height": 1.02
+        }
+      },
+      "toon": [
+        {
+          "place": "street",
+          "beat": "walk",
+          "mood": "excited",
+          "things": [
+            "factory"
+          ],
+          "card": {
+            "text": "BIGGEST BUILDING",
+            "kind": "sign"
+          },
+          "view": "wide"
+        },
+        {
+          "place": "mansion",
+          "beat": "sign",
+          "mood": "proud",
+          "card": {
+            "text": "SERENA",
+            "kind": "sign",
+            "sub": "NAMED AFTER HER"
+          }
+        }
+      ]
     }
   ],
   "sources": [

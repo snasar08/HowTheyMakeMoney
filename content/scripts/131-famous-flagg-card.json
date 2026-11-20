@@ -71,13 +71,13 @@
       "toon": [
         {
           "place": "court",
-          "beat": "money",
-          "mood": "shock",
           "card": {
             "text": "$8.04M",
             "kind": "screen",
             "sub": "ONE CARD"
           },
+          "beat": "money",
+          "mood": "shock",
           "view": "face"
         }
       ]
@@ -112,21 +112,25 @@
       "toon": [
         {
           "place": "court",
-          "beat": "walk",
-          "mood": "laugh",
-          "props": [
-            "ball"
-          ]
+          "things": [
+            "basketball"
+          ],
+          "card": {
+            "text": "AGE 19",
+            "kind": "flip"
+          },
+          "mood": "laugh"
         },
         {
-          "place": "court",
-          "beat": "sign",
-          "mood": "proud",
+          "place": "showroom",
+          "things": [
+            "letter"
+          ],
           "card": {
-            "text": "ROOKIE DEBUT",
-            "kind": "paper",
-            "sub": "PATCH + AUTOGRAPH"
+            "text": "FIRST NBA GAME",
+            "kind": "paper"
           },
+          "mood": "proud",
           "crowd": 20
         }
       ]
@@ -161,13 +165,16 @@
       "toon": [
         {
           "place": "street",
-          "beat": "sign",
-          "mood": "calm",
+          "things": [
+            "house"
+          ],
           "card": {
             "text": "NEWPORT",
             "kind": "sign",
             "sub": "MAINE"
-          }
+          },
+          "beat": "walk",
+          "mood": "calm"
         }
       ]
     },
@@ -201,16 +208,17 @@
       "toon": [
         {
           "place": "stage",
-          "beat": "logo",
+          "things": [
+            "mic"
+          ],
+          "card": {
+            "text": "#1 PICK",
+            "kind": "flip",
+            "sub": "NBA DRAFT"
+          },
           "mood": "excited",
           "action": "cheer",
-          "crowd": 30,
-          "brand": {
-            "name": "Mavericks",
-            "bg": "#00538c",
-            "fg": "#ffffff",
-            "icon": "star"
-          }
+          "crowd": 30
         }
       ]
     },
@@ -244,21 +252,24 @@
       "toon": [
         {
           "place": "court",
-          "beat": "sign",
-          "mood": "stern",
-          "action": "run",
-          "props": [
-            "ball"
+          "things": [
+            "basketball",
+            "hoop"
           ],
           "card": {
             "text": "51",
             "kind": "flip",
             "sub": "POINTS"
-          }
+          },
+          "mood": "stern",
+          "action": "shoot"
         },
         {
           "place": "court",
-          "beat": "queue",
+          "card": {
+            "text": "FIRST TEEN",
+            "kind": "white"
+          },
           "mood": "laugh",
           "action": "cheer",
           "crowd": 40,
@@ -296,15 +307,14 @@
       },
       "toon": [
         {
-          "place": "court",
-          "beat": "walk",
-          "mood": "proud",
+          "place": "stage",
           "things": [
             "trophy",
             "crown"
           ],
+          "mood": "proud",
           "crowd": 30,
-          "view": "face"
+          "view": "ms"
         }
       ]
     }
@@ -320,18 +330,19 @@
     "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-131-famous-flagg-card",
     "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-131-famous-flagg-card/131-famous-flagg-card.mp4",
     "post_at": "2026-11-18T16:30:00-05:00",
-    "buffer_post": "6afca4621521a8d022977a3c",
+    "buffer_post": "6afd4dd2152518c7f466b800",
     "buffer_status": "scheduled",
-    "rendered_at": "2026-11-17T19:00:52.052336+00:00",
+    "rendered_at": "2026-11-18T07:03:46.688124+00:00",
     "seconds": 23.69,
+    "remade_from": "6afca4621521a8d022977a3c",
     "eyes": {
-      "score": 8,
+      "score": 7,
       "problems": [
-        "The text 'Rookie of the Year 2025-26' appears on screen while the narration is still discussing the 51-point game, causing a slight mismatch in timing.",
-        "The visual transition from the 'Newport, Maine' scene to the 'Pick 1' scene is abrupt.",
-        "The 'Subscribe' and 'Comment' call-to-action overlays are slightly cluttered and distract from the main character."
+        "The video loops back to the beginning at frame 700, creating a jarring, repetitive experience for the viewer.",
+        "The narration mentions 'first NBA game' but the visual shows a newspaper headline that is too small to read on a mobile device.",
+        "The visual pacing is slightly repetitive, relying on the same character model for too long."
       ],
-      "best_fix": "Adjust the timing of the 'Rookie of the Year' text overlay to sync precisely with the narration, and simplify the end-screen call-to-action to avoid visual clutter.",
+      "best_fix": "Remove the loop at the end and replace it with a clear call-to-action or a final summary screen to provide a satisfying conclusion.",
       "model": "gemini-3.1-flash-lite",
       "acts": null
     }

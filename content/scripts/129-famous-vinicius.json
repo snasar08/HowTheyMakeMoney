@@ -7,7 +7,7 @@
   "hook_style": "surprise",
   "title_style": "number",
   "theme": "bold_bright",
-  "status": "needs_fix",
+  "status": "ready",
   "score": 92,
   "title": "The £38 Million 16-Year-Old",
   "name_card": "Vinícius Júnior",
@@ -22,9 +22,9 @@
   ],
   "images": {},
   "hud_label": "HIS RISE",
-  "loop": "So next time you see a teen play, remember:",
-  "cta": "Vinícius or Mbappé? Comment your pick.",
-  "cta_question": "Vinícius or Mbappé?",
+  "loop": "So next time you see a teenager play, remember:",
+  "cta": "Vinicius or Mbappe, pick one. Comment your pick.",
+  "cta_question": "Vinicius or Mbappe, pick one.",
   "hero": {
     "skin": "4f3324",
     "hair": "short",
@@ -70,7 +70,6 @@
       "toon": [
         {
           "place": "pitch",
-          "beat": "money",
           "mood": "shock",
           "brand": {
             "name": "Real Madrid",
@@ -83,12 +82,13 @@
             "kind": "screen",
             "sub": "AGE 16"
           },
-          "view": "face"
+          "view": "face",
+          "beat": "money"
         }
       ]
     },
     {
-      "narration": "But he couldn't move until he turned 18.",
+      "narration": "But he could not move until he turned 18.",
       "visual": {
         "type": "lowpoly",
         "set": "city",
@@ -119,14 +119,14 @@
           "place": "street",
           "beat": "clock",
           "mood": "nervous",
-          "props": [
-            "boxes"
-          ],
           "card": {
             "text": "18",
             "kind": "flip",
             "sub": "AGE TO MOVE"
-          }
+          },
+          "things": [
+            "box"
+          ]
         }
       ]
     },
@@ -163,13 +163,18 @@
           "beat": "sign",
           "mood": "happy",
           "action": "run",
-          "props": [
-            "ball"
-          ],
           "card": {
             "text": "AGE 6",
             "kind": "flip",
             "sub": "SÃO GONÇALO"
+          },
+          "things": [
+            "soccerball"
+          ],
+          "brand": {
+            "name": "FLAMENGO",
+            "bg": "#000000",
+            "fg": "#e11b22"
           }
         }
       ]
@@ -208,11 +213,16 @@
           "beat": "walk",
           "mood": "laugh",
           "action": "cheer",
-          "props": [
+          "crowd": 40,
+          "view": "low",
+          "things": [
             "trophy"
           ],
-          "crowd": 40,
-          "view": "low"
+          "card": {
+            "text": "AGE 21",
+            "kind": "flip",
+            "sub": "CL FINAL"
+          }
         }
       ]
     },
@@ -250,13 +260,13 @@
           "mood": "proud",
           "action": "cheer",
           "crowd": 40,
-          "props": [
-            "ball"
+          "things": [
+            "soccerball"
           ]
         },
         {
           "place": "pitch",
-          "beat": "sign",
+          "beat": "walk",
           "mood": "scheme",
           "card": {
             "text": "YOUNGEST",
@@ -268,7 +278,7 @@
       ]
     },
     {
-      "narration": "In 2024, FIFA named him the world's best player.",
+      "narration": "In 2024, he was named the world's best player by FIFA.",
       "visual": {
         "type": "lowpoly",
         "set": "stage",
@@ -298,7 +308,7 @@
       "toon": [
         {
           "place": "stage",
-          "beat": "sign",
+          "beat": "walk",
           "mood": "proud",
           "things": [
             "trophy",
@@ -319,8 +329,5 @@
       "title": "Wikipedia: Vinícius Júnior",
       "url": "https://en.wikipedia.org/wiki/Vin%C3%ADcius_J%C3%BAnior"
     }
-  ],
-  "needs_fix": [
-    "clarity 89% < 90%: 'couldn't' at 3.5s, 'Flamengo' at 6.5s, 'FIFA' at 14.3s, 'Vinícius' at 16.3s, 'Mbappé? Comment' at 16.9s, 'teen' at 19.6s"
   ]
 }

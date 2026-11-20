@@ -267,7 +267,7 @@ def make_plan(script: dict, recorded: dict | None = None) -> dict:
             out.append({"si": i, "a": a, "n": m, "frLo": lo + cuts[j], "light": lt[k], "set": v.get("set", "city"),
                         "action": d.get("action", v.get("action", "idle")), "crowd": int(d.get("crowd", v.get("crowd", 0)) or 0),
                         "props": d.get("props") or [], "beat": d.get("beat", "walk"), "mood": d.get("mood", "happy"),
-                        **({"place": place} if place in PLACE_NAMES else {}),
+                        **({"place": place} if place in PLACE_NAMES or place in AH_ALL_SETS or place in AH_SET else {}),
                         **({"loc": {"bridge": 0, "street": 1, "quay": 2}[place]} if place in ("bridge", "street", "quay") else {}),
                         **({"brand": _brand(d["brand"])} if d.get("brand") else {"brand": _brand(v["brand"])} if v.get("brand") else {}),
                         # Nov 15 (afterhour style): a text card in the scene (date sign, money screen that flips, headline,
@@ -302,7 +302,7 @@ def make_plan(script: dict, recorded: dict | None = None) -> dict:
 
 # ---- afterhour look (Nov 16): the same per-sentence plan as real-3D shots for the AhShort composition ----
 AH_SET = {"throne": "throne", "office": "office", "servers": "lab", "garage": "garage", "stall": "stall", "mine": "field",
-          "court": "court", "pitch": "pitch", "stage": "stage", "space": "space", "street": "street", "bridge": "street",
+          "court": "court", "pitch": "pitch", "diamond": "diamond", "gridiron": "gridiron", "tennis": "tennis", "gym": "gym", "studio": "studio", "farm": "farm", "store": "store", "stage": "stage", "space": "space", "street": "street", "bridge": "street",
           "quay": "beach", "road": "track"}
 AH_EXPR = {"happy": "smile", "laugh": "laugh", "shock": "shock", "nervous": "shock", "proud": "smug", "stern": "angry",
            "scheme": "smug", "relief": "smile", "dazed": "sad", "sad": "sad", "calm": "neutral", "excited": "grin"}
@@ -312,13 +312,46 @@ AH_THING = {"shoe": "shoe", "springshoe": "springshoe", "sneakerbus": "bus", "bu
             "idea": "lightbulb", "factory": "factory", "stadium": "stadium", "plant": "factory", "car": "car", "truck": "truck",
             "trophy": "trophy", "cash": "cashstack", "boxes": "box", "check": "letter", "rocket": "rocket", "ball": "basketball", "mic": "mic",
             "laptop": "laptop", "burger": "burger", "controller": "controller", "ereader": "phone", "snack": "burger", "poster": "newspaper"}
-AH_BIG = {"car", "truck", "bus", "rocket", "factory", "stadium", "plane", "yacht", "house"}
+def _ts_union(path: str, typ: str) -> set:
+    """the names a TS union type lists (SetName / ThingName), so a script may ask for any set or object directly"""
+    try:
+        src = (Path(__file__).resolve().parent.parent / path).read_text(encoding="utf-8")
+        m = re.search(r"export type " + typ + r" =(.*?);", src, re.S)
+        return set(re.findall(r'"([a-z0-9_]+)"', m.group(1))) if m else set()
+    except OSError:
+        return set()
+
+
+AH_ALL_SETS = _ts_union("toon/src/videos/afterhour/sets.ts", "SetName")        # Nov 18: a toon "place" may name any 3D set
+AH_ALL_THINGS = _ts_union("toon/src/videos/afterhour/things3d.ts", "ThingName")  # and "things" any 3D object
+def _lib_model_names() -> set:
+    """Nov 18: every CC0 library model (index*.json) may be named in a script's `things` too, e.g. "fort_fence" """
+    out: set = set()
+    d = Path(__file__).resolve().parent.parent / "toon" / "public" / "models"
+    for f in [d / "index.json", *sorted(d.glob("index.*.json"))]:
+        try:
+            out |= set(json.loads(f.read_text(encoding="utf8")))
+        except Exception:
+            pass
+    return out
+
+
+AH_ALL_THINGS = AH_ALL_THINGS | _lib_model_names()
+AH_BIG = {"car", "truck", "bus", "rocket", "factory", "stadium", "plane", "yacht", "house", "dome"}
 AH_CROWD = [{"body": c, "hat": "hair", "hair": h} for c, h in (("#e86a6a", "#3a2a20"), ("#5ad0d8", "#8a5a2a"), ("#8bc34a", "#1a1a1a"),
             ("#b48ae0", "#3a2a20"), ("#f2a33a", "#5a3b2a"), ("#4a7bd0", "#1a1a1a"))]
 
 
 _AH_MODELS: dict | None = None
-_AH_STOP = {"sign", "signs", "signed", "signing", "deal", "deals", "the", "a", "an", "and", "or", "of", "to", "in", "on", "it", "is", "was", "he", "she", "they", "his", "her", "this", "that", "with", "for", "at", "by", "as", "be", "so", "but"}
+_AH_STOP = {"sign", "signs", "signed", "signing", "deal", "deals", "the", "a", "an", "and", "or", "of", "to", "in", "on", "it", "is", "was", "he", "she", "they", "his", "her", "this", "that", "with", "for", "at", "by", "as", "be", "so", "but",
+           # Nov 18 (overnight scene pass): words that mean something else in a story line ("fans" -> ceiling fan, "can" -> tin can,
+           # "cold" -> fridge, "Mickey Mouse" -> computer mouse, "defense", "steps", "stack", "power" ...), and no weapons ever
+           "can", "cold", "fan", "fans", "trash", "waste", "mouse", "bar", "base", "bay", "bend", "catch", "chest", "chop", "counter",
+           "deck", "direction", "display", "fair", "frame", "hole", "hooks", "light", "loot", "pad", "peel", "pot", "power", "present",
+           "ride", "round", "seat", "shed", "signal", "stack", "steps", "storage", "tank", "tube", "wall", "wheel", "wings", "trading",
+           "finance", "business", "corporate", "commercial", "retail", "healthy", "compact", "emergency", "defense", "entrance",
+           "outdoor", "reading", "cooling", "module", "portal", "booster", "logistics", "drawer", "drawers", "remains", "skeleton",
+           "pistol", "rifle", "gunturret", "twinguns", "lasergun", "raygun", "cannon", "knife", "hatchet", "arrest"}
 
 
 def ah_models() -> dict:
@@ -392,7 +425,59 @@ def ah_look(o: dict) -> dict:
 
 # ---- Nov 17 (Ninja review: a streamer on a soccer pitch, Drake / LeBron / his mom named but never shown, a clock on
 # "followers", an outro of repeats): who the Short is about, who a sentence names, and "no two shots look alike" ----
-AH_SPORT_SETS = ("court", "pitch", "ring", "track")
+AH_SPORT_SETS = ("court", "pitch", "diamond", "gridiron", "tennis", "ring", "track")
+# Nov 18: a baseball line stands on the baseball field (diamond), not a purple park
+AH_BASEBALL_RX = re.compile(r"\b(?:baseball|mlb|major leagues?|the majors|ballparks?|home runs?|homers?|grand slams?|pitchers?|fastballs?|curveballs?|strikeouts?|"
+                            r"innings?|shortstops?|outfield\w*|dugouts?|batters?|world series|yankees|dodgers|mets|red sox|cubs|braves|astros|padres|phillies|"
+                            r"blue jays|orioles|white sox|nationals|mariners|brewers|rockies|marlins|diamondbacks|first base|home plate)\b", re.I)
+# Nov 18: American football lines stand on the gridiron, tennis lines on the tennis court. Soccer / Premier League / World Cup / FIFA lines stay on the pitch.
+AH_SOCCER_RX = re.compile(r"\b(?:soccer|premier league|world cup|fifa|uefa|champions league|la liga|bundesliga|serie a|mls|striker|midfielder|goalkeeper|penalty kicks?|"
+                          r"messi|ronaldo|mbappe|neymar|haaland|beckham|real madrid|barcelona|manchester|liverpool|chelsea|arsenal)\b", re.I)
+AH_GRID_STRONG_RX = re.compile(r"\b(?:nfl|n\.f\.l\.?|quarterbacks?|touchdowns?|super bowl|linebackers?|wide receivers?|running backs?|tight ends?|end zone|gridiron|american football|"
+                               r"pro bowl|hail mary|field goals?|offensive lines?|cornerbacks?|punters?|kickoffs?)\b", re.I)
+AH_GRID_WEAK_RX = re.compile(r"\bfootball (?:teams?|players?|fields?|games?|coach\w*|season|stars?|careers?|scholarships?|stadiums?|leagues?)\b|\b(?:college|high school|pro|play(?:ed|ing)?|cut from|made) football\b", re.I)
+AH_TENNIS_NAMES = ("serena", "federer", "djokovic", "nadal", "alcaraz", "sinner", "osaka", "sharapova", "gauff", "sabalenka", "venus", "agassi", "sampras", "murray", "swiatek")
+AH_TENNIS_STRONG_RX = re.compile(r"\b(?:tennis|open era|wimbledon|us open|australian open|french open|roland garros|atp|wta|rackets?|racquets?|forehands?|backhands?|match point|double faults?)\b", re.I)
+AH_TENNIS_WEAK_RX = re.compile(r"\b(?:grand slams?|serves?|served|serving|aces?)\b(?! (?:the |our |his |her )?(?:customers?|food|burgers?|coffee|drinks?|meals?|tables?|guests?|clients?|users?|ads?|ad\b))", re.I)
+
+
+def ah_sport_set(txt: str, ctx: dict | None = None) -> str | None:
+    """the American football / tennis set a line belongs on (None: not a gridiron / tennis line). Soccer lines are never taken."""
+    ctx = ctx or {}
+    if AH_TENNIS_STRONG_RX.search(txt) or (ctx.get("tennis") and AH_TENNIS_WEAK_RX.search(txt)):
+        return "tennis"
+    if AH_SOCCER_RX.search(txt) or ctx.get("soccer") and not AH_GRID_STRONG_RX.search(txt):
+        return None
+    if AH_GRID_STRONG_RX.search(txt) or AH_GRID_WEAK_RX.search(txt):
+        return "gridiron"
+    return None
+# Nov 18: farm lines (barn, tractor, crops) stand on the farm; grocery / cashier lines in the grocery store
+AH_FARM_STRONG_RX = re.compile(r"\b(?:farms?|farmers?|farming|farmland|barns?|crops?|harvest\w*|ranch\w*|vineyards?|grow(?:s|ing)? (?:grapes|corn|wheat|crops))\b", re.I)
+AH_FARM_RX = re.compile(AH_FARM_STRONG_RX.pattern + r"|\btractors?\b", re.I)
+AH_STORE_RX = re.compile(r"\b(?:grocer(?:y|ies)|supermarkets?|store clerks?|baggers?|cashiers?|check-?outs?|checkout counters?)\b", re.I)
+
+
+def ah_place_set(txt: str) -> str | None:
+    """the farm / grocery store set a line's words name (None: neither)"""
+    if AH_STORE_RX.search(txt):
+        return "store"
+    if AH_FARM_RX.search(txt):
+        return "farm"
+    return None
+# Nov 18: a gym line stands in the gym, an animation / film studio line in the animation studio (a RECORDING / music studio stays on the stage)
+AH_GYM_RX = re.compile(r"\b(?:gyms?|training (?:centre|center)s?|weight rooms?|workouts?|work(?:s|ed)? out|weightlifting|bodybuild\w*|fitness (?:centre|center|club)s?|treadmills?)\b", re.I)
+AH_STUDIO_RX = re.compile(r"\b(?:animation|animated|cartoons?|animators?|film studios?|movie studios?)\b|(?<!recording )(?<!music )(?<!podcast )(?<!sound )(?<!radio )(?<!photo )(?<!dance )(?<!yoga )(?<!tv )(?<!television )\bstudios?\b(?! album)", re.I)
+
+
+def ah_room_set(txt: str) -> str | None:
+    """gym / studio: the room a training or animation-studio line belongs in (None: neither)."""
+    if AH_STUDIO_RX.search(txt) and not re.search(r"\b(?:recording|music|podcast) studios?\b", txt, re.I):
+        return "studio"
+    if AH_GYM_RX.search(txt):
+        return "gym"
+    return None
+
+
 AH_SCRIPT_SET = {"gaming": "office", "office": "office", "studio": "stage", "stage": "stage", "store": "stall", "warehouse": "garage",
                  "launch": "space", "city": "street"}
 AH_GAMER_GROUP = ["office", "lab", "garage", "stage"]
@@ -503,8 +588,10 @@ def ah_context(plan: dict) -> dict:
     sub = str((script or {}).get("name_sub") or "").lower()
     gamer = bool(re.search(r"streamer|gamer|esports|twitch", sub)) or "gaming" in sets
     sportish = bool(re.search(r"player|sprinter|driver|boxer|fighter|racer|athlete|golfer|swimmer|skater|champion|quarterback|runner", sub))
-    athlete = bool(sets & {"court", "pitch", "field"}) or (plan.get("hero") or {}).get("kit") in ("bball", "soccer") or (sportish and not gamer)
+    athlete = bool(sets & {"court", "pitch", "field", "diamond", "gridiron", "tennis"}) or (plan.get("hero") or {}).get("kit") in ("bball", "soccer") or (sportish and not gamer)
+    alltxt = " ".join(str(sc.get("text") or sc.get("line") or "") for sc in plan["scenes"])
     return {"script": script, "hero": ah_hero_tokens(script, plan), "gamer": gamer, "athlete": athlete,
+            "tennis": bool(AH_TENNIS_STRONG_RX.search(alltxt)) or any(t in AH_TENNIS_NAMES for t in ah_hero_tokens(script, plan)), "soccer": bool(AH_SOCCER_RX.search(alltxt)) and not AH_GRID_STRONG_RX.search(alltxt),
             "famous": (script or {}).get("format") == "famous", "company": str((script or {}).get("company") or "").lower(),
             "brand": str((plan.get("brand") or {}).get("name") or "").lower()}
 
@@ -605,6 +692,78 @@ def ah_dedupe(shots: list, ctx: dict) -> list:
     return shots
 
 
+# Nov 18 (Sam: "no picture twice in a Short"): the same set came back 4x in a long Short (131 Flagg: court x5, 085 The Rock: stage x3).
+# ah_spread runs after ah_dedupe: a set already used by 2 other sentences goes to a different lit room when the line does not NAME
+# the place and does not need it (hoop / ball / sport act); otherwise the repeat gets a clearly different camera (side / high / low).
+AH_PLACE_WORDS = {"court": r"court|arena|hardwood|gym\b|garden", "pitch": r"pitch|stadium|field|grass|turf", "stage": r"stage|podium|ceremony|draft|award|concert|spotlight|trophy|champion",
+                  "ring": r"ring|wrestl|boxing|fight", "track": r"track|race|sprint", "throne": r"throne|king|crown", "space": r"space|moon|rocket|orbit|mars",
+                  "beach": r"beach|sea|ocean|island|yacht", "street": r"street|city|town|road|from [A-Z]", "diner": r"diner|burger|restaurant|food",
+                  "field": r"field|mine|farm", "graveyard": r"grave|dead|died"}
+AH_SPORT_BOUND = {"basketball", "hoop", "soccerball", "football", "goal", "ball", "net", "whistle", "helmet", "boxing", "gloves", "bat", "baseball"}
+AH_ALT_SETS = ["showroom", "office", "boardroom", "mansion", "stall", "stage", "lab"]
+# Nov 18 (085: "The crowd loved him" went to the mansion, "A world record" to a market stall): a repeat moves only to a room
+# whose meaning fits the line; no fitting room -> it stays and gets a new camera instead
+AH_ALT_FIT = {"showroom": r"car|cars|luxury|rich|billion|buy|bought|spend|collect|watch|jet",
+              "office": r"orders?|cancel|cancelled|job|work|worked|company|career|salary|paid|pay|contract|deal|signed|boss|hired|fired|employee",
+              "boardroom": r"deal|company|business|ceo|board|investor|invest|shares|stake|owner|owns|brand|partner|empire",
+              "mansion": r"home|house|mansion|family|mom|dad|kids|lives|lived|rich|luxury|retire",
+              "stall": r"sell|sold|selling|shop|market|price|cheap|card|cards|merch|stand|ticket",
+              "stage": r"crowd|fans?|famous|award|record|star|show|cheer|loved|movie|actor|film|hollywood|celebrity|viral|views",
+              "lab": r"idea|tech|ai|invent|built|build|science|robot|app|code|game|design|smart|future|data",
+              "garage": r"garage|car|built|start|started|first|tinker|fix"}
+AH_SPREAD_CAMS = [   # side / high / low views: every card stays above the head, far enough back to keep hero + things + card in frame
+    {"from": [3.9, 2.1, 7.9], "to": [3.2, 2.0, 7.1], "look": [0, 1.5, 0]},
+    {"from": [-3.9, 2.1, 7.9], "to": [-3.2, 2.0, 7.1], "look": [0, 1.5, 0]},
+    {"from": [0, 4.6, 8.2], "to": [0, 4.2, 7.6], "look": [0, 1.1, 0]},
+    {"from": [-2.6, 0.7, 8.2], "to": [-1.9, 0.85, 7.5], "look": [0, 1.7, 0]},
+    {"from": [2.6, 0.7, 8.2], "to": [1.9, 0.85, 7.5], "look": [0, 1.7, 0]},
+    {"from": [6.2, 2.8, 10.0], "to": [5.4, 2.6, 9.2], "look": [0, 1.3, 0]},
+]
+
+
+def ah_spread(shots: list, ctx: dict) -> list:
+    use: dict = {}         # set -> distinct sentence ids that showed it
+    looks: dict = {}       # set -> views / cams already shown there
+    moved: dict = {}       # sentence id -> (new set)
+    ncam = 0
+    for i, s in enumerate(shots):
+        k, st = s.get("_k", i), s["set"]
+        outro = s.get("_outro_seen")
+        txt = s.get("_txt", "")
+        bound = bool(s.get("act") or "cam" in s or outro or any(str(t["name"]) in AH_SPORT_BOUND for t in s.get("things") or [])
+                     or s["chars"][0].get("pose") in ("shoot", "dunk", "jump", "run")
+                     or (st == "diamond" and AH_BASEBALL_RX.search(txt))   # a baseball line stays on the field
+                     or (st in ("gym", "studio") and ah_room_set(txt) == st)
+                     or (st in ("gridiron", "tennis") and ah_sport_set(txt, ctx) == st)
+                     or (st == "store" and AH_STORE_RX.search(txt)) or (st == "farm" and AH_FARM_STRONG_RX.search(txt)))   # a football / tennis line stays on its field
+        named = bool(re.search(AH_PLACE_WORDS.get(st, r"\b" + re.escape(st) + r"\b"), txt, re.I)) if st in AH_PLACE_WORDS else bool(re.search(r"\b" + re.escape(st) + r"\b", txt, re.I))
+        if k in moved:
+            s["set"] = st = moved[k]
+        elif not bound and not named and len(use.get(st, set()) - {k}) >= 1 and k not in use.get(st, set()):
+            alts = list(AH_GAMER_GROUP + ["showroom"]) if ctx.get("gamer") else AH_ALT_SETS
+            nxt = shots[i + 1]["set"] if i + 1 < len(shots) else None
+            prv = shots[i - 1]["set"] if i else None
+            alts = [a for a in alts if a != st and a not in AH_DARK_SETS and (a not in AH_SPORT_SETS or ctx.get("athlete"))]
+            alts = [a for a in alts if re.search(r"\b(" + AH_ALT_FIT.get(a, "$^") + r")\b", txt, re.I)]
+            alts.sort(key=lambda a: (len(use.get(a, ())), a in (prv, nxt)))
+            if alts and len(use.get(alts[0], ())) < len(use.get(st, ())):
+                moved[k] = s["set"] = st = alts[0]
+        key = s.get("view") if "cam" not in s else json.dumps(s["cam"]["from"])
+        seen_here = looks.setdefault(st, [])
+        if k not in use.get(st, set()) and use.get(st) and not s.get("act") and "cam" not in s and (key in seen_here):
+            # a repeat of the same set from a view we already showed: a different camera
+            for j in range(len(AH_SPREAD_CAMS)):
+                c = AH_SPREAD_CAMS[(ncam + j) % len(AH_SPREAD_CAMS)]
+                if c["from"][1] < 1 and st in AH_NO_LOW:
+                    continue
+                if json.dumps(c["from"]) not in seen_here:
+                    s["cam"] = c; ncam += j + 1; key = json.dumps(c["from"])
+                    break
+        use.setdefault(st, set()).add(k)
+        seen_here.append(key)
+    return shots
+
+
 def ah_shots(plan: dict) -> list:
     hero, shots, views = plan.get("hero") or {}, [], ["ms", "face", "cu", "ms", "low", "face"]
     prev_pose = None
@@ -617,7 +776,7 @@ def ah_shots(plan: dict) -> list:
         outro = str(sc.get("line") or "").startswith("(outro)")
         # the set must fit who the Short is about (Ninja: a streamer stood on a soccer pitch): a gamer lives in a screens room,
         # and a non-athlete never gets a sport pitch; a place the story chose on purpose (space, stage, throne ...) stays
-        aset = AH_SET.get(place, "street")
+        aset = AH_SET.get(place) or (place if place in AH_ALL_SETS else "street")
         if (ctx["gamer"] and sc.get("set") == "gaming" and aset in ("street", "beach") + AH_SPORT_SETS) or \
                 ((ctx["famous"] or ctx["gamer"]) and not ctx["athlete"] and aset in AH_SPORT_SETS):
             aset = AH_SCRIPT_SET.get(sc.get("set"), "office") if sc.get("set") != "city" else "office"
@@ -626,6 +785,16 @@ def ah_shots(plan: dict) -> list:
         food_line = bool(AH_FOOD_RX.search(sc.get("text") or sc.get("line") or "")) and place not in ("space", "stage", "throne") and not outro
         if food_line:
             aset = "diner"
+        elif AH_BASEBALL_RX.search(sc.get("text") or sc.get("line") or "") and aset not in ("space", "stage", "throne") and place not in ("space", "stage", "throne") and not outro:
+            aset = "diamond"                                        # Nov 18: baseball lines live on the baseball field
+        elif ctx.get("tennis") and aset == "court":   # Nov 18 Serena remake: the outro landed on the basketball arena
+            aset = "tennis"                                         # a tennis star's "court" is the tennis court, never the basketball arena
+        elif ah_sport_set(sc.get("text") or sc.get("line") or "", ctx) and aset not in ("space", "stage", "throne") and place not in ("space", "stage", "throne") and not outro:
+            aset = ah_sport_set(sc.get("text") or sc.get("line") or "", ctx)   # Nov 18: American football -> gridiron, tennis -> tennis court
+        elif ah_place_set(sc.get("text") or sc.get("line") or "") and aset not in ("space", "stage", "throne") and place not in ("space", "stage", "throne") and not outro:
+            aset = ah_place_set(sc.get("text") or sc.get("line") or "")   # Nov 18: farm / grocery store lines stand there
+        elif ah_room_set(sc.get("text") or sc.get("line") or "") and aset not in ("space", "throne") and place not in ("space", "throne") and not outro:
+            aset = ah_room_set(sc.get("text") or sc.get("line") or "")        # Nov 18: gym lines -> gym, animation-studio lines -> studio
         # the hero DOES what the sentence says (Sam, Nov 16: "jump shoes, people should jump"): pipeline/ah_actions
         pose = ah_actions.pick_pose(sc.get("text") or sc.get("line") or "", list(sc.get("things") or []) + list(sc.get("props") or []),
                                     sc.get("mood", "happy"), sc.get("action"), place, prev_pose)
@@ -689,6 +858,12 @@ def ah_shots(plan: dict) -> list:
             b = sc["brand"]; cards.append({"text": b["name"].upper(), "kind": "sign", "bg": b.get("bg"), "fg": b.get("fg"), "at": [0.0, top + 0.5, -0.7], "w": 1.0})
         if food_line and not outro and not act and not any(str(t).lower() in ("burger", "snack", "pizza") for t in thing_names) and re.search(r"burger|restaurant|five guys|fast[- ]?food|chain", line_txt, re.I):
             thing_names = ["burger"] + thing_names                  # the burger itself is on screen when the line is about burgers / a burger chain
+        if aset in ("gridiron", "tennis"):          # Nov 18: the field has its own ball; a generic "ball" becomes the right one, never a soccer ball
+            thing_names = ["football" if str(t) in ("ball", "basketball", "soccerball") and aset == "gridiron" else t for t in thing_names]
+            if aset == "tennis":
+                thing_names = [t for t in thing_names if str(t) not in ("ball", "basketball", "soccerball")]
+        elif aset == "pitch" or ctx.get("soccer"):    # Nov 18: soccer gets a soccer ball, never a basketball / American football
+            thing_names = ["soccerball" if str(t) in ("ball", "basketball") else t for t in thing_names]  # an explicit "football" stays (085: The Rock, Canadian football)
         things, seen = [], set()
         own = ah_actions.ACT_OWN_PROPS.get(act, set()) if act else set()   # the act brings this prop itself
         if not thing_names and (ctx["gamer"] or ctx["famous"]) and not (sc.get("card") or act):   # Nov 17: show what the line talks about
@@ -702,7 +877,7 @@ def ah_shots(plan: dict) -> list:
             elif ctx["gamer"] and re.search(r"\b(?:games?|play(?:s|ed|ing)?|fortnite|apex|match(?:es)?|ranked|controller)\b", low_l):
                 thing_names = ["controller"]
         for nm in thing_names:          # things + props (+ the object of an act that is switched off)
-            t3 = AH_THING.get(nm)
+            t3 = AH_THING.get(nm) or (nm if nm in AH_ALL_THINGS else None)
             if not t3 or t3 in seen or len(things) >= 2 or nm in own or t3 in own:
                 continue
             seen.add(t3)
@@ -721,7 +896,7 @@ def ah_shots(plan: dict) -> list:
         if outro:
             things = []
         shot = {"a": sc["a"], "n": sc["n"], "set": aset, "view": sc.get("view") or views[k % len(views)],
-                "chars": chars, "cards": cards, "things": things, **({"coins": True} if sc.get("beat") == "money" else {})}
+                "chars": chars, "cards": cards, "things": things, "_k": k, "_txt": line_txt, **({"coins": True} if sc.get("beat") == "money" else {})}
         # Rule (Nov 17, owner: "the things that are said are not shown"): a ratio ("one in every ten") is a row of small
         # figures with one lit up, seen from a camera that sees the floor, plus the short number card
         rm = AH_RATIO_RX.search(line_txt)
@@ -786,10 +961,16 @@ def ah_shots(plan: dict) -> list:
         if s.get("view") == "low" and s.get("set") in AH_NO_LOW and "cam" not in s:
             s["view"] = "ms"
     shots = ah_dedupe(shots, ctx)
+    shots = ah_spread(shots, ctx)
     for s in shots:   # dedupe may pick "low" again when it moves a shot to a raised set
         if s.get("view") == "low" and s.get("set") in AH_NO_LOW and "cam" not in s:
             s["view"] = "ws"
+    for p, s in zip(shots, shots[1:]):   # Nov 18 test 4 (132 @783): dedupe/spread left two halves of a line on the SAME set + view = a jump cut
+        if s["set"] == p["set"] and s.get("view") == p.get("view") and "cam" not in s and not s.get("act"):
+            alt = ["wide", "ws"] if (s.get("things") or s.get("cards")) else ["face", "ms", "ws"]
+            s["view"] = next((v for v in alt if v != p.get("view") and not (v == "low" and s["set"] in AH_NO_LOW)), "wide")
     for sh in shots:
+        sh.pop("_k", None); sh.pop("_txt", None)
         for c in sh["chars"]:
             c.pop("who", None)
     return shots
@@ -809,13 +990,36 @@ def plates(plan: dict, frames_dir: Path, plates_dir: Path) -> int:
         imgs = sorted(rj.parent.glob("*.jp*g"), key=lambda q: int(re.findall(r"\d+", q.stem)[-1]))
         for k, q in enumerate(imgs):
             files[r["start"] + k] = q
-    n = 0
+    n, gaps = 0, []
     for sc in plan["scenes"]:
         for j in range(sc["n"]):
             f = files.get(sc["a"] + j)
+            if not f and files:   # Nov 18: a missing frame fell back to the old renderer = a BLACK flash (099 @556)
+                gaps.append(sc["a"] + j)
+                near = min(files, key=lambda k: (abs(k - (sc["a"] + j)), k > sc["a"] + j))
+                f = files[near]
             if f:
                 shutil.copyfile(f, out / f"{sc['si']}_{sc['frLo'] + j}.jpg")
                 n += 1
+    if gaps:
+        print(f"::warning::{plan['slug']} plates: {len(gaps)} missing frame(s) filled from neighbours: {gaps[:10]}")
+    try:   # a frame that RENDERED blank (one black flash) gets the frame before it
+        import numpy as np
+        from PIL import Image
+        seq = [out / f"{sc['si']}_{sc['frLo'] + j}.jpg" for sc in plan["scenes"] for j in range(sc["n"])]
+        seq = [q for q in seq if q.exists()]
+        prev, fixed = None, []
+        for q in seq:
+            blank = float(np.asarray(Image.open(q).convert("L").resize((45, 80)), np.float32).std()) < 6
+            if blank and prev is not None:
+                shutil.copyfile(prev, q)
+                fixed.append(q.stem)
+            elif not blank:
+                prev = q
+        if fixed:
+            print(f"::warning::{plan['slug']} plates: {len(fixed)} blank frame(s) replaced: {fixed[:10]}")
+    except Exception as e:  # noqa: BLE001  never cost a Short
+        print(f"[plates] blank check skipped: {e!r}")
     return n
 
 

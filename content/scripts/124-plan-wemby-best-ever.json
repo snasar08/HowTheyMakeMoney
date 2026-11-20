@@ -8,7 +8,7 @@
   "hook_style": "surprise",
   "title_style": "statement",
   "theme": "bold_bright",
-  "status": "ready",
+  "status": "needs_fix",
   "score": 94,
   "title": "You're Wemby. You Want to Be the Best Ever.",
   "name_card": "Victor Wembanyama",
@@ -57,31 +57,44 @@
           "ball"
         ],
         "stat": "WEMBY",
-        "stat_sub": "the best ever?"
+        "stat_sub": "the best ever?",
+        "hero": {
+          "skin": "6b4430",
+          "hair": "short",
+          "hair_color": "141010",
+          "beard": "none",
+          "shirt": "111111",
+          "pants": "111111",
+          "trim": "c4ced4",
+          "socks": "f4f4f4",
+          "shoes": "111111",
+          "height": 1.3,
+          "outfit": "kit",
+          "number": 1
+        }
       },
       "toon": [
         {
           "place": "court",
-          "beat": "walk",
           "mood": "calm",
-          "crowd": 20
+          "view": "ms"
         },
         {
           "place": "court",
-          "beat": "walk",
           "mood": "proud",
-          "crowd": 30
+          "things": [
+            "hoop"
+          ],
+          "view": "low"
         },
         {
           "place": "court",
-          "beat": "logo",
           "mood": "scheme",
-          "brand": {
-            "name": "Spurs",
-            "bg": "#111111",
-            "fg": "#c4ced4",
-            "icon": "star"
-          }
+          "things": [
+            "crown",
+            "trophy"
+          ],
+          "view": "wide"
         }
       ]
     },
@@ -96,37 +109,48 @@
           "ball"
         ],
         "stat": "STEP 1",
-        "stat_sub": "block everything"
+        "stat_sub": "block everything",
+        "hero": {
+          "skin": "6b4430",
+          "hair": "short",
+          "hair_color": "141010",
+          "beard": "none",
+          "shirt": "111111",
+          "pants": "111111",
+          "trim": "c4ced4",
+          "socks": "f4f4f4",
+          "shoes": "111111",
+          "height": 1.3,
+          "outfit": "kit",
+          "number": 1
+        }
       },
       "toon": [
         {
           "place": "court",
-          "beat": "walk",
           "mood": "stern",
-          "action": "run"
+          "view": "wide"
         },
         {
           "place": "court",
-          "beat": "walk",
           "mood": "stern",
-          "action": "cheer",
-          "crowd": 6,
           "things": [
-            "shot"
-          ]
+            "basketball"
+          ],
+          "view": "ms"
         },
         {
-          "place": "court",
-          "beat": "sign",
+          "place": "stage",
           "mood": "laugh",
-          "action": "cheer",
-          "crowd": 40,
-          "brand": {
-            "name": "DPOY",
-            "bg": "#111111",
-            "fg": "#c4ced4",
-            "icon": "star"
-          }
+          "things": [
+            "trophy"
+          ],
+          "card": {
+            "text": "DPOY",
+            "kind": "sign",
+            "sub": "FIRST UNANIMOUS"
+          },
+          "view": "ms"
         }
       ]
     },
@@ -141,27 +165,42 @@
           "ball"
         ],
         "stat": "STEP 2",
-        "stat_sub": "shoot from anywhere"
+        "stat_sub": "shoot from anywhere",
+        "hero": {
+          "skin": "6b4430",
+          "hair": "short",
+          "hair_color": "141010",
+          "beard": "none",
+          "shirt": "111111",
+          "pants": "111111",
+          "trim": "c4ced4",
+          "socks": "f4f4f4",
+          "shoes": "111111",
+          "height": 1.3,
+          "outfit": "kit",
+          "number": 1
+        }
       },
       "toon": [
         {
           "place": "court",
-          "beat": "walk",
-          "mood": "nervous"
-        },
-        {
-          "place": "court",
-          "beat": "walk",
-          "mood": "scheme",
+          "mood": "sad",
           "things": [
-            "shot"
-          ]
+            "ring"
+          ],
+          "view": "ms"
         },
         {
           "place": "court",
-          "beat": "queue",
+          "mood": "scheme",
+          "action": "shoot",
+          "view": "wide"
+        },
+        {
+          "place": "court",
           "mood": "shock",
-          "crowd": 35
+          "crowd": 5,
+          "view": "wide"
         }
       ]
     },
@@ -176,26 +215,43 @@
           "ball"
         ],
         "stat": "STEP 3",
-        "stat_sub": "make everyone better"
+        "stat_sub": "make everyone better",
+        "hero": {
+          "skin": "6b4430",
+          "hair": "short",
+          "hair_color": "141010",
+          "beard": "none",
+          "shirt": "111111",
+          "pants": "111111",
+          "trim": "c4ced4",
+          "socks": "f4f4f4",
+          "shoes": "111111",
+          "height": 1.3,
+          "outfit": "kit",
+          "number": 1
+        }
       },
       "toon": [
         {
           "place": "court",
-          "beat": "walk",
-          "mood": "calm",
-          "crowd": 12
+          "mood": "nervous",
+          "crowd": 3,
+          "view": "low"
         },
         {
           "place": "court",
-          "beat": "walk",
-          "mood": "happy"
+          "mood": "happy",
+          "action": "throw",
+          "things": [
+            "basketball"
+          ],
+          "view": "ms"
         },
         {
           "place": "court",
-          "beat": "walk",
           "mood": "laugh",
-          "action": "cheer",
-          "crowd": 25
+          "action": "dunk",
+          "view": "wide"
         }
       ]
     },
@@ -210,28 +266,41 @@
           "ball"
         ],
         "stat": "STEP 4",
-        "stat_sub": "a whole country of Wembys"
+        "stat_sub": "a whole country of Wembys",
+        "hero": {
+          "skin": "6b4430",
+          "hair": "short",
+          "hair_color": "141010",
+          "beard": "none",
+          "shirt": "111111",
+          "pants": "111111",
+          "trim": "c4ced4",
+          "socks": "f4f4f4",
+          "shoes": "111111",
+          "height": 1.3,
+          "outfit": "kit",
+          "number": 1
+        }
       },
       "toon": [
         {
-          "place": "office",
-          "beat": "logo",
+          "place": "garage",
           "mood": "excited",
-          "brand": {
-            "name": "Wemby Lab",
-            "bg": "#111111",
-            "fg": "#c4ced4",
-            "icon": "robot"
-          }
+          "things": [
+            "hoop",
+            "robot"
+          ],
+          "view": "ms"
         },
         {
-          "place": "street",
-          "beat": "queue",
+          "place": "classroom",
           "mood": "proud",
-          "crowd": 50,
+          "crowd": 10,
           "things": [
-            "dumbbell"
-          ]
+            "alien",
+            "basketball"
+          ],
+          "view": "wide"
         }
       ]
     },
@@ -246,36 +315,48 @@
           "ball"
         ],
         "stat": "STEP 5",
-        "stat_sub": "a dunk on the Moon"
+        "stat_sub": "a dunk on the Moon",
+        "hero": {
+          "skin": "6b4430",
+          "hair": "short",
+          "hair_color": "141010",
+          "beard": "none",
+          "shirt": "111111",
+          "pants": "111111",
+          "trim": "c4ced4",
+          "socks": "f4f4f4",
+          "shoes": "111111",
+          "height": 1.3,
+          "outfit": "kit",
+          "number": 1
+        }
       },
       "toon": [
         {
-          "place": "court",
-          "beat": "walk",
-          "mood": "scheme"
-        },
-        {
-          "place": "space",
-          "beat": "logo",
-          "mood": "excited",
-          "brand": {
-            "name": "Moon Game",
-            "bg": "#0b2a6f",
-            "fg": "#ffffff",
-            "icon": "rocket"
-          }
-        },
-        {
-          "place": "space",
-          "beat": "walk",
-          "mood": "laugh",
-          "action": "cheer",
-          "props": [
-            "ball"
-          ],
+          "place": "office",
+          "mood": "scheme",
           "things": [
-            "springshoe"
-          ]
+            "lightbulb"
+          ],
+          "view": "ms"
+        },
+        {
+          "place": "space",
+          "mood": "excited",
+          "things": [
+            "hoop"
+          ],
+          "card": {
+            "text": "THE MOON",
+            "kind": "sign"
+          },
+          "view": "wide"
+        },
+        {
+          "place": "space",
+          "mood": "laugh",
+          "action": "dunk",
+          "view": "wide"
         }
       ]
     },
@@ -290,35 +371,53 @@
           "ball"
         ],
         "stat": "THE PLAN",
-        "stat_sub": "who's second?"
+        "stat_sub": "who's second?",
+        "hero": {
+          "skin": "6b4430",
+          "hair": "short",
+          "hair_color": "141010",
+          "beard": "none",
+          "shirt": "111111",
+          "pants": "111111",
+          "trim": "c4ced4",
+          "socks": "f4f4f4",
+          "shoes": "111111",
+          "height": 1.3,
+          "outfit": "kit",
+          "number": 1
+        }
       },
       "toon": [
         {
           "place": "court",
-          "beat": "walk",
           "mood": "proud",
-          "crowd": 30,
           "things": [
             "ring",
-            "crown"
-          ]
+            "trophy"
+          ],
+          "card": {
+            "text": "10 RINGS",
+            "kind": "sign"
+          },
+          "view": "ms"
         },
         {
-          "place": "court",
-          "beat": "sign",
-          "mood": "laugh",
-          "brand": {
-            "name": "Spurs",
-            "bg": "#111111",
-            "fg": "#c4ced4",
-            "icon": "star"
-          },
-          "crowd": 30,
+          "place": "throne",
+          "mood": "proud",
           "things": [
             "crown"
-          ]
+          ],
+          "view": "ms"
         }
       ]
     }
+  ],
+  "needs_fix": [
+    "act block unclear at frames 150-192: The character stands idle while the opponent shoots the ball.",
+    "act block unclear at frames 321-363: The character stands idle while the opponent shoots the ball.",
+    "act shoot unclear at frames 364-421: The character stands idle while the ball travels to the hoop.",
+    "act dunk unclear at frames 562-640: The character stands idle while the ball enters the hoop.",
+    "act lift_weights unclear at frames 641-710: The character stands idle while the weight bar moves up and down.",
+    "act dunk unclear at frames 852-917: The character stands idle while the ball enters the hoop."
   ]
 }

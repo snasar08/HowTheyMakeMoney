@@ -1,0 +1,1978 @@
+{
+ "id": "102-the-blank-page",
+ "status": "ready",
+ "title": "The Blank Page: Nobody Is Waiting For Your First Try.",
+ "description": "A man wants to learn lettering, but the phone wins every night. Ten minutes at a time, he makes his first sign, and keeps it even when nobody stops.",
+ "tags": [
+  "animated short film",
+  "learning a skill",
+  "discipline",
+  "motivation",
+  "small habits",
+  "2d animation",
+  "starting over",
+  "side hustle",
+  "silent film",
+  "how they make money"
+ ],
+ "wishlist": [
+  "a real hanging shop sign prop",
+  "a pencil / brush drawing animation",
+  "a door with a sign over it",
+  "a notebook with visible lettering"
+ ],
+ "cast": {
+  "hero": {},
+  "nova": {
+   "band": "#2fa8a0"
+  },
+  "friend": {
+   "band": "#d9822b"
+  },
+  "voice": {
+   "monster": true
+  }
+ },
+ "grid": 0.666667,
+ "bpm": 90,
+ "pedal": 33,
+ "prog_dark": [
+  [
+   45,
+   48,
+   52
+  ],
+  [
+   41,
+   45,
+   48
+  ],
+  [
+   48,
+   52,
+   55
+  ],
+  [
+   43,
+   47,
+   50
+  ]
+ ],
+ "prog_hope": [
+  [
+   48,
+   52,
+   55
+  ],
+  [
+   43,
+   47,
+   50
+  ],
+  [
+   45,
+   48,
+   52
+  ],
+  [
+   41,
+   45,
+   48
+  ]
+ ],
+ "arp_dark": [
+  [
+   57,
+   60,
+   64,
+   69
+  ],
+  [
+   57,
+   60,
+   65,
+   69
+  ],
+  [
+   60,
+   64,
+   67,
+   72
+  ],
+  [
+   59,
+   62,
+   67,
+   71
+  ]
+ ],
+ "arp_hope": [
+  [
+   64,
+   67,
+   72,
+   76
+  ],
+  [
+   62,
+   67,
+   71,
+   74
+  ],
+  [
+   64,
+   69,
+   72,
+   76
+  ],
+  [
+   65,
+   69,
+   72,
+   77
+  ]
+ ],
+ "arp_pattern": [
+  0,
+  1,
+  2,
+  3,
+  1,
+  2,
+  3,
+  2
+ ],
+ "beats": [
+  {
+   "s": 2.6667,
+   "set": "black",
+   "music": "drone",
+   "say": [
+    {
+     "t": "A blank page waits.",
+     "delay": 0.5,
+     "until": 2.5,
+     "at": "mid",
+     "bold": true,
+     "size": 46
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "s": 6.0,
+   "set": "desk",
+   "fade": 20,
+   "day": "DAY 1",
+   "cam": {
+    "from": [
+     660,
+     365,
+     1.22
+    ],
+    "to": [
+     660,
+     365,
+     1.3
+    ],
+    "ease": "lin"
+   },
+   "music": "drone",
+   "chars": [
+    {
+     "look": "hero",
+     "x": 560,
+     "pose": "desk",
+     "expr": "determined",
+     "y": 510
+    }
+   ],
+   "things": [
+    {
+     "name": "book",
+     "x": 700,
+     "y": 440,
+     "s": 0.9
+    }
+   ],
+   "say": [
+    {
+     "t": "He wanted to learn lettering.",
+     "delay": 0.8,
+     "until": 5.6,
+     "bold": true,
+     "size": 40,
+     "at": [
+      700,
+      250
+     ]
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "s": 4.6667,
+   "set": "couch",
+   "day": "DAY 2",
+   "arg": {
+    "nolamp": 1,
+    "lamp": 0
+   },
+   "cam": {
+    "from": [
+     740,
+     450,
+     1.5
+    ],
+    "to": [
+     740,
+     450,
+     1.65
+    ],
+    "ease": "lin"
+   },
+   "chars": [
+    {
+     "look": "hero",
+     "x": 640,
+     "pose": "sofaphone",
+     "expr": "smile",
+     "y": 548
+    },
+    {
+     "look": "voice",
+     "x": 840,
+     "y": 560,
+     "pose": "peek",
+     "scale": 1.0,
+     "dir": -1
+    }
+   ],
+   "things": [
+    {
+     "name": "phone",
+     "hand": 0
+    }
+   ],
+   "say": [
+    {
+     "t": "just scroll.",
+     "delay": 1.3,
+     "until": 4.4,
+     "red": true,
+     "size": 40,
+     "at": [
+      420,
+      150
+     ]
+    }
+   ],
+   "sfx": [
+    [
+     "ping",
+     2.2
+    ]
+   ]
+  },
+  {
+   "s": 4.6667,
+   "set": "desk",
+   "day": "DAY 3",
+   "cam": {
+    "from": [
+     660,
+     365,
+     1.22
+    ],
+    "to": [
+     660,
+     365,
+     1.3
+    ],
+    "ease": "lin"
+   },
+   "chars": [
+    {
+     "look": "hero",
+     "x": 560,
+     "pose": "deskslump",
+     "expr": "tired",
+     "y": 510
+    },
+    {
+     "look": "voice",
+     "x": 400,
+     "y": 900,
+     "pose": "lurk",
+     "scale": 1.0,
+     "dir": -1,
+     "to": [
+      400,
+      560
+     ],
+     "ease": true,
+     "dur": 1.1
+    }
+   ],
+   "things": [
+    {
+     "name": "book",
+     "x": 700,
+     "y": 440,
+     "s": 0.9
+    }
+   ],
+   "say": [
+    {
+     "t": "someone better already exists.",
+     "delay": 0.7,
+     "until": 4.5,
+     "red": true,
+     "size": 40,
+     "at": [
+      700,
+      250
+     ]
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "s": 2.0,
+   "set": "calendar",
+   "day": "DAY 6",
+   "arg": {
+    "paper": 1,
+    "start": 2,
+    "cross": 4,
+    "crossDt": 0.2,
+    "crossT0": 0.2
+   },
+   "cam": {
+    "from": [
+     640,
+     292,
+     1.4
+    ]
+   },
+   "sfx": []
+  },
+  {
+   "s": 1.3333,
+   "set": "couch",
+   "day": "DAY 8",
+   "arg": {
+    "nolamp": 1
+   },
+   "cam": {
+    "from": [
+     660,
+     490,
+     2.1
+    ]
+   },
+   "chars": [
+    {
+     "look": "hero",
+     "x": 640,
+     "pose": "sofaphone",
+     "expr": "tired",
+     "y": 548
+    }
+   ],
+   "things": [
+    {
+     "name": "phone",
+     "hand": 0
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "s": 1.3333,
+   "set": "fridge",
+   "day": "DAY 10",
+   "arg": {
+    "open": 1,
+    "x": 613
+   },
+   "cam": {
+    "from": [
+     700,
+     420,
+     1.15
+    ]
+   },
+   "chars": [
+    {
+     "look": "hero",
+     "x": 874,
+     "pose": "stand",
+     "expr": "tired",
+     "dir": -1
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "s": 1.3333,
+   "set": "void",
+   "day": "DAY 11",
+   "cam": {
+    "from": [
+     640,
+     420,
+     1.0
+    ]
+   },
+   "things": [
+    {
+     "name": "book",
+     "x": 640,
+     "y": 400,
+     "s": 3.4
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "s": 1.3333,
+   "set": "street",
+   "day": "DAY 13",
+   "cam": {
+    "from": [
+     686,
+     429,
+     1.5
+    ]
+   },
+   "scroll": [
+    200,
+    420
+   ],
+   "chars": [
+    {
+     "look": "hero",
+     "x": 640,
+     "pose": "trudge",
+     "expr": "tired",
+     "y": 538
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "s": 1.3333,
+   "set": "calendar",
+   "day": "DAY 15",
+   "arg": {
+    "paper": 1,
+    "start": 2,
+    "cross": 14,
+    "crossDt": 0.03,
+    "crossT0": 0.0
+   },
+   "cam": {
+    "from": [
+     640,
+     292,
+     1.6
+    ]
+   },
+   "sfx": []
+  },
+  {
+   "s": 1.3333,
+   "set": "desk",
+   "day": "DAY 16",
+   "cam": {
+    "from": [
+     690,
+     385,
+     1.6
+    ]
+   },
+   "chars": [
+    {
+     "look": "hero",
+     "x": 560,
+     "pose": "sleepdesk",
+     "expr": "sleep",
+     "y": 510
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "s": 1.3333,
+   "set": "bedroom",
+   "day": "DAY 17",
+   "arg": {
+    "clock": 1130
+   },
+   "cam": {
+    "from": [
+     520,
+     450,
+     1.6
+    ]
+   },
+   "chars": [
+    {
+     "look": "hero",
+     "x": 720,
+     "pose": "lie",
+     "expr": "tired",
+     "bed": true
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "s": 6.0,
+   "set": "desk",
+   "day": "DAY 20",
+   "fade": 9,
+   "cam": {
+    "from": [
+     700,
+     365,
+     1.3
+    ],
+    "to": [
+     700,
+     365,
+     1.38
+    ],
+    "ease": "lin"
+   },
+   "music": "tick",
+   "chars": [
+    {
+     "look": "hero",
+     "x": 560,
+     "pose": "deskslump",
+     "expr": "tired",
+     "y": 510
+    },
+    {
+     "look": "voice",
+     "x": 1000,
+     "y": 900,
+     "pose": "lurk",
+     "scale": 1.0,
+     "dir": -1,
+     "to": [
+      1000,
+      560
+     ],
+     "ease": true,
+     "dur": 1.1
+    }
+   ],
+   "say": [
+    {
+     "t": "why start?",
+     "delay": 1.2,
+     "until": 3.6,
+     "red": true,
+     "size": 40,
+     "at": [
+      760,
+      250
+     ]
+    },
+    {
+     "t": "it is not good.",
+     "delay": 3.8,
+     "until": 5.8,
+     "red": true,
+     "size": 40,
+     "at": [
+      760,
+      250
+     ]
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "s": 4.6667,
+   "set": "mirror",
+   "day": "DAY 24",
+   "arg": {
+    "crack": 0
+   },
+   "cam": {
+    "from": [
+     650,
+     421,
+     1.4
+    ],
+    "to": [
+     650,
+     421,
+     1.5
+    ],
+    "ease": "lin"
+   },
+   "chars": [
+    {
+     "look": "hero",
+     "x": 540,
+     "pose": "stand",
+     "expr": "sad"
+    },
+    {
+     "look": "voice",
+     "x": 760,
+     "y": 540,
+     "pose": "monster",
+     "scale": 0.9,
+     "dir": -1
+    }
+   ],
+   "say": [
+    {
+     "t": "Weeks. One empty page.",
+     "delay": 0.7,
+     "until": 4.5,
+     "bold": true,
+     "size": 40,
+     "at": [
+      430,
+      215
+     ]
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "s": 6.0,
+   "set": "desk",
+   "day": "DAY 1",
+   "fade": 14,
+   "music": "tick",
+   "cam": {
+    "from": [
+     660,
+     365,
+     1.0
+    ],
+    "to": [
+     660,
+     365,
+     1.15
+    ],
+    "ease": "lin"
+   },
+   "chars": [
+    {
+     "look": "nova",
+     "x": 560,
+     "pose": "desk",
+     "expr": "determined",
+     "y": 510
+    }
+   ],
+   "things": [
+    {
+     "name": "book",
+     "x": 700,
+     "y": 440,
+     "s": 0.9
+    }
+   ],
+   "say": [
+    {
+     "t": "TEN MINUTES.",
+     "delay": 1.2,
+     "until": 5.8,
+     "white": true,
+     "size": 84
+    }
+   ],
+   "sfx": [
+    [
+     "ping",
+     1.3
+    ]
+   ]
+  },
+  {
+   "s": 1.3333,
+   "set": "couch",
+   "day": "DAY 2",
+   "sfx": [],
+   "arg": {
+    "nolamp": 1
+   },
+   "chars": [
+    {
+     "look": "nova",
+     "x": 640,
+     "pose": "sit",
+     "expr": "determined",
+     "y": 548
+    }
+   ],
+   "things": [
+    {
+     "name": "book",
+     "x": 640,
+     "y": 470,
+     "s": 1.1
+    }
+   ],
+   "cam": {
+    "from": [
+     660,
+     480,
+     1.7
+    ]
+   },
+   "music": "montage"
+  },
+  {
+   "s": 1.3333,
+   "set": "desk",
+   "day": "DAY 3",
+   "sfx": [],
+   "chars": [
+    {
+     "look": "nova",
+     "x": 560,
+     "pose": "desk",
+     "expr": "determined",
+     "y": 510
+    }
+   ],
+   "things": [
+    {
+     "name": "book",
+     "x": 700,
+     "y": 440,
+     "s": 0.9
+    }
+   ],
+   "cam": {
+    "from": [
+     690,
+     385,
+     1.1
+    ]
+   }
+  },
+  {
+   "s": 1.3333,
+   "set": "calendar",
+   "day": "DAY 5",
+   "sfx": [
+    [
+     "swish",
+     0.1
+    ]
+   ],
+   "arg": {
+    "paper": 1,
+    "start": 2,
+    "cross": 3,
+    "crossDt": 0.1,
+    "crossT0": 0.1
+   },
+   "cam": {
+    "from": [
+     640,
+     292,
+     1.5
+    ]
+   }
+  },
+  {
+   "s": 1.3333,
+   "set": "street",
+   "day": "DAY 7",
+   "sfx": [],
+   "chars": [
+    {
+     "look": "nova",
+     "x": 640,
+     "pose": "walk",
+     "expr": "determined",
+     "y": 538
+    }
+   ],
+   "things": [
+    {
+     "name": "book",
+     "hand": 0,
+     "s": 0.8
+    }
+   ],
+   "scroll": [
+    0,
+    420
+   ],
+   "cam": {
+    "from": [
+     686,
+     429,
+     1.3
+    ]
+   }
+  },
+  {
+   "s": 1.3333,
+   "set": "void",
+   "day": "DAY 9",
+   "sfx": [],
+   "chars": [],
+   "things": [
+    {
+     "name": "book",
+     "x": 640,
+     "y": 400,
+     "s": 3.4
+    }
+   ],
+   "cam": {
+    "from": [
+     640,
+     420,
+     1.0
+    ]
+   }
+  },
+  {
+   "s": 1.3333,
+   "set": "desk",
+   "day": "DAY 12",
+   "sfx": [],
+   "chars": [
+    {
+     "look": "nova",
+     "x": 560,
+     "pose": "desk",
+     "expr": "determined",
+     "y": 510
+    },
+    {
+     "look": "voice",
+     "x": 1000,
+     "y": 560,
+     "pose": "lurk",
+     "scale": 0.7,
+     "dir": -1
+    }
+   ],
+   "things": [
+    {
+     "name": "book",
+     "x": 700,
+     "y": 440,
+     "s": 0.9
+    }
+   ],
+   "cam": {
+    "from": [
+     740,
+     365,
+     1.25
+    ]
+   }
+  },
+  {
+   "s": 1.3333,
+   "set": "stairs",
+   "day": "DAY 15",
+   "sfx": [],
+   "chars": [
+    {
+     "look": "nova",
+     "x": 0,
+     "pose": "stairs",
+     "expr": "determined",
+     "stairs": [
+      0.0,
+      0.1
+     ],
+     "scale": 0.92
+    }
+   ]
+  },
+  {
+   "s": 1.3333,
+   "set": "mirror",
+   "day": "DAY 18",
+   "sfx": [],
+   "arg": {
+    "crack": 0
+   },
+   "chars": [
+    {
+     "look": "nova",
+     "x": 540,
+     "pose": "stand",
+     "expr": "determined"
+    }
+   ],
+   "cam": {
+    "from": [
+     650,
+     421,
+     1.7
+    ]
+   }
+  },
+  {
+   "s": 1.3333,
+   "set": "couch",
+   "day": "DAY 22",
+   "sfx": [],
+   "arg": {
+    "nolamp": 1
+   },
+   "chars": [
+    {
+     "look": "nova",
+     "x": 640,
+     "pose": "sit",
+     "expr": "smile",
+     "y": 548
+    }
+   ],
+   "things": [
+    {
+     "name": "phone",
+     "x": 880,
+     "y": 530,
+     "s": 0.9
+    }
+   ],
+   "cam": {
+    "from": [
+     700,
+     440,
+     2.2
+    ]
+   }
+  },
+  {
+   "s": 1.3333,
+   "set": "calendar",
+   "day": "DAY 26",
+   "sfx": [
+    [
+     "swish",
+     0.1
+    ]
+   ],
+   "arg": {
+    "paper": 1,
+    "start": 3,
+    "cross": 20,
+    "crossDt": 0.02,
+    "crossT0": 0.1
+   },
+   "cam": {
+    "from": [
+     640,
+     292,
+     1.3
+    ]
+   }
+  },
+  {
+   "s": 1.3333,
+   "set": "store",
+   "day": "DAY 30",
+   "sfx": [],
+   "chars": [
+    {
+     "look": "nova",
+     "x": 520,
+     "pose": "stand",
+     "expr": "determined"
+    }
+   ],
+   "things": [
+    {
+     "name": "book",
+     "x": 700,
+     "y": 440,
+     "s": 1.0
+    }
+   ],
+   "cam": {
+    "from": [
+     444,
+     415,
+     1.3
+    ]
+   }
+  },
+  {
+   "s": 1.3333,
+   "set": "bedroomdawn",
+   "day": "DAY 34",
+   "sfx": [],
+   "chars": [
+    {
+     "look": "nova",
+     "x": 520,
+     "pose": "bedge",
+     "expr": "smile"
+    }
+   ],
+   "things": [
+    {
+     "name": "book",
+     "x": 380,
+     "y": 482,
+     "s": 0.6
+    }
+   ],
+   "cam": {
+    "from": [
+     450,
+     470,
+     1.45
+    ]
+   },
+   "arg": {
+    "nsExt": 70
+   }
+  },
+  {
+   "s": 1.3333,
+   "set": "spot",
+   "day": "DAY 40",
+   "sfx": [],
+   "arg": {
+    "x": 640
+   },
+   "chars": [
+    {
+     "look": "nova",
+     "x": 560,
+     "pose": "stand",
+     "expr": "smile"
+    }
+   ],
+   "things": [
+    {
+     "name": "book",
+     "x": 820,
+     "y": 560,
+     "s": 1.4
+    }
+   ],
+   "cam": {
+    "from": [
+     700,
+     450,
+     1.4
+    ]
+   }
+  },
+  {
+   "s": 1.3333,
+   "set": "office",
+   "day": "DAY 45",
+   "sfx": [],
+   "chars": [
+    {
+     "look": "nova",
+     "x": 640,
+     "pose": "point",
+     "expr": "smile"
+    }
+   ],
+   "things": [
+    {
+     "name": "chart",
+     "x": 900,
+     "y": 300,
+     "v": 0.4,
+     "text": "PRACTICE"
+    }
+   ],
+   "cam": {
+    "from": [
+     880,
+     420,
+     1.5
+    ]
+   }
+  },
+  {
+   "s": 1.3333,
+   "set": "street",
+   "day": "DAY 52",
+   "sfx": [],
+   "chars": [
+    {
+     "look": "nova",
+     "x": 640,
+     "pose": "run",
+     "expr": "determined",
+     "y": 538
+    }
+   ],
+   "grade": "sunset",
+   "arg": {
+    "gradeAmt": 0.4
+   },
+   "cam": {
+    "from": [
+     686,
+     429,
+     1.3
+    ]
+   }
+  },
+  {
+   "s": 6.0,
+   "set": "store",
+   "day": "DAY 58",
+   "fade": 10,
+   "music": "drone",
+   "cam": {
+    "from": [
+     450,
+     425,
+     1.15
+    ],
+    "to": [
+     450,
+     425,
+     1.28
+    ],
+    "ease": "lin"
+   },
+   "chars": [
+    {
+     "look": "nova",
+     "x": 520,
+     "pose": "stand",
+     "expr": "smile"
+    }
+   ],
+   "say": [
+    {
+     "t": "His first sign.",
+     "delay": 1.0,
+     "until": 4.2,
+     "bold": true,
+     "size": 44,
+     "at": [
+      640,
+      590
+     ]
+    },
+    {
+     "t": "He hung it up.",
+     "delay": 4.0,
+     "until": 5.8,
+     "bold": true,
+     "size": 44,
+     "at": [
+      640,
+      590
+     ]
+    }
+   ],
+   "sfx": [],
+   "things": [
+    {
+     "name": "sign",
+     "x": 515,
+     "y": 262,
+     "s": 0.8,
+     "text": "HAND LETTERING"
+    }
+   ]
+  },
+  {
+   "s": 5.3333,
+   "set": "store",
+   "day": "DAY 59",
+   "cam": {
+    "from": [
+     450,
+     425,
+     1.28
+    ],
+    "to": [
+     450,
+     425,
+     1.4
+    ],
+    "ease": "lin"
+   },
+   "chars": [
+    {
+     "look": "nova",
+     "x": 520,
+     "pose": "stand",
+     "expr": "sad"
+    }
+   ],
+   "say": [
+    {
+     "t": "Nobody stopped.",
+     "delay": 0.9,
+     "until": 5.2,
+     "bold": true,
+     "size": 44,
+     "at": [
+      640,
+      590
+     ]
+    }
+   ],
+   "sfx": [],
+   "things": [
+    {
+     "name": "sign",
+     "x": 515,
+     "y": 262,
+     "s": 0.8,
+     "text": "HAND LETTERING"
+    }
+   ]
+  },
+  {
+   "s": 1.3333,
+   "set": "street",
+   "day": "DAY 60",
+   "grade": "rain",
+   "cam": {
+    "from": [
+     750,
+     429,
+     1.3
+    ]
+   },
+   "chars": [
+    {
+     "look": "nova",
+     "x": 560,
+     "pose": "trudge",
+     "expr": "sad",
+     "y": 538
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "s": 1.3333,
+   "set": "store",
+   "day": "DAY 61",
+   "cam": {
+    "from": [
+     450,
+     425,
+     1.5
+    ]
+   },
+   "chars": [
+    {
+     "look": "nova",
+     "x": 520,
+     "pose": "sit",
+     "expr": "sad",
+     "y": 560
+    }
+   ],
+   "sfx": [],
+   "things": [
+    {
+     "name": "sign",
+     "x": 515,
+     "y": 262,
+     "s": 0.8,
+     "text": "HAND LETTERING"
+    }
+   ]
+  },
+  {
+   "s": 6.0,
+   "set": "desk",
+   "day": "DAY 62",
+   "cam": {
+    "from": [
+     660,
+     365,
+     1.22
+    ],
+    "to": [
+     660,
+     365,
+     1.35
+    ],
+    "ease": "lin"
+   },
+   "music": "drone",
+   "chars": [
+    {
+     "look": "nova",
+     "x": 560,
+     "pose": "deskslump",
+     "expr": "sad",
+     "y": 510
+    },
+    {
+     "look": "voice",
+     "x": 400,
+     "y": 900,
+     "pose": "lurk",
+     "scale": 1.0,
+     "dir": -1,
+     "to": [
+      400,
+      560
+     ],
+     "ease": true,
+     "dur": 1.1
+    }
+   ],
+   "things": [
+    {
+     "name": "book",
+     "x": 700,
+     "y": 440,
+     "s": 0.9
+    }
+   ],
+   "say": [
+    {
+     "t": "pack it up.",
+     "delay": 1.4,
+     "until": 4.2,
+     "red": true,
+     "size": 40,
+     "at": [
+      700,
+      250
+     ]
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "s": 6.6667,
+   "set": "spot",
+   "arg": {
+    "x": 640
+   },
+   "cam": {
+    "from": [
+     640,
+     441,
+     1.15
+    ],
+    "to": [
+     640,
+     441,
+     1.4
+    ],
+    "ease": "lin"
+   },
+   "chars": [
+    {
+     "look": "nova",
+     "x": 520,
+     "pose": "hug",
+     "expr": "cry"
+    },
+    {
+     "look": "voice",
+     "x": 930,
+     "y": 560,
+     "pose": "loom",
+     "scale": 1.3,
+     "dir": -1
+    }
+   ],
+   "things": [
+    {
+     "name": "book",
+     "x": 380,
+     "y": 560,
+     "s": 0.9
+    }
+   ],
+   "say": [
+    {
+     "t": "told you.",
+     "delay": 1.4,
+     "until": 6.5,
+     "red": true,
+     "size": 80,
+     "shatter": 4.8
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "s": 2.0,
+   "set": "black",
+   "say": [
+    {
+     "t": "He kept the sign.",
+     "delay": 0.3,
+     "until": 1.9,
+     "bold": true,
+     "size": 40,
+     "at": "mid"
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "s": 6.0,
+   "set": "bedroomdawn",
+   "day": "DAY 63",
+   "fade": 24,
+   "music": "pulse96",
+   "cam": {
+    "from": [
+     450,
+     450,
+     1.35
+    ],
+    "to": [
+     450,
+     450,
+     1.5
+    ],
+    "ease": "lin"
+   },
+   "chars": [
+    {
+     "look": "nova",
+     "x": 520,
+     "pose": "bedge",
+     "expr": "sad",
+     "exprAt": [
+      [
+       4.5,
+       "determined"
+      ]
+     ],
+     "poseAt": [
+      [
+       5.6,
+       "stand"
+      ]
+     ]
+    }
+   ],
+   "things": [
+    {
+     "name": "book",
+     "x": 380,
+     "y": 482,
+     "s": 0.6
+    }
+   ],
+   "arg": {
+    "nsExt": 70
+   },
+   "say": [
+    {
+     "t": "Ten more minutes.",
+     "delay": 1.0,
+     "until": 5.8,
+     "bold": true,
+     "size": 44
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "s": 1.3333,
+   "set": "desk",
+   "day": "DAY 70",
+   "sfx": [
+    [
+     "swish",
+     0.2
+    ]
+   ],
+   "chars": [
+    {
+     "look": "nova",
+     "x": 560,
+     "pose": "desk",
+     "expr": "determined",
+     "y": 510
+    }
+   ],
+   "things": [
+    {
+     "name": "book",
+     "x": 700,
+     "y": 440,
+     "s": 0.9
+    }
+   ],
+   "cam": {
+    "from": [
+     720,
+     360,
+     1.3
+    ]
+   },
+   "music": "montage"
+  },
+  {
+   "s": 1.3333,
+   "set": "stairs",
+   "day": "DAY 95",
+   "sfx": [],
+   "chars": [
+    {
+     "look": "nova",
+     "x": 0,
+     "pose": "stairs",
+     "expr": "determined",
+     "stairs": [
+      0.3,
+      0.4
+     ],
+     "scale": 0.9
+    }
+   ]
+  },
+  {
+   "s": 1.3333,
+   "set": "calendar",
+   "day": "DAY 120",
+   "sfx": [],
+   "arg": {
+    "paper": 1,
+    "start": 1,
+    "cross": 28,
+    "crossDt": 0.03,
+    "crossT0": 0.0,
+    "days": 31
+   },
+   "cam": {
+    "from": [
+     640,
+     292,
+     1.3
+    ]
+   }
+  },
+  {
+   "s": 1.3333,
+   "set": "couch",
+   "day": "DAY 150",
+   "sfx": [],
+   "arg": {
+    "nolamp": 1
+   },
+   "chars": [
+    {
+     "look": "nova",
+     "x": 640,
+     "pose": "sit",
+     "expr": "determined",
+     "y": 548
+    }
+   ],
+   "things": [
+    {
+     "name": "book",
+     "x": 640,
+     "y": 470,
+     "s": 1.1
+    }
+   ],
+   "cam": {
+    "from": [
+     620,
+     470,
+     1.9
+    ]
+   }
+  },
+  {
+   "s": 1.3333,
+   "set": "street",
+   "day": "DAY 180",
+   "sfx": [],
+   "chars": [
+    {
+     "look": "nova",
+     "x": 640,
+     "pose": "walk",
+     "expr": "smile",
+     "y": 538
+    }
+   ],
+   "things": [
+    {
+     "name": "book",
+     "hand": 0,
+     "s": 0.8
+    }
+   ],
+   "grade": "sunset",
+   "arg": {
+    "gradeAmt": 0.5
+   },
+   "cam": {
+    "from": [
+     820,
+     450,
+     1.9
+    ]
+   },
+   "scroll": [
+    500,
+    760
+   ]
+  },
+  {
+   "s": 1.3333,
+   "set": "mirror",
+   "day": "DAY 220",
+   "sfx": [
+    [
+     "ping",
+     0.2
+    ]
+   ],
+   "arg": {
+    "crack": 0
+   },
+   "chars": [
+    {
+     "look": "nova",
+     "x": 540,
+     "pose": "stand",
+     "expr": "smile"
+    }
+   ],
+   "cam": {
+    "from": [
+     650,
+     421,
+     1.4
+    ]
+   }
+  },
+  {
+   "s": 1.3333,
+   "set": "office",
+   "day": "DAY 260",
+   "sfx": [],
+   "chars": [
+    {
+     "look": "nova",
+     "x": 650,
+     "pose": "point",
+     "expr": "grin"
+    }
+   ],
+   "things": [
+    {
+     "name": "chart",
+     "x": 900,
+     "y": 300,
+     "v": 0.9,
+     "text": "PRACTICE"
+    }
+   ],
+   "cam": {
+    "from": [
+     955,
+     430,
+     1.25
+    ]
+   }
+  },
+  {
+   "s": 1.3333,
+   "set": "spot",
+   "day": "DAY 300",
+   "sfx": [],
+   "arg": {
+    "x": 640
+   },
+   "chars": [
+    {
+     "look": "nova",
+     "x": 560,
+     "pose": "count",
+     "expr": "smile"
+    }
+   ],
+   "things": [
+    {
+     "name": "cash",
+     "hand": 0
+    },
+    {
+     "name": "book",
+     "x": 840,
+     "y": 560,
+     "s": 1.3
+    }
+   ],
+   "cam": {
+    "from": [
+     700,
+     450,
+     1.5
+    ]
+   }
+  },
+  {
+   "s": 6.0,
+   "set": "store",
+   "day": "DAY 365",
+   "music": "finale",
+   "cam": {
+    "from": [
+     450,
+     425,
+     1.1
+    ],
+    "to": [
+     450,
+     425,
+     1.2
+    ],
+    "ease": "lin"
+   },
+   "chars": [
+    {
+     "look": "nova",
+     "x": 520,
+     "pose": "stand",
+     "expr": "smile"
+    },
+    {
+     "look": "friend",
+     "x": 870,
+     "pose": "stand",
+     "expr": "smile",
+     "dir": -1
+    }
+   ],
+   "things": [
+    {
+     "name": "coin",
+     "hand": 1,
+     "s": 0.8
+    },
+    {
+     "name": "sign",
+     "x": 515,
+     "y": 262,
+     "s": 0.8,
+     "text": "HAND LETTERING"
+    }
+   ],
+   "say": [
+    {
+     "t": "Someone chose his work.",
+     "delay": 1.6,
+     "until": 5.8,
+     "bold": true,
+     "size": 42,
+     "at": [
+      640,
+      590
+     ]
+    }
+   ],
+   "sfx": [
+    [
+     "register",
+     3.0
+    ],
+    [
+     "coin",
+     3.1
+    ]
+   ]
+  },
+  {
+   "s": 6.0,
+   "set": "store",
+   "grade": "sunset",
+   "arg": {
+    "gradeAmt": 0.5
+   },
+   "cam": {
+    "from": [
+     450,
+     430,
+     1.2
+    ],
+    "to": [
+     450,
+     430,
+     1.32
+    ],
+    "ease": "lin"
+   },
+   "chars": [
+    {
+     "look": "nova",
+     "x": 540,
+     "pose": "stand",
+     "expr": "smile"
+    }
+   ],
+   "say": [
+    {
+     "t": "The first one stayed on the wall.",
+     "delay": 1.0,
+     "until": 5.8,
+     "bold": true,
+     "size": 42,
+     "at": [
+      640,
+      590
+     ]
+    }
+   ],
+   "sfx": [],
+   "things": [
+    {
+     "name": "sign",
+     "x": 515,
+     "y": 262,
+     "s": 0.8,
+     "text": "HAND LETTERING"
+    }
+   ]
+  },
+  {
+   "s": 6.0,
+   "set": "bedroomdawn",
+   "fadeOut": 16,
+   "cam": {
+    "from": [
+     470,
+     450,
+     1.4
+    ],
+    "to": [
+     470,
+     450,
+     1.5
+    ],
+    "ease": "lin"
+   },
+   "chars": [
+    {
+     "look": "nova",
+     "x": 560,
+     "pose": "stand",
+     "expr": "smile"
+    }
+   ],
+   "things": [
+    {
+     "name": "book",
+     "x": 380,
+     "y": 482,
+     "s": 0.6
+    }
+   ],
+   "arg": {
+    "nsExt": 70,
+    "dawn": 0.2
+   },
+   "say": [
+    {
+     "t": "A blank page is only the start.",
+     "delay": 1.0,
+     "until": 5.8,
+     "bold": true,
+     "size": 42
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "s": 7.3333,
+   "set": "black",
+   "music": "title",
+   "card": {
+    "big": "THE BLANK PAGE",
+    "line": "Ten minutes. Then ten more.",
+    "cmd": "Write one line today.",
+    "fs": 104,
+    "sy": 1.15,
+    "tagAt": 2.2,
+    "cmdAt": 3.8,
+    "outAt": 6.0,
+    "outLen": 1.0
+   },
+   "sfx": [
+    [
+     "boom",
+     0.0,
+     {
+      "dur": 5
+     }
+    ]
+   ]
+  }
+ ],
+ "thumbs": [
+  {
+   "words": "EMPTY",
+   "red": [
+    "EMPTY"
+   ],
+   "pos": "tr",
+   "beat": {
+    "set": "spot",
+    "arg": {
+     "x": 560
+    },
+    "cam": {
+     "from": [
+      560,
+      470,
+      2.1
+     ]
+    },
+    "chars": [
+     {
+      "look": "nova",
+      "x": 470,
+      "pose": "hug",
+      "expr": "cry"
+     },
+     {
+      "look": "voice",
+      "x": 790,
+      "y": 600,
+      "pose": "loom",
+      "scale": 0.9,
+      "dir": -1
+     }
+    ],
+    "things": [
+     {
+      "name": "book",
+      "x": 548,
+      "y": 535,
+      "s": 0.9
+     }
+    ]
+   }
+  }
+ ]
+}

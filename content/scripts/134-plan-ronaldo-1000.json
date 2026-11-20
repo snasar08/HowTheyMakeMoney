@@ -57,36 +57,34 @@
       "toon": [
         {
           "place": "pitch",
-          "beat": "walk",
           "mood": "proud",
-          "brand": {
-            "name": "Al Nassr",
-            "bg": "#fcd116",
-            "fg": "#0b2a6f",
-            "icon": "star"
-          },
-          "crowd": 20
+          "view": "ms"
         },
         {
           "place": "pitch",
-          "beat": "sign",
           "mood": "laugh",
+          "things": [
+            "soccerball"
+          ],
           "card": {
             "text": "980+",
             "kind": "screen",
             "sub": "GOALS"
-          }
+          },
+          "view": "wide"
         },
         {
           "place": "pitch",
-          "beat": "sign",
           "mood": "scheme",
+          "things": [
+            "trophy"
+          ],
           "card": {
             "text": "1,000",
             "kind": "flip",
             "sub": "THE TARGET"
           },
-          "view": "face"
+          "view": "ws"
         }
       ]
     },
@@ -106,21 +104,19 @@
       "toon": [
         {
           "place": "pitch",
-          "beat": "clock",
           "mood": "nervous",
           "card": {
             "text": "41",
             "kind": "flip",
             "sub": "AGE"
-          }
+          },
+          "view": "ms"
         },
         {
           "place": "pitch",
-          "beat": "walk",
           "mood": "stern",
-          "action": "run",
-          "props": [
-            "ball"
+          "things": [
+            "soccerball"
           ],
           "view": "low"
         }
@@ -142,19 +138,18 @@
       "toon": [
         {
           "place": "pitch",
-          "beat": "queue",
           "mood": "shock",
-          "crowd": 15
+          "crowd": 3,
+          "view": "wide"
         },
         {
           "place": "pitch",
-          "beat": "walk",
           "mood": "laugh",
-          "action": "cheer",
-          "props": [
-            "ball"
+          "action": "jump",
+          "things": [
+            "soccerball"
           ],
-          "crowd": 30
+          "view": "ws"
         }
       ]
     },
@@ -174,22 +169,25 @@
       "toon": [
         {
           "place": "pitch",
-          "beat": "sign",
           "mood": "excited",
+          "things": [
+            "soccerball"
+          ],
           "card": {
             "text": "999",
             "kind": "screen",
             "sub": "ONE TO GO"
-          }
+          },
+          "view": "ms"
         },
         {
-          "place": "pitch",
-          "beat": "queue",
-          "mood": "nervous",
-          "crowd": 40,
+          "place": "stage",
+          "mood": "shock",
           "things": [
-            "tv"
-          ]
+            "camera",
+            "globe"
+          ],
+          "view": "ms"
         }
       ]
     },
@@ -211,38 +209,36 @@
       "toon": [
         {
           "place": "pitch",
-          "beat": "walk",
           "mood": "laugh",
           "action": "cheer",
-          "crowd": 40,
-          "props": [
-            "ball"
+          "things": [
+            "soccerball"
           ],
-          "view": "low"
+          "card": {
+            "text": "1,000",
+            "kind": "flip"
+          },
+          "view": "wide"
         },
         {
           "place": "pitch",
-          "beat": "sign",
           "mood": "shock",
           "card": {
             "text": "000",
             "kind": "screen",
-            "sub": "ERROR"
+            "sub": "THREE DIGITS"
           },
-          "view": "face"
+          "view": "ms"
         },
         {
-          "place": "pitch",
-          "beat": "sign",
+          "place": "mansion",
           "mood": "proud",
-          "card": {
-            "text": "1,000",
-            "kind": "screen",
-            "sub": "NEW SCOREBOARD"
-          },
+          "beat": "money",
           "things": [
-            "crown"
-          ]
+            "monitor",
+            "cashstack"
+          ],
+          "view": "ms"
         }
       ]
     }

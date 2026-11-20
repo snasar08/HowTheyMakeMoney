@@ -50,17 +50,21 @@
       },
       "toon": [
         {
-          "place": "office",
-          "beat": "walk",
+          "place": "track",
           "mood": "shock",
-          "props": [
-            "laptop"
-          ]
+          "things": [
+            "robot"
+          ],
+          "view": "ms"
         },
         {
-          "place": "servers",
-          "beat": "walk",
-          "mood": "scheme"
+          "place": "lab",
+          "mood": "scheme",
+          "things": [
+            "laptop",
+            "gpu"
+          ],
+          "view": "ms"
         }
       ]
     },
@@ -78,30 +82,27 @@
       "toon": [
         {
           "place": "office",
-          "beat": "walk",
-          "mood": "scheme"
+          "mood": "scheme",
+          "view": "cu"
         },
         {
-          "place": "street",
-          "beat": "money",
+          "place": "stall",
           "mood": "laugh",
-          "props": [
-            "cash"
-          ]
+          "things": [
+            "key",
+            "cashstack"
+          ],
+          "view": "ms"
         },
         {
-          "place": "servers",
-          "beat": "logo",
+          "place": "boardroom",
           "mood": "proud",
-          "brand": {
-            "name": "Bedrock",
-            "bg": "#232f3e",
-            "fg": "#ff9900",
-            "icon": "chip"
+          "card": {
+            "text": "2023",
+            "kind": "flip",
+            "sub": "AMAZON BEDROCK"
           },
-          "things": [
-            "chatbot"
-          ]
+          "view": "ms"
         }
       ]
     },
@@ -118,29 +119,27 @@
       },
       "toon": [
         {
-          "place": "street",
-          "beat": "money",
+          "place": "mansion",
           "mood": "laugh",
-          "action": "cheer",
+          "beat": "money",
           "things": [
-            "chatbot"
-          ]
-        },
-        {
-          "place": "street",
-          "beat": "walk",
-          "mood": "stern"
-        },
-        {
-          "place": "street",
-          "beat": "walk",
-          "mood": "excited",
-          "props": [
-            "boxes"
+            "cashstack"
           ],
+          "view": "ms"
+        },
+        {
+          "place": "throne",
+          "mood": "stern",
+          "view": "cu"
+        },
+        {
+          "place": "stall",
+          "mood": "excited",
           "things": [
-            "robot"
-          ]
+            "robot",
+            "box"
+          ],
+          "view": "ms"
         }
       ]
     },
@@ -157,34 +156,30 @@
       },
       "toon": [
         {
-          "place": "street",
-          "beat": "phone",
+          "place": "diner",
           "mood": "happy",
-          "brand": {
-            "name": "Amazon",
-            "bg": "#232f3e",
-            "fg": "#ff9900",
-            "icon": "cart"
-          }
+          "things": [
+            "burger"
+          ],
+          "view": "ms"
         },
         {
-          "place": "street",
-          "beat": "clock",
+          "place": "office",
           "mood": "laugh",
           "things": [
-            "snack"
-          ]
+            "laptop",
+            "box"
+          ],
+          "view": "ms"
         },
         {
-          "place": "road",
-          "beat": "drive",
+          "place": "track",
           "mood": "excited",
-          "brand": {
-            "name": "Amazon",
-            "bg": "#232f3e",
-            "fg": "#ff9900",
-            "icon": "cart"
-          }
+          "beat": "drive",
+          "things": [
+            "truck"
+          ],
+          "view": "wide"
         }
       ]
     },
@@ -202,22 +197,25 @@
       "toon": [
         {
           "place": "street",
-          "beat": "clock",
-          "mood": "nervous"
+          "mood": "nervous",
+          "things": [
+            "truck",
+            "arrowdown"
+          ],
+          "view": "ms"
         },
         {
-          "place": "street",
-          "beat": "logo",
+          "place": "field",
           "mood": "proud",
-          "brand": {
-            "name": "Prime Air",
-            "bg": "#232f3e",
-            "fg": "#ff9900",
-            "icon": "robot"
+          "things": [
+            "drone",
+            "box"
+          ],
+          "card": {
+            "text": "10 MIN",
+            "kind": "sign"
           },
-          "props": [
-            "boxes"
-          ]
+          "view": "wide"
         }
       ]
     },
@@ -235,31 +233,26 @@
       "toon": [
         {
           "place": "office",
-          "beat": "walk",
-          "mood": "scheme"
+          "mood": "scheme",
+          "view": "cu"
         },
         {
           "place": "space",
-          "beat": "logo",
           "mood": "excited",
-          "brand": {
-            "name": "Blue Origin",
-            "bg": "#0b2a6f",
-            "fg": "#ffffff",
-            "icon": "rocket"
-          },
           "things": [
+            "rocket",
             "robot"
-          ]
+          ],
+          "view": "wide"
         },
         {
           "place": "space",
-          "beat": "walk",
           "mood": "laugh",
-          "action": "cheer",
-          "props": [
-            "boxes"
-          ]
+          "card": {
+            "text": "THE MOON",
+            "kind": "sign"
+          },
+          "view": "ws"
         }
       ]
     },
@@ -276,22 +269,22 @@
       },
       "toon": [
         {
-          "place": "street",
-          "beat": "walk",
+          "place": "office",
           "mood": "calm",
-          "crowd": 10
+          "things": [
+            "laptop",
+            "robot"
+          ],
+          "view": "ms"
         },
         {
-          "place": "street",
-          "beat": "sign",
+          "place": "track",
           "mood": "proud",
-          "brand": {
-            "name": "Amazon",
-            "bg": "#232f3e",
-            "fg": "#ff9900",
-            "icon": "cart"
-          },
-          "crowd": 30
+          "beat": "money",
+          "things": [
+            "cashstack"
+          ],
+          "view": "wide"
         }
       ]
     }

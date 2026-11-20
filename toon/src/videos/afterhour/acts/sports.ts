@@ -208,24 +208,62 @@ const dribble: ActDef = { pose: "dribble", view: "actm", build(c: ActCtx): ActRu
   } };
 } };
 
-const shoot: ActDef = { pose: "shoot", view: "act", build(c) {
-  const { root, hero, heroAt: H } = c; hero.root.rotation.y = 0.8; clearBall(c); hideSetHoop(c);
+/** jump shot: knees bend, the ball rides in both hands from the chest to above the head (hands IK'd to it every frame),
+ *  releases off the shooting hand with a wrist follow-through, flies one continuous parabola into the hoop, drops through
+ *  the net (it sways) and bounces on the floor. The body is the baked "shoot" pose (crouch, jump, land); only the arms are driven here. */
+const shoot: ActDef = { pose: "shoot", view: "acts", build(c) {
+  const { root, hero, heroAt: H } = c; hero.root.rotation.y = 0.85; clearBall(c); hideSetHoop(c);
   const r = 0.2, ball = basketball(r), sh = blob(root); root.add(ball.g);
-  const rim = new Vec(H[0] + 2.3, 3.35, H[2] + 1.6), hoop = makeHoop(rim, -0.67); root.add(hoop.g);
-  const TR = 0.744, Tf = 0.7, G = 13.5;
-  const mh = () => mid(wp(hero.hand("r")), wp(hero.hand("l"))).add(new Vec(0, 0.015, 0));
-  hero.set(TR, "shoot", "smile"); const p0 = mh();
-  const vy = (rim.y - p0.y + 0.5 * G * Tf * Tf) / Tf, vTf = vy - G * Tf;
+  const rim = new Vec(H[0] + 1.8, 3.35, H[2] + 1.4), hoop = makeHoop(rim, -1.3); root.add(hoop.g);
+  const TR = 0.744, Tf = 0.8, G = 13.5, FT = 1.2;   // release time, flight time, gravity, end of the baked pose
+  // the head is huge, so normal arms cannot get the ball above it: this shot's hero (built per shot) gets 40% longer arms
+  const M = 1.4;
+  for (const sd of ["l", "r"] as const) {
+    const hd = hero.hand(sd), el = hd.parent!, shd = el.parent!;
+    shd.children.forEach((o) => { if (o !== el && o.position.y < -0.01) { o.scale.y *= M; o.position.y *= M; } });
+    el.children.forEach((o) => { if (o !== hd && o.position.y < -0.01) { o.scale.y *= M; o.position.y *= M; } });
+    el.position.y *= M; hd.position.y *= M;
+  }
+  const SY = shY(hero), HY = SY + 0.36, k = hero.root.scale.y || 1;
+  const ex = (t: number, rows: [number, number, number, number][]) => {   // keyframes [t, x, y, z] -> eased vector
+    let i = 0; while (i < rows.length - 2 && t >= rows[i + 1][0]) i++;
+    const a = rows[i], b = rows[i + 1], u = seg(t, a[0], b[0]);
+    return new Vec(mix(a[1], b[1], u), mix(a[2], b[2], u), mix(a[3], b[3], u));
+  };
+  // ball centre in rig space (before the release)
+  const ballKey: [number, number, number, number][] = [[0, 0.1, SY - 0.4, 0.4], [0.12, 0.1, SY - 0.4, 0.4], [0.27, 0.1, SY - 0.6, 0.38], [0.5, 0.34, HY - 0.1, 0.5], [TR, 0.3, HY + 0.55, 0.38]];
+  const rel = ex(TR, ballKey), hs = 0.19 / k;   // hand half-spacing so the hands touch the ball
+  const rHandRel = rel.clone().add(new Vec(0.12, -0.1, -0.06));
+  const rHandFT = new Vec(0.3, HY + 0.75, 0.7), rHandFlick = new Vec(0.3, HY + 0.5, 0.74), rHandDown = new Vec(0.22, SY - 0.35, 0.2);
+  const armsAt = (t: number) => {
+    const ctr = ex(Math.min(t, TR), ballKey);
+    let rh: THREE.Vector3, lh: THREE.Vector3;
+    if (t < TR) { rh = ctr.clone().add(new Vec(hs * 0.7, -0.05, -0.05)); lh = ctr.clone().add(new Vec(-hs, 0, 0)); }
+    else {
+      rh = rHandRel.clone().lerp(rHandFT, seg(t, TR, TR + 0.14)).lerp(rHandFlick, seg(t, TR + 0.14, TR + 0.32)).lerp(rHandDown, seg(t, TR + 0.8, TR + 1.2));
+      lh = ctr.clone().add(new Vec(-hs, 0, 0)).lerp(new Vec(-0.26, SY - 0.3, 0.15), seg(t, TR, TR + 0.4));
+    }
+    ik(hero, "r", rh, [0.3, -1, -0.5]); ik(hero, "l", lh, [-0.3, -1, -0.5]);
+    return ctr;
+  };
+  const ballW = (t: number) => { const rig = rigOf(hero); hero.root.updateMatrixWorld(true); return rig.localToWorld(armsAt(t).clone()); };
+  hero.set(TR, "shoot", "smile"); const p0 = ballW(TR);
+  const vy = (rim.y - p0.y + 0.5 * G * Tf * Tf) / Tf, vTf = vy - G * Tf, vx = (rim.x - p0.x) / Tf, vz = (rim.z - p0.z) / Tf;
   const pop = popText(root, "SWISH!", [rim.x - 1.35, rim.y + 0.7, rim.z + 0.3], 1.4);
   return { tick(t) {
     const p = new Vec(); let since = -1;
     pop(TR + Tf - 0.05, t);
-    if (t < TR) p.copy(mh());
-    else if (t < TR + Tf) { const a = t - TR; p.set(mix(p0.x, rim.x, a / Tf), p0.y + vy * a - 0.5 * G * a * a, mix(p0.z, rim.z, a / Tf)); }
-    else { const a = t - TR - Tf; since = a; p.set(rim.x + 0.04 * (1 - Math.exp(-6 * a)), fall(rim.y, vTf, a, r, 14, 0.55), rim.z); }
+    const pt = Math.min(t, FT * 0.95);
+    if (t < TR) { p.copy(ballW(t)); }
+    else {
+      armsAt(t); // keep the follow-through arms posed (the ball is already in the air)
+      if (t < TR + Tf) { const a = t - TR; p.set(p0.x + vx * a, p0.y + vy * a - 0.5 * G * a * a, p0.z + vz * a); }
+      else { const a = t - TR - Tf, d = (1 - Math.exp(-3 * a)) / 3; since = a; p.set(rim.x + vx * 0.3 * d, fall(rim.y, vTf, a, r, 14, 0.55), rim.z + vz * 0.3 * d); }
+    }
     ball.g.position.copy(p); ball.spin.rotation.x = -t * 5; ball.spin.rotation.z = t * 2; dropShadow(sh, p, r);
+    ball.g.scale.set(1, 1, 1); if (since > 0 && p.y < r + 0.02) ball.g.scale.set(1.1, 0.88, 1.1);
     swish(hoop, p.y, since);
-    return { pose: "shoot", t: Math.min(t, 1.14), expr: exAt(t, [[0, "focus"], [TR - 0.25, "effort"], [TR + 0.2, "grin"], [TR + Tf - 0.05, "laugh"]]) };
+    return { pose: "shoot", t: pt, expr: exAt(t, [[0, "focus"], [TR - 0.25, "effort"], [TR + 0.2, "grin"], [TR + Tf - 0.05, "laugh"]]) };
   } };
 } };
 

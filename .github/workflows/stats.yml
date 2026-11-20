@@ -21,7 +21,7 @@ concurrency:
 jobs:
   stats:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
         with:
@@ -29,18 +29,24 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+      - run: command -v ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg)  # thumb_fix needs it
       - name: Collect + analyze
         env:
           YT_API_KEY: ${{ secrets.YT_API_KEY }}
           YTA_CLIENT_ID: ${{ secrets.YTA_CLIENT_ID }}
           YTA_CLIENT_SECRET: ${{ secrets.YTA_CLIENT_SECRET }}
           YTA_REFRESH_TOKEN: ${{ secrets.YTA_REFRESH_TOKEN }}
+          YTC_CLIENT_ID: ${{ secrets.YTC_CLIENT_ID }}
+          YTC_CLIENT_SECRET: ${{ secrets.YTC_CLIENT_SECRET }}
+          YTC_REFRESH_TOKEN: ${{ secrets.YTC_REFRESH_TOKEN }}
         run: |
           pip install -q pillow numpy
           python -m pipeline.stats
           python -m pipeline.insights
           python -m pipeline.health
+          python -m pipeline.thumb_fix || echo '::warning::thumb_fix failed'
           python -m pipeline.retention
+          python -m pipeline.weekly_mix || echo '::warning::weekly_mix failed'
       - name: Commit to main
         run: |
           git config user.name "shorts-bot"

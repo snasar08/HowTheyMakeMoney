@@ -49,7 +49,34 @@
           "shoes": "1a1a1a",
           "height": 1.12
         }
-      }
+      },
+      "toon": [
+        {
+          "place": "pitch",
+          "things": [
+            "football"
+          ],
+          "card": {
+            "text": "CUT 1995",
+            "kind": "paper"
+          },
+          "mood": "sad"
+        },
+        {
+          "place": "showroom",
+          "things": [
+            "cashstack",
+            "camera"
+          ],
+          "card": {
+            "text": "$11.4B",
+            "kind": "screen",
+            "sub": "MOVIES"
+          },
+          "beat": "money",
+          "mood": "proud"
+        }
+      ]
     },
     {
       "narration": "But that's not his pay. It's his films' box office, worldwide.",
@@ -75,7 +102,30 @@
           "shoes": "1a1a1a",
           "height": 1.12
         }
-      }
+      },
+      "toon": [
+        {
+          "place": "boardroom",
+          "things": [
+            "briefcase"
+          ],
+          "mood": "stern"
+        },
+        {
+          "place": "stage",
+          "things": [
+            "globe",
+            "tv"
+          ],
+          "card": {
+            "text": "BOX OFFICE",
+            "kind": "sign",
+            "sub": "WORLDWIDE"
+          },
+          "mood": "calm",
+          "crowd": 40
+        }
+      ]
     },
     {
       "narration": "So he tried wrestling instead. The crowd loved him.",
@@ -101,7 +151,20 @@
           "shoes": "1a1a1a",
           "height": 1.12
         }
-      }
+      },
+      "toon": [
+        {
+          "place": "ring",
+          "mood": "scheme"
+        },
+        {
+          "place": "ring",
+          "mood": "proud",
+          "action": "cheer",
+          "crowd": 50,
+          "view": "low"
+        }
+      ]
     },
     {
       "narration": "His first lead movie role still paid 5.5 million. A world record.",
@@ -128,7 +191,34 @@
           "shoes": "1a1a1a",
           "height": 1.12
         }
-      }
+      },
+      "toon": [
+        {
+          "place": "office",
+          "things": [
+            "camera",
+            "cashstack"
+          ],
+          "card": {
+            "text": "$5.5M",
+            "kind": "screen",
+            "sub": "FIRST LEAD ROLE"
+          },
+          "mood": "happy"
+        },
+        {
+          "place": "stage",
+          "things": [
+            "trophy",
+            "crown"
+          ],
+          "card": {
+            "text": "WORLD RECORD",
+            "kind": "sign"
+          },
+          "mood": "proud"
+        }
+      ]
     },
     {
       "narration": "Just years after that cut: the world's highest-paid actor.",
@@ -156,7 +246,22 @@
           "shoes": "1a1a1a",
           "height": 1.12
         }
-      }
+      },
+      "toon": [
+        {
+          "place": "mansion",
+          "things": [
+            "crown",
+            "camera"
+          ],
+          "card": {
+            "text": "#1 PAID ACTOR",
+            "kind": "screen"
+          },
+          "beat": "money",
+          "mood": "proud"
+        }
+      ]
     }
   ],
   "sources": [
@@ -182,18 +287,18 @@
     "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-085-famous-dwayne-johnson",
     "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-085-famous-dwayne-johnson/085-famous-dwayne-johnson.mp4",
     "post_at": "2026-11-18T12:00:00-05:00",
-    "buffer_post": "6afca38132ea84693c3810cd",
+    "buffer_post": "6afd5156ec7ce52643749bae",
     "buffer_status": "scheduled",
-    "rendered_at": "2026-11-17T18:57:05.947684+00:00",
+    "rendered_at": "2026-11-18T07:18:46.835878+00:00",
     "seconds": 25.99,
+    "remade_from": "6afd4546b116b81c9934f42d",
     "eyes": {
-      "score": 8,
+      "score": 9,
       "problems": [
-        "The text 'FORBES, 2016' appears on screen, which is a brand mark/logo.",
-        "The narration mentions 'wrestling' but the visual shows a basketball court/ball for several seconds.",
-        "The text 'GUINNESS' appears on screen, which is a brand mark/logo."
+        "The text 'Cut from a football' in the first scene is slightly obscured by the character's head and the football at the bottom.",
+        "The transition at frame 150-157 is slightly jarring as the character suddenly changes position."
       ],
-      "best_fix": "Replace the basketball court scene with a wrestling ring or wrestling-themed animation to match the narration, and remove the brand logos.",
+      "best_fix": "Adjust the vertical positioning of the caption text in the first scene so it does not overlap with the character or the football.",
       "model": "gemini-3.1-flash-lite",
       "acts": null
     }

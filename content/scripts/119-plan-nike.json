@@ -8,7 +8,7 @@
   "hook_style": "number",
   "title_style": "number",
   "theme": "bold_bright",
-  "status": "ready",
+  "status": "needs_fix",
   "score": 94,
   "title": "From Selling Japan's Shoes to $46.3 Billion",
   "name_card": "You are Nike",
@@ -47,18 +47,26 @@
         "crowd": 0,
         "props": [
           "boxes"
-        ]
+        ],
+        "hero": {
+          "skin": "d9a577",
+          "hair": "short",
+          "hair_color": "2a1d14",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "111111",
+          "pants": "2b2f3a",
+          "shoes": "f4f4f4",
+          "chest": "NIKE",
+          "trim": "ffffff",
+          "height": 1.0
+        }
       },
       "toon": [
         {
           "place": "throne",
           "mood": "proud",
-          "brand": {
-            "name": "Nike",
-            "bg": "#111111",
-            "fg": "#ffffff",
-            "icon": "swoosh"
-          },
+          "beat": "money",
           "card": {
             "text": "$46.3 BILLION",
             "kind": "screen",
@@ -69,6 +77,9 @@
         {
           "place": "stall",
           "mood": "nervous",
+          "things": [
+            "shoe"
+          ],
           "card": {
             "text": "1964",
             "kind": "flip",
@@ -77,17 +88,17 @@
           "view": "ms"
         },
         {
-          "place": "stall",
+          "place": "beach",
           "mood": "scheme",
-          "props": [
-            "boxes"
+          "things": [
+            "box",
+            "yacht"
           ],
           "card": {
             "text": "MADE IN JAPAN",
-            "kind": "white",
-            "fg": "#c0353a"
+            "kind": "white"
           },
-          "view": "face"
+          "view": "wide"
         }
       ]
     },
@@ -98,25 +109,41 @@
         "set": "office",
         "action": "work",
         "crowd": 0,
-        "props": []
+        "props": [],
+        "hero": {
+          "skin": "d9a577",
+          "hair": "short",
+          "hair_color": "2a1d14",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "111111",
+          "pants": "2b2f3a",
+          "shoes": "f4f4f4",
+          "chest": "NIKE",
+          "trim": "ffffff",
+          "height": 1.0
+        }
       },
       "toon": [
         {
           "place": "garage",
           "mood": "excited",
-          "action": "work",
           "things": [
             "shoe"
           ],
           "view": "ms"
         },
         {
-          "place": "garage",
+          "place": "showroom",
           "mood": "laugh",
           "things": [
             "shoe"
           ],
-          "view": "face"
+          "card": {
+            "text": "FIRST SOLE",
+            "kind": "paper"
+          },
+          "view": "ms"
         },
         {
           "place": "garage",
@@ -129,16 +156,15 @@
           "view": "ms"
         },
         {
-          "place": "garage",
-          "beat": "logo",
+          "place": "street",
           "mood": "proud",
           "brand": {
-            "name": "Nike",
+            "name": "NIKE",
             "bg": "#111111",
-            "fg": "#ffffff",
-            "icon": "swoosh"
+            "fg": "#ffffff"
           },
-          "view": "ms"
+          "beat": "sign",
+          "view": "wide"
         }
       ]
     },
@@ -151,11 +177,24 @@
         "crowd": 60,
         "props": [
           "cash"
-        ]
+        ],
+        "hero": {
+          "skin": "d9a577",
+          "hair": "short",
+          "hair_color": "2a1d14",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "111111",
+          "pants": "2b2f3a",
+          "shoes": "f4f4f4",
+          "chest": "NIKE",
+          "trim": "ffffff",
+          "height": 1.0
+        }
       },
       "toon": [
         {
-          "place": "office",
+          "place": "boardroom",
           "mood": "excited",
           "action": "cheer",
           "card": {
@@ -177,7 +216,20 @@
         "props": [
           "ball",
           "check"
-        ]
+        ],
+        "hero": {
+          "skin": "d9a577",
+          "hair": "short",
+          "hair_color": "2a1d14",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "111111",
+          "pants": "2b2f3a",
+          "shoes": "f4f4f4",
+          "chest": "NIKE",
+          "trim": "ffffff",
+          "height": 1.0
+        }
       },
       "toon": [
         {
@@ -206,11 +258,10 @@
             "trim": "#111111"
           },
           "action": "cheer",
-          "crowd": 30,
-          "view": "face"
+          "view": "ws"
         },
         {
-          "place": "court",
+          "place": "showroom",
           "mood": "excited",
           "who": {
             "jacket": "#c8102e",
@@ -227,7 +278,6 @@
           "things": [
             "shoe"
           ],
-          "crowd": 30,
           "view": "ms"
         }
       ]
@@ -239,7 +289,20 @@
         "set": "city",
         "action": "idle",
         "crowd": 40,
-        "props": []
+        "props": [],
+        "hero": {
+          "skin": "d9a577",
+          "hair": "short",
+          "hair_color": "2a1d14",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "111111",
+          "pants": "2b2f3a",
+          "shoes": "f4f4f4",
+          "chest": "NIKE",
+          "trim": "ffffff",
+          "height": 1.0
+        }
       },
       "toon": [
         {
@@ -253,11 +316,12 @@
           "view": "ms"
         },
         {
-          "place": "stage",
+          "place": "street",
           "mood": "excited",
-          "crowd": 40,
-          "action": "cheer",
-          "view": "ws"
+          "things": [
+            "globe"
+          ],
+          "view": "wide"
         },
         {
           "place": "stage",
@@ -266,7 +330,7 @@
             "text": "JUST DO IT.",
             "kind": "sign"
           },
-          "view": "face"
+          "view": "ms"
         }
       ]
     },
@@ -279,7 +343,20 @@
         "crowd": 0,
         "props": [
           "check"
-        ]
+        ],
+        "hero": {
+          "skin": "d9a577",
+          "hair": "short",
+          "hair_color": "2a1d14",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "111111",
+          "pants": "2b2f3a",
+          "shoes": "f4f4f4",
+          "chest": "NIKE",
+          "trim": "ffffff",
+          "height": 1.0
+        }
       },
       "toon": [
         {
@@ -287,20 +364,22 @@
           "mood": "scheme",
           "card": {
             "text": "CONVERSE",
-            "kind": "white",
-            "fg": "#111111"
+            "kind": "white"
           },
           "view": "ms"
         },
         {
-          "place": "office",
+          "place": "boardroom",
           "mood": "laugh",
+          "things": [
+            "cashstack"
+          ],
           "card": {
             "text": "$309,000,000",
             "kind": "screen",
             "sub": "SOLD: 2003"
           },
-          "view": "face"
+          "view": "ms"
         }
       ]
     },
@@ -313,27 +392,41 @@
         "crowd": 300,
         "props": [
           "cash"
-        ]
+        ],
+        "hero": {
+          "skin": "d9a577",
+          "hair": "short",
+          "hair_color": "2a1d14",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "111111",
+          "pants": "2b2f3a",
+          "shoes": "f4f4f4",
+          "chest": "NIKE",
+          "trim": "ffffff",
+          "height": 1.0
+        }
       },
       "toon": [
         {
-          "place": "throne",
-          "mood": "excited",
-          "action": "cheer",
-          "props": [
-            "cash"
-          ],
+          "place": "mansion",
+          "mood": "proud",
           "beat": "money",
+          "things": [
+            "cashstack",
+            "goldbar"
+          ],
           "view": "ms"
         },
         {
           "place": "throne",
           "mood": "proud",
+          "crowd": 20,
           "things": [
-            "crown"
+            "crown",
+            "shoe"
           ],
-          "crowd": 30,
-          "view": "face"
+          "view": "wide"
         }
       ]
     }
@@ -345,5 +438,10 @@
     }
   ],
   "length_test": "short",
-  "look": "afterhour"
+  "look": "afterhour",
+  "needs_fix": [
+    "act count_cash unclear at frames 0-109: The character is holding a stack of cash but not performing a counting motion.",
+    "act sign_contract unclear at frames 874-976: The character is holding a pen to the paper but not actually writing or signing.",
+    "act count_cash unclear at frames 977-1071: The character is holding a stack of cash but not performing a counting motion."
+  ]
 }

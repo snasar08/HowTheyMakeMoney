@@ -8,7 +8,7 @@
   "hook_style": "surprise",
   "title_style": "statement",
   "theme": "bold_bright",
-  "status": "ready",
+  "status": "needs_fix",
   "score": 94,
   "title": "You're SGA. One Ring Isn't Enough.",
   "name_card": "Shai Gilgeous-Alexander",
@@ -59,34 +59,52 @@
           "ball"
         ],
         "stat": "11TH PICK",
-        "stat_sub": "then MVP and a ring"
+        "stat_sub": "then MVP and a ring",
+        "hero": {
+          "skin": "7a4e34",
+          "hair": "short",
+          "hair_color": "141010",
+          "beard": "mustache",
+          "beard_color": "141010",
+          "shirt": "007ac1",
+          "pants": "007ac1",
+          "trim": "ef3b24",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "glasses": false,
+          "height": 1.08,
+          "outfit": "kit",
+          "number": 2
+        }
       },
       "toon": [
         {
           "place": "court",
-          "beat": "walk",
           "mood": "calm",
-          "crowd": 10
+          "view": "ms"
         },
         {
-          "place": "street",
-          "beat": "walk",
+          "place": "stage",
           "mood": "happy",
-          "action": "cheer",
-          "crowd": 40
+          "card": {
+            "text": "11TH PICK",
+            "kind": "sign",
+            "sub": "TRADED TWICE"
+          },
+          "view": "ms"
         },
         {
           "place": "court",
-          "beat": "sign",
           "mood": "laugh",
-          "action": "cheer",
-          "crowd": 40,
-          "brand": {
-            "name": "Thunder",
-            "bg": "#007ac1",
-            "fg": "#ffffff",
-            "icon": "bolt"
-          }
+          "things": [
+            "trophy",
+            "ring"
+          ],
+          "card": {
+            "text": "MVP + TITLE",
+            "kind": "sign"
+          },
+          "view": "wide"
         }
       ]
     },
@@ -101,29 +119,49 @@
           "ball"
         ],
         "stat": "THE PLAN",
-        "stat_sub": "a dynasty"
+        "stat_sub": "a dynasty",
+        "hero": {
+          "skin": "7a4e34",
+          "hair": "short",
+          "hair_color": "141010",
+          "beard": "mustache",
+          "beard_color": "141010",
+          "shirt": "007ac1",
+          "pants": "007ac1",
+          "trim": "ef3b24",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "glasses": false,
+          "height": 1.08,
+          "outfit": "kit",
+          "number": 2
+        }
       },
       "toon": [
         {
           "place": "court",
-          "beat": "walk",
-          "mood": "stern"
-        },
-        {
-          "place": "office",
-          "beat": "walk",
-          "mood": "scheme"
-        },
-        {
-          "place": "office",
-          "beat": "money",
-          "mood": "proud",
-          "props": [
-            "check"
-          ],
+          "mood": "stern",
           "things": [
             "ring"
-          ]
+          ],
+          "view": "ms"
+        },
+        {
+          "place": "throne",
+          "mood": "scheme",
+          "things": [
+            "crown"
+          ],
+          "view": "ms"
+        },
+        {
+          "place": "office",
+          "mood": "proud",
+          "crowd": 5,
+          "things": [
+            "letter"
+          ],
+          "view": "ms"
         }
       ]
     },
@@ -138,20 +176,39 @@
           "ball"
         ],
         "stat": "STEP 1",
-        "stat_sub": "unguardable"
+        "stat_sub": "unguardable",
+        "hero": {
+          "skin": "7a4e34",
+          "hair": "short",
+          "hair_color": "141010",
+          "beard": "mustache",
+          "beard_color": "141010",
+          "shirt": "007ac1",
+          "pants": "007ac1",
+          "trim": "ef3b24",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "glasses": false,
+          "height": 1.08,
+          "outfit": "kit",
+          "number": 2
+        }
       },
       "toon": [
         {
           "place": "court",
-          "beat": "queue",
           "mood": "shock",
-          "crowd": 30
+          "things": [
+            "hoop",
+            "fort_fence"
+          ],
+          "view": "ms"
         },
         {
           "place": "court",
-          "beat": "walk",
           "mood": "scheme",
-          "action": "run"
+          "action": "shoot",
+          "view": "wide"
         }
       ]
     },
@@ -166,31 +223,47 @@
           "ball"
         ],
         "stat": "STEP 2",
-        "stat_sub": "tunnel fits"
+        "stat_sub": "tunnel fits",
+        "hero": {
+          "skin": "7a4e34",
+          "hair": "short",
+          "hair_color": "141010",
+          "beard": "mustache",
+          "beard_color": "141010",
+          "shirt": "007ac1",
+          "pants": "007ac1",
+          "trim": "ef3b24",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "glasses": false,
+          "height": 1.08,
+          "outfit": "kit",
+          "number": 2
+        }
       },
       "toon": [
         {
-          "place": "street",
-          "beat": "phone",
+          "place": "stage",
           "mood": "happy",
-          "crowd": 20
+          "things": [
+            "phone"
+          ],
+          "view": "ms"
         },
         {
-          "place": "street",
-          "beat": "queue",
+          "place": "classroom",
           "mood": "laugh",
-          "crowd": 45
+          "crowd": 20,
+          "view": "wide"
         },
         {
-          "place": "street",
-          "beat": "logo",
+          "place": "showroom",
           "mood": "excited",
-          "brand": {
-            "name": "SGA",
-            "bg": "#111111",
-            "fg": "#ffffff",
-            "icon": "star"
-          }
+          "things": [
+            "shoe",
+            "box"
+          ],
+          "view": "ms"
         }
       ]
     },
@@ -205,25 +278,43 @@
           "ball"
         ],
         "stat": "STEP 3",
-        "stat_sub": "everyone wants OKC"
+        "stat_sub": "everyone wants OKC",
+        "hero": {
+          "skin": "7a4e34",
+          "hair": "short",
+          "hair_color": "141010",
+          "beard": "mustache",
+          "beard_color": "141010",
+          "shirt": "007ac1",
+          "pants": "007ac1",
+          "trim": "ef3b24",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "glasses": false,
+          "height": 1.08,
+          "outfit": "kit",
+          "number": 2
+        }
       },
       "toon": [
         {
-          "place": "office",
-          "beat": "sign",
+          "place": "field",
           "mood": "proud",
-          "brand": {
-            "name": "Thunder",
-            "bg": "#007ac1",
-            "fg": "#ffffff",
-            "icon": "bolt"
-          }
+          "things": [
+            "stadium",
+            "cashstack"
+          ],
+          "card": {
+            "text": "OKLAHOMA CITY",
+            "kind": "sign"
+          },
+          "view": "wide"
         },
         {
           "place": "court",
-          "beat": "walk",
           "mood": "laugh",
-          "crowd": 25
+          "crowd": 12,
+          "view": "low"
         }
       ]
     },
@@ -238,23 +329,45 @@
           "ball"
         ],
         "stat": "STEP 4",
-        "stat_sub": "five in a row"
+        "stat_sub": "five in a row",
+        "hero": {
+          "skin": "7a4e34",
+          "hair": "short",
+          "hair_color": "141010",
+          "beard": "mustache",
+          "beard_color": "141010",
+          "shirt": "007ac1",
+          "pants": "007ac1",
+          "trim": "ef3b24",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "glasses": false,
+          "height": 1.08,
+          "outfit": "kit",
+          "number": 2
+        }
       },
       "toon": [
         {
-          "place": "court",
-          "beat": "clock",
-          "mood": "scheme"
+          "place": "office",
+          "mood": "scheme",
+          "things": [
+            "lightbulb"
+          ],
+          "view": "ms"
         },
         {
           "place": "court",
-          "beat": "money",
           "mood": "laugh",
-          "action": "cheer",
-          "crowd": 40,
           "things": [
+            "trophy",
             "ring"
-          ]
+          ],
+          "card": {
+            "text": "5 IN A ROW",
+            "kind": "flip"
+          },
+          "view": "wide"
         }
       ]
     },
@@ -269,22 +382,42 @@
           "ball"
         ],
         "stat": "THE PLAN",
-        "stat_sub": "from 11th pick"
+        "stat_sub": "from 11th pick",
+        "hero": {
+          "skin": "7a4e34",
+          "hair": "short",
+          "hair_color": "141010",
+          "beard": "mustache",
+          "beard_color": "141010",
+          "shirt": "007ac1",
+          "pants": "007ac1",
+          "trim": "ef3b24",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "glasses": false,
+          "height": 1.08,
+          "outfit": "kit",
+          "number": 2
+        }
       },
       "toon": [
         {
-          "place": "court",
-          "beat": "sign",
+          "place": "throne",
           "mood": "proud",
-          "brand": {
-            "name": "Thunder",
-            "bg": "#007ac1",
-            "fg": "#ffffff",
-            "icon": "bolt"
+          "things": [
+            "crown",
+            "trophy"
+          ],
+          "card": {
+            "text": "11TH PICK",
+            "kind": "sign"
           },
-          "crowd": 30
+          "view": "ms"
         }
       ]
     }
+  ],
+  "needs_fix": [
+    "eyes score 3/10"
   ]
 }

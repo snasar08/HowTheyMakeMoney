@@ -263,10 +263,10 @@ ACT_OWN_PROPS.update({"eat_pizza": {"pizza", "slice"}, "eat_fries": {"fries", "c
 _INDOOR = ("diner", "stall", "office", "boardroom", "lab", "garage", "mansion", "classroom", "bathroom", "showroom", "stage", "throne")
 ACT_SET = {**{k: (("court",), "court") for k in BASKET_ACTS},
            "kick": (("pitch",), "pitch"), "punch": (("ring",), "ring"), "sprint": (("track",), "track"),
-           "qb_throw": (("pitch",), "pitch"), "touchdown": (("pitch",), "pitch"), "goal_celebrate": (("pitch",), "pitch"),
-           "bat_swing": (("field",), "field"), "pitch": (("field",), "field"), "golf_swing": (("field",), "field"),
+           "qb_throw": (("gridiron", "pitch"), "gridiron"), "touchdown": (("gridiron", "pitch"), "gridiron"), "tennis_serve": (("tennis",), "tennis"), "goal_celebrate": (("pitch",), "pitch"),
+           "bat_swing": (("diamond", "field"), "diamond"), "pitch": (("diamond", "field"), "diamond"), "golf_swing": (("field",), "field"),
            "race_car": (("track",), "track"), "sprint_finish": (("track",), "track"),
-           "lift_weights": (("stage", "garage"), "garage"),
+           "lift_weights": (("gym", "stage", "garage"), "gym"),
            "handshake_deal": (("boardroom", "office"), "boardroom"), "ring_bell": (("stage", "office"), "stage"),
            "ribbon_cut": (("street",), "street"), "stack_gold": (("throne", "office"), "throne"),
            "card_swipe": (("stall",), "stall"), "cash_register": (("stall",), "stall"),
