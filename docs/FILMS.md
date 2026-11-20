@@ -18,6 +18,8 @@ last `posted_at` is >= 3 New York calendar days before today. Then it renders th
 1280x720 thumbnail (frame at ~35 %), runs `pipeline.scenesheet` (warn only; artifact `film-scenesheet`), creates GitHub release `film-NNN`
 (MP4 + thumbnail, title/description/tags in the body), and commits `status: delivered` + `posted_at` to main.
 Publish time = 17:00 America/New_York on the due day (a late manual run gets now + 15 min).
+Shorts on a film day (Sam, Nov 19): 2 Shorts every day, but on a day a film posts only 1 Short (12:00) + the film (17:00).
+`pipeline.films.film_days` predicts those days from the queue; `pipeline.publish` (scheduling) and `pipeline.slot_audit` use it (`FILM_DAY_SHORTS`, default 1).
 
 ## FILM_UPLOAD (repo variable, default `release`)
 - `release`: the release is the result; Sam uploads the MP4 + thumbnail to YouTube by hand.

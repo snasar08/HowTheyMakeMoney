@@ -28,6 +28,7 @@ FILMS = ROOT / "content" / "films2d"
 TZ = ZoneInfo(os.environ.get("CHANNEL_TZ", "America/New_York"))
 CADENCE_DAYS = 3
 PUBLISH_HOUR = 17          # 17:00 New York time
+RUN_LATE_UTC = 16          # films.yml runs 13:00 UTC; after 16:00 UTC the next run is tomorrow
 INTERNAL_MIN = 900         # ids 900+ never post (internal / reference films)
 TEST_FILM = "content/films2d/test/tiny.json"
 
@@ -80,6 +81,31 @@ def next_ready(items):
         if f.get("status") == "ready":
             return n, p, f
     return None
+
+
+def film_days(now: dt.datetime, items=None, ahead: int = 3) -> set[dt.date]:
+    """New York dates that have (or will have) a long-form film: days a film was delivered, plus the next
+    due dates for the ready films (first one today or 3 days after the last, then every 3 days).
+    Shorts use this (Sam, Nov 19): 2 Shorts a day, but only 1 Short on a film day."""
+    items = queue() if items is None else items
+    out = set()
+    for n, p, f in items:
+        if f.get("status") == "delivered" and f.get("posted_at"):
+            try:
+                out.add(_parse(f["posted_at"]).astimezone(TZ).date())
+            except ValueError:
+                pass
+    ready = [x for x in items if x[2].get("status") == "ready"][:ahead]
+    if ready:
+        # date of the next films.yml run (13:00 UTC; counted as missed 3 h later): that's when a due film goes out
+        u = now.astimezone(dt.timezone.utc)
+        today = u.date() + dt.timedelta(days=1 if u.hour >= RUN_LATE_UTC else 0)
+        last = last_posted(items)
+        d = today if last is None else max(today, last.astimezone(TZ).date() + dt.timedelta(days=CADENCE_DAYS))
+        for _ in ready:
+            out.add(d)
+            d += dt.timedelta(days=CADENCE_DAYS)
+    return out
 
 
 def publish_at(now: dt.datetime) -> dt.datetime:

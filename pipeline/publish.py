@@ -42,6 +42,22 @@ def posting_started(now: dt.datetime | None = None) -> bool:
 
 
 MAX_PER_DAY = int(os.environ.get("MAX_PER_DAY", "2"))
+# Sam, Nov 19: on a day a long-form film posts (pipeline.films, every 3 days), only 1 Short + the film.
+FILM_DAY_SHORTS = int(os.environ.get("FILM_DAY_SHORTS", "1"))
+
+
+def film_days(now: dt.datetime | None = None) -> set[dt.date]:
+    try:
+        from . import films
+        return films.film_days(now or dt.datetime.now(TZ))
+    except Exception as exc:  # noqa: BLE001  (never block Shorts over the film queue)
+        print(f"::warning title=film days::{exc!r}")
+        return set()
+
+
+def day_cap(day: dt.date, fdays: set[dt.date]) -> int:
+    """Shorts allowed on this New York date: MAX_PER_DAY, or FILM_DAY_SHORTS on a film day."""
+    return min(MAX_PER_DAY, FILM_DAY_SHORTS) if day in fdays else MAX_PER_DAY
 # Buffer free plan, Nov 19 2026: at most 2 YouTube posts in any rolling 24 h (status.buffer.com), else
 # the post fails with "daily posting limit". Slots are nudged later in NUDGE_MIN steps (up to NUDGE_MAX_MIN)
 # so no 24 h window (plus a margin) ever holds more than ROLLING_MAX posts.
@@ -75,12 +91,13 @@ def taken_slots(scripts: list[dict]) -> dict[dt.datetime, str]:
 def publish_slots(n: int, now: dt.datetime | None = None, taken=None, horizon_h: float | None = None
                   ) -> list[dt.datetime]:
     """Up to n free posting times: never sooner than MIN_LEAD_MIN (default 20) minutes from now,
-    never a slot that already has a post, never more than MAX_PER_DAY posts on one day. A slot
+    never a slot that already has a post, never more than MAX_PER_DAY posts on one day (1 on a film day). A slot
     that has passed (late run) simply isn't offered; the next free slot is used instead."""
     now = now or dt.datetime.now(TZ)
     taken = taken or {}
     lead = dt.timedelta(minutes=int(os.environ.get("MIN_LEAD_MIN", "20")))
     end = now + dt.timedelta(hours=horizon_h) if horizon_h else None
+    fdays = film_days(now)
     per_day: dict[dt.date, int] = {}
     for t in taken:
         per_day[t.date()] = per_day.get(t.date(), 0) + 1
@@ -93,7 +110,7 @@ def publish_slots(n: int, now: dt.datetime | None = None, taken=None, horizon_h:
             base = dt.datetime.combine(day, dt.time(hh, mm), TZ)
             if len(out) >= n:
                 continue
-            if per_day.get(day, 0) >= MAX_PER_DAY:
+            if per_day.get(day, 0) >= day_cap(day, fdays):
                 break
             t = None
             for k in range(0, NUDGE_MAX_MIN + 1, NUDGE_MIN):
