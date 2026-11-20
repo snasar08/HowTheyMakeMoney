@@ -1,10 +1,10 @@
 {
- "at": "2026-11-19T22:57:07.002681+00:00",
+ "at": "2026-11-20T19:04:46.061808+00:00",
  "shorts": [
   {
    "video": "NDSx2v-Zyv4",
    "title": "The 180 Million Euro Teenager",
-   "views": 1297,
+   "views": 1296,
    "avg_pct": 70.6,
    "avg_seconds": 19,
    "tags": {
@@ -89,7 +89,7 @@
    "end": 29,
    "drop_at_pct": 87,
    "drop_at_s": 31.3,
-   "drop_size": 20
+   "drop_size": 21
   },
   {
    "video": "PRUzamrtY2E",
@@ -154,7 +154,7 @@
   {
    "video": "JZDYSic2L-0",
    "title": "What If You Sold Every Minecraft Copy Yourself?",
-   "views": 1099,
+   "views": 1092,
    "avg_pct": 76.5,
    "avg_seconds": 23,
    "tags": {
@@ -392,36 +392,6 @@
    "drop_size": 24
   },
   {
-   "video": "zpe-JPNRQO0",
-   "title": "What If One Person Played All of Roblox?",
-   "views": 1018,
-   "avg_pct": 70.0,
-   "avg_seconds": 17,
-   "tags": {
-    "script": "053",
-    "slug": "whatif-roblox",
-    "topic": "Roblox",
-    "format": "whatif",
-    "visual_style": "lowpoly",
-    "theme": "bold_bright",
-    "hook_style": "number",
-    "title_style": "whatif",
-    "length_s": 24.72,
-    "length_bucket": "<30",
-    "post_at": "2026-11-15T15:00:00-05:00",
-    "post_slot": "15:00",
-    "score": 90
-   },
-   "start": 123,
-   "q25": 97,
-   "q50": 65,
-   "q75": 50,
-   "end": 24,
-   "drop_at_pct": 17,
-   "drop_at_s": 4.1,
-   "drop_size": 13
-  },
-  {
    "video": "OnAqPBAM37s",
    "title": "From a Baby Photo With Messi to $45 Million",
    "views": 1013,
@@ -450,6 +420,36 @@
    "drop_at_pct": 14,
    "drop_at_s": 4.2,
    "drop_size": 16
+  },
+  {
+   "video": "zpe-JPNRQO0",
+   "title": "What If One Person Played All of Roblox?",
+   "views": 1012,
+   "avg_pct": 70.0,
+   "avg_seconds": 17,
+   "tags": {
+    "script": "053",
+    "slug": "whatif-roblox",
+    "topic": "Roblox",
+    "format": "whatif",
+    "visual_style": "lowpoly",
+    "theme": "bold_bright",
+    "hook_style": "number",
+    "title_style": "whatif",
+    "length_s": 24.72,
+    "length_bucket": "<30",
+    "post_at": "2026-11-15T15:00:00-05:00",
+    "post_slot": "15:00",
+    "score": 90
+   },
+   "start": 123,
+   "q25": 97,
+   "q50": 65,
+   "q75": 50,
+   "end": 24,
+   "drop_at_pct": 17,
+   "drop_at_s": 4.1,
+   "drop_size": 13
   },
   {
    "video": "LjNhttpIT3o",
@@ -784,7 +784,7 @@
   {
    "video": "r7m9Sye8Eek",
    "title": "HP Sold $10.9 Billion of Ink and Toner",
-   "views": 268,
+   "views": 260,
    "avg_pct": 53.2,
    "avg_seconds": 14,
    "tags": {
@@ -844,7 +844,7 @@
   {
    "video": "bkk_VW26I6E",
    "title": "Too Old at 31: This Job Pays $148,080",
-   "views": 213,
+   "views": 211,
    "avg_pct": 89.6,
    "avg_seconds": 21,
    "tags": {
@@ -1024,7 +1024,7 @@
   {
    "video": "_Z4XVNFVtBE",
    "title": "One Air Mattress Became 2.5 Billion Stays",
-   "views": 99,
+   "views": 97,
    "avg_pct": 116.1,
    "avg_seconds": 38,
    "tags": {
@@ -1260,28 +1260,6 @@
    }
   },
   {
-   "video": "cqSU-i2fgMI",
-   "title": "How Did Two YouTubers Sell $1.2B of Drinks?",
-   "views": 19,
-   "avg_pct": 53.7,
-   "avg_seconds": 25,
-   "tags": {
-    "script": "043",
-    "slug": "how-prime",
-    "topic": "Prime Hydration",
-    "format": "how",
-    "visual_style": "editorial",
-    "theme": "dark_neon",
-    "hook_style": "question",
-    "title_style": "question",
-    "length_s": 47.02,
-    "length_bucket": "38+",
-    "post_at": "2026-11-05T12:00:00-05:00",
-    "post_slot": "12:00",
-    "score": 90
-   }
-  },
-  {
    "video": "Ox0qHyPUNIk",
    "title": "$885,000: The Lowest NFL Salary in 2026",
    "views": 19,
@@ -1367,28 +1345,6 @@
     "post_at": "2026-11-13T18:00:00-05:00",
     "post_slot": "18:00",
     "score": 87
-   }
-  },
-  {
-   "video": "Hpv6RuoiVYk",
-   "title": "What If You Won the Biggest Esports Prize?",
-   "views": 15,
-   "avg_pct": 55.8,
-   "avg_seconds": 16,
-   "tags": {
-    "script": "041",
-    "slug": "careers-esports",
-    "topic": "Pro gamers",
-    "format": "careers",
-    "visual_style": "charts3d",
-    "theme": "dark_neon",
-    "hook_style": "whatif",
-    "title_style": "whatif",
-    "length_s": 28.55,
-    "length_bucket": "<30",
-    "post_at": "2026-11-04T18:00:00-05:00",
-    "post_slot": "18:00",
-    "score": 91
    }
   },
   {
@@ -1565,6 +1521,28 @@
     "post_at": "2026-11-18T15:00:00-05:00",
     "post_slot": "15:00",
     "score": 90
+   }
+  },
+  {
+   "video": "N2oLakB4OyI",
+   "title": "From a $25 Million Deal to $1.6 Billion",
+   "views": 0,
+   "avg_pct": 0,
+   "avg_seconds": 0,
+   "tags": {
+    "script": "097",
+    "slug": "famous-magic-johnson",
+    "topic": "Magic Johnson",
+    "format": "famous",
+    "visual_style": "lowpoly",
+    "theme": "bold_bright",
+    "hook_style": "surprise",
+    "title_style": "number",
+    "length_s": 25.74,
+    "length_bucket": "<30",
+    "post_at": "2026-11-19T20:00:00-05:00",
+    "post_slot": "20:00",
+    "score": 88
    }
   }
  ]
