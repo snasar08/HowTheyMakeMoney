@@ -1,0 +1,407 @@
+{
+  "format": "story",
+  "story_mode": "plan",
+  "visual_style": "lowpoly",
+  "hook_style": "surprise",
+  "title_style": "statement",
+  "theme": "bold_bright",
+  "status": "delivered",
+  "images": {},
+  "hud_label": "THE AI RACE",
+  "id": "121",
+  "slug": "plan-zuck-ai-race",
+  "company": "Meta",
+  "score": 93,
+  "title": "You're Zuckerberg. Win the AI Race.",
+  "name_card": "Mark Zuckerberg",
+  "name_sub": "a hypothetical master plan",
+  "description": "You're Mark Zuckerberg, and you want to win the AI race.\n\nThe first step is real: Meta released its Llama AI models from February 2023. Everything after that is a made-up, hypothetical master plan for fun: imagined steps, not Meta news or anything Meta has announced.\n\nSources:\n- Wikipedia: Llama (language model): https://en.wikipedia.org/wiki/Llama_(language_model)\n\n#shorts #meta #ai #howtheymakemoney",
+  "tags": [
+    "meta",
+    "zuckerberg",
+    "ai race",
+    "shorts"
+  ],
+  "loop": "So next time your feed knows exactly what you want, remember:",
+  "cta": "Meta or OpenAI? Comment your pick.",
+  "cta_question": "Meta or OpenAI?",
+  "hero": {
+    "skin": "efc7a4",
+    "hair": "curly",
+    "hair_color": "5a3b22",
+    "beard": "none",
+    "outfit": "tee",
+    "shirt": "8a8f98",
+    "pants": "2b2f3a",
+    "shoes": "f4f4f4",
+    "height": 0.97
+  },
+  "scenes": [
+    {
+      "narration": "You're Mark Zuckerberg, and you're losing the AI race. Everyone is talking about someone else's chatbot.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": "THE AI RACE",
+        "stat_sub": "you're behind",
+        "hero": {
+          "skin": "efc7a4",
+          "hair": "curly",
+          "hair_color": "5a3b22",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "8a8f98",
+          "pants": "2b2f3a",
+          "shoes": "f4f4f4",
+          "height": 0.97
+        }
+      },
+      "toon": [
+        {
+          "place": "track",
+          "mood": "shock",
+          "things": [
+            "robot"
+          ],
+          "view": "wide"
+        },
+        {
+          "place": "street",
+          "mood": "shock",
+          "crowd": 25,
+          "things": [
+            "laptop"
+          ],
+          "view": "wide"
+        }
+      ]
+    },
+    {
+      "narration": "So in 2023, you do something nobody expects. You give your AI away for free. Llama.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "office",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": "2023",
+        "stat_sub": "Llama, free",
+        "hero": {
+          "skin": "efc7a4",
+          "hair": "curly",
+          "hair_color": "5a3b22",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "8a8f98",
+          "pants": "2b2f3a",
+          "shoes": "f4f4f4",
+          "height": 0.97
+        }
+      },
+      "toon": [
+        {
+          "place": "office",
+          "mood": "scheme",
+          "card": {
+            "text": "2023",
+            "kind": "flip",
+            "sub": "YEAR"
+          },
+          "view": "ms"
+        },
+        {
+          "place": "stall",
+          "mood": "laugh",
+          "action": "cheer",
+          "things": [
+            "robot",
+            "box"
+          ],
+          "card": {
+            "text": "FREE",
+            "kind": "sign"
+          },
+          "view": "ms"
+        },
+        {
+          "place": "lab",
+          "mood": "proud",
+          "card": {
+            "text": "LLAMA",
+            "kind": "sign"
+          },
+          "view": "ms"
+        }
+      ]
+    },
+    {
+      "narration": "Now every coder on Earth is building on your AI. But free doesn't win the race. You need the smartest brains.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": "STEP 1",
+        "stat_sub": "everyone builds on it",
+        "hero": {
+          "skin": "efc7a4",
+          "hair": "curly",
+          "hair_color": "5a3b22",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "8a8f98",
+          "pants": "2b2f3a",
+          "shoes": "f4f4f4",
+          "height": 0.97
+        }
+      },
+      "toon": [
+        {
+          "place": "office",
+          "mood": "happy",
+          "crowd": 25,
+          "things": [
+            "laptop",
+            "globe"
+          ],
+          "view": "wide"
+        },
+        {
+          "place": "boardroom",
+          "mood": "stern",
+          "view": "cu"
+        },
+        {
+          "place": "classroom",
+          "mood": "scheme",
+          "things": [
+            "books",
+            "lightbulb"
+          ],
+          "view": "ms"
+        }
+      ]
+    },
+    {
+      "narration": "So you hire them. Then they need more computers than exist. So you build data centers the size of towns.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": "STEP 2",
+        "stat_sub": "towns of computers",
+        "hero": {
+          "skin": "efc7a4",
+          "hair": "curly",
+          "hair_color": "5a3b22",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "8a8f98",
+          "pants": "2b2f3a",
+          "shoes": "f4f4f4",
+          "height": 0.97
+        }
+      },
+      "toon": [
+        {
+          "place": "boardroom",
+          "mood": "proud",
+          "things": [
+            "letter"
+          ],
+          "view": "ms"
+        },
+        {
+          "place": "garage",
+          "mood": "shock",
+          "things": [
+            "gpu",
+            "laptop"
+          ],
+          "view": "ms"
+        },
+        {
+          "place": "lab",
+          "mood": "excited",
+          "things": [
+            "factory",
+            "gpu"
+          ],
+          "view": "wide"
+        }
+      ]
+    },
+    {
+      "narration": "Those need power. So you build your own power plants. Then you put the AI in glasses, so it sees what you see.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": "STEP 3",
+        "stat_sub": "AI in your glasses",
+        "hero": {
+          "skin": "efc7a4",
+          "hair": "curly",
+          "hair_color": "5a3b22",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "8a8f98",
+          "pants": "2b2f3a",
+          "shoes": "f4f4f4",
+          "height": 0.97
+        }
+      },
+      "toon": [
+        {
+          "place": "street",
+          "mood": "nervous",
+          "things": [
+            "lightbulb"
+          ],
+          "view": "ms"
+        },
+        {
+          "place": "field",
+          "mood": "scheme",
+          "things": [
+            "factory",
+            "arrowup"
+          ],
+          "view": "wide"
+        },
+        {
+          "place": "office",
+          "mood": "excited",
+          "things": [
+            "camera"
+          ],
+          "view": "ms"
+        }
+      ]
+    },
+    {
+      "narration": "Still not enough? You launch the servers into space, where the sun never sets.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": "STEP 4",
+        "stat_sub": "servers in space",
+        "hero": {
+          "skin": "efc7a4",
+          "hair": "curly",
+          "hair_color": "5a3b22",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "8a8f98",
+          "pants": "2b2f3a",
+          "shoes": "f4f4f4",
+          "height": 0.97
+        }
+      },
+      "toon": [
+        {
+          "place": "boardroom",
+          "mood": "scheme",
+          "view": "cu"
+        },
+        {
+          "place": "space",
+          "mood": "laugh",
+          "things": [
+            "gpu",
+            "satellite"
+          ],
+          "view": "wide"
+        }
+      ]
+    },
+    {
+      "narration": "Now three billion people ask your AI everything. And it all started with giving it away.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": "THE PLAN",
+        "stat_sub": "give it away, win it all",
+        "hero": {
+          "skin": "efc7a4",
+          "hair": "curly",
+          "hair_color": "5a3b22",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "8a8f98",
+          "pants": "2b2f3a",
+          "shoes": "f4f4f4",
+          "height": 0.97
+        }
+      },
+      "toon": [
+        {
+          "place": "street",
+          "mood": "proud",
+          "crowd": 60,
+          "things": [
+            "robot"
+          ],
+          "card": {
+            "text": "3 BILLION",
+            "kind": "sign"
+          },
+          "view": "wide"
+        },
+        {
+          "place": "stall",
+          "mood": "laugh",
+          "things": [
+            "box",
+            "heart"
+          ],
+          "view": "ms"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Llama (language model)",
+      "url": "https://en.wikipedia.org/wiki/Llama_(language_model)"
+    }
+  ],
+  "delivered": {
+    "mode": "release",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-121-plan-zuck-ai-race",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-121-plan-zuck-ai-race/121-plan-zuck-ai-race.mp4",
+    "post_at": "2026-11-20T12:00:00-05:00",
+    "rendered_at": "2026-11-19T18:57:07.818742+00:00",
+    "seconds": 39.88,
+    "eyes": {
+      "score": 8,
+      "problems": [
+        "The character remains static in the center of the frame for the entire duration of the video, which is visually repetitive and boring for the target demographic.",
+        "The background scenery does not change to reflect the specific locations mentioned in the narration (e.g., data centers, power plants, space), making the visual storytelling disconnected from the audio."
+      ],
+      "best_fix": "Introduce dynamic background changes or character movement that corresponds to the specific milestones mentioned in the narration (e.g., showing a data center when mentioned, or the character wearing glasses when the AI glasses are discussed).",
+      "model": "gemini-3.1-flash-lite",
+      "acts": null
+    },
+    "scene_scan": [
+      "shot 10 @578: only 7 frames (flash cut?)",
+      "shot 18 @1002: 4.6 s long (same picture too long?)",
+      "shot 18 @1068: jump inside shot (19) - something teleports?",
+      "shot 18 @1082: jump inside shot (18) - something teleports?"
+    ]
+  }
+}

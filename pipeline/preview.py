@@ -23,6 +23,7 @@ def preview(script_path: str, out_png: str, width: int = 270):
         sc.words = time_words(raw["narration"], sc.duration)
         sc.beats = make_beats(sc.words, sc.duration)
         scenes.append(sc)
+    r._scenes = scenes   # low-poly shots look their scene up by index
     r.plan(scenes)
     shots = [(i, b + 0.6) for i, sc in enumerate(scenes) for b in sc.beats]
     h = int(width * 1920 / 1080)

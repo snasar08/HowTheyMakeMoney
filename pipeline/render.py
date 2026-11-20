@@ -28,7 +28,7 @@ import numpy as np
 import soundfile as sf
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
-from . import audio_check, clarity_check, music, tts
+from . import audio_check, clarity_check, fx, music, tts
 from .themes import get_theme
 
 W, H = 1080, 1920
@@ -39,6 +39,18 @@ CACHE = Path(os.environ.get("HTMM_CACHE", ROOT / ".cache"))
 SAFE_X0, SAFE_X1 = 70, 950          # keep clear of Shorts' right-side buttons
 CAPTION_Y = 1330                     # above the Shorts title/channel overlay
 ZONE_TOP = CAPTION_Y - 100           # caption dead zone: charts/figures stay above this line
+SUBLINE = os.environ.get("SUBLINE", "off") == "on"   # top sentence: OFF (Nov 15: that was YouTube's own CC on the reference, not the creator's)
+SUBLINE_Y = 150
+# Nov 16 (owner review of the Nike Short): the small phrase caption sat on top of the prop of an acted shot (contract,
+# cash stack, ball). In an "act" shot the whole phrase moves: "low" = lower band (~y 1600, above YouTube's bottom UI),
+# "high" = top band under the title/subline (acts whose action is low in the frame). Default "low".
+ACT_CAPTION_POS = {"drive_car": "high", "race_car": "high", "dribble": "high", "kick": "high", "sprint": "high",
+                   "sprint_finish": "high", "goal_celebrate": "high", "touchdown": "high", "golf_swing": "high",
+                   "bat_swing": "high", "pitch": "high", "tennis_serve": "high",
+                   # the cash stack / contract are held at belly height and fill the lower third: a low caption sat on them
+                   "count_cash": "high", "sign_contract": "high", "throw_cash": "high", "stack_gold": "high",
+                   "cash_register": "high", "handshake_deal": "high"}
+ACT_CAPTION_Y = {"low": 1600, "high": 410}     # caption bottom edge (the normal one is 1265)
 SCENE_GAP = 0.06                     # seconds of silence between scenes
 END_HOLD = 0.7
 BEAT_TARGET = float(os.environ.get("BEAT_TARGET", "1.4"))  # seconds per shot
@@ -232,22 +244,29 @@ class CaptionRenderer:
         key = (" ".join(w.text for w in chunk), hi)
         if key in self.cache:
             return self.cache[key]
-        texts = [re.sub(r"[^\w$%'.\-]", "", w.text).upper().rstrip(".") or w.text.upper() for w in chunk]
+        texts = [re.sub(r"[^\w$%'.,\-]", "", w.text).upper().rstrip(".,") or w.text.upper() for w in chunk]
+        # numbers always pop (highlight color, 18% bigger); the spoken word gets a small punch too
+        scale = [1.18 if re.search(r"\d", t) else (1.08 if i == hi else 1.0) for i, t in enumerate(texts)]
         size = 82
-        f = font(XBOLD, size)
-        space = f.getlength(" ")
-        total = sum(f.getlength(t) for t in texts) + space * (len(texts) - 1)
+
+        def fonts(sz):
+            return [font(XBOLD, int(sz * k)) for k in scale]
+        fs = fonts(size)
+        space = font(XBOLD, size).getlength(" ")
+        total = sum(f.getlength(t) for f, t in zip(fs, texts)) + space * (len(texts) - 1)
         while total > (SAFE_X1 - SAFE_X0) and size > 48:
             size -= 4
-            f = font(XBOLD, size)
-            space = f.getlength(" ")
-            total = sum(f.getlength(t) for t in texts) + space * (len(texts) - 1)
-        img = Image.new("RGBA", (W, size + 40), (0, 0, 0, 0))
+            fs = fonts(size)
+            space = font(XBOLD, size).getlength(" ")
+            total = sum(f.getlength(t) for f, t in zip(fs, texts)) + space * (len(texts) - 1)
+        tall = max(f.size for f in fs)
+        img = Image.new("RGBA", (W, tall + 40), (0, 0, 0, 0))
         d = ImageDraw.Draw(img)
         x = (SAFE_X0 + SAFE_X1 - total) / 2  # centered in the safe area, clear of the like/share column
-        for i, t in enumerate(texts):
-            fill = self.theme["caption_hi"] if i == hi else self.theme["caption_fill"]
-            d.text((x, 14), t, font=f, fill=fill, stroke_width=8,
+        for i, (t, f) in enumerate(zip(texts, fs)):
+            num = scale[i] > 1.1
+            fill = self.theme["caption_hi"] if (i == hi or num) else self.theme["caption_fill"]
+            d.text((x, 14 + (tall - f.size) * 0.75), t, font=f, fill=fill, stroke_width=8 if not num else 10,
                    stroke_fill=self.theme["caption_stroke"])
             x += f.getlength(t) + space
         self.cache[key] = img
@@ -322,7 +341,44 @@ class Renderer:
         imgs = script.get("images", {}) if load_images else {}
         self.images = {k: fetch_image((v or {}).get("url")) for k, v in imgs.items()}
         self.images = {k: v for k, v in self.images.items() if v is not None}
+        # Nov 9 (Sam): chart-style Shorts mix free-license Wikimedia Commons photos (script "photos":
+        # [{photo, caption}], credited in the description by publish.py) in with the Higgsfield images,
+        # so more shots are real pictures instead of word cards.
+        if load_images and script.get("visual_style", "charts3d") not in ("editorial", "lowpoly"):
+            from . import photos
+            for i, ph in enumerate(script.get("photos", [])):
+                img, _ = photos.photo(ph["photo"], ph.get("caption", ""))
+                if img is not None:
+                    self.images[f"brollp{i}"] = img
         self.bg = gradient(self.theme["bg_top"], self.theme["bg_bottom"])
+        # Blender frames (nightly, Nov 3): LP_PLATES/<slug>/<scene>_<frame>.jpg from 20 machines.
+        # Used only if every frame of the Short's plan arrived; else the GL renderer, as before.
+        self.plates = None
+        pd = os.environ.get("LP_PLATES")
+        slug = f"{script.get('id', '')}-{script.get('slug', '')}"
+        if pd and (Path(pd) / f"{slug}.json").exists():
+            keys = list(json.loads((Path(pd) / f"{slug}.json").read_text())["frames"].keys())
+            missing = [k for k in keys if not (Path(pd) / slug / f"{k}.jpg").exists()]
+            if keys and len(missing) <= len(keys) // 100:  # neighbors cover a stray frame or two
+                self.plates = Path(pd) / slug
+                print(f"[render] Blender frames: {len(keys) - len(missing)}/{len(keys)}")
+            else:
+                have = sorted(p.name for p in (Path(pd) / slug).glob("*.jpg"))[:3] if (Path(pd) / slug).exists() else []
+                print(f"::warning::[render] Blender frames incomplete for {slug} ({len(missing)}/{len(keys)} missing, "
+                      f"e.g. {missing[:3]}; have {have}; dirs {sorted(x.name for x in Path(pd).iterdir())[:5]}); using the GL look")
+        self.lp_record = bool(os.environ.get("LP_RECORD"))
+        self._props = self._load_props(slug)
+        self.act_spans = self._load_act_spans(slug)
+        # one hero per Short (Sam, Nov 9): the script's "hero" look rides into every low-poly scene,
+        # so the figure is the same recognisable person from the first frame to the last
+        hero_ = script.get("hero")
+        if not hero_ and script.get("visual_style") == "lowpoly":
+            from . import lp_hero
+            hero_ = lp_hero.auto(script.get("slug", ""))   # what-if Shorts: a stable everyman, new per Short
+        for sc_ in script.get("scenes", []):
+            v_ = sc_.get("visual", {})
+            if v_.get("type") == "lowpoly" and hero_ and "hero" not in v_:   # the script's hero wins over an old per-scene "kit"
+                v_["hero"] = hero_
         hook = self.images.get("hook")
         if hook is not None:
             ghost = cover(hook, W, H).filter(ImageFilter.GaussianBlur(28))
@@ -336,6 +392,61 @@ class Renderer:
                      [k for k in ("mid", "hook") if k in self.images]
         self._pool_i = 0
         self._last_key = None
+
+    @staticmethod
+    def _load_props(slug: str):
+        """The toon props JSON of this Short, or None. Found via env TOON_PROPS (a path), else
+        $LP_PLATES/<slug>.props.json, else tp/<slug>.json / tp/plans/<slug>.json."""
+        cands = [os.environ.get("TOON_PROPS")]
+        pd = os.environ.get("LP_PLATES")
+        if pd:
+            cands.append(str(Path(pd) / f"{slug}.props.json"))
+        cands += [f"tp/{slug}.json", f"tp/plans/{slug}.json", f"toonplans/{slug}.json"]   # toonplans/ = nightly make job
+        for c in cands:
+            try:
+                if c and Path(c).is_file():
+                    return json.loads(Path(c).read_text(encoding="utf-8"))
+            except Exception as e:   # a caption nicety must never cost a post
+                print(f"::warning::[render] toon props skipped ({c}): {e}")
+        return None
+
+    @staticmethod
+    def _load_act_spans(slug: str) -> list:
+        """[(start_s, end_s, kind)] of the afterhour shots that carry an `act` ({"ah": {"shots": [{a, n, act: {kind}}]}}).
+        None found = no acts (old behaviour)."""
+        try:
+            shots = ((Renderer._load_props(slug) or {}).get("ah") or {}).get("shots") or []
+            return [(sh["a"] / FPS, (sh["a"] + sh["n"]) / FPS, sh["act"].get("kind", "")) for sh in shots if sh.get("act")]
+        except Exception as e:
+            print(f"::warning::[render] act caption spans skipped: {e}")
+            return []
+
+    def _calm(self) -> bool:
+        """True when this Short is drawn in the afterhour look (every format since Nov 17): the picture does the
+        talking, so no zoom blur / punch-in / step-stat cards / icon pops / HUD; phrase captions only (Sam: famous
+        Shorts had 'too many edits'). Toon props carry "ah" -> yes; props found without it -> no; none found ->
+        same rule as toon.py (low-poly Short whose "look" isn't "toon", TOON_LOOK not "toon"); format story always."""
+        c = getattr(self, "_calm_v", None)
+        if c is None:
+            props = getattr(self, "_props", None)
+            if props is not None:
+                c = bool(props.get("ah"))
+            else:
+                c = (self.s.get("look") == "afterhour"
+                     or (self.s.get("look") != "toon" and os.environ.get("TOON_LOOK") != "toon"
+                         and (self.s.get("format") == "story" or self.s.get("visual_style") == "lowpoly")))
+            self._calm_v = c
+        return c
+
+    def _caption_y(self, g0: float, g1: float) -> int:
+        """Caption bottom edge for a phrase spanning global seconds g0..g1: 1265 normally; if it overlaps an act
+        shot (by more than 0.12 s) the whole phrase goes to that act's band (ACT_CAPTION_POS, default low)."""
+        best, kind = 0.12, None
+        for a, b, k in getattr(self, "act_spans", []):
+            ov = min(g1, b) - max(g0, a)
+            if ov > best:
+                best, kind = ov, k
+        return 1265 if kind is None else ACT_CAPTION_Y[ACT_CAPTION_POS.get(kind, "low")]
 
     def _draw_tag(self, img: Image.Image):
         d = ImageDraw.Draw(img, "RGBA")
@@ -361,6 +472,7 @@ class Renderer:
         v_i = 0
         # per-Short camera offset so two Shorts never share the same sequence of moves
         self._vseed = int(hashlib.sha1(self.s.get("slug", "").encode()).hexdigest(), 16) % 5
+        ed_slot = 0  # editorial: every photo beat gets the next unused picture (Sam: no repeats)
         for si, sc in enumerate(scenes):
             typ = sc.visual.get("type")
             shots = []
@@ -376,6 +488,13 @@ class Renderer:
                 elif typ == "text":
                     shots.append(("text", None, 0, False) if b % 2 == 0 else
                                  ("textbg", self._next_broll(), (v_i % 5) + 1, False))
+                elif typ == "editorial":  # backstory page: one layout per scene, animated in place
+                    slot = None
+                    if b % 4 in (1, 3):
+                        slot, ed_slot = ed_slot, ed_slot + 1
+                    shots.append(("editorial", slot, b, b == 0))
+                elif typ == "lowpoly" and three_d_ok():
+                    shots.append(("lowpoly", None, b + si * 2 + self._vseed, b == 0))
                 elif three_d_ok() and typ in ("stat", "bars", "donut", "globe"):
                     # 3D: every beat is a new camera move; every third beat cuts to B-roll + figure
                     if b % 3 == 2 and self._pool and typ != "globe":
@@ -396,6 +515,70 @@ class Renderer:
                     self._last_key = shots[-1][1]
                 v_i += 1
             sc.shots = shots
+        self._unique_pictures(scenes)
+
+    def _unique_pictures(self, scenes: list[Scene]):
+        """Sam's rule: no picture twice in a Short. A repeat takes an unused picture when one exists."""
+        used = {s[1] for sc in scenes for s in sc.shots if s[1] in self.images}
+        seen, self.repeated_pictures = set(), []
+        for sc in scenes:
+            for i, shot in enumerate(sc.shots):
+                key = shot[1]
+                if key not in self.images:
+                    continue
+                if key in seen:
+                    spare = next((k for k in self.images if k not in used), None)
+                    if spare is None:
+                        text = self._beat_words(sc, i) or " ".join(w.text for w in sc.words[-3:]).upper().rstrip(".,!?")
+                        if text:  # out of pictures: a bold card of what's being said, never a repeat
+                            sc.shots[i] = ("wordcard", text, shot[2], False)
+                        else:
+                            self.repeated_pictures.append(key)
+                        continue
+                    sc.shots[i] = (shot[0], spare, *shot[2:])
+                    used.add(spare)
+                    key = spare
+                seen.add(key)
+
+    @staticmethod
+    def _beat_words(sc: Scene, b: int) -> str:
+        """The punch of this beat, from the narration only: its number, else its last three words."""
+        end = sc.beats[b + 1] if b + 1 < len(sc.beats) else sc.duration
+        words = [w.text for w in sc.words if sc.beats[b] <= w.start < end]
+        hit = next((i for i, w in enumerate(words) if any(c.isdigit() for c in w)), None)
+        picked = words[hit:hit + 2] if hit is not None else words[-3:]
+        return " ".join(picked).upper().rstrip(".,!?")
+
+    def _check_repeats(self, scenes: list[Scene]) -> list[str]:
+        """Compare what each shot actually shows. A near-copy gets a different camera move; any
+        copy that remains is reported. Never stops a render."""
+        def sig(frame):
+            a = np.asarray(frame.convert("L").resize((17, 16), Image.BILINEAR), np.int16)
+            return (a[:, 1:] > a[:, :-1]).ravel()
+
+        def sample(sc, si, b):
+            end = sc.beats[b + 1] if b + 1 < len(sc.beats) else sc.duration
+            return sig(self.draw(sc, si, (sc.beats[b] + end) / 2)[0])
+
+        def twin(h, seen):
+            return next((name for name, o in seen if int((h != o).sum()) <= 20), None)
+
+        seen, found = [], []
+        for si, sc in enumerate(scenes):
+            for b, shot in enumerate(sc.shots):
+                if shot[0] == "lowpoly" and self.plates is None:
+                    continue  # still being recorded or GL: camera moves every beat anyway
+                h = sample(sc, si, b)
+                name = f"scene {si + 1} shot {b + 1}"
+                other = twin(h, seen)
+                if other and shot[0] in ("image", "figure", "textbg", "alt", "3d", "chartzoom"):
+                    sc.shots[b] = (shot[0], shot[1], shot[2] + 2, shot[3])
+                    h = sample(sc, si, b)
+                    other = twin(h, seen)
+                if other:
+                    found.append(f"{name} looks like {other}")
+                seen.append((name, h))
+        return found
 
     # ---- building blocks
     def crop(self, key: str, variant: int, p: float) -> Image.Image:
@@ -448,6 +631,8 @@ class Renderer:
             # the very first frame already shows the hook in full: viewers decide in ~1 s
             opener = sc.visual is self.s["scenes"][0]["visual"]
             pop = 1.0 if opener else ease_out_back(t / 0.3)
+            if opener:  # Nov 7: frame 0 is the cover, so it reads like a thumbnail even when tiny
+                return self._cover_text(frame, big, sub)
             f = fit_font(big, BLACK, SAFE_X1 - SAFE_X0, 150, 70)
             if pop < 1.0:
                 f = font(BLACK, max(20, int(f.size * (0.6 + 0.4 * pop))))
@@ -456,6 +641,39 @@ class Renderer:
             if sub and (opener or t > 0.2):
                 fs = fit_font(sub, SEMI, SAFE_X1 - SAFE_X0, 58, 36)
                 draw_centered(d, (SAFE_X0 + SAFE_X1) / 2, 380 + f.size + 26, sub, fs, (255, 255, 255), 4, (0, 0, 0))
+        return frame
+
+    def _cover_text(self, frame, big, sub):
+        """Cover frame: dark band, the overlay in up to 2 huge lines, the question under it."""
+        if getattr(self, "_band", None) is None:
+            a = np.zeros((H, 1), np.float32)
+            y = np.arange(H)
+            a[:, 0] = np.clip(1 - np.abs(y - 760) / 520, 0, 1) ** 0.8 * 190
+            self._band = Image.fromarray(np.repeat(a, W, 1).astype(np.uint8), "L")
+        frame.paste((0, 0, 0), (0, 0), self._band)
+        d = ImageDraw.Draw(frame)
+        cx, wmax = (SAFE_X0 + SAFE_X1) / 2, SAFE_X1 - SAFE_X0
+        words = big.split()
+        lines = [big]
+        if len(words) > 1 and fit_font(big, BLACK, wmax, 220, 60).size < 170:
+            cut = min(range(1, len(words)), key=lambda i: abs(len(" ".join(words[:i])) - len(" ".join(words[i:]))))
+            lines = [" ".join(words[:cut]), " ".join(words[cut:])]
+            if len(words) > 2 and min(fit_font(x, BLACK, wmax, 220, 60).size for x in lines) < 110:
+                # a long title reads bigger on three lines: the split with the shortest longest line
+                a, b = min(((i, j) for i in range(1, len(words) - 1) for j in range(i + 1, len(words))),
+                           key=lambda c: max(len(" ".join(words[:c[0]])), len(" ".join(words[c[0]:c[1]])),
+                                             len(" ".join(words[c[1]:]))))
+                lines = [" ".join(words[:a]), " ".join(words[a:b]), " ".join(words[b:])]
+        size = min(fit_font(x, BLACK, wmax, 220, 60).size for x in lines)
+        f = font(BLACK, size)
+        col = self.theme["accent"] if self.s.get("theme") != "clean_navy" else (255, 255, 255)
+        y = 760 - (len(lines) * size * 1.05 + (90 if sub else 0)) / 2
+        for line in lines:
+            draw_centered(d, cx, y, line, f, col, 9, (0, 0, 0))
+            y += size * 1.05
+        if sub:
+            fs = fit_font(sub, SEMI, wmax, 74, 40)
+            draw_centered(d, cx, y + 24, sub, fs, (255, 255, 255), 5, (0, 0, 0))
         return frame
 
     def shot_figure(self, sc: Scene, key, variant, t, p):
@@ -493,6 +711,92 @@ class Renderer:
         self._draw_tag(frame)
         txt = self.frame_text(sc, 99.0, 0, base=frame)
         return txt
+
+    def _card_bg(self, t: float) -> Image.Image:
+        """Background for text cards: the theme gradient with slow drifting soft lights and a vignette."""
+        if getattr(self, "_glow", None) is None:
+            rng = np.random.default_rng(11)
+            gw, gh = (W + 240) // 8, (H + 240) // 8
+            yy, xx = np.mgrid[0:gh, 0:gw].astype(np.float32)
+            a = np.zeros((gh, gw), np.float32)
+            for _ in range(9):
+                cx, cy, r = rng.uniform(0, gw), rng.uniform(0, gh), rng.uniform(18, 46)
+                a += np.exp(-((xx - cx) ** 2 + (yy - cy) ** 2) / (2 * r * r)) * rng.uniform(0.5, 1.0)
+            light = self.s.get("theme") == "clean_navy"
+            a = np.clip(a, 0, 1) * (46 if light else 70)
+            col = self.theme["accent"][:3] if light else (255, 255, 255)
+            g = Image.merge("RGBA", (*[Image.new("L", (gw, gh), c) for c in col], Image.fromarray(a.astype(np.uint8))))
+            self._glow = g.resize((W + 240, H + 240), Image.BILINEAR)
+            yy, xx = np.mgrid[0:H // 8, 0:W // 8].astype(np.float32)
+            r = np.hypot((xx - W / 16) / (W / 16), (yy - H / 16 * 0.9) / (H / 16))
+            v = (np.clip(r - 0.45, 0, 1) ** 1.5 * (60 if light else 150)).clip(0, 255).astype(np.uint8)
+            self._cardvig = Image.fromarray(v).resize((W, H), Image.BILINEAR)
+            self._cards = {}
+        t = t if t < 50 else 0.0
+        frame = self.bg.copy()
+        ox, oy = int(40 + 34 * t) % 240, int(120 - 22 * t) % 240
+        glow = self._glow.crop((ox, oy, ox + W, oy + H))
+        frame.paste(glow, (0, 0), glow)
+        frame.paste((0, 0, 0), (0, 0), self._cardvig)
+        self._draw_tag(frame)
+        return frame
+
+    def shot_wordcard(self, text: str, t: float) -> Image.Image:
+        """Bold card of the words being said: the key word in the accent color, an underline
+        that wipes in, a soft shadow under the type."""
+        frame = self._card_bg(t)
+        text = " ".join(w for w in text.split() if any(c.isalnum() for c in w))  # no stray dashes
+        if text not in self._cards:
+            maxw = SAFE_X1 - SAFE_X0
+            size = 168
+            while True:
+                f = font(BLACK, size)
+                lines = wrap(text, f, maxw)
+                if size <= 64 or (len(lines) <= 3 and all(f.getlength(l) <= maxw for l in lines)):
+                    break
+                size -= 6
+            words = text.split()
+            key = next((i for i, w in enumerate(words) if any(c.isdigit() for c in w)), None)
+            if key is None:  # no number: the longest word carries the meaning (ties go to the later one)
+                key = max(range(len(words)), key=lambda i: (len(words[i].strip(".,!?'")), i))
+            gap = int(size * 1.08)
+            th = len(lines) * gap + 46
+            layer = Image.new("RGBA", (W, th + 80), (0, 0, 0, 0))
+            d = ImageDraw.Draw(layer)
+            n, y = 0, 20
+            for line in lines:
+                x = (W - f.getlength(line)) / 2 + (SAFE_X0 + SAFE_X1 - W) / 2
+                for w in line.split():
+                    d.text((x, y), w, font=f, fill=self.theme["accent"] if n == key else self.theme["text"])
+                    x += f.getlength(w + " ")
+                    n += 1
+                y += gap
+            bw = min(maxw, max(180, f.getlength(lines[-1]) * 0.5))
+            bx = (SAFE_X0 + SAFE_X1) / 2 - bw / 2
+            bar = (int(bx), y + 16, int(bx + bw), y + 34)
+            sh = Image.new("L", layer.size, 0)
+            sh.paste(layer.getchannel("A").point(lambda v: int(v * (0.22 if self.s.get("theme") == "clean_navy" else 0.5))), (0, 12))
+            sh = sh.filter(ImageFilter.GaussianBlur(14))
+            out = Image.new("RGBA", layer.size, (0, 0, 0, 0))
+            out.paste((0, 0, 0), (0, 0), sh)
+            out.alpha_composite(layer)
+            self._cards[text] = (out, bar)
+        card, bar = self._cards[text]
+        y0 = 840 - card.height // 2
+        p = ease_out_back(t / 0.3)
+        if p < 0.999:  # quick punch-in
+            z = 0.8 + 0.2 * p
+            small = card.resize((max(2, int(card.width * z)), max(2, int(card.height * z))), Image.BILINEAR)
+            frame.paste(small, ((W - small.width) // 2, y0 + (card.height - small.height) // 2), small)
+        else:
+            frame.paste(card, (0, y0), card)
+        q = ease_out((t - 0.25) / 0.35)
+        if q > 0:
+            d = ImageDraw.Draw(frame)
+            cx = (bar[0] + bar[2]) / 2
+            hw = (bar[2] - bar[0]) / 2 * q
+            d.rounded_rectangle((cx - hw, y0 + bar[1], cx + hw, y0 + bar[3]), 9, fill=self.theme["accent"])
+        return frame
 
     # ---- code-drawn "action" shots (only use numbers already in the script)
     def live_bg(self, t: float) -> Image.Image:
@@ -625,6 +929,9 @@ class Renderer:
         f = fit_font(final, BLACK, SAFE_X1 - SAFE_X0, 300, 120)
         cx = (SAFE_X0 + SAFE_X1) / 2
         draw_centered(d, cx, 640, txt, f, self.theme["accent"], 0)
+        if fx.is_huge(final):
+            fx.burst(frame, cx, 640 + f.size / 2, t - 1.0, seed=idx)
+            d = ImageDraw.Draw(frame)
         fl = font(SEMI, 56)
         for i, line in enumerate(wrap(v.get("label", ""), fl, SAFE_X1 - SAFE_X0)):
             draw_centered(d, cx, 640 + f.size + 60 + i * 72, line, fl, self.theme["text"])
@@ -696,7 +1003,7 @@ class Renderer:
 
     def frame_text(self, sc: Scene, t: float, idx: int, base: Image.Image | None = None) -> Image.Image:
         v = sc.visual
-        frame = base if base is not None else self.bg.copy()
+        frame = base if base is not None else self._card_bg(t)
         d = ImageDraw.Draw(frame)
         cx = (SAFE_X0 + SAFE_X1) / 2
         maxw = SAFE_X1 - SAFE_X0
@@ -742,6 +1049,33 @@ class Renderer:
         b1 = sc.beats[b + 1] if b + 1 < len(sc.beats) else sc.duration
         tb, pb = t - b0, (t - b0) / max(b1 - b0, 0.1)
         kind, key, variant, first = sc.shots[b]
+        if kind == "wordcard":
+            return self.shot_wordcard(key, tb), tb
+        if kind == "editorial":
+            from . import editorial
+            hold = 0.45 if si == 0 and b == 0 else 0.0  # the Short opens on a cover: the page + the title, huge
+            if hold and t < hold:
+                if "edcover" not in self._base:
+                    page = editorial.render(self.s, sc.visual, 3.0, 0, 3.0, key)
+                    self._base["edcover"] = self._cover_text(page, self.s.get("title", "").upper(), "")
+                return self._base["edcover"].copy(), tb
+            return editorial.render(self.s, sc.visual, t - hold, b, tb - hold, key), tb
+        if kind == "lowpoly":
+            from . import lowpoly
+            from .gl3d import run3d
+            key = f"{scenes_index(self, sc)}_{int(round(t * FPS))}"
+            plate = None
+            if self.plates is not None:  # a frame can land one tick off a scene edge: take a neighbor
+                si_, fr = key.split("_")
+                plate = next((f for d in (0, 1, -1, 2, -2) if (f := self.plates / f"{si_}_{int(fr) + d}.jpg").exists()), None)
+            if plate is not None:
+                frame = Image.open(plate).convert("RGB").resize((W, H), Image.LANCZOS)
+                frame = frame.filter(ImageFilter.UnsharpMask(radius=2, percent=60, threshold=2))
+            else:
+                frame = run3d(lowpoly.render, sc.visual, t, pb, variant, key if self.lp_record else None,
+                              b, si, bool(sc.visual.get("stat")) and b % 2 == 0)
+            self._lp_stat(frame, sc.visual, tb - (0.75 if si == 0 and b == 0 else 0), b, si)
+            return frame, tb
         if kind == "3d":
             from . import scene3d
             from .gl3d import run3d
@@ -761,6 +1095,11 @@ class Renderer:
             frame = self.shot_textbg(sc, key, variant, tb, pb)
         elif kind == "text":
             frame = self.frame_text(sc, t if b == 0 else 99.0, si)
+        elif sc.visual.get("type") == "lowpoly":  # 3D unavailable: show the scene's stat as a text card
+            v = sc.visual
+            fake = Scene(sc.narration, {"type": "text", "text": v.get("stat") or self.s.get("title", ""),
+                                        "sub": v.get("stat_sub", "")})
+            frame = self.frame_text(fake, tb, si)
         else:
             drawer = {"stat": self.frame_stat, "bars": self.frame_bars, "donut": self.frame_donut}
             frame = drawer[sc.visual["type"]](sc, tb, si)
@@ -777,16 +1116,18 @@ class Renderer:
     # ---- assemble
     def prepare(self) -> list[Scene]:
         scenes = []
-        self.cta_q = CTA_QUESTION
+        self.cta_q = self.s.get("cta_question") or CTA_QUESTION  # e.g. a this-or-that choice
         cta_line = " ".join(p.strip() for p in self.s.get("cta", CTA_LINE).split("|") if p.strip())
         loop = (self.s.get("loop") or "").strip()
         last = len(self.s["scenes"]) - 1
         self.joins = []  # (scene, start, end) silences that must stay silent — for the checker
         self.cta = None
         sr = tts.SAMPLE_RATE
+        tts.use_engine_for([raw["narration"] for raw in self.s["scenes"]] + [cta_line, loop])
+        tts.VOICE_SPEED_NOW = tts.VOICE_SPEED_FOR.get(self.s.get("format"), tts.VOICE_SPEED_FOR["default"])
         for i, raw in enumerate(self.s["scenes"]):
-            sc = Scene(raw["narration"], raw["visual"])
-            sc.audio, timings = tts.synthesize(sc.narration)
+            sc = Scene(tts.strip_speakers(raw["narration"]), raw["visual"])
+            sc.audio, timings = tts.synthesize(raw["narration"])  # "B:" lines use the second voice
             speech = len(sc.audio) / sr
             sc.words = align_words(sc.narration, timings, speech)
             tails = {}
@@ -829,6 +1170,17 @@ class Renderer:
 
     def render(self, out_path: Path) -> dict:
         scenes = self.prepare()
+        self._scenes = scenes
+        try:
+            repeats = self._check_repeats(scenes)
+        except Exception as e:  # a check must never cost a post
+            repeats = []
+            print(f"::warning::[render] repeat check skipped: {e}")
+        for k in getattr(self, "repeated_pictures", []):
+            print(f"::warning::[render] {self.s.get('id')}: ran out of pictures, '{k}' repeats")
+        for r in repeats:
+            print(f"::warning::[render] {self.s.get('id')}: {r}")
+        print(f"::notice::[render] repeat check:{len(repeats)} near-copies, {len(getattr(self, 'repeated_pictures', []))} reused pictures")
         sr = tts.SAMPLE_RATE
         audio = np.concatenate([np.pad(sc.audio, (0, int(round(sc.duration * sr)) - len(sc.audio)))
                                 for sc in scenes])
@@ -836,7 +1188,8 @@ class Renderer:
         cuts = sorted({float(starts[i] + b) for i, sc in enumerate(scenes) for b in sc.beats} - {0.0})
         voice = audio.copy()
         if music.MUSIC_GAIN > 0:  # original synthesized bed, ducked under the voice
-            bed = music.bed(len(audio) / sr, sr, seed=self.s.get("slug") or self.s.get("company", ""))
+            bed = music.bed(len(audio) / sr, sr, seed=self.s.get("slug") or self.s.get("company", ""),
+                            mood=self.s.get("format"))
             bed = np.pad(bed, (0, max(0, len(audio) - len(bed))))[: len(audio)]
             audio = audio + music.duck(bed, audio, sr) * music.MUSIC_GAIN
         audio_issues, audio_stats = audio_check.check(scenes, starts, self.joins, voice, audio, sr)
@@ -855,18 +1208,30 @@ class Renderer:
                    "-i", str(wav),
                    "-c:v", "libx264", "-preset", os.environ.get("X264_PRESET", "veryfast"),
                    "-crf", "20", "-pix_fmt", "yuv420p", "-movflags", "+faststart",
+                   # YouTube plays Shorts at about -14 LUFS: normalize so ours aren't quieter than the rest
+                   "-af", os.environ.get("LOUDNORM", "loudnorm=I=-14:TP=-1.5:LRA=11"),
                    "-c:a", "aac", "-b:a", "160k", "-ar", "48000",
                    "-shortest", str(out_path)]
             proc = subprocess.Popen(cmd, stdin=subprocess.PIPE)
             chunks = [chunk_words(sc.words) for sc in scenes]
             flash = Image.new("RGB", (W, H), (255, 255, 255))
+            blanks = []
 
             def make(n: int) -> bytes:
                 gt = n / FPS
                 si = min(int(np.searchsorted(starts, gt, side="right") - 1), len(scenes) - 1)
                 sc, t = scenes[si], gt - starts[si]
                 frame, tb = self.draw(sc, si, t)
-                if TRANSITION_3D and three_d_ok() and gt > 0.05 and tb < 0.18:
+                lp = self.s.get("visual_style") == "lowpoly"
+                calm = self._calm()
+                if not lp and sc.shots[max(0, bisect.bisect_right(sc.beats, t) - 1)][0] != "image":
+                    frame = fx.drift(frame, tb)  # images already zoom; everything else drifts in
+                if lp:
+                    if si > 0 and not calm:  # camera cuts every beat; a zoom-blur marks each new scene
+                        frame = fx.zoom_blur(frame, t)
+                    if tb < 0.12 and t > 0.2 and not calm:  # and a small punch-in lands every cut inside a scene
+                        frame = fx.zoom(frame, 1.05 - 0.05 * ease_out(tb / 0.12))
+                elif TRANSITION_3D and three_d_ok() and gt > 0.05 and tb < 0.18:
                     # 3D swing: the new shot arrives as a card turning in from the side
                     from .gl3d import card, run3d
                     frame = Image.fromarray(run3d(card, frame, tb / 0.18, (si * 7 + int(t * 3)) % 2,
@@ -878,11 +1243,28 @@ class Renderer:
                                          box=((W - cw) / 2, (H - ch) / 2, (W + cw) / 2, (H + ch) / 2))
                     if tb < 0.07:
                         frame = Image.blend(frame, flash, 0.22 * (1 - tb / 0.07))
+                frame = fx.grade(frame, n)
+                if lp:
+                    # the name banner sits at the top (famous format): the title goes under it, not behind it
+                    fx.hook(frame, self.s.get("title", ""), gt, font, BLACK,
+                            y=(410 if self.s.get("name_sub") else 345) if self.s.get("name_card") else 150, pop_on=not calm)   # below the banner + its sub line
+                if not calm:   # a counter that pops on change is an "edit" too
+                    self._hud(frame, scenes, si, t)
+                self._name(frame, gt)
                 self._cta(frame, si, t)
-                self._caption(frame, chunks[si], t)  # after the CTA dim, so captions stay bright
+                if not calm and sc.shots[max(0, bisect.bisect_right(sc.beats, t) - 1)][0] not in ("3d", "alt", "chartzoom", "wordcard"):
+                    self._icon(frame, chunks[si], t, lp)  # never on top of a chart or a word card
+                self._caption(frame, chunks[si], t, gt)  # after the CTA dim, so captions stay bright
+                if lp and SUBLINE:
+                    self._subline(frame, chunks[si], t, gt)
                 # thin progress bar along the top edge keeps people watching to the end
                 ImageDraw.Draw(frame).rectangle((0, 0, int(W * min(1.0, gt / total_s)), PROGRESS_H),
                                                 fill=self.theme["accent"])
+                if n == 0:
+                    self._first = frame.copy()
+                frame = fx.loop_blend(frame, getattr(self, "_first", None), total_s - gt)
+                if n % 15 == 0 and fx.blank(frame):
+                    blanks.append(round(gt, 1))
                 return frame.tobytes()
 
             make(0)  # warm the shared caches before going parallel
@@ -901,7 +1283,7 @@ class Renderer:
                 "cuts": len(cuts), "avg_shot": round(len(audio) / sr / (len(cuts) + 1), 2),
                 "scene_mids": mids, "voice": tts.VOICE_ENGINE,
                 "timed_words": all(sc.words for sc in scenes),
-                "images_ok": sorted(self.images), **audio_stats, "audio_issues": audio_issues}
+                "images_ok": sorted(self.images), "blank_frames": blanks, **audio_stats, "audio_issues": audio_issues}
 
     # ---- like / subscribe / comment call to action
     def _pill(self, label: str, bg, fg, icon: str | None) -> Image.Image:
@@ -1039,7 +1421,166 @@ class Renderer:
                 d.polygon(pts, fill=(255, 255, 255), outline=(0, 0, 0))
                 d.line(pts + [pts[0]], fill=(0, 0, 0), width=4)
 
-    def _caption(self, frame: Image.Image, chunks: list[list[Word]], t: float):
+    def _lp_stat(self, frame, v, tb, b, si=0):
+        """Big yellow outlined number with a pop, on the first beat and every other beat. On the
+        first beat the number counts up from 0; a billion+ number lands with a coin burst."""
+        if not v.get("stat") or b % 2 or tb < 0:
+            return
+        # Nov 15: in story Shorts the "STEP 2" card stayed up the whole step and covered the drawn signs (DPOY);
+        # like the reference channel, it now lands at the step's start and is gone after ~1.6 s
+        if self._calm():   # the reference has no step/stat cards at all: the scene shows it
+            return
+        d = ImageDraw.Draw(frame)
+        pop = ease_out_back(min(1.0, tb / 0.25))
+        f = fit_font(v["stat"], BLACK, SAFE_X1 - SAFE_X0, 210, 90)
+        f = font(BLACK, max(20, int(f.size * (0.5 + 0.5 * pop))))
+        cx = (SAFE_X0 + SAFE_X1) / 2
+        # the opening number shows whole (it is the cover frame and the hook); later scenes count up
+        shown = fx.count_up(v["stat"], tb / 0.5) if b == 0 and fx.ON and si != 0 else v["stat"]
+        draw_centered(d, cx, 430, shown, f, (255, 221, 0), 14, (0, 0, 0))
+        if b == 0 and fx.is_huge(v["stat"]):
+            fx.burst(frame, cx, 430 + f.size / 2, tb - 0.45, seed=si)
+            d = ImageDraw.Draw(frame)
+        if v.get("stat_sub") and tb > 0.15:
+            fs = fit_font(v["stat_sub"].lower(), BOLD, SAFE_X1 - SAFE_X0, 64, 40)
+            draw_centered(d, cx, 430 + f.size + 24, v["stat_sub"].lower(), fs, (255, 255, 255), 8, (0, 0, 0))
+
+    def _caption_lp(self, frame, words, t, gt=None):
+        """Low-poly captions: one lowercase yellow word at a time, thick black outline."""
+        if self._calm() and os.environ.get("CAPTION_STYLE", "phrase") == "phrase":
+            return self._caption_phrase(frame, words, t, gt)
+        cur = None
+        for w in words:
+            if w.start - 0.03 <= t <= w.end + 0.08:
+                cur = w
+        if cur is None:
+            return
+        txt = re.sub(r"[^\w$%'.,\-]", "", cur.text).lower().rstrip(".,") or cur.text.lower()  # keep "47,000"
+        f = fit_font(txt, BLACK, SAFE_X1 - SAFE_X0, 120, 60)
+        k = min(1.0, (t - cur.start + 0.03) / 0.08)
+        f = font(BLACK, max(20, int(f.size * (0.85 + 0.15 * k))))
+        draw_centered(ImageDraw.Draw(frame), (SAFE_X0 + SAFE_X1) / 2, CAPTION_Y - f.size // 2, txt, f,
+                      (255, 221, 0), 12, (0, 0, 0))
+
+    def _caption_phrase(self, frame, words, t, gt=None):
+        """Story Shorts (Nov 15, Sam's reference @afterhourtheories, every frame studied): small white bold phrases of
+        1-4 words in the lower middle, thin black outline, no highlight colour, no pop; a phrase breaks at punctuation."""
+        groups, cur = [], []
+        for w in words:
+            cur.append(w)
+            if len(cur) >= 4 or re.search(r"[.,!?;:]$", w.text) or (len(cur) >= 3 and len(" ".join(x.text for x in cur)) > 18):
+                groups.append(cur)
+                cur = []
+        if cur:
+            groups.append(cur)
+        show = None
+        for i, g in enumerate(groups):
+            end = groups[i + 1][0].start - 0.02 if i + 1 < len(groups) else g[-1].end + 0.25
+            if g[0].start - 0.03 <= t <= max(end, g[-1].end + 0.05):
+                show = g
+        if not show:
+            return
+        txt = " ".join(w.text for w in show)
+        f = fit_font(txt, BOLD, SAFE_X1 - SAFE_X0 - 120, 62, 38)
+        y = 1265
+        if gt is not None:   # decided per phrase (its whole span), so a sentence never jumps mid-way
+            y = self._caption_y(gt - t + show[0].start, gt - t + show[-1].end)
+        draw_centered(ImageDraw.Draw(frame), (SAFE_X0 + SAFE_X1) / 2, y - f.size // 2, txt, f, (255, 255, 255), 6, (0, 0, 0))
+
+    def _subline(self, frame, chunks, t, gt):
+        """Nov 15, Sam's reference channel (@afterhourtheories, "mimic his style"): the sentence being said runs
+        as plain white text near the top, two lines at most, under the progress bar; the big one-word caption
+        stays. Hidden while the hook title / name banner are up."""
+        if gt < (4.4 if self.s.get("name_card") else 0.8):
+            return
+        words = [w for ch in chunks for w in ch]
+        idx = next((k for k, w in enumerate(words) if w.start - 0.03 <= t <= w.end + 0.25), None)
+        if idx is None:
+            return
+        a = idx
+        while a > 0 and not re.search(r"[.!?]$", words[a - 1].text):
+            a -= 1
+        b = idx
+        while b < len(words) - 1 and not re.search(r"[.!?]$", words[b].text):
+            b += 1
+        text = " ".join(w.text for w in words[a:b + 1])
+        f = font(BOLD, 42)
+        d = ImageDraw.Draw(frame)
+        lines, cur = [], ""
+        for wd in text.split():
+            nxt = (cur + " " + wd).strip()
+            if d.textlength(nxt, font=f) > SAFE_X1 - SAFE_X0 - 40 and cur:
+                lines.append(cur)
+                cur = wd
+            else:
+                cur = nxt
+        lines.append(cur)
+        if len(lines) > 2:   # keep the part being said: the two lines around the current word
+            said = len(" ".join(w.text for w in words[a:idx + 1]))
+            run, li = 0, 0
+            for li, ln in enumerate(lines):
+                run += len(ln) + 1
+                if run >= said:
+                    break
+            lines = lines[min(li, len(lines) - 2):][:2]
+        for k, ln in enumerate(lines):
+            d.text((SAFE_X0 + 20, SUBLINE_Y + (120 if self.s.get("hud_label") else 0) + k * 52), ln, font=f, fill=(255, 255, 255),
+                   stroke_width=4, stroke_fill=(0, 0, 0))
+
+    def _hud(self, frame, scenes, si, t):
+        """Running counter in the top-left corner (Sam's liked reels: "TIME SINCE HE WOKE UP",
+        "$2,001 + HOUSE"). Script: "hud_label": "MONEY LEFT", each scene's visual "hud": "$2,001".
+        The value pops when it changes and carries over scenes that don't set one."""
+        label = self.s.get("hud_label")
+        vals = [sc.visual.get("hud") for sc in scenes[: si + 1]]
+        val = next((v for v in reversed(vals) if v), None)
+        if not label or not val:
+            return
+        changed = scenes[si].visual.get("hud") and (si == 0 or val != next((v for v in reversed(vals[:-1]) if v), None))
+        pop = ease_out_back(min(1.0, t / 0.3)) if changed else 1.0
+        d = ImageDraw.Draw(frame)
+        fl = font(BOLD, 30)
+        fv = font(BLACK, max(20, int(64 * (0.6 + 0.4 * pop))))
+        d.text((SAFE_X0, 60), label.upper(), font=fl, fill=(255, 255, 255), stroke_width=5, stroke_fill=(0, 0, 0))
+        d.text((SAFE_X0, 98), val, font=fv, fill=(255, 221, 0), stroke_width=8, stroke_fill=(0, 0, 0))
+
+    def _name(self, frame, gt):
+        """Who this Short is about (famous format): name banner slides in after the title punch-in
+        and stays ~3 s. Script: "name_card": "CRISTIANO RONALDO", optional "name_sub": "soccer player".
+        The name does the identifying; characters never copy a real person's look (STYLE.md)."""
+        name = self.s.get("name_card")
+        if not name or gt > 4.2:  # Sam, Nov 3: name from the very first frame
+            return
+        k = min(1.0, (4.2 - gt) / 0.2)
+        d = ImageDraw.Draw(frame)
+        f = fit_font(name.upper(), BLACK, SAFE_X1 - SAFE_X0 - 60, 76, 40)
+        tw = d.textlength(name.upper(), font=f)
+        x0 = SAFE_X0 - (1 - k) * (tw + 120)
+        y0 = 205
+        d.rectangle((x0, y0, x0 + tw + 50, y0 + f.size + 30), fill=(255, 221, 0))
+        d.text((x0 + 25, y0 + 12), name.upper(), font=f, fill=(0, 0, 0))
+        sub = self.s.get("name_sub")
+        if sub:
+            fs = font(BOLD, 36)
+            sw = d.textlength(sub.upper(), font=fs)
+            d.rectangle((x0, y0 + f.size + 30, x0 + sw + 40, y0 + f.size + 82), fill=(0, 0, 0))
+            d.text((x0 + 20, y0 + f.size + 36), sub.upper(), font=fs, fill=(255, 255, 255))
+
+    def _icon(self, frame, chunks, t, lp):
+        """Small drawn icon above the captions while a matching word (money, truck, plane...) is said."""
+        if not fx.ON:
+            return
+        for w in (w for ch in chunks for w in ch):
+            kind = fx.icon_for(w.text)
+            if kind and w.start - 0.03 <= t <= w.end + 0.35:
+                y = CAPTION_Y - (215 if lp else 225)
+                fx.draw_icon(frame, kind, (SAFE_X0 + SAFE_X1) / 2, y, (t - w.start + 0.03) / 0.15)
+                return
+
+    def _caption(self, frame: Image.Image, chunks: list[list[Word]], t: float, gt: float | None = None):
+        if self.s.get("visual_style") == "lowpoly":
+            self._caption_lp(frame, [w for ch in chunks for w in ch], t, gt)
+            return
         for ch in chunks:
             if ch[0].start - 0.05 <= t <= ch[-1].end + 0.05:
                 hi = 0
@@ -1049,6 +1590,10 @@ class Renderer:
                 img = self.captions.render(ch, hi)
                 frame.paste(img, (0, CAPTION_Y - img.height // 2), img)
                 return
+
+
+def scenes_index(r, sc) -> int:
+    return next(i for i, x in enumerate(r._scenes) if x is sc)
 
 
 def render_script(script_path: Path, out_path: Path) -> dict:

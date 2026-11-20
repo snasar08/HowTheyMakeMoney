@@ -3,9 +3,9 @@
   "slug": "nike",
   "company": "Nike",
   "theme": "bold_bright",
-  "status": "ready",
-  "title": "Where Does Nike Really Sell Its Shoes?",
-  "description": "Where Does Nike Really Sell Its Shoes?.\n\nSources:\n- NIKE, Inc. fiscal 2026 Q4 and full-year results: https://about.nike.com/en/newsroom/releases/nike-inc-reports-fiscal-2026-fourth-quarter-and-full-year-results\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "status": "delivered",
+  "title": "What If Nike's Best Store Isn't Nike's?",
+  "description": "What if Nike's best store isn't even a Nike store?\n\nSources:\n- NIKE, Inc. fiscal 2026 Q4 and full-year results: https://about.nike.com/en/newsroom/releases/nike-inc-reports-fiscal-2026-fourth-quarter-and-full-year-results\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
     "nike",
     "sneakers",
@@ -36,16 +36,24 @@
   },
   "scenes": [
     {
-      "narration": "Nike has its own stores and its own app. So why does most of its money come from other stores?",
+      "narration": "What if Nike's best store isn't even a Nike store?",
       "visual": {
         "type": "image",
         "image": "hook",
-        "overlay": "OTHER STORES?",
-        "overlay_sub": "not Nike's?"
+        "overlay": "NOT NIKE'S",
+        "overlay_sub": "own store?"
       }
     },
     {
-      "narration": "Nike Direct, its own stores and website, brought in 17.7 billion. That fell 6 percent, while selling to other stores grew 6.",
+      "narration": "It's actually other stores. About 59 percent of Nike's sales.",
+      "visual": {
+        "type": "donut",
+        "value": 59,
+        "label": "Share of Nike revenue from wholesale"
+      }
+    },
+    {
+      "narration": "They brought in 27.5 billion dollars. Nike's own stores and app? 17.7.",
       "visual": {
         "type": "bars",
         "items": [
@@ -64,31 +72,21 @@
       }
     },
     {
-      "narration": "Total revenue was 46.4 billion dollars, flat from the year before.",
-      "visual": {
-        "type": "stat",
-        "value": 46.4,
-        "label": "Nike revenue, fiscal 2026",
-        "prefix": "$",
-        "suffix": "B",
-        "decimals": 1
-      }
-    },
-    {
-      "narration": "In the last quarter, wholesale grew 4 percent, while Nike Direct fell 7.",
+      "narration": "And the gap grew. Those stores went up. But Nike's own fell.",
       "visual": {
         "type": "image",
         "image": "mid",
-        "overlay": "STORES BACK",
+        "overlay": "STORES WIN",
         "overlay_sub": "wholesale grew"
       }
     },
     {
-      "narration": "About 59 percent of Nike's revenue comes from selling to other retailers.",
+      "narration": "Nike's best store? Everyone else's.",
       "visual": {
-        "type": "donut",
-        "value": 59,
-        "label": "Share of Nike revenue from wholesale"
+        "type": "image",
+        "image": "broll1",
+        "overlay": "EVERYONE ELSE'S",
+        "overlay_sub": "Nike's best store"
       }
     }
   ],
@@ -99,5 +97,21 @@
     }
   ],
   "loop": "So next time you buy new sneakers, ask yourself:",
-  "score": 58
+  "score": 89,
+  "format": "how",
+  "visual_style": "charts3d",
+  "title_style": "whatif",
+  "hook_style": "whatif",
+  "cta": "Nike app or the mall? Comment where you buy.",
+  "cta_question": "Nike app or the mall?",
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-016-nike",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-016-nike/016-nike.mp4",
+    "post_at": "2026-11-07T18:00:00-05:00",
+    "buffer_post": "6aedfa634525bf695e6d392f",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-06T16:03:47.487162+00:00",
+    "seconds": 26.19
+  }
 }

@@ -106,5 +106,7 @@
     "buffer_status": "scheduled",
     "rendered_at": "2026-10-28T16:45:33.989483+00:00",
     "seconds": 31.51
-  }
+  },
+  "format": "careers",
+  "visual_style": "charts3d"
 }

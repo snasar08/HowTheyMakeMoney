@@ -1,0 +1,338 @@
+{
+  "id": "080",
+  "slug": "famous-neymar",
+  "company": "Neymar",
+  "format": "famous",
+  "visual_style": "lowpoly",
+  "hook_style": "number",
+  "title_style": "number",
+  "theme": "bold_bright",
+  "status": "delivered",
+  "score": 89,
+  "title": "The €222 Million Transfer Record",
+  "name_card": "Neymar",
+  "name_sub": "soccer player",
+  "description": "222 million euros for one player. A world record.\n\nSources:\n- Wikipedia: Neymar: https://en.wikipedia.org/wiki/Neymar\n\nFrom Wikipedia (Neymar): in 2010 Santos received bids from Premier League clubs, Chelsea's reported at about £20 million, and he stayed in Brazil; at Barcelona the club doctor suggested he might need to gain weight; July 2016, a new Barcelona contract with a buy-out clause of €200 million rising to €222 million in its second year; 3 August 2017, his representatives paid the €222 million clause and he joined Paris Saint-Germain, the most expensive transfer ever. Not financial advice.\n\n#shorts #neymar #soccer #howtheymakemoney",
+  "tags": [
+    "neymar",
+    "soccer",
+    "famous",
+    "shorts"
+  ],
+  "images": {},
+  "hud_label": "HIS PRICE",
+  "loop": "So next time someone says you're too small, remember:",
+  "cta": "Neymar or Mbappé? Comment your pick.",
+  "cta_question": "Neymar or Mbappé?",
+  "scenes": [
+    {
+      "narration": "222 million euros for one player. A world record.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "pitch",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "ball"
+        ],
+        "stat": "€222 MILLION",
+        "stat_sub": "for one player",
+        "hero": {
+          "skin": "c6906a",
+          "hair": "short",
+          "hair_color": "2a1a10",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "f7d117",
+          "pants": "1f4fa0",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "pitch",
+          "things": [
+            "cashstack"
+          ],
+          "card": {
+            "text": "€222M",
+            "kind": "screen",
+            "sub": "ONE PLAYER"
+          },
+          "beat": "money",
+          "mood": "shock"
+        },
+        {
+          "place": "stage",
+          "things": [
+            "trophy",
+            "crown"
+          ],
+          "card": {
+            "text": "WORLD RECORD",
+            "kind": "sign"
+          },
+          "mood": "proud"
+        }
+      ]
+    },
+    {
+      "narration": "At 18, an English club bid about 20 million pounds. But he stayed in Brazil.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "field",
+        "action": "run",
+        "crowd": 0,
+        "props": [
+          "ball"
+        ],
+        "stat": "£20 MILLION",
+        "stat_sub": "a bid at 18, 2010",
+        "hero": {
+          "skin": "c6906a",
+          "hair": "short",
+          "hair_color": "2a1a10",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "f7d117",
+          "pants": "1f4fa0",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "boardroom",
+          "things": [
+            "letter",
+            "cash"
+          ],
+          "card": {
+            "text": "£20M BID",
+            "kind": "paper",
+            "sub": "AGE 18"
+          },
+          "mood": "scheme"
+        },
+        {
+          "place": "pitch",
+          "things": [
+            "soccerball"
+          ],
+          "card": {
+            "text": "BRAZIL",
+            "kind": "sign"
+          },
+          "mood": "proud",
+          "action": "run"
+        }
+      ]
+    },
+    {
+      "narration": "Then Barcelona. Their doctor said he might need to gain weight.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "pitch",
+        "action": "run",
+        "crowd": 0,
+        "props": [
+          "ball"
+        ],
+        "stat": "TOO LIGHT?",
+        "stat_sub": "Barcelona, 2013",
+        "hero": {
+          "skin": "c6906a",
+          "hair": "short",
+          "hair_color": "2a1a10",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "f7d117",
+          "pants": "1f4fa0",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "pitch",
+          "things": [
+            "stadium"
+          ],
+          "brand": {
+            "name": "BARCELONA",
+            "bg": "#a50044",
+            "fg": "#edbb00"
+          },
+          "beat": "sign",
+          "mood": "excited",
+          "crowd": 40
+        },
+        {
+          "place": "lab",
+          "things": [
+            "chart"
+          ],
+          "card": {
+            "text": "GAIN WEIGHT",
+            "kind": "paper"
+          },
+          "mood": "nervous"
+        }
+      ]
+    },
+    {
+      "narration": "So they set his price at 222 million. Sounds safe. Nobody pays that.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "office",
+        "action": "idle",
+        "crowd": 20,
+        "props": [
+          "check"
+        ],
+        "stat": "€222 MILLION",
+        "stat_sub": "his buy-out clause, 2016",
+        "hud": "€222M",
+        "hero": {
+          "skin": "c6906a",
+          "hair": "short",
+          "hair_color": "2a1a10",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "f7d117",
+          "pants": "1f4fa0",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "boardroom",
+          "things": [
+            "briefcase",
+            "cashstack"
+          ],
+          "card": {
+            "text": "€222M",
+            "kind": "flip",
+            "sub": "HIS PRICE"
+          },
+          "mood": "scheme"
+        },
+        {
+          "place": "mansion",
+          "mood": "calm",
+          "view": "face"
+        },
+        {
+          "place": "office",
+          "things": [
+            "cashstack"
+          ],
+          "mood": "dazed"
+        }
+      ]
+    },
+    {
+      "narration": "But in 2017, a club in Paris paid it. All of it.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "pitch",
+        "action": "cheer",
+        "crowd": 400,
+        "props": [
+          "ball",
+          "cash"
+        ],
+        "stat": "PAID IN FULL",
+        "stat_sub": "August 2017, a world record",
+        "hud": "€222M",
+        "hero": {
+          "skin": "c6906a",
+          "hair": "short",
+          "hair_color": "2a1a10",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "f7d117",
+          "pants": "1f4fa0",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "showroom",
+          "things": [
+            "cashstack",
+            "plane"
+          ],
+          "card": {
+            "text": "2017",
+            "kind": "paper",
+            "sub": "PARIS CLUB"
+          },
+          "beat": "money",
+          "mood": "excited"
+        },
+        {
+          "place": "pitch",
+          "things": [
+            "cashstack",
+            "goldbar"
+          ],
+          "card": {
+            "text": "€222M PAID",
+            "kind": "screen"
+          },
+          "beat": "money",
+          "mood": "proud",
+          "view": "low"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Neymar",
+      "url": "https://en.wikipedia.org/wiki/Neymar"
+    }
+  ],
+  "hero": {
+    "skin": "c6906a",
+    "hair": "short",
+    "hair_color": "2a1a10",
+    "beard": "none",
+    "outfit": "kit",
+    "shirt": "f7d117",
+    "pants": "1f4fa0",
+    "socks": "f4f4f4",
+    "shoes": "f4f4f4",
+    "height": 1.0
+  },
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-080-famous-neymar",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-080-famous-neymar/080-famous-neymar.mp4",
+    "post_at": "2026-11-18T18:00:00-05:00",
+    "buffer_post": "6afd4690152518c7f4648bf1",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-18T06:32:49.345988+00:00",
+    "seconds": 28.98,
+    "remade_from": "6afca4f73f600a65285a2fef",
+    "eyes": {
+      "score": 9,
+      "problems": [
+        "slight visual repetition in the middle scenes showing the same character model repeatedly"
+      ],
+      "best_fix": "Add more varied B-roll or dynamic camera angles during the middle timeline.",
+      "model": "gemini-3.5-flash-lite",
+      "acts": null
+    }
+  }
+}

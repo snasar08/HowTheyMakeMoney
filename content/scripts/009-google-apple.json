@@ -105,5 +105,7 @@
     "buffer_status": "scheduled",
     "rendered_at": "2026-10-26T22:26:29.061438+00:00",
     "seconds": 34.37
-  }
+  },
+  "format": "how",
+  "visual_style": "charts3d"
 }

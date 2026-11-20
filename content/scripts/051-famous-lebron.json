@@ -1,0 +1,219 @@
+{
+  "id": "051",
+  "slug": "famous-lebron",
+  "company": "LeBron James",
+  "format": "famous",
+  "visual_style": "lowpoly",
+  "hook_style": "question",
+  "title_style": "question",
+  "theme": "clean_navy",
+  "status": "delivered",
+  "score": 90,
+  "title": "How Did LeBron Earn $1 Billion While Playing?",
+  "name_card": "LeBron James",
+  "name_sub": "basketball player",
+  "description": "How did LeBron James make a billion dollars while still playing?\n\nSources:\n- Wikipedia: LeBron James: https://en.wikipedia.org/wiki/LeBron_James\n\nFrom the cited page: seven-year Nike deal signed in May 2003, coming out of high school, for approximately $90 million; more than $30 million from the sale of his Beats stake in 2014; minority stake in Liverpool FC through a 2011 Fenway Sports Group deal; first player in NBA history to accumulate $1 billion in earnings as an active player (2021). Not financial advice.\n\n#shorts #lebron #nba #howtheymakemoney",
+  "tags": [
+    "lebron james",
+    "nba",
+    "basketball",
+    "famous",
+    "shorts"
+  ],
+  "images": {},
+  "loop": "So next time you lace up your sneakers, ask yourself:",
+  "cta": "Shoe deal or own a team? Comment below.",
+  "cta_question": "Shoe deal or own a team?",
+  "scenes": [
+    {
+      "narration": "How did LeBron James make a billion dollars while still playing?",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "ball",
+          "trophy"
+        ],
+        "stat": "$1 BILLION",
+        "stat_sub": "while still playing?",
+        "hero": {
+          "skin": "8a5a3c",
+          "hair": "buzz",
+          "hair_color": "141210",
+          "beard": "full",
+          "beard_color": "141210",
+          "outfit": "kit",
+          "shirt": "fdb927",
+          "pants": "552583",
+          "socks": "f4f4f4",
+          "shoes": "552583",
+          "extras": [
+            "headband"
+          ],
+          "extra_color": "f4f4f4",
+          "height": 1.12
+        }
+      }
+    },
+    {
+      "narration": "May 2003. Just out of high school. A shoe deal worth about 90 million.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "run",
+        "crowd": 0,
+        "props": [
+          "ball"
+        ],
+        "stat": "$90 MILLION",
+        "stat_sub": "7-year shoe deal, 2003",
+        "hero": {
+          "skin": "8a5a3c",
+          "hair": "buzz",
+          "hair_color": "141210",
+          "beard": "full",
+          "beard_color": "141210",
+          "outfit": "kit",
+          "shirt": "fdb927",
+          "pants": "552583",
+          "socks": "f4f4f4",
+          "shoes": "552583",
+          "extras": [
+            "headband"
+          ],
+          "extra_color": "f4f4f4",
+          "height": 1.12
+        }
+      }
+    },
+    {
+      "narration": "Then his stake in Beats paid over 30 million.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "office",
+        "action": "work",
+        "crowd": 0,
+        "props": [
+          "check",
+          "phone"
+        ],
+        "stat": "$30M+",
+        "stat_sub": "Beats stake, sold 2014",
+        "hero": {
+          "skin": "8a5a3c",
+          "hair": "buzz",
+          "hair_color": "141210",
+          "beard": "full",
+          "beard_color": "141210",
+          "outfit": "kit",
+          "shirt": "fdb927",
+          "pants": "552583",
+          "socks": "f4f4f4",
+          "shoes": "552583",
+          "extras": [
+            "headband"
+          ],
+          "extra_color": "f4f4f4",
+          "height": 1.12
+        }
+      }
+    },
+    {
+      "narration": "Not just hoops. He got a stake in Liverpool soccer club.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "pitch",
+        "action": "cheer",
+        "crowd": 300,
+        "props": [
+          "ball"
+        ],
+        "stat": "LIVERPOOL",
+        "stat_sub": "minority stake",
+        "hero": {
+          "skin": "8a5a3c",
+          "hair": "buzz",
+          "hair_color": "141210",
+          "beard": "full",
+          "beard_color": "141210",
+          "outfit": "kit",
+          "shirt": "fdb927",
+          "pants": "552583",
+          "socks": "f4f4f4",
+          "shoes": "552583",
+          "extras": [
+            "headband"
+          ],
+          "extra_color": "f4f4f4",
+          "height": 1.12
+        }
+      }
+    },
+    {
+      "narration": "The result? The first NBA player to earn a billion while still playing.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "cheer",
+        "crowd": 400,
+        "props": [
+          "trophy"
+        ],
+        "stat": "#1",
+        "stat_sub": "to earn $1B while active",
+        "hero": {
+          "skin": "8a5a3c",
+          "hair": "buzz",
+          "hair_color": "141210",
+          "beard": "full",
+          "beard_color": "141210",
+          "outfit": "kit",
+          "shirt": "fdb927",
+          "pants": "552583",
+          "socks": "f4f4f4",
+          "shoes": "552583",
+          "extras": [
+            "headband"
+          ],
+          "extra_color": "f4f4f4",
+          "height": 1.12
+        }
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: LeBron James",
+      "url": "https://en.wikipedia.org/wiki/LeBron_James"
+    }
+  ],
+  "hero": {
+    "skin": "8a5a3c",
+    "hair": "buzz",
+    "hair_color": "141210",
+    "beard": "full",
+    "beard_color": "141210",
+    "outfit": "kit",
+    "shirt": "fdb927",
+    "pants": "552583",
+    "socks": "f4f4f4",
+    "shoes": "552583",
+    "extras": [
+      "headband"
+    ],
+    "extra_color": "f4f4f4",
+    "height": 1.12
+  },
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-051-famous-lebron",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-051-famous-lebron/051-famous-lebron.mp4",
+    "post_at": "2026-11-12T15:00:00-05:00",
+    "buffer_post": "6af4a061aa9908a25ec4aa17",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-11T17:05:37.528505+00:00",
+    "seconds": 25.27
+  }
+}

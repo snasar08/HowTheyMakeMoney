@@ -1,0 +1,216 @@
+{
+  "id": "102",
+  "slug": "whatif-switch-stack",
+  "company": "Nintendo Switch",
+  "format": "whatif",
+  "visual_style": "lowpoly",
+  "hook_style": "number",
+  "title_style": "whatif",
+  "theme": "dark_neon",
+  "status": "ready",
+  "score": 87,
+  "title": "What If You Stacked 157 Million Switches?",
+  "description": "Stack every Switch ever sold. It reaches 2,200 kilometers up.\n\nSources:\n- Nintendo IR: Dedicated Video Game Sales Units (as of September 30, 2026): https://www.nintendo.co.jp/ir/en/finance/hard_soft/index.html\n- Wikipedia: Nintendo Switch: https://en.wikipedia.org/wiki/Nintendo_Switch\n- Wikipedia: International Space Station: https://en.wikipedia.org/wiki/International_Space_Station\n- Wikipedia: List of best-selling game consoles: https://en.wikipedia.org/wiki/List_of_best-selling_game_consoles\n\nFrom Nintendo IR (as of September 30, 2026): 157.20 million Nintendo Switch units sold life-to-date. From Wikipedia (Nintendo Switch): the original console measures 173 x 102 x 14 mm. From Wikipedia (International Space Station): it orbits at 413-422 km. From Wikipedia (List of best-selling game consoles): the PlayStation 2 is the best-selling console with 160 million units; the Switch is second. Our math: 157.2 million x 14 mm = about 2,201 km; 157.2 million x 173 mm = about 27,196 km; 2,201 / 422 = 5.2; 160 - 157.2 = 2.8 million. Not financial advice.\n\n#shorts #nintendoswitch #nintendo #whatif #gaming #howtheymakemoney",
+  "tags": [
+    "nintendoswitch",
+    "nintendo",
+    "whatif",
+    "gaming",
+    "shorts"
+  ],
+  "images": {},
+  "hud_label": "STACK HEIGHT",
+  "loop": "So next time you pick up your Switch, remember:",
+  "cta": "Switch or PlayStation? Comment your pick.",
+  "cta_question": "Switch or PlayStation?",
+  "scenes": [
+    {
+      "narration": "Stack every Switch ever sold. It reaches 2,200 kilometers up.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "launch",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "boxes"
+        ],
+        "stat": "2,200 KM",
+        "stat_sub": "157.2 million Switches, stacked",
+        "hud": "2,200 KM"
+      },
+      "toon": [
+        {
+          "place": "showroom",
+          "things": [
+            "controller",
+            "crate"
+          ],
+          "mood": "scheme",
+          "crowd": 40
+        },
+        {
+          "place": "field",
+          "things": [
+            "controller",
+            "rocket"
+          ],
+          "card": {
+            "text": "2,200 KM",
+            "kind": "sign",
+            "sub": "UP"
+          },
+          "mood": "shock",
+          "view": "low"
+        }
+      ]
+    },
+    {
+      "narration": "That's over five times higher than the space station.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "launch",
+        "action": "cheer",
+        "crowd": 0,
+        "props": [
+          "rocket"
+        ],
+        "stat": "5X HIGHER",
+        "stat_sub": "the space station flies about 420 km up"
+      },
+      "toon": [
+        {
+          "place": "space",
+          "things": [
+            "satellite",
+            "controller"
+          ],
+          "card": {
+            "text": "5X HIGHER",
+            "kind": "white"
+          },
+          "mood": "shock"
+        }
+      ]
+    },
+    {
+      "narration": "Because each one is only 14 millimeters thick.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "gaming",
+        "action": "work",
+        "crowd": 0,
+        "props": [
+          "headset"
+        ],
+        "stat": "14 MM",
+        "stat_sub": "one Switch, top to bottom"
+      },
+      "toon": [
+        {
+          "place": "lab",
+          "things": [
+            "controller"
+          ],
+          "card": {
+            "text": "14 MM",
+            "kind": "flip",
+            "sub": "THICK"
+          },
+          "mood": "calm"
+        }
+      ]
+    },
+    {
+      "narration": "Lay them end to end instead? 27,196 kilometers.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "run",
+        "crowd": 100,
+        "props": [
+          "boxes"
+        ],
+        "stat": "27,196 KM",
+        "stat_sub": "Switches end to end"
+      },
+      "toon": [
+        {
+          "place": "street",
+          "things": [
+            "controller",
+            "crate"
+          ],
+          "mood": "scheme",
+          "view": "wide"
+        },
+        {
+          "place": "beach",
+          "things": [
+            "globe"
+          ],
+          "card": {
+            "text": "27,196 KM",
+            "kind": "screen"
+          },
+          "mood": "shock"
+        }
+      ]
+    },
+    {
+      "narration": "And it's still not number one. It's 2.8 million behind the PlayStation 2.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "store",
+        "action": "idle",
+        "crowd": 40,
+        "props": [
+          "boxes"
+        ],
+        "stat": "2.8 MILLION",
+        "stat_sub": "short of the PS2's 160 million"
+      },
+      "toon": [
+        {
+          "place": "stage",
+          "things": [
+            "trophy"
+          ],
+          "mood": "sad",
+          "crowd": 30,
+          "view": "ms"
+        },
+        {
+          "place": "garage",
+          "things": [
+            "controller",
+            "tv"
+          ],
+          "card": {
+            "text": "2.8M BEHIND",
+            "kind": "sign",
+            "sub": "PLAYSTATION 2"
+          },
+          "mood": "stern"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Nintendo IR: Dedicated Video Game Sales Units (as of September 30, 2026)",
+      "url": "https://www.nintendo.co.jp/ir/en/finance/hard_soft/index.html"
+    },
+    {
+      "title": "Wikipedia: Nintendo Switch",
+      "url": "https://en.wikipedia.org/wiki/Nintendo_Switch"
+    },
+    {
+      "title": "Wikipedia: International Space Station",
+      "url": "https://en.wikipedia.org/wiki/International_Space_Station"
+    },
+    {
+      "title": "Wikipedia: List of best-selling game consoles",
+      "url": "https://en.wikipedia.org/wiki/List_of_best-selling_game_consoles"
+    }
+  ]
+}

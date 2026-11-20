@@ -1,0 +1,423 @@
+{
+  "id": "124",
+  "slug": "plan-wemby-best-ever",
+  "company": "",
+  "format": "story",
+  "story_mode": "plan",
+  "visual_style": "lowpoly",
+  "hook_style": "surprise",
+  "title_style": "statement",
+  "theme": "bold_bright",
+  "status": "needs_fix",
+  "score": 94,
+  "title": "You're Wemby. You Want to Be the Best Ever.",
+  "name_card": "Victor Wembanyama",
+  "name_sub": "Spurs, a hypothetical plan",
+  "images": {},
+  "hud_label": "THE PLAN",
+  "description": "You're Victor Wembanyama, and you want to be the best basketball player ever.\n\nReal (Wikipedia): Victor Wembanyama was picked first overall by the San Antonio Spurs in the 2023 NBA draft, was the unanimous 2024 Rookie of the Year, became the youngest and first unanimous Defensive Player of the Year in 2025-26, and led the Spurs to the NBA Finals that season. Everything after that is a made-up, hypothetical plan for fun: imagined steps, not news and not anything Victor Wembanyama has said or planned.\n\nSources:\n- Wikipedia: Victor Wembanyama: https://en.wikipedia.org/wiki/Victor_Wembanyama\n\n#shorts #nba #wemby #howtheymakemoney",
+  "sources": [
+    {
+      "title": "Wikipedia: Victor Wembanyama",
+      "url": "https://en.wikipedia.org/wiki/Victor_Wembanyama"
+    }
+  ],
+  "tags": [
+    "wembanyama",
+    "spurs",
+    "nba",
+    "shorts"
+  ],
+  "loop": "So next time Wemby blocks a shot, remember:",
+  "cta": "Can Wemby be the best ever? Comment yes or no.",
+  "cta_question": "Best ever: yes or no?",
+  "hero": {
+    "skin": "6b4430",
+    "hair": "short",
+    "hair_color": "141010",
+    "beard": "none",
+    "shirt": "111111",
+    "pants": "111111",
+    "trim": "c4ced4",
+    "socks": "f4f4f4",
+    "shoes": "111111",
+    "height": 1.3,
+    "outfit": "kit",
+    "number": 1
+  },
+  "scenes": [
+    {
+      "narration": "You're Victor Wembanyama. You're already the tallest star in the league. Now you want to be the best ever.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "ball"
+        ],
+        "stat": "WEMBY",
+        "stat_sub": "the best ever?",
+        "hero": {
+          "skin": "6b4430",
+          "hair": "short",
+          "hair_color": "141010",
+          "beard": "none",
+          "shirt": "111111",
+          "pants": "111111",
+          "trim": "c4ced4",
+          "socks": "f4f4f4",
+          "shoes": "111111",
+          "height": 1.3,
+          "outfit": "kit",
+          "number": 1
+        }
+      },
+      "toon": [
+        {
+          "place": "court",
+          "mood": "calm",
+          "view": "ms"
+        },
+        {
+          "place": "court",
+          "mood": "proud",
+          "things": [
+            "hoop"
+          ],
+          "view": "low"
+        },
+        {
+          "place": "court",
+          "mood": "scheme",
+          "things": [
+            "crown",
+            "trophy"
+          ],
+          "view": "wide"
+        }
+      ]
+    },
+    {
+      "narration": "Step one, block everything. Nobody can score on you, so you become the first unanimous Defensive Player of the Year.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "ball"
+        ],
+        "stat": "STEP 1",
+        "stat_sub": "block everything",
+        "hero": {
+          "skin": "6b4430",
+          "hair": "short",
+          "hair_color": "141010",
+          "beard": "none",
+          "shirt": "111111",
+          "pants": "111111",
+          "trim": "c4ced4",
+          "socks": "f4f4f4",
+          "shoes": "111111",
+          "height": 1.3,
+          "outfit": "kit",
+          "number": 1
+        }
+      },
+      "toon": [
+        {
+          "place": "court",
+          "mood": "stern",
+          "view": "wide"
+        },
+        {
+          "place": "court",
+          "mood": "stern",
+          "things": [
+            "basketball"
+          ],
+          "view": "ms"
+        },
+        {
+          "place": "stage",
+          "mood": "laugh",
+          "things": [
+            "trophy"
+          ],
+          "card": {
+            "text": "DPOY",
+            "kind": "sign",
+            "sub": "FIRST UNANIMOUS"
+          },
+          "view": "ms"
+        }
+      ]
+    },
+    {
+      "narration": "But blocks don't win rings. So you learn to shoot from half court. Now defenses have to guard you everywhere.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "ball"
+        ],
+        "stat": "STEP 2",
+        "stat_sub": "shoot from anywhere",
+        "hero": {
+          "skin": "6b4430",
+          "hair": "short",
+          "hair_color": "141010",
+          "beard": "none",
+          "shirt": "111111",
+          "pants": "111111",
+          "trim": "c4ced4",
+          "socks": "f4f4f4",
+          "shoes": "111111",
+          "height": 1.3,
+          "outfit": "kit",
+          "number": 1
+        }
+      },
+      "toon": [
+        {
+          "place": "court",
+          "mood": "sad",
+          "things": [
+            "ring"
+          ],
+          "view": "ms"
+        },
+        {
+          "place": "court",
+          "mood": "scheme",
+          "action": "shoot",
+          "view": "wide"
+        },
+        {
+          "place": "court",
+          "mood": "shock",
+          "crowd": 5,
+          "view": "wide"
+        }
+      ]
+    },
+    {
+      "narration": "They send three guys at you. So you pass. Your teammates get wide open dunks, every night.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "ball"
+        ],
+        "stat": "STEP 3",
+        "stat_sub": "make everyone better",
+        "hero": {
+          "skin": "6b4430",
+          "hair": "short",
+          "hair_color": "141010",
+          "beard": "none",
+          "shirt": "111111",
+          "pants": "111111",
+          "trim": "c4ced4",
+          "socks": "f4f4f4",
+          "shoes": "111111",
+          "height": 1.3,
+          "outfit": "kit",
+          "number": 1
+        }
+      },
+      "toon": [
+        {
+          "place": "court",
+          "mood": "nervous",
+          "crowd": 3,
+          "view": "low"
+        },
+        {
+          "place": "court",
+          "mood": "happy",
+          "action": "throw",
+          "things": [
+            "basketball"
+          ],
+          "view": "ms"
+        },
+        {
+          "place": "court",
+          "mood": "laugh",
+          "action": "dunk",
+          "view": "wide"
+        }
+      ]
+    },
+    {
+      "narration": "Then you build a training gym that copies your height. Every kid in France grows up guarding an alien.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "ball"
+        ],
+        "stat": "STEP 4",
+        "stat_sub": "a whole country of Wembys",
+        "hero": {
+          "skin": "6b4430",
+          "hair": "short",
+          "hair_color": "141010",
+          "beard": "none",
+          "shirt": "111111",
+          "pants": "111111",
+          "trim": "c4ced4",
+          "socks": "f4f4f4",
+          "shoes": "111111",
+          "height": 1.3,
+          "outfit": "kit",
+          "number": 1
+        }
+      },
+      "toon": [
+        {
+          "place": "garage",
+          "mood": "excited",
+          "things": [
+            "hoop",
+            "robot"
+          ],
+          "view": "ms"
+        },
+        {
+          "place": "classroom",
+          "mood": "proud",
+          "crowd": 10,
+          "things": [
+            "alien",
+            "basketball"
+          ],
+          "view": "wide"
+        }
+      ]
+    },
+    {
+      "narration": "Still not enough? You play one game on the Moon. Low gravity, and you dunk from the free throw line.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "ball"
+        ],
+        "stat": "STEP 5",
+        "stat_sub": "a dunk on the Moon",
+        "hero": {
+          "skin": "6b4430",
+          "hair": "short",
+          "hair_color": "141010",
+          "beard": "none",
+          "shirt": "111111",
+          "pants": "111111",
+          "trim": "c4ced4",
+          "socks": "f4f4f4",
+          "shoes": "111111",
+          "height": 1.3,
+          "outfit": "kit",
+          "number": 1
+        }
+      },
+      "toon": [
+        {
+          "place": "office",
+          "mood": "scheme",
+          "things": [
+            "lightbulb"
+          ],
+          "view": "ms"
+        },
+        {
+          "place": "space",
+          "mood": "excited",
+          "things": [
+            "hoop"
+          ],
+          "card": {
+            "text": "THE MOON",
+            "kind": "sign"
+          },
+          "view": "wide"
+        },
+        {
+          "place": "space",
+          "mood": "laugh",
+          "action": "dunk",
+          "view": "wide"
+        }
+      ]
+    },
+    {
+      "narration": "Ten rings later, the question isn't who's the best. It's who's second.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "ball"
+        ],
+        "stat": "THE PLAN",
+        "stat_sub": "who's second?",
+        "hero": {
+          "skin": "6b4430",
+          "hair": "short",
+          "hair_color": "141010",
+          "beard": "none",
+          "shirt": "111111",
+          "pants": "111111",
+          "trim": "c4ced4",
+          "socks": "f4f4f4",
+          "shoes": "111111",
+          "height": 1.3,
+          "outfit": "kit",
+          "number": 1
+        }
+      },
+      "toon": [
+        {
+          "place": "court",
+          "mood": "proud",
+          "things": [
+            "ring",
+            "trophy"
+          ],
+          "card": {
+            "text": "10 RINGS",
+            "kind": "sign"
+          },
+          "view": "ms"
+        },
+        {
+          "place": "throne",
+          "mood": "proud",
+          "things": [
+            "crown"
+          ],
+          "view": "ms"
+        }
+      ]
+    }
+  ],
+  "needs_fix": [
+    "act block unclear at frames 150-192: The character stands idle while the opponent shoots the ball.",
+    "act block unclear at frames 321-363: The character stands idle while the opponent shoots the ball.",
+    "act shoot unclear at frames 364-421: The character stands idle while the ball travels to the hoop.",
+    "act dunk unclear at frames 562-640: The character stands idle while the ball enters the hoop.",
+    "act lift_weights unclear at frames 641-710: The character stands idle while the weight bar moves up and down.",
+    "act dunk unclear at frames 852-917: The character stands idle while the ball enters the hoop."
+  ]
+}

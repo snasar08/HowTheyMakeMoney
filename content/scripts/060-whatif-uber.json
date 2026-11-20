@@ -1,0 +1,224 @@
+{
+  "id": "060",
+  "slug": "whatif-uber",
+  "company": "Uber",
+  "format": "whatif",
+  "visual_style": "lowpoly",
+  "hook_style": "number",
+  "title_style": "whatif",
+  "theme": "bold_bright",
+  "status": "ready",
+  "score": 89,
+  "title": "What If One Driver Did Every Uber Trip?",
+  "description": "Uber did 4.1 billion rides and deliveries last quarter. Now picture one driver.\n\nSources:\n- Uber: Uber Announces Results for Third Quarter 2026: https://investor.uber.com/news-events/news/press-release-details/2026/Uber-Announces-Results-for-Third-Quarter-2026/default.aspx\n\nUber Q3 2026 (Nov 4 2026): 4.1 billion trips in the quarter, up 16%. Trips = Mobility rides plus Delivery orders. Uber: more than 83 billion trips since 2010. Our math: 4.1 billion / 92 days = about 44.6 million a day, about 516 a second; one trip a minute = about 85 years for one day's trips; 83 billion trips at one a minute = about 158,000 years. Not financial advice.\n\n#shorts #uber #whatif #howtheymakemoney",
+  "tags": [
+    "uber",
+    "what if",
+    "rideshare",
+    "shorts"
+  ],
+  "images": {},
+  "hud_label": "TRIPS",
+  "loop": "So next time you tap for a ride, remember:",
+  "cta": "Uber or a bike? Comment your pick.",
+  "cta_question": "Uber or a bike?",
+  "scenes": [
+    {
+      "narration": "Uber did 4.1 billion rides and deliveries last quarter. Now picture one driver.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "car"
+        ],
+        "stat": "4.1 BILLION",
+        "stat_sub": "trips. one driver?"
+      },
+      "toon": [
+        {
+          "place": "street",
+          "things": [
+            "car",
+            "truck"
+          ],
+          "card": {
+            "text": "4.1B TRIPS",
+            "kind": "screen",
+            "sub": "LAST QUARTER"
+          },
+          "mood": "shock",
+          "crowd": 30
+        },
+        {
+          "place": "garage",
+          "things": [
+            "car"
+          ],
+          "beat": "drive",
+          "mood": "calm",
+          "view": "ms"
+        }
+      ]
+    },
+    {
+      "narration": "Just one driver. Every single trip.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "run",
+        "crowd": 200,
+        "props": [
+          "car",
+          "phone"
+        ],
+        "stat": "1 DRIVER",
+        "stat_sub": "rides + deliveries, Q3 2026",
+        "hud": "4.1B"
+      },
+      "toon": [
+        {
+          "place": "track",
+          "things": [
+            "car"
+          ],
+          "mood": "stern",
+          "view": "ms"
+        },
+        {
+          "place": "street",
+          "things": [
+            "car"
+          ],
+          "beat": "queue",
+          "mood": "nervous",
+          "crowd": 40
+        }
+      ]
+    },
+    {
+      "narration": "Then picture it. Hundreds of trips every second.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "run",
+        "crowd": 400,
+        "props": [
+          "car"
+        ],
+        "stat": "516 / SECOND",
+        "stat_sub": "about 44.6 million a day",
+        "hud": "44.6M"
+      },
+      "toon": [
+        {
+          "place": "lab",
+          "things": [
+            "lightbulb"
+          ],
+          "mood": "scheme",
+          "view": "low"
+        },
+        {
+          "place": "track",
+          "things": [
+            "car",
+            "bus"
+          ],
+          "card": {
+            "text": "HUNDREDS",
+            "kind": "sign",
+            "sub": "TRIPS A SECOND"
+          },
+          "mood": "shock",
+          "crowd": 60
+        }
+      ]
+    },
+    {
+      "narration": "Just one trip a minute? One day's trips would take 85 years.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "office",
+        "action": "work",
+        "crowd": 0,
+        "props": [
+          "car"
+        ],
+        "stat": "~85 YEARS",
+        "stat_sub": "for one day of trips"
+      },
+      "toon": [
+        {
+          "place": "street",
+          "things": [
+            "car",
+            "clock"
+          ],
+          "beat": "clock",
+          "mood": "nervous"
+        },
+        {
+          "place": "graveyard",
+          "card": {
+            "text": "85 YEARS",
+            "kind": "tomb"
+          },
+          "mood": "shock"
+        }
+      ]
+    },
+    {
+      "narration": "Still not done? Every trip ever: 83 billion. About 158,000 years.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "cheer",
+        "crowd": 300,
+        "props": [
+          "car",
+          "trophy"
+        ],
+        "stat": "158,000 YEARS",
+        "stat_sub": "83 billion trips since 2010",
+        "hud": "83B"
+      },
+      "toon": [
+        {
+          "place": "diner",
+          "mood": "sad",
+          "view": "face"
+        },
+        {
+          "place": "showroom",
+          "things": [
+            "car",
+            "globe"
+          ],
+          "card": {
+            "text": "83 BILLION",
+            "kind": "screen",
+            "sub": "TRIPS EVER"
+          },
+          "mood": "shock",
+          "crowd": 30
+        },
+        {
+          "place": "graveyard",
+          "card": {
+            "text": "158,000 YRS",
+            "kind": "tomb"
+          },
+          "mood": "dazed"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Uber: Uber Announces Results for Third Quarter 2026",
+      "url": "https://investor.uber.com/news-events/news/press-release-details/2026/Uber-Announces-Results-for-Third-Quarter-2026/default.aspx"
+    }
+  ]
+}

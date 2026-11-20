@@ -75,6 +75,8 @@ class Character:
                 img = None
                 if "baseColorTexture" in pbr:
                     img = g["textures"][pbr["baseColorTexture"]["index"]]["source"]
+                if "JOINTS_0" not in a:
+                    continue
                 self.prims.append(dict(
                     pos=self._acc(a["POSITION"]), norm=self._acc(a["NORMAL"]),
                     uv=self._acc(a["TEXCOORD_0"]) if "TEXCOORD_0" in a else None,
@@ -118,17 +120,33 @@ class Character:
 
     def find_clip(self, *names):
         for want in names:
+            if want in self.clips:
+                return want
             for k in self.clips:
                 if want in k:
                     return k
         return next(iter(self.clips), None)
 
     def pose(self, clip: str | None, t: float) -> list[np.ndarray]:
-        """Skinned (pos, normal) per primitive at time t (clip loops)."""
+        """Skinned (pos, normal) per primitive at time t (clip loops) -- CPU skinning."""
+        J = self.joint_mats(clip, t)
+        out = []
+        for p in self.prims:
+            M = np.einsum("vk,vkij->vij", p["w"], J[p["jnt"]])  # blended matrix per vertex
+            pos = np.einsum("vij,vj->vi", M[:, :3, :3], p["pos"]) + M[:, :3, 3]
+            nrm = np.einsum("vij,vj->vi", M[:, :3, :3], p["norm"])
+            nrm /= np.linalg.norm(nrm, axis=1, keepdims=True) + 1e-8
+            out.append((pos, nrm))
+        return out
+
+    def joint_mats(self, clip: str | None, t: float) -> np.ndarray:
+        """(joints, 4, 4) skinning matrices at time t (for GPU skinning)."""
         local = [list(r) for r in self.rest]
         if clip and clip in self.clips:
             chans, dur = self.clips[clip]
             tt = t % dur if dur > 0 else 0.0
+            if "death" in clip:  # a fall plays once and stays down (it used to pop back up and fall again)
+                tt = min(max(t, 0.0), dur - 1 / 30)
             for node, path, times, vals in chans:
                 k = int(np.clip(np.searchsorted(times, tt) - 1, 0, len(times) - 1))
                 k2 = min(k + 1, len(times) - 1)
@@ -148,15 +166,7 @@ class Character:
                 m = _trs(*local[i])
                 world[i] = wm(self.parent[i]) @ m if i in self.parent else m
             return world[i]
-        J = np.stack([wm(j) @ self.ibm[k] for k, j in enumerate(self.joints)])
-        out = []
-        for p in self.prims:
-            M = np.einsum("vk,vkij->vij", p["w"], J[p["jnt"]])  # blended matrix per vertex
-            pos = np.einsum("vij,vj->vi", M[:, :3, :3], p["pos"]) + M[:, :3, 3]
-            nrm = np.einsum("vij,vj->vi", M[:, :3, :3], p["norm"])
-            nrm /= np.linalg.norm(nrm, axis=1, keepdims=True) + 1e-8
-            out.append((pos, nrm))
-        return out
+        return np.stack([wm(j) @ self.ibm[k] for k, j in enumerate(self.joints)]).astype(np.float32)
 
 
 @lru_cache(maxsize=4)
@@ -184,8 +194,7 @@ def draw(sc, ch: Character, clip, t, pos=(0, 0, 0), ry=0.0, scale=1.0, tint=None
         if skin:  # palette texture from the pack: LightSkin, DarkSkin, LightSkin1, ...
             from PIL import Image
             # skins live in assets/characters/skins/ (short path: Windows' 260-char limit)
-            f = CHAR_DIR / "skins" / f"{skin}.png"
-            tex = e.texture(("charskin", skin), Image.open(f).resize((256, 256), Image.NEAREST))
+            tex = e.texture(("charskin", skin), skin_image(skin).resize((256, 256), Image.NEAREST))
         elif p["image"] is not None:
             tex = e.texture(("charimg", id(ch), p["image"]), ch.image(p["image"]))
         col = tint if tint is not None else ((1, 1, 1) if tex is not None else p["color"])
@@ -193,3 +202,45 @@ def draw(sc, ch: Character, clip, t, pos=(0, 0, 0), ry=0.0, scale=1.0, tint=None
         p_ = (pos[0], pos[1] - ch.base_y * k, pos[2])
         sc.add(vao, trs(p_, (k, k, k), ry=ry), col, tex=tex, spec=0.15, gloss=16,
                shadow=(pos[0], pos[2], 0.55 * scale, 0.4 * scale) if pi == 0 else None)
+
+
+# team-color kits (Nov 3, Sam): skin "LightSkin@f5c400-1d3f8f" = that skin with a yellow shirt and
+# blue shorts. Plain colors only: never a crest, sponsor, logo or a real player's look (STYLE.md).
+SHIRTS = {(115, 167, 196), (100, 215, 105)}
+SHORTS = {(21, 96, 189), (200, 148, 89)}
+
+
+def kit_colors(name):
+    base, _, kit = name.partition("@")
+    if not kit:
+        return base, None, None
+    shirt, _, shorts = kit.partition("-")
+    rgb = lambda h: tuple(int(h[i:i + 2], 16) for i in (0, 2, 4)) if len(h) == 6 else None
+    return base, rgb(shirt), rgb(shorts)
+
+
+def skin_image(name):
+    """The pack's palette texture for a skin name, recolored for a kit if it has one."""
+    from PIL import Image
+    from . import lp_hero
+    base, cmap = lp_hero.recolor_map(name)
+    if cmap:  # 'LightSkin#skin-hair-shirt-pants' (hero looks, varied crowd clothes)
+        im = Image.open(CHAR_DIR / "skins" / f"{base}.png").convert("RGB")
+        px = im.load()
+        for y in range(im.height):
+            for x in range(im.width):
+                if px[x, y] in cmap:
+                    px[x, y] = cmap[px[x, y]]
+        return im
+    base, shirt, shorts = kit_colors(name)
+    im = Image.open(CHAR_DIR / "skins" / f"{base}.png").convert("RGB")
+    if shirt or shorts:
+        px = im.load()
+        for y in range(im.height):
+            for x in range(im.width):
+                c = px[x, y]
+                if shirt and c in SHIRTS:
+                    px[x, y] = shirt
+                elif shorts and c in SHORTS:
+                    px[x, y] = shorts
+    return im

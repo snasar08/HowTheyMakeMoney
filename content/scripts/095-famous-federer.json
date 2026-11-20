@@ -1,0 +1,308 @@
+{
+  "id": "095",
+  "slug": "famous-federer",
+  "company": "Roger Federer",
+  "format": "famous",
+  "visual_style": "lowpoly",
+  "hook_style": "surprise",
+  "title_style": "number",
+  "theme": "clean_navy",
+  "status": "ready",
+  "score": 88,
+  "title": "From Ball Boy to $1.1 Billion",
+  "name_card": "Roger Federer",
+  "name_sub": "tennis player",
+  "description": "A former ball boy is now worth 1.1 billion dollars.\n\nSources:\n- Wikipedia: Roger Federer: https://en.wikipedia.org/wiki/Roger_Federer\n\nFrom Wikipedia (Roger Federer): he was a ball boy at his hometown event in Basel, the Swiss Indoors, in 1992 and 1993; he won his first major singles title at Wimbledon in 2003 at age 21; his career prize money is US$130,594,339; Uniqlo reportedly signed him for roughly $300 million over 10 years after his Nike deal expired in 2018; in May 2020 he became the first tennis player to top Forbes' list of the world's highest-paid athletes ($106.3 million); as of August 2026 Forbes estimates his net worth at $1.1 billion. Not financial advice.\n\n#shorts #rogerfederer #tennis #famous #howtheymakemoney",
+  "tags": [
+    "rogerfederer",
+    "tennis",
+    "famous",
+    "shorts"
+  ],
+  "images": {},
+  "hud_label": "HIS MONEY",
+  "loop": "So next time you're stuck on the sidelines, remember:",
+  "cta": "Federer or Nadal? Comment your pick.",
+  "cta_question": "Federer or Nadal?",
+  "scenes": [
+    {
+      "narration": "A former ball boy is now worth 1.1 billion dollars.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "ball"
+        ],
+        "stat": "$1.1 BILLION",
+        "stat_sub": "Forbes, August 2026",
+        "hero": {
+          "skin": "e8c4a0",
+          "hair": "short",
+          "hair_color": "3a2a1e",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "f4f4f4",
+          "pants": "f4f4f4",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "extras": [
+            "headband"
+          ],
+          "height": 1.03
+        }
+      },
+      "toon": [
+        {
+          "place": "mansion",
+          "beat": "money",
+          "mood": "proud",
+          "things": [
+            "cashstack",
+            "goldbar"
+          ],
+          "card": {
+            "text": "$1.1B",
+            "kind": "screen",
+            "sub": "WORTH"
+          }
+        }
+      ]
+    },
+    {
+      "narration": "As a kid, he just fetched balls at his hometown tournament.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "run",
+        "crowd": 100,
+        "props": [
+          "ball"
+        ],
+        "stat": "BALL BOY",
+        "stat_sub": "hometown event, Basel, 1992",
+        "hero": {
+          "skin": "e8c4a0",
+          "hair": "short",
+          "hair_color": "3a2a1e",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "f4f4f4",
+          "pants": "f4f4f4",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "extras": [
+            "headband"
+          ],
+          "height": 1.03
+        }
+      },
+      "toon": [
+        {
+          "place": "court",
+          "beat": "walk",
+          "mood": "calm",
+          "crowd": 15,
+          "card": {
+            "text": "BALL BOY",
+            "kind": "sign",
+            "sub": "HOMETOWN"
+          },
+          "view": "ws"
+        }
+      ]
+    },
+    {
+      "narration": "Then he won Wimbledon. His first major, at 21.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "cheer",
+        "crowd": 400,
+        "props": [
+          "trophy"
+        ],
+        "stat": "FIRST MAJOR",
+        "stat_sub": "Wimbledon, age 21",
+        "hero": {
+          "skin": "e8c4a0",
+          "hair": "short",
+          "hair_color": "3a2a1e",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "f4f4f4",
+          "pants": "f4f4f4",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "extras": [
+            "headband"
+          ],
+          "height": 1.03
+        }
+      },
+      "toon": [
+        {
+          "place": "court",
+          "beat": "walk",
+          "mood": "excited",
+          "action": "cheer",
+          "crowd": 50,
+          "things": [
+            "trophy"
+          ],
+          "card": {
+            "text": "WIMBLEDON",
+            "kind": "sign"
+          }
+        },
+        {
+          "place": "court",
+          "beat": "walk",
+          "mood": "proud",
+          "things": [
+            "medal"
+          ],
+          "card": {
+            "text": "AGE 21",
+            "kind": "flip",
+            "sub": "FIRST MAJOR"
+          },
+          "view": "ws"
+        }
+      ]
+    },
+    {
+      "narration": "But prize money wasn't the big part. One clothing deal reportedly paid 300 million.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "office",
+        "action": "cheer",
+        "crowd": 40,
+        "props": [
+          "check"
+        ],
+        "stat": "$300 MILLION",
+        "stat_sub": "reported, 10 years, 2018",
+        "hud": "$300M",
+        "hero": {
+          "skin": "e8c4a0",
+          "hair": "short",
+          "hair_color": "3a2a1e",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "f4f4f4",
+          "pants": "f4f4f4",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "extras": [
+            "headband"
+          ],
+          "height": 1.03
+        }
+      },
+      "toon": [
+        {
+          "place": "boardroom",
+          "beat": "walk",
+          "mood": "scheme",
+          "things": [
+            "coins"
+          ],
+          "view": "ms"
+        },
+        {
+          "place": "showroom",
+          "beat": "sign",
+          "mood": "happy",
+          "things": [
+            "cashstack"
+          ],
+          "card": {
+            "text": "$300M",
+            "kind": "paper",
+            "sub": "CLOTHING DEAL"
+          }
+        }
+      ]
+    },
+    {
+      "narration": "Then he topped Forbes' highest-paid athletes. The first tennis player ever.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "cheer",
+        "crowd": 100,
+        "props": [
+          "cash"
+        ],
+        "stat": "NO. 1",
+        "stat_sub": "Forbes highest-paid, 2020",
+        "hud": "$1.1B",
+        "hero": {
+          "skin": "e8c4a0",
+          "hair": "short",
+          "hair_color": "3a2a1e",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "f4f4f4",
+          "pants": "f4f4f4",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "extras": [
+            "headband"
+          ],
+          "height": 1.03
+        }
+      },
+      "toon": [
+        {
+          "place": "mansion",
+          "beat": "walk",
+          "mood": "proud",
+          "things": [
+            "trophy"
+          ],
+          "card": {
+            "text": "FORBES",
+            "kind": "screen",
+            "sub": "HIGHEST-PAID"
+          }
+        },
+        {
+          "place": "court",
+          "beat": "walk",
+          "mood": "proud",
+          "action": "cheer",
+          "crowd": 40,
+          "card": {
+            "text": "1ST EVER",
+            "kind": "flip",
+            "sub": "TENNIS PLAYER"
+          }
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Roger Federer",
+      "url": "https://en.wikipedia.org/wiki/Roger_Federer"
+    }
+  ],
+  "hero": {
+    "skin": "e8c4a0",
+    "hair": "short",
+    "hair_color": "3a2a1e",
+    "beard": "none",
+    "outfit": "kit",
+    "shirt": "f4f4f4",
+    "pants": "f4f4f4",
+    "socks": "f4f4f4",
+    "shoes": "f4f4f4",
+    "extras": [
+      "headband"
+    ],
+    "height": 1.03
+  }
+}

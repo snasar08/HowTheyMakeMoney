@@ -1,0 +1,121 @@
+{
+  "id": "034",
+  "slug": "whatif-mcdonalds",
+  "company": "McDonald's",
+  "format": "whatif",
+  "visual_style": "lowpoly",
+  "hook_style": "whatif",
+  "title_style": "whatif",
+  "theme": "bold_bright",
+  "status": "delivered",
+  "score": 88,
+  "title": "What If One Cashier Served All of McDonald's?",
+  "description": "What if one cashier had to serve every McDonald's customer in a single day?\n\nSources:\n- Wikipedia: McDonald's (68 million customers daily; 45,356 restaurants at end of 2025): https://en.wikipedia.org/wiki/McDonald%27s\n\nPer-second = 68 million / 86,400 seconds; per-minute = 787 x 60; per-hour = 68 million / 24; ~95% franchised (same source); per-restaurant = 68 million / 45,356. Not financial advice.\n\n#shorts #mcdonalds #whatif #howtheymakemoney",
+  "tags": [
+    "mcdonalds",
+    "what if",
+    "fast food",
+    "shorts"
+  ],
+  "images": {},
+  "loop": "So next time you're in a McDonald's line, ask yourself:",
+  "scenes": [
+    {
+      "narration": "What if one cashier had to serve every McDonald's customer in a single day?",
+      "visual": {
+        "type": "lowpoly",
+        "props": [],
+        "set": "store",
+        "action": "work",
+        "crowd": 0,
+        "stat": "1 CASHIER",
+        "stat_sub": "every customer",
+        "hud": "0"
+      }
+    },
+    {
+      "narration": "After one second, that's 787 customers. B: Wait, every second? Yep. No breaks.",
+      "visual": {
+        "type": "lowpoly",
+        "props": [],
+        "set": "store",
+        "action": "run",
+        "crowd": 120,
+        "stat": "+1 SECOND",
+        "stat_sub": "787 customers",
+        "hud": "787"
+      }
+    },
+    {
+      "narration": "After one minute, about 47,000 people. The line wraps around the block.",
+      "visual": {
+        "type": "lowpoly",
+        "props": [],
+        "set": "city",
+        "action": "run",
+        "crowd": 300,
+        "stat": "+1 MINUTE",
+        "stat_sub": "about 47,000",
+        "hud": "47,000"
+      }
+    },
+    {
+      "narration": "After one hour, 2.8 million. By the end of the day? 68 million customers.",
+      "visual": {
+        "type": "lowpoly",
+        "props": [],
+        "set": "city",
+        "action": "cheer",
+        "crowd": 400,
+        "stat": "+1 DAY",
+        "stat_sub": "68 million customers",
+        "hud": "68,000,000"
+      }
+    },
+    {
+      "narration": "So McDonald's spreads them across 45,356 restaurants. That's about 1,500 each.",
+      "visual": {
+        "type": "lowpoly",
+        "props": [],
+        "set": "store",
+        "action": "work",
+        "crowd": 60,
+        "stat": "45,356",
+        "stat_sub": "restaurants",
+        "hud": "68,000,000"
+      }
+    },
+    {
+      "narration": "The twist? About 95 percent are run by franchisees. McDonald's is mostly the landlord.",
+      "visual": {
+        "type": "lowpoly",
+        "props": [],
+        "set": "office",
+        "action": "idle",
+        "crowd": 0,
+        "stat": "95%",
+        "stat_sub": "run by franchisees",
+        "hud": "68,000,000"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: McDonald's (68 million customers daily; 45,356 restaurants at end of 2025)",
+      "url": "https://en.wikipedia.org/wiki/McDonald%27s"
+    }
+  ],
+  "hud_label": "Customers served",
+  "cta": "Cashier or franchise owner? Comment which job you'd pick.",
+  "cta_question": "Cashier or franchise owner?",
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-034-whatif-mcdonalds",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-034-whatif-mcdonalds/034-whatif-mcdonalds.mp4",
+    "post_at": "2026-11-01T01:46:00-05:00",
+    "buffer_post": "6ae6dcd7f0984eef334eecae",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-01T06:16:22.092658+00:00",
+    "seconds": 38.58
+  }
+}

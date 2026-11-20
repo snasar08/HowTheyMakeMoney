@@ -1,0 +1,47 @@
+name: Saturday comment replies
+
+# Sam, Nov 18: every Saturday answer the week's comments (top 100 by likes) with a short human reply (1-10 words).
+# pipeline/comment_replies.py: YouTube Data API (Buffer's API has no comment calls) + one free Gemini text call.
+# Needs secrets YTC_CLIENT_ID / YTC_CLIENT_SECRET / YTC_REFRESH_TOKEN (pipeline/comment_auth.py); without them it
+# posts nothing. Push to branch comments-test = DRY RUN (reads real comments, prints the replies, posts nothing).
+on:
+  schedule:
+    - cron: "0 22 * * 6"   # Saturday ~5 PM New York (GitHub may start it later)
+  push:
+    branches: ["comments-test"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: comment-replies
+  cancel-in-progress: false
+
+jobs:
+  reply:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Reply to the week's comments
+        env:
+          YT_API_KEY: ${{ secrets.YT_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          YTC_CLIENT_ID: ${{ secrets.YTC_CLIENT_ID }}
+          YTC_CLIENT_SECRET: ${{ secrets.YTC_CLIENT_SECRET }}
+          YTC_REFRESH_TOKEN: ${{ secrets.YTC_REFRESH_TOKEN }}
+          COMMENT_DRY: ${{ github.ref == 'refs/heads/comments-test' && '1' || '' }}
+        run: python -m pipeline.comment_replies
+      - name: Save the reply log to main
+        if: github.ref != 'refs/heads/comments-test'
+        run: |
+          git config user.name "shorts-bot"
+          git config user.email "shorts-bot@users.noreply.github.com"
+          git add analytics/comment_replies.json 2>/dev/null || true
+          git diff --cached --quiet && exit 0
+          git commit -qm "Comment replies $(date -u +%F)"
+          for i in 1 2 3; do git pull --rebase -q origin main && git push -q origin HEAD:main && break; sleep 10; done

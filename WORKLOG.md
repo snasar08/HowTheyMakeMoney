@@ -1,4 +1,86 @@
-# WORKLOG — 3D upgrade (branch `3d-upgrade`)
+## Nov 1 2026 — new-format 034 posted early
+- 034 McDonald's rewritten in the REELS.md format (time jumps, counter, one B: line, choice CTA). First launch
+  rendered main's old script (launch checks out main) -> deleted, re-launched for 1 PM, then Sam wanted it now.
+- reschedule.py: POST_IN_MIN moves a booked Short to N min from now (books first, removes old after; logs to
+  the branch; pipefail). Bug found: local wall-clock math in the repeated DST hour -> compute in UTC.
+- Final: Buffer post 6ae6dcd7f0984eef334eecae, Sun Nov 1 01:46 EST.
+
+## Nov 1 2026 — optional second voice + lint fix
+- `B:` sentences use KOKORO_VOICE2 (am_puck+am_michael blend, Sam's pick); main voice unchanged. Local test clarity 97.9%.
+- lint.py: LIKENESS / FAKE_QUOTE regexes had control chars instead of  and never matched; fixed (+ skip "not resembling").
+
+## Nov 1 2026 — learned from Sam's liked reels
+- Analyzed 4 reels in Downloads/reels i like (frames, Whisper transcripts, cut counts) -> content/REELS.md.
+- New: on-screen counter (`hud_label` + per-scene `hud`), per-script `cta_question` bubble, lint length 25-55 s.
+
+## Oct 31 2026 — shorts-craft skill
+- Added project skill `.claude/skills/shorts-craft` with MIT guides from github.com/agricidaniel/claude-youtube
+  (hook, shorts, shorts-playbook, retention-scripting, algorithm). Excluded its API/OAuth scripts and
+  paid DataForSEO parts. Weekly batch step 2 now reads it. Directory plugins (Social Media Skills,
+  ffmpeg-llm) need a one-tap Add by Sam; not installed.
+
+## Oct 30 2026 — cover frame, loop seam, breath split, title test, blank-frame gate
+- fx.hook full on frame 0; fx.loop_blend; tts.breath_split (>14 words); lint long-sentence warning;
+  gate on blank frames; CLAUDE.md weekly batch rotates title_style as an ongoing test.
+
+## Oct 30 2026 — visual FX (merged)
+- New `pipeline/fx.py`: count-up stats, coin bursts on huge numbers, hook title punch-in (low-poly),
+  zoom-blur scene changes, 2D drift, color grade + vignette + static grain, keyword icons.
+- Tested: 3d-e2e (005, 028: clarity 100%/96%, zone OK, Buffer dry run OK) + local low-poly render of 030.
+  Moving grain made a 33 s Short 89 MB, so grain is static now (030: 22 MB).
+
+# WORKLOG
+
+## Oct 30 2026 — voice + features (merged)
+- Voice: Sam disliked am_fenrir, then af_bella → **am_puck** at 1.2 (top-rated Kokoro male tier, most
+  expressive; Fish Audio S2 Pro / other top open models are non-commercial or ~30x real-time on CPU).
+- Loudness normalized to -14 LUFS (measured -15.0). Numbers pop in captions; music mood per format.
+- 1 PM extra post (Sam's request): 030 what-if Amazon. First launch crashed (launch.yml lacked Mesa/EGL)
+  → fixed + low-poly stat-card fallback; second launch fell back to a release (fresh asset 404 for a
+  few seconds) → public_ok now retries ~90 s; `reschedule/030` put it on Buffer for Fri 13:00
+  (post 6ae4b5eb…, scheduled). Today: 12:00 031, 13:00 030, 18:00 032.
+
+## CURRENT TASK — branch `variety-upgrade` (started Oct 29 2026)
+Resume: `git switch variety-upgrade`, read this section + TODO.md, continue from "In progress".
+Scope (Sam, Oct 29): (1) 4 rotating formats [how / what-if / careers / famous], 20+ sourced ideas
+each; (2) low-poly animated 3D style — BRANCH ONLY until Sam approves; (3) rules for real people
+and brands; (4) daily free stats → analytics/stats.json → insights.md → writer + queue order;
+(5) GitHub e2e, merge 1+3+4, report. Never break daily posting; never change post times,
+posts/day, voice or upload mode without asking.
+
+### Done
+- Part 3 rules (b648379): STYLE.md "Real people and brands", CLAUDE.md, lint blocks likeness/brand-mark
+  prompts and unsourced quotes.
+- Part 1 formats (07863d9): `format` (how/whatif/careers/famous) + `visual_style` on every script; queue
+  alternates formats, priority = score × format weight; 64 new sourced-stat ideas in topics.md (22 whatif,
+  21 careers, 21 famous) + the 20 ranked "how" topics; writer variety rules in CLAUDE.md.
+- Part 4 learning loop (ce0fff8): stats.yml daily 11:07 UTC → analytics/stats.json (snapshots, tagged),
+  insights.md + format_weights.json (min 10 per group). Writer + monthly report read them.
+- e2e PASSED on ce0fff8 → **merged to main 58ec5e3** (parts 1, 3, 4 only).
+- YT_API_KEY works: first stats run 15:25 UTC Oct 29 → 6 videos, 1 subscriber, all matched to scripts.
+  Views so far 0–2 per Short (public; brand-new channel).
+- Part 2 low-poly (branch only): pipeline/crowd.py (GPU skinning + instancing), pipeline/lowpoly.py
+  (sets field/store/warehouse/city/office/stage, props, hero + crowds, 5 shot types, 540x960), render.py
+  (lowpoly shots, big yellow stat, lowercase one-word captions, hard cuts), lint keeps lowpoly out of
+  the daily queue (LOWPOLY_LIVE=False). Bench on GitHub 1080x1920: moderngl 123 ms (100 chars) /
+  207 ms (300); three.js+SwiftShader 1262 / 3270 ms with frame readback → moderngl.
+- Test scripts (draft): 030 whatif Amazon (lowpoly), 031 famous richest person (lowpoly), 032 careers
+  pilots (3D-character images, 2 credits), + 005 Starbucks for "how". Local renders in
+  out/compare/formats/.
+
+- e2e of the 4 tests on GitHub (798b428) PASSED: 030 105 s, 031 71 s, 032 93 s, 005 106 s; clarity
+  100/98/96/100%; zone, gate, Buffer dry run OK. Credits this task: 2 (balance 437.5).
+
+- **Sam approved low-poly (Oct 29).** LOWPOLY_LIVE=True; 030/031/032 ready (pilots got broll1/2, 2 more
+  credits → 4 this task, balance 435.5); queue alternates format AND visual style. Final e2e 206d2c5
+  (real nightly path, Buffer dry run) booked Fri 12:00 031 famous (low-poly) + Fri 18:00 032 careers.
+  Merged to main.
+
+### In progress
+- Nothing.
+
+---
+# Earlier: 3D upgrade (branch `3d-upgrade`)
 
 On restart: read this file and TODO.md, `git switch 3d-upgrade`, continue from "In progress".
 Rules: the live channel posts from `main` untouched; merge only after a full GitHub end-to-end test
@@ -95,8 +177,18 @@ passes and the 3D version is clearly better. Free tools only; ≤100 Higgsfield 
 - Final e2e 703160d PASSED (001 122 s, 002 115 s, 022 83 s; depth model OK on the runner).
   **MERGED to main c2b10b7.** Off switch for parallax: PARALLAX=off (env / repo var).
 
+- **Posting timing fix (Oct 29, merged 5ca7c6b):** scheduled nightlies started 16:49/15:54/16:41 UTC
+  (cron 10:17). Old rule "slot ≥ 60 min ahead" then skipped noon and booked 18:00 + next noon —
+  nothing went late or failed, but Oct 27 got only 1 post (18:00). Sam's manual run (10:54 ET
+  Oct 29) double-booked noon (005 on top of 029). Now: slot-aware scheduling (open slots only,
+  max 2/day, 36 h horizon, 20 min lead), crons 01:23 UTC (evening) + 13:41 UTC (backup),
+  `pipeline/slot_audit.py` + `slot-audit.yml`. Offline test bench/test_slots.py: no doubles.
+- Slot fix ran: deleted Buffer post 6ae35f13… (005 at noon Oct 29), 005 back to ready (b2358a6).
+  Audit after: Thu 12:00 029, Thu 18:00 004 — clean.
+
 ## In progress
-- Nothing. Next nightly (~16:00 UTC Oct 29) is the first with 3D-character B-roll + parallax.
+- Nothing. e2e 2c9f6ec (real nightly path, Buffer dry run, 11:10 ET): saw Thu 12:00 029 + Thu 18:00 004,
+  filled only Fri 12:00 (005) + Fri 18:00 (028) — tonight's evening run should do the same for real.
 - Watch the first 3D nightly (10:17 UTC Oct 29): check "Delivered Shorts" commit + no failure issue.
 
 ## Next
@@ -113,3 +205,215 @@ passes and the 3D version is clearly better. Free tools only; ≤100 Higgsfield 
 
 ## Needs Sam
 - Confirm the "people" reading above (realistic made-up people in the photos).
+
+## 2026-11-01 — Low-poly upgrade
+- Characters now use the pack's clothed CC0 textures (skin tones, hair, shirts, jeans) instead of flat solid colors; hero no longer gold.
+- Eased camera moves, slight handheld sway, Lanczos upscale + unsharp mask (crisper).
+- Tried and dropped: sky gradient (left an arch seam) and depth-of-field (depth pass skips GPU crowds, so it blurred the hero).
+- e2e on 030 passed both times (no blank frames, ~4 min).
+
+## 2026-11-01 — Famous-people worlds
+- Name banner (`name_card`/`name_sub`), sets court/pitch/studio/gaming/launch, props ball/mic/headset.
+- 040 Ronaldo now uses the pitch + ball + name card. e2e on 040 passed (clarity 98.9%, no blank frames). Ball later shrunk to stay in frame (checked locally).
+- Sam asked for look-alike celebrities; declined (YouTube altered-content rules, publicity rights, our STYLE.md rule) in favor of name + setting + numbers.
+
+## 2026-11-03 — Big day
+- 3 posts/day (12:00, 15:00, 18:00) and a 3 AM render run (Sam asked).
+- Low-poly: people fit each set (fans in stands, queue, desks, sidewalks, aisles); name banner from frame 0; plain team-color kits (`visual.kit`), 040 Ronaldo in yellow/blue, name in the first line.
+- Blender Cycles replay (`pipeline/blender_lp.py`, Poly Haven skies/floors via `pipeline/polyhaven.py`) tested on branch blender-bench (30–65 s/frame); NOT wired into nightly yet.
+- New `editorial` visual style (from the Whoop backstory reel Sam liked): `pipeline/editorial.py` + free-license Commons photos with credits in the description (`pipeline/photos.py`). 043 Prime: e2e 44 s, clarity 100%, set ready.
+- Voice emotion test (Chatterbox cloned from am_puck) on branch voice-emotion; results pending Sam's pick.
+
+## 2026-11-03 (evening) — New voice + Blender in nightly
+- Sam rejected Kokoro and Chatterbox. Tested Qwen3-TTS (custom/design/clone) and VoxCPM2 on GitHub CPU; scored all with UTMOS + Resemblyzer + pitch spread (`bench/voice_score.py`). Winner: one designed Qwen narrator, cloned for every line (UTMOS 4.50, consistency 0.86, pitch 5.3 st).
+- Nightly now: plan -> parallel Qwen voice jobs -> (Blender plan -> 20 Cycles shards) -> make. Kokoro / GL look are automatic per-Short fallbacks.
+- Editorial style: photo every other beat, no repeated pictures, Commons pacing + standard thumb width.
+- Blender nightly stage works end to end (20 shards, frames used) but the look isn't better yet (kit colors lost, a camera-in-box shot, darker/muddier). Default OFF; voice stays ON.
+- Blender look fixed (kit colors, Standard view, rim light, depth of field, clear lens, mirrors for download) and full nightly test passed on 040; Blender ON by default.
+
+## Nov 4: Blender time check, voice retakes, picture check
+- Blender is skipped only when the next open post is under 3 h away (`pipeline/blender_gate.py`), not by clock time.
+- `voice_prepass` re-records flagged lines up to twice and keeps the clearest take.
+- `render.py` gives a repeated picture an unused one, then compares shots and warns about what remains.
+- Tested on 040 (low-poly) and 042 (photos). Known limit: 042 has 4 pictures for 17 shots, so pictures still repeat; such scripts need more `images`.
+
+## Nov 4: word cards
+When a Short runs out of pictures, a repeat shot becomes a bold card of the words being spoken (`wordcard` in `render.py`). Lint warns when a script has too few images. Tested on 042. The repeat check also flags word cards because they share a background; their words differ. One reused picture remains there, on a shot with no speech.
+
+## Nov 4: punchier stories
+Sam rated test Shorts 6-7/10 and called the stories bland. Rewrote all 17 ready scripts around one surprise, about 22-32 s, using numbers already in each script (`.claude/skills/punchy-story`). Added `pipeline/story_score.py`, a free structure check: queue was 28-59, now 82-100. It doesn't predict views, and rewritten scripts now store it in `score`, which sets posting order; real views are the test. Dry runs passed on 015, 022 and 025; the other 14 had lint and score only. Chipotle's "2 dollars and 50 cents" failed the clarity gate, so it now says "quarter". Added retries after apt hung for 55 minutes on one test.
+
+## Nov 5: stress test
+Rendered all ready rewrites in dry runs on a temporary workflow. No crashes or gate blocks. Fixed: silent shots now get word cards (reused pictures 012, 017, 023 went to 0), reworded lines the voice check kept missing, and Nike's static ending. Round 2 on the 10 changed Shorts passed: no clarity warnings, no reused pictures. "Near-copy" warnings remain; word cards share a background, so these are mostly false flags. Word-card endings are plainer than pictures; more images per script would need credits.
+
+## Nov 7: cover frame
+Frame 0 is the cover YouTube usually picks. For Shorts that open on a picture with an overlay, it now shows the overlay in up to 2 huge lines on a dark band, with the question below (`_cover_text` in `render.py`). Checked at thumbnail size locally; GitHub dry run on 052 passed. Low-poly and editorial openers are unchanged.
+
+## Nov 8: health check
+- New `pipeline/health.py` (daily in stats.yml): `analytics/health.md` lists recent Shorts by views/hour and whether YouTube's thumbnail is up and matches our cover frame.
+- Nightly now saves each cover to `analytics/covers/`. Older Shorts show "no saved cover"; the match check starts with tonight's posts.
+- Tested locally on 18 live Shorts: all thumbnails up. Same-template Shorts fingerprint ~0.8 alike, so the bar is 0.9.
+
+## Nov 9: premium look (Fable 5.2 session)
+- Sam: make the videos look more premium with free tools only, stress test, be usage-efficient.
+- 3D charts: stage light, sharp labels (aperture 0.9 -> 0.3), bigger text, plum bars on bold_bright, pies clear of labels, cash rain below the number, stat camera pulled back so stacks clear the captions.
+- Word cards and text scenes: drifting soft lights, vignette, key word in accent, underline wipe, soft shadow.
+- Editorial Shorts opened on a near-blank page (bad thumbnail): now a 0.45 s title cover.
+- Caption icons no longer sit on charts or word cards; stray dashes dropped from word cards.
+- Stress test (temporary `stress-test` branch, Kokoro voice, 17 Shorts over 2 rounds, all styles/themes): every Short rendered, 0 errors, 0 reused pictures, 0 blank frames. 003's result upload failed both rounds only because `previews/003-delta.jpg` is tracked (test quirk).
+- Nov 9 scheduled run 42673861395 failed in ~1 min with no plan job listed (GitHub never started it; not our code). Slots for Nov 10 get filled by the next scheduled run.
+- Later Nov 9 (Sam's answers): third scheduled run added (19:23 UTC). Low-poly: Sam says the backgrounds look empty; queue now allows one low-poly per 6 posts and the weekly batch writes at most 1 in 6. Chart Shorts can mix in Commons photos via `photos` (renderer + credits tested); product photos on Commons were too weak, so only places/people/events. Retention: needs the YouTube Analytics API with Sam's one-time Google sign-in (API key alone can't read it); not set up.
+- Retention connected (Nov 9 evening): Sam asked me to do the Google steps in Chrome. Published the existing sign-in app (needed homepage + privacy link: repo URL + new PRIVACY.md, github.com as authorized domain), created Desktop client 1, signed in as the channel account, verified the API returns curves. `pipeline/retention.py` added to stats.yml. Values are in git-ignored `client_secret_values.json` on Sam's PC; Sam adds the three YTA_* GitHub secrets himself.
+
+## Nov 10: overnight rebuild of the animated (low-poly) Shorts
+Sam: the low-poly Shorts have no background, the Ronaldo edit is bad, famous people should be recognisable, find out what the popular Shorts use. Done in one night session, tested on GitHub.
+- Research: the popular look is hand-made smooth 3D (Blender with paid add-ons, or paid AI video). Not free to automate. We keep our CC0 rig and match what is free: smooth figures, real skies, dressed sets, depth of field, camera work.
+- Sets (`pipeline/lowpoly.py`): sky shader (gradient, sun/moon, clouds, stars) in GL and as world nodes in Blender; all 11 sets rebuilt with stands, lights, walls, shop fronts, trees, far skylines; crowds wear 14 clothing mixes instead of 6.
+- Heroes (`pipeline/lp_hero.py`): script `hero` field; hair, beards, caps, headbands, shorts, socks, shoes, skirts ride on bones in both renderers. Filled for 031, 036, 040, 047, 051, 055, 061, 070, 073. What-if Shorts get a stable everyman per slug. The hero used to change skin between scenes; fixed.
+- Editing: new shot list (no more top-down shots of an empty floor), scene opens on an establishing shot, punch-in on every cut, falls play once, desk scenes no longer kneel, camera follows a fall, carried box no longer hides the face.
+- Cover bug: on every famous Short the name banner covered the first line of the title. The title now sits under the banner.
+- Blender (`pipeline/blender_lp.py`): figure scale used an animation pose instead of the rest pose (people ~5% too big; hero hair landed 8 cm low): fixed. Mesh welded so smooth shading works; people subdivided (`BL_SMOOTH=180s1`); colored screens no longer wash out; bright rooms lit weaker.
+- Openings: `analytics/retention.md` shows the biggest drop at 4-5 s. In 7 of the 10 top-scoring ready scripts (044, 049, 053, 060, 061, 071, 073) the big sourced number is now on screen from the first second and spoken earlier in scene 2. Lint clean; story scores same or higher.
+- Tools: `pipeline.lp_look` (contact sheet without voice; records a few frames for Blender), temporary workflow `lplook.yml` on the `stress-test` branch renders those frames in Cycles in about 5 minutes. `pipeline.preview` now works for low-poly.
+- `LOWPOLY_GAP` 5 -> 2.
+
+## Nov 11: new people for the animated Shorts (CC0 modular pack)
+Sam: "the better free character models... do it yourself". Done in one session.
+- Looked at three packs. Quaternius Universal Base Characters: smooth but the free version is underwear-only. Kenney Mini Characters: blockier than ours. Chosen: Quaternius Ultimate Modular Men/Women (CC0): clothed, faces, hair, beards, swappable head/body/legs/feet.
+- Downloaded 10 models (about 15 MB) from poly.pizza, CC0-listed ones only (the author's Drive was over its download quota).
+- `pipeline/people.py` + look strings in `pipeline/lp_hero.py`; crowds are 16 mixed people; heroes map hair/beard/outfit to real modelled parts.
+- Blender: imports each model once, bakes the four parts per pose, recolors by material name. First run was not animated because Blender names actions `Idle_CharacterArmature`; fixed. Hidden hair is deleted (stacked transparent faces rendered as dark specks).
+- Tested with the Blender look check (030, 040, 051, 055, 061) and a full dry run of 040.
+- Later the same day: 4 more women's models from the author's own Drive folder (casual, formal dress, suit, worker; `v_*`). Bald/buzz heroes with a full beard (LeBron) get the modelled beard instead of blocks. Block stubble removed. Bug: a hero's goatee vanished in some idle frames because the imported action re-posed the armature during a render; fixed. Ronaldo was drawn with the default hair in full renders because an old per-scene `kit` blocked the script `hero`; fixed.
+
+
+## Nov 11 2026 (10 PM job) — numbers re-read, number-first hooks
+- Sam: "kinda been going viral lately", look again and make everything as good as possible.
+- Stats as of Nov 11 19:19 UTC (no local API key, so no fresher pull). What took off since Nov 9: 070 Messi
+  "From a Napkin Contract to $1.1 Billion" 1254 (famous, animated, 29.6 s), 055 Eras Tour "$2.077 Billion From 149
+  Shows" 902 in 23 h (38.8/h, fastest ever; famous, animated, 27.6 s), 050 MLB "From $6,000 to $780,000" 462 in
+  20 h (careers, 25.5 s), 065 Marvel bankrupt story 52 in its first 2 h. Shared: a person or comeback story, a
+  number in the title, under 31 s. Two of the three are animated Shorts with the new hero looks.
+- The afternoon reading holds, with one correction. Since Nov 6 (when the channel woke up) question titles:
+  median 29 (Uber 1020, Chipotle 963, Nvidia 29, Netflix 26, Astronauts 20); other titles: median ~335. So
+  questions are weak on average, but "How much of YOUR ..." is the one question shape that worked. Everything
+  posted before Nov 5 is flat whatever its hook, so the all-time medians overstate the gap. Drop at 4-5 s and
+  under-30 s still hold; every Short over 500 views is 22-30 s.
+- Rules changed (CLAUDE.md Hooks + Weekly script batch, STYLE.md, both skills): number or fact first, payoff
+  second, 22-28 s, at least 4 person stories per batch part, question titles at most 1 in 6.
+- lint.py: a question opening is no longer required; warns on a bare question, an opening sentence over 14
+  words, and a standard Short estimated over 30 s. story_score.py: scores the first sentence whether or not it
+  is a question, counts a number-first opening, and no longer counts "31," and "31" as two numbers.
+- All 26 ready scripts reworked: new first line (and second line where it was setup), overlay, loop ("remember:"),
+  description first line; 8 titles changed (006, 017, 026, 056, 066, 068, 069, 073). The 6 animated what-if
+  titles stay what-if so the title test keeps running. Only numbers already in each script. Lint 0 errors;
+  story score average 88 -> 95, none lower. Cover of 052 previewed locally.
+- Posting order: 073 Curry 95, 052 DoorDash 93, 044 Chick-fil-A 92, 069 Airbnb 92, 056 Red Bull 91, 072 agents 90.
+- Not done: health.md "other frame" thumbnails (YouTube picks the Shorts cover itself; views are fine on those).
+- Two new person stories written the new way, since only one `famous` script was left: 074 Giannis ("From Selling
+  Sunglasses to $228 Million") and 075 Mahomes ("From a Round 37 Pick to a $503 Million Deal"). Animated, so no
+  Higgsfield images. Every figure is from the Wikipedia page opened tonight (listed in each description). Lint OK,
+  story 87 and 95, both previewed with `pipeline.lp_look`. Mahomes plays on the `pitch` set (a soccer stadium; there
+  is no football field set yet). A Tom Brady script was dropped: the page gave no usable money figure.
+
+## Nov 12 2026 — 5 posts a day
+- Sam: "Let's up to 5 posts a day and just have the Saturday morning research more ... maintain quality too."
+- nightly.yml + publish.py: slots 12:00 / 15:00 / 16:30 / 18:00 / 20:00 ET, MAX_PER_DAY 5, 5 Shorts per run. The
+  three old times are unchanged so the post-time comparison stays valid; 16:30 and 20:00 are new. Blender job
+  timeout 150 -> 300 min and make 45 -> 90 min (a run can hold two animated Shorts). Buffer free plan allows 10
+  queued posts; the most this schedule queues is 9.
+- Weekly batch: up to 20 scripts per part (40/week for 35 posted), stop writing at 75 ready, at least half
+  animated or editorial so Higgsfield credits do not rise, quality gates unchanged and ahead of the count.
+- Queue on Nov 12: 28 ready = about 5.5 days at 5 a day; Saturday Nov 14 batches refill it.
+
+## Nov 13 2026 — deeper voice, numbers on demand, more animated person stories
+- Sam showed the Shorts to people: they "hate the voice", "out of key, out of tune", irritating; want it deeper and
+  explaining better. Measured why: the Nov 3 `narrator` clone has a median pitch of 239 Hz with 5 st swings.
+- `voice-deep` test on GitHub: 5 designed candidates + current, same six script lines, scored. current 4.51 UTMOS /
+  0.823 / 4.98 st / 239 Hz; deep-anchor 4.55 / 0.825 / 4.58 / 121; deep-doc 4.50 / 0.795 / 3.30 / 91; deep-host
+  4.47 / 0.784 / 3.60 / 89; deep-story 4.39 / 0.842 / 1.78 / 91 (too flat); deep-teacher 4.48 / 0.855 / 3.63 / 89.
+  Picked deep-teacher (deep, most consistent, natural movement, "explaining" delivery) -> `assets/voice/narrator2`.
+  It reads ~15% slower, so `QWEN_SPEED` 1.1 (same pitch). Fallback if Sam finds it too deep: deep-anchor (121 Hz).
+- `voice-e2e` full test on 074 with the new voice: rendered 29.7 s, Qwen voice on every line, captions timed, one
+  short-word warning. Shorts already scheduled for Nov 13 were rendered earlier with the old voice.
+- `python -m pipeline.now`: fresh numbers on demand (tested: stats arrived in about a minute).
+- Numbers Nov 13 07:01 UTC: animated person stories lead by far (073 Curry 638 in 6 h, 051 LeBron 1,067 in 11 h,
+  061 Jordan 1,161, 055 Swift 1,014; chart Shorts 4-40). So LOWPOLY_GAP 2 -> 1 and two more written: 076 Hamilton,
+  077 Mbappe (figures from the Wikipedia pages opened tonight). The local GL preview was unavailable (screen
+  locked), so 076/077 are lint- and score-checked only; they use sets and props other Shorts already use.
+- Later Nov 13: Sam: narrator2 "too deep, find a mid level, make sure reviewed well", "see what other people are
+  using", "see if S1 open sourced it". Most faceless channels use ElevenLabs (paid, account). OpenAudio S1-mini
+  weights are non-commercial only, so not usable. Two more tests (voice-deep runs 2 and 3): mid designs came out
+  89-152 Hz; trend styles 150-220 Hz; Qwen built-in Ryan 173 / Aiden 155; old voice 253. Live now: narrator3 =
+  deep-anchor, 121 Hz, 4.4 st, UTMOS 4.52. 11 numbered clips in previews/voice/ for Sam to rank.
+- Evening Nov 13: Sam: #4 fine but monotone; wants it to sound like someone reading, plus a test that redoes the
+  voice until it passes. Built pipeline/prosody.py + retakes in voice_prepass (up to 6). Livelier takes of #4
+  (voice-deep run 4): lively 145 Hz 4.35 st (2 flat pieces of 11), story 124 Hz (6 flat), hype 176 Hz (too high),
+  #4 127 Hz (4 flat). Picked anchor-lively -> narrator4. voice-e2e on 074: 12/13 lines pass, clarity 98.6%, 31.1 s.
+- Night Nov 13: Sam: "this voice sucks", the emotion and monotone suck, do a real deep search, new angle, everyone
+  uses ElevenLabs. Research: the public TTS arenas (Artificial Analysis, Voice Arena, Benchmarklist) put Google's
+  Gemini TTS at or next to ElevenLabs at the top; open models (Qwen3, Chatterbox, Orpheus, Kokoro) rank below.
+  Gemini 3.8 Flash TTS has a free tier (content used to improve Google's products) and costs about $0.01 per Short
+  paid. It takes a style direction, <short pause> tags and CAPS emphasis, and reads a whole Short in one pass
+  (flow like a person reading, instead of one sentence at a time, which is part of why ours sounded flat).
+  Added pipeline/gemini_tts.py + bench/voice_gemini.py + voice-gemini.yml (10 male voices). Blocked on Sam adding
+  the GEMINI_API_KEY secret.
+
+## Nov 14 2026 — first real run with the free Google voice + eyes
+- Run 43606812981 (scheduled 3 AM ET, started 9:48 AM ET): all 7 voice jobs (5 + 2 spares) were voiced by Gemini
+  Umbriel, one request per Short, no quota errors and no fallback. The voice test passed only 2-5 of 7 lines
+  each. Reproduced locally on the Umbriel sample: pitch movement, pitch and pace pass on every line; the fails
+  were Whisper word timings marking normal short words (The, and, Still) as "rushed" (< 60 ms), plus one real
+  mishearing ("handbags" -> "pan bags"). Dropped the "rushed" flag for the Gemini path only, so retakes go to
+  real problems and don't spend the 10-a-day quota.
+- Same run: all 5 Nov 15 slots scheduled (069, 053, 062, 071, 003), nothing blocked. Eyes ran on every Short
+  (gemini-3.1-flash-lite, free): scores 3-6/10. Most "numbers contradict the narration" complaints were frames
+  caught mid count-up, "0%" pies filling, and "Q3 2026 is in the future". Taught the eyes prompt what is normal
+  (count-ups, fills, low-poly style, today's date). Kept as real signals to look at: the animated characters'
+  faces read as "no facial features" at phone size; 069 reuses similar shots (repeat check flagged 8).
+- Sam on the Google voice: "a lot better", but a tad too deep. Raised it 1 semitone in tts (GEMINI_PITCH_ST,
+  duration and timings unchanged; test tone 121 -> 128 Hz). Live from the next run.
+- Sam picked +1.5 semitones; said "just to help his family" sounded nervous. Measured: that line sat 2.9 st below
+  the rest of the read. Added the odd-tone check (odd_lines) + single-line re-records. voice-e2e on 074: 7/7 lines
+  pass, clarity 98.6%, 32.7 s. Eyes (6/10) claimed "Antetokounmpo" is misspelled; it isn't (eyes can be wrong).
+
+## Nov 15 2026 — toon look, Phase 1 in progress (branch `toon`, NOT on main)
+- Sam: the reference Shorts (Mr omi, mromidev/claude-animated-shorts, MIT) "look infinitely better", build off that repo.
+- `toon/`: Remotion + three.js project. `src/videos/bridge` = his source verbatim; `src/videos/htmm` = our copy patched by
+  the scratch script make_htmm.py (plan-driven shots/cameras/lens in story.ts, our hero + crowd in cast.ts, a night
+  light, HtmmShort composition). `pipeline/toon.py` makes the plan from a script (and will name frames as LP plates).
+  `toon-stills.yml`: push branch `toon-stills`, results on `toon-stills-results-<run>` (toon/stills.txt lists renders).
+- State: npm install + bundle + render run on GitHub (versions: remotion 4.0.543, three 0.187, fiber 9.8, react 19).
+  WebGL works only with gl=swangle. PROBLEM: stills come out as the plain background (canvas not drawn), no errors.
+  Run 3 rendered 4 variants of HtmmShort frame 60 (a: no composer, b: msaa 0 + byte buffer, c: msaa 0, d: default);
+  images are on branch toon-stills-results-3 (v1..v4_60.jpg) and NOT yet looked at. Next: look at them, fix the blank
+  canvas, then tune the look, then wire plates into the pipeline (LP_PLATES) on a test branch.
+- Nov 15 (later): blank frames fixed (the React postprocessing wrapper drew nothing under software GL; Bridge.tsx now
+  drives postprocessing's own EffectComposer by default). First full toon Short (060, run 43715050229): voice 3 min,
+  plan 11 min, 12 render machines 5-18 min each (839 frames), make 3 min; all 839 plates used. Sent to Sam.
+- Sam: "looks better, but it doesn't look like it's talking about Uber; make scenes based on what we post" + reference
+  Short (Afterhour Theory, Elon "AI race to space", 170 s, 5,106 frames measured: 42 hard cuts, ~4 s per shot, every
+  sentence its own literal scene, objects pop in on their word). Built a scene library ("beats"): drive (hero drives a
+  car through the street, side/chase cameras), queue (long line of people), phone (giant phone, ride pins pop in),
+  clock (giant clock racing + calendar pages), money (cash stacks pop in). pipeline/toon.beats_for picks one per
+  scene from the line's words (visual.beat wins), never the same twice in a row. Props pop in with an overshoot.
+- Sam: "I LOVE THE VOICE FOR uber driver vid, always use that one" = Gemini Umbriel +1.5 st (already the default).
+- Local test renders: portable Node 22.11 (nodejs.org zip, SHA-256 checked) in the scratchpad, Chrome with GL=angle,
+  ~7 s per half-size still vs 16 s on GitHub. Sam allowed testing on his machine.
+
+## 2026-11-15 (afternoon/evening): toon look goes live
+- Sam's rules added: check every test video frame by frame at 30 fps (`python -m pipeline.allframes`, read every
+  sheet); scenery = everything a line mentions is on screen ("if we talk about the sneaker bus, we see it").
+- Things library (toon/src/videos/htmm/things.ts, ~30 code-drawn objects: spring shoes, sneaker bus, robot, chip,
+  drone, power plant, factory, satellite, glasses, chatbot, ring, crown, medal, stadium, dome, books, e-reader,
+  memo, idea bulb, long shot, poster, TV...). Per-sentence `things`, plus `pipeline/toon.things_for` adds them from
+  the line's words; the director (Gemini) can pick them too. Garage place; tall build (Wemby).
+- From frame checks: hard cut every <=1.7 s, no navy second half, signs/phones/logos inside the frame, $ on cash,
+  no count-up for STEP labels / small numbers, opening stat whole, outro montage instead of a 10 s held shot,
+  hook title below the name banner's sub line (also fixed the live Brady cover).
+- Tests (reviewer): Wemby plan 9/10, Nike plan 8/10, Ronaldo nightly dry run 8/10, Jensen 6-7/10 (reviewer's
+  knowledge predates the Nov 12 resignation and calls the affair line false; sourced, but Sam decides). Old look
+  median 4/10. Merged to main (Sam's rule: test vs old, switch if it wins). LOOK=blender switches back.
+- New drafts (need Sam's OK): 118 Bezos history, 119 Nike history, 120 Nike plan, 121 Zuck AI race, 122 Bezos AI
+  race, 123 Jensen vs Nvidia, 124 Wemby, 125 SGA, 126 Ant, 127 Luka. They run 45-60 s; the data says under 30 s
+  does best, so the first ones posted are a test.

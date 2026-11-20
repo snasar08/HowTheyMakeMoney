@@ -1,0 +1,21 @@
+{
+  "name": "htmm-toon",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "remotion": "latest",
+    "@remotion/bundler": "latest",
+    "@remotion/renderer": "latest",
+    "@remotion/cli": "latest",
+    "@remotion/three": "latest",
+    "@react-three/fiber": "latest",
+    "@react-three/postprocessing": "latest",
+    "postprocessing": "latest",
+    "three": "latest",
+    "@types/three": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "typescript": "latest",
+    "@fontsource/comic-neue": "latest"
+  }
+}

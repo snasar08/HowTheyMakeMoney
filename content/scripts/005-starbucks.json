@@ -95,14 +95,16 @@
   ],
   "loop": "So check that gift card in your drawer, and ask yourself:",
   "score": 84,
+  "format": "how",
+  "visual_style": "charts3d",
   "delivered": {
     "mode": "buffer",
     "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-005-starbucks",
     "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-005-starbucks/005-starbucks.mp4",
-    "post_at": "2026-10-29T12:00:00-04:00",
-    "buffer_post": "6ae35f13f3a8aff3f352c287",
+    "post_at": "2026-10-31T12:00:00-04:00",
+    "buffer_post": "6ae4e876cd8290b9b908e054",
     "buffer_status": "scheduled",
-    "rendered_at": "2026-10-29T14:58:28.302682+00:00",
-    "seconds": 32.67
+    "rendered_at": "2026-10-30T18:56:54.702397+00:00",
+    "seconds": 32.96
   }
 }

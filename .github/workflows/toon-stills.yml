@@ -1,0 +1,54 @@
+name: Toon stills
+
+# Push branch toon-stills: renders still frames of a toon composition (three.js + Remotion, software GL) and pushes
+# them to branch toon-stills-results-<run>. toon/stills.txt: one render per line, "<compositionId> <frames> <scale> [props.json|-] [gl]".
+on:
+  push:
+    branches: ["toon-stills"]
+
+permissions:
+  contents: write
+
+jobs:
+  stills:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: actions/cache@v4
+        with:
+          path: |
+            toon/node_modules
+            ~/.npm
+          key: toon-npm-${{ hashFiles('toon/package.json', 'toon/package-lock.json') }}
+      - run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq libnss3 libdbus-1-3 libatk1.0-0 libgbm-dev libxrandr2 libxkbcommon-dev libxfixes3 libxcomposite1 libxdamage1 libatk-bridge2.0-0 libpango-1.0-0 libcairo2 libcups2 || true
+          sudo apt-get install -y -qq libasound2t64 || sudo apt-get install -y -qq libasound2 || true
+      - working-directory: toon
+        run: |
+          [ -d node_modules/remotion ] || npm install --no-audit --no-fund 2>&1 | tail -5
+          npx remotion browser ensure 2>&1 | tail -2
+          npm ls --depth=0 2>/dev/null | tee ../versions.txt
+      - working-directory: toon
+        run: |
+          n=0
+          while read -r ID FRAMES SCALE PROPS GLV; do
+            [ -z "$ID" ] && continue
+            n=$((n+1))
+            echo "=== line $n: $ID $FRAMES $SCALE $PROPS $GLV" | tee -a ../stills.log
+            DEBUG=1 GL="${GLV:-swangle}" node scripts/stills.mjs "$ID" "out/v${n}_" "$FRAMES" "${SCALE:-0.5}" "${PROPS:--}" 2>&1 | tee -a ../stills.log
+          done < stills.txt
+      - if: always()
+        run: |
+          mkdir -p r && cp toon/out/*.jpg r/ 2>/dev/null || true
+          cp stills.log versions.txt r/ 2>/dev/null || true
+          cp toon/package-lock.json r/ 2>/dev/null || true
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout --orphan res
+          git rm -rfq --cached . && git add -f r && git commit -qm "Toon stills $(date -u +%FT%T)"
+          git push origin res:toon-stills-results-${{ github.run_number }}

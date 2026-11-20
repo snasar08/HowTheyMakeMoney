@@ -1,0 +1,363 @@
+{
+  "id": "099",
+  "slug": "famous-bad-bunny",
+  "company": "Bad Bunny",
+  "format": "famous",
+  "visual_style": "lowpoly",
+  "hook_style": "surprise",
+  "title_style": "number",
+  "theme": "bold_bright",
+  "status": "needs_fix",
+  "score": 89,
+  "title": "From Bagging Groceries to $232.5 Million",
+  "name_card": "Bad Bunny",
+  "name_sub": "singer",
+  "description": "A former grocery bagger's tour made 232.5 million dollars.\n\nSources:\n- Wikipedia: Bad Bunny: https://en.wikipedia.org/wiki/Bad_Bunny\n\nFrom Wikipedia (Bad Bunny): after high school he worked part-time as a bagger and cashier at a supermarket while creating music; his World's Hottest Tour became the highest-grossing tour by a Latin artist in history, earning US$232.5 million by October 4, 2022; he was the most-streamed artist of the year on Spotify four times between 2020 and 2025; a Moody's Analytics estimate expected his Puerto Rico residency to have a direct economic impact of $250 million; in 2019 he and Marc Anthony donated $1.6 million to rebuild Puerto Rican baseball fields. Not financial advice.\n\n#shorts #badbunny #music #famous #howtheymakemoney",
+  "tags": [
+    "badbunny",
+    "music",
+    "famous",
+    "shorts"
+  ],
+  "images": {},
+  "hud_label": "HIS TOUR",
+  "loop": "So next time you're bagging groceries, remember:",
+  "cta": "Concert or stream? Comment how you listen.",
+  "cta_question": "Concert or stream?",
+  "scenes": [
+    {
+      "narration": "A former grocery bagger's tour made 232.5 million dollars.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "stage",
+        "action": "cheer",
+        "crowd": 400,
+        "props": [
+          "mic"
+        ],
+        "stat": "$232.5 MILLION",
+        "stat_sub": "one tour, by October 2022",
+        "hero": {
+          "skin": "c9956b",
+          "hair": "short",
+          "hair_color": "1c1612",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "e85d9a",
+          "pants": "2a2a33",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "extras": [
+            "glasses"
+          ],
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "stage",
+          "beat": "walk",
+          "mood": "excited",
+          "action": "cheer",
+          "crowd": 60,
+          "things": [
+            "mic",
+            "cashstack"
+          ],
+          "card": {
+            "text": "$232.5M",
+            "kind": "screen",
+            "sub": "THE TOUR"
+          }
+        }
+      ]
+    },
+    {
+      "narration": "In Puerto Rico, he bagged groceries part-time. And made music.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "store",
+        "action": "carry",
+        "crowd": 0,
+        "props": [
+          "boxes"
+        ],
+        "stat": "PART-TIME",
+        "stat_sub": "bagger and cashier",
+        "hero": {
+          "skin": "c9956b",
+          "hair": "short",
+          "hair_color": "1c1612",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "e85d9a",
+          "pants": "2a2a33",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "extras": [
+            "glasses"
+          ],
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "stall",
+          "beat": "walk",
+          "mood": "calm",
+          "action": "work",
+          "things": [
+            "box",
+            "crate"
+          ],
+          "card": {
+            "text": "PUERTO RICO",
+            "kind": "sign",
+            "sub": "PART-TIME"
+          }
+        },
+        {
+          "place": "garage",
+          "beat": "walk",
+          "mood": "excited",
+          "things": [
+            "mic",
+            "headset"
+          ]
+        }
+      ]
+    },
+    {
+      "narration": "Then Spotify's most-streamed artist. Four times.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "studio",
+        "action": "work",
+        "crowd": 0,
+        "props": [
+          "mic"
+        ],
+        "stat": "4 TIMES",
+        "stat_sub": "Spotify's most-streamed, 2020-2025",
+        "hero": {
+          "skin": "c9956b",
+          "hair": "short",
+          "hair_color": "1c1612",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "e85d9a",
+          "pants": "2a2a33",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "extras": [
+            "glasses"
+          ],
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "street",
+          "beat": "sign",
+          "mood": "proud",
+          "things": [
+            "headset"
+          ],
+          "brand": {
+            "name": "SPOTIFY",
+            "bg": "#1db954",
+            "fg": "#000000"
+          }
+        },
+        {
+          "place": "mansion",
+          "beat": "walk",
+          "mood": "proud",
+          "things": [
+            "trophy"
+          ],
+          "card": {
+            "text": "4 TIMES",
+            "kind": "flip",
+            "sub": "MOST-STREAMED"
+          }
+        }
+      ]
+    },
+    {
+      "narration": "That 2022 tour? The biggest ever for a Latin artist.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "stage",
+        "action": "cheer",
+        "crowd": 400,
+        "props": [
+          "mic"
+        ],
+        "stat": "RECORD TOUR",
+        "stat_sub": "highest-grossing Latin tour",
+        "hud": "$232.5M",
+        "hero": {
+          "skin": "c9956b",
+          "hair": "short",
+          "hair_color": "1c1612",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "e85d9a",
+          "pants": "2a2a33",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "extras": [
+            "glasses"
+          ],
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "stage",
+          "beat": "walk",
+          "mood": "excited",
+          "action": "cheer",
+          "crowd": 60,
+          "things": [
+            "mic"
+          ],
+          "card": {
+            "text": "2022",
+            "kind": "flip",
+            "sub": "THE TOUR"
+          }
+        },
+        {
+          "place": "stage",
+          "beat": "walk",
+          "mood": "proud",
+          "crowd": 60,
+          "things": [
+            "stadium"
+          ],
+          "card": {
+            "text": "BIGGEST EVER",
+            "kind": "sign",
+            "sub": "FOR LATIN ARTIST"
+          },
+          "view": "ws"
+        }
+      ]
+    },
+    {
+      "narration": "Then a home show run, expected to bring Puerto Rico 250 million.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "cheer",
+        "crowd": 100,
+        "props": [],
+        "stat": "$250 MILLION",
+        "stat_sub": "expected impact (Moody's)",
+        "hero": {
+          "skin": "c9956b",
+          "hair": "short",
+          "hair_color": "1c1612",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "e85d9a",
+          "pants": "2a2a33",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "extras": [
+            "glasses"
+          ],
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "street",
+          "beat": "money",
+          "mood": "proud",
+          "things": [
+            "stadium",
+            "cashstack"
+          ],
+          "card": {
+            "text": "$250M",
+            "kind": "screen",
+            "sub": "FOR PUERTO RICO"
+          }
+        }
+      ]
+    },
+    {
+      "narration": "And he gave 1.6 million dollars to rebuild baseball fields.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "field",
+        "action": "cheer",
+        "crowd": 60,
+        "props": [
+          "ball"
+        ],
+        "stat": "$1.6 MILLION",
+        "stat_sub": "to rebuild ballfields, 2019",
+        "hero": {
+          "skin": "c9956b",
+          "hair": "short",
+          "hair_color": "1c1612",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "e85d9a",
+          "pants": "2a2a33",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "extras": [
+            "glasses"
+          ],
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "field",
+          "beat": "walk",
+          "mood": "proud",
+          "action": "point",
+          "things": [
+            "cashstack"
+          ],
+          "card": {
+            "text": "$1.6M",
+            "kind": "paper",
+            "sub": "BASEBALL FIELDS"
+          }
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Bad Bunny",
+      "url": "https://en.wikipedia.org/wiki/Bad_Bunny"
+    }
+  ],
+  "hero": {
+    "skin": "c9956b",
+    "hair": "short",
+    "hair_color": "1c1612",
+    "beard": "none",
+    "outfit": "tee",
+    "shirt": "e85d9a",
+    "pants": "2a2a33",
+    "socks": "f4f4f4",
+    "shoes": "f4f4f4",
+    "extras": [
+      "glasses"
+    ],
+    "height": 1.0
+  },
+  "needs_fix": [
+    "act count_cash unclear at frames 0-185: The character is holding a stack of cash but not performing a counting action.",
+    "act sing_stage unclear at frames 437-487: The character is holding a microphone but is not visibly singing."
+  ]
+}

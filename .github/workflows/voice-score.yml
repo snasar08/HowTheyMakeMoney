@@ -1,0 +1,33 @@
+name: Voice score
+
+# Push branch voice-score: downloads every clip on the voice-best and voice-emotion releases and
+# scores them (bench/voice_score.py). scores.json is added to the voice-best release.
+on:
+  push:
+    branches: ["voice-score"]
+
+permissions:
+  contents: write
+
+jobs:
+  score:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+      - run: |
+          pip install -q torch torchaudio --index-url https://download.pytorch.org/whl/cpu
+          pip install -q librosa resemblyzer soundfile
+      - run: |
+          mkdir -p clips
+          gh release download voice-best --repo "$GITHUB_REPOSITORY" -p "*.mp3" -D clips || true
+          gh release download voice-emotion --repo "$GITHUB_REPOSITORY" -p "*.mp3" -D clips || true
+          ls clips
+          python bench/voice_score.py clips | tee clips/scores.txt
+          gh release upload voice-best --repo "$GITHUB_REPOSITORY" clips/scores.json clips/scores.txt --clobber

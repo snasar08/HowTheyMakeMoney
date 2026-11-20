@@ -1,0 +1,523 @@
+{
+ "alien": {
+  "file": "space/alien.glb",
+  "pack": "kenney-space-kit",
+  "tags": [
+   "martian",
+   "ufo creature",
+   "extraterrestrial"
+  ]
+ },
+ "astronaut": {
+  "file": "space/astronautA.glb",
+  "pack": "kenney-space-kit",
+  "tags": [
+   "spaceman",
+   "spacesuit",
+   "cosmonaut"
+  ]
+ },
+ "astronaut_blue": {
+  "file": "space/astronautB.glb",
+  "pack": "kenney-space-kit",
+  "tags": [
+   "spaceman",
+   "spacesuit"
+  ]
+ },
+ "space_barrel": {
+  "file": "space/barrel.glb",
+  "pack": "kenney-space-kit",
+  "tags": [
+   "drum",
+   "fuel barrel"
+  ]
+ },
+ "space_barrels": {
+  "file": "space/barrels.glb",
+  "pack": "kenney-space-kit",
+  "tags": [
+   "drums",
+   "fuel barrels",
+   "stockpile"
+  ]
+ },
+ "bones": {
+  "file": "space/bones.glb",
+  "pack": "kenney-space-kit",
+  "tags": [
+   "skeleton",
+   "remains",
+   "fossil"
+  ]
+ },
+ "cargo_ship": {
+  "file": "space/craft_cargoA.glb",
+  "pack": "kenney-space-kit",
+  "tags": [
+   "space freighter",
+   "spaceship",
+   "shipping"
+  ]
+ },
+ "cargo_ship_big": {
+  "file": "space/craft_cargoB.glb",
+  "pack": "kenney-space-kit",
+  "tags": [
+   "space freighter",
+   "spaceship",
+   "cargo"
+  ]
+ },
+ "mining_ship": {
+  "file": "space/craft_miner.glb",
+  "pack": "kenney-space-kit",
+  "tags": [
+   "miner",
+   "space miner",
+   "asteroid mining"
+  ]
+ },
+ "racer_ship": {
+  "file": "space/craft_racer.glb",
+  "pack": "kenney-space-kit",
+  "tags": [
+   "space racer",
+   "fast ship",
+   "spaceship"
+  ]
+ },
+ "speeder": {
+  "file": "space/craft_speederA.glb",
+  "pack": "kenney-space-kit",
+  "tags": [
+   "hover bike",
+   "space speeder",
+   "spaceship"
+  ]
+ },
+ "speeder_b": {
+  "file": "space/craft_speederB.glb",
+  "pack": "kenney-space-kit",
+  "tags": [
+   "hover bike",
+   "spaceship"
+  ]
+ },
+ "speeder_c": {
+  "file": "space/craft_speederC.glb",
+  "pack": "kenney-space-kit",
+  "tags": [
+   "hover bike",
+   "spaceship"
+  ]
+ },
+ "speeder_d": {
+  "file": "space/craft_speederD.glb",
+  "pack": "kenney-space-kit",
+  "tags": [
+   "hover bike",
+   "spaceship"
+  ]
+ },
+ "crater": {
+  "file": "space/crater.glb",
+  "pack": "kenney-space-kit",
+  "tags": [
+   "moon crater",
+   "hole"
+  ]
+ },
+ "crater_large": {
+  "file": "space/craterLarge.glb",
+  "pack": "kenney-space-kit",
+  "tags": [
+   "moon crater",
+   "big hole"
+  ]
+ },
+ "space_chair": {
+  "file": "space/desk_chair.glb",
+  "pack": "kenney-space-kit",
+  "tags": [
+   "office chair",
+   "seat"
+  ]
+ },
+ "space_computer": {
+  "file": "space/desk_computer.glb",
+  "pack": "kenney-space-kit",
+  "tags": [
+   "console",
+   "workstation",
+   "mission control"
+  ]
+ },
+ "space_screen": {
+  "file": "space/desk_computerScreen.glb",
+  "pack": "kenney-space-kit",
+  "tags": [
+   "display",
+   "control screen"
+  ]
+ },
+ "space_gate": {
+  "file": "space/gate_simple.glb",
+  "pack": "kenney-space-kit",
+  "tags": [
+   "entrance",
+   "portal",
+   "doorway"
+  ]
+ },
+ "hangar": {
+  "file": "space/hangar_smallA.glb",
+  "pack": "kenney-space-kit",
+  "tags": [
+   "garage",
+   "bay",
+   "shed"
+  ]
+ },
+ "hangar_dome": {
+  "file": "space/hangar_roundGlass.glb",
+  "pack": "kenney-space-kit",
+  "tags": [
+   "glass dome",
+   "biodome",
+   "greenhouse"
+  ]
+ },
+ "fuel_tank": {
+  "file": "space/machine_barrel.glb",
+  "pack": "kenney-space-kit",
+  "tags": [
+   "tank",
+   "cylinder",
+   "reactor"
+  ]
+ },
+ "fuel_tank_large": {
+  "file": "space/machine_barrelLarge.glb",
+  "pack": "kenney-space-kit",
+  "tags": [
+   "big tank",
+   "silo"
+  ]
+ },
+ "generator": {
+  "file": "space/machine_generator.glb",
+  "pack": "kenney-space-kit",
+  "tags": [
+   "power plant",
+   "reactor",
+   "power"
+  ]
+ },
+ "generator_large": {
+  "file": "space/machine_generatorLarge.glb",
+  "pack": "kenney-space-kit",
+  "tags": [
+   "power plant",
+   "big generator"
+  ]
+ },
+ "wireless_tower": {
+  "file": "space/machine_wireless.glb",
+  "pack": "kenney-space-kit",
+  "tags": [
+   "antenna",
+   "signal",
+   "transmitter"
+  ]
+ },
+ "meteor": {
+  "file": "space/meteor.glb",
+  "pack": "kenney-space-kit",
+  "tags": [
+   "asteroid",
+   "space rock"
+  ]
+ },
+ "meteor_detailed": {
+  "file": "space/meteor_detailed.glb",
+  "pack": "kenney-space-kit",
+  "tags": [
+   "asteroid",
+   "space rock"
+  ]
+ },
+ "meteor_half": {
+  "file": "space/meteor_half.glb",
+  "pack": "kenney-space-kit",
+  "tags": [
+   "asteroid",
+   "broken rock"
+  ]
+ },
+ "monorail_front": {
+  "file": "space/monorail_trainFront.glb",
+  "pack": "kenney-space-kit",
+  "tags": [
+   "bullet train",
+   "train engine",
+   "hyperloop"
+  ]
+ },
+ "monorail_car": {
+  "file": "space/monorail_trainPassenger.glb",
+  "pack": "kenney-space-kit",
+  "tags": [
+   "train car",
+   "passenger train",
+   "hyperloop"
+  ]
+ },
+ "monorail_cargo": {
+  "file": "space/monorail_trainCargo.glb",
+  "pack": "kenney-space-kit",
+  "tags": [
+   "cargo train",
+   "freight"
+  ]
+ },
+ "pipe": {
+  "file": "space/pipe_straight.glb",
+  "pack": "kenney-space-kit",
+  "tags": [
+   "tube",
+   "pipeline"
+  ]
+ },
+ "pipe_corner": {
+  "file": "space/pipe_cornerRound.glb",
+  "pack": "kenney-space-kit",
+  "tags": [
+   "tube",
+   "pipeline",
+   "bend"
+  ]
+ },
+ "moon_rock": {
+  "file": "space/rock.glb",
+  "pack": "kenney-space-kit",
+  "tags": [
+   "stone",
+   "boulder"
+  ]
+ },
+ "moon_rock_large": {
+  "file": "space/rock_largeA.glb",
+  "pack": "kenney-space-kit",
+  "tags": [
+   "boulder",
+   "stone"
+  ]
+ },
+ "moon_rock_large_b": {
+  "file": "space/rock_largeB.glb",
+  "pack": "kenney-space-kit",
+  "tags": [
+   "boulder",
+   "stone"
+  ]
+ },
+ "moon_rocks": {
+  "file": "space/rocks_smallA.glb",
+  "pack": "kenney-space-kit",
+  "tags": [
+   "pebbles",
+   "rubble"
+  ]
+ },
+ "crystals": {
+  "file": "space/rock_crystals.glb",
+  "pack": "kenney-space-kit",
+  "tags": [
+   "gems",
+   "minerals",
+   "ore"
+  ]
+ },
+ "crystals_large": {
+  "file": "space/rock_crystalsLargeA.glb",
+  "pack": "kenney-space-kit",
+  "tags": [
+   "gems",
+   "crystal cluster",
+   "ore"
+  ]
+ },
+ "crystals_large_b": {
+  "file": "space/rock_crystalsLargeB.glb",
+  "pack": "kenney-space-kit",
+  "tags": [
+   "gems",
+   "crystal cluster",
+   "ore"
+  ]
+ },
+ "rocket_body": {
+  "file": "space/rocket_sidesA.glb",
+  "pack": "kenney-space-kit",
+  "tags": [
+   "rocket section",
+   "booster"
+  ]
+ },
+ "rocket_nose": {
+  "file": "space/rocket_topA.glb",
+  "pack": "kenney-space-kit",
+  "tags": [
+   "nose cone",
+   "rocket top"
+  ]
+ },
+ "rocket_nose_b": {
+  "file": "space/rocket_topB.glb",
+  "pack": "kenney-space-kit",
+  "tags": [
+   "nose cone",
+   "rocket top"
+  ]
+ },
+ "rocket_engine": {
+  "file": "space/rocket_baseA.glb",
+  "pack": "kenney-space-kit",
+  "tags": [
+   "thruster",
+   "rocket base"
+  ]
+ },
+ "rocket_fins": {
+  "file": "space/rocket_finsA.glb",
+  "pack": "kenney-space-kit",
+  "tags": [
+   "rocket fins",
+   "wings"
+  ]
+ },
+ "rocket_fuel": {
+  "file": "space/rocket_fuelA.glb",
+  "pack": "kenney-space-kit",
+  "tags": [
+   "fuel tank",
+   "booster"
+  ]
+ },
+ "rover": {
+  "file": "space/rover.glb",
+  "pack": "kenney-space-kit",
+  "tags": [
+   "moon buggy",
+   "mars rover",
+   "lunar rover"
+  ]
+ },
+ "satellite_dish": {
+  "file": "space/satelliteDish.glb",
+  "pack": "kenney-space-kit",
+  "tags": [
+   "radar",
+   "antenna",
+   "dish"
+  ]
+ },
+ "satellite_dish_big": {
+  "file": "space/satelliteDish_large.glb",
+  "pack": "kenney-space-kit",
+  "tags": [
+   "radar",
+   "antenna",
+   "radio telescope"
+  ]
+ },
+ "satellite_dish_detailed": {
+  "file": "space/satelliteDish_detailed.glb",
+  "pack": "kenney-space-kit",
+  "tags": [
+   "radar",
+   "antenna",
+   "dish"
+  ]
+ },
+ "space_stairs": {
+  "file": "space/stairs.glb",
+  "pack": "kenney-space-kit",
+  "tags": [
+   "steps",
+   "staircase"
+  ]
+ },
+ "space_structure": {
+  "file": "space/structure_detailed.glb",
+  "pack": "kenney-space-kit",
+  "tags": [
+   "space station",
+   "module",
+   "base"
+  ]
+ },
+ "turret": {
+  "file": "space/turret_single.glb",
+  "pack": "kenney-space-kit",
+  "tags": [
+   "cannon",
+   "gun turret",
+   "defense"
+  ]
+ },
+ "turret_double": {
+  "file": "space/turret_double.glb",
+  "pack": "kenney-space-kit",
+  "tags": [
+   "cannon",
+   "twin guns",
+   "defense"
+  ]
+ },
+ "blaster": {
+  "file": "space/weapon_gun.glb",
+  "pack": "kenney-space-kit",
+  "tags": [
+   "ray gun",
+   "laser gun",
+   "pistol"
+  ]
+ },
+ "laser_rifle": {
+  "file": "space/weapon_rifle.glb",
+  "pack": "kenney-space-kit",
+  "tags": [
+   "rifle",
+   "blaster",
+   "ray gun"
+  ]
+ },
+ "space_platform": {
+  "file": "space/platform_large.glb",
+  "pack": "kenney-space-kit",
+  "tags": [
+   "landing pad",
+   "pad",
+   "deck"
+  ]
+ },
+ "space_corridor": {
+  "file": "space/corridor_window.glb",
+  "pack": "kenney-space-kit",
+  "tags": [
+   "hallway",
+   "station tube",
+   "space station"
+  ]
+ },
+ "space_tunnel": {
+  "file": "space/corridor_detailed.glb",
+  "pack": "kenney-space-kit",
+  "tags": [
+   "hallway",
+   "station tube"
+  ]
+ }
+}

@@ -1,0 +1,371 @@
+{
+  "id": "127",
+  "slug": "plan-luka-revenge",
+  "company": "",
+  "format": "story",
+  "story_mode": "plan",
+  "visual_style": "lowpoly",
+  "hook_style": "surprise",
+  "title_style": "statement",
+  "theme": "bold_bright",
+  "status": "needs_fix",
+  "score": 94,
+  "title": "Dallas Traded You. Now Make Them Regret It.",
+  "name_card": "Luka Doncic",
+  "name_sub": "Lakers, a hypothetical plan",
+  "images": {},
+  "hud_label": "THE PLAN",
+  "description": "You're Luka Doncic. Dallas traded you. Now you want them to regret it.\n\nReal (Wikipedia): Luka Doncic led the Dallas Mavericks to the 2024 NBA Finals, was traded to the Los Angeles Lakers in the middle of the 2024-25 season in one of the most shocking trades in American sports history, and led the NBA in scoring in 2025-26 with 33.5 points per game. Everything after that is a made-up, hypothetical plan for fun: imagined steps, not news and not anything Luka Doncic has said or planned.\n\nSources:\n- Wikipedia: Luka Doncic: https://en.wikipedia.org/wiki/Luka_Don%C4%8Di%C4%87\n\n#shorts #nba #luka #howtheymakemoney",
+  "sources": [
+    {
+      "title": "Wikipedia: Luka Doncic",
+      "url": "https://en.wikipedia.org/wiki/Luka_Don%C4%8Di%C4%87"
+    }
+  ],
+  "tags": [
+    "luka doncic",
+    "lakers",
+    "nba",
+    "shorts"
+  ],
+  "loop": "So next time a team trades its star, remember:",
+  "cta": "Was trading Luka the worst trade ever? Comment yes or no.",
+  "cta_question": "Worst trade ever?",
+  "hero": {
+    "skin": "eac2a0",
+    "hair": "short",
+    "hair_color": "5a3b22",
+    "beard": "full",
+    "beard_color": "5a3b22",
+    "shirt": "fdb927",
+    "pants": "fdb927",
+    "trim": "552583",
+    "socks": "f4f4f4",
+    "shoes": "552583",
+    "height": 1.05,
+    "outfit": "kit",
+    "number": 77
+  },
+  "scenes": [
+    {
+      "narration": "You're Luka Doncic. You took Dallas to the Finals. Then they traded you, in the middle of the season.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "ball"
+        ],
+        "stat": "TRADED",
+        "stat_sub": "out of nowhere",
+        "hero": {
+          "skin": "eac2a0",
+          "hair": "short",
+          "hair_color": "5a3b22",
+          "beard": "full",
+          "beard_color": "5a3b22",
+          "shirt": "fdb927",
+          "pants": "fdb927",
+          "trim": "552583",
+          "socks": "f4f4f4",
+          "shoes": "552583",
+          "height": 1.05,
+          "outfit": "kit",
+          "number": 77
+        }
+      },
+      "toon": [
+        {
+          "place": "court",
+          "mood": "calm",
+          "view": "ms"
+        },
+        {
+          "place": "court",
+          "mood": "proud",
+          "things": [
+            "trophy"
+          ],
+          "card": {
+            "text": "FINALS",
+            "kind": "sign"
+          },
+          "view": "wide"
+        },
+        {
+          "place": "boardroom",
+          "mood": "shock",
+          "things": [
+            "letter"
+          ],
+          "view": "ms"
+        }
+      ]
+    },
+    {
+      "narration": "Now you have one mission. Make Dallas regret it. So you show up to the Lakers in the best shape of your life.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "ball"
+        ],
+        "stat": "THE MISSION",
+        "stat_sub": "make them regret it",
+        "hero": {
+          "skin": "eac2a0",
+          "hair": "short",
+          "hair_color": "5a3b22",
+          "beard": "full",
+          "beard_color": "5a3b22",
+          "shirt": "fdb927",
+          "pants": "fdb927",
+          "trim": "552583",
+          "socks": "f4f4f4",
+          "shoes": "552583",
+          "height": 1.05,
+          "outfit": "kit",
+          "number": 77
+        }
+      },
+      "toon": [
+        {
+          "place": "court",
+          "mood": "stern",
+          "view": "cu"
+        },
+        {
+          "place": "court",
+          "mood": "stern",
+          "card": {
+            "text": "DALLAS",
+            "kind": "sign"
+          },
+          "view": "wide"
+        },
+        {
+          "place": "garage",
+          "mood": "proud",
+          "card": {
+            "text": "LAKERS",
+            "kind": "sign"
+          },
+          "view": "ms"
+        }
+      ]
+    },
+    {
+      "narration": "You lead the whole league in scoring. Every game against Dallas, you go off.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "ball"
+        ],
+        "stat": "STEP 1",
+        "stat_sub": "lead the league",
+        "hero": {
+          "skin": "eac2a0",
+          "hair": "short",
+          "hair_color": "5a3b22",
+          "beard": "full",
+          "beard_color": "5a3b22",
+          "shirt": "fdb927",
+          "pants": "fdb927",
+          "trim": "552583",
+          "socks": "f4f4f4",
+          "shoes": "552583",
+          "height": 1.05,
+          "outfit": "kit",
+          "number": 77
+        }
+      },
+      "toon": [
+        {
+          "place": "court",
+          "mood": "laugh",
+          "action": "shoot",
+          "things": [
+            "trophy",
+            "basketball"
+          ],
+          "view": "wide"
+        },
+        {
+          "place": "court",
+          "mood": "excited",
+          "things": [
+            "fire"
+          ],
+          "card": {
+            "text": "DALLAS",
+            "kind": "sign"
+          },
+          "view": "low"
+        }
+      ]
+    },
+    {
+      "narration": "Then you bring a ring back to LA. The city throws you a parade.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "ball"
+        ],
+        "stat": "STEP 2",
+        "stat_sub": "a ring in LA",
+        "hero": {
+          "skin": "eac2a0",
+          "hair": "short",
+          "hair_color": "5a3b22",
+          "beard": "full",
+          "beard_color": "5a3b22",
+          "shirt": "fdb927",
+          "pants": "fdb927",
+          "trim": "552583",
+          "socks": "f4f4f4",
+          "shoes": "552583",
+          "height": 1.05,
+          "outfit": "kit",
+          "number": 77
+        }
+      },
+      "toon": [
+        {
+          "place": "mansion",
+          "mood": "excited",
+          "things": [
+            "ring",
+            "plane"
+          ],
+          "card": {
+            "text": "LA",
+            "kind": "sign"
+          },
+          "view": "ms"
+        },
+        {
+          "place": "street",
+          "mood": "laugh",
+          "crowd": 30,
+          "things": [
+            "bus",
+            "ring"
+          ],
+          "view": "wide"
+        }
+      ]
+    },
+    {
+      "narration": "Still not enough? You build a court in Slovenia, so every kid back home can become the next you.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "ball"
+        ],
+        "stat": "STEP 3",
+        "stat_sub": "the next Luka",
+        "hero": {
+          "skin": "eac2a0",
+          "hair": "short",
+          "hair_color": "5a3b22",
+          "beard": "full",
+          "beard_color": "5a3b22",
+          "shirt": "fdb927",
+          "pants": "fdb927",
+          "trim": "552583",
+          "socks": "f4f4f4",
+          "shoes": "552583",
+          "height": 1.05,
+          "outfit": "kit",
+          "number": 77
+        }
+      },
+      "toon": [
+        {
+          "place": "office",
+          "mood": "scheme",
+          "view": "cu"
+        },
+        {
+          "place": "field",
+          "mood": "proud",
+          "things": [
+            "hoop"
+          ],
+          "card": {
+            "text": "SLOVENIA",
+            "kind": "sign"
+          },
+          "view": "wide"
+        },
+        {
+          "place": "court",
+          "mood": "happy",
+          "crowd": 10,
+          "things": [
+            "basketball"
+          ],
+          "view": "wide"
+        }
+      ]
+    },
+    {
+      "narration": "One day, Dallas calls to say sorry.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "ball"
+        ],
+        "stat": "THE CALL",
+        "stat_sub": "sorry",
+        "hero": {
+          "skin": "eac2a0",
+          "hair": "short",
+          "hair_color": "5a3b22",
+          "beard": "full",
+          "beard_color": "5a3b22",
+          "shirt": "fdb927",
+          "pants": "fdb927",
+          "trim": "552583",
+          "socks": "f4f4f4",
+          "shoes": "552583",
+          "height": 1.05,
+          "outfit": "kit",
+          "number": 77
+        }
+      },
+      "toon": [
+        {
+          "place": "office",
+          "mood": "relief",
+          "things": [
+            "phone"
+          ],
+          "card": {
+            "text": "DALLAS",
+            "kind": "sign"
+          },
+          "view": "ms"
+        }
+      ]
+    }
+  ],
+  "needs_fix": [
+    "eyes hold: The video uses the exact same static shot of the character for the entire 28-second duration, which is highly repetitive and boring for the target audience."
+  ]
+}

@@ -1,0 +1,298 @@
+{
+  "format": "story",
+  "story_mode": "plan",
+  "visual_style": "lowpoly",
+  "hook_style": "surprise",
+  "title_style": "statement",
+  "theme": "bold_bright",
+  "status": "ready",
+  "images": {},
+  "hud_label": "THE AI RACE",
+  "id": "122",
+  "slug": "plan-bezos-ai-race",
+  "company": "Amazon",
+  "score": 92,
+  "title": "You're Bezos. The AI Race Started Without You.",
+  "name_card": "Jeff Bezos",
+  "name_sub": "a hypothetical master plan",
+  "description": "You're Jeff Bezos, and the AI race started without you.\n\nThe first step is real: Amazon Web Services launched Amazon Bedrock in 2023, a service that rents out AI models from several companies. Everything after that is a made-up, hypothetical master plan for fun: imagined steps, not Amazon news or anything Amazon has announced.\n\nSources:\n- Wikipedia: Amazon Bedrock: https://en.wikipedia.org/wiki/Amazon_Bedrock\n\n#shorts #amazon #ai #howtheymakemoney",
+  "tags": [
+    "amazon",
+    "jeff bezos",
+    "ai race",
+    "shorts"
+  ],
+  "loop": "So next time a box shows up at your door, remember:",
+  "cta": "Amazon or Meta in the AI race? Comment your pick.",
+  "cta_question": "Amazon or Meta?",
+  "hero": {
+    "skin": "e8bc92",
+    "hair": "bald",
+    "beard": "none",
+    "outfit": "suit",
+    "shirt": "2b3a55",
+    "pants": "2b3a55",
+    "shoes": "1a1a1a",
+    "tie": "3f6fb5",
+    "height": 1.0
+  },
+  "scenes": [
+    {
+      "narration": "You're Jeff Bezos, and the AI race started without you. Everyone's chatbot runs on somebody's computers.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": "THE AI RACE",
+        "stat_sub": "it started without you"
+      },
+      "toon": [
+        {
+          "place": "track",
+          "mood": "shock",
+          "things": [
+            "robot"
+          ],
+          "view": "ms"
+        },
+        {
+          "place": "lab",
+          "mood": "scheme",
+          "things": [
+            "laptop",
+            "gpu"
+          ],
+          "view": "ms"
+        }
+      ]
+    },
+    {
+      "narration": "So you don't build the best chatbot. You rent out everyone's. In 2023, Amazon opens Bedrock.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": "2023",
+        "stat_sub": "rent out every AI"
+      },
+      "toon": [
+        {
+          "place": "office",
+          "mood": "scheme",
+          "view": "cu"
+        },
+        {
+          "place": "stall",
+          "mood": "laugh",
+          "things": [
+            "key",
+            "cashstack"
+          ],
+          "view": "ms"
+        },
+        {
+          "place": "boardroom",
+          "mood": "proud",
+          "card": {
+            "text": "2023",
+            "kind": "flip",
+            "sub": "AMAZON BEDROCK"
+          },
+          "view": "ms"
+        }
+      ]
+    },
+    {
+      "narration": "Now every AI company pays you rent. But you want more. So you put an AI helper in every Amazon box.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": "STEP 1",
+        "stat_sub": "everyone pays rent"
+      },
+      "toon": [
+        {
+          "place": "mansion",
+          "mood": "laugh",
+          "beat": "money",
+          "things": [
+            "cashstack"
+          ],
+          "view": "ms"
+        },
+        {
+          "place": "throne",
+          "mood": "stern",
+          "view": "cu"
+        },
+        {
+          "place": "stall",
+          "mood": "excited",
+          "things": [
+            "robot",
+            "box"
+          ],
+          "view": "ms"
+        }
+      ]
+    },
+    {
+      "narration": "It knows when your snacks run out. So it orders before you ask. Now the trucks drive themselves.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": "STEP 2",
+        "stat_sub": "it orders for you"
+      },
+      "toon": [
+        {
+          "place": "diner",
+          "mood": "happy",
+          "things": [
+            "burger"
+          ],
+          "view": "ms"
+        },
+        {
+          "place": "office",
+          "mood": "laugh",
+          "things": [
+            "laptop",
+            "box"
+          ],
+          "view": "ms"
+        },
+        {
+          "place": "track",
+          "mood": "excited",
+          "beat": "drive",
+          "things": [
+            "truck"
+          ],
+          "view": "wide"
+        }
+      ]
+    },
+    {
+      "narration": "But the trucks are too slow. So robots fly your package in ten minutes.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": "STEP 3",
+        "stat_sub": "ten minute delivery"
+      },
+      "toon": [
+        {
+          "place": "street",
+          "mood": "nervous",
+          "things": [
+            "truck",
+            "arrowdown"
+          ],
+          "view": "ms"
+        },
+        {
+          "place": "field",
+          "mood": "proud",
+          "things": [
+            "drone",
+            "box"
+          ],
+          "card": {
+            "text": "10 MIN",
+            "kind": "sign"
+          },
+          "view": "wide"
+        }
+      ]
+    },
+    {
+      "narration": "Still not enough? You put the robots on your rockets. Next stop, the Moon.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": "STEP 4",
+        "stat_sub": "delivery to the Moon"
+      },
+      "toon": [
+        {
+          "place": "office",
+          "mood": "scheme",
+          "view": "cu"
+        },
+        {
+          "place": "space",
+          "mood": "excited",
+          "things": [
+            "rocket",
+            "robot"
+          ],
+          "view": "wide"
+        },
+        {
+          "place": "space",
+          "mood": "laugh",
+          "card": {
+            "text": "THE MOON",
+            "kind": "sign"
+          },
+          "view": "ws"
+        }
+      ]
+    },
+    {
+      "narration": "You never won the chatbot race. You just sold the track.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": "THE PLAN",
+        "stat_sub": "sell the track"
+      },
+      "toon": [
+        {
+          "place": "office",
+          "mood": "calm",
+          "things": [
+            "laptop",
+            "robot"
+          ],
+          "view": "ms"
+        },
+        {
+          "place": "track",
+          "mood": "proud",
+          "beat": "money",
+          "things": [
+            "cashstack"
+          ],
+          "view": "wide"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Amazon Bedrock",
+      "url": "https://en.wikipedia.org/wiki/Amazon_Bedrock"
+    }
+  ]
+}

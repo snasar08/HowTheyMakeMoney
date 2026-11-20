@@ -1,0 +1,476 @@
+{
+  "id": "120",
+  "slug": "plan-nike-every-step",
+  "company": "Nike",
+  "format": "story",
+  "story_mode": "plan",
+  "visual_style": "lowpoly",
+  "hook_style": "surprise",
+  "title_style": "statement",
+  "theme": "bold_bright",
+  "status": "needs_fix",
+  "score": 95,
+  "title": "Nike's Master Plan to Own Every Dunk",
+  "name_card": "Nike",
+  "name_sub": "a hypothetical master plan",
+  "description": "Nike wants to take over the whole shoe game. So it starts with athletes.\n\nThis is a made-up, hypothetical master plan for fun: imagined steps, not Nike news or anything Nike has announced.\n\n#shorts #nike #whatif #howtheymakemoney",
+  "tags": [
+    "nike",
+    "what if",
+    "master plan",
+    "shorts"
+  ],
+  "images": {},
+  "hud_label": "THE PLAN",
+  "loop": "So next time you see someone dunk, remember:",
+  "cta": "Would you wear dunk shoes? Comment yes or no.",
+  "cta_question": "Dunk shoes: yes or no?",
+  "hero": {
+    "skin": "d9a577",
+    "hair": "short",
+    "hair_color": "2a1d14",
+    "beard": "none",
+    "outfit": "tee",
+    "shirt": "111111",
+    "pants": "2b2f3a",
+    "shoes": "f4f4f4",
+    "chest": "NIKE",
+    "trim": "ffffff",
+    "height": 1.0
+  },
+  "scenes": [
+    {
+      "narration": "Nike wants to take over the whole shoe game. So it finds the best young athletes and signs them before anyone else.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": "THE PLAN",
+        "stat_sub": "own the shoe game",
+        "hero": {
+          "skin": "d9a577",
+          "hair": "short",
+          "hair_color": "2a1d14",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "111111",
+          "pants": "2b2f3a",
+          "shoes": "f4f4f4",
+          "chest": "NIKE",
+          "trim": "ffffff",
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "street",
+          "mood": "scheme",
+          "brand": {
+            "name": "NIKE",
+            "bg": "#111111",
+            "fg": "#ffffff"
+          },
+          "beat": "sign",
+          "view": "ms"
+        },
+        {
+          "place": "court",
+          "mood": "scheme",
+          "things": [
+            "letter"
+          ],
+          "view": "ms"
+        }
+      ]
+    },
+    {
+      "narration": "Those athletes take over. Every highlight, every poster, every game. Then Nike notices one thing. Fans go wild for dunks.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "cheer",
+        "crowd": 200,
+        "props": [
+          "ball"
+        ],
+        "stat": "STEP 1",
+        "stat_sub": "sign them first",
+        "hero": {
+          "skin": "d9a577",
+          "hair": "short",
+          "hair_color": "2a1d14",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "111111",
+          "pants": "2b2f3a",
+          "shoes": "f4f4f4",
+          "chest": "NIKE",
+          "trim": "ffffff",
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "court",
+          "mood": "proud",
+          "who": {
+            "jacket": "#2b6cb0",
+            "pants": "#c8102e",
+            "boots": "#ffffff",
+            "hat": "hair",
+            "style": "buzz",
+            "hair": "#2a1d14",
+            "skin": "#c68642",
+            "kit": "bball",
+            "num": "7",
+            "trim": "#111111"
+          },
+          "action": "cheer",
+          "view": "ms"
+        },
+        {
+          "place": "diner",
+          "mood": "proud",
+          "things": [
+            "tv",
+            "newspaper"
+          ],
+          "view": "wide"
+        },
+        {
+          "place": "office",
+          "mood": "shock",
+          "things": [
+            "lightbulb"
+          ],
+          "view": "ms"
+        },
+        {
+          "place": "court",
+          "mood": "excited",
+          "crowd": 30,
+          "action": "dunk",
+          "view": "wide"
+        }
+      ]
+    },
+    {
+      "narration": "So it builds a shoe with tiny springs and motors that launches you higher. Now regular kids are dunking on ten foot rims.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "cheer",
+        "crowd": 100,
+        "props": [
+          "ball"
+        ],
+        "stat": "STEP 2",
+        "stat_sub": "shoes that make you dunk",
+        "hero": {
+          "skin": "d9a577",
+          "hair": "short",
+          "hair_color": "2a1d14",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "111111",
+          "pants": "2b2f3a",
+          "shoes": "f4f4f4",
+          "chest": "NIKE",
+          "trim": "ffffff",
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "lab",
+          "mood": "excited",
+          "things": [
+            "springshoe"
+          ],
+          "card": {
+            "text": "AIR LIFT",
+            "kind": "screen"
+          },
+          "view": "ms"
+        },
+        {
+          "place": "court",
+          "mood": "laugh",
+          "crowd": 6,
+          "action": "dunk",
+          "things": [
+            "springshoe"
+          ],
+          "view": "wide"
+        }
+      ]
+    },
+    {
+      "narration": "But schools ban the shoes. So Nike starts its own league, where they're allowed. The league needs fans, so Nike builds a stadium in every city.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "pitch",
+        "action": "cheer",
+        "crowd": 300,
+        "props": [],
+        "stat": "STEP 3",
+        "stat_sub": "its own league",
+        "hero": {
+          "skin": "d9a577",
+          "hair": "short",
+          "hair_color": "2a1d14",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "111111",
+          "pants": "2b2f3a",
+          "shoes": "f4f4f4",
+          "chest": "NIKE",
+          "trim": "ffffff",
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "classroom",
+          "mood": "shock",
+          "things": [
+            "shoe"
+          ],
+          "view": "ms"
+        },
+        {
+          "place": "court",
+          "mood": "scheme",
+          "card": {
+            "text": "NIKE LEAGUE",
+            "kind": "sign"
+          },
+          "view": "ms"
+        },
+        {
+          "place": "street",
+          "mood": "proud",
+          "crowd": 25,
+          "things": [
+            "stadium"
+          ],
+          "view": "wide"
+        }
+      ]
+    },
+    {
+      "narration": "Fans need to get there. So Nike builds self-driving buses shaped like sneakers.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "run",
+        "crowd": 0,
+        "props": [
+          "car"
+        ],
+        "stat": "STEP 4",
+        "stat_sub": "sneaker buses",
+        "hero": {
+          "skin": "d9a577",
+          "hair": "short",
+          "hair_color": "2a1d14",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "111111",
+          "pants": "2b2f3a",
+          "shoes": "f4f4f4",
+          "chest": "NIKE",
+          "trim": "ffffff",
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "street",
+          "mood": "nervous",
+          "crowd": 30,
+          "beat": "queue",
+          "view": "wide"
+        },
+        {
+          "place": "track",
+          "mood": "laugh",
+          "beat": "drive",
+          "things": [
+            "bus",
+            "shoe"
+          ],
+          "view": "wide"
+        }
+      ]
+    },
+    {
+      "narration": "Still not enough? Nike builds a court on the Moon. The first dunk in low gravity.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "launch",
+        "action": "cheer",
+        "crowd": 0,
+        "props": [
+          "rocket"
+        ],
+        "stat": "STEP 5",
+        "stat_sub": "a court on the Moon",
+        "hero": {
+          "skin": "d9a577",
+          "hair": "short",
+          "hair_color": "2a1d14",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "111111",
+          "pants": "2b2f3a",
+          "shoes": "f4f4f4",
+          "chest": "NIKE",
+          "trim": "ffffff",
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "office",
+          "mood": "scheme",
+          "things": [
+            "lightbulb"
+          ],
+          "view": "ms"
+        },
+        {
+          "place": "space",
+          "mood": "excited",
+          "things": [
+            "hoop"
+          ],
+          "card": {
+            "text": "MOON COURT",
+            "kind": "sign"
+          },
+          "view": "wide"
+        },
+        {
+          "place": "space",
+          "mood": "laugh",
+          "action": "dunk",
+          "view": "wide"
+        }
+      ]
+    },
+    {
+      "narration": "Now every dunk on Earth, and off it, has a swoosh on it.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "cheer",
+        "crowd": 300,
+        "props": [],
+        "stat": "EVERY DUNK",
+        "stat_sub": "the whole plan",
+        "hero": {
+          "skin": "d9a577",
+          "hair": "short",
+          "hair_color": "2a1d14",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "111111",
+          "pants": "2b2f3a",
+          "shoes": "f4f4f4",
+          "chest": "NIKE",
+          "trim": "ffffff",
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "court",
+          "mood": "proud",
+          "action": "dunk",
+          "things": [
+            "shoe",
+            "globe"
+          ],
+          "view": "wide"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Nike, Inc. (who Nike is; the plan itself is imagined)",
+      "url": "https://en.wikipedia.org/wiki/Nike,_Inc."
+    }
+  ],
+  "aivideo": [
+    {
+      "url": "assets/aivideo/120/c1.mp4",
+      "lines": [
+        0,
+        16
+      ]
+    },
+    {
+      "url": "assets/aivideo/120/c2.mp4",
+      "lines": [
+        1
+      ]
+    },
+    {
+      "url": "assets/aivideo/120/c3.mp4",
+      "lines": [
+        2,
+        3
+      ]
+    },
+    {
+      "url": "assets/aivideo/120/c4.mp4",
+      "lines": [
+        4,
+        5
+      ]
+    },
+    {
+      "url": "assets/aivideo/120/c5.mp4",
+      "lines": [
+        6
+      ]
+    },
+    {
+      "url": "assets/aivideo/120/c6.mp4",
+      "lines": [
+        7,
+        8
+      ]
+    },
+    {
+      "url": "assets/aivideo/120/c7.mp4",
+      "lines": [
+        9,
+        10
+      ]
+    },
+    {
+      "url": "assets/aivideo/120/c8.mp4",
+      "lines": [
+        11,
+        12
+      ]
+    },
+    {
+      "url": "assets/aivideo/120/c9.mp4",
+      "lines": [
+        13,
+        14,
+        15
+      ]
+    }
+  ],
+  "aivideo_note": "Nov 15 2026: one premium Short (Sam). 9 Higgsfield Seedance 2.5 clips, 5 s each, 9:16, no logos/real people in prompts; 315 credits.",
+  "needs_fix": [
+    "act build_tools unclear at frames 392-490: No building tools are shown; it displays a close-up rotating view of a red sneaker on a pedestal."
+  ]
+}

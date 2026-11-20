@@ -31,6 +31,7 @@ def tokens(text: str) -> list[str]:
     """Raw word tokens; '$' stays on the number until fix_dollars() runs over the stream."""
     text = text.lower().replace("%", " percent").replace("&", " and ").replace("u.s.", "us")
     out = []
+    text = re.sub(r"(\d)\s+([.,]\d)", r"\1\2", text)  # Whisper sometimes splits "$226 ,600" / "$5 .9"
     for t in re.findall(r"\$?\d[\d.,]*|\.\d+|[a-z']+", text):
         t = t.strip(",'").rstrip(".")
         if t:

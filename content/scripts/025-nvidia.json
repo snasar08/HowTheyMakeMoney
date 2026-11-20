@@ -3,9 +3,9 @@
   "slug": "nvidia",
   "company": "Nvidia",
   "theme": "dark_neon",
-  "status": "ready",
-  "title": "Does Nvidia Even Need Gamers Anymore?",
-  "description": "Does Nvidia Even Need Gamers Anymore?.\n\nSources:\n- NVIDIA Q4 and fiscal 2026 results (press release): https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Fourth-Quarter-and-Fiscal-2026/default.aspx\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "status": "delivered",
+  "title": "Why Are Gamers Only 7% of Nvidia Now?",
+  "description": "Why are gamers worth just 7 cents of every Nvidia dollar?\n\nSources:\n- NVIDIA Q4 and fiscal 2026 results (press release): https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Fourth-Quarter-and-Fiscal-2026/default.aspx\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
     "nvidia",
     "ai chips",
@@ -36,7 +36,7 @@
   },
   "scenes": [
     {
-      "narration": "Nvidia started with gamers. So why are gamers now only about 7 percent of its sales?",
+      "narration": "Why are gamers worth just 7 cents of every Nvidia dollar?",
       "visual": {
         "type": "image",
         "image": "hook",
@@ -45,18 +45,18 @@
       }
     },
     {
-      "narration": "In fiscal 2026, Nvidia's revenue was 215.9 billion dollars, up 65 percent. In the last quarter alone, data centers made 62.3 billion.",
+      "narration": "Gaming made 16 billion dollars. Sounds huge, right?",
       "visual": {
         "type": "stat",
-        "value": 215.9,
-        "label": "Nvidia revenue, fiscal 2026",
+        "value": 16.0,
+        "label": "Nvidia gaming revenue, fiscal 2026",
         "prefix": "$",
         "suffix": "B",
         "decimals": 1
       }
     },
     {
-      "narration": "Data centers brought in 193.7 billion. Gaming brought in 16 billion.",
+      "narration": "Then look at data centers. 193.7 billion.",
       "visual": {
         "type": "bars",
         "items": [
@@ -75,19 +75,20 @@
       }
     },
     {
-      "narration": "After the cost of making its chips, Nvidia kept about 71 cents of every dollar.",
+      "narration": "But one quarter of data centers? 62.3 billion.",
       "visual": {
-        "type": "donut",
-        "value": 71,
-        "label": "Nvidia gross margin, fiscal 2026"
+        "type": "image",
+        "image": "mid",
+        "overlay": "$62.3 BILLION",
+        "overlay_sub": "in one quarter"
       }
     },
     {
-      "narration": "Gaming is small now. Data centers lead.",
+      "narration": "That's almost four years of gaming. In three months.",
       "visual": {
         "type": "text",
-        "text": "Gaming is small now.",
-        "sub": "Data centers lead."
+        "text": "Almost 4 years of gaming.",
+        "sub": "In 3 months."
       }
     }
   ],
@@ -98,5 +99,21 @@
     }
   ],
   "loop": "So next time you game on a new graphics card, ask yourself:",
-  "score": 76
+  "score": 100,
+  "format": "how",
+  "visual_style": "charts3d",
+  "title_style": "question",
+  "hook_style": "number",
+  "cta": "Gamers or data centers? Comment who Nvidia should pick.",
+  "cta_question": "Gamers or data centers?",
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-025-nvidia",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-025-nvidia/025-nvidia.mp4",
+    "post_at": "2026-11-06T12:00:00-05:00",
+    "buffer_post": "6aecaf09edcdac2ffd68e002",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-05T16:30:02.252629+00:00",
+    "seconds": 25.79
+  }
 }

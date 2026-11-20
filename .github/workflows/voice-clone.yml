@@ -1,0 +1,66 @@
+name: Voice clone test
+
+# Push branch voice-clone: A) today's Kokoro voice re-spoken by Qwen3-TTS (more human),
+# B) one designed narrator reused for every line. Added to the "voice-best" release.
+on:
+  push:
+    branches: ["voice-clone"]
+
+permissions:
+  contents: write
+
+jobs:
+  ref:
+    runs-on: ubuntu-latest
+    env:
+      KOKORO_VOICE: am_puck
+      KOKORO_SPEED: "1.2"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg espeak-ng
+      - run: pip install -r requirements.txt
+      - name: Kokoro reference clip
+        run: |
+          mkdir -p out
+          python - <<'PY'
+          import numpy as np, soundfile as sf
+          from pipeline import tts
+          t = "What if one cashier had to serve every McDonald's customer in a single day? After one second, that's 787 customers."
+          a, _ = tts.synthesize(t)
+          sf.write("out/ref.wav", a, tts.SAMPLE_RATE)
+          open("out/ref.txt", "w").write(t)
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ref
+          path: out/
+  clone:
+    needs: ref
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg sox libsox-dev
+      - uses: actions/download-artifact@v4
+        with:
+          name: ref
+          path: out
+      - run: |
+          pip install -q torch torchaudio --index-url https://download.pytorch.org/whl/cpu
+          pip install -q -U qwen-tts soundfile
+      - run: python bench/voice_best.py clone out || true
+      - name: Publish
+        if: always()
+        run: |
+          cd out && cat clone.log || true
+          for f in A-*.wav B-*.wav; do [ -f "$f" ] && ffmpeg -loglevel error -y -i "$f" -b:a 160k "${f%.wav}.mp3"; done
+          gh release upload voice-best --repo "$GITHUB_REPOSITORY" *.mp3 clone.log --clobber

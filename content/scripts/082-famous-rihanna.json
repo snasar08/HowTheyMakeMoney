@@ -1,0 +1,345 @@
+{
+  "id": "082",
+  "slug": "famous-rihanna",
+  "company": "Rihanna",
+  "format": "famous",
+  "visual_style": "lowpoly",
+  "hook_style": "number",
+  "title_style": "number",
+  "theme": "dark_neon",
+  "status": "needs_fix",
+  "score": 87,
+  "title": "$570 Million in 15 Months",
+  "name_card": "Rihanna",
+  "name_sub": "singer and founder",
+  "description": "570 million dollars. Her makeup brand's first 15 months.\n\nSources:\n- Wikipedia: Rihanna: https://en.wikipedia.org/wiki/Rihanna\n- Wikipedia: Fenty Beauty: https://en.wikipedia.org/wiki/Fenty_Beauty\n\nFrom Wikipedia (Rihanna): in 2003 she formed a trio with two classmates in Barbados and auditioned for producer Evan Rogers; fourteen number-one singles on the Billboard Hot 100; the first female musician to reach billionaire status. From Wikipedia (Fenty Beauty): launched September 8, 2017 with LVMH, known for its wide range of skin tones, its foundation in high demand from release; Forbes reported US$570 million in revenue after 15 months, in 2018, and valued the business at US$2.8 billion. Not financial advice.\n\n#shorts #rihanna #fentybeauty #howtheymakemoney",
+  "tags": [
+    "rihanna",
+    "fenty beauty",
+    "famous",
+    "shorts"
+  ],
+  "images": {},
+  "hud_label": "HER MONEY",
+  "loop": "So next time you pick a lip gloss, remember:",
+  "cta": "Music or makeup? Comment which made more.",
+  "cta_question": "Music or makeup?",
+  "scenes": [
+    {
+      "narration": "570 million dollars. Her makeup brand's first 15 months.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "stage",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "mic"
+        ],
+        "stat": "$570 MILLION",
+        "stat_sub": "in 15 months",
+        "hero": {
+          "skin": "8d5a3b",
+          "hair": "long",
+          "hair_color": "1a1210",
+          "beard": "none",
+          "outfit": "dress",
+          "shirt": "b02a5a",
+          "pants": "1a1a1a",
+          "socks": "1a1a1a",
+          "shoes": "1a1a1a",
+          "height": 0.98
+        }
+      },
+      "toon": [
+        {
+          "place": "mansion",
+          "beat": "money",
+          "mood": "shock",
+          "things": [
+            "cashstack"
+          ],
+          "card": {
+            "text": "$570M",
+            "kind": "screen",
+            "sub": "570 MILLION"
+          }
+        },
+        {
+          "place": "stall",
+          "beat": "sign",
+          "mood": "proud",
+          "things": [
+            "box"
+          ],
+          "card": {
+            "text": "15 MONTHS",
+            "kind": "sign",
+            "sub": "FIRST 15"
+          },
+          "view": "ws"
+        }
+      ]
+    },
+    {
+      "narration": "It made her the first female musician to become a billionaire.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "stage",
+        "action": "cheer",
+        "crowd": 300,
+        "props": [
+          "mic",
+          "cash"
+        ],
+        "stat": "BILLIONAIRE",
+        "stat_sub": "a first for a female musician",
+        "hero": {
+          "skin": "8d5a3b",
+          "hair": "long",
+          "hair_color": "1a1210",
+          "beard": "none",
+          "outfit": "dress",
+          "shirt": "b02a5a",
+          "pants": "1a1a1a",
+          "socks": "1a1a1a",
+          "shoes": "1a1a1a",
+          "height": 0.98
+        }
+      },
+      "toon": [
+        {
+          "place": "stage",
+          "beat": "walk",
+          "mood": "proud",
+          "action": "cheer",
+          "crowd": 30,
+          "things": [
+            "mic",
+            "goldbar"
+          ],
+          "card": {
+            "text": "BILLIONAIRE",
+            "kind": "screen",
+            "sub": "FIRST FEMALE MUSICIAN"
+          }
+        }
+      ]
+    },
+    {
+      "narration": "It started at 15. An audition in Barbados, with two classmates.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "idle",
+        "crowd": 20,
+        "props": [
+          "mic"
+        ],
+        "stat": "AGE 15",
+        "stat_sub": "Barbados, 2003",
+        "hero": {
+          "skin": "8d5a3b",
+          "hair": "long",
+          "hair_color": "1a1210",
+          "beard": "none",
+          "outfit": "dress",
+          "shirt": "b02a5a",
+          "pants": "1a1a1a",
+          "socks": "1a1a1a",
+          "shoes": "1a1a1a",
+          "height": 0.98
+        }
+      },
+      "toon": [
+        {
+          "place": "classroom",
+          "beat": "walk",
+          "mood": "calm",
+          "card": {
+            "text": "AGE 15",
+            "kind": "flip",
+            "sub": "BARBADOS"
+          }
+        },
+        {
+          "place": "stage",
+          "beat": "walk",
+          "mood": "excited",
+          "things": [
+            "mic"
+          ],
+          "crowd": 2,
+          "view": "ws",
+          "card": {
+            "text": "AUDITION",
+            "kind": "sign",
+            "sub": "2 CLASSMATES"
+          }
+        }
+      ]
+    },
+    {
+      "narration": "Then 14 number-one hits. But songs weren't the jackpot.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "stage",
+        "action": "cheer",
+        "crowd": 400,
+        "props": [
+          "mic",
+          "trophy"
+        ],
+        "stat": "14 NUMBER ONES",
+        "stat_sub": "Billboard Hot 100",
+        "hero": {
+          "skin": "8d5a3b",
+          "hair": "long",
+          "hair_color": "1a1210",
+          "beard": "none",
+          "outfit": "dress",
+          "shirt": "b02a5a",
+          "pants": "1a1a1a",
+          "socks": "1a1a1a",
+          "shoes": "1a1a1a",
+          "height": 0.98
+        }
+      },
+      "toon": [
+        {
+          "place": "stage",
+          "beat": "walk",
+          "mood": "excited",
+          "action": "cheer",
+          "crowd": 40,
+          "things": [
+            "trophy"
+          ],
+          "card": {
+            "text": "14 NO.1 HITS",
+            "kind": "screen"
+          }
+        },
+        {
+          "place": "boardroom",
+          "beat": "money",
+          "mood": "scheme",
+          "things": [
+            "coins"
+          ],
+          "view": "ms"
+        }
+      ]
+    },
+    {
+      "narration": "In 2017, she launched makeup for every skin tone.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "store",
+        "action": "push",
+        "crowd": 100,
+        "props": [
+          "boxes"
+        ],
+        "stat": "SEPT 2017",
+        "stat_sub": "makeup for every skin tone",
+        "hero": {
+          "skin": "8d5a3b",
+          "hair": "long",
+          "hair_color": "1a1210",
+          "beard": "none",
+          "outfit": "dress",
+          "shirt": "b02a5a",
+          "pants": "1a1a1a",
+          "socks": "1a1a1a",
+          "shoes": "1a1a1a",
+          "height": 0.98
+        }
+      },
+      "toon": [
+        {
+          "place": "stall",
+          "beat": "sign",
+          "mood": "proud",
+          "crowd": 20,
+          "things": [
+            "box"
+          ],
+          "card": {
+            "text": "2017",
+            "kind": "flip",
+            "sub": "EVERY SKIN TONE"
+          }
+        }
+      ]
+    },
+    {
+      "narration": "15 months later: 570 million dollars in sales.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "store",
+        "action": "cheer",
+        "crowd": 100,
+        "props": [
+          "boxes",
+          "cash"
+        ],
+        "stat": "$570 MILLION",
+        "stat_sub": "Forbes, 2018",
+        "hud": "$570M",
+        "hero": {
+          "skin": "8d5a3b",
+          "hair": "long",
+          "hair_color": "1a1210",
+          "beard": "none",
+          "outfit": "dress",
+          "shirt": "b02a5a",
+          "pants": "1a1a1a",
+          "socks": "1a1a1a",
+          "shoes": "1a1a1a",
+          "height": 0.98
+        }
+      },
+      "toon": [
+        {
+          "place": "showroom",
+          "beat": "money",
+          "mood": "shock",
+          "things": [
+            "cashstack",
+            "box"
+          ],
+          "card": {
+            "text": "$570M",
+            "kind": "screen",
+            "sub": "IN SALES"
+          }
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Rihanna",
+      "url": "https://en.wikipedia.org/wiki/Rihanna"
+    },
+    {
+      "title": "Wikipedia: Fenty Beauty",
+      "url": "https://en.wikipedia.org/wiki/Fenty_Beauty"
+    }
+  ],
+  "hero": {
+    "skin": "8d5a3b",
+    "hair": "long",
+    "hair_color": "1a1210",
+    "beard": "none",
+    "outfit": "dress",
+    "shirt": "b02a5a",
+    "pants": "1a1a1a",
+    "socks": "1a1a1a",
+    "shoes": "1a1a1a",
+    "height": 0.98
+  },
+  "needs_fix": [
+    "act sing_stage unclear at frames 439-488: The character is holding a microphone but remains completely still without any visible singing movement."
+  ]
+}

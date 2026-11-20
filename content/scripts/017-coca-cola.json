@@ -3,9 +3,9 @@
   "slug": "coca-cola",
   "company": "Coca-Cola",
   "theme": "clean_navy",
-  "status": "ready",
-  "title": "What Does Coca-Cola Actually Sell?",
-  "description": "What Does Coca-Cola Actually Sell?.\n\nSources:\n- Coca-Cola Q4 and full-year 2025 results (press release): https://investors.coca-colacompany.com/news-events/press-releases/detail/1151/coca-cola-reports-fourth-quarter-and-full-year-2025-results\n- Coca-Cola Q4 2025 earnings release (full PDF with segment tables): https://www.coca-colacompany.com/content/dam/company/us/en/media-center/Coca-Cola%20Q4%202025%20Earnings%20Release_Full%20Release_2.10.26.pdf\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "status": "draft",
+  "title": "Coke Keeps 29 Cents by Skipping the Bottles",
+  "description": "Coca-Cola keeps almost 29 cents of every dollar. Without doing the bottling.\n\nSources:\n- Coca-Cola Q4 and full-year 2025 results (press release): https://investors.coca-colacompany.com/news-events/press-releases/detail/1151/coca-cola-reports-fourth-quarter-and-full-year-2025-results\n- Coca-Cola Q4 2025 earnings release (full PDF with segment tables): https://www.coca-colacompany.com/content/dam/company/us/en/media-center/Coca-Cola%20Q4%202025%20Earnings%20Release_Full%20Release_2.10.26.pdf\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
     "coca-cola",
     "soda",
@@ -36,16 +36,24 @@
   },
   "scenes": [
     {
-      "narration": "Coca-Cola made 47.9 billion dollars in 2025. But does it even make the bottles?",
+      "narration": "Coca-Cola keeps almost 29 cents of every dollar. Without doing the bottling.",
       "visual": {
         "type": "image",
         "image": "hook",
-        "overlay": "WHO MAKES",
-        "overlay_sub": "the bottles?"
+        "overlay": "29 CENTS",
+        "overlay_sub": "kept from every dollar"
       }
     },
     {
-      "narration": "After all its costs, Coca-Cola kept 13.8 billion dollars of operating income.",
+      "narration": "Coke just sells the syrup. Partners do the bottling.",
+      "visual": {
+        "type": "text",
+        "text": "Sell the syrup.",
+        "sub": "Partners do the bottles."
+      }
+    },
+    {
+      "narration": "That kept 13.8 billion dollars as operating income.",
       "visual": {
         "type": "stat",
         "value": 13.8,
@@ -56,7 +64,7 @@
       }
     },
     {
-      "narration": "Its own bottling arm kept only about 7 cents of every dollar it sold. The whole company kept almost 29.",
+      "narration": "Its own bottling arm? It keeps only about 7 cents.",
       "visual": {
         "type": "bars",
         "items": [
@@ -75,20 +83,12 @@
       }
     },
     {
-      "narration": "Coke has been handing more bottling to partners, and that arm's revenue fell 8 percent in 2025.",
+      "narration": "So Coke keeps handing bottling to partners.",
       "visual": {
         "type": "image",
         "image": "mid",
         "overlay": "HANDING OFF",
         "overlay_sub": "bottling to partners"
-      }
-    },
-    {
-      "narration": "Sell the syrup, and let partners handle the bottles.",
-      "visual": {
-        "type": "text",
-        "text": "Sell the syrup.",
-        "sub": "Partners do the bottles."
       }
     }
   ],
@@ -102,6 +102,13 @@
       "url": "https://www.coca-colacompany.com/content/dam/company/us/en/media-center/Coca-Cola%20Q4%202025%20Earnings%20Release_Full%20Release_2.10.26.pdf"
     }
   ],
-  "loop": "So next time you crack open a Coke, ask yourself:",
-  "score": 71
+  "loop": "So next time you crack open a Coke, remember:",
+  "score": 87,
+  "format": "how",
+  "visual_style": "charts3d",
+  "title_style": "number",
+  "hook_style": "number",
+  "cta": "Coke or Pepsi? Comment which you'd pick.",
+  "cta_question": "Coke or Pepsi?",
+  "paused": "Nov 15 2026, Sam: drop the 'how' and 'careers' formats (median 21 / 18 views at 48 h vs 781 for famous)"
 }

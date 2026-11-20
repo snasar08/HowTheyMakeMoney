@@ -3,9 +3,9 @@
   "slug": "disney",
   "company": "Disney",
   "theme": "bold_bright",
-  "status": "ready",
-  "title": "Does Disney Really Make Money From Movies?",
-  "description": "Does Disney Really Make Money From Movies?.\n\nSources:\n- Disney FY2025 Form 10-K (SEC): https://www.sec.gov/Archives/edgar/data/1744489/000174448925000155/dis-20250927.htm\n- Disney FY2025 segment operating income (Market Chameleon): https://marketchameleon.com/articles/b/2025/11/13/disney-earnings-streaming-parks-growth-2025\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "status": "draft",
+  "title": "Disney's Record $10 Billion Isn't From Movies",
+  "description": "Disney earned a record 10 billion dollars. And not from movies.\n\nSources:\n- Disney FY2025 Form 10-K (SEC): https://www.sec.gov/Archives/edgar/data/1744489/000174448925000155/dis-20250927.htm\n- Disney FY2025 segment operating income (Market Chameleon): https://marketchameleon.com/articles/b/2025/11/13/disney-earnings-streaming-parks-growth-2025\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
     "disney",
     "theme parks",
@@ -35,16 +35,16 @@
   },
   "scenes": [
     {
-      "narration": "Disney makes the biggest movies on Earth. So why aren't movies its money machine?",
+      "narration": "Disney earned a record 10 billion dollars. And not from movies.",
       "visual": {
         "type": "image",
         "image": "hook",
-        "overlay": "NOT",
-        "overlay_sub": "the movies?"
+        "overlay": "$10 BILLION",
+        "overlay_sub": "not from movies"
       }
     },
     {
-      "narration": "In fiscal 2025, Disney's parks, cruises and products division made a record 10 billion dollars in operating income.",
+      "narration": "It's actually from parks, cruises and products.",
       "visual": {
         "type": "stat",
         "value": 9.99,
@@ -55,7 +55,7 @@
       }
     },
     {
-      "narration": "That's about 57 percent of all the operating income Disney's businesses brought in.",
+      "narration": "That's about 57 percent of all Disney's operating income.",
       "visual": {
         "type": "donut",
         "value": 57,
@@ -63,7 +63,7 @@
       }
     },
     {
-      "narration": "Once you're through the gates, Disney earns on tickets, hotels, food and merch, all in one trip.",
+      "narration": "Then one trip pays four ways. Tickets. Hotels. Food. Souvenirs.",
       "visual": {
         "type": "image",
         "image": "mid",
@@ -72,7 +72,7 @@
       }
     },
     {
-      "narration": "The movies create the characters. The parks turn them into money.",
+      "narration": "Movies make you love the characters. But parks are where you pay to meet them.",
       "visual": {
         "type": "text",
         "text": "Movies make the fans.",
@@ -90,6 +90,13 @@
       "url": "https://marketchameleon.com/articles/b/2025/11/13/disney-earnings-streaming-parks-growth-2025"
     }
   ],
-  "loop": "So next time you watch a Disney movie, ask yourself:",
-  "score": 68
+  "loop": "So next time you watch a Disney movie, remember:",
+  "score": 82,
+  "format": "how",
+  "visual_style": "charts3d",
+  "title_style": "number",
+  "hook_style": "number",
+  "cta": "Movies or parks? Comment which you'd pick.",
+  "cta_question": "Movies or parks?",
+  "paused": "Nov 15 2026, Sam: drop the 'how' and 'careers' formats (median 21 / 18 views at 48 h vs 781 for famous)"
 }

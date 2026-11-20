@@ -1,0 +1,326 @@
+{
+  "id": "097",
+  "slug": "famous-magic-johnson",
+  "company": "Magic Johnson",
+  "format": "famous",
+  "visual_style": "lowpoly",
+  "hook_style": "surprise",
+  "title_style": "number",
+  "theme": "bold_bright",
+  "status": "delivered",
+  "score": 88,
+  "title": "From a $25 Million Deal to $1.6 Billion",
+  "name_card": "Magic Johnson",
+  "name_sub": "basketball player and owner",
+  "description": "He won 16 championships. Ten of them as an owner.\n\nSources:\n- Wikipedia: Magic Johnson: https://en.wikipedia.org/wiki/Magic_Johnson\n\nFrom Wikipedia (Magic Johnson): he won 16 championships, one in college, five as an NBA player and ten as an owner; in 1981 he signed a 25-year, $25 million contract with the Lakers, the highest-paying contract in sports history up to that point; after his coaching stint, Jerry Buss sold him a 4% stake in the Lakers for $10 million; in 2012 his ownership group bought the Los Angeles Dodgers for $2 billion; in 2023 he invested $240 million in the group that bought the Washington Commanders; as of 2026 Forbes estimates his net worth at US$1.6 billion. Not financial advice.\n\n#shorts #magicjohnson #nba #famous #howtheymakemoney",
+  "tags": [
+    "magicjohnson",
+    "nba",
+    "famous",
+    "shorts"
+  ],
+  "images": {},
+  "hud_label": "HIS MONEY",
+  "loop": "So next time you finish a game, remember:",
+  "cta": "Player or owner? Comment which you'd be.",
+  "cta_question": "Player or owner?",
+  "scenes": [
+    {
+      "narration": "He won 16 championships. Ten of them as an owner.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "cheer",
+        "crowd": 300,
+        "props": [
+          "trophy"
+        ],
+        "stat": "16 TITLES",
+        "stat_sub": "10 of them as an owner",
+        "hero": {
+          "skin": "5c3b26",
+          "hair": "buzz",
+          "hair_color": "141210",
+          "beard": "none",
+          "outfit": "suit",
+          "shirt": "2b2f3a",
+          "pants": "2b2f3a",
+          "socks": "1a1a1a",
+          "shoes": "1a1a1a",
+          "height": 1.08
+        }
+      },
+      "toon": [
+        {
+          "place": "court",
+          "beat": "walk",
+          "mood": "proud",
+          "action": "cheer",
+          "crowd": 50,
+          "things": [
+            "trophy",
+            "medal"
+          ],
+          "card": {
+            "text": "16 TITLES",
+            "kind": "screen"
+          }
+        },
+        {
+          "place": "boardroom",
+          "beat": "walk",
+          "mood": "proud",
+          "things": [
+            "trophy"
+          ],
+          "view": "ws",
+          "card": {
+            "text": "10 AS OWNER",
+            "kind": "paper"
+          }
+        }
+      ]
+    },
+    {
+      "narration": "As a player, he signed sports' richest deal. 25 million dollars, for 25 years.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "office",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "check"
+        ],
+        "stat": "$25 MILLION",
+        "stat_sub": "25 years, signed 1981",
+        "hero": {
+          "skin": "5c3b26",
+          "hair": "buzz",
+          "hair_color": "141210",
+          "beard": "none",
+          "outfit": "suit",
+          "shirt": "2b2f3a",
+          "pants": "2b2f3a",
+          "socks": "1a1a1a",
+          "shoes": "1a1a1a",
+          "height": 1.08
+        }
+      },
+      "toon": [
+        {
+          "place": "court",
+          "beat": "sign",
+          "mood": "proud",
+          "things": [
+            "basketball"
+          ],
+          "card": {
+            "text": "RICHEST DEAL",
+            "kind": "sign",
+            "sub": "IN SPORTS"
+          }
+        },
+        {
+          "place": "boardroom",
+          "beat": "sign",
+          "mood": "happy",
+          "things": [
+            "cashstack"
+          ],
+          "card": {
+            "text": "$25M",
+            "kind": "paper",
+            "sub": "25 YEARS"
+          }
+        }
+      ]
+    },
+    {
+      "narration": "But he kept buying. First, a slice of his own team.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "work",
+        "crowd": 100,
+        "props": [
+          "cash"
+        ],
+        "stat": "HIS OWN TEAM",
+        "stat_sub": "4% of the Lakers",
+        "hero": {
+          "skin": "5c3b26",
+          "hair": "buzz",
+          "hair_color": "141210",
+          "beard": "none",
+          "outfit": "suit",
+          "shirt": "2b2f3a",
+          "pants": "2b2f3a",
+          "socks": "1a1a1a",
+          "shoes": "1a1a1a",
+          "height": 1.08
+        }
+      },
+      "toon": [
+        {
+          "place": "street",
+          "beat": "walk",
+          "mood": "scheme",
+          "things": [
+            "briefcase"
+          ],
+          "view": "ws"
+        },
+        {
+          "place": "court",
+          "beat": "walk",
+          "mood": "proud",
+          "things": [
+            "hoop"
+          ],
+          "card": {
+            "text": "A SLICE",
+            "kind": "sign",
+            "sub": "OWN TEAM"
+          }
+        }
+      ]
+    },
+    {
+      "narration": "Then the Dodgers, for 2 billion. Then a piece of an NFL team.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "field",
+        "action": "cheer",
+        "crowd": 300,
+        "props": [
+          "check"
+        ],
+        "stat": "$2 BILLION",
+        "stat_sub": "Dodgers 2012, then an NFL stake",
+        "hero": {
+          "skin": "5c3b26",
+          "hair": "buzz",
+          "hair_color": "141210",
+          "beard": "none",
+          "outfit": "suit",
+          "shirt": "2b2f3a",
+          "pants": "2b2f3a",
+          "socks": "1a1a1a",
+          "shoes": "1a1a1a",
+          "height": 1.08
+        }
+      },
+      "toon": [
+        {
+          "place": "field",
+          "beat": "money",
+          "mood": "excited",
+          "things": [
+            "cashstack"
+          ],
+          "card": {
+            "text": "$2B",
+            "kind": "screen",
+            "sub": "DODGERS"
+          }
+        },
+        {
+          "place": "pitch",
+          "beat": "walk",
+          "mood": "proud",
+          "things": [
+            "soccerball",
+            "stadium"
+          ],
+          "card": {
+            "text": "NFL",
+            "kind": "sign",
+            "sub": "A PIECE"
+          }
+        }
+      ]
+    },
+    {
+      "narration": "Now Forbes says he's worth 1.6 billion dollars.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "cheer",
+        "crowd": 60,
+        "props": [
+          "cash"
+        ],
+        "stat": "$1.6 BILLION",
+        "stat_sub": "Forbes, 2026",
+        "hud": "$1.6B",
+        "hero": {
+          "skin": "5c3b26",
+          "hair": "buzz",
+          "hair_color": "141210",
+          "beard": "none",
+          "outfit": "suit",
+          "shirt": "2b2f3a",
+          "pants": "2b2f3a",
+          "socks": "1a1a1a",
+          "shoes": "1a1a1a",
+          "height": 1.08
+        }
+      },
+      "toon": [
+        {
+          "place": "mansion",
+          "beat": "money",
+          "mood": "proud",
+          "things": [
+            "cashstack",
+            "goldbar"
+          ],
+          "card": {
+            "text": "$1.6B",
+            "kind": "screen",
+            "sub": "FORBES"
+          }
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Magic Johnson",
+      "url": "https://en.wikipedia.org/wiki/Magic_Johnson"
+    }
+  ],
+  "hero": {
+    "skin": "5c3b26",
+    "hair": "buzz",
+    "hair_color": "141210",
+    "beard": "none",
+    "outfit": "suit",
+    "shirt": "2b2f3a",
+    "pants": "2b2f3a",
+    "socks": "1a1a1a",
+    "shoes": "1a1a1a",
+    "height": 1.08
+  },
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-097-famous-magic-johnson",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-097-famous-magic-johnson/097-famous-magic-johnson.mp4",
+    "post_at": "2026-11-19T20:00:00-05:00",
+    "buffer_post": "6afdebbec71477154fa95e9f",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-18T18:17:34.958405+00:00",
+    "seconds": 25.74,
+    "eyes": {
+      "score": 7,
+      "problems": [
+        "Caption text is often cut off or incomplete (e.g., 'Comment which you'd' is grammatically broken and confusing)",
+        "The visual transition at the end loops back to the start abruptly",
+        "The 'NFL' logo appears on screen without context or explanation in the narration"
+      ],
+      "best_fix": "Refine the captioning to ensure complete, readable sentences and add a brief visual indicator or text label when the NFL team is mentioned to provide context.",
+      "model": "gemini-3.1-flash-lite",
+      "acts": null
+    }
+  }
+}

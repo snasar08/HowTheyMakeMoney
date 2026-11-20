@@ -3,9 +3,9 @@
   "slug": "marriott",
   "company": "Marriott",
   "theme": "clean_navy",
-  "status": "ready",
-  "title": "Does Marriott Even Own Its Hotels?",
-  "description": "Does Marriott Even Own Its Hotels?.\n\nSources:\n- Marriott Q4 and full-year 2025 results (press release): https://fortune.com/company-assets/729/quartr/earnings-release-8-k-909ff-2026-02-10-12-08-01.pdf\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
+  "status": "draft",
+  "title": "Marriott Earns $5.4 Billion in Hotel Fees",
+  "description": "Marriott made 5.4 billion dollars in fees. From hotels other people own.\n\nSources:\n- Marriott Q4 and full-year 2025 results (press release): https://fortune.com/company-assets/729/quartr/earnings-release-8-k-909ff-2026-02-10-12-08-01.pdf\n\nFigures are from company filings and reporting cited above. Not financial advice.\n\n#shorts #business #finance #howtheymakemoney",
   "tags": [
     "marriott",
     "hotels",
@@ -36,16 +36,36 @@
   },
   "scenes": [
     {
-      "narration": "Marriott collected 5.4 billion dollars in fees. So does it even own its hotels?",
+      "narration": "Marriott made 5.4 billion dollars in fees. From hotels other people own.",
       "visual": {
         "type": "image",
         "image": "hook",
-        "overlay": "DOES IT",
-        "overlay_sub": "own the hotels?"
+        "overlay": "$5.4 BILLION",
+        "overlay_sub": "from hotels it doesn't own"
       }
     },
     {
-      "narration": "Hotel owners pay Marriott for the name, for running the hotel, and for bonuses when profits are high.",
+      "narration": "Its total revenue looks huge. 26.2 billion.",
+      "visual": {
+        "type": "stat",
+        "value": 26.2,
+        "label": "Marriott total revenue, 2025",
+        "prefix": "$",
+        "suffix": "B",
+        "decimals": 1
+      }
+    },
+    {
+      "narration": "But 19.2 billion of that is just owners paying back costs.",
+      "visual": {
+        "type": "image",
+        "image": "mid",
+        "overlay": "PAID BACK",
+        "overlay_sub": "not profit"
+      }
+    },
+    {
+      "narration": "The real money? Just fees. For its name. For running the hotel. And bonuses when profits rise.",
       "visual": {
         "type": "bars",
         "items": [
@@ -68,30 +88,11 @@
       }
     },
     {
-      "narration": "Marriott's total revenue was 26.2 billion dollars, but 19.2 billion of that is cost reimbursements from hotel owners.",
-      "visual": {
-        "type": "stat",
-        "value": 26.2,
-        "label": "Marriott total revenue, 2025",
-        "prefix": "$",
-        "suffix": "B",
-        "decimals": 1
-      }
-    },
-    {
-      "narration": "Fees were about 21 percent of revenue, and net income was 2.6 billion dollars.",
-      "visual": {
-        "type": "donut",
-        "value": 21,
-        "label": "Fees as share of revenue"
-      }
-    },
-    {
-      "narration": "Other people's hotels. Marriott's fees.",
+      "narration": "Other people's hotels. But Marriott gets the fees.",
       "visual": {
         "type": "text",
         "text": "Other people's hotels.",
-        "sub": "Marriott's fees."
+        "sub": "Marriott gets the fees."
       }
     }
   ],
@@ -101,6 +102,13 @@
       "url": "https://fortune.com/company-assets/729/quartr/earnings-release-8-k-909ff-2026-02-10-12-08-01.pdf"
     }
   ],
-  "loop": "So next time you check into a hotel, ask yourself:",
-  "score": 50
+  "loop": "So next time you check into a hotel, remember:",
+  "score": 84,
+  "format": "how",
+  "visual_style": "charts3d",
+  "title_style": "statement",
+  "hook_style": "number",
+  "cta": "Pool or free breakfast? Comment your must-have.",
+  "cta_question": "Pool or free breakfast?",
+  "paused": "Nov 15 2026, Sam: drop the 'how' and 'careers' formats (median 21 / 18 views at 48 h vs 781 for famous)"
 }

@@ -1,0 +1,232 @@
+{
+  "id": "057",
+  "slug": "whatif-nba-cash",
+  "company": "NBA",
+  "format": "whatif",
+  "visual_style": "lowpoly",
+  "hook_style": "number",
+  "title_style": "whatif",
+  "theme": "bold_bright",
+  "status": "ready",
+  "score": 88,
+  "title": "What If an NBA Team Paid Players in $1 Bills?",
+  "description": "One NBA team's salary cap: about 154.6 million dollars. Now pay it in ones.\n\nSources:\n- Wikipedia: NBA salary cap: https://en.wikipedia.org/wiki/NBA_salary_cap\n- Wikipedia: United States one-dollar bill: https://en.wikipedia.org/wiki/United_States_one-dollar_bill\n\n2025-26 NBA salary cap: $154.647 million (NBA.com, cited on Wikipedia). A $1 bill weighs about 1 gram and is 0.0043 inches thick. Our math: 154.647 million grams = about 155 tonnes; counting one bill a second = about 4.9 years; 30 teams x $154.647 million = about 4.64 billion bills, a stack about 507 km high. Not financial advice.\n\n#shorts #nba #whatif #howtheymakemoney",
+  "tags": [
+    "nba",
+    "what if",
+    "salary cap",
+    "basketball",
+    "shorts"
+  ],
+  "images": {},
+  "hud_label": "DOLLAR BILLS",
+  "loop": "So next time you see a buzzer beater, remember:",
+  "cta": "The cash or the trophy? Comment your pick.",
+  "cta_question": "The cash or the trophy?",
+  "scenes": [
+    {
+      "narration": "One NBA team's salary cap: about 154.6 million dollars. Now pay it in ones.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "ball",
+          "cash"
+        ],
+        "stat": "$154.6 MILLION",
+        "stat_sub": "the whole payroll?"
+      },
+      "toon": [
+        {
+          "place": "court",
+          "things": [
+            "basketball",
+            "cashstack"
+          ],
+          "card": {
+            "text": "$154.6M",
+            "kind": "screen",
+            "sub": "SALARY CAP"
+          },
+          "mood": "shock"
+        },
+        {
+          "place": "office",
+          "things": [
+            "cashstack",
+            "cash"
+          ],
+          "beat": "money",
+          "mood": "scheme"
+        }
+      ]
+    },
+    {
+      "narration": "Just 1 dollar bills. One gram each.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "run",
+        "crowd": 0,
+        "props": [
+          "ball"
+        ],
+        "stat": "$1 BILLS",
+        "stat_sub": "salary cap, 2025-26",
+        "hud": "154.6M BILLS"
+      },
+      "toon": [
+        {
+          "place": "stall",
+          "things": [
+            "cash"
+          ],
+          "card": {
+            "text": "$1",
+            "kind": "paper"
+          },
+          "mood": "calm"
+        },
+        {
+          "place": "lab",
+          "things": [
+            "cash"
+          ],
+          "card": {
+            "text": "1 GRAM",
+            "kind": "white",
+            "sub": "EACH BILL"
+          },
+          "mood": "calm"
+        }
+      ]
+    },
+    {
+      "narration": "Then weigh it. About 155 tonnes of cash.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "warehouse",
+        "action": "carry",
+        "crowd": 0,
+        "props": [
+          "cash",
+          "truck"
+        ],
+        "stat": "155 TONNES",
+        "stat_sub": "of $1 bills"
+      },
+      "toon": [
+        {
+          "place": "showroom",
+          "things": [
+            "cashstack",
+            "crate"
+          ],
+          "mood": "stern"
+        },
+        {
+          "place": "street",
+          "things": [
+            "truck",
+            "cashstack"
+          ],
+          "card": {
+            "text": "155 TONNES",
+            "kind": "sign"
+          },
+          "mood": "shock"
+        }
+      ]
+    },
+    {
+      "narration": "Just counting it, one bill a second? Almost five years.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "office",
+        "action": "work",
+        "crowd": 0,
+        "props": [
+          "cash"
+        ],
+        "stat": "~5 YEARS",
+        "stat_sub": "to count one team's cap"
+      },
+      "toon": [
+        {
+          "place": "mansion",
+          "things": [
+            "cashstack"
+          ],
+          "mood": "nervous"
+        },
+        {
+          "place": "garage",
+          "things": [
+            "clock"
+          ],
+          "card": {
+            "text": "5 YEARS",
+            "kind": "flip"
+          },
+          "mood": "dazed"
+        }
+      ]
+    },
+    {
+      "narration": "Then stack all 30 teams. About 500 kilometers high.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "cheer",
+        "crowd": 400,
+        "props": [
+          "cash",
+          "trophy"
+        ],
+        "stat": "500 KM",
+        "stat_sub": "stack, all 30 teams",
+        "hud": "4.6B BILLS"
+      },
+      "toon": [
+        {
+          "place": "field",
+          "things": [
+            "cashstack",
+            "crate"
+          ],
+          "card": {
+            "text": "30 TEAMS",
+            "kind": "sign"
+          },
+          "mood": "scheme",
+          "crowd": 30
+        },
+        {
+          "place": "street",
+          "things": [
+            "cashstack",
+            "satellite"
+          ],
+          "card": {
+            "text": "500 KM HIGH",
+            "kind": "sign"
+          },
+          "mood": "shock",
+          "view": "low"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: NBA salary cap",
+      "url": "https://en.wikipedia.org/wiki/NBA_salary_cap"
+    },
+    {
+      "title": "Wikipedia: United States one-dollar bill",
+      "url": "https://en.wikipedia.org/wiki/United_States_one-dollar_bill"
+    }
+  ]
+}

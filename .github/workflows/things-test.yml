@@ -1,0 +1,59 @@
+name: Things test
+
+# Push to a branch things-test/<name>: type-checks the afterhour files, renders AhShort stills of the things listed in
+# toon/things_test.json (software GL, one frame per shot) and commits the JPGs to the SAME branch under
+# things-test-results/ so a routine can `git pull` and look at them. main and nightly.yml are not touched.
+on:
+  push:
+    branches: ["things-test/**"]
+
+permissions:
+  contents: write
+
+jobs:
+  things:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: actions/cache@v4
+        with:
+          path: |
+            toon/node_modules
+            ~/.npm
+          key: toon-npm-${{ hashFiles('toon/package.json', 'toon/package-lock.json') }}
+      - run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq libnss3 libdbus-1-3 libatk1.0-0 libgbm-dev libxrandr2 libxkbcommon-dev libxfixes3 libxcomposite1 libxdamage1 libatk-bridge2.0-0 libpango-1.0-0 libcairo2 libcups2 || true
+          sudo apt-get install -y -qq libasound2t64 || sudo apt-get install -y -qq libasound2 || true
+      - working-directory: toon
+        run: |
+          [ -d node_modules/remotion ] || npm install --no-audit --no-fund 2>&1 | tail -5
+          npx remotion browser ensure 2>&1 | tail -2
+      - name: TypeScript check (a broken things3d.ts fails here)
+        working-directory: toon
+        run: node node_modules/typescript/bin/tsc -p tsconfig.things.json
+      - name: Render stills
+        working-directory: toon
+        run: |
+          FR=$(node scripts/things_frames.mjs things_test.json)
+          echo "frames: $FR"
+          rm -rf out/things && mkdir -p out/things
+          DEBUG=1 GL=swangle node scripts/stills.mjs AhShort out/things/t_ "$FR" 0.5 things_test.json 2>&1 | tee ../things.log
+          ! grep -q "^FAILED" ../things.log
+          n=$(ls out/things/*.jpg | wc -l); echo "$n images"; [ "$n" -ge 1 ]
+      - name: Commit results to this branch
+        if: always()
+        run: |
+          rm -rf things-test-results && mkdir -p things-test-results
+          cp toon/out/things/*.jpg things-test-results/ 2>/dev/null || true
+          cp things.log things-test-results/ 2>/dev/null || true
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -f things-test-results
+          git commit -qm "Things test results run ${{ github.run_number }}" || exit 0
+          git pull --rebase -q origin "${GITHUB_REF_NAME}" || true
+          git push origin "HEAD:${GITHUB_REF_NAME}"
