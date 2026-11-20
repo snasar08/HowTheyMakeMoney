@@ -10,6 +10,18 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from pipeline import films as F  # noqa: E402
 
 UTC = dt.timezone.utc
+_unpause = None
+
+
+def setUpModule():  # the real repo may be paused (content/films2d/PAUSED); the logic tests run unpaused
+    global _unpause
+    from unittest import mock
+    _unpause = mock.patch.object(F, "paused", return_value=False)
+    _unpause.start()
+
+
+def tearDownModule():
+    _unpause.stop()
 
 
 def T(s):
@@ -146,6 +158,15 @@ class FilmDayShorts(unittest.TestCase):
         self.assertEqual(days.count(self.D(2026, 11, 20)), 2)
         self.assertEqual(days.count(self.D(2026, 11, 21)), 1)
         self.assertEqual([t.hour for t in got if t.date() == self.D(2026, 11, 21)], [12])
+
+
+class Paused(unittest.TestCase):
+    def test_paused_never_goes_and_no_film_days(self):
+        from unittest import mock
+        with mock.patch.object(F, "paused", return_value=True):
+            self.assertFalse(F.decide([item(101, "ready")], T("2026-11-20T13:00:00"))["go"])
+            self.assertFalse(F.decide([item(101, "ready")], T("2026-11-20T13:00:00"), force=True)["go"])
+            self.assertEqual(F.film_days(T("2026-11-20T13:00:00")), set())
 
 
 if __name__ == "__main__":

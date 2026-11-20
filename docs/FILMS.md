@@ -12,6 +12,10 @@ Guide for writing films: [FILM_GUIDE.md](FILM_GUIDE.md).
 - Subfolders (e.g. `content/films2d/test/`) are never queued. `test/tiny.json` is the 5 s pipeline test.
 - Film format: see the docstring of `pipeline/film2d.py` and the header of `Film2D.tsx`. Check with `python -m pipeline.film2d table FILE` and `python -m pipeline.film2d audio FILE out.wav`.
 
+## Paused (Sam, Nov 20)
+While `content/films2d/PAUSED` exists nothing posts, no day is a film day (Shorts stay 2 a day) and the Saturday routine writes no films.
+Sam wants films back once the YouTube API audit is approved: delete PAUSED and set FILM_UPLOAD=youtube (film + thumbnail upload by themselves).
+
 ## Cadence
 `.github/workflows/films.yml` runs daily 13:00 UTC. Step "due?" (`python -m pipeline.films due`): due when no film was ever delivered, or the
 last `posted_at` is >= 3 New York calendar days before today. Then it renders the next ready film on 20 machines, stitches the MP4, takes a

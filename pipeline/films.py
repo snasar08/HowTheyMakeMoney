@@ -31,6 +31,13 @@ PUBLISH_HOUR = 17          # 17:00 New York time
 RUN_LATE_UTC = 16          # films.yml runs 13:00 UTC; after 16:00 UTC the next run is tomorrow
 INTERNAL_MIN = 900         # ids 900+ never post (internal / reference films)
 TEST_FILM = "content/films2d/test/tiny.json"
+# Sam, Nov 20: films paused until the YouTube API audit is approved (no hand uploads / hand thumbnails).
+# While this file exists: no film is due, no film day (Shorts stay 2 a day), the Saturday routine writes no films.
+PAUSE_FILE = FILMS / "PAUSED"
+
+
+def paused() -> bool:
+    return PAUSE_FILE.exists()
 
 
 def film_id(path: str | Path) -> int | None:
@@ -87,7 +94,10 @@ def film_days(now: dt.datetime, items=None, ahead: int = 3) -> set[dt.date]:
     """New York dates that have (or will have) a long-form film: days a film was delivered, plus the next
     due dates for the ready films (first one today or 3 days after the last, then every 3 days).
     Shorts use this (Sam, Nov 19): 2 Shorts a day, but only 1 Short on a film day."""
-    items = queue() if items is None else items
+    if items is None:
+        if paused():
+            return set()
+        items = queue()
     out = set()
     for n, p, f in items:
         if f.get("status") == "delivered" and f.get("posted_at"):
@@ -136,6 +146,8 @@ def decide(items, now: dt.datetime, dry: bool = False, file: str = "", force: bo
         if n is not None and n >= INTERNAL_MIN:
             return {"go": False, "why": f"{p.name}: ids {INTERNAL_MIN}+ are internal and never render here"}
         return _go(p, now, "explicit file")
+    if paused() and not dry:
+        return {"go": False, "why": f"films paused ({_rel(PAUSE_FILE)})"}
     if dry and not force:
         pick = next_ready(items)
         if pick:
