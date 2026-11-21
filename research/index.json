@@ -1,0 +1,20 @@
+{
+  "https://fsdstaff.substack.com/p/fsd-morning-brief-saturday-november-5ab": {
+    "file": "pages/3b871dcf7f6f.txt",
+    "fetched_at": "2026-11-21T18:51:49.148180+00:00",
+    "ok": true,
+    "chars": 25005,
+    "status": 200,
+    "final_url": "https://fsdstaff.substack.com/p/fsd-morning-brief-saturday-november-5ab",
+    "content_type": "text/html; charset=utf-8"
+  },
+  "https://frontofficesports.com/article/cale-makar-record-contract-marks-fourth-landmark-nhl-deal-11-months/": {
+    "file": "pages/03ee85672474.txt",
+    "fetched_at": "2026-11-21T18:51:49.534623+00:00",
+    "ok": true,
+    "chars": 7079,
+    "status": 200,
+    "final_url": "https://frontofficesports.com/article/cale-makar-record-contract-marks-fourth-landmark-nhl-deal-11-months/",
+    "content_type": "text/html; charset=UTF-8"
+  }
+}
