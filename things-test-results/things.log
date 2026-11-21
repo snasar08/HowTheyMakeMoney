@@ -1,9 +1,9 @@
-bundle 17.3s
+bundle 17.0s
 [40m Tab 0, node_modules/three/build/three.core.js:2014 [49m [33mTHREE.Clock: This module has been deprecated. Please use THREE.Timer instead.[39m
-still 20 11.2s
+still 20 10.7s
 [40m Tab 0, node_modules/three/build/three.core.js:2014 [49m [33mTHREE.Clock: This module has been deprecated. Please use THREE.Timer instead.[39m
-still 60 13.6s
+still 60 10.4s
 [40m Tab 0, node_modules/three/build/three.core.js:2014 [49m [33mTHREE.Clock: This module has been deprecated. Please use THREE.Timer instead.[39m
-still 100 11.1s
+still 100 10.5s
 [40m Tab 0, node_modules/three/build/three.core.js:2014 [49m [33mTHREE.Clock: This module has been deprecated. Please use THREE.Timer instead.[39m
-still 140 9.8s
+still 140 10.3s
