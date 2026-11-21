@@ -495,7 +495,7 @@ const B: Record<ThingName, Builder> = {
     const N = 46, ga = PI * (3 - Math.sqrt(5));
     for (let i = 0; i < N; i++) { const yy = 1 - (2 * (i + 0.5)) / N, rr = Math.sqrt(1 - yy * yy), th = i * ga;
       const x = Math.cos(th) * rr, z = Math.sin(th) * rr; if (z < -0.35) continue;
-      sp(b, 0.0062, "#dfe4ee", x * R * 0.995, yy * R * 0.995, z * R * 0.995, [1, 1, 0.5], 6).userData.noline = 1; }
+      put(b, new THREE.SphereGeometry(0.0062, 8, 6), "#e3e7f0", x * R * 0.995, yy * R * 0.995, z * R * 0.995, [0, 0, 0], [1, 1, 0.5], false); }
     return { g, tick: (t) => { b.position.y = y0 + Math.sin(t * 2.2) * 0.004; b.rotation.y = Math.sin(t * 1.3) * 0.25; } };
   },
   // Nov 21: a driver standing upright: steel shaft, black grip, chunky head
