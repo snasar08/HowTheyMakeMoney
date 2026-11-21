@@ -1,0 +1,220 @@
+{
+  "id": "146",
+  "slug": "plan-nintendo-race",
+  "company": "Nintendo",
+  "format": "story",
+  "story_mode": "plan",
+  "visual_style": "lowpoly",
+  "hook_style": "number",
+  "title_style": "number",
+  "theme": "bold_bright",
+  "status": "ready",
+  "score": 92,
+  "title": "Switch 2 Sold 26.35 Million. Can It Catch 157?",
+  "name_card": "You are Nintendo",
+  "name_sub": "a made-up plan",
+  "description": "You're Nintendo, and you want Switch 2 to catch the original Switch. Step one is real: Nintendo's sales data, as of September 30, 2026, shows 26.35 million Switch 2 consoles sold, 16.48 million copies of Mario Kart World, and 157.20 million original Switch consoles. Every step after that is a made-up plan for fun, not company news.\n\nSources:\n- Nintendo IR: Dedicated Video Game Sales Units (as of September 30, 2026): https://www.nintendo.co.jp/ir/en/finance/hard_soft/index.html\n- Nintendo IR: First-party million-seller software: https://www.nintendo.co.jp/ir/en/finance/software/index.html\n\nNot financial advice.\n\n#shorts #nintendo #switch2 #mariokart #howtheymakemoney",
+  "tags": [
+    "nintendo",
+    "switch 2",
+    "mario kart",
+    "story",
+    "shorts"
+  ],
+  "images": {},
+  "loop": "So next time you start a race, remember:",
+  "cta": "Switch or PlayStation? Comment your pick.",
+  "cta_question": "Switch or PlayStation?",
+  "hero": {
+    "skin": "d9a577",
+    "hair": "short",
+    "hair_color": "2a1d14",
+    "beard": "none",
+    "outfit": "tee",
+    "shirt": "e60012",
+    "pants": "2b2f3a",
+    "shoes": "f4f4f4",
+    "chest": "NINTENDO",
+    "trim": "ffffff",
+    "height": 1.0,
+    "extras": [
+      "cap"
+    ]
+  },
+  "scenes": [
+    {
+      "narration": "You're Nintendo, and Switch 2 sold 26.35 million consoles. Mario Kart World alone sold 16.48 million copies.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "stage",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "stage",
+          "mood": "proud",
+          "brand": {
+            "name": "NINTENDO",
+            "bg": "#e60012",
+            "fg": "#ffffff"
+          },
+          "things": [
+            "controller"
+          ],
+          "card": {
+            "text": "26.35 MILLION",
+            "kind": "screen",
+            "sub": "SWITCH 2, SEPT 2026"
+          },
+          "view": "ms"
+        },
+        {
+          "place": "track",
+          "mood": "excited",
+          "things": [
+            "car",
+            "controller"
+          ],
+          "card": {
+            "text": "16.48 MILLION",
+            "kind": "screen",
+            "sub": "MARIO KART WORLD"
+          },
+          "view": "wide"
+        }
+      ]
+    },
+    {
+      "narration": "Now you want to catch your old Switch, at 157 million.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "office",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "office",
+          "mood": "scheme",
+          "things": [
+            "controller",
+            "chart"
+          ],
+          "card": {
+            "text": "157 MILLION",
+            "kind": "screen",
+            "sub": "THE OLD SWITCH"
+          },
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "Step one, you build a Mario Kart track around the planet. Still not enough? So every kid in the world joins the race.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "track",
+        "action": "idle",
+        "crowd": 300,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "track",
+          "mood": "excited",
+          "things": [
+            "globe",
+            "car"
+          ],
+          "view": "wide"
+        },
+        {
+          "place": "track",
+          "mood": "dazed",
+          "things": [
+            "lightbulb"
+          ],
+          "view": "face"
+        },
+        {
+          "place": "track",
+          "mood": "laugh",
+          "crowd": 300,
+          "things": [
+            "controller"
+          ],
+          "view": "wide"
+        }
+      ]
+    },
+    {
+      "narration": "Suddenly the sales counter climbs so fast it breaks. But your old Switch is still about 130 million consoles ahead.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "street",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "office",
+          "mood": "shock",
+          "things": [
+            "chart"
+          ],
+          "view": "face"
+        },
+        {
+          "place": "track",
+          "mood": "shock",
+          "things": [
+            "car"
+          ],
+          "view": "face",
+          "card": {
+            "text": "130 MILLION",
+            "kind": "sign",
+            "sub": "STILL AHEAD"
+          }
+        }
+      ]
+    },
+    {
+      "narration": "In this race, your hardest rival is you.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "throne",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "throne",
+          "mood": "proud",
+          "things": [
+            "trophy",
+            "crown"
+          ],
+          "view": "face"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Nintendo IR: Dedicated Video Game Sales Units (as of Sept 30, 2026)",
+      "url": "https://www.nintendo.co.jp/ir/en/finance/hard_soft/index.html"
+    },
+    {
+      "title": "Nintendo IR: Million-seller software",
+      "url": "https://www.nintendo.co.jp/ir/en/finance/software/index.html"
+    }
+  ],
+  "length_test": "short",
+  "look": "afterhour"
+}

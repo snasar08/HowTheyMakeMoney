@@ -4,6 +4,7 @@ Objects and sets a script needs that the 3D library does not have yet (content/R
 One line each: `- [ ] set|object NAME: what it must show (script ids that need it)`. Routines build these FIRST; tick and move to Done when merged.
 
 ## To build
+- [ ] object console (game console box: PlayStation-grey / Switch-style tablet with two coloured side controllers, plain, no logos); words console/consoles/PlayStation/Switch pick it. Until then "console" draws nothing (stop-word, was a space computer) (143, 146)
 - [ ] set golf: golf course (fairway, green with flag + hole, bunker, tee box, golf cart); words golf/Masters/putt/fairway pick it (135)
 - [ ] object golfball + golfclub (putter/driver): putt/swing lines draw a basketball today (135)
 - [ ] act review golf_swing, race_car, tennis_serve, qb_throw, touchdown: built but NOT in acts/approved.json, so they never fire; test each on things-test and approve those that pass the SPEC bar (135, 136, 137, 138)

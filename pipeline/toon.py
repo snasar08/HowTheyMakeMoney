@@ -346,7 +346,7 @@ _AH_MODELS: dict | None = None
 _AH_STOP = {"sign", "signs", "signed", "signing", "deal", "deals", "the", "a", "an", "and", "or", "of", "to", "in", "on", "it", "is", "was", "he", "she", "they", "his", "her", "this", "that", "with", "for", "at", "by", "as", "be", "so", "but",
            # Nov 18 (overnight scene pass): words that mean something else in a story line ("fans" -> ceiling fan, "can" -> tin can,
            # "cold" -> fridge, "Mickey Mouse" -> computer mouse, "defense", "steps", "stack", "power" ...), and no weapons ever
-           "woods", "can", "cold", "fan", "fans", "trash", "waste", "mouse", "bar", "base", "bay", "bend", "catch", "chest", "chop", "counter",
+           "woods", "console", "consoles", "can", "cold", "fan", "fans", "trash", "waste", "mouse", "bar", "base", "bay", "bend", "catch", "chest", "chop", "counter",
            "deck", "direction", "display", "fair", "frame", "hole", "hooks", "light", "loot", "pad", "peel", "pot", "power", "present",
            "ride", "round", "seat", "shed", "signal", "stack", "steps", "storage", "tank", "tube", "wall", "wheel", "wings", "trading",
            "finance", "business", "corporate", "commercial", "retail", "healthy", "compact", "emergency", "defense", "entrance",
