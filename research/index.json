@@ -1,0 +1,29 @@
+{
+  "https://en.wikipedia.org/wiki/Ed_Sheeran": {
+    "file": "pages/4cb483bed02e.txt",
+    "fetched_at": "2026-11-21T21:10:37.765423+00:00",
+    "ok": true,
+    "chars": 166963,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Ed_Sheeran",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/%C3%B7_Tour": {
+    "file": "pages/ccbd39219db0.txt",
+    "fetched_at": "2026-11-21T21:10:38.296340+00:00",
+    "ok": true,
+    "chars": 40790,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/%C3%B7_Tour",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://news.pollstar.com/2019/08/27/ed-sheeran-concludes-divide-tour-sets-all-time-touring-record-at-775-6m/": {
+    "file": "pages/9ebd5ef53c35.txt",
+    "fetched_at": "2026-11-21T21:10:38.816120+00:00",
+    "ok": true,
+    "chars": 8789,
+    "status": 200,
+    "final_url": "https://news.pollstar.com/2019/08/27/ed-sheeran-concludes-divide-tour-sets-all-time-touring-record-at-775-6m/",
+    "content_type": "text/html; charset=UTF-8"
+  }
+}
