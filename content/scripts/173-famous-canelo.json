@@ -1,0 +1,196 @@
+{
+  "id": "173",
+  "slug": "famous-canelo",
+  "company": "Canelo Álvarez",
+  "format": "famous",
+  "visual_style": "lowpoly",
+  "hook_style": "number",
+  "title_style": "number",
+  "theme": "bold_bright",
+  "status": "ready",
+  "score": 90,
+  "title": "From Selling Ice Pops to a $365 Million Deal",
+  "name_card": "Canelo Álvarez",
+  "name_sub": "boxing champion",
+  "description": "Canelo Álvarez signed a deal worth at least 365 million dollars with DAZN in October 2018.\n\nSources:\n- Wikipedia: Canelo Álvarez: https://en.wikipedia.org/wiki/Canelo_%C3%81lvarez\n- CNBC: Boxing champion Canelo signs the richest deal in sports history with new $365 million contract: https://www.cnbc.com/2018/10/18/boxing-champion-canelo-signs-the-richest-deal-in-sports-history-with-new-365-million-contract.html\n- CBS Sports: Canelo Alvarez signs most lucrative contract in sports history with DAZN: https://www.cbssports.com/boxing/news/canelo-alvarez-signs-most-lucrative-contract-in-sports-history-with-dazn-to-stream-fights\n- MedioTiempo: Antes de los guantes, esto hacia Canelo Alvarez: https://www.mediotiempo.com/mas-deportes/box/antes-de-los-guantes-esto-hacia-canelo-alvarez-antes-de-convertirse-en-boxeador\n- Azteca Jalisco: La ruta de camiones donde el Canelo vendia paletas: https://www.aztecajalisco.com/deportes/esta-era-la-ruta-camiones-donde-el-canelo-alvarez-vendia-paletas\n\nFrom the cited pages: DAZN signed Alvarez to a five-year, 11-fight deal worth a minimum of $365 million on October 17, 2018 (CNBC, CBS, Wikipedia); he turned pro at 15 (Wikipedia); as a child he sold paletas (ice pops) from the family business and on a bus route in Guadalajara (MedioTiempo, Azteca Jalisco); Sportico's 2025 list ranked him second at $137 million (Wikipedia). Not financial advice.\n\n#shorts #canelo #boxing #howtheymakemoney",
+  "tags": [
+    "canelo alvarez",
+    "boxing",
+    "dazn",
+    "famous",
+    "shorts"
+  ],
+  "images": {},
+  "loop": "So remember:",
+  "cta": "Canelo or Mayweather? Pick one.",
+  "cta_question": "Canelo or Mayweather?",
+  "hero": {
+    "skin": "e6b48c",
+    "hair": "short",
+    "hair_color": "b5441c",
+    "beard": "none",
+    "outfit": "kit",
+    "shirt": "1d6b3a",
+    "pants": "1d6b3a",
+    "shoes": "f4f4f4",
+    "chest": "",
+    "trim": "ffffff",
+    "height": 1.0
+  },
+  "scenes": [
+    {
+      "narration": "Canelo Álvarez signed a 365 million dollar deal with DAZN in 2018.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "stage",
+        "action": "idle",
+        "crowd": 60,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "ring",
+          "mood": "proud",
+          "beat": "money",
+          "things": [
+            "cashstack"
+          ],
+          "brand": {
+            "name": "DAZN",
+            "bg": "#111111",
+            "fg": "#f0ff00"
+          },
+          "card": {
+            "text": "$365 MILLION",
+            "kind": "screen",
+            "sub": "DAZN DEAL, 2018"
+          },
+          "view": "ms"
+        }
+      ]
+    },
+    {
+      "narration": "But as a kid, he sold ice pops on a bus route.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "street",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "street",
+          "mood": "calm",
+          "things": [
+            "box"
+          ],
+          "card": {
+            "text": "ICE POPS",
+            "kind": "white"
+          },
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "Then he turned pro at age 15.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "gym",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "ring",
+          "mood": "nervous",
+          "card": {
+            "text": "PRO AT 15",
+            "kind": "sign"
+          },
+          "view": "ws"
+        }
+      ]
+    },
+    {
+      "narration": "Reports called it the richest deal in sports history. In 2025, he was the second highest-paid athlete: 137 million dollars.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "mansion",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "throne",
+          "mood": "shock",
+          "things": [
+            "trophy"
+          ],
+          "view": "face"
+        },
+        {
+          "place": "mansion",
+          "mood": "proud",
+          "beat": "money",
+          "card": {
+            "text": "$137 MILLION",
+            "kind": "screen",
+            "sub": "SPORTICO, 2025"
+          },
+          "view": "ms"
+        }
+      ]
+    },
+    {
+      "narration": "Not bad for a kid who just sold ice pops.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "street",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "street",
+          "mood": "laugh",
+          "things": [
+            "bus"
+          ],
+          "card": {
+            "text": "ICE POPS",
+            "kind": "white"
+          },
+          "view": "face"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Canelo Álvarez",
+      "url": "https://en.wikipedia.org/wiki/Canelo_%C3%81lvarez"
+    },
+    {
+      "title": "CNBC: Boxing champion Canelo signs the richest deal in sports history with new $365 million contract",
+      "url": "https://www.cnbc.com/2018/10/18/boxing-champion-canelo-signs-the-richest-deal-in-sports-history-with-new-365-million-contract.html"
+    },
+    {
+      "title": "CBS Sports: Canelo Alvarez signs most lucrative contract in sports history with DAZN",
+      "url": "https://www.cbssports.com/boxing/news/canelo-alvarez-signs-most-lucrative-contract-in-sports-history-with-dazn-to-stream-fights"
+    },
+    {
+      "title": "MedioTiempo: Antes de los guantes, esto hacia Canelo Alvarez",
+      "url": "https://www.mediotiempo.com/mas-deportes/box/antes-de-los-guantes-esto-hacia-canelo-alvarez-antes-de-convertirse-en-boxeador"
+    },
+    {
+      "title": "Azteca Jalisco: La ruta de camiones donde el Canelo vendia paletas",
+      "url": "https://www.aztecajalisco.com/deportes/esta-era-la-ruta-camiones-donde-el-canelo-alvarez-vendia-paletas"
+    }
+  ],
+  "look": "afterhour"
+}
