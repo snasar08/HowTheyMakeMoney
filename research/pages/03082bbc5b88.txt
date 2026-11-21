@@ -1,0 +1,1874 @@
+URL: https://en.wikipedia.org/wiki/Epic_Games
+FINAL_URL: https://en.wikipedia.org/wiki/Epic_Games
+FETCHED: 2026-11-21T18:38:33.157606+00:00
+
+Jump to content
+
+Main menu
+
+Main menu
+
+ move to sidebar
+ hide
+
+ Navigation
+
+Main page
+
+Contents
+
+Current events
+
+Random article
+
+About Wikipedia
+
+Contact us
+
+ Contribute
+
+Help
+
+Learn to edit
+
+Community portal
+
+Recent changes
+
+Upload file
+
+Special pages
+
+Search
+
+ Search
+
+Appearance
+
+Donate
+
+Create account
+
+Log in
+
+Personal tools
+
+Donate
+
+Create account
+
+Log in
+
+Contents
+
+ move to sidebar
+ hide
+
+(Top)
+
+ 1
+ History
+
+ Toggle History subsection
+
+ 1.1
+ Potomac Computer Systems (1991–1992)
+
+ 1.2
+ Epic MegaGames (1992–1999)
+
+ 1.3
+ Epic Games (1999–present)
+
+ 1.3.1
+ Unreal and personal computer games (1999–2006)
+
+ 1.3.2
+ Gears of War and console games (2006–2012)
+
+ 1.3.3
+ Games as a service and Tencent shareholding (2012–2018)
+
+ 1.3.4
+ Fortnite success (2018–present)
+
+ 2
+ Acquisitions
+
+ 3
+ Products
+
+ Toggle Products subsection
+
+ 3.1
+ Video games
+
+ 3.2
+ Unreal Engine
+
+ 3.3
+ Epic Games Store
+
+ 3.4
+ Epic Online Services
+
+ 3.5
+ Productivity products
+
+ 3.6
+ Lore
+
+ 4
+ Subsidiaries and divisions
+
+ Toggle Subsidiaries and divisions subsection
+
+ 4.1
+ Locations
+
+ 4.2
+ Subsidiaries
+
+ 4.3
+ Former
+
+ 5
+ Legal issues
+
+ Toggle Legal issues subsection
+
+ 5.1
+ Litigation with Silicon Knights
+
+ 5.2
+ Apple and Google disputes
+
+ 5.3
+ FTC child privacy settlement
+
+ 6
+ Criticism
+
+ 7
+ Notes
+
+ 8
+ References
+
+ 9
+ Further reading
+
+ 10
+ External links
+
+Toggle the table of contents
+
+Epic Games
+
+52 languages
+
+العربية
+
+مصرى
+
+Asturianu
+
+Azərbaycanca
+
+تۆرکجه
+
+বাংলা
+
+Brezhoneg
+
+Bosanski
+
+Català
+
+کوردی
+
+Čeština
+
+Dansk
+
+Deutsch
+
+Ελληνικά
+
+Esperanto
+
+Español
+
+Eesti
+
+Euskara
+
+فارسی
+
+Suomi
+
+Français
+
+Galego
+
+עברית
+
+Hrvatski
+
+Magyar
+
+Հայերեն
+
+Bahasa Indonesia
+
+Íslenska
+
+Italiano
+
+日本語
+
+한국어
+
+Lietuvių
+
+Македонски
+
+Bahasa Melayu
+
+Nederlands
+
+Norsk bokmål
+
+ਪੰਜਾਬੀ
+
+Polski
+
+Português
+
+Runa Simi
+
+Română
+
+Русский
+
+Саха тыла
+
+Simple English
+
+Slovenčina
+
+Српски / srpski
+
+Svenska
+
+Türkçe
+
+Українська
+
+Tiếng Việt
+
+吴语
+
+中文
+
+Edit links
+
+Article
+
+Talk
+
+ English
+
+Read
+
+View source
+
+View history
+
+Save
+
+Tools
+
+Tools
+
+ move to sidebar
+ hide
+
+ Actions
+
+Read
+
+View source
+
+View history
+
+Save
+
+ General
+
+What links here
+
+Related changes
+
+Upload file
+
+Permanent link
+
+Page information
+
+Cite this page
+
+Get shortened URL
+
+Switch to legacy parser
+
+ Print/export
+
+Download as PDF
+
+Printable version
+
+ In other projects
+
+Wikimedia Commons
+
+Wikidata item
+
+Appearance
+
+ move to sidebar
+ hide
+
+From Wikipedia, the free encyclopedia
+
+American video game company
+
+ | Epic Games, Inc.
+
+ | 
+Logo used since 2015
+
+ | 
+Headquarters in Cary, North Carolina, 2016
+
+ | Formerly | 
+
+Potomac Computer Systems
+
+(1991–1992)
+
+Epic MegaGames, Inc.
+
+(1992–1999)
+
+ | Type | Private
+
+ | Industry | Video games
+
+ | Founded | 1991; 35 years ago (1991) in Potomac, Maryland, US
+
+ | Founder | Tim Sweeney
+
+ | Headquarters | 
+ Cary, North Carolina
+, 
+ US
+
+ | 
+Area served
+ | Worldwide
+
+ | Key people | 
+
+Tim Sweeney (CEO)
+
+Kim Libreri (CTO)
+
+Mark Rein (VP)
+
+Adam Sussman (president)
+
+Charlie Wen (CCO)
+
+ | Products | 
+
+Unreal Engine
+
+Bink Video
+
+Epic Games Store
+
+Unreal series
+
+Gears of War series
+
+Fortnite
+
+ | Revenue | US$6 billion (2022)[1]
+
+ | Owners | 
+
+Tim Sweeney (41.4%)[citation needed]
+
+Tencent (28%)[2]
+
+The Walt Disney Company (9%)[3]
+
+Sony (5.4%)
+
+Mark Rein (4%)[4]
+
+Kirkbi (3.2%)
+
+ | 
+Number of employees
+ | 4,000+ (2026[5])
+
+ | Subsidiaries | See § Subsidiaries and divisions
+
+ | Website | epicgames.com
+
+ | Footnotes
+
+[6][7][8]
+
+Epic Games, Inc. is an American video game and software developer and publisher based in Cary, North Carolina. The company was founded by Tim Sweeney as Potomac Computer Systems in 1991, originally located in his parents' house in Potomac, Maryland. Following its first commercial video game release, ZZT (1991), the company became Epic MegaGames, Inc. in early 1992 and brought on Mark Rein, who has been its vice president since. After moving the headquarters to Cary in 1999, the studio changed its name to Epic Games.
+
+Epic Games developed Unreal Engine, a commercially available game engine which also powers its internally developed video games like Fortnite and the Unreal, Gears of War, and Infinity Blade series. In 2014, Unreal Engine was named the "most successful videogame engine" by Guinness World Records.[9] Epic Games owns the game developers Psyonix, Mediatonic, and Harmonix, and operates studios in multiple locations around the world. While Sweeney remains the controlling shareholder, Tencent acquired a 48.4% outstanding stake, equating to 40% of total Epic, in the company in 2012, as part of an agreement aimed at moving Epic towards a games as a service model. Following the release of the popular Fortnite Battle Royale in 2017, the company gained additional investments that enabled it to expand its Unreal Engine offerings, establish esports events around Fortnite, and launch the Epic Games Store. As of April 2022, the company has a US$32 billion equity valuation.
+
+History
+
+Potomac Computer Systems (1991–1992)
+
+Potomac Computer Systems was founded by Tim Sweeney in 1991.[10] At the time, Sweeney was studying mechanical engineering and living in a dorm at the University of Maryland. He frequently visited his parents, who lived in nearby Potomac, Maryland, where his personal computer, used for both work and leisure, was situated.[10] Out of this location, Sweeney started Potomac Computer Systems as a computer consulting business but later figured that it would be too much work he would have to put into keeping the business stable, and scrapped the idea.[10]
+
+After finishing his game ZZT, Sweeney opted to re-use the Potomac Computer Systems name to release the game to the public in January 1991.[10][11] It was only with the unexpected success of ZZT, caused in most part by the easy modifiability of the game using Sweeney's custom ZZT-oop programming language,[12] that made Sweeney consider turning Potomac Computer Systems into a video game company.[10] ZZT was distributed as shareware through bulletin board systems, while all orders were fulfilled by Sweeney's father, Paul Sweeney.[13] The game sold several thousand copies as of May 2009, and Paul Sweeney still lived at the former Potomac Computer Systems address at the time, fulfilling all orders that eventually came by mail.[10][13] The final copy of ZZT was shipped by Paul Sweeney in November 2013.[13]
+
+Epic MegaGames (1992–1999)
+
+Epic Games founder and CEO Tim Sweeney
+
+In early 1992, Sweeney found himself and his new-found video game company in a business where larger studios, such as Apogee Software and id Software, were dominant, and he had to find a more serious name for his.[10] As such, Sweeney came up with "Epic MegaGames", a name which incorporated "Epic" and "Mega" to make it sound like it represented a fairly large company (such as Apogee Software), although he was its only employee.[10] Sweeney soon underwent searching for a business partner, and eventually caught up with Mark Rein, who previously quit his job at id Software and moved to Toronto, Ontario.[12][10] Rein worked remotely from Toronto, and primarily handled sales, marketing and publishing deals; business development that Sweeney found to have significantly contributed to the company's growth.[10] Some time this season, the company soon had 20 employees consisting of programmers, artists, designers and composers.[14] Among them was the 17-year old Cliff Bleszinski, who joined the company after submitting his game Dare to Dream to Sweeney.[15] The following year, it had over 30 employees.[16]
+
+In 1996, Epic MegaGames produced a shareware isometric shooter called Fire Fight, developed by Polish studio Chaos Works. It was published by Electronic Arts.[17] By 1997, Epic MegaGames had 50 people working for it worldwide.[18] In 1998, Epic MegaGames released Unreal, a 3D first-person shooter co-developed with Digital Extremes, which expanded into a series of Unreal games. The company also began to license the core technology, Unreal Engine, to other game developers.[19]
+
+Epic Games (1999–present)
+
+Unreal and personal computer games (1999–2006)
+
+In February 1999, Epic MegaGames announced that it had moved its headquarters to a new location in Cary, North Carolina, and would henceforth be known as simply Epic Games.[20] Rein explained that "Unreal was first created by developers who were scattered across the world, eventually, the team came together to finish the game and that's when the real magic started. The move to North Carolina centralizes Epic, bringing all of the company's talented developers under one roof."[20] Furthermore, Sweeney stated that the "Mega" part of the name was dropped because they no longer wanted to pretend to be a big company, as was the original intention of the name when it was a one-man team.[10] The follow-up game, Unreal Tournament, shipped to critical acclaim the same year,[21] at which point the studio had 13 employees.[22]
+
+The company launched the Make Something Unreal competition in 2004, aiming to reward video game developers who create mods using the Unreal game engine. Tripwire Interactive won US$80,000 in cash and computer hardware prizes over the course of the contest in the first contest in 2004.[23][24]
+
+Gears of War and console games (2006–2012)
+
+Cliff Bleszinski, Lead Designer on Gears of War, demos the game live from Grauman's Chinese Theatre during the Xbox Press Briefing at E3 2006.
+
+Around 2006, the personal computer video game market was struggling with copyright infringement in the form of software piracy, and it became difficult to make single-player games, elements that had been part of Epic's business model to that point. The company decided to shift focus into developing console systems, a move which Sweeney called the start of the third major iteration of the company, "Epic 3.0".[25] In 2006, Epic released the Xbox 360 shooter Gears of War, which became a commercial success for the company, grossing about $100 million off a $12 million budget.[26][25] A year later, the company released Unreal Tournament 3 for PC and acquired a majority share in People Can Fly.[27][28]
+
+In 2008, Epic Games released Gears of War 2,[29] selling over three million copies within the first month of its release.[30]
+
+Epic Games released Epic Citadel on September 1, 2010 as a tech demo to demonstrate the Unreal Engine 3 running on Apple iOS, within Adobe Flash Player Stage3D and using HTML5 WebGL technologies. It was also released for Android on January 29, 2013. Epic Games worked on an iOS game, Infinity Blade,[31] which was released on December 9, 2010.[32] The third game in the series, Gears of War 3, came out in 2011.[33]
+
+In 2011, Epic's subsidiary Titan Studios was dissolved.[34] At the 2011 Spike Video Game Awards, Epic Games announced its new game Fortnite.[35] In March 2012, Epic Games China became independent from Epic as Ying Pei Games (Chinese: 英佩游戏), developing Mercenary Ops at the time, while Epic still retained a minority stake.[36]
+
+In June 2012, Epic announced that it was opening up a new studio, Epic Baltimore, made up of members of 38 Studios' Big Huge Games.[37] Epic Baltimore was renamed to Impossible Studios in August 2012.[38] However, the studio ended up closing its doors in February 2013.[39][40]
+
+Epic fully acquired People Can Fly in August 2012, rebranding it as Epic Games Poland in November 2013 as it began work on Fortnite alongside Epic.[41] Epic alongside People Can Fly made one last game in the Gears of War series that served as a prequel to the other games, Gears of War: Judgement, which was released in 2013. At this point, Epic had considered developing a fourth main title for Gears of War, but estimated that its budget would be at least $100 million.[26] Additionally, they had suggested the idea of a multiplayer-only version of Gears of War that featured improved versions of maps based on user feedback, similar to the concept behind Unreal Tournament, but Microsoft rejected this idea. Epic recognized the troubles of being held to the business objectives of a publisher and began to shift the company again.[25]
+
+Games as a service and Tencent shareholding (2012–2018)
+
+An inside look at Epic Games, 2015
+
+Coupled with their desire to move away from being beholden to a publisher, Epic Games observed that the video game industry was shifting to a games-as-a-service model (GaaS). Sweeney stated, "There was an increasing realization that the old model wasn't working anymore and that the new model was looking increasingly like the way to go."[25] In an attempt to gain more GaaS experience, they made an agreement with Chinese Tencent, who had several games under their banner (including Riot Games' League of Legends) operating successfully as games as a service.[42] In exchange for Tencent's help, Tencent acquired approximately 48.4% of Epic then issued share capital, equating to 40% of total Epic – inclusive of both stock and employee stock options, for $330 million in June 2012. Tencent Holdings has the right to nominate directors to the board of Epic Games and thus counts as an associate of the Group.[7] However, Sweeney stated that Tencent otherwise has very little control on the creative output of Epic Games.[25] Sweeney considered the partial acquisition by Tencent as the start of "Epic 4.0", the fourth major iteration of the company, allowing the company to be more agile in the video game marketplace.[25][6]
+
+Around this point, Epic had about 200 employees.[25] A number of high-profile staff left the company months after the Tencent deal was announced for various reasons. Some notable departures included:[43]
+
+Cliff Bleszinski, then the design director, announced he was leaving Epic Games in October 2012 after 20 years with the company. His official reason was "It's time for a much-needed break".[44] Bleszinski later stated that he had become "jaded" about the gaming industry in the lead-up to Tencent's involvement. After Tencent's investment, Bleszinski attempted to renegotiate his contract but failed to come to terms, making him think about retirement instead. He opted to stop coming to work, spending his time at his beach house, eventually leading Sweeney to come down and have a heart-to-heart discussion with Bleszinski on the new direction Epic was going, and asking him to make a firm decision regarding his commitment to Epic. Bleszinski opted to write his resignation letter the next day.[45] After about two years, Bleszinski started Boss Key Productions in 2014.[citation needed]
+
+President Mike Capps announced his retirement in December 2012, and cited as reasons the birth of a baby boy he was having with his wife and his plans to be a stay-at-home dad.[46] He subsequently announced quitting his advisory role as well as his affiliation with the company in March 2013.[47]
+
+Rod Fergusson, who had been a lead developer for the Gears of War series, left Epic in August 2012. Fergusson stated that he had seen the direction that the Tencent acquisition would have taken the company, and was not interested in the free-to-play style of games but instead wanted to continue developing a "AAA, big-narrative, big-story, big-impact game".[48] Fergusson briefly joined Irrational Games, owned by 2K Games, to help complete BioShock Infinite. While there, Fergusson talked with 2K about potentially continuing the Gears of War series, leading to talks between 2K Games, Epic, and Microsoft.[25] As a result, Microsoft acquired the rights to Gears of War on January 27, 2014, eventually assigned those to Microsoft Studios; Fergusson moved to Black Tusk Studios, owned by Microsoft Game Studios, to take on lead development for a new Gears title, with the studio being rebranded as The Coalition. The first game since the acquisition, Gears of War 4, was released in October 2016.[49][50]
+
+Adrian Chmielarz, the founder of People Can Fly, who joined Epic when his studio was acquired earlier in 2012, decided to leave after Tencent's acquisition, stating that he and other former People Can Fly members did not believe the free-to-play games as a service direction fit their own personal vision or direction they wanted to go. Chmielarz and these others left Epic in late 2012 to form The Astronauts.[45]
+
+Lee Perry, a lead designer on both Unreal and Gears of War series, felt that Epic has started to grow too large to maintain a role as an eccentric game developer. Coupled with the studio's need for more management to support the games as a service model, Perry felt that their creative freedom would become limited. He and five other senior people left Epic to form a new studio, Bitmonster.[45]
+
+Epic continued its goal to deliver games as a service following these departures. Fortnite was to serve as their testbed for living games, but with the shifts in staff and its engine from Unreal Engine 3 to 4, its release suffered some setbacks. Epic started additional projects; the free-to-play and community-developed Unreal Tournament, first announced in 2014,[51][52] and the free-to-play multiplayer online battle arena game Paragon, launched in 2016 for Microsoft Windows and PlayStation 4.[53] Epic also released a remastered version of Shadow Complex for newer consoles and computers in 2015,[54][55] and its first foray into virtual reality with the release of Robo Recall for the Oculus Rift.[56][57]
+
+The investment infusion from Tencent allowed Epic Games to relicense the Unreal Engine 4 engine in March 2015 to be free for all users to develop with, with Epic taking 5% royalties on games developed with the engine.[58]
+
+In June 2015, Epic agreed to allow Epic Games Poland's departure from the company and sold its shares in the studio; the studio reverted to its former name, People Can Fly. The Bulletstorm IP was retained by People Can Fly who has since launched a remastered version called Bulletstorm: Full Clip Edition on April 7, 2017, published by Gearbox Software.[59][60]
+
+Fortnite success (2018–present)
+
+Epic's Fortnite exhibition space at E3 2018
+
+By July 2017, Fortnite was finally in a state for public play.[61] Epic launched the title through a paid early access then, with a full free-to-play release expected in 2018.[62] Following on the popularity of PlayerUnknown's Battlegrounds, a battle royale game released earlier in 2017, Epic developed a variant of Fortnite called Fortnite Battle Royale, which was released in September 2017[63] as a free-to-play title across computer, console, and mobile platforms. Fortnite Battle Royale quickly gained an audience, amassing over 125 million players by May 2018 with estimates of having earned over $1 billion by July 2018 through microtransactions, including its battle pass system. Epic Games, which had been valued at around $825 million at the time of Tencent's acquisition, was estimated to be worth $4.5 billion in July 2018 due to Fortnite Battle Royale, and expected to surpass $8.5 billion by the end of 2018 with projected growth of the game.[64] Player count continued to expand when Epic broke new ground by convincing Sony to change its stance on cross-platform play allowing players on any device to compete with each other in Fortnite Battle Royale.[65] Fortnite has drawn nearly 250 million players as of March 2019.[66]
+
+Fortnite's commercial success enabled Epic to make several changes to its other product offerings. In July 2018, it reduced the revenue cut that it took for assets sold on the Unreal Engine Marketplace from 30% to 12%.[67] Epic launched the Epic Games Store digital storefront to compete with services like Steam and GOG.com, not only taking a 12% cut of revenue compared to the industry standard of 30%, but also eliminated the 5% cut for games using the Unreal engine sold via the storefront.[68] However the company also refocused its development efforts to provide more support for Unreal and Fortnite by ending support for Paragon[69] and Unreal Tournament.[70]
+
+The financial success of Fortnite brought additional investment into Epic Games. Epic Games was one of eleven companies selected to be part of the Disney Accelerator program in 2017, providing Epic equity investment and access to some of Disney's executives, and a potential opportunity to work with Disney in the future. Disney had selected both Epic and aXiomatic as potential leads in the growing esports arena.[71]
+
+Epic has used its windfall to support its products. In January 2019, following a dispute between Improbable and Unity Technologies over changes to the acceptable uses of the Unity game engine, Epic announced it was partnering with Improbable to launch a $25 million fund to help bring developers it believes affected by these changes towards solutions that are more open and would have fewer service compatibilities.[72] Epic launched a $100 million prize pool in February 2019 for Fortnite-related esports activities that it plans to run from 2019 onward.[73] To expand its esports initiatives, Epic Games hired Nate Nanzer from Blizzard Entertainment and its commissioner of the Overwatch League in May 2019.[74] At the 2019 Game Developers Conference, Epic announced it was launching a $100 million MegaGrants initiative, allowing anyone to apply for up to $500,000 in funding to support game development using the Unreal Engine or for any project, even if not directly games-related, that would benefit the Unreal Engine.[75] One of the first major funded entities under this was the Blender Foundation in July 2019, having received $1.2 million from the MegaGrants funding, to help it to improve and professionalize its Blender tools for 3D art creation.[76]
+
+Epic Games was given the British Academy of Film and Television Arts Special Award in June 2019 for its past and continuing developments for the Unreal Engine,[77] a software which also earned it the Engineering Excellence Award from the Hollywood Professional Association.[78]
+
+Epic announced in March 2020 that it was establishing a new multi-platform publishing label, Epic Games Publishing. Alongside this, the label had announced three deals with developers Remedy Entertainment, Playdead and GenDesign in which Epic would fully fund development and publishing (including employee salaries, quality assurance, localization, and marketing) of one or more games from each studio, but leaving full creative control and IP rights to the studio, and sharing profits, following Epic's recouping of its investment, 50/50 with the studio.[79][80] The company expanded its publishing options in October 2021 with Spry Fox and Eyes Out.[81]
+
+Unreal Engine 5 was announced on May 13, 2020, with plans for an early 2022 release. Alongside this announcement, Epic released its Epic Online Services, a free SDK toolset for online matchmaking and other similar cross-platform play support features based on Fortnite. Epic further waived all Unreal license fees retroactively for games up through the first $1 million in revenue, regardless of how they were published, retroactively starting from January 1, 2020.[82]
+
+Bloomberg reported that Epic was nearing a $17 billion valuation in June 2020 once it had completed a new $750 million investing round from its previous investors and newcomings T. Rowe Price Group Inc. and Baillie Gifford.[83] The company partnered with Christopher Nolan and Warner Bros. to acquire distribution rights for Inception, Batman Begins and The Prestige as part of "Movie Nite" on Fortnite's "Party Royale" island. The film live streams were based on a user's country.[84]
+
+Across July and August, Epic raised an additional $1.78 billion in capital investment, bringing the company's post-money equity valuation to $17.3 billion.[85][86] This included a $250 million investment from Sony, approximately a 1.4% stake in the company. The deal continues the two companies' technology collaboration after they had worked together on the development of Unreal Engine 5, but does not commit Epic to any exclusivity to the Sony PlayStation platform.[87][88] Sweeney said that Sony had started talking with Epic about investing following the demonstration of the Unreal Engine 5 in May 2020.[89]
+
+Epic purchased Cary Towne Center in Cary, North Carolina, in January 2021, which had been scheduled to be closed and demolished after 2020, to be its new headquarters and campus, with the conversion to be complete by 2024.[90] All of the existing mall's structure, except for a section housing the Belk department store, was razed. However, after no further actions, the Town of Cary revoked Epic's zoning application on December 6, 2024, declaring it "inactive".[91]
+
+Epic unveiled its MetaHuman Creator project in February 2021. Based on the technology from 3Lateral, Cubic Motion, and Quixel, the MetaHuman Creator is a browser-based application to allow game developers to create realistic human characters within a short amount of time starting from various presets, and then can be exported as pre-made models and animation files ready for use in Unreal Engine.[92]
+
+Epic announced a partnership with Cesium in March 2021 to bring its 3D geospatial data as a free add-on into the Unreal Engine.[93]
+
+In April 2021, Epic completed another $1 billion round of funding to support the company's "long-term vision for the metaverse", putting the company's valuation at $28.7 billion. The round of funding included another $200 million strategic investment from Sony.[94][95] Sweeney remains the controlling shareholder with these additional investments.[94]
+
+The Information reported that Epic Games was launching a new scripted entertainment division in October 2021, bringing on three former executives from Lucasfilm to manage it, with initial plans for a Fortnite film.[96]
+
+In February 2022, Epic Games announced that at least half a billion accounts had been created on its platform.[97]
+
+Epic released the initial beta version of RealityScan, a mobile app that uses the tools from Capturing Reality and Quixel, in April 2022. RealityScan allows users to create 3D models that can be imported into Sketchfab using photos taken by the user.[98]
+
+Epic received another $1 billion each from Sony and from Kirkbi, the parent company of The Lego Group, in April 2022 for continued support of building out Epic's metaverse.[99] These investments gave Kirkbi 3% ownership and increased Sony's to 4.9%.[100] With these investments, Epic had an estimated valuation of $32 billion.[101] Epic and Lego also announced their partnership to build a child-friendly space in the metaverse that same month.[102]
+
+On February 9, 2023, Epic released the Postparty application.[103] Postparty is a gameplay clipping software designed for people who do not have access to clipping software or who require a way to share gaming videos and highlights (it is frequently used on gaming consoles) clipped (30 seconds max), edited to the user's preference (using the in-app editing tools and other editing software), and then posted to social media.[104][105][106] It is most commonly associated with creating and sharing video clips in Fortnite, but it is also associated with clipping other applications created by Epic, such as Rocket League. It was released on iPhone and Android devices.[107][108]
+
+Although it was already possible to share clips and other data across many devices, Postparty provided an additional clipping method. Clips from many platforms, including Xbox, Nintendo Switch, PlayStation, and PC, were combined into a single main application. After sharing their first Fortnite clip using the Postparty app, players will earn the Post That! Wrap and Postparty Confetti Spray cosmetic items.[109][110][111]
+
+The company announced in September 2023 that it was laying off 870 employees, along with divesting in Bandcamp to Songtradr and spinning off SuperAwesome into its own company. Sweeney said this move was needed to rein in spending, and did not anticipate there would be further layoffs in the future.[112] Mediatonic reported a significant number of layoffs from its team, but remained part of Epic.[113] Following these cuts, the company had over 4000 employees.[114]
+
+On February 7, 2024, Epic Games received a $1.5 billion investment from the Walt Disney Company. Pending regulatory approval, Disney will acquire a 9% stake. Disney plans to co-develop new games and an "entertainment universe" encompassing its properties with Epic.[115][116] Part of this involved bringing more of the Disney properties to Fortnite; while Fortnite had already featured numerous cosmetics based on Marvel Comics and Star Wars, Disney announced new plans to bring its classic animated characters and those from Pixar properties to the game.[117]
+
+In July 2024, the Screen Actors Guild-American Federation of Television and Radio Artists (SAG-AFTRA), an actor labor union of which numerous video game voice actors are members, would initiate a labor strike against a number of video publishers, including Epic Games, over concerns about lack of A.I. protections related to not only video game actors, but also the use of AI to replicate an actor's voice, or create a digital replica of their likeness.[118][119]
+
+Epic launched Fab, a unified marketplace for Unreal Engine Marketplace, Sketchfab, ArtStation Marketplace, and Quixel assets, on October 22, 2024.[120][121]
+
+Following an investigation by the Department of Justice, the two Tencent board members stepped down, as they were also board members on Riot Games, which was seen as a violation of the Sherman Act by the department.[122]
+
+Epic announced it would be laying off over 1,000 employees in March 2026 as a result of waning engagement in Fortnite since 2025, as well as achieving a cost saving of $500 million with changes in contracting. The company would be left with more than 4,000 staff following these layoffs.[123][5] Alongside the layoffs, Epic announced it was discontinuing various Fortnite modes that had low engagement, including Rocket Racing, Fortnite Ballistic and the Fortnite Festival Battle Stage, as well as removing Horizon Chase and Horizon Chase Turbo, both developed by Epic studio Aquiris, from its storefront and from mobile app stores, though the sequel Horizon Chase 2 will remain available.[124] According to Bloomberg News, Epic had also released some products too soon before the developers could bring the product to meet expectations for players, causing interest to wane quickly, such as with Ballistic. As part of revitalization, Bloomberg said that Epic was working on an extraction shooter using Disney characters as part of the earlier Disney funding deal.[125]
+
+Epic divested ArtStation and Sketchfab to Kitbash in August 2026. This move was intended to allow Epic to put more focus on Unreal Engine, Fortnite, and the Epic Games Store.[126]
+
+According to Bloomberg, in October 2026, the Disney-collaboration game that Epic had been working on was delayed beyond its planned release in March 2027, with Sweeney urging developers to use AI tools to finish the game as quickly as possible.[127]
+
+Acquisitions
+
+In 2008, Epic acquired Utah based Chair Entertainment, developer of Undertow.[128][129] Summer 2009 saw the launch of Chair's Shadow Complex, an adventure game inspired by the Metroid series.[130]
+
+Epic announced in October 2018 that it had acquired $1.25 billion in investment from seven firms: KKR, ICONIQ Capital, Smash Ventures, aXiomatic, Vulcan Capital, Kleiner Perkins, and Lightspeed Venture Partners. The firms join Tencent, Disney, and Endeavor as minority shareholders in Epic.[131][132] With the investment, Epic Games was estimated to have a nearly $15 billion valuation in October 2018.[133]
+
+Besides expanding support for Fortnite and the Epic Games Store, these investments allowed Epic to acquire additional firms. In January 2018, it was announced that Epic had acquired Cloudgine, a developer of cloud-based gaming software.[134] The company also announced the acquisition of Kamu, a firm that offered anti-cheat software called Easy Anti-Cheat, in October 2018.[135][136] A year later, in January 2019, Epic acquired 3Lateral and Agog Labs. 3Lateral is known for its "digital human" creations, using a combination of digital technology, motion capture, and other tools to create photo-realistic human subjects in real-time. Epic plans to add some of 3Lateral's features to the Unreal Engine.[137] Agog had developed SkookumScript, a platform for scripting events in video games; on the announcement of this acquisition, Agog stated it will stop the development of SkookumScript to work more on Unreal Engine scripting support.[138]
+
+Epic acquired Psyonix, the developer of Rocket League, in May 2019. Epic and Psyonix have had a past history, as Psyonix was originally founded a few miles from Epic's headquarters and had contributed to Epic's Unreal Tournament.[139][140] Besides ongoing support for Rocket League, Psyonix developed an arcade-style car racing game inside of Fortnite, named Rocket Racing, which was added in December 2023.[141]
+
+Epic acquired the Twinmotion visualization tool used in architectural design in May 2019 from Abvent, and which they plan to expand and incorporate into their Unreal Engine offerings.[142][143] Epic acquired Life on Air, the developers behind Houseparty, a social networking service, in June 2019. The monetary terms of the acquisition were not disclosed.[144] Epic later shuttered Houseparty's app in October 2021, though the team behind it was continuing to develop social apps for Epic's platforms.[145]
+
+In November 2019, Epic acquired Quixel, the world's largest photogrammetry asset library which makes 3D models of objects based on real-world high-definition photography. Epic plans to open Quixel's existing library of models to users of Unreal Engine, while the Quixel staff will continue to build out its assets within Epic.[146][147] The company acquired Cubic Motion, a studio that provides highly detailed digital facial animations for both films and video games, in March 2020.[148]
+
+Epic acquired SuperAwesome, a firm that has developed services to support child-safe games and services around games, in September 2020, to incorporate these elements more into Epic's portfolio and to offer to other developers, particularly for games built around Epic's vision of metaverse games.[149][150]
+
+Epic acquired the digital facial animation firm Hyprsense in November 2020.[151]
+
+In January 2021, Epic acquired RAD Game Tools, a company that makes a variety of middleware solutions for video game development which Epic plans to incorporate into the Unreal Engine. RAD's tools will remain available outside of Unreal as well.[152]
+
+In March 2021, Epic announced it was acquiring the Tonic Games Group, which includes developers Mediatonic and Fortitude Games. Mediatonic's Fall Guys, a major success during 2020, would remain available on Steam while Epic would help to bring it to additional platforms.[153] Epic buying Tonic Games Group falls under the company's broader plans of creating its own metaverse.[154] Additionally in March, Epic acquired Capturing Reality, the developers of RealityCapture, a photogrammetry suite that can create 3D models from numerous photographs. Epic plans to integrate RealityCapture into the Unreal Engine.[155]
+
+Epic Games acquired ArtStation, a professional artists' marketplace, in April 2021. As part of the acquisition, ArtStation members would gain access to Epic's tools and support such as the Unreal Engine, while the ArtStation marketplace will reduce its take on purchases from 30% to 12%.[156] In July 2021, Epic acquired Sketchfab, a marketplace for 3D models. As with ArtStation, the acquisition allowed Sketchfab to reduce its pricing structure, lowering its revenue cut on purchases to 12% and making its Sketchfab Plus level of membership free.[157]
+
+In November 2021, Epic Games acquired Harmonix, a music game developer, for undisclosed terms.[158] Harmonix continued to support its existing games including Rock Band 4 and Fuser while building out Fortnite's musical experiences, adding a Fortnite Festival mode that mimics the note-matching gameplay of Rock Band in December 2023,[141] and Epic's larger metaverse plans.[159]
+
+Epic acquired the indie music platform Bandcamp in March 2022. Bandcamp was expected to remain independently operated under Epic while gaining the benefits of Epic's backend services.[160][161] In April 2023, Epic acquired Brazilian developer Aquiris Game Studio, developer of Horizon Chase, and changed its name to Epic Games Brasil, with the intention to be used in Fortnite.[162] In September 2023, Epic sold Bandcamp to music licensing company Songtradr.[163]
+
+Products
+
+Video games
+
+Main article: List of games by Epic Games
+
+Epic Games is known for games such as ZZT developed by founder Tim Sweeney, various shareware titles including Jazz Jackrabbit and Epic Pinball, the Unreal video game series, which is used as a showcase for its Unreal Engine, the Gears of War series which is now owned by The Coalition and Xbox Game Studios, Infinity Blade, Shadow Complex, Bulletstorm, and Fortnite.[citation needed]
+
+Unreal Engine
+
+Main article: Unreal Engine
+
+Epic is the proprietor of the Unreal game engine. Originally developed for the Unreal and Unreal Tournament game series, Unreal Engine has a complete feature set of graphical rendering, sound processing, and physics. The engine is licensed to third-party game developers who can modify the software to fit their needs.
+Epic also provides support to the Unreal marketplace, a digital storefront for creators to sell Unreal assets to other developers. Further, since 2019, Epic has provided support for filmmakers which have utilized the Unreal Engine to create virtual sets for productions such as The Mandalorian,[164] and will be backing major animated feature film production using Unreal, starting with Gilgamesh with studios Hook Up, DuermeVela and FilmSharks.[165]
+
+Epic Games Store
+
+Main article: Epic Games Store
+
+Epic announced its own Epic Games Store, an open digital storefront for games on Windows, on December 4, 2018, which launched a few days later with The Game Awards 2018 presentation. Differing from Valve's Steam storefront, which takes 30% of revenues (30/70 revenue-sharing agreement) from the sale of a game, the Epic Game Store will take 12%, as well as foregoing the 5% for games developed in the Unreal Engine, anticipating that these lower revenue-sharing agreements will draw developers to it.[166][167] Epic opened a version of the store for Android devices worldwide and for iOS devices in Europe in January 2025 as a result of legal victories, one based on its suit against Google, and the second from the European Union's enforcement of remedies towards Apple under the Digital Markets Act.[168][169]
+
+Epic Online Services
+
+Epic Online Services is a free SDK based on Epic's Fortnite code that allows developers to implement cross-platform play features in their games, including matchmaking, friends lists, leaderboards, and achievements, with support for Windows, macOS, PlayStation 4, Xbox One, Nintendo Switch, iOS, and Android systems. It was first released to all in May 2020.[82] Support for anti-cheat and voice chat was added in June 2021.[170]
+
+Productivity products
+
+Other productivity products include ArtStation, Sketchfab, Twinmotion, RealityCapture, RealityScan and Quixel. Epic and Autodesk partnered in September 2022, making Twinmotion available to Revit subscribers.[171]
+
+The MetaHuman Creator is a project based on technology from three companies acquired by Epic—3Lateral, Cubic Motion, and Quixel—to allow developers to quickly create realistic human characters that can then be exported for use within Unreal.[172] Through partnership with Cesium, Epic plans to offer a free plugin to provide 3D geospatial data for Unreal users, allowing them to recreate any part of the mapped surface of Earth.[93] Epic will include RealityCapture, a product it acquired with its acquisition of Capturing Reality that can generate 3D models of any object from a collection of photographs taken of it from multiple angles,[155] and the various middleware tools offered by Epic Game Tools.
+
+Lore
+
+Lore is a software system for version control. Epic Games originally developed Unreal Revision Control for internal usage. They have released it as Lore to be an open-source version control system designed entirely around the large file needs of video game and multimedia projects. Lore is designed to be fast and efficient for large files including binary files, and be easy-to-use including for 3D artists and more. It has access control features to ensure different teams can protect access to their assets.[173][174]
+
+Lore uses content addressed storage based on hashes to achieve automatic deduplication, integrity validation, and efficient caching. Revisions use Merkle trees to create a history. On-demand hydration allows developers to download a fraction of a repository as needed. Partitions provide access control to individual teams with separate NDAs. Lore uses a centralized server (like Perforce), but adds intelligent caching to scale throughput. This gives teams a single source of truth while avoiding the bottleneck of every request hitting the origin server.
+
+Lore is most similar to Perforce in prior art. It has file-level locking for unmergeable content, but unlike Perforce it has partitions for sub-repositories instead of per-path ACL.[175]
+
+Subsidiaries and divisions
+
+Locations
+
+ | Name
+ | Location
+ | Founded
+ | Acquired
+ | Ref(s).
+
+ | Epic Games Australia
+ | Burwood, Australia
+ | 2018
+ | —
+ | [176]
+
+ | Epic Games Brasil
+ | Porto Alegre, Brazil
+ | 2007
+ | 2023
+ | [177]
+
+ | Epic Games China[a]
+ | Shanghai, China
+ | 2006
+ | —
+ | [178]
+
+ | Epic Games Germany
+ | Berlin, Germany
+ | 2016
+ | [179][180]
+
+ | Epic Games Japan
+ | Yokohama, Japan
+ | 2010
+ | [181][182][183]
+
+ | Epic Games Korea
+ | Seoul, South Korea
+ | 2009
+ | [184][185]
+
+ | Epic Games Montreal
+ | Montreal, Canada
+ | 2018
+ | [186]
+
+ | Epic Games Publishing
+ | —
+ | 2020
+ | [187]
+
+ | Epic Games Seattle
+ | Bellevue, Washington, US
+ | 2012
+ | [188][189][190]
+
+ | Epic Games Sweden
+ | Stockholm, Sweden
+ | 2018
+ | [191]
+
+ | Epic Games San Francisco
+ | San Francisco, California, US
+ | 2012
+ | 
+
+ | Epic Games UK[b]
+ | Sunderland, England
+ | 2014
+ | [192][193][194]
+
+Subsidiaries
+
+ | Name
+ | Area
+ | Location
+ | Founded
+ | Acquired
+ | Ref(s).
+
+ | Easy Anti-Cheat
+ | Anti-cheat security software
+ | Helsinki, Finland
+ | 2006
+ | 2018
+
+ | 3Lateral
+ | Motion capture digitization
+ | Novi Sad, Serbia
+ | 2008
+ | 2019
+ | [137]
+
+ | Capturing Reality
+ | Photogrammetry software
+ | Bratislava, Slovakia
+ | 2015
+ | 2021
+ | [155]
+
+ | Cubic Motion
+ | Facial animation
+ | Manchester, England
+ | 2009
+ | 2020
+ | [148]
+
+ | Harmonix
+ | Music game developer
+ | Boston, Massachusetts
+ | 1995
+ | 2021
+ | [158]
+
+ | Psyonix
+ | Video game development
+ | San Diego, US
+ | 2000
+ | 2019
+ | [139][140]
+
+ | Quixel
+ | Photogrammetry assets
+ | Uppsala, Sweden
+ | 2011
+ | 2019
+ | [146][147]
+
+ | Epic Game Tools (formerly RAD Game Tools)
+ | Game middleware
+ | Bellevue, Washington
+ | 1988
+ | 2021
+ | [152]
+
+ | Tonic Games Group (Mediatonic)
+ | Video game development
+ | London, England
+ | 2005
+ | 2021
+ | [153]
+
+Former
+
+ | Name
+ | Location
+ | Founded
+ | Acquired
+ | Divested
+ | Fate
+ | Ref.
+
+ | Agog Labs
+ | Vancouver, Canada
+ | 2013
+ | 2019
+ | Software development moved internally to Epic Games.
+ | [138]
+
+ | ArtStation
+ | Montreal, Canada
+ | 2014
+ | 2021
+ | 2026
+ | Sold to KitBash
+ | [156][195]
+
+ | Bandcamp
+ | Oakland, US
+ | 2008
+ | 2022
+ | 2023
+ | Sold to Songtradr
+ | [160]
+
+ | Chair Entertainment
+ | Salt Lake City, US
+ | 2005
+ | 2008
+ | Unknown
+ | Closed
+ | 
+
+ | Cloudgine
+ | Edinburgh, Scotland
+ | 2012
+ | 2018
+ | Software development moved internally to Epic Games.
+ | [134]
+
+ | Hyprsense
+ | Burlingame, California
+ | 2015
+ | 2020
+ | Software development moved internally to Epic Games.
+ | 
+
+ | Impossible Studios
+ | Baltimore, US
+ | 2012
+ | —
+ | 2013
+ | Closed
+ | [196]
+
+ | Kamu
+ | Helsinki, Finland
+ | 2013
+ | 2018
+ | Software development moved internally to Epic Games.
+ | 
+
+ | Life on Air
+ | San Francisco, US
+ | 2012
+ | 2019
+ | Software development moved internally to Epic Games.
+ | 
+
+ | People Can Fly (Epic Games Poland)
+ | Warsaw, Poland
+ | 2002
+ | 2012
+ | 2015
+ | Sold to management
+ | [197]
+
+ | RAD Games Tools
+ | Kirkland, Washington, US
+ | 1988
+ | 2021
+ | Software development moved internally to Epic Games.
+ | 
+
+ | Sketchfab
+ | Paris, France
+ | 2012
+ | 2021
+ | 2026
+ | Sold to KitBash
+ | [157][198]
+
+ | SuperAwesome
+ | London, England
+ | 2013
+ | 2020
+ | 2023
+ | Spun off
+ | [149]
+
+ | Titan Studios
+ | Seattle, Washington, U.S.
+ | 2008
+ | —
+ | May 2011
+ | Closed
+ | [199]
+
+Legal issues
+
+See also: Fortnite Battle Royale § Past and ongoing concerns
+
+Litigation with Silicon Knights
+
+On July 19, 2007, Canadian game studio Silicon Knights sued Epic Games for failure to "provide a working game engine", causing the Ontario-based game developer to "experience considerable losses".[200] The suit alleged that Epic Games was "sabotaging" Unreal Engine 3 licensees. Epic's licensing document stated that a working version of the engine would be available within six months of the Xbox 360 developer kits being released. Silicon Knights claimed that Epic missed this deadline and that when a working version of the engine was eventually released, the documentation was insufficient. The game studio also claimed Epic had withheld vital improvements to the game engine, claiming they were game-specific, while also using licensing fees to fund the development of its own titles rather than the engine itself.[201]
+
+In August 2007, Epic Games counter-sued Silicon Knights, alleging the studio was aware when it signed on that certain features of Unreal Engine 3 were still in development and that components would continue to be developed and added as Epic completed work on Gears of War. Therefore, in a statement, Epic said that "SK knew when it committed to the licensing agreement that Unreal Engine 3 may not meet its requirements and may not be modified to meet them".[202] Additionally, the counter-suit claimed that Silicon Knights had "made unauthorized use of Epic's Licensed Technology" and had "infringed and otherwise violated Epic's intellectual property rights, including Epic's copyrighted works, trade secrets, know how and confidential information" by incorporating Unreal Engine 3 code into its own engine, the Silicon Knights Engine.[202] Furthermore, Epic asserted the Canadian developer broke the contract when it employed this derivative work in an internal title and a second game with Sega,[203] a partnership for which it never received a license fee.[204]
+
+On May 30, 2012, Epic Games defeated Silicon Knights' lawsuit and won its counter-suit for $4.45 million on grounds of copyright infringement, misappropriation of trade secrets, and breach of contract,[205] an injury award that was later doubled due to prejudgment interest, attorneys' fees and costs.[206] Consistent with Epic's counterclaims, the presiding judge, James C. Dever III, stated that Silicon Knights had "deliberately and repeatedly copied thousands of lines of Epic Games' copyrighted code, and then attempted to conceal its wrongdoing by removing Epic Games' copyright notices and by disguising Epic Games' copyrighted code as Silicon Knights' own".[206] Dever stated that evidence against Silicon Knights was "overwhelming", as it not only copied functional code but also "non-functional, internal comments Epic Games' programmers had left for themselves".[206]
+
+As a result, on November 7, 2012, Silicon Knights was directed by the court to destroy all game code derived from Unreal Engine 3, all information from licensee-restricted areas of Epic's Unreal Engine documentation website, and to permit Epic Games access to the company's servers and other devices to ensure these items have been removed. In addition, the studio was instructed to recall and destroy all unsold retail copies of games built with Unreal Engine 3 code, including Too Human, X-Men Destiny, The Sandman, The Box/Ritualyst, and Siren in the Maelstrom (the latter three titles were projects never released, or even officially announced).[207]
+
+On May 16, 2014, Silicon Knights filed for bankruptcy and a Certificate of Appointment was issued by the office of the Superintendent of Bankruptcy, with Collins Barrow Toronto Limited being appointed as trustee in bankruptcy.[208]
+
+Apple and Google disputes
+
+Main articles: Epic Games v. Apple and Epic Games v. Google
+
+Since as early as 2017, Tim Sweeney had questioned the need for digital storefronts like Valve's Steam, Apple's iOS App Store, and Google Play, to take a 30% revenue sharing cut, and argued that when accounting for current rates of content distribution and other factors needed, a revenue cut of 8% should be sufficient to run any digital storefront profitably.[209] When Epic brought Fortnite Battle Royale to mobile devices, the company initially offered a sideloaded package for Android systems to bypass the Google Play store, but eventually also made it a store app.[210][211][212]
+
+On August 13, 2020, Epic Games updated Fortnite across all platforms, including the iOS and Android versions, to reduce the price of "V-Bucks" (the in-game currency) by 20% if they purchased directly from Epic. For iOS and Android users, if they purchased through the Apple or Google storefront, they were not given this discount, as Epic said it could not extend the discount due to the 30% revenue cut taken by Apple and Google.[213] Within hours, both Apple and Google had removed Fortnite from their storefronts stating the means of bypassing their payment systems violated both storefronts guidelines.[214][215] Epic immediately filed separate lawsuits against Apple and Google for antitrust and anticompetitive behavior in the United States District Court for the Northern District of California.[216] Epic did not seek monetary damages in either case but instead was "seeking injunctive relief to allow fair competition in these two key markets that directly affect hundreds of millions of consumers and tens of thousands, if not more, of third-party app developers."[217] In comments on social media the next day, Sweeney said that it undertook the actions as "we're fighting for the freedom of people who bought smartphones to install apps from sources of their choosing, the freedom for creators of apps to distribute them as they choose, and the freedom of both groups to do business directly. The primary opposing argument is: 'Smartphone markers [sic] can do whatever they want.' This is an awful notion. We all have rights, and we need to fight to defend our rights against whoever would deny them."[218]
+
+Apple responded to the lawsuit that it would terminate Epic's developer accounts by August 28, 2020, leading Epic to file a motion for a preliminary injunction to force Apple to return Fortnite to the App Store and prevent it from terminating Epic's developer accounts, as the latter action would leave Epic unable to update the Unreal Engine for any changes to iOS or macOS and leave developers that relied on Unreal at risk.[219][220] The court granted the preliminary injunction against Apple from terminating the developer accounts as Epic had shown "potential significant damage to both the Unreal Engine platform itself, and to the gaming industry generally", but refused to grant the injunction related to Fortnite as "The current predicament appears of [Epic's] own making."[221] In September 2020, Epic Games, together with thirteen other companies, launched the Coalition for App Fairness, which aimed for better conditions for the inclusion of apps into app stores.[222]
+
+U.S. District Court Judge Yvonne Gonzalez Rogers issued her first ruling in Epic Games v. Apple on September 10, 2021.[223] Rogers found in favor of Apple on nine of ten counts brought up against it in the case, including Epic's charges related to Apple's 30% revenue cut and Apple's prohibition against third-party marketplaces on the iOS environment.[224] Rogers did rule against Apple on the final charge related to anti-steering provisions, and issued a permanent injunction that, in 90 days from the ruling, blocked Apple from preventing developers from linking app users to other storefronts from within apps to complete purchases or from collecting information within an app, such as an email, to notify users of these storefronts.[225][226] Rogers' ruling was upheld at the Ninth Circuit on appeals, and the Supreme Court of the United States declined to hear the case, leaving Rogers' order against Apple in place.[227] Though Apple did adjust its policies for third-party storefront, Epic argued these failed to achieve the goals set further. In April 2025, Rogers ruled in Epic's favor that Apple's changes were not sufficient. Rogers blocked Apple from taking fees from third-party stores or restricting how they are shown in apps, subsequently leading Epic to bring the Epic Games Store back to iOS within a week.[228][229]
+
+Google initially sought to negotiate with Epic but later filed its own countersuit against Epic for breach of contract. The Google case was set as a jury trial, held in November and December 2023. Before this, other groups had filed their own lawsuits against Google for similar reasons as Epic, including a coalition of states and the Match Group, but these were settled just ahead of the trial.[230][231] The jury found for Epic on all claims made, determining that Google maintained a monopoly on the Android marketplace by how it managed the Play Store and used its leverage as a big tech firm to make deal with partners, including some deals made as a result of the earlier settlements. A second phase of this trial to determine remedies is scheduled to occur in January 2024.[232][needs update]
+
+FTC child privacy settlement
+
+In December 2022, Epic Games was fined a combined $520 million after the Federal Trade Commission accused the company of separate accounts related to Fortnite, one for violating COPPA related to children's privacy by collecting personal data without parent or guardian consent, exposing children and teens to potential harassment, and a second related to misleading users into making unwanted purchases while playing the game.[233][234][235][236] Epic Games said "No developer creates a game with the intention of ending up here. The laws have not changed, but their application has evolved and long-standing industry practices are no longer enough. We accepted this agreement because we want Epic to be at the forefront of consumer protection and provide the best experience for our players. Over the past few years, we've been making changes to ensure our ecosystem meets the expectations of our players and regulators, which we hope will be a helpful guide for others in our industry."[237] Epic ultimately settled with the FTC, agreeing to pay $245 million in December 2024 in relation to the use of dark patterns it used to drive users to buy V-bucks, with $72 million being issued as refunds by the FTC to more than 600,000 users that had filed claims in the case.[238]
+
+Criticism
+
+Since the partial investment by the Chinese company Tencent, some consumers have become wary of Epic Games' reliability and use of their data, particularly in relationship with the Epic Games Store. These concerns have been connected to broader issues of general distrust of the Chinese government and Chinese corporations among some Western video game players. Epic has stated that Tencent does not have access to any of this private data nor provides this to the Chinese government.[239][240]
+
+In late March 2020, accusations began circulating on social media that the Epic Games social networking app Houseparty led to other services such as Netflix and Spotify being hacked. However, both Epic and Life on Air claimed this was a smear campaign against its product and offered a $1 million bounty for anyone able to substantiate their claim.[241][242][243]
+
+On August 13, 2020, Epic released a version of Fortnite that included a permanent discount on V-bucks across all platforms (except iOS and Android devices) if they purchased directly through Epic, bypassing Apple and Google's storefronts. Both Apple and Google immediately delisted the game for violating the storefronts' terms of service by including its own storefront, which led Epic to file lawsuits against both companies the same day, accusing them of antitrust behavior in how they operate their app stores. While Apple was ultimately victorious in a bench trial in September 2021 and upheld through appeals, Google's actions were found to be monopolistic by a jury trial in December 2023.[citation needed]
+
+In May 2025, Disney and Epic Games (which The Walt Disney Company owns a 9% in ownership stakes) announced that the video game Fortnite would bring Darth Vader as a non-playable character, with James Earl Jones' voice being reconstructed using generative AI with permission by his estate to serve as an AI chatbot.[244][245] Prior to this, in 2022, Jones signed a deal with Lucasfilm, which allowed the company to utilize generative AI in future projects to recreate his voice.[246] This technology was first used in the Disney+ miniseries Obi-Wan Kenobi.[247] The announcement of the Darth Vader AI chatbot was met with backlash from people who felt that while the appropriate permissions were obtained from the estates of anyone whose likeness is being used, it still felt creepy doing this one year after Jones' death. Similar comparisons were made to the digital reconstruction of Ian Holm[248][249] in Alien: Romulus.[250] Two days after the character was added, it was reported that several players in the game made the character say racial and homophobic slurs using Jones' voice. Shortly after clips of the chatbot saying such words went viral on social media, Epic Games pushed out a hotfix for Fortnite that restricts the responses it can say.[251] On May 19, 2025, SAG-AFTRA filed an unfair labor charge against Epic Games and Llama Productions for infringing on the union's right to negotiate major changes to its collective bargaining agreement.[252]
+
+Notes
+
+↑ Additional studio in Suzhou
+
+↑ Additional studios in Guildford, Leamington Spa and Newcastle
+
+References
+
+↑ Craig, Matt (November 10, 2023). "Epic Games' Unreal Money Engine". Forbes.{{cite magazine}}: CS1 maint: deprecated archival service (link)
+
+↑ Blake, Vikki (March 4, 2026). "Trump Administration Debating Allowing Chinese Company Tencent to Keep Its Stakes in U.S. Gaming Companies Such as Fortnite Maker Epic and League Dev Riot". IGN. Retrieved March 5, 2026.
+
+↑ Gordon, Brian (March 20, 2024). "What is Epic Games now worth? And who owns the Cary company after its Disney deal?". The News & Observer. Retrieved November 21, 2024.
+
+↑ Eanes, Zachery (May 5, 2021). "Another Epic Games exec joins the ranks of Triangle billionaires, testimony reveals". The News & Observer. Retrieved August 12, 2025.
+
+1 2 Maas, Jennifer (March 24, 2026). "Epic Games to Lay Off 1,000 Staffers and Cut $500 Million in Costs Amid 'Fortnite' Downturn". Variety. Retrieved March 24, 2026.
+
+1 2 Crecente, Brian (July 25, 2018). "How a 2012 Decision Helped 'Fortnite' Make Epic Games a Billion Dollar Company". Variety. Archived from the original on July 25, 2018. Retrieved July 26, 2018.
+
+1 2 Crecente, Brian (March 21, 2013). "Tencent's $330M Epic Games investment absorbed 40 percent of developer [Updated]". Polygon. Archived from the original on August 20, 2016. Retrieved August 24, 2016.
+
+↑ Crecente, Brian (March 29, 2019). "'Fortnite' Creator Sees Epic Games Becoming as Big as Facebook, Google". Variety. Archived from the original on March 29, 2019. Retrieved March 30, 2019.
+
+↑ "Most successful videogame engine". Guinness World Records. Archived from the original on December 22, 2015.
+
+1 2 3 4 5 6 7 8 9 10 11 Edwards, Benj (May 25, 2009). "From The Past To The Future: Tim Sweeney Talks". Gamasutra. Archived from the original on February 4, 2017. Retrieved June 18, 2017.
+
+↑ "ZZT and Epic Newsletter Scans". Museum of ZZT. Archived from the original on January 16, 2021. Retrieved January 16, 2021.
+
+1 2 Plante, Chris (October 1, 2012). "Better with age: A history of Epic Games". Polygon. Archived from the original on October 4, 2017. Retrieved January 19, 2018.
+
+1 2 3 Pitcher, Jenna (November 21, 2013). "Epic Classics ships last copy of ZZT". Polygon. Archived from the original on May 19, 2016. Retrieved January 19, 2018.
+
+↑ Sweeney, Tim (1992). "Epic MegaGames Newsletter – Spring 1992". Museum of ZZT. Archived from the original on July 18, 2018. Retrieved March 28, 2018.
+
+↑ Bissell, Tom (November 3, 2008). "The Grammar of Fun". The New Yorker. Archived from the original on December 24, 2014. Retrieved December 24, 2014.
+
+↑ Epic MegaGames Catalog – Winter & Spring 1993
+
+↑ "Kicks Arson". Next Generation. Vol. Two, no. 21 (September 1996). p. 154. Archived from the original on February 3, 2017. Retrieved April 18, 2018.
+
+↑ "Epic MegaGames Author Info Pack". SlideShare. January 9, 2017. Archived from the original on March 30, 2018. Retrieved March 29, 2018.
+
+↑ Lightbown, David (January 9, 2018). "Classic Tools Retrospective: Tim Sweeney on the first version of the Unreal Editor". Game Developer. Archived from the original on August 23, 2018. Retrieved February 22, 2022.
+
+1 2 "Epic Sets up Shop". IGN. February 4, 1999. Archived from the original on July 13, 2017. Retrieved July 13, 2017. {{cite web}}: More than one of |publication-date= and |date= specified (help)
+
+↑ "Unreal Tournament". Metacritic. Archived from the original on September 22, 2017. Retrieved October 17, 2017.
+
+↑ Herz, J. C. (December 2, 1999). "Game Theory; For Game Maker, There's Gold in the Code". The New York Times. ISSN 0362-4331. Archived from the original on September 19, 2017. Retrieved March 5, 2018.
+
+↑ Graves, Lucas (April 2006). "How the Reds Conquered Unreal". Wired. Archived from the original on May 19, 2013. Retrieved July 7, 2013.
+
+↑ IGN Staff (April 3, 2008). "Intel and Epic Games Launch '$1 Million Intel Make Something Unreal Contest'". IGN. Archived from the original on March 6, 2016. Retrieved July 8, 2013.
+
+1 2 3 4 5 6 7 8 Crecente, Brian (May 5, 2016). "The four lives of Epic Games". Polygon. Archived from the original on November 9, 2017. Retrieved July 26, 2018.
+
+1 2 Frank, Allegra (May 2, 2016). "Gears of War 4 would have cost over $100M to make – and could have killed Epic Games". Polygon. Archived from the original on July 29, 2017. Retrieved July 29, 2017.
+
+↑ Foster, Lisa (November 7, 2007). "Unreal Tournament 3 to blast in on November 23rd". MCV. Archived from the original on January 21, 2021. Retrieved July 28, 2017.
+
+↑ Rea, Jared (August 20, 2007). "Epic believes People Can Fly, acquires majority stake". Engadget. Archived from the original on July 28, 2017. Retrieved July 28, 2017.
+
+↑ Laughlin, Andrew (October 13, 2008). "Epic's 'Gears Of War 2' goes gold". Digital Spy. Archived from the original on July 29, 2017. Retrieved July 29, 2017.
+
+↑ Gibson, Ellie (December 9, 2008). "Gears of War 2 sales hit 3 million mark". Eurogamer. Archived from the original on July 29, 2017. Retrieved July 29, 2017.
+
+↑ Buchanan, Levi (November 2, 2010). "Project Sword Becomes Infinity Blade". IGN. Archived from the original on September 19, 2016. Retrieved August 24, 2016.
+
+↑ McWhertor, Michael (September 1, 2010). "Play With The Unreal Engine On Your iPhone With Epic Citadel". Kotaku. Archived from the original on August 24, 2016. Retrieved August 24, 2016.
+
+↑ Reilly, Jim (October 1, 2010). "Gears of War 3 Delayed to Fall 2011". IGN. Archived from the original on June 27, 2015. Retrieved August 24, 2016.
+
+↑ Sliwinski, Alexander (July 5, 2011). "Carbon Games formed by Fat Princess devs". Engadget. Archived from the original on August 26, 2016. Retrieved August 24, 2016.
+
+↑ Langshaw, Mark (December 11, 2011). "'Fortnite' revealed by Epic Games". Digital Spy. Archived from the original on September 6, 2017. Retrieved July 22, 2017.
+
+↑ Plante, Chris (March 7, 2012). "Epic Games China now YingPei Games, no longer part of Epic Games". Polygon. Retrieved February 4, 2025.
+
+↑ Sliwinski, Alexander (June 3, 2012). "Big Huge Games members picked up for Epic Baltimore". Engadget. Archived from the original on August 17, 2016. Retrieved August 24, 2016.
+
+↑ Sliwinski, Alexander (August 9, 2012). "Epic Baltimore now Impossible Studios, working on Infinity Blade: Dungeons". Engadget. Archived from the original on August 17, 2016. Retrieved August 24, 2016.
+
+↑ Corriea, Alexa Ray (February 8, 2013). "Epic Games is closing Impossible Studios, Infinity Blade Dungeons on hold". Polygon. Archived from the original on April 24, 2016. Retrieved August 24, 2016.
+
+↑ Moriarty, Colin (February 8, 2013). "Epic Games Closes Its Newest Studio, Impossible Games". IGN. Archived from the original on September 19, 2016. Retrieved August 24, 2016.
+
+↑ Sarkar, Samit (November 1, 2013). "People Can Fly now known as Epic Games Poland". Polygon. Archived from the original on August 6, 2017. Retrieved October 25, 2021.
+
+↑ Peel, Jeremey (June 8, 2017). "Why has Fortnite taken so long?". PCGamesN. Archived from the original on December 1, 2017. Retrieved November 29, 2017.
+
+↑ Makuch, Eddie (March 21, 2013). "Chinese Internet company owns 40 percent of Epic Games". GameSpot. Archived from the original on June 25, 2016. Retrieved August 24, 2016.
+
+↑ McWhertor, Michael (October 3, 2012). "'Gears of War' design director Cliff Bleszinski leaves Epic Games". Polygon. Archived from the original on March 15, 2016. Retrieved August 24, 2016.
+
+1 2 3 Crecente, Brian (May 5, 2016). "Epic luminaries on why they left". Polygon. Archived from the original on July 26, 2018. Retrieved July 26, 2018.
+
+↑ Makuch, Eddie (December 4, 2012). "Epic Games president retiring". GameSpot. Archived from the original on February 18, 2014. Retrieved August 24, 2016.
+
+↑ Gaston, Martin (March 8, 2013). "Former Epic Games president Mike Capps parts ways with studio". GameSpot. Archived from the original on September 9, 2015. Retrieved August 24, 2016.
+
+↑ Crecente, Brian (August 1, 2014). "The fixer: Why Rod Fergusson returned to Gears of War". Polygon. Archived from the original on July 26, 2018. Retrieved July 26, 2018.
+
+↑ McWhertor, Michael (January 27, 2014). "Microsoft acquires Gears of War from Epic, hires series producer Rod Fergusson". Polygon. Archived from the original on June 12, 2018. Retrieved July 26, 2018.
+
+↑ Orland, Kyle (January 27, 2014). "Microsoft buys Gears of War franchise from Epic Games". Ars Technica. Archived from the original on September 23, 2016. Retrieved August 24, 2016.
+
+↑ Dyer, Mitch (May 8, 2014). "Epic Games Reveals Free, Crowdsourced Unreal Tournament". IGN. Archived from the original on August 21, 2016. Retrieved August 24, 2016.
+
+↑ Makuch, Eddie (July 25, 2014). "New Unreal Tournament in development, and it'll be absolutely free". GameSpot. Archived from the original on April 26, 2016. Retrieved August 24, 2016.
+
+↑ Moscaritolo, Angela (November 4, 2015). "Epic Games Teases New PC Shooter 'Paragon'". PCMag UK. Archived from the original on September 21, 2016. Retrieved August 24, 2016.
+
+↑ Romano, Sal (December 3, 2015). "Shadow Complex Remastered announced for PS4, Xbox One, and PC". Gematsu. Archived from the original on July 30, 2017. Retrieved July 29, 2017.
+
+↑ Shive, Chris (August 9, 2016). "Shadow Complex Gets Physical Release". Hardcore Gamer. Archived from the original on July 29, 2017. Retrieved July 29, 2017.
+
+↑ Wawro, Alex (October 6, 2016). "Born out of Bullet Train, Epic's first commercial VR game is Robo Recall". Gamasutra. Archived from the original on August 9, 2017. Retrieved July 22, 2017.
+
+↑ Stapleton, Dan (March 1, 2017). "Robo Recall Review". IGN. Archived from the original on March 17, 2017. Retrieved March 17, 2017.
+
+↑ Gaudiosi, John (March 3, 2015). "Why Epic Games is giving away its game technology". Fortune. Archived from the original on March 8, 2015. Retrieved March 13, 2015.
+
+↑ Hall, Charlie (June 24, 2015). "People Can Fly returns, no longer owned by Epic Games". Polygon. Archived from the original on March 18, 2017. Retrieved August 8, 2017.
+
+↑ Dornbush, Jonathon (December 1, 2016). "Bulletstorm Remastered Edition Revealed, Release Date Announced". IGN. Archived from the original on August 8, 2017. Retrieved August 8, 2017.
+
+↑ Amenabar, Teddy; Lee, Jonathan. "'Fortnite': Battle royale, concert venue and, maybe, the start of the metaverse". Washington Post. Archived from the original on March 30, 2023. Retrieved January 30, 2023.
+
+↑ Hall, Charlie (June 8, 2017). "Fortnite announces early access release, hands-on the unfinished game". Polygon. Archived from the original on January 21, 2021. Retrieved July 24, 2017.
+
+↑ Swan, Cameron (January 11, 2023). "Why a Dead Space-Fortnite Crossover Seems Unlikely". Game Rant. Archived from the original on January 30, 2023. Retrieved January 30, 2023.
+
+↑ Pendleton, Devon; Palmeri, Christopher (July 24, 2018). "Fortnite Mania Fuels Epic Growth to $8.5 Billion". Bloomberg LP. Archived from the original on July 24, 2018. Retrieved July 24, 2018.
+
+↑ Plunkett, Luke (September 26, 2018). "Sony Is Finally Allowing Cross-Play On The PS4". Kotaku. Archived from the original on September 26, 2018. Retrieved September 26, 2018.
+
+↑ Conditt, Jessica (March 20, 2019). "Epic Games has 250 million 'Fortnite' players and a lot of plans". Engadget. Archived from the original on March 20, 2019. Retrieved March 20, 2019.
+
+↑ Chalk, Andy (July 12, 2018). "Fortnite is making so much money that Epic is giving Unreal Marketplace creators a big raise". PC Gamer. Archived from the original on July 13, 2018. Retrieved July 12, 2018.
+
+↑ Frank, Allegra (December 4, 2018). "Epic Games is launching its own store, and taking a smaller cut than Steam". Polygon. Archived from the original on January 20, 2019. Retrieved December 7, 2018.
+
+↑ Schreier, Jason (January 26, 2018). "After Fortnite's Massive Success, Epic Shuts Down Paragon". Kotaku. Archived from the original on January 26, 2018. Retrieved January 26, 2018.
+
+↑ Makuch, Eddie (December 4, 2018). "Amid Fortnite's Success, New Unreal Tournament Stops Development At Epic Games". GameSpot. Archived from the original on December 5, 2018. Retrieved December 4, 2018.
+
+↑ Garren, Patrick (July 12, 2017). "Disney Accelerator 2017 Includes Investments in aXiomatic and EPIC Games". The Esports Observer. Archived from the original on December 25, 2022. Retrieved October 26, 2018.
+
+↑ Orland, Kyle (January 10, 2019). "Improbable snubs Unity, partners with Epic for $25M "open engine" fund". Ars Technica. Archived from the original on January 11, 2019. Retrieved January 11, 2019.
+
+↑ Gera, Emily (February 22, 2019). "Epic Breaks Down the 'Fortnite' World Cup $100 Million Prize Pool". Variety. Archived from the original on March 30, 2019. Retrieved March 29, 2019.
+
+↑ Wolf, Jacob (May 24, 2019). "Overwatch League commissioner Nanzer to join Epic Games". ESPN. Archived from the original on May 25, 2019. Retrieved May 24, 2019.
+
+↑ Batchelor, James (March 20, 2019). "Epic Games announces $100m MegaGrants program, launches free Online Services tools". GamesIndustry.biz. Archived from the original on March 30, 2019. Retrieved March 20, 2019.
+
+↑ McAloon, Alissa (July 15, 2019). "Epic awards $1.2 million to Blender Foundation through Epic MegaGrants program". Gamasutra. Archived from the original on July 15, 2019. Retrieved July 15, 2019.
+
+↑ Kerr, Chris (May 14, 2019). "Epic Games to receive BAFTA Special Award for contribution to game development". Gamasutra. Archived from the original on May 14, 2019. Retrieved May 14, 2019.
+
+↑ Kaufman, Debra (August 29, 2019). "HPA Engineering Excellence Award: Epic Games – Unreal Engine 4". Hollywood Professional Association. Archived from the original on September 4, 2019. Retrieved September 4, 2019.
+
+↑ Robinson, Andy (March 26, 2020). "Epic will publish games from Remedy, Playdead and Gen Design". Video Games Chronicle. Archived from the original on March 26, 2020. Retrieved March 26, 2020.
+
+↑ Kerr, Chris (March 26, 2020). "Epic signs Playdead, Remedy, and genDesign to new publishing label". Gamasutra. Archived from the original on March 26, 2020. Retrieved March 26, 2020.
+
+↑ Skrebels, Joe (October 20, 2021). "Epic Announces New Publishing Partners, Including Nine Inch Nails Guitarist's Studio". IGN. Archived from the original on October 20, 2021. Retrieved October 20, 2021.
+
+1 2 Valentine, Rebekah (May 13, 2020). "Epic Games announces Unreal Engine 5 with first PS5 footage". GamesIndustry.biz. Archived from the original on May 20, 2020. Retrieved May 13, 2020.
+
+↑ Roof, Katie; Tan, Gillian; Baker, Liana; Kharif, Olga (June 15, 2020). "Fortnite Maker Epic Games Nears Funding at $17 Billion Value". Bloomberg News. Archived from the original on June 16, 2020. Retrieved June 16, 2020.
+
+↑ Spangler, Todd (June 24, 2020). "'Fortnite' Will Livestream Christopher Nolan's 'Inception,' Two Other Movies for Free". Variety. Archived from the original on November 18, 2020. Retrieved October 16, 2020.
+
+↑ Kerr, Chris (August 6, 2020). "Fortnite developer Epic Games secures $1.78 billion in funding". Gamasutra. Archived from the original on August 6, 2020. Retrieved August 6, 2020.
+
+↑ Spangler, Todd (August 6, 2020). "'Fortnite' Maker Epic Games Announces $1.78 Billion Funding, Including $250 Million From Sony". Variety. Archived from the original on August 7, 2020. Retrieved August 6, 2020.
+
+↑ Takahashi, Dean (July 9, 2020). "Sony invests $250 million in Fortnite maker Epic Games". Venturebeat. Archived from the original on July 9, 2020. Retrieved July 9, 2020.
+
+↑ Liao, Shannon (July 9, 2020). "Sony invests $250 million in Fortnite maker Epic Games". CNN. Archived from the original on July 10, 2020. Retrieved July 9, 2020.
+
+↑ Kim, Matt (July 10, 2020). "Sony Acquires Minority Stake in Epic for $250 Million". IGN. Archived from the original on July 9, 2020. Retrieved July 10, 2020.
+
+↑ Thomas, Aaron (January 3, 2021). "Epic Games announces new headquarters at site of Cary Towne Center". WRAL-TV. Archived from the original on January 3, 2021. Retrieved January 3, 2021.
+
+↑ Gallagher, Shaun (January 29, 2025). "Rezoning pulled for Epic Games' planned Cary Towne Center headquarters, future of site unknown". WRAL-TV. Archived from the original on February 12, 2025. Retrieved February 9, 2025.
+
+↑ Kerr, Chris (February 10, 2021). "Epic Games' new MetaHuman Creator will let devs everywhere build high fidelity humans". Gamasutra. Archived from the original on February 10, 2021. Retrieved February 10, 2021.
+
+1 2 Takahashi, Dean (March 30, 2021). "Epic Games teams up with Cesium to bring 3D geospatial data to Unreal". Venture Beat. Archived from the original on March 30, 2021. Retrieved March 30, 2021.
+
+1 2 "'Fortnite' maker Epic Games gets $28.7 billion valuation in latest funding". Reuters. April 13, 2021. Archived from the original on April 13, 2021. Retrieved April 13, 2021.
+
+↑ Kerr, Chris (April 13, 2021). "Epic nets $1 billion in funding, including $200 million investment from Sony". Gamasutra. Archived from the original on April 13, 2021. Retrieved April 13, 2021.
+
+↑ Phillips, Tom (October 11, 2021). "Epic mulls Fortnite movie as it launches entertainment division". Eurogamer. Archived from the original on October 11, 2021. Retrieved October 11, 2021.
+
+↑ "Epic Games Store: le nombre (impressionnant) de comptes dévoilé". jeuxvideo.fr (in French). February 17, 2022. Archived from the original on February 17, 2022. Retrieved February 25, 2022.
+
+↑ Peters, Jay (April 4, 2022). "Epic's new RealityScan app can make 3D models from smartphone photos". The Verge. Archived from the original on April 4, 2022. Retrieved April 4, 2022.
+
+↑ Webster, Andrew (April 11, 2022). "Epic announces $2 billion in funding for its metaverse efforts". The Verge. Archived from the original on April 11, 2022. Retrieved April 11, 2022.
+
+↑ Gross, Anna (April 11, 2022). "Epic Games secures $2bn from Sony and Lego to build gaming metaverse". Financial Times. Archived from the original on December 10, 2022. Retrieved May 18, 2022.
+
+↑ "Epic Games valued at about $32 bln in funding from Sony, Lego firm". Reuters. April 11, 2022. Archived from the original on April 11, 2022. Retrieved April 11, 2022.
+
+↑ Phillips, Tom (April 7, 2022). "Lego and Epic Games announce new partnership". Eurogamer. Archived from the original on April 11, 2022. Retrieved April 11, 2022.
+
+↑ "Postparty Captures Clips of Fortnite on PlayStation, Xbox, Nintendo Switch, and PC". Epic Games' Fortnite. Retrieved October 12, 2025.
+
+↑ Hatmaker, Taylor (February 9, 2023). "Epic Games launches Postparty, an app for sharing Fortnite clips". TechCrunch. Retrieved September 2, 2025.
+
+↑ Peters, Jay (February 9, 2023). "Epic's new clips app helps you easily share moments from Fortnite and Rocket League". The Verge. Retrieved September 11, 2025.
+
+↑ "Postparty is a New App from Epic Games to Share Screenshots, Recordings—How to Use?". Tech Times. February 9, 2023. Retrieved September 11, 2025.
+
+↑ "Postparty". www.epicgames.com. Retrieved October 12, 2025.
+
+↑ "Postparty - Relive Your Gaming Greatness Again and Again". www.postparty.gg. Retrieved October 12, 2025.
+
+↑ "Epic Games launches Postparty, an app for sharing Fortnite clips". Yahoo News. February 9, 2023. Retrieved September 11, 2025.
+
+↑ Nigam, Saumya (February 10, 2023). "Epic Games brings Postparty mobile app for sharing Fortnite clips | Technology News – India TV". India TV News. Retrieved September 11, 2025.
+
+↑ James, Nicholas (February 11, 2023). "Epic Games just released an official Fortnite clips app". win.gg. Retrieved September 11, 2025.
+
+↑ Schreier, Jason (September 28, 2023). "'Fortnite' Maker Epic Games Is Cutting About 16% of Staff". Bloomberg News. Archived from the original on September 28, 2023. Retrieved September 28, 2023.
+
+↑ Phillips, Tom (September 29, 2023). "Fall Guys developer hit hard by Epic Games layoffs, but studio to remain open". Eurogamer. Archived from the original on September 29, 2023. Retrieved September 29, 2023.
+
+↑ Stewart, Marcus (September 28, 2023). "Epic Games Lays Off Over 800 Employees". Game Informer. Archived from the original on January 10, 2024. Retrieved January 10, 2024.
+
+↑ Whitten, Sarah (February 7, 2024). "Disney to take $1.5 billion stake in Epic Games, work with Fortnite maker on new content". CNBC. Archived from the original on February 7, 2024. Retrieved February 7, 2024.
+
+↑ Malik, Yuvraj (February 8, 2024). "Disney's Epic deal shows sharp cut in Fortnite maker's valuation -The Information". Reuters. Retrieved March 13, 2024.
+
+↑ Maas, Jennifer (August 10, 2024). "Doctor Doom Coming to 'Fortnite' as Disney and Epic Games Reveal Details of Gaming Collaboration Plans". Variety. Retrieved August 11, 2024.
+
+↑ "SAG-AFTRA Members Who Work on Video Games Go on Strike; A.I. Protections Remain the Sticking Point". SAG AFTRA. July 26, 2024. Retrieved July 26, 2024.
+
+↑ Broadway, Danielle (July 25, 2024). "Hollywood's videogame performers to strike over AI, pay concerns". Reuters. Retrieved July 26, 2024.
+
+↑ "Epic launching unified Fab marketplace in mid-October". September 17, 2024.
+
+↑ Batchelor, James (October 22, 2024). "Epic launches combined Fab marketplace amid confusion and backlash from artists and developers". GamesIndustry.biz.
+
+↑ "US Justice Department Investigation Leads To Epic Games Board Members Leaving".
+
+↑ Levensen, Michael (March 24, 2026). "Epic Games Lays Off Over 1,000 Employees, Citing Fortnite Slump". the New York Times. Retrieved March 24, 2026.
+
+↑ Warren, Mark (March 24, 2026). "Following Epic's mass layoffs, a bunch of Fortnite modes are going offline and arcade racer Horizon Chase Turbo's downloads will be pulled". Rock Paper Shotgun. Retrieved March 24, 2026.
+
+↑ D'Anastasio, Cecilia (April 10, 2026). "Epic Games Pins 'Fortnite' Comeback on Disney Partnership". Bloomberg News. Retrieved April 10, 2026.
+
+↑ "KitBash Acquires ArtStation and Sketchfab". Epic Games. August 10, 2026. Retrieved August 14, 2026.
+
+↑ Schreier, Jason (October 12, 2026). "Epic Games Delays Disney Project, Asks Developers to Use More AI". Bloomberg News. Retrieved October 16, 2026.
+
+↑ Brandon Boyer (May 20, 2008). "Epic Games Acquires Undertow Developer Chair". Gamasutra. Archived from the original on May 9, 2012. Retrieved July 29, 2017.
+
+↑ Alexander, Leigh (May 20, 2008). "Epic Snags Undertow Developer Chair Entertainment Group". Kotaku. Archived from the original on January 18, 2017. Retrieved March 11, 2017.
+
+↑ McWhertor, Michael (July 28, 2009). "How Shadow Complex Was Inspired By Super Metroid (And Never Looked Back)". Kotaku. Archived from the original on July 29, 2017. Retrieved July 29, 2017.
+
+↑ Crecente, Brian (October 26, 2018). "Epic Games Gets $1.25 Billion Investment From KKR, Six Others". Variety. Archived from the original on October 26, 2018. Retrieved October 26, 2018.
+
+↑ Novy-Williams, Eben; Palmeri, Christopher (October 26, 2018). "Fortnite's Epic Games Gets $1.25 Billion From New Investor Group". Bloomberg L.P. Archived from the original on October 27, 2018. Retrieved October 26, 2018.
+
+↑ Needleman, Sarah E. & Rook, Katie (October 26, 2018). "Fortnite Creator Epic Games Valued at Nearly $15 Billion". The Wall Street Journal. Archived from the original on October 26, 2018. Retrieved October 26, 2018.
+
+1 2 Kerr, Chris (January 22, 2018). "Epic Games acquires cloud processing tech provider Cloudgine". Gamasutra. Archived from the original on January 23, 2018. Retrieved January 22, 2018.
+
+↑ Batchelor, James (October 8, 2018). "Epic Games acquires game security and anti-cheat firm Kamu". Gameindustry.biz. Archived from the original on January 21, 2021. Retrieved October 8, 2018.
+
+↑ Fogel, Stefanie (October 8, 2018). "Epic Games Acquires Anti-Cheat Company Kamu". Variety. Archived from the original on January 21, 2021. Retrieved October 8, 2018.
+
+1 2 Batchelor, James (January 23, 2019). "Epic Games acquires 3Lateral". GamesIndustry.biz. Archived from the original on January 23, 2019. Retrieved January 23, 2019.
+
+1 2 Takahashi, Dean (January 23, 2019). "Epic Games buys scripting tool maker Agog Labs for Unreal Engine 4". VentureBeat. Archived from the original on January 24, 2019. Retrieved January 23, 2019.
+
+1 2 Grayson, Nathan (May 1, 2019). "Epic Acquires Rocket League Developer Psyonix". Kotaku. Archived from the original on January 21, 2021. Retrieved May 1, 2019.
+
+1 2 Statt, Nick (May 1, 2019). "Epic buys Rocket League developer Psyonix, will stop selling the game on Steam". The Verge. Archived from the original on May 1, 2019. Retrieved May 1, 2019.
+
+1 2 Webster, Andrew (December 2, 2023). "Fortnite's Eminem concert teased the future of the game". The Verge. Archived from the original on December 2, 2023. Retrieved December 2, 2023.
+
+↑ Taylor, Haydn (May 13, 2019). "Epic Games acquires Twinmotion". GamesIndustry.biz. Archived from the original on May 14, 2019. Retrieved May 13, 2019.
+
+↑ Corke, Greg (May 13, 2019). "Epic Games acquires Twinmotion viz tool for architects, then gives it away". AEC Magazine. Archived from the original on January 31, 2024. Retrieved January 31, 2024.
+
+↑ Kastrenakes, Jacob (June 12, 2019). "Fortnite maker Epic Games buys video chat app Houseparty". The Verge. Archived from the original on March 29, 2020. Retrieved March 31, 2020.
+
+↑ Peters, Jay (September 9, 2021). "Epic is shutting down Houseparty". The Verge. Archived from the original on September 9, 2021. Retrieved September 9, 2021.
+
+1 2 "Quixel joins forces with Epic Games". Quixel. November 12, 2019. Archived from the original on November 12, 2019. Retrieved November 12, 2019.
+
+1 2 White, Sam (November 12, 2019). "Epic Games acquires Quixel for world's largest bank of photogrammetry data". VG247. Archived from the original on November 12, 2019. Retrieved November 12, 2019.
+
+1 2 McAloon, Alissa (March 12, 2020). "Epic Games acquires facial animation tech studio Cubic Motion". Gamasutra. Archived from the original on March 14, 2020. Retrieved March 12, 2020.
+
+1 2 Kerr, Chris (September 25, 2020). "Epic Games acquires SuperAwesome to create a range of 'kid safe' services". Gamasutra. Archived from the original on September 27, 2020. Retrieved September 25, 2020.
+
+↑ Takahashi, Dean (September 30, 2021). "Epic's Superawesome lets Unreal devs set up free parental verification for child gamers". Venture Beat. Archived from the original on September 30, 2021. Retrieved September 30, 2021.
+
+↑ Calvin, Alex (November 18, 2020). "Epic has bought facial animation firm Hyprsense". PC Games Insider. Archived from the original on November 18, 2020. Retrieved November 18, 2020.
+
+1 2 Francis, Bryant (January 7, 2021). "Epic acquires RAD Game Tools". Gamasutra. Archived from the original on January 7, 2021. Retrieved January 7, 2021.
+
+1 2 Statt, Nick (March 2, 2021). "Epic Games is buying Fall Guys creator Mediatonic". The Verge. Archived from the original on March 2, 2021. Retrieved March 2, 2021.
+
+↑ Molina, Brett. "'Fall Guys' to join 'Fortnite' family under Epic Games. What that could mean for players". USA TODAY. Archived from the original on March 3, 2021. Retrieved March 3, 2021.
+
+1 2 3 Kerr, Chris (March 9, 2021). "Epic Games acquires photogrammetry software developer Capturing Reality". Game Developer. Archived from the original on February 22, 2022. Retrieved February 22, 2022.
+
+1 2 Sinclair, Brendan (April 30, 2021). "Epic acquires ArtStation". GamesIndustry.biz. Archived from the original on April 30, 2021. Retrieved April 30, 2021.
+
+1 2 Holt, Kris (July 21, 2021). "Epic Games buys 3D asset platform Sketchfab". Engadget. Archived from the original on July 21, 2021. Retrieved July 21, 2021.
+
+1 2 Takahashi, Dean (November 23, 2021). "Epic Games acquires Rock Band maker Harmonix". Venture Beat. Archived from the original on November 23, 2021. Retrieved November 23, 2021.
+
+↑ Ivan, Tom (November 23, 2021). "Epic Games has acquired Rock Band and Dance Central creator Harmonix". Video Games Chronicle. Archived from the original on November 23, 2021. Retrieved November 23, 2021.
+
+1 2 Robertson, Adi (March 2, 2022). "Epic Games is acquiring music platform Bandcamp". The Verge. Archived from the original on March 2, 2022. Retrieved March 2, 2022.
+
+↑ Sisario, Ben (March 2, 2022). "Gaming Giant Behind Fortnite Buys Bandcamp, an Indie Music Haven". The New York Times. Archived from the original on April 14, 2022. Retrieved March 2, 2022.
+
+↑ Romano, Sal (April 19, 2023). "Epic Games acquires Horizon Chase studio AQUIRIS". Gematsu. Archived from the original on April 19, 2023. Retrieved April 19, 2023.
+
+↑ Harrington, Caitlin. "Epic Games' Sale of Bandcamp Has Left the Artist-Friendly Music Platform in Limbo". Wired. ISSN 1059-1028. Archived from the original on October 8, 2023. Retrieved October 8, 2023.
+
+↑ Good, Owen (February 20, 2020). "How Lucasfilm used Unreal Engine to make The Mandalorian". Polygon. Archived from the original on November 13, 2020. Retrieved August 1, 2020.
+
+↑ Wiseman, Andreas (January 21, 2021). "'Fortnite' Creator Epic Games Makes Foray Into Movies With Animated Pic 'Gilgamesh'". Deadline Hollywood. Archived from the original on January 21, 2021. Retrieved January 21, 2021.
+
+↑ Grubb, Jeff (December 4, 2018). "Fortnite dev launches Epic Games Store that takes just 12% of revenue". VentureBeat. Archived from the original on December 4, 2018. Retrieved December 4, 2018.
+
+↑ Kerr, Chris (December 4, 2018). "Epic Games launching Steam competitor with 88% revenue share for devs". Gamasutra. Archived from the original on December 5, 2018. Retrieved December 4, 2018.
+
+↑ Bonthuys, Darryn (October 2, 2024). "Epic Plans To Launch Second Free Games Program, This Time For Mobile Devices". GameSpot. Retrieved October 2, 2024.
+
+↑ Hannah, Zoe (January 23, 2025). "Epic Games Store will add monthly free games, 20 third-party titles to mobile app". Polygon. Retrieved January 24, 2025.
+
+↑ Kerr, Chris (June 22, 2021). "Epic Online Services expanded with free anti-cheat and voice chat tools". Gamasutra. Archived from the original on June 22, 2021. Retrieved June 22, 2021.
+
+↑ Weatherbed, Jess (September 29, 2022). "Autodesk and Epic Games are joining forces to bring immersion to architecture tools". The Verge. Archived from the original on January 31, 2024. Retrieved January 31, 2024.
+
+↑ Kerr, Chris (February 10, 2021). "Epic Games' new MetaHuman Creator will let devs everywhere build high fidelity humans". Game Developer. Archived from the original on February 22, 2022. Retrieved February 22, 2022.
+
+↑ Larabel, Michael. "Epic Games Announces Lore Open-Source Version Control System". Phoronix. Retrieved June 19, 2026.
+
+↑ Vigliarolo, Brandon. "Git good with Epic Games' new open source VCS, Lore". The Register. Retrieved June 19, 2026.
+
+↑ "System Design". Lore. Retrieved June 30, 2026.
+
+↑ Kidwell, Emma (October 24, 2018). "Epic Games to establish new office in Australia and New Zealand". Gamasutra. Archived from the original on October 24, 2018. Retrieved October 24, 2018.
+
+↑ "Epic Games has acquired Horizon Chase studio Aquiris to work on Fortnite". VGC. April 19, 2023. Archived from the original on April 19, 2023. Retrieved April 19, 2023.
+
+↑ Martin, Matt (September 25, 2006). "Epic Games forms Shanghai-based outsourcing division". GamesIndustry.biz. Archived from the original on January 25, 2019. Retrieved January 24, 2019.
+
+↑ Sinclair, Brendan (April 12, 2016). "Epic opens Berlin outpost". GamesIndustry.biz. Archived from the original on March 12, 2017. Retrieved March 11, 2017.
+
+↑ Kerr, Chris (April 12, 2016). "Epic expands European publishing operations with new Berlin office". Gamasutra. Archived from the original on April 23, 2016. Retrieved March 11, 2017.
+
+↑ Schramm, Mike (April 12, 2010). "Epic Games planning gala celebration to open Tokyo office". Engadget. Archived from the original on March 12, 2017. Retrieved March 11, 2017.
+
+↑ Tito, Greg (April 13, 2010). "Epic Games Opens Japan Office". The Escapist. Archived from the original on March 12, 2017. Retrieved March 11, 2017.
+
+↑ "Epic Games". Archived from the original on January 18, 2018. Retrieved January 17, 2018.
+
+↑ Sinclair, Brendan (June 29, 2009). "Epic Games opens Korean shop". GameSpot. Archived from the original on March 12, 2017. Retrieved March 11, 2017.
+
+↑ Ashcraft, Brian (June 30, 2009). "Epic Games In South Korea". Kotaku. Archived from the original on March 12, 2017. Retrieved March 11, 2017.
+
+↑ Benessaieh, Karim (November 3, 2018). "Fortnite atterrit à Montréal". La Presse. Archived from the original on January 29, 2019. Retrieved January 28, 2019.
+
+↑ Handrahan, Mathrew (March 26, 2020). "Epic launches publishing label with Remedy, Playdead and GenDesign onboard". GamesIndustry.biz. Archived from the original on March 26, 2020. Retrieved March 26, 2020.
+
+↑ Williams, Mike (September 6, 2012). "Epic Seattle created for Unreal Engine 4 development". GamesIndustry.biz. Archived from the original on November 14, 2012. Retrieved March 11, 2017.
+
+↑ Peel, Jeremy (September 6, 2012). "Epic Games to launch new Seattle studio, hiring engineers for Unreal Engine 4". PCGamesN. Archived from the original on March 12, 2017. Retrieved March 11, 2017.
+
+↑ Jenkins, Brittan (March 28, 2017). "$1 Billion Lincoln Square Expansion in Bellevue is Almost Fully Leased". The Registry. Archived from the original on January 29, 2019. Retrieved January 28, 2019.
+
+↑ "Epic Games Sweden, AB - Företagsinformation". Bizzdo (in Swedish). Archived from the original on March 7, 2024. Retrieved March 7, 2024.
+
+↑ Batchelor, James (August 5, 2014). "Epic Games opens UK studio". Develop. Archived from the original on February 23, 2016. Retrieved January 22, 2018.
+
+↑ "Pitbull Bytes: From humble beginnings". Develop. December 6, 2013. Archived from the original on June 22, 2015. Retrieved January 22, 2018.
+
+↑ Ford, Coreena (October 9, 2017). "Computer games firm Epic takes offices in Newcastle city centre". Chronicle Live. Archived from the original on January 21, 2021. Retrieved January 28, 2019.
+
+↑ "KitBash Acquires ArtStation and Sketchfab". www.epicgames.com. Retrieved August 20, 2026.
+
+↑ Williams, Mike (February 8, 2013). "Epic Games closes Impossible Studios, delays Infinity Blade: Dungeons". GamesIndustry.biz. Archived from the original on January 21, 2021. Retrieved January 28, 2019.
+
+↑ Hussain, Tamoor (June 24, 2015). "People Can Fly Turns Independent, Buys Bulletstorm IP". GameSpot. Archived from the original on June 27, 2015. Retrieved June 24, 2015.
+
+↑ "KitBash Acquires ArtStation and Sketchfab". www.epicgames.com. Retrieved August 20, 2026.
+
+↑ Cifaldi, Frank (July 5, 2011). "Fat Princess Developers Form New Studio Following Closure". Gamasutra. Archived from the original on May 10, 2012. Retrieved April 1, 2021.
+
+↑ Crecente, Brian (July 19, 2007). "Silicon Knights: Epic Sabotaged Us". Kotaku. Archived from the original on September 16, 2009. Retrieved November 15, 2017.
+
+↑ Carless, Simon (July 19, 2007). "Breaking: Silicon Knights Files Lawsuit Against Epic". Gamasutra. Archived from the original on September 24, 2016. Retrieved August 24, 2016.
+
+1 2 Brightman, James (August 9, 2007). "Mark Rein: Epic Games Did Nothing Wrong; Silicon Knights is Stealing". GameDaily. Archived from the original on November 22, 2007. Retrieved November 9, 2017.
+
+↑ Sinclair, Brendan (August 9, 2007). "Epic Games countersues Silicon Knights". GameSpot. Archived from the original on September 28, 2017. Retrieved September 28, 2017.
+
+↑ Graft, Kris (October 31, 2007). "Epic's Motion to Dismiss UE3 Case Denied". Next Generation. Archived from the original on November 3, 2007. Retrieved December 20, 2017.
+
+↑ Totilo, Stephen (May 30, 2012). "Epic Says Epic Has Won Lawsuit Battle With Silicon Knights [UPDATE: Epic Awarded $4.45 Million]". Kotaku. Archived from the original on August 24, 2016. Retrieved August 24, 2016.
+
+1 2 3 Nunneley, Stephany (November 9, 2012). "Epic judgment doubled, Silicon Knights ordered to pay over $9 million". VG247. Archived from the original on August 8, 2016. Retrieved August 24, 2016.
+
+↑ Sawyer, D. (November 7, 2012). "Silicon Knights, Inc. v. Epic Games, Inc". Justia. Archived from the original on September 4, 2016. Retrieved August 24, 2016.
+
+↑ "Silicon Knights Inc". Collins Barrow. May 16, 2014. Archived from the original on April 10, 2016. Retrieved August 24, 2016.
+
+↑ Jones, Richard-Scott (August 23, 2017). "Steam could be profitable with an 8% cut rather than 30%, says Tim Sweeney". PCGamesN. Archived from the original on January 20, 2019. Retrieved December 14, 2018.
+
+↑ Statt, Nick (August 3, 2018). "Fortnite for Android will ditch Google Play Store for Epic's website". The Verge. Archived from the original on August 3, 2018. Retrieved August 3, 2018.
+
+↑ Statt, Nick (April 21, 2020). "Epic gives in to Google and releases Fortnite on the Play Store". The Verge. Archived from the original on April 21, 2020. Retrieved April 21, 2020.
+
+↑ Statt, Nick (May 18, 2018). "Fortnite is coming to Android this summer". The Verge. Archived from the original on May 19, 2018. Retrieved May 18, 2018.
+
+↑ Cox, Kate (August 13, 2020). "Fortnite launches new payment system to cut Apple, Google out". Ars Technica. Archived from the original on January 21, 2021. Retrieved August 13, 2020.
+
+↑ Statt, Nick (August 13, 2020). "Apple just kicked Fortnite off the App Store". The Verge. Archived from the original on August 13, 2020. Retrieved August 13, 2020.
+
+↑ Bohn, Dieter (August 13, 2020). "Fortnite for Android has also been kicked off the Google Play Store". The Verge. Archived from the original on August 13, 2020. Retrieved August 13, 2020.
+
+↑ Nicas, Jack; Browning, Kellen; Griffith, Erin (August 13, 2020). "Fortnite Creator Sues Apple and Google After Ban From App Stores". The New York Times. Archived from the original on August 13, 2020. Retrieved August 13, 2020.
+
+↑ Statt, Nick (August 14, 2020). "Epic Games is suing Apple". The Verge. Archived from the original on August 13, 2020. Retrieved August 14, 2020.
+
+↑ Statt, Nick (August 14, 2020). "Epic CEO Tim Sweeney says Apple fight is about 'basic freedoms of all consumers and developers'". The Verge. Archived from the original on August 15, 2020. Retrieved August 14, 2020.
+
+↑ Valentine, Rebekah (August 17, 2020). "Apple terminating Epic developer accounts, tools access". GamesIndustry.biz. Archived from the original on August 18, 2020. Retrieved August 17, 2020.
+
+↑ McWhertor, Michael (August 17, 2020). "Apple threatens to cut off Epic Games from iOS, Mac dev tools". Polygon. Archived from the original on August 18, 2020. Retrieved August 17, 2020.
+
+↑ Brandom, Russell; Hollister, Sean; Peters, Jay (August 24, 2020). "Epic judge will protect Unreal Engine — but not Fortnite". The Verge. Archived from the original on August 25, 2020. Retrieved August 24, 2020.
+
+↑ Amadeo, Ron (September 24, 2020). "Epic, Spotify, and others take on Apple with "Coalition for App Fairness"". Ars Technica. Archived from the original on September 24, 2020. Retrieved September 26, 2020.
+
+↑ Takahashi, Dean (September 10, 2021). "Epic Games wins injunction favoring alternative payments in antitrust lawsuit against Apple". VentureBeat. Archived from the original on February 15, 2023. Retrieved February 15, 2023.
+
+↑ Nicas, Jack; Browning, Kellen (September 10, 2021). "Judge Orders Apple to Ease Restrictions on App Developers". The New York Times. Archived from the original on September 12, 2021. Retrieved September 10, 2021.
+
+↑ Leswing, Kif (September 10, 2021). "Apple can no longer force developers to use in-app purchasing, judge rules in Epic Games case". CNBC. Archived from the original on September 12, 2021. Retrieved September 10, 2021.
+
+↑ "A comprehensive breakdown of the Epic v. Apple ruling". September 12, 2021. Archived from the original on September 12, 2021. Retrieved July 15, 2022.
+
+↑ Chung, Andrew (January 16, 2024). "U.S. Supreme Court snubs Epic Games legal battle with Apple". Reuters. Archived from the original on January 21, 2024. Retrieved January 16, 2024.
+
+↑ Peters, Jay (April 30, 2025). "A judge just blew up Apple's control of the App Store". The Verge. Retrieved April 30, 2025.
+
+↑ Leswing, Kif (April 30, 2025). "Court finds Apple, executive lied under oath in Epic Games trial". CNBC. Retrieved April 30, 2025.
+
+↑ Grant, Nico; McCabe, David (December 18, 2023). "Google Allows More App Payment Options in Antitrust Deal With States". The New York Times. Archived from the original on February 1, 2024. Retrieved January 21, 2024.
+
+↑ Fung, Brian (November 1, 2023). "Tinder owner Match Group settles antitrust claims against Google's app store". CNN. Archived from the original on December 8, 2023. Retrieved January 21, 2024.
+
+↑ Grant, Nico (December 11, 2023). "Google Loses Antitrust Court Battle With Makers of Fortnite Video Game". The New York Times. Archived from the original on January 20, 2024. Retrieved January 20, 2024.
+
+↑ Wile, Rob (December 19, 2022). "'Fortnite' maker Epic Games fined $520M after accusations it exposed young players to potential harm". NBC News. Archived from the original on December 19, 2022. Retrieved December 19, 2022.
+
+↑ Fung, Brian (December 19, 2022). "'Fortnite' maker Epic Games to pay $520 million in record-breaking FTC settlement | CNN Business". CNN. Archived from the original on December 19, 2022. Retrieved December 19, 2022.
+
+↑ Needleman, Sarah E.; Tilley, Aaron; Kendall, Brent (December 19, 2022). "Epic Games, Maker of 'Fortnite,' to Pay $520 Million to Resolve FTC Allegations". WSJ. Archived from the original on December 19, 2022. Retrieved December 19, 2022.
+
+↑ Goswami, Rohan (December 19, 2022). "Fortnite maker Epic Games to pay $520 million in fines in FTC settlement". CNBC. Archived from the original on December 19, 2022. Retrieved December 19, 2022.
+
+↑ Smith, Ed (December 19, 2022). "Epic Games warns developers to "rethink" after Fortnite settlement". PCGamesN. Archived from the original on December 19, 2022. Retrieved December 19, 2022.
+
+↑ Cerullo, Megan (December 9, 2024). "Fortnite and other Epic Games customers are about to get a $72 million refund. Here's why". CBS News. Retrieved December 9, 2024.
+
+↑ Kim, Matt (April 4, 2019). ""The Epic Games Store is Spyware:" How a Toxic Accusation Was Started by Anti-Chinese Sentiment". USGamer. Archived from the original on April 5, 2019. Retrieved April 4, 2019.
+
+↑ Hall, Charlie (April 5, 2019). "The fury over the Epic Games Store, explained". Polygon. Archived from the original on April 5, 2019. Retrieved April 5, 2019.
+
+↑ "Houseparty offers $1m reward for proof of sabotage". BBC News. March 31, 2020. Archived from the original on March 31, 2020. Retrieved March 31, 2020.
+
+↑ Winder, Davey (March 31, 2020). "Has Houseparty Been Sabotaged? $1 Million Reward Offered As Hacking Claims Go Viral". Forbes. Archived from the original on March 31, 2020. Retrieved March 31, 2020.
+
+↑ Griffin, Andrew (March 31, 2020). "Lots of people are saying you should delete Houseparty right now. But should you?". The Independent. Archived from the original on April 2, 2020. Retrieved March 31, 2020.
+
+↑ Weprin, Alex (May 16, 2025). "Disney, Epic Games Using AI to Bring James Earl Jones' Darth Vader Voice to 'Fortnite'". The Hollywood Reporter. Retrieved May 20, 2025.
+
+↑ Frank (May 16, 2025). "James Earl Jones' Family, Disney, and Epic Games Bring Darth Vader's Iconic Voice to Fortnite — with Interactive Chat Experience". The Walt Disney Company. Retrieved May 22, 2025.
+
+↑ Bell, BreAnna (September 24, 2022). "James Earl Jones Steps Back From Voicing Darth Vader, Signs Off on Using Archived Recordings to Recreate Voice With A.I." Variety. Archived from the original on February 3, 2023. Retrieved September 26, 2022.
+
+↑ Scott, Lyvie (June 1, 2022). "Who Is Voicing Darth Vader In Obi-Wan Kenobi? It's Complicated". /Film. Archived from the original on June 4, 2022. Retrieved June 4, 2022.
+
+↑ Aguilar, Carlos (August 19, 2024). "The makers of 'Alien: Romulus' defend their AI-resurrected Ian Holm: 'We did it all with a lot of respect'". Los Angeles Times. Archived from the original on August 22, 2024. Retrieved August 22, 2024.
+
+↑ Barber, Nicholas (August 20, 2024). "Alien: Romulus – Why people are so upset about its surprise cameo". BBC. Archived from the original on August 22, 2024. Retrieved August 22, 2024.
+
+↑ King, Jade (May 19, 2025). ""You Cannot Overlook This": How Fortnite's Darth Vader Chatbot Teases A Dark Future For AI In Video Games". TheGamer. Retrieved May 20, 2025.
+
+↑ McWhertor, Michael (May 16, 2025). "Fortnite players are abusing AI Darth Vader, forcing him to say 'Skibidi Toilet' and worse". Polygon. Retrieved May 20, 2025.
+
+↑ Kilkenny, Katie (May 19, 2025). "SAG-AFTRA Files Unfair Labor Practice Charge Over Darth Vader AI Voice in 'Fortnite'". The Hollywood Reporter. Retrieved May 20, 2025.
+
+Further reading
+
+Keighley, Geoffrey. "Blinded By Reality: The True Story Behind the Creation of Unreal". GameSpot. Archived from the original on May 19, 2001.
+
+Berardini, César A. (June 30, 2005). "Everything You Wanted to Know About Unreal". TeamXbox. Archived from the original on July 3, 2005.
+
+Porter, Will (October 26, 2007). "The Epic tradition". GamesRadar.
+
+Blancato, Joe (May 13, 2008). "Epic's Rainmakers". The Escapist. Archived from the original on June 3, 2020. Retrieved September 4, 2019.
+
+Edwards, Benj (May 25, 2009). "From The Past To The Future: Tim Sweeney Talks". Gamasutra.
+
+Totilo, Stephen (December 7, 2011). "The Quiet Tinkerer Who Makes Games Beautiful Finally Gets His Due". Kotaku.
+
+Plante, Chris (April 2, 2012). "Better with age: A history of Epic Games". Polygon.
+
+Freeman, Will (August 12, 2013). "Development Legends: An Unreal tale". MCV.
+
+Crecente, Brian (May 1, 2016). "Their future is Epic: The evolution of a gaming giant". Polygon. Archived from the original on October 4, 2017. Retrieved July 26, 2018.
+
+Huddleston, Tom Jr. (August 9, 2018). "'Fortnite' launched battle royale a year ago today – here's how the company behind the billion-dollar game was founded by a college kid". CNBC.
+
+Griffith, Erin (August 25, 2020). "To Fight Apple and Google's Grip, Fortnite Creator Mounts a Crusade". The New York Times.
+
+External links
+
+Wikimedia Commons has media related to Epic Games.
+
+Official website
+
+ | 
+
+v
+
+t
+
+e
+
+Epic Games
+
+ | 
+List of games
+
+ | Games 
+
+ developed | 
+
+ | Unreal | 
+
+Unreal
+
+Tournament
+
+2003
+
+2004
+
+3
+
+Facing Worlds
+
+Championship
+
+2
+
+Tournament§
+
+ | Gears of War | 
+
+Gears of War
+
+Gears of War 2
+
+Gears of War 3
+
+Gears of War: Judgment
+
+ | Infinity Blade | 
+
+Infinity Blade
+
+Infinity Blade II
+
+Infinity Blade III
+
+ | Fortnite | 
+
+Save the World
+
+Battle Royale
+
+Creative
+
+Lego
+
+Rocket Racing
+
+Festival
+
+Ballistic
+
+ | Other | 
+
+ZZT
+
+Jazz Jackrabbit
+
+2
+
+Jill of the Jungle
+
+Kiloblaster
+
+Silverball
+
+Xargon
+
+Extreme Pinball
+
+7th Legion
+
+Age of Wonders
+
+Shadow Complex
+
+Bulletstorm
+
+Robo Recall
+
+Paragon§
+
+The Matrix Awakens
+
+ | Third-party 
+
+ publishing | 
+
+ | Epic 
+
+ MegaGames | 
+
+Castle of the Winds
+
+Brix
+
+Electro Man
+
+Ken's Labyrinth
+
+Ancients 1: Death Watch
+
+Solar Winds
+
+Zone 66
+
+The Adventures of Robbo
+
+Epic Pinball
+
+Heartlight
+
+Highway Hunter
+
+One Must Fall: 2097
+
+Traffic Department 2192
+
+Radix: Beyond the Void
+
+Tyrian
+
+Seek and Destroy
+
+ | Epic Games 
+
+ Publishing | 
+
+Fall Guys
+
+Kid A Mnesia Exhibition
+
+PC Building Simulator 2
+
+Rumbleverse
+
+Alan Wake II
+
+Gen Atlas
+
+ | Technology | 
+
+Unreal Engine
+
+1
+
+2
+
+3
+
+4
+
+5
+
+6
+
+UEFN
+
+Verse
+
+Epic Citadel
+
+Epic Games Store
+
+Easy Anti-Cheat
+
+Houseparty
+
+Sketchfab
+
+Bink Video
+
+ | Subsidiaries | 
+
+ | Current | 
+
+Chair Entertainment
+
+Cloudgine
+
+Harmonix
+
+Kids Web Services
+
+Psyonix
+
+Mediatonic
+
+ | Former | 
+
+Impossible Studios
+
+Titan Studios
+
+Pitbull Studio
+
+People Can Fly
+
+Bandcamp
+
+ | People | 
+
+ | Current | 
+
+Tim Sweeney
+
+Mark Rein
+
+Steve Polge
+
+Sjoerd De Jong
+
+ | Former | 
+
+Cliff Bleszinski
+
+Mike Capps
+
+Rod Fergusson
+
+Donald Mustard
+
+ | Related | 
+
+Make Something Unreal
+
+Fortnite World Cup
+
+Epic Games v. Apple
+
+Apple v. Epic Games
+
+Epic Games v. Google
+
+Coalition for App Fairness
+
+ | 
+
+§ Cancelled games
+
+ Category
+
+ | 
+Authority control databases 
+
+ | International | 
+
+ISNI
+
+VIAF
+
+ | National | 
+
+United States
+2
+
+France
+
+BnF data
+
+Spain
+
+Norway
+
+Israel
+
+ | Artists | 
+
+MusicBrainz
+
+ | Other | 
+
+MusicBrainz label
+
+Yale LUX
+
+Retrieved from "https://en.wikipedia.org/w/index.php?title=Epic_Games&oldid=1386599267"
+
+Categories: 
+Epic Games
+
+1991 establishments in Maryland
+
+American companies established in 1991
+
+Companies based in Cary, North Carolina
+
+Golden Joystick Award winners
+
+Potomac, Maryland
+
+Private equity portfolio companies
+
+Privately held companies based in North Carolina
+
+Tencent
+
+Video game companies based in North Carolina
+
+Video game companies established in 1991
+
+Video game development companies
+
+Video game publishers
+
+Hidden categories: 
+Articles with short description
+
+Short description is different from Wikidata
+
+Wikipedia pages semi-protected against vandalism
+
+Use American English from September 2019
+
+All Wikipedia articles written in American English
+
+Use mdy dates from September 2019
+
+CS1 maint: deprecated archival service
+
+All articles with unsourced statements
+
+Articles with unsourced statements from November 2026
+
+Pages with non-numeric formatnum arguments
+
+CS1 errors: redundant parameter
+
+Articles containing Chinese-language text
+
+Articles with unsourced statements from May 2023
+
+CS1 French-language sources (fr)
+
+CS1 Swedish-language sources (sv)
+
+Wikipedia articles in need of updating from October 2025
+
+All Wikipedia articles in need of updating
+
+Articles with unsourced statements from July 2026
+
+Commons category link is on Wikidata
+
+ This page was last edited on 19 November 2026, at 11:08 (UTC).
+
+Page was rendered with Parsoid.
+
+Text is available under the Creative Commons Attribution-ShareAlike 4.0 License;
+additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+Privacy policy
+
+About Wikipedia
+
+Disclaimers
+
+Contact Wikipedia
+
+Legal & safety contacts
+
+Code of Conduct
+
+Developers
+
+Statistics
+
+Cookie statement
+
+Mobile view
+
+Search
+
+ Search
+
+Toggle the table of contents
+
+Epic Games
+
+52 languages
+
+Add topic
