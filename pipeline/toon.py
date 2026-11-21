@@ -311,7 +311,8 @@ AH_THING = {"shoe": "shoe", "springshoe": "springshoe", "sneakerbus": "bus", "bu
             "satellite": "satellite", "ring": "ring", "crown": "crown", "tv": "tv", "books": "books", "letter": "letter", "medal": "medal",
             "idea": "lightbulb", "factory": "factory", "stadium": "stadium", "plant": "factory", "car": "car", "truck": "truck",
             "trophy": "trophy", "cash": "cashstack", "boxes": "box", "check": "letter", "rocket": "rocket", "ball": "basketball", "mic": "mic",
-            "laptop": "laptop", "burger": "burger", "controller": "controller", "ereader": "phone", "snack": "burger", "poster": "newspaper", "horse": "horse", "baseball": "baseball", "guitar": "guitar", "rollercoaster": "rollercoaster"}
+            "laptop": "laptop", "burger": "burger", "controller": "controller", "ereader": "phone", "snack": "burger", "poster": "newspaper", "horse": "horse", "baseball": "baseball", "guitar": "guitar", "rollercoaster": "rollercoaster",
+            "noodlecup": "noodlecup", "legobrick": "legobrick", "eiffeltower": "eiffeltower", "giantshovel": "giantshovel"}
 def _ts_union(path: str, typ: str) -> set:
     """the names a TS union type lists (SetName / ThingName), so a script may ask for any set or object directly"""
     try:
@@ -375,7 +376,11 @@ def ah_models() -> dict:
     return _AH_MODELS
 
 
-AH_CODE_WORDS = [("guitar", r"\bguitars?\b|\bguitarists?\b"),
+AH_CODE_WORDS = [("giantshovel", r"\b(?:giant|huge|enormous|house-tall|massive) shovels?\b|\bshovels? (?:as tall as|taller than|the size of) (?:a|the) (?:house|building)"),
+                 ("eiffeltower", r"\beiffel\b"),
+                 ("legobrick", r"\blegos?\b|\bbricks?\b"),
+                 ("noodlecup", r"\bcup noodles?\b|\binstant noodles?\b|\bnoodles?\b|\bramen\b"),
+                 ("guitar", r"\bguitars?\b|\bguitarists?\b"),
                  ("rollercoaster", r"\broller ?coasters?\b|\bamusement parks?\b|\btheme parks?\b"),
                  ("horse", r"\bhorses?\b|\bhorse racing\b|\bjockeys?\b|\bracehorses?\b|\bthoroughbreds?\b"),
                  ("baseball", r"\bbaseballs?\b|\bfastballs?\b|\bcurveballs?\b|\bsliders?\b(?=.*\b(?:pitch\w*|baseball)\b)"),
