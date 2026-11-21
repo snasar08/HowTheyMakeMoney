@@ -1,0 +1,35 @@
+{
+  "https://en.wikipedia.org/wiki/Simone_Biles": {
+    "file": "pages/4f38a87ddd78.txt",
+    "fetched_at": "2026-11-21T23:35:43.562607+00:00",
+    "ok": true,
+    "chars": 153185,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Simone_Biles",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://www.essence.com/entertainment/sports/highest-paid-black-women-athletes-2025": {
+    "file": "pages/e888b7ae2f08.txt",
+    "fetched_at": "2026-11-21T23:35:44.116630+00:00",
+    "ok": true,
+    "chars": 7140,
+    "status": 200,
+    "final_url": "https://www.essence.com/entertainment/sports/highest-paid-black-women-athletes-2025",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://www.ibtimes.co.uk/simone-biles-net-worth-heres-where-14th-highest-paid-female-athlete-gets-her-money-1725968": {
+    "file": "pages/26d6fbae2b2b.txt",
+    "fetched_at": "2026-11-21T23:35:44.711922+00:00",
+    "ok": true,
+    "chars": 7247,
+    "status": 200,
+    "final_url": "https://www.ibtimes.co.uk/simone-biles-net-worth-heres-where-14th-highest-paid-female-athlete-gets-her-money-1725968",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://www.essentiallysports.com/olympics-gymnastics-news-simone-biles-continues-to-remain-in-elite-company-as-latest-twenty-twenty-five-earnings-revealed": {
+    "file": "pages/59020390e7d3.txt",
+    "fetched_at": "2026-11-21T23:35:45.307724+00:00",
+    "ok": false,
+    "error": "HTTP 410"
+  }
+}
