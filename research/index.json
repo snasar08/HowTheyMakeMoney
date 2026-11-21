@@ -34,5 +34,29 @@
     "status": 200,
     "final_url": "https://en.wikipedia.org/wiki/Beverage_can",
     "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Earth%27s_circumference": {
+    "file": "pages/06d950ab12d4.txt",
+    "fetched_at": "2026-11-21T18:47:54.996511+00:00",
+    "ok": true,
+    "chars": 23117,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Earth%27s_circumference",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://www.redbull.com/us-en/energydrink/red-bull-energy-drink": {
+    "file": "pages/1609afc9f398.txt",
+    "fetched_at": "2026-11-21T18:47:55.408100+00:00",
+    "ok": true,
+    "chars": 7550,
+    "status": 200,
+    "final_url": "https://www.redbull.com/us-en/energydrink/products/red-bull-energy-drink",
+    "content_type": "text/html; charset=utf-8"
+  },
+  "https://www.redbull.com/us-en/energydrink/red-bull-can-sizes": {
+    "file": "pages/589705d2b6b6.txt",
+    "fetched_at": "2026-11-21T18:47:56.026184+00:00",
+    "ok": false,
+    "error": "HTTP 404"
   }
 }

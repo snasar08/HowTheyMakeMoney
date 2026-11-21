@@ -1,0 +1,884 @@
+URL: https://en.wikipedia.org/wiki/Earth%27s_circumference
+FINAL_URL: https://en.wikipedia.org/wiki/Earth%27s_circumference
+FETCHED: 2026-11-21T18:47:54.996511+00:00
+
+Jump to content
+
+Main menu
+
+Main menu
+
+ move to sidebar
+ hide
+
+ Navigation
+
+Main page
+
+Contents
+
+Current events
+
+Random article
+
+About Wikipedia
+
+Contact us
+
+ Contribute
+
+Help
+
+Learn to edit
+
+Community portal
+
+Recent changes
+
+Upload file
+
+Special pages
+
+Search
+
+ Search
+
+Appearance
+
+Donate
+
+Create account
+
+Log in
+
+Personal tools
+
+Donate
+
+Create account
+
+Log in
+
+Contents
+
+ move to sidebar
+ hide
+
+(Top)
+
+ 1
+ History
+
+ Toggle History subsection
+
+ 1.1
+ Eratosthenes
+
+ 1.2
+ Posidonius
+
+ 1.3
+ Aryabhata
+
+ 1.4
+ Islamic Golden Age
+
+ 1.5
+ Columbus's error
+
+ 2
+ Historical use in the definition of units of measurement
+
+ 3
+ See also
+
+ 4
+ References
+
+ 5
+ Bibliography
+
+ 6
+ External links
+
+Toggle the table of contents
+
+Earth's circumference
+
+6 languages
+
+العربية
+
+Español
+
+فارسی
+
+Bahasa Indonesia
+
+Română
+
+中文
+
+Edit links
+
+Article
+
+Talk
+
+ English
+
+Read
+
+Edit
+
+View history
+
+Save
+
+Tools
+
+Tools
+
+ move to sidebar
+ hide
+
+ Actions
+
+Read
+
+Edit
+
+View history
+
+Save
+
+ General
+
+What links here
+
+Related changes
+
+Upload file
+
+Permanent link
+
+Page information
+
+Cite this page
+
+Get shortened URL
+
+Switch to legacy parser
+
+ Print/export
+
+Download as PDF
+
+Printable version
+
+ In other projects
+
+Wikimedia Commons
+
+Wikiquote
+
+Wikidata item
+
+Appearance
+
+ move to sidebar
+ hide
+
+From Wikipedia, the free encyclopedia
+
+ | Geodesy
+
+ | 
+
+ | 
+
+Fundamentals
+
+Geodesy
+
+Geodynamics
+
+Geomatics
+
+History
+
+ | 
+
+Concepts
+
+Geographical distance
+
+Geoid
+
+Figure of the Earth (radius and circumference)
+
+Geodetic coordinates
+
+Geodetic datum
+
+Geodesic
+
+Horizontal position representation
+
+Latitude / Longitude
+
+Map projection
+
+Reference ellipsoid
+
+Satellite geodesy
+
+Spatial reference system
+
+Spatial relations
+
+Vertical positions
+
+ | 
+
+Technologies
+
+Global Nav. Sat. Systems (GNSSs)
+
+Global Pos. System (GPS)
+
+GLONASS (Russia)
+
+BeiDou (BDS) (China)
+
+Galileo (Europe)
+
+NAVIC (India)
+
+Quasi-Zenith Sat. Sys. (QZSS) (Japan)
+
+Discrete Global Grid and Geocoding
+
+ | 
+
+Standards (history)
+
+ | NGVD 29 | Sea Level Datum 1929
+
+ | OSGB36 | Ordnance Survey Great Britain 1936
+
+ | SK-42 | Systema Koordinat 1942 goda
+
+ | ED50 | European Datum 1950
+
+ | SAD69 | South American Datum 1969
+
+ | GRS 80 | Geodetic Reference System 1980
+
+ | ISO 6709 | Geographic point coord. 1983
+
+ | NAD 83 | North American Datum 1983
+
+ | WGS 84 | World Geodetic System 1984
+
+ | NAVD 88 | N. American Vertical Datum 1988
+
+ | ETRS89 | European Terrestrial Ref. Sys. 1989
+
+ | GCJ-02 | Chinese obfuscated datum 2002
+
+ | Geo URI | Internet link to a point 2010
+
+International Terrestrial Reference System
+
+Spatial Reference System Identifier (SRID)
+
+Universal Transverse Mercator (UTM)
+
+ | 
+
+v
+
+t
+
+e
+
+Earth's circumference is a measure of Earth's figure, approximately an oblate spheroid with an equatorial bulge (or planetary flattening) due to Earth's rotation. The equatorial circumference equals 40,075.017 km (24,901.461 mi) and corresponds to the perimeter of a circle, simply 2π times Earth's equatorial radius. The polar circumference equals 40,007.863 km (24,859.734 mi) and corresponds to the perimeter of an ellipse, a complicated formula involving Earth's polar radius and Earth's flattening.[1] The difference between the two values is 67.154 km (41.728 mi) or about 0.17%. 
+
+The first known scientific measurement and calculation was done by Eratosthenes, by comparing altitudes of the mid-day sun at two places a known north–south distance apart.[2] He achieved a great degree of precision in his computation.[3] The Earth's shape deviates from spherical by flattening, but by only about 0.3%.
+
+Measurement of Earth's circumference has been important to navigation since ancient times. In modern times, Earth's circumference has been used to define fundamental units of measurement of length: the nautical mile in the seventeenth century and the metre in the eighteenth. Earth's polar circumference is nearly 21,600 nautical miles because the nautical mile was defined as one minute of latitude (meridian arc), and 360 degrees contain 21,600 minutes. The polar circumference is also close to 40,000 kilometres because the metre was originally defined to be one ten millionth (i.e., a kilometre is one ten thousandth) of the arc from pole to equator (quarter meridian). The accuracy of measuring the circumference has improved since then, but the physical length of each unit of measure has remained close to what it was determined to be at the time, so the Earth's circumference is no longer a round number in metres or nautical miles.
+
+History
+[edit]
+
+See also: History of geodesy, Spherical Earth § History, Earth radius § History, and Meridian arc § History
+
+Eratosthenes
+[edit]
+
+Illustration showing a portion of the globe showing a part of the African continent. The sun beams shown as two rays hitting earth at Syene and Alexandria. Angle of sun beam and the gnomons (vertical sticks) is shown at Alexandria which allowed Eratosthenes's estimate of the circumference of Earth.
+
+The measure of Earth's circumference is the most famous among the results obtained by Eratosthenes,[4] who estimated that the meridian has a length of 252,000 stadia, with an error on the real value between −2.4% and +0.8% (assuming a value for the stadion between 155 and 160 metres;[3] the exact value of the stadion remains a subject of debate to this day; see stadion).
+
+Eratosthenes described his technique in a book entitled On the measure of the Earth, which has not been preserved; what has been preserved is the simplified version described by Cleomedes to popularise the discovery.[5] Cleomedes invites his reader to consider two Egyptian cities, Alexandria and Syene (modern Aswan):
+
+Cleomedes assumes that the distance between Syene and Alexandria was 5,000 stadia (a figure that was checked yearly by professional bematists, mensores regii).[6]
+
+He assumes the simplified (but inaccurate) hypothesis that Syene was precisely on the Tropic of Cancer, saying that at local noon on the summer solstice the Sun was directly overhead. Syene was actually north of the tropic by something less than a degree.
+
+He assumes the simplified (but inaccurate) hypothesis that Syene and Alexandria are on the same meridian. Syene was actually about 3 degrees of longitude east of Alexandria.
+
+According to Cleomedes's On the Circular Motions of the Celestial Bodies, around 240 BC, Eratosthenes calculated the circumference of the Earth in Ptolemaic Egypt.[7] Using a vertical rod known as a gnomon and under the previous assumptions, he knew that at local noon on the summer solstice in Syene (modern Aswan, Egypt), the Sun was directly overhead, as the gnomon cast no shadow. Additionally, the shadow of someone looking down a deep well at that time in Syene blocked the reflection of the Sun on the water. Eratosthenes then measured the Sun's angle of elevation at noon in Alexandria by measuring the length of another gnomon's shadow on the ground.[8] Using the length of the rod and the length of the shadow as the legs of a triangle, he calculated the angle of the sun's rays.[9] This angle was about 7°, or 1/50th the circumference of a circle; assuming the Earth to be perfectly spherical, he concluded that its circumference was 50 times the known distance from Alexandria to Syene (5,000 stadia, a figure that was checked yearly), i.e. 250,000 stadia.[10] Depending on whether he used the "Olympic stade" (176.4 m) or the Italian stade (184.8 m), this would imply a circumference of 44,100 km (an error of 10%) or 46,100 km, an error of 15%.[10] A value for the stadion of 157.7 metres has even been posited by L.V. Firsov, which would give an even better precision, but is plagued by calculation errors and false assumptions.[11] In 2012, Anthony Abreu Mora repeated Eratosthenes's calculation with more accurate data; the result was 40,074 km, which is 66 km different (0.16%) from the currently accepted polar circumference.[9]
+
+Measure of Earth's circumference according to Cleomedes's simplified version, based on the approximation that Syene is on the Tropic of Cancer and on the same meridian as Alexandria.
+
+Eratosthenes's method was actually more complicated, as stated by the same Cleomedes, whose purpose was to present a simplified version of the one described in Eratosthenes's book. Pliny, for example, has quoted a value of 252,000 stadia.[12]
+
+The method was based on several surveying trips conducted by professional bematists, whose job was to precisely measure the extent of the territory of Egypt for agricultural and taxation-related purposes.[3] Furthermore, the fact that Eratosthenes's measure corresponds precisely to 252,000 stadia (according to Pliny) might be intentional, since it is a number that can be divided by all natural numbers from 1 to 10: some historians believe that Eratosthenes changed from the 250,000 value written by Cleomedes to this new value to simplify calculations;[13] other historians of science, on the other hand, believe that Eratosthenes introduced a new length unit based on the length of the meridian, as stated by Pliny, who writes about the stadion "according to Eratosthenes' ratio".[3][12]
+
+Posidonius
+[edit]
+
+Main article: Posidonius § Earth's circumference
+
+Posidonius calculated the Earth's circumference by reference to the position of the star Canopus. As explained by Cleomedes, Posidonius observed Canopus on but never above the horizon at Rhodes, while at Alexandria he saw it ascend as far as 7+1⁄2 degrees above the horizon (the meridian arc between the latitude of the two locales is actually 5 degrees 14 minutes). Since he thought Rhodes was 5,000 stadia due north of Alexandria, and the difference in the star's elevation indicated the distance between the two locales was 1/48 of the circle, he multiplied 5,000 by 48 to arrive at a figure of 240,000 stadia for the circumference of the earth.[14] It is generally thought[by whom?] that the stadion used by Posidonius was almost 1/10 of a modern statute mile.[citation needed] Thus Posidonius's measure of 240,000 stadia translates to 24,000 mi (39,000 km), not much short of the actual circumference of 24,901 mi (40,074 km).[14] Strabo noted that the distance between Rhodes and Alexandria is 3,750 stadia, and reported Posidonius's estimate of the Earth's circumference to be 180,000 stadia or 18,000 mi (29,000 km).[15] Pliny the Elder mentions Posidonius among his sources and—without naming him—reported his method for estimating the Earth's circumference. He noted, however, that Hipparchus had added some 26,000 stadia to Eratosthenes's estimate. The smaller value offered by Strabo and the different lengths of Greek and Roman stadia have created a persistent confusion around Posidonius's result. Ptolemy used Posidonius's lower value of 180,000 stades (about 33% too low) for the earth's circumference in his Geography. This was the number used by Christopher Columbus in order to underestimate the distance to India as 70,000 stades.[16]
+
+Aryabhata
+[edit]
+
+Around AD 525, the Indian mathematician and astronomer wrote Aryabhatiya, in which he calculated the diameter of earth to be of 1,050 yojanas. The length of the yojana intended by Aryabhata is in dispute. One careful reading gives an equivalent of 14,200 kilometres (8,800 mi), too large by 11%.[17] Another gives 15,360 km (9,540 mi), too large by 20%.[18] Yet another gives 13,440 km (8,350 mi), too large by 5%.[19][page needed]
+
+Islamic Golden Age
+[edit]
+
+Around AD 830, Caliph Al-Ma'mun commissioned a group of Muslim astronomers led by Al-Khwarizmi to measure the distance from Tadmur (Palmyra) to Raqqa, in modern Syria. They calculated the Earth's circumference to be within 15% of the modern value, and possibly much closer. Uncertain conversion between medieval Arabic and modern units leaves the actual accuracy unknown, though technical limits of the methods and tools would have restricted accuracy to about 5%.[20]
+
+Diagram showing how al-Biruni was able to calculate the Earth's circumference by measuring the dip of the horizon from a point at a known height.
+
+A more convenient way to estimate was provided in Al-Biruni's Codex Masudicus (1037). Unlike earlier scholars who measured the Earth's circumference by sighting the Sun simultaneously from two locations, al-Biruni devised a trigonometric method using the angle between a plain and mountain top, enabling measurement by a single person at one location.[20] From the top of the mountain, he sighted the dip angle which, along with the mountain's height (which he determined beforehand), he applied to the law of sines formula. This was the earliest known use of dip angle and the earliest practical use of the law of sines.[21] However, the method could not provide more accurate results than previous methods, due to technical limitations, and so al-Biruni accepted the value calculated the previous century by the al-Ma'mun expedition.[20]
+
+Columbus's error
+[edit]
+
+Main article: Christopher Columbus § Quest for Asia
+
+1,700 years after Eratosthenes's death, Christopher Columbus studied what Eratosthenes had written about the size of the Earth. Nevertheless, based on a map by Toscanelli, he chose to believe that the Earth's circumference was 25% smaller. If, instead, Columbus had accepted Eratosthenes's larger value, he would have known that the place where he made landfall was not Asia, but rather a New World.[22]
+
+Historical use in the definition of units of measurement
+[edit]
+
+Main article: History of the metre § Meridional definition
+
+Further information: Meridian arc § History of measurement, Earth radius § History, and Arc measurement of Delambre and Méchain
+
+In 1617 the Dutch scientist Willebrord Snellius assessed the circumference of the Earth at 24,630 Roman miles (24,024 statute miles). Around that time British mathematician Edmund Gunter improved navigational tools including a new quadrant to determine latitude at sea. He reasoned that the lines of latitude could be used as the basis for a unit of measurement for distance and proposed the nautical mile as one minute or one-sixtieth (⁠1/60⁠) of one degree of latitude. As one degree is ⁠1/360⁠ of a circle, one minute of arc is ⁠1/21600⁠ of a circle – such that the polar circumference of the Earth would be exactly 21,600 miles. Gunter used Snellius's circumference to define a nautical mile as 6,080 feet, the length of one minute of arc at 48 degrees latitude.[23]
+
+In 1793, France defined the metre so as to make the polar circumference of the Earth 40,000 kilometres. To measure this distance accurately, the French Academy of Sciences commissioned Jean Baptiste Joseph Delambre and Pierre Méchain to lead an expedition to attempt to accurately measure the distance between a belfry in Dunkerque and Montjuïc castle in Barcelona to estimate the length of the meridian arc through Dunkerque. Based on those measurements, the first prototype metre bar was later found to be about 0.2 millimetres (0.02%) shorter than the original metre definition due to a miscalculation of the Earth's flattening. Regardless, this length became the French standard and was progressively adopted by other countries in Europe.[24] This is why the polar circumference of the Earth is actually 40,008 kilometres, instead of 40,000.
+
+See also
+[edit]
+
+Earth portal
+
+Earth Sciences portal
+
+Geodesy portal
+
+History of Science portal
+
+Arabic mile
+
+Arc measurement
+
+Earth ellipsoid
+
+Earth's radius
+
+Geographical mile
+
+International mile
+
+Timeline of Earth estimates
+
+References
+[edit]
+
+↑ Humerfelt, Sigurd (26 October 2010). "How WGS 84 defines Earth". Archived from the original on 24 April 2011. Retrieved 29 April 2011.
+
+↑ Ridpath, Ian (2001). The Illustrated Encyclopedia of the Universe. New York, NY: Watson-Guptill. p. 31. ISBN 978-0-8230-2512-1.
+
+1 2 3 4 Russo, Lucio (2004). The Forgotten Revolution. Berlin: Springer. p. 273–277.[dead link]
+
+↑ Russo, Lucio. The Forgotten Revolution. p. 68.
+
+↑ Cleomedes, Caelestia, i.7.49–52.
+
+↑ Martianus Capella, De nuptiis Philologiae et Mercurii, VI.598.
+
+↑ Van Helden, Albert (1985). Measuring the Universe: Cosmic Dimensions from Aristarchus to Halley. University of Chicago Press. pp. 4–5. ISBN 978-0-226-84882-2.
+
+↑ "Astronomy 101 Specials: Eratosthenes and the Size of the Earth". www.eg.bucknell.edu. Retrieved 19 December 2017.
+
+1 2 "How did Eratosthenes measure the circumference of the earth?". 3 July 2012.
+
+1 2 Walkup, Newlyn (August 2010). "Eratosthenes and the Mystery of the Stades – How Long Is a Stade?". Convergence.
+
+↑ Engels, Donald (1985). "The Length of Eratosthenes' Stade". The American Journal of Philology. 106 (3): 298–311. doi:10.2307/295030. JSTOR 295030.
+
+1 2 Pliny, Naturalis Historia, Book 2, Chapter 112.
+
+↑ Rawlins, Dennis (1983). "The Eratosthenes-Strabo Nile Map. Is It the Earliest Surviving Instance of Spherical Cartography? Did It Supply the 5000 Stades Arc for Eratosthenes' Experiment?". Archive for History of Exact Sciences. 26 (3): 211–219. doi:10.1007/BF00348500. S2CID 118004246.
+
+1 2 Posidonius, fragment 202
+
+↑ Cleomedes stated that if the distance is measured by some other number the result will be different, and using 3,750 instead of 5,000 produces this estimation: 3,750 x 48 = 180,000; see Fischer, Irene (1975). "Another Look at Eratosthenes' and Posidonius' Determinations of the Earth's Circumference". Quarterly Journal of the Royal Astronomical Society. 16: 152. Bibcode:1975QJRAS..16..152F..
+
+↑ John Freely, Before Galileo: The Birth of Modern Science in Medieval Europe (2012)
+
+↑ Kak, Subhash (2010). "Aryabhata's Mathematics". arXiv:1002.3409 [cs.CR].
+
+↑ Fleet, J. F. (1907). "Dimensions of Indian Cities and Countries". Journal of the Royal Asiatic Society of Great Britain and Ireland. 39 (3): 641–656. doi:10.1017/S0035869X00036431. JSTOR 25210451.
+
+↑ W. E. Clarck (1930). The Aryabhatiya of Aryabhata.
+
+1 2 3 Mercier, Raymond (1992). "Geodesy". In Harley, J.B.; Woodward, David (eds.). The History of Cartography, Volume 2, Book 1. The University of Chicago Press. pp. 175–188. ISBN 9780226316352.
+
+↑ Behnaz Savizi (2007). "Applicable Problems in History of Mathematics: Practical Examples for the Classroom". Teaching Mathematics and Its Applications. 26 (1): 45–50. doi:10.1093/teamat/hrl009.
+
+↑ Gow, Mary. Measuring the Earth: Eratosthenes and His Celestial Geometry, p. 6 (Berkeley Heights, NJ: Enslow, 2010).
+
+↑ Marine Insight, Why Nautical Mile and Knot Are The Units Used at Sea?
+
+↑ Alder, Ken (October 2003). The Measure of All Things: The Seven-Year Odyssey and Hidden Error That Transformed the World. Simon and Schuster. ISBN 978-0-7432-1676-0.
+
+Bibliography
+[edit]
+
+Krebs, Robert E.; Krebs, Carolyn A. (2003). "Calculating the Earth's Circumference". Groundbreaking Scientific Experiments, Inventions, and Discoveries of the Ancient World. Greenwood Publishing Group. p. 52. ISBN 978-0-313-31342-4.
+
+Nicastro, Nicholas (25 November 2008). Circumference: Eratosthenes and the Ancient Quest to Measure the Globe. St. Martin's Press. ISBN 978-1-4299-5819-6.
+
+Gow, Mary (1 July 2009). Measuring the Earth: Eratosthenes and His Celestial Geometry. Enslow Publishing, LLC. ISBN 978-0-7660-3120-3.
+
+Lowrie, William (20 September 2007). Fundamentals of Geophysics. Cambridge University Press. ISBN 978-1-139-46595-3.
+
+External links
+[edit]
+
+Earth's circumference at Wikipedia's sister projects
+
+Media from Commons
+
+Quotations from Wikiquote
+
+Carl Sagan demonstrates how Eratosthenes determined that the Earth was round and the approximate circumference
+
+ | 
+
+v
+
+t
+
+e
+
+Earth
+
+ | 
+
+Outline
+
+History
+
+ | Atmosphere | 
+
+Atmosphere of Earth
+
+Prebiotic atmosphere
+
+Troposphere
+
+Stratosphere
+
+Mesosphere
+
+Thermosphere
+
+Exosphere
+
+Weather
+
+ | Climate | 
+
+Climate system
+
+Energy balance
+
+Climate change
+
+Climate variability and change
+
+Climatology
+
+Paleoclimatology
+
+ | Continents | 
+
+Africa
+
+Antarctica
+
+Asia
+
+Australia
+
+Europe
+
+North America
+
+South America
+
+ | Culture and society | 
+
+List of sovereign states
+
+dependent territories
+
+In culture
+
+Earth Day
+
+Flag
+
+Gaia hypothesis
+
+Spaceship Earth
+
+Symbol
+
+World economy
+
+Etymology
+
+World history
+
+Time zones
+
+World
+
+ | Environment | 
+
+Biome
+
+Biosphere
+
+Biogeochemical cycles
+
+Ecology
+
+Ecosystem
+
+Human impact on the environment
+
+Evolutionary history of life
+
+Nature
+
+ | Geodesy | 
+
+Cartography
+
+Computer cartography
+
+Earth's orbit
+
+Geodetic astronomy
+
+Geomatics
+
+Gravity
+
+Navigation
+
+Remote Sensing
+
+Geopositioning
+
+Virtual globe
+
+ | Geophysics | 
+
+Earth structure
+
+Fluid dynamics
+
+Geomagnetism
+
+Magnetosphere
+
+Mineral physics
+
+Seismology
+
+Plate tectonics
+
+Signal processing
+
+Tomography
+
+ | Geology | 
+
+Age of Earth
+
+Earth science
+
+Extremes on Earth
+
+Future
+
+Geological history
+
+Geologic time scale
+
+Geologic record
+
+History of Earth
+
+ | Oceans | 
+
+Antarctic/Southern Ocean
+
+Arctic Ocean
+
+Atlantic Ocean
+
+Indian Ocean
+
+Pacific Ocean
+
+Oceanography
+
+ | Planetary science | 
+
+The Moon
+
+Evolution of the Solar System
+
+Geology of solar terrestrial planets
+
+Location in the Universe
+
+Solar System
+
+ | 
+
+ Category
+
+ | 
+
+v
+
+t
+
+e
+
+Earth science
+
+ | 
+
+Outline
+
+Index
+
+ | 
+
+Atmospheric science
+
+Environmental science
+
+Geodesy
+
+Geology
+
+Geophysics
+
+Glaciology
+
+Hydrology
+
+Meteorology
+
+Oceanography
+
+Paleogeoscience
+
+Physical geography
+
+Soil science
+
+Volcanology
+
+ | 
+
+Category
+
+Portal
+
+Commons
+
+ | 
+
+v
+
+t
+
+e
+
+Geodesy
+
+ | Overview | 
+
+Geodesists
+
+History
+
+Timeline
+
+ | Subfields | 
+
+Cartography
+
+Computer cartography
+
+Web mapping
+
+Earth's orbit
+
+Geodetic astronomy
+
+Geomatics
+
+Gravity of Earth
+
+Navigation
+
+Photogrammetry
+
+Remote Sensing
+
+Geopositioning
+
+Virtual globe
+
+ | Physical 
+
+phenomena | 
+
+Chandler wobble
+
+Coriolis effect
+
+Earth's energy budget
+
+Earth's gravity field
+
+Geodynamo
+
+Gravity of Earth
+
+Plate tectonics
+
+Precession of the equinoxes
+
+Tide
+
+ | Related disciplines | 
+
+Astronomy
+
+Geology
+
+Geophysics
+
+Mathematics
+
+Physics
+
+Engineering
+
+ | 
+
+ Category
+
+ Commons
+
+Retrieved from "https://en.wikipedia.org/w/index.php?title=Earth%27s_circumference&oldid=1381479589"
+
+Categories: 
+Earth
+
+Units of length
+
+Geodesy
+
+Hidden categories: 
+Articles with short description
+
+Short description is different from Wikidata
+
+Use dmy dates from November 2019
+
+Use British English from February 2023
+
+All Wikipedia articles written in British English
+
+All articles with dead external links
+
+Articles with dead external links from November 2023
+
+Articles with specifically marked weasel-worded phrases from April 2023
+
+All articles with unsourced statements
+
+Articles with unsourced statements from April 2023
+
+Wikipedia articles needing page number citations from February 2026
+
+ This page was last edited on 22 October 2026, at 20:08 (UTC).
+
+Page was rendered with Parsoid.
+
+Text is available under the Creative Commons Attribution-ShareAlike 4.0 License;
+additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+Privacy policy
+
+About Wikipedia
+
+Disclaimers
+
+Contact Wikipedia
+
+Legal & safety contacts
+
+Code of Conduct
+
+Developers
+
+Statistics
+
+Cookie statement
+
+Mobile view
+
+Search
+
+ Search
+
+Toggle the table of contents
+
+Earth's circumference
+
+6 languages
+
+Add topic
