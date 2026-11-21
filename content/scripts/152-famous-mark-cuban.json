@@ -1,0 +1,181 @@
+{
+  "id": "152",
+  "slug": "famous-mark-cuban",
+  "company": "Mark Cuban",
+  "format": "famous",
+  "visual_style": "lowpoly",
+  "hook_style": "number",
+  "title_style": "number",
+  "theme": "bold_bright",
+  "status": "ready",
+  "score": 88,
+  "title": "Mark Cuban's $4.3 Billion Mavericks Payday",
+  "name_card": "Mark Cuban",
+  "name_sub": "entrepreneur",
+  "description": "Mark Cuban says he earned an estimated $4.3 billion selling control of the Dallas Mavericks. He started by selling garbage bags at age 12.\n\nSources:\n- Wikipedia: Mark Cuban: https://en.wikipedia.org/wiki/Mark_Cuban\n\nFrom the cited page: at 12 he sold garbage bags to pay for expensive sneakers; in 1999 Broadcast.com was acquired by Yahoo! for $5.7 billion in Yahoo! stock; on January 4, 2000 he bought a majority stake in the Dallas Mavericks for $285 million; the Mavericks won the 2011 NBA championship; on December 27, 2023 the NBA approved the sale of a controlling 73% interest, and Cuban stated he earned an estimated $4.3 billion from the sale. Not financial advice.\n\n#shorts #markcuban #mavericks #howtheymakemoney",
+  "tags": [
+    "mark cuban",
+    "mavericks",
+    "famous",
+    "shorts"
+  ],
+  "images": {},
+  "loop": "So remember:",
+  "cta": "Cuban or Musk? Comment your pick.",
+  "cta_question": "Cuban or Musk?",
+  "hero": {
+    "skin": "e8c4a0",
+    "hair": "short",
+    "hair_color": "3a2518",
+    "beard": "none",
+    "outfit": "tee",
+    "shirt": "00538c",
+    "pants": "2b2f3a",
+    "shoes": "f4f4f4",
+    "chest": "",
+    "trim": "ffffff",
+    "height": 1.0
+  },
+  "scenes": [
+    {
+      "narration": "Mark Cuban says he made about 4.3 billion dollars selling the Mavericks.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "mansion",
+          "mood": "proud",
+          "beat": "money",
+          "card": {
+            "text": "$4.3 BILLION",
+            "kind": "screen",
+            "sub": "FROM THE MAVERICKS SALE, 2023"
+          },
+          "view": "ms"
+        }
+      ]
+    },
+    {
+      "narration": "But at age 12, he sold garbage bags for sneakers.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "street",
+          "mood": "scheme",
+          "things": [
+            "shoe"
+          ],
+          "card": {
+            "text": "AGE 12",
+            "kind": "flip",
+            "sub": "FIRST HUSTLE"
+          },
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "Then Yahoo bought his website for 5.7 billion dollars.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "office",
+          "mood": "shock",
+          "things": [
+            "laptop"
+          ],
+          "brand": {
+            "name": "Yahoo",
+            "bg": "#6001d2",
+            "fg": "#ffffff",
+            "icon": "globe"
+          },
+          "card": {
+            "text": "$5.7 BILLION",
+            "kind": "screen",
+            "sub": "IN YAHOO STOCK, 1999"
+          },
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "Next he bought the Mavericks for 285 million dollars. Then they won the NBA title.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "court",
+          "mood": "excited",
+          "things": [
+            "cash"
+          ],
+          "card": {
+            "text": "$285 MILLION",
+            "kind": "screen",
+            "sub": "DALLAS MAVERICKS, 2000"
+          },
+          "view": "wide"
+        },
+        {
+          "place": "court",
+          "mood": "laugh",
+          "things": [
+            "trophy"
+          ],
+          "crowd": 200,
+          "view": "low"
+        }
+      ]
+    },
+    {
+      "narration": "Not bad for a kid who sold garbage bags.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "mansion",
+          "mood": "laugh",
+          "things": [
+            "cashstack"
+          ],
+          "view": "face"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Mark Cuban",
+      "url": "https://en.wikipedia.org/wiki/Mark_Cuban"
+    }
+  ],
+  "look": "afterhour"
+}
