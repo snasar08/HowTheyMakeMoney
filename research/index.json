@@ -1,0 +1,44 @@
+{
+  "https://en.wikipedia.org/wiki/Canelo_%C3%81lvarez": {
+    "file": "pages/806eb69d1041.txt",
+    "fetched_at": "2026-11-21T23:35:50.367169+00:00",
+    "ok": true,
+    "chars": 166810,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Canelo_%C3%81lvarez",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://africa.espn.com/boxing/story/_/id/25003974/canelo-alvarez-signs-5-year-11-fight-deal-worth-365-million-dazn": {
+    "file": "pages/242084385f9c.txt",
+    "fetched_at": "2026-11-21T23:35:50.869334+00:00",
+    "ok": true,
+    "chars": 0,
+    "status": 202,
+    "final_url": "https://africa.espn.com/boxing/story/_/id/25003974/canelo-alvarez-signs-5-year-11-fight-deal-worth-365-million-dazn",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://www.cnbc.com/2018/10/18/boxing-champion-canelo-signs-the-richest-deal-in-sports-history-with-new-365-million-contract.html": {
+    "file": "pages/cac43bda00ac.txt",
+    "fetched_at": "2026-11-21T23:35:51.268709+00:00",
+    "ok": true,
+    "chars": 5401,
+    "status": 200,
+    "final_url": "https://www.cnbc.com/2018/10/18/boxing-champion-canelo-signs-the-richest-deal-in-sports-history-with-new-365-million-contract.html",
+    "content_type": "text/html; charset=utf-8"
+  },
+  "https://africa.espn.com/boxing/story/_/id/19292903/meet-saul-canelo-alvarez-ring": {
+    "file": "pages/1f18e7720f7e.txt",
+    "fetched_at": "2026-11-21T23:35:52.177359+00:00",
+    "ok": true,
+    "chars": 0,
+    "status": 202,
+    "final_url": "https://africa.espn.com/boxing/story/_/id/19292903/meet-saul-canelo-alvarez-ring",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://www.essentiallysports.com/boxing-news-years-after-selling-ice-cream-to-make-ends-meet-here-s-how-once-poor-canelo-alvarez-built-his-two-hundred-million-fortune/": {
+    "file": "pages/56063663904c.txt",
+    "fetched_at": "2026-11-21T23:35:52.528524+00:00",
+    "ok": false,
+    "error": "HTTP 410"
+  }
+}
