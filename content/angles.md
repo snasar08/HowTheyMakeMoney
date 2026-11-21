@@ -145,3 +145,4 @@ clearly different angle, new figures, a new hook, new B-roll and a different sce
 167 | Victor Wembanyama (famous) | took about $250M instead of $300M+ so the Spurs could keep their stars; so tall as a kid a coach mistook him for a coach; 52 points in Nov 2026 | ~$250M 5-year extension (Jul 10 2026, AP), could have topped $300M, $16.8M in 2026-27, No. 1 pick, 52 pts / 8 blocks (Nov 4 2026)
 168 | Simone Biles (famous) | $11M in 2025 with no prize money, all brand deals; first tried gymnastics at six on a day-care trip | $11M (2025, Sportico via Essence), age 6, 11 Olympic medals, 30 World medals
 173 | Canelo Álvarez (famous) | sold ice pops on a bus route as a kid, pro at 15, then DAZN's record deal | $365M (DAZN, Oct 2018), pro at 15, $137M and 2nd highest-paid (Sportico 2025)
+174 | Jeff Bezos (famous) | his parents' $245,573 in 1995, not the garage or AWS | $245,573 (1995), Bloomberg guess almost $30B for the stake (2018), Bezos ~$284B (2026)
