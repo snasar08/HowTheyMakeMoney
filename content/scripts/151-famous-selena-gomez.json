@@ -1,0 +1,198 @@
+{
+  "id": "151",
+  "slug": "famous-selena-gomez",
+  "company": "Selena Gomez",
+  "format": "famous",
+  "visual_style": "lowpoly",
+  "hook_style": "number",
+  "title_style": "number",
+  "theme": "bold_bright",
+  "status": "ready",
+  "score": 90,
+  "title": "Selena Gomez's $1.3 Billion Makeup Brand",
+  "name_card": "Selena Gomez",
+  "name_sub": "Rare Beauty founder",
+  "description": "Most of Selena Gomez's 1.3 billion dollars comes from one makeup brand, Rare Beauty.\n\nSources:\n- Wikipedia: Rare Beauty: https://en.wikipedia.org/wiki/Rare_Beauty\n- Wikipedia: Selena Gomez: https://en.wikipedia.org/wiki/Selena_Gomez\n- ABC7 (from Bloomberg): Selena Gomez is a billionaire: https://abc7.com/post/selena-gomez-is-billionaire-bloomberg/15274989/\n\nFrom the cited pages: Bloomberg valued Gomez's net worth at 1.3 billion dollars (September 2024) and said the vast bulk of it is tied to Rare Beauty; Rare Beauty launched on September 3, 2020; as of 2024 it is valued at over 2 billion dollars; Gomez created the Rare Impact Fund for young people's mental health and committed to raising 100 million dollars over ten years; she began acting on Barney & Friends in 2002. Net worth figures are estimates. Not financial advice.\n\n#shorts #selenagomez #rarebeauty #howtheymakemoney",
+  "tags": [
+    "selena gomez",
+    "rare beauty",
+    "famous",
+    "shorts"
+  ],
+  "images": {},
+  "loop": "So remember:",
+  "cta": "Selena or Rihanna? Pick one.",
+  "cta_question": "Selena or Rihanna?",
+  "hero": {
+    "skin": "e0b08c",
+    "hair": "long",
+    "hair_color": "3b2416",
+    "beard": "none",
+    "outfit": "dress",
+    "shirt": "f4b6c8",
+    "pants": "f4b6c8",
+    "shoes": "f4f4f4",
+    "chest": "",
+    "trim": "ffffff",
+    "height": 1.0
+  },
+  "scenes": [
+    {
+      "narration": "Most of Selena Gomez's 1.3 billion dollars comes from one makeup brand.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "stage",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "throne",
+          "mood": "proud",
+          "beat": "money",
+          "card": {
+            "text": "$1.3 BILLION",
+            "kind": "screen",
+            "sub": "BLOOMBERG, 2024"
+          },
+          "view": "ms"
+        }
+      ]
+    },
+    {
+      "narration": "But it is not her music or her acting.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "stage",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "stage",
+          "mood": "calm",
+          "things": [
+            "mic"
+          ],
+          "crowd": 60,
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "In 2020, she launches Rare Beauty.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "stage",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "stall",
+          "mood": "excited",
+          "brand": {
+            "name": "Rare Beauty",
+            "bg": "#f4b6c8",
+            "fg": "#111111",
+            "icon": "star"
+          },
+          "card": {
+            "text": "2020",
+            "kind": "flip",
+            "sub": "YEAR"
+          },
+          "view": "ms"
+        }
+      ]
+    },
+    {
+      "narration": "Soon, it is valued at over 2 billion dollars.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "stage",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "boardroom",
+          "mood": "shock",
+          "things": [
+            "chart"
+          ],
+          "card": {
+            "text": "$2 BILLION",
+            "kind": "screen",
+            "sub": "RARE BEAUTY, 2024"
+          },
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "Then she promises to raise 100 million dollars for mental health.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "stage",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "classroom",
+          "mood": "proud",
+          "things": [
+            "heart"
+          ],
+          "card": {
+            "text": "$100 MILLION",
+            "kind": "screen",
+            "sub": "RARE IMPACT FUND"
+          },
+          "view": "ms"
+        }
+      ]
+    },
+    {
+      "narration": "Not bad for a kid who started on Barney and Friends.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "stage",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "studio",
+          "mood": "laugh",
+          "things": [
+            "tv"
+          ],
+          "view": "face"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Rare Beauty",
+      "url": "https://en.wikipedia.org/wiki/Rare_Beauty"
+    },
+    {
+      "title": "Wikipedia: Selena Gomez",
+      "url": "https://en.wikipedia.org/wiki/Selena_Gomez"
+    },
+    {
+      "title": "ABC7 (Bloomberg): Selena Gomez is a billionaire",
+      "url": "https://abc7.com/post/selena-gomez-is-billionaire-bloomberg/15274989/"
+    }
+  ],
+  "look": "afterhour"
+}
