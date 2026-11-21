@@ -1,0 +1,191 @@
+{
+  "id": "162",
+  "slug": "famous-ed-sheeran",
+  "company": "Ed Sheeran",
+  "format": "famous",
+  "visual_style": "lowpoly",
+  "hook_style": "number",
+  "title_style": "number",
+  "theme": "dark_neon",
+  "status": "ready",
+  "score": 90,
+  "title": "312 Shows in a Year to $775.6 Million",
+  "name_card": "Ed Sheeran",
+  "name_sub": "record-setting touring star",
+  "description": "Ed Sheeran's Divide Tour made 775.6 million dollars, the highest-grossing tour ever at its end in 2019.\n\nSources:\n- Pollstar: Ed Sheeran Concludes 'Divide' Tour, Sets All-Time Touring Record At $775.6M: https://news.pollstar.com/2019/08/27/ed-sheeran-concludes-divide-tour-sets-all-time-touring-record-at-775-6m/\n- Express & Star: Ed Sheeran set for Wolverhampton Civic gigs: https://www.expressandstar.com/entertainment/music/2012/01/16/ed-sheeran-set-for-wolverhampton-civic-gigs/\n- Wikipedia: Ed Sheeran: https://en.wikipedia.org/wiki/Ed_Sheeran\n- Wikipedia: ÷ Tour: https://en.wikipedia.org/wiki/%C3%B7_Tour\n\nFrom the cited pages: Sheeran moved to London in 2008 and began playing in small venues; he said \"I played 312 shows in 2009,\" sometimes to no one, or five people, often to more; the Divide Tour ended on August 26, 2019 with 775.6 million dollars on 8.9 million tickets at 255 performances over two and a half years, per Pollstar; the previous record was U2's 360 Tour at 735.3 million dollars. Other outlets report slightly different totals (Billboard: 776.4 million). Not financial advice.\n\n#shorts #edsheeran #divide #howtheymakemoney",
+  "tags": [
+    "ed sheeran",
+    "divide tour",
+    "famous",
+    "shorts"
+  ],
+  "images": {},
+  "loop": "So remember:",
+  "cta": "Ed Sheeran or Taylor Swift? Pick one.",
+  "cta_question": "Ed Sheeran or Taylor Swift?",
+  "hero": {
+    "skin": "f0c8a8",
+    "hair": "short",
+    "hair_color": "d2561e",
+    "beard": "stubble",
+    "outfit": "hoodie",
+    "shirt": "3a4a5a",
+    "pants": "2b2f3a",
+    "shoes": "f4f4f4",
+    "chest": "",
+    "trim": "ffffff",
+    "height": 1.0
+  },
+  "scenes": [
+    {
+      "narration": "Ed Sheeran's tour made 775.6 million dollars, a record back then.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "stage",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "stage",
+          "mood": "proud",
+          "beat": "money",
+          "things": [
+            "mic"
+          ],
+          "crowd": 120,
+          "card": {
+            "text": "$775.6 MILLION",
+            "kind": "screen",
+            "sub": "DIVIDE TOUR"
+          },
+          "view": "wide"
+        }
+      ]
+    },
+    {
+      "narration": "But he once played 312 shows in one year. Some were for just five people.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "stage",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "stage",
+          "mood": "shock",
+          "crowd": 5,
+          "card": {
+            "text": "312 SHOWS",
+            "kind": "sign",
+            "sub": "IN ONE YEAR"
+          },
+          "view": "face"
+        },
+        {
+          "place": "garage",
+          "mood": "nervous",
+          "things": [
+            "mic"
+          ],
+          "crowd": 5,
+          "view": "ms"
+        }
+      ]
+    },
+    {
+      "narration": "He plays guitar in tiny rooms, night after night.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "street",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "diner",
+          "mood": "calm",
+          "things": [
+            "mic"
+          ],
+          "crowd": 3,
+          "view": "ms"
+        }
+      ]
+    },
+    {
+      "narration": "Then his Divide Tour sells 8.9 million tickets.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "stage",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "stage",
+          "mood": "excited",
+          "things": [
+            "stadium"
+          ],
+          "crowd": 300,
+          "card": {
+            "text": "8.9 MILLION TICKETS",
+            "kind": "screen",
+            "sub": "255 SHOWS"
+          },
+          "view": "wide"
+        }
+      ]
+    },
+    {
+      "narration": "That beats U2's old record of 735.3 million dollars.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "boardroom",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "boardroom",
+          "mood": "shock",
+          "things": [
+            "trophy"
+          ],
+          "card": {
+            "text": "$735.3 MILLION",
+            "kind": "screen",
+            "sub": "U2's OLD RECORD"
+          },
+          "view": "face"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Pollstar: Ed Sheeran Concludes 'Divide' Tour, Sets All-Time Touring Record At $775.6M",
+      "url": "https://news.pollstar.com/2019/08/27/ed-sheeran-concludes-divide-tour-sets-all-time-touring-record-at-775-6m/"
+    },
+    {
+      "title": "Express & Star: Ed Sheeran set for Wolverhampton Civic gigs",
+      "url": "https://www.expressandstar.com/entertainment/music/2012/01/16/ed-sheeran-set-for-wolverhampton-civic-gigs/"
+    },
+    {
+      "title": "Wikipedia: Ed Sheeran",
+      "url": "https://en.wikipedia.org/wiki/Ed_Sheeran"
+    },
+    {
+      "title": "Wikipedia: ÷ Tour",
+      "url": "https://en.wikipedia.org/wiki/%C3%B7_Tour"
+    }
+  ],
+  "look": "afterhour"
+}
