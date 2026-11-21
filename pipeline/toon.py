@@ -311,7 +311,7 @@ AH_THING = {"shoe": "shoe", "springshoe": "springshoe", "sneakerbus": "bus", "bu
             "satellite": "satellite", "ring": "ring", "crown": "crown", "tv": "tv", "books": "books", "letter": "letter", "medal": "medal",
             "idea": "lightbulb", "factory": "factory", "stadium": "stadium", "plant": "factory", "car": "car", "truck": "truck",
             "trophy": "trophy", "cash": "cashstack", "boxes": "box", "check": "letter", "rocket": "rocket", "ball": "basketball", "mic": "mic",
-            "laptop": "laptop", "burger": "burger", "controller": "controller", "ereader": "phone", "snack": "burger", "poster": "newspaper"}
+            "laptop": "laptop", "burger": "burger", "controller": "controller", "ereader": "phone", "snack": "burger", "poster": "newspaper", "horse": "horse", "baseball": "baseball"}
 def _ts_union(path: str, typ: str) -> set:
     """the names a TS union type lists (SetName / ThingName), so a script may ask for any set or object directly"""
     try:
@@ -375,7 +375,9 @@ def ah_models() -> dict:
     return _AH_MODELS
 
 
-AH_CODE_WORDS = [("console", r"\bconsoles?\b|\bplaystations?\b|\bswitch 2\b|\bxbox\b"),
+AH_CODE_WORDS = [("horse", r"\bhorses?\b|\bhorse racing\b|\bjockeys?\b|\bracehorses?\b|\bthoroughbreds?\b"),
+                 ("baseball", r"\bbaseballs?\b|\bfastballs?\b|\bcurveballs?\b|\bsliders?\b(?=.*\b(?:pitch\w*|baseball)\b)"),
+                 ("console", r"\bconsoles?\b|\bplaystations?\b|\bswitch 2\b|\bxbox\b"),
                  ("golfball", r"\bgolf ?balls?\b"),
                  ("golfclub", r"\bgolf clubs?\b|\bputters?\b|\bclubs?\b(?=.*\bgolf)|\bgolf\b.*\b(?:clubs?|drivers?)\b")]
 
@@ -836,6 +838,8 @@ def ah_shots(plan: dict) -> list:
                 pose = ah_actions.ACT_POSE.get(want, pose)
                 key = {"sign_contract": "letter", "count_cash": "cash", "throw_cash": "cash", "stack_gold": "goldbar"}.get(want)
                 own = [key] if key else sorted(ah_actions.ACT_OWN_PROPS.get(want) or [])
+                if want in ("pitch", "bat_swing"):                  # Nov 21: a baseball act's ball is the baseball, never a basketball
+                    own = ["baseball"]
                 for nm in own:
                     if AH_THING.get(nm) or nm in AH_THING.values():
                         thing_names = [nm] + [t for t in thing_names if t != nm]
@@ -877,6 +881,8 @@ def ah_shots(plan: dict) -> list:
             thing_names = ["burger"] + thing_names                  # the burger itself is on screen when the line is about burgers / a burger chain
         if aset == "golf":                          # Nov 21: a golf ball is the set's own; drop generic balls
             thing_names = [t for t in thing_names if str(t) not in ("ball", "basketball", "soccerball", "football")]
+        if aset == "diamond":                       # Nov 21: the baseball field has its own ball; a generic ball is a baseball, never a basketball
+            thing_names = ["baseball" if str(t) in ("ball", "basketball", "soccerball") else t for t in thing_names]
         if aset in ("gridiron", "tennis"):          # Nov 18: the field has its own ball; a generic "ball" becomes the right one, never a soccer ball
             thing_names = ["football" if str(t) in ("ball", "basketball", "soccerball") and aset == "gridiron" else t for t in thing_names]
             if aset == "tennis":
