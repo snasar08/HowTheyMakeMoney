@@ -191,9 +191,9 @@ const qb_throw: ActDef = { pose: "stand", view: "act", build(c: ActCtx): ActRun 
   const fb = football(1.7), sh = blob(root); root.add(fb.g);
   const trl = trail(root, 8, 0.16, "#ffffff");
   const rcv = makeChar(JERSEY("#d8342c", "88", "#fafafa")); root.add(rcv.root);
-  const Q0 = [H[0] + 2.0, H[2] + 0.35], Q1 = [H[0] + 2.5, H[2] + 0.05];
+  const Q0 = [H[0] + 1.55, H[2] + 0.35], Q1 = [H[0] + 1.95, H[2] + 0.05];   // Nov 21: a step left of the sideline down-marker so it never hides the arm
   const RS = [H[0] - 1.15, H[2] - 3.2], RC = [H[0] + 0.3, H[2] - 0.9], TR = 0.96, TC = 1.7;
-  const pop = popText(root, "COMPLETE!", [RC[0] - 0.3, H[1] + 3.2, RC[1] + 0.8], 1.6);
+  const pop = popText(root, "COMPLETE!", [RC[0] - 0.9, H[1] + 3.35, RC[1] + 0.8], 1.4);   // Nov 21: top of the frame, left of the QB, only after the catch
   const qbPose = (t: number): ActPose => (t < 0.52 ? { pose: "walk", t: -t * 0.95 } : { pose: "stand", t });
   const rcvAt = (t: number) => {
     const k = cl(t / TC, 0, 1.18), x = mix(RS[0], RC[0], k), z = mix(RS[1], RC[1], k);
@@ -231,7 +231,7 @@ const qb_throw: ActDef = { pose: "stand", view: "act", build(c: ActCtx): ActRun 
   const SYr = shY(rcv), Pcatch = RW(rcv, 0, SYr - 0.02, 0.6);
   return { tick(t) {
     const pp = { ...qbPose(t), expr: exAt(t, [[0, "focus"], [0.6, "effort"], [TR - 0.1, "shout"], [TR + 0.35, "grin"], [TC, "laugh"]]) };
-    pop(TC + 0.1, t);
+    pop(TC + 0.45, t);
     // receiver
     rcvAt(t);
     const got = t >= TC;
@@ -499,24 +499,26 @@ const tennis_serve: ActDef = { pose: "stand", view: "act", build(c: ActCtx): Act
   const SY = shY(hero), HY = hero.headY, TC = 1.0, TT = 0.5;
   const S = new Vec(-0.85, 0, -0.52).normalize(), Pp = new Vec(0.52, 0, -0.85).normalize();   // serve direction (left, away), across the court
   const base = new Vec(H[0] + 2.4, 0, H[2] + 0.5);
+  const NETD = 2.6, LAND = 4.7, TL = 0.55, PHI = Math.atan2(-Pp.z, Pp.x);   // net 2.6 m out (inside the frame), ball lands 4.7 m out in the far court
   const ry = yawOf(-Pp.x, -Pp.z);
   // court lines + net
-  paint(root, 9, 0.06, "#fafafa", base.x, base.z, 0.026).rotation.z = Math.atan2(S.z, S.x) * 0 + 0;
+  paint(root, 9, 0.06, "#fafafa", base.x, base.z, 0.026, PHI);
   const cg = new THREE.Group(); cg.position.copy(base); cg.rotation.y = Math.atan2(-S.z, S.x) * 0 + 0; root.add(cg);
   const toLocal = (v: THREE.Vector3) => v;
   void toLocal;
-  const net = new THREE.Group(); const nc = base.clone().addScaledVector(S, 4.0); net.position.copy(nc); net.rotation.y = yawOf(Pp.x, Pp.z) - PI / 2 + PI / 2 * 0; root.add(net);
+  const net = new THREE.Group(); const nc = base.clone().addScaledVector(S, NETD); net.position.copy(nc); net.rotation.y = yawOf(Pp.x, Pp.z) - PI / 2 + PI / 2 * 0; root.add(net);
   net.rotation.y = Math.atan2(Pp.x, Pp.z) + PI / 2;
   const NW = 4.4;
   for (const s of [-1, 1]) cyl(net, 0.05, 1.15, "#2a2a32", s * NW / 2, 0.57, 0, 0.015);
   const nt = canvasTex(128, 32, (x) => { x.fillStyle = "rgba(0,0,0,0)"; x.clearRect(0, 0, 128, 32); x.strokeStyle = "#f2f2f2"; x.lineWidth = 2; for (let i = 0; i <= 32; i++) { x.beginPath(); x.moveTo(i * 4, 0); x.lineTo(i * 4, 32); x.stroke(); } for (let j = 0; j <= 8; j++) { x.beginPath(); x.moveTo(0, j * 4); x.lineTo(128, j * 4); x.stroke(); } });
   const nm = new THREE.Mesh(new THREE.PlaneGeometry(NW, 1.0), new THREE.MeshBasicMaterial({ map: nt, transparent: true, alphaTest: 0.3, side: THREE.DoubleSide, toneMapped: false })); nm.position.y = 0.58; net.add(nm);
   bx(net, NW, 0.09, 0.03, "#fafafa", 0, 1.1, 0, 0.012);
-  paint(root, 6, 0.06, "#fafafa", base.x + S.x * 6.5, base.z + S.z * 6.5, 0.026, 0).rotation.z = Math.atan2(Pp.z, Pp.x) * 0 + 0;
+  paint(root, 5, 0.06, "#fafafa", base.x + S.x * LAND, base.z + S.z * LAND, 0.026, PHI);
+  paint(root, 5, 0.06, "#fafafa", base.x + S.x * (LAND - 1.5), base.z + S.z * (LAND - 1.5), 0.026, PHI);
   const rk = racket(); root.add(rk);
   const bl = ball(0.15, "#d4f23a", 0.024), sh = blob(root); root.add(bl);
-  const burst = spark(root), trl = trail(root, 7, 0.07, "#f4ffa0");
-  const popA = popText(root, "ACE!", [base.x - 1.55, 3.0, base.z - 0.6], 1.2);
+  const burst = spark(root), trl = trail(root, 12, 0.085, "#f4ffa0");
+  const popA = popText(root, "ACE!", [base.x - 1.9, 3.0, base.z - 0.6], 1.3);
   hero.root.rotation.y = ry;
   const body = (t: number) => {
     hero.root.rotation.y = ry + kf(t, [[0, 0], [0.7, -0.18], [TC, 0.1], [1.3, 0.5], [1.7, 0.5]])[0];
@@ -534,19 +536,22 @@ const tennis_serve: ActDef = { pose: "stand", view: "act", build(c: ActCtx): Act
     return S.clone().multiplyScalar(k[0]).add(new Vec(0, k[1], 0)).addScaledVector(Pp, k[2]).normalize();
   };
   hero.set(TC, "stand", "grin"); body(TC);
-  const hcr = handR(TC), hwC = RW(hero, hcr[0], hcr[1], hcr[2]), dC = RD(TC), Pc = hwC.clone().addScaledVector(dC, 0.67);
+  const hcr = handR(TC), hwC = RW(hero, hcr[0], hcr[1], hcr[2]), dC = RD(TC), Pc = hwC.clone().addScaledVector(dC, 0.6);   // ball meets the strings, upper half of the racket head
   const tl = (t: number) => { const lh = RW(hero, -0.25, SY - 0.35, 0.3); return lh; };
   void tl;
   hero.set(TT, "stand", "grin"); body(TT);
   const Prl = RW(hero, -0.18, SY + 0.35, 0.2);
   const Tc = TC - TT, G = 9.8, vy = (Pc.y - Prl.y + 0.5 * G * Tc * Tc) / Tc;
-  const vs = S.clone().multiplyScalar(9).add(new Vec(0, -2.2, 0));
+  const Lp = base.clone().addScaledVector(S, LAND); Lp.y = 0.1;
+  const vh = new Vec(Lp.x - Pc.x, 0, Lp.z - Pc.z).multiplyScalar(1 / TL), vy0 = -1.2, cc = (Pc.y + vy0 * TL - 0.1) / (TL * TL);
   const ballPos = (t: number): THREE.Vector3 | null => {
     if (t < TC) {
       if (t < TT) return null;
       const a = t - TT, s = a / Tc; return new Vec(mix(Prl.x, Pc.x, s), Prl.y + vy * a - 0.5 * G * a * a, mix(Prl.z, Pc.z, s));
     }
-    const a = t - TC; return new Vec(Pc.x + vs.x * a, Math.max(0.1, Pc.y + vs.y * a - 0.5 * 4 * a * a), Pc.z + vs.z * a);
+    const a = t - TC;   // over the net, down into the far court, one small bounce, rolling on
+    if (a < TL) return new Vec(Pc.x + vh.x * a, Pc.y + vy0 * a - cc * a * a, Pc.z + vh.z * a);
+    const b = a - TL; return new Vec(Lp.x + vh.x * 0.8 * b, Math.max(0.1, 0.1 + 2.2 * b - 5 * b * b), Lp.z + vh.z * 0.8 * b);
   };
   return { tick(t) {
     body(t);
@@ -559,8 +564,8 @@ const tennis_serve: ActDef = { pose: "stand", view: "act", build(c: ActCtx): Act
     const p = ballPos(t) ?? RW(hero, -0.16, SY - 0.36 + 0.0, 0.3).add(new Vec(0, 0.14, 0));
     bl.position.copy(p); bl.rotation.set(t * 5, 0, t * 3); dropShadow(sh, p, 0.1);
     trl((tt) => (tt >= TC ? ballPos(tt) : null), t, 0.025);
-    burst(TC, t, Pc, 1.3); popA(TC + 0.4, t);
-    return { pose: "stand", t, expr: exAt(t, [[0, "focus"], [0.8, "effort"], [TC + 0.15, "smug"]]) };
+    burst(TC, t, Pc, 1.7); popA(TC + 0.55, t);
+    return { pose: "stand", t, expr: exAt(t, [[0, "focus"], [0.78, "effort"], [TC - 0.04, "shout"], [TC + 0.16, "smug"], [TC + 0.9, "grin"]]) };
   } };
 } };
 
