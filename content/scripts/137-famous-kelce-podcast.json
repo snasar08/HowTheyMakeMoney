@@ -7,7 +7,7 @@
   "hook_style": "number",
   "title_style": "number",
   "theme": "bold_bright",
-  "status": "ready",
+  "status": "delivered",
   "score": 92,
   "title": "The Kelce Brothers' $100 Million Podcast",
   "name_card": "Travis & Jason Kelce",
@@ -335,5 +335,31 @@
       "url": "https://en.wikipedia.org/wiki/New_Heights_(podcast)"
     }
   ],
-  "look": "afterhour"
+  "look": "afterhour",
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-137-famous-kelce-podcast",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-137-famous-kelce-podcast/137-famous-kelce-podcast.mp4",
+    "post_at": "2026-11-22T19:30:00-05:00",
+    "buffer_post": "6b02015ccc364169c1039939",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-21T20:38:52.998190+00:00",
+    "seconds": 24.05,
+    "eyes": {
+      "score": 4,
+      "problems": [
+        "The video uses the exact same static character model for the entire duration, which is visually repetitive and boring for the target demographic.",
+        "Lack of visual variety: The background only switches between two simple settings, failing to maintain engagement for a 24-second video.",
+        "The character does not animate or gesture, making the video feel like a static slideshow rather than a dynamic Short.",
+        "The text captions are small and static, lacking the visual punch or movement expected in high-performing Shorts."
+      ],
+      "best_fix": "Introduce dynamic visual variety by showing actual footage or varied, expressive character animations that change with the narrative beats (e.g., showing a football field, a podcast studio, or the brothers themselves) instead of a single static character.",
+      "model": "gemini-3.1-flash-lite",
+      "acts": null
+    },
+    "scene_scan": [
+      "shot 10 @586: 4.5 s long (same picture too long?)",
+      "shot 10 @650: jump inside shot (26) - something teleports?"
+    ]
+  }
 }
