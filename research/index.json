@@ -43,14 +43,38 @@
   },
   "https://en.wikipedia.org/wiki/List_of_Formula_One_drivers_by_salary": {
     "file": "pages/39912d465588.txt",
-    "fetched_at": "2026-11-21T16:13:26.401623+00:00",
+    "fetched_at": "2026-11-21T16:14:45.534075+00:00",
     "ok": false,
     "error": "HTTP 404"
   },
   "https://en.wikipedia.org/wiki/Forbes_list_of_the_world%27s_highest-paid_athletes_2025": {
     "file": "pages/dda73f7c608c.txt",
-    "fetched_at": "2026-11-21T16:13:27.049526+00:00",
+    "fetched_at": "2026-11-21T16:14:46.243262+00:00",
     "ok": false,
     "error": "HTTP 404"
+  },
+  "https://www.motorsport.com/f1/news/highest-paid-f1-drivers-in-2025-max-verstappen-still-leads-as-lando-norris-chases/10783754/": {
+    "file": "pages/faf3bb4123ba.txt",
+    "fetched_at": "2026-11-21T16:14:47.916241+00:00",
+    "ok": false,
+    "error": "HTTP 403"
+  },
+  "https://www.crash.net/f1/news/1088154/1/highest-paid-f1-drivers-2025-revealed-who-sits-top": {
+    "file": "pages/c720eb4252b1.txt",
+    "fetched_at": "2026-11-21T16:14:48.278154+00:00",
+    "ok": true,
+    "chars": 6832,
+    "status": 200,
+    "final_url": "https://www.crash.net/f1/news/1088154/1/highest-paid-f1-drivers-2025-revealed-who-sits-top",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://www.planetf1.com/news/max-verstappen-beats-lewis-hamilton-to-be-named-best-paid-driver-on-f1-grid": {
+    "file": "pages/d9e717cba6ac.txt",
+    "fetched_at": "2026-11-21T16:14:48.780146+00:00",
+    "ok": true,
+    "chars": 8046,
+    "status": 200,
+    "final_url": "https://www.planetf1.com/news/max-verstappen-beats-lewis-hamilton-to-be-named-best-paid-driver-on-f1-grid",
+    "content_type": "text/html; charset=UTF-8"
   }
 }
