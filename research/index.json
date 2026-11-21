@@ -10,20 +10,65 @@
   },
   "https://en.wikipedia.org/wiki/Career_statistics_of_Novak_Djokovic": {
     "file": "pages/7551fdf5a37a.txt",
-    "fetched_at": "2026-11-21T21:07:00.006939+00:00",
+    "fetched_at": "2026-11-21T21:07:52.399331+00:00",
     "ok": false,
     "error": "HTTP 404"
   },
   "https://en.wikipedia.org/wiki/Prize_money_leaders_of_men%27s_tennis": {
     "file": "pages/39b3f4208291.txt",
-    "fetched_at": "2026-11-21T21:07:00.636408+00:00",
+    "fetched_at": "2026-11-21T21:07:53.037157+00:00",
     "ok": false,
     "error": "HTTP 404"
   },
   "https://en.wikipedia.org/wiki/List_of_men%27s_singles_Grand_Slam_tennis_champions": {
     "file": "pages/d9680beed0fe.txt",
-    "fetched_at": "2026-11-21T21:07:01.251382+00:00",
+    "fetched_at": "2026-11-21T21:07:53.732002+00:00",
     "ok": false,
     "error": "HTTP 404"
+  },
+  "https://en.wikipedia.org/wiki/Novak_Djokovic_career_statistics": {
+    "file": "pages/15e9bfe48ca1.txt",
+    "fetched_at": "2026-11-21T21:07:54.292888+00:00",
+    "ok": true,
+    "chars": 132597,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Novak_Djokovic_career_statistics",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/List_of_career_achievements_by_Novak_Djokovic": {
+    "file": "pages/1bef2e50ed0d.txt",
+    "fetched_at": "2026-11-21T21:07:54.939208+00:00",
+    "ok": true,
+    "chars": 57544,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/List_of_career_achievements_by_Novak_Djokovic",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://www.atptour.com/en/players/novak-djokovic/d643/player-stats": {
+    "file": "pages/c0f0c479ecb0.txt",
+    "fetched_at": "2026-11-21T21:07:55.476175+00:00",
+    "ok": false,
+    "error": "HTTP 403"
+  },
+  "https://www.atptour.com/en/players/novak-djokovic/d643/overview": {
+    "file": "pages/ce324a2b65ea.txt",
+    "fetched_at": "2026-11-21T21:07:55.871125+00:00",
+    "ok": false,
+    "error": "HTTP 403"
+  },
+  "https://en.wikipedia.org/wiki/List_of_highest-paid_tennis_players": {
+    "file": "pages/6a544cc1207f.txt",
+    "fetched_at": "2026-11-21T21:07:56.216414+00:00",
+    "ok": false,
+    "error": "HTTP 404"
+  },
+  "https://en.wikipedia.org/wiki/ATP_Tour_records": {
+    "file": "pages/5ed0593627c8.txt",
+    "fetched_at": "2026-11-21T21:07:56.913662+00:00",
+    "ok": true,
+    "chars": 24596,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/ATP_Tour_records",
+    "content_type": "text/html; charset=UTF-8"
   }
 }
