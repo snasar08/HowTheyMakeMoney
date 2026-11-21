@@ -559,7 +559,7 @@ const B: Record<ThingName, Builder> = {
     rbx(o, 0.085, 0.16, 0.03, 0.02, "#4a2a12", 0, 1.17, 0.0);                       // head
     for (const s of [-1, 1]) for (let i = 0; i < 3; i++) cy(o, 0.014, 0.014, 0.05, "#d8dde8", s * 0.062, 1.12 + i * 0.045, 0.0, [0, 0, PI / 2], 10);   // tuners
     const str = toonMat("#f4f4f8");
-    for (let i = 0; i < 6; i++) put(o, new THREE.CylinderGeometry(0.0035, 0.0035, 1.0, 6), str, -0.0185 + i * 0.0074, 0.64, 0.038, [0, 0, 0], [1, 1, 1], false);   // strings
+    for (let i = 0; i < 6; i++) put(o, new THREE.CylinderGeometry(0.0018, 0.0018, 1.0, 6), str, -0.0185 + i * 0.0074, 0.64, 0.038, [0, 0, 0], [1, 1, 1], false);   // strings
     return { g, tick: (t) => { o.rotation.z = 0.14 + Math.sin(t * 1.6) * 0.05; } };
   },
   // Nov 21: a small roller coaster: red track on a lift hill, a full loop, white rails, support columns, a yellow two-seat car rolling along the track
