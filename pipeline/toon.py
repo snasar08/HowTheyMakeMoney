@@ -922,8 +922,8 @@ def ah_shots(plan: dict) -> list:
                 continue
             seen.add(t3)
             big = t3 in AH_BIG
-            things.append({"name": t3, "at": [-1.9, 0, -1.6] if big else ([0.55, 0.85, 0.55] if not things else [-0.55, 0.85, 0.55]),
-                           "fit": 1.6 if big else (0.42 if not things else 0.34)})   # held at hand height, in frame
+            things.append({"name": t3, "at": ([-1.1, 0, -0.8] if t3 == "giantshovel" else [-1.9, 0, -1.6]) if big else ([0.55, 0.85, 0.55] if not things else [-0.55, 0.85, 0.55]),
+                           "fit": (2.2 if t3 == "giantshovel" else 1.6) if big else (0.42 if not things else 0.34)})   # held at hand height, in frame
         for t3 in ([] if outro else ah_words_to_models(line_txt)):   # then library models the sentence's words name
             if len(things) >= 2:
                 break
