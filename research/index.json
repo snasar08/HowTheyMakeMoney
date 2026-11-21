@@ -1,0 +1,38 @@
+{
+  "https://en.wikipedia.org/wiki/Son_Heung-min": {
+    "file": "pages/68f58355885d.txt",
+    "fetched_at": "2026-11-21T21:08:58.253856+00:00",
+    "ok": true,
+    "chars": 132397,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Son_Heung-min",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://www.mlssoccer.com/news/lafc-break-mls-transfer-record-son-heung-min-signing-tottenham-south-korea": {
+    "file": "pages/d1143fc42da4.txt",
+    "fetched_at": "2026-11-21T21:08:59.062143+00:00",
+    "ok": true,
+    "chars": 6758,
+    "status": 200,
+    "final_url": "https://www.mlssoccer.com/news/lafc-break-mls-transfer-record-son-heung-min-signing-tottenham-south-korea",
+    "content_type": "text/html"
+  },
+  "https://www.espn.com/soccer/story/_/id/45905249/son-heung-min-tottenham-hotspur-joins-lafc-mls-record-deal": {
+    "file": "pages/4a322d5c35fe.txt",
+    "fetched_at": "2026-11-21T21:08:59.820836+00:00",
+    "ok": true,
+    "chars": 0,
+    "status": 202,
+    "final_url": "https://www.espn.com/soccer/story/_/id/45905249/son-heung-min-tottenham-hotspur-joins-lafc-mls-record-deal",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://www.si.com/soccer/son-heung-min-lafc-move-finalized-breaking-mls-transfer-record": {
+    "file": "pages/0802fe7a1771.txt",
+    "fetched_at": "2026-11-21T21:09:00.202543+00:00",
+    "ok": true,
+    "chars": 4803,
+    "status": 200,
+    "final_url": "https://www.si.com/soccer/son-heung-min-lafc-move-finalized-breaking-mls-transfer-record",
+    "content_type": "text/html"
+  }
+}
