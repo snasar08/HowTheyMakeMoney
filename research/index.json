@@ -1,0 +1,47 @@
+{
+  "https://www.cbsnews.com/news/new-heights-amazon-wondery-deal-kelce": {
+    "file": "pages/a4919ce218ac.txt",
+    "fetched_at": "2026-11-21T16:12:12.986486+00:00",
+    "ok": true,
+    "chars": 6004,
+    "status": 200,
+    "final_url": "https://www.cbsnews.com/philadelphia/news/new-heights-amazon-wondery-deal-kelce/",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://fortune.com/2024/08/28/travis-kelce-strikes-lucrative-100-million-amazon-podcast-deal-worth-more-than-his-football-contract/": {
+    "file": "pages/68abb0d2d6bd.txt",
+    "fetched_at": "2026-11-21T16:12:15.148267+00:00",
+    "ok": true,
+    "chars": 5476,
+    "status": 200,
+    "final_url": "https://fortune.com/2024/08/28/travis-kelce-strikes-lucrative-100-million-amazon-podcast-deal-worth-more-than-his-football-contract/",
+    "content_type": "text/html; charset=utf-8"
+  },
+  "https://en.wikipedia.org/wiki/Travis_Kelce": {
+    "file": "pages/cda5d61f2bfb.txt",
+    "fetched_at": "2026-11-21T16:12:16.130019+00:00",
+    "ok": true,
+    "chars": 119701,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Travis_Kelce",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Jason_Kelce": {
+    "file": "pages/8df4095d8ff9.txt",
+    "fetched_at": "2026-11-21T16:12:16.741697+00:00",
+    "ok": true,
+    "chars": 37288,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Jason_Kelce",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/New_Heights_(podcast)": {
+    "file": "pages/075a2a3c28c8.txt",
+    "fetched_at": "2026-11-21T16:12:17.181650+00:00",
+    "ok": true,
+    "chars": 15481,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/New_Heights_(podcast)",
+    "content_type": "text/html; charset=UTF-8"
+  }
+}
