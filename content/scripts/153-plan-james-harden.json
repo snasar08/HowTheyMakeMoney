@@ -1,0 +1,219 @@
+{
+  "id": "153",
+  "slug": "plan-james-harden",
+  "company": "James Harden",
+  "format": "story",
+  "story_mode": "plan",
+  "visual_style": "lowpoly",
+  "hook_style": "number",
+  "title_style": "number",
+  "theme": "dark_neon",
+  "status": "ready",
+  "score": 88,
+  "title": "Harden's 51 Points: A Made-Up Plan",
+  "name_card": "You're James Harden",
+  "name_sub": "a made-up plan",
+  "description": "You're James Harden, and you just scored 51 points. This is a made-up plan for fun, not news about James Harden or the Cavaliers. Only step one is real.\n\nSources:\n- FSD Morning Brief, Saturday, November 21, 2026: https://fsdstaff.substack.com/p/fsd-morning-brief-saturday-november-5ab\n- Wikipedia: James Harden: https://en.wikipedia.org/wiki/James_Harden\n\nFrom the cited pages: on Friday, November 20, 2026, James Harden scored 51 points in Cleveland's 128 to 119 NBA Cup win over Indiana; it was his 26th career 50-point game, passing Kobe Bryant for third place all time. He wears number 1 for the Cleveland Cavaliers (2026 to present). Every later step in the Short (the half-court shot, the dunk, the blocks, the teammate) is imagined. Not financial advice.\n\n#shorts #jamesharden #nba #madeupplan #howtheymakemoney",
+  "tags": [
+    "james harden",
+    "nba",
+    "plan",
+    "story",
+    "shorts"
+  ],
+  "images": {},
+  "loop": "So remember:",
+  "cta": "Harden or Kobe? Pick one.",
+  "cta_question": "Harden or Kobe?",
+  "hero": {
+    "skin": "8d5a3b",
+    "hair": "short",
+    "hair_color": "111111",
+    "beard": "full",
+    "outfit": "kit",
+    "shirt": "6f263d",
+    "pants": "6f263d",
+    "shoes": "f4f4f4",
+    "chest": "",
+    "trim": "ffb81c",
+    "number": "1",
+    "height": 1.05
+  },
+  "scenes": [
+    {
+      "narration": "You're James Harden, and you just scored 51 points. It's your 26th 50-point game, passing Kobe Bryant for third all time.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "court",
+          "mood": "proud",
+          "card": {
+            "text": "51 POINTS",
+            "kind": "screen",
+            "sub": "NOV 20, 2026"
+          },
+          "crowd": 150,
+          "view": "low"
+        },
+        {
+          "place": "court",
+          "mood": "laugh",
+          "things": [
+            "trophy"
+          ],
+          "card": {
+            "text": "26TH",
+            "kind": "sign",
+            "sub": "50-POINT GAME"
+          },
+          "crowd": 100,
+          "view": "ms"
+        }
+      ]
+    },
+    {
+      "narration": "To you, every point is a coin in your pocket. You want more coins. So you shoot from half court. Still not enough?",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "court",
+          "mood": "calm",
+          "things": [
+            "coins"
+          ],
+          "view": "ms"
+        },
+        {
+          "place": "court",
+          "mood": "scheme",
+          "things": [
+            "coins"
+          ],
+          "view": "face"
+        },
+        {
+          "place": "court",
+          "mood": "excited",
+          "things": [
+            "basketball"
+          ],
+          "crowd": 60,
+          "view": "wide"
+        },
+        {
+          "place": "court",
+          "mood": "dazed",
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "So you dunk from half court. Still not enough?",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "court",
+          "mood": "excited",
+          "things": [
+            "hoop"
+          ],
+          "crowd": 120,
+          "view": "wide"
+        },
+        {
+          "place": "court",
+          "mood": "shock",
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "So you block every shot the other team takes. Still not enough?",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "court",
+          "mood": "stern",
+          "things": [
+            "basketball"
+          ],
+          "crowd": 80,
+          "view": "low"
+        },
+        {
+          "place": "court",
+          "mood": "nervous",
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "Then you set up a teammate, and you cheer harder than anyone. Turns out the biggest coin in your pocket is a team win.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "court",
+          "mood": "laugh",
+          "action": "cheer",
+          "crowd": 200,
+          "view": "ms"
+        },
+        {
+          "place": "throne",
+          "mood": "proud",
+          "things": [
+            "trophy",
+            "coins"
+          ],
+          "view": "face"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "FSD Morning Brief, Saturday, November 21, 2026",
+      "url": "https://fsdstaff.substack.com/p/fsd-morning-brief-saturday-november-5ab"
+    },
+    {
+      "title": "Wikipedia: James Harden",
+      "url": "https://en.wikipedia.org/wiki/James_Harden"
+    },
+    {
+      "title": "ESPN: Cavaliers 128-119 Pacers (Nov 20, 2026) Game Recap",
+      "url": "https://www.espn.com/nba/recap/_/gameId/401909307"
+    }
+  ],
+  "length_test": "short",
+  "look": "afterhour"
+}
