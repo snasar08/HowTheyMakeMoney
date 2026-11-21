@@ -1,0 +1,53 @@
+{
+  "https://en.wikipedia.org/wiki/Momofuku_Ando": {
+    "file": "pages/89de2d31f8a4.txt",
+    "fetched_at": "2026-11-21T21:12:33.004498+00:00",
+    "ok": true,
+    "chars": 16223,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Momofuku_Ando",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Instant_noodles": {
+    "file": "pages/ac80334a8b1f.txt",
+    "fetched_at": "2026-11-21T21:12:33.431647+00:00",
+    "ok": true,
+    "chars": 38570,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Instant_noodles",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Cup_noodle": {
+    "file": "pages/0b0405ed3587.txt",
+    "fetched_at": "2026-11-21T21:12:33.846920+00:00",
+    "ok": true,
+    "chars": 9524,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Cup_noodle",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://www.nissin.com/en_jp/about/founder/": {
+    "file": "pages/56026fb9a0af.txt",
+    "fetched_at": "2026-11-21T21:12:34.337855+00:00",
+    "ok": true,
+    "chars": 16384,
+    "status": 200,
+    "final_url": "https://www.nissin.com/en_jp/about/founder/",
+    "content_type": "text/html"
+  },
+  "https://www.gov-online.go.jp/hlj/en/november_2024/november_2024-05.html": {
+    "file": "pages/985c180a0d8e.txt",
+    "fetched_at": "2026-11-21T21:12:34.991696+00:00",
+    "ok": false,
+    "error": "HTTP 403"
+  },
+  "https://instantnoodles.org/en/noodles/demand/": {
+    "file": "pages/0037b723c70d.txt",
+    "fetched_at": "2026-11-21T21:12:35.443867+00:00",
+    "ok": true,
+    "chars": 257,
+    "status": 200,
+    "final_url": "https://instantnoodles.org/en/noodles/demand/",
+    "content_type": "text/html; charset=utf-8"
+  }
+}
