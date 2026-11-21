@@ -1,0 +1,294 @@
+{
+  "id": "154",
+  "slug": "plan-netflix-live-sports",
+  "company": "Netflix",
+  "format": "story",
+  "story_mode": "plan",
+  "visual_style": "lowpoly",
+  "hook_style": "number",
+  "title_style": "number",
+  "theme": "dark_neon",
+  "status": "ready",
+  "score": 88,
+  "title": "Netflix: 325 Million Couches, One Big Plan",
+  "name_card": "You are Netflix",
+  "name_sub": "a made-up plan",
+  "description": "You're Netflix, and you want your couch to be the best seat in every stadium. This is a made-up plan, not company news: only the first steps are real, and everything after them is imagined for fun.\n\nSources:\n- Wikipedia: Netflix: https://en.wikipedia.org/wiki/Netflix\n- Sports Media Watch: Netflix officially announces expanded NFL deal: https://www.sportsmediawatch.com/2026/05/netflix-nfl-deal-expanded-christmas-thanksgiving-eve-first-last-weeks-season/\n\nFrom the cited pages: Netflix had 325 million paid memberships as of 2026; Netflix announced in May 2026 a four-year NFL extension through the 2029-30 season that adds a new game on the night before Thanksgiving (Packers-Rams on November 25); Netflix paid $5 billion to stream WWE's Raw for 10 years, starting January 2025. The giant couch stadium, snack robots and pocket stadium are made up. Not financial advice.\n\n#shorts #netflix #nfl #howtheymakemoney",
+  "tags": [
+    "netflix",
+    "nfl",
+    "live sports",
+    "story",
+    "shorts"
+  ],
+  "images": {},
+  "loop": "So next time you sit on your couch, remember:",
+  "cta": "Netflix or YouTube for live games? Comment your pick.",
+  "cta_question": "Netflix or YouTube?",
+  "hero": {
+    "skin": "d9a577",
+    "hair": "short",
+    "hair_color": "2a1d14",
+    "beard": "none",
+    "outfit": "tee",
+    "shirt": "e50914",
+    "pants": "2b2f3a",
+    "shoes": "f4f4f4",
+    "chest": "NETFLIX",
+    "trim": "ffffff",
+    "height": 1.0
+  },
+  "scenes": [
+    {
+      "narration": "You are Netflix, and 325 million members watch you from their couches. But you want that couch to be the best seat in every stadium.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "throne",
+          "mood": "proud",
+          "brand": {
+            "name": "Netflix",
+            "bg": "#e50914",
+            "fg": "#ffffff",
+            "icon": "play"
+          },
+          "card": {
+            "text": "325 MILLION",
+            "kind": "screen",
+            "sub": "NETFLIX MEMBERS, 2026"
+          },
+          "view": "ms"
+        },
+        {
+          "place": "gridiron",
+          "mood": "scheme",
+          "things": [
+            "tv",
+            "stadium"
+          ],
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "On November 25 you stream a new Thanksgiving Eve football game. It is the Packers against the Rams. Still not enough?",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "gridiron",
+          "mood": "excited",
+          "things": [
+            "football",
+            "tv"
+          ],
+          "card": {
+            "text": "NOV 25",
+            "kind": "flip",
+            "sub": "THANKSGIVING EVE"
+          },
+          "view": "wide"
+        },
+        {
+          "place": "gridiron",
+          "mood": "happy",
+          "things": [
+            "football"
+          ],
+          "crowd": 200,
+          "view": "ms"
+        },
+        {
+          "place": "gridiron",
+          "mood": "scheme",
+          "things": [
+            "tv"
+          ],
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "You already pay 5 billion dollars for ten years of Raw wrestling. So you sign every other league too. Still not enough?",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "ring",
+          "mood": "proud",
+          "beat": "money",
+          "card": {
+            "text": "$5 BILLION",
+            "kind": "screen",
+            "sub": "TEN YEARS OF RAW"
+          },
+          "view": "ms"
+        },
+        {
+          "place": "boardroom",
+          "mood": "scheme",
+          "things": [
+            "briefcase",
+            "trophy"
+          ],
+          "view": "ms"
+        },
+        {
+          "place": "boardroom",
+          "mood": "dazed",
+          "things": [
+            "tv"
+          ],
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "So you build a giant stadium with your name on the roof. Every single seat is a couch. Still not enough?",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "gridiron",
+          "mood": "excited",
+          "things": [
+            "stadium"
+          ],
+          "brand": {
+            "name": "Netflix",
+            "bg": "#e50914",
+            "fg": "#ffffff",
+            "icon": "play"
+          },
+          "beat": "sign",
+          "view": "wide"
+        },
+        {
+          "place": "gridiron",
+          "mood": "laugh",
+          "things": [
+            "tv"
+          ],
+          "crowd": 250,
+          "view": "low"
+        },
+        {
+          "place": "throne",
+          "mood": "scheme",
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "So you hire robots to bring pizza to every couch. Nobody ever has to stand up. Still not enough?",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "diner",
+          "mood": "excited",
+          "things": [
+            "robot",
+            "pizza"
+          ],
+          "view": "ms"
+        },
+        {
+          "place": "gridiron",
+          "mood": "happy",
+          "things": [
+            "burger"
+          ],
+          "crowd": 120,
+          "view": "ws"
+        },
+        {
+          "place": "throne",
+          "mood": "dazed",
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "But then a fan tells you the best seat was never the stadium. It was always the couch. You already own the best seat in sports.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "mansion",
+          "mood": "calm",
+          "things": [
+            "heart"
+          ],
+          "view": "ms"
+        },
+        {
+          "place": "mansion",
+          "mood": "shock",
+          "things": [
+            "tv"
+          ],
+          "view": "face"
+        },
+        {
+          "place": "throne",
+          "mood": "laugh",
+          "things": [
+            "trophy",
+            "crown"
+          ],
+          "brand": {
+            "name": "Netflix",
+            "bg": "#e50914",
+            "fg": "#ffffff",
+            "icon": "play"
+          },
+          "view": "face"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Netflix",
+      "url": "https://en.wikipedia.org/wiki/Netflix"
+    },
+    {
+      "title": "Sports Media Watch: Netflix officially announces expanded NFL deal",
+      "url": "https://www.sportsmediawatch.com/2026/05/netflix-nfl-deal-expanded-christmas-thanksgiving-eve-first-last-weeks-season/"
+    }
+  ],
+  "length_test": "long",
+  "look": "afterhour"
+}

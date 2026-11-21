@@ -29,7 +29,7 @@ Juan Soto, Faker, Roger Federer, Magic Johnson, Bad Bunny, Mohamed Salah (famous
 PlayStation born from Nintendo's walk-out (story), Cade Cunningham perfect-game plan (story plan), Kelce brothers podcast, Ryan Reynolds Mint Mobile + Wrexham, Oreo year whatif, Aaron Judge bet on himself, Nintendo Switch 2 race plan, Max Verstappen, Coco Gauff, Dude Perfect, Tiger Woods
 
 ## Used (Nov 21 2026 batch, part 2)
-Fortnite free battle royale (story), Nikola Jokić, Luka Dončić, Paul Skenes, Selena Gomez, Mark Cuban, Shai Gilgeous-Alexander, Red Bull cans around Earth (whatif)
+Fortnite free battle royale (story), Nikola Jokić, Luka Dončić, Paul Skenes, Selena Gomez, Mark Cuban, Shai Gilgeous-Alexander, Red Bull cans around Earth (whatif), Netflix couch-stadium plan (story plan)
 
 ## Ranked for the next batches (Oct 29 2026 — teen appeal × curiosity gap × surprising number)
 Write from the top. Casinos dropped (not kid-safe). Skip anything already used above.
