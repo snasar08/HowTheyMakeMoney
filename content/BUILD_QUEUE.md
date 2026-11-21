@@ -4,7 +4,7 @@ Objects and sets a script needs that the 3D library does not have yet (content/R
 One line each: `- [ ] set|object NAME: what it must show (script ids that need it)`. Routines build these FIRST; tick and move to Done when merged.
 
 ## To build
-- [ ] set gridiron + tennis: in progress Nov 18
+- [x] set gridiron + tennis (checked built in sets.ts Nov 21)
 
 ## Done
 - [x] set gym (weights rack, bench press, mats, mirrors, kettlebells, treadmill; lift_weights act allows it), Nov 18

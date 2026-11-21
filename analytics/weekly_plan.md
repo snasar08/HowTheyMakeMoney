@@ -1,4 +1,4 @@
-# This week's mix (2026-11-20)
+# This week's mix (2026-11-21)
 
 Made by `python -m pipeline.weekly_mix` from analytics/stats.json + retention.json (Shorts posted in the last 21 days, at least 48 h old). Saturday parts follow the **counts per part** below instead of a fixed mix.
 
@@ -7,11 +7,11 @@ Made by `python -m pipeline.weekly_mix` from analytics/stats.json + retention.js
 | lane | Shorts | median views 48 h | median watched | |
 |---|---|---|---|---|
 | famous-athlete | 15 | 1040 | 70% | FOCUS |
-| famous-other | 7 | 1007 | 51% |  |
+| famous-other | 6 | 1010.5 | 51% |  |
 | story-plan | 0 | – | – | EXPERIMENT |
 | story-history | 0 | – | – |  |
 | whatif | 5 | 20 | 73% |  |
-| how | 26 | 63.5 | 53% | paused |
+| how | 25 | 72 | 53% | paused |
 | careers | 15 | 30 | 59% | paused |
 
 ## Going viral (top 5, last 21 days)
@@ -25,12 +25,12 @@ Made by `python -m pipeline.weekly_mix` from analytics/stats.json + retention.js
 ## Not working (bottom 5)
 
 - 0 views, how: Is Starbucks Secretly a Bank? — "Is Starbucks holding your money right now? It might be."
-- 1 views, how: Where Does Your Spotify Money Really Go? — "You pay Spotify every month. So why does Spotify keep so little of it?"
-- 1 views, famous-other: Could You Spend the Richest Person's Fortune? — "Could you spend the richest person's fortune if you blew a million dollars every single da"
 - 2 views, how: Visa Kept $20 Billion Without Lending a Dime — "How does Visa make billions without ever lending you a dollar?"
 - 3 views, whatif: What If Spotify Listeners Were a Country? — "What if every Spotify listener moved into one country?"
+- 3 views, whatif: What If One Person Delivered Every Amazon Package? — "What if one person had to deliver every fast Amazon package in a single day?"
+- 4 views, how: Why Do Gas Stations Want You Inside? — "Why does every gas station want you to come inside? Because gas isn't the money."
 
-Look: old 67 Shorts (median 110), 3D 1 Shorts (median 1023) — too few 3D Shorts yet to compare.
+Look: old 65 Shorts (median 111), 3D 1 Shorts (median 1023) — too few 3D Shorts yet to compare.
 
 ## Plan for each Saturday part (10 scripts)
 
