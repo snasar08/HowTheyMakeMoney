@@ -1,0 +1,29 @@
+{
+  "https://en.wikipedia.org/wiki/George_Lucas": {
+    "file": "pages/b20e53532db3.txt",
+    "fetched_at": "2026-11-21T21:06:50.132570+00:00",
+    "ok": true,
+    "chars": 107191,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/George_Lucas",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Star_Wars_(film)": {
+    "file": "pages/a1abb1ec921a.txt",
+    "fetched_at": "2026-11-21T21:06:50.794539+00:00",
+    "ok": true,
+    "chars": 182658,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Star_Wars_(film)",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Lucasfilm": {
+    "file": "pages/8322da4d4230.txt",
+    "fetched_at": "2026-11-21T21:06:51.474564+00:00",
+    "ok": true,
+    "chars": 52269,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Lucasfilm",
+    "content_type": "text/html; charset=UTF-8"
+  }
+}
