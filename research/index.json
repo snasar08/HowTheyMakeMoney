@@ -1,0 +1,38 @@
+{
+  "https://rg.org/en-ca/news/hockey/connor-mcdavid-ties-gretzky-record-fewest-games-40-assists": {
+    "file": "pages/11698f02c515.txt",
+    "fetched_at": "2026-11-21T23:35:47.323788+00:00",
+    "ok": true,
+    "chars": 10602,
+    "status": 200,
+    "final_url": "https://rg.org/en-ca/news/hockey/connor-mcdavid-ties-gretzky-record-fewest-games-40-assists",
+    "content_type": "text/html; charset=utf-8"
+  },
+  "https://www.flashscore.com/news/hockey-nhl-weekly-mcdavid-threatens-more-gretzky-records-as-colorado-suffer-huge-blow/UwLFZ2Wi/": {
+    "file": "pages/a0f06fe53912.txt",
+    "fetched_at": "2026-11-21T23:35:48.174167+00:00",
+    "ok": true,
+    "chars": 10390,
+    "status": 200,
+    "final_url": "https://www.flashscore.com/news/hockey-nhl-weekly-mcdavid-threatens-more-gretzky-records-as-colorado-suffer-huge-blow/UwLFZ2Wi/",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Connor_McDavid": {
+    "file": "pages/88e45c65ce56.txt",
+    "fetched_at": "2026-11-21T23:35:49.502523+00:00",
+    "ok": true,
+    "chars": 119387,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Connor_McDavid",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Wayne_Gretzky": {
+    "file": "pages/68477eb2fba9.txt",
+    "fetched_at": "2026-11-21T23:35:50.050953+00:00",
+    "ok": true,
+    "chars": 144897,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Wayne_Gretzky",
+    "content_type": "text/html; charset=UTF-8"
+  }
+}
