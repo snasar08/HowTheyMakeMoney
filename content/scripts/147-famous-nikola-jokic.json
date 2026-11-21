@@ -1,0 +1,205 @@
+{
+  "id": "147",
+  "slug": "famous-nikola-jokic",
+  "company": "Nikola Jokić",
+  "format": "famous",
+  "visual_style": "lowpoly",
+  "hook_style": "surprise",
+  "title_style": "number",
+  "theme": "clean_navy",
+  "status": "ready",
+  "score": 90,
+  "title": "The $264 Million Pick Hidden by a Taco Bell Ad",
+  "name_card": "Nikola Jokić",
+  "name_sub": "3x NBA MVP",
+  "description": "Nikola Jokić signed a 264 million dollar deal, but his 2014 draft pick was covered by a Taco Bell ad.\n\nSources:\n- Wikipedia: Nikola Jokić: https://en.wikipedia.org/wiki/Nikola_Joki%C4%87\n- Wikipedia: List of largest sports contracts: https://en.wikipedia.org/wiki/List_of_largest_sports_contracts\n\nFrom the cited pages: Denver selected Jokić 41st overall in the 2014 NBA draft, and his selection was announced on a news ticker overshadowed by a Taco Bell commercial; he won MVP in 2021, 2022 and 2024 and the 2023 NBA title with Finals MVP; on July 1, 2022 he agreed to a five-year, $264 million supermax extension, the richest deal in NBA history at the time; his family owns a horse stable in his hometown and he originally wanted to be a jockey. Not financial advice.\n\n#shorts #nikolajokic #nba #howtheymakemoney",
+  "tags": [
+    "nikola jokic",
+    "nba",
+    "nuggets",
+    "famous",
+    "shorts"
+  ],
+  "images": {},
+  "loop": "So remember:",
+  "cta": "Jokić or Embiid? Comment your pick.",
+  "cta_question": "Jokić or Embiid?",
+  "hero": {
+    "skin": "e8c4a0",
+    "hair": "short",
+    "hair_color": "4a3222",
+    "beard": "stubble",
+    "outfit": "kit",
+    "shirt": "0e2240",
+    "pants": "0e2240",
+    "shoes": "ffffff",
+    "chest": "",
+    "trim": "fec524",
+    "number": "15",
+    "height": 1.15
+  },
+  "scenes": [
+    {
+      "narration": "Nikola Jokić signed a 264 million dollar NBA deal. But in 2014, a Taco Bell ad covered his draft pick.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "throne",
+          "mood": "proud",
+          "beat": "money",
+          "card": {
+            "text": "$264 MILLION",
+            "kind": "screen",
+            "sub": "NUGGETS DEAL"
+          },
+          "view": "ms"
+        },
+        {
+          "place": "court",
+          "mood": "shock",
+          "things": [
+            "tv"
+          ],
+          "card": {
+            "text": "2014",
+            "kind": "flip",
+            "sub": "YEAR"
+          },
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "Denver picked him 41st. Then he dribbles, passes, and shoots past everyone.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "court",
+          "mood": "nervous",
+          "things": [
+            "basketball"
+          ],
+          "card": {
+            "text": "41ST PICK",
+            "kind": "sign",
+            "sub": "DRAFT"
+          },
+          "view": "ms"
+        },
+        {
+          "place": "court",
+          "mood": "excited",
+          "things": [
+            "basketball"
+          ],
+          "view": "wide"
+        }
+      ]
+    },
+    {
+      "narration": "Then he wins three MVP awards. In 2023, he wins Denver's first title.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "court",
+          "mood": "proud",
+          "things": [
+            "trophy"
+          ],
+          "card": {
+            "text": "3X MVP",
+            "kind": "sign",
+            "sub": "NBA"
+          },
+          "view": "low"
+        },
+        {
+          "place": "court",
+          "mood": "laugh",
+          "things": [
+            "trophy"
+          ],
+          "crowd": 200,
+          "card": {
+            "text": "2023",
+            "kind": "flip",
+            "sub": "YEAR"
+          },
+          "view": "ms"
+        }
+      ]
+    },
+    {
+      "narration": "But off the court, he loves horse racing. He first wanted to be a jockey.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "farm",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "farm",
+          "mood": "happy",
+          "view": "wide"
+        },
+        {
+          "place": "farm",
+          "mood": "laugh",
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "Not bad for a pick a taco ad covered.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "court",
+          "mood": "laugh",
+          "things": [
+            "trophy",
+            "cashstack"
+          ],
+          "view": "face"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Nikola Jokić",
+      "url": "https://en.wikipedia.org/wiki/Nikola_Joki%C4%87"
+    },
+    {
+      "title": "Wikipedia: List of largest sports contracts",
+      "url": "https://en.wikipedia.org/wiki/List_of_largest_sports_contracts"
+    }
+  ],
+  "look": "afterhour"
+}

@@ -7,6 +7,8 @@ One line each: `- [ ] set|object NAME: what it must show (script ids that need i
 - [ ] act fix qb_throw (COMPLETE! panel hides the QB mid-throw) + tennis_serve (show racket-ball contact and the ball crossing the net), then re-test on things-test and approve (137, 138). See acts/approved.json off_until_fixed
 - [x] set gridiron + tennis (checked built in sets.ts Nov 21)
 
+- [ ] object horse: a chunky cel-shaded racehorse (brown, mane, saddle), for horse-racing lines (147 farm scene: swap into its `things`)
+
 ## Done
 - [x] acts race_car + touchdown reviewed and approved (things-test/20261121-acts), Nov 21
 - [x] set golf (fairway, green + flag, bunkers, tee box, cart) + golf_swing act approved, tested on things-test/20261121-golf, Nov 21
