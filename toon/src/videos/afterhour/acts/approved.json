@@ -22,13 +22,15 @@
     "count_cash",
     "sign_contract",
     "throw_cash",
-    "shoot"
+    "shoot",
+    "golf_swing"
   ],
   "off_until_fixed": {
     "film_camera": "camera hides the face"
   },
   "approved_notes": {
     "count_cash/sign_contract/throw_cash": "rebuilt Nov 16, reviewed frame by frame, Sam: 'Yes include'",
-    "shoot": "Nov 18 rebuilt: ball in both hands to above the head, one smooth arc through the net, swish + bounce; own centred camera (acts view). Stills checked every 6th frame."
+    "shoot": "Nov 18 rebuilt: ball in both hands to above the head, one smooth arc through the net, swish + bounce; own centred camera (acts view). Stills checked every 6th frame.",
+    "golf_swing": "Nov 21 (Saturday part 1): new golf set; stills checked on things-test/20261121-golf: club backswing with effort face, contact, ball flies off the tee with a trail, smile after. Passes the SPEC bar."
   }
 }
