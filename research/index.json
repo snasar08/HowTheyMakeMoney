@@ -25,5 +25,26 @@
     "status": 200,
     "final_url": "https://news.pollstar.com/2019/08/27/ed-sheeran-concludes-divide-tour-sets-all-time-touring-record-at-775-6m/",
     "content_type": "text/html; charset=UTF-8"
+  },
+  "https://www.expressandstar.com/entertainment/music/2012/01/16/ed-sheeran-set-for-wolverhampton-civic-gigs/": {
+    "file": "pages/8fdc0a362bfa.txt",
+    "fetched_at": "2026-11-21T21:11:17.661167+00:00",
+    "ok": true,
+    "chars": 7350,
+    "status": 200,
+    "final_url": "https://www.expressandstar.com/whats-on/arts-and-entertainment/ed-sheeran-set-for-wolverhampton-civic-gigs-6411360",
+    "content_type": "text/html; charset=utf-8"
+  },
+  "https://edsheeran.fandom.com/wiki/Ed_Sheeran": {
+    "file": "pages/b7b45914c4d1.txt",
+    "fetched_at": "2026-11-21T21:11:18.552946+00:00",
+    "ok": false,
+    "error": "HTTP 403"
+  },
+  "https://www.forbes.com/sites/markbeech/2019/08/27/ed-sheerans-record-breaking-divide-tour-totals-7756-million-beating-u2-guns-n-roses/": {
+    "file": "pages/14c8965f7b0a.txt",
+    "fetched_at": "2026-11-21T21:11:18.925734+00:00",
+    "ok": false,
+    "error": "HTTP 403"
   }
 }
