@@ -1,0 +1,29 @@
+{
+  "https://frontofficesports.com/macklin-celebrini-contract-extension-sets-new-nhl-salary-high-water-mark/": {
+    "file": "pages/b62b6ba321e5.txt",
+    "fetched_at": "2026-11-21T16:08:54.794923+00:00",
+    "ok": true,
+    "chars": 7406,
+    "status": 200,
+    "final_url": "https://frontofficesports.com/article/macklin-celebrini-contract-extension-sets-new-nhl-salary-high-water-mark/",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Macklin_Celebrini": {
+    "file": "pages/814b42d2b17a.txt",
+    "fetched_at": "2026-11-21T16:08:55.973482+00:00",
+    "ok": true,
+    "chars": 40491,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Macklin_Celebrini",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/San_Jose_Sharks": {
+    "file": "pages/34089a2dca92.txt",
+    "fetched_at": "2026-11-21T16:08:56.351414+00:00",
+    "ok": true,
+    "chars": 90802,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/San_Jose_Sharks",
+    "content_type": "text/html; charset=UTF-8"
+  }
+}
