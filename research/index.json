@@ -1,0 +1,35 @@
+{
+  "https://en.wikipedia.org/wiki/Victor_Wembanyama": {
+    "file": "pages/9a4700374cc1.txt",
+    "fetched_at": "2026-11-21T23:35:44.736963+00:00",
+    "ok": true,
+    "chars": 91906,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Victor_Wembanyama",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://www.nba.com/news/spurs-sign-victor-wembanyama-to-multi-year-contract-extension": {
+    "file": "pages/8476c485e201.txt",
+    "fetched_at": "2026-11-21T23:35:45.181980+00:00",
+    "ok": false,
+    "error": "HTTP 403"
+  },
+  "https://africa.espn.com/nba/story/_/id/49328757/sources-spurs-victor-wembanyama-reach-252-million-max-extension": {
+    "file": "pages/c673e510d1ce.txt",
+    "fetched_at": "2026-11-21T23:35:45.554709+00:00",
+    "ok": true,
+    "chars": 0,
+    "status": 202,
+    "final_url": "https://africa.espn.com/nba/story/_/id/49328757/sources-spurs-victor-wembanyama-reach-252-million-max-extension",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://www.foxsports.com/articles/nba/victor-wembanyama-san-antonio-spurs-agree-on-5year-extension-that-could-top-250m-ap-source-says": {
+    "file": "pages/fe75d59c0816.txt",
+    "fetched_at": "2026-11-21T23:35:45.953501+00:00",
+    "ok": true,
+    "chars": 4860,
+    "status": 200,
+    "final_url": "https://www.foxsports.com/articles/nba/victor-wembanyama-san-antonio-spurs-agree-on-5year-extension-that-could-top-250m-ap-source-says",
+    "content_type": "text/html;charset=utf-8"
+  }
+}
