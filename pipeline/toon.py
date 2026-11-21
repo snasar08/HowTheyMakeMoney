@@ -302,7 +302,7 @@ def make_plan(script: dict, recorded: dict | None = None) -> dict:
 
 # ---- afterhour look (Nov 16): the same per-sentence plan as real-3D shots for the AhShort composition ----
 AH_SET = {"throne": "throne", "office": "office", "servers": "lab", "garage": "garage", "stall": "stall", "mine": "field",
-          "court": "court", "pitch": "pitch", "diamond": "diamond", "gridiron": "gridiron", "tennis": "tennis", "golf": "golf", "gym": "gym", "studio": "studio", "farm": "farm", "store": "store", "stage": "stage", "space": "space", "street": "street", "bridge": "street",
+          "court": "court", "pitch": "pitch", "diamond": "diamond", "gridiron": "gridiron", "tennis": "tennis", "golf": "golf", "pool": "pool", "gym": "gym", "studio": "studio", "farm": "farm", "store": "store", "stage": "stage", "space": "space", "street": "street", "bridge": "street",
           "quay": "beach", "road": "track"}
 AH_EXPR = {"happy": "smile", "laugh": "laugh", "shock": "shock", "nervous": "shock", "proud": "smug", "stern": "angry",
            "scheme": "smug", "relief": "smile", "dazed": "sad", "sad": "sad", "calm": "neutral", "excited": "grin"}
@@ -311,7 +311,7 @@ AH_THING = {"shoe": "shoe", "springshoe": "springshoe", "sneakerbus": "bus", "bu
             "satellite": "satellite", "ring": "ring", "crown": "crown", "tv": "tv", "books": "books", "letter": "letter", "medal": "medal",
             "idea": "lightbulb", "factory": "factory", "stadium": "stadium", "plant": "factory", "car": "car", "truck": "truck",
             "trophy": "trophy", "cash": "cashstack", "boxes": "box", "check": "letter", "rocket": "rocket", "ball": "basketball", "mic": "mic",
-            "laptop": "laptop", "burger": "burger", "controller": "controller", "ereader": "phone", "snack": "burger", "poster": "newspaper", "horse": "horse", "baseball": "baseball"}
+            "laptop": "laptop", "burger": "burger", "controller": "controller", "ereader": "phone", "snack": "burger", "poster": "newspaper", "horse": "horse", "baseball": "baseball", "guitar": "guitar", "rollercoaster": "rollercoaster"}
 def _ts_union(path: str, typ: str) -> set:
     """the names a TS union type lists (SetName / ThingName), so a script may ask for any set or object directly"""
     try:
@@ -375,7 +375,9 @@ def ah_models() -> dict:
     return _AH_MODELS
 
 
-AH_CODE_WORDS = [("horse", r"\bhorses?\b|\bhorse racing\b|\bjockeys?\b|\bracehorses?\b|\bthoroughbreds?\b"),
+AH_CODE_WORDS = [("guitar", r"\bguitars?\b|\bguitarists?\b"),
+                 ("rollercoaster", r"\broller ?coasters?\b|\bamusement parks?\b|\btheme parks?\b"),
+                 ("horse", r"\bhorses?\b|\bhorse racing\b|\bjockeys?\b|\bracehorses?\b|\bthoroughbreds?\b"),
                  ("baseball", r"\bbaseballs?\b|\bfastballs?\b|\bcurveballs?\b|\bsliders?\b(?=.*\b(?:pitch\w*|baseball)\b)"),
                  ("console", r"\bconsoles?\b|\bplaystations?\b|\bswitch 2\b|\bxbox\b"),
                  ("golfball", r"\bgolf ?balls?\b"),
@@ -438,7 +440,7 @@ def ah_look(o: dict) -> dict:
 
 # ---- Nov 17 (Ninja review: a streamer on a soccer pitch, Drake / LeBron / his mom named but never shown, a clock on
 # "followers", an outro of repeats): who the Short is about, who a sentence names, and "no two shots look alike" ----
-AH_SPORT_SETS = ("court", "pitch", "diamond", "gridiron", "tennis", "golf", "ring", "track")
+AH_SPORT_SETS = ("court", "pitch", "diamond", "gridiron", "tennis", "golf", "pool", "ring", "track")
 # Nov 18: a baseball line stands on the baseball field (diamond), not a purple park
 AH_BASEBALL_RX = re.compile(r"\b(?:baseball|mlb|major leagues?|the majors|ballparks?|home runs?|homers?|grand slams?|pitchers?|fastballs?|curveballs?|strikeouts?|"
                             r"innings?|shortstops?|outfield\w*|dugouts?|batters?|world series|yankees|dodgers|mets|red sox|cubs|braves|astros|padres|phillies|"
@@ -458,9 +460,15 @@ AH_TENNIS_WEAK_RX = re.compile(r"\b(?:grand slams?|serves?|served|serving|aces?)
 AH_GOLF_RX = re.compile(r"\b(?:golf\w*|the masters|masters (?:tournament|champion\w*)|putt\w*|fairways?|pga|tee(?:s|d|ing)? off|birdies?|bogeys?|holes? in one|tiger woods|caddies|caddie|putting greens?|golf courses?)\b", re.I)
 
 
+# Nov 21: an empty swimming pool used as a practice court. "pool" alone counts, but not carpool / pool of money / prize pool / pool table
+AH_POOL_RX = re.compile(r"\bswimming pools?\b|\b(?:empty|drained|dry|disused|abandoned|backyard|hotel|public|old) pools?\b|(?<![\w-])(?<!prize )(?<!talent )(?<!gene )(?<!money )(?<!betting )(?<!car)(?<!liquidity )(?<!the )pools?\b(?! (?:of|table|hall|party|money|funds?|cash|cue|shark)\b)|\bthe pool\b(?! (?:of|table|hall|money|funds?|cash)\b)", re.I)
+
+
 def ah_sport_set(txt: str, ctx: dict | None = None) -> str | None:
     """the American football / tennis / golf set a line belongs on (None: not a gridiron / tennis line). Soccer lines are never taken."""
     ctx = ctx or {}
+    if AH_POOL_RX.search(txt):
+        return "pool"
     if AH_GOLF_RX.search(txt):
         return "golf"
     if AH_TENNIS_STRONG_RX.search(txt) or (ctx.get("tennis") and AH_TENNIS_WEAK_RX.search(txt)):
@@ -607,7 +615,7 @@ def ah_context(plan: dict) -> dict:
     sub = str((script or {}).get("name_sub") or "").lower()
     gamer = bool(re.search(r"streamer|gamer|esports|twitch", sub)) or "gaming" in sets
     sportish = bool(re.search(r"player|sprinter|driver|boxer|fighter|racer|athlete|golfer|swimmer|skater|champion|quarterback|runner", sub))
-    athlete = bool(sets & {"court", "pitch", "field", "diamond", "gridiron", "tennis", "golf"}) or (plan.get("hero") or {}).get("kit") in ("bball", "soccer") or (sportish and not gamer)
+    athlete = bool(sets & {"court", "pitch", "field", "diamond", "gridiron", "tennis", "golf", "pool"}) or (plan.get("hero") or {}).get("kit") in ("bball", "soccer") or (sportish and not gamer)
     alltxt = " ".join(str(sc.get("text") or sc.get("line") or "") for sc in plan["scenes"])
     return {"script": script, "hero": ah_hero_tokens(script, plan), "gamer": gamer, "athlete": athlete,
             "tennis": bool(AH_TENNIS_STRONG_RX.search(alltxt)) or any(t in AH_TENNIS_NAMES for t in ah_hero_tokens(script, plan)), "soccer": bool(AH_SOCCER_RX.search(alltxt)) and not AH_GRID_STRONG_RX.search(alltxt),
@@ -753,7 +761,7 @@ def ah_spread(shots: list, ctx: dict) -> list:
                      or s["chars"][0].get("pose") in ("shoot", "dunk", "jump", "run")
                      or (st == "diamond" and AH_BASEBALL_RX.search(txt))   # a baseball line stays on the field
                      or (st in ("gym", "studio") and ah_room_set(txt) == st)
-                     or (st in ("gridiron", "tennis", "golf") and ah_sport_set(txt, ctx) == st)
+                     or (st in ("gridiron", "tennis", "golf", "pool") and ah_sport_set(txt, ctx) == st)
                      or (st == "store" and AH_STORE_RX.search(txt)) or (st == "farm" and AH_FARM_STRONG_RX.search(txt)))   # a football / tennis line stays on its field
         named = bool(re.search(AH_PLACE_WORDS.get(st, r"\b" + re.escape(st) + r"\b"), txt, re.I)) if st in AH_PLACE_WORDS else bool(re.search(r"\b" + re.escape(st) + r"\b", txt, re.I))
         if k in moved:
@@ -879,6 +887,8 @@ def ah_shots(plan: dict) -> list:
             b = sc["brand"]; cards.append({"text": b["name"].upper(), "kind": "sign", "bg": b.get("bg"), "fg": b.get("fg"), "at": [0.0, top + 0.5, -0.7], "w": 1.0})
         if food_line and not outro and not act and not any(str(t).lower() in ("burger", "snack", "pizza") for t in thing_names) and re.search(r"burger|restaurant|five guys|fast[- ]?food|chain", line_txt, re.I):
             thing_names = ["burger"] + thing_names                  # the burger itself is on screen when the line is about burgers / a burger chain
+        if aset == "pool":                          # Nov 21: the pool has its own tennis balls
+            thing_names = [t for t in thing_names if str(t) not in ("ball", "basketball", "soccerball", "football")]
         if aset == "golf":                          # Nov 21: a golf ball is the set's own; drop generic balls
             thing_names = [t for t in thing_names if str(t) not in ("ball", "basketball", "soccerball", "football")]
         if aset == "diamond":                       # Nov 21: the baseball field has its own ball; a generic ball is a baseball, never a basketball

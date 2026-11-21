@@ -4,7 +4,7 @@ import { toonMat, metalMat, glowMat, canvasTex, seeded } from "./common";
 import { hasModel, makeModelGroup, MODEL_SIZE } from "./models";
 import { drawCard } from "./cards";
 
-export type ThingName = "shoe" | "springshoe" | "chip" | "gpu" | "cash" | "cashstack" | "coins" | "goldbar" | "trophy" | "medal" | "crown" | "ring" | "car" | "sportscar" | "bus" | "truck" | "rocket" | "phone" | "laptop" | "tv" | "monitor" | "clock" | "books" | "letter" | "newspaper" | "briefcase" | "shovel" | "pickaxe" | "box" | "crate" | "basketball" | "football" | "soccerball" | "hoop" | "mic" | "headset" | "controller" | "burger" | "pizza" | "coffee" | "plant" | "robot" | "drone" | "satellite" | "globe" | "house" | "factory" | "stadium" | "plane" | "yacht" | "chart" | "arrowup" | "arrowdown" | "lightbulb" | "lock" | "key" | "heart" | "bomb" | "fire" | "camera" | "chatbot" | "glasses" | "dumbbell" | "hanger" | "dome" | "console" | "golfball" | "golfclub" | "horse" | "baseball";
+export type ThingName = "shoe" | "springshoe" | "chip" | "gpu" | "cash" | "cashstack" | "coins" | "goldbar" | "trophy" | "medal" | "crown" | "ring" | "car" | "sportscar" | "bus" | "truck" | "rocket" | "phone" | "laptop" | "tv" | "monitor" | "clock" | "books" | "letter" | "newspaper" | "briefcase" | "shovel" | "pickaxe" | "box" | "crate" | "basketball" | "football" | "soccerball" | "hoop" | "mic" | "headset" | "controller" | "burger" | "pizza" | "coffee" | "plant" | "robot" | "drone" | "satellite" | "globe" | "house" | "factory" | "stadium" | "plane" | "yacht" | "chart" | "arrowup" | "arrowdown" | "lightbulb" | "lock" | "key" | "heart" | "bomb" | "fire" | "camera" | "chatbot" | "glasses" | "dumbbell" | "hanger" | "dome" | "console" | "golfball" | "golfclub" | "horse" | "baseball" | "guitar" | "rollercoaster";
 export type Thing = { root: THREE.Group; size: number; tick?(t: number): void };
 
 type M = string | THREE.Material;
@@ -535,6 +535,70 @@ const B: Record<ThingName, Builder> = {
     cy(tail, 0.045, 0.02, 0.34, dk, -0.05, -0.14, 0, [0, 0, 0.3], 10);
     sp(tail, 0.04, dk, -0.1, -0.3, 0, [0.8, 1.7, 0.8], 10);
     return { g, tick: (t) => { tail.rotation.z = Math.sin(t * 3) * 0.18; nk.rotation.z = Math.sin(t * 1.6) * 0.04; g.position.y = Math.abs(Math.sin(t * 1.6)) * 0.004; } };
+  },
+  // Nov 21: an acoustic guitar standing upright, front to camera: orange-brown body (two bouts), black sound hole with a ring, bridge, long neck with frets, head with tuners, six strings
+  guitar: (c) => {
+    const g = new THREE.Group(); const o = new THREE.Group(); o.rotation.z = 0.14; o.position.y = 0.0; g.add(o);
+    const wood = c ?? "#e08a2c", rim = "#7a3e14", dark = "#2a1a10";
+    const R90: V3 = [PI / 2, 0, 0];
+    cy(o, 0.185, 0.185, 0.1, rim, 0, 0.2, -0.003, R90, 32);                         // dark side wall (a touch thicker than the top)
+    cy(o, 0.135, 0.135, 0.1, rim, 0, 0.44, -0.003, R90, 28);
+    bx(o, 0.19, 0.12, 0.1, rim, 0, 0.32, -0.003);
+    cy(o, 0.17, 0.17, 0.1, wood, 0, 0.2, 0.004, R90, 32);                           // lower bout (front face)
+    cy(o, 0.122, 0.122, 0.1, wood, 0, 0.44, 0.004, R90, 28);                        // upper bout
+    bx(o, 0.17, 0.13, 0.1, wood, 0, 0.32, 0.004);                                   // waist fill
+    cy(o, 0.058, 0.058, 0.012, "#17100c", 0, 0.34, 0.056, R90, 24);                 // sound hole
+    to(o, 0.062, 0.011, "#4a2a10", 0, 0.34, 0.058);                                 // rosette ring
+    bx(o, 0.15, 0.04, 0.02, dark, 0, 0.1, 0.06);                                    // bridge
+    bx(o, 0.11, 0.012, 0.024, "#f4efe0", 0, 0.118, 0.062);                          // bridge saddle
+    bx(o, 0.052, 0.62, 0.03, "#6b3d1a", 0, 0.78, 0.0);                              // neck
+    bx(o, 0.045, 0.6, 0.016, dark, 0, 0.78, 0.022);                                 // fretboard
+    for (let i = 0; i < 7; i++) bx(o, 0.048, 0.006, 0.018, "#d8dde8", 0, 0.52 + i * 0.085, 0.03);   // frets
+    sp(o, 0.011, "#f4efe0", 0.0, 0.58, 0.032, [1, 1, 0.6], 10);                     // fret dots
+    sp(o, 0.011, "#f4efe0", 0.0, 0.75, 0.032, [1, 1, 0.6], 10);
+    rbx(o, 0.085, 0.16, 0.03, 0.02, "#4a2a12", 0, 1.17, 0.0);                       // head
+    for (const s of [-1, 1]) for (let i = 0; i < 3; i++) cy(o, 0.014, 0.014, 0.05, "#d8dde8", s * 0.062, 1.12 + i * 0.045, 0.0, [0, 0, PI / 2], 10);   // tuners
+    const str = toonMat("#f4f4f8");
+    for (let i = 0; i < 6; i++) put(o, new THREE.CylinderGeometry(0.0035, 0.0035, 1.0, 6), str, -0.0185 + i * 0.0074, 0.64, 0.038, [0, 0, 0], [1, 1, 1], false);   // strings
+    return { g, tick: (t) => { o.rotation.z = 0.14 + Math.sin(t * 1.6) * 0.05; } };
+  },
+  // Nov 21: a small roller coaster: red track on a lift hill, a full loop, white rails, support columns, a yellow two-seat car rolling along the track
+  rollercoaster: (c) => {
+    const g = new THREE.Group(); const o = new THREE.Group(); o.position.x = -0.08; g.add(o); const col = c ?? "#e53a3a";
+    const pts: THREE.Vector3[] = [];
+    const add = (x: number, y: number, z: number) => pts.push(new THREE.Vector3(x, y, z));
+    add(-0.95, 0.1, 0); add(-0.75, 0.12, 0); add(-0.55, 0.35, 0); add(-0.4, 0.7, 0); add(-0.3, 0.88, 0); add(-0.18, 0.7, 0); add(-0.08, 0.35, 0); add(0.1, 0.14, -0.08); add(0.3, 0.11, -0.08);
+    const LX = 0.52, LY = 0.4, LR = 0.3;
+    for (let i = 0; i <= 12; i++) { const th = -PI / 2 + (i / 12) * PI * 2; add(LX + LR * Math.cos(th), LY + LR * Math.sin(th), -0.08 + 0.16 * (i / 12)); }
+    add(0.78, 0.12, 0.08); add(0.95, 0.1, 0.08); add(1.12, 0.1, 0.08);
+    const curve = new THREE.CatmullRomCurve3(pts, false, "catmullrom", 0.5);
+    put(o, new THREE.TubeGeometry(curve, 220, 0.026, 8, false), col, 0, 0, 0, [0, 0, 0], [1, 1, 1], true);               // spine
+    const rail = toonMat("#f4f6fb");
+    for (const dz of [-0.04, 0.04]) {
+      const cv = new THREE.CatmullRomCurve3(pts.map((p) => new THREE.Vector3(p.x, p.y + 0.03, p.z + dz)), false, "catmullrom", 0.5);
+      put(o, new THREE.TubeGeometry(cv, 220, 0.011, 6, false), rail, 0, 0, 0, [0, 0, 0], [1, 1, 1], false);
+    }
+    for (let i = 0; i <= 40; i++) {       // supports under the hill (and the lead-in), with a cross brace
+      const t = 0.02 + (i / 40) * 0.2; const p = curve.getPoint(t);
+      if (i % 3 === 0 && p.y > 0.2) { cy(o, 0.014, 0.014, p.y - 0.03, "#8a93a8", p.x, (p.y - 0.03) / 2, p.z, undefined, 8); bx(o, 0.07, 0.014, 0.014, "#8a93a8", p.x, p.y * 0.5, p.z); }
+    }
+    for (const dx of [-0.13, 0.13]) cy(o, 0.014, 0.014, LY - LR + 0.01, "#8a93a8", LX + dx, (LY - LR) / 2, 0, undefined, 8);   // under the loop
+    bx(o, 1.3, 0.025, 0.12, "#6c748a", 0.08, 0.0125, 0.0);                                                                    // ground base
+    cy(o, 0.008, 0.008, 0.2, "#d8dde8", -0.3, 1.0, 0, undefined, 6); bx(o, 0.11, 0.07, 0.01, "#ffcc29", -0.25, 1.05, 0);       // flag on the hill top
+    const mk = () => {
+      const car = new THREE.Group(); o.add(car);
+      rbx(car, 0.17, 0.08, 0.11, 0.02, "#ffcc29", 0, 0.0, 0);
+      bx(car, 0.04, 0.06, 0.12, "#e53a3a", 0.065, 0.0, 0);
+      sp(car, 0.032, "#f2c9a0", -0.03, 0.075, 0, undefined, 12); sp(car, 0.032, "#f2c9a0", 0.03, 0.075, 0, undefined, 12);
+      cy(car, 0.012, 0.012, 0.12, "#4b5163", 0.0, 0.03, 0.0, [PI / 2, 0, 0], 8);                                              // lap bar
+      return car;
+    };
+    const cars = [mk(), mk()];
+    const place = (car: THREE.Group, t: number) => {
+      const u = Math.min(0.995, Math.max(0.005, t)); const p = curve.getPoint(u), tg = curve.getTangent(u);
+      car.position.set(p.x, p.y + 0.085, p.z); car.rotation.set(0, 0, Math.atan2(tg.y, tg.x));
+    };
+    return { g, tick: (t) => { const u = 0.5 - 0.5 * Math.cos(t * 0.7); place(cars[0], 0.03 + u * 0.94); place(cars[1], 0.03 + u * 0.94 - 0.05); } };
   },
   // Nov 21: a white baseball with two red stitched seams
   baseball: (c) => {
