@@ -37,8 +37,29 @@
   },
   "https://en.wikipedia.org/wiki/List_of_highest-earning_female_athletes": {
     "file": "pages/8536ebbb4424.txt",
-    "fetched_at": "2026-11-21T16:13:14.370958+00:00",
+    "fetched_at": "2026-11-21T16:14:32.782082+00:00",
     "ok": false,
     "error": "HTTP 404"
+  },
+  "https://www.forbes.com/sites/brettknight/2025/12/09/the-worlds-highest-paid-female-athletes-2025/": {
+    "file": "pages/98cb0da62ea5.txt",
+    "fetched_at": "2026-11-21T16:14:33.581678+00:00",
+    "ok": false,
+    "error": "HTTP 403"
+  },
+  "https://en.wikipedia.org/wiki/List_of_highest-paid_women_athletes": {
+    "file": "pages/e9e35872ded8.txt",
+    "fetched_at": "2026-11-21T16:14:33.946415+00:00",
+    "ok": false,
+    "error": "HTTP 404"
+  },
+  "https://en.wikipedia.org/wiki/Forbes_list_of_the_world%27s_highest-paid_female_athletes": {
+    "file": "pages/b7a3e5264458.txt",
+    "fetched_at": "2026-11-21T16:14:34.607800+00:00",
+    "ok": true,
+    "chars": 25958,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Forbes_list_of_the_world%27s_highest-paid_female_athletes",
+    "content_type": "text/html; charset=UTF-8"
   }
 }
