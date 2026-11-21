@@ -4,6 +4,9 @@ Objects and sets a script needs that the 3D library does not have yet (content/R
 One line each: `- [ ] set|object NAME: what it must show (script ids that need it)`. Routines build these FIRST; tick and move to Done when merged.
 
 ## To build
+- [ ] set rink: an ice hockey rink (white ice, red/blue lines, boards, goal net, stands) for "hockey"/"NHL"/"rink"/"Stanley Cup" lines (169 McDavid is a draft until this exists; it uses stage/throne now)
+- [ ] object puck + hockeystick: a black puck and a plain hockey stick (169)
+- [ ] object icepop: a popsicle on a stick (173 uses box + an ICE POPS card)
 - [ ] object noodlecup: a foam cup of instant noodles with a peeled lid and steam (165 uses coffee)
 - [ ] object legobrick: a chunky 2x4 toy brick with studs, bright colours, plain (no logo) (166 uses crate)
 - [ ] object eiffeltower: a small Eiffel Tower model built from bricks (166 uses house)

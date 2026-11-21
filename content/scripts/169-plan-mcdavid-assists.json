@@ -1,0 +1,309 @@
+{
+  "id": "169",
+  "slug": "plan-mcdavid-assists",
+  "company": "Connor McDavid",
+  "format": "story",
+  "story_mode": "plan",
+  "visual_style": "lowpoly",
+  "hook_style": "surprise",
+  "title_style": "number",
+  "theme": "dark_neon",
+  "status": "draft",
+  "score": 90,
+  "title": "You're McDavid. 40 Assists in 22 Games.",
+  "name_card": "Connor McDavid",
+  "name_sub": "Oilers, a hypothetical plan",
+  "description": "You're Connor McDavid, and you just tied Wayne Gretzky's record. So how do you give away even more goals?\n\nSources:\n- RG.org (Nov 16 2026): https://rg.org/en-ca/news/hockey/connor-mcdavid-ties-gretzky-record-fewest-games-40-assists\n- Flashscore: https://www.flashscore.com/news/hockey-nhl-weekly-mcdavid-threatens-more-gretzky-records-as-colorado-suffer-huge-blow/UwLFZ2Wi/\n- Wikipedia: Connor McDavid: https://en.wikipedia.org/wiki/Connor_McDavid\n\nReal (RG.org, Flashscore): on Sunday, November 15, 2026, Oilers captain Connor McDavid had a goal and two assists in a 5-2 win over the Philadelphia Flyers, tying Wayne Gretzky's NHL record for the fewest games to reach 40 assists in a season, his 22nd game (Gretzky did it in 1984-85); Gretzky's single-season points record is 215 (1985-86). Real (Wikipedia): on October 6, 2025 McDavid signed a two-year extension with the Oilers worth an average of $12.5 million a year. Everything after that is a made-up, hypothetical plan for fun: imagined steps, not news and not anything Connor McDavid has said or planned. Not financial advice.\n\n#shorts #mcdavid #oilers #howtheymakemoney",
+  "tags": [
+    "connor mcdavid",
+    "oilers",
+    "nhl",
+    "plan",
+    "shorts"
+  ],
+  "images": {},
+  "hud_label": "THE PLAN",
+  "loop": "So next time you see an assist, remember:",
+  "cta": "McDavid or Gretzky? Comment your pick.",
+  "cta_question": "McDavid or Gretzky?",
+  "hero": {
+    "skin": "e0b48c",
+    "hair": "short",
+    "hair_color": "4a3425",
+    "beard": "none",
+    "outfit": "kit",
+    "shirt": "0b3a8c",
+    "pants": "0b3a8c",
+    "trim": "fc4c02",
+    "socks": "0b3a8c",
+    "shoes": "111111",
+    "height": 1.0,
+    "number": 97
+  },
+  "scenes": [
+    {
+      "narration": "You're Connor McDavid, and on November 15 you tied Wayne Gretzky's record. That's 40 assists in just 22 games.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "throne",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": "40 ASSISTS",
+        "stat_sub": "in 22 games",
+        "hero": {
+          "skin": "e0b48c",
+          "hair": "short",
+          "hair_color": "4a3425",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "0b3a8c",
+          "pants": "0b3a8c",
+          "trim": "fc4c02",
+          "socks": "0b3a8c",
+          "shoes": "111111",
+          "height": 1.0,
+          "number": 97
+        }
+      },
+      "toon": [
+        {
+          "place": "throne",
+          "mood": "proud",
+          "things": [
+            "crown"
+          ],
+          "card": {
+            "text": "NOV 15",
+            "kind": "flip",
+            "sub": "YEAR 2026"
+          },
+          "view": "ms"
+        },
+        {
+          "place": "stage",
+          "mood": "excited",
+          "crowd": 120,
+          "things": [
+            "trophy"
+          ],
+          "card": {
+            "text": "40 ASSISTS",
+            "kind": "screen",
+            "sub": "22 GAMES"
+          },
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "Every assist is a goal you give away. You earn 12.5 million dollars a year. But Gretzky's mark is 215 points.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "stage",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": "THE PLAN",
+        "stat_sub": "give goals away",
+        "hero": {
+          "skin": "e0b48c",
+          "hair": "short",
+          "hair_color": "4a3425",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "0b3a8c",
+          "pants": "0b3a8c",
+          "trim": "fc4c02",
+          "socks": "0b3a8c",
+          "shoes": "111111",
+          "height": 1.0,
+          "number": 97
+        }
+      },
+      "toon": [
+        {
+          "place": "stage",
+          "mood": "calm",
+          "things": [
+            "coins"
+          ],
+          "card": {
+            "text": "ASSIST = A GOAL",
+            "kind": "white",
+            "sub": "YOU GIVE AWAY"
+          },
+          "view": "ms"
+        },
+        {
+          "place": "mansion",
+          "mood": "proud",
+          "beat": "money",
+          "card": {
+            "text": "$12.5M",
+            "kind": "screen",
+            "sub": "A YEAR"
+          },
+          "view": "ms"
+        },
+        {
+          "place": "throne",
+          "mood": "nervous",
+          "things": [
+            "chart"
+          ],
+          "card": {
+            "text": "215",
+            "kind": "sign",
+            "sub": "POINTS IN A SEASON"
+          },
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "So you pass to your whole line, then to the whole arena.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "stage",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": "STEP 1",
+        "stat_sub": "pass to everyone",
+        "hero": {
+          "skin": "e0b48c",
+          "hair": "short",
+          "hair_color": "4a3425",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "0b3a8c",
+          "pants": "0b3a8c",
+          "trim": "fc4c02",
+          "socks": "0b3a8c",
+          "shoes": "111111",
+          "height": 1.0,
+          "number": 97
+        }
+      },
+      "toon": [
+        {
+          "place": "stage",
+          "mood": "laugh",
+          "action": "throw",
+          "crowd": 300,
+          "things": [
+            "stadium"
+          ],
+          "view": "wide"
+        }
+      ]
+    },
+    {
+      "narration": "Still not enough? You pass to a kid in the stands, and he scores on the Flyers.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "stage",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": "STEP 2",
+        "stat_sub": "a kid scores",
+        "hero": {
+          "skin": "e0b48c",
+          "hair": "short",
+          "hair_color": "4a3425",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "0b3a8c",
+          "pants": "0b3a8c",
+          "trim": "fc4c02",
+          "socks": "0b3a8c",
+          "shoes": "111111",
+          "height": 1.0,
+          "number": 97
+        }
+      },
+      "toon": [
+        {
+          "place": "stage",
+          "mood": "scheme",
+          "action": "throw",
+          "crowd": 60,
+          "things": [
+            "lightbulb"
+          ],
+          "view": "ms"
+        },
+        {
+          "place": "stage",
+          "mood": "excited",
+          "action": "cheer",
+          "crowd": 200,
+          "things": [
+            "trophy"
+          ],
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "The record was never about you. It's every goal you gave away.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "throne",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": "GOALS GIVEN",
+        "stat_sub": "the real record",
+        "hero": {
+          "skin": "e0b48c",
+          "hair": "short",
+          "hair_color": "4a3425",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "0b3a8c",
+          "pants": "0b3a8c",
+          "trim": "fc4c02",
+          "socks": "0b3a8c",
+          "shoes": "111111",
+          "height": 1.0,
+          "number": 97
+        }
+      },
+      "toon": [
+        {
+          "place": "stage",
+          "mood": "sad",
+          "view": "ms"
+        },
+        {
+          "place": "throne",
+          "mood": "happy",
+          "things": [
+            "heart",
+            "trophy"
+          ],
+          "view": "face"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "RG.org: Connor McDavid ties Wayne Gretzky's record for fewest games to 40 assists (Nov 16 2026)",
+      "url": "https://rg.org/en-ca/news/hockey/connor-mcdavid-ties-gretzky-record-fewest-games-40-assists"
+    },
+    {
+      "title": "Flashscore: NHL Weekly, McDavid threatens more Gretzky records",
+      "url": "https://www.flashscore.com/news/hockey-nhl-weekly-mcdavid-threatens-more-gretzky-records-as-colorado-suffer-huge-blow/UwLFZ2Wi/"
+    },
+    {
+      "title": "Wikipedia: Connor McDavid",
+      "url": "https://en.wikipedia.org/wiki/Connor_McDavid"
+    }
+  ],
+  "length_test": "short",
+  "look": "afterhour"
+}
