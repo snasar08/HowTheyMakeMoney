@@ -146,8 +146,7 @@
           "place": "garage",
           "mood": "scheme",
           "things": [
-            "shovel",
-            "house"
+            "giantshovel"
           ],
           "view": "ws"
         },
