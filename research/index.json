@@ -1,0 +1,32 @@
+{
+  "https://ir.dominos.com/node/24181": {
+    "file": "pages/de9a8dca45ab.txt",
+    "fetched_at": "2026-11-21T23:36:01.517552+00:00",
+    "ok": false,
+    "error": "HTTP 403"
+  },
+  "https://media.dominos.com/assets/files/dominos-101-fun-facts.pdf": {
+    "file": "pages/0796eb552cae.txt",
+    "fetched_at": "2026-11-21T23:36:02.062674+00:00",
+    "ok": true,
+    "chars": 3781,
+    "status": 200,
+    "final_url": "https://storage.ghost.io/c/b7/84/b7843a23-2abe-4adc-83f5-7b80d02dc89a/content/files/dominos-101-fun-facts_2026-11.pdf",
+    "content_type": "application/octet-stream"
+  },
+  "https://en.wikipedia.org/wiki/Domino%27s_Pizza": {
+    "file": "pages/b7387660ab67.txt",
+    "fetched_at": "2026-11-21T23:36:02.981546+00:00",
+    "ok": true,
+    "chars": 73623,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Domino%27s_Pizza",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://ir.dominos.com/static-files/6201c060-a2e7-4b3b-861e-5cb57f2bc639": {
+    "file": "pages/f28b737038ef.txt",
+    "fetched_at": "2026-11-21T23:36:03.569859+00:00",
+    "ok": false,
+    "error": "HTTP 403"
+  }
+}
