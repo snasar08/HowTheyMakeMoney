@@ -59,32 +59,15 @@
     "a": 120,
     "n": 40,
     "f": 20,
-    "set": "garage",
-    "chars": [
-     {
-      "look": {
-       "body": "#f4f4f4",
-       "legs": "#2b3a67",
-       "hat": "cap",
-       "hatColor": "#e5233b",
-       "skin": "#d9a577"
-      },
-      "at": [
-       0.9,
-       0,
-       0.4
-      ],
-      "pose": "stand",
-      "expr": "grin"
-     }
-    ],
+    "set": "field",
+    "chars": [],
     "things": [
      {
       "name": "giantshovel",
       "at": [
-       -1.1,
        0,
-       -0.8
+       0,
+       0.4
       ],
       "fit": 2.2
      }
