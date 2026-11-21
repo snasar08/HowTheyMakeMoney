@@ -4,6 +4,9 @@ Objects and sets a script needs that the 3D library does not have yet (content/R
 One line each: `- [ ] set|object NAME: what it must show (script ids that need it)`. Routines build these FIRST; tick and move to Done when merged.
 
 ## To build
+- [ ] set factory: a factory floor (conveyor belts, robot arms, crates, big chimney windows) for "factory" lines (164)
+- [ ] set mountain: a rocky mountain with a mine entrance, cart tracks and gold veins for "mountain"/"mine" lines (164)
+- [ ] object giant shovel: a house-tall shovel (164 uses shovel + house)
 - [ ] object guitar + review act guitar (not in approved.json yet) for "plays guitar" lines (162 uses mic)
 - [ ] object rollercoaster: a small amusement-park roller coaster loop with a car (for "amusement park" lines; 160 uses stadium for now)
 - [ ] set pool: an empty, disused swimming pool turned into a tennis practice court (tiled walls, ladder, net strung across the dry floor) (157)

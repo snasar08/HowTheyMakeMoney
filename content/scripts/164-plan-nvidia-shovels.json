@@ -1,0 +1,285 @@
+{
+  "id": "164",
+  "slug": "plan-nvidia-shovels",
+  "company": "Nvidia",
+  "format": "story",
+  "story_mode": "plan",
+  "visual_style": "lowpoly",
+  "hook_style": "number",
+  "title_style": "number",
+  "theme": "dark_neon",
+  "status": "ready",
+  "score": 88,
+  "title": "Nvidia Made $115.8 Billion in 3 Months",
+  "name_card": "You are Nvidia",
+  "name_sub": "a made-up plan",
+  "description": "You're Nvidia, and you sell the shovels in the AI gold rush. Step one is real: on November 17, 2026 Nvidia reported $115.8 billion of revenue for the quarter ended October 25, 2026, up 103% from $57.0 billion a year earlier, said its new Vera Rubin NVL72 racks have started shipping (partners include Google Cloud, Microsoft Azure and Oracle Cloud Infrastructure), and expects about $130.0 billion next quarter. Every step after that is a made-up plan for fun, not company news.\n\nSources:\n- NVIDIA: Financial Results for Third Quarter Fiscal 2027 (Nov 17, 2026): https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Third-Quarter-Fiscal-2027/\n\nNot financial advice.\n\n#shorts #nvidia #ai #howtheymakemoney",
+  "tags": [
+    "nvidia",
+    "ai",
+    "story",
+    "shorts"
+  ],
+  "images": {},
+  "loop": "So next time you hear about a gold rush, remember:",
+  "cta": "Nvidia or AMD? Comment your pick.",
+  "cta_question": "Nvidia or AMD?",
+  "hero": {
+    "skin": "d9a577",
+    "hair": "short",
+    "hair_color": "1a1a1a",
+    "beard": "none",
+    "outfit": "hoodie",
+    "shirt": "111111",
+    "pants": "2b2f3a",
+    "shoes": "f4f4f4",
+    "chest": "NVIDIA",
+    "trim": "76b900",
+    "height": 1.0
+  },
+  "scenes": [
+    {
+      "narration": "You're Nvidia, and in one quarter you made 115.8 billion dollars. That's double the 57 billion from a year earlier. Everyone in the AI race is digging for gold, and you sell the shovels.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "lab",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "throne",
+          "mood": "proud",
+          "brand": {
+            "name": "NVIDIA",
+            "bg": "#76b900",
+            "fg": "#111111",
+            "icon": "chip"
+          },
+          "card": {
+            "text": "$115.8 BILLION",
+            "kind": "screen",
+            "sub": "ONE QUARTER, 2026"
+          },
+          "view": "ms"
+        },
+        {
+          "place": "boardroom",
+          "mood": "excited",
+          "card": {
+            "text": "$57 BILLION",
+            "kind": "screen",
+            "sub": "A YEAR EARLIER"
+          },
+          "things": [
+            "arrowup"
+          ],
+          "view": "wide"
+        },
+        {
+          "place": "field",
+          "mood": "scheme",
+          "things": [
+            "shovel"
+          ],
+          "crowd": 40,
+          "view": "low"
+        }
+      ]
+    },
+    {
+      "narration": "Your newest shovel is called Vera Rubin, and it just started shipping. Next quarter, you expect about 130 billion dollars.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "lab",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "stall",
+          "mood": "excited",
+          "things": [
+            "gpu"
+          ],
+          "card": {
+            "text": "VERA RUBIN",
+            "kind": "sign",
+            "sub": "NOW SHIPPING"
+          },
+          "view": "ms"
+        },
+        {
+          "place": "office",
+          "mood": "scheme",
+          "card": {
+            "text": "$130 BILLION",
+            "kind": "screen",
+            "sub": "EXPECTED NEXT QUARTER"
+          },
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "But the miners keep asking for more. So you build a shovel as tall as a house. Still not enough?",
+      "visual": {
+        "type": "lowpoly",
+        "set": "street",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "farm",
+          "mood": "shock",
+          "things": [
+            "pickaxe"
+          ],
+          "crowd": 60,
+          "view": "ms"
+        },
+        {
+          "place": "garage",
+          "mood": "scheme",
+          "things": [
+            "shovel",
+            "house"
+          ],
+          "view": "ws"
+        },
+        {
+          "place": "showroom",
+          "mood": "nervous",
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "Then you build a factory that only makes shovel factories. Still not enough?",
+      "visual": {
+        "type": "lowpoly",
+        "set": "lab",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "lab",
+          "mood": "excited",
+          "things": [
+            "factory"
+          ],
+          "view": "wide"
+        },
+        {
+          "place": "stage",
+          "mood": "shock",
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "So you grab your own shovel and dig straight through the Earth.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "field",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "field",
+          "mood": "excited",
+          "things": [
+            "shovel",
+            "globe"
+          ],
+          "action": "dig",
+          "view": "low"
+        }
+      ]
+    },
+    {
+      "narration": "At the bottom, you find a treasure chest. Inside is no gold, only a receipt for every shovel you ever sold.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "office",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "beach",
+          "mood": "nervous",
+          "things": [
+            "crate"
+          ],
+          "view": "ms"
+        },
+        {
+          "place": "office",
+          "mood": "dazed",
+          "things": [
+            "letter"
+          ],
+          "card": {
+            "text": "PAID IN FULL",
+            "kind": "paper",
+            "sub": "EVERY SHOVEL"
+          },
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "The gold was never in the mountain. It was always in the shovel.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "throne",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "field",
+          "mood": "calm",
+          "things": [
+            "goldbar"
+          ],
+          "view": "wide"
+        },
+        {
+          "place": "throne",
+          "mood": "proud",
+          "things": [
+            "shovel",
+            "crown"
+          ],
+          "brand": {
+            "name": "NVIDIA",
+            "bg": "#76b900",
+            "fg": "#111111",
+            "icon": "chip"
+          },
+          "view": "face"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "NVIDIA: Financial Results for Third Quarter Fiscal 2027",
+      "url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Third-Quarter-Fiscal-2027/"
+    }
+  ],
+  "length_test": "long",
+  "look": "afterhour"
+}
