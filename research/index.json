@@ -1,0 +1,20 @@
+{
+  "https://en.wikipedia.org/wiki/Shai_Gilgeous-Alexander": {
+    "file": "pages/29b610631681.txt",
+    "fetched_at": "2026-11-21T18:46:33.726761+00:00",
+    "ok": true,
+    "chars": 84070,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Shai_Gilgeous-Alexander",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/2025_NBA_Finals": {
+    "file": "pages/fb10c10d49b7.txt",
+    "fetched_at": "2026-11-21T18:46:34.224275+00:00",
+    "ok": true,
+    "chars": 80829,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/2025_NBA_Finals",
+    "content_type": "text/html; charset=UTF-8"
+  }
+}
