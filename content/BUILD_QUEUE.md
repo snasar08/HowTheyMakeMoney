@@ -8,6 +8,7 @@ One line each: `- [ ] set|object NAME: what it must show (script ids that need i
 - [x] set gridiron + tennis (checked built in sets.ts Nov 21)
 
 - [ ] object horse: a chunky cel-shaded racehorse (brown, mane, saddle), for horse-racing lines (147 farm scene: swap into its `things`)
+- [ ] object baseball (white ball, red stitches) + "throw/threw/fastball" on a baseball line must not add a basketball (149)
 
 ## Done
 - [x] acts race_car + touchdown reviewed and approved (things-test/20261121-acts), Nov 21
