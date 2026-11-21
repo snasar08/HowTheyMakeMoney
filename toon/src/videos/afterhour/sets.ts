@@ -2051,7 +2051,7 @@ function mountain(): SetObj {
   plane(g, 5.5, 22, T("#ffffff", { map: dirtT }), 2.6, 0.012, -4);                          // dirt path out of the mine
   const sky = gradTex([[0, "#8fd0ff"], [0.6, "#c4e7ff"], [1, "#fff0d0"]], 8, 128);
   vplane(g, 160, 60, basic(sky, 1, false), 0, 22, -40);
-  const rockA = T("#8d8478"), rockB = T("#a39a8c"), rockC = T("#6f675d"), snow = T("#f4f8ff");
+  const rockA = T("#b58c62"), rockB = T("#cda374"), rockC = T("#94694a"), snow = T("#f4f8ff");
   // rocky crag: rows of tilted hexagonal rock columns, the mine mouth cut at x = 2.6, snow-capped peaks behind
   const col = (x: number, z: number, r: number, h: number, m: THREE.Material, tilt = 0, ry = 0, y0 = 0) => { const c = cy(g, r * 0.8, r, h, m, x, y0 + h / 2, z, 0.02, 6); c.rotation.set(tilt, ry, -tilt * 0.6); c.castShadow = false; return c; };
   const mats = [rockA, rockB, rockC];
@@ -2060,7 +2060,7 @@ function mountain(): SetObj {
   bx(g, 4.6, 1.3, 1.6, rockB, 2.65, 5.75, -8.9, 0.02); bx(g, 3.4, 1.9, 1.4, rockA, 2.65, 7.35, -9.2, 0.02);          // rock over the mine mouth
   [[-12, 11], [-8.5, 13], [-4.5, 11.5], [-0.5, 14], [3.5, 12], [7.5, 14.5], [11.5, 12], [14.5, 10]].forEach(([x, h], i) => col(x, -12.2, 2.0, h, mats[(i + 1) % 3], 0.02 * (i % 3 - 1), i * 2));
   for (const [x, y, z, r, h] of [[-9, 19, -16, 6.5, 14], [1, 24, -17, 8, 20], [11, 20, -16, 6, 15]] as [number, number, number, number, number][]) {
-    cone(g, r, h, rockB, x, y - h / 2 + 4, z, 0.02, 7); cone(g, r * 0.42, h * 0.34, snow, x, y + h * 0.32 - h / 2 + 4, z + 0.05, 0, 7);
+    cone(g, r, h, rockB, x, 7 + h / 2, z, 0.02, 7); cone(g, r * 0.42, h * 0.34, snow, x, 7 + h * 0.83, z + 0.05, 0, 7);
   }
   for (const [x, y, z, s] of [[-14, 3, -9, 1.7], [15, 2.5, -8.5, 1.5], [-10.5, 2, -6, 1.0], [11, 1.3, -6.5, 0.9], [-1.6, 0.5, -5.5, 0.5]] as V4[]) { const b = sp(g, s, rockA, x, y * 0.5 + 0.2, z, 0.02, 7); b.scale.y = 0.7; }
   // the mine mouth: dark hole, timber frame, lantern, sign
@@ -2081,8 +2081,9 @@ function mountain(): SetObj {
   for (const sx of [-1, 1]) for (const sz of [-1, 1]) { const w = cy(cart, 0.2, 0.2, 0.1, T("#2f3440"), sx * 0.55, 0.22, sz * 0.5, 0.01, 14); w.rotation.z = PI / 2; }
   for (const [x, y, z, r] of [[-0.3, 1.2, 0.0, 0.3], [0.2, 1.3, 0.1, 0.34], [0.0, 1.15, -0.25, 0.27], [0.35, 1.18, -0.2, 0.25], [-0.25, 1.2, 0.3, 0.24]] as V4[]) { const n = sp(cart, r, gold2(), x, y, z, 0.012, 7); n.scale.y = 0.8; }
   // glowing gold veins across the rock faces (the front of the first column row is at z ~ -8.3)
-  const vein = (x: number, y: number, z: number, w: number, rz: number) => { const v = glow(g, w, 0.2, 0.22, "#ffcf3a", x, y, z, 2.8); v.rotation.z = rz; };
+  const vein = (x: number, y: number, z: number, w: number, rz: number) => { const v = glow(g, w * 1.5, 0.3, 0.22, "#ffcf3a", x, y, z, 3.0); v.rotation.z = rz; };
   vein(-6, 3.2, -8.3, 1.3, 0.6); vein(-6.1, 4.3, -8.3, 0.9, -0.5); vein(-10.4, 2.4, -8.3, 1.2, 0.4); vein(-3.9, 5.2, -8.3, 1.1, -0.6); vein(-8.2, 5.8, -8.3, 1.2, 0.5); vein(-1.7, 2.6, -8.3, 1.0, 0.7);
+  vein(-2.0, 1.6, -8.3, 1.1, -0.5); vein(-2.2, 3.6, -8.3, 1.0, 0.6); vein(-4.2, 2.0, -8.3, 1.1, 0.5); vein(-4.0, 3.8, -8.3, 0.9, -0.6); vein(6.6, 1.8, -8.3, 1.0, 0.6); vein(6.2, 4.8, -8.3, 0.9, -0.5); vein(-0.2, 3.0, -8.3, 0.7, 0.5);
   vein(6.4, 3.4, -8.3, 1.2, -0.6); vein(8.5, 5.0, -8.3, 1.3, 0.5); vein(8.4, 3.0, -8.3, 0.9, -0.4); vein(10.7, 3.4, -8.3, 1.1, 0.6); vein(12.9, 5.4, -8.3, 1.1, -0.5); vein(2.65, 5.9, -8.05, 2.4, 0.08);
   for (const [x, y] of [[-6, 3.2], [-8.2, 5.8], [6.4, 3.4], [8.5, 5.0], [-10.4, 2.4], [10.7, 3.4], [-3.9, 5.2]] as V2[]) glowSp(g, 0.24, "#ffe27a", x + 0.2, y, -8.2, 2.8);
   // loose nuggets, pickaxe leaning on the rock, a few pines
