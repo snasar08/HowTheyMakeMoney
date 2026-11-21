@@ -26,7 +26,7 @@ Tom Brady, Erling Haaland, Neymar, Caitlin Clark, Rihanna (Fenty), Ninja, Kai Ce
 Juan Soto, Faker, Roger Federer, Magic Johnson, Bad Bunny, Mohamed Salah (famous); Netflix vs Blockbuster, Nintendo playing cards (editorial); Pokémon cards, Switch stack (whatif); orthodontists (careers); Crocs (how). Researched and skipped: Victor Wembanyama and Simone Biles (no sourced money figures on their pages), Selena Gomez / Rare Beauty (too close to part 1's Rihanna makeup angle), Aaron Judge (too close to Mahomes' late-round pick story), Novak Djokovic (third tennis star in the queue; good story: trained in an empty swimming pool, $197M prize money, for a later batch), Monster Beverage (juice in 1935, Coca-Cola's $2.15B stake, $8.29B revenue 2025: energy drink for a teen audience, skipped for now), Mark Rober (no money figures).
 
 ## Used (Nov 21 2026 batch, part 1)
-PlayStation born from Nintendo's walk-out (story), Cade Cunningham perfect-game plan (story plan), Kelce brothers podcast, Ryan Reynolds Mint Mobile + Wrexham, Oreo year whatif
+PlayStation born from Nintendo's walk-out (story), Cade Cunningham perfect-game plan (story plan), Kelce brothers podcast, Ryan Reynolds Mint Mobile + Wrexham, Oreo year whatif, Aaron Judge bet on himself
 
 ## Ranked for the next batches (Oct 29 2026 — teen appeal × curiosity gap × surprising number)
 Write from the top. Casinos dropped (not kid-safe). Skip anything already used above.

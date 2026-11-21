@@ -113,3 +113,4 @@ clearly different angle, new figures, a new hook, new B-roll and a different sce
 137 | Travis + Jason Kelce (famous) | over $100M for a podcast; a walk-on and a sixth-round pick | New Heights (2022), Wondery 3-year deal 2024 >$100M (reported), Jason 6th round 2011, Travis 3rd round 2013
 139 | Ryan Reynolds (famous) | about $300M from Mint Mobile, then Wrexham's three straight promotions (no alcohol) | ~25% of Mint, T-Mobile up to $1.35B (Mar 2023), ~$300M to him (reported), Wrexham bought 2020, 3 promotions 2022-25
 144 | Oreo (whatif) | eating every Oreo made in a year, one a second | ~40B Oreos produced a year (Mondelez, 2017), ~1,270 years at one a second
+145 | Aaron Judge (famous) | passed on $213.5M, hit 62 homers, then $360M | $213.5M 7-year offer (before 2022), 62 HR AL record (Oct 2022), 9 years / $360M, adopted as a baby by two teachers, captain
