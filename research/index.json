@@ -7,5 +7,38 @@
     "status": 200,
     "final_url": "https://en.wikipedia.org/wiki/Dude_Perfect",
     "content_type": "text/html; charset=UTF-8"
+  },
+  "https://deadline.com/2024/04/dude-perfect-youtube-million-investment-highmount-capital-1235879212": {
+    "file": "pages/c25840e5babd.txt",
+    "fetched_at": "2026-11-21T16:33:14.962106+00:00",
+    "ok": true,
+    "chars": 9808,
+    "status": 200,
+    "final_url": "https://deadline.com/2024/04/dude-perfect-youtube-million-investment-highmount-capital-1235879212/",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://www.cbsnews.com/news/dude-perfect-youtube-trick-shot": {
+    "file": "pages/c21bda35e8e7.txt",
+    "fetched_at": "2026-11-21T16:33:15.495376+00:00",
+    "ok": true,
+    "chars": 6208,
+    "status": 200,
+    "final_url": "https://www.cbsnews.com/news/dude-perfect-youtube-trick-shot/",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://www.axios.com/2024/04/09/dude-perfect-investment-highmount-capital": {
+    "file": "pages/bfe2a68c2f1d.txt",
+    "fetched_at": "2026-11-21T16:33:15.952489+00:00",
+    "ok": false,
+    "error": "HTTP 403"
+  },
+  "https://www.nbclosangeles.com/news/business/money-report/popular-youtube-channel-dude-perfect-scores-more-than-100-million-investment/3383054": {
+    "file": "pages/81cce8d92afa.txt",
+    "fetched_at": "2026-11-21T16:33:16.302763+00:00",
+    "ok": true,
+    "chars": 6426,
+    "status": 200,
+    "final_url": "https://www.nbclosangeles.com/news/business/money-report/popular-youtube-channel-dude-perfect-scores-more-than-100-million-investment/3383054/",
+    "content_type": "text/html; charset=UTF-8"
   }
 }
