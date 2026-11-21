@@ -375,10 +375,19 @@ def ah_models() -> dict:
     return _AH_MODELS
 
 
+AH_CODE_WORDS = [("console", r"\bconsoles?\b|\bplaystations?\b|\bswitch 2\b|\bxbox\b"),
+                 ("golfball", r"\bgolf ?balls?\b"),
+                 ("golfclub", r"\bgolf clubs?\b|\bputters?\b|\bclubs?\b(?=.*\bgolf)|\bgolf\b.*\b(?:clubs?|drivers?)\b")]
+
+
 def ah_words_to_models(text: str) -> list:
     """model names for the words (and two-word runs like "vending machine") of a sentence, in order, plurals ok"""
     m, out = ah_models(), []
-    ws = [w for w in re.findall(r"[a-z]+", text.lower())]
+    low = text.lower()
+    for nm, rx in AH_CODE_WORDS:        # Nov 21: words that name a code-built object (console, golf ball, golf club) come first
+        if re.search(rx, low) and nm not in out:
+            out.append(nm)
+    ws = [w for w in re.findall(r"[a-z]+", low)]
     def look(w: str):
         if w in _AH_STOP:                 # the word itself is stopped, so its stem is too ("woods" (Tiger Woods) is not a log)
             return None
