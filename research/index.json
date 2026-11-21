@@ -25,5 +25,32 @@
     "status": 200,
     "final_url": "https://en.wikipedia.org/wiki/San_Jose_Sharks",
     "content_type": "text/html; charset=UTF-8"
+  },
+  "https://www.nba.com/news/cade-cunningham-50-points-no-turnovers-pistons-wizards": {
+    "file": "pages/53a8dbaeaebe.txt",
+    "fetched_at": "2026-11-21T16:09:58.437725+00:00",
+    "ok": false,
+    "error": "HTTP 403"
+  },
+  "https://www.nba.com/news/starting-5-november-16-2026": {
+    "file": "pages/4b77579b4684.txt",
+    "fetched_at": "2026-11-21T16:09:58.931149+00:00",
+    "ok": false,
+    "error": "HTTP 403"
+  },
+  "https://www.nba.com/news/starting-5-november-10-2026": {
+    "file": "pages/508adafa3796.txt",
+    "fetched_at": "2026-11-21T16:09:59.329186+00:00",
+    "ok": false,
+    "error": "HTTP 403"
+  },
+  "https://en.wikipedia.org/wiki/Cade_Cunningham": {
+    "file": "pages/f035a10932f0.txt",
+    "fetched_at": "2026-11-21T16:09:59.747389+00:00",
+    "ok": true,
+    "chars": 50945,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Cade_Cunningham",
+    "content_type": "text/html; charset=UTF-8"
   }
 }
