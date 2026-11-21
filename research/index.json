@@ -1,0 +1,38 @@
+{
+  "https://en.wikipedia.org/wiki/Selena_Gomez": {
+    "file": "pages/c75e9004cac0.txt",
+    "fetched_at": "2026-11-21T18:44:31.872742+00:00",
+    "ok": true,
+    "chars": 183723,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Selena_Gomez",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Rare_Beauty": {
+    "file": "pages/924d6888f48a.txt",
+    "fetched_at": "2026-11-21T18:44:32.394830+00:00",
+    "ok": true,
+    "chars": 14873,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Rare_Beauty",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://abc7.com/post/selena-gomez-is-billionaire-bloomberg/15274989/": {
+    "file": "pages/533c02698ef3.txt",
+    "fetched_at": "2026-11-21T18:44:32.720917+00:00",
+    "ok": true,
+    "chars": 3977,
+    "status": 200,
+    "final_url": "https://abc7.com/post/selena-gomez-is-billionaire-bloomberg/15274989/",
+    "content_type": "text/html; charset=utf-8"
+  },
+  "https://www.rarebeauty.com/pages/rare-impact-fund": {
+    "file": "pages/8b6fbf0f4f8e.txt",
+    "fetched_at": "2026-11-21T18:44:33.173745+00:00",
+    "ok": true,
+    "chars": 18177,
+    "status": 200,
+    "final_url": "https://www.rarebeauty.com/pages/rare-impact",
+    "content_type": "text/html; charset=utf-8"
+  }
+}
