@@ -4,6 +4,9 @@ Objects and sets a script needs that the 3D library does not have yet (content/R
 One line each: `- [ ] set|object NAME: what it must show (script ids that need it)`. Routines build these FIRST; tick and move to Done when merged.
 
 ## To build
+- [ ] object noodlecup: a foam cup of instant noodles with a peeled lid and steam (165 uses coffee)
+- [ ] object legobrick: a chunky 2x4 toy brick with studs, bright colours, plain (no logo) (166 uses crate)
+- [ ] object eiffeltower: a small Eiffel Tower model built from bricks (166 uses house)
 - [ ] set factory: a factory floor (conveyor belts, robot arms, crates, big chimney windows) for "factory" lines (164)
 - [ ] set mountain: a rocky mountain with a mine entrance, cart tracks and gold veins for "mountain"/"mine" lines (164)
 - [ ] object giant shovel: a house-tall shovel (164 uses shovel + house)
