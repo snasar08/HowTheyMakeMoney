@@ -1,0 +1,53 @@
+{
+  "https://www.talkandroid.com/534903-samsung-intelligent-eyewear-smart-glasses-preorder-price/": {
+    "file": "pages/3c59102cf523.txt",
+    "fetched_at": "2026-11-21T23:36:02.817982+00:00",
+    "ok": true,
+    "chars": 9908,
+    "status": 200,
+    "final_url": "https://www.talkandroid.com/534903-samsung-intelligent-eyewear-smart-glasses-preorder-price/",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://mixed-news.com/en/samsung-intelligent-eyewear-preorders-december-launch/": {
+    "file": "pages/cd40e8f10c74.txt",
+    "fetched_at": "2026-11-21T23:36:04.081275+00:00",
+    "ok": true,
+    "chars": 5820,
+    "status": 200,
+    "final_url": "https://mixed-news.com/en/samsung-intelligent-eyewear-preorders-december-launch/",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://uploadvr.com/meta-essilorluxottica-sold-7-million-smart-glasses-in-2025/": {
+    "file": "pages/015e787eb9e3.txt",
+    "fetched_at": "2026-11-21T23:36:04.466498+00:00",
+    "ok": true,
+    "chars": 7778,
+    "status": 200,
+    "final_url": "https://www.uploadvr.com/meta-essilorluxottica-sold-7-million-smart-glasses-in-2025/",
+    "content_type": "text/html; charset=utf-8"
+  },
+  "https://roadtovr.com/meta-ray-ban-smart-glasses-sales-tripled-2025/": {
+    "file": "pages/def0758c6253.txt",
+    "fetched_at": "2026-11-21T23:36:05.331606+00:00",
+    "ok": true,
+    "chars": 4058,
+    "status": 200,
+    "final_url": "https://roadtovr.com/meta-ray-ban-smart-glasses-sales-tripled-2025/",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://www.thetechoutlook.com/new-release/gadgets-release/samsungs-intelligent-eyewear-to-be-released-in-the-us-and-south-korea-on-10th-december/": {
+    "file": "pages/5baaff415cdf.txt",
+    "fetched_at": "2026-11-21T23:36:07.135055+00:00",
+    "ok": true,
+    "chars": 9944,
+    "status": 200,
+    "final_url": "https://www.thetechoutlook.com/new-release/gadgets-release/samsungs-intelligent-eyewear-to-be-released-in-the-us-and-south-korea-on-10th-december/",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://www.eweek.com/news/smart-glasses-cheat-sheet/": {
+    "file": "pages/f40616daa6df.txt",
+    "fetched_at": "2026-11-21T23:36:07.670860+00:00",
+    "ok": false,
+    "error": "HTTP 403"
+  }
+}

@@ -1,0 +1,395 @@
+URL: https://www.thetechoutlook.com/new-release/gadgets-release/samsungs-intelligent-eyewear-to-be-released-in-the-us-and-south-korea-on-10th-december/
+FINAL_URL: https://www.thetechoutlook.com/new-release/gadgets-release/samsungs-intelligent-eyewear-to-be-released-in-the-us-and-south-korea-on-10th-december/
+FETCHED: 2026-11-21T23:36:07.135055+00:00
+
+Saturday, November 21, 2026
+
+About us
+
+Disclaimer
+
+Ethics Policy
+
+Privacy Policy
+
+Contact Us
+
+New Release 
+
+Gadgets 
+
+Earphones
+
+Laptop
+
+Mobile
+
+Smart Watch
+
+TV
+
+Gaming
+
+Software & Apps
+
+Tech Whispers
+
+News 
+
+Apps
+
+Cloud
+
+Crypto
+
+E-commerce
+
+Innovation
+
+OS
+
+Security
+
+Web & Social Media
+
+Reviews 
+
+Gadgets
+
+Gaming
+
+Software & Apps
+
+Offers 
+
+Earphones
+
+Home Appliances
+
+Laptop
+
+Mobile Phones
+
+Smart TV
+
+Smart Watches
+
+Science & Space
+
+Telecom
+
+Blogs
+
+Home
+
+Gadgets
+5 min read
+
+Daily Tech News, Interviews, Reviews and Updates
+ Search 
+
+New Release
+
+Gadgets
+
+Earphones
+
+Laptop
+
+Mobile
+
+Smart Watch
+
+TV
+
+Gaming
+
+Software & Apps
+
+Tech Whispers
+
+News
+
+Apps
+
+Cloud
+
+Crypto
+
+E-commerce
+
+Innovation
+
+OS
+
+Security
+
+Web & Social Media
+
+Offers
+
+Earphones
+
+Home Appliances
+
+Laptop
+
+Mobile Phones
+
+Smart TV
+
+Smart Watches
+
+Reviews
+
+Gadgets
+
+Gaming
+
+Software & Apps
+
+Current Affairs
+
+Auto
+
+Business
+
+Defense
+
+Entertainment
+
+Sports
+
+Science & Space
+
+Telecom
+
+Interviews
+
+Blogs
+
+Fact Check
+
+Follow Us
+
+Search
+
+What are you looking for?
+
+Find the latest news, reviews, explainers and analysis.
+
+Search the site
+
+Samsung’s Intelligent Eyewear to be released in the US and South Korea on 10th December
+
+By Estuti Bajpai
+
+ Published on November 13, 2026, 1:17 PM IST 5 min read
+
+ Reading Mode Exit Reading Mode Add us as a preferred source on Google 
+
+The South Korean tech giant Samsung has announced that its Intelligent Eyewear is set to be released in the US and South Korea on 10th December, and pre-orders have already started.
+
+Samsung’s Intelligent Eyewear
+
+The collection combines Samsung’s mobile engineering expertise with 30 distinctive designs from Gentle Monster and Warby Parker for comfortable, stylish everyday wear. Responsibly designed with everyone’s comfort in mind, the intelligent eyewear has controls that put the user in charge and has privacy protections for both the wearer and people around them.
+
+Gentle Monster and Warby Parker bring their design identities to a combined lineup of 30 designs, offering customers a wide range of frame shapes, colours, sizes, and lens treatments to match their personal style.
+
+Gentle Monster brings bold, disruptive aesthetics, while Warby Parker offers timeless designs with a refined appeal.
+
+Weighing around 41g, the eyewear was carefully designed to balance weight, structural strength, and comfort, making it suitable for extended use throughout the day. With Gemini built in, the intelligent eyewear provides intuitive, hands-free experiences:
+
+Explore and understand surroundings: Users can ask questions about what they see — such as identifying an unfamiliar landmark or learning about an object — continuing the conversation naturally with follow-up questions.
+
+Enhance daily productivity: The intelligent eyewear helps users turn information into action. For example, a user can capture a whiteboard during a meeting, ask Gemini to summarise the key takeaways and save them directly into Samsung Notes.
+
+Translate and navigate on the go: Users can translate a restaurant menu or find their way around unfamiliar places with turn-by-turn directions from Google Maps.
+
+Stay connected, hands-free: The intelligent eyewear allows users to effortlessly stay connected. It can automatically prioritise, group, and summarise notifications based on context, read important updates aloud and enable natural voice responses. Whether making calls or responding to messages while their hands are occupied, users can stay connected on the go.
+
+A 12MP HDR camera provides visual context for Gemini while supporting high-resolution photos and clear video recording. Open-ear speakers and a four-microphone array enable clear voice interactions, calls and audio playback.
+
+The intelligent eyewear is powered by the Snapdragon AR1 Gen 1 platform, boasts up to 9 hours of battery life on a single charge, and up to 72 hours with a fully charged charging case. It utilises a split-computing system to offload a portion of the processing load to the connected device.
+
+Responsible design is built into the practical experience:
+
+Clear recording indicators: When capturing images or recording video for your gallery, an LED indicates that the camera is active, while the wearer simultaneously receives a visual notification via an inner light and a sound. Built-in safeguards are designed to disable camera capture if the external LED is covered or not functioning properly.
+
+Considerate audio design: Open-ear speakers are designed to minimise sound leakage while helping wearers remain aware of their surroundings. In conversations with Gemini Live, surrounding sounds, including other people’s voices, are filtered to help protect bystander privacy.
+
+User control and data privacy: Users retain control over both app-specific permissions and their Gemini activity. Visuals collected by Gemini are not used for AI model training or ad targeting. When users ask Gemini about what they’re looking at, the intelligent eyewear is designed to automatically redact bystanders’ faces before responding.
+
+Responsible use: The intelligent eyewear is designed for users aged 18 and over, with age verification required for device activation and app downloads.
+
+Specs
+
+ | Weight | Glasses: 41g*
+
+ Charging Case: Gentle Monster 194.5g, Warby Parker 166.8g
+
+ * Based on manufacturer specifications as of July 2026 and the configuration of the GGS002 model. Weight may vary by configuration and model. The weight range is 39.6-43.9g for Gentle Monster Intelligent Eyewear and 40.4-42.6g for Warby Parker Intelligent Eyewear. Weight includes standard lenses; prescription lenses excluded. 
+
+ | Processor | Snapdragon® AR1 Gen 1 Platform
+
+ *Snapdragon is a trademark or registered trademark of Qualcomm Incorporated. Snapdragon and Snapdragon branded products are products of Qualcomm Technologies, Inc. and/or its subsidiaries. 
+
+ | Camera | 12MP HDR photo capture
+
+ Photo: 3:4 portrait (3,024 x 4,032)
+
+ Video: 3K 30fps or 2K recording (HDR supported*)
+
+ *Video HDR is supported up to 2K. 
+
+ | Audio / Microphone | 2 open-ear speakers / 4 microphones 
+
+ | Memory / Storage | 2GB memory / 64GB storage*
+
+ *Available storage capacity is subject to preloaded software. 
+
+ | Battery Life | Up to 9 hours on a single charge
+
+ Up to 72 hours with a charged charging case
+
+ *Battery life varies by network environment, features and apps used, device settings, the number of times charged and other factors. 
+
+ | Controls | Touch, voice 
+
+ | AI Assistant | Google Gemini, Bixby*
+
+ *Only with Galaxy phones 
+
+ | Water & Dust Resistance | IPX4
+
+ *For glasses only 
+
+ | Network | Wi-Fi 6E, Bluetooth v5.4 supported
+
+ *Wi-Fi 6E network availability may vary by market, network provider and user environment. Requires optimal connection and a Wi-Fi 6E router. 
+
+ | Compatibility | Galaxy S, Galaxy S FE, Galaxy Z Fold, Flip, and Fold Ultra series running One UI 9.0 or higher, Google Pixel 7 series and later running Android 17 Sep. 2026 update or later, and iPhone 13 and later (min. 6GB RAM) running iOS 26.6 or later. 
+
+Availability
+
+Gentle Monster Intelligent Eyewear and Warby Parker Intelligent Eyewear will be available in select markets beginning Dec. 10, 2026. Both collections will launch in the U.S., while Gentle Monster Intelligent Eyewear will also be available in Korea.
+
+Pre-orders for both collections begin today, ahead of general availability. Customers will be able to experience and purchase the intelligent eyewear across Warby Parker’s retail and online channels, with purchases also available through Gentle Monster’s official online store. Hands-on demonstrations will also be available at select Samsung retail locations from Dec. 10.
+
+In the U.S., Warby Parker Intelligent Eyewear will start at $395, while Gentle Monster Intelligent Eyewear will range from $449 to $489, depending on the model.
+
+Sources & Via
+
+ Source Samsung Newsroom 
+
+ Tags: Samsung
+
+ Share 
+
+Add us as a preferred source on Google
+
+Estuti Bajpai
+
+Journalism student currently pursuing Masters in mass communication and Journalism from Chandigarh University. Well versed in public communication. Looking for an opportunity in the field of journalism to gain knowledge and use my journalism skills efficiently.
+
+Related Articles
+
+ Gadgets
+
+Logitech MX Master 4 Creator Edition wireless mouse with advanced performance haptic feedback launched in India
+
+ Estuti Bajpai • Nov 21, 2026
+
+ Gadgets
+
+Nothing teases the launch of a new device on December 8; Could be Nothing’s first AI Native device
+
+ Estuti Bajpai • Nov 21, 2026
+
+ Gadgets
+
+New updates arrive across Google Home
+
+ Estuti Bajpai • Nov 18, 2026
+
+Advertisement
+
+Watch
+Latest Videos
+
+ Play video 
+
+Latest Reviews
+
+ Samsung Galaxy F70 5G vs Galaxy A17 5G – Do They Offer Any Differences? 
+
+ Vivo S2 FE and Vivo V80 Lite 5G (Malaysia) – Let’s Find Out the Differences Between These Two Smartphones 
+
+ SoundPEATS Air 6 HS Review: Impressive Spatial Sound, LDAC Support and Good Call Quality 
+
+ Galaxy Z Flip 8 vs Galaxy Z Flip 7: Check out the comparison before going for an upgrade 
+
+ Samsung Galaxy A27 5G vs Galaxy A26 5G: What Has Changed? 
+
+ REDMI Turbo 5 vs POCO X8 Pro Comparison: REDMI Takes a Slight Edge With Bigger Battery 
+
+ Soundpeats Clip 1 Review: Great Comfort, Decent Sound, but App Needs Improvement 
+
+Categories
+
+Interviews
+
+Innovation
+
+E-commerce
+
+Apps
+
+Home Appliances
+
+Gadgets
+
+Earphones
+
+Laptop
+
+Mobile
+
+Smart Watch
+
+TV
+
+More
+
+Business
+
+Fact Check
+
+Crypto
+
+Featured
+
+Company
+
+About Us
+
+Contact Us
+
+Disclaimer
+
+ Got a Tip?
+
+Have a news tip or story idea? Send it to us!
+ Send Tip
+
+ Disclaimer — Readers like you help support The Tech Outlook. When you make a purchase using links on our site, we may earn an affiliate commission. Amazon and the Amazon logo are trademarks of Amazon.com, Inc. or its affiliates. Read our affiliate disclosure policy 
+
+News Correction Policy
+
+Fact Checking Policy
+
+Disclaimer
+
+© 2026 The Tech Outlook. All Rights Reserved. 
+
+ 1 / 1
