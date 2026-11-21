@@ -1,0 +1,198 @@
+{
+  "id": "136",
+  "slug": "famous-verstappen",
+  "company": "Max Verstappen",
+  "format": "famous",
+  "visual_style": "lowpoly",
+  "hook_style": "surprise",
+  "title_style": "statement",
+  "theme": "bold_bright",
+  "status": "ready",
+  "score": 88,
+  "title": "The F1 Champion With No Road License",
+  "name_card": "Max Verstappen",
+  "name_sub": "four-time F1 champion",
+  "description": "Max Verstappen raced in Formula One before he had a road license.\n\nSources:\n- Wikipedia: Max Verstappen: https://en.wikipedia.org/wiki/Max_Verstappen\n- Wikipedia: 2016 Spanish Grand Prix: https://en.wikipedia.org/wiki/2016_Spanish_Grand_Prix\n\nFrom the cited pages: he competed in Formula One for over a season before getting a road driving licence on his 18th birthday; at the 2015 Australian Grand Prix he became the youngest driver in Formula One history, aged 17 years and 166 days; at the 2016 Spanish Grand Prix, in his first race for Red Bull Racing, he became the youngest ever winner at 18 years and 228 days; in 2021 he overtook Lewis Hamilton on the final lap of the last race to win his first title; he won four consecutive titles, 2021 to 2024. Not financial advice.\n\n#shorts #verstappen #f1 #howtheymakemoney",
+  "tags": [
+    "max verstappen",
+    "f1",
+    "formula one",
+    "famous",
+    "shorts"
+  ],
+  "images": {},
+  "loop": "So remember:",
+  "cta": "Max or Lewis? Comment your pick.",
+  "cta_question": "Max or Lewis?",
+  "hero": {
+    "skin": "e8c3a0",
+    "hair": "short",
+    "hair_color": "3a2a1e",
+    "beard": "stubble",
+    "outfit": "kit",
+    "shirt": "1b2a63",
+    "pants": "1b2a63",
+    "shoes": "111111",
+    "chest": "",
+    "trim": "d32f2f",
+    "number": "1",
+    "height": 1.0
+  },
+  "scenes": [
+    {
+      "narration": "Max Verstappen raced in Formula One without a road license. At 17, you are its youngest driver ever.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "track",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "track",
+          "mood": "shock",
+          "things": [
+            "car"
+          ],
+          "card": {
+            "text": "NO ROAD LICENSE",
+            "kind": "white",
+            "fg": "#c0353a"
+          },
+          "view": "face"
+        },
+        {
+          "place": "track",
+          "mood": "proud",
+          "things": [
+            "sportscar"
+          ],
+          "card": {
+            "text": "17",
+            "kind": "screen",
+            "sub": "YOUNGEST F1 DRIVER"
+          },
+          "view": "wide"
+        }
+      ]
+    },
+    {
+      "narration": "You race the car at the Spanish Grand Prix. But at 18, you win it.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "track",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "track",
+          "mood": "excited",
+          "things": [
+            "car"
+          ],
+          "crowd": 40,
+          "view": "wide"
+        },
+        {
+          "place": "stage",
+          "mood": "proud",
+          "things": [
+            "trophy"
+          ],
+          "crowd": 60,
+          "card": {
+            "text": "18 YEARS OLD",
+            "kind": "screen",
+            "sub": "YOUNGEST WINNER EVER"
+          },
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "Then, in 2021, you pass Lewis Hamilton on the last lap.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "track",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "track",
+          "mood": "excited",
+          "things": [
+            "sportscar"
+          ],
+          "card": {
+            "text": "2021",
+            "kind": "flip",
+            "sub": "YEAR"
+          },
+          "view": "low"
+        }
+      ]
+    },
+    {
+      "narration": "Now, you win four titles back to back.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "throne",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "throne",
+          "mood": "proud",
+          "things": [
+            "trophy",
+            "crown"
+          ],
+          "card": {
+            "text": "4 TITLES",
+            "kind": "screen",
+            "sub": "2021 TO 2024"
+          },
+          "view": "wide"
+        }
+      ]
+    },
+    {
+      "narration": "Not bad for a driver with no road license.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "garage",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "garage",
+          "mood": "laugh",
+          "things": [
+            "car"
+          ],
+          "view": "face"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Max Verstappen",
+      "url": "https://en.wikipedia.org/wiki/Max_Verstappen"
+    },
+    {
+      "title": "Wikipedia: 2016 Spanish Grand Prix",
+      "url": "https://en.wikipedia.org/wiki/2016_Spanish_Grand_Prix"
+    }
+  ],
+  "look": "afterhour"
+}
