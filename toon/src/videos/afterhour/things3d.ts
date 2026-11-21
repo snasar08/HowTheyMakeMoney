@@ -609,7 +609,7 @@ const B: Record<ThingName, Builder> = {
     cy(g, 0.15, 0.15, 0.02, "#ffcc29", 0, 0.255, 0);                                   // noodle mass
     for (let i = 0; i < 6; i++) { const a = i * 1.05; to(g, 0.045, 0.014, "#ffd54a", Math.cos(a) * 0.075, 0.28 + (i % 2) * 0.012, Math.sin(a) * 0.075, [PI / 2, 0, a]); }
     to(g, 0.06, 0.015, "#f2b81c", 0, 0.3, 0, [PI / 2, 0, 0.4]);
-    const lid = new THREE.Group(); lid.position.set(0, 0.275, -0.17); lid.rotation.x = -1.9; g.add(lid);   // lid peeled back and standing up
+    const lid = new THREE.Group(); lid.position.set(0, 0.275, -0.17); lid.rotation.x = -1.25; g.add(lid);   // lid peeled back and standing up
     cy(lid, 0.172, 0.172, 0.012, "#d8dde8", 0, 0, 0.17, [0, 0, 0], 28); bx(lid, 0.1, 0.014, 0.05, "#e53a3a", 0, 0.01, 0.33);
     for (const s of [-1, 1]) cy(g, 0.009, 0.009, 0.34, "#e0a96a", s * 0.04 + 0.04, 0.4, 0.04, [0.2, 0, -0.35 * s + 0.3], 8);   // chopsticks
     const wisps: THREE.Mesh[] = [];
