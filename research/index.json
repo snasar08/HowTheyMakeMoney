@@ -52,5 +52,41 @@
     "status": 200,
     "final_url": "https://en.wikipedia.org/wiki/Lego_Group",
     "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Lego_minifigure": {
+    "file": "pages/278ab2384064.txt",
+    "fetched_at": "2026-11-21T21:13:50.951823+00:00",
+    "ok": true,
+    "chars": 39486,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Lego_minifigure",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Lego_Technic": {
+    "file": "pages/08cd93fa499e.txt",
+    "fetched_at": "2026-11-21T21:13:51.409378+00:00",
+    "ok": true,
+    "chars": 39546,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Lego_Technic",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Lego_Group#Design": {
+    "file": "pages/f1d9ad1c00f7.txt",
+    "fetched_at": "2026-11-21T21:13:51.850157+00:00",
+    "ok": true,
+    "chars": 50555,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Lego_Group#Design",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/List_of_Lego_themes": {
+    "file": "pages/b0f22d6bc996.txt",
+    "fetched_at": "2026-11-21T21:13:52.315049+00:00",
+    "ok": true,
+    "chars": 19615,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/List_of_Lego_themes",
+    "content_type": "text/html; charset=UTF-8"
   }
 }

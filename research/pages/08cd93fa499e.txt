@@ -1,0 +1,1370 @@
+URL: https://en.wikipedia.org/wiki/Lego_Technic
+FINAL_URL: https://en.wikipedia.org/wiki/Lego_Technic
+FETCHED: 2026-11-21T21:13:51.409378+00:00
+
+Jump to content
+
+Main menu
+
+Main menu
+
+ move to sidebar
+ hide
+
+ Navigation
+
+Main page
+
+Contents
+
+Current events
+
+Random article
+
+About Wikipedia
+
+Contact us
+
+ Contribute
+
+Help
+
+Learn to edit
+
+Community portal
+
+Recent changes
+
+Upload file
+
+Special pages
+
+Search
+
+ Search
+
+Appearance
+
+Donate
+
+Create account
+
+Log in
+
+Personal tools
+
+Donate
+
+Create account
+
+Log in
+
+Contents
+
+ move to sidebar
+ hide
+
+(Top)
+
+ 1
+ Overview
+
+ 2
+ Lego Technic components
+
+ Toggle Lego Technic components subsection
+
+ 2.1
+ Gears
+
+ 2.2
+ Motors
+
+ 2.3
+ Pneumatics
+
+ 2.4
+ Technic Figures
+
+ 2.5
+ Technic Action Figures
+
+ 2.6
+ "Studded" (Beams) versus "Studless" (Liftarms)
+
+ 2.7
+ Power Functions
+
+ 2.8
+ Powered Up (Control+, Power Functions v2)
+
+ 3
+ Construction sets
+
+ Toggle Construction sets subsection
+
+ 3.1
+ Dom's Dodge Charger
+
+ 3.2
+ Jeep Wrangler
+
+ 3.3
+ McLaren Senna GTR
+
+ 3.4
+ BMW M 1000 RR
+
+ 3.5
+ McLaren Formula 1 Race Car
+
+ 3.6
+ Ferrari Daytona SP3
+
+ 3.7
+ Peugeot 9X8 24H Le Mans Hybrid Hypercar
+
+ 3.8
+ NASA Mars Rover Perseverance
+
+ 3.9
+ Yamaha MT10SP
+
+ 4
+ Theme park attractions
+
+ 5
+ Promotions and collaborations
+
+ 6
+ Reception
+
+ 7
+ Awards and nominations
+
+ 8
+ See also
+
+ 9
+ References
+
+ 10
+ External links
+
+Toggle the table of contents
+
+Lego Technic
+
+17 languages
+
+Čeština
+
+Dansk
+
+Deutsch
+
+Suomi
+
+Français
+
+Magyar
+
+Italiano
+
+日本語
+
+한국어
+
+Nederlands
+
+Polski
+
+Português
+
+Русский
+
+Slovenčina
+
+Svenska
+
+Türkçe
+
+中文
+
+Edit links
+
+Article
+
+Talk
+
+ English
+
+Read
+
+Edit
+
+View history
+
+Save
+
+Tools
+
+Tools
+
+ move to sidebar
+ hide
+
+ Actions
+
+Read
+
+Edit
+
+View history
+
+Save
+
+ General
+
+What links here
+
+Related changes
+
+Upload file
+
+Permanent link
+
+Page information
+
+Cite this page
+
+Get shortened URL
+
+Switch to legacy parser
+
+ Print/export
+
+Download as PDF
+
+Printable version
+
+ In other projects
+
+Wikimedia Commons
+
+Wikidata item
+
+Appearance
+
+ move to sidebar
+ hide
+
+From Wikipedia, the free encyclopedia
+
+Lego line for more advanced models
+
+ | 
+
+ | 
+This article's lead section may be too short to adequately summarize the key points. Please consider expanding the lead to provide an accessible overview of all important aspects of the article. (January 2023) (Learn how and when to remove this message)
+
+Lego Technic
+ | 
+
+ | Other names | Expert Builder
+
+Technical Lego
+
+ | Sub‑themes | Arctic
+
+Competition
+
+Pneumatics
+
+Bionicle
+
+Mindstorms
+
+ | Subject | Gears, axles and functional machinery
+
+ | Availability | 1977–present
+
+ | Total sets | 539 [1]
+
+ | Official website
+
+Lego Technic /ˈtɛknɪk/ is a line of Lego interconnecting plastic rods and parts. The purpose of this series is to create advanced models of working vehicles and machines, compared to the simpler brick-building properties of normal Lego. In addition to encouraging creativity, Technic is also intended as a tool for children to learn some basic principles of mechanical engineering.
+
+Lego Technic was first introduced in 1977 and underwent significant changes in around 2000. It is one of Lego's top-selling themes.
+
+Overview
+[edit]
+
+The theme was introduced either as Expert Builder or Technical Sets (depending on market) in 1977,[2] and was renamed LEGO Technic in 1982.[3]
+
+Technic sets are characterized by their use of special pieces, such as gears, axles, and pins, which allow the construction of working mechanisms and mechanical structures. Other special pieces include beams and plates with holes in them, through which axles can be installed.[4] Some sets also come with pneumatic pieces or electric motors. In recent years, Technic pieces have begun filtering down into other Lego sets as well, including the BIONICLE sets (which were once sold as part of the Technic line), as well as a great many others.
+
+The style of Lego Technic sets has been changing over time. Technic sets produced since the year 2000 use a different construction method, described as "studless construction". (Studs are the small circular knobs which appear on traditional Lego bricks.) This method utilizes beams and pins rather than Technic bricks.
+
+Mindstorms, a Lego line of robotic products, also uses many Technic pieces, although it is sold as a separate line of products. The latest generation of the Mindstorms range, the Robot Inventor (released October 2020), as well as its predecessors the Mindstorms EV3 (released September 2013) and the Mindstorms NXT (released August 2006), are based on the studless construction method.
+
+In June 2023, The Lego Group built a life-size 1:1 replica of the PEUGEOT 9x8 24H Le Mans Hybrid Hypercar containing 626,392 Lego pieces.[5][6][7]
+
+Lego Technic components
+[edit]
+
+Common Lego Technic components
+
+The Lego Technic system expands on the normal Lego bricks with a whole range of new bricks that offer new functions and building styles. The most significant change from normal Lego is that single-stud wide bricks ('beams') have circular holes through their vertical face. These holes can accommodate pins, which enable two beams to be held securely together side-by-side, or hinged at an angle. The holes also act as bearings for axles, on which gears and wheels can be attached to create complex mechanisms. 
+
+Studless beams (studs are the bumps traditionally associated with Lego parts), referred to as 'liftarms', were first introduced in 1989 and through the 1990s and 2000s, an increasing number of liftarm designs have been introduced over time.
+Various Lego Technic gears
+
+Gears
+[edit]
+
+Gears have been included within Lego Technic sets since 1977 as a way of transferring rotary power and gearing up or down the speed. Gears come in several sizes: 8-tooth, 16-tooth, 24-tooth, and 40-tooth spur gears; 12-tooth, 20-tooth, 28-tooth, and 36-tooth double bevel gears; and 12-tooth and-20 tooth single bevel gears. The double bevel gears are cut so they can also be meshed as spur gears. There is also a 16-tooth spur clutch gear, a 20-tooth double bevel clutch gear, and a 24-tooth friction gear that slips when a certain amount of torque is put on it to prevent motors from damaging any parts or burning themselves out.
+
+In addition to standard gears, some kits include a rack, a clutch, and even worm gears and differential gears. The original differential from 1980 had a 28 tooth bevel gear, designed to be meshed with the 14 tooth bevel gears (replaced by the 12 tooth gears) to give 2:1 reduction. They can also be meshed with the newer double bevel gears. It was replaced in 1994 by a newer design incorporating 16-tooth and 24-tooth gears on opposite sides of the casing. The casing holds three 12 tooth bevel gears inside. In 2008, an updated version of the original differential has been released, optimised for studless construction with a 28 tooth bevel gear on the outside and three 12 tooth gears on the inside. With the release of the 'Top Gear Rally Car' (42109) in 2020, yet another differential was created with a 28 tooth double bevel gear and five 12 tooth gears on the inside so that the differential could be rotated with gears above and next to the differential.
+
+Chain links were also introduced as an additional way of connecting gears. Tension (resulting from the correct number of chain-link parts used), along with the combination of gearwheel-sizes used, is critical to reliable operation. 8-tooth gears are not recommended for this purpose.
+
+Volvo Construction Equipment used a Lego model to develop an electric wheel loader.[8]
+
+Motors
+[edit]
+
+The Lego Technic system has always included a variety of different electric motors. Broadly, these divide into those powered by batteries (held in a connected battery box) or by mains electricity (via a transformer.) Battery-powered is the most common.
+
+The very earliest motors (p/n x469b) were 4.5 volt, and consisted of a modified "Electric Train Motor" (p/n x469) and along with the 4 driven bushes for wheels added an axle hole enabling axles of different lengths to be used. While these were released in kits with Technic parts they were not sold as Technic motors.
+
+The first dedicated Technic motor was a 4.5 volt rounded brick (p/n 6216m) released in 1977 as part of the Expert Builder Power Pack (960-1) and Supplementary Set (870-1), this output via a small protruding axle that would rotate when the motor was powered. The motor was not geared, resulting in high-RPM, low-torque output. Gearboxes and a square casing were available. A 12 volt motor of the same physical dimensions as the 4.5 volt motor was also available in set 880-1. The 12 volt version is visually distinguishable by being black, rather than grey. The 4.5V and 12V motors were also compatible with the battery boxes and mains transformers used within the Trains series of the 1980s
+
+The 4.5 volt motor was replaced by a similar but square 9 volt motor in 1990, as part of the new generation "Electric System" which dispensed with the pinned plugs and replaced them with regular bricks that incorporated contacts within the stud interfaces. This system gave more reliable contacts over time, as the pinned plugs had a tendency to go slack over time, or for the wires to fracture or come detached.
+
+The 8297 'Motor Set' released in 2006 was capable of extremely high speeds and relatively high torque at the time, up to 1700 rpm and 14 N.cm,[9] and was advertised as an accessory to motorise Technic vehicles during the 9V System 'era'.
+
+Recent motors contain an axle hole enabling axles of different lengths to be used.
+
+Starting with the release of 8275 'Technic Bulldozer', Power Functions (which used infrared to remote control) was introduced as a new electric system and started introducing motors of different sizes, including the M, L, XL and steering (Servo) motor.
+
+The current electric motor systems are Powered Up and Control+, introduced with sets 42099 'X-treme Off-roader' and 42100 'Liebherr R 9800 Excavator'. As a result of the L and XL motors being able to calibrate to become steering motors, there is no dedicated servo motor, as there is no need for one.
+
+Pneumatics
+[edit]
+
+Main article: Lego pneumatics
+
+Collection of Lego pneumatic components
+
+Lego pneumatics is a variety of Lego bricks which use air pressure and specialised components to perform various actions using the principles of pneumatics. The LEGO pneumatics components were first introduced in 1984, and have featured in a variety of LEGO Technic and LEGO Educational (DACTA) products.[10] Lego pneumatic components include air pumps, pneumatic cylinders, pneumatic tubing, three-way valves, and air tanks.[11] As of 2024, 34 Lego Technic sets that contain pneumatics have been released.[12]
+
+Technic Figures
+[edit]
+
+Technic Figures (sometimes informally known as the "maxifigure") are figures that appeared in Technic sets, appearing sporadically but heavily featured in the CyberSlam/Competition line. They were first introduced in 1986 in the Arctic Action line, and were produced until 2001. They are much larger and have several more joints than the standard minifigure, including bendable elbow and knee-joints. Each figure comes already assembled and is not meant to come apart, but parts can be popped off by pulling too hard. They can connect to both standard Lego System bricks and on Technic parts, and Technic pegs can fit in their hands.
+30 different kinds of Technic figures were created, some sets included the same figures but with different accessories and stickers. The Part Number for figures started with Tech0. The thirty part numbers for the figures finished with 01, 02, 03, 04, 05, 06, 07, 08, 09, 12, 13, 15, 19, 21, 22, 23, 27, 28, 29, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40 or 41.
+
+Technic Action Figures
+[edit]
+
+In 1999 Lego Technic Introduced Lego Slizers (known as Throwbots in the US) which were colorful action figures built with Lego Technic parts and branded under Lego Technic. The Slizer sets were released between 1999 and 2000 consisting of 10 main figures Torch, Ski, Turbo, Scuba, Jet, Amazon, Granite, and Electro, Flare, Spark, and 2 Titan figures Millennium and Blaster. Slizers was later replaced by Lego RoboRiders in 2000. RoboRiders were similar in concept to Slizers with Technic Built figures with 6 main figures Swamp, Lava, Frost, Onyx, Dust, Power 4 mini builds and The Boss (Known as Super RoboRider internationally). RoboRiders was later replaced by Bionicle in 2001 which later spun off into its own line and was considered not part of Lego Technic by 2003.
+
+"Studded" (Beams) versus "Studless" (Liftarms)
+[edit]
+
+A construction using the old pieces with studs
+
+Although liftarms (studless beams) have been present in Technic sets since 1989, the change from primarily studded to primarily studless construction around the year 2000 represented a major paradigm shift and has been quite controversial. Initially liftarms were used primarily as styling parts, or to create smaller sub-assemblies which attached to a studded chassis. With an increasing number of liftarm designs introduced, a tipping point was reached around the year 2000 with models introduced primarily constructed from liftarms instead of traditional beams.
+
+The primary advantage of studless construction is the addition of new construction methods that were previously unavailable. Liftarms are exactly 1 unit width high, in contrast to studded beams, which are a non-integer multiple of one unit. It can be awkward to use studded beams in vertical structures because it is necessary to insert plates between the studded beams in order to get the holes to line up. Studless beams allow greater flexibility when building in multiple dimensions, while remaining compatible with "classic" studded beams. Some builders also believe that models constructed with studless beams look nicer than their studded counterparts.[13]
+
+However, studless construction also introduces disadvantages. Studless construction is not immediately intuitive, requiring the builder to think five or six steps ahead.[14] While studded construction follows the classic bottom-to-top building pattern, studless construction requires building inside-to-outside.[15] Studless constructions are noted to often be more flexible than an equivalent studded construction. This is due to the amount of flex in the clip-based pins which are used to attach studless parts together, whereas studs provide a more rigid friction fit.
+
+As of 2005, Lego has begun to re-incorporate studded bricks back into the Technic line. Despite not being ideal for building dense mechanisms in multiple directions, studded bricks are characterized by greater rigidity and torsional resistance than studless beams. Several studless sets from the mid to late 2000s and early 2010s took advantage of this fact and featured studded Technic bricks—often in load-bearing capacities. Examples include 2005's 8421 Mobile Crane, 2007's 8275 Motorized Bulldozer or 2013's 42009 Mobile Crane MK II. In recent years however, studded bricks have become all but absent from the Technic line, and remain used primarily as to mount front grills in vehicles and pieces of detail not achievable by Technic panels, while transparent plates are used for lights. 
+
+Nevertheless, studded Technic bricks of all lengths remain in wide use outside of the Technic line proper, providing either structural reinforcement or a base for play functions in System sets. 2025's 60466 Yellow Bulldozer set, which is part of the Lego City line, utilizes studded Technic beams both as elements of the chassis and as seating for an axle-based engine mechanism (in much the same fashion as an older Technic set would), supplementing them with studless liftarms for actioning the bulldozer's blade and ripper to create a hybrid build utilizing all three primary systems in unison. An example of particularly heavy use of studded Technic bricks in a nominally System build is the very large-scale 75313, the Star Wars AT-AT walker (which likewise incorporates hidden studless beams for internal geometry requiring finer angles).
+Lego Technic Crane Truck (Power Functions) from 2009
+
+Power Functions
+[edit]
+
+In late 2007, a new motor system was released called Power Functions; it was included within Lego set 8275 Motorized Bulldozer. It comprised a set of motors, two IR receivers, remote control and a battery box, thus resulting in a remote-control model.
+
+LEGO Technic John Deere 6130R custom made
+
+With these sets it is possible to build or convert manually operated mechanical movement to motorized using electric motors which are controlled via switches or IR remote control. Lego has already started to design and sell Lego Technic models (sets) which can be easily retrofitted with the Power Functions system or third-party alternatives. For example, models like the 8294 Excavator and 8295 Telescopic Handler are sold like classic Lego Technic models with manual motorization but are designed with free space for the Power Functions components with factory instructions on how to perform the conversion to an electrically operated model.
+
+The Power Functions line-up also includes a Linear Actuator currently not sold separately, but already used in many models like the 8294 Excavator and the 8043 Motorised Excavator.
+
+Powered Up (Control+, Power Functions v2)
+[edit]
+
+In 2018, Lego announced a new system for motorizing sets, to replace the Power Functions system.[16] Early in release several names were used including Control+.[17] and Power Functions v2; by 2020 the line was unified under the Lego Theme `Powered Up`.[18]
+
+This new system is controlled via Bluetooth using a smartphone app rather than a physical controller and is not backwards compatible with Power Functions.[19] Components can be bought individually or as packs to either be used with or independently of retail sets. Lego launched two flagship sets to display the new systems functionality: 42100 Liebherr R 9800 and 42099 4x4 X-Treme Off-Roader.
+
+Physically and electrically, the Powered Up system components are compatible with all other Lego systems using the same 6-pin plug. This includes WeDo 2.0, Boost, Spike Prime, Mindstorms v4 as of 2020.[20] However, software support between the various apps varies.
+Early example of Lego Technic: Expert Builder set 8859, released in 1981
+
+Construction sets
+[edit]
+
+As of 2025, The Lego Group released a total of 539 Lego sets and promotional polybags as part of Lego Technic theme.[1]
+
+Dom's Dodge Charger
+[edit]
+
+Dom's Dodge Charger (set number: 42111) was released on 27 April 2020 and based on Fast & Furious franchise. The set consists of 1077 pieces. Lego designer Samuel Tacchi commented, "The high-octane action of the Fast & Furious franchise has captured the hearts and imaginations of petrol-heads the world over. We want to inspire people of all ages to explore their creativity through building whatever their passion is, and we know fans of LEGO Technic™ and the blockbuster franchise love cool cars and adrenaline-fuelled fun. Brought together by that same passion, we worked really closely with the Universal team to bring Dom's Dodge Charger to life in the most minute detail to inspire Fast & Furious fans and LEGO Technic™ builders around the world.”[21][22]
+
+Jeep Wrangler
+[edit]
+
+Jeep Wrangler (set number: 42122) was released on 1 January 2021. The set consists of 665 pieces. Lego designer Lars Thygesen commented, ”The Jeep Wrangler is an icon in the off-road world” and continued, “The Rubicon has a lot of the iconic details loved by 4x4 fans the world over, so it was important to me to pack as many of the authentic, powerful features of the real vehicle into the LEGO Technic replica. I hope LEGO fans and vehicle lovers enjoy all aspects including the suspension, winch and open air design that we developed alongside the talented Jeep design team.”[23]
+
+McLaren Senna GTR
+[edit]
+
+McLaren Senna GTR (set number: 42123) was released on 1 January 2021. The set consists of 830 pieces. Robert Melville, Design Director McLaren Automotive commented, “The team responsible for the design of the McLaren Senna GTR worked incredibly closely with their design counterparts at the LEGO Group to capture the extreme looks, excitement and essence of such an incredible supercar for LEGO Technic builders. Just like the real thing, the LEGO model is packed full of incredible details from the rear spoiler to the moving pistons in the V8 engine to the dihedral doors meaning that we’re as proud of the model as we are of the real car.”[24][25]
+
+BMW M 1000 RR
+[edit]
+
+BMW M 1000 RR (set number: 42130) was released on 1 January 2022. The set consists of 1920 pieces. Lego designer Samuel Tacchi commented, “It's been so much fun getting underneath the skin of such a significant model for BMW Motorrad. There's a reason why these beautifully engineered bikes are so universally loved by the biking community, and we are confident our LEGO Technic version is a winner like its real-life namesake." and continued, “The set has a truly authentic design, features functional yet intricate working parts, provides a challenging build and is visually stunning. It's also the largest ever LEGO Technic bike set and we know the building experience will be just as addictive as the adrenaline rush from taking the real thing out on the track.” Head of Brand and Product at BMW Motorrad Ralf Rodepeter commented, “When BMW Motorrad's management announced the first-ever M-developed motorcycle, the BMW M 1000 RR, everyone knew that the result was going to be something special. In the same way, the LEGO Technic team realised it would take something never-seen-before to pay true tribute to the M RR. The result is both a motorbike and a Technic model that are state-of-the-art within their respective fields.”[26]
+
+McLaren Formula 1 Race Car
+[edit]
+
+McLaren Formula 1 Race Car (set number: 42141) was released on 1 March 2022. The set consists of 1432 pieces. Executive Director, Technical and McLaren Racing James Key commented, “We are excited to unveil the unique LEGO Technic model of our McLaren F1 car, a fun and engaging product that celebrates our 2021 season livery while giving fans a hands-on interpretation of the new 2022 F1 car design. This has been made possible by an agile collaboration with the LEGO Group team, who have truly embraced the spirit of our brave and bold approach to design. The final product looks fantastic, and we cannot wait to make this available to our fans.”[27][28] McLaren's Director of Licensing Lindsey Eckhouse discussed about the development of this set and explained, "It was really trying to bring that full-scale adult-focused LEGO Technic model to life, and doing that in a way that worked [with regards to] some of our challenges. We started working on this in August or September 2020, and we actually don't sign off the Formula 1 car until really the January of that year. So we were bringing to life the 2021 livery through LEGO Technic, but also trying to embody the spirit of the 2022 regulation changes in the sport, and ensure we had brand consistency from the sponsors that appear on the livery." and continued, "A lot of time and focus went into, ‘How do we actually bring all of that together?’, and the timelines that ultimately work for LEGO Technic, which I think was the exciting part of the challenge and why the collaboration is so successful, because it brought all that together quite nicely."[29]
+
+Ferrari Daytona SP3
+[edit]
+
+Ferrari Daytona SP3 (set number: 42143) was released on 1 June 2022. The set consists of 3778 pieces. Chief Design Officer at Ferrari Flavio Manzoni commented, "It has been a great pleasure to collaborate with the Lego Group on this model, a stunning replica of our limited-edition Daytona SP3 supercar. Thanks to this outstanding recreation with Lego elements, Ferrari and Lego fans can now build this car piece-by-piece and feel like they are participants in the assembly process, with the opportunity to display the final model in their own homes, where they will be able to appreciate its beauty."[30][31][32][33][34]
+
+Peugeot 9X8 24H Le Mans Hybrid Hypercar
+[edit]
+
+Peugeot 9X8 24H Le Mans Hybrid Hypercar (set number: 42156) was released on 1 May 2023. The set consists of 1775 pieces. Technical Director PEUGEOT Sport Olivier Jansonnie commented, “Our technical cooperation with the LEGO Group started in January 2022, 5 months before the PEUGEOT 9X8 reveal. It took one year to fully develop the project with the technical and design teams, allowing us to directly transpose the technical details of the PEUGEOT 9X8 to the LEGO Technic model. It was very important for both brands to create a model that is as realistic as possible. PEUGEOT, Peugeot Sport and the LEGO teams had numerous meetings about the development of the suspension and hybrid systems that cannot be replicated from photos. We thank the LEGO Group for this project, we are very proud and impressed by the final result that is more than we could have imagined.”[35][36]
+
+NASA Mars Rover Perseverance
+[edit]
+
+NASA Mars Rover Perseverance (set number: 42158) was released on 1 June 2023. The set consists of 1132 pieces. Luke Cragin, Designer at the LEGO Group said, “Working on this model has been both challenging and exciting” and continued, “I’ve always felt passionate about space design process let me explore my interest as I recreated the incredible engineering developed by the pioneering team at NASA. We hope the model's features and functions will help introduce young space lovers to the world of engineering and encourage them to reach for the stars in the future.”[37]
+
+Yamaha MT10SP
+[edit]
+
+Yamaha MT10SP (set number: 42159) was released on 1 August 2023. The set consists of 1478 pieces.[38][39]
+
+Theme park attractions
+[edit]
+
+In 2012, a Lego Technic themed land was introduced to Legoland Malaysia Resort. The Technic-themed area includes some of the fastest attractions in the park,[40] such as Aquazone Wave Racers,[41] The Great LEGO Race,[42] LEGO Academy, LEGO Mindstorms[41] and Technic Twister.[41]
+
+Promotions and collaborations
+[edit]
+
+The McLaren Senna GTR was featured as a promotional car in Asphalt Legends Unite during the Electric Season update in September 2021. The car was obtainable in the game until December 2023.
+
+In April 2025, Gameloft announced their collaboration with LEGO to feature the Technic cars in Asphalt Legends Unite featuring the Chevrolet Corvette Stingray followed up by the Aston Martin Valkyrie, Ferrari FXX K and Lamborghini Revuelto. In 2026, the collaboration was extended with two new cars; the Bugatti Chiron Pur Sport and BMW M4 GT3 Evo.
+
+Reception
+[edit]
+
+Between 2020 and 2023, The Lego Group reported that Lego Technic was one of its top-selling themes.[43][44][45][46][47]
+
+Awards and nominations
+[edit]
+
+In 2015, Lego Technic was awarded "Toy of the Year" and also "Educational Toy of the Year" by the Toy Association.[48]
+
+In 2019, Land Rover Defender (set number: 42110) was awarded "DreamToys" in the Trains, Planes and Automobiles category by the Toy Retailers Association.[49]
+
+In 2020, Dom's Dodge Charger (set number: 42111) was awarded "DreamToys" in the Awesome Automobiles category by the Toy Retailers Association.[50]
+
+In September 2022, McLaren Formula 1 Race Car (set number: 42141) was awarded "Toy of the Year" and also "Vehicle of the Year" by the Toy Association.[51]
+
+In 2022, Formula E Porsche 99X Electric (set number: 42137) was awarded "DreamToys" and also "All Out Action" by the Toy Retailers Association.[52]
+
+See also
+[edit]
+
+Wikimedia Commons has media related to Lego Technic.
+
+Bionicle
+
+Fischertechnik
+
+Lego Mindstorms
+
+Lego FORMA
+
+Lego Avatar
+
+Lego City
+
+Lego Speed Champions
+
+References
+[edit]
+
+1 2 "LEGO Technic | Released". Brickset.com. Retrieved 2025-11-18.
+
+↑ The Unofficial LEGO Builder's Guide by Allan Bedford
+
+↑ "Technicopedia: 1982". technicopedia.com.
+
+↑ "Technicopedia: 1977". technicopedia.com.
+
+↑ "A Race against Time: LEGO Technic™ and PEUGEOT Celebrate Centenary of 24H Le Mans with a 24H Endurance Build Challenge". Lego.com. Lego. June 9, 2023. Retrieved June 10, 2023.
+
+↑ "Live at Le Mans: LEGO Technic™ and PEUGEOT Pulls off 24H Endurance Build Challenge Takes the Chequered Flag". Lego.com. Lego. June 10, 2023. Retrieved June 11, 2023.
+
+↑ See how we built an upscaled LEGO Technic Peugeot 9X8 in just 24 hours. July 9, 2023 – via YouTube.
+
+↑ Altl, Blair (27 October 2021). "Volvo's prototype autonomous electric construction vehicle started out as a LEGO Technic set". Electrek.
+
+↑ "LEGO 9V Technic Motors compared characteristics".
+
+↑ "Pneumatics". Lego. Retrieved 2024-03-12.
+
+↑ "Pneumatic Add-on Set Building Instructions". LEGO Education. Retrieved 2024-03-12.
+
+↑ "Brickset LEGO Set Guide - Tagged 'Pneumatic'"". Brickset.com. Retrieved 2024-03-12.
+
+↑ "General Discussion : 48416". lugnet.com.
+
+↑ "Custom Action Figure Blog - Transformers, Marvel Legends, WWE, Star Wars, read the latest reviews!". Archived from the original on 2008-05-18. Retrieved 2013-07-04.
+
+↑ "General Discussion : 48420". lugnet.com.
+
+↑ "Lego Ambassadors on Power Functions replacement". TheBrickBlogger.com. Archived from the original on 2018-11-18.
+
+↑ "Technic Control+ and flagship model announced". Brickset.com. 29 January 2019. Retrieved 2020-07-25.
+
+↑ "Technic Powered Up Theme". Lego.com.
+
+↑ "LEGO Сontrol Plus Review and Opinion | TechnicStory". technicstory.com. Retrieved 2020-07-25.
+
+↑ "Lego Technic Powered Up System". brickarchitect.com.
+
+↑ "LEGO TECHNIC™ Goes Full Throttle with Dom's Dodge Charger Set from The Fast & Furious Franchise". Universal Brand Development. Retrieved 30 March 2020.
+
+↑ "LEGO Technic Sets". BricksPrice.com. 24 March 2024. Retrieved 24 March 2024.
+
+↑ "MAKE THE WHOLE WORLD YOUR PLAYGROUND WITH THE NEW LEGO TECHNIC™ JEEP® WRANGLER". Lego. 3 December 2020. Retrieved 19 October 2021.
+
+↑ "AN ICON REBORN: THE NEW LEGO TECHNIC™ McLAREN SENNA GTR IS UNBOXED". Lego. 19 November 2020. Retrieved 19 October 2021.
+
+↑ "Start your engines: line up to race the LEGO Technic™ McLaren Senna GTR in Asphalt 9: Legends Grand Prix". Lego. 18 October 2021. Retrieved 19 October 2021.
+
+↑ Lego Group (9 December 2021). "Born on the Racetrack: Build at Home". Lego.com. Lego. Retrieved 10 December 2021.
+
+↑ Lego Group (9 February 2022). "Embrace your inner racer with the stunning new LEGO Technic McLaren Formula 1™ Race Car". Lego.com. Lego. Retrieved 14 February 2022.
+
+↑ "LEGO Technic McLaren Formula 1 Race Car (42141) Officially Announced". thebrickfan.com. 8 February 2022. Retrieved 10 February 2022.
+
+↑ "Interview: how LEGO and McLaren built a Formula 1 car in secret". Brick Fanatics. March 4, 2022.
+
+↑ Lego Group (24 May 2022). "Welcome to the drive of your life: the new LEGO Technic™ Ferrari Daytona SP3". Lego.com. Lego. Retrieved 25 May 2022.
+
+↑ "LEGO Technic Ferrari Daytona SP3: The Sense of Perfection Revealed". thebrickfan.com. 24 May 2022. Retrieved 24 May 2022.
+
+↑ "First look at LEGO Ferrari The Sense of Perfection book". Brick Fanatics. 24 May 2022. Retrieved 24 May 2022.
+
+↑ "LEGO Technic 42143 Ferrari Daytona SP3 designer video released". Brick Fanatics. 1 June 2022. Retrieved 24 May 2022.
+
+↑ Getting close and unpacking the LEGO Technic Ferrari Daytona SP3 - LEGO CON 2022. July 16, 2022 – via YouTube.
+
+↑ "The Countdown Is On: New LEGO Technic™ Peugeot 9X8 Pays Homage to the Hybrid Hypercar Ahead of Le Mans Debut". Lego.com. Lego. April 14, 2023. Retrieved April 14, 2023.
+
+↑ This is the LEGO Technic PEUGEOT 9X8 24H Le Mans Hybrid Hypercar. May 16, 2023 – via YouTube.
+
+↑ "Building The Engineers Of Tomorrow: Space Themed LEGO Technic™ Set Will Encourage Fans to Shoot For The Stars". Lego.com. Lego. May 23, 2023. Retrieved May 26, 2023.
+
+↑ "Technic Yamaha MT10SP revealed!". Brickset. July 10, 2023.
+
+↑ "LEGO Technic Yamaha MT-10 SP (42159) Revealed". thebrickfan.com. July 10, 2023.
+
+↑ "LEGO Technic: High speed rides and high tech LEGO" (PDF). Legoland Malaysia Resort. 2012. Archived from the original (PDF) on 24 February 2014.
+
+1 2 3 "LEGOLAND® Malaysia Attractions" (PDF). Legoland Malaysia. Archived from the original (PDF) on 20 August 2014.
+
+↑ "LEGOLAND® Malaysia Resort's virtual reality roller coaster "The Great LEGO Race" officially launches" (Press release). Legoland Malaysia Resort. 22 November 2017. Retrieved 22 May 2020.[permanent dead link]
+
+↑ "LEGO sees revenue grow 7% in first six months of 2020". Mojo Nation. 2020-09-02. Retrieved 2021-04-15.
+
+↑ Lego Group (8 March 2022). "The LEGO Group achieves strong growth while investing to build for the future". Lego.com. Lego. Retrieved 9 March 2022.
+
+↑ Lego Group (28 September 2022). "The LEGO Group delivers top line growth in H1 2022 while accelerating strategic growth initiatives". Lego.com. Lego. Retrieved 29 September 2022.
+
+↑ Lego Group (7 March 2023). "The LEGO Group delivers strong growth in 2022 and invests in the future". Lego.com. Lego. Retrieved 7 March 2023.
+
+↑ Lego Group (30 August 2023). "The LEGO Group outpaces toy industry in H1 2023 while accelerating long-term growth initiatives". Lego.com. Lego. Retrieved 30 August 2023.
+
+↑ "2015 TOTY Winners". The Toy Association. Retrieved 2021-07-01.
+
+↑ "2019 Trains, Planes and Automobiles". Toy Retailers Association. Retrieved 9 November 2022.
+
+↑ "2020 Awesome Automobiles". Toy Retailers Association. Retrieved 9 November 2022.
+
+↑ "LEGO scoops five gongs at Toy of the Year Awards". Brick Fanatics. 21 September 2022.
+
+↑ "2022 All Out Action". Toy Retailers Association. Retrieved 9 November 2022.
+
+External links
+[edit]
+
+Official website
+
+ | 
+
+v
+
+t
+
+e
+
+Lego
+
+ | 
+
+The Lego Group
+
+Kirkbi
+
+Lego Store
+
+ | People | 
+
+ | Kristiansen family | 
+
+Ole Kirk Christiansen
+
+Godtfred Kirk Christiansen
+
+Kjeld Kirk Kristiansen
+
+Thomas Kirk Kristiansen
+
+Sofie Kirk Kristiansen
+
+Agnete Kirk Thinggaard
+
+ | Employees | 
+
+Niels Christiansen
+
+Amy Corbett
+
+Dagny Holm
+
+Niels Jacobsen
+
+Jørgen Vig Knudstorp
+
+Jens Nygaard Knudsen
+
+Bali Padda
+
+ | Bionicle | 
+
+Cryoshell
+
+Christine Lorentzen
+
+Greg Farshtey
+
+Nathan Furst
+
+Henry Gilroy
+
+Alastair Swinnerton
+
+Ryder Windham
+
+ | Artists | 
+
+Evan Bacon
+
+Eric Harshbarger
+
+Sean Kenney
+
+Zbigniew Libera
+
+Jonathan Lopes
+
+Ryan McNaught
+
+Preston Mutanga
+
+Ekow Nimako
+
+Nathan Sawaya
+
+ | 
+
+ | History | 
+
+Timeline
+
+Interlego AG v Tyco Industries Inc
+
+Kirkbi AG v Ritvik Holdings Inc
+
+ | Product ranges | 
+
+ | Current | 
+
+Architecture
+
+Art
+
+Avatar
+
+BrickHeadz
+
+BrickLink Designer Program
+
+Brick Sketches
+
+Cars
+
+City
+
+Creator
+
+Icons
+
+Modular Buildings
+
+Disney
+
+Dune
+
+Duplo
+
+Education
+
+Friends
+
+Gabby's Dollhouse
+
+Harry Potter
+
+Ideas
+
+Jurassic World
+
+The Lord of the Rings
+
+Minecraft
+
+Minifigures
+
+Monkie Kid
+
+Ninjago
+
+Simpsons
+
+Sonic the Hedgehog
+
+Speed Champions
+
+Star Wars
+
+Super Heroes
+
+DC Universe
+
+Batman
+
+Marvel Universe
+
+Spider-Man
+
+Super Mario
+
+Technic
+
+ | Discontinued | 
+
+4+
+
+Adventurers
+
+Agents
+
+Alpha Team
+
+The Angry Birds Movie
+
+Aqua Raiders
+
+Aquazone
+
+Atlantis
+
+Avatar: The Last Airbender
+
+Primo / Baby
+
+Belville
+
+Ben 10: Alien Force
+
+Bionicle
+
+Boost
+
+Castle
+
+Education
+
+DC Super Hero Girls
+
+Dino
+
+DOTS
+
+Dreamzzz
+
+Elves
+
+Exo-Force
+
+Fabuland
+
+FORMA
+
+Fusion
+
+Galidor
+
+Games
+
+Ghostbusters
+
+Hero Factory
+
+Hidden Side
+
+Homemaker
+
+Indiana Jones
+
+Jack Stone
+
+Juniors
+
+Legends of Chima
+
+Mickey Mouse
+
+The Lego Batman Movie
+
+The Lego Movie
+
+The Lego Ninjago Movie
+
+Life of George
+
+The Lone Ranger
+
+Mars Mission
+
+Mindstorms
+
+Mixels
+
+Monster Fighters
+
+Nexo Knights
+
+Ninja
+
+Overwatch
+
+Pharaoh's Quest
+
+Pirates
+
+Pirates of the Caribbean
+
+Power Miners
+
+The Powerpuff Girls
+
+Prince of Persia
+
+Quatro
+
+Racers
+
+RoboRiders
+
+Rock Raiders
+
+Scooby-Doo
+
+Space
+
+Speed Racer
+
+SpongeBob SquarePants
+
+Sports
+
+Spybotics
+
+Stranger Things
+
+Studios
+
+Teenage Mutant Ninja Turtles
+
+Toy Story
+
+Trolls World Tour
+
+Ultra Agents
+
+Unikitty!
+
+Vidiyo
+
+Vikings
+
+Wild West
+
+World Racers
+
+Znap
+
+ | Other products | 
+
+Architecture Studio
+
+Games
+
+Monkey Palace
+
+Mr. Gold
+
+Serious Play
+
+Smart Play
+
+Trains
+
+ | Media | 
+
+Films and TV series
+
+The Lego Movie franchise
+
+The Adventures of Clutch Powers
+
+Bits N' Bricks
+
+Edward and Friends
+
+Galidor: Defenders of the Outer Dimension
+
+Lego Masters
+
+Fran Scott
+
+Piece by Piece
+
+Lego Life
+
+Lego Play
+
+Video games
+
+Ninjago
+
+Lego Club Magazine
+
+Lego White Noise
+
+ | Related websites | 
+
+BrickLink
+
+LUGNET
+
+Mecabricks
+
+Rebrickable
+
+World Builder
+
+ | Related software | 
+
+Brickit
+
+Computer-aided design
+
+BrickLink Studio
+
+Lego Digital Designer
+
+LDraw
+
+LeoCAD
+
+Lego Movie Maker
+
+ | Attractions | 
+
+Lego House
+
+Legoland
+
+Billund
+
+California
+
+Deutschland
+
+Dubai
+
+Florida
+
+Japan
+
+Korea
+
+Malaysia
+
+New York
+
+Sichuan
+
+Windsor
+
+Legoland Discovery Centre
+
+Boston
+
+Chicago
+
+Dallas Fort Worth
+
+Kansas City
+
+Toronto
+
+Westchester
+
+ | Events | 
+
+BrickCon
+
+BrickFair
+
+BrickFest
+
+Brickfête
+
+Brick Fiesta
+
+Bricks by the Bay
+
+Bricks Cascade
+
+Brickworld
+
+FIRST Lego League Challenge
+
+FIRST Lego League Explore
+
+Lego Con
+
+Robofest
+
+ | Books | 
+
+Brick by Brick
+
+The Lego Animation Book
+
+The Secret Life of Lego Bricks
+
+ | In popular culture | 
+
+"Brick Like Me"
+
+A Lego Brickumentary
+
+The Lego Story
+
+The Toys That Made Us
+
+ | Art | 
+
+The Brick Bible
+
+Ego Leonard
+
+Lego-Brücke
+
+The Art of the Brick
+
+ | Related companies | 
+
+Lego Foundation
+
+Epic Games
+
+Light Brick Studio
+
+Merlin Entertainments
+
+TT Games
+
+Traveller's Tales
+
+WildBrain Studios
+
+ | Other topics | 
+
+1997 Lego spill
+
+BrainPop
+
+Brickfilm
+
+En rejse til månen
+
+The Magic Portal
+
+Bricks & Minifigs–Reckless Ben controversy
+
+Great Ball Contraption
+
+Lego fandom
+
+Minifigure
+
+Hilary Page
+
+Kiddicraft
+
+Rustbound
+
+Violence and Lego
+
+ | Lego clones | 
+
+BlueBrixx
+
+Built to Rule
+
+Best-Lock
+
+CaDA
+
+Cobi
+
+Kre-O
+
+Lepin
+
+Mattel Brick Shop
+
+Mega Bloks
+
+N&B Block
+
+Oxford
+
+Pop Blocks
+
+Tyco Super Blocks
+
+Wilko Blox
+
+Xingbao
+
+ | 
+
+ Category
+
+ | 
+
+v
+
+t
+
+e
+
+Gears
+
+ | Systems | 
+
+Spur gear systems
+
+Worm drive
+
+Rack and pinion
+
+Epicyclic (planetary) gearing
+
+Sun and planet gear
+
+Harmonic drive
+
+Cycloidal drive
+
+Non-circular gear
+
+ | Shapes | 
+
+Spur
+
+Bevel
+
+Crown
+
+Spiral bevel
+
+Helical
+
+Herringbone
+
+ | Geartooth profiles | 
+
+Involute
+
+Cycloid
+
+ | Mechanics | 
+
+Transmission
+
+Differential
+
+Coupling
+
+Train
+
+Bicycle gearing
+
+Continuously variable transmission
+
+Offset
+
+ | Examples | 
+
+ | Bicycles | 
+
+Cogset
+
+Derailleur
+
+Hub gear
+
+Shaft-driven bicycle
+
+Sprocket
+
+ | Horology | 
+
+Wheel train
+
+ | See also | 
+
+Ball screw
+
+Leadscrew
+
+Jackscrew
+
+Belt drive
+
+Chain drive
+
+Gear manufacturing
+
+Freewheel
+
+Spur gear corrected tooth
+
+Retrieved from "https://en.wikipedia.org/w/index.php?title=Lego_Technic&oldid=1381992658"
+
+Categories: 
+Lego Technic
+
+1970s toys
+
+1980s toys
+
+Products introduced in 1977
+
+Hidden categories: 
+Articles with short description
+
+Short description is different from Wikidata
+
+Wikipedia introduction cleanup from January 2023
+
+All pages needing cleanup
+
+Articles covered by WikiProject Wikify from January 2023
+
+All articles covered by WikiProject Wikify
+
+All articles with dead external links
+
+Articles with dead external links from August 2025
+
+Articles with permanently dead external links
+
+Commons category link is on Wikidata
+
+Official website different in Wikidata and Wikipedia
+
+ This page was last edited on 25 October 2026, at 23:26 (UTC).
+
+Page was rendered with Parsoid.
+
+Text is available under the Creative Commons Attribution-ShareAlike 4.0 License;
+additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+Privacy policy
+
+About Wikipedia
+
+Disclaimers
+
+Contact Wikipedia
+
+Legal & safety contacts
+
+Code of Conduct
+
+Developers
+
+Statistics
+
+Cookie statement
+
+Mobile view
+
+Search
+
+ Search
+
+Toggle the table of contents
+
+Lego Technic
+
+17 languages
+
+Add topic
