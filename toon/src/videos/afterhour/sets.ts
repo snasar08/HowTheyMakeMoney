@@ -1363,7 +1363,7 @@ function golf(): SetObj {
   // hole cup + flag on the green (the flag sways a little in the wind via its fixed tilt)
   cy(g, 0.14, 0.14, 0.02, T("#15161c"), 0, 0.022, GZ, 0, 16);
   cy(g, 0.02, 0.02, 3.2, T("#fafafa"), 0, 1.6, GZ, 0.012, 8);
-  const fl = new THREE.Mesh(new THREE.BufferGeometry(), T("#e5233b", { side: THREE.DoubleSide }));
+  const flM = T("#e5233b"); flM.side = THREE.DoubleSide; const fl = new THREE.Mesh(new THREE.BufferGeometry(), flM);
   fl.geometry.setAttribute("position", new THREE.Float32BufferAttribute([0, 0, 0, 1.1, -0.2, 0.05, 0, -0.55, 0], 3)); fl.geometry.computeVertexNormals(); fl.position.set(0.02, 3.15, GZ); g.add(fl);
   // tee box markers, a tee sign and a sand-and-water-free bin
   for (const sxn of [-1, 1]) { sp(g, 0.16, T(sxn > 0 ? "#e5233b" : "#ffffff"), sxn * 3.0, 0.2, 2.9, 0.012, 14); cy(g, 0.04, 0.05, 0.14, T("#8a93a8"), sxn * 3.0, 0.07, 2.9, 0, 8); }
