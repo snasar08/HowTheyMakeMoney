@@ -31,6 +31,9 @@ PlayStation born from Nintendo's walk-out (story), Cade Cunningham perfect-game 
 ## Used (Nov 21 2026 batch, part 2)
 Fortnite free battle royale (story), Nikola Jokić, Luka Dončić, Paul Skenes, Selena Gomez, Mark Cuban, Shai Gilgeous-Alexander, Red Bull cans around Earth (whatif), Netflix couch-stadium plan (story plan), James Harden 51-point plan (story plan)
 
+## Used (Nov 21 2026 batch, part 3)
+George Lucas
+
 ## Ranked for the next batches (Oct 29 2026 — teen appeal × curiosity gap × surprising number)
 Write from the top. Casinos dropped (not kid-safe). Skip anything already used above.
 | # | Topic | Angle / hook seed | Est. score |
