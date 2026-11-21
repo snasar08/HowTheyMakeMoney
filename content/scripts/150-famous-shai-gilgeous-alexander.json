@@ -1,0 +1,183 @@
+{
+  "id": "150",
+  "slug": "famous-shai-gilgeous-alexander",
+  "company": "Shai Gilgeous-Alexander",
+  "format": "famous",
+  "visual_style": "lowpoly",
+  "hook_style": "number",
+  "title_style": "number",
+  "theme": "dark_neon",
+  "status": "ready",
+  "score": 88,
+  "title": "11th Pick to a $285 Million Record Deal",
+  "name_card": "Shai Gilgeous-Alexander",
+  "name_sub": "NBA champion",
+  "description": "Shai Gilgeous-Alexander was picked 11th in the 2018 NBA draft, traded the same night, and became an MVP, scoring champion and NBA champion before a record $285 million extension.\n\nSources:\n- Wikipedia: Shai Gilgeous-Alexander: https://en.wikipedia.org/wiki/Shai_Gilgeous-Alexander\n\nFrom the cited page: selected 11th overall by Charlotte in the 2018 draft on June 21, 2018 and traded to the Clippers on draft night; traded to Oklahoma City in July 2019; in 2024-25 he won the NBA MVP award and the scoring title, and the Thunder won the 2025 NBA championship; on July 1, 2025 he agreed to a record four-year, $285 million extension; he grew up in Hamilton, Ontario. In ninth grade, he did not make his school's junior team. Not financial advice.\n\n#shorts #sga #nba #howtheymakemoney",
+  "tags": [
+    "shai gilgeous-alexander",
+    "thunder",
+    "nba",
+    "famous",
+    "shorts"
+  ],
+  "images": {},
+  "loop": "So remember:",
+  "cta": "SGA or Jokic? Comment your pick.",
+  "cta_question": "SGA or Jokic?",
+  "hero": {
+    "skin": "5a3a26",
+    "hair": "short",
+    "hair_color": "111111",
+    "beard": "stubble",
+    "outfit": "kit",
+    "shirt": "007ac1",
+    "pants": "007ac1",
+    "trim": "ef3b24",
+    "socks": "ef3b24",
+    "shoes": "f4f4f4",
+    "height": 1.12,
+    "number": 2
+  },
+  "scenes": [
+    {
+      "narration": "Shai Gilgeous-Alexander was picked 11th, then traded the very same night.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "stage",
+          "mood": "shock",
+          "card": {
+            "text": "11TH PICK",
+            "kind": "flip",
+            "sub": "2018 NBA DRAFT"
+          },
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "Then another trade sent him to Oklahoma City.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "court",
+          "mood": "nervous",
+          "things": [
+            "basketball"
+          ],
+          "view": "ms"
+        }
+      ]
+    },
+    {
+      "narration": "But in 2025 he shot his way to the scoring title and the MVP.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "court",
+          "mood": "excited",
+          "things": [
+            "basketball",
+            "trophy"
+          ],
+          "crowd": 150,
+          "card": {
+            "text": "2025",
+            "kind": "flip",
+            "sub": "YEAR"
+          },
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "That same year, he won the NBA championship with the Thunder.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "court",
+          "mood": "laugh",
+          "things": [
+            "trophy"
+          ],
+          "crowd": 250,
+          "view": "low"
+        }
+      ]
+    },
+    {
+      "narration": "Then Oklahoma City gave him a record 285 million dollar deal.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "boardroom",
+          "mood": "shock",
+          "beat": "money",
+          "card": {
+            "text": "$285 MILLION",
+            "kind": "screen",
+            "sub": "RECORD EXTENSION, JULY 2025"
+          },
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "Not bad for a kid who didn't make his school's junior team.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "mansion",
+          "mood": "proud",
+          "things": [
+            "cashstack"
+          ],
+          "view": "face"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Shai Gilgeous-Alexander",
+      "url": "https://en.wikipedia.org/wiki/Shai_Gilgeous-Alexander"
+    }
+  ],
+  "look": "afterhour"
+}
