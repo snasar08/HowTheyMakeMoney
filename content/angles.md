@@ -115,3 +115,4 @@ clearly different angle, new figures, a new hook, new B-roll and a different sce
 144 | Oreo (whatif) | eating every Oreo made in a year, one a second | ~40B Oreos produced a year (Mondelez, 2017), ~1,270 years at one a second
 145 | Aaron Judge (famous) | passed on $213.5M, hit 62 homers, then $360M | $213.5M 7-year offer (before 2022), 62 HR AL record (Oct 2022), 9 years / $360M, adopted as a baby by two teachers, captain
 146 | Nintendo Switch 2 (story, plan, short) | made-up race for Switch 2 to catch the old Switch; 'your hardest rival is you' | Switch 2 26.35M, Mario Kart World 16.48M, Switch 157.20M (all as of Sept 30 2026, Nintendo IR)
+136 | Max Verstappen (famous) | raced in F1 at 17 before he had a road licence; ~$76M in 2025 | 17 y 166 d (2015 Australia), licence at 18, youngest winner (Spain 2016, 18 y 228 d), 4 titles 2021-24, ~$76M 2025 (Forbes est. via PlanetF1/Crash)
