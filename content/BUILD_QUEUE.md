@@ -6,10 +6,9 @@ One line each: `- [ ] set|object NAME: what it must show (script ids that need i
 ## To build
 - [x] set gridiron + tennis (checked built in sets.ts Nov 21)
 
-- [ ] object horse: a chunky cel-shaded racehorse (brown, mane, saddle), for horse-racing lines (147 farm scene: swap into its `things`)
-- [ ] object baseball (white ball, red stitches) + "throw/threw/fastball" on a baseball line must not add a basketball (149)
 
 ## Done
+- [x] objects horse + baseball (and no basketball on diamond throw lines), tested on things-test/20261121-p2obj, Nov 21 part 2
 - [x] act qb_throw fixed (ball clear of the face, panel after the catch) and approved, things-test/20261121-p2qb, Nov 21 part 2
 - [x] act tennis_serve fixed (contact frame + ball over the net) and approved, things-test/20261121-p2acts, Nov 21 part 2
 - [x] acts race_car + touchdown reviewed and approved (things-test/20261121-acts), Nov 21

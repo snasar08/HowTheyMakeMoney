@@ -160,12 +160,18 @@
         {
           "place": "farm",
           "mood": "happy",
-          "view": "wide"
+          "view": "wide",
+          "things": [
+            "horse"
+          ]
         },
         {
           "place": "farm",
           "mood": "laugh",
-          "view": "face"
+          "view": "face",
+          "things": [
+            "horse"
+          ]
         }
       ]
     },

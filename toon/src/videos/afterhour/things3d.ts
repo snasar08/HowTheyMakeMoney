@@ -4,7 +4,7 @@ import { toonMat, metalMat, glowMat, canvasTex, seeded } from "./common";
 import { hasModel, makeModelGroup, MODEL_SIZE } from "./models";
 import { drawCard } from "./cards";
 
-export type ThingName = "shoe" | "springshoe" | "chip" | "gpu" | "cash" | "cashstack" | "coins" | "goldbar" | "trophy" | "medal" | "crown" | "ring" | "car" | "sportscar" | "bus" | "truck" | "rocket" | "phone" | "laptop" | "tv" | "monitor" | "clock" | "books" | "letter" | "newspaper" | "briefcase" | "shovel" | "pickaxe" | "box" | "crate" | "basketball" | "football" | "soccerball" | "hoop" | "mic" | "headset" | "controller" | "burger" | "pizza" | "coffee" | "plant" | "robot" | "drone" | "satellite" | "globe" | "house" | "factory" | "stadium" | "plane" | "yacht" | "chart" | "arrowup" | "arrowdown" | "lightbulb" | "lock" | "key" | "heart" | "bomb" | "fire" | "camera" | "chatbot" | "glasses" | "dumbbell" | "hanger" | "dome" | "console" | "golfball" | "golfclub";
+export type ThingName = "shoe" | "springshoe" | "chip" | "gpu" | "cash" | "cashstack" | "coins" | "goldbar" | "trophy" | "medal" | "crown" | "ring" | "car" | "sportscar" | "bus" | "truck" | "rocket" | "phone" | "laptop" | "tv" | "monitor" | "clock" | "books" | "letter" | "newspaper" | "briefcase" | "shovel" | "pickaxe" | "box" | "crate" | "basketball" | "football" | "soccerball" | "hoop" | "mic" | "headset" | "controller" | "burger" | "pizza" | "coffee" | "plant" | "robot" | "drone" | "satellite" | "globe" | "house" | "factory" | "stadium" | "plane" | "yacht" | "chart" | "arrowup" | "arrowdown" | "lightbulb" | "lock" | "key" | "heart" | "bomb" | "fire" | "camera" | "chatbot" | "glasses" | "dumbbell" | "hanger" | "dome" | "console" | "golfball" | "golfclub" | "horse" | "baseball";
 export type Thing = { root: THREE.Group; size: number; tick?(t: number): void };
 
 type M = string | THREE.Material;
@@ -510,6 +510,47 @@ const B: Record<ThingName, Builder> = {
     bx(o, 0.1, 0.012, 0.075, "#f4f4f6", 0.06, 0.092, 0);
     sp(o, 0.016, "#f4f4f6", 0.12, 0.05, 0.0, [0.4, 1.5, 1.5], 8);
     return { g, tick: (t) => { o.rotation.z = 0.16 + Math.sin(t * 1.8) * 0.05; } };
+  },
+  // Nov 21: a chunky brown racehorse standing side-on (head to +x): dark mane + tail, red saddle blanket, four legs with dark hooves
+  horse: (c) => {
+    const g = new THREE.Group(); const body = c ?? "#9a5a2c"; const dk = "#2a1a12";
+    sp(g, 0.15, body, 0, 0.34, 0, [1.75, 0.95, 0.85], 24);                          // barrel
+    sp(g, 0.1, body, -0.17, 0.35, 0, [1.0, 1.0, 0.95], 18);                         // rump
+    for (const [x, z] of [[0.17, 0.06], [0.17, -0.06], [-0.19, 0.06], [-0.19, -0.06]]) {
+      cy(g, 0.032, 0.024, 0.24, body, x, 0.15, z, undefined, 12);
+      cy(g, 0.03, 0.03, 0.04, dk, x, 0.02, z, undefined, 12);                       // hoof
+    }
+    const nk = new THREE.Group(); nk.position.set(0.2, 0.42, 0); g.add(nk);
+    cy(nk, 0.065, 0.1, 0.3, body, 0.07, 0.13, 0, [0, 0, -0.62], 14);               // neck leaning forward
+    const hd = new THREE.Group(); hd.position.set(0.16, 0.27, 0); hd.rotation.z = -0.55; nk.add(hd);
+    sp(hd, 0.07, body, 0.03, 0, 0, [1.55, 0.85, 0.85], 18);                         // long head
+    sp(hd, 0.04, "#d9b99a", 0.12, -0.012, 0, [1.0, 0.9, 0.9], 14);                  // pale muzzle
+    for (const z of [-0.035, 0.035]) cone(hd, 0.022, 0.07, body, -0.02, 0.085, z, undefined, 10);   // ears
+    for (const z of [-1, 1]) { sp(hd, 0.017, "#ffffff", 0.05, 0.02, z * 0.055, undefined, 10); sp(hd, 0.009, "#111111", 0.057, 0.02, z * 0.066, undefined, 8); }
+    for (let i = 0; i < 6; i++) { const sx = -0.1 + i * 0.045; bx(nk, 0.045, 0.085, 0.034, dk, 0.07 + Math.sin(0.62) * sx - Math.cos(0.62) * 0.085, 0.13 + Math.cos(0.62) * sx + Math.sin(0.62) * 0.085, 0, [0, 0, -0.62]); }   // mane along the back of the neck
+    bx(nk, 0.05, 0.06, 0.034, dk, 0.2, 0.33, 0, [0, 0, -0.4]);                       // forelock
+    bx(g, 0.2, 0.025, 0.2, "#d63a3a", 0.0, 0.47, 0);                                 // saddle blanket
+    rbx(g, 0.13, 0.05, 0.17, 0.02, "#5a2d12", 0.0, 0.5, 0);                          // saddle
+    const tail = new THREE.Group(); tail.position.set(-0.25, 0.42, 0); g.add(tail);
+    cy(tail, 0.045, 0.02, 0.34, dk, -0.05, -0.14, 0, [0, 0, 0.3], 10);
+    sp(tail, 0.04, dk, -0.1, -0.3, 0, [0.8, 1.7, 0.8], 10);
+    return { g, tick: (t) => { tail.rotation.z = Math.sin(t * 3) * 0.18; nk.rotation.z = Math.sin(t * 1.6) * 0.04; g.position.y = Math.abs(Math.sin(t * 1.6)) * 0.004; } };
+  },
+  // Nov 21: a white baseball with two red stitched seams
+  baseball: (c) => {
+    const g = new THREE.Group(); const R = 0.075; const o = new THREE.Group(); o.position.y = R + 0.01; o.rotation.set(0.55, 0.5, 0.25); g.add(o);
+    sp(o, R, c ?? "#fbfaf5", 0, 0, 0, undefined, 28);
+    // the seam is the classic two-lobed curve that lies on the ball (x = a cos t + b cos 3t, y = a sin t - b sin 3t, z = 2 sqrt(ab) sin 2t, a + b = 1)
+    const A = 0.72, Bq = 1 - A, K = 2 * Math.sqrt(A * Bq), S = R * 1.006;
+    const P = (t: number) => new THREE.Vector3(A * Math.cos(t) + Bq * Math.cos(3 * t), A * Math.sin(t) - Bq * Math.sin(3 * t), K * Math.sin(2 * t)).multiplyScalar(S);
+    const pts: THREE.Vector3[] = []; for (let i = 0; i < 64; i++) pts.push(P((i / 64) * PI * 2));
+    const tube = new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts, true), 96, 0.0042, 6, true), toonMat("#d3262f")); tube.castShadow = false; o.add(tube);
+    const stm = toonMat("#d3262f");
+    for (let i = 0; i < 44; i++) {          // short stitches across the seam
+      const t = (i / 44) * PI * 2, p = P(t), T = P(t + 0.01).sub(P(t - 0.01)).normalize(), n = p.clone().normalize(), q = new THREE.Vector3().crossVectors(T, n).normalize();
+      const m = new THREE.Mesh(new THREE.BoxGeometry(0.02, 0.003, 0.0035), stm); m.position.copy(p); m.quaternion.setFromRotationMatrix(new THREE.Matrix4().makeBasis(q, n, T)); m.castShadow = false; o.add(m);
+    }
+    return { g, tick: (t) => { o.rotation.y = 0.5 + Math.sin(t * 1.4) * 0.3; g.position.y = Math.sin(t * 2.2) * 0.004; } };
   },
   // Nov 18: prolate spheroid with pointed tips, long axis = x (profile to camera), laces on top, two stripes near the tips
   football: (c) => {
