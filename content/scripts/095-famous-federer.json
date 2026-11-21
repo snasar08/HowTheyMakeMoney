@@ -7,7 +7,7 @@
   "hook_style": "surprise",
   "title_style": "number",
   "theme": "clean_navy",
-  "status": "ready",
+  "status": "needs_fix",
   "score": 88,
   "title": "From Ball Boy to $1.1 Billion",
   "name_card": "Roger Federer",
@@ -304,5 +304,8 @@
       "headband"
     ],
     "height": 1.03
-  }
+  },
+  "needs_fix": [
+    "act count_cash unclear at frames 382-485: The character holds a wad of cash while walking instead of distinctly counting bills."
+  ]
 }
