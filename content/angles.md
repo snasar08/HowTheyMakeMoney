@@ -147,3 +147,4 @@ clearly different angle, new figures, a new hook, new B-roll and a different sce
 173 | Canelo Álvarez (famous) | sold ice pops on a bus route as a kid, pro at 15, then DAZN's record deal | $365M (DAZN, Oct 2018), pro at 15, $137M and 2nd highest-paid (Sportico 2025)
 174 | Jeff Bezos (famous) | his parents' $245,573 in 1995, not the garage or AWS | $245,573 (1995), Bloomberg guess almost $30B for the stake (2018), Bezos ~$284B (2026)
 175 | Meta (story, plan, long) | made-up plan after Samsung+Google opened smart-glasses pre-orders; payoff: the winning feature is an off button, look up | real: 7M Ray-Ban/Oakley Meta glasses sold (2025), Samsung from $395, pre-orders Nov 12 2026, on sale Dec 10; later steps imagined
+176 | Domino's (whatif) | one pizza maker bakes a whole day of Domino's pizzas | ~4M pizzas/day, 3 pizzas in 31.22 s (fastest maker), ~482 days (our math), 22,700+ stores

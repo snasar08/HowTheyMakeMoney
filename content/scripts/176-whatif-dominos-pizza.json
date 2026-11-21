@@ -1,0 +1,182 @@
+{
+  "id": "176",
+  "slug": "whatif-dominos-pizza",
+  "company": "Domino's",
+  "format": "whatif",
+  "visual_style": "lowpoly",
+  "hook_style": "whatif",
+  "title_style": "whatif",
+  "theme": "bold_bright",
+  "status": "ready",
+  "score": 88,
+  "title": "Domino's Sells 4 Million Pizzas a Day. One Baker?",
+  "name_card": "What if one baker made them all",
+  "name_sub": "Domino's, one day of pizzas",
+  "description": "What if one pizza maker had to bake a whole day of Domino's pizzas? We did the math.\n\nSources:\n- Domino's 101: Fun Facts (Domino's media site, Nov 2026 edition): https://media.dominos.com/assets/files/dominos-101-fun-facts.pdf\n\nFrom the cited page: Domino's stores across the globe sell an average of 4 million pizzas a day; Domino's World's Fastest Pizza Maker can make three large pizzas in 31.22 seconds; Domino's operates more than 22,700 stores in over 90 markets (Q3 2026). Our math: 31.22 seconds / 3 = about 10.4 seconds a pizza; 4,000,000 pizzas x 10.4 seconds = about 41.6 million seconds = about 482 days non-stop (a made-up scenario; real cooking, ovens and breaks not included). Not financial advice.\n\n#shorts #dominos #pizza #whatif #howtheymakemoney",
+  "tags": [
+    "dominos",
+    "pizza",
+    "whatif",
+    "shorts"
+  ],
+  "images": {},
+  "loop": "So remember:",
+  "cta": "Domino's or Pizza Hut? Pick one.",
+  "cta_question": "Domino's or Pizza Hut?",
+  "hud_label": "DAYS FOR ONE BAKER",
+  "hero": {
+    "skin": "e0ac80",
+    "hair": "short",
+    "hair_color": "3a2a1a",
+    "beard": "none",
+    "outfit": "tee",
+    "shirt": "006491",
+    "pants": "2b2f3a",
+    "shoes": "f4f4f4",
+    "chest": "",
+    "trim": "e31837",
+    "height": 1.0,
+    "extras": [
+      "cap"
+    ]
+  },
+  "scenes": [
+    {
+      "narration": "Domino's stores sell about 4 million pizzas every single day.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "diner",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "diner",
+          "mood": "excited",
+          "beat": "money",
+          "things": [
+            "pizza",
+            "box"
+          ],
+          "brand": {
+            "name": "Domino's",
+            "bg": "#006491",
+            "fg": "#ffffff"
+          },
+          "card": {
+            "text": "4 MILLION",
+            "kind": "screen",
+            "sub": "PIZZAS A DAY"
+          },
+          "crowd": 40,
+          "view": "wide"
+        }
+      ]
+    },
+    {
+      "narration": "But what if one pizza maker had to bake them all?",
+      "visual": {
+        "type": "lowpoly",
+        "set": "diner",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "stall",
+          "mood": "shock",
+          "things": [
+            "pizza"
+          ],
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "Domino's fastest pizza maker makes three pizzas in 31.22 seconds.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "diner",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "diner",
+          "mood": "proud",
+          "things": [
+            "pizza",
+            "clock"
+          ],
+          "card": {
+            "text": "31.22 SECONDS",
+            "kind": "screen",
+            "sub": "FOR 3 PIZZAS"
+          },
+          "view": "ms"
+        }
+      ]
+    },
+    {
+      "narration": "Then, at that speed, one day of pizzas takes about 482 days.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "garage",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "garage",
+          "mood": "dazed",
+          "things": [
+            "pizza",
+            "box"
+          ],
+          "card": {
+            "text": "482 DAYS",
+            "kind": "screen",
+            "sub": "OUR MATH"
+          },
+          "view": "wide"
+        }
+      ]
+    },
+    {
+      "narration": "Good thing you can eat pizza from more than 22,700 stores.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "diner",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "diner",
+          "mood": "laugh",
+          "things": [
+            "pizza"
+          ],
+          "card": {
+            "text": "22,700 STORES",
+            "kind": "screen",
+            "sub": "DOMINO'S, 2026"
+          },
+          "view": "ms"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Domino's 101: Fun Facts (Domino's media site, Nov 2026 edition)",
+      "url": "https://media.dominos.com/assets/files/dominos-101-fun-facts.pdf"
+    }
+  ],
+  "look": "afterhour"
+}
