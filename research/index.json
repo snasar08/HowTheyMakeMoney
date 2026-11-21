@@ -31,5 +31,26 @@
     "status": 200,
     "final_url": "https://en.wikipedia.org/wiki/2016_Spanish_Grand_Prix",
     "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Forbes_list_of_the_world%27s_highest-paid_athletes": {
+    "file": "pages/d45abcb77f35.txt",
+    "fetched_at": "2026-11-21T16:13:26.017829+00:00",
+    "ok": true,
+    "chars": 25934,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Forbes_list_of_the_world%27s_highest-paid_athletes",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/List_of_Formula_One_drivers_by_salary": {
+    "file": "pages/39912d465588.txt",
+    "fetched_at": "2026-11-21T16:13:26.401623+00:00",
+    "ok": false,
+    "error": "HTTP 404"
+  },
+  "https://en.wikipedia.org/wiki/Forbes_list_of_the_world%27s_highest-paid_athletes_2025": {
+    "file": "pages/dda73f7c608c.txt",
+    "fetched_at": "2026-11-21T16:13:27.049526+00:00",
+    "ok": false,
+    "error": "HTTP 404"
   }
 }
