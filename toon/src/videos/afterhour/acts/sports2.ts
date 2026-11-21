@@ -193,7 +193,7 @@ const qb_throw: ActDef = { pose: "stand", view: "act", build(c: ActCtx): ActRun 
   const rcv = makeChar(JERSEY("#d8342c", "88", "#fafafa")); root.add(rcv.root);
   const Q0 = [H[0] + 1.55, H[2] + 0.35], Q1 = [H[0] + 1.95, H[2] + 0.05];   // Nov 21: a step left of the sideline down-marker so it never hides the arm
   const RS = [H[0] - 1.15, H[2] - 3.2], RC = [H[0] + 0.3, H[2] - 0.9], TR = 0.96, TC = 1.7;
-  const pop = popText(root, "COMPLETE!", [RC[0] - 0.9, H[1] + 3.35, RC[1] + 0.8], 1.4);   // Nov 21: top of the frame, left of the QB, only after the catch
+  const pop = popText(root, "COMPLETE!", [RC[0] + 0.8, H[1] + 3.3, RC[1] + 0.8], 1.4);   // Nov 21: top of the frame, between the two players (above both heads), only after the catch
   const qbPose = (t: number): ActPose => (t < 0.52 ? { pose: "walk", t: -t * 0.95 } : { pose: "stand", t });
   const rcvAt = (t: number) => {
     const k = cl(t / TC, 0, 1.18), x = mix(RS[0], RC[0], k), z = mix(RS[1], RC[1], k);
@@ -215,7 +215,7 @@ const qb_throw: ActDef = { pose: "stand", view: "act", build(c: ActCtx): ActRun 
     L.kR.rotation.x = mix(r0[2], L.kR.rotation.x, w); L.kL.rotation.x = mix(r0[3], L.kL.rotation.x, w);
     const a = kl(t, [[0, Q0[0], Q0[1]], [0.55, Q1[0], Q1[1]]]);
     plant(hero, a[0], a[1]);
-    const Bq = kf(t, [[0, 0, SY - 0.32, 0.42], [0.5, 0, SY - 0.32, 0.42], [0.78, 0.3, HY + 0.12, -0.08], [TR, 0.2, HY + 0.55, 0.5]]);
+    const Bq = kf(t, [[0, 0, SY - 0.32, 0.42], [0.5, 0, SY - 0.32, 0.42], [0.78, 0.45, HY + 0.1, -0.3], [TR, 0.4, HY + 0.6, 0.2]]);
     const follow = kf(t, [[TR, 0.32, HY + 0.5, 0.55], [1.2, 0.0, SY - 0.2, 0.62], [1.55, -0.12, SY - 0.5, 0.4]]);
     const held = t < TR, rp = held ? [Bq[0] + 0.12, Bq[1] - 0.02, Bq[2] - 0.02] : follow;
     armRig(hero, "r", new Vec(rp[0], rp[1], rp[2]), held && t > 0.5 ? [1.2, 0.3, -0.8] : [1.1, -0.5, -0.4]);
@@ -226,7 +226,7 @@ const qb_throw: ActDef = { pose: "stand", view: "act", build(c: ActCtx): ActRun 
   };
   // where the ball leaves the hand and where the receiver's hands are at the catch
   hero.set(TR, "stand", "grin"); qb(TR);
-  const Prel = RW(hero, 0.2, HY + 0.55, 0.5);
+  const Prel = RW(hero, 0.4, HY + 0.6, 0.2);
   rcvAt(TC); rcv.root.updateMatrixWorld(true);
   const SYr = shY(rcv), Pcatch = RW(rcv, 0, SYr - 0.02, 0.6);
   return { tick(t) {
@@ -242,7 +242,7 @@ const qb_throw: ActDef = { pose: "stand", view: "act", build(c: ActCtx): ActRun 
     qb(t);
     let axis = new Vec();
     if (t < TR) {
-      const Bq = kf(t, [[0, 0, SY - 0.32, 0.42], [0.5, 0, SY - 0.32, 0.42], [0.78, 0.3, HY + 0.12, -0.08], [TR, 0.2, HY + 0.55, 0.5]]);
+      const Bq = kf(t, [[0, 0, SY - 0.32, 0.42], [0.5, 0, SY - 0.32, 0.42], [0.78, 0.45, HY + 0.1, -0.3], [TR, 0.4, HY + 0.6, 0.2]]);
       bp.copy(RW(hero, Bq[0], Bq[1], Bq[2]));
       const fw = RW(hero, 0, 0.2, 1).sub(RW(hero, 0, 0, 0)).normalize(), tg = Pcatch.clone().sub(bp).normalize();
       axis.copy(fw).lerp(tg, seg(t, 0.45, 0.85)).normalize();
@@ -497,9 +497,9 @@ const racket = () => {
 const tennis_serve: ActDef = { pose: "stand", view: "act", build(c: ActCtx): ActRun {
   const { root, hero, heroAt: H } = c;
   const SY = shY(hero), HY = hero.headY, TC = 1.0, TT = 0.5;
-  const S = new Vec(-0.85, 0, -0.52).normalize(), Pp = new Vec(0.52, 0, -0.85).normalize();   // serve direction (left, away), across the court
+  const S = new Vec(-0.7, 0, -0.71).normalize(), Pp = new Vec(0.71, 0, -0.7).normalize();   // serve direction (left, away), across the court
   const base = new Vec(H[0] + 2.4, 0, H[2] + 0.5);
-  const NETD = 2.6, LAND = 4.7, TL = 0.55, PHI = Math.atan2(-Pp.z, Pp.x);   // net 2.6 m out (inside the frame), ball lands 4.7 m out in the far court
+  const NETD = 2.1, LAND = 3.7, TL = 0.6, PHI = Math.atan2(-Pp.z, Pp.x);   // net 2.6 m out (inside the frame), ball lands 4.7 m out in the far court
   const ry = yawOf(-Pp.x, -Pp.z);
   // court lines + net
   paint(root, 9, 0.06, "#fafafa", base.x, base.z, 0.026, PHI);
@@ -530,9 +530,9 @@ const tennis_serve: ActDef = { pose: "stand", view: "act", build(c: ActCtx): Act
     plant(hero, base.x, base.z);
     hero.root.position.y += 0.2 * air;
   };
-  const handR = (t: number) => kf(t, [[0, 0.3, SY - 0.4, 0.28], [0.5, 0.3, SY - 0.3, 0.3], [0.72, 0.32, HY + 0.12, -0.08], [0.86, 0.15, HY - 0.15, -0.32], [TC, 0.1, HY + 0.78, 0.18], [1.2, -0.22, SY - 0.1, 0.5], [1.55, -0.3, SY - 0.45, 0.35]]);
+  const handR = (t: number) => kf(t, [[0, 0.3, SY - 0.4, 0.28], [0.5, 0.3, SY - 0.3, 0.3], [0.72, 0.32, HY + 0.12, -0.08], [0.86, 0.15, HY - 0.15, -0.32], [TC, 0.1, HY + 0.78, 0.18], [1.26, -0.22, SY - 0.1, 0.5], [1.6, -0.3, SY - 0.45, 0.35]]);
   const RD = (t: number) => {   // racket direction as (forward S, up, lateral Pp) components
-    const k = kf(t, [[0, 0.5, -0.5, 0.2], [0.5, 0.3, 0.7, 0.2], [0.72, -0.2, 1.0, 0.0], [0.86, -0.1, -0.5, 0.7], [TC, 0.35, 0.93, 0.1], [1.2, 0.8, -0.3, -0.5], [1.55, 0.2, -0.9, -0.4]]);
+    const k = kf(t, [[0, 0.5, -0.5, 0.2], [0.5, 0.3, 0.7, 0.2], [0.72, -0.2, 1.0, 0.0], [0.86, -0.1, -0.5, 0.7], [TC, 0.35, 0.93, 0.1], [1.26, 0.8, -0.3, -0.5], [1.6, 0.2, -0.9, -0.4]]);
     return S.clone().multiplyScalar(k[0]).add(new Vec(0, k[1], 0)).addScaledVector(Pp, k[2]).normalize();
   };
   hero.set(TC, "stand", "grin"); body(TC);
@@ -564,7 +564,7 @@ const tennis_serve: ActDef = { pose: "stand", view: "act", build(c: ActCtx): Act
     const p = ballPos(t) ?? RW(hero, -0.16, SY - 0.36 + 0.0, 0.3).add(new Vec(0, 0.14, 0));
     bl.position.copy(p); bl.rotation.set(t * 5, 0, t * 3); dropShadow(sh, p, 0.1);
     trl((tt) => (tt >= TC ? ballPos(tt) : null), t, 0.025);
-    burst(TC, t, Pc, 1.7); popA(TC + 0.55, t);
+    burst(TC, t, Pc, 0.8); popA(TC + 0.55, t);
     return { pose: "stand", t, expr: exAt(t, [[0, "focus"], [0.78, "effort"], [TC - 0.04, "shout"], [TC + 0.16, "smug"], [TC + 0.9, "grin"]]) };
   } };
 } };
