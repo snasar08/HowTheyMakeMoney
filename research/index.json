@@ -1,0 +1,47 @@
+{
+  "https://www.yardbarker.com/nfl/articles/jamarr_chase_debuts_perfect_joe_burrow_impression/s1_127_44588458": {
+    "file": "pages/582f039b8bbf.txt",
+    "fetched_at": "2026-11-21T21:11:42.201696+00:00",
+    "ok": true,
+    "chars": 7066,
+    "status": 200,
+    "final_url": "https://www.yardbarker.com/nfl/articles/jamarr_chase_debuts_perfect_joe_burrow_impression/s1_127_44588458",
+    "content_type": "text/html; charset=utf-8"
+  },
+  "https://clutchpoints.com/nfl/washington-commanders/bengals-news-jamarr-chase-joe-burrows-illness-with-jersey-swap": {
+    "file": "pages/ef75d3e43180.txt",
+    "fetched_at": "2026-11-21T21:11:42.957583+00:00",
+    "ok": true,
+    "chars": 5823,
+    "status": 200,
+    "final_url": "https://clutchpoints.com/nfl/washington-commanders/bengals-news-jamarr-chase-joe-burrows-illness-with-jersey-swap",
+    "content_type": "text/html; charset=utf-8"
+  },
+  "https://tixel.com/us/news/2026/11/17/jamarr-chases-stellar-performance-propels-bengals-to": {
+    "file": "pages/b2e96eb466d8.txt",
+    "fetched_at": "2026-11-21T21:11:43.443252+00:00",
+    "ok": true,
+    "chars": 2565,
+    "status": 200,
+    "final_url": "https://tixel.com/us/news/2026/11/17/jamarr-chases-stellar-performance-propels-bengals-to",
+    "content_type": "text/html; charset=utf-8"
+  },
+  "https://en.wikipedia.org/wiki/Ja%27Marr_Chase": {
+    "file": "pages/7e42263630bf.txt",
+    "fetched_at": "2026-11-21T21:11:44.532470+00:00",
+    "ok": true,
+    "chars": 50733,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Ja%27Marr_Chase",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Joe_Burrow": {
+    "file": "pages/eddaf33cdb50.txt",
+    "fetched_at": "2026-11-21T21:11:45.012652+00:00",
+    "ok": true,
+    "chars": 110032,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Joe_Burrow",
+    "content_type": "text/html; charset=UTF-8"
+  }
+}
