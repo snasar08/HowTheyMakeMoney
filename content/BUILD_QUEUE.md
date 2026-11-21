@@ -4,8 +4,8 @@ Objects and sets a script needs that the 3D library does not have yet (content/R
 One line each: `- [ ] set|object NAME: what it must show (script ids that need it)`. Routines build these FIRST; tick and move to Done when merged.
 
 ## To build
-- [ ] set rink: an ice hockey rink (white ice, red/blue lines, boards, goal net, stands) for "hockey"/"NHL"/"rink"/"Stanley Cup" lines (169 McDavid is a draft until this exists; it uses stage/throne now)
-- [ ] object puck + hockeystick: a black puck and a plain hockey stick (169)
+- [x] set rink (Nov 21, things-test/20261121-p4rink; puck + plain stick are set dressing): an ice hockey rink (white ice, red/blue lines, boards, goal net, stands) for "hockey"/"NHL"/"rink"/"Stanley Cup" lines (169 McDavid is a draft until this exists; it uses stage/throne now)
+- [ ] object puck + hockeystick: a black puck and a plain hockey stick as `things` for off-rink lines (the rink set already shows both)
 - [ ] object icepop: a popsicle on a stick (173 uses box + an ICE POPS card)
 - [x] object noodlecup (Nov 21, things-test/20261121-p4obj): a foam cup of instant noodles with a peeled lid and steam (165 uses coffee)
 - [x] object legobrick (Nov 21, things-test/20261121-p4obj): a chunky 2x4 toy brick with studs, bright colours, plain (no logo) (166 uses crate)

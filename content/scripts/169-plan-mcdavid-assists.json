@@ -68,7 +68,7 @@
       },
       "toon": [
         {
-          "place": "throne",
+          "place": "rink",
           "mood": "proud",
           "things": [
             "crown"
@@ -78,10 +78,10 @@
             "kind": "flip",
             "sub": "YEAR 2026"
           },
-          "view": "ms"
+          "view": "wide"
         },
         {
-          "place": "stage",
+          "place": "rink",
           "mood": "excited",
           "crowd": 120,
           "things": [
@@ -123,7 +123,7 @@
       },
       "toon": [
         {
-          "place": "stage",
+          "place": "rink",
           "mood": "calm",
           "things": [
             "coins"
@@ -133,7 +133,7 @@
             "kind": "white",
             "sub": "YOU GIVE AWAY"
           },
-          "view": "ms"
+          "view": "low"
         },
         {
           "place": "mansion",
@@ -188,13 +188,10 @@
       },
       "toon": [
         {
-          "place": "stage",
+          "place": "rink",
           "mood": "laugh",
           "action": "throw",
           "crowd": 300,
-          "things": [
-            "stadium"
-          ],
           "view": "wide"
         }
       ]
@@ -226,7 +223,7 @@
       },
       "toon": [
         {
-          "place": "stage",
+          "place": "rink",
           "mood": "scheme",
           "action": "throw",
           "crowd": 60,
@@ -236,7 +233,7 @@
           "view": "ms"
         },
         {
-          "place": "stage",
+          "place": "rink",
           "mood": "excited",
           "action": "cheer",
           "crowd": 200,
@@ -274,9 +271,9 @@
       },
       "toon": [
         {
-          "place": "stage",
+          "place": "rink",
           "mood": "sad",
-          "view": "ms"
+          "view": "ws"
         },
         {
           "place": "throne",

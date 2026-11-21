@@ -444,7 +444,7 @@ def ah_look(o: dict) -> dict:
 
 # ---- Nov 17 (Ninja review: a streamer on a soccer pitch, Drake / LeBron / his mom named but never shown, a clock on
 # "followers", an outro of repeats): who the Short is about, who a sentence names, and "no two shots look alike" ----
-AH_SPORT_SETS = ("court", "pitch", "diamond", "gridiron", "tennis", "golf", "pool", "ring", "track")
+AH_SPORT_SETS = ("court", "pitch", "diamond", "gridiron", "tennis", "golf", "pool", "rink", "ring", "track")
 # Nov 18: a baseball line stands on the baseball field (diamond), not a purple park
 AH_BASEBALL_RX = re.compile(r"\b(?:baseball|mlb|major leagues?|the majors|ballparks?|home runs?|homers?|grand slams?|pitchers?|fastballs?|curveballs?|strikeouts?|"
                             r"innings?|shortstops?|outfield\w*|dugouts?|batters?|world series|yankees|dodgers|mets|red sox|cubs|braves|astros|padres|phillies|"
@@ -493,8 +493,14 @@ AH_FACTORY_RX = re.compile(r"\b(?:factor(?:y|ies)|assembly lines?|conveyor belts
 AH_MOUNTAIN_RX = re.compile(r"\b(?:mountains?|(?:gold|coal|silver|copper|salt|diamond) mines?|the mines?|mine (?:shafts?|carts?|entrances?)|mining|(?<!bitcoin )(?<!crypto )(?<!coin )miners?|gold rush|gold veins?)\b", re.I)
 
 
+# Nov 21: ice hockey lines stand on the rink set
+AH_RINK_RX = re.compile(r"\b(?:hockey|nhl|rinks?|pucks?|stanley cups?|oilers|goalies?|slap ?shots?|on the ice|ice rinks?|power plays?|hat tricks?)\b", re.I)
+
+
 def ah_scene_set(txt: str) -> str | None:
-    """factory / mountain: the place a factory-floor or mine line stands in (None: neither)"""
+    """rink / factory / mountain: the place a factory-floor or mine line stands in (None: neither)"""
+    if AH_RINK_RX.search(txt):
+        return "rink"
     if AH_FACTORY_RX.search(txt):
         return "factory"
     if AH_MOUNTAIN_RX.search(txt):
@@ -633,7 +639,7 @@ def ah_context(plan: dict) -> dict:
     sub = str((script or {}).get("name_sub") or "").lower()
     gamer = bool(re.search(r"streamer|gamer|esports|twitch", sub)) or "gaming" in sets
     sportish = bool(re.search(r"player|sprinter|driver|boxer|fighter|racer|athlete|golfer|swimmer|skater|champion|quarterback|runner", sub))
-    athlete = bool(sets & {"court", "pitch", "field", "diamond", "gridiron", "tennis", "golf", "pool"}) or (plan.get("hero") or {}).get("kit") in ("bball", "soccer") or (sportish and not gamer)
+    athlete = bool(sets & {"court", "pitch", "field", "diamond", "gridiron", "tennis", "golf", "pool", "rink"}) or (plan.get("hero") or {}).get("kit") in ("bball", "soccer") or (sportish and not gamer)
     alltxt = " ".join(str(sc.get("text") or sc.get("line") or "") for sc in plan["scenes"])
     return {"script": script, "hero": ah_hero_tokens(script, plan), "gamer": gamer, "athlete": athlete,
             "tennis": bool(AH_TENNIS_STRONG_RX.search(alltxt)) or any(t in AH_TENNIS_NAMES for t in ah_hero_tokens(script, plan)), "soccer": bool(AH_SOCCER_RX.search(alltxt)) and not AH_GRID_STRONG_RX.search(alltxt),
@@ -780,7 +786,7 @@ def ah_spread(shots: list, ctx: dict) -> list:
                      or (st == "diamond" and AH_BASEBALL_RX.search(txt))   # a baseball line stays on the field
                      or (st in ("gym", "studio") and ah_room_set(txt) == st)
                      or (st in ("gridiron", "tennis", "golf", "pool") and ah_sport_set(txt, ctx) == st)
-                     or (st in ("factory", "mountain") and ah_scene_set(txt) == st)
+                     or (st in ("rink", "factory", "mountain") and ah_scene_set(txt) == st)
                      or (st == "store" and AH_STORE_RX.search(txt)) or (st == "farm" and AH_FARM_STRONG_RX.search(txt)))   # a football / tennis line stays on its field
         named = bool(re.search(AH_PLACE_WORDS.get(st, r"\b" + re.escape(st) + r"\b"), txt, re.I)) if st in AH_PLACE_WORDS else bool(re.search(r"\b" + re.escape(st) + r"\b", txt, re.I))
         if k in moved:
