@@ -3,7 +3,7 @@ import * as THREE from "three";
 import { toonMat, glowMat, metalMat, outline, canvasTex, seeded, box } from "./common";
 
 export type SetName = "throne" | "office" | "diner" | "lab" | "stall" | "field" | "ring" | "track" | "graveyard" | "boardroom" | "street" | "beach"
-  | "court" | "pitch" | "diamond" | "gridiron" | "tennis" | "golf" | "pool" | "gym" | "studio" | "farm" | "store" | "stage" | "space" | "garage" | "classroom" | "bathroom" | "mansion" | "showroom";
+  | "court" | "pitch" | "diamond" | "gridiron" | "tennis" | "golf" | "pool" | "gym" | "studio" | "farm" | "store" | "stage" | "space" | "garage" | "classroom" | "bathroom" | "mansion" | "showroom" | "factory" | "mountain";
 export type SetObj = { root: THREE.Group; lights: THREE.Light[]; fog?: THREE.Fog; bg: string; spots: Record<string, [number, number, number]> };
 
 type V3 = [number, number, number];
@@ -1968,7 +1968,126 @@ function showroom(): SetObj {
 }
 const gold2 = () => T("#e6a418", { emissive: "#6a3a00", emissiveIntensity: 0.4 });
 
-const BUILD: Record<SetName, () => SetObj> = { throne, office, diner, lab, stall, field, ring: ring_, track, graveyard, boardroom, street, beach, court, pitch, diamond, gridiron, tennis, golf, pool, gym, studio, farm, store, stage, space, garage, classroom, bathroom, mansion, showroom };
+// ================= FACTORY (a factory floor: conveyors with boxes, robot arms, crates, tall windows with a chimney outside) =================
+function factory(): SetObj {
+  const g = new THREE.Group();
+  const flr = canvasTex(256, 256, (c) => {
+    c.fillStyle = "#8b8f98"; c.fillRect(0, 0, 256, 256); const r = seeded(611);
+    for (let i = 0; i < 300; i++) { c.fillStyle = r() < 0.5 ? "#7d818a" : "#989ca5"; c.fillRect(r() * 256, r() * 256, 3 + r() * 6, 2 + r() * 4); }
+    c.strokeStyle = "#f2c230"; c.lineWidth = 8; c.strokeRect(4, 4, 248, 248);
+  });
+  plane(g, 40, 30, T("#ffffff", { map: rep(flr, 6, 4) }), 0, 0, -4);
+  // back wall with five tall windows; behind it: sky and a big striped chimney
+  const wallT = canvasTex(256, 256, (c) => { c.fillStyle = "#b9704c"; c.fillRect(0, 0, 256, 256); c.strokeStyle = "#8f4f34"; c.lineWidth = 3; for (let j = 0; j < 8; j++) { c.beginPath(); c.moveTo(0, j * 32); c.lineTo(256, j * 32); c.stroke(); for (let i = 0; i < 4; i++) { c.beginPath(); c.moveTo(i * 64 + (j % 2) * 32, j * 32); c.lineTo(i * 64 + (j % 2) * 32, j * 32 + 32); c.stroke(); } } });
+  const wm = T("#ffffff", { map: rep(wallT, 6, 1.4) });
+  const ZW = -9;
+  const sky = gradTex([[0, "#ffcf8a"], [0.5, "#ffa9a0"], [1, "#78b8ee"]], 8, 128);
+  vplane(g, 34, 14, basic(sky, 1, false), 0, 7, ZW - 5.5);
+  // chimney outside, seen through the middle windows
+  cy(g, 1.05, 1.6, 12, T("#c9593c"), 0.2, 6, ZW - 2.6, 0.02, 20);
+  for (const yy of [8.2, 10.0, 11.6]) cy(g, 1.05 + (12 - yy) * 0.045, 1.05 + (12 - yy) * 0.045, 0.55, T("#f4f7f0"), 0.2, yy, ZW - 2.6, 0.01, 20);
+  cy(g, 1.12, 1.05, 0.35, T("#2f3440"), 0.2, 12.1, ZW - 2.6, 0.01, 20);
+  for (const [dx, dy, r] of [[0.4, 13.0, 0.8], [1.2, 14.0, 1.05], [2.3, 14.9, 1.25]] as V3[]) { const pf = sp(g, r, T("#e9edf2"), dx, dy, ZW - 2.6, 0, 12); pf.castShadow = false; }
+  for (const [x, h] of [[-9, 4], [-6.5, 2.6], [8, 3.4], [10.5, 5]] as V2[]) bx(g, 1.8, h, 1.8, T("#6f7d90"), x, h / 2, ZW - 5, 0.01).castShadow = false;   // far buildings
+  // windows at x = -8, -4, 0, 4, 8 (3 m wide), sill 1.6, head 6.2
+  const WX = [-8, -4, 0, 4, 8];
+  bx(g, 40, 1.6, 0.4, wm, 0, 0.8, ZW).castShadow = false; bx(g, 40, 3.8, 0.4, wm, 0, 8.1, ZW).castShadow = false;
+  for (const [x, w] of [[-6, 1], [-2, 1], [2, 1], [6, 1], [-11.75, 4.5], [11.75, 4.5]] as V2[]) bx(g, w, 4.6, 0.4, wm, x, 3.9, ZW).castShadow = false;
+  const frameM = T("#2f3440");
+  for (const x of WX) {
+    bx(g, 3.2, 0.12, 0.2, frameM, x, 6.2, ZW + 0.1); bx(g, 3.2, 0.12, 0.2, frameM, x, 1.6, ZW + 0.1); bx(g, 0.08, 4.6, 0.12, frameM, x, 3.9, ZW + 0.1); bx(g, 3.2, 0.08, 0.12, frameM, x, 3.9, ZW + 0.1);
+  }
+  for (const sx of [-1, 1]) bx(g, 0.4, 10, 30, wm, sx * 14.2, 5, -4).castShadow = false;
+  bx(g, 29, 0.4, 30, T("#59606e"), 0, 10.2, -4).castShadow = false;
+  for (let i = 0; i < 6; i++) bx(g, 0.35, 0.4, 28, T("#f2c230"), -12.5 + i * 5, 9.8, -4, 0.01);
+  for (const x of [-9, 0, 9]) glow(g, 2.2, 0.1, 0.5, "#fff2c8", x, 9.55, -5, 1.6);
+  // conveyor belts running along x: one in the middle ground, one near the back
+  const beltT = canvasTex(128, 64, (c) => { c.fillStyle = "#3a3f4b"; c.fillRect(0, 0, 128, 64); c.fillStyle = "#555c6b"; for (let i = 0; i < 8; i++) c.fillRect(i * 16, 0, 5, 64); });
+  const belt = (z: number, len: number) => {
+    bx(g, len, 0.16, 1.5, T("#ffffff", { map: rep(beltT.clone(), len / 1.6, 1) }), 0, 0.86, z, 0.012);
+    for (const dz of [-0.78, 0.78]) bx(g, len, 0.2, 0.1, T("#f2c230"), 0, 0.95, z + dz, 0.01);
+    for (let i = 0; i <= len / 3; i++) { const x = -len / 2 + i * 3; bx(g, 0.2, 0.8, 1.3, T("#59606e"), x, 0.4, z, 0.01); }
+  };
+  belt(-3.6, 26); belt(-7, 26);
+  const cartonM = [T("#c99456"), T("#d6a468"), T("#b8844a")];
+  const carton = (x: number, z: number, i: number, s = 1) => { bx(g, 0.8 * s, 0.6 * s, 0.8 * s, cartonM[i % 3], x, 0.94 + 0.3 * s, z, 0.012); bx(g, 0.82 * s, 0.05, 0.14, T("#f4f7f0"), x, 0.94 + 0.62 * s, z); };
+  [-9.5, -6.5, -3.2, 3.5, 6, 9.2].forEach((x, i) => carton(x, -3.6, i, 0.9 + (i % 2) * 0.2)); [-8, -4.5, -1, 2, 5, 8.5].forEach((x, i) => carton(x, -7, i + 1, 1));
+  // robot arms bolted beside the belts (orange, 3 joints, claw)
+  const orange = T("#f08a1c"), dark = T("#2f3440");
+  const arm = (x: number, z: number, a1: number, a2: number) => {
+    const a = new THREE.Group(); a.position.set(x, 0, z); g.add(a);
+    cy(a, 0.55, 0.65, 0.3, dark, 0, 0.15, 0, 0.012); cy(a, 0.38, 0.45, 0.9, orange, 0, 0.75, 0, 0.015); sp(a, 0.34, orange, 0, 1.25, 0, 0.015, 14);
+    const u = new THREE.Group(); u.position.set(0, 1.25, 0); u.rotation.z = a1; a.add(u);
+    bx(u, 0.28, 1.6, 0.3, orange, 0, 0.8, 0, 0.015); sp(u, 0.26, dark, 0, 1.6, 0, 0.012, 12);
+    const l = new THREE.Group(); l.position.set(0, 1.6, 0); l.rotation.z = a2; u.add(l);
+    bx(l, 0.22, 1.3, 0.24, orange, 0, 0.65, 0, 0.015); bx(l, 0.5, 0.14, 0.34, dark, 0, 1.33, 0, 0.01);
+    for (const sx of [-1, 1]) bx(l, 0.08, 0.34, 0.1, dark, sx * 0.2, 1.5, 0, 0.008);
+    glowSp(a, 0.07, "#4dff7a", 0.3, 1.25, 0.2, 2.4);
+  };
+  arm(-4.8, -5.3, 0.5, -1.2); arm(2.8, -5.3, -0.4, 1.3); arm(-11, -5.3, 0.3, -1.0); arm(9.5, -5.3, -0.5, 1.1);
+  // crates and barrels
+  const crate = (x: number, y: number, z: number, w = 1.1, ry = 0) => { const c = bx(g, w, w, w, T("#b88a4e"), x, y + w / 2, z, 0.015); c.rotation.y = ry; bx(g, w + 0.02, 0.1, w + 0.02, T("#8c6430"), x, y + w * 0.5, z, 0).rotation.y = ry; };
+  crate(-10.5, 0, -1, 1.2, 0.2); crate(-10.4, 1.2, -1.1, 1.0, -0.1); crate(-9.1, 0, -0.5, 1.0, 0.4); crate(10, 0, -1.2, 1.3, -0.2); crate(10.2, 1.3, -1.2, 1.0, 0.15); crate(8.6, 0, -0.4, 0.9, 0.3);
+  for (const [x, z, c] of [[-12, -2.5, "#2a62b0"], [-12.8, -1.2, "#d6283a"], [12.4, -2.2, "#2a62b0"]] as [number, number, string][]) cy(g, 0.42, 0.42, 1.0, T(c), x, 0.5, z, 0.012, 14);
+  // hazard stripes on the floor, hanging lamps, wall sign
+  for (let i = 0; i < 14; i++) bx(g, 0.5, 0.02, 0.9, T(i % 2 ? "#f2c230" : "#1b1b22"), -6.5 + i * 0.5, 0.02, 4.2);
+  for (const x of [-7, 0, 7]) { cy(g, 0.02, 0.02, 1.3, dark, x, 9.4, -3, 0, 6); cone(g, 0.6, 0.45, T("#f2c230"), x, 8.6, -3, 0.01, 16).rotation.x = PI; glow(g, 0.5, 0.05, 0.5, "#fff2c8", x, 8.4, -3, 1.8); }
+  bx(g, 3.6, 0.9, 0.12, T("#f2c230"), -11.75, 6.6, ZW + 0.3, 0.012); bx(g, 3.2, 0.6, 0.06, T("#1b1b22"), -11.75, 6.6, ZW + 0.37);
+  const lights = mkLights(["#ffe6c4", "#8f7f78", 1.25], ["#fff0d0", 2.6, [-4, 14, 8]], [["#ffd89a", 20, [0, 7, -3], 20]], 14);
+  return { root: g, lights, fog: new THREE.Fog("#c8b4a8", 45, 120), bg: "#ffbf94", spots: { spot: [0, 0, 0], belt: [0, 1.2, -3.6], arm: [-4.8, 1.5, -5.3], crate: [10, 0.6, -1.2], chimney: [0.2, 6, ZW - 2.6], sign: [0, 3.9, ZW + 0.3] } };
+}
+
+// ================= MOUNTAIN (a rocky mountain, a timbered mine entrance, cart tracks with a cart, glowing gold veins) =================
+function mountain(): SetObj {
+  const g = new THREE.Group();
+  const gt = noiseTex("#6aa04a", ["#5c9140", "#79b058", "#8a8f56"], 220, 701, 8, 6, 5);
+  plane(g, 80, 60, T("#ffffff", { map: gt }), 0, 0, -10);
+  const dirtT = noiseTex("#a87c4e", ["#94683c", "#bd915e", "#7e5632"], 160, 702, 2, 4, 4);
+  plane(g, 5.5, 22, T("#ffffff", { map: dirtT }), 2.6, 0.012, -4);                          // dirt path out of the mine
+  const sky = gradTex([[0, "#8fd0ff"], [0.6, "#c4e7ff"], [1, "#fff0d0"]], 8, 128);
+  vplane(g, 160, 60, basic(sky, 1, false), 0, 22, -40);
+  const rockA = T("#8d8478"), rockB = T("#a39a8c"), rockC = T("#6f675d"), snow = T("#f4f8ff");
+  // main mountain face (stacked rock blocks) with the mine mouth cut at x = 2.6
+  const rk = (w: number, h: number, d: number, m: THREE.Material, x: number, y: number, z: number, ry = 0) => { const b = bx(g, w, h, d, m, x, y, z, 0.02); b.rotation.y = ry; return b; };
+  rk(9.5, 8, 5, rockA, -5.5, 4, -10.5, 0.05); rk(7.5, 8, 5, rockB, 10.5, 4, -10.5, -0.06); rk(4, 3.3, 5, rockA, 2.6, 7.2, -10.5); rk(2.8, 6.5, 4.4, rockC, 0.2, 3.2, -10.2); rk(2.8, 6.5, 4.4, rockC, 5.0, 3.2, -10.2);
+  rk(10, 6, 5, rockB, -4, 11, -12, 0.1); rk(9, 6, 5, rockA, 8, 11, -12, -0.1); rk(8, 5, 4.4, rockC, 2, 12.8, -12.2, 0.04);
+  rk(7, 5, 4, rockA, -3, 16.5, -13.5, 0.08); rk(6, 4.5, 4, rockB, 5, 16, -13.5, -0.08); rk(5, 4, 3.5, rockC, 0.5, 20.2, -14.5, 0.03);
+  for (const [x, y, z, r, h] of [[0.5, 24.4, -14.5, 3.0, 6], [-8, 21, -15, 4.2, 8], [11, 19.5, -15, 3.4, 7]] as [number, number, number, number, number][]) {
+    cone(g, r, h, rockB, x, y, z, 0.02, 6); cone(g, r * 0.5, h * 0.35, snow, x, y + h * 0.32, z + 0.05, 0, 6);
+  }
+  for (const [x, y, z, s] of [[-14, 3, -9, 1.7], [15, 2.5, -8.5, 1.5], [-10.5, 2, -6, 1.0], [11, 1.3, -6.5, 0.9], [-1.6, 0.5, -5.5, 0.5]] as V4[]) { const b = sp(g, s, rockA, x, y * 0.5 + 0.2, z, 0.02, 7); b.scale.y = 0.7; }
+  // the mine mouth: dark hole, timber frame, lantern, sign
+  bx(g, 3.0, 4.2, 0.2, T("#0b0a10"), 2.6, 2.1, -7.95);
+  const wood = T("#8a5a30"), woodD = T("#6a4220");
+  for (const sx of [-1, 1]) bx(g, 0.4, 4.4, 0.45, wood, 2.6 + sx * 1.7, 2.2, -7.7, 0.015);
+  bx(g, 4.2, 0.45, 0.5, wood, 2.6, 4.45, -7.7, 0.015); bx(g, 3.6, 0.2, 0.3, woodD, 2.6, 3.7, -7.75, 0.01);
+  for (const sx of [-1, 1]) { const br = bx(g, 0.18, 1.0, 0.2, woodD, 2.6 + sx * 1.3, 4.0, -7.72, 0.01); br.rotation.z = sx * 0.7; }
+  cy(g, 0.02, 0.02, 0.5, T("#2f3440"), 3.7, 4.0, -7.4, 0, 6); glowSp(g, 0.2, "#ffc54a", 3.7, 3.65, -7.4, 2.6);
+  bx(g, 2.6, 0.7, 0.1, T("#f2c230"), 2.6, 5.15, -7.6, 0.012); bx(g, 2.3, 0.45, 0.05, T("#3a2410"), 2.6, 5.15, -7.54);
+  // tracks out of the mine: two rails with ties, running toward the camera
+  const rail = metalMat("#aeb6c4", 0.3);
+  for (let i = 0; i < 17; i++) bx(g, 1.5, 0.08, 0.2, woodD, 2.6, 0.06, -7.6 + i * 0.7, 0.008);
+  for (const dx of [-0.55, 0.55]) bx(g, 0.07, 0.1, 12.2, rail, 2.6 + dx, 0.14, -1.6, 0.006);
+  // mine cart on the tracks: rust body, rim, wheels, gold chunks heaped on top
+  const cart = new THREE.Group(); cart.position.set(2.6, 0, -3.2); g.add(cart);
+  bx(cart, 1.3, 0.75, 1.1, T("#7b4a2c"), 0, 0.72, 0, 0.02); bx(cart, 1.4, 0.1, 1.2, T("#4a4f5c"), 0, 1.1, 0, 0.01); bx(cart, 1.36, 0.08, 0.1, T("#4a4f5c"), 0, 0.62, 0.56);
+  for (const sx of [-1, 1]) for (const sz of [-1, 1]) { const w = cy(cart, 0.2, 0.2, 0.1, T("#2f3440"), sx * 0.55, 0.22, sz * 0.5, 0.01, 14); w.rotation.z = PI / 2; }
+  for (const [x, y, z, r] of [[-0.3, 1.2, 0.0, 0.3], [0.2, 1.3, 0.1, 0.34], [0.0, 1.15, -0.25, 0.27], [0.35, 1.18, -0.2, 0.25], [-0.25, 1.2, 0.3, 0.24]] as V4[]) { const n = sp(cart, r, gold2(), x, y, z, 0.012, 7); n.scale.y = 0.8; }
+  // glowing gold veins across the rock faces
+  const vein = (x: number, y: number, z: number, w: number, rz: number) => { const v = glow(g, w, 0.16, 0.1, "#ffcf3a", x, y, z, 2.6); v.rotation.z = rz; };
+  vein(-6.5, 4.0, -7.9, 3.2, 0.5); vein(-4.6, 5.0, -7.9, 2.0, -0.4); vein(-8.4, 2.4, -7.9, 1.8, 0.2); vein(8.2, 4.4, -7.9, 3.0, -0.5); vein(10.2, 2.6, -7.9, 2.0, 0.6); vein(2.6, 6.9, -7.95, 2.2, 0.1); vein(-5, 9.6, -8.9, 2.6, 0.45); vein(9, 9.2, -8.9, 2.6, -0.35);
+  for (const [x, y, z] of [[-6.5, 4.0, -7.8], [8.2, 4.4, -7.8], [-8.4, 2.4, -7.8], [10.2, 2.6, -7.8], [-3.6, 5.6, -7.8]] as V3[]) glowSp(g, 0.2, "#ffe27a", x, y, z, 2.8);
+  // loose nuggets, pickaxe leaning on the rock, a few pines
+  for (const [x, z] of [[-1.2, -2.2], [0.8, -4.6], [5.4, -5.2], [4.6, -2.2]] as V2[]) { const n = sp(g, 0.17, gold2(), x, 0.12, z, 0.01, 7); n.scale.y = 0.7; }
+  const pick = new THREE.Group(); pick.position.set(5.6, 0, -6.3); pick.rotation.z = 0.35; g.add(pick);
+  cy(pick, 0.04, 0.04, 1.6, wood, 0, 0.8, 0, 0.008, 6); bx(pick, 0.9, 0.08, 0.08, T("#aeb6c4"), 0, 1.55, 0, 0.008);
+  const pine = (x: number, z: number, s: number) => { cy(g, 0.14 * s, 0.2 * s, 1.2 * s, T("#6a4a2a"), x, 0.6 * s, z, 0.01, 6); for (let i = 0; i < 3; i++) cone(g, (1.1 - i * 0.25) * s, 1.3 * s, T(i % 2 ? "#2f8a4a" : "#277a3f"), x, (1.6 + i * 0.8) * s, z, 0.012, 7); };
+  pine(-9, -4, 1.3); pine(-12, -1, 1.1); pine(10, -3.5, 1.2); pine(13.5, -1, 1.4); pine(-5.6, -6, 1.0);
+  const lights = mkLights(["#dff0ff", "#7a9a5a", 1.35], ["#fff6e0", 2.9, [-6, 14, 10]], [["#ffcf3a", 16, [2.6, 2.6, -6.2], 10]], 16);
+  return { root: g, lights, fog: new THREE.Fog("#cfe8ff", 50, 140), bg: "#8fd0ff", spots: { spot: [0, 0, 0], mine: [2.6, 2.2, -7.9], cart: [2.6, 1.0, -3.2], vein: [-6.5, 4, -7.9], tracks: [2.6, 0.1, -2], sign: [2.6, 5.15, -7.5] } };
+}
+
+const BUILD: Record<SetName, () => SetObj> = { throne, office, diner, lab, stall, field, ring: ring_, track, graveyard, boardroom, street, beach, court, pitch, diamond, gridiron, tennis, golf, pool, gym, studio, farm, store, stage, space, garage, classroom, bathroom, mansion, showroom, factory, mountain };
 const CACHE = new Map<SetName, SetObj>();
 export const makeSet = (name: SetName): SetObj => {
   let s = CACHE.get(name);

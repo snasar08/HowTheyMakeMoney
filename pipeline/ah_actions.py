@@ -275,8 +275,8 @@ ACT_SET = {**{k: (("court",), "court") for k in BASKET_ACTS},
            "gaming": (("office", "lab"), "office"), "streaming": (("office",), "office"),
            "sing_stage": (("stage",), "stage"), "guitar": (("stage",), "stage"),
            "film_camera": (("street", "stage"), "street"), "rocket_launch": (("space",), "space"),
-           "build_tools": (("garage",), "garage"), "code_screens": (("lab", "office"), "lab"),
-           "robot_build": (("lab",), "lab"), "post_video": (("office", "street"), "office"),
+           "build_tools": (("garage", "factory"), "garage"), "code_screens": (("lab", "office"), "lab"),
+           "robot_build": (("lab", "factory"), "lab"), "post_video": (("office", "street"), "office"),
            **{k: (_INDOOR, "diner") for k in FOOD_ACTS}}   # any indoor set; a generic place (street, bridge ...) becomes the diner
 # camera view: wide for sports, driving, charts, stock moves, rockets; ms for everything else
 ACT_WIDE = set(SPORT_ACTS) | set(SPORT2_ACTS) | {"drive_car", "present_chart", "stock_up", "stock_crash", "rocket_launch"}
