@@ -1,0 +1,29 @@
+{
+  "https://en.wikipedia.org/wiki/Colonel_Sanders": {
+    "file": "pages/bee509fef5b4.txt",
+    "fetched_at": "2026-11-21T23:35:24.925421+00:00",
+    "ok": true,
+    "chars": 51801,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Colonel_Sanders",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/History_of_KFC": {
+    "file": "pages/0bb66883e645.txt",
+    "fetched_at": "2026-11-21T23:35:25.328367+00:00",
+    "ok": true,
+    "chars": 56557,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/History_of_KFC",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://www.biography.com/business-figure/colonel-harland-sanders": {
+    "file": "pages/977702772e91.txt",
+    "fetched_at": "2026-11-21T23:35:25.720588+00:00",
+    "ok": true,
+    "chars": 5517,
+    "status": 200,
+    "final_url": "https://www.biography.com/business-leaders/colonel-harland-sanders",
+    "content_type": "text/html; charset=utf-8"
+  }
+}
