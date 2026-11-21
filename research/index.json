@@ -1,0 +1,26 @@
+{
+  "https://en.wikipedia.org/wiki/Nikola_Joki\u0107": {
+    "file": "pages/dedfb61fa693.txt",
+    "fetched_at": "2026-11-21T18:38:30.377799+00:00",
+    "ok": false,
+    "error": "UnicodeEncodeError('ascii', 'GET /wiki/Nikola_Joki\u0107 HTTP/1.1', 21, 22, 'ordinal not in range(128)')"
+  },
+  "https://en.wikipedia.org/wiki/2014_NBA_draft": {
+    "file": "pages/acd5df176fdb.txt",
+    "fetched_at": "2026-11-21T18:38:30.685657+00:00",
+    "ok": true,
+    "chars": 67942,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/2014_NBA_draft",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/List_of_largest_sports_contracts": {
+    "file": "pages/26e4163f9b99.txt",
+    "fetched_at": "2026-11-21T18:38:31.223118+00:00",
+    "ok": true,
+    "chars": 39840,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/List_of_largest_sports_contracts",
+    "content_type": "text/html; charset=UTF-8"
+  }
+}
