@@ -484,6 +484,20 @@ AH_FARM_RX = re.compile(AH_FARM_STRONG_RX.pattern + r"|\btractors?\b", re.I)
 AH_STORE_RX = re.compile(r"\b(?:grocer(?:y|ies)|supermarkets?|store clerks?|baggers?|cashiers?|check-?outs?|checkout counters?)\b", re.I)
 
 
+# Nov 21: factory floor and mountain / mine sets (164 Nvidia shovels). "mine" alone is a pronoun, so only mine phrases count
+AH_FACTORY_RX = re.compile(r"\b(?:factor(?:y|ies)|assembly lines?|conveyor belts?|production lines?|robot arms?|manufactur\w+)\b", re.I)
+AH_MOUNTAIN_RX = re.compile(r"\b(?:mountains?|(?:gold|coal|silver|copper|salt|diamond) mines?|the mines?|mine (?:shafts?|carts?|entrances?)|mining|(?<!bitcoin )(?<!crypto )(?<!coin )miners?|gold rush|gold veins?)\b", re.I)
+
+
+def ah_scene_set(txt: str) -> str | None:
+    """factory / mountain: the place a factory-floor or mine line stands in (None: neither)"""
+    if AH_FACTORY_RX.search(txt):
+        return "factory"
+    if AH_MOUNTAIN_RX.search(txt):
+        return "mountain"
+    return None
+
+
 def ah_place_set(txt: str) -> str | None:
     """the farm / grocery store set a line's words name (None: neither)"""
     if AH_STORE_RX.search(txt):
@@ -762,6 +776,7 @@ def ah_spread(shots: list, ctx: dict) -> list:
                      or (st == "diamond" and AH_BASEBALL_RX.search(txt))   # a baseball line stays on the field
                      or (st in ("gym", "studio") and ah_room_set(txt) == st)
                      or (st in ("gridiron", "tennis", "golf", "pool") and ah_sport_set(txt, ctx) == st)
+                     or (st in ("factory", "mountain") and ah_scene_set(txt) == st)
                      or (st == "store" and AH_STORE_RX.search(txt)) or (st == "farm" and AH_FARM_STRONG_RX.search(txt)))   # a football / tennis line stays on its field
         named = bool(re.search(AH_PLACE_WORDS.get(st, r"\b" + re.escape(st) + r"\b"), txt, re.I)) if st in AH_PLACE_WORDS else bool(re.search(r"\b" + re.escape(st) + r"\b", txt, re.I))
         if k in moved:
@@ -818,6 +833,8 @@ def ah_shots(plan: dict) -> list:
             aset = "tennis"                                         # a tennis star's "court" is the tennis court, never the basketball arena
         elif ah_sport_set(sc.get("text") or sc.get("line") or "", ctx) and aset not in ("space", "stage", "throne") and place not in ("space", "stage", "throne") and not outro:
             aset = ah_sport_set(sc.get("text") or sc.get("line") or "", ctx)   # Nov 18: American football -> gridiron, tennis -> tennis court
+        elif ah_scene_set(sc.get("text") or sc.get("line") or "") and aset not in ("space", "stage", "throne") and place not in ("space", "stage", "throne") and not outro:
+            aset = ah_scene_set(sc.get("text") or sc.get("line") or "")   # Nov 21: factory floor / mountain mine lines stand there
         elif ah_place_set(sc.get("text") or sc.get("line") or "") and aset not in ("space", "stage", "throne") and place not in ("space", "stage", "throne") and not outro:
             aset = ah_place_set(sc.get("text") or sc.get("line") or "")   # Nov 18: farm / grocery store lines stand there
         elif ah_room_set(sc.get("text") or sc.get("line") or "") and aset not in ("space", "throne") and place not in ("space", "throne") and not outro:
@@ -887,6 +904,8 @@ def ah_shots(plan: dict) -> list:
             b = sc["brand"]; cards.append({"text": b["name"].upper(), "kind": "sign", "bg": b.get("bg"), "fg": b.get("fg"), "at": [0.0, top + 0.5, -0.7], "w": 1.0})
         if food_line and not outro and not act and not any(str(t).lower() in ("burger", "snack", "pizza") for t in thing_names) and re.search(r"burger|restaurant|five guys|fast[- ]?food|chain", line_txt, re.I):
             thing_names = ["burger"] + thing_names                  # the burger itself is on screen when the line is about burgers / a burger chain
+        if aset == "factory":                       # Nov 21: the factory floor is the factory; no tiny factory model on it
+            thing_names = [t for t in thing_names if str(t) not in ("factory", "plant")]
         if aset == "pool":                          # Nov 21: the pool has its own tennis balls
             thing_names = [t for t in thing_names if str(t) not in ("ball", "basketball", "soccerball", "football")]
         if aset == "golf":                          # Nov 21: a golf ball is the set's own; drop generic balls

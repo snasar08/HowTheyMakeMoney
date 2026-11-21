@@ -78,7 +78,7 @@
           "view": "wide"
         },
         {
-          "place": "field",
+          "place": "mountain",
           "mood": "scheme",
           "things": [
             "shovel"
@@ -169,10 +169,10 @@
       },
       "toon": [
         {
-          "place": "lab",
+          "place": "factory",
           "mood": "excited",
           "things": [
-            "factory"
+            "shovel"
           ],
           "view": "wide"
         },
