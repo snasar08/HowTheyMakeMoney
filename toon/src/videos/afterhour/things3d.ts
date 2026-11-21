@@ -492,10 +492,10 @@ const B: Record<ThingName, Builder> = {
     cy(g, 0.022, 0.016, 0.014, "#e0a24a", 0, 0.074, 0, undefined, 14);
     const b = new THREE.Group(); b.position.y = y0; g.add(b);
     sp(b, R, col, 0, 0, 0, undefined, 28);
-    const N = 70, ga = PI * (3 - Math.sqrt(5));
+    const N = 46, ga = PI * (3 - Math.sqrt(5));
     for (let i = 0; i < N; i++) { const yy = 1 - (2 * (i + 0.5)) / N, rr = Math.sqrt(1 - yy * yy), th = i * ga;
       const x = Math.cos(th) * rr, z = Math.sin(th) * rr; if (z < -0.35) continue;
-      sp(b, 0.0075, "#c9d0dc", x * R * 0.995, yy * R * 0.995, z * R * 0.995, [1, 1, 0.5], 6).userData.noline = 1; }
+      sp(b, 0.0062, "#dfe4ee", x * R * 0.995, yy * R * 0.995, z * R * 0.995, [1, 1, 0.5], 6).userData.noline = 1; }
     return { g, tick: (t) => { b.position.y = y0 + Math.sin(t * 2.2) * 0.004; b.rotation.y = Math.sin(t * 1.3) * 0.25; } };
   },
   // Nov 21: a driver standing upright: steel shaft, black grip, chunky head
