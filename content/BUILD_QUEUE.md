@@ -4,13 +4,13 @@ Objects and sets a script needs that the 3D library does not have yet (content/R
 One line each: `- [ ] set|object NAME: what it must show (script ids that need it)`. Routines build these FIRST; tick and move to Done when merged.
 
 ## To build
-- [ ] act fix qb_throw: the wind-up ball still covers the QB face (things-test/20261121-p2acts); keep it clear of the head, re-test, then approve (137)
 - [x] set gridiron + tennis (checked built in sets.ts Nov 21)
 
 - [ ] object horse: a chunky cel-shaded racehorse (brown, mane, saddle), for horse-racing lines (147 farm scene: swap into its `things`)
 - [ ] object baseball (white ball, red stitches) + "throw/threw/fastball" on a baseball line must not add a basketball (149)
 
 ## Done
+- [x] act qb_throw fixed (ball clear of the face, panel after the catch) and approved, things-test/20261121-p2qb, Nov 21 part 2
 - [x] act tennis_serve fixed (contact frame + ball over the net) and approved, things-test/20261121-p2acts, Nov 21 part 2
 - [x] acts race_car + touchdown reviewed and approved (things-test/20261121-acts), Nov 21
 - [x] set golf (fairway, green + flag, bunkers, tee box, cart) + golf_swing act approved, tested on things-test/20261121-golf, Nov 21

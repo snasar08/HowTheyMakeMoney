@@ -188,11 +188,11 @@ const qb_throw: ActDef = { pose: "stand", view: "act", build(c: ActCtx): ActRun 
   const SY = shY(hero), HY = hero.headY;
   yardLines(root, H[0] + 1.4, H[2] - 11, H[2] + 4, 1.6, 12);
   goalPost(root, H[0] + 1.4, H[2] - 9);
-  const fb = football(1.7), sh = blob(root); root.add(fb.g);
+  const fb = football(1.45), sh = blob(root); root.add(fb.g);
   const trl = trail(root, 8, 0.16, "#ffffff");
   const rcv = makeChar(JERSEY("#d8342c", "88", "#fafafa")); root.add(rcv.root);
-  const Q0 = [H[0] + 1.55, H[2] + 0.35], Q1 = [H[0] + 1.95, H[2] + 0.05];   // Nov 21: a step left of the sideline down-marker so it never hides the arm
-  const RS = [H[0] - 1.15, H[2] - 3.2], RC = [H[0] + 0.3, H[2] - 0.9], TR = 0.96, TC = 1.7;
+  const Q0 = [H[0] + 1.7, H[2] + 0.35], Q1 = [H[0] + 2.0, H[2] + 0.05];   // Nov 21: a step left of the sideline down-marker so it never hides the arm
+  const RS = [H[0] - 0.7, H[2] - 3.2], RC = [H[0] + 0.6, H[2] - 0.9], TR = 0.96, TC = 1.7;
   const pop = popText(root, "COMPLETE!", [RC[0] + 0.8, H[1] + 3.3, RC[1] + 0.8], 1.4);   // Nov 21: top of the frame, between the two players (above both heads), only after the catch
   const qbPose = (t: number): ActPose => (t < 0.52 ? { pose: "walk", t: -t * 0.95 } : { pose: "stand", t });
   const rcvAt = (t: number) => {
@@ -215,7 +215,7 @@ const qb_throw: ActDef = { pose: "stand", view: "act", build(c: ActCtx): ActRun 
     L.kR.rotation.x = mix(r0[2], L.kR.rotation.x, w); L.kL.rotation.x = mix(r0[3], L.kL.rotation.x, w);
     const a = kl(t, [[0, Q0[0], Q0[1]], [0.55, Q1[0], Q1[1]]]);
     plant(hero, a[0], a[1]);
-    const Bq = kf(t, [[0, 0, SY - 0.32, 0.42], [0.5, 0, SY - 0.32, 0.42], [0.64, 0.6, SY + 0.25, 0.0], [0.78, 0.45, HY + 0.1, -0.3], [TR, 0.4, HY + 0.6, 0.2]]);
+    const Bq = kf(t, [[0, 0, SY - 0.32, 0.42], [0.5, 0, SY - 0.32, 0.42], [0.64, 0.5, SY - 0.1, -0.1], [0.78, 0.55, SY + 0.15, -0.35], [TR, 0.4, HY + 0.6, 0.2]]);
     const follow = kf(t, [[TR, 0.32, HY + 0.5, 0.55], [1.2, 0.0, SY - 0.2, 0.62], [1.55, -0.12, SY - 0.5, 0.4]]);
     const held = t < TR, rp = held ? [Bq[0] + 0.12, Bq[1] - 0.02, Bq[2] - 0.02] : follow;
     armRig(hero, "r", new Vec(rp[0], rp[1], rp[2]), held && t > 0.5 ? [1.2, 0.3, -0.8] : [1.1, -0.5, -0.4]);
@@ -242,7 +242,7 @@ const qb_throw: ActDef = { pose: "stand", view: "act", build(c: ActCtx): ActRun 
     qb(t);
     let axis = new Vec();
     if (t < TR) {
-      const Bq = kf(t, [[0, 0, SY - 0.32, 0.42], [0.5, 0, SY - 0.32, 0.42], [0.64, 0.6, SY + 0.25, 0.0], [0.78, 0.45, HY + 0.1, -0.3], [TR, 0.4, HY + 0.6, 0.2]]);
+      const Bq = kf(t, [[0, 0, SY - 0.32, 0.42], [0.5, 0, SY - 0.32, 0.42], [0.64, 0.5, SY - 0.1, -0.1], [0.78, 0.55, SY + 0.15, -0.35], [TR, 0.4, HY + 0.6, 0.2]]);
       bp.copy(RW(hero, Bq[0], Bq[1], Bq[2]));
       const fw = RW(hero, 0, 0.2, 1).sub(RW(hero, 0, 0, 0)).normalize(), tg = Pcatch.clone().sub(bp).normalize();
       axis.copy(fw).lerp(tg, seg(t, 0.45, 0.85)).normalize();
