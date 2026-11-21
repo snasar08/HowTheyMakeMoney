@@ -1,0 +1,35 @@
+{
+  "https://en.wikipedia.org/wiki/Grand_Theft_Auto_VI": {
+    "file": "pages/e02dca2e6f61.txt",
+    "fetched_at": "2026-11-21T16:12:15.608004+00:00",
+    "ok": true,
+    "chars": 143429,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Grand_Theft_Auto_VI",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Take-Two_Interactive": {
+    "file": "pages/15f878c0ea29.txt",
+    "fetched_at": "2026-11-21T16:12:16.183861+00:00",
+    "ok": true,
+    "chars": 99641,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Take-Two_Interactive",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Rockstar_Games": {
+    "file": "pages/d5a4e4b57a9e.txt",
+    "fetched_at": "2026-11-21T16:12:16.700260+00:00",
+    "ok": true,
+    "chars": 38984,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Rockstar_Games",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://tech-insider.org/gta-6-fall-2026-game-releases/": {
+    "file": "pages/aad65b365d26.txt",
+    "fetched_at": "2026-11-21T16:12:17.142781+00:00",
+    "ok": false,
+    "error": "HTTP 403"
+  }
+}
