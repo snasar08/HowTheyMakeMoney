@@ -1,0 +1,29 @@
+{
+  "https://en.wikipedia.org/wiki/Paul_Skenes": {
+    "file": "pages/68ea2c2e9b03.txt",
+    "fetched_at": "2026-11-21T18:41:20.774148+00:00",
+    "ok": true,
+    "chars": 42098,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Paul_Skenes",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/2025_Major_League_Baseball_season": {
+    "file": "pages/e0de6e5e2806.txt",
+    "fetched_at": "2026-11-21T18:41:21.523815+00:00",
+    "ok": true,
+    "chars": 147784,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/2025_Major_League_Baseball_season",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/List_of_Major_League_Baseball_annual_ERA_leaders": {
+    "file": "pages/d6b587638320.txt",
+    "fetched_at": "2026-11-21T18:41:22.515562+00:00",
+    "ok": true,
+    "chars": 93144,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/List_of_Major_League_Baseball_annual_ERA_leaders",
+    "content_type": "text/html; charset=UTF-8"
+  }
+}
