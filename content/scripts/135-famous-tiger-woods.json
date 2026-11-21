@@ -7,7 +7,7 @@
   "hook_style": "number",
   "title_style": "number",
   "theme": "bold_bright",
-  "status": "draft",
+  "status": "ready",
   "score": 90,
   "title": "Tiger Woods: $40 Million at 20, Then $1 Billion",
   "name_card": "Tiger Woods",
@@ -88,7 +88,7 @@
       ]
     },
     {
-      "narration": "As a toddler, he putts against Bob Hope.",
+      "narration": "At age two, he is on TV playing against Bob Hope.",
       "visual": {
         "type": "lowpoly",
         "set": "field",
@@ -155,9 +155,10 @@
       },
       "toon": [
         {
-          "place": "field",
+          "place": "golf",
           "mood": "excited",
           "things": [
+            "golfclub",
             "trophy"
           ],
           "card": {
@@ -322,6 +323,5 @@
       "url": "https://www.nbcwashington.com/news/sports/tiger-woods-joins-michael-jordan-lebron-james-as-third-athlete-with-net-worth-over-1-billion/"
     }
   ],
-  "look": "afterhour",
-  "draft_note": "Held by part 1 (Nov 21) until golf is built: set golf course, objects golfball + golfclub, golf_swing act reviewed into approved.json (content/BUILD_QUEUE.md). Today the putt/swing lines draw a basketball."
+  "look": "afterhour"
 }
