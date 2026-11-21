@@ -1,0 +1,44 @@
+{
+  "https://en.wikipedia.org/wiki/Jeff_Bezos": {
+    "file": "pages/47bacba3cb01.txt",
+    "fetched_at": "2026-11-21T23:35:57.770257+00:00",
+    "ok": true,
+    "chars": 137631,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Jeff_Bezos",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://fortune.com/2018/07/31/jeff-bezos-family-investment-amazon/": {
+    "file": "pages/e4a81b89a31a.txt",
+    "fetched_at": "2026-11-21T23:35:58.378027+00:00",
+    "ok": true,
+    "chars": 7845,
+    "status": 200,
+    "final_url": "https://fortune.com/2018/07/31/jeff-bezos-family-investment-amazon/",
+    "content_type": "text/html; charset=utf-8"
+  },
+  "https://www.aol.com/article/finance/2018/07/31/jeff-bezos-parents-invested-dollar245573-in-amazon-in-1995-now-they-could-be-worth-dollar30-billion/23493344": {
+    "file": "pages/7fbb55ea352a.txt",
+    "fetched_at": "2026-11-21T23:35:58.825775+00:00",
+    "ok": false,
+    "error": "HTTP 404"
+  },
+  "https://www.foxnews.com/tech/jeff-bezos-parents-invested-245g-could-be-mindbogglingly-rich": {
+    "file": "pages/6ecab7cb89cd.txt",
+    "fetched_at": "2026-11-21T23:35:59.475301+00:00",
+    "ok": true,
+    "chars": 12776,
+    "status": 200,
+    "final_url": "https://www.foxnews.com/tech/jeff-bezos-parents-invested-245g-could-be-mindbogglingly-rich",
+    "content_type": "text/html; charset=utf-8"
+  },
+  "https://en.wikipedia.org/wiki/History_of_Amazon": {
+    "file": "pages/ef6cffd9716a.txt",
+    "fetched_at": "2026-11-21T23:35:59.939233+00:00",
+    "ok": true,
+    "chars": 54018,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/History_of_Amazon",
+    "content_type": "text/html; charset=UTF-8"
+  }
+}
