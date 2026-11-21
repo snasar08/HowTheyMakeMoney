@@ -4,7 +4,7 @@ import { toonMat, metalMat, glowMat, canvasTex, seeded } from "./common";
 import { hasModel, makeModelGroup, MODEL_SIZE } from "./models";
 import { drawCard } from "./cards";
 
-export type ThingName = "shoe" | "springshoe" | "chip" | "gpu" | "cash" | "cashstack" | "coins" | "goldbar" | "trophy" | "medal" | "crown" | "ring" | "car" | "sportscar" | "bus" | "truck" | "rocket" | "phone" | "laptop" | "tv" | "monitor" | "clock" | "books" | "letter" | "newspaper" | "briefcase" | "shovel" | "pickaxe" | "box" | "crate" | "basketball" | "football" | "soccerball" | "hoop" | "mic" | "headset" | "controller" | "burger" | "pizza" | "coffee" | "plant" | "robot" | "drone" | "satellite" | "globe" | "house" | "factory" | "stadium" | "plane" | "yacht" | "chart" | "arrowup" | "arrowdown" | "lightbulb" | "lock" | "key" | "heart" | "bomb" | "fire" | "camera" | "chatbot" | "glasses" | "dumbbell" | "hanger" | "dome";
+export type ThingName = "shoe" | "springshoe" | "chip" | "gpu" | "cash" | "cashstack" | "coins" | "goldbar" | "trophy" | "medal" | "crown" | "ring" | "car" | "sportscar" | "bus" | "truck" | "rocket" | "phone" | "laptop" | "tv" | "monitor" | "clock" | "books" | "letter" | "newspaper" | "briefcase" | "shovel" | "pickaxe" | "box" | "crate" | "basketball" | "football" | "soccerball" | "hoop" | "mic" | "headset" | "controller" | "burger" | "pizza" | "coffee" | "plant" | "robot" | "drone" | "satellite" | "globe" | "house" | "factory" | "stadium" | "plane" | "yacht" | "chart" | "arrowup" | "arrowdown" | "lightbulb" | "lock" | "key" | "heart" | "bomb" | "fire" | "camera" | "chatbot" | "glasses" | "dumbbell" | "hanger" | "dome" | "console" | "golfball" | "golfclub";
 export type Thing = { root: THREE.Group; size: number; tick?(t: number): void };
 
 type M = string | THREE.Material;
@@ -467,6 +467,47 @@ const B: Record<ThingName, Builder> = {
     for (let i = 0; i < 8; i++) to(g, 1.005, 0.012, "#5d6675", 0, 0.3, 0, [0, (i * PI) / 8, 0], PI);
     for (let i = 0; i < 10; i++) { const a = (i / 10) * PI * 2; bx(g, 0.14, 0.12, 0.02, glowMat("#fff6c0", 1.2), Math.sin(a) * 1.065, 0.16, Math.cos(a) * 1.065, [0, a, 0]); }
     return { g };
+  },
+  // Nov 21: a home game console (neutral grey/white box, disc slot, glowing light, vents) + one plain pad in front. No real console shape or logo.
+  console: (c) => {
+    const g = new THREE.Group(); const col = c ?? "#e6e9ef"; const dk = "#3a4050";
+    rbx(g, 0.34, 0.075, 0.22, 0.02, col, -0.03, 0.075, -0.02);
+    bx(g, 0.35, 0.02, 0.23, "#b9c0cc", -0.03, 0.01, -0.02);
+    bx(g, 0.2, 0.008, 0.012, "#14161d", -0.03, 0.095, 0.094);                   // disc slot
+    for (let i = 0; i < 4; i++) bx(g, 0.2, 0.004, 0.012, dk, -0.03, 0.118, -0.08 + i * 0.025);   // vents on top
+    cy(g, 0.012, 0.012, 0.01, "#9aa3b5", -0.15, 0.1, 0.1, [PI / 2, 0, 0], 14);  // power button
+    const led = bx(g, 0.05, 0.008, 0.008, glowMat("#38bdf8", 2.2), 0.07, 0.07, 0.1);
+    // the pad: light body, darker grips, two sticks, four coloured buttons, lying flat in front
+    const o = new THREE.Group(); o.position.set(0.12, 0, 0.2); o.rotation.y = -0.25; g.add(o);
+    sp(o, 0.05, "#f2f4f8", 0, 0.03, 0, [1.5, 0.45, 0.85], 20);
+    for (const s of [-1, 1]) sp(o, 0.036, "#9aa3b5", s * 0.065, 0.026, 0.022, [0.75, 0.6, 1.5], 14);
+    for (const s of [-1, 1]) cy(o, 0.012, 0.012, 0.012, dk, s * 0.03, 0.058, 0.014, undefined, 12);
+    const bc = ["#22c55e", "#ef4444", "#3b82f6", "#facc15"]; [[0, 0.016], [0.016, 0], [-0.016, 0], [0, -0.016]].forEach((q, i) => cy(o, 0.008, 0.008, 0.01, bc[i], 0.055 + q[0], 0.058, -0.012 + q[1], undefined, 12));
+    return { g, tick: (t) => { (led.material as THREE.MeshBasicMaterial).color.set("#38bdf8").multiplyScalar(1.4 + 0.9 * Math.sin(t * 3)); } };
+  },
+  // Nov 21: a white dimpled golf ball on a wooden tee
+  golfball: (c) => {
+    const g = new THREE.Group(); const col = c ?? "#fbfbfd"; const R = 0.05, y0 = 0.11;
+    cone(g, 0.012, 0.07, "#e0a24a", 0, 0.035, 0, [PI, 0, 0], 12);
+    cy(g, 0.022, 0.016, 0.014, "#e0a24a", 0, 0.074, 0, undefined, 14);
+    const b = new THREE.Group(); b.position.y = y0; g.add(b);
+    sp(b, R, col, 0, 0, 0, undefined, 28);
+    const N = 70, ga = PI * (3 - Math.sqrt(5));
+    for (let i = 0; i < N; i++) { const yy = 1 - (2 * (i + 0.5)) / N, rr = Math.sqrt(1 - yy * yy), th = i * ga;
+      const x = Math.cos(th) * rr, z = Math.sin(th) * rr; if (z < -0.35) continue;
+      sp(b, 0.0075, "#c9d0dc", x * R * 0.995, yy * R * 0.995, z * R * 0.995, [1, 1, 0.5], 6).userData.noline = 1; }
+    return { g, tick: (t) => { b.position.y = y0 + Math.sin(t * 2.2) * 0.004; b.rotation.y = Math.sin(t * 1.3) * 0.25; } };
+  },
+  // Nov 21: a driver standing upright: steel shaft, black grip, chunky head
+  golfclub: (c) => {
+    const g = new THREE.Group(); const o = new THREE.Group(); o.rotation.z = 0.16; g.add(o); const head = c ?? "#2f6fdd";
+    cy(o, 0.008, 0.008, 0.62, metalMat("#c9ced6", 0.3), 0, 0.38, 0, undefined, 10);
+    cy(o, 0.015, 0.014, 0.2, "#17171c", 0, 0.7, 0, undefined, 12);
+    cy(o, 0.011, 0.011, 0.05, "#aab3c0", 0, 0.085, 0, undefined, 10);
+    sp(o, 0.05, head, 0.04, 0.04, 0, [1.35, 0.75, 1.05], 18);
+    bx(o, 0.07, 0.008, 0.05, "#f4f4f6", 0.05, 0.062, 0, [0, 0, 0]);
+    sp(o, 0.012, "#f4f4f6", 0.085, 0.04, 0.0, [0.35, 1.4, 1.4], 8).userData.noline = 1;
+    return { g, tick: (t) => { o.rotation.z = 0.16 + Math.sin(t * 1.8) * 0.05; } };
   },
   // Nov 18: prolate spheroid with pointed tips, long axis = x (profile to camera), laces on top, two stripes near the tips
   football: (c) => {
