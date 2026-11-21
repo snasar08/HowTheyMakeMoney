@@ -1,0 +1,47 @@
+{
+  "https://en.wikipedia.org/wiki/Ryan_Reynolds": {
+    "file": "pages/64b864b8fde1.txt",
+    "fetched_at": "2026-11-21T16:13:53.995802+00:00",
+    "ok": true,
+    "chars": 93329,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Ryan_Reynolds",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Mint_Mobile": {
+    "file": "pages/2362e2e086c7.txt",
+    "fetched_at": "2026-11-21T16:13:54.498668+00:00",
+    "ok": true,
+    "chars": 7787,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Mint_Mobile",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Wrexham_A.F.C.": {
+    "file": "pages/0eb331fe8bf4.txt",
+    "fetched_at": "2026-11-21T16:13:54.830672+00:00",
+    "ok": true,
+    "chars": 119315,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Wrexham_A.F.C.",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Rob_McElhenney": {
+    "file": "pages/152988be29b6.txt",
+    "fetched_at": "2026-11-21T16:13:55.303439+00:00",
+    "ok": true,
+    "chars": 25778,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Rob_McElhenney",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Welcome_to_Wrexham": {
+    "file": "pages/b97546732290.txt",
+    "fetched_at": "2026-11-21T16:13:55.655174+00:00",
+    "ok": true,
+    "chars": 50954,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Welcome_to_Wrexham",
+    "content_type": "text/html; charset=UTF-8"
+  }
+}
