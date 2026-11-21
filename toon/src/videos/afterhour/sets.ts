@@ -1982,12 +1982,17 @@ function factory(): SetObj {
   const wm = T("#ffffff", { map: rep(wallT, 6, 1.4) });
   const ZW = -9;
   const sky = gradTex([[0, "#ffcf8a"], [0.5, "#ffa9a0"], [1, "#78b8ee"]], 8, 128);
-  vplane(g, 34, 14, basic(sky, 1, false), 0, 7, ZW - 5.5);
-  // chimney outside, seen through the middle windows
-  cy(g, 1.05, 1.6, 12, T("#c9593c"), 0.2, 6, ZW - 2.6, 0.02, 20);
-  for (const yy of [8.2, 10.0, 11.6]) cy(g, 1.05 + (12 - yy) * 0.045, 1.05 + (12 - yy) * 0.045, 0.55, T("#f4f7f0"), 0.2, yy, ZW - 2.6, 0.01, 20);
-  cy(g, 1.12, 1.05, 0.35, T("#2f3440"), 0.2, 12.1, ZW - 2.6, 0.01, 20);
-  for (const [dx, dy, r] of [[0.4, 13.0, 0.8], [1.2, 14.0, 1.05], [2.3, 14.9, 1.25]] as V3[]) { const pf = sp(g, r, T("#e9edf2"), dx, dy, ZW - 2.6, 0, 12); pf.castShadow = false; }
+  vplane(g, 60, 24, basic(sky, 1, false), 0, 11, ZW - 12);
+  // chimney outside, seen through the right window: white/red stripes, black cap, smoke; a smaller one in the left window
+  const chimney = (cx: number, bz: number, rb: number, rt: number, h: number) => {
+    const n = 8, sh = h / n;
+    for (let i = 0; i < n; i++) { const t0 = i / n, t1 = (i + 1) / n; const m = cy(g, rb + (rt - rb) * t1, rb + (rt - rb) * t0, sh, T(i % 2 ? "#f4f7f0" : "#d6283a"), cx, sh * (i + 0.5), bz, 0.012, 16); m.castShadow = false; }
+    const cap = cy(g, rt * 1.12, rt, 0.4, T("#2f3440"), cx, h + 0.2, bz, 0.01, 16); cap.castShadow = false;
+    return h + 0.4;
+  };
+  const top = chimney(4, ZW - 7, 1.6, 0.9, 16);
+  chimney(-8, ZW - 9, 0.9, 0.5, 11);
+  for (const [dx, dy, r] of [[4.3, top + 1.2, 0.9], [5.3, top + 2.3, 1.2], [6.6, top + 3.2, 1.45]] as V3[]) { const pf = sp(g, r, T("#e9edf2"), dx, dy, ZW - 7, 0, 12); pf.castShadow = false; }
   for (const [x, h] of [[-9, 4], [-6.5, 2.6], [8, 3.4], [10.5, 5]] as V2[]) bx(g, 1.8, h, 1.8, T("#6f7d90"), x, h / 2, ZW - 5, 0.01).castShadow = false;   // far buildings
   // windows at x = -8, -4, 0, 4, 8 (3 m wide), sill 1.6, head 6.2
   const WX = [-8, -4, 0, 4, 8];
@@ -2034,7 +2039,7 @@ function factory(): SetObj {
   for (const x of [-7, 0, 7]) { cy(g, 0.02, 0.02, 1.3, dark, x, 9.4, -3, 0, 6); cone(g, 0.6, 0.45, T("#f2c230"), x, 8.6, -3, 0.01, 16).rotation.x = PI; glow(g, 0.5, 0.05, 0.5, "#fff2c8", x, 8.4, -3, 1.8); }
   bx(g, 3.6, 0.9, 0.12, T("#f2c230"), -11.75, 6.6, ZW + 0.3, 0.012); bx(g, 3.2, 0.6, 0.06, T("#1b1b22"), -11.75, 6.6, ZW + 0.37);
   const lights = mkLights(["#ffe6c4", "#8f7f78", 1.25], ["#fff0d0", 2.6, [-4, 14, 8]], [["#ffd89a", 20, [0, 7, -3], 20]], 14);
-  return { root: g, lights, fog: new THREE.Fog("#c8b4a8", 45, 120), bg: "#ffbf94", spots: { spot: [0, 0, 0], belt: [0, 1.2, -3.6], arm: [-4.8, 1.5, -5.3], crate: [10, 0.6, -1.2], chimney: [0.2, 6, ZW - 2.6], sign: [0, 3.9, ZW + 0.3] } };
+  return { root: g, lights, fog: new THREE.Fog("#c8b4a8", 45, 120), bg: "#ffbf94", spots: { spot: [0, 0, 0], belt: [0, 1.2, -3.6], arm: [-4.8, 1.5, -5.3], crate: [10, 0.6, -1.2], chimney: [4, 6, ZW - 7], sign: [0, 3.9, ZW + 0.3] } };
 }
 
 // ================= MOUNTAIN (a rocky mountain, a timbered mine entrance, cart tracks with a cart, glowing gold veins) =================
@@ -2047,13 +2052,15 @@ function mountain(): SetObj {
   const sky = gradTex([[0, "#8fd0ff"], [0.6, "#c4e7ff"], [1, "#fff0d0"]], 8, 128);
   vplane(g, 160, 60, basic(sky, 1, false), 0, 22, -40);
   const rockA = T("#8d8478"), rockB = T("#a39a8c"), rockC = T("#6f675d"), snow = T("#f4f8ff");
-  // main mountain face (stacked rock blocks) with the mine mouth cut at x = 2.6
-  const rk = (w: number, h: number, d: number, m: THREE.Material, x: number, y: number, z: number, ry = 0) => { const b = bx(g, w, h, d, m, x, y, z, 0.02); b.rotation.y = ry; return b; };
-  rk(9.5, 8, 5, rockA, -5.5, 4, -10.5, 0.05); rk(7.5, 8, 5, rockB, 10.5, 4, -10.5, -0.06); rk(4, 3.3, 5, rockA, 2.6, 7.2, -10.5); rk(2.8, 6.5, 4.4, rockC, 0.2, 3.2, -10.2); rk(2.8, 6.5, 4.4, rockC, 5.0, 3.2, -10.2);
-  rk(10, 6, 5, rockB, -4, 11, -12, 0.1); rk(9, 6, 5, rockA, 8, 11, -12, -0.1); rk(8, 5, 4.4, rockC, 2, 12.8, -12.2, 0.04);
-  rk(7, 5, 4, rockA, -3, 16.5, -13.5, 0.08); rk(6, 4.5, 4, rockB, 5, 16, -13.5, -0.08); rk(5, 4, 3.5, rockC, 0.5, 20.2, -14.5, 0.03);
-  for (const [x, y, z, r, h] of [[0.5, 24.4, -14.5, 3.0, 6], [-8, 21, -15, 4.2, 8], [11, 19.5, -15, 3.4, 7]] as [number, number, number, number, number][]) {
-    cone(g, r, h, rockB, x, y, z, 0.02, 6); cone(g, r * 0.5, h * 0.35, snow, x, y + h * 0.32, z + 0.05, 0, 6);
+  // rocky crag: rows of tilted hexagonal rock columns, the mine mouth cut at x = 2.6, snow-capped peaks behind
+  const col = (x: number, z: number, r: number, h: number, m: THREE.Material, tilt = 0, ry = 0, y0 = 0) => { const c = cy(g, r * 0.8, r, h, m, x, y0 + h / 2, z, 0.02, 6); c.rotation.set(tilt, ry, -tilt * 0.6); c.castShadow = false; return c; };
+  const mats = [rockA, rockB, rockC];
+  [[-12.5, 7], [-10.4, 5], [-8.2, 8.5], [-6, 5.8], [-3.9, 7.5], [-1.7, 5], [6.4, 6.5], [8.5, 8], [10.7, 5.5], [12.9, 7.5]].forEach(([x, h], i) => col(x, -9.6, 1.35, h, mats[i % 3], 0.03 * (i % 3 - 1), i));
+  col(0.6, -9.6, 1.1, 5.8, rockB, 0.02, 1); col(4.7, -9.6, 1.1, 6.2, rockC, -0.02, 2);
+  bx(g, 4.6, 1.3, 1.6, rockB, 2.65, 5.75, -8.9, 0.02); bx(g, 3.4, 1.9, 1.4, rockA, 2.65, 7.35, -9.2, 0.02);          // rock over the mine mouth
+  [[-12, 11], [-8.5, 13], [-4.5, 11.5], [-0.5, 14], [3.5, 12], [7.5, 14.5], [11.5, 12], [14.5, 10]].forEach(([x, h], i) => col(x, -12.2, 2.0, h, mats[(i + 1) % 3], 0.02 * (i % 3 - 1), i * 2));
+  for (const [x, y, z, r, h] of [[-9, 19, -16, 6.5, 14], [1, 24, -17, 8, 20], [11, 20, -16, 6, 15]] as [number, number, number, number, number][]) {
+    cone(g, r, h, rockB, x, y - h / 2 + 4, z, 0.02, 7); cone(g, r * 0.42, h * 0.34, snow, x, y + h * 0.32 - h / 2 + 4, z + 0.05, 0, 7);
   }
   for (const [x, y, z, s] of [[-14, 3, -9, 1.7], [15, 2.5, -8.5, 1.5], [-10.5, 2, -6, 1.0], [11, 1.3, -6.5, 0.9], [-1.6, 0.5, -5.5, 0.5]] as V4[]) { const b = sp(g, s, rockA, x, y * 0.5 + 0.2, z, 0.02, 7); b.scale.y = 0.7; }
   // the mine mouth: dark hole, timber frame, lantern, sign
@@ -2063,7 +2070,7 @@ function mountain(): SetObj {
   bx(g, 4.2, 0.45, 0.5, wood, 2.6, 4.45, -7.7, 0.015); bx(g, 3.6, 0.2, 0.3, woodD, 2.6, 3.7, -7.75, 0.01);
   for (const sx of [-1, 1]) { const br = bx(g, 0.18, 1.0, 0.2, woodD, 2.6 + sx * 1.3, 4.0, -7.72, 0.01); br.rotation.z = sx * 0.7; }
   cy(g, 0.02, 0.02, 0.5, T("#2f3440"), 3.7, 4.0, -7.4, 0, 6); glowSp(g, 0.2, "#ffc54a", 3.7, 3.65, -7.4, 2.6);
-  bx(g, 2.6, 0.7, 0.1, T("#f2c230"), 2.6, 5.15, -7.6, 0.012); bx(g, 2.3, 0.45, 0.05, T("#3a2410"), 2.6, 5.15, -7.54);
+  bx(g, 2.6, 0.7, 0.1, T("#f2c230"), 2.6, 5.15, -7.6, 0.012); vplane(g, 2.3, 0.45, basic(canvasTex(256, 52, (c) => { c.fillStyle = "#3a2410"; c.fillRect(0, 0, 256, 52); c.fillStyle = "#ffd84a"; c.font = "bold 38px Arial"; c.textAlign = "center"; c.fillText("GOLD MINE", 128, 40); }), 1, false), 2.6, 5.15, -7.54);
   // tracks out of the mine: two rails with ties, running toward the camera
   const rail = metalMat("#aeb6c4", 0.3);
   for (let i = 0; i < 17; i++) bx(g, 1.5, 0.08, 0.2, woodD, 2.6, 0.06, -7.6 + i * 0.7, 0.008);
@@ -2073,10 +2080,11 @@ function mountain(): SetObj {
   bx(cart, 1.3, 0.75, 1.1, T("#7b4a2c"), 0, 0.72, 0, 0.02); bx(cart, 1.4, 0.1, 1.2, T("#4a4f5c"), 0, 1.1, 0, 0.01); bx(cart, 1.36, 0.08, 0.1, T("#4a4f5c"), 0, 0.62, 0.56);
   for (const sx of [-1, 1]) for (const sz of [-1, 1]) { const w = cy(cart, 0.2, 0.2, 0.1, T("#2f3440"), sx * 0.55, 0.22, sz * 0.5, 0.01, 14); w.rotation.z = PI / 2; }
   for (const [x, y, z, r] of [[-0.3, 1.2, 0.0, 0.3], [0.2, 1.3, 0.1, 0.34], [0.0, 1.15, -0.25, 0.27], [0.35, 1.18, -0.2, 0.25], [-0.25, 1.2, 0.3, 0.24]] as V4[]) { const n = sp(cart, r, gold2(), x, y, z, 0.012, 7); n.scale.y = 0.8; }
-  // glowing gold veins across the rock faces
-  const vein = (x: number, y: number, z: number, w: number, rz: number) => { const v = glow(g, w, 0.16, 0.1, "#ffcf3a", x, y, z, 2.6); v.rotation.z = rz; };
-  vein(-6.5, 4.0, -7.9, 3.2, 0.5); vein(-4.6, 5.0, -7.9, 2.0, -0.4); vein(-8.4, 2.4, -7.9, 1.8, 0.2); vein(8.2, 4.4, -7.9, 3.0, -0.5); vein(10.2, 2.6, -7.9, 2.0, 0.6); vein(2.6, 6.9, -7.95, 2.2, 0.1); vein(-5, 9.6, -8.9, 2.6, 0.45); vein(9, 9.2, -8.9, 2.6, -0.35);
-  for (const [x, y, z] of [[-6.5, 4.0, -7.8], [8.2, 4.4, -7.8], [-8.4, 2.4, -7.8], [10.2, 2.6, -7.8], [-3.6, 5.6, -7.8]] as V3[]) glowSp(g, 0.2, "#ffe27a", x, y, z, 2.8);
+  // glowing gold veins across the rock faces (the front of the first column row is at z ~ -8.3)
+  const vein = (x: number, y: number, z: number, w: number, rz: number) => { const v = glow(g, w, 0.2, 0.22, "#ffcf3a", x, y, z, 2.8); v.rotation.z = rz; };
+  vein(-6, 3.2, -8.3, 1.3, 0.6); vein(-6.1, 4.3, -8.3, 0.9, -0.5); vein(-10.4, 2.4, -8.3, 1.2, 0.4); vein(-3.9, 5.2, -8.3, 1.1, -0.6); vein(-8.2, 5.8, -8.3, 1.2, 0.5); vein(-1.7, 2.6, -8.3, 1.0, 0.7);
+  vein(6.4, 3.4, -8.3, 1.2, -0.6); vein(8.5, 5.0, -8.3, 1.3, 0.5); vein(8.4, 3.0, -8.3, 0.9, -0.4); vein(10.7, 3.4, -8.3, 1.1, 0.6); vein(12.9, 5.4, -8.3, 1.1, -0.5); vein(2.65, 5.9, -8.05, 2.4, 0.08);
+  for (const [x, y] of [[-6, 3.2], [-8.2, 5.8], [6.4, 3.4], [8.5, 5.0], [-10.4, 2.4], [10.7, 3.4], [-3.9, 5.2]] as V2[]) glowSp(g, 0.24, "#ffe27a", x + 0.2, y, -8.2, 2.8);
   // loose nuggets, pickaxe leaning on the rock, a few pines
   for (const [x, z] of [[-1.2, -2.2], [0.8, -4.6], [5.4, -5.2], [4.6, -2.2]] as V2[]) { const n = sp(g, 0.17, gold2(), x, 0.12, z, 0.01, 7); n.scale.y = 0.7; }
   const pick = new THREE.Group(); pick.position.set(5.6, 0, -6.3); pick.rotation.z = 0.35; g.add(pick);
@@ -2084,7 +2092,7 @@ function mountain(): SetObj {
   const pine = (x: number, z: number, s: number) => { cy(g, 0.14 * s, 0.2 * s, 1.2 * s, T("#6a4a2a"), x, 0.6 * s, z, 0.01, 6); for (let i = 0; i < 3; i++) cone(g, (1.1 - i * 0.25) * s, 1.3 * s, T(i % 2 ? "#2f8a4a" : "#277a3f"), x, (1.6 + i * 0.8) * s, z, 0.012, 7); };
   pine(-9, -4, 1.3); pine(-12, -1, 1.1); pine(10, -3.5, 1.2); pine(13.5, -1, 1.4); pine(-5.6, -6, 1.0);
   const lights = mkLights(["#dff0ff", "#7a9a5a", 1.35], ["#fff6e0", 2.9, [-6, 14, 10]], [["#ffcf3a", 16, [2.6, 2.6, -6.2], 10]], 16);
-  return { root: g, lights, fog: new THREE.Fog("#cfe8ff", 50, 140), bg: "#8fd0ff", spots: { spot: [0, 0, 0], mine: [2.6, 2.2, -7.9], cart: [2.6, 1.0, -3.2], vein: [-6.5, 4, -7.9], tracks: [2.6, 0.1, -2], sign: [2.6, 5.15, -7.5] } };
+  return { root: g, lights, fog: new THREE.Fog("#cfe8ff", 50, 140), bg: "#8fd0ff", spots: { spot: [0, 0, 0], mine: [2.6, 2.2, -7.9], cart: [2.6, 1.0, -3.2], vein: [-6, 3.2, -8.3], tracks: [2.6, 0.1, -2], sign: [2.6, 5.15, -7.5] } };
 }
 
 const BUILD: Record<SetName, () => SetObj> = { throne, office, diner, lab, stall, field, ring: ring_, track, graveyard, boardroom, street, beach, court, pitch, diamond, gridiron, tennis, golf, pool, gym, studio, farm, store, stage, space, garage, classroom, bathroom, mansion, showroom, factory, mountain };
