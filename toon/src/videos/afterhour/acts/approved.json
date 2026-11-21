@@ -25,17 +25,18 @@
     "shoot",
     "golf_swing",
     "race_car",
-    "touchdown"
+    "touchdown",
+    "tennis_serve"
   ],
   "off_until_fixed": {
     "film_camera": "camera hides the face",
-    "qb_throw": "Nov 21: the COMPLETE! panel covers the QB's face/arm mid-throw; catch frame is good. Fix the panel timing/placement, re-test.",
-    "tennis_serve": "Nov 21: toss + cocked racket read, but no visible contact or ball over the net; result is only the ACE! text. Needs a contact frame + ball crossing the net."
+    "qb_throw": "Nov 21 part 2: panel fixed (top, after the catch) but on the wind-up the ball still covers the QB's face (stills things-test/20261121-p2acts run 14); keep the ball clear of the head, re-test."
   },
   "approved_notes": {
     "count_cash/sign_contract/throw_cash": "rebuilt Nov 16, reviewed frame by frame, Sam: 'Yes include'",
     "shoot": "Nov 18 rebuilt: ball in both hands to above the head, one smooth arc through the net, swish + bounce; own centred camera (acts view). Stills checked every 6th frame.",
     "golf_swing": "Nov 21 (Saturday part 1): new golf set; stills checked on things-test/20261121-golf: club backswing with effort face, contact, ball flies off the tee with a trail, smile after. Passes the SPEC bar.",
-    "race_car/touchdown": "Nov 21 (Saturday part 1): stills checked on things-test/20261121-acts: race_car = gritted-teeth effort in the car with speed streaks -> smile + FASTEST LAP; touchdown = ball raised, shout at the end zone -> spike, ball bouncing, arms up, TOUCHDOWN."
+    "race_car/touchdown": "Nov 21 (Saturday part 1): stills checked on things-test/20261121-acts: race_car = gritted-teeth effort in the car with speed streaks -> smile + FASTEST LAP; touchdown = ball raised, shout at the end zone -> spike, ball bouncing, arms up, TOUCHDOWN.",
+    "tennis_serve": "Nov 21 (Saturday part 2): stills checked on things-test/20261121-p2acts run 14: toss, racket meets ball at the top with a spark, ball trail over the net, effort/shout -> smug grin, ACE! top left. Passes the SPEC bar."
   }
 }
