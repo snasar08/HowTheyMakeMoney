@@ -37,8 +37,50 @@
   },
   "https://www.essentiallysports.com/boxing-news-years-after-selling-ice-cream-to-make-ends-meet-here-s-how-once-poor-canelo-alvarez-built-his-two-hundred-million-fortune/": {
     "file": "pages/56063663904c.txt",
-    "fetched_at": "2026-11-21T23:35:52.528524+00:00",
+    "fetched_at": "2026-11-21T23:36:31.775905+00:00",
     "ok": false,
     "error": "HTTP 410"
+  },
+  "https://www.mediotiempo.com/mas-deportes/box/antes-de-los-guantes-esto-hacia-canelo-alvarez-antes-de-convertirse-en-boxeador": {
+    "file": "pages/6a84e55da533.txt",
+    "fetched_at": "2026-11-21T23:36:32.311702+00:00",
+    "ok": true,
+    "chars": 6654,
+    "status": 200,
+    "final_url": "https://www.mediotiempo.com/mas-deportes/box/antes-de-los-guantes-esto-hacia-canelo-alvarez-antes-de-convertirse-en-boxeador",
+    "content_type": "text/html"
+  },
+  "https://www.aztecajalisco.com/deportes/esta-era-la-ruta-camiones-donde-el-canelo-alvarez-vendia-paletas": {
+    "file": "pages/f69277c70093.txt",
+    "fetched_at": "2026-11-21T23:36:32.859082+00:00",
+    "ok": true,
+    "chars": 7378,
+    "status": 200,
+    "final_url": "https://www.aztecajalisco.com/deportes/esta-era-la-ruta-camiones-donde-el-canelo-alvarez-vendia-paletas/",
+    "content_type": "text/html; charset=utf-8"
+  },
+  "https://www.espn.co.uk/boxing/story/_/id/19292903/meet-saul-canelo-alvarez-ring": {
+    "file": "pages/9a3e15e1dc9d.txt",
+    "fetched_at": "2026-11-21T23:36:33.827455+00:00",
+    "ok": true,
+    "chars": 0,
+    "status": 202,
+    "final_url": "https://www.espn.co.uk/boxing/story/_/id/19292903/meet-saul-canelo-alvarez-ring",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://www.buscabiografias.com/biografia/verDetalle/10366/Saul Alvarez - Canelo Alvarez": {
+    "file": "pages/440b3ac0e9d3.txt",
+    "fetched_at": "2026-11-21T23:36:34.412804+00:00",
+    "ok": false,
+    "error": "InvalidURL(\"URL can't contain control characters. '/biografia/verDetalle/10366/Saul Alvarez - Canelo Alvarez' (found at least ' ')\")"
+  },
+  "https://www.cbssports.com/boxing/news/canelo-alvarez-signs-most-lucrative-contract-in-sports-history-with-dazn-to-stream-fights": {
+    "file": "pages/8acf759c69d2.txt",
+    "fetched_at": "2026-11-21T23:36:34.718042+00:00",
+    "ok": true,
+    "chars": 12259,
+    "status": 200,
+    "final_url": "https://www.cbssports.com/boxing/news/canelo-alvarez-signs-most-lucrative-contract-in-sports-history-with-dazn-to-stream-fights/",
+    "content_type": "text/html; charset=UTF-8"
   }
 }
