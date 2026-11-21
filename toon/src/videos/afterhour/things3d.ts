@@ -477,36 +477,38 @@ const B: Record<ThingName, Builder> = {
     for (let i = 0; i < 4; i++) bx(g, 0.2, 0.004, 0.012, dk, -0.03, 0.118, -0.08 + i * 0.025);   // vents on top
     cy(g, 0.012, 0.012, 0.01, "#9aa3b5", -0.15, 0.1, 0.1, [PI / 2, 0, 0], 14);  // power button
     const led = bx(g, 0.05, 0.008, 0.008, glowMat("#38bdf8", 2.2), 0.07, 0.07, 0.1);
-    // the pad: light body, darker grips, two sticks, four coloured buttons, lying flat in front
-    const o = new THREE.Group(); o.position.set(0.12, 0, 0.2); o.rotation.y = -0.25; g.add(o);
-    sp(o, 0.05, "#f2f4f8", 0, 0.03, 0, [1.5, 0.45, 0.85], 20);
-    for (const s of [-1, 1]) sp(o, 0.036, "#9aa3b5", s * 0.065, 0.026, 0.022, [0.75, 0.6, 1.5], 14);
-    for (const s of [-1, 1]) cy(o, 0.012, 0.012, 0.012, dk, s * 0.03, 0.058, 0.014, undefined, 12);
-    const bc = ["#22c55e", "#ef4444", "#3b82f6", "#facc15"]; [[0, 0.016], [0.016, 0], [-0.016, 0], [0, -0.016]].forEach((q, i) => cy(o, 0.008, 0.008, 0.01, bc[i], 0.055 + q[0], 0.058, -0.012 + q[1], undefined, 12));
+    // the pad: dark grey body so it contrasts, clear handles, two light sticks, four coloured buttons, a d-pad
+    const o = new THREE.Group(); o.position.set(0.13, 0, 0.19); o.rotation.y = -0.2; g.add(o);
+    sp(o, 0.05, "#4b5163", 0, 0.03, 0, [1.35, 0.5, 0.85], 20);
+    for (const s of [-1, 1]) { const h = sp(o, 0.034, "#2d313d", s * 0.068, 0.022, 0.034, [0.8, 0.62, 1.7], 14); h.rotation.y = s * 0.4; }
+    for (const s of [-1, 1]) { cy(o, 0.014, 0.014, 0.016, "#d8dde8", s * 0.026, 0.062, 0.012, undefined, 14); }
+    bx(o, 0.03, 0.012, 0.01, "#d8dde8", -0.05, 0.062, -0.018); bx(o, 0.01, 0.012, 0.03, "#d8dde8", -0.05, 0.062, -0.018);
+    const bc = ["#22c55e", "#ef4444", "#3b82f6", "#facc15"]; [[0, 0.016], [0.016, 0], [-0.016, 0], [0, -0.016]].forEach((q, i) => cy(o, 0.009, 0.009, 0.012, bc[i], 0.052 + q[0], 0.062, -0.018 + q[1], undefined, 12));
     return { g, tick: (t) => { (led.material as THREE.MeshBasicMaterial).color.set("#38bdf8").multiplyScalar(1.4 + 0.9 * Math.sin(t * 3)); } };
   },
   // Nov 21: a white dimpled golf ball on a wooden tee
   golfball: (c) => {
-    const g = new THREE.Group(); const col = c ?? "#fbfbfd"; const R = 0.05, y0 = 0.11;
-    cone(g, 0.012, 0.07, "#e0a24a", 0, 0.035, 0, [PI, 0, 0], 12);
-    cy(g, 0.022, 0.016, 0.014, "#e0a24a", 0, 0.074, 0, undefined, 14);
+    const g = new THREE.Group(); const col = c ?? "#fbfbfd"; const R = 0.05, y0 = 0.085;
+    cone(g, 0.011, 0.045, "#e0a24a", 0, 0.0225, 0, [PI, 0, 0], 12);
+    cy(g, 0.02, 0.014, 0.012, "#e0a24a", 0, 0.049, 0, undefined, 14);
     const b = new THREE.Group(); b.position.y = y0; g.add(b);
     sp(b, R, col, 0, 0, 0, undefined, 28);
-    const N = 46, ga = PI * (3 - Math.sqrt(5));
+    // flat, slightly darker dimple patches flush with the surface (no bumps): a few, spread over the front
+    const N = 40, ga = PI * (3 - Math.sqrt(5)), zz = new THREE.Vector3(0, 0, 1), dm = toonMat("#cdd3de");
     for (let i = 0; i < N; i++) { const yy = 1 - (2 * (i + 0.5)) / N, rr = Math.sqrt(1 - yy * yy), th = i * ga;
-      const x = Math.cos(th) * rr, z = Math.sin(th) * rr; if (z < -0.35) continue;
-      put(b, new THREE.SphereGeometry(0.0062, 8, 6), "#e3e7f0", x * R * 0.995, yy * R * 0.995, z * R * 0.995, [0, 0, 0], [1, 1, 0.5], false); }
-    return { g, tick: (t) => { b.position.y = y0 + Math.sin(t * 2.2) * 0.004; b.rotation.y = Math.sin(t * 1.3) * 0.25; } };
+      const n = new THREE.Vector3(Math.cos(th) * rr, yy, Math.sin(th) * rr); if (n.z < 0.05) continue;
+      const m = new THREE.Mesh(new THREE.CircleGeometry(0.0058, 10), dm); m.position.copy(n).multiplyScalar(R * 1.003); m.quaternion.setFromUnitVectors(zz, n); b.add(m); }
+    return { g, tick: (t) => { b.position.y = y0 + Math.sin(t * 2.2) * 0.003; } };
   },
   // Nov 21: a driver standing upright: steel shaft, black grip, chunky head
   golfclub: (c) => {
     const g = new THREE.Group(); const o = new THREE.Group(); o.rotation.z = 0.16; g.add(o); const head = c ?? "#2f6fdd";
-    cy(o, 0.008, 0.008, 0.62, metalMat("#c9ced6", 0.3), 0, 0.38, 0, undefined, 10);
-    cy(o, 0.015, 0.014, 0.2, "#17171c", 0, 0.7, 0, undefined, 12);
-    cy(o, 0.011, 0.011, 0.05, "#aab3c0", 0, 0.085, 0, undefined, 10);
-    sp(o, 0.05, head, 0.04, 0.04, 0, [1.35, 0.75, 1.05], 18);
-    bx(o, 0.07, 0.008, 0.05, "#f4f4f6", 0.05, 0.062, 0, [0, 0, 0]);
-    sp(o, 0.012, "#f4f4f6", 0.085, 0.04, 0.0, [0.35, 1.4, 1.4], 8).userData.noline = 1;
+    cy(o, 0.016, 0.016, 0.6, metalMat("#c9ced6", 0.3), 0, 0.38, 0, undefined, 12);
+    cy(o, 0.026, 0.024, 0.2, "#17171c", 0, 0.7, 0, undefined, 14);
+    cy(o, 0.02, 0.02, 0.06, "#aab3c0", 0, 0.09, 0, undefined, 12);
+    sp(o, 0.068, head, 0.05, 0.05, 0, [1.4, 0.9, 1.2], 20);
+    bx(o, 0.1, 0.012, 0.075, "#f4f4f6", 0.06, 0.092, 0);
+    sp(o, 0.016, "#f4f4f6", 0.12, 0.05, 0.0, [0.4, 1.5, 1.5], 8);
     return { g, tick: (t) => { o.rotation.z = 0.16 + Math.sin(t * 1.8) * 0.05; } };
   },
   // Nov 18: prolate spheroid with pointed tips, long axis = x (profile to camera), laces on top, two stripes near the tips
