@@ -1,0 +1,44 @@
+{
+  "https://en.wikipedia.org/wiki/Kevin_Durant": {
+    "file": "pages/8e5b9695a3f1.txt",
+    "fetched_at": "2026-11-21T21:08:43.503272+00:00",
+    "ok": true,
+    "chars": 163285,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Kevin_Durant",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Rich_Kleiman": {
+    "file": "pages/9577c0b71cde.txt",
+    "fetched_at": "2026-11-21T21:08:44.091997+00:00",
+    "ok": true,
+    "chars": 8561,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Rich_Kleiman",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/List_of_largest_sports_contracts": {
+    "file": "pages/26e4163f9b99.txt",
+    "fetched_at": "2026-11-21T21:08:44.614969+00:00",
+    "ok": true,
+    "chars": 39840,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/List_of_largest_sports_contracts",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Postmates": {
+    "file": "pages/dda4740ade50.txt",
+    "fetched_at": "2026-11-21T21:08:45.078609+00:00",
+    "ok": true,
+    "chars": 17472,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Postmates",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Thirty_Five_Ventures": {
+    "file": "pages/400311ca093b.txt",
+    "fetched_at": "2026-11-21T21:08:45.465970+00:00",
+    "ok": false,
+    "error": "HTTP 404"
+  }
+}
