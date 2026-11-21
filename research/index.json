@@ -1,0 +1,35 @@
+{
+  "https://en.wikipedia.org/wiki/PlayStation_(console)": {
+    "file": "pages/909a506664b0.txt",
+    "fetched_at": "2026-11-21T16:08:40.930176+00:00",
+    "ok": true,
+    "chars": 110246,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/PlayStation_(console)",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Super_NES_CD-ROM": {
+    "file": "pages/9cc252581a43.txt",
+    "fetched_at": "2026-11-21T16:08:41.542161+00:00",
+    "ok": true,
+    "chars": 40468,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Super_NES_CD-ROM",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Ken_Kutaragi": {
+    "file": "pages/92186fa4d4ff.txt",
+    "fetched_at": "2026-11-21T16:08:41.977559+00:00",
+    "ok": true,
+    "chars": 19978,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Ken_Kutaragi",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/History_of_PlayStation": {
+    "file": "pages/ace04d320556.txt",
+    "fetched_at": "2026-11-21T16:08:42.747285+00:00",
+    "ok": false,
+    "error": "HTTP 404"
+  }
+}

@@ -1,0 +1,1187 @@
+URL: https://en.wikipedia.org/wiki/Ken_Kutaragi
+FINAL_URL: https://en.wikipedia.org/wiki/Ken_Kutaragi
+FETCHED: 2026-11-21T16:08:41.977559+00:00
+
+Jump to content
+
+Main menu
+
+Main menu
+
+ move to sidebar
+ hide
+
+ Navigation
+
+Main page
+
+Contents
+
+Current events
+
+Random article
+
+About Wikipedia
+
+Contact us
+
+ Contribute
+
+Help
+
+Learn to edit
+
+Community portal
+
+Recent changes
+
+Upload file
+
+Special pages
+
+Search
+
+ Search
+
+Appearance
+
+Donate
+
+Create account
+
+Log in
+
+Personal tools
+
+Donate
+
+Create account
+
+Log in
+
+Contents
+
+ move to sidebar
+ hide
+
+(Top)
+
+ 1
+ Early years
+
+ 2
+ Career
+
+ Toggle Career subsection
+
+ 2.1
+ Assessment by industry analysts
+
+ 2.2
+ Seventh generation game consoles
+
+ 3
+ References
+
+ 4
+ External links
+
+Toggle the table of contents
+
+Ken Kutaragi
+
+23 languages
+
+العربية
+
+مصرى
+
+Català
+
+Deutsch
+
+Ελληνικά
+
+Español
+
+فارسی
+
+Français
+
+Հայերեն
+
+Bahasa Indonesia
+
+Italiano
+
+日本語
+
+한국어
+
+Malagasy
+
+Nederlands
+
+Polski
+
+Português
+
+Русский
+
+Sunda
+
+Svenska
+
+Türkçe
+
+吴语
+
+中文
+
+Edit links
+
+Article
+
+Talk
+
+ English
+
+Read
+
+Edit
+
+View history
+
+Save
+
+Tools
+
+Tools
+
+ move to sidebar
+ hide
+
+ Actions
+
+Read
+
+Edit
+
+View history
+
+Save
+
+ General
+
+What links here
+
+Related changes
+
+Upload file
+
+Permanent link
+
+Page information
+
+Cite this page
+
+Get shortened URL
+
+Switch to legacy parser
+
+ Print/export
+
+Download as PDF
+
+Printable version
+
+ In other projects
+
+Wikimedia Commons
+
+Wikiquote
+
+Wikidata item
+
+Appearance
+
+ move to sidebar
+ hide
+
+From Wikipedia, the free encyclopedia
+
+Japanese engineering technologist and businessman (born 1950)
+
+ | 
+Ken Kutaragi
+
+ | 
+Kutaragi with his Lifetime Achievement Award at the Game Developers Choice Awards 2014
+
+ | Born | (1950-08-02) 2 August 1950 (age 76)
+
+Kōtō, Tokyo, Japan
+
+ | Education | University of Electro-Communications
+
+ | Occupations | 
+
+Engineering technologist
+
+businessman
+
+ | Known for | PlayStation, Sony Interactive Entertainment, Cellius
+
+ | Children | 1
+
+Ken Kutaragi (久夛良木 健, Kutaragi Ken; born 2 August 1950) is a Japanese engineering technologist and businessman, currently president and CEO of Cyber AI Entertainment. Formerly the chairman and CEO of Sony Computer Entertainment (SCE), the video game division of Sony, Kutaragi is known as "The Father of the PlayStation"[1] having overseen the development of the original console and its successors and spinoffs until departing the company in 2007, shortly after the PlayStation 3 was released.
+
+Kutaragi had also designed the sound processor for the Super Nintendo Entertainment System. With Sony, he designed the VLSI chip that works in conjunction with the PS1's RISC CPU to handle the graphics rendering.
+
+Early years
+[edit]
+
+Kutaragi was born in Tokyo, Japan, in 1950. His parents, although not wealthy by Japanese standards, still managed to own their own business, a small printing plant in the city. As Kutaragi grew into childhood, they actively encouraged the young boy to explore his mechanical abilities in the plant, and he worked after school there. Aside from his duties in his parents' factory, Kutaragi was a studious, high-level student.[2]
+
+Kutaragi always had the desire to "tinker", often taking apart toys as a child rather than playing with them.[3] This curiosity carried from childhood, leading him as a teenager to learn the intricacies of electronics. Eventually, in fact, his love of electronics led to him enrolling in University of Electro-Communications, where he acquired an Electronics degree in the 1970s.[3]
+
+Immediately after graduation, Kutaragi began working for Sony in their digital research labs in the mid-1970s.[3] Although at the time it was considered a radical decision, Kutaragi felt that Sony was on the "fast track". He quickly gained a reputation as an excellent problem solver and a forward-thinking engineer, earning that reputation by working on many successful projects, including early liquid crystal displays (LCDs) and digital cameras.[citation needed]
+
+Career
+[edit]
+
+In 1983, he was watching his two-year-old daughter play a Famicom and realized the potential that existed within video games.[3] Thus, when Nintendo expressed the need for a sound chip for its upcoming new 16-bit system, Kutaragi accepted the offer.[3] Working in secret, he designed the chip, the SPC700.[3] At that particular time, Sony's executives had no interest in video games.[3] When they found out about the secret collaboration, they were furious.[3] Only with Sony CEO Norio Ohga's approval was Kutaragi able to complete the chip and keep his job.[3]
+
+Even while working with Nintendo, within Sony, gaming was still regarded as a fad.[3] Despite this hostile atmosphere to video games, Kutaragi managed to persuade Ohga into working with Nintendo to develop a CD-ROM add-on for the Super NES that would be released alongside a Sony branded console that could play both Super NES cartridges and CD games.[3] These efforts resulted in a device called the "Play Station".[3] Eventually, the partnership between Sony and Nintendo faltered due to licensing disagreements, but Kutaragi and Sony continued to develop their own console. He wanted to utilize Sony's access to the latest technology in creating the most powerful home console available, unlike Nintendo, which used primitive, outdated technology to create their consoles. He also noticed that Nintendo focused mainly on children, so he wanted Sony's console to target older adult gamers, as he felt it was a market not yet tapped by any of the available home consoles.[4] Kutaragi later recalled staying up all night working on the console design for several nights in a row "because our work was so interesting."[5] Despite being considered a risky gamble by other Sony executives, Kutaragi once again had the support of Ohga and several years later the company released the original PlayStation. The success of the PlayStation led to him heading up the development of successor consoles, the PlayStation 2 and PlayStation 3.
+
+The commercial success of the PlayStation franchise makes Sony Computer Entertainment the most profitable business division of Sony. Despite being an upstart in the console market against veterans Nintendo and Sega, the first PlayStation displaced them both to become the most popular console of that era. The PlayStation 2 extended Sony's lead in the following generation, at one point holding a 65% market share with 100 million units shipped.[6] Kutaragi was recognized by many financial and technological publications for this success, most notably when he was named one of the 100 most influential people of 2004 in TIME magazine[7] and the "Gutenberg of Video Games".
+
+In 1997 Kutaragi was appointed CEO of Sony Computer Entertainment America, and accordingly moved to California.[8] Since 1997, Kutaragi had been favoured to become the next Sony president. He enjoyed a close relationship with Ohga.[9] Ohga's successor Nobuyuki Idei promoted Kutaragi to Deputy Executive President, Sony-Global chief operating officer, and Vice-Chairman in 2003.
+
+On 30 November 2006, Kutaragi was replaced as president of Sony Computer Entertainment by Kazuo Hirai, the President of SCE America. In addition to other management changes, Kutaragi was promoted to chairman of SCEI, and retained his position as chief executive officer of the group.[10] On 26 April 2007, it was announced that Kutaragi would retire and instead take up the role of Honorary Chairman. Taking over his position would be then Hirai, who would eventually be promoted to president and CEO of Sony.[11][12][13][14] On 29 June 2011, following the reshuffling of management, Sony announced that on 28 June 2011, Kutaragi had stepped down as honorary chairman of SCEI. Kutaragi relinquished active management of the business he created and built in 2007, when he stepped down as executive chairman and group CEO of Sony Computer Entertainment.[15] He has remained at Sony as senior technology advisor.
+
+Ken Kutaragi later became president and CEO of Cyber AI Entertainment, Inc. He also serves on the boards of Kadokawa Group Holdings, Inc., Nojima Corporation, and Rakuten, Inc. In 2009, he became a visiting professor of Ritsumeikan University. In 2020, Kutaragi became CEO of Tokyo-based AI and robotics startup Ascent Robotics, after serving on its Board of Directors since 2018.[16][17][18]
+
+Assessment by industry analysts
+[edit]
+
+Although Kutaragi's leadership of consumer electronics was not successful, analysts also suspect that outgoing Sony CEO Nobuyuki Idei had set up Kutaragi to fail, given that both men had a cool working relationship. Idei assigned Kutaragi the tedious task of turning around the consumer division, which had already been falling behind competitors such as Samsung in the LCD market.[9] Kutaragi's rival for the top position, Howard Stringer, was given the less difficult assignment of the content business and his success at Sony BMG Music Entertainment resulted in his promotion.
+
+Sony Interactive Entertainment, which Kutaragi had been heading since its inception, had a weaker year in 2004 after several years of solid growth.[19] During that same year, Sony's game sales fell to $7.5 billion from $8.2 billion, and its operating income slid to $650 million from $1 billion, losing $25 million in Q4 of 2004. This can be attributed partially to the over-saturation of the video game market and price wars that caused the PS2 to lose the top sales position for a time.[20]
+
+Seventh generation game consoles
+[edit]
+
+Kutaragi has labelled the Xbox 360 as "just an Xbox 1.5" and stated that it was "only going after PlayStation 2".[21][22] However, SCE Executive Tetsuhiko Yasuda did not consider Microsoft to be a competitor, and has said that they might consider working on games together.[23] In September 2006 Kutaragi admitted that the shortage of PlayStation 3 consoles to North America and Japan as well as the postponing of the console's debut in Europe put Sony's strength in hardware in decline.[24]
+
+References
+[edit]
+
+↑ Kageyama, Yuri (5 April 2005). "Demoted Sony Guru is outspoken". The San Francisco Examiner. Associated Press.
+
+↑ Duffield, Katy S. Ken Kutaragi: PlayStation Developer. Greenhaven Publishing LLC, 2007.
+
+1 2 3 4 5 6 7 8 9 10 11 12 Fahey, Rob (27 April 2007). "Farewell, Father". Eurogamer. Retrieved 23 January 2019.
+
+↑ "Icons:PlayStation". YouTube. 12 June 2016.
+
+↑ "75 Power Players: Back at the Lab...". Next Generation (11). Imagine Media: 73. November 1995.
+
+↑ "PlayStation 2 breaks record as the fastest computer entertainment platform to reach cumulative shipment of 100 million units" (PDF). Sony Computer Entertainment. 30 November 2005. Archived from the original (PDF) on 23 August 2009. Retrieved 23 September 2006.
+
+↑ "TIME 100: Most Influential People 2004". Time Magazine. 26 April 2004. Archived from the original on 19 April 2004. Retrieved 23 September 2006.
+
+↑ "What's the 'Father of PlayStation' Playing At?". Next Generation. No. 32. Imagine Media. August 1997. pp. 8–13.
+
+1 2 "Mr. Idei's Kurosawa Ending - The Rise of Howard Stringer at Sony is More Properly the Fall of Ken Kutaragi". PBS. 10 March 2005. Retrieved 12 October 2006.{{cite web}}: CS1 maint: deprecated archival service (link)
+
+↑ Sony Computer Entertainment, Inc. (30 November 2006). "SCE Announces New Management Team" (PDF). Archived from the original (PDF) on 6 December 2006. Retrieved 30 November 2006.
+
+↑ "Kutaragi to retire from executive role at Sony". gamesindustry.biz. 26 April 2007. Retrieved 26 April 2007.
+
+↑ "Farewell Mr Playstation". mvcuk. 26 April 2007. Retrieved 26 April 2007.
+
+↑ "PlayStation creator Kutaragi resigns". CNET News.com. 26 April 2007. Archived from the original on 16 June 2011. Retrieved 23 July 2007.
+
+↑ "Farewell, Father". GamesIndustry.biz. 27 April 2007. Retrieved 23 July 2007.
+
+↑ "PlayStation 'father' Ken Kutaragi retires". Los Angeles Times. 29 June 2011. Retrieved 29 June 2011.
+
+↑ "客員教授 - 教員紹介 - 経営管理研究科（経営大学院） - 立命館大学". Ritsumei.jp. Archived from the original on 6 June 2012. Retrieved 17 August 2012.
+
+↑ "ソニーの久多良木氏、立命館大の客員教授に : J-CASTニュース". J-cast.com. 26 February 2009. Retrieved 17 August 2012.
+
+↑ "PlayStation 'father' Ken Kutaragi becomes CEO of AI startup". asia.nikkei.com. 20 September 2022. Retrieved 23 March 2023.
+
+↑ "Sony hit by drop in games sales". BBC. 27 April 2004. Retrieved 23 September 2006.
+
+↑ "Xbox officially outsells PS2 in US". GameSpot. 26 March 2004. Retrieved 23 September 2006.
+
+↑ "Xbox 360 = Xbox 1.5? Kutaragi trashtalkin'!". Engadget. 25 May 2005. Retrieved 23 September 2006.
+
+↑ "Broken Promises: A Closer Look at the PS3". GamePro.com. Archived from the original on 19 June 2006. Retrieved 20 November 2006.
+
+↑ ""Sony would consider working with "non-competitor" Microsoft"". Joystiq. 25 February 2006. Retrieved 23 September 2006.
+
+↑ "Kutaragi: Sony Hardware 'In Decline'". BetaNews. 8 September 2006. Retrieved 23 September 2006.
+
+External links
+[edit]
+
+Wikiquote has quotations related to Ken Kutaragi.
+
+Farewell, Father (Archived 9 October 2007 at the Wayback Machine)—Eurogamer's retrospective on Kutaragi's career.
+
+"PlayStation 'father' Ken Kutaragi becomes CEO of AI startup"—Nikkei Asia
+
+ | 
+
+v
+
+t
+
+e
+
+PlayStation
+
+ | 
+
+Sony Interactive Entertainment
+
+PlayStation Studios
+
+ | Consoles | 
+
+ | Home consoles | 
+
+PlayStation
+
+Models
+
+Main hardware
+
+PlayStation 2
+
+Models
+
+Main hardware
+
+PlayStation 3
+
+Models
+
+Main hardware
+
+System software
+
+PlayStation 4
+
+Main hardware
+
+System software
+
+PlayStation 5
+
+ | Handhelds | 
+
+PocketStation
+
+PlayStation Portable
+
+System software
+
+PlayStation Vita
+
+System software
+
+ | Miscellaneous | 
+
+PSX
+
+PlayStation TV
+
+PlayStation Classic
+
+ | Games | 
+
+ | PlayStation | 
+
+A–L
+
+M–Z
+
+Net Yaroze
+
+Best
+
+Best-selling
+
+Downloadable
+
+JP
+
+NA
+
+PAL
+
+Cancelled
+
+ | PS2 | 
+
+A–K
+
+L–Z
+
+Best
+
+Best-selling
+
+Online
+
+Downloadable
+
+Cancelled
+
+ | PS3 | 
+
+A–C
+
+D–I
+
+J–P
+
+Q–Z
+
+Best
+
+Best-selling
+
+Cancelled
+
+ | PS4 | 
+
+A–L
+
+M–Z
+
+Best-selling
+
+Free-to-play
+
+PS VR games
+
+Cancelled
+
+ | PS5 | 
+
+A–Z
+
+Best-selling
+
+PS VR2 games
+
+Cancelled
+
+ | PSP | 
+
+A-Z
+
+Downloadable
+
+PS minis
+
+Best selling
+
+Cancelled
+
+ | PS Vita | 
+
+A–D
+
+E–H
+
+I–L
+
+M–O
+
+P–R
+
+S
+
+T–V
+
+W–Z
+
+Cancelled
+
+ | Other | 
+
+PS Mobile
+
+TurboGrafx-16 Classics
+
+NEOGEO Station
+
+Classics HD
+
+ | Reprints | 
+
+Greatest Hits
+
+Essentials
+
+The Best
+
+BigHit Series
+
+ | Network | 
+
+PlayStation Network
+
+2011 outage
+
+Central Station
+
+FirstPlay
+
+PlayStation App
+
+PlayStation Home
+
+PlayStation Mobile
+
+PlayStation Now
+
+PlayStation Store
+
+PlayStation Video
+
+PlayStation Vue
+
+PS2 online
+
+PlayStation Broadband Navigator
+
+Room for PSP
+
+VidZone
+
+ | Accessories | 
+
+ | Controllers | 
+
+PlayStation controller
+
+PlayStation Mouse
+
+Analog Joystick
+
+Dual Analog
+
+DualShock / DualSense
+
+Sixaxis
+
+PlayStation Move
+
+ | Cameras | 
+
+EyeToy
+
+Go!Cam
+
+PlayStation Eye
+
+PlayStation Camera
+
+ | Miscellaneous | 
+
+Multitap
+
+Link Cable
+
+PS2 accessories
+
+PlayStation 2 Expansion Bay
+
+PS3 accessories
+
+PlayTV
+
+Torne
+
+Wonderbook
+
+PlayStation VR
+
+2
+
+PlayStation Portal
+
+ | Kits | 
+
+Net Yaroze
+
+PS2 Linux
+
+GScube
+
+OtherOS
+
+Zego
+
+ | Media | 
+
+ | Magazines | 
+
+Official U.S. PlayStation Magazine
+
+PlayStation: The Official Magazine
+
+PlayStation Official Magazine – UK
+
+PlayStation Official Magazine – Australia
+
+Official PlayStation Magazine (Ireland)
+
+PlayStation Underground
+
+ | Advertisements | 
+
+Double Life
+
+Mountain
+
+PlayStation marketing
+
+ | Mascots | 
+
+Polygon Man
+
+Sofia
+
+Kevin Butler
+
+ | Arcade boards | 
+
+System 11 and System 12
+
+Konami System 573
+
+ | Related | 
+
+Super NES CD-ROM
+
+Sony Ericsson Xperia Play
+
+"Players"
+
+PlayStation mentality
+
+ | 
+
+ Category
+
+ | 
+
+v
+
+t
+
+e
+
+Sony
+
+ | 
+
+History
+
+Assets
+
+ | Founders | 
+
+Masaru Ibuka
+
+Akio Morita
+
+ | Primary businesses | 
+
+Sony Corporation
+
+Sony Semiconductor Solutions
+
+Sony Pictures
+
+Sony Music Group
+
+Entertainment
+
+Publishing
+
+Extreme Music
+
+Sony Music Entertainment Japan
+
+Aniplex
+
+A-1 Pictures
+
+CloverWorks
+
+Hayate Inc.
+
+Sony Interactive Entertainment
+
+PlayStation
+
+ | Technologies
+
+and brands | 
+
+α (Alpha)
+
+Archival Disc
+
+Betacam
+
+Bionz
+
+Blu-ray
+
+Bravia
+
+CD
+
+Cell
+
+Cyber-shot
+
+Dash
+
+Dream Machine
+
+DVD
+
+Exmor
+
+FeliCa
+
+Handycam
+
+HDCAM/HDCAM-SR
+
+HMZ-T1
+
+Inzone
+
+LocationFree
+
+Memory Stick
+
+MiniDisc
+
+MiniDV
+
+MicroMV
+
+mylo
+
+PlayNow
+
+PlayStation
+
+Pyxis
+
+Reader
+
+S/PDIF
+
+SDDS
+
+8 channel films
+
+Sony Entertainment Network
+
+SXRD
+
+Sony Tablet
+
+Tunnel diode
+
+TransferJet
+
+UMD
+
+Vaio
+
+Video8/Hi8/Digital8
+
+Vision-S
+
+Walkman
+
+XDCAM
+
+Xperia
+
+ | Historical products | 
+
+AIBO
+
+CV-2000
+
+DAT
+
+Betamax
+
+Sony CLIÉ
+
+Discman
+
+Jumbotron
+
+Lissa
+
+Mavica
+
+NEWS
+
+Optiarc
+
+PVM-4300
+
+Qualia
+
+Rolly
+
+TR-55
+
+Trinitron
+
+FD series
+
+1 inch Type C
+
+U-matic
+
+Vaio
+
+Watchman
+
+WEGA
+
+ | Electronics | 
+
+Sony Creative Software
+
+FeliCa Networks (57%)
+
+ | Online distribution
+
+platforms | 
+
+PlayStation Network
+
+PlayStation Plus
+
+PlayStation Store
+
+Sony Pictures Core
+
+SonyLIV
+
+Crunchyroll
+
+mora
+
+Great American Pure Flix (joint venture with Great American Media)
+
+ | Former /
+
+Defunct | 
+
+Sony Entertainment Network
+
+Sony Connect
+
+PlayNow
+
+PlayStation Now
+
+PlayStation Video
+
+PlayStation Vue
+
+Anime Digital Network
+
+Anime on Demand
+
+AnimeLab
+
+Crackle
+
+Minisodes
+
+Funimation
+
+PressPlay
+
+VRV
+
+Wakanim
+
+ | Other businesses | 
+
+Sony DADC
+
+Sony Network Communications
+
+Sony Professional Solutions
+
+Sony Honda Mobility (50%)
+
+M3 (39.4%)
+
+Kadokawa Corporation (11.01%)
+
+Vaio (4.9%)
+
+ | Other assets | 
+
+Sony Corporation of America (umbrella company in the US)
+
+Other subsidiaries
+
+List of acquisitions
+
+List of libraries
+
+ | Nonprofit organizations | 
+
+Sony Institute of Higher Education Shohoku College
+
+ | Other | 
+
+Criticism
+
+Sony Toshiba IBM Center of Competence for the Cell Processor
+
+Sony timer
+
+Sony Technology Center
+
+Sony Technology Center-Pittsburgh
+
+ | 
+
+v
+
+t
+
+e
+
+Cell BE architecture
+
+ | 
+
+Sony
+
+Toshiba
+
+IBM
+
+ | Architecture | 
+
+Synergistic Processing Element
+
+SpursEngine
+
+Power Processing Element
+
+Xenon
+
+Vector Multimedia Extension
+
+ | Implementations | 
+
+Fabrication
+
+Sony PlayStation 3
+
+models
+
+clusters
+
+Toshiba Qosmio F50, G50, G55
+
+IBM BladeCenter QS
+
+IBM Roadrunner
+
+Zego
+
+ | Software | 
+
+Apulet
+
+Folding@home
+
+Initiative for a Common Engine
+
+OtherOS
+
+PhyreEngine
+
+Software development
+
+ | People | 
+
+David Bader
+
+Peter Hofstee
+
+James A. Kahle
+
+Ken Kutaragi
+
+STI Center of Competence
+
+ | Misc | 
+
+Gameframe
+
+Heterogeneous computing
+
+Power ISA
+
+Scratchpad memory
+
+SIMD
+
+Simultaneous multithreading
+
+Vector processor
+
+ | 
+Authority control databases 
+
+ | International | 
+
+ISNI
+
+VIAF
+
+FAST
+
+WorldCat
+
+ | National | 
+
+United States
+
+France
+
+BnF data
+
+Norway
+
+Poland
+
+ | Academics | 
+
+Scopus
+
+DBLP
+
+ | Other | 
+
+IdRef
+
+Retrieved from "https://en.wikipedia.org/w/index.php?title=Ken_Kutaragi&oldid=1386315101"
+
+Categories: 
+1950 births
+
+Living people
+
+21st-century Japanese inventors
+
+Academic staff of Ritsumeikan University
+
+Academy of Interactive Arts & Sciences Lifetime Achievement Award recipients
+
+Cell BE architecture
+
+Game Developers Conference Lifetime Achievement Award recipients
+
+Japanese chairpersons of corporations
+
+Japanese chief executives
+
+Japanese electrical engineers
+
+Japanese businesspeople in the video game industry
+
+Sony Interactive Entertainment people
+
+University of Electro-Communications alumni
+
+Academics from Tokyo
+
+Hidden categories: 
+Articles with short description
+
+Short description is different from Wikidata
+
+Use dmy dates from July 2020
+
+Articles with hCards
+
+Articles containing Japanese-language text
+
+All articles with unsourced statements
+
+Articles with unsourced statements from December 2024
+
+CS1 maint: deprecated archival service
+
+Webarchive template wayback links
+
+ This page was last edited on 17 November 2026, at 22:02 (UTC).
+
+Page was rendered with Parsoid.
+
+Text is available under the Creative Commons Attribution-ShareAlike 4.0 License;
+additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+Privacy policy
+
+About Wikipedia
+
+Disclaimers
+
+Contact Wikipedia
+
+Legal & safety contacts
+
+Code of Conduct
+
+Developers
+
+Statistics
+
+Cookie statement
+
+Mobile view
+
+Search
+
+ Search
+
+Toggle the table of contents
+
+Ken Kutaragi
+
+23 languages
+
+Add topic

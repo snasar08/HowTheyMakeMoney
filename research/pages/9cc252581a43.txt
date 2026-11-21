@@ -1,0 +1,1565 @@
+URL: https://en.wikipedia.org/wiki/Super_NES_CD-ROM
+FINAL_URL: https://en.wikipedia.org/wiki/Super_NES_CD-ROM
+FETCHED: 2026-11-21T16:08:41.542161+00:00
+
+Jump to content
+
+Main menu
+
+Main menu
+
+ move to sidebar
+ hide
+
+ Navigation
+
+Main page
+
+Contents
+
+Current events
+
+Random article
+
+About Wikipedia
+
+Contact us
+
+ Contribute
+
+Help
+
+Learn to edit
+
+Community portal
+
+Recent changes
+
+Upload file
+
+Special pages
+
+Search
+
+ Search
+
+Appearance
+
+Donate
+
+Create account
+
+Log in
+
+Personal tools
+
+Donate
+
+Create account
+
+Log in
+
+Contents
+
+ move to sidebar
+ hide
+
+(Top)
+
+ 1
+ History
+
+ Toggle History subsection
+
+ 1.1
+ Background
+
+ 1.2
+ Conception
+
+ 1.3
+ CES 1991 and aftermath
+
+ 2
+ Proposed devices
+
+ Toggle Proposed devices subsection
+
+ 2.1
+ Sony PlayStation (SFX-100)
+
+ 2.1.1
+ Prototypes
+
+ 2.2
+ Super NES CD-ROM System
+
+ 2.3
+ Comparison
+
+ 3
+ Legacy
+
+ 4
+ See also
+
+ 5
+ Notes
+
+ 6
+ References
+
+ 7
+ External links
+
+Toggle the table of contents
+
+Super NES CD-ROM
+
+10 languages
+
+Deutsch
+
+Español
+
+Français
+
+Italiano
+
+한국어
+
+Lombard
+
+Polski
+
+Português
+
+Русский
+
+中文
+
+Edit links
+
+Article
+
+Talk
+
+ English
+
+Read
+
+Edit
+
+View history
+
+Save
+
+Tools
+
+Tools
+
+ move to sidebar
+ hide
+
+ Actions
+
+Read
+
+Edit
+
+View history
+
+Save
+
+ General
+
+What links here
+
+Related changes
+
+Upload file
+
+Permanent link
+
+Page information
+
+Cite this page
+
+Get shortened URL
+
+Switch to legacy parser
+
+ Print/export
+
+Download as PDF
+
+Printable version
+
+ In other projects
+
+Wikimedia Commons
+
+Wikidata item
+
+Appearance
+
+ move to sidebar
+ hide
+
+From Wikipedia, the free encyclopedia
+
+Unreleased video game platform
+
+The Super NES CD-ROM,[1][a] or SNES CD, was a proposed video game platform developed by Nintendo via joint ventures with Sony and Philips that would have added compact disc (CD) support for the cartridge-based Super Nintendo Entertainment System (SNES).[b]
+
+The two collaborations led to two separate projects that would have used different formats based on CD-ROM; the Sony project was a dedicated all-in-one unit under the name "PlayStation"[c] using the Super Disc format, and the Philips project was an add-on unit for the SNES that used the Nintendo Disc (ND) format. All of these projects were cancelled shortly after Nintendo backed out of both collaborations a few years into development, which consequently made Sony develop its own console using the PlayStation name afterwards, and Philips gaining licenses for some Nintendo properties for its CD-i platform, many of which were unsuccessful and poorly received.[4] Nintendo would not release an optical disc-based console of their own until 2001 with the GameCube.
+
+History
+[edit]
+
+Background
+[edit]
+
+Released in 1990, the Super Nintendo Entertainment System (SNES) was Nintendo's entry into the fourth generation of video game consoles, also known as the 16-bit era. It became a major success worldwide, outselling its competitors, the TurboGrafx-16/PC Engine and the Sega Genesis/Mega Drive, becoming the most popular console of that generation.
+
+By the early 1990s, compact discs (CDs) had started to gain traction as a storage medium for music and video games. CDs provided an alternative to the traditional cartridge format that was the norm in the video game industry at the time, offering features such as a larger storage capacity, full-motion video (FMV) playback, and the inclusion of high-quality audio (including audio CD playback). NEC was the first to use CD technology with its TurboGrafx-CD/PC Engine CD-ROM² add-on in 1988, followed by Sega with their Sega CD/Mega-CD add-on in 1991. In response, Nintendo sought to create their own take on the concept to combat its competitors, and entered negotiations with Sony, who had previously designed the sound chips for the SNES, to create the project.
+
+Conception
+[edit]
+
+Sony engineer Ken Kutaragi became interested in video game development after observing his daughter play games on Nintendo's Famicom video game console. Without full corporate approval, Kutaragi secretly designed the S-SMP audio chip for Nintendo's upcoming Super NES console. At the time, Sony was uninterested in the video game business, so most of his superiors did not approve of the project (and he was nearly fired for doing so), but Kutaragi received support from Sony executive Norio Ohga, who allowed the project to proceed.[5]
+
+Encouraged by the collaboration, and convinced that CD-ROMs (which Sony had co-developed with Philips) would eventually supplant cartridges, Kutaragi proposed a CD-ROM drive for the Super NES. Although Nintendo was initially skeptical, concerned about the slow load times of CD-ROM drives of the time, it permitted Sony to begin development after Kutaragi claimed the drive would be used for multimedia purposes rather than games.[5]
+
+Development began in late 1988. The resulting project was a Sony-branded console called the PlayStation, designed to support both Super NES cartridges and a new CD-based format known as the Super Disc. Contemporaneous plans also reportedly called for the integration of the Super FX coprocessor developed by Argonaut Games for 3D graphics acceleration, which was used in games such as Star Fox. Jez San of Argonaut recalled that Nintendo and Sony initially wanted to add the Super FX chip into their new console, which would have allowed for rudimentary 3D graphics out of the box, and said that the chip was discussed as part of early technical proposals during negotiations with Sony and Nintendo.[6]
+
+Under Sony's proposed agreement, the company would retain control over the Super Disc format and its software licensing, as well as reap the exclusive benefits from music and movie content on the platform—areas where Sony was aggressively expanding.[7][8][9] Nintendo president Hiroshi Yamauchi found the terms unacceptable. He was already wary of Sony who had demanded game developers to use its expensive, proprietary audio tools for the S-SMP audio chip. He was also concerned by Sony's growing influence across music, film, and software. Yamauchi began to suspect that Nintendo was being used to advance Sony's ambitions of launching its own console. He soon began seeking an alternative partner.[9]
+
+Turning to one of Sony's main rivals, Philips, Yamauchi dispatched Nintendo of America president Minoru Arakawa and executive Howard Lincoln to the Netherlands to negotiate a more favorable deal. As chronicled by David Sheff in his book Game Over, "[The Philips deal] was meant to do two things at once: give Nintendo back its stranglehold on software and gracefully f--k Sony."[9][d] Unbeknownst to Sony, Nintendo's intent to go with Philips for the CD-ROM add-on was publicly announced two days before Consumer Electronics Show in a May 1991 Seattle Times news report.[10]
+
+CES 1991 and aftermath
+[edit]
+
+The first known SNES-based Sony PlayStation prototype with a Sony PlayStation on the right
+
+At the Consumer Electronics Show in June 1991, Sony publicly unveiled its hybrid SNES-compatible console, the PlayStation, which supported both cartridge and CDs.[7] The next day, Nintendo revealed its partnership with Philips at the show, which came as a surprise to the audience, and is now referred to by many journalists as "the greatest ever betrayal" in the industry.[11][9][12][13]
+
+Despite the events at CES 1991, negotiations between Nintendo and Sony continued, and during this period, two to three hundred PlayStation prototypes were produced,[14][15] and software development was underway. In early 1992, the companies reached a deal allowing Sony to produce SNES-compatible hardware, while Nintendo retained control and profit over the games. However, the strained relationship between the two firms had already taken its toll. Although Sony executives still believed that partnering with the more experienced Nintendo was the safer path, Kutaragi ultimately persuaded the company to abandon the Super NES CD-ROM and instead pursue development of a standalone console for the next-generation of video games, which would become the PlayStation in 1994.[16][17] This new console dropped compatibility with the SNES and contained more powerful hardware specifications than any other consoles available at the time. In order to refocus their efforts on the new console, Sony cut all ties to Nintendo in May 1992.[18]
+
+Meanwhile, the partnership between Nintendo and Philips led to the development of an add-on based CD-ROM peripheral for the Super NES, featuring additional hardware such as a 32-bit coprocessor and a new CD format based on CD-ROM XA technology known as the Nintendo Disc (ND). However, before any prototypes are produced, Nintendo reportedly canceled the project quietly as late as September 1993, effectively ending development of all CD-based Super NES hardware.[19]
+
+Proposed devices
+[edit]
+
+Sony PlayStation (SFX-100)
+[edit]
+
+"Super Disc" redirects here. For the floppy disk drive, see SuperDisk.
+
+Not to be confused with the original PlayStation console that was released in 1994.
+
+PlayStation (SFX-100)
+ | 
+Recreation of a Super Disc logo used from 1991 until 1993
+
+ | 
+Photo of the first known SNES-based Sony PlayStation prototype
+
+ | Also known as | 
+
+Play Station
+
+SFX-100 (model number)
+
+Nintendo PlayStation (unofficial name)
+
+ | Manufacturer | Nintendo, Sony
+
+ | Type | Video game console
+
+ | Lifespan | Canceled
+
+ | Media | Super Disc CD-ROM
+
+ | Successor | PlayStation (console)
+
+The PlayStation[e] was a proposed standalone console co-produced by Nintendo and Sony that used its own proprietary CD-ROM format designed and solely licensed by Sony known as the Super Disc[20] while retaining compatibility with Super NES Game Paks via an included cartridge slot.[21][22][23]
+
+Initial plans for the unit called for the integration of the Super FX coprocessor chip to allow for support of rudimentary 3D polygonal graphics out of the box,[6] however this is not present in any of the prototypes that were produced.
+
+Prototypes
+[edit]
+
+At least 200-300 units of the SNES-based PlayStation prototype were produced[24] until they were scrapped in favor of the next-generation PlayStation project, with each of the units bearing the model number SFX-100. Photos of these prototypes resurfaced in the 2000s, which were subsequently shared online as well as it being featured on an article published by Edge in April 2009 about the original PlayStation's history, showing what the unit would have looked like.[7]
+
+As of 2025[update], two known examples have been found. In July 2015, one of the original Sony PlayStation prototypes had been reportedly found; this particular unit was abandoned by former Sony Computer Entertainment CEO Ólafur Jóhann Ólafsson during his time at Advanta.[25] A former Advanta worker, Terry Diebold, acquired the device as part of a lot during Advanta's 2009 bankruptcy auction. As shown in Benjamin Heckendorn's tear-down video of the unit in 2016, the prototype featured two Super NES controller ports, a cartridge slot, a tray-loading dual-speed CD-ROM drive, RCA composite jacks, S-Video, RFU DC OUT (similar to the PlayStation SCPH-1001), a proprietary multi-out AV output port (the same one featured on the Super NES, Nintendo 64, and GameCube), headphone jack on the front, a serial port labelled "NEXT" (probably for debugging), and one expansion port under the unit.[26][27] The system was later confirmed as operational, however it was missing its original power supply as Diebold likely never received the one specific for it when he first received it in 2009, and so he had to use a third-party power supply for it in the meantime.[23] The unit plays Super Famicom cartridges as well as its included test cartridge, although the audio output and CD drive were non-functional. It came with a Sony/PlayStation-branded version of the standard Super Famicom controller (model number SHVC-005).[28]
+
+Some groups have attempted to develop homebrew software for the console such as Super Boss Gaiden, as there were no known games that used the CD drive.[29] In March 2016, retro-gaming website RetroCollect reported that it (and influential members of online emulation communities) had received (from an anonymous source) a functional disc boot ROM for the SNES-based PlayStation.[30]
+
+Back of the first known SNES-based Sony PlayStation prototype, showing the I/O ports and the power connector (which is non-original)
+
+Diebold gave the unit to hardware hacker Benjamin Heckendorn in 2016 to examine its contents. In doing this, he posted a tear-down video of the system that same year, which also included some technical specifications of the prototype that he published and compared it to the other two CD-based add-ons released for the TurboGrafx-16 and Sega Genesis. He said that the system would have probably been as powerful as a standard Super NES, but not as powerful as the Sega CD.[26][27] Heckendorn later identified faults in several on-board components which he subsequently replaced in 2017, resulting in fixing the audio and CD drive issues indirectly. To get around the issue of a missing power supply, Heckendorn created a custom power supply for the unit based on the original PlayStation and modified the unit to use a power connector from a Sony Walkman to match the one that was used on the custom power supply unit to ensure that it would be powered on without the need for its original power supply. Heckendorn then showed Super Famicom games (and SNES games via an adapter) working on the system and also showed audio CDs working on the system as there were no known game CDs, but affirmed that homebrew games worked.[31][32]
+
+This prototype was auctioned off to Heritage Auctions by Diebold in February 2020 with an initial price of US$15,000, but the auction quickly exceeded $350,000 within two days.[33][34] It eventually sold for $360,000 to Greg McLemore, an entrepreneur and founder of Pets.com who has a large collection of other video game hardware and plans to establish a permanent museum for this type of hardware,[35][36] gaining a Guinness World Record for the "most expensive videogame console sold online";[37]
+
+In March 2025, Kutaragi showcased one of the prototype units that he has kept inside his closet for storage, which is identical to the first known prototype unit that was discovered nearly ten years prior but in a much better physical condition.[38]
+
+Super NES CD-ROM System
+[edit]
+
+Super NES CD-ROM System
+ | 
+SNES CD add-on prototype concept art
+
+ | Also known as | Super Famicom CD-ROM Adapter
+
+ | Manufacturer | Nintendo, Philips
+
+ | Type | Video game console add-on
+
+ | Lifespan | Canceled
+
+ | Media | Nintendo Disc (CD-ROM XA)
+
+The Super NES CD-ROM System[f] was a proposed CD-ROM add-on for the Super NES co-produced by Nintendo and Philips that can accept CDs while also providing some additional hardware functionality to expand upon the capabilities of the Super NES. It was developed as a result of a partnership between the two companies that occurred alongside the ongoing development of Sony's standalone SNES-based PlayStation console and the Super Disc CD-ROM format.
+
+Like most CD-based add-ons, it can play CD-based games as well as audio CDs via its own built-in CD drive. It was designed to be used only in conjunction with a Super NES console, and attaches to the expansion port on the bottom of the main system. Unlike most CD-ROM based add-ons (and virtually most optical disc-based game consoles since), it does not use a tray loading or top loading drive and instead uses a cartridge-based caddy loading drive that can accept discs placed in enclosed caddy cases, similar to that used in early CD-ROM drives found in contemporary computers of the time[39] such as certain pre-1994 Macintosh computers with built-in CD drives. The caddy cases were designed to protect the discs from damage. The add-on's CD drive would operate at both single (1x) and double (2x) speeds,[39] with the faster speed (2x) being primarily used for CD-based games while the slower speed (1x) was presumably only used for audio CDs.[21] CD-based games for the add-on would use a new CD-ROM format known as the Nintendo Disc (ND), which was developed separately from Sony's Super Disc format and was based on CD-ROM XA;[2][21] the ND format games would also be compatible with CD-i-based hardware.[39]
+
+Because Nintendo was convinced that using CD-ROM technology with a 16-bit processor would not provide consumers with significantly enhanced and unique games, they decided to use a new 32-bit RISC processor with the add-on,[40][2][21] which was reported by some analysts to be an NEC V810 clocked at 21.47727 MHz.[41] This new 32-bit CPU, known as the SCCP, was to be included inside a dedicated system cartridge that contains the extra hardware dedicated for the add-on such as additional RAM, ROM, and an additional coprocessor called "HANDS" (Hyper Advanced Nintendo Data Transfer System), a custom chip based around a single 65C02 8-bit processor clocked at 4.295 MHz. HANDS primarily acts as a decoder for the add-on's CD-ROM drive, but also enhances the SNES's sound capabilities with up to four channels of audio, complimenting with the add-on's CD audio as well as the Super NES' eight-channel S-SMP audio system.[21] The system cartridge would be inserted into the console's cartridge slot and then interfaced via a cord that attaches from the system cartridge to the CD-ROM unit to supply power and data transfer, mirroring that of the Famicom Disk System of the preceding NES (Famicom) which uses a similar setup. Like most CD-ROM add-ons, it would also require its own power supply as the Super NES cannot supply power to the CD-ROM unit by itself; a separate AC adapter would be included with the unit to supply power to the add-on itself. To combat piracy, the add-on would have added a number of copy-protection measures to prevent the use of illicit copies and burned backups of ND format games.[39][21]
+
+The technical specifications of the Super NES CD-ROM System add-on were reported as early as 1992 by Electronic Gaming Monthly (EGM) before publishing its specs in its March 1993 issue,[39] which were echoed in an issue of Electronic Games published in April 1993.[21] The 1993 EGM and EG issues also showed concept art for the proposed add-on unit, with the EGM issue showing the Super Famicom design and the EG issue showing the North American Super NES design. Before a single prototype could be made, however, Nintendo quietly cancelled the project a few years into the concept phase, which was reported as late as Summer 1993.[19]
+
+Comparison
+[edit]
+
+The following table below is based on Benjamin Heckendorn's specs comparison of the first known prototype unit of Sony's jointly produced SNES-based PlayStation console shown in July 2016.[26] The specs of the proposed Nintendo and Philips developed Super NES CD-ROM System add-on published by Electronic Gaming Monthly and Electronic Games in 1993 are also included on this table below.
+
+ | System | TurboGrafx-CD
+
+PC Engine CD-ROM² | Sega CD
+
+Mega-CD | SNES CD
+
+(SFX-100; Sony) | SNES CD
+
+(Add-on; Philips)
+
+ | CPU (MHz)
+ | 7.16 | 7.67 | 3.58 | 3.58
+
+ | Co-CPU (MHz)
+ | —N/a | 4 | 2.048 | 2.048
+
+ | Bus Width (Bits)
+ | 8 | 16 | 8 | 8
+
+ | Add-on Processor (MHz)
+ | —N/a | 12.5 | —N/a | 21
+
+ | Add-on Video
+ | —N/a | Present | —N/a[g] | —N/a[h]
+
+ | Add-on Audio
+ | CD[i] | ASIC+CD[j] | CD[k] | ASIC+CD[l]
+
+ | CD-ROM Speed
+ | 1× | 1× | 2× | 2×[m]
+
+ | Main RAM (KB)
+ | 8 | 64 | 128 | 128
+
+ | Video RAM (KB)
+ | 64 | 64 | 64 | 64
+
+ | Audio RAM (KB)
+ | —N/a | 8 | 64 | 64
+
+ | Exp RAM (KB)
+ | 64
+
+256[n]
+
+2048[o] | 512 | 256 | 1024
+
+ | Exp Video RAM (KB)
+ | —N/a | 256 | —N/a | —N/a
+
+ | Exp Audio RAM (KB)
+ | 64 | 64 | —N/a | —N/a
+
+ | CD Cache RAM (KB)
+ | —N/a | 16 | 32 | 1
+
+ | Save data RAM (KB)
+ | —N/a | 8 | 8 | 32
+
+ | Total RAM (KB)
+ | 200
+
+392[n]
+
+2184[o] | 992 | 552 | 1313
+
+Legacy
+[edit]
+
+After the original contract with Sony failed, Nintendo continued its partnership with Philips. This contract provisioned Philips with the right to feature Nintendo's characters in a few games for its CD-i multimedia device, but never resulted in a CD-ROM add-on for the Super NES after Nintendo silently cancelled the project in late 1993. The Nintendo-themed CD-i games were very poorly received, and the CD-i is considered a commercial failure.[4] These games later found its way onto the Internet as a cult favorite; the hand-drawn cutscenes of certain Nintendo-themed CD-i games in particular were used in various parodies and internet memes in the mid-to-late 2000s, including those published on video sharing sites such as YouTube.
+
+Shortly after Nintendo left the collaboration in 1991, Sony continued to work on the project on their own, cutting ties with Nintendo in 1992 and reworked the project into a standalone console that exclusively ran on CDs instead of cartridges and had more powerful hardware than any other consoles available at the time. It was around this time that Sony entered into a short-lived partnership with Sega under the agreement that both companies would share all costs and risk for the new CD-ROM drive (and ultimately the next generation console). Sega would cancel the partnership, however, claiming that Sony knew little of the industry at the time,[42] and resumed development on what would eventually become the Sega Saturn. Kutaragi however became emboldened enough from his experiences working with both Nintendo and Sega, and Sony resumed development of their own console for the next generation after leaving both companies.
+
+The main game in development for the SNES CD platform launch was Square's Secret of Mana, whose planned content was cut down to the size suitable for cartridge and released on that medium instead.[43][44] While none of the hardware found in the Nintendo and Philips add-on project ever came to fruition, the CPU used in the proposed add-on, the NEC V810, did eventually make its way into at least two other video game products: NEC and Hudson Soft's PC-FX game console released exclusively in Japan in December 1994, as well as Nintendo's own Virtual Boy 3D stereoscopic game console released in July 1995 in Japan and August 1995 in North America.
+
+Sony released the PlayStation in December 1994 in Japan and September 1995 in North America and Europe, and soon became a major success worldwide. Its next-generation CD-based console successfully competed with other CD-based consoles such as the Sega Saturn, the 3DO, and PC-FX, as well as Nintendo's cartridge-based Nintendo 64, making it a console leader. Sony had sold three times as many PlayStation consoles compared to the Nintendo 64 and the Sega Saturn in the mid-to-late 1990s, establishing Sony as a major player in the video game industry.
+
+The broken partnership with Sony has often been cited as a mistake by Nintendo, effectively creating a formidable rival in the video game market as a consequence of Sony's and Kutaragi's shrewd determination to break into the market. Journalists have argued that if Nintendo had never broken the deal, its position may have been further undermined by Sony.[45][16] Nintendo, still convinced of the faster load times and stronger anti-piracy measures of the cartridge format, did not produce an optical disc-based console until the release of the GameCube in 2001.[17]
+
+See also
+[edit]
+
+1990s portal
+
+Electronics portal
+
+Video games portal
+
+Atari Jaguar CD
+
+Panasonic M2, initially announced as an add-on chip for the 3DO
+
+Satellaview
+
+Sega CD, a CD-ROM attachment for the Genesis
+
+TurboGrafx-16, the first video game console with a CD-ROM drive attachment
+
+Voicer-kun, an IR transmitter for the Super Famicom used to provide CD audio from an external CD player
+
+Twin Famicom, a Famicom and Famicom Disk System combination unit
+
+Super Famicom Naizou TV SF1, a Super Famicom and television combination that is a follow-up to the Sharp C1
+
+Notes
+[edit]
+
+↑ The system was internally known as the Super NES CD-ROM System in North America and the Super Famicom CD-ROM Adapter in Japan.[2][3]
+
+↑ Also known as the Super Nintendo, Super NES and SNES, and as the Super Famicom (SFC) in Japan
+
+↑ Also known as the Play Station, PlayStation SFX-100 and by fans and enthusiasts as the Nintendo PlayStation; not to be confused with the original PlayStation console released in 1994
+
+↑ This is a censored quote from the original source.
+
+↑ Also spelled as "Play Station"; the name "Nintendo PlayStation" is a fan-coined term used by enthusiasts to primarily distinguish the console from the actual PlayStation console released in 1994/1995, despite being produced by Sony using licensed Nintendo hardware.
+
+↑ Also known as the Super Famicom CD-ROM Adapter in Japan[2][3]
+
+↑ Early plans for the SNES CD model SFX-100 called for the integration of the Super FX chip to allow for rudimentary 3D polygonal graphics out-of-the-box,[6] however none of the available prototypes ever implemented it.
+
+↑ The add-on's coprocessor is said to reproduce full-motion video and can generate calculations for 3D polygonal graphics using the coprocessor's power according to a 1992 EGM report, but the add-on has no dedicated graphics processor unlike the Sega CD.
+
+↑ Unit also includes an Oki MSM5205 ADPCM chip alongside CD-DA
+
+↑ Using Ricoh RF5C164 PCM chip and CD-DA
+
+↑ CD-DA only
+
+↑ Using HANDS CD-ROM decoder chip and CD-ROM XA audio
+
+↑ CD-ROM drive can operate at 1x speed for audio CDs or 2x speed for game and multimedia CDs[21]
+
+1 2 PC Engine Duo/Super System Card/Super CD-ROM² only
+
+1 2 Using Arcade Card add-on
+
+References
+[edit]
+
+↑ "Super NES Technology Update: CD-ROM". Nintendo Power. No. 35. April 1992. pp. 70–71.
+
+1 2 3 4 "Super NES CD-ROM System documentation" (PDF). Nintendo of America, Inc. February 1, 1993. Archived from the original on June 19, 2018.
+
+1 2 "ニューマシン総まくり" [Overview of New Consoles]. Weekly Famitsu (in Japanese). July 3, 1992. Archived from the original on August 19, 2017.
+
+1 2 Snow, Blake (May 4, 2007). "The 10 Worst-Selling Consoles of All Time". GamePro.com. Archived from the original on May 8, 2007. Retrieved November 25, 2007.
+
+1 2 Kohler, Chris (September 7, 2018). "The Weird History Of The Super NES CD-ROM, Nintendo's Most Notorious Vaporware". Kotaku. Archived from the original on August 26, 2023. Retrieved September 1, 2023.
+
+1 2 3 McFerran, Damien (30 November 2019). "The SNES PlayStation Was Going To Have A Super FX Chip Built-In". Nintendo Life. Retrieved 10 October 2025.
+
+1 2 3 "The Making Of: PlayStation". Edge. Future Publishing. April 24, 2009. Archived from the original on May 16, 2012. Retrieved March 7, 2012.
+
+↑ "History of the PlayStation". IGN. August 27, 1998. Archived from the original on February 18, 2012. Retrieved March 8, 2012.
+
+1 2 3 4 Robinson, Andy (February 5, 2020). "The Road To PS5: PSOne's Betrayal And Revenge Story". Video Games Chronicle. Archived from the original on January 18, 2022. Retrieved February 6, 2020.
+
+↑ "Nintendo, Philips Join In Games On CD". The Seattle Times. Seattle Times. May 31, 1991. Archived from the original on 2016-04-05. Retrieved August 5, 2025.
+
+↑ "Nintendo-Philips Deal Is a Slap at Sony". The New York Times. June 3, 1991. Archived from the original on April 7, 2016.
+
+↑ McFerran, Damien (2015). "The PlayStation Book". Retro Gamer. Bournemouth: Imagine Publishing. ISBN 978-1785-461-064.{{cite magazine}}: CS1 maint: periodical has ISBN (link)
+
+↑ Donovan, Tristan (23 June 2018). "The story behind Nintendo's betrayal of Sony – and how it created its fiercest rival". VentureBeat. Archived from the original on 30 August 2020. Retrieved 11 September 2020.
+
+↑ "Sony PlayStation". Next Generation. No. 24. Imagine Media. December 1996. p. 48.
+
+↑ Lipshy, Jarrod S. (November 20, 2013). "Why the Super Nintendo CD Would Have Been the Greatest Console Ever". Unrealitymag. Archived from the original on November 9, 2015. Retrieved November 9, 2015.
+
+1 2 Fahey, Rob (April 27, 2007). "Farewell, Father". Eurogamer. Archived from the original on August 17, 2012. Retrieved March 8, 2012.
+
+1 2 Cowan, Danny (April 25, 2006). "CDi: The Ugly Duckling". 1UP.com. Archived from the original on November 4, 2012. Retrieved March 8, 2012.
+
+↑ Asakura, Reiji (2000). Revolutionaries at Sony: The Making of the Sony PlayStation. New York City: McGraw-Hill. ISBN 978-0-07-135587-2. Retrieved 24 February 2021.
+
+1 2 "Nintendo CD: The full story". Super Play. No. 11. September 1993.
+
+↑ Sharples, Nick. "SCEE -- Sony History". Sony Computer Entertainment Europe. Archived from the original on 26 August 2005. Retrieved 14 April 2025.
+
+1 2 3 4 5 6 7 8 "Nintendo's rocky road to CD". Electronic Games. April 1993. p. 27.
+
+↑ Theriault, Donald (July 3, 2015). "Nintendo Play Station Superdisc Discovered". Nintendo World Report. Archived from the original on September 6, 2015. Retrieved November 6, 2015.
+
+1 2 Lai, Richard (November 6, 2015). "We turned on the Nintendo PlayStation: It's real and it works". Engadget. AOL Inc. Archived from the original on August 16, 2016.
+
+↑ "Sony PlayStation". Next Generation. No. 24. Imagine Media. December 1996. p. 48.
+
+↑ Brian Crecente (July 3, 2015). "How misfortune and a bit of luck led to the discovery of the fabled Nintendo Play Station". Polygon. Archived from the original on July 6, 2015. Retrieved July 7, 2015.
+
+1 2 3 The Ben Heck Show (July 15, 2016). Ben Heck's Nintendo-Playstation Prototype Pt 1 Teardown. Archived from the original on February 13, 2017. Retrieved February 20, 2017 – via YouTube.
+
+1 2 The Ben Heck Show (July 22, 2016). Ben Heck's Nintendo-Playstation Prototype Part 2 Repair. Archived from the original on July 27, 2016. Retrieved July 23, 2016 – via YouTube.
+
+↑ "Did a SUPER RARE Sony-Nintendo PlayStation prototype just pop up online? Possibly, maybe". theregister.com. July 4, 2015. Archived from the original on December 19, 2018. Retrieved December 18, 2018.
+
+↑ "Someone Has Actually Made A Game Which Works On The SNES PlayStation". Nintendo Life. July 11, 2016. Archived from the original on March 22, 2017. Retrieved February 20, 2017.
+
+↑ Buchanan, Adam (March 1, 2016). "Unreleased Super Nintendo CD "Nintendo PlayStation" Boot ROM Discovered". RetroCollect. Archived from the original on March 10, 2016.
+
+↑ Good, Owen S. (May 6, 2017). "The 'Nintendo Play Station' is working, thanks to Ben Heck". Polygon. Archived from the original on February 29, 2020. Retrieved February 14, 2020.
+
+↑ "Hacker Makes the Nintendo PlayStation Fully Operational". Kotaku. May 5, 2017. Archived from the original on May 5, 2017. Retrieved May 5, 2017.
+
+↑ Philips, Tom (February 13, 2020). "Ultra-rare Nintendo PlayStation prototype up for auction". Eurogamer. Archived from the original on February 13, 2020. Retrieved February 13, 2020.
+
+↑ Smith, Andrew (February 14, 2020). "Auctioned Nintendo PlayStation Prototype Console Will Be the Most Expensive Video Game Item Ever, Current Bid is $350,000". IGN. Archived from the original on February 15, 2020. Retrieved February 14, 2020.
+
+↑ Carpenter, Nicole (March 6, 2020). "Rare Nintendo Play Station sold at auction for more than $300,000". Polygon. Archived from the original on October 10, 2021. Retrieved March 6, 2020.
+
+↑ Zwiezen, Zack (March 7, 2020). "The Man Behind Pets.Com Bought The 'Nintendo Play Station' Console For $360,000". Kotaku. Archived from the original on March 8, 2020. Retrieved March 7, 2020.
+
+↑ "Most expensive videogame console sold at an online auction". Guinness World Records. Archived from the original on 2026-05-25. Retrieved 2026-07-06.
+
+↑ Jenkins, Dwayne (March 20, 2025). "PlayStation Co-Creator Still Has a "Nintendo PlayStation" Prototype -- Which Is Wild To Witness". Vice. Retrieved March 20, 2025.
+
+1 2 3 4 5 "Production Super NES CD-ROM Specs Revealed!". Electronic Gaming Monthly. Vol. 6, no. 3. March 1993. p. 52.
+
+↑ Nintendo of America (27 August 1992). "3 Dimensional Graphics Come To 16 - Bit Super NES". Letter to Kevin Edwards. Retrieved 14 April 2025.
+
+↑ Davies, Jonathan (May 1993). "New Tech: CD-ROM-More Details Emerge". Super Play. No. 7. p. 21.
+
+↑ Williams, Mike (11 July 2013). "Sega and Sony Almost Teamed Up on a Console". US Gamer. Archived from the original on 20 August 2014. Retrieved 28 August 2014.
+
+↑ Finnegan, Lizzy (April 7, 2015). "Secret of Mana: A Good Game With The Great Cut Out". The Escapist. Archived from the original on October 4, 2015. Retrieved November 9, 2015.
+
+↑ Schaulfelberger, Frederik (September 2006). "Sanningen om Mana". Level (in Swedish) (6). IDG: 114–121.
+
+↑ Nutt, Christian (September 9, 2010). "Birthday Memories: Sony PlayStation Turns 15". Gamasutra. Archived from the original on February 14, 2011. Retrieved March 8, 2012.
+
+External links
+[edit]
+
+ Media related to Nintendo Playstation prototype at Wikimedia Commons
+
+ | 
+
+v
+
+t
+
+e
+
+Super Nintendo Entertainment System
+
+ | 
+Known in Japan as the Super Famicom and in South Korea as the Super Comboy
+
+ | Accessories | 
+
+ | Nintendo | 
+
+Mouse
+
+Super Scope
+
+Nintendo Power
+
+Super Game Boy
+
+Satellaview (broadcasts)
+
+ | Third-party | 
+
+ASCII Turbo File
+
+Action Replay
+
+Batter Up
+
+Barcode Battler
+
+Game Genie
+
+Konami Justifier
+
+Miracle Piano Teaching System
+
+SuFami Turbo
+
+Super 8
+
+Voicer-kun
+
+XBAND
+
+Turbo Touch 360
+
+ | Games | 
+
+Best
+
+Best-selling
+
+Cancelled
+
+ | Hardware | 
+
+Ricoh 5A22
+
+Game Pak
+
+List of enhancement chips
+
+Super FX
+
+ | Variants | 
+
+Super Famicom Naizou TV SF1
+
+Super NES Classic Edition
+
+Super Nt
+
+Nintendo Gateway System
+
+ | Related | 
+
+Mode 7
+
+Super NES CD-ROM
+
+Super SmartJoy
+
+Super Play
+
+Console Wars
+
+ | 
+Preceded by Nintendo Entertainment System • Succeeded by Nintendo 64
+
+ | 
+
+v
+
+t
+
+e
+
+Video game consoles
+
+ | Form factor | 
+
+Home video game console
+
+Microconsole
+
+Handheld game console
+
+Hybrid video game console
+
+ | Functionality | 
+
+Dedicated console
+
+Retro style console
+
+ | Generations | 
+
+First (1972–1983)
+
+Second (1976–1992)
+
+Third (1983–2003)
+
+Fourth (1987–2004)
+
+Fifth (1993–2006)
+
+Sixth (1998–2013)
+
+Seventh (2005–2017)
+
+Eighth (2012–present)
+
+Ninth (2020–present)
+
+ | Fifth
+
+generation | 
+
+ | Home | 
+
+3DO
+
+Amiga CD32
+
+Atari Jaguar
+
+Casio Loopy
+
+FM Towns Marty
+
+Nintendo 64
+
+NEC PC-FX
+
+Pippin
+
+Playdia
+
+PlayStation
+
+Sega Saturn
+
+ | Handheld | 
+
+Design Master Senshi
+
+Game Boy Color
+
+Game.com
+
+Neo Geo Pocket
+
+PocketStation
+
+R-Zone
+
+Genesis Nomad
+
+Virtual Boy
+
+ | Lists | 
+
+Dedicated video game consoles
+
+Handheld game consoles
+
+Home video game consoles
+
+Microconsoles
+
+Retro style video game consoles
+
+ | 
+
+← Fourth generation
+
+Sixth generation →
+
+Emulator
+
+Game
+
+Services
+
+History
+
+List
+
+Manufacturer
+
+ | 
+
+v
+
+t
+
+e
+
+Nintendo video game hardware
+
+ | Consoles | 
+
+ | Home | 
+
+NES
+
+models
+
+Super NES
+
+Nintendo 64
+
+iQue Player
+
+GameCube
+
+Wii
+
+Wii U
+
+ | Handheld | 
+
+Game Boy
+
+Game Boy Color
+
+Game Boy Advance
+
+SP
+
+Micro
+
+Pokémon Mini
+
+Nintendo DS
+
+Lite
+
+DSi
+
+Nintendo 3DS
+
+2DS
+
+New 3DS
+
+New 2DS XL
+
+ | Hybrid | 
+
+Nintendo Switch
+
+Nintendo Switch 2
+
+ | Other | 
+
+Virtual Boy
+
+ | Dedicated | 
+
+Color TV-Game
+
+Game & Watch
+
+Computer Mah-jong Yakuman
+
+Nintendo Gateway System
+
+Mini Classics
+
+Pokémon Pikachu
+
+NES Classic Edition
+
+Super NES Classic Edition
+
+ | Peripherals | 
+
+ | Lists | 
+
+NES
+
+Super NES
+
+N64
+
+Game Boy
+
+GCN
+
+DS
+
+Wii Remote
+
+ | Add-ons | 
+
+Famicom Data Recorder
+
+Famicom Disk System
+
+Famicom 3D System
+
+Super NES CD-ROM
+
+Super Game Boy
+
+Rumble Pak
+
+Game Boy Camera
+
+Game Boy Printer
+
+64DD
+
+e-Reader
+
+Game Boy Player
+
+Wii MotionPlus
+
+ | Connectivity | 
+
+NES Satellite
+
+NES Four Score
+
+Game Link Cable
+
+Transfer Pak
+
+Mobile Adapter GB
+
+GCN–GBA Link Cable
+
+GBA Wireless Adapter
+
+ | Controllers | 
+
+NES Zapper
+
+Family BASIC
+
+R.O.B.
+
+NES Advantage
+
+Super NES Mouse
+
+Super Scope
+
+Nintendo 64
+
+GameCube
+
+WaveBird Wireless
+
+Wii Remote
+
+Classic Controller
+
+Wii Zapper
+
+Wii Balance Board
+
+Wii U GamePad
+
+Wii U Pro
+
+Joy-Con
+
+Nintendo Switch Pro
+
+Poké Ball Plus
+
+ | Networking | 
+
+Family Computer Network System
+
+Satellaview
+
+Nintendo Wi-Fi USB Connector
+
+ | Other | 
+
+Nintendo Power
+
+Wii Speak
+
+Amiibo
+
+ | Arcade | 
+
+VS. System
+
+PlayChoice-10
+
+ | Integrated circuits | 
+
+2A03
+
+CIC
+
+5A22
+
+Super NES enhancement chips
+
+Super FX
+
+GameCube technical specifications
+
+Gekko
+
+Broadway
+
+Hollywood
+
+PICA200
+
+Espresso
+
+Tegra X1
+
+Tegra Orin
+
+ | Media | 
+
+Game Pak
+
+Super NES
+
+Game Boy
+
+N64
+
+Game Boy Advance Video
+
+Play-Yan
+
+Nintendo optical discs
+
+Nintendo Game Card
+
+ | 
+
+v
+
+t
+
+e
+
+PlayStation
+
+ | 
+
+Sony Interactive Entertainment
+
+PlayStation Studios
+
+ | Consoles | 
+
+ | Home consoles | 
+
+PlayStation
+
+Models
+
+Main hardware
+
+PlayStation 2
+
+Models
+
+Main hardware
+
+PlayStation 3
+
+Models
+
+Main hardware
+
+System software
+
+PlayStation 4
+
+Main hardware
+
+System software
+
+PlayStation 5
+
+ | Handhelds | 
+
+PocketStation
+
+PlayStation Portable
+
+System software
+
+PlayStation Vita
+
+System software
+
+ | Miscellaneous | 
+
+PSX
+
+PlayStation TV
+
+PlayStation Classic
+
+ | Games | 
+
+ | PlayStation | 
+
+A–L
+
+M–Z
+
+Net Yaroze
+
+Best
+
+Best-selling
+
+Downloadable
+
+JP
+
+NA
+
+PAL
+
+Cancelled
+
+ | PS2 | 
+
+A–K
+
+L–Z
+
+Best
+
+Best-selling
+
+Online
+
+Downloadable
+
+Cancelled
+
+ | PS3 | 
+
+A–C
+
+D–I
+
+J–P
+
+Q–Z
+
+Best
+
+Best-selling
+
+Cancelled
+
+ | PS4 | 
+
+A–L
+
+M–Z
+
+Best-selling
+
+Free-to-play
+
+PS VR games
+
+Cancelled
+
+ | PS5 | 
+
+A–Z
+
+Best-selling
+
+PS VR2 games
+
+Cancelled
+
+ | PSP | 
+
+A-Z
+
+Downloadable
+
+PS minis
+
+Best selling
+
+Cancelled
+
+ | PS Vita | 
+
+A–D
+
+E–H
+
+I–L
+
+M–O
+
+P–R
+
+S
+
+T–V
+
+W–Z
+
+Cancelled
+
+ | Other | 
+
+PS Mobile
+
+TurboGrafx-16 Classics
+
+NEOGEO Station
+
+Classics HD
+
+ | Reprints | 
+
+Greatest Hits
+
+Essentials
+
+The Best
+
+BigHit Series
+
+ | Network | 
+
+PlayStation Network
+
+2011 outage
+
+Central Station
+
+FirstPlay
+
+PlayStation App
+
+PlayStation Home
+
+PlayStation Mobile
+
+PlayStation Now
+
+PlayStation Store
+
+PlayStation Video
+
+PlayStation Vue
+
+PS2 online
+
+PlayStation Broadband Navigator
+
+Room for PSP
+
+VidZone
+
+ | Accessories | 
+
+ | Controllers | 
+
+PlayStation controller
+
+PlayStation Mouse
+
+Analog Joystick
+
+Dual Analog
+
+DualShock / DualSense
+
+Sixaxis
+
+PlayStation Move
+
+ | Cameras | 
+
+EyeToy
+
+Go!Cam
+
+PlayStation Eye
+
+PlayStation Camera
+
+ | Miscellaneous | 
+
+Multitap
+
+Link Cable
+
+PS2 accessories
+
+PlayStation 2 Expansion Bay
+
+PS3 accessories
+
+PlayTV
+
+Torne
+
+Wonderbook
+
+PlayStation VR
+
+2
+
+PlayStation Portal
+
+ | Kits | 
+
+Net Yaroze
+
+PS2 Linux
+
+GScube
+
+OtherOS
+
+Zego
+
+ | Media | 
+
+ | Magazines | 
+
+Official U.S. PlayStation Magazine
+
+PlayStation: The Official Magazine
+
+PlayStation Official Magazine – UK
+
+PlayStation Official Magazine – Australia
+
+Official PlayStation Magazine (Ireland)
+
+PlayStation Underground
+
+ | Advertisements | 
+
+Double Life
+
+Mountain
+
+PlayStation marketing
+
+ | Mascots | 
+
+Polygon Man
+
+Sofia
+
+Kevin Butler
+
+ | Arcade boards | 
+
+System 11 and System 12
+
+Konami System 573
+
+ | Related | 
+
+Super NES CD-ROM
+
+Sony Ericsson Xperia Play
+
+"Players"
+
+PlayStation mentality
+
+ | 
+
+ Category
+
+ | 
+
+v
+
+t
+
+e
+
+PlayStation (console)
+
+ | 
+
+Sony Interactive Entertainment
+
+ | Hardware | 
+
+Models
+
+Technical Specifications
+
+Net Yaroze
+
+ | Accessories | 
+
+Controller
+
+Dual Analog Controller
+
+DualShock
+
+Analog Joystick
+
+Link Cable
+
+Mouse
+
+Multitap
+
+PocketStation
+
+GunCon
+
+Jogcon
+
+Namco Arcade Stick
+
+NeGcon
+
+ | Games | 
+
+A–L
+
+M–Z
+
+Best-selling
+
+Cancelled
+
+Net Yaroze
+
+Budget Ranges
+
+Greatest Hits
+
+Platinum
+
+The Best
+
+ | Emulation | 
+
+Bleem!
+
+Connectix Virtual Game Station
+
+ePSXe
+
+PCSX-Reloaded
+
+ | Related | 
+
+Super NES CD-ROM
+
+System 573
+
+PlayStation Classic
+
+Polygon Man
+
+Sofia
+
+Double Life
+
+ | 
+
+ Category
+
+Successor: PlayStation 2
+
+Retrieved from "https://en.wikipedia.org/w/index.php?title=Super_NES_CD-ROM&oldid=1386184486"
+
+Categories: 
+1990s in video gaming
+
+CD-ROM-based consoles
+
+Fifth-generation video game consoles
+
+Home video game consoles
+
+PlayStation (brand)
+
+PlayStation (console)
+
+Sony consoles
+
+Super Nintendo Entertainment System
+
+Vaporware video game consoles
+
+Video game console add-ons
+
+Hidden categories: 
+Articles with short description
+
+Short description is different from Wikidata
+
+CS1 Japanese-language sources (ja)
+
+CS1 maint: periodical has ISBN
+
+Articles containing potentially dated statements from 2025
+
+All articles containing potentially dated statements
+
+CS1 Swedish-language sources (sv)
+
+Commons category link is on Wikidata
+
+ This page was last edited on 17 November 2026, at 04:22 (UTC).
+
+Page was rendered with Parsoid.
+
+Text is available under the Creative Commons Attribution-ShareAlike 4.0 License;
+additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+Privacy policy
+
+About Wikipedia
+
+Disclaimers
+
+Contact Wikipedia
+
+Legal & safety contacts
+
+Code of Conduct
+
+Developers
+
+Statistics
+
+Cookie statement
+
+Mobile view
+
+Search
+
+ Search
+
+Toggle the table of contents
+
+Super NES CD-ROM
+
+10 languages
+
+Add topic
