@@ -3,7 +3,7 @@ import * as THREE from "three";
 import { toonMat, glowMat, metalMat, outline, canvasTex, seeded, box } from "./common";
 
 export type SetName = "throne" | "office" | "diner" | "lab" | "stall" | "field" | "ring" | "track" | "graveyard" | "boardroom" | "street" | "beach"
-  | "court" | "pitch" | "diamond" | "gridiron" | "tennis" | "golf" | "pool" | "gym" | "studio" | "farm" | "store" | "stage" | "space" | "garage" | "classroom" | "bathroom" | "mansion" | "showroom" | "factory" | "mountain";
+  | "court" | "pitch" | "diamond" | "gridiron" | "tennis" | "golf" | "pool" | "gym" | "studio" | "farm" | "store" | "stage" | "space" | "garage" | "classroom" | "bathroom" | "mansion" | "showroom" | "factory" | "mountain" | "rink";
 export type SetObj = { root: THREE.Group; lights: THREE.Light[]; fog?: THREE.Fog; bg: string; spots: Record<string, [number, number, number]> };
 
 type V3 = [number, number, number];
@@ -2096,7 +2096,74 @@ function mountain(): SetObj {
   return { root: g, lights, fog: new THREE.Fog("#cfe8ff", 50, 140), bg: "#8fd0ff", spots: { spot: [0, 0, 0], mine: [2.6, 2.2, -7.9], cart: [2.6, 1.0, -3.2], vein: [-6, 3.2, -8.3], tracks: [2.6, 0.1, -2], sign: [2.6, 5.15, -7.5] } };
 }
 
-const BUILD: Record<SetName, () => SetObj> = { throne, office, diner, lab, stall, field, ring: ring_, track, graveyard, boardroom, street, beach, court, pitch, diamond, gridiron, tennis, golf, pool, gym, studio, farm, store, stage, space, garage, classroom, bathroom, mansion, showroom, factory, mountain };
+// ================= RINK (an ice hockey rink: ice with red centre line + blue lines, boards with glass, a goal, stands with a crowd) =================
+function rink(): SetObj {
+  const g = new THREE.Group();
+  const X0 = -10, X1 = 10, Z0 = -18, Z1 = 10;                                  // ice 20 x 28 m
+  const FW = 720, FH = Math.round(FW * (Z1 - Z0) / (X1 - X0)), fx = FW / (X1 - X0), fz = FH / (Z1 - Z0);
+  const FX = (x: number) => (x - X0) * fx, FZ = (z: number) => (z - Z0) * fz;
+  const ice = canvasTex(FW, FH, (c) => {
+    c.fillStyle = "#eef7ff"; c.fillRect(0, 0, FW, FH); const r = seeded(811);
+    c.globalAlpha = 0.5; c.strokeStyle = "#b9d9f2"; c.lineWidth = 2;
+    for (let i = 0; i < 60; i++) { const x = r() * FW, y = r() * FH, a = r() * 6.28, l = 20 + r() * 60; c.beginPath(); c.moveTo(x, y); c.lineTo(x + Math.cos(a) * l, y + Math.sin(a) * l * 0.5); c.stroke(); }
+    c.globalAlpha = 1;
+    const band = (z: number, w: number, col: string) => { c.fillStyle = col; c.fillRect(0, FZ(z) - w * fz / 2, FW, w * fz); };
+    band(-4, 0.3, "#d6283a"); band(-8.5, 0.5, "#1c4fb8"); band(-16, 0.1, "#d6283a");               // centre line, blue line, goal line
+    for (let i = 0; i < 18; i++) { c.fillStyle = "#eef7ff"; c.fillRect(FX(X0) + i * 40, FZ(-4) - 2, 16, 4); }
+    c.strokeStyle = "#d6283a"; c.lineWidth = 0.1 * fx;
+    c.beginPath(); c.arc(FX(0), FZ(-4), 3.2 * fx, 0, 7); c.stroke();
+    for (const x of [-5.5, 5.5]) { c.beginPath(); c.arc(FX(x), FZ(-12.5), 2.6 * fx, 0, 7); c.stroke(); c.fillStyle = "#d6283a"; c.beginPath(); c.arc(FX(x), FZ(-12.5), 0.3 * fx, 0, 7); c.fill(); }
+    c.fillStyle = "#d6283a"; c.beginPath(); c.arc(FX(0), FZ(-4), 0.3 * fx, 0, 7); c.fill();
+    c.fillStyle = "rgba(120,190,240,0.55)"; c.beginPath(); c.arc(FX(0), FZ(-16.8), 1.6 * fx, Math.PI, 0); c.fill();   // crease
+  });
+  plane(g, X1 - X0, Z1 - Z0, T("#ffffff", { map: ice }), 0, 0.01, (Z0 + Z1) / 2);
+  plane(g, 120, 100, T("#2a3552"), 0, -0.02, -20);
+  // boards: low white boards with a light-blue kick plate, glass above on thin posts
+  const white = T("#f4f7fb"), kick = T("#9fc7ea"), post = T("#2f3440");
+  const glass = new THREE.MeshBasicMaterial({ color: "#cfe9ff", transparent: true, opacity: 0.2, side: THREE.DoubleSide, depthWrite: false });
+  const wall = (cx: number, cz: number, len: number, alongX: boolean) => {
+    const w = alongX ? len : 0.3, d = alongX ? 0.3 : len;
+    bx(g, w, 1.1, d, white, cx, 0.55, cz, 0.015); bx(g, w + 0.02, 0.25, d + 0.02, kick, cx, 0.13, cz, 0); bx(g, w + 0.02, 0.1, d + 0.02, T("#d6283a"), cx, 1.15, cz, 0);
+    const gl = new THREE.Mesh(new THREE.PlaneGeometry(alongX ? len : len, 1.0), glass); gl.position.set(cx, 1.7, cz); if (!alongX) gl.rotation.y = PI / 2; g.add(gl);
+    for (let k = 0; k <= len / 2.5; k++) { const o = -len / 2 + k * 2.5; bx(g, 0.07, 1.0, 0.07, post, alongX ? cx + o : cx, 1.7, alongX ? cz : cz + o); }
+  };
+  wall(0, Z0 - 0.15, 20.6, true); wall(X0 - 0.15, (Z0 + Z1) / 2, Z1 - Z0, false); wall(X1 + 0.15, (Z0 + Z1) / 2, Z1 - Z0, false);
+  // goal: red posts + crossbar + white mesh net, on the goal line at the far end
+  const red = T("#d6283a"), GZ = -16.2;
+  for (const sx of [-1, 1]) { cy(g, 0.05, 0.05, 1.25, red, sx * 1.0, 0.62, GZ, 0.01, 10); cy(g, 0.04, 0.04, 1.0, red, sx * 1.0, 0.04, GZ - 0.5, 0.008, 8).rotation.x = PI / 2; }
+  bx(g, 2.1, 0.09, 0.09, red, 0, 1.25, GZ, 0.01);
+  const netT = canvasTex(128, 64, (c) => { c.clearRect(0, 0, 128, 64); c.strokeStyle = "#ffffff"; c.lineWidth = 2; for (let i = 0; i <= 16; i++) { c.beginPath(); c.moveTo(i * 8, 0); c.lineTo(i * 8, 64); c.stroke(); } for (let j = 0; j <= 8; j++) { c.beginPath(); c.moveTo(0, j * 8); c.lineTo(128, j * 8); c.stroke(); } });
+  const nm = new THREE.MeshBasicMaterial({ map: netT, transparent: true, alphaTest: 0.3, side: THREE.DoubleSide });
+  vplane(g, 2.0, 1.2, nm, 0, 0.62, GZ - 1.0);
+  for (const sx of [-1, 1]) vplane(g, 1.0, 1.2, nm, sx * 1.0, 0.62, GZ - 0.5, PI / 2);
+  const tp = new THREE.Mesh(new THREE.PlaneGeometry(2.0, 1.0), nm); tp.rotation.x = -PI / 2; tp.position.set(0, 1.0, GZ - 0.5); g.add(tp);
+  // stands behind the far end and along both sides: stepped tiers, seat rows, a crowd of coloured fans
+  const seat = T("#3b4a7a"), tierM = T("#58628a");
+  const cols = ["#d6283a", "#f2c230", "#2a62b0", "#ffffff", "#2f9f4a", "#f08a1c", "#8a4ab0"];
+  const r = seeded(821); const heads: It[] = [], bodies: It[] = [];
+  const fan = (x: number, y: number, z: number) => { const c = cols[Math.floor(r() * cols.length)]; heads.push({ x, y: y + 0.85, z, s: 0.2, c: r() < 0.5 ? "#e0b48c" : r() < 0.5 ? "#a8764c" : "#f2d2b0" }); bodies.push({ x, y: y + 0.45, z, s: [0.32, 0.5, 0.26], c }); };
+  for (let k = 0; k < 7; k++) {
+    const y = 1.5 + k * 0.9, z = Z0 - 1.2 - k * 1.1;
+    bx(g, 34, 0.5, 1.2, tierM, 0, y - 0.25, z, 0.01); bx(g, 34, 0.12, 0.5, seat, 0, y + 0.06, z - 0.4);
+    for (let i = -15; i <= 15; i++) if (r() < 0.82) fan(i * 1.05 + (r() - 0.5) * 0.3, y, z + 0.1);
+    for (const sx of [-1, 1]) {
+      const x = sx * (X1 + 1.8 + k * 1.1); bx(g, 1.2, 0.5, 26, tierM, x, y - 0.25, -5, 0.01);
+      for (let j = -11; j <= 11; j += 1) if (r() < 0.8) fan(x - sx * 0.1, y, -5 + j * 1.05 + (r() - 0.5) * 0.3);
+    }
+  }
+  inst(g, new THREE.SphereGeometry(1, 10, 8), T("#ffffff"), heads); inst(g, new THREE.BoxGeometry(1, 1, 1), T("#ffffff"), bodies);
+  bx(g, 40, 14, 0.5, T("#232c47"), 0, 8, Z0 - 10.5); for (const sx of [-1, 1]) bx(g, 0.5, 14, 36, T("#232c47"), sx * 21.5, 8, -4);
+  // set dressing: a black puck and a plain stick lying on the ice
+  cy(g, 0.14, 0.14, 0.07, T("#111118"), 1.2, 0.05, 1.6, 0.01, 16); cy(g, 0.12, 0.12, 0.075, T("#2c2c38"), 1.2, 0.052, 1.6, 0, 16);
+  const stick = new THREE.Group(); stick.position.set(-1.7, 0.04, 1.9); stick.rotation.y = 0.5; g.add(stick);
+  bx(stick, 1.7, 0.04, 0.05, T("#c8a060"), 0.2, 0.02, 0, 0.006); bx(stick, 0.5, 0.045, 0.1, T("#222"), -0.95, 0.02, 0.1, 0.006); bx(stick, 0.35, 0.05, 0.055, T("#f4f7fb"), 0.85, 0.02, 0, 0);
+  // arena lights over the ice
+  for (const x of [-6, 0, 6]) for (const z of [-12, -2, 6]) glow(g, 1.6, 0.1, 1.6, "#ffffff", x, 11, z, 1.6);
+  const lights = mkLights(["#e4f0ff", "#6a7aa0", 1.4], ["#ffffff", 2.4, [-4, 16, 8]], [["#dff0ff", 24, [0, 7, -2], 22]], 16);
+  return { root: g, lights, fog: new THREE.Fog("#27304c", 45, 110), bg: "#27304c", spots: { spot: [0, 0, 0], goal: [0, 0.7, GZ], puck: [1.2, 0.06, 1.6], stick: [-1.7, 0.05, 1.9], line: [0, 0.02, -4], stands: [0, 4, -24] } };
+}
+
+const BUILD: Record<SetName, () => SetObj> = { throne, office, diner, lab, stall, field, ring: ring_, track, graveyard, boardroom, street, beach, court, pitch, diamond, gridiron, tennis, golf, pool, gym, studio, farm, store, stage, space, garage, classroom, bathroom, mansion, showroom, factory, mountain, rink };
 const CACHE = new Map<SetName, SetObj>();
 export const makeSet = (name: SetName): SetObj => {
   let s = CACHE.get(name);
