@@ -1,0 +1,197 @@
+{
+  "id": "148",
+  "slug": "famous-luka-doncic",
+  "company": "Luka Dončić",
+  "format": "famous",
+  "visual_style": "lowpoly",
+  "hook_style": "surprise",
+  "title_style": "number",
+  "theme": "dark_neon",
+  "status": "ready",
+  "score": 90,
+  "title": "Signed at 13, Now $165 Million: Luka Dončić",
+  "name_card": "Luka Dončić",
+  "name_sub": "Lakers star",
+  "description": "Luka Dončić signed with Real Madrid at 13, and now has a Lakers extension worth up to 165 million dollars.\n\nSources:\n- Wikipedia: Luka Dončić: https://en.wikipedia.org/wiki/Luka_Don%C4%8Di%C4%87\n- NBC Sports: Luka Doncic signs three-year, $165 million extension to remain with Lakers: https://www.nbcsports.com/nba/news/luka-doncic-signs-three-year-165-million-extension-to-remain-with-lakers\n\nFrom the cited pages: in September 2012, at 13, Dončić signed a five-year contract with Real Madrid; on April 30, 2015, at 16, he made his pro debut and became the youngest player to ever play for Real Madrid in the ACB; he won the EuroLeague MVP in 2018; he was drafted third overall by the Atlanta Hawks in 2018 and traded to the Dallas Mavericks; on February 2, 2025, he was traded to the Los Angeles Lakers; on August 2, 2025, he signed a three-year max extension (two guaranteed years plus a player option) that can be worth up to 165 million dollars. Not financial advice.\n\n#shorts #lukadoncic #nba #howtheymakemoney",
+  "tags": [
+    "luka doncic",
+    "lakers",
+    "nba",
+    "famous",
+    "shorts"
+  ],
+  "images": {},
+  "loop": "So remember:",
+  "cta": "Luka or LeBron? Pick one.",
+  "cta_question": "Luka or LeBron?",
+  "hero": {
+    "skin": "e8c4a0",
+    "hair": "short",
+    "hair_color": "4a3222",
+    "beard": "stubble",
+    "outfit": "kit",
+    "shirt": "552583",
+    "pants": "552583",
+    "shoes": "f4f4f4",
+    "chest": "",
+    "trim": "fdb927",
+    "number": "77",
+    "height": 1.12
+  },
+  "scenes": [
+    {
+      "narration": "Luka Dončić signed with Real Madrid at only 13. Now his Lakers deal is worth up to 165 million dollars.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "classroom",
+          "mood": "shock",
+          "card": {
+            "text": "AGE 13",
+            "kind": "sign",
+            "sub": "REAL MADRID"
+          },
+          "view": "face"
+        },
+        {
+          "place": "throne",
+          "mood": "proud",
+          "beat": "money",
+          "card": {
+            "text": "$165 MILLION",
+            "kind": "screen",
+            "sub": "LAKERS, UP TO"
+          },
+          "view": "ms"
+        }
+      ]
+    },
+    {
+      "narration": "Then at 16, he plays his first pro game. In 2018, he wins the EuroLeague MVP.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "court",
+          "mood": "excited",
+          "things": [
+            "hoop"
+          ],
+          "crowd": 60,
+          "view": "wide",
+          "action": "dribble"
+        },
+        {
+          "place": "court",
+          "mood": "laugh",
+          "things": [
+            "trophy"
+          ],
+          "card": {
+            "text": "2018",
+            "kind": "flip",
+            "sub": "YEAR"
+          },
+          "crowd": 100,
+          "view": "low"
+        }
+      ]
+    },
+    {
+      "narration": "Yet Dallas trades him to the Lakers in 2025. It shocks the whole league.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "boardroom",
+          "mood": "shock",
+          "things": [
+            "letter"
+          ],
+          "card": {
+            "text": "2025",
+            "kind": "flip",
+            "sub": "YEAR"
+          },
+          "view": "face"
+        },
+        {
+          "place": "street",
+          "mood": "shock",
+          "things": [
+            "newspaper"
+          ],
+          "crowd": 40,
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "Six months later, he signs a three-year extension.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "boardroom",
+          "mood": "proud",
+          "things": [
+            "briefcase"
+          ],
+          "view": "ms"
+        }
+      ]
+    },
+    {
+      "narration": "Not bad for a kid who signed at 13.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "mansion",
+          "mood": "laugh",
+          "things": [
+            "cashstack"
+          ],
+          "view": "face"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Signed at 13, Now $165 Million: Luka Dončić",
+      "url": "https://en.wikipedia.org/wiki/Luka_Don%C4%8Di%C4%87"
+    },
+    {
+      "title": "Signed at 13, Now $165 Million: Luka Dončić",
+      "url": "https://www.nbcsports.com/nba/news/luka-doncic-signs-three-year-165-million-extension-to-remain-with-lakers"
+    }
+  ],
+  "look": "afterhour"
+}
