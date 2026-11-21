@@ -4,7 +4,7 @@ import { toonMat, metalMat, glowMat, canvasTex, seeded } from "./common";
 import { hasModel, makeModelGroup, MODEL_SIZE } from "./models";
 import { drawCard } from "./cards";
 
-export type ThingName = "shoe" | "springshoe" | "chip" | "gpu" | "cash" | "cashstack" | "coins" | "goldbar" | "trophy" | "medal" | "crown" | "ring" | "car" | "sportscar" | "bus" | "truck" | "rocket" | "phone" | "laptop" | "tv" | "monitor" | "clock" | "books" | "letter" | "newspaper" | "briefcase" | "shovel" | "pickaxe" | "box" | "crate" | "basketball" | "football" | "soccerball" | "hoop" | "mic" | "headset" | "controller" | "burger" | "pizza" | "coffee" | "plant" | "robot" | "drone" | "satellite" | "globe" | "house" | "factory" | "stadium" | "plane" | "yacht" | "chart" | "arrowup" | "arrowdown" | "lightbulb" | "lock" | "key" | "heart" | "bomb" | "fire" | "camera" | "chatbot" | "glasses" | "dumbbell" | "hanger" | "dome" | "console" | "golfball" | "golfclub" | "horse" | "baseball" | "guitar" | "rollercoaster";
+export type ThingName = "shoe" | "springshoe" | "chip" | "gpu" | "cash" | "cashstack" | "coins" | "goldbar" | "trophy" | "medal" | "crown" | "ring" | "car" | "sportscar" | "bus" | "truck" | "rocket" | "phone" | "laptop" | "tv" | "monitor" | "clock" | "books" | "letter" | "newspaper" | "briefcase" | "shovel" | "pickaxe" | "box" | "crate" | "basketball" | "football" | "soccerball" | "hoop" | "mic" | "headset" | "controller" | "burger" | "pizza" | "coffee" | "plant" | "robot" | "drone" | "satellite" | "globe" | "house" | "factory" | "stadium" | "plane" | "yacht" | "chart" | "arrowup" | "arrowdown" | "lightbulb" | "lock" | "key" | "heart" | "bomb" | "fire" | "camera" | "chatbot" | "glasses" | "dumbbell" | "hanger" | "dome" | "console" | "golfball" | "golfclub" | "horse" | "baseball" | "guitar" | "rollercoaster" | "noodlecup" | "legobrick" | "eiffeltower" | "giantshovel";
 export type Thing = { root: THREE.Group; size: number; tick?(t: number): void };
 
 type M = string | THREE.Material;
@@ -600,6 +600,65 @@ const B: Record<ThingName, Builder> = {
     };
     return { g, tick: (t) => { const u = 0.5 - 0.5 * Math.cos(t * 0.7); place(cars[0], 0.03 + u * 0.94); place(cars[1], 0.03 + u * 0.94 - 0.05); } };
   },
+  // Nov 21: a foam cup of instant noodles: wide red-and-white cup, peeled-back lid flap, wavy yellow noodles, chopsticks, steam wisps that drift up
+  noodlecup: (c) => {
+    const g = new THREE.Group(); const col = c ?? "#e53a3a";
+    cy(g, 0.17, 0.115, 0.26, "#f7f2e4", 0, 0.13, 0);                                   // cup body (white foam)
+    cy(g, 0.1735, 0.1185, 0.11, col, 0, 0.13, 0);                                      // red band
+    cy(g, 0.1745, 0.1745, 0.025, "#ffffff", 0, 0.267, 0);                              // rim
+    cy(g, 0.15, 0.15, 0.02, "#ffcc29", 0, 0.255, 0);                                   // noodle mass
+    for (let i = 0; i < 6; i++) { const a = i * 1.05; to(g, 0.045, 0.014, "#ffd54a", Math.cos(a) * 0.075, 0.28 + (i % 2) * 0.012, Math.sin(a) * 0.075, [PI / 2, 0, a]); }
+    to(g, 0.06, 0.015, "#f2b81c", 0, 0.3, 0, [PI / 2, 0, 0.4]);
+    const lid = new THREE.Group(); lid.position.set(0, 0.275, -0.17); lid.rotation.x = -1.25; g.add(lid);   // lid peeled back and standing up
+    cy(lid, 0.172, 0.172, 0.012, "#e53a3a", 0, 0, 0.17, [0, 0, 0], 28); cy(lid, 0.1, 0.1, 0.014, "#ffffff", 0, 0.004, 0.17, [0, 0, 0], 24); bx(lid, 0.1, 0.014, 0.05, "#e53a3a", 0, 0.01, 0.33);
+    for (const s of [-1, 1]) cy(g, 0.009, 0.009, 0.34, "#e0a96a", s * 0.04 + 0.04, 0.4, 0.04, [0.2, 0, -0.35 * s + 0.3], 8);   // chopsticks
+    const wisps: THREE.Mesh[] = [];
+    for (let i = 0; i < 3; i++) wisps.push(to(g, 0.05, 0.012, "#eaf6ff", -0.07 + i * 0.07, 0.45 + i * 0.03, 0.12, [0, 0, 0], PI * 1.5));
+    return { g, tick: (t) => { wisps.forEach((w, i) => { const u = (t * 0.5 + i / 3) % 1; w.position.y = 0.36 + u * 0.22; w.scale.setScalar(0.7 + 0.5 * u); w.rotation.z = Math.sin(t * 2 + i) * 0.4; }); } };
+  },
+  // Nov 21: a chunky 2x4 toy brick (plain, no logo): red, eight round studs, a blue 2x2 brick on top and a small yellow brick beside it
+  legobrick: (c) => {
+    const g = new THREE.Group(); const col = c ?? "#e53a3a";
+    const brick = (o: THREE.Group, nx: number, nz: number, m: string, x: number, y: number, z: number) => {
+      const W = nx * 0.16, D = nz * 0.16, H = 0.19;
+      bx(o, W, H, D, m, x, y + H / 2, z);
+      for (let i = 0; i < nx; i++) for (let j = 0; j < nz; j++) cy(o, 0.045, 0.045, 0.05, m, x + (i - (nx - 1) / 2) * 0.16, y + H + 0.025, z + (j - (nz - 1) / 2) * 0.16, undefined, 18);
+    };
+    const main = new THREE.Group(); g.add(main);
+    brick(main, 4, 2, col, 0, 0, 0);
+    const top = new THREE.Group(); top.position.set(0.12, 0.19, 0); main.add(top); brick(top, 2, 2, "#2f6fe0", 0, 0, 0);
+    const y = new THREE.Group(); y.position.set(-0.55, 0, 0.05); y.rotation.y = 0.5; g.add(y); brick(y, 2, 1, "#ffcc29", 0, 0, 0);
+    main.rotation.y = -0.25;
+    return { g, tick: (t) => { top.position.y = 0.19 + Math.max(0, Math.sin(t * 2)) * 0.02; } };
+  },
+  // Nov 21: a small Eiffel Tower built from stacked brick blocks: four legs on a base, arch beams, three platforms, narrowing shaft, spire
+  eiffeltower: (c) => {
+    const g = new THREE.Group(); const o = new THREE.Group(); g.add(o); const A = c ?? "#c9824a", B2 = "#e9a95f";
+    bx(o, 0.62, 0.05, 0.62, "#8a93a8", 0, 0.025, 0);
+    const lvl = (y: number, w: number, h: number, i: number) => bx(o, w, h, w, i % 2 ? B2 : A, 0, y + h / 2, 0);
+    for (const sx of [-1, 1]) for (const sz of [-1, 1]) { bx(o, 0.1, 0.1, 0.1, A, sx * 0.22, 0.1, sz * 0.22); bx(o, 0.09, 0.1, 0.09, B2, sx * 0.19, 0.2, sz * 0.19); bx(o, 0.08, 0.1, 0.08, A, sx * 0.16, 0.3, sz * 0.16); }
+    for (const s of [-1, 1]) { bx(o, 0.5, 0.045, 0.08, B2, 0, 0.255, s * 0.2); bx(o, 0.08, 0.045, 0.5, B2, s * 0.2, 0.255, 0); }
+    bx(o, 0.42, 0.05, 0.42, "#e53a3a", 0, 0.385, 0);
+    lvl(0.41, 0.2, 0.13, 0); lvl(0.54, 0.17, 0.12, 1);
+    bx(o, 0.28, 0.04, 0.28, "#e53a3a", 0, 0.68, 0);
+    lvl(0.7, 0.13, 0.12, 0); lvl(0.82, 0.1, 0.1, 1); lvl(0.92, 0.08, 0.1, 0);
+    bx(o, 0.17, 0.035, 0.17, "#e53a3a", 0, 1.03, 0);
+    lvl(1.05, 0.05, 0.08, 1); cone(o, 0.025, 0.2, "#d8dde8", 0, 1.23, 0, undefined, 8);
+    return { g, tick: (t) => { o.rotation.y = Math.sin(t * 0.8) * 0.25; } };
+  },
+  // Nov 21: a house-tall shovel standing blade-down in a dirt pile: huge steel blade, long wooden shaft, D-handle, a tiny person for scale
+  giantshovel: (c) => {
+    const g = new THREE.Group(); const o = new THREE.Group(); g.add(o); o.rotation.z = -0.1;
+    cone(g, 0.5, 0.28, "#8a5a32", 0, 0.14, 0.0, undefined, 18); sp(g, 0.18, "#9a6a3a", 0.36, 0.06, 0.2, [1.3, 0.5, 1], 10); sp(g, 0.14, "#7a4a28", -0.34, 0.05, 0.22, [1.2, 0.5, 1], 10);
+    ext(o, [[-0.16, 0.5], [0.16, 0.5], [0.2, 0.15], [0.0, -0.08], [-0.2, 0.15]], 0.04, metalMat(c ?? "#b9c2d0", 0.35), 0, 0.1, -0.02, [0, 0, 0], 0.012);
+    cy(o, 0.04, 0.04, 0.12, metalMat("#8a93a0", 0.4), 0, 0.67, 0);
+    cy(o, 0.03, 0.03, 1.6, "#9a6a3a", 0, 1.45, 0, [0, 0, 0], 12);
+    to(o, 0.1, 0.028, "#9a6a3a", 0, 2.35, 0, [0, 0, 0], PI * 1.0);
+    bx(o, 0.2, 0.05, 0.05, "#9a6a3a", 0, 2.255, 0);
+    const p = new THREE.Group(); p.position.set(0.55, 0.0, 0.3); g.add(p);
+    cy(p, 0.025, 0.025, 0.1, "#2b3a67", 0, 0.05, 0); cy(p, 0.03, 0.03, 0.1, "#e5233b", 0, 0.15, 0); sp(p, 0.032, "#f2c9a0", 0, 0.225);
+    return { g, tick: (t) => { o.rotation.z = -0.1 + Math.sin(t * 1.5) * 0.015; p.position.y = Math.abs(Math.sin(t * 3)) * 0.01; } };
+  },
   // Nov 21: a white baseball with two red stitched seams
   baseball: (c) => {
     const g = new THREE.Group(); const R = 0.075; const o = new THREE.Group(); o.position.y = R + 0.01; o.rotation.set(0.55, 0.5, 0.25); g.add(o);
@@ -974,7 +1033,7 @@ function arrow(col: string, dir: 1 | -1): Built {
 
 // rough sizes help pick outline widths before the object exists
 const OLW = (n: ThingName): number => {
-  const big: Partial<Record<ThingName, number>> = { house: 0.14, factory: 0.3, stadium: 0.9, plane: 0.25, yacht: 0.18, bus: 0.07, truck: 0.07, car: 0.04, sportscar: 0.04, rocket: 0.04, hoop: 0.03, shovel: 0.012, pickaxe: 0.012, tv: 0.012, satellite: 0.02, robot: 0.018, arrowup: 0.025, arrowdown: 0.025, chart: 0.012, fire: 0.01, pizza: 0.006, drone: 0.006, crate: 0.012, box: 0.01, dome: 0.03, chatbot: 0.006 };
+  const big: Partial<Record<ThingName, number>> = { house: 0.14, factory: 0.3, stadium: 0.9, plane: 0.25, yacht: 0.18, bus: 0.07, truck: 0.07, car: 0.04, sportscar: 0.04, rocket: 0.04, hoop: 0.03, shovel: 0.012, pickaxe: 0.012, tv: 0.012, satellite: 0.02, robot: 0.018, arrowup: 0.025, arrowdown: 0.025, chart: 0.012, fire: 0.01, pizza: 0.006, drone: 0.006, crate: 0.012, box: 0.01, giantshovel: 0.03, eiffeltower: 0.008, noodlecup: 0.004, dome: 0.03, chatbot: 0.006 };
   return big[n] ?? 0.0035;
 };
 

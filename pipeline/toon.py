@@ -311,7 +311,8 @@ AH_THING = {"shoe": "shoe", "springshoe": "springshoe", "sneakerbus": "bus", "bu
             "satellite": "satellite", "ring": "ring", "crown": "crown", "tv": "tv", "books": "books", "letter": "letter", "medal": "medal",
             "idea": "lightbulb", "factory": "factory", "stadium": "stadium", "plant": "factory", "car": "car", "truck": "truck",
             "trophy": "trophy", "cash": "cashstack", "boxes": "box", "check": "letter", "rocket": "rocket", "ball": "basketball", "mic": "mic",
-            "laptop": "laptop", "burger": "burger", "controller": "controller", "ereader": "phone", "snack": "burger", "poster": "newspaper", "horse": "horse", "baseball": "baseball", "guitar": "guitar", "rollercoaster": "rollercoaster"}
+            "laptop": "laptop", "burger": "burger", "controller": "controller", "ereader": "phone", "snack": "burger", "poster": "newspaper", "horse": "horse", "baseball": "baseball", "guitar": "guitar", "rollercoaster": "rollercoaster",
+            "noodlecup": "noodlecup", "legobrick": "legobrick", "eiffeltower": "eiffeltower", "giantshovel": "giantshovel"}
 def _ts_union(path: str, typ: str) -> set:
     """the names a TS union type lists (SetName / ThingName), so a script may ask for any set or object directly"""
     try:
@@ -337,7 +338,7 @@ def _lib_model_names() -> set:
 
 
 AH_ALL_THINGS = AH_ALL_THINGS | _lib_model_names()
-AH_BIG = {"car", "truck", "bus", "rocket", "factory", "stadium", "plane", "yacht", "house", "dome"}
+AH_BIG = {"car", "truck", "bus", "rocket", "factory", "stadium", "plane", "yacht", "house", "dome", "giantshovel"}
 AH_CROWD = [{"body": c, "hat": "hair", "hair": h} for c, h in (("#e86a6a", "#3a2a20"), ("#5ad0d8", "#8a5a2a"), ("#8bc34a", "#1a1a1a"),
             ("#b48ae0", "#3a2a20"), ("#f2a33a", "#5a3b2a"), ("#4a7bd0", "#1a1a1a"))]
 
@@ -375,7 +376,10 @@ def ah_models() -> dict:
     return _AH_MODELS
 
 
-AH_CODE_WORDS = [("guitar", r"\bguitars?\b|\bguitarists?\b"),
+AH_CODE_WORDS = [("eiffeltower", r"\beiffel\b"),
+                 ("legobrick", r"\blegos?\b|\b(?:toy|lego|plastic) bricks?\b"),
+                 ("noodlecup", r"\bcup noodles?\b|\binstant noodles?\b|\bnoodles?\b|\bramen\b"),
+                 ("guitar", r"\bguitars?\b|\bguitarists?\b"),
                  ("rollercoaster", r"\broller ?coasters?\b|\bamusement parks?\b|\btheme parks?\b"),
                  ("horse", r"\bhorses?\b|\bhorse racing\b|\bjockeys?\b|\bracehorses?\b|\bthoroughbreds?\b"),
                  ("baseball", r"\bbaseballs?\b|\bfastballs?\b|\bcurveballs?\b|\bsliders?\b(?=.*\b(?:pitch\w*|baseball)\b)"),
@@ -936,8 +940,8 @@ def ah_shots(plan: dict) -> list:
                 continue
             seen.add(t3)
             big = t3 in AH_BIG
-            things.append({"name": t3, "at": [-1.9, 0, -1.6] if big else ([0.55, 0.85, 0.55] if not things else [-0.55, 0.85, 0.55]),
-                           "fit": 1.6 if big else (0.42 if not things else 0.34)})   # held at hand height, in frame
+            things.append({"name": t3, "at": ([-1.1, 0, -0.8] if t3 == "giantshovel" else [-1.9, 0, -1.6]) if big else ([0.55, 0.85, 0.55] if not things else [-0.55, 0.85, 0.55]),
+                           "fit": (2.2 if t3 == "giantshovel" else 1.6) if big else (0.42 if not things else 0.34)})   # held at hand height, in frame
         for t3 in ([] if outro else ah_words_to_models(line_txt)):   # then library models the sentence's words name
             if len(things) >= 2:
                 break

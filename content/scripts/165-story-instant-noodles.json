@@ -79,7 +79,7 @@
           "place": "diner",
           "mood": "scheme",
           "things": [
-            "coffee",
+            "noodlecup",
             "fire"
           ],
           "card": {
@@ -140,7 +140,7 @@
           "mood": "scheme",
           "things": [
             "lightbulb",
-            "coffee"
+            "noodlecup"
           ],
           "view": "face"
         },
@@ -245,7 +245,7 @@
             "sub": "YEAR"
           },
           "things": [
-            "coffee"
+            "noodlecup"
           ],
           "view": "ms"
         },
@@ -258,7 +258,7 @@
             "sub": "YEAR"
           },
           "things": [
-            "coffee"
+            "noodlecup"
           ],
           "view": "cu"
         }
@@ -278,7 +278,7 @@
           "place": "throne",
           "mood": "proud",
           "things": [
-            "coffee",
+            "noodlecup",
             "fire"
           ],
           "view": "ms"

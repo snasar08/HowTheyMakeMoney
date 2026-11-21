@@ -68,7 +68,7 @@
           "mood": "excited",
           "things": [
             "globe",
-            "crate"
+            "legobrick"
           ],
           "crowd": 200,
           "view": "face"
@@ -90,7 +90,7 @@
           "place": "classroom",
           "mood": "dazed",
           "things": [
-            "crate",
+            "legobrick",
             "box"
           ],
           "card": {
@@ -117,8 +117,8 @@
           "place": "showroom",
           "mood": "shock",
           "things": [
-            "house",
-            "crate"
+            "eiffeltower",
+            "legobrick"
           ],
           "card": {
             "text": "10,001 PARTS",
@@ -145,7 +145,7 @@
           "mood": "dazed",
           "things": [
             "clock",
-            "crate"
+            "legobrick"
           ],
           "card": {
             "text": "2,200 YEARS",
@@ -171,7 +171,7 @@
           "place": "throne",
           "mood": "laugh",
           "things": [
-            "crate",
+            "legobrick",
             "clock"
           ],
           "view": "face"
