@@ -1,0 +1,35 @@
+{
+  "https://en.wikipedia.org/wiki/Luka_Don%C4%8Di%C4%87": {
+    "file": "pages/1768559fcb17.txt",
+    "fetched_at": "2026-11-21T18:41:25.262400+00:00",
+    "ok": true,
+    "chars": 166448,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Luka_Don%C4%8Di%C4%87",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://www.nbcsports.com/nba/news/luka-doncic-signs-three-year-165-million-extension-to-remain-with-lakers": {
+    "file": "pages/bb21f8bcff10.txt",
+    "fetched_at": "2026-11-21T18:41:25.831242+00:00",
+    "ok": true,
+    "chars": 11069,
+    "status": 200,
+    "final_url": "https://www.nbcsports.com/nba/news/luka-doncic-signs-three-year-165-million-extension-to-remain-with-lakers",
+    "content_type": "text/html;charset=UTF-8"
+  },
+  "https://www.cbssports.com/nba/news/luka-doncic-signs-contract-extension-lakers-star-agrees-to-reported-three-year-165-million-deal": {
+    "file": "pages/05f325704508.txt",
+    "fetched_at": "2026-11-21T18:41:26.715878+00:00",
+    "ok": true,
+    "chars": 13526,
+    "status": 200,
+    "final_url": "https://www.cbssports.com/nba/news/luka-doncic-signs-contract-extension-lakers-star-agrees-to-reported-three-year-165-million-deal/",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Trade_of_Luka_Don%C4%8Di%C4%87": {
+    "file": "pages/0d1d14ce14c8.txt",
+    "fetched_at": "2026-11-21T18:41:28.755366+00:00",
+    "ok": false,
+    "error": "HTTP 404"
+  }
+}
