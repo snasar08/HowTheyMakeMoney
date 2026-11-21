@@ -1,0 +1,2459 @@
+URL: https://en.wikipedia.org/wiki/Nintendo_Switch_2
+FINAL_URL: https://en.wikipedia.org/wiki/Nintendo_Switch_2
+FETCHED: 2026-11-21T16:20:45.374431+00:00
+
+Jump to content
+
+Main menu
+
+Main menu
+
+ move to sidebar
+ hide
+
+ Navigation
+
+Main page
+
+Contents
+
+Current events
+
+Random article
+
+About Wikipedia
+
+Contact us
+
+ Contribute
+
+Help
+
+Learn to edit
+
+Community portal
+
+Recent changes
+
+Upload file
+
+Special pages
+
+Search
+
+ Search
+
+Appearance
+
+Donate
+
+Create account
+
+Log in
+
+Personal tools
+
+Donate
+
+Create account
+
+Log in
+
+Contents
+
+ move to sidebar
+ hide
+
+(Top)
+
+ 1
+ History
+
+ Toggle History subsection
+
+ 1.1
+ Background
+
+ 1.2
+ Development
+
+ 1.3
+ Industry rumors
+
+ 1.4
+ Announcement and promotion
+
+ 1.4.1
+ Pre-orders
+
+ 1.5
+ Release and pricing
+
+ 1.6
+ Litigation
+
+ 2
+ Hardware
+
+ Toggle Hardware subsection
+
+ 2.1
+ Console
+
+ 2.1.1
+ Hardware protections
+
+ 2.2
+ Joy-Con 2
+
+ 2.3
+ Nintendo Switch 2 Camera
+
+ 2.4
+ Revisions
+
+ 3
+ Software
+
+ Toggle Software subsection
+
+ 3.1
+ Distribution
+
+ 3.2
+ Online services
+
+ 3.3
+ Third-party support
+
+ 3.4
+ Backward compatibility
+
+ 4
+ Reception
+
+ Toggle Reception subsection
+
+ 4.1
+ Critical response
+
+ 4.2
+ Sales
+
+ 4.3
+ Awards
+
+ 5
+ See also
+
+ 6
+ Notes
+
+ 7
+ References
+
+ 8
+ Further reading
+
+ 9
+ External links
+
+Toggle the table of contents
+
+Nintendo Switch 2
+
+46 languages
+
+Aragonés
+
+العربية
+
+Azərbaycanca
+
+Беларуская
+
+Bosanski
+
+Català
+
+کوردی
+
+Čeština
+
+Deutsch
+
+Esperanto
+
+Español
+
+Eesti
+
+Euskara
+
+فارسی
+
+Suomi
+
+Français
+
+Galego
+
+עברית
+
+Hrvatski
+
+Bahasa Indonesia
+
+Íslenska
+
+Italiano
+
+日本語
+
+ქართული
+
+Қазақша
+
+한국어
+
+Lombard
+
+Bahasa Melayu
+
+Nederlands
+
+Norsk nynorsk
+
+Norsk bokmål
+
+Polski
+
+Português
+
+Română
+
+Русский
+
+Саха тыла
+
+සිංහල
+
+Simple English
+
+Gagana Samoa
+
+Svenska
+
+ไทย
+
+Türkçe
+
+Українська
+
+Tiếng Việt
+
+粵語
+
+中文
+
+Edit links
+
+Article
+
+Talk
+
+ English
+
+Read
+
+View source
+
+View history
+
+Save
+
+Tools
+
+Tools
+
+ move to sidebar
+ hide
+
+ Actions
+
+Read
+
+View source
+
+View history
+
+Save
+
+ General
+
+What links here
+
+Related changes
+
+Upload file
+
+Permanent link
+
+Page information
+
+Cite this page
+
+Get shortened URL
+
+Switch to legacy parser
+
+ Print/export
+
+Download as PDF
+
+Printable version
+
+ In other projects
+
+Wikimedia Commons
+
+Wikidata item
+
+Appearance
+
+ move to sidebar
+ hide
+
+From Wikipedia, the free encyclopedia
+
+Hybrid video game console
+
+"Switch 2" redirects here. For the album by Switch, see Switch II.
+
+Nintendo Switch 2
+ | 
+
+ | 
+
+Top: Console in "handheld mode" with Joy-Con 2 attached
+
+Bottom: Console in "TV mode" with Joy-Con 2 attached to a grip and the main unit docked
+
+ | Codename | Ounce
+
+ | Developer | Nintendo TDD[1]
+
+ | Manufacturer | Foxconn
+
+ | Type | Video game console
+
+ | Released | 
+
+June 5, 2025
+
+WW: June 5, 2025
+
+PHL/SG/TH: June 26, 2025
+
+MY: July 3, 2025
+
+TW: July 10, 2025
+
+UAE: September 17, 2025
+
+ARG: October 10, 2025
+
+IDN: December 10, 2026[2][3]
+
+ | 
+Introductory price
+ | US$449.99 / A$699 / CA$629.99 / €469.99 / £395.99 / ¥49,980
+
+ | Units sold | 26.35 million as of September 30, 2026[update]
+
+ | Media | 
+
+Switch game card
+
+Switch 2 game card
+
+Digital distribution
+
+ | 
+Operating system
+ | Nintendo Switch system software
+
+ | 
+System on a chip
+ | Custom Nvidia Tegra T239 processor (codenamed "Drake")
+
+ | CPU | Octa-core ARM Cortex-A78C @ 998 MHz (docked); 1,101 MHz (undocked)[4]
+
+ | Memory | 12 GB LPDDR5X 128-bit @ 6,400 MT/s (docked); 4,266 MT/s (undocked)
+
+ | Storage | 256 GB UFS 3.1
+
+ | 
+Removable storage
+ | microSD Express, up to 2 TB
+
+ | Display | 
+
+7.9-in LCD screen (279 ppi), 1080p up to 120 Hz with HDR10 and VRR
+
+Docked: 720p/1080p/1440p up to 120 Hz, 4K at 60 Hz via HDMI with HDR10 and VRR
+
+ | Graphics | 
+
+1,536 Ampere-based CUDA cores
+
+Docked: 1,007 MHz, 3.072 TFLOPS
+
+Undocked: 561 MHz, 1.71 TFLOPS
+
+ | Sound | 
+
+Undocked: Linear PCM 2.0 ch stereo speakers, 3D audio effects
+
+Docked: Linear PCM 5.1 ch, 3D audio effects
+
+ | Input | 
+
+Joy-Con 2
+
+Nintendo Switch 2 Pro Controller
+
+Multi-touch touchscreen
+
+Microphone with noise-cancelling technology
+
+Nintendo Switch 2 Camera
+
+ | Connectivity | 
+
+Wi-Fi 6
+
+Bluetooth
+
+Headphone jack
+
+2 × USB-C
+
+Dock: 
+
+2 × USB 2.0
+
+1 × Gigabit Ethernet
+
+1 × HDMI 2.1
+
+ | Power | 
+
+3.78 V 19.74 Wh 5,220 mAh Li-ion battery
+
+Duration: 2–6.5 hours
+
+ | 
+Current firmware
+ | 23.5.0[5][6] (November 9, 2026; 11 days ago (2026-11-09)) [±]
+
+ | 
+Online services
+ | 
+
+Nintendo eShop
+
+Nintendo Switch Online
+
+ | Dimensions | 
+
+272 × 116 × 13.9 mm (10.71 × 4.57 × 0.55 in) with Joy-Con 2 attached
+
+ | Weight | 534 g (18.8 oz)
+
+ | 
+Best-selling game
+ | Mario Kart World (15.39 million, as of June 30, 2026[update])[7] (list)
+
+ | 
+Backward
+
+compatibility
+ | Nintendo Switch[a]
+
+ | Predecessor | Nintendo Switch
+
+ | Website | nintendo.com/gaming-systems/switch-2/
+
+The Nintendo Switch 2[b] is a video game console developed by Nintendo and released in most regions on June 5, 2025. Like the preceding Nintendo Switch, it can be used as a handheld, as a tablet, or connected via the dock to an external display. The Joy-Con 2 controllers can be used while magnetically attached or detached from the console, are larger than the previous Joy-Con controllers, and include computer mouse functionality. Compared to the original Switch, the Switch 2 has a larger liquid-crystal display (LCD), more internal storage, updated graphics, and social features. It supports 1080p resolution (Full HD) and a 120 Hz refresh rate in handheld or tabletop mode, and 4K resolution with a 60 Hz refresh rate when docked, as well as HDR support on both the tablet and compatible external displays.
+
+Games are available through physical game cards and Nintendo's digital eShop. Some game "key" cards contain no game content and require players to download the game via an internet connection. Select Switch games can use the improved Switch 2 performance through either free or paid updates. The Switch 2 retains the Nintendo Switch Online subscription service, which is required for some multiplayer games and provides access to the Nintendo Classics library of older emulated games; GameCube games are exclusive to the Switch 2. The GameChat feature allows players to chat remotely and share screens and webcams.
+
+Nintendo revealed the Switch 2 on January 16, 2025 after long-lasting rumors, and announced its full specifications and release details on April 2. Pre-orders in most regions began on April 5. The system received praise for its social and technical improvements over its predecessor, though the increased prices of both the console and its games library were criticized. More than 3.5 million units were sold worldwide within four days of release, making the Switch 2 the fastest-selling Nintendo console. As of June 2026, the Switch 2 has sold over 23 million units worldwide. Mario Kart World, available as a bundled inclusion at launch, is its best-selling game with over 15 million copies sold.
+
+History
+
+Background
+
+Nintendo released the original Switch in March 2017, which was developed in the wake of the commercial failure of the Wii U.[9] The Switch was promoted as a hybrid console with handheld, tabletop, and docked configurations, with Joy-Con controllers that can be separated from the main unit for the handheld or tabletop configurations. Compared to the other major consoles on the market at the time – the PlayStation 4 and Xbox One – the Switch had less-powerful computational hardware to keep the unit's price low, but sufficient to power the type of games Nintendo typically publishes; part of the company's long-term Blue Ocean Strategy to differentiate itself from the other console manufacturers.[10] By December 2025, the Switch became Nintendo's best-selling console and the second best-selling gaming console overall, following the PlayStation 2.[11] At the time of the Switch 2's announcement in January 2025, over 146 million Switch units had been sold worldwide.[12]
+
+Development
+
+Nintendo began pre-production of its next console shortly after the Switch's release, with a team reviewing the performance limitations of the Switch and identifying what hardware changes could be made to address them. This also provided enough time to plan out the hardware so as to be able to ship software development kits (SDKs) to game development partners.[13] Formal development of the Switch 2 (codenamed "Ounce")[14] started in 2019, led by producer Kouichi Kawamoto, hardware director Takuhiro Dohta, and technical director Tetsuya Sasaki.[13] Though past Nintendo consoles have generally featured a new type of hardware experience, such as the hybrid nature of the original Switch, the Switch 2 development team found that developers had adapted to writing their games toward the hybrid format and decided it would not be helpful to introduce any significant hardware changes, instead choosing to focus on computation performance improvements to give developers better tools with which to work with.[13] Hardware components were selected to balance performance and battery life along with expanding the memory to support newer games.[15]
+
+Nintendo president Shuntaro Furukawa said the company sought to make the transition to its successor smooth for consumers,[16] and backward compatibility was a key part of the design; Nintendo said, "Nintendo Switch is played by many consumers, and we decided that the best direction to take would be for consumers to be able to play their already purchased Nintendo Switch software on the successor to Nintendo Switch".[8] As Nintendo prioritized improving the hardware, backward compatibility was more complex to implement than it had been for consoles such as Nintendo 3DS or Wii U, which have similar hardware to their predecessors. The Switch 2 uses a hybrid of software and hardware emulation to avoid a more taxing software-only solution.[17] The name was partially influenced by the backward compatibility. Nintendo also considered "Super Nintendo Switch", similar to the Super Nintendo Entertainment System following the Nintendo Entertainment System, but decided this would diminish the compatibility feature.[17]
+The new Joy-Con controllers were redesigned from the ground up. With the larger screen on the console, simply scaling the older Joy-Con to match size was not sufficient as their longer size would make it more difficult to hold and trigger the shoulder buttons. As such, Nintendo included more rounding-off of the corners and extended the shoulder buttons further towards the side of the controller. The HD Rumble feature was improved and surpassed the limits of the original Joy-Con, heightening its intensity to levels that are comparable to the controllers on the GameCube.[15]
+
+The Nintendo Switch 2 (right) features a larger screen and larger Joy-Con controllers compared to the original Nintendo Switch (left).
+
+Rather than the rail system used on the original Switch, the new Joy-Con are connected using magnetic connections. Nintendo had originally explored magnetic connections for the first Switch model but the connection was determined to be too wobbly. With the Joy-Con 2, they refined the magnetic approach, making the connection stronger and easily removed with a mechanical release system. With this new system, the Joy-Con now audibly snap when the magnetic connection is made, which Dohta said helped to symbolize the Switch branding.[15]
+
+The capability of the Joy-Con to be used as computer mice was an idea introduced by Kawamoto who also played games on personal computers, as mouse control would not only allow the Joy-Con to help replace the screen's touch controls when the console is docked, but also could be used to introduce new forms of gameplay. Kawamoto said this idea represented Gunpei Yokoi's concept of "lateral thinking of withered technology" that has been part of Nintendo's approach for several decades.[15] The Pro Controller was also similarly redesigned for the Switch 2, smoothing out the motions of the joysticks, and adding an audio jack and two programmable buttons in the grips that the player can customize.[15]
+
+The GameChat feature, which allows players to chat, and to share screens and webcams, is a result of Nintendo developers' own frustration with existing tools they had to use in game development during the 2020 COVID-19 pandemic shutdowns. Because standard software limited them to one shared screen, they pointed webcams at monitors for constant, simultaneous visibility. Kawamoto said that it felt "like we were all in the same place, each bringing our own console to play the game together, which was a lot of fun", leading to the development of the GameChat feature.[18] The GameChat feature was developed to minimize the use of system resources that would take away from game performance, and some functionality is based on the same streaming service Wii U Chat that was developed for the Wii U and Wii U GamePad.[19]
+
+Industry rumors
+
+Industry rumors began as early as 2019 of a high-end model of the Switch, often nicknamed the "Nintendo Switch Pro" in the media; many of the speculated features became part of the OLED Switch model, released in 2021.[20][21] Nintendo confirmed it was working on its next gaming system during a call with investors in October 2020.[22] Digital Foundry said that Nintendo may have been working on a "pro" model for the Switch, but by December 2022, it appeared to have fully transitioned all development towards the Nintendo Switch successor.[23] Court reports from the 2023 FTC v. Microsoft case, which challenged Microsoft's acquisition of Activision Blizzard, included reference to Activision being briefed on the "Switch NG" in December 2022.[24]
+
+Video Games Chronicle reported in July 2023 that Nintendo had sent out SDKs for its next console to development partners and that Nintendo wanted to avoid the shortages that the ninth generation consoles, the PlayStation 5 and Xbox Series X/S, had suffered at launch.[25] Nintendo showcased the Switch 2 in a private presentation during Gamescom in August; among the tech demos were a version of the Switch game The Legend of Zelda: Breath of the Wild (2017), running at a higher frame rate and resolution, and the Unreal Engine 5 demo The Matrix Awakens (2021).[26][27]
+
+While Nintendo officially acknowledged the development of the Switch's successor by May 2024,[28] rumors and leaked photos of a new console persisted through 2024, as well as a data breach from Game Freak on the development of the next Pokémon game for the Switch's successor.[26][29][30]
+
+At the 2025 Consumer Electronics Show (CES) in early January, several third-party vendors showcased accessories scheduled for the Switch successor, leading Nintendo to issue a statement that none of the mock-ups used at the show were official.[31] Nintendo filed a lawsuit against video game accessory company Genki in May 2025 for using detailed renders and a 3D printed model of the Switch 2 in their CES presentation;[32] Genki settled with Nintendo in September 2025, paying an undisclosed sum and agreeing to avoid similar marketing approaches in the future.[33]
+
+Announcement and promotion
+
+The Switch 2 was initially expected to launch in late 2024. In February 2024, Bloomberg News and The Nikkei both reported that Nintendo had informed publishers it was delaying the release into early 2025 to prevent console shortages and scalping.[34][35] Bloomberg reported after the console's launch that the delay was also due in part to the console designers requesting more time to perfect the games that were to be released alongside the console at launch.[36] Nintendo's shares fell by nearly six percent following the reported delay.[34]
+
+Nintendo revealed the Switch 2 on January 16, 2025, introducing its new design and magnetic Joy-Con controllers, and brief footage of a new Mario Kart game,[37] which was later announced as Mario Kart World.[38] A one-hour Nintendo Direct presentation about the Switch 2 premiered on April 2, with Nintendo Treehouse presentations on Switch 2 games airing in the following 2 days.[39][40][41][42] Nintendo hosted a series of worldwide events from April through June to allow players to try the console before release.[43] Furukawa said Nintendo was making preparations for the Switch 2's release to prevent excessive sales to resellers and scalpers, which had been a problem with previous Nintendo hardware releases.[44]
+
+A promotional display of the Switch 2 in April 2025
+
+As part of the promotion for the Switch 2, Nintendo of America partnered with Major League Baseball and the Seattle Mariners to have the Nintendo and Switch 2 logos be featured on the Mariners' team jerseys for the 2025 season.[45] In April 2025, Nintendo of America released a commercial for the console starring actor Paul Rudd, directly referencing a commercial promoting the SNES that he also starred in 34 years prior.[46] During the March 2025 installment of Nintendo Direct, Nintendo simultaneously announced and launched the Nintendo Today! application for iOS and Android devices, intended to act as the primary news and calendar hub for delivering information on various Nintendo platforms, including daily updates related to Nintendo Switch 2 hardware, software, services and forthcoming events following the Switch 2-focused Nintendo Direct.[47][48]
+
+Pre-orders
+
+Months before the release, Nintendo stockpiled "hundreds of thousands" of units in the United States to avoid potential increased tariffs enacted by the Trump administration and reduce the likelihood of shortages.[49] Nintendo also shifted production and sourcing of parts away from China and towards Southeast Asia, especially Vietnam, to avoid tariffs levied specifically against China.[49][50]
+
+To avoid reselling issues in Japan, a region-locked Switch 2 is being sold at retail in the country at a reduced cost, with a region-free version to be released via Nintendo's online store only.[51] In other regions, while pre-orders have been made available through retailers, Nintendo established a pre-order waitlist to purchase directly from Nintendo, but requiring users to have a Nintendo Account and established playtime, among other requirements.[52]
+
+Pre-orders began in most regions on April 5, 2025. Shortly after the tariffs were announced on April 2, Nintendo delayed pre-orders in the US "to assess the potential impact of tariffs and evolving market conditions."[53] A similar delay was also made for Canadian pre-orders as "to align with the timing of pre-orders to be determined in the US".[54] Nintendo later affirmed that pre-orders for the console in the United States and Canada would start on April 24, 2025, with the console and console bundle with Mario Kart World remaining at the same price for launch, while some accessories saw an increase in price ranging from US$5 to $10.[55][56]
+
+Pre-orders for the US and Canada began on April 24 at midnight. Shortly after pre-orders went live, retailers Walmart, Target, and Best Buy reported widespread website errors and difficulties due to the overwhelming number of users attempting to reserve a pre-order, with console stock reportedly going out nationwide within minutes.[57][58][59] Gaming retailer GameStop opened preorders later that day at 11 a.m. ET with glitches on the site being reported.[60]
+
+Nintendo cautioned Japanese consumers that over 2.2 million people had registered for the opportunity to pre-order the Japan-only console model through the company, far exceeding their expectations, and that they would not likely be able to meet all of these pre-orders by its launch date; those not selected would be automatically carried into similar programs for later shipments of the console.[61] Stores in Japan used lotteries and similar mechanisms to handle the limited supply of consoles during its launch period.[62] Nintendo issued a similar caution for those in the US pre-ordering through its store.[63] Retailers began receiving shipments in late May 2025. Some who had pre-ordered Switch 2 consoles posted footage two weeks prior to the release, though they were unusable without a day-one patch.[64][65]
+
+Release and pricing
+
+The launch event for the Nintendo Switch 2 at Nintendo New York
+
+The Nintendo Switch 2 had a global release on June 5, 2025. This included Japan and North America, most European territories, Australia and New Zealand,[66] Brazil, Chile, Colombia, Peru, South Africa, Hong Kong,[67] Israel,[68] Saudi Arabia,[69] and South Korea.[70] It was rolled out to other territories later that month, beginning with the Philippines, Singapore, and Thailand on June 26,[71] followed by Malaysia on July 3,[72] Taiwan on July 10, the United Arab Emirates on September 17,[73] and Argentina on October 10.[74][75] It is scheduled to release along with its predecessor in Indonesia on December 10, 2026.[76][77] The Switch 2 release in China, originally scheduled with the global June 5 release, was delayed indefinitely.[78]
+
+The Switch 2 was launched at ¥69,980 in Japan, including sales taxes.[79] In North America, the console was priced at US$449 in the United States[80][81] and CA$629 in Canada.[82] In Europe, the price was €469 in most of the eurozone[83] and £395.99 in the United Kingdom[84] (both of which including VAT). In Oceania, the console is priced at A$699 in Australia (including GST).[85] In Japan, in addition to the regular, "international" model of the console, a second "Japan Only" version was offered for sale at the significantly lower price of ¥49,980.[86] Unlike other Switch 2 models that can be used globally, this version operates only in the Japanese language and can only use online services registered to Japanese residents.[86]
+
+The launch price was higher than industry predictions. Prior to launch, analysts at Bloomberg L.P. had predicted that in the US, the Switch 2 would launch at a starting price of $400 or higher, pending the impact of tariffs on foreign goods imported into the US that took effect in February 2025, yet they affirmed that the console was projected to have a strong launch aided by exclusive software and backward compatibility with the Switch library.[87] When the Switch 2's US price was revealed as US$449.99 – 50% higher than that of the original Switch at its launch – it was criticized as too high.[88] Select Switch 2 games were announced to be retailing at US$80, which drew additional criticism.[88][89] The price point makes the Switch 2 Nintendo's most expensive console in over 30 years when adjusted for inflation.[90]
+
+Nintendo of America president Doug Bowser stated that the US price of the Switch 2 was not based on tariffs imposed by the Trump administration on April 2, 2025, as several publications had suggested;[90][88][91] but instead simply due to the unit being a premium console alongside the three Switch consoles it will continue to sell.[92] Bowser stated that shipments of the Switch 2 had already been stockpiling globally for release by this point, and thus was unlikely to affect the release date of the Switch 2.[93]
+
+Though priced relatively high in the US, other analysts have ruled out US-imposed tariffs as the major factor in the high price of the Switch 2, citing the already rising prices of video game consoles and the fact that Canada and countries in Europe also have similar price points (although, when compared on a pre-tax basis, European pricing is actually lower).[94][95][96] Writing in Aftermath, games journalist Luke Plunkett opined that the inflation surge following the COVID-19 pandemic and the subsequent cost-of-living crisis was likely to impact the console's sales.[97] Some fans campaigned for Nintendo to lower the price of the Switch 2 and its games via social media platforms and in the audience text chats during Nintendo's live streams.[98][99] Former Nintendo public relations managers Kit Ellis and Krysta Yang criticized the company for omitting pricing details from the reveal stream, feeling that it created confusion as consumers had to search for that information elsewhere, thus exacerbating the negative response.[100][101][102]
+
+In one case, a GameStop store in Staten Island, New York, had stapled pre-order receipts to the Switch 2 box for release day customers, but due to the way the console was packed near the front of the box, the staples were able to puncture the screens. GameStop immediately replaced affected units,[103] and later held an auction for the stapler and one of the affected consoles, since repaired, to raise money for the Children's Miracle Network Hospitals.[104]
+
+Following the onset of worldwide tariffs by the Trump administration on August 1, 2025, Nintendo announced a price increase for the original Switch consoles and some Switch 2 accessories that took effect on August 3, 2025, in the United States. Nintendo cautioned that price adjustments for the Switch 2, games, and Nintendo Switch Online subscriptions "may be necessary in the future".[105][106] On March 25, 2026, Nintendo announced that first-party digital and physical Switch 2 games would be priced differently, starting with Yoshi and the Mysterious Book in May.[107]
+
+On May 9, 2026, Nintendo announced a price increase for the Switch 2 hardware as a result of the ongoing global memory shortage, among other factors. The console started at ¥59,980 in Japan effective May 25, 2026, and at $499.99 USD/$679.99 CAD/€499.99 in other territories effective September 1, 2026.[108] Furukawa said in November 2026 that they do not expect another price adjustment for the console, as they are in a position to purchase memory chips at volume.[109]
+
+Litigation
+
+Main article: Nintendo of America Inc. v. U.S. Department of the Treasury
+
+On March 6, 2026, Nintendo filed a lawsuit against the U.S government over tariffs imposed on the Switch 2 console, which led to delayed pre-orders and increased prices on its hardware and accessories.[110][111]
+
+Hardware
+
+Like its predecessor, the Switch 2 is a hybrid console, which can be used as both a handheld console or placed into a dock connected to a television or monitor to be played like a home console. The unit maintains a similar form factor as the Switch, and consists of the main body that includes the screen and primary hardware, and two Joy-Con 2 controllers that can be attached to the main unit's sides in handheld mode, or can communicate wirelessly to the main unit when docked.[112]
+
+Console
+
+Comparison between the original Nintendo Switch, the OLED model, and the Nintendo Switch 2, all facing down
+
+Along with the existing layouts from the Nintendo Switch's design, which includes a USB-C port on the bottom that serves as its power source and connector within a dock, a headphone jack, and a cartridge slot, the Nintendo Switch 2 adds an internal microphone with noise cancellation[49] and a second USB-C port on the top of the unit[113][114] for charging the console when on tabletop mode, and for use with accessories like external cameras. The console also has a redesigned stand with adjustable angle, similar to that used on the Switch OLED model. With the Joy-Con 2 controllers attached, the console measures 272 mm (10.71 in) in width, 116 mm (4.57 in) in height, and 13.9 mm (0.55 in) in depth, and weighs 534 g (18.8 oz).[115]
+
+The Switch 2 uses a 7.9 in (20 cm) LCD touchscreen with 1080p resolution (279 ppi) and HDR, which supports a variable refresh rate of up to 120 Hz.[49] When docked, the console can output up to 1440p at 120 Hz or 4K resolution at 60 Hz with HDR and VRR.[116][117] The original Switch included an OLED revision, and while Nintendo had considered using OLED for the Switch 2, hardware design lead Tetsuya Sasaki said they opted to use LCD due to the advancements in LCD technology including support for HDR.[118] Unlike the first-generation model, the dock also contains a built-in Ethernet connector and a cooling fan.[119][114] The cooling fan is only intended to cool the dock itself, not the Switch 2 console.[120]
+
+Comparison of mainboard between Switch models and Switch 2; newer Nvidia SoC shown in right
+
+The system on a chip, the Nvidia-developed Tegra T239 (codenamed "Drake"[121]), features an octa-core ARM Cortex-A78C CPU, a 12 SM Ampere GPU (with 1,536 Ampere-based CUDA cores), and a 128-bit LPDDR5X memory interface.[122] 12 GB of this memory is present over two 6 GB chips and provides around 102 GB/s (docked) or 68 GB/s (handheld) of bandwidth.[123] The Switch 2 supports Nvidia's Deep Learning Super Sampling (DLSS) technology via Tensor cores and hardware-enabled ray tracing via RT cores,[124] and supports variable refresh rate through Nvidia G-Sync in handheld mode.[125] It supports Wi-Fi 6.[126][49]
+
+The top of the console, showing the exhaust vents, USB-C port, headphone jack, game card slot, and microphone
+
+The Switch 2 includes 256 GB of internal storage, a significant increase from the 32 GB of the first-generation Switch.[49] Storage can be expanded using microSD Express cards of up to 2 TB, allowing higher read and write speeds than the microSDHC and microSDXC cards used in the first-generation model. The Switch 2 only supports loading games from microSD Express cards; though it still supports accessing microSDHC and microSDXC cards, they can only be used for viewing screenshots and videos.[49][127]
+
+The Switch 2 is primarily powered in handheld mode by an internal, non-removable 5,220 mAh Lithium-ion rechargeable battery.[128][114] Nintendo estimates the battery life to be between approximately 2 and 6.5 hours,[128] though noting that these are rough estimates and the actual duration depends on the specific software being used.[129] The battery can be charged via either of the console's USB-C ports as well as the dock. The estimated recharge time is approximately 3 hours when the system is in sleep mode.[116]
+
+In January 2025, alleged images of the system's motherboard appeared.[130] Richard Leadbetter of Digital Foundry concluded that, rather than porting the Ampere-based architecture to a smaller process node, it is more likely that the existing low-cost Samsung 8 nm process node is being used. While such a process poses difficulties for performance and battery life, Leadbetter believed these can be relieved due to the nature of fixed hardware platforms, which allow for custom software optimizations to be implemented.[131] In June 2025, Nvidia CEO Jensen Huang claimed the processor's semiconductor process technology employs optimizations for "ultra low power".[132]
+
+Hardware protections
+
+Numerous outlets have reported that the Switch 2's dock communicates using a non-standard proprietary protocol rendering existing third-party docks incompatible, as those intended for the original Switch or USB-C DisplayPort Alt mode are unable to communicate with the console.[133][134] This incompatibility was attributed to the Switch 2 console requiring a 20-volt power supply to enter docked mode.[135] In the months following release, third-party docks compatible with the Switch 2 became available.[136] A system software patch for the Switch 2 released in November 2025 appeared to eliminate the video output signal from the console to some third-party docks, rendering them unusable.[137] Nintendo asserted that with the patch, the company "does not have any intention to hinder or invalidate legal third-party dock compatibility".[138]
+
+In May 2025, Nintendo announced an update to the North American Nintendo Account user agreement and privacy policy which, if broken by users of the Switch 2, could "render the Nintendo Account Services and/or [sic] the applicable Nintendo device permanently unusable in whole or in part".[139] This was expected to be in an attempt to stop piracy and emulation of games.[139] The agreement also pertains to installing unauthorized software or modifying the hardware to make it run faster.[140] As a result of this policy, players that have used third-party flashcarts in the Switch 2 to sideload Switch games, or who have purchased game cards second-hand, have found their consoles banned from the Nintendo Switch Online service. According to Engadget, this is a result of Nintendo taking steps to block systems that appear to be using duplicated cards by attaching unique ID codes to every Switch and Switch 2 game card. In at least one case, a user had legitimately bought used game cards, and after their Switch 2 was blocked, had been able to demonstrate proof of purchase to Nintendo who had removed the block.[141] In other cases, these bans appear to be permanent, preventing the system from connecting to Nintendo's network.[142][143][144] Some second-hand buyers of the Switch 2 found that these bans prevented them from registering the system to their own accounts due to the devices being rendered unable to connect to Nintendo's network before their acquisition.[145] This has led Brazil's Consumer Protection and Defence Program, a consumer-rights group, to file a legal complaint against Nintendo, alleging this type of action violates consumer laws in their country.[146]
+
+Joy-Con 2
+
+Main article: Joy-Con 2
+
+The Joy-Con 2 controllers
+
+The Joy-Con 2 controllers have an updated design from the original Joy-Con. Besides being larger to match the console, they attach magnetically by snapping to the sides rather than using a rail system. They are removed using a small button on the Joy-Con 2 that causes a cylinder inside to extend and push off from the main unit.[147] Nintendo stated that their analog sticks would be larger, smoother, and more durable.[147] Early reports suggested the new controller thumbsticks would use Hall-effect sensors to address the drift issues that the original models had due to dust collecting within the analog system[148] but Nintendo stated in April 2025 that Hall-effect sensors are not used.[149]
+
+The SL and SR buttons on the side of the controllers have been significantly enlarged, and a new C button is present on the right Joy-Con 2 to activate the new GameChat feature.[147] The controllers are also able to be used like a computer mouse in supported games by sliding them across a surface.[147] Both Joy-Con 2 controllers have a 500mAh battery that is estimated to last 20 hours. The controllers can be recharged by connecting them to the console or by using the Charging Grip.[150] The infrared sensor from the first-generation Joy-Con has been removed.[147]
+
+Nintendo Switch 2 Camera
+
+The Nintendo Switch 2 Camera is a USB-C webcam developed by Nintendo and made specifically for the Nintendo Switch 2. The camera can be used for GameChat and CameraPlay, in-game camera features.[151] The camera has an aluminium body with a rubber grip at its base. The camera includes a 110 degree wide lens with a 1080p image sensor. It also comes with a cover for privacy.[152]
+
+While Nintendo allows third party USB-C cameras to function with the Switch 2, they note that not all work with the console. There is an option in system settings to test functionality of a connected USB-C camera. According to Niles Mitchell on YouTube, an iPhone is compatible as a camera.[153]
+
+Revisions
+
+In March 2026, Nikkei reported that Nintendo was developing a European-exclusive revision of the Switch 2 which includes user-replaceable batteries for the console and the Joy-Con 2. This was to comply with the European Union's right to repair regulations, which require easy replacement for rechargeable batteries.[154][155] Nintendo confirmed that it would start shipping these models across Europe in July 2026, with all countries in that continent receiving these by early 2027; at the same time the company announced it was discontinuing the original Switch family in Europe by February 2027.[156]
+
+Software
+
+See also: Nintendo Switch system software
+
+The Nintendo Switch 2 HOME Menu
+
+Distribution
+
+See also: Nintendo Game Card and List of Nintendo Switch 2 games
+
+As with its predecessor, games for Switch 2 can be obtained in physical and digital formats, with physically distributed games being stored on proprietary Game Cards that share a similar form factor with those used on the first-generation Switch.[157] Game Cards for Switch 2 games are colored in red to differentiate them from those released for the first-generation Switch, which are grey.[119] Like Switch game cards, Switch 2 game cards are coated in a non-toxic bitterant to prevent children from trying to eat them.[158]
+
+Beginning on Switch 2, the physical release of some games may ship with Game Cards that only contain a digital license and no game data ("Game-Key Card"); when inserted, the game's files will be downloaded to the console.[159][160] Unlike digital purchases, the Game Card must still be inserted to launch the game. Game-Key Cards are an evolution of a similar practice that was used by some third-party Switch games, which only contain a portion of the game's data on their cards due to file size constraints, and similarly required downloading the remainder of the data.[161][162][163] Nintendo said that the introduction of game-key cards was to help future-proof the Switch 2 for many years, as that games keep growing larger and surpass the storage limit of game cards, using game-key cards still allows such games to be sold through retail in addition to digital distribution.[164] Games that come on a Game-Key Card are not locked to a Nintendo account.[165]
+
+Nintendo released some original Switch games for the Switch 2 as "Switch 2 Editions", with improvements such as improved resolution, increased frame rates, decreased loading times or Joy-Con 2 mouse support. While Switch 2 editions can be played on the original Switch, the improvements are only implemented when played on a Switch 2.[166][167]
+
+Online services
+
+See also: Nintendo Switch Online and GameChat
+
+The Nintendo Switch Online service is retained on the Switch 2.[168] Via the subscription-based service, users on the Switch 2 can connect to friends as to play with them in multiplayer games and allow for cloud saves of their game data. As part of the existing legacy games service on Switch Online, a selection of games from the GameCube are distributed on the Expansion Pack, exclusively for Switch 2 under the rebranded "Nintendo Classics" moniker.[169] The collection launched in tandem with the console in June 2025, and initially includes The Legend of Zelda: The Wind Waker, Soulcalibur II (both 2002), and F-Zero GX (2003). Other games, such as Luigi's Mansion (2001), Super Mario Sunshine (2002), Pokémon Colosseum (2003) and Fire Emblem: Path of Radiance (2005) were added procedurally at later dates.[170] Additional features applied across the Nintendo Classics catalog are exclusively supported on Switch 2, namely CRT shaders and a rewind function being added to existing Nintendo 64 games on the service.[171] Nintendo also released a new iteration of the GameCube controller alongside the platform's addition to Nintendo Classics, available exclusively to existing Switch Online subscribers.[172] Switch 2 exclusive games cannot be purchased using earlier Game Vouchers that had been available on the original Switch.[173]
+
+A voice chat service known as GameChat allows users to conduct voice chats and screen sharing with friends. GameChat supports video calls using an optional webcam accessory. It is accessible via a "C" button on the right Joy-Con 2,[174] on the new GameCube controller,[175] and on the Nintendo Switch 2 Pro Controller.[176] Chat was free to use until March 31, 2026, after which point a paid Nintendo Switch Online membership is required to use the feature.[177] Smartphones such as the iPhone 15 and iPhone 16, as well as Android phones that support DisplayPort Alternate Mode, can be used as a webcam on the Switch 2 by using a USB-C to HDMI cable, in addition to a HDMI capture cable.[178][179]
+
+The console's reveal trailer in January 2025 was accompanied by early footage of Mario Kart World, later announced to launch alongside the Switch 2 on June 5.[12][180][181] First-party Switch games for 2025 such as Metroid Prime 4: Beyond and Pokémon Legends: Z-A released with "Nintendo Switch 2 Edition" versions at launch, with graphical and performance enhancements.[182][183] The Nintendo Switch 2 Welcome Tour game was revealed in the April 2 Direct, releasing as an online exclusive alongside the console launch.
+
+Third-party support
+
+ | 
+
+ | 
+This section may need to be rewritten to comply with Wikipedia's quality standards. Relevant discussion may be found on the talk page. You can help. The talk page may contain suggestions. (December 2025)
+
+A survey conducted at the 2024 Game Developers Conference in January 2024 inquired 3,000 independent and AAA developers on game creation and which platforms they were engaging, of which 250 individuals identified themselves as already producing games slated for Switch 2, and a further 32% of those surveyed expressed interest in developing for the console.[184] In May 2024, Nintendo announced their intentions to acquire Miami-based developer Shiver Entertainment from its prior parent company Embracer Group, with the company detailing in a statement that the merger enabled them to procure specialized in-house resources for the development and porting of software, while allowing the studio to continue commitments to Switch and other platforms.[185] Bloomberg News later reported that the acquisition was for bolstering Nintendo's efforts in securing games from third-party developers on Switch 2, with Shiver assisting external developers in the optimization of such games from competing platforms.[186] In September 2024, developer Pathea Games announced My Time at Evershine, the spiritual successor to My Time at Portia (2019) and My Time at Sandrock (2023).[187] In October 2024, Playtonic Games announced their upcoming remaster Yooka-Replaylee would be released on "Nintendo platforms."[188]
+
+During the Switch 2-focused Nintendo Direct in April 2025, multiple publishers pledged support for the console, including Square Enix, Capcom, Electronic Arts, Take-Two Interactive, CD Projekt Red, Bandai Namco, Sega, Supergiant Games, Warner Bros. Games, Activision Blizzard, and IO Interactive. An initial lineup of 46 games from publishing partners was confirmed, with 17 slated to coincide with the console's launch in June.[189][190] Notable third-party releases revealed during the stream included Final Fantasy VII Remake Intergrade, Hades II, Borderlands 4, Yakuza 0 Director's Cut, Elden Ring - Tarnished Edition, Cyberpunk 2077 Ultimate Edition, Hitman: World of Assassination, 007 First Light, Split Fiction, Daemon x Machina: Titanic Scion, Street Fighter 6, and Deltarune Chapters 3+4.[191][192][193] Both EA and Take-Two Interactive also formally committed to bringing their respective sports franchises, EA Sports FC, Madden NFL, WWE 2K, and NBA 2K to the platform.[194][195] Nintendo was also revealed to be collaborating with partner studios on exclusive games for the system, such as Hyrule Warriors: Age of Imprisonment with Koei Tecmo,[196] Kirby Air Riders with Bandai Namco Studios, and The Duskbloods with FromSoftware.[197] Nintendo later stated in their November 2025 financial results briefing that the Switch 2 had the largest first-year software lineup from third-party developers of any Nintendo system.[198]
+
+Microsoft Gaming's Phil Spencer said that as part of their ongoing multiplatform distribution strategy, they will support the Switch 2 with ports of their Xbox games.[199] Early releases from Microsoft subsidiaries include Tony Hawk's Pro Skater 3 + 4 from Activision, as well as Fallout 4 - Anniversary Edition and Indiana Jones and the Great Circle from Bethesda Softworks.[200][201] Microsoft had previously signed an agreement with Nintendo to bring future entries in the Call of Duty franchise to their platforms as part of their acquisition bid for Activision Blizzard, which became legally binding in February 2023.[202][203]
+
+Publisher Ubisoft commented that they were "in love" with the console following its reveal, and released ports of Star Wars Outlaws and Assassin's Creed Shadows for the system during its launch window.[204][205] Weicong Wu, producer of Marvel Rivals, expressed interest in bringing the game to the Switch 2, having stated that the team has already contacted Nintendo and possessed dev kits. However, he has stated that it will only come to the Switch 2 if the game's performance is satisfactory.[206]
+
+Around August 2025, Digital Foundry reported that smaller and indie studios had said that Nintendo was not providing Switch 2 hardware development kits, and directing them to focus on releases for the original Switch, which would still be playable on the Switch 2 with backwards compatibility. Nintendo had not made clear what the reasonings behind this was, but this decision was preventing these developers from releasing native Switch 2 games with support for the console's updated hardware or additional functionality like GameChat.[207]
+
+Backward compatibility
+
+See also: List of Nintendo Switch games
+
+The Switch 2 is backward compatible with most Switch games, both physically and digitally,[168][208] allowing certain games to run more stably than they did on the previous hardware.[209] Some games are not directly compatible with the hardware changes in the Switch 2 and the Joy-Con 2 controllers, but may still be playable using the Joy-Con from the original Switch, such as games that require infrared functionality.[41][210][211] For most other Switch games, they are playable using a type of emulation akin to a translation layer since the Switch 2 does not have the same hardware as the Switch. Hardware director Takuhiro Dohta described the solution as "somewhere in between a software emulator and hardware compatibility" and Tetsuya Sasaki said that the method used is "performed on a real-time basis as the data is read".[212] This method allows Switch games to have Switch 2 features added, such as GameChat support, when played on the Switch 2.[211] As of May 2025[update], of the 122 Nintendo-developed games tested, all were found to be compatible except the Nintendo Labo VR Kit, due to the Switch 2's larger size being unable to fit inside the accessory.[210][213][211] As of 27 May 2025, Nintendo had tested 75% of the more than 15,000 third-party Switch games, finding that "around 170" of them had issues while all the rest were compatible. Some additional software, such as applications for Hulu and Crunchyroll, were also incompatible.[214]
+
+Certain Switch games have upgrades for the console sold separately or available via the Nintendo Switch Online Expansion Pack, with some adding new content. The initial upgrade lineup included Metroid Prime 4: Beyond, The Legend of Zelda: Breath of the Wild, The Legend of Zelda: Tears of the Kingdom, Super Mario Party Jamboree, Pokémon Legends: Z-A, and Kirby and the Forgotten Land, with both Zelda games being launch games.[215] Other Switch games, such as Super Mario Odyssey and Pokémon Scarlet and Violet, have free performance updates for the Switch 2, but without additional content.[216] The games can also be inserted into the original Switch to play the game as if it were a copy of the original Switch game.[217]
+
+In March 2026, a Switch 2 system update introduced the Handheld Boost Mode function: this function, available in the system settings, forces Nintendo Switch software to play in their TV Mode state whilst played on Nintendo Switch 2 in Handheld and Tabletop Modes. Whilst enabling players with generally improved resolution and performance for most original Switch titles, battery life is affected and handheld-specific functions such as the touchscreen are disabled. [218]
+
+To aid users in bringing their Switch games to the Switch 2, Nintendo introduced Virtual Game Cards for the original Switch system software in April 2025.[219] Virtual Game Cards can be used to virtually transfer digitally purchased games for use on a second Switch or Switch 2 system, or loaned to a family member's Switch for up to two weeks at a time.[220][221]
+
+Joy-Con and Nintendo Switch Pro Controllers are mostly[c] forward compatible with the Switch 2, with some Switch games requiring them in order to be compatible with the Switch 2. Such games include most Nintendo Labo games, Ring Fit Adventure (2019) and WarioWare: Move It! (2023).[211][210]
+
+Reception
+
+Critical response
+
+Reception
+
+Review scores
+ | Publication | Score
+
+ | Digital Trends | 4/5[223]
+
+ | IGN | 7/10[224]
+
+ | Nintendo Life | 8/10[225]
+
+ | PC Gamer (US) | 78/100[226]
+
+ | PCMag | 4.0/5[227]
+
+ | The Guardian | 4/5[228]
+
+ | Engadget | 93/100[229]
+
+ | Mashable | 4.4/5[230]
+
+ | The Verge | 8/10[231]
+
+ | Wired | 9/10[232]
+
+Digital Trends and TheGamer praised the dock's accessible design,[223][233] while PCMag was ambivalent about it;[227] other critics were satisfied by its improved ventilation system.[232][229] The kickstand was praised for its design improvements and durability by some,[223][227][233] though Wired was concerned about its security and thinness.[232] The screen, especially given the lack of OLED, was the subject of commentary: Wired felt the 120 Hz refresh rate and HDR10 support made up for this.[232] Critics agreed that the Switch 2's display was an improvement from the original Switch's;[236] some felt the display was a drawback despite its strong points.[223][234][227] Critics praised the design improvements to the Joy-Con, and some noted that the increased size of the SL and SR buttons was useful.[232][237][238] Critics were unhappy without a solution to stick drift.[239][226][240] Critics noted the computer mouse functionality of the Joy-Con worked well even on the user's leg.[238][231] The console's reduced battery life was criticized; some unfavorably compared it to the original Switch launch edition's 2.5 to 6.5 hour power estimate,[227][223][239] though Engadget felt this number was generally standard for high-end portable gaming devices, however, it still listed battery life as a negative in its summary.[229]
+
+The console's social features were praised.[241] Wired described GameChat as "the most notable, wholly new feature" of the console,[232] and Mashable described Nintendo not as reinventing the wheel with a two-decade-old concept, but moving it "beyond pure utility and into the realm of actively being enjoyable to use".[230] Business Insider felt it was "made for quick, casual multiplayer sessions" rather than specialist communication.[239] Critics praised the accuracy of the speech-to-text option and its ability to discern specific speakers.[230][223] Critics praised the built-in microphone's noise cancellation capabilities.[239][232][230] Many called GameChat's screenshare choppy.[242] Mashable described the Virtual Game Card system as potentially a "logistical nightmare for competitive siblings" squabbling over possession of shared digital games.[230] IGN stated that the Switch 2 "doesn't provide many of its own novel reasons to upgrade", scrutinised that Nintendo is "charging a substantial premium" and criticised the lack of comfortability of the Switch 2's Joy-Con and their lack of analog triggers.[224] Similarly Nintendo Life stated that accessing games comes at a "significant cost" and highlighted the system's 256GB storage among the cons of the console in their review, saying it will "fill up fast".[225] PC Gamer (US) said not to buy the Switch 2 if you want cheap games, that the console has a "hefty price tag" and highlighted that the Switch 2 Joy-Con are still capable of getting stick drift.[226]
+
+The launch game lineup was criticized as lacking;[243] PC Gamer called it "one of the weakest" of recent times but added that "a new Mario Kart certainly eases the blow", referring to Mario Kart World.[226] Critics criticized Nintendo for charging money for the launch game Nintendo Switch 2 Welcome Tour.[238][237][235] Critics observed many of its launch games were ports from other systems that the original Switch could not run,[244][231] and some praised the upgrades to original Switch games on Switch 2.[234][231] PC Gamer wrote that the Deep Learning Super Sampling graphics technology made games like Cyberpunk 2077 "subjectively better" and encouraged the purchase of the console at launch for those who "can't get enough" of the exclusive Mario Kart,[226] and Edge lauded the accuracy of the mouse features during gameplay of Metroid Prime 4: Beyond and Welcome Tour.[237] Critics were concerned with the total price of the console, games, and general accessories.[245] Concern also arose about the integrity of the original Switch data transfer function.[230][246][247] The use of game-key cards, which require downloading data from Nintendo's server for the game to become playable, were considered a new type of digital rights management for physical games, and raised concerns on game ownership, video game preservation, and support for games after Nintendo phases out the Switch 2.[248][249]
+
+Sales
+
+Life-to-date number of units shipped, millions
+
+ | Date
+ | Japan
+ | Americas
+ | Europe
+ | Other
+ | Total
+ | Attach rate[A]
+
+ | Hard­ware
+ | Soft­ware
+ | Hard­ware
+ | Soft­ware
+ | Hard­ware
+ | Soft­ware
+ | Hard­ware
+ | Soft­ware
+ | Hard­ware
+ | Soft­ware
+
+ | 2025-06-30[250]
+ | 1.27
+ | 1.76
+ | 2.08
+ | 3.31
+ | 1.34
+ | 2.42
+ | 1.13
+ | 1.17
+ | 5.82
+ | 8.67
+ | 1.49
+
+ | 2025-09-30[251]
+ | 2.35
+ | 3.87
+ | 3.68
+ | 8.10
+ | 2.40
+ | 5.70
+ | 1.93
+ | 2.95
+ | 10.36
+ | 20.62
+ | 1.99
+
+ | 2025-12-31[252]
+ | 4.78
+ | 9.16
+ | 5.98
+ | 14.10
+ | 4.10
+ | 10.18
+ | 2.50
+ | 4.48
+ | 17.37
+ | 37.93
+ | 2.18
+
+ | 2026-03-31[253]
+ | 5.66
+ | 13.17
+ | 6.73
+ | 17.48
+ | 4.40
+ | 12.37
+ | 3.06
+ | 5.70
+ | 19.86
+ | 48.71
+ | 2.45
+
+ | 2026-06-30[254]
+ | 6.70
+ | 16.16
+ | 7.95
+ | 20.98
+ | 5.37
+ | 14.40
+ | 3.66
+ | 6.63
+ | 23.68
+ | 58.17
+ | 2.46
+
+ | 2026-09-30[255]
+ | 7.07
+ | 20.30
+ | 9.00
+ | 26.62
+ | 5.85
+ | 18.47
+ | 4.42
+ | 7.82
+ | 26.35
+ | 73.21
+ | 2.78
+
+Nintendo reported on June 10, 2025, four days from release, that the Switch 2 had sold more than 3.5 million units worldwide, which made it the company's fastest selling console to date,[256] while market research firm Niko Partners claimed this made it the fastest-selling console of all time.[257] Famitsu reported that the console had sold 947,931 units in Japan within the first four days of its release, surpassing the Switch's launch of 329,152 units sold in the region.[258] IGN said that launch sales of the Switch 2 in these first four days were twice as much as the launch sales of the Switch in all regions, and also claimed that the Switch 2 was the fastest-selling gaming hardware in the United States.[259][260] By June 30, 2025, the end of Nintendo's first fiscal quarter for 2026, the console had sold over 5.8 million units worldwide, with sales exceeding 6 million through the end of July. Over 8.6 million games had been sold, with Mario Kart World selling more than 5.6 million, including copies sold as part of Switch 2 bundles.[261] Console sales remained strong into the fall of 2025, with 2.4 million units sold in the US in the 3 months after launch according to industry analyst Mat Piscatella, exceeding the record pace set by the PlayStation 4 by 5%, and exceeding the pace of the original Switch by 77%.[262]
+
+As of December 31, 2025, the Nintendo Switch 2 had sold approximately 17.4 million units since its mid-2025 launch, contributing to Nintendo's strong quarterly profits.[263]
+
+During a February earnings call, Nintendo president Shuntaro Furukawa stated that despite a strong launch and total sales of over 17 million units since release, "overseas sales were somewhat weaker than expected" and the adjustment was attributed to slower consumer demand rather than cost pressure. The following month, Bloomberg News reported that Nintendo had reduced planned production of the Switch 2 by more than 30% after demand, particularly in the United States, fell short of expectations. The report noted that the company lowered quarterly output to about 4 million units, down from an initially planned 6 million, with the reduced pace expected to continue into the following quarter.[264][265]
+
+Following a surge in sales prior to its price increase, the Nintendo Switch 2 experienced an 87% decline in Japan, with sales dropping to 31,751 units the week after the May 25th price hike. The system's sales had peaked at over 200,000 units weekly in the weeks leading up to the increase, after previously averaging 44,000 to 52,000 units. The price of the Nintendo Switch 2 was raised from ¥49,980 to ¥59,980, which Nintendo attributed to current market conditions.[266][267]
+
+Awards
+
+The Switch 2 won the Minister of Economy, Trade and Industry Award at the Japan Game Awards 2025.[268] The console and the Pro Controller, were also nominated for Best Gaming Hardware at the Golden Joystick Awards 2025.[269]
+
+See also
+
+List of handheld game consoles
+
+List of Nintendo products
+
+Notes
+
+↑ According to Nintendo, certain Nintendo Switch games may not be supported or fully compatible.[8]
+
+↑ Japanese: ニンテンドースイッチ2, Hepburn: Nintendō Suitchi Tsū; Nintendo branded the console in Japan in its English name.
+
+↑ Waking the Switch 2 from sleep via an original Switch controller is not supported.[222]
+
+↑ Given as the ratio of total software sales to total hardware sales
+
+References
+
+↑ "Ask the Developer Vol. 16: Nintendo Switch 2 — Part 1". Nintendo Official Site for Canada. Retrieved December 31, 2025.
+
+↑ "Nintendo to launch Switch consoles in Indonesia in December". Reuters. August 12, 2026. Retrieved August 12, 2026.
+
+↑ Baladraf, Fadhil (September 14, 2026). "Jadwal Rilis dan Harga Resmi Nintendo Switch 2 di Indonesia". Gamerwk. Retrieved September 15, 2026.
+
+↑ "Switch 2 Final Tech Specs". Digital Foundry. May 14, 2025. Archived from the original on May 1, 2026. Retrieved June 10, 2026.
+
+↑ "Nintendo Switch System Update Information | Nintendo Support". en-americas-support.nintendo.com. Retrieved February 18, 2026.
+
+↑ "System Update Information for Nintendo Switch 2 | Nintendo Support". en-americas-support.nintendo.com. Retrieved February 18, 2026.
+
+↑ "IR Information : Financial Data – Top Selling Title Sales Units". Nintendo Co., Ltd. Archived from the original on August 5, 2021. Retrieved February 3, 2026.
+
+1 2 Vikki Blake (January 18, 2025). "Nintendo reveals what it thinks is "the best direction" for Switch 2: Go best". Eurogamer. Wikidata Q131827921. Archived from the original on January 19, 2025. Retrieved January 20, 2025. {{Cite Q}}: Missing first/last names in Wikidata for Vikki Blake (help) 
+
+↑ Stephany Nunneley-Jackson (January 30, 2021). "Reggie: Switch was a "make or break product" for Nintendo that "luckily was a hit"". VG247. Wikidata Q131839040. Archived from the original on July 1, 2022. Retrieved January 21, 2025. {{Cite Q}}: Missing first/last names in Wikidata for Stephany Nunneley-Jackson (help) 
+
+↑ Ohannessian, Kevin (January 20, 2017). "With Nintendo's Switch Game Console, New Ideas Create New Experiences". Fast Company. Archived from the original on January 20, 2017. Retrieved January 20, 2017.
+
+↑ Phillips, Tom (February 3, 2026). "Switch Becomes Nintendo's Best-Selling Hardware Ever, While Switch 2 Has Already Outsold Wii U's Lifetime Total". IGN. Archived from the original on February 3, 2026. Retrieved February 3, 2026.
+
+1 2 Small, Zachary (January 16, 2025). "Nintendo Switch 2 Is Announced With a 2025 Release Date: The new console looks physically similar to the popular Switch system, which has sold more than 146 million units in seven years". The New York Times. ISSN 0362-4331. Wikidata Q131813608. Archived from the original on January 16, 2025. Retrieved January 18, 2025.
+
+1 2 3 "Ask the Developer Vol. 16, Nintendo Switch 2 – Chapter 1". Nintendo. April 2, 2025. Archived from the original on April 17, 2025. Retrieved April 5, 2025.
+
+↑ Meo, Francesco De (June 9, 2025). "Nintendo Switch 2 Devkit NDK Core Ounce First Look Highlights Differences With Retail Unit". Wccftech. Retrieved September 21, 2025.
+
+1 2 3 4 5 "Ask the Developer Vol. 16, Nintendo Switch 2 – Chapter 2". Nintendo. April 2, 2025. Archived from the original on April 7, 2025. Retrieved April 6, 2025.
+
+↑ Welsh, Oli (June 27, 2023). "Nintendo promises 'smooth transition' to next console with Nintendo Accounts: But what does it mean?". Polygon. Wikidata Q131784065. Archived from the original on January 11, 2025. Retrieved January 17, 2025.
+
+1 2 "Ask the Developer Vol. 16, Nintendo Switch 2 – Chapter 4". Nintendo. April 2, 2025. Archived from the original on May 1, 2025. Retrieved April 6, 2025.
+
+↑ Patches, Matt (April 6, 2025). "Nintendo built the Switch 2 for the next societal shutdown". Polygon. Archived from the original on May 4, 2025. Retrieved April 6, 2025.
+
+↑ "Ask the Developer Vol. 16, Nintendo Switch 2 – Chapter 3". Nintendo. April 2, 2025. Archived from the original on April 23, 2025. Retrieved April 6, 2025.
+
+↑ Mochizuki, Takashi (March 25, 2019). "Nintendo to Launch Two New Nintendo Switch Models". The Wall Street Journal. Archived from the original on April 29, 2019. Retrieved April 24, 2019.
+
+↑ "任天堂、もがく独創の王国 忍び寄る黒船" [Nintendo, the kingdom of mogul originality creeping black ship]. The Nikkei (in Japanese). April 18, 2019. Archived from the original on April 28, 2019. Retrieved April 24, 2019.
+
+↑ Makuch, Eddie (October 1, 2020). "Nintendo's Next Console After Switch Will Release Before 2100". GameSpot. Archived from the original on June 20, 2025. Retrieved February 8, 2025.
+
+↑ Bahri, Syazwan (December 28, 2022). "'Nintendo Switch Pro' Reportedly Cancelled As Nintendo Shifts Focus To Next-Gen Console". IGN. Archived from the original on December 31, 2022. Retrieved December 31, 2022.
+
+↑ Warren, Tom (September 18, 2023). "Activision was briefed on Nintendo's Switch 2 last year". The Verge. Archived from the original on September 18, 2023. Retrieved April 20, 2025.
+
+↑ Robinson, Andy (July 31, 2023). "Sources: Nintendo targets 2024 with next-gen console: Key partners have development kits ahead of a planned launch, sources tell VGC". Video Games Chronicle. Wikidata Q131859351. Archived from the original on January 22, 2025. Retrieved January 23, 2025.
+
+1 2 Robinson, Andy (September 18, 2024). "Alleged images of Nintendo's new Switch have appeared online: The images show a design featuring an 8-inch screen and magnetic Joy-Cons". Video Games Chronicle. Wikidata Q131868382. Archived from the original on January 22, 2025. Retrieved January 25, 2025.
+
+↑ Robinson, Andy (September 7, 2023). "Sources: Nintendo showed Switch 2 demos at Gamescom: The company is understood to have held private tech demos, ahead of an expected 2024 launch". Video Games Chronicle. Wikidata Q131860158. Archived from the original on January 21, 2025. Retrieved January 23, 2025.
+
+↑ Richardson, Tom (May 7, 2024). "Nintendo Switch 2: Official announcement promised within next year". BBC. Archived from the original on May 7, 2024. Retrieved May 7, 2024.
+
+↑ Yin-Poole, Wesley (September 18, 2024). "Why Everyone's Talking About Nintendo Switch 2 Leaks Today". IGN Southeast Asia. Archived from the original on September 10, 2025. Retrieved August 25, 2025.
+
+↑ Yin-Poole, Wesley (October 13, 2024). "Pokémon Developer Game Freak Reportedly Hacked, Stolen Data on Unannounced Games as Well as Nintendo Switch 2 Codename Leaked Online". IGN. Archived from the original on November 2, 2024. Retrieved October 13, 2024.
+
+↑ Yin-Poole, Wesley (January 10, 2025). "Nintendo Breaks Silence on Switch 2 Mockups and Photos Leaks". IGN. Archived from the original on January 15, 2025. Retrieved January 16, 2025.
+
+↑ Blake, Vikki (May 4, 2025). "Nintendo began working on Switch 2 "shortly after the release" of Switch 1, new Genki lawsuit papers reveal". Eurogamer. Archived from the original on May 4, 2025. Retrieved May 4, 2025.
+
+↑ Weatherbed, Jess (September 9, 2025). "Genki will pay Nintendo damages over 3D-printed Switch 2". The Verge. Archived from the original on September 9, 2025. Retrieved September 9, 2025.
+
+1 2 Kharpal, Arjun (February 19, 2024). "Nintendo shares fall nearly 6% after report that the Nintendo Switch 2 will be delayed until 2025". CNBC. Archived from the original on April 6, 2025. Retrieved March 9, 2024.
+
+↑ Yin-Poole, Wesley (February 26, 2024). "Nintendo Switch 2 Reportedly Delayed to March 2025 in Part to Combat Scalping". IGN. Archived from the original on March 22, 2025. Retrieved March 9, 2024.
+
+↑ Savov, Vlav; Mochizuki, Takashi (September 2, 2025). "Switch 2 Shows Nintendo Is Still the Weird Genius of Gaming". Bloomberg News. Archived from the original on September 7, 2025. Retrieved September 5, 2025.
+
+↑ Rosenblatt, Kalhan (January 16, 2025). "Nintendo offers brief first look at the Nintendo Switch 2 console". NBC News. Archived from the original on January 16, 2025. Retrieved January 16, 2025.
+
+↑ Welsh, Oli (April 2, 2025). "Mario Kart World goes open-world and off-road on Nintendo Switch 2". Polygon. Archived from the original on April 2, 2025. Retrieved April 2, 2025.
+
+↑ Kennedy, Victoria (January 16, 2025). "It's official: Nintendo Switch 2 revealed after months of waiting". Eurogamer. Archived from the original on April 6, 2025. Retrieved January 16, 2025.
+
+↑ Welsh, Oli; McWhertor, Micheal (January 16, 2025). "Nintendo Switch 2 has been announced". Polygon. Archived from the original on January 16, 2025. Retrieved January 16, 2025.
+
+1 2 Valentine, Rebekah (January 16, 2025). "The Nintendo Switch 2 Is Officially Almost Fully Backward Compatible: Some Switch 1 games may not be supported fully". IGN. Wikidata Q131828115. Archived from the original on January 19, 2025. Retrieved January 20, 2025.
+
+↑ Norman, Jim (April 1, 2025). "Nintendo Treehouse Returns This Week With Two Presentations On Switch 2 Gameplay". Nintendo Life. Archived from the original on April 1, 2025. Retrieved April 1, 2025.
+
+↑ Webster, Andrew (January 16, 2025). "You'll be able to try out the Switch 2 starting in April". The Verge. Archived from the original on April 6, 2025. Retrieved January 17, 2025.
+
+↑ Robinson, Andy (February 4, 2025). "Nintendo says it's making preparations for Switch 2". Video Games Chronicle. Archived from the original on May 2, 2025. Retrieved February 10, 2025.
+
+↑ McWhertor, Michael (March 20, 2025). "Nintendo's Switch 2 marketing blitz includes a big deal with MLB". Polygon. Archived from the original on May 3, 2025. Retrieved March 20, 2025.
+
+↑ Valentine, Rebekah (April 19, 2025). "Paul Rudd Hypes Nintendo Switch 2 With Playful Throwback to Infamous 90s SNES Commercial". IGN. Archived from the original on April 30, 2025. Retrieved April 20, 2025.
+
+↑ Cripe, Michael (March 27, 2025). "Nintendo Today App Unveiled as News and Content Hub for Dedicated Fans". IGN. Archived from the original on May 17, 2025. Retrieved March 29, 2025.
+
+↑ "Latest Nintendo Direct reveals Nintendo Switch games, Virtual Game Cards and a new smart device app Nintendo Today!". Nintendo. March 27, 2025. Archived from the original on May 8, 2025. Retrieved March 29, 2025.
+
+1 2 3 4 5 6 7 Keohane, David (April 2, 2025). "Nintendo unveils high-priced Switch 2 console as Trump's tariffs bite". Financial Times. Archived from the original on April 2, 2025. Retrieved April 2, 2025.
+
+↑ Keohane, David; Lewis, Leo (March 28, 2025). "Mario enters trade wars as Nintendo readies Switch 2 launch". Financial Times. Archived from the original on March 28, 2025. Retrieved April 2, 2025.
+
+↑ Robinson, Andy (April 2, 2025). "Nintendo will sell a cheaper $330 Switch 2 in Japan that's region locked". Video Games Chronicle. Archived from the original on April 2, 2025. Retrieved April 2, 2025.
+
+↑ Anderson, Robert (April 2, 2025). "Nintendo Switch 2 Preorders Officially Start on April 9". IGN. Archived from the original on April 2, 2025. Retrieved April 2, 2025.
+
+↑ Yin-Poole, Wesley (April 4, 2025). "Nintendo Delays Switch 2 Pre-Order Date in the U.S. to Assess Impact of Trump's Tariffs". IGN. Archived from the original on April 16, 2025. Retrieved April 4, 2025.
+
+↑ Kennedy, Victoria (April 8, 2025). "Nintendo delays Switch 2 pre-orders in Canada". Eurogamer. Archived from the original on April 26, 2025. Retrieved April 8, 2025.
+
+↑ Middler, Jordan (April 18, 2025). "Confirmed: Nintendo Switch 2 US pre-orders open next week, as accessories get a price hike". Video Games Chronicle. Archived from the original on April 18, 2025. Retrieved April 18, 2025.
+
+↑ Peters, Jay; Parrish, Ash (April 18, 2025). "Nintendo Switch 2 preorders start April 24th and the price is still $449.99". The Verge. Archived from the original on April 27, 2025. Retrieved April 18, 2025.
+
+↑ DelBasso, Casey; Schmitz, Melanie (April 24, 2025). "What to know about the Nintendo Switch 2 preorder chaos". ABC News. Archived from the original on April 26, 2025. Retrieved April 29, 2025.
+
+↑ Peters, Jay (April 24, 2025). "Nintendo Switch 2 preorders were a total mess — at first". The Verge. Archived from the original on June 5, 2025. Retrieved April 29, 2025.
+
+↑ Valentine, Rebekah (April 24, 2025). "Nintendo Switch 2 Pre-Orders Went Live and Were, Predictably, a Mess". IGN. Archived from the original on May 12, 2025. Retrieved April 29, 2025.
+
+↑ Mellon, Rory (April 23, 2025). "Nintendo Switch 2 pre-orders live: retailers to check now and latest updates". Tom's Guide. Archived from the original on April 29, 2025. Retrieved April 29, 2025.
+
+↑ Blake, Vikki (April 24, 2025). "2.2 million people applied to pre-order a Switch 2 in Japan alone, says Nintendo". GamesIndustry.biz. Archived from the original on May 12, 2025. Retrieved April 24, 2025.
+
+↑ Townsend, Verity (June 5, 2025). "As Nintendo Switch 2 Launches in Japan, Shops Restrict Sales to Lottery Winners — and Nintendo's Official Stores Aren't Stocking Switch 2 at All". Archived from the original on June 29, 2025. Retrieved June 29, 2025.
+
+↑ Yin-Poole, Wesley (April 24, 2025). "Nintendo Issues Inevitable Switch 2 My Nintendo Store Warning to U.S. Customers, Says Release Date Delivery 'Not Guaranteed' Due to 'Very High Demand'". IGN. Archived from the original on April 28, 2025. Retrieved April 24, 2025.
+
+↑ Robinson, Andy (May 27, 2025). "Nintendo Switch 2 is already in some users' hands, but a mandatory update means they cannot be played". Video Games Chronicle. Archived from the original on May 27, 2025. Retrieved May 27, 2025.
+
+↑ Hernadez, Patricia (May 28, 2025). "After years of intense leaks, Nintendo's got the Switch 2 launch on lockdown". Polygon. Archived from the original on May 28, 2025. Retrieved May 28, 2025.
+
+↑ "Nintendo Switch 2 launches 5th June, bringing new forms of game communication to life - Nintendo". Nintendo. Archived from the original on June 24, 2025. Retrieved June 23, 2025.[non-primary source needed]
+
+↑ Zhang, Austin (April 8, 2025). "Nintendo Switch 2 set to launch on June 5 for HK$3,450". Lifestyle Asia. Archived from the original on April 8, 2025. Retrieved June 23, 2025.
+
+↑ Tov, Itay Ben (June 4, 2025). "השקה רשמית של נינטנדו סוויץ' 2 בישראל: כל מה שצריך לדעת על הקונסולה ורשימת כל משחקי ההשקה". GamePro Israel (in Hebrew). Retrieved August 27, 2026.
+
+↑ "Nintendo expands in Saudi Arabia with online store, upcoming launch of Switch 2". Arab News. May 28, 2025. Retrieved June 23, 2025.
+
+↑ "Nintendo Switch 2 launch draws eager fans - The Korea Times". The Korea Times. June 5, 2025. Archived from the original on June 24, 2025. Retrieved June 23, 2025.
+
+↑ Lirio, Albert Josef (June 3, 2025). "Nintendo Switch 2 releases in PH on June 26". ABS-CBN. Archived from the original on June 26, 2025. Retrieved June 26, 2025.
+
+↑ Fam, Christopher (June 19, 2025). "Nintendo Switch 2 to launch in Malaysia on July 3, pre-orders start from RM2,488". The Star. Archived from the original on June 26, 2025. Retrieved June 26, 2025.
+
+↑ @NintendoMDE (September 17, 2025). "Exciting news! 🎮 The official UAE version Nintendo Switch 2 console, with a wide range of accessories and games, is now available in all the major retail stores across UAE!" (Tweet). Retrieved September 24, 2025 – via X (formerly Twitter).
+
+↑ @NintendoLatam (September 4, 2025). ""La consola Nintendo Switch 2 estará disponible en Argentina en octubre 2025. Estén pendientes para más información."" (Tweet) (in Spanish). Retrieved September 9, 2025 – via X (formerly Twitter).
+
+↑ The 'Nintendo Switch 2' already has an official price and release date in the country., La Derecha Diario, October 8, 2025, retrieved October 17, 2025
+
+↑ Ralph (August 11, 2026), Nintendo Switch and Switch 2 to Officially Launch in Indonesia This December, Gamer Braves, retrieved August 12, 2026
+
+↑ Fadhil (September 14, 2026). "Jadwal Rilis dan Harga Resmi Nintendo Switch 2 di Indonesia | GamerWK". gamerwk.com. Retrieved September 15, 2026.
+
+↑ "Nintendo postpones launch of Switch 2 in China". Nikkei Asia. Archived from the original on June 23, 2025. Retrieved June 23, 2025.
+
+↑ Ziegler, Owen (June 4, 2025). "Nintendo's Switch 2 console is finally here". The Japan Times. Archived from the original on June 15, 2025. Retrieved June 15, 2025.
+
+↑ "Nintendo Switch 2 Launches June 5 at $449.99, Bringing New Forms of Game Communication to Life". Business Wire (Press release). Nintendo. April 2, 2025. Archived from the original on April 4, 2025. Retrieved April 2, 2025.
+
+↑ "Nintendo Switch 2 and new "Mario Kart World" game to be released in June". CBS News. April 2, 2025. Archived from the original on April 29, 2025. Retrieved April 2, 2025.
+
+↑ Colley, Mark (April 3, 2025). "Nintendo Switch 2 release date and price for Canada revealed, plus Mario Kart World. Here are 4 takeaways". Toronto Star. Archived from the original on April 20, 2025. Retrieved April 6, 2025.
+
+↑ "Here Are The Countries With The Cheapest And Most Expensive Nintendo Switch 2 Consoles". NintendoSoup. April 16, 2025. Archived from the original on April 16, 2025. Retrieved April 25, 2025.
+
+↑ Nightingale, Ed (April 2, 2025). "Switch 2 price and release date revealed". Eurogamer. Archived from the original on April 26, 2025. Retrieved April 2, 2025.
+
+↑ Santomartino, Mark (April 3, 2025). "Nintendo Switch 2: Everything you need to know about the new gaming console". Nine News. Archived from the original on April 26, 2025. Retrieved April 6, 2025.
+
+1 2 "Nintendo's Switch 2 Will Be Much Cheaper in Japan, But There's a Catch". PCMag. April 3, 2025. Archived from the original on April 9, 2025. Retrieved April 25, 2025.
+
+↑ Straw, Mike (March 14, 2025). "Analysts Expect Nintendo Switch 2 Price To Be Around $400 Or More". Insider Gaming. Archived from the original on March 14, 2025. Retrieved March 14, 2025.
+
+1 2 3 Murray, Conor (April 2, 2025). "Nintendo Hiked Prices For The Switch 2—And Some Customers Aren't Happy". Forbes. Archived from the original on April 2, 2025. Retrieved April 2, 2025.
+
+↑ Byrd, Matthew (April 2, 2025). "Nintendo Switch 2 Prices Are a Major Red Flag For the Future of Gaming". Den of Geek. Archived from the original on April 19, 2025. Retrieved April 3, 2025.
+
+1 2 Grant, Christopher (April 2, 2025). "Even with inflation, Switch 2 is one of Nintendo's priciest consoles ever". Polygon. Archived from the original on May 1, 2025. Retrieved April 2, 2025.
+
+↑ Eadicicco, Lisa (April 2, 2025). "Nintendo's Switch 2 has big shoes to fill – at a much higher price | CNN Business". CNN. Archived from the original on April 2, 2025. Retrieved April 3, 2025.
+
+↑ Webster, Andrew (April 7, 2025). "Nintendo boss on Switch 2 and tariffs: 'we are actively assessing what the impact may be'". The Verge. Archived from the original on May 2, 2025. Retrieved April 7, 2025.
+
+↑ Williams, Hayley (April 8, 2025). "Switch 2 Stock Is Already In The US As Nintendo Prepares For Launch Demand". GameSpot. Archived from the original on April 10, 2025. Retrieved April 8, 2025.
+
+↑ Gonzalez, Oscar (April 4, 2025). "Switch 2 Games Are More Expensive, and Tariffs Might Not Be the Reason Why". CNET. Archived from the original on April 4, 2025. Retrieved April 4, 2025.
+
+↑ "Will Tariffs Increase Switch 2's Price? Why The Console And Games Are So Expensive". GameSpot. Archived from the original on April 11, 2025. Retrieved April 4, 2025.
+
+↑ Valentine, Rebekah (April 3, 2025). "Here's Why the Nintendo Switch 2, Mario Kart World, and Everything Around Them Is So Expensive". IGN. Archived from the original on April 4, 2025. Retrieved April 4, 2025.
+
+↑ Plunkett, Luke (April 2, 2025). "Nah, Man - Aftermath". Aftermath. Archived from the original on April 3, 2025. Retrieved April 3, 2025.
+
+↑ O'Reilly, PJ (April 3, 2025). "'DROP THE PRICE!!!' Scream Nintendo Fans During Nintendo's Treehouse Live Broadcast". Nintendo Life. Archived from the original on May 13, 2025. Retrieved April 4, 2025.
+
+↑ Yin-Poole, Wesley (April 3, 2025). "Nintendo's Switch 2 Treehouse Livestream Is Just a Flood of Angry Comments Shouting "DROP the PRICE"". IGN. Archived from the original on April 27, 2025. Retrieved April 4, 2025.
+
+↑ Yin-Poole, Wesley (April 4, 2025). "Former Nintendo PR Managers Say Switch 2 and Mario Kart World Price Backlash 'A True Crisis Moment for Nintendo'". IGN. Archived from the original on April 22, 2025. Retrieved April 9, 2025.
+
+↑ van der Veld, Issy (April 4, 2025). "Nintendo is likely surprised, panicked, and having a full "war room" response to the outrage over Switch 2 pricing, former marketing leads say". GamesRadar+. Archived from the original on April 6, 2025. Retrieved April 9, 2025.
+
+↑ Farokhmanesh, Megan (April 7, 2025). "Nintendo Is 'Actively Assessing' What a Trade War Means for the Switch 2". Wired. ISSN 1059-1028. Archived from the original on May 3, 2025. Retrieved April 9, 2025.
+
+↑ Peters, Jay (June 5, 2025). "A GameStop damaged Switch 2 screens with staples, but they're getting replaced". The Verge. Archived from the original on June 26, 2025. Retrieved July 9, 2025.
+
+↑ Fanelli, Jason (July 9, 2025). "GameStop Is Auctioning Off The Stapler--And The Staple--That Damaged A Nintendo Switch 2 On Launch Day". GameSpot. Archived from the original on July 9, 2025. Retrieved July 9, 2025.
+
+↑ Palmer, Annie (August 1, 2025). "Nintendo hiking price of original Switch for U.S. customers". CNBC. Archived from the original on August 2, 2025. Retrieved August 2, 2025.
+
+↑ Yin-Poole, Wesley (August 1, 2025). "Nintendo Announces U.S. Price Rises for Original Switch, Warns Price Rises for Switch 2, Games, and the NSO Membership 'May Be Necessary in the Future'". IGN. Retrieved August 1, 2025.
+
+↑ Hernandez, Patricia (March 25, 2026). "Physical and digital Switch 2 games will have different prices, Nintendo says". Polygon. Archived from the original on March 26, 2026. Retrieved March 28, 2026.
+
+↑ Sophie McEvoy (May 8, 2026). "Nintendo hikes Switch 2 prices, revises console costs in Japan, US, Canada, and Europe". GamesIndustry.biz. Archived from the original on May 9, 2026. Retrieved May 13, 2026.
+
+↑ "Nintendo says it's not planning another Switch 2 price hike".
+
+↑ Peters, Jay (March 6, 2026). "Nintendo is suing the US government for a refund of Trump's illegal tariffs". The Verge. Retrieved March 6, 2026.
+
+↑ Reynolds, Ollie (March 6, 2026). "Nintendo Is Suing The U.S. Government Over Trump's Tariffs". Nintendo Life. Retrieved March 6, 2026.
+
+↑ Orland, Kyle (January 17, 2025). "Switch 2 sports ~7.9" screen, 33% bigger tablet surface—Ars video analysis". Ars Technica. Archived from the original on January 17, 2025. Retrieved January 17, 2025.
+
+↑ Ahmed, Sayem (January 16, 2025). "Nintendo Switch 2 Brings Major Quality-of-Life Upgrade With Second USB-C Port". IGN. Archived from the original on January 16, 2025. Retrieved January 17, 2025.
+
+1 2 3 McWhertor, Michael (January 16, 2025). "Inside the Nintendo Switch 2 hardware specs". Polygon. Archived from the original on June 17, 2025. Retrieved April 2, 2025.
+
+↑ "機能・仕様 | Nintendo Switch 2" [Functions and Specifications | Nintendo Switch 2]. Nintendo Japan (in Japanese). Archived from the original on May 4, 2025. Retrieved April 3, 2025.
+
+1 2 Valentine, Rebekah (April 2, 2025). "Nintendo Switch 2 Supports 120fps, Up to 4K Resolution Docked". IGN. Archived from the original on June 12, 2025. Retrieved April 2, 2025.
+
+↑ Judd, William (September 10, 2026). "Switch 2 Update Adds TV VRR Support - but It Only Works in One Game Right Now". Digital Foundry. Archived from the original on September 12, 2026. Retrieved September 13, 2026.
+
+↑ Phillips, Tom (April 4, 2025). "Switch 2 using LCD over OLED took "a lot of consideration", Nintendo says". Eurogamer. Archived from the original on April 4, 2025. Retrieved April 4, 2025.
+
+1 2 Peters, Jay (April 2, 2025). "Nintendo Switch 2 specs: 1080p 120Hz display, 4K dock, mouse mode, and more". The Verge. Archived from the original on April 2, 2025. Retrieved April 2, 2025.
+
+↑ Williams, Isaiah (July 3, 2025). "Nintendo Switch 2 owners, beware – some owners are reporting worrisome overheating problems". Techradar. Retrieved January 7, 2026.
+
+↑ Ricchiuto, Madeline (June 16, 2025). "Nintendo doesn't make the fastest handhelds, but people won't trade 'Palworld' for 'Pokémon'". Yahoo Tech. Retrieved September 1, 2025.
+
+↑ Leadbetter, Richard (November 3, 2023). "Inside Nvidia's new hardware for Switch 2: what is the T239 processor?". Eurogamer. Archived from the original on November 9, 2023. Retrieved November 9, 2023.
+
+↑ Leadbetter, Richard; Foundry, Digital (May 14, 2025). "Nintendo Switch 2: final tech specs and system reservations confirmed". Eurogamer.net. Archived from the original on May 14, 2025. Retrieved May 14, 2025.
+
+↑ Yin-Poole, Wesley (April 3, 2025). "Nintendo Confirms Switch 2 Uses DLSS and Ray Tracing, but Is Being Super Vague About the Details". IGN. Archived from the original on April 3, 2025. Retrieved April 3, 2025.
+
+↑ Anda, Muni (April 3, 2025). "Nintendo Switch 2 Leveled Up With NVIDIA AI-Powered DLSS and 4K Gaming". NVIDIA Blog. Archived from the original on April 3, 2025. Retrieved April 3, 2025.
+
+↑ Hollister, Sean (March 7, 2025). "The Nintendo Switch 2 will have NFC and Wi-Fi 6, FCC filings show". The Verge. Archived from the original on June 12, 2025. Retrieved March 7, 2025.
+
+↑ Faulkner, Cameron (April 2, 2025). "The Nintendo Switch 2 uses fast microSD Express cards — here's where can you buy one". Polygon. Archived from the original on June 12, 2025. Retrieved April 2, 2025.
+
+1 2 "Nintendo Switch 2 Tech Specs - Nintendo US". www.nintendo.com. April 2, 2025. Archived from the original on June 19, 2025. Retrieved April 3, 2025.
+
+↑ Kennedy, Victoria (April 3, 2025). "Switch 2's battery life is worse than the original Switch". Eurogamer.net. Archived from the original on April 3, 2025. Retrieved April 3, 2025.
+
+↑ Palumbo, Alessio (January 1, 2025). "Nintendo Switch 2 Motherboard Pictures Leaked on the Web". Wfcctech. Archived from the original on January 3, 2025. Retrieved January 3, 2025.
+
+↑ Leadbetter, Richard (2025). "DF Weekly: What does the Switch 2 motherboard leak say about system performance?: Should we be concerned about the Samsung-produced processor?". Eurogamer. Wikidata Q131822574. Archived from the original on January 18, 2025. Retrieved January 19, 2025.
+
+↑ Bonthuys, Darren. "Nvidia CEO Claims The Switch 2 Redefines Portable Gaming Graphics". GameSpot. Archived from the original on August 15, 2025. Retrieved August 25, 2025.
+
+↑ Hollister, Sean (July 2, 2025). "How Nintendo locked down the Switch 2's USB-C port and broke third-party docking". The Verge. Archived from the original on July 3, 2025. Retrieved July 3, 2025.
+
+↑ Phil Hayton (June 10, 2025). "The Switch 2 has a big dock compatibility problem, and I need Nintendo to fix it before it ruins my summer plans". GamesRadar+. Archived from the original on September 15, 2025. Retrieved September 4, 2025.
+
+↑ Phil Hayton (June 12, 2025). "Switch 2 docks require a "20V power input to activate TV mode," according to accessory maker Jsaux". GamesRadar+. Retrieved October 12, 2025.
+
+↑ Life, Nintendo (August 13, 2025). "Best Nintendo Switch 2 Third-Party TV Docks". Nintendo Life. Archived from the original on October 4, 2025. Retrieved October 12, 2025.
+
+↑ Nightengale, Ed (November 14, 2025). "Third-party Switch 2 docks reportedly no longer compatible after Nintendo's latest console update". Eurogamer. Archived from the original on November 14, 2025. Retrieved November 14, 2025.
+
+↑ Compendio, Chris (November 15, 2025). "Nintendo Says It's Not Prohibiting Third-Party Switch 2 Docks After Players Report Bricking Issues". GameSpot. Archived from the original on November 19, 2025. Retrieved November 15, 2025.
+
+1 2 Bonthuys, Darryn (May 9, 2025). "Breaking This New Nintendo Clause Could Make Your Switch 2 "Unusable"". GameSpot. Archived from the original on May 17, 2025. Retrieved May 19, 2025.
+
+↑ Cuthbertson, Anthony (May 12, 2025). "Nintendo can break your Switch 2 if you misbehave". The Independent. Archived from the original on May 13, 2025. Retrieved May 19, 2025.
+
+↑ Chen, Jackson (July 12, 2025). "Switch 2 user warns about accidental ban after playing preowned game cards". Engadget. Archived from the original on July 13, 2025. Retrieved July 12, 2025.
+
+↑ Williams, Isaiah (June 19, 2025). "Nintendo is making me question whether you actually own your Switch 2". TechRadar. Archived from the original on June 29, 2025. Retrieved June 29, 2025.
+
+↑ Nasir, Hassam (June 17, 2025). "After just 12 days, Nintendo is already nuking Switch 2 console accounts for players caught using Mig Flash — popular cartridge allows Switch 1 games on the new console, but users say they're only using their own ROMs". Tom's Hardware. Retrieved June 29, 2025.
+
+↑ Velde, Issy van der (June 27, 2025). "Switch 2 permabans are so permanent that not even Nintendo itself can overturn them, as one user named 'Twink Link' discovered to their horror". Archived from the original on June 29, 2025. Retrieved June 29, 2025.
+
+↑ O'Reilly, PJ (June 23, 2025). "Nintendo's Strict Policy On MiG Carts Is Creating A Problem For Secondhand Switch 2 Buyers". Nintendo Life. Archived from the original on June 29, 2025. Retrieved June 29, 2025.
+
+↑ Phillips, Tom (July 2, 2025). "As Nintendo's Ability to Ban Switch 2 Consoles From Online Services Sparks Headlines, Brazil's Consumer Rights Watchdog Issues Legal Challenge". IGN. Archived from the original on July 2, 2025. Retrieved July 2, 2025.
+
+1 2 3 4 5 Davis, Wes (April 2, 2025). "Here's everything Nintendo has revealed about the Switch 2's Joy-Cons". The Verge. Archived from the original on April 2, 2025. Retrieved April 2, 2025.
+
+↑ Scullion, Chris (January 20, 2025). "Switch 2 could make Joy-Con drift a thing of the past as Hall effect stick leaks gain credibility: Now that one Switch 2 leaker has been proved correct, their previous claims are being studied". Video Games Chronicle. Wikidata Q131868494. Archived from the original on January 23, 2025. Retrieved January 24, 2025.
+
+↑ Orland, Kyle (April 7, 2025). "Nintendo isn't using anti-drift Hall effect sensors on Switch 2 joysticks". Ars Technica. Archived from the original on April 10, 2025. Retrieved April 7, 2025.
+
+↑ Scullion, Chris (April 2, 2025). "Nintendo Switch 2 battery life confirmed". Video Games Chronicle. Archived from the original on May 1, 2025. Retrieved April 7, 2025.
+
+↑ O'Reilly, PJ (June 20, 2025). "Nintendo Switch 2: Camera Guide". Nintendo Life. Archived from the original on February 5, 2026. Retrieved February 4, 2026.
+
+↑ Higham, Michael (June 18, 2025). "Nintendo Switch 2 Camera Review". IGN. Archived from the original on November 28, 2025. Retrieved June 26, 2025.
+
+↑ "Your iPhone Works as a Nintendo Switch 2 Camera, But Your Webcam Might Not". PC Magazine. June 6, 2025. Retrieved June 26, 2025.
+
+↑ Phillips, Tom (March 20, 2026). "Nintendo Switch 2 With Removable Battery in Production, Report Reveals — But Only for Europe". IGN. Retrieved March 24, 2026.
+
+↑ Bonk, Lawrence (March 20, 2026). "Nintendo is reportedly making a Switch 2 with a user-replaceable battery for the EU". Engadget. Archived from the original on March 22, 2026. Retrieved March 24, 2026.
+
+↑ "Original Switch consoles are being discontinued in Europe as Nintendo details how EU battery laws will impact its retail strategy for Switch 2". Eurogamer.net. July 6, 2026. Retrieved October 2, 2026.
+
+↑ Welsh, Oli (October 3, 2023). "Everything we know about Switch 2, Nintendo's next-gen console". Polygon. Archived from the original on May 22, 2025. Retrieved January 17, 2025.
+
+↑ Makuch, Eddie (April 7, 2025). "Switch 2 Carts Still Taste Bad, Designed Purposefully To Be Spat Out". GameSpot. Archived from the original on June 7, 2025. Retrieved April 8, 2025.
+
+↑ "Nintendo Switch 2 Game-Key Card Overview". Nintendo. Retrieved October 2, 2025.
+
+↑ "Nintendo Confirms Some Switch 2 Game Cards Will Only Include a Download Key". ign.com. IGN. April 2, 2025. Retrieved October 3, 2025.
+
+↑ Frank, Allegra (March 27, 2017). "Another third-party Switch game causes uproar". Polygon. Archived from the original on March 27, 2017. Retrieved March 27, 2017.
+
+↑ "Nintendo Switch 2 Game-Key Card Overview". Nintendo Support. Archived from the original on April 3, 2025. Retrieved April 2, 2025.
+
+↑ Wales, Matt (April 2, 2025). "Nintendo confirms some Switch 2 physical releases will just have a download key on the card". Eurogamer.net. Archived from the original on May 31, 2025. Retrieved April 2, 2025.
+
+↑ Koselke, Anna (April 8, 2025). "Nintendo wants to "future-proof" the Switch 2 like the OG console that lasted 8 years, "and make sure that people can be publishing games on it" years after launch". GamesRadar. Archived from the original on May 6, 2025. Retrieved April 8, 2025.
+
+↑ Bonthuys, Darryn (April 7, 2025). "Nintendo Switch 2 Game-Key Cards Won't Be Tied To Your Account". GameSpot. Archived from the original on May 22, 2025. Retrieved April 7, 2025.
+
+↑ Life, Nintendo (April 18, 2025). "Rune Factory: Guardians Of Azuma Switch 2 Cart Will Apparently Also Work On Switch 1". Nintendo Life. Archived from the original on May 18, 2026. Retrieved May 7, 2026.
+
+↑ Life, Nintendo (April 6, 2025). "Physical 'Switch 2 Editions' Confirmed To Have Everything On The Game Card, Says Nintendo". Nintendo Life. Archived from the original on May 18, 2026. Retrieved May 7, 2026.
+
+1 2 Bankhurst, Adam (November 6, 2024). "Nintendo Switch 2 Will Officially Be Backward-Compatible With Original Switch Games". IGN. Archived from the original on November 6, 2024. Retrieved November 7, 2024.
+
+↑ Reynolds, Ollie (April 2, 2025). "GameCube Games Confirmed For Nintendo Switch Online On Switch 2". Nintendo Life. Archived from the original on June 4, 2025. Retrieved April 5, 2025.
+
+↑ Pitts, Lan (April 4, 2025). "Every GameCube Game Coming To Switch 2's Switch Online Library, Including At Launch". GameSpot. Archived from the original on May 22, 2025. Retrieved April 5, 2025.
+
+↑ "What's new with Nintendo Switch Online on Nintendo Switch 2?". Nintendo of Europe SE. Archived from the original on May 18, 2025. Retrieved April 5, 2025.
+
+↑ Barr, Kyle (April 2, 2025). "The GameCube and Its Perfect Controller Are Back (on the Switch 2)". Gizmodo. Archived from the original on June 3, 2025. Retrieved April 5, 2025.
+
+↑ Grant, Christopher (February 18, 2025). "Nintendo Game Vouchers won't work on Switch 2 exclusives, Gold Points discontinued". Polygon. Archived from the original on February 20, 2025. Retrieved February 20, 2025.
+
+↑ Parrish, Ash (April 2, 2025). "Nintendo's Switch 2 'C' button is a Discord-like GameChat feature". The Verge. Archived from the original on April 2, 2025. Retrieved April 2, 2025.
+
+↑ Robinson, Andy (April 2, 2025). "GameCube is officially coming to Switch Online, exclusively for Switch 2". VGC. Retrieved April 2, 2025.
+
+↑ "Nintendo Switch 2 updates: Release date, price, new games and everything else you need to know". Engadget. April 8, 2025. Retrieved September 10, 2026.
+
+↑ Cardy, Simon (April 2, 2025). "Nintendo Switch 2: 23 New Details - Release Date, Price, GameChat and More!". IGN. Retrieved April 2, 2025. GameChat, of course, comes with a price, though. And that admission fee is a Nintendo Online membership.
+
+↑ Holt, Kris (June 6, 2025). "You can use an iPhone as a Nintendo Switch 2 camera". Archived from the original on July 11, 2025. Retrieved July 1, 2025.
+
+↑ Hall, Zac (June 5, 2025). "iPhone can be used as a Nintendo Switch 2 webcam". Archived from the original on June 8, 2025. Retrieved July 1, 2025.
+
+↑ Valentine, Rebekah (January 16, 2025). "A New Mario Kart Game Is Seemingly Coming to Nintendo Switch 2". IGN. Archived from the original on April 1, 2025. Retrieved January 17, 2025.
+
+↑ Dinsdale, Ryan (January 16, 2025). "Mario Kart 9 First Look Suggests 24 Person Races Are Coming to the Nintendo Switch 2 Game". IGN. Archived from the original on January 17, 2025. Retrieved January 17, 2025.
+
+↑ Yin-Poole, Wesley (January 14, 2025). "All the Games Reportedly Set for Release on Nintendo Switch 2". IGN. Archived from the original on January 17, 2025. Retrieved January 18, 2025.
+
+↑ Marnell, Blair (April 2, 2025). "Every Game Getting 'Switch 2 Edition' Enhanced Versions". GameSpot. Archived from the original on June 5, 2025. Retrieved April 7, 2025.
+
+↑ Robinson, Andy (January 18, 2024). "8% of developers in a GDC survey say they're working on Nintendo's next console". Video Games Chronicle. Archived from the original on June 1, 2024. Retrieved June 1, 2024.
+
+↑ Doolan, Liam (May 21, 2024). "Nintendo Announces Acquisition Of Shiver Entertainment". Nintendo Life. Archived from the original on May 23, 2024. Retrieved May 23, 2024.
+
+↑ Mochizuki, Takashi (May 20, 2024). "Nintendo Buys Studio to Bring More Outside Games to Next Switch". Bloomberg News. Retrieved May 23, 2024.
+
+↑ Reynolds, Ollie (September 17, 2024). "'My Time At Evershine' Revealed, Confirmed For Switch Successor". Nintendo Life. Archived from the original on January 17, 2025. Retrieved January 17, 2025.
+
+↑ Romano, Sal (October 24, 2024). "Yooka-Replaylee confirmed for PS5, Xbox Series, and Nintendo consoles". Gematsu. Retrieved October 24, 2024.
+
+↑ Scullion, Chris (April 2, 2025). "46 third-party games have been confirmed for Switch 2, with 17 coming on launch day". Video Games Chronicle. Archived from the original on May 13, 2025. Retrieved April 3, 2025.
+
+↑ Carr, James (April 2, 2025). "Every Nintendo Switch 2 Launch Game". GameSpot. Retrieved April 3, 2025.
+
+↑ Blake, Vikki (April 2, 2025). "All the Third-Party Games Confirmed for Nintendo Switch 2". IGN. Archived from the original on April 2, 2025. Retrieved April 3, 2025.
+
+↑ Cooper, Daniel (April 2, 2025). "Cyberpunk 2077 and Split Fiction are third-party launch titles for Nintendo Switch 2". Engadget. Archived from the original on April 3, 2025. Retrieved April 3, 2025.
+
+↑ "Square Enix Announces Final Fantasy VII Remake Intergrade and Bravely Default Flying Fairy HD Remaster Are Coming to Nintendo Switch™ 2" (Press release). Square Enix. Archived from the original on June 10, 2025. Retrieved April 3, 2025.
+
+↑ McFerran, Damien (April 3, 2025). "EA Commits To Switch 2, Will Be Bringing EA Sports FC And Madden NFL To The System". Nintendo Life. Archived from the original on May 24, 2025. Retrieved April 5, 2025.
+
+↑ "WWE 2K25 Video Game Franchise To Be Available On Nintendo Switch 2". Wrestling On Fannation. April 2, 2025. Archived from the original on May 7, 2025. Retrieved April 5, 2025.
+
+↑ Valentine, Rebekah (April 2, 2025). "Hyrule Warriors: Age of Imprisonment Announced for Nintendo Switch 2". IGN. Archived from the original on April 2, 2025. Retrieved April 3, 2025.
+
+↑ Diaz, Ana (April 2, 2025). "FromSoftware announces The Duskbloods as a Switch 2 exclusive". Polygon. Archived from the original on April 3, 2025. Retrieved April 3, 2025.
+
+↑ Doolan, Liam (November 5, 2025). "Switch 2 Has The Largest Third-Party Software Lineup Ever For New Nintendo Hardware". Nintendo Life. Archived from the original on November 5, 2025. Retrieved November 5, 2025.
+
+↑ Robinson, Andy (January 25, 2025). "Phil Spencer confirms Xbox will support Switch 2: 'I congratulated Nintendo's president'". Video Games Chronicle. Archived from the original on January 25, 2025. Retrieved January 25, 2025.
+
+↑ Yin-Poole, Wesley (October 23, 2025). "Bethesda Announces Fallout 4 Anniversary Edition, Confirms Nintendo Switch 2 Version for 2026". IGN. Retrieved November 7, 2025.
+
+↑ Scullion, Chris (August 19, 2025). "Indiana Jones and the Great Circle is coming to Nintendo Switch 2 next year". VGC. Archived from the original on December 12, 2025. Retrieved November 7, 2025.
+
+↑ Reynolds, Ollie (February 21, 2023). "Microsoft's Commitment To Bring Call Of Duty To Nintendo Is Now Legally Binding". Nintendo Life. Archived from the original on June 1, 2024. Retrieved January 21, 2025.
+
+↑ Plant, Logan (March 8, 2023). "Microsoft 'Confident' It Can Get Call of Duty Running on Nintendo Switch". IGN. Archived from the original on March 5, 2024. Retrieved January 21, 2025.
+
+↑ Notis, Ari (September 14, 2025). "Star War Outlaws on Switch 2 settles it: Nintendo is in its port era now". Polygon. Archived from the original on October 23, 2025. Retrieved November 7, 2025.
+
+↑ Blake, Vikki (October 24, 2025). "Assassin's Creed Shadows Finally Has an Official Nintendo Switch 2 Release Date and a Price". IGN. Archived from the original on October 30, 2025. Retrieved November 7, 2025.
+
+↑ Doolan, Liam (February 15, 2025). "Marvel Rivals Dev NetEase "Already In Contact With Nintendo" About Switch 2". Nintendo Life. Archived from the original on February 15, 2025. Retrieved February 16, 2025.
+
+↑ Phillips, Tom (August 26, 2025). "Nintendo Reportedly 'Almost Discouraging' Switch 2 Development as Studios Told to Launch Games on Switch 1 and Rely on Backwards Compatibility Instead". IGN. Retrieved August 29, 2025.
+
+↑ McEvoy, Sophie (November 6, 2024). "Nintendo confirms backward compatibility on Switch 2". Games Industry. Archived from the original on November 9, 2024. Retrieved November 6, 2024.
+
+↑ Lane, Gavin; O'Reilly, PJ; Reynolds, Ollie; Norman, Jim; Hagues, Alana (July 12, 2025). "Feature: 33 Games With 'Secret' Performance Bumps You Should Revisit On Switch 2". NintendoLife. Archived from the original on September 18, 2026. Retrieved September 30, 2026.
+
+1 2 3 "Important information about compatibility of Nintendo Switch games with Nintendo Switch 2". Nintendo. April 2, 2025. Archived from the original on April 2, 2025. Retrieved April 2, 2025.
+
+1 2 3 4 Sarkar, Samit (April 2, 2025). "Everything we know about Nintendo Switch 2 backward compatibility". Polygon. Archived from the original on April 2, 2025. Retrieved April 2, 2025.
+
+↑ "Ask the Developer Vol. 16: Nintendo Switch 2 — Part 4". Nintendo. April 2, 2025. Archived from the original on April 5, 2025. Retrieved April 5, 2025.
+
+↑ Welch, Chris (April 2, 2025). "Nintendo goes in-depth on Switch 2 backward compatibility". The Verge. Archived from the original on April 2, 2025. Retrieved April 2, 2025.
+
+↑ Miller, Jordan (May 27, 2025). "Nintendo Switch 2 has 'no issues' playing the vast majority of Nintendo Switch games tested so far". Video Games Chronicle. Archived from the original on May 31, 2025. Retrieved June 5, 2025.
+
+↑ Valentine, Rebekah (April 2, 2025). "Some Nintendo Switch Games Are Getting Nintendo Switch 2 Upgrades, Including Breath of the Wild and Metroid Prime 4". IGN. Archived from the original on April 2, 2025. Retrieved April 2, 2025.
+
+↑ Cunningham, Andrew (April 2, 2025). "Some original Switch games will run better on Switch 2; some won't run at all". Ars Technica. Archived from the original on April 2, 2025. Retrieved April 2, 2025.
+
+↑ Phillips, Tom (June 5, 2025). "Nintendo Fans Surprised to Find Switch 2 Edition Game Cartridges Also Work on Switch 1". IGN. Retrieved June 6, 2025.
+
+↑ "How to Use Handheld Mode Boost on Nintendo Switch 2". Nintendo of Europe SE. Retrieved September 14, 2026.
+
+↑ Lawler, Richard (April 29, 2025). "Nintendo's new Switch 1 update is getting things ready for Switch 2". The Verge. Archived from the original on April 30, 2025. Retrieved April 29, 2025.
+
+↑ Robinson, Andy (March 27, 2025). "Nintendo reveals major Switch and Switch 2 digital games shakeup with 'Virtual Game Cards'". Video Games Chronicle. Retrieved March 27, 2025.
+
+↑ Cripe, Michael (March 27, 2025). "Nintendo Unveils Virtual Game Card Update Ahead of Switch 2 Launch". IGN. Archived from the original on March 27, 2025. Retrieved March 27, 2025.
+
+↑ Flores, Johnny Jr. (April 6, 2025). "Your Original Joy-Cons Will Work With The Switch 2, But They'll Be Missing A Feature". TheGamer. Archived from the original on June 20, 2025. Retrieved June 9, 2025.
+
+1 2 3 4 5 6 7 8 Colantonio, Giovanni (June 10, 2025). "Nintendo Switch 2 review: exactly the upgrade we needed, with a few catches". Digital Trends. Archived from the original on June 13, 2025. Retrieved June 11, 2025.
+
+1 2 3 Marks, Tom (June 19, 2025). "Nintendo Switch 2 Review". IGN. Archived from the original on June 20, 2025. Retrieved June 20, 2025.
+
+1 2 Lane, Gavin (June 12, 2025). "Hardware Review: Nintendo Switch 2 - A Faster, Slicker, Sexier Switch". Nintendo Life. Archived from the original on June 17, 2025. Retrieved June 20, 2025.
+
+1 2 3 4 5 6 Bentley, James (June 12, 2025). "Nintendo Switch 2 review: the latest gaming handheld, from a PC Gamer's perspective". PC Gamer. Archived from the original on June 15, 2025. Retrieved June 16, 2025.
+
+1 2 3 4 5 Greenwald, Will (June 10, 2025). "Nintendo Switch 2 Review: A Better Switch in (Almost) Every Way". PCMag. Archived from the original on June 13, 2025. Retrieved June 11, 2025.
+
+1 2 Stuart, Keith (June 10, 2025). "Nintendo Switch 2 review – more than good enough". The Guardian. Archived from the original on June 11, 2025. Retrieved June 15, 2025.
+
+1 2 3 4 Rutherford, Sam (June 11, 2025). "Nintendo Switch 2 review: More of what you love". Engadget. Archived from the original on June 14, 2025. Retrieved June 15, 2025.
+
+1 2 3 4 5 6 7 8 9 Perry, Alex (June 13, 2025). "Nintendo Switch 2 review: A fabulous follow-up to an all-time legend". Mashable. Archived from the original on June 14, 2025. Retrieved June 15, 2025.
+
+1 2 3 4 5 6 Webster, Andrew (June 14, 2025). "Nintendo Switch 2 review: exactly good enough". The Verge. Archived from the original on June 15, 2025. Retrieved June 15, 2025.
+
+1 2 3 4 5 6 7 8 Kamen, Matt (June 13, 2025). "Review: Nintendo Switch 2". Wired. Archived from the original on June 14, 2025. Retrieved June 15, 2025.
+
+1 2 3 King, Jade (June 13, 2025). "Nintendo Switch 2 Review: A Predictable Yet Undeniably Impressive Evolution". TheGamer. Archived from the original on June 14, 2025. Retrieved June 15, 2025.
+
+1 2 3 "The Verge Staff on Nintendo Switch 2: what we love and what we don't". The Verge. June 11, 2025. Archived from the original on June 12, 2025. Retrieved June 15, 2025.
+
+1 2 3 X. Chen, Brian (June 13, 2025). "Nintendo Switch 2 Review: Bigger and Better, for a Higher Price". The New York Times. Archived from the original on June 13, 2025. Retrieved June 16, 2025.
+
+↑ According to:[226][234][223][235]
+
+1 2 3 Spencer, Alex (July 2025). "Linked to the Past: Can Switch recapture the original's magic?". Edge. No. 411. pp. 68–77.
+
+1 2 3 4 Watts, Steve (June 12, 2025). "Nintendo Switch 2 Review - It's A Switch, Too". GameSpot. Archived from the original on June 13, 2025. Retrieved June 15, 2025.
+
+1 2 3 4 5 6 7 Antonelli, William (June 13, 2025). Cohen, Steven (ed.). "Nintendo Switch 2 review: A fun console with tons of potential, but where are the exclusive games?". Business Insider. Archived from the original on June 14, 2025. Retrieved June 15, 2025.
+
+↑ Robertson, Duncan (June 6, 2025). "This is probably the reason Switch 2's Joy-Cons aren't immune to stick drift". GamesRadar+. Archived from the original on June 7, 2025. Retrieved June 19, 2025.
+
+↑ According to:[223][232][239][230]
+
+↑ According to:[239][238][231][230]
+
+↑ According to:[239][233][231][224]
+
+↑ Hall, Jacob (June 11, 2025). "Fight the FOMO: Odds are you don't need a Nintendo Switch 2 right now". Polygon. Archived from the original on June 13, 2025. Retrieved June 16, 2025.
+
+↑ According to:[229][230][228][235]
+
+↑ Phillips, Tom (June 16, 2025). "Distraught Pokémon Fan Lost '1,000+ Hours and 20 Years' of Progress During Switch 2 System Transfer — Proving Need for Pokémon Home to Save Beloved Creatures". IGN. Archived from the original on June 16, 2025. Retrieved June 16, 2025.
+
+↑ Moreno, Samuel (June 17, 2025). "The Nintendo Switch 2's System Transfer Is Great If You Do It Correctly". Kotaku. Archived from the original on June 17, 2025. Retrieved June 19, 2025.
+
+↑ Packwood, Lewis (April 30, 2025). ""Seeing Nintendo do this is a little disheartening" – Switch 2 and the state of game preservation in 2025". Archived from the original on July 7, 2025. Retrieved July 1, 2025.
+
+↑ Daniels, Joelle (June 11, 2025). "Capcom Considers Games Sold Through Game-Key Cards as Digital Sales". Archived from the original on June 20, 2025. Retrieved July 1, 2025.
+
+↑ "Financial Results Explanatory Material" (PDF). Nintendo. August 1, 2025. Archived (PDF) from the original on August 1, 2025. Retrieved August 1, 2025.
+
+↑ "Financial Results Explanatory Material" (PDF). Nintendo. November 4, 2025. Archived (PDF) from the original on November 4, 2025. Retrieved November 7, 2025.
+
+↑ "Financial Results Explanatory Material" (PDF). Nintendo. February 3, 2026. Archived (PDF) from the original on February 3, 2026. Retrieved February 3, 2026.
+
+↑ "Financial Results Explanatory Material" (PDF). Nintendo. May 8, 2026. Archived (PDF) from the original on May 8, 2026. Retrieved May 8, 2026.
+
+↑ "Financial Results Explanatory Material" (PDF). Nintendo. August 6, 2026. Archived (PDF) from the original on August 6, 2026. Retrieved August 6, 2026.
+
+↑ "Financial Results Explanatory Material" (PDF). Nintendo. November 5, 2026. Retrieved November 5, 2026.
+
+↑ Bankhurst, Adam (June 11, 2025). "Switch 2 Becomes 'Fastest-Selling' Nintendo Hardware Ever With Over 3.5 Million Units Sold Worldwide In Just Four Days". IGN. Archived from the original on June 11, 2025. Retrieved June 11, 2025.
+
+↑ Warren, Tom (June 15, 2025). "Nintendo's Switch 2 is the fastest-selling game console of all time". The Verge. Archived from the original on July 21, 2025. Retrieved September 6, 2025.
+
+↑ Romano, Sal (June 12, 2025). "Famitsu Sales: 6/2/25 – 6/8/25". Gematsu. Archived from the original on June 12, 2025. Retrieved June 12, 2025.
+
+↑ Valentine, Rebekah (June 12, 2025). "Nintendo Switch 2 Outselling the OG Switch 2-to-1 Across the Globe". IGN. Archived from the original on June 13, 2025. Retrieved June 12, 2025.
+
+↑ Valentine, Rebekah (July 23, 2025). "The Nintendo Switch 2 Is the Fastest-Selling Gaming Hardware in U.S. History". IGN. Archived from the original on September 5, 2025. Retrieved September 9, 2025.
+
+↑ Yin-Poole, Wesley (August 1, 2025). "Switch 2 Sells More Than 6 Million in the 7 Weeks Since Launch, Nintendo Says Demand 'Has Surpassed Our Expectations'". IGN. Archived from the original on August 1, 2025. Retrieved August 1, 2025.
+
+↑ Valentine, Rebekah (October 21, 2025). "Video Game Consoles Are Selling for 12% More in the U.S. This Year Than Last Year". IGN. Archived from the original on December 21, 2025. Retrieved November 21, 2025.
+
+↑ Kharpal, Arjun (February 3, 2026). "Nintendo keeps Switch 2 forecast as device sales pass 17 million units". CNBC. Archived from the original on February 3, 2026. Retrieved February 3, 2026.
+
+↑ "Nintendo Cuts Switch 2 Output by Over 30% on Weak US Sales". Bloomberg.com. Archived from the original on March 25, 2026. Retrieved March 31, 2026.
+
+↑ Mochizuki, Takashi (March 25, 2026). "Nintendo cuts Switch 2 output by over 30% on weak holiday sales". The Japan Times. Retrieved March 31, 2026.
+
+↑ McEvoy, Sophie (June 5, 2026). "Switch 2 sales drop 87% in Japan following surge ahead of cost revisions". GamesIndustry.biz. Archived from the original on June 8, 2026. Retrieved June 8, 2026.
+
+↑ Scullion, Chris (June 4, 2026). "Switch 2 hardware sales dropped 87% week-on-week in Japan following price increase". VGC. Archived from the original on June 8, 2026. Retrieved June 8, 2026.
+
+↑ Norman, Jim (September 23, 2025). "Switch 2 Gets Its Flowers At The Japan Game Awards 2025". Nintendo Life. Archived from the original on September 25, 2025. Retrieved November 7, 2025.
+
+↑ Harris, Iain (October 3, 2025). "Clair Obscur: Expedition 33 leads the Golden Joystick Award 2025 charge for most nominations, nudging out Death Stranding 2, Ghost of Yotei, and Kingdom Come: Deliverance 2". GamesRadar+. Archived from the original on October 3, 2025. Retrieved November 7, 2025.
+
+Further reading
+
+Lennox, Jesse (April 7, 2025). "All Switch games that don't run on Switch 2". Digital Trends.
+
+External links
+
+Wikimedia Commons has media related to Nintendo Switch 2.
+
+Wikinews has related news:
+
+ Nintendo delays US pre-orders for Switch 2, cites tariff impact
+
+Players line up for the launch of the Nintendo Switch 2 in New York City
+
+Official website
+
+ | 
+
+v
+
+t
+
+e
+
+Nintendo Switch and Nintendo Switch 2
+
+ | Hardware | 
+
+Nintendo Game Card
+
+Joy-Con
+
+Pro Controller
+
+Amiibo
+
+Nintendo Labo
+
+Poké Ball Plus
+
+ | Services | 
+
+System software
+
+Mii
+
+Nintendo eShop
+
+Switch Online
+
+Nintendo Account
+
+My Nintendo
+
+GameChat
+
+ | Games | 
+
+ | Switch | 
+
+List
+
+0-9
+
+A-Am
+
+An-Az
+
+B
+
+C–G
+
+H–P
+
+Q–Z
+
+Best-selling
+
+Classics
+
+ | Switch 2 | 
+
+List
+
+Best-selling
+
+Classics
+
+ | Emulation | 
+
+Ryujinx
+
+Yuzu
+
+ | Related | 
+
+Mig Flash
+
+Switch Player
+
+ | 
+
+←Wii U and Nintendo 3DS
+
+ Category
+
+ | 
+
+v
+
+t
+
+e
+
+Nintendo video game hardware
+
+ | Consoles | 
+
+ | Home | 
+
+NES
+
+models
+
+Super NES
+
+Nintendo 64
+
+iQue Player
+
+GameCube
+
+Wii
+
+Wii U
+
+ | Handheld | 
+
+Game Boy
+
+Game Boy Color
+
+Game Boy Advance
+
+SP
+
+Micro
+
+Pokémon Mini
+
+Nintendo DS
+
+Lite
+
+DSi
+
+Nintendo 3DS
+
+2DS
+
+New 3DS
+
+New 2DS XL
+
+ | Hybrid | 
+
+Nintendo Switch
+
+Nintendo Switch 2
+
+ | Other | 
+
+Virtual Boy
+
+ | Dedicated | 
+
+Color TV-Game
+
+Game & Watch
+
+Computer Mah-jong Yakuman
+
+Nintendo Gateway System
+
+Mini Classics
+
+Pokémon Pikachu
+
+NES Classic Edition
+
+Super NES Classic Edition
+
+ | Peripherals | 
+
+ | Lists | 
+
+NES
+
+Super NES
+
+N64
+
+Game Boy
+
+GCN
+
+DS
+
+Wii Remote
+
+ | Add-ons | 
+
+Famicom Data Recorder
+
+Famicom Disk System
+
+Famicom 3D System
+
+Super NES CD-ROM
+
+Super Game Boy
+
+Rumble Pak
+
+Game Boy Camera
+
+Game Boy Printer
+
+64DD
+
+e-Reader
+
+Game Boy Player
+
+Wii MotionPlus
+
+ | Connectivity | 
+
+NES Satellite
+
+NES Four Score
+
+Game Link Cable
+
+Transfer Pak
+
+Mobile Adapter GB
+
+GCN–GBA Link Cable
+
+GBA Wireless Adapter
+
+ | Controllers | 
+
+NES Zapper
+
+Family BASIC
+
+R.O.B.
+
+NES Advantage
+
+Super NES Mouse
+
+Super Scope
+
+Nintendo 64
+
+GameCube
+
+WaveBird Wireless
+
+Wii Remote
+
+Classic Controller
+
+Wii Zapper
+
+Wii Balance Board
+
+Wii U GamePad
+
+Wii U Pro
+
+Joy-Con
+
+Nintendo Switch Pro
+
+Poké Ball Plus
+
+ | Networking | 
+
+Family Computer Network System
+
+Satellaview
+
+Nintendo Wi-Fi USB Connector
+
+ | Other | 
+
+Nintendo Power
+
+Wii Speak
+
+Amiibo
+
+ | Arcade | 
+
+VS. System
+
+PlayChoice-10
+
+ | Integrated circuits | 
+
+2A03
+
+CIC
+
+5A22
+
+Super NES enhancement chips
+
+Super FX
+
+GameCube technical specifications
+
+Gekko
+
+Broadway
+
+Hollywood
+
+PICA200
+
+Espresso
+
+Tegra X1
+
+Tegra Orin
+
+ | Media | 
+
+Game Pak
+
+Super NES
+
+Game Boy
+
+N64
+
+Game Boy Advance Video
+
+Play-Yan
+
+Nintendo optical discs
+
+Nintendo Game Card
+
+ | 
+
+v
+
+t
+
+e
+
+Home video game consoles
+
+ | Atari | 
+
+Atari 2600
+
+Atari 5200
+
+Atari 7800
+
+XEGS
+
+Jaguar
+
+Flashback
+
+VCS (2021)
+
+2600+
+
+ | Bandai | 
+
+Super Vision 8000
+
+Arcadia
+
+RX-78
+
+Playdia
+
+Apple Pippin
+
+Terebikko
+
+ | Casio | 
+
+PV-1000
+
+Casio Loopy
+
+ | Coleco | 
+
+Coleco Telstar Arcade
+
+ColecoVision
+
+ | Commodore | 
+
+Commodore 64 Games System
+
+CDTV
+
+Amiga CD32
+
+ | Epoch | 
+
+Cassette Vision
+
+Super Cassette Vision
+
+ | LeapFrog | 
+
+Leapster TV
+
+ClickStart
+
+LeapTV
+
+ | Mattel | 
+
+Intellivision
+
+HyperScan
+
+ | Microsoft (Xbox) | 
+
+Xbox
+
+Xbox 360
+
+Xbox One
+
+Xbox Series X/S
+
+ | NEC | 
+
+PC Engine/TurboGrafx-16
+
+PC-FX
+
+ | Nintendo | 
+
+Family Computer/Nintendo Entertainment System
+
+Super Famicom/Super NES
+
+Nintendo 64
+
+GameCube
+
+Wii
+
+Wii U
+
+Switch
+
+Switch 2
+
+ | Panasonic | 
+
+3DO Interactive Multiplayer
+
+Panasonic Q
+
+ | Philips | 
+
+Magnavox Odyssey
+
+Odyssey 2
+
+Videopac+ G7400
+
+CD-i
+
+ | RCA | 
+
+RCA Studio II
+
+RCA Nuon
+
+ | Sega | 
+
+SG-1000
+
+Master System
+
+Mega Drive/Genesis
+
+Sega CD
+
+32X
+
+Saturn
+
+Dreamcast
+
+ | Sharp | 
+
+Nintendo Television
+
+Famicom Titler
+
+Twin Famicom
+
+Super Famicom Naizou TV SF1
+
+ | SNK | 
+
+Neo Geo
+
+CD
+
+ | Sony (PlayStation) | 
+
+PlayStation
+
+PlayStation 2
+
+PlayStation 3
+
+PlayStation 4
+
+PlayStation 5
+
+ | VTech | 
+
+CreatiVision
+
+Socrates
+
+V.Smile
+
+V.Flash
+
+ | Others | 
+
+ | 1970s | 
+
+APF-MP1000
+
+Astrocade
+
+Fairchild Channel F
+
+Interton VC 4000/1292 Advanced Programmable Video System
+
+ | 1980s | 
+
+Action Max
+
+Arcadia 2001
+
+Gakken Compact Vision TV Boy
+
+RDI Halcyon
+
+Vectrex
+
+View-Master Interactive Vision
+
+Zemmix
+
+ | 1990s | 
+
+Apple Pippin
+
+CPS Changer
+
+FM Towns Marty
+
+Goldstar (3DO Interactive Multiplayer)
+
+GX4000
+
+LaserActive
+
+Sanyo (3DO Interactive Multiplayer)
+
+Super A'Can
+
+ | 2000s | 
+
+DISCover
+
+EVO Smart Console
+
+Game Wave
+
+Hyperscan
+
+Xavix
+
+Zeebo
+
+ | 2010s | 
+
+CT510
+
+Steam Machines
+
+ | 2020s | 
+
+Polymega
+
+Evercade VS
+
+Nex Playground
+
+Steam Machine
+
+ | 
+List
+
+ | 
+
+v
+
+t
+
+e
+
+Handheld game consoles
+
+ | Anbernic | 
+
+RG351
+
+RG552
+
+RG35XXSP
+
+ | Bandai | 
+
+Digi Casse
+
+Design Master Senshi
+
+WonderSwan
+
+ | GPD | 
+
+GPD XD
+
+GPD Win
+
+2
+
+Max
+
+3
+
+4
+
+Mini
+
+ | GPH | 
+
+GP32
+
+GP2X
+
+GP2X Wiz
+
+Caanoo
+
+XGP
+
+ | LeapFrog | 
+
+Didj
+
+Leapster
+
+Leapster Explorer
+
+ | Nintendo | 
+
+Game Boy
+
+Game Boy Color
+
+GBA
+
+SP
+
+Micro
+
+Pokémon Mini
+
+DS
+
+Lite
+
+DSi
+
+3DS
+
+2DS
+
+New 3DS
+
+New 2DS XL
+
+Switch
+
+Lite
+
+OLED
+
+Switch 2
+
+ | Sega | 
+
+Game Gear
+
+Nomad
+
+VMU
+
+ | Sony | 
+
+PocketStation
+
+PlayStation Portable
+
+PlayStation Vita
+
+Xperia Play
+
+ | Tiger | 
+
+R-Zone
+
+Game.com
+
+VideoNow XP
+
+ | Other | 
+
+Entex
+
+Select-A-Game
+
+Adventure Vision
+
+Epoch
+
+Game Pocket Computer
+
+Barcode Battler
+
+Mattel
+
+Children's Discovery System
+
+Pixter
+
+NEC
+
+PC Engine LT
+
+TurboExpress
+
+SNK
+
+Neo Geo Pocket
+
+Neo Geo X
+
+ | By decade | 
+
+ | <1990 | 
+
+Etch A Sketch Animator 2000
+
+Microvision
+
+Super Micro
+
+Romtec Colorvision
+
+Atari Lynx
+
+ | 1990s | 
+
+Game Master
+
+Gamate
+
+Watara Supervision
+
+Mega Duck
+
+ | 2000s | 
+
+Cybiko
+
+Dingoo
+
+N-Gage
+
+GameKing
+
+Gizmondo
+
+Tapwave Zodiac
+
+V.Smile Pocket
+
+ | 2010s | 
+
+Pandora
+
+Arduboy
+
+JXD S5100
+
+Nvidia Shield Portable
+
+GCW Zero
+
+Game Gadget
+
+ | 2020s | 
+
+Analogue Pocket
+
+Ayn Odin
+
+Evercade
+
+Playdate
+
+Thumby
+
+Retroid Pocket 2
+
+Steam Deck
+
+Ayaneo
+
+Asus ROG Ally
+
+Lenovo Legion Go
+
+Logitech G Cloud
+
+ | 
+
+Early units
+
+List
+
+ | 
+
+v
+
+t
+
+e
+
+Video game consoles
+
+ | Form factor | 
+
+Home video game console
+
+Microconsole
+
+Handheld game console
+
+Hybrid video game console
+
+ | Functionality | 
+
+Dedicated console
+
+Retro style console
+
+ | Generations | 
+
+First (1972–1983)
+
+Second (1976–1992)
+
+Third (1983–2003)
+
+Fourth (1987–2004)
+
+Fifth (1993–2006)
+
+Sixth (1998–2013)
+
+Seventh (2005–2017)
+
+Eighth (2012–present)
+
+Ninth (2020–present)
+
+ | Ninth
+
+generation | 
+
+ | Home | 
+
+PlayStation 5
+
+Xbox Series X/S
+
+ | Micro | 
+
+Atari VCS
+
+ | Lists | 
+
+Dedicated video game consoles
+
+Handheld game consoles
+
+Home video game consoles
+
+Microconsoles
+
+Retro style video game consoles
+
+ | 
+
+← Eighth generation
+
+Emulator
+
+Game
+
+Services
+
+History
+
+List
+
+Manufacturer
+
+Portals:
+ Video games
+
+ Electronics
+
+ 2020s
+
+ Japan
+
+Retrieved from "https://en.wikipedia.org/w/index.php?title=Nintendo_Switch_2&oldid=1386314413"
+
+Categories: 
+2020s toys
+
+2025 in video gaming
+
+ARM-based video game consoles
+
+Backward-compatible video game consoles
+
+Computer-related introductions in 2025
+
+Handheld game consoles
+
+Home video game consoles
+
+Hybrid video game consoles
+
+Nintendo Switch 2
+
+Ninth-generation video game consoles
+
+Products introduced in 2025
+
+Regionless game consoles
+
+Hidden categories: 
+Articles with short description
+
+Short description is different from Wikidata
+
+Wikipedia pages semi-protected against vandalism
+
+Use mdy dates from April 2025
+
+Pages with non-numeric formatnum arguments
+
+Cite Q - authors with missing given and family names
+
+Articles containing potentially dated statements from September 2026
+
+All articles containing potentially dated statements
+
+Articles containing potentially dated statements from June 2026
+
+Articles containing Japanese-language text
+
+CS1 Japanese-language sources (ja)
+
+Pages using multiple image with auto scaled images
+
+All pages needing factual verification
+
+Wikipedia articles needing factual verification from October 2025
+
+CS1 Hebrew-language sources (he)
+
+CS1 Spanish-language sources (es)
+
+Wikipedia articles needing rewrite from December 2025
+
+All articles needing rewrite
+
+Articles containing potentially dated statements from May 2025
+
+Articles using Video game reviews template in single platform mode
+
+Commons category link from Wikidata
+
+Official website different in Wikidata and Wikipedia
+
+ This page was last edited on 17 November 2026, at 21:58 (UTC).
+
+Page was rendered with Parsoid.
+
+Text is available under the Creative Commons Attribution-ShareAlike 4.0 License;
+additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+Privacy policy
+
+About Wikipedia
+
+Disclaimers
+
+Contact Wikipedia
+
+Legal & safety contacts
+
+Code of Conduct
+
+Developers
+
+Statistics
+
+Cookie statement
+
+Mobile view
+
+Search
+
+ Search
+
+Toggle the table of contents
+
+Nintendo Switch 2
+
+46 languages
+
+Add topic

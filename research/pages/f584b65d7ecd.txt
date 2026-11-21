@@ -1,0 +1,825 @@
+URL: https://en.wikipedia.org/wiki/Mario_Kart_World
+FINAL_URL: https://en.wikipedia.org/wiki/Mario_Kart_World
+FETCHED: 2026-11-21T16:20:44.939409+00:00
+
+Jump to content
+
+Main menu
+
+Main menu
+
+ move to sidebar
+ hide
+
+ Navigation
+
+Main page
+
+Contents
+
+Current events
+
+Random article
+
+About Wikipedia
+
+Contact us
+
+ Contribute
+
+Help
+
+Learn to edit
+
+Community portal
+
+Recent changes
+
+Upload file
+
+Special pages
+
+Search
+
+ Search
+
+Appearance
+
+Donate
+
+Create account
+
+Log in
+
+Personal tools
+
+Donate
+
+Create account
+
+Log in
+
+Contents
+
+ move to sidebar
+ hide
+
+(Top)
+
+ 1
+ Gameplay
+
+ 2
+ Development and release
+
+ Toggle Development and release subsection
+
+ 2.1
+ Music
+
+ 2.2
+ Release
+
+ 3
+ Reception
+
+ Toggle Reception subsection
+
+ 3.1
+ Sales
+
+ 3.2
+ Accolades
+
+ 4
+ Notes
+
+ 5
+ References
+
+ 6
+ External links
+
+Toggle the table of contents
+
+Mario Kart World
+
+21 languages
+
+Аԥсшәа
+
+العربية
+
+Català
+
+Deutsch
+
+Español
+
+Suomi
+
+Français
+
+עברית
+
+Italiano
+
+日本語
+
+한국어
+
+Nederlands
+
+Polski
+
+Português
+
+Русский
+
+Simple English
+
+ไทย
+
+Türkçe
+
+ChiTumbuka
+
+粵語
+
+中文
+
+Edit links
+
+Article
+
+Talk
+
+ English
+
+Read
+
+Edit
+
+View history
+
+Save
+
+Tools
+
+Tools
+
+ move to sidebar
+ hide
+
+ Actions
+
+Read
+
+Edit
+
+View history
+
+Save
+
+ General
+
+What links here
+
+Related changes
+
+Upload file
+
+Permanent link
+
+Page information
+
+Cite this page
+
+Get shortened URL
+
+Switch to legacy parser
+
+ Print/export
+
+Download as PDF
+
+Printable version
+
+ In other projects
+
+Wikimedia Commons
+
+Wikidata item
+
+Appearance
+
+ move to sidebar
+ hide
+
+From Wikipedia, the free encyclopedia
+
+2025 video game
+
+2025 video game
+
+ | Mario Kart World
+
+ | 
+
+ | Developer | Nintendo EPD[a]
+
+ | Publisher | Nintendo
+
+ | Directors | 
+
+Kenta Sato
+
+Masaaki Ishikawa
+
+Shintaro Jikumaru
+
+ | Producer | Kosuke Yabuki
+
+ | Designer | Shintaro Jikumaru
+
+ | Programmer | Kenta Sato
+
+ | Artist | Masaaki Ishikawa
+
+ | Composers | 
+
+Atsuko Asahi
+
+Maasa Miyoshi
+
+Takuhiro Honda
+
+Yutaro Takakuwa
+
+ | Series | Mario Kart
+
+ | Platform | Nintendo Switch 2
+
+ | Release | June 5, 2025
+
+ | Genre | Kart racing
+
+ | Modes | Single-player, multiplayer
+
+Mario Kart World[b] is a 2025 kart racing game developed and published by Nintendo for the Nintendo Switch 2. As in previous Mario Kart games, players control Mario series characters as they race against opponents. World introduces an open-world design and mode, off-roading techniques, an elimination rally mode, and unlockable costumes for the playable characters. Races support up to 24 players, twice as many as the previous installment, Mario Kart 8 Deluxe (2017). 
+
+EPD began developing Mario Kart World for the Nintendo Switch in 2017, shortly before the release of Mario Kart 8 Deluxe. Feeling they had already perfected the core racing gameplay, the team introduced open-world elements; the title Mario Kart World was chosen over Mario Kart 9 to signify the new approach. Development moved to the Switch 2 in 2020 due to hardware limitations. The soundtrack, composed by a team led by Atsuko Asahi, features over 200 tracks, including rearrangements of themes from across the Mario franchise.
+
+Nintendo released Mario Kart World on June 5, 2025, as a launch title for the Switch 2; it is the console's best-selling game, having sold 16.48 million copies as of September 30, 2026. It received positive reviews and was met with praise for its gameplay and innovations, but criticism for a number of design choices.
+
+Gameplay
+[edit]
+
+See also: Gameplay of Mario Kart
+
+Waluigi gliding through the stage Wario Stadium during an online multiplayer round of Knockout Tour
+
+Mario Kart World is a kart racing game. As in previous Mario Kart games, players race as characters from the Mario series while using various items as a means of getting an advantage over other players. The game features 50 playable characters; 24 of the playable characters have alternate unlockable costumes accessed by consuming food items found throughout races, while most of the remaining characters additionally exist as obstacles on the game's tracks.[1][2][3] It supports up to 24 players, twice as many compared to Mario Kart 8 Deluxe (2017) and Mario Kart Wii (2008),[4] and includes features such as an open-world design, a day-night cycle, photo mode, amphibious vehicles, and various parkour mechanics.[c][5][6]
+
+Unlike in prior Mario Kart games, the Grand Prix mode does not consist of four standard races; only the first race is a traditional three-lap, with the following races requiring racers to drive to each course through various routes found in the open world.[7] In versus mode, it is possible to race on tracks for three laps like in previous Mario Kart games.[8] Mario Kart World features some past courses from the series that have been reimagined to fit the game's open-world design.[9] In addition, a new mode called Knockout Tour is introduced in the game; the 24 racers compete in one much longer race spanning the game's world, with the last four racers eliminated at each of the six intermittent checkpoints.[10][11] Mirror Mode, which horizontally inverts the entire map, also returns from the previous games.[12]
+
+Battle Mode returns from previous games; players compete against one another to become the last player standing in Balloon Battle and Bob-omb Blast,[13] or collect the most coins in Coin Runners.[14] Another new mode called "Free Roam" is introduced in World; players are permitted to drive to any location in the game's open-world (with Rainbow Road as the sole exception[15]), including those that are off-road or outside of race tracks. Numerous missions, a feature returning from Mario Kart DS (2005), are present in this mode in addition to other collectables.[14]
+
+Development and release
+[edit]
+
+"If the idea had just been to add more courses, then I think we would've called it Mario Kart 9. But, that wasn't our approach this time. We wanted to take the series to the next level. So, we decided to drop the numbering this time and go with a completely new title, Mario Kart World."
+
+— Producer Kosuke Yabuki on the game's title[16]
+
+Mario Kart World entered development on the original Nintendo Switch (top) before shifting to the Switch 2 (bottom).
+
+Nintendo began prototyping Mario Kart World for the Nintendo Switch in March 2017, just before the release of Mario Kart 8 Deluxe. At the end of that year, Nintendo Entertainment Planning & Development (EPD) officially began development on the game. Kosuke Yabuki, series producer, wanted the new entry to innovate on the series' gameplay formula with an open world, as he thought the traditional gameplay formula had been perfected with Mario Kart 8 Deluxe. The game was titled Mario Kart World instead of Mario Kart 9 since the early stages of development; the developers intended for it to be a completely new approach.[16] Most of the new playable characters also exist as obstacles on the game's tracks; according to art director Masaaki Ishikawa, one of the designers sketched a Cow, who was an obstacle in previous games, driving a truck, leading to many of the course's other obstacles becoming NPC drivers.[17]
+
+In 2020, development was moved to the Nintendo Switch 2 after problems arose when trying to optimize an open-world racing game with 24 players on the original Switch hardware. The Switch 2's hardware specifications were beginning to take shape and gave the developers room to expand on their ideas.[18][19] The "Booster Course Pass" downloadable content for Mario Kart 8 Deluxe was also conceived around this time, as a stopgap release to allow development on World to be prolonged.[18]
+
+Music
+[edit]
+
+The soundtrack was composed by Nintendo's music team, led by Atsuko Asahi,[20] who also worked on the music in Mario Kart 8 (2014). She was joined by Maasa Miyoshi, Takuhiro Honda, and Yutaro Takakuwa. For the first time in the series, Nintendo collaborated with external composers to arrange portions of the score, including members of the jazz fusion band Dezolve. In addition, Satoshi Bandoh and Masato Honda from T-Square contributed drums and wind instrument overdubs, respectively.[‡ 4]
+
+Mario Kart World introduced dynamic music transitions tailored to the player's progression through various game modes. According to Asahi, course themes were designed with dedicated intros and outros to create smooth transitions between tracks in the Knockout Tour mode, where players race continuously through multiple environments. The music was structured to build anticipation as players approach each course, transitioning seamlessly and creating a medley-like experience. For open-ended modes such as Free Roam, the team implemented a system internally referred to as the "jukebox", which automatically selects and plays from a large library of rearranged tracks. Over 200 original arrangements were created for this system, many of which are new interpretations of themes from past Mario games spanning various musical styles.[‡ 4]
+
+Tracks from Mario Kart World's soundtrack—including those from the game's tracks, modes and menus—were added to Nintendo Music on June 1, 2026. Tracks from Free Roam were added regularly to the service through the summer of 2026 by Nintendo, and were all combined in a playlist titled "Free Roam".[21]
+
+Release
+[edit]
+
+People playing Mario Kart World at the Nintendo Switch 2 launch event in New York City
+
+On January 16, 2025, Nintendo revealed the Nintendo Switch 2 with footage of Mario Kart World.[22] In a Nintendo Direct presentation on April 2, 2025, Nintendo announced the title Mario Kart World and revealed the first trailer.[23] Nintendo announced that it would sell for US$79.99, $20 more than the standard price for games on the original Nintendo Switch and more than most standard editions of AAA games, which led to criticism.[24][25] Nintendo held a Mario Kart World Direct presentation on April 17.[26] Mario Kart World was released in most regions on June 5 as a launch game for the Nintendo Switch 2.[27]
+
+After launch the game has continued to receive regular content updates. Additions include item options for versus mode, changes to various routes in the southern region of the map,[28] the Bob-omb Blast battle mode,[29][13] new Knockout Tour rallies,[30][31] and the ability to play courses from Super Mario Kart (1992) found in the world map in versus mode.[32][33]
+
+Reception
+[edit]
+
+Reception
+
+Aggregate scores
+ | Aggregator | Score
+
+ | Metacritic | 86/100[d][34]
+
+ | OpenCritic | 97% recommend[e][35]
+
+Review scores
+ | Publication | Score
+
+ | 4Players | 8.5/10[36]
+
+ | Destructoid | 9/10[37]
+
+ | Digital Trends | 4/5[38]
+
+ | Edge | 8/10[39]
+
+ | Eurogamer | 4/5[40]
+
+ | Famitsu | 9/10, 9/10, 9/10, 9/10[41]
+
+ | Game Informer | 8.25/10[27]
+
+ | Gamekult | 7/10[42]
+
+ | GameSpot | 9/10[43]
+
+ | GamesRadar+ | 4.5/5[44]
+
+ | GameStar | 85/100[45]
+
+ | IGN | 8/10[46]
+
+ | Jeuxvideo.com | 17/20[47]
+
+ | Nintendo Life | 9/10[48]
+
+ | Nintendo World Report | 8/10[49]
+
+ | PCMag | 4.5/5[50]
+
+ | The Guardian | 5/5[51]
+
+ | Video Games Chronicle | 4/5[52]
+
+Mario Kart World received "generally favorable" reviews according to the review aggregation website Metacritic,[34] and 97% of critics recommended the game according to OpenCritic.[35] All four critics from the Japanese magazine Famitsu gave it 9 out of 10, for a total score of 36 out of 40.[41]
+
+Logan Plant from IGN praised Mario Kart World for its polished gameplay and controls, "celebratory" soundtrack, new mechanics, and the Knockout Tour mode. He criticized its "online multiplayer limitations", several "design decisions around the interface and unlockables", and the free roam for its "uneven" execution. He expressed optimism toward future updates.[46] Destructoid wrote that it was a "hallmark of excellence" and that it "may be the best game in the Mario Kart franchise", praising the Knockout Tour mode, open-world exploration, and unlockable content.[37] PCMag described it as "a generational leap forward for the series".[50] GameSpot praised the new features and gameplay elements, and said the version of Rainbow Road was "an all-time great".[43] The Guardian's Keza MacDonald praised the "broad and ridiculous" selection of racers.[51] Edge called the game's free-roam challenges "decent but unexceptional", but said that they were a good exercise of the driving mechanic, offering something to preoccupy the player's "canine instinct" of quest-completing while waiting for a friend to join the online lobby.[39]
+
+Some criticism was directed at the lack of local co-op multiplayer for the newly-introduced free roam mode,[53][54] a feature previously reported to be in the game.[55] Reception was mixed regarding the "Route" courses that connect the racetracks, particularly in online play. Before the version 1.1.2 update, online player lobbies favored the "random" gameplay option, which offered traditional three-lap games around one of the 30 courses; after the 1.1.2 update, the 202 route courses were added to the "random" option. The update led to the option disproportionately favoring the route courses, leading to player backlash and review bombs on Metacritic.[56][57] This issue was slightly reverted in September 2025 with the 1.3.0 update, along with making it easier to unlock characters.[58] Yussef Cole, writing for The New York Times, said that the game is "elegant, but mostly empty of anything terribly meaningful" and that its Free Roam mode does not compete with other open-world racing games such as Forza Horizon (2012) or Burnout Paradise (2008).[59]
+
+Sales
+[edit]
+
+Famitsu reported that Mario Kart World sold 782,566 physical copies in Japan within four days.[60] As of August 31, 2025, it had sold 1,655,926 physical copies in Japan.[61] According to Circana, it was sold with about 79% of the 1.1 million Switch 2 sales in the United States, with around 869,000 copies being sold physically or as part of the console bundle.[62] It also sold about 95,000 copies in Spain.[63] Mario Kart World was the best-selling game on the Nintendo eShop sales charts as of June 2025.[64] As of September 30, 2026, Mario Kart World is the best-selling Switch 2 game, selling 16.48 million copies worldwide.[65]
+
+Accolades
+[edit]
+
+Awards and nominations
+
+ | Year
+ | Ceremony
+ | Category
+ | Result
+ | Ref.
+
+ | 2025
+ | Gamescom
+ | Best Gameplay
+ | Nominated
+ | [66]
+
+ | Most Entertaining
+ | Nominated
+
+ | Best Nintendo Switch 2 Game
+ | Won
+
+ | Golden Joystick Award
+ | Best Multiplayer Game
+ | Nominated
+ | [67][68]
+
+ | Console Game of the Year
+ | Nominated
+
+ | Thailand Game Awards
+ | Best Sports Game
+ | Won
+ | [69]
+
+ | The Game Awards 2025
+ | Best Family Game
+ | Nominated
+ | [70]
+
+ | Best Sports/Racing Game
+ | Won
+
+ | 2026
+ | 15th New York Game Awards
+ | Tin Pan Alley Award for Best Music in a Game
+ | Nominated
+ | [71]
+
+ | 29th Annual D.I.C.E. Awards
+ | Online Game of the Year
+ | Nominated
+ | [72][73]
+
+ | Racing Game of the Year
+ | Won
+
+ | Outstanding Achievement in Original Music Composition
+ | Nominated
+
+ | 22nd British Academy Games Awards
+ | Family
+ | Nominated
+ | [74][75][76]
+
+ | Multiplayer
+ | Longlisted
+
+Notes
+[edit]
+
+↑ Additional development support by Monolith Soft,[‡ 1] 1-Up Studio,[‡ 2] and Bandai Namco Studios[‡ 3]
+
+↑ Japanese: マリオカートワールド, Hepburn: Mario Kāto Wārudo
+
+↑ Mechanics include Grind rails and wall riding.
+
+↑ Score based on 132 reviews
+
+↑ Score based on 148 reviews
+
+References
+[edit]
+
+↑ Cardy, Simon (April 3, 2025). "Nintendo Switch 2 Exclusive Mario Kart World: Every Playable Character and Outfit Revealed". IGN. Archived from the original on April 6, 2025. Retrieved April 6, 2025.
+
+↑ Watts, Steve (April 3, 2025). "Mario Kart World Hands-On: The Conservative Switch 2 Gets A Bold Sequel". GameSpot. Archived from the original on April 4, 2025. Retrieved April 6, 2025.
+
+↑ Wood, Dashiell (April 17, 2025). "Mario Kart World Nintendo Direct: new free roam details confirmed and everything announced about the Switch 2 game". TechRadar. Archived from the original on April 16, 2025. Retrieved April 17, 2025.
+
+↑ Kennedy, Victoria (April 2, 2025). "Mario Kart World announced as Switch 2 launch title, complete with 24 player races, new modes and more". Eurogamer. Archived from the original on April 6, 2025. Retrieved April 6, 2025.
+
+↑ Valentine, Rebekah (April 2, 2025). "Nintendo Switch 2 Mario Kart Game Officially Revealed as Mario Kart World". IGN. Archived from the original on April 6, 2025. Retrieved April 6, 2025.
+
+↑ Tassi, Paul (April 2, 2025). "Nintendo Reveals 'Mario Kart World' For Switch 2, Here's The Trailer". Forbes. Archived from the original on April 6, 2025. Retrieved April 6, 2025.
+
+↑ Nightingale, Ed (April 3, 2025). "Here's how Mario Kart World's Grand Prix and Free Roam modes work". Eurogamer. Archived from the original on April 5, 2025. Retrieved April 9, 2025.
+
+↑ Stenhouse, Henry (April 4, 2025). "Mario Kart World's Open World, Knockout Mode, and More Major Changes on Switch 2". Restart. Archived from the original on April 10, 2025. Retrieved April 9, 2025.
+
+↑ Lewis, Catherine (April 17, 2025). "Mario Kart World's retro courses have been "reimagined," so don't expect your muscle memory to carry you through the Switch 2 racing game". GamesRadar+. Archived from the original on April 17, 2025. Retrieved April 17, 2025.
+
+↑ Shea, Brian (June 5, 2025). "Mario Kart World Modes And Courses Detailed, Free Roam Features Missions And Collectibles". Game Informer. Archived from the original on April 17, 2025. Retrieved May 2, 2025.
+
+↑ Fanelli, Jason (April 17, 2025). "Battle Mode Is Back In Mario Kart World, Two Minigames Confirmed". GameSpot. Archived from the original on April 17, 2025. Retrieved May 2, 2025.
+
+↑ Hagues, Alana (June 8, 2025). "Mario Kart World: How To Unlock Mirror Mode". Nintendo Life. Archived from the original on June 9, 2025. Retrieved June 9, 2025.
+
+1 2 Phillips, Tom (March 31, 2026). "Nintendo's Changing Mario Kart World Again, Rebalancing Items and Adding Bob-omb Blast Battle Mode". IGN. Retrieved April 11, 2026.
+
+1 2 "Mario Kart World Direct Revs up New Details on the Biggest Mario Kart Ever, Coming to Nintendo Switch 2 at Launch". Business Wire (Press release). Nintendo. April 17, 2025. Retrieved April 17, 2025.
+
+↑ Greif, Zackari (June 11, 2025). "Mario Kart World Already Has One Glaring Omission". GameRant. Retrieved January 1, 2026.
+
+1 2 Webster, Andrew (May 21, 2025). "Nintendo explains why it's not called Mario Kart 9". The Verge. Archived from the original on July 11, 2025. Retrieved August 2, 2025.
+
+↑ Phillips, Tom (May 21, 2025). "Nintendo Reveals 'Silly Sketch' of Mario Kart World Cow That Led to the Game's Best New Character Becoming Playable". IGN. Archived from the original on September 19, 2025. Retrieved June 30, 2025.
+
+1 2 Phillips, Tom (May 21, 2025). "Mario Kart World Began Development on Switch 1 and Suffered Performance Struggles, Until Switch 2 Delay Offered 'Ray of Hope'". IGN. Archived from the original on May 22, 2025. Retrieved May 21, 2025.
+
+↑ Serin, Kaan (May 21, 2025). "Mario Kart World started development as an OG Switch game in 2017, but went open-world because MK 8 Deluxe perfected "the formula that we'd been following" for 25 years". GamesRadar+. Archived from the original on May 22, 2025. Retrieved May 21, 2025.
+
+↑ LeBlanc, Wesley (June 5, 2025). "Mario Kart World Features Over 200 Songs, And They're All 'Brand-New Arrangements'". Game Informer. Archived from the original on August 24, 2025. Retrieved August 13, 2025.
+
+↑ Vuckovic, Daniel (June 2, 2026). "Mario Kart World added to Nintendo Music as app adds CarPlay, Android Auto and web player". Vooks. Retrieved June 11, 2026.
+
+↑ Valentine, Rebekah (January 16, 2025). "A New Mario Kart Game Is Seemingly Coming to Nintendo Switch 2". IGN. Archived from the original on April 1, 2025. Retrieved April 6, 2025.
+
+↑ Welsh, Oli (April 2, 2025). "Mario Kart World goes open-world and off-road on Nintendo Switch 2". Polygon. Archived from the original on April 6, 2025. Retrieved April 6, 2025.
+
+↑ Valentine, Rebekah (April 3, 2025). "Here's Why the Nintendo Switch 2, Mario Kart World, and Everything Around Them Is So Expensive". IGN. Archived from the original on April 4, 2025. Retrieved April 6, 2025.
+
+↑ Cunningham, Andrew (April 2, 2025). "First-party Switch 2 games—including re-releases—all run either $70 or $80". Ars Technica. Archived from the original on April 3, 2025. Retrieved April 6, 2025.
+
+↑ McWhertor, Michael (April 2, 2025). "They're just letting anyone drive in Mario Kart World". Polygon. Archived from the original on April 6, 2025. Retrieved April 6, 2025.
+
+1 2 Miller, Matt (June 10, 2025). "Mario Kart World Review". Game Informer. Archived from the original on June 10, 2025. Retrieved June 11, 2025.
+
+↑ Doolan, Liam (December 3, 2025). "Mario Kart World Has Been Updated To Version 1.4.0, Here Are The Full Patch Notes". Nintendo Life. Retrieved September 23, 2026.
+
+↑ "Free update adds Bob-omb Blast to Battle mode in Mario Kart World - News - Nintendo Official Site". www.nintendo.com. Retrieved September 23, 2026.
+
+↑ "Mario Kart World update adds two new routes to Knockout Tour and more – News – Nintendo Official Site". www.nintendo.com. Retrieved September 23, 2026.
+
+↑ Doolan, Liam (July 1, 2026). "Mario Kart World Has Been Updated To Version 1.7.0, Here Are The Full Patch Notes". Nintendo Life. Retrieved September 23, 2026.
+
+↑ "Mario Kart World adds SNES courses and Knockout Tour routes in a free update". www.nintendo.com. Retrieved September 23, 2026.
+
+↑ Frech, Ricky; KBABZ; Koepp, Meg; Graeber, Brendan; Harvey, Angie; DeFreitas, Casey; Harper, Lauren; Cotten, Shailyn; Apsey, Echo (September 9, 2026). "Version 1.8.0 Free Update Patch Notes - Mario Kart World Guide". IGN. Retrieved September 23, 2026.
+
+1 2 "Mario Kart World". Metacritic. Fandom, Inc. Retrieved July 2, 2025. 
+
+1 2 "Mario Kart World Reviews". OpenCritic. June 5, 2025. Archived from the original on June 28, 2025. Retrieved July 2, 2025.
+
+↑ Höger, Jonas (June 10, 2025). "Mario Kart World im Test: Ein echter Kracher – aber der Grund überrascht". 4Players. Archived from the original on June 19, 2025. Retrieved June 11, 2025.
+
+1 2 Duwe, Scott (June 5, 2025). "Mario Kart World review – Once you start your engines, you might never stop". Destructoid. Archived from the original on June 5, 2025. Retrieved June 5, 2025.
+
+↑ Colantonio, Giovanni (June 11, 2025). "Mario Kart World review: Nintendo's big Switch 2 debut delivers where it counts". Digital Trends. Archived from the original on June 12, 2025. Retrieved June 12, 2025.
+
+1 2 "Play • Mario Kart World". Edge. No. 413. Future plc. September 2025. pp. 106–108.
+
+↑ Orry, Tom (June 11, 2025). "Mario Kart World Review". Eurogamer. Archived from the original on June 11, 2025. Retrieved June 11, 2025.
+
+1 2 Romano, Sal (June 25, 2025). "Famitsu Review Scores: Issue 1904". Gematsu. Archived from the original on June 25, 2025. Retrieved June 25, 2025.
+
+↑ Cortes, Alex (June 9, 2025). "Test : Mario Kart World reste solide malgré un monde ouvert vide". Gamekult. Archived from the original on June 10, 2025. Retrieved June 11, 2025.
+
+1 2 Watts, Steve (June 9, 2025). "Mario Kart World Review - A Worthy Marquee Launch Game". GameSpot. Archived from the original on June 9, 2025. Retrieved June 10, 2025.
+
+↑ Bishop, Rollin (June 11, 2025). "Mario Kart World review: "A glorious road trip that embraces the open road"". GamesRadar+. Archived from the original on June 10, 2025. Retrieved June 11, 2025.
+
+↑ Diedrich, Sören (June 10, 2025). "Test: Mario Kart World spaltet die GameStar-Redaktion fast so sehr wie eine Runde im Multiplayer". GameStar. Archived from the original on June 10, 2025. Retrieved June 11, 2025.
+
+1 2 Plant, Logan (June 10, 2025). "Mario Kart World Review". IGN. Archived from the original on June 11, 2025. Retrieved June 10, 2025.
+
+↑ Antoine, Charles (June 9, 2025). "Mario Kart World : le jeu vidéo le plus attendu de la Nintendo Switch 2 est-il à la hauteur de MK 8 Deluxe ?". Jeuxvideo.com. Archived from the original on June 12, 2025. Retrieved June 11, 2025.
+
+↑ Hagues, Alana (June 11, 2025). "Review: Mario Kart World (Switch 2) - The Perfect Introduction To A New Console Generation". Nintendo Life. Archived from the original on July 3, 2025. Retrieved July 3, 2025.
+
+↑ Ronaghan, Neal (June 10, 2025). "Mario Kart World Review". Nintendo World Report. Archived from the original on June 11, 2025. Retrieved June 11, 2025.
+
+1 2 Minor, Jordan (June 9, 2025). "Mario Kart World Review: A Wonderful New Spin on Nintendo's Arcade Racer". PCMag. Archived from the original on June 17, 2025. Retrieved June 9, 2025.
+
+1 2 MacDonald, Keza (June 10, 2025). "Mario Kart World review – a riotous road trip for every player". The Guardian. Retrieved June 10, 2025.
+
+↑ Scullion, Chris (June 12, 2025). "Mario Kart World review: Nintendo's latest racer is at its best when it's doing what it's always done". Video Games Chronicle. Archived from the original on June 17, 2025. Retrieved June 15, 2025.
+
+↑ Makuch, Eddie (June 5, 2025). "Mario Kart World Is Missing One Feature People Really Wanted". GameSpot. Archived from the original on June 6, 2025. Retrieved June 7, 2025.
+
+↑ Gach, Ethan (June 5, 2025). "Now That's A Bummer: Mario Kart World's Free Roam Mode Doesn't Have Splitscreen". Kotaku. Archived from the original on June 7, 2025. Retrieved June 7, 2025.
+
+↑ Valentine, Rebekah (April 17, 2025). "Mario Kart World's Free Roam Mode Is an Open World Road Trip You Can Take With Friends". IGN. Retrieved June 7, 2025.
+
+↑ Phillips, Tom. "Nintendo Fans Upset Over Mario Kart World Patch That Makes a Big Change to Online Play — 'Thanks, I Hate It'". IGN. Archived from the original on June 27, 2025. Retrieved June 27, 2025.
+
+↑ Reynolds, Ollie (June 30, 2025). "Of Course Mario Kart World Is Being Review Bombed". Nintendo Life. Archived from the original on July 19, 2025. Retrieved July 24, 2025.
+
+↑ Doolan, Liam (September 25, 2025). "Mario Kart World Has Been Updated To Version 1.3.0, Here Are The Full Patch Notes". Nintendo Life. Archived from the original on September 24, 2025. Retrieved September 28, 2025.
+
+↑ Cole, Yussef (July 12, 2025). "Mario Kart World's Journeys Are Smooth and Unremarkable". The New York Times. Archived from the original on July 22, 2025. Retrieved July 22, 2025.
+
+↑ Romano, Sal (June 12, 2025). "Famitsu Sales: 6/2/25 – 6/8/25". Gematsu. Archived from the original on June 12, 2025. Retrieved June 12, 2025.
+
+↑ Romano, Sal (September 4, 2025). "Famitsu Sales: 8/25/25 – 8/31/25". Gematsu. Archived from the original on September 4, 2025. Retrieved September 6, 2025.
+
+↑ Serin, Kaan (June 14, 2025). "Nintendo Switch 2 beats PS4 to set sales record in the US with Mario Kart World, Cyberpunk 2077, and Zelda: Tears of the Kingdom as its best-selling games". GamesRadar+. Archived from the original on June 15, 2025. Retrieved June 16, 2025.
+
+↑ Caballero, David (June 13, 2025). "Ventas España: Nintendo Switch 2 arrasa en su estreno con 108.000 consolas". Gamereactor. Archived from the original on June 14, 2025. Retrieved June 15, 2025.
+
+↑ Doolan, Liam (June 15, 2025). "Switch 2's Best-Selling eShop Games So Far". Nintendo Life. Archived from the original on June 15, 2025. Retrieved June 15, 2025.
+
+↑ "IR Information : Sales Data - Top Selling Title Sales Units". Nintendo Co., Ltd. Retrieved November 5, 2026.
+
+↑ Tailby, Stephen (August 22, 2025). "Gamescom 2025 Awards – All Award Winners". Insider Gaming. Archived from the original on August 24, 2025. Retrieved August 22, 2025.
+
+↑ Harris, Iain (October 3, 2025). "Clair Obscur: Expedition 33 leads the Golden Joystick Award 2025 charge for most nominations, nudging out Death Stranding 2, Ghost of Yotei, and Kingdom Come: Deliverance 2". GamesRadar. Archived from the original on October 3, 2025. Retrieved October 3, 2025.
+
+↑ Bevan, Rhiannon (November 20, 2025). "All Of The Winners At The Golden Joystick Awards 2025". TheGamer. Retrieved November 21, 2025.
+
+↑ Smith, Callum (October 20, 2025). "Clair Obscur Expedition 33 Wins its First Game of the Year Award". Video Gamer. Archived from the original on November 17, 2025. Retrieved October 20, 2025.
+
+↑ Maas, Jennifer (December 11, 2025). "The Game Awards 2025 Winners List". Variety. ISSN 0042-2738. Archived from the original on February 4, 2026. Retrieved February 4, 2026.
+
+↑ McWhertor, Michael (December 15, 2025). "After setting records at The Game Awards, Clair Obscur is up for another GOTY". Polygon. Archived from the original on December 20, 2025. Retrieved December 16, 2025.
+
+↑ LeBlanc, Wesley (January 8, 2026). "The 29th DICE Awards Nominees Have Been Revealed, Clair Obscur: Expedition 33 And Ghost Of Yōtei Lead The Pack". Game Informer. Archived from the original on January 12, 2026. Retrieved January 10, 2026.
+
+↑ "29th Annual D.I.C.E. Awards Winners Revealed". AIAS. February 12, 2026. Retrieved February 12, 2026.
+
+↑ McGowen, Andrew (December 9, 2025). "'Indiana Jones and the Great Circle,' 'Ghost of Yōtei' and 'Split Fiction' Among Best Game Contenders in 2026 BAFTA Games Awards Longlist". Variety. Retrieved December 10, 2025.
+
+↑ Scullion, Chris (March 12, 2026). "BAFTA Games Awards 2026 nominations: Clair Obscur leads with 12, Death Stranding 2 misses out on Best Game nom". Video Games Chronicle. Archived from the original on July 24, 2026. Retrieved July 24, 2026.
+
+↑ Lewis, Claire; Makuch, Eddie; Ramée, Jordan (April 17, 2026). "BAFTA Games Award Winners Revealed For 2026, Clair Obscur: Expedition 33 Wins Best Game". GameSpot. Retrieved July 24, 2026.
+
+Primary sources
+
+In the text, these references are preceded by a double dagger (‡):
+
+↑ "Games" (in Japanese). Monolith Soft. Archived from the original on June 5, 2025. Retrieved June 5, 2025.
+
+↑ "開発協力" (in Japanese). 1-Up Studio. Archived from the original on April 9, 2021. Retrieved June 4, 2025.
+
+↑ "Mario Kart World". Bandai Namco Studios. June 5, 2025. Archived from the original on June 5, 2025. Retrieved June 5, 2025.
+
+1 2 Ask the Developer Vol. 18: Mario Kart World — Part 1 - News - Nintendo Official Site. Nintendo. Archived from the original on May 22, 2025. Retrieved May 22, 2025.
+
+External links
+[edit]
+
+Official website
+
+Official website (in Japanese)
+
+Mario Kart World interactive map – via IGN
+
+Mario Kart World at IMDb
+
+Mario Kart World at MobyGames
+
+ | 
+
+v
+
+t
+
+e
+
+Mario Kart
+
+ | 
+
+Mario franchise
+
+ | Main games | 
+
+Super Mario Kart
+
+64
+
+Super Circuit
+
+Double Dash
+
+DS
+
+Wii
+
+7
+
+8
+
+Tour
+
+World
+
+ | Other games | 
+
+Arcade GP
+
+Live: Home Circuit
+
+ | Development | 
+
+Nintendo
+
+Nintendo Entertainment Planning & Development
+
+Intelligent Systems
+
+Bandai Namco Studios
+
+Retro Studios
+
+DeNA
+
+Velan Studios
+
+ | Universe | 
+
+Rainbow Road
+
+Blue shell
+
+Cow
+
+Waluigi Pinball
+
+Coconut Mall
+
+ | Related | 
+
+Mario sports games
+
+Bowser's Challenge
+
+F1 Race
+
+F-Zero
+
+The Super Mario Bros. Movie
+
+Kart Fighter
+
+Cruis'n
+
+ | 
+
+ Category
+
+Portal:
+ Video games
+
+Retrieved from "https://en.wikipedia.org/w/index.php?title=Mario_Kart_World&oldid=1386785962"
+
+Categories: 
+Mario Kart
+
+2025 video games
+
+Cancelled Nintendo Switch games
+
+Multiplayer and single-player video games
+
+Nintendo Entertainment Planning & Development games
+
+Nintendo Switch 2 games
+
+Nintendo Switch 2-only games
+
+Off-road racing video games
+
+Open-world video games
+
+Pack-in video games
+
+Sequel video games
+
+Split-screen multiplayer games
+
+The Game Awards winners
+
+Video games developed in Japan
+
+Hidden categories: 
+Articles with short description
+
+Short description is different from Wikidata
+
+Use mdy dates from April 2025
+
+CS1 Japanese-language sources (ja)
+
+Articles using Infobox video game using locally defined parameters
+
+Articles using Wikidata infoboxes with locally defined images
+
+Articles containing Japanese-language text
+
+Articles using Video game reviews template in single platform mode
+
+Official website different in Wikidata and Wikipedia
+
+Articles with Japanese-language sources (ja)
+
+ This page was last edited on 20 November 2026, at 15:56 (UTC).
+
+Page was rendered with Parsoid.
+
+Text is available under the Creative Commons Attribution-ShareAlike 4.0 License;
+additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+Privacy policy
+
+About Wikipedia
+
+Disclaimers
+
+Contact Wikipedia
+
+Legal & safety contacts
+
+Code of Conduct
+
+Developers
+
+Statistics
+
+Cookie statement
+
+Mobile view
+
+Search
+
+ Search
+
+Toggle the table of contents
+
+Mario Kart World
+
+21 languages
+
+Add topic

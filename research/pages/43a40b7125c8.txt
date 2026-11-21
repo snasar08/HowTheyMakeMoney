@@ -1,0 +1,42 @@
+URL: https://www.nintendo.co.jp/ir/en/finance/hard_soft/index.html
+FINAL_URL: https://www.nintendo.co.jp/ir/en/finance/hard_soft/index.html
+FETCHED: 2026-11-21T16:20:44.018232+00:00
+
+IR Information > Financial Data>
+ Dedicated Video Game Sales Units
+
+( As of September 30, 2026 )
+
+Total Unit Sales
+
+Unit Sales
+
+Nintendo Switch 2
+
+Hardware:26.35million units
+
+ Software:73.21million
+ units
+
+Nintendo Switch
+
+Hardware:157.20million units
+
+ Software:1,593.87million
+ units
+
+Wii U
+
+Hardware:13.56million units
+
+ Software:103.60million
+ units
+
+Nintendo 3DS
+
+Hardware:75.94million units
+
+ Software:392.31million
+ units
+
+*The numbers shown above are worldwide consolidated sales in units life-to-date.

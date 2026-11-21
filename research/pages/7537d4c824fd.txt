@@ -1,0 +1,68 @@
+URL: https://www.nintendo.co.jp/ir/en/finance/software/index.html
+FINAL_URL: https://www.nintendo.co.jp/ir/en/finance/software/index.html
+FETCHED: 2026-11-21T16:20:45.897857+00:00
+
+IR Information > Financial Data
+ > Top Selling Title Sales Units
+
+( As of September 30, 2026 )
+
+Nintendo Switch 2
+
+Nintendo Switch
+
+Wii U
+
+Nintendo 3DS
+
+Mario Kart World
+
+16.48 million pcs.
+
+Donkey Kong Bananza
+
+5.05 million pcs.
+
+Pokémon Legends: Z-A – Nintendo Switch 2 Edition
+
+4.04 million pcs.
+
+(Combined with Pokémon LEGENDS Z-A (Nintendo Switch), total sales reach 13.31 million units.)
+
+Pokémon Pokopia
+
+4.04 million pcs.
+
+(Figure only includes units sold outside of Japan where Nintendo is the publisher.)
+
+Splatoon Raiders
+
+2.42 million pcs.
+
+Kirby Air Riders
+
+1.94 million pcs.
+
+Fire Emblem: Fortune's Weave
+
+1.34 million pcs.
+
+Super Mario Party Jamboree – Nintendo Switch 2 Edition
+
+1.28 million pcs.
+
+(Combined with Super Mario Party Jamboree (Nintendo Switch), total sales reach 12.01 million units.)
+
+Star Fox
+
+1.17 million pcs.
+
+*The numbers shown above are worldwide consolidated sales in units life-to-date.
+
+*Software units include the quantity bundled with hardware or other products.
+
+*Software units include the downloadable versions.
+
+*Package images shown above are for Japanese market.
+
+*Packaged versions of Nintendo Switch 2 Edition software are included in Nintendo Switch 2 software sales units, and downloadable versions are included in Nintendo Switch software sales units.

@@ -1,0 +1,38 @@
+{
+  "https://www.nintendo.co.jp/ir/en/finance/hard_soft/index.html": {
+    "file": "pages/43a40b7125c8.txt",
+    "fetched_at": "2026-11-21T16:20:44.018232+00:00",
+    "ok": true,
+    "chars": 511,
+    "status": 200,
+    "final_url": "https://www.nintendo.co.jp/ir/en/finance/hard_soft/index.html",
+    "content_type": "text/html"
+  },
+  "https://en.wikipedia.org/wiki/Mario_Kart_World": {
+    "file": "pages/f584b65d7ecd.txt",
+    "fetched_at": "2026-11-21T16:20:44.939409+00:00",
+    "ok": true,
+    "chars": 32280,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Mario_Kart_World",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Nintendo_Switch_2": {
+    "file": "pages/4d1776e52010.txt",
+    "fetched_at": "2026-11-21T16:20:45.374431+00:00",
+    "ok": true,
+    "chars": 117124,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Nintendo_Switch_2",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://www.nintendo.co.jp/ir/en/finance/software/index.html": {
+    "file": "pages/7537d4c824fd.txt",
+    "fetched_at": "2026-11-21T16:20:45.897857+00:00",
+    "ok": true,
+    "chars": 1304,
+    "status": 200,
+    "final_url": "https://www.nintendo.co.jp/ir/en/finance/software/index.html",
+    "content_type": "text/html"
+  }
+}
