@@ -1,0 +1,35 @@
+{
+  "https://en.wikipedia.org/wiki/Max_Verstappen": {
+    "file": "pages/cafebc503e6a.txt",
+    "fetched_at": "2026-11-21T16:10:41.528453+00:00",
+    "ok": true,
+    "chars": 202954,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Max_Verstappen",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/List_of_highest-paid_Formula_One_drivers": {
+    "file": "pages/ae5c78455418.txt",
+    "fetched_at": "2026-11-21T16:10:42.180252+00:00",
+    "ok": false,
+    "error": "HTTP 404"
+  },
+  "https://en.wikipedia.org/wiki/World_Drivers%27_Champion": {
+    "file": "pages/09f2abd4d936.txt",
+    "fetched_at": "2026-11-21T16:10:42.819741+00:00",
+    "ok": true,
+    "chars": 41822,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/World_Drivers%27_Champion",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/2016_Spanish_Grand_Prix": {
+    "file": "pages/e14311cb4adf.txt",
+    "fetched_at": "2026-11-21T16:10:43.299890+00:00",
+    "ok": true,
+    "chars": 38982,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/2016_Spanish_Grand_Prix",
+    "content_type": "text/html; charset=UTF-8"
+  }
+}
