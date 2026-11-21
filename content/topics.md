@@ -34,6 +34,9 @@ Fortnite free battle royale (story), Nikola Jokić, Luka Dončić, Paul Skenes, 
 ## Used (Nov 21 2026 batch, part 3)
 George Lucas, Lamar Jackson, Novak Djokovic, Kevin Durant, Son Heung-min, Ed Sheeran, Nvidia shovels plan (story plan), Ja'Marr Chase plan (story plan), Momofuku Ando instant noodles (story), LEGO bricks per person (whatif)
 
+## Used (Nov 21 2026 batch, part 4)
+Josh Allen
+
 ## Ranked for the next batches (Oct 29 2026 — teen appeal × curiosity gap × surprising number)
 Write from the top. Casinos dropped (not kid-safe). Skip anything already used above.
 | # | Topic | Angle / hook seed | Est. score |
