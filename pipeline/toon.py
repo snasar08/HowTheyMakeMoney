@@ -346,7 +346,7 @@ _AH_MODELS: dict | None = None
 _AH_STOP = {"sign", "signs", "signed", "signing", "deal", "deals", "the", "a", "an", "and", "or", "of", "to", "in", "on", "it", "is", "was", "he", "she", "they", "his", "her", "this", "that", "with", "for", "at", "by", "as", "be", "so", "but",
            # Nov 18 (overnight scene pass): words that mean something else in a story line ("fans" -> ceiling fan, "can" -> tin can,
            # "cold" -> fridge, "Mickey Mouse" -> computer mouse, "defense", "steps", "stack", "power" ...), and no weapons ever
-           "can", "cold", "fan", "fans", "trash", "waste", "mouse", "bar", "base", "bay", "bend", "catch", "chest", "chop", "counter",
+           "woods", "can", "cold", "fan", "fans", "trash", "waste", "mouse", "bar", "base", "bay", "bend", "catch", "chest", "chop", "counter",
            "deck", "direction", "display", "fair", "frame", "hole", "hooks", "light", "loot", "pad", "peel", "pot", "power", "present",
            "ride", "round", "seat", "shed", "signal", "stack", "steps", "storage", "tank", "tube", "wall", "wheel", "wings", "trading",
            "finance", "business", "corporate", "commercial", "retail", "healthy", "compact", "emergency", "defense", "entrance",
@@ -380,6 +380,8 @@ def ah_words_to_models(text: str) -> list:
     m, out = ah_models(), []
     ws = [w for w in re.findall(r"[a-z]+", text.lower())]
     def look(w: str):
+        if w in _AH_STOP:                 # the word itself is stopped, so its stem is too ("woods" (Tiger Woods) is not a log)
+            return None
         for c in (w, w[:-1] if w.endswith("s") else "", w[:-2] if w.endswith("es") else "", w[:-3] + "y" if w.endswith("ies") else ""):
             if c and c in m and c not in _AH_STOP:
                 return m[c]

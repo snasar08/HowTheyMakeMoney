@@ -1,0 +1,327 @@
+{
+  "id": "135",
+  "slug": "famous-tiger-woods",
+  "company": "Tiger Woods",
+  "format": "famous",
+  "visual_style": "lowpoly",
+  "hook_style": "number",
+  "title_style": "number",
+  "theme": "bold_bright",
+  "status": "draft",
+  "score": 90,
+  "title": "Tiger Woods: $40 Million at 20, Then $1 Billion",
+  "name_card": "Tiger Woods",
+  "name_sub": "golf's money story",
+  "description": "Tiger Woods signed a five-year, $40 million Nike deal in 1996 at age 20, and became golf's biggest earner.\n\nSources:\n- Wikipedia: Tiger Woods: https://en.wikipedia.org/wiki/Tiger_Woods\n- CBS News: Tiger Inks The $100M Deal: https://www.cbsnews.com/news/tiger-inks-the-100m-deal/\n- NBC Washington: Tiger Woods joins Michael Jordan, LeBron James as third athlete with net worth over $1 billion: https://www.nbcwashington.com/news/sports/tiger-woods-joins-michael-jordan-lebron-james-as-third-athlete-with-net-worth-over-1-billion/\n\nFrom the cited pages: in 1978 he putted against Bob Hope on TV as a toddler; Woods turned pro at 20 in August 1996 and signed with Nike (five years, $40 million); he won the 1997 Masters by 12 strokes at 21, the youngest winner; in 2000 he signed a 5-year, $105 million Nike extension, the largest endorsement package by a pro athlete at that time; in 2009 Forbes confirmed he was the first pro athlete to earn over a billion dollars in his career; less than 10% of his earnings come from prize money (NBC Washington, 2022 Forbes report). Not financial advice.\n\n#shorts #tigerwoods #golf #howtheymakemoney",
+  "tags": [
+    "tiger woods",
+    "golf",
+    "nike",
+    "shorts"
+  ],
+  "images": {},
+  "loop": "Next time you swing, remember:",
+  "cta": "Tiger or Jordan?",
+  "cta_question": "Tiger or Jordan?",
+  "hero": {
+    "skin": "a9744f",
+    "hair": "short",
+    "hair_color": "1a1410",
+    "beard": "none",
+    "outfit": "tee",
+    "shirt": "c8102e",
+    "pants": "111111",
+    "shoes": "f4f4f4",
+    "chest": "",
+    "trim": "111111",
+    "extras": [
+      "cap"
+    ],
+    "height": 1.0
+  },
+  "scenes": [
+    {
+      "narration": "Tiger Woods signs a 40 million dollar Nike deal at twenty.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "field",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "hero": {
+          "skin": "a9744f",
+          "hair": "short",
+          "hair_color": "1a1410",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "c8102e",
+          "pants": "111111",
+          "shoes": "f4f4f4",
+          "chest": "",
+          "trim": "111111",
+          "extras": [
+            "cap"
+          ],
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "office",
+          "mood": "shock",
+          "things": [
+            "cashstack"
+          ],
+          "brand": {
+            "name": "Nike",
+            "bg": "#111111",
+            "fg": "#ffffff",
+            "icon": "swoosh"
+          },
+          "card": {
+            "text": "$40 MILLION",
+            "kind": "screen",
+            "sub": "NIKE, 5 YEARS"
+          },
+          "view": "ms"
+        }
+      ]
+    },
+    {
+      "narration": "As a toddler, he putts against Bob Hope.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "field",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "hero": {
+          "skin": "a9744f",
+          "hair": "short",
+          "hair_color": "1a1410",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "c8102e",
+          "pants": "111111",
+          "shoes": "f4f4f4",
+          "chest": "",
+          "trim": "111111",
+          "extras": [
+            "cap"
+          ],
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "stage",
+          "mood": "laugh",
+          "things": [
+            "tv"
+          ],
+          "card": {
+            "text": "ON TV AS A TODDLER",
+            "kind": "sign",
+            "sub": "ON TELEVISION"
+          },
+          "view": "wide"
+        }
+      ]
+    },
+    {
+      "narration": "Then in 1997, he swings and wins the Masters at twenty-one.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "field",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "hero": {
+          "skin": "a9744f",
+          "hair": "short",
+          "hair_color": "1a1410",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "c8102e",
+          "pants": "111111",
+          "shoes": "f4f4f4",
+          "chest": "",
+          "trim": "111111",
+          "extras": [
+            "cap"
+          ],
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "field",
+          "mood": "excited",
+          "things": [
+            "trophy"
+          ],
+          "card": {
+            "text": "AGE 21",
+            "kind": "flip",
+            "sub": "1997 MASTERS"
+          },
+          "view": "wide"
+        }
+      ]
+    },
+    {
+      "narration": "Then Nike signs him again for 105 million dollars.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "field",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "hero": {
+          "skin": "a9744f",
+          "hair": "short",
+          "hair_color": "1a1410",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "c8102e",
+          "pants": "111111",
+          "shoes": "f4f4f4",
+          "chest": "",
+          "trim": "111111",
+          "extras": [
+            "cap"
+          ],
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "boardroom",
+          "mood": "scheme",
+          "brand": {
+            "name": "Nike",
+            "bg": "#111111",
+            "fg": "#ffffff",
+            "icon": "swoosh"
+          },
+          "things": [
+            "briefcase"
+          ],
+          "card": {
+            "text": "$105,000,000",
+            "kind": "screen",
+            "sub": "NIKE, 5 YEARS"
+          },
+          "view": "ms"
+        }
+      ]
+    },
+    {
+      "narration": "In 2009, he is the first athlete to earn a billion dollars.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "field",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "hero": {
+          "skin": "a9744f",
+          "hair": "short",
+          "hair_color": "1a1410",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "c8102e",
+          "pants": "111111",
+          "shoes": "f4f4f4",
+          "chest": "",
+          "trim": "111111",
+          "extras": [
+            "cap"
+          ],
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "throne",
+          "mood": "proud",
+          "things": [
+            "crown"
+          ],
+          "card": {
+            "text": "$1 BILLION",
+            "kind": "screen",
+            "sub": "FIRST ATHLETE, 2009"
+          },
+          "view": "ms"
+        }
+      ]
+    },
+    {
+      "narration": "But under ten percent of his earnings is prize money. Turns out, the money was never the trophies.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "field",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "hero": {
+          "skin": "a9744f",
+          "hair": "short",
+          "hair_color": "1a1410",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "c8102e",
+          "pants": "111111",
+          "shoes": "f4f4f4",
+          "chest": "",
+          "trim": "111111",
+          "extras": [
+            "cap"
+          ],
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "stage",
+          "mood": "shock",
+          "things": [
+            "trophy"
+          ],
+          "card": {
+            "text": "UNDER 10%",
+            "kind": "sign",
+            "sub": "FROM PRIZE MONEY"
+          },
+          "view": "face"
+        },
+        {
+          "place": "mansion",
+          "mood": "laugh",
+          "things": [
+            "cash",
+            "trophy"
+          ],
+          "view": "face"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Tiger Woods",
+      "url": "https://en.wikipedia.org/wiki/Tiger_Woods"
+    },
+    {
+      "title": "CBS News: Tiger Inks The $100M Deal",
+      "url": "https://www.cbsnews.com/news/tiger-inks-the-100m-deal/"
+    },
+    {
+      "title": "NBC Washington: Tiger Woods joins Jordan, LeBron as third athlete with net worth over $1 billion",
+      "url": "https://www.nbcwashington.com/news/sports/tiger-woods-joins-michael-jordan-lebron-james-as-third-athlete-with-net-worth-over-1-billion/"
+    }
+  ],
+  "look": "afterhour",
+  "draft_note": "Held by part 1 (Nov 21) until golf is built: set golf course, objects golfball + golfclub, golf_swing act reviewed into approved.json (content/BUILD_QUEUE.md). Today the putt/swing lines draw a basketball."
+}
