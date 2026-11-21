@@ -1370,9 +1370,9 @@ function golf(): SetObj {
   const hs = T("#f4f7f0"); cy(g, 0.05, 0.05, 1.5, T("#6a4a2a"), -4.6, 0.75, 1.2, 0.012, 8); bx(g, 0.9, 0.55, 0.06, T("#14407a"), -4.6, 1.55, 1.2, 0.015); void hs;
   const sgn = canvasTex(256, 160, (c) => { c.fillStyle = "#14407a"; c.fillRect(0, 0, 256, 160); c.fillStyle = "#ffffff"; c.textAlign = "center"; c.font = "bold 64px Arial"; c.fillText("HOLE 9", 128, 70); c.font = "bold 40px Arial"; c.fillText("PAR 4", 128, 124); });
   const sgp = new THREE.Mesh(new THREE.PlaneGeometry(0.84, 0.5), basic(sgn, 1.05, false)); sgp.position.set(-4.6, 1.55, 1.24); g.add(sgp);
-  // set balls on and near the tee (hidden when the shot has an act or a ball thing)
+  // set balls beside the tee sign, out of the swing's way (hidden when the shot shows a ball thing)
   const gb = new THREE.Group(); gb.userData.setBall = true; g.add(gb);
-  for (const [x, z] of [[0.55, 0.9], [-1.1, 1.9], [1.7, 1.6]] as V2[]) { sp(gb, 0.07, T("#ffffff"), x, 0.07, z, 0.01, 12); }
+  for (const [x, z] of [[-4.2, 3.6], [-4.7, 4.2], [-3.8, 4.5]] as V2[]) { sp(gb, 0.07, T("#ffffff"), x, 0.07, z, 0.01, 12); }
   // round cel trees along both sides
   const r = seeded(77); const leaf = ["#1f7a3a", "#26903f", "#2f9f4a", "#1a6a33"];
   const tree = (x: number, z: number, sc: number) => {
@@ -1394,7 +1394,7 @@ function golf(): SetObj {
   vplane(g, 300, 110, basic(gradTex([[0, "#bfe6ff"], [0.5, "#8ecbff"], [1, "#4a9be8"]], 8, 256), 1, false), 0, 40, -95);
   for (const [cx, cyy, cs] of [[-34, 28, 1.2], [12, 34, 1.6], [46, 26, 1.0], [-8, 42, 1.1]] as V3[]) for (let i = 0; i < 5; i++) { const m = sp(g, 3 * cs, T("#ffffff", { emissive: "#c8d8ee", emissiveIntensity: 0.6 }), cx + (i - 2) * 3.4 * cs, cyy + (i % 2) * 1.2, -90, 0, 12); m.scale.set(1.3, 0.7, 0.5); }
   const lights = mkLights(["#f2f8ff", "#6fa07a", 1.25], ["#fff6e0", 2.6, [6, 14, 8]], [["#ffffff", 30, [0, 8, 4], 22]], 14);
-  return { root: g, lights, fog: new THREE.Fog("#a8d6ff", 60, 150), bg: "#8ecbff", spots: { spot: [0, 0, 0], tee: [0, 0, 1.0], green: [0, 0.03, GZ], flag: [0, 3.0, GZ], hole: [0, 0.03, GZ], bunker: [7.4, 0.03, GZ + 1.2], cart: [-6.4, 0.6, 3.4], ball: [0.55, 0.07, 0.9], sign: [-4.6, 1.55, 1.3] } };
+  return { root: g, lights, fog: new THREE.Fog("#a8d6ff", 60, 150), bg: "#8ecbff", spots: { spot: [0, 0, 0], tee: [0, 0, 1.0], green: [0, 0.03, GZ], flag: [0, 3.0, GZ], hole: [0, 0.03, GZ], bunker: [7.4, 0.03, GZ + 1.2], cart: [-6.4, 0.6, 3.4], ball: [-4.2, 0.07, 3.6], sign: [-4.6, 1.55, 1.3] } };
 }
 
 // ================= GYM (training gym) =================
