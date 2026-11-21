@@ -1,0 +1,29 @@
+{
+  "https://en.wikipedia.org/wiki/Novak_Djokovic": {
+    "file": "pages/3076cee5bbf2.txt",
+    "fetched_at": "2026-11-21T21:06:59.045058+00:00",
+    "ok": true,
+    "chars": 267927,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Novak_Djokovic",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://en.wikipedia.org/wiki/Career_statistics_of_Novak_Djokovic": {
+    "file": "pages/7551fdf5a37a.txt",
+    "fetched_at": "2026-11-21T21:07:00.006939+00:00",
+    "ok": false,
+    "error": "HTTP 404"
+  },
+  "https://en.wikipedia.org/wiki/Prize_money_leaders_of_men%27s_tennis": {
+    "file": "pages/39b3f4208291.txt",
+    "fetched_at": "2026-11-21T21:07:00.636408+00:00",
+    "ok": false,
+    "error": "HTTP 404"
+  },
+  "https://en.wikipedia.org/wiki/List_of_men%27s_singles_Grand_Slam_tennis_champions": {
+    "file": "pages/d9680beed0fe.txt",
+    "fetched_at": "2026-11-21T21:07:01.251382+00:00",
+    "ok": false,
+    "error": "HTTP 404"
+  }
+}
