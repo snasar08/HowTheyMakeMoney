@@ -10,13 +10,12 @@ One line each: `- [ ] set|object NAME: what it must show (script ids that need i
 - [ ] set factory: a factory floor (conveyor belts, robot arms, crates, big chimney windows) for "factory" lines (164)
 - [ ] set mountain: a rocky mountain with a mine entrance, cart tracks and gold veins for "mountain"/"mine" lines (164)
 - [ ] object giant shovel: a house-tall shovel (164 uses shovel + house)
-- [ ] object guitar + review act guitar (not in approved.json yet) for "plays guitar" lines (162 uses mic)
-- [ ] object rollercoaster: a small amusement-park roller coaster loop with a car (for "amusement park" lines; 160 uses stadium for now)
-- [ ] set pool: an empty, disused swimming pool turned into a tennis practice court (tiled walls, ladder, net strung across the dry floor) (157)
+- [ ] act guitar: review a "plays guitar" act (not in approved.json yet; object guitar is built) (162)
 - [x] set gridiron + tennis (checked built in sets.ts Nov 21)
 
 
 ## Done
+- [x] set pool (drained pool as a tennis court) + objects guitar, rollercoaster, tested on things-test/20261121-p3, stills checked, Nov 21 part 3
 - [x] objects horse + baseball (and no basketball on diamond throw lines), tested on things-test/20261121-p2obj, Nov 21 part 2
 - [x] act qb_throw fixed (ball clear of the face, panel after the catch) and approved, things-test/20261121-p2qb, Nov 21 part 2
 - [x] act tennis_serve fixed (contact frame + ball over the net) and approved, things-test/20261121-p2acts, Nov 21 part 2

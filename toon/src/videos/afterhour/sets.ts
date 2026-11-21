@@ -3,7 +3,7 @@ import * as THREE from "three";
 import { toonMat, glowMat, metalMat, outline, canvasTex, seeded, box } from "./common";
 
 export type SetName = "throne" | "office" | "diner" | "lab" | "stall" | "field" | "ring" | "track" | "graveyard" | "boardroom" | "street" | "beach"
-  | "court" | "pitch" | "diamond" | "gridiron" | "tennis" | "golf" | "gym" | "studio" | "farm" | "store" | "stage" | "space" | "garage" | "classroom" | "bathroom" | "mansion" | "showroom";
+  | "court" | "pitch" | "diamond" | "gridiron" | "tennis" | "golf" | "pool" | "gym" | "studio" | "farm" | "store" | "stage" | "space" | "garage" | "classroom" | "bathroom" | "mansion" | "showroom";
 export type SetObj = { root: THREE.Group; lights: THREE.Light[]; fog?: THREE.Fog; bg: string; spots: Record<string, [number, number, number]> };
 
 type V3 = [number, number, number];
@@ -1326,6 +1326,97 @@ function tennis(): SetObj {
   return { root: g, lights, fog: new THREE.Fog("#a8d6ff", 55, 130), bg: "#8ecbff", spots: { spot: [0, 0, 0], net: [0, 0.5, NZ], ball: [1.0, 0.11, 1.4], chair: [ux, 2.3, NZ], sign: [0, 5.4, Z0 - 6.6] } };
 }
 
+// ================= POOL (an empty, disused swimming pool used as a tennis practice court) =================
+function pool(): SetObj {
+  const g = new THREE.Group();
+  const X0 = -9, X1 = 9, Z0 = -15, Z1 = 11, H = 2.7, NZ = -5;                // pool 18 x 26 m, 2.7 m deep, net across at z = -5
+  const tileTex = (w: number, h: number, tw: number, th: number, seed: number, fn?: (c: CanvasRenderingContext2D) => void) => canvasTex(w, h, (c) => {
+    const r = seeded(seed); const cols = ["#8fd3e8", "#86cde4", "#9ad9ec", "#7fc6de"];
+    c.fillStyle = "#cfeaf2"; c.fillRect(0, 0, w, h);
+    for (let j = 0; j * th < h; j++) for (let i = 0; i * tw < w; i++) { c.fillStyle = cols[Math.floor(r() * 4)]; c.fillRect(i * tw + 2, j * th + 2, tw - 4, th - 4); }
+    if (fn) fn(c);
+  });
+  // floor: tiles, dark lane lines with T ends, a drain, faded chalk tennis baseline, crack lines
+  const FW = 1008, FH = Math.round(FW * (Z1 - Z0) / (X1 - X0)), fx = FW / (X1 - X0), fz = FH / (Z1 - Z0);
+  const FX = (x: number) => (x - X0) * fx, FZ = (z: number) => (z - Z0) * fz;
+  const ft = tileTex(FW, FH, 28, 28, 5, (c) => {
+    c.fillStyle = "#1c4f9a";
+    for (const x of [-6.75, -2.25, 2.25, 6.75]) { c.fillRect(FX(x) - 0.12 * fx, FZ(Z0), 0.24 * fx, (Z1 - Z0) * fz); c.fillRect(FX(x) - 0.6 * fx, FZ(Z0 + 0.6), 1.2 * fx, 0.24 * fz); c.fillRect(FX(x) - 0.6 * fx, FZ(Z1 - 0.9), 1.2 * fx, 0.24 * fz); }
+    c.strokeStyle = "#f4f7f0"; c.lineWidth = 0.09 * fx; c.lineCap = "butt";                    // faded tennis chalk
+    const L = (x0: number, z0: number, x1: number, z1: number) => { c.beginPath(); c.moveTo(FX(x0), FZ(z0)); c.lineTo(FX(x1), FZ(z1)); c.stroke(); };
+    L(-4.1, NZ - 6.4, 4.1, NZ - 6.4); L(-4.1, NZ + 6.4, 4.1, NZ + 6.4); L(0, NZ - 6.4, 0, NZ + 6.4);
+    c.fillStyle = "#3a4a58"; c.beginPath(); c.arc(FX(5.5), FZ(2), 0.4 * fx, 0, PI * 2); c.fill(); c.fillStyle = "#6b7c8a"; c.beginPath(); c.arc(FX(5.5), FZ(2), 0.3 * fx, 0, PI * 2); c.fill();
+    c.strokeStyle = "rgba(40,60,80,0.55)"; c.lineWidth = 3;
+    for (const [a, b, d, e] of [[-3, -9, -1.8, -7.6], [3.2, -11.5, 4.4, -10], [-6, 5, -4.7, 6.3]]) { c.beginPath(); c.moveTo(FX(a), FZ(b)); c.lineTo(FX((a + d) / 2 + 0.2), FZ((b + e) / 2 - 0.3)); c.lineTo(FX(d), FZ(e)); c.stroke(); }
+    c.fillStyle = "rgba(90,110,60,0.35)"; for (const [x, z, r] of [[-5, -2, 1.2], [6.5, -8, 0.9]]) { c.beginPath(); c.ellipse(FX(x), FZ(z), r * fx, r * 0.7 * fz, 0.4, 0, PI * 2); c.fill(); }   // old stains
+  });
+  plane(g, X1 - X0, Z1 - Z0, T("#ffffff", { map: ft }), 0, 0.01, (Z0 + Z1) / 2);
+  // walls: tiles, a dark waterline band near the top, depth numbers, a "DEEP END" paint
+  const wallTex = (wd: number, label: string) => {
+    const WW = Math.round(wd * 56), WH = Math.round(H * 56);
+    return tileTex(WW, WH, 28, 28, 9 + Math.round(wd), (c) => {
+      c.fillStyle = "#2a62b0"; c.fillRect(0, 0, WW, 0.42 * 56 + 6); c.fillStyle = "#f4f7f0"; c.fillRect(0, 0.42 * 56 + 6, WW, 5);
+      c.fillStyle = "rgba(60,80,50,0.28)"; c.fillRect(0, 0.42 * 56 + 11, WW, 9);
+      c.fillStyle = "#ffffff"; c.textAlign = "center"; c.font = "bold 30px Arial";
+      for (const k of [0.2, 0.5, 0.8]) c.fillText(label, WW * k, 0.42 * 56 - 14);
+      c.strokeStyle = "rgba(40,60,80,0.5)"; c.lineWidth = 3; c.beginPath(); c.moveTo(WW * 0.62, WH * 0.45); c.lineTo(WW * 0.66, WH * 0.62); c.lineTo(WW * 0.64, WH * 0.8); c.stroke();
+    });
+  };
+  const wm = (wd: number, label: string) => T("#ffffff", { map: wallTex(wd, label) });
+  vplane(g, X1 - X0, H, wm(X1 - X0, "3 M"), 0, H / 2, Z0);
+  vplane(g, X1 - X0, H, wm(X1 - X0, "1.2 M"), 0, H / 2, Z1, PI);
+  vplane(g, Z1 - Z0, H, wm(Z1 - Z0, "2 M"), X0, H / 2, (Z0 + Z1) / 2, PI / 2);
+  vplane(g, Z1 - Z0, H, wm(Z1 - Z0, "2 M"), X1, H / 2, (Z0 + Z1) / 2, -PI / 2);
+  // coping + deck around the rim, fence, trees, clubhouse
+  const cop = T("#e9e4d6"), deck = T("#c9c2b0");
+  bx(g, 19.2, 0.22, 0.6, cop, 0, H + 0.11, Z0 - 0.3, 0.012); bx(g, 19.2, 0.22, 0.6, cop, 0, H + 0.11, Z1 + 0.3, 0.012);
+  bx(g, 0.6, 0.22, 27.2, cop, X0 - 0.3, H + 0.11, (Z0 + Z1) / 2, 0.012); bx(g, 0.6, 0.22, 27.2, cop, X1 + 0.3, H + 0.11, (Z0 + Z1) / 2, 0.012);
+  bx(g, 70, 0.4, 14, deck, 0, H - 0.2, Z0 - 7.6); bx(g, 70, 0.4, 14, deck, 0, H - 0.2, Z1 + 7.6);
+  bx(g, 14, 0.4, 40, deck, X0 - 7.6, H - 0.2, -2); bx(g, 14, 0.4, 40, deck, X1 + 7.6, H - 0.2, -2);
+  const fenceM = T("#59606e");
+  for (let i = -14; i <= 14; i++) { cy(g, 0.04, 0.04, 2.2, fenceM, i * 2.4, H + 1.1, Z0 - 12, 0.01, 6); }
+  bx(g, 70, 0.06, 0.06, fenceM, 0, H + 2.1, Z0 - 12); bx(g, 70, 0.06, 0.06, fenceM, 0, H + 0.4, Z0 - 12);
+  const fm = new THREE.MeshBasicMaterial({ map: canvasTex(256, 64, (c) => { c.clearRect(0, 0, 256, 64); c.strokeStyle = "rgba(200,208,220,0.75)"; c.lineWidth = 2; for (let k = -64; k < 256; k += 12) { c.beginPath(); c.moveTo(k, 0); c.lineTo(k + 64, 64); c.moveTo(k + 64, 0); c.lineTo(k, 64); c.stroke(); } }), transparent: true, alphaTest: 0.3, side: THREE.DoubleSide });
+  vplane(g, 70, 1.7, fm, 0, H + 1.25, Z0 - 12);
+  const r = seeded(31); const leaf = ["#2f9f4a", "#26903f", "#3aae55"];
+  for (let i = 0; i < 9; i++) { const x = -34 + i * 8.4 + r() * 2, s = 1 + r() * 0.7; cy(g, 0.3 * s, 0.4 * s, 3.4 * s, T("#6a4a2a"), x, H + 1.7 * s, Z0 - 17, 0.015, 8); sp(g, 2.2 * s, T(leaf[i % 3]), x, H + 4.4 * s, Z0 - 17, 0.02, 14); sp(g, 1.5 * s, T(leaf[(i + 1) % 3]), x + 1.5 * s, H + 3.7 * s, Z0 - 16.6, 0.02, 12); }
+  bx(g, 16, 5, 6, T("#e8d6b4"), -22, H + 2.5, Z0 - 6.5, 0.02); bx(g, 16.8, 0.5, 6.8, T("#b24a3a"), -22, H + 5.2, Z0 - 6.5, 0.02);
+  for (let i = 0; i < 4; i++) bx(g, 1.8, 1.6, 0.1, T("#7fc6de"), -27 + i * 3.4, H + 2.6, Z0 - 3.45, 0.012);
+  bx(g, 3.2, 0.9, 0.2, T("#f4f7f0"), 6, H + 1.6, Z0 - 4); bx(g, 0.12, 1.6, 0.12, fenceM, 6, H + 0.8, Z0 - 4);
+  // ladder on the left wall (chrome rails over the rim, five steps), a second on the right
+  const chrome = metalMat("#d9dee8", 0.25);
+  const ladder = (lx: number, lz: number, dir: number) => {
+    for (const dz of [-0.28, 0.28]) {
+      cy(g, 0.028, 0.028, H + 0.55, chrome, lx + dir * 0.1, (H + 0.55) / 2 + 0.25, lz + dz, 0.008, 8);
+      cy(g, 0.028, 0.028, 0.5, chrome, lx - dir * 0.15, H + 0.55, lz + dz, 0.008, 8).rotation.z = PI / 2;
+      cy(g, 0.028, 0.028, H + 0.1, chrome, lx - dir * 0.4, (H + 0.1) / 2 + 0.2, lz + dz, 0.008, 8);
+    }
+    for (let i = 0; i < 5; i++) cy(g, 0.022, 0.022, 0.62, chrome, lx + dir * 0.1, 0.5 + i * 0.4, lz, 0.007, 8).rotation.x = PI / 2;
+  };
+  ladder(X0 + 0.12, -9.5, 1); ladder(X1 - 0.12, 4.5, -1);
+  // tennis net strung across the dry floor from wall to wall, with white band + centre strap + two posts
+  const post = T("#2a2f3e");
+  for (const sxn of [-1, 1]) cy(g, 0.07, 0.07, 1.1, post, sxn * 7.0, 0.55, NZ, 0.015, 8);
+  const nt = canvasTex(256, 32, (c) => { c.clearRect(0, 0, 256, 32); c.strokeStyle = "#e8eef8"; c.lineWidth = 2; for (let i = 0; i <= 64; i++) { c.beginPath(); c.moveTo(i * 4, 0); c.lineTo(i * 4, 32); c.stroke(); } for (let j = 0; j <= 8; j++) { c.beginPath(); c.moveTo(0, j * 4); c.lineTo(256, j * 4); c.stroke(); } });
+  vplane(g, 14.0, 0.95, new THREE.MeshBasicMaterial({ map: nt, transparent: true, alphaTest: 0.3, side: THREE.DoubleSide }), 0, 0.5, NZ);
+  bx(g, 14.0, 0.09, 0.05, T("#ffffff"), 0, 0.99, NZ, 0.012); bx(g, 0.07, 0.95, 0.04, T("#ffffff"), 0, 0.5, NZ);
+  for (const sxn of [-1, 1]) bx(g, 2.0, 0.03, 0.03, T("#d6dbe8"), sxn * 8.0, 0.97, NZ);        // cords to the walls
+  // set balls (hidden when the shot shows a ball) + racket + ball bucket + fallen leaves
+  const tb = new THREE.Group(); tb.userData.setBall = true; g.add(tb);
+  for (const [x, z] of [[1.4, 1.6], [2.0, 0.8], [-1.6, -1.8], [3.2, -2.4]] as V2[]) {
+    sp(tb, 0.11, T("#d6ec3a"), x, 0.11, z, 0.012, 14);
+    const sm = new THREE.Mesh(new THREE.TorusGeometry(0.11, 0.011, 4, 16), T("#ffffff")); sm.position.set(x, 0.11, z); sm.rotation.set(0.9, 0.4, 0); tb.add(sm);
+  }
+  const rk = new THREE.Group(); rk.position.set(-2.4, 0.035, 2.4); rk.rotation.set(0, 0.7, 0); g.add(rk);
+  const fr = new THREE.Mesh(new THREE.TorusGeometry(0.21, 0.025, 8, 24), T("#d6283a")); fr.scale.set(0.82, 1.15, 1); fr.rotation.x = -PI / 2; fr.position.set(0, 0, -0.34); outline(fr, 0.01); rk.add(fr);
+  const hd = cy(rk, 0.03, 0.03, 0.38, T("#1b1b22"), 0, 0.01, 0.12, 0.008, 8); hd.rotation.x = PI / 2;
+  cy(g, 0.17, 0.15, 0.5, T("#f2c230"), 4.4, 0.25, 1.2, 0.015, 14); cy(g, 0.175, 0.175, 0.06, T("#d6283a"), 4.4, 0.52, 1.2, 0, 14);
+  for (const [x, z, a] of [[-4, -3, 0.5], [5, -7, 1.9], [-6.5, 3, 2.7], [2.5, -12, 0.9], [-1, 6.5, 1.3]] as V3[]) { const lf = cy(g, 0.14, 0.14, 0.01, T("#a9702d"), x, 0.02, z, 0, 6); lf.rotation.y = a; lf.scale.set(1, 1, 0.7); }
+  const lights = mkLights(["#f2f8ff", "#9cc4cf", 1.3], ["#fff6e0", 2.7, [5, 14, 7]], [["#ffffff", 28, [0, 3.2, 3], 20]], 14);
+  void sp;
+  return { root: g, lights, fog: new THREE.Fog("#a8d6ff", 40, 110), bg: "#8ecbff", spots: { spot: [0, 0, 0], net: [0, 0.5, NZ], ladder: [X0 + 0.3, 1.2, -9.5], ball: [1.4, 0.11, 1.6], sign: [0, 1.6, Z0 + 0.1] } };
+}
+
 // ================= GOLF (one golf hole) =================
 function golf(): SetObj {
   const g = new THREE.Group();
@@ -1877,7 +1968,7 @@ function showroom(): SetObj {
 }
 const gold2 = () => T("#e6a418", { emissive: "#6a3a00", emissiveIntensity: 0.4 });
 
-const BUILD: Record<SetName, () => SetObj> = { throne, office, diner, lab, stall, field, ring: ring_, track, graveyard, boardroom, street, beach, court, pitch, diamond, gridiron, tennis, golf, gym, studio, farm, store, stage, space, garage, classroom, bathroom, mansion, showroom };
+const BUILD: Record<SetName, () => SetObj> = { throne, office, diner, lab, stall, field, ring: ring_, track, graveyard, boardroom, street, beach, court, pitch, diamond, gridiron, tennis, golf, pool, gym, studio, farm, store, stage, space, garage, classroom, bathroom, mansion, showroom };
 const CACHE = new Map<SetName, SetObj>();
 export const makeSet = (name: SetName): SetObj => {
   let s = CACHE.get(name);
