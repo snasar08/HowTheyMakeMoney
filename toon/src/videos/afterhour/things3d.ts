@@ -4,7 +4,7 @@ import { toonMat, metalMat, glowMat, canvasTex, seeded } from "./common";
 import { hasModel, makeModelGroup, MODEL_SIZE } from "./models";
 import { drawCard } from "./cards";
 
-export type ThingName = "shoe" | "springshoe" | "chip" | "gpu" | "cash" | "cashstack" | "coins" | "goldbar" | "trophy" | "medal" | "crown" | "ring" | "car" | "sportscar" | "bus" | "truck" | "rocket" | "phone" | "laptop" | "tv" | "monitor" | "clock" | "books" | "letter" | "newspaper" | "briefcase" | "shovel" | "pickaxe" | "box" | "crate" | "basketball" | "football" | "soccerball" | "hoop" | "mic" | "headset" | "controller" | "burger" | "pizza" | "coffee" | "plant" | "robot" | "drone" | "satellite" | "globe" | "house" | "factory" | "stadium" | "plane" | "yacht" | "chart" | "arrowup" | "arrowdown" | "lightbulb" | "lock" | "key" | "heart" | "bomb" | "fire" | "camera" | "chatbot" | "glasses" | "dumbbell" | "hanger" | "dome" | "console" | "golfball" | "golfclub" | "horse" | "baseball" | "guitar" | "rollercoaster" | "noodlecup" | "legobrick" | "eiffeltower" | "giantshovel";
+export type ThingName = "shoe" | "springshoe" | "chip" | "gpu" | "cash" | "cashstack" | "coins" | "goldbar" | "trophy" | "medal" | "crown" | "ring" | "car" | "sportscar" | "bus" | "truck" | "rocket" | "phone" | "laptop" | "tv" | "monitor" | "clock" | "books" | "letter" | "newspaper" | "briefcase" | "shovel" | "pickaxe" | "box" | "crate" | "basketball" | "football" | "soccerball" | "hoop" | "mic" | "headset" | "controller" | "burger" | "pizza" | "coffee" | "plant" | "robot" | "drone" | "satellite" | "globe" | "house" | "factory" | "stadium" | "plane" | "yacht" | "chart" | "arrowup" | "arrowdown" | "lightbulb" | "lock" | "key" | "heart" | "bomb" | "fire" | "camera" | "chatbot" | "glasses" | "dumbbell" | "hanger" | "dome" | "console" | "golfball" | "golfclub" | "horse" | "baseball" | "guitar" | "rollercoaster" | "noodlecup" | "legobrick" | "eiffeltower" | "giantshovel" | "icepop";
 export type Thing = { root: THREE.Group; size: number; tick?(t: number): void };
 
 type M = string | THREE.Material;
@@ -646,18 +646,27 @@ const B: Record<ThingName, Builder> = {
     lvl(1.05, 0.05, 0.08, 1); cone(o, 0.025, 0.2, "#d8dde8", 0, 1.23, 0, undefined, 8);
     return { g, tick: (t) => { o.rotation.y = Math.sin(t * 0.8) * 0.25; } };
   },
+  // Nov 21: an ice pop on a wooden stick: rounded two-tone body (orange over red, with a lighter shine stripe), pale wood stick, a drip, tilted a little
+  icepop: (c) => {
+    const g = new THREE.Group(); const o = new THREE.Group(); o.rotation.z = 0.12; g.add(o); const top = c ?? "#ff9a2e";
+    bx(o, 0.05, 0.28, 0.025, "#e8c48a", 0, 0.14, 0);                                   // stick
+    rbx(o, 0.26, 0.42, 0.1, 0.09, "#e5262f", 0, 0.5, 0);                               // body (red)
+    rbx(o, 0.26, 0.2, 0.104, 0.09, top, 0, 0.62, 0);                                   // orange top half
+    bx(o, 0.255, 0.04, 0.106, "#ffd23a", 0, 0.535, 0);                                 // yellow band where the colours meet
+    bx(o, 0.035, 0.26, 0.108, "#ffffff", -0.07, 0.5, 0);                               // shine stripe
+    sp(o, 0.032, "#e5262f", 0.05, 0.255, 0.0, [1, 1.5, 0.8], 10);                      // drip
+    return { g, tick: (t) => { o.rotation.z = 0.12 + Math.sin(t * 2.4) * 0.05; } };
+  },
   // Nov 21: a house-tall shovel standing blade-down in a dirt pile: huge steel blade, long wooden shaft, D-handle, a tiny person for scale
   giantshovel: (c) => {
     const g = new THREE.Group(); const o = new THREE.Group(); g.add(o); o.rotation.z = -0.1;
     cone(g, 0.5, 0.28, "#8a5a32", 0, 0.14, 0.0, undefined, 18); sp(g, 0.18, "#9a6a3a", 0.36, 0.06, 0.2, [1.3, 0.5, 1], 10); sp(g, 0.14, "#7a4a28", -0.34, 0.05, 0.22, [1.2, 0.5, 1], 10);
-    ext(o, [[-0.16, 0.5], [0.16, 0.5], [0.2, 0.15], [0.0, -0.08], [-0.2, 0.15]], 0.04, metalMat(c ?? "#b9c2d0", 0.35), 0, 0.1, -0.02, [0, 0, 0], 0.012);
+    ext(o, [[-0.22, 0.5], [0.22, 0.5], [0.26, 0.15], [0.0, -0.08], [-0.26, 0.15]], 0.05, metalMat(c ?? "#b9c2d0", 0.35), 0, 0.1, -0.02, [0, 0, 0], 0.012);
     cy(o, 0.04, 0.04, 0.12, metalMat("#8a93a0", 0.4), 0, 0.67, 0);
-    cy(o, 0.03, 0.03, 1.6, "#9a6a3a", 0, 1.45, 0, [0, 0, 0], 12);
+    cy(o, 0.045, 0.045, 1.6, "#9a6a3a", 0, 1.45, 0, [0, 0, 0], 12);
     to(o, 0.1, 0.028, "#9a6a3a", 0, 2.35, 0, [0, 0, 0], PI * 1.0);
     bx(o, 0.2, 0.05, 0.05, "#9a6a3a", 0, 2.255, 0);
-    const p = new THREE.Group(); p.position.set(0.55, 0.0, 0.3); g.add(p);
-    cy(p, 0.025, 0.025, 0.1, "#2b3a67", 0, 0.05, 0); cy(p, 0.03, 0.03, 0.1, "#e5233b", 0, 0.15, 0); sp(p, 0.032, "#f2c9a0", 0, 0.225);
-    return { g, tick: (t) => { o.rotation.z = -0.1 + Math.sin(t * 1.5) * 0.015; p.position.y = Math.abs(Math.sin(t * 3)) * 0.01; } };
+    return { g, tick: (t) => { o.rotation.z = -0.1 + Math.sin(t * 1.5) * 0.015; } };
   },
   // Nov 21: a white baseball with two red stitched seams
   baseball: (c) => {
