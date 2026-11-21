@@ -1,0 +1,44 @@
+{
+  "https://about.netflix.com/en/news": {
+    "file": "pages/3796bfb1beec.txt",
+    "fetched_at": "2026-11-21T18:48:43.368296+00:00",
+    "ok": false,
+    "error": "HTTP 404"
+  },
+  "https://en.wikipedia.org/wiki/Netflix": {
+    "file": "pages/66995a6bf5c7.txt",
+    "fetched_at": "2026-11-21T18:48:43.834379+00:00",
+    "ok": true,
+    "chars": 254024,
+    "status": 200,
+    "final_url": "https://en.wikipedia.org/wiki/Netflix",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://frontofficesports.com/article/netflix-releases-q3-earnings-preps-big-q4-live-sports/": {
+    "file": "pages/7e602e5906b3.txt",
+    "fetched_at": "2026-11-21T18:48:44.421566+00:00",
+    "ok": true,
+    "chars": 8489,
+    "status": 200,
+    "final_url": "https://frontofficesports.com/article/netflix-releases-q3-earnings-preps-big-q4-live-sports/",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "https://ir.netflix.net/": {
+    "file": "pages/7e3a8a91d3c7.txt",
+    "fetched_at": "2026-11-21T18:48:44.797963+00:00",
+    "ok": true,
+    "chars": 2067,
+    "status": 200,
+    "final_url": "https://ir.netflix.net/ir-overview/profile/default.aspx",
+    "content_type": "text/html; charset=utf-8"
+  },
+  "https://www.sportsmediawatch.com/2026/05/netflix-nfl-deal-expanded-christmas-thanksgiving-eve-first-last-weeks-season/": {
+    "file": "pages/39c94f095f74.txt",
+    "fetched_at": "2026-11-21T18:48:45.351362+00:00",
+    "ok": true,
+    "chars": 20102,
+    "status": 200,
+    "final_url": "https://www.sportsmediawatch.com/2026/05/netflix-nfl-deal-expanded-christmas-thanksgiving-eve-first-last-weeks-season/",
+    "content_type": "text/html; charset=UTF-8"
+  }
+}
