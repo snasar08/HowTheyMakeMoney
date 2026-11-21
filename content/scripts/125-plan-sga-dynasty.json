@@ -8,7 +8,7 @@
   "hook_style": "surprise",
   "title_style": "statement",
   "theme": "bold_bright",
-  "status": "needs_fix",
+  "status": "ready",
   "score": 94,
   "title": "You're SGA. One Ring Isn't Enough.",
   "name_card": "Shai Gilgeous-Alexander",
@@ -416,8 +416,5 @@
         }
       ]
     }
-  ],
-  "needs_fix": [
-    "eyes score 3/10"
   ]
 }

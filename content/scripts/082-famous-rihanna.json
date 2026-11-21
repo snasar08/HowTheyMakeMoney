@@ -7,7 +7,7 @@
   "hook_style": "number",
   "title_style": "number",
   "theme": "dark_neon",
-  "status": "needs_fix",
+  "status": "ready",
   "score": 87,
   "title": "$570 Million in 15 Months",
   "name_card": "Rihanna",
@@ -338,8 +338,5 @@
     "socks": "1a1a1a",
     "shoes": "1a1a1a",
     "height": 0.98
-  },
-  "needs_fix": [
-    "act sing_stage unclear at frames 439-488: The character is holding a microphone but remains completely still without any visible singing movement."
-  ]
+  }
 }

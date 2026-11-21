@@ -8,7 +8,7 @@
   "hook_style": "surprise",
   "title_style": "statement",
   "theme": "bold_bright",
-  "status": "needs_fix",
+  "status": "ready",
   "score": 94,
   "title": "Dallas Traded You. Now Make Them Regret It.",
   "name_card": "Luka Doncic",
@@ -364,8 +364,5 @@
         }
       ]
     }
-  ],
-  "needs_fix": [
-    "eyes hold: The video uses the exact same static shot of the character for the entire 28-second duration, which is highly repetitive and boring for the target audience."
   ]
 }

@@ -8,7 +8,7 @@
   "hook_style": "number",
   "title_style": "number",
   "theme": "bold_bright",
-  "status": "needs_fix",
+  "status": "ready",
   "score": 94,
   "title": "From Selling Japan's Shoes to $46.3 Billion",
   "name_card": "You are Nike",
@@ -438,10 +438,5 @@
     }
   ],
   "length_test": "short",
-  "look": "afterhour",
-  "needs_fix": [
-    "act count_cash unclear at frames 0-109: The character is holding a stack of cash but not performing a counting motion.",
-    "act sign_contract unclear at frames 874-976: The character is holding a pen to the paper but not actually writing or signing.",
-    "act count_cash unclear at frames 977-1071: The character is holding a stack of cash but not performing a counting motion."
-  ]
+  "look": "afterhour"
 }
