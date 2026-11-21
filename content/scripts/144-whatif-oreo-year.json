@@ -7,7 +7,7 @@
   "hook_style": "number",
   "title_style": "whatif",
   "theme": "bold_bright",
-  "status": "draft",
+  "status": "ready",
   "score": 90,
   "title": "What If You Ate All 40 Billion Oreos?",
   "name_card": "What if you ate every Oreo",
@@ -58,7 +58,7 @@
             "fg": "#ffffff"
           },
           "things": [
-            "donut"
+            "cookie"
           ],
           "card": {
             "text": "40 BILLION",
@@ -70,7 +70,7 @@
       ]
     },
     {
-      "narration": "You start with one cookie every second. You eat the cookie, then dunk the next one in milk.",
+      "narration": "You start with one cookie every second. You eat the cookie, then dip the next one in milk.",
       "visual": {
         "type": "lowpoly",
         "set": "diner",
@@ -84,7 +84,7 @@
           "place": "diner",
           "mood": "excited",
           "things": [
-            "donut",
+            "cookie",
             "clock"
           ],
           "view": "ms"
@@ -93,8 +93,8 @@
           "place": "diner",
           "mood": "happy",
           "things": [
-            "donut",
-            "coffee"
+            "cookie",
+            "milk_carton"
           ],
           "view": "ws"
         }
@@ -139,7 +139,7 @@
           "mood": "nervous",
           "things": [
             "box",
-            "donut"
+            "cookie"
           ],
           "card": {
             "text": "40 BILLION",
@@ -170,7 +170,7 @@
           "place": "diner",
           "mood": "laugh",
           "things": [
-            "donut"
+            "cookie"
           ],
           "view": "ms"
         }
@@ -182,6 +182,5 @@
       "title": "Wikipedia: Oreo",
       "url": "https://en.wikipedia.org/wiki/Oreo"
     }
-  ],
-  "draft_note": "Part 1 (Nov 21): checks pass; waits for the cookie + milk objects (things-test/20261121-p1). Swap donut->cookie, coffee->milk, then ready."
+  ]
 }
