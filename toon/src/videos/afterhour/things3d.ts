@@ -470,7 +470,7 @@ const B: Record<ThingName, Builder> = {
   },
   // Nov 21: a home game console (neutral grey/white box, disc slot, glowing light, vents) + one plain pad in front. No real console shape or logo.
   console: (c) => {
-    const g = new THREE.Group(); const col = c ?? "#e6e9ef"; const dk = "#3a4050";
+    const root = new THREE.Group(); const g = new THREE.Group(); g.rotation.set(0.5, -0.35, 0); root.add(g); const col = c ?? "#e6e9ef"; const dk = "#3a4050";
     rbx(g, 0.34, 0.075, 0.22, 0.02, col, -0.03, 0.075, -0.02);
     bx(g, 0.35, 0.02, 0.23, "#b9c0cc", -0.03, 0.01, -0.02);
     bx(g, 0.2, 0.008, 0.012, "#14161d", -0.03, 0.095, 0.094);                   // disc slot
@@ -478,13 +478,13 @@ const B: Record<ThingName, Builder> = {
     cy(g, 0.012, 0.012, 0.01, "#9aa3b5", -0.15, 0.1, 0.1, [PI / 2, 0, 0], 14);  // power button
     const led = bx(g, 0.05, 0.008, 0.008, glowMat("#38bdf8", 2.2), 0.07, 0.07, 0.1);
     // the pad: dark grey body so it contrasts, clear handles, two light sticks, four coloured buttons, a d-pad
-    const o = new THREE.Group(); o.position.set(0.13, 0, 0.19); o.rotation.y = -0.2; g.add(o);
+    const o = new THREE.Group(); o.position.set(0.12, 0.0, 0.2); o.rotation.y = -0.2; o.scale.setScalar(0.9); g.add(o);
     sp(o, 0.05, "#4b5163", 0, 0.03, 0, [1.35, 0.5, 0.85], 20);
     for (const s of [-1, 1]) { const h = sp(o, 0.034, "#2d313d", s * 0.068, 0.022, 0.034, [0.8, 0.62, 1.7], 14); h.rotation.y = s * 0.4; }
     for (const s of [-1, 1]) { cy(o, 0.014, 0.014, 0.016, "#d8dde8", s * 0.026, 0.062, 0.012, undefined, 14); }
     bx(o, 0.03, 0.012, 0.01, "#d8dde8", -0.05, 0.062, -0.018); bx(o, 0.01, 0.012, 0.03, "#d8dde8", -0.05, 0.062, -0.018);
     const bc = ["#22c55e", "#ef4444", "#3b82f6", "#facc15"]; [[0, 0.016], [0.016, 0], [-0.016, 0], [0, -0.016]].forEach((q, i) => cy(o, 0.009, 0.009, 0.012, bc[i], 0.052 + q[0], 0.062, -0.018 + q[1], undefined, 12));
-    return { g, tick: (t) => { (led.material as THREE.MeshBasicMaterial).color.set("#38bdf8").multiplyScalar(1.4 + 0.9 * Math.sin(t * 3)); } };
+    return { g: root, tick: (t) => { (led.material as THREE.MeshBasicMaterial).color.set("#38bdf8").multiplyScalar(1.4 + 0.9 * Math.sin(t * 3)); } };
   },
   // Nov 21: a white dimpled golf ball on a wooden tee
   golfball: (c) => {
