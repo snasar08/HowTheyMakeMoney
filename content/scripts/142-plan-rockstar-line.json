@@ -8,7 +8,7 @@
   "hook_style": "number",
   "title_style": "number",
   "theme": "dark_neon",
-  "status": "draft",
+  "status": "ready",
   "score": 92,
   "title": "GTA 6 Made $3.79 Billion in One Day",
   "name_card": "You are Rockstar Games",
@@ -115,7 +115,7 @@
       ]
     },
     {
-      "narration": "Still not enough? So you build a giant door to the front.",
+      "narration": "Still not enough? So you drop a copy on every doorstep on Earth.",
       "visual": {
         "type": "lowpoly",
         "set": "showroom",
@@ -133,7 +133,7 @@
           "view": "face"
         },
         {
-          "place": "showroom",
+          "place": "street",
           "mood": "proud",
           "things": [
             "box",
