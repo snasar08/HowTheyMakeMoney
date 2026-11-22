@@ -47,7 +47,20 @@
         "crowd": 0,
         "props": [
           "boxes"
-        ]
+        ],
+        "hero": {
+          "skin": "d9a577",
+          "hair": "short",
+          "hair_color": "2a1d14",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "111111",
+          "pants": "2b2f3a",
+          "shoes": "f4f4f4",
+          "chest": "NIKE",
+          "trim": "ffffff",
+          "height": 1.0
+        }
       },
       "toon": [
         {
@@ -96,7 +109,20 @@
         "set": "office",
         "action": "work",
         "crowd": 0,
-        "props": []
+        "props": [],
+        "hero": {
+          "skin": "d9a577",
+          "hair": "short",
+          "hair_color": "2a1d14",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "111111",
+          "pants": "2b2f3a",
+          "shoes": "f4f4f4",
+          "chest": "NIKE",
+          "trim": "ffffff",
+          "height": 1.0
+        }
       },
       "toon": [
         {
@@ -151,7 +177,20 @@
         "crowd": 60,
         "props": [
           "cash"
-        ]
+        ],
+        "hero": {
+          "skin": "d9a577",
+          "hair": "short",
+          "hair_color": "2a1d14",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "111111",
+          "pants": "2b2f3a",
+          "shoes": "f4f4f4",
+          "chest": "NIKE",
+          "trim": "ffffff",
+          "height": 1.0
+        }
       },
       "toon": [
         {
@@ -177,7 +216,20 @@
         "props": [
           "ball",
           "check"
-        ]
+        ],
+        "hero": {
+          "skin": "d9a577",
+          "hair": "short",
+          "hair_color": "2a1d14",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "111111",
+          "pants": "2b2f3a",
+          "shoes": "f4f4f4",
+          "chest": "NIKE",
+          "trim": "ffffff",
+          "height": 1.0
+        }
       },
       "toon": [
         {
@@ -237,7 +289,20 @@
         "set": "city",
         "action": "idle",
         "crowd": 40,
-        "props": []
+        "props": [],
+        "hero": {
+          "skin": "d9a577",
+          "hair": "short",
+          "hair_color": "2a1d14",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "111111",
+          "pants": "2b2f3a",
+          "shoes": "f4f4f4",
+          "chest": "NIKE",
+          "trim": "ffffff",
+          "height": 1.0
+        }
       },
       "toon": [
         {
@@ -278,7 +343,20 @@
         "crowd": 0,
         "props": [
           "check"
-        ]
+        ],
+        "hero": {
+          "skin": "d9a577",
+          "hair": "short",
+          "hair_color": "2a1d14",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "111111",
+          "pants": "2b2f3a",
+          "shoes": "f4f4f4",
+          "chest": "NIKE",
+          "trim": "ffffff",
+          "height": 1.0
+        }
       },
       "toon": [
         {
@@ -314,7 +392,20 @@
         "crowd": 300,
         "props": [
           "cash"
-        ]
+        ],
+        "hero": {
+          "skin": "d9a577",
+          "hair": "short",
+          "hair_color": "2a1d14",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "111111",
+          "pants": "2b2f3a",
+          "shoes": "f4f4f4",
+          "chest": "NIKE",
+          "trim": "ffffff",
+          "height": 1.0
+        }
       },
       "toon": [
         {

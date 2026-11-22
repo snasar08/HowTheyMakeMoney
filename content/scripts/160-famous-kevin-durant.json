@@ -1,0 +1,198 @@
+{
+  "id": "160",
+  "slug": "famous-kevin-durant",
+  "company": "Kevin Durant",
+  "format": "famous",
+  "visual_style": "lowpoly",
+  "hook_style": "number",
+  "title_style": "number",
+  "theme": "bold_bright",
+  "status": "ready",
+  "score": 88,
+  "title": "Kevin Durant Bought a 515 Acre Amusement Park",
+  "name_card": "Kevin Durant",
+  "name_sub": "NBA scoring great",
+  "description": "In April 2026, Kevin Durant's company, Thirty Five Ventures, bought the 515 acre Six Flags America amusement park property in Prince George's County, Maryland, where he grew up.\n\nSources:\n- Wikipedia: Kevin Durant: https://en.wikipedia.org/wiki/Kevin_Durant\n- Wikipedia: Rich Kleiman: https://en.wikipedia.org/wiki/Rich_Kleiman\n\nFrom the cited pages: in April 2026 Thirty Five Ventures acquired the Six Flags America property, 515 acres, from Six Flags Entertainment Corporation; Durant grew up in Prince George's County, Maryland, and was 6 ft 0 in middle school; he and Rich Kleiman founded Thirty Five Ventures in 2017; its film Two Distant Strangers won the 2021 Academy Award for Short Film (Live Action); Forbes has listed him among the world's ten highest-paid athletes ten times; in October 2025 he signed a two-year, $90 million extension with the Houston Rockets. Not financial advice.\n\n#shorts #kevindurant #nba #howtheymakemoney",
+  "tags": [
+    "kevin durant",
+    "nba",
+    "rockets",
+    "famous",
+    "shorts"
+  ],
+  "images": {},
+  "loop": "So remember:",
+  "cta": "Durant or LeBron? Comment your pick.",
+  "cta_question": "Durant or LeBron?",
+  "hero": {
+    "skin": "8d5a3b",
+    "hair": "buzz",
+    "hair_color": "1a1410",
+    "beard": "full",
+    "outfit": "kit",
+    "shirt": "ce1141",
+    "pants": "ce1141",
+    "shoes": "ffffff",
+    "chest": "",
+    "trim": "c4ced4",
+    "number": "7",
+    "height": 1.3
+  },
+  "scenes": [
+    {
+      "narration": "In April 2026, Kevin Durant's company bought a 515 acre amusement park.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "throne",
+          "mood": "proud",
+          "beat": "money",
+          "things": [
+            "rollercoaster"
+          ],
+          "card": {
+            "text": "515 ACRES",
+            "kind": "screen",
+            "sub": "APRIL 2026"
+          },
+          "view": "ms"
+        }
+      ]
+    },
+    {
+      "narration": "But Thirty Five Ventures didn't just buy a ticket. It bought the whole park.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "street",
+          "mood": "shock",
+          "things": [
+            "house",
+            "cash"
+          ],
+          "card": {
+            "text": "THIRTY FIVE VENTURES",
+            "kind": "sign",
+            "sub": "KEVIN DURANT'S FIRM"
+          },
+          "view": "ms"
+        },
+        {
+          "place": "boardroom",
+          "mood": "scheme",
+          "things": [
+            "briefcase"
+          ],
+          "card": {
+            "text": "WHOLE PARK",
+            "kind": "white"
+          },
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "The park sits in Prince George's County, Maryland. That's where Durant grew up.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "street",
+          "mood": "calm",
+          "things": [
+            "house"
+          ],
+          "card": {
+            "text": "MARYLAND",
+            "kind": "sign",
+            "sub": "PRINCE GEORGE'S COUNTY"
+          },
+          "view": "ws"
+        },
+        {
+          "place": "classroom",
+          "mood": "happy",
+          "things": [
+            "books"
+          ],
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "In 2025, he signed a 90 million dollar extension with Houston.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "court",
+          "mood": "excited",
+          "things": [
+            "cashstack"
+          ],
+          "beat": "money",
+          "card": {
+            "text": "$90 MILLION",
+            "kind": "screen",
+            "sub": "2025 EXTENSION"
+          },
+          "view": "ms"
+        }
+      ]
+    },
+    {
+      "narration": "Still, the Maryland kid now owns a piece of home.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "street",
+          "mood": "laugh",
+          "things": [
+            "house",
+            "crown"
+          ],
+          "view": "face"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Kevin Durant",
+      "url": "https://en.wikipedia.org/wiki/Kevin_Durant"
+    },
+    {
+      "title": "Wikipedia: Rich Kleiman",
+      "url": "https://en.wikipedia.org/wiki/Rich_Kleiman"
+    }
+  ],
+  "look": "afterhour"
+}

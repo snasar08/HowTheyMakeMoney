@@ -1,0 +1,313 @@
+{
+  "id": "163",
+  "slug": "plan-chase-quarterback",
+  "company": "Ja'Marr Chase",
+  "format": "story",
+  "story_mode": "plan",
+  "visual_style": "lowpoly",
+  "hook_style": "number",
+  "title_style": "number",
+  "theme": "bold_bright",
+  "status": "ready",
+  "score": 88,
+  "title": "Chase's 231 Yards: A Made-Up Plan",
+  "name_card": "You're Ja'Marr Chase",
+  "name_sub": "a made-up plan",
+  "description": "You're Ja'Marr Chase, and you just caught 231 yards. This is a made-up plan for fun, not news about Ja'Marr Chase or the Bengals. Only step one is real.\n\nSources:\n- Tixel news, Nov 17, 2026: https://tixel.com/us/news/2026/11/17/jamarr-chases-stellar-performance-propels-bengals-to\n- Yardbarker, Nov 19, 2026: https://www.yardbarker.com/nfl/articles/jamarr_chase_debuts_perfect_joe_burrow_impression/s1_127_44588458\n- ClutchPoints, Nov 19, 2026: https://clutchpoints.com/nfl/washington-commanders/bengals-news-jamarr-chase-joe-burrows-illness-with-jersey-swap\n- Wikipedia: Ja'Marr Chase: https://en.wikipedia.org/wiki/Ja%27Marr_Chase\n\nFrom the cited pages: on Sunday, Nov 15, 2026, Chase caught 11 of 14 targets for 231 yards in Cincinnati's 38 to 18 win over Pittsburgh. On Nov 19, 2026, Chase did a Joe Burrow impression with a jersey swap. Every later step in the Short (throwing to yourself, calling every play, the empty stadium, the final catch) is imagined. Not financial advice.\n\n#shorts #jamarrchase #nfl #madeupplan #howtheymakemoney",
+  "tags": [
+    "ja'marr chase",
+    "joe burrow",
+    "nfl",
+    "plan",
+    "story",
+    "shorts"
+  ],
+  "images": {},
+  "loop": "So remember:",
+  "cta": "Chase or Burrow? Pick one.",
+  "cta_question": "Chase or Burrow?",
+  "hero": {
+    "skin": "8d5a3b",
+    "hair": "curly",
+    "hair_color": "1a1a1a",
+    "beard": "none",
+    "outfit": "kit",
+    "shirt": "fb4f14",
+    "pants": "111111",
+    "shoes": "111111",
+    "chest": "",
+    "trim": "111111",
+    "socks": "fb4f14",
+    "number": "1",
+    "height": 1.05
+  },
+  "scenes": [
+    {
+      "narration": "You're Ja'Marr Chase, and you just caught 231 yards in one game. Then you dress up as your quarterback, Joe Burrow, for a laugh. But a receiver's whole job is waiting for the ball.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "hero": {
+          "skin": "8d5a3b",
+          "hair": "curly",
+          "hair_color": "1a1a1a",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "fb4f14",
+          "pants": "111111",
+          "shoes": "111111",
+          "chest": "",
+          "trim": "111111",
+          "socks": "fb4f14",
+          "number": "1",
+          "height": 1.05
+        }
+      },
+      "toon": [
+        {
+          "place": "gridiron",
+          "mood": "proud",
+          "things": [
+            "football"
+          ],
+          "card": {
+            "text": "231 YARDS",
+            "kind": "screen",
+            "sub": "NOV 15, 2026"
+          },
+          "crowd": 120,
+          "view": "low"
+        },
+        {
+          "place": "stage",
+          "mood": "laugh",
+          "card": {
+            "text": "JERSEY SWAP",
+            "kind": "sign",
+            "sub": "YOUR BURROW IMPRESSION"
+          },
+          "view": "ms"
+        },
+        {
+          "place": "gridiron",
+          "mood": "calm",
+          "action": "stand",
+          "things": [
+            "football"
+          ],
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "So you throw the first pass to yourself. Still not enough?",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "hero": {
+          "skin": "8d5a3b",
+          "hair": "curly",
+          "hair_color": "1a1a1a",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "fb4f14",
+          "pants": "111111",
+          "shoes": "111111",
+          "chest": "",
+          "trim": "111111",
+          "socks": "fb4f14",
+          "number": "1",
+          "height": 1.05
+        }
+      },
+      "toon": [
+        {
+          "place": "gridiron",
+          "mood": "scheme",
+          "things": [
+            "football"
+          ],
+          "view": "wide"
+        },
+        {
+          "place": "gridiron",
+          "mood": "dazed",
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "So you call every play, then sprint out and catch it. Still not enough?",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "hero": {
+          "skin": "8d5a3b",
+          "hair": "curly",
+          "hair_color": "1a1a1a",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "fb4f14",
+          "pants": "111111",
+          "shoes": "111111",
+          "chest": "",
+          "trim": "111111",
+          "socks": "fb4f14",
+          "number": "1",
+          "height": 1.05
+        }
+      },
+      "toon": [
+        {
+          "place": "boardroom",
+          "mood": "excited",
+          "action": "point",
+          "things": [
+            "chart"
+          ],
+          "view": "ms"
+        },
+        {
+          "place": "track",
+          "mood": "nervous",
+          "things": [
+            "football"
+          ],
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "But your team has nothing to do, and the stadium empties. Suddenly, Burrow walks in and throws you the ball.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "hero": {
+          "skin": "8d5a3b",
+          "hair": "curly",
+          "hair_color": "1a1a1a",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "fb4f14",
+          "pants": "111111",
+          "shoes": "111111",
+          "chest": "",
+          "trim": "111111",
+          "socks": "fb4f14",
+          "number": "1",
+          "height": 1.05
+        }
+      },
+      "toon": [
+        {
+          "place": "gridiron",
+          "mood": "sad",
+          "things": [
+            "stadium"
+          ],
+          "crowd": 0,
+          "view": "low"
+        },
+        {
+          "place": "gridiron",
+          "mood": "relief",
+          "who": {
+            "jacket": "#fb4f14",
+            "pants": "#111111",
+            "boots": "#111111",
+            "hat": "hair",
+            "style": "short",
+            "hair": "#5a3a22",
+            "skin": "#e0b48f",
+            "kit": "football",
+            "num": "9",
+            "trim": "#111111"
+          },
+          "action": "throw",
+          "things": [
+            "football"
+          ],
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "You catch it, and the crowd roars. Turns out waiting for a friend's pass beats holding it alone.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "hero": {
+          "skin": "8d5a3b",
+          "hair": "curly",
+          "hair_color": "1a1a1a",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "fb4f14",
+          "pants": "111111",
+          "shoes": "111111",
+          "chest": "",
+          "trim": "111111",
+          "socks": "fb4f14",
+          "number": "1",
+          "height": 1.05
+        }
+      },
+      "toon": [
+        {
+          "place": "gridiron",
+          "mood": "laugh",
+          "things": [
+            "football"
+          ],
+          "crowd": 200,
+          "view": "ms"
+        },
+        {
+          "place": "gridiron",
+          "mood": "proud",
+          "action": "fistpump",
+          "things": [
+            "football"
+          ],
+          "crowd": 200,
+          "view": "face"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Tixel: Chase's performance vs Steelers (Nov 17, 2026)",
+      "url": "https://tixel.com/us/news/2026/11/17/jamarr-chases-stellar-performance-propels-bengals-to"
+    },
+    {
+      "title": "Yardbarker: Chase debuts perfect Burrow impression (Nov 19, 2026)",
+      "url": "https://www.yardbarker.com/nfl/articles/jamarr_chase_debuts_perfect_joe_burrow_impression/s1_127_44588458"
+    },
+    {
+      "title": "ClutchPoints: Chase makes light of Burrow's illness (Nov 19, 2026)",
+      "url": "https://clutchpoints.com/nfl/washington-commanders/bengals-news-jamarr-chase-joe-burrows-illness-with-jersey-swap"
+    },
+    {
+      "title": "Wikipedia: Ja'Marr Chase",
+      "url": "https://en.wikipedia.org/wiki/Ja%27Marr_Chase"
+    }
+  ],
+  "length_test": "short",
+  "look": "afterhour"
+}

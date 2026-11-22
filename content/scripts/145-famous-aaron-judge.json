@@ -1,0 +1,178 @@
+{
+  "id": "145",
+  "slug": "famous-aaron-judge",
+  "company": "Aaron Judge",
+  "format": "famous",
+  "visual_style": "lowpoly",
+  "hook_style": "number",
+  "title_style": "number",
+  "theme": "dark_neon",
+  "status": "ready",
+  "score": 91,
+  "title": "Aaron Judge Passed on $213.5 Million",
+  "name_card": "Aaron Judge",
+  "name_sub": "baseball star",
+  "description": "Before the 2022 season, the Yankees offered Aaron Judge a seven-year, $213.5 million extension (per GM Brian Cashman). Judge did not sign it, played 2022 on a one-year deal, and hit 62 home runs, the American League single-season record. After the season he re-signed with the Yankees on a nine-year, $360 million contract. He was born April 26, 1992 and adopted one day later.\n\nSources:\n- Wikipedia: Aaron Judge: https://en.wikipedia.org/wiki/Aaron_Judge\n\nNot financial advice.\n\n#shorts #aaronjudge #yankees #howtheymakemoney",
+  "tags": [
+    "aaron judge",
+    "yankees",
+    "baseball",
+    "famous",
+    "shorts"
+  ],
+  "images": {},
+  "hud_label": "HIS BET",
+  "loop": "So next time you doubt yourself, remember:",
+  "cta": "Judge or Ohtani? Comment your pick.",
+  "cta_question": "Judge or Ohtani?",
+  "hero": {
+    "skin": "c08a62",
+    "hair": "short",
+    "hair_color": "1a1210",
+    "beard": "stubble",
+    "outfit": "kit",
+    "shirt": "f4f4f4",
+    "pants": "f4f4f4",
+    "trim": "0c2340",
+    "socks": "0c2340",
+    "shoes": "111111",
+    "height": 1.3,
+    "number": 99
+  },
+  "scenes": [
+    {
+      "narration": "Aaron Judge passed on 213.5 million dollars and bet on himself.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "diamond",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "diamond",
+          "mood": "stern",
+          "beat": "money",
+          "card": {
+            "text": "$213.5 MILLION",
+            "kind": "screen",
+            "sub": "OFFER, NOT SIGNED"
+          },
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "In 2022, he hit 62 home runs, a new American League record.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "diamond",
+        "action": "idle",
+        "crowd": 120,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "diamond",
+          "mood": "excited",
+          "things": [
+            "stadium"
+          ],
+          "card": {
+            "text": "62",
+            "kind": "sign",
+            "sub": "HOME RUNS"
+          },
+          "crowd": 120,
+          "view": "wide"
+        }
+      ]
+    },
+    {
+      "narration": "Then he signed a nine-year, 360 million dollar deal.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "boardroom",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "boardroom",
+          "mood": "proud",
+          "things": [
+            "cashstack"
+          ],
+          "card": {
+            "text": "$360 MILLION",
+            "kind": "screen",
+            "sub": "NINE YEARS"
+          },
+          "view": "ms"
+        }
+      ]
+    },
+    {
+      "narration": "As a baby, he was adopted by two teachers. Now he is the captain of the Yankees.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "classroom",
+        "action": "idle",
+        "crowd": 200,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "classroom",
+          "mood": "happy",
+          "things": [
+            "books"
+          ],
+          "view": "face"
+        },
+        {
+          "place": "diamond",
+          "mood": "proud",
+          "brand": {
+            "name": "YANKEES",
+            "bg": "#0c2340",
+            "fg": "#ffffff"
+          },
+          "things": [
+            "trophy"
+          ],
+          "crowd": 200,
+          "view": "wide"
+        }
+      ]
+    },
+    {
+      "narration": "Turns out, the safest bet was on himself.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "throne",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "throne",
+          "mood": "laugh",
+          "things": [
+            "crown"
+          ],
+          "view": "face"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Aaron Judge",
+      "url": "https://en.wikipedia.org/wiki/Aaron_Judge"
+    }
+  ]
+}

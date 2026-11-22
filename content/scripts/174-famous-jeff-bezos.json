@@ -1,0 +1,207 @@
+{
+  "id": "174",
+  "slug": "famous-jeff-bezos",
+  "company": "Jeff Bezos",
+  "format": "famous",
+  "visual_style": "lowpoly",
+  "hook_style": "number",
+  "title_style": "number",
+  "theme": "clean_navy",
+  "status": "ready",
+  "score": 90,
+  "title": "His Parents Put $245,573 Into Amazon",
+  "name_card": "Jeff Bezos",
+  "name_sub": "Amazon founder",
+  "description": "In 1995, Jeff Bezos's parents put 245,573 dollars into Amazon. Here is what happened next.\n\nSources:\n- Fortune: Runs in the Family: Jeff Bezos's Parents Might Also Be Ridiculously Rich: https://fortune.com/2018/07/31/jeff-bezos-family-investment-amazon/\n- Fox News / Newser: Jeff Bezos' parents invested $245G, could be mindbogglingly rich: https://www.foxnews.com/tech/jeff-bezos-parents-invested-245g-could-be-mindbogglingly-rich\n- Wikipedia: Jeff Bezos: https://en.wikipedia.org/wiki/Jeff_Bezos\n\nFrom the cited pages: Jackie and Mike Bezos put $245,573 into Amazon in 1995, according to a prospectus two years later (Fortune); Jeff warned them how risky it was (Fortune); Mike Bezos, a Cuban immigrant and Jeff's stepfather (he adopted him in 1968, per Wikipedia), said they had saved a few pennies and were able to be angel investors (Fortune); Bloomberg estimated in 2018 that their stake could be worth almost $30 billion, a guess that depends on how many shares they still held (Fortune); in 2026 Jeff Bezos's net worth was about $284 billion per Bloomberg and Forbes (Wikipedia). Not financial advice.\n\n#shorts #jeffbezos #amazon #howtheymakemoney",
+  "tags": [
+    "jeff bezos",
+    "amazon",
+    "famous",
+    "shorts"
+  ],
+  "images": {},
+  "loop": "So remember:",
+  "cta": "Bezos or Musk? Pick one.",
+  "cta_question": "Bezos or Musk?",
+  "hero": {
+    "skin": "e8bc92",
+    "hair": "bald",
+    "hair_color": "2a1d14",
+    "beard": "none",
+    "outfit": "tee",
+    "shirt": "2b3a55",
+    "pants": "2b2f3a",
+    "shoes": "1a1a1a",
+    "chest": "",
+    "trim": "ffffff",
+    "height": 1.0
+  },
+  "scenes": [
+    {
+      "narration": "In 1995, Jeff Bezos's parents put 245,573 dollars into Amazon.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "garage",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "garage",
+          "mood": "proud",
+          "beat": "money",
+          "things": [
+            "cashstack"
+          ],
+          "brand": {
+            "name": "Amazon",
+            "bg": "#232f3e",
+            "fg": "#ff9900"
+          },
+          "card": {
+            "text": "$245,573",
+            "kind": "screen",
+            "sub": "FROM HIS PARENTS, 1995"
+          },
+          "view": "ms"
+        }
+      ]
+    },
+    {
+      "narration": "But he warned them it was very risky.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "office",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "diner",
+          "mood": "nervous",
+          "things": [
+            "bomb"
+          ],
+          "card": {
+            "text": "VERY RISKY",
+            "kind": "sign"
+          },
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "His stepdad Mike said they just saved a few pennies.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "house",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "street",
+          "mood": "proud",
+          "things": [
+            "coins"
+          ],
+          "card": {
+            "text": "A FEW PENNIES",
+            "kind": "white"
+          },
+          "view": "ms"
+        }
+      ]
+    },
+    {
+      "narration": "Then Bloomberg guessed in 2018 their stake could be worth almost 30 billion dollars.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "mansion",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "throne",
+          "mood": "shock",
+          "things": [
+            "chart",
+            "cashstack"
+          ],
+          "card": {
+            "text": "$30 BILLION",
+            "kind": "screen",
+            "sub": "BLOOMBERG GUESS, 2018"
+          },
+          "view": "wide"
+        }
+      ]
+    },
+    {
+      "narration": "Today, Jeff Bezos himself is worth about 284 billion dollars.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "mansion",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "mansion",
+          "mood": "proud",
+          "beat": "money",
+          "things": [
+            "yacht"
+          ],
+          "card": {
+            "text": "$284 BILLION",
+            "kind": "screen",
+            "sub": "BEZOS, 2026"
+          },
+          "view": "ms"
+        }
+      ]
+    },
+    {
+      "narration": "Not bad for just one risky favor from Mom and Dad.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "street",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "classroom",
+          "mood": "laugh",
+          "things": [
+            "heart"
+          ],
+          "view": "face"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Fortune: Runs in the Family: Jeff Bezos's Parents Might Also Be Ridiculously Rich",
+      "url": "https://fortune.com/2018/07/31/jeff-bezos-family-investment-amazon/"
+    },
+    {
+      "title": "Fox News / Newser: Jeff Bezos' parents invested $245G, could be mindbogglingly rich",
+      "url": "https://www.foxnews.com/tech/jeff-bezos-parents-invested-245g-could-be-mindbogglingly-rich"
+    },
+    {
+      "title": "Wikipedia: Jeff Bezos",
+      "url": "https://en.wikipedia.org/wiki/Jeff_Bezos"
+    }
+  ],
+  "look": "afterhour"
+}

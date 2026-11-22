@@ -11,7 +11,9 @@ their money, told as fast 3D cartoon stories with an AI voice. Owner: Sam (snasa
 
 ## Sam's rules (never break)
 - Free tiers only. Claude never creates, sees or types an API key or secret: Sam adds secrets himself.
-- Never change post times (12:00, 15:00, 16:30, 18:00, 20:00 ET), posts/day (5), upload mode or the voice without Sam.
+- Never change post times, posts/day, upload mode or the voice without Sam. Now (Sam, Nov 19): **2 a day, 12:00 + 19:00 ET**
+  (nudged up to 2 h later so no 24 h holds 3) while Buffer free caps YouTube at 2 per rolling 24 h; back to 5 a day
+  (7:00, 12:00, 15:30, 19:00, 22:00) only when Sam says, after Buffer lifts the cap.
 - Voice: Gemini TTS **Umbriel, +1.5 semitones** (`GEMINI_PITCH_ST`). Free tier = 10 requests/day per model
   (one request voices a whole Short); add no extra voice requests.
 - Kid-safe. Never invent numbers: every figure comes from a source page actually opened, listed in `sources`.
@@ -45,6 +47,8 @@ their money, told as fast 3D cartoon stories with an AI voice. Owner: Sam (snasa
   has the same name); MP4s land on release `toon-test`. New 3D objects: branch `things-test/<date>`.
 - Checks after every render: clarity (Whisper), audio, quality gate (`run.gate`), **eyes** (`pipeline/eyes.py`,
   free Gemini looks at every frame, holds bad Shorts as `needs_fix`).
+- Comment replies: `comments.yml` Saturdays answers the week's top 100 comments (1-10 words, `pipeline/comment_replies.py`,
+  YouTube API: Buffer has no comment API). Needs secrets YTC_* from `pipeline/comment_auth.py`; branch `comments-test` = dry run.
 - Analytics: `stats.yml` daily -> analytics/insights.md, health.md, retention.md. "How are the Shorts doing" ->
   `python -m pipeline.now`.
 - Formats now: `famous` (most; athletes and big names, real dated earnings), `story` (history / plan), some `whatif`.

@@ -1,0 +1,191 @@
+{
+  "id": "149",
+  "slug": "famous-paul-skenes",
+  "company": "Paul Skenes",
+  "format": "famous",
+  "visual_style": "lowpoly",
+  "hook_style": "number",
+  "title_style": "number",
+  "theme": "clean_navy",
+  "status": "ready",
+  "score": 90,
+  "title": "17 Pitches at 100 MPH: A Cadet's $9.2 Million",
+  "name_card": "Paul Skenes",
+  "name_sub": "Cy Young winner",
+  "description": "Paul Skenes started at the Air Force Academy, won the 2023 College World Series with LSU, and signed a record $9.2 million bonus as the first overall pick.\n\nSources:\n- Wikipedia: Paul Skenes: https://en.wikipedia.org/wiki/Paul_Skenes\n\nFrom the cited page: in his May 11, 2024 MLB debut he threw 17 fastballs at 100 miles per hour or higher; he attended the Air Force Academy, then transferred to LSU, which won the 2023 College World Series; the Pirates picked him first overall in 2023 and he signed July 18, 2023 for a $9.2 million bonus, the highest ever for a drafted player at the time; he won NL Rookie of the Year in 2024 and the NL Cy Young Award in 2025. Not financial advice.\n\n#shorts #paulskenes #baseball #howtheymakemoney",
+  "tags": [
+    "paul skenes",
+    "pirates",
+    "baseball",
+    "famous",
+    "shorts"
+  ],
+  "images": {},
+  "loop": "So remember:",
+  "cta": "Skenes or Ohtani? Comment your pick.",
+  "cta_question": "Skenes or Ohtani?",
+  "hero": {
+    "skin": "e8c4a0",
+    "hair": "short",
+    "hair_color": "4a3020",
+    "beard": "stubble",
+    "outfit": "kit",
+    "shirt": "111111",
+    "pants": "111111",
+    "trim": "fdb827",
+    "socks": "fdb827",
+    "shoes": "111111",
+    "height": 1.15,
+    "number": 30
+  },
+  "scenes": [
+    {
+      "narration": "Paul Skenes threw 17 fastballs at 100 miles an hour. But he started out as an Air Force cadet.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "diamond",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "diamond",
+          "mood": "shock",
+          "things": [
+            "baseball"
+          ],
+          "card": {
+            "text": "100 MPH",
+            "kind": "screen",
+            "sub": "17 FASTBALLS, MLB DEBUT"
+          },
+          "view": "wide"
+        },
+        {
+          "place": "classroom",
+          "mood": "nervous",
+          "things": [
+            "plane"
+          ],
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "Then he won the 2023 College World Series at LSU.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "diamond",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "diamond",
+          "mood": "excited",
+          "things": [
+            "trophy"
+          ],
+          "crowd": 120,
+          "card": {
+            "text": "2023",
+            "kind": "flip",
+            "sub": "YEAR"
+          },
+          "view": "wide"
+        }
+      ]
+    },
+    {
+      "narration": "Pittsburgh picked him first and paid a record 9.2 million dollars.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "diamond",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "boardroom",
+          "mood": "shock",
+          "beat": "money",
+          "card": {
+            "text": "$9.2 MILLION",
+            "kind": "screen",
+            "sub": "SIGNING BONUS, RECORD"
+          },
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "Then he won Rookie of the Year in his first season. Yet a year later, he won the Cy Young too.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "diamond",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "diamond",
+          "mood": "proud",
+          "things": [
+            "medal"
+          ],
+          "card": {
+            "text": "ROOKIE OF THE YEAR",
+            "kind": "sign"
+          },
+          "view": "ms"
+        },
+        {
+          "place": "stage",
+          "mood": "excited",
+          "things": [
+            "trophy"
+          ],
+          "crowd": 100,
+          "card": {
+            "text": "CY YOUNG",
+            "kind": "sign",
+            "sub": "BEST PITCHER"
+          },
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "Not bad for an Air Force cadet.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "diamond",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "mansion",
+          "mood": "laugh",
+          "things": [
+            "plane",
+            "trophy"
+          ],
+          "view": "face"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Paul Skenes",
+      "url": "https://en.wikipedia.org/wiki/Paul_Skenes"
+    }
+  ],
+  "look": "afterhour"
+}

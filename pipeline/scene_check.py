@@ -80,7 +80,7 @@ FILLER = {"it", "them", "this", "that", "money", "sense", "history", "everything
 PLACE_NEEDS = [
     ("rink", r"ice rink|hockey|skating rink|figure skat\w*|\bNHL\b|\bzamboni", ("rink",)),
     ("golf", r"golf course|golf club|\bgolf\b|fairway|putting green|\bPGA\b|\bcaddie", ("golf",)),
-    ("pool", r"swimming pool|\bpool\b|swimmer|swimming|olympic swim\w*|\blaps\b", ("pool",)),
+    ("pool", r"swimming pool|(?<!prize )(?<!talent )(?<!money )(?<!gene )\bpool\b(?! (?:of|table|hall|party|money|funds?|cash)\b)|swimmer|swimming|olympic swim\w*|\blaps\b", ("pool",)),
     ("gym", r"weight room|weights|\bgym\b|workout|dumbbell|bench press|fitness|bodybuild\w*", ("gym",)),
     ("hospital", r"hospital|surgeon|surgery|\bER\b|ambulance|nurses?|\bdoctors?\b|clinic", ("hospital",)),
     ("farm", r"\bfarms?\b|farmer|barn|tractor|crops?|harvest|cattle|\bcows?\b", ("farm",)),

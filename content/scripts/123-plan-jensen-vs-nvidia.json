@@ -48,7 +48,20 @@
         "crowd": 0,
         "props": [],
         "stat": "33 YEARS",
-        "stat_sub": "then you resign"
+        "stat_sub": "then you resign",
+        "hero": {
+          "skin": "e3b98f",
+          "hair": "short",
+          "hair_color": "3a3a3a",
+          "beard": "none",
+          "outfit": "suit",
+          "shirt": "151515",
+          "pants": "151515",
+          "shoes": "151515",
+          "tie": "151515",
+          "height": 0.98,
+          "jacket": "leather"
+        }
       },
       "toon": [
         {
@@ -87,7 +100,20 @@
         "crowd": 0,
         "props": [],
         "stat": "THE PLAN",
-        "stat_sub": "beat Nvidia"
+        "stat_sub": "beat Nvidia",
+        "hero": {
+          "skin": "e3b98f",
+          "hair": "short",
+          "hair_color": "3a3a3a",
+          "beard": "none",
+          "outfit": "suit",
+          "shirt": "151515",
+          "pants": "151515",
+          "shoes": "151515",
+          "tie": "151515",
+          "height": 0.98,
+          "jacket": "leather"
+        }
       },
       "toon": [
         {
@@ -134,7 +160,20 @@
         "crowd": 0,
         "props": [],
         "stat": "STEP 2",
-        "stat_sub": "steal the small labs"
+        "stat_sub": "steal the small labs",
+        "hero": {
+          "skin": "e3b98f",
+          "hair": "short",
+          "hair_color": "3a3a3a",
+          "beard": "none",
+          "outfit": "suit",
+          "shirt": "151515",
+          "pants": "151515",
+          "shoes": "151515",
+          "tie": "151515",
+          "height": 0.98,
+          "jacket": "leather"
+        }
       },
       "toon": [
         {
@@ -166,7 +205,20 @@
         "crowd": 0,
         "props": [],
         "stat": "STEP 3",
-        "stat_sub": "a chip in every phone"
+        "stat_sub": "a chip in every phone",
+        "hero": {
+          "skin": "e3b98f",
+          "hair": "short",
+          "hair_color": "3a3a3a",
+          "beard": "none",
+          "outfit": "suit",
+          "shirt": "151515",
+          "pants": "151515",
+          "shoes": "151515",
+          "tie": "151515",
+          "height": 0.98,
+          "jacket": "leather"
+        }
       },
       "toon": [
         {
@@ -198,7 +250,20 @@
         "crowd": 0,
         "props": [],
         "stat": "STEP 4",
-        "stat_sub": "bigger than Nvidia"
+        "stat_sub": "bigger than Nvidia",
+        "hero": {
+          "skin": "e3b98f",
+          "hair": "short",
+          "hair_color": "3a3a3a",
+          "beard": "none",
+          "outfit": "suit",
+          "shirt": "151515",
+          "pants": "151515",
+          "shoes": "151515",
+          "tie": "151515",
+          "height": 0.98,
+          "jacket": "leather"
+        }
       },
       "toon": [
         {
@@ -235,7 +300,20 @@
         "crowd": 0,
         "props": [],
         "stat": "THE PLAN",
-        "stat_sub": "beat your own company"
+        "stat_sub": "beat your own company",
+        "hero": {
+          "skin": "e3b98f",
+          "hair": "short",
+          "hair_color": "3a3a3a",
+          "beard": "none",
+          "outfit": "suit",
+          "shirt": "151515",
+          "pants": "151515",
+          "shoes": "151515",
+          "tie": "151515",
+          "height": 0.98,
+          "jacket": "leather"
+        }
       },
       "toon": [
         {

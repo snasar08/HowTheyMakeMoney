@@ -440,3 +440,4 @@ research more ... maintain quality too")**. Goal: build a buffer, capped so cred
 
 ## Repeat check (Nov 4)
 Run annotations list shots that still repeat. A photo Short needs about one picture per shot, or it can't meet Sam's no-repeat rule.
+- Nov 22 2026, Sam: GTA 6 (an M-rated game) is totally allowed as a topic; 142 GTA 6 plan set to ready. Keep the lines kid-safe (sales, launch, lines, no in-game crime).

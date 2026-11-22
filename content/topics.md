@@ -25,6 +25,18 @@ Tom Brady, Erling Haaland, Neymar, Caitlin Clark, Rihanna (Fenty), Ninja, Kai Ce
 ## Used (Nov 14 2026 batch, part 2)
 Juan Soto, Faker, Roger Federer, Magic Johnson, Bad Bunny, Mohamed Salah (famous); Netflix vs Blockbuster, Nintendo playing cards (editorial); Pokémon cards, Switch stack (whatif); orthodontists (careers); Crocs (how). Researched and skipped: Victor Wembanyama and Simone Biles (no sourced money figures on their pages), Selena Gomez / Rare Beauty (too close to part 1's Rihanna makeup angle), Aaron Judge (too close to Mahomes' late-round pick story), Novak Djokovic (third tennis star in the queue; good story: trained in an empty swimming pool, $197M prize money, for a later batch), Monster Beverage (juice in 1935, Coca-Cola's $2.15B stake, $8.29B revenue 2025: energy drink for a teen audience, skipped for now), Mark Rober (no money figures).
 
+## Used (Nov 21 2026 batch, part 1)
+PlayStation born from Nintendo's walk-out (story), Cade Cunningham perfect-game plan (story plan), Kelce brothers podcast, Ryan Reynolds Mint Mobile + Wrexham, Oreo year whatif, Aaron Judge bet on himself, Nintendo Switch 2 race plan, Max Verstappen, Coco Gauff, Dude Perfect, Tiger Woods
+
+## Used (Nov 21 2026 batch, part 2)
+Fortnite free battle royale (story), Nikola Jokić, Luka Dončić, Paul Skenes, Selena Gomez, Mark Cuban, Shai Gilgeous-Alexander, Red Bull cans around Earth (whatif), Netflix couch-stadium plan (story plan), James Harden 51-point plan (story plan)
+
+## Used (Nov 21 2026 batch, part 3)
+George Lucas, Lamar Jackson, Novak Djokovic, Kevin Durant, Son Heung-min, Ed Sheeran, Nvidia shovels plan (story plan), Ja'Marr Chase plan (story plan), Momofuku Ando instant noodles (story), LEGO bricks per person (whatif)
+
+## Used (Nov 21 2026 batch, part 4)
+Josh Allen, IShowSpeed, Colonel Sanders / KFC (story), Victor Wembanyama, Simone Biles, Canelo Álvarez, Jeff Bezos (parents' bet), Meta smart glasses race (story plan), Domino's (whatif), Connor McDavid plan (story plan), GTA 6 / Rockstar plan (story plan)
+
 ## Ranked for the next batches (Oct 29 2026 — teen appeal × curiosity gap × surprising number)
 Write from the top. Casinos dropped (not kid-safe). Skip anything already used above.
 | # | Topic | Angle / hook seed | Est. score |

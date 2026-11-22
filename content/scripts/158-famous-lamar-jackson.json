@@ -1,0 +1,208 @@
+{
+  "id": "158",
+  "slug": "famous-lamar-jackson",
+  "company": "Lamar Jackson",
+  "format": "famous",
+  "visual_style": "lowpoly",
+  "hook_style": "surprise",
+  "title_style": "number",
+  "theme": "dark_neon",
+  "status": "ready",
+  "score": 88,
+  "title": "Picked 32nd, Now Worth $260 Million",
+  "name_card": "Lamar Jackson",
+  "name_sub": "two-time NFL MVP",
+  "description": "Lamar Jackson was the last pick of round one in 2018, was told to switch to wide receiver, then won a unanimous MVP and a five year, 260 million dollar contract.\n\nSources:\n- Wikipedia: Lamar Jackson: https://en.wikipedia.org/wiki/Lamar_Jackson\n- Wikipedia: 2018 NFL draft: https://en.wikipedia.org/wiki/2018_NFL_draft\n\nFrom the cited pages: the Ravens picked him 32nd overall, the final pick of the first round, in the 2018 NFL draft; many draft pundits suggested he switch to wide receiver but he insisted on playing quarterback; he was the 2019 AP MVP by unanimous vote, the second player after Tom Brady in 2010; on April 27, 2023 he signed a five-year contract worth $260 million $52 million per year; he won a second MVP for the 2023 season; in 2019 he was the second player after Tom Brady in 2010 to be voted MVP unanimously (his first full season). Not financial advice.\n\n#shorts #lamarjackson #nfl #howtheymakemoney",
+  "tags": [
+    "lamar jackson",
+    "ravens",
+    "nfl",
+    "famous",
+    "shorts"
+  ],
+  "images": {},
+  "loop": "So remember:",
+  "cta": "Lamar or Mahomes? Comment your pick.",
+  "cta_question": "Lamar or Mahomes?",
+  "hero": {
+    "skin": "8d5a3b",
+    "hair": "curly",
+    "hair_color": "1a1a1a",
+    "beard": "stubble",
+    "outfit": "kit",
+    "shirt": "241773",
+    "pants": "111111",
+    "trim": "111111",
+    "socks": "241773",
+    "shoes": "111111",
+    "height": 1.1,
+    "number": 8
+  },
+  "scenes": [
+    {
+      "narration": "Lamar Jackson was picked 32nd in 2018.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "gridiron",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "gridiron",
+          "mood": "nervous",
+          "things": [
+            "football"
+          ],
+          "card": {
+            "text": "32ND",
+            "kind": "flip",
+            "sub": "PICK, 2018"
+          },
+          "view": "ms"
+        }
+      ]
+    },
+    {
+      "narration": "Now he has a 260 million dollar contract.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "gridiron",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "mansion",
+          "mood": "proud",
+          "beat": "money",
+          "things": [
+            "cashstack"
+          ],
+          "card": {
+            "text": "$260 MILLION",
+            "kind": "screen",
+            "sub": "FIVE YEAR CONTRACT"
+          },
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "Many experts said he should switch to wide receiver. But Jackson refused and stayed a quarterback.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "gridiron",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "boardroom",
+          "mood": "sad",
+          "things": [
+            "newspaper"
+          ],
+          "card": {
+            "text": "SWITCH TO WIDE RECEIVER",
+            "kind": "paper"
+          },
+          "view": "ws"
+        },
+        {
+          "place": "gridiron",
+          "mood": "stern",
+          "things": [
+            "football"
+          ],
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "In his first full season, Jackson won MVP by a unanimous vote.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "gridiron",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "stage",
+          "mood": "laugh",
+          "things": [
+            "trophy"
+          ],
+          "crowd": 100,
+          "card": {
+            "text": "UNANIMOUS MVP",
+            "kind": "sign"
+          },
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "Only Tom Brady had done that before. Then Jackson won a second one.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "gridiron",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "stage",
+          "mood": "calm",
+          "who": {
+            "jacket": "#c8102e",
+            "pants": "#ffffff",
+            "boots": "#111111",
+            "hat": "hair",
+            "style": "short",
+            "hair": "#8a8a8a",
+            "skin": "#e8c4a0",
+            "kit": "football",
+            "num": "12",
+            "trim": "#111111"
+          },
+          "things": [
+            "trophy"
+          ],
+          "view": "ms"
+        },
+        {
+          "place": "throne",
+          "mood": "excited",
+          "things": [
+            "trophy",
+            "crown"
+          ],
+          "crowd": 120,
+          "card": {
+            "text": "MVP x2",
+            "kind": "sign"
+          },
+          "view": "face"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Lamar Jackson",
+      "url": "https://en.wikipedia.org/wiki/Lamar_Jackson"
+    },
+    {
+      "title": "Wikipedia: 2018 NFL draft",
+      "url": "https://en.wikipedia.org/wiki/2018_NFL_draft"
+    }
+  ],
+  "look": "afterhour"
+}

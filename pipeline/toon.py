@@ -302,7 +302,7 @@ def make_plan(script: dict, recorded: dict | None = None) -> dict:
 
 # ---- afterhour look (Nov 16): the same per-sentence plan as real-3D shots for the AhShort composition ----
 AH_SET = {"throne": "throne", "office": "office", "servers": "lab", "garage": "garage", "stall": "stall", "mine": "field",
-          "court": "court", "pitch": "pitch", "diamond": "diamond", "gridiron": "gridiron", "tennis": "tennis", "gym": "gym", "studio": "studio", "farm": "farm", "store": "store", "stage": "stage", "space": "space", "street": "street", "bridge": "street",
+          "court": "court", "pitch": "pitch", "diamond": "diamond", "gridiron": "gridiron", "tennis": "tennis", "golf": "golf", "pool": "pool", "gym": "gym", "studio": "studio", "farm": "farm", "store": "store", "stage": "stage", "space": "space", "street": "street", "bridge": "street",
           "quay": "beach", "road": "track"}
 AH_EXPR = {"happy": "smile", "laugh": "laugh", "shock": "shock", "nervous": "shock", "proud": "smug", "stern": "angry",
            "scheme": "smug", "relief": "smile", "dazed": "sad", "sad": "sad", "calm": "neutral", "excited": "grin"}
@@ -311,7 +311,8 @@ AH_THING = {"shoe": "shoe", "springshoe": "springshoe", "sneakerbus": "bus", "bu
             "satellite": "satellite", "ring": "ring", "crown": "crown", "tv": "tv", "books": "books", "letter": "letter", "medal": "medal",
             "idea": "lightbulb", "factory": "factory", "stadium": "stadium", "plant": "factory", "car": "car", "truck": "truck",
             "trophy": "trophy", "cash": "cashstack", "boxes": "box", "check": "letter", "rocket": "rocket", "ball": "basketball", "mic": "mic",
-            "laptop": "laptop", "burger": "burger", "controller": "controller", "ereader": "phone", "snack": "burger", "poster": "newspaper"}
+            "laptop": "laptop", "burger": "burger", "controller": "controller", "ereader": "phone", "snack": "burger", "poster": "newspaper", "horse": "horse", "baseball": "baseball", "guitar": "guitar", "rollercoaster": "rollercoaster",
+            "noodlecup": "noodlecup", "legobrick": "legobrick", "eiffeltower": "eiffeltower", "giantshovel": "giantshovel", "icepop": "icepop"}
 def _ts_union(path: str, typ: str) -> set:
     """the names a TS union type lists (SetName / ThingName), so a script may ask for any set or object directly"""
     try:
@@ -337,7 +338,7 @@ def _lib_model_names() -> set:
 
 
 AH_ALL_THINGS = AH_ALL_THINGS | _lib_model_names()
-AH_BIG = {"car", "truck", "bus", "rocket", "factory", "stadium", "plane", "yacht", "house", "dome"}
+AH_BIG = {"car", "truck", "bus", "rocket", "factory", "stadium", "plane", "yacht", "house", "dome", "giantshovel"}
 AH_CROWD = [{"body": c, "hat": "hair", "hair": h} for c, h in (("#e86a6a", "#3a2a20"), ("#5ad0d8", "#8a5a2a"), ("#8bc34a", "#1a1a1a"),
             ("#b48ae0", "#3a2a20"), ("#f2a33a", "#5a3b2a"), ("#4a7bd0", "#1a1a1a"))]
 
@@ -346,7 +347,7 @@ _AH_MODELS: dict | None = None
 _AH_STOP = {"sign", "signs", "signed", "signing", "deal", "deals", "the", "a", "an", "and", "or", "of", "to", "in", "on", "it", "is", "was", "he", "she", "they", "his", "her", "this", "that", "with", "for", "at", "by", "as", "be", "so", "but",
            # Nov 18 (overnight scene pass): words that mean something else in a story line ("fans" -> ceiling fan, "can" -> tin can,
            # "cold" -> fridge, "Mickey Mouse" -> computer mouse, "defense", "steps", "stack", "power" ...), and no weapons ever
-           "can", "cold", "fan", "fans", "trash", "waste", "mouse", "bar", "base", "bay", "bend", "catch", "chest", "chop", "counter",
+           "woods", "console", "consoles", "can", "cold", "fan", "fans", "trash", "waste", "mouse", "bar", "base", "bay", "bend", "catch", "chest", "chop", "counter",
            "deck", "direction", "display", "fair", "frame", "hole", "hooks", "light", "loot", "pad", "peel", "pot", "power", "present",
            "ride", "round", "seat", "shed", "signal", "stack", "steps", "storage", "tank", "tube", "wall", "wheel", "wings", "trading",
            "finance", "business", "corporate", "commercial", "retail", "healthy", "compact", "emergency", "defense", "entrance",
@@ -375,11 +376,31 @@ def ah_models() -> dict:
     return _AH_MODELS
 
 
+AH_CODE_WORDS = [("giantshovel", r"\b(?:giant|huge|enormous|house-tall|massive) shovels?\b|\bshovels? (?:as tall as|taller than|the size of) (?:a|the) (?:house|building)"),
+                 ("icepop", r"\bice[- ]?pops?\b|\bpopsicles?\b|\bpaletas?\b"),
+                 ("eiffeltower", r"\beiffel\b"),
+                 ("legobrick", r"\blegos?\b|\b(?:toy|lego|plastic) bricks?\b"),
+                 ("noodlecup", r"\bcup noodles?\b|\binstant noodles?\b|\bnoodles?\b|\bramen\b"),
+                 ("guitar", r"\bguitars?\b|\bguitarists?\b"),
+                 ("rollercoaster", r"\broller ?coasters?\b|\bamusement parks?\b|\btheme parks?\b"),
+                 ("horse", r"\bhorses?\b|\bhorse racing\b|\bjockeys?\b|\bracehorses?\b|\bthoroughbreds?\b"),
+                 ("baseball", r"\bbaseballs?\b|\bfastballs?\b|\bcurveballs?\b|\bsliders?\b(?=.*\b(?:pitch\w*|baseball)\b)"),
+                 ("console", r"\bconsoles?\b|\bplaystations?\b|\bswitch 2\b|\bxbox\b"),
+                 ("golfball", r"\bgolf ?balls?\b"),
+                 ("golfclub", r"\bgolf clubs?\b|\bputters?\b|\bclubs?\b(?=.*\bgolf)|\bgolf\b.*\b(?:clubs?|drivers?)\b")]
+
+
 def ah_words_to_models(text: str) -> list:
     """model names for the words (and two-word runs like "vending machine") of a sentence, in order, plurals ok"""
     m, out = ah_models(), []
-    ws = [w for w in re.findall(r"[a-z]+", text.lower())]
+    low = text.lower()
+    for nm, rx in AH_CODE_WORDS:        # Nov 21: words that name a code-built object (console, golf ball, golf club) come first
+        if re.search(rx, low) and nm not in out:
+            out.append(nm)
+    ws = [w for w in re.findall(r"[a-z]+", low)]
     def look(w: str):
+        if w in _AH_STOP:                 # the word itself is stopped, so its stem is too ("woods" (Tiger Woods) is not a log)
+            return None
         for c in (w, w[:-1] if w.endswith("s") else "", w[:-2] if w.endswith("es") else "", w[:-3] + "y" if w.endswith("ies") else ""):
             if c and c in m and c not in _AH_STOP:
                 return m[c]
@@ -425,7 +446,7 @@ def ah_look(o: dict) -> dict:
 
 # ---- Nov 17 (Ninja review: a streamer on a soccer pitch, Drake / LeBron / his mom named but never shown, a clock on
 # "followers", an outro of repeats): who the Short is about, who a sentence names, and "no two shots look alike" ----
-AH_SPORT_SETS = ("court", "pitch", "diamond", "gridiron", "tennis", "ring", "track")
+AH_SPORT_SETS = ("court", "pitch", "diamond", "gridiron", "tennis", "golf", "pool", "rink", "ring", "track")
 # Nov 18: a baseball line stands on the baseball field (diamond), not a purple park
 AH_BASEBALL_RX = re.compile(r"\b(?:baseball|mlb|major leagues?|the majors|ballparks?|home runs?|homers?|grand slams?|pitchers?|fastballs?|curveballs?|strikeouts?|"
                             r"innings?|shortstops?|outfield\w*|dugouts?|batters?|world series|yankees|dodgers|mets|red sox|cubs|braves|astros|padres|phillies|"
@@ -441,9 +462,21 @@ AH_TENNIS_STRONG_RX = re.compile(r"\b(?:tennis|open era|wimbledon|us open|austra
 AH_TENNIS_WEAK_RX = re.compile(r"\b(?:grand slams?|serves?|served|serving|aces?)\b(?! (?:the |our |his |her )?(?:customers?|food|burgers?|coffee|drinks?|meals?|tables?|guests?|clients?|users?|ads?|ad\b))", re.I)
 
 
+# Nov 21: golf lines stand on the golf course (golf, golfer, the Masters, putt, fairway, PGA, tee off, birdie, hole in one)
+AH_GOLF_RX = re.compile(r"\b(?:golf\w*|the masters|masters (?:tournament|champion\w*)|putt\w*|fairways?|pga|tee(?:s|d|ing)? off|birdies?|bogeys?|holes? in one|tiger woods|caddies|caddie|putting greens?|golf courses?)\b", re.I)
+
+
+# Nov 21: an empty swimming pool used as a practice court. "pool" alone counts, but not carpool / pool of money / prize pool / pool table
+AH_POOL_RX = re.compile(r"\bswimming pools?\b|\b(?:empty|drained|dry|disused|abandoned|backyard|hotel|public|old) pools?\b|(?<![\w-])(?<!prize )(?<!talent )(?<!gene )(?<!money )(?<!betting )(?<!car)(?<!liquidity )(?<!the )pools?\b(?! (?:of|table|hall|party|money|funds?|cash|cue|shark)\b)|\bthe pool\b(?! (?:of|table|hall|money|funds?|cash)\b)", re.I)
+
+
 def ah_sport_set(txt: str, ctx: dict | None = None) -> str | None:
-    """the American football / tennis set a line belongs on (None: not a gridiron / tennis line). Soccer lines are never taken."""
+    """the American football / tennis / golf set a line belongs on (None: not a gridiron / tennis line). Soccer lines are never taken."""
     ctx = ctx or {}
+    if AH_POOL_RX.search(txt):
+        return "pool"
+    if AH_GOLF_RX.search(txt):
+        return "golf"
     if AH_TENNIS_STRONG_RX.search(txt) or (ctx.get("tennis") and AH_TENNIS_WEAK_RX.search(txt)):
         return "tennis"
     if AH_SOCCER_RX.search(txt) or ctx.get("soccer") and not AH_GRID_STRONG_RX.search(txt):
@@ -455,6 +488,26 @@ def ah_sport_set(txt: str, ctx: dict | None = None) -> str | None:
 AH_FARM_STRONG_RX = re.compile(r"\b(?:farms?|farmers?|farming|farmland|barns?|crops?|harvest\w*|ranch\w*|vineyards?|grow(?:s|ing)? (?:grapes|corn|wheat|crops))\b", re.I)
 AH_FARM_RX = re.compile(AH_FARM_STRONG_RX.pattern + r"|\btractors?\b", re.I)
 AH_STORE_RX = re.compile(r"\b(?:grocer(?:y|ies)|supermarkets?|store clerks?|baggers?|cashiers?|check-?outs?|checkout counters?)\b", re.I)
+
+
+# Nov 21: factory floor and mountain / mine sets (164 Nvidia shovels). "mine" alone is a pronoun, so only mine phrases count
+AH_FACTORY_RX = re.compile(r"\b(?:factor(?:y|ies)|assembly lines?|conveyor belts?|production lines?|robot arms?|manufactur\w+)\b", re.I)
+AH_MOUNTAIN_RX = re.compile(r"\b(?:mountains?|(?:gold|coal|silver|copper|salt|diamond) mines?|the mines?|mine (?:shafts?|carts?|entrances?)|mining|(?<!bitcoin )(?<!crypto )(?<!coin )miners?|gold rush|gold veins?)\b", re.I)
+
+
+# Nov 21: ice hockey lines stand on the rink set
+AH_RINK_RX = re.compile(r"\b(?:hockey|nhl|rinks?|pucks?|stanley cups?|oilers|goalies?|slap ?shots?|on the ice|ice rinks?|power plays?|hat tricks?)\b", re.I)
+
+
+def ah_scene_set(txt: str) -> str | None:
+    """rink / factory / mountain: the place a factory-floor or mine line stands in (None: neither)"""
+    if AH_RINK_RX.search(txt):
+        return "rink"
+    if AH_FACTORY_RX.search(txt):
+        return "factory"
+    if AH_MOUNTAIN_RX.search(txt):
+        return "mountain"
+    return None
 
 
 def ah_place_set(txt: str) -> str | None:
@@ -588,7 +641,7 @@ def ah_context(plan: dict) -> dict:
     sub = str((script or {}).get("name_sub") or "").lower()
     gamer = bool(re.search(r"streamer|gamer|esports|twitch", sub)) or "gaming" in sets
     sportish = bool(re.search(r"player|sprinter|driver|boxer|fighter|racer|athlete|golfer|swimmer|skater|champion|quarterback|runner", sub))
-    athlete = bool(sets & {"court", "pitch", "field", "diamond", "gridiron", "tennis"}) or (plan.get("hero") or {}).get("kit") in ("bball", "soccer") or (sportish and not gamer)
+    athlete = bool(sets & {"court", "pitch", "field", "diamond", "gridiron", "tennis", "golf", "pool", "rink"}) or (plan.get("hero") or {}).get("kit") in ("bball", "soccer") or (sportish and not gamer)
     alltxt = " ".join(str(sc.get("text") or sc.get("line") or "") for sc in plan["scenes"])
     return {"script": script, "hero": ah_hero_tokens(script, plan), "gamer": gamer, "athlete": athlete,
             "tennis": bool(AH_TENNIS_STRONG_RX.search(alltxt)) or any(t in AH_TENNIS_NAMES for t in ah_hero_tokens(script, plan)), "soccer": bool(AH_SOCCER_RX.search(alltxt)) and not AH_GRID_STRONG_RX.search(alltxt),
@@ -734,7 +787,8 @@ def ah_spread(shots: list, ctx: dict) -> list:
                      or s["chars"][0].get("pose") in ("shoot", "dunk", "jump", "run")
                      or (st == "diamond" and AH_BASEBALL_RX.search(txt))   # a baseball line stays on the field
                      or (st in ("gym", "studio") and ah_room_set(txt) == st)
-                     or (st in ("gridiron", "tennis") and ah_sport_set(txt, ctx) == st)
+                     or (st in ("gridiron", "tennis", "golf", "pool") and ah_sport_set(txt, ctx) == st)
+                     or (st in ("rink", "factory", "mountain") and ah_scene_set(txt) == st)
                      or (st == "store" and AH_STORE_RX.search(txt)) or (st == "farm" and AH_FARM_STRONG_RX.search(txt)))   # a football / tennis line stays on its field
         named = bool(re.search(AH_PLACE_WORDS.get(st, r"\b" + re.escape(st) + r"\b"), txt, re.I)) if st in AH_PLACE_WORDS else bool(re.search(r"\b" + re.escape(st) + r"\b", txt, re.I))
         if k in moved:
@@ -791,6 +845,8 @@ def ah_shots(plan: dict) -> list:
             aset = "tennis"                                         # a tennis star's "court" is the tennis court, never the basketball arena
         elif ah_sport_set(sc.get("text") or sc.get("line") or "", ctx) and aset not in ("space", "stage", "throne") and place not in ("space", "stage", "throne") and not outro:
             aset = ah_sport_set(sc.get("text") or sc.get("line") or "", ctx)   # Nov 18: American football -> gridiron, tennis -> tennis court
+        elif ah_scene_set(sc.get("text") or sc.get("line") or "") and aset not in ("space", "stage", "throne") and place not in ("space", "stage", "throne") and not outro:
+            aset = ah_scene_set(sc.get("text") or sc.get("line") or "")   # Nov 21: factory floor / mountain mine lines stand there
         elif ah_place_set(sc.get("text") or sc.get("line") or "") and aset not in ("space", "stage", "throne") and place not in ("space", "stage", "throne") and not outro:
             aset = ah_place_set(sc.get("text") or sc.get("line") or "")   # Nov 18: farm / grocery store lines stand there
         elif ah_room_set(sc.get("text") or sc.get("line") or "") and aset not in ("space", "throne") and place not in ("space", "throne") and not outro:
@@ -819,6 +875,8 @@ def ah_shots(plan: dict) -> list:
                 pose = ah_actions.ACT_POSE.get(want, pose)
                 key = {"sign_contract": "letter", "count_cash": "cash", "throw_cash": "cash", "stack_gold": "goldbar"}.get(want)
                 own = [key] if key else sorted(ah_actions.ACT_OWN_PROPS.get(want) or [])
+                if want in ("pitch", "bat_swing"):                  # Nov 21: a baseball act's ball is the baseball, never a basketball
+                    own = ["baseball"]
                 for nm in own:
                     if AH_THING.get(nm) or nm in AH_THING.values():
                         thing_names = [nm] + [t for t in thing_names if t != nm]
@@ -858,6 +916,14 @@ def ah_shots(plan: dict) -> list:
             b = sc["brand"]; cards.append({"text": b["name"].upper(), "kind": "sign", "bg": b.get("bg"), "fg": b.get("fg"), "at": [0.0, top + 0.5, -0.7], "w": 1.0})
         if food_line and not outro and not act and not any(str(t).lower() in ("burger", "snack", "pizza") for t in thing_names) and re.search(r"burger|restaurant|five guys|fast[- ]?food|chain", line_txt, re.I):
             thing_names = ["burger"] + thing_names                  # the burger itself is on screen when the line is about burgers / a burger chain
+        if aset == "factory":                       # Nov 21: the factory floor is the factory; no tiny factory model on it
+            thing_names = [t for t in thing_names if str(t) not in ("factory", "plant")]
+        if aset == "pool":                          # Nov 21: the pool has its own tennis balls
+            thing_names = [t for t in thing_names if str(t) not in ("ball", "basketball", "soccerball", "football")]
+        if aset == "golf":                          # Nov 21: a golf ball is the set's own; drop generic balls
+            thing_names = [t for t in thing_names if str(t) not in ("ball", "basketball", "soccerball", "football")]
+        if aset == "diamond":                       # Nov 21: the baseball field has its own ball; a generic ball is a baseball, never a basketball
+            thing_names = ["baseball" if str(t) in ("ball", "basketball", "soccerball") else t for t in thing_names]
         if aset in ("gridiron", "tennis"):          # Nov 18: the field has its own ball; a generic "ball" becomes the right one, never a soccer ball
             thing_names = ["football" if str(t) in ("ball", "basketball", "soccerball") and aset == "gridiron" else t for t in thing_names]
             if aset == "tennis":
@@ -882,8 +948,8 @@ def ah_shots(plan: dict) -> list:
                 continue
             seen.add(t3)
             big = t3 in AH_BIG
-            things.append({"name": t3, "at": [-1.9, 0, -1.6] if big else ([0.55, 0.85, 0.55] if not things else [-0.55, 0.85, 0.55]),
-                           "fit": 1.6 if big else (0.42 if not things else 0.34)})   # held at hand height, in frame
+            things.append({"name": t3, "at": ([-0.9, 0, -0.4] if t3 == "giantshovel" else [-1.9, 0, -1.6]) if big else ([0.55, 0.85, 0.55] if not things else [-0.55, 0.85, 0.55]),
+                           "fit": (3.8 if t3 == "giantshovel" else 1.6) if big else (0.42 if not things else 0.34)})   # held at hand height, in frame
         for t3 in ([] if outro else ah_words_to_models(line_txt)):   # then library models the sentence's words name
             if len(things) >= 2:
                 break

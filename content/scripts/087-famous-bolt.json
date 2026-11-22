@@ -299,19 +299,24 @@
     "mode": "buffer",
     "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-087-famous-bolt",
     "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-087-famous-bolt/087-famous-bolt.mp4",
-    "post_at": "2026-11-19T15:00:00-05:00",
-    "buffer_post": "6afdec88c71477154fa9b8cb",
+    "post_at": "2026-11-22T19:15:00-05:00",
+    "buffer_post": "6b01c90f846b0ee90721c169",
     "buffer_status": "scheduled",
-    "rendered_at": "2026-11-18T18:20:57.176274+00:00",
-    "seconds": 25.11,
+    "rendered_at": "2026-11-21T16:38:40.144364+00:00",
+    "seconds": 22.94,
     "eyes": {
-      "score": 9,
+      "score": 6,
       "problems": [
-        "The Forbes logo is clearly visible on the screen around frame 120-200, which violates the policy against real company logos."
+        "The caption text is extremely small and positioned too low, making it difficult to read on mobile devices.",
+        "The visual style is repetitive with the same character model performing the same animation for the entire duration.",
+        "The video lacks visual variety or supporting imagery (e.g., actual track footage, Forbes list graphics, or sponsor logos) to keep the target audience engaged."
       ],
-      "best_fix": "Replace the real Forbes logo with a generic 'Top Earner' or 'Wealth List' icon to avoid brand trademark issues.",
+      "best_fix": "Increase the font size of the captions and introduce varied visual assets like stock footage or infographics to illustrate the narration points.",
       "model": "gemini-3.1-flash-lite",
       "acts": null
-    }
+    },
+    "scene_scan": [
+      "shot 8 @514: 4.2 s long (same picture too long?)"
+    ]
   }
 }

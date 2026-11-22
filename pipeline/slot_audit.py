@@ -5,7 +5,8 @@
 
 Source of truth: the delivered records the nightly commits (script -> Buffer post id + slot),
 each checked live with Buffer's post(id) query. Extras = a second post in the same slot, or more
-than MAX_PER_DAY on one day; the earliest-rendered post in a slot is kept. Writes
+than MAX_PER_DAY on one day, or over Buffer's rolling 24 h limit (publish.rolling_ok), or a post Buffer
+failed in the last day; the earliest-rendered post in a slot is kept. Writes
 out/slot-audit.json.
 """
 from __future__ import annotations
@@ -30,8 +31,9 @@ def main(argv: list[str]) -> int:
         if not d.get("post_at") or d.get("mode") != "buffer":
             continue
         when = dt.datetime.fromisoformat(d["post_at"]).astimezone(P.TZ)
-        if when < now - dt.timedelta(hours=1):
-            continue  # already posted
+        if when < now - dt.timedelta(hours=26):
+            continue  # long posted
+        past = when < now - dt.timedelta(hours=1)
         live = {}
         if d.get("buffer_post"):
             try:
@@ -39,14 +41,23 @@ def main(argv: list[str]) -> int:
             except Exception as exc:  # noqa: BLE001
                 live = {"status": f"lookup failed: {exc}"[:80]}
         rows.append(dict(path=p, id=s["id"], when=when, post=d.get("buffer_post"), status=live.get("status"),
-                         rendered=d.get("rendered_at", "")))
+                         rendered=d.get("rendered_at", ""), past=past))
     rows.sort(key=lambda r: (r["when"], r["rendered"]))
     keep, extra, per_day = set(), [], {}
+    fdays = P.film_days()  # 1 Short on a film day (Sam, Nov 19)
     for r in rows:
         if r["status"] in (None, "deleted") and r["post"]:
             continue
+        failed = str(r["status"] or "").lower() in ("error", "failed")
+        if r["past"]:
+            if failed:  # Buffer refused it (e.g. the daily limit): back to ready, it gets a new slot
+                extra.append(r)
+            else:
+                keep.add(r["when"])  # really posted: counts toward the rolling 24 h limit
+            continue
         day = r["when"].date()
-        if r["when"] in keep or per_day.get(day, 0) >= P.MAX_PER_DAY:
+        if (r["when"] in keep or per_day.get(day, 0) >= P.day_cap(day, fdays) or failed
+                or not P.rolling_ok(r["when"], keep)):
             extra.append(r)
             continue
         keep.add(r["when"])
@@ -60,7 +71,10 @@ def main(argv: list[str]) -> int:
     if fix:
         for r in extra:
             if r["post"]:
-                P.buffer_delete(r["post"])
+                try:
+                    P.buffer_delete(r["post"])
+                except Exception as exc:  # noqa: BLE001  (a failed/sent post may not be deletable)
+                    print(f"[audit] could not delete {r['post']}: {exc}"[:200])
                 print(f"[audit] deleted Buffer post {r['post']} ({r['id']} at {r['when']:%a %H:%M})")
             s = json.loads(r["path"].read_text(encoding="utf-8"))
             s.pop("delivered", None)

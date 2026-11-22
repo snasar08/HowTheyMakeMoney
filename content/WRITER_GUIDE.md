@@ -67,9 +67,9 @@ narration. Count with:
 `python -c "from pipeline import tts; print(len(tts.sentences(tts.speakable('NARRATION'))))"`.
 The picture must SHOW what the sentence says. Fields (all optional; use only these values):
 - `place` (Nov 18: any 3D set by name): throne office diner lab stall field ring track graveyard boardroom street
-  beach court pitch diamond gridiron tennis farm store gym studio stage space garage classroom bathroom mansion showroom (old names still work: servers=lab,
+  beach court pitch diamond gridiron tennis golf pool rink factory mountain farm store gym studio stage space garage classroom bathroom mansion showroom (old names still work: servers=lab,
   road=track, quay=beach, bridge=street). court = basketball; pitch = soccer; diamond = baseball; gridiron = American
-  football (NFL, quarterback, touchdown, Super Bowl; sentence words pick it automatically); tennis = tennis court (Wimbledon, US Open, racket); farm = barn, tractor, crops, harvest; store = grocery store, cashier, bagger; gym = weights, workout, training centre; studio = animation / film studio, cartoons, animators (a RECORDING studio stays on stage); track = sprinting; ring =
+  football (NFL, quarterback, touchdown, Super Bowl; sentence words pick it automatically); tennis = tennis court (Wimbledon, US Open, racket); golf = golf course (golf, the Masters, putt, fairway, PGA, birdie); rink = ice hockey rink (hockey, NHL, puck, Stanley Cup, Oilers, on the ice; red centre line, goal, boards and glass, crowd); pool = an empty swimming pool ("swimming pool", "pool"; tennis net, ladder, tiled walls); factory = factory floor (factory, assembly line, conveyor belt, robot arms; the `factory` OBJECT is a separate small model); mountain = rocky mountain with a mine entrance, cart tracks and gold veins (mountain, mine, miners, gold rush); farm = barn, tractor, crops, harvest; store = grocery store, cashier, bagger; gym = weights, workout, training centre; studio = animation / film studio, cartoons, animators (a RECORDING studio stays on stage); track = sprinting; ring =
   boxing/wrestling; garage = a humble start; throne = the crown moment; lab = AI / data centre; diner = food;
   boardroom/office = deals; mansion = wealth; stall/showroom = shops and products; classroom = school/childhood;
   stage = music/shows; graveyard ONLY for a real ending/death line. Check: `python -m pipeline.ah_table <file>`.
@@ -80,7 +80,7 @@ The picture must SHOW what the sentence says. Fields (all optional; use only the
   cash cashstack coins goldbar trophy medal crown ring car sportscar bus truck rocket phone laptop tv monitor clock
   books letter newspaper briefcase shovel pickaxe box crate basketball football soccerball hoop mic headset controller burger
   pizza coffee plant robot drone satellite globe house factory stadium plane yacht chart arrowup arrowdown lightbulb
-  lock key heart bomb fire camera chatbot glasses dumbbell hanger dome (+ old names sneakerbus idea poster). The renderer also adds models from the line's
+  lock key heart bomb fire camera chatbot glasses dumbbell hanger dome console golfball golfclub horse baseball guitar rollercoaster noodlecup (noodles, ramen, cup noodles) legobrick (lego, brick) eiffeltower (eiffel) giantshovel (a house-tall shovel; plain `shovel` stays the normal one) icepop (ice pop, popsicle, paleta) (roller coaster, amusement park, theme park) (+ old names sneakerbus idea poster). The renderer also adds models from the line's
   words (max 2). Use `things` not `props` for a football (props "ball" draws a basketball); "football" is the American ball, soccer = "soccerball" (balls on the pitch set become one automatically).
 - `mood`: happy laugh shock nervous proud stern scheme relief dazed sad calm excited. Match the line (shock at a
   big number, sad at a setback, laugh at a win).

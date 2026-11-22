@@ -334,21 +334,24 @@
     "mode": "buffer",
     "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-129-famous-vinicius",
     "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-129-famous-vinicius/129-famous-vinicius.mp4",
-    "post_at": "2026-11-19T12:00:00-05:00",
-    "buffer_post": "6afde9cd144d89f0a5b50593",
+    "post_at": "2026-11-21T19:00:00-05:00",
+    "buffer_post": "6b0083346f199ec35b6a0c53",
     "buffer_status": "scheduled",
-    "rendered_at": "2026-11-18T18:09:17.864791+00:00",
-    "seconds": 26.52,
+    "rendered_at": "2026-11-20T17:28:20.318697+00:00",
+    "seconds": 25.2,
     "eyes": {
-      "score": 8,
+      "score": 9,
       "problems": [
-        "The caption 'milton pounds for a' is misspelled (should be 'million').",
-        "The caption 'but the could not' is misspelled (should be 'but he could not').",
-        "The caption 'see a teenager play' is grammatically awkward in context."
+        "Character stands still for long stretches between running animations"
       ],
-      "best_fix": "Correct the spelling errors in the captions ('million' and 'he') to maintain professional quality for the target audience.",
-      "model": "gemini-3.1-flash-lite",
+      "best_fix": "Add more dynamic camera angles and varied character movements during static narration parts.",
+      "model": "gemini-3.5-flash-lite",
       "acts": null
-    }
+    },
+    "scene_scan": [
+      "shot 9 @513: 6.3 s long (same picture too long?)",
+      "shot 9 @576: jump inside shot (22) - something teleports?",
+      "shot 9 @643: jump inside shot (22) - something teleports?"
+    ]
   }
 }

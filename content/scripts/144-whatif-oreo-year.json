@@ -1,0 +1,186 @@
+{
+  "id": "144",
+  "slug": "whatif-oreo-year",
+  "company": "Oreo",
+  "format": "whatif",
+  "visual_style": "lowpoly",
+  "hook_style": "number",
+  "title_style": "whatif",
+  "theme": "bold_bright",
+  "status": "ready",
+  "score": 90,
+  "title": "What If You Ate All 40 Billion Oreos?",
+  "name_card": "What if you ate every Oreo",
+  "name_sub": "one year of cookies",
+  "description": "What if you had to eat every Oreo cookie made in a year? Mondelez reported that about 40 billion Oreos were being produced worldwide each year by 2017 (per Wikipedia). At one cookie per second, 40 billion seconds is about 1,270 years. That is simple math for fun, not a real challenge, and the number is from 2017.\n\nSources:\n- Wikipedia: Oreo: https://en.wikipedia.org/wiki/Oreo\n\n#shorts #oreo #whatif #howtheymakemoney",
+  "tags": [
+    "oreo",
+    "whatif",
+    "food",
+    "shorts"
+  ],
+  "images": {},
+  "hud_label": "OREOS A YEAR",
+  "loop": "Next time you twist an Oreo, remember:",
+  "cta": "Oreo or Chips Ahoy? Comment your pick.",
+  "cta_question": "Oreo or Chips Ahoy?",
+  "hero": {
+    "skin": "c68a5e",
+    "hair": "short",
+    "hair_color": "2a1d14",
+    "beard": "none",
+    "outfit": "tee",
+    "shirt": "1d4ed8",
+    "pants": "2b2f3a",
+    "shoes": "f4f4f4",
+    "chest": "",
+    "trim": "ffffff",
+    "height": 0.85
+  },
+  "scenes": [
+    {
+      "narration": "Oreo makes 40 billion cookies a year, and you eat them all.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "diner",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": null
+      },
+      "toon": [
+        {
+          "place": "diner",
+          "mood": "shock",
+          "brand": {
+            "name": "OREO",
+            "bg": "#0f3c8a",
+            "fg": "#ffffff"
+          },
+          "things": [
+            "cookie"
+          ],
+          "card": {
+            "text": "40 BILLION",
+            "kind": "screen",
+            "sub": "OREOS A YEAR, 2017"
+          },
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "You start with one cookie every second. You eat the cookie, then dip the next one in milk.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "diner",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": null
+      },
+      "toon": [
+        {
+          "place": "diner",
+          "mood": "excited",
+          "things": [
+            "cookie",
+            "clock"
+          ],
+          "view": "ms"
+        },
+        {
+          "place": "diner",
+          "mood": "happy",
+          "things": [
+            "cookie",
+            "milk_carton"
+          ],
+          "view": "ws"
+        }
+      ]
+    },
+    {
+      "narration": "Even without stopping, you finish in about 1,270 years.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "street",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": null
+      },
+      "toon": [
+        {
+          "place": "street",
+          "mood": "dazed",
+          "card": {
+            "text": "1,270 YEARS",
+            "kind": "screen",
+            "sub": "ONE A SECOND"
+          },
+          "view": "wide"
+        }
+      ]
+    },
+    {
+      "narration": "But next year's 40 billion are already baking.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "store",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": null
+      },
+      "toon": [
+        {
+          "place": "store",
+          "mood": "nervous",
+          "things": [
+            "box",
+            "cookie"
+          ],
+          "card": {
+            "text": "40 BILLION",
+            "kind": "screen",
+            "sub": "MORE, NEXT YEAR"
+          },
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "So you'd never catch up. Just eat one, and twist it first.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "diner",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": null
+      },
+      "toon": [
+        {
+          "place": "diner",
+          "mood": "sad",
+          "view": "face"
+        },
+        {
+          "place": "diner",
+          "mood": "laugh",
+          "things": [
+            "cookie"
+          ],
+          "view": "ms"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Oreo",
+      "url": "https://en.wikipedia.org/wiki/Oreo"
+    }
+  ]
+}

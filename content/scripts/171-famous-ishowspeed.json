@@ -1,0 +1,238 @@
+{
+  "id": "171",
+  "slug": "famous-ishowspeed",
+  "company": "IShowSpeed",
+  "format": "famous",
+  "visual_style": "lowpoly",
+  "hook_style": "number",
+  "title_style": "number",
+  "theme": "dark_neon",
+  "status": "ready",
+  "score": 90,
+  "title": "From 10 Viewers to 50 Million Subscribers",
+  "name_card": "IShowSpeed",
+  "name_sub": "YouTuber and streamer",
+  "description": "In 2020 IShowSpeed averaged about ten live viewers. By January 2026 he had 50 million YouTube subscribers.\n\nSources:\n- Wikipedia: IShowSpeed: https://en.wikipedia.org/wiki/IShowSpeed\n\nFrom Wikipedia (IShowSpeed): Darren Jason Watkins Jr. was born January 21, 2005 in Cincinnati, Ohio; he registered his YouTube channel in 2016 and began consistent livestreaming in December 2017; by 2020 he averaged approximately ten concurrent viewers per broadcast; during a 2024 tour of Southeast Asia his livestream 'IRL Stream in Indonesia' marked the first time an English-speaking streamer had received one million concurrent viewers; on January 21, 2026, his 21st birthday, while touring Nigeria, his YouTube channel surpassed 50 million subscribers. Not financial advice.\n\n#shorts #ishowspeed #youtube #howtheymakemoney",
+  "tags": [
+    "ishowspeed",
+    "youtube",
+    "streamer",
+    "famous",
+    "shorts"
+  ],
+  "images": {},
+  "hud_label": "HIS RISE",
+  "loop": "So remember:",
+  "cta": "Speed or Kai Cenat? Pick one.",
+  "cta_question": "Speed or Kai Cenat?",
+  "hero": {
+    "skin": "7a4b2f",
+    "hair": "short",
+    "hair_color": "15110e",
+    "beard": "none",
+    "outfit": "hoodie",
+    "shirt": "c0392b",
+    "pants": "2b2f3a",
+    "shoes": "f4f4f4",
+    "chest": "",
+    "trim": "ffffff",
+    "height": 1.0
+  },
+  "scenes": [
+    {
+      "narration": "In 2020 IShowSpeed averaged about ten live viewers.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "studio",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "hero": {
+          "skin": "7a4b2f",
+          "hair": "short",
+          "hair_color": "15110e",
+          "beard": "none",
+          "outfit": "hoodie",
+          "shirt": "c0392b",
+          "pants": "2b2f3a",
+          "shoes": "f4f4f4",
+          "chest": "",
+          "trim": "ffffff",
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "studio",
+          "mood": "calm",
+          "things": [
+            "laptop"
+          ],
+          "card": {
+            "text": "~10 VIEWERS",
+            "kind": "sign",
+            "sub": "2020 AVERAGE"
+          },
+          "view": "ms",
+          "crowd": 10
+        }
+      ]
+    },
+    {
+      "narration": "Then in 2024 one stream hit 1 million viewers at once.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "stage",
+        "action": "idle",
+        "crowd": 300,
+        "props": [],
+        "hero": {
+          "skin": "7a4b2f",
+          "hair": "short",
+          "hair_color": "15110e",
+          "beard": "none",
+          "outfit": "hoodie",
+          "shirt": "c0392b",
+          "pants": "2b2f3a",
+          "shoes": "f4f4f4",
+          "chest": "",
+          "trim": "ffffff",
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "street",
+          "mood": "shock",
+          "beat": "money",
+          "card": {
+            "text": "1 MILLION",
+            "kind": "screen",
+            "sub": "VIEWERS AT ONCE, 2024"
+          },
+          "view": "wide",
+          "crowd": 300
+        }
+      ]
+    },
+    {
+      "narration": "He was the first English-speaking streamer to do it.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "studio",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "hero": {
+          "skin": "7a4b2f",
+          "hair": "short",
+          "hair_color": "15110e",
+          "beard": "none",
+          "outfit": "hoodie",
+          "shirt": "c0392b",
+          "pants": "2b2f3a",
+          "shoes": "f4f4f4",
+          "chest": "",
+          "trim": "ffffff",
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "studio",
+          "mood": "proud",
+          "things": [
+            "tv"
+          ],
+          "card": {
+            "text": "FIRST",
+            "kind": "white",
+            "sub": "ENGLISH-SPEAKING STREAMER"
+          },
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "Then in 2026 he passed 50 million subscribers.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "studio",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "hero": {
+          "skin": "7a4b2f",
+          "hair": "short",
+          "hair_color": "15110e",
+          "beard": "none",
+          "outfit": "hoodie",
+          "shirt": "c0392b",
+          "pants": "2b2f3a",
+          "shoes": "f4f4f4",
+          "chest": "",
+          "trim": "ffffff",
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "stage",
+          "mood": "excited",
+          "action": "cheer",
+          "things": [
+            "phone"
+          ],
+          "card": {
+            "text": "50 MILLION",
+            "kind": "screen",
+            "sub": "SUBSCRIBERS, JAN 2026"
+          },
+          "view": "ms",
+          "crowd": 100
+        }
+      ]
+    },
+    {
+      "narration": "He did it live from Nigeria on his twenty-first birthday.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "street",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "hero": {
+          "skin": "7a4b2f",
+          "hair": "short",
+          "hair_color": "15110e",
+          "beard": "none",
+          "outfit": "hoodie",
+          "shirt": "c0392b",
+          "pants": "2b2f3a",
+          "shoes": "f4f4f4",
+          "chest": "",
+          "trim": "ffffff",
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "street",
+          "mood": "laugh",
+          "things": [
+            "globe"
+          ],
+          "view": "wide",
+          "crowd": 60
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: IShowSpeed",
+      "url": "https://en.wikipedia.org/wiki/IShowSpeed"
+    }
+  ],
+  "look": "afterhour"
+}

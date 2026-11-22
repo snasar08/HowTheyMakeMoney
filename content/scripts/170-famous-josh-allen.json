@@ -1,0 +1,268 @@
+{
+  "id": "170",
+  "slug": "famous-josh-allen",
+  "company": "Josh Allen",
+  "format": "famous",
+  "visual_style": "lowpoly",
+  "hook_style": "number",
+  "title_style": "number",
+  "theme": "bold_bright",
+  "status": "ready",
+  "score": 92,
+  "title": "From Zero Scholarship Offers to $330 Million",
+  "name_card": "Josh Allen",
+  "name_sub": "Buffalo Bills quarterback",
+  "description": "Josh Allen got zero Division I scholarship offers out of high school. In 2025 he signed a 330 million dollar deal.\n\nSources:\n- Wikipedia: Josh Allen (quarterback): https://en.wikipedia.org/wiki/Josh_Allen_(quarterback)\n\nFrom Wikipedia (Josh Allen): he received no scholarship offers from any NCAA Division I program; he grew up on a cotton farm near Firebaugh, California; he played one season at Reedley College, a junior college (2014), throwing 25 touchdowns with only 4 interceptions after becoming the starter; only Eastern Michigan and Wyoming offered a scholarship, and Eastern Michigan withdrew; the Bills drafted him seventh overall in the 2018 NFL draft and he signed a four-year, fully guaranteed $21 million contract; he won the NFL MVP award (announced February 6, 2025); on March 9, 2025 he signed a six-year extension worth $330 million, of which $250 million guaranteed, the largest guaranteed money ever given to an NFL player at the time of signing. Not financial advice.\n\n#shorts #joshallen #buffalobills #howtheymakemoney",
+  "tags": [
+    "josh allen",
+    "buffalo bills",
+    "nfl",
+    "famous",
+    "shorts"
+  ],
+  "images": {},
+  "hud_label": "HIS RISE",
+  "loop": "So remember:",
+  "cta": "Allen or Mahomes? Pick one.",
+  "cta_question": "Allen or Mahomes?",
+  "hero": {
+    "skin": "c99a76",
+    "hair": "short",
+    "hair_color": "d9b36c",
+    "beard": "stubble",
+    "outfit": "kit",
+    "shirt": "00338d",
+    "pants": "f4f4f4",
+    "trim": "c60c30",
+    "socks": "00338d",
+    "shoes": "111111",
+    "height": 1.05,
+    "number": 17
+  },
+  "scenes": [
+    {
+      "narration": "Josh Allen got zero college scholarship offers. Now the Bills pay him 330 million dollars.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "gridiron",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "hero": {
+          "skin": "c99a76",
+          "hair": "short",
+          "hair_color": "d9b36c",
+          "beard": "stubble",
+          "outfit": "kit",
+          "shirt": "00338d",
+          "pants": "f4f4f4",
+          "trim": "c60c30",
+          "socks": "00338d",
+          "shoes": "111111",
+          "height": 1.05,
+          "number": 17
+        }
+      },
+      "toon": [
+        {
+          "place": "gridiron",
+          "mood": "sad",
+          "card": {
+            "text": "0 OFFERS",
+            "kind": "sign",
+            "sub": "COLLEGE SCHOLARSHIPS"
+          },
+          "view": "ms"
+        },
+        {
+          "place": "gridiron",
+          "mood": "proud",
+          "beat": "money",
+          "card": {
+            "text": "$330 MILLION",
+            "kind": "screen",
+            "sub": "BILLS DEAL, 2025"
+          },
+          "things": [
+            "cashstack"
+          ],
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "He came from a cotton farm and a junior college.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "farm",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "hero": {
+          "skin": "c99a76",
+          "hair": "short",
+          "hair_color": "d9b36c",
+          "beard": "stubble",
+          "outfit": "kit",
+          "shirt": "00338d",
+          "pants": "f4f4f4",
+          "trim": "c60c30",
+          "socks": "00338d",
+          "shoes": "111111",
+          "height": 1.05,
+          "number": 17
+        }
+      },
+      "toon": [
+        {
+          "place": "farm",
+          "mood": "calm",
+          "things": [
+            "house"
+          ],
+          "view": "wide"
+        }
+      ]
+    },
+    {
+      "narration": "Then only Wyoming offered him a scholarship.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "classroom",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "hero": {
+          "skin": "c99a76",
+          "hair": "short",
+          "hair_color": "d9b36c",
+          "beard": "stubble",
+          "outfit": "kit",
+          "shirt": "00338d",
+          "pants": "f4f4f4",
+          "trim": "c60c30",
+          "socks": "00338d",
+          "shoes": "111111",
+          "height": 1.05,
+          "number": 17
+        }
+      },
+      "toon": [
+        {
+          "place": "classroom",
+          "mood": "relief",
+          "things": [
+            "letter"
+          ],
+          "card": {
+            "text": "1 OFFER",
+            "kind": "white",
+            "sub": "WYOMING"
+          },
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "In 2018 the Bills drafted him seventh overall.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "gridiron",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "hero": {
+          "skin": "c99a76",
+          "hair": "short",
+          "hair_color": "d9b36c",
+          "beard": "stubble",
+          "outfit": "kit",
+          "shirt": "00338d",
+          "pants": "f4f4f4",
+          "trim": "c60c30",
+          "socks": "00338d",
+          "shoes": "111111",
+          "height": 1.05,
+          "number": 17
+        }
+      },
+      "toon": [
+        {
+          "place": "stage",
+          "mood": "happy",
+          "things": [
+            "trophy"
+          ],
+          "card": {
+            "text": "2018",
+            "kind": "flip",
+            "sub": "NFL DRAFT, 7TH PICK"
+          },
+          "view": "ms",
+          "crowd": 60
+        }
+      ]
+    },
+    {
+      "narration": "In 2025 he won MVP. Then he signed the deal, with 250 million dollars locked in.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "boardroom",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "hero": {
+          "skin": "c99a76",
+          "hair": "short",
+          "hair_color": "d9b36c",
+          "beard": "stubble",
+          "outfit": "kit",
+          "shirt": "00338d",
+          "pants": "f4f4f4",
+          "trim": "c60c30",
+          "socks": "00338d",
+          "shoes": "111111",
+          "height": 1.05,
+          "number": 17
+        }
+      },
+      "toon": [
+        {
+          "place": "gridiron",
+          "mood": "laugh",
+          "things": [
+            "trophy"
+          ],
+          "card": {
+            "text": "2025",
+            "kind": "flip",
+            "sub": "MVP"
+          },
+          "view": "ms",
+          "crowd": 60
+        },
+        {
+          "place": "boardroom",
+          "mood": "shock",
+          "things": [
+            "cash"
+          ],
+          "card": {
+            "text": "$250 MILLION",
+            "kind": "screen",
+            "sub": "LOCKED IN, A RECORD"
+          },
+          "view": "face",
+          "beat": "money"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Josh Allen (quarterback)",
+      "url": "https://en.wikipedia.org/wiki/Josh_Allen_(quarterback)"
+    }
+  ],
+  "look": "afterhour"
+}
