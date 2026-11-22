@@ -41,6 +41,11 @@ Formats allowed: `famous`, `whatif`, `story`. Do NOT write `how` or `careers` (p
 - `loop`: one short line spoken last that leads back into line 1 ("So next time you lace up your shoes, remember:").
 - `cta` + `cta_question`: a this-or-that comment question ("Nike or Adidas?"). The last scene never says "Follow
   for more" (the CTA is added automatically).
+- `first_comment` (Sam, Nov 22): the comment the channel posts under the Short right after it goes live
+  (pipeline/first_comment.py). One line, max 120 characters, sounds like the creator, asks viewers something they
+  want to answer (a pick, a guess, "who next?"), may add one emoji. Not a copy of `cta_question`: add a twist
+  ("Nike or Adidas? Wrong answers only 👇", "Would you take the $1 deal or the shares? 👇"). Only numbers that are
+  in the script; no links, @, # or new facts; kid-safe.
 - Vary `hook_style` (question / number / whatif / challenge / surprise) and `title_style` (question / number /
   statement / whatif). No two Shorts in a row share format + theme + hook style.
 
@@ -163,7 +168,7 @@ Top level (all required unless noted): `id` (string "NNN"), `slug`, `company`, `
 (`history`|`plan`, story only), `visual_style: "lowpoly"`, `hook_style`, `title_style`, `theme` (dark_neon /
 bold_bright / clean_navy; rotate), `status: "ready"`, `score`, `title`, `name_card`, `name_sub`, `description`
 (story + "Sources:" list + the cited facts + "#shorts #topic #howtheymakemoney"; a `plan` says it is made up),
-`tags`, `images: {}`, `loop`, `cta`, `cta_question`, `hero`, `scenes` (5-9), `sources`, `length_test` (story only),
+`tags`, `images: {}`, `loop`, `cta`, `cta_question`, `first_comment`, `hero`, `scenes` (5-9), `sources`, `length_test` (story only),
 `look: "afterhour"` (story only).
 `hero`: `{skin hex, hair short|buzz|bald|quiff|long|bangs|ponytail|bun|afro|curly|mohawk, hair_color, beard
 none|stubble|full|goatee|mustache, outfit tee|kit|suit|hoodie|dress, shirt, pants, shoes, chest, trim, number,
@@ -181,6 +186,7 @@ Annotated story example (trimmed from 119-plan-nike; JSON has no comments, so th
   "tags": ["nike", "story", "shorts"], "images": {},
   "loop": "So next time you lace up your shoes, remember:",
   "cta": "Nike or Adidas? Comment your pick.", "cta_question": "Nike or Adidas?",
+  "first_comment": "Nike or Adidas? Wrong answers only 👇",
   "hero": {"skin": "d9a577", "hair": "short", "hair_color": "2a1d14", "beard": "none", "outfit": "tee",
            "shirt": "111111", "pants": "2b2f3a", "shoes": "f4f4f4", "chest": "NIKE", "trim": "ffffff", "height": 1.0},
   "scenes": [

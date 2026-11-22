@@ -6,7 +6,7 @@
 Buffer publishes the Shorts, so the YouTube video id is only known after it goes live. Every couple of hours:
 the channel's uploads from the last 2 days (1 quota unit) -> match each to its script (same title, else the
 delivered post time within 90 min) -> skip videos already in analytics/first_comments.json or that already have
-a top-level comment from the channel -> post the script's cta_question as the channel (commentThreads.insert,
+a top-level comment from the channel -> post the script's first_comment (else its cta_question) as the channel (commentThreads.insert,
 50 units) -> log it. YouTube's API cannot pin comments; pin by hand if wanted.
 Never raises on a missing secret: prints a notice and exits 0.
 """
@@ -32,11 +32,17 @@ def norm(t: str) -> str:
     return re.sub(r"[^a-z0-9]+", " ", t.lower()).strip()
 
 
+def ok(t: str) -> bool:
+    return bool(t) and len(t) <= 120 and not BAD_RX.search(t) and not re.search(r"https?://|www\.|@|#", t)
+
+
 def comment_text(script: dict) -> str:
+    """The script's first_comment (written by the Saturday routine), else its cta_question, else a stock line."""
+    fc = (script.get("first_comment") or "").strip()
+    if ok(fc):
+        return fc
     q = (script.get("cta_question") or "").strip()
-    if not q or len(q) > 120 or BAD_RX.search(q) or "http" in q:
-        return FALLBACK
-    return q + " 👇"
+    return q + " 👇" if ok(q) else FALLBACK
 
 
 def match(video: dict, scripts: list[dict]) -> dict | None:
