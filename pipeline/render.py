@@ -202,16 +202,16 @@ def shade_overlay(tint) -> Image.Image:
     return Image.fromarray(np.dstack([rgb, a]), "RGBA")
 
 
-# ---------------------------------------------------------------- captions
-
-@dataclass
-
 class NewLookMissing(RuntimeError):
     """The new (afterhour) look's frames are not there. kind "skip" = not planned this run; "fail" = render failed."""
     def __init__(self, kind: str, msg: str):
         super().__init__(msg)
         self.kind = kind
 
+
+# ---------------------------------------------------------------- captions
+
+@dataclass
 class Word:
     text: str
     start: float
