@@ -1,5 +1,5 @@
 {
- "at": "2026-11-21T17:58:26.872098+00:00",
+ "at": "2026-11-22T18:29:18.123672+00:00",
  "shorts": [
   {
    "video": "NDSx2v-Zyv4",
@@ -64,8 +64,8 @@
   {
    "video": "H8TQsxm7j6c",
    "title": "From $2.46 Billion to $4 Trillion",
-   "views": 1211,
-   "avg_pct": 77.4,
+   "views": 1219,
+   "avg_pct": 77.2,
    "avg_seconds": 28,
    "tags": {
     "script": "088",
@@ -84,8 +84,8 @@
    },
    "start": 128,
    "q25": 100,
-   "q50": 77,
-   "q75": 65,
+   "q50": 76,
+   "q75": 64,
    "end": 29,
    "drop_at_pct": 87,
    "drop_at_s": 31.5,
@@ -154,8 +154,8 @@
   {
    "video": "988e9PFGksE",
    "title": "He Turned Down $20 Million a Year",
-   "views": 1101,
-   "avg_pct": 79.6,
+   "views": 1119,
+   "avg_pct": 79.2,
    "avg_seconds": 19,
    "tags": {
     "script": "092",
@@ -175,10 +175,10 @@
    "start": 129,
    "q25": 105,
    "q50": 78,
-   "q75": 66,
+   "q75": 65,
    "end": 33,
    "drop_at_pct": 83,
-   "drop_at_s": 19.8,
+   "drop_at_s": 19.9,
    "drop_size": 17
   },
   {
@@ -244,8 +244,8 @@
   {
    "video": "Sx27tDSQFgs",
    "title": "$1 Million to Play a Different Game",
-   "views": 1053,
-   "avg_pct": 86.2,
+   "views": 1060,
+   "avg_pct": 86.0,
    "avg_seconds": 24,
    "tags": {
     "script": "083",
@@ -266,7 +266,7 @@
    "q25": 112,
    "q50": 85,
    "q75": 67,
-   "end": 44,
+   "end": 43,
    "drop_at_pct": 85,
    "drop_at_s": 23.7,
    "drop_size": 12
@@ -274,8 +274,8 @@
   {
    "video": "MNyjUP3ItAc",
    "title": "He Owned 155 Five Guys Restaurants",
-   "views": 1046,
-   "avg_pct": 74.5,
+   "views": 1047,
+   "avg_pct": 74.3,
    "avg_seconds": 20,
    "tags": {
     "script": "128",
@@ -296,15 +296,45 @@
    "q25": 99,
    "q50": 72,
    "q75": 59,
-   "end": 27,
+   "end": 26,
    "drop_at_pct": 87,
    "drop_at_s": 23.4,
    "drop_size": 21
   },
   {
+   "video": "9x_20Qe2kkY",
+   "title": "His Card Sold for $8.04 Million. He's 19.",
+   "views": 1039,
+   "avg_pct": 80.3,
+   "avg_seconds": 19,
+   "tags": {
+    "script": "131",
+    "slug": "famous-flagg-card",
+    "topic": "Cooper Flagg",
+    "format": "famous",
+    "visual_style": "lowpoly",
+    "theme": "bold_bright",
+    "hook_style": "surprise",
+    "title_style": "number",
+    "length_s": 23.69,
+    "length_bucket": "<30",
+    "post_at": "2026-11-18T16:30:00-05:00",
+    "post_slot": "16:30",
+    "score": 90
+   },
+   "start": 130,
+   "q25": 106,
+   "q50": 80,
+   "q75": 67,
+   "end": 31,
+   "drop_at_pct": 84,
+   "drop_at_s": 19.9,
+   "drop_size": 20
+  },
+  {
    "video": "oZgN9jlnT2c",
    "title": "From a Retired Shirt at 17 to \u20ac103 Million",
-   "views": 1037,
+   "views": 1036,
    "avg_pct": 72.1,
    "avg_seconds": 18,
    "tags": {
@@ -392,33 +422,33 @@
    "drop_size": 19
   },
   {
-   "video": "9x_20Qe2kkY",
-   "title": "His Card Sold for $8.04 Million. He's 19.",
-   "views": 1022,
-   "avg_pct": 80.1,
-   "avg_seconds": 19,
+   "video": "FbFAKvKN0cI",
+   "title": "Cut After 2 Months, Then $11.4 Billion",
+   "views": 1021,
+   "avg_pct": 69.6,
+   "avg_seconds": 18,
    "tags": {
-    "script": "131",
-    "slug": "famous-flagg-card",
-    "topic": "Cooper Flagg",
+    "script": "085",
+    "slug": "famous-dwayne-johnson",
+    "topic": "Dwayne Johnson",
     "format": "famous",
     "visual_style": "lowpoly",
     "theme": "bold_bright",
     "hook_style": "surprise",
     "title_style": "number",
-    "length_s": 23.69,
+    "length_s": 25.99,
     "length_bucket": "<30",
-    "post_at": "2026-11-18T16:30:00-05:00",
-    "post_slot": "16:30",
+    "post_at": "2026-11-18T12:00:00-05:00",
+    "post_slot": "12:00",
     "score": 90
    },
-   "start": 130,
-   "q25": 106,
-   "q50": 80,
-   "q75": 66,
-   "end": 31,
-   "drop_at_pct": 84,
-   "drop_at_s": 19.9,
+   "start": 131,
+   "q25": 91,
+   "q50": 63,
+   "q75": 53,
+   "end": 16,
+   "drop_at_pct": 16,
+   "drop_at_s": 4.1,
    "drop_size": 20
   },
   {
@@ -454,7 +484,7 @@
   {
    "video": "zpe-JPNRQO0",
    "title": "What If One Person Played All of Roblox?",
-   "views": 1017,
+   "views": 1018,
    "avg_pct": 70.1,
    "avg_seconds": 17,
    "tags": {
@@ -482,11 +512,41 @@
    "drop_size": 13
   },
   {
+   "video": "0HOuiRFjoDY",
+   "title": "What If You Got Paid $23,280 to Sleep?",
+   "views": 1016,
+   "avg_pct": 70.8,
+   "avg_seconds": 20,
+   "tags": {
+    "script": "084",
+    "slug": "famous-kai-cenat",
+    "topic": "Kai Cenat",
+    "format": "famous",
+    "visual_style": "lowpoly",
+    "theme": "dark_neon",
+    "hook_style": "surprise",
+    "title_style": "whatif",
+    "length_s": 28.56,
+    "length_bucket": "<30",
+    "post_at": "2026-11-17T16:30:00-05:00",
+    "post_slot": "16:30",
+    "score": 91
+   },
+   "start": 130,
+   "q25": 95,
+   "q50": 67,
+   "q75": 50,
+   "end": 31,
+   "drop_at_pct": 16,
+   "drop_at_s": 4.5,
+   "drop_size": 13
+  },
+  {
    "video": "OnAqPBAM37s",
    "title": "From a Baby Photo With Messi to $45 Million",
-   "views": 1013,
-   "avg_pct": 63.5,
-   "avg_seconds": 19,
+   "views": 1015,
+   "avg_pct": 63.3,
+   "avg_seconds": 18,
    "tags": {
     "script": "086",
     "slug": "famous-yamal",
@@ -503,12 +563,12 @@
     "score": 92
    },
    "start": 119,
-   "q25": 83,
+   "q25": 82,
    "q50": 59,
    "q75": 44,
    "end": 19,
    "drop_at_pct": 14,
-   "drop_at_s": 4.2,
+   "drop_at_s": 4.0,
    "drop_size": 16
   },
   {
@@ -540,66 +600,6 @@
    "drop_at_pct": 81,
    "drop_at_s": 20.0,
    "drop_size": 18
-  },
-  {
-   "video": "FbFAKvKN0cI",
-   "title": "Cut After 2 Months, Then $11.4 Billion",
-   "views": 1005,
-   "avg_pct": 69.9,
-   "avg_seconds": 18,
-   "tags": {
-    "script": "085",
-    "slug": "famous-dwayne-johnson",
-    "topic": "Dwayne Johnson",
-    "format": "famous",
-    "visual_style": "lowpoly",
-    "theme": "bold_bright",
-    "hook_style": "surprise",
-    "title_style": "number",
-    "length_s": 25.99,
-    "length_bucket": "<30",
-    "post_at": "2026-11-18T12:00:00-05:00",
-    "post_slot": "12:00",
-    "score": 90
-   },
-   "start": 131,
-   "q25": 91,
-   "q50": 63,
-   "q75": 53,
-   "end": 16,
-   "drop_at_pct": 16,
-   "drop_at_s": 4.1,
-   "drop_size": 20
-  },
-  {
-   "video": "0HOuiRFjoDY",
-   "title": "What If You Got Paid $23,280 to Sleep?",
-   "views": 1004,
-   "avg_pct": 70.7,
-   "avg_seconds": 20,
-   "tags": {
-    "script": "084",
-    "slug": "famous-kai-cenat",
-    "topic": "Kai Cenat",
-    "format": "famous",
-    "visual_style": "lowpoly",
-    "theme": "dark_neon",
-    "hook_style": "surprise",
-    "title_style": "whatif",
-    "length_s": 28.56,
-    "length_bucket": "<30",
-    "post_at": "2026-11-17T16:30:00-05:00",
-    "post_slot": "16:30",
-    "score": 91
-   },
-   "start": 130,
-   "q25": 95,
-   "q50": 67,
-   "q75": 50,
-   "end": 31,
-   "drop_at_pct": 16,
-   "drop_at_s": 4.5,
-   "drop_size": 14
   },
   {
    "video": "rDHeA2dVTLM",
@@ -634,8 +634,8 @@
   {
    "video": "5uP5HyJ204w",
    "title": "The \u20ac222 Million Transfer Record",
-   "views": 980,
-   "avg_pct": 76.1,
+   "views": 985,
+   "avg_pct": 76.5,
    "avg_seconds": 22,
    "tags": {
     "script": "080",
@@ -653,49 +653,19 @@
     "score": 89
    },
    "start": 134,
-   "q25": 97,
-   "q50": 73,
+   "q25": 98,
+   "q50": 74,
    "q75": 64,
    "end": 15,
    "drop_at_pct": 93,
-   "drop_at_s": 26.9,
-   "drop_size": 20
-  },
-  {
-   "video": "Q-fNnacDmuQ",
-   "title": "How Much of Your Chipotle Bowl Is Food?",
-   "views": 963,
-   "avg_pct": 50.5,
-   "avg_seconds": 11,
-   "tags": {
-    "script": "022",
-    "slug": "chipotle",
-    "topic": "Chipotle",
-    "format": "how",
-    "visual_style": "charts3d",
-    "theme": "bold_bright",
-    "hook_style": "number",
-    "title_style": "question",
-    "length_s": 22.1,
-    "length_bucket": "<30",
-    "post_at": "2026-11-06T15:00:00-05:00",
-    "post_slot": "15:00",
-    "score": 95
-   },
-   "start": 112,
-   "q25": 83,
-   "q50": 40,
-   "q75": 29,
-   "end": 13,
-   "drop_at_pct": 21,
-   "drop_at_s": 4.6,
-   "drop_size": 22
+   "drop_at_s": 26.8,
+   "drop_size": 21
   },
   {
    "video": "6fwSsIATYPo",
    "title": "From $1.5 Million at 16 to $765 Million",
-   "views": 956,
-   "avg_pct": 107.0,
+   "views": 975,
+   "avg_pct": 106.2,
    "avg_seconds": 29,
    "tags": {
     "script": "091",
@@ -712,14 +682,44 @@
     "post_slot": "20:00",
     "score": 89
    },
-   "start": 162,
-   "q25": 134,
-   "q50": 106,
+   "start": 161,
+   "q25": 132,
+   "q50": 105,
    "q75": 94,
    "end": 62,
-   "drop_at_pct": 83,
-   "drop_at_s": 22.5,
-   "drop_size": 17
+   "drop_at_pct": 82,
+   "drop_at_s": 22.4,
+   "drop_size": 18
+  },
+  {
+   "video": "N2oLakB4OyI",
+   "title": "From a $25 Million Deal to $1.6 Billion",
+   "views": 949,
+   "avg_pct": 81.1,
+   "avg_seconds": 21,
+   "tags": {
+    "script": "097",
+    "slug": "famous-magic-johnson",
+    "topic": "Magic Johnson",
+    "format": "famous",
+    "visual_style": "lowpoly",
+    "theme": "bold_bright",
+    "hook_style": "surprise",
+    "title_style": "number",
+    "length_s": 25.74,
+    "length_bucket": "<30",
+    "post_at": "2026-11-19T20:00:00-05:00",
+    "post_slot": "20:00",
+    "score": 88
+   },
+   "start": 132,
+   "q25": 102,
+   "q50": 77,
+   "q75": 68,
+   "end": 35,
+   "drop_at_pct": 88,
+   "drop_at_s": 22.8,
+   "drop_size": 21
   },
   {
    "video": "p6Meiqc_h2Q",
@@ -784,7 +784,7 @@
   {
    "video": "Ih7t-gLT6Iw",
    "title": "$232,140 a Year to Fly Planes",
-   "views": 814,
+   "views": 818,
    "avg_pct": 72.4,
    "avg_seconds": 24,
    "tags": {
@@ -842,41 +842,11 @@
    "drop_size": 24
   },
   {
-   "video": "pHISbEQ042Q",
-   "title": "Apple Services Keep 75 Cents of Every Dollar",
-   "views": 558,
-   "avg_pct": 41.2,
-   "avg_seconds": 10,
-   "tags": {
-    "script": "015",
-    "slug": "apple",
-    "topic": "Apple",
-    "format": "how",
-    "visual_style": "charts3d",
-    "theme": "dark_neon",
-    "hook_style": "surprise",
-    "title_style": "statement",
-    "length_s": 25.37,
-    "length_bucket": "<30",
-    "post_at": "2026-11-06T18:00:00-05:00",
-    "post_slot": "18:00",
-    "score": 94
-   },
-   "start": 107,
-   "q25": 53,
-   "q50": 31,
-   "q75": 18,
-   "end": 7,
-   "drop_at_pct": 21,
-   "drop_at_s": 5.1,
-   "drop_size": 37
-  },
-  {
    "video": "mY2ucJom1Zw",
    "title": "From a Dream Board to a $28 Million Deal",
-   "views": 497,
-   "avg_pct": 78.1,
-   "avg_seconds": 19,
+   "views": 636,
+   "avg_pct": 81.0,
+   "avg_seconds": 20,
    "tags": {
     "script": "081",
     "slug": "famous-clark",
@@ -892,14 +862,14 @@
     "post_slot": "20:00",
     "score": 90
    },
-   "start": 131,
-   "q25": 100,
-   "q50": 72,
-   "q75": 61,
-   "end": 36,
-   "drop_at_pct": 17,
-   "drop_at_s": 4.1,
-   "drop_size": 16
+   "start": 134,
+   "q25": 103,
+   "q50": 77,
+   "q75": 64,
+   "end": 37,
+   "drop_at_pct": 85,
+   "drop_at_s": 21.0,
+   "drop_size": 17
   },
   {
    "video": "dzsMqPku2HM",
@@ -964,8 +934,8 @@
   {
    "video": "bkk_VW26I6E",
    "title": "Too Old at 31: This Job Pays $148,080",
-   "views": 211,
-   "avg_pct": 90.0,
+   "views": 214,
+   "avg_pct": 90,
    "avg_seconds": 21,
    "tags": {
     "script": "054",
@@ -987,9 +957,9 @@
    "q50": 88,
    "q75": 69,
    "end": 41,
-   "drop_at_pct": 87,
-   "drop_at_s": 20.3,
-   "drop_size": 16
+   "drop_at_pct": 85,
+   "drop_at_s": 19.8,
+   "drop_size": 17
   },
   {
    "video": "Zf2GdNSZ2SE",
@@ -1022,40 +992,10 @@
    "drop_size": 18
   },
   {
-   "video": "NmjUgbv6_jE",
-   "title": "Microsoft Keeps 47 Cents of Every Dollar",
-   "views": 197,
-   "avg_pct": 47.7,
-   "avg_seconds": 12,
-   "tags": {
-    "script": "027",
-    "slug": "microsoft",
-    "topic": "Microsoft",
-    "format": "how",
-    "visual_style": "charts3d",
-    "theme": "clean_navy",
-    "hook_style": "number",
-    "title_style": "number",
-    "length_s": 25.69,
-    "length_bucket": "<30",
-    "post_at": "2026-11-07T12:00:00-05:00",
-    "post_slot": "12:00",
-    "score": 92
-   },
-   "start": 110,
-   "q25": 66,
-   "q50": 40,
-   "q75": 25,
-   "end": 10,
-   "drop_at_pct": 16,
-   "drop_at_s": 4.0,
-   "drop_size": 29
-  },
-  {
    "video": "Qo-nSIDy_fM",
    "title": "$102,030 a Year to Make Cartoons",
-   "views": 117,
-   "avg_pct": 43.1,
+   "views": 120,
+   "avg_pct": 42.6,
    "avg_seconds": 13,
    "tags": {
     "script": "068",
@@ -1073,13 +1013,13 @@
     "score": 86
    },
    "start": 106,
-   "q25": 62,
-   "q50": 30,
+   "q25": 60,
+   "q50": 29,
    "q75": 19,
    "end": 6,
    "drop_at_pct": 19,
-   "drop_at_s": 5.7,
-   "drop_size": 34
+   "drop_at_s": 5.8,
+   "drop_size": 35
   },
   {
    "video": "4RBsErczezM",
@@ -1144,7 +1084,7 @@
   {
    "video": "_Z4XVNFVtBE",
    "title": "One Air Mattress Became 2.5 Billion Stays",
-   "views": 98,
+   "views": 99,
    "avg_pct": 117.1,
    "avg_seconds": 38,
    "tags": {
@@ -1204,7 +1144,7 @@
   {
    "video": "jLD-ouKQ6Eo",
    "title": "Red Bull Sells 14 Billion Cans a Year",
-   "views": 57,
+   "views": 58,
    "avg_pct": 65.1,
    "avg_seconds": 16,
    "tags": {
@@ -1256,8 +1196,8 @@
   {
    "video": "v_MBJE6z344",
    "title": "How Much Do NASA Astronauts Get Paid?",
-   "views": 39,
-   "avg_pct": 53.9,
+   "views": 40,
+   "avg_pct": 56.3,
    "avg_seconds": 14,
    "tags": {
     "script": "046",
@@ -1274,14 +1214,14 @@
     "post_slot": "12:00",
     "score": 89
    },
-   "start": 108,
-   "q25": 69,
-   "q50": 54,
-   "q75": 54,
-   "end": 15,
-   "drop_at_pct": 81,
-   "drop_at_s": 21.0,
-   "drop_size": 23
+   "start": 107,
+   "q25": 71,
+   "q50": 57,
+   "q75": 57,
+   "end": 14,
+   "drop_at_pct": 84,
+   "drop_at_s": 20.9,
+   "drop_size": 21
   },
   {
    "video": "EtG0FpzQuwg",
@@ -1396,7 +1336,7 @@
   {
    "video": "7oAvym5kcWE",
    "title": "Vets Earn $130,100. Getting In Is the Hard Part",
-   "views": 16,
+   "views": 17,
    "avg_pct": 86.6,
    "avg_seconds": 24,
    "tags": {
@@ -1482,28 +1422,6 @@
    }
   },
   {
-   "video": "N2oLakB4OyI",
-   "title": "From a $25 Million Deal to $1.6 Billion",
-   "views": 0,
-   "avg_pct": 0,
-   "avg_seconds": 0,
-   "tags": {
-    "script": "097",
-    "slug": "famous-magic-johnson",
-    "topic": "Magic Johnson",
-    "format": "famous",
-    "visual_style": "lowpoly",
-    "theme": "bold_bright",
-    "hook_style": "surprise",
-    "title_style": "number",
-    "length_s": 25.74,
-    "length_bucket": "<30",
-    "post_at": "2026-11-19T20:00:00-05:00",
-    "post_slot": "20:00",
-    "score": 88
-   }
-  },
-  {
    "video": "BqXicYlpUYY",
    "title": "A 3-Hour Trip to Practice, Then \u00a3155 Million",
    "views": 0,
@@ -1523,6 +1441,50 @@
     "post_at": "2026-11-20T15:30:00-05:00",
     "post_slot": "15:30",
     "score": 87
+   }
+  },
+  {
+   "video": "zbKY6QVVdwQ",
+   "title": "A $12 Million Deal Right After High School",
+   "views": 0,
+   "avg_pct": 0,
+   "avg_seconds": 0,
+   "tags": {
+    "script": "090",
+    "slug": "famous-serena",
+    "topic": "Serena Williams",
+    "format": "famous",
+    "visual_style": "lowpoly",
+    "theme": "bold_bright",
+    "hook_style": "surprise",
+    "title_style": "number",
+    "length_s": 20.22,
+    "length_bucket": "<30",
+    "post_at": "2026-11-21T19:15:00-05:00",
+    "post_slot": "19:15",
+    "score": 88
+   }
+  },
+  {
+   "video": "t8iSy1RfQlY",
+   "title": "The \u00a338 Million 16-Year-Old",
+   "views": 0,
+   "avg_pct": 0,
+   "avg_seconds": 0,
+   "tags": {
+    "script": "129",
+    "slug": "famous-vinicius",
+    "topic": "Vin\u00edcius J\u00fanior",
+    "format": "famous",
+    "visual_style": "lowpoly",
+    "theme": "bold_bright",
+    "hook_style": "surprise",
+    "title_style": "number",
+    "length_s": 25.2,
+    "length_bucket": "<30",
+    "post_at": "2026-11-21T19:00:00-05:00",
+    "post_slot": "19:00",
+    "score": 92
    }
   }
  ]

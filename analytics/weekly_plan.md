@@ -1,4 +1,4 @@
-# This week's mix (2026-11-21)
+# This week's mix (2026-11-22)
 
 Made by `python -m pipeline.weekly_mix` from analytics/stats.json + retention.json (Shorts posted in the last 21 days, at least 48 h old). Saturday parts follow the **counts per part** below instead of a fixed mix.
 
@@ -7,12 +7,12 @@ Made by `python -m pipeline.weekly_mix` from analytics/stats.json + retention.js
 | lane | Shorts | median views 48 h | median watched | |
 |---|---|---|---|---|
 | famous-athlete | 18 | 1041.0 | 72% | FOCUS |
-| famous-other | 7 | 1014 | 70% |  |
+| famous-other | 8 | 1018.5 | 71% |  |
 | story-plan | 0 | – | – | EXPERIMENT |
 | story-history | 0 | – | – |  |
 | whatif | 4 | 523.0 | 73% |  |
-| how | 25 | 72 | 52% | paused |
-| careers | 15 | 30 | 63% | paused |
+| how | 24 | 84.5 | 55% | paused |
+| careers | 14 | 28.5 | 64% | paused |
 
 ## Going viral (top 5, last 21 days)
 
@@ -24,13 +24,13 @@ Made by `python -m pipeline.weekly_mix` from analytics/stats.json + retention.js
 
 ## Not working (bottom 5)
 
-- 0 views, how: Is Starbucks Secretly a Bank? — "Is Starbucks holding your money right now? It might be."
 - 2 views, how: Visa Kept $20 Billion Without Lending a Dime — "How does Visa make billions without ever lending you a dollar?"
 - 3 views, whatif: What If Spotify Listeners Were a Country? — "What if every Spotify listener moved into one country?"
 - 4 views, how: Why Do Gas Stations Want You Inside? — "Why does every gas station want you to come inside? Because gas isn't the money."
 - 5 views, famous-other: Why Does Ohtani Earn Just $2.6M Playing? — "Why does one of baseball's biggest stars earn only 2.6 million dollars from playing?"
+- 8 views, careers: 54% of US Firefighters Are Volunteers — "Who fights the fires in your town? Maybe a volunteer."
 
-Look: old 64 Shorts (median 112.0), 3D 5 Shorts (median 1044).
+Look: old 62 Shorts (median 154.0), 3D 6 Shorts (median 1054.0).
 
 ## Plan for each Saturday part (10 scripts)
 
