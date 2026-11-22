@@ -147,10 +147,13 @@ def remake_jobs() -> list | None:
     now = dt.datetime.now(dt.timezone.utc)
     out = []
     for i in ids:
+        i, _, move_to = i.partition("@")   # Nov 21: "137@2026-11-23T12:00-05:00" books the remake at a new time
         for p in SCRIPTS.glob(f"{i}-*.json"):
             s = json.loads(p.read_text(encoding="utf-8"))
             d = s.get("delivered") or {}
             when = dt.datetime.fromisoformat(d["post_at"]) if d.get("post_at") else None
+            if when and move_to:
+                when = dt.datetime.fromisoformat(move_to)
             if s.get("status") != "delivered" or not d.get("buffer_post") or not when or when <= now + dt.timedelta(minutes=25):
                 print(f"[remake] skip {p.stem}: not a future Buffer post")
                 continue

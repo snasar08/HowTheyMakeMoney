@@ -60,11 +60,13 @@ def day_cap(day: dt.date, fdays: set[dt.date]) -> int:
     return min(MAX_PER_DAY, FILM_DAY_SHORTS) if day in fdays else MAX_PER_DAY
 # Buffer free plan, Nov 19 2026: at most 2 YouTube posts in any rolling 24 h (status.buffer.com), else
 # the post fails with "daily posting limit". Slots are nudged later in NUDGE_MIN steps (up to NUDGE_MAX_MIN)
-# so no 24 h window (plus a margin) ever holds more than ROLLING_MAX posts.
+# so no 24 h window ever holds more than ROLLING_MAX posts. Nov 21 (Sam: "post throughout the day"): no margin;
+# a 24.25 h window can never fit 2 posts a day, so it pushed both into the evening, 15 min apart.
 ROLLING_MAX = int(os.environ.get("ROLLING_MAX", "2"))
-ROLLING_WIN = dt.timedelta(hours=float(os.environ.get("ROLLING_H", "24.25")))
+ROLLING_WIN = dt.timedelta(hours=float(os.environ.get("ROLLING_H", "24")))
 NUDGE_MIN = int(os.environ.get("NUDGE_MIN", "15"))
 NUDGE_MAX_MIN = int(os.environ.get("NUDGE_MAX_MIN", "120"))
+SAME_DAY_GAP = dt.timedelta(hours=float(os.environ.get("SAME_DAY_GAP_H", "4")))
 
 
 def rolling_ok(t: dt.datetime, others) -> bool:
@@ -117,6 +119,8 @@ def publish_slots(n: int, now: dt.datetime | None = None, taken=None, horizon_h:
                 c = base + dt.timedelta(minutes=k)
                 if c <= now + lead or c in taken or (end and c > end) or c.date() != day:
                     continue
+                if any(x.date() == day and abs(x - c) < SAME_DAY_GAP for x in list(taken) + out):
+                    continue   # Nov 21, Sam: spread through the day, never two posts minutes apart
                 if rolling_ok(c, list(taken) + out):
                     t = c
                     break
