@@ -7,12 +7,12 @@
   "hook_style": "number",
   "title_style": "number",
   "theme": "bold_bright",
-  "status": "ready",
+  "status": "delivered",
   "score": 92,
   "title": "Ryan Reynolds Got $300 Million for a Phone Company",
   "name_card": "Ryan Reynolds",
   "name_sub": "actor and owner",
-  "description": "Ryan Reynolds bought a stake in Mint Mobile in 2019. T-Mobile announced it would buy Mint in March 2023 in a deal worth up to $1.35 billion, and per Wikipedia Reynolds received $300 million for his interest. In 2020 he and Rob McElhenney bought Wrexham AFC; the club won three promotions in three seasons, was reportedly worth \u00a3100 million in October 2024, and the owners' loans of \u00a315 million were repaid.\n\nSources:\n- Wikipedia: Mint Mobile: https://en.wikipedia.org/wiki/Mint_Mobile\n- Wikipedia: Ryan Reynolds: https://en.wikipedia.org/wiki/Ryan_Reynolds\n- Wikipedia: Wrexham A.F.C.: https://en.wikipedia.org/wiki/Wrexham_A.F.C.\n\nNot financial advice.\n\n#shorts #ryanreynolds #wrexham #howtheymakemoney",
+  "description": "Ryan Reynolds bought a stake in Mint Mobile in 2019. T-Mobile announced it would buy Mint in March 2023 in a deal worth up to $1.35 billion, and per Wikipedia Reynolds received $300 million for his interest. In 2020 he and Rob McElhenney bought Wrexham AFC; the club won three promotions in three seasons, was reportedly worth £100 million in October 2024, and the owners' loans of £15 million were repaid.\n\nSources:\n- Wikipedia: Mint Mobile: https://en.wikipedia.org/wiki/Mint_Mobile\n- Wikipedia: Ryan Reynolds: https://en.wikipedia.org/wiki/Ryan_Reynolds\n- Wikipedia: Wrexham A.F.C.: https://en.wikipedia.org/wiki/Wrexham_A.F.C.\n\nNot financial advice.\n\n#shorts #ryanreynolds #wrexham #howtheymakemoney",
   "tags": [
     "ryan reynolds",
     "mint mobile",
@@ -45,7 +45,19 @@
         "set": "office",
         "action": "idle",
         "crowd": 0,
-        "props": []
+        "props": [],
+        "hero": {
+          "skin": "e0b48f",
+          "hair": "short",
+          "hair_color": "4a3022",
+          "beard": "stubble",
+          "outfit": "suit",
+          "shirt": "1b2a41",
+          "pants": "1b2a41",
+          "shoes": "222222",
+          "tie": "c8102e",
+          "height": 1.0
+        }
       },
       "toon": [
         {
@@ -90,7 +102,19 @@
         "set": "boardroom",
         "action": "idle",
         "crowd": 0,
-        "props": []
+        "props": [],
+        "hero": {
+          "skin": "e0b48f",
+          "hair": "short",
+          "hair_color": "4a3022",
+          "beard": "stubble",
+          "outfit": "suit",
+          "shirt": "1b2a41",
+          "pants": "1b2a41",
+          "shoes": "222222",
+          "tie": "c8102e",
+          "height": 1.0
+        }
       },
       "toon": [
         {
@@ -127,7 +151,19 @@
         "crowd": 30,
         "props": [
           "ball"
-        ]
+        ],
+        "hero": {
+          "skin": "e0b48f",
+          "hair": "short",
+          "hair_color": "4a3022",
+          "beard": "stubble",
+          "outfit": "suit",
+          "shirt": "1b2a41",
+          "pants": "1b2a41",
+          "shoes": "222222",
+          "tie": "c8102e",
+          "height": 1.0
+        }
       },
       "toon": [
         {
@@ -170,7 +206,19 @@
         "set": "pitch",
         "action": "idle",
         "crowd": 200,
-        "props": []
+        "props": [],
+        "hero": {
+          "skin": "e0b48f",
+          "hair": "short",
+          "hair_color": "4a3022",
+          "beard": "stubble",
+          "outfit": "suit",
+          "shirt": "1b2a41",
+          "pants": "1b2a41",
+          "shoes": "222222",
+          "tie": "c8102e",
+          "height": 1.0
+        }
       },
       "toon": [
         {
@@ -197,7 +245,19 @@
         "set": "stage",
         "action": "idle",
         "crowd": 40,
-        "props": []
+        "props": [],
+        "hero": {
+          "skin": "e0b48f",
+          "hair": "short",
+          "hair_color": "4a3022",
+          "beard": "stubble",
+          "outfit": "suit",
+          "shirt": "1b2a41",
+          "pants": "1b2a41",
+          "shoes": "222222",
+          "tie": "c8102e",
+          "height": 1.0
+        }
       },
       "toon": [
         {
@@ -224,5 +284,35 @@
       "title": "Wikipedia: Wrexham A.F.C.",
       "url": "https://en.wikipedia.org/wiki/Wrexham_A.F.C."
     }
-  ]
+  ],
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-139-famous-ryan-reynolds",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-139-famous-ryan-reynolds/139-famous-ryan-reynolds.mp4",
+    "post_at": "2026-11-23T19:15:00-05:00",
+    "buffer_post": "6b0319eec72676f5e9433a11",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-22T16:35:58.775610+00:00",
+    "seconds": 25.77,
+    "eyes": {
+      "score": 9,
+      "problems": [
+        "The character's face appears to glitch/distort slightly in frames 288-289 during the transition.",
+        "The text 'Mint' in frames 166-192 is slightly small and could be clearer for mobile viewers."
+      ],
+      "best_fix": "Smooth the transition animation in frames 288-289 to prevent the character's facial features from appearing to shift or glitch.",
+      "model": "gemini-3.1-flash-lite",
+      "acts": [
+        {
+          "kind": "count_cash",
+          "frames": "193-289",
+          "clear": true,
+          "why": "The character is clearly holding and counting stacks of cash bills."
+        }
+      ]
+    },
+    "scene_scan": [
+      "shot 11 @645: jump inside shot (25) - something teleports?"
+    ]
+  }
 }
