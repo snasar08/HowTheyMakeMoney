@@ -196,13 +196,34 @@ def run_remake(jobs: list, args) -> int:
                 continue
             save_cover(video, ROOT / "analytics" / "covers" / f"{path.stem}.jpg")
             result = deliver(video, script, when)
+            old_gone = False
+            if not result.get("buffer_post") and result.get("asset_url") and old.get("buffer_post"):
+                # Nov 21: Buffer allows 2 YouTube posts a day, so a full day refuses the new post while the old one
+                # is still booked. The old one is the old look (never post it, Sam), so free its slot and book again.
+                P.buffer_delete(old["buffer_post"])
+                old_gone = True
+                print(f"[remake] deleted old Buffer post {old['buffer_post']} to free the day")
+                try:
+                    post = P.buffer_schedule(result["asset_url"], script, when)
+                    check = P.buffer_post(post["id"])
+                    result = {**result, "mode": "buffer", "buffer_post": post["id"], "buffer_status": check.get("status")}
+                except Exception as e:  # noqa: BLE001
+                    script["status"] = "needs_fix"
+                    script["needs_fix"] = [f"remake: new-look video is ready at {result.get('release')} but Buffer "
+                                           f"would not book it for {when:%a %b %d %H:%M} ({e}); old post was deleted. "
+                                           f"Book it in Buffer or set it back to ready."]
+                    path.write_text(json.dumps(script, indent=2, ensure_ascii=False) + "\n")
+                    print(f"::error title={path.stem} remake::{script['needs_fix'][0]}")
+                    bad += 1
+                    continue
             if not result.get("buffer_post"):
                 raise RuntimeError(f"new post not booked: {result}")
-            try:
-                P.buffer_delete(old["buffer_post"])
-                print(f"[remake] deleted old Buffer post {old['buffer_post']}")
-            except Exception as e:  # noqa: BLE001  two posts in one slot is better than none; say so loudly
-                print(f"::error title={path.stem} remake::new post booked but old post {old['buffer_post']} NOT deleted: {e!r}")
+            if not old_gone:
+                try:
+                    P.buffer_delete(old["buffer_post"])
+                    print(f"[remake] deleted old Buffer post {old['buffer_post']}")
+                except Exception as e:  # noqa: BLE001  two posts in one slot is better than none; say so loudly
+                    print(f"::error title={path.stem} remake::new post booked but old post {old['buffer_post']} NOT deleted: {e!r}")
             script["status"] = "delivered"
             script["delivered"] = {**result, "rendered_at": dt.datetime.now(dt.timezone.utc).isoformat(), "seconds": info["seconds"],
                                    "remade_from": old.get("buffer_post"), **({"eyes": info["eyes"]} if info.get("eyes") else {}),
