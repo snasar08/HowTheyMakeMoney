@@ -36,37 +36,50 @@ def _weights() -> dict:
         return {}
 
 
-def ready_scripts(recent: list[str] | None = None) -> list[Path]:
-    """Ready scripts in posting order. Priority = virality `score` × the format's performance
-    weight (analytics/format_weights.json, 1.0 until there's enough data); then greedily pick so
-    the format differs from the previous post (formats alternate day to day)."""
-    items = []
+SHARE_WINDOW = 6       # posts of history the share rule looks back over
+MIN_SHARE_WEIGHT = 0.6  # Sam, Nov 22: "every video gets love" - a weak format still gets at least this weight
+
+
+def ready_scripts(recent: list | None = None) -> list[Path]:
+    """Ready scripts in posting order.
+
+    Sam, Nov 22: keep the boost, but share. The boost (analytics/format_weights.json, 1.0 for a
+    format with no data, never below MIN_SHARE_WEIGHT) now sets each format's SHARE of posts
+    instead of multiplying scores, so a boosted format posts more often but never crowds the
+    others out. Each pick goes to the format furthest behind its share (counting the last
+    SHARE_WINDOW posts), never the same format twice in a row when another one is ready; inside
+    a format the highest `score` goes first (and a different look than the last post if possible)."""
     w = _weights()
+    pools: dict[str, list] = {}
     for p in sorted(SCRIPTS.glob("*.json")):
         try:
             s = json.loads(p.read_text(encoding="utf-8"))
             if s.get("status") == "ready":
-                fmt = s.get("format", "how")
-                items.append([float(s.get("score", 0)) * float(w.get(fmt, 1.0)), p.name, p, fmt,
-                              s.get("visual_style", "charts3d")])
+                pools.setdefault(s.get("format", "how"), []).append(
+                    (-float(s.get("score", 0)), p.name, p, s.get("visual_style", "charts3d")))
         except json.JSONDecodeError:
             print(f"[run] skipping invalid JSON: {p.name}")
-    items.sort(key=lambda x: (-x[0], x[1]))
-    last = (recent or [(None, None)])[-1]
-    looks = [look for _, look in (recent or [])][-LOWPOLY_GAP:]
+    for v in pools.values():
+        v.sort(key=lambda x: (x[0], x[1]))
+    share = {f: max(float(w.get(f, 1.0)), MIN_SHARE_WEIGHT) for f in pools}
+    hist = list(recent if recent is not None else recent_formats(SHARE_WINDOW))[-SHARE_WINDOW:]
     out = []
+    while any(pools.values()):
+        live = [f for f, v in pools.items() if v]
+        total = sum(share[f] for f in live)
+        n = len(hist) + 1
+        last_fmt, last_look = hist[-1] if hist else (None, None)
 
-    def ok(it):  # Sam, Nov 9: low-poly looks empty; at most one in every LOWPOLY_GAP + 1 posts
-        return it[4] != "lowpoly" or "lowpoly" not in looks
+        def behind(f):  # how far this format is behind its fair share of the next n posts
+            return share[f] / total * n - sum(1 for x, _ in hist if x == f)
 
-    while items:  # differ from the previous post in format AND look if possible, else format only
-        pick = (next((it for it in items if ok(it) and it[3] != last[0] and it[4] != last[1]), None)
-                or next((it for it in items if ok(it) and it[3] != last[0]), None)
-                or next((it for it in items if ok(it)), items[0]))
-        items.remove(pick)
-        out.append(pick[2])
-        last = (pick[3], pick[4])
-        looks = (looks + [pick[4]])[-LOWPOLY_GAP:]
+        cands = [f for f in live if f != last_fmt] or live
+        fmt = max(cands, key=lambda f: (behind(f), share[f], -pools[f][0][0]))
+        pool = pools[fmt]
+        it = next((x for x in pool if x[3] != last_look), pool[0])
+        pool.remove(it)
+        out.append(it[2])
+        hist = (hist + [(fmt, it[3])])[-SHARE_WINDOW:]
     return out
 
 
@@ -251,7 +264,7 @@ def main() -> int:
         print(f"[run] posting starts {POST_START} (New York); nothing to do yet")
         return 0
 
-    queue = ready_scripts(recent_formats(LOWPOLY_GAP))
+    queue = ready_scripts(recent_formats(SHARE_WINDOW))
     remake = remake_jobs()
     if remake is not None:              # Nov 18: re-render already scheduled Shorts in the new look, same slots
         return run_remake(remake, args)
