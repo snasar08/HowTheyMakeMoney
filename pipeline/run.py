@@ -15,7 +15,7 @@ import traceback
 from pathlib import Path
 
 from .publish import HORIZON_H, POST_START, deliver, posting_started, publish_slots, taken_slots
-from .render import render_script
+from .render import NewLookMissing, render_script
 
 ROOT = Path(__file__).resolve().parent.parent
 SCRIPTS = ROOT / "content" / "scripts"
@@ -315,6 +315,18 @@ def main() -> int:
                                    **({"scene_scan": info["scene_scan"]} if info.get("scene_scan") else {})}
             path.write_text(json.dumps(script, indent=2, ensure_ascii=False) + "\n")
             print(f"[run] delivered {path.stem}: {result}")
+        except NewLookMissing as e:  # Nov 21 (Sam): never the old look. Failed render -> needs_fix (the Saturday routine fixes it)
+            if e.kind == "fail" and not args.dry:
+                script = json.loads(path.read_text())
+                script["status"] = "needs_fix"
+                script["needs_fix"] = [f"{e} (not posted; render it again in the new look)"]
+                path.write_text(json.dumps(script, indent=2, ensure_ascii=False) + "\n")
+                failures += 1
+                print(f"::error title={path.stem} not posted::{e}; moved to needs_fix")
+            else:
+                print(f"::warning title={path.stem} not posted::{e}; stays ready")
+            if spares:
+                jobs.append((spares.pop(0), when))
         except Exception:  # keep going; the failed script stays 'ready' for next run
             failures += 1
             traceback.print_exc()

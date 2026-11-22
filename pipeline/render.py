@@ -205,6 +205,13 @@ def shade_overlay(tint) -> Image.Image:
 # ---------------------------------------------------------------- captions
 
 @dataclass
+
+class NewLookMissing(RuntimeError):
+    """The new (afterhour) look's frames are not there. kind "skip" = not planned this run; "fail" = render failed."""
+    def __init__(self, kind: str, msg: str):
+        super().__init__(msg)
+        self.kind = kind
+
 class Word:
     text: str
     start: float
@@ -352,10 +359,15 @@ class Renderer:
                     self.images[f"brollp{i}"] = img
         self.bg = gradient(self.theme["bg_top"], self.theme["bg_bottom"])
         # Blender frames (nightly, Nov 3): LP_PLATES/<slug>/<scene>_<frame>.jpg from 20 machines.
-        # Used only if every frame of the Short's plan arrived; else the GL renderer, as before.
+        # Nov 21 (Sam: Serena went out in the old low-poly look, "make sure that never happens again"): when LP_PLATES
+        # is set (the nightly make step) the new-look frames are REQUIRED. No plan -> NewLookMissing("skip") (stays ready);
+        # plan but frames missing -> NewLookMissing("fail") (run.py marks it needs_fix). Never the old GL look.
         self.plates = None
         pd = os.environ.get("LP_PLATES")
         slug = f"{script.get('id', '')}-{script.get('slug', '')}"
+        need_new = bool(pd) and not os.environ.get("LP_RECORD") and os.environ.get("ALLOW_OLD_LOOK") != "1"
+        if need_new and not (Path(pd) / f"{slug}.json").exists():
+            raise NewLookMissing("skip", f"no new-look plan for {slug} this run")
         if pd and (Path(pd) / f"{slug}.json").exists():
             keys = list(json.loads((Path(pd) / f"{slug}.json").read_text())["frames"].keys())
             missing = [k for k in keys if not (Path(pd) / slug / f"{k}.jpg").exists()]
@@ -365,7 +377,9 @@ class Renderer:
             else:
                 have = sorted(p.name for p in (Path(pd) / slug).glob("*.jpg"))[:3] if (Path(pd) / slug).exists() else []
                 print(f"::warning::[render] Blender frames incomplete for {slug} ({len(missing)}/{len(keys)} missing, "
-                      f"e.g. {missing[:3]}; have {have}; dirs {sorted(x.name for x in Path(pd).iterdir())[:5]}); using the GL look")
+                      f"e.g. {missing[:3]}; have {have}; dirs {sorted(x.name for x in Path(pd).iterdir())[:5]})")
+                if need_new:
+                    raise NewLookMissing("fail", f"new-look render failed: {len(missing)}/{len(keys)} frames missing")
         self.lp_record = bool(os.environ.get("LP_RECORD"))
         self._props = self._load_props(slug)
         self.act_spans = self._load_act_spans(slug)
