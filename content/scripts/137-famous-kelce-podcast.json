@@ -340,19 +340,20 @@
     "mode": "buffer",
     "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-137-famous-kelce-podcast",
     "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-137-famous-kelce-podcast/137-famous-kelce-podcast.mp4",
-    "post_at": "2026-11-22T19:30:00-05:00",
-    "buffer_post": "6b0258f8cc364169c12186f1",
+    "post_at": "2026-11-23T12:00:00-05:00",
+    "buffer_post": "6b025cb2846b0ee90756dc38",
     "buffer_status": "scheduled",
-    "rendered_at": "2026-11-22T02:52:40.432028+00:00",
+    "rendered_at": "2026-11-22T03:08:34.783745+00:00",
     "seconds": 24.05,
-    "remade_from": "6b02015ccc364169c1039939",
+    "remade_from": "6b0258f8cc364169c12186f1",
     "eyes": {
-      "score": 9,
+      "score": 8,
       "problems": [
-        "The text 'New Heights' is partially obscured by the character's head in some frames.",
-        "The captioning at the end is slightly repetitive and could be more concise for the target audience."
+        "The video loops back to the cover frame at the end, which is repetitive and unnecessary for a short.",
+        "The text at the bottom is occasionally difficult to read due to the busy background colors.",
+        "The transition between the podcast studio scene and the final call-to-action is slightly abrupt."
       ],
-      "best_fix": "Adjust the character positioning or text placement during the 'New Heights' segment to ensure the podcast name is fully visible.",
+      "best_fix": "Remove the final loop back to the cover frame and end the video on a stronger, clear call-to-action screen.",
       "model": "gemini-3.1-flash-lite",
       "acts": null
     }
