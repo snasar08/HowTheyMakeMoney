@@ -12,7 +12,7 @@
   "score": 95,
   "images": {},
   "hud_label": "THE PLAN",
-  "title": "He Built Nvidia for 33 Years. Now He Wants to Beat It.",
+  "title": "Quit After 33 Years. Now He Wants to Beat Nvidia.",
   "name_card": "Jensen Huang",
   "name_sub": "a hypothetical plan to beat Nvidia",
   "description": "You're Jensen Huang. You built Nvidia for 33 years, then resigned. Now you want to beat it.\n\nReal (Bloomberg, November 10, 2026): Huang disclosed the relationship in a memo to employees (\"I was unfaithful to my wife\"); Nvidia shares slid as much as 8.8 percent that Monday, at one point erasing almost $400 billion in market value; the board is forming a committee of independent directors to investigate; there is no known succession plan. Nvidia was co-founded by Huang in 1993. Nvidia announced on November 12, 2026 that Huang stepped down as CEO and left the board after 33 years (Al Jazeera/Reuters); CFO Colette Kress is interim CEO. Everything after his resignation is a made-up, hypothetical plan for fun: imagined steps, not news and not anything Huang or Nvidia has said or planned.\n\nSources:\n- Bloomberg via the Jefferson City News Tribune: Nvidia probe into CEO affair raises thorny questions for AI: https://www.newstribune.com/news/2026/nov/10/nvidia-probe-into-ceo-affair-raises-thorny/\n- Wikipedia: Nvidia: https://en.wikipedia.org/wiki/Nvidia\n\n#shorts #nvidia #jensenhuang #howtheymakemoney",
@@ -25,6 +25,7 @@
   "loop": "So next time someone says a CEO is finished, remember:",
   "cta": "Could Jensen beat his own company? Comment yes or no.",
   "cta_question": "Could he beat Nvidia?",
+  "first_comment": "Could Jensen beat his own company? Yes or no 👇",
   "hero": {
     "skin": "e3b98f",
     "hair": "short",
@@ -40,7 +41,7 @@
   },
   "scenes": [
     {
-      "narration": "You're Jensen Huang. You built Nvidia for 33 years. Then you admit you cheated on your wife, and you resign.",
+      "narration": "You're Jensen Huang. After 33 years, you resign from the company you built. It all started with one memo to your staff.",
       "visual": {
         "type": "lowpoly",
         "set": "office",

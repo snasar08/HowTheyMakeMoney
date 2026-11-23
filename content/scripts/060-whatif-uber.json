@@ -22,6 +22,7 @@
   "loop": "So next time you tap for a ride, remember:",
   "cta": "Uber or a bike? Comment your pick.",
   "cta_question": "Uber or a bike?",
+  "first_comment": "One trip a minute for 85 years. Would you take that job? 👇",
   "scenes": [
     {
       "narration": "Uber did 4.1 billion rides and deliveries last quarter. Now picture one driver.",
@@ -63,7 +64,7 @@
       ]
     },
     {
-      "narration": "Just one driver. Every single trip.",
+      "narration": "That driver takes every single trip, all by himself. How long would one day take?",
       "visual": {
         "type": "lowpoly",
         "set": "city",
@@ -98,7 +99,7 @@
       ]
     },
     {
-      "narration": "Then picture it. Hundreds of trips every second.",
+      "narration": "Hundreds of trips arrive every second, and he must take them all.",
       "visual": {
         "type": "lowpoly",
         "set": "city",
@@ -112,14 +113,6 @@
         "hud": "44.6M"
       },
       "toon": [
-        {
-          "place": "lab",
-          "things": [
-            "lightbulb"
-          ],
-          "mood": "scheme",
-          "view": "low"
-        },
         {
           "place": "track",
           "things": [

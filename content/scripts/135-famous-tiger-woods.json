@@ -23,6 +23,7 @@
   "loop": "Next time you swing, remember:",
   "cta": "Tiger or Jordan?",
   "cta_question": "Tiger or Jordan?",
+  "first_comment": "Tiger or Jordan: who's the bigger brand? 👇",
   "hero": {
     "skin": "a9744f",
     "hair": "short",
@@ -88,7 +89,7 @@
       ]
     },
     {
-      "narration": "At age two, he is on TV playing against Bob Hope.",
+      "narration": "But at age two, he is already on TV, playing against Bob Hope.",
       "visual": {
         "type": "lowpoly",
         "set": "field",

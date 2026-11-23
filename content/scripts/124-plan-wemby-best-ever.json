@@ -10,7 +10,7 @@
   "theme": "bold_bright",
   "status": "ready",
   "score": 94,
-  "title": "You're Wemby. You Want to Be the Best Ever.",
+  "title": "Wemby's Plan: 10 Rings, Then the Moon",
   "name_card": "Victor Wembanyama",
   "name_sub": "Spurs, a hypothetical plan",
   "images": {},
@@ -31,6 +31,7 @@
   "loop": "So next time Wemby blocks a shot, remember:",
   "cta": "Can Wemby be the best ever? Comment yes or no.",
   "cta_question": "Best ever: yes or no?",
+  "first_comment": "Wemby dunking on the Moon: would you watch? Yes or no 👇",
   "hero": {
     "skin": "6b4430",
     "hair": "short",
@@ -47,7 +48,7 @@
   },
   "scenes": [
     {
-      "narration": "You're Victor Wembanyama. You're already the tallest star in the league. Now you want to be the best ever.",
+      "narration": "You're Victor Wembanyama, the tallest star in the league. You want to be the best ever.",
       "visual": {
         "type": "lowpoly",
         "set": "court",
@@ -74,11 +75,6 @@
         }
       },
       "toon": [
-        {
-          "place": "court",
-          "mood": "calm",
-          "view": "ms"
-        },
         {
           "place": "court",
           "mood": "proud",

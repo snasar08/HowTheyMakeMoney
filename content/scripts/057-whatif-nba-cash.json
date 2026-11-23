@@ -23,6 +23,7 @@
   "loop": "So next time you see a buzzer beater, remember:",
   "cta": "The cash or the trophy? Comment your pick.",
   "cta_question": "The cash or the trophy?",
+  "first_comment": "Would you take your whole salary in $1 bills? Yes or no 👇",
   "scenes": [
     {
       "narration": "One NBA team's salary cap: about 154.6 million dollars. Now pay it in ones.",
@@ -64,7 +65,7 @@
       ]
     },
     {
-      "narration": "Just 1 dollar bills. One gram each.",
+      "narration": "Every dollar bill weighs about one gram. So what would the whole salary cap weigh?",
       "visual": {
         "type": "lowpoly",
         "set": "court",
@@ -84,27 +85,24 @@
             "cash"
           ],
           "card": {
-            "text": "$1",
-            "kind": "paper"
+            "text": "1 GRAM",
+            "kind": "white",
+            "sub": "EACH BILL"
           },
           "mood": "calm"
         },
         {
           "place": "lab",
           "things": [
-            "cash"
+            "cashstack"
           ],
-          "card": {
-            "text": "1 GRAM",
-            "kind": "white",
-            "sub": "EACH BILL"
-          },
-          "mood": "calm"
+          "mood": "nervous",
+          "view": "face"
         }
       ]
     },
     {
-      "narration": "Then weigh it. About 155 tonnes of cash.",
+      "narration": "All of it weighs about 155 tonnes of cash.",
       "visual": {
         "type": "lowpoly",
         "set": "warehouse",
@@ -118,14 +116,6 @@
         "stat_sub": "of $1 bills"
       },
       "toon": [
-        {
-          "place": "showroom",
-          "things": [
-            "cashstack",
-            "crate"
-          ],
-          "mood": "stern"
-        },
         {
           "place": "street",
           "things": [
