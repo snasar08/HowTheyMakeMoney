@@ -1246,7 +1246,7 @@ class Renderer:
                 frame = fx.grade(frame, n)
                 if lp:
                     # the name banner sits at the top (famous format): the title goes under it, not behind it
-                    fx.hook(frame, self.s.get("title", ""), gt, font, BLACK,
+                    fx.hook(frame, self.s.get("title", ""), gt, font, BLACK, dur=(2.6 if calm else 0.75),   # calm (3D look): the hook claim stays up through the opening shots (Nov 23)
                             y=(410 if self.s.get("name_sub") else 345) if self.s.get("name_card") else 150, pop_on=not calm)   # below the banner + its sub line
                 if not calm:   # a counter that pops on change is an "edit" too
                     self._hud(frame, scenes, si, t)
