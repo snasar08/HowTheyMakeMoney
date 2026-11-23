@@ -26,6 +26,7 @@
   "loop": "So next time a Lamborghini drives by, remember:",
   "cta": "Lamborghini or Ferrari? Comment your pick.",
   "cta_question": "Lamborghini or Ferrari?",
+  "first_comment": "Would you rather build a tractor or a supercar? 👇",
   "hero": {
     "skin": "e2b48e",
     "hair": "short",
@@ -40,7 +41,7 @@
   },
   "scenes": [
     {
-      "narration": "You are Ferruccio Lamborghini. Your name is on 10,687 supercars a year. And it all started with a tractor.",
+      "narration": "Your name is on 10,687 supercars a year. But you're Ferruccio Lamborghini, a tractor maker. So how did that happen?",
       "visual": {
         "type": "lowpoly",
         "set": "city",
@@ -53,16 +54,6 @@
         "stat_sub": "supercars a year (2024)"
       },
       "toon": [
-        {
-          "place": "throne",
-          "beat": "sign",
-          "mood": "proud",
-          "brand": {
-            "name": "LAMBORGHINI",
-            "bg": "#111111",
-            "fg": "#d4af37"
-          }
-        },
         {
           "place": "showroom",
           "beat": "walk",
@@ -78,10 +69,20 @@
           }
         },
         {
-          "place": "garage",
-          "beat": "walk",
-          "mood": "calm",
+          "place": "farm",
+          "beat": "sign",
+          "mood": "proud",
+          "brand": {
+            "name": "LAMBORGHINI",
+            "bg": "#111111",
+            "fg": "#d4af37"
+          },
           "view": "ms"
+        },
+        {
+          "place": "garage",
+          "mood": "dazed",
+          "view": "face"
         }
       ]
     },

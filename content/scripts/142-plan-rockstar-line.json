@@ -25,6 +25,7 @@
   "loop": "So next time you wait in line for a game, remember:",
   "cta": "GTA or Minecraft? Comment your pick.",
   "cta_question": "GTA or Minecraft?",
+  "first_comment": "GTA 6 sold 3.79 billion dollars in a day. Did you buy it day one? 👇",
   "hero": {
     "skin": "d9a577",
     "hair": "short",
@@ -40,7 +41,7 @@
   },
   "scenes": [
     {
-      "narration": "You're Rockstar, and GTA 6 sells 3.79 billion dollars on day one. That's the biggest entertainment launch ever, on November 19, 2026.",
+      "narration": "GTA 6 sold 3.79 billion dollars in one day. But you're Rockstar, and you want the whole planet in your line.",
       "visual": {
         "type": "lowpoly",
         "set": "stage",
@@ -70,6 +71,32 @@
         },
         {
           "place": "throne",
+          "mood": "scheme",
+          "things": [
+            "globe",
+            "controller"
+          ],
+          "view": "face",
+          "brand": {
+            "name": "ROCKSTAR",
+            "bg": "#111111",
+            "fg": "#fcaf17"
+          }
+        }
+      ]
+    },
+    {
+      "narration": "That was the biggest entertainment launch ever, on November 19, 2026. So step one, you build a store with a line around Earth.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "store",
+        "action": "idle",
+        "crowd": 100,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "throne",
           "mood": "proud",
           "things": [
             "trophy",
@@ -81,19 +108,7 @@
             "sub": "YEAR"
           },
           "view": "wide"
-        }
-      ]
-    },
-    {
-      "narration": "Now you want everyone on Earth in your line. Step one, you build a store with a line around Earth.",
-      "visual": {
-        "type": "lowpoly",
-        "set": "store",
-        "action": "idle",
-        "crowd": 100,
-        "props": []
-      },
-      "toon": [
+        },
         {
           "place": "store",
           "mood": "scheme",
@@ -102,15 +117,6 @@
           ],
           "crowd": 100,
           "view": "ms"
-        },
-        {
-          "place": "street",
-          "mood": "excited",
-          "things": [
-            "globe"
-          ],
-          "crowd": 300,
-          "view": "wide"
         }
       ]
     },

@@ -24,6 +24,7 @@
   "loop": "Next time you hold a LEGO brick, remember:",
   "cta": "LEGO or Minecraft? Pick one.",
   "cta_question": "LEGO or Minecraft?",
+  "first_comment": "How many LEGO bricks do you own? Beat 4.5 👇",
   "hero": {
     "skin": "e0ac80",
     "hair": "short",
@@ -39,7 +40,7 @@
   },
   "scenes": [
     {
-      "narration": "LEGO makes about 36 billion bricks a year. What if everyone on Earth got a share?",
+      "narration": "LEGO makes 36 billion bricks, but you'd get 4.5. So what if everyone on Earth got a share?",
       "visual": {
         "type": "lowpoly",
         "set": "stall",
@@ -59,7 +60,7 @@
           "card": {
             "text": "36 BILLION",
             "kind": "screen",
-            "sub": "BRICKS A YEAR"
+            "sub": "YOU GET 4.5"
           },
           "view": "wide"
         },

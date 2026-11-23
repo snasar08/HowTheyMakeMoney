@@ -20,9 +20,10 @@
     "shorts"
   ],
   "images": {},
-  "loop": "So remember:",
+  "loop": "So next time someone says singing is the only way, remember:",
   "cta": "Selena or Rihanna? Pick one.",
   "cta_question": "Selena or Rihanna?",
+  "first_comment": "Did you know her 1.3 billion dollars came from makeup? 👇",
   "hero": {
     "skin": "e0b08c",
     "hair": "long",
@@ -38,7 +39,7 @@
   },
   "scenes": [
     {
-      "narration": "Most of Selena Gomez's 1.3 billion dollars comes from one makeup brand.",
+      "narration": "Selena Gomez made 1.3 billion dollars, but not singing.",
       "visual": {
         "type": "lowpoly",
         "set": "stage",
@@ -56,12 +57,12 @@
             "kind": "screen",
             "sub": "BLOOMBERG, 2024"
           },
-          "view": "ms"
+          "view": "face"
         }
       ]
     },
     {
-      "narration": "But it is not her music or her acting.",
+      "narration": "So what made her rich, if not her music or her acting?",
       "visual": {
         "type": "lowpoly",
         "set": "stage",
@@ -82,7 +83,7 @@
       ]
     },
     {
-      "narration": "In 2020, she launches Rare Beauty.",
+      "narration": "In 2020, she launches the makeup brand Rare Beauty.",
       "visual": {
         "type": "lowpoly",
         "set": "stage",

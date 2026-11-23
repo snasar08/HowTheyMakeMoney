@@ -26,6 +26,7 @@
   "loop": "So next time you see Mickey, remember:",
   "cta": "Mickey or Oswald? Comment your pick.",
   "cta_question": "Mickey or Oswald?",
+  "first_comment": "Would you trade a rabbit for a sportscaster? 👇",
   "hero": {
     "skin": "f0c8a8",
     "hair": "short",
@@ -41,7 +42,7 @@
   },
   "scenes": [
     {
-      "narration": "You are Walt Disney. Your company makes 94.4 billion dollars a year.",
+      "narration": "You're Walt Disney, and you make 94.4 billion dollars.",
       "visual": {
         "type": "lowpoly",
         "set": "city",
@@ -55,19 +56,9 @@
       },
       "toon": [
         {
-          "place": "throne",
-          "beat": "sign",
-          "mood": "proud",
-          "brand": {
-            "name": "Disney",
-            "bg": "#0b2a6f",
-            "fg": "#ffffff"
-          }
-        },
-        {
           "place": "mansion",
           "beat": "money",
-          "mood": "laugh",
+          "mood": "proud",
           "things": [
             "cashstack"
           ],
@@ -75,6 +66,11 @@
             "text": "$94.4B",
             "kind": "screen",
             "sub": "A YEAR"
+          },
+          "brand": {
+            "name": "Disney",
+            "bg": "#0b2a6f",
+            "fg": "#ffffff"
           }
         }
       ]
@@ -147,7 +143,8 @@
             "name": "Universal",
             "bg": "#111111",
             "fg": "#ffffff"
-          }
+          },
+          "view": "face"
         },
         {
           "place": "street",

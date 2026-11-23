@@ -25,6 +25,7 @@
   "loop": "So next time you try something new, remember:",
   "cta": "Biles or Gauff? Comment your pick.",
   "cta_question": "Biles or Gauff?",
+  "first_comment": "Brand deals beat prize money: 11 million dollars. Biles or Gauff? 👇",
   "hero": {
     "skin": "8a5a3c",
     "hair": "ponytail",
@@ -40,7 +41,7 @@
   },
   "scenes": [
     {
-      "narration": "Simone Biles earned 11 million dollars in 2025 with no prize money.",
+      "narration": "Simone Biles made 11 million dollars, zero from prizes.",
       "visual": {
         "type": "lowpoly",
         "set": "gym",
@@ -72,14 +73,14 @@
           "card": {
             "text": "$11M",
             "kind": "screen",
-            "sub": "2025 EARNINGS"
+            "sub": "NO PRIZE MONEY"
           },
           "view": "face"
         }
       ]
     },
     {
-      "narration": "But it came from deals with brands, not from medals.",
+      "narration": "But where did it come from, if not medals? Deals with brands, in 2025.",
       "visual": {
         "type": "lowpoly",
         "set": "stall",
@@ -103,6 +104,14 @@
         }
       },
       "toon": [
+        {
+          "place": "gym",
+          "mood": "nervous",
+          "things": [
+            "medal"
+          ],
+          "view": "face"
+        },
         {
           "place": "stall",
           "mood": "scheme",

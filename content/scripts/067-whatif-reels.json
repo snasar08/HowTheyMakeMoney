@@ -22,9 +22,10 @@
   "loop": "So next time you swipe to the next Reel, remember:",
   "cta": "Reels or Shorts? Comment your pick.",
   "cta_question": "Reels or Shorts?",
+  "first_comment": "How many Reels did you watch today? Be honest 👇",
   "scenes": [
     {
-      "narration": "Reels got over 140 billion views a day in 2022. Try watching one day.",
+      "narration": "Watching one day of Reels would take 4,400 years. Here's the catch: Reels got over 140 billion views a day.",
       "visual": {
         "type": "lowpoly",
         "set": "gaming",
@@ -38,35 +39,38 @@
       },
       "toon": [
         {
-          "place": "stage",
+          "place": "mansion",
           "things": [
             "phone"
           ],
-          "card": {
-            "text": "140 BILLION",
-            "kind": "screen",
-            "sub": "VIEWS A DAY"
-          },
           "brand": {
             "name": "REELS",
             "bg": "#c13584",
             "fg": "#ffffff"
           },
           "beat": "sign",
+          "card": {
+            "text": "4,400 YEARS",
+            "kind": "screen",
+            "sub": "ONE DAY OF REELS"
+          },
           "mood": "shock",
-          "crowd": 50
+          "view": "face"
         },
         {
-          "place": "mansion",
-          "things": [
-            "tv"
-          ],
-          "mood": "nervous"
+          "place": "stage",
+          "card": {
+            "text": "140 BILLION",
+            "kind": "screen",
+            "sub": "VIEWS A DAY"
+          },
+          "mood": "shock",
+          "crowd": 50
         }
       ]
     },
     {
-      "narration": "Just one day's worth. All by yourself.",
+      "narration": "Just one day's worth, back in 2022. All by yourself.",
       "visual": {
         "type": "lowpoly",
         "set": "city",

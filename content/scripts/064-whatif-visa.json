@@ -5,11 +5,11 @@
   "format": "whatif",
   "visual_style": "lowpoly",
   "hook_style": "number",
-  "title_style": "whatif",
+  "title_style": "number",
   "theme": "dark_neon",
   "status": "ready",
   "score": 87,
-  "title": "What If Every Visa Swipe Made a Beep?",
+  "title": "Visa's 281.3 Billion Beeps Would Take 8,900 Years",
   "description": "Visa handled 281.3 billion payments last year. Imagine each one beeped.\n\nSources:\n- Visa: Fiscal fourth quarter and full-year 2026 results (PDF): https://s1.q4cdn.com/050606653/files/content_files/4Q26-Earnings-Release_vFINAL.pdf\n- Wikipedia: Visa Inc.: https://en.wikipedia.org/wiki/Visa_Inc.\n\nVisa fiscal 2026 (year ended Sept 30 2026), earnings release: 281.3 billion processed transactions, up 9%; net revenue $45.9 billion. Wikipedia: Visa does not issue cards, extend credit or set consumer rates. Our math: 281.3 billion / 31.5 million seconds in a year = about 8,900 a second; one beep a second = about 8,900 years. Not financial advice.\n\n#shorts #visa #whatif #howtheymakemoney",
   "tags": [
     "visa",
@@ -22,9 +22,10 @@
   "loop": "So next time you tap your card, remember:",
   "cta": "Card or cash? Comment your pick.",
   "cta_question": "Card or cash?",
+  "first_comment": "How many beeps could you take before you mute it? 👇",
   "scenes": [
     {
-      "narration": "Visa handled 281.3 billion payments last year. Imagine each one beeped.",
+      "narration": "If every Visa payment beeped, you'd hear 8,900 years. But think about it: Visa handled 281.3 billion payments last year.",
       "visual": {
         "type": "lowpoly",
         "set": "store",
@@ -38,32 +39,37 @@
       },
       "toon": [
         {
-          "place": "stall",
-          "card": {
-            "text": "281.3 BILLION",
-            "kind": "screen",
-            "sub": "PAYMENTS"
-          },
+          "place": "street",
+          "things": [
+            "phone"
+          ],
           "brand": {
             "name": "VISA",
             "bg": "#1a1f71",
             "fg": "#ffffff"
           },
           "beat": "sign",
-          "mood": "shock"
-        },
-        {
-          "place": "street",
-          "things": [
-            "phone"
-          ],
+          "card": {
+            "text": "8,900 YEARS",
+            "kind": "screen",
+            "sub": "OF BEEPING"
+          },
           "mood": "shock",
           "crowd": 50
+        },
+        {
+          "place": "stall",
+          "card": {
+            "text": "281.3 BILLION",
+            "kind": "screen",
+            "sub": "PAYMENTS"
+          },
+          "mood": "shock"
         }
       ]
     },
     {
-      "narration": "Just one beep for every swipe.",
+      "narration": "Imagine one beep for every swipe.",
       "visual": {
         "type": "lowpoly",
         "set": "store",

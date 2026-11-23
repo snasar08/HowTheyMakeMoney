@@ -25,6 +25,7 @@
   "loop": "So next time a box shows up at your door, remember:",
   "cta": "Amazon or Meta in the AI race? Comment your pick.",
   "cta_question": "Amazon or Meta?",
+  "first_comment": "Never built the best chatbot, still wins the AI race. Genius or sneaky? 👇",
   "hero": {
     "skin": "e8bc92",
     "hair": "bald",
@@ -38,7 +39,7 @@
   },
   "scenes": [
     {
-      "narration": "You're Jeff Bezos, and the AI race started without you. Everyone's chatbot runs on somebody's computers.",
+      "narration": "You're Bezos, and you never won the AI race. So why does every AI company still pay you rent?",
       "visual": {
         "type": "lowpoly",
         "set": "city",
@@ -62,7 +63,7 @@
           "mood": "scheme",
           "things": [
             "laptop",
-            "gpu"
+            "cash"
           ],
           "view": "ms"
         }

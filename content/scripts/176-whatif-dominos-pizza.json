@@ -20,9 +20,10 @@
     "shorts"
   ],
   "images": {},
-  "loop": "So remember:",
+  "loop": "So next time you order a pizza, remember:",
   "cta": "Domino's or Pizza Hut? Pick one.",
   "cta_question": "Domino's or Pizza Hut?",
+  "first_comment": "Could you bake 4 million pizzas in a day? Wrong answers only 👇",
   "hud_label": "DAYS FOR ONE BAKER",
   "hero": {
     "skin": "e0ac80",
@@ -42,7 +43,7 @@
   },
   "scenes": [
     {
-      "narration": "Domino's stores sell about 4 million pizzas every single day.",
+      "narration": "Domino's sells about 4 million pizzas every single day.",
       "visual": {
         "type": "lowpoly",
         "set": "diner",

@@ -22,9 +22,10 @@
   ],
   "images": {},
   "hud_label": "HIS RISE",
-  "loop": "So remember:",
+  "loop": "So next time you feel small, remember:",
   "cta": "Speed or Kai Cenat? Pick one.",
   "cta_question": "Speed or Kai Cenat?",
+  "first_comment": "Were you watching IShowSpeed when he had ten viewers? 👇",
   "hero": {
     "skin": "7a4b2f",
     "hair": "short",
@@ -40,7 +41,7 @@
   },
   "scenes": [
     {
-      "narration": "In 2020 IShowSpeed averaged about ten live viewers.",
+      "narration": "IShowSpeed once averaged about ten live viewers.",
       "visual": {
         "type": "lowpoly",
         "set": "studio",
@@ -71,7 +72,7 @@
           "card": {
             "text": "~10 VIEWERS",
             "kind": "sign",
-            "sub": "2020 AVERAGE"
+            "sub": "AVERAGE"
           },
           "view": "ms",
           "crowd": 10
@@ -79,7 +80,7 @@
       ]
     },
     {
-      "narration": "Then in 2024 one stream hit 1 million viewers at once.",
+      "narration": "But one stream later hit 1 million viewers at once, in 2024.",
       "visual": {
         "type": "lowpoly",
         "set": "stage",
@@ -110,7 +111,7 @@
             "kind": "screen",
             "sub": "VIEWERS AT ONCE, 2024"
           },
-          "view": "wide",
+          "view": "face",
           "crowd": 300
         }
       ]

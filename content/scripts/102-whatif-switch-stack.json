@@ -9,7 +9,7 @@
   "theme": "dark_neon",
   "status": "ready",
   "score": 87,
-  "title": "What If You Stacked 157 Million Switches?",
+  "title": "157 Million Switches Reach 2,200 Kilometers Up",
   "description": "Stack every Switch ever sold. It reaches 2,200 kilometers up.\n\nSources:\n- Nintendo IR: Dedicated Video Game Sales Units (as of September 30, 2026): https://www.nintendo.co.jp/ir/en/finance/hard_soft/index.html\n- Wikipedia: Nintendo Switch: https://en.wikipedia.org/wiki/Nintendo_Switch\n- Wikipedia: International Space Station: https://en.wikipedia.org/wiki/International_Space_Station\n- Wikipedia: List of best-selling game consoles: https://en.wikipedia.org/wiki/List_of_best-selling_game_consoles\n\nFrom Nintendo IR (as of September 30, 2026): 157.20 million Nintendo Switch units sold life-to-date. From Wikipedia (Nintendo Switch): the original console measures 173 x 102 x 14 mm. From Wikipedia (International Space Station): it orbits at 413-422 km. From Wikipedia (List of best-selling game consoles): the PlayStation 2 is the best-selling console with 160 million units; the Switch is second. Our math: 157.2 million x 14 mm = about 2,201 km; 157.2 million x 173 mm = about 27,196 km; 2,201 / 422 = 5.2; 160 - 157.2 = 2.8 million. Not financial advice.\n\n#shorts #nintendoswitch #nintendo #whatif #gaming #howtheymakemoney",
   "tags": [
     "nintendoswitch",
@@ -23,9 +23,10 @@
   "loop": "So next time you pick up your Switch, remember:",
   "cta": "Switch or PlayStation? Comment your pick.",
   "cta_question": "Switch or PlayStation?",
+  "first_comment": "How many Switches would you stack to touch space? 👇",
   "scenes": [
     {
-      "narration": "Stack every Switch ever sold. It reaches 2,200 kilometers up.",
+      "narration": "Every Switch ever sold, stacked, reaches 2,200 kilometers up. But how can a game console get that tall?",
       "visual": {
         "type": "lowpoly",
         "set": "launch",
@@ -40,15 +41,6 @@
       },
       "toon": [
         {
-          "place": "showroom",
-          "things": [
-            "controller",
-            "crate"
-          ],
-          "mood": "scheme",
-          "crowd": 40
-        },
-        {
           "place": "field",
           "things": [
             "controller",
@@ -61,6 +53,15 @@
           },
           "mood": "shock",
           "view": "low"
+        },
+        {
+          "place": "showroom",
+          "things": [
+            "controller",
+            "crate"
+          ],
+          "mood": "nervous",
+          "view": "face"
         }
       ]
     },

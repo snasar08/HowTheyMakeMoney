@@ -25,6 +25,7 @@
   "loop": "So next time you choose less, remember:",
   "cta": "Wemby or Jokic? Comment your pick.",
   "cta_question": "Wemby or Jokic?",
+  "first_comment": "Would you take 250 million instead of 300 to keep your team? 👇",
   "hero": {
     "skin": "6b4430",
     "hair": "short",
@@ -41,7 +42,7 @@
   },
   "scenes": [
     {
-      "narration": "Victor Wembanyama took about 250 million dollars, not 300 million.",
+      "narration": "Victor Wembanyama took about 250 million dollars, not 300.",
       "visual": {
         "type": "lowpoly",
         "set": "court",
@@ -84,7 +85,7 @@
       ]
     },
     {
-      "narration": "He wanted the Spurs to keep their stars.",
+      "narration": "But why would anyone take less on purpose? He wanted the Spurs to keep their stars.",
       "visual": {
         "type": "lowpoly",
         "set": "boardroom",
@@ -111,6 +112,14 @@
         }
       },
       "toon": [
+        {
+          "place": "boardroom",
+          "mood": "nervous",
+          "things": [
+            "letter"
+          ],
+          "view": "face"
+        },
         {
           "place": "boardroom",
           "mood": "proud",

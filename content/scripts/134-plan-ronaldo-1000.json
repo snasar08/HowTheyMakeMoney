@@ -26,6 +26,7 @@
   "loop": "So next time Ronaldo scores, remember:",
   "cta": "Will Ronaldo reach 1,000? Comment yes or no.",
   "cta_question": "1,000 goals: yes or no?",
+  "first_comment": "Would you chase 1,000 goals at 41? Yes or no? 👇",
   "hero": {
     "skin": "c89a72",
     "hair": "quiff",
@@ -42,7 +43,7 @@
   },
   "scenes": [
     {
-      "narration": "You're Cristiano Ronaldo. You've scored over 980 goals. Now you want 1,000.",
+      "narration": "You're Ronaldo, and 1,000 goals won't fit the scoreboard. You've scored over 980 goals, but how do you reach 1,000?",
       "visual": {
         "type": "lowpoly",
         "set": "pitch",
@@ -57,8 +58,16 @@
       "toon": [
         {
           "place": "pitch",
-          "mood": "proud",
-          "view": "ms"
+          "mood": "shock",
+          "things": [
+            "soccerball"
+          ],
+          "card": {
+            "text": "1,000",
+            "kind": "flip",
+            "sub": "THE TARGET"
+          },
+          "view": "wide"
         },
         {
           "place": "pitch",
@@ -71,20 +80,7 @@
             "kind": "screen",
             "sub": "GOALS"
           },
-          "view": "wide"
-        },
-        {
-          "place": "pitch",
-          "mood": "scheme",
-          "things": [
-            "trophy"
-          ],
-          "card": {
-            "text": "1,000",
-            "kind": "flip",
-            "sub": "THE TARGET"
-          },
-          "view": "ws"
+          "view": "face"
         }
       ]
     },

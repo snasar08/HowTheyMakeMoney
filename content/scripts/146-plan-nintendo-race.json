@@ -25,6 +25,7 @@
   "loop": "So next time you start a race, remember:",
   "cta": "Switch or PlayStation? Comment your pick.",
   "cta_question": "Switch or PlayStation?",
+  "first_comment": "Would you pick Switch 2 or the old Switch? 👇",
   "hero": {
     "skin": "d9a577",
     "hair": "short",
@@ -43,7 +44,7 @@
   },
   "scenes": [
     {
-      "narration": "You're Nintendo, and Switch 2 sold 26.35 million consoles. Mario Kart World alone sold 16.48 million copies.",
+      "narration": "You're Nintendo, and Switch 2 sold 26.35 million consoles. But somebody is still beating you: your old Switch.",
       "visual": {
         "type": "lowpoly",
         "set": "stage",
@@ -71,6 +72,26 @@
           "view": "ms"
         },
         {
+          "place": "office",
+          "mood": "stern",
+          "things": [
+            "controller"
+          ],
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "Mario Kart World alone sold 16.48 million copies. Now you want to catch your old Switch, at 157 million.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "office",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
           "place": "track",
           "mood": "excited",
           "things": [
@@ -83,19 +104,7 @@
             "sub": "MARIO KART WORLD"
           },
           "view": "wide"
-        }
-      ]
-    },
-    {
-      "narration": "Now you want to catch your old Switch, at 157 million.",
-      "visual": {
-        "type": "lowpoly",
-        "set": "office",
-        "action": "idle",
-        "crowd": 0,
-        "props": []
-      },
-      "toon": [
+        },
         {
           "place": "office",
           "mood": "scheme",
