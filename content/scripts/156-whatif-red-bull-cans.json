@@ -201,5 +201,6 @@
       "url": "https://en.wikipedia.org/wiki/Earth"
     }
   ],
-  "look": "afterhour"
+  "look": "afterhour",
+  "hook_rules": "nov23"
 }

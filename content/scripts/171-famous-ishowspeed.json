@@ -235,5 +235,6 @@
       "url": "https://en.wikipedia.org/wiki/IShowSpeed"
     }
   ],
-  "look": "afterhour"
+  "look": "afterhour",
+  "hook_rules": "nov23"
 }

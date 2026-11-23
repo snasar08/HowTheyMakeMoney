@@ -190,5 +190,6 @@
       "url": "https://en.wikipedia.org/wiki/Forbes_list_of_the_world%27s_highest-paid_female_athletes"
     }
   ],
-  "look": "afterhour"
+  "look": "afterhour",
+  "hook_rules": "nov23"
 }

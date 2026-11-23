@@ -194,5 +194,6 @@
       "url": "https://www.nbcsports.com/nba/news/luka-doncic-signs-three-year-165-million-extension-to-remain-with-lakers"
     }
   ],
-  "look": "afterhour"
+  "look": "afterhour",
+  "hook_rules": "nov23"
 }

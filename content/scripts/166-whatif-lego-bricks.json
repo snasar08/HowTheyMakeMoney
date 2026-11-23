@@ -190,5 +190,6 @@
       "url": "https://en.wikipedia.org/wiki/World_population"
     }
   ],
-  "look": "afterhour"
+  "look": "afterhour",
+  "hook_rules": "nov23"
 }

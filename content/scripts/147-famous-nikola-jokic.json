@@ -208,5 +208,6 @@
       "url": "https://en.wikipedia.org/wiki/List_of_largest_sports_contracts"
     }
   ],
-  "look": "afterhour"
+  "look": "afterhour",
+  "hook_rules": "nov23"
 }

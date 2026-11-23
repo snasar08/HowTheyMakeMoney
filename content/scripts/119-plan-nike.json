@@ -439,5 +439,6 @@
     }
   ],
   "length_test": "short",
-  "look": "afterhour"
+  "look": "afterhour",
+  "hook_rules": "nov23"
 }

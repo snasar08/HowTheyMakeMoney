@@ -188,5 +188,6 @@
       "url": "https://en.wikipedia.org/wiki/%C3%B7_Tour"
     }
   ],
-  "look": "afterhour"
+  "look": "afterhour",
+  "hook_rules": "nov23"
 }

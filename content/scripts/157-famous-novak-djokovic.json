@@ -246,5 +246,6 @@
       "url": "https://en.wikipedia.org/wiki/List_of_career_achievements_by_Novak_Djokovic"
     }
   ],
-  "look": "afterhour"
+  "look": "afterhour",
+  "hook_rules": "nov23"
 }

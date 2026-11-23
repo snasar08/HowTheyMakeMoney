@@ -324,5 +324,6 @@
       "url": "https://www.nbcwashington.com/news/sports/tiger-woods-joins-michael-jordan-lebron-james-as-third-athlete-with-net-worth-over-1-billion/"
     }
   ],
-  "look": "afterhour"
+  "look": "afterhour",
+  "hook_rules": "nov23"
 }

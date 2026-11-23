@@ -204,5 +204,6 @@
       "url": "https://en.wikipedia.org/wiki/Jeff_Bezos"
     }
   ],
-  "look": "afterhour"
+  "look": "afterhour",
+  "hook_rules": "nov23"
 }
