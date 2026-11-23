@@ -44,6 +44,7 @@ def main(argv: list[str]) -> int:
                          rendered=d.get("rendered_at", ""), past=past))
     rows.sort(key=lambda r: (r["when"], r["rendered"]))
     keep, extra, per_day = set(), [], {}
+    fdays = P.film_days()  # 1 Short on a film day (Sam, Nov 19)
     for r in rows:
         if r["status"] in (None, "deleted") and r["post"]:
             continue
@@ -55,7 +56,7 @@ def main(argv: list[str]) -> int:
                 keep.add(r["when"])  # really posted: counts toward the rolling 24 h limit
             continue
         day = r["when"].date()
-        if (r["when"] in keep or per_day.get(day, 0) >= P.MAX_PER_DAY or failed
+        if (r["when"] in keep or per_day.get(day, 0) >= P.day_cap(day, fdays) or failed
                 or not P.rolling_ok(r["when"], keep)):
             extra.append(r)
             continue

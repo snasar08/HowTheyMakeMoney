@@ -1,0 +1,293 @@
+{
+  "id": "141",
+  "slug": "plan-cade-perfect",
+  "company": "Detroit Pistons",
+  "format": "story",
+  "story_mode": "plan",
+  "visual_style": "lowpoly",
+  "hook_style": "challenge",
+  "title_style": "number",
+  "theme": "bold_bright",
+  "status": "ready",
+  "score": 90,
+  "title": "52 Points, Zero Turnovers: Cade's Perfect Plan",
+  "name_card": "You are Cade Cunningham",
+  "name_sub": "a made-up plan",
+  "description": "You're Cade Cunningham, and you want to be perfect. Step one is real: on November 12, 2026 he scored 52 points with 11 assists and five rebounds in a 144-140 double overtime win over the Washington Wizards, and became the first player in NBA history with at least 50 points and at least 10 assists and no turnovers in a game. Every step after that is a made-up plan for fun, not news.\n\nSources:\n- Wikipedia: Cade Cunningham: https://en.wikipedia.org/wiki/Cade_Cunningham\n\n#shorts #cadecunningham #pistons #howtheymakemoney",
+  "tags": [
+    "cade cunningham",
+    "pistons",
+    "nba",
+    "story",
+    "shorts"
+  ],
+  "images": {},
+  "loop": "So next time you pass the ball, remember:",
+  "cta": "Cade or Luka? Comment your pick.",
+  "cta_question": "Cade or Luka?",
+  "hero": {
+    "skin": "8d5a3b",
+    "hair": "short",
+    "hair_color": "141010",
+    "beard": "none",
+    "outfit": "kit",
+    "shirt": "1d42ba",
+    "pants": "1d42ba",
+    "shoes": "f4f4f4",
+    "socks": "f4f4f4",
+    "trim": "c8102e",
+    "number": 2,
+    "height": 1.15
+  },
+  "scenes": [
+    {
+      "narration": "You're Cade Cunningham, and you score 52 points without one turnover. On November 12, 2026, no player in NBA history had done that with 10 assists.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 40,
+        "props": [
+          "ball"
+        ]
+      },
+      "toon": [
+        {
+          "place": "court",
+          "mood": "proud",
+          "things": [
+            "basketball"
+          ],
+          "card": {
+            "text": "52 POINTS",
+            "kind": "screen",
+            "sub": "0 TURNOVERS"
+          },
+          "crowd": 60,
+          "view": "ms"
+        },
+        {
+          "place": "court",
+          "mood": "shock",
+          "card": {
+            "text": "NOV 12, 2026",
+            "kind": "flip",
+            "sub": "A FIRST IN NBA HISTORY"
+          },
+          "crowd": 80,
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "So now you want every game to be perfect. Step one, you never lose the ball again.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 40,
+        "props": [
+          "ball"
+        ]
+      },
+      "toon": [
+        {
+          "place": "throne",
+          "mood": "scheme",
+          "card": {
+            "text": "PERFECT",
+            "kind": "white"
+          },
+          "view": "face"
+        },
+        {
+          "place": "gym",
+          "mood": "stern",
+          "things": [
+            "basketball",
+            "lock"
+          ],
+          "view": "ms"
+        }
+      ]
+    },
+    {
+      "narration": "Defenders stop trying to steal it and back away. Then you shoot from half court.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 30,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "court",
+          "mood": "calm",
+          "crowd": 40,
+          "view": "wide"
+        },
+        {
+          "place": "court",
+          "mood": "excited",
+          "things": [
+            "basketball",
+            "hoop"
+          ],
+          "view": "wide"
+        }
+      ]
+    },
+    {
+      "narration": "Still not enough? So you pass, and every teammate gets a wide open dunk.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 80,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "office",
+          "mood": "scheme",
+          "things": [
+            "lightbulb"
+          ],
+          "view": "face"
+        },
+        {
+          "place": "court",
+          "mood": "laugh",
+          "things": [
+            "basketball"
+          ],
+          "crowd": 80,
+          "view": "ws"
+        }
+      ]
+    },
+    {
+      "narration": "Soon you build a giant gym that teaches every kid your no turnover drills. Then your team wins ten championships in a row.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "gym",
+        "action": "idle",
+        "crowd": 30,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "gym",
+          "mood": "proud",
+          "things": [
+            "dumbbell",
+            "basketball"
+          ],
+          "view": "ms"
+        },
+        {
+          "place": "stage",
+          "mood": "laugh",
+          "things": [
+            "trophy"
+          ],
+          "card": {
+            "text": "10 IN A ROW",
+            "kind": "screen",
+            "sub": "CHAMPIONSHIPS"
+          },
+          "crowd": 120,
+          "view": "ms"
+        }
+      ]
+    },
+    {
+      "narration": "Still not enough? Now nobody can beat you, and the other team scores zero every night.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 200,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "boardroom",
+          "mood": "stern",
+          "things": [
+            "chart"
+          ],
+          "view": "face"
+        },
+        {
+          "place": "court",
+          "mood": "shock",
+          "card": {
+            "text": "0",
+            "kind": "screen",
+            "sub": "THEIR SCORE"
+          },
+          "crowd": 150,
+          "view": "wide"
+        }
+      ]
+    },
+    {
+      "narration": "But perfect is lonely, because there's nobody left to play. So you pass the ball to a kid in the front row.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 150,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "mansion",
+          "mood": "sad",
+          "view": "face"
+        },
+        {
+          "place": "court",
+          "mood": "happy",
+          "things": [
+            "basketball"
+          ],
+          "crowd": 150,
+          "view": "wide"
+        }
+      ]
+    },
+    {
+      "narration": "That's your first turnover ever, and the best one.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 150,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "court",
+          "mood": "laugh",
+          "card": {
+            "text": "1 TURNOVER",
+            "kind": "sign"
+          },
+          "crowd": 150,
+          "view": "face"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Cade Cunningham",
+      "url": "https://en.wikipedia.org/wiki/Cade_Cunningham"
+    }
+  ],
+  "length_test": "long",
+  "look": "afterhour"
+}

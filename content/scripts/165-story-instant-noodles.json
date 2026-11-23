@@ -1,0 +1,323 @@
+{
+  "id": "165",
+  "slug": "story-instant-noodles",
+  "company": "Nissin Foods",
+  "format": "story",
+  "story_mode": "history",
+  "visual_style": "lowpoly",
+  "hook_style": "number",
+  "title_style": "number",
+  "theme": "bold_bright",
+  "status": "ready",
+  "score": 90,
+  "title": "Bankrupt, Then 103 Billion Servings of Noodles",
+  "name_card": "Momofuku Ando",
+  "name_sub": "you, the noodle inventor",
+  "description": "You are Momofuku Ando. The world ate 103.62 billion servings of instant noodles in 2018. And you started with a bankruptcy and a backyard shed.\n\nSources:\n- Wikipedia: Instant noodles: https://en.wikipedia.org/wiki/Instant_noodles\n- Wikipedia: Momofuku Ando: https://en.wikipedia.org/wiki/Momofuku_Ando\n- Nissin Foods: Our Founder: https://www.nissin.com/en_jp/about/founder/\n\nFrom the cited pages: the World Instant Noodles Association reported 103.620 billion servings eaten worldwide in 2018; in 1957 a credit union where Ando was a director went bankrupt and he lost all his property except a rented house in Ikeda, Osaka; he then spent a full year alone in a backyard shed, sleeping about four hours a night; the tempura idea led to flash-frying; Chicken Ramen launched on August 25, 1958 at 35 yen when a bundle of udon was 6 yen; in 1966 he saw US managers eating Chicken Ramen from paper cups; Cup Noodles went on sale on September 18, 1971. This is a retelling of public history, not company news. Not financial advice.\n\n#shorts #instantnoodles #cupnoodles #nissin #howtheymakemoney",
+  "tags": [
+    "nissin",
+    "cup noodles",
+    "instant noodles",
+    "story",
+    "shorts"
+  ],
+  "images": {},
+  "loop": "So next time you add hot water to a cup of noodles, remember:",
+  "cta": "Cup or bag noodles? Comment your pick.",
+  "cta_question": "Cup or bag noodles?",
+  "hero": {
+    "skin": "e0b48a",
+    "hair": "short",
+    "hair_color": "1a1a1a",
+    "beard": "none",
+    "outfit": "suit",
+    "shirt": "f4f4f4",
+    "pants": "2b2f3a",
+    "shoes": "111111",
+    "tie": "c0353a",
+    "extras": [
+      "glasses"
+    ],
+    "height": 1.0
+  },
+  "scenes": [
+    {
+      "narration": "In 2018 the world ate 103 billion servings of noodles. You are Momofuku Ando, and you invented them. Your secret: just add hot water.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "office",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "throne",
+          "mood": "shock",
+          "things": [
+            "globe"
+          ],
+          "card": {
+            "text": "103 BILLION",
+            "kind": "screen",
+            "sub": "NOODLE SERVINGS IN 2018"
+          },
+          "view": "ms"
+        },
+        {
+          "place": "stage",
+          "mood": "proud",
+          "crowd": 40,
+          "card": {
+            "text": "MOMOFUKU ANDO",
+            "kind": "sign",
+            "sub": "YOU, THE INVENTOR"
+          },
+          "view": "low"
+        },
+        {
+          "place": "diner",
+          "mood": "scheme",
+          "things": [
+            "noodlecup",
+            "fire"
+          ],
+          "card": {
+            "text": "JUST ADD HOT WATER",
+            "kind": "white",
+            "fg": "#c0353a"
+          },
+          "view": "cu"
+        }
+      ]
+    },
+    {
+      "narration": "But in 1957 the credit union where you work goes bankrupt. You lose everything except a rented house.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "office",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "boardroom",
+          "mood": "nervous",
+          "card": {
+            "text": "1957",
+            "kind": "flip",
+            "sub": "YEAR"
+          },
+          "things": [
+            "briefcase"
+          ],
+          "view": "ms"
+        },
+        {
+          "place": "street",
+          "mood": "sad",
+          "things": [
+            "house",
+            "arrowdown"
+          ],
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "You decide to make ramen that needs only hot water. You build a shed and work there for a year.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "garage",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "stall",
+          "mood": "scheme",
+          "things": [
+            "lightbulb",
+            "noodlecup"
+          ],
+          "view": "face"
+        },
+        {
+          "place": "garage",
+          "mood": "calm",
+          "things": [
+            "house"
+          ],
+          "card": {
+            "text": "1 YEAR",
+            "kind": "sign",
+            "sub": "IN THE SHED"
+          },
+          "view": "wide"
+        }
+      ]
+    },
+    {
+      "narration": "Then you watch your wife fry tempura. You fry noodles the same way so they never spoil.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "diner",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "diner",
+          "mood": "calm",
+          "things": [
+            "fire"
+          ],
+          "view": "ms"
+        },
+        {
+          "place": "garage",
+          "mood": "proud",
+          "things": [
+            "fire",
+            "box"
+          ],
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "In 1958 you sell Chicken Ramen for 35 yen. That's six times the price of udon noodles.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "stall",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "stall",
+          "mood": "proud",
+          "card": {
+            "text": "35 YEN",
+            "kind": "screen",
+            "sub": "CHICKEN RAMEN, 1958"
+          },
+          "things": [
+            "box"
+          ],
+          "view": "ms"
+        },
+        {
+          "place": "diner",
+          "mood": "shock",
+          "card": {
+            "text": "6X UDON",
+            "kind": "sign",
+            "sub": "PRICE OF A BOWL"
+          },
+          "things": [
+            "box"
+          ],
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "In 1966 you see Americans pour hot water on noodles in paper cups. So in 1971 you sell Cup Noodles.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "street",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "boardroom",
+          "mood": "excited",
+          "card": {
+            "text": "1966",
+            "kind": "flip",
+            "sub": "YEAR"
+          },
+          "things": [
+            "noodlecup"
+          ],
+          "view": "ms"
+        },
+        {
+          "place": "stall",
+          "mood": "proud",
+          "card": {
+            "text": "1971",
+            "kind": "flip",
+            "sub": "YEAR"
+          },
+          "things": [
+            "noodlecup"
+          ],
+          "view": "cu"
+        }
+      ]
+    },
+    {
+      "narration": "Now dinner is just noodles and hot water. And your own comeback? Same recipe: one shed, one year, just add hot water.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "throne",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "throne",
+          "mood": "proud",
+          "things": [
+            "noodlecup",
+            "fire"
+          ],
+          "view": "ms"
+        },
+        {
+          "place": "office",
+          "mood": "dazed",
+          "things": [
+            "arrowdown",
+            "house"
+          ],
+          "view": "face"
+        },
+        {
+          "place": "garage",
+          "mood": "happy",
+          "things": [
+            "globe",
+            "crown"
+          ],
+          "view": "face"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Instant noodles",
+      "url": "https://en.wikipedia.org/wiki/Instant_noodles"
+    },
+    {
+      "title": "Wikipedia: Momofuku Ando",
+      "url": "https://en.wikipedia.org/wiki/Momofuku_Ando"
+    },
+    {
+      "title": "Nissin Foods: Our Founder",
+      "url": "https://www.nissin.com/en_jp/about/founder/"
+    }
+  ],
+  "length_test": "long",
+  "look": "afterhour"
+}

@@ -8,7 +8,7 @@
   "hook_style": "surprise",
   "title_style": "statement",
   "theme": "bold_bright",
-  "status": "needs_fix",
+  "status": "ready",
   "score": 95,
   "title": "Nike's Master Plan to Own Every Dunk",
   "name_card": "Nike",
@@ -469,8 +469,5 @@
       ]
     }
   ],
-  "aivideo_note": "Nov 15 2026: one premium Short (Sam). 9 Higgsfield Seedance 2.5 clips, 5 s each, 9:16, no logos/real people in prompts; 315 credits.",
-  "needs_fix": [
-    "act build_tools unclear at frames 392-490: No building tools are shown; it displays a close-up rotating view of a red sneaker on a pedestal."
-  ]
+  "aivideo_note": "Nov 15 2026: one premium Short (Sam). 9 Higgsfield Seedance 2.5 clips, 5 s each, 9:16, no logos/real people in prompts; 315 credits."
 }

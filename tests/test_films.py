@@ -10,6 +10,18 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from pipeline import films as F  # noqa: E402
 
 UTC = dt.timezone.utc
+_unpause = None
+
+
+def setUpModule():  # the real repo may be paused (content/films2d/PAUSED); the logic tests run unpaused
+    global _unpause
+    from unittest import mock
+    _unpause = mock.patch.object(F, "paused", return_value=False)
+    _unpause.start()
+
+
+def tearDownModule():
+    _unpause.stop()
 
 
 def T(s):
@@ -113,6 +125,48 @@ class Upload(unittest.TestCase):
         os.environ.pop("YTC_CLIENT_ID", None)
         os.environ["FILM_UPLOAD"] = "youtube"
         self.assertIsNone(F.upload(Path("nope.json"), Path("nope.mp4"), Path("nope.jpg"), "2026-11-23T22:00:00Z"))
+
+
+class FilmDayShorts(unittest.TestCase):
+    """Sam, Nov 19: 2 Shorts a day, but 1 Short + 1 film on a film day."""
+    D = dt.date
+
+    def test_days_from_last_post(self):
+        items = [item(101, "delivered", "2026-11-20T22:00:00Z"), item(102, "ready"), item(103, "ready")]
+        self.assertEqual(F.film_days(T("2026-11-21T12:00:00"), items),
+                         {self.D(2026, 11, 20), self.D(2026, 11, 23), self.D(2026, 11, 26)})
+
+    def test_first_film_is_today(self):
+        self.assertEqual(F.film_days(T("2026-11-20T09:00:00"), [item(101, "ready")]), {self.D(2026, 11, 20)})
+
+    def test_after_todays_run_first_film_is_tomorrow(self):
+        # Nov 19 21:00 New York = Nov 20 02:00 UTC: the next films.yml run is Nov 20 13:00 UTC
+        self.assertEqual(F.film_days(T("2026-11-20T02:00:00"), [item(101, "ready")]), {self.D(2026, 11, 20)})
+        self.assertEqual(F.film_days(T("2026-11-20T17:00:00"), [item(101, "ready")]), {self.D(2026, 11, 21)})
+
+    def test_no_ready_film_no_film_day(self):
+        self.assertEqual(F.film_days(T("2026-11-20T09:00:00"), [item(101, "draft")]), set())
+
+    def test_one_short_on_film_day(self):
+        from unittest import mock
+        from zoneinfo import ZoneInfo
+        from pipeline import publish as P
+        ny = ZoneInfo("America/New_York")
+        with mock.patch.object(P, "film_days", return_value={self.D(2026, 11, 21)}):
+            got = P.publish_slots(5, now=dt.datetime(2026, 11, 20, 1, 0, tzinfo=ny))
+        days = [t.date() for t in got]
+        self.assertEqual(days.count(self.D(2026, 11, 20)), 2)
+        self.assertEqual(days.count(self.D(2026, 11, 21)), 1)
+        self.assertEqual([t.hour for t in got if t.date() == self.D(2026, 11, 21)], [12])
+
+
+class Paused(unittest.TestCase):
+    def test_paused_never_goes_and_no_film_days(self):
+        from unittest import mock
+        with mock.patch.object(F, "paused", return_value=True):
+            self.assertFalse(F.decide([item(101, "ready")], T("2026-11-20T13:00:00"))["go"])
+            self.assertFalse(F.decide([item(101, "ready")], T("2026-11-20T13:00:00"), force=True)["go"])
+            self.assertEqual(F.film_days(T("2026-11-20T13:00:00")), set())
 
 
 if __name__ == "__main__":

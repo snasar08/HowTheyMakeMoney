@@ -1,0 +1,213 @@
+{
+  "id": "159",
+  "slug": "famous-george-lucas",
+  "company": "George Lucas",
+  "format": "famous",
+  "visual_style": "lowpoly",
+  "hook_style": "number",
+  "title_style": "number",
+  "theme": "dark_neon",
+  "status": "ready",
+  "score": 88,
+  "title": "George Lucas: $150,000 Fee, Then $4.05 Billion",
+  "name_card": "George Lucas",
+  "name_sub": "filmmaker",
+  "description": "George Lucas was paid $150,000 to write and direct Star Wars, kept the merchandising and sequel rights, and sold Lucasfilm to Disney in 2012 for $4.05 billion.\n\nSources:\n- Wikipedia: George Lucas: https://en.wikipedia.org/wiki/George_Lucas\n- Wikipedia: Star Wars (film): https://en.wikipedia.org/wiki/Star_Wars_(film)\n- Wikipedia: Lucasfilm: https://en.wikipedia.org/wiki/Lucasfilm\n\nFrom the cited pages: a July 13, 1973 deal memo gave Lucas $150,000 to write and direct; after American Graffiti's success he declined to renegotiate a higher fee, instead gaining ownership of licensing and merchandising rights (novelizations, clothing, toys) and sequel rights; Star Wars released in 1977; on October 30, 2012 Disney acquired Lucasfilm for $4.05 billion, about half cash and half Disney shares. Not financial advice.\n\n#shorts #georgelucas #starwars #howtheymakemoney",
+  "tags": [
+    "george lucas",
+    "star wars",
+    "famous",
+    "shorts"
+  ],
+  "images": {},
+  "loop": "So remember:",
+  "cta": "Lucas or Spielberg? Comment your pick.",
+  "cta_question": "Lucas or Spielberg?",
+  "hero": {
+    "skin": "e8c4a0",
+    "hair": "short",
+    "hair_color": "d8d8d8",
+    "beard": "full",
+    "outfit": "tee",
+    "shirt": "6b3b3b",
+    "pants": "2b2f3a",
+    "shoes": "5a4a3a",
+    "chest": "",
+    "trim": "3a5a7a",
+    "extras": [
+      "glasses"
+    ],
+    "height": 1.0
+  },
+  "scenes": [
+    {
+      "narration": "George Lucas took only 150,000 dollars to make Star Wars. He later sold his company for 4.05 billion.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "stage",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "studio",
+          "mood": "stern",
+          "things": [
+            "camera"
+          ],
+          "card": {
+            "text": "$150,000",
+            "kind": "screen",
+            "sub": "HIS FEE FOR STAR WARS"
+          },
+          "view": "ms"
+        },
+        {
+          "place": "mansion",
+          "mood": "shock",
+          "beat": "money",
+          "things": [
+            "cashstack"
+          ],
+          "card": {
+            "text": "$4.05 BILLION",
+            "kind": "screen",
+            "sub": "LUCASFILM SOLD, 2012"
+          },
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "In 1973, he could ask for a raise. But he asks for toy rights instead.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "stage",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "boardroom",
+          "mood": "calm",
+          "things": [
+            "briefcase"
+          ],
+          "card": {
+            "text": "1973",
+            "kind": "flip",
+            "sub": "YEAR"
+          },
+          "view": "ms"
+        },
+        {
+          "place": "boardroom",
+          "mood": "scheme",
+          "action": "point",
+          "things": [
+            "box",
+            "robot"
+          ],
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "Then Star Wars hits in 1977, and suddenly kids want toys.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "stage",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "stall",
+          "mood": "shock",
+          "things": [
+            "robot",
+            "box"
+          ],
+          "crowd": 60,
+          "brand": {
+            "name": "STAR WARS",
+            "bg": "#000000",
+            "fg": "#ffd84a",
+            "icon": "star"
+          },
+          "card": {
+            "text": "1977",
+            "kind": "flip",
+            "sub": "YEAR"
+          },
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "In 2012, he signs it all over to Disney.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "stage",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "boardroom",
+          "mood": "calm",
+          "things": [
+            "cash",
+            "briefcase"
+          ],
+          "card": {
+            "text": "2012",
+            "kind": "flip",
+            "sub": "YEAR"
+          },
+          "view": "ms"
+        }
+      ]
+    },
+    {
+      "narration": "Not bad for skipping a bigger paycheck.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "stage",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "throne",
+          "mood": "laugh",
+          "things": [
+            "goldbar",
+            "trophy"
+          ],
+          "view": "face"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: George Lucas",
+      "url": "https://en.wikipedia.org/wiki/George_Lucas"
+    },
+    {
+      "title": "Wikipedia: Star Wars (film)",
+      "url": "https://en.wikipedia.org/wiki/Star_Wars_(film)"
+    },
+    {
+      "title": "Wikipedia: Lucasfilm",
+      "url": "https://en.wikipedia.org/wiki/Lucasfilm"
+    }
+  ],
+  "look": "afterhour"
+}

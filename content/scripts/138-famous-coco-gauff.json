@@ -1,0 +1,193 @@
+{
+  "id": "138",
+  "slug": "famous-coco-gauff",
+  "company": "Coco Gauff",
+  "format": "famous",
+  "visual_style": "lowpoly",
+  "hook_style": "number",
+  "title_style": "number",
+  "theme": "bold_bright",
+  "status": "ready",
+  "score": 90,
+  "title": "The $33 Million Teenager Who Beat Venus Williams",
+  "name_card": "Coco Gauff",
+  "name_sub": "US Open champion",
+  "description": "Coco Gauff is the highest-paid woman in sports, at 33 million dollars.\n\nSources:\n- Wikipedia: Coco Gauff: https://en.wikipedia.org/wiki/Coco_Gauff\n- Wikipedia: Forbes list of the world's highest-paid female athletes: https://en.wikipedia.org/wiki/Forbes_list_of_the_world%27s_highest-paid_female_athletes\n\nFrom the cited pages: Forbes' 2025 list of the highest-paid female athletes ranks Coco Gauff first with $33.0 million, of which $25 million was endorsements and $8 million winnings; at 15, in 2019, she qualified for Wimbledon and beat five-time champion Venus Williams in straight sets in her Grand Slam main-draw debut; she won the 2023 US Open at 19, beating world No. 2 Aryna Sabalenka after losing the first set, and became the youngest American player to win the US Open final since Serena Williams in 1999; her career prize money is listed as US$37,516,617. Not financial advice.\n\n#shorts #cocogauff #tennis #howtheymakemoney",
+  "tags": [
+    "coco gauff",
+    "tennis",
+    "us open",
+    "famous",
+    "shorts"
+  ],
+  "images": {},
+  "loop": "So remember:",
+  "cta": "Coco or Serena? Comment your pick.",
+  "cta_question": "Coco or Serena?",
+  "hero": {
+    "skin": "8d5a3b",
+    "hair": "long",
+    "hair_color": "1a1210",
+    "beard": "none",
+    "outfit": "dress",
+    "shirt": "f4f4f4",
+    "pants": "f4f4f4",
+    "shoes": "f4f4f4",
+    "chest": "",
+    "trim": "2e7d32",
+    "height": 1.0
+  },
+  "scenes": [
+    {
+      "narration": "You're Coco Gauff, the highest-paid woman in sports, at 33 million dollars.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "tennis",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "throne",
+          "mood": "proud",
+          "beat": "money",
+          "card": {
+            "text": "$33 MILLION",
+            "kind": "screen",
+            "sub": "FORBES, 2025"
+          },
+          "view": "ms"
+        }
+      ]
+    },
+    {
+      "narration": "But at 15, you qualify for Wimbledon. Suddenly, you face Venus Williams.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "tennis",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "tennis",
+          "mood": "nervous",
+          "things": [
+            "trophy"
+          ],
+          "card": {
+            "text": "2019",
+            "kind": "flip",
+            "sub": "YEAR"
+          },
+          "view": "ms"
+        },
+        {
+          "place": "tennis",
+          "mood": "shock",
+          "crowd": 60,
+          "who": {
+            "jacket": "#ffffff",
+            "pants": "#ffffff",
+            "hat": "hair",
+            "style": "long",
+            "hair": "#1a1a1a",
+            "skin": "#6b4226",
+            "trim": "#ffffff"
+          },
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "You serve, you rally, and you win in straight sets.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "tennis",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "tennis",
+          "mood": "excited",
+          "things": [
+            "trophy"
+          ],
+          "crowd": 80,
+          "view": "wide"
+        }
+      ]
+    },
+    {
+      "narration": "Then at 19, you beat Aryna Sabalenka to win the US Open. You are the youngest American champion since Serena Williams.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "stage",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "tennis",
+          "mood": "laugh",
+          "things": [
+            "trophy"
+          ],
+          "crowd": 200,
+          "card": {
+            "text": "2023",
+            "kind": "flip",
+            "sub": "YEAR"
+          },
+          "view": "low"
+        },
+        {
+          "place": "stage",
+          "mood": "proud",
+          "things": [
+            "trophy",
+            "crown"
+          ],
+          "crowd": 100,
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "Not bad for a 15-year-old who had to qualify for Wimbledon.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "mansion",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "mansion",
+          "mood": "laugh",
+          "things": [
+            "cashstack"
+          ],
+          "view": "face"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Coco Gauff",
+      "url": "https://en.wikipedia.org/wiki/Coco_Gauff"
+    },
+    {
+      "title": "Wikipedia: Forbes list of the world's highest-paid female athletes",
+      "url": "https://en.wikipedia.org/wiki/Forbes_list_of_the_world%27s_highest-paid_female_athletes"
+    }
+  ],
+  "look": "afterhour"
+}

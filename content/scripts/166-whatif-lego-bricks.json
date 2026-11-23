@@ -1,0 +1,193 @@
+{
+  "id": "166",
+  "slug": "whatif-lego-bricks",
+  "company": "LEGO",
+  "format": "whatif",
+  "visual_style": "lowpoly",
+  "hook_style": "number",
+  "title_style": "number",
+  "theme": "bold_bright",
+  "status": "ready",
+  "score": 88,
+  "title": "LEGO Makes 36 Billion Bricks. You Get 4.5",
+  "name_card": "What if LEGO split its bricks",
+  "name_sub": "one year of bricks, shared out",
+  "description": "What if LEGO shared one year of bricks with every person on Earth? Wikipedia says LEGO's annual brick production averages about 36 billion (an undated average, not a 2025 figure). Our math: Earth has more than 8 billion people (Wikipedia: the UN estimated 8 billion was passed on November 15, 2022). 36 billion / 8 billion = about 4.5 bricks each. The LEGO Eiffel Tower set (10307, 2022) has 10,001 parts (Wikipedia). 10,001 / 4.5 = about 2,220 years of your yearly share to build it. This is simple made-up math for fun, not a LEGO claim.\n\nSources:\n- Wikipedia: Lego: https://en.wikipedia.org/wiki/Lego\n- Wikipedia: World population: https://en.wikipedia.org/wiki/World_population\n\n#shorts #lego #whatif #howtheymakemoney",
+  "tags": [
+    "lego",
+    "whatif",
+    "toys",
+    "shorts"
+  ],
+  "images": {},
+  "hud_label": "BRICKS PER PERSON",
+  "loop": "Next time you hold a LEGO brick, remember:",
+  "cta": "LEGO or Minecraft? Pick one.",
+  "cta_question": "LEGO or Minecraft?",
+  "hero": {
+    "skin": "e0ac80",
+    "hair": "short",
+    "hair_color": "3a2a1a",
+    "beard": "none",
+    "outfit": "tee",
+    "shirt": "d01012",
+    "pants": "2b2f3a",
+    "shoes": "f4f4f4",
+    "chest": "",
+    "trim": "ffd500",
+    "height": 0.85
+  },
+  "scenes": [
+    {
+      "narration": "LEGO makes about 36 billion bricks a year. What if everyone on Earth got a share?",
+      "visual": {
+        "type": "lowpoly",
+        "set": "stall",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": null
+      },
+      "toon": [
+        {
+          "place": "stall",
+          "mood": "excited",
+          "things": [
+            "factory",
+            "box"
+          ],
+          "card": {
+            "text": "36 BILLION",
+            "kind": "screen",
+            "sub": "BRICKS A YEAR"
+          },
+          "view": "wide"
+        },
+        {
+          "place": "street",
+          "mood": "excited",
+          "things": [
+            "globe",
+            "legobrick"
+          ],
+          "crowd": 200,
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "Split between everyone, you get about 4.5 bricks each.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "stall",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": null
+      },
+      "toon": [
+        {
+          "place": "classroom",
+          "mood": "dazed",
+          "things": [
+            "legobrick",
+            "box"
+          ],
+          "card": {
+            "text": "4.5 EACH",
+            "kind": "screen",
+            "sub": "36 BILLION / 8 BILLION"
+          },
+          "view": "ms"
+        }
+      ]
+    },
+    {
+      "narration": "But you want the LEGO Eiffel Tower, with 10,001 parts.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "street",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": null
+      },
+      "toon": [
+        {
+          "place": "showroom",
+          "mood": "shock",
+          "things": [
+            "eiffeltower",
+            "legobrick"
+          ],
+          "card": {
+            "text": "10,001 PARTS",
+            "kind": "screen",
+            "sub": "LEGO EIFFEL TOWER"
+          },
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "At 4.5 bricks a year, that takes about 2,200 years.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "showroom",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": null
+      },
+      "toon": [
+        {
+          "place": "garage",
+          "mood": "dazed",
+          "things": [
+            "clock",
+            "legobrick"
+          ],
+          "card": {
+            "text": "2,200 YEARS",
+            "kind": "screen",
+            "sub": "OUR MATH"
+          },
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "Still, you'd better start building today.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "garage",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": null
+      },
+      "toon": [
+        {
+          "place": "throne",
+          "mood": "laugh",
+          "things": [
+            "legobrick",
+            "clock"
+          ],
+          "view": "face"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Lego",
+      "url": "https://en.wikipedia.org/wiki/Lego"
+    },
+    {
+      "title": "Wikipedia: World population",
+      "url": "https://en.wikipedia.org/wiki/World_population"
+    }
+  ],
+  "look": "afterhour"
+}

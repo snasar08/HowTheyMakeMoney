@@ -8,7 +8,7 @@
   "hook_style": "surprise",
   "title_style": "statement",
   "theme": "bold_bright",
-  "status": "needs_fix",
+  "status": "ready",
   "score": 94,
   "title": "You're Wemby. You Want to Be the Best Ever.",
   "name_card": "Victor Wembanyama",
@@ -411,13 +411,5 @@
         }
       ]
     }
-  ],
-  "needs_fix": [
-    "act block unclear at frames 150-192: The character stands idle while the opponent shoots the ball.",
-    "act block unclear at frames 321-363: The character stands idle while the opponent shoots the ball.",
-    "act shoot unclear at frames 364-421: The character stands idle while the ball travels to the hoop.",
-    "act dunk unclear at frames 562-640: The character stands idle while the ball enters the hoop.",
-    "act lift_weights unclear at frames 641-710: The character stands idle while the weight bar moves up and down.",
-    "act dunk unclear at frames 852-917: The character stands idle while the ball enters the hoop."
   ]
 }

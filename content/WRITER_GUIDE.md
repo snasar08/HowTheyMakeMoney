@@ -41,6 +41,11 @@ Formats allowed: `famous`, `whatif`, `story`. Do NOT write `how` or `careers` (p
 - `loop`: one short line spoken last that leads back into line 1 ("So next time you lace up your shoes, remember:").
 - `cta` + `cta_question`: a this-or-that comment question ("Nike or Adidas?"). The last scene never says "Follow
   for more" (the CTA is added automatically).
+- `first_comment` (Sam, Nov 22): the comment the channel posts under the Short right after it goes live
+  (pipeline/first_comment.py). One line, max 120 characters, sounds like the creator, asks viewers something they
+  want to answer (a pick, a guess, "who next?"), may add one emoji. Not a copy of `cta_question`: add a twist
+  ("Nike or Adidas? Wrong answers only 👇", "Would you take the $1 deal or the shares? 👇"). Only numbers that are
+  in the script; no links, @, # or new facts; kid-safe.
 - Vary `hook_style` (question / number / whatif / challenge / surprise) and `title_style` (question / number /
   statement / whatif). No two Shorts in a row share format + theme + hook style.
 
@@ -67,9 +72,9 @@ narration. Count with:
 `python -c "from pipeline import tts; print(len(tts.sentences(tts.speakable('NARRATION'))))"`.
 The picture must SHOW what the sentence says. Fields (all optional; use only these values):
 - `place` (Nov 18: any 3D set by name): throne office diner lab stall field ring track graveyard boardroom street
-  beach court pitch diamond gridiron tennis farm store gym studio stage space garage classroom bathroom mansion showroom (old names still work: servers=lab,
+  beach court pitch diamond gridiron tennis golf pool rink factory mountain farm store gym studio stage space garage classroom bathroom mansion showroom (old names still work: servers=lab,
   road=track, quay=beach, bridge=street). court = basketball; pitch = soccer; diamond = baseball; gridiron = American
-  football (NFL, quarterback, touchdown, Super Bowl; sentence words pick it automatically); tennis = tennis court (Wimbledon, US Open, racket); farm = barn, tractor, crops, harvest; store = grocery store, cashier, bagger; gym = weights, workout, training centre; studio = animation / film studio, cartoons, animators (a RECORDING studio stays on stage); track = sprinting; ring =
+  football (NFL, quarterback, touchdown, Super Bowl; sentence words pick it automatically); tennis = tennis court (Wimbledon, US Open, racket); golf = golf course (golf, the Masters, putt, fairway, PGA, birdie); rink = ice hockey rink (hockey, NHL, puck, Stanley Cup, Oilers, on the ice; red centre line, goal, boards and glass, crowd); pool = an empty swimming pool ("swimming pool", "pool"; tennis net, ladder, tiled walls); factory = factory floor (factory, assembly line, conveyor belt, robot arms; the `factory` OBJECT is a separate small model); mountain = rocky mountain with a mine entrance, cart tracks and gold veins (mountain, mine, miners, gold rush); farm = barn, tractor, crops, harvest; store = grocery store, cashier, bagger; gym = weights, workout, training centre; studio = animation / film studio, cartoons, animators (a RECORDING studio stays on stage); track = sprinting; ring =
   boxing/wrestling; garage = a humble start; throne = the crown moment; lab = AI / data centre; diner = food;
   boardroom/office = deals; mansion = wealth; stall/showroom = shops and products; classroom = school/childhood;
   stage = music/shows; graveyard ONLY for a real ending/death line. Check: `python -m pipeline.ah_table <file>`.
@@ -80,7 +85,7 @@ The picture must SHOW what the sentence says. Fields (all optional; use only the
   cash cashstack coins goldbar trophy medal crown ring car sportscar bus truck rocket phone laptop tv monitor clock
   books letter newspaper briefcase shovel pickaxe box crate basketball football soccerball hoop mic headset controller burger
   pizza coffee plant robot drone satellite globe house factory stadium plane yacht chart arrowup arrowdown lightbulb
-  lock key heart bomb fire camera chatbot glasses dumbbell hanger dome (+ old names sneakerbus idea poster). The renderer also adds models from the line's
+  lock key heart bomb fire camera chatbot glasses dumbbell hanger dome console golfball golfclub horse baseball guitar rollercoaster noodlecup (noodles, ramen, cup noodles) legobrick (lego, brick) eiffeltower (eiffel) giantshovel (a house-tall shovel; plain `shovel` stays the normal one) icepop (ice pop, popsicle, paleta) (roller coaster, amusement park, theme park) (+ old names sneakerbus idea poster). The renderer also adds models from the line's
   words (max 2). Use `things` not `props` for a football (props "ball" draws a basketball); "football" is the American ball, soccer = "soccerball" (balls on the pitch set become one automatically).
 - `mood`: happy laugh shock nervous proud stern scheme relief dazed sad calm excited. Match the line (shock at a
   big number, sad at a setback, laugh at a win).
@@ -163,7 +168,7 @@ Top level (all required unless noted): `id` (string "NNN"), `slug`, `company`, `
 (`history`|`plan`, story only), `visual_style: "lowpoly"`, `hook_style`, `title_style`, `theme` (dark_neon /
 bold_bright / clean_navy; rotate), `status: "ready"`, `score`, `title`, `name_card`, `name_sub`, `description`
 (story + "Sources:" list + the cited facts + "#shorts #topic #howtheymakemoney"; a `plan` says it is made up),
-`tags`, `images: {}`, `loop`, `cta`, `cta_question`, `hero`, `scenes` (5-9), `sources`, `length_test` (story only),
+`tags`, `images: {}`, `loop`, `cta`, `cta_question`, `first_comment`, `hero`, `scenes` (5-9), `sources`, `length_test` (story only),
 `look: "afterhour"` (story only).
 `hero`: `{skin hex, hair short|buzz|bald|quiff|long|bangs|ponytail|bun|afro|curly|mohawk, hair_color, beard
 none|stubble|full|goatee|mustache, outfit tee|kit|suit|hoodie|dress, shirt, pants, shoes, chest, trim, number,
@@ -181,6 +186,7 @@ Annotated story example (trimmed from 119-plan-nike; JSON has no comments, so th
   "tags": ["nike", "story", "shorts"], "images": {},
   "loop": "So next time you lace up your shoes, remember:",
   "cta": "Nike or Adidas? Comment your pick.", "cta_question": "Nike or Adidas?",
+  "first_comment": "Nike or Adidas? Wrong answers only 👇",
   "hero": {"skin": "d9a577", "hair": "short", "hair_color": "2a1d14", "beard": "none", "outfit": "tee",
            "shirt": "111111", "pants": "2b2f3a", "shoes": "f4f4f4", "chest": "NIKE", "trim": "ffffff", "height": 1.0},
   "scenes": [

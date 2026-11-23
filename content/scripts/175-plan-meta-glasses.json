@@ -1,0 +1,303 @@
+{
+  "id": "175",
+  "slug": "plan-meta-glasses",
+  "company": "Meta",
+  "format": "story",
+  "story_mode": "plan",
+  "visual_style": "lowpoly",
+  "hook_style": "number",
+  "title_style": "number",
+  "theme": "dark_neon",
+  "status": "ready",
+  "score": 90,
+  "title": "7 Million Pairs Sold. Then Samsung Showed Up",
+  "name_card": "You are Meta",
+  "name_sub": "a made-up plan",
+  "description": "This is a made-up plan, not company news. Only step one is real: Meta and its partner EssilorLuxottica sold more than 7 million smart glasses in 2025, and on November 12, 2026 Samsung and Google opened pre-orders for their own $395 glasses, on sale December 10. Every later step is imagined by us, with no real numbers.\n\nSources:\n- Talk Android: Samsung's Gemini-Powered Smart Glasses Open for Preorder at $395, Ship December 10 (Nov 12 2026): https://www.talkandroid.com/534903-samsung-intelligent-eyewear-smart-glasses-preorder-price/\n- MIXED: Samsung's $395 smart glasses are up for preorder, but there's no display: https://mixed-news.com/en/samsung-intelligent-eyewear-preorders-december-launch/\n- The Tech Outlook: Samsung's Intelligent Eyewear to be released in the US and South Korea on 10th December (Nov 13 2026): https://www.thetechoutlook.com/new-release/gadgets-release/samsungs-intelligent-eyewear-to-be-released-in-the-us-and-south-korea-on-10th-december/\n- UploadVR: Meta & EssilorLuxottica Sold 7 Million Smart Glasses In 2025: https://uploadvr.com/meta-essilorluxottica-sold-7-million-smart-glasses-in-2025/\n\nFrom the cited pages: EssilorLuxottica said it sold more than 7 million Ray-Ban and Oakley smart glasses (Meta partnership) in 2025, more than triple 2024 (UploadVR); Samsung announced on November 12, 2026 that its Intelligent Eyewear with Google Gemini starts at $395 in the US and goes on sale December 10, with Warby Parker and Gentle Monster frames and a camera but no display (Talk Android, MIXED, The Tech Outlook); Samsung says Gemini can help with directions and translation (MIXED). Not financial advice.\n\n#shorts #meta #smartglasses #samsung #howtheymakemoney",
+  "tags": [
+    "meta",
+    "smart glasses",
+    "samsung",
+    "story",
+    "shorts"
+  ],
+  "images": {},
+  "loop": "So next time you put on your glasses, remember:",
+  "cta": "Meta or Samsung? Comment your pick.",
+  "cta_question": "Meta or Samsung?",
+  "hero": {
+    "skin": "e8bc92",
+    "hair": "short",
+    "hair_color": "3a2a1a",
+    "beard": "none",
+    "outfit": "tee",
+    "shirt": "0866ff",
+    "pants": "2b2f3a",
+    "shoes": "f4f4f4",
+    "chest": "META",
+    "trim": "ffffff",
+    "height": 1.0,
+    "extras": [
+      "glasses"
+    ]
+  },
+  "scenes": [
+    {
+      "narration": "You are Meta, and you sold 7 million smart glasses in 2025. But on November 12, Samsung and Google opened pre-orders for their own. They start at 395 dollars and go on sale December 10.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "store",
+        "action": "idle",
+        "crowd": 30,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "throne",
+          "mood": "proud",
+          "beat": "money",
+          "things": [
+            "glasses"
+          ],
+          "brand": {
+            "name": "Meta",
+            "bg": "#0866ff",
+            "fg": "#ffffff"
+          },
+          "card": {
+            "text": "7 MILLION",
+            "kind": "screen",
+            "sub": "SMART GLASSES, 2025"
+          },
+          "view": "ms"
+        },
+        {
+          "place": "showroom",
+          "mood": "shock",
+          "brand": {
+            "name": "Samsung",
+            "bg": "#1428a0",
+            "fg": "#ffffff"
+          },
+          "card": {
+            "text": "NOV 12",
+            "kind": "sign",
+            "sub": "PRE-ORDERS OPEN"
+          },
+          "view": "face"
+        },
+        {
+          "place": "store",
+          "mood": "nervous",
+          "things": [
+            "glasses",
+            "box"
+          ],
+          "card": {
+            "text": "$395",
+            "kind": "screen",
+            "sub": "ON SALE DEC 10"
+          },
+          "view": "wide"
+        }
+      ]
+    },
+    {
+      "narration": "So you decide yours must read every sign in the world. Now a tourist can read any menu on Earth. But rival glasses can translate, too. Still not enough?",
+      "visual": {
+        "type": "lowpoly",
+        "set": "street",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "lab",
+          "mood": "scheme",
+          "things": [
+            "glasses",
+            "lightbulb"
+          ],
+          "view": "ms"
+        },
+        {
+          "place": "street",
+          "mood": "happy",
+          "things": [
+            "globe",
+            "letter"
+          ],
+          "card": {
+            "text": "ANY MENU",
+            "kind": "sign"
+          },
+          "view": "wide"
+        },
+        {
+          "place": "showroom",
+          "mood": "nervous",
+          "things": [
+            "glasses"
+          ],
+          "view": "ms"
+        },
+        {
+          "place": "boardroom",
+          "mood": "dazed",
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "So you make glasses that remember where you left your keys. Then they remember your homework and your friend's birthday.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "garage",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "garage",
+          "mood": "excited",
+          "things": [
+            "glasses",
+            "key"
+          ],
+          "view": "ms"
+        },
+        {
+          "place": "classroom",
+          "mood": "calm",
+          "things": [
+            "books",
+            "heart"
+          ],
+          "view": "wide"
+        }
+      ]
+    },
+    {
+      "narration": "Now everyone wants a pair. So you give one to every person on the planet.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "idle",
+        "crowd": 100,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "street",
+          "mood": "excited",
+          "things": [
+            "glasses"
+          ],
+          "crowd": 200,
+          "view": "wide"
+        },
+        {
+          "place": "beach",
+          "mood": "proud",
+          "things": [
+            "globe",
+            "box"
+          ],
+          "view": "ms"
+        }
+      ]
+    },
+    {
+      "narration": "Soon the whole world is wearing your glasses. But everyone stares at their glasses, and nobody looks up.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "street",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "street",
+          "mood": "happy",
+          "things": [
+            "glasses"
+          ],
+          "crowd": 300,
+          "view": "wide"
+        },
+        {
+          "place": "street",
+          "mood": "dazed",
+          "things": [
+            "glasses"
+          ],
+          "crowd": 50,
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "So your last feature is a tiny button. It turns the glasses off. You win the race by teaching the world to look up.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "throne",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "lab",
+          "mood": "scheme",
+          "things": [
+            "glasses"
+          ],
+          "card": {
+            "text": "OFF",
+            "kind": "sign"
+          },
+          "view": "ms"
+        },
+        {
+          "place": "lab",
+          "mood": "calm",
+          "things": [
+            "glasses"
+          ],
+          "view": "cu"
+        },
+        {
+          "place": "throne",
+          "mood": "proud",
+          "things": [
+            "trophy"
+          ],
+          "view": "face"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Talk Android: Samsung's Gemini-Powered Smart Glasses Open for Preorder at $395, Ship December 10 (Nov 12 2026)",
+      "url": "https://www.talkandroid.com/534903-samsung-intelligent-eyewear-smart-glasses-preorder-price/"
+    },
+    {
+      "title": "MIXED: Samsung's $395 smart glasses are up for preorder, but there's no display",
+      "url": "https://mixed-news.com/en/samsung-intelligent-eyewear-preorders-december-launch/"
+    },
+    {
+      "title": "The Tech Outlook: Samsung's Intelligent Eyewear to be released in the US and South Korea on 10th December (Nov 13 2026)",
+      "url": "https://www.thetechoutlook.com/new-release/gadgets-release/samsungs-intelligent-eyewear-to-be-released-in-the-us-and-south-korea-on-10th-december/"
+    },
+    {
+      "title": "UploadVR: Meta & EssilorLuxottica Sold 7 Million Smart Glasses In 2025",
+      "url": "https://uploadvr.com/meta-essilorluxottica-sold-7-million-smart-glasses-in-2025/"
+    }
+  ],
+  "length_test": "long",
+  "look": "afterhour"
+}

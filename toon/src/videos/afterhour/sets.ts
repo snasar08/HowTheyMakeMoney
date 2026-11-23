@@ -3,7 +3,7 @@ import * as THREE from "three";
 import { toonMat, glowMat, metalMat, outline, canvasTex, seeded, box } from "./common";
 
 export type SetName = "throne" | "office" | "diner" | "lab" | "stall" | "field" | "ring" | "track" | "graveyard" | "boardroom" | "street" | "beach"
-  | "court" | "pitch" | "diamond" | "gridiron" | "tennis" | "gym" | "studio" | "farm" | "store" | "stage" | "space" | "garage" | "classroom" | "bathroom" | "mansion" | "showroom";
+  | "court" | "pitch" | "diamond" | "gridiron" | "tennis" | "golf" | "pool" | "gym" | "studio" | "farm" | "store" | "stage" | "space" | "garage" | "classroom" | "bathroom" | "mansion" | "showroom" | "factory" | "mountain" | "rink";
 export type SetObj = { root: THREE.Group; lights: THREE.Light[]; fog?: THREE.Fog; bg: string; spots: Record<string, [number, number, number]> };
 
 type V3 = [number, number, number];
@@ -1326,6 +1326,168 @@ function tennis(): SetObj {
   return { root: g, lights, fog: new THREE.Fog("#a8d6ff", 55, 130), bg: "#8ecbff", spots: { spot: [0, 0, 0], net: [0, 0.5, NZ], ball: [1.0, 0.11, 1.4], chair: [ux, 2.3, NZ], sign: [0, 5.4, Z0 - 6.6] } };
 }
 
+// ================= POOL (an empty, disused swimming pool used as a tennis practice court) =================
+function pool(): SetObj {
+  const g = new THREE.Group();
+  const X0 = -9, X1 = 9, Z0 = -15, Z1 = 11, H = 2.7, NZ = -5;                // pool 18 x 26 m, 2.7 m deep, net across at z = -5
+  const tileTex = (w: number, h: number, tw: number, th: number, seed: number, fn?: (c: CanvasRenderingContext2D) => void) => canvasTex(w, h, (c) => {
+    const r = seeded(seed); const cols = ["#8fd3e8", "#86cde4", "#9ad9ec", "#7fc6de"];
+    c.fillStyle = "#cfeaf2"; c.fillRect(0, 0, w, h);
+    for (let j = 0; j * th < h; j++) for (let i = 0; i * tw < w; i++) { c.fillStyle = cols[Math.floor(r() * 4)]; c.fillRect(i * tw + 2, j * th + 2, tw - 4, th - 4); }
+    if (fn) fn(c);
+  });
+  // floor: tiles, dark lane lines with T ends, a drain, faded chalk tennis baseline, crack lines
+  const FW = 1008, FH = Math.round(FW * (Z1 - Z0) / (X1 - X0)), fx = FW / (X1 - X0), fz = FH / (Z1 - Z0);
+  const FX = (x: number) => (x - X0) * fx, FZ = (z: number) => (z - Z0) * fz;
+  const ft = tileTex(FW, FH, 28, 28, 5, (c) => {
+    c.fillStyle = "#1c4f9a";
+    for (const x of [-6.75, -2.25, 2.25, 6.75]) { c.fillRect(FX(x) - 0.12 * fx, FZ(Z0), 0.24 * fx, (Z1 - Z0) * fz); c.fillRect(FX(x) - 0.6 * fx, FZ(Z0 + 0.6), 1.2 * fx, 0.24 * fz); c.fillRect(FX(x) - 0.6 * fx, FZ(Z1 - 0.9), 1.2 * fx, 0.24 * fz); }
+    c.strokeStyle = "#f4f7f0"; c.lineWidth = 0.09 * fx; c.lineCap = "butt";                    // faded tennis chalk
+    const L = (x0: number, z0: number, x1: number, z1: number) => { c.beginPath(); c.moveTo(FX(x0), FZ(z0)); c.lineTo(FX(x1), FZ(z1)); c.stroke(); };
+    L(-4.1, NZ - 6.4, 4.1, NZ - 6.4); L(-4.1, NZ + 6.4, 4.1, NZ + 6.4); L(0, NZ - 6.4, 0, NZ + 6.4);
+    c.fillStyle = "#3a4a58"; c.beginPath(); c.arc(FX(5.5), FZ(2), 0.4 * fx, 0, PI * 2); c.fill(); c.fillStyle = "#6b7c8a"; c.beginPath(); c.arc(FX(5.5), FZ(2), 0.3 * fx, 0, PI * 2); c.fill();
+    c.strokeStyle = "rgba(40,60,80,0.55)"; c.lineWidth = 3;
+    for (const [a, b, d, e] of [[-3, -9, -1.8, -7.6], [3.2, -11.5, 4.4, -10], [-6, 5, -4.7, 6.3]]) { c.beginPath(); c.moveTo(FX(a), FZ(b)); c.lineTo(FX((a + d) / 2 + 0.2), FZ((b + e) / 2 - 0.3)); c.lineTo(FX(d), FZ(e)); c.stroke(); }
+    c.fillStyle = "rgba(90,110,60,0.35)"; for (const [x, z, r] of [[-5, -2, 1.2], [6.5, -8, 0.9]]) { c.beginPath(); c.ellipse(FX(x), FZ(z), r * fx, r * 0.7 * fz, 0.4, 0, PI * 2); c.fill(); }   // old stains
+  });
+  plane(g, X1 - X0, Z1 - Z0, T("#ffffff", { map: ft }), 0, 0.01, (Z0 + Z1) / 2);
+  // walls: tiles, a dark waterline band near the top, depth numbers, a "DEEP END" paint
+  const wallTex = (wd: number, label: string) => {
+    const WW = Math.round(wd * 56), WH = Math.round(H * 56);
+    return tileTex(WW, WH, 28, 28, 9 + Math.round(wd), (c) => {
+      c.fillStyle = "#2a62b0"; c.fillRect(0, 0, WW, 0.42 * 56 + 6); c.fillStyle = "#f4f7f0"; c.fillRect(0, 0.42 * 56 + 6, WW, 5);
+      c.fillStyle = "rgba(60,80,50,0.28)"; c.fillRect(0, 0.42 * 56 + 11, WW, 9);
+      c.fillStyle = "#ffffff"; c.textAlign = "center"; c.font = "bold 30px Arial";
+      for (const k of [0.2, 0.5, 0.8]) c.fillText(label, WW * k, 0.42 * 56 - 14);
+      c.strokeStyle = "rgba(40,60,80,0.5)"; c.lineWidth = 3; c.beginPath(); c.moveTo(WW * 0.62, WH * 0.45); c.lineTo(WW * 0.66, WH * 0.62); c.lineTo(WW * 0.64, WH * 0.8); c.stroke();
+    });
+  };
+  const wm = (wd: number, label: string) => T("#ffffff", { map: wallTex(wd, label) });
+  vplane(g, X1 - X0, H, wm(X1 - X0, "3 M"), 0, H / 2, Z0);
+  vplane(g, X1 - X0, H, wm(X1 - X0, "1.2 M"), 0, H / 2, Z1, PI);
+  vplane(g, Z1 - Z0, H, wm(Z1 - Z0, "2 M"), X0, H / 2, (Z0 + Z1) / 2, PI / 2);
+  vplane(g, Z1 - Z0, H, wm(Z1 - Z0, "2 M"), X1, H / 2, (Z0 + Z1) / 2, -PI / 2);
+  // coping + deck around the rim, fence, trees, clubhouse
+  const cop = T("#e9e4d6"), deck = T("#c9c2b0");
+  bx(g, 19.2, 0.22, 0.6, cop, 0, H + 0.11, Z0 - 0.3, 0.012); bx(g, 19.2, 0.22, 0.6, cop, 0, H + 0.11, Z1 + 0.3, 0.012);
+  bx(g, 0.6, 0.22, 27.2, cop, X0 - 0.3, H + 0.11, (Z0 + Z1) / 2, 0.012); bx(g, 0.6, 0.22, 27.2, cop, X1 + 0.3, H + 0.11, (Z0 + Z1) / 2, 0.012);
+  bx(g, 70, 0.4, 14, deck, 0, H - 0.2, Z0 - 7.6); bx(g, 70, 0.4, 14, deck, 0, H - 0.2, Z1 + 7.6);
+  bx(g, 14, 0.4, 40, deck, X0 - 7.6, H - 0.2, -2); bx(g, 14, 0.4, 40, deck, X1 + 7.6, H - 0.2, -2);
+  const fenceM = T("#59606e");
+  for (let i = -14; i <= 14; i++) { cy(g, 0.04, 0.04, 2.2, fenceM, i * 2.4, H + 1.1, Z0 - 12, 0.01, 6); }
+  bx(g, 70, 0.06, 0.06, fenceM, 0, H + 2.1, Z0 - 12); bx(g, 70, 0.06, 0.06, fenceM, 0, H + 0.4, Z0 - 12);
+  const fm = new THREE.MeshBasicMaterial({ map: canvasTex(256, 64, (c) => { c.clearRect(0, 0, 256, 64); c.strokeStyle = "rgba(200,208,220,0.75)"; c.lineWidth = 2; for (let k = -64; k < 256; k += 12) { c.beginPath(); c.moveTo(k, 0); c.lineTo(k + 64, 64); c.moveTo(k + 64, 0); c.lineTo(k, 64); c.stroke(); } }), transparent: true, alphaTest: 0.3, side: THREE.DoubleSide });
+  vplane(g, 70, 1.7, fm, 0, H + 1.25, Z0 - 12);
+  const r = seeded(31); const leaf = ["#2f9f4a", "#26903f", "#3aae55"];
+  for (let i = 0; i < 9; i++) { const x = -34 + i * 8.4 + r() * 2, s = 1 + r() * 0.7; cy(g, 0.3 * s, 0.4 * s, 3.4 * s, T("#6a4a2a"), x, H + 1.7 * s, Z0 - 17, 0.015, 8); sp(g, 2.2 * s, T(leaf[i % 3]), x, H + 4.4 * s, Z0 - 17, 0.02, 14); sp(g, 1.5 * s, T(leaf[(i + 1) % 3]), x + 1.5 * s, H + 3.7 * s, Z0 - 16.6, 0.02, 12); }
+  bx(g, 16, 5, 6, T("#e8d6b4"), -22, H + 2.5, Z0 - 6.5, 0.02); bx(g, 16.8, 0.5, 6.8, T("#b24a3a"), -22, H + 5.2, Z0 - 6.5, 0.02);
+  for (let i = 0; i < 4; i++) bx(g, 1.8, 1.6, 0.1, T("#7fc6de"), -27 + i * 3.4, H + 2.6, Z0 - 3.45, 0.012);
+  bx(g, 3.2, 0.9, 0.2, T("#f4f7f0"), 6, H + 1.6, Z0 - 4); bx(g, 0.12, 1.6, 0.12, fenceM, 6, H + 0.8, Z0 - 4);
+  // ladder on the left wall (chrome rails over the rim, five steps), a second on the right
+  const chrome = metalMat("#d9dee8", 0.25);
+  const ladder = (lx: number, lz: number, dir: number) => {
+    for (const dz of [-0.28, 0.28]) {
+      cy(g, 0.028, 0.028, H + 0.55, chrome, lx + dir * 0.1, (H + 0.55) / 2 + 0.25, lz + dz, 0.008, 8);
+      cy(g, 0.028, 0.028, 0.5, chrome, lx - dir * 0.15, H + 0.55, lz + dz, 0.008, 8).rotation.z = PI / 2;
+      cy(g, 0.028, 0.028, H + 0.1, chrome, lx - dir * 0.4, (H + 0.1) / 2 + 0.2, lz + dz, 0.008, 8);
+    }
+    for (let i = 0; i < 5; i++) cy(g, 0.022, 0.022, 0.62, chrome, lx + dir * 0.1, 0.5 + i * 0.4, lz, 0.007, 8).rotation.x = PI / 2;
+  };
+  ladder(X0 + 0.12, -9.5, 1); ladder(X1 - 0.12, 4.5, -1);
+  // tennis net strung across the dry floor from wall to wall, with white band + centre strap + two posts
+  const post = T("#2a2f3e");
+  for (const sxn of [-1, 1]) cy(g, 0.07, 0.07, 1.1, post, sxn * 7.0, 0.55, NZ, 0.015, 8);
+  const nt = canvasTex(256, 32, (c) => { c.clearRect(0, 0, 256, 32); c.strokeStyle = "#e8eef8"; c.lineWidth = 2; for (let i = 0; i <= 64; i++) { c.beginPath(); c.moveTo(i * 4, 0); c.lineTo(i * 4, 32); c.stroke(); } for (let j = 0; j <= 8; j++) { c.beginPath(); c.moveTo(0, j * 4); c.lineTo(256, j * 4); c.stroke(); } });
+  vplane(g, 14.0, 0.95, new THREE.MeshBasicMaterial({ map: nt, transparent: true, alphaTest: 0.3, side: THREE.DoubleSide }), 0, 0.5, NZ);
+  bx(g, 14.0, 0.09, 0.05, T("#ffffff"), 0, 0.99, NZ, 0.012); bx(g, 0.07, 0.95, 0.04, T("#ffffff"), 0, 0.5, NZ);
+  for (const sxn of [-1, 1]) bx(g, 2.0, 0.03, 0.03, T("#d6dbe8"), sxn * 8.0, 0.97, NZ);        // cords to the walls
+  // set balls (hidden when the shot shows a ball) + racket + ball bucket + fallen leaves
+  const tb = new THREE.Group(); tb.userData.setBall = true; g.add(tb);
+  for (const [x, z] of [[1.4, 1.6], [2.0, 0.8], [-1.6, -1.8], [3.2, -2.4]] as V2[]) {
+    sp(tb, 0.11, T("#d6ec3a"), x, 0.11, z, 0.012, 14);
+    const sm = new THREE.Mesh(new THREE.TorusGeometry(0.11, 0.011, 4, 16), T("#ffffff")); sm.position.set(x, 0.11, z); sm.rotation.set(0.9, 0.4, 0); tb.add(sm);
+  }
+  const rk = new THREE.Group(); rk.position.set(-2.4, 0.035, 2.4); rk.rotation.set(0, 0.7, 0); g.add(rk);
+  const fr = new THREE.Mesh(new THREE.TorusGeometry(0.21, 0.025, 8, 24), T("#d6283a")); fr.scale.set(0.82, 1.15, 1); fr.rotation.x = -PI / 2; fr.position.set(0, 0, -0.34); outline(fr, 0.01); rk.add(fr);
+  const hd = cy(rk, 0.03, 0.03, 0.38, T("#1b1b22"), 0, 0.01, 0.12, 0.008, 8); hd.rotation.x = PI / 2;
+  cy(g, 0.17, 0.15, 0.5, T("#f2c230"), 4.4, 0.25, 1.2, 0.015, 14); cy(g, 0.175, 0.175, 0.06, T("#d6283a"), 4.4, 0.52, 1.2, 0, 14);
+  for (const [x, z, a] of [[-4, -3, 0.5], [5, -7, 1.9], [-6.5, 3, 2.7], [2.5, -12, 0.9], [-1, 6.5, 1.3]] as V3[]) { const lf = cy(g, 0.14, 0.14, 0.01, T("#a9702d"), x, 0.02, z, 0, 6); lf.rotation.y = a; lf.scale.set(1, 1, 0.7); }
+  const lights = mkLights(["#f2f8ff", "#9cc4cf", 1.3], ["#fff6e0", 2.7, [5, 14, 7]], [["#ffffff", 28, [0, 3.2, 3], 20]], 14);
+  void sp;
+  return { root: g, lights, fog: new THREE.Fog("#a8d6ff", 40, 110), bg: "#8ecbff", spots: { spot: [0, 0, 0], net: [0, 0.5, NZ], ladder: [X0 + 0.3, 1.2, -9.5], ball: [1.4, 0.11, 1.6], sign: [0, 1.6, Z0 + 0.1] } };
+}
+
+// ================= GOLF (one golf hole) =================
+function golf(): SetObj {
+  const g = new THREE.Group();
+  const X0 = -30, X1 = 30, Z0 = -52, Z1 = 10, W = 1500, H = Math.round(W * (Z1 - Z0) / (X1 - X0)), sx = W / (X1 - X0), sz = H / (Z1 - Z0);
+  const X = (x: number) => (x - X0) * sx, Z = (z: number) => (z - Z0) * sz;
+  const GZ = -32, GR = 5.2, FX = 14;                                   // green centre z, green radius, fairway half-width at its widest
+  const gt = canvasTex(W, H, (c) => {
+    c.fillStyle = "#2f8a46"; c.fillRect(0, 0, W, H);                   // rough
+    // fairway: a soft S-shaped ribbon from the tee box to the green
+    const fair = () => { c.beginPath(); c.moveTo(X(-4.2), Z(2.6)); c.bezierCurveTo(X(-9), Z(-8), X(-FX), Z(-16), X(-6.5), Z(GZ + 3)); c.lineTo(X(-GR * 0.8), Z(GZ + 2)); c.lineTo(X(GR * 0.8), Z(GZ + 2)); c.lineTo(X(6.5), Z(GZ + 3)); c.bezierCurveTo(X(FX), Z(-16), X(9), Z(-8), X(4.2), Z(2.6)); c.closePath(); };
+    c.save(); fair(); c.clip();
+    for (let i = 0; i < 40; i++) { c.fillStyle = i % 2 ? "#4cbf5f" : "#43b256"; c.fillRect(0, Z(2.6) - i * 1.8 * sz, W, 1.8 * sz + 1); }
+    c.restore();
+    // putting green: round, finer stripes
+    c.save(); c.beginPath(); c.arc(X(0), Z(GZ), GR * sx, 0, PI * 2); c.clip();
+    for (let i = 0; i < 20; i++) { c.fillStyle = i % 2 ? "#63d676" : "#58ca6b"; c.fillRect(X(-GR) + i * (GR / 10) * sx, 0, (GR / 10) * sx + 1, H); }
+    c.restore();
+    c.strokeStyle = "#7de08c"; c.lineWidth = 5; c.beginPath(); c.arc(X(0), Z(GZ), GR * sx, 0, PI * 2); c.stroke();
+    // sand bunkers (a pale blob with a darker rim)
+    const bunker = (bx0: number, bz: number, rx: number, rz: number, rot: number) => {
+      c.save(); c.translate(X(bx0), Z(bz)); c.rotate(rot);
+      c.fillStyle = "#d9b873"; c.beginPath(); c.ellipse(0, 0, (rx + 0.35) * sx, (rz + 0.35) * sz, 0, 0, PI * 2); c.fill();
+      c.fillStyle = "#f3dfa0"; c.beginPath(); c.ellipse(0, 0, rx * sx, rz * sz, 0, 0, PI * 2); c.fill();
+      c.fillStyle = "#e8cf88"; c.beginPath(); c.ellipse(rx * 0.2 * sx, rz * 0.2 * sz, rx * 0.5 * sx, rz * 0.4 * sz, 0, 0, PI * 2); c.fill(); c.restore();
+    };
+    bunker(7.4, GZ + 1.2, 3.0, 1.9, -0.5); bunker(-6.8, GZ + 4.5, 2.4, 1.5, 0.4); bunker(-9, -13, 2.8, 1.6, 0.2);
+    // tee box with two lighter stripes
+    c.fillStyle = "#5fd072"; c.fillRect(X(-3.4), Z(2.8), 6.8 * sx, 5.0 * sz);
+    c.fillStyle = "#52c466"; c.fillRect(X(-3.4), Z(2.8) + 2.5 * sz, 6.8 * sx, 2.5 * sz);
+    // cart path along the left of the hole
+    c.strokeStyle = "#b9b3a6"; c.lineWidth = 1.4 * sx; c.lineCap = "round"; c.beginPath(); c.moveTo(X(-11), Z(8)); c.bezierCurveTo(X(-17), Z(-10), X(-19), Z(-24), X(-12), Z(-38)); c.stroke();
+  });
+  plane(g, 220, 160, T("#2a7a3e"), 0, 0, -50);
+  plane(g, X1 - X0, Z1 - Z0, T("#ffffff", { map: gt }), (X0 + X1) / 2, 0.01, (Z0 + Z1) / 2);
+  // hole cup + flag on the green (the flag sways a little in the wind via its fixed tilt)
+  cy(g, 0.14, 0.14, 0.02, T("#15161c"), 0, 0.022, GZ, 0, 16);
+  cy(g, 0.02, 0.02, 3.2, T("#fafafa"), 0, 1.6, GZ, 0.012, 8);
+  const flM = T("#e5233b"); flM.side = THREE.DoubleSide; const fl = new THREE.Mesh(new THREE.BufferGeometry(), flM);
+  fl.geometry.setAttribute("position", new THREE.Float32BufferAttribute([0, 0, 0, 1.1, -0.2, 0.05, 0, -0.55, 0], 3)); fl.geometry.computeVertexNormals(); fl.position.set(0.02, 3.15, GZ); g.add(fl);
+  // tee box markers, a tee sign and a sand-and-water-free bin
+  for (const sxn of [-1, 1]) { sp(g, 0.16, T(sxn > 0 ? "#e5233b" : "#ffffff"), sxn * 3.0, 0.2, 2.9, 0.012, 14); cy(g, 0.04, 0.05, 0.14, T("#8a93a8"), sxn * 3.0, 0.07, 2.9, 0, 8); }
+  const hs = T("#f4f7f0"); cy(g, 0.05, 0.05, 1.5, T("#6a4a2a"), -4.6, 0.75, 1.2, 0.012, 8); bx(g, 0.9, 0.55, 0.06, T("#14407a"), -4.6, 1.55, 1.2, 0.015); void hs;
+  const sgn = canvasTex(256, 160, (c) => { c.fillStyle = "#14407a"; c.fillRect(0, 0, 256, 160); c.fillStyle = "#ffffff"; c.textAlign = "center"; c.font = "bold 64px Arial"; c.fillText("HOLE 9", 128, 70); c.font = "bold 40px Arial"; c.fillText("PAR 4", 128, 124); });
+  const sgp = new THREE.Mesh(new THREE.PlaneGeometry(0.84, 0.5), basic(sgn, 1.05, false)); sgp.position.set(-4.6, 1.55, 1.24); g.add(sgp);
+  // set balls beside the tee sign, out of the swing's way (hidden when the shot shows a ball thing)
+  const gb = new THREE.Group(); gb.userData.setBall = true; g.add(gb);
+  for (const [x, z] of [[-4.2, 3.6], [-4.7, 4.2], [-3.8, 4.5]] as V2[]) { sp(gb, 0.07, T("#ffffff"), x, 0.07, z, 0.01, 12); }
+  // round cel trees along both sides
+  const r = seeded(77); const leaf = ["#1f7a3a", "#26903f", "#2f9f4a", "#1a6a33"];
+  const tree = (x: number, z: number, sc: number) => {
+    cy(g, 0.22 * sc, 0.3 * sc, 2.2 * sc, T("#6a4a2a"), x, 1.1 * sc, z, 0.015, 8);
+    const c0 = leaf[Math.floor(r() * 4)];
+    sp(g, 1.5 * sc, T(c0), x, 3.0 * sc, z, 0.02, 14); sp(g, 1.1 * sc, T(leaf[Math.floor(r() * 4)]), x + 0.9 * sc, 2.5 * sc, z + 0.3 * sc, 0.02, 12); sp(g, 1.0 * sc, T(leaf[Math.floor(r() * 4)]), x - 0.9 * sc, 2.6 * sc, z - 0.2 * sc, 0.02, 12);
+  };
+  for (let i = 0; i < 14; i++) { const z = 5 - i * 3.9 + r() * 1.2; tree(-17 - r() * 4, z, 0.9 + r() * 0.5); tree(17 + r() * 4, z - 1.4, 0.9 + r() * 0.5); }
+  for (let i = 0; i < 6; i++) tree(-12 + i * 5 + r() * 2, -45 - r() * 3, 1.1 + r() * 0.5);
+  for (const [x, z] of [[-9.5, -4], [10.5, -20], [-5, -27]] as V2[]) tree(x, z, 0.7);
+  // golf cart: white body, blue roof, four wheels, seat, a bag at the back
+  const cart = new THREE.Group(); cart.position.set(-6.4, 0, 3.4); cart.rotation.y = 0.6; g.add(cart);
+  bx(cart, 1.2, 0.34, 2.2, T("#f4f7f0"), 0, 0.5, 0, 0.015); bx(cart, 1.14, 0.1, 1.0, T("#2a7de0"), 0, 0.72, -0.5, 0); bx(cart, 1.0, 0.5, 0.14, T("#2a7de0"), 0, 0.95, 0.35, 0.012);
+  bx(cart, 1.3, 0.08, 1.7, T("#2a7de0"), 0, 1.95, -0.1, 0.015); for (const [dx, dz] of [[-0.55, -0.8], [0.55, -0.8], [-0.55, 0.65], [0.55, 0.65]] as V2[]) bx(cart, 0.05, 1.2, 0.05, T("#d8dce6"), dx, 1.35, dz);
+  for (const [dx, dz] of [[-0.62, -0.75], [0.62, -0.75], [-0.62, 0.8], [0.62, 0.8]] as V2[]) { const w = cy(cart, 0.26, 0.26, 0.2, T("#1b1b22"), dx, 0.26, dz, 0.012, 14); w.rotation.z = PI / 2; }
+  const bag = cy(cart, 0.17, 0.2, 0.9, T("#c0392b"), 0, 0.95, 1.15, 0.012, 10); bag.rotation.x = -0.25; for (let i = 0; i < 3; i++) cy(cart, 0.025, 0.025, 0.55, T("#c8ccd4"), -0.08 + i * 0.08, 1.55, 1.3, 0, 6).rotation.x = -0.25;
+  // soft hills and a day sky with clouds
+  for (const [hx, hz, hs2, col] of [[-30, -70, 22, "#3a9a52"], [14, -76, 28, "#33904b"], [44, -66, 20, "#3a9a52"], [-58, -60, 24, "#2f8a46"]] as [number, number, number, string][]) { const h = sp(g, hs2, T(col), hx, -hs2 * 0.45, hz, 0, 20); h.scale.set(1.5, 0.9, 1); }
+  vplane(g, 300, 110, basic(gradTex([[0, "#bfe6ff"], [0.5, "#8ecbff"], [1, "#4a9be8"]], 8, 256), 1, false), 0, 40, -95);
+  for (const [cx, cyy, cs] of [[-34, 28, 1.2], [12, 34, 1.6], [46, 26, 1.0], [-8, 42, 1.1]] as V3[]) for (let i = 0; i < 5; i++) { const m = sp(g, 3 * cs, T("#ffffff", { emissive: "#c8d8ee", emissiveIntensity: 0.6 }), cx + (i - 2) * 3.4 * cs, cyy + (i % 2) * 1.2, -90, 0, 12); m.scale.set(1.3, 0.7, 0.5); }
+  const lights = mkLights(["#f2f8ff", "#6fa07a", 1.25], ["#fff6e0", 2.6, [6, 14, 8]], [["#ffffff", 30, [0, 8, 4], 22]], 14);
+  return { root: g, lights, fog: new THREE.Fog("#a8d6ff", 60, 150), bg: "#8ecbff", spots: { spot: [0, 0, 0], tee: [0, 0, 1.0], green: [0, 0.03, GZ], flag: [0, 3.0, GZ], hole: [0, 0.03, GZ], bunker: [7.4, 0.03, GZ + 1.2], cart: [-6.4, 0.6, 3.4], ball: [-4.2, 0.07, 3.6], sign: [-4.6, 1.55, 1.3] } };
+}
+
 // ================= GYM (training gym) =================
 function gym(): SetObj {
   const g = new THREE.Group();
@@ -1806,7 +1968,202 @@ function showroom(): SetObj {
 }
 const gold2 = () => T("#e6a418", { emissive: "#6a3a00", emissiveIntensity: 0.4 });
 
-const BUILD: Record<SetName, () => SetObj> = { throne, office, diner, lab, stall, field, ring: ring_, track, graveyard, boardroom, street, beach, court, pitch, diamond, gridiron, tennis, gym, studio, farm, store, stage, space, garage, classroom, bathroom, mansion, showroom };
+// ================= FACTORY (a factory floor: conveyors with boxes, robot arms, crates, tall windows with a chimney outside) =================
+function factory(): SetObj {
+  const g = new THREE.Group();
+  const flr = canvasTex(256, 256, (c) => {
+    c.fillStyle = "#8b8f98"; c.fillRect(0, 0, 256, 256); const r = seeded(611);
+    for (let i = 0; i < 300; i++) { c.fillStyle = r() < 0.5 ? "#7d818a" : "#989ca5"; c.fillRect(r() * 256, r() * 256, 3 + r() * 6, 2 + r() * 4); }
+    c.strokeStyle = "#f2c230"; c.lineWidth = 8; c.strokeRect(4, 4, 248, 248);
+  });
+  plane(g, 40, 30, T("#ffffff", { map: rep(flr, 6, 4) }), 0, 0, -4);
+  // back wall with five tall windows; behind it: sky and a big striped chimney
+  const wallT = canvasTex(256, 256, (c) => { c.fillStyle = "#b9704c"; c.fillRect(0, 0, 256, 256); c.strokeStyle = "#8f4f34"; c.lineWidth = 3; for (let j = 0; j < 8; j++) { c.beginPath(); c.moveTo(0, j * 32); c.lineTo(256, j * 32); c.stroke(); for (let i = 0; i < 4; i++) { c.beginPath(); c.moveTo(i * 64 + (j % 2) * 32, j * 32); c.lineTo(i * 64 + (j % 2) * 32, j * 32 + 32); c.stroke(); } } });
+  const wm = T("#ffffff", { map: rep(wallT, 6, 1.4) });
+  const ZW = -9;
+  const sky = gradTex([[0, "#ffcf8a"], [0.5, "#ffa9a0"], [1, "#78b8ee"]], 8, 128);
+  vplane(g, 60, 24, basic(sky, 1, false), 0, 11, ZW - 12);
+  // chimney outside, seen through the right window: white/red stripes, black cap, smoke; a smaller one in the left window
+  const chimney = (cx: number, bz: number, rb: number, rt: number, h: number) => {
+    const n = 8, sh = h / n;
+    for (let i = 0; i < n; i++) { const t0 = i / n, t1 = (i + 1) / n; const m = cy(g, rb + (rt - rb) * t1, rb + (rt - rb) * t0, sh, T(i % 2 ? "#f4f7f0" : "#d6283a"), cx, sh * (i + 0.5), bz, 0.012, 16); m.castShadow = false; }
+    const cap = cy(g, rt * 1.12, rt, 0.4, T("#2f3440"), cx, h + 0.2, bz, 0.01, 16); cap.castShadow = false;
+    return h + 0.4;
+  };
+  const top = chimney(4, ZW - 7, 1.6, 0.9, 16);
+  chimney(-8, ZW - 9, 0.9, 0.5, 11);
+  for (const [dx, dy, r] of [[4.3, top + 1.2, 0.9], [5.3, top + 2.3, 1.2], [6.6, top + 3.2, 1.45]] as V3[]) { const pf = sp(g, r, T("#e9edf2"), dx, dy, ZW - 7, 0, 12); pf.castShadow = false; }
+  for (const [x, h] of [[-9, 4], [-6.5, 2.6], [8, 3.4], [10.5, 5]] as V2[]) bx(g, 1.8, h, 1.8, T("#6f7d90"), x, h / 2, ZW - 5, 0.01).castShadow = false;   // far buildings
+  // windows at x = -8, -4, 0, 4, 8 (3 m wide), sill 1.6, head 6.2
+  const WX = [-8, -4, 0, 4, 8];
+  bx(g, 40, 1.6, 0.4, wm, 0, 0.8, ZW).castShadow = false; bx(g, 40, 3.8, 0.4, wm, 0, 8.1, ZW).castShadow = false;
+  for (const [x, w] of [[-6, 1], [-2, 1], [2, 1], [6, 1], [-11.75, 4.5], [11.75, 4.5]] as V2[]) bx(g, w, 4.6, 0.4, wm, x, 3.9, ZW).castShadow = false;
+  const frameM = T("#2f3440");
+  for (const x of WX) {
+    bx(g, 3.2, 0.12, 0.2, frameM, x, 6.2, ZW + 0.1); bx(g, 3.2, 0.12, 0.2, frameM, x, 1.6, ZW + 0.1); bx(g, 0.08, 4.6, 0.12, frameM, x, 3.9, ZW + 0.1); bx(g, 3.2, 0.08, 0.12, frameM, x, 3.9, ZW + 0.1);
+  }
+  for (const sx of [-1, 1]) bx(g, 0.4, 10, 30, wm, sx * 14.2, 5, -4).castShadow = false;
+  bx(g, 29, 0.4, 30, T("#59606e"), 0, 10.2, -4).castShadow = false;
+  for (let i = 0; i < 6; i++) bx(g, 0.35, 0.4, 28, T("#f2c230"), -12.5 + i * 5, 9.8, -4, 0.01);
+  for (const x of [-9, 0, 9]) glow(g, 2.2, 0.1, 0.5, "#fff2c8", x, 9.55, -5, 1.6);
+  // conveyor belts running along x: one in the middle ground, one near the back
+  const beltT = canvasTex(128, 64, (c) => { c.fillStyle = "#3a3f4b"; c.fillRect(0, 0, 128, 64); c.fillStyle = "#555c6b"; for (let i = 0; i < 8; i++) c.fillRect(i * 16, 0, 5, 64); });
+  const belt = (z: number, len: number) => {
+    bx(g, len, 0.16, 1.5, T("#ffffff", { map: rep(beltT.clone(), len / 1.6, 1) }), 0, 0.86, z, 0.012);
+    for (const dz of [-0.78, 0.78]) bx(g, len, 0.2, 0.1, T("#f2c230"), 0, 0.95, z + dz, 0.01);
+    for (let i = 0; i <= len / 3; i++) { const x = -len / 2 + i * 3; bx(g, 0.2, 0.8, 1.3, T("#59606e"), x, 0.4, z, 0.01); }
+  };
+  belt(-3.6, 26); belt(-7, 26);
+  const cartonM = [T("#c99456"), T("#d6a468"), T("#b8844a")];
+  const carton = (x: number, z: number, i: number, s = 1) => { bx(g, 0.8 * s, 0.6 * s, 0.8 * s, cartonM[i % 3], x, 0.94 + 0.3 * s, z, 0.012); bx(g, 0.82 * s, 0.05, 0.14, T("#f4f7f0"), x, 0.94 + 0.62 * s, z); };
+  [-9.5, -6.5, -3.2, 3.5, 6, 9.2].forEach((x, i) => carton(x, -3.6, i, 0.9 + (i % 2) * 0.2)); [-8, -4.5, -1, 2, 5, 8.5].forEach((x, i) => carton(x, -7, i + 1, 1));
+  // robot arms bolted beside the belts (orange, 3 joints, claw)
+  const orange = T("#f08a1c"), dark = T("#2f3440");
+  const arm = (x: number, z: number, a1: number, a2: number) => {
+    const a = new THREE.Group(); a.position.set(x, 0, z); g.add(a);
+    cy(a, 0.55, 0.65, 0.3, dark, 0, 0.15, 0, 0.012); cy(a, 0.38, 0.45, 0.9, orange, 0, 0.75, 0, 0.015); sp(a, 0.34, orange, 0, 1.25, 0, 0.015, 14);
+    const u = new THREE.Group(); u.position.set(0, 1.25, 0); u.rotation.z = a1; a.add(u);
+    bx(u, 0.28, 1.6, 0.3, orange, 0, 0.8, 0, 0.015); sp(u, 0.26, dark, 0, 1.6, 0, 0.012, 12);
+    const l = new THREE.Group(); l.position.set(0, 1.6, 0); l.rotation.z = a2; u.add(l);
+    bx(l, 0.22, 1.3, 0.24, orange, 0, 0.65, 0, 0.015); bx(l, 0.5, 0.14, 0.34, dark, 0, 1.33, 0, 0.01);
+    for (const sx of [-1, 1]) bx(l, 0.08, 0.34, 0.1, dark, sx * 0.2, 1.5, 0, 0.008);
+    glowSp(a, 0.07, "#4dff7a", 0.3, 1.25, 0.2, 2.4);
+  };
+  arm(-4.8, -5.3, 0.5, -1.2); arm(2.8, -5.3, -0.4, 1.3); arm(-11, -5.3, 0.3, -1.0); arm(9.5, -5.3, -0.5, 1.1);
+  // crates and barrels
+  const crate = (x: number, y: number, z: number, w = 1.1, ry = 0) => { const c = bx(g, w, w, w, T("#b88a4e"), x, y + w / 2, z, 0.015); c.rotation.y = ry; bx(g, w + 0.02, 0.1, w + 0.02, T("#8c6430"), x, y + w * 0.5, z, 0).rotation.y = ry; };
+  crate(-10.5, 0, -1, 1.2, 0.2); crate(-10.4, 1.2, -1.1, 1.0, -0.1); crate(-9.1, 0, -0.5, 1.0, 0.4); crate(10, 0, -1.2, 1.3, -0.2); crate(10.2, 1.3, -1.2, 1.0, 0.15); crate(8.6, 0, -0.4, 0.9, 0.3);
+  for (const [x, z, c] of [[-12, -2.5, "#2a62b0"], [-12.8, -1.2, "#d6283a"], [12.4, -2.2, "#2a62b0"]] as [number, number, string][]) cy(g, 0.42, 0.42, 1.0, T(c), x, 0.5, z, 0.012, 14);
+  // hazard stripes on the floor, hanging lamps, wall sign
+  for (let i = 0; i < 14; i++) bx(g, 0.5, 0.02, 0.9, T(i % 2 ? "#f2c230" : "#1b1b22"), -6.5 + i * 0.5, 0.02, 4.2);
+  for (const x of [-7, 0, 7]) { cy(g, 0.02, 0.02, 1.3, dark, x, 9.4, -3, 0, 6); cone(g, 0.6, 0.45, T("#f2c230"), x, 8.6, -3, 0.01, 16).rotation.x = PI; glow(g, 0.5, 0.05, 0.5, "#fff2c8", x, 8.4, -3, 1.8); }
+  bx(g, 3.6, 0.9, 0.12, T("#f2c230"), -11.75, 6.6, ZW + 0.3, 0.012); bx(g, 3.2, 0.6, 0.06, T("#1b1b22"), -11.75, 6.6, ZW + 0.37);
+  const lights = mkLights(["#ffe6c4", "#8f7f78", 1.25], ["#fff0d0", 2.6, [-4, 14, 8]], [["#ffd89a", 20, [0, 7, -3], 20]], 14);
+  return { root: g, lights, fog: new THREE.Fog("#c8b4a8", 45, 120), bg: "#ffbf94", spots: { spot: [0, 0, 0], belt: [0, 1.2, -3.6], arm: [-4.8, 1.5, -5.3], crate: [10, 0.6, -1.2], chimney: [4, 6, ZW - 7], sign: [0, 3.9, ZW + 0.3] } };
+}
+
+// ================= MOUNTAIN (a rocky mountain, a timbered mine entrance, cart tracks with a cart, glowing gold veins) =================
+function mountain(): SetObj {
+  const g = new THREE.Group();
+  const gt = noiseTex("#6aa04a", ["#5c9140", "#79b058", "#8a8f56"], 220, 701, 8, 6, 5);
+  plane(g, 80, 60, T("#ffffff", { map: gt }), 0, 0, -10);
+  const dirtT = noiseTex("#a87c4e", ["#94683c", "#bd915e", "#7e5632"], 160, 702, 2, 4, 4);
+  plane(g, 5.5, 22, T("#ffffff", { map: dirtT }), 2.6, 0.012, -4);                          // dirt path out of the mine
+  const sky = gradTex([[0, "#8fd0ff"], [0.6, "#c4e7ff"], [1, "#fff0d0"]], 8, 128);
+  vplane(g, 160, 60, basic(sky, 1, false), 0, 22, -40);
+  const rockA = T("#b58c62"), rockB = T("#cda374"), rockC = T("#94694a"), snow = T("#f4f8ff");
+  // rocky crag: rows of tilted hexagonal rock columns, the mine mouth cut at x = 2.6, snow-capped peaks behind
+  const col = (x: number, z: number, r: number, h: number, m: THREE.Material, tilt = 0, ry = 0, y0 = 0) => { const c = cy(g, r * 0.8, r, h, m, x, y0 + h / 2, z, 0.02, 6); c.rotation.set(tilt, ry, -tilt * 0.6); c.castShadow = false; return c; };
+  const mats = [rockA, rockB, rockC];
+  [[-12.5, 7], [-10.4, 5], [-8.2, 8.5], [-6, 5.8], [-3.9, 7.5], [-1.7, 5], [6.4, 6.5], [8.5, 8], [10.7, 5.5], [12.9, 7.5]].forEach(([x, h], i) => col(x, -9.6, 1.35, h, mats[i % 3], 0.03 * (i % 3 - 1), i));
+  col(0.6, -9.6, 1.1, 5.8, rockB, 0.02, 1); col(4.7, -9.6, 1.1, 6.2, rockC, -0.02, 2);
+  bx(g, 4.6, 1.3, 1.6, rockB, 2.65, 5.75, -8.9, 0.02); bx(g, 3.4, 1.9, 1.4, rockA, 2.65, 7.35, -9.2, 0.02);          // rock over the mine mouth
+  [[-12, 11], [-8.5, 13], [-4.5, 11.5], [-0.5, 14], [3.5, 12], [7.5, 14.5], [11.5, 12], [14.5, 10]].forEach(([x, h], i) => col(x, -12.2, 2.0, h, mats[(i + 1) % 3], 0.02 * (i % 3 - 1), i * 2));
+  for (const [x, y, z, r, h] of [[-9, 19, -16, 6.5, 14], [1, 24, -17, 8, 20], [11, 20, -16, 6, 15]] as [number, number, number, number, number][]) {
+    cone(g, r, h, rockB, x, 7 + h / 2, z, 0.02, 7); cone(g, r * 0.42, h * 0.34, snow, x, 7 + h * 0.83, z + 0.05, 0, 7);
+  }
+  for (const [x, y, z, s] of [[-14, 3, -9, 1.7], [15, 2.5, -8.5, 1.5], [-10.5, 2, -6, 1.0], [11, 1.3, -6.5, 0.9], [-1.6, 0.5, -5.5, 0.5]] as V4[]) { const b = sp(g, s, rockA, x, y * 0.5 + 0.2, z, 0.02, 7); b.scale.y = 0.7; }
+  // the mine mouth: dark hole, timber frame, lantern, sign
+  bx(g, 3.0, 4.2, 0.2, T("#0b0a10"), 2.6, 2.1, -7.95);
+  const wood = T("#8a5a30"), woodD = T("#6a4220");
+  for (const sx of [-1, 1]) bx(g, 0.4, 4.4, 0.45, wood, 2.6 + sx * 1.7, 2.2, -7.7, 0.015);
+  bx(g, 4.2, 0.45, 0.5, wood, 2.6, 4.45, -7.7, 0.015); bx(g, 3.6, 0.2, 0.3, woodD, 2.6, 3.7, -7.75, 0.01);
+  for (const sx of [-1, 1]) { const br = bx(g, 0.18, 1.0, 0.2, woodD, 2.6 + sx * 1.3, 4.0, -7.72, 0.01); br.rotation.z = sx * 0.7; }
+  cy(g, 0.02, 0.02, 0.5, T("#2f3440"), 3.7, 4.0, -7.4, 0, 6); glowSp(g, 0.2, "#ffc54a", 3.7, 3.65, -7.4, 2.6);
+  bx(g, 2.6, 0.7, 0.1, T("#f2c230"), 2.6, 5.15, -7.6, 0.012); vplane(g, 2.3, 0.45, basic(canvasTex(256, 52, (c) => { c.fillStyle = "#3a2410"; c.fillRect(0, 0, 256, 52); c.fillStyle = "#ffd84a"; c.font = "bold 38px Arial"; c.textAlign = "center"; c.fillText("GOLD MINE", 128, 40); }), 1, false), 2.6, 5.15, -7.54);
+  // tracks out of the mine: two rails with ties, running toward the camera
+  const rail = metalMat("#aeb6c4", 0.3);
+  for (let i = 0; i < 17; i++) bx(g, 1.5, 0.08, 0.2, woodD, 2.6, 0.06, -7.6 + i * 0.7, 0.008);
+  for (const dx of [-0.55, 0.55]) bx(g, 0.07, 0.1, 12.2, rail, 2.6 + dx, 0.14, -1.6, 0.006);
+  // mine cart on the tracks: rust body, rim, wheels, gold chunks heaped on top
+  const cart = new THREE.Group(); cart.position.set(2.6, 0, -3.2); g.add(cart);
+  bx(cart, 1.3, 0.75, 1.1, T("#7b4a2c"), 0, 0.72, 0, 0.02); bx(cart, 1.4, 0.1, 1.2, T("#4a4f5c"), 0, 1.1, 0, 0.01); bx(cart, 1.36, 0.08, 0.1, T("#4a4f5c"), 0, 0.62, 0.56);
+  for (const sx of [-1, 1]) for (const sz of [-1, 1]) { const w = cy(cart, 0.2, 0.2, 0.1, T("#2f3440"), sx * 0.55, 0.22, sz * 0.5, 0.01, 14); w.rotation.z = PI / 2; }
+  for (const [x, y, z, r] of [[-0.3, 1.2, 0.0, 0.3], [0.2, 1.3, 0.1, 0.34], [0.0, 1.15, -0.25, 0.27], [0.35, 1.18, -0.2, 0.25], [-0.25, 1.2, 0.3, 0.24]] as V4[]) { const n = sp(cart, r, gold2(), x, y, z, 0.012, 7); n.scale.y = 0.8; }
+  // glowing gold veins across the rock faces (the front of the first column row is at z ~ -8.3)
+  const vein = (x: number, y: number, z: number, w: number, rz: number) => { const v = glow(g, w * 1.5, 0.3, 0.22, "#ffcf3a", x, y, z, 3.0); v.rotation.z = rz; };
+  vein(-6, 3.2, -8.3, 1.3, 0.6); vein(-6.1, 4.3, -8.3, 0.9, -0.5); vein(-10.4, 2.4, -8.3, 1.2, 0.4); vein(-3.9, 5.2, -8.3, 1.1, -0.6); vein(-8.2, 5.8, -8.3, 1.2, 0.5); vein(-1.7, 2.6, -8.3, 1.0, 0.7);
+  vein(-2.0, 1.6, -8.3, 1.1, -0.5); vein(-2.2, 3.6, -8.3, 1.0, 0.6); vein(-4.2, 2.0, -8.3, 1.1, 0.5); vein(-4.0, 3.8, -8.3, 0.9, -0.6); vein(6.6, 1.8, -8.3, 1.0, 0.6); vein(6.2, 4.8, -8.3, 0.9, -0.5); vein(-0.2, 3.0, -8.3, 0.7, 0.5);
+  vein(6.4, 3.4, -8.3, 1.2, -0.6); vein(8.5, 5.0, -8.3, 1.3, 0.5); vein(8.4, 3.0, -8.3, 0.9, -0.4); vein(10.7, 3.4, -8.3, 1.1, 0.6); vein(12.9, 5.4, -8.3, 1.1, -0.5); vein(2.65, 5.9, -8.05, 2.4, 0.08);
+  for (const [x, y] of [[-6, 3.2], [-8.2, 5.8], [6.4, 3.4], [8.5, 5.0], [-10.4, 2.4], [10.7, 3.4], [-3.9, 5.2]] as V2[]) glowSp(g, 0.24, "#ffe27a", x + 0.2, y, -8.2, 2.8);
+  // loose nuggets, pickaxe leaning on the rock, a few pines
+  for (const [x, z] of [[-1.2, -2.2], [0.8, -4.6], [5.4, -5.2], [4.6, -2.2]] as V2[]) { const n = sp(g, 0.17, gold2(), x, 0.12, z, 0.01, 7); n.scale.y = 0.7; }
+  const pick = new THREE.Group(); pick.position.set(5.6, 0, -6.3); pick.rotation.z = 0.35; g.add(pick);
+  cy(pick, 0.04, 0.04, 1.6, wood, 0, 0.8, 0, 0.008, 6); bx(pick, 0.9, 0.08, 0.08, T("#aeb6c4"), 0, 1.55, 0, 0.008);
+  const pine = (x: number, z: number, s: number) => { cy(g, 0.14 * s, 0.2 * s, 1.2 * s, T("#6a4a2a"), x, 0.6 * s, z, 0.01, 6); for (let i = 0; i < 3; i++) cone(g, (1.1 - i * 0.25) * s, 1.3 * s, T(i % 2 ? "#2f8a4a" : "#277a3f"), x, (1.6 + i * 0.8) * s, z, 0.012, 7); };
+  pine(-9, -4, 1.3); pine(-12, -1, 1.1); pine(10, -3.5, 1.2); pine(13.5, -1, 1.4); pine(-5.6, -6, 1.0);
+  const lights = mkLights(["#dff0ff", "#7a9a5a", 1.35], ["#fff6e0", 2.9, [-6, 14, 10]], [["#ffcf3a", 16, [2.6, 2.6, -6.2], 10]], 16);
+  return { root: g, lights, fog: new THREE.Fog("#cfe8ff", 50, 140), bg: "#8fd0ff", spots: { spot: [0, 0, 0], mine: [2.6, 2.2, -7.9], cart: [2.6, 1.0, -3.2], vein: [-6, 3.2, -8.3], tracks: [2.6, 0.1, -2], sign: [2.6, 5.15, -7.5] } };
+}
+
+// ================= RINK (an ice hockey rink: ice with red centre line + blue lines, boards with glass, a goal, stands with a crowd) =================
+function rink(): SetObj {
+  const g = new THREE.Group();
+  const X0 = -10, X1 = 10, Z0 = -18, Z1 = 10;                                  // ice 20 x 28 m
+  const FW = 720, FH = Math.round(FW * (Z1 - Z0) / (X1 - X0)), fx = FW / (X1 - X0), fz = FH / (Z1 - Z0);
+  const FX = (x: number) => (x - X0) * fx, FZ = (z: number) => (z - Z0) * fz;
+  const ice = canvasTex(FW, FH, (c) => {
+    c.fillStyle = "#eef7ff"; c.fillRect(0, 0, FW, FH); const r = seeded(811);
+    c.globalAlpha = 0.5; c.strokeStyle = "#b9d9f2"; c.lineWidth = 2;
+    for (let i = 0; i < 60; i++) { const x = r() * FW, y = r() * FH, a = r() * 6.28, l = 20 + r() * 60; c.beginPath(); c.moveTo(x, y); c.lineTo(x + Math.cos(a) * l, y + Math.sin(a) * l * 0.5); c.stroke(); }
+    c.globalAlpha = 1;
+    const band = (z: number, w: number, col: string) => { c.fillStyle = col; c.fillRect(0, FZ(z) - w * fz / 2, FW, w * fz); };
+    band(-4, 0.3, "#d6283a"); band(-8.5, 0.5, "#1c4fb8"); band(-16, 0.1, "#d6283a");               // centre line, blue line, goal line
+    for (let i = 0; i < 18; i++) { c.fillStyle = "#eef7ff"; c.fillRect(FX(X0) + i * 40, FZ(-4) - 2, 16, 4); }
+    c.strokeStyle = "#d6283a"; c.lineWidth = 0.1 * fx;
+    c.beginPath(); c.arc(FX(0), FZ(-4), 3.2 * fx, 0, 7); c.stroke();
+    for (const x of [-5.5, 5.5]) { c.beginPath(); c.arc(FX(x), FZ(-12.5), 2.6 * fx, 0, 7); c.stroke(); c.fillStyle = "#d6283a"; c.beginPath(); c.arc(FX(x), FZ(-12.5), 0.3 * fx, 0, 7); c.fill(); }
+    c.fillStyle = "#d6283a"; c.beginPath(); c.arc(FX(0), FZ(-4), 0.3 * fx, 0, 7); c.fill();
+    c.fillStyle = "rgba(120,190,240,0.55)"; c.beginPath(); c.arc(FX(0), FZ(-16.8), 1.6 * fx, Math.PI, 0); c.fill();   // crease
+  });
+  plane(g, X1 - X0, Z1 - Z0, T("#ffffff", { map: ice }), 0, 0.01, (Z0 + Z1) / 2);
+  plane(g, 120, 100, T("#2a3552"), 0, -0.02, -20);
+  // boards: low white boards with a light-blue kick plate, glass above on thin posts
+  const white = T("#f4f7fb"), kick = T("#9fc7ea"), post = T("#2f3440");
+  const glass = new THREE.MeshBasicMaterial({ color: "#cfe9ff", transparent: true, opacity: 0.2, side: THREE.DoubleSide, depthWrite: false });
+  const wall = (cx: number, cz: number, len: number, alongX: boolean) => {
+    const w = alongX ? len : 0.3, d = alongX ? 0.3 : len;
+    bx(g, w, 1.1, d, white, cx, 0.55, cz, 0.015); bx(g, w + 0.02, 0.25, d + 0.02, kick, cx, 0.13, cz, 0); bx(g, w + 0.02, 0.1, d + 0.02, T("#d6283a"), cx, 1.15, cz, 0);
+    const gl = new THREE.Mesh(new THREE.PlaneGeometry(alongX ? len : len, 1.0), glass); gl.position.set(cx, 1.7, cz); if (!alongX) gl.rotation.y = PI / 2; g.add(gl);
+    for (let k = 0; k <= len / 2.5; k++) { const o = -len / 2 + k * 2.5; bx(g, 0.07, 1.0, 0.07, post, alongX ? cx + o : cx, 1.7, alongX ? cz : cz + o); }
+  };
+  wall(0, Z0 - 0.15, 20.6, true); wall(X0 - 0.15, (Z0 + Z1) / 2, Z1 - Z0, false); wall(X1 + 0.15, (Z0 + Z1) / 2, Z1 - Z0, false);
+  // goal: red posts + crossbar + white mesh net, on the goal line at the far end
+  const red = T("#d6283a"), GZ = -16.2;
+  for (const sx of [-1, 1]) { cy(g, 0.05, 0.05, 1.25, red, sx * 1.0, 0.62, GZ, 0.01, 10); cy(g, 0.04, 0.04, 1.0, red, sx * 1.0, 0.04, GZ - 0.5, 0.008, 8).rotation.x = PI / 2; }
+  bx(g, 2.1, 0.09, 0.09, red, 0, 1.25, GZ, 0.01);
+  const netT = canvasTex(128, 64, (c) => { c.clearRect(0, 0, 128, 64); c.strokeStyle = "#ffffff"; c.lineWidth = 2; for (let i = 0; i <= 16; i++) { c.beginPath(); c.moveTo(i * 8, 0); c.lineTo(i * 8, 64); c.stroke(); } for (let j = 0; j <= 8; j++) { c.beginPath(); c.moveTo(0, j * 8); c.lineTo(128, j * 8); c.stroke(); } });
+  const nm = new THREE.MeshBasicMaterial({ map: netT, transparent: true, alphaTest: 0.3, side: THREE.DoubleSide });
+  vplane(g, 2.0, 1.2, nm, 0, 0.62, GZ - 1.0);
+  for (const sx of [-1, 1]) vplane(g, 1.0, 1.2, nm, sx * 1.0, 0.62, GZ - 0.5, PI / 2);
+  const tp = new THREE.Mesh(new THREE.PlaneGeometry(2.0, 1.0), nm); tp.rotation.x = -PI / 2; tp.position.set(0, 1.0, GZ - 0.5); g.add(tp);
+  // stands behind the far end and along both sides: stepped tiers, seat rows, a crowd of coloured fans
+  const seat = T("#3b4a7a"), tierM = T("#58628a");
+  const cols = ["#d6283a", "#f2c230", "#2a62b0", "#ffffff", "#2f9f4a", "#f08a1c", "#8a4ab0"];
+  const r = seeded(821); const heads: It[] = [], bodies: It[] = [];
+  const fan = (x: number, y: number, z: number) => { const c = cols[Math.floor(r() * cols.length)]; heads.push({ x, y: y + 0.85, z, s: 0.2, c: r() < 0.5 ? "#e0b48c" : r() < 0.5 ? "#a8764c" : "#f2d2b0" }); bodies.push({ x, y: y + 0.45, z, s: [0.32, 0.5, 0.26], c }); };
+  for (let k = 0; k < 7; k++) {
+    const y = 1.5 + k * 0.9, z = Z0 - 1.2 - k * 1.1;
+    bx(g, 34, 0.5, 1.2, tierM, 0, y - 0.25, z, 0.01); bx(g, 34, 0.12, 0.5, seat, 0, y + 0.06, z - 0.4);
+    for (let i = -15; i <= 15; i++) if (r() < 0.82) fan(i * 1.05 + (r() - 0.5) * 0.3, y, z + 0.1);
+    for (const sx of [-1, 1]) {
+      const x = sx * (X1 + 1.8 + k * 1.1); bx(g, 1.2, 0.5, 26, tierM, x, y - 0.25, -5, 0.01);
+      for (let j = -11; j <= 11; j += 1) if (r() < 0.8) fan(x - sx * 0.1, y, -5 + j * 1.05 + (r() - 0.5) * 0.3);
+    }
+  }
+  inst(g, new THREE.SphereGeometry(1, 10, 8), T("#ffffff"), heads); inst(g, new THREE.BoxGeometry(1, 1, 1), T("#ffffff"), bodies);
+  bx(g, 40, 14, 0.5, T("#232c47"), 0, 8, Z0 - 10.5); for (const sx of [-1, 1]) bx(g, 0.5, 14, 36, T("#232c47"), sx * 21.5, 8, -4);
+  // set dressing: a black puck and a plain stick lying on the ice
+  cy(g, 0.14, 0.14, 0.07, T("#111118"), 1.2, 0.05, 1.6, 0.01, 16); cy(g, 0.12, 0.12, 0.075, T("#2c2c38"), 1.2, 0.052, 1.6, 0, 16);
+  const stick = new THREE.Group(); stick.position.set(-1.7, 0.04, 1.9); stick.rotation.y = 0.5; g.add(stick);
+  bx(stick, 1.7, 0.04, 0.05, T("#c8a060"), 0.2, 0.02, 0, 0.006); bx(stick, 0.5, 0.045, 0.1, T("#222"), -0.95, 0.02, 0.1, 0.006); bx(stick, 0.35, 0.05, 0.055, T("#f4f7fb"), 0.85, 0.02, 0, 0);
+  // arena lights over the ice
+  for (const x of [-6, 0, 6]) for (const z of [-12, -2, 6]) glow(g, 1.6, 0.1, 1.6, "#ffffff", x, 11, z, 1.6);
+  const lights = mkLights(["#e4f0ff", "#6a7aa0", 1.4], ["#ffffff", 2.4, [-4, 16, 8]], [["#dff0ff", 24, [0, 7, -2], 22]], 16);
+  return { root: g, lights, fog: new THREE.Fog("#27304c", 45, 110), bg: "#27304c", spots: { spot: [0, 0, 0], goal: [0, 0.7, GZ], puck: [1.2, 0.06, 1.6], stick: [-1.7, 0.05, 1.9], line: [0, 0.02, -4], stands: [0, 4, -24] } };
+}
+
+const BUILD: Record<SetName, () => SetObj> = { throne, office, diner, lab, stall, field, ring: ring_, track, graveyard, boardroom, street, beach, court, pitch, diamond, gridiron, tennis, golf, pool, gym, studio, farm, store, stage, space, garage, classroom, bathroom, mansion, showroom, factory, mountain, rink };
 const CACHE = new Map<SetName, SetObj>();
 export const makeSet = (name: SetName): SetObj => {
   let s = CACHE.get(name);

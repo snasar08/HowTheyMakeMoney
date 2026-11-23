@@ -1,0 +1,280 @@
+{
+  "id": "167",
+  "slug": "famous-wembanyama",
+  "company": "Victor Wembanyama",
+  "format": "famous",
+  "visual_style": "lowpoly",
+  "hook_style": "surprise",
+  "title_style": "number",
+  "theme": "clean_navy",
+  "status": "ready",
+  "score": 90,
+  "title": "He Took $250 Million, Not $300 Million",
+  "name_card": "Victor Wembanyama",
+  "name_sub": "basketball player",
+  "description": "Victor Wembanyama picked a 250 million dollar deal over 300 million, so the Spurs could keep their young core.\n\nSources:\n- AP via Fox Sports (Jul 10 2026): https://www.foxsports.com/articles/nba/victor-wembanyama-san-antonio-spurs-agree-on-5year-extension-that-could-top-250m-ap-source-says\n- Wikipedia: Victor Wembanyama: https://en.wikipedia.org/wiki/Victor_Wembanyama\n\nFrom AP (Fox Sports): on July 10 2026 Wembanyama signed a five-year Spurs extension that could exceed $250 million if the player option in the last season is picked up; he could have agreed to a deal topping $300 million over five years but chose less to give the Spurs flexibility with their young core; he makes about $16.8 million in 2026-27, the last season of his rookie contract; the new deal starts in 2027-28 at about $43.5 million. From Wikipedia: a youth coach at Nanterre noticed him on the bench at an under-11 game because of his height, 1.80 m (5 ft 11 in), mistaking him for a coach; he began his pro career at age 15 with Nanterre 92 in 2019; the Spurs picked him first overall on 22 June 2023; on 4 November 2026 he had a career-high 52 points and 24 rebounds with eight blocks, the first 50-point, 20-rebound, 5-block game since Bob McAdoo in 1974. Not financial advice.\n\n#shorts #wembanyama #spurs #howtheymakemoney",
+  "tags": [
+    "victor wembanyama",
+    "spurs",
+    "nba",
+    "famous",
+    "shorts"
+  ],
+  "images": {},
+  "hud_label": "HIS DEAL",
+  "loop": "So next time you choose less, remember:",
+  "cta": "Wemby or Jokic? Comment your pick.",
+  "cta_question": "Wemby or Jokic?",
+  "hero": {
+    "skin": "6b4430",
+    "hair": "short",
+    "hair_color": "141010",
+    "beard": "none",
+    "outfit": "kit",
+    "shirt": "111111",
+    "pants": "111111",
+    "trim": "c4ced4",
+    "socks": "f4f4f4",
+    "shoes": "111111",
+    "height": 1.3,
+    "number": 1
+  },
+  "scenes": [
+    {
+      "narration": "Victor Wembanyama took about 250 million dollars, not 300 million.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "ball"
+        ],
+        "stat": "$250 MILLION",
+        "stat_sub": "not $300 million",
+        "hero": {
+          "skin": "6b4430",
+          "hair": "short",
+          "hair_color": "141010",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "111111",
+          "pants": "111111",
+          "trim": "c4ced4",
+          "socks": "f4f4f4",
+          "shoes": "111111",
+          "height": 1.3,
+          "number": 1
+        }
+      },
+      "toon": [
+        {
+          "place": "court",
+          "mood": "shock",
+          "card": {
+            "text": "$250M",
+            "kind": "screen",
+            "sub": "NOT $300M"
+          },
+          "things": [
+            "cashstack"
+          ],
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "He wanted the Spurs to keep their stars.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "boardroom",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "ball"
+        ],
+        "stat": "KEEP THE TEAM",
+        "stat_sub": "a smaller deal",
+        "hero": {
+          "skin": "6b4430",
+          "hair": "short",
+          "hair_color": "141010",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "111111",
+          "pants": "111111",
+          "trim": "c4ced4",
+          "socks": "f4f4f4",
+          "shoes": "111111",
+          "height": 1.3,
+          "number": 1
+        }
+      },
+      "toon": [
+        {
+          "place": "boardroom",
+          "mood": "proud",
+          "things": [
+            "trophy"
+          ],
+          "view": "ms"
+        }
+      ]
+    },
+    {
+      "narration": "As a boy, he was so tall a coach thought he was one.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "ball"
+        ],
+        "stat": "5 FT 11",
+        "stat_sub": "a kid on the bench",
+        "hero": {
+          "skin": "6b4430",
+          "hair": "short",
+          "hair_color": "141010",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "111111",
+          "pants": "111111",
+          "trim": "c4ced4",
+          "socks": "f4f4f4",
+          "shoes": "111111",
+          "height": 1.3,
+          "number": 1
+        }
+      },
+      "toon": [
+        {
+          "place": "classroom",
+          "mood": "dazed",
+          "crowd": 8,
+          "things": [
+            "basketball"
+          ],
+          "card": {
+            "text": "A KID?",
+            "kind": "sign",
+            "sub": "5 FT 11"
+          },
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "Then the Spurs picked him first. Yet he earns just 16.8 million dollars.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "stage",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "ball"
+        ],
+        "stat": "NO. 1 PICK",
+        "stat_sub": "then $16.8M",
+        "hero": {
+          "skin": "6b4430",
+          "hair": "short",
+          "hair_color": "141010",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "111111",
+          "pants": "111111",
+          "trim": "c4ced4",
+          "socks": "f4f4f4",
+          "shoes": "111111",
+          "height": 1.3,
+          "number": 1
+        },
+        "hud": "$16.8M"
+      },
+      "toon": [
+        {
+          "place": "stage",
+          "mood": "happy",
+          "crowd": 60,
+          "things": [
+            "trophy"
+          ],
+          "card": {
+            "text": "NO. 1 PICK",
+            "kind": "sign",
+            "sub": "SPURS"
+          },
+          "view": "ms"
+        },
+        {
+          "place": "office",
+          "mood": "calm",
+          "beat": "money",
+          "card": {
+            "text": "$16.8M",
+            "kind": "screen",
+            "sub": "THIS SEASON"
+          },
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "Then he scored 52 points and blocked eight shots.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": [
+          "ball"
+        ],
+        "stat": "52 POINTS",
+        "stat_sub": "and 8 blocks",
+        "hero": {
+          "skin": "6b4430",
+          "hair": "short",
+          "hair_color": "141010",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "111111",
+          "pants": "111111",
+          "trim": "c4ced4",
+          "socks": "f4f4f4",
+          "shoes": "111111",
+          "height": 1.3,
+          "number": 1
+        },
+        "hud": "52 PTS"
+      },
+      "toon": [
+        {
+          "place": "court",
+          "mood": "excited",
+          "crowd": 100,
+          "things": [
+            "basketball"
+          ],
+          "card": {
+            "text": "52 PTS",
+            "kind": "screen",
+            "sub": "NOV 2026"
+          },
+          "view": "wide"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Victor Wembanyama",
+      "url": "https://en.wikipedia.org/wiki/Victor_Wembanyama"
+    },
+    {
+      "title": "AP via Fox Sports: Victor Wembanyama, San Antonio Spurs agree on 5-year extension that could top $250M",
+      "url": "https://www.foxsports.com/articles/nba/victor-wembanyama-san-antonio-spurs-agree-on-5year-extension-that-could-top-250m-ap-source-says"
+    }
+  ]
+}

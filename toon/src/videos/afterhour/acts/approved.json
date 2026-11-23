@@ -22,13 +22,22 @@
     "count_cash",
     "sign_contract",
     "throw_cash",
-    "shoot"
+    "shoot",
+    "golf_swing",
+    "race_car",
+    "touchdown",
+    "tennis_serve",
+    "qb_throw"
   ],
   "off_until_fixed": {
     "film_camera": "camera hides the face"
   },
   "approved_notes": {
     "count_cash/sign_contract/throw_cash": "rebuilt Nov 16, reviewed frame by frame, Sam: 'Yes include'",
-    "shoot": "Nov 18 rebuilt: ball in both hands to above the head, one smooth arc through the net, swish + bounce; own centred camera (acts view). Stills checked every 6th frame."
+    "shoot": "Nov 18 rebuilt: ball in both hands to above the head, one smooth arc through the net, swish + bounce; own centred camera (acts view). Stills checked every 6th frame.",
+    "golf_swing": "Nov 21 (Saturday part 1): new golf set; stills checked on things-test/20261121-golf: club backswing with effort face, contact, ball flies off the tee with a trail, smile after. Passes the SPEC bar.",
+    "race_car/touchdown": "Nov 21 (Saturday part 1): stills checked on things-test/20261121-acts: race_car = gritted-teeth effort in the car with speed streaks -> smile + FASTEST LAP; touchdown = ball raised, shout at the end zone -> spike, ball bouncing, arms up, TOUCHDOWN.",
+    "tennis_serve": "Nov 21 (Saturday part 2): stills checked on things-test/20261121-p2acts run 14: toss, racket meets ball at the top with a spark, ball trail over the net, effort/shout -> smug grin, ACE! top left. Passes the SPEC bar.",
+    "qb_throw": "Nov 21 (Saturday part 2): stills checked on things-test/20261121-p2qb run 16: ball low at the chest -> cocked behind the shoulder (face clear) -> effort shout at release -> spiral in flight -> receiver hugs the catch, COMPLETE! at the top after the catch. Passes the SPEC bar (ball brushes the head edge for ~1 frame)."
   }
 }

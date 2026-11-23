@@ -1,0 +1,299 @@
+{
+  "id": "140",
+  "slug": "famous-dude-perfect",
+  "company": "Dude Perfect",
+  "format": "famous",
+  "visual_style": "lowpoly",
+  "hook_style": "number",
+  "title_style": "number",
+  "theme": "bold_bright",
+  "status": "ready",
+  "score": 90,
+  "title": "Dude Perfect: Trick Shots to $100 Million",
+  "name_card": "Dude Perfect",
+  "name_sub": "five roommates, one hoop",
+  "description": "Five Texas A&M roommates turned backyard trick shots into a YouTube empire backed by over $100 million.\n\nSources:\n- Wikipedia: Dude Perfect: https://en.wikipedia.org/wiki/Dude_Perfect\n- Deadline: Dude Perfect gets more than $100M in backing from Highmount Capital: https://deadline.com/2024/04/dude-perfect-youtube-million-investment-highmount-capital-1235879212\n- CBS News: Dude Perfect's latest trick: https://www.cbsnews.com/news/dude-perfect-youtube-trick-shot\n\nFrom the cited pages: the group formed in 2009 at Texas A&M; their first trick shot video came out April 9, 2009; in 2009 they set a Guinness record for the longest basketball shot, from the third deck of Kyle Field; in April 2024 Highmount Capital announced it was backing them with more than $100 million (CBS: a range of $100 million to $300 million, per a source); they had more than 60 million YouTube subscribers at the time. Not financial advice.\n\n#shorts #dudeperfect #trickshots #howtheymakemoney",
+  "tags": [
+    "dude perfect",
+    "trick shots",
+    "youtube",
+    "shorts"
+  ],
+  "images": {},
+  "loop": "Next time you shoot, remember:",
+  "cta": "Which dude is best?",
+  "cta_question": "Which dude is best?",
+  "hero": {
+    "skin": "e0b48a",
+    "hair": "short",
+    "hair_color": "5a3b22",
+    "beard": "stubble",
+    "outfit": "tee",
+    "shirt": "f4f4f4",
+    "pants": "2b2f3a",
+    "shoes": "f4f4f4",
+    "chest": "",
+    "trim": "1fa34a",
+    "height": 1.0
+  },
+  "scenes": [
+    {
+      "narration": "Dude Perfect gets over 100 million dollars for trick shots.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "stage",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "hero": {
+          "skin": "e0b48a",
+          "hair": "short",
+          "hair_color": "5a3b22",
+          "beard": "stubble",
+          "outfit": "tee",
+          "shirt": "f4f4f4",
+          "pants": "2b2f3a",
+          "shoes": "f4f4f4",
+          "chest": "",
+          "trim": "1fa34a",
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "court",
+          "mood": "shock",
+          "things": [
+            "basketball",
+            "cashstack"
+          ],
+          "card": {
+            "text": "$100 MILLION+",
+            "kind": "screen",
+            "sub": "DUDE PERFECT, 2024"
+          },
+          "view": "ms"
+        }
+      ]
+    },
+    {
+      "narration": "Five Texas A and M roommates post a trick shot video in 2009. The dudes are Tyler, Coby, Cory, Garrett and Cody.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "hero": {
+          "skin": "e0b48a",
+          "hair": "short",
+          "hair_color": "5a3b22",
+          "beard": "stubble",
+          "outfit": "tee",
+          "shirt": "f4f4f4",
+          "pants": "2b2f3a",
+          "shoes": "f4f4f4",
+          "chest": "",
+          "trim": "1fa34a",
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "garage",
+          "mood": "excited",
+          "things": [
+            "camera"
+          ],
+          "card": {
+            "text": "2009",
+            "kind": "flip",
+            "sub": "TEXAS A&M"
+          },
+          "view": "ms"
+        },
+        {
+          "place": "court",
+          "mood": "laugh",
+          "things": [
+            "basketball"
+          ],
+          "who": {
+            "jacket": "#1fa34a",
+            "pants": "#2b2f3a",
+            "boots": "#ffffff",
+            "hat": "hair",
+            "style": "quiff",
+            "hair": "3a2a1a",
+            "skin": "#d9a577"
+          },
+          "view": "wide"
+        }
+      ]
+    },
+    {
+      "narration": "Then they shoot a basketball from a stadium deck.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "hero": {
+          "skin": "e0b48a",
+          "hair": "short",
+          "hair_color": "5a3b22",
+          "beard": "stubble",
+          "outfit": "tee",
+          "shirt": "f4f4f4",
+          "pants": "2b2f3a",
+          "shoes": "f4f4f4",
+          "chest": "",
+          "trim": "1fa34a",
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "court",
+          "mood": "proud",
+          "things": [
+            "basketball",
+            "stadium"
+          ],
+          "card": {
+            "text": "WORLD RECORD",
+            "kind": "sign",
+            "sub": "LONGEST BASKETBALL SHOT, 2009"
+          },
+          "view": "wide"
+        }
+      ]
+    },
+    {
+      "narration": "By 2024, they have over 60 million subscribers.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "studio",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "hero": {
+          "skin": "e0b48a",
+          "hair": "short",
+          "hair_color": "5a3b22",
+          "beard": "stubble",
+          "outfit": "tee",
+          "shirt": "f4f4f4",
+          "pants": "2b2f3a",
+          "shoes": "f4f4f4",
+          "chest": "",
+          "trim": "1fa34a",
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "studio",
+          "mood": "excited",
+          "things": [
+            "camera"
+          ],
+          "card": {
+            "text": "60 MILLION+",
+            "kind": "screen",
+            "sub": "YOUTUBE SUBSCRIBERS"
+          },
+          "view": "ms"
+        }
+      ]
+    },
+    {
+      "narration": "Then Highmount Capital backs them with over 100 million dollars.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "boardroom",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "hero": {
+          "skin": "e0b48a",
+          "hair": "short",
+          "hair_color": "5a3b22",
+          "beard": "stubble",
+          "outfit": "tee",
+          "shirt": "f4f4f4",
+          "pants": "2b2f3a",
+          "shoes": "f4f4f4",
+          "chest": "",
+          "trim": "1fa34a",
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "boardroom",
+          "mood": "scheme",
+          "things": [
+            "briefcase",
+            "cashstack"
+          ],
+          "card": {
+            "text": "HIGHMOUNT CAPITAL",
+            "kind": "white"
+          },
+          "view": "ms"
+        }
+      ]
+    },
+    {
+      "narration": "Turns out, five friends and a hoop were enough.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "hero": {
+          "skin": "e0b48a",
+          "hair": "short",
+          "hair_color": "5a3b22",
+          "beard": "stubble",
+          "outfit": "tee",
+          "shirt": "f4f4f4",
+          "pants": "2b2f3a",
+          "shoes": "f4f4f4",
+          "chest": "",
+          "trim": "1fa34a",
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "court",
+          "mood": "laugh",
+          "things": [
+            "hoop",
+            "basketball"
+          ],
+          "view": "face"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Dude Perfect",
+      "url": "https://en.wikipedia.org/wiki/Dude_Perfect"
+    },
+    {
+      "title": "Deadline: Dude Perfect gets more than $100M from Highmount Capital",
+      "url": "https://deadline.com/2024/04/dude-perfect-youtube-million-investment-highmount-capital-1235879212"
+    },
+    {
+      "title": "CBS News: Dude Perfect's latest trick",
+      "url": "https://www.cbsnews.com/news/dude-perfect-youtube-trick-shot"
+    }
+  ],
+  "look": "afterhour"
+}

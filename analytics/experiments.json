@@ -1,0 +1,22 @@
+[
+ {
+  "at": "2026-11-21T16:06+00:00",
+  "focus": "famous-athlete",
+  "experiment": "story-plan",
+  "twist": "angle",
+  "counts": {
+   "famous-athlete": 4,
+   "famous-other": 2,
+   "story-plan": 2,
+   "story-history": 1,
+   "whatif": 1
+  },
+  "baseline": {
+   "famous-athlete": 1040,
+   "famous-other": 1010.5,
+   "story-plan": null,
+   "story-history": null,
+   "whatif": 20
+  }
+ }
+]

@@ -1,0 +1,207 @@
+{
+  "id": "142",
+  "slug": "plan-rockstar-line",
+  "company": "Rockstar Games",
+  "format": "story",
+  "story_mode": "plan",
+  "visual_style": "lowpoly",
+  "hook_style": "number",
+  "title_style": "number",
+  "theme": "dark_neon",
+  "status": "ready",
+  "score": 92,
+  "title": "GTA 6 Made $3.79 Billion in One Day",
+  "name_card": "You are Rockstar Games",
+  "name_sub": "a made-up plan",
+  "description": "You're Rockstar Games, and you want the whole planet in your line. Step one is real: Grand Theft Auto VI was released on November 19, 2026, and its day-one retail sales reached $3.79 billion, which Wikipedia calls the biggest entertainment launch in history. Every step after that is a made-up plan for fun, not company news.\n\nSources:\n- Wikipedia: Grand Theft Auto VI: https://en.wikipedia.org/wiki/Grand_Theft_Auto_VI\n\nNot financial advice.\n\n#shorts #gta6 #rockstar #howtheymakemoney",
+  "tags": [
+    "gta 6",
+    "rockstar games",
+    "take-two",
+    "story",
+    "shorts"
+  ],
+  "images": {},
+  "loop": "So next time you wait in line for a game, remember:",
+  "cta": "GTA or Minecraft? Comment your pick.",
+  "cta_question": "GTA or Minecraft?",
+  "hero": {
+    "skin": "d9a577",
+    "hair": "short",
+    "hair_color": "2a1d14",
+    "beard": "none",
+    "outfit": "tee",
+    "shirt": "111111",
+    "pants": "2b2f3a",
+    "shoes": "f4f4f4",
+    "chest": "ROCKSTAR",
+    "trim": "fcaf17",
+    "height": 1.0
+  },
+  "scenes": [
+    {
+      "narration": "You're Rockstar, and GTA 6 sells 3.79 billion dollars on day one. That's the biggest entertainment launch ever, on November 19, 2026.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "stage",
+        "action": "idle",
+        "crowd": 60,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "mansion",
+          "mood": "shock",
+          "beat": "money",
+          "brand": {
+            "name": "ROCKSTAR",
+            "bg": "#111111",
+            "fg": "#fcaf17"
+          },
+          "things": [
+            "cashstack"
+          ],
+          "card": {
+            "text": "$3.79 BILLION",
+            "kind": "screen",
+            "sub": "DAY ONE"
+          },
+          "view": "face"
+        },
+        {
+          "place": "throne",
+          "mood": "proud",
+          "things": [
+            "trophy",
+            "crown"
+          ],
+          "card": {
+            "text": "2026",
+            "kind": "flip",
+            "sub": "YEAR"
+          },
+          "view": "wide"
+        }
+      ]
+    },
+    {
+      "narration": "Now you want everyone on Earth in your line. Step one, you build a store with a line around Earth.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "store",
+        "action": "idle",
+        "crowd": 100,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "store",
+          "mood": "scheme",
+          "things": [
+            "globe"
+          ],
+          "crowd": 100,
+          "view": "ms"
+        },
+        {
+          "place": "street",
+          "mood": "excited",
+          "things": [
+            "globe"
+          ],
+          "crowd": 300,
+          "view": "wide"
+        }
+      ]
+    },
+    {
+      "narration": "Still not enough? So you drop a copy on every doorstep on Earth.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "showroom",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "showroom",
+          "mood": "dazed",
+          "things": [
+            "lightbulb"
+          ],
+          "view": "face"
+        },
+        {
+          "place": "street",
+          "mood": "proud",
+          "things": [
+            "box",
+            "controller"
+          ],
+          "view": "ms"
+        }
+      ]
+    },
+    {
+      "narration": "The line is empty, and everyone owns the game. But a game nobody waits for feels odd.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "street",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "street",
+          "mood": "shock",
+          "crowd": 0,
+          "things": [
+            "controller"
+          ],
+          "view": "wide"
+        },
+        {
+          "place": "street",
+          "mood": "sad",
+          "things": [
+            "tv"
+          ],
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "So you post one tiny trailer, and the planet lines up again.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "stage",
+        "action": "idle",
+        "crowd": 300,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "stage",
+          "mood": "laugh",
+          "things": [
+            "tv",
+            "globe"
+          ],
+          "crowd": 300,
+          "view": "wide"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Grand Theft Auto VI",
+      "url": "https://en.wikipedia.org/wiki/Grand_Theft_Auto_VI"
+    }
+  ],
+  "length_test": "short",
+  "look": "afterhour",
+  "draft_note": "Held by part 1 (Nov 21): checks pass, but GTA VI is an M-rated crime game and viewers are 13-18. Sam decides: set status ready to post it."
+}

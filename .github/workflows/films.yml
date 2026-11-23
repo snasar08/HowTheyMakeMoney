@@ -11,6 +11,10 @@ name: Films
 on:
   schedule:
     - cron: "0 13 * * *"
+    # backups (Nov 20: GitHub started scheduled runs 6-9 h late and the 13:00 run never came). Safe: once a film is
+    # delivered it is not due again for 3 days, and the post time stays 17:00 ET (a late run gets now + 15 min).
+    - cron: "17 16 * * *"
+    - cron: "37 19 * * *"
   workflow_dispatch:
     inputs:
       dry:
@@ -26,7 +30,7 @@ on:
         type: boolean
         default: false
   push:
-    branches: ["films-dry"]
+    branches: ["films-dry", "films-run"]   # films-run = a real run (same as the daily check), to start it by hand
 
 permissions:
   contents: write
@@ -151,7 +155,9 @@ jobs:
         run: |
           mkdir -p out
           python -m pipeline.film2d make "$FILE" frames/film "out/$FILM_ID.mp4"
-          python -m pipeline.films thumb "out/$FILM_ID.mp4" "out/$FILM_ID-thumb.jpg"
+          # designed thumbnail (rendered from the film's "thumbs" and checked before "ready") wins; else a frame of the film
+          if [ -f "content/films2d/$FILM_ID-thumb.jpg" ]; then cp "content/films2d/$FILM_ID-thumb.jpg" "out/$FILM_ID-thumb.jpg"
+          else python -m pipeline.films thumb "out/$FILM_ID.mp4" "out/$FILM_ID-thumb.jpg"; fi
           python -m pipeline.films notes "$FILE" out/notes.md
           ls -la out
       - name: Scene sheet (warn only)
@@ -194,7 +200,7 @@ jobs:
       - name: Mark delivered and commit to main
         if: env.FILM_DRY != 'true'
         run: |
-          if [ "$GITHUB_REF" != "refs/heads/main" ]; then
+          if [ "$GITHUB_REF" != "refs/heads/main" ] && [ "$GITHUB_REF" != "refs/heads/films-run" ]; then
             echo "::warning title=films::not on main ($GITHUB_REF): film released but NOT marked delivered"
             exit 0
           fi
@@ -203,4 +209,4 @@ jobs:
           git config user.email "shorts-bot@users.noreply.github.com"
           git add "$FILE"
           git diff --cached --quiet || git commit -m "Delivered film $FILM_ID"
-          git pull --rebase --quiet && git push
+          git pull --rebase --quiet origin main && git push origin HEAD:main

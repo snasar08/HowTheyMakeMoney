@@ -1,0 +1,206 @@
+{
+  "id": "136",
+  "slug": "famous-verstappen",
+  "company": "Max Verstappen",
+  "format": "famous",
+  "visual_style": "lowpoly",
+  "hook_style": "surprise",
+  "title_style": "statement",
+  "theme": "bold_bright",
+  "status": "ready",
+  "score": 88,
+  "title": "The F1 Champion With No Road License",
+  "name_card": "Max Verstappen",
+  "name_sub": "four-time F1 champion",
+  "description": "Max Verstappen raced in Formula One before he had a road license.\n\nSources:\n- Wikipedia: Max Verstappen: https://en.wikipedia.org/wiki/Max_Verstappen\n- Wikipedia: 2016 Spanish Grand Prix: https://en.wikipedia.org/wiki/2016_Spanish_Grand_Prix\n- PlanetF1: https://www.planetf1.com/news/max-verstappen-beats-lewis-hamilton-to-be-named-best-paid-driver-on-f1-grid\n- Crash.net: https://www.crash.net/f1/news/1088154/1/highest-paid-f1-drivers-2025-revealed-who-sits-top\n\nFrom the cited pages: he competed in Formula One for over a season before getting a road driving licence on his 18th birthday; at the 2015 Australian Grand Prix he became the youngest driver in Formula One history, aged 17 years and 166 days; at the 2016 Spanish Grand Prix, in his first race for Red Bull Racing, he became the youngest ever winner at 18 years and 228 days; in 2021 he overtook Lewis Hamilton on the final lap of the last race to win his first title; he passed Lewis Hamilton on the final lap of the 2021 finale and won four consecutive titles, 2021 to 2024; Forbes estimated his 2025 earnings at $76 million ($65 million salary plus $11 million bonuses), per PlanetF1 and Crash.net. Not financial advice.\n\n#shorts #verstappen #f1 #howtheymakemoney",
+  "tags": [
+    "max verstappen",
+    "f1",
+    "formula one",
+    "famous",
+    "shorts"
+  ],
+  "images": {},
+  "loop": "So remember:",
+  "cta": "Max or Lewis? Comment your pick.",
+  "cta_question": "Max or Lewis?",
+  "hero": {
+    "skin": "e8c3a0",
+    "hair": "short",
+    "hair_color": "3a2a1e",
+    "beard": "stubble",
+    "outfit": "kit",
+    "shirt": "1b2a63",
+    "pants": "1b2a63",
+    "shoes": "111111",
+    "chest": "",
+    "trim": "d32f2f",
+    "number": "1",
+    "height": 1.0
+  },
+  "scenes": [
+    {
+      "narration": "Max Verstappen raced in Formula One at 17, without a road license.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "track",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "track",
+          "mood": "shock",
+          "things": [
+            "car"
+          ],
+          "card": {
+            "text": "NO ROAD LICENSE",
+            "kind": "white",
+            "fg": "#c0353a"
+          },
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "At 18, you finally get your road license. Then, you win the Spanish Grand Prix.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "street",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "street",
+          "mood": "relief",
+          "things": [
+            "key",
+            "car"
+          ],
+          "view": "face"
+        },
+        {
+          "place": "track",
+          "mood": "excited",
+          "things": [
+            "car"
+          ],
+          "crowd": 40,
+          "view": "wide"
+        }
+      ]
+    },
+    {
+      "narration": "You are the youngest winner ever. Then you pass Lewis Hamilton on the last lap of the season.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "stage",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "stage",
+          "mood": "proud",
+          "things": [
+            "trophy"
+          ],
+          "crowd": 60,
+          "card": {
+            "text": "18 YEARS OLD",
+            "kind": "screen",
+            "sub": "YOUNGEST WINNER EVER"
+          },
+          "view": "face"
+        },
+        {
+          "place": "track",
+          "mood": "excited",
+          "things": [
+            "sportscar"
+          ],
+          "view": "low"
+        }
+      ]
+    },
+    {
+      "narration": "Then you win four titles in a row.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "throne",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "throne",
+          "mood": "proud",
+          "things": [
+            "trophy",
+            "ring"
+          ],
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "Forbes says you earned about 76 million dollars in 2025. Not bad for a driver with no road license.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "mansion",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "mansion",
+          "mood": "proud",
+          "beat": "money",
+          "things": [
+            "cashstack"
+          ],
+          "card": {
+            "text": "$76 MILLION",
+            "kind": "screen",
+            "sub": "FORBES ESTIMATE, 2025"
+          },
+          "view": "ms"
+        },
+        {
+          "place": "garage",
+          "mood": "laugh",
+          "things": [
+            "car"
+          ],
+          "view": "face"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "PlanetF1: Verstappen best-paid driver (Forbes figures)",
+      "url": "https://www.planetf1.com/news/max-verstappen-beats-lewis-hamilton-to-be-named-best-paid-driver-on-f1-grid"
+    },
+    {
+      "title": "Crash.net: Highest-paid F1 drivers 2025",
+      "url": "https://www.crash.net/f1/news/1088154/1/highest-paid-f1-drivers-2025-revealed-who-sits-top"
+    },
+    {
+      "title": "Wikipedia: Max Verstappen",
+      "url": "https://en.wikipedia.org/wiki/Max_Verstappen"
+    },
+    {
+      "title": "Wikipedia: 2016 Spanish Grand Prix",
+      "url": "https://en.wikipedia.org/wiki/2016_Spanish_Grand_Prix"
+    }
+  ],
+  "look": "afterhour"
+}

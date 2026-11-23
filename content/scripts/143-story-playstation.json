@@ -1,0 +1,331 @@
+{
+  "id": "143",
+  "slug": "story-playstation",
+  "company": "Sony PlayStation",
+  "format": "story",
+  "story_mode": "history",
+  "visual_style": "lowpoly",
+  "hook_style": "number",
+  "title_style": "number",
+  "theme": "dark_neon",
+  "status": "ready",
+  "score": 90,
+  "title": "The 102 Million Console Nintendo Walked Away From",
+  "name_card": "Ken Kutaragi",
+  "name_sub": "you, the PlayStation builder",
+  "description": "You are Ken Kutaragi. Your PlayStation sold over 102 million units. And it began as a side room for Nintendo.\n\nSources:\n- Wikipedia: PlayStation (console): https://en.wikipedia.org/wiki/PlayStation_(console)\n- Wikipedia: Super NES CD-ROM: https://en.wikipedia.org/wiki/Super_NES_CD-ROM\n- Wikipedia: Ken Kutaragi: https://en.wikipedia.org/wiki/Ken_Kutaragi\n\nFrom the cited pages: Sony and Nintendo began a CD-ROM add-on project for the Super NES in 1988; Kutaragi secretly designed the Super NES sound chip after watching his daughter play a Famicom and was nearly fired; at the 1991 Consumer Electronics Show Sony announced the Play Station with Nintendo, and the next day Nintendo revealed a partnership with Philips; in June 1992 Sony chairman Norio Ohga kept Kutaragi's project alive despite opposition from older executives; the PlayStation launched in Japan on 3 December 1994 and sold 100,000 units on the first day; it launched in North America on 9 September 1995 at $299; by early 1996 it had grossed $2 billion from hardware and software; it was the first computer entertainment platform to ship over 100 million units, with 102.49 million sold in total. This is a retelling of public history, not company news. Not financial advice.\n\n#shorts #playstation #sony #nintendo #howtheymakemoney",
+  "tags": [
+    "playstation",
+    "sony",
+    "nintendo",
+    "story",
+    "shorts"
+  ],
+  "images": {},
+  "loop": "So next time you pick up a PlayStation controller, remember:",
+  "cta": "PlayStation or Nintendo? Comment your pick.",
+  "cta_question": "PlayStation or Nintendo?",
+  "hero": {
+    "skin": "e0b48a",
+    "hair": "short",
+    "hair_color": "1a1a1a",
+    "beard": "none",
+    "outfit": "suit",
+    "shirt": "f4f4f4",
+    "pants": "1f2330",
+    "shoes": "111111",
+    "tie": "1f4fa0",
+    "extras": [
+      "glasses"
+    ],
+    "height": 1.0
+  },
+  "scenes": [
+    {
+      "narration": "You are Ken Kutaragi, and your PlayStation sold over 102 million units. But in 1988, you only build a side room for Nintendo's Super Nintendo.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "office",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "throne",
+          "mood": "proud",
+          "brand": {
+            "name": "SONY",
+            "bg": "#111111",
+            "fg": "#ffffff"
+          },
+          "card": {
+            "text": "102 MILLION",
+            "kind": "screen",
+            "sub": "PLAYSTATIONS SOLD"
+          },
+          "view": "ms"
+        },
+        {
+          "place": "garage",
+          "mood": "nervous",
+          "card": {
+            "text": "1988",
+            "kind": "flip",
+            "sub": "YEAR"
+          },
+          "things": [
+            "house",
+            "tv"
+          ],
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "Your daughter plays a Famicom, so you secretly design Nintendo's sound chip. Sony almost fires you.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "lab",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "classroom",
+          "mood": "scheme",
+          "things": [
+            "controller",
+            "chip"
+          ],
+          "brand": {
+            "name": "NINTENDO",
+            "bg": "#e60012",
+            "fg": "#ffffff"
+          },
+          "view": "ms"
+        },
+        {
+          "place": "boardroom",
+          "mood": "nervous",
+          "brand": {
+            "name": "SONY",
+            "bg": "#111111",
+            "fg": "#ffffff"
+          },
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "In 1991, you and Nintendo unveil the Play Station. But the next morning, Nintendo walks away and picks Philips.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "stage",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "stage",
+          "mood": "proud",
+          "crowd": 60,
+          "card": {
+            "text": "1991",
+            "kind": "flip",
+            "sub": "YEAR"
+          },
+          "things": [
+            "tv"
+          ],
+          "view": "wide"
+        },
+        {
+          "place": "boardroom",
+          "mood": "shock",
+          "brand": {
+            "name": "PHILIPS",
+            "bg": "#0b5ed7",
+            "fg": "#ffffff"
+          },
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "In 1992, older Sony executives call game consoles toys. But Norio Ohga keeps your project alive.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "boardroom",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "boardroom",
+          "mood": "stern",
+          "things": [
+            "controller"
+          ],
+          "card": {
+            "text": "1992",
+            "kind": "flip",
+            "sub": "YEAR"
+          },
+          "view": "ms"
+        },
+        {
+          "place": "office",
+          "mood": "relief",
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "On December 3, 1994, your console goes on sale in Japan. It sells 100,000 units on day one.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "street",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "street",
+          "mood": "excited",
+          "crowd": 100,
+          "things": [
+            "tv"
+          ],
+          "card": {
+            "text": "1994",
+            "kind": "flip",
+            "sub": "YEAR"
+          },
+          "view": "wide"
+        },
+        {
+          "place": "store",
+          "mood": "laugh",
+          "crowd": 100,
+          "things": [
+            "box"
+          ],
+          "card": {
+            "text": "100,000",
+            "kind": "screen",
+            "sub": "SOLD ON DAY ONE"
+          },
+          "view": "ms"
+        }
+      ]
+    },
+    {
+      "narration": "In 1995, it arrives in America for 299 dollars. By early 1996, it has earned 2 billion dollars.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "mansion",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "store",
+          "mood": "proud",
+          "things": [
+            "controller"
+          ],
+          "card": {
+            "text": "$299",
+            "kind": "screen",
+            "sub": "AMERICA, 1995"
+          },
+          "view": "low"
+        },
+        {
+          "place": "mansion",
+          "mood": "proud",
+          "beat": "money",
+          "things": [
+            "cashstack"
+          ],
+          "card": {
+            "text": "$2 BILLION",
+            "kind": "screen",
+            "sub": "BY EARLY 1996"
+          },
+          "view": "ms"
+        }
+      ]
+    },
+    {
+      "narration": "In under ten years, you pass 100 million consoles shipped. Nintendo only wanted a side room from you. You built the whole house.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "throne",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "throne",
+          "mood": "laugh",
+          "things": [
+            "globe",
+            "trophy"
+          ],
+          "card": {
+            "text": "100 MILLION",
+            "kind": "screen",
+            "sub": "CONSOLES SOLD"
+          },
+          "view": "wide"
+        },
+        {
+          "place": "office",
+          "mood": "calm",
+          "brand": {
+            "name": "NINTENDO",
+            "bg": "#e60012",
+            "fg": "#ffffff"
+          },
+          "things": [
+            "house"
+          ],
+          "view": "ms"
+        },
+        {
+          "place": "mansion",
+          "mood": "proud",
+          "things": [
+            "house",
+            "crown"
+          ],
+          "view": "face"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: PlayStation (console)",
+      "url": "https://en.wikipedia.org/wiki/PlayStation_(console)"
+    },
+    {
+      "title": "Wikipedia: Super NES CD-ROM",
+      "url": "https://en.wikipedia.org/wiki/Super_NES_CD-ROM"
+    },
+    {
+      "title": "Wikipedia: Ken Kutaragi",
+      "url": "https://en.wikipedia.org/wiki/Ken_Kutaragi"
+    }
+  ],
+  "length_test": "long",
+  "look": "afterhour"
+}

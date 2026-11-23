@@ -1,0 +1,256 @@
+{
+  "id": "168",
+  "slug": "famous-simone-biles",
+  "company": "Simone Biles",
+  "format": "famous",
+  "visual_style": "lowpoly",
+  "hook_style": "number",
+  "title_style": "number",
+  "theme": "bold_bright",
+  "status": "ready",
+  "score": 90,
+  "title": "$11 Million With Zero Prize Money",
+  "name_card": "Simone Biles",
+  "name_sub": "gymnast",
+  "description": "Simone Biles earned about 11 million dollars in 2025 with no prize money, all from brand deals.\n\nSources:\n- Essence (Sportico list of highest-paid women athletes, 2025): https://www.essence.com/entertainment/sports/highest-paid-black-women-athletes-2025\n- Wikipedia: Simone Biles: https://en.wikipedia.org/wiki/Simone_Biles\n\nFrom Essence: Sportico's 2025 list of the highest-paid women athletes has gymnast Simone Biles as the only non-tennis player in the top 15; she had no prize money in 2025, and endorsements brought her 2025 earnings to $11 million. From Wikipedia: she first tried gymnastics at age 6 on a day-care field trip; she has 11 Olympic medals and 30 World Championship medals, the most decorated gymnast in history. Not financial advice.\n\n#shorts #simonebiles #gymnastics #howtheymakemoney",
+  "tags": [
+    "simone biles",
+    "gymnastics",
+    "olympics",
+    "famous",
+    "shorts"
+  ],
+  "images": {},
+  "hud_label": "HER 2025",
+  "loop": "So next time you try something new, remember:",
+  "cta": "Biles or Gauff? Comment your pick.",
+  "cta_question": "Biles or Gauff?",
+  "hero": {
+    "skin": "8a5a3c",
+    "hair": "ponytail",
+    "hair_color": "1a120d",
+    "beard": "none",
+    "outfit": "kit",
+    "shirt": "1d3f8f",
+    "pants": "1d3f8f",
+    "trim": "ffffff",
+    "socks": "f4f4f4",
+    "shoes": "f4f4f4",
+    "height": 0.85
+  },
+  "scenes": [
+    {
+      "narration": "Simone Biles earned 11 million dollars in 2025 with no prize money.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "gym",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": "$11 MILLION",
+        "stat_sub": "in 2025, no prize money",
+        "hero": {
+          "skin": "8a5a3c",
+          "hair": "ponytail",
+          "hair_color": "1a120d",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "1d3f8f",
+          "pants": "1d3f8f",
+          "trim": "ffffff",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "height": 0.85
+        },
+        "hud": "$11M"
+      },
+      "toon": [
+        {
+          "place": "gym",
+          "mood": "shock",
+          "beat": "money",
+          "card": {
+            "text": "$11M",
+            "kind": "screen",
+            "sub": "2025 EARNINGS"
+          },
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "But it came from deals with brands, not from medals.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "stall",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": "BRAND DEALS",
+        "stat_sub": "not medals",
+        "hero": {
+          "skin": "8a5a3c",
+          "hair": "ponytail",
+          "hair_color": "1a120d",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "1d3f8f",
+          "pants": "1d3f8f",
+          "trim": "ffffff",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "height": 0.85
+        }
+      },
+      "toon": [
+        {
+          "place": "stall",
+          "mood": "scheme",
+          "things": [
+            "shoe",
+            "medal"
+          ],
+          "card": {
+            "text": "BRAND DEALS",
+            "kind": "sign",
+            "sub": "NOT MEDALS"
+          },
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "She first tried gymnastics at age six, on a day-care trip.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "gym",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": "AGE SIX",
+        "stat_sub": "a day-care trip",
+        "hero": {
+          "skin": "8a5a3c",
+          "hair": "ponytail",
+          "hair_color": "1a120d",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "1d3f8f",
+          "pants": "1d3f8f",
+          "trim": "ffffff",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "height": 0.85
+        }
+      },
+      "toon": [
+        {
+          "place": "classroom",
+          "mood": "happy",
+          "crowd": 10,
+          "things": [
+            "bus"
+          ],
+          "card": {
+            "text": "AGE 6",
+            "kind": "sign",
+            "sub": "DAY-CARE TRIP"
+          },
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "Then she won 11 Olympic medals.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "gym",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": "11 MEDALS",
+        "stat_sub": "Olympic",
+        "hero": {
+          "skin": "8a5a3c",
+          "hair": "ponytail",
+          "hair_color": "1a120d",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "1d3f8f",
+          "pants": "1d3f8f",
+          "trim": "ffffff",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "height": 0.85
+        }
+      },
+      "toon": [
+        {
+          "place": "gym",
+          "mood": "proud",
+          "things": [
+            "medal"
+          ],
+          "card": {
+            "text": "11",
+            "kind": "screen",
+            "sub": "OLYMPIC MEDALS"
+          },
+          "view": "ms"
+        }
+      ]
+    },
+    {
+      "narration": "She also won 30 world medals, the most decorated gymnast ever.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "stage",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": "30 WORLD MEDALS",
+        "stat_sub": "the most ever",
+        "hero": {
+          "skin": "8a5a3c",
+          "hair": "ponytail",
+          "hair_color": "1a120d",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "1d3f8f",
+          "pants": "1d3f8f",
+          "trim": "ffffff",
+          "socks": "f4f4f4",
+          "shoes": "f4f4f4",
+          "height": 0.85
+        }
+      },
+      "toon": [
+        {
+          "place": "stage",
+          "mood": "laugh",
+          "crowd": 120,
+          "things": [
+            "trophy",
+            "medal"
+          ],
+          "card": {
+            "text": "30",
+            "kind": "screen",
+            "sub": "WORLD MEDALS"
+          },
+          "view": "face"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Simone Biles",
+      "url": "https://en.wikipedia.org/wiki/Simone_Biles"
+    },
+    {
+      "title": "Essence: highest paid Black women athletes 2025 (Sportico list)",
+      "url": "https://www.essence.com/entertainment/sports/highest-paid-black-women-athletes-2025"
+    }
+  ]
+}

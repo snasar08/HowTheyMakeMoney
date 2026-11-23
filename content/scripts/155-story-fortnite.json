@@ -1,0 +1,252 @@
+{
+  "id": "155",
+  "slug": "story-fortnite",
+  "company": "Epic Games",
+  "format": "story",
+  "story_mode": "history",
+  "visual_style": "lowpoly",
+  "hook_style": "number",
+  "title_style": "number",
+  "theme": "dark_neon",
+  "status": "ready",
+  "score": 90,
+  "title": "The Free Game That Made $2.4 Billion in 2018",
+  "name_card": "You are Epic Games",
+  "name_sub": "a true story",
+  "description": "You're Epic Games, and your fort-building game was locked behind a price until you made a free battle royale mode.\n\nSources:\n- Wikipedia: Fortnite Battle Royale: https://en.wikipedia.org/wiki/Fortnite_Battle_Royale\n- Wikipedia: Fortnite: https://en.wikipedia.org/wiki/Fortnite\n- Wikipedia: Epic Games: https://en.wikipedia.org/wiki/Epic_Games\n\nFrom the cited pages: Fortnite began from an Epic game jam around 2011; early access started July 25, 2017; Save the World passed one million players by August 2017; PUBG sold over 5 million copies three months after its March 2017 release; Battle Royale was built in about two months and released free on September 26, 2017; over 10 million players in two weeks; over 125 million players by June 2018; SuperData reported $2.4 billion earned in 2018; V-Bucks buy cosmetics such as skins and emotes. Not financial advice.\n\n#shorts #fortnite #epicgames #howtheymakemoney",
+  "tags": [
+    "fortnite",
+    "epic games",
+    "story",
+    "shorts"
+  ],
+  "images": {},
+  "loop": "So next time you load into a match, remember:",
+  "cta": "Fortnite or Roblox? Comment your pick.",
+  "cta_question": "Fortnite or Roblox?",
+  "hero": {
+    "skin": "d9a577",
+    "hair": "short",
+    "hair_color": "2a1d14",
+    "beard": "none",
+    "outfit": "hoodie",
+    "shirt": "1b1b2f",
+    "pants": "2b2f3a",
+    "shoes": "f4f4f4",
+    "chest": "EPIC",
+    "trim": "ffffff",
+    "height": 1.0
+  },
+  "scenes": [
+    {
+      "narration": "You're Epic Games, and Fortnite earned about 2.4 billion dollars in 2018. But it began in 2011, as a game about building forts. You plan to sell it, for a price.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "throne",
+          "mood": "proud",
+          "brand": {
+            "name": "Fortnite",
+            "bg": "#7d3cff",
+            "fg": "#ffffff",
+            "icon": "star"
+          },
+          "card": {
+            "text": "$2.4 BILLION",
+            "kind": "screen",
+            "sub": "FORTNITE, 2018"
+          },
+          "view": "ms"
+        },
+        {
+          "place": "garage",
+          "mood": "calm",
+          "action": "work",
+          "things": [
+            "hammer"
+          ],
+          "card": {
+            "text": "2011",
+            "kind": "flip",
+            "sub": "YEAR"
+          },
+          "view": "ms"
+        },
+        {
+          "place": "stall",
+          "mood": "scheme",
+          "things": [
+            "lock",
+            "coins"
+          ],
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "In July 2017, you open the doors, to paying players only.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "stall",
+          "mood": "happy",
+          "things": [
+            "controller"
+          ],
+          "card": {
+            "text": "JULY 2017",
+            "kind": "flip",
+            "sub": "EARLY ACCESS"
+          },
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "Then a hit game called PUBG sells over 5 million copies. So you build a battle royale mode in about two months.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "street",
+          "mood": "shock",
+          "things": [
+            "monitor"
+          ],
+          "card": {
+            "text": "5 MILLION",
+            "kind": "screen",
+            "sub": "PUBG COPIES"
+          },
+          "view": "face"
+        },
+        {
+          "place": "office",
+          "mood": "excited",
+          "action": "type",
+          "things": [
+            "laptop",
+            "clock"
+          ],
+          "card": {
+            "text": "2 MONTHS",
+            "kind": "white"
+          },
+          "view": "ms"
+        }
+      ]
+    },
+    {
+      "narration": "But then you make it free. On September 26, 2017, the gates swing open.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "office",
+          "mood": "scheme",
+          "things": [
+            "key"
+          ],
+          "card": {
+            "text": "FREE",
+            "kind": "sign"
+          },
+          "view": "face"
+        },
+        {
+          "place": "street",
+          "mood": "excited",
+          "crowd": 100,
+          "things": [
+            "controller"
+          ],
+          "card": {
+            "text": "SEPT 26, 2017",
+            "kind": "flip",
+            "sub": "LAUNCH"
+          },
+          "view": "wide"
+        }
+      ]
+    },
+    {
+      "narration": "You sell no game, only skins and emotes. By June 2018, 125 million players are inside your fort.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "city",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "showroom",
+          "mood": "proud",
+          "things": [
+            "hanger",
+            "coins"
+          ],
+          "brand": {
+            "name": "Fortnite",
+            "bg": "#7d3cff",
+            "fg": "#ffffff",
+            "icon": "star"
+          },
+          "view": "ms"
+        },
+        {
+          "place": "stage",
+          "mood": "laugh",
+          "crowd": 300,
+          "things": [
+            "chart"
+          ],
+          "card": {
+            "text": "125 MILLION",
+            "kind": "screen",
+            "sub": "PLAYERS, JUNE 2018"
+          },
+          "view": "wide"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Fortnite Battle Royale",
+      "url": "https://en.wikipedia.org/wiki/Fortnite_Battle_Royale"
+    },
+    {
+      "title": "Wikipedia: Fortnite",
+      "url": "https://en.wikipedia.org/wiki/Fortnite"
+    },
+    {
+      "title": "Wikipedia: Epic Games",
+      "url": "https://en.wikipedia.org/wiki/Epic_Games"
+    }
+  ],
+  "length_test": "short",
+  "look": "afterhour"
+}

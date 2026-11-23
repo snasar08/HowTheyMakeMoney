@@ -1,0 +1,318 @@
+{
+  "id": "139",
+  "slug": "famous-ryan-reynolds",
+  "company": "Ryan Reynolds",
+  "format": "famous",
+  "visual_style": "lowpoly",
+  "hook_style": "number",
+  "title_style": "number",
+  "theme": "bold_bright",
+  "status": "delivered",
+  "score": 92,
+  "title": "Ryan Reynolds Got $300 Million for a Phone Company",
+  "name_card": "Ryan Reynolds",
+  "name_sub": "actor and owner",
+  "description": "Ryan Reynolds bought a stake in Mint Mobile in 2019. T-Mobile announced it would buy Mint in March 2023 in a deal worth up to $1.35 billion, and per Wikipedia Reynolds received $300 million for his interest. In 2020 he and Rob McElhenney bought Wrexham AFC; the club won three promotions in three seasons, was reportedly worth £100 million in October 2024, and the owners' loans of £15 million were repaid.\n\nSources:\n- Wikipedia: Mint Mobile: https://en.wikipedia.org/wiki/Mint_Mobile\n- Wikipedia: Ryan Reynolds: https://en.wikipedia.org/wiki/Ryan_Reynolds\n- Wikipedia: Wrexham A.F.C.: https://en.wikipedia.org/wiki/Wrexham_A.F.C.\n\nNot financial advice.\n\n#shorts #ryanreynolds #wrexham #howtheymakemoney",
+  "tags": [
+    "ryan reynolds",
+    "mint mobile",
+    "wrexham",
+    "famous",
+    "shorts"
+  ],
+  "images": {},
+  "hud_label": "HIS PAYDAY",
+  "loop": "Next time you see a funny ad, remember:",
+  "cta": "Mint or Wrexham? Comment your pick.",
+  "cta_question": "Mint or Wrexham?",
+  "hero": {
+    "skin": "e0b48f",
+    "hair": "short",
+    "hair_color": "4a3022",
+    "beard": "stubble",
+    "outfit": "suit",
+    "shirt": "1b2a41",
+    "pants": "1b2a41",
+    "shoes": "222222",
+    "tie": "c8102e",
+    "height": 1.0
+  },
+  "scenes": [
+    {
+      "narration": "Ryan Reynolds got about 300 million dollars for a phone company. He owned 25 percent of Mint.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "office",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "hero": {
+          "skin": "e0b48f",
+          "hair": "short",
+          "hair_color": "4a3022",
+          "beard": "stubble",
+          "outfit": "suit",
+          "shirt": "1b2a41",
+          "pants": "1b2a41",
+          "shoes": "222222",
+          "tie": "c8102e",
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "mansion",
+          "mood": "shock",
+          "beat": "money",
+          "things": [
+            "cashstack"
+          ],
+          "card": {
+            "text": "$300 MILLION",
+            "kind": "screen",
+            "sub": "FOR HIS SHARE"
+          },
+          "view": "face"
+        },
+        {
+          "place": "office",
+          "mood": "scheme",
+          "brand": {
+            "name": "MINT MOBILE",
+            "bg": "#00a86b",
+            "fg": "#ffffff",
+            "icon": "phone"
+          },
+          "things": [
+            "phone"
+          ],
+          "card": {
+            "text": "25%",
+            "kind": "sign",
+            "sub": "OF MINT MOBILE"
+          },
+          "view": "ms"
+        }
+      ]
+    },
+    {
+      "narration": "T-Mobile paid up to 1.35 billion dollars for it. But he had already bought something stranger.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "boardroom",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "hero": {
+          "skin": "e0b48f",
+          "hair": "short",
+          "hair_color": "4a3022",
+          "beard": "stubble",
+          "outfit": "suit",
+          "shirt": "1b2a41",
+          "pants": "1b2a41",
+          "shoes": "222222",
+          "tie": "c8102e",
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "boardroom",
+          "mood": "excited",
+          "brand": {
+            "name": "T-MOBILE",
+            "bg": "#e20074",
+            "fg": "#ffffff"
+          },
+          "card": {
+            "text": "$1.35 BILLION",
+            "kind": "screen",
+            "sub": "T-MOBILE DEAL"
+          },
+          "things": [
+            "cashstack"
+          ],
+          "view": "wide"
+        },
+        {
+          "place": "office",
+          "mood": "scheme",
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "In 2020, he and Rob McElhenney bought Wrexham. It's a soccer club in Wales.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "pitch",
+        "action": "idle",
+        "crowd": 30,
+        "props": [
+          "ball"
+        ],
+        "hero": {
+          "skin": "e0b48f",
+          "hair": "short",
+          "hair_color": "4a3022",
+          "beard": "stubble",
+          "outfit": "suit",
+          "shirt": "1b2a41",
+          "pants": "1b2a41",
+          "shoes": "222222",
+          "tie": "c8102e",
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "pitch",
+          "mood": "excited",
+          "card": {
+            "text": "2020",
+            "kind": "flip",
+            "sub": "YEAR"
+          },
+          "who": {
+            "jacket": "#c8102e",
+            "pants": "#c8102e",
+            "boots": "#111111",
+            "hat": "hair",
+            "style": "short",
+            "hair": "#2a1d14",
+            "skin": "#e0b48f",
+            "kit": "soccer",
+            "num": "10",
+            "trim": "#ffffff"
+          },
+          "view": "ms"
+        },
+        {
+          "place": "pitch",
+          "mood": "laugh",
+          "things": [
+            "soccerball"
+          ],
+          "crowd": 30,
+          "view": "ws"
+        }
+      ]
+    },
+    {
+      "narration": "Then Wrexham won three promotions in three seasons.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "pitch",
+        "action": "idle",
+        "crowd": 200,
+        "props": [],
+        "hero": {
+          "skin": "e0b48f",
+          "hair": "short",
+          "hair_color": "4a3022",
+          "beard": "stubble",
+          "outfit": "suit",
+          "shirt": "1b2a41",
+          "pants": "1b2a41",
+          "shoes": "222222",
+          "tie": "c8102e",
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "pitch",
+          "mood": "excited",
+          "action": "cheer",
+          "things": [
+            "trophy"
+          ],
+          "crowd": 200,
+          "card": {
+            "text": "3 PROMOTIONS",
+            "kind": "sign",
+            "sub": "IN 3 SEASONS"
+          },
+          "view": "wide"
+        }
+      ]
+    },
+    {
+      "narration": "Not bad for a guy making funny ads.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "stage",
+        "action": "idle",
+        "crowd": 40,
+        "props": [],
+        "hero": {
+          "skin": "e0b48f",
+          "hair": "short",
+          "hair_color": "4a3022",
+          "beard": "stubble",
+          "outfit": "suit",
+          "shirt": "1b2a41",
+          "pants": "1b2a41",
+          "shoes": "222222",
+          "tie": "c8102e",
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "stage",
+          "mood": "laugh",
+          "things": [
+            "camera"
+          ],
+          "view": "face"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Mint Mobile",
+      "url": "https://en.wikipedia.org/wiki/Mint_Mobile"
+    },
+    {
+      "title": "Wikipedia: Ryan Reynolds",
+      "url": "https://en.wikipedia.org/wiki/Ryan_Reynolds"
+    },
+    {
+      "title": "Wikipedia: Wrexham A.F.C.",
+      "url": "https://en.wikipedia.org/wiki/Wrexham_A.F.C."
+    }
+  ],
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-139-famous-ryan-reynolds",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-139-famous-ryan-reynolds/139-famous-ryan-reynolds.mp4",
+    "post_at": "2026-11-23T19:15:00-05:00",
+    "buffer_post": "6b0319eec72676f5e9433a11",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-22T16:35:58.775610+00:00",
+    "seconds": 25.77,
+    "eyes": {
+      "score": 9,
+      "problems": [
+        "The character's face appears to glitch/distort slightly in frames 288-289 during the transition.",
+        "The text 'Mint' in frames 166-192 is slightly small and could be clearer for mobile viewers."
+      ],
+      "best_fix": "Smooth the transition animation in frames 288-289 to prevent the character's facial features from appearing to shift or glitch.",
+      "model": "gemini-3.1-flash-lite",
+      "acts": [
+        {
+          "kind": "count_cash",
+          "frames": "193-289",
+          "clear": true,
+          "why": "The character is clearly holding and counting stacks of cash bills."
+        }
+      ]
+    },
+    "scene_scan": [
+      "shot 11 @645: jump inside shot (25) - something teleports?"
+    ]
+  }
+}

@@ -1,0 +1,249 @@
+{
+  "id": "157",
+  "slug": "famous-novak-djokovic",
+  "company": "Novak Djokovic",
+  "format": "famous",
+  "visual_style": "lowpoly",
+  "hook_style": "number",
+  "title_style": "number",
+  "theme": "clean_navy",
+  "status": "ready",
+  "score": 90,
+  "title": "From a Swimming Pool to $197 Million",
+  "name_card": "Novak Djokovic",
+  "name_sub": "24 Grand Slam titles",
+  "description": "Novak Djokovic has won about 197 million dollars in career prize money, an all-time record, after training in a disused swimming pool as a boy in Serbia.\n\nSources:\n- Wikipedia: Novak Djokovic: https://en.wikipedia.org/wiki/Novak_Djokovic\n- Wikipedia: Novak Djokovic career statistics: https://en.wikipedia.org/wiki/Novak_Djokovic_career_statistics\n- Wikipedia: List of career achievements by Novak Djokovic: https://en.wikipedia.org/wiki/List_of_career_achievements_by_Novak_Djokovic\n\nFrom the cited pages: during the NATO bombings of Serbia in the late 1990s he had to train inside a disused swimming pool converted into a tennis court; his first Major title came in 2008; he holds an all-time record 24 Grand Slam singles titles; his ATP Tour career earnings are $197,006,276 (statistics correct as of 9 November 2026). Not financial advice.\n\n#shorts #djokovic #tennis #howtheymakemoney",
+  "tags": [
+    "novak djokovic",
+    "tennis",
+    "grand slam",
+    "famous",
+    "shorts"
+  ],
+  "images": {},
+  "loop": "So remember:",
+  "cta": "Djokovic or Nadal? Comment your pick.",
+  "cta_question": "Djokovic or Nadal?",
+  "hero": {
+    "skin": "e0b08a",
+    "hair": "short",
+    "hair_color": "1a1210",
+    "beard": "stubble",
+    "outfit": "kit",
+    "shirt": "f4f4f4",
+    "pants": "1f3b73",
+    "shoes": "f4f4f4",
+    "chest": "",
+    "trim": "1f3b73",
+    "height": 1.0
+  },
+  "scenes": [
+    {
+      "narration": "Novak Djokovic has won 197 million dollars. But he started in a swimming pool.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "tennis",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "hero": {
+          "skin": "e0b08a",
+          "hair": "short",
+          "hair_color": "1a1210",
+          "beard": "stubble",
+          "outfit": "kit",
+          "shirt": "f4f4f4",
+          "pants": "1f3b73",
+          "shoes": "f4f4f4",
+          "chest": "",
+          "trim": "1f3b73",
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "throne",
+          "mood": "proud",
+          "beat": "money",
+          "card": {
+            "text": "$197 MILLION",
+            "kind": "screen",
+            "sub": "PRIZE MONEY, 2026"
+          },
+          "view": "ms"
+        },
+        {
+          "place": "tennis",
+          "mood": "nervous",
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "In 1999, war came to Serbia. He kept hitting tennis balls in an empty swimming pool.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "tennis",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "hero": {
+          "skin": "e0b08a",
+          "hair": "short",
+          "hair_color": "1a1210",
+          "beard": "stubble",
+          "outfit": "kit",
+          "shirt": "f4f4f4",
+          "pants": "1f3b73",
+          "shoes": "f4f4f4",
+          "chest": "",
+          "trim": "1f3b73",
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "street",
+          "mood": "sad",
+          "card": {
+            "text": "1999",
+            "kind": "flip",
+            "sub": "YEAR"
+          },
+          "view": "wide"
+        },
+        {
+          "place": "tennis",
+          "mood": "stern",
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "Then, in 2008, he wins his first Major title.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "tennis",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "hero": {
+          "skin": "e0b08a",
+          "hair": "short",
+          "hair_color": "1a1210",
+          "beard": "stubble",
+          "outfit": "kit",
+          "shirt": "f4f4f4",
+          "pants": "1f3b73",
+          "shoes": "f4f4f4",
+          "chest": "",
+          "trim": "1f3b73",
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "tennis",
+          "mood": "excited",
+          "things": [
+            "trophy"
+          ],
+          "card": {
+            "text": "2008",
+            "kind": "flip",
+            "sub": "YEAR"
+          },
+          "view": "ms"
+        }
+      ]
+    },
+    {
+      "narration": "Today he holds a record 24.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "tennis",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "hero": {
+          "skin": "e0b08a",
+          "hair": "short",
+          "hair_color": "1a1210",
+          "beard": "stubble",
+          "outfit": "kit",
+          "shirt": "f4f4f4",
+          "pants": "1f3b73",
+          "shoes": "f4f4f4",
+          "chest": "",
+          "trim": "1f3b73",
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "throne",
+          "mood": "proud",
+          "things": [
+            "trophy",
+            "crown"
+          ],
+          "card": {
+            "text": "24 GRAND SLAMS",
+            "kind": "sign",
+            "sub": "ALL-TIME RECORD"
+          },
+          "view": "low"
+        }
+      ]
+    },
+    {
+      "narration": "Still, not bad for a kid who trained in a swimming pool.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "tennis",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "hero": {
+          "skin": "e0b08a",
+          "hair": "short",
+          "hair_color": "1a1210",
+          "beard": "stubble",
+          "outfit": "kit",
+          "shirt": "f4f4f4",
+          "pants": "1f3b73",
+          "shoes": "f4f4f4",
+          "chest": "",
+          "trim": "1f3b73",
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "mansion",
+          "mood": "laugh",
+          "things": [
+            "cashstack",
+            "goldbar"
+          ],
+          "view": "face"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Novak Djokovic",
+      "url": "https://en.wikipedia.org/wiki/Novak_Djokovic"
+    },
+    {
+      "title": "Wikipedia: Novak Djokovic career statistics",
+      "url": "https://en.wikipedia.org/wiki/Novak_Djokovic_career_statistics"
+    },
+    {
+      "title": "Wikipedia: List of career achievements by Novak Djokovic",
+      "url": "https://en.wikipedia.org/wiki/List_of_career_achievements_by_Novak_Djokovic"
+    }
+  ],
+  "look": "afterhour"
+}

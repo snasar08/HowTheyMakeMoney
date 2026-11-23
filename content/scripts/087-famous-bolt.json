@@ -7,7 +7,7 @@
   "hook_style": "number",
   "title_style": "number",
   "theme": "clean_navy",
-  "status": "ready",
+  "status": "delivered",
   "score": 87,
   "title": "$33 Million a Year for Running",
   "name_card": "Usain Bolt",
@@ -294,5 +294,26 @@
     "socks": "1a1a1a",
     "shoes": "f2c230",
     "height": 1.15
+  },
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-087-famous-bolt",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-087-famous-bolt/087-famous-bolt.mp4",
+    "post_at": "2026-11-22T19:15:00-05:00",
+    "buffer_post": "6b025522846b0ee907548a73",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-22T02:36:18.854174+00:00",
+    "seconds": 22.94,
+    "remade_from": "6b01c90f846b0ee90721c169",
+    "eyes": {
+      "score": 8,
+      "problems": [
+        "The video holds on the same static scene for too long (frames 114-325, over 7 seconds), which is boring for the target audience.",
+        "The narration mentions 'a sponsor' but the visual just shows a generic office scene without any specific visual representation of a sponsorship deal."
+      ],
+      "best_fix": "Break up the long static scene (frames 114-325) by cutting to different angles or adding dynamic visual elements like a contract signing animation or a logo transition to keep the viewer engaged.",
+      "model": "gemini-3.1-flash-lite",
+      "acts": null
+    }
   }
 }

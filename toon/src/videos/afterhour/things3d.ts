@@ -4,7 +4,7 @@ import { toonMat, metalMat, glowMat, canvasTex, seeded } from "./common";
 import { hasModel, makeModelGroup, MODEL_SIZE } from "./models";
 import { drawCard } from "./cards";
 
-export type ThingName = "shoe" | "springshoe" | "chip" | "gpu" | "cash" | "cashstack" | "coins" | "goldbar" | "trophy" | "medal" | "crown" | "ring" | "car" | "sportscar" | "bus" | "truck" | "rocket" | "phone" | "laptop" | "tv" | "monitor" | "clock" | "books" | "letter" | "newspaper" | "briefcase" | "shovel" | "pickaxe" | "box" | "crate" | "basketball" | "football" | "soccerball" | "hoop" | "mic" | "headset" | "controller" | "burger" | "pizza" | "coffee" | "plant" | "robot" | "drone" | "satellite" | "globe" | "house" | "factory" | "stadium" | "plane" | "yacht" | "chart" | "arrowup" | "arrowdown" | "lightbulb" | "lock" | "key" | "heart" | "bomb" | "fire" | "camera" | "chatbot" | "glasses" | "dumbbell" | "hanger" | "dome";
+export type ThingName = "shoe" | "springshoe" | "chip" | "gpu" | "cash" | "cashstack" | "coins" | "goldbar" | "trophy" | "medal" | "crown" | "ring" | "car" | "sportscar" | "bus" | "truck" | "rocket" | "phone" | "laptop" | "tv" | "monitor" | "clock" | "books" | "letter" | "newspaper" | "briefcase" | "shovel" | "pickaxe" | "box" | "crate" | "basketball" | "football" | "soccerball" | "hoop" | "mic" | "headset" | "controller" | "burger" | "pizza" | "coffee" | "plant" | "robot" | "drone" | "satellite" | "globe" | "house" | "factory" | "stadium" | "plane" | "yacht" | "chart" | "arrowup" | "arrowdown" | "lightbulb" | "lock" | "key" | "heart" | "bomb" | "fire" | "camera" | "chatbot" | "glasses" | "dumbbell" | "hanger" | "dome" | "console" | "golfball" | "golfclub" | "horse" | "baseball" | "guitar" | "rollercoaster" | "noodlecup" | "legobrick" | "eiffeltower" | "giantshovel" | "icepop";
 export type Thing = { root: THREE.Group; size: number; tick?(t: number): void };
 
 type M = string | THREE.Material;
@@ -468,6 +468,222 @@ const B: Record<ThingName, Builder> = {
     for (let i = 0; i < 10; i++) { const a = (i / 10) * PI * 2; bx(g, 0.14, 0.12, 0.02, glowMat("#fff6c0", 1.2), Math.sin(a) * 1.065, 0.16, Math.cos(a) * 1.065, [0, a, 0]); }
     return { g };
   },
+  // Nov 21: a home game console (neutral grey/white box, disc slot, glowing light, vents) + one plain pad in front. No real console shape or logo.
+  console: (c) => {
+    const root = new THREE.Group(); const g = new THREE.Group(); g.rotation.set(0.5, -0.35, 0); root.add(g); const col = c ?? "#e6e9ef"; const dk = "#3a4050";
+    rbx(g, 0.34, 0.075, 0.22, 0.02, col, -0.03, 0.075, -0.02);
+    bx(g, 0.35, 0.02, 0.23, "#b9c0cc", -0.03, 0.01, -0.02);
+    bx(g, 0.2, 0.008, 0.012, "#14161d", -0.03, 0.095, 0.094);                   // disc slot
+    for (let i = 0; i < 4; i++) bx(g, 0.2, 0.004, 0.012, dk, -0.03, 0.118, -0.08 + i * 0.025);   // vents on top
+    cy(g, 0.012, 0.012, 0.01, "#9aa3b5", -0.15, 0.1, 0.1, [PI / 2, 0, 0], 14);  // power button
+    const led = bx(g, 0.05, 0.008, 0.008, glowMat("#38bdf8", 2.2), 0.07, 0.07, 0.1);
+    // the pad: dark grey body so it contrasts, clear handles, two light sticks, four coloured buttons, a d-pad
+    const o = new THREE.Group(); o.position.set(0.12, 0.0, 0.2); o.rotation.y = -0.2; o.scale.setScalar(0.9); g.add(o);
+    sp(o, 0.05, "#4b5163", 0, 0.03, 0, [1.35, 0.5, 0.85], 20);
+    for (const s of [-1, 1]) { const h = sp(o, 0.034, "#2d313d", s * 0.068, 0.022, 0.034, [0.8, 0.62, 1.7], 14); h.rotation.y = s * 0.4; }
+    for (const s of [-1, 1]) { cy(o, 0.014, 0.014, 0.016, "#d8dde8", s * 0.026, 0.062, 0.012, undefined, 14); }
+    bx(o, 0.03, 0.012, 0.01, "#d8dde8", -0.05, 0.062, -0.018); bx(o, 0.01, 0.012, 0.03, "#d8dde8", -0.05, 0.062, -0.018);
+    const bc = ["#22c55e", "#ef4444", "#3b82f6", "#facc15"]; [[0, 0.016], [0.016, 0], [-0.016, 0], [0, -0.016]].forEach((q, i) => cy(o, 0.009, 0.009, 0.012, bc[i], 0.052 + q[0], 0.062, -0.018 + q[1], undefined, 12));
+    return { g: root, tick: (t) => { (led.material as THREE.MeshBasicMaterial).color.set("#38bdf8").multiplyScalar(1.4 + 0.9 * Math.sin(t * 3)); } };
+  },
+  // Nov 21: a white dimpled golf ball on a wooden tee
+  golfball: (c) => {
+    const g = new THREE.Group(); const col = c ?? "#fbfbfd"; const R = 0.05, y0 = 0.085;
+    cone(g, 0.011, 0.045, "#e0a24a", 0, 0.0225, 0, [PI, 0, 0], 12);
+    cy(g, 0.02, 0.014, 0.012, "#e0a24a", 0, 0.049, 0, undefined, 14);
+    const b = new THREE.Group(); b.position.y = y0; g.add(b);
+    sp(b, R, col, 0, 0, 0, undefined, 28);
+    // flat, slightly darker dimple patches flush with the surface (no bumps): a few, spread over the front
+    const N = 40, ga = PI * (3 - Math.sqrt(5)), zz = new THREE.Vector3(0, 0, 1), dm = toonMat("#cdd3de");
+    for (let i = 0; i < N; i++) { const yy = 1 - (2 * (i + 0.5)) / N, rr = Math.sqrt(1 - yy * yy), th = i * ga;
+      const n = new THREE.Vector3(Math.cos(th) * rr, yy, Math.sin(th) * rr); if (n.z < 0.05) continue;
+      const m = new THREE.Mesh(new THREE.CircleGeometry(0.0058, 10), dm); m.position.copy(n).multiplyScalar(R * 1.003); m.quaternion.setFromUnitVectors(zz, n); b.add(m); }
+    return { g, tick: (t) => { b.position.y = y0 + Math.sin(t * 2.2) * 0.003; } };
+  },
+  // Nov 21: a driver standing upright: steel shaft, black grip, chunky head
+  golfclub: (c) => {
+    const g = new THREE.Group(); const o = new THREE.Group(); o.rotation.z = 0.16; g.add(o); const head = c ?? "#2f6fdd";
+    cy(o, 0.016, 0.016, 0.6, metalMat("#c9ced6", 0.3), 0, 0.38, 0, undefined, 12);
+    cy(o, 0.026, 0.024, 0.2, "#17171c", 0, 0.7, 0, undefined, 14);
+    cy(o, 0.02, 0.02, 0.06, "#aab3c0", 0, 0.09, 0, undefined, 12);
+    sp(o, 0.068, head, 0.05, 0.05, 0, [1.4, 0.9, 1.2], 20);
+    bx(o, 0.1, 0.012, 0.075, "#f4f4f6", 0.06, 0.092, 0);
+    sp(o, 0.016, "#f4f4f6", 0.12, 0.05, 0.0, [0.4, 1.5, 1.5], 8);
+    return { g, tick: (t) => { o.rotation.z = 0.16 + Math.sin(t * 1.8) * 0.05; } };
+  },
+  // Nov 21: a chunky brown racehorse standing side-on (head to +x): dark mane + tail, red saddle blanket, four legs with dark hooves
+  horse: (c) => {
+    const g = new THREE.Group(); const body = c ?? "#9a5a2c"; const dk = "#2a1a12";
+    sp(g, 0.15, body, 0, 0.34, 0, [1.75, 0.95, 0.85], 24);                          // barrel
+    sp(g, 0.1, body, -0.17, 0.35, 0, [1.0, 1.0, 0.95], 18);                         // rump
+    for (const [x, z] of [[0.17, 0.06], [0.17, -0.06], [-0.19, 0.06], [-0.19, -0.06]]) {
+      cy(g, 0.032, 0.024, 0.24, body, x, 0.15, z, undefined, 12);
+      cy(g, 0.03, 0.03, 0.04, dk, x, 0.02, z, undefined, 12);                       // hoof
+    }
+    const nk = new THREE.Group(); nk.position.set(0.2, 0.42, 0); g.add(nk);
+    cy(nk, 0.065, 0.1, 0.3, body, 0.07, 0.13, 0, [0, 0, -0.62], 14);               // neck leaning forward
+    const hd = new THREE.Group(); hd.position.set(0.16, 0.27, 0); hd.rotation.z = -0.55; nk.add(hd);
+    sp(hd, 0.07, body, 0.03, 0, 0, [1.55, 0.85, 0.85], 18);                         // long head
+    sp(hd, 0.04, "#d9b99a", 0.12, -0.012, 0, [1.0, 0.9, 0.9], 14);                  // pale muzzle
+    for (const z of [-0.035, 0.035]) cone(hd, 0.022, 0.07, body, -0.02, 0.085, z, undefined, 10);   // ears
+    for (const z of [-1, 1]) { sp(hd, 0.017, "#ffffff", 0.05, 0.02, z * 0.055, undefined, 10); sp(hd, 0.009, "#111111", 0.057, 0.02, z * 0.066, undefined, 8); }
+    for (let i = 0; i < 6; i++) { const sx = -0.1 + i * 0.045; bx(nk, 0.045, 0.085, 0.034, dk, 0.07 + Math.sin(0.62) * sx - Math.cos(0.62) * 0.085, 0.13 + Math.cos(0.62) * sx + Math.sin(0.62) * 0.085, 0, [0, 0, -0.62]); }   // mane along the back of the neck
+    bx(nk, 0.05, 0.06, 0.034, dk, 0.2, 0.33, 0, [0, 0, -0.4]);                       // forelock
+    bx(g, 0.2, 0.025, 0.2, "#d63a3a", 0.0, 0.47, 0);                                 // saddle blanket
+    rbx(g, 0.13, 0.05, 0.17, 0.02, "#5a2d12", 0.0, 0.5, 0);                          // saddle
+    const tail = new THREE.Group(); tail.position.set(-0.25, 0.42, 0); g.add(tail);
+    cy(tail, 0.045, 0.02, 0.34, dk, -0.05, -0.14, 0, [0, 0, 0.3], 10);
+    sp(tail, 0.04, dk, -0.1, -0.3, 0, [0.8, 1.7, 0.8], 10);
+    return { g, tick: (t) => { tail.rotation.z = Math.sin(t * 3) * 0.18; nk.rotation.z = Math.sin(t * 1.6) * 0.04; g.position.y = Math.abs(Math.sin(t * 1.6)) * 0.004; } };
+  },
+  // Nov 21: an acoustic guitar standing upright, front to camera: orange-brown body (two bouts), black sound hole with a ring, bridge, long neck with frets, head with tuners, six strings
+  guitar: (c) => {
+    const g = new THREE.Group(); const o = new THREE.Group(); o.rotation.z = 0.14; o.position.y = 0.0; g.add(o);
+    const wood = c ?? "#e08a2c", rim = "#7a3e14", dark = "#2a1a10";
+    const R90: V3 = [PI / 2, 0, 0];
+    cy(o, 0.185, 0.185, 0.1, rim, 0, 0.2, -0.003, R90, 32);                         // dark side wall (a touch thicker than the top)
+    cy(o, 0.135, 0.135, 0.1, rim, 0, 0.44, -0.003, R90, 28);
+    bx(o, 0.19, 0.12, 0.1, rim, 0, 0.32, -0.003);
+    cy(o, 0.17, 0.17, 0.1, wood, 0, 0.2, 0.004, R90, 32);                           // lower bout (front face)
+    cy(o, 0.122, 0.122, 0.1, wood, 0, 0.44, 0.004, R90, 28);                        // upper bout
+    bx(o, 0.17, 0.13, 0.1, wood, 0, 0.32, 0.004);                                   // waist fill
+    cy(o, 0.058, 0.058, 0.012, "#17100c", 0, 0.34, 0.056, R90, 24);                 // sound hole
+    to(o, 0.062, 0.011, "#4a2a10", 0, 0.34, 0.058);                                 // rosette ring
+    bx(o, 0.15, 0.04, 0.02, dark, 0, 0.1, 0.06);                                    // bridge
+    bx(o, 0.11, 0.012, 0.024, "#f4efe0", 0, 0.118, 0.062);                          // bridge saddle
+    bx(o, 0.052, 0.62, 0.03, "#6b3d1a", 0, 0.78, 0.0);                              // neck
+    bx(o, 0.045, 0.6, 0.016, dark, 0, 0.78, 0.022);                                 // fretboard
+    for (let i = 0; i < 7; i++) bx(o, 0.048, 0.006, 0.018, "#d8dde8", 0, 0.52 + i * 0.085, 0.03);   // frets
+    sp(o, 0.011, "#f4efe0", 0.0, 0.58, 0.032, [1, 1, 0.6], 10);                     // fret dots
+    sp(o, 0.011, "#f4efe0", 0.0, 0.75, 0.032, [1, 1, 0.6], 10);
+    rbx(o, 0.085, 0.16, 0.03, 0.02, "#4a2a12", 0, 1.17, 0.0);                       // head
+    for (const s of [-1, 1]) for (let i = 0; i < 3; i++) cy(o, 0.014, 0.014, 0.05, "#d8dde8", s * 0.062, 1.12 + i * 0.045, 0.0, [0, 0, PI / 2], 10);   // tuners
+    const str = toonMat("#f4f4f8");
+    for (let i = 0; i < 6; i++) put(o, new THREE.CylinderGeometry(0.0018, 0.0018, 1.0, 6), str, -0.0185 + i * 0.0074, 0.64, 0.038, [0, 0, 0], [1, 1, 1], false);   // strings
+    return { g, tick: (t) => { o.rotation.z = 0.14 + Math.sin(t * 1.6) * 0.05; } };
+  },
+  // Nov 21: a small roller coaster: red track on a lift hill, a full loop, white rails, support columns, a yellow two-seat car rolling along the track
+  rollercoaster: (c) => {
+    const g = new THREE.Group(); const o = new THREE.Group(); o.position.x = -0.08; g.add(o); const col = c ?? "#e53a3a";
+    const pts: THREE.Vector3[] = [];
+    const add = (x: number, y: number, z: number) => pts.push(new THREE.Vector3(x, y, z));
+    add(-0.95, 0.1, 0); add(-0.75, 0.12, 0); add(-0.55, 0.35, 0); add(-0.4, 0.7, 0); add(-0.3, 0.88, 0); add(-0.18, 0.7, 0); add(-0.08, 0.35, 0); add(0.1, 0.14, -0.08); add(0.3, 0.11, -0.08);
+    const LX = 0.52, LY = 0.4, LR = 0.3;
+    for (let i = 0; i <= 12; i++) { const th = -PI / 2 + (i / 12) * PI * 2; add(LX + LR * Math.cos(th), LY + LR * Math.sin(th), -0.08 + 0.16 * (i / 12)); }
+    add(0.78, 0.12, 0.08); add(0.95, 0.1, 0.08); add(1.12, 0.1, 0.08);
+    const curve = new THREE.CatmullRomCurve3(pts, false, "catmullrom", 0.5);
+    put(o, new THREE.TubeGeometry(curve, 220, 0.026, 8, false), col, 0, 0, 0, [0, 0, 0], [1, 1, 1], true);               // spine
+    const rail = toonMat("#f4f6fb");
+    for (const dz of [-0.04, 0.04]) {
+      const cv = new THREE.CatmullRomCurve3(pts.map((p) => new THREE.Vector3(p.x, p.y + 0.03, p.z + dz)), false, "catmullrom", 0.5);
+      put(o, new THREE.TubeGeometry(cv, 220, 0.011, 6, false), rail, 0, 0, 0, [0, 0, 0], [1, 1, 1], false);
+    }
+    for (let i = 0; i <= 40; i++) {       // supports under the hill (and the lead-in), with a cross brace
+      const t = 0.02 + (i / 40) * 0.2; const p = curve.getPoint(t);
+      if (i % 3 === 0 && p.y > 0.2) { cy(o, 0.014, 0.014, p.y - 0.03, "#8a93a8", p.x, (p.y - 0.03) / 2, p.z, undefined, 8); bx(o, 0.07, 0.014, 0.014, "#8a93a8", p.x, p.y * 0.5, p.z); }
+    }
+    for (const dx of [-0.13, 0.13]) cy(o, 0.014, 0.014, LY - LR + 0.01, "#8a93a8", LX + dx, (LY - LR) / 2, 0, undefined, 8);   // under the loop
+    bx(o, 1.3, 0.025, 0.12, "#6c748a", 0.08, 0.0125, 0.0);                                                                    // ground base
+    cy(o, 0.008, 0.008, 0.2, "#d8dde8", -0.3, 1.0, 0, undefined, 6); bx(o, 0.11, 0.07, 0.01, "#ffcc29", -0.25, 1.05, 0);       // flag on the hill top
+    const mk = () => {
+      const car = new THREE.Group(); o.add(car);
+      rbx(car, 0.17, 0.08, 0.11, 0.02, "#ffcc29", 0, 0.0, 0);
+      bx(car, 0.04, 0.06, 0.12, "#e53a3a", 0.065, 0.0, 0);
+      sp(car, 0.032, "#f2c9a0", -0.03, 0.075, 0, undefined, 12); sp(car, 0.032, "#f2c9a0", 0.03, 0.075, 0, undefined, 12);
+      cy(car, 0.012, 0.012, 0.12, "#4b5163", 0.0, 0.03, 0.0, [PI / 2, 0, 0], 8);                                              // lap bar
+      return car;
+    };
+    const cars = [mk(), mk()];
+    const place = (car: THREE.Group, t: number) => {
+      const u = Math.min(0.995, Math.max(0.005, t)); const p = curve.getPoint(u), tg = curve.getTangent(u);
+      car.position.set(p.x, p.y + 0.085, p.z); car.rotation.set(0, 0, Math.atan2(tg.y, tg.x));
+    };
+    return { g, tick: (t) => { const u = 0.5 - 0.5 * Math.cos(t * 0.7); place(cars[0], 0.03 + u * 0.94); place(cars[1], 0.03 + u * 0.94 - 0.05); } };
+  },
+  // Nov 21: a foam cup of instant noodles: wide red-and-white cup, peeled-back lid flap, wavy yellow noodles, chopsticks, steam wisps that drift up
+  noodlecup: (c) => {
+    const g = new THREE.Group(); const col = c ?? "#e53a3a";
+    cy(g, 0.17, 0.115, 0.26, "#f7f2e4", 0, 0.13, 0);                                   // cup body (white foam)
+    cy(g, 0.1735, 0.1185, 0.11, col, 0, 0.13, 0);                                      // red band
+    cy(g, 0.1745, 0.1745, 0.025, "#ffffff", 0, 0.267, 0);                              // rim
+    cy(g, 0.15, 0.15, 0.02, "#ffcc29", 0, 0.255, 0);                                   // noodle mass
+    for (let i = 0; i < 6; i++) { const a = i * 1.05; to(g, 0.045, 0.014, "#ffd54a", Math.cos(a) * 0.075, 0.28 + (i % 2) * 0.012, Math.sin(a) * 0.075, [PI / 2, 0, a]); }
+    to(g, 0.06, 0.015, "#f2b81c", 0, 0.3, 0, [PI / 2, 0, 0.4]);
+    const lid = new THREE.Group(); lid.position.set(0, 0.275, -0.17); lid.rotation.x = -1.25; g.add(lid);   // lid peeled back and standing up
+    cy(lid, 0.172, 0.172, 0.012, "#e53a3a", 0, 0, 0.17, [0, 0, 0], 28); cy(lid, 0.1, 0.1, 0.014, "#ffffff", 0, 0.004, 0.17, [0, 0, 0], 24); bx(lid, 0.1, 0.014, 0.05, "#e53a3a", 0, 0.01, 0.33);
+    for (const s of [-1, 1]) cy(g, 0.009, 0.009, 0.34, "#e0a96a", s * 0.04 + 0.04, 0.4, 0.04, [0.2, 0, -0.35 * s + 0.3], 8);   // chopsticks
+    const wisps: THREE.Mesh[] = [];
+    for (let i = 0; i < 3; i++) wisps.push(to(g, 0.05, 0.012, "#eaf6ff", -0.07 + i * 0.07, 0.45 + i * 0.03, 0.12, [0, 0, 0], PI * 1.5));
+    return { g, tick: (t) => { wisps.forEach((w, i) => { const u = (t * 0.5 + i / 3) % 1; w.position.y = 0.36 + u * 0.22; w.scale.setScalar(0.7 + 0.5 * u); w.rotation.z = Math.sin(t * 2 + i) * 0.4; }); } };
+  },
+  // Nov 21: a chunky 2x4 toy brick (plain, no logo): red, eight round studs, a blue 2x2 brick on top and a small yellow brick beside it
+  legobrick: (c) => {
+    const g = new THREE.Group(); const col = c ?? "#e53a3a";
+    const brick = (o: THREE.Group, nx: number, nz: number, m: string, x: number, y: number, z: number) => {
+      const W = nx * 0.16, D = nz * 0.16, H = 0.19;
+      bx(o, W, H, D, m, x, y + H / 2, z);
+      for (let i = 0; i < nx; i++) for (let j = 0; j < nz; j++) cy(o, 0.045, 0.045, 0.05, m, x + (i - (nx - 1) / 2) * 0.16, y + H + 0.025, z + (j - (nz - 1) / 2) * 0.16, undefined, 18);
+    };
+    const main = new THREE.Group(); g.add(main);
+    brick(main, 4, 2, col, 0, 0, 0);
+    const top = new THREE.Group(); top.position.set(0.12, 0.19, 0); main.add(top); brick(top, 2, 2, "#2f6fe0", 0, 0, 0);
+    const y = new THREE.Group(); y.position.set(-0.55, 0, 0.05); y.rotation.y = 0.5; g.add(y); brick(y, 2, 1, "#ffcc29", 0, 0, 0);
+    main.rotation.y = -0.25;
+    return { g, tick: (t) => { top.position.y = 0.19 + Math.max(0, Math.sin(t * 2)) * 0.02; } };
+  },
+  // Nov 21: a small Eiffel Tower built from stacked brick blocks: four legs on a base, arch beams, three platforms, narrowing shaft, spire
+  eiffeltower: (c) => {
+    const g = new THREE.Group(); const o = new THREE.Group(); g.add(o); const A = c ?? "#c9824a", B2 = "#e9a95f";
+    bx(o, 0.62, 0.05, 0.62, "#8a93a8", 0, 0.025, 0);
+    const lvl = (y: number, w: number, h: number, i: number) => bx(o, w, h, w, i % 2 ? B2 : A, 0, y + h / 2, 0);
+    for (const sx of [-1, 1]) for (const sz of [-1, 1]) { bx(o, 0.1, 0.1, 0.1, A, sx * 0.22, 0.1, sz * 0.22); bx(o, 0.09, 0.1, 0.09, B2, sx * 0.19, 0.2, sz * 0.19); bx(o, 0.08, 0.1, 0.08, A, sx * 0.16, 0.3, sz * 0.16); }
+    for (const s of [-1, 1]) { bx(o, 0.5, 0.045, 0.08, B2, 0, 0.255, s * 0.2); bx(o, 0.08, 0.045, 0.5, B2, s * 0.2, 0.255, 0); }
+    bx(o, 0.42, 0.05, 0.42, "#e53a3a", 0, 0.385, 0);
+    lvl(0.41, 0.2, 0.13, 0); lvl(0.54, 0.17, 0.12, 1);
+    bx(o, 0.28, 0.04, 0.28, "#e53a3a", 0, 0.68, 0);
+    lvl(0.7, 0.13, 0.12, 0); lvl(0.82, 0.1, 0.1, 1); lvl(0.92, 0.08, 0.1, 0);
+    bx(o, 0.17, 0.035, 0.17, "#e53a3a", 0, 1.03, 0);
+    lvl(1.05, 0.05, 0.08, 1); cone(o, 0.025, 0.2, "#d8dde8", 0, 1.23, 0, undefined, 8);
+    return { g, tick: (t) => { o.rotation.y = Math.sin(t * 0.8) * 0.25; } };
+  },
+  // Nov 21: an ice pop on a wooden stick: rounded two-tone body (orange over red, with a lighter shine stripe), pale wood stick, a drip, tilted a little
+  icepop: (c) => {
+    const g = new THREE.Group(); const o = new THREE.Group(); o.rotation.z = 0.12; g.add(o); const top = c ?? "#ff9a2e";
+    bx(o, 0.05, 0.28, 0.025, "#e8c48a", 0, 0.14, 0);                                   // stick
+    rbx(o, 0.26, 0.42, 0.1, 0.09, "#e5262f", 0, 0.5, 0);                               // body (red)
+    rbx(o, 0.26, 0.2, 0.104, 0.09, top, 0, 0.62, 0);                                   // orange top half
+    bx(o, 0.255, 0.04, 0.106, "#ffd23a", 0, 0.535, 0);                                 // yellow band where the colours meet
+    bx(o, 0.035, 0.26, 0.108, "#ffffff", -0.07, 0.5, 0);                               // shine stripe
+    sp(o, 0.032, "#e5262f", 0.05, 0.255, 0.0, [1, 1.5, 0.8], 10);                      // drip
+    return { g, tick: (t) => { o.rotation.z = 0.12 + Math.sin(t * 2.4) * 0.05; } };
+  },
+  // Nov 21: a house-tall shovel standing blade-down in a dirt pile: huge steel blade, long wooden shaft, D-handle, a tiny person for scale
+  giantshovel: (c) => {
+    const g = new THREE.Group(); const o = new THREE.Group(); g.add(o); o.rotation.z = -0.1;
+    cone(g, 0.5, 0.28, "#8a5a32", 0, 0.14, 0.0, undefined, 18); sp(g, 0.18, "#9a6a3a", 0.36, 0.06, 0.2, [1.3, 0.5, 1], 10); sp(g, 0.14, "#7a4a28", -0.34, 0.05, 0.22, [1.2, 0.5, 1], 10);
+    ext(o, [[-0.22, 0.5], [0.22, 0.5], [0.26, 0.15], [0.0, -0.08], [-0.26, 0.15]], 0.05, metalMat(c ?? "#b9c2d0", 0.35), 0, 0.1, -0.02, [0, 0, 0], 0.012);
+    cy(o, 0.04, 0.04, 0.12, metalMat("#8a93a0", 0.4), 0, 0.67, 0);
+    cy(o, 0.045, 0.045, 1.6, "#9a6a3a", 0, 1.45, 0, [0, 0, 0], 12);
+    to(o, 0.1, 0.028, "#9a6a3a", 0, 2.35, 0, [0, 0, 0], PI * 1.0);
+    bx(o, 0.2, 0.05, 0.05, "#9a6a3a", 0, 2.255, 0);
+    return { g, tick: (t) => { o.rotation.z = -0.1 + Math.sin(t * 1.5) * 0.015; } };
+  },
+  // Nov 21: a white baseball with two red stitched seams
+  baseball: (c) => {
+    const g = new THREE.Group(); const R = 0.075; const o = new THREE.Group(); o.position.y = R + 0.01; o.rotation.set(0.55, 0.5, 0.25); g.add(o);
+    sp(o, R, c ?? "#fbfaf5", 0, 0, 0, undefined, 28);
+    // the seam is the classic two-lobed curve that lies on the ball (x = a cos t + b cos 3t, y = a sin t - b sin 3t, z = 2 sqrt(ab) sin 2t, a + b = 1)
+    const A = 0.72, Bq = 1 - A, K = 2 * Math.sqrt(A * Bq), S = R * 1.006;
+    const P = (t: number) => new THREE.Vector3(A * Math.cos(t) + Bq * Math.cos(3 * t), A * Math.sin(t) - Bq * Math.sin(3 * t), K * Math.sin(2 * t)).multiplyScalar(S);
+    const pts: THREE.Vector3[] = []; for (let i = 0; i < 64; i++) pts.push(P((i / 64) * PI * 2));
+    const tube = new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts, true), 96, 0.0042, 6, true), toonMat("#d3262f")); tube.castShadow = false; o.add(tube);
+    const stm = toonMat("#d3262f");
+    for (let i = 0; i < 44; i++) {          // short stitches across the seam
+      const t = (i / 44) * PI * 2, p = P(t), T = P(t + 0.01).sub(P(t - 0.01)).normalize(), n = p.clone().normalize(), q = new THREE.Vector3().crossVectors(T, n).normalize();
+      const m = new THREE.Mesh(new THREE.BoxGeometry(0.02, 0.003, 0.0035), stm); m.position.copy(p); m.quaternion.setFromRotationMatrix(new THREE.Matrix4().makeBasis(q, n, T)); m.castShadow = false; o.add(m);
+    }
+    return { g, tick: (t) => { o.rotation.y = 0.5 + Math.sin(t * 1.4) * 0.3; g.position.y = Math.sin(t * 2.2) * 0.004; } };
+  },
   // Nov 18: prolate spheroid with pointed tips, long axis = x (profile to camera), laces on top, two stripes near the tips
   football: (c) => {
     const g = new THREE.Group(); const o = new THREE.Group(); o.position.y = 0.105; o.rotation.set(0, 0.3, 0.13); g.add(o);
@@ -826,7 +1042,7 @@ function arrow(col: string, dir: 1 | -1): Built {
 
 // rough sizes help pick outline widths before the object exists
 const OLW = (n: ThingName): number => {
-  const big: Partial<Record<ThingName, number>> = { house: 0.14, factory: 0.3, stadium: 0.9, plane: 0.25, yacht: 0.18, bus: 0.07, truck: 0.07, car: 0.04, sportscar: 0.04, rocket: 0.04, hoop: 0.03, shovel: 0.012, pickaxe: 0.012, tv: 0.012, satellite: 0.02, robot: 0.018, arrowup: 0.025, arrowdown: 0.025, chart: 0.012, fire: 0.01, pizza: 0.006, drone: 0.006, crate: 0.012, box: 0.01, dome: 0.03, chatbot: 0.006 };
+  const big: Partial<Record<ThingName, number>> = { house: 0.14, factory: 0.3, stadium: 0.9, plane: 0.25, yacht: 0.18, bus: 0.07, truck: 0.07, car: 0.04, sportscar: 0.04, rocket: 0.04, hoop: 0.03, shovel: 0.012, pickaxe: 0.012, tv: 0.012, satellite: 0.02, robot: 0.018, arrowup: 0.025, arrowdown: 0.025, chart: 0.012, fire: 0.01, pizza: 0.006, drone: 0.006, crate: 0.012, box: 0.01, giantshovel: 0.03, eiffeltower: 0.008, noodlecup: 0.004, dome: 0.03, chatbot: 0.006 };
   return big[n] ?? 0.0035;
 };
 

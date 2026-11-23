@@ -1,0 +1,206 @@
+{
+  "id": "161",
+  "slug": "famous-son-heung-min",
+  "company": "Son Heung-min",
+  "format": "famous",
+  "visual_style": "lowpoly",
+  "hook_style": "surprise",
+  "title_style": "number",
+  "theme": "bold_bright",
+  "status": "ready",
+  "score": 88,
+  "title": "Left Home at 16, Now an MLS Record: Son",
+  "name_card": "Son Heung-min",
+  "name_sub": "LAFC star",
+  "description": "Son Heung-min left home at 16, and in 2025 LAFC paid a reported fee of up to 26.5 million dollars, an MLS record.\n\nSources:\n- Wikipedia: Son Heung-min: https://en.wikipedia.org/wiki/Son_Heung-min\n- MLSsoccer.com: LAFC set MLS transfer record with Son Heung-Min signing: https://www.mlssoccer.com/news/lafc-break-mls-transfer-record-son-heung-min-signing-tottenham-south-korea\n\nFrom the cited pages: in August 2008 Son joined Hamburger SV's youth academy at 16; on 28 August 2015 he joined Tottenham for 22 million pounds, the most expensive Asian player in football history at the time; in 2021-22 he won the Premier League Golden Boot with 23 goals, shared with Mohamed Salah, the first Asian player to do so; on 6 August 2025 he joined LAFC after 10 years at Tottenham, for a reported fee of up to 26.5 million dollars, an MLS record; the previous record was a reported 22 million dollars plus add-ons (Atlanta United, Emmanuel Latte Lath). Fees are reported, not officially confirmed. Not financial advice.\n\n#shorts #sonheungmin #lafc #howtheymakemoney",
+  "tags": [
+    "son heung-min",
+    "lafc",
+    "soccer",
+    "famous",
+    "shorts"
+  ],
+  "images": {},
+  "loop": "So remember:",
+  "cta": "Son or Messi? Pick one.",
+  "cta_question": "Son or Messi?",
+  "hero": {
+    "skin": "e8c19a",
+    "hair": "short",
+    "hair_color": "1a1a1a",
+    "beard": "none",
+    "outfit": "kit",
+    "shirt": "111111",
+    "pants": "111111",
+    "shoes": "c39e6d",
+    "chest": "",
+    "trim": "c39e6d",
+    "number": "7",
+    "height": 1.0
+  },
+  "scenes": [
+    {
+      "narration": "LAFC paid 26.5 million dollars for Son Heung-min. That is an MLS record.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "pitch",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "showroom",
+          "mood": "shock",
+          "beat": "money",
+          "card": {
+            "text": "$26.5 MILLION",
+            "kind": "screen",
+            "sub": "LAFC, UP TO"
+          },
+          "view": "ms"
+        },
+        {
+          "place": "pitch",
+          "mood": "proud",
+          "things": [
+            "trophy"
+          ],
+          "card": {
+            "text": "MLS RECORD",
+            "kind": "sign",
+            "sub": "BIGGEST FEE EVER"
+          },
+          "crowd": 60,
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "But Son left home for Germany at 16.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "pitch",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "classroom",
+          "mood": "nervous",
+          "things": [
+            "plane"
+          ],
+          "card": {
+            "text": "AGE 16",
+            "kind": "sign",
+            "sub": "LEFT HOME"
+          },
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "Then Tottenham paid a record fee for an Asian player.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "pitch",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "boardroom",
+          "mood": "excited",
+          "things": [
+            "cash"
+          ],
+          "view": "ms"
+        }
+      ]
+    },
+    {
+      "narration": "And in 2022, he won the Premier League Golden Boot. He scored 23 goals.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "pitch",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "throne",
+          "mood": "laugh",
+          "things": [
+            "trophy"
+          ],
+          "card": {
+            "text": "2022",
+            "kind": "flip",
+            "sub": "YEAR"
+          },
+          "view": "face"
+        },
+        {
+          "place": "pitch",
+          "mood": "excited",
+          "things": [
+            "soccerball"
+          ],
+          "action": "run",
+          "crowd": 80,
+          "card": {
+            "text": "23 GOALS",
+            "kind": "sign",
+            "sub": "GOLDEN BOOT"
+          },
+          "view": "wide"
+        }
+      ]
+    },
+    {
+      "narration": "Now he plays in Los Angeles. Not bad for a kid who left home at 16.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "pitch",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "street",
+          "mood": "happy",
+          "things": [
+            "house"
+          ],
+          "view": "ms"
+        },
+        {
+          "place": "pitch",
+          "mood": "laugh",
+          "things": [
+            "soccerball"
+          ],
+          "action": "cheer",
+          "crowd": 80,
+          "view": "face"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Son Heung-min",
+      "url": "https://en.wikipedia.org/wiki/Son_Heung-min"
+    },
+    {
+      "title": "MLSsoccer.com: LAFC set MLS transfer record with Son Heung-Min signing",
+      "url": "https://www.mlssoccer.com/news/lafc-break-mls-transfer-record-son-heung-min-signing-tottenham-south-korea"
+    }
+  ],
+  "look": "afterhour"
+}

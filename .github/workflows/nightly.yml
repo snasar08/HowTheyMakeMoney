@@ -82,6 +82,7 @@ jobs:
         with:
           path: ~/.cache/huggingface
           key: qwen-models-v1
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg   # Nov 21: ubuntu-26.04 has none; the +1.5 st pitch shift failed
       - run: |
           pip install -q torch torchaudio --index-url https://download.pytorch.org/whl/cpu
           pip install -q -U qwen-tts openai-whisper soundfile numpy
@@ -223,7 +224,10 @@ jobs:
           path: tp
       - working-directory: toon
         run: |
-          [ -d node_modules/remotion ] || npm ci --no-audit --no-fund 2>&1 | tail -3
+          # Nov 21: was `npm ci`, which refuses when package.json and the lock differ (a font was added to package.json
+          # on Nov 19): every toon shard failed for 2 days and Shorts went out in the old look. npm install like the others.
+          [ -d node_modules/remotion ] || npm install --no-audit --no-fund 2>&1 | tail -3
+          [ -d node_modules/remotion ] || { echo "::error title=toon::npm install failed: no Remotion, no new-look frames"; exit 1; }
           npx remotion browser ensure 2>&1 | tail -1
           for f in ../tp/*.json; do
             slug=$(basename "$f" .json)

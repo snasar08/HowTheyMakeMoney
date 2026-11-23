@@ -1,0 +1,312 @@
+{
+  "id": "172",
+  "slug": "story-colonel-sanders",
+  "company": "KFC",
+  "format": "story",
+  "story_mode": "history",
+  "visual_style": "lowpoly",
+  "hook_style": "surprise",
+  "title_style": "number",
+  "theme": "bold_bright",
+  "status": "ready",
+  "score": 90,
+  "title": "From 105 Dollars a Month to a $2 Million Sale",
+  "name_card": "You are Colonel Sanders",
+  "name_sub": "a true story",
+  "description": "You are Harland Sanders. At 65 you have a Social Security check and a cafe nobody drives to. So you start selling your recipe to restaurants.\n\nSources:\n- Wikipedia: Colonel Sanders: https://en.wikipedia.org/wiki/Colonel_Sanders\n\nFrom the cited page: at age 12 (1903) he dropped out of seventh grade; he worked as a streetcar conductor, a railroad fireman, an insurance salesman, a ferry boat company founder, a tire salesman and a service station operator; in 1930 Shell offered him a service station in North Corbin, Kentucky, rent-free in return for a percentage of sales, where he began serving chicken; in July 1940, at age 50, he finalized his secret recipe for frying chicken in a pressure fryer that cooked faster than pan frying; he sold the restaurant at age 65 after the new Interstate 75 reduced customer traffic, left with his savings and US$105 a month from Social Security; he then franchised his chicken, often sleeping in his car; in 1964, at age 73, with more than 600 locations, he sold the company for $2 million to investors led by John Y. Brown Jr. and Jack C. Massey. The pressure line is a metaphor, not a quote. Not financial advice.\n\n#shorts #kfc #colonelsanders #howtheymakemoney",
+  "tags": [
+    "kfc",
+    "colonel sanders",
+    "story",
+    "history",
+    "shorts"
+  ],
+  "images": {},
+  "loop": "So remember:",
+  "cta": "KFC or Popeyes? Pick one.",
+  "cta_question": "KFC or Popeyes?",
+  "hero": {
+    "skin": "f1c9a5",
+    "hair": "short",
+    "hair_color": "f2f2f2",
+    "beard": "goatee",
+    "outfit": "suit",
+    "shirt": "ffffff",
+    "pants": "f4f4f4",
+    "shoes": "3a2a1a",
+    "tie": "111111",
+    "chest": "",
+    "trim": "ffffff",
+    "extras": [
+      "glasses"
+    ],
+    "height": 1.0
+  },
+  "scenes": [
+    {
+      "narration": "You are Harland Sanders, and your life is a pressure cooker. At age 12 you quit school. Then you try many jobs.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "garage",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "hero": {
+          "skin": "f1c9a5",
+          "hair": "short",
+          "hair_color": "f2f2f2",
+          "beard": "goatee",
+          "outfit": "suit",
+          "shirt": "ffffff",
+          "pants": "f4f4f4",
+          "shoes": "3a2a1a",
+          "tie": "111111",
+          "chest": "",
+          "trim": "ffffff",
+          "extras": [
+            "glasses"
+          ],
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "throne",
+          "mood": "stern",
+          "card": {
+            "text": "PRESSURE COOKER",
+            "kind": "sign",
+            "sub": "YOUR LIFE"
+          },
+          "view": "ms"
+        },
+        {
+          "place": "classroom",
+          "mood": "sad",
+          "card": {
+            "text": "AGE 12",
+            "kind": "flip",
+            "sub": "QUIT SCHOOL"
+          },
+          "things": [
+            "books"
+          ],
+          "view": "ms"
+        },
+        {
+          "place": "street",
+          "mood": "nervous",
+          "things": [
+            "bus"
+          ],
+          "view": "wide"
+        }
+      ]
+    },
+    {
+      "narration": "Then in 1930 you sell fried chicken at a gas station in Kentucky. In 1940 you finish a secret recipe that fries under pressure.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "diner",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "hero": {
+          "skin": "f1c9a5",
+          "hair": "short",
+          "hair_color": "f2f2f2",
+          "beard": "goatee",
+          "outfit": "suit",
+          "shirt": "ffffff",
+          "pants": "f4f4f4",
+          "shoes": "3a2a1a",
+          "tie": "111111",
+          "chest": "",
+          "trim": "ffffff",
+          "extras": [
+            "glasses"
+          ],
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "garage",
+          "mood": "happy",
+          "card": {
+            "text": "1930",
+            "kind": "flip",
+            "sub": "KENTUCKY"
+          },
+          "things": [
+            "car"
+          ],
+          "view": "ms"
+        },
+        {
+          "place": "diner",
+          "mood": "proud",
+          "card": {
+            "text": "1940",
+            "kind": "flip",
+            "sub": "SECRET RECIPE"
+          },
+          "things": [
+            "fire"
+          ],
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "But a new highway sends the cars away. At 65 you have only 105 dollars a month from Social Security.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "street",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "hero": {
+          "skin": "f1c9a5",
+          "hair": "short",
+          "hair_color": "f2f2f2",
+          "beard": "goatee",
+          "outfit": "suit",
+          "shirt": "ffffff",
+          "pants": "f4f4f4",
+          "shoes": "3a2a1a",
+          "tie": "111111",
+          "chest": "",
+          "trim": "ffffff",
+          "extras": [
+            "glasses"
+          ],
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "street",
+          "mood": "sad",
+          "things": [
+            "car"
+          ],
+          "view": "wide"
+        },
+        {
+          "place": "classroom",
+          "mood": "dazed",
+          "card": {
+            "text": "$105 A MONTH",
+            "kind": "screen",
+            "sub": "SOCIAL SECURITY, AGE 65"
+          },
+          "things": [
+            "cash"
+          ],
+          "view": "face",
+          "beat": "money"
+        }
+      ]
+    },
+    {
+      "narration": "Yet you drive town to town selling your recipe. In 1964 you sell your company for 2 million dollars.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "boardroom",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "hero": {
+          "skin": "f1c9a5",
+          "hair": "short",
+          "hair_color": "f2f2f2",
+          "beard": "goatee",
+          "outfit": "suit",
+          "shirt": "ffffff",
+          "pants": "f4f4f4",
+          "shoes": "3a2a1a",
+          "tie": "111111",
+          "chest": "",
+          "trim": "ffffff",
+          "extras": [
+            "glasses"
+          ],
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "street",
+          "mood": "scheme",
+          "beat": "drive",
+          "view": "face"
+        },
+        {
+          "place": "boardroom",
+          "mood": "proud",
+          "beat": "money",
+          "brand": {
+            "name": "KFC",
+            "bg": "#e4002b",
+            "fg": "#ffffff"
+          },
+          "card": {
+            "text": "$2 MILLION",
+            "kind": "screen",
+            "sub": "SOLD IN 1964"
+          },
+          "things": [
+            "cash"
+          ],
+          "view": "ms"
+        }
+      ]
+    },
+    {
+      "narration": "Like your chicken you only shine under pressure.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "throne",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "hero": {
+          "skin": "f1c9a5",
+          "hair": "short",
+          "hair_color": "f2f2f2",
+          "beard": "goatee",
+          "outfit": "suit",
+          "shirt": "ffffff",
+          "pants": "f4f4f4",
+          "shoes": "3a2a1a",
+          "tie": "111111",
+          "chest": "",
+          "trim": "ffffff",
+          "extras": [
+            "glasses"
+          ],
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "throne",
+          "mood": "proud",
+          "things": [
+            "burger"
+          ],
+          "view": "face"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wikipedia: Colonel Sanders",
+      "url": "https://en.wikipedia.org/wiki/Colonel_Sanders"
+    }
+  ],
+  "length_test": "short",
+  "look": "afterhour"
+}

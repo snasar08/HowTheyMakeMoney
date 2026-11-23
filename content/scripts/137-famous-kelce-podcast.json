@@ -1,0 +1,361 @@
+{
+  "id": "137",
+  "slug": "famous-kelce-podcast",
+  "company": "Travis and Jason Kelce",
+  "format": "famous",
+  "visual_style": "lowpoly",
+  "hook_style": "number",
+  "title_style": "number",
+  "theme": "bold_bright",
+  "status": "delivered",
+  "score": 92,
+  "title": "The Kelce Brothers' $100 Million Podcast",
+  "name_card": "Travis & Jason Kelce",
+  "name_sub": "from late picks to a podcast empire",
+  "description": "The Kelce brothers signed a podcast deal reported at over $100 million, after a low start in the NFL draft.\n\nSources:\n- Fortune: Travis Kelce strikes lucrative $100 million Amazon podcast deal: https://fortune.com/2024/08/28/travis-kelce-strikes-lucrative-100-million-amazon-podcast-deal-worth-more-than-his-football-contract/\n- CBS News: Kelce brothers reach New Heights podcast deal with Amazon's Wondery: https://www.cbsnews.com/news/new-heights-amazon-wondery-deal-kelce\n- Wikipedia: Jason Kelce: https://en.wikipedia.org/wiki/Jason_Kelce\n- Wikipedia: Travis Kelce: https://en.wikipedia.org/wiki/Travis_Kelce\n- Wikipedia: New Heights (podcast): https://en.wikipedia.org/wiki/New_Heights_(podcast)\n\nFrom the cited pages: in August 2024 the brothers signed a three-year deal with Amazon's Wondery for New Heights, reported as worth over $100 million (anonymous source, Fortune); Jason was a walk-on at Cincinnati and was picked in the sixth round (191st overall) of the 2011 NFL draft; Travis was picked in the third round (63rd overall) in 2013; New Heights launched on September 8, 2022. Not financial advice.\n\n#shorts #kelce #nfl #howtheymakemoney",
+  "tags": [
+    "kelce",
+    "travis kelce",
+    "jason kelce",
+    "nfl",
+    "podcast",
+    "shorts"
+  ],
+  "images": {},
+  "loop": "Next time you hear a podcast, remember:",
+  "cta": "Travis or Jason?",
+  "cta_question": "Travis or Jason?",
+  "hero": {
+    "skin": "e9bf98",
+    "hair": "short",
+    "hair_color": "4a3224",
+    "beard": "none",
+    "outfit": "kit",
+    "shirt": "c8102e",
+    "pants": "ffc72c",
+    "shoes": "f4f4f4",
+    "chest": "",
+    "trim": "ffc72c",
+    "number": "87",
+    "height": 1.05
+  },
+  "scenes": [
+    {
+      "narration": "Travis and Jason Kelce get over 100 million dollars for talking.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "stage",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "hero": {
+          "skin": "e9bf98",
+          "hair": "short",
+          "hair_color": "4a3224",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "c8102e",
+          "pants": "ffc72c",
+          "shoes": "f4f4f4",
+          "chest": "",
+          "trim": "ffc72c",
+          "number": "87",
+          "height": 1.05
+        }
+      },
+      "toon": [
+        {
+          "place": "stage",
+          "mood": "shock",
+          "things": [
+            "mic",
+            "cashstack"
+          ],
+          "card": {
+            "text": "$100 MILLION+",
+            "kind": "screen",
+            "sub": "NEW HEIGHTS DEAL"
+          },
+          "view": "ms"
+        }
+      ]
+    },
+    {
+      "narration": "But Jason starts as a walk-on at Cincinnati. In 2011, he goes in the sixth round of the draft.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "gridiron",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "hero": {
+          "skin": "e9bf98",
+          "hair": "short",
+          "hair_color": "4a3224",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "c8102e",
+          "pants": "ffc72c",
+          "shoes": "f4f4f4",
+          "chest": "",
+          "trim": "ffc72c",
+          "number": "87",
+          "height": 1.05
+        }
+      },
+      "toon": [
+        {
+          "place": "gridiron",
+          "mood": "nervous",
+          "things": [
+            "football"
+          ],
+          "who": {
+            "jacket": "#004c54",
+            "pants": "#a5acaf",
+            "boots": "#ffffff",
+            "hat": "hair",
+            "style": "short",
+            "hair": "#6b4a2b",
+            "skin": "#e9bf98",
+            "kit": "soccer",
+            "num": "62",
+            "trim": "#a5acaf",
+            "beard": "full"
+          },
+          "view": "face"
+        },
+        {
+          "place": "gridiron",
+          "mood": "calm",
+          "things": [
+            "football"
+          ],
+          "who": {
+            "jacket": "#004c54",
+            "pants": "#a5acaf",
+            "boots": "#ffffff",
+            "hat": "hair",
+            "style": "short",
+            "hair": "#6b4a2b",
+            "skin": "#e9bf98",
+            "kit": "soccer",
+            "num": "62",
+            "trim": "#a5acaf",
+            "beard": "full"
+          },
+          "card": {
+            "text": "2011",
+            "kind": "flip",
+            "sub": "6TH ROUND"
+          },
+          "view": "wide"
+        }
+      ]
+    },
+    {
+      "narration": "Two years later, Travis goes in the third round.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "gridiron",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "hero": {
+          "skin": "e9bf98",
+          "hair": "short",
+          "hair_color": "4a3224",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "c8102e",
+          "pants": "ffc72c",
+          "shoes": "f4f4f4",
+          "chest": "",
+          "trim": "ffc72c",
+          "number": "87",
+          "height": 1.05
+        }
+      },
+      "toon": [
+        {
+          "place": "gridiron",
+          "mood": "proud",
+          "things": [
+            "football"
+          ],
+          "card": {
+            "text": "3RD ROUND",
+            "kind": "sign",
+            "sub": "TRAVIS, 2013"
+          },
+          "view": "low"
+        }
+      ]
+    },
+    {
+      "narration": "Then the brothers start a podcast called New Heights.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "stage",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "hero": {
+          "skin": "e9bf98",
+          "hair": "short",
+          "hair_color": "4a3224",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "c8102e",
+          "pants": "ffc72c",
+          "shoes": "f4f4f4",
+          "chest": "",
+          "trim": "ffc72c",
+          "number": "87",
+          "height": 1.05
+        }
+      },
+      "toon": [
+        {
+          "place": "studio",
+          "mood": "excited",
+          "things": [
+            "mic",
+            "headset"
+          ],
+          "card": {
+            "text": "NEW HEIGHTS",
+            "kind": "sign",
+            "sub": "THE PODCAST"
+          },
+          "view": "ms"
+        }
+      ]
+    },
+    {
+      "narration": "In 2024, Wondery signs them for three years.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "boardroom",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "hero": {
+          "skin": "e9bf98",
+          "hair": "short",
+          "hair_color": "4a3224",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "c8102e",
+          "pants": "ffc72c",
+          "shoes": "f4f4f4",
+          "chest": "",
+          "trim": "ffc72c",
+          "number": "87",
+          "height": 1.05
+        }
+      },
+      "toon": [
+        {
+          "place": "boardroom",
+          "mood": "scheme",
+          "things": [
+            "briefcase"
+          ],
+          "brand": {
+            "name": "WONDERY",
+            "bg": "#6a1b9a",
+            "fg": "#ffffff",
+            "icon": "play"
+          },
+          "card": {
+            "text": "2024",
+            "kind": "flip",
+            "sub": "YEAR"
+          },
+          "view": "ms"
+        }
+      ]
+    },
+    {
+      "narration": "Turns out, the mic was the big play.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "stage",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "hero": {
+          "skin": "e9bf98",
+          "hair": "short",
+          "hair_color": "4a3224",
+          "beard": "none",
+          "outfit": "kit",
+          "shirt": "c8102e",
+          "pants": "ffc72c",
+          "shoes": "f4f4f4",
+          "chest": "",
+          "trim": "ffc72c",
+          "number": "87",
+          "height": 1.05
+        }
+      },
+      "toon": [
+        {
+          "place": "stage",
+          "mood": "laugh",
+          "things": [
+            "mic",
+            "coins"
+          ],
+          "view": "face"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Fortune: Travis Kelce strikes $100 million Amazon podcast deal",
+      "url": "https://fortune.com/2024/08/28/travis-kelce-strikes-lucrative-100-million-amazon-podcast-deal-worth-more-than-his-football-contract/"
+    },
+    {
+      "title": "CBS News: Kelce brothers reach New Heights podcast deal with Amazon's Wondery",
+      "url": "https://www.cbsnews.com/news/new-heights-amazon-wondery-deal-kelce"
+    },
+    {
+      "title": "Wikipedia: Jason Kelce",
+      "url": "https://en.wikipedia.org/wiki/Jason_Kelce"
+    },
+    {
+      "title": "Wikipedia: Travis Kelce",
+      "url": "https://en.wikipedia.org/wiki/Travis_Kelce"
+    },
+    {
+      "title": "Wikipedia: New Heights (podcast)",
+      "url": "https://en.wikipedia.org/wiki/New_Heights_(podcast)"
+    }
+  ],
+  "look": "afterhour",
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-137-famous-kelce-podcast",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-137-famous-kelce-podcast/137-famous-kelce-podcast.mp4",
+    "post_at": "2026-11-23T12:00:00-05:00",
+    "buffer_post": "6b025cb2846b0ee90756dc38",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-22T03:08:34.783745+00:00",
+    "seconds": 24.05,
+    "remade_from": "6b0258f8cc364169c12186f1",
+    "eyes": {
+      "score": 8,
+      "problems": [
+        "The video loops back to the cover frame at the end, which is repetitive and unnecessary for a short.",
+        "The text at the bottom is occasionally difficult to read due to the busy background colors.",
+        "The transition between the podcast studio scene and the final call-to-action is slightly abrupt."
+      ],
+      "best_fix": "Remove the final loop back to the cover frame and end the video on a stronger, clear call-to-action screen.",
+      "model": "gemini-3.1-flash-lite",
+      "acts": null
+    }
+  }
+}

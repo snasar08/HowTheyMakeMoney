@@ -1,0 +1,196 @@
+{
+  "id": "156",
+  "slug": "whatif-red-bull-cans",
+  "company": "Red Bull",
+  "format": "whatif",
+  "visual_style": "lowpoly",
+  "hook_style": "whatif",
+  "title_style": "number",
+  "theme": "clean_navy",
+  "status": "ready",
+  "score": 88,
+  "title": "Red Bull's Cans Circle Earth 23 Times",
+  "name_card": "What if you lined up every Red Bull can",
+  "name_sub": "one year of cans around Earth",
+  "description": "What if you lined up every Red Bull can sold in one year, side by side, around the Earth? Red Bull says 13.969 billion cans were sold worldwide in 2025. Our math: we used a standard can, 6.6 centimeters wide at its widest point (Wikipedia, the US standard can; Red Bull's 8.4 fl oz can is slimmer, so the real line would be shorter). 13.969 billion x 6.6 cm = about 922,000 km. Earth's circumference is about 40,075 km (Wikipedia). 922,000 / 40,075 = about 23 trips around. This is simple made-up math for fun, not a Red Bull claim.\n\nSources:\n- Red Bull: How many cans does Red Bull sell worldwide?: https://www.redbull.com/us-en/energydrink/how-many-cans-does-red-bull-sell-world-wide\n- Wikipedia: Beverage can: https://en.wikipedia.org/wiki/Beverage_can\n- Wikipedia: Earth: https://en.wikipedia.org/wiki/Earth\n\n#shorts #redbull #whatif #howtheymakemoney",
+  "tags": [
+    "red bull",
+    "whatif",
+    "energy drink",
+    "shorts"
+  ],
+  "images": {},
+  "hud_label": "CANS IN ONE YEAR",
+  "loop": "Next time you see a can, remember:",
+  "cta": "Red Bull or Monster? Pick one.",
+  "cta_question": "Red Bull or Monster?",
+  "hero": {
+    "skin": "c68a5e",
+    "hair": "short",
+    "hair_color": "2a1d14",
+    "beard": "none",
+    "outfit": "tee",
+    "shirt": "1c2a5a",
+    "pants": "2b2f3a",
+    "shoes": "f4f4f4",
+    "chest": "",
+    "trim": "c9ced6",
+    "height": 0.85
+  },
+  "scenes": [
+    {
+      "narration": "A year of Red Bull cans would wrap around Earth 23 times.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "space",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": null
+      },
+      "toon": [
+        {
+          "place": "space",
+          "mood": "shock",
+          "things": [
+            "globe",
+            "soda"
+          ],
+          "card": {
+            "text": "23 TIMES",
+            "kind": "screen",
+            "sub": "AROUND EARTH"
+          },
+          "view": "wide"
+        }
+      ]
+    },
+    {
+      "narration": "Just in 2025, Red Bull sold almost 14 billion cans.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "stall",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": null
+      },
+      "toon": [
+        {
+          "place": "stall",
+          "mood": "excited",
+          "brand": {
+            "name": "Red Bull",
+            "bg": "#1c2a5a",
+            "fg": "#c9ced6",
+            "icon": "bolt"
+          },
+          "things": [
+            "soda"
+          ],
+          "card": {
+            "text": "14 BILLION",
+            "kind": "screen",
+            "sub": "CANS SOLD, 2025"
+          },
+          "view": "ms"
+        }
+      ]
+    },
+    {
+      "narration": "Then line them up side by side, and they stretch 922,000 kilometers.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "track",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": null
+      },
+      "toon": [
+        {
+          "place": "track",
+          "mood": "dazed",
+          "things": [
+            "soda",
+            "chart"
+          ],
+          "card": {
+            "text": "922,000 KM",
+            "kind": "screen",
+            "sub": "OUR MATH"
+          },
+          "view": "ws"
+        }
+      ]
+    },
+    {
+      "narration": "But Earth is only 40,075 kilometers around.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "space",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": null
+      },
+      "toon": [
+        {
+          "place": "space",
+          "mood": "shock",
+          "things": [
+            "globe"
+          ],
+          "card": {
+            "text": "40,075 KM",
+            "kind": "screen",
+            "sub": "EARTH, AROUND"
+          },
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "So the cans circle the whole planet, again and again.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "office",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": null
+      },
+      "toon": [
+        {
+          "place": "space",
+          "mood": "laugh",
+          "things": [
+            "globe",
+            "soda"
+          ],
+          "card": {
+            "text": "23 LAPS",
+            "kind": "screen",
+            "sub": "OUR MATH"
+          },
+          "view": "face"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Red Bull: How many cans does Red Bull sell worldwide?",
+      "url": "https://www.redbull.com/us-en/energydrink/how-many-cans-does-red-bull-sell-world-wide"
+    },
+    {
+      "title": "Wikipedia: Beverage can",
+      "url": "https://en.wikipedia.org/wiki/Beverage_can"
+    },
+    {
+      "title": "Wikipedia: Earth",
+      "url": "https://en.wikipedia.org/wiki/Earth"
+    }
+  ],
+  "look": "afterhour"
+}

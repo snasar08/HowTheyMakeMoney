@@ -112,6 +112,18 @@ def lint(s: dict) -> tuple[list[str], list[str]]:
         need = int(spoken / 2.6 / 3)  # about one new picture every 3 s; word cards fill the rest
         if len(s.get("images", {})) < need:
             warn.append(f"only {len(s.get('images', {}))} images for ~{need} needed (no picture twice in a Short)")
+    fc = s.get("first_comment")
+    if fc is not None:   # Nov 22, Sam: the channel's own comment under every Short (pipeline/first_comment.py)
+        if not isinstance(fc, str) or not fc.strip():
+            err.append("first_comment is empty")
+        elif len(fc) > 120:
+            err.append(f"first_comment is {len(fc)} characters (max 120)")
+        elif re.search(r"https?://|www\.|@|#", fc):
+            err.append("first_comment has a link, @ or # (not allowed)")
+        elif "?" not in fc:
+            warn.append("first_comment should ask viewers something (end with a question)")
+    elif s.get("status") == "ready":
+        warn.append("no first_comment (the channel's own comment when it posts; see WRITER_GUIDE)")
     return err, warn
 
 

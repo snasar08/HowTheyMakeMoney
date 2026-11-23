@@ -15,7 +15,7 @@ import traceback
 from pathlib import Path
 
 from .publish import HORIZON_H, POST_START, deliver, posting_started, publish_slots, taken_slots
-from .render import render_script
+from .render import NewLookMissing, render_script
 
 ROOT = Path(__file__).resolve().parent.parent
 SCRIPTS = ROOT / "content" / "scripts"
@@ -36,37 +36,50 @@ def _weights() -> dict:
         return {}
 
 
-def ready_scripts(recent: list[str] | None = None) -> list[Path]:
-    """Ready scripts in posting order. Priority = virality `score` × the format's performance
-    weight (analytics/format_weights.json, 1.0 until there's enough data); then greedily pick so
-    the format differs from the previous post (formats alternate day to day)."""
-    items = []
+SHARE_WINDOW = 6       # posts of history the share rule looks back over
+MIN_SHARE_WEIGHT = 0.6  # Sam, Nov 22: "every video gets love" - a weak format still gets at least this weight
+
+
+def ready_scripts(recent: list | None = None) -> list[Path]:
+    """Ready scripts in posting order.
+
+    Sam, Nov 22: keep the boost, but share. The boost (analytics/format_weights.json, 1.0 for a
+    format with no data, never below MIN_SHARE_WEIGHT) now sets each format's SHARE of posts
+    instead of multiplying scores, so a boosted format posts more often but never crowds the
+    others out. Each pick goes to the format furthest behind its share (counting the last
+    SHARE_WINDOW posts), never the same format twice in a row when another one is ready; inside
+    a format the highest `score` goes first (and a different look than the last post if possible)."""
     w = _weights()
+    pools: dict[str, list] = {}
     for p in sorted(SCRIPTS.glob("*.json")):
         try:
             s = json.loads(p.read_text(encoding="utf-8"))
             if s.get("status") == "ready":
-                fmt = s.get("format", "how")
-                items.append([float(s.get("score", 0)) * float(w.get(fmt, 1.0)), p.name, p, fmt,
-                              s.get("visual_style", "charts3d")])
+                pools.setdefault(s.get("format", "how"), []).append(
+                    (-float(s.get("score", 0)), p.name, p, s.get("visual_style", "charts3d")))
         except json.JSONDecodeError:
             print(f"[run] skipping invalid JSON: {p.name}")
-    items.sort(key=lambda x: (-x[0], x[1]))
-    last = (recent or [(None, None)])[-1]
-    looks = [look for _, look in (recent or [])][-LOWPOLY_GAP:]
+    for v in pools.values():
+        v.sort(key=lambda x: (x[0], x[1]))
+    share = {f: max(float(w.get(f, 1.0)), MIN_SHARE_WEIGHT) for f in pools}
+    hist = list(recent if recent is not None else recent_formats(SHARE_WINDOW))[-SHARE_WINDOW:]
     out = []
+    while any(pools.values()):
+        live = [f for f, v in pools.items() if v]
+        total = sum(share[f] for f in live)
+        n = len(hist) + 1
+        last_fmt, last_look = hist[-1] if hist else (None, None)
 
-    def ok(it):  # Sam, Nov 9: low-poly looks empty; at most one in every LOWPOLY_GAP + 1 posts
-        return it[4] != "lowpoly" or "lowpoly" not in looks
+        def behind(f):  # how far this format is behind its fair share of the next n posts
+            return share[f] / total * n - sum(1 for x, _ in hist if x == f)
 
-    while items:  # differ from the previous post in format AND look if possible, else format only
-        pick = (next((it for it in items if ok(it) and it[3] != last[0] and it[4] != last[1]), None)
-                or next((it for it in items if ok(it) and it[3] != last[0]), None)
-                or next((it for it in items if ok(it)), items[0]))
-        items.remove(pick)
-        out.append(pick[2])
-        last = (pick[3], pick[4])
-        looks = (looks + [pick[4]])[-LOWPOLY_GAP:]
+        cands = [f for f in live if f != last_fmt] or live
+        fmt = max(cands, key=lambda f: (behind(f), share[f], -pools[f][0][0]))
+        pool = pools[fmt]
+        it = next((x for x in pool if x[3] != last_look), pool[0])
+        pool.remove(it)
+        out.append(it[2])
+        hist = (hist + [(fmt, it[3])])[-SHARE_WINDOW:]
     return out
 
 
@@ -147,10 +160,13 @@ def remake_jobs() -> list | None:
     now = dt.datetime.now(dt.timezone.utc)
     out = []
     for i in ids:
+        i, _, move_to = i.partition("@")   # Nov 21: "137@2026-11-23T12:00-05:00" books the remake at a new time
         for p in SCRIPTS.glob(f"{i}-*.json"):
             s = json.loads(p.read_text(encoding="utf-8"))
             d = s.get("delivered") or {}
             when = dt.datetime.fromisoformat(d["post_at"]) if d.get("post_at") else None
+            if when and move_to:
+                when = dt.datetime.fromisoformat(move_to)
             if s.get("status") != "delivered" or not d.get("buffer_post") or not when or when <= now + dt.timedelta(minutes=25):
                 print(f"[remake] skip {p.stem}: not a future Buffer post")
                 continue
@@ -196,13 +212,34 @@ def run_remake(jobs: list, args) -> int:
                 continue
             save_cover(video, ROOT / "analytics" / "covers" / f"{path.stem}.jpg")
             result = deliver(video, script, when)
+            old_gone = False
+            if not result.get("buffer_post") and result.get("asset_url") and old.get("buffer_post"):
+                # Nov 21: Buffer allows 2 YouTube posts a day, so a full day refuses the new post while the old one
+                # is still booked. The old one is the old look (never post it, Sam), so free its slot and book again.
+                P.buffer_delete(old["buffer_post"])
+                old_gone = True
+                print(f"[remake] deleted old Buffer post {old['buffer_post']} to free the day")
+                try:
+                    post = P.buffer_schedule(result["asset_url"], script, when)
+                    check = P.buffer_post(post["id"])
+                    result = {**result, "mode": "buffer", "buffer_post": post["id"], "buffer_status": check.get("status")}
+                except Exception as e:  # noqa: BLE001
+                    script["status"] = "needs_fix"
+                    script["needs_fix"] = [f"remake: new-look video is ready at {result.get('release')} but Buffer "
+                                           f"would not book it for {when:%a %b %d %H:%M} ({e}); old post was deleted. "
+                                           f"Book it in Buffer or set it back to ready."]
+                    path.write_text(json.dumps(script, indent=2, ensure_ascii=False) + "\n")
+                    print(f"::error title={path.stem} remake::{script['needs_fix'][0]}")
+                    bad += 1
+                    continue
             if not result.get("buffer_post"):
                 raise RuntimeError(f"new post not booked: {result}")
-            try:
-                P.buffer_delete(old["buffer_post"])
-                print(f"[remake] deleted old Buffer post {old['buffer_post']}")
-            except Exception as e:  # noqa: BLE001  two posts in one slot is better than none; say so loudly
-                print(f"::error title={path.stem} remake::new post booked but old post {old['buffer_post']} NOT deleted: {e!r}")
+            if not old_gone:
+                try:
+                    P.buffer_delete(old["buffer_post"])
+                    print(f"[remake] deleted old Buffer post {old['buffer_post']}")
+                except Exception as e:  # noqa: BLE001  two posts in one slot is better than none; say so loudly
+                    print(f"::error title={path.stem} remake::new post booked but old post {old['buffer_post']} NOT deleted: {e!r}")
             script["status"] = "delivered"
             script["delivered"] = {**result, "rendered_at": dt.datetime.now(dt.timezone.utc).isoformat(), "seconds": info["seconds"],
                                    "remade_from": old.get("buffer_post"), **({"eyes": info["eyes"]} if info.get("eyes") else {}),
@@ -227,7 +264,7 @@ def main() -> int:
         print(f"[run] posting starts {POST_START} (New York); nothing to do yet")
         return 0
 
-    queue = ready_scripts(recent_formats(LOWPOLY_GAP))
+    queue = ready_scripts(recent_formats(SHARE_WINDOW))
     remake = remake_jobs()
     if remake is not None:              # Nov 18: re-render already scheduled Shorts in the new look, same slots
         return run_remake(remake, args)
@@ -315,6 +352,18 @@ def main() -> int:
                                    **({"scene_scan": info["scene_scan"]} if info.get("scene_scan") else {})}
             path.write_text(json.dumps(script, indent=2, ensure_ascii=False) + "\n")
             print(f"[run] delivered {path.stem}: {result}")
+        except NewLookMissing as e:  # Nov 21 (Sam): never the old look. Failed render -> needs_fix (the Saturday routine fixes it)
+            if e.kind == "fail" and not args.dry:
+                script = json.loads(path.read_text())
+                script["status"] = "needs_fix"
+                script["needs_fix"] = [f"{e} (not posted; render it again in the new look)"]
+                path.write_text(json.dumps(script, indent=2, ensure_ascii=False) + "\n")
+                failures += 1
+                print(f"::error title={path.stem} not posted::{e}; moved to needs_fix")
+            else:
+                print(f"::warning title={path.stem} not posted::{e}; stays ready")
+            if spares:
+                jobs.append((spares.pop(0), when))
         except Exception:  # keep going; the failed script stays 'ready' for next run
             failures += 1
             traceback.print_exc()
