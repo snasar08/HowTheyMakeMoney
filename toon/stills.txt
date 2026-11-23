@@ -1,1 +1,1 @@
-Film2D 20 1 thumb102.json
+AhShort 0,15,30,50,70,100,130 0.5 plans/137.json swangle
