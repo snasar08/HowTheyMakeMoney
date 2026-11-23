@@ -1,10 +1,52 @@
 {
- "at": "2026-11-22T18:29:18.123672+00:00",
+ "at": "2026-11-23T19:29:58.491053+00:00",
  "shorts": [
+  {
+   "video": "H8TQsxm7j6c",
+   "title": "From $2.46 Billion to $4 Trillion",
+   "views": 1305,
+   "avg_pct": 75.9,
+   "avg_seconds": 28,
+   "tags": {
+    "script": "088",
+    "slug": "how-apple-1997",
+    "topic": "Apple",
+    "format": "how",
+    "visual_style": "editorial",
+    "theme": "clean_navy",
+    "hook_style": "number",
+    "title_style": "number",
+    "length_s": 36.39,
+    "length_bucket": "30-38",
+    "post_at": "2026-11-16T18:00:00-05:00",
+    "post_slot": "18:00",
+    "score": 90
+   },
+   "engagedViews": 643,
+   "shares": 0,
+   "subscribersGained": 0,
+   "stayed_pct": 49.3,
+   "traffic": {
+    "NO_LINK_OTHER": 0,
+    "YT_CHANNEL": 5,
+    "YT_SEARCH": 20,
+    "YT_OTHER_PAGE": 24,
+    "EXT_URL": 1,
+    "SHORTS": 1255
+   },
+   "start": 127,
+   "q25": 98,
+   "q50": 74,
+   "q75": 63,
+   "end": 28,
+   "drop_at_pct": 87,
+   "drop_at_s": 32.1,
+   "drop_size": 20
+  },
   {
    "video": "NDSx2v-Zyv4",
    "title": "The 180 Million Euro Teenager",
-   "views": 1296,
+   "views": 1297,
    "avg_pct": 70.7,
    "avg_seconds": 19,
    "tags": {
@@ -22,6 +64,20 @@
     "post_slot": "16:30",
     "score": 93
    },
+   "engagedViews": 749,
+   "shares": 0,
+   "subscribersGained": 1,
+   "stayed_pct": 57.7,
+   "traffic": {
+    "NO_LINK_OTHER": 2,
+    "SUBSCRIBER": 2,
+    "YT_CHANNEL": 8,
+    "YT_SEARCH": 39,
+    "YT_OTHER_PAGE": 13,
+    "EXT_URL": 1,
+    "PLAYLIST": 1,
+    "SHORTS": 1231
+   },
    "start": 128,
    "q25": 95,
    "q50": 66,
@@ -30,66 +86,6 @@
    "drop_at_pct": 15,
    "drop_at_s": 4.0,
    "drop_size": 13
-  },
-  {
-   "video": "aGOO0z7dfpk",
-   "title": "From a Napkin Contract to $1.1 Billion",
-   "views": 1258,
-   "avg_pct": 80.3,
-   "avg_seconds": 24,
-   "tags": {
-    "script": "070",
-    "slug": "famous-messi",
-    "topic": "Lionel Messi",
-    "format": "famous",
-    "visual_style": "lowpoly",
-    "theme": "bold_bright",
-    "hook_style": "surprise",
-    "title_style": "statement",
-    "length_s": 29.63,
-    "length_bucket": "<30",
-    "post_at": "2026-11-09T18:00:00-05:00",
-    "post_slot": "18:00",
-    "score": 92
-   },
-   "start": 140,
-   "q25": 99,
-   "q50": 78,
-   "q75": 64,
-   "end": 41,
-   "drop_at_pct": 17,
-   "drop_at_s": 5.1,
-   "drop_size": 17
-  },
-  {
-   "video": "H8TQsxm7j6c",
-   "title": "From $2.46 Billion to $4 Trillion",
-   "views": 1219,
-   "avg_pct": 77.2,
-   "avg_seconds": 28,
-   "tags": {
-    "script": "088",
-    "slug": "how-apple-1997",
-    "topic": "Apple",
-    "format": "how",
-    "visual_style": "editorial",
-    "theme": "clean_navy",
-    "hook_style": "number",
-    "title_style": "number",
-    "length_s": 36.39,
-    "length_bucket": "30-38",
-    "post_at": "2026-11-16T18:00:00-05:00",
-    "post_slot": "18:00",
-    "score": 90
-   },
-   "start": 128,
-   "q25": 100,
-   "q50": 76,
-   "q75": 64,
-   "end": 29,
-   "drop_at_pct": 87,
-   "drop_at_s": 31.5,
-   "drop_size": 21
   },
   {
    "video": "PRUzamrtY2E",
@@ -111,6 +107,18 @@
     "post_at": "2026-11-11T15:00:00-05:00",
     "post_slot": "15:00",
     "score": 91
+   },
+   "engagedViews": 755,
+   "shares": 0,
+   "subscribersGained": 1,
+   "stayed_pct": 64.4,
+   "traffic": {
+    "NO_LINK_OTHER": 0,
+    "YT_CHANNEL": 4,
+    "YT_SEARCH": 31,
+    "YT_OTHER_PAGE": 2,
+    "EXT_URL": 2,
+    "SHORTS": 1133
    },
    "start": 132,
    "q25": 94,
@@ -142,6 +150,19 @@
     "post_slot": "12:00",
     "score": 94
    },
+   "engagedViews": 651,
+   "shares": 0,
+   "subscribersGained": 0,
+   "stayed_pct": 57.1,
+   "traffic": {
+    "NO_LINK_OTHER": 0,
+    "SUBSCRIBER": 1,
+    "YT_CHANNEL": 6,
+    "YT_SEARCH": 22,
+    "YT_OTHER_PAGE": 8,
+    "PLAYLIST": 1,
+    "SHORTS": 1103
+   },
    "start": 147,
    "q25": 118,
    "q50": 86,
@@ -154,8 +175,8 @@
   {
    "video": "988e9PFGksE",
    "title": "He Turned Down $20 Million a Year",
-   "views": 1119,
-   "avg_pct": 79.2,
+   "views": 1126,
+   "avg_pct": 81.1,
    "avg_seconds": 19,
    "tags": {
     "script": "092",
@@ -172,13 +193,24 @@
     "post_slot": "15:00",
     "score": 90
    },
-   "start": 129,
-   "q25": 105,
-   "q50": 78,
-   "q75": 65,
-   "end": 33,
+   "engagedViews": 618,
+   "shares": 0,
+   "stayed_pct": 54.9,
+   "traffic": {
+    "NO_LINK_OTHER": 0,
+    "YT_CHANNEL": 0,
+    "YT_SEARCH": 23,
+    "YT_OTHER_PAGE": 10,
+    "EXT_URL": 2,
+    "SHORTS": 1091
+   },
+   "start": 131,
+   "q25": 107,
+   "q50": 79,
+   "q75": 67,
+   "end": 34,
    "drop_at_pct": 83,
-   "drop_at_s": 19.9,
+   "drop_at_s": 19.4,
    "drop_size": 17
   },
   {
@@ -201,6 +233,17 @@
     "post_at": "2026-11-15T18:00:00-05:00",
     "post_slot": "18:00",
     "score": 90
+   },
+   "engagedViews": 688,
+   "shares": 0,
+   "subscribersGained": 1,
+   "stayed_pct": 63.0,
+   "traffic": {
+    "NO_LINK_OTHER": 0,
+    "YT_CHANNEL": 5,
+    "YT_SEARCH": 28,
+    "YT_OTHER_PAGE": 4,
+    "SHORTS": 1055
    },
    "start": 135,
    "q25": 100,
@@ -232,6 +275,17 @@
     "post_slot": "15:00",
     "score": 90
    },
+   "engagedViews": 710,
+   "shares": 0,
+   "subscribersGained": 0,
+   "stayed_pct": 65.7,
+   "traffic": {
+    "NO_LINK_OTHER": 0,
+    "YT_CHANNEL": 10,
+    "YT_SEARCH": 12,
+    "YT_OTHER_PAGE": 0,
+    "SHORTS": 1059
+   },
    "start": 113,
    "q25": 85,
    "q50": 48,
@@ -242,11 +296,51 @@
    "drop_size": 15
   },
   {
+   "video": "5uP5HyJ204w",
+   "title": "The \u20ac222 Million Transfer Record",
+   "views": 1074,
+   "avg_pct": 77.5,
+   "avg_seconds": 23,
+   "tags": {
+    "script": "080",
+    "slug": "famous-neymar",
+    "topic": "Neymar",
+    "format": "famous",
+    "visual_style": "lowpoly",
+    "theme": "bold_bright",
+    "hook_style": "number",
+    "title_style": "number",
+    "length_s": 28.98,
+    "length_bucket": "<30",
+    "post_at": "2026-11-18T18:00:00-05:00",
+    "post_slot": "18:00",
+    "score": 89
+   },
+   "engagedViews": 566,
+   "shares": 0,
+   "subscribersGained": 1,
+   "stayed_pct": 52.7,
+   "traffic": {
+    "NO_LINK_OTHER": 0,
+    "YT_CHANNEL": 4,
+    "YT_SEARCH": 14,
+    "SHORTS": 1056
+   },
+   "start": 135,
+   "q25": 99,
+   "q50": 75,
+   "q75": 66,
+   "end": 15,
+   "drop_at_pct": 93,
+   "drop_at_s": 27.6,
+   "drop_size": 22
+  },
+  {
    "video": "Sx27tDSQFgs",
    "title": "$1 Million to Play a Different Game",
-   "views": 1060,
-   "avg_pct": 86.0,
-   "avg_seconds": 24,
+   "views": 1068,
+   "avg_pct": 85.4,
+   "avg_seconds": 23,
    "tags": {
     "script": "083",
     "slug": "famous-ninja",
@@ -262,13 +356,25 @@
     "post_slot": "15:00",
     "score": 90
    },
+   "engagedViews": 554,
+   "shares": 0,
+   "subscribersGained": 0,
+   "stayed_pct": 51.9,
+   "traffic": {
+    "NO_LINK_OTHER": 0,
+    "YT_CHANNEL": 5,
+    "YT_SEARCH": 31,
+    "YT_OTHER_PAGE": 19,
+    "EXT_URL": 1,
+    "SHORTS": 1012
+   },
    "start": 142,
-   "q25": 112,
-   "q50": 85,
-   "q75": 67,
+   "q25": 111,
+   "q50": 84,
+   "q75": 66,
    "end": 43,
    "drop_at_pct": 85,
-   "drop_at_s": 23.7,
+   "drop_at_s": 22.9,
    "drop_size": 12
   },
   {
@@ -292,6 +398,19 @@
     "post_slot": "12:00",
     "score": 92
    },
+   "engagedViews": 574,
+   "shares": 0,
+   "subscribersGained": 0,
+   "stayed_pct": 54.8,
+   "traffic": {
+    "NO_LINK_OTHER": 1,
+    "YT_CHANNEL": 6,
+    "YT_SEARCH": 21,
+    "YT_OTHER_PAGE": 3,
+    "EXT_URL": 4,
+    "SHORTS": 1011,
+    "SOUND_PAGE": 1
+   },
    "start": 125,
    "q25": 99,
    "q50": 72,
@@ -302,40 +421,10 @@
    "drop_size": 21
   },
   {
-   "video": "9x_20Qe2kkY",
-   "title": "His Card Sold for $8.04 Million. He's 19.",
-   "views": 1039,
-   "avg_pct": 80.3,
-   "avg_seconds": 19,
-   "tags": {
-    "script": "131",
-    "slug": "famous-flagg-card",
-    "topic": "Cooper Flagg",
-    "format": "famous",
-    "visual_style": "lowpoly",
-    "theme": "bold_bright",
-    "hook_style": "surprise",
-    "title_style": "number",
-    "length_s": 23.69,
-    "length_bucket": "<30",
-    "post_at": "2026-11-18T16:30:00-05:00",
-    "post_slot": "16:30",
-    "score": 90
-   },
-   "start": 130,
-   "q25": 106,
-   "q50": 80,
-   "q75": 67,
-   "end": 31,
-   "drop_at_pct": 84,
-   "drop_at_s": 19.9,
-   "drop_size": 20
-  },
-  {
    "video": "oZgN9jlnT2c",
    "title": "From a Retired Shirt at 17 to \u20ac103 Million",
-   "views": 1036,
-   "avg_pct": 72.1,
+   "views": 1040,
+   "avg_pct": 72.0,
    "avg_seconds": 18,
    "tags": {
     "script": "130",
@@ -352,14 +441,110 @@
     "post_slot": "18:00",
     "score": 91
    },
+   "engagedViews": 579,
+   "shares": 0,
+   "subscribersGained": 0,
+   "stayed_pct": 55.7,
+   "traffic": {
+    "NO_LINK_OTHER": 0,
+    "YT_CHANNEL": 4,
+    "YT_SEARCH": 34,
+    "YT_OTHER_PAGE": 3,
+    "EXT_URL": 1,
+    "SHORTS": 998
+   },
    "start": 132,
    "q25": 97,
-   "q50": 65,
+   "q50": 64,
    "q75": 53,
    "end": 32,
-   "drop_at_pct": 20,
-   "drop_at_s": 5.0,
+   "drop_at_pct": 17,
+   "drop_at_s": 4.3,
    "drop_size": 14
+  },
+  {
+   "video": "9x_20Qe2kkY",
+   "title": "His Card Sold for $8.04 Million. He's 19.",
+   "views": 1040,
+   "avg_pct": 80.2,
+   "avg_seconds": 19,
+   "tags": {
+    "script": "131",
+    "slug": "famous-flagg-card",
+    "topic": "Cooper Flagg",
+    "format": "famous",
+    "visual_style": "lowpoly",
+    "theme": "bold_bright",
+    "hook_style": "surprise",
+    "title_style": "number",
+    "length_s": 23.69,
+    "length_bucket": "<30",
+    "post_at": "2026-11-18T16:30:00-05:00",
+    "post_slot": "16:30",
+    "score": 90
+   },
+   "engagedViews": 555,
+   "shares": 0,
+   "subscribersGained": 1,
+   "stayed_pct": 53.4,
+   "traffic": {
+    "NO_LINK_OTHER": 0,
+    "YT_CHANNEL": 8,
+    "YT_SEARCH": 40,
+    "YT_OTHER_PAGE": 6,
+    "SHORTS": 986
+   },
+   "start": 130,
+   "q25": 106,
+   "q50": 80,
+   "q75": 66,
+   "end": 31,
+   "drop_at_pct": 84,
+   "drop_at_s": 19.9,
+   "drop_size": 20
+  },
+  {
+   "video": "6fwSsIATYPo",
+   "title": "From $1.5 Million at 16 to $765 Million",
+   "views": 1037,
+   "avg_pct": 104.2,
+   "avg_seconds": 29,
+   "tags": {
+    "script": "091",
+    "slug": "famous-soto",
+    "topic": "Juan Soto",
+    "format": "famous",
+    "visual_style": "lowpoly",
+    "theme": "bold_bright",
+    "hook_style": "number",
+    "title_style": "number",
+    "length_s": 27.29,
+    "length_bucket": "<30",
+    "post_at": "2026-11-18T20:00:00-05:00",
+    "post_slot": "20:00",
+    "score": 89
+   },
+   "engagedViews": 533,
+   "shares": 1,
+   "subscribersGained": 0,
+   "stayed_pct": 51.4,
+   "traffic": {
+    "NO_LINK_OTHER": 0,
+    "SUBSCRIBER": 1,
+    "YT_CHANNEL": 2,
+    "YT_SEARCH": 15,
+    "YT_OTHER_PAGE": 9,
+    "EXT_URL": 1,
+    "SHORTS": 1009
+   },
+   "start": 159,
+   "q25": 130,
+   "q50": 103,
+   "q75": 92,
+   "end": 60,
+   "drop_at_pct": 83,
+   "drop_at_s": 23.1,
+   "drop_size": 18
   },
   {
    "video": "ANr26BqGNNI",
@@ -382,6 +567,17 @@
     "post_slot": "16:30",
     "score": 94
    },
+   "engagedViews": 633,
+   "shares": 0,
+   "subscribersGained": 1,
+   "stayed_pct": 61.2,
+   "traffic": {
+    "NO_LINK_OTHER": 0,
+    "YT_CHANNEL": 3,
+    "YT_SEARCH": 24,
+    "YT_OTHER_PAGE": 1,
+    "SHORTS": 1007
+   },
    "start": 124,
    "q25": 84,
    "q50": 48,
@@ -392,40 +588,10 @@
    "drop_size": 18
   },
   {
-   "video": "-4AV3y6mP2Y",
-   "title": "How Much of Your Uber Fare Does Uber Keep?",
-   "views": 1025,
-   "avg_pct": 57.8,
-   "avg_seconds": 15,
-   "tags": {
-    "script": "011",
-    "slug": "uber",
-    "topic": "Uber",
-    "format": "how",
-    "visual_style": "charts3d",
-    "theme": "bold_bright",
-    "hook_style": "question",
-    "title_style": "question",
-    "length_s": 25.95,
-    "length_bucket": "<30",
-    "post_at": "2026-11-07T15:00:00-05:00",
-    "post_slot": "15:00",
-    "score": 89
-   },
-   "start": 110,
-   "q25": 83,
-   "q50": 58,
-   "q75": 34,
-   "end": 10,
-   "drop_at_pct": 16,
-   "drop_at_s": 4.2,
-   "drop_size": 19
-  },
-  {
    "video": "FbFAKvKN0cI",
    "title": "Cut After 2 Months, Then $11.4 Billion",
-   "views": 1021,
-   "avg_pct": 69.6,
+   "views": 1029,
+   "avg_pct": 69.4,
    "avg_seconds": 18,
    "tags": {
     "script": "085",
@@ -442,14 +608,68 @@
     "post_slot": "12:00",
     "score": 90
    },
-   "start": 131,
+   "engagedViews": 491,
+   "shares": 0,
+   "subscribersGained": 0,
+   "stayed_pct": 47.7,
+   "traffic": {
+    "NO_LINK_OTHER": 1,
+    "SUBSCRIBER": 1,
+    "YT_SEARCH": 10,
+    "YT_OTHER_PAGE": 10,
+    "SHORTS": 1007
+   },
+   "start": 130,
    "q25": 91,
    "q50": 63,
    "q75": 53,
    "end": 16,
    "drop_at_pct": 16,
-   "drop_at_s": 4.1,
-   "drop_size": 20
+   "drop_at_s": 4.2,
+   "drop_size": 19
+  },
+  {
+   "video": "0HOuiRFjoDY",
+   "title": "What If You Got Paid $23,280 to Sleep?",
+   "views": 1019,
+   "avg_pct": 70.9,
+   "avg_seconds": 20,
+   "tags": {
+    "script": "084",
+    "slug": "famous-kai-cenat",
+    "topic": "Kai Cenat",
+    "format": "famous",
+    "visual_style": "lowpoly",
+    "theme": "dark_neon",
+    "hook_style": "surprise",
+    "title_style": "whatif",
+    "length_s": 28.56,
+    "length_bucket": "<30",
+    "post_at": "2026-11-17T16:30:00-05:00",
+    "post_slot": "16:30",
+    "score": 91
+   },
+   "engagedViews": 544,
+   "shares": 0,
+   "subscribersGained": 0,
+   "stayed_pct": 53.4,
+   "traffic": {
+    "NO_LINK_OTHER": 0,
+    "SUBSCRIBER": 1,
+    "YT_CHANNEL": 2,
+    "YT_SEARCH": 13,
+    "RELATED_VIDEO": 0,
+    "YT_OTHER_PAGE": 13,
+    "SHORTS": 990
+   },
+   "start": 130,
+   "q25": 95,
+   "q50": 67,
+   "q75": 51,
+   "end": 31,
+   "drop_at_pct": 16,
+   "drop_at_s": 4.5,
+   "drop_size": 13
   },
   {
    "video": "oygxmVi4Icg",
@@ -471,6 +691,18 @@
     "post_at": "2026-11-10T15:00:00-05:00",
     "post_slot": "15:00",
     "score": 91
+   },
+   "engagedViews": 391,
+   "shares": 0,
+   "subscribersGained": 2,
+   "stayed_pct": 38.4,
+   "traffic": {
+    "NO_LINK_OTHER": 0,
+    "SUBSCRIBER": 3,
+    "YT_CHANNEL": 5,
+    "YT_SEARCH": 11,
+    "YT_OTHER_PAGE": 3,
+    "SHORTS": 996
    },
    "start": 118,
    "q25": 69,
@@ -502,6 +734,17 @@
     "post_slot": "15:00",
     "score": 90
    },
+   "engagedViews": 676,
+   "shares": 1,
+   "subscribersGained": 4,
+   "stayed_pct": 66.4,
+   "traffic": {
+    "NO_LINK_OTHER": 1,
+    "YT_CHANNEL": 10,
+    "YT_SEARCH": 95,
+    "YT_OTHER_PAGE": 8,
+    "SHORTS": 904
+   },
    "start": 123,
    "q25": 97,
    "q50": 65,
@@ -512,41 +755,11 @@
    "drop_size": 13
   },
   {
-   "video": "0HOuiRFjoDY",
-   "title": "What If You Got Paid $23,280 to Sleep?",
-   "views": 1016,
-   "avg_pct": 70.8,
-   "avg_seconds": 20,
-   "tags": {
-    "script": "084",
-    "slug": "famous-kai-cenat",
-    "topic": "Kai Cenat",
-    "format": "famous",
-    "visual_style": "lowpoly",
-    "theme": "dark_neon",
-    "hook_style": "surprise",
-    "title_style": "whatif",
-    "length_s": 28.56,
-    "length_bucket": "<30",
-    "post_at": "2026-11-17T16:30:00-05:00",
-    "post_slot": "16:30",
-    "score": 91
-   },
-   "start": 130,
-   "q25": 95,
-   "q50": 67,
-   "q75": 50,
-   "end": 31,
-   "drop_at_pct": 16,
-   "drop_at_s": 4.5,
-   "drop_size": 13
-  },
-  {
    "video": "OnAqPBAM37s",
    "title": "From a Baby Photo With Messi to $45 Million",
-   "views": 1015,
-   "avg_pct": 63.3,
-   "avg_seconds": 18,
+   "views": 1018,
+   "avg_pct": 63.4,
+   "avg_seconds": 19,
    "tags": {
     "script": "086",
     "slug": "famous-yamal",
@@ -562,13 +775,23 @@
     "post_slot": "16:30",
     "score": 92
    },
+   "engagedViews": 594,
+   "shares": 0,
+   "subscribersGained": 0,
+   "stayed_pct": 58.3,
+   "traffic": {
+    "NO_LINK_OTHER": 0,
+    "YT_CHANNEL": 11,
+    "YT_SEARCH": 21,
+    "SHORTS": 986
+   },
    "start": 119,
    "q25": 82,
    "q50": 59,
    "q75": 44,
    "end": 19,
    "drop_at_pct": 14,
-   "drop_at_s": 4.0,
+   "drop_at_s": 4.2,
    "drop_size": 16
   },
   {
@@ -592,6 +815,17 @@
     "post_slot": "20:00",
     "score": 91
    },
+   "engagedViews": 588,
+   "shares": 0,
+   "subscribersGained": 0,
+   "stayed_pct": 58.5,
+   "traffic": {
+    "NO_LINK_OTHER": 0,
+    "YT_CHANNEL": 5,
+    "YT_SEARCH": 23,
+    "YT_OTHER_PAGE": 3,
+    "SHORTS": 974
+   },
    "start": 120,
    "q25": 92,
    "q50": 71,
@@ -602,100 +836,10 @@
    "drop_size": 18
   },
   {
-   "video": "rDHeA2dVTLM",
-   "title": "What If Nike's Best Store Isn't Nike's?",
-   "views": 998,
-   "avg_pct": 41.0,
-   "avg_seconds": 11,
-   "tags": {
-    "script": "016",
-    "slug": "nike",
-    "topic": "Nike",
-    "format": "how",
-    "visual_style": "charts3d",
-    "theme": "bold_bright",
-    "hook_style": "whatif",
-    "title_style": "whatif",
-    "length_s": 26.19,
-    "length_bucket": "<30",
-    "post_at": "2026-11-07T18:00:00-05:00",
-    "post_slot": "18:00",
-    "score": 89
-   },
-   "start": 109,
-   "q25": 63,
-   "q50": 26,
-   "q75": 16,
-   "end": 7,
-   "drop_at_pct": 17,
-   "drop_at_s": 4.6,
-   "drop_size": 32
-  },
-  {
-   "video": "5uP5HyJ204w",
-   "title": "The \u20ac222 Million Transfer Record",
-   "views": 985,
-   "avg_pct": 76.5,
-   "avg_seconds": 22,
-   "tags": {
-    "script": "080",
-    "slug": "famous-neymar",
-    "topic": "Neymar",
-    "format": "famous",
-    "visual_style": "lowpoly",
-    "theme": "bold_bright",
-    "hook_style": "number",
-    "title_style": "number",
-    "length_s": 28.98,
-    "length_bucket": "<30",
-    "post_at": "2026-11-18T18:00:00-05:00",
-    "post_slot": "18:00",
-    "score": 89
-   },
-   "start": 134,
-   "q25": 98,
-   "q50": 74,
-   "q75": 64,
-   "end": 15,
-   "drop_at_pct": 93,
-   "drop_at_s": 26.8,
-   "drop_size": 21
-  },
-  {
-   "video": "6fwSsIATYPo",
-   "title": "From $1.5 Million at 16 to $765 Million",
-   "views": 975,
-   "avg_pct": 106.2,
-   "avg_seconds": 29,
-   "tags": {
-    "script": "091",
-    "slug": "famous-soto",
-    "topic": "Juan Soto",
-    "format": "famous",
-    "visual_style": "lowpoly",
-    "theme": "bold_bright",
-    "hook_style": "number",
-    "title_style": "number",
-    "length_s": 27.29,
-    "length_bucket": "<30",
-    "post_at": "2026-11-18T20:00:00-05:00",
-    "post_slot": "20:00",
-    "score": 89
-   },
-   "start": 161,
-   "q25": 132,
-   "q50": 105,
-   "q75": 94,
-   "end": 62,
-   "drop_at_pct": 82,
-   "drop_at_s": 22.4,
-   "drop_size": 18
-  },
-  {
    "video": "N2oLakB4OyI",
    "title": "From a $25 Million Deal to $1.6 Billion",
-   "views": 949,
-   "avg_pct": 81.1,
+   "views": 966,
+   "avg_pct": 81.0,
    "avg_seconds": 21,
    "tags": {
     "script": "097",
@@ -712,20 +856,31 @@
     "post_slot": "20:00",
     "score": 88
    },
-   "start": 132,
+   "engagedViews": 532,
+   "shares": 0,
+   "subscribersGained": 1,
+   "stayed_pct": 55.1,
+   "traffic": {
+    "NO_LINK_OTHER": 0,
+    "SUBSCRIBER": 1,
+    "YT_SEARCH": 15,
+    "YT_OTHER_PAGE": 10,
+    "SHORTS": 940
+   },
+   "start": 131,
    "q25": 102,
-   "q50": 77,
+   "q50": 76,
    "q75": 68,
    "end": 35,
    "drop_at_pct": 88,
    "drop_at_s": 22.8,
-   "drop_size": 21
+   "drop_size": 20
   },
   {
    "video": "p6Meiqc_h2Q",
    "title": "\u00a3500,000 a Week Until 2034",
-   "views": 939,
-   "avg_pct": 61.2,
+   "views": 943,
+   "avg_pct": 61.0,
    "avg_seconds": 18,
    "tags": {
     "script": "079",
@@ -742,20 +897,31 @@
     "post_slot": "20:00",
     "score": 90
    },
+   "engagedViews": 538,
+   "shares": 0,
+   "subscribersGained": 0,
+   "stayed_pct": 57.1,
+   "traffic": {
+    "NO_LINK_OTHER": 0,
+    "YT_CHANNEL": 6,
+    "YT_SEARCH": 21,
+    "YT_OTHER_PAGE": 1,
+    "SHORTS": 915
+   },
    "start": 122,
-   "q25": 88,
+   "q25": 87,
    "q50": 52,
    "q75": 36,
    "end": 22,
    "drop_at_pct": 14,
    "drop_at_s": 4.1,
-   "drop_size": 13
+   "drop_size": 14
   },
   {
    "video": "afAjsg876ck",
    "title": "Pick 199 to a $375 Million Mic",
-   "views": 897,
-   "avg_pct": 71.5,
+   "views": 899,
+   "avg_pct": 71.4,
    "avg_seconds": 27,
    "tags": {
     "script": "078",
@@ -772,14 +938,66 @@
     "post_slot": "12:00",
     "score": 92
    },
+   "engagedViews": 584,
+   "shares": 0,
+   "subscribersGained": 1,
+   "stayed_pct": 65.0,
+   "traffic": {
+    "NO_LINK_OTHER": 0,
+    "YT_CHANNEL": 5,
+    "YT_SEARCH": 18,
+    "YT_OTHER_PAGE": 6,
+    "EXT_URL": 1,
+    "SHORTS": 869
+   },
    "start": 129,
-   "q25": 96,
+   "q25": 95,
    "q50": 65,
    "q75": 53,
    "end": 30,
    "drop_at_pct": 12,
    "drop_at_s": 4.5,
    "drop_size": 14
+  },
+  {
+   "video": "BqXicYlpUYY",
+   "title": "A 3-Hour Trip to Practice, Then \u00a3155 Million",
+   "views": 868,
+   "avg_pct": 151.6,
+   "avg_seconds": 37,
+   "tags": {
+    "script": "101",
+    "slug": "famous-salah",
+    "topic": "Mohamed Salah",
+    "format": "famous",
+    "visual_style": "lowpoly",
+    "theme": "dark_neon",
+    "hook_style": "surprise",
+    "title_style": "number",
+    "length_s": 24.89,
+    "length_bucket": "<30",
+    "post_at": "2026-11-20T15:30:00-05:00",
+    "post_slot": "15:30",
+    "score": 87
+   },
+   "engagedViews": 464,
+   "shares": 0,
+   "subscribersGained": 1,
+   "stayed_pct": 53.5,
+   "traffic": {
+    "NO_LINK_OTHER": 0,
+    "YT_SEARCH": 24,
+    "YT_OTHER_PAGE": 1,
+    "SHORTS": 843
+   },
+   "start": 207,
+   "q25": 171,
+   "q50": 150,
+   "q75": 138,
+   "end": 121,
+   "drop_at_pct": 82,
+   "drop_at_s": 20.0,
+   "drop_size": 18
   },
   {
    "video": "Ih7t-gLT6Iw",
@@ -801,6 +1019,17 @@
     "post_at": "2026-11-16T15:00:00-05:00",
     "post_slot": "15:00",
     "score": 88
+   },
+   "engagedViews": 377,
+   "shares": 0,
+   "subscribersGained": 1,
+   "stayed_pct": 46.1,
+   "traffic": {
+    "NO_LINK_OTHER": 0,
+    "YT_SEARCH": 21,
+    "RELATED_VIDEO": 0,
+    "YT_OTHER_PAGE": 18,
+    "SHORTS": 779
    },
    "start": 128,
    "q25": 95,
@@ -832,6 +1061,20 @@
     "post_slot": "20:00",
     "score": 95
    },
+   "engagedViews": 398,
+   "shares": 0,
+   "subscribersGained": 2,
+   "stayed_pct": 51.0,
+   "traffic": {
+    "NO_LINK_OTHER": 0,
+    "SUBSCRIBER": 1,
+    "YT_CHANNEL": 2,
+    "YT_SEARCH": 11,
+    "RELATED_VIDEO": 1,
+    "YT_OTHER_PAGE": 2,
+    "EXT_URL": 1,
+    "SHORTS": 762
+   },
    "start": 114,
    "q25": 76,
    "q50": 42,
@@ -844,7 +1087,7 @@
   {
    "video": "mY2ucJom1Zw",
    "title": "From a Dream Board to a $28 Million Deal",
-   "views": 636,
+   "views": 637,
    "avg_pct": 81.0,
    "avg_seconds": 20,
    "tags": {
@@ -861,6 +1104,17 @@
     "post_at": "2026-11-17T20:00:00-05:00",
     "post_slot": "20:00",
     "score": 90
+   },
+   "engagedViews": 307,
+   "shares": 0,
+   "subscribersGained": 0,
+   "stayed_pct": 48.2,
+   "traffic": {
+    "NO_LINK_OTHER": 0,
+    "YT_CHANNEL": 2,
+    "YT_SEARCH": 6,
+    "YT_OTHER_PAGE": 4,
+    "SHORTS": 625
    },
    "start": 134,
    "q25": 103,
@@ -892,6 +1146,17 @@
     "post_slot": "18:00",
     "score": 87
    },
+   "engagedViews": 121,
+   "shares": 0,
+   "subscribersGained": 1,
+   "stayed_pct": 26.5,
+   "traffic": {
+    "NO_LINK_OTHER": 0,
+    "YT_CHANNEL": 1,
+    "YT_SEARCH": 6,
+    "YT_OTHER_PAGE": 2,
+    "SHORTS": 447
+   },
    "start": 102,
    "q25": 59,
    "q50": 23,
@@ -921,6 +1186,16 @@
     "post_at": "2026-11-15T16:30:00-05:00",
     "post_slot": "16:30",
     "score": 88
+   },
+   "engagedViews": 51,
+   "shares": 0,
+   "subscribersGained": 0,
+   "stayed_pct": 19.6,
+   "traffic": {
+    "NO_LINK_OTHER": 0,
+    "YT_SEARCH": 11,
+    "YT_OTHER_PAGE": 6,
+    "SHORTS": 243
    },
    "start": 116,
    "q25": 69,
@@ -952,6 +1227,17 @@
     "post_slot": "15:00",
     "score": 86
    },
+   "engagedViews": 100,
+   "shares": 0,
+   "subscribersGained": 1,
+   "stayed_pct": 46.7,
+   "traffic": {
+    "NO_LINK_OTHER": 0,
+    "YT_CHANNEL": 1,
+    "YT_SEARCH": 16,
+    "YT_OTHER_PAGE": 11,
+    "SHORTS": 186
+   },
    "start": 138,
    "q25": 118,
    "q50": 88,
@@ -981,6 +1267,17 @@
     "post_at": "2026-11-09T12:00:00-05:00",
     "post_slot": "12:00",
     "score": 92
+   },
+   "engagedViews": 68,
+   "shares": 0,
+   "subscribersGained": 1,
+   "stayed_pct": 32.4,
+   "traffic": {
+    "NO_LINK_OTHER": 0,
+    "YT_CHANNEL": 0,
+    "YT_SEARCH": 11,
+    "EXT_URL": 2,
+    "SHORTS": 197
    },
    "start": 109,
    "q25": 84,
@@ -1012,6 +1309,18 @@
     "post_slot": "18:00",
     "score": 86
    },
+   "engagedViews": 48,
+   "shares": 1,
+   "subscribersGained": 0,
+   "stayed_pct": 40.0,
+   "traffic": {
+    "NO_LINK_OTHER": 0,
+    "SUBSCRIBER": 1,
+    "YT_CHANNEL": 4,
+    "YT_SEARCH": 19,
+    "YT_OTHER_PAGE": 4,
+    "SHORTS": 92
+   },
    "start": 106,
    "q25": 60,
    "q50": 29,
@@ -1041,6 +1350,18 @@
     "post_at": "2026-11-11T12:00:00-05:00",
     "post_slot": "12:00",
     "score": 92
+   },
+   "engagedViews": 49,
+   "shares": 0,
+   "subscribersGained": 0,
+   "stayed_pct": 43.8,
+   "traffic": {
+    "NO_LINK_OTHER": 0,
+    "SUBSCRIBER": 2,
+    "YT_CHANNEL": 2,
+    "YT_SEARCH": 4,
+    "YT_OTHER_PAGE": 1,
+    "SHORTS": 103
    },
    "start": 110,
    "q25": 39,
@@ -1072,6 +1393,17 @@
     "post_slot": "18:00",
     "score": 91
    },
+   "engagedViews": 42,
+   "shares": 0,
+   "subscribersGained": 0,
+   "stayed_pct": 38.5,
+   "traffic": {
+    "NO_LINK_OTHER": 0,
+    "YT_CHANNEL": 2,
+    "YT_SEARCH": 6,
+    "YT_OTHER_PAGE": 1,
+    "SHORTS": 100
+   },
    "start": 129,
    "q25": 69,
    "q50": 45,
@@ -1101,6 +1433,17 @@
     "post_at": "2026-11-15T12:00:00-05:00",
     "post_slot": "12:00",
     "score": 92
+   },
+   "engagedViews": 33,
+   "shares": 0,
+   "subscribersGained": 1,
+   "stayed_pct": 33.3,
+   "traffic": {
+    "NO_LINK_OTHER": 0,
+    "YT_CHANNEL": 2,
+    "YT_SEARCH": 1,
+    "YT_OTHER_PAGE": 7,
+    "SHORTS": 89
    },
    "start": 173,
    "q25": 139,
@@ -1132,6 +1475,15 @@
     "post_slot": "20:00",
     "score": 92
    },
+   "engagedViews": 44,
+   "shares": 0,
+   "subscribersGained": 0,
+   "stayed_pct": 65.7,
+   "traffic": {
+    "NO_LINK_OTHER": 0,
+    "YT_CHANNEL": 2,
+    "YT_SEARCH": 65
+   },
    "start": 100,
    "q25": 98,
    "q50": 32,
@@ -1162,6 +1514,17 @@
     "post_slot": "16:30",
     "score": 91
    },
+   "engagedViews": 13,
+   "shares": 0,
+   "subscribersGained": 0,
+   "stayed_pct": 22.4,
+   "traffic": {
+    "NO_LINK_OTHER": 0,
+    "YT_CHANNEL": 3,
+    "YT_SEARCH": 6,
+    "YT_OTHER_PAGE": 1,
+    "SHORTS": 48
+   },
    "start": 115,
    "q25": 100,
    "q50": 54,
@@ -1191,12 +1554,23 @@
     "post_at": "2026-11-13T15:00:00-05:00",
     "post_slot": "15:00",
     "score": 90
+   },
+   "engagedViews": 8,
+   "shares": 0,
+   "subscribersGained": 0,
+   "stayed_pct": 17.8,
+   "traffic": {
+    "NO_LINK_OTHER": 0,
+    "YT_CHANNEL": 1,
+    "YT_SEARCH": 9,
+    "EXT_URL": 0,
+    "SHORTS": 35
    }
   },
   {
    "video": "v_MBJE6z344",
    "title": "How Much Do NASA Astronauts Get Paid?",
-   "views": 40,
+   "views": 41,
    "avg_pct": 56.3,
    "avg_seconds": 14,
    "tags": {
@@ -1213,6 +1587,16 @@
     "post_at": "2026-11-10T12:00:00-05:00",
     "post_slot": "12:00",
     "score": 89
+   },
+   "engagedViews": 14,
+   "shares": 0,
+   "subscribersGained": 0,
+   "stayed_pct": 34.1,
+   "traffic": {
+    "NO_LINK_OTHER": 0,
+    "YT_SEARCH": 21,
+    "NOTIFICATION": 1,
+    "SHORTS": 19
    },
    "start": 107,
    "q25": 71,
@@ -1243,6 +1627,18 @@
     "post_at": "2026-11-13T12:00:00-05:00",
     "post_slot": "12:00",
     "score": 93
+   },
+   "engagedViews": 8,
+   "shares": 0,
+   "subscribersGained": 0,
+   "stayed_pct": 20.5,
+   "traffic": {
+    "NO_LINK_OTHER": 0,
+    "SUBSCRIBER": 1,
+    "YT_CHANNEL": 1,
+    "YT_SEARCH": 8,
+    "YT_OTHER_PAGE": 0,
+    "SHORTS": 29
    }
   },
   {
@@ -1265,6 +1661,18 @@
     "post_at": "2026-11-09T15:00:00-05:00",
     "post_slot": "15:00",
     "score": 90
+   },
+   "engagedViews": 8,
+   "shares": 0,
+   "subscribersGained": 0,
+   "stayed_pct": 23.5,
+   "traffic": {
+    "NO_LINK_OTHER": 0,
+    "SUBSCRIBER": 1,
+    "YT_SEARCH": 11,
+    "YT_OTHER_PAGE": 1,
+    "EXT_URL": 1,
+    "SHORTS": 20
    }
   },
   {
@@ -1287,6 +1695,15 @@
     "post_at": "2026-11-08T15:00:00-05:00",
     "post_slot": "15:00",
     "score": 88
+   },
+   "engagedViews": 8,
+   "shares": 0,
+   "subscribersGained": 0,
+   "stayed_pct": 30.8,
+   "traffic": {
+    "NO_LINK_OTHER": 0,
+    "SUBSCRIBER": 0,
+    "SHORTS": 26
    }
   },
   {
@@ -1309,6 +1726,17 @@
     "post_at": "2026-11-15T20:00:00-05:00",
     "post_slot": "20:00",
     "score": 87
+   },
+   "engagedViews": 9,
+   "shares": 0,
+   "subscribersGained": 0,
+   "stayed_pct": 47.4,
+   "traffic": {
+    "NO_LINK_OTHER": 0,
+    "YT_CHANNEL": 1,
+    "YT_SEARCH": 3,
+    "YT_OTHER_PAGE": 1,
+    "SHORTS": 14
    }
   },
   {
@@ -1331,14 +1759,24 @@
     "post_at": "2026-11-12T12:00:00-05:00",
     "post_slot": "12:00",
     "score": 87
+   },
+   "engagedViews": 8,
+   "shares": 0,
+   "subscribersGained": 0,
+   "stayed_pct": 44.4,
+   "traffic": {
+    "NO_LINK_OTHER": 0,
+    "YT_CHANNEL": 3,
+    "YT_SEARCH": 14,
+    "SHORTS": 1
    }
   },
   {
    "video": "7oAvym5kcWE",
    "title": "Vets Earn $130,100. Getting In Is the Hard Part",
-   "views": 17,
-   "avg_pct": 86.6,
-   "avg_seconds": 24,
+   "views": 18,
+   "avg_pct": 79.5,
+   "avg_seconds": 22,
    "tags": {
     "script": "066",
     "slug": "careers-vets",
@@ -1353,6 +1791,15 @@
     "post_at": "2026-11-13T18:00:00-05:00",
     "post_slot": "18:00",
     "score": 87
+   },
+   "engagedViews": 9,
+   "shares": 0,
+   "subscribersGained": 1,
+   "stayed_pct": 50.0,
+   "traffic": {
+    "NO_LINK_OTHER": 0,
+    "YT_CHANNEL": 2,
+    "YT_SEARCH": 16
    }
   },
   {
@@ -1375,6 +1822,16 @@
     "post_at": "2026-11-08T18:00:00-05:00",
     "post_slot": "18:00",
     "score": 88
+   },
+   "engagedViews": 7,
+   "shares": 0,
+   "subscribersGained": 0,
+   "stayed_pct": 50.0,
+   "traffic": {
+    "SUBSCRIBER": 2,
+    "YT_SEARCH": 7,
+    "YT_OTHER_PAGE": 1,
+    "SHORTS": 4
    }
   },
   {
@@ -1397,50 +1854,16 @@
     "post_at": "2026-11-12T18:00:00-05:00",
     "post_slot": "18:00",
     "score": 87
-   }
-  },
-  {
-   "video": "fF26h1klI-Y",
-   "title": "Visa Kept $20 Billion Without Lending a Dime",
-   "views": 3,
-   "avg_pct": 86.0,
-   "avg_seconds": 20,
-   "tags": {
-    "script": "010",
-    "slug": "visa",
-    "topic": "Visa",
-    "format": "how",
-    "visual_style": "charts3d",
-    "theme": "dark_neon",
-    "hook_style": "question",
-    "title_style": "statement",
-    "length_s": 23.67,
-    "length_bucket": "<30",
-    "post_at": "2026-11-08T12:00:00-05:00",
-    "post_slot": "12:00",
-    "score": 88
-   }
-  },
-  {
-   "video": "BqXicYlpUYY",
-   "title": "A 3-Hour Trip to Practice, Then \u00a3155 Million",
-   "views": 0,
-   "avg_pct": 0,
-   "avg_seconds": 0,
-   "tags": {
-    "script": "101",
-    "slug": "famous-salah",
-    "topic": "Mohamed Salah",
-    "format": "famous",
-    "visual_style": "lowpoly",
-    "theme": "dark_neon",
-    "hook_style": "surprise",
-    "title_style": "number",
-    "length_s": 24.89,
-    "length_bucket": "<30",
-    "post_at": "2026-11-20T15:30:00-05:00",
-    "post_slot": "15:30",
-    "score": 87
+   },
+   "engagedViews": 5,
+   "shares": 0,
+   "subscribersGained": 0,
+   "stayed_pct": 62.5,
+   "traffic": {
+    "NO_LINK_OTHER": 0,
+    "YT_CHANNEL": 2,
+    "YT_SEARCH": 2,
+    "SHORTS": 4
    }
   },
   {
@@ -1463,7 +1886,10 @@
     "post_at": "2026-11-21T19:15:00-05:00",
     "post_slot": "19:15",
     "score": 88
-   }
+   },
+   "engagedViews": 0,
+   "shares": 0,
+   "subscribersGained": 0
   },
   {
    "video": "t8iSy1RfQlY",
@@ -1485,7 +1911,60 @@
     "post_at": "2026-11-21T19:00:00-05:00",
     "post_slot": "19:00",
     "score": 92
-   }
+   },
+   "engagedViews": 0,
+   "shares": 0,
+   "subscribersGained": 0
+  },
+  {
+   "video": "r1wJrc10T4I",
+   "title": "The Kelce Brothers' $100 Million Podcast",
+   "views": 0,
+   "avg_pct": 0,
+   "avg_seconds": 0,
+   "tags": {
+    "script": "137",
+    "slug": "famous-kelce-podcast",
+    "topic": "Travis and Jason Kelce",
+    "format": "famous",
+    "visual_style": "lowpoly",
+    "theme": "bold_bright",
+    "hook_style": "number",
+    "title_style": "number",
+    "length_s": 24.05,
+    "length_bucket": "<30",
+    "post_at": "2026-11-23T12:00:00-05:00",
+    "post_slot": "12:00",
+    "score": 92
+   },
+   "engagedViews": 0,
+   "shares": 0,
+   "subscribersGained": 0
+  },
+  {
+   "video": "YPv29m0WHpQ",
+   "title": "$33 Million a Year for Running",
+   "views": 0,
+   "avg_pct": 0,
+   "avg_seconds": 0,
+   "tags": {
+    "script": "087",
+    "slug": "famous-bolt",
+    "topic": "Usain Bolt",
+    "format": "famous",
+    "visual_style": "lowpoly",
+    "theme": "clean_navy",
+    "hook_style": "number",
+    "title_style": "number",
+    "length_s": 22.94,
+    "length_bucket": "<30",
+    "post_at": "2026-11-22T19:15:00-05:00",
+    "post_slot": "19:15",
+    "score": 87
+   },
+   "engagedViews": 0,
+   "shares": 0,
+   "subscribersGained": 0
   }
  ]
 }
