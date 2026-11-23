@@ -6,18 +6,18 @@ Made by `python -m pipeline.weekly_mix` from analytics/stats.json + retention.js
 
 | lane | Shorts | median views 48 h | median watched | |
 |---|---|---|---|---|
-| famous-athlete | 19 | 1042 | 71% | FOCUS |
+| famous-athlete | 19 | 1042 | 72% | FOCUS |
 | famous-other | 8 | 1018.5 | 71% |  |
 | story-plan | 0 | – | – | EXPERIMENT |
 | story-history | 0 | – | – |  |
 | whatif | 3 | 1026 | 73% |  |
-| how | 22 | 97.5 | 53% | paused |
+| how | 22 | 97.5 | 55% | paused |
 | careers | 14 | 28.5 | 64% | paused |
 
 ## Going viral (top 5, last 21 days)
 
 - 1302 views, famous-athlete, old look, 71% watched: **The 180 Million Euro Teenager** — "A club paid 180 million euros for a teenager. The most expensive teen ever."
-- 1255 views, famous-athlete, old look: **From a Napkin Contract to $1.1 Billion** — "Why was a soccer star's first contract written on a napkin?"
+- 1255 views, famous-athlete, old look, 80% watched: **From a Napkin Contract to $1.1 Billion** — "Why was a soccer star's first contract written on a napkin?"
 - 1208 views, how, old look, 76% watched: **From $2.46 Billion to $4 Trillion** — "In 1997, all of Apple was worth 2.46 billion dollars. Today? Over 4 trillion."
 - 1166 views, famous-athlete, old look, 70% watched: **From a $2.5M Shoe Deal to $4.7 Billion** — "Why is a retired player still getting richer?"
 - 1143 views, famous-athlete, old look, 89% watched: **From a Dad With 4 Jobs to $100 Million** — "His dad worked up to 4 jobs at once. Now he earns 100 million dollars a year."
