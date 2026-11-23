@@ -222,9 +222,9 @@ const build = (k: number, s: AhShot): Built => {
   const things: Thing[] = (s.things ?? []).map((t) => {
     const th = makeThing(t.name, { color: t.color, text: t.text }), p = spotOf(set, t.at ?? [1.0, 0, 0.4]);
     const fit = (t as AhThing & { fit?: number }).fit;
-    const fitK = s.view === "wide" ? 1.3 : s.view === "ws" ? 1.6 : 1;   // held things read bigger in the far views (not so big they bury the hero)
+    const fitK = s.view === "wide" ? 1.3 : s.view === "ws" ? 1.6 : s.view === "hook" ? 0.7 : 1;   // held things read bigger in the far views (not so big they bury the hero)
     const sc = fit ? (fit * fitK) / Math.max(0.05, th.size) : (t.scale ?? 1);
-    th.root.position.set(p[0], p[1], p[2]); th.root.rotation.y = t.rot ?? -0.35; th.root.scale.setScalar(sc);
+    th.root.position.set(p[0] + (s.view === "hook" ? 0.2 : 0), p[1] - (s.view === "hook" ? 0.2 : 0), p[2]); th.root.rotation.y = t.rot ?? -0.35; th.root.scale.setScalar(sc);
     th.root.userData.base = sc; th.root.userData.pop = t.pop !== false;
     root.add(th.root);
     th.root.updateMatrixWorld(true);

@@ -1020,7 +1020,7 @@ def ah_shots(plan: dict) -> list:
             # Nov 23 (retention: the biggest drop is at 4-5 s, the opening held one picture for 4+ s): the hook sentence opens
             # on a BIG hero with a hard push-in ("hook" view), then cuts to a medium and a wide/close within the first ~4 s
             parts = 3 if sc["n"] >= 84 else 2
-            order = ["hook", "ms", "wide" if (shot["things"] or shot["cards"]) else "face"]
+            order = ["hook", "wide", "ws"] if (shot["things"] or shot["cards"]) else ["hook", "ms", "face"]   # props/card: never a close view that lets them cover the face
         for j in range(parts):
             a0, a1 = sc["a"] + round(j * sc["n"] / parts), sc["a"] + round((j + 1) * sc["n"] / parts)
             sub = {**shot, "a": a0, "n": a1 - a0, "view": order[j % len(order)], **({"_outro": True} if outro else {})}
