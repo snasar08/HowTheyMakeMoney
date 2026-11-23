@@ -72,6 +72,8 @@ const VIEWS: Record<string, { from: V3; to: V3; look: V3; blur: number }> = {
   ws: { from: [0, 2.6, 11], to: [0, 2.4, 9.8], look: [0, 1.2, 0], blur: 0 },
   wide: { from: [0, 2.0, 8.5], to: [0, 2.0, 7.6], look: [0, 1.6, 0], blur: 2 },
   ms: { from: [0.2, 1.5, 4.4], to: [0.15, 1.5, 3.9], look: [0, 1.3, 0], blur: 8 },
+  // opener (Nov 23): the hero is big from frame 0 and the camera pushes in hard; he sits low in frame so the hook title above never covers him or his card
+  hook: { from: [0.1, 1.95, 6.0], to: [0.1, 1.9, 4.9], look: [0, 1.95, 0], blur: 3 },
   cu: { from: [0.3, 1.55, 2.6], to: [0.25, 1.55, 2.3], look: [0, 1.45, 0], blur: 12 },
   face: { from: [0.35, 1.45, 2.7], to: [0.3, 1.45, 2.4], look: [0, 1.38, 0], blur: 14 },
   low: { from: [0.8, 0.6, 3.6], to: [0.7, 0.6, 3.2], look: [0, 1.4, 0], blur: 8 },
@@ -171,7 +173,7 @@ const fitInFrame = (s: AhShot, viewName: string | undefined, headY: number, root
     const c = new THREE.PerspectiveCamera(fov, asp, 0.1, 400);
     c.position.set(...off(lerp(V.from, V.to, t))); c.lookAt(...off(V.look)); c.updateMatrixWorld(true); c.updateProjectionMatrix(); return c;
   });
-  const LX = 0.84, YLO = -0.7, YHI = 0.66, v = new THREE.Vector3(), right = new THREE.Vector3(), up = new THREE.Vector3();
+  const LX = 0.84, YLO = -0.7, YHI = s.view === "hook" ? 0.34 : 0.66, v = new THREE.Vector3(), right = new THREE.Vector3(), up = new THREE.Vector3();
   for (const it of items) {
     for (let iter = 0; iter < 24; iter++) {
       let moved = false, tooBig = false;
