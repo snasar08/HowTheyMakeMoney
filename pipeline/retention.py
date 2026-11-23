@@ -50,6 +50,39 @@ def _report(tok: str, **q) -> list:
         return json.load(r).get("rows", [])
 
 
+EXTRA = ("engagedViews", "shares", "subscribersGained")
+
+
+def _try(tok: str, **q) -> list | None:
+    """Like _report, but None instead of an exception (a metric this channel can't get must not break the report)."""
+    try:
+        return _report(tok, **q)
+    except Exception as exc:  # noqa: BLE001 - HTTPError, URLError, bad JSON
+        print(f"[retention] optional query skipped ({getattr(exc, 'code', type(exc).__name__)}): {q.get('metrics')}"
+              f"{' by ' + q['dimensions'] if q.get('dimensions') else ''}")
+        return None
+
+
+def extra_metrics(tok: str, vid: str, start: str, end: str, views: int) -> dict:
+    """engagedViews/shares/subscribersGained (each optional) plus the views split by traffic source."""
+    base = dict(startDate=start, endDate=end, filters=f"video=={vid}")
+    out: dict = {}
+    rows = _try(tok, metrics=",".join(EXTRA), **base)
+    if rows:
+        out.update(zip(EXTRA, rows[0]))
+    else:  # one of them may be unsupported: ask one by one
+        for m in EXTRA:
+            r = _try(tok, metrics=m, **base)
+            if r:
+                out[m] = r[0][0]
+    if out.get("engagedViews") is not None and views:
+        out["stayed_pct"] = round(100 * out["engagedViews"] / views, 1)
+    src = _try(tok, metrics="views", dimensions="insightTrafficSourceType", **base)
+    if src:
+        out["traffic"] = {r[0]: int(r[1]) for r in src}
+    return {k: (int(v) if isinstance(v, float) and k in EXTRA else v) for k, v in out.items()}
+
+
 def main() -> int:
     v = _creds()
     if not v:
@@ -85,6 +118,7 @@ def main() -> int:
         views, pct, secs = tot[0]
         row = {"video": vid, "title": x["title"], "views": int(views), "avg_pct": round(pct, 1),
                "avg_seconds": int(secs), "tags": x.get("tags", {})}
+        row.update(extra_metrics(tok, vid, start, end, int(views)))
         length = (x.get("tags") or {}).get("seconds") or (secs / pct * 100 if pct else 0)
         if len(curve) >= 50:
             c = {round(r[0], 2): r[1] for r in curve}
@@ -114,7 +148,7 @@ def main() -> int:
             lines.append(f"| {r['title']} | {r['views']} | {r['avg_pct']}% ({r['avg_seconds']} s) | "
                          "not enough views for a curve | | | | | |")
     (OUT / "retention.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
-    print("\n".join(lines[:14]))
+    print("\n".join(lines[:90]))
     return 0
 
 
