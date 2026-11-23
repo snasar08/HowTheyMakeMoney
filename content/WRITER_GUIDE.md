@@ -23,11 +23,21 @@ Formats allowed: `famous`, `whatif`, `story`. Do NOT write `how` or `careers` (p
   124. After writing, add one line per script to `content/angles.md`: `NNN | company | angle | key figures`.
 
 ## 2. Hooks and pacing
-- Line 1 = the most surprising number or fact, 12 words or fewer, said first, on the overlay and in the title.
-  A question is optional (if used, put the number in it: "How much of your 34 dollar order ...").
-- Line 2 = the payoff or a sharper twist. Never setup, never a repeat of line 1. Viewers leave at 4-5 s.
-- Title carries the number ("From Selling Japan's Shoes to $46.3 Billion"). Person stories with a low start and a
-  dated number are the channel's fastest. Do not write more than 1 in 6 question titles.
+- HOOK AND FIRST 6 SECONDS (from analytics/retention.md, Nov 22: every Short stalls near 1000 views; the biggest drop,
+  -13 to -17 pts, is at 4-5 s, just as line 1 ends). Best at 25% watched: "His dad worked up to 4 jobs at once. Now he
+  earns 100 million dollars a year." (118%), "A game company paid him 1 million dollars. To play its game." (112%).
+  Worst: "Guess how much ..." (69-83%), "What if Nike's best store isn't even a Nike store?" (63%), "How did [company] ...?" (39-85%).
+  1. Line 1 is 9 words or fewer (about 3.5 s): WHO + one number + a contradiction or low start (paid to play, turned
+     down, cut, zero offers). A person with an odd concrete detail beats a company or a quiz.
+  2. Never open with "Guess how much", a how/why-company question, or an abstract "What if X isn't X". A question is
+     fine only if the number is in it and it asks about a person.
+  3. Line 2 starts by 3.5 s with But / Now / Then or a question and opens a gap ("but that's not how he got rich").
+     Do not answer it before second 6.
+  4. No setup, date talk or background before second 6 (a year goes on a flip card). Every line ends pulling into
+  the next (a "but", a question). No 2-4 word fragments in a row.
+  5. Last line then `loop` lead word for word back into line 1 ("So next time someone says you're too young,
+     remember:" before "You're Coco Gauff ..."), so a replay feels seamless.
+  6. Title: the number + the contradiction, 50 characters or fewer, at most 1 in 6 questions.
 - Short sentences, but full ones: 6-14 words. Never two 2-4 word fragments in a row (Nov 17 review of the posted
   Ninja Short: 6 of its 14 sentences were fragments like "That year?" / "By his own guess.", each read with a
   falling pitch and a 0.7 s gap, so it sounded chopped). Calm, plain English, no hype words ("insane", "crazy").

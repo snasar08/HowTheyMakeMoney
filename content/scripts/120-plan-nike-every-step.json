@@ -10,10 +10,10 @@
   "theme": "bold_bright",
   "status": "ready",
   "score": 95,
-  "title": "Nike's Master Plan to Own Every Dunk",
+  "title": "Nike's Plan: Own Every Dunk, Even on the Moon",
   "name_card": "Nike",
   "name_sub": "a hypothetical master plan",
-  "description": "Nike wants to take over the whole shoe game. So it starts with athletes.\n\nThis is a made-up, hypothetical master plan for fun: imagined steps, not Nike news or anything Nike has announced.\n\n#shorts #nike #whatif #howtheymakemoney",
+  "description": "Nike wants to own every dunk, even on the Moon. So it starts with athletes.\n\nThis is a made-up, hypothetical master plan for fun: imagined steps, not Nike news or anything Nike has announced.\n\n#shorts #nike #whatif #howtheymakemoney",
   "tags": [
     "nike",
     "what if",
@@ -25,6 +25,7 @@
   "loop": "So next time you see someone dunk, remember:",
   "cta": "Would you wear dunk shoes? Comment yes or no.",
   "cta_question": "Dunk shoes: yes or no?",
+  "first_comment": "Would you wear shoes that launch you into a dunk? Yes or no 👇",
   "hero": {
     "skin": "d9a577",
     "hair": "short",
@@ -40,7 +41,7 @@
   },
   "scenes": [
     {
-      "narration": "Nike wants to take over the whole shoe game. So it finds the best young athletes and signs them before anyone else.",
+      "narration": "Nike wants to own every dunk, even on the Moon. So step one: sign the best young athletes first.",
       "visual": {
         "type": "lowpoly",
         "set": "city",
@@ -65,7 +66,7 @@
       },
       "toon": [
         {
-          "place": "street",
+          "place": "space",
           "mood": "scheme",
           "brand": {
             "name": "NIKE",
@@ -73,10 +74,13 @@
             "fg": "#ffffff"
           },
           "beat": "sign",
+          "things": [
+            "hoop"
+          ],
           "view": "ms"
         },
         {
-          "place": "court",
+          "place": "boardroom",
           "mood": "scheme",
           "things": [
             "letter"

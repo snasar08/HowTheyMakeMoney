@@ -10,7 +10,7 @@
   "theme": "bold_bright",
   "status": "ready",
   "score": 94,
-  "title": "You're SGA. One Ring Isn't Enough.",
+  "title": "You're SGA. 1 Ring Isn't Enough.",
   "name_card": "Shai Gilgeous-Alexander",
   "name_sub": "Thunder, a hypothetical plan",
   "images": {},
@@ -28,9 +28,10 @@
     "nba",
     "shorts"
   ],
-  "loop": "So next time you see a tunnel fit, remember:",
+  "loop": "So next time you get picked late, remember:",
   "cta": "Can OKC build a dynasty? Comment yes or no.",
   "cta_question": "OKC dynasty: yes or no?",
+  "first_comment": "Five titles in a row for OKC? Yes or no 👇",
   "hero": {
     "skin": "7a4e34",
     "hair": "short",

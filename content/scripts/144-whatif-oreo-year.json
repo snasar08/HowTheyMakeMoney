@@ -24,6 +24,7 @@
   "loop": "Next time you twist an Oreo, remember:",
   "cta": "Oreo or Chips Ahoy? Comment your pick.",
   "cta_question": "Oreo or Chips Ahoy?",
+  "first_comment": "Twist, lick, dunk: how do you eat an Oreo? 👇",
   "hero": {
     "skin": "c68a5e",
     "hair": "short",
@@ -39,7 +40,7 @@
   },
   "scenes": [
     {
-      "narration": "Oreo makes 40 billion cookies a year, and you eat them all.",
+      "narration": "You have to eat every Oreo made in a year: 40 billion.",
       "visual": {
         "type": "lowpoly",
         "set": "diner",
@@ -70,7 +71,7 @@
       ]
     },
     {
-      "narration": "You start with one cookie every second. You eat the cookie, then dip the next one in milk.",
+      "narration": "You eat one cookie every second, dipping each one in milk. Sounds easy, until you do the math.",
       "visual": {
         "type": "lowpoly",
         "set": "diner",
@@ -82,21 +83,21 @@
       "toon": [
         {
           "place": "diner",
-          "mood": "excited",
-          "things": [
-            "cookie",
-            "clock"
-          ],
-          "view": "ms"
-        },
-        {
-          "place": "diner",
           "mood": "happy",
           "things": [
             "cookie",
             "milk_carton"
           ],
           "view": "ws"
+        },
+        {
+          "place": "diner",
+          "mood": "dazed",
+          "things": [
+            "cookie",
+            "clock"
+          ],
+          "view": "face"
         }
       ]
     },

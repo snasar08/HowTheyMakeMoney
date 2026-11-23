@@ -22,9 +22,10 @@
   ],
   "images": {},
   "hud_label": "HIS RISE",
-  "loop": "So remember:",
+  "loop": "So next time someone says you're not good enough, remember:",
   "cta": "Allen or Mahomes? Pick one.",
   "cta_question": "Allen or Mahomes?",
+  "first_comment": "Zero offers, then 330 million dollars. Allen or Mahomes? 👇",
   "hero": {
     "skin": "c99a76",
     "hair": "short",
@@ -91,7 +92,7 @@
       ]
     },
     {
-      "narration": "He came from a cotton farm and a junior college.",
+      "narration": "So how did that happen? He grew up on a cotton farm and played at a junior college.",
       "visual": {
         "type": "lowpoly",
         "set": "farm",
@@ -114,6 +115,11 @@
         }
       },
       "toon": [
+        {
+          "place": "garage",
+          "mood": "nervous",
+          "view": "cu"
+        },
         {
           "place": "farm",
           "mood": "calm",

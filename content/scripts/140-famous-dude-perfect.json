@@ -21,8 +21,9 @@
   ],
   "images": {},
   "loop": "Next time you shoot, remember:",
-  "cta": "Which dude is best?",
-  "cta_question": "Which dude is best?",
+  "cta": "Which dude is best? Comment a name.",
+  "cta_question": "Tyler, Coby, Cory, Garrett or Cody?",
+  "first_comment": "Tyler, Coby, Cory, Garrett or Cody: who's your favorite? 👇",
   "hero": {
     "skin": "e0b48a",
     "hair": "short",
@@ -77,7 +78,7 @@
       ]
     },
     {
-      "narration": "Five Texas A and M roommates post a trick shot video in 2009. The dudes are Tyler, Coby, Cory, Garrett and Cody.",
+      "narration": "But it started small. Five Texas A and M roommates post a trick shot video in 2009. The dudes are Tyler, Coby, Cory, Garrett and Cody.",
       "visual": {
         "type": "lowpoly",
         "set": "court",
@@ -99,6 +100,11 @@
         }
       },
       "toon": [
+        {
+          "place": "garage",
+          "mood": "calm",
+          "view": "cu"
+        },
         {
           "place": "garage",
           "mood": "excited",

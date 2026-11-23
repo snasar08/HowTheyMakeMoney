@@ -9,7 +9,7 @@
   "theme": "dark_neon",
   "status": "ready",
   "score": 91,
-  "title": "Aaron Judge Passed on $213.5 Million",
+  "title": "Aaron Judge Turned Down $213.5 Million",
   "name_card": "Aaron Judge",
   "name_sub": "baseball star",
   "description": "Before the 2022 season, the Yankees offered Aaron Judge a seven-year, $213.5 million extension (per GM Brian Cashman). Judge did not sign it, played 2022 on a one-year deal, and hit 62 home runs, the American League single-season record. After the season he re-signed with the Yankees on a nine-year, $360 million contract. He was born April 26, 1992 and adopted one day later.\n\nSources:\n- Wikipedia: Aaron Judge: https://en.wikipedia.org/wiki/Aaron_Judge\n\nNot financial advice.\n\n#shorts #aaronjudge #yankees #howtheymakemoney",
@@ -25,6 +25,7 @@
   "loop": "So next time you doubt yourself, remember:",
   "cta": "Judge or Ohtani? Comment your pick.",
   "cta_question": "Judge or Ohtani?",
+  "first_comment": "Would you turn down 213.5 million dollars to bet on yourself? 👇",
   "hero": {
     "skin": "c08a62",
     "hair": "short",
@@ -41,7 +42,7 @@
   },
   "scenes": [
     {
-      "narration": "Aaron Judge passed on 213.5 million dollars and bet on himself.",
+      "narration": "Aaron Judge turned down 213.5 million dollars. Then he bet on one season.",
       "visual": {
         "type": "lowpoly",
         "set": "diamond",
@@ -60,6 +61,16 @@
             "sub": "OFFER, NOT SIGNED"
           },
           "view": "face"
+        },
+        {
+          "place": "diamond",
+          "mood": "scheme",
+          "card": {
+            "text": "1 SEASON",
+            "kind": "sign",
+            "sub": "2022"
+          },
+          "view": "cu"
         }
       ]
     },
