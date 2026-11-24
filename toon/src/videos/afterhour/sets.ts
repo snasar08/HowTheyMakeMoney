@@ -1645,7 +1645,7 @@ function stage(): SetObj {
   for (let i = 0; i < 9; i++) {
     const x = -7.2 + i * 1.8, col = cols[i % 5];
     bx(g, 0.5, 0.5, 0.6, T("#14121c"), x, 6.3, -6.5, 0.02); glow(g, 0.34, 0.06, 0.34, col, x, 6.03, -6.5, 3);
-    beam(g, col, [x, 6.0, -6.5], [x * 0.35, 0.12, i % 2 ? -1 : 1.5], 0.9, 0.13);
+    beam(g, col, [x, 6.0, -6.5], [x * 0.5, 0.12, i % 2 ? -3.2 : -2.4], 0.9, 0.13);   // pov: every beam lands behind the hero (z<0), never across his face
   }
   // speakers, amps, drum kit, monitors, mic stands
   for (const sx of [-1, 1]) {
@@ -1667,10 +1667,10 @@ function stage(): SetObj {
   crowd(g, 0, 0, 3.5, PI, 30, 5, 61, 0.56, 0.06, 0.8, crowdPal, true);
   crowd(g, 0, 0, 10, PI, 36, 4, 62, 0.6, 0.12, 0.8, crowdPal, true);
   const rg = seeded(63); const sticks: It[] = [];
-  for (let i = 0; i < 40; i++) sticks.push({ x: (rg() - 0.5) * 13, y: 1.5 + rg() * 0.9, z: 3.4 + rg() * 3.5, rz: (rg() - 0.5) * 0.8, c: cols[i % 5] });
+  for (let i = 0; i < 40; i++) { const sx = (rg() < 0.5 ? -1 : 1) * (3.0 + rg() * 3.6); sticks.push({ x: sx, y: 1.5 + rg() * 0.9, z: 3.4 + rg() * 3.5, rz: (rg() - 0.5) * 0.8, c: cols[i % 5] }); } /* pov: glow sticks only at the sides, clear of the hero's head */
   inst(g, new THREE.BoxGeometry(0.05, 0.4, 0.05), glowMat("#ffffff", 3), sticks, false);
   const rc = seeded(64); const conf: It[] = []; const cc = ["#ff4da6", "#37e0ff", "#ffd23a", "#b04dff"];
-  for (let i = 0; i < 70; i++) conf.push({ x: (rc() - 0.5) * 10, y: 0.5 + rc() * 5, z: -4 + rc() * 8, rx: rc() * 3, ry: rc() * 3, s: 0.6 + rc(), c: cc[i % 4] });
+  for (let i = 0; i < 70; i++) conf.push({ x: (rc() - 0.5) * 10, y: 0.5 + rc() * 5, z: -4 + rc() * 3.2, /* pov: confetti stays behind the hero */ rx: rc() * 3, ry: rc() * 3, s: 0.6 + rc(), c: cc[i % 4] });
   inst(g, new THREE.BoxGeometry(0.1, 0.02, 0.06), glowMat("#ffffff", 2), conf, false);
   const lights = mkLights(["#6a4ab0", "#1a0a30", 0.85], ["#c8a8ff", 1.2, [0, 10, 8]], [["#ff4da6", 60, [-4.5, 4, 1], 14], ["#37e0ff", 60, [4.5, 4, 1], 14], ["#ffd23a", 40, [0, 5, -3], 12], ["#fff0e0", 30, [0, 2.5, 5], 10]], 11);
   return { root: g, lights, fog: new THREE.Fog("#150a28", 24, 62), bg: "#0d0618", spots: { stage: [0, 0.12, 0], center: [0, 0.12, 0], screen: [0, 4.1, -10.6], mic: [-1.5, 1.7, 0.45], sign: [0, 8.2, -6.4] } };
