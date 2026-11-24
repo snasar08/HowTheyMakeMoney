@@ -8,7 +8,7 @@
   "hook_style": "surprise",
   "title_style": "statement",
   "theme": "bold_bright",
-  "status": "ready",
+  "status": "needs_fix",
   "score": 95,
   "images": {},
   "hud_label": "THE PLAN",
@@ -347,5 +347,8 @@
       "url": "https://en.wikipedia.org/wiki/Nvidia"
     }
   ],
-  "hook_rules": "nov23"
+  "hook_rules": "nov23",
+  "needs_fix": [
+    "act build_tools unclear at frames 359-441: The character is just holding a hammer near a box without performing any actual assembly or construction action."
+  ]
 }
