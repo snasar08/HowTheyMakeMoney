@@ -11,7 +11,7 @@ import { makeThing } from "./things3d";
 type V3 = [number, number, number];
 export type UnitsSpec = { thing: string; count: number; fill?: boolean; u0: number; u1: number; rig: number };
 /** rig: 0 behind the object, 1 low chase, 2 aerial, 3 head-on, 4 departure (from the start shop), 5 arrival (the landmark facade) */
-export type JourneySpec = { obj: string; to: string; from?: string; u0: number; u1: number; rig: number; seed: number; dur?: number };   // dur: frames of the whole flythrough (all its views): the route is sized so the object never speeds past ~14 m/s
+export type JourneySpec = { obj: string; to: string; from?: string; u0: number; u1: number; rig: number; seed: number; dur?: number };   // dur: frames of the whole flythrough (all its views): the route is sized so the object never speeds past ~8 m/s (the scene scan calls a frame-to-frame change > 28 a cut: 12 m/s was still flagged)
 export type CamOut = { from: V3; look: V3; blur: number; fov?: number };
 export type Pov3 = {
   root: THREE.Group; lights: THREE.Light[]; bg: string; fog?: THREE.Fog;
@@ -324,9 +324,9 @@ export const buildJourney = (sp: JourneySpec): Pov3 => {
   // the route: legs along the roads, ending next to the landmark
   const pts: V3[] = []; let cx = 0, cz = 0; const turn = R() < 0.5 ? 1 : -1;
   pts.push([3.4, 2.3, 8], [0, 2.2, 6]);   // the object leaves the start shop's window (the shop stands in block (0,0), east of the first road)
-  const budget = (sp.dur ?? 120) / 30 * 14, legs = Math.max(2, Math.min(3 + Math.floor(R() * 2), Math.floor((budget - 8) / PITCH)));   // Nov 24 round 4: a short line gets a short route (it flew 2 blocks per second = flash cuts)
+  const budget = (sp.dur ?? 120) / 30 * 8, legs = Math.max(1, Math.min(3 + Math.floor(R() * 2), Math.floor((budget - 8) / PITCH)));   // Nov 24 round 4: a short line gets a short route (it flew 2 blocks per second = flash cuts)
   for (let l = 0; l < legs; l++) {
-    const alongZ = l % 2 === 0, step = Math.min(1 + Math.floor(R() * 2), budget < 90 ? 1 : 2) * PITCH;
+    const alongZ = l % 2 === 0, step = Math.min(1 + Math.floor(R() * 2), budget < 70 ? 1 : 2) * PITCH;
     if (alongZ) cz -= step; else cx += turn * (R() < 0.3 ? -1 : 1) * Math.min(2, 1 + Math.floor(R() * 2)) * PITCH * (l === 1 ? 1 : 0.5 + 0.5 * (l % 3));
     cx = clamp(Math.round(cx / PITCH), X0 + 1, X1 - 1) * PITCH; cz = Math.max(cz, (Z0 + 1) * PITCH);
     pts.push([cx, 2.0 + 1.3 * Math.sin(l * 1.7 + sp.seed) + 0.8, cz]);
