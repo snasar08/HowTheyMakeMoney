@@ -1,0 +1,318 @@
+{
+  "id": "177",
+  "slug": "pov-debit-tap",
+  "company": "Visa and Mastercard networks (debit cards)",
+  "hook_style": "number",
+  "title_style": "statement",
+  "theme": "clean_navy",
+  "score": 88,
+  "title": "Your Coffee Tap Costs the Shop 34 Cents",
+  "pov": "POV: you tap your card for coffee",
+  "name_card": "POV: you tap your card for coffee",
+  "name_sub": "where the debit fee goes",
+  "description": "POV: you tap your debit card for a coffee. Follow the fee from the shop to the bank.\n\nSources:\n- Federal Reserve, Regulation II: Debit Card Interchange Fees and Routing (2023 data): https://www.federalreserve.gov/paymentsystems/2023-interchange-fee.htm\n\nFrom the cited page: in 2023, payment card networks processed 100.7 billion debit and general-use prepaid card transactions worth $4.7 trillion; interchange fees totaled $34.12 billion, an average of $0.34 per transaction; Regulation II caps a covered issuer's interchange fee at $0.21 plus 5 basis points of the transaction value (plus $0.01 if it meets fraud-prevention standards). Our math: a 5 dollar coffee x 0.05% = 0.25 cents, so 21 + 0.25 = 21.25 cents at most (before the 1 cent fraud adjustment), leaving about $4.79 for the shop; 100.7 billion x $0.34 = about $34 billion; $34.12 billion / 365 = about $93.5 million a day; / 31.5 million seconds = about $1,080 a second. The 5 dollar coffee is a made-up example; the shop pays the fee, and smaller banks that are exempt from the cap charge more. Not financial advice.\n\n#shorts #debitcard #howtheymakemoney",
+  "tags": [
+    "debit card",
+    "interchange",
+    "money",
+    "shorts"
+  ],
+  "loop": "So next time you tap your card, remember:",
+  "cta": "Tap or swipe? Pick one.",
+  "cta_question": "Tap or swipe?",
+  "first_comment": "Tap, swipe or cash? Which one are you? 👇",
+  "hero": {
+    "skin": "c68642",
+    "hair": "short",
+    "hair_color": "1a1a1a",
+    "beard": "none",
+    "outfit": "hoodie",
+    "shirt": "2b6cb0",
+    "pants": "2b2f3a",
+    "shoes": "f4f4f4",
+    "chest": "",
+    "trim": "ffffff",
+    "height": 1.0
+  },
+  "sources": [
+    {
+      "title": "Federal Reserve: Regulation II (Debit Card Interchange Fees and Routing), 2023 data",
+      "url": "https://www.federalreserve.gov/paymentsystems/2023-interchange-fee.htm"
+    }
+  ],
+  "scenes": [
+    {
+      "narration": "Each debit tap costs the shop about 34 cents. But where does that money actually go?",
+      "visual": {
+        "type": "lowpoly",
+        "set": "diner",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "diner",
+          "mood": "shock",
+          "beat": "money",
+          "things": [
+            "coffee"
+          ],
+          "card": {
+            "text": "34¢",
+            "kind": "screen",
+            "sub": "PER TAP"
+          },
+          "crowd": 20,
+          "view": "wide"
+        },
+        {
+          "place": "street",
+          "mood": "scheme",
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "You tap your card on a 5 dollar coffee. Your card talks to a payment network, then to your bank.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "street",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "diner",
+          "mood": "happy",
+          "action": "phone",
+          "things": [
+            "coffee",
+            "phone"
+          ],
+          "card": {
+            "text": "$5",
+            "kind": "screen",
+            "sub": "YOUR COFFEE"
+          },
+          "view": "ms",
+          "math": [
+            {
+              "op": "",
+              "value": "$5.00",
+              "label": "your coffee"
+            }
+          ]
+        },
+        {
+          "place": "street",
+          "mood": "excited",
+          "things": [
+            "globe"
+          ],
+          "view": "wide",
+          "journey": "card to the bank"
+        }
+      ]
+    },
+    {
+      "narration": "In 2023, the rules let big banks charge 21 cents plus 0.05 percent. On your coffee, that is at most about 21 cents. So the café keeps about 4 dollars 79 cents.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "boardroom",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "boardroom",
+          "mood": "stern",
+          "card": {
+            "text": "2023",
+            "kind": "flip",
+            "sub": "YEAR"
+          },
+          "view": "ms",
+          "math": [
+            {
+              "op": "+",
+              "value": "21¢",
+              "label": "fixed fee"
+            },
+            {
+              "op": "+",
+              "value": "0.25¢",
+              "label": "0.05% of your $5"
+            }
+          ]
+        },
+        {
+          "place": "boardroom",
+          "mood": "nervous",
+          "things": [
+            "coins"
+          ],
+          "view": "face",
+          "math": [
+            {
+              "op": "=",
+              "value": "21.25¢",
+              "label": "most a big bank takes"
+            }
+          ]
+        },
+        {
+          "place": "diner",
+          "mood": "relief",
+          "things": [
+            "cash"
+          ],
+          "view": "ms",
+          "math": [
+            {
+              "op": "=",
+              "value": "$4.79",
+              "label": "left for the café",
+              "result": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "narration": "But zoom out: in 2023, people made 100.7 billion debit and prepaid payments. The average fee was 34 cents each. That adds up to about 34 billion dollars in one year.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "street",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "street",
+          "mood": "dazed",
+          "things": [
+            "globe"
+          ],
+          "card": {
+            "text": "100.7B",
+            "kind": "screen",
+            "sub": "PAYMENTS IN 2023"
+          },
+          "crowd": 120,
+          "view": "wide",
+          "math": []
+        },
+        {
+          "place": "store",
+          "mood": "calm",
+          "things": [
+            "coins"
+          ],
+          "view": "ms",
+          "math": [
+            {
+              "op": "",
+              "value": "100.7B",
+              "label": "card payments"
+            },
+            {
+              "op": "×",
+              "value": "34¢",
+              "label": "average fee"
+            }
+          ]
+        },
+        {
+          "place": "boardroom",
+          "mood": "shock",
+          "things": [
+            "cashstack"
+          ],
+          "card": {
+            "text": "$34B",
+            "kind": "screen",
+            "sub": "IN ONE YEAR"
+          },
+          "view": "face",
+          "math": [
+            {
+              "op": "=",
+              "value": "about $34B",
+              "label": "paid in fees"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "narration": "Divide by 365 days, and it is about 93 million dollars a day. That is about 1,000 dollars landing at banks every second. Not bad for a bank that only said yes.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "lab",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "lab",
+          "mood": "excited",
+          "things": [
+            "chart"
+          ],
+          "card": {
+            "text": "$93M",
+            "kind": "screen",
+            "sub": "EVERY DAY"
+          },
+          "view": "ms",
+          "math": [
+            {
+              "op": "÷",
+              "value": "365 days",
+              "label": "in a year"
+            },
+            {
+              "op": "=",
+              "value": "$93M a day",
+              "label": "paid in fees",
+              "result": true
+            }
+          ]
+        },
+        {
+          "place": "boardroom",
+          "mood": "dazed",
+          "beat": "money",
+          "things": [
+            "coins"
+          ],
+          "view": "wide",
+          "units": {
+            "thing": "coin",
+            "count": 1000,
+            "fill": true
+          }
+        },
+        {
+          "place": "mansion",
+          "mood": "laugh",
+          "things": [
+            "cash"
+          ],
+          "view": "face"
+        }
+      ]
+    }
+  ],
+  "images": {},
+  "look": "afterhour",
+  "hook_rules": "nov23",
+  "status": "ready",
+  "format": "pov",
+  "visual_style": "lowpoly"
+}

@@ -60,6 +60,7 @@ MOODS = {
     "whatif": (104, 12, (1, 3)),         # quicker, bouncy, major-leaning (I V vi IV / I vi IV V)
     "famous": (94, 8, (0, 3)),
     "story": (100, 8, (0, 3)),           # Nov 15: "You're X..." stories, steady and a little brighter           # steady "luxury" groove
+    "pov": (108, 10, (1, 3)),            # Nov 23: upbeat everyday-money explainer, bright and bouncy
     "careers": (88, 10, (1, 2)),         # warm mid-tempo
 }
 

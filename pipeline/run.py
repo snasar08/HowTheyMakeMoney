@@ -22,7 +22,7 @@ SCRIPTS = ROOT / "content" / "scripts"
 OUT = ROOT / "out"
 
 
-FORMATS = ("how", "whatif", "careers", "famous", "story")
+FORMATS = ("how", "whatif", "careers", "famous", "story", "pov")
 WEIGHTS = ROOT / "analytics" / "format_weights.json"  # written by pipeline/insights.py
 
 
@@ -37,6 +37,7 @@ def _weights() -> dict:
 
 
 SHARE_WINDOW = 6       # posts of history the share rule looks back over
+STARTING_WEIGHT = {"pov": 1.0}  # new formats start at a full share (Nov 23) so they post soon without starving the others
 MIN_SHARE_WEIGHT = 0.6  # Sam, Nov 22: "every video gets love" - a weak format still gets at least this weight
 
 
@@ -61,7 +62,7 @@ def ready_scripts(recent: list | None = None) -> list[Path]:
             print(f"[run] skipping invalid JSON: {p.name}")
     for v in pools.values():
         v.sort(key=lambda x: (x[0], x[1]))
-    share = {f: max(float(w.get(f, 1.0)), MIN_SHARE_WEIGHT) for f in pools}
+    share = {f: max(float(w.get(f, STARTING_WEIGHT.get(f, 1.0))), MIN_SHARE_WEIGHT) for f in pools}
     hist = list(recent if recent is not None else recent_formats(SHARE_WINDOW))[-SHARE_WINDOW:]
     out = []
     while any(pools.values()):

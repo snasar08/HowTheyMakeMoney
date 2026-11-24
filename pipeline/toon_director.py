@@ -75,6 +75,37 @@ def _gemini(prompt: str) -> dict | None:
     return None
 
 
+POV_OPS = {"", "+", "-", "−", "×", "x", "*", "÷", "/", "="}
+POV_UNITS = ["bathtub", "lightbulb", "house", "coin", "cup", "phone", "truck"]
+
+
+def clean_pov(sc: dict) -> dict:
+    """POV format (Nov 24) per-sentence fields: `math` (stacked cards), `units` (a row of everyday objects), `journey`
+    ("<object> to <place>"). Card strings are kept EXACTLY as the script wrote them (never reformatted or invented)."""
+    out: dict = {}
+    m = sc.get("math")
+    if isinstance(m, list):
+        cards = []
+        for c in m:
+            if isinstance(c, dict) and str(c.get("value", "")).strip():
+                op = str(c.get("op", "")).strip()
+                cards.append({"op": {"x": "×", "*": "×", "/": "÷", "-": "−"}.get(op, op) if op in POV_OPS else "",
+                              "value": str(c["value"]).strip()[:14], "label": str(c.get("label", "")).strip()[:32],
+                              **({"result": True} if c.get("result") or op == "=" else {})})
+        out["math"] = cards[:5]
+    u = sc.get("units")
+    if isinstance(u, dict) and str(u.get("thing", "")).lower() in POV_UNITS:
+        try:
+            n = int(u.get("count", 8))
+        except (TypeError, ValueError):
+            n = 8
+        out["units"] = {"thing": str(u["thing"]).lower(), "count": max(1, min(24, n)), "fill": bool(u.get("fill", True))}
+    j = sc.get("journey")
+    if isinstance(j, str) and j.strip():
+        out["journey"] = j.strip()[:80]
+    return out
+
+
 def clean(sc: dict) -> dict:
     """Keep only kit values; drop anything unknown."""
     from . import toon as _t      # Nov 18: the 3D look also takes any of its own sets / objects by name
@@ -102,6 +133,7 @@ def clean(sc: dict) -> dict:
         out["who"] = sc["who"]
     if sc.get("hide"):
         out["hide"] = True
+    out.update(clean_pov(sc))
     if out["beat"] == "drive":
         out["place"] = "road"
     if out["beat"] in ("logo", "sign") and "brand" not in out:

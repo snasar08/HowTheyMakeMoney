@@ -1,0 +1,302 @@
+{
+  "id": "181",
+  "slug": "pov-spotify-bill",
+  "company": "Spotify",
+  "hook_style": "number",
+  "title_style": "statement",
+  "theme": "dark_neon",
+  "score": 87,
+  "title": "Spotify Hands Almost 70% of Your Bill Away",
+  "pov": "POV: you pay for Spotify",
+  "name_card": "POV: you pay for Spotify",
+  "name_sub": "where your monthly bill goes",
+  "description": "POV: you pay your monthly Spotify bill. Follow the money to the music industry.\n\nSources:\n- Spotify Newsroom: 2025 music industry payouts (Loud & Clear, Jan 28, 2026): https://newsroom.spotify.com/2026-01-28/2025-music-industry-payouts-whats-next-for-artists/\n- Spotify: Premium plans (Individual plan price): https://www.spotify.com/us/premium/\n\nFrom the cited pages: Spotify paid more than $11 billion to the music industry in 2025 and says it pays out two-thirds of all music revenue to the industry, almost 70% of what it takes in; the Individual Premium plan costs $12.99 a month in the United States. Our math: $12.99 x 70% = about $9.09, so about $9 goes to the music industry and about $4 stays with Spotify; $11 billion / 365 = about $30.1 million a day; $11 billion / 31.5 million seconds = about $349 a second (both are minimums because the payout was more than $11 billion). Not financial advice.\n\n#shorts #spotify #music #howtheymakemoney",
+  "tags": [
+    "spotify",
+    "music",
+    "streaming",
+    "shorts"
+  ],
+  "loop": "So next time you press play, remember:",
+  "cta": "Spotify or Apple Music? Pick one.",
+  "cta_question": "Spotify or Apple Music?",
+  "first_comment": "What song is on repeat for you right now? 👇",
+  "hero": {
+    "skin": "d9a577",
+    "hair": "quiff",
+    "hair_color": "2a1d14",
+    "beard": "none",
+    "outfit": "hoodie",
+    "shirt": "1db954",
+    "pants": "2b2f3a",
+    "shoes": "f4f4f4",
+    "chest": "",
+    "trim": "ffffff",
+    "height": 1.0,
+    "extras": [
+      "headband"
+    ]
+  },
+  "sources": [
+    {
+      "title": "Spotify Newsroom: 2025 music industry payouts (Jan 28, 2026)",
+      "url": "https://newsroom.spotify.com/2026-01-28/2025-music-industry-payouts-whats-next-for-artists/"
+    },
+    {
+      "title": "Spotify: Premium plans (US Individual price)",
+      "url": "https://www.spotify.com/us/premium/"
+    }
+  ],
+  "scenes": [
+    {
+      "narration": "Spotify hands almost 70 cents of every dollar away. But who actually gets all that money?",
+      "visual": {
+        "type": "lowpoly",
+        "set": "studio",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "studio",
+          "mood": "shock",
+          "beat": "money",
+          "things": [
+            "headset"
+          ],
+          "brand": {
+            "name": "Spotify",
+            "bg": "#121212",
+            "fg": "#1db954",
+            "icon": "play"
+          },
+          "card": {
+            "text": "70¢",
+            "kind": "screen",
+            "sub": "OF EVERY DOLLAR"
+          },
+          "view": "wide"
+        },
+        {
+          "place": "street",
+          "mood": "scheme",
+          "things": [
+            "coins"
+          ],
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "You pay 12 dollars and 99 cents for Premium. Spotify just passes most of it on to the music industry.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "street",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "street",
+          "mood": "happy",
+          "action": "phone",
+          "things": [
+            "phone"
+          ],
+          "card": {
+            "text": "$12.99",
+            "kind": "screen",
+            "sub": "PER MONTH"
+          },
+          "view": "ms",
+          "math": [
+            {
+              "op": "",
+              "value": "$12.99",
+              "label": "your Premium bill"
+            }
+          ]
+        },
+        {
+          "place": "studio",
+          "mood": "calm",
+          "things": [
+            "guitar",
+            "cash"
+          ],
+          "view": "wide",
+          "journey": "money to the music industry"
+        }
+      ]
+    },
+    {
+      "narration": "But it says it pays out almost 70 percent of what it takes in. So about 9 dollars of your bill goes to the music industry. That leaves about 4 dollars for Spotify itself.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "boardroom",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "boardroom",
+          "mood": "stern",
+          "things": [
+            "chart"
+          ],
+          "card": {
+            "text": "70%",
+            "kind": "screen",
+            "sub": "PAID OUT"
+          },
+          "view": "ms",
+          "math": [
+            {
+              "op": "×",
+              "value": "~70%",
+              "label": "paid out"
+            }
+          ]
+        },
+        {
+          "place": "stage",
+          "mood": "excited",
+          "things": [
+            "guitar",
+            "mic"
+          ],
+          "card": {
+            "text": "$9",
+            "kind": "screen",
+            "sub": "TO THE MUSIC WORLD"
+          },
+          "crowd": 60,
+          "view": "wide",
+          "math": [
+            {
+              "op": "=",
+              "value": "about $9",
+              "label": "to the music world",
+              "result": true
+            }
+          ]
+        },
+        {
+          "place": "boardroom",
+          "mood": "nervous",
+          "things": [
+            "cash"
+          ],
+          "card": {
+            "text": "$4",
+            "kind": "screen",
+            "sub": "LEFT FOR SPOTIFY"
+          },
+          "view": "face",
+          "math": []
+        }
+      ]
+    },
+    {
+      "narration": "Then in 2025 Spotify paid over 11 billion dollars. Split that over 365 days and it is over 30 million dollars a day.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "stage",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "stage",
+          "mood": "dazed",
+          "things": [
+            "cashstack"
+          ],
+          "card": {
+            "text": "2025",
+            "kind": "flip",
+            "sub": "YEAR"
+          },
+          "crowd": 200,
+          "view": "wide",
+          "math": []
+        },
+        {
+          "place": "lab",
+          "mood": "shock",
+          "things": [
+            "chart"
+          ],
+          "card": {
+            "text": "$30M+",
+            "kind": "screen",
+            "sub": "EVERY DAY"
+          },
+          "view": "ms",
+          "math": [
+            {
+              "op": "",
+              "value": "$11B+",
+              "label": "paid in 2025"
+            },
+            {
+              "op": "÷",
+              "value": "365 days",
+              "label": "in a year"
+            },
+            {
+              "op": "=",
+              "value": "$30M+ a day",
+              "label": "paid out",
+              "result": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "narration": "That is more than 340 dollars every single second. Your repeat button is basically a tiny paycheck machine.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "studio",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "studio",
+          "mood": "excited",
+          "beat": "money",
+          "things": [
+            "coins"
+          ],
+          "view": "wide",
+          "units": {
+            "thing": "coin",
+            "count": 340,
+            "fill": true
+          }
+        },
+        {
+          "place": "studio",
+          "mood": "laugh",
+          "things": [
+            "headset"
+          ],
+          "view": "face"
+        }
+      ]
+    }
+  ],
+  "images": {},
+  "look": "afterhour",
+  "hook_rules": "nov23",
+  "status": "ready",
+  "format": "pov",
+  "visual_style": "lowpoly"
+}
