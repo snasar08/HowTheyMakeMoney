@@ -7,7 +7,7 @@
   "hook_style": "number",
   "title_style": "whatif",
   "theme": "bold_bright",
-  "status": "ready",
+  "status": "needs_fix",
   "score": 90,
   "title": "What If You Ate All 40 Billion Oreos?",
   "name_card": "What if you ate every Oreo",
@@ -47,7 +47,20 @@
         "action": "idle",
         "crowd": 0,
         "props": [],
-        "stat": null
+        "stat": null,
+        "hero": {
+          "skin": "c68a5e",
+          "hair": "short",
+          "hair_color": "2a1d14",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "1d4ed8",
+          "pants": "2b2f3a",
+          "shoes": "f4f4f4",
+          "chest": "",
+          "trim": "ffffff",
+          "height": 0.85
+        }
       },
       "toon": [
         {
@@ -78,7 +91,20 @@
         "action": "idle",
         "crowd": 0,
         "props": [],
-        "stat": null
+        "stat": null,
+        "hero": {
+          "skin": "c68a5e",
+          "hair": "short",
+          "hair_color": "2a1d14",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "1d4ed8",
+          "pants": "2b2f3a",
+          "shoes": "f4f4f4",
+          "chest": "",
+          "trim": "ffffff",
+          "height": 0.85
+        }
       },
       "toon": [
         {
@@ -109,7 +135,20 @@
         "action": "idle",
         "crowd": 0,
         "props": [],
-        "stat": null
+        "stat": null,
+        "hero": {
+          "skin": "c68a5e",
+          "hair": "short",
+          "hair_color": "2a1d14",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "1d4ed8",
+          "pants": "2b2f3a",
+          "shoes": "f4f4f4",
+          "chest": "",
+          "trim": "ffffff",
+          "height": 0.85
+        }
       },
       "toon": [
         {
@@ -132,7 +171,20 @@
         "action": "idle",
         "crowd": 0,
         "props": [],
-        "stat": null
+        "stat": null,
+        "hero": {
+          "skin": "c68a5e",
+          "hair": "short",
+          "hair_color": "2a1d14",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "1d4ed8",
+          "pants": "2b2f3a",
+          "shoes": "f4f4f4",
+          "chest": "",
+          "trim": "ffffff",
+          "height": 0.85
+        }
       },
       "toon": [
         {
@@ -159,7 +211,20 @@
         "action": "idle",
         "crowd": 0,
         "props": [],
-        "stat": null
+        "stat": null,
+        "hero": {
+          "skin": "c68a5e",
+          "hair": "short",
+          "hair_color": "2a1d14",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "1d4ed8",
+          "pants": "2b2f3a",
+          "shoes": "f4f4f4",
+          "chest": "",
+          "trim": "ffffff",
+          "height": 0.85
+        }
       },
       "toon": [
         {
@@ -184,5 +249,8 @@
       "url": "https://en.wikipedia.org/wiki/Oreo"
     }
   ],
-  "hook_rules": "nov23"
+  "hook_rules": "nov23",
+  "needs_fix": [
+    "act eat unclear at frames 115-245: The character is clearly holding and eating a burger, not an Oreo."
+  ]
 }

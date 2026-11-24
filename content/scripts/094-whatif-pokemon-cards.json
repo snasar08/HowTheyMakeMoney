@@ -7,7 +7,7 @@
   "hook_style": "number",
   "title_style": "statement",
   "theme": "bold_bright",
-  "status": "ready",
+  "status": "delivered",
   "score": 90,
   "title": "Opening Every Pokémon Card Takes 2,700 Years",
   "description": "Pokémon has made over 85 billion cards.\n\nSources:\n- Wikipedia: Pok%C3%A9mon Trading Card Game: https://en.wikipedia.org/wiki/Pok%C3%A9mon_Trading_Card_Game\n\nFrom Wikipedia (Pokémon Trading Card Game): as of March 2026 the game has produced over 85 billion cards worldwide; the PSA 10 Pikachu Illustrator, the most expensive Pokémon card ever sold, was bought for $5,275,000 in July 2021 and sold for $16.5 million in February 2026. Our math: 85 billion seconds is about 2,693 years (365.25-day years), a day has 86,400 seconds; $16.5M / $5.275M is about 3.1. Not financial advice.\n\n#shorts #pokemon #pokemoncards #whatif #howtheymakemoney",
@@ -35,7 +35,17 @@
           "boxes"
         ],
         "stat": "85 BILLION",
-        "stat_sub": "cards made, by March 2026"
+        "stat_sub": "cards made, by March 2026",
+        "hero": {
+          "skin": "dark",
+          "hair": "buzz",
+          "hair_color": "141210",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "ff6b9d",
+          "pants": "2c4a3a",
+          "shoes": "f4f4f4"
+        }
       },
       "toon": [
         {
@@ -80,7 +90,17 @@
         ],
         "stat": "2,700 YEARS",
         "stat_sub": "one card a second",
-        "hud": "0"
+        "hud": "0",
+        "hero": {
+          "skin": "dark",
+          "hair": "buzz",
+          "hair_color": "141210",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "ff6b9d",
+          "pants": "2c4a3a",
+          "shoes": "f4f4f4"
+        }
       },
       "toon": [
         {
@@ -114,7 +134,17 @@
         ],
         "stat": "86,400",
         "stat_sub": "cards in a day",
-        "hud": "86,400"
+        "hud": "86,400",
+        "hero": {
+          "skin": "dark",
+          "hair": "buzz",
+          "hair_color": "141210",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "ff6b9d",
+          "pants": "2c4a3a",
+          "shoes": "f4f4f4"
+        }
       },
       "toon": [
         {
@@ -152,7 +182,17 @@
           "cash"
         ],
         "stat": "$16.5 MILLION",
-        "stat_sub": "Pikachu Illustrator, Feb 2026"
+        "stat_sub": "Pikachu Illustrator, Feb 2026",
+        "hero": {
+          "skin": "dark",
+          "hair": "buzz",
+          "hair_color": "141210",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "ff6b9d",
+          "pants": "2c4a3a",
+          "shoes": "f4f4f4"
+        }
       },
       "toon": [
         {
@@ -182,7 +222,17 @@
           "check"
         ],
         "stat": "3X",
-        "stat_sub": "$5.3M in 2021 to $16.5M"
+        "stat_sub": "$5.3M in 2021 to $16.5M",
+        "hero": {
+          "skin": "dark",
+          "hair": "buzz",
+          "hair_color": "141210",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "ff6b9d",
+          "pants": "2c4a3a",
+          "shoes": "f4f4f4"
+        }
       },
       "toon": [
         {
@@ -218,5 +268,22 @@
       "url": "https://en.wikipedia.org/wiki/Pok%C3%A9mon_Trading_Card_Game"
     }
   ],
-  "hook_rules": "nov23"
+  "hook_rules": "nov23",
+  "delivered": {
+    "mode": "release",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-094-whatif-pokemon-cards",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-094-whatif-pokemon-cards/094-whatif-pokemon-cards.mp4",
+    "post_at": "2026-11-24T12:00:00-05:00",
+    "rendered_at": "2026-11-24T02:14:17.832151+00:00",
+    "seconds": 25.81,
+    "eyes": {
+      "score": 9,
+      "problems": [
+        "The caption '3X' appears on screen during the narration 'The price tripled', which is confusing as the math (5.3m to 16.5m) is closer to 3.1x, and the negative sign '-' appears before the 3X in some frames, which is mathematically incorrect."
+      ],
+      "best_fix": "Remove the '-' sign from the '3X' graphic and ensure the caption accurately reflects the narration.",
+      "model": "gemini-3.1-flash-lite",
+      "acts": null
+    }
+  }
 }
