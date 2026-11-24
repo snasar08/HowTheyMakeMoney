@@ -190,37 +190,95 @@ const windows = (col: string) => {
   return t;
 };
 
-type Landmark = { g: THREE.Group; tick: (k: number, arrive: number) => void };
-const landmark = (kind: string): Landmark => {
-  const g = new THREE.Group();
-  let spin: THREE.Object3D[] = [];
-  if (kind === "bank") {
-    bxm(g, 11, 0.6, 9, T("#e9dfc9"), 0, 0.3, 0, 0.04); bxm(g, 9, 6, 7, T("#f3ead6"), 0, 3.6, -0.5, 0.05);
-    for (let i = 0; i < 5; i++) cym(g, 0.45, 0.45, 6, T("#fffaf0"), -3.6 + i * 1.8, 3.6, 3.4, 0.03, 16);
-    add(g, new THREE.ConeGeometry(5.6, 2.2, 3), T("#e3d6b8"), 0, 7.7, 3.2, 0.04).rotation.set(PI / 2 * 0, 0, 0);
-    g.children[g.children.length - 1].scale.set(1, 1, 0.16); g.children[g.children.length - 1].rotation.set(0, PI / 2, 0);
-    spm(g, 2.3, T("#ffc928", { emissive: "#ffc928", emissiveIntensity: 0.5 }), 0, 8.2, -1, 0.04).scale.y = 0.75;
-    cym(g, 0.12, 0.12, 1.4, T("#ffc928"), 0, 10.2, -1, 0.02, 8);
-  } else if (kind === "shop") {
-    bxm(g, 9, 4.6, 6.5, T("#ffe3b3"), 0, 2.3, 0, 0.05);
-    for (let i = 0; i < 9; i++) bxm(g, 1.0, 0.18, 2.4, T(i % 2 ? "#ffffff" : "#ff5d73"), -4 + i, 4.2 - 0.04 * (i % 2), 4.3, 0.015);
-    bxm(g, 6.4, 2.2, 0.12, glowMat("#9fe7ff", 1.1), 0, 2.3, 3.28); bxm(g, 1.6, 2.7, 0.14, T("#8a5a30"), 3.1, 1.4, 3.3);
-  } else if (kind === "house") {
-    const th = makeThing("house"), k = 9 / Math.max(0.01, th.size) * 0.8; th.root.scale.setScalar(k); g.add(th.root);
-  } else if (kind === "factory") {
-    const th = makeThing("factory"), k = 9 / Math.max(0.01, th.size) * 1.3; th.root.scale.setScalar(k); g.add(th.root);
-  } else {   // "hub": a tall tower with glowing rings (the network / the place the money goes)
-    cym(g, 2.2, 3.4, 1.0, T("#dfe6f5"), 0, 0.5, 0, 0.05, 20); cym(g, 1.1, 1.8, 14, T("#7a86ff"), 0, 8, 0, 0.05, 20);
-    for (let i = 0; i < 3; i++) { const r = add(g, new THREE.TorusGeometry(2.6 - i * 0.4, 0.22, 10, 40), glowMat(["#37e0ff", "#ff4da6", "#ffd23a"][i], 1.8), 0, 5 + i * 3.6, 0, 0); r.rotation.x = PI / 2; spin.push(r); }
-    spm(g, 1.3, glowMat("#ffffff", 2), 0, 15.6, 0); cym(g, 0.08, 0.08, 3, T("#c9d2e0"), 0, 17.8, 0, 0, 8);
-  }
-  const beam = cym(g, 1.6, 2.4, 60, new THREE.MeshBasicMaterial({ color: "#ffe28a", transparent: true, opacity: 0.2, depthWrite: false, blending: THREE.AdditiveBlending }), 0, 36, 0, 0, 20);
-  void beam;
-  return { g, tick: (k, arrive) => { spin.forEach((r, i) => { r.rotation.z = k * 3 * (i % 2 ? -1 : 1); }); g.scale.setScalar(1 + 0.06 * Math.sin(clamp(arrive) * PI)); } };
-};
-
-const kindOfPlace = (to: string) => /bank|vault|treasur/i.test(to) ? "bank" : /shop|store|caf[eé]|coffee|merchant|market|restaurant|diner/i.test(to) ? "shop" : /home|house|apartment/i.test(to) ? "house" : /factory|plant|mill/i.test(to) ? "factory" : "hub";
-
+type Landmark = { g: THREE.Group; tick: (k: number, arrive: number) => void };
+/** a flat lettered sign (generic text only, never a real logo) */
+const signMesh = (text: string, bg: string, fg: string, w: number, h: number, glow = false): THREE.Mesh => {
+  const H = Math.round((256 * h) / w);
+  const tex = canvasTex(256, H, (c) => {
+    c.fillStyle = bg; c.fillRect(0, 0, 256, H); c.fillStyle = fg; c.font = `900 ${Math.round(H * 0.62)}px "Arial Black", Arial, sans-serif`; c.textAlign = "center"; c.textBaseline = "middle";
+    c.fillText(text, 128, H * 0.54, 240);
+  });
+  return new THREE.Mesh(new THREE.PlaneGeometry(w, h), new THREE.MeshBasicMaterial({ map: tex, toneMapped: !glow }));
+};
+const landmark = (kind: string): Landmark => {
+  const g = new THREE.Group();
+  const spin: THREE.Object3D[] = [], puffs: THREE.Mesh[] = [], bulbs: THREE.Mesh[] = [];
+  if (kind === "bank") {   // stone building: steps, six columns, pediment, a gold coin on top and a BANK sign
+    bxm(g, 13, 0.5, 11, T("#d9d2c0"), 0, 0.25, 0, 0.04); bxm(g, 12, 0.5, 9.4, T("#e6dfcd"), 0, 0.75, 0.3, 0.04); bxm(g, 11, 0.5, 8, T("#efe8d6"), 0, 1.25, 0.6, 0.04);
+    bxm(g, 9.6, 7, 6.4, T("#f3ead6"), 0, 4.75, -1.2, 0.05);
+    for (let i = 0; i < 6; i++) cym(g, 0.5, 0.5, 6.6, T("#fffaf0"), -4.5 + i * 1.8, 4.8, 2.9, 0.03, 16);
+    bxm(g, 10.6, 0.7, 2.2, T("#e3d6b8"), 0, 8.4, 2.7, 0.04);
+    const ped = add(g, new THREE.CylinderGeometry(3.4, 3.4, 2.4, 3), T("#e3d6b8"), 0, 9.9, 2.4, 0.04); ped.rotation.set(PI / 2, PI / 2, 0); ped.scale.set(1, 1, 0.34);
+    const sg = signMesh("BANK", "#1f3a6e", "#ffffff", 5, 1.25); sg.position.set(0, 7.4, 3.2); g.add(sg);
+    bxm(g, 1.8, 3, 0.2, T("#6b4a2a"), 0, 3.0, 2.2, 0.02);
+    const coinTop = cym(g, 1.6, 1.6, 0.35, T("#ffc928", { emissive: "#ffc928", emissiveIntensity: 0.5 }), 0, 12.6, 2.3, 0.04, 28); coinTop.rotation.x = PI / 2; spin.push(coinTop);
+  } else if (kind === "mint") {   // red-brick factory: three chimneys with puffs of smoke, a gate, a gear, a MINT sign
+    bxm(g, 14, 6, 9, T("#c9604a"), 0, 3, 0, 0.05); bxm(g, 14.4, 0.4, 9.4, T("#8a3d30"), 0, 6.1, 0, 0.03);
+    for (let i = 0; i < 4; i++) bxm(g, 3.2, 1.6, 8.6, T("#a24a38"), -5.2 + i * 3.45, 7.0, 0, 0.04);
+    for (const [x, hgt] of [[-5, 14], [-2.4, 17], [0.2, 12.5]] as [number, number][]) {
+      cym(g, 0.9, 1.15, hgt, T("#a0523d"), x, hgt / 2, -2.2, 0.04, 14); cym(g, 1.05, 1.05, 0.5, T("#4a3a34"), x, hgt, -2.2, 0.02, 14);
+      for (let q = 0; q < 3; q++) puffs.push(spm(g, 0.8 + q * 0.25, T("#f2f2f2"), x + q * 0.5, hgt + 1.5 + q * 1.6, -2.2));
+    }
+    bxm(g, 2.4, 3.1, 0.35, T("#3a2a1a"), 4.2, 1.6, 4.7, 0.02);
+    const sg = signMesh("MINT", "#ffc928", "#4a2c00", 6, 1.5); sg.position.set(-1.5, 4.6, 4.52); g.add(sg);
+    const gear = cym(g, 1.5, 1.5, 0.4, T("#8c93a3"), 4.2, 5.3, 4.6, 0.03, 8); gear.rotation.x = PI / 2; spin.push(gear);
+  } else if (kind === "cinema") {   // cinema: big marquee with chasing bulbs, a MOVIES sign, poster boards, a popcorn tower on the roof
+    bxm(g, 13, 8, 8, T("#5b3d8a"), 0, 4, 0, 0.05); bxm(g, 13.4, 0.6, 8.4, T("#3a2560"), 0, 8.2, 0, 0.03);
+    bxm(g, 10, 1.5, 1.2, T("#ffd23a"), 0, 5.7, 4.6, 0.04);
+    const sg = signMesh("MOVIES", "#d8264a", "#ffffff", 7.6, 1.2, true); sg.position.set(0, 5.7, 5.23); g.add(sg);
+    for (let i = 0; i < 12; i++) bulbs.push(spm(g, 0.17, glowMat("#fff1a8", 1.6), -4.7 + i * 0.855, 6.6, 5.2), spm(g, 0.17, glowMat("#fff1a8", 1.6), -4.7 + i * 0.855, 4.8, 5.2));
+    for (const sx of [-4.2, 4.2]) { bxm(g, 2.4, 3.2, 0.2, T("#1a1a2a"), sx, 2.6, 4.1, 0.03); bxm(g, 2.0, 2.8, 0.1, T(sx < 0 ? "#ff7a59" : "#59c3ff"), sx, 2.6, 4.22); }
+    bxm(g, 2.2, 2.8, 0.2, T("#2a1a3a"), 0, 1.5, 4.1, 0.03);
+    cym(g, 1.2, 0.9, 2.4, T("#d8264a"), 0, 10.0, 0, 0.04, 12);
+    for (let i = 0; i < 5; i++) puffs.push(spm(g, 0.62, T("#fff6d0"), -0.9 + i * 0.45 + (i % 2) * 0.1, 11.7 + (i % 2) * 0.35, 0.1 * i));
+  } else if (kind === "studio") {   // record studio: dark building with a giant vinyl record, speaker stacks and a glowing ON AIR sign
+    bxm(g, 12, 7, 8, T("#2e2f4a"), 0, 3.5, 0, 0.05); bxm(g, 12.4, 0.5, 8.4, T("#1c1d33"), 0, 7.2, 0, 0.03);
+    const rec = cym(g, 3.2, 3.2, 0.3, T("#16161f"), 0, 9.6, 4.2, 0.04, 40); rec.rotation.x = PI / 2; spin.push(rec);
+    const lab = cym(g, 1.1, 1.1, 0.34, T("#ff4da6"), 0, 9.6, 4.2, 0, 24); lab.rotation.x = PI / 2; spin.push(lab);
+    const sg = signMesh("STUDIO", "#ffd23a", "#2e1a50", 6.4, 1.3); sg.position.set(0, 4.7, 4.03); g.add(sg);
+    const air = signMesh("ON AIR", "#e5173f", "#ffffff", 2.8, 0.8, true); air.position.set(-3.6, 6.3, 4.03); g.add(air);
+    for (const sx of [-5.3, 5.3]) { bxm(g, 1.8, 3.8, 1.6, T("#1a1a24"), sx, 1.9, 4.4, 0.03); spm(g, 0.55, T("#52526e"), sx, 1.2, 5.25).scale.z = 0.35; spm(g, 0.3, T("#52526e"), sx, 2.9, 5.25).scale.z = 0.35; }
+    bxm(g, 2.2, 3.2, 0.2, T("#7a3a6a"), 0, 1.6, 4.05, 0.03);
+    for (let i = 0; i < 3; i++) { const n = add(g, new THREE.TorusGeometry(0.25, 0.07, 6, 12, PI * 1.5), glowMat(["#ff4da6", "#37e0ff", "#ffd23a"][i], 1.6), -3 + i * 3, 11.9 + (i % 2), 3.5, 0); spin.push(n); }
+  } else if (kind === "drawer") {   // a giant wooden chest of drawers with brass knobs, one drawer half open (where the card ends up), a lamp on top
+    bxm(g, 10, 9, 5, T("#b9783f"), 0, 4.5, 0, 0.05); bxm(g, 10.6, 0.5, 5.6, T("#8f5a2c"), 0, 9.2, 0, 0.04); bxm(g, 9.4, 0.5, 4.6, T("#6f4521"), 0, 0.25, 0, 0.03);
+    for (let r = 0; r < 3; r++) for (let c = 0; c < 2; c++) {
+      const x = -2.4 + c * 4.8, y = 1.8 + r * 2.8, out = r === 1 && c === 1 ? 2.2 : 0.0;
+      bxm(g, 4.4, 2.4, 0.3 + out, T(out ? "#d29458" : "#cf9156"), x, y, 2.6 + out / 2, 0.03); spm(g, 0.28, T("#ffd24a", { emissive: "#ffc928", emissiveIntensity: 0.4 }), x, y, 2.85 + out, 0.02);
+    }
+    cym(g, 0.2, 0.4, 2.2, T("#e8e0d0"), -3.6, 10.4, 0, 0.02, 10); add(g, new THREE.ConeGeometry(1.5, 1.5, 14), T("#ffd166", { emissive: "#ffb347", emissiveIntensity: 0.6 }), -3.6, 12.2, 0, 0.03);
+    const tag = signMesh("DRAWER", "#fff4d6", "#4a2c00", 3.6, 0.9); tag.position.set(0, 10.4, 2.8); g.add(tag);
+  } else if (kind === "shop") {   // a corner shop: striped awning, big glass window, a sign
+    bxm(g, 10, 5, 7, T("#ffe3b3"), 0, 2.5, 0, 0.05);
+    for (let i = 0; i < 10; i++) bxm(g, 1.0, 0.18, 2.6, T(i % 2 ? "#ffffff" : "#ff5d73"), -4.5 + i, 4.2 - 0.04 * (i % 2), 4.6, 0.015);
+    bxm(g, 7, 2.4, 0.12, glowMat("#9fe7ff", 1.1), -0.6, 2.2, 3.55); bxm(g, 1.6, 2.9, 0.14, T("#8a5a30"), 3.6, 1.45, 3.6);
+    const sg = signMesh("SHOP", "#ff5d73", "#ffffff", 5, 1.1); sg.position.set(0, 5.6, 3.6); g.add(sg);
+  } else if (kind === "house") {
+    const th = makeThing("house"), k = 9 / Math.max(0.01, th.size) * 0.8; th.root.scale.setScalar(k); g.add(th.root);
+  } else {   // "hub": a tall tower with glowing rings (the network / the place the money goes)
+    cym(g, 2.2, 3.4, 1.0, T("#dfe6f5"), 0, 0.5, 0, 0.05, 20); cym(g, 1.1, 1.8, 14, T("#7a86ff"), 0, 8, 0, 0.05, 20);
+    for (let i = 0; i < 3; i++) { const r = add(g, new THREE.TorusGeometry(2.6 - i * 0.4, 0.22, 10, 40), glowMat(["#37e0ff", "#ff4da6", "#ffd23a"][i], 1.8), 0, 5 + i * 3.6, 0, 0); r.rotation.x = PI / 2; spin.push(r); }
+    spm(g, 1.3, glowMat("#ffffff", 2), 0, 15.6, 0); cym(g, 0.08, 0.08, 3, T("#c9d2e0"), 0, 17.8, 0, 0, 8);
+  }
+  cym(g, 1.6, 2.4, 60, new THREE.MeshBasicMaterial({ color: "#ffe28a", transparent: true, opacity: 0.2, depthWrite: false, blending: THREE.AdditiveBlending }), 0, 36, 0, 0, 20);
+  const baseY = puffs.map((p) => p.position.y);
+  return { g, tick: (k, arrive) => {
+    spin.forEach((r, i) => { const dir = i % 2 ? -1 : 1; if (kind === "studio") r.rotation.y = k * 3 * dir; else r.rotation.z = k * (kind === "hub" ? 3 : 1.5) * dir; });
+    puffs.forEach((pf, i) => { pf.scale.setScalar(0.75 + 0.3 * Math.sin(k * 2 + i * 1.3)); pf.position.y = baseY[i] + 0.3 * Math.sin(k * 1.5 + i); });
+    bulbs.forEach((bl, i) => { bl.visible = (Math.floor(k * 3) + i) % 3 !== 0; });
+    g.scale.setScalar(1 + (kind === "hub" ? 0.06 : 0.03) * Math.sin(clamp(arrive) * PI));
+  } };
+};
+
+const kindOfPlace = (to: string) =>
+  /bank|vault|treasur/i.test(to) ? "bank"
+  : /mint|federal|reserve|factory|plant|mill/i.test(to) ? "mint"
+  : /theat|cinema|movie|film|register|amc/i.test(to) ? "cinema"
+  : /music|studio|record|label|artist|industry|song/i.test(to) ? "studio"
+  : /drawer|desk|closet|shelf|cabinet|attic|junk/i.test(to) ? "drawer"
+  : /shop|store|caf[eé]|coffee|merchant|market|restaurant|diner/i.test(to) ? "shop"
+  : /home|house|apartment/i.test(to) ? "house" : "hub";
+
 const speechBubble = (col: string, s = 1): THREE.Group => {
   const g = new THREE.Group(), m = T(col);
   add(g, new THREE.SphereGeometry(0.5, 20, 14), m, 0, 0, 0, 0.03).scale.set(1.45 * s, 1.0 * s, 0.4 * s);
@@ -294,6 +352,34 @@ export const buildJourney = (sp: JourneySpec): Pov3 => {
   }
   // lamp posts + trees along the route
   for (let k = 0; k < 40; k++) { const p = at(k / 40), n = new THREE.Vector3(-tan(k / 40).z, 0, tan(k / 40).x).normalize(); const s = k % 2 ? 1 : -1; cym(root, 0.07, 0.09, 3.6, T("#4a4f5e"), p.x + n.x * 2.7 * s, 1.8, p.z + n.z * 2.7 * s, 0.02, 8); spm(root, 0.22, glowMat("#ffe9a0", 1.4), p.x + n.x * 2.7 * s, 3.7, p.z + n.z * 2.7 * s); }
+  // town life (Nov 24): trees along the route, cars driving on the roads, people on the kerbs
+  const normalAt = (t: number) => { const tn = tan(t); return new THREE.Vector3(-tn.z, 0, tn.x).normalize(); };
+  for (let k = 0; k < 44; k++) {
+    const t = k / 44 + R() * 0.01, p = at(t), n = normalAt(t), sd = k % 2 ? 1 : -1, o = ROAD / 2 + 1.6 + R() * 1.4;
+    const tx = p.x + n.x * o * sd, tz = p.z + n.z * o * sd;
+    if (Math.hypot(tx - lx, tz - lz) < 9) continue;
+    const ts = 0.8 + R() * 0.6; cym(root, 0.2 * ts, 0.28 * ts, 1.2 * ts, T("#8a5a30"), tx, 0.6 * ts, tz, 0.02, 8); add(root, new THREE.ConeGeometry(1.1 * ts, 2.4 * ts, 10), T(R() < 0.7 ? "#2fae4f" : "#4fc46a"), tx, 2.3 * ts, tz, 0.03);
+  }
+  const carCols = ["#ff5d73", "#ffd166", "#5db4ff", "#ffffff", "#7ed957", "#c3a6ff", "#ff9a3c"], wheelM = T("#23252f");
+  const cars: { g: THREE.Group; alongX: boolean; line: number; lane: number; c0: number; dir: number; sp: number }[] = [];
+  for (let i = 0; i < 22; i++) {
+    const g = new THREE.Group(), col = carCols[Math.floor(R() * carCols.length)], van = R() < 0.25;
+    bxm(g, 1.9, 0.75, 4.1, T(col), 0, 0.7, 0, 0.03); bxm(g, 1.65, 0.65, van ? 3.0 : 2.1, T(van ? col : "#dff4ff"), 0, 1.35, van ? -0.4 : -0.2, 0.03);
+    bxm(g, 1.5, 0.12, 0.05, glowMat("#fff4b0", 1.4), 0, 0.75, 2.07); bxm(g, 1.5, 0.12, 0.05, glowMat("#ff4a4a", 1.2), 0, 0.75, -2.07);
+    for (const sx of [-0.95, 0.95]) for (const sz of [-1.3, 1.3]) { const w = cym(g, 0.4, 0.4, 0.3, wheelM, sx, 0.4, sz, 0.01, 10); w.rotation.z = PI / 2; }
+    const pt = pts[i % pts.length], alongX = i % 2 === 1, dir = R() < 0.5 ? -1 : 1;
+    const line = alongX ? Math.round(pt[2] / PITCH) * PITCH : Math.round(pt[0] / PITCH) * PITCH, c0 = (alongX ? pt[0] : pt[2]) - 40 + R() * 80;
+    cars.push({ g, alongX, line, lane: dir * 1.25, c0, dir, sp: 16 + R() * 22 }); root.add(g);
+  }
+  const shirts = ["#ff5d73", "#ffd166", "#5db4ff", "#7ed957", "#c3a6ff", "#ff9a3c", "#ffffff"], skins = ["#f1c9a0", "#c68642", "#8d5524", "#e0ac69"];
+  const folk: { g: THREE.Group; base: THREE.Vector3; ph: number; d: THREE.Vector3; sd: number }[] = [];
+  for (let i = 0; i < 34; i++) {
+    const t = 0.02 + 0.98 * R(), p = at(t), n = normalAt(t), sd = R() < 0.5 ? -1 : 1, o = ROAD / 2 + 0.9 + R() * 1.1;
+    const base = p.clone().addScaledVector(n, o * sd); base.y = 0;
+    if (Math.hypot(base.x - lx, base.z - lz) < 10) continue;
+    const g = new THREE.Group(); cym(g, 0.3, 0.34, 0.95, T(shirts[i % shirts.length]), 0, 1.15, 0, 0.02, 10); cym(g, 0.22, 0.22, 0.75, T("#2f3447"), 0, 0.4, 0, 0.02, 8); spm(g, 0.32, T(skins[i % skins.length]), 0, 1.95, 0, 0.02);
+    g.position.copy(base); root.add(g); folk.push({ g, base, ph: R() * 6.28, d: tan(t).clone(), sd: R() < 0.5 ? -1 : 1 });
+  }
   // landmark
   const lm = landmark(kindOfPlace(sp.to)); lm.g.position.set(lx, 0, lz); lm.g.rotation.y = side > 0 ? -PI / 2 : PI / 2; root.add(lm.g);
   // the followed object
@@ -331,7 +417,18 @@ export const buildJourney = (sp: JourneySpec): Pov3 => {
     obj.scale.setScalar(objS * Math.min(1, cap(objW, P, 0.2)) * (1 - ease(clamp((arrived - 0.05) / 0.4))) + 0.001);
     trail.forEach((m, i) => { m.position.copy(at(t - (i + 1) * 0.012)); m.scale.setScalar(Math.max(0.001, 1 - arrived * 3)); });
     chips.forEach((c, i) => { c.g.position.set(c.base.x + Math.sin(g * 20 + c.ph) * 0.35, c.base.y + Math.sin(g * 14 + c.ph * 2) * 0.35 + g * 1.2 * (i % 3), c.base.z + Math.cos(g * 18 + c.ph) * 0.3); c.g.lookAt(camPos); c.g.scale.setScalar(Math.max(0.001, cap(c.w, c.g.position, 0.09))); });
-    lm.tick(g * 8, arrived);
+    lm.tick(g * 8, arrived);
+    // town life: cars drive along their roads (hidden when they would cross the lens), people shuffle on the kerbs
+    cars.forEach((c) => {
+      const span = 100, along = c.c0 + ((((c.dir * c.sp * g * 4) % span) + span) % span);
+      const x = c.alongX ? along : c.line + c.lane, z = c.alongX ? c.line + c.lane : along;
+      c.g.position.set(x, 0, z); c.g.rotation.y = c.alongX ? (c.dir > 0 ? PI / 2 : -PI / 2) : c.dir > 0 ? 0 : PI;
+      c.g.scale.setScalar(c.g.position.distanceTo(camPos) < 13 || c.g.position.distanceTo(P) < 5 ? 0.001 : 1);
+    });
+    folk.forEach((f) => {
+      f.g.position.set(f.base.x + f.d.x * Math.sin(g * 7 + f.ph) * 1.4 * f.sd, Math.abs(Math.sin(g * 30 + f.ph)) * 0.12, f.base.z + f.d.z * Math.sin(g * 7 + f.ph) * 1.4 * f.sd);
+      f.g.scale.setScalar(f.g.position.distanceTo(camPos) < 6 || f.g.position.distanceTo(P) < 3 ? 0.001 : 1);
+    });
     const m = new THREE.Matrix4(), q = new THREE.Quaternion(), s = new THREE.Vector3();
     for (let i = 0; i < 28; i++) {
       const k = clamp(arrived * 1.6 - (i % 7) * 0.05), a = i * 2.4 + sp.seed, vy = 5 + (i % 5), rr = 1.2 + (i % 4) * 0.7;

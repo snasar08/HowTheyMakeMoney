@@ -42,7 +42,7 @@
   ],
   "scenes": [
     {
-      "narration": "Each debit tap costs the shop about 34 cents. But where does that money actually go?",
+      "narration": "Each debit tap costs the shop about 34 cents on average. But where does that money actually go?",
       "visual": {
         "type": "lowpoly",
         "set": "diner",
@@ -61,7 +61,7 @@
           "card": {
             "text": "34¢",
             "kind": "screen",
-            "sub": "PER TAP"
+            "sub": "AVERAGE PER TAP"
           },
           "crowd": 20,
           "view": "wide"
@@ -117,7 +117,7 @@
       ]
     },
     {
-      "narration": "In 2023, the rules let big banks charge 21 cents plus 0.05 percent. On that 5 dollar coffee, that is at most about 21 cents. So the café keeps about 4 dollars 79 cents.",
+      "narration": "In 2023, the rules let big banks charge at most 21 cents plus 0.05 percent of the price. On that 5 dollar coffee, that is about 21 cents. So the café keeps about 4 dollars 79 cents.",
       "visual": {
         "type": "lowpoly",
         "set": "boardroom",
@@ -137,7 +137,7 @@
           "view": "ms",
           "math": [
             {
-              "op": "+",
+              "op": "",
               "value": "21¢",
               "label": "fixed fee"
             },
@@ -172,6 +172,16 @@
           "view": "ms",
           "math": [
             {
+              "op": "",
+              "value": "$5.00",
+              "label": "example coffee"
+            },
+            {
+              "op": "−",
+              "value": "21.25¢",
+              "label": "bank fee"
+            },
+            {
               "op": "=",
               "value": "$4.79",
               "label": "left for the café",
@@ -182,7 +192,7 @@
       ]
     },
     {
-      "narration": "But zoom out: in 2023, people made 100.7 billion debit and prepaid payments. The average fee was 34 cents each. That adds up to about 34 billion dollars in one year.",
+      "narration": "But zoom out: in 2023, people made 100.7 billion debit and prepaid payments. The average fee was 34 cents, more than our coffee since buys are bigger. That adds up to about 34 billion dollars in one year.",
       "visual": {
         "type": "lowpoly",
         "set": "street",

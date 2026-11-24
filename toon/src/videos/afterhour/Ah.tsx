@@ -165,7 +165,7 @@ const EVER_INST = new Map<THREE.Object3D, Set<THREE.InstancedMesh>>();
 
 /** Cards and things must sit fully inside the 9:16 frame (and clear of the top subtitle) at every moment of the shot's camera move:
  *  nudge them along the camera's right/up axes, and shrink them when they are simply too big for the view. */
-type FitItem = { pos: THREE.Vector3; hw: number; hh: number; set: (k: number) => void };
+type FitItem = { pos: THREE.Vector3; hw: number; hh: number; set: (k: number) => void; /** a prop held by the hero: it must never overlap the head (Sam's rule: nothing covers a face) */ held?: boolean };
 const fitInFrame = (s: AhShot, viewName: string | undefined, headY: number, root: THREE.Vector3, sitting: boolean, items: FitItem[]) => {
   if (!items.length) return;
   const V = s.cam ? { ...s.cam, blur: 4 } : VIEWS[(viewName && VIEWS[viewName]) ? viewName : "ms"] ?? VIEWS.ms;
@@ -178,8 +178,17 @@ const fitInFrame = (s: AhShot, viewName: string | undefined, headY: number, root
     c.position.set(...off(lerp(V.from, V.to, t))); c.lookAt(...off(V.look)); c.updateMatrixWorld(true); c.updateProjectionMatrix(); return c;
   });
   const sh2 = 2 * (s.hud?.shift ?? 0), LX = 0.84, YLO = -0.7 + sh2, YHI = (s.hud ? s.hud.ndc + sh2 : s.view === "hook" ? 0.34 : 0.66), v = new THREE.Vector3(), right = new THREE.Vector3(), up = new THREE.Vector3();
+  // the head box (a cube around the head sphere, a margin for hair) in world space: held props are pushed out of it, sideways first, then down
+  const hero = s.chars[s.subject ?? 0] ? new THREE.Vector3(root.x, root.y + headY, root.z) : undefined, hr = 0.5 * (s.chars[s.subject ?? 0]?.scale ?? 1);
+  const headRect = (c: THREE.PerspectiveCamera) => {
+    let x0 = 9, x1 = -9, y0 = 9, y1 = -9;
+    for (const sx of [-1, 1]) for (const sy of [-1, 1]) for (const sz of [-1, 1]) {
+      v.set(hero!.x + sx * hr, hero!.y + sy * hr, hero!.z + sz * hr).project(c); x0 = Math.min(x0, v.x); x1 = Math.max(x1, v.x); y0 = Math.min(y0, v.y); y1 = Math.max(y1, v.y);
+    }
+    return { x0, x1, y0, y1 };
+  };
   for (const it of items) {
-    for (let iter = 0; iter < 24; iter++) {
+    for (let iter = 0; iter < 40; iter++) {
       let moved = false, tooBig = false;
       for (const c of cams) {
         let x0 = 9, x1 = -9, y0 = 9, y1 = -9, ok = true;
@@ -190,10 +199,22 @@ const fitInFrame = (s: AhShot, viewName: string | undefined, headY: number, root
         if (!ok) continue;
         if (x1 - x0 > 2 * LX || y1 - y0 > YHI - YLO) { tooBig = true; continue; }
         const dx = x1 > LX ? LX - x1 : x0 < -LX ? -LX - x0 : 0, dy = y1 > YHI ? YHI - y1 : y0 < YLO ? YLO - y0 : 0;
-        if (dx || dy) {
+        let ddx = dx, ddy = dy;
+        if (!dx && !dy && it.held && hero) {
+          const h = headRect(c), m = 0.04;
+          if (x0 < h.x1 + m && x1 > h.x0 - m && y0 < h.y1 + m && y1 > h.y0 - m) {
+            const cxI = (x0 + x1) / 2, cxH = (h.x0 + h.x1) / 2, sgn = cxI >= cxH ? 1 : -1;
+            const toR = h.x1 + m - x0, toL = -(x1 - (h.x0 - m));      // NDC shift that clears the head to the right / to the left
+            if (sgn > 0 ? x1 + toR <= LX : x0 + toL >= -LX) ddx = sgn > 0 ? toR : toL;
+            else if (sgn > 0 ? x0 + toL >= -LX : x1 + toR <= LX) ddx = sgn > 0 ? toL : toR;
+            else if (y0 + (h.y0 - m - y1) >= YLO) ddy = h.y0 - m - y1;   // no room beside the head: hang it below the chin
+            else tooBig = true;
+          }
+        }
+        if (ddx || ddy) {
           const d = Math.max(0.5, v.set(it.pos.x, it.pos.y, it.pos.z).applyMatrix4(c.matrixWorldInverse).z * -1);
           right.setFromMatrixColumn(c.matrixWorld, 0); up.setFromMatrixColumn(c.matrixWorld, 1);
-          it.pos.addScaledVector(right, dx * d * tf * asp).addScaledVector(up, dy * d * tf); moved = true;
+          it.pos.addScaledVector(right, ddx * d * tf * asp).addScaledVector(up, ddy * d * tf); moved = true;
         }
       }
       if (tooBig) { it.hw *= 0.88; it.hh *= 0.88; it.set(0.88); continue; }
@@ -249,7 +270,7 @@ const build = (k: number, s: AhShot): Built => {
     }
     const bs = bb.getSize(new THREE.Vector3()), bc = bb.getCenter(new THREE.Vector3());
     const r = Math.max(0.1, (fit ? fit * fitK : th.size * sc) * 0.6), hw0 = bs.x / 2 + Math.abs(bc.x - th.root.position.x), hh0 = bs.y / 2 + Math.abs(bc.y - th.root.position.y);
-    if (!s.act && t.name !== "giantshovel") fitItems.push({ pos: th.root.position, hw: Math.max(r, hw0), hh: Math.max(r, hh0), set: (k2) => { th.root.userData.base *= k2; th.root.scale.setScalar(th.root.userData.base); } });
+    if (!s.act && t.name !== "giantshovel") fitItems.push({ held: !s.cam && !!hero0, pos: th.root.position, hw: Math.max(r, hw0), hh: Math.max(r, hh0), set: (k2) => { th.root.userData.base *= k2; th.root.scale.setScalar(th.root.userData.base); } });
     return th;
   });
 

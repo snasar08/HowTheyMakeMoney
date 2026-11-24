@@ -1084,6 +1084,25 @@ def pov_card_h(n: int) -> int:
     return 150 if n <= 2 else 128 if n == 3 else 96
 
 
+def _pov_num(text: str) -> str:
+    """The number a card shows ("$4.79" / "4.79" / "about $34B" -> "4.79" / "34b"), to spot the same figure on a board card and a math card."""
+    m = re.search(r"([0-9][0-9,]*)(\.[0-9]+)?\s*([a-zA-Z](?![a-zA-Z]))?", str(text))
+    if not m:
+        return ""
+    frac = (m.group(2) or "").rstrip("0").rstrip(".")
+    return m.group(1).replace(",", "") + frac + (m.group(3) or "").lower()
+
+
+def _pov_shown_nums(hud: dict | None, a: int, n: int) -> set:
+    """Numbers the math stack shows at some moment of frames a..a+n."""
+    out: set = set()
+    for s in (hud or {}).get("stacks", []):
+        if s["a"] < a + n and s["b"] > a:
+            out |= {_pov_num(c["value"]) for c in s["cards"] if c["at"] < a + n}
+    out.discard("")
+    return out
+
+
 def _pov_card_key(c: dict) -> tuple:
     return (c.get("op", ""), c.get("value", ""), c.get("label", ""))
 
@@ -1230,6 +1249,9 @@ def pov_shots(plan: dict, shots: list) -> list:
         h = _pov_hud_at(hud, sh["a"], sh["n"])
         if h:
             sh["hud"] = h
+            shown = _pov_shown_nums(hud, sh["a"], sh["n"])
+            if sh.get("cards") and shown:     # the in-scene board repeating the stack's number is dropped (the stack already says it)
+                sh["cards"] = [c for c in sh["cards"] if _pov_num(c.get("text", "")) not in shown]
     return res
 
 
