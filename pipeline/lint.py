@@ -49,7 +49,7 @@ def pov_unspoken_numbers(s: dict) -> list[str]:
             card = (b.get("card") or {}).get("text", "")
             said = {n.replace(",", "") for n in num.findall(sent)}
             said |= {str(i) for i, w in enumerate(("zero one two three four five six seven eight nine ten").split())
-                     if re.search(rf"{w}", sent, re.I)}
+                     if re.search(rf"\b{w}\b", sent, re.I)}
             for n in num.findall(card):
                 if n.replace(",", "") not in said:
                     out.append(f"scene {si + 1} beat {bi + 1}: card {card!r} shows {n} but that sentence never says it")
