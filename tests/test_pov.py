@@ -60,3 +60,19 @@ class PovTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class PovShotLengthTest(unittest.TestCase):
+    """Round 4: no view of any POV Short is shorter than 15 frames (0.5 s), and a journey knows its length (route is sized to it)."""
+
+    def test_no_view_under_15_frames(self):
+        scripts = sorted((Path(__file__).resolve().parent.parent / "content" / "scripts").glob("*-pov-*.json"))
+        self.assertGreaterEqual(len(scripts), 5)
+        for f in scripts:
+            plan = toon.make_plan(json.loads(f.read_text(encoding="utf-8")))
+            shots = toon.ah_shots(plan)
+            short = [(s["a"], s["n"]) for s in shots if s["n"] < 15]
+            self.assertEqual(short, [], f"{f.name}: views under 15 frames {short}")
+            for s in shots:
+                if s.get("journey"):
+                    self.assertGreaterEqual(s["journey"]["dur"], s["n"])

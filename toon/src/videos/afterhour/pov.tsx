@@ -1,5 +1,5 @@
 // POV format overlay (Nov 24): the "POV: you ..." pill and the stacked math cards, drawn over the 3D picture.
-// Layout (1080x1920): pill y 70..132 (above the top sentence subtitle at y 150..254); cards start at y 285 and stack down;
+// Layout (1080x1920): pill y 70..132; cards start at y 285 and stack down (at most 4 cards: bottom <= ~705, far above the big word caption whose bottom edge is y 1265);
 // pipeline/toon.py (pov_hud) uses the same numbers to keep 3D props / faces out from under the stack.
 import React from "react";
 import { useCurrentFrame } from "remotion";
