@@ -24,7 +24,7 @@ export type AhThing = { name: string; at?: string | V3; scale?: number; rot?: nu
 export type AhShot = { a: number; n: number; set: SetName; view?: string; subject?: number; cam?: { from: V3; to: V3; look: V3 }; chars: AhChar[]; cards?: AhCard[]; things?: AhThing[]; coins?: boolean;
   /** a scripted action around the subject (acts/*.ts): the ball, hoop, opponent... really happen; `at` places the hero */ act?: { kind: string; at?: V3 };
   /** POV format (Nov 24): a row of everyday objects / a follow-the-object flythrough (pov3d.ts); `hud` = the math-card stack is on screen: shift the picture down `shift` (fraction of the frame) and keep props below `ndc` */
-  units?: UnitsSpec; journey?: JourneySpec; hud?: { shift: number; ndc: number } };
+  units?: UnitsSpec & { label?: string }; journey?: JourneySpec; hud?: { shift: number; ndc: number } };
 type AhProps = { test?: string; shots?: AhShot[]; pov?: PovHud };
 
 const JEN: Look = { body: "#1b1b22", legs: "#141418", hat: "crown", glasses: "shades" };
@@ -379,6 +379,22 @@ const Inner: React.FC = () => {
   return <primitive object={b.root} dispose={null} />;
 };
 
+/** POV unit rows: the real figure ("114 billion pennies") on a yellow card above the row while the row is on screen */
+const UnitLabel: React.FC = () => {
+  const f = useCurrentFrame(), shots = PROPS().shots ?? [];
+  const i = shots.findIndex((s) => f >= s.a && f < s.a + s.n && s.units);
+  const lab = i >= 0 ? shots[i].units?.label : undefined;
+  if (!lab) return null;
+  let a0 = shots[i].a; for (let j = i - 1; j >= 0 && shots[j].units?.label === lab && shots[j].a + shots[j].n === a0; j--) a0 = shots[j].a;   // a row cut into views keeps one card
+  const k = Math.min(1, (f - a0) / 8), sc = k >= 1 ? 1 : 1 + 2.2 * (k - 1) ** 3 + 1.2 * (k - 1) ** 2;
+  return (
+    <div style={{ position: "absolute", left: 0, right: 0, top: UNIT_LABEL_TOP, display: "flex", justifyContent: "center", pointerEvents: "none", opacity: Math.min(1, (f - a0) / 3) }}>
+      <div style={{ transform: `scale(${Math.max(0.001, sc)})`, background: "#ffd23a", border: "6px solid #141018", borderRadius: 34, boxShadow: "0 7px 0 rgba(20,16,24,0.85)", padding: "10px 34px", fontFamily: '"Arial Black", Arial, sans-serif', fontWeight: 900, fontSize: 54, color: "#141018", whiteSpace: "nowrap", maxWidth: 960 }}>{lab}</div>
+    </div>
+  );
+};
+const UNIT_LABEL_TOP = 1180;
+
 export const AhShort: React.FC = () => {
   const [ready, setReady] = useState(MODEL_NAMES.length === 0);
   const [handle] = useState(() => (MODEL_NAMES.length ? delayRender("afterhour models") : 0));
@@ -392,6 +408,7 @@ export const AhShort: React.FC = () => {
       <Inner />
     </ThreeCanvas>}
     {ready && PROPS().pov && <PovOverlay hud={PROPS().pov!} />}
+    {ready && PROPS().pov && <UnitLabel />}
   </AbsoluteFill>
   );
 };

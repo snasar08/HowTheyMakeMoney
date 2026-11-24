@@ -288,8 +288,9 @@
           "view": "wide",
           "units": {
             "thing": "cup",
-            "count": 111,
-            "fill": true
+            "count": 12,
+            "fill": true,
+            "label": "111 million tickets"
           }
         }
       ]

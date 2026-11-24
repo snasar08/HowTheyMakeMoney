@@ -15,11 +15,11 @@ def _plan():
 class PovTest(unittest.TestCase):
     def test_clean_keeps_strings_exactly(self):
         out = toon_director.clean_pov({"math": [{"op": "x", "value": "12.5¢", "label": "fee"}, {"op": "=", "value": "1,200", "label": "all"}],
-                                       "units": {"thing": "Bathtub", "count": 99}, "journey": " bubble to bank "})
+                                       "units": {"thing": "Bathtub", "count": 99, "label": " 114 billion pennies "}, "journey": " bubble to bank "})
         self.assertEqual([c["value"] for c in out["math"]], ["12.5¢", "1,200"])
         self.assertEqual(out["math"][0]["op"], "×")
         self.assertTrue(out["math"][1]["result"])
-        self.assertEqual(out["units"], {"thing": "bathtub", "count": 24, "fill": True})
+        self.assertEqual(out["units"], {"thing": "bathtub", "count": 20, "fill": True, "label": "114 billion pennies"})
         self.assertEqual(out["journey"], "bubble to bank")
         self.assertEqual(toon_director.clean_pov({"units": {"thing": "dragon"}}), {})
 

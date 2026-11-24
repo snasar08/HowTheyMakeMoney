@@ -74,7 +74,7 @@
       ]
     },
     {
-      "narration": "You tap your card on a 5 dollar coffee. Your card talks to a payment network, then to your bank.",
+      "narration": "Say your coffee costs 5 dollars and you tap your card. Your card talks to a payment network, then to your bank.",
       "visual": {
         "type": "lowpoly",
         "set": "street",
@@ -94,14 +94,14 @@
           "card": {
             "text": "$5",
             "kind": "screen",
-            "sub": "YOUR COFFEE"
+            "sub": "SAY YOUR COFFEE"
           },
           "view": "ms",
           "math": [
             {
               "op": "",
               "value": "$5.00",
-              "label": "your coffee"
+              "label": "example: your coffee"
             }
           ]
         },
@@ -117,7 +117,7 @@
       ]
     },
     {
-      "narration": "In 2023, the rules let big banks charge 21 cents plus 0.05 percent. On your coffee, that is at most about 21 cents. So the café keeps about 4 dollars 79 cents.",
+      "narration": "In 2023, the rules let big banks charge 21 cents plus 0.05 percent. On that 5 dollar coffee, that is at most about 21 cents. So the café keeps about 4 dollars 79 cents.",
       "visual": {
         "type": "lowpoly",
         "set": "boardroom",
@@ -294,8 +294,9 @@
           "view": "wide",
           "units": {
             "thing": "coin",
-            "count": 1000,
-            "fill": true
+            "count": 10,
+            "fill": true,
+            "label": "$1,000 a second"
           }
         },
         {

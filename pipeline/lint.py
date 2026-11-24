@@ -60,8 +60,8 @@ def lint_pov(s: dict) -> list[str]:
                         if not isinstance(it, dict) or it.get("op", "") not in POV_OPS:
                             err.append(f"{w}: math[{k}] op must be one of '', +, −, ×, ÷, = (got {it.get('op') if isinstance(it, dict) else it!r})")
                             continue
-                        if not isinstance(it.get("value"), str) or not it["value"]:
-                            err.append(f"{w}: math[{k}] value must be a non-empty string")
+                        if not isinstance(it.get("value"), str) or not it["value"] or len(it["value"]) > 14:
+                            err.append(f"{w}: math[{k}] value must be a non-empty string of 14 chars or fewer")
                         lab = it.get("label", "")
                         if not isinstance(lab, str) or len(lab) > 22:
                             err.append(f"{w}: math[{k}] label must be a string of 22 chars or fewer")
@@ -77,6 +77,15 @@ def lint_pov(s: dict) -> list[str]:
                         err.append(f"{w}: units.count must be an integer 1-20 (got {c!r})")
                     if "fill" in u and not isinstance(u["fill"], bool):
                         err.append(f"{w}: units.fill must be true/false")
+                    lab = u.get("label")
+                    if lab is not None and (not isinstance(lab, str) or not lab.strip() or len(lab) > 24):
+                        err.append(f"{w}: units.label must be a non-empty string of 24 chars or fewer (exact words from the narration)")
+                    elif isinstance(lab, str):
+                        nums = re.findall(r"\d[\d,]*(?:\.\d+)?", lab)
+                        spoken = " ".join(x.get("narration", "") for x in s.get("scenes", [])).replace(",", "")
+                        for n in nums:
+                            if n.replace(",", "") not in spoken:
+                                err.append(f'{w}: units.label number "{n}" is not in the narration (never invent numbers)')
             if "journey" in t and not isinstance(t["journey"], str):
                 err.append(f"{w}: journey must be a string")
     return err

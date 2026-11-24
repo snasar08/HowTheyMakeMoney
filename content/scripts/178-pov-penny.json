@@ -223,7 +223,7 @@
               "label": "a decade ago"
             },
             {
-              "op": "→",
+              "op": "",
               "value": "3.69¢",
               "label": "today",
               "result": true
@@ -271,8 +271,9 @@
           "view": "wide",
           "units": {
             "thing": "coin",
-            "count": 114,
-            "fill": true
+            "count": 20,
+            "fill": true,
+            "label": "114 billion pennies"
           }
         },
         {

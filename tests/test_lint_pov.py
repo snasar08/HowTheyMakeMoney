@@ -42,3 +42,14 @@ class PovLint(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+    def test_units_label(self):
+        s = good(); t = s["scenes"][0]["toon"][0]
+        s["scenes"][0]["narration"] = "A tank costs 60 dollars and 114 billion pennies."
+        t["units"] = {"thing": "coin", "count": 12, "fill": True, "label": "114 billion pennies"}
+        self.assertEqual(lint_pov(s), [])
+        t["units"]["label"] = "x" * 25
+        self.assertTrue(any("24 chars" in e for e in lint_pov(s)))
+        t["units"]["label"] = "999 billion pennies"
+        self.assertTrue(any("never invent" in e for e in lint_pov(s)))
+

@@ -52,6 +52,12 @@ def score(s: dict) -> tuple[int, dict]:
         length = 15 if 22 <= sec <= 35 or 42 <= sec <= 62 else 8 if sec <= 70 else 0
         load = 15 if nums <= 10 else 8 if nums <= 13 else 0
 
+    if s.get("format") == "pov":   # Nov 24: pov Shorts show the math on cards, so the narration carries more figures (up to ~14 land
+        # fine, each one is also on screen) and they run story length; hook, turns, pace and ending are judged as for any Short
+        sec = round(sec / 1.2, 1)
+        length = 15 if 22 <= sec <= 35 or 42 <= sec <= 62 else 8 if sec <= 70 else 0
+        load = 15 if nums <= 14 else 8 if nums <= 17 else 0
+
     end = (5 if s.get("loop") else 0) + (5 if s.get("cta_question") else 0)  # 10: loop + this-or-that
     parts = {"hook": hook, "turn": turn, "numbers": load, "pace": pace, "length": length, "ending": end}
     return sum(parts.values()), {**parts, "sec": round(sec, 1), "nums": nums}

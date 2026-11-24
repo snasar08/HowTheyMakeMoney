@@ -278,8 +278,9 @@
           "view": "wide",
           "units": {
             "thing": "coin",
-            "count": 340,
-            "fill": true
+            "count": 12,
+            "fill": true,
+            "label": "$340 every second"
           }
         },
         {

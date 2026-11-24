@@ -99,7 +99,8 @@ def clean_pov(sc: dict) -> dict:
             n = int(u.get("count", 8))
         except (TypeError, ValueError):
             n = 8
-        out["units"] = {"thing": str(u["thing"]).lower(), "count": max(1, min(24, n)), "fill": bool(u.get("fill", True))}
+        out["units"] = {"thing": str(u["thing"]).lower(), "count": max(1, min(20, n)), "fill": bool(u.get("fill", True)),
+                       **({"label": str(u["label"]).strip()[:24]} if str(u.get("label") or "").strip() else {})}
     j = sc.get("journey")
     if isinstance(j, str) and j.strip():
         out["journey"] = j.strip()[:80]

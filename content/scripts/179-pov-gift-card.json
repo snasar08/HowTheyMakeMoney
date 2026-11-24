@@ -302,8 +302,9 @@
           ],
           "units": {
             "thing": "cup",
-            "count": 5.4,
-            "fill": true
+            "count": 12,
+            "fill": true,
+            "label": "5.4 billion coffees"
           }
         },
         {

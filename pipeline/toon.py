@@ -628,7 +628,7 @@ def ah_hero_tokens(script: dict | None, plan: dict) -> set:
     for v in ((script or {}).get("name_card"), (script or {}).get("company"), (script or {}).get("hero_name")):
         toks |= {t for t in re.findall(r"[a-z0-9]+", str(v or "").lower()) if len(t) >= 3}
     for t in re.split(r"[-_ ]", str(plan.get("slug") or "").lower()):
-        if len(t) >= 3 and not t.isdigit() and t not in ("famous", "plan", "whatif", "story", "best", "ever", "careers", "how"):
+        if len(t) >= 3 and not t.isdigit() and t not in ("famous", "plan", "whatif", "story", "best", "ever", "careers", "how", "pov"):
             toks.add(t)
     return toks
 
@@ -1058,6 +1058,25 @@ POV_TOP, POV_GAP = 285, 12                    # px: first card's top edge and th
 POV_MAX_PIECE = 50                            # frames (~1.7 s): a plain line is cut into views of at most this length
 POV_PILL_FRAMES = 105                         # the "POV: you ..." pill stays up ~3.5 s (the opening views)
 _POV_VIEWS = ["ms", "wide", "face", "ws", "low", "cu"]
+_POV_BIG = ("coins", "cash", "cashstack", "box", "pizza", "guitar", "factory")     # held in front of the chest: a close view hides the face behind them
+
+
+def _pov_views(sh: dict) -> list:
+    """Views a plain POV piece may use. A close view puts the head over a card / hides it, crops a crowd or lets a held pile cover
+    the face (Nov 24 stills), so those pieces keep to far views; everything else may use any view (a face is never covered)."""
+    if len(sh.get("chars") or []) > 3:
+        return ["wide", "ws"]
+    if any(t["name"] in _POV_BIG for t in sh.get("things") or []):
+        return ["wide", "ws"]
+    if sh.get("cards"):
+        return ["wide", "ws", "ms"]       # a card seen from the ms view is dropped (the head would cover it), see pov_shots
+    if sh.get("things"):
+        return ["ms", "wide", "ws", "low"]
+    return list(_POV_VIEWS)
+
+
+def _pov_view_ok(sh: dict, v: str) -> bool:
+    return v == "hook" or v in _pov_views(sh)
 
 
 def pov_card_h(n: int) -> int:
@@ -1144,7 +1163,7 @@ def pov_shots(plan: dict, shots: list) -> list:
         done.add(k)
         a0, n0 = e["a"], e["n"]
         journey = bool(e.get("journey")) and not e.get("units")
-        parts = max(1, -(-n0 // (100 if journey else POV_MAX_PIECE)))      # a flythrough stays one smooth take up to ~3.3 s
+        parts = max(1, -(-n0 // (70 if journey else POV_MAX_PIECE)))      # a flythrough is cut into takes of <= ~2.3 s
         if journey:
             m = re.match(r"\s*(.+?)\s+to\s+(.+)$", e["journey"], re.I)
             obj, to = (m.group(1), m.group(2)) if m else (e["journey"], "the network")
@@ -1175,12 +1194,15 @@ def pov_shots(plan: dict, shots: list) -> list:
         if sh.get("units") or sh.get("journey"):
             res.append(sh)
             continue
-        parts = 1 if (sh.get("act") or sh.get("cam") or len(sh["chars"]) > 3) else max(1, -(-sh["n"] // POV_MAX_PIECE))
+        far = _pov_views(sh)[0] == "wide"
+        parts = 1 if (sh.get("act") or sh.get("cam")) else max(1, -(-sh["n"] // (66 if far else POV_MAX_PIECE)))
+        if far and len(_pov_views(sh)) == 2:
+            parts = min(parts, 2)             # a crowd has only two views that keep every head in frame: never repeat one
         for j in range(parts):
             a0, a1 = sh["a"] + round(j * sh["n"] / parts), sh["a"] + round((j + 1) * sh["n"] / parts)
             piece = {**sh, "a": a0, "n": a1 - a0}
             if j:
-                piece["view"] = next((v for v in _POV_VIEWS if v != res[-1].get("view") and not (v in AH_FACE_VIEWS and (sh.get("things") or sh.get("cards")))), "ms")
+                piece["view"] = next((v for v in _pov_views(sh) if v != res[-1].get("view")), "wide")
                 piece["things"] = [dict(t, pop=False) for t in sh.get("things") or []]
             res.append(piece)
     seen: set = set()
@@ -1191,14 +1213,16 @@ def pov_shots(plan: dict, shots: list) -> list:
 
     for i, sh in enumerate(res):
         if not (sh.get("units") or sh.get("journey")):
+            if not _pov_view_ok(sh, sh.get("view") or "ms") and "cam" not in sh and not sh.get("act"):
+                sh["view"] = next((v for v in _pov_views(sh) if sig({**sh, "view": v}) not in seen and (i == 0 or res[i - 1].get("view") != v)), "ws")
             if sig(sh) in seen and "cam" not in sh and not sh.get("act"):
-                for v in _POV_VIEWS:
-                    if v in AH_FACE_VIEWS and (sh.get("things") or sh.get("cards")):
-                        continue
+                for v in _pov_views(sh):
                     if sig({**sh, "view": v}) not in seen and (i == 0 or res[i - 1].get("view") != v):
                         sh["view"] = v
                         break
             seen.add(sig(sh))
+        if sh.get("cards") and sh.get("view") == "ms" and "cam" not in sh:
+            sh["cards"] = []                  # the close view puts the head over the card; the earlier far views already showed it
         h = _pov_hud_at(hud, sh["a"], sh["n"])
         if h:
             sh["hud"] = h
