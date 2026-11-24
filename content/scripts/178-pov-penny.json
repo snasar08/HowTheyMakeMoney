@@ -1,0 +1,333 @@
+{
+  "id": "178",
+  "slug": "pov-penny",
+  "company": "U.S. Mint",
+  "hook_style": "number",
+  "title_style": "statement",
+  "theme": "bold_bright",
+  "score": 90,
+  "title": "A Penny Costs 3.69 Cents to Make",
+  "pov": "POV: you pick up a penny",
+  "name_card": "POV: you pick up a penny",
+  "name_sub": "what one cent really costs",
+  "description": "POV: you pick up a penny off the sidewalk. Follow it back to the Mint and see who pays the difference.\n\nSources:\n- U.S. Department of the Treasury: Penny Production Cessation FAQs: https://home.treasury.gov/news/featured-stories/penny-production-cessation-faqs\n- CoinNews: Penny costs 3.69 cents to make in 2024 (reporting the U.S. Mint 2024 annual report): https://www.coinnews.net/2025/02/10/penny-costs-3-69-cents-to-make-in-2024/\n\nFrom the cited pages: the cost to make a penny rose from 1.3 cents to 3.69 cents per penny over the past 10 years; roughly 114 billion pennies exist; the U.S. Mint projects an immediate annual saving of $56 million in reduced material costs and has stopped manufacturing new pennies; in fiscal 2024 the Mint shipped 3.172 billion cents to the Federal Reserve and reported a penny loss of $85.3 million. Our math: 3.69 - 1 = 2.69 cents lost per penny; 2.69 cents x 3.172 billion = about $85.3 million; 114 billion x 1 cent = $1.14 billion. Cash prices are not changing because of this. Not financial advice.\n\n#shorts #penny #money #howtheymakemoney",
+  "tags": [
+    "penny",
+    "us mint",
+    "money",
+    "shorts"
+  ],
+  "loop": "So next time you spot a penny on the ground, remember:",
+  "cta": "Keep the penny or leave it? Pick one.",
+  "cta_question": "Keep it or leave it?",
+  "first_comment": "Would you pick up a penny that cost 3.69 cents? 👇",
+  "hero": {
+    "skin": "e0ac80",
+    "hair": "short",
+    "hair_color": "3a2a1a",
+    "beard": "none",
+    "outfit": "tee",
+    "shirt": "c8741a",
+    "pants": "2b2f3a",
+    "shoes": "f4f4f4",
+    "chest": "",
+    "trim": "ffffff",
+    "height": 1.0
+  },
+  "sources": [
+    {
+      "title": "U.S. Treasury: Penny Production Cessation FAQs",
+      "url": "https://home.treasury.gov/news/featured-stories/penny-production-cessation-faqs"
+    },
+    {
+      "title": "CoinNews: Penny costs 3.69 cents to make in 2024",
+      "url": "https://www.coinnews.net/2025/02/10/penny-costs-3-69-cents-to-make-in-2024/"
+    }
+  ],
+  "scenes": [
+    {
+      "narration": "A penny costs 3.69 cents to make. But you pick one up off the sidewalk and it is worth one cent.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "street",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "factory",
+          "mood": "shock",
+          "beat": "money",
+          "things": [
+            "coins"
+          ],
+          "card": {
+            "text": "3.69¢",
+            "kind": "screen",
+            "sub": "TO MAKE ONE PENNY"
+          },
+          "view": "wide"
+        },
+        {
+          "place": "street",
+          "mood": "scheme",
+          "action": "dig",
+          "things": [
+            "coins"
+          ],
+          "card": {
+            "text": "1¢",
+            "kind": "screen",
+            "sub": "WHAT IT BUYS"
+          },
+          "view": "face",
+          "math": [
+            {
+              "op": "",
+              "value": "3.69¢",
+              "label": "cost to make"
+            },
+            {
+              "op": "−",
+              "value": "1¢",
+              "label": "what it is worth"
+            },
+            {
+              "op": "=",
+              "value": "2.69¢",
+              "label": "lost on each penny",
+              "result": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "narration": "The Mint stamps it out then ships it to the Federal Reserve. In 2024 that meant 3.172 billion pennies.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "factory",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "factory",
+          "mood": "calm",
+          "things": [
+            "coins",
+            "factory"
+          ],
+          "view": "wide",
+          "math": [],
+          "journey": "penny to the Federal Reserve"
+        },
+        {
+          "place": "boardroom",
+          "mood": "excited",
+          "things": [
+            "box"
+          ],
+          "card": {
+            "text": "2024",
+            "kind": "flip",
+            "sub": "YEAR"
+          },
+          "view": "ms",
+          "math": [
+            {
+              "op": "",
+              "value": "2.69¢",
+              "label": "lost per penny"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "narration": "So in that one year the Mint lost 85.3 million dollars on pennies. Ten years ago a penny cost only 1.3 cents to make.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "boardroom",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "boardroom",
+          "mood": "shock",
+          "things": [
+            "cashstack"
+          ],
+          "card": {
+            "text": "$85.3M",
+            "kind": "screen",
+            "sub": "LOST ON PENNIES"
+          },
+          "view": "face",
+          "math": [
+            {
+              "op": "×",
+              "value": "3.172B",
+              "label": "pennies shipped"
+            },
+            {
+              "op": "=",
+              "value": "$85.3M",
+              "label": "lost in 2024",
+              "result": true
+            }
+          ]
+        },
+        {
+          "place": "boardroom",
+          "mood": "nervous",
+          "things": [
+            "arrowup"
+          ],
+          "card": {
+            "text": "1.3¢",
+            "kind": "screen",
+            "sub": "10 YEARS AGO"
+          },
+          "view": "ms",
+          "math": []
+        }
+      ]
+    },
+    {
+      "narration": "Now it is 3.69 cents so the government has stopped making new ones. The Mint expects to save 56 million dollars a year on materials.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "factory",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "factory",
+          "mood": "stern",
+          "things": [
+            "arrowup",
+            "lock"
+          ],
+          "view": "wide",
+          "math": [
+            {
+              "op": "",
+              "value": "1.3¢",
+              "label": "a decade ago"
+            },
+            {
+              "op": "→",
+              "value": "3.69¢",
+              "label": "today",
+              "result": true
+            }
+          ]
+        },
+        {
+          "place": "boardroom",
+          "mood": "relief",
+          "things": [
+            "cash"
+          ],
+          "card": {
+            "text": "$56M",
+            "kind": "screen",
+            "sub": "SAVED A YEAR"
+          },
+          "view": "ms",
+          "math": []
+        }
+      ]
+    },
+    {
+      "narration": "But about 114 billion pennies are still out there. Add them all up and they are only worth 1.14 billion dollars.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "store",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "store",
+          "mood": "dazed",
+          "things": [
+            "coins"
+          ],
+          "card": {
+            "text": "114B",
+            "kind": "screen",
+            "sub": "PENNIES TODAY"
+          },
+          "crowd": 40,
+          "view": "wide",
+          "units": {
+            "thing": "coin",
+            "count": 114,
+            "fill": true
+          }
+        },
+        {
+          "place": "mansion",
+          "mood": "calm",
+          "things": [
+            "coins"
+          ],
+          "view": "face",
+          "math": [
+            {
+              "op": "",
+              "value": "114B",
+              "label": "pennies"
+            },
+            {
+              "op": "×",
+              "value": "1¢",
+              "label": "each"
+            },
+            {
+              "op": "=",
+              "value": "$1.14B",
+              "label": "all of them",
+              "result": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "narration": "So a lucky penny is a bargain but not for the Mint.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "street",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "street",
+          "mood": "laugh",
+          "things": [
+            "coins"
+          ],
+          "view": "face"
+        }
+      ]
+    }
+  ],
+  "images": {},
+  "look": "afterhour",
+  "hook_rules": "nov23",
+  "status": "ready",
+  "format": "pov",
+  "visual_style": "lowpoly"
+}

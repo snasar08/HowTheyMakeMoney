@@ -1,0 +1,326 @@
+{
+  "id": "179",
+  "slug": "pov-gift-card",
+  "company": "Gift cards (Walmart, Starbucks)",
+  "hook_style": "number",
+  "title_style": "number",
+  "theme": "dark_neon",
+  "score": 89,
+  "title": "27 Billion Dollars Sit in Unused Gift Cards",
+  "pov": "POV: you toss a gift card in a drawer",
+  "name_card": "POV: you toss a gift card in a drawer",
+  "name_sub": "where unused gift card money sits",
+  "description": "POV: you get a gift card and toss it in a drawer. See where the money sits.\n\nSources:\n- Bankrate press release, Sept 23, 2024 (survey by YouGov, fieldwork Aug 19-21, 2024): https://www.bankrate.com/f/102997/x/c53caa68d4/gift-card-survey-press-release.pdf\n- Bankrate: Survey on unused gift cards (2024): https://www.bankrate.com/credit-cards/news/gift-cards-survey/\n\nFrom the cited pages: 43% of U.S. adults have at least one unused gift card, voucher or store credit, about $27 billion in outstanding value; the average amount per person is $244 and the median is $100; Gen Z adults average $142; Bankrate's analyst said stores such as Walmart and Starbucks have more than $1 billion in unused gift cards on their books. Our math: $27 billion / $244 = about 111 million people; $27 billion / a made-up 5 dollar coffee = 5.4 billion coffees. These are survey estimates from 2024. Not financial advice.\n\n#shorts #giftcards #money #howtheymakemoney",
+  "tags": [
+    "gift cards",
+    "money",
+    "bankrate",
+    "shorts"
+  ],
+  "loop": "So next time you find a gift card, remember:",
+  "cta": "Spend it now or save it? Pick one.",
+  "cta_question": "Spend it or save it?",
+  "first_comment": "How many unused gift cards are in your drawer right now? 👇",
+  "hero": {
+    "skin": "8d5524",
+    "hair": "curly",
+    "hair_color": "1a1a1a",
+    "beard": "none",
+    "outfit": "hoodie",
+    "shirt": "7b2cbf",
+    "pants": "2b2f3a",
+    "shoes": "f4f4f4",
+    "chest": "",
+    "trim": "ffffff",
+    "height": 1.0
+  },
+  "sources": [
+    {
+      "title": "Bankrate press release: unused gift cards (Sept 2024)",
+      "url": "https://www.bankrate.com/f/102997/x/c53caa68d4/gift-card-survey-press-release.pdf"
+    },
+    {
+      "title": "Bankrate: Survey on unused gift cards (2024)",
+      "url": "https://www.bankrate.com/credit-cards/news/gift-cards-survey/"
+    }
+  ],
+  "scenes": [
+    {
+      "narration": "Unused gift cards hold about 27 billion dollars. But your drawer holds some of it.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "mansion",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "mansion",
+          "mood": "shock",
+          "beat": "money",
+          "things": [
+            "cashstack"
+          ],
+          "card": {
+            "text": "$27B",
+            "kind": "screen",
+            "sub": "UNUSED GIFT CARDS"
+          },
+          "view": "wide"
+        },
+        {
+          "place": "garage",
+          "mood": "scheme",
+          "things": [
+            "letter"
+          ],
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "You get a gift card and just toss it in a drawer. It slides to the back of a junk drawer.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "garage",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "garage",
+          "mood": "happy",
+          "action": "throw",
+          "things": [
+            "letter"
+          ],
+          "view": "ms",
+          "math": []
+        },
+        {
+          "place": "garage",
+          "mood": "sad",
+          "things": [
+            "box"
+          ],
+          "view": "wide",
+          "journey": "gift card to the junk drawer"
+        }
+      ]
+    },
+    {
+      "narration": "But the store already has your money. Stores like Walmart and Starbucks hold over 1 billion dollars in unused cards.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "store",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "store",
+          "mood": "scheme",
+          "beat": "money",
+          "things": [
+            "cash"
+          ],
+          "view": "ms"
+        },
+        {
+          "place": "store",
+          "mood": "dazed",
+          "things": [
+            "cashstack"
+          ],
+          "brand": {
+            "name": "Walmart",
+            "bg": "#0071ce",
+            "fg": "#ffffff",
+            "icon": "star"
+          },
+          "card": {
+            "text": "$1B+",
+            "kind": "screen",
+            "sub": "UNUSED ON THE BOOKS"
+          },
+          "crowd": 40,
+          "view": "wide"
+        }
+      ]
+    },
+    {
+      "narration": "In 2024 about 43 percent of adults had at least one unused card. The average value was 244 dollars each. Divide 27 billion by 244 and you get about 111 million people.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "boardroom",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "street",
+          "mood": "calm",
+          "things": [
+            "letter"
+          ],
+          "card": {
+            "text": "2024",
+            "kind": "flip",
+            "sub": "YEAR"
+          },
+          "crowd": 120,
+          "view": "wide"
+        },
+        {
+          "place": "boardroom",
+          "mood": "excited",
+          "things": [
+            "cash"
+          ],
+          "card": {
+            "text": "$244",
+            "kind": "screen",
+            "sub": "AVERAGE EACH"
+          },
+          "view": "ms"
+        },
+        {
+          "place": "boardroom",
+          "mood": "shock",
+          "things": [
+            "chart"
+          ],
+          "card": {
+            "text": "111M",
+            "kind": "screen",
+            "sub": "PEOPLE"
+          },
+          "view": "face",
+          "math": [
+            {
+              "op": "",
+              "value": "$27B",
+              "label": "unused in 2024"
+            },
+            {
+              "op": "÷",
+              "value": "$244",
+              "label": "average each"
+            },
+            {
+              "op": "=",
+              "value": "111M",
+              "label": "people holding cards",
+              "result": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "narration": "Still half of those people hold 100 dollars or more. Gen Z holds the least at about 142 dollars.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "classroom",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "street",
+          "mood": "nervous",
+          "things": [
+            "coins"
+          ],
+          "card": {
+            "text": "$100",
+            "kind": "screen",
+            "sub": "THE MEDIAN"
+          },
+          "view": "ms",
+          "math": []
+        },
+        {
+          "place": "classroom",
+          "mood": "calm",
+          "things": [
+            "phone"
+          ],
+          "card": {
+            "text": "$142",
+            "kind": "screen",
+            "sub": "GEN Z AVERAGE"
+          },
+          "view": "ms"
+        }
+      ]
+    },
+    {
+      "narration": "At 5 dollars a coffee that is 5.4 billion coffees. So your junk drawer is the quietest bank in town.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "diner",
+        "action": "idle",
+        "crowd": 0,
+        "props": []
+      },
+      "toon": [
+        {
+          "place": "diner",
+          "mood": "dazed",
+          "things": [
+            "coffee"
+          ],
+          "card": {
+            "text": "$5",
+            "kind": "screen",
+            "sub": "A COFFEE"
+          },
+          "view": "wide",
+          "math": [
+            {
+              "op": "",
+              "value": "$27B",
+              "label": "unused cards"
+            },
+            {
+              "op": "÷",
+              "value": "$5",
+              "label": "a coffee"
+            },
+            {
+              "op": "=",
+              "value": "5.4B",
+              "label": "coffees",
+              "result": true
+            }
+          ],
+          "units": {
+            "thing": "cup",
+            "count": 5.4,
+            "fill": true
+          }
+        },
+        {
+          "place": "garage",
+          "mood": "laugh",
+          "things": [
+            "letter"
+          ],
+          "view": "face"
+        }
+      ]
+    }
+  ],
+  "images": {},
+  "look": "afterhour",
+  "hook_rules": "nov23",
+  "status": "ready",
+  "format": "pov",
+  "visual_style": "lowpoly"
+}
