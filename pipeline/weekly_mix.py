@@ -5,7 +5,7 @@ but maybe give one style more love that week to experiment").
   python -m pipeline.weekly_mix            # writes analytics/weekly_plan.md (daily in stats.yml; cheap, no API)
   python -m pipeline.weekly_mix --week     # Saturday part 1: same, and logs this week's bet in analytics/experiments.json
 
-Lanes (a "style" of Short): famous-athlete, famous-other, story-plan, story-history, whatif (active);
+Lanes (a "style" of Short): famous-athlete, famous-other, story-plan, story-history, whatif, pov (active);
 how, careers (paused by Sam: shown, never planned). Per lane, over Shorts posted in the last WINDOW days that are
 at least 48 h old: median views at 48 h, median % watched (retention.json), count.
 
@@ -28,9 +28,9 @@ from .insights import shorts, _t
 
 ROOT = Path(__file__).resolve().parent.parent
 A = ROOT / "analytics"
-ACTIVE = ["famous-athlete", "famous-other", "story-plan", "story-history", "whatif"]
+ACTIVE = ["famous-athlete", "famous-other", "story-plan", "story-history", "whatif", "pov"]
 PAUSED = ["how", "careers"]
-BASE = {"famous-athlete": 0.45, "famous-other": 0.2, "story-plan": 0.15, "story-history": 0.12, "whatif": 0.08}
+BASE = {"famous-athlete": 0.45, "famous-other": 0.2, "story-plan": 0.15, "story-history": 0.12, "whatif": 0.08, "pov": 0.12}
 WINDOW, MIN_N, PER_PART = 21, 3, 10
 LOOK_3D = "2026-11-18"   # every format renders in the 3D afterhour look from this date (scripts with look=toon opt out)
 

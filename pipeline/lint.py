@@ -30,14 +30,67 @@ PEOPLE = re.compile(r"\b(person|people|man|woman|couple|family|shopper|worker|ca
                     r"customer|customers|crowd|fan|player|gamer|chef|pilot|student|friend|parent|teenager|kid|traveler|barista|technician|engineer|runner|clerk|singer|crew|rider|employee|adult)s?\b", re.I)
 
 
+POV_THINGS = ("bathtub", "lightbulb", "house", "coin", "cup", "phone", "truck")
+POV_OPS = ("", "+", "−", "×", "÷", "=")
+
+
+def lint_pov(s: dict) -> list[str]:
+    """pov format (Nov 23): top-level "pov" line plus optional per-sentence math / units / journey."""
+    err = []
+    pov = s.get("pov")
+    if s.get("format") == "pov":
+        if not isinstance(pov, str) or not pov.strip():
+            err.append('pov format needs a top-level "pov": "POV: you ..."')
+    if pov is not None:
+        if not isinstance(pov, str) or not pov.startswith("POV: you "):
+            err.append(f'"pov" must start with "POV: you " (got {pov!r})')
+        elif len(pov) > 40:
+            err.append(f'"pov" is {len(pov)} chars (max 40)')
+    for i, sc in enumerate(s.get("scenes", [])):
+        for j, t in enumerate(sc.get("toon") or []):
+            if not isinstance(t, dict):
+                continue
+            w = f"scene {i + 1} sentence {j + 1}"
+            m = t.get("math")
+            if m is not None:
+                if not isinstance(m, list):
+                    err.append(f"{w}: math must be a list")
+                else:
+                    for k, it in enumerate(m):
+                        if not isinstance(it, dict) or it.get("op", "") not in POV_OPS:
+                            err.append(f"{w}: math[{k}] op must be one of '', +, −, ×, ÷, = (got {it.get('op') if isinstance(it, dict) else it!r})")
+                            continue
+                        if not isinstance(it.get("value"), str) or not it["value"]:
+                            err.append(f"{w}: math[{k}] value must be a non-empty string")
+                        lab = it.get("label", "")
+                        if not isinstance(lab, str) or len(lab) > 22:
+                            err.append(f"{w}: math[{k}] label must be a string of 22 chars or fewer")
+                        if "result" in it and not isinstance(it["result"], bool):
+                            err.append(f"{w}: math[{k}] result must be true/false")
+            u = t.get("units")
+            if u is not None:
+                if not isinstance(u, dict) or u.get("thing") not in POV_THINGS:
+                    err.append(f"{w}: units.thing must be one of {' / '.join(POV_THINGS)}")
+                else:
+                    c = u.get("count")
+                    if not isinstance(c, int) or isinstance(c, bool) or not 1 <= c <= 20:
+                        err.append(f"{w}: units.count must be an integer 1-20 (got {c!r})")
+                    if "fill" in u and not isinstance(u["fill"], bool):
+                        err.append(f"{w}: units.fill must be true/false")
+            if "journey" in t and not isinstance(t["journey"], str):
+                err.append(f"{w}: journey must be a string")
+    return err
+
+
 def lint(s: dict) -> tuple[list[str], list[str]]:
     err, warn = [], []
     scenes = s.get("scenes", [])
     narr = re.sub(r"(?<![A-Za-z])B:\s*", "", " ".join(sc.get("narration", "") for sc in scenes))
     spoken = narr + " " + s.get("loop", "") + " Comment which brand we should do next, and subscribe."
     first = scenes[0]["narration"] if scenes else ""
-    if s.get("format") not in ("how", "whatif", "careers", "famous", "story"):
-        err.append(f"format must be how / whatif / careers / famous / story (got {s.get('format')!r})")
+    if s.get("format") not in ("how", "whatif", "careers", "famous", "story", "pov"):
+        err.append(f"format must be how / whatif / careers / famous / story / pov (got {s.get('format')!r})")
+    err += lint_pov(s)
     if s.get("visual_style", "charts3d") not in ("charts3d", "lowpoly", "editorial"):
         err.append(f"visual_style must be charts3d, lowpoly or editorial (got {s.get('visual_style')!r})")
     if s.get("visual_style") == "lowpoly" and s.get("status") == "ready" and not LOWPOLY_LIVE:

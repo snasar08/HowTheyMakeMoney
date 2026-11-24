@@ -38,6 +38,8 @@ def norm(t: str) -> str:
 
 def hook_style(first: str) -> str:
     f = first.strip().lower()
+    if f.startswith("pov"):
+        return "pov"
     if f.startswith("what if"):
         return "whatif"
     if "?" in f[:160]:
@@ -49,6 +51,8 @@ def hook_style(first: str) -> str:
 
 def title_style(title: str) -> str:
     t = title.strip().lower()
+    if t.startswith("pov"):
+        return "pov"
     if t.startswith("what if"):
         return "whatif"
     if t.endswith("?"):
