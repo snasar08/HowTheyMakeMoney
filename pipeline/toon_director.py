@@ -76,7 +76,7 @@ def _gemini(prompt: str) -> dict | None:
 
 
 POV_OPS = {"", "+", "-", "−", "×", "x", "*", "÷", "/", "="}
-POV_UNITS = ["bathtub", "lightbulb", "house", "coin", "cup", "phone", "truck"]
+POV_UNITS = ["bathtub", "lightbulb", "house", "coin", "cup", "phone", "truck", "ticket"]
 
 
 def clean_pov(sc: dict) -> dict:

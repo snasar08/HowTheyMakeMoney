@@ -1058,7 +1058,7 @@ POV_TOP, POV_GAP = 285, 12                    # px: first card's top edge and th
 POV_MAX_PIECE = 50                            # frames (~1.7 s): a plain line is cut into views of at most this length
 POV_PILL_FRAMES = 105                         # the "POV: you ..." pill stays up ~3.5 s (the opening views)
 _POV_VIEWS = ["ms", "wide", "face", "ws", "low", "cu"]
-_POV_BIG = ("coins", "cash", "cashstack", "box", "pizza", "guitar", "factory")     # held in front of the chest: a close view hides the face behind them
+_POV_BIG = ("coins", "cash", "cashstack", "arrowup", "box", "pizza", "guitar", "factory")     # held in front of the chest: a close view hides the face behind them
 
 
 def _pov_views(sh: dict) -> list:
@@ -1156,6 +1156,10 @@ def pov_shots(plan: dict, shots: list) -> list:
         k = sh.get("_k", -1)
         e = sc[k] if 0 <= k < len(sc) else {}
         if not (e.get("units") or e.get("journey")):
+            if "cam" in sh or "act" in sh:
+                # the generic repeat-set cameras (high, far: an empty brown garage) and the word-triggered acts (a 5 s "sign contract" close-up
+                # on "tickets", pizza eating on "snacks") are not what a POV line shows: POV cuts its own views
+                sh = {q: v for q, v in sh.items() if q not in ("cam", "act")}
             out.append(sh)
             continue
         if k in done:

@@ -86,6 +86,16 @@ const coin = (): Item => {
     spin: (t) => { c.rotation.y = t * 2.4; } };
 };
 
+const ticket = (): Item => {
+  const g = new THREE.Group(), mat = new THREE.MeshToonMaterial({ color: "#9a9aa6", emissive: "#ff3b4e", emissiveIntensity: 0 });
+  const t = new THREE.Group(); t.position.y = 0.75; t.rotation.z = 0.12; g.add(t);
+  bxm(t, 1.3, 0.8, 0.07, mat, 0, 0, 0, 0.02); bxm(t, 0.05, 0.8, 0.075, T("#fff4d6"), 0.3, 0, 0.002);
+  for (let i = 0; i < 4; i++) bxm(t, 0.07, 0.1, 0.08, T("#fff4d6"), 0.3, -0.3 + i * 0.2, 0.002);
+  bxm(t, 0.62, 0.1, 0.08, T("#fff4d6"), -0.28, 0.1, 0.002); bxm(t, 0.42, 0.07, 0.08, T("#fff4d6"), -0.38, -0.08, 0.002);
+  spm(t, 0.09, T("#fff4d6"), 0.65, 0, 0.0); spm(t, 0.09, T("#fff4d6"), -0.65, 0, 0.0);
+  return { g, w: 1.3, d: 0.6, h: 1.2, fill: (k) => { mat.color.set(k > 0.5 ? "#ff3b4e" : "#9a9aa6"); mat.emissiveIntensity = 0.5 * k; } };
+};
+
 /** a code-built thing (house, phone, truck ...) scaled so its height is `h` metres */
 const fromThing = (name: string, h: number): Item => {
   const th = makeThing(name), g = new THREE.Group(), k = h / Math.max(0.01, th.size);
@@ -98,7 +108,8 @@ const unitItem = (thing: string): Item => {
     case "bathtub": return bathtub();
     case "lightbulb": return bulb();
     case "cup": case "coffee": return cup();
-    case "coin": return coin();
+    case "coin": return coin();
+    case "ticket": return ticket();
     case "house": return fromThing("house", 1.6);
     case "phone": return fromThing("phone", 1.1);
     case "truck": return fromThing("truck", 1.3);

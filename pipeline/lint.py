@@ -30,7 +30,7 @@ PEOPLE = re.compile(r"\b(person|people|man|woman|couple|family|shopper|worker|ca
                     r"customer|customers|crowd|fan|player|gamer|chef|pilot|student|friend|parent|teenager|kid|traveler|barista|technician|engineer|runner|clerk|singer|crew|rider|employee|adult)s?\b", re.I)
 
 
-POV_THINGS = ("bathtub", "lightbulb", "house", "coin", "cup", "phone", "truck")
+POV_THINGS = ("bathtub", "lightbulb", "house", "coin", "cup", "phone", "truck", "ticket")
 POV_OPS = ("", "+", "−", "×", "÷", "=")
 
 
