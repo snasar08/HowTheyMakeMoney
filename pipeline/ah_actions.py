@@ -241,9 +241,9 @@ BIZ_ACTS = ["handshake_deal", "ring_bell", "ribbon_cut", "stack_gold", "card_swi
 CREATOR_ACTS = ["gaming", "streaming", "sing_stage", "guitar", "film_camera", "rocket_launch", "build_tools", "code_screens",
                 "robot_build", "post_video"]
 # food-specific variants of eat / drink (Nov 16): chosen from the food named in the line or in `things` (see _food_act)
-FOOD_ACTS = ["eat_pizza", "eat_fries", "eat_icecream", "eat_donut", "drink_soda"]
+FOOD_ACTS = ["eat_pizza", "eat_fries", "eat_icecream", "eat_donut", "eat_cookie", "drink_soda"]
 ACTS = ACTS + SPORT2_ACTS + BIZ_ACTS + CREATOR_ACTS + FOOD_ACTS
-ACT_POSE.update({"eat_pizza": "stand", "eat_fries": "stand", "eat_icecream": "stand", "eat_donut": "stand", "drink_soda": "stand",
+ACT_POSE.update({"eat_pizza": "stand", "eat_fries": "stand", "eat_icecream": "stand", "eat_donut": "stand", "eat_cookie": "stand", "drink_soda": "stand",
                  "qb_throw": "throw", "touchdown": "run", "bat_swing": "throw", "pitch": "throw", "tennis_serve": "throw",
                  "golf_swing": "throw", "goal_celebrate": "cheer", "race_car": "sit", "sprint_finish": "cheer", "lift_weights": "cheer",
                  "handshake_deal": "point", "ring_bell": "cheer", "ribbon_cut": "point", "stack_gold": "count", "card_swipe": "point",
@@ -251,7 +251,7 @@ ACT_POSE.update({"eat_pizza": "stand", "eat_fries": "stand", "eat_icecream": "st
                  "gaming": "type", "streaming": "talk", "sing_stage": "cheer", "guitar": "cheer", "film_camera": "point",
                  "rocket_launch": "cheer", "build_tools": "dig", "code_screens": "type", "robot_build": "point", "post_video": "cheer"})
 ACT_OWN_PROPS.update({"eat_pizza": {"pizza", "slice"}, "eat_fries": {"fries", "chips", "snack"}, "eat_icecream": {"icecream", "ice cream", "cone"},
-                      "eat_donut": {"donut", "doughnut"}, "drink_soda": {"soda", "cola", "coke", "milkshake", "smoothie"},
+                      "eat_donut": {"donut", "doughnut"}, "eat_cookie": {"cookie", "oreo", "biscuit"}, "drink_soda": {"soda", "cola", "coke", "milkshake", "smoothie"},
                       "qb_throw": _BALL, "touchdown": _BALL, "bat_swing": _BALL, "pitch": _BALL, "tennis_serve": _BALL,
                       "golf_swing": _BALL, "goal_celebrate": _BALL, "race_car": {"car"}, "lift_weights": {"dumbbell"},
                       "stack_gold": {"goldbar"}, "cash_register": {"cash", "cashstack", "coins"},
@@ -419,8 +419,8 @@ def _hit2(kind, m, low, names, basket):
 
 
 
-_FOOD_THINGS = {"burger", "pizza", "snack", "coffee", "fries", "icecream", "donut", "slice"}
-_FOOD_BIG = {"burger", "pizza", "fries", "icecream", "donut"}
+_FOOD_THINGS = {"burger", "pizza", "snack", "coffee", "fries", "icecream", "donut", "slice", "cookie"}
+_FOOD_BIG = {"burger", "pizza", "fries", "icecream", "donut", "cookie"}
 _FOOD_WORDS = re.compile(r"\b(?:burgers?|fries|pizzas?|sandwich\w*|tacos?|nuggets?|meals?|food|lunch|dinner|breakfast|snacks?|chicken|hot dogs?|donuts?|doughnuts?|cookies?|fast food|french fries|ice cream|gelato|ice cream cones?|slices?|sundaes?|potato chips)\b")
 _DRINK_WORDS = re.compile(r"\b(?:coffee|latte|tea|soda|cola|coke|pepsi|coca-cola|soft drinks?|milkshakes?|shakes?|lemonade|beer|juice|drinks?|milk|smoothies?)\b")
 _CHART_THINGS = {"chart", "chartup", "arrowup", "arrowdown", "graph", "stock"}
@@ -558,6 +558,7 @@ _PIZZA_RX = re.compile(r"\bpizzas?\b|\bslices?\b")
 _FRIES_RX = re.compile(r"\bfries\b|\bfrench fries\b|\bpotato chips\b|\bbags? of chips\b|\b(?:eat\w*|munch\w*|crunch\w*|snack\w*|sell\w*|sold|serv\w*) (?:\w+ )?chips\b|\bfish and chips\b")
 _ICE_RX = re.compile(r"\bice[- ]?creams?\b|\bgelato\b|\bcones?\b|\bsundaes?\b|\bpopsicles?\b")
 _DONUT_RX = re.compile(r"\bdo(?:ugh)?nuts?\b")
+_COOKIE_RX = re.compile(r"\b(?:cookies?|oreos?|biscuits?)\b")
 _SODA_RX = re.compile(r"\bsoda\b|\bcola\b|\bcoke\b|\bpepsi\b|\bcoca-cola\b|\bsoft drinks?\b|\bmilkshakes?\b|\bshakes?\b|\bsmoothies?\b|\blemonade\b|\bfizzy\b")
 
 
@@ -577,6 +578,8 @@ def _food_act(kind: str, low: str, names: set) -> str:
         return "eat_icecream"
     if names & {"donut"} or _DONUT_RX.search(low):
         return "eat_donut"
+    if names & {"cookie", "oreo"} or _COOKIE_RX.search(low):
+        return "eat_cookie"
     return kind
 
 
@@ -753,6 +756,7 @@ if __name__ == "__main__":
     assert A("You grab a bag of french fries.", ["fries"], "stall", "", None, None) == "eat_fries"
     assert A("You eat ice cream on the beach.", [], "quay", "", None, None) == "eat_icecream"
     assert A("You take a bite of a donut.", [], "stall", "", None, None) == "eat_donut"
+    assert A("You have to eat every Oreo made in a year.", ["cookie"], "diner", "", None, None) == "eat_cookie"
     assert A("You drink a cold Coke.", [], "street", "", None, None) == "drink_soda"
     assert A("You sell soda.", ["soda"], "stall", "", None, None) == "drink_soda"
     assert A("You sip a milkshake.", [], "stall", "", None, None) == "drink_soda"

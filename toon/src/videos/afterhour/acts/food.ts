@@ -359,4 +359,62 @@ const soda: ActDef = { pose: "think", view: "cu", build(ctx) {
   } };
 } };
 
-export const FOOD: Record<string, ActDef> = { eat_pizza: pizza, eat_fries: fries, eat_icecream: icecream, eat_donut: donut, drink_soda: soda };
+// ================================================================= COOKIE (plain dark sandwich cookie, no branding)
+const cookieShape = (R: number, dents: { c: V3; r: number }[]) => {
+  const sh = new THREE.Shape(), N = 72;
+  for (let i = 0; i < N; i++) {
+    const th = (i / N) * Math.PI * 2, dx = Math.cos(th), dy = Math.sin(th); let rr = R;
+    for (const d of dents) { const b = dx * d.c.x + dy * d.c.y, disc = b * b - (d.c.x * d.c.x + d.c.y * d.c.y - d.r * d.r); if (disc > 0) { const t0 = b - Math.sqrt(disc); if (t0 > 0 && t0 < rr) rr = t0; } }
+    if (i) sh.lineTo(dx * rr, dy * rr); else sh.moveTo(dx * rr, dy * rr);
+  }
+  sh.closePath(); return sh;
+};
+const cookie: ActDef = { pose: "think", view: "cu", build(ctx) {
+  const { G, fwd, M0, H0 } = setup(ctx);
+  const R = 0.19, RO = R + 0.02;
+  const a0 = Math.atan2(M0.y - H0.y, M0.x - H0.x), DA = [a0, a0 + 0.95], DR = 0.095;
+  const dents = DA.map((a) => ({ c: new V3(Math.cos(a) * (R + 0.02), Math.sin(a) * (R + 0.02), 0), r: DR }));
+  const slab = (n: number, rad: number, z0: number, depth: number, col: string, ow: number) => {
+    const g = new THREE.ExtrudeGeometry(cookieShape(rad, dents.slice(0, n)), { depth, bevelEnabled: false, curveSegments: 1 });
+    return mk(g, col, 0, 0, z0, ow);
+  };
+  const item = new THREE.Group(); G.add(item);
+  const DARK = "#3a2218", CREAM = "#fff3d6";
+  const dots = Array.from({ length: 12 }, (_, i) => { const a = (i / 12) * Math.PI * 2, rr = R * 0.72; return new V3(Math.cos(a) * rr, Math.sin(a) * rr, 0.052); });
+  const dotM = dots.map((p) => { const m = mk(new THREE.CylinderGeometry(0.012, 0.012, 0.01, 8).rotateX(Math.PI / 2), "#241209", p.x, p.y, p.z, 0); item.add(m); return m; });
+  const ring = mk(new THREE.TorusGeometry(R * 0.45, 0.008, 6, 28), "#241209", 0, 0, 0.052, 0); item.add(ring);
+  const sts = [0, 1, 2].map((n) => { const g = new THREE.Group();
+    g.add(slab(n, R, -0.05, 0.035, DARK, 0.014)); g.add(slab(n, R * 0.94, -0.015, 0.03, CREAM, 0)); g.add(slab(n, R, 0.015, 0.035, DARK, 0.014)); item.add(g); return g; });
+  const C1: Cyc = { t0: 0.1, a: 0.4, h: 0.14, r: 0.26 }, C2: Cyc = { t0: 0.95, a: 0.34, h: 0.14, r: 0.28 }, CYC = [C1, C2];
+  const TC1 = C1.t0 + C1.a, TC2 = C2.t0 + C2.a, TS1 = TC1 + 0.1, TS2 = TC2 + 0.1;
+  const CR = ["#3a2218", "#241209", "#fff3d6", "#5a3524"];
+  const cr1 = burst(G, 10, CR, ctx.seed + 4, 0.028), cr2 = burst(G, 10, CR, ctx.seed + 5, 0.028);
+  const rest = new V3(0.0, 0.02, 0.03);
+  return { tick(t0) {
+    const t = t0 < 2.9 ? Math.max(0, t0) : t0 % 2.9;   // a new cookie every 2.9 s
+    const u = uOf(t, CYC), k1 = kOf(t, C1), k2 = kOf(t, C2), st = t >= TS2 ? 2 : t >= TS1 ? 1 : 0;
+    const open = (t > TC1 - 0.17 && t < TS1) || (t > TC2 - 0.17 && t < TS2);
+    const e = open ? "bite" : t < 0.2 ? "smile" : t < 2.05 ? chew(t) : "yum";
+    poseHero(ctx, u, e);
+    const hand = handPos(ctx, "r"), mouth = mouthPos(ctx);
+    const aim = (k: number, depthT: number, dA: number) => {
+      const dir = mouth.clone().sub(hand).normalize(), depth = 0.06 * depthT, tgt = mouth.clone().addScaledVector(fwd, -depth);
+      return { ctr: tgt.clone().addScaledVector(dir, -(RO - 0.01)), rot: Math.atan2(dir.y, dir.x) - dA, k };
+    };
+    const dep1 = sm(seg(t, TC1 - 0.05, TC1 + 0.05)) * (1 - sm(seg(t, TS1 + 0.02, TS1 + 0.14))), dep2 = sm(seg(t, TC2 - 0.05, TC2 + 0.05)) * (1 - sm(seg(t, TS2 + 0.02, TS2 + 0.14)));
+    const A1 = aim(k1, dep1, DA[0]), A2 = aim(k2, dep2, DA[1]);
+    const heldC = hand.clone().add(rest);
+    item.position.copy(heldC.clone().lerp(A1.ctr, k1).lerp(A2.ctr, k2));
+    let rot = 0; rot += (A1.rot - rot) * k1; rot += (A2.rot - rot) * k2;
+    const kk = Math.max(k1, k2);
+    item.rotation.set(0.3 * (1 - kk), 0.3 * (1 - kk), rot, "ZYX");
+    sts.forEach((g, i) => { g.visible = i === st; });
+    dotM.forEach((m, i) => { let hide = false; for (let d = 0; d < st; d++) if (dots[i].distanceTo(dents[d].c) < dents[d].r * 1.15) hide = true; m.visible = !hide; });
+    ring.visible = st === 0;
+    const o = M0.clone().add(new V3(0, -0.05, 0.05));
+    cr1(t, TS1, o, 0.75); cr2(t, TS2, o, 0.75);
+    return pkt(ctx, u, e);
+  } };
+} };
+
+export const FOOD: Record<string, ActDef> = { eat_pizza: pizza, eat_fries: fries, eat_icecream: icecream, eat_donut: donut, eat_cookie: cookie, drink_soda: soda };
