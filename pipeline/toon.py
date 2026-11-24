@@ -1216,7 +1216,7 @@ def pov_shots(plan: dict, shots: list) -> list:
             if journey:       # departure from the start shop -> low chase / aerial over the streets -> the landmark's facade (it lands, coins burst)
                 rig = {2: [4, 5], 3: [4, (1, 2)[jc % 2], 5], 4: [4, 1, 2, 5]}[parts][j]
             u0, u1 = round(j / parts, 4), round((j + 1) / parts, 4)
-            spec = ({"journey": {"obj": obj, **({"from": frm} if frm else {}), "to": to, "u0": u0, "u1": u1, "rig": rig, "seed": jc}} if journey
+            spec = ({"journey": {"obj": obj, **({"from": frm} if frm else {}), "to": to, "u0": u0, "u1": u1, "rig": rig, "seed": jc, "dur": n0}} if journey
                     else {"units": {**e["units"], "u0": u0, "u1": u1, "rig": rig}})
             out.append({"a": x0, "n": x1 - x0, "set": "street", "view": "ws", "chars": [], "cards": [], "things": [], "_k": k, "_txt": e.get("text", ""), **spec})
     # plain shots: the standard cut (1-3 views per line) is merged back, then cut to <= ~1.7 s pieces; never repeat a picture

@@ -11,7 +11,7 @@ import { makeThing } from "./things3d";
 type V3 = [number, number, number];
 export type UnitsSpec = { thing: string; count: number; fill?: boolean; u0: number; u1: number; rig: number };
 /** rig: 0 behind the object, 1 low chase, 2 aerial, 3 head-on, 4 departure (from the start shop), 5 arrival (the landmark facade) */
-export type JourneySpec = { obj: string; to: string; from?: string; u0: number; u1: number; rig: number; seed: number };
+export type JourneySpec = { obj: string; to: string; from?: string; u0: number; u1: number; rig: number; seed: number; dur?: number };   // dur: frames of the whole flythrough (all its views): the route is sized so the object never speeds past ~14 m/s
 export type CamOut = { from: V3; look: V3; blur: number; fov?: number };
 export type Pov3 = {
   root: THREE.Group; lights: THREE.Light[]; bg: string; fog?: THREE.Fog;
@@ -324,9 +324,9 @@ export const buildJourney = (sp: JourneySpec): Pov3 => {
   // the route: legs along the roads, ending next to the landmark
   const pts: V3[] = []; let cx = 0, cz = 0; const turn = R() < 0.5 ? 1 : -1;
   pts.push([3.4, 2.3, 8], [0, 2.2, 6]);   // the object leaves the start shop's window (the shop stands in block (0,0), east of the first road)
-  const legs = 3 + Math.floor(R() * 2);
+  const budget = (sp.dur ?? 120) / 30 * 14, legs = Math.max(2, Math.min(3 + Math.floor(R() * 2), Math.floor((budget - 8) / PITCH)));   // Nov 24 round 4: a short line gets a short route (it flew 2 blocks per second = flash cuts)
   for (let l = 0; l < legs; l++) {
-    const alongZ = l % 2 === 0, step = (1 + Math.floor(R() * 2)) * PITCH;
+    const alongZ = l % 2 === 0, step = Math.min(1 + Math.floor(R() * 2), budget < 90 ? 1 : 2) * PITCH;
     if (alongZ) cz -= step; else cx += turn * (R() < 0.3 ? -1 : 1) * Math.min(2, 1 + Math.floor(R() * 2)) * PITCH * (l === 1 ? 1 : 0.5 + 0.5 * (l % 3));
     cx = clamp(Math.round(cx / PITCH), X0 + 1, X1 - 1) * PITCH; cz = Math.max(cz, (Z0 + 1) * PITCH);
     pts.push([cx, 2.0 + 1.3 * Math.sin(l * 1.7 + sp.seed) + 0.8, cz]);
@@ -342,6 +342,8 @@ export const buildJourney = (sp: JourneySpec): Pov3 => {
   /** point on the route; beyond the ends it extends along the end tangents */
   const at = (t: number): THREE.Vector3 => (t < 0 ? curve.getPoint(0).addScaledVector(t0, t * curve.getLength()) : t > 1 ? curve.getPoint(1).addScaledVector(tN, (t - 1) * curve.getLength()) : curve.getPointAt(t));
   const tan = (t: number): THREE.Vector3 => at(clamp(t + 0.004, -0.2, 1.2)).sub(at(clamp(t - 0.004, -0.2, 1.2))).normalize();
+  /** the camera's heading: the route direction averaged over ~14% of the route, so a corner turns the view smoothly instead of snapping 90 degrees in a few frames */
+  const tanS = (t: number): THREE.Vector3 => at(clamp(t + 0.07, -0.2, 1.2)).sub(at(clamp(t - 0.07, -0.2, 1.2))).normalize();
   // buildings (inside the blocks, never on the roads)
   const used: V3[] = [];
   for (let i = X0; i < X1; i++) for (let j = Z0; j < Z1; j++) {
@@ -420,11 +422,11 @@ export const buildJourney = (sp: JourneySpec): Pov3 => {
   const ARR = 0.86, g0 = (u: number) => lerp(sp.u0, sp.u1, u), tOf = (g: number) => clamp(g / ARR);
   const P0 = at(0), shopPt = new THREE.Vector3(4.2, 2.6, 8), face = new THREE.Vector3(lx - side * 3.4, 4.6, lz);
   const cam = (u: number): CamOut => {
-    const t = tOf(g0(u)), P = at(t), Tn = tan(t), N = new THREE.Vector3(-Tn.z, 0, Tn.x).normalize(), rig = sp.rig, sway = Math.sin(u * PI * 2 + sp.seed) * 0.5;
+    const t = tOf(g0(u)), P = at(t), Tn = tanS(t), N = new THREE.Vector3(-Tn.z, 0, Tn.x).normalize(), rig = sp.rig, sway = Math.sin(u * PI * 2 + sp.seed) * 0.5;
     const look = (v: THREE.Vector3): V3 => [v.x, v.y, v.z];
     const arriving = g0(u) > ARR ? ease((g0(u) - ARR) / (1 - ARR)) : 0;
     switch (rig) {
-      case 4: { const c = new THREE.Vector3(0.6, 4.2, 18.2).addScaledVector(P.clone().sub(P0), 0.45); c.y += 0.5 * u; return { from: look(c), look: look(P.clone().lerp(shopPt, 1 - clamp(t / 0.07))), blur: 3 }; }                     // across the road from the shop: the object pops out of the window and flies off
+      case 4: { const c = new THREE.Vector3(0.6, 4.2, 18.2).addScaledVector(P.clone().sub(P0), 0.45); c.y += 0.5 * u; return { from: look(c), look: look(P.clone().lerp(shopPt, 1 - ease(clamp(t / 0.2)))), blur: 3 }; }                     // across the road from the shop: the object pops out of the window and flies off
       case 5: { const c = new THREE.Vector3(lx - side * 40, lerp(8.5, 6.5, ease(u)), lz + 0.4); return { from: look(c), look: look(face.clone().lerp(P, 0.35 * (1 - arriving))), blur: 3 }; }  // the landmark's facade from the street: the object lands, coins burst
       case 1: { const c = P.clone().addScaledVector(N, 0.9).addScaledVector(Tn, -6).add(new THREE.Vector3(0, 2.8, 0)); return { from: look(c), look: look(P.clone().addScaledVector(Tn, 5)), blur: 4 }; }
       case 2: { const c = P.clone().addScaledVector(Tn, -6).add(new THREE.Vector3(sway * 2, 11, 0)); return { from: look(c), look: look(P.clone().addScaledVector(Tn, 3)), blur: 3 }; }

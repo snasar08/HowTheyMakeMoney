@@ -1277,7 +1277,7 @@ class Renderer:
                 if not calm and sc.shots[max(0, bisect.bisect_right(sc.beats, t) - 1)][0] not in ("3d", "alt", "chartzoom", "wordcard"):
                     self._icon(frame, chunks[si], t, lp)  # never on top of a chart or a word card
                 self._caption(frame, chunks[si], t, gt)  # after the CTA dim, so captions stay bright
-                if lp and (SUBLINE or self.s.get("format") == "pov"):   # POV format (Nov 24): the top sentence subtitle is part of the look
+                if lp and SUBLINE:   # top sentence line is OFF (Nov 15); POV uses the same big word caption as every other Short
                     self._subline(frame, chunks[si], t, gt)
                 # thin progress bar along the top edge keeps people watching to the end
                 ImageDraw.Draw(frame).rectangle((0, 0, int(W * min(1.0, gt / total_s)), PROGRESS_H),
@@ -1513,7 +1513,7 @@ class Renderer:
         """Nov 15, Sam's reference channel (@afterhourtheories, "mimic his style"): the sentence being said runs
         as plain white text near the top, two lines at most, under the progress bar; the big one-word caption
         stays. Hidden while the hook title / name banner are up."""
-        if gt < (4.4 if self.s.get("name_card") else 0.0 if self.s.get("format") == "pov" else 0.8):
+        if gt < (4.4 if self.s.get("name_card") else 0.8):
             return
         words = [w for ch in chunks for w in ch]
         idx = next((k for k, w in enumerate(words) if w.start - 0.03 <= t <= w.end + 0.25), None)
@@ -1571,7 +1571,7 @@ class Renderer:
         and stays ~3 s. Script: "name_card": "CRISTIANO RONALDO", optional "name_sub": "soccer player".
         The name does the identifying; characters never copy a real person's look (STYLE.md)."""
         name = self.s.get("name_card")
-        if not name or gt > 4.2:  # Sam, Nov 3: name from the very first frame
+        if not name or gt > 4.2 or self.s.get("format") == "pov":   # pov: name_card only seeds the hero outfit; the toon "POV: you ..." pill is the opener, no yellow banner copy of it  # Sam, Nov 3: name from the very first frame
             return
         k = min(1.0, (4.2 - gt) / 0.2)
         d = ImageDraw.Draw(frame)
