@@ -64,7 +64,9 @@ def day_cap(day: dt.date, fdays: set[dt.date]) -> int:
 # so no 24 h window ever holds more than ROLLING_MAX posts. Nov 21 (Sam: "post throughout the day"): no margin;
 # a 24.25 h window can never fit 2 posts a day, so it pushed both into the evening, 15 min apart.
 ROLLING_MAX = int(os.environ.get("ROLLING_MAX", "2"))
-ROLLING_WIN = dt.timedelta(hours=float(os.environ.get("ROLLING_H", "24")))
+# Nov 24: Buffer free plan = 2 YouTube posts per rolling 24 h, and Buffer publishes a little late, so a post
+# exactly 24 h after the one two back failed ("daily posting limit"). Keep 15 min of margin past 24 h.
+ROLLING_WIN = dt.timedelta(hours=float(os.environ.get("ROLLING_H", "24.25")))
 NUDGE_MIN = int(os.environ.get("NUDGE_MIN", "15"))
 NUDGE_MAX_MIN = int(os.environ.get("NUDGE_MAX_MIN", "120"))
 SAME_DAY_GAP = dt.timedelta(hours=float(os.environ.get("SAME_DAY_GAP_H", "4")))
