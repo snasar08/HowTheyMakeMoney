@@ -120,7 +120,7 @@ const makeHoop = (rim: THREE.Vector3, face: number, R = 0.3): Hoop => {
   const top = 0.75;
   cyl(g, 0.09, rim.y + top, "#8f97a6", 0, (top - rim.y) / 2, bz - 1.4);
   bx(g, 0.14, 0.14, 1.4, "#8f97a6", 0, 0.55, bz - 0.72, 0.015);
-  bx(g, 0.75, 1.2, 0.75, "#2a3b9c", 0, -rim.y + 0.6, bz - 1.4);
+  bx(g, 0.7, 0.45, 0.7, "#2a3b9c", 0, -rim.y + 0.225, bz - 1.4);   // Nov 24: a low pole pad (the tall one read as a pedestal the shoe stood on)
   const strands: THREE.Mesh[] = [], sm_ = new THREE.MeshBasicMaterial({ color: "#ffffff" }), sg = new THREE.CylinderGeometry(0.009, 0.009, 1, 5);
   for (let i = 0; i < 24; i++) { const m = new THREE.Mesh(sg, sm_); g.add(m); strands.push(m); }
   const A = new Vec(), B = new Vec();
@@ -281,7 +281,9 @@ const rimMove = (mode: "dunk" | "layup"): ActDef => ({ pose: "run", view: "actd"
   const Tf = 0.5, G = 13.5, vy = (rim.y - ball0.y + 0.5 * G * Tf * Tf) / Tf, vT = vy - G * Tf;
   const tRel = RUN + tR - T0;   // shot time of the release
   const pop = popText(root, mode === "dunk" ? "SLAM!" : "+2", [rim.x + 0.5, rim.y + 1.0, rim.z + 0.3], 1.2, "#ffffff", mode === "dunk" ? "#d3202f" : "#d3202f");
-  return { tick(t) {
+  const LOOP = tRel + (mode === "dunk" ? 1.55 : 1.8);   // Nov 24: a long shot repeats the whole run-jump-slam (it used to stand at the hoop after one dunk)
+  return { tick(t0) {
+    const t = t0 < LOOP ? t0 : t0 % LOOP;
     pop(mode === "dunk" ? tRel : tRel + Tf - 0.05, t);
     let pose: "run" | "dunk", pt: number;
     if (t < RUN) { hero.root.position.set(jx - f0.x * 1.7 * (1 - t / RUN), H[1], jz - f0.z * 1.7 * (1 - t / RUN)); pose = "run"; pt = t; }
