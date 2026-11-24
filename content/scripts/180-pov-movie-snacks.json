@@ -109,7 +109,7 @@
             "cash"
           ],
           "view": "wide",
-          "journey": "money to the register"
+          "journey": "money from the snack counter to the register"
         }
       ]
     },
@@ -261,6 +261,11 @@
           "view": "ms",
           "math": [
             {
+              "op": "",
+              "value": "$1,344M",
+              "label": "left over"
+            },
+            {
               "op": "÷",
               "value": "$12.09",
               "label": "average ticket"
@@ -309,9 +314,19 @@
           "place": "stall",
           "mood": "laugh",
           "things": [
-            "pizza"
+            "paper_bag",
+            "soda"
           ],
-          "view": "face"
+          "react": [
+            [
+              "eat",
+              "yum"
+            ],
+            [
+              "cheer",
+              "laugh"
+            ]
+          ]
         }
       ]
     }

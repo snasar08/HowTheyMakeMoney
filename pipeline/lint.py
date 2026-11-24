@@ -88,6 +88,11 @@ def lint_pov(s: dict) -> list[str]:
                                 err.append(f'{w}: units.label number "{n}" is not in the narration (never invent numbers)')
             if "journey" in t and not isinstance(t["journey"], str):
                 err.append(f"{w}: journey must be a string")
+            if "react" in t:
+                from .toon_director import POV_EXPRS, POV_POSES
+                r = t["react"]
+                if not isinstance(r, list) or not r or not all(isinstance(x, list) and len(x) == 2 and x[0] in POV_POSES and x[1] in POV_EXPRS for x in r):
+                    err.append(f"{w}: react must be a list of [pose, face] pairs (poses {'/'.join(POV_POSES)}; faces {'/'.join(POV_EXPRS)})")
     return err
 
 

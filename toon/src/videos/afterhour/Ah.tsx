@@ -81,6 +81,12 @@ const VIEWS: Record<string, { from: V3; to: V3; look: V3; blur: number }> = {
   cu: { from: [0.3, 1.55, 2.6], to: [0.25, 1.55, 2.3], look: [0, 1.45, 0], blur: 12 },
   face: { from: [0.35, 1.45, 2.7], to: [0.3, 1.45, 2.4], look: [0, 1.38, 0], blur: 14 },
   low: { from: [0.8, 0.6, 3.6], to: [0.7, 0.6, 3.2], look: [0, 1.4, 0], blur: 8 },
+  // POV format round 2 (Nov 24): the same sets from the other side / from above, so neighbouring views of one set never look alike
+  wideL: { from: [-3.4, 2.1, 8.0], to: [-3.0, 2.0, 7.2], look: [0, 1.6, 0], blur: 2 },
+  wideR: { from: [3.4, 2.1, 8.0], to: [3.0, 2.0, 7.2], look: [0, 1.6, 0], blur: 2 },
+  hi: { from: [0.5, 4.2, 8.6], to: [0.5, 3.9, 7.8], look: [0, 1.0, 0], blur: 2 },
+  msL: { from: [-1.7, 1.5, 4.1], to: [-1.5, 1.5, 3.7], look: [0, 1.3, 0], blur: 8 },
+  msR: { from: [1.7, 1.5, 4.1], to: [1.5, 1.5, 3.7], look: [0, 1.3, 0], blur: 8 },
   // act views (acts/*.ts): whole body + the hoop / goal / opponent in frame, little blur
   act: { from: [1.4, 2.2, 11.2], to: [1.4, 2.2, 10.4], look: [1.4, 2.0, 0], blur: 1 },     // scene extends to the hero's right
   acts: { from: [0.9, 2.4, 13.2], to: [0.9, 2.4, 12.4], look: [0.9, 2.1, 0], blur: 1 },   // jump shot: shooter + hoop both whole (Nov 18)

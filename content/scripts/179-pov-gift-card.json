@@ -106,7 +106,7 @@
             "box"
           ],
           "view": "wide",
-          "journey": "gift card to the junk drawer"
+          "journey": "gift card from the store to the junk drawer"
         }
       ]
     },
@@ -311,9 +311,18 @@
           "place": "garage",
           "mood": "laugh",
           "things": [
-            "letter"
+            "drawertable"
           ],
-          "view": "face"
+          "react": [
+            [
+              "shrug",
+              "smug"
+            ],
+            [
+              "think",
+              "wink"
+            ]
+          ]
         }
       ]
     }

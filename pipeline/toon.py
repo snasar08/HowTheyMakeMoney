@@ -273,7 +273,7 @@ def make_plan(script: dict, recorded: dict | None = None) -> dict:
                         # Nov 15 (afterhour style): a text card in the scene (date sign, money screen that flips, headline,
                         # tombstone...), a fixed view ("face" close-up etc.), a different character for this line, hide the hero
                         **{k: d[k] for k in ("card", "view", "who", "hide", "crowdO") if d.get(k)},
-                        **{k: d[k] for k in ("math", "units", "journey") if k in d},      # POV format (Nov 24)
+                        **{k: d[k] for k in ("math", "units", "journey", "react") if k in d},      # POV format (Nov 24)
                         "things": (prev_things := things_for(ss[j], given, prev_things)), "line": ss[j][:80], "text": ss[j]})
             a += m
         if tail:
@@ -289,7 +289,7 @@ def make_plan(script: dict, recorded: dict | None = None) -> dict:
             while tail > 0:
                 m = min(tail, 45) if tail - 45 >= 20 else tail
                 src = uniq[kk % len(uniq)] if uniq else out[-1]
-                out.append({**{q: v for q, v in src.items() if q not in ("math", "units", "journey")}, "a": a, "n": m, "frLo": pos, "si": i, "line": "(outro) " + src.get("line", "")[:60]})
+                out.append({**{q: v for q, v in src.items() if q not in ("math", "units", "journey", "react")}, "a": a, "n": m, "frLo": pos, "si": i, "line": "(outro) " + src.get("line", "")[:60]})
                 a += m; pos += m; tail -= m; kk += 1
     slug = f"{script.get('id', '')}-{script.get('slug', '')}"
     co = script.get("company", "")
@@ -1056,23 +1056,34 @@ def ah_shots(plan: dict) -> list:
 # ---- POV format (Nov 24): "POV: you tap your card for coffee" + stacked math cards + unit rows + journey flythroughs ----
 POV_TOP, POV_GAP = 285, 12                    # px: first card's top edge and the gap between cards (toon/src/videos/afterhour/pov.tsx draws the same)
 POV_MAX_PIECE = 50                            # frames (~1.7 s): a plain line is cut into views of at most this length
+POV_COLLAPSE_AFTER = 60                       # frames the final result card is shown with its rows before they fold away
 POV_PILL_FRAMES = 105                         # the "POV: you ..." pill stays up ~3.5 s (the opening views)
-_POV_VIEWS = ["ms", "wide", "face", "ws", "low", "cu"]
+_POV_VIEWS = ["ms", "face", "wide", "msL", "wideR", "low", "cu", "hi", "wideL", "msR", "ws"]
+_POV_FAR_VIEWS = ["wide", "wideL", "wideR", "hi", "ws"]
 _POV_BIG = ("coins", "cash", "cashstack", "arrowup", "box", "pizza", "guitar", "factory")     # held in front of the chest: a close view hides the face behind them
+# Nov 24 round 2: what a view looks like = (distance class, side, elevation). Two neighbouring views of one set must differ in at least one
+# (wide <-> close, or the other side, or high <-> level): ws and wide are the SAME picture, so are face and cu.
+_POV_LOOK = {"wide": ("far", 0, 0), "ws": ("far", 0, 0), "wideL": ("far", -1, 0), "wideR": ("far", 1, 0), "hi": ("far", 0, 1),
+             "ms": ("mid", 0, 0), "msL": ("mid", -1, 0), "msR": ("mid", 1, 0), "low": ("mid", 0, -1), "face": ("close", 0, 0), "cu": ("close", 0, 0)}
+
+
+def _pov_apart(v1: str | None, v2: str | None) -> bool:
+    a, b = _POV_LOOK.get(v1 or ""), _POV_LOOK.get(v2 or "")
+    return a is None or b is None or a != b
 
 
 def _pov_views(sh: dict) -> list:
     """Views a plain POV piece may use. A close view puts the head over a card / hides it, crops a crowd or lets a held pile cover
     the face (Nov 24 stills), so those pieces keep to far views; everything else may use any view (a face is never covered)."""
-    if len(sh.get("chars") or []) > 3:
-        return ["wide", "ws"]
-    if any(t["name"] in _POV_BIG for t in sh.get("things") or []):
-        return ["wide", "ws"]
-    if sh.get("cards"):
-        return ["wide", "ws", "ms"]       # a card seen from the ms view is dropped (the head would cover it), see pov_shots
-    if sh.get("things"):
-        return ["ms", "wide", "ws", "low"]
-    return list(_POV_VIEWS)
+    if len(sh.get("chars") or []) > 3 or any(t["name"] in _POV_BIG for t in sh.get("things") or []):
+        out = list(_POV_FAR_VIEWS)
+    elif sh.get("cards"):
+        out = ["wide", "ms", "wideR", "hi", "msL", "wideL", "ws", "msR"]       # a card seen from an ms view is dropped (the head would cover it) - the far views before it showed it
+    elif sh.get("things"):
+        out = ["ms", "wide", "wideL", "msR", "wideR", "hi", "msL", "ws", "low"]
+    else:
+        out = list(_POV_VIEWS)
+    return [v for v in out if not (v == "low" and sh.get("set") in AH_NO_LOW)]
 
 
 def _pov_view_ok(sh: dict, v: str) -> bool:
@@ -1145,6 +1156,10 @@ def pov_hud(plan: dict) -> dict | None:
             at = e["a"] + 3 + round(i * max(1, e["n"] - 6) / len(new))
             cur["cards"].append({**c, "at": at})
     close(total)
+    for st in stacks:   # the stack has said its last thing: once the final "=" card has been up ~2 s it shrinks to just that yellow card
+        last = st["cards"][-1]
+        if len(st["cards"]) >= 2 and last.get("result") and st["b"] - (last["at"] + POV_COLLAPSE_AFTER) >= 24:
+            st["collapse"] = last["at"] + POV_COLLAPSE_AFTER
     pill = {"text": plan["pov"], "a": 0, "n": min(POV_PILL_FRAMES, max(30, total))} if plan.get("pov") else None
     return {"pill": pill, "stacks": stacks}
 
@@ -1154,9 +1169,10 @@ def _pov_hud_at(hud: dict | None, a: int, n: int) -> dict | None:
     best, h = 0, 0
     for s in (hud or {}).get("stacks", []):
         if s["a"] < a + n and s["b"] > a:
-            vis = sum(1 for c in s["cards"] if c["at"] < a + n)
+            col = s.get("collapse")
+            vis, hh = (1, 150) if col is not None and a >= col + 8 else (sum(1 for c in s["cards"] if c["at"] < a + n), pov_card_h(len(s["cards"])))
             if vis > best:
-                best, h = vis, pov_card_h(len(s["cards"]))
+                best, h = vis, hh
     if not best:
         return None
     bottom = POV_TOP + best * (h + POV_GAP)
@@ -1186,20 +1202,21 @@ def pov_shots(plan: dict, shots: list) -> list:
         done.add(k)
         a0, n0 = e["a"], e["n"]
         journey = bool(e.get("journey")) and not e.get("units")
-        parts = max(1, -(-n0 // (70 if journey else POV_MAX_PIECE)))      # a flythrough is cut into takes of <= ~2.3 s
+        parts = max(1, -(-n0 // POV_MAX_PIECE))
         if journey:
-            m = re.match(r"\s*(.+?)\s+to\s+(.+)$", e["journey"], re.I)
-            obj, to = (m.group(1), m.group(2)) if m else (e["journey"], "the network")
+            parts = 2 if n0 < 88 else 3 if n0 < 175 else 4                 # a flythrough: 2-4 views of ~1.2-2 s
+            m = re.match(r"\s*(.+?)(?:\s+from\s+(.+?))?\s+to\s+(.+)$", e["journey"], re.I)
+            obj, frm, to = (m.group(1), m.group(2), m.group(3)) if m else (e["journey"], None, "the network")
             jc += 1
         else:
             uc += 1
         for j in range(parts):
             x0, x1 = a0 + round(j * n0 / parts), a0 + round((j + 1) * n0 / parts)
-            rig = (j + (jc if journey else uc)) % 4
-            if journey and j == parts - 1:
-                rig = 0                                             # the last (or only) view stays behind the object to see it arrive
+            rig = (j + uc) % 4
+            if journey:       # departure from the start shop -> low chase / aerial over the streets -> the landmark's facade (it lands, coins burst)
+                rig = {2: [4, 5], 3: [4, (1, 2)[jc % 2], 5], 4: [4, 1, 2, 5]}[parts][j]
             u0, u1 = round(j / parts, 4), round((j + 1) / parts, 4)
-            spec = ({"journey": {"obj": obj, "to": to, "u0": u0, "u1": u1, "rig": rig, "seed": jc}} if journey
+            spec = ({"journey": {"obj": obj, **({"from": frm} if frm else {}), "to": to, "u0": u0, "u1": u1, "rig": rig, "seed": jc}} if journey
                     else {"units": {**e["units"], "u0": u0, "u1": u1, "rig": rig}})
             out.append({"a": x0, "n": x1 - x0, "set": "street", "view": "ws", "chars": [], "cards": [], "things": [], "_k": k, "_txt": e.get("text", ""), **spec})
     # plain shots: the standard cut (1-3 views per line) is merged back, then cut to <= ~1.7 s pieces; never repeat a picture
@@ -1225,8 +1242,8 @@ def pov_shots(plan: dict, shots: list) -> list:
             a0, a1 = sh["a"] + round(j * sh["n"] / parts), sh["a"] + round((j + 1) * sh["n"] / parts)
             piece = {**sh, "a": a0, "n": a1 - a0}
             if j:
-                piece["view"] = next((v for v in _pov_views(sh) if v != res[-1].get("view")), "wide")
                 piece["things"] = [dict(t, pop=False) for t in sh.get("things") or []]
+                piece["view"] = "?"            # picked below, once the neighbours are known
             res.append(piece)
     seen: set = set()
 
@@ -1235,21 +1252,31 @@ def pov_shots(plan: dict, shots: list) -> list:
                 json.dumps(s_.get("act") or "", sort_keys=True), s_["chars"][0].get("pose") if s_["chars"] else "")
 
     for i, sh in enumerate(res):
-        if not (sh.get("units") or sh.get("journey")):
-            if not _pov_view_ok(sh, sh.get("view") or "ms") and "cam" not in sh and not sh.get("act"):
-                sh["view"] = next((v for v in _pov_views(sh) if sig({**sh, "view": v}) not in seen and (i == 0 or res[i - 1].get("view") != v)), "ws")
-            if sig(sh) in seen and "cam" not in sh and not sh.get("act"):
-                for v in _pov_views(sh):
-                    if sig({**sh, "view": v}) not in seen and (i == 0 or res[i - 1].get("view") != v):
-                        sh["view"] = v
-                        break
-            seen.add(sig(sh))
-        if sh.get("cards") and sh.get("view") == "ms" and "cam" not in sh:
+        if sh.get("units") or sh.get("journey"):
+            continue
+        prev = res[i - 1] if i and res[i - 1]["set"] == sh["set"] and not (res[i - 1].get("units") or res[i - 1].get("journey")) else None
+        cur = sh.get("view") or "ms"
+        views = _pov_views(sh)
+        cands = ([cur] if cur == "hook" or cur in views else []) + [v for v in views if v != cur]
+        pick = (next((v for v in cands if sig({**sh, "view": v}) not in seen and (prev is None or _pov_apart(prev.get("view"), v))), None)
+                or next((v for v in cands if sig({**sh, "view": v}) not in seen and (prev is None or v != prev.get("view"))), None)
+                or next((v for v in cands if prev is None or _pov_apart(prev.get("view"), v)), None) or "ws")
+        sh["view"] = pick
+        seen.add(sig(sh))
+    for i, sh in enumerate(res):
+        e = sc[sh["_k"]] if 0 <= sh.get("_k", -1) < len(sc) else {}
+        if e.get("react") and sh["chars"]:        # the sign-off: the hero reacts (pose, face) in each view of the last line
+            idx = sum(1 for q in res[:i] if q.get("_k") == sh["_k"])
+            pose, expr = e["react"][idx % len(e["react"])]
+            sh["chars"] = [dict(sh["chars"][0], pose=pose, expr=expr)] + sh["chars"][1:]
+        if sh.get("cards") and sh.get("view") in ("ms", "msL", "msR") and "cam" not in sh:
             sh["cards"] = []                  # the close view puts the head over the card; the earlier far views already showed it
         h = _pov_hud_at(hud, sh["a"], sh["n"])
         if h:
             sh["hud"] = h
             shown = _pov_shown_nums(hud, sh["a"], sh["n"])
+            if sh.get("cards") and sh["set"] == "stage":
+                sh["cards"] = []              # the raised stage puts the board right over the hero's face
             if sh.get("cards") and shown:     # the in-scene board repeating the stack's number is dropped (the stack already says it)
                 sh["cards"] = [c for c in sh["cards"] if _pov_num(c.get("text", "")) not in shown]
     return res

@@ -127,7 +127,7 @@
             "cash"
           ],
           "view": "wide",
-          "journey": "money to the music industry"
+          "journey": "money from your phone to the music industry"
         }
       ]
     },
@@ -289,7 +289,17 @@
           "things": [
             "headset"
           ],
-          "view": "face"
+          "beat": "money",
+          "react": [
+            [
+              "dance",
+              "grin"
+            ],
+            [
+              "fistpump",
+              "wink"
+            ]
+          ]
         }
       ]
     }

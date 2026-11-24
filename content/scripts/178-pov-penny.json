@@ -122,7 +122,7 @@
           ],
           "view": "wide",
           "math": [],
-          "journey": "penny to the Federal Reserve"
+          "journey": "penny from the Mint to the Federal Reserve"
         },
         {
           "place": "boardroom",
@@ -318,9 +318,18 @@
           "place": "street",
           "mood": "laugh",
           "things": [
-            "coins"
+            "gold_coin"
           ],
-          "view": "face"
+          "react": [
+            [
+              "cheer",
+              "laugh"
+            ],
+            [
+              "shrug",
+              "wink"
+            ]
+          ]
         }
       ]
     }

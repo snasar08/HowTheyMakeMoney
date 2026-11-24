@@ -112,7 +112,7 @@
             "globe"
           ],
           "view": "wide",
-          "journey": "card to the bank"
+          "journey": "card from the coffee shop to the bank"
         }
       ]
     },
@@ -282,6 +282,11 @@
           "view": "ms",
           "math": [
             {
+              "op": "",
+              "value": "$34B",
+              "label": "paid in fees"
+            },
+            {
               "op": "÷",
               "value": "365 days",
               "label": "in a year"
@@ -313,9 +318,19 @@
           "place": "mansion",
           "mood": "laugh",
           "things": [
-            "cash"
+            "gold_coin"
           ],
-          "view": "face"
+          "beat": "money",
+          "react": [
+            [
+              "cheer",
+              "laugh"
+            ],
+            [
+              "fistpump",
+              "wink"
+            ]
+          ]
         }
       ]
     }

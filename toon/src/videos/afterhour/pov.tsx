@@ -5,7 +5,7 @@ import React from "react";
 import { useCurrentFrame } from "remotion";
 
 export type PovCard = { op: string; value: string; label: string; result?: boolean; at: number };
-export type PovHud = { pill?: { text: string; a: number; n: number }; stacks?: { a: number; b: number; cards: PovCard[] }[] };
+export type PovHud = { pill?: { text: string; a: number; n: number }; stacks?: { a: number; b: number; cards: PovCard[]; collapse?: number }[] };
 export const POV_TOP = 285, POV_GAP = 12;
 /** card height by how many cards the stack will hold in total (a stack never re-lays-out while it fills) */
 export const povCardH = (n: number) => (n <= 2 ? 150 : n === 3 ? 128 : 96);
@@ -39,15 +39,19 @@ export const PovOverlay: React.FC<{ hud: PovHud }> = ({ hud }) => {
         </div>
       )}
       {stack && stack.cards.filter((c) => f >= c.at).map((c, i) => {
-        const k = popK((f - c.at) / 8), cnt = c.result ? cl((f - c.at - 3) / 26) : 1, txt = c.result ? counted(c.value, cnt) : c.value;
-        const big = H * 0.56 * Math.min(1, 7 / Math.max(7, c.value.length)), top = POV_TOP + i * (H + POV_GAP);
+        // Nov 24 round 2: once the final "=" card has been up a while the rows above it fold away and it slides up to the first slot (collapse frame)
+        const kc = stack.collapse === undefined ? 0 : cl((f - stack.collapse) / 14), ke = kc * kc * (3 - 2 * kc), isLast = i === N - 1;
+        if (kc > 0 && !isLast && kc >= 1) return null;
+        const Hc = isLast ? H + (150 - H) * ke : H;
+        const k = popK((f - c.at) / 8) * (isLast || kc === 0 ? 1 : 1 - ke), cnt = c.result ? cl((f - c.at - 3) / 26) : 1, txt = c.result ? counted(c.value, cnt) : c.value;
+        const big = Hc * 0.56 * Math.min(1, 7 / Math.max(7, c.value.length)), top = isLast ? POV_TOP + (i * (H + POV_GAP)) * (1 - ke) : POV_TOP + i * (H + POV_GAP);
         return (
-          <div key={i} style={{ position: "absolute", left: 210, width: 660, top, height: H, transform: `scale(${Math.max(0.001, k)})`, transformOrigin: "50% 0%", opacity: cl((f - c.at) / 3),
+          <div key={i} style={{ position: "absolute", left: 210, width: 660, top, height: Hc, transform: `scale(${Math.max(0.001, k)})`, transformOrigin: "50% 0%", opacity: cl((f - c.at) / 3) * (isLast ? 1 : 1 - ke),
             background: c.result ? "#ffd23a" : "#ffffff", border: "6px solid #141018", borderRadius: 34, boxShadow: "0 7px 0 rgba(20,16,24,0.85)", display: "flex", alignItems: "center", boxSizing: "border-box" }}>
-            <div style={{ width: 96, textAlign: "center", fontSize: H * 0.5, fontWeight: 900, color: c.result ? "#8a5a00" : "#9aa1b5", lineHeight: 1 }}>{c.op}</div>
+            <div style={{ width: 96, textAlign: "center", fontSize: Hc * 0.5, fontWeight: 900, color: c.result ? "#8a5a00" : "#9aa1b5", lineHeight: 1 }}>{c.op}</div>
             <div style={{ flex: 1, paddingRight: 96, textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
               <div style={{ fontSize: big, fontWeight: 900, color: "#141018", lineHeight: 1.0, whiteSpace: "nowrap", fontVariantNumeric: "tabular-nums" }}>{txt}</div>
-              <div style={{ fontFamily: "Arial, sans-serif", fontSize: Math.max(22, H * 0.19), fontWeight: 700, color: c.result ? "#6b4b00" : "#7b8296", marginTop: 4, whiteSpace: "nowrap" }}>{c.label}</div>
+              <div style={{ fontFamily: "Arial, sans-serif", fontSize: Math.max(22, Hc * 0.19), fontWeight: 700, color: c.result ? "#6b4b00" : "#7b8296", marginTop: 4, whiteSpace: "nowrap" }}>{c.label}</div>
             </div>
           </div>
         );

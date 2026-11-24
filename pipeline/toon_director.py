@@ -76,6 +76,8 @@ def _gemini(prompt: str) -> dict | None:
 
 
 POV_OPS = {"", "+", "-", "−", "×", "x", "*", "÷", "/", "="}
+POV_POSES = ["stand", "cheer", "wave", "point", "shrug", "dance", "fistpump", "think", "facepalm", "eat", "talk", "phone", "count", "jump", "sleep"]
+POV_EXPRS = ["smile", "grin", "smug", "laugh", "shock", "sad", "wink", "neutral", "yum", "gulp", "sip", "focus", "bite"]
 POV_UNITS = ["bathtub", "lightbulb", "house", "coin", "cup", "phone", "truck", "ticket"]
 
 
@@ -104,6 +106,11 @@ def clean_pov(sc: dict) -> dict:
     j = sc.get("journey")
     if isinstance(j, str) and j.strip():
         out["journey"] = j.strip()[:80]
+    r = sc.get("react")      # the sign-off reaction: [pose, face] per view of the line, e.g. [["cheer", "laugh"], ["fistpump", "wink"]]
+    if isinstance(r, list):
+        rr = [[str(x[0]), str(x[1])] for x in r if isinstance(x, (list, tuple)) and len(x) == 2 and x[0] in POV_POSES and x[1] in POV_EXPRS]
+        if rr:
+            out["react"] = rr[:3]
     return out
 
 
