@@ -1,0 +1,31 @@
+{
+  "id": "999",
+  "slug": "pov-test",
+  "format": "pov",
+  "title": "POV: you tap your card for coffee",
+  "pov": "POV: you tap your card for coffee",
+  "company": "",
+  "scenes": [
+    {
+      "narration": "You tap your card for a coffee. The shop pays a small fee on every swipe. That fee adds up to a few cents. Your payment zooms off across town. It lands at the card network. Picture a whole day of taps. Enough to fill a row of bathtubs. Or light a row of bulbs. Now count a bigger pile. The pile gets split three ways. Next time, tip the barista.",
+      "visual": {"type": "lowpoly", "set": "city"},
+      "toon": [
+        {"place": "street", "beat": "phone", "mood": "happy", "things": ["coffee"],
+         "math": [{"op": "", "value": "$5.00", "label": "your coffee"}]},
+        {"place": "diner", "mood": "shock",
+         "math": [{"op": "", "value": "$5.00", "label": "your coffee"}, {"op": "×", "value": "2.5%", "label": "swipe fee"}]},
+        {"place": "diner", "mood": "proud", "things": ["cash"],
+         "math": [{"op": "", "value": "$5.00", "label": "your coffee"}, {"op": "×", "value": "2.5%", "label": "swipe fee"}, {"op": "=", "value": "12.5¢", "label": "to the card network", "result": true}]},
+        {"place": "street", "mood": "excited", "journey": "message bubble to card network"},
+        {"place": "office", "mood": "happy"},
+        {"place": "street", "mood": "calm", "math": []},
+        {"place": "bathroom", "mood": "happy", "units": {"thing": "bathtub", "count": 8, "fill": true}},
+        {"place": "office", "mood": "shock", "units": {"thing": "lightbulb", "count": 9, "fill": true}},
+        {"place": "boardroom", "mood": "happy",
+         "math": [{"op": "", "value": "175", "label": "messages a day"}, {"op": "×", "value": "7", "label": "days"}, {"op": "×", "value": "52", "label": "weeks"}, {"op": "=", "value": "63,700", "label": "messages a year", "result": true}]},
+        {"place": "office", "mood": "nervous"},
+        {"place": "diner", "mood": "laugh", "math": []}
+      ]
+    }
+  ]
+}

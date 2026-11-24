@@ -1266,7 +1266,7 @@ class Renderer:
                     if tb < 0.07:
                         frame = Image.blend(frame, flash, 0.22 * (1 - tb / 0.07))
                 frame = fx.grade(frame, n)
-                if lp:
+                if lp and self.s.get("format") != "pov":   # POV format: the "POV: you ..." pill (toon/pov.tsx) is the opening claim, no big hook title over the math cards
                     # the name banner sits at the top (famous format): the title goes under it, not behind it
                     fx.hook(frame, self.s.get("title", ""), gt, font, BLACK, dur=(self._hook_dur() if calm else 0.75),   # calm (3D look): hook claim stays up through the first opening view, gone before the cut to the medium (Nov 23)
                             y=(410 if self.s.get("name_sub") else 345) if self.s.get("name_card") else 150, pop_on=not calm)   # below the banner + its sub line
@@ -1277,7 +1277,7 @@ class Renderer:
                 if not calm and sc.shots[max(0, bisect.bisect_right(sc.beats, t) - 1)][0] not in ("3d", "alt", "chartzoom", "wordcard"):
                     self._icon(frame, chunks[si], t, lp)  # never on top of a chart or a word card
                 self._caption(frame, chunks[si], t, gt)  # after the CTA dim, so captions stay bright
-                if lp and SUBLINE:
+                if lp and (SUBLINE or self.s.get("format") == "pov"):   # POV format (Nov 24): the top sentence subtitle is part of the look
                     self._subline(frame, chunks[si], t, gt)
                 # thin progress bar along the top edge keeps people watching to the end
                 ImageDraw.Draw(frame).rectangle((0, 0, int(W * min(1.0, gt / total_s)), PROGRESS_H),
@@ -1513,7 +1513,7 @@ class Renderer:
         """Nov 15, Sam's reference channel (@afterhourtheories, "mimic his style"): the sentence being said runs
         as plain white text near the top, two lines at most, under the progress bar; the big one-word caption
         stays. Hidden while the hook title / name banner are up."""
-        if gt < (4.4 if self.s.get("name_card") else 0.8):
+        if gt < (4.4 if self.s.get("name_card") else 0.0 if self.s.get("format") == "pov" else 0.8):
             return
         words = [w for ch in chunks for w in ch]
         idx = next((k for k, w in enumerate(words) if w.start - 0.03 <= t <= w.end + 0.25), None)

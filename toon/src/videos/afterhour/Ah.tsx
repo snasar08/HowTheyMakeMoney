@@ -14,14 +14,18 @@ import { makeThing, isCodeThing, Thing } from "./things3d";
 import { hasModel, loadModels, MODEL_INDEX } from "./models";
 import { ACTS } from "./acts";
 import type { ActRun, ActPose } from "./acts/types";
+import { buildUnits, buildJourney, Pov3, UnitsSpec, JourneySpec } from "./pov3d";
+import { PovOverlay, PovHud } from "./pov";
 
 type V3 = [number, number, number];
 export type AhChar = { look: Look; at?: string | V3; rot?: number; scale?: number; pose?: Pose; expr?: Expr; exprAt?: [number, Expr][] };
 export type AhCard = CardSpec & { at?: string | V3; w?: number; rot?: number };
 export type AhThing = { name: string; at?: string | V3; scale?: number; rot?: number; color?: string; text?: string; pop?: boolean };
 export type AhShot = { a: number; n: number; set: SetName; view?: string; subject?: number; cam?: { from: V3; to: V3; look: V3 }; chars: AhChar[]; cards?: AhCard[]; things?: AhThing[]; coins?: boolean;
-  /** a scripted action around the subject (acts/*.ts): the ball, hoop, opponent... really happen; `at` places the hero */ act?: { kind: string; at?: V3 } };
-type AhProps = { test?: string; shots?: AhShot[] };
+  /** a scripted action around the subject (acts/*.ts): the ball, hoop, opponent... really happen; `at` places the hero */ act?: { kind: string; at?: V3 };
+  /** POV format (Nov 24): a row of everyday objects / a follow-the-object flythrough (pov3d.ts); `hud` = the math-card stack is on screen: shift the picture down `shift` (fraction of the frame) and keep props below `ndc` */
+  units?: UnitsSpec; journey?: JourneySpec; hud?: { shift: number; ndc: number } };
+type AhProps = { test?: string; shots?: AhShot[]; pov?: PovHud };
 
 const JEN: Look = { body: "#1b1b22", legs: "#141418", hat: "crown", glasses: "shades" };
 const DEMO: AhShot[] = [   // the reference's first 5 shots (0-6.3 s)
@@ -99,7 +103,7 @@ for (const [n, [k, dy]] of Object.entries(ACT_CLOSER)) {
 const lerp = (a: V3, b: V3, u: number): V3 => [a[0] + (b[0] - a[0]) * u, a[1] + (b[1] - a[1]) * u, a[2] + (b[2] - a[2]) * u];
 const ease = (u: number) => 1 - (1 - Math.max(0, Math.min(1, u))) ** 2;
 
-type Built = { setRoot: THREE.Group; setLights: THREE.Light[]; hide: THREE.Object3D[]; instHide: InstHide[]; root: THREE.Group; chars: Char[]; things: Thing[]; run?: ActRun; view?: string; bg: string; fog?: THREE.Fog; spots: Record<string, V3>; coinGeo?: THREE.InstancedMesh };
+type Built = { setRoot: THREE.Group; setLights: THREE.Light[]; hide: THREE.Object3D[]; instHide: InstHide[]; root: THREE.Group; chars: Char[]; things: Thing[]; run?: ActRun; view?: string; bg: string; fog?: THREE.Fog; spots: Record<string, V3>; coinGeo?: THREE.InstancedMesh; pov3?: Pov3 };
 const BUILT = new Map<number, Built>();
 const spotOf = (b: { spots: Record<string, V3> }, at: string | V3 | undefined): V3 => (Array.isArray(at) ? at : at && b.spots[at] ? b.spots[at] : [0, 0, 0]);
 
@@ -173,7 +177,7 @@ const fitInFrame = (s: AhShot, viewName: string | undefined, headY: number, root
     const c = new THREE.PerspectiveCamera(fov, asp, 0.1, 400);
     c.position.set(...off(lerp(V.from, V.to, t))); c.lookAt(...off(V.look)); c.updateMatrixWorld(true); c.updateProjectionMatrix(); return c;
   });
-  const LX = 0.84, YLO = -0.7, YHI = s.view === "hook" ? 0.34 : 0.66, v = new THREE.Vector3(), right = new THREE.Vector3(), up = new THREE.Vector3();
+  const sh2 = 2 * (s.hud?.shift ?? 0), LX = 0.84, YLO = -0.7 + sh2, YHI = (s.hud ? s.hud.ndc + sh2 : s.view === "hook" ? 0.34 : 0.66), v = new THREE.Vector3(), right = new THREE.Vector3(), up = new THREE.Vector3();
   for (const it of items) {
     for (let iter = 0; iter < 24; iter++) {
       let moved = false, tooBig = false;
@@ -200,6 +204,12 @@ const fitInFrame = (s: AhShot, viewName: string | undefined, headY: number, root
 
 const build = (k: number, s: AhShot): Built => {
   const hit = BUILT.get(k); if (hit) return hit;
+  if (s.units || s.journey) {   // POV shots without a hero: a row of objects / a flythrough (pov3d.ts)
+    const p3 = s.units ? buildUnits(s.units) : buildJourney(s.journey!), root = new THREE.Group();
+    root.add(p3.root); p3.lights.forEach((l) => root.add(l));
+    const nb: Built = { root, chars: [], things: [], bg: p3.bg, fog: p3.fog, spots: {}, hide: [], instHide: [], setRoot: p3.root, setLights: p3.lights, pov3: p3 };
+    BUILT.set(k, nb); return nb;
+  }
   const set = makeSet(s.set), root = new THREE.Group();
   root.add(set.root); set.lights.forEach((l) => root.add(l));
   const chars = s.chars.map((c) => {
@@ -337,10 +347,19 @@ const Inner: React.FC = () => {
   const rootY = subj?.pose === "sit" ? Math.max(0, sp[1] - 0.55) : sp[1], drop = rootY + (subj?.pose === "sit" ? 0 : hy - 1.55);
   const V = s.cam ? { ...s.cam, blur: 4 } : VIEWS[(b.view && VIEWS[b.view] ? b.view : s.view) ?? "ms"] ?? VIEWS.ms;
   const off = (p: V3): V3 => (s.cam ? p : [p[0] + sp[0], p[1] + drop, p[2] + sp[2]]);
-  const pos = off(lerp(V.from, V.to, u)), look = off(V.look);
+  let pos = off(lerp(V.from, V.to, u)), look = off(V.look);
   const cam = camera as THREE.PerspectiveCamera;
+  let blur = V.blur;
+  const ul = (f - s.a) / Math.max(1, s.n - 1);   // linear 0..1 inside the shot (the POV rigs ease for themselves)
+  if (b.pov3) { const c3 = b.pov3.cam(ul); pos = [...c3.from] as V3; look = [...c3.look] as V3; blur = c3.blur; }
   cam.fov = s.view === "face" ? 38 : 40; cam.near = 0.1; cam.far = 400; cam.updateProjectionMatrix();
   cam.position.set(...pos); cam.lookAt(...look);
+  if (s.hud?.shift) {   // the math cards cover the top: pan the whole picture down by a fraction of the frame height
+    const d = Math.hypot(look[0] - pos[0], look[1] - pos[1], look[2] - pos[2]), dy = s.hud.shift * 2 * d * Math.tan((cam.fov * Math.PI) / 360);
+    pos = [pos[0], pos[1] + dy, pos[2]]; look = [look[0], look[1] + dy, look[2]];
+    cam.position.set(...pos); cam.lookAt(...look);
+  }
+  if (b.pov3) b.pov3.tick(ul, cam.position);
   // act shots: the hero's whole head (jumps included) stays in frame: dolly back along the view ray until it is
   const hero = b.chars[hi];
   if (b.run && hero) {
@@ -354,7 +373,7 @@ const Inner: React.FC = () => {
     pos[0] = cam.position.x; pos[1] = cam.position.y; pos[2] = cam.position.z;
   }
   fx.lens.focus = Math.hypot(look[0] - pos[0], look[1] - pos[1], look[2] - pos[2]);
-  fx.lens.cInf = V.blur;
+  fx.lens.cInf = blur;
   scene.background = new THREE.Color(b.bg);
   scene.fog = b.fog ?? null;
   return <primitive object={b.root} dispose={null} />;
@@ -372,6 +391,7 @@ export const AhShort: React.FC = () => {
     {ready && <ThreeCanvas width={1080} height={1920} shadows gl={{ antialias: false, stencil: false, powerPreference: "high-performance" }} camera={{ fov: 40, near: 0.1, far: 400 }}>
       <Inner />
     </ThreeCanvas>}
+    {ready && PROPS().pov && <PovOverlay hud={PROPS().pov!} />}
   </AbsoluteFill>
   );
 };
