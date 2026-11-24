@@ -1,4 +1,4 @@
-# This week's mix (2026-11-23)
+# This week's mix (2026-11-24)
 
 Made by `python -m pipeline.weekly_mix` from analytics/stats.json + retention.json (Shorts posted in the last 21 days, at least 48 h old). Saturday parts follow the **counts per part** below instead of a fixed mix.
 
@@ -6,13 +6,14 @@ Made by `python -m pipeline.weekly_mix` from analytics/stats.json + retention.js
 
 | lane | Shorts | median views 48 h | median watched | |
 |---|---|---|---|---|
-| famous-athlete | 19 | 1042 | 72% | FOCUS |
+| famous-athlete | 20 | 1043.0 | 72% | FOCUS |
 | famous-other | 8 | 1018.5 | 71% |  |
 | story-plan | 0 | – | – | EXPERIMENT |
 | story-history | 0 | – | – |  |
 | whatif | 3 | 1026 | 73% |  |
-| how | 22 | 97.5 | 55% | paused |
-| careers | 14 | 28.5 | 64% | paused |
+| pov | 0 | – | – |  |
+| how | 21 | 98 | 58% | paused |
+| careers | 14 | 28.5 | 72% | paused |
 
 ## Going viral (top 5, last 21 days)
 
@@ -26,19 +27,20 @@ Made by `python -m pipeline.weekly_mix` from analytics/stats.json + retention.js
 
 - 2 views, how: Visa Kept $20 Billion Without Lending a Dime — "How does Visa make billions without ever lending you a dollar?"
 - 3 views, whatif: What If Spotify Listeners Were a Country? — "What if every Spotify listener moved into one country?"
-- 5 views, famous-other: Why Does Ohtani Earn Just $2.6M Playing? — "Why does one of baseball's biggest stars earn only 2.6 million dollars from playing?"
 - 8 views, careers: 54% of US Firefighters Are Volunteers — "Who fights the fires in your town? Maybe a volunteer."
 - 8 views, how: Roblox Creators Earned $1.5 Billion in 2025 — "How did Roblox creators earn over 1.5 billion dollars in 2025, from a free game?"
+- 11 views, careers: What If You Won the Biggest Esports Prize? — "What if you won the biggest prize in esports history?"
 
-Look: old 59 Shorts (median 208), 3D 7 Shorts (median 1061).
+Look: old 57 Shorts (median 213), 3D 9 Shorts (median 1061).
 
 ## Plan for each Saturday part (10 scripts)
 
-- famous-athlete: **4** (FOCUS: best views, x1.5)
+- famous-athlete: **3** (FOCUS: best views, x1.5)
 - famous-other: **2**
 - story-plan: **2** (EXPERIMENT: least known; twist: make half of them short (25-35 s, length_test short) and half long (45-60 s, length_test long))
 - story-history: **1**
 - whatif: **1**
+- pov: **1**
 - how / careers: 0 (paused by Sam)
 
 Fewer than 10 needed? Keep the ratio, but every active lane still gets at least 1 and the experiment 2.
@@ -47,5 +49,5 @@ Write the focus lane like the top 5 above (same hook shape, same kind of person)
 ## Last week's bet
 
 - Bet of 2026-11-21: focus **famous-athlete**, experiment **story-plan** (angle).
-  - famous-athlete: too early (0 Shorts with 48 h stats since then).
+  - famous-athlete: too early (1 Shorts with 48 h stats since then).
   - story-plan: too early (0 Shorts with 48 h stats since then).
