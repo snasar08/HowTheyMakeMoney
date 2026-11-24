@@ -1513,7 +1513,7 @@ class Renderer:
         """Nov 15, Sam's reference channel (@afterhourtheories, "mimic his style"): the sentence being said runs
         as plain white text near the top, two lines at most, under the progress bar; the big one-word caption
         stays. Hidden while the hook title / name banner are up."""
-        if gt < (4.4 if self.s.get("name_card") else 0.0 if self.s.get("format") == "pov" else 0.8):
+        if gt < (0.0 if self.s.get("format") == "pov" else 4.4 if self.s.get("name_card") else 0.8):   # pov: no name banner, the subtitle runs from frame 0
             return
         words = [w for ch in chunks for w in ch]
         idx = next((k for k, w in enumerate(words) if w.start - 0.03 <= t <= w.end + 0.25), None)
@@ -1571,7 +1571,7 @@ class Renderer:
         and stays ~3 s. Script: "name_card": "CRISTIANO RONALDO", optional "name_sub": "soccer player".
         The name does the identifying; characters never copy a real person's look (STYLE.md)."""
         name = self.s.get("name_card")
-        if not name or gt > 4.2:  # Sam, Nov 3: name from the very first frame
+        if not name or gt > 4.2 or self.s.get("format") == "pov":   # pov: name_card only seeds the hero outfit; the toon "POV: you ..." pill is the opener, no yellow banner copy of it  # Sam, Nov 3: name from the very first frame
             return
         k = min(1.0, (4.2 - gt) / 0.2)
         d = ImageDraw.Draw(frame)
