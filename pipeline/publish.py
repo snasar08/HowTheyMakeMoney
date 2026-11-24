@@ -21,6 +21,7 @@ from __future__ import annotations
 import datetime as dt
 import json
 import os
+import re
 import subprocess
 import time
 import urllib.error
@@ -294,9 +295,90 @@ def _buffer(video: Path, script: dict, when: dt.datetime) -> dict:
               f"status={check.get('status')}")
         return {**rel, "mode": "buffer", "buffer_post": post["id"], "buffer_status": check.get("status")}
     except Exception as exc:
-        print(f"::warning title=Buffer failed for {script['id']}::{exc} — left as a GitHub Release "
+        err = scrub_error(f"{type(exc).__name__}: {exc}")
+        print(f"::warning title=Buffer failed for {script['id']}::{err} — left as a GitHub Release "
               f"to post by hand")
-        return rel
+        return {**rel, "buffer_error": err}
+
+
+_SECRET_RES = [
+    re.compile(r"(?i)(authorization|bearer|api[_-]?key|token|secret|password)(\"?\s*[:=]?\s*\"?)(bearer\s+)?[A-Za-z0-9._~+/=-]{8,}"),
+    re.compile(r"(?:gh[pousr]_|github_pat_|sk-|AIza|ya29\.)[A-Za-z0-9_.-]{8,}"),
+    re.compile(r"[A-Za-z0-9_-]{32,}"),   # any long opaque blob
+]
+
+
+def scrub_error(text: str, limit: int = 600) -> str:
+    """Error text safe to commit to a public repo: anything key/token-like is masked, and the env's own
+    BUFFER_API_KEY value (if set) is removed outright."""
+    text = str(text)
+    key = os.environ.get("BUFFER_API_KEY")
+    if key:
+        text = text.replace(key, "[redacted]")
+    for rx in _SECRET_RES:
+        text = rx.sub(lambda m: (m.group(1) + m.group(2) + "[redacted]") if m.re is _SECRET_RES[0] else "[redacted]", text)
+    return text[:limit]
+
+
+HEAL_MIN_LEAD = dt.timedelta(minutes=20)
+BUFFER_QUEUE_LIMIT = 10   # Buffer free plan: 10 scheduled posts per channel
+
+
+def count_queued(scripts: list[dict], now: dt.datetime | None = None) -> int:
+    """Future posts already booked on Buffer according to our records."""
+    now = now or dt.datetime.now(dt.timezone.utc)
+    n = 0
+    for s in scripts:
+        d = s.get("delivered") or {}
+        if d.get("mode") == "buffer" and d.get("buffer_post") and d.get("post_at"):
+            if dt.datetime.fromisoformat(d["post_at"]) > now:
+                n += 1
+    return n
+
+
+def log_queue(scripts: list[dict], now: dt.datetime | None = None) -> int:
+    n = count_queued(scripts, now)
+    print(f"[publish] Buffer queue (from records): {n} future post(s) scheduled "
+          f"(free plan allows {BUFFER_QUEUE_LIMIT} per channel)")
+    if n >= BUFFER_QUEUE_LIMIT - 1:
+        print(f"::warning title=Buffer queue near its limit::{n} future posts scheduled; the free plan "
+              f"allows {BUFFER_QUEUE_LIMIT}, further createPost calls may be rejected")
+    return n
+
+
+def heal_release_posts(paths: list[Path], now: dt.datetime | None = None) -> int:
+    """Retry Buffer for records that fell back to a GitHub Release while their slot is still ahead.
+    Same release asset, SAME post_at; records that already have a buffer_post are never touched."""
+    if os.environ.get("UPLOAD_MODE", "release") != "buffer":
+        return 0
+    now = now or dt.datetime.now(dt.timezone.utc)
+    healed = 0
+    for path in paths:
+        try:
+            script = json.loads(Path(path).read_text(encoding="utf-8"))
+            d = script.get("delivered") or {}
+            if d.get("mode") != "release" or d.get("buffer_post") or not d.get("asset_url") or not d.get("post_at"):
+                continue
+            when = dt.datetime.fromisoformat(d["post_at"])
+            if when - now <= HEAL_MIN_LEAD:
+                continue
+            try:
+                post = buffer_schedule(d["asset_url"], script, when)
+                check = buffer_post(post["id"])
+            except Exception as exc:  # noqa: BLE001
+                err = scrub_error(f"{type(exc).__name__}: {exc}")
+                print(f"::warning title=Buffer retry failed for {script['id']}::{err}")
+                d["buffer_error"] = err
+                Path(path).write_text(json.dumps(script, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+                continue
+            d.pop("buffer_error", None)
+            d.update(mode="buffer", buffer_post=post["id"], buffer_status=check.get("status"))
+            Path(path).write_text(json.dumps(script, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+            healed += 1
+            print(f"[publish] healed {script['id']}: now on Buffer as {post['id']} for {when.isoformat()}")
+        except Exception as exc:  # noqa: BLE001
+            print(f"::warning title=heal skipped {Path(path).stem}::{scrub_error(exc)}")
+    return healed
 
 
 def _youtube(video: Path, script: dict, when: dt.datetime) -> dict:
