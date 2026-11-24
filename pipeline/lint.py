@@ -34,6 +34,28 @@ POV_THINGS = ("bathtub", "lightbulb", "house", "coin", "cup", "phone", "truck", 
 POV_OPS = ("", "+", "−", "×", "÷", "=")
 
 
+def pov_unspoken_numbers(s: dict) -> list[str]:
+    """pov (Nov 24, Sam: the mint video "voice hits" were off): a big card shows the number the voice says AT THAT
+    MOMENT. When a scene has as many toon beats as sentences, a card's number must be spoken in its own sentence
+    (a number said one sentence earlier, or never said, makes the card hit on the wrong words)."""
+    out = []
+    num = re.compile(r"\d[\d,]*(?:\.\d+)?")
+    for si, sc in enumerate(s.get("scenes", [])):
+        sents = [x for x in re.split(r"(?<=[.!?])\s+(?=[A-Z])", sc.get("narration", "").strip()) if x]
+        beats = sc.get("toon") or []
+        if len(sents) != len(beats):
+            continue
+        for bi, (sent, b) in enumerate(zip(sents, beats)):
+            card = (b.get("card") or {}).get("text", "")
+            said = {n.replace(",", "") for n in num.findall(sent)}
+            said |= {str(i) for i, w in enumerate(("zero one two three four five six seven eight nine ten").split())
+                     if re.search(rf"{w}", sent, re.I)}
+            for n in num.findall(card):
+                if n.replace(",", "") not in said:
+                    out.append(f"scene {si + 1} beat {bi + 1}: card {card!r} shows {n} but that sentence never says it")
+    return out
+
+
 def lint_pov(s: dict) -> list[str]:
     """pov format (Nov 23): top-level "pov" line plus optional per-sentence math / units / journey."""
     err = []

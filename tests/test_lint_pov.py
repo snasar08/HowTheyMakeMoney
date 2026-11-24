@@ -53,3 +53,20 @@ if __name__ == "__main__":
         t["units"]["label"] = "999 billion pennies"
         self.assertTrue(any("never invent" in e for e in lint_pov(s)))
 
+
+
+class PovCardsMatchVoice(unittest.TestCase):
+    def test_card_number_must_be_spoken_in_its_sentence(self):
+        from pipeline.lint import pov_unspoken_numbers
+        s = {"scenes": [{"narration": "It meant 3.172 billion pennies. The Mint lost 85.3 million dollars.",
+                         "toon": [{"card": {"text": "2024"}}, {"card": {"text": "$85.3M"}}]}]}
+        self.assertEqual(len(pov_unspoken_numbers(s)), 1)
+        s["scenes"][0]["toon"][0]["card"]["text"] = "3.172B"
+        self.assertEqual(pov_unspoken_numbers(s), [])
+
+    def test_178_cards_hit_on_their_own_words(self):
+        import json
+        from pathlib import Path
+        from pipeline.lint import pov_unspoken_numbers
+        p = Path(__file__).resolve().parent.parent / "content" / "scripts" / "178-pov-penny.json"
+        self.assertEqual(pov_unspoken_numbers(json.loads(p.read_text(encoding="utf-8"))), [])

@@ -131,18 +131,12 @@
             "box"
           ],
           "card": {
-            "text": "2024",
-            "kind": "flip",
-            "sub": "YEAR"
+            "text": "3.172B",
+            "kind": "screen",
+            "sub": "PENNIES IN 2024"
           },
           "view": "ms",
-          "math": [
-            {
-              "op": "",
-              "value": "2.69¢",
-              "label": "lost per penny"
-            }
-          ]
+          "math": []
         }
       ]
     },
@@ -169,6 +163,11 @@
           },
           "view": "face",
           "math": [
+            {
+              "op": "",
+              "value": "2.69¢",
+              "label": "lost per penny"
+            },
             {
               "op": "×",
               "value": "3.172B",
