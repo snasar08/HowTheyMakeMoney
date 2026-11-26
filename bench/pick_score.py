@@ -54,6 +54,5 @@ def score(out, text):
                             pauses_gt_0_4=int(sum(g > 0.4 for g in gaps)), seconds=round(len(a) / sr, 1))
         print(f.stem, rows[f.stem], flush=True)
     (out / "scores.json").write_text(json.dumps(rows, indent=1))
-    (out / "scores.txt").write_text("
-".join(f"{k:28s} {v}" for k, v in rows.items()))
+    (out / "scores.txt").write_text(chr(10).join(f"{k:28s} {v}" for k, v in rows.items()))
     return rows

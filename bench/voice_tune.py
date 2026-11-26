@@ -34,4 +34,6 @@ async def one(name, v):
 
 for name, v in json.load(open(sys.argv[2])).items():
     asyncio.run(one(name, v))
-score(out, TEXT)
+import os
+if not os.environ.get("NOSCORE"):
+    score(out, TEXT)
