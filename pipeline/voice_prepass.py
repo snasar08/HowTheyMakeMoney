@@ -342,10 +342,59 @@ def eleven_stream(text: str, voice: str | None = None):
     return a, 24000, words, used
 
 
+def gemini_stream(text: str):
+    """`text` in ONE free Gemini TTS request (voice tts.GEMINI_FLOW_VOICE) -> (float32 mono, 24000, Whisper word dicts).
+    Word timings from Whisper. Raises on any problem (quota, error, silence)."""
+    import whisper
+    from . import gemini_tts
+    global _ASR
+    w, sr = gemini_tts.say(text, voice=tts.GEMINI_FLOW_VOICE)
+    a = np.asarray(w, np.float32).ravel()
+    if sr != 24000:
+        a = np.interp(np.linspace(0, len(a) - 1, int(len(a) * 24000 / sr)), np.arange(len(a)), a).astype(np.float32)
+    if abs(tts.GEMINI_FLOW_PITCH_ST) > 0.01:
+        a = tts._pitch(a, tts.GEMINI_FLOW_PITCH_ST)
+    if len(a) <= 2400:
+        raise RuntimeError("gemini returned no audio")
+    _ASR = _ASR or whisper.load_model("base.en")
+    a16 = np.interp(np.linspace(0, len(a) - 1, int(len(a) * 16000 / 24000)), np.arange(len(a)), a).astype(np.float32)
+    heard = [x for seg in _ASR.transcribe(a16, language="en", word_timestamps=True, fp16=False)["segments"]
+             for x in seg.get("words", []) if x["word"].strip()]
+    return a, 24000, heard
+
+
+def gemini_cut(lines: list[str], a, sr: int, heard):
+    """Cut a Gemini read into one piece per line with split_lines (the fuzzy Whisper matcher the old Gemini path used:
+    Whisper writes numbers as digits and can mishear names, so exact letter matching fails). -> [(audio, words)] or None."""
+    segs = split_lines(lines, heard, len(a) / sr)
+    if not segs:
+        return None
+    out = []
+    for t0, t1 in segs:
+        ws = [(x["word"].strip(), float(x["start"]) - t0, float(x["end"]) - t0) for x in heard if t0 <= float(x["start"]) < t1]
+        out.append((a[int(t0 * sr):int(t1 * sr)], ws))
+    return out
+
+
+_ASR = None
+
+
 def _voice_groups(groups: list[list[str]], engine: str):
     """Voice each group of lines in one call -> ([(line, audio, words)], sr, characters billed)."""
     out, used, sr = [], 0, 24000
     for grp in groups:
+        if engine == "gemini":   # free quota: no line-by-line fallback; one retake, then the Short falls back to the next engine
+            pieces = None
+            for _take in range(2):
+                a, sr, heard = gemini_stream(tts.flow_join(grp))
+                pieces = gemini_cut(grp, a, sr, heard)
+                if pieces is not None:
+                    break
+                print("[prepass] gemini: could not match words to lines; retaking", flush=True)
+            if pieces is None:
+                raise RuntimeError("gemini read did not match the script twice")
+            out += [(line, pa, pw) for line, (pa, pw) in zip(grp, pieces)]
+            continue
         if engine == "eleven":
             a, sr, words, n = eleven_stream(tts.flow_join(grp))
             used += n
@@ -372,7 +421,8 @@ def edge_pass(ids: list[str]) -> int:
     os.makedirs(tts.VOICE_CACHE, exist_ok=True)
     asr, seen = None, set()
     fails = 0
-    eleven_ok = tts.VOICE_SOURCE == "eleven"
+    gemini_ok = tts.VOICE_SOURCE == "geminiflow" and bool(os.environ.get("GEMINI_API_KEY", "").strip())
+    eleven_ok = tts.VOICE_SOURCE == "eleven" or (tts.VOICE_SOURCE == "geminiflow" and bool(os.environ.get("ELEVENLABS_API_KEY", "").strip()))
     for sid in ids:
         path = next((ROOT / "content" / "scripts").glob(f"{sid}*.json"), None)
         if not path:
@@ -385,7 +435,14 @@ def edge_pass(ids: list[str]) -> int:
             continue
         groups = [todo] if tts.FLOW_SCOPE == "short" else [[x] for x in todo]
         voiced, sr, engine = None, 24000, "edge"
-        if eleven_ok:
+        if gemini_ok:
+            try:
+                voiced, sr, _ = _voice_groups(groups, "gemini")
+                engine = "gemini"
+            except Exception as e:  # noqa: BLE001   (free daily quota, network, no match ...)
+                print(f"::warning title=voice::Short {sid}: Gemini {tts.GEMINI_FLOW_VOICE} failed ({str(e)[:200]}); using the backup voice", flush=True)
+                voiced = None
+        if voiced is None and eleven_ok:
             try:
                 voiced, sr, used = _voice_groups(groups, "eleven")
                 engine = "eleven"
@@ -417,6 +474,8 @@ def edge_pass(ids: list[str]) -> int:
             Path(tts.flow_path(line) + ".json").write_text(json.dumps(with_punctuation(line, pw)), encoding="utf-8")
     from . import eleven
     who = f"ElevenLabs {eleven.voice_id()} (fallback Edge {tts.EDGE_VOICE})" if eleven_ok else f"Edge {tts.EDGE_VOICE}"
+    if gemini_ok:
+        who = f"Gemini {tts.GEMINI_FLOW_VOICE} (fallback {who})"
     print(f"::notice title=voice::{who} ({tts.FLOW_TAG}, {tts.FLOW_SCOPE}): {len(seen)} line(s) voiced, {fails} failed", flush=True)
     return 1 if fails else 0
 

@@ -66,8 +66,13 @@ def sentences(text: str) -> list[tuple[str, bool, bool]]:
 # Nov 26 (Sam bought ElevenLabs Starter): "eleven" is the default only when the ELEVENLABS_API_KEY secret is present and
 # VOICE_SOURCE is not set. Only the voice/prepass jobs get the key, so the render jobs resolve to "edge" and read the SAME
 # flow cache files (flow_path is shared by both engines on purpose; the prepass writes the ElevenLabs read there).
-VOICE_SOURCE = (os.environ.get("VOICE_SOURCE") or "").strip() or ("eleven" if os.environ.get("ELEVENLABS_API_KEY", "").strip() else "edge")
-FLOW_SOURCES = ("edge", "eleven")   # whole-narration flow engines: same cache layout, no sentence splitting
+# Nov 26 evening, Sam: "lock 2 in" = Gemini voice Puck (free tier), read the flow way: the whole narration in ONE request,
+# word timings from Whisper. Default for every job (so the render jobs compute the same cache key). If Gemini fails for a
+# Short (daily free quota, error, words not matched) that Short is voiced by ElevenLabs Adam (key present), else Edge Andrew.
+VOICE_SOURCE = (os.environ.get("VOICE_SOURCE") or "").strip() or "geminiflow"
+FLOW_SOURCES = ("edge", "eleven", "geminiflow")   # whole-narration flow engines: same cache layout, no sentence splitting
+GEMINI_FLOW_VOICE = (os.environ.get("GEMINI_FLOW_VOICE") or "").strip() or "Puck"
+GEMINI_FLOW_PITCH_ST = float(os.environ.get("GEMINI_FLOW_PITCH_ST", "0") or 0)   # Sam heard Puck unshifted
 EDGE_VOICE = os.environ.get("EDGE_VOICE", "en-US-AndrewMultilingualNeural")
 EDGE_RATE = {"story": os.environ.get("EDGE_RATE_STORY", "+18%"), "default": os.environ.get("EDGE_RATE", "+18%")}
 EDGE_PITCH = os.environ.get("EDGE_PITCH", "+8Hz")
@@ -100,7 +105,8 @@ def flow_path(line: str) -> str:
     """Cache key of one line voiced in one Edge call (wav + json word timings)."""
     import hashlib
     return os.path.join(VOICE_CACHE, "F" + hashlib.sha1(
-        f"edge:{FLOW_TAG}:{EDGE_VOICE}:{EDGE_RATE_NOW}:{EDGE_PITCH}|{line}".encode()).hexdigest()[:20])
+        (f"gemini:{FLOW_TAG}:{GEMINI_FLOW_VOICE}:{GEMINI_FLOW_PITCH_ST}|{line}" if VOICE_SOURCE == "geminiflow" else
+         f"edge:{FLOW_TAG}:{EDGE_VOICE}:{EDGE_RATE_NOW}:{EDGE_PITCH}|{line}").encode()).hexdigest()[:20])
 
 
 def cap_pauses(a, words, cap: float = None, sr: int = SAMPLE_RATE, q_cap: float = None):

@@ -62,11 +62,11 @@ class CacheKey(unittest.TestCase):
         import importlib
         try:
             with mock.patch.dict(os.environ, {"ELEVENLABS_API_KEY": "k", "VOICE_SOURCE": ""}):
-                self.assertEqual(importlib.reload(tts).VOICE_SOURCE, "eleven")
+                self.assertEqual(importlib.reload(tts).VOICE_SOURCE, "geminiflow")   # Nov 26: Sam locked Gemini Puck
             with mock.patch.dict(os.environ, {"ELEVENLABS_API_KEY": "k", "VOICE_SOURCE": "gemini"}):
                 self.assertEqual(importlib.reload(tts).VOICE_SOURCE, "gemini")
             with mock.patch.dict(os.environ, {"ELEVENLABS_API_KEY": "", "VOICE_SOURCE": ""}):
-                self.assertEqual(importlib.reload(tts).VOICE_SOURCE, "edge")
+                self.assertEqual(importlib.reload(tts).VOICE_SOURCE, "geminiflow")
         finally:
             importlib.reload(tts)
 
