@@ -40,13 +40,8 @@ jobs:
         id: vc
         with:
           path: .cache/voice
-          key: toon-voice-${{ secrets.ELEVENLABS_API_KEY && 'eleven' || 'edge' }}1-${{ hashFiles('toon/test_id.txt', 'content/scripts/*.json', 'assets/voice/gemini_voice.txt') }}
+          key: toon-voice-puck1-${{ hashFiles('pipeline/voice_prepass.py','pipeline/voice_check.py','pipeline/tts.py','pipeline/gemini_tts.py') }}-${{ hashFiles('toon/test_id.txt', 'content/scripts/*.json', 'assets/voice/gemini_voice.txt') }}
       - if: steps.vc.outputs.cache-hit != 'true'
-        env:
-          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}   # Nov 26: ElevenLabs voice when set (only this step sees it); else Edge Andrew
-          ELEVEN_VOICE_ID: ${{ vars.ELEVEN_VOICE_ID || 'pNInz6obpgDQGcFmaJgB' }}   # Adam; Brian = nPczCjzI2devNBz1zQrb
-          ELEVEN_MODEL: ${{ vars.ELEVEN_MODEL }}
-          ELEVEN_SPEED: ${{ vars.ELEVEN_SPEED }}
         run: |
           pip install -q torch torchaudio --index-url https://download.pytorch.org/whl/cpu
           pip install -q -U openai-whisper soundfile numpy edge-tts   # Nov 26: Edge neural voice is the default
