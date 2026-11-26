@@ -1410,7 +1410,7 @@ class Renderer:
         """Toon look (plates): the end ask sits low, in the caption zone, while it is up."""
         c = getattr(self, "cta", None)
         return bool(self.plates is not None and c and c["like"] is None and si == c["si"]
-                    and c["start"] - 0.1 <= t <= c["end"])
+                    and c["com"] - 0.1 <= t <= c["end"])   # caption stays until the bubble pops
 
     def _cta_end(self, frame: Image.Image, c: dict, t: float):
         """Comment bubble pops on "comment", then SUBSCRIBE gets clicked → SUBSCRIBED."""
