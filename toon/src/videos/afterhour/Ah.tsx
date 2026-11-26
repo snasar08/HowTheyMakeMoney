@@ -118,7 +118,7 @@ const ease = (u: number) => { const x = Math.max(0, Math.min(1, u)); return 0.35
 for (const [n, v] of Object.entries(VIEWS)) if (!n.startsWith("act")) v.to = lerp(v.from, v.to, 1.5);
 // refgap round 5: lower camera heights (the reference shoots up at people), more background blur on every ordinary view
 for (const n of ["ms", "msL", "msR", "wide", "wideL", "wideR", "cu", "face"]) { VIEWS[n].from = [VIEWS[n].from[0], VIEWS[n].from[1] - 0.3, VIEWS[n].from[2]]; VIEWS[n].to = [VIEWS[n].to[0], VIEWS[n].to[1] - 0.3, VIEWS[n].to[2]]; }
-for (const [n, b] of Object.entries({ ws: 6, wide: 9, wideL: 9, wideR: 9, ms: 16, msL: 16, msR: 16, cu: 18, face: 20, low: 16, hi: 7 })) VIEWS[n].blur = b;
+for (const [n, b] of Object.entries({ ws: 10, wide: 13, wideL: 13, wideR: 13, ms: 16, msL: 16, msR: 16, cu: 18, face: 20, low: 16, hi: 7 })) VIEWS[n].blur = b;
 
 type Built = { setRoot: THREE.Group; setLights: THREE.Light[]; hide: THREE.Object3D[]; instHide: InstHide[]; root: THREE.Group; chars: Char[]; things: Thing[]; run?: ActRun; view?: string; bg: string; fog?: THREE.Fog; spots: Record<string, V3>; coinGeo?: THREE.InstancedMesh; pov3?: Pov3 };
 const BUILT = new Map<number, Built>();
@@ -338,8 +338,8 @@ const Inner: React.FC = () => {
   }), []);
   // refgap round 5: a warm key spot (a real, toon-stepped pool of light on floor and character) + a cool violet fill from the other side (shadow tint)
   const rig = useMemo(() => {
-    const key = new THREE.SpotLight("#ffd29a", 130, 26, 0.5, 0.5, 1.5), fill = new THREE.PointLight("#7a70ff", 16, 16, 1.5), g = new THREE.Group();
-    g.add(key, key.target, fill); return { g, key, fill };
+    const key = new THREE.SpotLight("#fff1cf", 130, 26, 0.5, 0.5, 1.5), fill = new THREE.PointLight("#7a70ff", 16, 16, 1.5), win = new THREE.SpotLight("#d6e6ff", 60, 22, 0.3, 0.7, 1.5), g = new THREE.Group();
+    g.add(key, key.target, fill, win, win.target); return { g, key, fill, win };
   }, []);
   const mp = useMemo(() => ({ pass: null as EffectPass | null }), []);
   const core = useMemo(() => {
@@ -404,7 +404,16 @@ const Inner: React.FC = () => {
     const rootY = subj?.pose === "sit" ? Math.max(0, sp[1] - 0.55) : sp[1], drop = rootY + (subj?.pose === "sit" ? 0 : hy - 1.55);
     const V = ss.cam ? { ...ss.cam, blur: 4 } : VIEWS[(bb.view && VIEWS[bb.view] ? bb.view : ss.view) ?? "ms"] ?? VIEWS.ms;
     const off = (p: V3): V3 => (ss.cam ? p : [p[0] + sp[0], p[1] + drop, p[2] + sp[2]]);
-    return { pos: off(lerp(V.from, V.to, uu)), look: off(V.look), blur: V.blur };
+    let pos = off(lerp(V.from, V.to, uu)), look = off(V.look);
+    // refgap round 9: the reference camera never rests: every ordinary hold keeps a slow push-in plus a sideways truck (parallax), with an ease-out burst at the start
+    if (!ss.cam && !ss.act && !ss.hud && !bb.pov3 && !bb.run) {
+      const d = 0.55 * uu + 0.45 * (1 - (1 - uu) ** 3), dir = ((ss.a >> 1) & 1) ? 1 : -1;
+      const dx = look[0] - pos[0], dz = look[2] - pos[2], L = Math.hypot(dx, dz) || 1, rx = dz / L, rz = -dx / L, side = dir * 1.0 * (d - 0.5);
+      const k = 1 - 0.3 * d;
+      pos = [look[0] - (look[0] - pos[0]) * k + rx * side, look[1] - (look[1] - pos[1]) * k, look[2] - (look[2] - pos[2]) * k + rz * side];
+      look = [look[0] + rx * side * 0.5, look[1], look[2] + rz * side * 0.5];
+    }
+    return { pos, look, blur: V.blur };
   };
   const cur = camOf(s, b, u);
   let pos = cur.pos, look = cur.look;
@@ -448,8 +457,9 @@ const Inner: React.FC = () => {
   fx.lens.focus = Math.hypot(look[0] - pos[0], look[1] - pos[1], look[2] - pos[2]);
   { const ph = SHOTS_.length > 1 ? k / (SHOTS_.length - 1) : 0, cx = look[0], cz = look[2];
     rig.key.position.set(cx - 2.4, 4.8, cz + 3.6); rig.key.target.position.set(cx, 0.7, cz); rig.key.target.updateMatrixWorld(true);
-    rig.key.color.set("#ffd29a").lerp(new THREE.Color("#9fb4ff"), ph * 0.7); rig.key.intensity = 130 - 45 * ph;
-    rig.fill.position.set(cx + 3.2, 1.8, cz + 2.2); }
+    rig.key.color.set("#fff1cf").lerp(new THREE.Color("#9fb4ff"), ph * 0.7); rig.key.intensity = 130 - 45 * ph;
+    rig.fill.position.set(cx + 3.2, 1.8, cz + 2.2);
+    rig.win.position.set(cx + 4.2, 4.6, cz - 2.6); rig.win.target.position.set(cx - 1.6, 0, cz + 0.4); rig.win.target.updateMatrixWorld(true); rig.win.intensity = 70 - 25 * ph; }
   fx.lens.cInf = blur;
   fx.motion.set(mx, my); if (mp.pass) mp.pass.enabled = Math.abs(mx) + Math.abs(my) > 0.002;
   fx.grade.phase = SHOTS_.length > 1 ? k / (SHOTS_.length - 1) : 0;

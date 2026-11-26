@@ -20,11 +20,11 @@ void mainImage(const in vec4 inputColor, const in vec2 uv, out vec4 outputColor)
   c += lift * sh * sh * (1.0 + 0.8 * phase);                  // blacks become violet-blue, more so toward the evening
   c *= mix(vec3(1.0), vec3(0.90, 0.95, 1.10), sh * (0.45 + 0.4 * phase));   // cool shadows
   float hw = smoothstep(0.35, 1.0, y);
-  c *= mix(vec3(1.0), vec3(1.03, 1.0, 0.94), hw * (1.0 - 0.7 * phase));      // warm key on the lit areas
+  c *= mix(vec3(1.0), vec3(1.02, 1.0, 0.96), hw * (1.0 - 0.7 * phase));      // warm key on the lit areas
   c *= mix(vec3(1.0), vec3(0.95, 0.98, 1.06), phase * 0.5);   // night-blue creeping in for the explanation
   vec2 q = (uv - vec2(0.40, 0.56)) * vec2(1.0, 0.62);        // a soft pool of warm light, upper middle
   float pool = 1.0 - smoothstep(0.0, 0.62, length(q));
-  c += vec3(0.075, 0.048, 0.016) * pool * pool * (1.0 - 0.6 * phase);
+  c += vec3(0.06, 0.05, 0.03) * pool * pool * (1.0 - 0.6 * phase);
   outputColor = vec4(pow(clamp(c, 0.0, 1.0), vec3(2.2)), inputColor.a);
 }`;
 
