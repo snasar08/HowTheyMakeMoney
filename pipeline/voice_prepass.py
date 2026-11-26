@@ -225,7 +225,84 @@ def _gemini_short(sid: str) -> bool:
     return True
 
 
+def edge_say(text: str, rate: str, voice: str | None = None, pitch: str | None = None):
+    """One sentence through Microsoft Edge neural TTS (edge-tts, free, no key) -> (float32 mono, 24000)."""
+    import asyncio
+    import subprocess
+    import tempfile
+
+    import edge_tts
+    f = tempfile.mktemp(suffix=".mp3")
+
+    async def go():
+        await edge_tts.Communicate(text, voice or tts.EDGE_VOICE, rate=rate, pitch=pitch or tts.EDGE_PITCH).save(f)
+    last = None
+    for attempt in range(4):
+        try:
+            asyncio.run(go())
+            try:   # libsndfile reads mp3 (no ffmpeg needed on the voice machines); ffmpeg as the fallback
+                import soundfile as sf
+                a, sr0 = sf.read(f, dtype="float32")
+                a = a.mean(axis=1) if a.ndim > 1 else a
+                if sr0 != 24000:
+                    a = np.interp(np.linspace(0, len(a) - 1, int(len(a) * 24000 / sr0)), np.arange(len(a)), a).astype(np.float32)
+            except Exception:  # noqa: BLE001
+                r = subprocess.run(["ffmpeg", "-loglevel", "error", "-i", f, "-f", "f32le", "-ar", "24000", "-ac", "1", "pipe:1"],
+                                   capture_output=True, check=True)
+                a = np.frombuffer(r.stdout, np.float32)
+            os.unlink(f)
+            if len(a) > 2400:
+                return a, 24000
+            last = "empty audio"
+        except Exception as e:  # noqa: BLE001
+            last = repr(e)
+        time.sleep(2 * (attempt + 1))
+    raise RuntimeError(f"edge-tts failed: {last}")
+
+
+def edge_pass(ids: list[str]) -> int:
+    """Voice every sentence of the Short(s) with Edge neural TTS; Whisper gives the word timings captions need.
+    Cached per sentence (question beat logic stays in tts.qwen); cheap, deterministic, no daily quota."""
+    import soundfile as sf
+    import whisper
+    os.makedirs(tts.VOICE_CACHE, exist_ok=True)
+    asr, seen = None, set()
+    fails = 0
+    for sid in ids:
+        path = next((ROOT / "content" / "scripts").glob(f"{sid}*.json"), None)
+        if not path:
+            continue
+        script = json.loads(path.read_text(encoding="utf-8"))
+        tts.EDGE_RATE_NOW = tts.EDGE_RATE.get(script.get("format"), tts.EDGE_RATE["default"])   # same rate render.py will ask for
+        pass
+        for line in lines_for(script):
+            for sent, q, b in tts.sentences(tts.speakable(line)):
+                if b or sent in seen or os.path.exists(tts.cache_path(sent) + ".wav"):
+                    continue
+                seen.add(sent)
+                try:
+                    a, sr = edge_say(sent, tts.edge_rate_for(q))
+                except Exception as e:  # noqa: BLE001
+                    fails += 1
+                    print(f"::warning title=voice::edge-tts: {str(e)[:200]}", flush=True)
+                    continue
+                asr = asr or whisper.load_model("base.en")
+                a16 = np.interp(np.linspace(0, len(a) - 1, int(len(a) * 16000 / sr)), np.arange(len(a)), a).astype(np.float32)
+                heard = [x for seg in asr.transcribe(a16, language="en", word_timestamps=True, fp16=False)["segments"]
+                         for x in seg.get("words", [])]
+                bad = [x for x in problems(sent, heard) if not x.startswith("rushed:")]
+                if bad:
+                    print(f"[prepass] edge flagged {bad[:3]}: {sent[:60]}", flush=True)
+                sf.write(tts.cache_path(sent) + ".wav", a, sr)
+                Path(tts.cache_path(sent) + ".json").write_text(json.dumps(
+                    [(x["word"].strip(), float(x["start"]), float(x["end"])) for x in heard]), encoding="utf-8")
+    print(f"::notice title=voice::Edge {tts.EDGE_VOICE}: {len(seen)} sentence(s) voiced, {fails} failed", flush=True)
+    return 1 if fails else 0
+
+
 def main(ids: list[str]) -> int:
+    if tts.VOICE_SOURCE == "edge":
+        return edge_pass(ids)
     import soundfile as sf
     import torch
     import whisper
@@ -241,7 +318,7 @@ def main(ids: list[str]) -> int:
             for sent, _q, b in tts.sentences(tts.speakable(line)):
                 if not b and not os.path.exists(tts.cache_path(sent) + ".wav") and sent not in todo:
                     todo.append(sent)
-    if os.environ.get("GEMINI_API_KEY") and os.environ.get("VOICE_SOURCE", "gemini") == "gemini":
+    if os.environ.get("GEMINI_API_KEY") and tts.VOICE_SOURCE == "gemini":
         if gemini_pass(ids):
             return 0
         print("::warning title=voice::Gemini voice failed for this Short; using the Qwen voice", flush=True)

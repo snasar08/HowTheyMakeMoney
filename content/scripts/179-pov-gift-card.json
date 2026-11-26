@@ -46,7 +46,7 @@
   ],
   "scenes": [
     {
-      "narration": "Unused gift cards hold about 27 billion dollars. But your drawer holds some of it.",
+      "narration": "Unused gift cards hold about 27 billion dollars. Some sit in your drawer.",
       "visual": {
         "type": "lowpoly",
         "set": "mansion",
@@ -80,7 +80,7 @@
       ]
     },
     {
-      "narration": "You get a gift card and just toss it in a drawer. It slides to the back of a junk drawer.",
+      "narration": "You get a gift card and toss it in a drawer. It slides to the back.",
       "visual": {
         "type": "lowpoly",
         "set": "garage",
@@ -152,7 +152,7 @@
       ]
     },
     {
-      "narration": "In 2024 about 43 percent of adults had at least one unused card. The average value was 244 dollars each. Divide 27 billion by 244 and you get about 111 million people.",
+      "narration": "In 2024 about 43 percent of adults had at least one unused card. The average value was 244 dollars each. Divide 27 billion by 244: about 111 million people.",
       "visual": {
         "type": "lowpoly",
         "set": "boardroom",
@@ -222,7 +222,7 @@
       ]
     },
     {
-      "narration": "Still half of those people hold 100 dollars or more. Gen Z holds the least at about 142 dollars.",
+      "narration": "Half of those people hold 100 dollars or more. Gen Z holds the least, about 142 dollars.",
       "visual": {
         "type": "lowpoly",
         "set": "classroom",
@@ -261,7 +261,7 @@
       ]
     },
     {
-      "narration": "At 5 dollars a coffee that is 5.4 billion coffees. So your junk drawer is the quietest bank in town.",
+      "narration": "At 5 dollars a coffee that is 5.4 billion coffees. Your junk drawer is the quietest bank in town.",
       "visual": {
         "type": "lowpoly",
         "set": "diner",

@@ -49,7 +49,7 @@
   ],
   "scenes": [
     {
-      "narration": "Spotify hands almost 70 cents of every dollar away. But who actually gets all that money?",
+      "narration": "Spotify hands almost 70 cents of every dollar away. Who gets it?",
       "visual": {
         "type": "lowpoly",
         "set": "studio",
@@ -89,7 +89,7 @@
       ]
     },
     {
-      "narration": "You pay 12 dollars and 99 cents for Premium. Spotify just passes most of it on to the music industry.",
+      "narration": "You pay 12 dollars and 99 cents for Premium. Spotify passes most of it to the music industry.",
       "visual": {
         "type": "lowpoly",
         "set": "street",
@@ -132,7 +132,7 @@
       ]
     },
     {
-      "narration": "But it says it pays out almost 70 percent of what it takes in. So about 9 dollars of your bill goes to the music industry. That leaves about 4 dollars for Spotify itself.",
+      "narration": "It says it pays out almost 70 percent of what it takes in. So about 9 dollars of your bill goes to the music industry. That leaves about 4 dollars for Spotify.",
       "visual": {
         "type": "lowpoly",
         "set": "boardroom",
@@ -201,7 +201,7 @@
       ]
     },
     {
-      "narration": "Then in 2025 Spotify paid over 11 billion dollars. Split that over 365 days and it is over 30 million dollars a day.",
+      "narration": "In 2025 Spotify paid over 11 billion dollars. Split over 365 days, that is over 30 million dollars a day.",
       "visual": {
         "type": "lowpoly",
         "set": "stage",
@@ -259,7 +259,7 @@
       ]
     },
     {
-      "narration": "That is more than 340 dollars every single second. Your repeat button is basically a tiny paycheck machine.",
+      "narration": "That is over 340 dollars every second. Your repeat button is basically a tiny paycheck machine.",
       "visual": {
         "type": "lowpoly",
         "set": "studio",
