@@ -27,7 +27,7 @@ jobs:
     timeout-minutes: 90
     env:
       GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-      VOICE_SOURCE: qwen   # Nov 18: tests never spend the 10/day Gemini voice requests (they are for posted Shorts)
+      VOICE_SOURCE: edge   # Nov 26: Edge neural voice (free, no quota)
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -41,11 +41,12 @@ jobs:
         id: vc
         with:
           path: .cache/voice
-          key: toon-voice-${{ hashFiles('toon/test_id.txt', 'content/scripts/*.json', 'assets/voice/gemini_voice.txt') }}
+          key: toon-voice-edge1-${{ hashFiles('toon/test_id.txt', 'content/scripts/*.json', 'assets/voice/gemini_voice.txt') }}
       - if: steps.vc.outputs.cache-hit != 'true'
         run: |
           pip install -q torch torchaudio --index-url https://download.pytorch.org/whl/cpu
-          pip install -q -U qwen-tts openai-whisper soundfile numpy
+          pip install -q -U openai-whisper soundfile numpy edge-tts   # Nov 26: Edge neural voice is the default
+          [ "${VOICE_SOURCE:-edge}" = edge ] || pip install -q -U qwen-tts
           python -m pipeline.voice_prepass $(cat toon/test_id.txt)
       - uses: actions/upload-artifact@v4
         with:

@@ -14,8 +14,10 @@ their money, told as fast 3D cartoon stories with an AI voice. Owner: Sam (snasa
 - Never change post times, posts/day, upload mode or the voice without Sam. Now (Sam, Nov 19): **2 a day, 12:00 + 19:00 ET**
   (nudged up to 2 h later so no 24 h holds 3) while Buffer free caps YouTube at 2 per rolling 24 h; back to 5 a day
   (7:00, 12:00, 15:30, 19:00, 22:00) only when Sam says, after Buffer lifts the cap.
-- Voice: Gemini TTS **Umbriel, +1.5 semitones** (`GEMINI_PITCH_ST`). Free tier = 10 requests/day per model
-  (one request voices a whole Short); add no extra voice requests.
+- Voice (Nov 26, Sam disliked Umbriel): Microsoft Edge neural voice **en-US-AndrewMultilingualNeural**, rate +18%,
+  pitch +8Hz (`EDGE_VOICE`, `EDGE_RATE`, `EDGE_PITCH` in pipeline/tts.py; free, no key, no daily quota; chosen by
+  bench/voice_pick.py + voice_tune.py scores). `VOICE_SOURCE=gemini|qwen` brings back the old voices (Gemini free
+  tier = 10 requests/day per model). Fallback if the voice is not ready: Kokoro.
 - Kid-safe. Never invent numbers: every figure comes from a source page actually opened, listed in `sources`.
 - No copied logo art, crests, real jersey designs or other creators' lines. Brand names in plain lettering are fine.
 - **Check every scene** before calling a video good (Sam, Nov 18: "not frame by frame but enough to check what's
