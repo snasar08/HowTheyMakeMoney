@@ -14,7 +14,7 @@ import sys
 import traceback
 from pathlib import Path
 
-from .publish import HORIZON_H, POST_START, deliver, posting_started, publish_slots, taken_slots
+from .publish import HORIZON_H, POST_START, deliver, heal_release_posts, log_queue, posting_started, publish_slots, taken_slots
 from .render import NewLookMissing, render_script
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -264,6 +264,15 @@ def main() -> int:
     if not args.dry and not args.id and not posting_started():
         print(f"[run] posting starts {POST_START} (New York); nothing to do yet")
         return 0
+
+    if not args.dry and not args.plan_ids and os.environ.get("UPLOAD_MODE") == "buffer":
+        try:  # Nov 24: records that fell back to a Release get another try at Buffer, same slot
+            n = heal_release_posts(sorted(SCRIPTS.glob("*.json")))
+            if n:
+                print(f"[run] re-booked {n} release-mode post(s) on Buffer")
+            log_queue([json.loads(p.read_text(encoding="utf-8")) for p in SCRIPTS.glob("*.json")])
+        except Exception as exc:  # noqa: BLE001  never block tonight's run
+            print(f"::warning title=buffer self-heal::{exc!r}")
 
     queue = ready_scripts(recent_formats(SHARE_WINDOW))
     remake = remake_jobs()

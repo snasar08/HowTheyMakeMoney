@@ -349,6 +349,6 @@
   ],
   "hook_rules": "nov23",
   "needs_fix": [
-    "act build_tools unclear at frames 371-457: The character is holding a hammer but is standing completely still instead of performing a building action."
+    "act build_tools unclear at frames 359-441: The character is just holding a hammer near a box without performing any actual assembly or construction action."
   ]
 }

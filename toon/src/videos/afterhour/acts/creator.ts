@@ -496,7 +496,7 @@ const rocket_launch: ActDef = { pose: "cheer", view: "actc", build(c: ActCtx): A
 } };
 
 // ================================================================ 7. build_tools
-const build_tools: ActDef = { pose: "stand", view: "actm", build(c: ActCtx): ActRun {
+const build_tools: ActDef = { pose: "stand", view: "actb", build(c: ActCtx): ActRun {
   const { root, hero, heroAt: H } = c;
   hero.root.rotation.y = 0.7; hero.root.position.set(H[0] - 0.05, H[1], H[2] - 0.05);
   const G = group(root, H[0], H[1], H[2]); blob(G, 1.3, 1.5, 0.45);

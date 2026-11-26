@@ -8,7 +8,7 @@
   "hook_style": "number",
   "title_style": "number",
   "theme": "bold_bright",
-  "status": "ready",
+  "status": "delivered",
   "score": 94,
   "title": "From Selling Japan's Shoes to $46.3 Billion",
   "name_card": "You are Nike",
@@ -440,5 +440,51 @@
   ],
   "length_test": "short",
   "look": "afterhour",
-  "hook_rules": "nov23"
+  "hook_rules": "nov23",
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-119-plan-nike",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-119-plan-nike/119-plan-nike.mp4",
+    "post_at": "2026-11-26T12:30:00-05:00",
+    "buffer_post": "6b07340803e79bc5c6fa2529",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-25T19:16:24.330260+00:00",
+    "seconds": 42.39,
+    "eyes": {
+      "score": 9,
+      "problems": [
+        "Cover text has slight visual crowding but is readable."
+      ],
+      "best_fix": "Ensure contract signing action in frames 900-990 has more dynamic pen movement for instant visual clarity.",
+      "model": "gemini-3.5-flash-lite",
+      "acts": [
+        {
+          "kind": "count_cash",
+          "frames": "0-114",
+          "clear": true,
+          "why": "Character is holding and thumbing through a stack of cash bills."
+        },
+        {
+          "kind": "sign_contract",
+          "frames": "900-990",
+          "clear": true,
+          "why": "Character is holding a pen and actively writing on a document labeled contract."
+        },
+        {
+          "kind": "count_cash",
+          "frames": "991-1086",
+          "clear": true,
+          "why": "Character is counting and tossing stacks of cash."
+        }
+      ]
+    },
+    "scene_scan": [
+      "shot 1 @66: only 1 frames (flash cut?)",
+      "shot 2 @67: only 1 frames (flash cut?)",
+      "shot 3 @68: only 10 frames (flash cut?)",
+      "shot 13 @519: only 5 frames (flash cut?)",
+      "shot 27 @1019: only 9 frames (flash cut?)",
+      "shot 29 @1146: jump inside shot (27) - something teleports?"
+    ]
+  }
 }

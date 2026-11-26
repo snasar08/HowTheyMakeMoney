@@ -251,6 +251,7 @@
   ],
   "hook_rules": "nov23",
   "needs_fix": [
-    "act eat unclear at frames 115-245: The character is clearly holding and eating a burger, not an Oreo."
+    "act eat_cookie unclear at frames 0-140: The character holds a plain brown disc that lacks the distinct Oreo appearance.",
+    "act eat_cookie unclear at frames 583-640: The character is eating a generic cookie, not an Oreo."
   ]
 }

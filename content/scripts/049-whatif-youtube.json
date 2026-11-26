@@ -7,7 +7,7 @@
   "hook_style": "number",
   "title_style": "number",
   "theme": "dark_neon",
-  "status": "ready",
+  "status": "delivered",
   "score": 89,
   "title": "One Minute of YouTube Takes 3 Weeks to Watch",
   "description": "Over 500 hours of video hit YouTube every minute. Try watching that.\n\nSources:\n- Tubefilter: More than 500 hours of content are now being uploaded to YouTube every minute (May 7 2019): https://www.tubefilter.com/2019/05/07/number-hours-video-uploaded-to-youtube-per-minute/\n- Wikipedia: YouTube: https://en.wikipedia.org/wiki/YouTube\n\nYouTube said in 2019 that more than 500 hours of video are uploaded every minute: 30,000 hours an hour and 720,000 hours a day, about 82.2 years of video every day (Tubefilter's math). 500 hours = about 21 days nonstop (our math). Not financial advice.\n\n#shorts #youtube #whatif #howtheymakemoney",
@@ -38,7 +38,17 @@
         ],
         "stat": "500 HOURS",
         "stat_sub": "uploaded every minute",
-        "hud": "1 MINUTE"
+        "hud": "1 MINUTE",
+        "hero": {
+          "skin": "light",
+          "hair": "ponytail",
+          "hair_color": "5a3a20",
+          "beard": "none",
+          "outfit": "hoodie",
+          "shirt": "2a9d8f",
+          "pants": "263247",
+          "shoes": "f4f4f4"
+        }
       },
       "toon": [
         {
@@ -76,7 +86,17 @@
         ],
         "stat": "EVERY MINUTE",
         "stat_sub": "YouTube, 2019",
-        "hud": "500 HOURS"
+        "hud": "500 HOURS",
+        "hero": {
+          "skin": "light",
+          "hair": "ponytail",
+          "hair_color": "5a3a20",
+          "beard": "none",
+          "outfit": "hoodie",
+          "shirt": "2a9d8f",
+          "pants": "263247",
+          "shoes": "f4f4f4"
+        }
       },
       "toon": [
         {
@@ -101,7 +121,17 @@
         ],
         "stat": "~3 WEEKS",
         "stat_sub": "nonstop",
-        "hud": "~3 WEEKS"
+        "hud": "~3 WEEKS",
+        "hero": {
+          "skin": "light",
+          "hair": "ponytail",
+          "hair_color": "5a3a20",
+          "beard": "none",
+          "outfit": "hoodie",
+          "shirt": "2a9d8f",
+          "pants": "263247",
+          "shoes": "f4f4f4"
+        }
       },
       "toon": [
         {
@@ -129,7 +159,17 @@
         "props": [],
         "stat": "720,000",
         "stat_sub": "hours, one day",
-        "hud": "720,000 HOURS"
+        "hud": "720,000 HOURS",
+        "hero": {
+          "skin": "light",
+          "hair": "ponytail",
+          "hair_color": "5a3a20",
+          "beard": "none",
+          "outfit": "hoodie",
+          "shirt": "2a9d8f",
+          "pants": "263247",
+          "shoes": "f4f4f4"
+        }
       },
       "toon": [
         {
@@ -163,7 +203,17 @@
         ],
         "stat": "82 YEARS",
         "stat_sub": "of video, every day",
-        "hud": "82 YEARS"
+        "hud": "82 YEARS",
+        "hero": {
+          "skin": "light",
+          "hair": "ponytail",
+          "hair_color": "5a3a20",
+          "beard": "none",
+          "outfit": "hoodie",
+          "shirt": "2a9d8f",
+          "pants": "263247",
+          "shoes": "f4f4f4"
+        }
       },
       "toon": [
         {
@@ -199,7 +249,17 @@
           "phone"
         ],
         "stat": "1 LIFETIME",
-        "stat_sub": "not enough"
+        "stat_sub": "not enough",
+        "hero": {
+          "skin": "light",
+          "hair": "ponytail",
+          "hair_color": "5a3a20",
+          "beard": "none",
+          "outfit": "hoodie",
+          "shirt": "2a9d8f",
+          "pants": "263247",
+          "shoes": "f4f4f4"
+        }
       },
       "toon": [
         {
@@ -223,5 +283,27 @@
       "url": "https://en.wikipedia.org/wiki/YouTube"
     }
   ],
-  "hook_rules": "nov23"
+  "hook_rules": "nov23",
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-049-whatif-youtube",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-049-whatif-youtube/049-whatif-youtube.mp4",
+    "post_at": "2026-11-26T20:00:00-05:00",
+    "buffer_post": "6b07345c650fcc0cfee38e42",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-25T19:17:49.068587+00:00",
+    "seconds": 28.49,
+    "eyes": {
+      "score": 9,
+      "problems": [
+        "rapid scene transitions at the end may slightly strain readability for younger viewers"
+      ],
+      "best_fix": "Slow down the final couple of text cards to ensure easy reading.",
+      "model": "gemini-3.5-flash-lite",
+      "acts": null
+    },
+    "scene_scan": [
+      "shot 14 @761: jump inside shot (14) - something teleports?"
+    ]
+  }
 }

@@ -476,10 +476,7 @@
   "aivideo_note": "Nov 15 2026: one premium Short (Sam). 9 Higgsfield Seedance 2.5 clips, 5 s each, 9:16, no logos/real people in prompts; 315 credits.",
   "hook_rules": "nov23",
   "needs_fix": [
-    "act dunk unclear at frames 0-100: The character is standing on a pedestal with a shoe, not dunking a basketball.",
-    "act dunk unclear at frames 412-449: The character is standing on a pedestal with a shoe, not dunking a basketball.",
-    "act build_tools unclear at frames 450-566: The video shows a close-up of a shoe, not a character building with tools.",
-    "act dunk unclear at frames 567-650: The character is jumping in a gym, but not performing a dunking action into a hoop.",
-    "act dunk unclear at frames 1093-1273: The character is standing on a pedestal with a shoe, not dunking a basketball."
+    "act dunk unclear at frames 0-85: The video starts with a static shoe on a pedestal, not a dunking action.",
+    "act build_tools unclear at frames 378-468: The scene shows a close-up of the shoe, not a character using tools to build it."
   ]
 }

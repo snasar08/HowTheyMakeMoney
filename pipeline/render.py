@@ -1426,7 +1426,7 @@ class Renderer:
         if t >= c["sub"] - 0.1:
             click = c["sub"] + 0.5
             sub_img = P["subbed"] if t >= click else P["sub"]
-            sy = ZONE_TOP - 80  # low and clear of the scene's own text/chart, above captions
+            sy = CTA_Y + b.height + 70  # Nov 26 look audit (178): just under the comment bubble, up in the empty sky; at ZONE_TOP-80 it sat on the hero's face in the crowd outro
             p = (t - c["sub"] + 0.1) / 0.3
             if click <= t < click + 0.25:
                 p = 1.0

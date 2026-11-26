@@ -428,7 +428,22 @@ jobs:
           git config user.email "shorts-bot@users.noreply.github.com"
           git add content/scripts analytics/covers
           git diff --cached --quiet || git commit -m "Delivered Shorts $(date -u +%F)"
-          git pull --rebase --quiet && git push
+          # Nov 23: a plain pull+push lost the race against other workflows pushing to the same branch.
+          # Retry; on a rebase conflict in content/scripts keep OUR side (during a rebase "theirs" is our
+          # commit), so the delivered fields survive. No force push.
+          br="${GITHUB_REF_NAME}"
+          for i in 1 2 3 4 5; do
+            if git fetch --quiet origin "$br" && { git rebase "origin/$br" || {
+                 git checkout --theirs -- content/scripts analytics/covers 2>/dev/null
+                 git add content/scripts analytics/covers 2>/dev/null
+                 GIT_EDITOR=true git rebase --continue; }; } && git push origin "HEAD:$br"; then
+              exit 0
+            fi
+            git rebase --abort 2>/dev/null || true
+            echo "::warning::push attempt $i failed; retrying"
+            sleep $((i * 5 + RANDOM % 5))
+          done
+          echo "::error::could not push delivered records after 5 tries"; exit 1
 
       - name: Alert on failure (opens or comments on one issue)
         if: ${{ failure() && github.ref != 'refs/heads/nightly-test' }}

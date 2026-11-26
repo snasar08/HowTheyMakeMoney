@@ -84,10 +84,10 @@ ACT_DESC = {
     "vault": "visibly at a VAULT of money", "hire": "visibly HIRING someone", "gaming": "visibly PLAYING a video game",
     "streaming": "visibly STREAMING (talking to a camera/mic)", "sing_stage": "visibly SINGING on a stage",
     "guitar": "visibly PLAYING a guitar", "film_camera": "visibly FILMING with a camera",
-    "rocket_launch": "visibly LAUNCHING a rocket", "build_tools": "visibly BUILDING with tools",
+    "rocket_launch": "visibly LAUNCHING a rocket", "build_tools": "visibly HAMMERING nails into a wooden house frame (hammer swinging at the frame)",
     "code_screens": "visibly CODING on screens", "robot_build": "visibly BUILDING a robot",
     "post_video": "visibly POSTING a video on a phone", "eat_pizza": "visibly EATING pizza", "eat_fries": "visibly EATING fries",
-    "eat_icecream": "visibly EATING ice cream", "eat_donut": "visibly EATING a donut", "drink_soda": "visibly DRINKING a soda",
+    "eat_icecream": "visibly EATING ice cream", "eat_donut": "visibly EATING a donut", "eat_cookie": "visibly EATING a round dark sandwich cookie (two dark wafers with white cream between)", "drink_soda": "visibly DRINKING a soda",
 }
 ACT_ASK = """ACT CHECK. In these frame ranges the character performs a scripted action. For EACH one decide whether a viewer
 would instantly read that action (right pose, the right object in hand, the action actually completing; a character just

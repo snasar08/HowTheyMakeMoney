@@ -7,7 +7,7 @@
   "hook_style": "number",
   "title_style": "number",
   "theme": "bold_bright",
-  "status": "ready",
+  "status": "delivered",
   "score": 92,
   "title": "From Zero Scholarship Offers to $330 Million",
   "name_card": "Josh Allen",
@@ -271,5 +271,32 @@
     }
   ],
   "look": "afterhour",
-  "hook_rules": "nov23"
+  "hook_rules": "nov23",
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-170-famous-josh-allen",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-170-famous-josh-allen/170-famous-josh-allen.mp4",
+    "post_at": "2026-11-25T19:45:00-05:00",
+    "buffer_post": "6b05f1b4ad5aa59f729b0a62",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-24T20:21:08.528891+00:00",
+    "seconds": 27.15,
+    "eyes": {
+      "score": 9,
+      "problems": [
+        "The character's head design changes abruptly at frame 174, losing the hair detail and looking like a different, simpler model.",
+        "The text '21 4' appears on screen in the background starting at frame 40, which is not mentioned in the narration and is confusing."
+      ],
+      "best_fix": "Maintain consistent character model design throughout the video and remove the unexplained '21 4' text from the background.",
+      "model": "gemini-3.1-flash-lite",
+      "acts": [
+        {
+          "kind": "sign_contract",
+          "frames": "581-715",
+          "clear": true,
+          "why": "The character is clearly holding a pen and making a signing motion on a document."
+        }
+      ]
+    }
+  }
 }

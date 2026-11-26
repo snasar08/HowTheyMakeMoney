@@ -52,7 +52,20 @@
         "set": "street",
         "action": "idle",
         "crowd": 0,
-        "props": []
+        "props": [],
+        "hero": {
+          "skin": "e0ac80",
+          "hair": "short",
+          "hair_color": "3a2a1a",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "c8741a",
+          "pants": "2b2f3a",
+          "shoes": "f4f4f4",
+          "chest": "",
+          "trim": "ffffff",
+          "height": 1.0
+        }
       },
       "toon": [
         {
@@ -110,7 +123,20 @@
         "set": "factory",
         "action": "idle",
         "crowd": 0,
-        "props": []
+        "props": [],
+        "hero": {
+          "skin": "e0ac80",
+          "hair": "short",
+          "hair_color": "3a2a1a",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "c8741a",
+          "pants": "2b2f3a",
+          "shoes": "f4f4f4",
+          "chest": "",
+          "trim": "ffffff",
+          "height": 1.0
+        }
       },
       "toon": [
         {
@@ -147,7 +173,20 @@
         "set": "boardroom",
         "action": "idle",
         "crowd": 0,
-        "props": []
+        "props": [],
+        "hero": {
+          "skin": "e0ac80",
+          "hair": "short",
+          "hair_color": "3a2a1a",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "c8741a",
+          "pants": "2b2f3a",
+          "shoes": "f4f4f4",
+          "chest": "",
+          "trim": "ffffff",
+          "height": 1.0
+        }
       },
       "toon": [
         {
@@ -204,7 +243,20 @@
         "set": "factory",
         "action": "idle",
         "crowd": 0,
-        "props": []
+        "props": [],
+        "hero": {
+          "skin": "e0ac80",
+          "hair": "short",
+          "hair_color": "3a2a1a",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "c8741a",
+          "pants": "2b2f3a",
+          "shoes": "f4f4f4",
+          "chest": "",
+          "trim": "ffffff",
+          "height": 1.0
+        }
       },
       "toon": [
         {
@@ -252,7 +304,20 @@
         "set": "store",
         "action": "idle",
         "crowd": 0,
-        "props": []
+        "props": [],
+        "hero": {
+          "skin": "e0ac80",
+          "hair": "short",
+          "hair_color": "3a2a1a",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "c8741a",
+          "pants": "2b2f3a",
+          "shoes": "f4f4f4",
+          "chest": "",
+          "trim": "ffffff",
+          "height": 1.0
+        }
       },
       "toon": [
         {
@@ -310,7 +375,20 @@
         "set": "street",
         "action": "idle",
         "crowd": 0,
-        "props": []
+        "props": [],
+        "hero": {
+          "skin": "e0ac80",
+          "hair": "short",
+          "hair_color": "3a2a1a",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "c8741a",
+          "pants": "2b2f3a",
+          "shoes": "f4f4f4",
+          "chest": "",
+          "trim": "ffffff",
+          "height": 1.0
+        }
       },
       "toon": [
         {
@@ -336,7 +414,29 @@
   "images": {},
   "look": "afterhour",
   "hook_rules": "nov23",
-  "status": "ready",
+  "status": "delivered",
   "format": "pov",
-  "visual_style": "lowpoly"
+  "visual_style": "lowpoly",
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-178-pov-penny",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-178-pov-penny/178-pov-penny.mp4",
+    "post_at": "2026-11-25T12:15:00-05:00",
+    "buffer_post": "6b05f095ad5aa59f729a951e",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-24T20:16:22.078154+00:00",
+    "seconds": 49.82,
+    "eyes": {
+      "score": 9,
+      "problems": [
+        "The narration states 'the government has stopped making new ones', but the video shows the Mint still operating and producing pennies in the background visuals during that segment."
+      ],
+      "best_fix": "Update the background animation to show the Mint production line shutting down or being replaced by a 'closed' sign when the narration mentions the government has stopped making pennies.",
+      "model": "gemini-3.1-flash-lite",
+      "acts": null
+    },
+    "scene_scan": [
+      "shot 29 @1366: jump inside shot (25) - something teleports?"
+    ]
+  }
 }
