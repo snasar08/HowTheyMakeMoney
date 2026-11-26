@@ -240,10 +240,17 @@ def edge_say(text: str, rate: str, voice: str | None = None, pitch: str | None =
     for attempt in range(4):
         try:
             asyncio.run(go())
-            r = subprocess.run(["ffmpeg", "-loglevel", "error", "-i", f, "-f", "f32le", "-ar", "24000", "-ac", "1", "pipe:1"],
-                               capture_output=True, check=True)
+            try:   # libsndfile reads mp3 (no ffmpeg needed on the voice machines); ffmpeg as the fallback
+                import soundfile as sf
+                a, sr0 = sf.read(f, dtype="float32")
+                a = a.mean(axis=1) if a.ndim > 1 else a
+                if sr0 != 24000:
+                    a = np.interp(np.linspace(0, len(a) - 1, int(len(a) * 24000 / sr0)), np.arange(len(a)), a).astype(np.float32)
+            except Exception:  # noqa: BLE001
+                r = subprocess.run(["ffmpeg", "-loglevel", "error", "-i", f, "-f", "f32le", "-ar", "24000", "-ac", "1", "pipe:1"],
+                                   capture_output=True, check=True)
+                a = np.frombuffer(r.stdout, np.float32)
             os.unlink(f)
-            a = np.frombuffer(r.stdout, np.float32)
             if len(a) > 2400:
                 return a, 24000
             last = "empty audio"
