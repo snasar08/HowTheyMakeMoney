@@ -7,7 +7,7 @@
   "hook_style": "number",
   "title_style": "whatif",
   "theme": "bold_bright",
-  "status": "ready",
+  "status": "needs_fix",
   "score": 90,
   "title": "What If You Ate All 40 Billion Oreos?",
   "name_card": "What if you ate every Oreo",
@@ -251,5 +251,8 @@
       "url": "https://en.wikipedia.org/wiki/Oreo"
     }
   ],
-  "hook_rules": "nov23"
+  "hook_rules": "nov23",
+  "needs_fix": [
+    "Nov 26: the held cookie covers the face in the diner shot (~2.2 s) and the street shot (~5 s); hold it below the chin."
+  ]
 }
