@@ -476,7 +476,6 @@
   "aivideo_note": "Nov 15 2026: one premium Short (Sam). 9 Higgsfield Seedance 2.5 clips, 5 s each, 9:16, no logos/real people in prompts; 315 credits.",
   "hook_rules": "nov23",
   "needs_fix": [
-    "act dunk unclear at frames 0-85: The video starts with a static shoe on a pedestal, not a dunking action.",
-    "act build_tools unclear at frames 378-468: The scene shows a close-up of the shoe, not a character using tools to build it."
+    "eyes (Nov 26 toon-test): Nike logo visible on the shoe in frames 100-106 and 1274-1359 (brand mark policy). Act checks (dunk, build_tools) no longer flagged."
   ]
 }

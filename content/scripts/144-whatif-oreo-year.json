@@ -7,7 +7,7 @@
   "hook_style": "number",
   "title_style": "whatif",
   "theme": "bold_bright",
-  "status": "needs_fix",
+  "status": "ready",
   "score": 90,
   "title": "What If You Ate All 40 Billion Oreos?",
   "name_card": "What if you ate every Oreo",
@@ -249,9 +249,5 @@
       "url": "https://en.wikipedia.org/wiki/Oreo"
     }
   ],
-  "hook_rules": "nov23",
-  "needs_fix": [
-    "act eat_cookie unclear at frames 0-140: The character holds a plain brown disc that lacks the distinct Oreo appearance.",
-    "act eat_cookie unclear at frames 583-640: The character is eating a generic cookie, not an Oreo."
-  ]
+  "hook_rules": "nov23"
 }
