@@ -10,6 +10,10 @@ on:
       voices: {description: "Voices, comma list (blank = all)", default: ""}
       ids: {description: "Short ids", default: "178 094"}
 
+concurrency:
+  group: eleven-sample
+  cancel-in-progress: true
+
 permissions:
   contents: write   # release upload only
 

@@ -17,10 +17,7 @@ from . import gemini_tts, tts, voice_prepass
 
 ROOT = Path(__file__).resolve().parent.parent
 SR = tts.SAMPLE_RATE
-VOICES = ["Zephyr", "Puck", "Charon", "Kore", "Fenrir", "Leda", "Orus", "Aoede", "Callirrhoe", "Autonoe", "Enceladus",
-          "Iapetus", "Umbriel", "Algieba", "Despina", "Erinome", "Algenib", "Rasalgethi", "Laomedeia", "Achernar",
-          "Alnilam", "Schedar", "Gacrux", "Pulcherrima", "Achird", "Zubenelgenubi", "Vindemiatrix", "Sadachbia",
-          "Sadaltager", "Sulafat"]
+VOICES = ["Charon", "Puck", "Fenrir", "Orus", "Iapetus", "Enceladus", "Algenib", "Sadaltager", "Achird"]   # the best-liked male voices (Umbriel sent already)
 
 
 def _resample(w, sr):
