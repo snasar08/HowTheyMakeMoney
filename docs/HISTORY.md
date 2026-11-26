@@ -441,3 +441,6 @@ research more ... maintain quality too")**. Goal: build a buffer, capped so cred
 ## Repeat check (Nov 4)
 Run annotations list shots that still repeat. A photo Short needs about one picture per shot, or it can't meet Sam's no-repeat rule.
 - Nov 22 2026, Sam: GTA 6 (an M-rated game) is totally allowed as a topic; 142 GTA 6 plan set to ready. Keep the lines kid-safe (sales, launch, lines, no in-game crime).
+
+## Look audit (Nov 26 2026, branch lookfix)
+Audit of the Shorts delivered Nov 24-25 (049, 094, 119, 170, 178) by contact sheets + stills. Fixes: build_tools has its own wide `actb` view (the Nov 24 close view cropped the house frame to one post; `actm` restored for the other acts); eat_cookie is a thick-cream sandwich turned to the side; sign_contract clipboard sits below the face and re-signs in long shots; `tv` default screen is a video player (was BREAKING); new `tradingcard` thing (+ things_for puts it first when the line names a card); POV math stack closes ~1.5 s after its result sentence (it stayed to the end over unrelated lines); outro callbacks drop number cards; hook of < 4 s is 2 shots not 3; shots < 12 frames borrow frames from the shot before; CTA SUBSCRIBE pill moved under the comment bubble (it sat on faces); POV minus sign darker/bigger. Eyes act wording for build_tools / eat_cookie updated.
