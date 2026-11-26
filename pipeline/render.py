@@ -62,6 +62,7 @@ BEAT_MAX = 2.0  # Sam: something new on screen at least every 2 s
 CTA_LINE = os.environ.get("CTA_LINE", "Comment which brand we should do next, and subscribe.")
 CTA_QUESTION = "Which brand should we do next?"
 CTA_Y = 430
+CTA_LOW_Y = 1215   # toon look: bubble top just under the hero's chin in the end close-up; button under it, above the Shorts title
 PROGRESS_H = 9
 # 3D chart scenes (pipeline/scene3d.py). Falls back to the 2D drawings if moderngl / GL is missing.
 RENDER_3D = os.environ.get("RENDER_3D", "on") == "on"
@@ -1277,7 +1278,8 @@ class Renderer:
                 self._cta(frame, si, t)
                 if not calm and sc.shots[max(0, bisect.bisect_right(sc.beats, t) - 1)][0] not in ("3d", "alt", "chartzoom", "wordcard"):
                     self._icon(frame, chunks[si], t, lp)  # never on top of a chart or a word card
-                self._caption(frame, chunks[si], t, gt)  # after the CTA dim, so captions stay bright
+                if not self._cta_low_on(si, t):   # toon look: the comment bubble takes the caption's spot (it shows the same question)
+                    self._caption(frame, chunks[si], t, gt)  # after the CTA dim, so captions stay bright
                 if lp and SUBLINE:   # top sentence line is OFF (Nov 15); POV uses the same big word caption as every other Short
                     self._subline(frame, chunks[si], t, gt)
                 # thin progress bar along the top edge keeps people watching to the end
@@ -1404,6 +1406,12 @@ class Renderer:
             b = P["bubble"]
             self._pop(frame, b, W / 2, CTA_Y + 90 + b.height / 2, (t - c["com"] + 0.1) / 0.3)
 
+    def _cta_low_on(self, si: int, t: float) -> bool:
+        """Toon look (plates): the end ask sits low, in the caption zone, while it is up."""
+        c = getattr(self, "cta", None)
+        return bool(self.plates is not None and c and c["like"] is None and si == c["si"]
+                    and c["start"] - 0.1 <= t <= c["end"])
+
     def _cta_end(self, frame: Image.Image, c: dict, t: float):
         """Comment bubble pops on "comment", then SUBSCRIBE gets clicked → SUBSCRIBED."""
         if not hasattr(self, "_cta_parts"):
@@ -1415,7 +1423,11 @@ class Renderer:
         P = self._cta_parts
         fade = min(1.0, (t - c["start"] + 0.1) / 0.25)
         out = min(1.0, max(0.0, (c["end"] - t) / 0.2))  # fade out before the loop line
-        a = int(110 * fade * out) // 10 * 10
+        # Nov 26 toon test (094, 144): the close-up hero's face fills the top half, so the bubble + button at CTA_Y sat
+        # on the face and the dim darkened it. With plates they go low (caption zone, caption hidden) and dim less.
+        low = self.plates is not None
+        top = CTA_LOW_Y if low else CTA_Y
+        a = int((45 if low else 110) * fade * out) // 10 * 10
         if ("ctadim", a) not in self._base:
             self._base[("ctadim", a)] = Image.new("RGBA", (W, H), (0, 0, 0, a))
         dim = self._base[("ctadim", a)]
@@ -1423,11 +1435,11 @@ class Renderer:
         if out < 1.0:
             return
         b = P["bubble"]
-        self._pop(frame, b, W / 2, CTA_Y + b.height / 2, (t - c["com"] + 0.1) / 0.3)
+        self._pop(frame, b, W / 2, top + b.height / 2, (t - c["com"] + 0.1) / 0.3)
         if t >= c["sub"] - 0.1:
             click = c["sub"] + 0.5
             sub_img = P["subbed"] if t >= click else P["sub"]
-            sy = CTA_Y + b.height + 70  # Nov 26 look audit (178): just under the comment bubble, up in the empty sky; at ZONE_TOP-80 it sat on the hero's face in the crowd outro
+            sy = top + b.height + 70  # Nov 26 look audit (178): just under the comment bubble, up in the empty sky; at ZONE_TOP-80 it sat on the hero's face in the crowd outro
             p = (t - c["sub"] + 0.1) / 0.3
             if click <= t < click + 0.25:
                 p = 1.0
