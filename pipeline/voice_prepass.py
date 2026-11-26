@@ -225,34 +225,58 @@ def _gemini_short(sid: str) -> bool:
     return True
 
 
-def edge_say(text: str, rate: str, voice: str | None = None, pitch: str | None = None):
-    """One sentence through Microsoft Edge neural TTS (edge-tts, free, no key) -> (float32 mono, 24000)."""
-    import asyncio
+def _decode_mp3(f: str):
     import subprocess
+    try:   # libsndfile reads mp3 (no ffmpeg needed on the voice machines); ffmpeg as the fallback
+        import soundfile as sf
+        a, sr0 = sf.read(f, dtype="float32")
+        a = a.mean(axis=1) if a.ndim > 1 else a
+        if sr0 != 24000:
+            a = np.interp(np.linspace(0, len(a) - 1, int(len(a) * 24000 / sr0)), np.arange(len(a)), a).astype(np.float32)
+        return a
+    except Exception:  # noqa: BLE001
+        r = subprocess.run(["ffmpeg", "-loglevel", "error", "-i", f, "-f", "f32le", "-ar", "24000", "-ac", "1", "pipe:1"],
+                           capture_output=True, check=True)
+        return np.frombuffer(r.stdout, np.float32)
+
+
+def edge_stream(text: str, rate: str, voice: str | None = None, pitch: str | None = None):
+    """`text` in ONE edge-tts call -> (float32 mono, 24000, [(word, start_s, end_s)]). The words come from the
+    service's own WordBoundary events (exact for this audio, no Whisper guess); a boundary that holds two words
+    ("2,700 years") is split by letter count."""
+    import asyncio
     import tempfile
 
     import edge_tts
     f = tempfile.mktemp(suffix=".mp3")
 
     async def go():
-        await edge_tts.Communicate(text, voice or tts.EDGE_VOICE, rate=rate, pitch=pitch or tts.EDGE_PITCH).save(f)
+        ev, buf = [], bytearray()
+        c = edge_tts.Communicate(text, voice or tts.EDGE_VOICE, rate=rate, pitch=pitch or tts.EDGE_PITCH, boundary="WordBoundary")
+        async for ch in c.stream():
+            if ch["type"] == "audio":
+                buf += ch["data"]
+            elif ch["type"] == "WordBoundary":
+                ev.append(ch)
+        Path(f).write_bytes(bytes(buf))
+        return ev
     last = None
     for attempt in range(4):
         try:
-            asyncio.run(go())
-            try:   # libsndfile reads mp3 (no ffmpeg needed on the voice machines); ffmpeg as the fallback
-                import soundfile as sf
-                a, sr0 = sf.read(f, dtype="float32")
-                a = a.mean(axis=1) if a.ndim > 1 else a
-                if sr0 != 24000:
-                    a = np.interp(np.linspace(0, len(a) - 1, int(len(a) * 24000 / sr0)), np.arange(len(a)), a).astype(np.float32)
-            except Exception:  # noqa: BLE001
-                r = subprocess.run(["ffmpeg", "-loglevel", "error", "-i", f, "-f", "f32le", "-ar", "24000", "-ac", "1", "pipe:1"],
-                                   capture_output=True, check=True)
-                a = np.frombuffer(r.stdout, np.float32)
+            ev = asyncio.run(go())
+            a = _decode_mp3(f)
             os.unlink(f)
             if len(a) > 2400:
-                return a, 24000
+                words = []
+                for e in ev:
+                    t0, d = e["offset"] / 1e7, e["duration"] / 1e7
+                    parts = e["text"].split()
+                    tot = sum(len(x) for x in parts) or 1
+                    acc = 0
+                    for x in parts:
+                        words.append((x, t0 + d * acc / tot, t0 + d * (acc + len(x)) / tot))
+                        acc += len(x)
+                return a, 24000, words
             last = "empty audio"
         except Exception as e:  # noqa: BLE001
             last = repr(e)
@@ -260,48 +284,359 @@ def edge_say(text: str, rate: str, voice: str | None = None, pitch: str | None =
     raise RuntimeError(f"edge-tts failed: {last}")
 
 
-def edge_pass(ids: list[str]) -> int:
-    """Voice every sentence of the Short(s) with Edge neural TTS; Whisper gives the word timings captions need.
-    Cached per sentence (question beat logic stays in tts.qwen); cheap, deterministic, no daily quota."""
-    import soundfile as sf
+def edge_say(text: str, rate: str, voice: str | None = None, pitch: str | None = None):
+    """One piece of text through Microsoft Edge neural TTS (edge-tts, free, no key) -> (float32 mono, 24000)."""
+    a, sr, _w = edge_stream(text, rate, voice, pitch)
+    return a, sr
+
+
+def cut_lines(lines: list[str], a, sr: int, words):
+    """Cut the one-call read of several lines into one piece per line, inside the silence between the last word of a
+    line and the first of the next (words matched to the script by their letters). Returns [(audio, words)] or None."""
+    norm = lambda x: re.sub(r"[^a-z0-9]", "", x.lower())  # noqa: E731
+    owner = [i for i, ln in enumerate(lines) for w in ln.split() if norm(w)]
+    toks = [(norm(w), st, en, w) for w, st, en in words if norm(w)]
+    if len(toks) != len(owner):
+        return None
+    first, last = {}, {}
+    for k, i in enumerate(owner):
+        first.setdefault(i, k)
+        last[i] = k
+    cuts = [0.0]
+    for i in range(len(lines) - 1):
+        e, s_ = toks[last[i]][2], toks[first[i + 1]][1]
+        cuts.append((e + s_) / 2 if s_ > e else e)
+    cuts.append(len(a) / sr)
+    out = []
+    for i in range(len(lines)):
+        t0, t1 = cuts[i], cuts[i + 1]
+        ws = [(w, st - t0, en - t0) for _n, st, en, w in toks[first[i]:last[i] + 1]]
+        out.append((a[int(t0 * sr):int(t1 * sr)], ws))
+    return out
+
+
+def with_punctuation(line: str, words):
+    """Give each timed word its script spelling (with . , ? :) when the two lists line up, so tts can keep a beat after a question."""
+    sw = line.split()
+    if len(sw) == len(words):
+        return [(w, st, en) for w, (_t, st, en) in zip(sw, words)]
+    return words
+
+
+def eleven_stream(text: str, voice: str | None = None):
+    """`text` in ONE ElevenLabs call (pipeline/eleven.py: cached by hash, quota checked first) -> (float32 mono, 24000,
+    [(word, start_s, end_s)], characters billed). Raises eleven.ElevenError on any API problem."""
+    import tempfile
+
+    from . import eleven
+    mp3, words, used, _cached = eleven.synth(text, tts.VOICE_CACHE, voice)
+    f = tempfile.mktemp(suffix=".mp3")
+    try:
+        Path(f).write_bytes(mp3)
+        a = _decode_mp3(f)
+    finally:
+        if os.path.exists(f):
+            os.unlink(f)
+    if len(a) <= 2400:
+        raise eleven.ElevenError("empty audio")
+    return a, 24000, words, used
+
+
+def gemini_stream(text: str, style: str | None = None):
+    """`text` in ONE free Gemini TTS request (voice tts.GEMINI_FLOW_VOICE) -> (float32 mono, 24000, Whisper word dicts).
+    Word timings from Whisper. `style` replaces gemini_tts.STYLE (a retake adds the checker's hint). Raises on any
+    problem (quota, error, silence)."""
     import whisper
+    from . import gemini_tts
+    global _ASR
+    w, sr = gemini_tts.say(text, voice=tts.GEMINI_FLOW_VOICE, style=style)
+    a = np.asarray(w, np.float32).ravel()
+    if sr != 24000:
+        a = np.interp(np.linspace(0, len(a) - 1, int(len(a) * 24000 / sr)), np.arange(len(a)), a).astype(np.float32)
+    if abs(tts.GEMINI_FLOW_PITCH_ST) > 0.01:
+        a = tts._pitch(a, tts.GEMINI_FLOW_PITCH_ST)
+    if len(a) <= 2400:
+        raise RuntimeError("gemini returned no audio")
+    _ASR = _ASR or whisper.load_model("base.en")
+    a16 = np.interp(np.linspace(0, len(a) - 1, int(len(a) * 16000 / 24000)), np.arange(len(a)), a).astype(np.float32)
+    heard = [x for seg in _ASR.transcribe(a16, language="en", word_timestamps=True, fp16=False)["segments"]
+             for x in seg.get("words", []) if x["word"].strip()]
+    return a, 24000, heard
+
+
+def gemini_cut(lines: list[str], a, sr: int, heard):
+    """Cut a Gemini read into one piece per line with split_lines (the fuzzy Whisper matcher the old Gemini path used:
+    Whisper writes numbers as digits and can mishear names, so exact letter matching fails). -> [(audio, words)] or None."""
+    segs = split_lines(lines, heard, len(a) / sr)
+    if not segs:
+        return None
+    out = []
+    for t0, t1 in segs:
+        ws = [(x["word"].strip(), float(x["start"]) - t0, float(x["end"]) - t0) for x in heard if t0 <= float(x["start"]) < t1]
+        out.append((a[int(t0 * sr):int(t1 * sr)], ws))
+    return out
+
+
+class VoiceCheckFailed(RuntimeError):
+    """Every Gemini take had a hard problem (pipeline/voice_check.py): the Short falls back to the next voice.
+    `reports` / `chosen` still go into the report."""
+    def __init__(self, msg: str, reports=None, chosen: int = 0):
+        super().__init__(msg)
+        self.reports, self.chosen = list(reports or []), chosen
+
+
+def _max_takes() -> int:
+    return max(1, int(os.environ.get("VOICE_MAX_TAKES", "3") or 3))   # whole-narration Gemini requests per Short (free: ~10/day/model)
+
+
+def _good_score() -> float:
+    return float(os.environ.get("VOICE_GOOD", "85") or 85)            # stop retaking at ok + this score
+
+
+def _quota_error(e: Exception) -> bool:
+    t = str(e).lower()
+    return any(k in t for k in ("quota", "429", "resource_exhausted", "rate limit", "per day", "no model left"))
+
+
+def _shift_words(heard: list[dict], off: float) -> list[dict]:
+    """Whisper word times after polish() removed `off` seconds from the start."""
+    if not off:
+        return heard
+    return [{**x, "start": max(0.0, float(x["start"]) - off), "end": max(0.0, float(x["end"]) - off)} for x in heard]
+
+
+def gemini_takes(lines: list[str]) -> dict:
+    """The quality loop (Nov 26): up to VOICE_MAX_TAKES whole-narration Gemini takes. Each is polished, then checked
+    (voice_check.check, with its Whisper words); a retake asks for the worst flaw to be fixed (report.hint is added to
+    the style). Stops at the first take that is ok with score >= VOICE_GOOD, or when a retake fails (quota ...).
+    -> {"pieces", "sr", "reports", "chosen"}; raises VoiceCheckFailed when even the best take has hard problems."""
+    from . import gemini_tts, voice_check
+    text, style = tts.flow_join(lines), None
+    reports, cuts = [], []
+    for n in range(_max_takes()):
+        try:
+            a, sr, heard = gemini_stream(text, style=style)
+        except Exception as e:  # noqa: BLE001
+            if not reports:
+                raise
+            print(f"[prepass] gemini retake {n + 1} stopped ({'quota' if _quota_error(e) else 'error'}): {str(e)[:160]}", flush=True)
+            break
+        a, off = voice_check.polish(a, sr)
+        heard = _shift_words(heard, off)
+        ha, hsr, hh = _as_heard(a, sr, heard)
+        rep = voice_check.check(ha, hsr, lines, heard=hh)
+        reports.append(rep)
+        cuts.append((gemini_cut(lines, a, sr, heard), sr))
+        print(f"[prepass] gemini take {n + 1}: ok={rep.ok} score={rep.score:.0f} hard={list(rep.hard)[:3]} soft={list(rep.soft)[:3]}", flush=True)
+        if rep.ok and rep.score >= _good_score():
+            break
+        style = gemini_tts.STYLE + (" " + rep.hint if getattr(rep, "hint", "") else "")
+    usable = [i for i, c in enumerate(cuts) if c[0] is not None]   # a read whose lines can't be found can't be cut
+    if not usable:
+        raise VoiceCheckFailed("gemini read did not match the script", reports, len(reports) - 1)
+    chosen = usable[voice_check.best([reports[i] for i in usable])]
+    if not reports[chosen].ok:
+        raise VoiceCheckFailed(f"gemini read failed the voice check: {list(reports[chosen].hard)[:4]}", reports, chosen)
+    pieces, sr = cuts[chosen]
+    return {"pieces": pieces, "sr": sr, "reports": reports, "chosen": chosen}
+
+
+def _as_heard(a, sr: int, heard):
+    """The read the way viewers hear it: the same free fixes tts.flow_load applies (long pauses capped, light pace and
+    loudness leveling), so the check judges what is posted, not the raw take. -> (audio, sr, heard dicts)."""
+    ws = [(x["word"], float(x["start"]), float(x["end"])) for x in heard]
+    b, ws = tts.cap_pauses(np.asarray(a, np.float32), ws, sr=sr)
+    if tts.FLOW_LEVEL:
+        b, ws = tts.level_flow(b, ws, sr=sr)
+    return b, sr, [{"word": w, "start": st, "end": en} for w, st, en in ws]
+
+
+def _whole_read(voiced, sr: int):
+    """[(line, audio, words)] -> (one audio, Whisper-style word dicts), for checking a fallback engine's read."""
+    audio, words, t = [], [], 0.0
+    for _line, pa, pw in voiced:
+        words += [{"word": w, "start": t + st, "end": t + en} for w, st, en in pw]
+        audio.append(np.asarray(pa, np.float32))
+        t += len(pa) / sr
+    return np.concatenate(audio), words
+
+
+def _rep_dict(r) -> dict:
+    return {k: getattr(r, k, None) for k in ("ok", "score", "hard", "soft", "metrics", "hint")}
+
+
+def _write_report(sid: str, reports: list, chosen: int, engine: str) -> None:
+    """.cache/voice/report-<sid>.json (+ .md), the Actions step summary, one ::notice and (soft problems) one ::warning."""
+    from . import voice_check
+    rep = reports[chosen]
+
+    def enc(o):
+        return o.item() if hasattr(o, "item") else (list(o) if isinstance(o, (set, tuple)) else str(o))
+    Path(tts.VOICE_CACHE, f"report-{sid}.json").write_text(
+        json.dumps({"id": sid, "engine": engine, "chosen": chosen, "takes": [_rep_dict(r) for r in reports]},
+                   indent=1, default=enc), encoding="utf-8")
+    md = voice_check.to_markdown(sid, reports, chosen, engine)
+    Path(tts.VOICE_CACHE, f"report-{sid}.md").write_text(md, encoding="utf-8")
+    summ = os.environ.get("GITHUB_STEP_SUMMARY")
+    if summ:
+        with open(summ, "a", encoding="utf-8") as f:
+            f.write(md + "\n")
+    print(f"::notice title=voice check::Short {sid}: {engine}, {len(reports)} take(s) checked, score {rep.score:.0f}", flush=True)
+    if rep.soft:
+        print(f"::warning title=voice check::Short {sid} ({engine}): {'; '.join(map(str, rep.soft))[:400]}", flush=True)
+
+
+def read_wav(sid: str):
+    """The chosen read of a Short as it sits in the flow cache: its line files joined in script order -> (audio, sr) or None."""
+    import soundfile as sf
+    path = next((ROOT / "content" / "scripts").glob(f"{sid}-*.json"), None) or next((ROOT / "content" / "scripts").glob(f"{sid}*.json"), None)
+    if not path:
+        return None
+    script = json.loads(path.read_text(encoding="utf-8"))
+    tts.EDGE_RATE_NOW = tts.EDGE_RATE.get(script.get("format"), tts.EDGE_RATE["default"])
+    out, sr = [], 24000
+    for line in dict.fromkeys(tts.speakable(x) for x in lines_for(script) if x.strip()):
+        if tts.flow_ready(line):   # exactly what the render will use (flow_load: trimmed, pauses capped, leveled)
+            a, _w = tts.flow_load(line)
+            sr = tts.SAMPLE_RATE
+            out.append(a)
+    return (np.concatenate(out), sr) if out else None
+
+
+def _voice_gemini(groups: list[list[str]], sid: str):
+    """Gemini with the quality loop -> (voiced, sr, (reports, chosen) or None). Without voice_check (or for
+    FLOW_SCOPE=line) it is the plain one-take path."""
+    try:
+        from . import voice_check  # noqa: F401
+    except ImportError:
+        voiced, sr, _ = _voice_groups(groups, "gemini")
+        return voiced, sr, None
+    if len(groups) != 1:
+        voiced, sr, _ = _voice_groups(groups, "gemini")
+        return voiced, sr, None
+    res = gemini_takes(groups[0])
+    return [(ln, pa, pw) for ln, (pa, pw) in zip(groups[0], res["pieces"])], res["sr"], (res["reports"], res["chosen"])
+
+
+_ASR = None
+
+
+def _voice_groups(groups: list[list[str]], engine: str):
+    """Voice each group of lines in one call -> ([(line, audio, words)], sr, characters billed)."""
+    out, used, sr = [], 0, 24000
+    for grp in groups:
+        if engine == "gemini":   # free quota: no line-by-line fallback; one retake, then the Short falls back to the next engine
+            pieces = None
+            for _take in range(2):
+                a, sr, heard = gemini_stream(tts.flow_join(grp))
+                pieces = gemini_cut(grp, a, sr, heard)
+                if pieces is not None:
+                    break
+                print("[prepass] gemini: could not match words to lines; retaking", flush=True)
+            if pieces is None:
+                raise RuntimeError("gemini read did not match the script twice")
+            out += [(line, pa, pw) for line, (pa, pw) in zip(grp, pieces)]
+            continue
+        if engine == "eleven":
+            a, sr, words, n = eleven_stream(tts.flow_join(grp))
+            used += n
+        else:
+            a, sr, words = edge_stream(tts.flow_join(grp), tts.edge_rate_for())
+        pieces = [(a, words)] if len(grp) == 1 else cut_lines(grp, a, sr, words)
+        if pieces is None:
+            print("[prepass] could not match words to lines; voicing line by line", flush=True)
+            if engine == "eleven":
+                pieces = [(p[0], p[2]) for p in (eleven_stream(x) for x in grp)]
+            else:
+                pieces = [(p[0], p[2]) for p in (edge_stream(x, tts.edge_rate_for()) for x in grp)]
+        out += [(line, pa, pw) for line, (pa, pw) in zip(grp, pieces)]
+    return out, sr, used
+
+
+def edge_pass(ids: list[str]) -> int:
+    """Voice every line of the Short(s) with the flow engine: ElevenLabs when VOICE_SOURCE=eleven (key present), else Edge
+    neural TTS. FLOW_SCOPE=short: the whole narration in ONE call; =line: one call per line. No splitting into sentences:
+    the voice keeps its own melody and natural pauses. Word timings come from the service (Edge WordBoundary events /
+    ElevenLabs character alignment). If ElevenLabs fails for a Short (quota, 401, 429, any error) that Short is voiced
+    by Edge instead, so posting never stops; a Short never mixes the two voices."""
+    import soundfile as sf
     os.makedirs(tts.VOICE_CACHE, exist_ok=True)
     asr, seen = None, set()
     fails = 0
+    gemini_ok = tts.VOICE_SOURCE == "geminiflow" and bool(os.environ.get("GEMINI_API_KEY", "").strip())
+    eleven_ok = tts.VOICE_SOURCE == "eleven" or (tts.VOICE_SOURCE == "geminiflow" and bool(os.environ.get("ELEVENLABS_API_KEY", "").strip()))
     for sid in ids:
         path = next((ROOT / "content" / "scripts").glob(f"{sid}*.json"), None)
         if not path:
             continue
         script = json.loads(path.read_text(encoding="utf-8"))
         tts.EDGE_RATE_NOW = tts.EDGE_RATE.get(script.get("format"), tts.EDGE_RATE["default"])   # same rate render.py will ask for
-        pass
-        for line in lines_for(script):
-            for sent, q, b in tts.sentences(tts.speakable(line)):
-                if b or sent in seen or os.path.exists(tts.cache_path(sent) + ".wav"):
-                    continue
-                seen.add(sent)
-                try:
-                    a, sr = edge_say(sent, tts.edge_rate_for(q))
-                except Exception as e:  # noqa: BLE001
-                    fails += 1
-                    print(f"::warning title=voice::edge-tts: {str(e)[:200]}", flush=True)
-                    continue
+        lines = [tts.speakable(x) for x in lines_for(script) if x.strip()]
+        todo = [x for x in dict.fromkeys(lines) if not tts.flow_ready(x) and not tts.SPEAKER_B.search(x)]
+        if not todo:
+            continue
+        groups = [todo] if tts.FLOW_SCOPE == "short" else [[x] for x in todo]
+        voiced, sr, engine = None, 24000, "edge"
+        checked = None   # (reports, chosen) of the Gemini quality loop
+        if gemini_ok:
+            try:
+                voiced, sr, checked = _voice_gemini(groups, sid)
+                engine = "gemini"
+            except Exception as e:  # noqa: BLE001   (free daily quota, network, no match, failed voice check ...)
+                if isinstance(e, VoiceCheckFailed) and e.reports:
+                    checked = (e.reports, e.chosen)
+                print(f"::warning title=voice::Short {sid}: Gemini {tts.GEMINI_FLOW_VOICE} failed ({str(e)[:200]}); using the backup voice", flush=True)
+                voiced = None
+        if voiced is None and eleven_ok:
+            try:
+                voiced, sr, used = _voice_groups(groups, "eleven")
+                engine = "eleven"
+                print(f"::notice title=eleven::Short {sid}: {used} characters billed ({sum(len(x) for x in todo)} in the script)", flush=True)
+            except Exception as e:  # noqa: BLE001   (ElevenError, network, decode ...)
+                print(f"::warning title=eleven::Short {sid}: ElevenLabs failed ({str(e)[:200]}); using Edge Andrew for this Short", flush=True)
+                voiced = None
+        if voiced is None:
+            try:
+                voiced, sr, _ = _voice_groups(groups, "edge")
+            except Exception as e:  # noqa: BLE001
+                fails += 1
+                print(f"::warning title=voice::edge-tts: {str(e)[:200]}", flush=True)
+                continue
+        try:   # report on the read that was chosen (a fallback engine's read is checked too, for the report only)
+            from . import voice_check
+            reports, chosen = (list(checked[0]), checked[1]) if checked else ([], 0)
+            if engine != "gemini" or not reports:
+                whole, heard_w = _whole_read(voiced, sr)
+                reports.append(voice_check.check(whole, sr, [ln for ln, _a, _w in voiced], heard=heard_w))
+                chosen = len(reports) - 1
+            _write_report(sid, reports, chosen, engine)
+        except Exception as e:  # noqa: BLE001   a report problem never stops a Short
+            print(f"::warning title=voice check::Short {sid}: report skipped ({str(e)[:160]})", flush=True)
+        for line, pa, pw in voiced:
+            seen.add(line)
+            try:   # flag unclear words (a note only: the same text is read the same way, a retake would not change it)
+                import whisper
                 asr = asr or whisper.load_model("base.en")
-                a16 = np.interp(np.linspace(0, len(a) - 1, int(len(a) * 16000 / sr)), np.arange(len(a)), a).astype(np.float32)
+                a16 = np.interp(np.linspace(0, len(pa) - 1, int(len(pa) * 16000 / sr)), np.arange(len(pa)), pa).astype(np.float32)
                 heard = [x for seg in asr.transcribe(a16, language="en", word_timestamps=True, fp16=False)["segments"]
                          for x in seg.get("words", [])]
-                bad = [x for x in problems(sent, heard) if not x.startswith("rushed:")]
+                bad = [x for x in problems(line, heard) if not x.startswith("rushed:")]
                 if bad:
-                    print(f"[prepass] edge flagged {bad[:3]}: {sent[:60]}", flush=True)
-                sf.write(tts.cache_path(sent) + ".wav", a, sr)
-                Path(tts.cache_path(sent) + ".json").write_text(json.dumps(
-                    [(x["word"].strip(), float(x["start"]), float(x["end"])) for x in heard]), encoding="utf-8")
-    print(f"::notice title=voice::Edge {tts.EDGE_VOICE}: {len(seen)} sentence(s) voiced, {fails} failed", flush=True)
+                    print(f"[prepass] {engine} flagged {bad[:3]}: {line[:60]}", flush=True)
+            except Exception as e:  # noqa: BLE001
+                print(f"[prepass] clarity note skipped: {e!r}", flush=True)
+            sf.write(tts.flow_path(line) + ".wav", pa, sr)
+            Path(tts.flow_path(line) + ".json").write_text(json.dumps(with_punctuation(line, pw)), encoding="utf-8")
+    from . import eleven
+    who = f"ElevenLabs {eleven.voice_id()} (fallback Edge {tts.EDGE_VOICE})" if eleven_ok else f"Edge {tts.EDGE_VOICE}"
+    if gemini_ok:
+        who = f"Gemini {tts.GEMINI_FLOW_VOICE} (fallback {who})"
+    print(f"::notice title=voice::{who} ({tts.FLOW_TAG}, {tts.FLOW_SCOPE}): {len(seen)} line(s) voiced, {fails} failed", flush=True)
     return 1 if fails else 0
 
 
 def main(ids: list[str]) -> int:
-    if tts.VOICE_SOURCE == "edge":
+    if tts.VOICE_SOURCE in tts.FLOW_SOURCES:
         return edge_pass(ids)
     import soundfile as sf
     import torch

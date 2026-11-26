@@ -78,6 +78,11 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      # Nov 26: the daily voice-check workflow (07:30 UTC) voiced and checked this Short already: same key = reuse it, no second Gemini request
+      - uses: actions/cache@v4
+        with:
+          path: .cache/voice
+          key: voice-${{ matrix.id }}-${{ hashFiles('pipeline/voice_prepass.py', 'pipeline/voice_check.py', 'pipeline/tts.py', 'pipeline/gemini_tts.py', format('content/scripts/{0}-*.json', matrix.id)) }}
       - uses: actions/cache@v4
         with:
           path: ~/.cache/huggingface
@@ -88,6 +93,11 @@ jobs:
           pip install -q -U openai-whisper soundfile numpy edge-tts   # Nov 26: Edge neural voice is the default
           [ "${VOICE_SOURCE:-edge}" = edge ] || pip install -q -U qwen-tts
       - run: python -m pipeline.voice_prepass ${{ matrix.id }}
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}   # Nov 26: ElevenLabs voice when set (only this step sees it); else Edge Andrew
+          ELEVEN_VOICE_ID: ${{ vars.ELEVEN_VOICE_ID || 'pNInz6obpgDQGcFmaJgB' }}   # Adam; Brian = nPczCjzI2devNBz1zQrb
+          ELEVEN_MODEL: ${{ vars.ELEVEN_MODEL }}
+          ELEVEN_SPEED: ${{ vars.ELEVEN_SPEED }}
       - uses: actions/upload-artifact@v4
         with:
           name: voice-${{ matrix.id }}

@@ -1,0 +1,48 @@
+# Sam, Nov 26: hear ElevenLabs Adam and Brian on two real Shorts (178 POV, 094 What If), ~2.1k characters of the Starter plan.
+# Run: git push origin eleven:eleven-sample   (or Actions > eleven-sample > Run workflow). Result: release "eleven-sample".
+name: eleven-sample
+on:
+  push:
+    branches: [eleven-sample]
+  workflow_dispatch:
+    inputs:
+      model: {description: "ElevenLabs model (blank = repo default)", default: ""}
+      voices: {description: "Voices, comma list (blank = all)", default: ""}
+      ids: {description: "Short ids", default: "178 094"}
+
+permissions:
+  contents: write   # release upload only
+
+jobs:
+  sample:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -q numpy
+      - uses: actions/cache@v4
+        with:
+          path: .cache/voice
+          key: eleven-sample-${{ hashFiles('pipeline/eleven.py', 'pipeline/eleven_sample.py', 'content/scripts/178*.json', 'content/scripts/094*.json') }}
+      - name: Voice 178 + 094 with Adam and Brian
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          ELEVEN_MODEL: ${{ inputs.model || vars.ELEVEN_MODEL }}
+          ELEVEN_SAMPLE_VOICES: ${{ inputs.voices }}
+          IDS: ${{ inputs.ids || '178 094' }}
+          ELEVEN_SPEED: ${{ vars.ELEVEN_SPEED }}
+        run: |
+          if [ -z "$ELEVENLABS_API_KEY" ]; then echo "::error::secret ELEVENLABS_API_KEY is not set"; exit 1; fi
+          python -m pipeline.eleven_sample sample $IDS
+          ls -l sample
+      - name: Upload to release eleven-sample
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release view eleven-sample >/dev/null 2>&1 || gh release create eleven-sample --title "eleven-sample" \
+            --notes "ElevenLabs Adam and Brian on Shorts 178 and 094 (mp3 + word timings)"
+          gh release upload eleven-sample sample/* --clobber
+          echo "::notice::https://github.com/${{ github.repository }}/releases/tag/eleven-sample"

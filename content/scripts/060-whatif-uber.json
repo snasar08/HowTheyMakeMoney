@@ -7,7 +7,7 @@
   "hook_style": "number",
   "title_style": "whatif",
   "theme": "bold_bright",
-  "status": "ready",
+  "status": "delivered",
   "score": 89,
   "title": "What If One Driver Did Every Uber Trip?",
   "description": "Uber did 4.1 billion rides and deliveries last quarter. Now picture one driver.\n\nSources:\n- Uber: Uber Announces Results for Third Quarter 2026: https://investor.uber.com/news-events/news/press-release-details/2026/Uber-Announces-Results-for-Third-Quarter-2026/default.aspx\n\nUber Q3 2026 (Nov 4 2026): 4.1 billion trips in the quarter, up 16%. Trips = Mobility rides plus Delivery orders. Uber: more than 83 billion trips since 2010. Our math: 4.1 billion / 92 days = about 44.6 million a day, about 516 a second; one trip a minute = about 85 years for one day's trips; 83 billion trips at one a minute = about 158,000 years. Not financial advice.\n\n#shorts #uber #whatif #howtheymakemoney",
@@ -35,7 +35,17 @@
           "car"
         ],
         "stat": "4.1 BILLION",
-        "stat_sub": "trips. one driver?"
+        "stat_sub": "trips. one driver?",
+        "hero": {
+          "skin": "light",
+          "hair": "buzz",
+          "hair_color": "141210",
+          "beard": "none",
+          "outfit": "hoodie",
+          "shirt": "f4a261",
+          "pants": "3a3a3a",
+          "shoes": "f4f4f4"
+        }
       },
       "toon": [
         {
@@ -76,7 +86,17 @@
         ],
         "stat": "1 DRIVER",
         "stat_sub": "rides + deliveries, Q3 2026",
-        "hud": "4.1B"
+        "hud": "4.1B",
+        "hero": {
+          "skin": "light",
+          "hair": "buzz",
+          "hair_color": "141210",
+          "beard": "none",
+          "outfit": "hoodie",
+          "shirt": "f4a261",
+          "pants": "3a3a3a",
+          "shoes": "f4f4f4"
+        }
       },
       "toon": [
         {
@@ -110,7 +130,17 @@
         ],
         "stat": "516 / SECOND",
         "stat_sub": "about 44.6 million a day",
-        "hud": "44.6M"
+        "hud": "44.6M",
+        "hero": {
+          "skin": "light",
+          "hair": "buzz",
+          "hair_color": "141210",
+          "beard": "none",
+          "outfit": "hoodie",
+          "shirt": "f4a261",
+          "pants": "3a3a3a",
+          "shoes": "f4f4f4"
+        }
       },
       "toon": [
         {
@@ -140,7 +170,17 @@
           "car"
         ],
         "stat": "~85 YEARS",
-        "stat_sub": "for one day of trips"
+        "stat_sub": "for one day of trips",
+        "hero": {
+          "skin": "light",
+          "hair": "buzz",
+          "hair_color": "141210",
+          "beard": "none",
+          "outfit": "hoodie",
+          "shirt": "f4a261",
+          "pants": "3a3a3a",
+          "shoes": "f4f4f4"
+        }
       },
       "toon": [
         {
@@ -175,7 +215,17 @@
         ],
         "stat": "158,000 YEARS",
         "stat_sub": "83 billion trips since 2010",
-        "hud": "83B"
+        "hud": "83B",
+        "hero": {
+          "skin": "light",
+          "hair": "buzz",
+          "hair_color": "141210",
+          "beard": "none",
+          "outfit": "hoodie",
+          "shirt": "f4a261",
+          "pants": "3a3a3a",
+          "shoes": "f4f4f4"
+        }
       },
       "toon": [
         {
@@ -214,5 +264,25 @@
       "url": "https://investor.uber.com/news-events/news/press-release-details/2026/Uber-Announces-Results-for-Third-Quarter-2026/default.aspx"
     }
   ],
-  "hook_rules": "nov23"
+  "hook_rules": "nov23",
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-060-whatif-uber",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-060-whatif-uber/060-whatif-uber.mp4",
+    "post_at": "2026-11-27T20:15:00-05:00",
+    "buffer_post": "6b08834d1fa40915828e2d0e",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-26T19:06:53.410252+00:00",
+    "seconds": 26.37,
+    "eyes": {
+      "score": 10,
+      "problems": [],
+      "best_fix": "None",
+      "model": "gemini-3.1-flash-lite",
+      "acts": null
+    },
+    "scene_scan": [
+      "shot 12 @620: jump inside shot (27) - something teleports?"
+    ]
+  }
 }

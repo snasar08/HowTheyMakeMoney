@@ -49,7 +49,8 @@ _engine_now = None  # set per Short by use_engine_for(); None = VOICE_ENGINE
 def sentences(text: str) -> list[tuple[str, bool, bool]]:
     """(sentence, is_question, is_speaker_b) exactly as the engines split a line."""
     out = []
-    for sent in (p for s_ in SENTENCE.split(text) for p in (breath_split(s_.strip()) if s_.strip() else [s_])):
+    split = (lambda x: [x]) if (VOICE_SOURCE in FLOW_SOURCES and not SPEAKER_B.search(text)) else breath_split
+    for sent in (p for s_ in SENTENCE.split(text) for p in (split(s_.strip()) if s_.strip() else [s_])):
         if not sent.strip():
             continue
         b = bool(SPEAKER_B.match(sent))
@@ -62,24 +63,189 @@ def sentences(text: str) -> list[tuple[str, bool, bool]]:
 # Microsoft Edge neural voices (edge-tts): free, no key, no daily quota, the voices MoneyPrinterTurbo/ShortGPT-style
 # faceless channels use. VOICE_SOURCE=gemini|qwen brings the old voices back. Edge audio is cached per SENTENCE
 # (so the question beat keeps working), keyed by voice+rate so the old Umbriel cache is never reused.
-VOICE_SOURCE = os.environ.get("VOICE_SOURCE", "edge")
+# Nov 26 (Sam bought ElevenLabs Starter): "eleven" is the default only when the ELEVENLABS_API_KEY secret is present and
+# VOICE_SOURCE is not set. Only the voice/prepass jobs get the key, so the render jobs resolve to "edge" and read the SAME
+# flow cache files (flow_path is shared by both engines on purpose; the prepass writes the ElevenLabs read there).
+# Nov 26 evening, Sam: "lock 2 in" = Gemini voice Puck (free tier), read the flow way: the whole narration in ONE request,
+# word timings from Whisper. Default for every job (so the render jobs compute the same cache key). If Gemini fails for a
+# Short (daily free quota, error, words not matched) that Short is voiced by ElevenLabs Adam (key present), else Edge Andrew.
+VOICE_SOURCE = (os.environ.get("VOICE_SOURCE") or "").strip() or "geminiflow"
+FLOW_SOURCES = ("edge", "eleven", "geminiflow")   # whole-narration flow engines: same cache layout, no sentence splitting
+GEMINI_FLOW_VOICE = (os.environ.get("GEMINI_FLOW_VOICE") or "").strip() or "Puck"
+GEMINI_FLOW_PITCH_ST = float(os.environ.get("GEMINI_FLOW_PITCH_ST", "0") or 0)   # Sam heard Puck unshifted
 EDGE_VOICE = os.environ.get("EDGE_VOICE", "en-US-AndrewMultilingualNeural")
 EDGE_RATE = {"story": os.environ.get("EDGE_RATE_STORY", "+18%"), "default": os.environ.get("EDGE_RATE", "+18%")}
 EDGE_PITCH = os.environ.get("EDGE_PITCH", "+8Hz")
 EDGE_RATE_NOW = EDGE_RATE["default"]   # render.py sets this per Short like VOICE_SPEED_NOW
 
 
-def edge_rate_for(question: bool) -> str:
-    """Edge rate string for a sentence: questions a touch slower so they land as questions (like Kokoro's QUESTION_SPEED)."""
-    m = re.match(r"([+-]?\d+)%", EDGE_RATE_NOW)
-    pct = int(m.group(1)) if m else 0
-    return f"{pct - (7 if question else 0):+d}%"
+# Nov 26 flow fix (Sam: "the voice is fine but it doesn't flow right"). The Edge voice used to be made one SENTENCE
+# (or half sentence, breath_split) at a time, trimmed and glued with fixed gaps: pitch and energy reset every few
+# words and the speed jumped. Now every line (or the whole narration, FLOW_SCOPE) is ONE edge-tts call at ONE rate, so
+# the voice carries its own melody; word timings come from the service's WordBoundary events; natural pauses stay
+# (only silences longer than PAUSE_CAP are shortened). Cache key carries FLOW_TAG so old per-sentence clips are never reused.
+FLOW_TAG = "flow1"
+FLOW_SCOPE = os.environ.get("FLOW_SCOPE", "short")   # "line" = one call per scene line, "short" = the whole narration in one call
+PAUSE_CAP = float(os.environ.get("PAUSE_CAP", "0.22"))      # s: a silence longer than this is shortened to it (reference Shorts: almost no pauses)
+QUESTION_CAP = float(os.environ.get("QUESTION_CAP", "0.32"))  # s: the brief beat kept after a question / reveal colon
+
+
+def edge_rate_for(question: bool = False) -> str:
+    """Edge rate string. One rate for everything (the old 7% drop on questions made the speed jump)."""
+    return EDGE_RATE_NOW
 
 
 def cache_path(sent: str) -> str:
     import hashlib
-    key = f"edge:{EDGE_VOICE}:{EDGE_RATE_NOW}:{EDGE_PITCH}|{sent}" if VOICE_SOURCE == "edge" else f"{QWEN_VOICE}|{sent}"
+    key = f"edge:{FLOW_TAG}:{EDGE_VOICE}:{EDGE_RATE_NOW}:{EDGE_PITCH}|{sent}" if VOICE_SOURCE in FLOW_SOURCES else f"{QWEN_VOICE}|{sent}"
     return os.path.join(VOICE_CACHE, hashlib.sha1(key.encode()).hexdigest()[:20])
+
+
+def flow_path(line: str) -> str:
+    """Cache key of one line voiced in one Edge call (wav + json word timings)."""
+    import hashlib
+    return os.path.join(VOICE_CACHE, "F" + hashlib.sha1(
+        (f"gemini:{FLOW_TAG}:{GEMINI_FLOW_VOICE}:{GEMINI_FLOW_PITCH_ST}|{line}" if VOICE_SOURCE == "geminiflow" else
+         f"edge:{FLOW_TAG}:{EDGE_VOICE}:{EDGE_RATE_NOW}:{EDGE_PITCH}|{line}").encode()).hexdigest()[:20])
+
+
+def cap_pauses(a, words, cap: float = None, sr: int = SAMPLE_RATE, q_cap: float = None):
+    """Shorten every silence longer than `cap` seconds to `cap` (cut from the middle of the silence, 8 ms crossfade) and
+    shift the word timings to match. Shorter pauses are untouched, so the read keeps its own rhythm."""
+    cap = PAUSE_CAP if cap is None else cap
+    q_cap = QUESTION_CAP if q_cap is None else q_cap
+    a = np.asarray(a, np.float32)
+    fr = int(0.01 * sr)
+    k = len(a) // fr
+    if k < 3:
+        return a, words
+    rms = np.sqrt(np.mean(a[:k * fr].reshape(k, fr) ** 2, axis=1))
+    sil = rms < max(0.004, 0.04 * float(np.percentile(rms, 95)))
+    cuts, i = [], 0       # (cut_start_sample, cut_end_sample)
+    while i < k:
+        if sil[i]:
+            j = i
+            while j < k and sil[j]:
+                j += 1
+            prev = [w for w in words if w[2] <= i * 0.01 + 0.08]
+            c_here = q_cap if prev and prev[-1][0].rstrip('")').endswith(("?", ":")) else cap
+            if (j - i) * 0.01 > c_here and i > 0 and j < k:          # inside the read, not the lead/tail
+                excess = int(((j - i) * 0.01 - c_here) * sr)
+                mid = (i + j) * fr // 2
+                cuts.append((mid - excess // 2, mid - excess // 2 + excess))
+            i = j
+        else:
+            i += 1
+    if not cuts:
+        return a, words
+    out, pos, removed = [], 0, []
+    for c0, c1 in cuts:
+        out.append(a[pos:c0])
+        pos = c1
+    out.append(a[pos:])
+    n = int(0.008 * sr)
+    res = out[0]
+    for seg in out[1:]:
+        if len(res) > n and len(seg) > n:
+            fade = np.linspace(0, 1, n, dtype=np.float32)
+            res = np.concatenate([res[:-n], res[-n:] * (1 - fade) + seg[:n] * fade, seg[n:]])
+        else:
+            res = np.concatenate([res, seg])
+
+    def shift(t):
+        s_ = t * sr
+        return (s_ - sum(min(max(s_ - c0, 0), c1 - c0) for c0, c1 in cuts)) / sr
+    return res, [(w, max(0.0, shift(st)), max(0.0, shift(en))) for w, st, en in words]
+
+
+FLOW_JOIN = os.environ.get("FLOW_JOIN", " ")   # how lines are glued when the whole narration goes in one call
+
+
+def flow_join(lines: list[str]) -> str:
+    return FLOW_JOIN.join(lines)
+
+
+FLOW_LEVEL = os.environ.get("FLOW_LEVEL", "1") != "0"
+LEVEL_SYL_S = 5.4        # syllables/s the sentences are nudged toward (the channel's measured pace)
+LEVEL_DB = -17.0         # RMS dB the sentences are nudged toward
+LEVEL_TEMPO = 0.08       # max +-8% speed change per sentence (atempo: same pitch)
+LEVEL_GAIN_DB = 3.0      # max +-3 dB gain change per sentence
+
+
+def level_flow(a, words, sr: int = SAMPLE_RATE):
+    """Even out the read WITHOUT cutting it: each sentence (words ending . ? !) gets a half-strength nudge toward the
+    channel pace and loudness (speed +-8% via atempo, gain +-3 dB, 12 ms fades at the seams). Sentence seams sit in the
+    middle of the silence between sentences, so no word is touched. Returns (audio, words)."""
+    from . import prosody
+    a = np.asarray(a, np.float32)
+    if len(words) < 4:
+        return a, words
+    ends = [i for i, w in enumerate(words) if w[0].rstrip('")').endswith((".", "?", "!"))]
+    if not ends or ends[-1] != len(words) - 1:
+        ends.append(len(words) - 1)
+    segs, st = [], 0
+    for e in ends:
+        segs.append((st, e))
+        st = e + 1
+    if len(segs) < 2:
+        return a, words
+    cuts = [0.0] + [(words[e][2] + words[e + 1][1]) / 2 for _s, e in segs[:-1]] + [len(a) / sr]
+    out, new_words, t_out, n = [], [], 0.0, int(0.012 * sr)
+    for k, (i, e) in enumerate(segs):
+        piece = a[int(cuts[k] * sr):int(cuts[k + 1] * sr)]
+        talk = words[e][2] - words[i][1]
+        syl = sum(prosody.syllables(w[0]) for w in words[i:e + 1])
+        tempo = 1.0
+        if talk > 0.2 and syl >= 3:
+            tempo = float(np.clip((LEVEL_SYL_S / (syl / talk)) ** 0.5, 1 - LEVEL_TEMPO, 1 + LEVEL_TEMPO))
+        loud = piece[np.abs(piece) > 0.02]
+        gain = 1.0
+        if len(loud) > sr // 10:
+            db = 20 * np.log10(float(np.sqrt(np.mean(loud ** 2))) + 1e-9) - 3.0   # rms of the voiced samples ~ rms of the sentence + 3 dB
+            gain = 10 ** (float(np.clip(0.5 * (LEVEL_DB - db), -LEVEL_GAIN_DB, LEVEL_GAIN_DB)) / 20)
+        if abs(tempo - 1.0) > 0.005:
+            p2 = _atempo(piece, tempo)
+            k_real = len(piece) / max(len(p2), 1)
+        else:
+            p2, k_real = piece, 1.0
+        p2 = np.asarray(p2, np.float32) * gain
+        if len(p2) > 2 * n:
+            p2[:n] *= np.linspace(0, 1, n, dtype=np.float32)
+            p2[-n:] *= np.linspace(1, 0, n, dtype=np.float32)
+        for w, st_, en_ in words[i:e + 1]:
+            new_words.append((w, t_out + (st_ - cuts[k]) / k_real, t_out + (en_ - cuts[k]) / k_real))
+        out.append(p2)
+        t_out += len(p2) / sr
+    return np.concatenate(out), new_words
+
+
+def flow_ready(line: str) -> bool:
+    return os.path.exists(flow_path(line) + ".wav") and os.path.exists(flow_path(line) + ".json")
+
+
+def flow_load(line: str):
+    """The cached one-call read of a line -> (audio at SAMPLE_RATE with only its lead/tail trimmed and long pauses capped,
+    word timings)."""
+    import json
+
+    import soundfile as sf
+    fp = flow_path(line)
+    a, sr = sf.read(fp + ".wav", dtype="float32")
+    if a.ndim > 1:
+        a = a.mean(axis=1)
+    if sr != SAMPLE_RATE:
+        a = np.interp(np.linspace(0, len(a) - 1, int(len(a) * SAMPLE_RATE / sr)), np.arange(len(a)), a).astype(np.float32)
+    words = [tuple(x) for x in json.load(open(fp + ".json", encoding="utf-8"))]
+    loud = np.flatnonzero(np.abs(a) > 0.02)
+    c0 = max(0, int(loud[0]) - int(LEAD_KEEP * SAMPLE_RATE)) if len(loud) else 0
+    c1 = min(len(a), int(loud[-1]) + int(TAIL_KEEP * SAMPLE_RATE)) if len(loud) else len(a)
+    a = a[c0:c1]
+    n = len(a) / SAMPLE_RATE
+    words = [(t, max(0.0, st - c0 / SAMPLE_RATE), min(n, en - c0 / SAMPLE_RATE)) for t, st, en in words]
+    a, words = cap_pauses(a, words)
+    if FLOW_LEVEL:
+        a, words = level_flow(a, words)
+    return a, words
 
 
 def _gemini_voice() -> str:
@@ -97,11 +263,15 @@ GEMINI_VOICE = _gemini_voice()
 def line_path(line: str) -> str:
     """Cache key for a whole line voiced in one pass (Gemini TTS, Nov 13): reads like a person, not a list."""
     import hashlib
-    src = f"gemini:{GEMINI_VOICE}" if VOICE_SOURCE != "edge" else f"edge-unused:{EDGE_VOICE}"   # edge never uses whole-line files
+    src = f"gemini:{GEMINI_VOICE}" if VOICE_SOURCE not in FLOW_SOURCES else f"edge-unused:{EDGE_VOICE}"   # edge never uses whole-line files
     return os.path.join(VOICE_CACHE, "L" + hashlib.sha1(f"{src}|{line}".encode()).hexdigest()[:20])
 
 
 def qwen_ready(texts) -> bool:
+    if VOICE_SOURCE in FLOW_SOURCES:
+        return all(not speakable(t).strip() or flow_ready(speakable(t))
+                   or all(os.path.exists(cache_path(s) + ".wav") for s, _, b in sentences(speakable(t)) if not b)
+                   for t in texts)
     return all(os.path.exists(line_path(speakable(t)) + ".wav")
                or all(os.path.exists(cache_path(s) + ".wav") for s, _, b in sentences(speakable(t)) if not b)
                for t in texts)
@@ -192,6 +362,8 @@ def qwen(text: str):
     import json
 
     import soundfile as sf
+    if VOICE_SOURCE in FLOW_SOURCES and not SPEAKER_B.search(text) and flow_ready(text):
+        return flow_load(text)                   # the whole line in one Edge call, natural pauses kept
     lp = line_path(text)
     if os.path.exists(lp + ".wav"):              # the whole line in one Gemini pass
         a, sr = sf.read(lp + ".wav", dtype="float32")
@@ -199,7 +371,7 @@ def qwen(text: str):
             a = a.mean(axis=1)
         if sr != SAMPLE_RATE:
             a = np.interp(np.linspace(0, len(a) - 1, int(len(a) * SAMPLE_RATE / sr)), np.arange(len(a)), a).astype(np.float32)
-        if abs(GEMINI_PITCH_ST) > 0.01 and VOICE_SOURCE != "edge":
+        if abs(GEMINI_PITCH_ST) > 0.01 and VOICE_SOURCE not in FLOW_SOURCES:
             a = _pitch(a, GEMINI_PITCH_ST)
         k = 1.0
         if abs(VOICE_SPEED_NOW - 1.0) > 0.01:   # same voice and pitch, quicker read (Sam, Nov 15: Nike "very very slow")
@@ -230,11 +402,11 @@ def qwen(text: str):
             a, shift = a[c0:c1], c0 / SAMPLE_RATE
             ws = [(t, max(0.0, st - shift), min(len(a) / SAMPLE_RATE, en - shift))
                   for t, st, en in json.load(open(cache_path(sent) + ".json", encoding="utf-8"))]
-            if abs(QWEN_SPEED - 1.0) > 0.01 and VOICE_SOURCE != "edge":      # same pitch, faster read (the deeper narrator reads ~15% slower)
+            if abs(QWEN_SPEED - 1.0) > 0.01 and VOICE_SOURCE not in FLOW_SOURCES:      # same pitch, faster read (the deeper narrator reads ~15% slower)
                 n0, a = len(a), _atempo(a, QWEN_SPEED)
                 k = n0 / max(len(a), 1)           # the real stretch (1.0 if ffmpeg failed)
                 ws = [(t, st / k, min(len(a) / SAMPLE_RATE, en / k)) for t, st, en in ws]
-            if abs(QWEN_PITCH_ST) > 0.01 and VOICE_SOURCE != "edge":         # same length, so word timings stay
+            if abs(QWEN_PITCH_ST) > 0.01 and VOICE_SOURCE not in FLOW_SOURCES:         # same length, so word timings stay
                 a = _pitch(a, QWEN_PITCH_ST)
         words += [(t, offset + st, offset + en) for t, st, en in ws]
         chunks.append(np.asarray(a, np.float32))
