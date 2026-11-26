@@ -156,6 +156,31 @@ def _f(x):
 
 
 # ---- the check --------------------------------------------------------------------------------------------
+def _quiet_run(a, sr: int, t0: float, t1: float, thr_db: float):
+    """Longest run of 10 ms frames quieter than thr_db inside [t0-0.12, t1+0.12] (Whisper word edges are loose, so the
+    real silence is found from the sound itself) -> (seconds, median level dBFS of that run or None)."""
+    fr = int(0.01 * sr)
+    seg = _seg(a, sr, max(0.0, t0 - 0.12), t1 + 0.12)
+    n = len(seg) // fr
+    if n < 2:
+        return 0.0, None
+    rms = np.sqrt(np.mean(seg[:n * fr].reshape(n, fr) ** 2, axis=1) + 1e-12)
+    db = 20 * np.log10(rms)
+    best, cur, b0, c0 = 0, 0, 0, 0
+    for i, q in enumerate(db < thr_db):
+        if q:
+            if cur == 0:
+                c0 = i
+            cur += 1
+            if cur > best:
+                best, b0 = cur, c0
+        else:
+            cur = 0
+    if not best:
+        return 0.0, None
+    return best * 0.01, float(np.median(db[b0:b0 + best]))
+
+
 def check(a, sr: int, lines: list[str], heard: list[dict] | None = None) -> Report:
     a = np.asarray(a, np.float32).ravel()
     lines = [x for x in lines if x and x.strip()]
@@ -218,15 +243,24 @@ def check(a, sr: int, lines: list[str], heard: list[dict] | None = None) -> Repo
 
     # pauses
     line_end_idx = {v[1] for v in spans.values()}
-    ins, betw, gaps = [], [], []
+    ins, betw, quiet_levels = [], [], []
+    fr = int(0.01 * sr)
+    nfr = len(a) // fr
+    speech_db = float(np.percentile(20 * np.log10(np.sqrt(np.mean(a[:nfr * fr].reshape(nfr, fr) ** 2, axis=1) + 1e-12)), 90)) if nfr else -20.0
+    thr = speech_db - 30.0                     # "silence" = 30 dB under the loud speech frames
+    m["speech_db"] = round(speech_db, 1)
     for k in range(len(heard) - 1):
         t0, t1 = float(heard[k]["end"]), float(heard[k + 1]["start"])
-        gaps.append((t0, t1))
+        if t1 - t0 < 0.05:
+            continue
+        dur, lvl = _quiet_run(a, sr, t0, t1, thr)
+        if lvl is not None and dur >= PAUSE_MIN_GAP:
+            quiet_levels.append(lvl)
         sentence_end = k in line_end_idx or heard[k]["word"].rstrip().endswith((".", "?", "!"))
-        if sentence_end and t1 - t0 > PAUSE_BETWEEN_S:
-            betw.append(_f(t1 - t0))
-        elif not sentence_end and t1 - t0 > PAUSE_IN_S:
-            ins.append(_f(t1 - t0))
+        if sentence_end and dur > PAUSE_BETWEEN_S:
+            betw.append(_f(dur))
+        elif not sentence_end and dur > PAUSE_IN_S:
+            ins.append(_f(dur))
     m["long_pauses_in_sentence"], m["long_pauses_between"] = ins, betw
     if ins or betw:
         add_soft(f"pauses:{len(ins)} inside sentences (max {max(ins, default=0):.2f}s), {len(betw)} between (max {max(betw, default=0):.2f}s)",
@@ -285,13 +319,8 @@ def check(a, sr: int, lines: list[str], heard: list[dict] | None = None) -> Repo
         if rng > LOUD_RANGE_DB:
             add_soft(f"loudness-spread:{rng:.1f}dB", "loud", min(12.0, 4 + 3 * (rng - LOUD_RANGE_DB)))
 
-    # noise floor in pauses
-    levels = []
-    for t0, t1 in gaps:
-        if t1 - t0 >= PAUSE_MIN_GAP:
-            s = _seg(a, sr, t0 + 0.05, t1 - 0.05)
-            if len(s) > int(0.03 * sr):
-                levels.append(_db(float(np.sqrt(np.mean(s ** 2)))))
+    # noise floor in pauses: hiss/breath level inside the real silences (each under thr by definition, so judge vs NOISE_DB)
+    levels = quiet_levels
     if levels:
         nf = float(np.median(levels))
         m["pause_noise_db"] = round(nf, 1)

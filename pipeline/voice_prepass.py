@@ -423,7 +423,8 @@ def gemini_takes(lines: list[str]) -> dict:
             break
         a, off = voice_check.polish(a, sr)
         heard = _shift_words(heard, off)
-        rep = voice_check.check(a, sr, lines, heard=heard)
+        ha, hsr, hh = _as_heard(a, sr, heard)
+        rep = voice_check.check(ha, hsr, lines, heard=hh)
         reports.append(rep)
         cuts.append((gemini_cut(lines, a, sr, heard), sr))
         print(f"[prepass] gemini take {n + 1}: ok={rep.ok} score={rep.score:.0f} hard={list(rep.hard)[:3]} soft={list(rep.soft)[:3]}", flush=True)
@@ -438,6 +439,16 @@ def gemini_takes(lines: list[str]) -> dict:
         raise VoiceCheckFailed(f"gemini read failed the voice check: {list(reports[chosen].hard)[:4]}", reports, chosen)
     pieces, sr = cuts[chosen]
     return {"pieces": pieces, "sr": sr, "reports": reports, "chosen": chosen}
+
+
+def _as_heard(a, sr: int, heard):
+    """The read the way viewers hear it: the same free fixes tts.flow_load applies (long pauses capped, light pace and
+    loudness leveling), so the check judges what is posted, not the raw take. -> (audio, sr, heard dicts)."""
+    ws = [(x["word"], float(x["start"]), float(x["end"])) for x in heard]
+    b, ws = tts.cap_pauses(np.asarray(a, np.float32), ws, sr=sr)
+    if tts.FLOW_LEVEL:
+        b, ws = tts.level_flow(b, ws, sr=sr)
+    return b, sr, [{"word": w, "start": st, "end": en} for w, st, en in ws]
 
 
 def _whole_read(voiced, sr: int):
@@ -485,9 +496,10 @@ def read_wav(sid: str):
     tts.EDGE_RATE_NOW = tts.EDGE_RATE.get(script.get("format"), tts.EDGE_RATE["default"])
     out, sr = [], 24000
     for line in dict.fromkeys(tts.speakable(x) for x in lines_for(script) if x.strip()):
-        if tts.flow_ready(line):
-            a, sr = sf.read(tts.flow_path(line) + ".wav", dtype="float32")
-            out.append(a.mean(axis=1) if a.ndim > 1 else a)
+        if tts.flow_ready(line):   # exactly what the render will use (flow_load: trimmed, pauses capped, leveled)
+            a, _w = tts.flow_load(line)
+            sr = tts.SAMPLE_RATE
+            out.append(a)
     return (np.concatenate(out), sr) if out else None
 
 
