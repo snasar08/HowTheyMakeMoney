@@ -289,7 +289,7 @@ def make_plan(script: dict, recorded: dict | None = None) -> dict:
             while tail > 0:
                 m = min(tail, 45) if tail - 45 >= 20 else tail
                 src = uniq[kk % len(uniq)] if uniq else out[-1]
-                out.append({**{q: v for q, v in src.items() if q not in ("math", "units", "journey", "react")}, "a": a, "n": m, "frLo": pos, "si": i, "line": "(outro) " + src.get("line", "")[:60]})
+                out.append({**{q: v for q, v in src.items() if q not in ("math", "units", "journey", "react") and (q != "card" or not re.search(r"\d", str((src.get("card") or {}).get("text", ""))))}, "a": a, "n": m, "frLo": pos, "si": i, "line": "(outro) " + src.get("line", "")[:60]})
                 a += m; pos += m; tail -= m; kk += 1
     slug = f"{script.get('id', '')}-{script.get('slug', '')}"
     co = script.get("company", "")
@@ -1136,7 +1136,13 @@ def pov_hud(plan: dict) -> dict | None:
             cur = None
 
     for e in plan["scenes"]:
-        if "math" not in e or str(e.get("line", "")).startswith("(outro)"):
+        if str(e.get("line", "")).startswith("(outro)"):
+            continue
+        if "math" not in e:
+            # Nov 26 look audit (178 penny): a finished stack (its last card is the yellow "=" result) used to stay on screen to the
+            # end of the Short, over sentences about something else ("$1.14B all of them" above the lucky-penny line and the outro)
+            if cur and cur["cards"] and cur["cards"][-1].get("result"):
+                close(e["a"] + min(45, int(e["n"])))      # the result card lingers ~1.5 s into the next sentence, then goes
             continue
         m = e["math"]
         if not m:

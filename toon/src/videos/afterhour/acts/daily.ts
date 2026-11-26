@@ -417,14 +417,15 @@ const DAILY_DEFS: Record<string, ActDef> = {
     stx.rotation.x = -Math.PI / 2; stx.position.y = 0.045; seal.add(stx); seal.visible = false;
     const stars: THREE.Group[] = []; for (let i = 0; i < 4; i++) { const s = star(0.08); G.add(s); stars.push(s); }
     const TS2 = 2.1;
-    return { tick(t) {
+    return { tick(t0) {
+      const t = t0 < 3.4 ? t0 : t0 % 3.4;   // Nov 26: a long shot signs again on a fresh page instead of freezing on the grin for 2 s (same picture too long)
       const e: Expr = t < 1.9 ? "focus" : t < 2.55 ? "smug" : "grin";
       setPose(ctx, t, "count", e);
       const hero = ctx.hero, M = mouthRoot(ctx, head);
       const writing = sm(seg(t, 0.18, 0.5)) * (1 - sm(seg(t, 1.95, 2.15)));
       if (head) { head.rotation.x += 0.12 * writing + 0.03 * Math.sin(t * 9) * writing; head.rotation.z += -0.05 * writing; head.rotation.y += 0.12 * writing; }
       const sealPop = seg(t, TS2, TS2 + 0.22), sealIn = t > TS2;
-      board.position.set(M.x - 0.03, M.y - 0.42, M.z + 0.3); board.updateMatrixWorld(true);
+      board.position.set(M.x - 0.03, M.y - 0.62, M.z + 0.36); board.updateMatrixWorld(true);
       const p = sm(seg(t, 0.3, 1.65)), r = sm(seg(t, 1.65, 1.95)); drawInk(p, r);
       // pen tip: follows the signature, then the underline swoosh, then lifts with a flick
       let [cx, cy] = r > 0 ? sw(r) : sig(p);
