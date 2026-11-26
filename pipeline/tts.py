@@ -58,9 +58,28 @@ def sentences(text: str) -> list[tuple[str, bool, bool]]:
     return out
 
 
+# Nov 26, Sam: "i dont like voice ... use what everyone else uses that is free and liked". Default source is now
+# Microsoft Edge neural voices (edge-tts): free, no key, no daily quota, the voices MoneyPrinterTurbo/ShortGPT-style
+# faceless channels use. VOICE_SOURCE=gemini|qwen brings the old voices back. Edge audio is cached per SENTENCE
+# (so the question beat keeps working), keyed by voice+rate so the old Umbriel cache is never reused.
+VOICE_SOURCE = os.environ.get("VOICE_SOURCE", "edge")
+EDGE_VOICE = os.environ.get("EDGE_VOICE", "en-US-AndrewMultilingualNeural")
+EDGE_RATE = {"story": os.environ.get("EDGE_RATE_STORY", "+10%"), "default": os.environ.get("EDGE_RATE", "+10%")}
+EDGE_PITCH = os.environ.get("EDGE_PITCH", "+0Hz")
+EDGE_RATE_NOW = EDGE_RATE["default"]   # render.py sets this per Short like VOICE_SPEED_NOW
+
+
+def edge_rate_for(question: bool) -> str:
+    """Edge rate string for a sentence: questions a touch slower so they land as questions (like Kokoro's QUESTION_SPEED)."""
+    m = re.match(r"([+-]?\d+)%", EDGE_RATE_NOW)
+    pct = int(m.group(1)) if m else 0
+    return f"{pct - (7 if question else 0):+d}%"
+
+
 def cache_path(sent: str) -> str:
     import hashlib
-    return os.path.join(VOICE_CACHE, hashlib.sha1(f"{QWEN_VOICE}|{sent}".encode()).hexdigest()[:20])
+    key = f"edge:{EDGE_VOICE}:{EDGE_RATE_NOW}:{EDGE_PITCH}|{sent}" if VOICE_SOURCE == "edge" else f"{QWEN_VOICE}|{sent}"
+    return os.path.join(VOICE_CACHE, hashlib.sha1(key.encode()).hexdigest()[:20])
 
 
 def _gemini_voice() -> str:
@@ -78,7 +97,8 @@ GEMINI_VOICE = _gemini_voice()
 def line_path(line: str) -> str:
     """Cache key for a whole line voiced in one pass (Gemini TTS, Nov 13): reads like a person, not a list."""
     import hashlib
-    return os.path.join(VOICE_CACHE, "L" + hashlib.sha1(f"gemini:{GEMINI_VOICE}|{line}".encode()).hexdigest()[:20])
+    src = f"gemini:{GEMINI_VOICE}" if VOICE_SOURCE != "edge" else f"edge-unused:{EDGE_VOICE}"   # edge never uses whole-line files
+    return os.path.join(VOICE_CACHE, "L" + hashlib.sha1(f"{src}|{line}".encode()).hexdigest()[:20])
 
 
 def qwen_ready(texts) -> bool:
@@ -179,7 +199,7 @@ def qwen(text: str):
             a = a.mean(axis=1)
         if sr != SAMPLE_RATE:
             a = np.interp(np.linspace(0, len(a) - 1, int(len(a) * SAMPLE_RATE / sr)), np.arange(len(a)), a).astype(np.float32)
-        if abs(GEMINI_PITCH_ST) > 0.01:
+        if abs(GEMINI_PITCH_ST) > 0.01 and VOICE_SOURCE != "edge":
             a = _pitch(a, GEMINI_PITCH_ST)
         k = 1.0
         if abs(VOICE_SPEED_NOW - 1.0) > 0.01:   # same voice and pitch, quicker read (Sam, Nov 15: Nike "very very slow")
@@ -210,11 +230,11 @@ def qwen(text: str):
             a, shift = a[c0:c1], c0 / SAMPLE_RATE
             ws = [(t, max(0.0, st - shift), min(len(a) / SAMPLE_RATE, en - shift))
                   for t, st, en in json.load(open(cache_path(sent) + ".json", encoding="utf-8"))]
-            if abs(QWEN_SPEED - 1.0) > 0.01:      # same pitch, faster read (the deeper narrator reads ~15% slower)
+            if abs(QWEN_SPEED - 1.0) > 0.01 and VOICE_SOURCE != "edge":      # same pitch, faster read (the deeper narrator reads ~15% slower)
                 n0, a = len(a), _atempo(a, QWEN_SPEED)
                 k = n0 / max(len(a), 1)           # the real stretch (1.0 if ffmpeg failed)
                 ws = [(t, st / k, min(len(a) / SAMPLE_RATE, en / k)) for t, st, en in ws]
-            if abs(QWEN_PITCH_ST) > 0.01:         # same length, so word timings stay
+            if abs(QWEN_PITCH_ST) > 0.01 and VOICE_SOURCE != "edge":         # same length, so word timings stay
                 a = _pitch(a, QWEN_PITCH_ST)
         words += [(t, offset + st, offset + en) for t, st, en in ws]
         chunks.append(np.asarray(a, np.float32))
