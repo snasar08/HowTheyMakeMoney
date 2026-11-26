@@ -8,7 +8,7 @@
   "hook_style": "surprise",
   "title_style": "statement",
   "theme": "bold_bright",
-  "status": "ready",
+  "status": "delivered",
   "score": 95,
   "images": {},
   "hud_label": "THE PLAN",
@@ -352,5 +352,32 @@
       "url": "https://en.wikipedia.org/wiki/Nvidia"
     }
   ],
-  "hook_rules": "nov23"
+  "hook_rules": "nov23",
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-123-plan-jensen-vs-nvidia",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-123-plan-jensen-vs-nvidia/123-plan-jensen-vs-nvidia.mp4",
+    "post_at": "2026-11-27T12:45:00-05:00",
+    "buffer_post": "6b0882cc1fa40915828de566",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-26T19:04:45.221204+00:00",
+    "seconds": 37.09,
+    "eyes": {
+      "score": 8,
+      "problems": [
+        "The text 'JENSEN HUANG' at the top of the screen is cut off/partially obscured by the UI in several frames.",
+        "The character's facial expressions are somewhat repetitive throughout the middle section.",
+        "The transition between the '1993' calendar and the garage scene is slightly abrupt."
+      ],
+      "best_fix": "Adjust the vertical positioning of the top text header to ensure it remains fully visible within the safe zone of all mobile screens.",
+      "model": "gemini-3.1-flash-lite",
+      "acts": null
+    },
+    "scene_scan": [
+      "shot 18 @925: jump inside shot (24) - something teleports?",
+      "shot 19 @989: jump inside shot (16) - something teleports?",
+      "shot 21 @1103: jump inside shot (14) - something teleports?",
+      "shot 21 @1104: jump inside shot (14) - something teleports?"
+    ]
+  }
 }
