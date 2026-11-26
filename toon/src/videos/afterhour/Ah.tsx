@@ -116,6 +116,9 @@ const lerp = (a: V3, b: V3, u: number): V3 => [a[0] + (b[0] - a[0]) * u, a[1] + 
 // and the ordinary views travel 1.5x as far (a slow push-in during the hold; the bursts come from the transitions below)
 const ease = (u: number) => { const x = Math.max(0, Math.min(1, u)); return 0.35 * x + 0.65 * x * x * (3 - 2 * x); };
 for (const [n, v] of Object.entries(VIEWS)) if (!n.startsWith("act")) v.to = lerp(v.from, v.to, 1.5);
+// refgap round 5: lower camera heights (the reference shoots up at people), more background blur on every ordinary view
+for (const n of ["ms", "msL", "msR", "wide", "wideL", "wideR", "cu", "face"]) { VIEWS[n].from = [VIEWS[n].from[0], VIEWS[n].from[1] - 0.3, VIEWS[n].from[2]]; VIEWS[n].to = [VIEWS[n].to[0], VIEWS[n].to[1] - 0.3, VIEWS[n].to[2]]; }
+for (const [n, b] of Object.entries({ ws: 3, wide: 5, wideL: 5, wideR: 5, ms: 11, msL: 11, msR: 11, cu: 14, face: 16, low: 11, hi: 4 })) VIEWS[n].blur = b;
 
 type Built = { setRoot: THREE.Group; setLights: THREE.Light[]; hide: THREE.Object3D[]; instHide: InstHide[]; root: THREE.Group; chars: Char[]; things: Thing[]; run?: ActRun; view?: string; bg: string; fog?: THREE.Fog; spots: Record<string, V3>; coinGeo?: THREE.InstancedMesh; pov3?: Pov3 };
 const BUILT = new Map<number, Built>();
@@ -193,7 +196,7 @@ const fitInFrame = (s: AhShot, viewName: string | undefined, headY: number, root
   });
   const sh2 = 2 * (s.hud?.shift ?? 0), LX = 0.84, YLO = -0.7 + sh2, YHI = (s.hud ? s.hud.ndc + sh2 : s.view === "hook" ? 0.34 : 0.66), v = new THREE.Vector3(), right = new THREE.Vector3(), up = new THREE.Vector3();
   // the head box (a cube around the head sphere, a margin for hair) in world space: held props are pushed out of it, sideways first, then down
-  const hero = s.chars[s.subject ?? 0] ? new THREE.Vector3(root.x, root.y + headY, root.z) : undefined, hr = 0.5 * (s.chars[s.subject ?? 0]?.scale ?? 1);
+  const hero = s.chars[s.subject ?? 0] ? new THREE.Vector3(root.x, root.y + headY, root.z) : undefined, hr = 0.58 * (s.chars[s.subject ?? 0]?.scale ?? 1);
   const headRect = (c: THREE.PerspectiveCamera) => {
     let x0 = 9, x1 = -9, y0 = 9, y1 = -9;
     for (const sx of [-1, 1]) for (const sy of [-1, 1]) for (const sz of [-1, 1]) {
@@ -215,7 +218,7 @@ const fitInFrame = (s: AhShot, viewName: string | undefined, headY: number, root
         const dx = x1 > LX ? LX - x1 : x0 < -LX ? -LX - x0 : 0, dy = y1 > YHI ? YHI - y1 : y0 < YLO ? YLO - y0 : 0;
         let ddx = dx, ddy = dy;
         if (!dx && !dy && it.held && hero) {
-          const h = headRect(c), m = 0.04;
+          const h = headRect(c), m = 0.07;
           if (x0 < h.x1 + m && x1 > h.x0 - m && y0 < h.y1 + m && y1 > h.y0 - m) {
             const cxI = (x0 + x1) / 2, cxH = (h.x0 + h.x1) / 2, sgn = cxI >= cxH ? 1 : -1;
             const toR = h.x1 + m - x0, toL = -(x1 - (h.x0 - m));      // NDC shift that clears the head to the right / to the left
@@ -277,14 +280,14 @@ const build = (k: number, s: AhShot): Built => {
     // Nov 17 (Ninja test: the grown cash stack / controller covered his face): a held thing never sits in front of the
     // hero's head or torso — slide it out to the hero's side until its box clears the body column
     const hero0 = chars[s.subject ?? 0];
-    if (fit && hero0 && !s.cam && t.name !== "giantshovel") {
+    if (fit && hero0 && t.name !== "giantshovel") {
       const hx = hero0.root.position.x, clear = 0.36 * (hero0.root.scale.x || 1);
       const left = bb.min.x - hx;
       if (left < clear) { th.root.position.x += clear - left; th.root.updateMatrixWorld(true); bb = new THREE.Box3().setFromObject(th.root); }
     }
     const bs = bb.getSize(new THREE.Vector3()), bc = bb.getCenter(new THREE.Vector3());
     const r = Math.max(0.1, (fit ? fit * fitK : th.size * sc) * 0.6), hw0 = bs.x / 2 + Math.abs(bc.x - th.root.position.x), hh0 = bs.y / 2 + Math.abs(bc.y - th.root.position.y);
-    if (!s.act && t.name !== "giantshovel") fitItems.push({ held: !s.cam && !!hero0, pos: th.root.position, hw: Math.max(r, hw0), hh: Math.max(r, hh0), set: (k2) => { th.root.userData.base *= k2; th.root.scale.setScalar(th.root.userData.base); } });
+    if (!s.act && t.name !== "giantshovel") fitItems.push({ held: !!hero0, pos: th.root.position, hw: Math.max(r, hw0), hh: Math.max(r, hh0), set: (k2) => { th.root.userData.base *= k2; th.root.scale.setScalar(th.root.userData.base); } });
     return th;
   });
 
@@ -333,6 +336,11 @@ const Inner: React.FC = () => {
     ink: new InkEffect(),
     vig: new VignetteEffect({ offset: 0.3, darkness: 0.55 }),
   }), []);
+  // refgap round 5: a warm key spot (a real, toon-stepped pool of light on floor and character) + a cool violet fill from the other side (shadow tint)
+  const rig = useMemo(() => {
+    const key = new THREE.SpotLight("#ffd29a", 130, 26, 0.5, 0.5, 1.5), fill = new THREE.PointLight("#7a70ff", 16, 16, 1.5), g = new THREE.Group();
+    g.add(key, key.target, fill); return { g, key, fill };
+  }, []);
   const mp = useMemo(() => ({ pass: null as EffectPass | null }), []);
   const core = useMemo(() => {
     const c = new CoreComposer(gl, { multisampling: 4, frameBufferType: THREE.HalfFloatType });
@@ -435,14 +443,19 @@ const Inner: React.FC = () => {
     }
     pos[0] = cam.position.x; pos[1] = cam.position.y; pos[2] = cam.position.z;
   }
-  if (yaw) cam.rotateY(yaw);   // whip pan: after the act framing guard, which re-aims the camera
+  if (yaw) cam.rotateY(yaw);
+  if (!b.run && !b.pov3 && !s.hud) cam.rotateZ((k % 2 ? 1 : -1) * 0.035 * Math.sin(Math.PI * Math.min(1, (f - s.a) / Math.max(1, s.n))));   // gentle dutch tilt that swings in and out within the shot   // whip pan: after the act framing guard, which re-aims the camera
   fx.lens.focus = Math.hypot(look[0] - pos[0], look[1] - pos[1], look[2] - pos[2]);
+  { const ph = SHOTS_.length > 1 ? k / (SHOTS_.length - 1) : 0, cx = look[0], cz = look[2];
+    rig.key.position.set(cx - 2.4, 4.8, cz + 3.6); rig.key.target.position.set(cx, 0.7, cz); rig.key.target.updateMatrixWorld(true);
+    rig.key.color.set("#ffd29a").lerp(new THREE.Color("#9fb4ff"), ph * 0.7); rig.key.intensity = 130 - 45 * ph;
+    rig.fill.position.set(cx + 3.2, 1.8, cz + 2.2); }
   fx.lens.cInf = blur;
   fx.motion.set(mx, my); if (mp.pass) mp.pass.enabled = Math.abs(mx) + Math.abs(my) > 0.002;
   fx.grade.phase = SHOTS_.length > 1 ? k / (SHOTS_.length - 1) : 0;
   scene.background = new THREE.Color(b.bg);
   scene.fog = b.fog ?? null;
-  return <primitive object={b.root} dispose={null} />;
+  return <><primitive object={b.root} dispose={null} /><primitive object={rig.g} dispose={null} /></>;
 };
 
 /** POV unit rows: the real figure ("114 billion pennies") on a yellow card above the row while the row is on screen */

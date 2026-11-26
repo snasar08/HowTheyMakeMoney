@@ -26,7 +26,7 @@ void mainImage(const in vec4 inputColor, const in vec2 uv, const in float depth,
 }`;
 
 export class InkEffect extends Effect {
-  constructor({ width = 4.4, strength = 1 } = {}) {
+  constructor({ width = 6.5, strength = 1 } = {}) {
     super("InkEffect", frag, { blendFunction: BlendFunction.NORMAL, attributes: EffectAttribute.DEPTH | EffectAttribute.CONVOLUTION,
       uniforms: new Map<string, Uniform>([["width", new Uniform(width)], ["strength", new Uniform(strength)]]) });
   }
