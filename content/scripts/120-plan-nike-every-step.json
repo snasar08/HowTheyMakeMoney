@@ -8,7 +8,7 @@
   "hook_style": "surprise",
   "title_style": "statement",
   "theme": "bold_bright",
-  "status": "ready",
+  "status": "needs_fix",
   "score": 95,
   "title": "Nike's Plan: Own Every Dunk, Even on the Moon",
   "name_card": "Nike",
@@ -474,5 +474,8 @@
         15
       ]
     }
+  ],
+  "needs_fix": [
+    "Nov 26: Sam's AI-video clips show a Nike-like logo, so aivideo is off and the 3D toon version passes checks. Held until Sam picks: post the toon version, or get logo-free AI clips."
   ]
 }
