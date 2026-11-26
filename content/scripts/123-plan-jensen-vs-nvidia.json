@@ -127,7 +127,9 @@
           "mood": "scheme",
           "card": {
             "text": "NVIDIA",
-            "kind": "sign"
+            "kind": "sign",
+            "bg": "#1d2433",
+            "fg": "#ffffff"
           },
           "view": "ms"
         },
@@ -327,7 +329,9 @@
           ],
           "card": {
             "text": "NVIDIA",
-            "kind": "sign"
+            "kind": "sign",
+            "bg": "#1d2433",
+            "fg": "#ffffff"
           },
           "view": "ms"
         }

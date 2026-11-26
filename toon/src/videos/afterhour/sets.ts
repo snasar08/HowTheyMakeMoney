@@ -549,7 +549,7 @@ function diner(): SetObj {
   // menu boards
   
   // pie rack, sundae foreground
-  for (const sx of [-1, 1]) { bx(g, 0.9, 0.9, 0.9, red, sx * 2.0, 0.45, 4.2, 0.02); cy(g, 0.3, 0.3, 0.12, T("#ffd9a8"), sx * 2.0, 1.0, 4.2); }
+  for (const sx of [-1, 1]) { bx(g, 0.9, 0.9, 0.9, red, sx * 2.0, 0.45, 4.2, 0.02); cy(g, 0.3, 0.27, 0.12, T("#e0a458"), sx * 2.0, 1.0, 4.2); cy(g, 0.23, 0.23, 0.03, T("#b3202f"), sx * 2.0, 1.065, 4.2); for (let k = 0; k < 8; k++) { const a = k * PI / 4; bx(g, 0.2, 0.025, 0.03, T("#e0a458"), sx * 2.0 + Math.cos(a) * 0.1, 1.09, 4.2 + Math.sin(a) * 0.1).rotation.y = -a; } }   // Nov 26 (144): the plain tan disc read as a bare cookie; now a cherry pie (red filling, lattice)
   const lights = mkLights(["#fff0d8", "#b06a6a", 1.35], ["#fff0d0", 2.2, [3, 10, 8]], [["#ffd36b", 36, [3.4, 4.5, -1.5], 10], ["#ffd36b", 36, [-3.4, 4.5, -3.9], 10], ["#ffd36b", 36, [3.4, 4.5, -6.3], 10], ["#ff4d6d", 30, [0, 2, -8], 12], ["#37e0ff", 24, [-4, 3, 1], 10]], 10);
   return { root: g, lights, fog: new THREE.Fog("#c8b9a0", 22, 46), bg: "#2a1a38", spots: { counter: [3.0, 0, -6.0], booth: [-3.4, 0, -1.5], sign: [3.0, 4.2, -8.55], table: [3.4, 0.95, -1.5], window: [-3.2, 3.6, -8.7] } };
 }
