@@ -42,7 +42,7 @@
   ],
   "scenes": [
     {
-      "narration": "AMC pays only 20 cents for your snack dollar. But where does the other 80 cents go?",
+      "narration": "AMC pays only 20 cents per snack dollar. Where do the other 80 cents go?",
       "visual": {
         "type": "lowpoly",
         "set": "diner",
@@ -82,7 +82,7 @@
       ]
     },
     {
-      "narration": "You walk up to a theater counter and buy snacks. Your money slides across the counter into the register.",
+      "narration": "You walk up to the counter and buy snacks. Your money slides into the register.",
       "visual": {
         "type": "lowpoly",
         "set": "stall",
@@ -114,7 +114,7 @@
       ]
     },
     {
-      "narration": "In 2025 the average AMC guest in America spent 8.57 dollars on snacks. AMC's own snack costs were only 19.6 percent of snack sales. So about 80 cents of each dollar stays with the theater.",
+      "narration": "In 2025 the average AMC guest in America spent 8.57 dollars on snacks. AMC's snack costs were only 19.6 percent of snack sales. So about 80 cents of each dollar stays with the theater.",
       "visual": {
         "type": "lowpoly",
         "set": "boardroom",
@@ -180,7 +180,7 @@
       ]
     },
     {
-      "narration": "In 2025 AMC sold 1.67 billion dollars of food and drinks. It spent just 327 million dollars making them.",
+      "narration": "AMC sold 1.67 billion dollars of food and drinks. It spent just 327 million dollars making them.",
       "visual": {
         "type": "lowpoly",
         "set": "boardroom",
@@ -238,7 +238,7 @@
       ]
     },
     {
-      "narration": "That could still buy about 111 million tickets at AMC's average price. That is about half of AMC's 219 million guests that year.",
+      "narration": "That could buy about 111 million tickets at AMC's average price. About half of AMC's 219 million guests that year.",
       "visual": {
         "type": "lowpoly",
         "set": "stage",
