@@ -1,0 +1,290 @@
+{
+  "id": "182",
+  "slug": "careers-referees",
+  "company": "Referees",
+  "format": "careers",
+  "theme": "bold_bright",
+  "title": "Refs Earn $40,710. Athletes Earn $66,710.",
+  "title_style": "number",
+  "name_card": "Referees",
+  "name_sub": "sports officials",
+  "tags": [
+    "referee",
+    "umpire",
+    "sports",
+    "careers",
+    "shorts"
+  ],
+  "images": {},
+  "loop": "So next time you yell at the ref, remember:",
+  "cta": "Referee or athlete? Comment your pick.",
+  "cta_question": "Referee or athlete?",
+  "sources": [
+    {
+      "title": "BLS OEWS via api.bls.gov: Umpires, referees and other sports officials 27-2023, annual median wage, May 2025",
+      "url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000027202313"
+    },
+    {
+      "title": "BLS OEWS via api.bls.gov: Umpires, referees, 10th percentile",
+      "url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000027202311"
+    },
+    {
+      "title": "BLS OEWS via api.bls.gov: Umpires, referees, 90th percentile",
+      "url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000027202315"
+    },
+    {
+      "title": "BLS OEWS via api.bls.gov: Umpires, referees, employment",
+      "url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000027202301"
+    },
+    {
+      "title": "BLS OEWS via api.bls.gov: Athletes and sports competitors 27-2021, annual median wage",
+      "url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000027202113"
+    }
+  ],
+  "description": "Referees and umpires make about 40,710 dollars a year, less than the median athlete.\n\nSources:\n- BLS OEWS via api.bls.gov: Umpires, referees and other sports officials 27-2023, annual median wage, May 2025: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000027202313\n- BLS OEWS via api.bls.gov: Umpires, referees, 10th percentile: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000027202311\n- BLS OEWS via api.bls.gov: Umpires, referees, 90th percentile: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000027202315\n- BLS OEWS via api.bls.gov: Umpires, referees, employment: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000027202301\n- BLS OEWS via api.bls.gov: Athletes and sports competitors 27-2021, annual median wage: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000027202113\n\nFrom the US Bureau of Labor Statistics, Occupational Employment and Wage Statistics, May 2025 (api.bls.gov): umpires, referees and other sports officials: annual median wage $40,710, 10th percentile $26,540, 90th percentile $82,960, employment 15,780; athletes and sports competitors: annual median wage $66,710. Our math: 66,710 - 40,710 = 26,000 dollars. The pay covers officials at every level, not only pro leagues. Not financial advice.\n\n#shorts #referee #sports #careers #howtheymakemoney",
+  "hook_style": "number",
+  "score": 86,
+  "first_comment": "Would you take the ref job or the player job? 👇",
+  "hud_label": "REFEREE",
+  "visual_style": "lowpoly",
+  "status": "ready",
+  "hook_rules": "nov23",
+  "hero": {
+    "skin": "8a5a3c",
+    "hair": "buzz",
+    "hair_color": "1a120d",
+    "beard": "none",
+    "outfit": "tee",
+    "shirt": "111111",
+    "pants": "111111",
+    "shoes": "111111",
+    "chest": "REF",
+    "trim": "ffffff",
+    "socks": "111111",
+    "height": 1.0
+  },
+  "scenes": [
+    {
+      "narration": "Referees make about 40,710 dollars a year. But the median athlete makes 66,710.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "court",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": "$40,710",
+        "hero": {
+          "skin": "8a5a3c",
+          "hair": "buzz",
+          "hair_color": "1a120d",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "111111",
+          "pants": "111111",
+          "shoes": "111111",
+          "chest": "REF",
+          "trim": "ffffff",
+          "socks": "111111",
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "court",
+          "mood": "stern",
+          "things": [
+            "clock"
+          ],
+          "card": {
+            "text": "$40,710",
+            "kind": "screen",
+            "sub": "REFEREE, A YEAR"
+          },
+          "view": "ms"
+        },
+        {
+          "place": "court",
+          "mood": "shock",
+          "action": "shrug",
+          "who": {
+            "jacket": "#1d3f8f",
+            "pants": "#1d3f8f",
+            "boots": "#ffffff",
+            "hat": "hair",
+            "style": "short",
+            "hair": "#1a1a1a",
+            "skin": "#c68a5e",
+            "kit": "bball",
+            "num": "7",
+            "trim": "#ffffff"
+          },
+          "card": {
+            "text": "$66,710",
+            "kind": "screen",
+            "sub": "ATHLETE, A YEAR"
+          },
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "That's 26,000 dollars more than the referee.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "pitch",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": null,
+        "hero": {
+          "skin": "8a5a3c",
+          "hair": "buzz",
+          "hair_color": "1a120d",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "111111",
+          "pants": "111111",
+          "shoes": "111111",
+          "chest": "REF",
+          "trim": "ffffff",
+          "socks": "111111",
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "pitch",
+          "mood": "dazed",
+          "things": [
+            "chart"
+          ],
+          "card": {
+            "text": "+$26,000",
+            "kind": "screen",
+            "sub": "ATHLETES GET MORE"
+          },
+          "view": "wide"
+        }
+      ]
+    },
+    {
+      "narration": "Some referees earn under 26,540 dollars.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "diamond",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": null,
+        "hero": {
+          "skin": "8a5a3c",
+          "hair": "buzz",
+          "hair_color": "1a120d",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "111111",
+          "pants": "111111",
+          "shoes": "111111",
+          "chest": "REF",
+          "trim": "ffffff",
+          "socks": "111111",
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "diamond",
+          "mood": "sad",
+          "things": [
+            "arrowdown"
+          ],
+          "card": {
+            "text": "$26,540",
+            "kind": "screen",
+            "sub": "LOW END OF THE PAY"
+          },
+          "view": "ms"
+        }
+      ]
+    },
+    {
+      "narration": "Yet the best paid earn over 82,960 dollars.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "gridiron",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": null,
+        "hero": {
+          "skin": "8a5a3c",
+          "hair": "buzz",
+          "hair_color": "1a120d",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "111111",
+          "pants": "111111",
+          "shoes": "111111",
+          "chest": "REF",
+          "trim": "ffffff",
+          "socks": "111111",
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "gridiron",
+          "mood": "excited",
+          "things": [
+            "arrowup",
+            "trophy"
+          ],
+          "card": {
+            "text": "$82,960",
+            "kind": "screen",
+            "sub": "HIGH END OF THE PAY"
+          },
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "Only about 15,800 people do this job.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "rink",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": null,
+        "hero": {
+          "skin": "8a5a3c",
+          "hair": "buzz",
+          "hair_color": "1a120d",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "111111",
+          "pants": "111111",
+          "shoes": "111111",
+          "chest": "REF",
+          "trim": "ffffff",
+          "socks": "111111",
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "rink",
+          "mood": "calm",
+          "crowd": 30,
+          "card": {
+            "text": "15,780",
+            "kind": "screen",
+            "sub": "REFEREES IN THE US"
+          },
+          "view": "ws"
+        }
+      ]
+    }
+  ]
+}

@@ -3,15 +3,14 @@
   "slug": "how-netflix-blockbuster",
   "company": "Netflix",
   "format": "how",
-  "visual_style": "editorial",
+  "visual_style": "lowpoly",
   "hook_style": "number",
   "title_style": "number",
   "theme": "dark_neon",
-  "status": "draft",
+  "status": "ready",
   "score": 90,
   "title": "Blockbuster Passed on Netflix for $50 Million",
-  "tag": "Company backstory",
-  "description": "In 2000, blockbuster could have bought Netflix for 50 million dollars.\n\nSources:\n- Wikipedia: Netflix: https://en.wikipedia.org/wiki/Netflix\n- Wikipedia: Blockbuster LLC: https://en.wikipedia.org/wiki/Blockbuster_LLC\n\nFrom Wikipedia (Blockbuster LLC): in 2000 Blockbuster turned down a chance to buy the fledgling Netflix for $50 million; at its peak in 2004 it operated 9,094 stores; it filed for bankruptcy protection in 2010; one franchised store remains, in Bend, Oregon. From Wikipedia (Netflix): Netflix was founded by Marc Randolph and Reed Hastings as a DVD rental service on August 29, 1997; it introduced a monthly subscription in September 1999; in 2005 it shipped 1 million DVDs a day; streaming launched January 16, 2007; it has 325 million paid memberships as of 2026. Photos: Wikimedia Commons (credits below). Not financial advice.\n\n#shorts #netflix #blockbuster #streaming #howtheymakemoney",
+  "description": "In 2000, Blockbuster could have bought Netflix for 50 million dollars.\n\nSources:\n- Wikipedia: Netflix: https://en.wikipedia.org/wiki/Netflix\n- Wikipedia: Blockbuster LLC: https://en.wikipedia.org/wiki/Blockbuster_LLC\n\nFrom Wikipedia (Blockbuster LLC): in 2000 Blockbuster turned down a chance to buy the fledgling Netflix for $50 million; at its peak in 2004 it operated 9,094 stores; it filed for bankruptcy protection in 2010; one franchised store remains, in Bend, Oregon. From Wikipedia (Netflix): Netflix was founded by Marc Randolph and Reed Hastings as a DVD rental service on August 29, 1997; it introduced a monthly subscription in September 1999; in 2005 it shipped 1 million DVDs a day; streaming launched January 16, 2007; it has 325 million paid memberships as of 2026. Not financial advice.\n\n#shorts #netflix #blockbuster #streaming #howtheymakemoney",
   "tags": [
     "netflix",
     "blockbuster",
@@ -25,136 +24,240 @@
   "cta_question": "Streaming or a movie store?",
   "scenes": [
     {
-      "narration": "Blockbuster could have bought Netflix for 50 million dollars.",
+      "narration": "Blockbuster turned down Netflix for 50 million dollars.",
       "visual": {
-        "type": "editorial",
-        "layout": "stat",
+        "type": "lowpoly",
+        "set": "boardroom",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
         "stat": "$50M",
-        "stat_sub": "Netflix's price, 2000",
-        "label": "The offer",
-        "hud": "$50M"
-      }
-    },
-    {
-      "narration": "It passed. It had over 9,000 stores.",
-      "visual": {
-        "type": "editorial",
-        "layout": "stat",
-        "stat": "9,094",
-        "stat_sub": "Blockbuster stores, 2004",
-        "label": "The giant"
-      }
-    },
-    {
-      "narration": "Netflix just mailed DVDs. Two founders and a red envelope.",
-      "visual": {
-        "type": "editorial",
-        "layout": "cards",
-        "label": "The founders, 1997",
-        "people": [
-          {
-            "name": "Reed Hastings",
-            "photo": "File:Reed Hastings 2008 A.jpg",
-            "role": "Netflix co-founder"
+        "hero": {
+          "skin": "d9a577",
+          "hair": "short",
+          "hair_color": "2a1d14",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "1c2a5a",
+          "pants": "2b2f3a",
+          "shoes": "f4f4f4",
+          "chest": "",
+          "trim": "ffffff",
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "boardroom",
+          "mood": "stern",
+          "brand": {
+            "name": "Blockbuster",
+            "bg": "#0033a0",
+            "fg": "#ffd100",
+            "icon": "star"
           },
-          {
-            "name": "Marc Randolph",
-            "photo": "File:Marc Randolph by Gage Skidmore.jpg",
-            "role": "Netflix co-founder"
-          }
-        ]
-      }
-    },
-    {
-      "narration": "But it charged one monthly price. Then it started streaming.",
-      "visual": {
-        "type": "editorial",
-        "layout": "headline",
-        "headline": "One monthly price.",
-        "accent": "monthly"
-      }
-    },
-    {
-      "narration": "Blockbuster? It went bankrupt.",
-      "visual": {
-        "type": "editorial",
-        "layout": "timeline",
-        "points": [
-          [
-            "1999",
-            "monthly plan"
+          "things": [
+            "cash"
           ],
-          [
-            "2007",
-            "streaming"
-          ],
-          [
-            "2010",
-            "Blockbuster bankrupt"
-          ]
-        ]
-      }
+          "card": {
+            "text": "$50 MILLION",
+            "kind": "screen",
+            "sub": "NETFLIX'S PRICE"
+          },
+          "view": "ms"
+        }
+      ]
     },
     {
-      "narration": "Today, Netflix has 325 million paid members. Blockbuster has only one store.",
+      "narration": "But in 2000, Netflix was just a DVD rental service. By 2004, Blockbuster had 9,094 stores.",
       "visual": {
-        "type": "editorial",
-        "layout": "stat",
+        "type": "lowpoly",
+        "set": "garage",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": null,
+        "hero": {
+          "skin": "d9a577",
+          "hair": "short",
+          "hair_color": "2a1d14",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "1c2a5a",
+          "pants": "2b2f3a",
+          "shoes": "f4f4f4",
+          "chest": "",
+          "trim": "ffffff",
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "garage",
+          "mood": "excited",
+          "brand": {
+            "name": "Netflix",
+            "bg": "#111111",
+            "fg": "#e50914",
+            "icon": "play"
+          },
+          "things": [
+            "box"
+          ],
+          "card": {
+            "text": "2000",
+            "kind": "flip",
+            "sub": "YEAR"
+          },
+          "view": "ms"
+        },
+        {
+          "place": "street",
+          "mood": "proud",
+          "crowd": 60,
+          "card": {
+            "text": "9,094 STORES",
+            "kind": "screen",
+            "sub": "BLOCKBUSTER, 2004"
+          },
+          "view": "wide"
+        }
+      ]
+    },
+    {
+      "narration": "But in 2007, Netflix started streaming.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "lab",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": null,
+        "hero": {
+          "skin": "d9a577",
+          "hair": "short",
+          "hair_color": "2a1d14",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "1c2a5a",
+          "pants": "2b2f3a",
+          "shoes": "f4f4f4",
+          "chest": "",
+          "trim": "ffffff",
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "lab",
+          "mood": "excited",
+          "action": "type",
+          "things": [
+            "tv",
+            "laptop"
+          ],
+          "card": {
+            "text": "2007",
+            "kind": "flip",
+            "sub": "STREAMING"
+          },
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "Then Blockbuster went bankrupt in 2010.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "graveyard",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": null,
+        "hero": {
+          "skin": "d9a577",
+          "hair": "short",
+          "hair_color": "2a1d14",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "1c2a5a",
+          "pants": "2b2f3a",
+          "shoes": "f4f4f4",
+          "chest": "",
+          "trim": "ffffff",
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "graveyard",
+          "mood": "sad",
+          "card": {
+            "text": "2010",
+            "kind": "tomb",
+            "sub": "BLOCKBUSTER, BANKRUPT"
+          },
+          "view": "face"
+        }
+      ]
+    },
+    {
+      "narration": "Now Netflix has 325 million paid members. Blockbuster has one store left.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "stall",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
         "stat": "325M",
-        "stat_sub": "Netflix paid memberships, 2026",
-        "label": "The scoreboard",
-        "hud": "325M"
-      }
-    }
-  ],
-  "photos": [
-    {
-      "photo": "File:Reed Hastings 2010 A.jpg",
-      "caption": "Reed Hastings, 2010"
-    },
-    {
-      "photo": "File:Marc Randolph (34127210976).jpg",
-      "caption": "Marc Randolph"
-    },
-    {
-      "photo": "File:Video rental shop - The News Tribune (1985).jpg",
-      "caption": "A video rental shop, 1985"
-    },
-    {
-      "photo": "File:Anchorage Blockbuster video store (41894010352).jpg",
-      "caption": "A Blockbuster store"
-    },
-    {
-      "photo": "File:Blockbuster Video store Rockhampton.jpg",
-      "caption": "Blockbuster, Australia"
-    },
-    {
-      "photo": "File:Video shop in Iowa, USA -- 2006-11.jpg",
-      "caption": "A video shop, 2006"
-    },
-    {
-      "photo": "File:Netflix headquarters.jpg",
-      "caption": "Netflix headquarters"
-    },
-    {
-      "photo": "File:100 Winchester Circle.jpg",
-      "caption": "Netflix offices, Los Gatos"
-    },
-    {
-      "photo": "File:Blockbuster Store Closing, Ypsilanti Township, Michigan.JPG",
-      "caption": "A store closing, Michigan"
-    },
-    {
-      "photo": "File:Blockbuster Video closing sale -01- (9719273998).jpg",
-      "caption": "Closing sale"
-    },
-    {
-      "photo": "File:The Last Blockbuster storefront.jpg",
-      "caption": "The last Blockbuster, Bend, Oregon"
-    },
-    {
-      "photo": "File:Exterior of last Blockbuster Video.jpg",
-      "caption": "The last one left"
+        "hero": {
+          "skin": "d9a577",
+          "hair": "short",
+          "hair_color": "2a1d14",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "1c2a5a",
+          "pants": "2b2f3a",
+          "shoes": "f4f4f4",
+          "chest": "",
+          "trim": "ffffff",
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "throne",
+          "mood": "laugh",
+          "brand": {
+            "name": "Netflix",
+            "bg": "#111111",
+            "fg": "#e50914",
+            "icon": "play"
+          },
+          "card": {
+            "text": "325 MILLION",
+            "kind": "screen",
+            "sub": "NETFLIX MEMBERS"
+          },
+          "view": "ms"
+        },
+        {
+          "place": "stall",
+          "mood": "dazed",
+          "brand": {
+            "name": "Blockbuster",
+            "bg": "#0033a0",
+            "fg": "#ffd100",
+            "icon": "star"
+          },
+          "card": {
+            "text": "1 STORE",
+            "kind": "sign",
+            "sub": "BEND, OREGON"
+          },
+          "view": "face"
+        }
+      ]
     }
   ],
   "sources": [
@@ -167,5 +270,19 @@
       "url": "https://en.wikipedia.org/wiki/Blockbuster_LLC"
     }
   ],
-  "paused": "Nov 15 2026, Sam: drop the 'how' and 'careers' formats (median 21 / 18 views at 48 h vs 781 for famous)"
+  "first_comment": "Would you have said yes to the 50 million dollar deal? 👇",
+  "hook_rules": "nov23",
+  "hero": {
+    "skin": "d9a577",
+    "hair": "short",
+    "hair_color": "2a1d14",
+    "beard": "none",
+    "outfit": "tee",
+    "shirt": "1c2a5a",
+    "pants": "2b2f3a",
+    "shoes": "f4f4f4",
+    "chest": "",
+    "trim": "ffffff",
+    "height": 1.0
+  }
 }

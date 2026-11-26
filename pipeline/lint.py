@@ -178,7 +178,7 @@ def lint(s: dict) -> tuple[list[str], list[str]]:
         need = min(10, int(est / 1.4 / 2))  # photo beats past the pool become slam cards, never repeats
         if len(pics) < need:
             warn.append(f"only {len(pics)} photos for ~{need} photo beats (add to `photos`; no repeats)")
-    if s.get("visual_style") == "lowpoly" and s.get("format") not in ("whatif", "famous", "story", "pov"):
+    if s.get("visual_style") == "lowpoly" and s.get("format") not in ("whatif", "famous", "story", "pov", "how", "careers"):
         warn.append("low-poly is meant for whatif / famous Shorts")
     if s.get("status") == "ready" and s.get("visual_style") not in ("lowpoly", "editorial"):
         imgs = s.get("images", {})

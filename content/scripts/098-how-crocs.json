@@ -3,13 +3,13 @@
   "slug": "how-crocs",
   "company": "Crocs",
   "format": "how",
-  "visual_style": "charts3d",
-  "hook_style": "surprise",
+  "visual_style": "lowpoly",
+  "hook_style": "number",
   "title_style": "number",
   "theme": "bold_bright",
-  "status": "draft",
+  "status": "ready",
   "score": 86,
-  "title": "From '50 Worst Inventions' to $4.1 Billion",
+  "title": "'50 Worst Inventions' Made $4.1 Billion",
   "description": "Time magazine called Crocs one of the 50 worst inventions.\n\nSources:\n- Wikipedia: Crocs: https://en.wikipedia.org/wiki/Crocs\n\nFrom Wikipedia (Crocs): founded in 2002; its first model, the Beach, was unveiled at the Fort Lauderdale Boat Show in 2002 and all 200 pairs sold out; during the 2008 financial crisis the stock dropped as low as $0.79 before rebounding; Time magazine listed Crocs among the world's \"50 Worst Inventions\" in 2010; Crocs had sold 300 million pairs by 2017; revenue was US$4.102 billion in 2024. Not financial advice.\n\n#shorts #crocs #shoes #business #howtheymakemoney",
   "tags": [
     "crocs",
@@ -40,52 +40,221 @@
   "cta_question": "Crocs or sneakers?",
   "scenes": [
     {
-      "narration": "Time magazine called Crocs one of the 50 worst inventions.",
+      "narration": "Time ranked Crocs among the 50 worst inventions.",
       "visual": {
-        "type": "image",
-        "image": "hook",
-        "overlay": "WORST INVENTION?",
-        "overlay_sub": "Time magazine, 2010"
-      }
+        "type": "lowpoly",
+        "set": "stall",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": null,
+        "hero": {
+          "skin": "c68a5e",
+          "hair": "short",
+          "hair_color": "2a1d14",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "2e8b57",
+          "pants": "2b2f3a",
+          "shoes": "7ed957",
+          "chest": "",
+          "trim": "ffffff",
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "stall",
+          "mood": "dazed",
+          "things": [
+            "shoe",
+            "newspaper"
+          ],
+          "brand": {
+            "name": "Crocs",
+            "bg": "#2e8b57",
+            "fg": "#ffffff",
+            "icon": "star"
+          },
+          "card": {
+            "text": "50 WORST INVENTIONS",
+            "kind": "paper",
+            "sub": "TIME MAGAZINE"
+          },
+          "view": "ms"
+        }
+      ]
     },
     {
-      "narration": "Yet the company now sells about 4.1 billion dollars a year.",
+      "narration": "But in 2024, Crocs made 4.1 billion dollars.",
       "visual": {
-        "type": "stat",
-        "value": 4.1,
-        "prefix": "$",
-        "suffix": "B",
-        "decimals": 1,
-        "label": "Crocs, Inc. revenue, 2024"
-      }
+        "type": "lowpoly",
+        "set": "mansion",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": "$4.1B",
+        "hero": {
+          "skin": "c68a5e",
+          "hair": "short",
+          "hair_color": "2a1d14",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "2e8b57",
+          "pants": "2b2f3a",
+          "shoes": "7ed957",
+          "chest": "",
+          "trim": "ffffff",
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "mansion",
+          "mood": "shock",
+          "beat": "money",
+          "card": {
+            "text": "$4.1 BILLION",
+            "kind": "screen",
+            "sub": "CROCS, 2024"
+          },
+          "view": "face"
+        }
+      ]
     },
     {
-      "narration": "It began at a boat show. All 200 pairs sold out.",
+      "narration": "It began in 2002 at a boat show. All 200 pairs sold out.",
       "visual": {
-        "type": "image",
-        "image": "mid",
-        "overlay": "200 PAIRS",
-        "overlay_sub": "sold out, 2002 boat show"
-      }
+        "type": "lowpoly",
+        "set": "street",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": null,
+        "hero": {
+          "skin": "c68a5e",
+          "hair": "short",
+          "hair_color": "2a1d14",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "2e8b57",
+          "pants": "2b2f3a",
+          "shoes": "7ed957",
+          "chest": "",
+          "trim": "ffffff",
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "street",
+          "mood": "excited",
+          "things": [
+            "yacht",
+            "shoe"
+          ],
+          "card": {
+            "text": "2002",
+            "kind": "flip",
+            "sub": "BOAT SHOW"
+          },
+          "view": "wide",
+          "crowd": 40
+        },
+        {
+          "place": "stall",
+          "mood": "laugh",
+          "things": [
+            "shoe",
+            "boxes"
+          ],
+          "card": {
+            "text": "200 PAIRS",
+            "kind": "screen",
+            "sub": "ALL SOLD OUT"
+          },
+          "view": "ms"
+        }
+      ]
     },
     {
-      "narration": "Then a crash hit. The stock fell under a dollar.",
+      "narration": "Then, in 2008, its stock fell to 79 cents.",
       "visual": {
-        "type": "stat",
-        "value": 0.79,
-        "prefix": "$",
-        "suffix": "",
-        "decimals": 2,
-        "label": "Crocs stock low, 2008 crisis"
-      }
+        "type": "lowpoly",
+        "set": "boardroom",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": null,
+        "hero": {
+          "skin": "c68a5e",
+          "hair": "short",
+          "hair_color": "2a1d14",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "2e8b57",
+          "pants": "2b2f3a",
+          "shoes": "7ed957",
+          "chest": "",
+          "trim": "ffffff",
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "boardroom",
+          "mood": "sad",
+          "things": [
+            "arrowdown"
+          ],
+          "card": {
+            "text": "$0.79",
+            "kind": "screen",
+            "sub": "CROCS STOCK, 2008"
+          },
+          "view": "face"
+        }
+      ]
     },
     {
-      "narration": "But people kept buying. 300 million pairs.",
+      "narration": "But by 2017, it sold 300 million pairs.",
       "visual": {
-        "type": "text",
-        "text": "300 million pairs",
-        "sub": "sold by 2017"
-      }
+        "type": "lowpoly",
+        "set": "factory",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": null,
+        "hero": {
+          "skin": "c68a5e",
+          "hair": "short",
+          "hair_color": "2a1d14",
+          "beard": "none",
+          "outfit": "tee",
+          "shirt": "2e8b57",
+          "pants": "2b2f3a",
+          "shoes": "7ed957",
+          "chest": "",
+          "trim": "ffffff",
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "factory",
+          "mood": "proud",
+          "things": [
+            "shoe",
+            "boxes"
+          ],
+          "card": {
+            "text": "300 MILLION",
+            "kind": "screen",
+            "sub": "PAIRS BY 2017"
+          },
+          "view": "face"
+        }
+      ]
     }
   ],
   "sources": [
@@ -94,5 +263,20 @@
       "url": "https://en.wikipedia.org/wiki/Crocs"
     }
   ],
-  "paused": "Nov 15 2026, Sam: drop the 'how' and 'careers' formats (median 21 / 18 views at 48 h vs 781 for famous)"
+  "first_comment": "Crocs: ugly or iconic? Be honest 👇",
+  "hud_label": "CROCS",
+  "hook_rules": "nov23",
+  "hero": {
+    "skin": "c68a5e",
+    "hair": "short",
+    "hair_color": "2a1d14",
+    "beard": "none",
+    "outfit": "tee",
+    "shirt": "2e8b57",
+    "pants": "2b2f3a",
+    "shoes": "7ed957",
+    "chest": "",
+    "trim": "ffffff",
+    "height": 1.0
+  }
 }

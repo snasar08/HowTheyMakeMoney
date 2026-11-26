@@ -3,14 +3,14 @@
   "slug": "careers-orthodontists",
   "company": "Orthodontists",
   "format": "careers",
-  "visual_style": "charts3d",
+  "visual_style": "lowpoly",
   "hook_style": "number",
   "title_style": "number",
   "theme": "clean_navy",
-  "status": "draft",
+  "status": "ready",
   "score": 87,
   "title": "$289,140 a Year to Straighten Teeth",
-  "description": "Orthodontists make 289,140 dollars a year. That's the median.\n\nSources:\n- BLS OEWS via api.bls.gov: Orthodontists 29-1023, annual median wage, May 2025: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000029102313\n- BLS OEWS via api.bls.gov: Orthodontists, 10th percentile: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000029102311\n- BLS OEWS via api.bls.gov: Orthodontists, 90th percentile: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000029102315\n- BLS OEWS via api.bls.gov: Orthodontists, employment: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000029102301\n- BLS OEWS via api.bls.gov: Dentists, general 29-1021, annual median wage: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000029102113\n- BLS OEWS via api.bls.gov: Airline pilots 53-2011, annual median wage: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000053201113\n\nFrom the US Bureau of Labor Statistics, Occupational Employment and Wage Statistics, May 2025 (api.bls.gov): orthodontists' annual median wage $289,140, 10th percentile $99,850, 90th percentile $416,000, employment 6,210; general dentists' median $170,950; airline pilots' median $232,140. Not financial advice.\n\n#shorts #orthodontist #braces #careers #howtheymakemoney",
+  "description": "Orthodontists make 289,140 dollars a year (the median). Our math: 289,140 - 232,140 = 57,000 dollars less for pilots.\n\nSources:\n- BLS OEWS via api.bls.gov: Orthodontists 29-1023, annual median wage, May 2025: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000029102313\n- BLS OEWS via api.bls.gov: Orthodontists, 10th percentile: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000029102311\n- BLS OEWS via api.bls.gov: Orthodontists, 90th percentile: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000029102315\n- BLS OEWS via api.bls.gov: Orthodontists, employment: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000029102301\n- BLS OEWS via api.bls.gov: Dentists, general 29-1021, annual median wage: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000029102113\n- BLS OEWS via api.bls.gov: Airline pilots 53-2011, annual median wage: https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000053201113\n\nFrom the US Bureau of Labor Statistics, Occupational Employment and Wage Statistics, May 2025 (api.bls.gov): orthodontists' annual median wage $289,140, 10th percentile $99,850, 90th percentile $416,000, employment 6,210; general dentists' median $170,950; airline pilots' median $232,140. Not financial advice.\n\n#shorts #orthodontist #braces #careers #howtheymakemoney",
   "tags": [
     "orthodontist",
     "braces",
@@ -36,68 +36,227 @@
     }
   },
   "loop": "So next time you see braces, remember:",
-  "cta": "Orthodontist or pilot? Comment which job you'd pick.",
+  "cta": "Orthodontist or pilot? Comment your pick.",
   "cta_question": "Orthodontist or pilot?",
   "scenes": [
     {
-      "narration": "Orthodontists make about 289,000 dollars a year. That's the median.",
+      "narration": "Orthodontists make 289,140 dollars a year. But airline pilots make about 57,000 dollars less.",
       "visual": {
-        "type": "image",
-        "image": "hook",
-        "overlay": "$289,140",
-        "overlay_sub": "a year, to straighten teeth"
-      }
-    },
-    {
-      "narration": "That's more than airline pilots. And way more than dentists.",
-      "visual": {
-        "type": "bars",
-        "items": [
-          {
-            "label": "Orthodontists",
-            "value": 289.1
+        "type": "lowpoly",
+        "set": "mansion",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": "$289,140",
+        "hero": {
+          "skin": "d9a577",
+          "hair": "short",
+          "hair_color": "2a1d14",
+          "beard": "none",
+          "outfit": "suit",
+          "shirt": "e8f1f8",
+          "pants": "2b2f3a",
+          "shoes": "2b2f3a",
+          "chest": "",
+          "trim": "4aa3df",
+          "extras": [
+            "glasses"
+          ],
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "mansion",
+          "mood": "proud",
+          "beat": "money",
+          "card": {
+            "text": "$289,140",
+            "kind": "screen",
+            "sub": "ORTHODONTIST, A YEAR"
           },
-          {
-            "label": "Pilots",
-            "value": 232.1
+          "view": "ms"
+        },
+        {
+          "place": "track",
+          "mood": "shock",
+          "things": [
+            "plane"
+          ],
+          "card": {
+            "text": "$232,140",
+            "kind": "screen",
+            "sub": "AIRLINE PILOT, A YEAR"
           },
-          {
-            "label": "Dentists",
-            "value": 171.0
-          }
-        ],
-        "prefix": "$",
-        "suffix": "K",
-        "title": "Median pay, May 2025"
-      }
+          "view": "face"
+        }
+      ]
     },
     {
-      "narration": "The top ten percent? Around 416,000 dollars a year.",
+      "narration": "Yet regular dentists make only 170,950 dollars.",
       "visual": {
-        "type": "stat",
-        "value": 416000,
-        "prefix": "$",
-        "suffix": "",
-        "decimals": 0,
-        "label": "Top 10% of orthodontists, May 2025"
-      }
+        "type": "lowpoly",
+        "set": "classroom",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": null,
+        "hero": {
+          "skin": "d9a577",
+          "hair": "short",
+          "hair_color": "2a1d14",
+          "beard": "none",
+          "outfit": "suit",
+          "shirt": "e8f1f8",
+          "pants": "2b2f3a",
+          "shoes": "2b2f3a",
+          "chest": "",
+          "trim": "4aa3df",
+          "extras": [
+            "glasses"
+          ],
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "classroom",
+          "mood": "calm",
+          "things": [
+            "chart"
+          ],
+          "card": {
+            "text": "$170,950",
+            "kind": "screen",
+            "sub": "DENTIST, A YEAR"
+          },
+          "view": "face"
+        }
+      ]
     },
     {
-      "narration": "Even the lowest paid earn almost 100,000 dollars.",
+      "narration": "Then the best paid earn over 416,000 dollars a year.",
       "visual": {
-        "type": "image",
-        "image": "mid",
-        "overlay": "$99,850",
-        "overlay_sub": "the bottom 10% line"
-      }
+        "type": "lowpoly",
+        "set": "throne",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": null,
+        "hero": {
+          "skin": "d9a577",
+          "hair": "short",
+          "hair_color": "2a1d14",
+          "beard": "none",
+          "outfit": "suit",
+          "shirt": "e8f1f8",
+          "pants": "2b2f3a",
+          "shoes": "2b2f3a",
+          "chest": "",
+          "trim": "4aa3df",
+          "extras": [
+            "glasses"
+          ],
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "throne",
+          "mood": "excited",
+          "things": [
+            "trophy"
+          ],
+          "card": {
+            "text": "$416,000",
+            "kind": "screen",
+            "sub": "THE BEST PAID"
+          },
+          "view": "wide"
+        }
+      ]
     },
     {
-      "narration": "But it's a tiny club. Only about 6,200 in the whole country.",
+      "narration": "Even the lowest paid start near 100,000 dollars.",
       "visual": {
-        "type": "text",
-        "text": "6,210 jobs",
-        "sub": "orthodontists, May 2025"
-      }
+        "type": "lowpoly",
+        "set": "office",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": null,
+        "hero": {
+          "skin": "d9a577",
+          "hair": "short",
+          "hair_color": "2a1d14",
+          "beard": "none",
+          "outfit": "suit",
+          "shirt": "e8f1f8",
+          "pants": "2b2f3a",
+          "shoes": "2b2f3a",
+          "chest": "",
+          "trim": "4aa3df",
+          "extras": [
+            "glasses"
+          ],
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "office",
+          "mood": "relief",
+          "things": [
+            "coins"
+          ],
+          "card": {
+            "text": "$99,850",
+            "kind": "screen",
+            "sub": "THE LOWEST PAID"
+          },
+          "view": "ms"
+        }
+      ]
+    },
+    {
+      "narration": "But it's a tiny club of only about 6,200 people.",
+      "visual": {
+        "type": "lowpoly",
+        "set": "stage",
+        "action": "idle",
+        "crowd": 0,
+        "props": [],
+        "stat": null,
+        "hero": {
+          "skin": "d9a577",
+          "hair": "short",
+          "hair_color": "2a1d14",
+          "beard": "none",
+          "outfit": "suit",
+          "shirt": "e8f1f8",
+          "pants": "2b2f3a",
+          "shoes": "2b2f3a",
+          "chest": "",
+          "trim": "4aa3df",
+          "extras": [
+            "glasses"
+          ],
+          "height": 1.0
+        }
+      },
+      "toon": [
+        {
+          "place": "stage",
+          "mood": "dazed",
+          "crowd": 6,
+          "card": {
+            "text": "6,210",
+            "kind": "screen",
+            "sub": "ORTHODONTISTS IN THE US"
+          },
+          "view": "face"
+        }
+      ]
     }
   ],
   "sources": [
@@ -126,5 +285,23 @@
       "url": "https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000053201113"
     }
   ],
-  "paused": "Nov 15 2026, Sam: drop the 'how' and 'careers' formats (median 21 / 18 views at 48 h vs 781 for famous)"
+  "first_comment": "Would you pick braces money or pilot money? 👇",
+  "hud_label": "ORTHODONTIST",
+  "hook_rules": "nov23",
+  "hero": {
+    "skin": "d9a577",
+    "hair": "short",
+    "hair_color": "2a1d14",
+    "beard": "none",
+    "outfit": "suit",
+    "shirt": "e8f1f8",
+    "pants": "2b2f3a",
+    "shoes": "2b2f3a",
+    "chest": "",
+    "trim": "4aa3df",
+    "extras": [
+      "glasses"
+    ],
+    "height": 1.0
+  }
 }

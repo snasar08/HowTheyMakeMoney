@@ -155,3 +155,4 @@ clearly different angle, new figures, a new hook, new B-roll and a different sce
 179 | Gift cards (pov) | POV: toss a gift card in a drawer; where $27B of unused cards sits | $27B, 43%, $244 average, $100 median, $142 Gen Z (Bankrate Sept 2024), Walmart/Starbucks over $1B on books
 180 | AMC (pov) | POV: buy movie snacks; snack costs only 19.6c per dollar, $1.34B left, about 111M tickets | $1,671.3M snack sales, $327.0M costs (2025), $8.57 US per patron, $12.09 ticket, 219.4M guests
 181 | Spotify (pov) | POV: pay your bill; almost 70% passes on, scaled to per day and per second (new angle vs 004: 2025 payouts, not the label split) | $12.99/mo, almost 70%, over $11B paid in 2025, over $30M a day, over $340 a second
+182 | Referees (careers) | refs earn less than the median athlete | $40,710 median, $26,540 / $82,960, 15,780 jobs, athletes $66,710 (BLS May 2025)

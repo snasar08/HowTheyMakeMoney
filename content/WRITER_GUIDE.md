@@ -5,7 +5,7 @@ existing NNN + 1. The nightly job renders and posts `status: "ready"` scripts. Q
 run short, push fewer good scripts. Never pad.
 
 ## 1. What to write now
-Formats allowed: `famous`, `whatif`, `story`. Do NOT write `how` or `careers` (paused by Sam: no views).
+Formats allowed: `famous`, `whatif`, `story`, `pov`. `how` and `careers` are not planned as new topics (Nov 15: no views) but stay in the share rotation: convert their drafts to the new look (`lowpoly`, `hook_rules: nov23`, per-sentence `toon`, narration ~50 words) so they keep posting (Nov 26: 093, 096, 098, 182).
 - Mix per part: about 2 in 3 `famous` athletes / big names, about 1 in 3 `story`, the odd `whatif`.
 - `famous`: one real person's sourced, dated money or record story, second person or plain narration, a `hero`.
 - `whatif`: an absurd scenario on ONE real number ("one cashier serves every McDonald's customer in a day").
