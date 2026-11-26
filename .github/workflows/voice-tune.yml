@@ -30,4 +30,4 @@ jobs:
           grep -v -i warn tune.log | tail -40 > tune$R-tail.log
           cd v 2>/dev/null && for f in *.wav; do ffmpeg -loglevel error -y -i "$f" -b:a 160k "tune$R-${f%.wav}.mp3"; done
           cd - >/dev/null; cp v/scores.json tune$R-scores.json 2>/dev/null || true
-          gh release upload voice-pick tune$R-tail.log tune$R-scores.json v/tune$R-*.mp3 --clobber
+          for f in tune$R-tail.log tune$R-scores.json v/tune$R-*.mp3; do [ -f "$f" ] && gh release upload voice-pick "$f" --clobber; done || true
