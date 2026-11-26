@@ -323,14 +323,56 @@ def with_punctuation(line: str, words):
     return words
 
 
+def eleven_stream(text: str, voice: str | None = None):
+    """`text` in ONE ElevenLabs call (pipeline/eleven.py: cached by hash, quota checked first) -> (float32 mono, 24000,
+    [(word, start_s, end_s)], characters billed). Raises eleven.ElevenError on any API problem."""
+    import tempfile
+
+    from . import eleven
+    mp3, words, used, _cached = eleven.synth(text, tts.VOICE_CACHE, voice)
+    f = tempfile.mktemp(suffix=".mp3")
+    try:
+        Path(f).write_bytes(mp3)
+        a = _decode_mp3(f)
+    finally:
+        if os.path.exists(f):
+            os.unlink(f)
+    if len(a) <= 2400:
+        raise eleven.ElevenError("empty audio")
+    return a, 24000, words, used
+
+
+def _voice_groups(groups: list[list[str]], engine: str):
+    """Voice each group of lines in one call -> ([(line, audio, words)], sr, characters billed)."""
+    out, used, sr = [], 0, 24000
+    for grp in groups:
+        if engine == "eleven":
+            a, sr, words, n = eleven_stream(tts.flow_join(grp))
+            used += n
+        else:
+            a, sr, words = edge_stream(tts.flow_join(grp), tts.edge_rate_for())
+        pieces = [(a, words)] if len(grp) == 1 else cut_lines(grp, a, sr, words)
+        if pieces is None:
+            print("[prepass] could not match words to lines; voicing line by line", flush=True)
+            if engine == "eleven":
+                pieces = [(p[0], p[2]) for p in (eleven_stream(x) for x in grp)]
+            else:
+                pieces = [(p[0], p[2]) for p in (edge_stream(x, tts.edge_rate_for()) for x in grp)]
+        out += [(line, pa, pw) for line, (pa, pw) in zip(grp, pieces)]
+    return out, sr, used
+
+
 def edge_pass(ids: list[str]) -> int:
-    """Voice every line of the Short(s) with Edge neural TTS (FLOW_SCOPE=short: the whole narration in ONE call;
-    =line: one call per line). No splitting into sentences: the voice keeps its own melody and natural pauses.
-    Word timings are the service's WordBoundary events. Cheap, deterministic, no daily quota."""
+    """Voice every line of the Short(s) with the flow engine: ElevenLabs when VOICE_SOURCE=eleven (key present), else Edge
+    neural TTS. FLOW_SCOPE=short: the whole narration in ONE call; =line: one call per line. No splitting into sentences:
+    the voice keeps its own melody and natural pauses. Word timings come from the service (Edge WordBoundary events /
+    ElevenLabs character alignment). If ElevenLabs fails for a Short (quota, 401, 429, any error) that Short is voiced
+    by Edge instead, so posting never stops; a Short never mixes the two voices."""
     import soundfile as sf
     os.makedirs(tts.VOICE_CACHE, exist_ok=True)
     asr, seen = None, set()
     fails = 0
+    eleven_ok = tts.VOICE_SOURCE == "eleven"
     for sid in ids:
         path = next((ROOT / "content" / "scripts").glob(f"{sid}*.json"), None)
         if not path:
@@ -342,38 +384,45 @@ def edge_pass(ids: list[str]) -> int:
         if not todo:
             continue
         groups = [todo] if tts.FLOW_SCOPE == "short" else [[x] for x in todo]
-        for grp in groups:
+        voiced, sr, engine = None, 24000, "edge"
+        if eleven_ok:
             try:
-                a, sr, words = edge_stream(tts.flow_join(grp), tts.edge_rate_for())
-                pieces = [(a, words)] if len(grp) == 1 else cut_lines(grp, a, sr, words)
-                if pieces is None:
-                    print("[prepass] could not match words to lines; voicing line by line", flush=True)
-                    pieces = [(p[0], p[2]) for p in (edge_stream(x, tts.edge_rate_for()) for x in grp)]
+                voiced, sr, used = _voice_groups(groups, "eleven")
+                engine = "eleven"
+                print(f"::notice title=eleven::Short {sid}: {used} characters billed ({sum(len(x) for x in todo)} in the script)", flush=True)
+            except Exception as e:  # noqa: BLE001   (ElevenError, network, decode ...)
+                print(f"::warning title=eleven::Short {sid}: ElevenLabs failed ({str(e)[:200]}); using Edge Andrew for this Short", flush=True)
+                voiced = None
+        if voiced is None:
+            try:
+                voiced, sr, _ = _voice_groups(groups, "edge")
             except Exception as e:  # noqa: BLE001
                 fails += 1
                 print(f"::warning title=voice::edge-tts: {str(e)[:200]}", flush=True)
                 continue
-            for line, (pa, pw) in zip(grp, pieces):
-                seen.add(line)
-                try:   # flag unclear words (a note only: Edge reads the same text the same way, a retake would not change it)
-                    import whisper
-                    asr = asr or whisper.load_model("base.en")
-                    a16 = np.interp(np.linspace(0, len(pa) - 1, int(len(pa) * 16000 / sr)), np.arange(len(pa)), pa).astype(np.float32)
-                    heard = [x for seg in asr.transcribe(a16, language="en", word_timestamps=True, fp16=False)["segments"]
-                             for x in seg.get("words", [])]
-                    bad = [x for x in problems(line, heard) if not x.startswith("rushed:")]
-                    if bad:
-                        print(f"[prepass] edge flagged {bad[:3]}: {line[:60]}", flush=True)
-                except Exception as e:  # noqa: BLE001
-                    print(f"[prepass] clarity note skipped: {e!r}", flush=True)
-                sf.write(tts.flow_path(line) + ".wav", pa, sr)
-                Path(tts.flow_path(line) + ".json").write_text(json.dumps(with_punctuation(line, pw)), encoding="utf-8")
-    print(f"::notice title=voice::Edge {tts.EDGE_VOICE} ({tts.FLOW_TAG}, {tts.FLOW_SCOPE}): {len(seen)} line(s) voiced, {fails} failed", flush=True)
+        for line, pa, pw in voiced:
+            seen.add(line)
+            try:   # flag unclear words (a note only: the same text is read the same way, a retake would not change it)
+                import whisper
+                asr = asr or whisper.load_model("base.en")
+                a16 = np.interp(np.linspace(0, len(pa) - 1, int(len(pa) * 16000 / sr)), np.arange(len(pa)), pa).astype(np.float32)
+                heard = [x for seg in asr.transcribe(a16, language="en", word_timestamps=True, fp16=False)["segments"]
+                         for x in seg.get("words", [])]
+                bad = [x for x in problems(line, heard) if not x.startswith("rushed:")]
+                if bad:
+                    print(f"[prepass] {engine} flagged {bad[:3]}: {line[:60]}", flush=True)
+            except Exception as e:  # noqa: BLE001
+                print(f"[prepass] clarity note skipped: {e!r}", flush=True)
+            sf.write(tts.flow_path(line) + ".wav", pa, sr)
+            Path(tts.flow_path(line) + ".json").write_text(json.dumps(with_punctuation(line, pw)), encoding="utf-8")
+    from . import eleven
+    who = f"ElevenLabs {eleven.voice_id()} (fallback Edge {tts.EDGE_VOICE})" if eleven_ok else f"Edge {tts.EDGE_VOICE}"
+    print(f"::notice title=voice::{who} ({tts.FLOW_TAG}, {tts.FLOW_SCOPE}): {len(seen)} line(s) voiced, {fails} failed", flush=True)
     return 1 if fails else 0
 
 
 def main(ids: list[str]) -> int:
-    if tts.VOICE_SOURCE == "edge":
+    if tts.VOICE_SOURCE in tts.FLOW_SOURCES:
         return edge_pass(ids)
     import soundfile as sf
     import torch

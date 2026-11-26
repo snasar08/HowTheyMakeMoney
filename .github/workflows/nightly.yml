@@ -88,6 +88,11 @@ jobs:
           pip install -q -U openai-whisper soundfile numpy edge-tts   # Nov 26: Edge neural voice is the default
           [ "${VOICE_SOURCE:-edge}" = edge ] || pip install -q -U qwen-tts
       - run: python -m pipeline.voice_prepass ${{ matrix.id }}
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}   # Nov 26: ElevenLabs voice when set (only this step sees it); else Edge Andrew
+          ELEVEN_VOICE_ID: ${{ vars.ELEVEN_VOICE_ID || 'pNInz6obpgDQGcFmaJgB' }}   # Adam; Brian = nPczCjzI2devNBz1zQrb
+          ELEVEN_MODEL: ${{ vars.ELEVEN_MODEL }}
+          ELEVEN_SPEED: ${{ vars.ELEVEN_SPEED }}
       - uses: actions/upload-artifact@v4
         with:
           name: voice-${{ matrix.id }}
