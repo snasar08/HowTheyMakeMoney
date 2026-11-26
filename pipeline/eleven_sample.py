@@ -27,15 +27,19 @@ def main(out: str, ids: list[str]) -> int:
             continue
         script = json.loads(path.read_text(encoding="utf-8"))
         text = tts.flow_join([tts.speakable(x) for x in voice_prepass.lines_for(script) if x.strip()])
+        want = [v for v in os.environ.get("ELEVEN_SAMPLE_VOICES", "").split(",") if v.strip()]
+        tag = "" if not os.environ.get("ELEVEN_MODEL") or "multilingual" in eleven.model_id() else "-" + eleven.model_id().split("_")[1]
         for name, vid in eleven.VOICES.items():
+            if want and name not in want:
+                continue
             try:
                 mp3, words, used, cached = eleven.synth(text, cache, vid)
             except eleven.ElevenError as e:
                 failed += 1
                 print(f"::warning title=eleven-sample::{sid} {name}: {str(e)[:200]}")
                 continue
-            (Path(out) / f"{sid}-{name}.mp3").write_bytes(mp3)
-            (Path(out) / f"{sid}-{name}.json").write_text(json.dumps({"voice_id": vid, "voice": name, "model": eleven.model_id(),
+            (Path(out) / f"{sid}-{name}{tag}.mp3").write_bytes(mp3)
+            (Path(out) / f"{sid}-{name}{tag}.json").write_text(json.dumps({"voice_id": vid, "voice": name, "model": eleven.model_id(),
                                                                        "settings": eleven.settings(), "text": text, "words": words}), encoding="utf-8")
             total += used
             print(f"{sid} {name}: {len(text)} chars, {'cached' if cached else 'billed ' + str(used)}, {len(words)} words")
