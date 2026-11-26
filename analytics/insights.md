@@ -1,6 +1,6 @@
-# Insights (2026-11-25)
+# Insights (2026-11-26)
 
-Shorts with stats: **88**. A comparison needs at least 10 Shorts per group before it counts as a finding; anything smaller is an early signal only.
+Shorts with stats: **90**. A comparison needs at least 10 Shorts per group before it counts as a finding; anything smaller is an early signal only.
 
 ## Best and worst so far (views at 48 h, or latest)
 
@@ -15,18 +15,18 @@ Shorts with stats: **88**. A comparison needs at least 10 Shorts per group befor
 
 | group | Shorts | median views 48 h | median 7 d | like rate | comment rate | |
 |---|---|---|---|---|---|---|
-| famous | 33 | 1031.5 | 1019 | 0.8% | 0.00% | finding |
+| famous | 34 | 1040 | 1032.5 | 0.8% | 0.00% | finding |
 | careers | 16 | 28.5 | 33.0 | 0.0% | 0.00% | finding |
 | how | 32 | 26.0 | 27.5 | 0.0% | 0.00% | finding |
 | whatif | 5 | 20 | 23 | 1.1% | 0.00% | early signal |
-| pov | 1 | – | – | 3.4% | 0.12% | early signal |
-| story | 1 | – | – | 33.3% | 33.33% | early signal |
+| pov | 1 | – | – | 2.5% | 0.17% | early signal |
+| story | 2 | – | – | 12.8% | 12.82% | early signal |
 
 ## Visual style
 
 | group | Shorts | median views 48 h | median 7 d | like rate | comment rate | |
 |---|---|---|---|---|---|---|
-| lowpoly | 40 | 1023 | 1018.5 | 0.8% | 0.00% | finding |
+| lowpoly | 42 | 1024.5 | 1019 | 0.8% | 0.00% | finding |
 | editorial | 5 | 110 | 109 | 0.8% | 0.00% | early signal |
 | charts3d | 43 | 26 | 26 | 0.0% | 0.00% | finding |
 
@@ -34,8 +34,8 @@ Shorts with stats: **88**. A comparison needs at least 10 Shorts per group befor
 
 | group | Shorts | median views 48 h | median 7 d | like rate | comment rate | |
 |---|---|---|---|---|---|---|
-| surprise | 25 | 1021.0 | 1018 | 0.9% | 0.00% | finding |
-| number | 30 | 238.5 | 158.5 | 0.5% | 0.00% | finding |
+| surprise | 25 | 1021.0 | 1018.5 | 0.9% | 0.00% | finding |
+| number | 32 | 269 | 203.5 | 0.5% | 0.00% | finding |
 | question | 23 | 15 | 15 | 0.0% | 0.00% | finding |
 | challenge | 4 | 12.5 | 14.0 | 0.0% | 0.00% | early signal |
 | whatif | 6 | 7.0 | 11.5 | 0.0% | 0.00% | early signal |
@@ -44,7 +44,7 @@ Shorts with stats: **88**. A comparison needs at least 10 Shorts per group befor
 
 | group | Shorts | median views 48 h | median 7 d | like rate | comment rate | |
 |---|---|---|---|---|---|---|
-| number | 40 | 1005 | 858.5 | 0.7% | 0.00% | finding |
+| number | 42 | 1007.0 | 943 | 0.7% | 0.00% | finding |
 | whatif | 8 | 512.0 | 510.5 | 0.4% | 0.00% | early signal |
 | statement | 15 | 33 | 39 | 0.0% | 0.00% | finding |
 | question | 25 | 18 | 18 | 0.0% | 0.00% | finding |
@@ -53,16 +53,16 @@ Shorts with stats: **88**. A comparison needs at least 10 Shorts per group befor
 
 | group | Shorts | median views 48 h | median 7 d | like rate | comment rate | |
 |---|---|---|---|---|---|---|
-| <30 | 59 | 765.5 | 260 | 0.6% | 0.00% | finding |
+| <30 | 60 | 781 | 506.0 | 0.6% | 0.00% | finding |
 | 30-38 | 21 | 15 | 15 | 0.0% | 0.00% | finding |
-| 38+ | 7 | 13.0 | 14.0 | 0.0% | 0.00% | early signal |
-| ? | 1 | – | – | 33.3% | 33.33% | early signal |
+| 38+ | 8 | 13.0 | 14.0 | 0.3% | 0.00% | early signal |
+| ? | 1 | – | – | 25.0% | 25.00% | early signal |
 
 ## Theme
 
 | group | Shorts | median views 48 h | median 7 d | like rate | comment rate | |
 |---|---|---|---|---|---|---|
-| bold_bright | 50 | 781 | 332.5 | 0.6% | 0.00% | finding |
+| bold_bright | 52 | 861.0 | 637 | 0.7% | 0.00% | finding |
 | clean_navy | 17 | 45 | 41.5 | 0.0% | 0.00% | finding |
 | dark_neon | 21 | 26 | 23.5 | 0.0% | 0.00% | finding |
 
@@ -71,18 +71,20 @@ Shorts with stats: **88**. A comparison needs at least 10 Shorts per group befor
 | group | Shorts | median views 48 h | median 7 d | like rate | comment rate | |
 |---|---|---|---|---|---|---|
 | 15:30 | 1 | 1061 | – | 0.5% | 0.00% | early signal |
-| 16:30 | 7 | 1019 | 1018.5 | 0.7% | 0.00% | early signal |
-| 19:15 | 3 | 999.0 | – | 0.6% | 0.10% | early signal |
+| 16:30 | 7 | 1019 | 1019 | 0.7% | 0.00% | early signal |
+| 19:15 | 3 | 1005 | – | 0.6% | 0.10% | early signal |
 | 15:00 | 15 | 964 | 963 | 0.7% | 0.00% | finding |
-| 20:00 | 9 | 781 | 637 | 0.8% | 0.00% | early signal |
+| 20:00 | 9 | 781 | 708.5 | 0.8% | 0.00% | early signal |
 | 19:00 | 2 | 539.0 | 1 | 0.3% | 0.05% | early signal |
-| 18:00 | 23 | 72 | 65.5 | 0.2% | 0.00% | finding |
+| 18:00 | 23 | 72 | 77 | 0.2% | 0.00% | finding |
 | 12:00 | 23 | 26 | 23.5 | 0.0% | 0.00% | finding |
 | 01:46 | 1 | 20 | 23 | 4.3% | 0.00% | early signal |
 | 13:00 | 1 | 3 | 9 | 0.0% | 0.00% | early signal |
 | 21:00 | 1 | 0 | 0 | 0.0% | 0.00% | early signal |
-| 12:15 | 1 | – | – | 3.4% | 0.12% | early signal |
-| ? | 1 | – | – | 33.3% | 33.33% | early signal |
+| 12:15 | 1 | – | – | 2.5% | 0.17% | early signal |
+| ? | 1 | – | – | 25.0% | 25.00% | early signal |
+| 12:30 | 1 | – | – | 0.6% | 0.65% | early signal |
+| 19:45 | 1 | – | – | 0.7% | 0.10% | early signal |
 
 ## What the writer should do
 

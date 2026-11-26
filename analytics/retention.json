@@ -1,10 +1,10 @@
 {
- "at": "2026-11-25T20:27:36.980275+00:00",
+ "at": "2026-11-26T20:08:10.232183+00:00",
  "shorts": [
   {
    "video": "H8TQsxm7j6c",
    "title": "From $2.46 Billion to $4 Trillion",
-   "views": 1314,
+   "views": 1313,
    "avg_pct": 75.9,
    "avg_seconds": 28,
    "tags": {
@@ -25,7 +25,7 @@
    "engagedViews": 643,
    "shares": 0,
    "subscribersGained": 0,
-   "stayed_pct": 48.9,
+   "stayed_pct": 49.0,
    "traffic": {
     "NO_LINK_OTHER": 0,
     "YT_CHANNEL": 5,
@@ -88,46 +88,45 @@
    "drop_size": 13
   },
   {
-   "video": "PRUzamrtY2E",
-   "title": "From a $2.5M Shoe Deal to $4.7 Billion",
-   "views": 1172,
-   "avg_pct": 70.1,
-   "avg_seconds": 20,
+   "video": "zVCmrWszsqY",
+   "title": "Ryan Reynolds Got $300 Million for a Phone Company",
+   "views": 1154,
+   "avg_pct": 116.7,
+   "avg_seconds": 30,
    "tags": {
-    "script": "061",
-    "slug": "famous-jordan",
-    "topic": "Michael Jordan",
+    "script": "139",
+    "slug": "famous-ryan-reynolds",
+    "topic": "Ryan Reynolds",
     "format": "famous",
     "visual_style": "lowpoly",
     "theme": "bold_bright",
     "hook_style": "number",
     "title_style": "number",
-    "length_s": 28.39,
+    "length_s": 25.77,
     "length_bucket": "<30",
-    "post_at": "2026-11-11T15:00:00-05:00",
-    "post_slot": "15:00",
-    "score": 91
+    "post_at": "2026-11-23T19:15:00-05:00",
+    "post_slot": "19:15",
+    "score": 92
    },
-   "engagedViews": 755,
+   "engagedViews": 664,
    "shares": 0,
    "subscribersGained": 1,
-   "stayed_pct": 64.4,
+   "stayed_pct": 57.5,
    "traffic": {
     "NO_LINK_OTHER": 0,
-    "YT_CHANNEL": 4,
     "YT_SEARCH": 31,
-    "YT_OTHER_PAGE": 2,
-    "EXT_URL": 2,
-    "SHORTS": 1133
+    "YT_OTHER_PAGE": 23,
+    "EXT_URL": 1,
+    "SHORTS": 1099
    },
-   "start": 132,
-   "q25": 94,
-   "q50": 62,
-   "q75": 48,
-   "end": 32,
-   "drop_at_pct": 20,
-   "drop_at_s": 5.7,
-   "drop_size": 16
+   "start": 168,
+   "q25": 136,
+   "q50": 116,
+   "q75": 103,
+   "end": 69,
+   "drop_at_pct": 88,
+   "drop_at_s": 22.6,
+   "drop_size": 22
   },
   {
    "video": "QZ0VHeZVcEI",
@@ -215,46 +214,6 @@
    "drop_size": 17
   },
   {
-   "video": "zVCmrWszsqY",
-   "title": "Ryan Reynolds Got $300 Million for a Phone Company",
-   "views": 1116,
-   "avg_pct": 118.0,
-   "avg_seconds": 30,
-   "tags": {
-    "script": "139",
-    "slug": "famous-ryan-reynolds",
-    "topic": "Ryan Reynolds",
-    "format": "famous",
-    "visual_style": "lowpoly",
-    "theme": "bold_bright",
-    "hook_style": "number",
-    "title_style": "number",
-    "length_s": 25.77,
-    "length_bucket": "<30",
-    "post_at": "2026-11-23T19:15:00-05:00",
-    "post_slot": "19:15",
-    "score": 92
-   },
-   "engagedViews": 642,
-   "shares": 0,
-   "subscribersGained": 1,
-   "stayed_pct": 57.5,
-   "traffic": {
-    "NO_LINK_OTHER": 0,
-    "YT_SEARCH": 10,
-    "YT_OTHER_PAGE": 21,
-    "SHORTS": 1085
-   },
-   "start": 169,
-   "q25": 137,
-   "q50": 118,
-   "q75": 105,
-   "end": 71,
-   "drop_at_pct": 88,
-   "drop_at_s": 22.4,
-   "drop_size": 22
-  },
-  {
    "video": "JZDYSic2L-0",
    "title": "What If You Sold Every Minecraft Copy Yourself?",
    "views": 1096,
@@ -298,8 +257,8 @@
   {
    "video": "5uP5HyJ204w",
    "title": "The \u20ac222 Million Transfer Record",
-   "views": 1085,
-   "avg_pct": 77.7,
+   "views": 1086,
+   "avg_pct": 77.8,
    "avg_seconds": 23,
    "tags": {
     "script": "080",
@@ -316,14 +275,14 @@
     "post_slot": "18:00",
     "score": 89
    },
-   "engagedViews": 572,
+   "engagedViews": 573,
    "shares": 0,
    "subscribersGained": 1,
-   "stayed_pct": 52.7,
+   "stayed_pct": 52.8,
    "traffic": {
     "NO_LINK_OTHER": 0,
     "YT_CHANNEL": 4,
-    "YT_SEARCH": 14,
+    "YT_SEARCH": 15,
     "YT_OTHER_PAGE": 2,
     "SHORTS": 1065
    },
@@ -334,48 +293,7 @@
    "end": 15,
    "drop_at_pct": 93,
    "drop_at_s": 27.5,
-   "drop_size": 22
-  },
-  {
-   "video": "t8iSy1RfQlY",
-   "title": "The \u00a338 Million 16-Year-Old",
-   "views": 1083,
-   "avg_pct": 73.5,
-   "avg_seconds": 19,
-   "tags": {
-    "script": "129",
-    "slug": "famous-vinicius",
-    "topic": "Vin\u00edcius J\u00fanior",
-    "format": "famous",
-    "visual_style": "lowpoly",
-    "theme": "bold_bright",
-    "hook_style": "surprise",
-    "title_style": "number",
-    "length_s": 25.2,
-    "length_bucket": "<30",
-    "post_at": "2026-11-21T19:00:00-05:00",
-    "post_slot": "19:00",
-    "score": 92
-   },
-   "engagedViews": 612,
-   "shares": 0,
-   "subscribersGained": 0,
-   "stayed_pct": 56.5,
-   "traffic": {
-    "NO_LINK_OTHER": 0,
-    "YT_SEARCH": 38,
-    "YT_OTHER_PAGE": 6,
-    "EXT_URL": 1,
-    "SHORTS": 1033
-   },
-   "start": 128,
-   "q25": 103,
-   "q50": 68,
-   "q75": 56,
-   "end": 24,
-   "drop_at_pct": 80,
-   "drop_at_s": 20.7,
-   "drop_size": 13
+   "drop_size": 21
   },
   {
    "video": "TqsuLch9Bzc",
@@ -417,6 +335,47 @@
    "drop_at_pct": 19,
    "drop_at_s": 4.8,
    "drop_size": 15
+  },
+  {
+   "video": "t8iSy1RfQlY",
+   "title": "The \u00a338 Million 16-Year-Old",
+   "views": 1079,
+   "avg_pct": 73.6,
+   "avg_seconds": 19,
+   "tags": {
+    "script": "129",
+    "slug": "famous-vinicius",
+    "topic": "Vin\u00edcius J\u00fanior",
+    "format": "famous",
+    "visual_style": "lowpoly",
+    "theme": "bold_bright",
+    "hook_style": "surprise",
+    "title_style": "number",
+    "length_s": 25.2,
+    "length_bucket": "<30",
+    "post_at": "2026-11-21T19:00:00-05:00",
+    "post_slot": "19:00",
+    "score": 92
+   },
+   "engagedViews": 612,
+   "shares": 0,
+   "subscribersGained": 0,
+   "stayed_pct": 56.7,
+   "traffic": {
+    "NO_LINK_OTHER": 0,
+    "YT_SEARCH": 38,
+    "YT_OTHER_PAGE": 6,
+    "EXT_URL": 1,
+    "SHORTS": 1034
+   },
+   "start": 128,
+   "q25": 103,
+   "q50": 68,
+   "q75": 56,
+   "end": 24,
+   "drop_at_pct": 80,
+   "drop_at_s": 20.7,
+   "drop_size": 13
   },
   {
    "video": "Sx27tDSQFgs",
@@ -463,7 +422,7 @@
   {
    "video": "BqXicYlpUYY",
    "title": "A 3-Hour Trip to Practice, Then \u00a3155 Million",
-   "views": 1068,
+   "views": 1065,
    "avg_pct": 139.2,
    "avg_seconds": 34,
    "tags": {
@@ -484,7 +443,7 @@
    "engagedViews": 562,
    "shares": 0,
    "subscribersGained": 1,
-   "stayed_pct": 52.6,
+   "stayed_pct": 52.8,
    "traffic": {
     "NO_LINK_OTHER": 0,
     "YT_SEARCH": 30,
@@ -754,8 +713,8 @@
   {
    "video": "zpe-JPNRQO0",
    "title": "What If One Person Played All of Roblox?",
-   "views": 1020,
-   "avg_pct": 70.1,
+   "views": 1021,
+   "avg_pct": 70.0,
    "avg_seconds": 17,
    "tags": {
     "script": "053",
@@ -772,14 +731,14 @@
     "post_slot": "15:00",
     "score": 90
    },
-   "engagedViews": 677,
+   "engagedViews": 678,
    "shares": 1,
    "subscribersGained": 4,
    "stayed_pct": 66.4,
    "traffic": {
     "NO_LINK_OTHER": 1,
     "YT_CHANNEL": 10,
-    "YT_SEARCH": 96,
+    "YT_SEARCH": 97,
     "YT_OTHER_PAGE": 8,
     "PLAYLIST": 1,
     "SHORTS": 904
@@ -877,6 +836,47 @@
    "drop_size": 16
   },
   {
+   "video": "N2oLakB4OyI",
+   "title": "From a $25 Million Deal to $1.6 Billion",
+   "views": 1006,
+   "avg_pct": 80.3,
+   "avg_seconds": 20,
+   "tags": {
+    "script": "097",
+    "slug": "famous-magic-johnson",
+    "topic": "Magic Johnson",
+    "format": "famous",
+    "visual_style": "lowpoly",
+    "theme": "bold_bright",
+    "hook_style": "surprise",
+    "title_style": "number",
+    "length_s": 25.74,
+    "length_bucket": "<30",
+    "post_at": "2026-11-19T20:00:00-05:00",
+    "post_slot": "20:00",
+    "score": 88
+   },
+   "engagedViews": 554,
+   "shares": 0,
+   "subscribersGained": 1,
+   "stayed_pct": 55.1,
+   "traffic": {
+    "NO_LINK_OTHER": 0,
+    "SUBSCRIBER": 1,
+    "YT_SEARCH": 22,
+    "YT_OTHER_PAGE": 12,
+    "SHORTS": 971
+   },
+   "start": 131,
+   "q25": 101,
+   "q50": 75,
+   "q75": 67,
+   "end": 34,
+   "drop_at_pct": 88,
+   "drop_at_s": 21.9,
+   "drop_size": 20
+  },
+  {
    "video": "LjNhttpIT3o",
    "title": "From a Round 37 Pick to a $503 Million Deal",
    "views": 1005,
@@ -918,50 +918,9 @@
    "drop_size": 18
   },
   {
-   "video": "N2oLakB4OyI",
-   "title": "From a $25 Million Deal to $1.6 Billion",
-   "views": 1005,
-   "avg_pct": 80.3,
-   "avg_seconds": 20,
-   "tags": {
-    "script": "097",
-    "slug": "famous-magic-johnson",
-    "topic": "Magic Johnson",
-    "format": "famous",
-    "visual_style": "lowpoly",
-    "theme": "bold_bright",
-    "hook_style": "surprise",
-    "title_style": "number",
-    "length_s": 25.74,
-    "length_bucket": "<30",
-    "post_at": "2026-11-19T20:00:00-05:00",
-    "post_slot": "20:00",
-    "score": 88
-   },
-   "engagedViews": 553,
-   "shares": 0,
-   "subscribersGained": 1,
-   "stayed_pct": 55.0,
-   "traffic": {
-    "NO_LINK_OTHER": 0,
-    "SUBSCRIBER": 1,
-    "YT_SEARCH": 22,
-    "YT_OTHER_PAGE": 12,
-    "SHORTS": 971
-   },
-   "start": 131,
-   "q25": 101,
-   "q50": 75,
-   "q75": 67,
-   "end": 34,
-   "drop_at_pct": 88,
-   "drop_at_s": 21.9,
-   "drop_size": 20
-  },
-  {
    "video": "YPv29m0WHpQ",
    "title": "$33 Million a Year for Running",
-   "views": 1004,
+   "views": 1005,
    "avg_pct": 74.2,
    "avg_seconds": 17,
    "tags": {
@@ -979,7 +938,7 @@
     "post_slot": "19:15",
     "score": 87
    },
-   "engagedViews": 557,
+   "engagedViews": 558,
    "shares": 0,
    "subscribersGained": 0,
    "stayed_pct": 55.5,
@@ -1004,8 +963,8 @@
   {
    "video": "zbKY6QVVdwQ",
    "title": "A $12 Million Deal Right After High School",
-   "views": 996,
-   "avg_pct": 71.9,
+   "views": 990,
+   "avg_pct": 71.8,
    "avg_seconds": 15,
    "tags": {
     "script": "090",
@@ -1022,16 +981,16 @@
     "post_slot": "19:15",
     "score": 88
    },
-   "engagedViews": 577,
+   "engagedViews": 578,
    "shares": 0,
    "subscribersGained": 0,
-   "stayed_pct": 57.9,
+   "stayed_pct": 58.4,
    "traffic": {
     "NO_LINK_OTHER": 0,
     "YT_CHANNEL": 0,
     "YT_SEARCH": 23,
     "YT_OTHER_PAGE": 11,
-    "SHORTS": 955
+    "SHORTS": 956
    },
    "start": 131,
    "q25": 111,
@@ -1039,7 +998,7 @@
    "q75": 53,
    "end": 30,
    "drop_at_pct": 29,
-   "drop_at_s": 6.0,
+   "drop_at_s": 6.1,
    "drop_size": 14
   },
   {
@@ -1211,6 +1170,47 @@
    "drop_size": 24
   },
   {
+   "video": "r1wJrc10T4I",
+   "title": "The Kelce Brothers' $100 Million Podcast",
+   "views": 740,
+   "avg_pct": 80.2,
+   "avg_seconds": 20,
+   "tags": {
+    "script": "137",
+    "slug": "famous-kelce-podcast",
+    "topic": "Travis and Jason Kelce",
+    "format": "famous",
+    "visual_style": "lowpoly",
+    "theme": "bold_bright",
+    "hook_style": "number",
+    "title_style": "number",
+    "length_s": 24.05,
+    "length_bucket": "<30",
+    "post_at": "2026-11-23T12:00:00-05:00",
+    "post_slot": "12:00",
+    "score": 92
+   },
+   "engagedViews": 391,
+   "shares": 0,
+   "subscribersGained": 0,
+   "stayed_pct": 52.8,
+   "traffic": {
+    "NO_LINK_OTHER": 0,
+    "SUBSCRIBER": 1,
+    "YT_SEARCH": 12,
+    "YT_OTHER_PAGE": 9,
+    "SHORTS": 718
+   },
+   "start": 143,
+   "q25": 106,
+   "q50": 75,
+   "q75": 67,
+   "end": 43,
+   "drop_at_pct": 30,
+   "drop_at_s": 7.5,
+   "drop_size": 12
+  },
+  {
    "video": "mY2ucJom1Zw",
    "title": "From a Dream Board to a $28 Million Deal",
    "views": 637,
@@ -1250,88 +1250,6 @@
    "drop_at_pct": 85,
    "drop_at_s": 21.0,
    "drop_size": 17
-  },
-  {
-   "video": "r1wJrc10T4I",
-   "title": "The Kelce Brothers' $100 Million Podcast",
-   "views": 618,
-   "avg_pct": 81.5,
-   "avg_seconds": 20,
-   "tags": {
-    "script": "137",
-    "slug": "famous-kelce-podcast",
-    "topic": "Travis and Jason Kelce",
-    "format": "famous",
-    "visual_style": "lowpoly",
-    "theme": "bold_bright",
-    "hook_style": "number",
-    "title_style": "number",
-    "length_s": 24.05,
-    "length_bucket": "<30",
-    "post_at": "2026-11-23T12:00:00-05:00",
-    "post_slot": "12:00",
-    "score": 92
-   },
-   "engagedViews": 320,
-   "shares": 0,
-   "subscribersGained": 0,
-   "stayed_pct": 51.8,
-   "traffic": {
-    "NO_LINK_OTHER": 0,
-    "SUBSCRIBER": 1,
-    "YT_SEARCH": 9,
-    "YT_OTHER_PAGE": 6,
-    "SHORTS": 602
-   },
-   "start": 145,
-   "q25": 108,
-   "q50": 77,
-   "q75": 68,
-   "end": 45,
-   "drop_at_pct": 27,
-   "drop_at_s": 6.6,
-   "drop_size": 12
-  },
-  {
-   "video": "dzsMqPku2HM",
-   "title": "From $6,000 to $780,000: MLB's Lowest Pay",
-   "views": 456,
-   "avg_pct": 37.1,
-   "avg_seconds": 9,
-   "tags": {
-    "script": "050",
-    "slug": "careers-mlb",
-    "topic": "MLB players",
-    "format": "careers",
-    "visual_style": "charts3d",
-    "theme": "bold_bright",
-    "hook_style": "number",
-    "title_style": "number",
-    "length_s": 25.54,
-    "length_bucket": "<30",
-    "post_at": "2026-11-10T18:00:00-05:00",
-    "post_slot": "18:00",
-    "score": 87
-   },
-   "engagedViews": 121,
-   "shares": 0,
-   "subscribersGained": 1,
-   "stayed_pct": 26.5,
-   "traffic": {
-    "NO_LINK_OTHER": 0,
-    "YT_CHANNEL": 1,
-    "YT_SEARCH": 6,
-    "YT_OTHER_PAGE": 2,
-    "SHORTS": 447
-   },
-   "start": 102,
-   "q25": 59,
-   "q50": 23,
-   "q75": 15,
-   "end": 3,
-   "drop_at_pct": 17,
-   "drop_at_s": 4.1,
-   "drop_size": 31
   },
   {
    "video": "r7m9Sye8Eek",
@@ -1455,48 +1373,6 @@
    "drop_at_pct": 19,
    "drop_at_s": 5.8,
    "drop_size": 35
-  },
-  {
-   "video": "4RBsErczezM",
-   "title": "How Did Bankrupt Marvel Become a $4B Deal?",
-   "views": 114,
-   "avg_pct": 38.4,
-   "avg_seconds": 11,
-   "tags": {
-    "script": "065",
-    "slug": "how-marvel",
-    "topic": "Marvel",
-    "format": "how",
-    "visual_style": "editorial",
-    "theme": "bold_bright",
-    "hook_style": "question",
-    "title_style": "question",
-    "length_s": 30.78,
-    "length_bucket": "30-38",
-    "post_at": "2026-11-11T12:00:00-05:00",
-    "post_slot": "12:00",
-    "score": 92
-   },
-   "engagedViews": 49,
-   "shares": 0,
-   "subscribersGained": 0,
-   "stayed_pct": 43.0,
-   "traffic": {
-    "NO_LINK_OTHER": 0,
-    "SUBSCRIBER": 2,
-    "YT_CHANNEL": 2,
-    "YT_SEARCH": 6,
-    "YT_OTHER_PAGE": 1,
-    "SHORTS": 103
-   },
-   "start": 110,
-   "q25": 39,
-   "q50": 29,
-   "q75": 24,
-   "end": 10,
-   "drop_at_pct": 14,
-   "drop_at_s": 4.0,
-   "drop_size": 41
   },
   {
    "video": "Em5KSC9FqFw",
@@ -1856,6 +1732,39 @@
    }
   },
   {
+   "video": "lRlFE3P3qjc",
+   "title": "Nike's Plan: Own Every Dunk, Even on the Moon",
+   "views": 3,
+   "avg_pct": 62.4,
+   "avg_seconds": 28,
+   "tags": {
+    "script": "120",
+    "slug": "plan-nike-every-step",
+    "topic": "Nike",
+    "format": "story",
+    "visual_style": "lowpoly",
+    "theme": "bold_bright",
+    "hook_style": "surprise",
+    "title_style": "statement",
+    "length_s": null,
+    "length_bucket": null,
+    "post_at": null,
+    "post_slot": null,
+    "score": 95
+   },
+   "engagedViews": 1,
+   "shares": 0,
+   "subscribersGained": 0,
+   "stayed_pct": 33.3,
+   "traffic": {
+    "NO_LINK_OTHER": 0,
+    "YT_SEARCH": 1,
+    "EXT_URL": 1,
+    "NOTIFICATION": 0,
+    "SHORTS": 1
+   }
+  },
+  {
    "video": "N4eIKmdC9To",
    "title": "A Penny Costs 3.69 Cents to Make",
    "views": 0,
@@ -1881,25 +1790,50 @@
    "subscribersGained": 0
   },
   {
-   "video": "lRlFE3P3qjc",
-   "title": "Nike's Plan: Own Every Dunk, Even on the Moon",
+   "video": "-KHmVpLc9pw",
+   "title": "From Selling Japan's Shoes to $46.3 Billion",
    "views": 0,
    "avg_pct": 0,
    "avg_seconds": 0,
    "tags": {
-    "script": "120",
-    "slug": "plan-nike-every-step",
+    "script": "119",
+    "slug": "plan-nike",
     "topic": "Nike",
     "format": "story",
     "visual_style": "lowpoly",
     "theme": "bold_bright",
-    "hook_style": "surprise",
-    "title_style": "statement",
-    "length_s": null,
-    "length_bucket": null,
-    "post_at": null,
-    "post_slot": null,
-    "score": 95
+    "hook_style": "number",
+    "title_style": "number",
+    "length_s": 42.39,
+    "length_bucket": "38+",
+    "post_at": "2026-11-26T12:30:00-05:00",
+    "post_slot": "12:30",
+    "score": 94
+   },
+   "engagedViews": 0,
+   "shares": 0,
+   "subscribersGained": 0
+  },
+  {
+   "video": "tyQJcNfwAeI",
+   "title": "From Zero Scholarship Offers to $330 Million",
+   "views": 0,
+   "avg_pct": 0,
+   "avg_seconds": 0,
+   "tags": {
+    "script": "170",
+    "slug": "famous-josh-allen",
+    "topic": "Josh Allen",
+    "format": "famous",
+    "visual_style": "lowpoly",
+    "theme": "bold_bright",
+    "hook_style": "number",
+    "title_style": "number",
+    "length_s": 27.15,
+    "length_bucket": "<30",
+    "post_at": "2026-11-25T19:45:00-05:00",
+    "post_slot": "19:45",
+    "score": 92
    },
    "engagedViews": 0,
    "shares": 0,
