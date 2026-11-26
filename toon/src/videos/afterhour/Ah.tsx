@@ -94,14 +94,15 @@ const VIEWS: Record<string, { from: V3; to: V3; look: V3; blur: number }> = {
   actw: { from: [0.1, 1.95, 11.4], to: [0.1, 1.95, 10.6], look: [0.1, 1.8, 0], blur: 1 },
   actd: { from: [0.5, 2.2, 10.2], to: [0.5, 2.2, 9.5], look: [0.5, 2.0, 0], blur: 1 },
   actc: { from: [0, 1.9, 9.4], to: [0, 1.9, 8.7], look: [0, 1.8, 0], blur: 1 },
-  actm: { from: [0.15, 1.5, 7.4], to: [0.15, 1.5, 6.8], look: [0.1, 1.2, 0], blur: 1 },   // build_tools: hero + the nail he hammers, hero ~45% of the frame (Nov 24)
+  actm: { from: [0.8, 1.5, 7.4], to: [0.8, 1.5, 6.8], look: [0.75, 1.2, 0], blur: 1 },
+  actb: { from: [0.8, 1.15, 8.4], to: [0.8, 1.15, 7.8], look: [0.8, 0.95, 0], blur: 1 },   // build_tools (Nov 26): hero AND the whole wooden house frame he nails, not a crop of one post
   actsing: { from: [0.5, 1.95, 5.4], to: [0.5, 1.9, 4.9], look: [0.1, 1.65, 0], blur: 1 },   // singer close on the stage
   actf: { from: [0.45, 1.6, 6.3], to: [0.4, 1.6, 5.8], look: [0.35, 1.4, 0], blur: 1 },      // hero at the camera's eyepiece, lens pointing right
   actcode: { from: [0.3, 1.6, 5.2], to: [0.3, 1.6, 4.7], look: [0.2, 1.4, 0], blur: 1 },     // seated coder, middle screen + DEPLOY button
   actt: { from: [0.3, 2.0, 8.0], to: [0.3, 2.0, 7.4], look: [0.3, 1.9, 0], blur: 1 },
 };
 /** Nov 16 (owner: the acted hero was ~1/8 of the frame): pull each act view in along its own view ray (k < 1 = closer) and aim lower, so the whole body fills ~45% of the frame height; the head-in-frame guard below still backs off for jumps */
-const ACT_CLOSER: Record<string, [number, number]> = { act: [0.62, -0.25], actl: [0.64, -0.25], actw: [0.7, -0.2], actd: [0.7, -0.25], actc: [0.7, -0.2], actm: [0.7, -0.12], actsing: [0.85, -0.05], actf: [0.85, -0.05], actcode: [0.88, 0], actt: [0.75, -0.2] };
+const ACT_CLOSER: Record<string, [number, number]> = { act: [0.62, -0.25], actl: [0.64, -0.25], actw: [0.7, -0.2], actd: [0.7, -0.25], actc: [0.7, -0.2], actm: [0.97, -0.08], actb: [0.9, -0.05], actsing: [0.85, -0.05], actf: [0.85, -0.05], actcode: [0.88, 0], actt: [0.75, -0.2] };
 for (const [n, [k, dy]] of Object.entries(ACT_CLOSER)) {
   const v = VIEWS[n], c = (p: V3): V3 => [v.look[0] + (p[0] - v.look[0]) * k, v.look[1] + (p[1] - v.look[1]) * k + dy, v.look[2] + (p[2] - v.look[2]) * k];
   v.from = c(v.from); v.to = c(v.to); v.look = [v.look[0], v.look[1] + dy, v.look[2]];

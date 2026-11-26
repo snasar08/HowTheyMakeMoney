@@ -296,6 +296,7 @@ const donut: ActDef = { pose: "think", view: "cu", build(ctx) {
     const m = bx(0.05, 0.016, 0.016, SPK[i % SPK.length], (R + rr * Math.cos(v)) * Math.cos(u), (R + rr * Math.cos(v)) * Math.sin(u), rr * Math.sin(v), 0);
     m.rotation.z = u + Math.PI / 2 + (rnd() - 0.5) * 2.5; return { m, p: m.position.clone() }; });
   spr.forEach((s) => item.add(s.m));
+  // Nov 26: thick white cream between two dark wafers, so it reads as a sandwich cookie from the side
   const sts = [0, 1, 2].map((n) => { const g = new THREE.Group(); g.add(mk(dough(n), "#d99a4e", 0, 0, 0, 0.016)); g.add(mk(glaze(n), "#ff8fc0", 0, 0, 0, 0)); item.add(g); return g; });
   const C1: Cyc = { t0: 0.1, a: 0.4, h: 0.14, r: 0.26 }, C2: Cyc = { t0: 0.95, a: 0.34, h: 0.14, r: 0.28 }, CYC = [C1, C2];
   const TC1 = C1.t0 + C1.a, TC2 = C2.t0 + C2.a, TS1 = TC1 + 0.1, TS2 = TC2 + 0.1;
@@ -371,20 +372,21 @@ const cookieShape = (R: number, dents: { c: V3; r: number }[]) => {
 };
 const cookie: ActDef = { pose: "think", view: "cu", build(ctx) {
   const { G, fwd, M0, H0 } = setup(ctx);
-  const R = 0.19, RO = R + 0.02;
-  const a0 = Math.atan2(M0.y - H0.y, M0.x - H0.x), DA = [a0, a0 + 0.95], DR = 0.095;
+  const R = 0.235, RO = R + 0.02;
+  const a0 = Math.atan2(M0.y - H0.y, M0.x - H0.x), DA = [a0, a0 + 0.95], DR = 0.115;
   const dents = DA.map((a) => ({ c: new V3(Math.cos(a) * (R + 0.02), Math.sin(a) * (R + 0.02), 0), r: DR }));
   const slab = (n: number, rad: number, z0: number, depth: number, col: string, ow: number) => {
     const g = new THREE.ExtrudeGeometry(cookieShape(rad, dents.slice(0, n)), { depth, bevelEnabled: false, curveSegments: 1 });
     return mk(g, col, 0, 0, z0, ow);
   };
   const item = new THREE.Group(); G.add(item);
-  const DARK = "#3a2218", CREAM = "#fff3d6";
-  const dots = Array.from({ length: 12 }, (_, i) => { const a = (i / 12) * Math.PI * 2, rr = R * 0.72; return new V3(Math.cos(a) * rr, Math.sin(a) * rr, 0.052); });
+  const DARK = "#2e1a12", CREAM = "#ffffff";
+  const dots = Array.from({ length: 12 }, (_, i) => { const a = (i / 12) * Math.PI * 2, rr = R * 0.72; return new V3(Math.cos(a) * rr, Math.sin(a) * rr, 0.098); });
   const dotM = dots.map((p) => { const m = mk(new THREE.CylinderGeometry(0.012, 0.012, 0.01, 8).rotateX(Math.PI / 2), "#241209", p.x, p.y, p.z, 0); item.add(m); return m; });
-  const ring = mk(new THREE.TorusGeometry(R * 0.45, 0.008, 6, 28), "#241209", 0, 0, 0.052, 0); item.add(ring);
+  const ring = mk(new THREE.TorusGeometry(R * 0.45, 0.008, 6, 28), "#241209", 0, 0, 0.098, 0); item.add(ring);
+  // Nov 26: thick white cream between two dark wafers, so it reads as a sandwich cookie from the side
   const sts = [0, 1, 2].map((n) => { const g = new THREE.Group();
-    g.add(slab(n, R, -0.05, 0.035, DARK, 0.014)); g.add(slab(n, R * 0.94, -0.015, 0.03, CREAM, 0)); g.add(slab(n, R, 0.015, 0.035, DARK, 0.014)); item.add(g); return g; });
+    g.add(slab(n, R, -0.095, 0.045, DARK, 0.014)); g.add(slab(n, R * 0.95, -0.05, 0.1, CREAM, 0)); g.add(slab(n, R, 0.05, 0.045, DARK, 0.014)); item.add(g); return g; });
   const C1: Cyc = { t0: 0.1, a: 0.4, h: 0.14, r: 0.26 }, C2: Cyc = { t0: 0.95, a: 0.34, h: 0.14, r: 0.28 }, CYC = [C1, C2];
   const TC1 = C1.t0 + C1.a, TC2 = C2.t0 + C2.a, TS1 = TC1 + 0.1, TS2 = TC2 + 0.1;
   const CR = ["#3a2218", "#241209", "#fff3d6", "#5a3524"];
@@ -407,7 +409,7 @@ const cookie: ActDef = { pose: "think", view: "cu", build(ctx) {
     item.position.copy(heldC.clone().lerp(A1.ctr, k1).lerp(A2.ctr, k2));
     let rot = 0; rot += (A1.rot - rot) * k1; rot += (A2.rot - rot) * k2;
     const kk = Math.max(k1, k2);
-    item.rotation.set(0.3 * (1 - kk), 0.3 * (1 - kk), rot, "ZYX");
+    item.rotation.set(0.35 * (1 - kk), 1.0 * (1 - kk), rot, "ZYX");   // held turned ~55 deg: the white cream band shows from the side
     sts.forEach((g, i) => { g.visible = i === st; });
     dotM.forEach((m, i) => { let hide = false; for (let d = 0; d < st; d++) if (dots[i].distanceTo(dents[d].c) < dents[d].r * 1.15) hide = true; m.visible = !hide; });
     ring.visible = st === 0;
