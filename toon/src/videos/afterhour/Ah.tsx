@@ -16,6 +16,9 @@ import { ACTS } from "./acts";
 import type { ActRun, ActPose } from "./acts/types";
 import { buildUnits, buildJourney, Pov3, UnitsSpec, JourneySpec } from "./pov3d";
 import { PovOverlay, PovHud } from "./pov";
+import { GradeEffect } from "./grade";
+import { MotionBlurEffect } from "./motionblur";
+import { InkEffect } from "./ink";
 
 type V3 = [number, number, number];
 export type AhChar = { look: Look; at?: string | V3; rot?: number; scale?: number; pose?: Pose; expr?: Expr; exprAt?: [number, Expr][] };
@@ -107,8 +110,12 @@ for (const [n, [k, dy]] of Object.entries(ACT_CLOSER)) {
   const v = VIEWS[n], c = (p: V3): V3 => [v.look[0] + (p[0] - v.look[0]) * k, v.look[1] + (p[1] - v.look[1]) * k + dy, v.look[2] + (p[2] - v.look[2]) * k];
   v.from = c(v.from); v.to = c(v.to); v.look = [v.look[0], v.look[1] + dy, v.look[2]];
 }
+const GLIDE_F = 9, WHIP_F = 4, WHIP_YAW = 0.7, WHIP_BLUR = 0.17;
 const lerp = (a: V3, b: V3, u: number): V3 => [a[0] + (b[0] - a[0]) * u, a[1] + (b[1] - a[1]) * u, a[2] + (b[2] - a[2]) * u];
-const ease = (u: number) => 1 - (1 - Math.max(0, Math.min(1, u))) ** 2;
+// refgap round 2 (Nov 26): the reference camera glides (symmetric ease, never a dead stop): in-out ease mixed with a little linear drift,
+// and the ordinary views travel 1.5x as far (a slow push-in during the hold; the bursts come from the transitions below)
+const ease = (u: number) => { const x = Math.max(0, Math.min(1, u)); return 0.35 * x + 0.65 * x * x * (3 - 2 * x); };
+for (const [n, v] of Object.entries(VIEWS)) if (!n.startsWith("act")) v.to = lerp(v.from, v.to, 1.5);
 
 type Built = { setRoot: THREE.Group; setLights: THREE.Light[]; hide: THREE.Object3D[]; instHide: InstHide[]; root: THREE.Group; chars: Char[]; things: Thing[]; run?: ActRun; view?: string; bg: string; fog?: THREE.Fog; spots: Record<string, V3>; coinGeo?: THREE.InstancedMesh; pov3?: Pov3 };
 const BUILT = new Map<number, Built>();
@@ -321,19 +328,32 @@ const Inner: React.FC = () => {
     lens: new LensBlur({ maxCoC: 22, nearScale: 1.0 }),
     bloom: new BloomEffect({ blendFunction: BlendFunction.ADD, intensity: 0.35, luminanceThreshold: 1.05, luminanceSmoothing: 0.2, mipmapBlur: true, radius: 0.6 }),
     tone: new ToneMappingEffect({ mode: ToneMappingMode.NEUTRAL }),
+    grade: new GradeEffect(),
+    motion: new MotionBlurEffect(),
+    ink: new InkEffect(),
     vig: new VignetteEffect({ offset: 0.3, darkness: 0.55 }),
   }), []);
+  const mp = useMemo(() => ({ pass: null as EffectPass | null }), []);
   const core = useMemo(() => {
     const c = new CoreComposer(gl, { multisampling: 4, frameBufferType: THREE.HalfFloatType });
     c.addPass(new RenderPass(scene, camera));
-    c.addPass(new EffectPass(camera, fx.lens.pre)); c.addPass(new EffectPass(camera, fx.lens.main));
-    c.addPass(new EffectPass(camera, fx.bloom, fx.tone, fx.vig));
+    c.addPass(new EffectPass(camera, fx.ink)); c.addPass(new EffectPass(camera, fx.lens.pre)); c.addPass(new EffectPass(camera, fx.lens.main));
+    mp.pass = new EffectPass(camera, fx.motion); c.addPass(mp.pass);
+    c.addPass(new EffectPass(camera, fx.bloom, fx.tone, fx.grade, fx.vig));
     const v = gl.getDrawingBufferSize(new THREE.Vector2()); c.setSize(v.x, v.y, false);
     return c;
   }, [gl, scene, camera, fx]);
   useFrame(() => { gl.toneMapping = THREE.NoToneMapping; gl.shadowMap.enabled = true; gl.shadowMap.type = THREE.PCFShadowMap; core.render(); }, 1);
 
   const k = Math.max(0, SHOTS_.findIndex((s) => f >= s.a && f < s.a + s.n)), s = SHOTS_[k], tl = (f - s.a) / 30, u = ease((f - s.a) / Math.max(1, s.n - 1));
+  // refgap round 3: transitions are camera moves, not hard cuts. Same set: the camera glides from where the last shot ended (ease-out burst + motion blur).
+  // Different set: a whip pan (the last/first 4 frames swing right, blurred) so the cut hides inside the blur. Acts, POV rigs and explicit cams keep their own motion.
+  const prevS = k > 0 ? SHOTS_[k - 1] : undefined, nextS = SHOTS_[k + 1];
+  const plain = (x?: AhShot) => !!x && !x.act && !x.units && !x.journey && !x.hud, whippable = (x?: AhShot) => !!x && !x.units && !x.journey && !x.hud;
+  const sinceA = f - s.a, glide = sinceA < GLIDE_F && plain(prevS) && plain(s) && prevS!.set === s.set && prevS!.n >= 20;
+  const whipIn = sinceA < WHIP_F && whippable(prevS) && whippable(s) && prevS!.set !== s.set && prevS!.n >= 24 && s.n >= 24;
+  const whipOut = f >= s.a + s.n - WHIP_F && whippable(s) && whippable(nextS) && nextS!.set !== s.set && s.n >= 24 && nextS!.n >= 24;
+  const bp = glide ? build(k - 1, prevS!) : undefined;
   const b = build(k, s);
   // the set objects are shared by every shot using that set: re-attach if a later shot took them, and reset what act shots hid
   if (b.setRoot.parent !== b.root) { b.root.add(b.setRoot); b.setLights.forEach((l) => b.root.add(l)); }
@@ -370,14 +390,29 @@ const Inner: React.FC = () => {
   }
   // camera: preset relative to the subject, or explicit
   // presets are written for a standing head at y 1.55; shift them to where this subject's head really is
-  const subj = s.chars[s.subject ?? 0], sp = s.act?.at ?? (subj ? spotOf(b, subj.at) : ([0, 0, 0] as V3));
-  const hy = (b.chars[s.subject ?? 0] as Char & { headY?: number } | undefined)?.headY ?? 1.55;   // tall people (height 1.3) carry the head higher
-  const rootY = subj?.pose === "sit" ? Math.max(0, sp[1] - 0.55) : sp[1], drop = rootY + (subj?.pose === "sit" ? 0 : hy - 1.55);
-  const V = s.cam ? { ...s.cam, blur: 4 } : VIEWS[(b.view && VIEWS[b.view] ? b.view : s.view) ?? "ms"] ?? VIEWS.ms;
-  const off = (p: V3): V3 => (s.cam ? p : [p[0] + sp[0], p[1] + drop, p[2] + sp[2]]);
-  let pos = off(lerp(V.from, V.to, u)), look = off(V.look);
+  const camOf = (ss: AhShot, bb: Built, uu: number) => {
+    const subj = ss.chars[ss.subject ?? 0], sp = ss.act?.at ?? (subj ? spotOf(bb, subj.at) : ([0, 0, 0] as V3));
+    const hy = (bb.chars[ss.subject ?? 0] as Char & { headY?: number } | undefined)?.headY ?? 1.55;   // tall people (height 1.3) carry the head higher
+    const rootY = subj?.pose === "sit" ? Math.max(0, sp[1] - 0.55) : sp[1], drop = rootY + (subj?.pose === "sit" ? 0 : hy - 1.55);
+    const V = ss.cam ? { ...ss.cam, blur: 4 } : VIEWS[(bb.view && VIEWS[bb.view] ? bb.view : ss.view) ?? "ms"] ?? VIEWS.ms;
+    const off = (p: V3): V3 => (ss.cam ? p : [p[0] + sp[0], p[1] + drop, p[2] + sp[2]]);
+    return { pos: off(lerp(V.from, V.to, uu)), look: off(V.look), blur: V.blur };
+  };
+  const cur = camOf(s, b, u);
+  let pos = cur.pos, look = cur.look;
+  let mx = 0, my = 0, yaw = 0;   // motion blur streak (uv) and whip yaw (rad)
+  if (glide && bp) {
+    const pe = camOf(prevS!, bp, 1), tt = (f - s.a) / GLIDE_F, e = 1 - (1 - tt) ** 3;
+    const mk = (p: V3, l: V3) => { const c = new THREE.PerspectiveCamera(40, 1080 / 1920, 0.1, 400); c.position.set(...p); c.lookAt(...l); c.updateMatrixWorld(true); return c; };
+    const pa = new THREE.Vector3(...cur.look).project(mk(pe.pos, pe.look)), pb = new THREE.Vector3(...cur.look).project(mk(cur.pos, cur.look));
+    const w = (1 - tt) ** 2 * 0.5;
+    mx = Math.max(-0.25, Math.min(0.25, (pa.x - pb.x) * 0.5 * w)); my = Math.max(-0.25, Math.min(0.25, (pa.y - pb.y) * 0.5 * w));
+    pos = lerp(pe.pos, cur.pos, e); look = lerp(pe.look, cur.look, e);
+  }
+  if (whipOut) { const p = (f - (s.a + s.n - WHIP_F) + 1) / WHIP_F, e = p * p; yaw = -WHIP_YAW * e; mx = WHIP_BLUR * e; }
+  if (whipIn) { const q = 1 - sinceA / WHIP_F, e = q * q; yaw = WHIP_YAW * e; mx = WHIP_BLUR * e; }
   const cam = camera as THREE.PerspectiveCamera;
-  let blur = V.blur;
+  let blur = cur.blur;
   const ul = (f - s.a) / Math.max(1, s.n - 1);   // linear 0..1 inside the shot (the POV rigs ease for themselves)
   if (b.pov3) { const c3 = b.pov3.cam(ul); pos = [...c3.from] as V3; look = [...c3.look] as V3; blur = c3.blur; }
   cam.fov = s.view === "face" ? 38 : 40; cam.near = 0.1; cam.far = 400; cam.updateProjectionMatrix();
@@ -400,8 +435,11 @@ const Inner: React.FC = () => {
     }
     pos[0] = cam.position.x; pos[1] = cam.position.y; pos[2] = cam.position.z;
   }
+  if (yaw) cam.rotateY(yaw);   // whip pan: after the act framing guard, which re-aims the camera
   fx.lens.focus = Math.hypot(look[0] - pos[0], look[1] - pos[1], look[2] - pos[2]);
   fx.lens.cInf = blur;
+  fx.motion.set(mx, my); if (mp.pass) mp.pass.enabled = Math.abs(mx) + Math.abs(my) > 0.002;
+  fx.grade.phase = SHOTS_.length > 1 ? k / (SHOTS_.length - 1) : 0;
   scene.background = new THREE.Color(b.bg);
   scene.fog = b.fog ?? null;
   return <primitive object={b.root} dispose={null} />;
