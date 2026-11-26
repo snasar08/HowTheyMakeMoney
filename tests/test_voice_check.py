@@ -75,6 +75,12 @@ class CheckTests(unittest.TestCase):
         self.assertFalse(r.ok)
         self.assertTrue(any(x.startswith("voice-change") for x in r.hard), (r.hard, r.metrics["line_pitch_dev_st"]))
 
+    def test_lively_ending_is_not_a_voice_change(self):   # Nov 26, Short 179: the CTA line lifts on purpose
+        pitch = [120.0, 120.0, 120.0, 120.0, 120.0 * 2 ** (8 / 12)]
+        a, h = synth(pitch_hz=pitch)
+        r = vc.check(a, SR, LINES, h)
+        self.assertFalse(any(x.startswith("voice-change") for x in r.hard), r.hard)
+
     def test_clipping(self):
         a, h = synth()
         a = np.clip(a * 6, -1, 1)

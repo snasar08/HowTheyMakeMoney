@@ -303,7 +303,12 @@ def check(a, sr: int, lines: list[str], heard: list[dict] | None = None) -> Repo
         if db is not None:
             louds.append(db)
     m["line_pitch_dev_st"] = {str(i): _f(d) for i, d in devs.items()}
-    bad = {i: d for i, d in devs.items() if abs(d) > VOICE_ST_MAX}
+    # Nov 26 (first real run, Short 179): all 3 Puck takes "changed voice" (+6..+9 st) only on the call-to-action question
+    # and the loop line, which are SUPPOSED to lift. Those lines (a "?" or ending ":", or the last 2 lines) and any line
+    # of numbers-only pitch stay out of the hard check; a real voice change shows up in the story lines too.
+    lively = {i for i, ln in enumerate(lines) if "?" in ln or ln.rstrip().endswith(":") or i >= len(lines) - 2}
+    m["lively_lines"] = sorted(lively)
+    bad = {i: d for i, d in devs.items() if abs(d) > VOICE_ST_MAX and i not in lively}
     if bad:
         add_hard("voice-change:" + ",".join(f"line{i}({d:+.1f}st)" for i, d in bad.items()), "voice")
     if spreads:
