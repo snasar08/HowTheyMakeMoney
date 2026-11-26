@@ -342,13 +342,14 @@ def eleven_stream(text: str, voice: str | None = None):
     return a, 24000, words, used
 
 
-def gemini_stream(text: str):
+def gemini_stream(text: str, style: str | None = None):
     """`text` in ONE free Gemini TTS request (voice tts.GEMINI_FLOW_VOICE) -> (float32 mono, 24000, Whisper word dicts).
-    Word timings from Whisper. Raises on any problem (quota, error, silence)."""
+    Word timings from Whisper. `style` replaces gemini_tts.STYLE (a retake adds the checker's hint). Raises on any
+    problem (quota, error, silence)."""
     import whisper
     from . import gemini_tts
     global _ASR
-    w, sr = gemini_tts.say(text, voice=tts.GEMINI_FLOW_VOICE)
+    w, sr = gemini_tts.say(text, voice=tts.GEMINI_FLOW_VOICE, style=style)
     a = np.asarray(w, np.float32).ravel()
     if sr != 24000:
         a = np.interp(np.linspace(0, len(a) - 1, int(len(a) * 24000 / sr)), np.arange(len(a)), a).astype(np.float32)
@@ -374,6 +375,135 @@ def gemini_cut(lines: list[str], a, sr: int, heard):
         ws = [(x["word"].strip(), float(x["start"]) - t0, float(x["end"]) - t0) for x in heard if t0 <= float(x["start"]) < t1]
         out.append((a[int(t0 * sr):int(t1 * sr)], ws))
     return out
+
+
+class VoiceCheckFailed(RuntimeError):
+    """Every Gemini take had a hard problem (pipeline/voice_check.py): the Short falls back to the next voice.
+    `reports` / `chosen` still go into the report."""
+    def __init__(self, msg: str, reports=None, chosen: int = 0):
+        super().__init__(msg)
+        self.reports, self.chosen = list(reports or []), chosen
+
+
+def _max_takes() -> int:
+    return max(1, int(os.environ.get("VOICE_MAX_TAKES", "3") or 3))   # whole-narration Gemini requests per Short (free: ~10/day/model)
+
+
+def _good_score() -> float:
+    return float(os.environ.get("VOICE_GOOD", "85") or 85)            # stop retaking at ok + this score
+
+
+def _quota_error(e: Exception) -> bool:
+    t = str(e).lower()
+    return any(k in t for k in ("quota", "429", "resource_exhausted", "rate limit", "per day", "no model left"))
+
+
+def _shift_words(heard: list[dict], off: float) -> list[dict]:
+    """Whisper word times after polish() removed `off` seconds from the start."""
+    if not off:
+        return heard
+    return [{**x, "start": max(0.0, float(x["start"]) - off), "end": max(0.0, float(x["end"]) - off)} for x in heard]
+
+
+def gemini_takes(lines: list[str]) -> dict:
+    """The quality loop (Nov 26): up to VOICE_MAX_TAKES whole-narration Gemini takes. Each is polished, then checked
+    (voice_check.check, with its Whisper words); a retake asks for the worst flaw to be fixed (report.hint is added to
+    the style). Stops at the first take that is ok with score >= VOICE_GOOD, or when a retake fails (quota ...).
+    -> {"pieces", "sr", "reports", "chosen"}; raises VoiceCheckFailed when even the best take has hard problems."""
+    from . import gemini_tts, voice_check
+    text, style = tts.flow_join(lines), None
+    reports, cuts = [], []
+    for n in range(_max_takes()):
+        try:
+            a, sr, heard = gemini_stream(text, style=style)
+        except Exception as e:  # noqa: BLE001
+            if not reports:
+                raise
+            print(f"[prepass] gemini retake {n + 1} stopped ({'quota' if _quota_error(e) else 'error'}): {str(e)[:160]}", flush=True)
+            break
+        a, off = voice_check.polish(a, sr)
+        heard = _shift_words(heard, off)
+        rep = voice_check.check(a, sr, lines, heard=heard)
+        reports.append(rep)
+        cuts.append((gemini_cut(lines, a, sr, heard), sr))
+        print(f"[prepass] gemini take {n + 1}: ok={rep.ok} score={rep.score:.0f} hard={list(rep.hard)[:3]} soft={list(rep.soft)[:3]}", flush=True)
+        if rep.ok and rep.score >= _good_score():
+            break
+        style = gemini_tts.STYLE + (" " + rep.hint if getattr(rep, "hint", "") else "")
+    usable = [i for i, c in enumerate(cuts) if c[0] is not None]   # a read whose lines can't be found can't be cut
+    if not usable:
+        raise VoiceCheckFailed("gemini read did not match the script", reports, len(reports) - 1)
+    chosen = usable[voice_check.best([reports[i] for i in usable])]
+    if not reports[chosen].ok:
+        raise VoiceCheckFailed(f"gemini read failed the voice check: {list(reports[chosen].hard)[:4]}", reports, chosen)
+    pieces, sr = cuts[chosen]
+    return {"pieces": pieces, "sr": sr, "reports": reports, "chosen": chosen}
+
+
+def _whole_read(voiced, sr: int):
+    """[(line, audio, words)] -> (one audio, Whisper-style word dicts), for checking a fallback engine's read."""
+    audio, words, t = [], [], 0.0
+    for _line, pa, pw in voiced:
+        words += [{"word": w, "start": t + st, "end": t + en} for w, st, en in pw]
+        audio.append(np.asarray(pa, np.float32))
+        t += len(pa) / sr
+    return np.concatenate(audio), words
+
+
+def _rep_dict(r) -> dict:
+    return {k: getattr(r, k, None) for k in ("ok", "score", "hard", "soft", "metrics", "hint")}
+
+
+def _write_report(sid: str, reports: list, chosen: int, engine: str) -> None:
+    """.cache/voice/report-<sid>.json (+ .md), the Actions step summary, one ::notice and (soft problems) one ::warning."""
+    from . import voice_check
+    rep = reports[chosen]
+
+    def enc(o):
+        return o.item() if hasattr(o, "item") else (list(o) if isinstance(o, (set, tuple)) else str(o))
+    Path(tts.VOICE_CACHE, f"report-{sid}.json").write_text(
+        json.dumps({"id": sid, "engine": engine, "chosen": chosen, "takes": [_rep_dict(r) for r in reports]},
+                   indent=1, default=enc), encoding="utf-8")
+    md = voice_check.to_markdown(sid, reports, chosen, engine)
+    Path(tts.VOICE_CACHE, f"report-{sid}.md").write_text(md, encoding="utf-8")
+    summ = os.environ.get("GITHUB_STEP_SUMMARY")
+    if summ:
+        with open(summ, "a", encoding="utf-8") as f:
+            f.write(md + "\n")
+    print(f"::notice title=voice check::Short {sid}: {engine}, {len(reports)} take(s) checked, score {rep.score:.0f}", flush=True)
+    if rep.soft:
+        print(f"::warning title=voice check::Short {sid} ({engine}): {'; '.join(map(str, rep.soft))[:400]}", flush=True)
+
+
+def read_wav(sid: str):
+    """The chosen read of a Short as it sits in the flow cache: its line files joined in script order -> (audio, sr) or None."""
+    import soundfile as sf
+    path = next((ROOT / "content" / "scripts").glob(f"{sid}-*.json"), None) or next((ROOT / "content" / "scripts").glob(f"{sid}*.json"), None)
+    if not path:
+        return None
+    script = json.loads(path.read_text(encoding="utf-8"))
+    tts.EDGE_RATE_NOW = tts.EDGE_RATE.get(script.get("format"), tts.EDGE_RATE["default"])
+    out, sr = [], 24000
+    for line in dict.fromkeys(tts.speakable(x) for x in lines_for(script) if x.strip()):
+        if tts.flow_ready(line):
+            a, sr = sf.read(tts.flow_path(line) + ".wav", dtype="float32")
+            out.append(a.mean(axis=1) if a.ndim > 1 else a)
+    return (np.concatenate(out), sr) if out else None
+
+
+def _voice_gemini(groups: list[list[str]], sid: str):
+    """Gemini with the quality loop -> (voiced, sr, (reports, chosen) or None). Without voice_check (or for
+    FLOW_SCOPE=line) it is the plain one-take path."""
+    try:
+        from . import voice_check  # noqa: F401
+    except ImportError:
+        voiced, sr, _ = _voice_groups(groups, "gemini")
+        return voiced, sr, None
+    if len(groups) != 1:
+        voiced, sr, _ = _voice_groups(groups, "gemini")
+        return voiced, sr, None
+    res = gemini_takes(groups[0])
+    return [(ln, pa, pw) for ln, (pa, pw) in zip(groups[0], res["pieces"])], res["sr"], (res["reports"], res["chosen"])
 
 
 _ASR = None
@@ -435,11 +565,14 @@ def edge_pass(ids: list[str]) -> int:
             continue
         groups = [todo] if tts.FLOW_SCOPE == "short" else [[x] for x in todo]
         voiced, sr, engine = None, 24000, "edge"
+        checked = None   # (reports, chosen) of the Gemini quality loop
         if gemini_ok:
             try:
-                voiced, sr, _ = _voice_groups(groups, "gemini")
+                voiced, sr, checked = _voice_gemini(groups, sid)
                 engine = "gemini"
-            except Exception as e:  # noqa: BLE001   (free daily quota, network, no match ...)
+            except Exception as e:  # noqa: BLE001   (free daily quota, network, no match, failed voice check ...)
+                if isinstance(e, VoiceCheckFailed) and e.reports:
+                    checked = (e.reports, e.chosen)
                 print(f"::warning title=voice::Short {sid}: Gemini {tts.GEMINI_FLOW_VOICE} failed ({str(e)[:200]}); using the backup voice", flush=True)
                 voiced = None
         if voiced is None and eleven_ok:
@@ -457,6 +590,16 @@ def edge_pass(ids: list[str]) -> int:
                 fails += 1
                 print(f"::warning title=voice::edge-tts: {str(e)[:200]}", flush=True)
                 continue
+        try:   # report on the read that was chosen (a fallback engine's read is checked too, for the report only)
+            from . import voice_check
+            reports, chosen = (list(checked[0]), checked[1]) if checked else ([], 0)
+            if engine != "gemini" or not reports:
+                whole, heard_w = _whole_read(voiced, sr)
+                reports.append(voice_check.check(whole, sr, [ln for ln, _a, _w in voiced], heard=heard_w))
+                chosen = len(reports) - 1
+            _write_report(sid, reports, chosen, engine)
+        except Exception as e:  # noqa: BLE001   a report problem never stops a Short
+            print(f"::warning title=voice check::Short {sid}: report skipped ({str(e)[:160]})", flush=True)
         for line, pa, pw in voiced:
             seen.add(line)
             try:   # flag unclear words (a note only: the same text is read the same way, a retake would not change it)

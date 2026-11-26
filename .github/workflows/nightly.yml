@@ -78,6 +78,11 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      # Nov 26: the daily voice-check workflow (07:30 UTC) voiced and checked this Short already: same key = reuse it, no second Gemini request
+      - uses: actions/cache@v4
+        with:
+          path: .cache/voice
+          key: voice-${{ matrix.id }}-${{ hashFiles('pipeline/voice_prepass.py', 'pipeline/voice_check.py', 'pipeline/tts.py', 'pipeline/gemini_tts.py', format('content/scripts/{0}-*.json', matrix.id)) }}
       - uses: actions/cache@v4
         with:
           path: ~/.cache/huggingface
