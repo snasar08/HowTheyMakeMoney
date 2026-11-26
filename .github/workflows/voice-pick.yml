@@ -1,0 +1,46 @@
+name: Voice pick
+
+# Push branch voice-pick: the same real line in many free voices (Edge neural, Gemini prebuilt, Kokoro), scored
+# automatically (UTMOS, Whisper accuracy, pitch movement, pace), one mp3 each + a numbered combined mp4 on the
+# "voice-pick" release. Nothing is posted and main is not touched.
+on:
+  push:
+    branches: ["voice-pick"]
+
+permissions:
+  contents: write
+
+jobs:
+  pick:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      GH_TOKEN: ${{ github.token }}
+      HTMM_CACHE: ${{ github.workspace }}/.cache
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg espeak-ng fonts-dejavu-core
+      - run: |
+          pip install -q -r requirements.txt edge-tts librosa torchaudio num2words
+      - run: python bench/voice_pick.py v > pick.log 2>&1
+      - if: always()
+        run: |
+          gh release view voice-pick >/dev/null 2>&1 || gh release create voice-pick --title voice-pick --notes "voice candidates"
+          grep -v -i warn pick.log | tail -60 > pick-tail.log; gh release upload voice-pick pick-tail.log --clobber
+      - run: |
+          cd v && cat errors.log || true
+          i=0; : > list.txt
+          for f in $(ls *.wav); do
+            i=$((i+1)); n=$(printf %02d $i); s=${f%.wav}
+            ffmpeg -loglevel error -y -i "$f" -b:a 160k "$n-$s.mp3"
+            d=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$f")
+            ffmpeg -loglevel error -y -f lavfi -i "color=c=black:s=720x1280:d=$d:r=24" -i "$f" -vf "drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf:text='$i  $s':fontcolor=white:fontsize=56:x=(w-tw)/2:y=(h-th)/2" -c:v libx264 -pix_fmt yuv420p -c:a aac -shortest "seg$n.mp4"
+            echo "file 'seg$n.mp4'" >> list.txt
+          done
+          ffmpeg -loglevel error -y -f concat -safe 0 -i list.txt -c copy combined-numbered.mp4
+          gh release view voice-pick >/dev/null 2>&1 || gh release create voice-pick --title voice-pick --notes "voice candidates" 
+          gh release upload voice-pick *.mp3 combined-numbered.mp4 scores.json scores.txt errors.log --clobber

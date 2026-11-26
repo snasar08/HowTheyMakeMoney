@@ -1145,6 +1145,7 @@ class Renderer:
         self.joins = []  # (scene, start, end) silences that must stay silent — for the checker
         self.cta = None
         sr = tts.SAMPLE_RATE
+        tts.EDGE_RATE_NOW = tts.EDGE_RATE.get(self.s.get("format"), tts.EDGE_RATE["default"])
         tts.use_engine_for([raw["narration"] for raw in self.s["scenes"]] + [cta_line, loop])
         tts.VOICE_SPEED_NOW = tts.VOICE_SPEED_FOR.get(self.s.get("format"), tts.VOICE_SPEED_FOR["default"])
         for i, raw in enumerate(self.s["scenes"]):
