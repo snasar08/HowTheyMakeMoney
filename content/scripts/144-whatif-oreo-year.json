@@ -64,7 +64,7 @@
       },
       "toon": [
         {
-          "place": "diner",
+          "place": "stall",
           "mood": "shock",
           "brand": {
             "name": "OREO",
@@ -72,14 +72,15 @@
             "fg": "#ffffff"
           },
           "things": [
-            "cookie"
+            "sandwichcookie"
           ],
           "card": {
             "text": "40 BILLION",
             "kind": "screen",
             "sub": "OREOS A YEAR, 2017"
           },
-          "view": "face"
+          "view": "ms",
+          "act": "none"
         }
       ]
     },
@@ -111,7 +112,7 @@
           "place": "diner",
           "mood": "happy",
           "things": [
-            "cookie",
+            "sandwichcookie",
             "milk_carton"
           ],
           "view": "ws"
@@ -120,7 +121,7 @@
           "place": "diner",
           "mood": "dazed",
           "things": [
-            "cookie",
+            "sandwichcookie",
             "clock"
           ],
           "view": "face"
@@ -192,7 +193,7 @@
           "mood": "nervous",
           "things": [
             "box",
-            "cookie"
+            "sandwichcookie"
           ],
           "card": {
             "text": "40 BILLION",
@@ -233,12 +234,13 @@
           "view": "face"
         },
         {
-          "place": "diner",
+          "place": "street",
           "mood": "laugh",
           "things": [
-            "cookie"
+            "sandwichcookie"
           ],
-          "view": "ms"
+          "view": "cu",
+          "act": "none"
         }
       ]
     }

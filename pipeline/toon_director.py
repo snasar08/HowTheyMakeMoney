@@ -137,6 +137,8 @@ def clean(sc: dict) -> dict:
             out["card"]["at"] = float(c["at"])
     if sc.get("view") in ("ws", "wide", "ms", "cu", "face", "low"):
         out["view"] = sc["view"]
+    if sc.get("act") == "none":
+        out["act"] = "none"        # opt this line out of the auto mini-scene
     if isinstance(sc.get("who"), dict):
         out["who"] = sc["who"]
     if sc.get("hide"):
