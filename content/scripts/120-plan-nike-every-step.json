@@ -411,9 +411,6 @@
   ],
   "aivideo_note": "Nov 15 2026: one premium Short (Sam). 9 Higgsfield Seedance 2.5 clips, 5 s each, 9:16, no logos/real people in prompts; 315 credits. Nov 26: clips switched OFF (key renamed aivideo_off) because the AI shoes show a real Nike/Jordan-style logo (eyes check); renders in the 3D toon look instead. Rename back only with logo-free clips.",
   "hook_rules": "nov23",
-  "needs_fix": [
-    "eyes (Nov 26 toon-test): Nike logo visible on the shoe in frames 100-106 and 1274-1359 (brand mark policy). Act checks (dunk, build_tools) no longer flagged."
-  ],
   "aivideo_off": [
     {
       "url": "assets/aivideo/120/c1.mp4",
@@ -477,5 +474,8 @@
         15
       ]
     }
+  ],
+  "needs_fix": [
+    "Nov 26: Sam's AI-video clips show a Nike-like logo, so aivideo is off and the 3D toon version passes checks. Held until Sam picks: post the toon version, or get logo-free AI clips."
   ]
 }

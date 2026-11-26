@@ -225,34 +225,58 @@ def _gemini_short(sid: str) -> bool:
     return True
 
 
-def edge_say(text: str, rate: str, voice: str | None = None, pitch: str | None = None):
-    """One sentence through Microsoft Edge neural TTS (edge-tts, free, no key) -> (float32 mono, 24000)."""
-    import asyncio
+def _decode_mp3(f: str):
     import subprocess
+    try:   # libsndfile reads mp3 (no ffmpeg needed on the voice machines); ffmpeg as the fallback
+        import soundfile as sf
+        a, sr0 = sf.read(f, dtype="float32")
+        a = a.mean(axis=1) if a.ndim > 1 else a
+        if sr0 != 24000:
+            a = np.interp(np.linspace(0, len(a) - 1, int(len(a) * 24000 / sr0)), np.arange(len(a)), a).astype(np.float32)
+        return a
+    except Exception:  # noqa: BLE001
+        r = subprocess.run(["ffmpeg", "-loglevel", "error", "-i", f, "-f", "f32le", "-ar", "24000", "-ac", "1", "pipe:1"],
+                           capture_output=True, check=True)
+        return np.frombuffer(r.stdout, np.float32)
+
+
+def edge_stream(text: str, rate: str, voice: str | None = None, pitch: str | None = None):
+    """`text` in ONE edge-tts call -> (float32 mono, 24000, [(word, start_s, end_s)]). The words come from the
+    service's own WordBoundary events (exact for this audio, no Whisper guess); a boundary that holds two words
+    ("2,700 years") is split by letter count."""
+    import asyncio
     import tempfile
 
     import edge_tts
     f = tempfile.mktemp(suffix=".mp3")
 
     async def go():
-        await edge_tts.Communicate(text, voice or tts.EDGE_VOICE, rate=rate, pitch=pitch or tts.EDGE_PITCH).save(f)
+        ev, buf = [], bytearray()
+        c = edge_tts.Communicate(text, voice or tts.EDGE_VOICE, rate=rate, pitch=pitch or tts.EDGE_PITCH, boundary="WordBoundary")
+        async for ch in c.stream():
+            if ch["type"] == "audio":
+                buf += ch["data"]
+            elif ch["type"] == "WordBoundary":
+                ev.append(ch)
+        Path(f).write_bytes(bytes(buf))
+        return ev
     last = None
     for attempt in range(4):
         try:
-            asyncio.run(go())
-            try:   # libsndfile reads mp3 (no ffmpeg needed on the voice machines); ffmpeg as the fallback
-                import soundfile as sf
-                a, sr0 = sf.read(f, dtype="float32")
-                a = a.mean(axis=1) if a.ndim > 1 else a
-                if sr0 != 24000:
-                    a = np.interp(np.linspace(0, len(a) - 1, int(len(a) * 24000 / sr0)), np.arange(len(a)), a).astype(np.float32)
-            except Exception:  # noqa: BLE001
-                r = subprocess.run(["ffmpeg", "-loglevel", "error", "-i", f, "-f", "f32le", "-ar", "24000", "-ac", "1", "pipe:1"],
-                                   capture_output=True, check=True)
-                a = np.frombuffer(r.stdout, np.float32)
+            ev = asyncio.run(go())
+            a = _decode_mp3(f)
             os.unlink(f)
             if len(a) > 2400:
-                return a, 24000
+                words = []
+                for e in ev:
+                    t0, d = e["offset"] / 1e7, e["duration"] / 1e7
+                    parts = e["text"].split()
+                    tot = sum(len(x) for x in parts) or 1
+                    acc = 0
+                    for x in parts:
+                        words.append((x, t0 + d * acc / tot, t0 + d * (acc + len(x)) / tot))
+                        acc += len(x)
+                return a, 24000, words
             last = "empty audio"
         except Exception as e:  # noqa: BLE001
             last = repr(e)
@@ -260,11 +284,50 @@ def edge_say(text: str, rate: str, voice: str | None = None, pitch: str | None =
     raise RuntimeError(f"edge-tts failed: {last}")
 
 
+def edge_say(text: str, rate: str, voice: str | None = None, pitch: str | None = None):
+    """One piece of text through Microsoft Edge neural TTS (edge-tts, free, no key) -> (float32 mono, 24000)."""
+    a, sr, _w = edge_stream(text, rate, voice, pitch)
+    return a, sr
+
+
+def cut_lines(lines: list[str], a, sr: int, words):
+    """Cut the one-call read of several lines into one piece per line, inside the silence between the last word of a
+    line and the first of the next (words matched to the script by their letters). Returns [(audio, words)] or None."""
+    norm = lambda x: re.sub(r"[^a-z0-9]", "", x.lower())  # noqa: E731
+    owner = [i for i, ln in enumerate(lines) for w in ln.split() if norm(w)]
+    toks = [(norm(w), st, en, w) for w, st, en in words if norm(w)]
+    if len(toks) != len(owner):
+        return None
+    first, last = {}, {}
+    for k, i in enumerate(owner):
+        first.setdefault(i, k)
+        last[i] = k
+    cuts = [0.0]
+    for i in range(len(lines) - 1):
+        e, s_ = toks[last[i]][2], toks[first[i + 1]][1]
+        cuts.append((e + s_) / 2 if s_ > e else e)
+    cuts.append(len(a) / sr)
+    out = []
+    for i in range(len(lines)):
+        t0, t1 = cuts[i], cuts[i + 1]
+        ws = [(w, st - t0, en - t0) for _n, st, en, w in toks[first[i]:last[i] + 1]]
+        out.append((a[int(t0 * sr):int(t1 * sr)], ws))
+    return out
+
+
+def with_punctuation(line: str, words):
+    """Give each timed word its script spelling (with . , ? :) when the two lists line up, so tts can keep a beat after a question."""
+    sw = line.split()
+    if len(sw) == len(words):
+        return [(w, st, en) for w, (_t, st, en) in zip(sw, words)]
+    return words
+
+
 def edge_pass(ids: list[str]) -> int:
-    """Voice every sentence of the Short(s) with Edge neural TTS; Whisper gives the word timings captions need.
-    Cached per sentence (question beat logic stays in tts.qwen); cheap, deterministic, no daily quota."""
+    """Voice every line of the Short(s) with Edge neural TTS (FLOW_SCOPE=short: the whole narration in ONE call;
+    =line: one call per line). No splitting into sentences: the voice keeps its own melody and natural pauses.
+    Word timings are the service's WordBoundary events. Cheap, deterministic, no daily quota."""
     import soundfile as sf
-    import whisper
     os.makedirs(tts.VOICE_CACHE, exist_ok=True)
     asr, seen = None, set()
     fails = 0
@@ -274,29 +337,38 @@ def edge_pass(ids: list[str]) -> int:
             continue
         script = json.loads(path.read_text(encoding="utf-8"))
         tts.EDGE_RATE_NOW = tts.EDGE_RATE.get(script.get("format"), tts.EDGE_RATE["default"])   # same rate render.py will ask for
-        pass
-        for line in lines_for(script):
-            for sent, q, b in tts.sentences(tts.speakable(line)):
-                if b or sent in seen or os.path.exists(tts.cache_path(sent) + ".wav"):
-                    continue
-                seen.add(sent)
-                try:
-                    a, sr = edge_say(sent, tts.edge_rate_for(q))
+        lines = [tts.speakable(x) for x in lines_for(script) if x.strip()]
+        todo = [x for x in dict.fromkeys(lines) if not tts.flow_ready(x) and not tts.SPEAKER_B.search(x)]
+        if not todo:
+            continue
+        groups = [todo] if tts.FLOW_SCOPE == "short" else [[x] for x in todo]
+        for grp in groups:
+            try:
+                a, sr, words = edge_stream(tts.flow_join(grp), tts.edge_rate_for())
+                pieces = [(a, words)] if len(grp) == 1 else cut_lines(grp, a, sr, words)
+                if pieces is None:
+                    print("[prepass] could not match words to lines; voicing line by line", flush=True)
+                    pieces = [(p[0], p[2]) for p in (edge_stream(x, tts.edge_rate_for()) for x in grp)]
+            except Exception as e:  # noqa: BLE001
+                fails += 1
+                print(f"::warning title=voice::edge-tts: {str(e)[:200]}", flush=True)
+                continue
+            for line, (pa, pw) in zip(grp, pieces):
+                seen.add(line)
+                try:   # flag unclear words (a note only: Edge reads the same text the same way, a retake would not change it)
+                    import whisper
+                    asr = asr or whisper.load_model("base.en")
+                    a16 = np.interp(np.linspace(0, len(pa) - 1, int(len(pa) * 16000 / sr)), np.arange(len(pa)), pa).astype(np.float32)
+                    heard = [x for seg in asr.transcribe(a16, language="en", word_timestamps=True, fp16=False)["segments"]
+                             for x in seg.get("words", [])]
+                    bad = [x for x in problems(line, heard) if not x.startswith("rushed:")]
+                    if bad:
+                        print(f"[prepass] edge flagged {bad[:3]}: {line[:60]}", flush=True)
                 except Exception as e:  # noqa: BLE001
-                    fails += 1
-                    print(f"::warning title=voice::edge-tts: {str(e)[:200]}", flush=True)
-                    continue
-                asr = asr or whisper.load_model("base.en")
-                a16 = np.interp(np.linspace(0, len(a) - 1, int(len(a) * 16000 / sr)), np.arange(len(a)), a).astype(np.float32)
-                heard = [x for seg in asr.transcribe(a16, language="en", word_timestamps=True, fp16=False)["segments"]
-                         for x in seg.get("words", [])]
-                bad = [x for x in problems(sent, heard) if not x.startswith("rushed:")]
-                if bad:
-                    print(f"[prepass] edge flagged {bad[:3]}: {sent[:60]}", flush=True)
-                sf.write(tts.cache_path(sent) + ".wav", a, sr)
-                Path(tts.cache_path(sent) + ".json").write_text(json.dumps(
-                    [(x["word"].strip(), float(x["start"]), float(x["end"])) for x in heard]), encoding="utf-8")
-    print(f"::notice title=voice::Edge {tts.EDGE_VOICE}: {len(seen)} sentence(s) voiced, {fails} failed", flush=True)
+                    print(f"[prepass] clarity note skipped: {e!r}", flush=True)
+                sf.write(tts.flow_path(line) + ".wav", pa, sr)
+                Path(tts.flow_path(line) + ".json").write_text(json.dumps(with_punctuation(line, pw)), encoding="utf-8")
+    print(f"::notice title=voice::Edge {tts.EDGE_VOICE} ({tts.FLOW_TAG}, {tts.FLOW_SCOPE}): {len(seen)} line(s) voiced, {fails} failed", flush=True)
     return 1 if fails else 0
 
 

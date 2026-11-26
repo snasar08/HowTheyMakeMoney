@@ -16,7 +16,8 @@ their money, told as fast 3D cartoon stories with an AI voice. Owner: Sam (snasa
   (7:00, 12:00, 15:30, 19:00, 22:00) only when Sam says, after Buffer lifts the cap.
 - Voice (Nov 26, Sam disliked Umbriel): Microsoft Edge neural voice **en-US-AndrewMultilingualNeural**, rate +18%,
   pitch +8Hz (`EDGE_VOICE`, `EDGE_RATE`, `EDGE_PITCH` in pipeline/tts.py; free, no key, no daily quota; chosen by
-  bench/voice_pick.py + voice_tune.py scores). `VOICE_SOURCE=gemini|qwen` brings back the old voices (Gemini free
+  bench/voice_pick.py + voice_tune.py scores). Flow (Nov 26): the whole narration is ONE edge-tts call (no sentence/breath splits, one rate), words from
+  WordBoundary, pauses capped at 0.22 s (0.32 after a question), light per-sentence pace/loudness leveling (`FLOW_TAG`, `FLOW_SCOPE`, `FLOW_LEVEL` in tts.py). `VOICE_SOURCE=gemini|qwen` brings back the old voices (Gemini free
   tier = 10 requests/day per model). Fallback if the voice is not ready: Kokoro.
 - Kid-safe. Never invent numbers: every figure comes from a source page actually opened, listed in `sources`.
 - No copied logo art, crests, real jersey designs or other creators' lines. Brand names in plain lettering are fine.
