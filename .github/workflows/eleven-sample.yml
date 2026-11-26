@@ -22,7 +22,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: pip install -q numpy
+      - run: pip install -q numpy && sudo apt-get install -y -qq ffmpeg >/dev/null
       - uses: actions/cache@v4
         with:
           path: .cache/voice
@@ -30,13 +30,14 @@ jobs:
       - name: Voice 178 + 094 with Adam and Brian
         env:
           ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           ELEVEN_MODEL: ${{ inputs.model || 'eleven_flash_v2_5' }}
           ELEVEN_SAMPLE_VOICES: ${{ inputs.voices || 'adam' }}
           IDS: ${{ inputs.ids || '178 094' }}
           ELEVEN_SPEED: ${{ vars.ELEVEN_SPEED }}
         run: |
           if [ -z "$ELEVENLABS_API_KEY" ]; then echo "::error::secret ELEVENLABS_API_KEY is not set"; exit 1; fi
-          python -m pipeline.eleven_sample sample $IDS
+          python -m pipeline.umbriel_sample sample $IDS
           ls -l sample
       - name: Upload to release eleven-sample
         env:
