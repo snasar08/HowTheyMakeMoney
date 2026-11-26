@@ -47,7 +47,7 @@ jobs:
           pip install -q torch torchaudio --index-url https://download.pytorch.org/whl/cpu
           pip install -q -U openai-whisper soundfile numpy edge-tts   # Nov 26: Edge neural voice is the default
           [ "${VOICE_SOURCE:-edge}" = edge ] || pip install -q -U qwen-tts
-          python -m pipeline.voice_prepass $(cat toon/test_id.txt)
+          python -m pipeline.voice_prepass $(cat toon/test_id.txt) 2>&1 | tee prepass.log; test ${PIPESTATUS[0]} -eq 0
       - uses: actions/upload-artifact@v4
         with:
           name: voice
