@@ -1048,6 +1048,10 @@ def ah_shots(plan: dict) -> list:
         if s["set"] == p["set"] and s.get("view") == p.get("view") and "cam" not in s and not s.get("act"):
             alt = ["wide", "ws"] if (s.get("things") or s.get("cards")) else ["face", "ms", "ws"]
             s["view"] = next((v for v in alt if v != p.get("view") and not (v == "low" and s["set"] in AH_NO_LOW)), "wide")
+    for p, s in zip(shots, shots[1:]):   # Nov 26 look audit (119 @599): a one-word line ("Nike.") made an 8-frame shot = a flash cut; it borrows frames from the shot before it (>= 12 frames, ~0.4 s)
+        short = 12 - s["n"]
+        if short > 0 and p["n"] - short >= 30 and not s.get("act") and not p.get("act") and s["a"] == p["a"] + p["n"]:
+            p["n"] -= short; s["a"] -= short; s["n"] += short
     if "pov" in plan:
         shots = pov_shots(plan, shots)
     for sh in shots:
