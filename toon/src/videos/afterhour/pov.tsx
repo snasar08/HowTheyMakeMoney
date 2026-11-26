@@ -48,7 +48,7 @@ export const PovOverlay: React.FC<{ hud: PovHud }> = ({ hud }) => {
         return (
           <div key={i} style={{ position: "absolute", left: 210, width: 660, top, height: Hc, transform: `scale(${Math.max(0.001, k)})`, transformOrigin: "50% 0%", opacity: cl((f - c.at) / 3) * (isLast ? 1 : 1 - ke),
             background: c.result ? "#ffd23a" : "#ffffff", border: "6px solid #141018", borderRadius: 34, boxShadow: "0 7px 0 rgba(20,16,24,0.85)", display: "flex", alignItems: "center", boxSizing: "border-box" }}>
-            <div style={{ width: 96, textAlign: "center", fontSize: Hc * 0.5, fontWeight: 900, color: c.result ? "#8a5a00" : "#9aa1b5", lineHeight: 1 }}>{c.op}</div>
+            <div style={{ width: 96, textAlign: "center", fontSize: Hc * 0.62, fontWeight: 900, color: c.result ? "#8a5a00" : "#3d4560", lineHeight: 1 }}>{c.op === "-" || c.op === "–" ? "−" : c.op}</div>
             <div style={{ flex: 1, paddingRight: 96, textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
               <div style={{ fontSize: big, fontWeight: 900, color: "#141018", lineHeight: 1.0, whiteSpace: "nowrap", fontVariantNumeric: "tabular-nums" }}>{txt}</div>
               <div style={{ fontFamily: "Arial, sans-serif", fontSize: Math.max(22, Hc * 0.19), fontWeight: 700, color: c.result ? "#6b4b00" : "#7b8296", marginTop: 4, whiteSpace: "nowrap" }}>{c.label}</div>

@@ -276,7 +276,7 @@ def make_plan(script: dict, recorded: dict | None = None) -> dict:
                         **({"brand": _brand(d["brand"])} if d.get("brand") else {"brand": _brand(v["brand"])} if v.get("brand") else {}),
                         # Nov 15 (afterhour style): a text card in the scene (date sign, money screen that flips, headline,
                         # tombstone...), a fixed view ("face" close-up etc.), a different character for this line, hide the hero
-                        **{k: d[k] for k in ("card", "view", "who", "hide", "crowdO") if d.get(k)},
+                        **{k: d[k] for k in ("card", "view", "who", "hide", "crowdO", "act") if d.get(k)},
                         **{k: d[k] for k in ("math", "units", "journey", "react") if k in d},      # POV format (Nov 24)
                         "things": (prev_things := things_for(ss[j], given, prev_things)), "line": ss[j][:80], "text": ss[j]})
             a += m
@@ -871,6 +871,8 @@ def ah_shots(plan: dict) -> list:
                                   sc.get("action"), prev_acts[-2:])
         if act and (outro or (not ctx["athlete"] and (ctx["famous"] or ctx["gamer"]) and ah_actions.ACT_SET.get(act, ((), None))[1] in AH_SPORT_SETS + ("field",))):
             act = None                                              # no sport act for a non-athlete, and no repeat act in the outro
+        if sc.get("act") == "none":
+            act = None                                              # a script can opt a line out of its auto act (123: "a garage, a laptop" is not hammering a house)
         prev_acts.append(act)
         if act:
             pose = ah_actions.ACT_POSE[act]
@@ -1048,6 +1050,10 @@ def ah_shots(plan: dict) -> list:
         if s["set"] == p["set"] and s.get("view") == p.get("view") and "cam" not in s and not s.get("act"):
             alt = ["wide", "ws"] if (s.get("things") or s.get("cards")) else ["face", "ms", "ws"]
             s["view"] = next((v for v in alt if v != p.get("view") and not (v == "low" and s["set"] in AH_NO_LOW)), "wide")
+    for p, s in zip(shots, shots[1:]):   # Nov 26 look audit (119 @599): a one-word line ("Nike.") made an 8-frame shot = a flash cut; it borrows frames from the shot before it (>= 12 frames, ~0.4 s)
+        short = 12 - s["n"]
+        if short > 0 and p["n"] - short >= 30 and not s.get("act") and not p.get("act") and s["a"] == p["a"] + p["n"]:
+            p["n"] -= short; s["a"] -= short; s["n"] += short
     if "pov" in plan:
         shots = pov_shots(plan, shots)
     for sh in shots:

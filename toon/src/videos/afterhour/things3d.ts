@@ -4,7 +4,7 @@ import { toonMat, metalMat, glowMat, canvasTex, seeded } from "./common";
 import { hasModel, makeModelGroup, MODEL_SIZE } from "./models";
 import { drawCard } from "./cards";
 
-export type ThingName = "shoe" | "springshoe" | "chip" | "gpu" | "cash" | "cashstack" | "coins" | "goldbar" | "trophy" | "medal" | "crown" | "ring" | "car" | "sportscar" | "bus" | "truck" | "rocket" | "phone" | "laptop" | "tv" | "monitor" | "clock" | "books" | "letter" | "newspaper" | "briefcase" | "shovel" | "pickaxe" | "box" | "crate" | "basketball" | "football" | "soccerball" | "hoop" | "mic" | "headset" | "controller" | "burger" | "pizza" | "coffee" | "plant" | "robot" | "drone" | "satellite" | "globe" | "house" | "factory" | "stadium" | "plane" | "yacht" | "chart" | "arrowup" | "arrowdown" | "lightbulb" | "lock" | "key" | "heart" | "bomb" | "fire" | "camera" | "chatbot" | "glasses" | "dumbbell" | "hanger" | "dome" | "console" | "golfball" | "golfclub" | "horse" | "baseball" | "guitar" | "rollercoaster" | "noodlecup" | "legobrick" | "eiffeltower" | "giantshovel" | "icepop" | "tradingcard";
+export type ThingName = "shoe" | "springshoe" | "chip" | "gpu" | "cash" | "cashstack" | "coins" | "goldbar" | "trophy" | "medal" | "crown" | "ring" | "car" | "sportscar" | "bus" | "truck" | "rocket" | "phone" | "laptop" | "tv" | "monitor" | "clock" | "books" | "letter" | "newspaper" | "briefcase" | "shovel" | "pickaxe" | "box" | "crate" | "basketball" | "football" | "soccerball" | "hoop" | "mic" | "headset" | "controller" | "burger" | "pizza" | "coffee" | "plant" | "robot" | "drone" | "satellite" | "globe" | "house" | "factory" | "stadium" | "plane" | "yacht" | "chart" | "arrowup" | "arrowdown" | "lightbulb" | "lock" | "key" | "heart" | "bomb" | "fire" | "camera" | "chatbot" | "glasses" | "dumbbell" | "hanger" | "dome" | "console" | "golfball" | "golfclub" | "horse" | "baseball" | "guitar" | "rollercoaster" | "noodlecup" | "legobrick" | "eiffeltower" | "giantshovel" | "icepop" | "tradingcard" | "sandwichcookie";
 export type Thing = { root: THREE.Group; size: number; tick?(t: number): void };
 
 type M = string | THREE.Material;
@@ -97,7 +97,8 @@ const B: Record<ThingName, Builder> = {
     cy(g, 0.034, 0.034, 0.004, "#2a2a30", 0, 0.148, -0.06, [-0.15, 0, 0], 14);
     bx(g, 0.05, 0.07, 0.012, "#f1f1f1", 0, 0.12, 0.0, [0.5, 0, 0]);
     for (let i = 0; i < 3; i++) bx(g, 0.07, 0.007, 0.012, "#ffffff", 0, 0.1 - i * 0.012, 0.035 + i * 0.026, [0.45, 0, 0]);
-    for (const s of [-1, 1]) ext(g, [[0, 0], [0.1, 0.012], [0.06, 0.03], [-0.03, 0.018]], 0.006, "#ffffff", s * 0.054, 0.075, -0.01, [0, s > 0 ? PI / 2 : -PI / 2, 0.1]);
+    // Nov 26: the curved side flash read as a swoosh logo (eyes check); now two plain straight stripes
+    for (const s of [-1, 1]) for (const dz of [-0.03, 0.01]) bx(g, 0.006, 0.012, 0.05, "#ffffff", s * 0.056, 0.08, dz, [0, 0, 0]);
     return { g };
   },
   springshoe: (c) => {
@@ -366,6 +367,14 @@ const B: Record<ThingName, Builder> = {
     const sheet = (rot: number, x: number) => { const k = new THREE.Group(); k.rotation.z = rot; k.position.set(x, 0.2, 0); g.add(k); bx(k, 0.285, 0.4, 0.004, "#eceadf", 0, 0, 0); plane(k, 0.28, 0.395, flat(tex), 0, 0, 0.0022); return k; };
     sheet(0.03, 0.0); sheet(-0.04, 0.0).position.z = -0.006;
     g.children[1].children[1].visible = false;
+    return { g };
+  },
+  sandwichcookie: (c) => {   // Nov 26 (144): a plain dark chocolate sandwich cookie with white cream, no stamp or logo; the library cookie read as a beige disc
+    const g = new THREE.Group(); const dark = c ?? "#2a1a14";
+    cy(g, 0.1, 0.1, 0.022, dark, 0, 0.011, 0, undefined, 28); cy(g, 0.092, 0.092, 0.026, "#f6f1e4", 0, 0.035, 0, undefined, 28);
+    cy(g, 0.1, 0.1, 0.022, dark, 0, 0.059, 0, undefined, 28);
+    for (let i = 0; i < 12; i++) { const a = (i / 12) * PI * 2; bx(g, 0.012, 0.004, 0.012, "#1a0f0b", Math.cos(a) * 0.058, 0.0715, Math.sin(a) * 0.058, [0, -a, 0]); }
+    for (let i = 0; i < 6; i++) { const a = (i / 6) * PI * 2 + 0.3; bx(g, 0.012, 0.004, 0.012, "#1a0f0b", Math.cos(a) * 0.026, 0.0715, Math.sin(a) * 0.026, [0, -a, 0]); }
     return { g };
   },
   tradingcard: (c) => {   // Nov 26 look audit (094 Pokemon): a collectible trading card (gold border, holo art with a bolt, name bar); generic art, no copied character

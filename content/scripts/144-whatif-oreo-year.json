@@ -7,7 +7,7 @@
   "hook_style": "number",
   "title_style": "whatif",
   "theme": "bold_bright",
-  "status": "needs_fix",
+  "status": "ready",
   "score": 90,
   "title": "What If You Ate All 40 Billion Oreos?",
   "name_card": "What if you ate every Oreo",
@@ -64,7 +64,7 @@
       },
       "toon": [
         {
-          "place": "diner",
+          "place": "stall",
           "mood": "shock",
           "brand": {
             "name": "OREO",
@@ -72,14 +72,15 @@
             "fg": "#ffffff"
           },
           "things": [
-            "cookie"
+            "sandwichcookie"
           ],
           "card": {
             "text": "40 BILLION",
             "kind": "screen",
             "sub": "OREOS A YEAR, 2017"
           },
-          "view": "face"
+          "view": "ms",
+          "act": "none"
         }
       ]
     },
@@ -111,7 +112,7 @@
           "place": "diner",
           "mood": "happy",
           "things": [
-            "cookie",
+            "sandwichcookie",
             "milk_carton"
           ],
           "view": "ws"
@@ -120,7 +121,7 @@
           "place": "diner",
           "mood": "dazed",
           "things": [
-            "cookie",
+            "sandwichcookie",
             "clock"
           ],
           "view": "face"
@@ -192,7 +193,7 @@
           "mood": "nervous",
           "things": [
             "box",
-            "cookie"
+            "sandwichcookie"
           ],
           "card": {
             "text": "40 BILLION",
@@ -233,12 +234,13 @@
           "view": "face"
         },
         {
-          "place": "diner",
+          "place": "street",
           "mood": "laugh",
           "things": [
-            "cookie"
+            "sandwichcookie"
           ],
-          "view": "ms"
+          "view": "cu",
+          "act": "none"
         }
       ]
     }
@@ -249,9 +251,5 @@
       "url": "https://en.wikipedia.org/wiki/Oreo"
     }
   ],
-  "hook_rules": "nov23",
-  "needs_fix": [
-    "act eat_cookie unclear at frames 0-140: The character holds a plain brown disc that lacks the distinct Oreo appearance.",
-    "act eat_cookie unclear at frames 583-640: The character is eating a generic cookie, not an Oreo."
-  ]
+  "hook_rules": "nov23"
 }

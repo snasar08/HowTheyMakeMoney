@@ -1,11 +1,11 @@
 name: First comment on new Shorts
 
 # Sam, Nov 22: the channel comments on every Short we post (the Short's question, e.g. "Bolt or a cheetah? 👇").
-# pipeline/first_comment.py. Same comment login as the Saturday replies (YTC_* secrets). Runs every 2 hours so it
+# pipeline/first_comment.py. Same comment login as the Saturday replies (YTC_* secrets). Runs every hour (Nov 26: was 2 h; 178 got its comment 4.5 h after posting) so it
 # catches each Buffer post soon after it goes live. Push to branch first-comment-test = DRY RUN (posts nothing).
 on:
   schedule:
-    - cron: "17 */2 * * *"
+    - cron: "17 * * * *"
   push:
     branches: ["first-comment-test"]
   workflow_dispatch:

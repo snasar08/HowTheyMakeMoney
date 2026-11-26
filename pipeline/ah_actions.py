@@ -251,7 +251,7 @@ ACT_POSE.update({"eat_pizza": "stand", "eat_fries": "stand", "eat_icecream": "st
                  "gaming": "type", "streaming": "talk", "sing_stage": "cheer", "guitar": "cheer", "film_camera": "point",
                  "rocket_launch": "cheer", "build_tools": "dig", "code_screens": "type", "robot_build": "point", "post_video": "cheer"})
 ACT_OWN_PROPS.update({"eat_pizza": {"pizza", "slice"}, "eat_fries": {"fries", "chips", "snack"}, "eat_icecream": {"icecream", "ice cream", "cone"},
-                      "eat_donut": {"donut", "doughnut"}, "eat_cookie": {"cookie", "oreo", "biscuit"}, "drink_soda": {"soda", "cola", "coke", "milkshake", "smoothie"},
+                      "eat_donut": {"donut", "doughnut"}, "eat_cookie": {"cookie", "oreo", "biscuit", "sandwichcookie"}, "drink_soda": {"soda", "cola", "coke", "milkshake", "smoothie"},
                       "qb_throw": _BALL, "touchdown": _BALL, "bat_swing": _BALL, "pitch": _BALL, "tennis_serve": _BALL,
                       "golf_swing": _BALL, "goal_celebrate": _BALL, "race_car": {"car"}, "lift_weights": {"dumbbell"},
                       "stack_gold": {"goldbar"}, "cash_register": {"cash", "cashstack", "coins"},
@@ -419,8 +419,8 @@ def _hit2(kind, m, low, names, basket):
 
 
 
-_FOOD_THINGS = {"burger", "pizza", "snack", "coffee", "fries", "icecream", "donut", "slice", "cookie"}
-_FOOD_BIG = {"burger", "pizza", "fries", "icecream", "donut", "cookie"}
+_FOOD_THINGS = {"burger", "pizza", "snack", "coffee", "fries", "icecream", "donut", "slice", "cookie", "sandwichcookie"}
+_FOOD_BIG = {"burger", "pizza", "fries", "icecream", "donut", "cookie", "sandwichcookie"}
 _FOOD_WORDS = re.compile(r"\b(?:burgers?|fries|pizzas?|sandwich\w*|tacos?|nuggets?|meals?|food|lunch|dinner|breakfast|snacks?|chicken|hot dogs?|donuts?|doughnuts?|cookies?|fast food|french fries|ice cream|gelato|ice cream cones?|slices?|sundaes?|potato chips)\b")
 _DRINK_WORDS = re.compile(r"\b(?:coffee|latte|tea|soda|cola|coke|pepsi|coca-cola|soft drinks?|milkshakes?|shakes?|lemonade|beer|juice|drinks?|milk|smoothies?)\b")
 _CHART_THINGS = {"chart", "chartup", "arrowup", "arrowdown", "graph", "stock"}
@@ -578,7 +578,7 @@ def _food_act(kind: str, low: str, names: set) -> str:
         return "eat_icecream"
     if names & {"donut"} or _DONUT_RX.search(low):
         return "eat_donut"
-    if names & {"cookie", "oreo"} or _COOKIE_RX.search(low):
+    if names & {"cookie", "oreo", "sandwichcookie"} or _COOKIE_RX.search(low):
         return "eat_cookie"
     return kind
 

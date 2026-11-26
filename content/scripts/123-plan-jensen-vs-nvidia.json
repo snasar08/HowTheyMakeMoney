@@ -148,7 +148,8 @@
             "laptop",
             "chip"
           ],
-          "view": "ms"
+          "view": "ms",
+          "act": "none"
         }
       ]
     },

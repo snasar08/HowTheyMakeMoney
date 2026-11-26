@@ -315,10 +315,16 @@ jobs:
       - name: System packages
         run: |
           # Nov 4: apt hung for 55 min on a test run. Give up on a stuck try and retry.
-          for i in 1 2 3; do
-            sudo timeout 240 apt-get update -qq && sudo timeout 300 apt-get install -y -qq ffmpeg espeak-ng libegl1 libgl1-mesa-dri libegl-mesa0 && exit 0
-            echo "::warning::apt try $i failed"; sleep 20
+          # Nov 24: all 3 tries failed (mirror hiccup) AFTER 1.5 h of toon frames, so the whole night was lost.
+          # Now: 6 tries with growing waits; an install is tried even when `apt-get update` fails.
+          PKGS="ffmpeg espeak-ng libegl1 libgl1-mesa-dri libegl-mesa0"
+          for i in 1 2 3 4 5 6; do
+            sudo timeout 240 apt-get update -qq || echo "::warning::apt update try $i failed"
+            sudo timeout 300 apt-get install -y -qq $PKGS && exit 0
+            echo "::warning::apt try $i failed"; sleep $((i * 20))
           done
+          # last resort: carry on if the one hard requirement is already there
+          command -v ffmpeg >/dev/null && exit 0
           exit 1
 
       - name: Python packages

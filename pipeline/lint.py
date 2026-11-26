@@ -48,6 +48,7 @@ def pov_unspoken_numbers(s: dict) -> list[str]:
         for bi, (sent, b) in enumerate(zip(sents, beats)):
             card = (b.get("card") or {}).get("text", "")
             said = {n.replace(",", "") for n in num.findall(sent)}
+            said |= {f"{d}.{c.zfill(2)}" for d, c in re.findall(r"(\d+) dollars? and (\d+) cents?", sent)}  # "12 dollars and 99 cents" = 12.99
             said |= {str(i) for i, w in enumerate(("zero one two three four five six seven eight nine ten").split())
                      if re.search(rf"\b{w}\b", sent, re.I)}
             for n in num.findall(card):
