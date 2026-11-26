@@ -107,9 +107,9 @@ for f in sorted(out.glob("*.wav")):
     m = prosody.measure(a, sr, TEXT)
     gaps = [heard[i + 1]["start"] - heard[i]["end"] for i in range(len(heard) - 1)]
     rows[f.stem] = dict(utmos=round(mos, 2), acc=round(wer_acc(heard), 3), conf=round(float(np.mean(probs)), 3),
-                        low_words=sum(p < 0.5 for p in probs), pitch_spread_st=round(float(m.get("spread_st", m.get("spread", 0))), 2),
+                        low_words=int(sum(p < 0.5 for p in probs)), pitch_spread_st=round(float(m.get("spread_st", m.get("spread", 0))), 2),
                         median_hz=round(float(m.get("median_hz", 0))), syl_s=round(float(m.get("syl_per_s", m.get("pace", 0))), 2),
-                        pauses_gt_0_4=sum(g > 0.4 for g in gaps), seconds=round(len(a) / sr, 1))
+                        pauses_gt_0_4=int(sum(g > 0.4 for g in gaps)), seconds=round(len(a) / sr, 1))
     print(f.stem, rows[f.stem], flush=True)
 (out / "scores.json").write_text(json.dumps(rows, indent=1))
 (out / "scores.txt").write_text("\n".join(f"{k:28s} {v}" for k, v in rows.items()))
