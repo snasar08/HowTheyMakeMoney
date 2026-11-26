@@ -118,7 +118,7 @@ const ease = (u: number) => { const x = Math.max(0, Math.min(1, u)); return 0.35
 for (const [n, v] of Object.entries(VIEWS)) if (!n.startsWith("act")) v.to = lerp(v.from, v.to, 1.5);
 // refgap round 5: lower camera heights (the reference shoots up at people), more background blur on every ordinary view
 for (const n of ["ms", "msL", "msR", "wide", "wideL", "wideR", "cu", "face"]) { VIEWS[n].from = [VIEWS[n].from[0], VIEWS[n].from[1] - 0.3, VIEWS[n].from[2]]; VIEWS[n].to = [VIEWS[n].to[0], VIEWS[n].to[1] - 0.3, VIEWS[n].to[2]]; }
-for (const [n, b] of Object.entries({ ws: 3, wide: 5, wideL: 5, wideR: 5, ms: 11, msL: 11, msR: 11, cu: 14, face: 16, low: 11, hi: 4 })) VIEWS[n].blur = b;
+for (const [n, b] of Object.entries({ ws: 6, wide: 9, wideL: 9, wideR: 9, ms: 16, msL: 16, msR: 16, cu: 18, face: 20, low: 16, hi: 7 })) VIEWS[n].blur = b;
 
 type Built = { setRoot: THREE.Group; setLights: THREE.Light[]; hide: THREE.Object3D[]; instHide: InstHide[]; root: THREE.Group; chars: Char[]; things: Thing[]; run?: ActRun; view?: string; bg: string; fog?: THREE.Fog; spots: Record<string, V3>; coinGeo?: THREE.InstancedMesh; pov3?: Pov3 };
 const BUILT = new Map<number, Built>();
@@ -328,7 +328,7 @@ const Inner: React.FC = () => {
   const f = useCurrentFrame();
   const { camera, scene, gl } = useThree();
   const fx = useMemo(() => ({
-    lens: new LensBlur({ maxCoC: 22, nearScale: 1.0 }),
+    lens: new LensBlur({ maxCoC: 36, nearScale: 1.0 }),
     bloom: new BloomEffect({ blendFunction: BlendFunction.ADD, intensity: 0.35, luminanceThreshold: 1.05, luminanceSmoothing: 0.2, mipmapBlur: true, radius: 0.6 }),
     tone: new ToneMappingEffect({ mode: ToneMappingMode.NEUTRAL }),
     grade: new GradeEffect(),

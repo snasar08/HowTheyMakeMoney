@@ -1,6 +1,6 @@
 // Afterhour look: dense cel-shaded sets (see SPEC.md). Everything built in code, deterministic.
 import * as THREE from "three";
-import { toonMat, glowMat, metalMat, outline, canvasTex, seeded, box } from "./common";
+import { toonMat, paintMat, glowMat, metalMat, outline, canvasTex, seeded, box } from "./common";
 
 export type SetName = "throne" | "office" | "diner" | "lab" | "stall" | "field" | "ring" | "track" | "graveyard" | "boardroom" | "street" | "beach"
   | "court" | "pitch" | "diamond" | "gridiron" | "tennis" | "golf" | "pool" | "gym" | "studio" | "farm" | "store" | "stage" | "space" | "garage" | "classroom" | "bathroom" | "mansion" | "showroom" | "factory" | "mountain" | "rink";
@@ -9,7 +9,7 @@ export type SetObj = { root: THREE.Group; lights: THREE.Light[]; fog?: THREE.Fog
 type V3 = [number, number, number];
 type V2 = [number, number];
 type V4 = [number, number, number, number];
-const T = toonMat;
+const T = paintMat;
 const PI = Math.PI;
 void metalMat; void box;
 

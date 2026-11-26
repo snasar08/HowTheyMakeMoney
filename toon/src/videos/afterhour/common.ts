@@ -70,3 +70,32 @@ export const box = (w: number, h: number, d: number, mat: THREE.Material, x = 0,
   m.position.set(x, y, z); m.castShadow = true; m.receiveShadow = true;
   return m;
 };
+
+/** painterly variant of toonMat for SETS and props (refgap round 6): world-space value noise (blotches + fine speckle + a slight hue wobble)
+ *  multiplies the flat colour, so walls, floors and tables read as hand-painted, not as one flat swatch. World-space = it sticks to the object
+ *  when the camera moves. Characters keep plain toonMat (their paint must not swim). */
+const PAINT = new Map<THREE.Material, THREE.Material>();
+export const paintMat = (color: string, opts: Parameters<typeof toonMat>[1] = {}) => {
+  const base = toonMat(color, opts);
+  if (opts.map || opts.emissive) return base;
+  let m = PAINT.get(base);
+  if (!m) {
+    m = base.clone() as THREE.MeshToonMaterial;
+    m.onBeforeCompile = (sh) => {
+      sh.vertexShader = sh.vertexShader.replace("#include <common>", "#include <common>\nvarying vec3 vWP;").replace("#include <begin_vertex>", "#include <begin_vertex>\nvWP = (modelMatrix * vec4(transformed, 1.0)).xyz;");
+      sh.fragmentShader = sh.fragmentShader.replace("#include <common>", `#include <common>
+varying vec3 vWP;
+float h31(vec3 p) { p = fract(p * 0.3183099 + 0.1); p *= 17.0; return fract(p.x * p.y * p.z * (p.x + p.y + p.z)); }
+float vn(vec3 x) { vec3 i = floor(x), f = fract(x); f = f * f * (3.0 - 2.0 * f);
+  return mix(mix(mix(h31(i), h31(i + vec3(1,0,0)), f.x), mix(h31(i + vec3(0,1,0)), h31(i + vec3(1,1,0)), f.x), f.y),
+             mix(mix(h31(i + vec3(0,0,1)), h31(i + vec3(1,0,1)), f.x), mix(h31(i + vec3(0,1,1)), h31(i + vec3(1,1,1)), f.x), f.y), f.z); }`)
+        .replace("#include <color_fragment>", `#include <color_fragment>
+{ vec3 p = vWP; float v = 0.5 * vn(p * 2.2) + 0.3 * vn(p * 7.5) + 0.2 * vn(vec3(p.x * 26.0, p.y * 4.0, p.z * 26.0));
+  diffuseColor.rgb *= 1.0 + (v - 0.5) * 0.32;
+  diffuseColor.rgb += (vn(p * 3.7 + 7.0) - 0.5) * vec3(0.06, 0.0, -0.06); }`);
+    };
+    m.customProgramCacheKey = () => "paint";
+    PAINT.set(base, m);
+  }
+  return m;
+};
