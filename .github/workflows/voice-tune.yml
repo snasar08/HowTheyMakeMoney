@@ -1,0 +1,33 @@
+name: Voice tune
+
+# Push branch voice-tune: variants of the chosen Edge voice (bench/tune_set<N>.json, N in bench/tune_round.txt),
+# scored automatically; mp3s + scores on the "voice-pick" release. Nothing is posted.
+on:
+  push:
+    branches: ["voice-tune"]
+
+permissions:
+  contents: write
+
+jobs:
+  tune:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg espeak-ng
+      - run: pip install -q -r requirements.txt edge-tts librosa torchaudio num2words
+      - run: python bench/voice_tune.py v bench/tune_set$(cat bench/tune_round.txt).json > tune.log 2>&1
+      - if: always()
+        run: |
+          R=$(cat bench/tune_round.txt)
+          gh release view voice-pick >/dev/null 2>&1 || gh release create voice-pick --title voice-pick --notes "voice candidates"
+          grep -v -i warn tune.log | tail -40 > tune$R-tail.log
+          cd v 2>/dev/null && for f in *.wav; do ffmpeg -loglevel error -y -i "$f" -b:a 160k "tune$R-${f%.wav}.mp3"; done
+          cd - >/dev/null; cp v/scores.json tune$R-scores.json 2>/dev/null || true
+          gh release upload voice-pick tune$R-tail.log tune$R-scores.json v/tune$R-*.mp3 --clobber

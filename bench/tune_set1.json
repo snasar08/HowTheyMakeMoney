@@ -1,0 +1,47 @@
+{
+ "R1_andrew_rate+0%": {
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rate": "+0%"
+ },
+ "R1_andrew_rate+10%": {
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rate": "+10%"
+ },
+ "R1_andrew_rate+18%": {
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rate": "+18%"
+ },
+ "R1_andrew_rate+25%": {
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rate": "+25%"
+ },
+ "R2_andrew_pitch-4Hz": {
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rate": "+10%",
+  "pitch": "-4Hz"
+ },
+ "R2_andrew_pitch+4Hz": {
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rate": "+10%",
+  "pitch": "+4Hz"
+ },
+ "R2_andrew_pitch+8Hz": {
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rate": "+10%",
+  "pitch": "+8Hz"
+ },
+ "R3_andrew_spelled": {
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rate": "+10%",
+  "mode": "spelled"
+ },
+ "R3_andrew_commas": {
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rate": "+10%",
+  "mode": "commas"
+ },
+ "ref_roger": {
+  "voice": "en-US-RogerNeural",
+  "rate": "+10%"
+ }
+}

@@ -25,7 +25,7 @@ jobs:
           python-version: "3.11"
       - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg espeak-ng fonts-dejavu-core
       - run: |
-          pip install -q -r requirements.txt edge-tts librosa torchaudio
+          pip install -q -r requirements.txt edge-tts librosa torchaudio num2words
       - run: python bench/voice_pick.py v > pick.log 2>&1
       - if: always()
         run: |
