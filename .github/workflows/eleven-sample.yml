@@ -16,13 +16,13 @@ permissions:
 jobs:
   sample:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: pip install -q numpy && (which ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg >/dev/null))
+      - run: pip install -q numpy edge-tts && (which ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg >/dev/null))
       - uses: actions/cache@v4
         with:
           path: .cache/voice
@@ -37,7 +37,7 @@ jobs:
           ELEVEN_SPEED: ${{ vars.ELEVEN_SPEED }}
         run: |
           if [ -z "$ELEVENLABS_API_KEY" ]; then echo "::error::secret ELEVENLABS_API_KEY is not set"; exit 1; fi
-          python -m pipeline.umbriel_sample sample $IDS
+          python -m pipeline.gemini_voice_sample sample
           ls -l sample
       - name: Upload to release eleven-sample
         env:
