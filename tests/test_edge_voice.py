@@ -21,9 +21,9 @@ class EdgeVoiceCache(unittest.TestCase):
 
     def test_question_rate_is_slower(self):
         from pipeline import tts
-        tts.EDGE_RATE_NOW = "+10%"
-        self.assertEqual(tts.edge_rate_for(False), "+10%")
-        self.assertEqual(tts.edge_rate_for(True), "+3%")
+        tts.EDGE_RATE_NOW = "+18%"
+        self.assertEqual(tts.edge_rate_for(False), "+18%")
+        self.assertEqual(tts.edge_rate_for(True), "+11%")
 
 
 if __name__ == "__main__":

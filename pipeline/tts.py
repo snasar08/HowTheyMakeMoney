@@ -64,8 +64,8 @@ def sentences(text: str) -> list[tuple[str, bool, bool]]:
 # (so the question beat keeps working), keyed by voice+rate so the old Umbriel cache is never reused.
 VOICE_SOURCE = os.environ.get("VOICE_SOURCE", "edge")
 EDGE_VOICE = os.environ.get("EDGE_VOICE", "en-US-AndrewMultilingualNeural")
-EDGE_RATE = {"story": os.environ.get("EDGE_RATE_STORY", "+10%"), "default": os.environ.get("EDGE_RATE", "+10%")}
-EDGE_PITCH = os.environ.get("EDGE_PITCH", "+0Hz")
+EDGE_RATE = {"story": os.environ.get("EDGE_RATE_STORY", "+18%"), "default": os.environ.get("EDGE_RATE", "+18%")}
+EDGE_PITCH = os.environ.get("EDGE_PITCH", "+8Hz")
 EDGE_RATE_NOW = EDGE_RATE["default"]   # render.py sets this per Short like VOICE_SPEED_NOW
 
 
