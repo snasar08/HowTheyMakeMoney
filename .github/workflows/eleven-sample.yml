@@ -30,8 +30,8 @@ jobs:
       - name: Voice 178 + 094 with Adam and Brian
         env:
           ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
-          ELEVEN_MODEL: ${{ inputs.model || vars.ELEVEN_MODEL }}
-          ELEVEN_SAMPLE_VOICES: ${{ inputs.voices }}
+          ELEVEN_MODEL: ${{ inputs.model || 'eleven_flash_v2_5' }}
+          ELEVEN_SAMPLE_VOICES: ${{ inputs.voices || 'adam' }}
           IDS: ${{ inputs.ids || '178 094' }}
           ELEVEN_SPEED: ${{ vars.ELEVEN_SPEED }}
         run: |
