@@ -4,7 +4,7 @@ import { toonMat, metalMat, glowMat, canvasTex, seeded } from "./common";
 import { hasModel, makeModelGroup, MODEL_SIZE } from "./models";
 import { drawCard } from "./cards";
 
-export type ThingName = "shoe" | "springshoe" | "chip" | "gpu" | "cash" | "cashstack" | "coins" | "goldbar" | "trophy" | "medal" | "crown" | "ring" | "car" | "sportscar" | "bus" | "truck" | "rocket" | "phone" | "laptop" | "tv" | "monitor" | "clock" | "books" | "letter" | "newspaper" | "briefcase" | "shovel" | "pickaxe" | "box" | "crate" | "basketball" | "football" | "soccerball" | "hoop" | "mic" | "headset" | "controller" | "burger" | "pizza" | "coffee" | "plant" | "robot" | "drone" | "satellite" | "globe" | "house" | "factory" | "stadium" | "plane" | "yacht" | "chart" | "arrowup" | "arrowdown" | "lightbulb" | "lock" | "key" | "heart" | "bomb" | "fire" | "camera" | "chatbot" | "glasses" | "dumbbell" | "hanger" | "dome" | "console" | "golfball" | "golfclub" | "horse" | "baseball" | "guitar" | "rollercoaster" | "noodlecup" | "legobrick" | "eiffeltower" | "giantshovel" | "icepop";
+export type ThingName = "shoe" | "springshoe" | "chip" | "gpu" | "cash" | "cashstack" | "coins" | "goldbar" | "trophy" | "medal" | "crown" | "ring" | "car" | "sportscar" | "bus" | "truck" | "rocket" | "phone" | "laptop" | "tv" | "monitor" | "clock" | "books" | "letter" | "newspaper" | "briefcase" | "shovel" | "pickaxe" | "box" | "crate" | "basketball" | "football" | "soccerball" | "hoop" | "mic" | "headset" | "controller" | "burger" | "pizza" | "coffee" | "plant" | "robot" | "drone" | "satellite" | "globe" | "house" | "factory" | "stadium" | "plane" | "yacht" | "chart" | "arrowup" | "arrowdown" | "lightbulb" | "lock" | "key" | "heart" | "bomb" | "fire" | "camera" | "chatbot" | "glasses" | "dumbbell" | "hanger" | "dome" | "console" | "golfball" | "golfclub" | "horse" | "baseball" | "guitar" | "rollercoaster" | "noodlecup" | "legobrick" | "eiffeltower" | "giantshovel" | "icepop" | "tradingcard";
 export type Thing = { root: THREE.Group; size: number; tick?(t: number): void };
 
 type M = string | THREE.Material;
@@ -313,7 +313,11 @@ const B: Record<ThingName, Builder> = {
   },
   tv: (c, text) => {
     const g = new THREE.Group(); const fr = c ?? "#14141c";
-    bx(g, 1.25, 0.72, 0.05, fr, 0, 0.55, 0); plane(g, 1.2, 0.675, screenMat(textTex(text ?? "BREAKING", 640, 360, "#e11d2e", "#fff", true, (x) => { x.fillStyle = "#101828"; x.fillRect(0, 280, 640, 80); }), 1.25), 0, 0.55, 0.026);
+    bx(g, 1.25, 0.72, 0.05, fr, 0, 0.55, 0); plane(g, 1.2, 0.675, screenMat(textTex(text ?? "", 640, 360, "#1c2a55", "#fff", true, text ? (x) => { x.fillStyle = "#101828"; x.fillRect(0, 280, 640, 80); } : (x) => {
+      // Nov 26 look audit (049 YouTube): a tv with no text used to say BREAKING (news) on every watch / video line; now a plain video player: play triangle + progress bar
+      x.fillStyle = "#101828"; x.fillRect(0, 316, 640, 44); x.fillStyle = "#4a5578"; x.fillRect(24, 334, 592, 8); x.fillStyle = "#ffffff"; x.fillRect(24, 334, 210, 8);
+      x.beginPath(); x.arc(320, 158, 84, 0, Math.PI * 2); x.fillStyle = "rgba(255,255,255,0.18)"; x.fill();
+      x.beginPath(); x.moveTo(292, 112); x.lineTo(292, 204); x.lineTo(374, 158); x.closePath(); x.fillStyle = "#ffffff"; x.fill(); }), 1.25), 0, 0.55, 0.026);
     bx(g, 0.5, 0.03, 0.22, fr, 0, 0.015, 0); bx(g, 0.1, 0.17, 0.04, fr, 0, 0.12, -0.02);
     return { g };
   },
@@ -362,6 +366,21 @@ const B: Record<ThingName, Builder> = {
     const sheet = (rot: number, x: number) => { const k = new THREE.Group(); k.rotation.z = rot; k.position.set(x, 0.2, 0); g.add(k); bx(k, 0.285, 0.4, 0.004, "#eceadf", 0, 0, 0); plane(k, 0.28, 0.395, flat(tex), 0, 0, 0.0022); return k; };
     sheet(0.03, 0.0); sheet(-0.04, 0.0).position.z = -0.006;
     g.children[1].children[1].visible = false;
+    return { g };
+  },
+  tradingcard: (c) => {   // Nov 26 look audit (094 Pokemon): a collectible trading card (gold border, holo art with a bolt, name bar); generic art, no copied character
+    const g = new THREE.Group(); const k = new THREE.Group(); k.position.y = 0.34; k.rotation.z = 0.1; g.add(k);
+    bx(k, 0.46, 0.64, 0.012, c ?? "#f2c230", 0, 0, 0);
+    const tex = canvasTex(300, 420, (x) => {
+      x.fillStyle = "#f6d34a"; x.fillRect(0, 0, 300, 420);
+      const gr = x.createLinearGradient(0, 70, 300, 330); gr.addColorStop(0, "#7a5cff"); gr.addColorStop(0.5, "#3ee0ff"); gr.addColorStop(1, "#ff7ad9"); x.fillStyle = gr; x.fillRect(22, 62, 256, 210);
+      x.fillStyle = "#ffffff"; x.fillRect(22, 18, 256, 36); x.fillStyle = "#1b1b24"; x.font = "900 26px Arial Black, Arial"; x.textAlign = "center"; x.textBaseline = "middle"; x.fillText("RARE CARD", 150, 37);
+      x.fillStyle = "#ffe14a"; x.strokeStyle = "#1b1b24"; x.lineWidth = 8; x.lineJoin = "round"; x.beginPath();
+      [[170, 84], [112, 180], [150, 180], [120, 258], [196, 150], [156, 150]].forEach(([px, py], i) => (i ? x.lineTo(px, py) : x.moveTo(px, py))); x.closePath(); x.fill(); x.stroke();
+      x.fillStyle = "#fffdf0"; x.fillRect(22, 290, 256, 100); x.fillStyle = "#9aa0ad"; for (let i = 0; i < 4; i++) x.fillRect(36, 304 + i * 20, i % 2 ? 150 : 220, 8);
+      x.fillStyle = "#ff5a3c"; x.beginPath(); x.arc(250, 372, 12, 0, Math.PI * 2); x.fill();
+    });
+    plane(k, 0.42, 0.6, flat(tex), 0, 0, 0.0075);
     return { g };
   },
   briefcase: (c, text) => {

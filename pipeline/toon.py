@@ -126,6 +126,7 @@ BRAND_COLORS = {"uber": ("#000000", "#ffffff"), "nike": ("#111111", "#ffffff"), 
 THING_WORDS = [
     ("sneakerbus", r"\b(sneaker|shoe)[- ]?(bus|buses)\b|\bbuses shaped like sneakers\b"),
     ("springshoe", r"\b(springs?|motors?|robotic shoes?|dunk shoes?)\b"),
+    ("tradingcard", r"\bpok[eé]mon\b|\b(?:rare|trading|collectible|collector|rookie|holo|graded|baseball|sports) cards?\b|\bthat same card\b|\bcards? packs?\b"),
     ("shoe", r"\b(shoes?|sneakers?|kicks|footwear|air jordans?)\b"),
     ("bus", r"\bbus(es)?\b"),
     ("glasses", r"\bglasses\b"),
@@ -160,6 +161,9 @@ def things_for(line: str, given: list, prev: list | None = None) -> list:
     out = [t for t in given if isinstance(t, str)]
     prev = prev or []
     low = line.lower()
+    card_rx = next((rx for nm, rx in THING_WORDS if nm == "tradingcard"), None)
+    if card_rx and "tradingcard" not in out and "tradingcard" not in prev and re.search(card_rx, low):
+        out.insert(0, "tradingcard")        # Nov 26 look audit (094): the card the line names is on screen even when the script listed two other things
     for name, rx in THING_WORDS:
         if len(out) >= 2:
             break
@@ -953,7 +957,7 @@ def ah_shots(plan: dict) -> list:
             seen.add(t3)
             big = t3 in AH_BIG
             things.append({"name": t3, "at": ([-0.9, 0, -0.4] if t3 == "giantshovel" else [-1.9, 0, -1.6]) if big else ([0.55, 0.85, 0.55] if not things else [-0.55, 0.85, 0.55]),
-                           "fit": (3.8 if t3 == "giantshovel" else 1.6) if big else (0.42 if not things else 0.34)})   # held at hand height, in frame
+                           "fit": (3.8 if t3 == "giantshovel" else 1.6) if big else (0.7 if t3 == "tradingcard" else 0.42 if not things else 0.34)})   # held at hand height, in frame (a trading card must be big enough to read)
         for t3 in ([] if outro else ah_words_to_models(line_txt)):   # then library models the sentence's words name
             if len(things) >= 2:
                 break
@@ -1023,7 +1027,7 @@ def ah_shots(plan: dict) -> list:
         if k == 0 and not outro and not act and "cam" not in shot and not people and pose not in ("jump", "dunk", "shoot") and sc["n"] >= 54:
             # Nov 23 (retention: the biggest drop is at 4-5 s, the opening held one picture for 4+ s): the hook sentence opens
             # on a BIG hero with a hard push-in ("hook" view), then cuts to a medium and a wide/close within the first ~4 s
-            parts = 3 if sc["n"] >= 84 else 2
+            parts = 3 if sc["n"] >= 120 else 2   # Nov 26 look audit: a 3 s hook was cut into three 1 s re-angles of one picture (Sam: ~1.5-2 s)
             order = ["hook", "wide", "ws"] if (shot["things"] or shot["cards"]) else ["hook", "ms", "face"]   # props/card: never a close view that lets them cover the face
         for j in range(parts):
             a0, a1 = sc["a"] + round(j * sc["n"] / parts), sc["a"] + round((j + 1) * sc["n"] / parts)
