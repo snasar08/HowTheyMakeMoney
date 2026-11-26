@@ -49,7 +49,7 @@ _engine_now = None  # set per Short by use_engine_for(); None = VOICE_ENGINE
 def sentences(text: str) -> list[tuple[str, bool, bool]]:
     """(sentence, is_question, is_speaker_b) exactly as the engines split a line."""
     out = []
-    split = (lambda x: [x]) if (VOICE_SOURCE == "edge" and not SPEAKER_B.search(text)) else breath_split
+    split = (lambda x: [x]) if (VOICE_SOURCE in FLOW_SOURCES and not SPEAKER_B.search(text)) else breath_split
     for sent in (p for s_ in SENTENCE.split(text) for p in (split(s_.strip()) if s_.strip() else [s_])):
         if not sent.strip():
             continue
@@ -64,6 +64,13 @@ def sentences(text: str) -> list[tuple[str, bool, bool]]:
 # faceless channels use. VOICE_SOURCE=gemini|qwen brings the old voices back. Edge audio is cached per SENTENCE
 # (so the question beat keeps working), keyed by voice+rate so the old Umbriel cache is never reused.
 VOICE_SOURCE = os.environ.get("VOICE_SOURCE", "edge")
+# Nov 26, "fix the voice" research (VoiceStudio models): other free voices that read the WHOLE narration in one call and
+# take the same flow path as Edge (one clip + word timings per line, natural pauses, light leveling). OPTIONAL; the default stays edge.
+#   VOICE_SOURCE=chatterbox  Resemble AI Chatterbox (MIT, 0.5B, CPU ok), its built-in voice or CHATTERBOX_REF=<wav you may use>
+FLOW_SOURCES = ("edge", "chatterbox")
+CHATTERBOX_EXAG = os.environ.get("CHATTERBOX_EXAG", "0.75")   # emotion / emphasis (0.5 neutral)
+CHATTERBOX_CFG = os.environ.get("CHATTERBOX_CFG", "0.3")      # lower = faster, more driven pacing
+CHATTERBOX_REF = os.environ.get("CHATTERBOX_REF", "")         # optional reference clip (free to use, never a real person's voice)
 EDGE_VOICE = os.environ.get("EDGE_VOICE", "en-US-AndrewMultilingualNeural")
 EDGE_RATE = {"story": os.environ.get("EDGE_RATE_STORY", "+18%"), "default": os.environ.get("EDGE_RATE", "+18%")}
 EDGE_PITCH = os.environ.get("EDGE_PITCH", "+8Hz")
@@ -95,8 +102,9 @@ def cache_path(sent: str) -> str:
 def flow_path(line: str) -> str:
     """Cache key of one line voiced in one Edge call (wav + json word timings)."""
     import hashlib
-    return os.path.join(VOICE_CACHE, "F" + hashlib.sha1(
-        f"edge:{FLOW_TAG}:{EDGE_VOICE}:{EDGE_RATE_NOW}:{EDGE_PITCH}|{line}".encode()).hexdigest()[:20])
+    key = (f"edge:{FLOW_TAG}:{EDGE_VOICE}:{EDGE_RATE_NOW}:{EDGE_PITCH}|{line}" if VOICE_SOURCE == "edge" else
+           f"{VOICE_SOURCE}:{FLOW_TAG}:{CHATTERBOX_EXAG}:{CHATTERBOX_CFG}:{os.path.basename(CHATTERBOX_REF)}|{line}")
+    return os.path.join(VOICE_CACHE, "F" + hashlib.sha1(key.encode()).hexdigest()[:20])
 
 
 def cap_pauses(a, words, cap: float = None, sr: int = SAMPLE_RATE, q_cap: float = None):
@@ -253,12 +261,12 @@ GEMINI_VOICE = _gemini_voice()
 def line_path(line: str) -> str:
     """Cache key for a whole line voiced in one pass (Gemini TTS, Nov 13): reads like a person, not a list."""
     import hashlib
-    src = f"gemini:{GEMINI_VOICE}" if VOICE_SOURCE != "edge" else f"edge-unused:{EDGE_VOICE}"   # edge never uses whole-line files
+    src = f"gemini:{GEMINI_VOICE}" if VOICE_SOURCE not in FLOW_SOURCES else f"edge-unused:{EDGE_VOICE}"   # edge never uses whole-line files
     return os.path.join(VOICE_CACHE, "L" + hashlib.sha1(f"{src}|{line}".encode()).hexdigest()[:20])
 
 
 def qwen_ready(texts) -> bool:
-    if VOICE_SOURCE == "edge":
+    if VOICE_SOURCE in FLOW_SOURCES:
         return all(not speakable(t).strip() or flow_ready(speakable(t))
                    or all(os.path.exists(cache_path(s) + ".wav") for s, _, b in sentences(speakable(t)) if not b)
                    for t in texts)
@@ -352,7 +360,7 @@ def qwen(text: str):
     import json
 
     import soundfile as sf
-    if VOICE_SOURCE == "edge" and not SPEAKER_B.search(text) and flow_ready(text):
+    if VOICE_SOURCE in FLOW_SOURCES and not SPEAKER_B.search(text) and flow_ready(text):
         return flow_load(text)                   # the whole line in one Edge call, natural pauses kept
     lp = line_path(text)
     if os.path.exists(lp + ".wav"):              # the whole line in one Gemini pass
@@ -361,7 +369,7 @@ def qwen(text: str):
             a = a.mean(axis=1)
         if sr != SAMPLE_RATE:
             a = np.interp(np.linspace(0, len(a) - 1, int(len(a) * SAMPLE_RATE / sr)), np.arange(len(a)), a).astype(np.float32)
-        if abs(GEMINI_PITCH_ST) > 0.01 and VOICE_SOURCE != "edge":
+        if abs(GEMINI_PITCH_ST) > 0.01 and VOICE_SOURCE not in FLOW_SOURCES:
             a = _pitch(a, GEMINI_PITCH_ST)
         k = 1.0
         if abs(VOICE_SPEED_NOW - 1.0) > 0.01:   # same voice and pitch, quicker read (Sam, Nov 15: Nike "very very slow")
@@ -392,11 +400,11 @@ def qwen(text: str):
             a, shift = a[c0:c1], c0 / SAMPLE_RATE
             ws = [(t, max(0.0, st - shift), min(len(a) / SAMPLE_RATE, en - shift))
                   for t, st, en in json.load(open(cache_path(sent) + ".json", encoding="utf-8"))]
-            if abs(QWEN_SPEED - 1.0) > 0.01 and VOICE_SOURCE != "edge":      # same pitch, faster read (the deeper narrator reads ~15% slower)
+            if abs(QWEN_SPEED - 1.0) > 0.01 and VOICE_SOURCE not in FLOW_SOURCES:      # same pitch, faster read (the deeper narrator reads ~15% slower)
                 n0, a = len(a), _atempo(a, QWEN_SPEED)
                 k = n0 / max(len(a), 1)           # the real stretch (1.0 if ffmpeg failed)
                 ws = [(t, st / k, min(len(a) / SAMPLE_RATE, en / k)) for t, st, en in ws]
-            if abs(QWEN_PITCH_ST) > 0.01 and VOICE_SOURCE != "edge":         # same length, so word timings stay
+            if abs(QWEN_PITCH_ST) > 0.01 and VOICE_SOURCE not in FLOW_SOURCES:         # same length, so word timings stay
                 a = _pitch(a, QWEN_PITCH_ST)
         words += [(t, offset + st, offset + en) for t, st, en in ws]
         chunks.append(np.asarray(a, np.float32))

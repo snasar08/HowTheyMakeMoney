@@ -323,6 +323,14 @@ def with_punctuation(line: str, words):
     return words
 
 
+def source_stream(text: str, rate: str):
+    """The one-call read of `text` from the chosen flow source -> (audio, sample rate, [(word, start, end)])."""
+    if tts.VOICE_SOURCE == "edge":
+        return edge_stream(text, rate)
+    from . import voice_chatterbox
+    return voice_chatterbox.synthesize(text)
+
+
 def edge_pass(ids: list[str]) -> int:
     """Voice every line of the Short(s) with Edge neural TTS (FLOW_SCOPE=short: the whole narration in ONE call;
     =line: one call per line). No splitting into sentences: the voice keeps its own melody and natural pauses.
@@ -344,11 +352,11 @@ def edge_pass(ids: list[str]) -> int:
         groups = [todo] if tts.FLOW_SCOPE == "short" else [[x] for x in todo]
         for grp in groups:
             try:
-                a, sr, words = edge_stream(tts.flow_join(grp), tts.edge_rate_for())
+                a, sr, words = source_stream(tts.flow_join(grp), tts.edge_rate_for())
                 pieces = [(a, words)] if len(grp) == 1 else cut_lines(grp, a, sr, words)
                 if pieces is None:
                     print("[prepass] could not match words to lines; voicing line by line", flush=True)
-                    pieces = [(p[0], p[2]) for p in (edge_stream(x, tts.edge_rate_for()) for x in grp)]
+                    pieces = [(p[0], p[2]) for p in (source_stream(x, tts.edge_rate_for()) for x in grp)]
             except Exception as e:  # noqa: BLE001
                 fails += 1
                 print(f"::warning title=voice::edge-tts: {str(e)[:200]}", flush=True)
@@ -368,12 +376,12 @@ def edge_pass(ids: list[str]) -> int:
                     print(f"[prepass] clarity note skipped: {e!r}", flush=True)
                 sf.write(tts.flow_path(line) + ".wav", pa, sr)
                 Path(tts.flow_path(line) + ".json").write_text(json.dumps(with_punctuation(line, pw)), encoding="utf-8")
-    print(f"::notice title=voice::Edge {tts.EDGE_VOICE} ({tts.FLOW_TAG}, {tts.FLOW_SCOPE}): {len(seen)} line(s) voiced, {fails} failed", flush=True)
+    print(f"::notice title=voice::{tts.VOICE_SOURCE if tts.VOICE_SOURCE != 'edge' else 'Edge ' + tts.EDGE_VOICE} ({tts.FLOW_TAG}, {tts.FLOW_SCOPE}): {len(seen)} line(s) voiced, {fails} failed", flush=True)
     return 1 if fails else 0
 
 
 def main(ids: list[str]) -> int:
-    if tts.VOICE_SOURCE == "edge":
+    if tts.VOICE_SOURCE in tts.FLOW_SOURCES:
         return edge_pass(ids)
     import soundfile as sf
     import torch
