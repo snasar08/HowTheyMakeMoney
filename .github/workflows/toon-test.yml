@@ -42,6 +42,8 @@ jobs:
           path: .cache/voice
           key: toon-voice-puck1-${{ hashFiles('pipeline/voice_prepass.py','pipeline/voice_check.py','pipeline/tts.py','pipeline/gemini_tts.py') }}-${{ hashFiles('toon/test_id.txt', 'content/scripts/*.json', 'assets/voice/gemini_voice.txt') }}
       - if: steps.vc.outputs.cache-hit != 'true'
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg   # same as nightly: the voice leveling (atempo) needs it
+      - if: steps.vc.outputs.cache-hit != 'true'
         run: |
           pip install -q torch torchaudio --index-url https://download.pytorch.org/whl/cpu
           pip install -q -U openai-whisper soundfile numpy edge-tts   # Nov 26: Edge neural voice is the default
