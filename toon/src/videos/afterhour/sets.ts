@@ -627,7 +627,7 @@ function store(): SetObj {
   for (let i = -2; i <= 2; i++) for (let j = 0; j < 4; j++) glow(g, 1.9, 0.06, 0.55, "#fffbe6", i * 2.9, 6.42, 3 - j * 3.6, 2.2);
   // plain lettering sign on the back wall
   bx(g, 7.6, 1.5, 0.2, T("#2fae4f"), 0, 5.2, -10.0, 0.03);
-  const st = canvasTex(512, 100, (c) => { c.fillStyle = "#2fae4f"; c.fillRect(0, 0, 512, 100); c.fillStyle = "#ffffff"; c.font = "bold 78px Arial"; c.textAlign = "center"; c.textBaseline = "middle"; c.fillText("GROCERY", 256, 54); });
+  const st = canvasTex(512, 100, (c) => { c.fillStyle = "#2fae4f"; c.fillRect(0, 0, 512, 100); c.fillStyle = "#ffffff"; for (let i = 0; i < 5; i++) { const x = 96 + i * 80; c.beginPath(); c.arc(x, 56, 24, 0, PI * 2); c.fill(); c.fillStyle = i % 2 ? "#ffd23a" : "#e5233b"; c.beginPath(); c.arc(x, 56, 15, 0, PI * 2); c.fill(); c.fillStyle = "#ffffff"; } });
   const sgn = new THREE.Mesh(new THREE.PlaneGeometry(7.3, 1.43), basic(st, 1.1, false)); sgn.position.set(0, 5.2, -9.88); g.add(sgn);
   // shelves: products are boxes and cans in bright colours
   const pal = ["#e5233b", "#ffc21f", "#2a7de0", "#37b85a", "#ff8a3c", "#f4f4f4", "#9b5de5", "#ff4da6"];
@@ -1046,12 +1046,12 @@ function court(): SetObj {
   const sb = canvasTex(512, 256, (c) => {
     c.fillStyle = "#06060e"; c.fillRect(0, 0, 512, 256); c.textAlign = "center"; c.font = "bold 34px Arial";
     // HOME score left, AWAY score right, the clock in its own box between them with clear gaps (Nov 16: "882:4185" ran together)
-    c.fillStyle = "#ffc21f"; c.fillText("HOME", 88, 62); c.fillText("AWAY", 424, 62);
+    c.fillStyle = "#ffc21f"; c.fillRect(88 - 28, 62 - 16, 56, 12); c.fillRect(424 - 28, 62 - 16, 56, 12);
     c.font = "bold 104px Courier New"; c.fillStyle = "#ff4d3a"; c.fillText("88", 88, 178); c.fillText("85", 424, 178);
     c.fillStyle = "#10102a"; c.fillRect(176, 40, 160, 176); c.strokeStyle = "#8ae0ff"; c.lineWidth = 3; c.strokeRect(176, 40, 160, 176);
-    c.font = "bold 30px Arial"; c.fillStyle = "#8ae0ff"; c.fillText("4TH", 256, 82);
+    c.font = "bold 30px Arial"; c.fillStyle = "#8ae0ff"; c.fillRect(256 - 21, 82 - 16, 42, 12);
     c.font = "bold 52px Courier New"; c.fillStyle = "#ffe36a"; c.fillText("2:41", 256, 160);
-    c.font = "bold 20px Arial"; c.fillStyle = "#ffc21f"; c.fillText("QUARTER", 256, 196);
+    c.font = "bold 20px Arial"; c.fillStyle = "#ffc21f"; c.fillRect(256 - 49, 196 - 16, 98, 12);
     c.strokeStyle = "#ffc21f"; c.lineWidth = 6; c.strokeRect(6, 6, 500, 244);
   });
   bx(g, 4.8, 2.4, 0.7, T("#0c0c18"), 0, 7.0, -8.0, 0.04); const sbp = new THREE.Mesh(new THREE.PlaneGeometry(4.6, 2.3), basic(sb, 1.25, false)); sbp.position.set(0, 7.0, -7.64); g.add(sbp);
@@ -1157,7 +1157,7 @@ function diamond(): SetObj {
   panel(g, 7.4, 3.0, 0, 6.6, HZ - R - 5.8, "#ffc21f", 0, "#06060e");
   const sb = canvasTex(512, 256, (c) => {
     c.fillStyle = "#06060e"; c.fillRect(0, 0, 512, 256); c.textAlign = "center"; c.font = "bold 34px Arial";
-    c.fillStyle = "#ffc21f"; c.fillText("HOME", 96, 56); c.fillText("AWAY", 416, 56); c.fillText("INN", 256, 56);
+    c.fillStyle = "#ffc21f"; c.fillRect(96 - 28, 56 - 16, 56, 12); c.fillRect(416 - 28, 56 - 16, 56, 12); c.fillRect(256 - 21, 56 - 16, 42, 12);
     c.font = "bold 100px Courier New"; c.fillStyle = "#ff4d3a"; c.fillText("4", 96, 160); c.fillText("3", 416, 160);
     c.fillStyle = "#ffe36a"; c.fillText("9", 256, 160);
     c.fillStyle = "#37f58a"; for (let i = 0; i < 3; i++) { c.beginPath(); c.arc(200 + i * 56, 218, 14, 0, PI * 2); c.fill(); }
@@ -1209,7 +1209,7 @@ function gridiron(): SetObj {
       c.save(); c.translate(X(x), Z(Z1 - 1.5)); c.fillText(lab, 0, 0); c.restore();
       c.save(); c.translate(X(x), Z(Z0 + 1.5)); c.rotate(PI); c.fillText(lab, 0, 0); c.restore();
     }
-    c.save(); c.translate(X((EZ + GX) / 2), Z(zc)); c.rotate(-PI / 2); c.font = "bold " + Math.round(2.3 * sz) + "px Arial"; c.fillStyle = "#ffffff"; c.fillText("HOME", 0, 0); c.restore();   // plain end zone lettering
+    c.save(); c.translate(X((EZ + GX) / 2), Z(zc)); c.rotate(-PI / 2); c.font = "bold " + Math.round(2.3 * sz) + "px Arial"; c.fillStyle = "#ffffff"; c.fillRect(0 - 28, 0 - 16, 56, 12); c.restore();   // plain end zone lettering
   });
   plane(g, 140, 100, T("#1d6a33"), 0, 0, -20);
   plane(g, X1 - X0, Z1 - Z0, T("#ffffff", { map: ft }), (X0 + X1) / 2, 0.01, zc);
@@ -1237,10 +1237,10 @@ function gridiron(): SetObj {
   // scoreboard
   const sbt = canvasTex(512, 256, (c) => {
     c.fillStyle = "#06060e"; c.fillRect(0, 0, 512, 256); c.textAlign = "center"; c.font = "bold 34px Arial";
-    c.fillStyle = "#ffc21f"; c.fillText("HOME", 96, 56); c.fillText("AWAY", 416, 56); c.fillText("QTR", 256, 56);
+    c.fillStyle = "#ffc21f"; c.fillRect(96 - 28, 56 - 16, 56, 12); c.fillRect(416 - 28, 56 - 16, 56, 12); c.fillRect(256 - 21, 56 - 16, 42, 12);
     c.font = "bold 100px Courier New"; c.fillStyle = "#ff4d3a"; c.fillText("21", 96, 160); c.fillText("14", 416, 160);
     c.fillStyle = "#ffe36a"; c.fillText("4", 256, 160);
-    c.font = "bold 40px Courier New"; c.fillStyle = "#37f58a"; c.fillText("3rd & 8     03:12", 256, 226);
+    c.font = "bold 40px Courier New"; c.fillStyle = "#37f58a"; c.fillText("03:12", 256, 226);
     c.strokeStyle = "#ffc21f"; c.lineWidth = 6; c.strokeRect(6, 6, 500, 244);
   });
   panel(g, 7.4, 3.0, 6, 6.2, Z0 - 7.4, "#ffc21f", 0, "#06060e");
@@ -1312,8 +1312,8 @@ function tennis(): SetObj {
   bx(g, 44, 12, 0.5, T("#26304e"), 0, 6, Z0 - 7.4);
   panel(g, 6.4, 2.4, 0, 5.4, Z0 - 6.8, "#ffc21f", 0, "#06060e");
   const sbt = canvasTex(512, 192, (c) => {
-    c.fillStyle = "#06060e"; c.fillRect(0, 0, 512, 192); c.textAlign = "center"; c.font = "bold 34px Arial"; c.fillStyle = "#ffc21f"; c.fillText("SET", 330, 44); c.fillText("GAME", 450, 44);
-    c.font = "bold 50px Courier New"; c.textAlign = "left"; c.fillStyle = "#e8f0ff"; c.fillText("PLAYER 1", 24, 106); c.fillText("PLAYER 2", 24, 170);
+    c.fillStyle = "#06060e"; c.fillRect(0, 0, 512, 192); c.textAlign = "center"; c.font = "bold 34px Arial"; c.fillStyle = "#ffc21f"; c.fillRect(330 - 21, 44 - 16, 42, 12); c.fillRect(450 - 28, 44 - 16, 56, 12);
+    c.font = "bold 50px Courier New"; c.textAlign = "left"; c.fillStyle = "#e8f0ff"; c.fillRect(24, 106 - 26, 150, 18); c.fillRect(24, 170 - 26, 150, 18);
     c.textAlign = "center"; c.fillStyle = "#ffe36a"; c.fillText("6", 330, 106); c.fillText("3", 330, 170); c.fillStyle = "#37f58a"; c.fillText("40", 450, 106); c.fillText("30", 450, 170);
     c.strokeStyle = "#ffc21f"; c.lineWidth = 6; c.strokeRect(6, 6, 500, 180);
   });
@@ -1358,7 +1358,7 @@ function pool(): SetObj {
       c.fillStyle = "#2a62b0"; c.fillRect(0, 0, WW, 0.42 * 56 + 6); c.fillStyle = "#f4f7f0"; c.fillRect(0, 0.42 * 56 + 6, WW, 5);
       c.fillStyle = "rgba(60,80,50,0.28)"; c.fillRect(0, 0.42 * 56 + 11, WW, 9);
       c.fillStyle = "#ffffff"; c.textAlign = "center"; c.font = "bold 30px Arial";
-      for (const k of [0.2, 0.5, 0.8]) c.fillText(label, WW * k, 0.42 * 56 - 14);
+      for (const k of [0.2, 0.5, 0.8]) c.fillRect(WW * k - 30, 0.42 * 56 - 30, 60, 10);
       c.strokeStyle = "rgba(40,60,80,0.5)"; c.lineWidth = 3; c.beginPath(); c.moveTo(WW * 0.62, WH * 0.45); c.lineTo(WW * 0.66, WH * 0.62); c.lineTo(WW * 0.64, WH * 0.8); c.stroke();
     });
   };
@@ -1459,7 +1459,7 @@ function golf(): SetObj {
   // tee box markers, a tee sign and a sand-and-water-free bin
   for (const sxn of [-1, 1]) { sp(g, 0.16, T(sxn > 0 ? "#e5233b" : "#ffffff"), sxn * 3.0, 0.2, 2.9, 0.012, 14); cy(g, 0.04, 0.05, 0.14, T("#8a93a8"), sxn * 3.0, 0.07, 2.9, 0, 8); }
   const hs = T("#f4f7f0"); cy(g, 0.05, 0.05, 1.5, T("#6a4a2a"), -4.6, 0.75, 1.2, 0.012, 8); bx(g, 0.9, 0.55, 0.06, T("#14407a"), -4.6, 1.55, 1.2, 0.015); void hs;
-  const sgn = canvasTex(256, 160, (c) => { c.fillStyle = "#14407a"; c.fillRect(0, 0, 256, 160); c.fillStyle = "#ffffff"; c.textAlign = "center"; c.font = "bold 64px Arial"; c.fillText("HOLE 9", 128, 70); c.font = "bold 40px Arial"; c.fillText("PAR 4", 128, 124); });
+  const sgn = canvasTex(256, 160, (c) => { c.fillStyle = "#14407a"; c.fillRect(0, 0, 256, 160); c.fillStyle = "#ffffff"; c.fillRect(120, 24, 6, 90); c.fillStyle = "#e5233b"; c.beginPath(); c.moveTo(126, 24); c.lineTo(190, 46); c.lineTo(126, 68); c.closePath(); c.fill(); c.fillStyle = "#ffffff"; c.beginPath(); c.arc(128, 132, 14, 0, PI * 2); c.fill(); });
   const sgp = new THREE.Mesh(new THREE.PlaneGeometry(0.84, 0.5), basic(sgn, 1.05, false)); sgp.position.set(-4.6, 1.55, 1.24); g.add(sgp);
   // set balls beside the tee sign, out of the swing's way (hidden when the shot shows a ball thing)
   const gb = new THREE.Group(); gb.userData.setBall = true; g.add(gb);
@@ -1512,7 +1512,7 @@ function gym(): SetObj {
   }
   // sign: plain lettering
   const sg = canvasTex(512, 160, (c) => {
-    c.fillStyle = "#16192a"; c.fillRect(0, 0, 512, 160); c.fillStyle = "#ffc21f"; c.font = "bold 96px Arial"; c.textAlign = "center"; c.textBaseline = "middle"; c.fillText("GYM", 256, 86);
+    c.fillStyle = "#16192a"; c.fillRect(0, 0, 512, 160); c.fillStyle = "#ffc21f"; c.fillRect(176, 76, 160, 12); c.fillRect(160, 48, 18, 68); c.fillRect(334, 48, 18, 68); c.fillRect(136, 62, 22, 38); c.fillRect(354, 62, 22, 38);
     c.strokeStyle = "#ffc21f"; c.lineWidth = 8; c.strokeRect(6, 6, 500, 148);
   });
   vplane(g, 2.6, 0.81, basic(sg, 1.1, false), 0, 3.5, -5.8);
@@ -1567,7 +1567,7 @@ function studio(): SetObj {
   bx(g, 16, 0.2, 16, T("#c9b088"), 0, 4.6, 2).castShadow = false;
   // sign + big window (warm daylight)
   const sg = canvasTex(512, 128, (c) => {
-    c.fillStyle = "#1c1410"; c.fillRect(0, 0, 512, 128); c.fillStyle = "#ffd36b"; c.font = "bold 84px Georgia"; c.textAlign = "center"; c.textBaseline = "middle"; c.fillText("STUDIO", 256, 68);
+    c.fillStyle = "#1c1410"; c.fillRect(0, 0, 512, 128); c.fillStyle = "#ffd36b"; for (const x of [200, 312]) { c.beginPath(); c.arc(x, 56, 34, 0, PI * 2); c.fill(); } c.fillStyle = "#1c1410"; for (const x of [200, 312]) { c.beginPath(); c.arc(x, 56, 12, 0, PI * 2); c.fill(); } c.fillStyle = "#ffd36b"; c.fillRect(220, 84, 72, 24);
     c.strokeStyle = "#ffd36b"; c.lineWidth = 6; c.strokeRect(6, 6, 500, 116);
   });
   vplane(g, 1.7, 0.43, basic(sg, 1.1, false), 2.0, 3.3, -5.8);
@@ -1797,7 +1797,7 @@ function classroom(): SetObj {
   const smm = new THREE.Mesh(new THREE.PlaneGeometry(6.0, 1.9), new THREE.MeshBasicMaterial({ map: sm, transparent: true })); smm.position.set(0, 2.15, -4.73); g.add(smm);
   bx(g, 6.4, 0.08, 0.2, T("#a8672f"), 0, 1.15, -4.72); bx(g, 0.2, 0.05, 0.08, T("#ffffff"), -1, 1.22, -4.7); bx(g, 0.5, 0.06, 0.1, T("#d8cfa0"), 1.2, 1.22, -4.7);
   // alphabet strip, clock, posters, windows
-  const ab = canvasTex(512, 64, (c) => { c.fillStyle = "#fff6d8"; c.fillRect(0, 0, 512, 64); c.font = "bold 40px Arial"; c.textAlign = "center"; const cs = ["#e5233b", "#2a7de0", "#2fae4f", "#ffc21f", "#7b3fe4"]; "ABCDEFGHIJKLM".split("").forEach((ch, i) => { c.fillStyle = cs[i % 5]; c.fillText(ch, 20 + i * 39, 48); }); });
+  const ab = canvasTex(512, 64, (c) => { c.fillStyle = "#fff6d8"; c.fillRect(0, 0, 512, 64); const cs = ["#e5233b", "#2a7de0", "#2fae4f", "#ffc21f", "#7b3fe4"]; for (let i = 0; i < 13; i++) { c.fillStyle = cs[i % 5]; const x = 20 + i * 39, k = i % 3; c.beginPath(); if (k === 0) c.arc(x, 34, 15, 0, PI * 2); else if (k === 1) c.rect(x - 14, 20, 28, 28); else { c.moveTo(x, 18); c.lineTo(x + 16, 50); c.lineTo(x - 16, 50); c.closePath(); } c.fill(); } });
   vplane(g, 6, 0.75, basic(ab, 1.05, true), 0, 3.6, -4.82);
   const clk = cy(g, 0.4, 0.4, 0.06, T("#ffffff"), 4.3, 3.3, -4.8, 0.025); clk.rotation.x = PI / 2; bx(g, 0.04, 0.28, 0.03, T("#111"), 4.3, 3.4, -4.74); bx(g, 0.2, 0.04, 0.03, T("#111"), 4.38, 3.3, -4.74);
   const pcol: Array<[string, string]> = [["#1b2a6a", "#ffc21f"], ["#2fae4f", "#ffffff"], ["#e5233b", "#ffd23a"]];
@@ -2070,7 +2070,7 @@ function mountain(): SetObj {
   bx(g, 4.2, 0.45, 0.5, wood, 2.6, 4.45, -7.7, 0.015); bx(g, 3.6, 0.2, 0.3, woodD, 2.6, 3.7, -7.75, 0.01);
   for (const sx of [-1, 1]) { const br = bx(g, 0.18, 1.0, 0.2, woodD, 2.6 + sx * 1.3, 4.0, -7.72, 0.01); br.rotation.z = sx * 0.7; }
   cy(g, 0.02, 0.02, 0.5, T("#2f3440"), 3.7, 4.0, -7.4, 0, 6); glowSp(g, 0.2, "#ffc54a", 3.7, 3.65, -7.4, 2.6);
-  bx(g, 2.6, 0.7, 0.1, T("#f2c230"), 2.6, 5.15, -7.6, 0.012); vplane(g, 2.3, 0.45, basic(canvasTex(256, 52, (c) => { c.fillStyle = "#3a2410"; c.fillRect(0, 0, 256, 52); c.fillStyle = "#ffd84a"; c.font = "bold 38px Arial"; c.textAlign = "center"; c.fillText("GOLD MINE", 128, 40); }), 1, false), 2.6, 5.15, -7.54);
+  bx(g, 2.6, 0.7, 0.1, T("#f2c230"), 2.6, 5.15, -7.6, 0.012); vplane(g, 2.3, 0.45, basic(canvasTex(256, 52, (c) => { c.fillStyle = "#3a2410"; c.fillRect(0, 0, 256, 52); c.fillStyle = "#ffd84a"; for (let i = 0; i < 5; i++) { const x = 40 + i * 44; c.beginPath(); c.moveTo(x, 8); c.lineTo(x + 14, 26); c.lineTo(x, 44); c.lineTo(x - 14, 26); c.closePath(); c.fill(); } }), 1, false), 2.6, 5.15, -7.54);
   // tracks out of the mine: two rails with ties, running toward the camera
   const rail = metalMat("#aeb6c4", 0.3);
   for (let i = 0; i < 17; i++) bx(g, 1.5, 0.08, 0.2, woodD, 2.6, 0.06, -7.6 + i * 0.7, 0.008);

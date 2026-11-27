@@ -88,6 +88,7 @@ export class LensBlurEffect extends Effect {
   get focus() { return this.uniforms.get("focus")!.value as number; }
   set cInf(v: number) { this.uniforms.get("cInf")!.value = v; }
   get cInf() { return this.uniforms.get("cInf")!.value as number; }
+  set nearScale(v: number) { this.uniforms.get("nearScale")!.value = v; }
 }
 
 /** The pair of passes the composer needs (pre first, then main); set focus / cInf once per frame on this object. */
@@ -100,6 +101,7 @@ export class LensBlur {
   }
   set focus(v: number) { this.pre.focus = v; this.main.focus = v; }
   set cInf(v: number) { this.pre.cInf = v; this.main.cInf = v; }
+  set nearScale(v: number) { this.pre.nearScale = v; this.main.nearScale = v; }
   dispose() { this.pre.dispose(); this.main.dispose(); }
 }
 

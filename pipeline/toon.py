@@ -852,6 +852,8 @@ AH_FRAME_FAR = ["wide", "wideLow", "ws", "wideR", "wideL"]           # a card si
 AH_FRAME_PLAIN = ["thirdL", "worm", "hi2", "thirdR", "ms", "wideLow", "ots"]
 AH_FRAME_PROPS = ["thirdR", "thirdL", "hi2", "ms", "wide"]
 AH_FRAME_OTS_RX = re.compile(r"(laugh\w*|doubt\w*|everyone|everybody|people|friends?|they|nobody|no one|crowd|stare\w*|mock\w*|told|said|asked|think|thought|judge\w*|family|mom|dad|teacher|coach|neighbou?rs?)", re.I)
+AH_TOP_SETS = {"street", "beach", "stall", "pitch", "diamond", "gridiron", "tennis", "golf", "pool", "farm", "mountain", "rink", "graveyard", "space", "field", "track"}   # open sky: no ceiling between the lens and the floor
+AH_TOP_RX = re.compile(r"(table|desk|count\w*|deal\w*|stack\w*|pile\w*|cards?|coins?|cash|bills?|pay|paid|spread|sort\w*|shuffl\w*|pack\w*|open\w*)", re.I)
 AH_BYSTANDER = {"laugh": ("laugh", "talk"), "sad": ("smug", "talk"), "shock": ("smile", "stand"), "dazed": ("smug", "stand"), "nervous": ("smug", "talk")}
 
 
@@ -859,7 +861,7 @@ def ah_frame(shots: list, plan: dict, ctx: dict) -> list:
     """Shot director, camera side: a varied sequence of framings (worm / third / high / over-the-shoulder / low wide / foreground prop),
     never the same framing twice in a row, least-used first. A close view never meets a card (the head would sit on it); a foreground
     prop or bystander is glued to the lens at a screen corner, away from the face (see Ah.tsx `fg`). Deterministic."""
-    used: dict = {}; hist: list = []; ots_n = 0
+    used: dict = {}; hist: list = []; ots_n = 0; top_done = False
     scenes = plan.get("scenes") or []
 
     def mood_at(sh: dict) -> str:
@@ -886,6 +888,9 @@ def ah_frame(shots: list, plan: dict, ctx: dict) -> list:
         want_ots = bool(people) or (can_ots and not s.get("things") and ots_n < 2 and (AH_FRAME_OTS_RX.search(txt) or (i >= 3 and i < len(shots) - 2 and mood_at(s) in AH_BYSTANDER)))
         if not want_ots and "ots" in cands and not people:
             cands.remove("ots")
+        # overhead shot (reference style) for table / desk / counting lines: at most once per Short, never twice in a row, never over a card or bystander
+        if not top_done and s.get("things") and not s.get("cards") and not people and not s["chars"][1:] and txt and AH_TOP_RX.search(txt)                 and "top" not in hist[-1:] and s["set"] in AH_TOP_SETS and i >= 1:
+            s["view"] = "top"; top_done = True; used["top"] = 1; hist.append("top"); continue
         recent = hist[-2:]
         order = sorted(dict.fromkeys(cands), key=lambda v: (v in recent, v == "ots" and not want_ots, -(v == "ots" and want_ots), used.get(v, 0), cands.index(v)))
         pick = next((v for v in order if v != (hist[-1] if hist else None) and (s["set"], v) not in used.get("_sv", set())), order[0])
@@ -895,7 +900,7 @@ def ah_frame(shots: list, plan: dict, ctx: dict) -> list:
         hist.append(pick)
         if pick == "ots":
             ots_n += 1
-            spot = {"x": -1.2, "y": 0.0, "d": 3.3}
+            spot = {"x": -0.7, "y": 0.0, "d": 3.3}   # x=-1.2 left only a sliver of him in frame: his body centre stays inside the edge
             if people:
                 people[0]["fg"] = spot; people[0]["at"] = [0, 0, 0]; people[0]["scale"] = 0.85; people[0]["pose"] = "stand"
             else:
