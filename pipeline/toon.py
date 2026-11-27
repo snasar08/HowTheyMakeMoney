@@ -826,10 +826,96 @@ def ah_spread(shots: list, ctx: dict) -> list:
     return shots
 
 
+# ---- Nov 26 camera round: framing director (angles, second character, foreground prop) + "show only what the line says"
+AH_THING_ALIAS = {"sandwichcookie": "oreo cookie biscuit", "cookie": "oreo cookie biscuit", "cashstack": "cash money dollar dollars bucks paid pay earn salary rich",
+                  "cash": "cash money dollar dollars bucks paid pay earn salary rich", "coins": "coin coins money", "goldbar": "gold", "lightbulb": "idea bulb",
+                  "milk_carton": "milk", "tradingcard": "card cards pokemon", "burger": "burger burgers hamburger food snack", "box": "box boxes package parcel shipped",
+                  "newspaper": "news poster newspaper headline"}
+AH_PRONOUN_RX = re.compile(r"(it|one|them|each|those|that|this|these)", re.I)
+
+
+def ah_thing_said(name: str, line: str, carry: set) -> bool:
+    """a prop is on screen only when the sentence names it (Nov 26: a pie in a cookie line, a cookie in "Sounds easy ...");
+    a prop shown in the line before stays when this one points back at it ("twist it first")"""
+    low = line.lower(); ws = re.findall(r"[a-z]+", low)
+    toks = set(AH_THING_ALIAS.get(name, "").split()) | {name.lower(), *re.split(r"[_ ]", name.lower())}
+    toks |= {k.lower() for k, v in AH_THING.items() if v == name}
+    toks |= {w for w, v in ah_models().items() if v == name and len(w) > 2}
+    for w in ws:
+        for t in toks:
+            if len(t) >= 3 and (w == t or w.rstrip("s") == t.rstrip("s") or (len(t) >= 5 and len(w) >= 5 and w[:5] == t[:5])):
+                return True
+    return name in carry and bool(AH_PRONOUN_RX.search(line))
+
+
+AH_FRAME_FAR = ["wide", "wideLow", "ws", "wideR", "wideL"]           # a card sits above the head: far views only
+AH_FRAME_PLAIN = ["thirdL", "worm", "hi2", "thirdR", "ms", "wideLow", "ots"]
+AH_FRAME_PROPS = ["thirdR", "thirdL", "hi2", "ms", "wide"]
+AH_FRAME_OTS_RX = re.compile(r"(laugh\w*|doubt\w*|everyone|everybody|people|friends?|they|nobody|no one|crowd|stare\w*|mock\w*|told|said|asked|think|thought|judge\w*|family|mom|dad|teacher|coach|neighbou?rs?)", re.I)
+AH_BYSTANDER = {"laugh": ("laugh", "talk"), "sad": ("smug", "talk"), "shock": ("smile", "stand"), "dazed": ("smug", "stand"), "nervous": ("smug", "talk")}
+
+
+def ah_frame(shots: list, plan: dict, ctx: dict) -> list:
+    """Shot director, camera side: a varied sequence of framings (worm / third / high / over-the-shoulder / low wide / foreground prop),
+    never the same framing twice in a row, least-used first. A close view never meets a card (the head would sit on it); a foreground
+    prop or bystander is glued to the lens at a screen corner, away from the face (see Ah.tsx `fg`). Deterministic."""
+    used: dict = {}; hist: list = []; ots_n = 0
+    scenes = plan.get("scenes") or []
+
+    def mood_at(sh: dict) -> str:
+        return next((c.get("mood", "happy") for c in scenes if c.get("a") is not None and c["a"] <= sh["a"] < c["a"] + c["n"]), "happy")
+    for i, s in enumerate(shots):
+        if s.get("act") or "cam" in s or s.get("units") or s.get("journey") or s.get("hud") or s.get("view") == "hook" or s.get("_outro"):
+            hist.append(s.get("view")); continue
+        people = [c for c in s["chars"][1:] if c.get("who")]
+        txt = s.get("_txt") or ""
+        if s.get("cards"):
+            cands = list(AH_FRAME_FAR)
+        elif people:
+            cands = ["ots", "wide", "wideLow", "ws"]
+        elif s.get("things"):
+            cands = list(AH_FRAME_PROPS)
+        else:
+            cands = list(AH_FRAME_PLAIN)
+        if s["set"] in AH_NO_LOW:
+            cands = [("hi2" if v in ("worm", "wideLow") else v) for v in cands]
+        can_ots = (not s.get("cards") and not s["chars"][1:]) or bool(people)
+        if "ots" in cands and not can_ots:
+            cands.remove("ots")
+        # a bystander shot needs somebody to react: someone is named, or the line is a reaction line, and at most two per Short
+        want_ots = bool(people) or (can_ots and not s.get("things") and ots_n < 2 and (AH_FRAME_OTS_RX.search(txt) or (i >= 3 and i < len(shots) - 2 and mood_at(s) in AH_BYSTANDER)))
+        if not want_ots and "ots" in cands and not people:
+            cands.remove("ots")
+        recent = hist[-2:]
+        order = sorted(dict.fromkeys(cands), key=lambda v: (v in recent, v == "ots" and not want_ots, -(v == "ots" and want_ots), used.get(v, 0), cands.index(v)))
+        pick = next((v for v in order if v != (hist[-1] if hist else None) and (s["set"], v) not in used.get("_sv", set())), order[0])
+        s["view"] = pick
+        used[pick] = used.get(pick, 0) + 1
+        used.setdefault("_sv", set()).add((s["set"], pick))
+        hist.append(pick)
+        if pick == "ots":
+            ots_n += 1
+            spot = {"x": -1.2, "y": 0.0, "d": 3.3}
+            if people:
+                people[0]["fg"] = spot; people[0]["at"] = [0, 0, 0]; people[0]["scale"] = 0.85; people[0]["pose"] = "stand"
+            else:
+                ex, ps = AH_BYSTANDER.get(mood_at(s), ("smile", "stand"))
+                s["chars"] = s["chars"][:1] + [{"look": AH_CROWD[(i + ots_n) % len(AH_CROWD)], "at": [0, 0, 0], "pose": ps, "expr": ex, "scale": 0.85, "fg": spot}]
+        elif pick in ("thirdL", "thirdR") and s.get("things"):
+            # the line's prop in the foreground, on the side away from him, low and soft (never in front of the face)
+            t0 = s["things"][0]
+            if t0["name"] not in AH_BIG:
+                x = 0.62 if pick == "thirdL" else -0.62
+                s["things"] = [dict(t0, fg={"x": x, "y": -0.62, "d": 1.7}, fit=0.15, at=[0, 0, 0], pop=False)] + s["things"][1:]
+    return shots
+
+
+
 def ah_shots(plan: dict) -> list:
     hero, shots, views = plan.get("hero") or {}, [], ["ms", "face", "cu", "ms", "low", "face"]
     prev_pose = None
     prev_acts: list = []
+    prev_things: set = set()
     ctx = ah_context(plan)
     side = 0
     for k, sc in enumerate(plan["scenes"]):
@@ -867,6 +953,9 @@ def ah_shots(plan: dict) -> list:
         line_txt = sc.get("text") or sc.get("line") or ""
         if not AH_TIME_RX.search(line_txt):                         # a clock / calendar only for a real date or time ("in 2019", "3 a.m.")
             thing_names = [t for t in thing_names if str(t).lower() not in AH_TIME_THINGS]
+        if not outro and not sc.get("act") and not (sc.get("action") and sc.get("action") != "stand"):   # Nov 26: show only what the line says
+            thing_names = [t for t in thing_names if ah_thing_said(str(t), line_txt, prev_things)]
+        prev_things = {str(t) for t in thing_names}
         act = ah_actions.pick_act(sc.get("text") or sc.get("line") or "", thing_names, place, sc.get("mood", "happy"),
                                   sc.get("action"), prev_acts[-2:])
         if act and (outro or (not ctx["athlete"] and (ctx["famous"] or ctx["gamer"]) and ah_actions.ACT_SET.get(act, ((), None))[1] in AH_SPORT_SETS + ("field",))):
@@ -1054,6 +1143,8 @@ def ah_shots(plan: dict) -> list:
         short = 12 - s["n"]
         if short > 0 and p["n"] - short >= 30 and not s.get("act") and not p.get("act") and s["a"] == p["a"] + p["n"]:
             p["n"] -= short; s["a"] -= short; s["n"] += short
+    if "pov" not in plan:
+        shots = ah_frame(shots, plan, ctx)
     if "pov" in plan:
         shots = pov_shots(plan, shots)
     for sh in shots:
