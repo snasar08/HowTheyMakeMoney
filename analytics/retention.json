@@ -1,5 +1,5 @@
 {
- "at": "2026-11-26T20:08:10.232183+00:00",
+ "at": "2026-11-27T19:54:57.508274+00:00",
  "shorts": [
   {
    "video": "H8TQsxm7j6c",
@@ -117,9 +117,9 @@
     "YT_SEARCH": 31,
     "YT_OTHER_PAGE": 23,
     "EXT_URL": 1,
-    "SHORTS": 1099
+    "SHORTS": 1090
    },
-   "start": 168,
+   "start": 167,
    "q25": 136,
    "q50": 116,
    "q75": 103,
@@ -920,8 +920,8 @@
   {
    "video": "YPv29m0WHpQ",
    "title": "$33 Million a Year for Running",
-   "views": 1005,
-   "avg_pct": 74.2,
+   "views": 1004,
+   "avg_pct": 74.1,
    "avg_seconds": 17,
    "tags": {
     "script": "087",
@@ -938,7 +938,7 @@
     "post_slot": "19:15",
     "score": 87
    },
-   "engagedViews": 558,
+   "engagedViews": 557,
    "shares": 0,
    "subscribersGained": 0,
    "stayed_pct": 55.5,
@@ -946,10 +946,10 @@
     "NO_LINK_OTHER": 0,
     "SUBSCRIBER": 2,
     "YT_CHANNEL": 0,
-    "YT_SEARCH": 8,
+    "YT_SEARCH": 9,
     "YT_OTHER_PAGE": 3,
     "EXT_URL": 1,
-    "SHORTS": 990
+    "SHORTS": 989
    },
    "start": 130,
    "q25": 101,
@@ -985,13 +985,6 @@
    "shares": 0,
    "subscribersGained": 0,
    "stayed_pct": 58.4,
-   "traffic": {
-    "NO_LINK_OTHER": 0,
-    "YT_CHANNEL": 0,
-    "YT_SEARCH": 23,
-    "YT_OTHER_PAGE": 11,
-    "SHORTS": 956
-   },
    "start": 131,
    "q25": 111,
    "q50": 64,
@@ -1375,47 +1368,6 @@
    "drop_size": 35
   },
   {
-   "video": "Em5KSC9FqFw",
-   "title": "How Did LEGO Come Back From Its Worst Year?",
-   "views": 109,
-   "avg_pct": 57.6,
-   "avg_seconds": 17,
-   "tags": {
-    "script": "048",
-    "slug": "how-lego",
-    "topic": "LEGO",
-    "format": "how",
-    "visual_style": "editorial",
-    "theme": "bold_bright",
-    "hook_style": "number",
-    "title_style": "question",
-    "length_s": 29.51,
-    "length_bucket": "<30",
-    "post_at": "2026-11-11T18:00:00-05:00",
-    "post_slot": "18:00",
-    "score": 91
-   },
-   "engagedViews": 42,
-   "shares": 0,
-   "subscribersGained": 0,
-   "stayed_pct": 38.5,
-   "traffic": {
-    "NO_LINK_OTHER": 0,
-    "YT_CHANNEL": 2,
-    "YT_SEARCH": 6,
-    "YT_OTHER_PAGE": 1,
-    "SHORTS": 100
-   },
-   "start": 129,
-   "q25": 69,
-   "q50": 45,
-   "q75": 45,
-   "end": 31,
-   "drop_at_pct": 16,
-   "drop_at_s": 4.7,
-   "drop_size": 33
-  },
-  {
    "video": "_Z4XVNFVtBE",
    "title": "One Air Mattress Became 2.5 Billion Stays",
    "views": 100,
@@ -1637,38 +1589,6 @@
    }
   },
   {
-   "video": "PU6nz6U7md0",
-   "title": "App Builders Earn a Median of $135,980",
-   "views": 18,
-   "avg_pct": 72.9,
-   "avg_seconds": 22,
-   "tags": {
-    "script": "058",
-    "slug": "careers-software-devs",
-    "topic": "Software developers",
-    "format": "careers",
-    "visual_style": "charts3d",
-    "theme": "dark_neon",
-    "hook_style": "question",
-    "title_style": "statement",
-    "length_s": 30.19,
-    "length_bucket": "30-38",
-    "post_at": "2026-11-12T12:00:00-05:00",
-    "post_slot": "12:00",
-    "score": 87
-   },
-   "engagedViews": 8,
-   "shares": 0,
-   "subscribersGained": 0,
-   "stayed_pct": 44.4,
-   "traffic": {
-    "NO_LINK_OTHER": 0,
-    "YT_CHANNEL": 3,
-    "YT_SEARCH": 14,
-    "SHORTS": 1
-   }
-  },
-  {
    "video": "7oAvym5kcWE",
    "title": "Vets Earn $130,100. Getting In Is the Hard Part",
    "views": 18,
@@ -1834,6 +1754,56 @@
     "post_at": "2026-11-25T19:45:00-05:00",
     "post_slot": "19:45",
     "score": 92
+   },
+   "engagedViews": 0,
+   "shares": 0,
+   "subscribersGained": 0
+  },
+  {
+   "video": "hKxYGMFqDT0",
+   "title": "Quit After 33 Years. Now He Wants to Beat Nvidia.",
+   "views": 0,
+   "avg_pct": 0,
+   "avg_seconds": 0,
+   "tags": {
+    "script": "123",
+    "slug": "plan-jensen-vs-nvidia",
+    "topic": "Nvidia",
+    "format": "story",
+    "visual_style": "lowpoly",
+    "theme": "bold_bright",
+    "hook_style": "surprise",
+    "title_style": "statement",
+    "length_s": 37.09,
+    "length_bucket": "30-38",
+    "post_at": "2026-11-27T12:45:00-05:00",
+    "post_slot": "12:45",
+    "score": 95
+   },
+   "engagedViews": 0,
+   "shares": 0,
+   "subscribersGained": 0
+  },
+  {
+   "video": "X8-XC8EMtEQ",
+   "title": "One Minute of YouTube Takes 3 Weeks to Watch",
+   "views": 0,
+   "avg_pct": 0,
+   "avg_seconds": 0,
+   "tags": {
+    "script": "049",
+    "slug": "whatif-youtube",
+    "topic": "YouTube",
+    "format": "whatif",
+    "visual_style": "lowpoly",
+    "theme": "dark_neon",
+    "hook_style": "number",
+    "title_style": "number",
+    "length_s": 28.49,
+    "length_bucket": "<30",
+    "post_at": "2026-11-26T20:00:00-05:00",
+    "post_slot": "20:00",
+    "score": 89
    },
    "engagedViews": 0,
    "shares": 0,

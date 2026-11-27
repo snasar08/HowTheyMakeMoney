@@ -1,4 +1,4 @@
-# This week's mix (2026-11-26)
+# This week's mix (2026-11-27)
 
 Made by `python -m pipeline.weekly_mix` from analytics/stats.json + retention.json (Shorts posted in the last 21 days, at least 48 h old). Saturday parts follow the **counts per part** below instead of a fixed mix.
 
@@ -8,12 +8,12 @@ Made by `python -m pipeline.weekly_mix` from analytics/stats.json + retention.js
 |---|---|---|---|---|
 | famous-athlete | 21 | 1042 | 74% | FOCUS |
 | famous-other | 9 | 1023 | 80% |  |
-| story-plan | 0 | – | – | EXPERIMENT |
-| story-history | 0 | – | – |  |
+| story-plan | 1 | 6 | 62% |  |
+| story-history | 0 | – | – | EXPERIMENT |
 | whatif | 2 | 1063.5 | 73% |  |
-| pov | 0 | – | – |  |
-| how | 20 | 104.0 | 58% | paused |
-| careers | 12 | 28.5 | 73% | paused |
+| pov | 1 | 1151 | – |  |
+| how | 19 | 110 | 59% | paused |
+| careers | 11 | 30 | 76% | paused |
 
 ## Going viral (top 5, last 21 days)
 
@@ -21,24 +21,24 @@ Made by `python -m pipeline.weekly_mix` from analytics/stats.json + retention.js
 - 1255 views, famous-athlete, old look: **From a Napkin Contract to $1.1 Billion** — "Why was a soccer star's first contract written on a napkin?"
 - 1208 views, how, old look, 76% watched: **From $2.46 Billion to $4 Trillion** — "In 1997, all of Apple was worth 2.46 billion dollars. Today? Over 4 trillion."
 - 1166 views, famous-athlete, old look: **From a $2.5M Shoe Deal to $4.7 Billion** — "Why is a retired player still getting richer?"
-- 1146 views, famous-other, 3d look, 117% watched: **Ryan Reynolds Got $300 Million for a Phone Company** — "Ryan Reynolds got about 300 million dollars for a phone company. He owned 25 percent of Mi"
+- 1151 views, pov, 3d look: **A Penny Costs 3.69 Cents to Make** — "A penny costs 3.69 cents to make. But you pick one up off the sidewalk and it is worth one"
 
 ## Not working (bottom 5)
 
 - 2 views, how: Visa Kept $20 Billion Without Lending a Dime — "How does Visa make billions without ever lending you a dollar?"
+- 6 views, story-plan: Nike's Plan: Own Every Dunk, Even on the Moon — "Nike wants to own every dunk, even on the Moon. So step one: sign the best young athletes "
 - 8 views, careers: 54% of US Firefighters Are Volunteers — "Who fights the fires in your town? Maybe a volunteer."
-- 11 views, careers: What If You Won the Biggest Esports Prize? — "What if you won the biggest prize in esports history?"
 - 12 views, careers: Vets Earn $130,100. Getting In Is the Hard Part — "The typical vet earns 130,100 dollars a year. Getting there is the hard part."
 - 12 views, careers: $885,000: The Lowest NFL Salary in 2026 — "Can you guess the lowest salary an NFL player can earn in 2026?"
 
-Look: old 52 Shorts (median 369.5), 3D 12 Shorts (median 1052.5).
+Look: old 50 Shorts (median 510.0), 3D 14 Shorts (median 1052.5).
 
 ## Plan for each Saturday part (10 scripts)
 
 - famous-athlete: **3** (FOCUS: best views, x1.5)
 - famous-other: **2**
-- story-plan: **2** (EXPERIMENT: least known; twist: make half of them short (25-35 s, length_test short) and half long (45-60 s, length_test long))
-- story-history: **1**
+- story-plan: **1**
+- story-history: **2** (EXPERIMENT: least known; twist: make half of them short (25-35 s, length_test short) and half long (45-60 s, length_test long))
 - whatif: **1**
 - pov: **1**
 - how / careers: 0 (paused by Sam)
@@ -50,4 +50,4 @@ Write the focus lane like the top 5 above (same hook shape, same kind of person)
 
 - Bet of 2026-11-21: focus **famous-athlete**, experiment **story-plan** (angle).
   - famous-athlete: 3 new Shorts, median 1005 views at 48 h vs 1040 before -> **about the same**.
-  - story-plan: too early (0 Shorts with 48 h stats since then).
+  - story-plan: too early (1 Shorts with 48 h stats since then).
