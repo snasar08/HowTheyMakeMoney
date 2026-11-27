@@ -129,10 +129,11 @@ Object.assign(VIEWS, {
   thirdR: { from: [-1.8, 1.3, 6.6], to: [-1.6, 1.3, 6.1], look: [-0.42, 1.15, 0], blur: 16 },   // him on the right third
   hi2: { from: [1.8, 4.4, 6.2], to: [1.6, 4.1, 5.7], look: [0.1, 1.0, 0], blur: 8 },           // high 3/4 angle, looking down
   ots: { from: [3.0, 1.5, 8.2], to: [2.8, 1.5, 7.6], look: [-0.5, 1.2, 0], blur: 14 },        // over the shoulder: the bystander (fg) is glued to the left edge
+  top: { from: [0.2, 7.4, 1.5], to: [0.2, 6.8, 1.3], look: [0, 0.9, 0.15], blur: 5 },           // overhead, straight down at the table / desk (counting, dealing)
   wideLow: { from: [3.6, 0.7, 9.4], to: [3.2, 0.75, 8.6], look: [0, 1.3, 0], blur: 10 },       // wide establishing shot from the floor
 } as Record<string, { from: V3; to: V3; look: V3; blur: number }>);
 /** views that hold their composition (no sideways truck: he must not drift off the third) and the roll (dutch tilt, rad) each one leans into */
-const NO_TRUCK = new Set(["worm", "thirdL", "thirdR", "hi2", "ots", "wideLow"]);
+const NO_TRUCK = new Set(["worm", "thirdL", "thirdR", "hi2", "ots", "wideLow", "top"]);
 const TILT: Record<string, number> = { worm: 0.15, thirdL: 0.08, thirdR: -0.08, hi2: -0.12, ots: -0.05, wideLow: 0.11 };
 
 type Built = { setRoot: THREE.Group; setLights: THREE.Light[]; hide: THREE.Object3D[]; instHide: InstHide[]; root: THREE.Group; chars: Char[]; things: Thing[]; run?: ActRun; view?: string; bg: string; fog?: THREE.Fog; spots: Record<string, V3>; coinGeo?: THREE.InstancedMesh; pov3?: Pov3 };
@@ -502,8 +503,16 @@ const Inner: React.FC = () => {
     const tf2 = Math.tan((cam.fov * Math.PI) / 360), spot = (g: FgSpot) => cam.position.clone().addScaledVector(fw, g.d).addScaledVector(rt, g.x * g.d * tf2 * (1080 / 1920)).addScaledVector(up, g.y * g.d * tf2);
     const hp = b.chars[hi]?.root.position;
     s.chars.forEach((c, i) => { if (!c.fg) return; const ch = b.chars[i], q = spot(c.fg); ch.root.position.x = q.x; ch.root.position.z = q.z; if (hp) ch.root.rotation.y = Math.atan2(hp.x - q.x, hp.z - q.z); });
-    (s.things ?? []).forEach((t, i) => { if (t.fg) b.things[i].root.position.copy(spot(t.fg)); });
+    (s.things ?? []).forEach((t, i) => {
+      if (!t.fg) return;
+      const root = b.things[i].root; root.position.copy(spot(t.fg));
+      // Nov 26: a foreground prop only frames the shot: never more than ~0.3 of the frame height across (about a fifth of the frame at most)
+      root.scale.setScalar(root.userData.base ?? 1); root.updateMatrixWorld(true);
+      const sz = new THREE.Box3().setFromObject(root).getSize(new THREE.Vector3()), cap = 0.3 * 2 * t.fg.d * tf2, mx = Math.max(sz.x, sz.y, sz.z);
+      if (mx > cap) { root.scale.multiplyScalar(cap / mx); root.updateMatrixWorld(true); }
+    });
   }
+  fx.lens.nearScale = (s.things ?? []).some((t) => t.fg) ? 0.3 : s.chars.some((c) => c.fg) ? 0.6 : 1.0;   // soft, never a smear
   fx.lens.focus = Math.hypot(look[0] - pos[0], look[1] - pos[1], look[2] - pos[2]);
   { const ph = SHOTS_.length > 1 ? k / (SHOTS_.length - 1) : 0, cx = look[0], cz = look[2];
     rig.key.position.set(cx - 2.4, 4.8, cz + 3.6); rig.key.target.position.set(cx, 0.7, cz); rig.key.target.updateMatrixWorld(true);
