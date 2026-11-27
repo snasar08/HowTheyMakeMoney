@@ -389,7 +389,10 @@ function buildChar(look: Look, cheap: boolean): Char {
   const jersey = outfit === "jersey", leather = outfit === "leather";
   const trimCol = look.trim ?? "#ffffff";
   // Nov 17 (Sam: "Shaq should be black"): look.skin tints head, hands, bare arms and legs; very dark tones are lifted a little so the toon ramp still shows a face, not a black ball
-  const skin = (() => { if (!look.skin) return "#ecebe6"; const k = new THREE.Color(look.skin), h = { h: 0, s: 0, l: 0 }; { const lu = lum(look.skin); k.lerp(new THREE.Color("#ecebe6"), lu > 0.55 ? 0.82 : lu > 0.3 ? 0.62 : 0); } k.getHSL(h); if (h.l < 0.34) k.setHSL(h.h, h.s, 0.34 + (h.l - 0.34) * 0.3); return "#" + k.getHexString(); })();
+  // Nov 26 (owner: realistic skin tones, no egg heads): 8 real tones; no look.skin = a deterministic pick from the character's own look (same character, same tone, every shot); an explicit skin is used as given. Very dark tones get a small lift (keeping hue and saturation, so no ashy grey) and the face strokes get a light rim.
+  const SKIN8 = ["#f3cfbf", "#e8bf94", "#cba56f", "#c28a46", "#a8683a", "#84492a", "#6a3b25", "#32180e"];
+  const skin = (() => { let c = look.skin; if (!c) { let k = 2166136261 >>> 0; for (const ch of [look.body, look.hair ?? "", look.text ?? "", look.legs ?? "", look.hat ?? "", look.tie ?? ""].join("|")) k = Math.imul(k ^ ch.charCodeAt(0), 16777619) >>> 0; k ^= k >>> 15; k = Math.imul(k, 2246822507) >>> 0; k = (k ^ (k >>> 13)) >>> 0; c = SKIN8[k % SKIN8.length]; }
+    const k = new THREE.Color(c), h = { h: 0, s: 0, l: 0 }; k.getHSL(h); if (h.l < 0.14) k.setHSL(h.h, Math.max(h.s, 0.3), 0.14 + (h.l - 0.14) * 0.3); return "#" + k.getHexString(); })();
   const faceHalo = lum(skin) < 0.5 ? "#" + new THREE.Color(skin).lerp(new THREE.Color("#ffffff"), 0.55).getHexString() : "";
   const dark = lum(look.body) < 0.14;
   // Nov 17: saturated dark kit colours (Lakers purple #552583) went black under the 3-step ramp: lift HSL lightness to ~0.42 for jerseys (light kits untouched)
@@ -403,7 +406,9 @@ function buildChar(look: Look, cheap: boolean): Char {
   const sleeveCol = shade(jacketCol, 0.2);   // Nov 26: thin near-black sticks like the reference
   const legCol = look.legs ?? "#33333e";
   const legLit = jersey ? (sat(legCol) ? liftKit(legCol) : lum(legCol) < 0.14 ? "#26262e" : legCol) : legCol;
-  const skinMat = toonMat(skin, { emissive: skin, emissiveIntensity: lum(skin) > 0.5 ? 0 : 0.2 });   // heads stay white under coloured room light, like the reference
+  // the key light (130) blows a raw tone out to peach, so the diffuse is scaled down per tone (light tones need more, dark tones much less) until the RENDERED face lands on the real tone; dark tones also lose a little saturation (the warm key light makes them orange)
+  const skinMat = (() => { const lu = lum(skin), ex = Math.min(0.2, Math.max(0.012, -0.03 + 0.26 * Math.sqrt(lu))), ds = lu < 0.3 ? 0.2 : 0;
+    return toonMat(shade("#" + new THREE.Color(skin).lerp(new THREE.Color(lu, lu, lu), ds).getHexString(), ex), { emissive: skin, emissiveIntensity: lu > 0.3 ? 0.12 : 0 }); })();
   const leatherCol = lum(look.body) < 0.2 ? "#30303a" : look.body;
   const leatherMat = leather ? stdMat(`leather|${leatherCol}`, { color: leatherCol, metalness: 0.25, roughness: 0.28, emissive: "#1a1a22", emissiveIntensity: 0.9 }) : undefined;
   const limbMat: THREE.Material = jersey ? skinMat : leather ? leatherMat! : toonMat(sleeveCol, { emissive: sleeveCol, emissiveIntensity: 0.3 });

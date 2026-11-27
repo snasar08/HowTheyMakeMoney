@@ -47,7 +47,7 @@ def outfit(hero: dict | None, slug: str = "", sport: str = "", name: str = "") -
     """Our hero fields -> the reference character model (jacket / pants / boots / skin / hat / hair / moustache)."""
     s = lp_hero.spec(hero) if hero else lp_hero.spec(lp_hero.auto(slug))
     o = {"jacket": _hex(s.get("shirt"), "e63946"), "pants": _hex(s.get("pants"), "263247"),
-         "boots": _hex(s.get("shoes"), "f4f4f4"), "skin": _hex(s.get("skin"), "light")}
+         "boots": _hex(s.get("shoes"), "f4f4f4"), "skin": _hex(s.get("skin"), "light") if hero else ""}   # Nov 26: no hero in the script = no skin, the renderer spreads tones over all 8 evenly
     extras = s.get("extras") or []
     hair = s.get("hair") or "short"
     if "cap" in extras:
@@ -347,8 +347,8 @@ def _lib_model_names() -> set:
 
 AH_ALL_THINGS = AH_ALL_THINGS | _lib_model_names()
 AH_BIG = {"car", "truck", "bus", "rocket", "factory", "stadium", "plane", "yacht", "house", "dome", "giantshovel"}
-AH_CROWD = [{"body": c, "hat": "hair", "hair": h} for c, h in (("#e86a6a", "#3a2a20"), ("#5ad0d8", "#8a5a2a"), ("#8bc34a", "#1a1a1a"),
-            ("#b48ae0", "#3a2a20"), ("#f2a33a", "#5a3b2a"), ("#4a7bd0", "#1a1a1a"))]
+AH_CROWD = [{"body": c, "hat": "hair", "hair": h, "skin": sk} for c, h, sk in (("#e86a6a", "#3a2a20", "#e8bf94"), ("#5ad0d8", "#8a5a2a", "#84492a"), ("#8bc34a", "#1a1a1a", "#f3cfbf"),
+            ("#b48ae0", "#3a2a20", "#c28a46"), ("#f2a33a", "#5a3b2a", "#32180e"), ("#4a7bd0", "#1a1a1a", "#a8683a"))]   # Nov 26: palette tones, no white heads
 
 
 _AH_MODELS: dict | None = None
@@ -419,7 +419,7 @@ def ah_words_to_models(text: str) -> list:
     return out
 
 
-AH_SKIN_TONES = {"light": "#ffd19f", "medium": "#c68642", "tan": "#e0ac7e", "brown": "#a8744a", "dark": "#6b4a32"}
+AH_SKIN_TONES = {"light": "#f1c9a0", "medium": "#c68a5a", "tan": "#d09a6a", "brown": "#94603a", "dark": "#5f3d29"}
 
 
 def ah_look(o: dict) -> dict:
@@ -434,10 +434,10 @@ def ah_look(o: dict) -> dict:
         lk["glasses"] = "shades" if o.get("hat") == "crown" else "round"
     if o.get("beard"):   # Nov 17 (Sam on Shaq: "doesn't really look like him"): his goatee
         lk.update(beard=o["beard"], beardCol=o.get("beardCol", "#2a1d16"))
-    sk = (o.get("skin") or "").lower()               # Nov 17 (Sam: "Shaq should be black"): the hero's skin tone; plain "light" keeps the white style
+    sk = (o.get("skin") or "").lower()               # Nov 17 (Sam: "Shaq should be black"): the hero's skin tone
     sk = AH_SKIN_TONES.get(sk.lstrip("#"), sk)      # names (light/medium/tan/brown/dark) or hex
-    if sk.startswith("#") and sk not in ("#f5c9a0", "#ffd19f"):   # the unset default ("light") keeps the white style
-        lk["skin"] = sk
+    if sk.startswith("#"):   # Nov 26: realistic tones; an unset skin stays unset (the renderer picks a stable varied tone), "light" is a real light tone
+        lk["skin"] = "#f1c9a0" if sk in ("#f5c9a0", "#ffd19f") else sk
     if o.get("num"):
         lk["text"] = str(o["num"])
     elif o.get("chest") and hat != "hardhat":
@@ -559,20 +559,20 @@ california orlando boston ai ceo cfo ipo wikipedia internet monster energy red b
 christmas thanksgiving easter god""".split())
 AH_PERSON_CTX = re.compile(r"(?:\bwith|\bagainst|\bvs\.?|\bversus|\balongside|\bnamed|\bcalled|\bmet|\bmeets|\bbeat|\bbeats|\bbeating|\bfacing|\bfaced|\bthan|\bbehind|\bsigns?|\bsigned|\bhires?|\bhired|\bfires?|\bfired)\s+$")
 # people the voice names that everyone knows: (number, body, trim) for athletes; plain tones for the rest
-AH_PEOPLE_ATH = {"lebron": ("23", "#fdb927", "#552583", "#8a5a3c"), "jordan": ("23", "#ce1141", "#111111", "#6b4428"), "kobe": ("24", "#fdb927", "#552583", "#8a5a3c"),
-                 "curry": ("30", "#1d428a", "#ffc72c", "#a8744a"), "shaq": ("34", "#552583", "#fdb927", "#4a3020"), "shaquille": ("34", "#552583", "#fdb927", "#4a3020"),
+AH_PEOPLE_ATH = {"lebron": ("23", "#fdb927", "#552583", "#7a4a30"), "jordan": ("23", "#ce1141", "#111111", "#6b4428"), "kobe": ("24", "#fdb927", "#552583", "#8a5a3c"),
+                 "curry": ("30", "#1d428a", "#ffc72c", "#a8744a"), "shaq": ("34", "#552583", "#fdb927", "#5a3825"), "shaquille": ("34", "#552583", "#fdb927", "#5a3825"),
                  "durant": ("35", "#1d1160", "#e56020", "#8a5a3c"), "giannis": ("34", "#00471b", "#eee1c6", "#6b4428"), "wembanyama": ("1", "#222222", "#c4ced4", "#6b4428"),
-                 "wemby": ("1", "#222222", "#c4ced4", "#6b4428"), "messi": ("10", "#75aadb", "#ffffff", "#e0ac7e"), "ronaldo": ("7", "#c8102e", "#ffffff", "#d9a273"),
-                 "mbappe": ("10", "#1a2a6c", "#ffffff", "#6b4428"), "mbappé": ("10", "#1a2a6c", "#ffffff", "#6b4428"), "neymar": ("10", "#f7d117", "#1a8a3a", "#c68642"),
-                 "haaland": ("9", "#6cabdd", "#ffffff", "#f1c9a0"), "mahomes": ("15", "#e31837", "#ffb81c", "#a8744a"), "brady": ("12", "#d50a0a", "#ffffff", "#e8b890"),
-                 "ohtani": ("17", "#005a9c", "#ffffff", "#e0ac7e"), "bolt": ("9", "#2a8f3a", "#f7d117", "#4a3020"), "doncic": ("77", "#00538c", "#ffffff", "#e8b890"),
-                 "tatum": ("0", "#007a33", "#ffffff", "#8a5a3c"), "salah": ("11", "#c8102e", "#ffffff", "#c68642"), "yamal": ("19", "#a50044", "#004d98", "#c68642")}
+                 "wemby": ("1", "#222222", "#c4ced4", "#6b4428"), "messi": ("10", "#75aadb", "#ffffff", "#e3b184"), "ronaldo": ("7", "#c8102e", "#ffffff", "#e3b184"),
+                 "mbappe": ("10", "#1a2a6c", "#ffffff", "#6b4428"), "mbappé": ("10", "#1a2a6c", "#ffffff", "#6b4428"), "neymar": ("10", "#f7d117", "#1a8a3a", "#c68a5a"),
+                 "haaland": ("9", "#6cabdd", "#ffffff", "#f6d7c3"), "mahomes": ("15", "#e31837", "#ffb81c", "#a8744a"), "brady": ("12", "#d50a0a", "#ffffff", "#e8b890"),
+                 "ohtani": ("17", "#005a9c", "#ffffff", "#e0ac7e"), "bolt": ("9", "#2a8f3a", "#f7d117", "#6b4428"), "doncic": ("77", "#00538c", "#ffffff", "#e8b890"),
+                 "tatum": ("0", "#007a33", "#ffffff", "#8a5a3c"), "salah": ("11", "#c8102e", "#ffffff", "#b97d4f"), "yamal": ("19", "#a50044", "#004d98", "#b97d4f")}
 AH_PEOPLE_PLAIN = {"drake": ("#2a2a36", "#1a1a1a", "#a8744a"), "rihanna": ("#7a2a4a", "#2a1a1a", "#8a5a3c"), "beyonce": ("#c9a227", "#2a1a1a", "#a8744a"),
-                   "beyoncé": ("#c9a227", "#2a1a1a", "#a8744a"), "kanye": ("#3a3a3a", "#1a1a1a", "#a8744a"), "eminem": ("#555555", "#d8c27a", "#f1c9a0"),
-                   "snoop": ("#4a6aa8", "#1a1a1a", "#6b4428"), "bieber": ("#7a7a8a", "#6a4a2a", "#f1c9a0"), "swift": ("#e8d8a8", "#c9a227", "#f1c9a0"),
+                   "beyoncé": ("#c9a227", "#2a1a1a", "#a8744a"), "kanye": ("#3a3a3a", "#1a1a1a", "#a8744a"), "eminem": ("#555555", "#d8c27a", "#f6d7c3"),
+                   "snoop": ("#4a6aa8", "#1a1a1a", "#6b4428"), "bieber": ("#7a7a8a", "#6a4a2a", "#f6d7c3"), "swift": ("#e8d8a8", "#c9a227", "#f6d7c3"),
                    "bezos": ("#2a3a4a", "#4a4a4a", "#e8b890"), "musk": ("#1a1a24", "#2a1a1a", "#f1c9a0"), "zuckerberg": ("#6a6a72", "#4a2f1c", "#f1c9a0"),
                    "obama": ("#1f2f4f", "#6a6a6a", "#8a5a3c"), "trump": ("#1f2f4f", "#d8b84a", "#e8b890"), "oprah": ("#8a3a5a", "#1a1a1a", "#6b4428"),
-                   "mrbeast": ("#2a8fd8", "#2a1a10", "#e8b890"), "pewdiepie": ("#c43a3a", "#d8b84a", "#f1c9a0"), "shroud": ("#3a4a3a", "#2a2a2a", "#e8b890"),
+                   "mrbeast": ("#2a8fd8", "#2a1a10", "#e8b890"), "pewdiepie": ("#c43a3a", "#d8b84a", "#f6d7c3"), "shroud": ("#3a4a3a", "#2a2a2a", "#e8b890"),
                    "tfue": ("#1a1a24", "#2a1a10", "#e8b890"), "faker": ("#7a1a1a", "#1a1a1a", "#e0ac7e"), "serena": ("#f4f4f4", "#1a1a1a", "#6b4428"), "clark": ("#fdb927", "#1a1a1a", "#f1c9a0")}
 # "his mom", "a coach", "the boss": (body, hair, chest text, expression) so the viewer sees the relation
 AH_REL = {"mom": ("#d96a8a", "#4a2f1c", "", "smile"), "mother": ("#d96a8a", "#4a2f1c", "", "smile"), "mum": ("#d96a8a", "#4a2f1c", "", "smile"),

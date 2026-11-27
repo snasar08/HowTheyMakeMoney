@@ -203,7 +203,7 @@ const plant = (p: THREE.Object3D, x: number, z: number, s = 1, pot = "#d9663a") 
 const crowd = (p: THREE.Object3D, x: number, y: number, z: number, ry: number, perRow: number, rows: number, seed: number, spacing = 0.55, step = 0.45, depth = 0.7, palette?: string[], arms = false) => {
   const r = seeded(seed); const g = new THREE.Group(); g.position.set(x, y, z); g.rotation.y = ry; p.add(g);
   const cols = palette ?? ["#ff4d6d", "#ffd23a", "#3ad1ff", "#7cff6b", "#ff8a3a", "#c77dff", "#ffffff", "#2a2a3a"];
-  const skin = ["#f5d2b0", "#e0a97c", "#a8704a", "#7a4a2f", "#f7f7f7"];
+  const skin = ["#f6d7c3", "#f1c9a0", "#e3b184", "#d09a6a", "#b97d4f", "#94603a", "#744a2e", "#5a3825"];
   const heads: It[] = [], bodies: It[] = [], steps: It[] = [], armIt: It[] = [];
   for (let j = 0; j < rows; j++) {
     steps.push({ x: 0, y: j * step - 0.1, z: -j * depth, s: [perRow * spacing + 0.5, step * 2, depth] });
@@ -212,7 +212,7 @@ const crowd = (p: THREE.Object3D, x: number, y: number, z: number, ry: number, p
       const px = (i - perRow / 2) * spacing + (r() - 0.5) * 0.15, py = j * step + 0.1, pz = -j * depth + (r() - 0.5) * 0.1;
       const c = cols[Math.floor(r() * cols.length)];
       bodies.push({ x: px, y: py + 0.28, z: pz, s: [1, 1 + r() * 0.2, 1], c });
-      heads.push({ x: px, y: py + 0.72, z: pz, s: 0.9 + r() * 0.25, c: r() < 0.5 ? "#f7f7f7" : skin[Math.floor(r() * skin.length)] });
+      heads.push({ x: px, y: py + 0.72, z: pz, s: 0.9 + r() * 0.25, c: skin[Math.floor(r() * skin.length)] });
       if (arms && r() < 0.45) armIt.push({ x: px + (r() < 0.5 ? -0.24 : 0.24), y: py + 0.85, z: pz, rz: (r() - 0.5) * 0.5, s: [1, 1.1, 1], c });
     }
   }
