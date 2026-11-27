@@ -315,6 +315,11 @@ const build = (k: number, s: AhShot): Built => {
   }
   { const sj = chars[s.subject ?? 0], sc0 = s.chars[s.subject ?? 0];
     if (sj) fitInFrame(s, view && VIEWS[view] ? view : s.view, (sj as Char & { headY?: number }).headY ?? 1.55, sj.root.position, sc0?.pose === "sit", fitItems); }
+  chars.forEach((ch, ci) => {   // contact shadow: a soft dark blob under every standing character (the shadow map alone does not read)
+    if (s.chars[ci]?.pose === "sit") return;
+    const mk = (r: number, op: number) => { const m = new THREE.Mesh(new THREE.CircleGeometry(r, 28), new THREE.MeshBasicMaterial({ color: "#10082a", transparent: true, opacity: op, depthWrite: false })); m.rotation.x = -Math.PI / 2; m.scale.set(1, 0.62, 1); m.position.set(0.12, 0.05, 0.05); m.renderOrder = 4; return m; };
+    ch.root.add(mk(0.8, 0.45), mk(0.5, 0.55));
+  });
   let coinGeo: THREE.InstancedMesh | undefined;
   if (s.coins) {
     coinGeo = new THREE.InstancedMesh(new THREE.CylinderGeometry(0.07, 0.07, 0.015, 16), new THREE.MeshStandardMaterial({ color: "#f2c230", metalness: 0.8, roughness: 0.3, emissive: "#f2c230", emissiveIntensity: 0.4 }), 60);
@@ -333,7 +338,7 @@ const Inner: React.FC = () => {
     tone: new ToneMappingEffect({ mode: ToneMappingMode.NEUTRAL }),
     grade: new GradeEffect(),
     motion: new MotionBlurEffect(),
-    ink: new InkEffect(),
+    ink: new InkEffect({ width: 16 }),
     vig: new VignetteEffect({ offset: 0.35, darkness: 0.3 }),
   }), []);
   // refgap round 5: a warm key spot (a real, toon-stepped pool of light on floor and character) + a cool violet fill from the other side (shadow tint)
@@ -460,6 +465,8 @@ const Inner: React.FC = () => {
     rig.key.position.set(cx - 2.4, 4.8, cz + 3.6); rig.key.target.position.set(cx, 0.7, cz); rig.key.target.updateMatrixWorld(true);
     rig.key.color.set("#fff1cf").lerp(new THREE.Color("#9fb4ff"), ph * 0.7); rig.key.intensity = 130 - 45 * ph;
     rig.fill.position.set(cx + 3.2, 1.8, cz + 2.2);
+    { const pl = b.setLights.find((l) => (l as THREE.PointLight).isPointLight); const hl = b.setLights.find((l) => (l as THREE.HemisphereLight).isHemisphereLight);
+      rig.fill.color.set("#7a70ff"); if (pl) rig.fill.color.lerp(pl.color, 0.35); if (hl) rig.fill.color.lerp((hl as THREE.HemisphereLight).color, 0.2); rig.fill.intensity = 26; }
     rig.win.position.set(cx + 4.2, 4.6, cz - 2.6); rig.win.target.position.set(cx - 1.6, 0, cz + 0.4); rig.win.target.updateMatrixWorld(true); rig.win.intensity = 70 - 25 * ph; }
   fx.lens.cInf = blur * 0.6;   // lighter background blur: crisp like the reference
   fx.motion.set(mx, my); if (mp.pass) mp.pass.enabled = Math.abs(mx) + Math.abs(my) > 0.002;
