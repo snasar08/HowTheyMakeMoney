@@ -2165,8 +2165,45 @@ function rink(): SetObj {
 
 const BUILD: Record<SetName, () => SetObj> = { throne, office, diner, lab, stall, field, ring: ring_, track, graveyard, boardroom, street, beach, court, pitch, diamond, gridiron, tennis, golf, pool, gym, studio, farm, store, stage, space, garage, classroom, bathroom, mansion, showroom, factory, mountain, rink };
 const CACHE = new Map<SetName, SetObj>();
+
+// ---------- light pools (refgap Nov 26): motivated sources that visibly paint the floor and tint whoever stands in them ----------
+// each pool = a real SpotLight (penumbra, colours characters + walls) + an additive soft-gradient decal on the floor (reads under software GL too)
+type Pool = [string, number, number, number, number?];   // colour, x, z, radius, strength (0..1)
+const WARM: Pool = ["#ffd08a", -0.9, 0.4, 2.8, 0.5], COOL: Pool = ["#7f8cff", 2.6, -1.0, 2.3, 0.32];
+const POOLS: Partial<Record<SetName, Pool[]>> = {
+  throne: [["#ffd25a", 0.3, 0.2, 2.9, 0.55], ["#b07aff", -3.0, -1.2, 2.4, 0.4]],
+  office: [["#ffe0a6", -2.2, 0.6, 2.6, 0.55], ["#9fc0ff", 2.8, -1.4, 2.0, 0.3]],                // window light + cool fill
+  diner: [["#ffd38a", -1.6, 0.0, 2.4, 0.55], ["#ffd38a", 2.2, -1.0, 2.2, 0.5], ["#ff5a7a", 0.2, -3.0, 2.0, 0.3]],   // hanging lamp cones + neon
+  lab: [["#37ffd5", 2.0, -1.2, 2.2, 0.45], ["#ff6bd6", -2.4, -1.4, 2.0, 0.4], ["#fff6d0", 0, 0.4, 2.4, 0.3]],
+  stall: [["#ffc15a", -0.6, 0.3, 3.0, 0.55], ["#8a78ff", 3.0, -1.0, 2.4, 0.35]],
+  graveyard: [["#9cc4ff", -1.8, 0.2, 3.0, 0.5], ["#9cf0b0", 3.0, -1.0, 2.0, 0.3]],                // moon through the mist
+  street: [["#ff4da6", -2.6, -0.8, 2.4, 0.5], ["#37e0ff", 2.8, -1.2, 2.4, 0.45], ["#ffcf6b", 0.2, 0.9, 2.2, 0.4]],   // neon spill + lamp
+  boardroom: [["#ffd36b", 0, -2.2, 2.6, 0.5], ["#6a8cff", -3.0, -1.0, 2.2, 0.4]],
+  ring: [["#fff4cc", 0, 0, 3.6, 0.6], ["#ff3d71", 3.2, -1.2, 2.2, 0.35], ["#37e0ff", -3.2, -1.2, 2.2, 0.35]],   // stage spotlight
+  stage: [["#fff4cc", 0, 0, 3.4, 0.6], ["#ff4da6", -3.0, -1.0, 2.2, 0.4]],
+  track: [["#fff6d0", -1.2, 0.5, 3.0, 0.5], ["#ff8a5a", 3.0, -1.4, 2.4, 0.35]],
+  field: [["#fff0b0", -1.0, 0.4, 3.2, 0.4]], beach: [["#fff0b0", -1.2, 0.4, 3.2, 0.4]],
+  mansion: [["#ffcf6b", -2.4, 0.2, 2.4, 0.5], ["#ff4da6", 2.6, -1.4, 2.0, 0.3]],
+  gym: [["#fff4d8", 0, 0.2, 3.2, 0.45]], court: [["#fff4d8", 0, 0.2, 3.4, 0.45]], rink: [["#dff0ff", 0, 0.2, 3.4, 0.4]],
+};
+let POOL_TEX: THREE.CanvasTexture | null = null;
+const poolTex = () => POOL_TEX ?? (POOL_TEX = canvasTex(128, 128, (c) => {
+  const g = c.createRadialGradient(64, 64, 0, 64, 64, 64);
+  g.addColorStop(0, "rgba(255,255,255,1)"); g.addColorStop(0.45, "rgba(255,255,255,0.55)"); g.addColorStop(0.8, "rgba(255,255,255,0.12)"); g.addColorStop(1, "rgba(255,255,255,0)");
+  c.clearRect(0, 0, 128, 128); c.fillStyle = g; c.fillRect(0, 0, 128, 128);
+}));
+const addPools = (s: SetObj, name: SetName) => {
+  const pools = POOLS[name] ?? [WARM, COOL];
+  const tex = poolTex();
+  pools.forEach(([col, x, z, r, k = 0.4], i) => {
+    const d = new THREE.Mesh(new THREE.PlaneGeometry(r * 2, r * 2), new THREE.MeshBasicMaterial({ map: tex, color: col, transparent: true, opacity: Math.min(1, k * 1.9), blending: THREE.AdditiveBlending, depthWrite: false, fog: false, toneMapped: false }));
+    d.rotation.x = -PI / 2; d.position.set(x, 0.035 + i * 0.002, z); d.renderOrder = 2; d.userData.pool = true; s.root.add(d);
+    const sp = new THREE.SpotLight(col, 60 * k, 16, 0.55, 0.9, 1.6);   // wide soft cone from a motivated source above and behind
+    sp.position.set(x - 0.8, 5.6, z - 1.6); sp.target.position.set(x, 0, z); sp.target.updateMatrixWorld(true); s.lights.push(sp, sp.target as unknown as THREE.Light);
+  });
+};
 export const makeSet = (name: SetName): SetObj => {
   let s = CACHE.get(name);
-  if (!s) { s = BUILD[name](); CACHE.set(name, s); }
+  if (!s) { s = BUILD[name](); addPools(s, name); CACHE.set(name, s); }
   return s;
 };
