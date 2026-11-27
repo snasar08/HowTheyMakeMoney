@@ -329,16 +329,17 @@ const Inner: React.FC = () => {
   const { camera, scene, gl } = useThree();
   const fx = useMemo(() => ({
     lens: new LensBlur({ maxCoC: 36, nearScale: 1.0 }),
-    bloom: new BloomEffect({ blendFunction: BlendFunction.ADD, intensity: 0.35, luminanceThreshold: 1.05, luminanceSmoothing: 0.2, mipmapBlur: true, radius: 0.6 }),
+    bloom: new BloomEffect({ blendFunction: BlendFunction.ADD, intensity: 0.22, luminanceThreshold: 1.2, luminanceSmoothing: 0.2, mipmapBlur: true, radius: 0.6 }),
     tone: new ToneMappingEffect({ mode: ToneMappingMode.NEUTRAL }),
     grade: new GradeEffect(),
     motion: new MotionBlurEffect(),
     ink: new InkEffect(),
-    vig: new VignetteEffect({ offset: 0.3, darkness: 0.55 }),
+    vig: new VignetteEffect({ offset: 0.35, darkness: 0.3 }),
   }), []);
   // refgap round 5: a warm key spot (a real, toon-stepped pool of light on floor and character) + a cool violet fill from the other side (shadow tint)
   const rig = useMemo(() => {
     const key = new THREE.SpotLight("#fff1cf", 130, 26, 0.5, 0.5, 1.5), fill = new THREE.PointLight("#7a70ff", 16, 16, 1.5), win = new THREE.SpotLight("#d6e6ff", 60, 22, 0.3, 0.7, 1.5), g = new THREE.Group();
+    key.castShadow = true; key.shadow.mapSize.set(1024, 1024); key.shadow.bias = -0.0004; key.shadow.radius = 3; key.shadow.camera.near = 1; key.shadow.camera.far = 30;   // characters cast a ground shadow
     g.add(key, key.target, fill, win, win.target); return { g, key, fill, win };
   }, []);
   const mp = useMemo(() => ({ pass: null as EffectPass | null }), []);
@@ -460,8 +461,9 @@ const Inner: React.FC = () => {
     rig.key.color.set("#fff1cf").lerp(new THREE.Color("#9fb4ff"), ph * 0.7); rig.key.intensity = 130 - 45 * ph;
     rig.fill.position.set(cx + 3.2, 1.8, cz + 2.2);
     rig.win.position.set(cx + 4.2, 4.6, cz - 2.6); rig.win.target.position.set(cx - 1.6, 0, cz + 0.4); rig.win.target.updateMatrixWorld(true); rig.win.intensity = 70 - 25 * ph; }
-  fx.lens.cInf = blur;
+  fx.lens.cInf = blur * 0.6;   // lighter background blur: crisp like the reference
   fx.motion.set(mx, my); if (mp.pass) mp.pass.enabled = Math.abs(mx) + Math.abs(my) > 0.002;
+  fx.grade.beat = k;
   fx.grade.phase = SHOTS_.length > 1 ? k / (SHOTS_.length - 1) : 0;
   scene.background = new THREE.Color(b.bg);
   scene.fog = b.fog ?? null;
