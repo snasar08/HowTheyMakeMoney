@@ -26,11 +26,11 @@ const HEAD_R = 0.42;
 const BASE_L = 0.3;   // upper arm length, elbow -> hand centre length (scaled by height)
 
 // ---------------------------------------------------------------- faces
-const FW = 512, FH = 384, CX = 256, FS = 0.84;
+const FW = 512, FH = 384, CX = 256, FS = 0.95;
 // patch geometry: phi +-0.8 around front, theta 0.95..2.15 (centre slightly below equator)
 const PHI_HALF = 0.8, TH0 = 0.95, TH_LEN = 1.2;
 
-const line = (g: CanvasRenderingContext2D, w = 17) => { g.lineWidth = w * 1.2; g.lineCap = "round"; g.lineJoin = "round"; g.strokeStyle = INK; };
+const line = (g: CanvasRenderingContext2D, w = 17) => { g.lineWidth = w * 1.45; g.lineCap = "round"; g.lineJoin = "round"; g.strokeStyle = INK; };
 
 function brow(g: CanvasRenderingContext2D, x0: number, y0: number, x1: number, y1: number, bend = 0, w = 17) {
   line(g, w); g.beginPath(); g.moveTo(x0, y0);
@@ -389,17 +389,21 @@ function buildChar(look: Look, cheap: boolean): Char {
   const jersey = outfit === "jersey", leather = outfit === "leather";
   const trimCol = look.trim ?? "#ffffff";
   // Nov 17 (Sam: "Shaq should be black"): look.skin tints head, hands, bare arms and legs; very dark tones are lifted a little so the toon ramp still shows a face, not a black ball
-  const skin = (() => { if (!look.skin) return "#f1f1f5"; const k = new THREE.Color(look.skin), h = { h: 0, s: 0, l: 0 }; { const lu = lum(look.skin); k.lerp(new THREE.Color("#ffffff"), lu > 0.55 ? 0.8 : lu > 0.3 ? 0.62 : 0); } k.getHSL(h); if (h.l < 0.34) k.setHSL(h.h, h.s, 0.34 + (h.l - 0.34) * 0.3); return "#" + k.getHexString(); })();
+  const skin = (() => { if (!look.skin) return "#ecebe6"; const k = new THREE.Color(look.skin), h = { h: 0, s: 0, l: 0 }; { const lu = lum(look.skin); k.lerp(new THREE.Color("#ecebe6"), lu > 0.55 ? 0.82 : lu > 0.3 ? 0.62 : 0); } k.getHSL(h); if (h.l < 0.34) k.setHSL(h.h, h.s, 0.34 + (h.l - 0.34) * 0.3); return "#" + k.getHexString(); })();
   const faceHalo = lum(skin) < 0.5 ? "#" + new THREE.Color(skin).lerp(new THREE.Color("#ffffff"), 0.55).getHexString() : "";
   const dark = lum(look.body) < 0.14;
   // Nov 17: saturated dark kit colours (Lakers purple #552583) went black under the 3-step ramp: lift HSL lightness to ~0.42 for jerseys (light kits untouched)
   const liftKit = (c: string) => { const k = new THREE.Color(c), hsl = { h: 0, s: 0, l: 0 }; k.getHSL(hsl); if (hsl.s > 0.25 && hsl.l < 0.42) k.setHSL(hsl.h, hsl.s, 0.42); return "#" + k.getHexString(); };
   const sat = (c: string) => { const h = { h: 0, s: 0, l: 0 }; new THREE.Color(c).getHSL(h); return h.s > 0.25; };   // coloured, not just dark grey
-  const jacketCol = look.jacket ?? (jersey && sat(look.body) ? liftKit(look.body) : dark ? (jersey ? "#26262e" : "#454552") : look.body);   // near-black jackets read as dark grey, not a hole
-  const sleeveCol = dark ? "#34343f" : shade(look.body, 0.82);
+  // Nov 26: flat saturated clothes: a grey / near-black / washed-out outfit colour becomes a saturated one (picked from the colour itself, so a look keeps its colour every shot)
+  const POP = ["#e0443c", "#2f7de1", "#2aa76b", "#f2a21a", "#8a56d8", "#e8548a", "#18aeb0", "#ef7a2a"];
+  const popBody = (() => { const h = { h: 0, s: 0, l: 0 }; new THREE.Color(look.body).getHSL(h); if (jersey || leather || (h.s > 0.4 && h.l > 0.25 && h.l < 0.8)) return look.body;
+    let k = 0; for (const ch of look.body) k = (k * 31 + ch.charCodeAt(0)) >>> 0; return POP[k % POP.length]; })();
+  const jacketCol = look.jacket ?? (jersey ? (sat(look.body) ? liftKit(look.body) : dark ? "#26262e" : look.body) : popBody);
+  const sleeveCol = shade(jacketCol, 0.2);   // Nov 26: thin near-black sticks like the reference
   const legCol = look.legs ?? "#33333e";
   const legLit = jersey ? (sat(legCol) ? liftKit(legCol) : lum(legCol) < 0.14 ? "#26262e" : legCol) : legCol;
-  const skinMat = toonMat(skin, { emissive: skin, emissiveIntensity: lum(skin) > 0.8 ? 0.2 : 0.32 });   // heads stay white under coloured room light, like the reference
+  const skinMat = toonMat(skin, { emissive: skin, emissiveIntensity: lum(skin) > 0.5 ? 0 : 0.2 });   // heads stay white under coloured room light, like the reference
   const leatherCol = lum(look.body) < 0.2 ? "#30303a" : look.body;
   const leatherMat = leather ? stdMat(`leather|${leatherCol}`, { color: leatherCol, metalness: 0.25, roughness: 0.28, emissive: "#1a1a22", emissiveIntensity: 0.9 }) : undefined;
   const limbMat: THREE.Material = jersey ? skinMat : leather ? leatherMat! : toonMat(sleeveCol, { emissive: sleeveCol, emissiveIntensity: 0.3 });
@@ -485,7 +489,7 @@ function buildChar(look: Look, cheap: boolean): Char {
     rig.add(mesh(new THREE.BoxGeometry(0.15, 0.05, 0.02), toonMat("#ffffff"), 0, 1.255 + up, 0.19), knot, blade);
   } else if (!cheap) {
     // jacket: collar ring + flaps, optional shirt at the neck, zipper, seams, hem
-    const shirtCol = look.shirt;
+    const shirtCol = look.shirt ?? "#f4f1ea";
     if (shirtCol) {
       const sm = toonMat(shirtCol);
       const v = mesh(new THREE.BoxGeometry(0.11, 0.14, 0.03), sm, 0, 1.15 + up, 0.18); v.rotation.x = -0.12; rig.add(v);
@@ -496,16 +500,7 @@ function buildChar(look: Look, cheap: boolean): Char {
       const fl = outline(mesh(new THREE.BoxGeometry(0.08, 0.1, 0.025), bodyMat, s * 0.07, 1.17 + up, 0.17), 0.008);
       fl.rotation.set(-0.15, s * -0.45, s * 0.35); rig.add(fl);
     }
-    rig.add(bodyTube(0, 1.1 + up, 0.6 + lo, 0.0085, zipMat, 16));
-    const pull = mesh(new THREE.BoxGeometry(0.03, 0.05, 0.014), zipMat, 0, 1.08 + up, B_R + 0.005); rig.add(pull);
-    for (const s of [-1, 1]) {
-      rig.add(bodyTube(s * 1.3, 1.12 + up, 0.62 + lo, 0.006, trimMat, 12));            // side seams
-      rig.add(bodyTube(s * 0.42, 0.9 + mid, 0.62 + lo, 0.006, trimMat, 8));              // front panel seams
-      const hem = mesh(new THREE.TorusGeometry(0.165, 0.012, 6, 28), trimMat, 0, 0.6 + lo, 0); hem.rotation.x = Math.PI / 2; if (s === 1) rig.add(hem);
-      const pocket = mesh(new THREE.BoxGeometry(0.08, 0.011, 0.01), trimMat, s * 0.11, 0.78 + lo + tg * 0.3, 0.176); pocket.rotation.set(0, s * 0.55, s * -0.22); rig.add(pocket);
-    }
-  } else {
-    rig.add(bodyTube(0, 1.1 + up, 0.62 + lo, 0.008, zipMat, 8));
+    // Nov 26: flat clothes, no zipper / seams / pockets
   }
   if (look.text) {
     if (jersey) {
@@ -522,9 +517,18 @@ function buildChar(look: Look, cheap: boolean): Char {
 
   // head
   const head = new THREE.Group(); head.position.set(0, HEAD_Y, 0); rig.add(head);
-  head.add(outline(mesh(new THREE.SphereGeometry(HEAD_R, cheap ? 22 : 40, cheap ? 16 : 28), skinMat), 0.02));
+  // Nov 26: slightly egg-shaped head: wider at the top, a touch taller, leaning a hair to one side
+  const egg = <T extends THREE.BufferGeometry>(g: T): T => {
+    const p = g.attributes.position as THREE.BufferAttribute;
+    for (let i = 0; i < p.count; i++) {
+      const u = p.getY(i) / HEAD_R, w = 1 + 0.07 * u;
+      p.setXYZ(i, p.getX(i) * w + 0.014 * u, p.getY(i) * 1.03, p.getZ(i) * w);
+    }
+    g.computeVertexNormals(); return g;
+  };
+  head.add(outline(mesh(egg(new THREE.SphereGeometry(HEAD_R, cheap ? 22 : 40, cheap ? 16 : 28)), skinMat), 0.03));
   const face = new THREE.Mesh(
-    new THREE.SphereGeometry(HEAD_R + 0.006, cheap ? 14 : 32, cheap ? 10 : 24, Math.PI / 2 - PHI_HALF, PHI_HALF * 2, TH0, TH_LEN), faceMat("neutral", false, faceHalo));
+    egg(new THREE.SphereGeometry(HEAD_R + 0.006, cheap ? 14 : 32, cheap ? 10 : 24, Math.PI / 2 - PHI_HALF, PHI_HALF * 2, TH0, TH_LEN)), faceMat("neutral", false, faceHalo));
   face.renderOrder = 2; head.add(face);
   // mouth + eating helpers: canvas y 290 -> theta
   const MTH = TH0 + (265 / FH) * TH_LEN;
@@ -690,7 +694,7 @@ function buildChar(look: Look, cheap: boolean): Char {
 
   const addLeg = (s: number) => {
     const hip = new THREE.Group(); hip.position.set(s * HIP_X, HIP_Y, 0); rig.add(hip);
-    const lcol = jersey ? legLit : legCol;
+    const lcol = jersey ? legLit : shade(legCol, 0.4);
     const lm = toonMat(lcol, { emissive: lcol, emissiveIntensity: 0.3 });
     const um = jersey ? skinMat : lm;   // bare legs below the shorts
     if (!cheap) hip.add(ball(0.032, um, ot, 10, 8));
