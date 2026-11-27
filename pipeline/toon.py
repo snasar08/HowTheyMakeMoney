@@ -47,7 +47,7 @@ def outfit(hero: dict | None, slug: str = "", sport: str = "", name: str = "") -
     """Our hero fields -> the reference character model (jacket / pants / boots / skin / hat / hair / moustache)."""
     s = lp_hero.spec(hero) if hero else lp_hero.spec(lp_hero.auto(slug))
     o = {"jacket": _hex(s.get("shirt"), "e63946"), "pants": _hex(s.get("pants"), "263247"),
-         "boots": _hex(s.get("shoes"), "f4f4f4"), "skin": _hex(s.get("skin"), "light")}
+         "boots": _hex(s.get("shoes"), "f4f4f4"), "skin": _hex(s.get("skin"), "light") if hero else ""}   # Nov 26: no hero in the script = no skin, the renderer spreads tones over all 8 evenly
     extras = s.get("extras") or []
     hair = s.get("hair") or "short"
     if "cap" in extras:
@@ -347,8 +347,8 @@ def _lib_model_names() -> set:
 
 AH_ALL_THINGS = AH_ALL_THINGS | _lib_model_names()
 AH_BIG = {"car", "truck", "bus", "rocket", "factory", "stadium", "plane", "yacht", "house", "dome", "giantshovel"}
-AH_CROWD = [{"body": c, "hat": "hair", "hair": h} for c, h in (("#e86a6a", "#3a2a20"), ("#5ad0d8", "#8a5a2a"), ("#8bc34a", "#1a1a1a"),
-            ("#b48ae0", "#3a2a20"), ("#f2a33a", "#5a3b2a"), ("#4a7bd0", "#1a1a1a"))]
+AH_CROWD = [{"body": c, "hat": "hair", "hair": h, "skin": sk} for c, h, sk in (("#e86a6a", "#3a2a20", "#e8bf94"), ("#5ad0d8", "#8a5a2a", "#84492a"), ("#8bc34a", "#1a1a1a", "#f3cfbf"),
+            ("#b48ae0", "#3a2a20", "#c28a46"), ("#f2a33a", "#5a3b2a", "#32180e"), ("#4a7bd0", "#1a1a1a", "#a8683a"))]   # Nov 26: palette tones, no white heads
 
 
 _AH_MODELS: dict | None = None
