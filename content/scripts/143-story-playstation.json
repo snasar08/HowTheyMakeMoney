@@ -42,7 +42,7 @@
   },
   "scenes": [
     {
-      "narration": "You are Ken Kutaragi, and your PlayStation sold over 102 million units. But in 1988, you only build a side room for Nintendo's Super Nintendo.",
+      "narration": "You're Ken Kutaragi: PlayStation sold over 102 million units. But in 1988, you only build a side room for Nintendo's Super Nintendo.",
       "visual": {
         "type": "lowpoly",
         "set": "office",

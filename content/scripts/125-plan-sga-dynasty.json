@@ -50,7 +50,7 @@
   },
   "scenes": [
     {
-      "narration": "You're Shai Gilgeous-Alexander. Picked 11th, traded twice, then you win MVP and the title in the same year.",
+      "narration": "You're Shai Gilgeous-Alexander, the 11th pick. But you're traded twice. Then you win MVP and the title in one year.",
       "visual": {
         "type": "lowpoly",
         "set": "court",
@@ -110,7 +110,7 @@
       ]
     },
     {
-      "narration": "One ring isn't enough. You want a dynasty. So you keep your whole team together.",
+      "narration": "One ring isn't enough for you. You want a dynasty. So you keep your whole team together.",
       "visual": {
         "type": "lowpoly",
         "set": "court",

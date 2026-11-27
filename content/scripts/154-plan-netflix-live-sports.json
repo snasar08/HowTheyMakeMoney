@@ -40,7 +40,7 @@
   },
   "scenes": [
     {
-      "narration": "You are Netflix, and 325 million members watch you from their couches. But you want that couch to be the best seat in every stadium.",
+      "narration": "You're Netflix: 325 million members, all on couches. But you want that couch to be the best seat in every stadium.",
       "visual": {
         "type": "lowpoly",
         "set": "city",

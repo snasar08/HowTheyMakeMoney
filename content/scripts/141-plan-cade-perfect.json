@@ -41,7 +41,7 @@
   },
   "scenes": [
     {
-      "narration": "You're Cade Cunningham, and you score 52 points without one turnover. On November 12, 2026, no player in NBA history had done that with 10 assists.",
+      "narration": "You're Cade Cunningham: 52 points, zero turnovers. But before November 12, 2026, no NBA player had done that with 10 assists.",
       "visual": {
         "type": "lowpoly",
         "set": "court",

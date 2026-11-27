@@ -22,40 +22,60 @@ Formats allowed: `famous`, `whatif`, `story`. Do NOT write `how` or `careers` (p
   angle, new figures, new hook), and the best examples: `119-plan-nike.json` (the owner's favourite), 118, 120, 123,
   124. After writing, add one line per script to `content/angles.md`: `NNN | company | angle | key figures`.
 
-## 2. Hooks and pacing
-- HOOK AND FIRST 6 SECONDS (from analytics/retention.md, Nov 22: every Short stalls near 1000 views; the biggest drop,
-  -13 to -17 pts, is at 4-5 s, just as line 1 ends). Best at 25% watched: "His dad worked up to 4 jobs at once. Now he
-  earns 100 million dollars a year." (118%), "A game company paid him 1 million dollars. To play its game." (112%).
-  Worst: "Guess how much ..." (69-83%), "What if Nike's best store isn't even a Nike store?" (63%), "How did [company] ...?" (39-85%).
-  1. Line 1 is 9 words or fewer (about 3.5 s): WHO + one number + a contradiction or low start (paid to play, turned
-     down, cut, zero offers). A person with an odd concrete detail beats a company or a quiz.
-  2. Never open with "Guess how much", a how/why-company question, or an abstract "What if X isn't X". A question is
-     fine only if the number is in it and it asks about a person.
-  3. Line 2 starts by 3.5 s with But / Now / Then or a question and opens a gap ("but that's not how he got rich").
-     Do not answer it before second 6.
-  4. No setup, date talk or background before second 6 (a year goes on a flip card). Every line ends pulling into
-  the next (a "but", a question). No 2-4 word fragments in a row.
-  5. Last line then `loop` lead word for word back into line 1 ("So next time someone says you're too young,
-     remember:" before "You're Coco Gauff ..."), so a replay feels seamless.
-  6. Title: the number + the contradiction, 50 characters or fewer, at most 1 in 6 questions.
-- Short sentences, but full ones: 6-14 words. Never two 2-4 word fragments in a row (Nov 17 review of the posted
-  Ninja Short: 6 of its 14 sentences were fragments like "That year?" / "By his own guess.", each read with a
-  falling pitch and a 0.7 s gap, so it sounded chopped). Calm, plain English, no hype words ("insane", "crazy").
-- Line one says WHO by name ("Ninja got paid 1 million dollars ..."), never only "him"/"he".
-- Time words must match the dates: "months earlier", "that same year", "a year later" only when the sourced dates
-  say so; otherwise say the year ("Back in 2017 ...").
-- Say the thing plainly so the voice can't blur it: "a rival game called Apex Legends", not "A rival to Fortnite"
-  (heard as "Arrival"). Every format now renders in the 3D look, so every line needs a picture (section 4).
-- Every few lines flips the one before it. Use 2-4 numbers, each sourced. Spell numbers for speech: "46.3 billion
-  dollars", "57 percent" ($ is allowed; it is spoken as dollars).
-- `loop`: one short line spoken last that leads back into line 1 ("So next time you lace up your shoes, remember:").
-- `cta` + `cta_question`: a this-or-that comment question ("Nike or Adidas?"). The last scene never says "Follow
-  for more" (the CTA is added automatically).
-- `first_comment` (Sam, Nov 22): the comment the channel posts under the Short right after it goes live
-  (pipeline/first_comment.py). One line, max 120 characters, sounds like the creator, asks viewers something they
-  want to answer (a pick, a guess, "who next?"), may add one emoji. Not a copy of `cta_question`: add a twist
-  ("Nike or Adidas? Wrong answers only 👇", "Would you take the $1 deal or the shares? 👇"). Only numbers that are
-  in the script; no links, @, # or new facts; kid-safe.
+## 2. Narration: fast, pulling, drawable (read this twice)
+Target sound: fast @afterhourtheories-style narration. Short full sentences, every line pulls into the next, every
+noun is something the 3D video can show, one clear payoff, and an ending that loops into line 1.
+
+What the data say (analytics/retention.md + insights.md, Nov 26, 90 Shorts): every Short stalls near 1000 views; the
+biggest drop (-13 to -17 pts) is at 4-5 s, right as line 1 ends. Surprise/number hooks median 1020 / 270 views at 48 h,
+question hooks 15. Number titles 1007, statement 33, question 18. Under 30 s: 781 views, 30-38 s: 15 (stories may run
+longer, but only if every line pulls). Best 25%-watched: "His dad worked up to 4 jobs at once. Now he earns 100
+million dollars a year." (118%), "A game company paid him 1 million dollars. To play its game." (112%). Worst: "Guess
+how much ..." (69-83%), "What if Nike's best store isn't even a Nike store?" (63%), "How did [company] ...?" (39-85%).
+
+The seven rules (pipeline/script_check.py scores them):
+1. HOOK: line 1 is 9 words or fewer (about 3.5 s). WHO by name + ONE number + a contradiction or low start (paid to
+   play, turned down, cut, zero offers, no license). A person with an odd concrete detail beats a company or a quiz.
+   Never open with "Guess how much", "How did / Why does [company] ...", "What if X isn't X", "Did you know".
+   A question is fine only if the number is in it and it is about a person. A year goes on a flip card, not in line 1.
+2. OPEN LOOP: line 2 starts by 3.5 s with But / Now / Then / So or a question and opens a gap ("but that's not how he
+   got rich"). Do not answer it before second 6. No setup, date talk or background before second 6.
+3. PULL: every line ends leaning into the next (a "but", a question, an unfinished step). Every few lines flips the
+   one before it. "Still not enough?" is the pull line of `plan` Shorts: use it, then give the bigger next step.
+4. LINE SHAPE: 6-14 words, one picture per sentence, calm plain English, no hype words ("insane", "crazy"). Never two
+   fragments of 4 words or fewer in a row ("That year?" / "By his own guess." read with a falling pitch and a 0.7 s gap,
+   it sounds chopped). Never 15+ words: the splitter breaks it at commas and the toon count drifts.
+5. DRAWABLE: every line names something that can be drawn: a person, a number, a shoe, a court, a burger, a contract, a
+   brand. Abstract words (success, journey, legacy, dream, future, growth, strategy) give the picture nothing: swap them
+   for the object or the act ("you sign the contract", not "you secure your future").
+6. ONE PAYOFF: one number or twist the whole Short builds to, 2-4 numbers in total, each sourced, spelled for speech
+   ("46.3 billion dollars", "57 percent"; $ is fine). Say the thing plainly so the voice can't blur it ("a rival game
+   called Apex Legends", not "A rival to Fortnite"). Time words ("a year later") only when the dates say so.
+7. LOOP ENDING: `loop` is the last spoken line and ends on a lead-in (colon or comma) that runs word for word into line 1
+   ("So next time someone says you're too young, remember:" + "You're Coco Gauff ..."). Never just "So remember:".
+Line one says WHO by name ("Ninja got paid 1 million dollars ..."), never only "him"/"he".
+
+Bad line -> better line (all real lines from this repo; the numbers never change, only the wording):
+| Bad (why) | Better |
+|---|---|
+| "You're Nvidia, and in one quarter you made 115.8 billion dollars." (12 words, hook late) | "You're Nvidia: 115.8 billion dollars in one quarter." |
+| "You have to eat every Oreo made in a year: 40 billion." (12) | "You must eat 40 billion Oreos, a year's worth." |
+| "Max Verstappen raced in Formula One at 17, without a road license." (12) | "Verstappen raced Formula One at 17, no road license." |
+| "George Lucas took only 150,000 dollars ..." then "He later sold his company for 4.05 billion." (no gap) | same hook, then "But he later sold his company for 4.05 billion." |
+| "You're Shai Gilgeous-Alexander. Picked 11th, traded twice, then you win MVP and the title in the same year." (3-word fragment, 15-word line) | "You're Shai Gilgeous-Alexander, the 11th pick. But you're traded twice. Then you win MVP and the title in one year." |
+| "You are Ken Kutaragi, and your PlayStation sold over 102 million units." (12, filler "you are ... and") | "You're Ken Kutaragi: PlayStation sold over 102 million units." |
+| "In April 2026, Kevin Durant's company bought a 515 acre amusement park." (date eats the hook) | "Kevin Durant's company bought a 515 acre amusement park." then the date in line 2 |
+| loop "So remember:" (leads nowhere) | "So next time you ride a roller coaster, remember:" |
+| "Guess how much ..." / "How did [company] ...?" | the number first: "A game company paid him 1 million dollars. To play its game." |
+| "It's all about the journey and success." (nothing to draw) | "You sign the contract. You count the cash." |
+
+Other fields:
+- `cta` + `cta_question`: a this-or-that comment question ("Nike or Adidas?"). The last scene never says "Follow for
+  more" (the CTA is added automatically).
+- `first_comment` (Nov 22, pipeline/first_comment.py): one line, max 120 characters, creator voice, asks viewers
+  something they want to answer, may add one emoji. Not a copy of `cta_question`: add a twist ("Nike or Adidas? Wrong
+  answers only 👇"). Only numbers that are in the script; no links, @, # or new facts; kid-safe.
+- Title: the number + the contradiction, 50 characters or fewer, at most 1 in 6 questions.
 - Vary `hook_style` (question / number / whatif / challenge / surprise) and `title_style` (question / number /
   statement / whatif). No two Shorts in a row share format + theme + hook style.
 
@@ -186,64 +206,24 @@ extras [glasses|cap|headband], height}` (hex colours without #).
 Each scene: `narration`, `visual` (`type: "lowpoly"`, `set` city|court|pitch|office|stage|..., `action`, `crowd`,
 `props`), `toon` (one dict per sentence).
 
-Annotated story example (trimmed from 119-plan-nike; JSON has no comments, so the notes are below it):
-```json
-{ "id": "119", "slug": "plan-nike", "company": "Nike", "format": "story", "story_mode": "history",
-  "visual_style": "lowpoly", "hook_style": "number", "title_style": "number", "theme": "bold_bright",
-  "status": "ready", "score": 94, "title": "From Selling Japan's Shoes to $46.3 Billion",
-  "name_card": "You are Nike", "name_sub": "a true story",
-  "description": "You're Nike, and you want to own the whole shoe game.\n\nSources:\n- Wikipedia: Nike, Inc.: https://en.wikipedia.org/wiki/Nike,_Inc.\n\nFrom the cited page: founded January 25, 1964 ... fiscal 2025 revenue was $46.3 billion. Not financial advice.\n\n#shorts #nike #howtheymakemoney",
-  "tags": ["nike", "story", "shorts"], "images": {},
-  "loop": "So next time you lace up your shoes, remember:",
-  "cta": "Nike or Adidas? Comment your pick.", "cta_question": "Nike or Adidas?",
-  "first_comment": "Nike or Adidas? Wrong answers only 👇",
-  "hero": {"skin": "d9a577", "hair": "short", "hair_color": "2a1d14", "beard": "none", "outfit": "tee",
-           "shirt": "111111", "pants": "2b2f3a", "shoes": "f4f4f4", "chest": "NIKE", "trim": "ffffff", "height": 1.0},
-  "scenes": [
-    { "narration": "You are Nike, and you make 46.3 billion dollars a year. But it's 1964, and you don't make shoes. You sell someone else's, shipped from Japan.",
-      "visual": {"type": "lowpoly", "set": "city", "action": "idle", "crowd": 0, "props": ["boxes"]},
-      "toon": [
-        {"place": "throne", "mood": "proud", "brand": {"name": "Nike", "bg": "#111111", "fg": "#ffffff", "icon": "swoosh"},
-         "card": {"text": "$46.3 BILLION", "kind": "screen", "sub": "NIKE, EVERY YEAR"}, "view": "ms"},
-        {"place": "stall", "mood": "nervous", "card": {"text": "1964", "kind": "flip", "sub": "YEAR"}, "view": "ms"},
-        {"place": "stall", "mood": "scheme", "props": ["boxes"], "card": {"text": "MADE IN JAPAN", "kind": "white", "fg": "#c0353a"}, "view": "face"} ] },
-    { "narration": "Then, your co-founder pours rubber into his wife's waffle iron. That's your first real sole. In 1971, you get a new name. Nike.",
-      "visual": {"type": "lowpoly", "set": "office", "action": "work", "crowd": 0, "props": []},
-      "toon": [
-        {"place": "garage", "mood": "excited", "action": "work", "things": ["shoe"], "view": "ms"},
-        {"place": "garage", "mood": "laugh", "things": ["shoe"], "view": "face"},
-        {"place": "garage", "mood": "calm", "card": {"text": "1971", "kind": "flip", "sub": "YEAR"}, "view": "ms"},
-        {"place": "garage", "beat": "logo", "mood": "proud", "brand": {"name": "Nike", "bg": "#111111", "fg": "#ffffff", "icon": "swoosh"}, "view": "ms"} ] },
-    { "narration": "Then, in 1984, you bet on a rookie. Michael Jordan. His shoe becomes its own brand.",
-      "visual": {"type": "lowpoly", "set": "court", "action": "cheer", "crowd": 200, "props": ["ball"]},
-      "toon": [
-        {"place": "court", "mood": "scheme", "card": {"text": "1984", "kind": "flip", "sub": "YEAR"}, "view": "ms"},
-        {"place": "court", "mood": "proud", "action": "cheer", "crowd": 30, "view": "face",
-         "who": {"jacket": "#c8102e", "pants": "#c8102e", "boots": "#ffffff", "hat": "hair", "style": "buzz", "hair": "#1a1a1a", "skin": "#6b4226", "kit": "bball", "num": "23", "trim": "#111111"}},
-        {"place": "court", "mood": "excited", "things": ["shoe"], "crowd": 30, "view": "ms", "who": {"...": "same as above"}} ] }
-  ],
-  "sources": [{"title": "Wikipedia: Nike, Inc.", "url": "https://en.wikipedia.org/wiki/Nike,_Inc."}],
-  "length_test": "short", "look": "afterhour" }
-```
-What the example does right:
-- Scene 1: three sentences, three dicts. The first has the big number as a `screen` card plus the brand sign, the
-  year is a `flip` card, the twist ("you sell someone else's") is a `face` close-up.
-- Every year said in a line has a flip card; every money line has a screen card or a money beat.
-- Sentence 2 of scene 2 repeats `shoe` but changes mood and `view`, so the picture still changes.
-- `who` swaps the character for the Jordan lines (kit + real number 23, no team logo art).
-- `things` only names what the line says; `brand` appears when Nike is named or renamed.
+Worked example: read `content/scripts/119-plan-nike.json` (the owner's favourite). What it does right: scene 1 has three
+sentences and three toon dicts; the first has the big number as a `screen` card plus the brand sign, the year is a
+`flip` card, the twist is a `face` close-up. Every year said has a flip card, every money line a screen card or money
+beat. A repeated `thing` changes mood and `view` so the picture still changes. `who` swaps the character for the Jordan
+lines (kit + real number 23, no logo art). `brand` appears when Nike is named or renamed.
 
 ## 8. Quality gate (run in this order, fix, then commit and push after EVERY finished script)
 ```bash
 python -m pipeline.lint content/scripts/NNN-slug.json          # 0 errors, fix most warnings
 python -m pipeline.story_score content/scripts/NNN-slug.json   # 80+ (rewrite anything under)
 python -m pipeline.scene_check content/scripts/NNN-slug.json   # 0 errors, scene score 85+
+python -m pipeline.script_check content/scripts/NNN-slug.json  # craft score 75+ (rule 2 hook, loop, drawable lines)
 python -m pipeline.toon_director content/scripts/NNN-slug.json # prints the scene it will draw for each sentence: read it
 ```
 - scene_check ERRORs must be fixed (wrong toon count, unknown value, missing object, a number or brand not shown).
   WARNs: fix the ones that name a real problem (repeat, mention not shown, empty run); "objects to build" lists what
   to hand to the object builder.
-- A script passes only with sources opened, lint 0 errors, story score 80+, scene_check 0 errors, one `toon` dict
+- A script passes only with sources opened, lint 0 errors, story score 80+, script_check 75+ (rewrite the flagged lines, never the facts), scene_check 0 errors, one `toon` dict
   per sentence. Then set `status: "ready"` and push to `main`. Otherwise leave `status: "draft"`.
 - Start each part by reading `git log` and finishing anything half done (an open research branch, a draft missing a
   check). Fix any `status: "needs_fix"` script first (its reasons are in `needs_fix`), then set it back to `ready`.

@@ -39,7 +39,7 @@
   },
   "scenes": [
     {
-      "narration": "You're Nvidia, and in one quarter you made 115.8 billion dollars. That's double the 57 billion from a year earlier. Everyone in the AI race is digging for gold, and you sell the shovels.",
+      "narration": "You're Nvidia: 115.8 billion dollars in one quarter. Now that's double the 57 billion from a year earlier. Everyone in the AI race is digging for gold, and you sell the shovels.",
       "visual": {
         "type": "lowpoly",
         "set": "lab",

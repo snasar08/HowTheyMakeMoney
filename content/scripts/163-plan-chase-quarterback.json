@@ -23,7 +23,7 @@
     "shorts"
   ],
   "images": {},
-  "loop": "So remember:",
+  "loop": "So next time you wait for the ball, remember:",
   "cta": "Chase or Burrow? Pick one.",
   "cta_question": "Chase or Burrow?",
   "hero": {
@@ -43,7 +43,7 @@
   },
   "scenes": [
     {
-      "narration": "You're Ja'Marr Chase, and you just caught 231 yards in one game. Then you dress up as your quarterback, Joe Burrow, for a laugh. But a receiver's whole job is waiting for the ball.",
+      "narration": "You caught 231 yards in one game, Ja'Marr Chase. Then you dress up as your quarterback, Joe Burrow, for a laugh. But a receiver's whole job is waiting for the ball.",
       "visual": {
         "type": "lowpoly",
         "set": "city",

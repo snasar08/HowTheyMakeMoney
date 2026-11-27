@@ -42,7 +42,7 @@
   },
   "scenes": [
     {
-      "narration": "You're Connor McDavid, and on November 15 you tied Wayne Gretzky's record. That's 40 assists in just 22 games.",
+      "narration": "You tied Wayne Gretzky's record on November 15, Connor McDavid. That's 40 assists in just 22 games.",
       "visual": {
         "type": "lowpoly",
         "set": "throne",

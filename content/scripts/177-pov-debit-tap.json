@@ -42,7 +42,7 @@
   ],
   "scenes": [
     {
-      "narration": "Each debit tap costs the shop about 34 cents on average. Where does it go?",
+      "narration": "Debit taps cost shops about 34 cents, on average. Where does it go?",
       "visual": {
         "type": "lowpoly",
         "set": "diner",

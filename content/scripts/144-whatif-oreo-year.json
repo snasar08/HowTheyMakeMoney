@@ -40,7 +40,7 @@
   },
   "scenes": [
     {
-      "narration": "You have to eat every Oreo made in a year: 40 billion.",
+      "narration": "You must eat 40 billion Oreos, a year's worth.",
       "visual": {
         "type": "lowpoly",
         "set": "diner",
@@ -85,7 +85,7 @@
       ]
     },
     {
-      "narration": "You eat one cookie every second, dipping each one in milk. Sounds easy, until you do the math.",
+      "narration": "So you eat one cookie every second, dipping each one in milk. Sounds easy, until you do the math.",
       "visual": {
         "type": "lowpoly",
         "set": "diner",

@@ -26,7 +26,7 @@
   "cta_question": "Federer or Nadal?",
   "scenes": [
     {
-      "narration": "A former ball boy is now worth 1.1 billion dollars.",
+      "narration": "A former ball boy is worth 1.1 billion dollars.",
       "visual": {
         "type": "lowpoly",
         "set": "court",
@@ -71,7 +71,7 @@
       ]
     },
     {
-      "narration": "As a kid, he just fetched balls at his hometown tournament.",
+      "narration": "But as a kid, he just fetched balls at his hometown tournament.",
       "visual": {
         "type": "lowpoly",
         "set": "court",

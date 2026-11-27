@@ -43,7 +43,7 @@
   },
   "scenes": [
     {
-      "narration": "You are Meta, and you sold 7 million smart glasses in 2025. But on November 12, Samsung and Google opened pre-orders for their own. They start at 395 dollars and go on sale December 10.",
+      "narration": "You're Meta: 7 million smart glasses sold in 2025. But on November 12, Samsung and Google opened pre-orders for their own. They start at 395 dollars and go on sale December 10.",
       "visual": {
         "type": "lowpoly",
         "set": "store",
