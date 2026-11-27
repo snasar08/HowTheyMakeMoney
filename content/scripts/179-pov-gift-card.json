@@ -52,7 +52,20 @@
         "set": "mansion",
         "action": "idle",
         "crowd": 0,
-        "props": []
+        "props": [],
+        "hero": {
+          "skin": "8d5524",
+          "hair": "curly",
+          "hair_color": "1a1a1a",
+          "beard": "none",
+          "outfit": "hoodie",
+          "shirt": "7b2cbf",
+          "pants": "2b2f3a",
+          "shoes": "f4f4f4",
+          "chest": "",
+          "trim": "ffffff",
+          "height": 1.0
+        }
       },
       "toon": [
         {
@@ -86,7 +99,20 @@
         "set": "garage",
         "action": "idle",
         "crowd": 0,
-        "props": []
+        "props": [],
+        "hero": {
+          "skin": "8d5524",
+          "hair": "curly",
+          "hair_color": "1a1a1a",
+          "beard": "none",
+          "outfit": "hoodie",
+          "shirt": "7b2cbf",
+          "pants": "2b2f3a",
+          "shoes": "f4f4f4",
+          "chest": "",
+          "trim": "ffffff",
+          "height": 1.0
+        }
       },
       "toon": [
         {
@@ -117,7 +143,20 @@
         "set": "store",
         "action": "idle",
         "crowd": 0,
-        "props": []
+        "props": [],
+        "hero": {
+          "skin": "8d5524",
+          "hair": "curly",
+          "hair_color": "1a1a1a",
+          "beard": "none",
+          "outfit": "hoodie",
+          "shirt": "7b2cbf",
+          "pants": "2b2f3a",
+          "shoes": "f4f4f4",
+          "chest": "",
+          "trim": "ffffff",
+          "height": 1.0
+        }
       },
       "toon": [
         {
@@ -158,7 +197,20 @@
         "set": "boardroom",
         "action": "idle",
         "crowd": 0,
-        "props": []
+        "props": [],
+        "hero": {
+          "skin": "8d5524",
+          "hair": "curly",
+          "hair_color": "1a1a1a",
+          "beard": "none",
+          "outfit": "hoodie",
+          "shirt": "7b2cbf",
+          "pants": "2b2f3a",
+          "shoes": "f4f4f4",
+          "chest": "",
+          "trim": "ffffff",
+          "height": 1.0
+        }
       },
       "toon": [
         {
@@ -228,7 +280,20 @@
         "set": "classroom",
         "action": "idle",
         "crowd": 0,
-        "props": []
+        "props": [],
+        "hero": {
+          "skin": "8d5524",
+          "hair": "curly",
+          "hair_color": "1a1a1a",
+          "beard": "none",
+          "outfit": "hoodie",
+          "shirt": "7b2cbf",
+          "pants": "2b2f3a",
+          "shoes": "f4f4f4",
+          "chest": "",
+          "trim": "ffffff",
+          "height": 1.0
+        }
       },
       "toon": [
         {
@@ -267,7 +332,20 @@
         "set": "diner",
         "action": "idle",
         "crowd": 0,
-        "props": []
+        "props": [],
+        "hero": {
+          "skin": "8d5524",
+          "hair": "curly",
+          "hair_color": "1a1a1a",
+          "beard": "none",
+          "outfit": "hoodie",
+          "shirt": "7b2cbf",
+          "pants": "2b2f3a",
+          "shoes": "f4f4f4",
+          "chest": "",
+          "trim": "ffffff",
+          "height": 1.0
+        }
       },
       "toon": [
         {
@@ -330,7 +408,68 @@
   "images": {},
   "look": "afterhour",
   "hook_rules": "nov23",
-  "status": "ready",
+  "status": "delivered",
   "format": "pov",
-  "visual_style": "lowpoly"
+  "visual_style": "lowpoly",
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-179-pov-gift-card",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-179-pov-gift-card/179-pov-gift-card.mp4",
+    "post_at": "2026-11-28T20:30:00-05:00",
+    "buffer_post": "6b09d048bfaad3c00fdbbe4f",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-27T18:47:37.267309+00:00",
+    "seconds": 47.35,
+    "eyes": {
+      "score": 9,
+      "problems": [
+        "The text 'Walmart' and 'Starbucks' appears on screen, which violates the policy against real company logos/brand marks."
+      ],
+      "best_fix": "Replace the specific brand names 'Walmart' and 'Starbucks' with generic terms like 'major retailers' or 'big coffee chains' in both the narration and the on-screen text.",
+      "model": "gemini-3.1-flash-lite",
+      "acts": null
+    },
+    "scene_scan": [
+      "shot 1 @58: only 1 frames (flash cut?)",
+      "shot 2 @59: only 1 frames (flash cut?)",
+      "shot 4 @112: only 1 frames (flash cut?)",
+      "shot 5 @113: only 1 frames (flash cut?)",
+      "shot 6 @114: only 1 frames (flash cut?)",
+      "shot 7 @115: only 1 frames (flash cut?)",
+      "shot 8 @116: only 1 frames (flash cut?)",
+      "shot 9 @117: only 1 frames (flash cut?)",
+      "shot 10 @118: only 1 frames (flash cut?)",
+      "shot 11 @119: only 1 frames (flash cut?)",
+      "shot 13 @155: only 1 frames (flash cut?)",
+      "shot 14 @156: only 1 frames (flash cut?)",
+      "shot 15 @157: only 1 frames (flash cut?)",
+      "shot 16 @158: only 1 frames (flash cut?)",
+      "shot 17 @159: only 1 frames (flash cut?)",
+      "shot 19 @195: only 1 frames (flash cut?)",
+      "shot 20 @196: only 1 frames (flash cut?)",
+      "shot 21 @197: only 1 frames (flash cut?)",
+      "shot 22 @198: only 1 frames (flash cut?)",
+      "shot 24 @234: only 1 frames (flash cut?)",
+      "shot 25 @235: only 1 frames (flash cut?)",
+      "shot 26 @236: only 1 frames (flash cut?)",
+      "shot 27 @237: only 1 frames (flash cut?)",
+      "shot 28 @238: only 1 frames (flash cut?)",
+      "shot 29 @239: only 1 frames (flash cut?)",
+      "shot 30 @240: only 1 frames (flash cut?)",
+      "shot 31 @241: only 1 frames (flash cut?)",
+      "shot 32 @242: only 1 frames (flash cut?)",
+      "shot 33 @243: only 11 frames (flash cut?)",
+      "shot 36 @328: only 1 frames (flash cut?)",
+      "shot 37 @329: only 1 frames (flash cut?)",
+      "shot 38 @330: only 1 frames (flash cut?)",
+      "shot 39 @331: only 1 frames (flash cut?)",
+      "shot 40 @332: only 1 frames (flash cut?)",
+      "shot 41 @333: only 1 frames (flash cut?)",
+      "shot 42 @334: only 1 frames (flash cut?)",
+      "shot 43 @335: only 1 frames (flash cut?)",
+      "shot 45 @376: only 1 frames (flash cut?)",
+      "shot 46 @377: only 1 frames (flash cut?)",
+      "shot 47 @378: only 1 frames (flash cut?)"
+    ]
+  }
 }

@@ -7,7 +7,7 @@
   "hook_style": "number",
   "title_style": "number",
   "theme": "bold_bright",
-  "status": "ready",
+  "status": "needs_fix",
   "score": 90,
   "title": "Tiger Woods: $40 Million at 20, Then $1 Billion",
   "name_card": "Tiger Woods",
@@ -325,5 +325,9 @@
     }
   ],
   "look": "afterhour",
-  "hook_rules": "nov23"
+  "hook_rules": "nov23",
+  "needs_fix": [
+    "act golf_swing unclear at frames 275-407: The character performs a very stiff, unnatural movement that does not resemble a proper golf swing.",
+    "act count_cash unclear at frames 534-692: The character is just standing still while bills float above a static stack; there is no actual counting action."
+  ]
 }

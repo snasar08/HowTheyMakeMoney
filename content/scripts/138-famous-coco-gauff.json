@@ -7,7 +7,7 @@
   "hook_style": "number",
   "title_style": "number",
   "theme": "bold_bright",
-  "status": "ready",
+  "status": "delivered",
   "score": 90,
   "title": "The $33 Million Teenager Who Beat Venus Williams",
   "name_card": "Coco Gauff",
@@ -46,7 +46,20 @@
         "set": "tennis",
         "action": "idle",
         "crowd": 0,
-        "props": []
+        "props": [],
+        "hero": {
+          "skin": "8d5a3b",
+          "hair": "long",
+          "hair_color": "1a1210",
+          "beard": "none",
+          "outfit": "dress",
+          "shirt": "f4f4f4",
+          "pants": "f4f4f4",
+          "shoes": "f4f4f4",
+          "chest": "",
+          "trim": "2e7d32",
+          "height": 1.0
+        }
       },
       "toon": [
         {
@@ -69,7 +82,20 @@
         "set": "tennis",
         "action": "idle",
         "crowd": 0,
-        "props": []
+        "props": [],
+        "hero": {
+          "skin": "8d5a3b",
+          "hair": "long",
+          "hair_color": "1a1210",
+          "beard": "none",
+          "outfit": "dress",
+          "shirt": "f4f4f4",
+          "pants": "f4f4f4",
+          "shoes": "f4f4f4",
+          "chest": "",
+          "trim": "2e7d32",
+          "height": 1.0
+        }
       },
       "toon": [
         {
@@ -109,7 +135,20 @@
         "set": "tennis",
         "action": "idle",
         "crowd": 0,
-        "props": []
+        "props": [],
+        "hero": {
+          "skin": "8d5a3b",
+          "hair": "long",
+          "hair_color": "1a1210",
+          "beard": "none",
+          "outfit": "dress",
+          "shirt": "f4f4f4",
+          "pants": "f4f4f4",
+          "shoes": "f4f4f4",
+          "chest": "",
+          "trim": "2e7d32",
+          "height": 1.0
+        }
       },
       "toon": [
         {
@@ -130,7 +169,20 @@
         "set": "stage",
         "action": "idle",
         "crowd": 0,
-        "props": []
+        "props": [],
+        "hero": {
+          "skin": "8d5a3b",
+          "hair": "long",
+          "hair_color": "1a1210",
+          "beard": "none",
+          "outfit": "dress",
+          "shirt": "f4f4f4",
+          "pants": "f4f4f4",
+          "shoes": "f4f4f4",
+          "chest": "",
+          "trim": "2e7d32",
+          "height": 1.0
+        }
       },
       "toon": [
         {
@@ -166,7 +218,20 @@
         "set": "mansion",
         "action": "idle",
         "crowd": 0,
-        "props": []
+        "props": [],
+        "hero": {
+          "skin": "8d5a3b",
+          "hair": "long",
+          "hair_color": "1a1210",
+          "beard": "none",
+          "outfit": "dress",
+          "shirt": "f4f4f4",
+          "pants": "f4f4f4",
+          "shoes": "f4f4f4",
+          "chest": "",
+          "trim": "2e7d32",
+          "height": 1.0
+        }
       },
       "toon": [
         {
@@ -191,5 +256,66 @@
     }
   ],
   "look": "afterhour",
-  "hook_rules": "nov23"
+  "hook_rules": "nov23",
+  "delivered": {
+    "mode": "buffer",
+    "release": "https://github.com/snasar08/HowTheyMakeMoney/releases/tag/short-138-famous-coco-gauff",
+    "asset_url": "https://github.com/snasar08/HowTheyMakeMoney/releases/download/short-138-famous-coco-gauff/138-famous-coco-gauff.mp4",
+    "post_at": "2026-11-28T13:00:00-05:00",
+    "buffer_post": "6b09d0c1c8ae83814ab68f92",
+    "buffer_status": "scheduled",
+    "rendered_at": "2026-11-27T18:49:37.914006+00:00",
+    "seconds": 31.09,
+    "eyes": {
+      "score": 9,
+      "problems": [
+        "The text 'The $33 Million Teenager Who Beat Venus Williams' is slightly small and dense for a mobile screen, potentially impacting readability for younger viewers."
+      ],
+      "best_fix": "Increase the font size and contrast of the main title text to ensure it is immediately legible on small screens.",
+      "model": "gemini-3.1-flash-lite",
+      "acts": null
+    },
+    "scene_scan": [
+      "shot 1 @45: only 1 frames (flash cut?)",
+      "shot 3 @90: only 1 frames (flash cut?)",
+      "shot 5 @131: only 1 frames (flash cut?)",
+      "shot 6 @132: only 1 frames (flash cut?)",
+      "shot 7 @133: only 1 frames (flash cut?)",
+      "shot 8 @134: only 1 frames (flash cut?)",
+      "shot 10 @182: only 1 frames (flash cut?)",
+      "shot 11 @183: only 1 frames (flash cut?)",
+      "shot 12 @184: only 1 frames (flash cut?)",
+      "shot 15 @292: only 1 frames (flash cut?)",
+      "shot 16 @293: only 1 frames (flash cut?)",
+      "shot 18 @351: only 1 frames (flash cut?)",
+      "shot 19 @352: only 1 frames (flash cut?)",
+      "shot 21 @410: only 1 frames (flash cut?)",
+      "shot 22 @411: only 1 frames (flash cut?)",
+      "shot 23 @412: only 1 frames (flash cut?)",
+      "shot 25 @526: only 1 frames (flash cut?)",
+      "shot 26 @527: only 1 frames (flash cut?)",
+      "shot 27 @528: only 1 frames (flash cut?)",
+      "shot 28 @529: only 1 frames (flash cut?)",
+      "shot 29 @530: only 1 frames (flash cut?)",
+      "shot 30 @531: only 1 frames (flash cut?)",
+      "shot 31 @532: only 1 frames (flash cut?)",
+      "shot 32 @533: only 1 frames (flash cut?)",
+      "shot 34 @582: only 1 frames (flash cut?)",
+      "shot 35 @583: only 1 frames (flash cut?)",
+      "shot 36 @584: only 1 frames (flash cut?)",
+      "shot 38 @629: only 1 frames (flash cut?)",
+      "shot 39 @630: only 1 frames (flash cut?)",
+      "shot 40 @631: only 1 frames (flash cut?)",
+      "shot 42 @706: only 1 frames (flash cut?)",
+      "shot 43 @708: jump inside shot (25) - something teleports?",
+      "shot 43 @709: jump inside shot (21) - something teleports?",
+      "shot 43 @779: jump inside shot (22) - something teleports?",
+      "shot 44 @781: only 1 frames (flash cut?)",
+      "shot 45 @782: only 1 frames (flash cut?)",
+      "shot 46 @783: only 1 frames (flash cut?)",
+      "shot 47 @784: only 1 frames (flash cut?)",
+      "shot 48 @785: only 1 frames (flash cut?)",
+      "shot 50 @823: only 1 frames (flash cut?)"
+    ]
+  }
 }
