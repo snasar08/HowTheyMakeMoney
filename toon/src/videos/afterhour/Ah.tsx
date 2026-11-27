@@ -21,9 +21,11 @@ import { MotionBlurEffect } from "./motionblur";
 import { InkEffect } from "./ink";
 
 type V3 = [number, number, number];
-export type AhChar = { look: Look; at?: string | V3; rot?: number; scale?: number; pose?: Pose; expr?: Expr; exprAt?: [number, Expr][] };
+/** `fg` (camera staging, Nov 26): the object is glued to the camera at this screen spot (x, y in NDC, d = metres in front of the lens): an over-the-shoulder bystander / a big blurred prop in the foreground */
+export type FgSpot = { x: number; y: number; d: number };
+export type AhChar = { look: Look; at?: string | V3; rot?: number; scale?: number; pose?: Pose; expr?: Expr; exprAt?: [number, Expr][]; fg?: FgSpot };
 export type AhCard = CardSpec & { at?: string | V3; w?: number; rot?: number };
-export type AhThing = { name: string; at?: string | V3; scale?: number; rot?: number; color?: string; text?: string; pop?: boolean };
+export type AhThing = { name: string; at?: string | V3; scale?: number; rot?: number; color?: string; text?: string; pop?: boolean; fg?: FgSpot };
 export type AhShot = { a: number; n: number; set: SetName; view?: string; subject?: number; cam?: { from: V3; to: V3; look: V3 }; chars: AhChar[]; cards?: AhCard[]; things?: AhThing[]; coins?: boolean;
   /** a scripted action around the subject (acts/*.ts): the ball, hoop, opponent... really happen; `at` places the hero */ act?: { kind: string; at?: V3 };
   /** POV format (Nov 24): a row of everyday objects / a follow-the-object flythrough (pov3d.ts); `hud` = the math-card stack is on screen: shift the picture down `shift` (fraction of the frame) and keep props below `ndc` */
@@ -119,6 +121,19 @@ for (const [n, v] of Object.entries(VIEWS)) if (!n.startsWith("act")) v.to = ler
 // refgap round 5: lower camera heights (the reference shoots up at people), more background blur on every ordinary view
 for (const n of ["ms", "msL", "msR", "wide", "wideL", "wideR", "cu", "face"]) { VIEWS[n].from = [VIEWS[n].from[0], VIEWS[n].from[1] - 0.3, VIEWS[n].from[2]]; VIEWS[n].to = [VIEWS[n].to[0], VIEWS[n].to[1] - 0.3, VIEWS[n].to[2]]; }
 for (const [n, b] of Object.entries({ ws: 10, wide: 13, wideL: 13, wideR: 13, ms: 16, msL: 16, msR: 16, cu: 18, face: 20, low: 16, hi: 7 })) VIEWS[n].blur = b;
+// camera round (Nov 26, owner: "every shot is the same frontal medium"): angles the director cycles through. Written as final values (no 1.5x travel);
+// the head stays at NDC y +0.1..+0.5 (above the caption band, below the title bar) at every moment of the move (checked with C:/cmp/camC/proj.py)
+Object.assign(VIEWS, {
+  worm: { from: [1.3, 0.3, 6.0], to: [1.1, 0.35, 5.5], look: [0, 1.05, 0], blur: 14 },        // low angle, looking up at him
+  thirdL: { from: [1.8, 1.3, 6.6], to: [1.6, 1.3, 6.1], look: [0.42, 1.15, 0], blur: 16 },      // him on the left third
+  thirdR: { from: [-1.8, 1.3, 6.6], to: [-1.6, 1.3, 6.1], look: [-0.42, 1.15, 0], blur: 16 },   // him on the right third
+  hi2: { from: [1.8, 4.4, 6.2], to: [1.6, 4.1, 5.7], look: [0.1, 1.0, 0], blur: 8 },           // high 3/4 angle, looking down
+  ots: { from: [3.0, 1.5, 8.2], to: [2.8, 1.5, 7.6], look: [-0.5, 1.2, 0], blur: 14 },        // over the shoulder: the bystander (fg) is glued to the left edge
+  wideLow: { from: [3.6, 0.7, 9.4], to: [3.2, 0.75, 8.6], look: [0, 1.3, 0], blur: 10 },       // wide establishing shot from the floor
+} as Record<string, { from: V3; to: V3; look: V3; blur: number }>);
+/** views that hold their composition (no sideways truck: he must not drift off the third) and the roll (dutch tilt, rad) each one leans into */
+const NO_TRUCK = new Set(["worm", "thirdL", "thirdR", "hi2", "ots", "wideLow"]);
+const TILT: Record<string, number> = { worm: 0.15, thirdL: 0.08, thirdR: -0.08, hi2: -0.12, ots: -0.05, wideLow: 0.11 };
 
 type Built = { setRoot: THREE.Group; setLights: THREE.Light[]; hide: THREE.Object3D[]; instHide: InstHide[]; root: THREE.Group; chars: Char[]; things: Thing[]; run?: ActRun; view?: string; bg: string; fog?: THREE.Fog; spots: Record<string, V3>; coinGeo?: THREE.InstancedMesh; pov3?: Pov3 };
 const BUILT = new Map<number, Built>();
@@ -128,18 +143,20 @@ const spotOf = (b: { spots: Record<string, V3> }, at: string | V3 | undefined): 
  *  (taxis, crowds, goals, loose balls). Big containers are descended into; floors / platforms / walls are never hidden. */
 const _bx = new THREE.Box3(), _sz = new THREE.Vector3(), _m4 = new THREE.Matrix4(), _ib = new THREE.Box3();
 type InstHide = { mesh: THREE.InstancedMesh; idx: number[] };
-const pickHidden = (setRoot: THREE.Object3D, cam: V3, hero: V3, headY: number): { nodes: THREE.Object3D[]; inst: InstHide[] } => {
+const pickHidden = (setRoot: THREE.Object3D, cam: V3, hero: V3, headY: number, strict = false): { nodes: THREE.Object3D[]; inst: InstHide[] } => {
   const nodes: THREE.Object3D[] = [], inst: InstHide[] = [];
   setRoot.updateMatrixWorld(true);
   const dx = hero[0] - cam[0], dz = hero[2] - cam[2], len2 = dx * dx + dz * dz || 1, dist = Math.sqrt(len2);
   /** the box (in _bx / _sz) is clutter for this shot? floors and overhead things never are */
   const clutter = (): boolean => {
     if (_sz.y < 0.9 && Math.max(_sz.x, _sz.z) >= 1.5) return false;      // floor, rug, platform, bench: the hero may stand on it
+    if (strict && (_bx.max.y < 0.5 || _bx.min.y > 2.6)) return false;   // plain shots: only what really stands in the line of sight
     if (_bx.max.y < 0.12 || _bx.min.y > 3.2) return false;               // paint on the floor, overhead lights
-    if (_bx.max.x > hero[0] - 1.5 && _bx.min.x < hero[0] + 1.5 && _bx.max.z > hero[2] - 1.5 && _bx.min.z < hero[2] + 1.5) return true;   // within 1.5 m of the act area
+    if (!strict && _bx.max.x > hero[0] - 1.5 && _bx.min.x < hero[0] + 1.5 && _bx.max.z > hero[2] - 1.5 && _bx.min.z < hero[2] + 1.5) return true;   // within 1.5 m of the act area
     const cx = (_bx.min.x + _bx.max.x) / 2, cz = (_bx.min.z + _bx.max.z) / 2, tt = ((cx - cam[0]) * dx + (cz - cam[2]) * dz) / len2;
     if (tt <= 0.02 || tt >= 0.97) return false;
     const off = Math.hypot(cam[0] + dx * tt - cx, cam[2] + dz * tt - cz) - Math.max(_sz.x, _sz.z) / 2;
+    if (strict) return off < 0.25 + 0.12 * tt * dist && tt < 0.97;       // plain shots (camera round): a car / wall / rack between the lens and his face
     return off < 0.35 || (tt < 0.95 && off < 0.28 * tt * dist + 0.3);   // on the camera -> hero ray, or inside the view cone in front of the hero
   };
   const visit = (n: THREE.Object3D) => {
@@ -280,14 +297,14 @@ const build = (k: number, s: AhShot): Built => {
     // Nov 17 (Ninja test: the grown cash stack / controller covered his face): a held thing never sits in front of the
     // hero's head or torso — slide it out to the hero's side until its box clears the body column
     const hero0 = chars[s.subject ?? 0];
-    if (fit && hero0 && t.name !== "giantshovel") {
+    if (fit && hero0 && t.name !== "giantshovel" && !t.fg) {
       const hx = hero0.root.position.x, clear = 0.36 * (hero0.root.scale.x || 1);
       const left = bb.min.x - hx;
       if (left < clear) { th.root.position.x += clear - left; th.root.updateMatrixWorld(true); bb = new THREE.Box3().setFromObject(th.root); }
     }
     const bs = bb.getSize(new THREE.Vector3()), bc = bb.getCenter(new THREE.Vector3());
     const r = Math.max(0.1, (fit ? fit * fitK : th.size * sc) * 0.6), hw0 = bs.x / 2 + Math.abs(bc.x - th.root.position.x), hh0 = bs.y / 2 + Math.abs(bc.y - th.root.position.y);
-    if (!s.act && t.name !== "giantshovel") fitItems.push({ held: !!hero0, pos: th.root.position, hw: Math.max(r, hw0), hh: Math.max(r, hh0), set: (k2) => { th.root.userData.base *= k2; th.root.scale.setScalar(th.root.userData.base); } });
+    if (!s.act && !t.fg && t.name !== "giantshovel") fitItems.push({ held: !!hero0, pos: th.root.position, hw: Math.max(r, hw0), hh: Math.max(r, hh0), set: (k2) => { th.root.userData.base *= k2; th.root.scale.setScalar(th.root.userData.base); } });
     return th;
   });
 
@@ -312,6 +329,24 @@ const build = (k: number, s: AhShot): Built => {
   if (s.things?.some((t) => ["basketball", "football", "soccerball", "baseball"].includes(t.name))) {   // a set's own ball (court / pitch) is hidden when the shot already shows a ball thing
     let ev = EVER_HIDDEN.get(set.root); if (!ev) EVER_HIDDEN.set(set.root, ev = new Set());
     set.root.traverse((o) => { if (o.userData.setBall) { hide.push(o); ev!.add(o); } });
+  }
+  if (!s.act && chars.length) {   // camera round (Nov 26): the angles sit off to the side / low: whatever stands between the lens and the face (a taxi, a wall, a pie rack) is hidden for this shot
+    const V1 = s.cam ?? VIEWS[(s.view && VIEWS[s.view]) ? s.view : "ms"] ?? VIEWS.ms, sj0 = chars[s.subject ?? 0] ?? chars[0], hp = sj0.root.position, hy0 = (sj0 as Char & { headY?: number }).headY ?? 1.55;
+    const base: V3 = s.cam ? [0, 0, 0] : [hp.x, hp.y + hy0 - 1.55, hp.z], map = new Map<THREE.InstancedMesh, Set<number>>(), ev = EVER_HIDDEN.get(set.root) ?? new Set<THREE.Object3D>(), ei = EVER_INST.get(set.root) ?? new Set<THREE.InstancedMesh>();
+    EVER_HIDDEN.set(set.root, ev); EVER_INST.set(set.root, ei);
+    const look1: V3 = [base[0] + V1.look[0], base[1] + V1.look[1], base[2] + V1.look[2]];
+    for (const [t, kk] of [[0, 1], [1, 1], [0, 0.7], [1, 0.7]]) {
+      const q = lerp(V1.from, V1.to, t), c: V3 = [base[0] + q[0], base[1] + q[1], base[2] + q[2]];
+      const c2: V3 = [look1[0] + (c[0] - look1[0]) * kk, look1[1] + (c[1] - look1[1]) * kk, look1[2] + (c[2] - look1[2]) * kk];
+      const ph = pickHidden(set.root, c2, [hp.x, hp.y, hp.z], hy0, true);
+      for (const n of ph.nodes) if (!hide.includes(n)) { hide.push(n); ev.add(n); }
+      for (const h of ph.inst) { let m = map.get(h.mesh); if (!m) map.set(h.mesh, m = new Set()); h.idx.forEach((i) => m!.add(i)); ei.add(h.mesh); }
+    }
+    for (const [mesh, ids] of map) instHide.push({ mesh, idx: [...ids] });
+    if (s.set === "diner" && !(s.things ?? []).some((t) => /pie/.test(t.name))) {   // the diner's foreground pie racks are not what the line says (a pie in a cookie line)
+      set.root.updateMatrixWorld(true);
+      set.root.traverse((n) => { if (!(n as THREE.Mesh).isMesh) return; const bb2 = new THREE.Box3().setFromObject(n), c2 = bb2.getCenter(new THREE.Vector3()); if (!bb2.isEmpty() && Math.abs(Math.abs(c2.x) - 2.0) < 0.3 && Math.abs(c2.z - 4.2) < 0.3 && c2.y < 1.3) { hide.push(n); ev.add(n); } });
+    }
   }
   { const sj = chars[s.subject ?? 0], sc0 = s.chars[s.subject ?? 0];
     if (sj) fitInFrame(s, view && VIEWS[view] ? view : s.view, (sj as Char & { headY?: number }).headY ?? 1.55, sj.root.position, sc0?.pose === "sit", fitItems); }
@@ -408,7 +443,7 @@ const Inner: React.FC = () => {
     // refgap round 9: the reference camera never rests: every ordinary hold keeps a slow push-in plus a sideways truck (parallax), with an ease-out burst at the start
     if (!ss.cam && !ss.act && !ss.hud && !bb.pov3 && !bb.run) {
       const d = 0.55 * uu + 0.45 * (1 - (1 - uu) ** 3), dir = ((ss.a >> 1) & 1) ? 1 : -1;
-      const dx = look[0] - pos[0], dz = look[2] - pos[2], L = Math.hypot(dx, dz) || 1, rx = dz / L, rz = -dx / L, side = dir * 1.0 * (d - 0.5);
+      const dx = look[0] - pos[0], dz = look[2] - pos[2], L = Math.hypot(dx, dz) || 1, rx = dz / L, rz = -dx / L, side = NO_TRUCK.has(ss.view ?? "") ? 0 : dir * 1.0 * (d - 0.5);
       const k = 1 - 0.3 * d;
       pos = [look[0] - (look[0] - pos[0]) * k + rx * side, look[1] - (look[1] - pos[1]) * k, look[2] - (look[2] - pos[2]) * k + rz * side];
       look = [look[0] + rx * side * 0.5, look[1], look[2] + rz * side * 0.5];
@@ -453,7 +488,16 @@ const Inner: React.FC = () => {
     pos[0] = cam.position.x; pos[1] = cam.position.y; pos[2] = cam.position.z;
   }
   if (yaw) cam.rotateY(yaw);
-  if (!b.run && !b.pov3 && !s.hud) cam.rotateZ((k % 2 ? 1 : -1) * 0.035 * Math.sin(Math.PI * Math.min(1, (f - s.a) / Math.max(1, s.n))));   // gentle dutch tilt that swings in and out within the shot   // whip pan: after the act framing guard, which re-aims the camera
+  if (!b.run && !b.pov3 && !s.hud) cam.rotateZ(TILT[s.view ?? ""] !== undefined && !s.cam ? TILT[s.view!] * Math.min(1, 0.4 + (f - s.a) / 12) : (k % 2 ? 1 : -1) * 0.035 * Math.sin(Math.PI * Math.min(1, (f - s.a) / Math.max(1, s.n))));   // gentle dutch tilt that swings in and out within the shot   // whip pan: after the act framing guard, which re-aims the camera
+  // camera staging: glued-to-the-lens bystanders / foreground props (after the final camera pose, tilt included)
+  if (s.chars.some((c) => c.fg) || (s.things ?? []).some((t) => t.fg)) {
+    cam.updateMatrixWorld(true);
+    const rt = new THREE.Vector3().setFromMatrixColumn(cam.matrixWorld, 0), up = new THREE.Vector3().setFromMatrixColumn(cam.matrixWorld, 1), fw = new THREE.Vector3(0, 0, -1).transformDirection(cam.matrixWorld);
+    const tf2 = Math.tan((cam.fov * Math.PI) / 360), spot = (g: FgSpot) => cam.position.clone().addScaledVector(fw, g.d).addScaledVector(rt, g.x * g.d * tf2 * (1080 / 1920)).addScaledVector(up, g.y * g.d * tf2);
+    const hp = b.chars[hi]?.root.position;
+    s.chars.forEach((c, i) => { if (!c.fg) return; const ch = b.chars[i], q = spot(c.fg); ch.root.position.x = q.x; ch.root.position.z = q.z; if (hp) ch.root.rotation.y = Math.atan2(hp.x - q.x, hp.z - q.z); });
+    (s.things ?? []).forEach((t, i) => { if (t.fg) b.things[i].root.position.copy(spot(t.fg)); });
+  }
   fx.lens.focus = Math.hypot(look[0] - pos[0], look[1] - pos[1], look[2] - pos[2]);
   { const ph = SHOTS_.length > 1 ? k / (SHOTS_.length - 1) : 0, cx = look[0], cz = look[2];
     rig.key.position.set(cx - 2.4, 4.8, cz + 3.6); rig.key.target.position.set(cx, 0.7, cz); rig.key.target.updateMatrixWorld(true);
