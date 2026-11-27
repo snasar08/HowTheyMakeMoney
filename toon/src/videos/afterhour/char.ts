@@ -698,7 +698,7 @@ function buildChar(look: Look, cheap: boolean): Char {
   const armR = addArm(1), armL = addArm(-1);
 
   const addLeg = (s: number) => {
-    const hip = new THREE.Group(); hip.position.set(s * HIP_X, HIP_Y, 0); rig.add(hip);
+    const hip = new THREE.Group(); hip.name = "hip"; hip.position.set(s * HIP_X, HIP_Y, 0); rig.add(hip);
     const lcol = jersey ? legLit : shade(legCol, 0.4);
     const lm = toonMat(lcol, { emissive: lcol, emissiveIntensity: 0.3 });
     const um = jersey ? skinMat : lm;   // bare legs below the shorts
@@ -707,7 +707,7 @@ function buildChar(look: Look, cheap: boolean): Char {
     const knee = new THREE.Group(); knee.position.y = -0.28 * sl; hip.add(knee);
     if (!cheap) knee.add(ball(0.03, um, ot, 10, 8));
     knee.add(tube(0.028, 0.2 * sl, um, ot, rad, 0, -0.11 * sl, 0));
-    const foot = ball(0.052, lm, ot, cheap ? 8 : 14, cheap ? 6 : 10, 0, -0.255 * sl, 0.035); foot.scale.set(0.9, 0.65, 1.5); knee.add(foot);
+    const foot = ball(0.052, lm, ot, cheap ? 8 : 14, cheap ? 6 : 10, 0, -0.255 * sl, 0.035); foot.scale.set(0.9, 0.65, 1.5); foot.name = "foot"; knee.add(foot);
     if (jersey) {
       // wide shorts down to the knee, side stripe, long sock
       const sm = toonMat(lcol, { emissive: lcol, emissiveIntensity: 0.3 });

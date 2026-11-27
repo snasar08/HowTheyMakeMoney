@@ -73,7 +73,7 @@ const LEGS = new WeakMap<Char, Legs>();
 const legsOf = (c: Char): Legs => {
   let L = LEGS.get(c); if (L) return L;
   const rig = rigOf(c);
-  const hips = rig.children.filter((o) => o.type === "Group" && Math.abs(Math.abs(o.position.x) - 0.125) < 1e-3 && o.children.length >= 3);
+  const hips = rig.children.filter((o) => o.type === "Group" && o.name === "hip" && o.children.length >= 3);
   const hR = hips.find((o) => o.position.x > 0) ?? hips[0], hL = hips.find((o) => o.position.x < 0) ?? hips[1];
   const kn = (h: THREE.Object3D) => h.children.find((o) => o.type === "Group")!;
   L = { hR, hL, kR: kn(hR), kL: kn(hL), sl: hR.position.y / 0.55 };

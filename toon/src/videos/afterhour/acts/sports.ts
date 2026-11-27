@@ -398,9 +398,9 @@ const kick: ActDef = { pose: "run", view: "act", build(c) {
   // heading towards the goal; sample the right foot to find when it is furthest forward and where the ball must sit
   const d = new Vec(G0.x - H[0], 0, G0.z - H[2]).normalize(), rot = Math.atan2(d.x, d.z); hero.root.rotation.y = rot;
   const rig = rigOf(hero);
-  const hips = rig.children.filter((o) => o.type === "Group" && Math.abs(Math.abs(o.position.x) - 0.125) < 1e-3 && o.children.length >= 3);
+  const hips = rig.children.filter((o) => o.type === "Group" && o.name === "hip" && o.children.length >= 3);
   const hipR = hips.find((o) => o.position.x > 0) ?? hips[0], knee = hipR.children.find((o) => o.type === "Group")!;
-  const foot = knee.children.find((o) => o.type === "Mesh" && Math.abs(o.scale.z - 1.6) < 1e-6) ?? knee;
+  const foot = knee.children.find((o) => o.name === "foot") ?? knee;
   const V = 2.2;
   let tc = 0.4285, best = -9;
   for (let t = 0.2; t < 0.7; t += 1 / 120) { hero.set(t, "run", "smile"); const f = wp(foot).sub(new Vec(H[0], 0, H[2])).dot(d) - V * (0.4285 - t) * -1 * 0; if (f > best) { best = f; tc = t; } }
